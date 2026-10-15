@@ -5,7 +5,7 @@
     ],
     "justification": "The leaf pair judge, three master routes, history owner, record retention, strict-row publication and direct ownership each prevent a distinct bypass; none alone prevents an unjudged pair from landing through the other routes."
   },
-  "guarantee": "Converted leaf publication, recovery, recording and integration judge their actual pair before recording or refs move; master final, checkpoint and recorded landings admit only judged leaf/parent history with authentic newly closed history and retained records. Strict rows and named owner/refusal boundaries prevent a closed flag, stored verdict or foreign merge from substituting for judgment.",
+  "guarantee": "Converted leaf publication, recovery, recording and integration judge their actual pair before recording or refs move; master final, checkpoint and recorded landings admit only judged leaf/parent history with authentic newly closed history and retained records. Strict rows and named owner/refusal boundaries prevent a closed flag, stored verdict or foreign merge from substituting for judgment. An empty completed leaf landing is excluded from nonempty ordering only after its joint pair is proved at the chain origin, an admitted reconciled source position or an ordered landing pair; duplicated nonempty pairs still refuse. Repository pre-commit admission is additional to knowledge judgment: integration accepts the landing commit's tree-bound Commit-Check-Pass fact or checks that exact tree before moving a master ref, for code and external memory. Matching-trailer admission is syntactic fact trust, not independent historical execution authentication.",
   "id": "FAM-NQQP2T",
   "members": [
     "INV-M0J963",
@@ -16,7 +16,8 @@
     "INV-78GNBA",
     "INV-9CSYZS",
     "INV-6DFQ9P",
-    "INV-KSJZS0"
+    "INV-KSJZS0",
+    "INV-2Q8RPR"
   ],
   "origin": {
     "handoff": {
@@ -26,7 +27,7 @@
     "leaf": "260928-MIK-L52",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "routes": [
     "mcp/src/agents_remember/worktrees",
     "mcp/src/agents_remember/application/knowledge_gate",

@@ -3,7 +3,7 @@
   "proves": [
     {
       "anchor": {
-        "blob": "d0c2d83c5f7aaa6d1bcffdaf7bc649693200baba",
+        "blob": "1b214597fe5ab75bd320636444697a53acd0a3e5",
         "content": "sha256:57f128955beb75a87bdc6e4d9800c356257fbc269852e479e2f6fb747415350a",
         "locator": {
           "kind": "symbol",
@@ -20,7 +20,7 @@
     },
     {
       "anchor": {
-        "blob": "d0c2d83c5f7aaa6d1bcffdaf7bc649693200baba",
+        "blob": "1b214597fe5ab75bd320636444697a53acd0a3e5",
         "content": "sha256:acef561348b46ecff2e9dce4bba1fb04fafe63eda12863db2a4ed95ec3bd296f",
         "locator": {
           "kind": "symbol",
@@ -37,8 +37,8 @@
     },
     {
       "anchor": {
-        "blob": "d0c2d83c5f7aaa6d1bcffdaf7bc649693200baba",
-        "content": "sha256:de7ef726246f2b4b55ee7a97eb10a32415070089606cd494dfb4ff76e9999c5c",
+        "blob": "1b214597fe5ab75bd320636444697a53acd0a3e5",
+        "content": "sha256:fbbbc04db8c079221668a668c9cfe4220c5cae0e88f6af1adda6c19825ad551c",
         "locator": {
           "kind": "symbol",
           "name": "test_apply_writes_a_report_for_evidence_only_and_skip_only_plans"
@@ -72,7 +72,7 @@
       ]
     },
     "3": {
-      "note": "The report seam keeps every nonzero alignment population.",
+      "note": "The report seam asserts renumbered-reference, evidence-only, skip-only, conflict, converted and empty plans. It has no alignedCards-only emission control; INV-0J9FS1 explicitly excludes alignedCards alone as a trigger. The retained proof facet is read under that governing condition, not as universal alignment-field coverage.",
       "targets": [
         {
           "anchor": {

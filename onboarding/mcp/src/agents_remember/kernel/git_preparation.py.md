@@ -6,7 +6,7 @@
 
 ## Purpose
 
-Typed Git preparation bindings, sealed private capabilities, and exact physical content proof.
+Typed preparation proof; GitPreparationCommandError retains the completed result when readback fails.
 
 ## Code Commentary
 

@@ -13,7 +13,7 @@ The current carrier and gate account is already source-bounded: explicit develop
 
 ## Purpose
 
-Agent doctrine for closing out approved Agents Remember edits as code and memory Git transactions. Ordinary closeout is worktree-only with code-then-memory commit order, always authority-gated, and never an automatic push; it runs no quality checks, test suites, or independent review itself, because curation is already complete before it starts and travels with the handoff as the prerequisite.
+Agent doctrine for closing out approved Agents Remember edits as code and memory Git transactions. Closeout stays worktree/authority gated and never pushes; exact-tree repository hooks are mandatory, suites/review/curation separate.
 
 ## Code Commentary
 

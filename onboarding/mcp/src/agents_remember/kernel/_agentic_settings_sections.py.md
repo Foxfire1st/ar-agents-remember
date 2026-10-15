@@ -8,6 +8,8 @@
 
 ``orchestration`` section parsers for loops, roles, concurrency, harness IDs, spawn and the quality gate. Expectations, supervisor and agent-notifier sections have no parser or typed execution consumer in this module.
 
+Also parses landing: default 900; positive integers only and unknown keys refuse.
+
 Parses role/default and other agentic settings sections.
 
 ## Code Commentary

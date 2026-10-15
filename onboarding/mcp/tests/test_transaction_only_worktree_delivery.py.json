@@ -3,8 +3,8 @@
   "proves": [
     {
       "anchor": {
-        "blob": "b83d8d5385c985ab6294cf29acae50c8250f6292",
-        "content": "sha256:20089bdfe8636fa7c3caaf6baa8842fae8047e6ba616f7f3c7e406c18b0937e3",
+        "blob": "5975ecf4b0402e1762b48022138aee03bc9f12c2",
+        "content": "sha256:8c460f457988c3213f2663be09bdbe6ce5d0c95a23c530208df48f2145252b4b",
         "locator": {
           "kind": "symbol",
           "name": "test_the_publication_is_bound_to_the_branch_and_the_head_the_closeout_admitted"
@@ -20,7 +20,7 @@
     },
     {
       "anchor": {
-        "blob": "b83d8d5385c985ab6294cf29acae50c8250f6292",
+        "blob": "5975ecf4b0402e1762b48022138aee03bc9f12c2",
         "content": "sha256:778cd5126befa5baac53c5508cfa665be50c25a15c493990fdf5d4b52c478774",
         "locator": {
           "kind": "symbol",

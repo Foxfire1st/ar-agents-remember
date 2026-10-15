@@ -6,7 +6,7 @@
 
 ## Purpose
 
-Defines the strict public worktree response and sync projection vocabulary.
+Strict sync projections include optional validationRefusal and crossing, preserving refusal/conflict answers.
 
 ## Code Commentary
 

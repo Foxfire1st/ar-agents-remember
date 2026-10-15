@@ -10,13 +10,13 @@ Plans and publishes a task reopen transition under the existing repository, cont
 
 ## Code Commentary
 
-`_plan_leaf_doc_reset` resolves the canonical leaf document, resets status/lifecycle fields and appends its reopen decision without publishing. `_plan_master_index_reset` updates its exact master row. `_publish_reopen_transition` owns the paired publication and recovery artifacts; `_restore_reopen_artifacts` restores those on failure. The old series-document and review-state helper names are retired, not permissions to reset an active review. A reader of this card may not edit task state or invoke reopen outside its admitted workflow.
+`_plan_leaf_doc_reset` resolves the canonical leaf document, resets status/lifecycle fields and appends its reopen decision without publishing. `_plan_master_index_reset` updates its exact master row. `_publish_reopen_transition` owns the paired publication and recovery artifacts; `_restore_reopen_artifacts` restores those on failure. Series dispatch delegates to `reopen_series.py`, which retains its own document/review-reset helpers; their relocation is not retirement or permission to reset an active review. A reader of this card may not edit task state or invoke reopen outside its admitted workflow.
 
 ### Logic
 
 `reopen_task` requires a leaf whose closeout, integration, and cleanup are completed and whose code/memory worktrees are gone. It resolves the exact parent series, proves accepted memory ancestry through `require_integrated_memory_ancestry`, and uses the recorded integrated code/memory outputs as the terminal lineage position. It never reads a cache mapping or uses an integrated ledger commit.
 
-**The master is resolved by the one rule (MIK-R38, ruling 2026-09-30T12:33:07 Q2).** `_reopen_master_path` resolves a named `master` by its own rule and a leaf that names none through `master_sync.folder_master_json_path`, the rule the task-document master sync and the finalizer use, so its private copy of the fallback is gone. An unnamed `subTask` still finds its folder master (the row returns to `planning`, `masterIndex: reset`). A `light` document is itself the folder's `task.json`: the old fallback resolved it to itself and refused it as "not a master", and now `_plan_master_index_reset` reports `no-master`. The public route cannot reach that case, because `reopen_task`'s integration-branch preflight (`require_parent_series`) already refuses a leaf contract whose folder has no master. The master demotion is now called as `master_sync.demote_completed_master_if_unresolved` (a module-qualified import, so this file, already over 1,200 lines at base, did not grow).
+**The master is resolved by the one rule (MIK-R38, ruling 2026-09-30T12:33:07 Q2).** All three writers use master_json_path_from_ref for named masters and folder_master_json_path for unnamed leaves. An unnamed `subTask` still finds its folder master (the row returns to `planning`, `masterIndex: reset`). A `light` document is itself the folder's `task.json`: the old fallback resolved it to itself and refused it as "not a master", and now `_plan_master_index_reset` reports `no-master`. The public route cannot reach that case, because `reopen_task`'s integration-branch preflight (`require_parent_series`) already refuses a leaf contract whose folder has no master. The master demotion is now called as `master_sync.demote_completed_master_if_unresolved` (a module-qualified import, so this file, already over 1,200 lines at base, did not grow).
 
 **Both documents reopen rewrites must be in place (review R1 finding 1, rulings 2026-09-30T13:11:32 and 13:35:32).** `_plan_leaf_doc_reset` and `_plan_master_index_reset` call `tasks/leaf_doc.require_task_document_in_place` after their existing checks, so a leaf or master that the store would write to another file (a hand-made `light` leaf `01_x.json`, a hand-made master `other.json`, both written as the folder's `task.json`) is refused as `blocked`, in the preview and under the publication CAS, before any write. On base the misnamed light leaf crashed with `duplicate task document write target`, and the misnamed master silently replaced the series `task.json`. Correctly placed documents reopen exactly as before.
 
@@ -28,8 +28,8 @@ The frozen landing observation clear, leaf/master task updates, and contract res
 
 - Leaf identity is stable across reopen.
 - A leaf naming no master is resolved by the same rule as the master sync and the finalizer (`folder_master_json_path`), and a leaf or master whose read path differs from the store's write target for it is refused before any write (MIK-R38).
-- In-flight leaves, series contracts, and leaves with live worktrees cannot reopen.
-- Terminal code/memory Git facts replace cache mapping proof; unrelated source movement remains a refusal.
+- The leaf route refuses in-flight leaves and leaves with live worktrees. Series contracts dispatch to their separately guarded `reopen_series` plan; they are not categorically refused by this entry.
+- Recorded landing commits must be ancestors of current source tips; behind-tip cleaned leaves reopen under the same id and worktree_start recreates from current tips, without suggesting sync of absent worktrees.
 - A task/ref race cannot overwrite newer task facts or leave an old completed landing projection current.
 
 ### Todos

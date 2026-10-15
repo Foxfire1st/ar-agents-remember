@@ -40,9 +40,7 @@ validator/invariant gate; the conversion itself counts as no change. A failed
 crossing plan leaves the line unchanged; a retained conflict or validator refusal
 after merge start uses the existing `continue`/`cancel` recovery.
 
-Hook effects depend on publication route. `commit-tree` legs run no pre-commit/message
-hooks; prepared code uses its documented no-verify policy, prepared ordinary memory has
-its own ordinary hooks, and ref transactions can run reference-transaction hooks. Do not
+Every route checks pre-commit on its exact tree; prepared legs use ordinary git commit; integration checks absent pass facts. Do not
 teach blanket suppression across all routes. Cleanup/finalization/retirement remain distinct
 operations and preserve abandoned-row, correlation and unfinished-successor safeguards.
 

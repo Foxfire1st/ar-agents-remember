@@ -8,6 +8,8 @@
 
 The public settings reference states five distinct homes and their read cadences: boot infrastructure in the MCP authority file; host runtime in the shared user configuration; memory topology under the memory root; global/repository-local agentic settings; and provider lifecycle settings derived from authority configuration. User configuration is neither an MCP authority file nor an implicit provider settings source.
 
+Documents landing.commitCheckTimeoutSeconds: positive integer, default 900, reread per landing; timeout refuses.
+
 ## Current source account
 
 The user file is installed read-only and its folder closed to new/removed entries. Opening them for editing and closing them again are explicit user operations; the product does not relax permissions by itself. The one product write is the explicit upgrade-user-settings move. server_info reads live modes and reports exact-path edit/close commands without changing any file byte or permission. The reference spells those commands for XDG_CONFIG_HOME and quoted paths, not a grant to a role agent.
@@ -20,7 +22,7 @@ The document is guidance, not parser execution, proof of real permission protect
 
 ## Evidence
 
-- Five settings homes/cadences, exact user-owned open/close commands and nonmutating live-mode reporting are declared by the current reference. \[4] [4]
-- The complete reference separates current host role/features from accepted-but-unused retired settings and product answer authority. \[5] [5]
+- Five settings homes/cadences, exact user-owned open/close commands and nonmutating live-mode reporting are declared by the current reference. [4]
+- The complete reference separates current host role/features from accepted-but-unused retired settings and product answer authority. [5]
 
 No external Domain Documentation source or fresh executed acceptance is inferred.

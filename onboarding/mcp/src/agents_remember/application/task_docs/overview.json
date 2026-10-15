@@ -122,7 +122,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "51f3efd84d8b158c64a47ee0b4e18ed47338d050",
+            "blob": "664c0cb732f5eeb6bdf9241fa3c597a30ddc6537",
             "content": "sha256:a7fd12f2f360521356de2f8fd2a7d81a56f4c8145891e9b90a6e9cd20c7672c4",
             "locator": {
               "kind": "symbol",
@@ -164,12 +164,12 @@
       ]
     },
     "15": {
-      "note": "task_doc authoring no longer exposes successful get/read_steps projections or step_payloads. The early operation-removed answer guides canonical JSON/rendered-file reading. Ordinary writes deliver bounded phrases, create retains renderedPath, changed reviewState stays visible, and dry answers carry wouldLose/diff with independently retained locations; rich identity/preview/masterSync remains whole-result custody and a failed sync is an answered refusal. Linkage reporting writes its facts JSON and delivers counts/location; attach/detach retain per-document previews internally. Shared task_doc_phrases owns the actual mutable allowlist, excluding seriesContractPath/enclosures. Publication refreshes the own leaf plus declared requirement copies with rollback, without turning copies into task authority. Strict model facts come from models/task_doc.py; no historical pending-model statement certifies a live session.",
+      "note": "task_doc authoring no longer exposes successful get/read_steps projections or step_payloads. The early operation-removed answer guides canonical JSON/rendered-file reading. Ordinary writes deliver bounded phrases, create retains renderedPath, changed reviewState stays visible, and dry answers carry wouldLose/diff with independently retained locations; rich identity/preview/masterSync remains whole-result custody and a validly addressed parent sync failure is an answered refusal. Invalid caller master references instead raise TaskDocError through the shared resolver before publication, after the retained retirement-row comparison. Linkage reporting writes its facts JSON and delivers counts/location; attach/detach retain per-document previews internally. Shared task_doc_phrases owns the actual mutable allowlist, excluding seriesContractPath/enclosures. Publication refreshes the own leaf plus declared requirement copies with rollback, without turning copies into task authority. Strict model facts come from models/task_doc.py; no historical pending-model statement certifies a live session.",
       "targets": [
         {
           "anchor": {
-            "blob": "51f3efd84d8b158c64a47ee0b4e18ed47338d050",
-            "content": "sha256:26c27a5fb21541d542009d1004fa71e54d793c44fee01a9dc3d9d5976f1e13a7",
+            "blob": "664c0cb732f5eeb6bdf9241fa3c597a30ddc6537",
+            "content": "sha256:e3dae8d7970758d5e32e8d870e90ed6f31e5eb5214a4186a392d95a8de356b17",
             "locator": {
               "kind": "file"
             },
@@ -294,7 +294,7 @@
       ]
     },
     "4": {
-      "note": "The step plane owns exact addressing, mutations, and the focused read projection.",
+      "note": "The step plane owns exact addressing and mutations. Its pre-L109 focused read projection is historical: current task_doc.read_steps returns operation-removed and callers read the canonical JSON/rendered files.",
       "targets": [
         {
           "anchor": {
@@ -380,7 +380,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "eacf36f408546b48942eacfcbc2568770f4fecb6",
+            "blob": "993f59e48595cc0aae4945621e405e458bd5ed9e",
             "content": "sha256:b0409d0df5f5c85fdc04feb0b21787d2e816d36dccfb3383dd8fc9240423583b",
             "locator": {
               "kind": "symbol",

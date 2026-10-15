@@ -7,7 +7,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f000e1b9d3818bcc0637b050357be02ec08f3cf6",
+            "blob": "a34c0c59625ee920577abd445e3ad0bd757bf05c",
             "content": "sha256:9417d4e634efc0119a9782c06da41734e747b6467a726b49aef7dd223c1ae0bc",
             "locator": {
               "kind": "symbol",
@@ -18,7 +18,7 @@
         },
         {
           "anchor": {
-            "blob": "f000e1b9d3818bcc0637b050357be02ec08f3cf6",
+            "blob": "a34c0c59625ee920577abd445e3ad0bd757bf05c",
             "content": "sha256:c276775d9942cc6b9373733c4b2beb2bead8e66ca99efee4b1fef6d1b17342c6",
             "locator": {
               "end": 224,
@@ -35,7 +35,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f000e1b9d3818bcc0637b050357be02ec08f3cf6",
+            "blob": "a34c0c59625ee920577abd445e3ad0bd757bf05c",
             "content": "sha256:f0aa4a767f0631b54acba2a22b2c4e939dd1be5fe590579b7e8ffb389eeb7722",
             "locator": {
               "kind": "symbol",
@@ -46,7 +46,7 @@
         },
         {
           "anchor": {
-            "blob": "f000e1b9d3818bcc0637b050357be02ec08f3cf6",
+            "blob": "a34c0c59625ee920577abd445e3ad0bd757bf05c",
             "content": "sha256:aa86853d75a11ccaee0b2bc6fd1e896693846db93990746968dfc52dc3f3f6fe",
             "locator": {
               "kind": "symbol",
@@ -73,12 +73,12 @@
         },
         {
           "anchor": {
-            "blob": "f000e1b9d3818bcc0637b050357be02ec08f3cf6",
+            "blob": "a34c0c59625ee920577abd445e3ad0bd757bf05c",
             "content": "sha256:107bc4973ae24bb2885939981b33c556eb453d8f2ccb882a6cda59865876519a",
             "locator": {
-              "end": 879,
+              "end": 930,
               "kind": "line_range",
-              "start": 837
+              "start": 888
             }
           },
           "kind": "code"
@@ -90,7 +90,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f000e1b9d3818bcc0637b050357be02ec08f3cf6",
+            "blob": "a34c0c59625ee920577abd445e3ad0bd757bf05c",
             "content": "sha256:35b84ff6db9a2e5a7f1ec3afe065f4d0a03e068373b8999a19af0bff408ae9a9",
             "locator": {
               "kind": "symbol",
@@ -101,7 +101,7 @@
         },
         {
           "anchor": {
-            "blob": "f000e1b9d3818bcc0637b050357be02ec08f3cf6",
+            "blob": "a34c0c59625ee920577abd445e3ad0bd757bf05c",
             "content": "sha256:e7a66db5f59269f4f09be1f49654e6df28d3752071d7811e0f3cc9fb11135684",
             "locator": {
               "kind": "symbol",
@@ -117,7 +117,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0b64410c301acbc247f941bbb50591a306473a9e",
+            "blob": "835b99f0f2dc2032b80a8019a38d89f192dd32a9",
             "content": "sha256:60f6548bf0a7cf67d4dd27428d133af5e9394a869d69330ca082a05abf5b9bf8",
             "locator": {
               "kind": "symbol",
@@ -129,7 +129,7 @@
         },
         {
           "anchor": {
-            "blob": "0b64410c301acbc247f941bbb50591a306473a9e",
+            "blob": "835b99f0f2dc2032b80a8019a38d89f192dd32a9",
             "content": "sha256:243888b9e2e1a58c440af536f3027f6141c4376ee19ca6df541668aff713ff21",
             "locator": {
               "kind": "symbol",
@@ -146,7 +146,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f000e1b9d3818bcc0637b050357be02ec08f3cf6",
+            "blob": "a34c0c59625ee920577abd445e3ad0bd757bf05c",
             "content": "sha256:75afdc4583dfd59d19f78e3f29c22242364e5020082e8b7ab77c23c530505300",
             "locator": {
               "kind": "symbol",
@@ -157,12 +157,12 @@
         },
         {
           "anchor": {
-            "blob": "f000e1b9d3818bcc0637b050357be02ec08f3cf6",
+            "blob": "a34c0c59625ee920577abd445e3ad0bd757bf05c",
             "content": "sha256:dd149ef6207695e0bdaac1a891f3302f349dfbb8308b185d45af08010b08d637",
             "locator": {
-              "end": 791,
+              "end": 798,
               "kind": "line_range",
-              "start": 784
+              "start": 791
             }
           },
           "kind": "code"

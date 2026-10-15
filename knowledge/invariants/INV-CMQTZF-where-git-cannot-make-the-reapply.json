@@ -9,10 +9,11 @@
   "applicability": "Both-changed parked paths requiring native acquisition, without independent exact raw/fingerprint ownership; restoration diagnostic disclosure is separately limited to its bounded named-path recomputation.",
   "conditions": [
     "A failed effective-configuration read or native merge leaves no computed expectation for a both-changed path requiring that merge; no fallback or alternative algorithm supplies acceptance.",
-    "Restoration fails and cancellation refuses before mutation while the required content/ownership remains unavailable; complete parked inventory, retained stash, cancel/no-edit guidance and nonmutation are unchanged.",
+    "Restoration fails while its native expectation is unavailable; cancellation may instead preserve unattributable state in durably written saved files before rolling back and restoring the parked candidate. The complete stash inventory and terminal-before-retirement boundary remain.",
     "Restoration names at most the first ten failed paths inline, with readable merge rules and a remainder count; its full failed-name log is not an exhaustive inline native-reason channel.",
     "The restoration refusal includes Git command/exit/reason only when reapply_merge_fault recomputation over failures[:10] invokes the lazy native merge and captures a fault. A native-dependent failure outside that sample does not imply that its reason appears in the refusal.",
-    "Cancellation carries the native fault actually captured by its ownership assessments into its refusal; this is a separate producer from restoration named-path recomputation and is not a promise of identical reasons for every failed path."
+    "Cancellation carries the native fault captured by its ownership assessments into the saved-cancellation summary. This producer is separate from bounded restoration named-path recomputation and promises no identical reason for every failed path.",
+    "Fresh saves use durable atomic writes and record SHA-256 of the written payload; recovery of prior completed manifests reopens and verifies their named bytes. Fresh-save durability is not an independent reread of every artifact."
   ],
   "exclusions": [
     "Equal-content/base cases need no native acquisition.",
@@ -33,9 +34,9 @@
     "leaf": "260928-MIK-L163",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-invariant/v1",
-  "statement": "Where git cannot make the reapply's merge again, or cannot read the configuration for it, no path both sides changed has an expected content: the proof fails on each such path, names it with its rule and says git's words; the cancel cannot show such a path to be the reapply's own, refuses over it with the same words and changes nothing; the proof never merges by a construction of its own.",
+  "statement": "Where native merge or effective-configuration acquisition cannot establish a both-changed path, restoration fails without another construction; cancellation retains the actual fault, saves unattributable bytes before rollback, and never treats failed proof as ownership.",
   "status": "proposed",
   "supersedes": []
 }

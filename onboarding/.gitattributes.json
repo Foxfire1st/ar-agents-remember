@@ -95,13 +95,13 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d792ca35666e800c2743156397e04ac2c2b46306",
+            "blob": "4b9d9aeaf2e52a5d764a430209a1f0ec793e5650",
             "content": "sha256:65b64237c4ae4e4e8d105904884db988ebba1a694004973367c6b84075b6ce73",
             "locator": {
               "kind": "symbol",
               "name": "apply_parked_wip"
             },
-            "path": "mcp/src/agents_remember/worktrees/sync_transaction_git.py"
+            "path": "mcp/src/agents_remember/worktrees/sync_transaction_git/_stash.py"
           },
           "kind": "code"
         }

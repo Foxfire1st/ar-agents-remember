@@ -107,8 +107,7 @@ untouched. Only after validation passes does `_adopt_validated_converted_tree` p
 object is built from the immutable validated tree (`commit-tree`), the branch ref moves to it only
 while it still points at the HEAD read on entry to `_publish_validated_tree` (expected-old
 `update-ref`), and the recorded tree is verified — so a hook or a concurrent index change cannot smuggle different bytes into the
-publication. The worktree's own index is then brought to the adopted state. Where the validator is
-not bound, the adoption refuses; it never commits unvalidated.
+publication. The worktree's own index is then brought to the adopted state. Adoption requires bound validation and the repository hook on the exact staged tree before commit-tree or ref movement.
 
 ### Conventions
 

@@ -11,8 +11,7 @@ metadata work, apply checks explicit approval and Git/ref safety, commits the ac
 delegates raw external-memory refresh and an attributed memory-content commit, then refreshes the disposable ledger cache. It does
 not automatically run strict code quality, memory quality, selected certification, curator
 coherence, or independent review. The explicit closeout approval/Git guard remains a transaction
-control. The code commit and external-memory commit helpers use an already staged index without
-invoking configured repository hooks; full suites remain an explicit developer request. Historical
+control. New code/memory commits require exact-tree repository hooks; full suites stay explicit; series previews name emptyLandings. Historical
 quality-gate sections below describe pre-R12 behavior and are not prerequisites for this route.
 
 ## Code Commentary
@@ -25,9 +24,9 @@ Refused closeout previews include knowledge/opt-out, undecided approval as close
 
 Closeout records code and memory-content commits, then publishes the exact contract state. External cache refresh is informational: it supplies no approval message, source-head expectation, recovery completeness cell, or integration output. Source-head validation uses `integrated_memory_content_commit`, and no-op finalization proves the existing two outputs without inventing a cache-maintenance commit.
 
-A non-dry-run leaf entry refuses with `selected-closeout-operation-required` and zero gate starts unless it enters through the journal-selected certification operation. Preview and recording-only series behavior remain here. The selected lifecycle composition owns private code preparation, final memory certification and exact publication.
+The current `_closeout_entry` checks the disabled-memory refusal, canonical contract/leaf binding, normalized effective input, recovery, source lineage and series-workbench authority, then dispatches dry-run preview or apply. This module has no `selected-closeout-operation-required` leaf refusal or requirement to enter a selected certification operation. That older selected-preparation account belongs to retained separate certification/preparation owners, not the ordinary entry predicate.
 
-The existing publication helper receives already checked input, worklist, quality, route review and approval facts. It revalidates contract and candidate before claiming approval. Targeted code checks remain leaf-scoped; full-suite acceptance belongs to master integration. Coverage is diagnostic and production CRAP20 is a review trigger, not a mandatory changed-code floor.
+`_publish_closeout_candidate` receives the accepted arguments, effective input, worklist and approval note. Its callback reloads the contract, rechecks route/workbench authority and candidate/source identity, executes the commit phase, and writes the amended contract. Targeted/full quality, coverage and route-review campaigns are separate owning workflows; this helper does not receive or execute the historical quality-facts bundle.
 
 Closeout admission now combines the immediate source-head check with the full task-derived
 transitive lineage projection, and that projection self-heals a settleable stale break instead of
@@ -40,10 +39,10 @@ ancestry is stale is settled by the sync rather than refused as a moved source. 
 checked at preflight and again on the last reversible line before approval claim. An unprovable break
 escalates to the human developer, and a parent branch that moves during the long gate still refuses
 before the approval is spent or any code or memory commit is created or the contract is published. The
-transaction itself runs no code-quality gate and no memory preflight: it claims the gate approval and
-then commits code and external memory and refreshes the disposable ledger cache, and leaf closeout then additionally re-resolves
-the exact route-review record while series/master closeout deliberately bypasses only that leaf-owned
-evidence, never the all-altitude candidate identity check. `_revalidate_candidate` threads the healed
+transaction itself runs no automatic code-quality or memory-quality campaign. It still checks the
+candidate knowledge gate, claims approval, then commits code and external memory and refreshes the
+disposable ledger cache. This coordinator has no additional leaf route-review-record resolution or
+series exemption from that historical evidence bundle. `_revalidate_candidate` threads the healed
 contract on to the candidate comparison, so candidate identity is compared against the same identity
 the lineage check proved; `_CloseoutResultFacts` and `_closed_result_payload` isolate the completed
 result shape without moving mutation intent, Git, or contract-publication ordering. See "Closeout
@@ -122,7 +121,7 @@ to `changed_code_paths`, `changed_code_paths_committed`, the
 `sidecars_attested_no_impact`, `refreshed_onboarding`, and
 `unonboarded_changed_paths` in the apply payload.
 
-The preview payload exposes the body gates' classifications
+**Historical issue-83 payload account, not the current returned fields:** The preview payload exposed the body gates' classifications
 (`sidecar_body_gate` from `classify_sidecar_updates` and
 `route_overview_body_gate` from `classify_route_overview_updates`), and the
 apply path surfaces `sidecars_attested_no_impact`,
@@ -213,7 +212,7 @@ the contract**:
 5. `run_pre_commit_hook_if_configured(code_worktree)` → restage hook edits when configured
 6. `run_strict_code_quality_gate(_quality_gate_target(contract, args), diff_base=diff_base)`
 
-The commit side of the same contract is `commit_verified_staged`: it performs no `add -A` and
+Historical pre-MIK-R152 wrapper contract (not current landing policy): the commit side was `commit_verified_staged`: it performed no `add -A` and
 uses `git commit --no-verify`, so the configured hook is not restarted after the wrapper's final
 pytest subprocess. This is intentionally different from ordinary `commit_if_dirty`, which still
 stages and honors hooks for memory and other non-certified commits.

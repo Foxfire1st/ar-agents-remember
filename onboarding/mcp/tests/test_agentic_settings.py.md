@@ -25,6 +25,8 @@ Static test account of settings layering, host-knob values, retained ID vocabula
 
 The current ID cases retain the built-in prefix, append a new ID and report its ignored execution keys; a built-in entry adds no ID, while unknown entry keys/non-object entries refuse. Old orchestration/role execution fields load with unusable values and are reported unused, without rewriting files or changing effective RoleKnobs. Existing merge/array/global-policy, alias, tier, user-location, message-limit and positive review-budget cases keep their own scopes. A source assertion, including the maxRounds proof, is not a live launch, review-budget or settings-write test run.
 
+Landing settings cases assert a default 900-second commit-check timeout, a positive integer override of 60, and refusal of skipCheck and non-positive timeout values. These are settings parsing/merge witnesses, not actual hook execution or a fresh review-round authority.
+
 ## Evidence boundary
 
 This account is current source interpretation only. It creates no executed test/host/bootstrap result and supplies no new CODE or MEMORY grade.
@@ -46,3 +48,5 @@ This account is current source interpretation only. It creates no executed test/
 - [13]
 - [14]
 - [15]
+
+- Landing settings cases assert a default 900-second commit-check timeout, a positive integer override of 60, and refusal of skipCheck and non-positive timeout values. These are settings parsing/merge witnesses, not actual hook execution or a fresh review-round authority. [16]

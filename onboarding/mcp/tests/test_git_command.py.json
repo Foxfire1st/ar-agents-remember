@@ -3,11 +3,11 @@
   "proves": [
     {
       "anchor": {
-        "blob": "e51073001505f29c70ea36dfad6be4d0e4943b08",
-        "content": "sha256:6155a9c2851d4e18bb4eae72c95b21bba4a5872e5c6f5a0e57ffa38e7f6679bc",
+        "blob": "80309f6c5c6ab9fcf58cf9dee79b83cc5197a212",
+        "content": "sha256:3a6229ba7b175b8691e2b00a9ac2c461f0bf314317ebce471dcc175552f2cc03",
         "locator": {
           "kind": "symbol",
-          "name": "PublishTreeCommitGuardTests.test_no_commit_hook_runs_and_a_refusing_ref_transaction_hook_is_reported"
+          "name": "PublishTreeCommitGuardTests.test_the_commit_hook_runs_and_a_refusing_ref_transaction_hook_is_reported"
         }
       },
       "facet": "A refused ref transaction is reported with Git's own text.",
@@ -20,7 +20,24 @@
     },
     {
       "anchor": {
-        "blob": "e51073001505f29c70ea36dfad6be4d0e4943b08",
+        "blob": "80309f6c5c6ab9fcf58cf9dee79b83cc5197a212",
+        "content": "sha256:31e3608139d02359c84ce44d63bba969cfdd8156e0daafd13b4d46a0bd4fd442",
+        "locator": {
+          "kind": "symbol",
+          "name": "PublishTreeCommitGuardTests.test_the_message_is_what_git_commit_m_stores_and_a_refusal_where_it_aborts"
+        }
+      },
+      "facet": "After removing pass trailer/rstrip, message equals porcelain; aborted messages preserve HEAD/index.",
+      "id": "PRF-A07VYX",
+      "invariant": "INV-G0Y4VR",
+      "origin": {
+        "handoffEntry": "L61-qualified-replacement-PRF-T8AVGK",
+        "leaf": "260928-MIK-L61"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "80309f6c5c6ab9fcf58cf9dee79b83cc5197a212",
         "content": "sha256:4a48a27af0bdba4a500091b9863d89a1faf0c712320a8b09083597f8cffc73ec",
         "locator": {
           "kind": "symbol",
@@ -37,7 +54,7 @@
     },
     {
       "anchor": {
-        "blob": "e51073001505f29c70ea36dfad6be4d0e4943b08",
+        "blob": "80309f6c5c6ab9fcf58cf9dee79b83cc5197a212",
         "content": "sha256:69dc7199f5dffa790503cd032a4e556feac4af2c790f51a015a8ac30616645a1",
         "locator": {
           "kind": "symbol",
@@ -54,7 +71,7 @@
     },
     {
       "anchor": {
-        "blob": "e51073001505f29c70ea36dfad6be4d0e4943b08",
+        "blob": "80309f6c5c6ab9fcf58cf9dee79b83cc5197a212",
         "content": "sha256:ba45f8ede8e79d36317604c3ba963101d5bd833d5a666a4dab6125ae28974187",
         "locator": {
           "kind": "symbol",
@@ -68,23 +85,6 @@
         "handoffEntry": "R3 note 11g",
         "leaf": "260928-MIK-L26"
       }
-    },
-    {
-      "anchor": {
-        "blob": "e51073001505f29c70ea36dfad6be4d0e4943b08",
-        "content": "sha256:0779a5beaa81098116849360a94776eaf12bf48a3e474b98df5ba22bc35f0a67",
-        "locator": {
-          "kind": "symbol",
-          "name": "PublishTreeCommitGuardTests.test_the_message_is_what_git_commit_m_stores_and_a_refusal_where_it_aborts"
-        }
-      },
-      "facet": "The stored message equals what git commit -m stores, and an aborted message is refused.",
-      "id": "PRF-T8AVGK",
-      "invariant": "INV-G0Y4VR",
-      "origin": {
-        "handoffEntry": "R3 notes 11b and 11c",
-        "leaf": "260928-MIK-L26"
-      }
     }
   ],
   "realizes": [],
@@ -94,7 +94,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e51073001505f29c70ea36dfad6be4d0e4943b08",
+            "blob": "80309f6c5c6ab9fcf58cf9dee79b83cc5197a212",
             "content": "sha256:676304c234827e6348dc0cdf7d0cc0f3f0fd90ce375297f50376db3ef0de816c",
             "locator": {
               "end": 13,
@@ -111,7 +111,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e51073001505f29c70ea36dfad6be4d0e4943b08",
+            "blob": "80309f6c5c6ab9fcf58cf9dee79b83cc5197a212",
             "content": "sha256:ee05a19a8109a1f15593c5de761babfa378111af3ccc2aca00a2753000926686",
             "locator": {
               "kind": "symbol",
@@ -127,7 +127,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e51073001505f29c70ea36dfad6be4d0e4943b08",
+            "blob": "80309f6c5c6ab9fcf58cf9dee79b83cc5197a212",
             "content": "sha256:f24594dae9f4ec026808a93251153b7b42cca2bfa242601eb1e504d54caf3b2c",
             "locator": {
               "kind": "symbol",
@@ -159,7 +159,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e51073001505f29c70ea36dfad6be4d0e4943b08",
+            "blob": "80309f6c5c6ab9fcf58cf9dee79b83cc5197a212",
             "content": "sha256:3f91938e8a966ce5b1a2c36f1822b3abacb8ddbe05363d7d6869edf7fb1a23fe",
             "locator": {
               "kind": "symbol",
@@ -191,7 +191,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "cd35c66bb9c9d8af0f23fd2579f5e610cf4ee8da",
+            "blob": "cb96525be294896525624afef669abf8fd942413",
             "content": "sha256:41f1d184eae01373fe7f22e46f2d241c158d32e1d5d2338124d8498258276898",
             "locator": {
               "kind": "symbol",
@@ -200,6 +200,22 @@
             "path": "mcp/src/agents_remember/kernel/git_command.py"
           },
           "kind": "code"
+        }
+      ]
+    },
+    "17": {
+      "note": "Tree publication now runs pre-commit before ref movement and records Commit-Check-Pass. Ref-transaction refusal remains native Git evidence after that check. Message comparison strips only the required pass trailer before comparison with porcelain; it does not assert raw equality of a stamped message to an unstamped argument. Both private preparation policy spellings now exercise ordinary commit hooks; the old strict-code spelling supplies compatibility vocabulary, not a skip.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "80309f6c5c6ab9fcf58cf9dee79b83cc5197a212",
+            "content": "sha256:c41312f751c9c1847a3ff5cbf8c9f5f82d57a79fe0962e92e0e30105d8544b42",
+            "locator": {
+              "kind": "symbol",
+              "name": "PublishTreeCommitGuardTests"
+            }
+          },
+          "kind": "test"
         }
       ]
     }

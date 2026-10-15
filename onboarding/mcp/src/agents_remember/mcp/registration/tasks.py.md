@@ -106,9 +106,7 @@ by ruling 14:12:52 (review R2's wording note): a `light` task that is its own `t
 standalone and is not covered by it. The same clauses are in `docs/reference/mcp-tools.md` and the c-09
 skill. No argument, schema or response model changed.
 
-`task_reopen(contract_path, dry_run)` is a state reset, not a worktree creator: it returns the
-enclosure contract's review/closeout/integration state to virgin and the leaf's task document to
-planning, under the **exact same leaf id** (no `-rN` suffix). It refuses masters, in-flight leaves,
+Reopen resets the same leaf id; cleaned behind-tip leaves pass only when their landing is ancestral to current tips. It refuses masters, in-flight leaves,
 and leaves whose worktrees still exist; afterwards the normal `worktree_start` with the same leaf id
 recreates everything.
 
@@ -153,9 +151,7 @@ turn a projection row into lifecycle authority.
 
 ## 260821-CLIVE Door, Projection, And Discard Registration
 
-This registrar exposes `closeout_door` as the canonical declare/status/defer/resume/withdraw/
-update-provenance surface and describes `closeout_queue` as status/rebuild for a disposable
-waiting-door projection only. Successful door publication refreshes projections after the short
+Historically this registrar exposed `closeout_door` as the canonical declare/status/defer/resume/withdraw/update-provenance surface. That registration is retired: current `register_task_tools` registers reopen, finalizer, task_doc, curator_coherence and closeout_queue, and the public roster has no closeout_door tool. The retained door implementation does not restore public registration. `closeout_queue` remains status/rebuild for a disposable projection. Successful door publication refreshes projections after the short
 task CAS is released; waiting-to-claimed transfer remains owned by closeout apply. `task_doc`
 documents `discard-unstarted` as a reasoned, evidence-gated planning discard that atomically removes
 child JSON/Markdown and retains a typed parent audit; started or ambiguous evidence routes to the
@@ -163,25 +159,29 @@ real lifecycle action rather than pretending completion.
 
 ## MCAR-L02 Curator-Coherence Registration
 
-`register_task_tools` now advertises one nested-request `curator_coherence` tool with
-`status`/`prepare`/`publish`/`validate` actions. Its contract makes the structured stable manifest
-canonical, keeps semantic revision/attempt/digest identities separate, requires explicit
-`code:`/`memory:`/`task:` evidence references for exact candidate judgments, and names the shared
-validator used by memory and closeout. It explicitly forbids historical-filename fallback.
+The current compact curator_coherence description names its four actions, all nine required publication identity/caller fields, inline or file-backed judgments, and structured-manifest authority; it points to docs/tool-details.md for the longer explanation. Action-specific validation and detailed prepare/publish transport behavior belong to the request/application owners, not to promises repeated in this shortened docstring.
 
-**The description now names every field `publish` requires (260918-TSIP-L3, `T50`).** The enforced
-validator (`models/lifecycles/curator_coherence.py:294-328` `_action_has_one_input_shape`) needs
-**nine** non-null fields: `semantic_requirement_revision`, `delivery_attempt`,
-`expected_predecessor_digest`, `expected_code_candidate_tree`, `expected_memory_candidate_tree`,
-`expected_task_topology_fingerprint`, `expected_task_intent`, `expected_attestation_sha256` and
-`caller`. The published text named the identity classes `prepare` returns and never marked
-`semantic_requirement_revision` or `delivery_attempt` as required, so a caller could satisfy
-everything the registered contract named and still be refused. The text now names all nine, says
-`status`/`prepare`/`validate` forbid them, and the refusal names the absent ones — **the description
-is load-bearing here because the JSON schema cannot carry the constraint**: the request model marks
-only `action` and `contract_path` required, since the requirement is conditional on
-`action == "publish"`. Pinned in `mcp/tests/test_tools.py` (`CuratorCoherencePublishContractTests`)
-against both surfaces at once.
+> **Retained historical description account — superseded by the current compact registration above:**
+> `register_task_tools` now advertises one nested-request `curator_coherence` tool with
+> `status`/`prepare`/`publish`/`validate` actions. Its contract makes the structured stable manifest
+> canonical, keeps semantic revision/attempt/digest identities separate, requires explicit
+> `code:`/`memory:`/`task:` evidence references for exact candidate judgments, and names the shared
+> validator used by memory and closeout. It explicitly forbids historical-filename fallback.
+>
+> **The description now names every field `publish` requires (260918-TSIP-L3, `T50`).** The enforced
+> validator (`models/lifecycles/curator_coherence.py:294-328` `_action_has_one_input_shape`) needs
+> **nine** non-null fields: `semantic_requirement_revision`, `delivery_attempt`,
+> `expected_predecessor_digest`, `expected_code_candidate_tree`, `expected_memory_candidate_tree`,
+> `expected_task_topology_fingerprint`, `expected_task_intent`, `expected_attestation_sha256` and
+> `caller`. The published text named the identity classes `prepare` returns and never marked
+> `semantic_requirement_revision` or `delivery_attempt` as required, so a caller could satisfy
+> everything the registered contract named and still be refused. The text now names all nine, says
+> `status`/`prepare`/`validate` forbid them, and the refusal names the absent ones — **the description
+> is load-bearing here because the JSON schema cannot carry the constraint**: the request model marks
+> only `action` and `contract_path` required, since the requirement is conditional on
+> `action == "publish"`. Pinned in `mcp/tests/test_tools.py` (`CuratorCoherencePublishContractTests`)
+> against both surfaces at once.
+>
 
 ## 260918-TSIP-L4 — The `task_doc` Description Stops Advertising `'light'` (`T43`)
 

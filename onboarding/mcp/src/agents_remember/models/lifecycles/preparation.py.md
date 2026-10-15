@@ -6,7 +6,7 @@
 
 ## Purpose
 
-Closed preparation intent, genuine existing memory proof and raw commit output vocabulary.
+Both new legs use ordinary hooks; legacy code strict-code-no-verify remains readable but never skips checks.
 
 ## Code Commentary
 

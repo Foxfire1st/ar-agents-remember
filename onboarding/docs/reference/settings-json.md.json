@@ -3,10 +3,10 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "411e5d1947986e0b5ad9fafa33e42374ea7ab077",
-        "content": "sha256:b7624384d1a59a37d1bd4c095894acf62a770e90aa2af4a60d86a95044d25346",
+        "blob": "fd37dfff6a9e3d185a7f50f8160990dddbef3ac6",
+        "content": "sha256:012d7f3d967f181785205f452f928dff02fd7fe94ebb2a02a58b7aecf0995ad2",
         "locator": {
-          "end": 705,
+          "end": 700,
           "kind": "line_range",
           "start": 685
         }
@@ -22,8 +22,8 @@
     },
     {
       "anchor": {
-        "blob": "411e5d1947986e0b5ad9fafa33e42374ea7ab077",
-        "content": "sha256:37aa741763a82d0e67f6aa0aacc2043cc506c3202d49b06ce085bea2c373e974",
+        "blob": "fd37dfff6a9e3d185a7f50f8160990dddbef3ac6",
+        "content": "sha256:037e6dd8830c1a9bde9693d029fe858877dee48ce41c40792e41453a44e43604",
         "locator": {
           "kind": "file"
         }
@@ -39,7 +39,7 @@
     },
     {
       "anchor": {
-        "blob": "411e5d1947986e0b5ad9fafa33e42374ea7ab077",
+        "blob": "fd37dfff6a9e3d185a7f50f8160990dddbef3ac6",
         "content": "sha256:c0c988e3a5aa7cfc196905181be4425b87e970b3cc912c7532f2829f9572c522",
         "locator": {
           "end": 54,
@@ -58,8 +58,8 @@
     },
     {
       "anchor": {
-        "blob": "411e5d1947986e0b5ad9fafa33e42374ea7ab077",
-        "content": "sha256:37aa741763a82d0e67f6aa0aacc2043cc506c3202d49b06ce085bea2c373e974",
+        "blob": "fd37dfff6a9e3d185a7f50f8160990dddbef3ac6",
+        "content": "sha256:037e6dd8830c1a9bde9693d029fe858877dee48ce41c40792e41453a44e43604",
         "locator": {
           "kind": "file"
         }
@@ -76,12 +76,12 @@
   ],
   "references": {
     "4": {
-      "note": "Five settings homes/cadences, exact user-owned open/close commands and nonmutating live-mode reporting are declared by the current reference. [4]\n\nAnchor: `docs/reference/settings-json.md:3-54`",
+      "note": "Five settings homes/cadences, exact user-owned open/close commands and nonmutating live-mode reporting are declared by the current reference.",
       "targets": [
         {
           "anchor": {
-            "blob": "411e5d1947986e0b5ad9fafa33e42374ea7ab077",
-            "content": "sha256:37aa741763a82d0e67f6aa0aacc2043cc506c3202d49b06ce085bea2c373e974",
+            "blob": "fd37dfff6a9e3d185a7f50f8160990dddbef3ac6",
+            "content": "sha256:037e6dd8830c1a9bde9693d029fe858877dee48ce41c40792e41453a44e43604",
             "locator": {
               "kind": "file"
             }
@@ -91,12 +91,12 @@
       ]
     },
     "5": {
-      "note": "The complete reference separates current host role/features from accepted-but-unused retired settings and product answer authority. [5]\n\nAnchor: `docs/reference/settings-json.md`",
+      "note": "The complete reference separates current host role/features from accepted-but-unused retired settings and product answer authority.",
       "targets": [
         {
           "anchor": {
-            "blob": "411e5d1947986e0b5ad9fafa33e42374ea7ab077",
-            "content": "sha256:37aa741763a82d0e67f6aa0aacc2043cc506c3202d49b06ce085bea2c373e974",
+            "blob": "fd37dfff6a9e3d185a7f50f8160990dddbef3ac6",
+            "content": "sha256:037e6dd8830c1a9bde9693d029fe858877dee48ce41c40792e41453a44e43604",
             "locator": {
               "kind": "file"
             }

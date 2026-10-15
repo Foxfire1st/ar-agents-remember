@@ -9,8 +9,7 @@ The commit fields identify the latest real commit touching this source; they do 
 
 ## Purpose
 
-Adapts the memory-history backfill to the command line. Planning is the default and reads without
-rewriting; `--apply` explicitly invokes the kernel migration over refs selected from the request.
+Adapts the memory-history backfill to the command line. Planning stays read-only; apply binds the memory repository hook checker before rewritten target refs move.
 
 ## Code Commentary
 

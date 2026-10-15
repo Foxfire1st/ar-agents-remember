@@ -14,7 +14,7 @@ At-most-once journal-bound private Git execution for code and memory-content out
 
 Each enabled code or memory-content output has the ordered create, materialize, and commit commands. These are command steps for one output, not three commit legs. There is no private ledger-output command in the current preparation model.
 
-Each command start is selected before its single kernel call; actual exit/output hashes or unknown outcome are retained afterward. Live ownership and effective policy are reopened at action boundaries. Successful steps are not rerun, unresolved preparation is retained, and a named committed output is physically reobserved instead of discovering another commit. Shared execution does not advance logical branches.
+Each command start is selected before its single kernel call; actual exit/output hashes or unknown outcome are retained afterward. Live ownership and effective policy are reopened at action boundaries. Successful steps are not rerun, unresolved preparation is retained, and a named committed output is physically reobserved instead of discovering another commit. No logical refs move here; bounded commit hooks retain full logs, changed-tree refusals and terminal log pointers.
 
 ### Conventions
 

@@ -32,7 +32,7 @@ Closeout records existing refs rather than committing an ambient series workbenc
 
 - Canonical task membership and exact repository/ref identity remain mandatory.
 - A leaf that landed is always part of the chain proof, whatever its row says; an `abandoned` row never needs an enclosure or a landing.
-- Leaf order comes from real code and memory ancestry, including after source reconciliation.
+- Order nonempty pairs only; empty pairs need an origin/sync/ordered pair. Duplicate nonempty pairs refuse.
 - Cache rows, ordering, and fixed-point projection are never series completion or checkpoint gates.
 - No agent-owned ledger-only commit is needed to record a reconciled code tip.
 - The checkpoint's expected candidate is required and is re-read before publication.

@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "6fe8997759e11e00c8208c6c800c149260b181af",
+        "blob": "563b159672712ebd42c705fe6a86c68d602e5bdf",
         "content": "sha256:72a6c65ceaf42298f4600ff0414c42ba14b22ae9f5042957809356bd264ee1f7",
         "locator": {
           "kind": "symbol",
@@ -21,7 +21,7 @@
     },
     {
       "anchor": {
-        "blob": "6fe8997759e11e00c8208c6c800c149260b181af",
+        "blob": "563b159672712ebd42c705fe6a86c68d602e5bdf",
         "content": "sha256:5b5375fad8ff814614ab8d243f5a84f628024980b734ff85023a51448aea559b",
         "locator": {
           "kind": "symbol",
@@ -34,12 +34,12 @@
         "handoffEntry": "L50-CUR-EXP-F02",
         "leaf": "260928-MIK-L50"
       },
-      "rationale": "Threads the calling operation into ledger repair so the refusal names its route.",
+      "rationale": "The refresh-preview helper itself refuses a non-external contract before constructing external-memory metadata/entity/overview/index plans; it accepts no operation parameter and performs no ledger repair.",
       "role": "unclassified"
     },
     {
       "anchor": {
-        "blob": "6fe8997759e11e00c8208c6c800c149260b181af",
+        "blob": "563b159672712ebd42c705fe6a86c68d602e5bdf",
         "content": "sha256:ff0bdb1dc968c0373323d439b207245b6fc7fe4cbc5924e640deaed00013143b",
         "locator": {
           "kind": "symbol",
@@ -57,7 +57,7 @@
     },
     {
       "anchor": {
-        "blob": "6fe8997759e11e00c8208c6c800c149260b181af",
+        "blob": "563b159672712ebd42c705fe6a86c68d602e5bdf",
         "content": "sha256:cee7c130cb2c2e7d47da4ec3eef10aa0ad4132eaa0c7fabb2c0ca6d33070ecd6",
         "locator": {
           "kind": "symbol",
@@ -75,7 +75,7 @@
     },
     {
       "anchor": {
-        "blob": "6fe8997759e11e00c8208c6c800c149260b181af",
+        "blob": "563b159672712ebd42c705fe6a86c68d602e5bdf",
         "content": "sha256:88f0c64b90b85023d675ba0db630e7046bcbefbad6d478b8d697e7e8747ddcf0",
         "locator": {
           "kind": "symbol",
@@ -93,7 +93,7 @@
     },
     {
       "anchor": {
-        "blob": "6fe8997759e11e00c8208c6c800c149260b181af",
+        "blob": "563b159672712ebd42c705fe6a86c68d602e5bdf",
         "content": "sha256:8857d6720d5c936d3e59c15217ad0115e4086b9dfe9d08ebf85bb447fa5a8ccd",
         "locator": {
           "kind": "symbol",
@@ -111,7 +111,7 @@
     },
     {
       "anchor": {
-        "blob": "6fe8997759e11e00c8208c6c800c149260b181af",
+        "blob": "563b159672712ebd42c705fe6a86c68d602e5bdf",
         "content": "sha256:bf6a4fd82ce4b7c37dad975706df9dfa2e512477491776e2ed885bf2569e2279",
         "locator": {
           "kind": "symbol",
@@ -129,8 +129,8 @@
     },
     {
       "anchor": {
-        "blob": "6fe8997759e11e00c8208c6c800c149260b181af",
-        "content": "sha256:4e79820d94e2f78b0ff3e0bdfe19a8bb1f5bd18b35d29000c84df22b326e1a49",
+        "blob": "563b159672712ebd42c705fe6a86c68d602e5bdf",
+        "content": "sha256:8051cd1b0ce6c524c37ca9bbeb9f2e077b17f254335985310d4ad655df1ebaae",
         "locator": {
           "kind": "symbol",
           "name": "closeout_preview_payload"
@@ -147,7 +147,7 @@
     },
     {
       "anchor": {
-        "blob": "6fe8997759e11e00c8208c6c800c149260b181af",
+        "blob": "563b159672712ebd42c705fe6a86c68d602e5bdf",
         "content": "sha256:edee97bbd27e310531ad25d8367e1ce1b68d4f32c367d57c4290d56452db3d99",
         "locator": {
           "kind": "symbol",
@@ -165,7 +165,7 @@
     },
     {
       "anchor": {
-        "blob": "6fe8997759e11e00c8208c6c800c149260b181af",
+        "blob": "563b159672712ebd42c705fe6a86c68d602e5bdf",
         "content": "sha256:4af59765f940af1a42be4a8141c0700127633ca8a23a8bbd6453e39df90b4b91",
         "locator": {
           "kind": "symbol",
@@ -178,7 +178,7 @@
         "handoffEntry": "L50-CUR-EXP-F02",
         "leaf": "260928-MIK-L50"
       },
-      "rationale": "Every closeout commits memory with no code-only branch left; a removed-mode contract never reaches this phase.",
+      "rationale": "The admitted closeout commit phase always delegates its memory leg to external_closeout_commits; there is no code-only branch and non-external contracts refuse before this phase. Leaves commit refreshed memory or record the existing admitted memory commit when no new commit is needed; series delegate to their separate memory closeout outcome.",
       "role": "unclassified"
     }
   ],
@@ -289,7 +289,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6fe8997759e11e00c8208c6c800c149260b181af",
+            "blob": "802ed699950e60bab929aba61d6f4448a274f20a",
             "content": "sha256:a5755c08457fba7204c121392c83d69fd73f97df800cd5796fa7e5fdf429b35f",
             "locator": {
               "kind": "symbol",
@@ -450,7 +450,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6fe8997759e11e00c8208c6c800c149260b181af",
+            "blob": "802ed699950e60bab929aba61d6f4448a274f20a",
             "content": "sha256:27502a84ab1a28a5c8ace3d8b4facc50dedf942ad12f1cbdfef928ed528911a5",
             "locator": {
               "kind": "symbol",
@@ -478,7 +478,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6fe8997759e11e00c8208c6c800c149260b181af",
+            "blob": "802ed699950e60bab929aba61d6f4448a274f20a",
             "content": "sha256:114c7734fd039866458154c2993f9471f0cde61c7e1beff80d8e65761105932b",
             "locator": {
               "kind": "symbol",
@@ -505,7 +505,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6fe8997759e11e00c8208c6c800c149260b181af",
+            "blob": "802ed699950e60bab929aba61d6f4448a274f20a",
             "content": "sha256:29c6ca7208dd0891b999f8e9522d1f4f31eeae66a761b3c5df8c1eb8c511e913",
             "locator": {
               "kind": "symbol",
@@ -516,7 +516,7 @@
         },
         {
           "anchor": {
-            "blob": "6fe8997759e11e00c8208c6c800c149260b181af",
+            "blob": "802ed699950e60bab929aba61d6f4448a274f20a",
             "content": "sha256:a5755c08457fba7204c121392c83d69fd73f97df800cd5796fa7e5fdf429b35f",
             "locator": {
               "kind": "symbol",
@@ -544,7 +544,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6fe8997759e11e00c8208c6c800c149260b181af",
+            "blob": "802ed699950e60bab929aba61d6f4448a274f20a",
             "content": "sha256:a78ffd6d3d92c4fb25cbde809372d8d24a0e9affe0645d5d0d9aeb89104c7d50",
             "locator": {
               "kind": "symbol",
@@ -555,12 +555,12 @@
         },
         {
           "anchor": {
-            "blob": "6fe8997759e11e00c8208c6c800c149260b181af",
+            "blob": "802ed699950e60bab929aba61d6f4448a274f20a",
             "content": "sha256:6261ac2793c349868c1f8558ac523024d853f49d9c84738a7e985bd2c48672f4",
             "locator": {
-              "end": 183,
+              "end": 182,
               "kind": "line_range",
-              "start": 161
+              "start": 160
             }
           },
           "kind": "code"
@@ -572,7 +572,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6fe8997759e11e00c8208c6c800c149260b181af",
+            "blob": "802ed699950e60bab929aba61d6f4448a274f20a",
             "content": "sha256:114c7734fd039866458154c2993f9471f0cde61c7e1beff80d8e65761105932b",
             "locator": {
               "kind": "symbol",
@@ -680,7 +680,7 @@
         },
         {
           "anchor": {
-            "blob": "6fe8997759e11e00c8208c6c800c149260b181af",
+            "blob": "802ed699950e60bab929aba61d6f4448a274f20a",
             "content": "sha256:586750be188df447b4edb84a4cadd2919c6b8d639cdbe8fe6f58a01be0b76045",
             "locator": {
               "kind": "symbol",
@@ -723,7 +723,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6fe8997759e11e00c8208c6c800c149260b181af",
+            "blob": "802ed699950e60bab929aba61d6f4448a274f20a",
             "content": "sha256:27502a84ab1a28a5c8ace3d8b4facc50dedf942ad12f1cbdfef928ed528911a5",
             "locator": {
               "kind": "symbol",
@@ -828,7 +828,7 @@
       ]
     },
     "35": {
-      "note": "An unconverted leaf's preview carries no gate verdict.",
+      "note": "Historical pre-cutover unconverted preview omitted a gate verdict. Current ordinary closeout preview refuses legacy-format as knowledge-gate-refused before would-closeout; absence of a converted marker is not a current ungated-preview allowance.",
       "targets": [
         {
           "anchor": {

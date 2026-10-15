@@ -18,7 +18,7 @@ DirectLandingRequest selects the exact canonical leaf and requires its current e
 
 The optional `leaf_id` selects the history owner and participates in the immutable operation input and retry identity; it is distinct from the required canonical `leaf_task_document_ref` and grant. `_direct_landing_after_policy` retains series-contract shape, effective-message normalization, nonblank approval intent and configured contract rereading. The application still owns configured admission and serialized execution. Preview prefers the proven `bound_leaf_id` over the optional caller `leaf_id`. During a live generation, `_select_gated_history` leaves the leaf selector unset while owner enforcement is off, so `direct-landing-input-conflict` retains precedence; a new request cannot evade that conflict through a history-gate refusal.
 
-_verify_code_commit is the verify-existing route: it proves exact local series HEAD/tree and creates no code commit. Create preview binds the exact pair without branch/content publication. Apply checks the previewed tree/checkout, claims only policy-required review, creates a provisional Git object, judges the exact invariant/knowledge pair, persists the accepted input/policy/generation, then journals code intent and publishes/proves the branch output before memory convergence. The thirteen-row census describes those reached checks and the explicitly ruled door/leaf-taskIntent substitutes; it does not run an automatic strict-quality, full-MQC or affected-closure campaign or journal full pre-code verdict results. Before branch publication is the boundary, not before every Git object creation. Canonical leafTaskDocumentRef replaces the direct task-intent binding; hooks are not an added gate.
+_verify_code_commit is the verify-existing route: it proves exact local series HEAD/tree and creates no code commit. Direct-create preview names the code candidate tree/paths and current memory repository/ref facts without branch/content publication; it does not capture the exact MEMORY candidate tree or invoke the pair/cutover gate. Verify-existing preview separately calls `_direct_gate_owner` after proving the supplied code commit. Apply checks the previewed tree/checkout, claims only policy-required review, creates a provisional Git object, judges the exact invariant/knowledge pair, persists the accepted input/policy/generation, then journals code intent and publishes/proves the branch output before memory convergence. The thirteen-row census describes those reached checks and the explicitly ruled door/leaf-taskIntent substitutes; it does not run an automatic strict-quality, full-MQC or affected-closure campaign or journal full pre-code verdict results. Before branch publication is the boundary, not before every Git object creation. Canonical leafTaskDocumentRef binds direct input; provisional code publication now requires its repository hook before CAS.
 
 For apply, `_direct_memory_admission_snapshot` verifies the checked-out memory branch. Real content
 dirt triggers reversible cache preparation before the accepted snapshot is captured; cache-only
@@ -32,15 +32,12 @@ A completed doorless generation retired by its authorized owner stays readable f
 
 ### 260928-MIK-L09 The Mandatory Gate At Direct Landing (MIK-R09 Rule 3)
 
-Direct landing is one of MIK-R09's leaf-publication routes. On converted memory (the layout marker in the checkout's
-working tree or `HEAD`) it gates before admission. Unconverted memory is refused unconditionally by the cutover lock (MIK-R46): `_direct_gate_owner` raises
-`direct-landing-unconverted-memory-locked` in preview and apply before anything is captured.
-The refusal names conversion even when this memory repository holds no converted line.
+Direct landing is one of MIK-R09's leaf-publication routes, but its preview branches are distinct. Verify-existing preview uses `_direct_gate_owner` to capture/judge the converted memory pair and refuses unconverted memory as `direct-landing-unconverted-memory-locked`, naming conversion even when no converted line exists. Apply uses its separate selection, closing and exact-pair judgment before branch publication. Direct-create preview returns from `_direct_create_preview` with code-candidate and memory-ref facts; it does not invoke that memory gate or establish a previewed MEMORY tree/cutover judgment.
 
-- **The gate.** `_direct_gate_owner(contract, code_commit)` probes `checkout_memory_converted`, captures the exact tree
+- **Verify-existing preview gate.** `_direct_gate_owner(contract, code_commit)` probes `checkout_memory_converted`, captures the exact tree
   the memory-content commit would record (`_memory_content_tree`: a private index under the worktree group's
   `reports/`, `MEMORY_CONTENT_EXCLUDES`), and asks `direct_gate_verdict` through the port; any refusal raises
-  `direct-landing-knowledge-gate-refused`. Preview uses the proven canonical `bound_leaf_id` before optional caller `leaf_id`; only when both selectors are absent does legacy selection infer the sole open history owner. A supplied valid identity is not a sole-open inference. Named invalid/foreign owners refuse within the source-selection rules. Apply uses the distinct select → close → judge sequence below.
+  `direct-landing-knowledge-gate-refused`. Verify-existing preview uses the proven canonical `bound_leaf_id` before optional caller `leaf_id`; only when both selectors are absent does legacy selection infer the sole open history owner. A supplied valid identity is not a sole-open inference. Named invalid/foreign owners refuse within the source-selection rules. Apply uses the distinct select → close → judge sequence below.
 - **Apply selection, closing, then judgment.** `_close_gated_leaf` first selects the exact history source through `_select_gated_history`/`direct_gate_source`, then closes that owner's history and captures the retained closed memory snapshot. `direct_gate_verdict` judges that exact closed tree with the selected source; `memory_commit_refusal(..., leaf_publication=True)` validates the same tree against `HEAD`. Any refusal or exception after closing restores the history and cache-ignore bytes. A replay that commits nothing returns no closing and remains bound to its already-paired head tree. Preview judgment and apply's select → close → judge sequence are distinct.
 - **The closing lives until the generation is decided (review R1 F3; R2-2, R2-5; R3-1).** `_start_or_observe_direct_landing`
   first settles the kept closings (`_settle_kept_closing`; an unreadable receipt refuses as
@@ -60,7 +57,7 @@ The refusal names conversion even when this memory repository holds no converted
 
 - The module docstring's gate and closing paragraphs. [1]
 
-- The preview refuses as the apply. [2]
+- Preview and apply share the removed/non-external-mode refusal; direct-create preview does not perform apply's exact memory-pair gate judgment. [2]
 
 
 - Exact in-flight retry reuses the retained record without preparation or admission; other requests prepare and admit, then execution settles receipts. [3]

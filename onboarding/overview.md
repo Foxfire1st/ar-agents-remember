@@ -18,11 +18,11 @@ Resolve the configured repository and its coordination, code, memory, task and t
 
 Retrieve the smallest useful route packet. Generated `overview.index.json` supplies source scope, child routes, covered files, routing terms and hot-path hints. A source absent from its route index skips the sidecar probe but remains readable. Read overview prose when the index is insufficient, then confirm named source anchors. Stop when the packet establishes the responsibility, immediate cause, user consequence and relevant contract; widen only for a named unresolved question.
 
-`read_ar_files` pairs source with deterministic onboarding and the governing overview chain and carries `published_intent`. Taskless reads use the configured canonical memory root. A task-scoped reader instead derives immutable roots from the admitted canonical leaf enclosure: the task reference, repository, enclosure binding, contract identity and directories must agree. Neither root substitutes for the other. Recorded intent names its memory tree, derived index, logical snapshot and code-tree resolution. A legacy-format result names the unconverted tree and conversion route without claiming that knowledge was read. Missing registration or selection is named rather than filled from another repository or snapshot.
+`read_ar_files` names each requested source path's existence, its governing card location (or no card), record counts by state and the ID, kind, state and card heading of records that ask the caller to act. Governing overviews are locations listed once per call, nearest first. It returns no source, card or overview text, no `published_intent`, no session-delivery state and no continuation; callers read the named files with their own tools. Taskless reads use configured repository/memory authority. A task-scoped reader derives roots from the admitted canonical leaf enclosure: task reference, repository, enclosure binding, contract identity and directories must agree; neither root substitutes for the other. Missing or unconverted memory is named and supplies no card rather than being filled from another repository or snapshot.
 
-A converted path read is family-complete: its own invariants and realization/proof entries, containing families and their remaining members, advertised further families, then compact families routed at the file's directory or ancestors. Shared members use reference rows. A path without entries may still receive governing-family rows while stating registration absence. `knowledge_read` can expand those families and reads invariant, family or source-context views from the same memory-tree index. An unchanged repeated paired-read chain row may be shortened to `served_earlier`; `knowledge_read` retains the full row.
+The separate `knowledge_read` source-context selection is family-complete within its declared memory-tree scope: path entries and their invariants, containing families and their remaining members, advertised further families, then the governing route chain. Shared members use reference rows; the current wire projection names records and locations rather than carrying their bodies. `knowledge_read` expands invariant, family and source-context selections from the same derived index with selection-bound continuations. This is not `read_ar_files` body delivery or a `served_earlier` session mechanism.
 
-Knowledge pages share an 8,000 `tiktoken:o200k_base` token threshold. Counts describe the whole selection and the returned and remaining rows. Continue through `knowledge_read` using the memory root, continuation view and token, not the derived-index path. Continuations bind the memory tree, seed, selection policy, manifest, ordering and resolved code tree; mismatches refuse rather than returning a partial page. Deferred seeds preserve the omitted scope, an excessive seed queue requires smaller requests, and a single oversized row is returned whole and flagged. A repository root without a commit and an unresolvable anchor must be named rather than converted into an unobserved absence.
+The separate `knowledge_read` pages share an 8,000 `tiktoken:o200k_base` token threshold. Counts describe the whole selection and the returned and remaining rows. Continue through `knowledge_read` using the memory root, continuation view and token, not the derived-index path. Continuations bind the memory tree, seed, selection policy, manifest, ordering and resolved code tree; mismatches refuse rather than returning a partial page. Deferred seeds preserve the omitted scope, an excessive seed queue requires smaller requests, and a single oversized row is returned whole and flagged. A repository root without a commit and an unresolvable anchor must be named rather than converted into an unobserved absence.
 
 Research that changes no code may finish in chat. Build work belongs to approved durable task topology and the architect plan gate. The requirement corpus precedes task authoring; semantic requirement `ID@version` changes require developer approval. A delivery attempt advances at exact-candidate independent-review handoff or its rejected successor, not on ordinary implementation, test or evidence reruns. Implementation approval and commit approval are separate authorities.
 
@@ -31,6 +31,8 @@ Candidate commands run in the task's own environment built from its frozen lock 
 Curation prepares affected memory before publication. Full contract-scoped MQC publishes the structural census and checklist/attestation; subset/unscoped calls do not acquire that authority. Candidate-pair identity binds roots, branches, bases, contract and onboarding scope, not the disposable ledger. The repair loop reads curatorActionableCount and raw qualityChecklistStatus. When coherence is required, prepare/publish/validate every exact candidate judgment with its evidence and semantic/delivery identities. Before closeout, a non-author second reader checks changed card/sidecar/record statements against final code, history dispositions/effects/reasons against the diff and important omissions, with blocking repairs. This role duty does not invent a transaction-enforced independent-review predicate.
 
 Ordinary onboarding judgment is the latest current source-bound updated/no_impact row for each card and nearest governing overview. Updated also requires authored Markdown or nonmechanical references; realizes/proves alone does not count. Source changes reopen the row, and old sourceless rows answer only from their own closed file. New/newly unlisted live invariants require membership/no_family at current revision; changed surviving base decisions/facets require current record judgment, with newly retired taking retire and changed meaning taking effect. Only an own-open raise with an otherwise status-only mark receives its exception. These distinct domains do not authorize new row kinds through an unsupported producer. L53's amended rule 1 instead credits its own measured changed card under the pre-landing producer, with no changed-card row or future backfill.
+
+L61 ordinary-candidate qualification: a counted changed card still requires its current source-bound onboarding_trace row under the admitted native gate. The L53 exception just named is retained as historical leaf-local rollout accounting; it does not waive L61 rows or permit future backfill.
 
 On converted leaves, the knowledge gate recomputes the worklist and validator against exact code/memory sides. Open items, incomplete inputs and refusing validator violations are repair findings without a waiver. Persisted worklists or their digests do not replace recomputation. The validator's parent-memory comparison makes every record introduced by the leaf subject to new-record admission. Both legacy sides lacking the layout marker yield no converted gate; this local applicability rule does not establish the absence of separate cutover admission elsewhere.
 
@@ -90,7 +92,7 @@ Canonical skills own these duties; the package and eight harness trees propagate
 
 ### Memory-format admission
 
-Legacy memory remains readable through `read_ar_files` (legacy-format cards, no knowledge section) and convertible.
+For unconverted memory, `read_ar_files` names `memoryState="unconverted"` and source existence but supplies no card; it does not deliver legacy-format card bodies. Legacy memory remains convertible.
 Ordinary checks, writes, memory sync, closeout and landing refuse it with the central legacy-format recovery message,
 even when no converted memory exists elsewhere. A root without an attributed baseline converts in place then is
 adopted; an official line makes its first conversion inside a new leaf and lands through the existing validator/gate.
@@ -189,7 +191,7 @@ The retained five-gate memory-certification architecture is distinct from transa
 - Retained reference account (no fresh execution or acceptance inferred): Git attribution is the source of the consumer ledger. [50]
 - Retained reference account (no fresh execution or acceptance inferred): Closeout writes or reuses one memory-content output; on converted memory it first closes the leaf's history file and validates and gates the exact tree. [51]
 - Retained reference account (no fresh execution or acceptance inferred): Integration proves exact memory source ancestry independently of cache rows. [52]
-- Retained reference account (no fresh execution or acceptance inferred): The ordinary paired read carries the published intent block. [61]
+- The registered read_ar_files_tool names cards/overviews and actionable records; it carries no published_intent block. [61]
 - Retained reference account (no fresh execution or acceptance inferred): The converted-card workflow of the `c-05` skill. [67]
 - Retained reference account (no fresh execution or acceptance inferred): The curator role's step for converted memory. [68]
 - Retained reference account (no fresh execution or acceptance inferred): The three attribute entries and their reasons. [69]
@@ -302,9 +304,9 @@ The retained five-gate memory-certification architecture is distinct from transa
 - Retained reference account (no fresh execution or acceptance inferred): Root manifest/journal location authority. [290]
 - Retained reference account (no fresh execution or acceptance inferred): Task-addressed lifecycle controls. [291]
 - Retained reference account (no fresh execution or acceptance inferred): Retained-generation projection derives public legal controls and recovery surfaces without owning evidence. [292]
-- Retained reference account (no fresh execution or acceptance inferred): **The ordinary paired read is the mount point, and the response field the block travels on.** [293]
-- Retained reference account (no fresh execution or acceptance inferred): **The canonical retrieval carrier, whose new section directs a caller to the route.** [294]
-- Retained reference account (no fresh execution or acceptance inferred): **The generated copy of that carrier this package ships, regenerated from the authored source.** [295]
+- Current read_ar_files_tool is a names/locations-only route; the earlier published-intent mount-point account is superseded by L109. [293]
+- The packaged retrieval guidance retains the Published Intent Before Planning heading; that guidance does not establish a published_intent field on the current registered read response. [294]
+- The packaged generated retrieval carrier retains that heading; generated guidance is not the current public read-response schema. [295]
 - Retained reference account (no fresh execution or acceptance inferred): **The case that holds the carrier to the payload's real field spellings, and the constant that reaches the authored skill from the test file.** [296]
 - Retained reference account (no fresh execution or acceptance inferred): The converted-card workflow's opening, in the authored skill copy. [297]
 - Retained reference account (no fresh execution or acceptance inferred): The canonical template's per-target rationale section. [298]
@@ -333,7 +335,7 @@ Historical L111 predecessor account, not the composed R113 roster: - Historical 
 - Final memory certification requires an exact ordered four-gate prefix and exact admitted candidate. [326]
 - Source charters distinguish strict dependency order from future package construction and the named sequencing deviation. [327]
 
-- Landing rows are report-only: no refusing findings/actionable count; unreadable memory-base input is named. [311]
+- Landing rows are report-only: no refusing findings/actionable count; unreadable memory-base input is named. Retrieval guidance names harness-native substrates, while its inherited paired-read published-intent wording is historical and superseded by the current L109 names-only contract; bounded continuations belong to knowledge_read, not read_ar_files. [311]
 - New files outside onboarding/, knowledge/ and system/ are listed with individual sizeBytes and summed bytes. [312]
 - Knowledge authoring is in memory; evidence/working files are outside it, with report/task and scratch custody separated. [314]
 - For every reported cut, the Curator handover names this task change making the text untrue; text is not removed to clear a quality finding. [315]
@@ -342,5 +344,6 @@ Historical L111 predecessor account, not the composed R113 roster: - Historical 
 - Canonical source-bound onboarding and separate row domains. [331]
 - Canonical independent non-author statement/diff/omission duty. [329]
 - Named validator route policies. [330]
+
 
 - The L111 predecessor had41 public names after resolve_context removal; the composed R113 source has40 after dispatch_agent removal, retaining direct_execution_grant, native retire_child and role_start_set; the earlier R11142-name population is historical; response registration and live advertisement must agree with that one declaration. This source count is not fresh live advertisement or acceptance. [332]

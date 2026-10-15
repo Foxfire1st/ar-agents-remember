@@ -50,7 +50,7 @@ find attribution: runtime reads now use the rewritten commit trailers alone.
 
 ### Conventions
 
-Planning is a read-only description; applying it is a separate requested rewrite over named refs.
+Apply requires an injected hook checker for each distinct rewritten tree before target CAS; refusal keeps rescue refs.
 The kernel guarded Git runner carries the explicit input stream and commit identities. The migration
 retains its historical-table `relative` input; runtime `read_ledger_source` no longer has one.
 

@@ -6,7 +6,7 @@
 
 ## Purpose
 
-Tests of the one Git runner in `kernel/git_command.py`: that an exported repository selector cannot
+Tests of the shared Git runners in `kernel/git_command.py`: that an exported repository selector cannot
 redirect a command, that a timeout bounds a stalled command, that the shared blob-read block reads a blob
 from a repository once, that concurrent candidate captures are isolated, and that the private preparation
 of a commit keeps exact state and refuses forged or stale authority.
@@ -33,6 +33,8 @@ of a commit keeps exact state and refuses forged or stale authority.
   tip and rebound private metadata refuse before any mutation; a failed hook returns its own failure and
   is not retried.
 
+Tree publication now runs pre-commit before ref movement and records Commit-Check-Pass. Ref-transaction refusal remains native Git evidence after that check. Message comparison strips only the required pass trailer before comparison with porcelain; it does not assert raw equality of a stamped message to an unstamped argument. Both private preparation policy spellings now exercise ordinary commit hooks; the old strict-code spelling supplies compatibility vocabulary, not a skip.
+
 ## Evidence
 
 - The module docstring: why the redirection tests set the selectors themselves. [10]
@@ -42,3 +44,5 @@ of a commit keeps exact state and refuses forged or stale authority.
 - Concurrent candidate captures are isolated. [14]
 - The private preparation cases. [15]
 - The block under test. [16]
+
+- Tree publication now runs pre-commit before ref movement and records Commit-Check-Pass. Ref-transaction refusal remains native Git evidence after that check. Message comparison strips only the required pass trailer before comparison with porcelain; it does not assert raw equality of a stamped message to an unstamped argument. Both private preparation policy spellings now exercise ordinary commit hooks; the old strict-code spelling supplies compatibility vocabulary, not a skip. [17]

@@ -66,6 +66,22 @@
           "kind": "test"
         }
       ]
+    },
+    "5": {
+      "note": "Closed fixture commits also carry actual-tree Commit-Check-Pass trailers with hook=none. Those trailers are synthetic fixture inputs; their presence is not an executed repository-hook or acceptance result.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e27cb0f4665e4c0a3c09265665f8f078ca242b85",
+            "content": "sha256:72074ef59564f7876078c9cccdd5397989718b3d2f0741923ae1683aa2e6c5cd",
+            "locator": {
+              "kind": "symbol",
+              "name": "_closed_external_leaf_worktrees"
+            }
+          },
+          "kind": "test"
+        }
+      ]
     }
   },
   "schema": "ar-onboarding-file/v1"

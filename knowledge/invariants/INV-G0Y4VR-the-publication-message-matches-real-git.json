@@ -7,7 +7,8 @@
   },
   "applicability": "Publication message cleanup and its refusals.",
   "conditions": [
-    "The repository's configured cleanup mode and comment character apply."
+    "The repository's configured cleanup mode and comment character apply.",
+    "Required Commit-Check-Pass facts are appended separately; porcelain cleanup equality concerns the caller message apart from the required trailer, not raw equality of a stamped commit message with an unstamped argument."
   ],
   "exclusions": [
     "A message file path; the primitive takes one message value."
@@ -24,7 +25,7 @@
     "leaf": "260928-MIK-L26",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-invariant/v1",
   "statement": "The publication message matches real git commit -m cleanup behavior and refuses invalid modes and messages made empty by cleanup.",
   "status": "proposed",

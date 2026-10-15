@@ -28,9 +28,9 @@
     "leaf": "260928-MIK-L153",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-invariant/v1",
-  "statement": "A sync's proof of restored parked work passes for an edit the carried line already holds and fails only when a parked byte is in neither the worktree nor the carried line, over every path the stash holds including entries beyond the journal sample.",
+  "statement": "A sync proves restoration across the complete live recorded stash, including entries beyond the journal sample, by comparing every substantive entry with its computable prescribed native reapply result; already-held edits pass, while mismatch, unreadable inventory and uncomputable expectations fail without sample acceptance.",
   "status": "proposed",
   "supersedes": []
 }

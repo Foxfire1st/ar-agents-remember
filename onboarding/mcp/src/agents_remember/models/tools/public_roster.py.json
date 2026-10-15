@@ -85,15 +85,14 @@
       ]
     },
     "14": {
-      "note": "Current candidate PUBLIC_TOOLS declares 41 unique names after the retained grant addition and resolver removal; this is not runtime list_tools or test execution.",
+      "note": "The current composed PUBLIC_TOOLS declares40 unique names and excludes dispatch_agent and resolve_context. The incoming L10941-name observation belongs to its earlier source epoch, not the current tuple. This is source declaration only, not runtime list_tools or test execution.\n\nAnchor: PUBLIC_TOOLS",
       "targets": [
         {
           "anchor": {
-            "blob": "1fbe0c965d0be4e831a65565045eeeb97bb5cbf2",
-            "content": "sha256:921997a36632d26a2b4aa18106a80154f87807c234c24eb12706e85608bdee16",
+            "blob": "5513557eb2dc04aa2b84f23689eb4e367aad2939",
+            "content": "sha256:5726cbf2def61d536e93fe24332977d81fc1c136503bd693fbe360a9d619d681",
             "locator": {
-              "kind": "symbol",
-              "name": "PUBLIC_TOOLS"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -116,15 +115,14 @@
       ]
     },
     "16": {
-      "note": "Current PUBLIC_TOOLS contains41 unique advertised names, without dispatch_agent; historical73/74 populations and runtime list_tools are separate.",
+      "note": "The current composed PUBLIC_TOOLS declares40 unique names and excludes dispatch_agent and resolve_context. The independent A741-name witness and older73/74 populations remain historical custody only, not this current source census or runtime list_tools.\n\nAnchor: PUBLIC_TOOLS",
       "targets": [
         {
           "anchor": {
-            "blob": "a82ca832eb8b819b042e0d88ab4683da1cf23fc7",
-            "content": "sha256:fc1c14239d8543ffe2bcc2f6561eecf68d388a4e42c60a0a8b01d7dea4972b27",
+            "blob": "5513557eb2dc04aa2b84f23689eb4e367aad2939",
+            "content": "sha256:5726cbf2def61d536e93fe24332977d81fc1c136503bd693fbe360a9d619d681",
             "locator": {
-              "kind": "symbol",
-              "name": "PUBLIC_TOOLS"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -136,12 +134,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1fbe0c965d0be4e831a65565045eeeb97bb5cbf2",
+            "blob": "5513557eb2dc04aa2b84f23689eb4e367aad2939",
             "content": "sha256:5261f1bd25d426960cb7aa279d69e4f5cc4b5c82d338d617a3e656c5c5cb5b35",
             "locator": {
-              "end": 43,
+              "end": 42,
               "kind": "line_range",
-              "start": 43
+              "start": 42
             }
           },
           "kind": "code"
@@ -170,12 +168,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1fbe0c965d0be4e831a65565045eeeb97bb5cbf2",
+            "blob": "5513557eb2dc04aa2b84f23689eb4e367aad2939",
             "content": "sha256:8652b23fc284dc92543c7ef98b222e9bc81a50adde9beaf70c84e827f5f63465",
             "locator": {
-              "end": 67,
+              "end": 66,
               "kind": "line_range",
-              "start": 64
+              "start": 63
             }
           },
           "kind": "code"
@@ -205,7 +203,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7b421d01108b8c585e6a8a446e1723d20cc99d06",
+            "blob": "ffcb9d3a40422681e2f012e763513225ed727137",
             "content": "sha256:2b53233df4625503e4879e38c3fc0c5019bd748a0acc0843a62721ded74b16ca",
             "locator": {
               "kind": "symbol",

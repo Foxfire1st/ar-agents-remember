@@ -6,11 +6,13 @@
     ],
     "justification": "Losing uncommitted parked or owner-written bytes, or retiring their sole restoration authority after a misleading proof, is a plausible costly error; the named transaction witnesses check the obligation before such loss can be accepted."
   },
-  "applicability": "Pre-mutation ownership assessment of sync cancellation on code and memory worktree/index state.",
+  "applicability": "Pre-destructive cancellation assessment and save-first preservation of unattributable code/memory worktree and index state.",
   "conditions": [
     "Worktree bytes alone do not authorize discarding differing index stages.",
     "A crash-window tree earns fingerprints only from exact scratch replay, including converted structural merge, paired code and owner.",
-    "Where ownership cannot be shown, the refusal names unproved paths truthfully and directs resolve-and-continue; it does not invent later-work attribution."
+    "Unproved attribution is named truthfully and saved before cancellation proceeds; neither saved bytes nor a failed proof establish transaction ownership.",
+    "Fresh saves use durable atomic writes and record SHA-256 of the written payload; recovery of prior completed manifests reopens and verifies their named bytes. Fresh-save durability is not an independent reread of every artifact.",
+    "A failed save or discard retains safe recovery state; public cancel retry does not retire the original stash prematurely."
   ],
   "exclusions": [
     "Only the memory-side derived cache is outside substantive work.",
@@ -28,9 +30,9 @@
     "leaf": "260928-MIK-L153",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-invariant/v1",
-  "statement": "Cancel over a tree holding more than the reapplied parked work — same-path conflict edits, index-only bytes, staged markers, retargeted links — refuses before changing anything, names the later-work paths, and tells the owner to save them, cancel, then restore them.",
+  "statement": "Cancellation durably saves later or unproved owner state in product-owned files before discard and rollback; it never blesses that state as transaction output and a save or discard stop retains journal and restoration authority for retry.",
   "status": "proposed",
   "supersedes": []
 }

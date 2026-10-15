@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "75ca33e11666db247224ec34faf6cf9d65e76659",
-        "content": "sha256:d08d103431de4ec8f086858a27fb194f83f58bd71522341f448db21cab1c8ae2",
+        "blob": "4f7ff1db204466d12416d3bb62b1825a0e11ff15",
+        "content": "sha256:2175ea5ef2e1019bafcebc308c353cb0ad75e087c05f3acff2b35e2f79945f8b",
         "locator": {
           "kind": "symbol",
           "name": "record_landing_result"
@@ -21,7 +21,7 @@
     },
     {
       "anchor": {
-        "blob": "75ca33e11666db247224ec34faf6cf9d65e76659",
+        "blob": "4f7ff1db204466d12416d3bb62b1825a0e11ff15",
         "content": "sha256:455130952fa8445077398d7bf51ae2a5d132a0ba5d56b830e0569c1888f109d3",
         "locator": {
           "kind": "symbol",
@@ -39,8 +39,8 @@
     },
     {
       "anchor": {
-        "blob": "75ca33e11666db247224ec34faf6cf9d65e76659",
-        "content": "sha256:d08d103431de4ec8f086858a27fb194f83f58bd71522341f448db21cab1c8ae2",
+        "blob": "4f7ff1db204466d12416d3bb62b1825a0e11ff15",
+        "content": "sha256:2175ea5ef2e1019bafcebc308c353cb0ad75e087c05f3acff2b35e2f79945f8b",
         "locator": {
           "kind": "symbol",
           "name": "record_landing_result"
@@ -52,12 +52,12 @@
         "handoffEntry": "MIK-R52@v1 rule 2 recorded-leaf-landing",
         "leaf": "260928-MIK-L52"
       },
-      "rationale": "The public recorded route; gate then chain, refusals raised naming the cause.",
+      "rationale": "The public recorded route delegates commit/target/gate preconditions to _record_preconditions before dry-run success or recording. Converted leaf judgment and missing-memory-base refusal remain; these precondition failures now return structured refused WorktreeCommandResult values, with the cause preserved, rather than raising them.",
       "role": "unclassified"
     },
     {
       "anchor": {
-        "blob": "75ca33e11666db247224ec34faf6cf9d65e76659",
+        "blob": "4f7ff1db204466d12416d3bb62b1825a0e11ff15",
         "content": "sha256:fa77810c4763bdad630925b17db42d1962c9f5e839a09b5a25fe043d41511f2b",
         "locator": {
           "kind": "symbol",
@@ -70,12 +70,12 @@
         "handoffEntry": "L37-cutover-lock",
         "leaf": "260928-MIK-L37"
       },
-      "rationale": "Recorded landing refuses a missing/legacy candidate before reading landing state; a present converted candidate on a legacy line reaches its own validator.",
+      "rationale": "This helper probes the memory line and supplied candidate, preserves named probe errors, refuses missing/legacy candidates through the central conversion rule, and sends a present converted candidate to the leaf/master validator. It does not establish that the outer record_landing_result has not already read integration status.",
       "role": "enforcement"
     },
     {
       "anchor": {
-        "blob": "75ca33e11666db247224ec34faf6cf9d65e76659",
+        "blob": "4f7ff1db204466d12416d3bb62b1825a0e11ff15",
         "content": "sha256:f613a6a61432a27bece004bb66cd25454ac696b02f272e41fe210b34cd52ca7f",
         "locator": {
           "kind": "symbol",
@@ -98,7 +98,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "75ca33e11666db247224ec34faf6cf9d65e76659",
+            "blob": "4f7ff1db204466d12416d3bb62b1825a0e11ff15",
             "content": "sha256:78b0f2b0eafce3df121a726bca9004428d02ce72efbb9e8ad69b222624d7a0e8",
             "locator": {
               "end": 28,
@@ -181,11 +181,13 @@
       ]
     },
     "14": {
-      "note": "The PR landing-tail recording step in operator doctrine. (`worktree_record_landing`)\n\nAnchor: `worktree_record_landing`",
+      "note": "The PR landing-tail recording step in operator doctrine, a verified local memory document rather than a code-source anchor.\n\nAnchor: `worktree_record_landing`",
       "targets": [
         {
-          "kind": "unresolved",
-          "text": "system/git-workflow.md:50-50"
+          "document": {
+            "document": "file:///home/firefox/projects/ar-coordination/worktrees/agents-remember/61_the-landing-chain-and-managed-sync-ar/memory-61_the-landing-chain-and-managed-sync/system/git-workflow.md"
+          },
+          "kind": "external"
         }
       ]
     },
@@ -244,7 +246,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "75ca33e11666db247224ec34faf6cf9d65e76659",
+            "blob": "4f7ff1db204466d12416d3bb62b1825a0e11ff15",
             "content": "sha256:f613a6a61432a27bece004bb66cd25454ac696b02f272e41fe210b34cd52ca7f",
             "locator": {
               "kind": "symbol",
@@ -260,7 +262,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "75ca33e11666db247224ec34faf6cf9d65e76659",
+            "blob": "4f7ff1db204466d12416d3bb62b1825a0e11ff15",
             "content": "sha256:6edb891f498478825ee6f4dae434bdf0e06bf5f2957162656c61eda1ba855855",
             "locator": {
               "kind": "symbol",
@@ -282,7 +284,7 @@
         },
         {
           "anchor": {
-            "blob": "75ca33e11666db247224ec34faf6cf9d65e76659",
+            "blob": "4f7ff1db204466d12416d3bb62b1825a0e11ff15",
             "content": "sha256:a1b596b6f0429719e7b4397794458ef506cbb5acb0fd7b2bedaa4a15628afefa",
             "locator": {
               "kind": "symbol",
@@ -309,7 +311,7 @@
         },
         {
           "anchor": {
-            "blob": "75ca33e11666db247224ec34faf6cf9d65e76659",
+            "blob": "4f7ff1db204466d12416d3bb62b1825a0e11ff15",
             "content": "sha256:8f22be077df113664044ec0008c38deb3b0d46fe6fa096f99295a2f0a1b98fbe",
             "locator": {
               "kind": "symbol",

@@ -5089,7 +5089,7 @@
       ]
     },
     "1718": {
-      "note": "Source cases separate named renames, copies, Git metadata, full-removal threshold and proven/unproven absence.\n\nAnchor: rename, linked-worktree and removed-card controls\n\nThe design note's 1,000/150 figures differ from present executable budgets.",
+      "note": "Source cases separate named renames, copies, Git metadata, full-removal threshold and proven/unproven absence.\n\nAnchor: rename, linked-worktree and removed-card controls\n\nThe design note's earlier 1,000/150 figures are historical; the frozen current document agrees with the executable 5,000/1,000 budgets.",
       "targets": [
         {
           "anchor": {
@@ -6029,7 +6029,7 @@
       ]
     },
     "3": {
-      "note": "The isolation of the pytest process and the two registered plugins.",
+      "note": "The isolation of the pytest process and three registered plugins: pytest bootstrap, evidence lanes and database retirement guard. The older two-plugin account is historical.",
       "targets": [
         {
           "anchor": {

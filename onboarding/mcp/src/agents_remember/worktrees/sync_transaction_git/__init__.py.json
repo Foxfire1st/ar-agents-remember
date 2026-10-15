@@ -1,0 +1,22 @@
+{
+  "path": "mcp/src/agents_remember/worktrees/sync_transaction_git/__init__.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Compatibility exports have qualified implementation owners.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fe8ae45e9e3fbc1e89557feb17c3fc169dfe5acf",
+            "content": "sha256:8dba7f1cd88de2c9a774160d75b0247706c0c8671ed21143fe10f86cdfae218b",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

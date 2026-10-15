@@ -116,7 +116,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a03f9e4b185b19c09abce87ae791422ad8e665f4",
+            "blob": "41db3716b23381031652f8b7cd0c880963faafc8",
             "content": "sha256:8f6996c17d11971112ef6181192b87e25f773050c0e11867cc3fff5ea8bc4ffe",
             "locator": {
               "end": 37,
@@ -134,7 +134,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a03f9e4b185b19c09abce87ae791422ad8e665f4",
+            "blob": "41db3716b23381031652f8b7cd0c880963faafc8",
             "content": "sha256:873e75070d7809267b0b9c5d940872fdb8495c4adacf8bed518cbb80677f0337",
             "locator": {
               "end": 22,
@@ -147,7 +147,7 @@
         },
         {
           "anchor": {
-            "blob": "a03f9e4b185b19c09abce87ae791422ad8e665f4",
+            "blob": "41db3716b23381031652f8b7cd0c880963faafc8",
             "content": "sha256:1e2783a702d8cd01c815d9d71841044bcad47ad69b29fdb5388421fcbc429f95",
             "locator": {
               "end": 27,
@@ -403,15 +403,14 @@
       ]
     },
     "29": {
-      "note": "Current 41-name roster membership.",
+      "note": "Current composed PUBLIC_TOOLS declares40 names; the41-name predecessor membership is historical. This is source declaration only, not runtime advertisement or execution.\n\nAnchor: PUBLIC_TOOLS",
       "targets": [
         {
           "anchor": {
-            "blob": "52ac6ed1143d6473be3aef2aac53917a06eb4f42",
-            "content": "sha256:ed72a60cf69d1e783ee0bc5eeafa0871d93a819f9892d0d24cb3fbfcd0ebd460",
+            "blob": "5513557eb2dc04aa2b84f23689eb4e367aad2939",
+            "content": "sha256:5726cbf2def61d536e93fe24332977d81fc1c136503bd693fbe360a9d619d681",
             "locator": {
-              "kind": "symbol",
-              "name": "PUBLIC_TOOLS"
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/models/tools/public_roster.py"
           },
@@ -576,7 +575,7 @@
         },
         {
           "anchor": {
-            "blob": "a6c21d36a00325c697b486a47f997702d4973c0d",
+            "blob": "43107e8bb7c9c53fcef14d1304202fc633e22297",
             "content": "sha256:28565e891ca67b1483c64db677e32e2112b4454130c76fc29db51bf18a1951b2",
             "locator": {
               "kind": "symbol",
@@ -666,12 +665,12 @@
       ]
     },
     "38": {
-      "note": "The current literal public roster has42 names. Family registrars keep their existing request/response/application owners while using compact descriptions and docs/reference/mcp-tools.md for the longer account. Task write operations accept forwarded fields_file/section_body_file inputs; removed reads guide canonical file reading. Sync accepts the exact continue/cancel action, not a knowledge_resolution input; memory content resolution remains file-authored and staged under its transaction owner. Reachable task-state refusals and role outcomes are bounded answers, not new authority from a docstring or a finished tool turn.",
+      "note": "The L111 predecessor declared41 public names after L109 removed resolve_context (earlier42 was historical); the composed R113 source has40 after dispatch_agent removal. Family registrars keep their existing request/response/application owners while using compact descriptions and docs/reference/mcp-tools.md for the longer account. Task write operations accept forwarded fields_file/section_body_file inputs; removed reads guide canonical file reading. Sync accepts the exact continue/cancel action, not a knowledge_resolution input; memory content resolution remains file-authored and staged under its transaction owner. Reachable task-state refusals and role outcomes are bounded answers, not new authority from a docstring or a finished tool turn. Source declaration only; no live advertisement, execution or acceptance is inferred.",
       "targets": [
         {
           "anchor": {
-            "blob": "7adebce1927792005324013f15696b8a2f69d12e",
-            "content": "sha256:2a2bcdd90754efcc593791922fc2b037fb304b84e2a4fa6b68f6d25ac44275ac",
+            "blob": "5513557eb2dc04aa2b84f23689eb4e367aad2939",
+            "content": "sha256:5726cbf2def61d536e93fe24332977d81fc1c136503bd693fbe360a9d619d681",
             "locator": {
               "kind": "file"
             },
@@ -681,8 +680,8 @@
         },
         {
           "anchor": {
-            "blob": "77997c190e94b5136fe35a0064fcadff62345fbd",
-            "content": "sha256:c207544ed56e11a3ae8fbbb50a5a53cbbcb685dddfde211310bb8c19ec540d4f",
+            "blob": "43107e8bb7c9c53fcef14d1304202fc633e22297",
+            "content": "sha256:ee2a4b0d6ad94a6e9287b81421dbef5588cbd8f0cfa68dc0fb328fb0c15a09cd",
             "locator": {
               "kind": "file"
             },
@@ -692,8 +691,8 @@
         },
         {
           "anchor": {
-            "blob": "4535b29be845a12a0c73c33058d1c990bac581ad",
-            "content": "sha256:857c08c50d7c4f6984bbe7f8eacbecd38af1493b334dd36c5fe3e4713e2e3b73",
+            "blob": "41db3716b23381031652f8b7cd0c880963faafc8",
+            "content": "sha256:74e535eaed1b9a7711d338327741347a977a452a7949728171c538b1c7b853f2",
             "locator": {
               "kind": "file"
             },
@@ -714,8 +713,8 @@
         },
         {
           "anchor": {
-            "blob": "9889d6afc13f67330d10fec8940800fbd002f1bb",
-            "content": "sha256:038244bfacd5f84c0ca1689249d36257c5e28cae0af72815ad027ec7bc752acd",
+            "blob": "b46242836beae1dc5e215f8de325f7ab21c51733",
+            "content": "sha256:80802c799a1fa45219e6805c273c93d3e45e10591c5cdbe7fa8fc171b91c33eb",
             "locator": {
               "kind": "file"
             },

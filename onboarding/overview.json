@@ -374,7 +374,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "08655e091afbefb7cd059fc17a5ffb9fd9991d36",
+            "blob": "b3c14f345cc4ad43e07c0d782328e7e381496691",
             "content": "sha256:ccba9d0b6b768614d7f5c1fc35d1d2b82d509157ec7803f38873ec29dbfeaa2a",
             "locator": {
               "kind": "symbol",
@@ -1692,7 +1692,7 @@
       ]
     },
     "293": {
-      "note": "**The ordinary paired read is the mount point, and the response field the block travels on.**",
+      "note": "Current read_ar_files_tool is a names/locations-only route; the earlier published-intent mount-point account is superseded by L109.",
       "targets": [
         {
           "anchor": {
@@ -1709,7 +1709,7 @@
       ]
     },
     "294": {
-      "note": "**The canonical retrieval carrier, whose new section directs a caller to the route.**\n\nAnchor: `## Published Intent Before Planning`",
+      "note": "The packaged retrieval guidance retains the Published Intent Before Planning heading; that guidance does not establish a published_intent field on the current registered read response.",
       "targets": [
         {
           "anchor": {
@@ -1727,7 +1727,7 @@
       ]
     },
     "295": {
-      "note": "**The generated copy of that carrier this package ships, regenerated from the authored source.**\n\nAnchor: `## Published Intent Before Planning`",
+      "note": "The packaged generated retrieval carrier retains that heading; generated guidance is not the current public read-response schema.",
       "targets": [
         {
           "anchor": {
@@ -1745,7 +1745,7 @@
       ]
     },
     "296": {
-      "note": "**The case that holds the carrier to the payload's real field spellings, and the constant that reaches the authored skill from the test file.**",
+      "note": "Historical pre-L109 carrier/payload-spelling case and canonical-skill pointer. It does not establish a published_intent field on the current registered names-only read response.",
       "targets": [
         {
           "anchor": {
@@ -2038,7 +2038,7 @@
       ]
     },
     "311": {
-      "note": "Landing rows are report-only: no refusing findings/actionable count; unreadable memory-base input is named.\n\nAnchor: check_landing_report\n\nRetrieval now uses harness-native semantics/relationships; paired reads carry scoped published intent and bounded continuations.\n\nAnchor: Retrieval substrates and published-intent carrier",
+      "note": "Landing rows are report-only: no refusing findings/actionable count; unreadable memory-base input is named. Retrieval guidance names harness-native substrates, while its inherited paired-read published-intent wording is historical and superseded by the current L109 names-only contract; bounded continuations belong to knowledge_read, not read_ar_files.",
       "targets": [
         {
           "anchor": {
@@ -2505,12 +2505,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "cd35c66bb9c9d8af0f23fd2579f5e610cf4ee8da",
+            "blob": "cb96525be294896525624afef669abf8fd942413",
             "content": "sha256:b344ad01251b5c2a7a392f415aef4c0dfec5822d46dbf58007b94725f0252e88",
             "locator": {
-              "end": 180,
+              "end": 184,
               "kind": "line_range",
-              "start": 142
+              "start": 146
             },
             "path": "mcp/src/agents_remember/kernel/git_command.py"
           },
@@ -2729,12 +2729,12 @@
       ]
     },
     "332": {
-      "note": "The current literal roster has42 public names, including direct_execution_grant as well as native retire_child and role_start_set; response registration and live advertisement must agree with that one declaration. This source count is not fresh live advertisement or acceptance.",
+      "note": "The L111 predecessor had41 public names after resolve_context removal; the composed R113 source has40 after dispatch_agent removal, retaining direct_execution_grant, native retire_child and role_start_set; the earlier R11142-name population is historical; response registration and live advertisement must agree with that one declaration. This source count is not fresh live advertisement or acceptance.",
       "targets": [
         {
           "anchor": {
-            "blob": "7adebce1927792005324013f15696b8a2f69d12e",
-            "content": "sha256:2a2bcdd90754efcc593791922fc2b037fb304b84e2a4fa6b68f6d25ac44275ac",
+            "blob": "5513557eb2dc04aa2b84f23689eb4e367aad2939",
+            "content": "sha256:5726cbf2def61d536e93fe24332977d81fc1c136503bd693fbe360a9d619d681",
             "locator": {
               "kind": "file"
             },
@@ -3059,7 +3059,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "13a3397260777a0db5b7bf2d2854037b42f8f18b",
+            "blob": "e45cbd6127d560f2f834a2b326c1f9a481c697ac",
             "content": "sha256:ef564c710b907427001e9603a40253491e4142e02a3a221ae967282adf1b550c",
             "locator": {
               "kind": "symbol",
@@ -3090,7 +3090,7 @@
       ]
     },
     "61": {
-      "note": "The ordinary paired read carries the published intent block.",
+      "note": "The registered read_ar_files_tool names cards/overviews and actionable records; it carries no published_intent block.",
       "targets": [
         {
           "anchor": {
@@ -3442,7 +3442,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d60d63734a0c1c9069c81623632fc774c2e6e125",
+            "blob": "91a01a2974b9040584ef83b4c6202d0ab8d5305f",
             "content": "sha256:9870afeebbc17ba8d42b43355df0733ba20f2e1b8edeab0ed21eb1f7855e449f",
             "locator": {
               "end": 15,
@@ -3455,7 +3455,7 @@
         },
         {
           "anchor": {
-            "blob": "d60d63734a0c1c9069c81623632fc774c2e6e125",
+            "blob": "91a01a2974b9040584ef83b4c6202d0ab8d5305f",
             "content": "sha256:3b514cfb3c68949d1e6d0573e52c68270da03fccbab4b2cbd35a86d33c170f22",
             "locator": {
               "end": 108,
@@ -3544,7 +3544,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "586e4067c8886bf8bd90489953714e07ab61b24f",
+            "blob": "139e72daac45a29a37bf8bb858714cee8ba9f8b5",
             "content": "sha256:3b0c228ab352698cf746ed3ee50615da3a505370ac106c479079610e6fa0d5be",
             "locator": {
               "kind": "symbol",
@@ -3607,7 +3607,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "30300016e97145717041d5a3b357267958b6bee5",
+            "blob": "04e020ffeeb2e4b9da4fb8122f6fb0ec7d68b301",
             "content": "sha256:486ac4704274ab0dc4c8466c607ce5e8f4b4e771a68afc2b4691c87fc62ea68b",
             "locator": {
               "kind": "symbol",
@@ -3678,7 +3678,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "51f3efd84d8b158c64a47ee0b4e18ed47338d050",
+            "blob": "cbf0b996bdf7589d2f43a62d5dfce89a2fbea2d0",
             "content": "sha256:a5d655ebf704827e586fa3e9600ee8a602dbbe9434637cd67d5caeb81ee94732",
             "locator": {
               "kind": "symbol",

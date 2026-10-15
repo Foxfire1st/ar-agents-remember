@@ -39,6 +39,8 @@
 
 Resolved: MIK-R09's routes have their own refusal tests, each entered through the route's public entry point (`test_knowledge_gate_routes.py`, `test_knowledge_closeout_gate.py`); the sync-merge cases are here.
 
+Incoming converted-memory fast-forwards now have their own refusal-before-ref-movement cases. Structured refusal preserves per-path/rule violations and the full total while bounding the displayed list; repair clears the stored refusal. Text-only fallback remains a distinct case, not proof of structured validator output.
+
 ## Evidence
 
 ### Docs References
@@ -69,3 +71,5 @@ No cross-repo boundary is crossed by this file.
 
 - Standalone source assertions: based fixture pass with carried legacy report, baseless malformed-marker JSON refusal with both reportOnly flags False, out-of-scope and unreadable-input exits. [4]
 - Current source delta inspected statically: Distinguish the based pass from baseless JSON refusal and repair the stale legacy reportOnly=True caption; retain sync/publication and reader-boundary accounts. [7]
+
+- Incoming converted-memory fast-forwards now have their own refusal-before-ref-movement cases. Structured refusal preserves per-path/rule violations and the full total while bounding the displayed list; repair clears the stored refusal. Text-only fallback remains a distinct case, not proof of structured validator output. [8]

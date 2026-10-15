@@ -26,7 +26,7 @@ open `leaf-1` history with a `no_impact` row for `onboarding:feature.py`;
 and binds the actual source path/blob in that row before public closeout; the branch/head
 disturbance scenario replaces `leaf_gate_refusal` with an injection seam. Public closeout begins with malformed cache text and must create exactly one code commit and one memory commit; recovery begins with a missing cache, interrupts after code publication, rejects a wrong recovery code identity, and resumes without another code commit.
 
-Configured failing pre-commit hooks are probed to prove they work, then the transaction scenarios assert no hook log. `_assert_memory_attribution` checks the exact memory message and both native trailer readers, and verifies memory.md is absent from the memory-content commit. The resulting cache is present and untracked; retired ledger result fields are absent. Integration still publishes exact refs and refuses a moved source before pair publication.
+Configured failing pre-commit hooks are probed to prove they work, Failing hooks refuse with both heads unchanged; passing code/memory hooks each log one run. Memory message has one Code-Commit and one tree-bound Commit-Check-Pass. `_assert_memory_attribution` checks the exact memory message and both native trailer readers, and verifies memory.md is absent from the memory-content commit. The resulting cache is present and untracked; retired ledger result fields are absent. Integration still publishes exact refs and refuses a moved source before pair publication.
 
 The sync/recloseout case passes the accepted code commit to _commit_memory_content and proves an unchanged memory candidate reuses the actual merged head. The final two cache tests derive canonical data from Git, keep an already-correct cache unchanged, recreate a missing cache, and repair malformed, forged, reordered, or header-inconsistent text. They compare refs and all commit objects in both repositories and preserve real file bytes and clean content state.
 
@@ -43,7 +43,7 @@ post-judgment race. These are explicit fixture boundaries, not unmocked acceptan
 - Recovery retains exact code identity and one real memory output.
 - Both Git trailer readers see the attribution, while the committed tree contains no memory cache.
 - Cache rebuilds change no refs, commit objects, or substantive content.
-- Hook non-invocation applies to the installed scenario hooks, not arbitrary unrelated commands.
+Named acceptance tools remain forbidden; repository pre-commit hooks run and are asserted.
 
 ### Todos
 
@@ -66,7 +66,7 @@ The operation and fixture boundaries described here are defined by same-reposito
 
 ## 260918-TSIP-L6 The Closed Payload's Own Address, Driven End To End
 
-The historical L6 addition is still present at current line 703 inside
+The historical L6 assertion remains in the test symbol
 `test_public_closeout_commits_code_and_memory_without_acceptance_tools`: the applied closeout
 payload's `contractPath` must equal `contract.contract_path.as_posix()`. It is the **producer
 half** of `260918-TSIP` `T54` — `status_payload` emits the snake_case `contract_path`, while the

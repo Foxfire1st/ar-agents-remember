@@ -14,7 +14,7 @@ cosmetic, because the cell is what `worktree_cleanup` requires before it retires
 the series abandon guard reads before it lets a master's integration branch go. A PR-merged master
 therefore looked exactly like a master whose work had never left it.
 
-It is `worktree_record_landing`'s domain half, reached through the MCP tool of that name.
+Successful PR recording adds emptyLanding=true for a pair equal to recorded bases; it publishes no Git commits.
 
 ## Code Commentary
 
@@ -169,7 +169,9 @@ The following current source boundaries establish the ledger-retirement behavior
 
 - The application-layer entry point that confines the contract and builds the arguments. (`worktree_record_landing_tool`) [13]
 
-- The PR landing-tail recording step in operator doctrine. (`worktree_record_landing`) [14]
+
+- The PR landing-tail recording step in operator doctrine, a verified local memory document rather than a code-source anchor. [14]
+
 
 
 - Unconverted memory: the lock decides, before a memory commit is required. [15]

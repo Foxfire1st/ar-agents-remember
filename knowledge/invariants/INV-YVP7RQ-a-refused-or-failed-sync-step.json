@@ -6,9 +6,9 @@
     ],
     "justification": "Losing uncommitted parked or owner-written bytes, or retiring their sole restoration authority after a misleading proof, is a plausible costly error; the named transaction witnesses check the obligation before such loss can be accepted."
   },
-  "applicability": "Refused restoration or cancellation steps in the durable sync generation.",
+  "applicability": "Truthful durable sync-step progress and repeatable recovery, including successful save-first cancellation and retained save/discard stops.",
   "conditions": [
-    "Cancellation assesses every side before moving the record to cancelling.",
+    "Cancellation prechecks and assesses participating sides, verifies prior completed manifests, and durably writes fresh saved state before destructive discard and the transition to cancelling.",
     "Restoration marks only proved content as restored and keeps stash authority until the transaction is terminal."
   ],
   "exclusions": [
@@ -26,7 +26,7 @@
     "leaf": "260928-MIK-L153",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-invariant/v1",
   "statement": "A refused or failed sync step leaves the record's phase and parked-work state describing the tree and stash, and a repeated call answers the same.",
   "status": "proposed",

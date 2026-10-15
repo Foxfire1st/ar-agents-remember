@@ -1,0 +1,170 @@
+{
+  "path": "mcp/src/agents_remember/worktrees/modules/landing_commit_check.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "ebf4854149ae9822d88517dbd7c08e065d6d3afd",
+        "content": "sha256:384628672694f66ba4179c87d7896a820fbdc3b50276ad7220a5da0a891dde49",
+        "locator": {
+          "kind": "symbol",
+          "name": "run_landing_commit_check"
+        }
+      },
+      "id": "RLZ-NKKQHN",
+      "invariant": "INV-2Q8RPR",
+      "origin": {
+        "handoffEntry": "L61-R152-check-runner",
+        "leaf": "260928-MIK-L61"
+      },
+      "rationale": "Runs the actual repository pre-commit hook on the exact staged tree, bounds execution/output, rejects unrunnable, failed or tracked/index-mutating checks and records the tree-bound fact.",
+      "role": "primary-authority"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "resolve_commit_check_hook: qualified source contract.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ebf4854149ae9822d88517dbd7c08e065d6d3afd",
+            "content": "sha256:dc57df3e14c29af468bfd58a4235c6229de499de4bc8827a1ad552a7c40a426a",
+            "locator": {
+              "kind": "symbol",
+              "name": "resolve_commit_check_hook"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "run_landing_commit_check: qualified source contract.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ebf4854149ae9822d88517dbd7c08e065d6d3afd",
+            "content": "sha256:384628672694f66ba4179c87d7896a820fbdc3b50276ad7220a5da0a891dde49",
+            "locator": {
+              "kind": "symbol",
+              "name": "run_landing_commit_check"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "run_landing_commit_check_on_index: qualified source contract.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ebf4854149ae9822d88517dbd7c08e065d6d3afd",
+            "content": "sha256:3af2a137c97ad5ce65d93a21a8edde41008a966ac393a1832011157b1b29bedd",
+            "locator": {
+              "kind": "symbol",
+              "name": "run_landing_commit_check_on_index"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "commit_check_timeout_seconds: qualified source contract.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ebf4854149ae9822d88517dbd7c08e065d6d3afd",
+            "content": "sha256:b86ffc10e9d41a7e52a84a3d8a1d05ed38bf1d24fc660b182602d26f52b78fba",
+            "locator": {
+              "kind": "symbol",
+              "name": "commit_check_timeout_seconds"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "commit_check_trailer: qualified source contract.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ebf4854149ae9822d88517dbd7c08e065d6d3afd",
+            "content": "sha256:01dc94ae7f33429ff9ef665247bccff4a5aceb4c1b6b1f8c7a0f369e67fd1353",
+            "locator": {
+              "kind": "symbol",
+              "name": "commit_check_trailer"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "commit_check_fact: qualified source contract.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ebf4854149ae9822d88517dbd7c08e065d6d3afd",
+            "content": "sha256:000a88edd6aa461f90731be7829077f0579f96981adedde65e2863d2f87e2e49",
+            "locator": {
+              "kind": "symbol",
+              "name": "commit_check_fact"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "check_published_tree: qualified source contract.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ebf4854149ae9822d88517dbd7c08e065d6d3afd",
+            "content": "sha256:6295c7f5990827901ddc6be63a715497af6d4802702d941af2134ab0d65d2937",
+            "locator": {
+              "kind": "symbol",
+              "name": "check_published_tree"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "_run_hook_to_log: qualified source contract.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ebf4854149ae9822d88517dbd7c08e065d6d3afd",
+            "content": "sha256:b0a56c440e0b1b196d7d40f5793bc4e418f1b9688c4e470a5790b357192d1481",
+            "locator": {
+              "kind": "symbol",
+              "name": "_run_hook_to_log"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "_stop_escaped_pipe_holders: qualified source contract.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ebf4854149ae9822d88517dbd7c08e065d6d3afd",
+            "content": "sha256:27253d94a39706360d06a89a92bb47382048e8319300f55ca2e2247f72206646",
+            "locator": {
+              "kind": "symbol",
+              "name": "_stop_escaped_pipe_holders"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

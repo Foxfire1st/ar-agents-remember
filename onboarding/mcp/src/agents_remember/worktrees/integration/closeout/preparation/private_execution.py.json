@@ -1,13 +1,32 @@
 {
   "path": "mcp/src/agents_remember/worktrees/integration/closeout/preparation/private_execution.py",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "5f3c4048eb7bbe423bee92f829412cdc20271e1a",
+        "content": "sha256:c7aa41e3dacd3d58e3f12b499e65f947447073b014dec5e81a8fca952f962821",
+        "locator": {
+          "kind": "symbol",
+          "name": "_commit_prepared_leg"
+        }
+      },
+      "id": "RLZ-EA9N3M",
+      "invariant": "INV-2Q8RPR",
+      "origin": {
+        "handoffEntry": "L61-R152-prepared-legs",
+        "leaf": "260928-MIK-L61"
+      },
+      "rationale": "Both prepared legs invoke ordinary git commit with repository-hook admission, refuse unrunnable hooks and retain mutation/output recovery boundaries.",
+      "role": "enforcement"
+    }
+  ],
   "references": {
     "1": {
       "note": "The selected leg must still match the retained intent.",
       "targets": [
         {
           "anchor": {
-            "blob": "a59d02db1c5ca6d3db2a8c3faa5394fa6e06251a",
+            "blob": "5f3c4048eb7bbe423bee92f829412cdc20271e1a",
             "content": "sha256:0c2998762a6b6a6785b082622e89b1ec5c3e5d9fcca4f16eab46da046ada4ea5",
             "locator": {
               "kind": "symbol",
@@ -23,7 +42,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a59d02db1c5ca6d3db2a8c3faa5394fa6e06251a",
+            "blob": "5f3c4048eb7bbe423bee92f829412cdc20271e1a",
             "content": "sha256:0c12e9f239a3660dfb7329044e66e1f1c03a068a8927fbfba164a2b4be2237e3",
             "locator": {
               "kind": "symbol",
@@ -39,7 +58,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a59d02db1c5ca6d3db2a8c3faa5394fa6e06251a",
+            "blob": "5f3c4048eb7bbe423bee92f829412cdc20271e1a",
             "content": "sha256:cc588e5aa95fda0875d4cdb8ebe2cee011c54a5225a033439bb5f25e2cfcf409",
             "locator": {
               "kind": "symbol",
@@ -66,7 +85,7 @@
         },
         {
           "anchor": {
-            "blob": "a59d02db1c5ca6d3db2a8c3faa5394fa6e06251a",
+            "blob": "5f3c4048eb7bbe423bee92f829412cdc20271e1a",
             "content": "sha256:97bd219bdd1bdb6cef844560d95408e21c67a992c238ba3977fb23486c81171e",
             "locator": {
               "kind": "symbol",
@@ -82,7 +101,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a59d02db1c5ca6d3db2a8c3faa5394fa6e06251a",
+            "blob": "5f3c4048eb7bbe423bee92f829412cdc20271e1a",
             "content": "sha256:e554a9c7c18ba895054939bc9e94ea3015a60b346bb863d47aaf5ab2cbf1f78f",
             "locator": {
               "kind": "symbol",
@@ -98,7 +117,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a59d02db1c5ca6d3db2a8c3faa5394fa6e06251a",
+            "blob": "5f3c4048eb7bbe423bee92f829412cdc20271e1a",
             "content": "sha256:0b9f80b06f294866fe06688682d02338156de599f6a6a4ac52b6e58c6f04ad51",
             "locator": {
               "kind": "symbol",
@@ -114,7 +133,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "41c08cf71950d410e4897d54881cfca9ed1909f3",
+            "blob": "77972b64c78fef09a6efe258c3e4b5c5b4485328",
             "content": "sha256:0051d8016387db160b7800ed421e521a66da481f31d1c7a701f1909510b950a1",
             "locator": {
               "kind": "symbol",
@@ -126,7 +145,7 @@
         },
         {
           "anchor": {
-            "blob": "41c08cf71950d410e4897d54881cfca9ed1909f3",
+            "blob": "77972b64c78fef09a6efe258c3e4b5c5b4485328",
             "content": "sha256:a6cf5562d10452b2f9419bef1d6962297a8e7be44aa6083789db7a2895c6cc8a",
             "locator": {
               "kind": "symbol",

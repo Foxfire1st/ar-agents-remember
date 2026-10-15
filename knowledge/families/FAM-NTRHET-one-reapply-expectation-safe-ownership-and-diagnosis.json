@@ -5,7 +5,7 @@
     ],
     "justification": "Exact output alone is insufficient without the actual context, byte-preserving index comparison and truthful failure/refusal; together the six obligations prevent false restore acceptance from becoming destructive cancellation."
   },
-  "guarantee": "For a required regular-path native reapply merge, restoration and cancellation use one carried-first result from the effective reapply worktree and carried-head attributes, preserve binary staged bytes in independent ownership checks, reject a distinct alternative result, and retain authority with a named non-mutating refusal when required acquisition or expected bytes cannot be proved. Separate raw-holder/fingerprint ownership remains narrower and grants no fallback restoration acceptance.",
+  "guarantee": "For a required native reapply merge, restoration uses one carried-first result computed with the actual reapply worktree configuration and carried-head attributes, comparing exact bytes (including admitted rename targets). Cancellation keeps binary index ownership independent of worktree equality and does not own a distinct alternative result or unavailable native expectation. Failed required acquisition remains a restoration failure with no alternative construction; at an admitted cancellation stop, unattributable bytes are saved before discard and rollback, the captured native fault is retained, the original parked state is restored and only the recorded stash retires at terminal recovery. A save/discard stop retains recovery authority. Exact raw-holder and retained-fingerprint ownership remain separately scoped and grant no fallback restoration acceptance. Restoration native-reason disclosure remains bounded to its named-path recomputation; foreign history or missing authority retain separate refusal boundaries.",
   "id": "FAM-NTRHET",
   "members": [
     "INV-0HTVY3",
@@ -23,7 +23,7 @@
     "leaf": "260928-MIK-L163",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "routes": [
     "mcp/src/agents_remember/worktrees"
   ],

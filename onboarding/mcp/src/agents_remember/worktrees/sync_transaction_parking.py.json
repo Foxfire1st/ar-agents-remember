@@ -1,0 +1,71 @@
+{
+  "path": "mcp/src/agents_remember/worktrees/sync_transaction_parking.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "orphaned_cancel_record: qualified source contract.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "339d5a7883c1d49ac0d57817e99b219a42a53d1d",
+            "content": "sha256:76ab4a8886807e42d995572da97cdc50ba79e3ca74c7a86c98888ea9d8b10aa8",
+            "locator": {
+              "kind": "symbol",
+              "name": "orphaned_cancel_record"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "_orphaned_park_stashes: qualified source contract.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "339d5a7883c1d49ac0d57817e99b219a42a53d1d",
+            "content": "sha256:c2710a614801f9ffc0d2bd438e294a24b5e7d57ac01ebc0d0821308c414f44f9",
+            "locator": {
+              "kind": "symbol",
+              "name": "_orphaned_park_stashes"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "_adopt_orphaned_park: qualified source contract.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "339d5a7883c1d49ac0d57817e99b219a42a53d1d",
+            "content": "sha256:b448901aee40e257d47a20b99d93bbb512e7994141024dae4960b63648743da3",
+            "locator": {
+              "kind": "symbol",
+              "name": "_adopt_orphaned_park"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "_refuse_orphaned_park: qualified source contract.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "339d5a7883c1d49ac0d57817e99b219a42a53d1d",
+            "content": "sha256:319c4bd3cb6a3681ceac19f292e1538ff5bd5fde5e96459914add45bbca58cae",
+            "locator": {
+              "kind": "symbol",
+              "name": "_refuse_orphaned_park"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

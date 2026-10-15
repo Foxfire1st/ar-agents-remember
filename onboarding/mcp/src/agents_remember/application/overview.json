@@ -628,7 +628,7 @@
       ]
     },
     "121": {
-      "note": "`FileReadStatus` is defined in the models type.",
+      "note": "Historical pre-L109 FileReadStatus vocabulary. Current models/read_files.py instead declares NamedRecord, NamedFile and the strict names-only ReadArFilesResponse.",
       "targets": [
         {
           "anchor": {
@@ -645,7 +645,7 @@
       ]
     },
     "122": {
-      "note": "The application read-files entry point imports the wire type and decides the read status.\n\nAnchor: \"from agents_remember.models.read_files import FileReadStatus\"; \"def _resolve_onboarding(\"",
+      "note": "Historical FileReadStatus import/onboarding-body resolver account. The current application names governing files and card states without returning their bodies.\n\nHistorical anchors: FileReadStatus; _resolve_onboarding",
       "targets": [
         {
           "anchor": {
@@ -2247,13 +2247,13 @@
       "targets": [
         {
           "anchor": {
-            "blob": "275847ecea525f425b8c6c5f28b5c3ed8c461439",
-            "content": "sha256:df7bca7aceaa9ac4de87839def636a2e905f8b9a8a12e1e14bc204c389fe86e2",
+            "blob": "ad8f2c2994a58d6b30409cfa13e222fb164efdeb",
+            "content": "sha256:50d5b06c31cb023b0dfded274d5fc9592ac6c8fd0576486aea7d7575bd4b9712",
             "locator": {
               "kind": "symbol",
               "name": "_continue_memory_merge"
             },
-            "path": "mcp/src/agents_remember/worktrees/sync_transaction_git.py"
+            "path": "mcp/src/agents_remember/worktrees/sync_transaction_git/_merge.py"
           },
           "kind": "code"
         }
@@ -2718,7 +2718,7 @@
       ]
     },
     "242": {
-      "note": "**The ordinary read's attach point, and the response field the block travels on.**\n\nAnchor: \"published_intent\"",
+      "note": "Historical pre-L109 attach-point and removed published_intent-field anchors. The current read_ar_files_tool returns names/locations only and ReadArFilesResponse has no published_intent field; the obsolete field anchor is retained as history, not a surviving wire capability.",
       "targets": [
         {
           "anchor": {
@@ -2747,7 +2747,7 @@
       ]
     },
     "243": {
-      "note": "**The cases that measure this route's half of the change: the application-layer route, and the named absence a repository that publishes nothing reports. Since MIK-R24 both measure the database block through `published_intent_block` directly, and the two mounted-route cases assert that an unconverted tree is read as `legacy-format`.**",
+      "note": "Historical pre-L109 test anchors for the older published-intent/legacy-format route. Current test_unconverted_memory_names_no_card and repeated-call controls instead demonstrate no card for unconverted memory and no per-session delivery state; the old anchors are not current mounted-route promises or fresh execution evidence.",
       "targets": [
         {
           "anchor": {
@@ -4063,7 +4063,7 @@
       ]
     },
     "285": {
-      "note": "The published-intent block's resolved tree and `treeScope`, inside the bounded block since MIK-R02.",
+      "note": "The retained internal published-intent tree/block construction; it is not a published_intent field on the current registered read_ar_files naming response.",
       "targets": [
         {
           "anchor": {
@@ -4271,7 +4271,7 @@
       ]
     },
     "294": {
-      "note": "One bound for a whole `read_ar_files` knowledge block, whose tail collapses per seed kind (leaf or scope) since MIK-R01.",
+      "note": "Retained internal whole-block published-intent computation and per-seed tail; current mounted read_ar_files delivers names/locations with no knowledge body, continuation or session delivery state.",
       "targets": [
         {
           "anchor": {
@@ -4797,7 +4797,7 @@
       ]
     },
     "315": {
-      "note": "The leaf response of the mounted read (since MIK-R05 of a path or a family seed), and refusals that name the tree.",
+      "note": "Retained internal leaf selection for path/family seeds and tree-named refusals; current mounted knowledge_read projects selected records to names rather than serving the historical full leaf body.",
       "targets": [
         {
           "anchor": {
@@ -5354,7 +5354,7 @@
       ]
     },
     "338": {
-      "note": "The rendering only `read_ar_files` applies.",
+      "note": "Historical pre-L109 read_ar_files body-rendering account. The current naming route returns no source/card/overview or published-intent body.",
       "targets": [
         {
           "anchor": {
@@ -6827,12 +6827,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "cd35c66bb9c9d8af0f23fd2579f5e610cf4ee8da",
+            "blob": "cb96525be294896525624afef669abf8fd942413",
             "content": "sha256:027365c573f2f3cba7df33db92946c3dbb8192948b786e09b2eb659de02648ac",
             "locator": {
-              "end": 106,
+              "end": 108,
               "kind": "line_range",
-              "start": 105
+              "start": 107
             },
             "path": "mcp/src/agents_remember/kernel/git_command.py"
           },
@@ -7693,7 +7693,7 @@
       ]
     },
     "446": {
-      "note": "The file-read status vocabulary.",
+      "note": "Historical removed FileReadStatus vocabulary, not the current NamedFile/cardState naming model.",
       "targets": [
         {
           "anchor": {
@@ -7710,7 +7710,7 @@
       ]
     },
     "447": {
-      "note": "The file-read status import the application reads through.\n\nAnchor: `FileReadStatus`",
+      "note": "Historical removed FileReadStatus import. Current application reading names files and card states.\n\nHistorical anchor: FileReadStatus",
       "targets": [
         {
           "anchor": {
@@ -7728,7 +7728,7 @@
       ]
     },
     "448": {
-      "note": "The file-read status literal and its value set.",
+      "note": "Historical removed FileReadStatus literal/value set; it does not declare current names-only response fields.",
       "targets": [
         {
           "anchor": {
@@ -7745,7 +7745,7 @@
       ]
     },
     "449": {
-      "note": "The onboarding resolver deciding the file-read status.",
+      "note": "Historical body/status resolver account. Current read_ar_files reports source existence, governing card location/state and overview locations without bodies.",
       "targets": [
         {
           "anchor": {
@@ -8023,7 +8023,7 @@
       ]
     },
     "459": {
-      "note": "Legacy onboarding returns a named legacy knowledge block; converted references use sidecars.",
+      "note": "Historical legacy knowledge-block account. Current mounted read_ar_files names memoryState=unconverted and no card; converted named cards use their native sidecars.",
       "targets": [
         {
           "anchor": {

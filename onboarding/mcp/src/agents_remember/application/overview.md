@@ -19,9 +19,9 @@ Landing cut/add observations are report-only; use the measurement owner and cano
 
 A role launch resolves canonical sprint/master/leaf selections through task topology. Actor, role, request and task references travel in the launched server binding. Native folder names and display titles do not create task authority. `task_scoped_mcp` derives a call-local configuration from the exact canonical leaf and its admitted enclosure, retaining the original repository authority while replacing its scoped workspace/code/memory roots. A reader without task context retains configured Projects roots; a task-scoped reader cannot supply alternative roots. Investigator admits Projects or the declared sprint/master chain and refuses leaf selection.
 
-`read_files` pairs source and onboarding content. `read_files_format` distinguishes converted `text/v2` cards, sidecars and resolved numbered references from `legacy-format` onboarding. An unconverted tree returns a named legacy knowledge block rather than serving its old database as converted knowledge. Onboarding lookup status is independent of source presence: `found` describes the card lookup and can coexist with absent source bytes.
+`read_files.py` composes the registered `read_ar_files` naming route: source existence, governing card location or no card, record-state counts and actionable IDs/kinds/states/card headings. The answer lists governing overview locations once per call and carries no source/card/overview bodies, `published_intent`, session-delivery state or continuation. An unconverted tree is named as `memoryState="unconverted"` and supplies no card; source existence is independent of whether a governing card can be named.
 
-Converted knowledge reads select text trees through derived indexes. Path reads share the family-complete selection and continuation machinery: entries at the path, their invariants, one expanded family hop, other families advertised without recursive expansion, and the governing route chain. A family seed expands that family directly. Currentness observes the code tree the read names; it does not replace that tree with working-tree bytes. Paired ordinary reads historically observe `HEAD^{tree}` and disclose that uncommitted edits are excluded; explicit knowledge reads use their declared code tree.
+The separate `knowledge_read` route selects text trees through derived indexes. Its source-context path selections use family-complete selection and continuation machinery: entries at the path, their invariants, one expanded family hop, other families advertised without recursive expansion, and the governing route chain. A family seed expands that family directly. Currentness observes the code tree the read names; it does not replace that tree with working-tree bytes. Paired ordinary reads historically observe `HEAD^{tree}` and disclose that uncommitted edits are excluded; explicit knowledge reads use their declared code tree.
 
 The file writer reads a handoff, authors records/entries/history, mechanically carries surviving anchors and validates the whole output before writing. Onboarding rows receive candidate source sets and counted flags, and a known paired memory base governs comparison rather than a persisted flag. Membership/no-family and decision/facet record rows use canonical subject aliases, stable rerun identities and candidate revisions; foreign-owner evidence survives reason-only rewrites without duplication. New row kinds do not authorize unsupported producers. Registry-declared writer reports allow across-run repair and name the later refusing route. The existing overview-order/numbered-citation validation and task-owned reconsideration questions remain. File writing is explicit and is not Git acceptance.
 
@@ -32,7 +32,7 @@ Contract-scoped memory quality measures the admitted pair, publishes its full ch
 
 A current review binds code B/C and memory K_B/K_C as four trees. Source inventory, selected knowledge, record availability, attribution, family context, staleness and focused expressions have separate owners. Retained comparison records and pins provide exact historical operands; unavailable trees are reported rather than replaced by today's tip. Final-output and managed-sync records measure completed operations against retained comparisons and cannot gate the transactions they describe.
 
-Ordinary operations on legacy memory refuse unconditionally using central conversion guidance; `read_ar_files` still returns legacy cards marked `legacy-format` with no knowledge section. Startup/context exposes format and first-conversion facts without fabricating them from unreadable probes.
+Ordinary operations on legacy memory refuse unconditionally using central conversion guidance; `read_ar_files` names unconverted memory but returns no card, rather than delivering legacy cards or a knowledge-body block. Startup/context exposes format and first-conversion facts without fabricating them from unreadable probes.
 
 ## Construction And Ownership
 
@@ -303,6 +303,7 @@ These inherited tables are retained verbatim for navigation and custody. Their s
 - The recovery's journaled decisions and its bounded cycling refusal. [216]
 - **The adapter that declares the baseline argument and passes it into that selection — and, since 260915-KS-L45, derives its candidate directory from the contract and places the baseline into the review's own half.** [222]
 - The adapter that now declares the baseline argument and passes it into that selection. [224]
+
 - The transaction seam that routes the conflict and narrows the agent's list. [228]
 - The layer rule that forces the split, enforced by a test rather than documented. [229]
 - **The resolution's new home: the module's own statement of what it binds, why the working tree is never an endpoint, and that every failure is a named state.** [230]
@@ -316,8 +317,8 @@ These inherited tables are retained verbatim for navigation and custody. Their s
 - **The new module's public surface: resolve the repository's publication, seed it with the requested paths, and read one bounded page per path.** [239]
 - The named states the route answers with, and the guard that makes "never silently select another repository" a verified fact. [240] [431]
 - **The shipped read the new route delegates to, reused unchanged by this leaf.** [241]
-- **The ordinary read's attach point, and the response field the block travels on.** [242]
-- **The cases that measure this route's half of the change: the application-layer route, and the named absence a repository that publishes nothing reports. Since MIK-R24 both measure the database block through `published_intent_block` directly, and the two mounted-route cases assert that an unconverted tree is read as `legacy-format`.** [243]
+- Historical pre-L109 attach-point and removed published_intent-field anchors. The current read_ar_files_tool returns names/locations only and ReadArFilesResponse has no published_intent field; the obsolete field anchor is retained as history, not a surviving wire capability. [242]
+- Historical pre-L109 test anchors for the older published-intent/legacy-format route. Current test_unconverted_memory_names_no_card and repeated-call controls instead demonstrate no card for unconverted memory and no per-session delivery state; the old anchors are not current mounted-route promises or fresh execution evidence. [243]
 - **The route's new owner of the source half: the inventory's own statement of why it is measured from the pair, why the Git interface is delimiter-safe, and why a failed measurement is a state rather than an empty list.** [244]
 - The one observation both the review's inventory and the comparison's expansion read, with the two Git questions it asks. [245] [432]
 - **The inventory value and the two honesty rules: the count is the list's own length, and a name that is not valid text is carried by its byte form in a measured, partial inventory.** [246]
@@ -358,7 +359,7 @@ These inherited tables are retained verbatim for navigation and custody. Their s
 - The check order and the cache contract. [282]
 - The one state function. [283]
 - The block, which never raises. [284]
-- The published-intent block's resolved tree and `treeScope`, inside the bounded block since MIK-R02. [285]
+- The retained internal published-intent tree/block construction; it is not a published_intent field on the current registered read_ar_files naming response. [285]
 - The sides, refusing mixed formats. [287]
 - The curator run's dispatch between the history-file gate and today's gate. [288]
 - The closeout validator's dispatch. [289]
@@ -366,7 +367,7 @@ These inherited tables are retained verbatim for navigation and custody. Their s
 - The paging package map and the seam for MIK-R01 and MIK-R05. [291]
 - The one declared threshold. [292]
 - A cut of whole rows: blocked versus oversized. [293]
-- One bound for a whole `read_ar_files` knowledge block, whose tail collapses per seed kind (leaf or scope) since MIK-R01. [294]
+- Retained internal whole-block published-intent computation and per-seed tail; current mounted `read_ar_files` delivers names/locations with no knowledge body, continuation or session delivery state. [294]
 - The converted-tree branch of `knowledge_read`. [295]
 - The whole verified selection a page is cut from. [296]
 - The kind, registered on import. [298]
@@ -408,7 +409,7 @@ These inherited tables are retained verbatim for navigation and custody. Their s
 - The chain rows last in the declared order. [335]
 - The family seed's selection. [336]
 - The family seed on the mounted read, and one rule for a named revision. [337]
-- The rendering only `read_ar_files` applies. [338]
+- Historical pre-L109 `read_ar_files` body-rendering account. The current naming route returns no source/card/overview or published-intent body. [338]
 - Every entry of the named invariants on B and C. [339]
 - Where an entry lands, and its bounded excerpt. [340]
 - The cards view (answered through `_focused` since MIK-L32, which replaced `_entries_view`), the pinned comparison, and the one wire casing. [341]

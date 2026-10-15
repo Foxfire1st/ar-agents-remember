@@ -1147,7 +1147,7 @@
       ]
     },
     "174": {
-      "note": "The route overview this section introduces.\n\nAnchor: `# mcp/src/agents_remember/memory/ - Memory Repository Lifecycle And Knowledge Storage Overview`",
+      "note": "The route overview this section introduces; this is a verified local memory document, not a code-source anchor.",
       "targets": [
         {
           "kind": "unresolved",
@@ -1364,12 +1364,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a37806363d99a9e29e6db9515164e401ffd1664c",
+            "blob": "9a206d3d815288a7126484f8f1ed32c00a634033",
             "content": "sha256:f8d2f4f48a6c2d3de5e22aea3cc9ccff969f7a04cb1869dee82016b3ff19cdc9",
             "locator": {
-              "end": 160,
+              "end": 175,
               "kind": "line_range",
-              "start": 158
+              "start": 173
             },
             "path": "mcp/src/agents_remember/cli/dashboard.py"
           },
@@ -1560,7 +1560,7 @@
       ]
     },
     "209": {
-      "note": "**The response field the block travels on, carried by the strict response model rather than re-declared.**",
+      "note": "Historical pre-L109 published-intent response-field account. The current strict read_ar_files response names locations and record states; it declares no published_intent payload field.",
       "targets": [
         {
           "anchor": {
@@ -1595,7 +1595,7 @@
       ]
     },
     "210": {
-      "note": "**The generated carrier this package ships, regenerated from the authored root skill by the repository's own sync script.**\n\nAnchor: `## Published Intent Before Planning`",
+      "note": "Historical generated Published Intent Before Planning carrier. Current mounted reading names cards/overviews and agents open those files natively; a generated instruction does not restore a public body field.\n\nHistorical anchor: `## Published Intent Before Planning`",
       "targets": [
         {
           "anchor": {
@@ -1613,7 +1613,7 @@
       ]
     },
     "211": {
-      "note": "**The case that holds the carrier to the payload's real field spellings instead of a second vocabulary.**",
+      "note": "Historical payload-spelling case, not evidence that the current names-only response exposes the removed published-intent body.",
       "targets": [
         {
           "anchor": {
@@ -1958,7 +1958,7 @@
       ]
     },
     "223": {
-      "note": "The bootstrap's database route takes the cutover lock.",
+      "note": "Historical database-bootstrap route/cutover-lock account. Current bootstrap is converted file authoring; legacy/database authoring is refused, not a callable canonical database mutation route.",
       "targets": [
         {
           "anchor": {
@@ -2258,12 +2258,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "cd35c66bb9c9d8af0f23fd2579f5e610cf4ee8da",
+            "blob": "cb96525be294896525624afef669abf8fd942413",
             "content": "sha256:027365c573f2f3cba7df33db92946c3dbb8192948b786e09b2eb659de02648ac",
             "locator": {
-              "end": 106,
+              "end": 108,
               "kind": "line_range",
-              "start": 105
+              "start": 107
             },
             "path": "mcp/src/agents_remember/kernel/git_command.py"
           },
@@ -3249,12 +3249,11 @@
       "targets": [
         {
           "anchor": {
-            "blob": "61e52f411994bdcb2c1e96c787359a908e0b3a6b",
-            "content": "sha256:9d1eb1610879be90797c11fd23bcb208c65c95e43cb9c46650015ac0cbd3a8b2",
+            "blob": "ccf6c15311cfde9c9deae12587bf12392149d9ec",
+            "content": "sha256:ae899856cf647c28b4c8448e2d8eca379ccb6dbcb50c9eb5d0ac887b6764c4a3",
             "locator": {
-              "end": 917,
-              "kind": "line_range",
-              "start": 892
+              "kind": "symbol",
+              "name": "_closeout_contract_context"
             },
             "path": "mcp/src/agents_remember/worktrees/modules/closeout.py"
           },
@@ -3262,11 +3261,12 @@
         },
         {
           "anchor": {
-            "blob": "6fe8997759e11e00c8208c6c800c149260b181af",
-            "content": "sha256:ae899856cf647c28b4c8448e2d8eca379ccb6dbcb50c9eb5d0ac887b6764c4a3",
+            "blob": "d1209e8d11ad679ddb63c09500733154b49ffc65",
+            "content": "sha256:9d1eb1610879be90797c11fd23bcb208c65c95e43cb9c46650015ac0cbd3a8b2",
             "locator": {
-              "kind": "symbol",
-              "name": "_closeout_contract_context"
+              "end": 912,
+              "kind": "line_range",
+              "start": 887
             },
             "path": "mcp/src/agents_remember/worktrees/modules/closeout.py"
           },
@@ -3309,19 +3309,6 @@
       "targets": [
         {
           "anchor": {
-            "blob": "30300016e97145717041d5a3b357267958b6bee5",
-            "content": "sha256:1bda677913ca655ca47640df5d6c12f48f6c63799a00674f5b3001f802c02427",
-            "locator": {
-              "end": 848,
-              "kind": "line_range",
-              "start": 838
-            },
-            "path": "mcp/src/agents_remember/worktrees/modules/integrate.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
             "blob": "b7c1cdbb6b82fa751e51722404352099fba9aa25",
             "content": "sha256:ba0f45687a8d0a9c237f8191b49fee25aef4d9515b6f927ee7e37a2a5006f76e",
             "locator": {
@@ -3329,6 +3316,19 @@
               "name": "integration_gate_block"
             },
             "path": "mcp/src/agents_remember/worktrees/modules/integration_gate.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f31c4009056d3462d55f987dcb36e01afeb898b0",
+            "content": "sha256:1bda677913ca655ca47640df5d6c12f48f6c63799a00674f5b3001f802c02427",
+            "locator": {
+              "end": 854,
+              "kind": "line_range",
+              "start": 844
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/integrate.py"
           },
           "kind": "code"
         }
@@ -3467,7 +3467,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6c5d030703b806f56bcd3589e5e715b3df06c01e",
+            "blob": "fcf59cc63bd67401f035bd26fe21e6018d385cb5",
             "content": "sha256:66e3ff7eb372e8b0c2a4ad46552a56cd0e540b056dea776bcf9fa1f003abba14",
             "locator": {
               "kind": "symbol",
@@ -3491,7 +3491,7 @@
         },
         {
           "anchor": {
-            "blob": "6c5d030703b806f56bcd3589e5e715b3df06c01e",
+            "blob": "fcf59cc63bd67401f035bd26fe21e6018d385cb5",
             "content": "sha256:0dcff59e0a5dd3f825d2a48820357ca3c8699bdcfb90f1d381c3fef16fbcaecb",
             "locator": {
               "end": 20,
@@ -3575,12 +3575,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "cd35c66bb9c9d8af0f23fd2579f5e610cf4ee8da",
+            "blob": "cb96525be294896525624afef669abf8fd942413",
             "content": "sha256:33f1d32477b37638c86ec184e8c16b16d0a5476d58ae37993cd8a98b469d5a69",
             "locator": {
-              "end": 106,
+              "end": 108,
               "kind": "line_range",
-              "start": 58
+              "start": 60
             },
             "path": "mcp/src/agents_remember/kernel/git_command.py"
           },
@@ -4156,7 +4156,7 @@
       ]
     },
     "44": {
-      "note": "A path seed of the published-intent block is read as a leaf.\n\nAnchor: `prepare_leaf`",
+      "note": "The retained internal published-intent computation reads a path seed as a leaf. Mounted read_ar_files names locations and returns no such body.\n\nAnchor: `prepare_leaf`",
       "targets": [
         {
           "anchor": {
@@ -4173,7 +4173,7 @@
       ]
     },
     "45": {
-      "note": "The mounted read's leaf response, of a path or (since MIK-R05) a family seed.",
+      "note": "Retained internal leaf content for a path or family seed; current mounted knowledge_read projects selected content to names, not the historical full leaf body.",
       "targets": [
         {
           "anchor": {
@@ -4438,7 +4438,7 @@
       ]
     },
     "58": {
-      "note": "The whole-block bound of the published-intent block.",
+      "note": "The retained internal published-intent block bound, not a field or body delivered by current mounted read_ar_files.",
       "targets": [
         {
           "anchor": {
@@ -4572,7 +4572,7 @@
       ]
     },
     "64": {
-      "note": "The published-intent surface.",
+      "note": "Retained internal published-intent/currentness computation; it does not restore a published_intent field to the current names-only mounted response.",
       "targets": [
         {
           "anchor": {

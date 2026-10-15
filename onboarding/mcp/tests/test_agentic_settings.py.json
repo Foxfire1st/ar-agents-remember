@@ -3,7 +3,7 @@
   "proves": [
     {
       "anchor": {
-        "blob": "9bbccbbf280dcd5c044d083f866d1b451ecd7a4d",
+        "blob": "626a707b4783bda6fd170ed6f47fa593ed1c5925",
         "content": "sha256:ae234319694472d18f50dd4299b55f88f835a90a1dc53f5f0320ae8a87a4bfa4",
         "locator": {
           "kind": "symbol",
@@ -135,6 +135,22 @@
               "end": 204,
               "kind": "line_range",
               "start": 169
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "16": {
+      "note": "Landing settings cases assert a default 900-second commit-check timeout, a positive integer override of 60, and refusal of skipCheck and non-positive timeout values. These are settings parsing/merge witnesses, not actual hook execution or a fresh review-round authority.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e07a5874e625ed1d8f1e55cb81db7b5df76303d3",
+            "content": "sha256:71732b001f52ac2d8218dac6080bdc0024007daa160c842f8b7a2bb8784aaba9",
+            "locator": {
+              "kind": "symbol",
+              "name": "LandingSettingsTests"
             }
           },
           "kind": "test"

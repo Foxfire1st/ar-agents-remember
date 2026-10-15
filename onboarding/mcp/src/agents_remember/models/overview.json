@@ -1681,7 +1681,7 @@
       ]
     },
     "199": {
-      "note": "**The six authored commands and the union they join, which is the operation's widened reach.**",
+      "note": "Historical candidate-change commands and their union were retired with the canonical database write boundary (MIK-R26); candidate.py now owns read-context identities, not that widened write operation.",
       "targets": [
         {
           "kind": "unresolved",
@@ -2375,7 +2375,7 @@
       ]
     },
     "242": {
-      "note": "**The new field, on the strict response model that declares it.**",
+      "note": "Historical pre-L109 published_intent field on ReadArFilesResponse; current strict response names files/cards/overviews and record states only. The retained removed-field anchor is history, not a current field declaration.",
       "targets": [
         {
           "anchor": {
@@ -2404,7 +2404,7 @@
       ]
     },
     "243": {
-      "note": "**The owning module that decides the shape this model declines to re-declare.**",
+      "note": "Retained internal published_intent_block computation owns its historical shape; mounted read_ar_files no longer returns that body. This anchor does not establish current public response content.",
       "targets": [
         {
           "anchor": {
@@ -2421,7 +2421,7 @@
       ]
     },
     "244": {
-      "note": "The strict envelope base the field joined.",
+      "note": "The strict ToolResponse envelope was the historical base joined by published_intent; the current ReadArFilesResponse no longer declares that field.",
       "targets": [
         {
           "anchor": {
@@ -2438,7 +2438,7 @@
       ]
     },
     "245": {
-      "note": "The registry entry for the tool whose payload carries the field; unchanged by this leaf.\n\nAnchor: `read_ar_files`",
+      "note": "The read_ar_files registry entry remains, but its current payload names knowledge locations and does not carry published_intent. The earlier field-carrying account is historical.\n\nAnchor: `read_ar_files`",
       "targets": [
         {
           "anchor": {
@@ -3713,7 +3713,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "59e7484044e1a4c769a0a1ed236724296ecd865c",
+            "blob": "53e03643f0924e44c2a22fc7fa0de4a839762ab9",
             "content": "sha256:9c1f13e3fd2a094786999c2e1a49910f50a2efd2e422a1ae7335e0631b291048",
             "locator": {
               "kind": "symbol",
@@ -3728,6 +3728,30 @@
     "298": {
       "note": "L110 shaped bounds and L112 final bounds coexist with interim rows and exceptions.",
       "targets": [
+        {
+          "anchor": {
+            "blob": "891a63152e092b77d7e6a7630adc88aa4587b73a",
+            "content": "sha256:b780921bfae82f23351b98f0359d970689bdc2fb97d59f1b46562c3e78a25fe7",
+            "locator": {
+              "kind": "symbol",
+              "name": "TOOL_ANSWER_EXCEPTIONS"
+            },
+            "path": "mcp/src/agents_remember/models/tools/tool_answer.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "891a63152e092b77d7e6a7630adc88aa4587b73a",
+            "content": "sha256:17c0e9027e9bd6bcefb0be23e225f6c47f3401f1883a8e97fa317e2aa3bedf4c",
+            "locator": {
+              "kind": "symbol",
+              "name": "SHAPED_TOOL_BOUNDS"
+            },
+            "path": "mcp/src/agents_remember/models/tools/tool_answer.py"
+          },
+          "kind": "code"
+        },
         {
           "anchor": {
             "blob": "ebf640a7f03fcf6844eaaf4b89ffccd3dd9d2399",
@@ -3754,31 +3778,7 @@
         },
         {
           "anchor": {
-            "blob": "ab28fceb45cf89ffe4da54a54e4888bb3f56c480",
-            "content": "sha256:17c0e9027e9bd6bcefb0be23e225f6c47f3401f1883a8e97fa317e2aa3bedf4c",
-            "locator": {
-              "kind": "symbol",
-              "name": "SHAPED_TOOL_BOUNDS"
-            },
-            "path": "mcp/src/agents_remember/models/tools/tool_answer.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "891a63152e092b77d7e6a7630adc88aa4587b73a",
-            "content": "sha256:b780921bfae82f23351b98f0359d970689bdc2fb97d59f1b46562c3e78a25fe7",
-            "locator": {
-              "kind": "symbol",
-              "name": "TOOL_ANSWER_EXCEPTIONS"
-            },
-            "path": "mcp/src/agents_remember/models/tools/tool_answer.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "345f0a5c362cd2c1c2c76f2ac1362793e36a9933",
+            "blob": "0339e46cbf7832fecb77b553a6be150412dc016c",
             "content": "sha256:2e99ebc88b34119361b6f1e751e9d985b9048cc76430a5c331272b689bb45d44",
             "locator": {
               "kind": "symbol",
@@ -5372,12 +5372,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a14042be29bb28a9e39fbcfc06c345803c28fdff",
+            "blob": "f3b65ad92b09389ee890cfb6ca49db7cf185885c",
             "content": "sha256:e78c9a3a5f40cbe4afaccc30894f1b7e29d5e43ec2f9b1a3329a675dc7df6639",
             "locator": {
-              "end": 369,
+              "end": 377,
               "kind": "line_range",
-              "start": 363
+              "start": 371
             },
             "path": "mcp/src/agents_remember/models/worktree.py"
           },
@@ -5385,12 +5385,12 @@
         },
         {
           "anchor": {
-            "blob": "a14042be29bb28a9e39fbcfc06c345803c28fdff",
+            "blob": "f3b65ad92b09389ee890cfb6ca49db7cf185885c",
             "content": "sha256:2b53233df4625503e4879e38c3fc0c5019bd748a0acc0843a62721ded74b16ca",
             "locator": {
-              "end": 398,
+              "end": 413,
               "kind": "line_range",
-              "start": 387
+              "start": 402
             },
             "path": "mcp/src/agents_remember/models/worktree.py"
           },
@@ -5478,12 +5478,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a14042be29bb28a9e39fbcfc06c345803c28fdff",
+            "blob": "f3b65ad92b09389ee890cfb6ca49db7cf185885c",
             "content": "sha256:3cc313e2860d45df53ee5cb6523d5f2f2cf815539a3f0561a9145b4c6ba29504",
             "locator": {
-              "end": 486,
+              "end": 507,
               "kind": "line_range",
-              "start": 486
+              "start": 507
             },
             "path": "mcp/src/agents_remember/models/worktree.py"
           },
@@ -5496,12 +5496,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a14042be29bb28a9e39fbcfc06c345803c28fdff",
+            "blob": "f3b65ad92b09389ee890cfb6ca49db7cf185885c",
             "content": "sha256:f924166f66525f4621134d24e722009a7a63e1accb841867259a6300b4108e4b",
             "locator": {
-              "end": 467,
+              "end": 488,
               "kind": "line_range",
-              "start": 467
+              "start": 488
             },
             "path": "mcp/src/agents_remember/models/worktree.py"
           },
@@ -5540,12 +5540,12 @@
         },
         {
           "anchor": {
-            "blob": "1d7b6b69cc65c65e39b0a04924fe472490bd1e90",
+            "blob": "8c2e4699aae0165b9cf73eb87c8893483de2c903",
             "content": "sha256:6a84725e589ed877ccac50e10aec18ac8c8997b2b446025a3c99fcedf446928b",
             "locator": {
-              "end": 91,
+              "end": 144,
               "kind": "line_range",
-              "start": 91
+              "start": 144
             },
             "path": "mcp/src/agents_remember/models/tools/tool_registry.py"
           },
@@ -5553,12 +5553,12 @@
         },
         {
           "anchor": {
-            "blob": "1d7b6b69cc65c65e39b0a04924fe472490bd1e90",
+            "blob": "8c2e4699aae0165b9cf73eb87c8893483de2c903",
             "content": "sha256:4b71d3bff3108b0030d796377e565c8d6099f4d8a3ba716a8abe479b51ffa522",
             "locator": {
-              "end": 92,
+              "end": 145,
               "kind": "line_range",
-              "start": 92
+              "start": 145
             },
             "path": "mcp/src/agents_remember/models/tools/tool_registry.py"
           },
@@ -5566,12 +5566,12 @@
         },
         {
           "anchor": {
-            "blob": "1d7b6b69cc65c65e39b0a04924fe472490bd1e90",
+            "blob": "8c2e4699aae0165b9cf73eb87c8893483de2c903",
             "content": "sha256:ee8417feebfc3e86e1cab9834f91fdedb6974035ccf8db2d5114d5ffd6fb8184",
             "locator": {
-              "end": 98,
+              "end": 151,
               "kind": "line_range",
-              "start": 98
+              "start": 151
             },
             "path": "mcp/src/agents_remember/models/tools/tool_registry.py"
           },
@@ -5579,12 +5579,12 @@
         },
         {
           "anchor": {
-            "blob": "1d7b6b69cc65c65e39b0a04924fe472490bd1e90",
+            "blob": "8c2e4699aae0165b9cf73eb87c8893483de2c903",
             "content": "sha256:7d21c99cdaca5611c9049b18b91ae30bc67caeabf2dec8fbb21270de9835e406",
             "locator": {
-              "end": 99,
+              "end": 152,
               "kind": "line_range",
-              "start": 99
+              "start": 152
             },
             "path": "mcp/src/agents_remember/models/tools/tool_registry.py"
           },
@@ -5762,7 +5762,7 @@
         },
         {
           "anchor": {
-            "blob": "a14042be29bb28a9e39fbcfc06c345803c28fdff",
+            "blob": "f3b65ad92b09389ee890cfb6ca49db7cf185885c",
             "content": "sha256:f7ddf4c25d010439807b3b6c80acc3feb89a6d01628b0e7d485d926953f9147c",
             "locator": {
               "end": 41,

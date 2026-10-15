@@ -20,7 +20,7 @@ Build configured disposable repository/topology and closed-leaf fixtures for int
 
 `_authority_fixture` constructs the exact code/memory repositories, protected branches, task topology, selected profile configuration, and sibling atomic-series contract. External baseline memory is a real content commit with Code-Commit attribution; its ledger is refreshed only as an untracked cache.
 
-`_closed_external_leaf_worktrees` materializes the ordinary leaf worktrees and onboarding root, creates the converted knowledge/layout.json marker and authored no_impact coverage for onboarding:candidate.txt before coherence evidence publication, creates actual code and attributed memory commits, refreshes the disposable cache, and records only the two accepted outputs. `_publish_completed_closeout_fixture` optionally enters the selected/ordinary lifecycle input owner before publishing the fixture's completed state; its explicit final-source override models target changes after admission. `_doc` remains the small task-model builder.
+`_closed_external_leaf_worktrees` materializes the ordinary leaf worktrees and onboarding root, creates the converted knowledge/layout.json marker and authored no_impact coverage for onboarding:candidate.txt, creates actual code and attributed memory commits, refreshes the disposable cache, and records only the two output cells. Its optional evidence step delegates to `_publish_completed_closeout_fixture`; these fixture writes do not establish independently qualified curator coherence or acceptance. `_publish_completed_closeout_fixture` enters the selected/ordinary lifecycle input owner before publishing the fixture's completed state; its explicit final-source override models target changes after admission. `_doc` remains the small task-model builder.
 
 Unused atomic-landing/door/preview builders and their ledger-only commit machinery were removed. Support code itself is not collected scenario coverage.
 
@@ -38,6 +38,8 @@ Helpers build production-shaped inputs for their consumers; synthetic completed 
 ### Todos
 
 No new file-local follow-up is identified by this source reconciliation.
+
+Closed fixture commits also carry actual-tree Commit-Check-Pass trailers with hook=none. Those trailers are synthetic fixture inputs; their presence is not an executed repository-hook or acceptance result.
 
 ## Evidence
 
@@ -57,3 +59,5 @@ These current source spans identify the implementation owners and the specific a
 ### Cross-Repo References
 
 The operation and fixture boundaries described here are defined by same-repository contracts and Git helpers. No separate cross-repository document is used as evidence for this card.
+
+- Closed fixture commits also carry actual-tree Commit-Check-Pass trailers with hook=none. Those trailers are synthetic fixture inputs; their presence is not an executed repository-hook or acceptance result. [5]

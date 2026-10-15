@@ -1,0 +1,119 @@
+{
+  "path": "mcp/tests/test_landing_commit_check.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "PassingHookTests: qualified source contract.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "eed8728d30f071e26e3ad7c35609116737195549",
+            "content": "sha256:18b7566875547f8e4f1d10b63008c0ffb2753cb1f99b11d0542ce1bcc04811a2",
+            "locator": {
+              "kind": "symbol",
+              "name": "PassingHookTests"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "FailingHookTests: qualified source contract.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "eed8728d30f071e26e3ad7c35609116737195549",
+            "content": "sha256:e2c4a6475a0b446befb724ba1b3f8083d5894cb2a2e5e0c48000d448c5251258",
+            "locator": {
+              "kind": "symbol",
+              "name": "FailingHookTests"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "UnrunnableHookTests: qualified source contract.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "eed8728d30f071e26e3ad7c35609116737195549",
+            "content": "sha256:2b7b497a7dc05fe91d79249e80aeb191368df006b6fcf1a291d97e8320042857",
+            "locator": {
+              "kind": "symbol",
+              "name": "UnrunnableHookTests"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "StashRecoveryTests: qualified source contract.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "eed8728d30f071e26e3ad7c35609116737195549",
+            "content": "sha256:9fd15f6def78062e499499ea66ae6c46687f5e5847d98dbbbf0b50bbe4923604",
+            "locator": {
+              "kind": "symbol",
+              "name": "StashRecoveryTests"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "TrailerFactTests: qualified source contract.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "eed8728d30f071e26e3ad7c35609116737195549",
+            "content": "sha256:c35436a1d5f47c2646f93cbcddd71397913c640d77d1aca621aca21ef1e039ad",
+            "locator": {
+              "kind": "symbol",
+              "name": "TrailerFactTests"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "RoundOneFindingTests: qualified source contract.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "eed8728d30f071e26e3ad7c35609116737195549",
+            "content": "sha256:c311ddebd15494dc2c73b3dc9f20a848c30393321660bc7e66205a173ed31478",
+            "locator": {
+              "kind": "symbol",
+              "name": "RoundOneFindingTests"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "PreparedLegProductionTests: qualified source contract.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "eed8728d30f071e26e3ad7c35609116737195549",
+            "content": "sha256:e286cfe7cd08c42652b24cb131a74d98e03ffb9da15061ff0b940515b5be6bf6",
+            "locator": {
+              "kind": "symbol",
+              "name": "PreparedLegProductionTests"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

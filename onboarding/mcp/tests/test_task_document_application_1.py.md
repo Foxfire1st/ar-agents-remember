@@ -102,6 +102,8 @@ No external domain claim is required.
 - **Retained historical source account — superseded by the current contract:** The class-local helpers that author the pre-contract state directly and plan against it. [25]
 - **Retained historical source account — superseded by the current contract:** The focused read's payload survives the response model the tool advertises: the real handler's `steps` list validates through `finalize_tool_response`, and an undeclared key still fails. [26]
 
+L61 named-master test-source qualification: the explicit cross-series case raises TaskDocError naming the reference, folder constraint and fix, with unchanged parent bytes/rows. This does not revive successful get/read_steps behavior or constitute a fresh test run.
+
 ### Cross-Repo References
 
 This card establishes test behavior, not a separate cross-repository protocol or live installation.

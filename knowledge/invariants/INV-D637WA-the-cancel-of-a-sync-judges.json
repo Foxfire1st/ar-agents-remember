@@ -9,7 +9,8 @@
   "applicability": "The live-stash per-path ownership comparison used before cancelling an admitted sync stop.",
   "conditions": [
     "The path is in the complete parked population and independent index ownership checks also pass.",
-    "A computable reapply expectation is compared byte for byte with the worktree, using the restoration construction."
+    "A computable reapply expectation is compared byte for byte with the worktree, using the restoration construction.",
+    "Later/unattributable work is kept in saved artifacts before successful cancellation; preservation does not require unchanged live worktree bytes or an unchanged journal phase."
   ],
   "exclusions": [
     "Retained fingerprints and exact raw stash-holder ownership for uncomputable entries retain their separate admission.",
@@ -28,7 +29,7 @@
     "leaf": "260928-MIK-L163",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-invariant/v1",
   "statement": "The cancel of a sync judges each parked path with the proof's own construction: a path that holds exactly what the reapply gave back is the transaction's own and is never named as later work, and a path that holds anything else, also what git's merge would give under another diff algorithm, is later work and is kept.",
   "status": "proposed",

@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "30300016e97145717041d5a3b357267958b6bee5",
+        "blob": "04e020ffeeb2e4b9da4fb8122f6fb0ec7d68b301",
         "content": "sha256:e0da0eaa4aaa70451eae1f19d885b4503171acd196eb16ede43b0737f4fd5fa1",
         "locator": {
           "kind": "symbol",
@@ -15,12 +15,12 @@
       "origin": {
         "leaf": "260921-ICR-L30"
       },
-      "rationale": "The integration validator and the ledger projection are the two owners that make a landing a pair rather than two independent ref moves.",
+      "rationale": "Current validate_integrate_memory_contract checks that the accepted memory_content_commit matches the selected memory ref/worktree HEAD and that the leaf memory worktree is clean on the work branch. Paired landing admission uses the integration gate/ref/source owners, not a ledger-projection owner. Any ledger view remains derived/cache-only, never an alternate landing-pair or acceptance authority.",
       "role": "primary-authority"
     },
     {
       "anchor": {
-        "blob": "30300016e97145717041d5a3b357267958b6bee5",
+        "blob": "04e020ffeeb2e4b9da4fb8122f6fb0ec7d68b301",
         "content": "sha256:aaf23b3f05a648c8e098cb89f6a5d58f19d78f7297731bf47fa896739fcdd377",
         "locator": {
           "kind": "symbol",
@@ -189,7 +189,7 @@
         },
         {
           "anchor": {
-            "blob": "7a32ae3f63b70f77abf362afa28237ea54b9abc9",
+            "blob": "510ce3bd47c8e6687ab036ec8024f86be73694fb",
             "content": "sha256:b96f886c56f695ec2ab36c6fa63344da1036cf866e5d23d81c5ed345b807c78b",
             "locator": {
               "kind": "symbol",
@@ -205,7 +205,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "30300016e97145717041d5a3b357267958b6bee5",
+            "blob": "f20ce65d92928ac53407197a9ce28d2197a9e42c",
             "content": "sha256:9b0569f5ca05d19067afede918008bfa44c9c8bb9da3886a679c479845156ce7",
             "locator": {
               "kind": "symbol",
@@ -216,7 +216,7 @@
         },
         {
           "anchor": {
-            "blob": "30300016e97145717041d5a3b357267958b6bee5",
+            "blob": "f20ce65d92928ac53407197a9ce28d2197a9e42c",
             "content": "sha256:d7d91b4512ce137d8eb97c97d1387b517a258a8685570a07895fd244916c4b5c",
             "locator": {
               "kind": "symbol",

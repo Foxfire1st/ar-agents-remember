@@ -5,7 +5,7 @@
     ],
     "justification": "The three member obligations hold only together: the extracted launcher, the shipped reference and the generated mirrors jointly guarantee that a role-launch behavior change reaches every surface a user or agent reads, with mirrors derived and retired text staying retired."
   },
-  "guarantee": "Role-launch behavior changes propagate to the dashboard launcher, the settings reference and every shipped skill mirror through the existing public generator; mirrors stay derived rather than hand-edited, retired role text is not resurrected, and no shipped first-read text uses assignment_read.",
+  "guarantee": "Role-launch behavior changes propagate to the dashboard launcher in its own file, the settings reference in its own file and every shipped skill mirror through the existing public generator, with all three surfaces updated by the same change; mirrors stay derived rather than hand-edited, retired role text is not resurrected, and no shipped first-read text uses assignment_read.",
   "id": "FAM-GDXSJG",
   "members": [
     "INV-63Z0MN",
@@ -20,12 +20,14 @@
     "leaf": "260928-MIK-L71",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "routes": [
-    "dashboard/src",
+    "dashboard/src/cockpit",
+    "dashboard/src/test/fixtures",
     "docs",
-    "skills",
-    "mcp"
+    "skills/c-13-install-and-onboard",
+    "skills/l-01-agent-lifecycles",
+    "mcp/src/agents_remember/package_data/runtime/skills"
   ],
   "schema": "ar-family/v1",
   "status": "proposed",

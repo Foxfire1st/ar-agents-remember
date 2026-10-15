@@ -27,9 +27,9 @@
     "leaf": "260928-MIK-L163",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-invariant/v1",
-  "statement": "The staged bytes of a parked path are read from the index as exact bytes: read through a text pipe, every carriage return becomes a line feed, the staged content of a binary file never equals its parked bytes, and the cancel names the path as later work.",
+  "statement": "Staged parked-path index content is read as exact binary bytes, preserving carriage returns for independent ownership comparison rather than classifying newline-converted content as later work.",
   "status": "proposed",
   "supersedes": []
 }

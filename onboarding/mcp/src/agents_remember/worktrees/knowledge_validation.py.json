@@ -66,7 +66,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "cd43e4801b1c4e3910470e06ee8323fc4066eada",
+            "blob": "e47d5cc7e437fd7a83dd6cf764c684665b385061",
             "content": "sha256:6b948cc0a0a6cfabb5116fc3fabbb632de3c30b476b462856555207593d221e0",
             "locator": {
               "kind": "symbol",
@@ -83,13 +83,13 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d792ca35666e800c2743156397e04ac2c2b46306",
+            "blob": "ad8f2c2994a58d6b30409cfa13e222fb164efdeb",
             "content": "sha256:3a20c476b4a05e39bde63fb4fdfa2181f4fc1b6ef772829bf6e7a2c479190ca6",
             "locator": {
               "kind": "symbol",
               "name": "_finish_staged_memory_merge"
             },
-            "path": "mcp/src/agents_remember/worktrees/sync_transaction_git.py"
+            "path": "mcp/src/agents_remember/worktrees/sync_transaction_git/_merge.py"
           },
           "kind": "code"
         }
@@ -100,7 +100,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0aa022ec4b45b059754a8f3b1252fa8d25b69384",
+            "blob": "8389f15b598bf5b3843ea8a9ceeb9371fc1c8eb8",
             "content": "sha256:62151ea2bf987bce7d8838359f0c442a79464ef9234f04006c48193750924082",
             "locator": {
               "kind": "symbol",

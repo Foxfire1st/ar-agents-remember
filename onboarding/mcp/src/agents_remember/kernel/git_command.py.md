@@ -6,8 +6,7 @@
 
 ## Purpose
 
-The one place in the package that starts a `git` process. Every command goes through `run_git` or one of the
-runners beside it, which share one argument builder and one spawn (`_git_argv`, `_run_git`). The module also
+Shared Git runners and preparation owners; this is not the sole process-starting module, since landing_commit_check also starts Git/hook processes directly. The module also
 holds the exact-bytes readers of Git objects, the batched blob reader with its optional shared-read block, the
 option tuples for diffs whose output is parsed, the index copy for disposable captures, the three-way file
 merge, and the two guarded mutation families: private preparation and closeout ref publication.
@@ -32,7 +31,7 @@ merge, and the two guarded mutation families: private preparation and closeout r
   environment; a selector name in it raises `ValueError`.
 - Four timeout classes are declared: `GIT_LOCAL_TIMEOUT_SECONDS = 300` (the default),
   `GIT_REMOTE_TIMEOUT_SECONDS = 120`, `GIT_METADATA_TIMEOUT_SECONDS = 30` and
-  `GIT_BULK_REMOTE_TIMEOUT_SECONDS = 1800`. A timeout raises `subprocess.TimeoutExpired` to the caller.
+  `GIT_BULK_REMOTE_TIMEOUT_SECONDS = 1800`. Timeout raises TimeoutExpired; prepared commit process groups stop children, and readback errors retain actual output.
 - `run_git_with_index` sets `GIT_INDEX_FILE` to one explicit index after the scrub.
   `run_git_with_isolated_index_and_objects` also sets a disposable object directory with the repository's
   object store as a read-only alternate (`IsolatedGitState`). Both accept input text.

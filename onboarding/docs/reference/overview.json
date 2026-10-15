@@ -296,12 +296,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e39d70ff98455855cf4ff91e31535253c13ba185",
+            "blob": "471082802727d562a439135d2393de74c82bc831",
             "content": "sha256:895d7ab17f6fabe40ee8ad68547af4cdb4227c0455d278c1b9463da0a703b9bd",
             "locator": {
-              "end": 153,
+              "end": 154,
               "kind": "line_range",
-              "start": 114
+              "start": 115
             },
             "path": "mcp/src/agents_remember/worktrees/modules/finalize_task_documents.py"
           },
@@ -309,12 +309,12 @@
         },
         {
           "anchor": {
-            "blob": "e39d70ff98455855cf4ff91e31535253c13ba185",
+            "blob": "471082802727d562a439135d2393de74c82bc831",
             "content": "sha256:97d7d439c49779161d3656f6b2b73ecca61271b27d675c63e4c74d8680162d84",
             "locator": {
-              "end": 198,
+              "end": 199,
               "kind": "line_range",
-              "start": 176
+              "start": 177
             },
             "path": "mcp/src/agents_remember/worktrees/modules/finalize_task_documents.py"
           },
@@ -395,12 +395,12 @@
       ]
     },
     "25": {
-      "note": "Current literal roster:41 names after resolve_context removal, including direct_execution_grant, retire_child and role_start_set; source count is not executed/live advertisement. Earlier Curator caption retained as historical/withdrawn where it contradicts these current populations: The current literal roster has42 public names, including direct_execution_grant as well as native retire_child and role_start_set; response registration and live advertisement must agree with that one declaration. This source count is not fresh live advertisement or acceptance.",
+      "note": "Current L113 literal roster has40 names after dispatch_agent removal; native retire_child, role_start_set and direct_execution_grant remain. Source census only, not executed/live advertisement. Superseded historical predecessor account: Current literal roster:41 names after resolve_context removal, including direct_execution_grant, retire_child and role_start_set; source count is not executed/live advertisement. Earlier Curator caption retained as historical/withdrawn where it contradicts these current populations: The current literal roster has42 public names, including direct_execution_grant as well as native retire_child and role_start_set; response registration and live advertisement must agree with that one declaration. This source count is not fresh live advertisement or acceptance.",
       "targets": [
         {
           "anchor": {
-            "blob": "1fbe0c965d0be4e831a65565045eeeb97bb5cbf2",
-            "content": "sha256:ccc887406edd9c0802533977d85f3af82aeb53bbd3a6bacf9a26ff53e1123c46",
+            "blob": "5513557eb2dc04aa2b84f23689eb4e367aad2939",
+            "content": "sha256:5726cbf2def61d536e93fe24332977d81fc1c136503bd693fbe360a9d619d681",
             "locator": {
               "kind": "file"
             },
@@ -475,16 +475,14 @@
       ]
     },
     "7": {
-      "note": "Literal public roster has 41 names, including native retire_child and role_start_set; other retired tools remain excluded despite residual reference rows.\n\nAnchor: PUBLIC_TOOLS",
+      "note": "Current L113 literal roster has40 names after dispatch_agent removal; native retire_child, role_start_set and direct_execution_grant remain. Source census only, not executed/live advertisement. Superseded historical predecessor account: Literal public roster has 41 names, including native retire_child and role_start_set; other retired tools remain excluded despite residual reference rows.\n\nAnchor: PUBLIC_TOOLS",
       "targets": [
         {
           "anchor": {
-            "blob": "52ac6ed1143d6473be3aef2aac53917a06eb4f42",
-            "content": "sha256:ed72a60cf69d1e783ee0bc5eeafa0871d93a819f9892d0d24cb3fbfcd0ebd460",
+            "blob": "5513557eb2dc04aa2b84f23689eb4e367aad2939",
+            "content": "sha256:5726cbf2def61d536e93fe24332977d81fc1c136503bd693fbe360a9d619d681",
             "locator": {
-              "end": 68,
-              "kind": "line_range",
-              "start": 22
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/models/tools/public_roster.py"
           },

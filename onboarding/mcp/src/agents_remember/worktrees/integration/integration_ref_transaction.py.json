@@ -3,7 +3,25 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "13a3397260777a0db5b7bf2d2854037b42f8f18b",
+        "blob": "e45cbd6127d560f2f834a2b326c1f9a481c697ac",
+        "content": "sha256:389501c5b165205d5bd30831d8aab2ddad4d373649e8673dc7d036bce9380fd2",
+        "locator": {
+          "kind": "symbol",
+          "name": "_require_landing_commit_check"
+        }
+      },
+      "id": "RLZ-DET0HP",
+      "invariant": "INV-2Q8RPR",
+      "origin": {
+        "handoffEntry": "L61-R152-integration-fact-or-check",
+        "leaf": "260928-MIK-L61"
+      },
+      "rationale": "Before integration ref movement, accept a parsed matching-tree Commit-Check-Pass fact or run the exact candidate check in a scratch checkout; no authenticated historical execution is inferred from the trailer alone.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "e45cbd6127d560f2f834a2b326c1f9a481c697ac",
         "content": "sha256:820de394bec97e960efba6ade61fac285beccf0512903cc5a861d374ca079792",
         "locator": {
           "kind": "symbol",
@@ -26,7 +44,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "13a3397260777a0db5b7bf2d2854037b42f8f18b",
+            "blob": "e45cbd6127d560f2f834a2b326c1f9a481c697ac",
             "content": "sha256:1f9d9c2cc7b1d5dcaf46f62a5e3083fc69886f9fe7935064467e8af535d84ba8",
             "locator": {
               "kind": "symbol",
@@ -37,7 +55,7 @@
         },
         {
           "anchor": {
-            "blob": "13a3397260777a0db5b7bf2d2854037b42f8f18b",
+            "blob": "e45cbd6127d560f2f834a2b326c1f9a481c697ac",
             "content": "sha256:3d54c847ac533427708312616fc8fa0c71b63616a5dc1eebeca83892f95f985d",
             "locator": {
               "kind": "symbol",
@@ -69,7 +87,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "13a3397260777a0db5b7bf2d2854037b42f8f18b",
+            "blob": "e45cbd6127d560f2f834a2b326c1f9a481c697ac",
             "content": "sha256:5a6cedc45ba08d5522b39500a5837e87c92f1c7250b8f818ec9b958f682c0b7a",
             "locator": {
               "kind": "symbol",
@@ -85,7 +103,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "13a3397260777a0db5b7bf2d2854037b42f8f18b",
+            "blob": "e45cbd6127d560f2f834a2b326c1f9a481c697ac",
             "content": "sha256:a6c3dd910fe11d284665e1e91e3a63dc5d3015540fc5d1d3f0f76a8ff2bff708",
             "locator": {
               "kind": "symbol",

@@ -12,7 +12,7 @@ Selected code preparation intent and original prefix binding.
 
 ### Logic
 
-Code preparation binds the exact original four-certificate prefix, frozen run and candidate authorities before private execution. Current configuration, hook policy, logical Git preimages and enabled/no-write inputs remain part of the immutable intent. Output retention delegates to the shared raw-output selector.
+Code preparation binds the exact original four-certificate prefix, frozen run and candidate authorities before private execution. New code intents use ordinary hooks and prospective Commit-Check-Pass; private execution enforces the check. Output retention delegates to the shared raw-output selector.
 
 ### Conventions
 

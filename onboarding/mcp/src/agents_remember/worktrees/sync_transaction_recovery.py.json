@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "5a7a16405348e507189e3ae1bf82879b6868362a",
+        "blob": "774e8afb4d4159f3b486f89016308dd3f74ffe7f",
         "content": "sha256:02d57382c57ea567e0fcccfaba7683fa79d0fb6c3e188093380aa2dcf1e1a1b3",
         "locator": {
           "kind": "symbol",
@@ -16,12 +16,12 @@
         "handoffEntry": "MIK-R153 rule 5",
         "leaf": "260928-MIK-L153"
       },
-      "rationale": "Proves cancellability for every side — stash liveness, retained fingerprints, pinned heads — before the record moves to cancelling, so a refusal writes nothing.",
+      "rationale": "Prechecks pinned heads for unchanged sides and collects retained/stash ownership assessments for participating changing sides. Saved-manifest recovery and save/discard ordering belong to later cancel_sync callees, not this precheck alone.",
       "role": "primary-authority"
     },
     {
       "anchor": {
-        "blob": "5a7a16405348e507189e3ae1bf82879b6868362a",
+        "blob": "774e8afb4d4159f3b486f89016308dd3f74ffe7f",
         "content": "sha256:04826373a8d9ddf73380e7b2ba50c211c807877982552b8f87fb4bb713946f82",
         "locator": {
           "kind": "symbol",
@@ -39,8 +39,8 @@
     },
     {
       "anchor": {
-        "blob": "5a7a16405348e507189e3ae1bf82879b6868362a",
-        "content": "sha256:990e76a78c1117aa523579305c39e3b4f552f34593800243afa082cff7af12ec",
+        "blob": "774e8afb4d4159f3b486f89016308dd3f74ffe7f",
+        "content": "sha256:d74213ca3a35f9ea8fedc15c9e4e70fa2bd9985de2a2135a5ef02a4a6501ce15",
         "locator": {
           "kind": "symbol",
           "name": "cancel_sync"
@@ -52,12 +52,12 @@
         "handoffEntry": "MIK-R153 rule 3",
         "leaf": "260928-MIK-L153"
       },
-      "rationale": "The cancel flow: verify first, then discard owned dirt, roll back heads, restore every parked candidate including already-restored sides, close the transaction.",
+      "rationale": "Prechecks authority, preserves unattributable state with durable atomic saves, rolls back only the owned generation, restores the complete parked index/worktree and retires only its own recorded stash after terminal recovery. Prior completed manifests are readback-verified; fresh files are not independently reread.",
       "role": "enforcement"
     },
     {
       "anchor": {
-        "blob": "5a7a16405348e507189e3ae1bf82879b6868362a",
+        "blob": "774e8afb4d4159f3b486f89016308dd3f74ffe7f",
         "content": "sha256:240c55de9a37e148eb19c7dde3e3957920456dc91e5892d294c8541ee50b6200",
         "locator": {
           "kind": "symbol",
@@ -75,11 +75,11 @@
     },
     {
       "anchor": {
-        "blob": "5a7a16405348e507189e3ae1bf82879b6868362a",
-        "content": "sha256:3c22fe7de8313df4a3259d6b5e68451a1a6a937e2e199f3531f511403e4cb64a",
+        "blob": "774e8afb4d4159f3b486f89016308dd3f74ffe7f",
+        "content": "sha256:69212e85879f40faac09a803e1ba0be55d01f8cc96e4c381698319d6abf03e32",
         "locator": {
           "kind": "symbol",
-          "name": "_refuse_cancel_for_later_work"
+          "name": "_cancelled_summary"
         }
       },
       "id": "RLZ-QTXJXM",
@@ -88,7 +88,7 @@
         "handoffEntry": "MIK-R162 failure clause (no merge of the proof's own)",
         "leaf": "260928-MIK-L163"
       },
-      "rationale": "Adds the sentence with git's words to the cancel's refusal over later work.",
+      "rationale": "The cancelled result names actual saved files and SHA-256 digests and retains the assessment native fault, without adopting unattributable work or claiming an unchanged refusal.",
       "role": "presentation"
     }
   ],
@@ -98,7 +98,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "586e4067c8886bf8bd90489953714e07ab61b24f",
+            "blob": "139e72daac45a29a37bf8bb858714cee8ba9f8b5",
             "content": "sha256:888445edc330c6b525441a393fc1814ef0a452abccf4087af43ae902183bc703",
             "locator": {
               "kind": "symbol",
@@ -110,7 +110,7 @@
         },
         {
           "anchor": {
-            "blob": "586e4067c8886bf8bd90489953714e07ab61b24f",
+            "blob": "139e72daac45a29a37bf8bb858714cee8ba9f8b5",
             "content": "sha256:d4bc6b6f0f627f861dfed3e739f5288f508f957eea7a9e550c5b69aa8f3fb5fe",
             "locator": {
               "kind": "symbol",
@@ -127,7 +127,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5a7a16405348e507189e3ae1bf82879b6868362a",
+            "blob": "774e8afb4d4159f3b486f89016308dd3f74ffe7f",
             "content": "sha256:04826373a8d9ddf73380e7b2ba50c211c807877982552b8f87fb4bb713946f82",
             "locator": {
               "kind": "symbol",
@@ -143,7 +143,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7941dbcd694249b239e395eac42b9de8a9a004c0",
+            "blob": "92fee70bb3beb08af1a5a758bd7bebda384cdb9c",
             "content": "sha256:610da19fbdf8f06d13d74b3047ba0e21b3938a0ebca6c1185c87dfe38b4d0e66",
             "locator": {
               "kind": "symbol",
@@ -155,7 +155,7 @@
         },
         {
           "anchor": {
-            "blob": "7941dbcd694249b239e395eac42b9de8a9a004c0",
+            "blob": "92fee70bb3beb08af1a5a758bd7bebda384cdb9c",
             "content": "sha256:54752aca1563316956fdeda67007fbe3df351ef1252ac5c4650045859ded929d",
             "locator": {
               "kind": "symbol",
@@ -172,24 +172,24 @@
       "targets": [
         {
           "anchor": {
-            "blob": "10f6f886d12940d8703cbf93a0860539bcdc8158",
+            "blob": "ad8f2c2994a58d6b30409cfa13e222fb164efdeb",
             "content": "sha256:d97b331539bed08d8bb17a4fe08fb8c7706ee94b36bf4048fe03eedbc4a5800d",
             "locator": {
               "kind": "symbol",
               "name": "rollback_side"
             },
-            "path": "mcp/src/agents_remember/worktrees/sync_transaction_git.py"
+            "path": "mcp/src/agents_remember/worktrees/sync_transaction_git/_merge.py"
           },
           "kind": "code"
         }
       ]
     },
     "4": {
-      "note": "Finalization refuses while a side still parks its candidate, and cancellation clears a conflicted reapply, rolls back, and returns the parked candidate or reports a typed manual repair.\n\nAnchor: `finalize_sync`, `cancel_sync`",
+      "note": "Finalization refuses while a side still parks its candidate, and cancellation clears a conflicted reapply, rolls back, and returns the parked candidate or reports a typed manual repair.",
       "targets": [
         {
           "anchor": {
-            "blob": "5a7a16405348e507189e3ae1bf82879b6868362a",
+            "blob": "774e8afb4d4159f3b486f89016308dd3f74ffe7f",
             "content": "sha256:777bc7bc2f7c00451f9793cef42271f3e4d684a8b65d5dce201efc8aaef6d920",
             "locator": {
               "kind": "symbol",
@@ -200,8 +200,8 @@
         },
         {
           "anchor": {
-            "blob": "5a7a16405348e507189e3ae1bf82879b6868362a",
-            "content": "sha256:990e76a78c1117aa523579305c39e3b4f552f34593800243afa082cff7af12ec",
+            "blob": "774e8afb4d4159f3b486f89016308dd3f74ffe7f",
+            "content": "sha256:d74213ca3a35f9ea8fedc15c9e4e70fa2bd9985de2a2135a5ef02a4a6501ce15",
             "locator": {
               "kind": "symbol",
               "name": "cancel_sync"
@@ -216,7 +216,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5a7a16405348e507189e3ae1bf82879b6868362a",
+            "blob": "774e8afb4d4159f3b486f89016308dd3f74ffe7f",
             "content": "sha256:4914b185c2e5d37db635c28801ec25eb7e089977c7b791b1c9b13703c40528f7",
             "locator": {
               "kind": "symbol",
@@ -227,7 +227,7 @@
         },
         {
           "anchor": {
-            "blob": "5a7a16405348e507189e3ae1bf82879b6868362a",
+            "blob": "774e8afb4d4159f3b486f89016308dd3f74ffe7f",
             "content": "sha256:891cae08c8d5b0e773a64d1940b51a1ac566213ac0137ba3f1bd58f7c4aefb56",
             "locator": {
               "kind": "symbol",
@@ -243,7 +243,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5a7a16405348e507189e3ae1bf82879b6868362a",
+            "blob": "774e8afb4d4159f3b486f89016308dd3f74ffe7f",
             "content": "sha256:4c14ef1128e8d76827f7b5aad6fdd4f416ba99102bb37715a114928c26fcb5a9",
             "locator": {
               "kind": "symbol",
@@ -259,7 +259,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5a7a16405348e507189e3ae1bf82879b6868362a",
+            "blob": "774e8afb4d4159f3b486f89016308dd3f74ffe7f",
             "content": "sha256:240c55de9a37e148eb19c7dde3e3957920456dc91e5892d294c8541ee50b6200",
             "locator": {
               "kind": "symbol",
@@ -275,7 +275,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5a7a16405348e507189e3ae1bf82879b6868362a",
+            "blob": "774e8afb4d4159f3b486f89016308dd3f74ffe7f",
             "content": "sha256:02d57382c57ea567e0fcccfaba7683fa79d0fb6c3e188093380aa2dcf1e1a1b3",
             "locator": {
               "kind": "symbol",
@@ -287,15 +287,15 @@
       ]
     },
     "9": {
-      "note": "Later-work and unknown-attribution refusals preserve state; native merge/configuration faults explain why a required reapply result could not establish ownership.",
+      "note": "Save-first cancellation names actual saved files and digests; native merge faults explain failed attribution in the cancelled summary rather than forcing a later-work refusal.",
       "targets": [
         {
           "anchor": {
-            "blob": "5a7a16405348e507189e3ae1bf82879b6868362a",
-            "content": "sha256:3c22fe7de8313df4a3259d6b5e68451a1a6a937e2e199f3531f511403e4cb64a",
+            "blob": "774e8afb4d4159f3b486f89016308dd3f74ffe7f",
+            "content": "sha256:69212e85879f40faac09a803e1ba0be55d01f8cc96e4c381698319d6abf03e32",
             "locator": {
               "kind": "symbol",
-              "name": "_refuse_cancel_for_later_work"
+              "name": "_cancelled_summary"
             }
           },
           "kind": "code"

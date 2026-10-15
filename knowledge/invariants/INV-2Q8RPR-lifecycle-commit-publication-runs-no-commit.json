@@ -5,14 +5,17 @@
     ],
     "justification": "At least one proof names this invariant's exact behavior at the candidate."
   },
-  "applicability": "Ordinary closeout and direct-landing commit-object publication through the shared publish_tree_commit primitive.",
+  "applicability": "Ordinary and direct exact-tree publication, both prepared repository legs, and integration pre-ref admission.",
   "conditions": [
-    "The route is the shared commit-tree primitive."
+    "The repository pre-commit hook is resolved for the worktree and judged tree; absence is recorded as hook=none, not a skipped configured check.",
+    "Failed, unrunnable, timed-out or tracked/index-mutating hooks refuse publication before ref movement.",
+    "Successful admission records a tree-bound Commit-Check-Pass fact.",
+    "Integration trusts the parsed tree-matching landing trailer as its fact; this is not independent authentication of historical hook execution. With no matching fact, it runs the check before master refs move."
   ],
   "exclusions": [
-    "Prepared code commits: --no-verify skips pre-commit and commit-msg, but prepare-commit-msg and post-commit still run.",
-    "Prepared memory commits retain ordinary Git commit hooks.",
-    "reference-transaction is a ref hook and still runs for this primitive."
+    "Commit-tree does not itself invoke commit-msg, prepare-commit-msg or post-commit; the explicit repository pre-commit check precedes it.",
+    "Prepared code and memory use ordinary git commit hooks; a legacy strict-code-no-verify journal spelling is not a bypass.",
+    "Reference-transaction hooks retain their separate native ref-movement role."
   ],
   "id": "INV-2Q8RPR",
   "origin": {
@@ -26,9 +29,9 @@
     "leaf": "260928-MIK-L26",
     "task": "260928-MIK"
   },
-  "revision": 2,
+  "revision": 3,
   "schema": "ar-invariant/v1",
-  "statement": "Ordinary closeout and direct-landing publication through publish_tree_commit runs no Git commit hooks, including the direct-landing memory commit; prepared closeouts retain their separate hook policies.",
+  "statement": "Product landing publication requires the repository pre-commit check on the exact judged tree before a new commit is published or its ref moves. Ordinary/direct commit-tree routes run the explicit check; prepared code and memory retain ordinary hooks without bypass. Integration requires a matching tree-bound Commit-Check-Pass fact or reruns the repository check on that candidate tree.",
   "status": "proposed",
   "supersedes": []
 }

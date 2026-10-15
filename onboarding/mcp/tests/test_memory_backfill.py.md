@@ -61,6 +61,8 @@ cache commits and rescue refs are fixture data; no shared repository is rewritte
 
 No new implementation or live-state operation is authorized by this documentation pass.
 
+Rewritten-tree admission cases assert that the bound checker sees nonempty, unique tree SHAs before target refs move. A failing checker and a missing checker both retain the original target tip. This injected-callback witness is distinct from the real repository-hook fixture in test_l61_remaining_findings.py.
+
 ## Evidence
 
 ### Docs References
@@ -90,3 +92,5 @@ The code/memory or fixture-repository boundaries above are established by packag
 No additional configured external or sibling-repository evidence is claimed.
 
 No additional configured cross-repository evidence.
+
+- Rewritten-tree admission cases assert that the bound checker sees nonempty, unique tree SHAs before target refs move. A failing checker and a missing checker both retain the original target tip. This injected-callback witness is distinct from the real repository-hook fixture in test_l61_remaining_findings.py. [8]

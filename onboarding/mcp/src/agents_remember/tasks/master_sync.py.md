@@ -16,12 +16,13 @@ know task-series policy.
 ### Logic
 
 `plan_master_sync(task_root, leaf)` only acts on `kind == "subTask"` documents.
-When a leaf has a `master` reference, `_json_path_from_master_ref` accepts
-only a candidate inside the task root whose parent is that root. Without a
-master reference, `_master_json_path` asks `folder_master_json_path`, which
-returns the root's default `task.json` when it exists. Missing
-or cross-series candidates return `status="none"`; a found but unreadable or
-non-master parent raises `MasterSyncError`.
+When a leaf has a `master` reference, `_master_json_path` calls the shared
+`master_json_path_from_ref`: task, task.md and task.json resolve to the same
+same-folder document. Missing, escaping or nested named masters raise
+`MasterSyncError` with the leaf, reference and remedy; they do not become
+`status="none"`. Without a master reference, `folder_master_json_path` supplies
+the existing folder task.json or None. An unreadable or non-master parent
+also raises `MasterSyncError`.
 
 **`folder_master_json_path` is the one rule for a leaf that names no master
 (MIK-R38).** It returns `None` for a leaf that names its master or is not a
@@ -49,18 +50,14 @@ not render markdown; the application/store boundary owns that.
 ### Invariants And Boundaries
 
 - Auto-sync accepts only a same-root master candidate whose parent is exactly
-  the task root. A cross-series or nested candidate is ignored.
+  the task root. Missing, escaping or nested named masters refuse; task/task.md/task.json resolve uniformly across all three writers.
 - Manual master-row `scope` is preserved; the sync only owns deterministic row
   fields that can be derived from the leaf.
-- With statuses present and no `completion_blockers`, the derived row is
-  `Completed`. Any done, in-progress, or blocked status otherwise derives
+- With statuses present, leaf document status already `Completed`, and no
+  `completion_blockers`, the derived row is `Completed`. Any done, in-progress, or blocked status otherwise derives
   `inProgress`; an inconsistent completed leaf also derives
   `inProgress`, and the remaining case keeps the leaf status.
-- **One resolution rule for every writer of a leaf's master row (MIK-R38).** The
-  sync, the finalizer and reopen resolve a leaf naming no master through
-  `folder_master_json_path` alone; each resolves a named reference by its own
-  rule (the named-reference differences between them are out of MIK-R38's scope,
-  review R1 note 3).
+- **One resolution rule for every writer of a leaf's master row (MIK-R38).** All three writers share folder_master_json_path for unnamed leaves and master_json_path_from_ref for named masters.
 - **An abandoned leaf projects `abandoned` unchanged:** `derived_master_status`
   returns `abandoned` before the rollup, so a deliberately dropped leaf does not
   collapse back to `inProgress` and a later master sync cannot silently reopen a
@@ -81,8 +78,9 @@ No relevant external documentation found; behavior is defined by repo task-docum
 
 ### Repo-Internal References
 
-- Same-root parent resolution and master-plan construction: a named master through `_json_path_from_master_ref`, a leaf naming none through `folder_master_json_path`. [1]
+- Same-root parent planning uses the shared named-master refusal rule; unnamed leaves retain folder fallback. [1]
 - The one rule for a leaf naming no master: `None` for a named master or a non-`subTask`, else the folder's `task.json` when it exists. [2]
+
 - The finalizer and reopen resolve an unnamed leaf through the same helper. [3]
 - Deterministic leaf-to-row mapping with manual scope preservation. [4]
 - Strict master-row status derivation and unresolved-master demotion. [5]

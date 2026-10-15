@@ -7,7 +7,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "19a9717f0813cbe1190345be140dd5f29802a3c1",
+            "blob": "8a9babc9b20c6761c07440ac22d8adeba24ef3c2",
             "content": "sha256:a40c02202996c5392b3c97d7b5fc62421a46ff4db0d5a0db71efe9cbbbddc531",
             "locator": {
               "kind": "symbol",
@@ -37,7 +37,7 @@
       ]
     },
     "13": {
-      "note": "Empty crossingReport is omitted under the historical N2 rule; current retainedTreeDigests remains serialized, and empty defaults admit old-journal reads without claiming old-runtime forward compatibility.",
+      "note": "A nonempty crossingReport may name crossing or all-converted structural diagnostics; the serializer omits the empty value. N2 is historical; current retainedTreeDigests remains serialized, and old-journal defaults do not prove old-runtime forward compatibility.",
       "targets": [
         {
           "anchor": {

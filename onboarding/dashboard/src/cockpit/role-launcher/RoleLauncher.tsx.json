@@ -94,10 +94,11 @@
     {
       "anchor": {
         "blob": "e594548fbdb28c98577403ff11fe3366119231d4",
-        "content": "sha256:a5ec52f9863b0e14fd179dd2c894e727f1033ebf1f0784d2da202ecfdda1571f",
+        "content": "sha256:efe3fd473f85706978420f1e495b0d9acd28d7a821f6bb4921b416fe3f68ae6a",
         "locator": {
-          "kind": "symbol",
-          "name": "RoleLauncher"
+          "end": 450,
+          "kind": "line_range",
+          "start": 370
         }
       },
       "id": "RLZ-N85X2R",

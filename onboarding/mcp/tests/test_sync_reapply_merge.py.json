@@ -3,7 +3,24 @@
   "proves": [
     {
       "anchor": {
-        "blob": "c033c80fc9b67d4adca3403f4e895f9958020161",
+        "blob": "7b39ff0bd3bf7f78df5fbb3c96d48e95d9c8d8b2",
+        "content": "sha256:26f8721b8df24ad1e018bdd05a6957da67ef0ad98607a82ace4fbf3f5600955f",
+        "locator": {
+          "kind": "symbol",
+          "name": "ReapplyMergeTests.test_a_merge_git_cannot_make_fails_its_path_and_no_other_merge_stands_in"
+        }
+      },
+      "facet": "Native faults stop proof without merge-file; cancel under fault restores tree/head, empties stash, repeats terminally.",
+      "id": "PRF-1KGR1T",
+      "invariant": "INV-CMQTZF",
+      "origin": {
+        "handoffEntry": "L61-qualified-replacement-PRF-73MQY0",
+        "leaf": "260928-MIK-L61"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "7b39ff0bd3bf7f78df5fbb3c96d48e95d9c8d8b2",
         "content": "sha256:992be3fa2d7556dfdc134ad9dc05d683c321d03ef8503af5a108937ed9359956",
         "locator": {
           "kind": "symbol",
@@ -20,41 +37,24 @@
     },
     {
       "anchor": {
-        "blob": "c033c80fc9b67d4adca3403f4e895f9958020161",
-        "content": "sha256:28c0d623e06b1c45c2bd442b7e3690bd4b52827cbd8e01d6c7b82f31c195a4a7",
+        "blob": "7b39ff0bd3bf7f78df5fbb3c96d48e95d9c8d8b2",
+        "content": "sha256:ccf6030e39cd8f1bc39cf02f72037d15be859c5bacbc8ecc0e36a097850f82ff",
         "locator": {
           "kind": "symbol",
-          "name": "ReapplyMergeTests.test_cancel_keeps_a_later_edit_that_equals_another_algorithms_merge"
+          "name": "ReapplyMergeTests.test_cancel_saves_a_later_edit_that_equals_another_algorithms_merge"
         }
       },
-      "facet": "Cancel refuses an other-algorithm later edit, names its path, preserves tree bytes and record phase, and retains stash authority.",
-      "id": "PRF-4BE1G3",
+      "facet": "Cancel succeeds, names unattributable work, lists rows.txt and saves parked/other-algorithm bytes.",
+      "id": "PRF-9CY7Y3",
       "invariant": "INV-D637WA",
       "origin": {
-        "handoffEntry": "MIK-R162 rule 3",
-        "leaf": "260928-MIK-L163"
+        "handoffEntry": "L61-qualified-replacement-PRF-4BE1G3",
+        "leaf": "260928-MIK-L61"
       }
     },
     {
       "anchor": {
-        "blob": "c033c80fc9b67d4adca3403f4e895f9958020161",
-        "content": "sha256:7f26c3432d448373173e2469e0736792a3afeaa31811753bdf9b8ee37e3d9e6f",
-        "locator": {
-          "kind": "symbol",
-          "name": "ReapplyMergeTests.test_a_merge_git_cannot_make_fails_its_path_and_no_other_merge_stands_in"
-        }
-      },
-      "facet": "Injected merge-tree/configuration failures stop proof with native reasons and no merge-file call; refused cancel preserves the reapplied tree and parked phase, and clearing the fault permits exact recovery.",
-      "id": "PRF-73MQY0",
-      "invariant": "INV-CMQTZF",
-      "origin": {
-        "handoffEntry": "MIK-R162 failure clause (no merge of the proof's own)",
-        "leaf": "260928-MIK-L163"
-      }
-    },
-    {
-      "anchor": {
-        "blob": "c033c80fc9b67d4adca3403f4e895f9958020161",
+        "blob": "7b39ff0bd3bf7f78df5fbb3c96d48e95d9c8d8b2",
         "content": "sha256:8cd53a7e62ac618763520f056a116b31ae3e0ee30476d9449c3f83896b7ed8d8",
         "locator": {
           "kind": "symbol",
@@ -71,8 +71,8 @@
     },
     {
       "anchor": {
-        "blob": "c033c80fc9b67d4adca3403f4e895f9958020161",
-        "content": "sha256:a00326b6c14918c1b2a8d118b688ef1560c37a6586c37a1573d694da9656a3b7",
+        "blob": "7b39ff0bd3bf7f78df5fbb3c96d48e95d9c8d8b2",
+        "content": "sha256:09e46e46f24c1f269c3cccd098ecf6e1b2b46aa4e2a5ca4a952b255161da8820",
         "locator": {
           "kind": "symbol",
           "name": "ReapplyMergeTests.test_rows_added_at_one_place_of_a_merged_catalog_finish_the_sync"
@@ -88,7 +88,7 @@
     },
     {
       "anchor": {
-        "blob": "c033c80fc9b67d4adca3403f4e895f9958020161",
+        "blob": "7b39ff0bd3bf7f78df5fbb3c96d48e95d9c8d8b2",
         "content": "sha256:a25278125f7b113bcb12bcf6cb2ca61295614db9923b791405638ce3c72d1e87",
         "locator": {
           "kind": "symbol",
@@ -105,7 +105,7 @@
     },
     {
       "anchor": {
-        "blob": "c033c80fc9b67d4adca3403f4e895f9958020161",
+        "blob": "7b39ff0bd3bf7f78df5fbb3c96d48e95d9c8d8b2",
         "content": "sha256:7ebc622a8889effd6af57ec8c9ed2f8b5cff581562aeb076da46e3e45a1b831b",
         "locator": {
           "kind": "symbol",
@@ -122,7 +122,7 @@
     },
     {
       "anchor": {
-        "blob": "c033c80fc9b67d4adca3403f4e895f9958020161",
+        "blob": "7b39ff0bd3bf7f78df5fbb3c96d48e95d9c8d8b2",
         "content": "sha256:13c0a19b380800c4eb688894941809c565913be8f0a114302e98c1187c8e98ea",
         "locator": {
           "kind": "symbol",
@@ -139,7 +139,7 @@
     },
     {
       "anchor": {
-        "blob": "c033c80fc9b67d4adca3403f4e895f9958020161",
+        "blob": "7b39ff0bd3bf7f78df5fbb3c96d48e95d9c8d8b2",
         "content": "sha256:137e8c52c15bfa78ee38f023e8e832120b17d35ff5d505091d790e309294d7ce",
         "locator": {
           "kind": "symbol",
@@ -156,7 +156,7 @@
     },
     {
       "anchor": {
-        "blob": "c033c80fc9b67d4adca3403f4e895f9958020161",
+        "blob": "7b39ff0bd3bf7f78df5fbb3c96d48e95d9c8d8b2",
         "content": "sha256:d242bf3915a666a7bde13c2b9dba411d87ebe9faf647f22052d34477223c1237",
         "locator": {
           "kind": "symbol",
@@ -173,7 +173,7 @@
     },
     {
       "anchor": {
-        "blob": "c033c80fc9b67d4adca3403f4e895f9958020161",
+        "blob": "7b39ff0bd3bf7f78df5fbb3c96d48e95d9c8d8b2",
         "content": "sha256:fccc95498caacdad92431735c48c47a36257014b1e38d80fa98fd90bce6c51ec",
         "locator": {
           "kind": "symbol",
@@ -190,7 +190,7 @@
     },
     {
       "anchor": {
-        "blob": "c033c80fc9b67d4adca3403f4e895f9958020161",
+        "blob": "7b39ff0bd3bf7f78df5fbb3c96d48e95d9c8d8b2",
         "content": "sha256:35420cad0c58931dc0b05756ce52ff14d00eebd30d263c12efabd0bcfa6d3aba",
         "locator": {
           "kind": "symbol",
@@ -230,12 +230,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c033c80fc9b67d4adca3403f4e895f9958020161",
+            "blob": "7b39ff0bd3bf7f78df5fbb3c96d48e95d9c8d8b2",
             "content": "sha256:8cd53a7e62ac618763520f056a116b31ae3e0ee30476d9449c3f83896b7ed8d8",
             "locator": {
-              "end": 285,
+              "end": 296,
               "kind": "line_range",
-              "start": 262
+              "start": 273
             }
           },
           "kind": "test"
@@ -247,12 +247,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c033c80fc9b67d4adca3403f4e895f9958020161",
+            "blob": "7b39ff0bd3bf7f78df5fbb3c96d48e95d9c8d8b2",
             "content": "sha256:7ebc622a8889effd6af57ec8c9ed2f8b5cff581562aeb076da46e3e45a1b831b",
             "locator": {
-              "end": 308,
+              "end": 319,
               "kind": "line_range",
-              "start": 287
+              "start": 298
             }
           },
           "kind": "test"
@@ -264,12 +264,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c033c80fc9b67d4adca3403f4e895f9958020161",
+            "blob": "7b39ff0bd3bf7f78df5fbb3c96d48e95d9c8d8b2",
             "content": "sha256:13c0a19b380800c4eb688894941809c565913be8f0a114302e98c1187c8e98ea",
             "locator": {
-              "end": 338,
+              "end": 349,
               "kind": "line_range",
-              "start": 310
+              "start": 321
             }
           },
           "kind": "test"
@@ -277,7 +277,7 @@
       ]
     },
     "5": {
-      "note": "A byte-distinct other-algorithm result cannot satisfy restoration or authorize cancellation.\n\nAnchor: `ReapplyMergeTests.test_the_merge_of_another_diff_algorithm_does_not_pass_the_proof`, `ReapplyMergeTests.test_cancel_keeps_a_later_edit_that_equals_another_algorithms_merge`",
+      "note": "A byte-distinct other-algorithm result cannot satisfy restoration or count as owned cancellation output. Cancellation still succeeds after saving the unattributable/later bytes; this is not the retired refusal-only cancel rule.\n\nAnchor: `ReapplyMergeTests.test_the_merge_of_another_diff_algorithm_does_not_pass_the_proof`, `ReapplyMergeTests.test_cancel_keeps_a_later_edit_that_equals_another_algorithms_merge`",
       "targets": [
         {
           "anchor": {
@@ -298,12 +298,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c033c80fc9b67d4adca3403f4e895f9958020161",
+            "blob": "7b39ff0bd3bf7f78df5fbb3c96d48e95d9c8d8b2",
             "content": "sha256:137e8c52c15bfa78ee38f023e8e832120b17d35ff5d505091d790e309294d7ce",
             "locator": {
-              "end": 476,
+              "end": 494,
               "kind": "line_range",
-              "start": 433
+              "start": 451
             }
           },
           "kind": "test"
@@ -332,12 +332,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c033c80fc9b67d4adca3403f4e895f9958020161",
+            "blob": "7b39ff0bd3bf7f78df5fbb3c96d48e95d9c8d8b2",
             "content": "sha256:e6e56c14f9c9b92201e6ed925161db0aa64e6a1b58840bf771d65c91b42dceaf",
             "locator": {
-              "end": 580,
+              "end": 599,
               "kind": "line_range",
-              "start": 566
+              "start": 585
             }
           },
           "kind": "test"

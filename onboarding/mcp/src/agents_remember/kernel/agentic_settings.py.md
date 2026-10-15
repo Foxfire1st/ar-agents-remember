@@ -75,13 +75,12 @@ one LAYER may legitimately be partial (a repo-local file overriding a single lea
 globally-defined harness entry, or referencing a harness id the other layer declares). The blocks
 are then merged (`merge_settings` — deep merge at leaf-key granularity, object leaves recurse,
 scalars AND arrays are REPLACED by the override, local over global) and the merged block is parsed
-STRICT into `AgenticSettings` — cross-layer rules (harness-entry completeness, harness-id
-membership) bind on the merged block, with the merged source label in errors.
+STRICT into `AgenticSettings` — cross-layer harness-definition completeness and spawn-harness
+membership bind on the merged block, with the merged source label in errors. Role harness, model
+and effort values are nonempty strings checked for parser shape, not effective-registry membership;
+the actual launch/dispatch owner validates its catalog or registry choices.
 
-The fail-loud rule is scoped to `orchestration.*`. The current outer allowlist is
-`gateDelegation`, `loops`, `roles`, `rolesPerLevel`, `concurrency`, `spawn`, `harnesses`,
-`expectations`, `agentNotifier`, `qualityGate`, `roleMessageLimit`, plus the temporary deprecated
-`supervisor` alias. `_refuse_unknown` names the offending keys, allowed set and source file.
+The fail-loud rule is scoped to `orchestration.*`. The orchestration allowlist also includes landing; facade exports its model/default/key set/parser and assembles it per use. `_refuse_unknown` names the offending keys, allowed set and source file.
 
 The escalation-ladder account previously recorded here is historical: the current allowlist and
 assembly contain no `orchestration.escalation`, `EscalationSettings` or `_parse_escalation` route.
@@ -118,7 +117,7 @@ Unknown TOP-LEVEL keys are deliberately tolerated-not-parsed: the same user file
 the c-08 memory-settings fallback and the earmarked future home of further families
 (`contextProviders` first in line — gate amendment 2026-07-06), so the fail-loud scope must
 not foreclose them. Absent files (or an absent `orchestration` key) yield the documented
-defaults: all-human gate policy, the L12 loop defaults (`maxRounds` 3, `delta-verify`
+defaults: all-human gate policy, the current loop defaults (`maxRounds` 5, `delta-verify`
 reviewer reuse, complexity high/medium, perLevel scored/seam-required/strategist), no role
 overrides, uncapped concurrency, no spawn preference. Malformed JSON and non-object roots
 fail loud with the path. A JSON `null` at ANY known `orchestration.*` family key (either
@@ -160,7 +159,7 @@ global role default on top of the file merge. Role knobs now also carry `mode`, 
 The current closed role vocabulary for flat `orchestration.roles` and per-level
 `orchestration.rolesPerLevel` is `architect`, `orchestrator`, `designer`, `strategist`, `manager`,
 `worker`, `curator`, `reviewer`, `investigator` and `bootstrap`. Unknown roles remain fail-loud.
-`system-specialist` is the warned compatibility spelling for `investigator`, not an additional
+`system-specialist` is the accepted compatibility spelling normalized to `investigator`, not an additional
 canonical role. The earlier eight/nine-role descriptions are historical vocabulary observations,
 not the current allowlist or an instruction selecting a seat.
 
@@ -178,11 +177,13 @@ together post-merge (`effortFlag`+`effortFlagValues`, `effortSessionValues`+`eff
 other than `{value}` — a stray field (`/set {mode}={value}`), a positional `{}`, or an unmatched
 brace refuses naming the harness. A builtin override may supply just the command, so the check lives
 here beside the pairing rule; once validated, the raw `KeyError` at `serving/harnesses.py`
-(`effort_session_commands`' `.format`) is unreachable from settings. Harness references
-(`orchestration.spawn.harness`, `roles.<role>.harness`) are validated against the EFFECTIVE id set
-(`_require_harness_id` with the merged ids; the per-file pass passes `None` = shape-only), so a
-settings value can never inject argv through a reference — argv is definable only in the explicit,
-fail-loud harnesses family.
+(`effort_session_commands`' `.format`) is unreachable from settings. The spawn harness reference
+(`orchestration.spawn.harness`) is validated against the EFFECTIVE id set by `_require_harness_id`
+with merged IDs; its per-file pass is shape-only. `_parse_roles` receives no harness ID set and
+shape-checks role harness/model/effort strings; native/Paseo catalog validation or explicit registry
+adapter validation occurs later at launch/dispatch. Harness-definition argv remains in the explicit,
+fail-loud harnesses family; these distinct parser and dispatch boundaries are not a universal
+role-membership guarantee at settings load.
 Loop POSTURE names (`perLevel.<level>.loop`, `perMaster.<master>.<level>.loop`) are
 model-interpreted doctrine, validated as non-empty strings, deliberately not a closed set;
 complexity thresholds ARE scale-validated against `COMPLEXITY_SCALE` (low/medium/high).
@@ -238,7 +239,7 @@ dashboard settings write path are tracked outside as follow-ups.)
 
 No meaningful cross-repo references found.
 
-The loader operates on coordinator/repo-local files only.
+The loader rereads the user settings file selected by the location guard (XDG_CONFIG_HOME or the user configuration home) and the optional repository-local file. Reading this implementation is not reading those settings files.
 
 ## 260712-TRH-L4 Final Candidate
 

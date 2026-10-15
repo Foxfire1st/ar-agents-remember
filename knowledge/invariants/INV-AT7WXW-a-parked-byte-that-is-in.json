@@ -6,7 +6,7 @@
     ],
     "justification": "The named real-operation regression witnesses protect against false restore acceptance or destructive cancellation caused by a mismatched native merge or index-byte read."
   },
-  "applicability": "Failure diagnosis for substantive parked paths whose exact expected reapply bytes are absent or whose required native merge is conflicted.",
+  "applicability": "Exact native-result restoration failure and bounded merge-rule diagnosis; not a driver-independent parked-added-line retention predicate.",
   "conditions": [
     "The complete stash population remains the proof input.",
     "A readable named carried-head merge attribute is shown beside the failed path.",
@@ -29,9 +29,9 @@
     "leaf": "260928-MIK-L163",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-invariant/v1",
-  "statement": "A parked byte that is in neither the worktree nor the carried line still fails the proof of restored parked work, and the failure names the path together with the merge rule the carried head's attributes give it; a path git reports as conflicted in the merge made again fails the same way.",
+  "statement": "A substantive parked path fails restoration when its worktree differs from the computable prescribed native reapply result or the required native result is uncomputable or conflicted; bounded inline diagnosis names failed paths and readable carried-head merge rules, with the complete failed-name population logged.",
   "status": "proposed",
   "supersedes": []
 }

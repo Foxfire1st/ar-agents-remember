@@ -24,8 +24,10 @@ retained interval-failure case injects `RuntimeError("boom")` at `memory_commit_
 target and absence from the worktree index, and the staged file's unchanged text. `_fingerprint`
 compares HEAD (or `unborn`), `git write-tree` stdout, porcelain status and a digest of non-`.git`
 file paths/bytes; it does not measure raw index bytes or flags. Separate tests assert committed-tree
-identity with the validated candidate despite an installed pre-commit hook (asserted not to run),
-and that successful adoption leaves `git write-tree` equal to `HEAD^{tree}`. These stored cases do
+identity with the validated candidate. A rewriting pre-commit hook runs and refuses without
+HEAD/main publication, restoring the original layout/index except its untracked marker; a passing
+hook runs once and publishes the validated tree. Successful adoption leaves `git write-tree`
+equal to `HEAD^{tree}`. These stored cases do
 not witness concurrent edits, ignore-file restoration or mode, preparation failures, or Git failures.
 
 The description case rejects restoration of `drift_check` registration, then checks the surviving `context_packet` include-drift description, its longer-explanation pointer and both shipped skill populations. It also requires each c-02 copy to contain the ordinary-candidate statements "a current `onboarding_trace` row about the file" and "a counted change of its card alone never answers". Those static corpus assertions do not remove L53's amended, leaf-local old-MAIN-LINE counted-card exception. Measurement/currentness/advisory obligations survive the retired tool; the removed registration sentence does not. Context requests no longer carry the removed `include_providers` argument.

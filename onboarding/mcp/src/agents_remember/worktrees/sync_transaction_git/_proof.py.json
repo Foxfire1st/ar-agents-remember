@@ -1,0 +1,302 @@
+{
+  "path": "mcp/src/agents_remember/worktrees/sync_transaction_git/_proof.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "f56826a17887834f619a63425e06602c15715faa",
+        "content": "sha256:9760f9e90bffa86df3c9c2d10bcd85b1600ebc4c2247d661ac0658f254f9ce0f",
+        "locator": {
+          "kind": "symbol",
+          "name": "_ReapplyMerge"
+        }
+      },
+      "id": "RLZ-01GD28",
+      "invariant": "INV-8NGD56",
+      "origin": {
+        "handoffEntry": "MIK-R162 failure clause (the reapply's own context)",
+        "leaf": "260928-MIK-L163"
+      },
+      "rationale": "`_make` runs `git config --get diff.algorithm` and `git merge-tree` in `side.worktree`, passes `--attr-source=<carried head>` and, where the worktree's configuration names an algorithm, `-Xdiff-algorithm=<value>`.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "f56826a17887834f619a63425e06602c15715faa",
+        "content": "sha256:f0dff9c8e1941e3fa32c0dd46a1446b8119fd22cd943fec5624cd6dd9d81dd4d",
+        "locator": {
+          "kind": "symbol",
+          "name": "parked_wip_failures"
+        }
+      },
+      "id": "RLZ-2ME18J",
+      "invariant": "INV-0HTVY3",
+      "origin": {
+        "handoffEntry": "MIK-R162 rule 1",
+        "leaf": "260928-MIK-L163"
+      },
+      "rationale": "Builds the one merge of a proof and compares every parked path's worktree bytes with the one content it expects.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "f56826a17887834f619a63425e06602c15715faa",
+        "content": "sha256:f0dff9c8e1941e3fa32c0dd46a1446b8119fd22cd943fec5624cd6dd9d81dd4d",
+        "locator": {
+          "kind": "symbol",
+          "name": "parked_wip_failures"
+        }
+      },
+      "id": "RLZ-72V1QQ",
+      "invariant": "INV-70577K",
+      "origin": {
+        "handoffEntry": "MIK-R153 rule 1",
+        "leaf": "260928-MIK-L153"
+      },
+      "rationale": "The per-path comparison of that population against the live worktree bytes; the only decider the restore paths call.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "f56826a17887834f619a63425e06602c15715faa",
+        "content": "sha256:ead9177467d33bc0f2f62cb4653d289a22b28eb8209c2de7de9d6e6bf4439a77",
+        "locator": {
+          "kind": "symbol",
+          "name": "reapply_merge_fault"
+        }
+      },
+      "id": "RLZ-BF5MYN",
+      "invariant": "INV-CMQTZF",
+      "origin": {
+        "handoffEntry": "MIK-R162 failure clause (no merge of the proof's own)",
+        "leaf": "260928-MIK-L163"
+      },
+      "rationale": "Recomputes expected content only for the paths its caller supplies. Restoration supplies failures[:10]; Git command/exit/reason is returned only if that population asks for the lazy native merge and it captures a fault. If the sample needs no native merge, fault is empty even when a later whole-proof failure needed one.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "f56826a17887834f619a63425e06602c15715faa",
+        "content": "sha256:9760f9e90bffa86df3c9c2d10bcd85b1600ebc4c2247d661ac0658f254f9ce0f",
+        "locator": {
+          "kind": "symbol",
+          "name": "_ReapplyMerge"
+        }
+      },
+      "id": "RLZ-F2N2G7",
+      "invariant": "INV-AT7WXW",
+      "origin": {
+        "handoffEntry": "MIK-R162 rule 4",
+        "leaf": "260928-MIK-L163"
+      },
+      "rationale": "For a both-changed path, supplies exactly the prescribed native merge result, or uncomputable for conflicted/absent/failed native output. parked_wip_failures compares those expected bytes with the worktree. There is no independent universal parked-added-line retention predicate: a prescribed driver can select or rewrite content. In the named union-catalog missing-row witness, the expected native union result contains that row, so removing it makes equality fail; that witness is not a guarantee for every driver.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "f56826a17887834f619a63425e06602c15715faa",
+        "content": "sha256:9760f9e90bffa86df3c9c2d10bcd85b1600ebc4c2247d661ac0658f254f9ce0f",
+        "locator": {
+          "kind": "symbol",
+          "name": "_ReapplyMerge"
+        }
+      },
+      "id": "RLZ-G67R94",
+      "invariant": "INV-CMQTZF",
+      "origin": {
+        "handoffEntry": "MIK-R162 failure clause (no merge of the proof's own)",
+        "leaf": "260928-MIK-L163"
+      },
+      "rationale": "Stores the native command/exit/reason in fault when effective diff.algorithm acquisition or the one merge-tree result fails. Required both-changed native requests then have no computable result; equality/base cases remain direct. The owner does not itself promise exhaustive restoration inline disclosure, which is separately recomputed on named paths.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "f56826a17887834f619a63425e06602c15715faa",
+        "content": "sha256:9c67602676520e098b77030f0664b872540e16e96c7ee763d86d210136d00bdd",
+        "locator": {
+          "kind": "symbol",
+          "name": "capture_retained_digests"
+        }
+      },
+      "id": "RLZ-S4K3W3",
+      "invariant": "INV-JZRBBJ",
+      "origin": {
+        "handoffEntry": "MIK-R153 rule 4",
+        "leaf": "260928-MIK-L153"
+      },
+      "rationale": "Captures worktree bytes plus full index stages at retention. Untracked bytes are included for a fresh same-call parked reapply or an exactly scratch-verified crash reapply; an unverified crash tree retains an empty reference map and earns no capture authority.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "f56826a17887834f619a63425e06602c15715faa",
+        "content": "sha256:1659b22f220a65f382a381277e8d6c34078f0f17377bb607f60c17619c023e49",
+        "locator": {
+          "kind": "symbol",
+          "name": "_expected_changed_path"
+        }
+      },
+      "id": "RLZ-TXVVD8",
+      "invariant": "INV-CMQTZF",
+      "origin": {
+        "handoffEntry": "MIK-R162 failure clause (no merge of the proof's own)",
+        "leaf": "260928-MIK-L163"
+      },
+      "rationale": "Returns what the merge answers and nothing else: there is no other merge to fall back to.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "f56826a17887834f619a63425e06602c15715faa",
+        "content": "sha256:9760f9e90bffa86df3c9c2d10bcd85b1600ebc4c2247d661ac0658f254f9ce0f",
+        "locator": {
+          "kind": "symbol",
+          "name": "_ReapplyMerge"
+        }
+      },
+      "id": "RLZ-VQ8D48",
+      "invariant": "INV-0HTVY3",
+      "origin": {
+        "handoffEntry": "MIK-R162 rule 1",
+        "leaf": "260928-MIK-L163"
+      },
+      "rationale": "Makes the reapply's merge again with git itself (`git --attr-source=<carried head> merge-tree --write-tree --merge-base=<stash>^1 <carried head> <stash>`), once per proof, and hands out each path's merged bytes: one merge and one expected content per path, never a second result.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "f56826a17887834f619a63425e06602c15715faa",
+        "content": "sha256:1659b22f220a65f382a381277e8d6c34078f0f17377bb607f60c17619c023e49",
+        "locator": {
+          "kind": "symbol",
+          "name": "_expected_changed_path"
+        }
+      },
+      "id": "RLZ-W8M6DD",
+      "invariant": "INV-0HTVY3",
+      "origin": {
+        "handoffEntry": "MIK-R162 rule 1",
+        "leaf": "260928-MIK-L163"
+      },
+      "rationale": "Decides where a merge is needed at all: identical sides and a side equal to the base need none, every other both-changed path takes its content from the merge git made.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "f56826a17887834f619a63425e06602c15715faa",
+        "content": "sha256:dfb2d5334628b408500c7a12dee63869ed34ffff6c267579ec3e148f14b5c2f1",
+        "locator": {
+          "kind": "symbol",
+          "name": "named_merge_rules"
+        }
+      },
+      "id": "RLZ-YBVF5N",
+      "invariant": "INV-AT7WXW",
+      "origin": {
+        "handoffEntry": "MIK-R162 rule 4",
+        "leaf": "260928-MIK-L163"
+      },
+      "rationale": "Asks git for the merge rule of each failed path at the carried head, for the failure's text.",
+      "role": "support"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "prove_parked_wip_restored: qualified source contract.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f56826a17887834f619a63425e06602c15715faa",
+            "content": "sha256:6d2beacdabb7c9d68f26cb758dfac5e86811f0592561eb025c05829e1b2c2cec",
+            "locator": {
+              "kind": "symbol",
+              "name": "prove_parked_wip_restored"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "parked_wip_failures: qualified source contract.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f56826a17887834f619a63425e06602c15715faa",
+            "content": "sha256:f0dff9c8e1941e3fa32c0dd46a1446b8119fd22cd943fec5624cd6dd9d81dd4d",
+            "locator": {
+              "kind": "symbol",
+              "name": "parked_wip_failures"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "_ReapplyMerge: qualified source contract.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f56826a17887834f619a63425e06602c15715faa",
+            "content": "sha256:9760f9e90bffa86df3c9c2d10bcd85b1600ebc4c2247d661ac0658f254f9ce0f",
+            "locator": {
+              "kind": "symbol",
+              "name": "_ReapplyMerge"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "expected_reapplied_content: qualified source contract.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f56826a17887834f619a63425e06602c15715faa",
+            "content": "sha256:739f328b6dd5ef2e5efab138a0caaf3153cf48df8a69116fb21020a98d26284a",
+            "locator": {
+              "kind": "symbol",
+              "name": "expected_reapplied_content"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "verify_crashed_reapply: qualified source contract.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f56826a17887834f619a63425e06602c15715faa",
+            "content": "sha256:135d33f6b3286626fd52de635e447ac153a949545f15a80e91273de0bf253b82",
+            "locator": {
+              "kind": "symbol",
+              "name": "verify_crashed_reapply"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "cancelled_wip_restored: qualified source contract.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f56826a17887834f619a63425e06602c15715faa",
+            "content": "sha256:e8b33442036281b5c90c219979674484a671631bb508b0317f555632b797559b",
+            "locator": {
+              "kind": "symbol",
+              "name": "cancelled_wip_restored"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

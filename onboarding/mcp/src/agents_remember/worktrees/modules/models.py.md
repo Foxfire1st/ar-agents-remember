@@ -6,7 +6,7 @@
 
 ## Purpose
 
-Defines shared dataclasses used by the worktree lifecycle modules.
+Shared lifecycle types also own CommitPublicationRefusal, parent of exact-tree and hook refusals.
 
 ## Code Commentary
 

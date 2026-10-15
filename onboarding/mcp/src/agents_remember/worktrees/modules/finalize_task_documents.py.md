@@ -40,8 +40,7 @@ selected documents: the master alone, or the master and proven sprint row togeth
 row stands for the commanded master, the result reports `sprint.state="skipped"`,
 `reason="sprint-holds-no-single-row-for-this-master"` and its `linkageFact`, without writing the sprint.
 
-The leaf path (`_reconcile_task_documents`, `_leaf_completion_candidate`, `_parent_completion_candidate`,
-`_require_finalize_sources_current`) is the unchanged logic that was moved here.
+Leaf checks remain; named-parent resolution delegates to master_json_path_from_ref with shared refusal text.
 
 ### Conventions
 

@@ -10,6 +10,8 @@ Typed agentic settings models, constants, and validation primitives. The setting
 
 Defines typed role knobs and inherited agentic settings defaults. MIK-R113 removes expectation and notifier models: their old family keys, harness execution fields and role launch/session fields are accepted but not read or checked, and `unused_orchestration_keys` reports their dotted names. `AgenticSettings` carries effective harness IDs, not native adapter objects; settings compatibility never restores a launch implementation. Unknown keys outside the declared active-or-unused vocabularies still fail loud.
 
+Defines role defaults and LandingSettings.commit_check_timeout_seconds=900 with the sole commitCheckTimeoutSeconds key.
+
 ## Code Commentary
 
 `KNOWN_ORCHESTRATION_FIELDS` admits `roleMessageLimit`, and `AgenticSettings.role_message_limit` uses the shared `DEFAULT_ROLE_MESSAGE_LIMIT` of 1000. This bound counts role-message wake text, not sender/file pointer lines or full-file payloads. The core owns the typed setting/default; the loader validates it and the message facade reads the effective limit per call.

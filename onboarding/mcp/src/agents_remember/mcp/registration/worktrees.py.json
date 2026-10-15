@@ -4,12 +4,12 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "The stop declaration: single flat `contract_path`, registered description carrying the pause/publish-nothing/hand-back contract and naming the separate publication.",
+      "note": "Current pause declaration is contract-addressed, publishes nothing, hands control back and identifies separate checkpoint publication.",
       "targets": [
         {
           "anchor": {
-            "blob": "31892944a94e916a967a3ee685930ba46ef780ce",
-            "content": "sha256:1a2d5c0bfd974173ae4f7aa0faec00287a8ed8228e2f090f9de0f1c07b6953ff",
+            "blob": "3afb5891e83bab3ed736d325c549bedded27414d",
+            "content": "sha256:5d7906a4f2fd72bfffeb8c7c6710a934e2a51c455ca2f2e757aa5a8528a69d37",
             "locator": {
               "kind": "symbol",
               "name": "worktree_pause"
@@ -19,8 +19,8 @@
         },
         {
           "anchor": {
-            "blob": "31892944a94e916a967a3ee685930ba46ef780ce",
-            "content": "sha256:93575aa4e5c097197a8e581a70ff117df0811562f86d232797395868ce114de1",
+            "blob": "3afb5891e83bab3ed736d325c549bedded27414d",
+            "content": "sha256:95ca8877501ad58a495304e93f9128e1fc9ebfa25f8dea36a91daaa0c2c2be65",
             "locator": {
               "kind": "symbol",
               "name": "_register_worktree_stop_tools"
@@ -52,12 +52,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a14042be29bb28a9e39fbcfc06c345803c28fdff",
+            "blob": "ffcb9d3a40422681e2f012e763513225ed727137",
             "content": "sha256:56058015a92fef97436b9d0c169947ec7559a0c25f5575074e1b73b6d76bf4c3",
             "locator": {
-              "end": 159,
+              "end": 162,
               "kind": "line_range",
-              "start": 159
+              "start": 162
             },
             "path": "mcp/src/agents_remember/models/worktree.py"
           },
@@ -66,16 +66,15 @@
       ]
     },
     "12": {
-      "note": "The current module exposes `register_worktree_tools` at this ownership boundary, re-read and re-cited at the current declaration.\n\nAnchor: \"def register_worktree_tools(\"",
+      "note": "Current register_worktree_tools registers the existing start, address, observation and stop owners.",
       "targets": [
         {
           "anchor": {
-            "blob": "01f8665b4325e477e7fce86728c4d175a2ec9f55",
-            "content": "sha256:de35b6e0021f31dccd710dfe7f0fd695e258e2b75556001f88bbd7129250c298",
+            "blob": "3afb5891e83bab3ed736d325c549bedded27414d",
+            "content": "sha256:8f6996c17d11971112ef6181192b87e25f773050c0e11867cc3fff5ea8bc4ffe",
             "locator": {
-              "end": 30,
-              "kind": "line_range",
-              "start": 25
+              "kind": "symbol",
+              "name": "register_worktree_tools"
             }
           },
           "kind": "code"
@@ -83,12 +82,12 @@
       ]
     },
     "13": {
-      "note": "The flat registrars retain their existing locator/provider/transaction owners while compact descriptions name outcomes and the longer reference. Status can include a copied-file drift notice. Current sync accepts contract_path, memory_sync_choice, resolution_action and dry_run; it packs only the admitted continue/cancel action. Content resolution is authored/staged in files, not a knowledge_resolution/reconcile input. Generic pause state/next wording invents neither a resume verb nor publication authority.",
+      "note": "The flat registrars retain their existing locator/provider/transaction owners while compact descriptions name outcomes and the longer reference. Status can include a copied-file drift notice. Current sync accepts contract_path, memory_sync_choice, resolution_action and dry_run; it packs only the admitted continue/cancel action. Content resolution is authored/staged in files, not a knowledge_resolution/reconcile input. Generic pause state/next wording invents neither a resume verb nor publication authority. The current worktree_sync source description is535 characters under the unchanged600 limit; its state list, next-call/log guidance, pre-sync review, raw-memory-merge boundary and landing/fast-forward judgments remain. Description compression changes neither signature nor forwarding behavior and is not live registration evidence.",
       "targets": [
         {
           "anchor": {
-            "blob": "4535b29be845a12a0c73c33058d1c990bac581ad",
-            "content": "sha256:857c08c50d7c4f6984bbe7f8eacbecd38af1493b334dd36c5fe3e4713e2e3b73",
+            "blob": "3afb5891e83bab3ed736d325c549bedded27414d",
+            "content": "sha256:9f4dac8fd5d60b7e138d2ad66be135106a73906bb35a0bae43ca08352956232d",
             "locator": {
               "kind": "file"
             }
@@ -98,27 +97,14 @@
       ]
     },
     "2": {
-      "note": "**The public sync declaration: typed memory choice, contract-addressed continue/cancel, and the flat `knowledge_resolution` argument whose description carries the engine's diagnosis and both decisions' meanings.**\n\nAnchor: `knowledge_resolution`",
+      "note": "Current public sync packs only the four admitted arguments and continue/cancel action; knowledge_resolution/reconcile are historical.",
       "targets": [
         {
           "anchor": {
-            "blob": "a9903808aadb875de3adad81429b014ec3cdcf98",
-            "content": "sha256:f390777c26364df0cfd0f70f7298ce9882db420226a2441df8aebd99c6fbfb5b",
+            "blob": "3afb5891e83bab3ed736d325c549bedded27414d",
+            "content": "sha256:9f4dac8fd5d60b7e138d2ad66be135106a73906bb35a0bae43ca08352956232d",
             "locator": {
-              "kind": "symbol",
-              "name": "worktree_sync"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "a9903808aadb875de3adad81429b014ec3cdcf98",
-            "content": "sha256:504260fa81864403e63110e034abc910c4d5b63ac70fe270fce6aed6b110d3eb",
-            "locator": {
-              "end": 214,
-              "kind": "line_range",
-              "start": 177
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -232,24 +218,11 @@
       "targets": [
         {
           "anchor": {
-            "blob": "38475a49c1a400b66a220740428e6a6b495a096a",
-            "content": "sha256:57c733ce1e9d7ceb5dc1b9ad93b65afa7f4becb333b38c4eb1c9c20c19c25d3e",
+            "blob": "a944280846a4175d9217a58a16a3374d336e652b",
+            "content": "sha256:8a7054c8315d010a5745eef12259ce5a60c57f6136f86f8d14214e97f1494ad9",
             "locator": {
               "kind": "symbol",
               "name": "TaskBases"
-            },
-            "path": "mcp/src/agents_remember/application/worktree_tool_requests.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "38475a49c1a400b66a220740428e6a6b495a096a",
-            "content": "sha256:b8999cf2f44d37b85b98170da20e0f82fb022254331af6268854533049d3429e",
-            "locator": {
-              "end": 47,
-              "kind": "line_range",
-              "start": 32
             },
             "path": "mcp/src/agents_remember/application/worktree_tool_requests.py"
           },

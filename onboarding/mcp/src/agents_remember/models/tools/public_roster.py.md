@@ -6,12 +6,16 @@
 
 The Owner retained both complete original reference objects in roster-head-copy.json and roster-stash-copy.json; their byte-bound durable capture is the Curator `.sync3-roster-first-repair-refused.json` account. Original headings, dated source/closure prose and evidence below are explicitly historical, not instructions to call deleted tools.
 
-## Preserved pre-composition roster witnesses
+## Current numbered roster witnesses and historical custody
 
-These two independent41-name witnesses are retained as their original source epochs, not as the composed40-name count. Current source declaration above is measured without any runtime list_tools or execution claim; ordinary native citation renewal follows completed sync.
+The independent A7 and incoming L10941-name observations remain historical in the retained before evidence and sealed predecessor packets. The two numbered groups below are explicitly re-authored against the current40-name source, with their predecessor epochs named rather than passed off as unchanged original anchors. This source declaration is not runtime list_tools or execution evidence.
 
-- Historical A7 roster witness: Current PUBLIC_TOOLS contains41 unique advertised names, without dispatch_agent; historical73/74 populations and runtime list_tools are separate. [16]
-- Historical incoming L109 roster witness: Current candidate PUBLIC_TOOLS declares 41 unique names after the retained grant addition and resolver removal; this is not runtime list_tools or test execution. [14]
+
+- The current composed PUBLIC_TOOLS declares40 unique names and excludes dispatch_agent and resolve_context. The independent A741-name witness and older73/74 populations remain historical custody only, not this current source census or runtime list_tools. [16]
+
+
+- The current composed PUBLIC_TOOLS declares40 unique names and excludes dispatch_agent and resolve_context. The incoming L10941-name observation belongs to its earlier source epoch, not the current tuple. This is source declaration only, not runtime list_tools or test execution. [14]
+
 - Historical incoming whole-source qualification: Current synced source supports the qualified account; declarations, mirrors and fixture assertions are not executed acceptance. [15]
 
 

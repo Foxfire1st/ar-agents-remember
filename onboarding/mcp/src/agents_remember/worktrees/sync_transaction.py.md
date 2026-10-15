@@ -14,7 +14,7 @@ Contract-addressed driver for resumable source synchronization.
 
 Input validation and stable journal routing precede mutation. Only merge-memory/skip-memory and continue/cancel are admitted. Dirty moving candidates are parked/restored under their own recorded stash. [1] [2]
 
-Code settles before memory; _paired_code supplies its result for structural memory merge and validation. _continue_resolution selects the retained side and finishes staged merge or parked reapply before automatic progress resumes. Validator refusal leaves phase/staged merge intact and names repair. [4] [6] [9]
+Code settles before memory; _paired_code supplies its result for structural memory merge and validation. _continue_resolution selects the retained side and finishes staged merge or parked reapply before automatic progress resumes. Journal merge/converted-fast-forward refusal violations (first 50 plus total). Merge repair revalidates; incoming-tree refusal names source repair, cancel and fresh sync. Memory completion clears refusal. [4] [6] [9]
 
 Structural report paths survive retained conflicts/conversion. No canonical row conflict, accepted decision list or reconcile-cycling state is authored. [5]
 
@@ -37,7 +37,7 @@ and stash helpers, so the memory side excludes only its root `memory.md` cache. 
 up to 128 sampled paths, and the exact total path count. Failed partial parking attempts restore
 already parked work where possible and report any stranded stash identities.
 
-The admitted record pins source/base/pre-sync authority before automatic code-then-memory progress.
+Journal parked candidates before pinning refs; all-pending running-code resumption can complete missing expected pins before automatic progress.
 Native merge behavior and exact parent/source proofs belong to `sync_transaction_git`. Genuine
 content conflicts remain in the retained worktree. The driver reads `content_conflicts(side)` when
 refreshing both merge-resolution and parked-WIP-resolution failures, so a memory-cache conflict is
@@ -66,8 +66,9 @@ resumes and re-validates.
 `start_side_merge`, so a crossing sync knows whose history file takes the moved no-impact markers (a leaf),
 or which task's `<task-id>-crossing-<n>.json` takes a record conflict's row (a master line). The
 `SideMergeOutcome.crossing_report` path is journaled on the side record as `crossingReport`, both when
-the side needs resolution and when it completes. For an ordinary sync it is empty, and the journal then
-omits the key (`sync_transaction_state`).
+the side needs resolution and when it completes. A structural all-converted merge can also emit a
+report for nonzero renumber/evidence/skip diagnostics; aligned-card count alone is not a trigger.
+When no report is produced it is empty, and the journal omits the key (`sync_transaction_state`).
 
 Retained output is attributed at the mutation boundary. `_run_side` passes the same settled paired code and crossing owner into the merge and `recapture_resumed_merge`. A resumed converted-memory merge earns retained fingerprints only after reproducing both Git and its structural crossing; the mere presence of an active merge does not establish byte ownership. `_persist_fresh_validator_stop` records fresh same-call staged memory output without changing the validator refusal. It does not bless an owner-resolved or unproved crash-window tree.
 

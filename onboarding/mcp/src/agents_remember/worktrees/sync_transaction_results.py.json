@@ -23,7 +23,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3478a7daa4b6b4545dc212e58ea592800554348b",
+            "blob": "f3de75deccdec38465593f20a672d660f0157e49",
             "content": "sha256:1878b0e5f75356e4c1f49f02da11786351b0b85f974ec6fcbd1eb47f0f3c6766",
             "locator": {
               "kind": "symbol",
@@ -52,7 +52,7 @@
       ]
     },
     "19": {
-      "note": "A crossing sync's resolution carries the crossing summary and names the report; an ordinary sync's payload is unchanged.",
+      "note": "A nonempty structural memory-merge report adds resolution.crossing and a named report summary, including all-converted diagnostics; converted selects crossing wording. With no report, no report-derived block or sentence is added.",
       "targets": [
         {
           "anchor": {
@@ -88,7 +88,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3478a7daa4b6b4545dc212e58ea592800554348b",
+            "blob": "f3de75deccdec38465593f20a672d660f0157e49",
             "content": "sha256:a988200aa365f33b6a3c2c32d40f809521cb56beb9bf940ac6272960ee5caf29",
             "locator": {
               "kind": "symbol",
@@ -104,7 +104,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3478a7daa4b6b4545dc212e58ea592800554348b",
+            "blob": "f3de75deccdec38465593f20a672d660f0157e49",
             "content": "sha256:814421fd80b8de327b0538736c165b2fd9bb006ebc83b17f5ccc123b5d70e298",
             "locator": {
               "kind": "symbol",
@@ -120,7 +120,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3478a7daa4b6b4545dc212e58ea592800554348b",
+            "blob": "f3de75deccdec38465593f20a672d660f0157e49",
             "content": "sha256:1878b0e5f75356e4c1f49f02da11786351b0b85f974ec6fcbd1eb47f0f3c6766",
             "locator": {
               "kind": "symbol",
@@ -136,13 +136,13 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d792ca35666e800c2743156397e04ac2c2b46306",
+            "blob": "b9c165c43ce173712ff934945fc6a62ae94d0d16",
             "content": "sha256:2c2428c20f8fd2a74d830ef280a4858a3bf5701b7895bc98b9b0127fd445861f",
             "locator": {
               "kind": "symbol",
               "name": "content_conflicts"
             },
-            "path": "mcp/src/agents_remember/worktrees/sync_transaction_git.py"
+            "path": "mcp/src/agents_remember/worktrees/sync_transaction_git/_read.py"
           },
           "kind": "code"
         }
@@ -153,7 +153,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3478a7daa4b6b4545dc212e58ea592800554348b",
+            "blob": "f3de75deccdec38465593f20a672d660f0157e49",
             "content": "sha256:335905cf1f93c3255c69932b95b666fdbccc17398598950bcd629e22751540e9",
             "locator": {
               "kind": "symbol",
@@ -169,7 +169,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3478a7daa4b6b4545dc212e58ea592800554348b",
+            "blob": "f3de75deccdec38465593f20a672d660f0157e49",
             "content": "sha256:a988200aa365f33b6a3c2c32d40f809521cb56beb9bf940ac6272960ee5caf29",
             "locator": {
               "kind": "symbol",
@@ -185,7 +185,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3478a7daa4b6b4545dc212e58ea592800554348b",
+            "blob": "f3de75deccdec38465593f20a672d660f0157e49",
             "content": "sha256:b0537fc0472a2f83dc6658015d52bee65fb05a06175fee2147d4ea0ad0f85599",
             "locator": {
               "kind": "symbol",

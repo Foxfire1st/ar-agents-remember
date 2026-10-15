@@ -374,7 +374,7 @@
         },
         {
           "anchor": {
-            "blob": "5a7a16405348e507189e3ae1bf82879b6868362a",
+            "blob": "774e8afb4d4159f3b486f89016308dd3f74ffe7f",
             "content": "sha256:02d4c1b7b9aed8051fbe1d5465a8ab5a3e6f2322a9994c54e75c1f1c4dd937c2",
             "locator": {
               "kind": "symbol",
@@ -386,7 +386,7 @@
         },
         {
           "anchor": {
-            "blob": "5a7a16405348e507189e3ae1bf82879b6868362a",
+            "blob": "774e8afb4d4159f3b486f89016308dd3f74ffe7f",
             "content": "sha256:4b86e7314fe45d353706268c078dacedf163136fb30d0c1ceb3f29ffd69dd306",
             "locator": {
               "kind": "symbol",
@@ -399,23 +399,23 @@
       ]
     },
     "18": {
-      "note": "Every sync proof is Git state — the admitted head, the already-current decision, the staged resolution (validated by the MIK-R22 knowledge validator before its commit when the memory is converted, after a crossing sync's history file is closed), and the completed branch — and none of them reads a ledger row list.",
+      "note": "Every sync proof is Git state — the admitted head, the already-current decision, the staged resolution (validated by the MIK-R22 knowledge validator before its commit when the memory is converted, after a crossing sync's history file is closed), and the completed branch — and none of them reads a ledger row list.\n\nAnchor: `_finish_staged_memory_merge`, `_already_current_result`, `_require_completed_branches`",
       "targets": [
         {
           "anchor": {
-            "blob": "10f6f886d12940d8703cbf93a0860539bcdc8158",
+            "blob": "ad8f2c2994a58d6b30409cfa13e222fb164efdeb",
             "content": "sha256:3a20c476b4a05e39bde63fb4fdfa2181f4fc1b6ef772829bf6e7a2c479190ca6",
             "locator": {
               "kind": "symbol",
               "name": "_finish_staged_memory_merge"
             },
-            "path": "mcp/src/agents_remember/worktrees/sync_transaction_git.py"
+            "path": "mcp/src/agents_remember/worktrees/sync_transaction_git/_merge.py"
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "5e425eb8e9fc7eed9b3b44787136c6712ceec84a",
+            "blob": "8a9babc9b20c6761c07440ac22d8adeba24ef3c2",
             "content": "sha256:8ccac97f465884f7607ec1c26427a1efcac405a4d1b6f00a2a914985b4480d46",
             "locator": {
               "kind": "symbol",
@@ -427,7 +427,7 @@
         },
         {
           "anchor": {
-            "blob": "5a7a16405348e507189e3ae1bf82879b6868362a",
+            "blob": "774e8afb4d4159f3b486f89016308dd3f74ffe7f",
             "content": "sha256:4c14ef1128e8d76827f7b5aad6fdd4f416ba99102bb37715a114928c26fcb5a9",
             "locator": {
               "kind": "symbol",
@@ -533,29 +533,29 @@
       ]
     },
     "27": {
-      "note": "Converted memory uses structural file plan.",
+      "note": "Converted memory uses structural file plan.\n\nAnchor: `_knowledge_merge`, `_apply_knowledge_merge`",
       "targets": [
         {
           "anchor": {
-            "blob": "10f6f886d12940d8703cbf93a0860539bcdc8158",
+            "blob": "ad8f2c2994a58d6b30409cfa13e222fb164efdeb",
             "content": "sha256:eb1fed75ae6bdd3627ae2f50b590865656ddb09e3c7080e05ebe45dd8aec1ea5",
             "locator": {
               "kind": "symbol",
               "name": "_knowledge_merge"
             },
-            "path": "mcp/src/agents_remember/worktrees/sync_transaction_git.py"
+            "path": "mcp/src/agents_remember/worktrees/sync_transaction_git/_merge.py"
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "f98146eb55d96bc7a490bf0d5761a39fa74e93ae",
-            "content": "sha256:341d161d2c6ffe985b6d6b0e1abd821eb8391e8ef41aed5d17780e8caa5f0b15",
+            "blob": "ad8f2c2994a58d6b30409cfa13e222fb164efdeb",
+            "content": "sha256:bf6f2da12671f7ce7b698d8c61875ab0cc51965fe457d3f17792ce054468617d",
             "locator": {
               "kind": "symbol",
               "name": "_apply_knowledge_merge"
             },
-            "path": "mcp/src/agents_remember/worktrees/sync_transaction_git.py"
+            "path": "mcp/src/agents_remember/worktrees/sync_transaction_git/_merge.py"
           },
           "kind": "code"
         }
@@ -687,7 +687,7 @@
         },
         {
           "anchor": {
-            "blob": "83af517bb06034cc0b746e444a06b3a7a281804d",
+            "blob": "864995039bc67d3b4c54493004fe01a45b590f93",
             "content": "sha256:a5a6650407b839b259604e10bbd57edd570da9e0fb46bf7c15cd58350deeb14d",
             "locator": {
               "kind": "symbol",
@@ -816,24 +816,24 @@
       ]
     },
     "41": {
-      "note": "Supported staged continuation and cancellation guidance.",
+      "note": "Supported staged continuation and cancellation guidance.\n\nAnchor: `continue_side_merge`, `resolution_required`",
       "targets": [
         {
           "anchor": {
-            "blob": "10f6f886d12940d8703cbf93a0860539bcdc8158",
+            "blob": "ad8f2c2994a58d6b30409cfa13e222fb164efdeb",
             "content": "sha256:a58de0c68499a1c7e744f240a8a00072cc8d27f4f61bf8e73b5392afaf2d7463",
             "locator": {
               "kind": "symbol",
               "name": "continue_side_merge"
             },
-            "path": "mcp/src/agents_remember/worktrees/sync_transaction_git.py"
+            "path": "mcp/src/agents_remember/worktrees/sync_transaction_git/_merge.py"
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "3478a7daa4b6b4545dc212e58ea592800554348b",
-            "content": "sha256:b319465bab96886aa6c108ee1a03fe918bc3301a05b88d2cea243fad52822b3e",
+            "blob": "f3de75deccdec38465593f20a672d660f0157e49",
+            "content": "sha256:0665a202a43ae3ac14520f4269fec08d6f005375f7da19f59f40eb8362797aff",
             "locator": {
               "kind": "symbol",
               "name": "resolution_required"
@@ -907,13 +907,13 @@
       "targets": [
         {
           "anchor": {
-            "blob": "10f6f886d12940d8703cbf93a0860539bcdc8158",
+            "blob": "ad8f2c2994a58d6b30409cfa13e222fb164efdeb",
             "content": "sha256:3a20c476b4a05e39bde63fb4fdfa2181f4fc1b6ef772829bf6e7a2c479190ca6",
             "locator": {
               "kind": "symbol",
               "name": "_finish_staged_memory_merge"
             },
-            "path": "mcp/src/agents_remember/worktrees/sync_transaction_git.py"
+            "path": "mcp/src/agents_remember/worktrees/sync_transaction_git/_merge.py"
           },
           "kind": "code"
         }
@@ -987,25 +987,25 @@
       "targets": [
         {
           "anchor": {
-            "blob": "10f6f886d12940d8703cbf93a0860539bcdc8158",
+            "blob": "ad8f2c2994a58d6b30409cfa13e222fb164efdeb",
             "content": "sha256:eb1fed75ae6bdd3627ae2f50b590865656ddb09e3c7080e05ebe45dd8aec1ea5",
             "locator": {
               "kind": "symbol",
               "name": "_knowledge_merge"
             },
-            "path": "mcp/src/agents_remember/worktrees/sync_transaction_git.py"
+            "path": "mcp/src/agents_remember/worktrees/sync_transaction_git/_merge.py"
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "10f6f886d12940d8703cbf93a0860539bcdc8158",
+            "blob": "ad8f2c2994a58d6b30409cfa13e222fb164efdeb",
             "content": "sha256:bf6f2da12671f7ce7b698d8c61875ab0cc51965fe457d3f17792ce054468617d",
             "locator": {
               "kind": "symbol",
               "name": "_apply_knowledge_merge"
             },
-            "path": "mcp/src/agents_remember/worktrees/sync_transaction_git.py"
+            "path": "mcp/src/agents_remember/worktrees/sync_transaction_git/_merge.py"
           },
           "kind": "code"
         }
@@ -1259,12 +1259,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d0806d69b60e940b8234dd86274b0cf639d05eb0",
+            "blob": "f905b3045e11c6eb6ee0e0c2a762989a0de28d7b",
             "content": "sha256:3800c4595e1f9a984649face53b7226fad3aae0895f842726784da91c9f124bb",
             "locator": {
-              "end": 411,
+              "end": 459,
               "kind": "line_range",
-              "start": 369
+              "start": 417
             },
             "path": "mcp/src/agents_remember/worktrees/reopen.py"
           },
@@ -1543,13 +1543,13 @@
       "targets": [
         {
           "anchor": {
-            "blob": "10f6f886d12940d8703cbf93a0860539bcdc8158",
+            "blob": "ad8f2c2994a58d6b30409cfa13e222fb164efdeb",
             "content": "sha256:d97b331539bed08d8bb17a4fe08fb8c7706ee94b36bf4048fe03eedbc4a5800d",
             "locator": {
               "kind": "symbol",
               "name": "rollback_side"
             },
-            "path": "mcp/src/agents_remember/worktrees/sync_transaction_git.py"
+            "path": "mcp/src/agents_remember/worktrees/sync_transaction_git/_merge.py"
           },
           "kind": "code"
         }
@@ -1709,7 +1709,7 @@
       ]
     },
     "79": {
-      "note": "Completed direct ownership is the shared doorless record predicate.\n\nAttribution alone supplies source rows; invalid code objects are separately excluded\n\nAnchor: read_ledger_source\n\nCompleted direct ownership is the shared doorless record predicate.\n\nComplete reapply proof accepts already-held edits without sample fallback.",
+      "note": "Completed direct ownership is the shared doorless record predicate. Attribution alone supplies source rows; invalid code objects are separately excluded Anchor: read_ledger_source Completed direct ownership is the shared doorless record predicate. Complete reapply proof accepts already-held edits without sample fallback.\n\nAnchor: `completed_direct_owner`, `parked_wip_failures`",
       "targets": [
         {
           "anchor": {
@@ -1725,13 +1725,13 @@
         },
         {
           "anchor": {
-            "blob": "52a91dc2ea6250979a77148a8bed9206568dc168",
-            "content": "sha256:d20106ab6c61baf552493518cc93c8be40549309c9a3cd476fe40249cbf10dc6",
+            "blob": "f56826a17887834f619a63425e06602c15715faa",
+            "content": "sha256:f0dff9c8e1941e3fa32c0dd46a1446b8119fd22cd943fec5624cd6dd9d81dd4d",
             "locator": {
               "kind": "symbol",
               "name": "parked_wip_failures"
             },
-            "path": "mcp/src/agents_remember/worktrees/sync_transaction_git.py"
+            "path": "mcp/src/agents_remember/worktrees/sync_transaction_git/_proof.py"
           },
           "kind": "code"
         },
@@ -1838,7 +1838,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4be7f38d8566713e0b27d3d5c3ce951498ae3bf7",
+            "blob": "9892eefbb4ae19a50aaa17c1ffa7689fd483575b",
             "content": "sha256:42142156f8934a41dd1df920ed0da657c720f8b1315cb768325673bd8652165e",
             "locator": {
               "kind": "symbol",
@@ -1882,36 +1882,34 @@
       ]
     },
     "83": {
-      "note": "Report selection does not include aligned-card count alone\n\nAnchor: _needs_crossing_report",
+      "note": "Report selection does not include aligned-card count alone Anchor: _needs_crossing_report",
       "targets": [
         {
           "anchor": {
-            "blob": "10f6f886d12940d8703cbf93a0860539bcdc8158",
+            "blob": "ad8f2c2994a58d6b30409cfa13e222fb164efdeb",
             "content": "sha256:6d9acb80e9fa246b2a26664452a8b1ca81fce26d91578019b2d9da128b76bab8",
             "locator": {
-              "end": 1316,
-              "kind": "line_range",
-              "start": 1301
+              "kind": "symbol",
+              "name": "_needs_crossing_report"
             },
-            "path": "mcp/src/agents_remember/worktrees/sync_transaction_git.py"
+            "path": "mcp/src/agents_remember/worktrees/sync_transaction_git/_merge.py"
           },
           "kind": "code"
         }
       ]
     },
     "84": {
-      "note": "Memory merge validates exact staged tree before commit and proves pinned parents\n\nAnchor: _finish_staged_memory_merge",
+      "note": "Memory merge validates exact staged tree before commit and proves pinned parents Anchor: _finish_staged_memory_merge",
       "targets": [
         {
           "anchor": {
-            "blob": "10f6f886d12940d8703cbf93a0860539bcdc8158",
+            "blob": "ad8f2c2994a58d6b30409cfa13e222fb164efdeb",
             "content": "sha256:3a20c476b4a05e39bde63fb4fdfa2181f4fc1b6ef772829bf6e7a2c479190ca6",
             "locator": {
-              "end": 1415,
-              "kind": "line_range",
-              "start": 1387
+              "kind": "symbol",
+              "name": "_finish_staged_memory_merge"
             },
-            "path": "mcp/src/agents_remember/worktrees/sync_transaction_git.py"
+            "path": "mcp/src/agents_remember/worktrees/sync_transaction_git/_merge.py"
           },
           "kind": "code"
         }
@@ -2201,13 +2199,13 @@
       "targets": [
         {
           "anchor": {
-            "blob": "10f6f886d12940d8703cbf93a0860539bcdc8158",
+            "blob": "f56826a17887834f619a63425e06602c15715faa",
             "content": "sha256:9760f9e90bffa86df3c9c2d10bcd85b1600ebc4c2247d661ac0658f254f9ce0f",
             "locator": {
               "kind": "symbol",
               "name": "_ReapplyMerge"
             },
-            "path": "mcp/src/agents_remember/worktrees/sync_transaction_git.py"
+            "path": "mcp/src/agents_remember/worktrees/sync_transaction_git/_proof.py"
           },
           "kind": "code"
         }
@@ -2218,13 +2216,13 @@
       "targets": [
         {
           "anchor": {
-            "blob": "10f6f886d12940d8703cbf93a0860539bcdc8158",
+            "blob": "b2ac502f4c8e261b04d7ea2c1079845d00914c99",
             "content": "sha256:d6ca6f6c8d1d1796163dd85e473697753ef40f66cd41bd2c6cbd8a3716dcbbd6",
             "locator": {
               "kind": "symbol",
               "name": "_index_state"
             },
-            "path": "mcp/src/agents_remember/worktrees/sync_transaction_git.py"
+            "path": "mcp/src/agents_remember/worktrees/sync_transaction_git/_cancel.py"
           },
           "kind": "code"
         }

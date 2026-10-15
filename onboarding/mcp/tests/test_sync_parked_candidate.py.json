@@ -3,24 +3,7 @@
   "proves": [
     {
       "anchor": {
-        "blob": "fac092cb6e4ddb1c7600181176b8a7a984fcc173",
-        "content": "sha256:1566a816320b1c48355cf1fd94b5e3820f8400328ca59c4efe1dd9f36bc66b84",
-        "locator": {
-          "kind": "symbol",
-          "name": "AlreadyHeldParkedEditTests.test_cancel_with_later_work_is_refused_and_changes_nothing"
-        }
-      },
-      "facet": "Refused cancellation preserves the prior journal phase and tree bytes.",
-      "id": "PRF-159F3M",
-      "invariant": "INV-YVP7RQ",
-      "origin": {
-        "handoffEntry": "MIK-R153 rule 5",
-        "leaf": "260928-MIK-L153"
-      }
-    },
-    {
-      "anchor": {
-        "blob": "fac092cb6e4ddb1c7600181176b8a7a984fcc173",
+        "blob": "d3d9a6a89ff491b5dae7bc9fc2a999051aa2136a",
         "content": "sha256:3ebd1486d654fd5160280274faa3a3c071b64d62d3ef9d2f6c5e6288f3b093a1",
         "locator": {
           "kind": "symbol",
@@ -37,7 +20,7 @@
     },
     {
       "anchor": {
-        "blob": "fac092cb6e4ddb1c7600181176b8a7a984fcc173",
+        "blob": "d3d9a6a89ff491b5dae7bc9fc2a999051aa2136a",
         "content": "sha256:755b4a53687117e45aaa5b19bcc2022df52be8e9a52a7129eefcc10c8a64f104",
         "locator": {
           "kind": "symbol",
@@ -54,7 +37,7 @@
     },
     {
       "anchor": {
-        "blob": "fac092cb6e4ddb1c7600181176b8a7a984fcc173",
+        "blob": "d3d9a6a89ff491b5dae7bc9fc2a999051aa2136a",
         "content": "sha256:0f793c55956056efbea16c03ea82387bd30e6e367c04d427909ebd4d80ae1941",
         "locator": {
           "kind": "symbol",
@@ -71,7 +54,7 @@
     },
     {
       "anchor": {
-        "blob": "fac092cb6e4ddb1c7600181176b8a7a984fcc173",
+        "blob": "d3d9a6a89ff491b5dae7bc9fc2a999051aa2136a",
         "content": "sha256:27cbf2aafd51683a2bf78ad560c1997773877b208a8cb94f9a27b1bfcf950267",
         "locator": {
           "kind": "symbol",
@@ -88,7 +71,7 @@
     },
     {
       "anchor": {
-        "blob": "fac092cb6e4ddb1c7600181176b8a7a984fcc173",
+        "blob": "d3d9a6a89ff491b5dae7bc9fc2a999051aa2136a",
         "content": "sha256:1f792785830124a732e645f0a94d0dbc8b02f4561b6b0ace0921f04dd641848c",
         "locator": {
           "kind": "symbol",
@@ -105,7 +88,24 @@
     },
     {
       "anchor": {
-        "blob": "fac092cb6e4ddb1c7600181176b8a7a984fcc173",
+        "blob": "d3d9a6a89ff491b5dae7bc9fc2a999051aa2136a",
+        "content": "sha256:81b8c20db09a18fc40b9589fa1a44e7107de716b3f6a568dad26e7345c7f35b4",
+        "locator": {
+          "kind": "symbol",
+          "name": "ResumedConvertedMemoryMergeTests.test_07b_owner_write_after_interrupt_saves_first_then_cancels"
+        }
+      },
+      "facet": "Saved patches hold owner bytes; cancel keeps memory HEAD, empties stash, journals cancelled.",
+      "id": "PRF-62Y77V",
+      "invariant": "INV-JZRBBJ",
+      "origin": {
+        "handoffEntry": "L61-qualified-replacement-PRF-MWDSXT",
+        "leaf": "260928-MIK-L61"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "d3d9a6a89ff491b5dae7bc9fc2a999051aa2136a",
         "content": "sha256:c5f0f478e8d2a0ed81768ac706c29fc9363675629d9e782e473416b6cc5066fd",
         "locator": {
           "kind": "symbol",
@@ -122,7 +122,24 @@
     },
     {
       "anchor": {
-        "blob": "fac092cb6e4ddb1c7600181176b8a7a984fcc173",
+        "blob": "d3d9a6a89ff491b5dae7bc9fc2a999051aa2136a",
+        "content": "sha256:dba7ca9dd054131edc454cbb66fd52bc3d58fafe9f7eb4b024affe984ca00fb6",
+        "locator": {
+          "kind": "symbol",
+          "name": "AlreadyHeldParkedEditTests.test_cancel_with_later_work_saves_first_then_cancels"
+        }
+      },
+      "facet": "Saved patches/untracked bytes survive successful cancel; journal becomes cancelled.",
+      "id": "PRF-91JMAG",
+      "invariant": "INV-YVP7RQ",
+      "origin": {
+        "handoffEntry": "L61-qualified-replacement-PRF-159F3M",
+        "leaf": "260928-MIK-L61"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "d3d9a6a89ff491b5dae7bc9fc2a999051aa2136a",
         "content": "sha256:3ebd1486d654fd5160280274faa3a3c071b64d62d3ef9d2f6c5e6288f3b093a1",
         "locator": {
           "kind": "symbol",
@@ -139,7 +156,7 @@
     },
     {
       "anchor": {
-        "blob": "fac092cb6e4ddb1c7600181176b8a7a984fcc173",
+        "blob": "d3d9a6a89ff491b5dae7bc9fc2a999051aa2136a",
         "content": "sha256:cb93871841beb51a9aa02808dac44ce1bf78575dbe00789e77fccae4cd2741cd",
         "locator": {
           "kind": "symbol",
@@ -156,7 +173,7 @@
     },
     {
       "anchor": {
-        "blob": "fac092cb6e4ddb1c7600181176b8a7a984fcc173",
+        "blob": "d3d9a6a89ff491b5dae7bc9fc2a999051aa2136a",
         "content": "sha256:c3cf99553bbf87a081177b6967d01eefaa4240a0e2daa937fb78d322180ebc16",
         "locator": {
           "kind": "symbol",
@@ -173,8 +190,8 @@
     },
     {
       "anchor": {
-        "blob": "fac092cb6e4ddb1c7600181176b8a7a984fcc173",
-        "content": "sha256:e15009e15951dfb2ca0546f02de78e361c51b7ed17cbc95d2b541b7dfbaa0a67",
+        "blob": "d3d9a6a89ff491b5dae7bc9fc2a999051aa2136a",
+        "content": "sha256:91a371e0caf439d84d6f969c6ffc0f5396172888c6b20d845d0ccaf26788810b",
         "locator": {
           "kind": "symbol",
           "name": "RoundTwoVariantTests.test_03b_failed_full_inventory_never_accepts_the_sample"
@@ -190,41 +207,7 @@
     },
     {
       "anchor": {
-        "blob": "fac092cb6e4ddb1c7600181176b8a7a984fcc173",
-        "content": "sha256:1566a816320b1c48355cf1fd94b5e3820f8400328ca59c4efe1dd9f36bc66b84",
-        "locator": {
-          "kind": "symbol",
-          "name": "AlreadyHeldParkedEditTests.test_cancel_with_later_work_is_refused_and_changes_nothing"
-        }
-      },
-      "facet": "A later owner edit is named and cancellation leaves the journal and tree unchanged.",
-      "id": "PRF-GR9EZZ",
-      "invariant": "INV-JZRBBJ",
-      "origin": {
-        "handoffEntry": "MIK-R153 rule 4",
-        "leaf": "260928-MIK-L153"
-      }
-    },
-    {
-      "anchor": {
-        "blob": "fac092cb6e4ddb1c7600181176b8a7a984fcc173",
-        "content": "sha256:c3ffdc3ddbc4c4a0e6efa19c8b9b842b44189c3ec64a53ab58719954b873b5ba",
-        "locator": {
-          "kind": "symbol",
-          "name": "SealedFindingRepairTests.test_04_index_only_later_bytes_refuse_cancel"
-        }
-      },
-      "facet": "Later index-only content cannot be discarded despite matching worktree content.",
-      "id": "PRF-H3CHMZ",
-      "invariant": "INV-JZRBBJ",
-      "origin": {
-        "handoffEntry": "MIK-R153 rule 4",
-        "leaf": "260928-MIK-L153"
-      }
-    },
-    {
-      "anchor": {
-        "blob": "fac092cb6e4ddb1c7600181176b8a7a984fcc173",
+        "blob": "d3d9a6a89ff491b5dae7bc9fc2a999051aa2136a",
         "content": "sha256:a1f52c39deefcea6f56ad37339e1f48ac8f10936ffcade17b6ad7f17fe9ea6f4",
         "locator": {
           "kind": "symbol",
@@ -241,25 +224,8 @@
     },
     {
       "anchor": {
-        "blob": "fac092cb6e4ddb1c7600181176b8a7a984fcc173",
-        "content": "sha256:604723ca57804f0ac5525bf01938cb629d78f18efd0da92236c8ccbda9dbeeef",
-        "locator": {
-          "kind": "symbol",
-          "name": "ResumedConvertedMemoryMergeTests.test_07b_owner_write_after_interrupt_refuses_without_later_work_claim"
-        }
-      },
-      "facet": "An owner-write control after a converted-memory interruption receives a truthful unproved-path refusal with unchanged state.",
-      "id": "PRF-MWDSXT",
-      "invariant": "INV-JZRBBJ",
-      "origin": {
-        "handoffEntry": "MIK-R153 rule 4",
-        "leaf": "260928-MIK-L153"
-      }
-    },
-    {
-      "anchor": {
-        "blob": "fac092cb6e4ddb1c7600181176b8a7a984fcc173",
-        "content": "sha256:bc22966de69ef598327fa1e5434384e6aac548e562153e51f6b06bc51c42f6b8",
+        "blob": "d3d9a6a89ff491b5dae7bc9fc2a999051aa2136a",
+        "content": "sha256:b4fa1d7104236c2a5a3fea65fb6275aca5c9689c5e150d320cc862331c196f24",
         "locator": {
           "kind": "symbol",
           "name": "RoundTwoVariantTests.test_01b_crash_window_owner_bytes_are_never_blessed"
@@ -275,7 +241,7 @@
     },
     {
       "anchor": {
-        "blob": "fac092cb6e4ddb1c7600181176b8a7a984fcc173",
+        "blob": "d3d9a6a89ff491b5dae7bc9fc2a999051aa2136a",
         "content": "sha256:a1f52c39deefcea6f56ad37339e1f48ac8f10936ffcade17b6ad7f17fe9ea6f4",
         "locator": {
           "kind": "symbol",
@@ -292,7 +258,41 @@
     },
     {
       "anchor": {
-        "blob": "fac092cb6e4ddb1c7600181176b8a7a984fcc173",
+        "blob": "d3d9a6a89ff491b5dae7bc9fc2a999051aa2136a",
+        "content": "sha256:dba7ca9dd054131edc454cbb66fd52bc3d58fafe9f7eb4b024affe984ca00fb6",
+        "locator": {
+          "kind": "symbol",
+          "name": "AlreadyHeldParkedEditTests.test_cancel_with_later_work_saves_first_then_cancels"
+        }
+      },
+      "facet": "paths.txt names later tracked/untracked files; patches and exact mirrored bytes survive cancel.",
+      "id": "PRF-TYSDKF",
+      "invariant": "INV-JZRBBJ",
+      "origin": {
+        "handoffEntry": "L61-qualified-replacement-PRF-GR9EZZ",
+        "leaf": "260928-MIK-L61"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "d3d9a6a89ff491b5dae7bc9fc2a999051aa2136a",
+        "content": "sha256:1a91cb1d16623a04715eca7f0d1d710d51dbb5e44133c2f7d79b1b492d7da60c",
+        "locator": {
+          "kind": "symbol",
+          "name": "SealedFindingRepairTests.test_04_index_only_later_bytes_save_first_then_cancel"
+        }
+      },
+      "facet": "staged.patch contains index-only later bytes; paths.txt names notes.txt; journal becomes cancelled.",
+      "id": "PRF-VRRS4K",
+      "invariant": "INV-JZRBBJ",
+      "origin": {
+        "handoffEntry": "L61-qualified-replacement-PRF-H3CHMZ",
+        "leaf": "260928-MIK-L61"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "d3d9a6a89ff491b5dae7bc9fc2a999051aa2136a",
         "content": "sha256:5bd0fbeb16b5de26dd8c46e22f2c4e5868ee4dc5940de55f93f77aac48f4ee7f",
         "locator": {
           "kind": "symbol",
@@ -315,7 +315,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "fac092cb6e4ddb1c7600181176b8a7a984fcc173",
+            "blob": "d3d9a6a89ff491b5dae7bc9fc2a999051aa2136a",
             "content": "sha256:0408898e83b63a79b466f84dc5554d6a9717f30c669756deddc240c9a9c81298",
             "locator": {
               "kind": "symbol",
@@ -326,7 +326,7 @@
         },
         {
           "anchor": {
-            "blob": "fac092cb6e4ddb1c7600181176b8a7a984fcc173",
+            "blob": "d3d9a6a89ff491b5dae7bc9fc2a999051aa2136a",
             "content": "sha256:76c270e3360dc2879450c0a48b5e52fa2de98a1c8f1d884040a256db73ecc75f",
             "locator": {
               "kind": "symbol",
@@ -342,7 +342,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "fac092cb6e4ddb1c7600181176b8a7a984fcc173",
+            "blob": "d3d9a6a89ff491b5dae7bc9fc2a999051aa2136a",
             "content": "sha256:5bd0fbeb16b5de26dd8c46e22f2c4e5868ee4dc5940de55f93f77aac48f4ee7f",
             "locator": {
               "kind": "symbol",
@@ -358,7 +358,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "fac092cb6e4ddb1c7600181176b8a7a984fcc173",
+            "blob": "d3d9a6a89ff491b5dae7bc9fc2a999051aa2136a",
             "content": "sha256:a197d22d70c4a74f2fc14a879c6509e8c133b34923c3e6fbe43435472b895839",
             "locator": {
               "kind": "symbol",
@@ -369,7 +369,7 @@
         },
         {
           "anchor": {
-            "blob": "fac092cb6e4ddb1c7600181176b8a7a984fcc173",
+            "blob": "d3d9a6a89ff491b5dae7bc9fc2a999051aa2136a",
             "content": "sha256:b6a37b97562af76d85475fcd33c7530b9801d2e5a2fa594aecb5d85b2d9057a8",
             "locator": {
               "kind": "symbol",
@@ -385,7 +385,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "fac092cb6e4ddb1c7600181176b8a7a984fcc173",
+            "blob": "d3d9a6a89ff491b5dae7bc9fc2a999051aa2136a",
             "content": "sha256:2f2d91692a8e110087965aeb39f8f2f60778e6721e5ace8a0c9042845a15ebe5",
             "locator": {
               "kind": "symbol",
@@ -401,25 +401,25 @@
       "targets": [
         {
           "anchor": {
-            "blob": "52a91dc2ea6250979a77148a8bed9206568dc168",
-            "content": "sha256:e96929ca9176ec1f318d2193a4fdf656c43fd1f35ffd6d2dbc65c1ddb9722ea5",
+            "blob": "4b9d9aeaf2e52a5d764a430209a1f0ec793e5650",
+            "content": "sha256:e4b8115cb8983ebabc12b3d8a869980a91955e45365bdcf3e95920ea26a2c6f9",
             "locator": {
               "kind": "symbol",
               "name": "park_worktree_wip"
             },
-            "path": "mcp/src/agents_remember/worktrees/sync_transaction_git.py"
+            "path": "mcp/src/agents_remember/worktrees/sync_transaction_git/_stash.py"
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "52a91dc2ea6250979a77148a8bed9206568dc168",
+            "blob": "f56826a17887834f619a63425e06602c15715faa",
             "content": "sha256:6d2beacdabb7c9d68f26cb758dfac5e86811f0592561eb025c05829e1b2c2cec",
             "locator": {
               "kind": "symbol",
               "name": "prove_parked_wip_restored"
             },
-            "path": "mcp/src/agents_remember/worktrees/sync_transaction_git.py"
+            "path": "mcp/src/agents_remember/worktrees/sync_transaction_git/_proof.py"
           },
           "kind": "code"
         }
@@ -434,6 +434,38 @@
             "content": "sha256:0df5be11264665a25947c2c45fb0d64598fd0b290f43895e4e6c90d015d072ef",
             "locator": {
               "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "Named retained/terminal journal cuts hold the native child after durable journal replacement and before the legacy unlink, then require a stopped child and SIGKILL its actual process group; other polling cuts are not upgraded by this source observation.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d3d9a6a89ff491b5dae7bc9fc2a999051aa2136a",
+            "content": "sha256:8d3239b4e4617fe5e61cb652c43d5c3367c1c158e330830f977018aab564be20",
+            "locator": {
+              "kind": "symbol",
+              "name": "_kill_after_phase"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "Partial-restore cuts use serial native Git and a required identity filter on the second bulk path, stopping before returning bytes so the first path is restored while Git waits; recovery passes unchanged bytes via the one-use marker. This is source-only, not a new test pass.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d3d9a6a89ff491b5dae7bc9fc2a999051aa2136a",
+            "content": "sha256:9eab90ea9efed11a241a841e665af25533c629f71b08ae49228bae7296c5f3e9",
+            "locator": {
+              "kind": "symbol",
+              "name": "_kill_mid_restore"
             }
           },
           "kind": "test"

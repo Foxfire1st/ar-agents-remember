@@ -42,7 +42,7 @@ rollback, and cancels; partial authority restores only complete provable sides a
 manual-repair evidence for what remains. Missing journals follow the same ref-proof path. Terminal
 cleanup is idempotent and republishes strict bytes after residue removal.
 
-Cancellation prechecks every participating side before journal mutation, including pinned heads, live stash ownership and retained worktree/index fingerprints. Both stash and retained-tree assessments use the Git owner's one native reapply expectation; recovery adds no merge algorithm or byte-alternative policy. Reapplied union-catalog bytes and exact binary index bytes can therefore be owned without treating them as later edits. Later work returns `sync-cancel-refused-later-work` with named paths and save/cancel/restore guidance. A native merge/configuration fault from the assessments is deduplicated and carried into that refusal, explaining that the required reapply result could not be shown to own the both-changed path; it does not authorize a reset. Unproved crash-window attribution returns `sync-cancel-unproven-after-interrupt`, names the unproved paths and directs resolve-and-continue without falsely claiming that the owner wrote them. Both refusal paths keep the prior record and all tree/index/head/stash state.
+Cancellation prechecks every participating side before journal mutation, including pinned heads, live stash ownership and retained worktree/index fingerprints. Both assessment paths use the Git owner's one native reapply expectation; recovery adds no alternate merge result. Later and unproved work is saved in verified binary patches, paths and untracked mirrors before discard and cancelling. Successful cancellation names saved files/digests and deduplicates the assessments' native merge faults in its cancelled summary; unknown attribution is not adopted as transaction output. A save/readback failure returns sync-cancel-save-failed with the unchanged phase and cancel retry. A failure after saving but during discard returns sync-cancel-saved-discard-failed, retains the saved artifacts and directs cancel retry; it is not a promise that no earlier discard occurred. Neither later work nor a native merge fault alone imposes the retired refusal/resolve-and-continue route.
 
 After all sides are proven, cancellation publishes cancelling, discards only attributable output, rolls heads back and restores every parked candidate, including already-restored sides. Terminal cancelled publication precedes `_retire_restored_stashes` and authority deletion. Completed-sync finalization has the same terminal-before-retirement boundary; terminal residue cleanup retries only exact owned resources. An interrupted cancellation keeps its stash authority for the next same action.
 
@@ -57,7 +57,7 @@ ambient inference.
 - Terminal journal publication precedes deletion of recovery authority.
 - The completed-branch proof is a Git proof: it never re-reads, or requires rows from, the ledger a
   completed memory side carries.
-- Cancellation restores only the exact pinned pre-sync state and refuses changed contract bases.
+- Cancellation restores pinned pre-sync state; it may undo only the unfinished generation's proven finalized pair and exact trailing sync-log heads. Unrelated contract changes still refuse.
 - Corrupt evidence is archived before quarantine or ref-based rollback.
 - No-refs quarantine means usable terminal sync state, not a false rollback-success claim.
 - Partial authority is preserved for manual repair; incomplete refs are not deleted wholesale.
@@ -88,6 +88,7 @@ No external Domain Documentation entries are configured. Source and test asserti
 
 - Ref reconstruction and contract/base constraints come from the sync authority module. [2]
 
+
 - Rollback proof is centralized in the Git module. [3]
 
 - Finalization refuses while a side still parks its candidate, and cancellation clears a conflicted reapply, rolls back, and returns the parked candidate or reports a typed manual repair. [4]
@@ -100,7 +101,7 @@ No external Domain Documentation entries are configured. Source and test asserti
 
 - All-side ownership prechecks precede cancelling journal mutation. [8]
 
-- Later-work and unknown-attribution refusals preserve state; native merge/configuration faults explain why a required reapply result could not establish ownership. [9]
+- Save-first cancellation names actual saved files and digests; native merge faults explain failed attribution in the cancelled summary rather than forcing a later-work refusal. [9]
 
 ### Cross-Repo References
 

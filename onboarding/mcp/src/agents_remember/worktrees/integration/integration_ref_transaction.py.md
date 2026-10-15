@@ -18,7 +18,7 @@ Prepare and publish exact code/memory ref moves with expected-old compare-and-sw
 
 ### Logic
 
-`IntegratedCommits` contains code and memory-content commits only. `LandingAdmission` optionally carries the checkpoint's captured candidate; ordinary integration instead matches the recorded closeout pair. Preparation verifies output authority, current named source tips, source-to-candidate ancestry, and substantive checkout cleanliness before returning its private prepared-move capability.
+`IntegratedCommits` contains code and memory-content commits only. `LandingAdmission` optionally carries the checkpoint's captured candidate; ordinary integration instead matches the recorded closeout pair. Preparation also requires matching candidate-tree pass trailers or detached-worktree hook checks on both legs before CAS.
 
 `require_integrated_memory_ancestry` checks the accepted code object exists and the accepted memory output descends from the exact memory source. It does not parse a ledger, inspect rows, compare headers, or require a trailer mapping for the selected code commit.
 

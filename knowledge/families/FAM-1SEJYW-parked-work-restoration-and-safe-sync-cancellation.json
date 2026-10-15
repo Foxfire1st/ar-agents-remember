@@ -3,9 +3,9 @@
     "criteria": [
       "joint_guarantee"
     ],
-    "justification": "Complete restoration proof alone cannot prevent destructive cancellation, ownership assessment alone cannot recover an already-restored paired side, and truthful diagnosis alone cannot keep restoration authority. The six obligations jointly guarantee byte-preserving completion or a truthful non-mutating refusal."
+    "justification": "Complete restoration, independent ownership assessment, saved-byte preservation, truthful progress and terminal stash retirement jointly prevent loss of original parked work or later owner bytes; no single member supplies that combined recovery guarantee."
   },
-  "guarantee": "A managed sync restores the complete parked candidate even when the carried line already holds its edit; a stopped transaction returns the exact pre-sync heads and parked work only after every side proves ownership, keeps restoration authority until terminal publication, and never discards later or unproved owner bytes. Failed proof and refused cancellation name their actual paths and safe recovery without claiming an attribution they cannot establish.",
+  "guarantee": "A managed sync proves complete parked restoration using the actual native reapply. At an admitted stop it returns the original paired heads and exact parked work with the original index partition, preserving later or unproved owner bytes in durably written saved artifacts before discard. It never adopts failed attribution as ownership, retains the recorded stash until terminal recovery, and reports actual paths, saved-file digests or a truthful retained save/discard stop. Foreign history and missing authority remain separate refusals. Fresh saves use durable atomic writes and record SHA-256 of the written payload; recovery of prior completed manifests reopens and verifies their named bytes. Fresh-save durability is not an independent reread of every artifact.",
   "id": "FAM-1SEJYW",
   "members": [
     "INV-70577K",
@@ -23,7 +23,7 @@
     "leaf": "260928-MIK-L153",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "routes": [
     "mcp/src/agents_remember/worktrees"
   ],

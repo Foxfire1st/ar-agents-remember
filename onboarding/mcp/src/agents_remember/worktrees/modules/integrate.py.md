@@ -28,6 +28,8 @@ Integration preserves invariant judgment and ref-publication order. Handover-gat
 > **Retained historical source account — superseded by the current contract:**
 > `_publish_integration_edge` reloads the exact contract, checks atomic/series or ordinary authority, re-proves the source snapshot, and delegates expected-old CAS. A CAS race reports the operation that actually ran, including the checkpoint tool on that route. The shared landing writer records `completed` plus pending cleanup for final integration, or `checkpointed` while preserving cleanup for a checkpoint. Neither landing reclaims the task; finalization owns that step.
 
+L61 source qualification: final integration results add emptyLanding=true for base-equal code/memory pairs. Final landing and checkpoint preserve their distinct lifecycle treatment; neither reclaims the task.
+
 > **Retained historical source account — superseded by the current contract:**
 > **The invariant gate before every landing.** `_handover_or_apply_integration` delegates admission to `integration_gate.integration_gate_block` before ancestry proof or ref publication, in preview and apply. A leaf with converted memory rejudges the closeout-cell pair through the shared leaf validator and recomputed worklist gate against the current parent-memory tip; the earlier closeout verdict is not trusted as landing authority. A master final or checkpoint route runs validator, net staleness and newly closed history ownership, then the chain proof up to its actual pair. Final requires the complete canonical non-abandoned leaf population; checkpoint examines the leaves already landed.
 

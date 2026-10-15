@@ -1,0 +1,122 @@
+{
+  "path": "mcp/src/agents_remember/worktrees/sync_transaction_git/_read.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "b9c165c43ce173712ff934945fc6a62ae94d0d16",
+        "content": "sha256:694fd038d560342382cc7d66b9678fd8e4e0e1b5c6bdfc5da66417dc165dcb02",
+        "locator": {
+          "kind": "symbol",
+          "name": "stashed_parked_paths"
+        }
+      },
+      "id": "RLZ-YGPCHM",
+      "invariant": "INV-70577K",
+      "origin": {
+        "handoffEntry": "MIK-R153 rule 1",
+        "leaf": "260928-MIK-L153"
+      },
+      "rationale": "The proved population: the full stash-derived set (tracked plus untracked third-parent entries), iterated directly with no sample fallback; an unreadable inventory raises instead of passing.",
+      "role": "primary-authority"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "read_ref: qualified source contract.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b9c165c43ce173712ff934945fc6a62ae94d0d16",
+            "content": "sha256:84580a01bb3869b8ec141c3c2d55a44b42eecd9a55c9637f2c2e766d93762cbf",
+            "locator": {
+              "kind": "symbol",
+              "name": "read_ref"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "create_pinned_ref: qualified source contract.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b9c165c43ce173712ff934945fc6a62ae94d0d16",
+            "content": "sha256:6b9626d58796145bd7249a358484606d3bc91ce5943d679da63783eb87ef11ba",
+            "locator": {
+              "kind": "symbol",
+              "name": "create_pinned_ref"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "delete_pinned_ref: qualified source contract.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b9c165c43ce173712ff934945fc6a62ae94d0d16",
+            "content": "sha256:47aa641bccfabe5cc8004ec3565d23276201b12c6f9ff3afd39fa63e70ad5a2a",
+            "locator": {
+              "kind": "symbol",
+              "name": "delete_pinned_ref"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "stashed_parked_paths: qualified source contract.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b9c165c43ce173712ff934945fc6a62ae94d0d16",
+            "content": "sha256:694fd038d560342382cc7d66b9678fd8e4e0e1b5c6bdfc5da66417dc165dcb02",
+            "locator": {
+              "kind": "symbol",
+              "name": "stashed_parked_paths"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "renamed_parked_paths: qualified source contract.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b9c165c43ce173712ff934945fc6a62ae94d0d16",
+            "content": "sha256:2a868ca5233829f363e391f61877ec9094874bbedc913a090687c665cc8daa23",
+            "locator": {
+              "kind": "symbol",
+              "name": "renamed_parked_paths"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "side_merge_completed: qualified source contract.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b9c165c43ce173712ff934945fc6a62ae94d0d16",
+            "content": "sha256:d0e919e61f4a34e07977bffbbc8eb4328162dfc08aabfa6a16d4ddf20db33763",
+            "locator": {
+              "kind": "symbol",
+              "name": "side_merge_completed"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

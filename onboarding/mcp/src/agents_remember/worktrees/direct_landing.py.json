@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "4be7f38d8566713e0b27d3d5c3ce951498ae3bf7",
+        "blob": "cd3e69795965969ac1ee9e0423d8334caa4b390b",
         "content": "sha256:6a12c76ffd9389b0384564c1b039465f074d873f71e7c4d7cd690920884aea0f",
         "locator": {
           "kind": "symbol",
@@ -21,7 +21,7 @@
     },
     {
       "anchor": {
-        "blob": "4be7f38d8566713e0b27d3d5c3ce951498ae3bf7",
+        "blob": "cd3e69795965969ac1ee9e0423d8334caa4b390b",
         "content": "sha256:42142156f8934a41dd1df920ed0da657c720f8b1315cb768325673bd8652165e",
         "locator": {
           "kind": "symbol",
@@ -39,7 +39,7 @@
     },
     {
       "anchor": {
-        "blob": "4be7f38d8566713e0b27d3d5c3ce951498ae3bf7",
+        "blob": "cd3e69795965969ac1ee9e0423d8334caa4b390b",
         "content": "sha256:42142156f8934a41dd1df920ed0da657c720f8b1315cb768325673bd8652165e",
         "locator": {
           "kind": "symbol",
@@ -57,7 +57,7 @@
     },
     {
       "anchor": {
-        "blob": "4be7f38d8566713e0b27d3d5c3ce951498ae3bf7",
+        "blob": "cd3e69795965969ac1ee9e0423d8334caa4b390b",
         "content": "sha256:42142156f8934a41dd1df920ed0da657c720f8b1315cb768325673bd8652165e",
         "locator": {
           "kind": "symbol",
@@ -75,7 +75,7 @@
     },
     {
       "anchor": {
-        "blob": "4be7f38d8566713e0b27d3d5c3ce951498ae3bf7",
+        "blob": "cd3e69795965969ac1ee9e0423d8334caa4b390b",
         "content": "sha256:a3283de749cb1a03b7546976ec5eecf7c08f1a4387bed56459a864ddc166bb27",
         "locator": {
           "kind": "symbol",
@@ -93,7 +93,7 @@
     },
     {
       "anchor": {
-        "blob": "4be7f38d8566713e0b27d3d5c3ce951498ae3bf7",
+        "blob": "cd3e69795965969ac1ee9e0423d8334caa4b390b",
         "content": "sha256:26a4ff632d99d88891018ab65beba952ead015260c64a0b28c65dbdcc4ba64f1",
         "locator": {
           "kind": "symbol",
@@ -111,7 +111,7 @@
     },
     {
       "anchor": {
-        "blob": "4be7f38d8566713e0b27d3d5c3ce951498ae3bf7",
+        "blob": "cd3e69795965969ac1ee9e0423d8334caa4b390b",
         "content": "sha256:ff1fdf2b23e012096961aa03d65bd7bc33bf3fbe5b6da15e403574ad63ee89c3",
         "locator": {
           "kind": "symbol",
@@ -129,7 +129,7 @@
     },
     {
       "anchor": {
-        "blob": "4be7f38d8566713e0b27d3d5c3ce951498ae3bf7",
+        "blob": "cd3e69795965969ac1ee9e0423d8334caa4b390b",
         "content": "sha256:42142156f8934a41dd1df920ed0da657c720f8b1315cb768325673bd8652165e",
         "locator": {
           "kind": "symbol",
@@ -147,7 +147,7 @@
     },
     {
       "anchor": {
-        "blob": "4be7f38d8566713e0b27d3d5c3ce951498ae3bf7",
+        "blob": "cd3e69795965969ac1ee9e0423d8334caa4b390b",
         "content": "sha256:99844e8600b6361d2825639d9792f596ebc4428074127e4296da39948792cc2a",
         "locator": {
           "kind": "symbol",
@@ -265,7 +265,7 @@
       ]
     },
     "2": {
-      "note": "The preview refuses as the apply.",
+      "note": "For the invariant's non-external-memory refusal, preview and apply refuse the same mode. This is not whole-admission parity: create preview derives prospective pair facts without the actual validator/gate judgment that apply performs.",
       "targets": [
         {
           "anchor": {
@@ -368,7 +368,7 @@
         },
         {
           "anchor": {
-            "blob": "020fb46d0ab2336fe443a13f3f6f30fc5241036d",
+            "blob": "3340baac2b4975d15aa776a9780b17463e4ee1af",
             "content": "sha256:7e58b388e55ae95e0fa170eac2f71d65584a89589091fde4b49590a27a60c99d",
             "locator": {
               "kind": "symbol",
@@ -379,7 +379,7 @@
         },
         {
           "anchor": {
-            "blob": "020fb46d0ab2336fe443a13f3f6f30fc5241036d",
+            "blob": "3340baac2b4975d15aa776a9780b17463e4ee1af",
             "content": "sha256:acb0aa61b8e185ad27ae6f3bd40f5bfed3da7996b8ee3c2f0b9e941068777cc1",
             "locator": {
               "kind": "symbol",
@@ -433,7 +433,7 @@
         },
         {
           "anchor": {
-            "blob": "020fb46d0ab2336fe443a13f3f6f30fc5241036d",
+            "blob": "3340baac2b4975d15aa776a9780b17463e4ee1af",
             "content": "sha256:0e0906c5db8c47ae09e5bc75b0e43904670ba50ae43ace7fb37910e83a80d873",
             "locator": {
               "kind": "symbol",

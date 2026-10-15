@@ -12,21 +12,22 @@ Typed public projections for resumable sync results.
 
 ### Logic
 
-Results distinguish policy choice, previews, retained merge, parked reapply, terminal replay and quarantine. Retained conflicts name side, worktree/files, owner and contract-addressed continue/cancel. [1]
+Results distinguish policy choice, previews, retained merge, parked reapply, terminal replay and quarantine; retained conflict results include any journaled validationRefusal without changing continue/cancel addresses. Retained conflicts name side, worktree/files, owner and contract-addressed continue/cancel. [1]
 
 _resolution_guidance uses supported continue for both retained forms. A structural report adds item summary and crossing-conflict marker guidance, distinguishing crossing from all-converted structural merge. No row-decision placeholder or reconcile action remains. [2] [3]
 
 Previews mutate no index/stash/commit. Completed continuation recomputes worklist through its owner; quarantine proves no unrecorded restoration. [8] [9] [11]
 
 
-**A crossing sync's resolution names its report (MIK-R24 rule 8).** When the side record journals a
-`crossingReport`, `resolution_required` adds `resolution.crossing`, the output of
-`knowledge_crossing.crossing_summary`: the report path, the conflicted-item count, the first 100
-`(path, item, reason)` entries with a truncation flag, the cards taken from each side, the moved marker
-rows, the record-conflict history owner, and `howToResolve`. It also appends one sentence to the summary.
-That sentence says this is a crossing sync, names the report, and says that every conflicted JSON item holds
-a `crossing-conflict` marker the knowledge validator refuses until it is resolved. For an ordinary sync
-`crossingReport` is empty and nothing is added, so the payload is unchanged.
+**A structural memory-merge resolution names its report (MIK-R24 rule 8).** When the side record
+journals a nonempty `crossingReport`, `resolution_required` adds `resolution.crossing`, the output
+of `knowledge_crossing.crossing_summary`: the report path, conflicted-item count, first 100
+`(path, item, reason)` entries with a truncation flag, cards taken from each side, moved marker
+rows, record-conflict history owner and `howToResolve`. Its summary describes a structural merge
+of knowledge files, switching to crossing-sync wording only when the report's `converted` field
+is nonempty; both forms name the report and the validator-refused `crossing-conflict` markers.
+All-converted merges may journal reports for conflicts or nonzero alignment diagnostics. When
+`crossingReport` is empty, no report-derived resolution block or sentence is added.
 
 **The `continue` replay of a completed sync recomputes the worklist (MIK-R08 rule 8).**
 `terminal_resolution_replay` with `resolution_action='continue'` on a completed generation now returns
@@ -83,10 +84,11 @@ No domain-documentation source is configured for this slice. The behavior descri
 
 
 
-- A crossing sync's resolution carries the crossing summary and names the report; an ordinary sync's payload is unchanged. [19]
+- A nonempty structural memory-merge report adds resolution.crossing and a named report summary, including all-converted diagnostics; converted selects crossing wording. With no report, no report-derived block or sentence is added. [19]
 - Parked-candidate reapply preview. [20]
 - Policy choice and non-mutating initial/active/cancel previews. [21]
 - Terminal and no-authority replay results remain distinct; the `continue` replay of a completed generation recomputes the worklist. [22]
+
 - Content-domain conflict and staged-resolution proof is delegated to the Git owner. [23]
 
 

@@ -383,11 +383,11 @@
       ]
     },
     "22": {
-      "note": "Read steps returns the checklist and changes nothing",
+      "note": "Historical removed checklist-read case: the current tests instead assert operation-removed, canonical file guidance and unchanged JSON/Markdown, with no steps returned.",
       "targets": [
         {
           "anchor": {
-            "blob": "6a8efe4b54c895194466c508a18c24f534ba984e",
+            "blob": "30ef443f3b01e2338f680b15889dadef5761d1fe",
             "content": "sha256:87a8b27badecfc12f99fb225a3d72b16163eaaf8aea11b8aa6057a166bd4f085",
             "locator": {
               "kind": "symbol",
@@ -398,12 +398,12 @@
         },
         {
           "anchor": {
-            "blob": "6a8efe4b54c895194466c508a18c24f534ba984e",
+            "blob": "30ef443f3b01e2338f680b15889dadef5761d1fe",
             "content": "sha256:60baa2346219525762fd258f23304114776881accb8cc3dcdbce53862f2987f9",
             "locator": {
-              "end": 529,
+              "end": 534,
               "kind": "line_range",
-              "start": 492
+              "start": 497
             }
           },
           "kind": "test"
@@ -516,11 +516,11 @@
       ]
     },
     "26": {
-      "note": "The focused read's payload survives the response model the tool advertises: the real handler's `steps` list validates through `finalize_tool_response`, and an undeclared key still fails.",
+      "note": "Historical pre-L109 successful steps-envelope account. The current renamed removal case validates the operation-removed refusal against the advertised model, returns no steps, preserves source bytes and still rejects an undeclared key.",
       "targets": [
         {
           "anchor": {
-            "blob": "6a8efe4b54c895194466c508a18c24f534ba984e",
+            "blob": "30ef443f3b01e2338f680b15889dadef5761d1fe",
             "content": "sha256:53e6d4a691589dc6d9088b6496f5983ec8063830536a2fc508e61af98e843253",
             "locator": {
               "kind": "symbol",
@@ -594,7 +594,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6a8efe4b54c895194466c508a18c24f534ba984e",
+            "blob": "30ef443f3b01e2338f680b15889dadef5761d1fe",
             "content": "sha256:ea04d22186a1d6ef8fea7f1de86ebe8521a311e734af39fdc08f3e56122ed50b",
             "locator": {
               "kind": "symbol",
@@ -605,7 +605,7 @@
         },
         {
           "anchor": {
-            "blob": "6a8efe4b54c895194466c508a18c24f534ba984e",
+            "blob": "30ef443f3b01e2338f680b15889dadef5761d1fe",
             "content": "sha256:a67fdca3838599d65dd3b308598018b3b76559d5e7d13e6ce60987f40b558bbf",
             "locator": {
               "end": 96,
@@ -650,7 +650,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6a8efe4b54c895194466c508a18c24f534ba984e",
+            "blob": "30ef443f3b01e2338f680b15889dadef5761d1fe",
             "content": "sha256:9c4c0e0db4c67dc96984c6b9d555f5f6e6b1cb01fb21cdd974e5fcf5a8f85323",
             "locator": {
               "kind": "symbol",
@@ -661,12 +661,12 @@
         },
         {
           "anchor": {
-            "blob": "6a8efe4b54c895194466c508a18c24f534ba984e",
+            "blob": "30ef443f3b01e2338f680b15889dadef5761d1fe",
             "content": "sha256:53d53a55b41e189bcfaaa864d0658dbf1e1c78a1df412e7d9c8f6cef68c57ccb",
             "locator": {
-              "end": 142,
+              "end": 147,
               "kind": "line_range",
-              "start": 109
+              "start": 114
             }
           },
           "kind": "test"
