@@ -23,13 +23,8 @@
     "leaf": "260928-MIK-L50",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "routes": [
-    "mcp/src/agents_remember/worktrees/modules",
-    "mcp/src/agents_remember/worktrees",
-    "mcp/src/agents_remember/kernel",
-    "mcp/src/agents_remember/application/lifecycle",
-    "mcp/src/agents_remember/application",
     "mcp/src/agents_remember",
     "mcp/tests"
   ],

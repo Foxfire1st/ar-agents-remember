@@ -1,13 +1,32 @@
 {
   "path": "mcp/src/agents_remember/certification/repository_profiles/canonical.py",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "8d005fa360cbac2b426278eec6d3e499f056a462",
+        "content": "sha256:186317bf28bcf6dafc5fb9a125004be698f1d5640cc009be665df49c86dfa02b",
+        "locator": {
+          "kind": "symbol",
+          "name": "project_generated_skills"
+        }
+      },
+      "id": "RLZ-G0NHEZ",
+      "invariant": "INV-5X4C74",
+      "origin": {
+        "handoffEntry": "L54-curator-generator-profile-prevalidation",
+        "leaf": "260928-MIK-L54"
+      },
+      "rationale": "The profile owner preserves unrelated inputs, derives skill target/source scopes from the parsed declaration and recomputes the canonical profile digest.",
+      "role": "primary-authority"
+    }
+  ],
   "references": {
     "1": {
       "note": "`canonicalize_repository_profile` normalizes one profile and refuses a declared digest that does not match canonical content.",
       "targets": [
         {
           "anchor": {
-            "blob": "26022dfce05200b690efadcf1ca8c9939a305142",
+            "blob": "8d005fa360cbac2b426278eec6d3e499f056a462",
             "content": "sha256:feccda26744998a3d36c9330c1e0a1c11e3159685fd6d5727cd09daa0aeff85e",
             "locator": {
               "kind": "symbol",
@@ -77,6 +96,23 @@
               "name": "compile_repository_profile_plan"
             },
             "path": "mcp/src/agents_remember/certification/repository_profiles/planning.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Generated-skills projection validates its input, replaces only the declared skill input scopes and recomputes the projected digest.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8d005fa360cbac2b426278eec6d3e499f056a462",
+            "content": "sha256:186317bf28bcf6dafc5fb9a125004be698f1d5640cc009be665df49c86dfa02b",
+            "locator": {
+              "end": 57,
+              "kind": "line_range",
+              "start": 31
+            }
           },
           "kind": "code"
         }

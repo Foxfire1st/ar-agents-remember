@@ -219,6 +219,21 @@
         }
       ]
     },
+    "12": {
+      "note": "The authored source owns this contract; the distribution copy is not a separate authority.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a8e2b869f7f277422f7b891f9c31efa0b3c45d4c",
+            "content": "sha256:2c2e7fc2f9da67da4840f9342af43eb2b709543437289a0ae232b4dbc187cbad",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
     "2": {
       "note": "The registry assigns one canonical file to each role.\n\nAnchor: \"## The Role Registry\"",
       "targets": [
@@ -296,7 +311,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e3d31273a3274cc4e9f7d744cb4a33adf2d72b36",
+            "blob": "4d9d9623cbe73bc5056696b8091f3fe78595516e",
             "content": "sha256:800fbf439859b4fedba7eaefbb5d5328f83d9f0e99078ed42133f3a7326bb58a",
             "locator": {
               "end": 6,
@@ -362,7 +377,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "eca15d36771f6cdd4ceabe7b07f0c4c93aa0cbdc",
+            "blob": "4f6181bc4f0045bcaf1828fe6e777bf68c490a9a",
             "content": "sha256:e45d40052ad3a1054cc3d351cef0e1c7cd4fb683d9a2bffb1ed5a12ea8dd65b5",
             "locator": {
               "end": 77,
@@ -375,7 +390,7 @@
         },
         {
           "anchor": {
-            "blob": "eca15d36771f6cdd4ceabe7b07f0c4c93aa0cbdc",
+            "blob": "4f6181bc4f0045bcaf1828fe6e777bf68c490a9a",
             "content": "sha256:4e970b2fc818c268b67c85b9dc3ee85bab842a29bbf01d44f80c80bd56ac0fce",
             "locator": {
               "end": 142,
@@ -393,7 +408,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "eca15d36771f6cdd4ceabe7b07f0c4c93aa0cbdc",
+            "blob": "4f6181bc4f0045bcaf1828fe6e777bf68c490a9a",
             "content": "sha256:81a39d100c2261a6c5b71e4c22154182bb73da55478cd87b6feed7a696bafdc8",
             "locator": {
               "end": 116,
@@ -411,7 +426,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "eca15d36771f6cdd4ceabe7b07f0c4c93aa0cbdc",
+            "blob": "4f6181bc4f0045bcaf1828fe6e777bf68c490a9a",
             "content": "sha256:b19fa165fdb81f64d4c08822c5cc58916c018422c991bc6c630bf8d4603de123",
             "locator": {
               "end": 120,

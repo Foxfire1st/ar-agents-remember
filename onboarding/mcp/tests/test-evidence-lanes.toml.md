@@ -16,6 +16,8 @@ test_sync_reapply_merge.py is declared once in unit-regression; lane membership 
 
 ## Code Commentary
 
+Canonical-skill/worklist, generated-copy, correction-guidance, recorded-read-audit and link-target modules, plus the split writer-correction, integration, question-publication and restoration modules, are declared in unit-regression. The source-owned validator-link-target ordering repair preserves all seven lane identities and their membership sets, categories, scopes, guards and limits; selection and canonical order certify no invocation.
+
 L109 registers test_context_packet_slim.py, test_knowledge_diff_report.py and test_knowledge_name_projection.py in unit-regression. Each is selected once in the parsed catalog; this is membership only and establishes neither execution nor acceptance. The repaired lists are unique and canonically ordered; the naming-projection module precedes overview-order without changing either module’s lane membership.
 
 - Native reapply remains declared in unit-regression; membership is selection only and the list remains canonically ordered. [847]
@@ -123,3 +125,7 @@ Source declarations, mirrors and fixture assertions are not executed acceptance.
 
 
 - The seven retained lane identities select surviving test-module paths; the eight local hosted memberships removed by the earlier L113 retirement remain absent. The incoming task-document Order membership is retained. Selection establishes neither execution nor a waiver of full-final coverage. [850]
+
+
+
+- Source-owned canonicalization preserves seven lane identities and every per-lane membership set; validator-link-target and the split writer/worklist modules are declared in unit-regression, not newly executed evidence. [851]

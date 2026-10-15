@@ -1,0 +1,58 @@
+{
+  "path": "mcp/tests/test_recorded_read_audit.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "6c1b6f606ae473dff697d4fd71bfe96c78ba979a",
+        "content": "sha256:6ab905203e07e30a35babc8959a1cc4abf656dec9ad8ff7a41ccf007ce7e4111",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_computation_reads_are_recorded_under_a_python_audit_hook"
+        }
+      },
+      "facet": "Source-defined regression check; not executed by Curator: The source-defined child-audit matrix covers worklist/gate/reviewer reads, with ruled-out master bytes examined but excluded from kept reads; no child process is run by this curation.",
+      "id": "PRF-2MK4WW",
+      "invariant": "INV-7PGZ9Y",
+      "origin": {
+        "handoffEntry": "L54-curator-proof-MIK-R55-v1-rule-6-wave-76",
+        "leaf": "260928-MIK-L54"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "6c1b6f606ae473dff697d4fd71bfe96c78ba979a",
+        "content": "sha256:a3be70d21da4cbcebc053a0b0a7c2dbfcfc89580aff36a8275ad58123d086467",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_real_unrecorded_task_file_read_is_caught"
+        }
+      },
+      "facet": "Source-defined regression check; not executed by Curator: The deliberate unrecorded-file negative control is rejected by the audit fixture.",
+      "id": "PRF-K2TPQ6",
+      "invariant": "INV-7PGZ9Y",
+      "origin": {
+        "handoffEntry": "L54-curator-proof-MIK-R55-v1-rule-6-wave-76",
+        "leaf": "260928-MIK-L54"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Describes isolated interpreter audits of retained versus examined filesystem dependencies for worklist, gate and reviewer computation. The parent launches Python directly, not nested pytest, and checks the child result. Source-defined audit coverage and a mutation control do not establish that this candidate was executed or that unrelated host files were audited.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6c1b6f606ae473dff697d4fd71bfe96c78ba979a",
+            "content": "sha256:efc621c74f79069ce2b4e203d80aa2e1bb75b203f25ce8c1fda448860d63d2b1",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

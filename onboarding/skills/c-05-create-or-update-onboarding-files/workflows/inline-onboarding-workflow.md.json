@@ -1,0 +1,223 @@
+{
+  "path": "skills/c-05-create-or-update-onboarding-files/workflows/inline-onboarding-workflow.md",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Inline onboarding is source-embedded storage reusing the file-level template, with no independent semantic model.\n\nAnchor: `# Inline Onboarding Workflow`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "50c21244c8115542ab8552830ef03ec3a902d1e2",
+            "content": "sha256:6ab102bd1fe0a60c68b4f5c5223312591f566b648d495c4249dbacb9628b5dc8",
+            "locator": {
+              "end": 9,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "Converted creation accepts temporary evidence tables; the workflow forbids legacy metadata/history and hand-authored references.\n\nAnchor: `## Create a card for a new source file`; `## Never on converted memory`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e071ead508fb6ee46a9f883dc3a5bf12260ebd28",
+            "content": "sha256:a4fc8e5fbf62da8b36e741fac74e96f4baa3c7a9e38ddacb9140730074e4057e",
+            "locator": {
+              "end": 87,
+              "kind": "line_range",
+              "start": 35
+            },
+            "path": "skills/c-05-create-or-update-onboarding-files/workflows/converted-card-workflow.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e071ead508fb6ee46a9f883dc3a5bf12260ebd28",
+            "content": "sha256:c9a1af82d877a8223f23b4b97336284a5d93454493fa1ed768042b208e68651b",
+            "locator": {
+              "end": 183,
+              "kind": "line_range",
+              "start": 175
+            },
+            "path": "skills/c-05-create-or-update-onboarding-files/workflows/converted-card-workflow.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Adapter steps choose comments and safe placement, preserve markers, remove the block from digest input and fall back to sidecars.\n\nAnchor: `## Workflow`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "50c21244c8115542ab8552830ef03ec3a902d1e2",
+            "content": "sha256:8a99669a74db1e679f0ae1fa48b2b94df28cb28016c26a7016b1051c074cc645",
+            "locator": {
+              "end": 18,
+              "kind": "line_range",
+              "start": 11
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Verification specifies timestamp format and SHA-256, classifies missing markers or digest, and falls back on unsupported text parsing.\n\nAnchor: `## Verification Rules`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "50c21244c8115542ab8552830ef03ec3a902d1e2",
+            "content": "sha256:01d2f452abdc414ee4a616472d82575fadc0a14f12643b24c2b83688a7d1530b",
+            "locator": {
+              "end": 25,
+              "kind": "line_range",
+              "start": 20
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The block template declares markers and inline fields, including a Markdown governing link, without defining converted-card metadata.\n\nAnchor: `# Inline Onboarding Block Template`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "80e865858386a4b52c71367b215e08eeba959df7",
+            "content": "sha256:e0efb7f3a1307127311b05a2e870b3b53d4168ccfce2e334ed2bee99cfc4375f",
+            "locator": {
+              "end": 43,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "skills/c-05-create-or-update-onboarding-files/templates/inline-onboarding-block-template.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Template guidelines keep keys and markers stable and adapt only comment syntax while preserving leading syntax and excluding the block from the digest.\n\nAnchor: \"Guidelines:\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "80e865858386a4b52c71367b215e08eeba959df7",
+            "content": "sha256:a1d8dd1b96a3e74100033d01f85b62fedab0b14e2368f852007d28d7dfe0501e",
+            "locator": {
+              "end": 51,
+              "kind": "line_range",
+              "start": 46
+            },
+            "path": "skills/c-05-create-or-update-onboarding-files/templates/inline-onboarding-block-template.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The shared file-level template describes semantic parity and a self-sufficient source purpose.\n\nAnchor: \"This is the canonical file-level onboarding content model.\"; `## Purpose`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8104c5cc82eed5d66957c6e73804c5ca70d31625",
+            "content": "sha256:acee386624a04bdb26ec51dc2437fa4b9ee435bd62f89acc6d7ee9e80c00cea0",
+            "locator": {
+              "end": 3,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "skills/c-05-create-or-update-onboarding-files/templates/file-level-onboarding-template.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8104c5cc82eed5d66957c6e73804c5ca70d31625",
+            "content": "sha256:0a692e01c04c45120837a21f8c88ecf9d90c6d72ded97385b6a3f6f3745acfba",
+            "locator": {
+              "end": 44,
+              "kind": "line_range",
+              "start": 24
+            },
+            "path": "skills/c-05-create-or-update-onboarding-files/templates/file-level-onboarding-template.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The canonical skill identifies inline as an adapter and gives converted-card precedence over retained unconverted instructions.\n\nAnchor: \"Inline onboarding does not replace the file-level content model.\"; `## Converted Memory`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4d90c238185e61a3bec8347aa1f8b50292cbc1dd",
+            "content": "sha256:a0b73a113d0a93d9298988c987656bf2953dc012b534baada30846f83b1be99a",
+            "locator": {
+              "end": 15,
+              "kind": "line_range",
+              "start": 8
+            },
+            "path": "skills/c-05-create-or-update-onboarding-files/SKILL.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4d90c238185e61a3bec8347aa1f8b50292cbc1dd",
+            "content": "sha256:af15e8a2eefaf79a119062872a1813e646d8259e28b6f8cdebc52ccb3bdff965",
+            "locator": {
+              "end": 53,
+              "kind": "line_range",
+              "start": 42
+            },
+            "path": "skills/c-05-create-or-update-onboarding-files/SKILL.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The file-level workflow explicitly redirects converted memory instead of applying its retained metadata rules.\n\nAnchor: \"**Converted memory:** when the memory tree holds\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9332653d0d2b07b0a5fd85acdde7ff69bb3f3bac",
+            "content": "sha256:34b35ce7fdd01c2fedf0d868a5a48b341ceccb512200fbbd95f61e976a99cd83",
+            "locator": {
+              "end": 9,
+              "kind": "line_range",
+              "start": 7
+            },
+            "path": "skills/c-05-create-or-update-onboarding-files/workflows/file-level-onboarding-workflow.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "Converted cards use the mirrored prose/companion pair and owner-authored references and typed entries, not inline-template metadata.\n\nAnchor: `## What a converted card is`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e071ead508fb6ee46a9f883dc3a5bf12260ebd28",
+            "content": "sha256:c37c684764deb1c742f510fd62758673324a7bfe663c6447d4150822d0483643",
+            "locator": {
+              "end": 33,
+              "kind": "line_range",
+              "start": 7
+            },
+            "path": "skills/c-05-create-or-update-onboarding-files/workflows/converted-card-workflow.md"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

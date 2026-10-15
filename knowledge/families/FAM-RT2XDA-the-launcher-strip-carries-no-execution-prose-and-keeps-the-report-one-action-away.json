@@ -26,14 +26,12 @@
     "leaf": "260928-MIK-L75",
     "task": "260928-MIK"
   },
-  "revision": 4,
+  "revision": 5,
   "routes": [
     "dashboard/src/cockpit",
     "dashboard/src/data",
     "dashboard/src/panels/notes-reader",
-    "mcp/src/agents_remember",
-    "mcp/src/agents_remember/cli",
-    "mcp/src/agents_remember/models"
+    "mcp/src/agents_remember"
   ],
   "schema": "ar-family/v1",
   "status": "proposed",

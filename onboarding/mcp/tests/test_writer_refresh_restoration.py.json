@@ -1,0 +1,41 @@
+{
+  "path": "mcp/tests/test_writer_refresh_restoration.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "0ae6d1084125fbc880b11830aa2f9512f18d401c",
+        "content": "sha256:2b5ba3e09cd2361fc14ad62becf25055a20d671c38ecfef64c171514b3ee145e",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_disappeared_fired_item_restores_same_leaf_refresh"
+        }
+      },
+      "facet": "Source-defined regression check; not executed by Curator: An eligible disappeared same-leaf trigger restores its base refresh link.",
+      "id": "PRF-H508TS",
+      "invariant": "INV-E6KFRX",
+      "origin": {
+        "handoffEntry": "L54-curator-proof-MIK-R54-v1-rule-7-wave-75",
+        "leaf": "260928-MIK-L54"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Describes the boundary between disappeared same-leaf refresh work and still-fired committed reconsideration after code reversion. Memory-base provenance changes the judgment. A code revert alone does not authorize resetting a committed link, and these source assertions are not a current run or acceptance result.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0ae6d1084125fbc880b11830aa2f9512f18d401c",
+            "content": "sha256:deb18b92af09d76467d95360fb48d6804534be902a159d329db62bc7da7275d3",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

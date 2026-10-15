@@ -1,13 +1,50 @@
 {
   "path": "mcp/src/agents_remember/application/knowledge_worklist/planned_effects.py",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "d6988bceaf54360e16df0add0b9fab7a65147fa6",
+        "content": "sha256:d46d46ee11674d9cee0041a92ad481e952e5889c6b4f180f4e76ad43914ddb9b",
+        "locator": {
+          "kind": "symbol",
+          "name": "_delivers"
+        }
+      },
+      "id": "RLZ-283PDR",
+      "invariant": "INV-HX6ZN5",
+      "origin": {
+        "handoffEntry": "L54-curator-MIK-R55-v1-rule-5-actual-guards",
+        "leaf": "260928-MIK-L54"
+      },
+      "rationale": "The actual matching predicate requires changed family/invariant rows with the declared effect, or the matching invariant retirement.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "d6988bceaf54360e16df0add0b9fab7a65147fa6",
+        "content": "sha256:ab15fcbf1ae38c9dec7f453fec2a98237a102cb4e083e3c4a49a8cf68fdc540e",
+        "locator": {
+          "kind": "symbol",
+          "name": "reconcile_planned_effects"
+        }
+      },
+      "id": "RLZ-WX5ZC8",
+      "invariant": "INV-HX6ZN5",
+      "origin": {
+        "handoffEntry": "MIK-R55@v1 rule 5",
+        "leaf": "260928-MIK-L54"
+      },
+      "rationale": "This reconciliation separates delivered declared effects from undelivered planned items.",
+      "role": "enforcement"
+    }
+  ],
   "references": {
     "1": {
       "note": "The module docstring: matching, classification and the satisfying row.\n\nAnchor: \"Planned invariant effects reconciliation (MIK-R11@v2)\"",
       "targets": [
         {
           "anchor": {
-            "blob": "81f4d6599ad4ba2d02c4bd52b34b3e2fa64d958f",
+            "blob": "d6988bceaf54360e16df0add0b9fab7a65147fa6",
             "content": "sha256:89e26290d1ee6377663ae5198808dba5413b98d58fb24b59e312795ce30833d2",
             "locator": {
               "end": 27,
@@ -24,7 +61,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "81f4d6599ad4ba2d02c4bd52b34b3e2fa64d958f",
+            "blob": "d6988bceaf54360e16df0add0b9fab7a65147fa6",
             "content": "sha256:53cb47f4f8cb3779dc438803845822e85c2bdd6c7dfd7e45026695dea0a2f610",
             "locator": {
               "kind": "symbol",
@@ -36,15 +73,16 @@
       ]
     },
     "11": {
-      "note": "The item, its facts, its stable ID and `satisfiedBy`.",
+      "note": "Unmatched facts expose both invariant and family row effects and keep the declared subject/requirement-based identity",
       "targets": [
         {
           "anchor": {
-            "blob": "81f4d6599ad4ba2d02c4bd52b34b3e2fa64d958f",
-            "content": "sha256:fbd8074250871fa8919f1f988cab0669f2c2a3399a9b4ffa04104f683dfdf64c",
+            "blob": "d6988bceaf54360e16df0add0b9fab7a65147fa6",
+            "content": "sha256:4004a6a304736b2b3866693b33c3c725ff36138a3a137dd5260a59671f7b06b6",
             "locator": {
-              "kind": "symbol",
-              "name": "_untouched_item"
+              "end": 252,
+              "kind": "line_range",
+              "start": 227
             }
           },
           "kind": "code"
@@ -56,12 +94,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a9361b86286bca9cc42dd02954bfb370d3f6ac13",
+            "blob": "e6b16a65aa566287b7b4d80ff076618e8b8fe62d",
             "content": "sha256:bc7530d259c8e27158086e8395c83f398aaf9c3dc2569ad4995f3c5a428785db",
             "locator": {
-              "end": 263,
+              "end": 262,
               "kind": "line_range",
-              "start": 261
+              "start": 260
             },
             "path": "mcp/src/agents_remember/application/knowledge_worklist/compute.py"
           },
@@ -69,7 +107,7 @@
         },
         {
           "anchor": {
-            "blob": "a9361b86286bca9cc42dd02954bfb370d3f6ac13",
+            "blob": "e6b16a65aa566287b7b4d80ff076618e8b8fe62d",
             "content": "sha256:6bc3601a3acc15488d835cf66bf0737e1f2564b23f64418cbc6aec5c7d045281",
             "locator": {
               "end": 283,
@@ -82,12 +120,12 @@
         },
         {
           "anchor": {
-            "blob": "a9361b86286bca9cc42dd02954bfb370d3f6ac13",
+            "blob": "e6b16a65aa566287b7b4d80ff076618e8b8fe62d",
             "content": "sha256:c712cb2a637c363c70718d77d6a753b1c303d0fb264ccdc7dd29f673a5b920fa",
             "locator": {
-              "end": 303,
+              "end": 311,
               "kind": "line_range",
-              "start": 303
+              "start": 311
             },
             "path": "mcp/src/agents_remember/application/knowledge_worklist/compute.py"
           },
@@ -117,7 +155,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c7852e87c4c2eb41c0ab66973a0e148888c604ff",
+            "blob": "108235abe04cbe9d3271f3ba202cca2b7e43bab9",
             "content": "sha256:e5843fff97a252979221547a2bb897adadfa857a52373ed518f29daac2bdcfec",
             "locator": {
               "kind": "symbol",
@@ -129,12 +167,46 @@
         }
       ]
     },
+    "15": {
+      "note": "Family changed rows deliver only the exact declared effect; invariant retirement keeps its separate exception.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d6988bceaf54360e16df0add0b9fab7a65147fa6",
+            "content": "sha256:d0fb4a5396a880ef307be29bd626869b4ebd57856dd52f96bd4c9f1bc1e69220",
+            "locator": {
+              "end": 213,
+              "kind": "line_range",
+              "start": 176
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "16": {
+      "note": "Unmatched declaration facts include nonempty effects for both family and invariant rows.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d6988bceaf54360e16df0add0b9fab7a65147fa6",
+            "content": "sha256:4004a6a304736b2b3866693b33c3c725ff36138a3a137dd5260a59671f7b06b6",
+            "locator": {
+              "end": 252,
+              "kind": "line_range",
+              "start": 227
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
     "2": {
       "note": "The marked kinds and the unmatched reason.",
       "targets": [
         {
           "anchor": {
-            "blob": "81f4d6599ad4ba2d02c4bd52b34b3e2fa64d958f",
+            "blob": "d6988bceaf54360e16df0add0b9fab7a65147fa6",
             "content": "sha256:dbdb73686f6859c3b7147aa50592fec594c4c465d53a28780d331840ea3ed8af",
             "locator": {
               "kind": "symbol",
@@ -145,7 +217,7 @@
         },
         {
           "anchor": {
-            "blob": "81f4d6599ad4ba2d02c4bd52b34b3e2fa64d958f",
+            "blob": "d6988bceaf54360e16df0add0b9fab7a65147fa6",
             "content": "sha256:f146d22484dbf33e991c7b2f9eacd077747f849eb4241dadbd7640eed674f046",
             "locator": {
               "kind": "symbol",
@@ -161,7 +233,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "81f4d6599ad4ba2d02c4bd52b34b3e2fa64d958f",
+            "blob": "d6988bceaf54360e16df0add0b9fab7a65147fa6",
             "content": "sha256:8dfddab551dd48cd604fbb99e3dd00de1ef509a601ad5fd542279befdd8b5708",
             "locator": {
               "kind": "symbol",
@@ -177,7 +249,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "81f4d6599ad4ba2d02c4bd52b34b3e2fa64d958f",
+            "blob": "d6988bceaf54360e16df0add0b9fab7a65147fa6",
             "content": "sha256:26c96663e2db1ce59d78fea7e2590944d8d9b8d5e3c9716dba87ed1e571ff107",
             "locator": {
               "kind": "symbol",
@@ -193,7 +265,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "81f4d6599ad4ba2d02c4bd52b34b3e2fa64d958f",
+            "blob": "d6988bceaf54360e16df0add0b9fab7a65147fa6",
             "content": "sha256:fcd0ea1d73df6b70df3da7b743d218a556f6a8445c5853c8d69b5e1f7bc13c9b",
             "locator": {
               "kind": "symbol",
@@ -209,7 +281,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "81f4d6599ad4ba2d02c4bd52b34b3e2fa64d958f",
+            "blob": "d6988bceaf54360e16df0add0b9fab7a65147fa6",
             "content": "sha256:fa2a300cd7d7777c4484f2d34ff99c0fdf1593ca36c20ccc6949eb1ef2a42dc5",
             "locator": {
               "end": 149,
@@ -226,7 +298,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "81f4d6599ad4ba2d02c4bd52b34b3e2fa64d958f",
+            "blob": "d6988bceaf54360e16df0add0b9fab7a65147fa6",
             "content": "sha256:ab15fcbf1ae38c9dec7f453fec2a98237a102cb4e083e3c4a49a8cf68fdc540e",
             "locator": {
               "kind": "symbol",
@@ -242,7 +314,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "81f4d6599ad4ba2d02c4bd52b34b3e2fa64d958f",
+            "blob": "d6988bceaf54360e16df0add0b9fab7a65147fa6",
             "content": "sha256:0facc05578fc969234e6ddf5392503034c47dd07479d5c6fbe2694e33cd7038f",
             "locator": {
               "kind": "symbol",
@@ -254,15 +326,16 @@
       ]
     },
     "9": {
-      "note": "Which rows deliver an effect.",
+      "note": "Changed invariant and family rows deliver only the exact declared effect, with the invariant retirement exception retained",
       "targets": [
         {
           "anchor": {
-            "blob": "81f4d6599ad4ba2d02c4bd52b34b3e2fa64d958f",
-            "content": "sha256:cc6a0cdb3e2b13a7545860ff4b00b7e157155866a3ae22ab23696f46a33f0ed2",
+            "blob": "d6988bceaf54360e16df0add0b9fab7a65147fa6",
+            "content": "sha256:d46d46ee11674d9cee0041a92ad481e952e5889c6b4f180f4e76ad43914ddb9b",
             "locator": {
-              "kind": "symbol",
-              "name": "_delivers"
+              "end": 213,
+              "kind": "line_range",
+              "start": 206
             }
           },
           "kind": "code"

@@ -10,7 +10,7 @@ The reading half of the shipped curation-instruction guard: normalized exact ret
 scans remain separate from the positive policy check for the two compact native curation
 sources. The normal MIK authoring policy requires complete memory quality and coherence;
 report-only admission does not claim that authoring pass complete. The module is free of
-pytest and repository constants so its callers can inspect staged or synthetic trees.
+pytest. Its projection census is now derived from the canonical repository declaration; callers still supply staged or synthetic trees for the scans.
 
 ## Current source account
 
@@ -52,7 +52,7 @@ harness reads the old sentence.
 
 - The registry is a **census of surfaces**, not a single-file check: a statement is reported only on a
   file that shipped it.
-- The module reads bytes and reports strings; it asserts nothing and imports no repository constant.
+- The module reads bytes and reports strings without importing pytest. At import it reads the module-owned repository declaration through `DECLARATION_PATH`/`parse_generated_copies` to derive generated skill targets; this is not a no-repository-input module. Callers still choose the tree they scan.
 - Extending coverage means adding a registry row with its real `sources`, never widening a matcher.
 
 ### Invariants And Boundaries
@@ -78,6 +78,9 @@ The curation-doctrine registry keeps its single owner and matcher for retired cu
 The retired registry additionally names the actual shipped sentences replaced by sibling set preparation, the single-live-leaf-seat resolver, direct Worker freeze delivery and product-owned permission waiting. Their source-confined probes protect the old wording without changing the matcher into a semantic review. The positive set-start duty belongs to `leaf_instruction_wording.py`; no test-support function starts a role or writes knowledge.
 
 ## Evidence
+
+- The generated skill census is derived from the canonical declaration through its parser rather than a duplicated tuple. [7]
+
 
 ### Docs References
 

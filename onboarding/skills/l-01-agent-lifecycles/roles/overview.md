@@ -146,7 +146,7 @@ The same Reviewer can repair a Worker-record-only finding on its last recorded r
 - Sprint coordination above one Manager per master and separate evidence.  Anchor: `You coordinate one selected sprint` [21]
 - Role registry and native supported-role vocabulary are distinct; the prior Investigator spelling is canonicalized on input.  Anchor: `LauncherRole`, `RoleSelection.canonical_role_id`, `CAPSULE_ROLES` \[29] [29]
 - Role selection checks operation applicability and selects no shared core for a dispatched role.  Anchor: `_role_scope`, `_require_operation_allowed` \[30] [30]
-- Canonical skills feed package and eight harness targets; this is a target declaration, not a synchronization verdict.  Anchor: `CANONICAL_SKILLS`, `TARGETS` \[31] [31]
+- Canonical skills feed the declaration-owned package/eight harness targets through the shared generator; this source inventory is not a synchronization verdict. [48]
 - Architect delegates one master to Manager and concurrent masters to Orchestrator; direct coordination requires the developer.  Anchor: Establish the work; Delegate and decide \[32] [32]
 - Manager prepares the leaf's three sibling seats with role_start_set; direct peer handovers leave gate acceptance and transactions with Manager, and held delivery is not resent.  Anchor: Operation — Coordination \[33] [33]
 - Worker leaves code uncommitted; sync conflict content, staging and continuation have separate owners.  Anchor: Boundaries \[34] [34]
@@ -166,7 +166,7 @@ The same Reviewer can repair a Worker-record-only finding on its last recorded r
 
 - Knowledge authoring is in memory; evidence/working files are outside it, with report/task and scratch custody separated. [29]
 - For every reported cut, the Curator handover names this task change making the text untrue; text is not removed to clear a quality finding. [30]
-- Independent MEMORY review reads both reports and raises missing cut-change reasons or extra-knowledge additions without a requirement place. [31]
+- Independent MEMORY review reads both landing reports and raises missing cut-change reasons or extra-knowledge additions without a requirement place. [31]
 - Landing rows are report-only: no refusing findings/actionable count; unreadable memory-base input is named. [32]
 
 - Ordinary converted-card row/source authoring duty. [17]

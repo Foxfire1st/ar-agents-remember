@@ -38,6 +38,8 @@ The baseline inspects every changed file in the complete candidate, including un
 
 ### Logic
 
+The leaf seam is organizational leaf route review, not the removed standalone caption. Its verdict still goes to Worker, code PASS also to Curator and the memory verdict to Curator. Atomic-master, master-exit and portfolio seams retain their own bindings/destinations. This wording is not a new verdict or permission and changes no typed claim.
+
 The reviewer does not accept a worker assertion at face value. For every stable ID it independently
 opens the implementation/deliverable and verification citations, checks the evidence class, and
 records `accepted` or `rejected` with its own rationale. Missing rationale, invalid citations,
@@ -107,6 +109,9 @@ The Reviewer delivers its verdict directly to the Worker and, on a pass, the exa
 A Reviewer with a parent sends developer questions through that actual parent, preserving the quoted words and receiving agent identity on the return path. The earlier developer-only extra-round instruction is superseded: rounds follow the settings limit, and beyond-limit approval names the Architect or developer and is recorded by the Manager. The separate CODE/MEMORY lanes and their sealed IDs remain; record-only unchanged-candidate checks do not increase the count.
 
 ## Evidence
+
+- Organizational leaf route review retains its Worker/Curator destinations and does not advertise a standalone seam. [9]
+
 
 ### Docs References
 

@@ -22,6 +22,8 @@ through the shipped extractor.
   therefore seen as ambiguous as the store grows, never silently read as missing (review R1 finding 3).
 - `tree(commit)` maps regular files (`100644`/`100755`) and symlinks (`120000`) to their entry blobs. Cached tree modes, `tree_modes` and `link_paths` preserve mode identity; an extant link has target-text bytes, not absence or its referent contents. Symbol resolution receives the selected tree's symlink set and rejects a named link before extraction; file/line-range locators still read entry bytes.
 
+- `tree_entry_mode(tree, path)` observes the exact raw candidate entry with bounded, nonrecursive `git ls-tree -z <tree> -- <path>`. Unlike recursive leaf inventory it sees an empty tree or a tree of empty subtrees. It returns the mode or `None` for true absence; a failed Git read raises `CodeObjectError`. Generated-copy declaration admission uses this observation before filtered blob lookup; the shared recursive inventory remains leaf-oriented.
+
 - Code-object mode snapshots retain symlink blobs and reject symbol extraction through them. [10]
 - Symbol and content locators use explicit symlink context. [11]
 - `prefetch(blob_ids)` reads uncached blobs in batches of 1,500 through `read_git_blobs_bytes`, and wraps
@@ -37,8 +39,8 @@ through the shipped extractor.
   catches `CodeObjectError`) instead of silently treating the blob as absent. This is one of L09's stated exceptions
   to "inert until the cutover": it is not behind a marker probe.
 - `symbol_span(path, blob, name, *, top_level=False)` returns the one extent the extractor binds.
-  Definitions are parsed once per (blob, grammar) (`extents.definitions`, then `extents.qualified_spans`),
-  and a file without a grammar never binds. `top_level` is the export's reading of a recorded claim whose
+  Definitions are parsed once per (blob, grammar, path) (`extents.definitions`, then `extents.qualified_spans`), so filename-dependent test-case eligibility cannot leak between paths sharing a blob.
+  A file without a grammar never binds. `top_level` is the export's reading of a recorded claim whose
   name binds more than once (a module-level `def run` and a local `run = …`): if exactly one span is nested
   in no other definition of the file (`_outermost`), that span is the claim's construct.
 - `content(blob, locator, path)` is the anchor `content` for a `file`, `symbol` or `line_range` locator
@@ -88,7 +90,8 @@ The object store's read-only surface.
 - A commit's file-to-blob map. [4]
 - Git's not-found exit, and a Git failure named rather than read as absent (R3-2). [5]
 - Batched blob reads. [6]
-- One symbol extent per (blob, grammar); the top-level reading for recorded claims. [7]
+- Symbol extraction is cached by blob, grammar and path, preserves the selected symlink context, and supports the explicit top-level reading for recorded claims. [7]
+- Exact nonrecursive entry-mode observation distinguishes present empty trees from absence without broadening recursive source inventory. [12]
 - An anchor's content in a blob. [8]
 - The shared binding rule. [9]
 

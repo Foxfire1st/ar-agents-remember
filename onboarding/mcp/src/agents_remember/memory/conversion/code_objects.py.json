@@ -1,6 +1,25 @@
 {
   "path": "mcp/src/agents_remember/memory/conversion/code_objects.py",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "7ac14e416b82c9b4d3547ea9afcff041d038a511",
+        "content": "sha256:8a563d2dbba88ee1e753a308ffe54c534ade411f77c97c5e979261cb0e0541f8",
+        "locator": {
+          "kind": "symbol",
+          "name": "CodeObjects.tree_entry_mode"
+        }
+      },
+      "id": "RLZ-PWT4T3",
+      "invariant": "INV-43KAHE",
+      "origin": {
+        "handoffEntry": "L54-R1-C12 round3 raw declaration entry",
+        "leaf": "260928-MIK-L54"
+      },
+      "rationale": "A bounded nonrecursive ls-tree observation preserves a directory entry even when recursive leaf inventory has no rows.",
+      "role": "enforcement"
+    }
+  ],
   "references": {
     "1": {
       "note": "The class and its caches.",
@@ -52,12 +71,29 @@
         }
       ]
     },
+    "12": {
+      "note": "Exact nonrecursive entry-mode observation distinguishes present empty trees from absence without broadening recursive source inventory.\n\nAnchor: `CodeObjects.tree_entry_mode`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7ac14e416b82c9b4d3547ea9afcff041d038a511",
+            "content": "sha256:8a563d2dbba88ee1e753a308ffe54c534ade411f77c97c5e979261cb0e0541f8",
+            "locator": {
+              "end": 150,
+              "kind": "line_range",
+              "start": 141
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
     "2": {
       "note": "A commit by exact name.",
       "targets": [
         {
           "anchor": {
-            "blob": "45422df6652fbcb87bd257227ed2431d41af938d",
+            "blob": "7ac14e416b82c9b4d3547ea9afcff041d038a511",
             "content": "sha256:51eac2097846b98da2d5b910557d344a3566ae28c85ccc15643ed91cc2afd83f",
             "locator": {
               "kind": "symbol",
@@ -73,7 +109,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "45422df6652fbcb87bd257227ed2431d41af938d",
+            "blob": "7ac14e416b82c9b4d3547ea9afcff041d038a511",
             "content": "sha256:8ae960f3597ab9bf56e7c9d1d40d6deadbaea5e38ad3691da134ff12516df22b",
             "locator": {
               "kind": "symbol",
@@ -105,7 +141,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "45422df6652fbcb87bd257227ed2431d41af938d",
+            "blob": "7ac14e416b82c9b4d3547ea9afcff041d038a511",
             "content": "sha256:a955743b9fa00eb0e6ea52f2d310950bf517c2471adc80030d5478c815e6a1e0",
             "locator": {
               "kind": "symbol",
@@ -116,12 +152,12 @@
         },
         {
           "anchor": {
-            "blob": "45422df6652fbcb87bd257227ed2431d41af938d",
+            "blob": "7ac14e416b82c9b4d3547ea9afcff041d038a511",
             "content": "sha256:661c59ba6d84d2c519f21e3f21fcd824a8fe73348aae8310e3d880d9a79b5d3f",
             "locator": {
-              "end": 189,
+              "end": 200,
               "kind": "line_range",
-              "start": 164
+              "start": 175
             }
           },
           "kind": "code"
@@ -133,7 +169,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "45422df6652fbcb87bd257227ed2431d41af938d",
+            "blob": "7ac14e416b82c9b4d3547ea9afcff041d038a511",
             "content": "sha256:f0fef503a4a201278ce39c9440b4486925c3f6392ff7ca3a82f1922aa9b23efa",
             "locator": {
               "kind": "symbol",
@@ -144,7 +180,7 @@
         },
         {
           "anchor": {
-            "blob": "45422df6652fbcb87bd257227ed2431d41af938d",
+            "blob": "7ac14e416b82c9b4d3547ea9afcff041d038a511",
             "content": "sha256:2c5341f0df119c28c9640ec80328e921a435dcb9384d33b6ac03147f3013837c",
             "locator": {
               "kind": "symbol",
@@ -156,26 +192,16 @@
       ]
     },
     "7": {
-      "note": "One symbol extent per (blob, grammar); the top-level reading for recorded claims.",
+      "note": "Symbol extraction is cached by blob, grammar and path, preserves the selected symlink context, and supports the explicit top-level reading for recorded claims.\n\nAnchor: `CodeObjects.symbol_span`",
       "targets": [
         {
           "anchor": {
-            "blob": "f2f5a13feb9d376e1fe17ae88185006334186473",
-            "content": "sha256:3a520caf4331238dcfd27f83399f8368821a6f9284d947106fecfdd29595bf4c",
+            "blob": "7ac14e416b82c9b4d3547ea9afcff041d038a511",
+            "content": "sha256:cd34f0d590f3105feaa6b4060e7551d1bc262963768790a0dc7cf02668cd170b",
             "locator": {
-              "kind": "symbol",
-              "name": "symbol_span"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "45422df6652fbcb87bd257227ed2431d41af938d",
-            "content": "sha256:4f4560e0b2f5bee9fce5a0cc28c0a9829616232cfc114115a3e08d186c627e21",
-            "locator": {
-              "kind": "symbol",
-              "name": "_outermost"
+              "end": 243,
+              "kind": "line_range",
+              "start": 202
             }
           },
           "kind": "code"

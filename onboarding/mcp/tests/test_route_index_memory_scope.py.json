@@ -16,6 +16,57 @@
           "kind": "test"
         }
       ]
+    },
+    "2": {
+      "note": "Public subset/full requests preserve scope authority, actual builds, stale bytes and write errors. [2]",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a12c5455e172d62b6688f5bd7ac4ad1a3bf44029",
+            "content": "sha256:c098e2620b92f41c59d00e057f8fc4ecde6a5d5291f3aa2639383e4830c657d1",
+            "locator": {
+              "end": 128,
+              "kind": "line_range",
+              "start": 39
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Explicit all-check subset and ordinary full requests keep distinct asynchronous run identities. [3]",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a12c5455e172d62b6688f5bd7ac4ad1a3bf44029",
+            "content": "sha256:29b367103b33e6a0ef49f6fc3f20ebc3a5374cf5a7fd63095e46bf72b29f7517",
+            "locator": {
+              "end": 154,
+              "kind": "line_range",
+              "start": 131
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "Missing-only cache preparation preserves existing stale bytes and reports render failures. [4]",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a12c5455e172d62b6688f5bd7ac4ad1a3bf44029",
+            "content": "sha256:a04e38a3db33091da9350a3e313206357d52cff80cb8b7279c38c05b15eb9c91",
+            "locator": {
+              "end": 300,
+              "kind": "line_range",
+              "start": 253
+            }
+          },
+          "kind": "test"
+        }
+      ]
     }
   },
   "schema": "ar-onboarding-file/v1"

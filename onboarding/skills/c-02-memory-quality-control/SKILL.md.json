@@ -7,7 +7,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "486f3e68bba0e605e0e78f2abced7f9f6e54ec64",
+            "blob": "caee9572c039889c22da79ec3959f7106b902c8e",
             "content": "sha256:18812d3e2c588f9109c70c6439d095f929e62f58e7015b08adb2c255f0acb16f",
             "locator": {
               "end": 125,
@@ -24,7 +24,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "486f3e68bba0e605e0e78f2abced7f9f6e54ec64",
+            "blob": "caee9572c039889c22da79ec3959f7106b902c8e",
             "content": "sha256:1e88e16f2b621d34342e990b44f064dda2d46d04ec447ebbdde00f125ad0d38e",
             "locator": {
               "end": 253,
@@ -41,12 +41,27 @@
       "targets": [
         {
           "anchor": {
-            "blob": "486f3e68bba0e605e0e78f2abced7f9f6e54ec64",
+            "blob": "caee9572c039889c22da79ec3959f7106b902c8e",
             "content": "sha256:68fdf17bd6b075b568369a491cd8ca14525763e9c9ce9b580f638600e8e0765b",
             "locator": {
               "end": 275,
               "kind": "line_range",
               "start": 254
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The authored source owns this contract; the distribution copy is not a separate authority.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "caee9572c039889c22da79ec3959f7106b902c8e",
+            "content": "sha256:32439271737f8d7595c4c396da832265627e2fd16996d5e1378f26bdfcfbd6cb",
+            "locator": {
+              "kind": "file"
             }
           },
           "kind": "code"

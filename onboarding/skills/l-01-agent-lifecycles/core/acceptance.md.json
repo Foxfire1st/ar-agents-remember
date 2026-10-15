@@ -1,0 +1,212 @@
+{
+  "path": "skills/l-01-agent-lifecycles/core/acceptance.md",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Mechanical completion, artifact-blind relay, owner validation and unchanged authority.\n\nAnchor: \"# Core — Completion Truth And Handoff Acceptance (one home — this file owns the truth boundary)\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "eca15d36771f6cdd4ceabe7b07f0c4c93aa0cbdc",
+            "content": "sha256:348a2aa37bf4d5aa773be635ee9174d9bad0993a216145ee0facc0ad8bf73016",
+            "locator": {
+              "end": 25,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "Acceptance is per owned stable ID and version with complete rationale/citations/evidence. [10]\n\nAnchor: source extent 44–77",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4f6181bc4f0045bcaf1828fe6e777bf68c490a9a",
+            "content": "sha256:e45d40052ad3a1054cc3d351cef0e1c7cd4fb683d9a2bffb1ed5a12ea8dd65b5",
+            "locator": {
+              "end": 77,
+              "kind": "line_range",
+              "start": 44
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "Requirement revisions and formal delivery attempts have separate immutable lineage. [11]\n\nAnchor: source extent 79–116",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4f6181bc4f0045bcaf1828fe6e777bf68c490a9a",
+            "content": "sha256:81a39d100c2261a6c5b71e4c22154182bb73da55478cd87b6feed7a696bafdc8",
+            "locator": {
+              "end": 116,
+              "kind": "line_range",
+              "start": 79
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "Stable-contract or expiry evidence promotion is independent of requirement acceptance. [12]\n\nAnchor: source extent 126–142",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4f6181bc4f0045bcaf1828fe6e777bf68c490a9a",
+            "content": "sha256:5364aa15699f91bebe4d5cff19d19691b72f4efb0d62c5d847bf7e49f66f4748",
+            "locator": {
+              "end": 142,
+              "kind": "line_range",
+              "start": 126
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Seat/artifact/validator duties and no second completion row.\n\nAnchor: \"## Which artifact each seat hands over, and who validates\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "eca15d36771f6cdd4ceabe7b07f0c4c93aa0cbdc",
+            "content": "sha256:f3e8156709459f850000138c7a722004f1c0a9b2d2f5475959b948d80551a2bd",
+            "locator": {
+              "end": 42,
+              "kind": "line_range",
+              "start": 27
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "One primary revision, six-part envelope and independent adjudication.\n\nAnchor: \"## Acceptance is per stable ID and version, never aggregate\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "eca15d36771f6cdd4ceabe7b07f0c4c93aa0cbdc",
+            "content": "sha256:e45d40052ad3a1054cc3d351cef0e1c7cd4fb683d9a2bffb1ed5a12ea8dd65b5",
+            "locator": {
+              "end": 77,
+              "kind": "line_range",
+              "start": 44
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Immutable attempts, malformed-row correction, candidate-specific review and successor rules.\n\nAnchor: \"## Requirement revisions and delivery attempts are separate axes\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "eca15d36771f6cdd4ceabe7b07f0c4c93aa0cbdc",
+            "content": "sha256:81a39d100c2261a6c5b71e4c22154182bb73da55478cd87b6feed7a696bafdc8",
+            "locator": {
+              "end": 116,
+              "kind": "line_range",
+              "start": 79
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Leaf journals are authority; summaries cannot gate work.\n\nAnchor: \"## The master-level summary is disposable\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "eca15d36771f6cdd4ceabe7b07f0c4c93aa0cbdc",
+            "content": "sha256:4ec210df4448129f58df7e7d8f70eac24de904054c6469ff5d08d80ca772021a",
+            "locator": {
+              "end": 124,
+              "kind": "line_range",
+              "start": 118
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Stable contract or expiry disposition remains independent of requirement acceptance.\n\nAnchor: \"## The durable-evidence promotion hold point (a separate concern)\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "eca15d36771f6cdd4ceabe7b07f0c4c93aa0cbdc",
+            "content": "sha256:5364aa15699f91bebe4d5cff19d19691b72f4efb0d62c5d847bf7e49f66f4748",
+            "locator": {
+              "end": 142,
+              "kind": "line_range",
+              "start": 126
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "Selected Worker transport includes direct freeze handoff and producer-preserving post-PASS Curator list.\n\nAnchor: \"After code PASS\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d6fc9c48cab61bddf2118950eb2e1c6de48ff308",
+            "content": "sha256:3a10683d368086ac0139fc1328c73ac7fc08613e6e2c193ba7964ab30b09258f",
+            "locator": {
+              "end": 20,
+              "kind": "line_range",
+              "start": 18
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/worker.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The host relays mechanical turn completion without inspecting acceptance artifacts. [8]\n\nAnchor: source extent 1–24",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4f6181bc4f0045bcaf1828fe6e777bf68c490a9a",
+            "content": "sha256:00302694781280b8459044cdaf73071f6ef8184eb4415254abd4e43b87adacf5",
+            "locator": {
+              "end": 24,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "Each seat has its own artifact and distinct validator. [9]\n\nAnchor: source extent 27–42",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4f6181bc4f0045bcaf1828fe6e777bf68c490a9a",
+            "content": "sha256:f3e8156709459f850000138c7a722004f1c0a9b2d2f5475959b948d80551a2bd",
+            "locator": {
+              "end": 42,
+              "kind": "line_range",
+              "start": 27
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

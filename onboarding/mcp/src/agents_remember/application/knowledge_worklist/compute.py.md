@@ -32,12 +32,11 @@ no items.
 5. **Planned effects.** `reconcile_planned_effects` marks the combined items `planned` or `unplanned`
    and raises `planned_untouched` for a declaration no row delivers; only declared invariant/family
    subjects can be `planned`.
-6. **Linkage.** `_linkage` marks each hunk of each changed path `linked` or not. A hunk is linked when its
+6. **Linkage.** `linkage.change_linkage` marks each hunk of each changed path `linked` or not; the former `_Run` helper body now lives in the extracted linkage owner. A hunk is linked when its
    changed lines on the B side hit a K_B entry's range there, or its changed lines on the C side hit a
-   K_C entry's range there (`_linked`). A change without text hunks, and the mode fact of a mode change,
+   K_C entry's range there (`linkage._linked`). A change without text hunks, and the mode fact of a mode change,
    are linked at file level, by an entry with a `file` locator at the path (`non_text_linked`).
-7. **Unexplained changes and reconsideration.** `unexplained_items` raises an item for every unlinked hunk
-   and non-text change; `reconsideration_candidates` raises one for each decision alternative whose linked
+7. **Unexplained changes and reconsideration.** `unexplained_items` applies exact generated-copy filtering and equal-change grouping before raising the remaining unlinked hunk/non-text items; `reconsideration_candidates` raises one for each decision alternative whose linked
    target changed.
 
 The document holds the pairing, the scope counts, the classified entries, the changes with their linkage,
@@ -97,12 +96,12 @@ the incomplete entries.
   when K_C states another guarantee for the family than K_B: `_guarantee_changed`) and per family of a
   stale invariant (reason `stale:<INV>`); `_family_item` lists the union of members with each side's revision
   and both sides' routes, and its identities are the members' `{ id, revision }` per side.
-- **Gate linkage** (`_change`, definition 8): each changed path's text hunks are linked when a changed line
-  hits a K_B entry's range at B or a K_C entry's range at C (`_spans`). Base resolution passes
+- **Gate linkage** (`linkage._Linkage._change`, definition 8): each changed path's text hunks are linked when a changed line
+  hits a K_B entry's range at B or a K_C entry's range at C (`linkage._Linkage._spans`). Base resolution passes
   `tree_side="base"`; candidate resolution keeps the `"candidate"` default, so each uses its own
   tree's symlink modes. Non-text changes (binary, symlink, submodule, type change, empty files) and
   the mode fact of a mode change are linked at `fileLevel` exactly when a `file`-locator entry on
-  either side covers the path (`_file_covered`). An added or deleted text
+  either side covers the path (`linkage._Linkage._file_covered`). An added or deleted text
   file is one whole-file hunk. **A delete-only hunk (`new_count == 0`) is linked only by a K_B range at B**
   (260928-MIK-L10, ruling 2026-09-30T01:56:39 Q2): it has no changed line at C, so L08's `hits_new`
   "strictly inside" extension no longer links it through a K_C range. This is the strict reading of
@@ -113,12 +112,7 @@ the incomplete entries.
   hunk only through the sides where it changes lines, so an insertion-only hunk (`old_count == 0`) is linked only
   by a K_C range at C, as a delete-only hunk is only by a K_B range at B. The change can only add
   `unexplained_hunk` items, never drop one; L32's lane docstring states the same per-side rule (review R1 F8).
-- **Shared with the reviewer's lane (MIK-L32).** `_path_hunks` now only calls `code.change_hunks` (the body moved
-  there verbatim), and `_file_covered` calls the module-level `non_text_linked(locator_kinds)` predicate (exported in
-  `__all__`): a non-text change is linked exactly when a `file`-locator entry on either side covers the path. The
-  reviewer's unexplained-changes lane (`review_lane_classification.py`) calls the same two functions, so its hunks
-  and its "gate" linkage of a non-text change are the gate's own; the gate's output is unchanged (the L08, L10 and
-  L14 worklist suites pass, and the reviewer's real-data agreement check matched every path).
+- **Shared linkage owners.** `code.change_hunks` retains hunk parsing and `linkage.non_text_linked` retains file-locator coverage. The old `_Run._path_hunks`, `_file_covered`, `_spans` and `_linked` placement is historical; current worklist orchestration delegates to `linkage.change_linkage`. The existing per-side insertion/delete-only rule is preserved by the extracted helper. Earlier passing-run statements are historical evidence, not this preparation's execution grade.
 - **Step 5, planned effects (MIK-R11, `planned_effects.py`).** The run calls
   `reconcile_planned_effects(inputs.expected_effects, base, candidate, inputs.owner)`. Final assembly
   applies `planned.mark` to invariant, family, route, unexplained, reconsideration, membership and
@@ -133,14 +127,14 @@ the incomplete entries.
   In code order the route items join the initial item list; final assembly applies `planned.mark`
   to them too, so they carry `planning: unplanned` and are sorted and digested with the rest.
 - **Step 7, unexplained changes (MIK-R10, `unexplained.py`).** `_Run.document` computes the linkage once
-  (`_linkage`), passes it with an `UnexplainedSides` (C, K_B, K_C, `inputs.coverage`, the owner) to
+  (`linkage.change_linkage`), passes it with an `UnexplainedSides` (C, K_B, K_C, `inputs.coverage`, the owner) to
   `unexplained_items`, applies `planned.mark` to each returned item, and adds them to the one sort
   by `(kind, subject)`. The same linkage object is the document's `changes`, and
   `unexplained.summary()` is its `unexplained` key.
 - **Step 8, reconsideration candidates (MIK-R14, `reconsideration.py`).** `_Run.document` binds the run's
   `Classifier` to a local (it was an inline argument of `_scope`) so step 8 can reuse it: it calls
   `reconsideration_candidates` with a `ReconsiderationInputs` (K_B, K_C, `classifier.classify_anchor`, the owner and
-  `inputs.coordination_root`). The returned items receive `planned.mark` and join the one sort by
+  `inputs.coordination_root`, plus the run's `CodeTrees` for route disappearance). The returned items receive `planned.mark` and join the one sort by
   `(kind, subject)` after the unexplained items; `reconsideration.summary` (every evaluated link) is
   the document's `reconsideration` key. L10 kept step 7, so L14 is step 8 (review F9, ruling 2026-09-30T05:31:11).
 - **MIK-R53 additions.** `membership_items(K_B, K_C)` raises `unassigned_invariant` for a new or
@@ -164,9 +158,7 @@ the incomplete entries.
 
 ### Invariants And Boundaries
 
-- **Every changed hunk is either linked or unexplained, and every unexplained one raises an item** (step 7,
-  MIK-R10): an unlinked hunk or non-text change keeps an `unexplained_*` item in the list until a
-  disposition answers it.
+- **Remaining unexplained changes require an answer.** Exact generated projections can be omitted and equal uncovered changes can share their source-bound representative; an uncovered group still needs its current complete-source onboarding answer. Covered remaining hunks retain their separate no-invariant/attach/author domain.
 - **An unreadable or partial input makes the run incomplete, never silently complete** (architect ruling
   on review R1, F4: a partial ICR inventory is `incomplete` and names the paths; it never falls back to
   file-level linkage).
@@ -177,7 +169,7 @@ the incomplete entries.
   new decisions/facets raise no `touched_record` item.
 - **A mode change keeps its text hunks** (review R1 F5): they are linked as for any text change, and the
   mode fact is added separately at file level.
-- No verdict, severity or cause is recorded (Exclusions).
+- No semantic verdict or severity is recorded. The optional unavailable-recorded-blob reason is a mechanical source-read fact, not an inferred business cause.
 - **One hunk and one non-text rule for the gate and the reviewer (MIK-L32):** `change_hunks` and `non_text_linked` are
   the only definitions; part of the candidate invariant recorded on `review_lane_classification.py.md`.
 - **`plannedEffects` is outside the digest** (the worker's design, unchallenged by review): the items
@@ -194,7 +186,7 @@ the incomplete entries.
 
 ### Todos
 
-- The family route chain (MIK-R05) is not in the context yet; context holds families and `linkedFrom` only.
+- Mechanical route chains are now added through `route_context.with_route_context` to the four selected item kinds over the already parsed K_C. They are presentation context, not extra reach, an ID change or an independent store read.
 
 ## Evidence
 
@@ -258,9 +250,33 @@ No meaningful cross-repo references found: the run reads one code repository and
 No cross-repo boundary is crossed by this file.
 
 - The module docstring: the historical eight-step outline and the incomplete rule; current assembly also includes R53 items and marks the combined list. [33]
-- The run: changes, read-ahead, scope, linkage, unexplained, reconsideration, membership and touched-record items, planned marks, one sort and digest. [38]
+
+
+- Current orchestration includes link-target items, grouped-change facts and selective mechanical route context [38]
+
+
 - Planned reconciliation and the final combined-list marks, `planned_untouched`, sort and summary. [59]
 - Historical step 6 outline: route conditions of reached families and killed routes; current assembly also marks route items. [60]
 - Step 7: one linkage, marked unexplained items in the one sort, `changes` and `unexplained`. [62]
 - Step 8: the run's classifier bound once and reused; marked candidates join the one sort; the `reconsideration` key. [64]
 - Current source delta inspected statically: Replace stale no-mark and blanket new-record exemptions with the executable combined-list contract; preserve deterministic identity, one-pass family reach and named incomplete-input behavior. [77]
+
+
+## Current source contract
+
+The orchestrator now delegates range linkage, emits removed-link-target work, carries equal-change source groups and decorates selected items with mechanical route chains; stale-entry facts may include an unavailable-recorded-blob reason. These are real output additions, not a behavior-preserving extraction alone.
+
+Link-target work is not a row-answerable kind and is not passed through planned.mark in this assembly. Route-chain decoration applies only to touched/stale invariants and unexplained hunk/file items; it does not widen reach or change item IDs. The planned/membership/touched-record and named incomplete-input boundaries remain separate.
+
+These spans and input-card identities were independently rechecked after the supported L61 sync. Source observation supplies no test execution, installed-host acceptance or semantic verdict for unrelated inherited material.
+
+
+- Current assembly includes removed-link-target items, equal-change groups and selected mechanical route context. [78]
+
+- Stale-entry facts preserve the optional unavailable recorded-blob reason. [79]
+
+- The extracted linkage owner keeps per-side changed-line intersection and file-locator nontext coverage. [80]
+
+- Retained persistent link targets surface removed route, path or symbol observations. [81]
+
+- Route-chain context is a mechanical projection over the parsed candidate. [82]

@@ -11,7 +11,7 @@ link addresses its alternative by position (`alternative`, subject `reconsider:<
 decision's alternatives would silently retarget the link, the worklist subject and every history row about it.
 Importing the module registers one refusing rule, `R14.1-linked-alternative-order`; `validator.py` imports it next to
 the other rule modules, so every place the validator runs (the writer, `validate_tree`, `require_valid_commit`, the
-managed sync, `knowledge-validate`) refuses such a reorder. This is L13's carried decision on link stability (ruling
+managed sync, `knowledge-validate`) refuses silent retargeting. R54 admits a move when complete reconsider links follow its unique exact option text, with all fields except the index equal. This is L13's carried decision on link stability (ruling
 2026-09-30T01:45:56: "refuse a reorder that changes a linked index").
 
 ## Code Commentary
@@ -25,11 +25,11 @@ managed sync, `knowledge-validate`) refuses such a reorder. This is L13's carrie
 - `moved_linked_alternatives(before, after)` follows alternatives by their `option` text. A linked index on either
   side (K_B or K_C) whose option appears at another index on the other side has moved; so has an alternative moved
   **into** a linked index (the second loop, over `_linked(after)`, review F6). An option that is not unique on a
-  side names no one alternative and is not followed. It returns `(option, index before, index after)` per move.
+  side names no one alternative and is not followed. It returns `(option, index before, index after)` only for moves not filtered by the complete-link equality exception. `_links_at` sorts serialized reconsider links after excluding only `alternative`; targets, other fields and multiplicity still participate in equality.
 - `check_linked_alternative_order` runs only when there is a base; for each parsed decision present on the candidate
   and a base, it yields one finding per move at the decision's `alternatives` field: "alternative '…' moved from
   index 1 to 2, and a reconsider_on link addresses an alternative by its index …; keep linked alternatives at their
-  index and append new ones after them".
+  index, or move each stored link to the index of its uniquely matching exact option text (MIK-R54 rule7)".
 
 ### Conventions
 
@@ -38,7 +38,7 @@ managed sync, `knowledge-validate`) refuses such a reorder. This is L13's carrie
 
 ### Invariants And Boundaries
 
-- **A linked alternative cannot be reordered to another index.** Candidate invariant. Realized by
+- **A linked alternative must not be silently retargeted by reordering.** The current exception above permits complete-link remapping to a unique exact option. The earlier absolute no-reorder candidate was not ingested; its recorded L14 experiment below is historical, not a current prohibition on that exception. Its original guard was realized by
   `moved_linked_alternatives` and `R14.1-linked-alternative-order`; proved by
   `test_a_reorder_of_linked_alternatives_is_refused` (a swap is refused twice; a reword in place and an append pass;
   an unlinked alternative moved into a linked index is refused; a link only K_C adds, on an alternative moved into
@@ -70,10 +70,7 @@ No configured live documentation source was available for this pass.
 
 ### Repo-Internal References
 
-- The module docstring: why a reorder would retarget a link, and how an alternative is followed. [1]
 - Options, linked indexes and the raw decision files of a tree. [2]
-- Moves followed from both sides by unique option text. [3]
-- One refusing finding per move, against every base. [4]
 - The rule registered on import. [5]
 - Swap refused twice; reword and append pass; moves into a linked index refused from either side. [6]
 
@@ -82,3 +79,8 @@ No configured live documentation source was available for this pass.
 No meaningful cross-repo references found: the rule reads the validation context's trees only.
 
 No cross-repo boundary is crossed by this file.
+
+- The module explains the exact-option complete-link exception rather than an unconditional index prohibition. [1]
+- Only moves lacking complete-link equality remain after following unique options on both sides. [3]
+- Each remaining move receives the exact option-link recovery and one finding per compared base. [4]
+- Mapped indices preserve R14 identity and a deliberately misbound index is the refusing source control; no execution is inferred. [7]

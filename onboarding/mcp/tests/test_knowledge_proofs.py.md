@@ -31,8 +31,8 @@ covered here: by architect ruling they belong to L08 and L03.
   statement as a draft, and a blank facet is refused and writes nothing.
 - **Rule 4.** Converted invariant and family views name PRF-T3ST0K; the invariant view asserts its invariant ID, memory sidecar location, code file and symbol locator, and explicitly excludes facet and passed/status/result/satisfied keys. An unproven invariant and a family without proofs show an empty list. The current other-views case asserts no top-level proofs on source_context and an unknown_view refusal for curation_queue; it has no database parity fixture. [8] [9] [10]
 - **Rules 5 and 6.** The index lists live invariants without proof and excludes a retired one. The
-  checklist renders the section as information: the wire summary is identical with and without the list,
-  the count stays 0, and an unconverted checklist has no section. Migrated evidence is listed with its
+  checklist renders the section as information: the summaries differ in informational `invariantsWithoutProofCount` after normalizing artifact paths;
+  `curatorActionableCount` stays 0, and an unconverted checklist has no section. Migrated evidence is listed with its
   named test, the controller hands exactly that list to the checklist (`None` for an unconverted tree), and a
   writer pass with `invariant_id` and `proofs` writes the proof and empties the list. The list reuses the
   cached index and reports a refused cache location as `unreadable` without creating it.
@@ -78,7 +78,6 @@ The cases, by rule.
 - Source_context has no top-level proofs, and curation_queue is refused unknown_view; no database-read case remains here. [9]
 - A family with no proof shows `[]`. [10]
 - Live invariants without proof; a retired one is excluded. [11]
-- The checklist section is information that moves no count. [12]
 - Migrated evidence is listed, then a curator pass writes the proof. [13]
 - The cached index is reused and an unreadable one reported. [14]
 
@@ -88,3 +87,5 @@ No meaningful cross-repo references found: every case builds its own temporary c
 repositories.
 
 No cross-repo boundary is crossed by this file.
+
+- The checklist normalizes artifact paths and the informational proof count while actionable count stays zero and the section remains not a gate. [12]

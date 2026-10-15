@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "7d93ce7d546d42e1512810231f775afe2cbfef4c",
-        "content": "sha256:0f28dc737b39f0d0919c8ffc81f3dda07ac082f3cbe192152d06bbec6de0a480",
+        "blob": "60e6782eacb581fa8e6aad85411aeb36faedf313",
+        "content": "sha256:7bf2d7c411a36bd319f43c021caafddf4aa1d003d73d1be931bae4112bf9c152",
         "locator": {
           "kind": "file"
         }
@@ -20,8 +20,8 @@
     },
     {
       "anchor": {
-        "blob": "7d93ce7d546d42e1512810231f775afe2cbfef4c",
-        "content": "sha256:0f28dc737b39f0d0919c8ffc81f3dda07ac082f3cbe192152d06bbec6de0a480",
+        "blob": "60e6782eacb581fa8e6aad85411aeb36faedf313",
+        "content": "sha256:7bf2d7c411a36bd319f43c021caafddf4aa1d003d73d1be931bae4112bf9c152",
         "locator": {
           "kind": "file"
         }
@@ -57,12 +57,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d3152cd1695aae699e86dd5886be89e2d5bfd875",
+            "blob": "60e6782eacb581fa8e6aad85411aeb36faedf313",
             "content": "sha256:1305e15ab630ef8c13130106ad2612492fce7446bd856eef28fea19da46a7214",
             "locator": {
-              "end": 152,
+              "end": 145,
               "kind": "line_range",
-              "start": 152
+              "start": 145
             }
           },
           "kind": "code"
@@ -111,6 +111,39 @@
               "kind": "line_range",
               "start": 1
             }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Master input values preserve role_start/set, primary-revision ownership, sealed review and the complete-curation transaction boundary.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "60e6782eacb581fa8e6aad85411aeb36faedf313",
+            "content": "sha256:7bf2d7c411a36bd319f43c021caafddf4aa1d003d73d1be931bae4112bf9c152",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The Curator owner requires the complete curation operation; optional full-quality/test requests do not waive it.\n\nAnchor: \"complete curation operation\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e0b3bcfc145479a365a748510d7bd04490842c91",
+            "content": "sha256:ea5fde3590fb0703a8a19f03c7c9a29477b15ccabf3d041ce8e42308eebbf346",
+            "locator": {
+              "end": 147,
+              "kind": "line_range",
+              "start": 134
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/curator.md"
           },
           "kind": "code"
         }

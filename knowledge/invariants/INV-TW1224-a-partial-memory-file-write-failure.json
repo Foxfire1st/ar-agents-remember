@@ -1,0 +1,37 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake"
+    ],
+    "justification": "Verified undo and honest partial-publication reporting prevent a failed file write from concealing surviving product changes or an already-raised task question."
+  },
+  "applicability": "Validated converted-memory file publication encountering an OSError before all replacements and deletions finish, and the resulting Writer refusal report.",
+  "conditions": [
+    "Capture the live original bytes or absence for every intended affected path before changing files; after an OSError attempt every recorded independent restoration, remove creations and clean the temporary staging file.",
+    "Verify the surviving bytes/absence and retain every restore, verification or cleanup failure; never equate an incomplete or unverifiable rollback with a successful undo.",
+    "A refusal distinguishes verified restoration from incomplete/unverifiable rollback and preserves honest notice of raise questions already published before memory-file failure."
+  ],
+  "exclusions": [
+    "Rollback covers the memory files this operation changed, not an already-published task-document question or a Git/ref transaction.",
+    "No crash durability, arbitrary non-OSError recovery, disk-failure immunity or promise that a retry must succeed; source examination is not execution/acceptance evidence."
+  ],
+  "id": "INV-TW1224",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "/home/firefox/projects/ar-coordination/tasks/agents-remember/260928_maintained-invariant-knowledge/notes/reports/worker/0e651ec5-2eed-4b58-b19f-e2336d4978ca/repair-freeze-0a36ddc4/builder-report.md#mik-r54-rule-5",
+        "/home/firefox/projects/ar-coordination/worktrees/agents-remember/54_writer-and-validator-corrections-a4b3b3af8d-ar/role-reports/curator/1ad64580-9e4a-42ce-adc0-169869767dba/wave-41/producer-and-source-review.json",
+        "/home/firefox/projects/ar-coordination/worktrees/agents-remember/54_writer-and-validator-corrections-a4b3b3af8d-ar/role-reports/curator/1ad64580-9e4a-42ce-adc0-169869767dba/wave-75/proof-source-review.json"
+      ],
+      "path": "wave-41-complete-history.json"
+    },
+    "handoffEntry": "MIK-R54@v1 rule 5",
+    "leaf": "260928-MIK-L54",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "A partial memory-file write failure must restore replaced or deleted files, remove creations, and report any unverified restoration or already-published question honestly.",
+  "status": "proposed",
+  "supersedes": []
+}

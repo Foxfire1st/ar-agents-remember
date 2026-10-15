@@ -28,8 +28,7 @@ The key holds:
 - `task_reads`: the byte rows that the strict task lookup recorded while the gate key was built, limited
   to JSON files directly in the task folder (`_task_reads`).
 
-The strict lookup records the leaf's own document and — when it established a claimant — no sibling it
-merely ruled out; a lookup that found no claimant records every opened document and the exact direct JSON
+The admitted kept task-read set includes the leaf's own document and — when a claimant is established — excludes siblings merely ruled out; those examined exclusions are not kept dependencies; a lookup that found no claimant records every opened document and the exact direct JSON
 listing, so those files are inputs of the key. When a claimant is established, a write to another leaf's
 document, a new sibling document or an edit of the master's `task.json` changes neither the key nor any
 recorded row; when no claimant exists, the same write moves the recorded rows and the view is recomputed.
@@ -64,6 +63,8 @@ decides beforehand whether the parts are settled.
 `MAX_AGE_SECONDS` is the gate memo's value, 900 seconds. A live request captures both worktrees before it
 gets here, so an edit of a worktree is a new tree and a new key.
 
+After the nested gate-key construction recording closes, `leaf_view_key` replays those actual reads into the caller before checking whether the gate key is absent. This preserves enclosing read custody even on that refusal. Ruled-out sibling observations remain distinguished from admitted kept task dependencies; replay does not invent a read or turn an unconsumed candidate into a dependency.
+
 ## Evidence
 
 - The two bounds. [5]
@@ -82,3 +83,5 @@ gets here, so an edit of a worktree is a new tree and a new key.
 - The memo keeps the settled worklist over the comparison's trees [18]
 - An unsettled worklist or unreadable side is never kept [19]
 - The kept parts hold the worklist view and nothing else [20]
+
+- Nested key-construction reads are replayed to the enclosing recorder before the no-key return. [21]

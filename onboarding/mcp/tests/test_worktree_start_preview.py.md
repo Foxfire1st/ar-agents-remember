@@ -10,6 +10,8 @@ Registered public operation proofs for exact planned-parent preview, no startup-
 
 ## Code Commentary
 
+The added masterless-leaf case calls registered preview and actual start. Both return a non-error structured answer with `ok=false`, `state=blocked`, the exact fail-closed source-lineage summary and the edge detail requiring an organizational master. After each refusal the existing whole-state comparator checks unchanged product/Git state while admitting the tool records, and the parent remains unpublished. This is neither successful start nor global zero I/O; the assertions have not been executed here.
+
 Invalid source_branch and parent_task are exercised in both preview and actual requests. Each returns its exact mismatch code without error/overflow, preserves dry_run and skip_provider_setup in the corrected nextArgs, and leaves the parent unpublished. The existing whole-state/call-record comparator still runs after every refusal; expanded assertions are source evidence, not a fresh execution.
 
 
@@ -34,6 +36,9 @@ helper's full ambient byte-prefix/tool-identity proof. Missing original discover
 Distinct negative cases reject a stray file beside the line file, a rewritten earlier log line, an unnamed detail file, a rewritten earlier river event, stale-day line/detail paths, a directory touch without an admitted entry and a lifecycle event mode change. These are assertion contracts, not a claim that the suite ran or that logging retention and budget-loss behavior are globally append-only.
 
 ## Evidence
+
+- Registered masterless preview and actual start fail closed while the existing state comparator admits their call records and keeps the parent unpublished. [19]
+
 
 No Domain Documentation source is configured in system/sources.md. These are current source/assertion anchors; the approved requirement and bound public receipts remain task artifacts.
 

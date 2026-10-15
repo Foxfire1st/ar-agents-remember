@@ -20,11 +20,9 @@
     "leaf": "260928-MIK-L51",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "routes": [
-    "mcp/test_support/agents_remember_test_support/testing",
-    ".",
-    "mcp/tests"
+    "."
   ],
   "schema": "ar-family/v1",
   "status": "proposed",

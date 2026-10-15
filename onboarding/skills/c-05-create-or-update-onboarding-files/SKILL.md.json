@@ -1,0 +1,248 @@
+{
+  "path": "skills/c-05-create-or-update-onboarding-files/SKILL.md",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Routing sends file cards, entity catalogs and structural slices to distinct workflows, including inline adapters.\n\nAnchor: `## Routing`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4d90c238185e61a3bec8347aa1f8b50292cbc1dd",
+            "content": "sha256:5bbca5fadba06ddd423e7fbbbca63936d3fbbd821727cdfb2f6845c55af8e0c3",
+            "locator": {
+              "end": 69,
+              "kind": "line_range",
+              "start": 55
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "Converted Memory selects the converted-card workflow instead of legacy metadata/history mechanics and forbids handwritten sidecars.\n\nAnchor: `## Converted Memory`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4d90c238185e61a3bec8347aa1f8b50292cbc1dd",
+            "content": "sha256:af15e8a2eefaf79a119062872a1813e646d8259e28b6f8cdebc52ccb3bdff965",
+            "locator": {
+              "end": 53,
+              "kind": "line_range",
+              "start": 42
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "Leaf authoring belongs to Curator; direct producer exchange, Manager closeout authority and solo-session behavior are explicit.\n\nAnchor: `Seat routing`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4d90c238185e61a3bec8347aa1f8b50292cbc1dd",
+            "content": "sha256:e58fc2912c5d34859af544d45b599a44097d73c42dd77ad2b7c7de6728aed3e7",
+            "locator": {
+              "end": 29,
+              "kind": "line_range",
+              "start": 19
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "Converted-card structure and citation authoring distinguish temporary table input from retained evidence lines and fixer-owned references.\n\nAnchor: `## Create a card for a new source file`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e071ead508fb6ee46a9f883dc3a5bf12260ebd28",
+            "content": "sha256:b875ec336bc6b654781a768a9778d4fd41a7a8356dd97552bd49827685997804",
+            "locator": {
+              "end": 87,
+              "kind": "line_range",
+              "start": 7
+            },
+            "path": "skills/c-05-create-or-update-onboarding-files/workflows/converted-card-workflow.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "Changed cards and nearest routes require current updated/no_impact history answers; converted metadata and carryover apply are forbidden, and route indexes are uncommitted caches.\n\nAnchor: `## When the card needs no change`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e071ead508fb6ee46a9f883dc3a5bf12260ebd28",
+            "content": "sha256:615ab0c3220877ec3808a7b622f93fbc71d5dbc076b15e3a393acc638fd1a60c",
+            "locator": {
+              "end": 183,
+              "kind": "line_range",
+              "start": 159
+            },
+            "path": "skills/c-05-create-or-update-onboarding-files/workflows/converted-card-workflow.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "14": {
+      "note": "Canonical Curator guidance supplies converted source-bound trace, complete curation and pre-closeout non-author statement/diff/omission checking without making review evidence a new closeout gate.\n\nAnchor: `onboarding_trace`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a23f324d8d29654a880f08a145e23ed346012ca3",
+            "content": "sha256:784d74beba291bbcade026dcaaf871b683a2923d568de6ea1829524f121b9ab5",
+            "locator": {
+              "end": 149,
+              "kind": "line_range",
+              "start": 113
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/curator.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Simple file/entity work stays here; structural routes, splits, merges and relocation go to c-03 when file-by-file work loses meaning.\n\nAnchor: `## Route-Level Maintenance Routing`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4d90c238185e61a3bec8347aa1f8b50292cbc1dd",
+            "content": "sha256:4961863614ee4a5de91dab97d5561429a034bb44bd5990a406af5007a776cd08",
+            "locator": {
+              "end": 90,
+              "kind": "line_range",
+              "start": 70
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Existing onboarding is durable memory; move/reuse useful content and retire it only when no safe current target remains.\n\nAnchor: `## Onboarding Preservation Rule`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4d90c238185e61a3bec8347aa1f8b50292cbc1dd",
+            "content": "sha256:1474ddf85628caf24fab943fd116afc92b617d964d6fa5cb20e1836540a46060",
+            "locator": {
+              "end": 99,
+              "kind": "line_range",
+              "start": 92
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The legacy placement account mirrors source files, places governing overviews beside routes, and names generated hot-path indexes; its timestamps and verification metadata are not converted-card requirements.\n\nAnchor: `## Sidecar Placement Rules`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4d90c238185e61a3bec8347aa1f8b50292cbc1dd",
+            "content": "sha256:7b4dc46389f27c0016160b95c0eb3028e75220344e486bf05f66a68ba82cd548",
+            "locator": {
+              "end": 120,
+              "kind": "line_range",
+              "start": 101
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Quick Rules keep cards self-sufficient, preserve reference explanation, curate entity fingerprints and route indexes, and check moved behavior before deletion; legacy history mechanics remain subject to the Converted Memory override.\n\nAnchor: `## Quick Rules`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4d90c238185e61a3bec8347aa1f8b50292cbc1dd",
+            "content": "sha256:4706a81a4d0da3aa2e177efa0c9587f39b350c228b7b6e9cea7498916dd4aedc",
+            "locator": {
+              "end": 143,
+              "kind": "line_range",
+              "start": 122
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Index refresh derives coverage, scope, hot-path summary and hints, requires contract scoping in a leaf, and corrects stale source/overview state rather than editing the cache.\n\nAnchor: `## Route Index Refresh`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4d90c238185e61a3bec8347aa1f8b50292cbc1dd",
+            "content": "sha256:623f4027c2c5f00db1faea937da43640a5443bb9690fdd1ef7e9089bc0765d7a",
+            "locator": {
+              "end": 186,
+              "kind": "line_range",
+              "start": 145
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "Source discovery uses the resolved Domain Documentation category, live authority and orientation-only caches; registries are discovery inputs, not citations.\n\nAnchor: `## Source Discovery Rule`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4d90c238185e61a3bec8347aa1f8b50292cbc1dd",
+            "content": "sha256:41b4828a0b684dc7076e0d64d57261a0aba8541879b41f365fc39852083acda4",
+            "locator": {
+              "end": 199,
+              "kind": "line_range",
+              "start": 188
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "Reference and legacy lifecycle rules verify support and bucket choice, describe metadata/history refresh, and preserve moved or relocated knowledge while checking affected entities and routes.\n\nAnchor: `## Reference Section Rule`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4d90c238185e61a3bec8347aa1f8b50292cbc1dd",
+            "content": "sha256:5f714c3ebdff5a3a8e5547d07c0fb913b1decb0643e82adf5e923066d72ff45e",
+            "locator": {
+              "end": 246,
+              "kind": "line_range",
+              "start": 201
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "Worktree onboarding describes status and needed sync before memory entries when recorded source branches moved.\n\nAnchor: `worktree_status`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4d90c238185e61a3bec8347aa1f8b50292cbc1dd",
+            "content": "sha256:a080f356c81e219d8d2ce650f3723776b8774f4e4f161ca448404626b50bd785",
+            "locator": {
+              "end": 38,
+              "kind": "line_range",
+              "start": 31
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

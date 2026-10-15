@@ -1,0 +1,130 @@
+{
+  "path": "skills/c-03-repo-bootstrap/templates/onboarding-wave-template.md",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The manifest provides placeholder metadata, goals, included and deferred cards, and evidence requirements.\n\nAnchor: `# Onboarding Wave <number> — <short name>`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cd2e54ff280b1335f1f488a04916242fb6c5bcf9",
+            "content": "sha256:549d74b6708bb00f67bf6b24bf1df6badd5baf16e6551c5f43ca9cbe5ea3ca82",
+            "locator": {
+              "end": 32,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Worker instructions preserve bounded reads, source mirroring, overview backlinks, evidence boundaries, and output reporting.\n\nAnchor: `## Worker Instructions`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cd2e54ff280b1335f1f488a04916242fb6c5bcf9",
+            "content": "sha256:1e9d82605501de71c6d6e6ef663fc4990d43382065b7b71a91851a7a034920b9",
+            "locator": {
+              "end": 51,
+              "kind": "line_range",
+              "start": 34
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The format records completion criteria and developer review questions without asserting an actual wave outcome.\n\nAnchor: `## Done When`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cd2e54ff280b1335f1f488a04916242fb6c5bcf9",
+            "content": "sha256:161578a913793d36feb0e0cef2c81ff1772d9f39752c12cb5ab876c61043c835",
+            "locator": {
+              "end": 65,
+              "kind": "line_range",
+              "start": 53
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Bootstrap overview waves are deliberately small and bounded.\n\nAnchor: `### 4D — Route-Local Overview Waves`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6169b610d2b722a17c4d18645df947444b62f260",
+            "content": "sha256:55641f00554811290eab12c19da52aeda0124f8b0a1441a42fc6b1c201bf0967",
+            "locator": {
+              "end": 875,
+              "kind": "line_range",
+              "start": 859
+            },
+            "path": "skills/c-03-repo-bootstrap/SKILL.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Phase 4H uses this manifest, delegates file-level work to c-05, defines bounded sizing and reading duties, and calls for index refresh.\n\nAnchor: `### 4H — File-Level Onboarding Waves`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6169b610d2b722a17c4d18645df947444b62f260",
+            "content": "sha256:7e9f9e0ddfa8e5b66674ec53a487e583a524969e46b2ec090bfeb00025820e89",
+            "locator": {
+              "end": 1019,
+              "kind": "line_range",
+              "start": 985
+            },
+            "path": "skills/c-03-repo-bootstrap/SKILL.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The canonical bootstrap skill names c-05 as owner of file-level semantics and delegates file output rules to it.\n\nAnchor: `c-05-create-or-update-onboarding-files`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6169b610d2b722a17c4d18645df947444b62f260",
+            "content": "sha256:28144806012a7bef55ebe6a3f50cfecbd361f90a1a23d3622abc664b5e07e13f",
+            "locator": {
+              "end": 1266,
+              "kind": "line_range",
+              "start": 1261
+            },
+            "path": "skills/c-03-repo-bootstrap/SKILL.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "c-05 is the onboarding entry point; its converted-memory branch overrides the legacy workflow/template routing below it.\n\nAnchor: `## Converted Memory`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4d90c238185e61a3bec8347aa1f8b50292cbc1dd",
+            "content": "sha256:80219a419f14067d44583e8d0c5b2d46c2fe3ff3d963c72077f892ecbd011ffb",
+            "locator": {
+              "end": 68,
+              "kind": "line_range",
+              "start": 40
+            },
+            "path": "skills/c-05-create-or-update-onboarding-files/SKILL.md"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

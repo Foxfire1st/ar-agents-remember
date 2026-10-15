@@ -23,6 +23,8 @@ Conversion cases verify that standalone conversion admits no base, paired code o
 - Reports must state their reason and refusing route, and may not use unconditional never-refuse language. Command help and the c-02 skill carry the same ten-rule decisions.
 - Fixtures, mock equality counters and source assertions are bounded test mechanisms, not proof that this Curator ran the suite, migrated live routes, or accepted the current memory.
 
+The registry-set assertion also admits `R22.6-link-target-path` alongside the original MIK-R53 merge-report set. That additional MIK-R54 rule is not an eleventh retroactive ten-rule decision: its own registration uses `merge_requires_carried`, so only an identical carried missing target reports at a sync merge; a newly authored missing target still refuses.
+
 ## Evidence
 
 ### Repo-Internal References
@@ -34,3 +36,5 @@ Conversion cases verify that standalone conversion admits no base, paired code o
 - Merge-moved rows report at merge but are refused by covered-entry validation at publication. [5]
 - Messages, command help and skill text carry the named reporting and refusal decisions. [6]
 - Complete-census boundary cases cover carried debt at both landing and sync with incomplete controls. [7]
+
+- The merge-report set assertion includes the separate link-target rule beside the original ten-rule decisions. [8]

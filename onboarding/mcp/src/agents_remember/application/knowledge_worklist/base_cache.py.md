@@ -51,9 +51,10 @@ byte-identical worklists.
 
 ### Todos
 
-- Review R2 N2: `_evict` sorts by `stat()` outside any guard, so a file deleted concurrently makes `store`
-  raise; `recompute_leaf_worklist` then reports an `incomplete` "worklist run" for that run. Suppressing
-  `OSError` around the sort would close it.
+- The former review R2 N2 concern about an unguarded per-file `stat()` no longer describes the
+  implementation: `_evict` now suppresses `OSError` while collecting each timestamp and while
+  unlinking each selected stale path. This is a narrow per-file failure boundary, not a guarantee
+  that every possible eviction failure is suppressed.
 
 ## 260928-MIK-L30 One Cache For Both Consumers (MIK-R30, Ruling 18:49:50 (4))
 
@@ -81,6 +82,17 @@ K_B on every run (about 30 s on the real tree):
 - The gate reads its converted K_B through it. [5]
 - The cache holds the Markdown, and a v1 file is ignored and rewritten. [6]
 
+### Best-effort eviction under per-file races
+
+After a successful cache write, eviction collects `(mtime, path)` pairs only for paths whose `stat()`
+succeeds. A disappeared or otherwise unreadable candidate is skipped under `OSError` suppression before
+sorting, rather than failing from the old unguarded sort key. The sorted tuple list selects the oldest
+entries beyond `MAX_FILES`; equal mtimes are ordered by path. Each selected unlink remains independently
+guarded against `OSError`. The bound applies to the successfully statted snapshot, not an atomic view of
+all concurrent filesystem activity. Cache key, format, conversion and location-admission rules are
+unchanged by this eviction adjustment.
+
+
 ## Evidence
 
 ### Docs References
@@ -104,6 +116,8 @@ No configured live documentation source was available for this pass.
 - Atomic writes and eviction. [12]
 - The worklist's converted K_B, now read through the shared read-or-convert path. [13]
 - Cached by commit, version and code commit; a refused location converts and creates nothing. [14]
+
+- Store invokes eviction after its successful atomic write; eviction guards per-path stat and unlink failures before sorting the timestamp/path snapshot. [15]
 
 ### Cross-Repo References
 

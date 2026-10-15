@@ -55,13 +55,17 @@ without changing the endpoint guard. These are source contracts, not a fresh exe
 
 Surviving river and choke controls use `server_info` rather than the removed `ping`. Report fixtures seed canonical roots, the self-contained sweep obtains the guarded user-settings path and carries explicit grant/direct-leaf input, and overflow-sensitive tests assert displaced facts in the logged whole result. Packaging witnesses author fixture/XDG dimensions before production and compare emitted objects unchanged; log-path witnesses separate preservation within the length domain from exact length/digest shortening. These are assertion contracts, not a fresh whole-lane result or installed-host acceptance.
 
+### Final test-only repair input
+
+The five-file landing repair changes fixture admission and assertion carriers, not production behavior or case membership. Both reopened-history changed-row refusals now pass the real gate worklist; the skill-sync check in `AnswerAndTextTests` uses the running interpreter; paired-retirement setup creates and verifies its empty repository lock before the refusal snapshot; and the competing question writer observes lease exclusion before waiting on the native lock, with the shared hang guard instead of a short timing window. File cards retain the unchanged refusal, rollback, frozen-history and named-remedy boundaries. This is a static account of the final CODE input, not a Curator test run or independent acceptance.
+
 ### Pytest composition and evidence catalogs
 
 `conftest.py` puts candidate `mcp/src` and `mcp/test_support` first on the import path, declares the actual test process through the hermetic bootstrap, creates disposable HOME/XDG/Codex/tmux locations, isolates Git configuration, and removes specified inherited credentials and live-service opt-ins. Each case receives its own user-settings configuration directory. Ordinary integration cases automatically request bound worktree services unless certification is selected; units request that fixture explicitly. Teardown resets services and releases the owned environment. This is a bounded isolation design, not a promise about every possible environment variable or external effect.
 
 Three plugins are registered: pytest bootstrap, evidence lanes and database retirement. The latter is intended to catch production database access/file mutation outside its named allowed modules. `--certify` takes a separate genuine-Dagger admission path; ordinary test bootstrap supplies no lifecycle-worker or Dagger capability. The source policy distinguishes ordinary development feedback from immutable candidate-bound evidence issued by the pinned delivery graph and existing lifecycle owners.
 
-The root `pyproject.toml` owns test paths, default selection, four-worker file distribution, strict markers/configuration and the collected-case budgets. At this source HEAD the budgets are 5,000 unit and 1,000 integration cases (`pyproject.toml:298-299`); D226 raises only the unit ceiling from 4,000, leaving integration and the guard unchanged; `conftest.py` registers their names without duplicate defaults and refuses a nonpositive or exceeded value. File distribution preserves file-scoped population observations. The current `docs/design/python-pytest-bootstrap.md` also states 5,000/1,000; its earlier 1,000/150 wording and the earlier configuration reading are historical source-pair observations, not current limits.
+The root `pyproject.toml` owns test paths, default selection, four-worker file distribution, strict markers/configuration and collected-case budgets. The current candidate declares6,000unit and1,000integration cases (`pyproject.toml:299-300`), with L54’s D299 unit-only5000to6000raise following the earlier D2264000to5000epoch. The guard and integration limit remain unchanged. The current Python test-policy design note agrees on6,000/1,000; older5,000/1,000and1,000/150accounts remain historical rather than live limits. This is source agreement, not fresh collection or execution. File distribution and collection refusal behavior remain their existing owners’ contracts.
 
 `test-evidence-lanes.toml` assigns the explicit base lane of every durable test module. The lane loader derives the repository test population and refuses missing/stale members, invalid categories, noncanonical lists and invalid overrides. Collection requires a Git checkout through that dependency discovery. Membership classifies selection, cost and fidelity; it is not execution or acceptance. Derive populations from the manifest instead of pinning counts in this overview.
 
@@ -95,9 +99,7 @@ The existing reconsideration suite now protects candidate-side supersession: a s
 its base item and appears in the skipped-link summary; the same changed target without a successor
 still raises; an unrelated supersedes target preserves the base item and raises no new candidate
 item. The successor case separately checks explicit-set versus default stored-predicate behavior.
-These are source-described assertions, not a new execution or acceptance. The taken file has1,223
-lines against the1,200 rail; b17b9a0a/mark48 leaves splitting to L68, not a general waiver or a split
-delivered here. Existing fixtures, source catalogs, lane ownership and certification policy are unchanged.
+These are source-described assertions, not a new execution or acceptance. The earlier1,223line/1,200rail account and b17b9a0a/mark48L68assignment remain historical. L54’s current file has1,184lines after moving configuration support to reconsideration_test_support.py and updating its native batch/master fixtures; this is not a fresh claim that L68delivered a split or that every test ran. Current catalogs, lane ownership and certification remain separate authorities.
 
 Recorded-scope read modules separate selection/grouping/budget from real Git, snapshot, namespace, schema, continuation and path boundaries, sharing `read_scope_test_support.py`. Inherited scope intent stops at directly selected/containing family relationships: advertising an unreached family does not include its further realizations. Claim identities and source locations are counted separately; repeated membership does not invent extra identities. Pages retain one selection/snapshot/manifest and truthful remaining-item information, refusing a bound that cannot hold the next item. Paths are addresses: Git pathspec-magic spellings are refused, while literal glob characters remain authorable/resolvable. Requested-tree absence, blob mismatch, unsupported locator, non-blob entry and unavailable tree remain distinct observations; none promotes an old claim into current truth. Continuations bind the same candidate/snapshot/manifest and refuse substitution or mutation.
 
@@ -151,13 +153,13 @@ Message transport source coverage is split across settings-limit validation, fil
 
 Source inspection supplies no new test, native-host, whole-build, landing or memory acceptance. Retained internal services and historical fixtures do not re-advertise deleted MCP tools. Historical citation custody is distinct from active support: current operative claims, including the renewal below, require claim-matched current source extents; preserved keys or historical tuples alone do not establish currentness or proof truth.
 
-The reconsideration suite contains candidate-side supersession assertions: a successor suppresses its base item and appears in the skipped-link summary; the same changed target without a successor still raises; an unrelated supersedes target preserves the base item and raises no new candidate item. The successor case separately checks explicit-set versus default stored-predicate behavior. These are source-described assertions, not a new execution or acceptance. The source file has 1,223 lines, exceeding the 1,200-line rail recorded in `pyproject.toml`; no split or policy waiver is established by this source inspection. Lane ownership and certification policy are separate from these assertions.
+The reconsideration suite contains candidate-side supersession assertions: a successor suppresses its base item and appears in the skipped-link summary; the same changed target without a successor still raises; an unrelated supersedes target preserves the base item and raises no new candidate item. The successor case separately checks explicit-set versus default stored-predicate behavior. These are source-described assertions, not a new execution or acceptance. The earlier snapshot had 1,223 lines against the 1,200-line rail; that is historical. The current file has 1,184 lines after the configuration-support extraction and fixture updates. Neither observation is a test execution or a policy waiver. Lane ownership and certification policy are separate from these assertions.
 
 Recorded-meaning regression uses `compose_review` over converted trees, exact owner/attempt selection, outline and continuation assertions, portable L37 historical fixtures and retired/before-only UUID witnesses. Mounted `ReviewSurface` source cases over retained captures assert badges, step fields, keyboard explanations and missing-versus-empty state. Capture/provenance bytes and the F04 real-ingest attribution are retained evidence classes, not reconstructed invocations; registration or mounted display alone claims no new execution or installed acceptance.
 
 `paseo_launch_test_support` owns the shared hand-written stateful runtime/catalog and fixture-derived dispatch expectations. Launch and status test classes inherit that support; the document-chat read/tree classes inherit it through `StatusTestCase`, while the first-start preparation class has its separate `RoleToolsTestCase` base. Document-chat source cases assert one-census tree discovery, unknown versus empty, corruption isolation, repeated receipt-path reads and byte budgets. `test_paseo_status_bridge` composes the production Node listing script with a controlled daemon client; `test_paseo_frame` asserts settings-bound provision-command disclosure. Catalog ownership and source assertions are not live-host or executed acceptance proof.
 
-- The enforced collected-case pair is 5000 unit/1000 integration; the unit-only policy raise leaves the guard unchanged.
+- The enforced collected-case pair is 6000 unit/1000 integration; the earlier 5000/1000 pair is historical. The unit-only policy raise leaves the guard and integration limit unchanged.
 
 ## Invariants And Boundaries
 
@@ -173,7 +175,7 @@ Keep fixtures honest about fake inspectors, synthetic profiles, hand-built paylo
 
 This proposal read all prose of the supplied 99,909-character card and inspected selected present-source owners at the supplied HEAD. It performed no tests, imports of product entrypoints, suite execution, live host/network exercise, quality acceptance, sync or publication. Existing numbered references, targets and excluded metadata remain under parent custody; their preservation does not certify their currentness.
 
-The MIK-R112 pre-repair inventory, four retired ambient lifecycle raisers, 450-line/432-entry manifest and later 480-line/462-entry correction are historical snapshots. The present manifest has changed again; use its contents rather than replacing one frozen overview count with another. The executable 5,000/1,000 budgets supersede the preceding 4,000/1,000 pair and dated 150/200/250/400/600 integration and 1,000/1,100/1,250/1,500/2,300/3,000 unit ceilings. The bootstrap policy document's prior 1,000/150 wording is retained as a historical source discrepancy; the current document agrees with the configuration. Historical collected counts, validator PASS42, registry digest, mutation-kill claims, zero/first-coverage statements and delivery/closure narratives are not new acceptance.
+The MIK-R112 pre-repair inventory, four retired ambient lifecycle raisers, 450-line/432-entry manifest and later 480-line/462-entry correction are historical snapshots. The present manifest has changed again; use its contents rather than replacing one frozen overview count with another. The earlier executable 5,000/1,000 epoch superseded the preceding 4,000/1,000 pair and dated 150/200/250/400/600 integration and 1,000/1,100/1,250/1,500/2,300/3,000 unit ceilings. The composed candidate now declares 6,000/1,000 under the unit-only D299 change; the older limits remain historical. The bootstrap policy document's prior 1,000/150 wording is retained as a historical source discrepancy; the current document agrees with the configuration. Historical collected counts, validator PASS42, registry digest, mutation-kill claims, zero/first-coverage statements and delivery/closure narratives are not new acceptance.
 
 The original assertion that exactly six test modules lacked cards is a historical onboarding inventory, not re-audited here. The reported absence of Domain Documentation in the resolved memory root is inherited and not newly verified; no external or sibling system granted authority in this inspection. Missing historical tests are not automatically lost files: the card names intentional reduction commit `d3610903`, but individual removal provenance and inaccessible old witnesses remain unadjudicated here. Present absence of the three former curator-authoring modules does not prove the claimed automatic catalog-row retirement rule; the current canonical writer explicitly leaves retirement decisions/manual row removal to an owner.
 
@@ -201,7 +203,7 @@ Source account retained from the parked claim (anchor currency not renewed here)
 
 Source account retained from the parked claim (anchor currency not renewed here): `mcp/tests/test_user_settings_guard.py:50-154`; `mcp/tests/test_user_settings_guard.py:157-365`; `mcp/tests/test-evidence-lanes.toml:4-5`; `mcp/tests/test-evidence-lanes.toml:359-359`.
 
-- Candidate successor, changed-target/no-successor and unrelated-supersedes controls protect the boundary. The configured collected-case budgets are 5000 unit/1000 integration; neither source assertion nor policy declaration is execution evidence.
+- Candidate successor, changed-target/no-successor and unrelated-supersedes controls protect the boundary. The current configured collected-case budgets are 6000 unit/1000 integration; the earlier 5000/1000 pair is historical. Neither source assertion nor policy declaration is execution evidence.
 
 Source account retained from the parked claim (anchor currency not renewed here): `mcp/tests/test_reconsideration_surfacing.py:1180-1223`; `pyproject.toml:75-80`; `pyproject.toml:278-299`.
 
@@ -337,6 +339,10 @@ Source account retained from the parked claim (anchor currency not renewed here)
 - The `_evidence_catalog_fixture.py` artifact declares its current exact consumer list under `contract:synthetic-test-evidence-candidate`; its owner, replacement contract and consumers are catalog declarations, not a four-registration change receipt or execution.
 
 Source account retained from the parked claim (anchor currency not renewed here): `mcp/tests/evidence-lifecycle.toml:54-58`; `mcp/tests/evidence-lifecycle.toml:126-147`.
+
+## Source Epochs And Evidence Limits
+
+Both the principal account and repeated operative captions use the same current source epochs; historical counts are not a parallel current limit or a claim of executed collection.
 
 ## Evidence
 
@@ -694,7 +700,11 @@ Source account retained from the parked claim (anchor currency not renewed here)
 - **Retained historical source account — superseded by the current route account:** The comparison selector proof over recorded trees [1711]
 - **Retained historical source account — superseded by the current route account:** Shared outline/change facts keep one definition [1712]
 - **Retained historical source account — superseded by the current route account:** Shared outline/change facts keep one definition [1713]
-- **Retained historical source account — superseded by the current route account:** Candidate successor, unchanged/no-successor and unrelated-candidate controls protect the boundary. The enforced collected-case pair is 5000 unit/1000 integration; the unit-only policy raise leaves the guard unchanged. [1714]
+
+
+- Candidate successor, unchanged/no-successor and unrelated-candidate controls remain source-defined assertions. The current collected-case declaration is6000unit/1000integration under L54D299, with unchanged guard/integration policy;5000/1000and the former1223line file account remain historical, not current or newly executed. [1714]
+
+
 - **Retained historical source account — superseded by the current route account:** The default options select the unit population and four workers. [1]
 - **Retained historical source account — superseded by the current route account:** The lane row. [1414]
 - **Retained historical source account — superseded by the current route account:** The packet's examples: ready once current rows answer every item; a new edit reopens two. [1415]
@@ -733,7 +743,11 @@ Source account retained from the parked claim (anchor currency not renewed here)
 - **Retained historical source account — superseded by the current route account:** **The mounted-route class, which measures the block through the call an agent actually makes. Since MIK-R24 an unconverted memory tree is read as `legacy-format` there, so its two cases assert that, with and without a database.** [1657]
 - **Retained historical source account — superseded by the current route account:** The new cutover module's docstring: what it covers. [1666]
 - **Retained historical source account — superseded by the current route account:** Recorded-meaning regression uses compose_review over converted trees, exact owner/attempt selection, outline and continuation equality, portable L37 historical fixtures and retired/before-only UUID witnesses. [1715]
-- **Retained historical source account — superseded by the current route account:** The two case budgets are declared in the repository-root configuration as 5000/1000. [2]
+
+
+- The current repository-root collected-case declarations are6000unit/1000integration; earlier5000/1000is preserved as a historical source epoch, not the current limit. [2]
+
+
 
 - The install-contract module checks bounded answers and exact filed full results. [1701]
 
@@ -779,7 +793,7 @@ Source account retained from the parked claim (anchor currency not renewed here)
 - The finite STOP-delta ports assertion carriers, not production behavior: direct whole retirement results are distinguished from adapter logs; exact returned refusal/no-write controls remain; reference-owned long wording leaves compact registration; full wait-reply content replaces the obsolete fifty-character cut; the start shaped row is bounded at600; three existing completion waits use the shared named-condition helper; and fifteen catalog rows add consumers only. Both preview-driver fixes retain the two architect-qualified tip count-key parity failures assigned to L113. This is a source account of the qualified attempt14 input, not a fresh test run, full-suite green or current MEMORY acceptance. [1734]
 
 
-- Source cases separate named renames, copies, Git metadata, full-removal threshold and proven/unproven absence. The design note now agrees with executable5000/1000 budgets; its earlier1000/150 discrepancy is historical, not current. [1718]
+- Source cases separate named renames, copies, Git metadata, full-removal threshold and proven/unproven absence. The incoming5000/1000 design-note agreement is historical; the composed candidate and current design note declare6000/1000, while the earlier1000/150 discrepancy remains historical. The current declaration is separately supported below. [1718]
 
 
 
@@ -787,4 +801,22 @@ Source account retained from the parked claim (anchor currency not renewed here)
 
 
 
-- Historical L111 source declarations were41 public tools,20 adapter modules and65 handlers; R113 current source PUBLIC_TOOLS has40 and no new module/handler count is asserted here; declaration counts are not execution. The envelope-loss pin is empty. Pre-sync population and catalog figures in the earlier caption below are historical, not current. Earlier Curator caption retained as historical/withdrawn where it contradicts these current populations: Current source pins distinguish42 advertised tools,20 modules and66 handlers; the source declaration is not fresh collection, execution or live advertisement. ENVELOPE_LOSING_RAISERS is empty; its former four L111 worktree pins are historical and separate from the ambient-state/finalize population. The earlier no-L111-row description is historical/withdrawn: the current assembled table imports ToolAnswerRow and _apply_l111_shaped_rows from tool_answer_l111_test_support and applies nonempty L111 shaped rows after L109; interim-map declarations and retained L100/L109 rows remain separate. Removed task reads are asserted as operation-removed; rich review/linkage/retirement assertions read canonical state or retained whole logs rather than claiming every delivered field survived. Fixed40 roots normalize ordinary token controls, distinct from content/location measurements. Packet-owned refusal tests preserve positive gates and full no-write frames; the runnable-step tests use answer-supplied arguments/display on space/quote/dollar roots, with converted-line and unknown seam limits explicit. Requirement-copy fixtures cover metadata, missing notices, source drift and rollback seams, not real-host acceptance. The earlier 14-contract/94-artifact census is historical and superseded: the current declarative lifecycle catalog has 12 contracts and 70 artifact identities, including the declared permanent local-composition support; declaration, source assertions and prior grades remain different evidence classes. [1733]
+- Historical L111 source declarations were41 public tools,20 adapter modules and65 handlers; R113 current source PUBLIC_TOOLS has40 and no new module/handler count is asserted here; declaration counts are not execution. The envelope-loss pin is empty. Pre-sync population and catalog figures in the earlier caption below are historical, not current. Earlier Curator caption retained as historical/withdrawn where it contradicts these current populations: Current source pins distinguish42 advertised tools,20 modules and66 handlers; the source declaration is not fresh collection, execution or live advertisement. ENVELOPE_LOSING_RAISERS is empty; its former four L111 worktree pins are historical and separate from the ambient-state/finalize population. The earlier no-L111-row description is historical/withdrawn: the current assembled table imports ToolAnswerRow and _apply_l111_shaped_rows from tool_answer_l111_test_support and applies nonempty L111 shaped rows after L109; interim-map declarations and retained L100/L109 rows remain separate. Removed task reads are asserted as operation-removed; rich review/linkage/retirement assertions read canonical state or retained whole logs rather than claiming every delivered field survived. Fixed40 roots normalize ordinary token controls, distinct from content/location measurements. Packet-owned refusal tests preserve positive gates and full no-write frames; the runnable-step tests use answer-supplied arguments/display on space/quote/dollar roots, with converted-line and unknown seam limits explicit. Requirement-copy fixtures cover metadata, missing notices, source drift and rollback seams, not real-host acceptance. The earlier 14-contract/94-artifact census is historical and superseded: the L166 landing had 12 contracts and 70 artifact identities; the composed catalog has 12 contracts and 73 artifact identities after retaining L54’s three shared-support artifacts, including the declared permanent local-composition support; declaration, source assertions and prior grades remain different evidence classes. [1733]
+
+
+
+
+
+
+
+
+
+
+
+- The declared collected-case budget is 6000 unit and1000 integration. [1768]
+- The current reconsideration module imports extracted configuration support and its current fixture owners. [1769]
+- The changed-row refusal supplies the real gate worklist. [1770]
+- The relabelled changed-row control preserves its revision-refusal assertion with the admitted worklist. [1771]
+- The skill-sync subprocess in AnswerAndTextTests uses sys.executable. [1772]
+- The real paired-enclosure fixture initializes and verifies its empty repository lock before measuring refusal. [1773]
+- The competing writer directly observes lease exclusion and uses the shared hang guard. [1774]

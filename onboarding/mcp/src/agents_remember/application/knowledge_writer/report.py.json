@@ -1,17 +1,53 @@
 {
   "path": "mcp/src/agents_remember/application/knowledge_writer/report.py",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "c84b18b7dc47f00185b7c530a94c6ee5e5b37fb7",
+        "content": "sha256:e78ed39fd74a1c93aa5b31fa3f78aee9646e788bcd4fa0bb37c69bd854d357fa",
+        "locator": {
+          "kind": "symbol",
+          "name": "WriteReport"
+        }
+      },
+      "id": "RLZ-P0AJ5H",
+      "invariant": "INV-9RM8J9",
+      "origin": {
+        "handoffEntry": "MIK-R54@v1 rule 2",
+        "leaf": "260928-MIK-L54"
+      },
+      "rationale": "The report object clears refused outcomes before either JSON or text rendering can advertise them.",
+      "role": "presentation"
+    }
+  ],
   "references": {
     "1": {
       "note": "The outcome of one evidence-bearing entry.",
       "targets": [
         {
           "anchor": {
-            "blob": "5440676e5e3f76d0952d7ce26742ee4a58a7eade",
+            "blob": "c84b18b7dc47f00185b7c530a94c6ee5e5b37fb7",
             "content": "sha256:f3656ac308cfc96030bd276a57fd00776ce7d7fe67d0843d73984e50c37860ec",
             "locator": {
               "kind": "symbol",
               "name": "EvidenceOutcome"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "Serialized requirement outcomes include changed and archived metadata. [10]",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c84b18b7dc47f00185b7c530a94c6ee5e5b37fb7",
+            "content": "sha256:39e29abf4802c1f14f8947092d32741edfbefcb359bac2b8271b3fec0405b430",
+            "locator": {
+              "end": 260,
+              "kind": "line_range",
+              "start": 249
             }
           },
           "kind": "code"
@@ -71,7 +107,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5440676e5e3f76d0952d7ce26742ee4a58a7eade",
+            "blob": "c84b18b7dc47f00185b7c530a94c6ee5e5b37fb7",
             "content": "sha256:2912e1dc0bdfc04a8b29aa01da6eb4182efbbc84ec44fe20630121f089aada58",
             "locator": {
               "kind": "symbol",
@@ -82,12 +118,12 @@
         },
         {
           "anchor": {
-            "blob": "5440676e5e3f76d0952d7ce26742ee4a58a7eade",
+            "blob": "c84b18b7dc47f00185b7c530a94c6ee5e5b37fb7",
             "content": "sha256:778402a0af0e706f418e6a298b3fdd066d97089fad835546322cd92070bdbc41",
             "locator": {
-              "end": 165,
+              "end": 185,
               "kind": "line_range",
-              "start": 165
+              "start": 185
             }
           },
           "kind": "code"
@@ -115,7 +151,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5440676e5e3f76d0952d7ce26742ee4a58a7eade",
+            "blob": "c84b18b7dc47f00185b7c530a94c6ee5e5b37fb7",
             "content": "sha256:5dab2b1fac1f5af26a97623b71c5165dbf6db654d7f0aef89d92e333815b2fd5",
             "locator": {
               "kind": "symbol",
@@ -126,12 +162,12 @@
         },
         {
           "anchor": {
-            "blob": "5440676e5e3f76d0952d7ce26742ee4a58a7eade",
+            "blob": "c84b18b7dc47f00185b7c530a94c6ee5e5b37fb7",
             "content": "sha256:ba0e5fd6edcb1f3211b23c3737e01e12d7bf5d49e97efadadf7154194b1123a5",
             "locator": {
-              "end": 145,
+              "end": 159,
               "kind": "line_range",
-              "start": 145
+              "start": 159
             }
           },
           "kind": "code"
@@ -143,7 +179,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5440676e5e3f76d0952d7ce26742ee4a58a7eade",
+            "blob": "c84b18b7dc47f00185b7c530a94c6ee5e5b37fb7",
             "content": "sha256:c98a9b0c73edbfe9c4c507d8a3ff90303dcc2a623261b50d59fe6fa5417a85d5",
             "locator": {
               "kind": "symbol",
@@ -154,12 +190,29 @@
         },
         {
           "anchor": {
-            "blob": "5440676e5e3f76d0952d7ce26742ee4a58a7eade",
+            "blob": "c84b18b7dc47f00185b7c530a94c6ee5e5b37fb7",
             "content": "sha256:18b27918cd54a3366d0ef704afdc4778244e2c046609f1712f5cf802f1a12032",
             "locator": {
-              "end": 180,
+              "end": 200,
               "kind": "line_range",
-              "start": 180
+              "start": 200
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "Refused reports clear action/evidence collections and expose the planned count and question identities. [9]",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c84b18b7dc47f00185b7c530a94c6ee5e5b37fb7",
+            "content": "sha256:792b0b1e57ef747a0423491c339bc103efc9ce9ae1de59d092988c671bb4f16e",
+            "locator": {
+              "end": 169,
+              "kind": "line_range",
+              "start": 108
             }
           },
           "kind": "code"

@@ -1,0 +1,77 @@
+{
+  "path": "mcp/src/agents_remember/memory_quality/style/citations/test_cases.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "be126bd9425f1f3ccb96635960fb086727ed249d",
+        "content": "sha256:9130df728070c27cdb6fe55530ad76ab6b2d12af706ad128ba66c3305429f6cc",
+        "locator": {
+          "kind": "symbol",
+          "name": "refusal"
+        }
+      },
+      "id": "RLZ-17R8AR",
+      "invariant": "INV-B37MWR",
+      "origin": {
+        "handoffEntry": "MIK-R54@v1 rule 9",
+        "leaf": "260928-MIK-L54"
+      },
+      "rationale": "This diagnostic distinguishes skipped, computed and otherwise unsupported case forms and offers range recovery.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "be126bd9425f1f3ccb96635960fb086727ed249d",
+        "content": "sha256:2366165651ae4a3eb3c9b2fec297299a6d79a645b7b31c372431043f3bc1b66a",
+        "locator": {
+          "kind": "symbol",
+          "name": "case_names"
+        }
+      },
+      "id": "RLZ-H0DZTB",
+      "invariant": "INV-B37MWR",
+      "origin": {
+        "handoffEntry": "MIK-R54@v1 rule 9",
+        "leaf": "260928-MIK-L54"
+      },
+      "rationale": "This extractor derives nested test-case definition names from supported plain-string calls.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "be126bd9425f1f3ccb96635960fb086727ed249d",
+        "content": "sha256:70c72c71b8626b08a4bfd6028916453c559f971f11a3ae1f9bb22e8928dcd742",
+        "locator": {
+          "kind": "symbol",
+          "name": "_title"
+        }
+      },
+      "id": "RLZ-TERZMS",
+      "invariant": "INV-B37MWR",
+      "origin": {
+        "handoffEntry": "L54-curator-MIK-R54-v1-rule-9-actual-guards",
+        "leaf": "260928-MIK-L54"
+      },
+      "rationale": "The semantic first noncomment argument must be a plain string; escapes decode and UTF-16 pairs combine without losing lone units.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Extracts plain-string JavaScript/TypeScript test titles for citation definitions and explains unsupported proof targets. Filename eligibility is the separate .test./.spec. predicate. Ambiguous or unsupported titles are not silently repaired into unique symbol proofs; source extraction is not test execution.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "be126bd9425f1f3ccb96635960fb086727ed249d",
+            "content": "sha256:93c91bce282bd5a35b4b17b7a82e0f6855b65e2220d41ededa7bb37b38a5e603",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

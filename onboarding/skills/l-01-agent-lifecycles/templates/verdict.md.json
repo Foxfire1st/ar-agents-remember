@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "b0dbbc40ee147ee5010f8fcdcba4f80c51e3ad21",
-        "content": "sha256:5bcd6e2ca335c16ccf9ec8c9e8fb18dd9a1df56054167a193ddb3dab6732493d",
+        "blob": "a0e219228aa4ab34266da183e9c9370b51f910a2",
+        "content": "sha256:5573235d24ef56cd7a80208b04ee3a31f09c161c4372b88772a783c876f36ae5",
         "locator": {
           "kind": "file"
         }
@@ -20,8 +20,8 @@
     },
     {
       "anchor": {
-        "blob": "b0dbbc40ee147ee5010f8fcdcba4f80c51e3ad21",
-        "content": "sha256:5bcd6e2ca335c16ccf9ec8c9e8fb18dd9a1df56054167a193ddb3dab6732493d",
+        "blob": "a0e219228aa4ab34266da183e9c9370b51f910a2",
+        "content": "sha256:5573235d24ef56cd7a80208b04ee3a31f09c161c4372b88772a783c876f36ae5",
         "locator": {
           "kind": "file"
         }
@@ -109,6 +109,39 @@
               "kind": "line_range",
               "start": 1
             }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The verdict keeps exact-candidate independent evidence, monotonic sealed-ID successor scope and separate CODE/MEMORY lanes without deciding a gate.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a0e219228aa4ab34266da183e9c9370b51f910a2",
+            "content": "sha256:5573235d24ef56cd7a80208b04ee3a31f09c161c4372b88772a783c876f36ae5",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The Curator owner requires the complete curation operation; optional full-quality/test requests do not waive it.\n\nAnchor: \"complete curation operation\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e0b3bcfc145479a365a748510d7bd04490842c91",
+            "content": "sha256:ea5fde3590fb0703a8a19f03c7c9a29477b15ccabf3d041ce8e42308eebbf346",
+            "locator": {
+              "end": 147,
+              "kind": "line_range",
+              "start": 134
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/curator.md"
           },
           "kind": "code"
         }

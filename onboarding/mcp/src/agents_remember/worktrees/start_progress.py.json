@@ -7,7 +7,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "31325b4557bdc3363eae39d52c1cdc301b7b3139",
+            "blob": "ac697415988cc6cd3c97bcc7eb29494118a64cab",
             "content": "sha256:a939b132d9947f028c0e1376f406ef58484bd1b5b9b18b01c4ed2fd776aa8abf",
             "locator": {
               "kind": "symbol",
@@ -23,7 +23,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "31325b4557bdc3363eae39d52c1cdc301b7b3139",
+            "blob": "ac697415988cc6cd3c97bcc7eb29494118a64cab",
             "content": "sha256:4a93610257ccc1376709a0826696cf5929b7b90375317863778fc47114fd8e45",
             "locator": {
               "kind": "symbol",
@@ -55,12 +55,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "31325b4557bdc3363eae39d52c1cdc301b7b3139",
+            "blob": "ac697415988cc6cd3c97bcc7eb29494118a64cab",
             "content": "sha256:5e5b83f6c3fc35ef84f243df11073962f895ba962c1a2a14af644ac49466231c",
             "locator": {
-              "end": 89,
+              "end": 91,
               "kind": "line_range",
-              "start": 89
+              "start": 91
             }
           },
           "kind": "code"
@@ -72,7 +72,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "31325b4557bdc3363eae39d52c1cdc301b7b3139",
+            "blob": "ac697415988cc6cd3c97bcc7eb29494118a64cab",
             "content": "sha256:25c723659db84dbeb9252766fc1f77d0be565d72ab28e3df84c74c8da7484011",
             "locator": {
               "kind": "symbol",
@@ -88,7 +88,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "31325b4557bdc3363eae39d52c1cdc301b7b3139",
+            "blob": "ac697415988cc6cd3c97bcc7eb29494118a64cab",
             "content": "sha256:673efc3b3d6d3a8f986a1d1723a55b1c972a49606faa36238990d71a991aa639",
             "locator": {
               "kind": "symbol",
@@ -104,12 +104,29 @@
       "targets": [
         {
           "anchor": {
-            "blob": "31325b4557bdc3363eae39d52c1cdc301b7b3139",
+            "blob": "ac697415988cc6cd3c97bcc7eb29494118a64cab",
             "content": "sha256:272d79fca4eaa1a09a2ef267c85315ed0a4cafa774f39531f2d0fb1f9535e6f7",
             "locator": {
               "end": 12,
               "kind": "line_range",
               "start": 10
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "Lineage-refused start beats publish no transient progress artifact.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ac697415988cc6cd3c97bcc7eb29494118a64cab",
+            "content": "sha256:27d9860e7db476ebe66f2a8fc6a5123e78fb9234abeb6666c063e239fdf9f623",
+            "locator": {
+              "end": 97,
+              "kind": "line_range",
+              "start": 66
             }
           },
           "kind": "code"

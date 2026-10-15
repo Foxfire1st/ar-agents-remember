@@ -1,0 +1,36 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake"
+    ],
+    "justification": "Invalid or stale profile input must not erase or replace any generated target before the generator discovers that its certification projection cannot be formed. Deriving only the owned skill row avoids silently rewriting unrelated profile authority."
+  },
+  "applicability": "Normal scripts/sync-skills.py synchronization and its declaration-derived generated-skills certification projection.",
+  "conditions": [
+    "The normal sync resolves declared targets and validates/derives projected profile bytes before the first target copy is mutated.",
+    "Projection preserves unrelated profile declarations and changes only the generated-skills generated/source scopes and canonical profile digest.",
+    "After target updates the generator writes the previously derived profile bytes and checks stored profile/declared-copy consistency.",
+    "Missing, malformed or digest-invalid profile input refuses in the prevalidation stage rather than partially replacing targets."
+  ],
+  "exclusions": [
+    "This is not a whole-sync atomicity guarantee after target replacement starts; per-target replacement failures and crash windows retain their actual behavior.",
+    "This authoring does not run the generator, fixture tests or certification, read hidden mirrors, or declare real copies current."
+  ],
+  "id": "INV-5X4C74",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "/home/firefox/projects/ar-coordination/worktrees/agents-remember/54_writer-and-validator-corrections-a4b3b3af8d-ar/role-reports/curator/1ad64580-9e4a-42ce-adc0-169869767dba/wave-74/source-review.json"
+      ],
+      "path": "wave-74-complete-history.json"
+    },
+    "handoffEntry": "L54-curator-generator-profile-prevalidation",
+    "leaf": "260928-MIK-L54",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Normal skill synchronization validates and derives the generated-skills profile projection before mutating any target, preserves unrelated profile authority, then publishes and checks the declared projection.",
+  "status": "proposed",
+  "supersedes": []
+}

@@ -28,7 +28,10 @@ when an input cannot be identified; the gate then computes without the memo. The
 - the build stamp (`measuring_build_stamp`) as sorted JSON.
 
 An unreadable contract, a leaf document that cannot be established, or a build stamp that cannot be
-produced gives no key.
+produced gives no key. Contract bytes and a found task document are read through `_read_bytes`, which
+records the exact bytes' digest on success, `ABSENT` for `FileNotFoundError`, or an unreadable
+observation naming another `OSError` type before re-raising it. These key-building reads are visible
+to an enclosing recorder even when no key is returned.
 
 ### Serving and keeping
 
@@ -38,7 +41,8 @@ produced gives no key.
   only when all of those still give the recorded answer. A requirement packet whose locator resolves to
   another file at the time of the check is therefore a miss even when the other file has the same bytes,
   and the bytes behind the other target are not read for the check. A manifest that appeared or vanished, a newly approved
-  version and edited settings are misses as well.
+  version and edited settings are misses as well. Only after the age and unchanged-input checks
+  succeed does `remembered` replay the kept observations into the current recorder and return the verdict.
 - `remember(key, result, reads)` keeps a verdict only when `result.memoisable` is true and the rows hold
   no failed observation (`has_failed_observation`: a conflict, or an unreadable row). A verdict behind
   which an input could not be read, or was read at two identities, is returned to the caller and computed
@@ -49,7 +53,22 @@ produced gives no key.
 `GATE_MEMO` is a `BoundedMemo` of `CAPACITY` 16 verdicts, least recently used first out, and
 `MAX_AGE_SECONDS` is 900.
 
+### Dependency observations when constructing and reusing a key
+
+Key identity and read provenance are complementary. `_read_bytes` returns the same bytes used for the
+contract and task-document hashes while also recording their observed identity; a failed read is recorded
+before normal key refusal handles it. A missing task document found as `None` still uses the existing
+empty-byte digest input rather than reading an invented document path.
+
+Serving a kept verdict replays its stored read set only after the verdict is young enough and its
+observations still match. Missing, expired or changed entries return no verdict before that replay.
+Keeping a new verdict still requires both `result.memoisable` and a read set without a failed observation;
+replay does not turn incomplete or conflicting inputs into cacheable results.
+
+
 ## Evidence
+
+### Repo-Internal References
 
 - The module docstring: what the key names, the inputs outside the trees, the bounds, what is never kept. [10]
 - The two bounds. [11]
@@ -65,3 +84,6 @@ produced gives no key.
 - Every file read is in the read set and a conflicting read is never kept. [21]
 - The same trees against another parent tip are another key and another evaluation. [22]
 - The worktree layer's gate port calls the gate. [23]
+
+- Contract and found task-document reads record their digest or read failure while constructing the exact memo key. [24]
+- A valid memo hit replays its kept observations; memo admission still excludes failed observations. [25]

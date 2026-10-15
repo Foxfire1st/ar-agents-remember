@@ -1,0 +1,210 @@
+{
+  "path": "skills/l-01-agent-lifecycles/core/launcher.md",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Free chat is an ambient routing condition, not a role; inline research and separate Architect.\n\nAnchor: \"## What it is\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "744d35a727412fe0fbc612c71527412c9a8f1607",
+            "content": "sha256:10898ab5dfb65d737a888ed03d9a7492478f1dfc8ad751c6daef2808e9d90609",
+            "locator": {
+              "end": 18,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "Only an explicitly developer-named role and task takes the bounded takeover route.\n\nAnchor: `## Task-seat takeover — the bounded exception`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e532bbd0a49d3c16d9273ae5aa89a26c5a6edd70",
+            "content": "sha256:c7719bca748b22a0fe104a13895cf876a4a4ad063b5c3b2121f443c14c1fd859",
+            "locator": {
+              "end": 50,
+              "kind": "line_range",
+              "start": 41
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "No other start or message route and no local work after start is permitted.\n\nAnchor: `## What the launcher must not do`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e532bbd0a49d3c16d9273ae5aa89a26c5a6edd70",
+            "content": "sha256:a63c25c484c8ab6ba7fe4ece3f6e945a1378eff36f1ee986ce568545dfd52614",
+            "locator": {
+              "end": 57,
+              "kind": "line_range",
+              "start": 52
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "The launcher remains outside roles because it is not a role seat.\n\nAnchor: `## Why it is authored here rather than in roles/`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e532bbd0a49d3c16d9273ae5aa89a26c5a6edd70",
+            "content": "sha256:bc82b620945d4395df4c8881c3017e712e665efb10770409d6cb2e02ec3ef311",
+            "locator": {
+              "end": 64,
+              "kind": "line_range",
+              "start": 59
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "The manifest retains ambient-launcher metadata outside the role registry; this is not the native routing-condition set.\n\nAnchor: retained launcher metadata",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fae8c014dbfcfdd40ef9d82d06334470a9d5ec1d",
+            "content": "sha256:f50b8eddaff06e86599f0abadc1df208e541378dc94b16d34b6b1ab9c43f2ea7",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/composition-manifest.json"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "14": {
+      "note": "The source assertions exclude launcher from roles, retain ambient metadata and separately check the two native routing conditions; this is not an executed PASS.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f5f5e06015b413b25d9850b5cbec4666d649c85f",
+            "content": "sha256:011de498f697771478b7cae1c1ebab8354b9576cc26808530646c294138ff4d8",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_manifest_resolves_every_role_and_operation_source"
+            },
+            "path": "mcp/tests/test_role_instruction_corpus.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "One canonical durable brief/dispatch, no duplicate and bounded first-sprint bootstrap.\n\nAnchor: \"## Ordinary role-shaped work — the one call\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "744d35a727412fe0fbc612c71527412c9a8f1607",
+            "content": "sha256:242203511c7a5ee4fdb233636dd3cd5becb4c1817a96668ec54b6cd8d75c9b4c",
+            "locator": {
+              "end": 39,
+              "kind": "line_range",
+              "start": 20
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Explicit takeover uses the named canonical role/document and fails closed on altitude mismatch.\n\nAnchor: \"## Task-seat takeover — the bounded exception\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "744d35a727412fe0fbc612c71527412c9a8f1607",
+            "content": "sha256:c79fa2ad42541ec420c7ff9ec7dd13f70ed1da3941bcf629ed0c900491abc9a9",
+            "locator": {
+              "end": 50,
+              "kind": "line_range",
+              "start": 41
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "No assumed role, session primitive, invented identity, spend knobs or post-dispatch local work.\n\nAnchor: \"## What the launcher must not do\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "744d35a727412fe0fbc612c71527412c9a8f1607",
+            "content": "sha256:0e7cb40c0f5f93db398d87d2dbd7f14bd4de76e1b8bd01da5c94438b2cd0c346",
+            "locator": {
+              "end": 59,
+              "kind": "line_range",
+              "start": 52
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Structural reason for keeping the launcher outside roles.\n\nAnchor: \"Why it is authored here rather than in\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "744d35a727412fe0fbc612c71527412c9a8f1607",
+            "content": "sha256:bc82b620945d4395df4c8881c3017e712e665efb10770409d6cb2e02ec3ef311",
+            "locator": {
+              "end": 66,
+              "kind": "line_range",
+              "start": 61
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "An unbound free chat answers research inline without becoming a role.\n\nAnchor: `## What it is`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e532bbd0a49d3c16d9273ae5aa89a26c5a6edd70",
+            "content": "sha256:e80ea2c5803309f5f077421658faee212e51a310286cc7fe6fdaf5f8be55856c",
+            "locator": {
+              "end": 18,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "Managed work is written into the sprint before one parentless Architect start without a brief or document reference.\n\nAnchor: `## Ordinary role-shaped work — the one call`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e532bbd0a49d3c16d9273ae5aa89a26c5a6edd70",
+            "content": "sha256:d1607a0f40d5a2ccdd814b9f97ff3a8fc7b8c53e33ca08edf8df57a66a941459",
+            "locator": {
+              "end": 39,
+              "kind": "line_range",
+              "start": 20
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

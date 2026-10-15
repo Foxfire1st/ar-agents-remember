@@ -1,0 +1,95 @@
+{
+  "path": "skills/c-03-repo-bootstrap/templates/cross-repo-boundary-pack-template.md",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The template records allowed adjacent repositories, boundary summaries, confirmed interfaces and shared contracts.\n\nAnchor: \"## Allowed Adjacent Repos\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bbf691b2c006d7676d44e5b256b4032ef29be816",
+            "content": "sha256:0495aa975fc06626cdc0441de2719c70c41786c0263f3ac51202914447d859f7",
+            "locator": {
+              "end": 32,
+              "kind": "line_range",
+              "start": 11
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The template retains branch/topology notes, same-repository exclusions, boundary risks and developer-confirmation needs.\n\nAnchor: \"## Branch And Topology Notes\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bbf691b2c006d7676d44e5b256b4032ef29be816",
+            "content": "sha256:b0cff865e5e9ed64dfbf5d7ff5e9702bc38ef066e5b7b3fea429208d94764392",
+            "locator": {
+              "end": 51,
+              "kind": "line_range",
+              "start": 33
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The bootstrap skill directs Phase 4F packs for priority routes with inbound or outbound signals and bounds adjacent reads and LOW-confidence ties.\n\nAnchor: \"### 4F — Cross-Repo Boundary Pass\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6169b610d2b722a17c4d18645df947444b62f260",
+            "content": "sha256:61fe757accf210846aba30b17eadfa4d980175f3d9a0efa8c32b53d6b1cbd399",
+            "locator": {
+              "end": 958,
+              "kind": "line_range",
+              "start": 936
+            },
+            "path": "skills/c-03-repo-bootstrap/SKILL.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The bootstrap preservation contract keeps adjacent-repository evidence read-only and limits memory updates to the target repository.\n\nAnchor: \"6. **Cross-repo read-only semantics**\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6169b610d2b722a17c4d18645df947444b62f260",
+            "content": "sha256:aa2ded241be74e1dff5276862e7a2426463b297765d71b655d33a9ff74753bb9",
+            "locator": {
+              "end": 159,
+              "kind": "line_range",
+              "start": 156
+            },
+            "path": "skills/c-03-repo-bootstrap/SKILL.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Converted cards use writer-owned companions rather than legacy verification metadata or in-card history.\n\nAnchor: \"## What a converted card is\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e071ead508fb6ee46a9f883dc3a5bf12260ebd28",
+            "content": "sha256:c37c684764deb1c742f510fd62758673324a7bfe663c6447d4150822d0483643",
+            "locator": {
+              "end": 33,
+              "kind": "line_range",
+              "start": 7
+            },
+            "path": "skills/c-05-create-or-update-onboarding-files/workflows/converted-card-workflow.md"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,33 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake"
+    ],
+    "justification": "Prevent treating intentional Writer limits as unresolved defects or declaring the curation complete after editing instructions alone."
+  },
+  "applicability": "Curator instructions and the L54 Writer-contract/by-design reconciliation boundary.",
+  "conditions": [
+    "The ordinary handoff requires the persisted leaf worklist, same-document attachment, truthful refusal reporting and current reconsideration recovery.",
+    "Rejected simplifications are recorded as chosen current design plus actual rejected option/reason, not deferred defects; instruction publication alone does not finish decision reconciliation."
+  ],
+  "exclusions": [
+    "No invented alternative, CODE execution grade, generated-copy migration completion or independent acceptance."
+  ],
+  "id": "INV-37TMDD",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "/home/firefox/projects/ar-coordination/tasks/agents-remember/260928_maintained-invariant-knowledge/notes/reports/worker/0e651ec5-2eed-4b58-b19f-e2336d4978ca/repair-freeze-0a36ddc4/builder-report.md#mik-r54-rule-13"
+      ],
+      "path": "wave-77-complete-history.json"
+    },
+    "handoffEntry": "MIK-R54@v1 rule 13",
+    "leaf": "260928-MIK-L54",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Curator guidance must state the changed Writer contracts and curation must record each continuing by-design choice with the actual rejected alternative and its reason.",
+  "status": "proposed",
+  "supersedes": []
+}

@@ -1,0 +1,145 @@
+{
+  "path": "skills/l-01-agent-lifecycles/templates/deep-research-report.md",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Usage context, shape selection and formatting/lifecycle split are explicit template declarations.\n\nAnchor: `this template owns the report shape`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ee9711668ce01ae6eda8285a9c976a13a45a3e7f",
+            "content": "sha256:d4752fcfaaff87197ae7b509ae664fc97aada2f0dd4447ca3290b6f5b76987e9",
+            "locator": {
+              "end": 10,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Claims cite evidence, inference is distinguished and limits remain visible.\n\nAnchor: `Treat evidence rows as proof records, not activity logs.`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ee9711668ce01ae6eda8285a9c976a13a45a3e7f",
+            "content": "sha256:2ad110580aa7a947ef9427785e295f0ccb5cfff2a8d070501dbb6e90c03935da",
+            "locator": {
+              "end": 19,
+              "kind": "line_range",
+              "start": 12
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The full report supplies frame, findings, ledger, proof inventory, gaps and artifact-shape decision fields.\n\nAnchor: `Suggested artifact shape if spawned`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ee9711668ce01ae6eda8285a9c976a13a45a3e7f",
+            "content": "sha256:8af7033b73425eaab68787313bc99772cfe77d9e8012f812062f2d913d56c9d0",
+            "locator": {
+              "end": 73,
+              "kind": "line_range",
+              "start": 21
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Compact research retains answer, evidence, proof inventory, gaps and decision.\n\nAnchor: `## Compact Shape`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ee9711668ce01ae6eda8285a9c976a13a45a3e7f",
+            "content": "sha256:deaae2036da1a7a6184dacac5eac0b7f78fd836a9e210cb0f1807796a895f929",
+            "locator": {
+              "end": 100,
+              "kind": "line_range",
+              "start": 75
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Evidence taxonomy retains provider vocabulary while requiring bounded intent, developer confirmation and inference uncertainty.\n\nAnchor: `## Evidence Kinds`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ee9711668ce01ae6eda8285a9c976a13a45a3e7f",
+            "content": "sha256:496fc11f2eec8c84cb3bfe77847d4e8c20c27b0e0daa7080d729b450575ecc64",
+            "locator": {
+              "end": 110,
+              "kind": "line_range",
+              "start": 102
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Ledger guidance asks for inspectable source detail and guards against overclaiming.\n\nAnchor: `Prefer concrete`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ee9711668ce01ae6eda8285a9c976a13a45a3e7f",
+            "content": "sha256:17e351781b7ee9db9a03225a4d3d6c21c99754c00f8f5e1cce09bc32fa2aa101",
+            "locator": {
+              "end": 123,
+              "kind": "line_range",
+              "start": 112
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "Current capsule composition is role plus operation, not a shared lifecycle or template-injection claim.\n\nAnchor: `A role capsule contains exactly`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a8e2b869f7f277422f7b891f9c31efa0b3c45d4c",
+            "content": "sha256:35097ef193c6e3f50cfa8d1d18c9ba1c51e9c97da2dbd06f9930310839b4e803",
+            "locator": {
+              "end": 8,
+              "kind": "line_range",
+              "start": 6
+            },
+            "path": "skills/l-01-agent-lifecycles/SKILL.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "Turn completion, review, curation, semantic acceptance and publication have separate owning evidence.\n\nAnchor: `A finished turn, review, curation, semantic acceptance, and paired Git publication are separate facts.`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a8e2b869f7f277422f7b891f9c31efa0b3c45d4c",
+            "content": "sha256:726e2fc9729719af993f688485b1c2eb8b66bb514513c8276faaa1936b02b641",
+            "locator": {
+              "end": 35,
+              "kind": "line_range",
+              "start": 33
+            },
+            "path": "skills/l-01-agent-lifecycles/SKILL.md"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

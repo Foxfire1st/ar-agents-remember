@@ -1,0 +1,39 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake"
+    ],
+    "justification": "Absent ignored caches can falsely block a real clone, while silently fixing stale caches or dropping a computed informational count can misrepresent what was checked. Owner-mediated preparation and separate truthful reporting prevent those errors."
+  },
+  "applicability": "Full memory-quality input preparation, absent/stale route-index cache reporting and informational proof/review projections.",
+  "conditions": [
+    "A full run builds absent derived route-index caches through the existing owner; existing stale cache bytes are left for the actual stale-cache check rather than silently overwritten.",
+    "The cache-build result exposes built/error facts independently of quality readiness.",
+    "The computed invariantsWithoutProofCount survives report-disabled and mounted sync/completed-poll delivery; proof coverage remains informational, not an actionable finding kind.",
+    "Knowledge review is labeled nongating and remains distinct from the actual invariant/worklist gate and complete Curator curation."
+  ],
+  "exclusions": [
+    "A built cache or zero proof count is not semantic certification, proof acceptance or a frozen-pair grade.",
+    "The original producer's real-clone witness and explicit failed native result remain historical producer evidence; no new run is claimed."
+  ],
+  "id": "INV-3PHJ0H",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "/home/firefox/projects/ar-coordination/tasks/agents-remember/260928_maintained-invariant-knowledge/notes/reports/worker/0e651ec5-2eed-4b58-b19f-e2336d4978ca/repair-freeze-0a36ddc4/builder-report.md#mik-r55-rule-7",
+        "/home/firefox/projects/ar-coordination/worktrees/agents-remember/54_writer-and-validator-corrections-a4b3b3af8d-ar/role-reports/curator/1ad64580-9e4a-42ce-adc0-169869767dba/wave-67/mechanism-review.json",
+        "/home/firefox/projects/ar-coordination/worktrees/agents-remember/54_writer-and-validator-corrections-a4b3b3af8d-ar/role-reports/curator/1ad64580-9e4a-42ce-adc0-169869767dba/wave-70/mechanism-review.json",
+        "/home/firefox/projects/ar-coordination/worktrees/agents-remember/54_writer-and-validator-corrections-a4b3b3af8d-ar/role-reports/curator/1ad64580-9e4a-42ce-adc0-169869767dba/wave-76/proof-source-review.json"
+      ],
+      "path": "wave-66-complete-history.json"
+    },
+    "handoffEntry": "MIK-R55@v1 rule 7",
+    "leaf": "260928-MIK-L54",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "The quality operation builds absent route-index caches through their owner, counts existing stale caches, exposes invariantsWithoutProofCount and labels knowledge review as nongating.",
+  "status": "proposed",
+  "supersedes": []
+}

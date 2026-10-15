@@ -12,7 +12,7 @@ Proves selected-case budget admission without recursive pytest collection.
 
 ### Logic
 
-The parametrized `test_selected_case_budgets` drives the actual collection-finish hook with synthetic selected item populations: the declared 5000 unit/1000 integration pair passes, 5001 unit or 1001 integration raises the explicit-tradeoff refusal. `STUB_UNIT`/`STUB_INTEGRATION` deliberately duplicate the declared pair, and `test_the_stub_matches_the_declared_pair` ties both constants to the root configuration so a stale mirror cannot keep proving an obsolete ceiling. The marker-shaped item double classifies already-collected items; no recursive pytest collection is spawned. The other checks pin the effective repository-root inifile and both runtime ini values, prohibit a `default=` on either ini declaration, and require an absent rail to resolve to 0 and refuse by name rather than run unbounded. These are enforcement boundaries, not an inventory scan or an execution-time measurement.
+The parametrized `test_selected_case_budgets` drives the actual collection-finish hook with synthetic selected item populations: the declared 6000 unit/1000 integration pair passes, one unit case or one integration case above its own rail raises the explicit-tradeoff refusal. `STUB_UNIT`/`STUB_INTEGRATION` deliberately duplicate the declared pair, and `test_the_stub_matches_the_declared_pair` ties both constants to the root configuration so a stale mirror cannot keep proving an obsolete ceiling. The marker-shaped item double classifies already-collected items; no recursive pytest collection is spawned. The other checks pin the effective repository-root inifile and both runtime ini values, prohibit a `default=` on either ini declaration, and require an absent rail to resolve to 0 and refuse by name rather than run unbounded. These are enforcement boundaries, not an inventory scan or an execution-time measurement.
 
 ### Conventions
 
@@ -21,7 +21,7 @@ boundary when changing policy rather than adding duplicate metric or collection 
 
 ### Invariants And Boundaries
 
-There is **no per-declaration default budget to state.** `mcp/tests/conftest.py` registers the two ini names with `addini` and carries no `default=`; the enforced pair lives once, in the repository-root `pyproject.toml` under `[tool.pytest.ini_options]`, and was **2300 unit / 400 integration** when this was written — read it there, it moves. The stub now follows the declared 5000/1000 pair; the 2300/400 figure above is only the dated reading, not a current input. The boundary proof and its tie to the declaration are separate checks. Coverage is diagnostic; production
+There is **no per-declaration default budget to state.** `mcp/tests/conftest.py` registers the two ini names with `addini` and carries no `default=`; the enforced pair lives once, in the repository-root `pyproject.toml` under `[tool.pytest.ini_options]`, and was **2300 unit / 400 integration** when this was written — read it there, it moves. The stub now follows the declared 6000/1000 pair; the 2300/400 figure above is only the dated reading, not a current input. The boundary proof and its tie to the declaration are separate checks. Coverage is diagnostic; production
 CRAP 20 triggers review without failing delivery. Full suites and whole-candidate review occur at
 master completion. A green unit result is not a certification certificate.
 
@@ -39,7 +39,6 @@ No external domain claim is needed.
 
 ### Repo-Internal References
 
-- The enforced collected-case pair is 5000 unit/1000 integration; the unit-only policy raise leaves the guard unchanged. [5]
 
 The exact functions below establish the tested boundary and its test doubles.
 
@@ -54,3 +53,5 @@ The exact functions below establish the tested boundary and its test doubles.
 No cross-repository protocol is exercised by these unit cases.
 
 No external boundary is claimed.
+
+- The current root declaration is6000unit/1000integration; the synthetic stub and guard-relative boundary cases must follow it. [5]

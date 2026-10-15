@@ -23,7 +23,7 @@ The admission registry pin includes refusing `R27.4-record-kept`; named sync/con
 - **Rule 2:** the filename prefix, duplicate IDs after a merge (`merge conflict:` naming both files), the packet's conforming parallel-mint example, and duplicate entry IDs across sidecars.
 - **Rule 3:** the packet's non-conforming hand-added `[4]`, an unused reference, Markdown without a sidecar, a file sidecar without Markdown (actual base-carried migration debt reports while incomplete; it holds no references), record links, a retired record, an unresolved target (actual base-carried migration debt reports while incomplete), a disallowed relation by field, and a dot-named card with its sidecar.
 - **Rules 4 and 5:** an invariant that lists its realizations; a missing family member.
-- **Rule 6:** an added anchor at a missing path, a carried anchor at a deleted path (refused off merge under `R22.6-carried-stale`; with an empty code tree the family's carried routes also refuse under `R04.1-carried-route-absent`; the boundary sync merge reports), the packet's boundary merge example, re-anchored and moved entries, locator and content rules, and an unconverted base with the standalone conversion.
+- **Rule 6, relocated definitions:** the six anchor-path cases now live in `test_validator_link_targets.py`, not this module. That owner checks an added anchor at a missing path, a carried anchor at a deleted path (refused off merge under `R22.6-carried-stale`; with an empty code tree the family's carried routes also refuse under `R04.1-carried-route-absent`; the boundary sync merge reports), the packet's boundary merge example, re-anchored and moved entries, locator and content rules, and an unconverted base with the standalone conversion.
 - **Rule 7:** a closed history file is frozen (edited, deleted, closed in one merge parent); an open one may change; history is shape-only (the packet's rename boundary example).
 - **The retired subject kept in the tree (MIK-R09, L09 review R2-1, ruling 2026-09-30T17:59:48).** The three rule-7 cases use a history file whose subject `INV-RET1R3` stands for "a subject that has since been retired". Since L09, MIK-R09's `R09-history-rows` rule checks every history file's subjects at every route (`unknown_subjects`), so a subject absent from the tree would now refuse. MIK-R22 rule 3 says records are never deleted (retiring sets `status: retired` and keeps the file), so the fixtures now model it faithfully: `RETIRED` adds `INV-RET1R3` with `status: retired` (and an unchecked admission) to each tree, including the left merge parent. The assertions are unchanged, and the packet's boundary example (a renamed `before` path in a closed file) still passes.
 - **Rules 8 and 9:** applicability by the marker; a later refusing rule runs everywhere and
@@ -61,11 +61,13 @@ The five negative/combined overview cases now supply genuine fixture comparison 
 
 ### Invariants And Boundaries
 
-- Every packet example (conforming, non-conforming and boundary) is covered at this level.
+- Packet examples remain unit-level assertions across this module and the separated `test_validator_link_targets.py`; their moved definitions are not still defined here.
 
 ### Todos
 
 None recorded.
+
+The moved carried-gone/reanchored controls additionally expect the separate `R22.6-link-target-path` refusal; four of the six relocated function ASTs are unchanged. The boundary-merge function itself is unchanged and its evidence below now binds the actual new file. The split does not delete its assertion or claim those definitions still reside here.
 
 ## Evidence
 
@@ -86,7 +88,6 @@ Representative cases; the full list is in the module.
 - Merge duplicates are conflicts naming both files; parallel mints merge cleanly. [2]
 - The hand-added marker is refused. [3]
 - A dot-named card and its sidecar are validated. [4]
-- The boundary merge: three rows, passes, three stale reports. [5]
 - The retired record the history fixtures keep in every tree (records are never deleted, MIK-R22 rule 3; L09 R2-1). [6]
 - A closed history file is frozen. [7]
 - MIK-R27: reference-only justifications are refused, real prose is admitted. [8]
@@ -106,3 +107,5 @@ No cross-repo boundary is crossed by this file.
 - Five negative/combined R80 assertions use genuine comparison bases and explicit leaf publication, retaining exact offending-heading/rule checks and the shared default. [14]
 - Current source delta inspected statically: Repair baseline/admission/reporting and registry/R80 witnesses; preserve genuine new-admission bases, finding-based debt and retirement. [15]
 - The root-named positive control actually edits the nested worktrees overview via _route_overview/ROUTE_CARD and asserts no R80 findings there; it is not a repository-root control. \[16] [16]
+
+- The boundary merge keeps the same three-stale-report assertion in its relocated definition. [5]

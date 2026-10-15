@@ -1,5 +1,177 @@
 {
   "path": "mcp/tests/test_reconsideration_route_trigger.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "5e3075d268a750403598a1322a973580687cc19d",
+        "content": "sha256:ffac3a95fe18fbec59eaaf3b03f84dc2e1214677ed91afe7387c9d35367f7092",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_equal_candidate_blobs_do_not_group_distinct_judgments"
+        }
+      },
+      "facet": "Source-defined regression check; not executed by Curator: Equal candidate blobs do not merge distinct card-bearing judgments.",
+      "id": "PRF-3NXT90",
+      "invariant": "INV-CCNH0Z",
+      "origin": {
+        "handoffEntry": "L54-curator-proof-MIK-R55-v1-rule-2-wave-75",
+        "leaf": "260928-MIK-L54"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "5e3075d268a750403598a1322a973580687cc19d",
+        "content": "sha256:d7676927b6fa8e148c260aaa755c6b21e1921bc3f2d72a8eb10c587663baf091",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_ten_equal_uncovered_changes_share_the_card_representative"
+        }
+      },
+      "facet": "Source-defined regression check; not executed by Curator: Ten equal uncovered changes share one card-bearing representative.",
+      "id": "PRF-4AGRA9",
+      "invariant": "INV-CCNH0Z",
+      "origin": {
+        "handoffEntry": "L54-curator-proof-MIK-R55-v1-rule-2-wave-75",
+        "leaf": "260928-MIK-L54"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "5e3075d268a750403598a1322a973580687cc19d",
+        "content": "sha256:deee77b8ccc351f0cab811dc1e82d55b351eb90aeccfafa418f6e3b83f9b7a04",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_route_chain_is_candidate_context_not_item_identity"
+        }
+      },
+      "facet": "Source-defined regression check; not executed by Curator: Candidate route-chain context does not alter item identity.",
+      "id": "PRF-8TC21R",
+      "invariant": "INV-ADXT15",
+      "origin": {
+        "handoffEntry": "L54-curator-proof-MIK-R55-v1-rule-1-wave-75",
+        "leaf": "260928-MIK-L54"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "5e3075d268a750403598a1322a973580687cc19d",
+        "content": "sha256:912a1443d24492f8697b40cf6dd38209f9cc78498188c989ddd15ea5ff0eaa47",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_removed_link_targets_hold_until_the_record_removes_or_restates_them"
+        }
+      },
+      "facet": "Source-defined regression check; not executed by Curator: A removed non-reconsideration record target stays open until the record removes/restates its literal target.",
+      "id": "PRF-DHYZ1F",
+      "invariant": "INV-4Z1JBC",
+      "origin": {
+        "handoffEntry": "L54-curator-proof-MIK-R55-v1-rule-4-wave-76",
+        "leaf": "260928-MIK-L54"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "5e3075d268a750403598a1322a973580687cc19d",
+        "content": "sha256:90b5f767ef7fed64a1a4f462cebc80a9a68f9f7807cd8d9f4c1300a749a1b616",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_deleted_route_triggers_without_a_history_row"
+        }
+      },
+      "facet": "Source-defined regression check; not executed by Curator: A deleted linked route raises reconsideration without needing a history row.",
+      "id": "PRF-E8B1AB",
+      "invariant": "INV-YA1T3N",
+      "origin": {
+        "handoffEntry": "L54-curator-proof-MIK-R55-v1-rule-3-wave-76",
+        "leaf": "260928-MIK-L54"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "5e3075d268a750403598a1322a973580687cc19d",
+        "content": "sha256:376af32d8e758ea78b9cbd087d906d00bc3898e771c7635d57f5cb271025ec00",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_family_absent_at_base_has_no_route_condition_item"
+        }
+      },
+      "facet": "Source-defined regression check; not executed by Curator: A wholly new family raises no inherited base route-condition item.",
+      "id": "PRF-KWJX71",
+      "invariant": "INV-WM6BTP",
+      "origin": {
+        "handoffEntry": "L54-curator-proof-MIK-R55-v1-rule-8-wave-76",
+        "leaf": "260928-MIK-L54"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "5e3075d268a750403598a1322a973580687cc19d",
+        "content": "sha256:59b04ff302a1a5afe6b3632178fe4ef7f6b45475b0d4e729b9651dd4f8256be6",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_root_overview_file_with_a_card_is_refused_by_name"
+        }
+      },
+      "facet": "Source-defined regression check; not executed by Curator: A root source overview colliding with its governing card refuses by name.",
+      "id": "PRF-MAWD40",
+      "invariant": "INV-WM6BTP",
+      "origin": {
+        "handoffEntry": "L54-curator-proof-MIK-R55-v1-rule-8-wave-76",
+        "leaf": "260928-MIK-L54"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "5e3075d268a750403598a1322a973580687cc19d",
+        "content": "sha256:0e13fbc3175282ee8f6dc4eeb4b91c2afc16085dfc57110dc773a69ee658d4e1",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_noncurrent_refresh_stays_open_despite_a_row_until_restored"
+        }
+      },
+      "facet": "Source-defined regression check; not executed by Curator: A stale refresh cannot close merely because a row claims it; it remains open until current/restored.",
+      "id": "PRF-MKG4H9",
+      "invariant": "INV-YA1T3N",
+      "origin": {
+        "handoffEntry": "L54-curator-proof-MIK-R55-v1-rule-3-wave-76",
+        "leaf": "260928-MIK-L54"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "5e3075d268a750403598a1322a973580687cc19d",
+        "content": "sha256:2ca9812eda5f0599002edf1ea8f20d8bf1a0a08e0d2cf205cdeed5ae54a84a11",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_an_unavailable_recorded_line_blob_is_named_in_item_facts"
+        }
+      },
+      "facet": "Source-defined regression check; not executed by Curator: Unavailable recorded line blobs are explicitly named in item facts.",
+      "id": "PRF-RB577G",
+      "invariant": "INV-WM6BTP",
+      "origin": {
+        "handoffEntry": "L54-curator-proof-MIK-R55-v1-rule-8-wave-76",
+        "leaf": "260928-MIK-L54"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "5e3075d268a750403598a1322a973580687cc19d",
+        "content": "sha256:5d4a5aa48754f887d54fda6b6b69ddb4e3aa49f482da6af155bb1127a32e8594",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_changed_invariant_governing_sentence_precedes_missing_covers"
+        }
+      },
+      "facet": "Source-defined regression check; not executed by Curator: Governing changed-row diagnostics precede but retain missing-cover details.",
+      "id": "PRF-RYCZ12",
+      "invariant": "INV-WM6BTP",
+      "origin": {
+        "handoffEntry": "L54-curator-proof-MIK-R55-v1-rule-8-wave-76",
+        "leaf": "260928-MIK-L54"
+      }
+    }
+  ],
   "realizes": [],
   "references": {
     "1": {
@@ -11,6 +183,182 @@
             "content": "sha256:187a3db5471b26616eae0abfd3beed7d6e5c8c4de950530747ba32202938f1a6",
             "locator": {
               "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Route-chain metadata preserves item identity and includes named rename destinations.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5e3075d268a750403598a1322a973580687cc19d",
+            "content": "sha256:deee77b8ccc351f0cab811dc1e82d55b351eb90aeccfafa418f6e3b83f9b7a04",
+            "locator": {
+              "end": 133,
+              "kind": "line_range",
+              "start": 108
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "5e3075d268a750403598a1322a973580687cc19d",
+            "content": "sha256:c8e204b4e49ead55fb56177472650b2b2abc0e2d5db1e17a58231a7ae999e0e0",
+            "locator": {
+              "end": 556,
+              "kind": "line_range",
+              "start": 543
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Equal uncovered changes share all source bindings; distinct bases/cards/coverage do not group, and generated-copy facts are collected once with divergence-only findings.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5e3075d268a750403598a1322a973580687cc19d",
+            "content": "sha256:d7676927b6fa8e148c260aaa755c6b21e1921bc3f2d72a8eb10c587663baf091",
+            "locator": {
+              "end": 188,
+              "kind": "line_range",
+              "start": 136
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "5e3075d268a750403598a1322a973580687cc19d",
+            "content": "sha256:0c0bf33f128d56287b68121276212d3f5daf3e4502deab69a9446ccda47797d9",
+            "locator": {
+              "end": 222,
+              "kind": "line_range",
+              "start": 192
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "5e3075d268a750403598a1322a973580687cc19d",
+            "content": "sha256:8bb58929f5c8b71a15748f519ad8a85ace7516a27cdc67a8a8ea2f0779fbed8c",
+            "locator": {
+              "end": 353,
+              "kind": "line_range",
+              "start": 323
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "Route absence, nested family reroute and noncurrent refresh triggers retain their actual gate conditions; a family absent at base has no route-condition item.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5e3075d268a750403598a1322a973580687cc19d",
+            "content": "sha256:90b5f767ef7fed64a1a4f462cebc80a9a68f9f7807cd8d9f4c1300a749a1b616",
+            "locator": {
+              "end": 239,
+              "kind": "line_range",
+              "start": 225
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "5e3075d268a750403598a1322a973580687cc19d",
+            "content": "sha256:67538be36f2ee98316e0bc190854c16061ed87d35ec972b1d319c60727755103",
+            "locator": {
+              "end": 271,
+              "kind": "line_range",
+              "start": 242
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "5e3075d268a750403598a1322a973580687cc19d",
+            "content": "sha256:0e13fbc3175282ee8f6dc4eeb4b91c2afc16085dfc57110dc773a69ee658d4e1",
+            "locator": {
+              "end": 320,
+              "kind": "line_range",
+              "start": 286
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "5e3075d268a750403598a1322a973580687cc19d",
+            "content": "sha256:376af32d8e758ea78b9cbd087d906d00bc3898e771c7635d57f5cb271025ec00",
+            "locator": {
+              "end": 471,
+              "kind": "line_range",
+              "start": 458
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "Removed ordinary targets close only after actual record-link repair; missing blobs and root-card collisions are named, and governing-sentence reasons precede missing-cover reasons.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5e3075d268a750403598a1322a973580687cc19d",
+            "content": "sha256:e3aa283a7e55d9c940396d2eb02dcf99dc055cfa364e78da9a00e4f3620c595e",
+            "locator": {
+              "end": 420,
+              "kind": "line_range",
+              "start": 357
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "5e3075d268a750403598a1322a973580687cc19d",
+            "content": "sha256:2ca9812eda5f0599002edf1ea8f20d8bf1a0a08e0d2cf205cdeed5ae54a84a11",
+            "locator": {
+              "end": 440,
+              "kind": "line_range",
+              "start": 423
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "5e3075d268a750403598a1322a973580687cc19d",
+            "content": "sha256:59b04ff302a1a5afe6b3632178fe4ef7f6b45475b0d4e729b9651dd4f8256be6",
+            "locator": {
+              "end": 455,
+              "kind": "line_range",
+              "start": 443
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "5e3075d268a750403598a1322a973580687cc19d",
+            "content": "sha256:fe5440fbccf667aafe9c90d0a16fd6ca6b31c15bca1449b139b76ee9f7772110",
+            "locator": {
+              "end": 540,
+              "kind": "line_range",
+              "start": 475
             }
           },
           "kind": "test"

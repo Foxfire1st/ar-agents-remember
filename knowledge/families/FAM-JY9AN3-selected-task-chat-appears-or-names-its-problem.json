@@ -20,10 +20,9 @@
     "leaf": "260928-MIK-L121",
     "task": "260928-MIK"
   },
-  "revision": 2,
+  "revision": 3,
   "routes": [
     "dashboard/src/cockpit",
-    "mcp/src/agents_remember/package_data/paseo_plugin/client",
     "mcp/src/agents_remember/package_data/paseo_plugin"
   ],
   "schema": "ar-family/v1",

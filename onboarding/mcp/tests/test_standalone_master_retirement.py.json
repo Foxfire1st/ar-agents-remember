@@ -3,7 +3,24 @@
   "proves": [
     {
       "anchor": {
-        "blob": "5e9768dd6a0ebe88bf5f210ef18a818fd6d82de8",
+        "blob": "139e788dbd8dcb39da0498d136bf9d05282d5b02",
+        "content": "sha256:a8b2321cbfcaf7a96079b355533d78869498db4ef38e76e99d046846192e990b",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_finalizing_an_ordinary_standalone_task_keeps_todays_skip"
+        }
+      },
+      "facet": "Source-defined regression check; not executed by Curator: The inherited test name now checks actual task-document-resolution refusal and unchanged world; it does not assert the retired standalone success.",
+      "id": "PRF-3SX5A3",
+      "invariant": "INV-6WXVEA",
+      "origin": {
+        "handoffEntry": "L54-curator-proof-MIK-R55-v1-rule-9-wave-76",
+        "leaf": "260928-MIK-L54"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "139e788dbd8dcb39da0498d136bf9d05282d5b02",
         "content": "sha256:fa8ceca456839eb5f72b79f02ab411a8f6d914e0382c59da4ca6e5525a029cbf",
         "locator": {
           "kind": "symbol",
@@ -20,7 +37,7 @@
     },
     {
       "anchor": {
-        "blob": "5e9768dd6a0ebe88bf5f210ef18a818fd6d82de8",
+        "blob": "139e788dbd8dcb39da0498d136bf9d05282d5b02",
         "content": "sha256:d488304ae4594ddc3322add6ad4587025719469ce008c9dc9c3a2546d68da208",
         "locator": {
           "kind": "symbol",
@@ -37,7 +54,7 @@
     },
     {
       "anchor": {
-        "blob": "5e9768dd6a0ebe88bf5f210ef18a818fd6d82de8",
+        "blob": "139e788dbd8dcb39da0498d136bf9d05282d5b02",
         "content": "sha256:984f76532126014277aa153d1352ea5f7ec4d3eb9efe1af5f24b02feb17a3dfb",
         "locator": {
           "kind": "symbol",
@@ -54,24 +71,7 @@
     },
     {
       "anchor": {
-        "blob": "5e9768dd6a0ebe88bf5f210ef18a818fd6d82de8",
-        "content": "sha256:856d190f9b34ec80abad94f25dc29100b552db7e83831123734b01fdcfa64c32",
-        "locator": {
-          "kind": "symbol",
-          "name": "test_finalizing_an_ordinary_standalone_task_keeps_todays_skip"
-        }
-      },
-      "facet": "An ordinary standalone task finalizes with today's skip result.",
-      "id": "PRF-GV8CQB",
-      "invariant": "INV-D91D5G",
-      "origin": {
-        "handoffEntry": "MIK-R41@v3-finalize-never-archives",
-        "leaf": "260928-MIK-L41"
-      }
-    },
-    {
-      "anchor": {
-        "blob": "5e9768dd6a0ebe88bf5f210ef18a818fd6d82de8",
+        "blob": "139e788dbd8dcb39da0498d136bf9d05282d5b02",
         "content": "sha256:a67c838a8b8953cd2343af43fc15bee9ecb0a306092add74f0b00d1d81e5f427",
         "locator": {
           "kind": "symbol",
@@ -88,7 +88,7 @@
     },
     {
       "anchor": {
-        "blob": "5e9768dd6a0ebe88bf5f210ef18a818fd6d82de8",
+        "blob": "139e788dbd8dcb39da0498d136bf9d05282d5b02",
         "content": "sha256:ead7050440c2e406fc4424a55a7af8217e1533eb8a2d374b653cec63d700b29c",
         "locator": {
           "kind": "symbol",
@@ -105,7 +105,7 @@
     },
     {
       "anchor": {
-        "blob": "5e9768dd6a0ebe88bf5f210ef18a818fd6d82de8",
+        "blob": "139e788dbd8dcb39da0498d136bf9d05282d5b02",
         "content": "sha256:f59717cea4a517e5b6cbf1b9bbb588f87e4be4d5f10a71caf70838a4b6454fd9",
         "locator": {
           "kind": "symbol",
@@ -122,7 +122,7 @@
     },
     {
       "anchor": {
-        "blob": "5e9768dd6a0ebe88bf5f210ef18a818fd6d82de8",
+        "blob": "139e788dbd8dcb39da0498d136bf9d05282d5b02",
         "content": "sha256:ae5cf3c9b29a882e20db91e137515632be14dd4c02d09b3973af28cc54752528",
         "locator": {
           "kind": "symbol",
@@ -139,7 +139,7 @@
     },
     {
       "anchor": {
-        "blob": "5e9768dd6a0ebe88bf5f210ef18a818fd6d82de8",
+        "blob": "139e788dbd8dcb39da0498d136bf9d05282d5b02",
         "content": "sha256:158038ed5cc76dee476012345c47d8811f6867ba5169ea322b694cd802ca7f47",
         "locator": {
           "kind": "symbol",
@@ -162,7 +162,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5e9768dd6a0ebe88bf5f210ef18a818fd6d82de8",
+            "blob": "139e788dbd8dcb39da0498d136bf9d05282d5b02",
             "content": "sha256:ae5cf3c9b29a882e20db91e137515632be14dd4c02d09b3973af28cc54752528",
             "locator": {
               "kind": "symbol",
@@ -178,7 +178,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5e9768dd6a0ebe88bf5f210ef18a818fd6d82de8",
+            "blob": "139e788dbd8dcb39da0498d136bf9d05282d5b02",
             "content": "sha256:3a0a17e49ff1312eeb5e4c843f6ab815c04364a92f80e3033f774fa09a09afb8",
             "locator": {
               "kind": "symbol",
@@ -220,12 +220,41 @@
         }
       ]
     },
+    "13": {
+      "note": "Both legacy-named standalone/no-document skip cases now assert contract-bound-document/master-row refusal and unchanged world snapshots rather than successful finalization.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "139e788dbd8dcb39da0498d136bf9d05282d5b02",
+            "content": "sha256:a8b2321cbfcaf7a96079b355533d78869498db4ef38e76e99d046846192e990b",
+            "locator": {
+              "end": 137,
+              "kind": "line_range",
+              "start": 119
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "139e788dbd8dcb39da0498d136bf9d05282d5b02",
+            "content": "sha256:63afd5db8e27e64e16773b882d06c7668df3824f8237a5c2ec013e48ad7eb69b",
+            "locator": {
+              "end": 653,
+              "kind": "line_range",
+              "start": 647
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
     "2": {
       "note": "Finalizing a master no sprint commands keeps it and names the retire route.",
       "targets": [
         {
           "anchor": {
-            "blob": "5e9768dd6a0ebe88bf5f210ef18a818fd6d82de8",
+            "blob": "139e788dbd8dcb39da0498d136bf9d05282d5b02",
             "content": "sha256:a67c838a8b8953cd2343af43fc15bee9ecb0a306092add74f0b00d1d81e5f427",
             "locator": {
               "kind": "symbol",
@@ -237,15 +266,16 @@
       ]
     },
     "3": {
-      "note": "An ordinary standalone task keeps today's skip.",
+      "note": "The ordinary unbound subTask refuses finalization with the contract-bound document/master-row message and unchanged world snapshot.",
       "targets": [
         {
           "anchor": {
-            "blob": "5e9768dd6a0ebe88bf5f210ef18a818fd6d82de8",
-            "content": "sha256:856d190f9b34ec80abad94f25dc29100b552db7e83831123734b01fdcfa64c32",
+            "blob": "139e788dbd8dcb39da0498d136bf9d05282d5b02",
+            "content": "sha256:a8b2321cbfcaf7a96079b355533d78869498db4ef38e76e99d046846192e990b",
             "locator": {
-              "kind": "symbol",
-              "name": "test_finalizing_an_ordinary_standalone_task_keeps_todays_skip"
+              "end": 137,
+              "kind": "line_range",
+              "start": 119
             }
           },
           "kind": "test"
@@ -257,7 +287,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5e9768dd6a0ebe88bf5f210ef18a818fd6d82de8",
+            "blob": "139e788dbd8dcb39da0498d136bf9d05282d5b02",
             "content": "sha256:ead7050440c2e406fc4424a55a7af8217e1533eb8a2d374b653cec63d700b29c",
             "locator": {
               "kind": "symbol",
@@ -289,7 +319,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5e9768dd6a0ebe88bf5f210ef18a818fd6d82de8",
+            "blob": "139e788dbd8dcb39da0498d136bf9d05282d5b02",
             "content": "sha256:158038ed5cc76dee476012345c47d8811f6867ba5169ea322b694cd802ca7f47",
             "locator": {
               "kind": "symbol",
@@ -321,7 +351,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5e9768dd6a0ebe88bf5f210ef18a818fd6d82de8",
+            "blob": "139e788dbd8dcb39da0498d136bf9d05282d5b02",
             "content": "sha256:984f76532126014277aa153d1352ea5f7ec4d3eb9efe1af5f24b02feb17a3dfb",
             "locator": {
               "kind": "symbol",

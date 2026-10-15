@@ -53,6 +53,37 @@
       "role": "presentation"
     }
   ],
-  "references": {},
+  "references": {
+    "1": {
+      "note": "Foundation procedure carriers are distinct from the leaf-bound Curator seat; historical taskless-seat availability is not restored.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "975f43c2f7fc87b502c806d5d7d1269dc05b945e",
+            "content": "sha256:c7017eae1c0844fac8b131ba660f3b3cdcfdff3db906d8878d492f4f42446365",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The authored source owns this contract; the distribution copy is not a separate authority.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "975f43c2f7fc87b502c806d5d7d1269dc05b945e",
+            "content": "sha256:c7017eae1c0844fac8b131ba660f3b3cdcfdff3db906d8878d492f4f42446365",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
   "schema": "ar-onboarding-file/v1"
 }

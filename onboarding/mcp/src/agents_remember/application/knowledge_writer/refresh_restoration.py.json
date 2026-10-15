@@ -1,0 +1,77 @@
+{
+  "path": "mcp/src/agents_remember/application/knowledge_writer/refresh_restoration.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "2fa3598927a309e05411f2e8bf21f19d7492e7ab",
+        "content": "sha256:ed143cfd51220ced0b4d5e7509dcd4a7c5d491425161f41c2268356bb87ae162",
+        "locator": {
+          "kind": "symbol",
+          "name": "_refreshed_subjects"
+        }
+      },
+      "id": "RLZ-2H9Y13",
+      "invariant": "INV-E6KFRX",
+      "origin": {
+        "handoffEntry": "L54-curator-R54-7-guard-reporting-sites",
+        "leaf": "260928-MIK-L54"
+      },
+      "rationale": "Only this leaf history supplies still_rejected subjects eligible for the absent-current-item restoration pass.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "2fa3598927a309e05411f2e8bf21f19d7492e7ab",
+        "content": "sha256:946c378792cbfbb1e66143e702c1bdb30c0098768dc91278ad97bbb0183b178f",
+        "locator": {
+          "kind": "symbol",
+          "name": "restore_refreshes"
+        }
+      },
+      "id": "RLZ-M25T9R",
+      "invariant": "INV-E6KFRX",
+      "origin": {
+        "handoffEntry": "MIK-R54@v1 rule 7",
+        "leaf": "260928-MIK-L54"
+      },
+      "rationale": "This restoration handles an unfired same-leaf refresh only when its base link is current at C.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "2fa3598927a309e05411f2e8bf21f19d7492e7ab",
+        "content": "sha256:106da11fb8c60c2089af8a76d428fd705c628297ed32008644b7cd304d4183af",
+        "locator": {
+          "kind": "symbol",
+          "name": "_restorable"
+        }
+      },
+      "id": "RLZ-QE72DE",
+      "invariant": "INV-E6KFRX",
+      "origin": {
+        "handoffEntry": "L54-curator-R54-7-guard-reporting-sites",
+        "leaf": "260928-MIK-L54"
+      },
+      "rationale": "The guard requires matching relation/alternative/path/locator and a base target whose content resolves current before the complete old link is restored.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Restores an obsolete leaf-owned reconsideration refresh when its original base link is current again and no corresponding fired item remains. This is not arbitrary reset-to-base. Nonmatching links, absent records, changed path/locator or AnchorResolutionError leave the link untouched. Authored link changes and surviving reconsideration items are not erased to clear a finding.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2fa3598927a309e05411f2e8bf21f19d7492e7ab",
+            "content": "sha256:e314d6229a2abadac8f38150928d20593eb75f1d1b47d07f497946285108366c",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

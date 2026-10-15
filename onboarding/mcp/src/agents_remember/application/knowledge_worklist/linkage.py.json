@@ -1,0 +1,22 @@
+{
+  "path": "mcp/src/agents_remember/application/knowledge_worklist/linkage.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Measures whether changed files and actual changed hunk lines intersect recorded realization/proof ranges on their own comparison sides. A delete-only hunk cannot borrow a C span; an insertion-only hunk cannot borrow a B span. Non-text linkage requires whole-file coverage rather than any symbol at that path. Resolved recorded ranges are linkage observations, not an authored acceptance or invariant-effect judgment.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8f2174f431d1314684097c47a8a4ebcd365a15ee",
+            "content": "sha256:fdc960c399f0b314c7f83b1bfdfba3eb342c579cabdf4708e14877c62604873f",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

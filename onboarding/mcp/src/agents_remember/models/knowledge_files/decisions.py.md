@@ -26,8 +26,7 @@ reconsideration surfacing (MIK-R14, L14) take `governs_links`, `reconsider_links
   out of range ("the decision has N (indexes 0 to N-1)") or pointing at a `chosen` alternative is a problem, at
   `links.<i>.alternative`. The index is the **authored order** of `alternatives`, which the canonical formatter
   keeps (it does not sort alternatives). Refusing a link to the chosen alternative is ruling 01:45:56 Q2.
-- `content_problems` concatenates the three refusing checks; the validator registers each check as its own rule
-  instead, so today nothing in the tree calls it.
+- The unused `content_problems` aggregator is removed. The validator registers the three independent pure content checks directly; no live aggregate helper remains.
 - **Governs (rule 3).** `GOVERNS_RELATIONS` is `explains`, `constrains` and `motivated_change_to`; `governs_links`
   returns those links: the records, routes, anchors and requirements the decision is read from.
 - **`reconsider_links`** returns one `ReconsiderLink` per `reconsider_on` link that names an existing rejected or
@@ -62,13 +61,14 @@ reconsideration surfacing (MIK-R14, L14) take `governs_links`, `reconsider_links
 
 - **L14 (ruling 01:45:56 Q6, review F1): resolved by L14.** An update that reorders `alternatives` would silently
   re-point existing `reconsider_on` indexes; MIK-R14's validator rule `R14.1-linked-alternative-order`
-  (`memory_quality/knowledge_validator/rules_reconsideration.py`) now refuses a linked alternative moved to another
-  index against every comparison base, following alternatives by option text (a move combined with a reword is a
+  (`memory_quality/knowledge_validator/rules_reconsideration.py`) now refuses silently retargeting a linked alternative against each comparison base; R54 admits an exact unique-option move when its complete reconsider links follow to that index, with every field except `alternative` unchanged (a move combined with a reword is a
   recorded limit, ruling 2026-09-30T04:37:56 Q4). L14's worklist and writer read these links through
   `reconsider_links`, `superseded_by` and `derived_status`.
 - **L29 (ruling 01:45:56 Q4):** packet rule 6 (reads show the chosen and rejected alternatives with their reasons
   and `reconsider_when`, and a derived `superseded`) is the reader's, using `governs_links`, `superseded_by` and
   `derived_status`.
+
+Requirement endpoint owner states remain observations at validator commit routes. With coordination authority supplied, the Writer separately refuses a newly added or changed unresolved requirement link; the pure decision model does not become that resolver or a second authority.
 
 ## Evidence
 
@@ -92,7 +92,6 @@ The content rules and the derived reads.
 - At least two alternatives, exactly one chosen. [3]
 - Every rejected or deferred alternative carries `reconsider_when`. [4]
 - A `reconsider_on` index must exist and name a rejected or deferred alternative. [5]
-- The three refusing checks together. [6]
 - The links the decision is read from, and the reconsider links with their subjects. [7]
 - Superseded is derived from later decisions' `supersedes`. [8]
 - Where a raw document stores `superseded`. [9]
@@ -103,3 +102,5 @@ The content rules and the derived reads.
 No meaningful cross-repo references found: the functions read one record or one raw document.
 
 No cross-repo boundary is crossed by this file.
+
+- The three live pure checks remain independent after removal of their unused aggregate helper. [6]

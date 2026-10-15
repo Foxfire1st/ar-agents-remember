@@ -15,6 +15,11 @@ architect ruling F1).** After all edits, `owner_history_problems` checks every r
 ### Logic
 
 - `unknown_subjects`: the subject names a record of the candidate.
+- On the writable history target, when the base does not hold that file closed,
+  `invalid_history_items` also checks every row's `items` for `sha256:<64 hex>` spelling. Each
+  malformed token gets a row-specific problem carrying the applicable re-authoring remedy.
+  This additional token check is skipped for base-frozen history, not for an open-base file
+  merely hand-marked closed; the existing row-consistency checks still run.
 - `reanchor_mismatches`: each covered entry's `after` equals its anchor in the candidate (`absent` when
   gone), MIK-R07 rule 4; candidate anchors come from `sidecar_entry_anchors` over the edited sidecars.
 - `invariant_revision_violation`: an invariant row's revision is the candidate revision and binds the base
@@ -62,6 +67,13 @@ remedy and gains the reopen step.
 
 - Drift refuses until the row is named again at the current revision. [9]
 
+### Writable-history item validation
+
+After selecting `state.history_target(owner)` and validating the history document shape, `owner_history_problems` computes frozen status from the base copy of that exact target. For each non-frozen row it reports every `invalid_history_items(row.items)` result as `invalid item ...: new history items must be sha256:<64 hex>`, naming the file, row ID and subject. The remedy is the ordinary name-the-row-again instruction, with the reopen step when only the candidate has been hand-closed.
+
+This format check does not reinterpret or normalize malformed tokens. It also does not apply retroactively to a history file the base already holds closed: the new item-format loop is skipped there. Unknown subjects, anchor/revision agreement and family member checks retain their separate behavior; skipping this new loop is not a blanket exemption from history consistency validation.
+
+
 ## Evidence
 
 ### Docs References
@@ -93,6 +105,7 @@ The check and its per-row messages.
 
 - A change already on the parent line may be answered by a later row; the leaf-owned changed-record rule remains distinct. [8]
 
+- Every non-base-frozen history row reports invalid item tokens with the row identity and current re-authoring remedy; base-frozen rows skip this added token check. [10]
 
 ### Cross-Repo References
 

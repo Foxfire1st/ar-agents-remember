@@ -1,0 +1,36 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake"
+    ],
+    "justification": "A future history writer or worklist refactor must not accept a row in place of repairing a removed retrieval target, leaving durable records pointing at code the leaf deleted."
+  },
+  "applicability": "Non-reconsider_on links retained from base records in a converted leaf when the leaf removes their code path, directory or previously resolving symbol.",
+  "conditions": [
+    "Only a retained target key is checked; a key removed or restated in the candidate no longer supplies the old broken pointer.",
+    "A code path/directory gone at C, or symbol resolving at B and not C, produces the link_target obligation.",
+    "The registered link_target row lookup is empty: repairing the candidate link, not an ordinary history row, is the recovery."
+  ],
+  "exclusions": [
+    "Content-only changes of a retrieval pointer do not themselves raise this item.",
+    "reconsider_on is handled by its separate reconsideration mechanism, not by this collector."
+  ],
+  "id": "INV-4Z1JBC",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "/home/firefox/projects/ar-coordination/tasks/agents-remember/260928_maintained-invariant-knowledge/notes/reports/worker/0e651ec5-2eed-4b58-b19f-e2336d4978ca/repair-freeze-0a36ddc4/builder-report.md#mik-r55-rule-4",
+        "/home/firefox/projects/ar-coordination/worktrees/agents-remember/54_writer-and-validator-corrections-a4b3b3af8d-ar/role-reports/curator/1ad64580-9e4a-42ce-adc0-169869767dba/wave-76/proof-source-review.json"
+      ],
+      "path": "wave-33-complete-history.json"
+    },
+    "handoffEntry": "MIK-R55@v1 rule 4",
+    "leaf": "260928-MIK-L54",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "A non-reconsideration record link whose path, route or symbol the leaf removed remains an open link_target until that target key is restated or removed, never answered by a row.",
+  "status": "proposed",
+  "supersedes": []
+}

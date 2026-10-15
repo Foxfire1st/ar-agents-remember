@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "b94b7d6ed08322fa953eb25e1ea853fde4711c83",
-        "content": "sha256:2107be22699c9b2bb5d0e5aef9f744fb1aa50150636360ee5c4ee484ccb5d2de",
+        "blob": "aadce53774c779828d6dcfc8549d40e01f2cdd89",
+        "content": "sha256:7de424ff54f04e638f280df43d9d816521322a92d5a85d1d8259358c5af8d1b1",
         "locator": {
           "kind": "symbol",
           "name": "strict_leaf_doc"
@@ -58,7 +58,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b94b7d6ed08322fa953eb25e1ea853fde4711c83",
+            "blob": "aadce53774c779828d6dcfc8549d40e01f2cdd89",
             "content": "sha256:329403bb2284b09fd60023f9ac15b24f680ea165054166fcbb67930a1edc513d",
             "locator": {
               "kind": "symbol",
@@ -74,7 +74,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b94b7d6ed08322fa953eb25e1ea853fde4711c83",
+            "blob": "aadce53774c779828d6dcfc8549d40e01f2cdd89",
             "content": "sha256:a49644bb3d75c59716525a78db9d08a7d8bdb96d7bf38cefd861ff9e4196d407",
             "locator": {
               "kind": "symbol",
@@ -90,7 +90,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b8f75c0db0ff78135ca05f2e8d2d82d0a8f2350e",
+            "blob": "9719c9159d392a3e5377a242638474a1a15b1f37",
             "content": "sha256:c3f475897dcd14f7a97836eec5863e97be6516602151f2871c7ddd4accbe3ae1",
             "locator": {
               "kind": "symbol",
@@ -107,7 +107,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b8f75c0db0ff78135ca05f2e8d2d82d0a8f2350e",
+            "blob": "9719c9159d392a3e5377a242638474a1a15b1f37",
             "content": "sha256:60616374187df50a50efa1efae51e8a02ebfb96f22f513da676c714dce3621e1",
             "locator": {
               "kind": "symbol",
@@ -133,6 +133,23 @@
             "path": "mcp/tests/test_reviewer_worklist_reads.py"
           },
           "kind": "test"
+        }
+      ]
+    },
+    "17": {
+      "note": "Strict lookup replays the claimant and failed observations while recording readable ruled-out siblings as examined, outside kept dependencies.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "aadce53774c779828d6dcfc8549d40e01f2cdd89",
+            "content": "sha256:7de424ff54f04e638f280df43d9d816521322a92d5a85d1d8259358c5af8d1b1",
+            "locator": {
+              "end": 86,
+              "kind": "line_range",
+              "start": 60
+            }
+          },
+          "kind": "code"
         }
       ]
     },

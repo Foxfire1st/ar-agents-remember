@@ -32,7 +32,7 @@ it exists, unresolved, exactly the path the sync used before, so `masterDocPath`
 in task-document responses is unchanged. The finalizer
 (`worktrees/modules/finalize.py`, which completes the row when the leaf lands)
 and reopen (`worktrees/reopen.py`, which resets it) call the same helper. Before
-MIK-R38 the finalizer called such a leaf standalone, so the row this sync kept
+MIK-R38 the finalizer omitted such a leaf's parent row, so the row this sync kept
 current stayed `inProgress` after the leaf finished (260928-MIK: 15 rows,
 repaired by resync writes). The sync's own behaviour is unchanged: it already
 gated on `subTask` before reaching this point.
@@ -101,3 +101,5 @@ The current source seams include `MasterSyncError`, `MasterSyncPlan`, `plan_mast
 ### Reconciled Source Evidence
 
 - The current module exposes `MasterSyncError`, `MasterSyncPlan`, `plan_master_sync` at this ownership boundary. [8]
+
+- The shared folder-master helper corrects the historical omitted parent row and grants no standalone-leaf publication authority. [9]

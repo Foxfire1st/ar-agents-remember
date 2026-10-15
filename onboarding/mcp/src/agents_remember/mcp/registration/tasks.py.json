@@ -113,6 +113,35 @@
           "kind": "code"
         }
       ]
+    },
+    "7": {
+      "note": "Descriptions include keyed open-question writes and require master authority for finalization.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "56347c4b09f5f0338f5f534cc4a623e36d623ebb",
+            "content": "sha256:527ee6275fa3684163b96f382ac525c0df94b69216e71ca2bb7397fbf70ef230",
+            "locator": {
+              "end": 80,
+              "kind": "line_range",
+              "start": 54
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "56347c4b09f5f0338f5f534cc4a623e36d623ebb",
+            "content": "sha256:1b05f9da36ec3e14d0d484571e1def8adf54ccac0d41c499c1a44176c06c6140",
+            "locator": {
+              "end": 83,
+              "kind": "line_range",
+              "start": 83
+            }
+          },
+          "kind": "code"
+        }
+      ]
     }
   },
   "schema": "ar-onboarding-file/v1"

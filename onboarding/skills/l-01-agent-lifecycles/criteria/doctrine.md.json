@@ -1,0 +1,162 @@
+{
+  "path": "skills/l-01-agent-lifecycles/criteria/doctrine.md",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Canonical doctrine source binds baseline review and seals the narrower fix-verification scope.\n\nAnchor: `# Criteria Catalog — Doctrine Review`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "46db7c266e9276f50d4562bbb87fb818df8d0352",
+            "content": "sha256:3e3bd3a33aab3fd35656caa0366bf166abb80994605cf6e1b2e21357528dfca7",
+            "locator": {
+              "end": 9,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The reviewer binding table selects doctrine where the review type and change surfaces require it.\n\nAnchor: `The catalogs your review type binds`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "696db71c1cdd1ea9215c7212533d609be9b2a1cf",
+            "content": "sha256:313d6ae5d5d3eea6d4393cfae149e951e5d6fd2f165516d17d276b153d78b921",
+            "locator": {
+              "end": 59,
+              "kind": "line_range",
+              "start": 50
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/reviewer.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Baseline mode and fix-verification are explicit supplied review modes, not inferred whole-review authority.\n\nAnchor: \"`baseline` or `fix-verification`\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "696db71c1cdd1ea9215c7212533d609be9b2a1cf",
+            "content": "sha256:09feeb75868b0b9350fa71743d58dde664459b357a8b997280696b06351c13c7",
+            "locator": {
+              "end": 34,
+              "kind": "line_range",
+              "start": 31
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/reviewer.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "D-1 requires mechanism-backed enforcement claims; D-2 sweeps contradictory sibling doctrine; D-3 walks stuck states.\n\nAnchor: `### D-1 — Doctrine-vs-code anchoring`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "46db7c266e9276f50d4562bbb87fb818df8d0352",
+            "content": "sha256:43c2923ee94e78b7dbdd41214b3d991d26c674910f8dd984799762b88bd0a687",
+            "locator": {
+              "end": 42,
+              "kind": "line_range",
+              "start": 13
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "D-4 distinguishes organizational/atomic topology and protects integration branches from feature/fix work.\n\nAnchor: `### D-4 — Topology and authority sweep`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "46db7c266e9276f50d4562bbb87fb818df8d0352",
+            "content": "sha256:6dda64e0325e65e97c904bb8cc59daf4908771c65bdf477194c7456be7fdcfd0",
+            "locator": {
+              "end": 52,
+              "kind": "line_range",
+              "start": 44
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "D-5 separates detected facts from explicit role judgment and labels tie-breaking as such.\n\nAnchor: `### D-5 — Detection is not judgment`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "46db7c266e9276f50d4562bbb87fb818df8d0352",
+            "content": "sha256:ebe7bd9e0da80a1c3a6eaed0a0b0058a73e86f350be02dd9f1b5fd9533b444d5",
+            "locator": {
+              "end": 59,
+              "kind": "line_range",
+              "start": 54
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "D-6 permits durable requirement identifiers; its source census is a dated historical account.\n\nAnchor: `### D-6 — Source-comment requirement identifiers`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "46db7c266e9276f50d4562bbb87fb818df8d0352",
+            "content": "sha256:a5210db2eb791b0fb59a51ea25dac14eacca672a72f8b40c67d889616d685d09",
+            "locator": {
+              "end": 72,
+              "kind": "line_range",
+              "start": 61
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "Novel lenses and the promotion ratchet apply to baseline review, not sealed fix-verification.\n\nAnchor: `## Exploratory Mandate`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "46db7c266e9276f50d4562bbb87fb818df8d0352",
+            "content": "sha256:729f4a37d4c3767a46f56c79361ddfb96702c022b0f92b47b5f81a7b36d287b5",
+            "locator": {
+              "end": 92,
+              "kind": "line_range",
+              "start": 74
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The package is a propagation target of canonical skills; source declaration is not an installation or synchronization receipt.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bfc9168b3d1a727fc00d12e21e949acfed4d3537",
+            "content": "sha256:556c2515bac2a5348f19a93d199ce8620848ee26c5e67dea565240287f582394",
+            "locator": {
+              "kind": "symbol",
+              "name": "CANONICAL_SKILLS"
+            },
+            "path": "scripts/sync-skills.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

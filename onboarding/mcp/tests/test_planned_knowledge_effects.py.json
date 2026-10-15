@@ -1,5 +1,41 @@
 {
   "path": "mcp/tests/test_planned_knowledge_effects.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "108235abe04cbe9d3271f3ba202cca2b7e43bab9",
+        "content": "sha256:dcff0cccd14fa03c2927949dbb3364f0b68927f3adbdc90a78ac6a2c1685e67a",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_effect_requirement_must_name_a_document_packet"
+        }
+      },
+      "facet": "Source-defined regression check; not executed by Curator: A declared effect requirement must belong to the document typed packet references.",
+      "id": "PRF-85BG12",
+      "invariant": "INV-HX6ZN5",
+      "origin": {
+        "handoffEntry": "L54-curator-proof-MIK-R55-v1-rule-5-wave-76",
+        "leaf": "260928-MIK-L54"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "108235abe04cbe9d3271f3ba202cca2b7e43bab9",
+        "content": "sha256:19186e01428f9275209d5144d57e842e8b131715f94f968cbf63f700e8daf883",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_family_declared_effect_requires_the_same_recorded_effect"
+        }
+      },
+      "facet": "Source-defined regression check; not executed by Curator: A family declaration matches only the actual same changed-row effect.",
+      "id": "PRF-HC5R70",
+      "invariant": "INV-HX6ZN5",
+      "origin": {
+        "handoffEntry": "L54-curator-proof-MIK-R55-v1-rule-5-wave-76",
+        "leaf": "260928-MIK-L54"
+      }
+    }
+  ],
   "realizes": [],
   "references": {
     "1": {
@@ -7,7 +43,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c7852e87c4c2eb41c0ab66973a0e148888c604ff",
+            "blob": "108235abe04cbe9d3271f3ba202cca2b7e43bab9",
             "content": "sha256:3752797962674003bb109bf056cf4da41896e435ad4e908fee8a8eb175425fcb",
             "locator": {
               "end": 7,
@@ -19,12 +55,46 @@
         }
       ]
     },
+    "10": {
+      "note": "Document packet/version validation and exact family effect matching are distinct assertions. [10]",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "108235abe04cbe9d3271f3ba202cca2b7e43bab9",
+            "content": "sha256:c65c155c2e44913898185769ed85e1601fc77e1692e5375e4681ca6ed7846306",
+            "locator": {
+              "end": 243,
+              "kind": "line_range",
+              "start": 197
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "11": {
+      "note": "The mounted task_doc declaration reaches worklist marks and the gate, then a deferred row answers it. [11]",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "108235abe04cbe9d3271f3ba202cca2b7e43bab9",
+            "content": "sha256:5510ea97366ed12df964258c798bdaf0a24822c33084d1155326f8b11cb403a5",
+            "locator": {
+              "end": 683,
+              "kind": "line_range",
+              "start": 609
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
     "2": {
       "note": "The field, its class, `set_field`, the intent digest, render and the refusals.",
       "targets": [
         {
           "anchor": {
-            "blob": "c7852e87c4c2eb41c0ab66973a0e148888c604ff",
+            "blob": "108235abe04cbe9d3271f3ba202cca2b7e43bab9",
             "content": "sha256:a4b55beff92a7fb4509fcb741f6d4ac50d42fe32d4532ef9508e12b3c318c8a0",
             "locator": {
               "kind": "symbol",
@@ -40,7 +110,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c7852e87c4c2eb41c0ab66973a0e148888c604ff",
+            "blob": "108235abe04cbe9d3271f3ba202cca2b7e43bab9",
             "content": "sha256:7978af5c9917014bd5aad505da2eb7fabca2734350ec57f2e72e0771526e1dc6",
             "locator": {
               "kind": "symbol",
@@ -72,7 +142,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c7852e87c4c2eb41c0ab66973a0e148888c604ff",
+            "blob": "108235abe04cbe9d3271f3ba202cca2b7e43bab9",
             "content": "sha256:e5843fff97a252979221547a2bb897adadfa857a52373ed518f29daac2bdcfec",
             "locator": {
               "kind": "symbol",
@@ -104,7 +174,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c7852e87c4c2eb41c0ab66973a0e148888c604ff",
+            "blob": "108235abe04cbe9d3271f3ba202cca2b7e43bab9",
             "content": "sha256:03705ab883dc23fa580d2c163e51a3cd11082d4f2b2a1ac97c09e179538a8f7e",
             "locator": {
               "kind": "symbol",
@@ -120,12 +190,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "512be564b35aaf6f9d3b9709113b613309efe221",
+            "blob": "b148d7beed5579c39177f11d8b8ec5e881c5ddad",
             "content": "sha256:fa377eaa04ac949870887763adda65172a739965e8babc52a2d5204e9546d7f9",
             "locator": {
-              "end": 219,
+              "end": 222,
               "kind": "line_range",
-              "start": 219
+              "start": 222
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },

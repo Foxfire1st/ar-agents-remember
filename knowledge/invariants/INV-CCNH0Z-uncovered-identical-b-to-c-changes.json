@@ -1,0 +1,38 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake"
+    ],
+    "justification": "Candidate-only equality or joining two real cards would let one judgment hide a distinct before-state or card obligation. Complete B/C equality and retained per-source blobs let exact cardless copies share work without losing provenance or reopening behavior."
+  },
+  "applicability": "Native unexplained-change generation for uncovered paths in one paired base/candidate code comparison.",
+  "conditions": [
+    "Group by the complete pair of base and candidate blob identities, not candidate-only equality; absent sides retain their absence identity.",
+    "Only uncovered paths enter grouping; paths absent on both sides supply no identical blob pair.",
+    "Choose the first card-bearing path when any exists, otherwise the first sorted path; additional card-bearing paths keep their own obligations.",
+    "Cardless equals join that representative and the caller retains every grouped candidate and base blob for source-bound judgment currentness."
+  ],
+  "exclusions": [
+    "Generated-copy equality is a separate declared/candidate-aware predicate, not a substitute for this two-sided uncovered grouping.",
+    "No similarity/content inference, coverage reclassification or permission to omit a distinct card-bearing path, and no execution or timing grade."
+  ],
+  "id": "INV-CCNH0Z",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "/home/firefox/projects/ar-coordination/tasks/agents-remember/260928_maintained-invariant-knowledge/notes/reports/worker/0e651ec5-2eed-4b58-b19f-e2336d4978ca/repair-freeze-0a36ddc4/builder-report.md#mik-r55-rule-2",
+        "/home/firefox/projects/ar-coordination/worktrees/agents-remember/54_writer-and-validator-corrections-a4b3b3af8d-ar/role-reports/curator/1ad64580-9e4a-42ce-adc0-169869767dba/wave-56/mechanism-review.json",
+        "/home/firefox/projects/ar-coordination/worktrees/agents-remember/54_writer-and-validator-corrections-a4b3b3af8d-ar/role-reports/curator/1ad64580-9e4a-42ce-adc0-169869767dba/wave-75/proof-source-review.json"
+      ],
+      "path": "wave-55-complete-history.json"
+    },
+    "handoffEntry": "MIK-R55@v1 rule 2",
+    "leaf": "260928-MIK-L54",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Uncovered identical B-to-C changes share one representative judgment with every grouped candidate blob, while two card-bearing paths and covered paths retain separate obligations.",
+  "status": "proposed",
+  "supersedes": []
+}

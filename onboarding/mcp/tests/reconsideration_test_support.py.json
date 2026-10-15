@@ -1,0 +1,22 @@
+{
+  "path": "mcp/tests/reconsideration_test_support.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Builds isolated Git-backed reconsideration configuration and an authored enclosing master for positive publication fixtures. These are test fixtures, not live coordination authority or evidence that a master was published in this task. Source inspection does not execute the fixture’s Git commands.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d9953d2d04547e5e11be1bb870c9ca3e9857b142",
+            "content": "sha256:f78970c4319fa51d3a4134c83f4b44651b1ea4104f88306b533e9a73befb4b6d",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

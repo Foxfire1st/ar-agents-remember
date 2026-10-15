@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "51b36507eadab66b0c06411c48b222e8fe69ca9c",
-        "content": "sha256:d9d834917b1639d2adc4bf3696f3621eac042d1d278622a004518d2aebfbbfc6",
+        "blob": "09a340563bd51c31168737f64744393c3c680ca9",
+        "content": "sha256:4d5b4d57964b10ab9001f614fc7dfe7da82ee58a888e348f734cd37a4d15e7f2",
         "locator": {
           "kind": "file"
         }
@@ -19,8 +19,8 @@
     },
     {
       "anchor": {
-        "blob": "51b36507eadab66b0c06411c48b222e8fe69ca9c",
-        "content": "sha256:d9d834917b1639d2adc4bf3696f3621eac042d1d278622a004518d2aebfbbfc6",
+        "blob": "09a340563bd51c31168737f64744393c3c680ca9",
+        "content": "sha256:4d5b4d57964b10ab9001f614fc7dfe7da82ee58a888e348f734cd37a4d15e7f2",
         "locator": {
           "kind": "file"
         }
@@ -35,8 +35,27 @@
     },
     {
       "anchor": {
-        "blob": "51b36507eadab66b0c06411c48b222e8fe69ca9c",
-        "content": "sha256:d9d834917b1639d2adc4bf3696f3621eac042d1d278622a004518d2aebfbbfc6",
+        "blob": "09a340563bd51c31168737f64744393c3c680ca9",
+        "content": "sha256:104f746a08fdcb5f2c5738145fac5bf2e54dee7e39dcfd741c1b8e755e2313e0",
+        "locator": {
+          "end": 434,
+          "kind": "line_range",
+          "start": 413
+        }
+      },
+      "id": "RLZ-AA8X6M",
+      "invariant": "INV-CKJ6AZ",
+      "origin": {
+        "handoffEntry": "MIK-R55@v1 rule 10",
+        "leaf": "260928-MIK-L54"
+      },
+      "rationale": "These producer/curator instructions state the Writer prerequisites, grouped-copy judgments, link-target recovery and rejected-workaround handling at the handoff boundary.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "09a340563bd51c31168737f64744393c3c680ca9",
+        "content": "sha256:4d5b4d57964b10ab9001f614fc7dfe7da82ee58a888e348f734cd37a4d15e7f2",
         "locator": {
           "kind": "file"
         }
@@ -52,8 +71,8 @@
     },
     {
       "anchor": {
-        "blob": "51b36507eadab66b0c06411c48b222e8fe69ca9c",
-        "content": "sha256:d9d834917b1639d2adc4bf3696f3621eac042d1d278622a004518d2aebfbbfc6",
+        "blob": "09a340563bd51c31168737f64744393c3c680ca9",
+        "content": "sha256:4d5b4d57964b10ab9001f614fc7dfe7da82ee58a888e348f734cd37a4d15e7f2",
         "locator": {
           "kind": "file"
         }
@@ -68,7 +87,7 @@
     },
     {
       "anchor": {
-        "blob": "51b36507eadab66b0c06411c48b222e8fe69ca9c",
+        "blob": "09a340563bd51c31168737f64744393c3c680ca9",
         "content": "sha256:e92c25aa9d3f4323100058f851f378da1d56344f7b7ca28691d6422e69a78616",
         "locator": {
           "end": 338,
@@ -84,6 +103,25 @@
       },
       "rationale": "This paragraph is the external-document reference shape with the retirement note beside it.",
       "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "09a340563bd51c31168737f64744393c3c680ca9",
+        "content": "sha256:104f746a08fdcb5f2c5738145fac5bf2e54dee7e39dcfd741c1b8e755e2313e0",
+        "locator": {
+          "end": 434,
+          "kind": "line_range",
+          "start": 413
+        }
+      },
+      "id": "RLZ-ZBPWGR",
+      "invariant": "INV-37TMDD",
+      "origin": {
+        "handoffEntry": "MIK-R54@v1 rule 13",
+        "leaf": "260928-MIK-L54"
+      },
+      "rationale": "These producer/curator instructions state the Writer prerequisites, grouped-copy judgments, link-target recovery and rejected-workaround handling at the handoff boundary.",
+      "role": "presentation"
     }
   ],
   "references": {
@@ -92,7 +130,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "46471ae05e047488c29a112e5a03f699ee7b9d1d",
+            "blob": "09a340563bd51c31168737f64744393c3c680ca9",
             "content": "sha256:5a2facadf1c69d4133cb376211c1fcea32e74596cf59632985f86de1f2826f43",
             "locator": {
               "end": 403,
@@ -104,7 +142,7 @@
         },
         {
           "anchor": {
-            "blob": "46471ae05e047488c29a112e5a03f699ee7b9d1d",
+            "blob": "09a340563bd51c31168737f64744393c3c680ca9",
             "content": "sha256:4b0c4cebb53d006b474ea29f2ef8f0b80abc83f18013c7bada2674298c473dab",
             "locator": {
               "end": 401,
@@ -155,12 +193,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "46471ae05e047488c29a112e5a03f699ee7b9d1d",
+            "blob": "09a340563bd51c31168737f64744393c3c680ca9",
             "content": "sha256:a33ad250e5a93cd08005a63314140fbd0850b7d84bd6544215836d0382df3079",
             "locator": {
-              "end": 736,
+              "end": 767,
               "kind": "line_range",
-              "start": 733
+              "start": 764
             }
           },
           "kind": "code"
@@ -172,12 +210,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "46471ae05e047488c29a112e5a03f699ee7b9d1d",
+            "blob": "09a340563bd51c31168737f64744393c3c680ca9",
             "content": "sha256:6df301bb935036b353d082e45430bfdf528c4c3fc62f57e7786972401e4d6427",
             "locator": {
-              "end": 697,
+              "end": 728,
               "kind": "line_range",
-              "start": 645
+              "start": 676
             }
           },
           "kind": "code"
@@ -189,12 +227,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "46471ae05e047488c29a112e5a03f699ee7b9d1d",
+            "blob": "09a340563bd51c31168737f64744393c3c680ca9",
             "content": "sha256:5fa48ffebc8ff56f025ae86c950a2599a6995ad46cfefd8a723199fb70c986d4",
             "locator": {
-              "end": 759,
+              "end": 790,
               "kind": "line_range",
-              "start": 698
+              "start": 729
             }
           },
           "kind": "code"
@@ -223,7 +261,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f5356f222b7f461ef3497e010c13dd91cd993c3e",
+            "blob": "8bae0255a0cdb444f02d53324e1e00debc2631e1",
             "content": "sha256:e5634b2fde999a70250356a80b5b8e8bfebac4a25e60d6f7c75c56d985354f01",
             "locator": {
               "kind": "symbol",
@@ -240,7 +278,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "46471ae05e047488c29a112e5a03f699ee7b9d1d",
+            "blob": "09a340563bd51c31168737f64744393c3c680ca9",
             "content": "sha256:823bf23d70ebd9920f848d6d47a43cfa86c9f1929bdc5e15ea5c07db5bfc390e",
             "locator": {
               "end": 135,
@@ -257,12 +295,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "46471ae05e047488c29a112e5a03f699ee7b9d1d",
+            "blob": "09a340563bd51c31168737f64744393c3c680ca9",
             "content": "sha256:b8d33350a2132248e847caeac2d126658047b18c6ff349b9d52534f75bef6046",
             "locator": {
-              "end": 558,
+              "end": 587,
               "kind": "line_range",
-              "start": 532
+              "start": 561
             }
           },
           "kind": "code"
@@ -274,12 +312,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "46471ae05e047488c29a112e5a03f699ee7b9d1d",
+            "blob": "09a340563bd51c31168737f64744393c3c680ca9",
             "content": "sha256:96137d335eaa252286bb312cf8e575db2b2868d5e17c9cb3a18582b613c60b01",
             "locator": {
-              "end": 641,
+              "end": 672,
               "kind": "line_range",
-              "start": 608
+              "start": 639
             }
           },
           "kind": "code"
@@ -303,12 +341,42 @@
         },
         {
           "anchor": {
-            "blob": "46471ae05e047488c29a112e5a03f699ee7b9d1d",
+            "blob": "09a340563bd51c31168737f64744393c3c680ca9",
             "content": "sha256:5e3dd9d25748e384ded43b7ccc23de82c87bfaac4a89361e2f686145be3c6cea",
             "locator": {
               "end": 370,
               "kind": "line_range",
               "start": 369
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "20": {
+      "note": "The current file-writer/worklist contract defines row admission and refusal atomicity, equal-copy grouping, link/reconsideration repairs, handles/evidence replacement, test proof locators and option-text link preservation.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "09a340563bd51c31168737f64744393c3c680ca9",
+            "content": "sha256:4d5b4d57964b10ab9001f614fc7dfe7da82ee58a888e348f734cd37a4d15e7f2",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "21": {
+      "note": "The authored source owns this contract; the distribution copy is not a separate authority.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "09a340563bd51c31168737f64744393c3c680ca9",
+            "content": "sha256:4d5b4d57964b10ab9001f614fc7dfe7da82ee58a888e348f734cd37a4d15e7f2",
+            "locator": {
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -383,7 +451,7 @@
         },
         {
           "anchor": {
-            "blob": "46471ae05e047488c29a112e5a03f699ee7b9d1d",
+            "blob": "09a340563bd51c31168737f64744393c3c680ca9",
             "content": "sha256:81ec31ab39294ef76c2a29d36ad1b64784b8e1d91f993de8326b7598644a80ca",
             "locator": {
               "end": 18,
@@ -400,12 +468,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "46471ae05e047488c29a112e5a03f699ee7b9d1d",
+            "blob": "09a340563bd51c31168737f64744393c3c680ca9",
             "content": "sha256:a937f60f51e72cd80ff44cb7b39363727e6d0f4503ebef9cf3da1679f5b29639",
             "locator": {
-              "end": 449,
+              "end": 478,
               "kind": "line_range",
-              "start": 444
+              "start": 473
             }
           },
           "kind": "code"
@@ -446,12 +514,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "46471ae05e047488c29a112e5a03f699ee7b9d1d",
+            "blob": "09a340563bd51c31168737f64744393c3c680ca9",
             "content": "sha256:6c149f9e6175f0e6d63518b77bbfd86c24c1f92468ee2d7f257e20648424b556",
             "locator": {
-              "end": 569,
+              "end": 598,
               "kind": "line_range",
-              "start": 559
+              "start": 588
             }
           },
           "kind": "code"

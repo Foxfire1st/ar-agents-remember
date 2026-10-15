@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "3d54f0350a8a448446781db394843bad9a2f8ab9",
+        "blob": "87b72cdc7d6d88d7c19f034525f308e405d909d7",
         "content": "sha256:7d8d0418c163fc59ff2fcd6399c1d99cd6d6c1440e2761c31cbd1578985e9604",
         "locator": {
           "end": 509,
@@ -22,7 +22,7 @@
     },
     {
       "anchor": {
-        "blob": "3d54f0350a8a448446781db394843bad9a2f8ab9",
+        "blob": "87b72cdc7d6d88d7c19f034525f308e405d909d7",
         "content": "sha256:7d8d0418c163fc59ff2fcd6399c1d99cd6d6c1440e2761c31cbd1578985e9604",
         "locator": {
           "end": 509,
@@ -52,6 +52,21 @@
               "end": 248,
               "kind": "line_range",
               "start": 236
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "The authored source owns this contract; the distribution copy is not a separate authority.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "87b72cdc7d6d88d7c19f034525f308e405d909d7",
+            "content": "sha256:1bd52e962a40fe69d83161dfbae3966eccf3e9406d98f654f3ecdadcb9d925d9",
+            "locator": {
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -173,6 +188,21 @@
               "kind": "file"
             },
             "path": "mcp/src/agents_remember/package_data/runtime/skills/c-09-git-worktree-manager/SKILL.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "Finalizer edge reconciliation no longer advertises the removed standalone/no-parent support sentence.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "87b72cdc7d6d88d7c19f034525f308e405d909d7",
+            "content": "sha256:1bd52e962a40fe69d83161dfbae3966eccf3e9406d98f654f3ecdadcb9d925d9",
+            "locator": {
+              "kind": "file"
+            }
           },
           "kind": "code"
         }

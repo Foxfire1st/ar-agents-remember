@@ -9,6 +9,23 @@
           "kind": "file"
         }
       },
+      "id": "RLZ-1AP8C0",
+      "invariant": "INV-NNQR91",
+      "origin": {
+        "handoffEntry": "L54-hidden-implementation-custody",
+        "leaf": "260928-MIK-L54"
+      },
+      "rationale": "This canonical implementation operation supplies the instructions that the shipped implementation copies propagate; those copies set no role, task or permission authority of their own. Under the architect amendment, this new L54 realization carries the propagation knowledge of these unchanged hidden realizations, not their IDs or physical anchors: RLZ-E1C26B sidecar SHA-256 5e70efce5aff15952b3b96082c98a056930b14d4f5780cd83495c2ff87ee706f (.agents); RLZ-JH0W86 sidecar SHA-256 27fa4d33fcb0c0a433f1fdebec3223e4040eaf9f8328b233fda2f6cdfa67fc70 (.claude); RLZ-HZ0DVG sidecar SHA-256 94d7ce67ca908fd5336f60df4b71e74cfc1d509b87129af3741024f900d27cd3 (.codex); RLZ-EAH82E sidecar SHA-256 1c343bd3dbdf52026a7acebbe0137323d5b5ffd681c70759bd991ebbdf4f77cd (.cursor); RLZ-TS8W18 sidecar SHA-256 5696eb7772773c1e03f3e342499295146abd5e631b1aede40d4b36213ff97d9c (.github-vscode); RLZ-N3YQKG sidecar SHA-256 4138bb1af976339ae7e0e9314d3a81d0116031a0a03e3b2d4a0492e4d4301197 (.hermes); RLZ-SK1Q22 sidecar SHA-256 2a0f46630a753a3416c62abf154b40819b4da510e2a06230d1af40d35c41521a (.openclaw); RLZ-QHEMWS sidecar SHA-256 4374c09ef2a8894d89d8a26f80ba6dacd9521338ca06eab046ec3f4d6571ca7d (.pi). The eight original entries remain byte-identical; this entry is not a relocation or recreation of any of them.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "679a69b6f6ff4ae1a3b8e536d652b10a633a528e",
+        "content": "sha256:031dcb463d498b130a83c3171f643221a0f3bd58715a3d05b421cb0f007c8047",
+        "locator": {
+          "kind": "file"
+        }
+      },
       "id": "RLZ-7KXE63",
       "invariant": "INV-7E3JNX",
       "origin": {
@@ -74,6 +91,21 @@
           "anchor": {
             "blob": "e6bcf39593af90a465bc58c35f1984b15a526c57",
             "content": "sha256:63966f547f9741626f1b98374d6ce9b4cd7e7418ecf1d66477f4574050745f89",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The authored source owns this contract; the distribution copy is not a separate authority.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "679a69b6f6ff4ae1a3b8e536d652b10a633a528e",
+            "content": "sha256:031dcb463d498b130a83c3171f643221a0f3bd58715a3d05b421cb0f007c8047",
             "locator": {
               "kind": "file"
             }

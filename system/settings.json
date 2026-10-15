@@ -13,7 +13,7 @@
           "examples/mcp/**",
           "installer/**",
           "mcp/**",
-          "runtime/**",
+          "skills/**",
           "scripts/**"
         ],
         "fileTypes": [
@@ -41,6 +41,7 @@
           "benchmarks/workspaces/**",
           "mcp/src/agents_remember/package_data/benchmarks/**",
           "mcp/src/agents_remember/package_data/dashboard/**",
+          "mcp/src/agents_remember/package_data/runtime/skills/**",
           "node_modules/**",
           "vendor/**",
           "dist/**",

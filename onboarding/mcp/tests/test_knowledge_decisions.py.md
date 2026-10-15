@@ -61,6 +61,8 @@ change; it runs in the `unit-regression` lane (`test-evidence-lanes.toml`).
 
 None recorded.
 
+The alternative-reordering case compares against the before tree: reconsideration links whose indices follow the exact old option text yield no `R14` finding, while a deliberately wrong index yields an `R14` finding. `_found(..., "R14")` scopes this comparison; it does not assert that every validator rule passes or run a test here.
+
 ## Evidence
 
 ### Docs References
@@ -98,3 +100,5 @@ No cross-repo boundary is crossed by this file.
 - `test_a_decision_that_governs_nothing_is_refused` expects `report.ok == False` and `R13.3-governs` with `report_only == False`. [8]
 - A decision is never an export (review F6): the forged legacy case expects both new-record and legacy-unassessed admission refusals. [11]
 - Current source delta inspected statically: Fix owning-rule filtering, governs refusal and dual legacy refusals, including renamed captions; retain derived-status and endpoint boundaries. [13]
+
+- Reordering preserves option-text identity for reconsideration links, with an independently misbound-index control; the assertions filter R14. [14]

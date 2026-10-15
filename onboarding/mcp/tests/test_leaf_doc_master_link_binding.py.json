@@ -7,7 +7,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b0e8e37b60f990909ef75529057be910926bf6a0",
+            "blob": "4b7b032032dc3795f44c8326828808db69738894",
             "content": "sha256:a3e17e34c7533414ff77a0a063b9d12c2486a1c8317c09a1ad07786663e89891",
             "locator": {
               "kind": "symbol",
@@ -23,7 +23,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b0e8e37b60f990909ef75529057be910926bf6a0",
+            "blob": "4b7b032032dc3795f44c8326828808db69738894",
             "content": "sha256:14ad26c78eee8aa35b72079cd0a8f38cf0b9a81fda210b17f5895e199b75fa0b",
             "locator": {
               "kind": "symbol",
@@ -39,7 +39,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b0e8e37b60f990909ef75529057be910926bf6a0",
+            "blob": "4b7b032032dc3795f44c8326828808db69738894",
             "content": "sha256:770c686c79c2d48e58b05719976b3e49c1d1e97998822bbef555f197c66b0f9d",
             "locator": {
               "kind": "symbol",
@@ -51,15 +51,16 @@
       ]
     },
     "19": {
-      "note": "Leaf with no master document refused with remedy, nothing written",
+      "note": "Explicit master=None refuses with the exact master-required message and leaves all task JSON/Markdown and master/leaf paths absent.",
       "targets": [
         {
           "anchor": {
-            "blob": "b0e8e37b60f990909ef75529057be910926bf6a0",
-            "content": "sha256:13897a1ebfcea415f70f0abf3c6df92052cc00fe50c0a4e234c3150b08114950",
+            "blob": "4b7b032032dc3795f44c8326828808db69738894",
+            "content": "sha256:f0b94f939f3f2767e8bbf2d2426bd3638ef5102aad097cad71ea8d861a8d1ffb",
             "locator": {
-              "kind": "symbol",
-              "name": "test_authoring_a_leaf_with_no_master_document_is_refused_with_its_remedy"
+              "end": 250,
+              "kind": "line_range",
+              "start": 235
             }
           },
           "kind": "test"
@@ -71,7 +72,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b0e8e37b60f990909ef75529057be910926bf6a0",
+            "blob": "4b7b032032dc3795f44c8326828808db69738894",
             "content": "sha256:3b63c0044428e340e875126d98ac86cbdd1b6800ba45726b3c3ba25522a35f48",
             "locator": {
               "kind": "symbol",

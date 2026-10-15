@@ -1,0 +1,211 @@
+{
+  "path": "skills/c-04-retrieval-strategy-router/SKILL.md",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Authored identity and retrieval-contract-first purpose\n\nAnchor: \"# c-04-retrieval-strategy-router Retrieval Strategy Router\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c4b8e1c904ac33eee8cefc18a6449f9ef43e381b",
+            "content": "sha256:27e704fb265a03f2612556efcd494950a36de4d16535c52e2ebca85875784bac",
+            "locator": {
+              "end": 11,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "Bounded knowledge_read continuation and refusals\n\nAnchor: \"**Follow a bounded page through `knowledge_read`.** The whole knowledge block is cut to one\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c4b8e1c904ac33eee8cefc18a6449f9ef43e381b",
+            "content": "sha256:6ef285f8355938368e7d789bddb6126065c7d15c5e6d55a27c8bd2ee3492a0d8",
+            "locator": {
+              "end": 250,
+              "kind": "line_range",
+              "start": 224
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "Memory tree requirement and no substituted dataset\n\nAnchor: \"**`knowledge_read` reads a memory tree, never a database.** Its `memoryRoot` names a converted\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c4b8e1c904ac33eee8cefc18a6449f9ef43e381b",
+            "content": "sha256:8219b6106427ab5aec9f7ee745892cb760827f5981c17270b704a3c9e1b69899",
+            "locator": {
+              "end": 258,
+              "kind": "line_range",
+              "start": 251
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "Generated index coverage and source-read permission\n\nAnchor: \"## Route Index Semantics\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c4b8e1c904ac33eee8cefc18a6449f9ef43e381b",
+            "content": "sha256:25dafd1d62944c5e0729d8a899e4a8bdc50f736a45c48b70250bdfe273a95535",
+            "locator": {
+              "end": 267,
+              "kind": "line_range",
+              "start": 259
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Substrate labels, retirement and introductory tension\n\nAnchor: \"## Retrieval Substrates\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c4b8e1c904ac33eee8cefc18a6449f9ef43e381b",
+            "content": "sha256:7b1dd401ed733cddf4e2efbc8d481608375855a763df4b813482d7504338362e",
+            "locator": {
+              "end": 29,
+              "kind": "line_range",
+              "start": 12
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Retired GrepAI route and synthetic catalog examples\n\nAnchor: \"## Semantics: GrepAI (retired)\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c4b8e1c904ac33eee8cefc18a6449f9ef43e381b",
+            "content": "sha256:e5fa5f75a89ddb703c68ef60aecdb74642450c4580f29f58acc4dec4f65c7701",
+            "locator": {
+              "end": 72,
+              "kind": "line_range",
+              "start": 30
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Retired relationship route, synthetic shapes and native search\n\nAnchor: \"## Relationship: CodeGraphContext (retired)\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c4b8e1c904ac33eee8cefc18a6449f9ef43e381b",
+            "content": "sha256:a96fd86e2a1de22809d7b776780dfe50e4eee6cda1bc45e65733c8078dba17b5",
+            "locator": {
+              "end": 120,
+              "kind": "line_range",
+              "start": 73
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Location-only read_ar_files and argument refusals\n\nAnchor: \"## Intent: Onboarding And Source\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c4b8e1c904ac33eee8cefc18a6449f9ef43e381b",
+            "content": "sha256:4e7309921a5557fb1898dd9faefb9885f073b870a4e0921dc083eb56cd7a1755",
+            "locator": {
+              "end": 139,
+              "kind": "line_range",
+              "start": 121
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Bounded route confirmation and native research reads\n\nAnchor: \"### Rules:\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c4b8e1c904ac33eee8cefc18a6449f9ef43e381b",
+            "content": "sha256:f0a015b9254b8178c2a6b28b597a30548789ac7fc31386f170dbbeb909f0e2f0",
+            "locator": {
+              "end": 171,
+              "kind": "line_range",
+              "start": 140
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "Recorded text, derived index and exact memory-root scope\n\nAnchor: \"## Recorded Intent Before Planning\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c4b8e1c904ac33eee8cefc18a6449f9ef43e381b",
+            "content": "sha256:b6c026235f185e3e9e54f6602cd3d6d071446c6f7f433f5a66c5c6214f216977",
+            "locator": {
+              "end": 193,
+              "kind": "line_range",
+              "start": 172
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "Named records, legacy format and seed absences\n\nAnchor: \"A `knowledge_read` answer names records; it does not carry them. A row holds the\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c4b8e1c904ac33eee8cefc18a6449f9ef43e381b",
+            "content": "sha256:ec8c0346cce5ce605e1c1eb4962033196e70aaffbda38249d23bbae8a8947669",
+            "locator": {
+              "end": 213,
+              "kind": "line_range",
+              "start": 194
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "Family-complete source context and chain expansion\n\nAnchor: \"**A path is read family-complete.** `knowledge_read` with `view:\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c4b8e1c904ac33eee8cefc18a6449f9ef43e381b",
+            "content": "sha256:2983f08f6cc7261e51a8567731704e619680ab3fdd50c424024ebd62ef48612f",
+            "locator": {
+              "end": 223,
+              "kind": "line_range",
+              "start": 214
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

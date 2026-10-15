@@ -16,7 +16,7 @@
 - `is_knowledge_path` adds the `knowledge/` or `onboarding/` prefix.
 - `knowledge_tree_from_directory` walks both roots with `os.walk`, pruning dot directories, and reads each file's bytes.
 - `knowledge_tree_from_git` resolves the tree-ish with `rev-parse --verify`, lists regular files (`100644`/`100755` blobs) from `read_git_tree_bytes`, and reads all wanted blobs through one `kernel.git_command.read_git_blobs_bytes` call, so the bytes are exact: no decoding and no newline normalisation.
-- `code_tree_from_git` returns a `CodePathSet` of every regular file path; `CodeDirectory` answers `has_file` from a working tree.
+- `code_tree_from_git` returns a `CodePathSet` of regular Git paths. The standalone working-tree validator uses `code_tree_from_working_directory`: Git cached and ordinary untracked, nonignored paths filtered to current regular non-symlink files. The separate raw `CodeDirectory` answers direct filesystem `has_file`; it is not this Git-visible input owner.
 - `has_directory` (MIK-R04): `CodePathSet` derives a cached `directories` set, every directory that holds a file of the set at any depth, and answers the root route `.` (`ROOT_ROUTE_PATH`) as always present; `CodeDirectory` answers with `is_dir()`, which also holds for `.`. The empty string and a file path are not directories.
 - A tree-ish that names no tree raises `KnowledgeTreeReadError` (a `ValueError`).
 - `history_tree_from_git(repository, treeish)` (L37) reads only the files under `knowledge/history/` of a commit
@@ -38,6 +38,8 @@
 ### Todos
 
 None recorded.
+
+The Git-visible working-directory reader raises `KnowledgeTreeReadError` when `git ls-files -z --cached --others --exclude-standard` cannot list the input. It includes ordinary untracked regular files but excludes ignored paths, missing paths and symbolic links before deriving `CodePathSet` directories. The historical raw-filesystem/Git disagreement remains a distinction between those separate readers, not the present standalone command's policy.
 
 ## Evidence
 
@@ -72,3 +74,5 @@ The predicate, the tree types and the two readers.
 No meaningful cross-repo references found: the validator reads one memory tree and one paired code tree, both addressed explicitly by the caller.
 
 No cross-repo boundary is crossed by this file.
+
+- The working-directory validator input is Git-visible current regular non-symlink files, with named listing failure. [11]

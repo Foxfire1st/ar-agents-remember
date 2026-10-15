@@ -6,12 +6,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7e8a73012173042fb82eb5a6f60853318fc44500",
+            "blob": "87b72cdc7d6d88d7c19f034525f308e405d909d7",
             "content": "sha256:82d0fd9f8f537fdac3fe8427bc641eefa44a343d32eab17bec79404a7f06122e",
             "locator": {
-              "end": 271,
+              "end": 267,
               "kind": "line_range",
-              "start": 245
+              "start": 241
             },
             "path": "skills/c-09-git-worktree-manager/SKILL.md"
           },
@@ -111,12 +111,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5f33ff79cde087bea8dd9d8ebc62a85698440f9a",
+            "blob": "8f6b96ed31a33286bcba19bf09f15947e6fa94ac",
             "content": "sha256:3739c8eb8b8c920c2fa64b55b8bb414ebef6df5721223fd03aa969a0a5e69d6a",
             "locator": {
-              "end": 700,
+              "end": 717,
               "kind": "line_range",
-              "start": 674
+              "start": 691
             },
             "path": "mcp/src/agents_remember/application/memory_quality/controller.py"
           },
@@ -129,12 +129,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7e8a73012173042fb82eb5a6f60853318fc44500",
+            "blob": "87b72cdc7d6d88d7c19f034525f308e405d909d7",
             "content": "sha256:332ff661c33ba89aaa1fe379ab5d78267416ad499f14645aa514cf2f4a18b190",
             "locator": {
-              "end": 410,
+              "end": 406,
               "kind": "line_range",
-              "start": 410
+              "start": 406
             },
             "path": "skills/c-09-git-worktree-manager/SKILL.md"
           },
@@ -142,12 +142,12 @@
         },
         {
           "anchor": {
-            "blob": "7e8a73012173042fb82eb5a6f60853318fc44500",
+            "blob": "87b72cdc7d6d88d7c19f034525f308e405d909d7",
             "content": "sha256:9ffec959ba59abc1da65b6d90b974b0497386a48bcb6115a9a892a9f71ecdb2c",
             "locator": {
-              "end": 414,
+              "end": 410,
               "kind": "line_range",
-              "start": 411
+              "start": 407
             },
             "path": "skills/c-09-git-worktree-manager/SKILL.md"
           },
@@ -181,12 +181,12 @@
         },
         {
           "anchor": {
-            "blob": "7e8a73012173042fb82eb5a6f60853318fc44500",
+            "blob": "87b72cdc7d6d88d7c19f034525f308e405d909d7",
             "content": "sha256:7048976298d0134230d7648bf6677ffd7618c0c9f647accd97ca8f083a74b32f",
             "locator": {
-              "end": 412,
+              "end": 408,
               "kind": "line_range",
-              "start": 412
+              "start": 408
             },
             "path": "skills/c-09-git-worktree-manager/SKILL.md"
           },
@@ -207,12 +207,12 @@
         },
         {
           "anchor": {
-            "blob": "7e8a73012173042fb82eb5a6f60853318fc44500",
+            "blob": "87b72cdc7d6d88d7c19f034525f308e405d909d7",
             "content": "sha256:f0e198b639ac008cd0ffa02f0658249bde5b7ecf82583e564079121036e2f851",
             "locator": {
-              "end": 419,
+              "end": 415,
               "kind": "line_range",
-              "start": 419
+              "start": 415
             },
             "path": "skills/c-09-git-worktree-manager/SKILL.md"
           },
@@ -342,14 +342,14 @@
       ]
     },
     "7": {
-      "note": "Finalization derives the immediate parent row while preserving identity assertions and standalone behavior.",
+      "note": "Finalization preserves immediate-parent identity assertions and nonterminal cleanup boundaries; actual leaf target resolution now refuses missing master/row authority instead of standalone completion.",
       "targets": [
         {
           "anchor": {
-            "blob": "7e8a73012173042fb82eb5a6f60853318fc44500",
-            "content": "sha256:c6e72960e0a1a170399bd784eeadc15a7c60ad7af6b4c7df51d972a4645d89dc",
+            "blob": "87b72cdc7d6d88d7c19f034525f308e405d909d7",
+            "content": "sha256:6fb6d1ed99d4f8cbe719b39c8adcdc7c23af3bded2444ec17da578119bdaef9d",
             "locator": {
-              "end": 545,
+              "end": 549,
               "kind": "line_range",
               "start": 538
             },
@@ -359,12 +359,12 @@
         },
         {
           "anchor": {
-            "blob": "e39d70ff98455855cf4ff91e31535253c13ba185",
-            "content": "sha256:daeb8b274807f0646d343ba9162bd8d34419dfa5b67acfd7586e06863cbe7935",
+            "blob": "f20e2bdd349f2d6f8d541fd954bb6cb6f6028ade",
+            "content": "sha256:4357c9332bc368600523e68b45bd67bec7d54f4a8ecb52de5c90b49808bc6bc0",
             "locator": {
-              "end": 245,
+              "end": 189,
               "kind": "line_range",
-              "start": 114
+              "start": 113
             },
             "path": "mcp/src/agents_remember/worktrees/modules/finalize_task_documents.py"
           },
@@ -372,27 +372,14 @@
         },
         {
           "anchor": {
-            "blob": "55abfd6f453d2c1fd50283bd978936948b9367b2",
-            "content": "sha256:b71097f7db9038140b56ed2d23976c5a1d5c73fdf20acbc9a80f91d78a42e5a5",
+            "blob": "6a9f8b91641c869b1c20b3bcf11d566744f94855",
+            "content": "sha256:96671ed994257a3923b79e9c35e5009a7c8acac5ce32657d139952b9bb364a38",
             "locator": {
               "end": 190,
               "kind": "line_range",
               "start": 172
             },
             "path": "mcp/src/agents_remember/tasks/master_sync.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "7e8a73012173042fb82eb5a6f60853318fc44500",
-            "content": "sha256:fb1a49c58ea78db371cdb211f7b14837b96069d91c3d0ccb64a110c51a063198",
-            "locator": {
-              "end": 549,
-              "kind": "line_range",
-              "start": 542
-            },
-            "path": "skills/c-09-git-worktree-manager/SKILL.md"
           },
           "kind": "code"
         }
@@ -403,12 +390,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7e8a73012173042fb82eb5a6f60853318fc44500",
+            "blob": "87b72cdc7d6d88d7c19f034525f308e405d909d7",
             "content": "sha256:0008ee3dbb4d86240f9537a4ee9e91a2c572ce00e8f4cf956eded8e08bfaa3eb",
             "locator": {
-              "end": 366,
+              "end": 362,
               "kind": "line_range",
-              "start": 355
+              "start": 351
             },
             "path": "skills/c-09-git-worktree-manager/SKILL.md"
           },
@@ -416,12 +403,12 @@
         },
         {
           "anchor": {
-            "blob": "7e8a73012173042fb82eb5a6f60853318fc44500",
+            "blob": "87b72cdc7d6d88d7c19f034525f308e405d909d7",
             "content": "sha256:9bdc0eb88e9edc71f26cf369cbcb2f41cd5e9e3fb605ac05c0fa40f608018444",
             "locator": {
-              "end": 368,
+              "end": 364,
               "kind": "line_range",
-              "start": 358
+              "start": 354
             },
             "path": "skills/c-09-git-worktree-manager/SKILL.md"
           },

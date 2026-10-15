@@ -837,15 +837,16 @@
       ]
     },
     "4": {
-      "note": "Parent resolution dispatches on the leaf's `master`: named, folder, or standalone.",
+      "note": "Parent resolution validates the named or exact folder master and refuses a missing leaf, master or matching row; standalone completion is not an admitted fallback.",
       "targets": [
         {
           "anchor": {
-            "blob": "47c3c6c1197098901dd9e1a004bd32a2c2617454",
-            "content": "sha256:c8c988d7e04421d3e7aaefade1ae1b426920b034706406b43892eeb448465447",
+            "blob": "f20e2bdd349f2d6f8d541fd954bb6cb6f6028ade",
+            "content": "sha256:4357c9332bc368600523e68b45bd67bec7d54f4a8ecb52de5c90b49808bc6bc0",
             "locator": {
-              "kind": "symbol",
-              "name": "_resolve_parent_target"
+              "end": 189,
+              "kind": "line_range",
+              "start": 113
             },
             "path": "mcp/src/agents_remember/worktrees/modules/finalize_task_documents.py"
           },
@@ -1270,7 +1271,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "47c3c6c1197098901dd9e1a004bd32a2c2617454",
+            "blob": "f20e2bdd349f2d6f8d541fd954bb6cb6f6028ade",
             "content": "sha256:7d4c6ee97430b57346fc185cd3dea13cabe9347e22dbac95ac14c9b07bbc5aab",
             "locator": {
               "kind": "symbol",
@@ -1287,7 +1288,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "47c3c6c1197098901dd9e1a004bd32a2c2617454",
+            "blob": "f20e2bdd349f2d6f8d541fd954bb6cb6f6028ade",
             "content": "sha256:a9612950fd7b574d7294aca3085b559985ab520d4b3a1021b85b9f77dcb18833",
             "locator": {
               "kind": "symbol",
@@ -1299,7 +1300,7 @@
         },
         {
           "anchor": {
-            "blob": "47c3c6c1197098901dd9e1a004bd32a2c2617454",
+            "blob": "f20e2bdd349f2d6f8d541fd954bb6cb6f6028ade",
             "content": "sha256:7b08e7624c9f3038b0ce0b3f3a269f33d9744b1da922f2ba16c6ffac63b0ef98",
             "locator": {
               "kind": "symbol",
@@ -1510,7 +1511,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f7d38c229865151d2aeba56c56b61c5a8acac3a2",
+            "blob": "0921ffa900bd3bbaa170662ce74d5914de793998",
             "content": "sha256:5ecf83f1fb20831569b9427c6731c96c37511d1227c1eedcd326338117158004",
             "locator": {
               "kind": "symbol",
@@ -1874,7 +1875,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f7d38c229865151d2aeba56c56b61c5a8acac3a2",
+            "blob": "0921ffa900bd3bbaa170662ce74d5914de793998",
             "content": "sha256:d66d39a651167b84b8fe02bbb6b7e79f2d243e760bacdaf162f56d2f4a3df85f",
             "locator": {
               "end": 222,
@@ -1892,7 +1893,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f7d38c229865151d2aeba56c56b61c5a8acac3a2",
+            "blob": "0921ffa900bd3bbaa170662ce74d5914de793998",
             "content": "sha256:6e84a85e25e251079015d419f87e3bd57925eea2ebb80f8ff107f6d81499f538",
             "locator": {
               "end": 492,

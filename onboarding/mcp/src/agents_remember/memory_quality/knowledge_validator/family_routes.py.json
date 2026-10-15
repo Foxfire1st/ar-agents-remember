@@ -1,13 +1,32 @@
 {
   "path": "mcp/src/agents_remember/memory_quality/knowledge_validator/family_routes.py",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "b221b8b684176f86cf5b09cb168417670aac51dd",
+        "content": "sha256:5109bb53ad40c091de3971f1a83996c8cc82a565294cafa3ee7c1af497aed6d6",
+        "locator": {
+          "kind": "symbol",
+          "name": "family_route_states"
+        }
+      },
+      "id": "RLZ-2BWJTH",
+      "invariant": "INV-E34MWM",
+      "origin": {
+        "handoffEntry": "L54-curator-MIK-R54-v1-rule-12-actual-guards",
+        "leaf": "260928-MIK-L54"
+      },
+      "rationale": "One parsed-tree pass derives each family state over one shared realization-location population.",
+      "role": "enforcement"
+    }
+  ],
   "references": {
     "1": {
       "note": "Realization entries only, located by the source path of their sidecar.",
       "targets": [
         {
           "anchor": {
-            "blob": "d0797f106a6adbf934d7c614ae2b3f1ebe000070",
+            "blob": "b221b8b684176f86cf5b09cb168417670aac51dd",
             "content": "sha256:e501ef8eca946884b967aeef4ad468a4d485daaf82fad418b09e6c9d1a772b60",
             "locator": {
               "kind": "symbol",
@@ -18,12 +37,42 @@
         }
       ]
     },
+    "10": {
+      "note": "The parsed-tree family-state population is shared by the validation context.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b221b8b684176f86cf5b09cb168417670aac51dd",
+            "content": "sha256:5109bb53ad40c091de3971f1a83996c8cc82a565294cafa3ee7c1af497aed6d6",
+            "locator": {
+              "end": 85,
+              "kind": "line_range",
+              "start": 79
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6cf0f93cec095913e9f6675b6797d147529e4399",
+            "content": "sha256:7125e20d99bb9225284b6e0133bc9223412fbedf611bf090303593fd9b751937",
+            "locator": {
+              "end": 343,
+              "kind": "line_range",
+              "start": 341
+            },
+            "path": "mcp/src/agents_remember/memory_quality/knowledge_validator/registry.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
     "2": {
       "note": "A route covers a path by prefix; the root route covers every path.",
       "targets": [
         {
           "anchor": {
-            "blob": "d0797f106a6adbf934d7c614ae2b3f1ebe000070",
+            "blob": "b221b8b684176f86cf5b09cb168417670aac51dd",
             "content": "sha256:de5df6ee0885c4e5e60773aab7e655ff887e07de688719cfc20b76c51c5b0bea",
             "locator": {
               "kind": "symbol",
@@ -39,48 +88,48 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d0797f106a6adbf934d7c614ae2b3f1ebe000070",
+            "blob": "b221b8b684176f86cf5b09cb168417670aac51dd",
             "content": "sha256:b53e193a1b2a4c8e2837700cf090da1cd9bc951124e0b6879ee9e6c843855375",
             "locator": {
-              "end": 133,
+              "end": 154,
               "kind": "line_range",
-              "start": 74
+              "start": 95
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "d0797f106a6adbf934d7c614ae2b3f1ebe000070",
+            "blob": "b221b8b684176f86cf5b09cb168417670aac51dd",
             "content": "sha256:261d47704476fd97f63d9a30c59d5ae33591bd3a11346ae580a2a6588d2b552c",
             "locator": {
-              "end": 142,
+              "end": 163,
               "kind": "line_range",
-              "start": 136
+              "start": 157
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "d0797f106a6adbf934d7c614ae2b3f1ebe000070",
+            "blob": "b221b8b684176f86cf5b09cb168417670aac51dd",
             "content": "sha256:9ddbe79bd1e8dce54b465d9d7c13d6d970c97a33ee8fea8ab8ebe2565a0975b3",
             "locator": {
-              "end": 102,
+              "end": 123,
               "kind": "line_range",
-              "start": 97
+              "start": 118
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "f4f01e33d7dba1e181a71547c0f557e322079cf1",
+            "blob": "9d0fd44f3dd129ddde8d51e1df229c8c44f0e57a",
             "content": "sha256:d17bb217645444e7c651d0eed52d76731d2f587a1d421eafcc2d963d0aa32b3a",
             "locator": {
-              "end": 260,
+              "end": 272,
               "kind": "line_range",
-              "start": 257
+              "start": 269
             },
             "path": "mcp/src/agents_remember/memory_quality/knowledge_validator/rules_routes.py"
           },
@@ -88,12 +137,12 @@
         },
         {
           "anchor": {
-            "blob": "f4f01e33d7dba1e181a71547c0f557e322079cf1",
+            "blob": "9d0fd44f3dd129ddde8d51e1df229c8c44f0e57a",
             "content": "sha256:7698f6c51d0c0ccff1ed5da4f4a10f6ca99e460bb0c56a103fdbbcf27d92fcee",
             "locator": {
-              "end": 268,
+              "end": 280,
               "kind": "line_range",
-              "start": 266
+              "start": 278
             },
             "path": "mcp/src/agents_remember/memory_quality/knowledge_validator/rules_routes.py"
           },
@@ -101,12 +150,12 @@
         },
         {
           "anchor": {
-            "blob": "7778e9e7bc24dc8ed3dc6acf189a8df1730198f7",
+            "blob": "6cf0f93cec095913e9f6675b6797d147529e4399",
             "content": "sha256:10218b33e05bf7ab99e80324d417b69bce0e539dccb6487a7a8619f49fedf582",
             "locator": {
-              "end": 281,
+              "end": 286,
               "kind": "line_range",
-              "start": 279
+              "start": 284
             },
             "path": "mcp/src/agents_remember/memory_quality/knowledge_validator/registry.py"
           },
@@ -119,7 +168,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d0797f106a6adbf934d7c614ae2b3f1ebe000070",
+            "blob": "b221b8b684176f86cf5b09cb168417670aac51dd",
             "content": "sha256:7d84ba2d035e97ccd7dc02adf9cb72f6358fdccbd98f0e89c8483f4d007b9365",
             "locator": {
               "kind": "symbol",
@@ -135,7 +184,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d0797f106a6adbf934d7c614ae2b3f1ebe000070",
+            "blob": "b221b8b684176f86cf5b09cb168417670aac51dd",
             "content": "sha256:3156208347c5e5a75ead7909f547899bf22d0d0cb5c39c9e747866c8f548572c",
             "locator": {
               "kind": "symbol",
@@ -146,7 +195,7 @@
         },
         {
           "anchor": {
-            "blob": "d0797f106a6adbf934d7c614ae2b3f1ebe000070",
+            "blob": "b221b8b684176f86cf5b09cb168417670aac51dd",
             "content": "sha256:bcb7b880dec6cc9e7309971a5499152bc9d5132a8287a5ed61761e529e836eb1",
             "locator": {
               "kind": "symbol",
@@ -162,7 +211,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d0797f106a6adbf934d7c614ae2b3f1ebe000070",
+            "blob": "b221b8b684176f86cf5b09cb168417670aac51dd",
             "content": "sha256:0927c7bfe5b8aaa761be4589a50be648765e5319743f86bb094eb4e21f983c55",
             "locator": {
               "kind": "symbol",
@@ -173,7 +222,7 @@
         },
         {
           "anchor": {
-            "blob": "d0797f106a6adbf934d7c614ae2b3f1ebe000070",
+            "blob": "b221b8b684176f86cf5b09cb168417670aac51dd",
             "content": "sha256:7a1816820ef0e0783b6cb56a68dd69ea4fbe11912ea631ac1a78170be7fb83ce",
             "locator": {
               "kind": "symbol",
@@ -189,7 +238,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5948d7ddee2e7e9928efcd70ae185e877aca47dd",
+            "blob": "2b48e8684df88aa39e033120aedd762f0377f38a",
             "content": "sha256:179ceb8134cabf43d84be6d3783383764d753d9dcf47ef3a3c0b6b35264fd53a",
             "locator": {
               "kind": "symbol",
@@ -206,7 +255,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5948d7ddee2e7e9928efcd70ae185e877aca47dd",
+            "blob": "2b48e8684df88aa39e033120aedd762f0377f38a",
             "content": "sha256:b3f706eca8b98d81b06e4937e1724c566a432301cfa0b4f4077212df485d2d90",
             "locator": {
               "kind": "symbol",
@@ -223,24 +272,24 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d0797f106a6adbf934d7c614ae2b3f1ebe000070",
+            "blob": "b221b8b684176f86cf5b09cb168417670aac51dd",
             "content": "sha256:9ddbe79bd1e8dce54b465d9d7c13d6d970c97a33ee8fea8ab8ebe2565a0975b3",
             "locator": {
-              "end": 102,
+              "end": 123,
               "kind": "line_range",
-              "start": 97
+              "start": 118
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "f4f01e33d7dba1e181a71547c0f557e322079cf1",
+            "blob": "9d0fd44f3dd129ddde8d51e1df229c8c44f0e57a",
             "content": "sha256:d17bb217645444e7c651d0eed52d76731d2f587a1d421eafcc2d963d0aa32b3a",
             "locator": {
-              "end": 260,
+              "end": 272,
               "kind": "line_range",
-              "start": 257
+              "start": 269
             },
             "path": "mcp/src/agents_remember/memory_quality/knowledge_validator/rules_routes.py"
           },
@@ -248,12 +297,12 @@
         },
         {
           "anchor": {
-            "blob": "f4f01e33d7dba1e181a71547c0f557e322079cf1",
+            "blob": "9d0fd44f3dd129ddde8d51e1df229c8c44f0e57a",
             "content": "sha256:7698f6c51d0c0ccff1ed5da4f4a10f6ca99e460bb0c56a103fdbbcf27d92fcee",
             "locator": {
-              "end": 268,
+              "end": 280,
               "kind": "line_range",
-              "start": 266
+              "start": 278
             },
             "path": "mcp/src/agents_remember/memory_quality/knowledge_validator/rules_routes.py"
           },
@@ -261,12 +310,12 @@
         },
         {
           "anchor": {
-            "blob": "7778e9e7bc24dc8ed3dc6acf189a8df1730198f7",
+            "blob": "6cf0f93cec095913e9f6675b6797d147529e4399",
             "content": "sha256:10218b33e05bf7ab99e80324d417b69bce0e539dccb6487a7a8619f49fedf582",
             "locator": {
-              "end": 281,
+              "end": 286,
               "kind": "line_range",
-              "start": 279
+              "start": 284
             },
             "path": "mcp/src/agents_remember/memory_quality/knowledge_validator/registry.py"
           },

@@ -7,7 +7,7 @@
 ## Purpose
 
 **MIK-R12: the curator writer creates and updates every knowledge kind as validated files.** Registered
-in the `unit-regression` lane; 23 test functions, each over real Git repositories.
+in the `unit-regression` lane, using real Git repository fixtures. This card records current source assertions, not a Curator test execution or a fresh case-count grade.
 
 ## Code Commentary
 
@@ -42,7 +42,7 @@ in the `unit-regression` lane; 23 test functions, each over real Git repositorie
   prepares the destination Markdown before ingestion. A new sidecar without its card is new
   migration debt and refuses immediately, so relocation cannot rely on permanent report-only
   debt. The fixture preparation is not broader writer acceptance. An
-  `extended` row whose cover names a `path` is refused ("only on a moved row"); a cover path `../outside.py`,
+  `extended` row that only relocates the existing entry is refused because it covers no added entry; the current parser no longer blanket-refuses its path solely for that disposition. A cover path `../outside.py`,
   `/abs/landing.py` or `""`, and a cover with both `remove` and `path`, are each refused as a named problem
   with the memory tree byte-identical (review F1 and N7). A `moved` row relocates `RLZ-BASE01` into
   `onboarding/pkg/moved/landing.py.json` with its role kept, its `blob` the moved file's blob at C and its
@@ -52,28 +52,11 @@ in the `unit-regression` lane; 23 test functions, each over real Git repositorie
   coordination root (`tasks/agents-remember/260928_family/…`); `_lifted_d12` lifts D12 as a `records` item with a
   `constrains` and a `reconsider_on` link (alternative 1) to the base invariant and two `motivated_change_to` links to
   MIK-R04, at v2 and v9.
-  - `test_a_lifted_decision_round_trips_and_its_requirement_endpoints_are_reported`: `knowledge-ingest --commit`
-    writes the decision with its `reconsider_when`; `requirementEndpoints` is `links.2` `resolved` and `links.3`
-    `unresolved` (`task-intent-requirement-packet-version-mismatch`); no R13 violation; a rerun is `unchanged` and
-    byte-identical.
+  - `test_a_lifted_decision_round_trips_and_its_requirement_endpoints_are_reported` first asserts refusal and byte-identical memory for the v9 packet mismatch while still reporting resolved/unresolved endpoint observations. After `_repair_lifted_endpoint` supplies the actual v9 packet, ingestion succeeds and an exact rerun reports the record unchanged. The endpoint refusal is not an R13 validator violation.
   - `test_a_decision_that_breaks_a_content_rule_is_refused_and_nothing_is_written`: a deferred alternative without
     `reconsider_when` is refused by exactly `R13.1-reconsider-when` with the tree unchanged, and the endpoint is still
     reported `unresolved` (no coordination root on the direct API).
-  - **The bootstrap dispatch test also proves the wave passes the root** (review F4, ruling 02:05:07): its hand-off is
-    now an object with the entry and the lifted D12, the fake `admitted` carries `authority.coordination_root`, and it
-    asserts `[("links.2", "resolved"), ("links.3", "unresolved")]`. The file writer's bare-list branch stays covered
-    by `_write(world, [proven])`.
-- **L37, re-ruled by MIK-R46.** `test_knowledge_bootstrap_refuses_unconverted_memory_with_or_without_converted_memory_elsewhere`: the taskless bootstrap refuses either unconverted input, naming the conversion command and crossing sync; a never-converted repository is explicitly identified and remains byte-identical.
-  `test_a_master_line_crossing_records_its_rows_through_the_writer`: `knowledge-ingest --crossing` writes a
-  `crossing` owner's rows into `<task-id>-crossing-<n>.json`; a non-series contract, another task's or an unopened
-  crossing id, a closed file and database-only flags are refused. The leaf route passes `code_base ==
-  contract.code_base_commit`, and the crossing route passes the series' code work branch (review R1 F10b).
-  One earlier expectation changed with the reopen ruling: a write after a **committed** closed history file now
-  writes attempt 2; a file closed only in the working tree is still refused as closed and frozen.
-- **L37: a cover revises a rationale.** `test_a_cover_revises_a_realization_entrys_rationale_in_place`: under the
-  invariant's row, `{id, rationale}` replaces the entry's rationale and nothing else of the entry; a blank
-  rationale, one beside `remove`, and one on a proof entry are named problems with the tree unchanged; a rerun
-  changes nothing.
+  - **The bootstrap dispatch case carries the coordination root.** It first asserts a refused wave with resolved/unresolved endpoint observations, repairs the lifted endpoint, then asserts successful wave publication with both links resolved. The bare-list writer fixture remains a distinct admission path; this is a static account of assertions, not a newly run bootstrap.
 
 ### Conventions
 
@@ -112,9 +95,17 @@ The cases.
 - MIK-R27: the writer refuses an unsupported admission claim and writes nothing, and writes once the proof is added. [7]
 - Route rules: report in the writer, refusal at commit. [8]
 - The requirement packet the owner resolves, and D12 lifted with governs, reconsider and requirement links. [10]
-- A lifted decision round-trips; its endpoints are reported, resolved and unresolved. [11]
+
+
+- The lifted decision first refuses the endpoint mismatch, then writes after repair and reruns unchanged [11]
+
+
 - A content-rule break refuses the write and writes nothing. [12]
-- The bootstrap wave resolves a requirement endpoint through the admitted coordination root (review F4). [13]
+
+
+- The root-aware bootstrap wave refuses its unresolved new link, then writes with both endpoints resolved after repair [13]
+
+
 
 - A master line's crossing records its rows through the writer. [15]
 
@@ -130,5 +121,16 @@ No cross-repo boundary is crossed by this file.
 - knowledge-bootstrap refuses unconverted memory with or without converted memory elsewhere. [14]
 
 - The conforming post-write example validates against the explicit memory HEAD comparison base. [1]
-- MIK-R06 (ruling Q6): destination Markdown is prepared before relocation; the moved entry keeps its assertions, while malformed paths and remove-plus-path refuse. [9]
+
+
+- Relocation preserves ID and assertions; extended-only relocation needs an added entry, and malformed/remove-plus-path covers refuse [9]
+
+
 - Current source delta inspected statically: Explain HEAD comparison and destination Markdown; remove blanket admission writer-policy claim, retaining malformed-cover and idempotence assertions. [17]
+
+
+## Current writer regression boundaries
+
+The leaf fixtures supply the persisted worklist the current admission requires. Refused report assertions explicitly expose empty committed-action collections and honest nothing-written text. Relocation coverage still proves the moved path and stable entry fields, not permission to use this leaf's repaired writer for its own memory. Endpoint cases now distinguish refusal-time observations from post-repair publication. No tests were executed by this curation pass.
+
+- The validator refusal reports no committed records, entries, rows or carries. [18]

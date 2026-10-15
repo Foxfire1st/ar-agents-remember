@@ -19,6 +19,8 @@ Cases call real consume_owner_resolution over real packet files. Missing, outsid
 - Reference never replaces task authority.
 - The owner's resolution is carried verbatim.
 
+The archive-precedence case drives `resolve_requirement_endpoint`: with no active task directory it selects the archived packet and reports `archived=True`; creating an empty active directory makes the result unresolved at the active root with `archived=False`. A present but unresolved active owner is not replaced by a more convenient archived packet, and the reference remains addressing data rather than a second authority.
+
 ## Evidence
 
 ### Repo-Internal References
@@ -58,3 +60,5 @@ No configured domain documentation could be checked.
 ### Cross-Repo References
 
 No cross-repository contract is established by this file.
+
+- Archive fallback requires the active task directory to be absent; an existing empty active directory wins and remains unresolved. [27]

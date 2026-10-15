@@ -22,7 +22,10 @@ through `models/knowledge_files/anchor_content.py`.
   parsing or extraction; cite the file or a line range of the link bytes instead. Otherwise, the one
   extent the shipped citation extractor (`memory_quality/style/citations/extents`) binds
   for the name. A name bound nowhere, bound more than once, or in a language with no grammar does not
-  resolve. `Holder.method` is the `method` defined inside a `Holder` definition, so a same-named method
+  resolve. Symbol extraction requires valid UTF-8; malformed bytes produce a named
+  `AnchorResolutionError`, rather than being decoded with surrogate escapes. If no extent binds,
+  the resolver asks `grammars.test_case_refusal` for a case-specific explanation before falling
+  back to the ordinary undefined-name refusal. `Holder.method` is the `method` defined inside a `Holder` definition, so a same-named method
   of another class does not make it ambiguous. Since MIK-R24 the rule itself lives in the extractor as
   `extents.qualified_spans`; `_bound_spans` only calls it with the file's `extents.definitions`, so the
   curator writer and the conversion (`memory/conversion/code_objects.py`) bind symbols through one rule.
@@ -57,6 +60,13 @@ through `models/knowledge_files/anchor_content.py`.
 - Reviewer R2-1 (low, non-blocking): `file_subject_mismatch` has no unit assertion for a symlink object or an
   `@absent` subject; the reviewer verified both by a probe on a scratch repository.
 
+### Strict symbol decoding and case diagnostics
+
+For a supported language, `_symbol_range` strictly decodes the candidate blob as UTF-8 before extracting definitions. A decoding failure is translated to `AnchorResolutionError` naming the source path. An unavailable grammar is also translated to that error type. If extraction returns no spans, `grammars.test_case_refusal(path, lines, name)` may supply the refusal; otherwise the error says that the path at C does not define the requested name. Multiple spans still refuse with their line ranges, and exactly one span is returned.
+
+This decoding rule is specific to symbol extraction. File and line-range locators continue to bind the selected entry bytes, and the early symlink-symbol refusal remains before blob parsing. A case-specific refusal is diagnostic evidence, not proof that a test ran or that a dynamic case acquired a bindable extent.
+
+
 ## Evidence
 
 ### Docs References
@@ -82,6 +92,9 @@ Capture and resolution.
 - A qualified name's last part must sit inside its parents: the writer delegates to the one shared rule. [7]
 
 - The snapshot of a committed code state, for a master line's crossing. [8]
+
+- Symbol extraction rejects invalid UTF-8 with a named anchor error and uses case-specific diagnostics when no definition binds. [11]
+- Symlink symbols refuse before blob parsing; file and line-range anchors still hash the selected entry bytes. [12]
 
 ### Cross-Repo References
 

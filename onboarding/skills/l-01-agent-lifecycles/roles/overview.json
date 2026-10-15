@@ -6,12 +6,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "55375023d49b393a0f345693c529fe9cc982e9c0",
+            "blob": "e0b3bcfc145479a365a748510d7bd04490842c91",
             "content": "sha256:c4a79f969d539ba5ec8670fff476d4c6262cefd3b99b934e47777a8a342971d3",
             "locator": {
-              "end": 104,
+              "end": 131,
               "kind": "line_range",
-              "start": 101
+              "start": 128
             },
             "path": "skills/l-01-agent-lifecycles/roles/curator.md"
           },
@@ -172,12 +172,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "55375023d49b393a0f345693c529fe9cc982e9c0",
+            "blob": "e0b3bcfc145479a365a748510d7bd04490842c91",
             "content": "sha256:9c4ee978968c2e6202ea77b8efa655ab95d33ba67d98d60cafd09432fd17efac",
             "locator": {
-              "end": 96,
+              "end": 123,
               "kind": "line_range",
-              "start": 84
+              "start": 111
             },
             "path": "skills/l-01-agent-lifecycles/roles/curator.md"
           },
@@ -208,12 +208,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "713c3575f90a80ca1b29c6084ad37f0024a0c7e5",
+            "blob": "55753bd253d2eccdfe03bc6ea646b17576c4bc66",
             "content": "sha256:beb680d06c4adf9d4d1fa54719c8035f522b3291e395fe1ceded3bba42016d85",
             "locator": {
-              "end": 18,
+              "end": 20,
               "kind": "line_range",
-              "start": 18
+              "start": 20
             },
             "path": "skills/l-01-agent-lifecycles/roles/architect.md"
           },
@@ -226,7 +226,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "89fce2dcfcb7aecf803f8c647736688a7c01bb64",
+            "blob": "5a6e224b39172bf86db6ced53b92788fbb4a318d",
             "content": "sha256:6e496165f569558e9be2890f58fdbf115dfb83e1977232bf4eb80b324a7f3546",
             "locator": {
               "end": 103,
@@ -464,12 +464,12 @@
         },
         {
           "anchor": {
-            "blob": "55375023d49b393a0f345693c529fe9cc982e9c0",
+            "blob": "e0b3bcfc145479a365a748510d7bd04490842c91",
             "content": "sha256:6a4364374bb1c56589a98126bc07037848f43cc2c50069010d893b8100a581f4",
             "locator": {
-              "end": 257,
+              "end": 284,
               "kind": "line_range",
-              "start": 257
+              "start": 284
             },
             "path": "skills/l-01-agent-lifecycles/roles/curator.md"
           },
@@ -537,12 +537,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "55375023d49b393a0f345693c529fe9cc982e9c0",
+            "blob": "e0b3bcfc145479a365a748510d7bd04490842c91",
             "content": "sha256:ea11330c768950d01748db65761189c97e2618bf4717483f2bcf74a32811c511",
             "locator": {
-              "end": 158,
+              "end": 185,
               "kind": "line_range",
-              "start": 151
+              "start": 178
             },
             "path": "skills/l-01-agent-lifecycles/roles/curator.md"
           },
@@ -577,11 +577,11 @@
       ]
     },
     "31": {
-      "note": "Independent MEMORY review reads both reports and raises missing cut-change reasons or extra-knowledge additions without a requirement place.\n\nAnchor: Process step8: independent MEMORY verdict\n\nCanonical skills feed package and eight harness targets; this is a target declaration, not a synchronization verdict.  Anchor: `CANONICAL_SKILLS`, `TARGETS` [31]",
+      "note": "Independent MEMORY review reads both landing reports and raises missing cut-change reasons or extra-knowledge additions without a requirement place.",
       "targets": [
         {
           "anchor": {
-            "blob": "89fce2dcfcb7aecf803f8c647736688a7c01bb64",
+            "blob": "5a6e224b39172bf86db6ced53b92788fbb4a318d",
             "content": "sha256:b4dafc8a8b1a2f1c64cff7f454c512410a4eaa6582e470c72b0f1a3551f5a2c0",
             "locator": {
               "end": 110,
@@ -589,32 +589,6 @@
               "start": 104
             },
             "path": "skills/l-01-agent-lifecycles/roles/reviewer.md"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "52ead88df5abcc06f44245c1a48ebae0f190b1a6",
-            "content": "sha256:556c2515bac2a5348f19a93d199ce8620848ee26c5e67dea565240287f582394",
-            "locator": {
-              "end": 15,
-              "kind": "line_range",
-              "start": 15
-            },
-            "path": "scripts/sync-skills.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "52ead88df5abcc06f44245c1a48ebae0f190b1a6",
-            "content": "sha256:e8ae57b3feb2abf05b2199278870a9ed1f18ce1b2fd4b58f9345fd0deafbc97c",
-            "locator": {
-              "end": 56,
-              "kind": "line_range",
-              "start": 43
-            },
-            "path": "scripts/sync-skills.py"
           },
           "kind": "code"
         }
@@ -701,7 +675,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "89fce2dcfcb7aecf803f8c647736688a7c01bb64",
+            "blob": "5a6e224b39172bf86db6ced53b92788fbb4a318d",
             "content": "sha256:dbd73ef7e900315928165c5fa037b1cea41ea5a445f845e294617721d990a536",
             "locator": {
               "end": 107,
@@ -714,7 +688,7 @@
         },
         {
           "anchor": {
-            "blob": "89fce2dcfcb7aecf803f8c647736688a7c01bb64",
+            "blob": "5a6e224b39172bf86db6ced53b92788fbb4a318d",
             "content": "sha256:85916ecea276c3e151ee655920492236fcc15a28f6a7ecd52d7c671e44c170d0",
             "locator": {
               "end": 158,
@@ -790,7 +764,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "51b36507eadab66b0c06411c48b222e8fe69ca9c",
+            "blob": "09a340563bd51c31168737f64744393c3c680ca9",
             "content": "sha256:9284abc99cafd014ac4634aaecd621628996e9f5ade31a79d05a24523ed73af1",
             "locator": {
               "end": 342,
@@ -857,12 +831,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5f33ff79cde087bea8dd9d8ebc62a85698440f9a",
+            "blob": "8f6b96ed31a33286bcba19bf09f15947e6fa94ac",
             "content": "sha256:0c161eccbe0bd6e26018eb3d037bf32dc5e85f85f1361db82da57796944e207e",
             "locator": {
-              "end": 1211,
+              "end": 1209,
               "kind": "line_range",
-              "start": 1177
+              "start": 1175
             },
             "path": "mcp/src/agents_remember/application/memory_quality/controller.py"
           },
@@ -995,14 +969,45 @@
       "targets": [
         {
           "anchor": {
-            "blob": "55375023d49b393a0f345693c529fe9cc982e9c0",
+            "blob": "e0b3bcfc145479a365a748510d7bd04490842c91",
             "content": "sha256:d83cb394cb0e5ad26dc5bf6d6d07c08b4a17148df3bdb4fc8966dc1bffa50715",
             "locator": {
-              "end": 116,
+              "end": 143,
               "kind": "line_range",
-              "start": 112
+              "start": 139
             },
             "path": "skills/l-01-agent-lifecycles/roles/curator.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "48": {
+      "note": "Canonical skills feed the declaration-owned package/eight harness targets through the shared generator; this source inventory is not a synchronization verdict.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7f87344928ff3c3658db530b4d3e5e3766e69523",
+            "content": "sha256:7ecb0f5d8725e0a7caaac40448a9f7be1ce183423e4db3ff98a134f050002834",
+            "locator": {
+              "end": 21,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "generated-copies.json"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "bfc9168b3d1a727fc00d12e21e949acfed4d3537",
+            "content": "sha256:feef0c72f5c316fdcc3ccab56fcfee10f85f35434fb00094bae33acb96a82275",
+            "locator": {
+              "end": 59,
+              "kind": "line_range",
+              "start": 20
+            },
+            "path": "scripts/sync-skills.py"
           },
           "kind": "code"
         }
@@ -1044,12 +1049,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "55375023d49b393a0f345693c529fe9cc982e9c0",
+            "blob": "e0b3bcfc145479a365a748510d7bd04490842c91",
             "content": "sha256:5bb3097cbd4b8e9fdd82855d71fb764f4e2c97cf8dc68b021d2e3ed053a44a4d",
             "locator": {
-              "end": 191,
+              "end": 218,
               "kind": "line_range",
-              "start": 191
+              "start": 218
             },
             "path": "skills/l-01-agent-lifecycles/roles/curator.md"
           },

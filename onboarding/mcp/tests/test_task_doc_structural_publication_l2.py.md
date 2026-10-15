@@ -12,6 +12,8 @@ Checks exact JSON and Markdown source-set binding for structural task publicatio
 
 ### Logic
 
+The detach-first/create-later case delays the background `run_task_doc_call` before delegating to the real call; the main-thread detach bypasses that delay. Its publication wrapper separately asserts that source snapshots contain the selected master JSON but not the sprint JSON, then delegates without waiting. After detach changes sprint membership to `master-a`, release permits create; the case asserts create succeeds and that membership remains unchanged. The wait is therefore before call compilation, not a pause of an already-captured publication. These are declared concurrency assertions, not a new run result.
+
 The current evidence boundary is the source-listed behavior below. Earlier coverage claims in
 history describe prior populations and must not be used to recreate removed tests or claim they
 still run. The retained behavior and its fixture limits, described above, govern this card.
@@ -33,6 +35,9 @@ work. This source inspection does not claim a newly executed test or acceptance 
 No additional implementation scope is opened by this memory reconciliation.
 
 ## Evidence
+
+- The background native call is delayed before delegation while main-thread detach proceeds; the publisher checks the accepted source set and the later create preserves detached sprint membership. [4]
+
 
 ### Docs References
 

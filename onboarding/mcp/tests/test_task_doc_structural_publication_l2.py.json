@@ -7,7 +7,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1ae4bc491f68877dd54935c2346437504caba172",
+            "blob": "e9c1c0892bf5095504598965581f7730b19f140e",
             "content": "sha256:bbc04cc81988353590997d6aae4395bc96c4fbd0dc1fa72a1d117a16043f1010",
             "locator": {
               "kind": "symbol",
@@ -23,7 +23,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1ae4bc491f68877dd54935c2346437504caba172",
+            "blob": "e9c1c0892bf5095504598965581f7730b19f140e",
             "content": "sha256:2e944dfd7708dcd552cd4d871f207f393ab81cba8a71da7277219371a0d3db7a",
             "locator": {
               "kind": "symbol",
@@ -44,6 +44,23 @@
             "locator": {
               "kind": "symbol",
               "name": "test_detach_first_allows_later_exact_absence_bound_create"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "The background native call is delayed before delegation while main-thread detach proceeds; the publisher checks the accepted source set and the later create preserves detached sprint membership.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e9c1c0892bf5095504598965581f7730b19f140e",
+            "content": "sha256:94a38b6722db061efb6fff85190e48caac5002a599aa785b76c236fea8eb9bd1",
+            "locator": {
+              "end": 169,
+              "kind": "line_range",
+              "start": 125
             }
           },
           "kind": "test"

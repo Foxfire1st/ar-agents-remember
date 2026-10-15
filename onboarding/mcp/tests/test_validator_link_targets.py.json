@@ -1,0 +1,41 @@
+{
+  "path": "mcp/tests/test_validator_link_targets.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "4e1965aa3c82ea00c2bd3dac463bef17c3fc473e",
+        "content": "sha256:688fdf512fec60a4885aff085b3b6b33f537ee0fd5c1c95b30a74805d1eea8d3",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_record_link_path_targets_report_only_when_carried_at_sync_merge"
+        }
+      },
+      "facet": "Source-defined regression check; not executed by Curator: The merge reporting exception applies only to actually carried equal-base path targets.",
+      "id": "PRF-H1NX7F",
+      "invariant": "INV-THFEVY",
+      "origin": {
+        "handoffEntry": "L54-curator-proof-MIK-R54-v1-rule-11-wave-76",
+        "leaf": "260928-MIK-L54"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Describes anchor and record-link validation across ordinary comparisons, sync merges and leaf publication. Reporting at a multi-parent sync is not a landing waiver. Assertions retain separate refusing/report-only populations and do not imply every route was run in this curation pass.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4e1965aa3c82ea00c2bd3dac463bef17c3fc473e",
+            "content": "sha256:b55b8a9b96c56380613014cc70e17d64250770995eb241dc09bd9244b800cb53",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

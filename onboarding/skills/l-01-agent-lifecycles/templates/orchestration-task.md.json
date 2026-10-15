@@ -7,7 +7,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "cf36d2fc186bcf9baf70dce388adfcfb0b54b637",
+            "blob": "2dd1fb9539d230c1d2dab90f178b8805278ec81d",
             "content": "sha256:3403a9462de0b85308dd505c41026677b5be5ebe3968c804bf6c5b8c919fcf8c",
             "locator": {
               "end": 167,
@@ -32,6 +32,21 @@
               "start": 48
             },
             "path": "skills/l-01-agent-lifecycles/criteria/plan-review.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The authored source owns this contract; the distribution copy is not a separate authority.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2dd1fb9539d230c1d2dab90f178b8805278ec81d",
+            "content": "sha256:3d4227470bfed2c22f548cfbd362519681e0da0a5590d4fe360f0cdb6d669b6a",
+            "locator": {
+              "kind": "file"
+            }
           },
           "kind": "code"
         }

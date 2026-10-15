@@ -51,7 +51,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c8f46c37a779c2f92a9c7791dec0accee6d61e4d",
+            "blob": "24d682ff648aa771ce9836a527913f55f0c94e5f",
             "content": "sha256:451ca02c359175e5a5804cb840ba4dad920b0cb53a74d708cda88e4770873932",
             "locator": {
               "kind": "symbol",
@@ -62,7 +62,7 @@
         },
         {
           "anchor": {
-            "blob": "c8f46c37a779c2f92a9c7791dec0accee6d61e4d",
+            "blob": "24d682ff648aa771ce9836a527913f55f0c94e5f",
             "content": "sha256:f03bc90acc91c048f7f63fc627cb1375b09937a3b089d8fdad717203496eb50d",
             "locator": {
               "kind": "symbol",
@@ -73,7 +73,7 @@
         },
         {
           "anchor": {
-            "blob": "c8f46c37a779c2f92a9c7791dec0accee6d61e4d",
+            "blob": "24d682ff648aa771ce9836a527913f55f0c94e5f",
             "content": "sha256:7e7266cd42cddad6cf6080b3ed99cc3a765094e08f27661a1510abd1cf2d870b",
             "locator": {
               "kind": "symbol",
@@ -89,12 +89,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6397c2b97bb2dca8ac893f4d4d75882042721023",
+            "blob": "9eef4f32926a879ed8247e97f14685ba3a469031",
             "content": "sha256:2df10f7cd339c643d1e1bb99e82361d930b4d5c5960c646d06ca426a7b14e5a1",
             "locator": {
-              "end": 383,
+              "end": 714,
               "kind": "line_range",
-              "start": 383
+              "start": 714
             },
             "path": "mcp/src/agents_remember/application/memory_tools.py"
           },
@@ -107,12 +107,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "92153a583a3f119a02cba25ddf722a99e3b54c8f",
+            "blob": "3d1ec99567502c102e54707aba3a3d8e169af0d5",
             "content": "sha256:146d1e195f9fda3ff811d27e114460685f43291ee4a5aa98893919092af9f6d2",
             "locator": {
-              "end": 540,
+              "end": 541,
               "kind": "line_range",
-              "start": 532
+              "start": 533
             },
             "path": "mcp/src/agents_remember/worktrees/modules/onboarding.py"
           },
@@ -120,14 +120,48 @@
         },
         {
           "anchor": {
-            "blob": "92153a583a3f119a02cba25ddf722a99e3b54c8f",
+            "blob": "3d1ec99567502c102e54707aba3a3d8e169af0d5",
             "content": "sha256:f45319eade0ffd4370666c3204bbd24f96d5be2fe3bdcc55b981c8517555ba42",
             "locator": {
-              "end": 551,
+              "end": 552,
               "kind": "line_range",
-              "start": 543
+              "start": 544
             },
             "path": "mcp/src/agents_remember/worktrees/modules/onboarding.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Actual cache-build summary distinguishes built, stale and error populations. [5]",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "24d682ff648aa771ce9836a527913f55f0c94e5f",
+            "content": "sha256:7b51e3d3069dda6ba3f74936373a5a9fa4497f646eecea385fd302e042ccaa91",
+            "locator": {
+              "end": 117,
+              "kind": "line_range",
+              "start": 89
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The two public build modes share survey and per-cache handling, but missing-only mode preserves stale bytes. [6]",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "24d682ff648aa771ce9836a527913f55f0c94e5f",
+            "content": "sha256:347912952fb538d9cd70e47b024ec592bb6dbbb114515618b597c7a029ba5133",
+            "locator": {
+              "end": 295,
+              "kind": "line_range",
+              "start": 201
+            }
           },
           "kind": "code"
         }

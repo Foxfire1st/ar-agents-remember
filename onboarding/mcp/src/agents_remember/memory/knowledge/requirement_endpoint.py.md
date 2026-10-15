@@ -14,8 +14,7 @@ approves.
 
 ## Code Commentary
 
-- **The task root.** `requirement_task_root` is `<coordination root>/tasks/<repository>/<task path>`, or
-  `None` when `repository` contains a slash or backslash or is `.` or `..`.
+- **The task root.** `requirement_task_root` selects `<coordination root>/tasks/<repository>/<task path>`. Only if that active directory is absent may the existing `tasks/<repository>/0_archive/<task path>` directory supply the owner. A present active directory is not bypassed for a bad packet. The function returns `None` when `repository` contains a slash or backslash or is `.` or `..`. Resolution carries `archived` on resolved and unresolved owner outcomes.
 - **Resolution.** `resolve_requirement_endpoint(coordination_root, reference)` returns a
   `RequirementEndpoint` and never raises for an endpoint that does not resolve:
   - without a coordination root: `unresolved` with `requirement-task-plane-unavailable`;
@@ -79,8 +78,7 @@ approves.
 
 ### Invariants And Boundaries
 
-- **An unresolved requirement endpoint is reported, never refused.** The function never raises for an unresolved
-  endpoint and returns a value the caller reports; the record keeps the link exactly as written. Proved by
+- **The pure resolver reports an unresolved endpoint; Writer admission is separate.** Newly added or changed unresolved requirement links refuse in the Writer when coordination authority is supplied, while unchanged links remain observations. Endpoint task-plane observations never refuse a validator commit route. The earlier broader never-refused account belongs to the historical resolver-only witnesses:
   `test_requirement_endpoints_resolve_through_the_owner_and_never_refuse` (resolved, version mismatch, missing
   packet, outside `tasks/`, no root) and, on real data, by the worker's and reviewer's runs (MIK-R21@v2 and MIK-R99
   reported `unresolved` with the owner's codes while the run was still written or planned).
@@ -96,10 +94,12 @@ approves.
   `requirement_owner.py`.
 - **L14 and L29 (ruling 01:45:56 Q5; review F2): L14's half is resolved.** MIK-R14's worklist step 8 reuses
   `resolve_requirement_endpoint` and then `requirement_approval` for every `reconsider_on` requirement endpoint, and
-  reports each endpoint's state in the run's `reconsideration.links` summary. The reads remain L29's. A task that is
-  later archived or moved makes its endpoints unresolved, which is reported, never refused, and never triggers.
+  reports each endpoint's state in the run's `reconsideration.links` summary. The reads remain L29's. A task moved outside both recognized locations can become unresolved. Archival alone is no longer an unconditional unresolved case: the current resolver supports the repository-scoped archive when the active directory is absent. This retained approval-policy note does not waive the Writer's changed-link admission.
 
 ## Evidence
+
+- Absent active directories can use the repository-scoped archive, whose provenance is retained on both resolved and unresolved owner outcomes. [36]
+
 
 - The two root answers and the manifest constants. [15]
 - One endpoint with the owner's answer and its key. [16]

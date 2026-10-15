@@ -6,10 +6,9 @@
 
 ## Purpose
 
-**MIK-R07: per-leaf history files (`ar-history/v1`) at model level.** The cases pin each
+**MIK-R07: per-leaf history files (`ar-history/v1`), their models and the Writer/validator item-token boundary.** The cases pin each
 disposition and row shape, the revision binding, the freeze predicate, and that two leaves' history
-files merge without conflict. The writer's own tests belong to MIK-R12 and the validator's freeze
-test to MIK-R22. Registered in the `unit-regression` lane. The earlier 9-test/29-collected-case snapshot is historical; this read-only review did not collect or run tests.
+files merge without conflict. Other writer tests belong to MIK-R12 and the broader validator freeze cases to MIK-R22; this module now also exercises their token-admission boundary. Registered in the `unit-regression` lane. The earlier 9-test/29-collected-case snapshot is historical; this read-only review did not collect or run tests.
 
 ## Code Commentary
 
@@ -61,6 +60,8 @@ Documents are built from small dict helpers (`_anchor`, `_cover`, `_invariant_ro
 
 None recorded.
 
+Newly authored history item tokens must be full `sha256:` plus64hex digits, accepting either hex case; malformed values refuse without changing memory. Stored closed comparison-base history with old short labels parses, validates and round-trips byte-exact. An absent/open comparison base or a separately frozen publication tree does not grant that closed-in-comparison-base exception. The duplicate-item shape control now uses valid full hashes so it still tests duplication rather than malformed tokens.
+
 ## Evidence
 
 ### Docs References
@@ -98,3 +99,5 @@ No cross-repo boundary is crossed by this file.
 
 - The registry set includes eight kinds, with MIK-R53 membership/record; decision dispatch and unclaimed hunk/legacy invariant subjects are explicit. [3]
 - Current source delta inspected statically: Repair six-kind registry and unclaimed-decision prose/caption against exact current assertions; retain set semantics, model/revision/freeze facets and historical execution limits. [12]
+
+- Writer and validator token tests distinguish new full-hash admission from unchanged closed comparison-base legacy bytes. [13]

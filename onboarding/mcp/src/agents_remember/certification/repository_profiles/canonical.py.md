@@ -23,6 +23,8 @@ discovery, and no fallback path: it is pure canonicalization.
 
 ## Code Commentary
 
+`project_generated_skills(profile, declaration)` first validates the input profile’s existing digest, parses the supplied copy declaration and refuses a declaration with no skill targets. It replaces only the generated-skills input’s sorted target scopes and declaration-inclusive source scopes, then derives the projected profile digest. Unrelated profile authority remains literal. This explicit pure projection is not repair of a mismatched input digest, file publication, executor admission or certification execution.
+
 `canonicalize_repository_profile(profile)` first calls `_normalize_repository_profile(profile)`
 (from `models.py`) to produce normalized semantic bytes, then computes
 `repository_profile_digest(normalized)` over exactly those bytes. If the profile's declared
@@ -36,7 +38,7 @@ The module re-exports `repository_profile_digest` in `__all__` so programming ag
 canonical identity does not require importing the private models helpers directly.
 
 The digest is computed in `models.py` (over the normalized canonical payload, sorted JSON with
-compact separators); this module only enforces that the declared digest authorizes the bytes.
+compact separators); canonicalization enforces the declared digest, while the explicit generated-skills projection derives a new digest only after validating its input.
 
 ## Invariants And Boundaries
 
@@ -50,6 +52,9 @@ compact separators); this module only enforces that the declared digest authoriz
   into a typed `CertificationProfileError` finding.
 
 ## Evidence
+
+- Generated-skills projection validates its input, replaces only the declared skill input scopes and recomputes the projected digest. [5]
+
 
 ### Docs References
 

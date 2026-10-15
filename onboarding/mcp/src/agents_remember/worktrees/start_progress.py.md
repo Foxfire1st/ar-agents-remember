@@ -9,7 +9,7 @@
 Writes and clears a small, transient "start progress" file for the pre-contract window of
 `worktree_start` (slice 5e, §5.4). A start can block on external memory, providers, or a stale
 base *before* a `contract.md` is written, leaving the Engine Room's enclosure surface (which reads
-contracts) blind to that gated start. This module records each blocked early return and clears it
+contracts) blind to that gated start. This module records admitted pre-contract progress, but not a source-lineage-blocked beat, and clears it
 once the contract supersedes it, so the enclosure-centered Engine Room process map can show a start
 that is stuck before it ever produces a contract.
 
@@ -55,6 +55,8 @@ a dict carrying the exact `START_PROGRESS_SCHEMA`.
 - The file is transient: it exists only while a start is pre-contract and is cleared once the
   contract lands.
 
+`write_start_progress` returns immediately for `beat.phase == "source-lineage-blocked"`, before payload construction or directory/file publication. Its existing best-effort writes apply only after that admission boundary; clearing and schema-gated reads are unchanged.
+
 ## Evidence
 
 ### Repo-Internal References
@@ -70,3 +72,5 @@ a dict carrying the exact `START_PROGRESS_SCHEMA`.
 ## Series-Contract Notes
 
 Start-progress remains the transient pre-contract surface, but the durable endpoint it waits for is now the leaf `series-contract.md` enclosure file.
+
+- Lineage-refused start beats publish no transient progress artifact. [8]

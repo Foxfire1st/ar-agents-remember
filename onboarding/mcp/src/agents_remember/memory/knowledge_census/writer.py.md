@@ -35,7 +35,7 @@ write with `CensusWriteError`, and nothing is written.
 
 ### Invariants And Boundaries
 
-- **The writer refuses an unconverted tree**, one without `knowledge/layout.json` (`_tree`). Before the cutover (MIK-R37) no production memory tree is converted, so the writer never touches production memory.
+- **The writer refuses an unconverted tree**, one without `knowledge/layout.json` (`_tree`). Census files belong to the converted layout; convert an unconverted tree before census writes. The old pre-cutover production-inertness account is historical, not a current prohibition on converted production input.
 - A refused write leaves the tree byte-for-byte unchanged.
 
 ### Todos
@@ -73,3 +73,5 @@ The refusal type, the checked commit and each operation.
 No meaningful cross-repo references found: the writer writes one memory working tree named by the caller.
 
 No cross-repo boundary is crossed by this file.
+
+- Census writing requires converted memory; old pre-cutover production-inertness wording is not a current behavior claim. [10]

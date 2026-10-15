@@ -69,6 +69,8 @@ The optional memory-quality `code` has no model-level length ceiling. Malformed 
 - `capacity-reached` carries no run id because no work was admitted; `run-not-found` remains
   nondisclosing across absent, evicted, restarted, and wrong-repository lookup.
 
+`MemoryQualityCheckResponse` explicitly declares optional `invariantsWithoutProofCount` with a nonnegative integer constraint and optional `routeIndexCacheBuild` as a mapping. The producing owners supply their informational proof-coverage and actual cache-build/stale/error facts; declaring the envelope fields neither performs that work nor adds gate authority.
+
 ## Evidence
 
 ### Repo-Internal References
@@ -131,3 +133,5 @@ and D-33 names the memory-quality and citation surfaces.
 - The context-packet wire face includes its matching `error` field. [6]
 
 - Memory-quality codes reach the shared guard without a model length rejection. [8]
+
+- The two optional quality fields are declared rather than merely tolerated flexible extras. [9]

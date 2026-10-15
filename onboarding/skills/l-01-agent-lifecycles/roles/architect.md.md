@@ -26,6 +26,8 @@ This canonical Architect owns the developer conversation, semantic requirements 
 
 ### Logic
 
+When the packet names an effect on a recorded invariant or family, the Architect declares `expectedKnowledgeEffects` through `task_doc` on the bound task server before implementation. A packet naming no such effect declares nothing. This is the Architect’s planning duty, not permission for the Curator to change tasks, requirements or held role claims.
+
 For work inside one master, the Architect first starts one Manager on that canonical master and hands it the coordination; when two or more masters are worked on at the same time, it first starts one Orchestrator on the selected canonical sprint, which starts one Manager for each master. Direct coordination is the developer-chosen exception, and the developer may also ask for an Orchestrator above a single master. Native starts and peer messages use `role_start`/`role_message` on the bound task server, preserving actual agent, report and handover identities and exact canonical selections. An unknown start is reconciled with its original request ID; finding-specific repair returns to the same Worker.
 
 Briefs and task reads preserve exact requirement revisions, relevant families, paired/report roots and evidence class. Use supplied task-read arguments and the returned canonical document path rather than loading the full hierarchy. Developer decisions remain in the Architect’s own chat. A dashboard-started role needs no parent, and a finished turn is neither independent review, curation, semantic acceptance nor paired-Git publication.
@@ -64,6 +66,9 @@ The Architect keeps its delegation, developer conversation and direct-coordinati
 The Architect answers a child's question within its authority and says the answer is its own; otherwise it puts it to the developer in its own chat, naming the originating role, task number and purpose, agent id, question and recommendations. It returns the developer's answer to the asker with the receiving agent's id and the quoted words, and every parent on the way down passes those three unchanged. When a child waits at a permission prompt, the Architect tells the developer which chat to open, names the permission as supplied or "not supplied", and lists every waiting agent with its role, task and agent id instead of a count. The Architect's own questions still go in its own chat.
 
 ## Evidence
+
+- The Architect declares recorded invariant/family effects through task_doc before implementation only when the packet names them. [3]
+
 
 ### Docs References
 

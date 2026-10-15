@@ -1,0 +1,78 @@
+{
+  "path": "skills/c-03-repo-bootstrap/templates/route-local-overview-card-template.md",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The overview card records route metadata, governed paths, explanation topics, inputs, links and questions.\n\nAnchor: `# Overview Card — <source route>`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d7302007374de2cd256f3bf91664b50baf389a8d",
+            "content": "sha256:67355de2f6a702de6b79c15f301ad8f314d10e9d25e390f27885c99d58946eef",
+            "locator": {
+              "end": 61,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Phase 4C creates cards for selected governing routes and bounds discovery with parent, child and governed-file context.\n\nAnchor: `### 4C — Route-Local Overview Cards`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6169b610d2b722a17c4d18645df947444b62f260",
+            "content": "sha256:e2d8003ff723a0031c0e65e9e8ab6e630c3b67580ffc64378e52f5179cdb7bc7",
+            "locator": {
+              "end": 858,
+              "kind": "line_range",
+              "start": 833
+            },
+            "path": "skills/c-03-repo-bootstrap/SKILL.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Overview waves use cards to construct mirrored durable route-local overviews, with reference-anchor verification rather than recorded commits.\n\nAnchor: `### 4D — Route-Local Overview Waves`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6169b610d2b722a17c4d18645df947444b62f260",
+            "content": "sha256:61e53015c84b7b0b2e3c3173fc59b46387070ed4a1a4292c0e1369cacf99b209",
+            "locator": {
+              "end": 886,
+              "kind": "line_range",
+              "start": 859
+            },
+            "path": "skills/c-03-repo-bootstrap/SKILL.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The promotion pipeline distinguishes overview cards from the durable route-local overview output.\n\nAnchor: `### Knowledge promotion pipeline`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6169b610d2b722a17c4d18645df947444b62f260",
+            "content": "sha256:d9a57214bb8908ecb06f9f109995afd8dc6b7b6a8a803c0a2cd147cbedfc202a",
+            "locator": {
+              "end": 144,
+              "kind": "line_range",
+              "start": 126
+            },
+            "path": "skills/c-03-repo-bootstrap/SKILL.md"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

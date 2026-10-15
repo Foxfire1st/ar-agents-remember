@@ -1,0 +1,41 @@
+{
+  "path": "mcp/tests/test_writer_integrations.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "16f0a1b9e5a8b891ea7d06e2ad723e2dfd1bdb5a",
+        "content": "sha256:c970b58998004d54af95bd75b6dff146720a334ca2776967f9b69ccde89e4d19",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_unsupported_test_title_names_why_and_line_range"
+        }
+      },
+      "facet": "Source-defined regression check; not executed by Curator: Unsupported test-title syntax names the reason and line_range remedy.",
+      "id": "PRF-MYSKWD",
+      "invariant": "INV-B37MWR",
+      "origin": {
+        "handoffEntry": "L54-curator-proof-MIK-R54-v1-rule-9-wave-75",
+        "leaf": "260928-MIK-L54"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Describes bounded writer anchor-resolution integration assertions, explicitly not acceptance. The line-range fallback is not a license to invent a symbol proof. These are synthetic source cases, not a test run or live writer witness.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "16f0a1b9e5a8b891ea7d06e2ad723e2dfd1bdb5a",
+            "content": "sha256:f20ec973b62db1edac6967680e2d34587fca209ac5657d0c48745b00cc5433b7",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

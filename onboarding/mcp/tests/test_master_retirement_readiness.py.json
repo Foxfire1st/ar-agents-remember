@@ -3,8 +3,8 @@
   "proves": [
     {
       "anchor": {
-        "blob": "90f62f6823fde4510744762a83c49a460b4a2754",
-        "content": "sha256:42f85bf74eea8181bf20ff53fe00766c1ec3594eaedd9b12ba23c0292a2a9eb5",
+        "blob": "c17ab1e5adb372b7dd9ce0314c87cf89c485c78b",
+        "content": "sha256:b6bb493edc3b9a6a54355d0b9ef902b3be2c5d36ccad0b060717c4cffa882dcf",
         "locator": {
           "kind": "symbol",
           "name": "test_a_real_paired_enclosures_named_tool_is_carried_out_then_retirement_is_repeated"
@@ -20,7 +20,7 @@
     },
     {
       "anchor": {
-        "blob": "90f62f6823fde4510744762a83c49a460b4a2754",
+        "blob": "c17ab1e5adb372b7dd9ce0314c87cf89c485c78b",
         "content": "sha256:28a7d6e1bea131baf727f056e96a8d5c973504040bc7f4838a53ecc879b84825",
         "locator": {
           "kind": "symbol",
@@ -37,7 +37,7 @@
     },
     {
       "anchor": {
-        "blob": "90f62f6823fde4510744762a83c49a460b4a2754",
+        "blob": "c17ab1e5adb372b7dd9ce0314c87cf89c485c78b",
         "content": "sha256:927b26e73d1403f7cf56b511412203c885c2cced526c7a73a23d32c93aacef01",
         "locator": {
           "kind": "symbol",
@@ -54,7 +54,7 @@
     },
     {
       "anchor": {
-        "blob": "90f62f6823fde4510744762a83c49a460b4a2754",
+        "blob": "c17ab1e5adb372b7dd9ce0314c87cf89c485c78b",
         "content": "sha256:4788cee4aef1abfe1273eedd1cea8566c458af9469290058e623940516274503",
         "locator": {
           "kind": "symbol",
@@ -73,12 +73,12 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "Owned unfinished or unreadable operations refuse; the operation-record and real paired-enclosure controls execute their remedies and repeat retirement.\n\nAnchor: `test_a_real_paired_enclosures_named_tool_is_carried_out_then_retirement_is_repeated`",
+      "note": "Owned unfinished or unreadable operations refuse; the operation-record and real paired-enclosure controls execute their remedies and repeat retirement.",
       "targets": [
         {
           "anchor": {
-            "blob": "1e520eb5c0161fe362b346c31fbd68abd972a855",
-            "content": "sha256:0c8a0f1d57bb0fb03059f737807071ae89517218cb1fafd5568851897f993db4",
+            "blob": "c17ab1e5adb372b7dd9ce0314c87cf89c485c78b",
+            "content": "sha256:ddaed84e025ad47a114db461e044d7edfbac3a30aff3759aac9e04e9987f404d",
             "locator": {
               "kind": "file"
             }
@@ -88,12 +88,12 @@
       ]
     },
     "2": {
-      "note": "A leaf worktree directory that exists and a leaf branch with unlanded commits are open work.\n\nAnchor: `1–672`",
+      "note": "A leaf worktree directory that exists and a leaf branch with unlanded commits are open work.",
       "targets": [
         {
           "anchor": {
-            "blob": "1e520eb5c0161fe362b346c31fbd68abd972a855",
-            "content": "sha256:0c8a0f1d57bb0fb03059f737807071ae89517218cb1fafd5568851897f993db4",
+            "blob": "c17ab1e5adb372b7dd9ce0314c87cf89c485c78b",
+            "content": "sha256:ddaed84e025ad47a114db461e044d7edfbac3a30aff3759aac9e04e9987f404d",
             "locator": {
               "kind": "file"
             }
@@ -103,12 +103,12 @@
       ]
     },
     "3": {
-      "note": "The master's own branch and worktree never refuse and are listed with their state; an older-layout operation report stays a fact.\n\nAnchor: `1–672`",
+      "note": "The master's own branch and worktree never refuse and are listed with their state; an older-layout operation report stays a fact.",
       "targets": [
         {
           "anchor": {
-            "blob": "1e520eb5c0161fe362b346c31fbd68abd972a855",
-            "content": "sha256:0c8a0f1d57bb0fb03059f737807071ae89517218cb1fafd5568851897f993db4",
+            "blob": "c17ab1e5adb372b7dd9ce0314c87cf89c485c78b",
+            "content": "sha256:ddaed84e025ad47a114db461e044d7edfbac3a30aff3759aac9e04e9987f404d",
             "locator": {
               "kind": "file"
             }
@@ -122,7 +122,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "90f62f6823fde4510744762a83c49a460b4a2754",
+            "blob": "c17ab1e5adb372b7dd9ce0314c87cf89c485c78b",
             "content": "sha256:94b3da847aaec6aafd579ed2158c6035438fd32be9a7e891526b9c0f5aa19595",
             "locator": {
               "kind": "symbol",
@@ -138,7 +138,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "90f62f6823fde4510744762a83c49a460b4a2754",
+            "blob": "c17ab1e5adb372b7dd9ce0314c87cf89c485c78b",
             "content": "sha256:846acc4178e847785a8cd1816c293367b1c35978c4c703c6369a41131f1cd7cf",
             "locator": {
               "kind": "symbol",
@@ -150,12 +150,12 @@
       ]
     },
     "6": {
-      "note": "Raw application readiness facts remain direct. Registered-adapter state uses its retained log, while the advertised retry action is addressed through nextArgs.contract_path. Existing command and branch assertions remain.\n\nAnchor: Current STOP-delta source carrier",
+      "note": "Raw application readiness facts remain direct. Registered-adapter state uses its retained log, while the advertised retry action is addressed through nextArgs.contract_path. Existing command and branch assertions remain.",
       "targets": [
         {
           "anchor": {
-            "blob": "90f62f6823fde4510744762a83c49a460b4a2754",
-            "content": "sha256:21bb56a220a920f2d9f878123318320d94b58997cb500eda64f125f269644204",
+            "blob": "c17ab1e5adb372b7dd9ce0314c87cf89c485c78b",
+            "content": "sha256:ddaed84e025ad47a114db461e044d7edfbac3a30aff3759aac9e04e9987f404d",
             "locator": {
               "kind": "file"
             }

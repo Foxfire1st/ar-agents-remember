@@ -12,6 +12,8 @@ Language-aware declaration resolution for citation repair.
 
 ### Logic
 
+`TestCaseDefinitionTests` adds plain test/spec title extraction across the supported JavaScript-family extensions. Nested describe titles bind qualified names and unique bare case names; a non-test filename does not acquire those case definitions. Plain-string escapes decode, UTF-16 pairs agree with scalar titles, lone units remain represented, and duplicate occurrences remain ambiguous even on one line. Comment extras do not replace the semantic first argument: computed/nonstring first arguments do not borrow a later string. Unsupported skip/todo/each/computed forms refuse with a reason and `line_range` alternative. These added source cases do not claim a parser run or support for the refused forms.
+
 With the TypeScript grammar a moved declaration resolves uniquely instead of matching mentions; without it the same move declines as ambiguous. Python extents include decorators, classes and members. TypeScript, TSX and JavaScript constructs bind their own names, quoted URLs retain slashes and pooled interface members repair to one defining file.
 
 The grammar fixtures now prove continuity rather than assuming it. `TypeScriptPureMoveTests.moved()` writes the cited `dashboard/src/rail.tsx` holding the `RailRow` declaration and commits it with `Tree.stamp()`, then writes the moved file, deletes the cited one with `remove_source`, and stamps the card at the commit that held the declaration. `TypeScriptInterfacePoolRepairTests.test_three_interface_members_in_another_file_repair_as_one_claim` does the same for `dashboard/src/panels/gone.ts` holding the `PanelProps` interface. The legitimate kind-preserving relocations therefore still repair because the same extent kind is provable at the recorded stamp; the grammar expectations themselves were not relaxed.
@@ -29,6 +31,9 @@ A parser-supported declaration is stronger evidence than textual similarity. Mis
 No file-local implementation change is requested by this reconciliation.
 
 ## Evidence
+
+- The new test-title cases cover qualified/bare names, escapes, UTF-16/lone-unit handling, ambiguity, semantic-first arguments and explicit unsupported-form refusals. [11]
+
 
 ### Docs References
 

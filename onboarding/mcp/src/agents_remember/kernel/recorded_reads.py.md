@@ -30,6 +30,8 @@ for it.
 
 ### Recording
 
+`recorded_reads(examined=...)` also binds a caller-owned audit bucket: nested recorders inherit it when none is supplied, and exit resets both context variables. `record_read(..., examined=True)` and `_record` route those observations outside the yielded kept read set. Only `strict_leaf_doc` marks its readable ruled-out siblings that way; this is not a general waiver for unrecorded dependencies. Ordinary conflict/replay behavior remains on the kept bucket.
+
 - `recorded_reads()` is a context manager. It puts a fresh dictionary into the context variable `_READS`,
   yields it and restores the previous value on exit. A nested block therefore collects its own rows, and the
   outer block sees only what is replayed into it afterwards.
@@ -89,6 +91,9 @@ each returns what the plain call returns and raises what it raises.
   the root selection of `kernel/coordination_context/`, and `kernel/memory_mode.py`.
 
 ## Evidence
+
+- Nested recording inherits or accepts a separate examined audit bucket; examined reads use its conflict handling without becoming kept dependencies. [27]
+
 
 - The module docstring: the three byte identities, the two selection namespaces and the conflict rule. [7]
 - The identity of a file at this moment. [8]

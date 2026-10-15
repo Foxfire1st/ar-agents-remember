@@ -181,3 +181,88 @@ lifecycle signal calls are not replacement APIs; next-turn/session wording in th
 is not evidence of implemented L113 runtime handling.
 
 - Current preview/handoff/STOP and owner-authority instruction; not runtime acceptance. [7]
+
+## Current source qualification
+
+This candidate's finalizer text reconciles the parent's exact child row and validates the independently optional parent assertions; each parent-child edge is finalized separately and the parent itself is not recursively completed. The former explicit standalone/no-parent support sentence was removed. An older card aside saying a task.json finalizes standalone is retained only as historical commentary, not a supported-candidate promise. The current L113 contract-adoption, parent approval-relay and start/attach selector qualifications above remain governing.
+
+- Finalizer edge reconciliation no longer advertises the removed standalone/no-parent support sentence. [9]
+
+
+## Inherited Source-Epoch Commentary
+
+The following distribution-copy account preserves useful explanations and source-epoch history, not a second current contract. Its currentness, tool, seat, provider, execution and permission claims are inherited scope unless separately qualified above against the current canonical source. Earlier incompatible claims on the explicitly updated seams are historical, not restored authority. Historical labels in this quotation do not allocate this card's reference numbers.
+
+> # mcp/src/agents_remember/package_data/runtime/skills/c-09-git-worktree-manager/SKILL.md
+>
+> ## Current A8 carrier and authority boundary
+>
+> The source still separates archive-ready from completed cleanup, exact retry arguments from defaults and task authoring from projection admission. Its initial start/attach description no longer carries fleeting on_unsaved save/discard promotion; developer-gated start/integration/finalization wait for approval relayed through the parent or parentless chat. Inspection does not select. The corrected compatibility statement excludes cache bytes as authority; historical incoming direct-recovery wording is scoped below, with current c-12 receipt recovery retained.
+>
+> - Current instruction adopts the new contract lifecycle, uses parent role_message approval relays, limits selectors to atomic start/attach and retains strict source lineage and terminal evidence; old fleeting-save/dispatch/automatic-resume accounts are not current authority. \(historical reference 18) (historical reference 18)
+>
+>
+> ## Governing Overview
+>
+> [MCP package overview](../../../../../../overview.md)
+>
+> ## Purpose
+>
+> This generated runtime skill propagates the canonical root skill's exact-pair landing guidance. It distinguishes leaf rejudgment from the master validator/staleness/chain/history checks and separates public direct recover refusal from the real executor's receipt settlement. Edit the canonical skill and regenerate copies; this file is no second authority.
+>
+>
+> Documents `c-09-git-worktree-manager`, the Git worktree lifecycle manager for Agents Remember tasks: worktree start, attach/status, external-memory compatibility before start, integration, lifecycle finalization, and cleanup, plus reopening (`task_reopen` resets a fully landed leaf to planning under its exact leaf id). Closeout sequencing belongs to `c-12-closeout`; this skill only supplies the worktree-specific configured leaf path and the integration/finalization follow-up rules.
+>
+> ## Code Commentary
+>
+> Task identity is settled before worktree creation: a master owns the root `series-contract.md` plus its integration branch, and each ungranted enclosed build leaf owns its enclosure contract. The Worktree Intent Gate must be explicitly approved before start and must name branch policy, source/work branches, memory mode, landing path, and risks. Standalone/new/final work previews first and sends its intent to the parent through `role_message`, or ends with the intent in chat when there is no parent; start, integration or finalization runs only after approval arrives. No awaiting-developer state, automatic resume or gate-tool call is inferred. Subordinate accepted-series work continues under recorded series authority.
+>
+> External memory incompatibility is interactive and offers `reconciliation` or `custom` handling — there is no `disabled-memory` recovery choice. Memory cannot be disabled for a task: a start naming the removed `disabled` mode or the removed `disabled-memory` answer is refused by name (`memory-opt-out-refused`) before any worktree is created. A contract on disk that carries the removed mode is abandoned and started again: save the changes worth keeping, run `worktree_abandon` (dry run first), then `worktree_start` at the same address without `memory_mode`. Historical earlier-card assumption: a newly merged gated PR commit absent from the ledger was called an incompatibility trigger. That is not the current admission criterion: actual code/memory objects, ancestry and refs govern compatibility; `memory.md` remains an ignored consumer cache whose absence, staleness or malformed bytes never make an otherwise valid pair incompatible.
+>
+> Integration follows applicable authority (`ff-only` for unmoved sources, `replay` for parallel work); the recorded `source_branch` is the integration target. Lifecycle finalization proves the landed commit reachable from the recorded local source branch, runs or verifies cleanup, and reconciles task documents to `Completed`. The closeout preview runs no quality/test/memory/certification/review tool but does ask the mandatory invariant gate on converted memory. Atomic-series activation is scoped to the exact canonical series contract; terminal cleanup releases only the exact still-selected contract.
+>
+> Unconverted-memory guidance is unconditional (MIK-R46@v2), not triggered by a
+> converted branch elsewhere. A moving sync with unconverted target and source
+> refuses `legacy-format`; merging three unconverted trees is not a plain Git
+> fallback. A fast-forward that takes a converted source remains admitted, and a
+> mixed-format merge takes the crossing route. Fast-forwarding an unconverted
+> source onto a converted target refuses rather than removing the text format.
+> The unchanged no-memory-move cases remain outside this new refusal. Convert first
+> through `c-13-install-and-onboard` and `docs/guides/first-conversion.md`: one new
+> leaf converts its memory worktree, then closes out and lands; other open lines
+> cross at their next `worktree_sync` with `merge-memory`. Retained continue/cancel
+> recovery is not a fresh legacy-write admission.
+>
+> ## Granted direct workspace
+>
+> A granted canonical leaf works in its master series checkouts without leaf worktree_start or an enclosure. Product role preparation keeps report/scratch artifacts in the separate group and refuses missing authority/roots or another active direct sibling. Ordinary ungranted enclosure start/attach, source-edge sync and transaction recovery retain their owners; directness is not a shell permission or OS sandbox.
+>
+> ## Evidence
+>
+> - No `disabled-memory` choice; abandon-and-restart way out (historical reference 15)
+> - Removed answer refused by name, never honored (historical reference 16)
+> - Removed member refused by name at the vocabulary (historical reference 17)
+
+Inherited reference 15 commentary (not a revalidated target):
+
+> No `disabled-memory` choice; abandon-and-restart way out
+>
+> Anchor: `c-09-git-worktree-manager`
+
+Inherited reference 16 commentary (not a revalidated target):
+
+> Removed answer refused by name, never honored
+
+Inherited reference 17 commentary (not a revalidated target):
+
+> Removed member refused by name at the vocabulary
+
+Inherited reference 18 commentary (not a revalidated target):
+
+> Current instruction adopts the new contract lifecycle, uses parent role_message approval relays, limits selectors to atomic start/attach and retains strict source lineage and terminal evidence; old fleeting-save/dispatch/automatic-resume accounts are not current authority. (historical reference 18)
+
+## Canonical Source Ownership
+
+The byte-equal package copy is a distribution carrier, not an independent role, task or permission authority. Whole-file source evidence does not certify inherited statements, execution, grading or the whole card.
+
+- The authored source owns this contract; the distribution copy is not a separate authority. [10]

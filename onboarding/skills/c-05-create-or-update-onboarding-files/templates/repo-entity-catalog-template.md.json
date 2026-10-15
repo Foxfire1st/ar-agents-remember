@@ -1,0 +1,112 @@
+{
+  "path": "skills/c-05-create-or-update-onboarding-files/templates/repo-entity-catalog-template.md",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The entity template requires a fingerprint for every inventory entity and describes sorted current Git blob evidence with a smallest-practical load-bearing source set.\n\nAnchor: \"## Entity Fingerprints\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a7517db42228431dfa7e199b2e7d450e342163a9",
+            "content": "sha256:32af5dd1ddcbdaa2b03d8b9755e611d1a78873d11402647379108ec64c7954eb",
+            "locator": {
+              "end": 20,
+              "kind": "line_range",
+              "start": 14
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The entity inventory retains real-object meaning, source authority, naming drift, identifiers, relationships, confusions, references and migration notes.\n\nAnchor: \"## Entity Inventory\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a7517db42228431dfa7e199b2e7d450e342163a9",
+            "content": "sha256:304d35a5e0310dd4c7d9180b12a2788dd1230555e104244e8444d389fb3632f2",
+            "locator": {
+              "end": 37,
+              "kind": "line_range",
+              "start": 22
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The source describes Reality/Firmware/Backend/Frontend projections, optional catalog ownership notes and legacy history syntax.\n\nAnchor: \"## Cross-Layer Projections\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a7517db42228431dfa7e199b2e7d450e342163a9",
+            "content": "sha256:3d59019a47030e766a81c0b530319067cfea2f9bb3f4f0198a01d18c6f168980",
+            "locator": {
+              "end": 56,
+              "kind": "line_range",
+              "start": 39
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The c-05 source routes repository entity catalogs separately from file-level units.\n\nAnchor: \"## Routing\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4d90c238185e61a3bec8347aa1f8b50292cbc1dd",
+            "content": "sha256:cab76462dd40ef39994467b3b2e01cbf6b9554d21c568feb150fb554e5293b91",
+            "locator": {
+              "end": 68,
+              "kind": "line_range",
+              "start": 55
+            },
+            "path": "skills/c-05-create-or-update-onboarding-files/SKILL.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The inspected c-05 source attributes evidence-path curation to maintenance and fingerprint comparison/inventory matching to c-02; the template itself performs neither.\n\nAnchor: \"6. Repo-level entity catalogs use deterministic\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4d90c238185e61a3bec8347aa1f8b50292cbc1dd",
+            "content": "sha256:fb30abd1435ff412dac2c9893bf0da97171b3256f6f3922b30debe9b08d9fef7",
+            "locator": {
+              "end": 130,
+              "kind": "line_range",
+              "start": 125
+            },
+            "path": "skills/c-05-create-or-update-onboarding-files/SKILL.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The converted workflow requires a source-mirrored Markdown/companion card without manually authored metadata, history or sidecar JSON.\n\nAnchor: \"## What a converted card is\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e071ead508fb6ee46a9f883dc3a5bf12260ebd28",
+            "content": "sha256:c37c684764deb1c742f510fd62758673324a7bfe663c6447d4150822d0483643",
+            "locator": {
+              "end": 33,
+              "kind": "line_range",
+              "start": 7
+            },
+            "path": "skills/c-05-create-or-update-onboarding-files/workflows/converted-card-workflow.md"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

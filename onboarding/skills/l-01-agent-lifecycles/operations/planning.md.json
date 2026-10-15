@@ -3,14 +3,16 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "One master takes one Manager, two or more take one Orchestrator; direct coordination is the developer-chosen exception.",
+      "note": "One master takes one Manager, two or more take one Orchestrator; direct coordination is the developer-chosen exception.\n\nAnchor: \"The Architect's first delegation for one master\"",
       "targets": [
         {
           "anchor": {
-            "blob": "4c0d7bdf23d8de8d5d79fd2131d276d37ad16bad",
-            "content": "sha256:7a838418428b61f89bab701116ee30e3a0b52ccfe76c08a03ca91b2e31107cc0",
+            "blob": "155a4a0f31d528f1b949ddb4aaf1d3131a36b5e3",
+            "content": "sha256:905477a73eb39f2cce3446be15e29751fcf57051d49d2d9d9982dafbbfbbe4fd",
             "locator": {
-              "kind": "file"
+              "end": 5,
+              "kind": "line_range",
+              "start": 5
             }
           },
           "kind": "code"
@@ -18,12 +20,46 @@
       ]
     },
     "2": {
-      "note": "Each independently falsifiable obligation gets a stable ID, version and canonical packet before topology.",
+      "note": "Each independently falsifiable obligation gets a stable ID, version and canonical packet before topology.\n\nAnchor: \"assign a stable requirement ID/version\"",
       "targets": [
         {
           "anchor": {
-            "blob": "4c0d7bdf23d8de8d5d79fd2131d276d37ad16bad",
-            "content": "sha256:7a838418428b61f89bab701116ee30e3a0b52ccfe76c08a03ca91b2e31107cc0",
+            "blob": "155a4a0f31d528f1b949ddb4aaf1d3131a36b5e3",
+            "content": "sha256:50bcc494e6d2c7a9aaadc66db6ab152e575bdc124415bd8420f92949c9bc757c",
+            "locator": {
+              "end": 3,
+              "kind": "line_range",
+              "start": 3
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "A packet-named recorded invariant/family effect is declared by the Architect before implementation; no named effect means no declaration.\n\nAnchor: `expectedKnowledgeEffects`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "155a4a0f31d528f1b949ddb4aaf1d3131a36b5e3",
+            "content": "sha256:2128e942e3b0ccb9cbd2e813f09585bea2ec8c46d7bf92e0085fd8452be1ddf0",
+            "locator": {
+              "end": 7,
+              "kind": "line_range",
+              "start": 7
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The authored source owns this contract; the distribution copy is not a separate authority.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "155a4a0f31d528f1b949ddb4aaf1d3131a36b5e3",
+            "content": "sha256:d6a1c6458d3a67ed54c0bbf0b399066022d8ac094110e5fae4673c5d0bd36f63",
             "locator": {
               "kind": "file"
             }

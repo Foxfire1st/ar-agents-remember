@@ -1,6 +1,25 @@
 {
   "path": "mcp/src/agents_remember/application/knowledge_writer/requirement_links.py",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "ca45c13cbedb2dcb7a89b993d6423e60ba43e1ff",
+        "content": "sha256:53e109d1383179779fe614d97f5b0849de8718c970f8e37b0ad583ba36672797",
+        "locator": {
+          "kind": "symbol",
+          "name": "requirement_link_problems"
+        }
+      },
+      "id": "RLZ-ES0V93",
+      "invariant": "INV-DP689F",
+      "origin": {
+        "handoffEntry": "MIK-R54@v1 rule 10",
+        "leaf": "260928-MIK-L54"
+      },
+      "rationale": "This Writer seam refuses newly added or changed endpoints that the supplied owner cannot resolve.",
+      "role": "enforcement"
+    }
+  ],
   "references": {
     "1": {
       "note": "Each requirement link target of the run's records, with the owner's resolution.",
@@ -32,6 +51,40 @@
             "path": "mcp/tests/test_knowledge_writer.py"
           },
           "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Endpoint outcomes compare complete current links with their previous record links and retain archived state. [3]",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ca45c13cbedb2dcb7a89b993d6423e60ba43e1ff",
+            "content": "sha256:b495a57ac8f9408eaa22610e1dd5e751d3215e786b1219071ff1874675ba1375",
+            "locator": {
+              "end": 68,
+              "kind": "line_range",
+              "start": 26
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Only changed unresolved links with a supplied coordination root yield writer problems. [4]",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ca45c13cbedb2dcb7a89b993d6423e60ba43e1ff",
+            "content": "sha256:53e109d1383179779fe614d97f5b0849de8718c970f8e37b0ad583ba36672797",
+            "locator": {
+              "end": 81,
+              "kind": "line_range",
+              "start": 71
+            }
+          },
+          "kind": "code"
         }
       ]
     }

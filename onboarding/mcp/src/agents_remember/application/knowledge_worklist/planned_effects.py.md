@@ -30,8 +30,7 @@ declared. `compute._Run.document` calls it as step 5; the declaration itself com
 - **Matching (rule 3, `_match` and `_delivers`).**
   - `invariant:<ID>` with effect E: only a `changed` row about the invariant whose `effect` is E; for
     E = `retire`, also a `deleted` row whose `effect` is `retire`. A plain `deleted` row does not match.
-  - `family:<ID>`: any `changed` family row, whatever the declared effect; `_delivers` checks only
-    the family row's disposition, not its `effect`.
+  - `family:<ID>` with effect E: a `changed` family row only when its authored `effect` equals E. Another family effect leaves the declaration unmatched.
   - `new:<label>` (`_new_invariant`): an invariant present in K_C, absent from K_B, whose
     `origin.handoffEntry` equals the label and whose `origin.leaf` is this leaf when the owner is known.
     Legacy-converted records carry no `handoffEntry`, so `new:` matches writer-authored invariants only
@@ -110,9 +109,17 @@ No configured live documentation source was available for this pass.
 
 - The reconciliation; no declaration gives `declared=False`. [7]
 - Matching by subject form, and `subject_unknown`. [8]
-- Which rows deliver an effect. [9]
+
+
+- Changed invariant and family rows deliver only the exact declared effect, with the invariant retirement exception retained [9]
+
+
 - `new:` matches a writer-authored invariant of this leaf only. [10]
-- The item, its facts, its stable ID and `satisfiedBy`. [11]
+
+
+- Unmatched facts expose both invariant and family row effects and keep the declared subject/requirement-based identity [11]
+
+
 - Step 5 of the run: marks, items and the summary. [12]
 - Matching, marks, `subject_unknown`, the reordering and the four R1-F3 branches. [13]
 - A planned row answers its item; the stored predicate agrees. [14]
@@ -123,3 +130,17 @@ The declaration is read from the leaf's task document in the coordination root, 
 (`tasks/leaf_decisions.py`); this module receives it as data and crosses no repository boundary itself.
 
 No cross-repo boundary is crossed by this file.
+
+
+## Current source contract
+
+A changed family row delivers a declared family effect only when its authored effect equals that declaration. Unmatched-item diagnostic rows now expose nonempty effects for family rows as well as invariant rows.
+
+A changed family row with another effect is not a match. The new-label invariant-origin match, invariant retirement special case, no-declaration boundary, stable declaration subject key and separate planned-row reference resolution remain distinct.
+
+These spans and input-card identities were independently rechecked after the supported L61 sync. Source observation supplies no test execution, installed-host acceptance or semantic verdict for unrelated inherited material.
+
+
+- Family changed rows deliver only the exact declared effect; invariant retirement keeps its separate exception. [15]
+
+- Unmatched declaration facts include nonempty effects for both family and invariant rows. [16]

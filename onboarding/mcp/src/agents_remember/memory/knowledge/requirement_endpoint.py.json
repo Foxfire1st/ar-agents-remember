@@ -1,18 +1,55 @@
 {
   "path": "mcp/src/agents_remember/memory/knowledge/requirement_endpoint.py",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "2c338bc95b7c3356425cae3d82c0c83cf08a2667",
+        "content": "sha256:4fcc8dbd244f2419df8a21fcee9e51c7523355c7dbf5278ebc782d917b2ae157",
+        "locator": {
+          "kind": "symbol",
+          "name": "resolve_requirement_endpoint"
+        }
+      },
+      "id": "RLZ-6B4AF6",
+      "invariant": "INV-DP689F",
+      "origin": {
+        "handoffEntry": "L54-curator-MIK-R54-v1-rule-10-actual-guards",
+        "leaf": "260928-MIK-L54"
+      },
+      "rationale": "The selected live/archive owner supplies the actual packet resolution and explicit archive provenance; no authority is invented.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "2c338bc95b7c3356425cae3d82c0c83cf08a2667",
+        "content": "sha256:1dc74a8fe10ce3024734be2fe7695c4d9609b42ca9484f98b2705943f4b14608",
+        "locator": {
+          "kind": "symbol",
+          "name": "requirement_task_root"
+        }
+      },
+      "id": "RLZ-XHZ44A",
+      "invariant": "INV-DP689F",
+      "origin": {
+        "handoffEntry": "MIK-R54@v1 rule 10",
+        "leaf": "260928-MIK-L54"
+      },
+      "rationale": "This owner selects the live task directory or its bounded archive counterpart.",
+      "role": "enforcement"
+    }
+  ],
   "references": {
     "15": {
       "note": "The two root answers and the manifest constants.",
       "targets": [
         {
           "anchor": {
-            "blob": "b8476720a5b70cf8f7e8577c7680ed8e26d3d079",
+            "blob": "2c338bc95b7c3356425cae3d82c0c83cf08a2667",
             "content": "sha256:424716912342298176139e4510ac3f030ee0bad293634a61e620235461b99773",
             "locator": {
-              "end": 59,
+              "end": 62,
               "kind": "line_range",
-              "start": 51
+              "start": 54
             }
           },
           "kind": "code"
@@ -72,7 +109,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b8476720a5b70cf8f7e8577c7680ed8e26d3d079",
+            "blob": "2c338bc95b7c3356425cae3d82c0c83cf08a2667",
             "content": "sha256:e81e65f5dea0a7f4ae9f71e1333de6e84e0a046b9d8c79f7522e98adb596c91d",
             "locator": {
               "kind": "symbol",
@@ -88,7 +125,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b8476720a5b70cf8f7e8577c7680ed8e26d3d079",
+            "blob": "2c338bc95b7c3356425cae3d82c0c83cf08a2667",
             "content": "sha256:3da4a039b41e690cfdc147dff1a290d7c9f6cc1bae61b1dd9a23430300a4ddf2",
             "locator": {
               "kind": "symbol",
@@ -104,7 +141,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b8476720a5b70cf8f7e8577c7680ed8e26d3d079",
+            "blob": "2c338bc95b7c3356425cae3d82c0c83cf08a2667",
             "content": "sha256:3538b283f3d5764f4f8f7d758b50b3c8a86dc87abc6292adb6c63ade4cddc0d0",
             "locator": {
               "kind": "symbol",
@@ -120,7 +157,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b8f75c0db0ff78135ca05f2e8d2d82d0a8f2350e",
+            "blob": "9719c9159d392a3e5377a242638474a1a15b1f37",
             "content": "sha256:2f7248110e8cdfa350134673f986810f1d3a99d1bd2c7d2fe50833d84f84c0ad",
             "locator": {
               "kind": "symbol",
@@ -137,7 +174,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b8476720a5b70cf8f7e8577c7680ed8e26d3d079",
+            "blob": "2c338bc95b7c3356425cae3d82c0c83cf08a2667",
             "content": "sha256:e81e65f5dea0a7f4ae9f71e1333de6e84e0a046b9d8c79f7522e98adb596c91d",
             "locator": {
               "kind": "symbol",
@@ -153,7 +190,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b8476720a5b70cf8f7e8577c7680ed8e26d3d079",
+            "blob": "2c338bc95b7c3356425cae3d82c0c83cf08a2667",
             "content": "sha256:6f009ce3656a87d4b37b7bdd737866906746146847e1d3bfdfac4b10f0de3b61",
             "locator": {
               "kind": "symbol",
@@ -217,7 +254,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b8476720a5b70cf8f7e8577c7680ed8e26d3d079",
+            "blob": "2c338bc95b7c3356425cae3d82c0c83cf08a2667",
             "content": "sha256:6107e1df3fc95f3e6eb4024cac45e69f0c21b10c7bd8a9d9fd42e47590f6961f",
             "locator": {
               "kind": "symbol",
@@ -233,7 +270,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b8476720a5b70cf8f7e8577c7680ed8e26d3d079",
+            "blob": "2c338bc95b7c3356425cae3d82c0c83cf08a2667",
             "content": "sha256:49570d37da1778dba3c9b19703066fb894a945cc3b2aa6d9e18b46c3b672ca09",
             "locator": {
               "kind": "symbol",
@@ -249,7 +286,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b8476720a5b70cf8f7e8577c7680ed8e26d3d079",
+            "blob": "2c338bc95b7c3356425cae3d82c0c83cf08a2667",
             "content": "sha256:5fb08aad422a944a4e84cf80f7cb468b0b9e10196bdb886ba627267a3ff12fd9",
             "locator": {
               "kind": "symbol",
@@ -265,7 +302,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b8476720a5b70cf8f7e8577c7680ed8e26d3d079",
+            "blob": "2c338bc95b7c3356425cae3d82c0c83cf08a2667",
             "content": "sha256:e81e65f5dea0a7f4ae9f71e1333de6e84e0a046b9d8c79f7522e98adb596c91d",
             "locator": {
               "kind": "symbol",
@@ -281,7 +318,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b8476720a5b70cf8f7e8577c7680ed8e26d3d079",
+            "blob": "2c338bc95b7c3356425cae3d82c0c83cf08a2667",
             "content": "sha256:3da4a039b41e690cfdc147dff1a290d7c9f6cc1bae61b1dd9a23430300a4ddf2",
             "locator": {
               "kind": "symbol",
@@ -297,7 +334,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e499f1cf47ad6bc42fb86c1314767b975f0653ac",
+            "blob": "e1b050eefa6faeac6a1313ba1100336442c14936",
             "content": "sha256:df053197906d07b2388c5dac23e09dedb0592a931742ca48c4a64f9c3d13e43e",
             "locator": {
               "kind": "symbol",
@@ -330,7 +367,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5d61a0905f69494b5527cb7179246b4559cf8d2c",
+            "blob": "886a6295ef58c5cdbfa1e1682723c34ea51e94c1",
             "content": "sha256:e6da3ab34e59a129b755374a77b7dd28270b5ae8ed3ce4ca0a73c1fd5ef0adaa",
             "locator": {
               "kind": "symbol",
@@ -339,6 +376,35 @@
             "path": "mcp/tests/test_knowledge_decisions.py"
           },
           "kind": "test"
+        }
+      ]
+    },
+    "36": {
+      "note": "Absent active directories can use the repository-scoped archive, whose provenance is retained on both resolved and unresolved owner outcomes.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2c338bc95b7c3356425cae3d82c0c83cf08a2667",
+            "content": "sha256:1dc74a8fe10ce3024734be2fe7695c4d9609b42ca9484f98b2705943f4b14608",
+            "locator": {
+              "end": 98,
+              "kind": "line_range",
+              "start": 89
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2c338bc95b7c3356425cae3d82c0c83cf08a2667",
+            "content": "sha256:4fcc8dbd244f2419df8a21fcee9e51c7523355c7dbf5278ebc782d917b2ae157",
+            "locator": {
+              "end": 141,
+              "kind": "line_range",
+              "start": 101
+            }
+          },
+          "kind": "code"
         }
       ]
     }

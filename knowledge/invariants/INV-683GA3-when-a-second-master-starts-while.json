@@ -8,8 +8,7 @@
   },
   "applicability": "A sprint in which a second master starts while a Manager already works directly under the Architect.",
   "conditions": [
-    "The Architect names the new Orchestrator's agent id and the existing Manager's exact identity, master and state.",
-    "Family examination: no joint obligation is supported. Basis: The transition rule applies the delegation default to a running master and is entailed by the default recorded in FAM-PNH1QS rather than an independent joint promise; it binds at the transition alone."
+    "The Architect names the new Orchestrator's agent id and the existing Manager's exact identity, master and state."
   ],
   "exclusions": [
     "Native parentage, which never changes for a running agent.",
@@ -28,7 +27,7 @@
     "leaf": "260928-MIK-L72",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-invariant/v1",
   "statement": "When a second master starts while a Manager works directly under the Architect, the Architect starts one Orchestrator on the sprint, gives it the existing Manager's exact agent id, canonical master reference and current state, names the Orchestrator's id to that Manager in one message, and the Manager records the instructed reporting recipient and sends developer-needed matters there from then on without changing its fixed launch parent; when the developer answers or gives a ruling, the Architect sends that actual answer or ruling to the requesting Manager or Orchestrator, and a wait result that only repeats the question is not the developer's decision.",
   "status": "proposed",

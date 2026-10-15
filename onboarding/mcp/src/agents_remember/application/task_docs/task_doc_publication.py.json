@@ -3,8 +3,26 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "0dcc3c1c6d4cd7078c1c23ab2db0215845db9a40",
-        "content": "sha256:0215690d3822c887adf5b93ab430bbd3991405ad216b390e0c5007bcf1eb37d4",
+        "blob": "eb17f15ae8c3ab296c94191b81ec35737c0625e8",
+        "content": "sha256:4f28ba262a9548b71c9f8272d0ff337b9257c577a0c59072448065bfd61bc8ac",
+        "locator": {
+          "kind": "symbol",
+          "name": "run_task_doc_call"
+        }
+      },
+      "id": "RLZ-CDSWP0",
+      "invariant": "INV-X485SP",
+      "origin": {
+        "handoffEntry": "L54-R1-C05 round3 admitted construction",
+        "leaf": "260928-MIK-L54"
+      },
+      "rationale": "Holding the repository lock before source read prevents a waiting task_doc from preparing against the failing batch.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "eb17f15ae8c3ab296c94191b81ec35737c0625e8",
+        "content": "sha256:c5e141f1dc8fee5e0f37869b0f85bddc6ad170fb3e149c5c9c62fb4a208f7be8",
         "locator": {
           "kind": "symbol",
           "name": "publish_task_doc_transaction_and_refresh"
@@ -16,8 +34,62 @@
         "handoffEntry": "L71-CURRENT242-W-13",
         "leaf": "260928-MIK-L71"
       },
-      "rationale": "The landed single task publication transaction invokes copy refresh after canonical rendered publication rather than a second task writer.",
+      "rationale": "The central task-document publisher re-enters the same kernel exclusive_file_lock on coordination_root/tasks/<repository> that run_task_doc_call holds before authoritative task_doc source read and preparation. Its call-scoped publication-active marker refuses nested publication before any write and resets in finally. The protected private transaction performs exact source CAS, canonical publication and copy refresh; failed refresh restores the pre-batch source snapshots before releasing the file lock. Other threads/processes wait, then the task_doc entry reads and prepares after rollback, so their questions stand. Independently prepared topology/retirement/linkage callers retain exact CAS and clean conflict refusal, with no retries. This is the built publication realization of the unchanged own-document/copy-set guarantee; it is not a per-key inverse or a successful nested publication.",
       "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "eb17f15ae8c3ab296c94191b81ec35737c0625e8",
+        "content": "sha256:c5e141f1dc8fee5e0f37869b0f85bddc6ad170fb3e149c5c9c62fb4a208f7be8",
+        "locator": {
+          "kind": "symbol",
+          "name": "publish_task_doc_transaction_and_refresh"
+        }
+      },
+      "id": "RLZ-PAVE08",
+      "invariant": "INV-X485SP",
+      "origin": {
+        "handoffEntry": "L54-R1-C05 round3 admitted construction",
+        "leaf": "260928-MIK-L54"
+      },
+      "rationale": "The central transaction holds the same lock through validation, refresh and snapshot restoration and rejects a nested publication before its publisher runs.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "eb17f15ae8c3ab296c94191b81ec35737c0625e8",
+        "content": "sha256:3abe16a2f405376575435d7501ee6496991c46ebc9cde7f150dbfb6622861422",
+        "locator": {
+          "kind": "symbol",
+          "name": "validate_task_doc_transaction"
+        }
+      },
+      "id": "RLZ-SFZBFM",
+      "invariant": "INV-6WXVEA",
+      "origin": {
+        "handoffEntry": "L54-curator-MIK-R55-v1-rule-9-actual-guards",
+        "leaf": "260928-MIK-L54"
+      },
+      "rationale": "Public task-document transactions refuse a subTask without the required master and row before source publication.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "eb17f15ae8c3ab296c94191b81ec35737c0625e8",
+        "content": "sha256:f87c2333bd59de7c06184e730d1fbb75cd54b21d4ac2cf5edd41320be92e5b75",
+        "locator": {
+          "kind": "symbol",
+          "name": "_publish_task_doc_transaction_and_refresh"
+        }
+      },
+      "id": "RLZ-YGS0MT",
+      "invariant": "INV-X485SP",
+      "origin": {
+        "handoffEntry": "L54-curator-L54-R1-C05-round3-admitted-construction-actual-guards-wave-70",
+        "leaf": "260928-MIK-L54"
+      },
+      "rationale": "The inner transaction retains snapshot restoration and exact source/copy publication inside the already-held shared lock.",
+      "role": "enforcement"
     }
   ],
   "references": {
@@ -26,7 +98,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0dcc3c1c6d4cd7078c1c23ab2db0215845db9a40",
+            "blob": "eb17f15ae8c3ab296c94191b81ec35737c0625e8",
             "content": "sha256:28bfe9cddd38a79e9918e126b4e476daafd3bc036bf3c99a02f10923fb56bd7d",
             "locator": {
               "kind": "symbol",
@@ -37,7 +109,7 @@
         },
         {
           "anchor": {
-            "blob": "0dcc3c1c6d4cd7078c1c23ab2db0215845db9a40",
+            "blob": "eb17f15ae8c3ab296c94191b81ec35737c0625e8",
             "content": "sha256:ce3f71f959c82159c1d56cd7d9aedfec2a471d105e557bf4093b35527533492e",
             "locator": {
               "kind": "symbol",
@@ -48,7 +120,7 @@
         },
         {
           "anchor": {
-            "blob": "0dcc3c1c6d4cd7078c1c23ab2db0215845db9a40",
+            "blob": "eb17f15ae8c3ab296c94191b81ec35737c0625e8",
             "content": "sha256:609566939ff3f24cd3010781e5ad5c7f64b1f1d22abdad6d8e21ff7e7c1191d7",
             "locator": {
               "kind": "symbol",
@@ -59,7 +131,7 @@
         },
         {
           "anchor": {
-            "blob": "0dcc3c1c6d4cd7078c1c23ab2db0215845db9a40",
+            "blob": "eb17f15ae8c3ab296c94191b81ec35737c0625e8",
             "content": "sha256:d2d6a1ac66b328c485a71679c3e1c60a884bf2d28a1a7f23e89ee5f502ad103a",
             "locator": {
               "kind": "symbol",
@@ -70,49 +142,34 @@
         }
       ]
     },
-    "2": {
-      "note": "Publication delegates exact validation, task write, affected-scope invalidation, and independent rebuild to the task-first owner.",
+    "10": {
+      "note": "The waiting second-thread writer prepares after failed-batch rollback and its question remains, for append and replacement cases.",
       "targets": [
         {
           "anchor": {
-            "blob": "0dcc3c1c6d4cd7078c1c23ab2db0215845db9a40",
-            "content": "sha256:4d206d0dab49978f058b58afa65ebd16a43e03dd1ee6e725c91c5083efa842b7",
+            "blob": "90aac62f285d26396542d57c83d410c9d2b38e62",
+            "content": "sha256:9b6d5b7b337967617ca2ffa54d5cdcdc4183676b01a3d7de4f039d1925a29c96",
             "locator": {
               "kind": "symbol",
-              "name": "publish_task_doc_set"
-            }
+              "name": "test_waiting_question_writer_prepares_after_failed_batch_rollback"
+            },
+            "path": "mcp/tests/test_writer_question_publication.py"
           },
-          "kind": "code"
-        },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "One task-root file lock and the call-scoped active marker surround central publication; the private body performs exact validation, source publication, copy refresh/rollback and per-scope projection work.",
+      "targets": [
         {
           "anchor": {
-            "blob": "eb1607bd808d69b7cbcb9a52e5fe3b71acd1622c",
-            "content": "sha256:1499691d3198481842de351bbadbd56e0cdf6962f0873bf242452ffbec7c9d9a",
+            "blob": "eb17f15ae8c3ab296c94191b81ec35737c0625e8",
+            "content": "sha256:0b36c853dfd841b7ed326c5d9a7b91ccfc4991d46f9d1b9dae2f05be63b858d1",
             "locator": {
-              "kind": "symbol",
-              "name": "publish_task_doc_transaction_and_refresh"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "0dcc3c1c6d4cd7078c1c23ab2db0215845db9a40",
-            "content": "sha256:4bc67f0bcc1f1ceae7f2c62d0b8739e80465e397f0f076f7778761cceb513265",
-            "locator": {
-              "kind": "symbol",
-              "name": "preview_task_doc_projection_effects"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "0dcc3c1c6d4cd7078c1c23ab2db0215845db9a40",
-            "content": "sha256:349152e3128018486243d62f95488305bb95b709485f6463e151842eee199c38",
-            "locator": {
-              "kind": "symbol",
-              "name": "preview_task_doc_transaction_projection_effects"
+              "end": 208,
+              "kind": "line_range",
+              "start": 160
             }
           },
           "kind": "code"
@@ -124,7 +181,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0dcc3c1c6d4cd7078c1c23ab2db0215845db9a40",
+            "blob": "eb17f15ae8c3ab296c94191b81ec35737c0625e8",
             "content": "sha256:382ac1c56b0075ab841e4b01ce53a94985b33f5cb6b60e4726e6bf3f0c0240b9",
             "locator": {
               "kind": "symbol",
@@ -140,7 +197,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0dcc3c1c6d4cd7078c1c23ab2db0215845db9a40",
+            "blob": "eb17f15ae8c3ab296c94191b81ec35737c0625e8",
             "content": "sha256:19cfeebf26faa8038c801e0e9300ea4d5a0e6621cbaa65bd45a41aaa8cd70245",
             "locator": {
               "kind": "symbol",
@@ -152,26 +209,28 @@
       ]
     },
     "5": {
-      "note": "Dry-run preflight validates source currentness and the classifier-scoped union through the same closure as publication.",
+      "note": "Dry-run and protected publication share exact source-currentness, conditional folder-master/matching-row validation with prepared overrides, and classifier-scoped union resolution.",
       "targets": [
         {
           "anchor": {
-            "blob": "0dcc3c1c6d4cd7078c1c23ab2db0215845db9a40",
-            "content": "sha256:92f2c232559d8a0058238b68c576d6788ac773c27bc92d7afb175a42c9d78347",
+            "blob": "eb17f15ae8c3ab296c94191b81ec35737c0625e8",
+            "content": "sha256:3abe16a2f405376575435d7501ee6496991c46ebc9cde7f150dbfb6622861422",
             "locator": {
-              "kind": "symbol",
-              "name": "validate_task_doc_transaction"
+              "end": 339,
+              "kind": "line_range",
+              "start": 311
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "0dcc3c1c6d4cd7078c1c23ab2db0215845db9a40",
-            "content": "sha256:0d97fe2e18f2423ee08737fe40a6220845a89203eef9f2b68f1db1f61f2db47b",
+            "blob": "eb17f15ae8c3ab296c94191b81ec35737c0625e8",
+            "content": "sha256:4b036c8f5181218560c2da99ad0101c57d49d9837d3419bfa308b0883d8d5dd2",
             "locator": {
-              "kind": "symbol",
-              "name": "require_task_doc_sources_current"
+              "end": 208,
+              "kind": "line_range",
+              "start": 198
             }
           },
           "kind": "code"
@@ -190,6 +249,56 @@
               "name": "TaskDocGraphPublicationTests"
             },
             "path": "mcp/tests/test_task_doc_graph_publication.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "The outer task-doc call holds the same repository lock before reading/preparing the edit and refuses a nested publication before invoking the callback.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "eb17f15ae8c3ab296c94191b81ec35737c0625e8",
+            "content": "sha256:4f28ba262a9548b71c9f8272d0ff337b9257c577a0c59072448065bfd61bc8ac",
+            "locator": {
+              "kind": "symbol",
+              "name": "run_task_doc_call"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The kernel primitive uses a sibling lock file, a per-resource thread mutex and flock, with same-thread re-entry sharing the outer hold.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5801a3451a06ef3ec426db8cf0c48e06147bb8c4",
+            "content": "sha256:dd8d3d0f95aedef79978e2d0f55d8bcb30dde228556a7c232ba96ba8b21d9e36",
+            "locator": {
+              "kind": "symbol",
+              "name": "exclusive_file_lock"
+            },
+            "path": "mcp/src/agents_remember/kernel/file_lock.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "Native nested-refusal fixtures cover append and replacement and require task-source and memory bytes to equal their pre-batch values after failed refresh.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "90aac62f285d26396542d57c83d410c9d2b38e62",
+            "content": "sha256:f271f7b3ab32895749a62c562717c8fe88f74c86d8b11583e7b22db1a9dbae40",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_native_refresh_failure_refuses_nested_publication_and_restores_sources"
+            },
+            "path": "mcp/tests/test_writer_question_publication.py"
           },
           "kind": "test"
         }

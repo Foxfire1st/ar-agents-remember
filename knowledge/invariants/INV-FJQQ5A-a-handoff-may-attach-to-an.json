@@ -1,0 +1,37 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake"
+    ],
+    "justification": "A future handoff refactor must not force two publications, allocate a second invariant for an attachment, or let an attachment silently rewrite the author statement. The ordering and equality boundary prevents those provenance and identity mistakes."
+  },
+  "applicability": "An attaching entry in one knowledge-ingest handoff names invariant_id=handoff:<entry id> of an invariant authored in that same handoff.",
+  "conditions": [
+    "Process authoring entries before same-document attachments regardless of their input order.",
+    "The referenced authoring entry must exist and the attaching statement must equal its author statement; refuse a missing author or unequal statement before binding the attachment handle.",
+    "Bind a successful attachment to the author already allocated invariant ID, not to another newly minted record."
+  ],
+  "exclusions": [
+    "Stored-invariant IDs continue through their separate existing-record path.",
+    "Authoring._invariant_document constructs fields but is not claimed as the equal-statement refusal; that check belongs to assign_entries.",
+    "No claim that a historical discovery span or an old producer pending disposition is a fresh CODE verdict."
+  ],
+  "id": "INV-FJQQ5A",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "/home/firefox/projects/ar-coordination/tasks/agents-remember/260928_maintained-invariant-knowledge/notes/reports/worker/0e651ec5-2eed-4b58-b19f-e2336d4978ca/repair-freeze-0a36ddc4/builder-report.md#mik-r54-rule-3",
+        "/home/firefox/projects/ar-coordination/worktrees/agents-remember/54_writer-and-validator-corrections-a4b3b3af8d-ar/role-reports/curator/1ad64580-9e4a-42ce-adc0-169869767dba/wave-75/proof-source-review.json"
+      ],
+      "path": "wave-36-complete-history.json"
+    },
+    "handoffEntry": "MIK-R54@v1 rule 3",
+    "leaf": "260928-MIK-L54",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "A handoff may attach to an invariant it authors in the same document only after the authoring entry and with an equal statement.",
+  "status": "proposed",
+  "supersedes": []
+}

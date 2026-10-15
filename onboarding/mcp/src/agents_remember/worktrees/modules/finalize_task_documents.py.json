@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "47c3c6c1197098901dd9e1a004bd32a2c2617454",
-        "content": "sha256:bdb61772ecafce4d0bc4cc81a4f3d5424c2a03e5027edfc2e152d691cef5d29b",
+        "blob": "f20e2bdd349f2d6f8d541fd954bb6cb6f6028ade",
+        "content": "sha256:eac3f9bb57f21d1fe14f586afed06b33860d3df08bf8e74f340b1b93802cc9d4",
         "locator": {
           "kind": "symbol",
           "name": "_read_own_document"
@@ -21,12 +21,12 @@
     },
     {
       "anchor": {
-        "blob": "47c3c6c1197098901dd9e1a004bd32a2c2617454",
+        "blob": "f20e2bdd349f2d6f8d541fd954bb6cb6f6028ade",
         "content": "sha256:0bdbd8387c7627a84f84fac0b1295ecb4c587e4fbe56074c912da5efaa3b3adf",
         "locator": {
-          "end": 363,
+          "end": 354,
           "kind": "line_range",
-          "start": 357
+          "start": 348
         }
       },
       "id": "RLZ-2RMDT8",
@@ -40,12 +40,30 @@
     },
     {
       "anchor": {
-        "blob": "47c3c6c1197098901dd9e1a004bd32a2c2617454",
+        "blob": "f20e2bdd349f2d6f8d541fd954bb6cb6f6028ade",
+        "content": "sha256:f0f80037ed6b27ed55c27287495e1f6316b673120cc9900124efa61a89b1a260",
+        "locator": {
+          "kind": "symbol",
+          "name": "_folder_parent"
+        }
+      },
+      "id": "RLZ-5NXF76",
+      "invariant": "INV-6WXVEA",
+      "origin": {
+        "handoffEntry": "L54-curator-MIK-R55-v1-rule-9-actual-guards-wave-70",
+        "leaf": "260928-MIK-L54"
+      },
+      "rationale": "The folder-parent resolver refuses a missing master or missing leaf row and retains exact parent-argument and leaf-file checks.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "f20e2bdd349f2d6f8d541fd954bb6cb6f6028ade",
         "content": "sha256:776eb72a88693420cd9eac049dcf9986df7ccdd357e0c84d1da35ca0b7ecd29a",
         "locator": {
-          "end": 380,
+          "end": 371,
           "kind": "line_range",
-          "start": 366
+          "start": 357
         }
       },
       "id": "RLZ-AY53HV",
@@ -59,7 +77,7 @@
     },
     {
       "anchor": {
-        "blob": "47c3c6c1197098901dd9e1a004bd32a2c2617454",
+        "blob": "f20e2bdd349f2d6f8d541fd954bb6cb6f6028ade",
         "content": "sha256:14552dc8da9929454b0c53616992cc6b8230de0242d74f3d3ba6cea9c947d2b8",
         "locator": {
           "kind": "symbol",
@@ -77,7 +95,7 @@
     },
     {
       "anchor": {
-        "blob": "47c3c6c1197098901dd9e1a004bd32a2c2617454",
+        "blob": "f20e2bdd349f2d6f8d541fd954bb6cb6f6028ade",
         "content": "sha256:14552dc8da9929454b0c53616992cc6b8230de0242d74f3d3ba6cea9c947d2b8",
         "locator": {
           "kind": "symbol",
@@ -95,7 +113,7 @@
     },
     {
       "anchor": {
-        "blob": "47c3c6c1197098901dd9e1a004bd32a2c2617454",
+        "blob": "f20e2bdd349f2d6f8d541fd954bb6cb6f6028ade",
         "content": "sha256:e903a5f1fff0200e2cc55c6317ecb2f8e5af4593be6d77cdf6b94a9b19a5d2eb",
         "locator": {
           "kind": "symbol",
@@ -113,12 +131,12 @@
     },
     {
       "anchor": {
-        "blob": "47c3c6c1197098901dd9e1a004bd32a2c2617454",
+        "blob": "f20e2bdd349f2d6f8d541fd954bb6cb6f6028ade",
         "content": "sha256:0bdbd8387c7627a84f84fac0b1295ecb4c587e4fbe56074c912da5efaa3b3adf",
         "locator": {
-          "end": 363,
+          "end": 354,
           "kind": "line_range",
-          "start": 357
+          "start": 348
         }
       },
       "id": "RLZ-F6YV1A",
@@ -132,8 +150,26 @@
     },
     {
       "anchor": {
-        "blob": "47c3c6c1197098901dd9e1a004bd32a2c2617454",
-        "content": "sha256:98820625a31b901e4c6b61d054fea15a5486289f2a323c7150e98f3bc275ee29",
+        "blob": "f20e2bdd349f2d6f8d541fd954bb6cb6f6028ade",
+        "content": "sha256:7d43307f339df04e559fadc13cfeb1254253a6d117173de55c1cfc55579e7548",
+        "locator": {
+          "kind": "symbol",
+          "name": "_resolve_parent_target"
+        }
+      },
+      "id": "RLZ-FE8R7Z",
+      "invariant": "INV-6WXVEA",
+      "origin": {
+        "handoffEntry": "MIK-R55@v1 rule 9",
+        "leaf": "260928-MIK-L54"
+      },
+      "rationale": "This finalizer refuses absent or unlisting master authority before preparing a task-document write.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "f20e2bdd349f2d6f8d541fd954bb6cb6f6028ade",
+        "content": "sha256:bfb718dbc632d8a4dd68c461ac0041384addac761c218724851215ed4da14fe9",
         "locator": {
           "kind": "symbol",
           "name": "resolve_series_targets"
@@ -150,7 +186,7 @@
     },
     {
       "anchor": {
-        "blob": "47c3c6c1197098901dd9e1a004bd32a2c2617454",
+        "blob": "f20e2bdd349f2d6f8d541fd954bb6cb6f6028ade",
         "content": "sha256:14552dc8da9929454b0c53616992cc6b8230de0242d74f3d3ba6cea9c947d2b8",
         "locator": {
           "kind": "symbol",
@@ -189,7 +225,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "47c3c6c1197098901dd9e1a004bd32a2c2617454",
+            "blob": "f20e2bdd349f2d6f8d541fd954bb6cb6f6028ade",
             "content": "sha256:a9612950fd7b574d7294aca3085b559985ab520d4b3a1021b85b9f77dcb18833",
             "locator": {
               "kind": "symbol",
@@ -205,7 +241,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "47c3c6c1197098901dd9e1a004bd32a2c2617454",
+            "blob": "f20e2bdd349f2d6f8d541fd954bb6cb6f6028ade",
             "content": "sha256:7d4c6ee97430b57346fc185cd3dea13cabe9347e22dbac95ac14c9b07bbc5aab",
             "locator": {
               "kind": "symbol",
@@ -221,12 +257,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "47c3c6c1197098901dd9e1a004bd32a2c2617454",
+            "blob": "f20e2bdd349f2d6f8d541fd954bb6cb6f6028ade",
             "content": "sha256:776eb72a88693420cd9eac049dcf9986df7ccdd357e0c84d1da35ca0b7ecd29a",
             "locator": {
-              "end": 380,
+              "end": 371,
               "kind": "line_range",
-              "start": 366
+              "start": 357
             }
           },
           "kind": "code"
@@ -238,24 +274,53 @@
       "targets": [
         {
           "anchor": {
-            "blob": "47c3c6c1197098901dd9e1a004bd32a2c2617454",
+            "blob": "f20e2bdd349f2d6f8d541fd954bb6cb6f6028ade",
             "content": "sha256:172bb77e79b3df6f8c918b1367be4731184955c5b5c48373fddfba4340ab0162",
             "locator": {
-              "end": 380,
+              "end": 371,
               "kind": "line_range",
-              "start": 357
+              "start": 348
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "47c3c6c1197098901dd9e1a004bd32a2c2617454",
+            "blob": "f20e2bdd349f2d6f8d541fd954bb6cb6f6028ade",
             "content": "sha256:3813921e25b4100369731a7c274133d3987d9c946df362dcb806497734504781",
             "locator": {
-              "end": 422,
+              "end": 412,
               "kind": "line_range",
-              "start": 417
+              "start": 407
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Missing leaf/master/row authority refuses with repair guidance rather than standalone completion.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f20e2bdd349f2d6f8d541fd954bb6cb6f6028ade",
+            "content": "sha256:7d43307f339df04e559fadc13cfeb1254253a6d117173de55c1cfc55579e7548",
+            "locator": {
+              "end": 147,
+              "kind": "line_range",
+              "start": 114
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f20e2bdd349f2d6f8d541fd954bb6cb6f6028ade",
+            "content": "sha256:f0f80037ed6b27ed55c27287495e1f6316b673120cc9900124efa61a89b1a260",
+            "locator": {
+              "end": 189,
+              "kind": "line_range",
+              "start": 169
             }
           },
           "kind": "code"

@@ -28,7 +28,7 @@ Ordinary master/series integration records absent source-door authority as expli
 
 Integration checks the accepted objects and actual memory-source ancestry before moving protected refs. Its memory ancestry predicate does not consult ledger rows or require global code-key uniqueness. A cache projection's unresolved attribution is not a substitute for this Git proof.
 
-Finalization proves the immediate landed branch edge and resolves the exact contract-bound task document. When the leaf names an existing immediate parent, or its folder's `task.json` master lists a leaf naming none, the finalizer derives that parent and reconciles its exact row to `Completed`. Supplied parent path and subtask number are identity assertions. A sub-task naming none whose existing folder task document is not a master is refused; standalone/no-parent leaves remain supported. The finalizer does not complete the parent task itself or recursively complete ancestors.
+Finalization proves the immediate landed branch edge and resolves the exact contract-bound task document. When the leaf names an existing immediate parent, or its folder's `task.json` master lists a leaf naming none, the finalizer derives that parent and reconciles its exact row to `Completed`. Supplied parent path and subtask number are identity assertions. A missing or non-master folder task document, or a master without the exact leaf row, refuses leaf finalization under R55.9. The older standalone/no-parent completion fallback is not current runtime behavior; canonical instruction wording does not bypass the actual resolver. The finalizer does not complete the parent task itself or recursively complete ancestors.
 
 The public guidance names the judgment per route: leaf integration and recorded landing rejudge actual pairs; master final/checkpoint/recorded landings run validator, net staleness, chain and history ownership. Preview runs the same admission without mutating refused state. Public direct recovery availability must not be inferred from executor settlement.
 
@@ -72,5 +72,5 @@ The memory layer's configured onboarding include paths do not contain `skills/**
 - The canonical skill owns contract-scoped admission, resumable sync, integration conflict ownership, and exact terminal release doctrine. [1]
 - Ordinary series integration and leaf direct landing remain distinct policy routes, with standing-series and raised-gate approval boundaries. [2]
 - The graph-less default describes concurrency, but queue admission refuses a missing execution graph. [3]
-- Finalization derives the immediate parent row while preserving identity assertions and standalone behavior. [7]
+- Finalization preserves immediate-parent identity assertions and nonterminal cleanup boundaries; actual leaf target resolution now refuses missing master/row authority instead of standalone completion. [7]
 - Closeout preview asks the mandatory gate on converted memory. [8]

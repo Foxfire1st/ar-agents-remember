@@ -19,10 +19,7 @@ interpreter/source-path tokens, and the requirement to record the interpreter ac
 The second scans canonical role, operation and template Markdown for those tokens. A discriminator
 case shows the predicate rejects the retired interpreter line and accepts the shipped template.
 
-The accounting case calls the product's `changed_worktree_paths` on the repository holding a real
-`mcp/.venv` and rejects any returned `.venv` or `node_modules` path. Its precondition refuses a run
-without that venv. The Node half is structural when no `dashboard/node_modules` exists; this case
-is not an executed sync, closeout, landing or cleanup demonstration.
+The accounting case initializes a temporary Git repository, copies the product `.gitignore`, builds its own `mcp/.venv` with `venv.EnvBuilder(with_pip=False)`, and populates `dashboard/node_modules` with a fixture file. It calls the product's `changed_worktree_paths` on that repository and rejects any returned `.venv` or `node_modules` path. Both fixture directories are present; it no longer depends on a live candidate venv or treats the Node half as merely structural. The template copy census is imported from the shared declaration-derived `GENERATED_SKILL_COPIES` registry. These source assertions are not an executed sync, closeout, landing or cleanup demonstration.
 
 ### Invariants And Boundaries
 
@@ -30,11 +27,13 @@ is not an executed sync, closeout, landing or cleanup demonstration.
   that worktree's interpreter. Editable installation supplies the candidate package.
 - The token census covers canonical `roles`, `operations` and `templates`; the ten-copy check is
   for the worker brief, not an assertion that every generated instruction file was scanned.
-- The tests do not build an environment, choose a language-server setting, invoke a transaction,
-  certify a landing or decide whether instruction-only setup is enough for later tasks.
+- Only the accounting case builds a temporary no-pip environment fixture. The tests do not provision a real candidate environment, choose a language-server setting, invoke a sync/closeout transaction, certify a landing or decide whether instruction-only setup is enough for later tasks.
 - Installed AR tools and memory-operation commands remain the landed product.
 
 ## Evidence
+
+- The accounting case creates a temporary Git/venv/node_modules fixture with product ignore rules and checks both environment directories are absent from the changed-worktree inventory. [5]
+
 
 ### Docs References
 

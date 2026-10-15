@@ -20,6 +20,8 @@ The memory-quality row also admits `cutCardCount` and `addedFileCount`, with `cu
 
 Both baseline status and adoption rows explicitly admit `legacyCards`, whose caller use is to correct the named old-format cards blocking readiness or adoption. The field is actionable input, not an authorization to adopt legacy memory; row bounds remain unchanged.
 
+The quality row additionally admits `invariantsWithoutProofCount` as informational proof coverage, not a gate finding, and `routeIndexCacheBuild` as the actual absent-cache build, stale-cache and error counters. Neither field repairs proof gaps or grants acceptance, and the existing quality bound and sync/start/poll production paths remain unchanged.
+
 ## Evidence
 
 No Domain Documentation sources are configured; the evidence below is repository implementation or test assertions, not a new execution attestation.
@@ -30,3 +32,5 @@ No Domain Documentation sources are configured; the evidence below is repository
 
 - Baseline status names the caller use of legacyCards. [7]
 - Baseline adoption names the caller use of legacyCards. [8]
+
+- The quality row names informational proof coverage and actual cache-build/stale/error counters without changing its bound or production paths. [9]

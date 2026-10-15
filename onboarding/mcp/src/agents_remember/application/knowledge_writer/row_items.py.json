@@ -1,0 +1,22 @@
+{
+  "path": "mcp/src/agents_remember/application/knowledge_writer/row_items.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Reads history-row worklist item identifiers literally while reporting malformed item values. This parser preserves the evidence of malformed tokens instead of repairing them into valid identifiers. It returns tokens and problems; callers must not equate a nonempty token list with successful admission or silently drop refusals.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c94a275c0c210a1a9b82e227bfb081ffaa8aedf9",
+            "content": "sha256:7d6b304dbabff96611a09365da3b6b5ad66eac846adf01f3853d70a20615827e",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

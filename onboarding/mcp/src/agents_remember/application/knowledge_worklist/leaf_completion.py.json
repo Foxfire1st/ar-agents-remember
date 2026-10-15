@@ -1,0 +1,22 @@
+{
+  "path": "mcp/src/agents_remember/application/knowledge_worklist/leaf_completion.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Completes explicit leaf comparisons with onboarding trace, settles uncovered changes and persists a recomputed worklist through the existing leaf owner. Unreadable candidate blobs are not unchanged source. A returned worklist can exist without a persisted enclosure file; None means inapplicability, not a successful empty comparison. This module composes domain owners rather than creating another recomputation route.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cc3ddad2210e25566378995fa748618b9afcee64",
+            "content": "sha256:159502ec9b5882f729f7cd3679a6e8aa2e459cefb1387baa59aef5d5dae8b656",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

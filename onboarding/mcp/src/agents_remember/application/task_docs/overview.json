@@ -6,7 +6,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0dcc3c1c6d4cd7078c1c23ab2db0215845db9a40",
+            "blob": "eb17f15ae8c3ab296c94191b81ec35737c0625e8",
             "content": "sha256:4d206d0dab49978f058b58afa65ebd16a43e03dd1ee6e725c91c5083efa842b7",
             "locator": {
               "kind": "symbol",
@@ -18,7 +18,7 @@
         },
         {
           "anchor": {
-            "blob": "0dcc3c1c6d4cd7078c1c23ab2db0215845db9a40",
+            "blob": "eb17f15ae8c3ab296c94191b81ec35737c0625e8",
             "content": "sha256:383cc34c4f8c6c784b4792da6156ab0c51348125af4d6277cd6a2e0c8d32f556",
             "locator": {
               "kind": "symbol",
@@ -42,7 +42,7 @@
         },
         {
           "anchor": {
-            "blob": "0dcc3c1c6d4cd7078c1c23ab2db0215845db9a40",
+            "blob": "eb17f15ae8c3ab296c94191b81ec35737c0625e8",
             "content": "sha256:4bc67f0bcc1f1ceae7f2c62d0b8739e80465e397f0f076f7778761cceb513265",
             "locator": {
               "kind": "symbol",
@@ -54,7 +54,7 @@
         },
         {
           "anchor": {
-            "blob": "0dcc3c1c6d4cd7078c1c23ab2db0215845db9a40",
+            "blob": "eb17f15ae8c3ab296c94191b81ec35737c0625e8",
             "content": "sha256:349152e3128018486243d62f95488305bb95b709485f6463e151842eee199c38",
             "locator": {
               "kind": "symbol",
@@ -118,17 +118,31 @@
       ]
     },
     "13": {
-      "note": "The no-contract leaf guard tests whether task.json exists; its valid-master and first-binding descriptions are stated intent.",
+      "note": "Current task-document publication validates actual master/leaf-row authority, and preparation shares the central repository publication lock; the retired local path-existence guard supplies no current authority.",
       "targets": [
         {
           "anchor": {
-            "blob": "a3cf34ba109604b42b995d60c5eebc3da063dece",
-            "content": "sha256:a7fd12f2f360521356de2f8fd2a7d81a56f4c8145891e9b90a6e9cd20c7672c4",
+            "blob": "eb17f15ae8c3ab296c94191b81ec35737c0625e8",
+            "content": "sha256:4f28ba262a9548b71c9f8272d0ff337b9257c577a0c59072448065bfd61bc8ac",
             "locator": {
-              "kind": "symbol",
-              "name": "_require_bindable_leaf_authoring"
+              "end": 61,
+              "kind": "line_range",
+              "start": 46
             },
-            "path": "mcp/src/agents_remember/application/task_docs/task_doc_tools.py"
+            "path": "mcp/src/agents_remember/application/task_docs/task_doc_publication.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "eb17f15ae8c3ab296c94191b81ec35737c0625e8",
+            "content": "sha256:3ebe67231d6ee4ac5adbea0e3618b82cd344f98fd7ad2eb05446492646c01d56",
+            "locator": {
+              "end": 174,
+              "kind": "line_range",
+              "start": 88
+            },
+            "path": "mcp/src/agents_remember/application/task_docs/task_doc_publication.py"
           },
           "kind": "code"
         }
@@ -359,17 +373,16 @@
       ]
     },
     "5": {
-      "note": "The settable flat fields include the knowledge-effect declaration.",
+      "note": "The shared set-field allowlist includes the knowledge-effect declaration and belongs to the phrase owner.\n\nAnchor: _MUTABLE_FIELDS",
       "targets": [
         {
           "anchor": {
-            "blob": "429317a2a845e4ecf305dd9be840537d84bfa738",
-            "content": "sha256:5822cf2444f11a50162c8854f6cc34b971e6b643472618a4ddfeeb37aad17f23",
+            "blob": "6b2e7fba10f444bde353851a1526fd85b9068236",
+            "content": "sha256:8fff680a6d5843f29cbf1b5944f48bf550aad87e5c464992bb03c5856c252be8",
             "locator": {
-              "kind": "symbol",
-              "name": "_MUTABLE_FIELDS"
+              "kind": "file"
             },
-            "path": "mcp/src/agents_remember/application/task_docs/task_doc_tools.py"
+            "path": "mcp/src/agents_remember/application/task_docs/task_doc_phrases.py"
           },
           "kind": "code"
         }

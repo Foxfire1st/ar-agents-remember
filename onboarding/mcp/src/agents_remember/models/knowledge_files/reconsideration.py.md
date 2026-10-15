@@ -19,8 +19,7 @@ it reads no tree, no Git and no task document.
 
 - **Kind and dispositions (rule 4).** `RECONSIDERATION_ITEM_KIND` is `reconsideration_candidate`;
   `RECONSIDER_DISPOSITIONS` is `still_rejected` and `raise`, and nothing else.
-- **Triggers (rule 1).** `TRIGGERS` names the five: `record_file`, `history_row`, `anchor`, `anchor_stale` and
-  `requirement_version`. `anchor_stale` is the review R1 F3 addition (ruling 2026-09-30T05:31:11): a link anchor
+- **Triggers (rule 1).** `TRIGGERS` includes `record_file`, `history_row`, `anchor`, `anchor_stale`, `requirement_version`, `route_absent` and `refresh_not_current`. `anchor_stale` is the review R1 F3 addition (ruling 2026-09-30T05:31:11): a link anchor
   classified `stale_at_base` fires instead of going silent. `TRIGGERING_DISPOSITIONS` lists the history-row
   dispositions that count as a change of the row's subject: `changed`, `moved`, `deleted`, `rerouted`, `retired`.
   `REFRESHED_TRIGGERS` (`anchor`, `anchor_stale`, `requirement_version`) are the triggers a `still_rejected` answer
@@ -36,8 +35,7 @@ it reads no tree, no Git and no task document.
   `<repository>/<task path>#<id>@<version>`. The worklist fills `facts.changed[].target` with it, and the writer
   compares a K_C link with the fired target through it before any refresh, so a link re-authored after the worklist
   fired is never refreshed onto the wrong target.
-- **The predicate.** `reconsideration_item_open(item, rows_by_subject, superseded=frozenset())` closes an item
-  when the leaf has a row with its subject, or its parsed decision ID belongs to the supplied superseded set.
+- **The predicate.** `reconsideration_item_open(item, rows_by_subject, superseded=frozenset())` first closes a parsed decision in the supplied superseded set; otherwise a `refresh_not_current` changed fact stays open even with a row, and only the remaining items are answered by matching row presence.
   The row kind still admits only `still_rejected` and `raise`. The default empty set preserves the existing
   two-argument behavior; unknown/malformed subjects and unrelated IDs stay open without a matching row.
   This pure function does not derive supersession or read a knowledge tree.
@@ -51,14 +49,7 @@ it reads no tree, no Git and no task document.
 
 ### Invariants And Boundaries
 
-- **Agreement belongs to the same fresh evaluation.** The worklist passes the superseded set derived from
-  K_B and K_C, skips those decisions before constructing items, and uses this function for `satisfiedBy`.
-  Both production judging paths recompute the worklist; the registered gate predicate remains two-argument
-  and receives only items that fresh run produced. A manually constructed old superseded item stays open
-  with the default empty set, but closes when the correct set is supplied. MIK-R148 rule3 is met by the pure
-  function together with the fresh run (architect ruling a00091c0), not by new context wiring or persisted-item
-  support. The answered-item test preserves row agreement; the candidate-successor test proves the
-  context-dependent stored-item result and suppression.
+- **Pure helper and production gate are distinct.** Worklist construction derives supersession from K_B and K_C and skips superseded decisions. The pure `reconsideration_item_open` retains its optional empty-set default and two-argument compatibility; it does not derive candidate state. Production registration instead calls `reconsideration_row_open(item, GateContext)`, forwarding candidate knowledge, opened code and the row map to `reconsideration_gate_reason`. That owner derives candidate supersession, closes a superseded decision, and reobserves `refresh_not_current` targets (or accepts exact restoration to the base target) before passing remaining changes and the superseded set to the pure helper. The former no-context-wiring/row-map-only production account is retired. Source-defined tests are evidence of their asserted controls, not a fresh execution grade.
 - **A decision target never triggers (one hop).** No trigger here names a decision; the registrant skips a
   `DEC-` target (rule 3).
 - **Unconverted memory reads are unchanged.** Nothing reads this module on an unconverted leaf, which gets no
@@ -66,8 +57,9 @@ it reads no tree, no Git and no task document.
 
 ### Todos
 
-- **L09:** the gate applies `reconsideration_item_open(item, rows_by_subject)`; an unanswered candidate blocks
-  closeout (D29).
+- **Current gate:** `reconsideration_gate_reason` uses candidate knowledge and opened code as well as rows; a still-stale refreshed target remains open despite a row. The historical L09 direct two-argument gate adapter is superseded, not current wiring.
+
+`route_absent` and `refresh_not_current` extend the trigger vocabulary without extending `REFRESHED_TRIGGERS`. The shared `link_target_key` also supplies ordinary link-target subjects. Predicate priority matters: supplied supersession closes first, a remaining `refresh_not_current` fact stays open despite a row, and ordinary matching-row satisfaction applies only afterward.
 
 ## Evidence
 
@@ -143,7 +135,7 @@ No cross-repo boundary is crossed by this file.
 
 - Direct landing computes its worklist over exact sides before judging. [16]
 
-- The registered row predicate keeps the two-argument satisfying-function call. [17]
+- The registered reconsideration gate forwards candidate knowledge, opened code and rows to the candidate-aware owner; only its final remaining-change check uses the pure helper. [17]
 
 ### Cross-Repo References
 
@@ -153,3 +145,5 @@ Inspected source assertions, not a fresh Curator test run or deployment of the
 checked leaf repair to the serving build.
 
 - An explicitly supplied superseded set closes a stored item without a row; the empty default preserves row-based compatibility. [18]
+
+- Supersession, stale refresh and ordinary row satisfaction have explicit priority in the pure predicate. [19]

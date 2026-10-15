@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "524495f43533ef6b9923676a6d6b89bf93fe6004",
-        "content": "sha256:9c0d62cd779a13ceab4682fb66f9566c768a969dbe38ba97bb65b4f676c2abb4",
+        "blob": "8d0d6f9d69cda64e9f2be34e06881def8db0acf4",
+        "content": "sha256:d494745e207ae082795c0c2cca7727ea2d40c2141a52da119458e00a95a361b2",
         "locator": {
           "kind": "file"
         }
@@ -49,6 +49,36 @@
             "path": "mcp/tests/test_role_capsule_budgets.py"
           },
           "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "The registry retains 38 ceil-based rows and records the 21 L54 capsule renewals with their authority and growth provenance.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8d0d6f9d69cda64e9f2be34e06881def8db0acf4",
+            "content": "sha256:d494745e207ae082795c0c2cca7727ea2d40c2141a52da119458e00a95a361b2",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The authored source owns this contract; the distribution copy is not a separate authority.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8d0d6f9d69cda64e9f2be34e06881def8db0acf4",
+            "content": "sha256:d494745e207ae082795c0c2cca7727ea2d40c2141a52da119458e00a95a361b2",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
         }
       ]
     }

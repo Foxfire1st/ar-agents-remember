@@ -15,7 +15,7 @@ the MCP package data and harness starter packages.
 ### Logic
 
 The script resolves the repository root from its own path, treats root
-`skills/` as canonical, and declares a fixed list of sync targets:
+`skills/` as canonical, and derives sync targets plus ignore names/suffixes from the single skills projection in `generated-copies.json` through the dependency-free parser owner. `skill_targets(root)` joins those declared target paths to its selected root; the parser itself belongs to this checkout. The current declaration covers:
 
 - MCP package data under `mcp/src/agents_remember/package_data/runtime/skills`
 - Claude Code, Codex, Cursor, VS Code/Copilot, Hermes, OpenClaw, Pi, and
@@ -24,17 +24,14 @@ The script resolves the repository root from its own path, treats root
 It computes SHA-256 digests for every non-ignored file under the canonical tree
 and each target, then reports missing, extra, and changed files. In normal mode
 it copies the complete canonical tree to a sibling staging directory before renaming the live target aside and renaming staging into place,
-then immediately runs the same check mode. With `--check`, it only verifies
-targets and exits non-zero when any target differs. With `--list-targets`, it
+then runs check mode. Before the first target mutation normal sync computes `projected_profile_bytes`: it validates the input certification profile through its canonical owner and derives only the generated-skills row/scopes and new digest. After the target loop it writes that prepared profile. `--check` compares both copy bytes and the profile projection and exits non-zero on drift. This is prevalidation, not an atomic transaction or rollback across all targets/profile. With `--list-targets`, it
 prints the canonical source and all target paths.
 
 ### Conventions
 
 `replace_tree` removes stale staging/retired leftovers, completes the new copy, then renames the old target aside and the staged tree into place before removing the retired tree. A copy failure before the first rename leaves the live target intact. The two renames are separate operations; this description does not claim an atomic directory exchange.
 
-Ignore only local/generated filesystem noise: `.DS_Store`, cache directories,
-`__pycache__`, and `.pyc` files. Keep targets explicit so new harness packages
-must consciously opt into skill synchronization.
+Ignore names/suffixes come from the canonical declaration, currently covering local/generated filesystem noise. Keep target declarations explicit so new harness packages consciously opt in; do not maintain a second target or ignore tuple here.
 
 ### Invariants And Boundaries
 
@@ -43,14 +40,16 @@ must consciously opt into skill synchronization.
   `skills/` directory.
 - Sync mode replaces target skill directories wholesale; do not point a target
   at user-owned or non-generated content.
-- The helper manages skill copies only. It does not sync hooks, MCP settings,
-  instructions, docs, or provider/runtime assets.
+- The helper manages declared skill copies and their generated-skills certification-profile projection. It does not sync hooks, MCP settings, other instructions/docs or provider/runtime assets. This card is source inspection only: no sync/check invocation or generated/private mirror read/write was performed.
 
 ### Todos
 
 No open file-local todos.
 
 ## Evidence
+
+- Targets/ignore policy come from the declaration and profile bytes are validated before target replacement, then published and checked beside copy bytes. [5]
+
 
 ### Docs References
 

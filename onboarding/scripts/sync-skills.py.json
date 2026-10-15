@@ -3,7 +3,79 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "52ead88df5abcc06f44245c1a48ebae0f190b1a6",
+        "blob": "bfc9168b3d1a727fc00d12e21e949acfed4d3537",
+        "content": "sha256:1c8dbc9ac78cd4e8aecbfeaece0b1cee9d5e1ab7d1d4ae36c7dc40afff255e22",
+        "locator": {
+          "kind": "symbol",
+          "name": "check_targets"
+        }
+      },
+      "id": "RLZ-4DDM1B",
+      "invariant": "INV-5X4C74",
+      "origin": {
+        "handoffEntry": "L54-curator-generator-profile-prevalidation",
+        "leaf": "260928-MIK-L54"
+      },
+      "rationale": "Reports mismatch when stored profile bytes differ from the owner-derived projection as well as checking declared target payloads.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "bfc9168b3d1a727fc00d12e21e949acfed4d3537",
+        "content": "sha256:8a708c228cb1c5ae2d195b62d9f39f63c6cf457f6fee943a1a36015a3f79dd99",
+        "locator": {
+          "kind": "symbol",
+          "name": "sync_targets"
+        }
+      },
+      "id": "RLZ-7Y7JDK",
+      "invariant": "INV-5X4C74",
+      "origin": {
+        "handoffEntry": "L54-curator-generator-profile-prevalidation",
+        "leaf": "260928-MIK-L54"
+      },
+      "rationale": "Computes profile bytes before the first target replacement, then writes those bytes and invokes the consistency check.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "bfc9168b3d1a727fc00d12e21e949acfed4d3537",
+        "content": "sha256:91cb42634a67f678e64d6d12e221e6b2386ad52818788b7a445d68782d9b9054",
+        "locator": {
+          "kind": "symbol",
+          "name": "projected_profile_bytes"
+        }
+      },
+      "id": "RLZ-DETY0K",
+      "invariant": "INV-5X4C74",
+      "origin": {
+        "handoffEntry": "L54-curator-generator-profile-prevalidation",
+        "leaf": "260928-MIK-L54"
+      },
+      "rationale": "Validates the original profile and derives only the declared generated-skills row plus owner-derived profile digest without writing the input file.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "bfc9168b3d1a727fc00d12e21e949acfed4d3537",
+        "content": "sha256:85a6ecbf26f073eb808b51188d26c5a82d2fab9a4fe948b844219a67de9e60c5",
+        "locator": {
+          "kind": "symbol",
+          "name": "skill_targets"
+        }
+      },
+      "id": "RLZ-Q212ZW",
+      "invariant": "INV-0NEA6F",
+      "origin": {
+        "handoffEntry": "L54-curator-MIK-R55-v1-rule-11-actual-guards-wave-70",
+        "leaf": "260928-MIK-L54"
+      },
+      "rationale": "Declared target labels/paths become generator targets relative to the selected repository root.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "bfc9168b3d1a727fc00d12e21e949acfed4d3537",
         "content": "sha256:8709794621f52dd88ffdb68cdd6fbb9e75456e29d064c408c7de86cf99fd2899",
         "locator": {
           "kind": "symbol",
@@ -17,6 +89,24 @@
       },
       "rationale": "The sync script is the propagation owner and the install tool is where the copy reaches a harness skill root, which is the pair that makes one source authoritative.",
       "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "bfc9168b3d1a727fc00d12e21e949acfed4d3537",
+        "content": "sha256:6dce61266f887ddd4885b0d9dc5f3cb2611063dc7757d28c606c3417a570f74c",
+        "locator": {
+          "kind": "symbol",
+          "name": "_skill_projection"
+        }
+      },
+      "id": "RLZ-XSR659",
+      "invariant": "INV-0NEA6F",
+      "origin": {
+        "handoffEntry": "L54-curator-MIK-R55-v1-rule-11-actual-guards-wave-70",
+        "leaf": "260928-MIK-L54"
+      },
+      "rationale": "The generator reads its repository declaration through the same parser and requires one skills source rather than using a second target census.",
+      "role": "enforcement"
     }
   ],
   "references": {
@@ -25,7 +115,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "52ead88df5abcc06f44245c1a48ebae0f190b1a6",
+            "blob": "bfc9168b3d1a727fc00d12e21e949acfed4d3537",
             "content": "sha256:556c2515bac2a5348f19a93d199ce8620848ee26c5e67dea565240287f582394",
             "locator": {
               "kind": "symbol",
@@ -91,7 +181,7 @@
         },
         {
           "anchor": {
-            "blob": "52ead88df5abcc06f44245c1a48ebae0f190b1a6",
+            "blob": "bfc9168b3d1a727fc00d12e21e949acfed4d3537",
             "content": "sha256:8709794621f52dd88ffdb68cdd6fbb9e75456e29d064c408c7de86cf99fd2899",
             "locator": {
               "kind": "symbol",
@@ -102,7 +192,7 @@
         },
         {
           "anchor": {
-            "blob": "52ead88df5abcc06f44245c1a48ebae0f190b1a6",
+            "blob": "bfc9168b3d1a727fc00d12e21e949acfed4d3537",
             "content": "sha256:f35d9bc1c4491781420f8987e479b45f3169879ccd845e11bc9cadd2fbeaf700",
             "locator": {
               "kind": "symbol",
@@ -138,6 +228,71 @@
               "start": 1
             },
             "path": "AGENTS.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Targets/ignore policy come from the declaration and profile bytes are validated before target replacement, then published and checked beside copy bytes.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bfc9168b3d1a727fc00d12e21e949acfed4d3537",
+            "content": "sha256:6dce61266f887ddd4885b0d9dc5f3cb2611063dc7757d28c606c3417a570f74c",
+            "locator": {
+              "end": 32,
+              "kind": "line_range",
+              "start": 20
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "bfc9168b3d1a727fc00d12e21e949acfed4d3537",
+            "content": "sha256:85a6ecbf26f073eb808b51188d26c5a82d2fab9a4fe948b844219a67de9e60c5",
+            "locator": {
+              "end": 59,
+              "kind": "line_range",
+              "start": 56
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "bfc9168b3d1a727fc00d12e21e949acfed4d3537",
+            "content": "sha256:91cb42634a67f678e64d6d12e221e6b2386ad52818788b7a445d68782d9b9054",
+            "locator": {
+              "end": 210,
+              "kind": "line_range",
+              "start": 191
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "bfc9168b3d1a727fc00d12e21e949acfed4d3537",
+            "content": "sha256:8a708c228cb1c5ae2d195b62d9f39f63c6cf457f6fee943a1a36015a3f79dd99",
+            "locator": {
+              "end": 244,
+              "kind": "line_range",
+              "start": 233
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "bfc9168b3d1a727fc00d12e21e949acfed4d3537",
+            "content": "sha256:1c8dbc9ac78cd4e8aecbfeaece0b1cee9d5e1ab7d1d4ae36c7dc40afff255e22",
+            "locator": {
+              "end": 230,
+              "kind": "line_range",
+              "start": 213
+            }
           },
           "kind": "code"
         }

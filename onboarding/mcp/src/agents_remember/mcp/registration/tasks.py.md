@@ -18,6 +18,8 @@ register_task_tools declares the reopen, finalizer, task-document, curator-coher
 
 ### Current Contract
 
+The task_doc description now includes `put_open_question`; the finalizer description explicitly requires a master rather than advertising standalone leaves. JSON remains canonical and Markdown generated. These are registration descriptions forwarded to existing application owners, not independent authorization, publication or execution proof.
+
 The compact task_doc description names write/linkage operations and canonical generated-file reading. get/read_steps are removed and answered with operation-removed; they are not usable observations. Flat fields_file/section_body_file inputs are forwarded to the authoring owner. Delivered writes use ok/updated phrases; dry answers use wouldLose/diff and retained locations. Review, linkage, retirement and curator-coherence authorities remain at their established application/reference owners; short descriptions and a finished tool turn do not certify them.
 
 ### Review description contract
@@ -98,13 +100,7 @@ master_doc_path, subtask_number)` and keeps `dry_run` and `teardown_providers` s
 docstring states the terminal semantics: the task's landed commit must be reachable from the
 contract's local target/source branch — a PR-gated flow must complete the merge and pull first, so
 the proof is structurally identical to a non-PR edge — and no squash-merge equivalence is attempted.
-Since 260928-MIK-L38 (MIK-R38; ruling 2026-09-30T12:33:07 Q3) the docstring also says the finalizer
-derives and reconciles the leaf's exact row when the leaf declares an existing immediate parent "or names
-none and its folder's task.json master lists it", and (review R1 note 5, ruling 13:11:32) that "a sub-task
-naming none whose folder task.json is not a master is refused". The refusal names a sub-task, not a leaf,
-by ruling 14:12:52 (review R2's wording note): a `light` task that is its own `task.json` finalizes
-standalone and is not covered by it. The same clauses are in `docs/reference/mcp-tools.md` and the c-09
-skill. No argument, schema or response model changed.
+The L38 legacy-light standalone-success exception is historical and retired. A leaf now requires its contract-bound task document and exact master row, from the named parent or folder master; a legacy non-master `task.json` receives no standalone fallback merely because its schema is readable. Missing authority refuses with the task-document-resolution error and the route to author the leaf under its master. This is distinct from a valid series-master contract without a commanding sprint: the series path may complete its own master document. Finalizing a master does not archive it.
 
 Reopen resets the same leaf id; cleaned behind-tip leaves pass only when their landing is ancestral to current tips. It refuses masters, in-flight leaves,
 and leaves whose worktrees still exist; afterwards the normal `worktree_start` with the same leaf id
@@ -124,6 +120,9 @@ recreates everything.
 >   `application/task_doc_tools.py` and `application/worktree_tools.py`.
 
 ## Evidence
+
+- Descriptions include keyed open-question writes and require master authority for finalization. [7]
+
 
 ### Repo-Internal References
 

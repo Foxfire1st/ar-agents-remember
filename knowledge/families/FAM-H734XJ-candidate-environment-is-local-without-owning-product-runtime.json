@@ -20,13 +20,9 @@
     "leaf": "260928-MIK-L136",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "routes": [
-    ".",
-    "dashboard",
-    "mcp/tests",
-    "scripts",
-    "skills/l-01-agent-lifecycles/templates"
+    "."
   ],
   "schema": "ar-family/v1",
   "status": "proposed",

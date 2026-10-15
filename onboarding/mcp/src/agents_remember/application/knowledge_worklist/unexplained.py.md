@@ -10,9 +10,9 @@
 already has knowledge, new code would never enter the graph (Doc11, D8). This module makes every change the
 gate linkage (MIK-R08 definition 8) leaves unlinked an item that needs an authored disposition. It registers
 the `unexplained_hunk` and `unexplained_file` item kinds in MIK-R08's registry, owns the **coverage lookup**
-(rule 1), raises one item per unlinked hunk or non-text change in every changed file (covered or not), and
+(rule 1), raises unlinked hunk/non-text items after exact generated-copy filtering and equal-change grouping, and
 binds the uncovered ones to MIK-R30's onboarding trace after the leaf route has computed it.
-`compute._Run.document` calls `unexplained_items` as step 7 of every run; `leaf._settled_unexplained` calls
+`compute._Run.document` calls `unexplained_items` as step 7 of every run; `leaf_completion._settled_unexplained` calls
 `settle_uncovered` after `worklist_onboarding`. The satisfying rule itself lives in the model module
 `models/knowledge_files/unexplained.py`, so the worklist's `satisfiedBy` and the gate's predicate (MIK-R09,
 L09) are one function.
@@ -40,27 +40,21 @@ L09) are one function.
   `route`, `routeStatus` and the deciding `census`. Coverage is read **at K_B** (ruling Q4): nothing the leaf
   writes changes which record answers its items. An unreadable census raises `CoverageUnreadable`, and the
   leaf route turns that into an `incomplete` run naming K_B.
-- **Raising (`_Collector`, `unexplained_items`).** For each `changes[]` entry: a non-text change whose
-  `fileLevel` is not linked gives one file item; each hunk not `linked` gives a hunk item. Hunks of one path
-  with identical changed lines on both sides share one subject, and that item lists every occurrence in
-  `facts.hunks` (ruling Q4). Coverage is a fact, never part of the ID, so a route that turns `migrated` keeps
-  every item ID. A symlink's or submodule's object comes from its C tree entry (`_object`, ruling Q4). A
-  blob that cannot be read, and (after review N5) a hunk whose changed lines lie outside its own blob, raise
-  `CodeReadError`, so the run is `incomplete` rather than inventing an `absent` side (`_identity`).
+- **Raising and grouping.** The collector still makes source-content-bound hunk/file identities and deduplicates equal range occurrences. Before collection, exact declared generated copies matching their canonical source are omitted; remaining uncovered equal base/candidate changes are grouped under a deterministic representative, preferring an existing card. Group facts retain every member source/base blob and any generated-copy classification. A differing copy remains a real change rather than inheriting equality. Unreadable content still refuses as an incomplete source read; coverage is read at K_B.
 - **What each item admits (`_admits`).** Uncovered: `onboarding_trace`. Covered with lines at C: `attach`,
   `author`, `no_invariant`. Covered and delete-only, or a file C no longer holds: only `no_invariant`
   (rule 4). `admits` is a fact only; nothing is suggested or written (Exclusions).
 - **Attach and author answer by linkage.** An entry the curator adds over the change links the hunk, so the
   item is simply not raised on the next run; the new entry raises `touched_invariant` (answered by
   `extended`) or, for a new invariant, nothing (MIK-R08 definition 7). A delete-only hunk has no line at C, so
-  no new entry can link it (the `hunk.new_count > 0` condition in `compute._Run._change`, ruling Q1/Q2).
+  no new entry can link it (the `hunk.new_count > 0` condition in `linkage._linked`, called by `linkage._Linkage._change`, ruling Q1/Q2).
 - **Answers and unnecessary rows (`_finished`, rulings Q4 and 03:24:28 N2).** `satisfiedBy` is computed with
   `unexplained_satisfied_by` over the leaf's history rows in K_C. The **answering set is built from covered
   items only**: a `no_invariant` row about an uncovered item satisfies nothing (rule 5) and is listed in
   `unexplained.unnecessaryRows`, report-only, like any `no_invariant` row that answers no raised item.
 - **Uncovered items take the current onboarding trace (`settle_uncovered`, `_settled`, MIK-R53).**
   The initial run records `onboarding:<path>`, `item: None`, the actual counted Markdown/reference
-  change from K_B to K_C, and `sourceBlobs: {path: <C blob or absent>}`. `_finished` computes the
+  change from K_B to K_C, and `sourceBlobs` for the path or every member of its equal-change group. `_finished` computes the
   counted change once, stores it through `_trace`, and passes that same stored fact to current-row
   selection, including when no separate onboarding item is raised. Worklist satisfaction and gate
   currency must not disagree. It names only an eligible onboarding row whose `sources` equal that
@@ -82,7 +76,7 @@ L09) are one function.
 - Producer facts and curator decisions stay separate (Preservation Boundary): every fact is mechanical, and
   every answer is an authored row or entry.
 - MIK-R30's items are read, never changed (Preservation Boundary: the onboarding trace for uncovered files).
-- Complexity: every function scores at most 10 (radon; the standing bar, ruling 03:24:28 N1).
+- The old L10 Radon-at-most-10 sentence is historical evidence, not a current complexity certification for the extended grouping implementation.
 
 ### Invariants And Boundaries
 
@@ -93,7 +87,7 @@ L09) are one function.
   real-data run on ICR L47 (160 items; `openCount` 0 only after the attach and 22 rows). Enforcement is
   MIK-R09's (L09).
 - **A delete-only hunk can be answered only by a disposition, never by attach or author.** Candidate
-  invariant; realized by the `new_count > 0` linkage condition in `compute._Run._change` and `_admits`;
+  invariant; realized by the `new_count > 0` condition in `linkage._linked`, called by `linkage._Linkage._change`, and `_admits`;
   proved by `test_a_delete_only_hunk_admits_only_no_invariant` (a line-range attach around the deletion
   point leaves the same item open) and the reviewer's real `changeSetBar.tsx` comparison.
 - **`no_invariant` answers only covered items; a row about an uncovered item is reported unnecessary and
@@ -104,22 +98,18 @@ L09) are one function.
 - **An onboarding row that answers an uncovered item is never reported as unnecessary.** Realized by
   `answering_trace_subjects`; proved by
   `test_an_onboarding_row_that_answers_an_uncovered_item_is_not_reported_unnecessary`.
-- **Hunk item IDs depend only on the changed lines** (rule 6), and coverage is not part of the ID.
+- **Within a selected source/group representative, hunk item content identities depend on the changed lines** (rule 6); coverage is not part of the ID. Equal-copy grouping additionally binds the representative and its full source set.
   An elsewhere edit preserves the hunk ID and covered `no_invariant` answers, as the historical
   `test_an_edit_elsewhere_in_the_file_never_reopens_an_answered_item` and w1–w4 witnesses described.
   It can nevertheless reopen an uncovered item: its onboarding row binds the whole source blob,
   so a later source edit makes that answer stale even when the changed-line identity survives.
-- **Unconverted memory reads are unchanged.** An unconverted leaf gets no worklist (MIK-R08 applicability:
-  `leaf._sides` returns `None` before any coverage read), so no unexplained item exists on today's production
-  leaves; the base and worktree builds both return `None` on the real unconverted pair.
+- **Both-unconverted applicability is a conditional boundary.** The leaf chooser returns no converted worklist when both sides lack the layout marker; historical pre-cutover runs are not a statement that every current production leaf is unconverted.
 
 ### Todos
 
 - **Current gate:** covered items retain the `no_invariant` predicate; `unexplained_row_open` checks
   uncovered items with the file's onboarding-row currency, including source blobs and counted change.
-  Historical L09 helper names are not a row-map-only currency check. Carried note
-  (ruling 03:24:28 N3): an insertion-only hunk can still be linked by a K_B range through `hits_old`'s
-  "strictly inside" rule; the symmetric strict reading was not applied here.
+  Historical L09 helper names are not a row-map-only currency check. The former insertion-only K_B-coverage claim (L10 N3) is explicitly retired: `linkage._linked` requires `old_count > 0` for B coverage and `new_count > 0` for C coverage. An insertion-only hunk can link only through K_C; a delete-only hunk can link only through K_B.
 - **Resolved by MIK-L31 and MIK-L32:** item volume is by design (160 on ICR L47). L31 groups the unexplained items
   in the reviewer's panel by file and coverage state (`dashboard/src/panels/review/worklistGroups.ts`,
   `UnexplainedGroups`), and L32's unexplained-changes lane shows an opened file's groups beside its own
@@ -147,7 +137,11 @@ No configured live documentation source was available for this pass.
 - The governing route and its latest census status. [6]
 - The route half of coverage over one memory tree. [7]
 - Covered by a realization entry in K_B or a migrated route. [8]
-- The summary under the document's `unexplained` key. [9]
+
+
+- Unexplained items retain groups and expose open counts with unnecessary covered rows [9]
+
+
 - A side's identity; an out-of-range read is a named problem. [10]
 - What an item admits. [11]
 - Unlinked hunks and non-text changes collected; identical lines share a subject. [12]
@@ -157,8 +151,9 @@ No configured live documentation source was available for this pass.
 - The onboarding subjects an uncovered item needs. [18]
 - Open unexplained items. [19]
 - Step 7 of the run: the items join the one sorted list. [20]
-- A delete-only hunk is linked only by a K_B range; since MIK-R09 an insertion-only hunk is linked only by a K_C range (the symmetric correction L10's N3 carried to L09), which can only add `unexplained_hunk` items. [21]
-- The leaf route settles uncovered items after the onboarding trace. [22]
+- Per-change linkage belongs to linkage._Linkage._change; linkage._linked symmetrically requires changed lines on the side supplying coverage: delete-only B, insertion-only C. [21]
+
+- leaf_completion settles uncovered items after worklist_onboarding and recomputes their digest and unnecessary-row projection. [22]
 - Covered hunk: no_invariant, attach or author; never onboarding. [23]
 - Delete-only hunk: only no_invariant. [24]
 - An uncovered file: its onboarding trace; its no_invariant row is unnecessary. [25]
@@ -170,10 +165,30 @@ one code repository's trees, handed to it by the worklist run.
 
 No cross-repo boundary is crossed by this file.
 
-- The ID, row subject, candidate source blob and eligible source-current onboarding `satisfiedBy`. [15]
-- Uncovered items bound to their file's trace ID, source blobs, counted flag and current-row answer. [17]
-- Current source delta inspected statically: Fix source-bound onboarding currency, provenance and settlement; separate stable hunk IDs from reopened answers. [26]
+
+
+- The representative item binds its complete source map, actual counted change and eligible current onboarding row [15]
+
+
+
+
+- Settlement retains complete source maps and the trace item currency without inventing an answer [17]
+
+
+
+
+- Current source-bound trace construction and row admission use the complete blob map [26]
+
+
 
 ## Current counted-change evidence
 
 - The initial uncovered-item fact and its answer use one actual counted card change; settlement may still replace both from the trace item. A counted edit alone does not answer the item. [27]
+
+
+## Current generated-copy and grouped-source contract
+
+The generated-copy declaration is an equality test against the candidate, not a waiver based on a folder name. Only proven matching projections disappear before collection. Equal uncovered changes share their chosen representative and complete base/candidate source maps; a source-current onboarding row must bind that map. Card edits alone remain insufficient, and covered hunks retain their no-invariant/attach/author domain. No group or copy card is edited by this trace judgment.
+
+- Exact generated-copy filtering, representative collection and complete source/base maps precede item settlement. [28]
+- Current onboarding row selection consumes the complete source blob map, never a counted edit alone. [29]

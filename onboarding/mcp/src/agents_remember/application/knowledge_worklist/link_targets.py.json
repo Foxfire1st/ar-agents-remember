@@ -1,0 +1,41 @@
+{
+  "path": "mcp/src/agents_remember/application/knowledge_worklist/link_targets.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "c710c61ce372ef204f05ed3681f52d1585551dc5",
+        "content": "sha256:afc218bd317177c5a1348a26a54af1813a08e1a008f9dc78c8756bd68039afb1",
+        "locator": {
+          "kind": "symbol",
+          "name": "link_target_items"
+        }
+      },
+      "id": "RLZ-RWEH82",
+      "invariant": "INV-4Z1JBC",
+      "origin": {
+        "handoffEntry": "MIK-R55@v1 rule 4",
+        "leaf": "260928-MIK-L54"
+      },
+      "rationale": "This collector compares base link targets with the candidate and emits the unresolved target-key obligation.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Raises link_target work for a surviving authored record link whose retrieval target this leaf removed. Range-content changes alone raise no item: links are retrieval pointers, not realization-currentness claims. Remove or restate the target key in K_C; a no-impact history row cannot answer it. Reconsideration links belong to their separate trigger owner.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c710c61ce372ef204f05ed3681f52d1585551dc5",
+            "content": "sha256:fc1213901c15639ffd495ab2f5b10fb983478bb55e28950f7a4c97e2e3fa814c",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

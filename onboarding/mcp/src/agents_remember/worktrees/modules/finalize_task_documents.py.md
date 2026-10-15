@@ -15,6 +15,8 @@ completes the master's own document and any proven typed or correlated seat row,
 
 ### Logic
 
+Required leaf/master ownership is fail-closed: an absent contract-bound leaf/document, no folder master, or a master with no matching leaf row refuses before preparing completion/publication, with task_doc repair guidance. R55 rule9 supersedes the earlier standalone-success fallback. A valid series master without a commanding sprint may still complete its own document; that distinct path does not admit a masterless leaf or a missing task document. Named-parent/path checks and valid parent-row completion remain separate.
+
 `FinalizeArgs` carries the contract path, the optional document assertions (`task_doc_path`, `master_doc_path`,
 `subtask_number`), `dry_run` and provider teardown. `_resolve_task_targets` dispatches on the contract kind. A leaf
 contract resolves its one leaf document and its immediate parent row through `_resolve_parent_target` (the named master,
@@ -59,6 +61,9 @@ Current leaf/master completion changes the own non-Completed document to Complet
 - A broken sprint linkage refuses before any write, in a dry run as well.
 
 ## Evidence
+
+- Missing leaf/master/row authority refuses with repair guidance rather than standalone completion. [6]
+
 
 - Series finalization selects the master and any proven typed or correlated seat row; absent or ambiguous correlation is reported as skipped unless a parent was asserted. [1]
 - Targets are resolved by contract kind. [2]

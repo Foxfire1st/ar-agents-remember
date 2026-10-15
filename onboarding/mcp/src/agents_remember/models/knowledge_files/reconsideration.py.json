@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "42c565522bb5fcf7774ff7f640226cdb0463a5ac",
-        "content": "sha256:31a2f56932da49beab78b1ad7113659a48f696d65c5318576fdeccd5e22d0bae",
+        "blob": "ac73da0869463cfecc8ee90a3e36848505a9a56c",
+        "content": "sha256:62ab274a326ba3736040aa9354defc555a7dd2c8740a3b7083ed1fb72ce7f0b2",
         "locator": {
           "kind": "symbol",
           "name": "reconsideration_item_open"
@@ -26,7 +26,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "42c565522bb5fcf7774ff7f640226cdb0463a5ac",
+            "blob": "ac73da0869463cfecc8ee90a3e36848505a9a56c",
             "content": "sha256:6290b0977c99f47e93cb497d2d8377f3650d0c1260a05ae3c2b964b794cfa1d8",
             "locator": {
               "end": 24,
@@ -43,7 +43,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4c8880a5bea27aef3f0432a094116c46f2b7ed0d",
+            "blob": "e1b050eefa6faeac6a1313ba1100336442c14936",
             "content": "sha256:712bb410527b2cbc91df02a7c2fb2ebd60d3703f3bfaa17fa011c2b130ea508d",
             "locator": {
               "kind": "symbol",
@@ -60,7 +60,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4c8880a5bea27aef3f0432a094116c46f2b7ed0d",
+            "blob": "e1b050eefa6faeac6a1313ba1100336442c14936",
             "content": "sha256:3879c9dc6c6e7ec429fe38296c8f446a091e114846feedfe154fca532119efb6",
             "locator": {
               "kind": "symbol",
@@ -77,7 +77,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4c8880a5bea27aef3f0432a094116c46f2b7ed0d",
+            "blob": "e1b050eefa6faeac6a1313ba1100336442c14936",
             "content": "sha256:a74ed3998baca1be473bbfcfc4f34ac6bc10ab987f4a9d44310faea235464b80",
             "locator": {
               "kind": "symbol",
@@ -94,7 +94,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4c8880a5bea27aef3f0432a094116c46f2b7ed0d",
+            "blob": "e1b050eefa6faeac6a1313ba1100336442c14936",
             "content": "sha256:9d3d211848ee1ac49b9825d9df092c32e27308e87f85e7039c8a39c79e340018",
             "locator": {
               "kind": "symbol",
@@ -111,7 +111,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4c8880a5bea27aef3f0432a094116c46f2b7ed0d",
+            "blob": "e1b050eefa6faeac6a1313ba1100336442c14936",
             "content": "sha256:adee2d6b45036cf05c1527ff6b89e010db6c60e4b9515527b8b2f9bfd15baff0",
             "locator": {
               "kind": "symbol",
@@ -128,7 +128,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "560551a2058c73a9283f51e12e765737384373cb",
+            "blob": "7d84e7737b95e1959b2d2e7b08c35395c662367f",
             "content": "sha256:d933a755a1153049feff1f7157f4afed912fe5f0ff83b43663061e60bc24506f",
             "locator": {
               "kind": "symbol",
@@ -158,17 +158,31 @@
       ]
     },
     "17": {
-      "note": "The registered row predicate keeps the two-argument satisfying-function call.",
+      "note": "The registered reconsideration gate forwards candidate knowledge, opened code and rows to the candidate-aware owner; only its final remaining-change check uses the pure helper.",
       "targets": [
         {
           "anchor": {
-            "blob": "4e30c21d7d4d45c8dc277c76b63ad78a79157eda",
-            "content": "sha256:e67cf5c84b5d33f2c93ed3f88b172b400878bde0fbecccd7fb5cc0d7321f76f8",
+            "blob": "e883bd37ccb740eeb9d913a85c9fe6d886b0fcaf",
+            "content": "sha256:c5717a8cc4c259cd4843ea995f5c26a3949b37995eda8137115985c6e624bb2a",
             "locator": {
-              "kind": "symbol",
-              "name": "_by_rows"
+              "end": 544,
+              "kind": "line_range",
+              "start": 535
             },
             "path": "mcp/src/agents_remember/application/knowledge_gate/predicates.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "078be84cd75d4ea2e221aae8ccb5e1085fa384d0",
+            "content": "sha256:8088dd4d9164eaa56a0d79e65be894419809cbebae8706c771d8a611f7f61b4c",
+            "locator": {
+              "end": 68,
+              "kind": "line_range",
+              "start": 21
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_worklist/reconsideration_gate.py"
           },
           "kind": "code"
         }
@@ -190,12 +204,41 @@
         }
       ]
     },
+    "19": {
+      "note": "Supersession, stale refresh and ordinary row satisfaction have explicit priority in the pure predicate.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ac73da0869463cfecc8ee90a3e36848505a9a56c",
+            "content": "sha256:62ab274a326ba3736040aa9354defc555a7dd2c8740a3b7083ed1fb72ce7f0b2",
+            "locator": {
+              "end": 147,
+              "kind": "line_range",
+              "start": 122
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ac73da0869463cfecc8ee90a3e36848505a9a56c",
+            "content": "sha256:a6deb7e2202307c1936975602764d16cb045e3a277a7161b650f53ccbe39b44a",
+            "locator": {
+              "end": 119,
+              "kind": "line_range",
+              "start": 103
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
     "2": {
       "note": "The kind and the two row dispositions.\n\nAnchor: `RECONSIDERATION_ITEM_KIND`, `RECONSIDER_DISPOSITIONS`",
       "targets": [
         {
           "anchor": {
-            "blob": "42c565522bb5fcf7774ff7f640226cdb0463a5ac",
+            "blob": "ac73da0869463cfecc8ee90a3e36848505a9a56c",
             "content": "sha256:05bd514fbcca6164283757265a8ff61999faddc9c67bafef1b95066c41e69f7b",
             "locator": {
               "kind": "symbol",
@@ -206,7 +249,7 @@
         },
         {
           "anchor": {
-            "blob": "42c565522bb5fcf7774ff7f640226cdb0463a5ac",
+            "blob": "ac73da0869463cfecc8ee90a3e36848505a9a56c",
             "content": "sha256:97b4c305f0392ed5ed4249d01b0892816bd1b9ca47219fb16aa51b34b3c5695d",
             "locator": {
               "kind": "symbol",
@@ -222,7 +265,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "42c565522bb5fcf7774ff7f640226cdb0463a5ac",
+            "blob": "ac73da0869463cfecc8ee90a3e36848505a9a56c",
             "content": "sha256:f6458876ed595a509c8ca1931e5c7b3c6af522ba3dbbd94805ed8c56ab31b9c8",
             "locator": {
               "kind": "symbol",
@@ -249,7 +292,7 @@
         },
         {
           "anchor": {
-            "blob": "42c565522bb5fcf7774ff7f640226cdb0463a5ac",
+            "blob": "ac73da0869463cfecc8ee90a3e36848505a9a56c",
             "content": "sha256:5d3869691ae424644e5501cd5d97bb3edc87d7ba9594e60481332392eff2d77a",
             "locator": {
               "kind": "symbol",
@@ -265,7 +308,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "42c565522bb5fcf7774ff7f640226cdb0463a5ac",
+            "blob": "ac73da0869463cfecc8ee90a3e36848505a9a56c",
             "content": "sha256:0006ceaecb6230c1bedf879110bab18aa9f67954ade5ca569b765ce680e475eb",
             "locator": {
               "kind": "symbol",
@@ -281,7 +324,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "42c565522bb5fcf7774ff7f640226cdb0463a5ac",
+            "blob": "ac73da0869463cfecc8ee90a3e36848505a9a56c",
             "content": "sha256:2a4a6589d3fb13673301999bb2e4ae5de4d47a10baa1f5a7af30f683fe5fcffc",
             "locator": {
               "kind": "symbol",
@@ -292,7 +335,7 @@
         },
         {
           "anchor": {
-            "blob": "42c565522bb5fcf7774ff7f640226cdb0463a5ac",
+            "blob": "ac73da0869463cfecc8ee90a3e36848505a9a56c",
             "content": "sha256:8b29952a1b68f643cb6e2c441557da6a49b9ddb3d67db073b9c2bde9eec80bd1",
             "locator": {
               "kind": "symbol",
@@ -308,7 +351,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "42c565522bb5fcf7774ff7f640226cdb0463a5ac",
+            "blob": "ac73da0869463cfecc8ee90a3e36848505a9a56c",
             "content": "sha256:47ee4ad4b205d31da33eef5debffd1255006c7d7019dd107977236cf5921209a",
             "locator": {
               "kind": "symbol",

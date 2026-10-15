@@ -1,0 +1,112 @@
+{
+  "path": "skills/c-03-repo-bootstrap/templates/curator-review-template.md",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The format supplies placeholder review identity, statuses, summary, and file-by-file review outcomes.\n\nAnchor: `# Curator Review — <wave>`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a6b878b1f5f1cde36700ed40ec9303794c4356ac",
+            "content": "sha256:a2f70cacf4382ccb096b03828a5ff8d8c98afeea03ebdafb45164f45e796f4fa",
+            "locator": {
+              "end": 18,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The checklist preserves placement, reference, state, and converted-citation checks; it contains no append-only card-history requirement.\n\nAnchor: `## Compliance Checklist`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a6b878b1f5f1cde36700ed40ec9303794c4356ac",
+            "content": "sha256:afe8714a9fe4bed9f0288240b5f95b7864d22f8133843715094bf1174367f16d",
+            "locator": {
+              "end": 39,
+              "kind": "line_range",
+              "start": 20
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The review format captures reference health, bucket corrections, fixes, questions, and next-wave recommendations.\n\nAnchor: `## Reference Health`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a6b878b1f5f1cde36700ed40ec9303794c4356ac",
+            "content": "sha256:c3d9b980651ed0515c0b79357a197ead6defc52b76023aa2fd32caf5dace2368",
+            "locator": {
+              "end": 63,
+              "kind": "line_range",
+              "start": 41
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Phase 4I requires a curator review after each overview or onboarding wave and names its checks, including index coverage.\n\nAnchor: `### 4I — Curator Review`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6169b610d2b722a17c4d18645df947444b62f260",
+            "content": "sha256:8c3df8083ab0db00a712889b96034fd1e73098f8c4e0634238ca8543e24eef2d",
+            "locator": {
+              "end": 1048,
+              "kind": "line_range",
+              "start": 1021
+            },
+            "path": "skills/c-03-repo-bootstrap/SKILL.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Automated mode retains evidence gates, curator reviews, state updates, and handoff despite changing pause behavior.\n\nAnchor: `### Automated workflow`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6169b610d2b722a17c4d18645df947444b62f260",
+            "content": "sha256:130651e3e293258e5ecf7082a75378381bedc24f7af8a0b9d828ccd99aa94ae8",
+            "locator": {
+              "end": 214,
+              "kind": "line_range",
+              "start": 197
+            },
+            "path": "skills/c-03-repo-bootstrap/SKILL.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Current citation guidance delegates resolved references and sidecar writing to the fixer rather than manual authorship.\n\nAnchor: `citation_fix`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6169b610d2b722a17c4d18645df947444b62f260",
+            "content": "sha256:8bca39c6a0e848db3353e1531da63e95e3fbf54c481dbb90e54f3e14c45ab341",
+            "locator": {
+              "end": 407,
+              "kind": "line_range",
+              "start": 399
+            },
+            "path": "skills/c-03-repo-bootstrap/SKILL.md"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

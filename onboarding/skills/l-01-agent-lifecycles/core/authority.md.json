@@ -53,6 +53,22 @@
       "role": "primary-authority"
     }
   ],
-  "references": {},
+  "references": {
+    "1": {
+      "note": "The canonical source supplies the current instruction or template contract described above; the package copy is derived.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4d9d9623cbe73bc5056696b8091f3fe78595516e",
+            "content": "sha256:5d85738cb8562a732ff2812b86aac6acbc9f3033396c32dfa1b06dd7478921ae",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
   "schema": "ar-onboarding-file/v1"
 }

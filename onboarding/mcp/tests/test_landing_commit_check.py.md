@@ -10,7 +10,7 @@ Throwaway-repository witnesses for exact-tree repository-hook landing admission.
 
 ## Code Commentary
 
-Small fixture hooks witness success, native failure, unusable hooks, state mutation, timeouts/descendants, saved-work recovery and pass-trailer facts. Prepared-leg fixtures distinguish the native commit path from direct tree publication. Route-coverage source scans and synthetic output checks are not complete end-to-end publisher executions. Product repositories are not used as proof fixtures; execution evidence remains the separate passed code object, not this card.
+Small fixture hooks witness success, native failure, unusable hooks, state mutation, timeouts/descendants, saved-work recovery and pass-trailer facts. Prepared-leg fixtures distinguish the native commit path from direct tree publication. Route-coverage source scans and synthetic output checks are not complete end-to-end publisher executions. Product repositories are not used as proof fixtures; execution evidence remains the separate passed code object, not this card. The skill-sync control in `AnswerAndTextTests.test_canonical_and_generated_skills_match` invokes `scripts/sync-skills.py --check` through `sys.executable`, preserving the running interpreter rather than resolving an unrelated `python3` from PATH. This statement describes source, not a Curator run or a new pass.
 
 ## Evidence
 
@@ -20,4 +20,7 @@ Small fixture hooks witness success, native failure, unusable hooks, state mutat
 - StashRecoveryTests: qualified source contract. [4]
 - TrailerFactTests: qualified source contract. [5]
 - RoundOneFindingTests: qualified source contract. [6]
+
 - PreparedLegProductionTests: qualified source contract. [7]
+
+- AnswerAndTextTests owns the skill-sync subprocess using the current interpreter; this is source attribution, not execution. [8]

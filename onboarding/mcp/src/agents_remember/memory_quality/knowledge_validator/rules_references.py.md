@@ -46,6 +46,8 @@ The historical worker gap 10 anticipated MIK-R24/MIK-R03 stale-reference mainten
 absent-path finding already carries MIK-R53's merge_reports reason and names repair before the next
 refusing publication/landing; other content-only staleness keeps its separate currentness treatment.
 
+Literal text that is not a marker receives three recovery choices in `_ESCAPE_HINT`: escaped bracket spelling, a fenced code block, or a code span. The hint changes presentation, not marker grammar or the separate absent-path/reporting rules.
+
 ## Evidence
 
 ### Docs References
@@ -76,3 +78,5 @@ No cross-repo boundary is crossed by this file.
 - Added anchors must name existing paths; carried absent-path anchors refuse off merge and report for sync/conversion or writer repair. [3]
 - Eight reference rules: two migration_debt, one merge_reports/writer-reported, no permanent report-only waiver. [4]
 - Current source delta inspected statically: Repair debt keys and carried-anchor route disposition throughout prose/captions; retain carry and currentness scope. [7]
+
+- Literal-markup recovery names escapes, fenced blocks and code spans. [8]

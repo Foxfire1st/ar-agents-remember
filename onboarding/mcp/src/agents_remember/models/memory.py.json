@@ -7,7 +7,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "adf33020c862905f50d7358b34941854b5176535",
+            "blob": "8f6b96ed31a33286bcba19bf09f15947e6fa94ac",
             "content": "sha256:b9c3b6fbb6f4b5ae523ee6888de143b18da1674d8d42ec868401b25daea26060",
             "locator": {
               "kind": "symbol",
@@ -19,7 +19,7 @@
         },
         {
           "anchor": {
-            "blob": "adf33020c862905f50d7358b34941854b5176535",
+            "blob": "8f6b96ed31a33286bcba19bf09f15947e6fa94ac",
             "content": "sha256:d66282011e6104457e201a03a8626244577dc026812a91ef41972743328fa8d1",
             "locator": {
               "kind": "symbol",
@@ -31,7 +31,7 @@
         },
         {
           "anchor": {
-            "blob": "adf33020c862905f50d7358b34941854b5176535",
+            "blob": "8f6b96ed31a33286bcba19bf09f15947e6fa94ac",
             "content": "sha256:daf3217ecae8b4eaad292db942e50c17acee95b05ae749a557801f04457bc3a2",
             "locator": {
               "kind": "symbol",
@@ -43,12 +43,12 @@
         },
         {
           "anchor": {
-            "blob": "adf33020c862905f50d7358b34941854b5176535",
+            "blob": "8f6b96ed31a33286bcba19bf09f15947e6fa94ac",
             "content": "sha256:859092a84cc90e617f1aa354f948de9c8b7574016de937fbaedf26de3f050c22",
             "locator": {
-              "end": 291,
+              "end": 301,
               "kind": "line_range",
-              "start": 283
+              "start": 293
             },
             "path": "mcp/src/agents_remember/application/memory_quality/controller.py"
           },
@@ -56,12 +56,12 @@
         },
         {
           "anchor": {
-            "blob": "adf33020c862905f50d7358b34941854b5176535",
+            "blob": "8f6b96ed31a33286bcba19bf09f15947e6fa94ac",
             "content": "sha256:29dcfa5d07b87f17f15e90303d889e700849a94090bab97105f06c5acab94f70",
             "locator": {
-              "end": 300,
+              "end": 310,
               "kind": "line_range",
-              "start": 292
+              "start": 302
             },
             "path": "mcp/src/agents_remember/application/memory_quality/controller.py"
           },
@@ -69,12 +69,12 @@
         },
         {
           "anchor": {
-            "blob": "adf33020c862905f50d7358b34941854b5176535",
+            "blob": "8f6b96ed31a33286bcba19bf09f15947e6fa94ac",
             "content": "sha256:2381491880d675d8dd4d82dae3f0a85c07b093cbcb0c8d7fbcba954c6720e59a",
             "locator": {
-              "end": 309,
+              "end": 319,
               "kind": "line_range",
-              "start": 301
+              "start": 311
             },
             "path": "mcp/src/agents_remember/application/memory_quality/controller.py"
           },
@@ -104,7 +104,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "93cde78e1cfbadf26596b1da769dfad9109abdd6",
+            "blob": "167c28bf3a5d1b7ea0ee02e83892bf55ee9a32aa",
             "content": "sha256:775235fb1f42f9630eb54a53efe600111eeefbd90e72692d1202abd3725bb2ac",
             "locator": {
               "kind": "symbol",
@@ -115,7 +115,7 @@
         },
         {
           "anchor": {
-            "blob": "93cde78e1cfbadf26596b1da769dfad9109abdd6",
+            "blob": "167c28bf3a5d1b7ea0ee02e83892bf55ee9a32aa",
             "content": "sha256:c530441aca764d26912f99f7d4144edce303ef641e01dc21ceab0c40f8fcea42",
             "locator": {
               "kind": "symbol",
@@ -126,7 +126,7 @@
         },
         {
           "anchor": {
-            "blob": "93cde78e1cfbadf26596b1da769dfad9109abdd6",
+            "blob": "167c28bf3a5d1b7ea0ee02e83892bf55ee9a32aa",
             "content": "sha256:38dd3e642d96d2d197c1c9d8d5ddb9b0404157d1a5ebbf65fa4ce3b6d7bc9d55",
             "locator": {
               "kind": "symbol",
@@ -137,12 +137,12 @@
         },
         {
           "anchor": {
-            "blob": "93cde78e1cfbadf26596b1da769dfad9109abdd6",
+            "blob": "167c28bf3a5d1b7ea0ee02e83892bf55ee9a32aa",
             "content": "sha256:20510de9fed7583f74b4605066ac827c276aba64e69757e2cf2655aa6586375d",
             "locator": {
-              "end": 156,
+              "end": 158,
               "kind": "line_range",
-              "start": 156
+              "start": 158
             }
           },
           "kind": "code"
@@ -154,7 +154,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "93cde78e1cfbadf26596b1da769dfad9109abdd6",
+            "blob": "167c28bf3a5d1b7ea0ee02e83892bf55ee9a32aa",
             "content": "sha256:5defc592c4ead496c0d96b2b8a314b6a884ae178e845fb42f98657c6140395ee",
             "locator": {
               "kind": "symbol",
@@ -204,7 +204,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "93cde78e1cfbadf26596b1da769dfad9109abdd6",
+            "blob": "167c28bf3a5d1b7ea0ee02e83892bf55ee9a32aa",
             "content": "sha256:5defc592c4ead496c0d96b2b8a314b6a884ae178e845fb42f98657c6140395ee",
             "locator": {
               "kind": "symbol",
@@ -225,6 +225,23 @@
             "locator": {
               "kind": "symbol",
               "name": "MemoryQualityCheckResponse"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The two optional quality fields are declared rather than merely tolerated flexible extras.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "167c28bf3a5d1b7ea0ee02e83892bf55ee9a32aa",
+            "content": "sha256:51dc539bb93ec14158b4e050897b5328286ad7978c7888c28e7e23e758ddcbce",
+            "locator": {
+              "end": 121,
+              "kind": "line_range",
+              "start": 43
             }
           },
           "kind": "code"

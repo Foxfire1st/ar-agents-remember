@@ -14,6 +14,8 @@ document and its series contract in the leaf's enclosure.
 
 ## Code Commentary
 
+The changed writer calls explicitly supply the current `leaf_worklist(load_contract(...))`. The controller case now starts from a fresh shared memory clone with no copied route-index cache, excludes derived indexes, and lets the real index builder and proof-count computation run. Its report-enabled arm asserts the persisted worklist, built root index, zero stale indexes and informational wording that gates nothing. Both report modes return the computed proof count; the disabled arm only additionally checks that no report exists, rather than inheriting every persistence assertion. A separate cache-store case deletes an old file between listing and stat and asserts the new cache entry remains loadable. These are source cases, not a controller/cache/Git run or MEMORY certification.
+
 - **Pairing and persistence.** A leaf pairs its memory base by the `Code-Commit` trailer, follows its sync,
   and persists the worklist beside its contract. A base that no memory commit pairs with gives an
   `incomplete` worklist naming the pairing.
@@ -61,9 +63,7 @@ document and its series contract in the leaf's enclosure.
 
 ### Conventions
 
-- The controller case stubs the scope revalidation, census, style checks, onboarding probes, coherence
-  authority, catalog steps and L28's `_without_proof`; `_knowledge_worklist` and `write_curator_checklist`
-  run for real. Since MIK-R09 the exact candidate trees are captured for real too (`_curator_candidate_inputs` is
+- The controller case stubs scope revalidation, census, style checks, onboarding probes, coherence authority and catalog steps, but no longer stubs `_without_proof` or `build_route_indexes`. `_knowledge_worklist`, proof-count computation, index building and `write_curator_checklist` run for real within the declared fixture. Since MIK-R09 the exact candidate trees are captured for real too (`_curator_candidate_inputs` is
   no longer stubbed with placeholder IDs), because the gate judges exact trees.
 - The module is registered in the `unit-regression` lane; the census derives it as a consumer of
   `fixtures/repository_profiles/node/package-lock.json` because it drives the controller (the Thirty-fifth
@@ -79,6 +79,9 @@ document and its series contract in the leaf's enclosure.
 - None recorded.
 
 ## Evidence
+
+- The controller source exercises a fresh shared clone, real index building, informational proof counts and distinct report modes; cache store tolerates listing/stat disappearance. [41]
+
 
 - The module docstring: the fixture's repositories and task root. [17]
 - Pairing by trailer, following a sync and persisting beside the contract. [18]

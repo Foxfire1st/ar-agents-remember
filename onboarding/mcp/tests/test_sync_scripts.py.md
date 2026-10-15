@@ -20,6 +20,8 @@ The projection guard quotes exactly two completion-truth clauses: (core/acceptan
 
 ## Code Commentary
 
+New declaration/profile cases project a synthetic skill target into the generated-skills input and recompute the digest without changing other modeled profile content. The byte projector leaves its input profile file unchanged. A temporary two-target normal-sync matrix rejects missing, invalid-JSON and digest-mismatched profiles before any target mutation; the valid arm asserts projected profile bytes and canonical copy digests. The inventory and boundary loops call `skill_targets()` rather than a fixed `TARGETS` tuple. This source inspection ran no sync/check command, read no generated/private mirror and supplies no new projection or test grade.
+
 ### Logic
 
 Four readings, each defended by a different case class:
@@ -32,7 +34,7 @@ Four readings, each defended by a different case class:
   sequence is characterized at the two places it can fail, including the rename interruption
   (`RenameInterruption`, 246).
 - **The declared inventory is the certified one** — `DeclaredProjectionInventoryTests` requires the
-  script's `TARGETS` to equal the paths `mcp/certification-profile-v1.json` declares as the
+  script's declaration-backed `skill_targets()` to equal the paths `mcp/certification-profile-v1.json` declares as the
   `generated-skills` generated input, so a target silently dropped from the script fails.
 - **The corrected boundary clauses reach every copy** — `BoundaryPropagationTests` (459) re-asserts the
   shipped completion-truth clauses against canonical **plus** the nine copies through
@@ -65,6 +67,9 @@ drift into two spellings of one boundary.
   the clause should say. Loosening a row here to make a copy pass would defeat the guard's purpose.
 
 ## Evidence
+
+- Declaration-backed targets, pure profile projection and the normal-sync prevalidation matrix preserve unrelated profile fields and refuse bad profiles before target mutation. [6]
+
 
 ### Docs References
 

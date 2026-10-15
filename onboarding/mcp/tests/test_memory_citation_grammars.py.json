@@ -7,12 +7,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1279a2ddd3deacbfc19f78688e1c967828482abf",
+            "blob": "66a03c98c12434c81ed1ad986609742aa41a4df8",
             "content": "sha256:7143e9f8a7674790c28187c8794828c380c8bc037d3368bcd21577889dd53345",
             "locator": {
-              "end": 62,
+              "end": 63,
               "kind": "line_range",
-              "start": 40
+              "start": 41
             }
           },
           "kind": "test"
@@ -24,11 +24,28 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1279a2ddd3deacbfc19f78688e1c967828482abf",
+            "blob": "66a03c98c12434c81ed1ad986609742aa41a4df8",
             "content": "sha256:3d1b34edc270846cd42daa348364e0f732594ea40bb95249ebdb07f2f77f85ec",
             "locator": {
               "kind": "symbol",
               "name": "test_three_interface_members_in_another_file_repair_as_one_claim"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "11": {
+      "note": "The new test-title cases cover qualified/bare names, escapes, UTF-16/lone-unit handling, ambiguity, semantic-first arguments and explicit unsupported-form refusals.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "66a03c98c12434c81ed1ad986609742aa41a4df8",
+            "content": "sha256:9e6054faaaec91b272be354702f54a1ae1c75652f68104b5822e2eff2fcecb5f",
+            "locator": {
+              "end": 184,
+              "kind": "line_range",
+              "start": 93
             }
           },
           "kind": "test"
@@ -40,7 +57,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1279a2ddd3deacbfc19f78688e1c967828482abf",
+            "blob": "66a03c98c12434c81ed1ad986609742aa41a4df8",
             "content": "sha256:276926c02a6c370fc3f4919107969448aca45dd6c3b01cd6d09bbfeb6d73f4aa",
             "locator": {
               "kind": "symbol",
@@ -56,7 +73,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1279a2ddd3deacbfc19f78688e1c967828482abf",
+            "blob": "66a03c98c12434c81ed1ad986609742aa41a4df8",
             "content": "sha256:2cc42df0da1e0f5abe21f728a2e1ab363bf42100504738060cc5ddca84fa281c",
             "locator": {
               "kind": "symbol",
@@ -72,7 +89,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1279a2ddd3deacbfc19f78688e1c967828482abf",
+            "blob": "66a03c98c12434c81ed1ad986609742aa41a4df8",
             "content": "sha256:0435779fc48cdc8c723e0aae3f3dd34bc000dcde8d4c579d87cd072356010f75",
             "locator": {
               "kind": "symbol",
@@ -88,7 +105,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1279a2ddd3deacbfc19f78688e1c967828482abf",
+            "blob": "66a03c98c12434c81ed1ad986609742aa41a4df8",
             "content": "sha256:7d15d6d9058dbada4455f7ee96d382d0a7a6c72f3208ce94eb95903b762f1bd7",
             "locator": {
               "kind": "symbol",
@@ -104,7 +121,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1279a2ddd3deacbfc19f78688e1c967828482abf",
+            "blob": "66a03c98c12434c81ed1ad986609742aa41a4df8",
             "content": "sha256:ccaa779876ece1b6ef11d0c530e0244ccbfa05f6e099a4aae30ac2a1b6798ac9",
             "locator": {
               "kind": "symbol",
@@ -120,7 +137,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1279a2ddd3deacbfc19f78688e1c967828482abf",
+            "blob": "66a03c98c12434c81ed1ad986609742aa41a4df8",
             "content": "sha256:87fa112b9de5431a9dd25a46c26b035796f453363b358bf0735e160688a2f53f",
             "locator": {
               "kind": "symbol",
@@ -136,7 +153,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1279a2ddd3deacbfc19f78688e1c967828482abf",
+            "blob": "66a03c98c12434c81ed1ad986609742aa41a4df8",
             "content": "sha256:02ef2acc0c260f4e26a226eac70a167919b03ca4dbc82712c3dcb165df825b1d",
             "locator": {
               "kind": "symbol",
@@ -152,7 +169,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1279a2ddd3deacbfc19f78688e1c967828482abf",
+            "blob": "66a03c98c12434c81ed1ad986609742aa41a4df8",
             "content": "sha256:4f1962495a98fd6829bb0280f0c56f37e6a64f915ac75a058e986e267469779f",
             "locator": {
               "kind": "symbol",

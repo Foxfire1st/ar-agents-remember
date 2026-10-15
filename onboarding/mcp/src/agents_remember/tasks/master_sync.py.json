@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "7195f7a23e7076e9d15fbe5274adc0871808e54e",
+        "blob": "6a9f8b91641c869b1c20b3bcf11d566744f94855",
         "content": "sha256:1410479f56ef2858bc0f794bfb74c0822dde19fa6436d5c14f8883b7560bea46",
         "locator": {
           "kind": "symbol",
@@ -21,7 +21,7 @@
     },
     {
       "anchor": {
-        "blob": "7195f7a23e7076e9d15fbe5274adc0871808e54e",
+        "blob": "6a9f8b91641c869b1c20b3bcf11d566744f94855",
         "content": "sha256:1410479f56ef2858bc0f794bfb74c0822dde19fa6436d5c14f8883b7560bea46",
         "locator": {
           "kind": "symbol",
@@ -44,7 +44,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7195f7a23e7076e9d15fbe5274adc0871808e54e",
+            "blob": "6a9f8b91641c869b1c20b3bcf11d566744f94855",
             "content": "sha256:1410479f56ef2858bc0f794bfb74c0822dde19fa6436d5c14f8883b7560bea46",
             "locator": {
               "kind": "symbol",
@@ -55,7 +55,7 @@
         },
         {
           "anchor": {
-            "blob": "7195f7a23e7076e9d15fbe5274adc0871808e54e",
+            "blob": "6a9f8b91641c869b1c20b3bcf11d566744f94855",
             "content": "sha256:96118334912bd14c29ef66b0b75f2879e0471ba8e11833207a1a5ceaa21b7ae0",
             "locator": {
               "kind": "symbol",
@@ -66,7 +66,7 @@
         },
         {
           "anchor": {
-            "blob": "7195f7a23e7076e9d15fbe5274adc0871808e54e",
+            "blob": "6a9f8b91641c869b1c20b3bcf11d566744f94855",
             "content": "sha256:25f6f731474d30fa502664ce39c213e9ff51d662222697fc39c87fd086ec6948",
             "locator": {
               "kind": "symbol",
@@ -127,7 +127,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7195f7a23e7076e9d15fbe5274adc0871808e54e",
+            "blob": "6a9f8b91641c869b1c20b3bcf11d566744f94855",
             "content": "sha256:31aa226304974471dbab51fb55647cd856efb4cfb7ce943e52cefec3cefdec54",
             "locator": {
               "kind": "symbol",
@@ -143,7 +143,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7195f7a23e7076e9d15fbe5274adc0871808e54e",
+            "blob": "6a9f8b91641c869b1c20b3bcf11d566744f94855",
             "content": "sha256:7b3f9a3a00f0613b5a8135a6f371a364a0eb73b8a1cb69d892d9b3d123ef0d28",
             "locator": {
               "kind": "symbol",
@@ -154,7 +154,7 @@
         },
         {
           "anchor": {
-            "blob": "7195f7a23e7076e9d15fbe5274adc0871808e54e",
+            "blob": "6a9f8b91641c869b1c20b3bcf11d566744f94855",
             "content": "sha256:babd9be98c04c56449db00db98436348a11f87bd8acf030fbc3002ae39e47eae",
             "locator": {
               "kind": "symbol",
@@ -170,7 +170,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7195f7a23e7076e9d15fbe5274adc0871808e54e",
+            "blob": "6a9f8b91641c869b1c20b3bcf11d566744f94855",
             "content": "sha256:2d2a8bf87984a5f943773bf06dbf2113bcb44579d0182556b60d3e719b89611b",
             "locator": {
               "kind": "symbol",
@@ -186,7 +186,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7195f7a23e7076e9d15fbe5274adc0871808e54e",
+            "blob": "6a9f8b91641c869b1c20b3bcf11d566744f94855",
             "content": "sha256:64f254f73b6cbf7b50858e089819db474045da1527f718d1f25da2f664a42222",
             "locator": {
               "end": 47,
@@ -203,7 +203,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7195f7a23e7076e9d15fbe5274adc0871808e54e",
+            "blob": "6a9f8b91641c869b1c20b3bcf11d566744f94855",
             "content": "sha256:39312b94f81381398b5bfdefe4aaec4a74c56e41e1266e9c093facc140a54c7f",
             "locator": {
               "kind": "symbol",
@@ -214,7 +214,7 @@
         },
         {
           "anchor": {
-            "blob": "7195f7a23e7076e9d15fbe5274adc0871808e54e",
+            "blob": "6a9f8b91641c869b1c20b3bcf11d566744f94855",
             "content": "sha256:6ac23453f64056e900bf446e3af3d3651ad87ed45d25963c49653eb25a82c85b",
             "locator": {
               "kind": "symbol",
@@ -225,11 +225,28 @@
         },
         {
           "anchor": {
-            "blob": "7195f7a23e7076e9d15fbe5274adc0871808e54e",
+            "blob": "6a9f8b91641c869b1c20b3bcf11d566744f94855",
             "content": "sha256:1410479f56ef2858bc0f794bfb74c0822dde19fa6436d5c14f8883b7560bea46",
             "locator": {
               "kind": "symbol",
               "name": "plan_master_sync"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The shared folder-master helper corrects the historical omitted parent row and grants no standalone-leaf publication authority.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6a9f8b91641c869b1c20b3bcf11d566744f94855",
+            "content": "sha256:96671ed994257a3923b79e9c35e5009a7c8acac5ce32657d139952b9bb364a38",
+            "locator": {
+              "end": 190,
+              "kind": "line_range",
+              "start": 172
             }
           },
           "kind": "code"

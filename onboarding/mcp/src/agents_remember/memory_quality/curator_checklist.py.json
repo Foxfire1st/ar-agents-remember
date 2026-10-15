@@ -7,7 +7,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "cd98867bca76ef800dd2b0dfbc80232971044bb5",
+            "blob": "16bc720d447857303959d9881c8624f6aab9b7fd",
             "content": "sha256:5d341d40ac56e2a1f9868f4df55ac06a980ff74bc62cfd004a8ca7f3cc8c83a7",
             "locator": {
               "kind": "symbol",
@@ -18,7 +18,7 @@
         },
         {
           "anchor": {
-            "blob": "cd98867bca76ef800dd2b0dfbc80232971044bb5",
+            "blob": "16bc720d447857303959d9881c8624f6aab9b7fd",
             "content": "sha256:0a28de839a68793db013b6144092b73f9b481b53ce7e64aef0649aca96b56909",
             "locator": {
               "kind": "symbol",
@@ -34,7 +34,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6417eae61914675261b64fc0873dea8c2e563fa3",
+            "blob": "7e534abbc8eddc596c09dd188591a8e33755c064",
             "content": "sha256:4676069cc230f2d693f3d2151b6f44515a5fb8acf09f1c4c70fd9aa076319157",
             "locator": {
               "kind": "symbol",
@@ -51,7 +51,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "cd98867bca76ef800dd2b0dfbc80232971044bb5",
+            "blob": "16bc720d447857303959d9881c8624f6aab9b7fd",
             "content": "sha256:4b8539cd759156b4b275249cb1d061d3b7f534626781e779deef285c568ec406",
             "locator": {
               "kind": "symbol",
@@ -62,7 +62,7 @@
         },
         {
           "anchor": {
-            "blob": "cd98867bca76ef800dd2b0dfbc80232971044bb5",
+            "blob": "16bc720d447857303959d9881c8624f6aab9b7fd",
             "content": "sha256:9d64cf4ef6fbf61872da9ecbad420c5066f97ee0b024b83a5f3c78d5b6d106ef",
             "locator": {
               "kind": "symbol",
@@ -74,19 +74,32 @@
       ]
     },
     "3": {
-      "note": "The wire summary is identical with and without the list; an unconverted checklist has no section.",
+      "note": "The proof-coverage count is informational in the summary; after normalizing that count and artifact paths, actionable count still stays zero.",
       "targets": [
         {
           "anchor": {
-            "blob": "598b84d6b63c399c08e71e94ec6d7c3ea806afeb",
-            "content": "sha256:34525bc8d9a84d228dd0827a93d992f393828d1cea11be4ea34a57b1aa483e74",
+            "blob": "0256098f652dc34be5986d7dcab77243a655f959",
+            "content": "sha256:cc162acf98173fc3468f60f2cdc618d85d01b5ecd4304bf633a08ad91e6766cd",
             "locator": {
-              "kind": "symbol",
-              "name": "test_the_checklist_shows_the_list_as_information_that_moves_no_count"
+              "end": 429,
+              "kind": "line_range",
+              "start": 399
             },
             "path": "mcp/tests/test_knowledge_proofs.py"
           },
           "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "16bc720d447857303959d9881c8624f6aab9b7fd",
+            "content": "sha256:734ad81fa453f91aea1bb5d29e5a9b15c50467f4159d12cbe8a22fcf429836b0",
+            "locator": {
+              "end": 227,
+              "kind": "line_range",
+              "start": 133
+            }
+          },
+          "kind": "code"
         }
       ]
     },
@@ -95,7 +108,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "cd98867bca76ef800dd2b0dfbc80232971044bb5",
+            "blob": "16bc720d447857303959d9881c8624f6aab9b7fd",
             "content": "sha256:73647c6be89bab95f610a9645de985a46cc0e1a37f13bd995f97f3104ffafc12",
             "locator": {
               "kind": "symbol",
@@ -106,7 +119,7 @@
         },
         {
           "anchor": {
-            "blob": "cd98867bca76ef800dd2b0dfbc80232971044bb5",
+            "blob": "16bc720d447857303959d9881c8624f6aab9b7fd",
             "content": "sha256:89f3f0eca8b92c18875ce78fd071bb13a539700e8fcb95183a327462c7c7d83f",
             "locator": {
               "kind": "symbol",
@@ -122,7 +135,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "cd98867bca76ef800dd2b0dfbc80232971044bb5",
+            "blob": "16bc720d447857303959d9881c8624f6aab9b7fd",
             "content": "sha256:4b8539cd759156b4b275249cb1d061d3b7f534626781e779deef285c568ec406",
             "locator": {
               "kind": "symbol",
@@ -138,7 +151,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "37bdf36064ad4a1788a42474f12cbd272b3de219",
+            "blob": "1e6ff6e8915c09ef1ac1bcce226bab3ba0f24556",
             "content": "sha256:f6e7b04d886b2b70d6021b8a9446c1cb40f7058bb5c26bf923b9c3fb5d5b70e3",
             "locator": {
               "kind": "symbol",

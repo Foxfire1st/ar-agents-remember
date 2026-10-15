@@ -7,7 +7,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "cc03b8f0cb45df2735dbb5f0b142ef0d5fd28565",
+            "blob": "a652601a010c6a0f7f9ffdd879c64d003d751ddf",
             "content": "sha256:00261523642095b79b0e353262b7d4b57fa53c66d8327d16bd7361e2cc4e5354",
             "locator": {
               "end": 95,
@@ -24,7 +24,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "cc03b8f0cb45df2735dbb5f0b142ef0d5fd28565",
+            "blob": "a652601a010c6a0f7f9ffdd879c64d003d751ddf",
             "content": "sha256:15ae2120f5262296987cb1e5a1803f80ecf0d9752ebee47c0b5e307d4d5bc1b1",
             "locator": {
               "end": 213,
@@ -37,16 +37,33 @@
       ]
     },
     "33": {
-      "note": "Candidate blobs and complete persisted trace merge.",
+      "note": "The exact candidate blob map and identical-change source groups reach the complete trace merge",
       "targets": [
         {
           "anchor": {
-            "blob": "cc03b8f0cb45df2735dbb5f0b142ef0d5fd28565",
-            "content": "sha256:66d258f8d4e85252a7d73f03d4270cdadfb9047812679e14ce2f9cab022f5a9c",
+            "blob": "a652601a010c6a0f7f9ffdd879c64d003d751ddf",
+            "content": "sha256:ad4308a570f2d7a7c7605a7c668477101e90154f256111e5e6dfe4bd90c1cb73",
             "locator": {
-              "end": 298,
+              "end": 304,
               "kind": "line_range",
-              "start": 222
+              "start": 270
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "34": {
+      "note": "The bridge forwards actual identical-change groups and captured code blobs into onboarding trace evaluation.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a652601a010c6a0f7f9ffdd879c64d003d751ddf",
+            "content": "sha256:ad4308a570f2d7a7c7605a7c668477101e90154f256111e5e6dfe4bd90c1cb73",
+            "locator": {
+              "end": 304,
+              "kind": "line_range",
+              "start": 270
             }
           },
           "kind": "code"

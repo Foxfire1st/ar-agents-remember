@@ -7,7 +7,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6d0249c233d5eabbf837f6e775a297e28ff520d1",
+            "blob": "95aed562d3258ae4a4df6ecbfd044b66d35756ef",
             "content": "sha256:3aacf785be37c33f9c51961d3f77e693e21d0cfb57f9477407d50d0f36b982f3",
             "locator": {
               "kind": "symbol",
@@ -23,11 +23,28 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6d0249c233d5eabbf837f6e775a297e28ff520d1",
+            "blob": "95aed562d3258ae4a4df6ecbfd044b66d35756ef",
             "content": "sha256:ea432dd9146840f5cb971e93554d62d0987388bfdd05a74498bc2e75b877678c",
             "locator": {
               "kind": "symbol",
               "name": "test_line_count_file_content_and_ranges_outside_the_blob"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Non-UTF8 symbol observations are unverifiable whether recorded blobs change or match, with a UTF-8/path reason, read_failed false and the versioned extractor.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "95aed562d3258ae4a4df6ecbfd044b66d35756ef",
+            "content": "sha256:d50378d161e66e121d1274f6e71879974e0205d5ef3298e7f25e0cdcaae49070",
+            "locator": {
+              "end": 79,
+              "kind": "line_range",
+              "start": 59
             }
           },
           "kind": "test"

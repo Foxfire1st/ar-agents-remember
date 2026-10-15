@@ -36,17 +36,19 @@ every commit route refuse while any exists. None is report-only, and there is no
   `SubprocessError` is the `incomplete` worklist naming `git` (`git_failure`, the L03 carry, ruling 19:15:20); any other
   exception names the run. Nothing persisted earlier is read (the L11 carry: always recompute).
 - **`evaluate_leaf_gate(contract, candidate, *, parent_memory_tip=None)`**:
-  1. `_applies` probes the marker (`leaf_gate_applies`): a non-leaf contract, one without a memory worktree, or a leaf
-     with the marker on neither side returns `None` before anything more is read. A probe Git cannot answer
-     (`SubprocessError`, `LayoutProbeError`) is **applicable**, never taken for unconverted memory (review R1 F9).
+  1. `_applies` returns false for a non-leaf contract or one without a memory worktree; otherwise it
+     delegates applicability to `leaf_gate_applies(contract, candidate)`. A false result returns `None`
+     before tip resolution or evaluation. A probe Git cannot answer (`SubprocessError`, `LayoutProbeError`)
+     is **applicable**, never an exemption: evaluation continues so its unreadable input can be reported.
   2. With no tip given, `_resolved_tip` reads the parent line's memory tip from the contract
      (`worktrees.knowledge_gate.parent_memory_tip`); a failure is one `incomplete` finding (`parent memory line`), and
      that result is not memoised.
   3. The memo (`memo.memo_key`, `memo.remembered`): a hit re-persists the kept worklist only when `persist_worklist` is true and returns
      the kept verdict.
-  4. On a miss, `_evaluate` runs inside `recorded_reads()`, so every requirement file and settings file the
-     evaluation reads is recorded (ruling 15:09:25), and `memo.remember` keeps the verdict with that read set when it
-     is memoisable.
+  4. On a miss, `_evaluate` runs inside `recorded_reads()`, so its recorded requirement and settings
+     observations are collected. After that scope exits, `replay_reads(reads)` propagates the collected
+     observations to an enclosing recorder, including when the result cannot be memoised. With both a key
+     and a result, `memo.remember` then considers the verdict and read set under its existing admission rules.
 - **`_evaluate`** recomputes, optionally persists the worklist (`_persist`; a write failure never changes the verdict) and
   calls `judge` with `validation_bases=(parent tip,)` and the contract's cache.
 - **`judge(document, path, trees, owner)`**: an incomplete run is one finding per named input; a complete one goes
@@ -100,17 +102,35 @@ every commit route refuse while any exists. None is report-only, and there is no
   `test_an_incomplete_run_is_one_finding_naming_its_input_never_an_unhandled_error`,
   `test_a_git_read_that_fails_inside_a_predicate_or_the_validator_is_never_a_verdict` and
   `test_a_marker_probe_git_cannot_answer_is_never_unconverted_memory`.
-- **On unconverted memory the gate is `None`** (`unconverted.sh`: identical to base apart from the build label).
-  MIK-R09 rule 6's second bullet (refuse unconverted trees and name the crossing sync) is not in this module: it
-  is the cutover lock of `worktrees/cutover_lock.py`, wired at the routes by L37.
+- **A false applicability probe returns `None`; an unreadable probe does not.** Applicability is delegated
+  to `leaf_gate_applies`, rather than inferred here from a blanket statement about unconverted memory.
+  The earlier `unconverted.sh` comparison is historical evidence, not this module's current applicability
+  contract. The separately described cutover lock remains a route concern, not an exemption implemented here.
 
-### Todos
+### Historical L09 carry notes — not current open work
+
+These notes retain the earlier L09 handoff. Current reopened-attempt selection, applicability and
+publication contracts are described above; they do not defer the current gate or its read provenance.
 
 - **Carried to L37 (ruling 2026-09-30T16:08:08):** after the cutover, `task_reopen` on a leaf that closed out leaves
   its history file closed in K_B, so MIK-R22's freeze rule refuses any row the reopened leaf adds; L37 decides how a
   reopened leaf records answers and tests reopen after a converted closeout.
 - **Carried to L37 (gap 1):** the refusal of unconverted trees at every route, which is the cutover lock (G4 remains
   the developer's).
+
+### Read provenance across evaluation scopes
+
+Cold evaluation replays its collected observations after leaving its local recording scope and before
+attempting to keep the result. An outer caller can therefore retain the same recorded dependencies
+without depending on whether this evaluation produced a memo entry. Warm evaluation obtains its verdict
+through `memo.remembered`; that helper owns replay of the kept observations. The existing
+`persist_worklist` switch remains independent: a memo hit persists only when requested, and a cold
+read-provenance replay is not a worklist write.
+
+Applicability remains a contract-and-candidate probe. This module rejects non-leaf and memory-less
+contracts locally, delegates the remaining choice, and continues on the named probe failures instead of
+silently exempting unreadable inputs.
+
 
 ## Evidence
 
@@ -159,6 +179,9 @@ No configured live documentation source was available for this pass.
 - The commits whose closed history files are frozen for the writer: the bases and HEAD. [17]
 - The validator inside the gate is handed the frozen commit's history files. [18]
 - A leaf that continues after its closeout is refused while an item is open, and the refusal names attempt 2. [19]
+
+- Cold evaluation replays its collected reads before memo admission; memo-hit worklist persistence remains optional. [20]
+- Applicability delegates to leaf_gate_applies and treats unreadable layout probes as applicable. [21]
 
 ### Cross-Repo References
 

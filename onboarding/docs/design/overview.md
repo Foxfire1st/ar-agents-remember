@@ -34,7 +34,7 @@ The document says the writer orders rows and lists, removes duplicate lines, der
 
 The selection contract requires typed incomplete ownership to stop before Gate 2, removes deleted tests from the population, and keeps irrelevant inputs explicit. The immutable selector result binds candidate, configuration, scope, and dependency reasons. Retry binds its digest and, when proof cannot be reused, refreshes the already admitted population. These are the document's standing contracts; this overview does not certify every corresponding implementation predicate.
 
-`python-pytest-bootstrap.md` gives the behavior-based admission policy for tests, ordinary isolated host pytest commands, Git-checkout prerequisite, diagnostic metrics, and isolation rules. Host pytest has no certification authority. Coverage is diagnostic; production CRAP20 prompts review rather than blocking delivery. The current document and root `pyproject.toml:298-299` both declare 5,000 unit cases and 1,000 integration cases. D226 raises only the unit ceiling from 4,000; integration and the enforcing guard remain unchanged. The earlier 1,000/150-versus-4,000/1,000 source discrepancy is a prior-pair observation, not the current reading.
+`python-pytest-bootstrap.md` gives the behavior-based admission policy for tests, ordinary isolated host pytest commands, Git-checkout prerequisite, diagnostic metrics, and isolation rules. Host pytest has no certification authority. Coverage is diagnostic; production CRAP20 prompts review rather than blocking delivery. The current document and root `pyproject.toml:299-300` declare 6,000 unit cases and 1,000 integration cases. D226's earlier 4,000-to-5,000 unit policy raise is historical; the subsequent unit-only raise leaves integration and the enforcing guard unchanged. The earlier 1,000/150-versus-4,000/1,000 source discrepancy is a prior-pair observation, not the current reading.
 
 `python-test-evidence.md` states that Python acceptance requires a passed, immutable, candidate-bound publication of the pinned Dagger quality graph. Non-accepting investigation artifacts cannot satisfy accepting consumers. It names `worktrees.route_review_scope.require_current_route_review` as the route-review owner and separates independent route-review authority from test evidence. The inspected owner defers atomic children and atomic master closeout review until the accumulated master integration review; contracts outside that atomic scope call the existing independent review owner.
 
@@ -73,7 +73,6 @@ The following excluded metadata is preserved verbatim. It does not grant operati
 
 
 
-- The enforced collected-case pair is 5000 unit/1000 integration; the unit-only policy raise leaves the guard unchanged. [27]
 
 - The scenario catalog of the cockpit dashboard. [1]
 - The upstream register and the Chats decision brief. [2]
@@ -105,7 +104,6 @@ The following excluded metadata is preserved verbatim. It does not grant operati
 - The historical session design records former recovery/cache boundaries; its R113 status makes the session-driven promise non-operative. [28]
 
 - The Python evidence design describes selection, retry, and maintenance contracts. [29]
-- The bootstrap note and root configuration now state 5,000/1,000; host development runs and diagnostic metrics remain documented. [30]
 - The authority document records Candidate A retirement and the review consumer; the current review owner defers atomic scope. [31]
 
 - The cockpit index describes its historical candidate and internal measurement boundary. [32]
@@ -113,3 +111,6 @@ The following excluded metadata is preserved verbatim. It does not grant operati
 - The dashboard review doctrine defines review bars and visual grammar. [33]
 - Engine-room references identify the visual-language library and choreography prototype. [34]
 - The current complete closeout function preserves the memory-before-cache sequence; exact-tree validation independently refuses ungated memory. [35]
+
+- The current collected-case declaration is6000unit/1000integration; this is policy, not a collected or executed population. [27]
+- The bootstrap policy and current root declarations agree on6000unit/1000integration; host-versus-certifying evidence remains separate. [30]

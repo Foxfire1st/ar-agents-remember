@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "7e7956dad608e7dc7f74c15908f97d0103f12ebe",
-        "content": "sha256:21a87b4d4ca6d2a4dee314d43e1543abc09f33df70ef98adfcbb4b8579731eb9",
+        "blob": "e883bd37ccb740eeb9d913a85c9fe6d886b0fcaf",
+        "content": "sha256:1a69e883bffa86886a3b2d15b9a7f6ddd7356ca99d560820b7d760947c57f090",
         "locator": {
           "kind": "file"
         }
@@ -20,7 +20,7 @@
     },
     {
       "anchor": {
-        "blob": "7e7956dad608e7dc7f74c15908f97d0103f12ebe",
+        "blob": "e883bd37ccb740eeb9d913a85c9fe6d886b0fcaf",
         "content": "sha256:07ca253b99a77661c91e7476596f954d6d9508410004a1c4d70dd0d15f041502",
         "locator": {
           "kind": "symbol",
@@ -38,7 +38,7 @@
     },
     {
       "anchor": {
-        "blob": "7e7956dad608e7dc7f74c15908f97d0103f12ebe",
+        "blob": "e883bd37ccb740eeb9d913a85c9fe6d886b0fcaf",
         "content": "sha256:07ca253b99a77661c91e7476596f954d6d9508410004a1c4d70dd0d15f041502",
         "locator": {
           "kind": "symbol",
@@ -56,7 +56,7 @@
     },
     {
       "anchor": {
-        "blob": "7e7956dad608e7dc7f74c15908f97d0103f12ebe",
+        "blob": "e883bd37ccb740eeb9d913a85c9fe6d886b0fcaf",
         "content": "sha256:07ca253b99a77661c91e7476596f954d6d9508410004a1c4d70dd0d15f041502",
         "locator": {
           "kind": "symbol",
@@ -74,8 +74,8 @@
     },
     {
       "anchor": {
-        "blob": "7e7956dad608e7dc7f74c15908f97d0103f12ebe",
-        "content": "sha256:fc0d7d5fa0439df2397680b9f176fc6db44615e9673ed2ee53e36447ecd34865",
+        "blob": "e883bd37ccb740eeb9d913a85c9fe6d886b0fcaf",
+        "content": "sha256:d179d72d5ddf6471721ef0bcf8e12d552b2ab4ee28231e319c1f6c9a785de92e",
         "locator": {
           "kind": "symbol",
           "name": "invariant_row_open"
@@ -89,6 +89,24 @@
       },
       "rationale": "Holds an invariant item open when the governing row is not the changed row of a record whose revision the leaf changed, and names the remedy.",
       "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "e883bd37ccb740eeb9d913a85c9fe6d886b0fcaf",
+        "content": "sha256:d179d72d5ddf6471721ef0bcf8e12d552b2ab4ee28231e319c1f6c9a785de92e",
+        "locator": {
+          "kind": "symbol",
+          "name": "invariant_row_open"
+        }
+      },
+      "id": "RLZ-YK532N",
+      "invariant": "INV-WM6BTP",
+      "origin": {
+        "handoffEntry": "L54-curator-MIK-R55-v1-rule-8-actual-guards",
+        "leaf": "260928-MIK-L54"
+      },
+      "rationale": "The actual invariant predicate prioritizes the governing changed-row reason while retaining missing-cover details.",
+      "role": "enforcement"
     }
   ],
   "references": {
@@ -97,12 +115,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7e7956dad608e7dc7f74c15908f97d0103f12ebe",
+            "blob": "e883bd37ccb740eeb9d913a85c9fe6d886b0fcaf",
             "content": "sha256:40c678f955ad5c1762658f12b4a669e7c4b2268f0ab0278136fe2864f4470fef",
             "locator": {
-              "end": 430,
+              "end": 437,
               "kind": "line_range",
-              "start": 344
+              "start": 351
             }
           },
           "kind": "code"
@@ -114,12 +132,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7e7956dad608e7dc7f74c15908f97d0103f12ebe",
+            "blob": "e883bd37ccb740eeb9d913a85c9fe6d886b0fcaf",
             "content": "sha256:63cdb302ff58c308d452322726f4e250fc8d5c27053e8585ddafcc930179f72a",
             "locator": {
-              "end": 452,
+              "end": 459,
               "kind": "line_range",
-              "start": 433
+              "start": 440
             }
           },
           "kind": "code"
@@ -137,6 +155,57 @@
               "end": 528,
               "kind": "line_range",
               "start": 460
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Governing changed-row violations take diagnostic precedence and retain missing-cover details.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e883bd37ccb740eeb9d913a85c9fe6d886b0fcaf",
+            "content": "sha256:d179d72d5ddf6471721ef0bcf8e12d552b2ab4ee28231e319c1f6c9a785de92e",
+            "locator": {
+              "end": 241,
+              "kind": "line_range",
+              "start": 213
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Reconsideration delegates with candidate knowledge and code, translating CodeReadError into GitReadFailed.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e883bd37ccb740eeb9d913a85c9fe6d886b0fcaf",
+            "content": "sha256:c5717a8cc4c259cd4843ea995f5c26a3949b37995eda8137115985c6e624bb2a",
+            "locator": {
+              "end": 544,
+              "kind": "line_range",
+              "start": 535
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Link-target items are answered by absence of the target in candidate knowledge, never by a history row.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e883bd37ccb740eeb9d913a85c9fe6d886b0fcaf",
+            "content": "sha256:33306da2f8fbf8003c6a1b43b029cb098d81fba07a5e7cb92b3824a2bfd032a1",
+            "locator": {
+              "end": 559,
+              "kind": "line_range",
+              "start": 547
             }
           },
           "kind": "code"

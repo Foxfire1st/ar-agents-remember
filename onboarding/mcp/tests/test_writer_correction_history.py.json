@@ -1,0 +1,58 @@
+{
+  "path": "mcp/tests/test_writer_correction_history.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "f43d3dae7538b4e412abb17c6e298489ddc1f1df",
+        "content": "sha256:149c753ed9a1bb62c55045a3020887418e28d173e5c8dc7d97deac59d9a295fd",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_extended_row_adds_one_entry_and_reanchors_its_carried_entries"
+        }
+      },
+      "facet": "Source-defined regression check; not executed by Curator: The existing changed/extended row retains its added entry and can reanchor carried entries beside it.",
+      "id": "PRF-3ENK1R",
+      "invariant": "INV-1QQYDS",
+      "origin": {
+        "handoffEntry": "L54-curator-proof-L54-W-rule15-cover-path-admission-wave-76",
+        "leaf": "260928-MIK-L54"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "f43d3dae7538b4e412abb17c6e298489ddc1f1df",
+        "content": "sha256:274ac584a113af984a31d835bd7909bee54f55471d843b9aa9f9d8d8b8cece20",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_no_impact_refuses_the_same_added_and_relocated_entry_request"
+        }
+      },
+      "facet": "Source-defined regression check; not executed by Curator: The equivalent no_impact construction refuses; path admission does not waive its entry-set boundary.",
+      "id": "PRF-M1H2M8",
+      "invariant": "INV-1QQYDS",
+      "origin": {
+        "handoffEntry": "L54-curator-proof-L54-W-rule15-cover-path-admission-wave-76",
+        "leaf": "260928-MIK-L54"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Describes paired-tree regression assertions for writer history eligibility, stable refusals and rule15 relocation. Rule15 source tests describe the repaired candidate, not permission to use it for this leaf’s own memory. The thirteen deferred copy pairs remain under L63 custody; test declarations and existing historical passes are not new execution evidence.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f43d3dae7538b4e412abb17c6e298489ddc1f1df",
+            "content": "sha256:5a88608389fab953fc69f36a266dfd9549054a42f9106db9ae5f700dd9abdcf1",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

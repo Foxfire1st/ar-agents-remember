@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "9345bfdd0441dceed1d649557b20183d31fe520a",
+        "blob": "5e98996e8ec031b13f2d7ae246b428f8f93d4f9c",
         "content": "sha256:61d118edebbd6c51973dee05211b23e32ad85649f909d676022be0fb8a813846",
         "locator": {
           "kind": "symbol",
@@ -21,7 +21,7 @@
     },
     {
       "anchor": {
-        "blob": "9345bfdd0441dceed1d649557b20183d31fe520a",
+        "blob": "5e98996e8ec031b13f2d7ae246b428f8f93d4f9c",
         "content": "sha256:61d118edebbd6c51973dee05211b23e32ad85649f909d676022be0fb8a813846",
         "locator": {
           "kind": "symbol",
@@ -39,7 +39,7 @@
     },
     {
       "anchor": {
-        "blob": "9345bfdd0441dceed1d649557b20183d31fe520a",
+        "blob": "5e98996e8ec031b13f2d7ae246b428f8f93d4f9c",
         "content": "sha256:61d118edebbd6c51973dee05211b23e32ad85649f909d676022be0fb8a813846",
         "locator": {
           "kind": "symbol",
@@ -57,12 +57,12 @@
     },
     {
       "anchor": {
-        "blob": "9345bfdd0441dceed1d649557b20183d31fe520a",
+        "blob": "5e98996e8ec031b13f2d7ae246b428f8f93d4f9c",
         "content": "sha256:8f981c11f1290686733d9086a5107bdf08e1dfc3328aa7937b4143a226db6598",
         "locator": {
-          "end": 575,
+          "end": 573,
           "kind": "line_range",
-          "start": 559
+          "start": 557
         }
       },
       "id": "RLZ-MNMZ2H",
@@ -129,7 +129,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4ca283a6e70de51aba22a2a26dfe036ace2cffcc",
+            "blob": "5e98996e8ec031b13f2d7ae246b428f8f93d4f9c",
             "content": "sha256:67a7b91537aa4ee924ffc0f7791af8cf4ade43ee51ad27b8bae097057a50126f",
             "locator": {
               "kind": "symbol",
@@ -145,7 +145,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f5f5e06015b413b25d9850b5cbec4666d649c85f",
+            "blob": "9246c5aff746378c5e0de36d3e71590ca5a58652",
             "content": "sha256:a299d712543a1c91d213a2773ed8b56ea87dd0a171a76de1a75d2bd980aa02e2",
             "locator": {
               "kind": "symbol",
@@ -162,14 +162,31 @@
       "targets": [
         {
           "anchor": {
-            "blob": "52ead88df5abcc06f44245c1a48ebae0f190b1a6",
+            "blob": "bfc9168b3d1a727fc00d12e21e949acfed4d3537",
             "content": "sha256:3834212530d102e4d17271f2c6ababa60643994708b979be5ce666f02155af8f",
             "locator": {
-              "end": 67,
+              "end": 70,
               "kind": "line_range",
-              "start": 67
+              "start": 70
             },
             "path": "scripts/sync-skills.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The generated skill census is derived from the canonical declaration through its parser rather than a duplicated tuple.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5e98996e8ec031b13f2d7ae246b428f8f93d4f9c",
+            "content": "sha256:e3c89ecf994b9876775b9e606be29b87f5fad2d7ca4842d62adacf63e60aa442",
+            "locator": {
+              "end": 57,
+              "kind": "line_range",
+              "start": 36
+            }
           },
           "kind": "code"
         }

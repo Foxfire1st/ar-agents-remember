@@ -143,12 +143,12 @@ with a 1000/250 screen before that raise, and a matching 3000/600 pair after it;
 interface rather than literal-only source syntax addressed the named-constant reader defect.
 That dated account is not a general guarantee for every later raise or landing order.
 
-With the current ruled constants 5000/1000, the agreement method compares the declaration tuple
+With the current ruled constants 6000/1000, the agreement method compares the declaration tuple
 lexicographically with that ruled tuple. At or above it, the screen must equal the declaration.
 Below it, the screen must equal the fixed 1000/250 legacy pair and differ from the declaration.
 A synchronized 4000/1000 or 3000/600 pair thus enters the legacy branch and fails; the method does
 not accept every intermediate matched pair. The separate ruling method skips when either
-individual declaration is below its ruled value, otherwise requires exactly 5000/1000. Its skip
+individual declaration is below its ruled value, otherwise requires exactly 6000/1000. Its skip
 does not skip or qualify the agreement method. These are current assertion boundaries, not
 proof of arbitrary mixed-state publication or a whole-suite compatibility claim. [17] [18] [19]
 
@@ -177,7 +177,7 @@ proof of arbitrary mixed-state publication or a whole-suite compatibility claim.
   check is what makes that true for this module. Deleting the check, or skipping it together with the
   route, is outside what any in-repo case can prevent and is recorded as such rather than presented
   as proof.
-- The two budget figures inside the module — the ruled 5000/1000 constants and the pre-raise 1000/250
+- The two budget figures inside the module — the ruled 6000/1000 constants and the pre-raise 1000/250
   pair — are **this module's declared inputs and the ruling's values**, never a second copy of the
   repository's ceilings: the ceilings themselves are read from `pyproject.toml` at run time. Do not
   restate either pair here; read them there.
@@ -233,7 +233,6 @@ No cross-repository claim is made.
 
 
 
-- The enforced collected-case pair is 5000 unit/1000 integration; the unit-only policy raise leaves the guard unchanged. [25]
 
 - The nine-step route — reopen, author the new row with its `file` cell, start, work, close out, integrate, finalize, close the master out, land it — runs in order and records completion on its last line. [1]
 - The documented fallback from the closeout cell to the integration cell carries the code landing. [10]
@@ -260,6 +259,7 @@ No cross-repository claim is made.
 - A live series is still refused, so the reopen never resets a series out from under a running seat. [8]
 - The reachability proof runs on the memory side too, and the two sides' actions are asserted independently so a one-sided mutation cannot satisfy it. [9]
 
-- The enforced collected-case pair is 5000 unit/1000 integration; the unit-only policy raise leaves the guard unchanged. [25]
 
 - The integration lane contains test_task_reopen_series_extension.py at the current declaration location, line470. Integration membership and the nine-step route are unchanged; a stale historical row number is not a semantic reopen change or an executed result. [26]
+
+- The current root declaration is6000unit/1000integration; the conditional ruling/screen assertions use the corresponding current threshold. [25]

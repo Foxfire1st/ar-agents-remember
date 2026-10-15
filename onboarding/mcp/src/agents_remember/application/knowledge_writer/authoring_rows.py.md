@@ -28,7 +28,22 @@ revision, effect on another disposition) before anything is written.
 
 - One constructor stores the family revision with the authored effect. [2]
 
+### History cover destinations and planned-reference ownership
+
+Invariant-row covers may name a destination source path on `moved`, `extended`, `changed` and `deleted` dispositions. `_invariant_row` passes this permission explicitly to `_covers`; the helper still refuses a path without that permission. Its refusal text still says "only on a moved row", which is narrower than the implemented disposition set and must not be read as the operative allowlist. A requested destination relocates the existing entry into that file's sidecar, keeps its identity and authored fields, and re-anchors it against C; `before` remains the base entry anchor. The destination is not merely a replacement string in the history row.
+
+Planned-row authoring validates the row model and delegates reference resolution to `planned_references.unresolved_planned_ref`. The operation carries `coordination_root` for that resolver. The delegated resolver checks deferred requirement endpoints through their requirement owner as well as the existing decision, invariant and history-row references; source shape alone is not reference resolution.
+
+A reconsideration `raise` checks the task-owner question port before changing the staged decision status or adding `(key, question)` to `raised`. `_raise` no longer adds the full question to `notes`; a staged question is not an append receipt. The later committing question append remains a separate operation from knowledge-file persistence.
+
+
 ## Evidence
+
+### Repo-Internal References
 
 - Source-inspected authoring: onboarding rows fill candidate source bindings and require counted change for `updated`; canonical membership and decision/facet constructors preserve rerun IDs and foreign evidence. This is static implementation evidence, not a fresh run or acceptance. [1]
 - Current source delta inspected statically: Add membership/record constructors, onboarding source/base precedence and foreign-evidence preservation; retain the family section, propose no judgment rows. [3]
+
+- Invariant covers admit destination paths on moved, extended, changed and deleted rows; the helper refusal wording is narrower than its caller allowlist. [4]
+- Validated planned rows delegate reference resolution before returning an authored row. [5]
+- A raise checks the question port, stages under_reconsideration and queues the question without appending a full-question note. [6]

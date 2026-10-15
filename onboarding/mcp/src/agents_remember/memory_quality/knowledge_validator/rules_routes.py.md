@@ -6,7 +6,7 @@
 
 ## Purpose
 
-**MIK-R04's six family route rules in the validator's one registry (MIK-R22 rule 9).** `ROUTE_RULES` runs wherever the validator runs. Five rules refuse publication/landing and carry `writer_reports`; carried-route-absent and unrealized-family also defer at sync merge/standalone conversion (`merge_reports`). Route-unassigned is `migration_debt`, not a plain report-only rule.
+**MIK-R04's family route rules in the validator's one registry (MIK-R22 rule 9).** `ROUTE_RULES` runs wherever the validator runs. The refusing route rules carry `writer_reports`; carried-route-absent and unrealized-family also defer at sync merge/standalone conversion (`merge_reports`). Route-unassigned is `migration_debt`, not a plain report-only rule.
 
 ## Code Commentary
 
@@ -38,13 +38,15 @@
 - Enforcement goes through the registry only: there is no forked validator and no skip flag.
 - Carried absent routes are findings, not silent preservation: sync/conversion and inside-writer
   reports name the deferral reason and refusing route; ordinary publication/landing refuses.
-- Five route rules carry `writer_reports`; `route-unassigned` instead follows migration-debt
+- The refusing route rules, including nested-routes, carry `writer_reports`; `route-unassigned` instead follows migration-debt
   currentness. Added-route, Coverage and Non-empty refusal mechanics remain unchanged.
 - The validator cannot tell a broad route (`mcp/`) from a deep one: route depth is curator judgment, supported by the suggestion (ruling Q4).
 
 ### Todos
 
-Each rule recomputes the family states, and `_absent_routes` reparses the bases' family files twice; negligible at fixture scale, a cache on the context is a later option (review R1 finding 5).
+The former per-rule candidate-state recomputation is resolved by the context's cached `route_families`. `_absent_routes` still reparses comparison-base families for its separate existence checks; the candidate cache is not a claim of complete base-read deduplication or a timing result.
+
+`R04.1-nested-routes` checks every live family for an ancestor among its own routes, including root `.` above a descendant, and names the descendant index and parent route. It is writer-reported but refuses ordinary validator publication. `_families` now iterates the context-cached candidate tuple; it does not recompute realization locations for each rule.
 
 ## Evidence
 
@@ -79,3 +81,5 @@ No cross-repo boundary is crossed by this file.
 - Six registered rules: five writer-reported, two also merge-reported, one migration-debt rule. [6]
 - Added-route existence and carried-route findings in the route fixture; a merge report is not publication permission. [7]
 - Current source delta inspected statically: Replace the obsolete three-refuse/three-report split and base-ID-only debt carry with actual base-finding enforcement, keeping route mechanics, realization-only coverage and retired exemptions. [10]
+
+- Nested routes refuse, while all route rules read the shared candidate-family states. [11]

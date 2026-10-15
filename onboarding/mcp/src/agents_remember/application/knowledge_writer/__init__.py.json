@@ -7,7 +7,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "fb243d77b18d1a078388b92a380f9f71193f81e7",
+            "blob": "d613d748cfff5dc483056f3aee7708018c7727e5",
             "content": "sha256:0d488668c813816c20450749d0380f09f73bce5d299cc3d80602b8dd7a7eb813",
             "locator": {
               "kind": "symbol",
@@ -40,7 +40,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "fb243d77b18d1a078388b92a380f9f71193f81e7",
+            "blob": "d613d748cfff5dc483056f3aee7708018c7727e5",
             "content": "sha256:7661a91afac87f18847d741a113b8681149ab56095c6d213c0bb1638b3274358",
             "locator": {
               "end": 18,
@@ -53,14 +53,14 @@
       ]
     },
     "4": {
-      "note": "The module map names the requirement endpoints module (MIK-R13).\n\nAnchor: `requirement_links`",
+      "note": "Requirement-owner observations include writer refusal of new or changed unresolved links with a coordination root; the writer requires converted memory and has no database-ingest fallback.\n\nAnchor: lines 13-24",
       "targets": [
         {
           "anchor": {
-            "blob": "fb243d77b18d1a078388b92a380f9f71193f81e7",
-            "content": "sha256:374265a6c21c22acf805040e66f475769b9c8db33be6d3929475a157f2ce9a89",
+            "blob": "d613d748cfff5dc483056f3aee7708018c7727e5",
+            "content": "sha256:ecdc67f750660b0fcfafe978afd60e39637522857be86e30642d9f5c92b6a14c",
             "locator": {
-              "end": 14,
+              "end": 24,
               "kind": "line_range",
               "start": 13
             }

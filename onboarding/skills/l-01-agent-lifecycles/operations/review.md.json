@@ -100,6 +100,21 @@
           "kind": "code"
         }
       ]
+    },
+    "5": {
+      "note": "The authored source owns this contract; the distribution copy is not a separate authority.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ec9c3e6658331150d5e253965df7876d572ba086",
+            "content": "sha256:b6f88d3195695321b41c9182d1c837378fb680523f732d21c670ba9f10b95594",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
     }
   },
   "schema": "ar-onboarding-file/v1"

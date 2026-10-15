@@ -7,7 +7,7 @@
 ## Purpose
 
 **The memory tree one writer operation reads and edits, and the base it compares against.** The
-candidate K_C is every file under `knowledge/` and `onboarding/`, read once as bytes
+candidate K_C is the non-hidden knowledge/onboarding files selected by the shared tree reader, read once as bytes
 (`knowledge_tree_from_directory`). The operation edits parsed copies of the JSON documents it touches;
 nothing reaches disk until `MemoryState.write` is called with the validated result.
 
@@ -34,7 +34,10 @@ nothing reaches disk until `MemoryState.write` is called with the validated resu
   a rerun reuses IDs.
 - `put_record` keeps a record's file name unless a new slug renames it, carrying the paired `.md` along.
 - `file_sidecar` creates an empty sidecar for a source file that has none.
-- `write` writes each changed file through a temporary sibling and `replace`, then unlinks removed files.
+- `write` delegates publication to `file_publication.publish_files`: snapshot original affected bytes, write
+  changed files through temporary siblings and `replace`, then unlink removed files. On `OSError`, rollback
+  restores changed paths in reverse order, verifies the bytes and cleans staging. `PublicationError` names
+  recovery failures; restoration is guaranteed only when its `restored` property is true.
 - **`history_target(owner)` (L37 reopen ruling)** returns the history file the owner writes and its attempt. A
   wave or a crossing has one file. A leaf writes its latest attempt, and the next attempt once the latest is closed
   **in the base**, which is the memory worktree's `HEAD` commit (or its conversion): the leaf closed out and was
@@ -52,8 +55,10 @@ nothing reaches disk until `MemoryState.write` is called with the validated resu
 
 ### Invariants And Boundaries
 
-- A refused operation leaves every file exactly as it was, because edits live only in `documents` until
-  `write`.
+- A refusal before publication leaves knowledge files unchanged: edits remain in memory until `write`.
+  Publication failure attempts and verifies rollback; surviving or unverifiable changes are reported rather
+  than called atomic success. A task-document question already published before the filesystem failure is
+  a separate-store effect and must be reported with retry guidance.
 - The file writer writes only a converted tree: `converted` is the layout-marker test over the candidate
   files.
 
@@ -86,7 +91,9 @@ The candidate, the owner, the base and the write.
 - Entries this owner wrote for an invariant from a hand-off entry. [6]
 - A record as the base holds it. [7]
 - An entry's anchor as the base holds it. [8]
-- The atomic per-file write and the removals. [9]
+- Memory publication delegates to the rollback-aware file owner. [9]
+
+- Publication snapshots affected bytes; rollback verifies restoration and reports failures instead of promising unconditional atomicity. [13]
 
 - The history file an owner writes: a leaf's latest attempt, or the next once the latest is closed in the writer's base, the memory worktree's HEAD. [10]
 - The higher side's revision of a record a merge left unmerged. [11]

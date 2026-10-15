@@ -51,16 +51,14 @@ knowledge record.
    `task-intent-requirement-packet-outside-task`. This happens before any byte of the packet is read.
 3. It reads the packet's bytes once. A missing or unreadable file raises
    `task-intent-requirement-packet-missing`.
-4. The text is decoded as UTF-8 with `\r\n` and `\r` turned into `\n`. `_packet_metadata` reads the
+4. The bytes decode as UTF-8, with invalid input raising `task-intent-requirement-packet-encoding-invalid`; `\r\n` and `\r` are then normalized to `\n`. `_packet_metadata` reads the
    two-column table before the first `## ` heading; a repeated field raises
    `task-intent-requirement-packet-metadata-ambiguous`. `Stable ID` or `Requirement ID` must equal the
    reference's ID and `Version` its version, else `task-intent-requirement-packet-version-mismatch`.
 5. The result names the packet by its resolved path relative to the task root.
 
 Inside a recording block the call leaves these rows: one `resolve:` row for the task root, one `resolve:`
-row for `<resolved task root>/<reference path>` with the reference path's own links unresolved, and one
-byte row under that same path with the SHA-256 of the bytes read, `absent`, or `unreadable (...)`. The byte row is keyed by the caller's locator,
-not by the file the locator pointed at. A symbolic link that is retargeted afterwards therefore changes the
+row for `<resolved task root>/<reference path>` with the reference path's own links unresolved, and byte observations of the one read under both the caller locator and the resolved physical file. A failed read retains its named absence/unreadability observation; recording the physical identity does not replace the logical locator or require another read. A symbolic link that is retargeted afterwards therefore changes the
 `resolve:` row, even when the other target holds the same bytes, and a packet that resolves outside the
 task root leaves the `resolve:` row and no byte row. Outside a recording block the function records nothing
 and its answers and errors are the same.
@@ -88,3 +86,5 @@ and its answers and errors are the same.
 - The requirement owner calls the packet owner and carries its refusal back. [21]
 - A packet link retargeted outside the task and back is recorded by its resolve row; outside, no packet byte is read or recorded. [22]
 - A packet changed and restored while it is read, and a link retargeted during the read, are recorded under the link's own path. [23]
+
+- One confined packet read records caller and resolved-file byte identity; invalid UTF-8 receives a named task-intent refusal. [24]

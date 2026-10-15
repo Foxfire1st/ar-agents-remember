@@ -72,12 +72,27 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2b43fdbcebb97cf40df4da7ac53147caffafd2a5",
+            "blob": "5d110691b9c4137135b9f2a39752d21bf8a86588",
             "content": "sha256:a8f2952c31509b42c8ed45bb2c16eb135bb75c0b308d2590da5931cb38decafa",
             "locator": {
-              "end": 90,
+              "end": 87,
               "kind": "line_range",
-              "start": 67
+              "start": 64
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The authored source owns this contract; the distribution copy is not a separate authority.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5d110691b9c4137135b9f2a39752d21bf8a86588",
+            "content": "sha256:4d75362596111c5ee9fe9b7245af9dbabc77442d731f220882789fa1605bf432",
+            "locator": {
+              "kind": "file"
             }
           },
           "kind": "code"

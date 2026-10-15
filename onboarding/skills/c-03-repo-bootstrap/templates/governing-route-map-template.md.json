@@ -1,0 +1,95 @@
+{
+  "path": "skills/c-03-repo-bootstrap/templates/governing-route-map-template.md",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The route map places local overviews without replacing file-level onboarding.\n\nAnchor: `## Placement Principles`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "25d493e6efb78074c1d5f983765ad4acaf2c317a",
+            "content": "sha256:8386cdc8061253e1063b8eafdb1eef7cd2de50910cc8758319729c96eb165823",
+            "locator": {
+              "end": 13,
+              "kind": "line_range",
+              "start": 7
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The map records proposed and deferred routes, moved/deleted-route decisions, cross-cutting anchors, parent/child relationships and developer questions.\n\nAnchor: `## Proposed Governing Routes`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "25d493e6efb78074c1d5f983765ad4acaf2c317a",
+            "content": "sha256:c111600673682ea21cbd4f244d4b785337eb4e17506f1c780f669ef61d24f639",
+            "locator": {
+              "end": 52,
+              "kind": "line_range",
+              "start": 15
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Phase 4B writes the governing route map and records stale, moved or deleted routes in slice maintenance.\n\nAnchor: `### 4B — Governing Route Map`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6169b610d2b722a17c4d18645df947444b62f260",
+            "content": "sha256:18c5fd17ea1b850be7bd8cfa14c486291efd450d37a62ec2f964116fbbb1e1c9",
+            "locator": {
+              "end": 832,
+              "kind": "line_range",
+              "start": 805
+            },
+            "path": "skills/c-03-repo-bootstrap/SKILL.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Overview cards and overview waves follow the route-map phase.\n\nAnchor: `### 4C — Route-Local Overview Cards`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6169b610d2b722a17c4d18645df947444b62f260",
+            "content": "sha256:5b1c31c746b2148b56f9e13b40aef6e517d88e8b6b6aefcd0ea4bbef5e376e2d",
+            "locator": {
+              "end": 867,
+              "kind": "line_range",
+              "start": 833
+            },
+            "path": "skills/c-03-repo-bootstrap/SKILL.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Existing-memory slice maintenance starts from existing memory and considers preservation before removal of moved or deleted route knowledge.\n\nAnchor: `### Existing-memory slice maintenance`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6169b610d2b722a17c4d18645df947444b62f260",
+            "content": "sha256:5e6397efae7e6d9bfdbe5af8a869ad8ea4f19a2b053ccb497cf2016e8bcf8b23",
+            "locator": {
+              "end": 533,
+              "kind": "line_range",
+              "start": 492
+            },
+            "path": "skills/c-03-repo-bootstrap/SKILL.md"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

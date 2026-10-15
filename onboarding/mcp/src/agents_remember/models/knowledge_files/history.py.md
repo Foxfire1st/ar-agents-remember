@@ -95,8 +95,7 @@ checks that compare a row with facts the caller reads from the base (K_B) and ca
 - Arrays `rows`, `covers` and `examined` are identified-entry arrays: the canonical formatter sorts
   them by `id`, so file order carries no recency.
 - Several spellings were chosen by the L07 worker where the packet was silent: the `ROW-` prefix,
-  the `crossing` owner pattern, and `items[]` accepting any exact token until MIK-R08 fixes item
-  IDs.
+  the `crossing` owner pattern. Stored `items[]` labels remain readable; newly authored tokens are checked at Writer/publication boundaries rather than by replacing the persisted row shape. Closed stored history is not rewritten for that strict-input check.
 
 ### Invariants And Boundaries
 
@@ -218,6 +217,9 @@ any other disposition is refused naming the family and the row.
 - Recorded rows keep missing effect and revision missing on rewrite. [38]
 
 ## Evidence
+
+- The docstring names the current registered row kinds; stored items retain Label shape with strict new-token checks assigned to writing/publication. [40]
+
 
 ### Docs References
 

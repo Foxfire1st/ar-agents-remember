@@ -3,7 +3,7 @@
   "proves": [
     {
       "anchor": {
-        "blob": "99aaef12a6ac9dd723324025054b12a2ada50063",
+        "blob": "a8a9b6fbbeb021b300db9105743af40e2764b54d",
         "content": "sha256:713db2fc9a66c6019298bca81e6a4cb4edfc4fc287002d1dfc5cd7b2893bb53a",
         "locator": {
           "kind": "symbol",
@@ -17,17 +17,68 @@
         "handoffEntry": "MIK-R101@v1 rule 7",
         "leaf": "260928-MIK-L101"
       }
+    },
+    {
+      "anchor": {
+        "blob": "a8a9b6fbbeb021b300db9105743af40e2764b54d",
+        "content": "sha256:8964d88607d9a4930e00748d124b947a47eb3ec038b99c815a7a6baa2e4f9c66",
+        "locator": {
+          "kind": "symbol",
+          "name": "DeclaredProjectionInventoryTests.test_profile_projection_changes_only_the_declared_skill_input"
+        }
+      },
+      "facet": "Source-defined check, not executed by Curator: changing the declared skill targets changes only the generated-skills scopes/declaration source and canonical profile digest, while projected_profile_bytes leaves original profile bytes unchanged.",
+      "id": "PRF-3YWQ8Y",
+      "invariant": "INV-5X4C74",
+      "origin": {
+        "handoffEntry": "L54-curator-generator-profile-prevalidation",
+        "leaf": "260928-MIK-L54"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "a8a9b6fbbeb021b300db9105743af40e2764b54d",
+        "content": "sha256:40b893cb03e01c4531019ce3bd905a44ce6ab2db2d7b2d1eddb98fb896e0f812",
+        "locator": {
+          "kind": "symbol",
+          "name": "DeclaredProjectionInventoryTests.test_generator_uses_the_repository_copy_declaration"
+        }
+      },
+      "facet": "Source-defined regression check; not executed by Curator: A fixture repository can supply its own generated-copy declaration and skill_targets(root) reflects its label/path without editing the generator.",
+      "id": "PRF-ABWCA5",
+      "invariant": "INV-0NEA6F",
+      "origin": {
+        "handoffEntry": "L54-curator-proof-MIK-R55-v1-rule-11-wave-78",
+        "leaf": "260928-MIK-L54"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "a8a9b6fbbeb021b300db9105743af40e2764b54d",
+        "content": "sha256:d14f832e04e37b46f60b246384ae87c2ae4d04665cdb778d0be630131b6f9c80",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_normal_sync_prevalidates_profile_before_any_target_mutation"
+        }
+      },
+      "facet": "Source-defined four-shape check, not executed by Curator: missing, invalid-JSON and digest-mismatch profiles refuse with an unchanged synthetic world; valid profile input produces the expected profile bytes and equal declared fixture copies.",
+      "id": "PRF-VZN6AH",
+      "invariant": "INV-5X4C74",
+      "origin": {
+        "handoffEntry": "L54-curator-generator-profile-prevalidation",
+        "leaf": "260928-MIK-L54"
+      }
     }
   ],
   "realizes": [
     {
       "anchor": {
-        "blob": "99aaef12a6ac9dd723324025054b12a2ada50063",
+        "blob": "a8a9b6fbbeb021b300db9105743af40e2764b54d",
         "content": "sha256:875fcf4be4ec36c73771b353e1cda604414bfc547fcbbd286670731d055377a5",
         "locator": {
-          "end": 118,
+          "end": 121,
           "kind": "line_range",
-          "start": 114
+          "start": 117
         }
       },
       "id": "RLZ-KZSY9R",
@@ -92,7 +143,7 @@
         },
         {
           "anchor": {
-            "blob": "99aaef12a6ac9dd723324025054b12a2ada50063",
+            "blob": "a8a9b6fbbeb021b300db9105743af40e2764b54d",
             "content": "sha256:7b95197c93f288ae1830ba7b56ae9ea89b7be9746ad053dbe3c6b02ea778e3e6",
             "locator": {
               "kind": "symbol",
@@ -114,7 +165,7 @@
         },
         {
           "anchor": {
-            "blob": "99aaef12a6ac9dd723324025054b12a2ada50063",
+            "blob": "a8a9b6fbbeb021b300db9105743af40e2764b54d",
             "content": "sha256:4e0529e3637638a8fcb3ec332ba11b08f795075b03df756a6448b360c6ba1ab8",
             "locator": {
               "kind": "symbol",
@@ -125,7 +176,7 @@
         },
         {
           "anchor": {
-            "blob": "99aaef12a6ac9dd723324025054b12a2ada50063",
+            "blob": "a8a9b6fbbeb021b300db9105743af40e2764b54d",
             "content": "sha256:69a86d56d8892411b8c6e86ada9e4c5dc679b8d8dd75cc1b83cdb58ce6a4a6bb",
             "locator": {
               "kind": "symbol",
@@ -193,6 +244,47 @@
             "path": "skills/l-01-agent-lifecycles/roles/worker.md"
           },
           "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Declaration-backed targets, pure profile projection and the normal-sync prevalidation matrix preserve unrelated profile fields and refuse bad profiles before target mutation.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a8a9b6fbbeb021b300db9105743af40e2764b54d",
+            "content": "sha256:8964d88607d9a4930e00748d124b947a47eb3ec038b99c815a7a6baa2e4f9c66",
+            "locator": {
+              "end": 313,
+              "kind": "line_range",
+              "start": 280
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "a8a9b6fbbeb021b300db9105743af40e2764b54d",
+            "content": "sha256:40b893cb03e01c4531019ce3bd905a44ce6ab2db2d7b2d1eddb98fb896e0f812",
+            "locator": {
+              "end": 347,
+              "kind": "line_range",
+              "start": 323
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "a8a9b6fbbeb021b300db9105743af40e2764b54d",
+            "content": "sha256:e398991d72cf06771641a6a073f313211e5baf864bd393c7321fb2d91557b6b3",
+            "locator": {
+              "end": 423,
+              "kind": "line_range",
+              "start": 364
+            }
+          },
+          "kind": "test"
         }
       ]
     }

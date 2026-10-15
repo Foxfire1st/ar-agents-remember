@@ -99,6 +99,8 @@ file are exempt inside a judged file.
 
 - Only route-published new or edited rows are judged. [18]
 
+History item-token validation has a narrower historical exemption than reanchor checking: only a history path closed in an actual comparison base bypasses `invalid_history_items`. A hand-closed candidate or separately frozen publication tree does not suffice. Invalid new tokens name the file, row, subject, exact token and the Writer/worklist-ID remedy; no closed comparison-base bytes are rewritten.
+
 ## Evidence
 
 
@@ -158,3 +160,5 @@ No cross-repo boundary is crossed by this file.
 - Moved-row findings are bounded `merge_reports` at non-publication sync merges; their messages explain deferral and the next refusing publication/landing. [6]
 - The history-row registrations: `R09-history-rows` uses `writer_reports`, while `R09-history-rows-merged` uses `merge_reports`, not plain report-only. [7]
 - Current source delta inspected statically: Extend subject resolution and bounded merge reporting; keep R52 leaf refusal, frozen-attempt scope, independent retention and gate-owned currentness. [20]
+
+- Strict newly authored history item IDs preserve only the actual closed-comparison-base legacy exception. [21]

@@ -26,20 +26,13 @@ its conversion when `HEAD` is unconverted and the candidate is converted (L37, M
   binds it (`cli/knowledge_write_route.leaf_decisions`). `WriteRequest.memory_base` supplies the
   leaf's paired K_B for the onboarding-card comparison; a persisted worklist flag cannot override
   a known paired base. Without it, a persisted subject's counted flag is used, then own HEAD as fallback.
-- **Requirement endpoints (MIK-R13 rule 4).** `WriteRequest.coordination_root` (optional, default `None`) is where
-  requirement endpoints' owning tasks live (`<root>/tasks/<repository>/<path>`). `write_knowledge` fills
-  `WriteReport.requirements` from `requirement_links.requirement_endpoints(state, authoring.records,
-  coordination_root)` for every record the run created, updated or left unchanged. It is filled before the
-  problems check, so a refused run reports them too. An endpoint never refuses the run; with no root, every
-  endpoint is reported `requirement-task-plane-unavailable`. The leaf route passes the contract's
-  coordination root and the bootstrap wave the admitted authority's (`cli/knowledge_write_route.py`,
-  `cli/knowledge_bootstrap.py`).
+- **Requirement endpoints.** The optional coordination root resolves endpoints for records touched by the run and compares the stored links with their prior identities. With no root, endpoints are observations only. With the root supplied, newly introduced or changed unresolved links refuse before any knowledge file is published; unchanged inherited unresolved links are still reported, not newly refused. Requirement observations do not become validator-layer task access.
 - **Reconsideration rows (MIK-R14 rule 4).** `WriteRequest.worklist` (optional) is the leaf's persisted worklist:
   `_reconsideration_items` keeps its `reconsideration_candidate` items by subject and hands them to `Authoring` as
   `reconsiderations`, so a `still_rejected` row refreshes the links whose trigger fired on its item; without it no
   link is refreshed. `WriteRequest.questions` (optional) is the leaf task document's `openQuestions` port, handed to
   `Authoring` as `questions`; without it a `raise` is refused. After validation passes and **before `_finish`**,
-  `_append_raised` appends each queued `raise` question in a committing run; any refusal refuses the operation with
+  `_append_raised` submits the queued `raise` questions in one `append_many` batch in a committing run; any refusal refuses the operation with
   a problem at `openQuestions` ("the raise is refused: …"), and no knowledge file is written. A planned run appends
   nothing (the question was already checked by a dry run during authoring). The leaf route passes the persisted
   worklist (`read_leaf_worklist`) and a lazy `LeafQuestions` port (`cli/knowledge_write_route.py`).
@@ -74,12 +67,7 @@ its conversion when `HEAD` is unconverted and the candidate is converted (L37, M
   `crossing`, `_crossing_problems` refuses `entries`, rulings and any record without an `id`
   (`CROSSING_ROWS_ONLY`): the owner may update an existing record its sync left conflicted, which the writer
   resolves at one more than the higher side's revision, and write `history` rows.
-- **Persisted worklist facts.** `_worklist_items` reads well-formed `(kind, subject, id)` tuples
-  (IDs are `sha256:` plus 64 hex digits) for row `items`. `_trace_items` supplies unexplained-item
-  trace links. `_onboarding_sources` and `_onboarding_counted` project covered paths and counted flags
-  from `onboarding_trace` items; together with `request.memory_base` they reach `Authoring`. A file
-  card uses its subject path; an overview row requires the persisted covered-source set and cannot
-  bind without it. Without a worklist no item is filled in.
+- **Persisted worklist facts.** Before candidate capture, a leaf requires a readable persisted worklist whose consumed shapes pass `worklist_shape_problem`; this preflight does not check complete state, `incomplete`, schema, owner or digest. An incomplete-state document with an empty items list is not refused by this shape check alone. Complete gate recomputation is a separate later route; non-leaf owners keep their separate admission. After authoring, worklist checks validate explicit item tokens and applicability before publication. Existing item/source/count projections still feed row authoring and paired-base onboarding comparison; overview source sets cannot be invented from a file subject.
 
 ### Conventions
 
@@ -87,8 +75,7 @@ its conversion when `HEAD` is unconverted and the candidate is converted (L37, M
 
 ### Invariants And Boundaries
 
-- **All or nothing (rule 4):** a refused operation writes nothing and names every problem and every
-  refusing violation. Report-only findings do not refuse this writer run; they are not permanent
+- **Prepublication refusals and recovery (rule 4):** refusals before question/file publication write no question or knowledge file and name the problems and refusing violations. A later `refused` result is not a zero-effect guarantee: already-published questions remain durable, and failed file publication distinguishes verified restoration from incomplete or unverifiable rollback. Report-only findings do not refuse this writer run; they are not permanent
   publication exemptions. A base-present violation still refuses unless the validator's specific
   carried/deferred policy or the registry's inside-writer split applies; direct repair remains available.
 - Nothing is written before validation: `MemoryState.write` is reached only from `_finish` with
@@ -96,20 +83,9 @@ its conversion when `HEAD` is unconverted and the candidate is converted (L37, M
 - **The carry never edits authored fields or another owner's row (architect ruling 5, MIK-R08).** It never
   changes a locator kind, a name or `content`, and it leaves closed history files and other owners' rows
   alone; with this owner's own file closed, the history check then refuses the write ("closed and frozen").
-- **An unresolved requirement endpoint is reported, never refused (MIK-R13 rule 4).** Resolution lives here, in the
-  writer, not in the validator: `memory_quality` ranks below `memory` in `layers.toml`, and commit routes carry no
-  coordination root (ruling 01:45:56 Q5/Q6; review F2 carried to L14 and L29). L14 reports the endpoints of
-  `reconsider_on` links in the worklist's `reconsideration.links` summary; the reads remain L29's.
-- **A `raise` puts the question in the task document before any knowledge file is written; on failure it writes
-  nothing (MIK-R14 Failure And Recovery).** Candidate invariant. Realized by `_append_raised` between the
-  validator and `_finish`, and by the dry-run check during authoring; proved by
-  `test_raise_sets_the_status_and_appends_the_question_or_is_refused` (no task owner, a check refusal and an append
-  refusal each leave the decision bytes unchanged and `written == ()`) and on real data by the worker's scratch
-  answer (refused with exit 1 without task-document settings, then written with the question in the scratch task
-  document).
-- **Recorded limit (rulings 04:37:56 Q7/Q8 and 05:31:11 F7).** The question and the knowledge files are two
-  stores: an `OSError` in `MemoryState.write` after the append, or a second `raise` whose append fails, leaves a
-  question with no knowledge written. A rerun appends nothing twice (key prefix).
+- **Task-plane endpoint admission and validator reporting are distinct.** The writer may refuse a newly changed unresolved requirement link when the coordination root is supplied. This is not an R13 validator violation and does not let commit validation import the task plane. The earlier blanket never-refused sentence described the predecessor, not the current writer.
+- **A `raise` publishes one question batch before knowledge files.** Validation runs first; the committing run submits all queued questions through one `append_many` call before `_finish`. A batch refusal prevents knowledge-file publication. The former sequential per-question append/failure account is retired. This is not a cross-store transaction: a successful batch remains durable if later memory-file publication fails; the refused report retains question identities and the same-command recovery instruction. File restoration is verified or explicitly reported incomplete/unverifiable; retry uses the existing question keys rather than duplicating them.
+- **Publication failure and question custody.** `_finish` catches publication `OSError`, returns a refused report and distinguishes a verified restored `PublicationError` from incomplete or unverifiable rollback. If questions were already published, the report keeps their identities and the same-command recovery instruction. No refusal report may present planned record actions as committed writes.
 
 ### Todos
 
@@ -136,9 +112,17 @@ The operation and its stages.
 
 - Read, author, check history, render, validate, then finish or refuse. [3]
 
-- The worklist and the task document's questions, both optional (MIK-R14). [4]
+
+
+- A leaf requires the persisted worklist before capture; question publication has its separate task-owner port [4]
+
+
 - The questions reach the task document after validation and before any file. [5]
-- The worklist's reconsideration items by subject; the append in a committing run. [6]
+
+
+- Reconsideration items are projected by subject; committing question append returns published keys and refusals [6]
+
+
 - The carry-forward call and its report field. [7]
 - The carry itself. [8]
 - Planned or written. [10]
@@ -146,8 +130,16 @@ The operation and its stages.
 - The registry side of the writer-reported rules. [12]
 - A validator refusal writes nothing and names every violation. [13]
 - Route rules are reports in the writer and refusals at a commit route. [14]
-- The coordination root requirement endpoints resolve against; never a reason to refuse. [15]
-- The report's requirement endpoints, resolved for every record the run touched. [16]
+
+
+- New or changed unresolved requirement links refuse when the coordination root is supplied; absent-root observations do not [15]
+
+
+
+
+- Endpoints are resolved with stored prior-link identity before the pre-publication refusal check [16]
+
+
 
 - The memory tree and its base, or why the writer cannot write it. [17]
 - A crossing owner authors no entry, ruling or new record. [18]
@@ -162,7 +154,20 @@ worktree of one repository.
 
 No cross-repo boundary is crossed by this file.
 
-- One operation's inputs, including authorization, task-owner decision resolver and paired onboarding memory base. [2]
+
+
+- Current request inputs include paired memory-base binding and leaf-required worklist admission [2]
+
+
 - Registry-marked `writer_reports` refusals become reasoned reports inside the writer; the refusing commit/landing route is named. [9]
 - The worklist's well-formed items and trace links, plus covered-source and counted-change projections passed with the paired memory base. [21]
-- Current source delta inspected statically: Document paired-base/source projection and registry-driven writer deferral without weakening whole-tree validation, carry, base conversion or all-or-nothing writes. [22]
+- Paired-base/source projection and registry-driven writer reports retain validation, carry and conversion; later refusal preserves actual question effects and distinguishes verified from incomplete file restoration. [22]
+
+
+## Current writer publication and refusal contract
+
+The current converted writer checks persisted leaf worklist shape and authored item applicability, admits only resolvable newly changed task links when the root is supplied, and refuses a physically stored derived superseded decision. All knowledge-file publication remains after whole-tree validation. Task question publication is a separate durable effect, reported honestly on later refusal; file rollback is verified rather than presumed. These are source observations of the candidate, not self-use of its repaired writer or an executed fault-injection grade.
+
+- Worklist and changed-link admission precede validation and file publication. [23]
+- File publication reports actual restoration and already-published question recovery. [24]
+- A stored derived superseded field refuses before canonical rendering. [25]

@@ -12,6 +12,8 @@ Declares Agents Remember's repository-owned certification selections, Gates 1–
 
 ### Logic
 
+The generated-skills input now includes `generated-copies.json` in `sourceScopes` beside the sync script and canonical skills tree, and its outer canonical digest is refreshed. This exact declaration diff changes no other rail or artifact inventory and is not evidence that any certification or skill sync ran.
+
 `closeout-full` and `closeout-targeted` declare all four code gates. `local-targeted` declares Gate 4 not applicable. Each rail binds identity, prerequisites, observed evidence, required-on-pass artifacts, runtime and execution policy. Selector configuration and executor runtime digests are recomputed from their actual owners; the outer profile digest binds the canonical profile.
 
 The publication inventory is finite: 47 declared paths, including 30 stable `rail-evidence/` capture paths. The ambient-role-chat and teardown-process-cleanliness rails and their artifacts are removed. Captures use `application/octet-stream` because an exact bounded byte tail may begin within a UTF-8 sequence. A rail's `requiredOnPass` artifact obligation remains distinct from an optional path's publication allowance. Exporting a result payload does not excuse absent evidence bytes.
@@ -39,6 +41,9 @@ Treat the JSON as canonical profile data. Refresh profile, runtime and selector 
 No remaining producer gap is recorded for the three L30 artifacts. The profile declaration does not itself prove runtime composition or final-memory acceptance. Those facts require their canonical execution evidence.
 
 ## Evidence
+
+- The generated-skills source inventory includes the canonical copy declaration and the profile digest is refreshed without changing other rails. [7]
+
 
 ### Docs References
 

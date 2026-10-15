@@ -1,0 +1,38 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake"
+    ],
+    "justification": "Text occurrences, duplicate same-line names and undecodable unchanged blobs can otherwise look like unique/current proof definitions. Definition-aware occurrence preservation and honest refusal prevent false evidence while retaining a precise line-range alternative."
+  },
+  "applicability": "Citation/proof-symbol resolution in JavaScript-family test/spec source files and currentness observation of symbol anchors.",
+  "conditions": [
+    "Plain it/test string titles bind nested describe-qualified names and bare titles; bare resolution is admitted only when its actual occurrence is unique, including duplicate occurrences on one line.",
+    "The semantic first argument ignores comment extras; plain JavaScript escapes and valid UTF-16 pairs decode while lone units remain represented. Non-test filenames do not gain test-case definitions.",
+    "Skipped, todo, each and computed title forms are not promoted to symbol definitions; the test-case diagnostic names unsupported forms and offers line_range recovery.",
+    "A non-UTF8 symbol source is unverifiable before the unchanged-blob fast path, names the path/UTF-8 reason and does not masquerade as a failed blob read."
+  ],
+  "exclusions": [
+    "This adds no support for computed/parameterized/skipped/todo proof symbols, no fallback uniqueness from deduplicated same-line case spans and no arbitrary JavaScript execution.",
+    "The scope is source-defined extraction and classification; no parser suite, execution witness or first-class proof acceptance is inferred."
+  ],
+  "id": "INV-B37MWR",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "/home/firefox/projects/ar-coordination/tasks/agents-remember/260928_maintained-invariant-knowledge/notes/reports/worker/0e651ec5-2eed-4b58-b19f-e2336d4978ca/repair-freeze-0a36ddc4/builder-report.md#mik-r54-rule-9",
+        "/home/firefox/projects/ar-coordination/worktrees/agents-remember/54_writer-and-validator-corrections-a4b3b3af8d-ar/role-reports/curator/1ad64580-9e4a-42ce-adc0-169869767dba/wave-61/mechanism-review.json",
+        "/home/firefox/projects/ar-coordination/worktrees/agents-remember/54_writer-and-validator-corrections-a4b3b3af8d-ar/role-reports/curator/1ad64580-9e4a-42ce-adc0-169869767dba/wave-75/proof-source-review.json"
+      ],
+      "path": "wave-60-complete-history.json"
+    },
+    "handoffEntry": "MIK-R54@v1 rule 9",
+    "leaf": "260928-MIK-L54",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Plain-string JavaScript and TypeScript test-case titles resolve as proof symbols with unique bare-title support, unsupported title forms are named with a line-range remedy, and invalid UTF-8 symbols are unverifiable.",
+  "status": "proposed",
+  "supersedes": []
+}

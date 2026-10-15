@@ -19,6 +19,9 @@ checks the document's own shape and collects every problem, so one refusal names
   becomes: `scope` and `admission` (optionally `status`) author a new invariant from the verbatim
   `statement`; `invariant_id` updates a stored invariant; `supersedes` takes `INV-…` IDs or entry IDs;
   `proofs: [{test, facet}]` records curator-confirmed proofs; every `target` becomes a realization entry.
+  `replace_evidence` is an optional boolean curator input, defaulting to false; malformed types
+  add a named problem, and only the literal boolean true enables the request flag. Reading the flag
+  does not itself authorize replacement or write any evidence.
   Targets reuse `EntryRealization`/`realization_refusal` (the rationale and role rules) and scope reuses
   `read_curator_scope`.
 - `ROLE_SPELLINGS` maps the template's `incidental` to the file format's `support` (the L21 review ruling).
@@ -32,18 +35,24 @@ checks the document's own shape and collects every problem, so one refusal names
 - **History rows** are `{subject, disposition, reason, items?, covers?, effect?, because?, examined?, considered?, ref?}`.
   `id`, `revision` and source snapshots (`sources`) are writer-owned; unknown keys (a misspelled `cover`), a non-list `because` and a
   non-object `ref` are refused. `ref` (MIK-R11) is carried to `RowRequest.ref` for a planned row; what it
-  names is checked by `authoring._planned_row`, not here. `considered` is an explicitly supplied list of
+  names is checked by the planned-row authoring path and its delegated resolver, not here. `considered` is an explicitly supplied list of
   nonblank family-ID strings: an intentional empty list is accepted, but a malformed list or member
   is a named refusal rather than silently erased. The writer fills candidate record revisions and
   onboarding source blobs rather than accepting them from this input. A cover is an entry ID, `{id, path?, locator?, remove?}` or
-  `{handoff}`; `path` (since MIK-R06, L06 ruling Q6) names the source file a `moved` row relocates the entry to.
+  `{handoff}`; `path` names a destination source file. The authoring layer permits it on
+  `moved`, `extended`, `changed` and `deleted` invariant rows; this reader validates the path shape.
+  History `items` uses `read_row_items`, not the permissive generic identifier reader: supplied
+  string tokens are retained verbatim, blank or non-text members produce named problems, and
+  digest-format enforcement belongs to the later history validation rather than this shape reader.
 - `"handoff:<key>"` names the record the same document authors under that key wherever an ID is
   expected; `_require_distinct_handles` refuses two items sharing a handle.
-- Evidence names a test in one of two forms (MIK-R28 rule 2), both read by `tests_named_in`: a test ID
+- Python evidence names a test in the two MIK-R28 forms read by `tests_named_in`: a test ID
   `path::name` (`path::Class::method` is the symbol `Class.method`, `_TEST_ID`), or a path plus symbol,
   the pytest selection `path -k name` (`_SELECTED_TEST`). A test module named with neither becomes a
   `TestFileMention`, which the writer reports `unresolvable`. `EntryRequest.cited_tests` delegates to
-  `tests_named_in` for the report.
+  `tests_named_in` for the report. Evidence also recognizes JavaScript/TypeScript
+  `.test`/`.spec` paths followed by `::` and a JSON-double-quoted case title; the title is decoded,
+  and invalid JSON matches are skipped. Non-Python titles keep their dots in `TestReference.spelling`.
 
 ### Conventions
 
@@ -67,7 +76,8 @@ None recorded.
 ## 260928-MIK-L28 Evidence Names A Test In Two Forms (MIK-R28 Rule 2)
 
 `tests_named_in(evidence)` is the one parser of the tests a hand-off entry's evidence names. It collects
-every `path::name` and every `path -k name` across all evidence strings first, then adds a
+Python `path::name`, Python `path -k name`, and recognized JavaScript/TypeScript
+`path::"case title"` evidence across all strings first, then adds a
 `TestFileMention` for each test module mentioned bare, skipping a path some string already names a test
 in. The result is in order of appearance, once each. Reading resolves nothing: whether a named test exists
 at C is the writer's to establish (`authoring._cited_test`).
@@ -79,8 +89,11 @@ at C is the writer's to establish (`authoring._cited_test`).
   selection is read. The structured `{path, symbol}` form of `proofs[].test` is unchanged.
 - **Only test modules are reported bare.** A bare mention needs a `test_*.py` or `*_test.py` basename;
   `conftest.py`, `*_test_support.py` and other helpers are never reported.
-- Only `.py` evidence is read, as for `path::name`. A test in another language can still be a proof
-  through `proofs[].test`.
+- The two original evidence forms remain Python-only; they are no longer the entire evidence
+  parser. JavaScript/TypeScript `.test`/`.spec` paths can name a JSON-double-quoted case title in
+  evidence. Explicit `proofs[].test` additionally accepts those paths with a nonempty single-line
+  title after `::`, as well as the existing structured `{path, symbol}` form. Evidence extraction
+  still does not establish that any named case resolves at C or was executed.
 
 - Both forms, the bare file, and expressions that are not read as one test. [1]
 - A file named with a test anywhere in the evidence is not also reported bare. [2]
@@ -101,7 +114,9 @@ is the hand-off shape:
     `models/knowledge_files/shapes.require_repository_path`;
   - a cover carrying both `remove` and `path` ("a cover either removes its entry or moves it to a path",
     review N7).
-- Which dispositions may carry a path is `authoring._covers`'s decision (only `moved`), not this module's.
+- Which dispositions may carry a path is the invariant-row authoring layer's decision, not this
+  module's: it permits `moved`, `extended`, `changed` and `deleted`. The older moved-only account
+  and request docstring describe the original relocation route, not the current allowlist.
 
 - The module docstring: a moved row's cover may name another source path, and a cover may carry a rationale that replaces the entry's in place. [3]
 - The cover request, its `path` and its `rationale`. [4]
@@ -130,6 +145,15 @@ disposition, and the gate never derives a label from wording, reason,
 disposition, counts, members or a member's effect.
 
 - The gate requires the effect on changed rows and refuses it elsewhere. [25]
+
+### Case references and explicit input validation
+
+The reader adds three distinct inputs without resolving their authority. Case evidence is matched only on supported `.test`/`.spec` filename spellings and requires a JSON-double-quoted title; explicit case proof strings instead use the remaining nonempty single-line title as the reference name. Python references retain their dotted-symbol/`::` conversion, while non-Python case titles are not dot-normalized. Appearance ordering and deduplication are shared with the existing Python evidence parser.
+
+`replace_evidence` is type-checked independently of whether the entry is a ruling; `_entry` records a problem for non-booleans before returning a request. `EntryRequest.replace_evidence` defaults to false, and the downstream writer is responsible for deciding where replacement is permitted.
+
+`_row` forwards `items` to `read_row_items` and attaches every refusal to the row position and subject. It no longer silently filters malformed tokens through `_identifiers`. This shape-reading boundary preserves string spelling for downstream item-format checks; it is not a worklist lookup and does not claim to authenticate an item ID.
+
 
 ## Evidence
 
@@ -165,6 +189,10 @@ The document's sections and their readers.
 - The row keys and the request field a planned row's `ref` travels in. [20]
 - Four problems refused in one operation, each named. [21]
 - An entry that names no record is refused. [22]
+
+- Case evidence decodes JSON-quoted JavaScript/TypeScript test titles, merges them with Python references in appearance order and deduplicates them. [26]
+- The entry reader validates replace_evidence as a boolean before constructing the request, and only literal true sets its flag. [27]
+- History item parsing uses read_row_items and attaches its refusals to the specific row and subject. [28]
 
 ### Cross-Repo References
 

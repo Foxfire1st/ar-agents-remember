@@ -7,7 +7,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "df575d7b41a42167e537b78624e0bcebef9e6e12",
+            "blob": "da6394f8d93e90ed7e6161a0c946c19afa7c4828",
             "content": "sha256:75b7ed5a92ef0d7e2459f3a00fa14949169a49c3e1bf392c7d74ddee506a6fe9",
             "locator": {
               "kind": "symbol",
@@ -23,7 +23,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "df575d7b41a42167e537b78624e0bcebef9e6e12",
+            "blob": "da6394f8d93e90ed7e6161a0c946c19afa7c4828",
             "content": "sha256:7ffeea4af79244d4abd4126047905b151d77c78d3a01cacbd2dceb14e410f6a4",
             "locator": {
               "kind": "symbol",
@@ -39,7 +39,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "df575d7b41a42167e537b78624e0bcebef9e6e12",
+            "blob": "da6394f8d93e90ed7e6161a0c946c19afa7c4828",
             "content": "sha256:2890ee446679ca00af8cddbe42d9881687d87e4a3f6717ed347b6f64f1d75c50",
             "locator": {
               "kind": "symbol",
@@ -89,12 +89,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "df575d7b41a42167e537b78624e0bcebef9e6e12",
+            "blob": "da6394f8d93e90ed7e6161a0c946c19afa7c4828",
             "content": "sha256:fe4d7ce1d97feed420a8b4fe93210b6d8080f28605c4b0512a142dda433dc7b6",
             "locator": {
-              "end": 223,
+              "end": 228,
               "kind": "line_range",
-              "start": 222
+              "start": 227
             }
           },
           "kind": "test"
@@ -106,7 +106,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "df575d7b41a42167e537b78624e0bcebef9e6e12",
+            "blob": "da6394f8d93e90ed7e6161a0c946c19afa7c4828",
             "content": "sha256:c1018018d08f4ed1d4f7d8cece51a36e4976944147233894cfd0eb08111b5a2b",
             "locator": {
               "kind": "symbol",
@@ -122,11 +122,28 @@
       "targets": [
         {
           "anchor": {
-            "blob": "df575d7b41a42167e537b78624e0bcebef9e6e12",
+            "blob": "da6394f8d93e90ed7e6161a0c946c19afa7c4828",
             "content": "sha256:5832a9051cf6ae7ccbe366518cabeb9cbed14a53cb4ac3ac4633ad69e356fe0e",
             "locator": {
               "kind": "symbol",
               "name": "BASELINE_ADOPT_ROW_USES"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "9": {
+      "note": "The quality row names informational proof coverage and actual cache-build/stale/error counters without changing its bound or production paths.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "da6394f8d93e90ed7e6161a0c946c19afa7c4828",
+            "content": "sha256:9d9ff04d28ed530e0a3c125dbce17bcba260bcc4e1a145510f5c1858f0720efa",
+            "locator": {
+              "end": 234,
+              "kind": "line_range",
+              "start": 158
             }
           },
           "kind": "test"

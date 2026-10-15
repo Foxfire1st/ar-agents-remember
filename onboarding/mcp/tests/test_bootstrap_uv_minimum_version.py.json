@@ -3,7 +3,7 @@
   "proves": [
     {
       "anchor": {
-        "blob": "47d5630cf129aba00d36b74b9d5788f635542297",
+        "blob": "50a91a1c05c76b1008887c7d842760bcbdd10f5f",
         "content": "sha256:14d56426a0e123bd49eb278a274f35823b16d06b3074cbc2f908242ec61d2474",
         "locator": {
           "kind": "symbol",
@@ -20,7 +20,7 @@
     },
     {
       "anchor": {
-        "blob": "47d5630cf129aba00d36b74b9d5788f635542297",
+        "blob": "50a91a1c05c76b1008887c7d842760bcbdd10f5f",
         "content": "sha256:98e0608f07a2967960a96a6a1e1dabd32ab9c2849286f00186f367379fdb74b0",
         "locator": {
           "kind": "symbol",
@@ -37,7 +37,7 @@
     },
     {
       "anchor": {
-        "blob": "47d5630cf129aba00d36b74b9d5788f635542297",
+        "blob": "50a91a1c05c76b1008887c7d842760bcbdd10f5f",
         "content": "sha256:69763c88255f11bf68402d4f1d839165bfd458b1c4deacbe2fa082a628558848",
         "locator": {
           "kind": "symbol",
@@ -54,7 +54,7 @@
     },
     {
       "anchor": {
-        "blob": "47d5630cf129aba00d36b74b9d5788f635542297",
+        "blob": "50a91a1c05c76b1008887c7d842760bcbdd10f5f",
         "content": "sha256:4bafef54b5ad35dceb0de00855fd622ea9328ed5f41a55c958c228df96da4b9a",
         "locator": {
           "kind": "symbol",
@@ -71,7 +71,7 @@
     },
     {
       "anchor": {
-        "blob": "47d5630cf129aba00d36b74b9d5788f635542297",
+        "blob": "50a91a1c05c76b1008887c7d842760bcbdd10f5f",
         "content": "sha256:dd1907b55523402f3600f2e84a8d636cb1526d81e8f25f7159c7d1800c0a76a3",
         "locator": {
           "kind": "symbol",
@@ -88,7 +88,7 @@
     },
     {
       "anchor": {
-        "blob": "47d5630cf129aba00d36b74b9d5788f635542297",
+        "blob": "50a91a1c05c76b1008887c7d842760bcbdd10f5f",
         "content": "sha256:428753c848f23bca61213c85f076ba7ae43b918409899d3d783387c967129763",
         "locator": {
           "kind": "symbol",
@@ -105,7 +105,7 @@
     },
     {
       "anchor": {
-        "blob": "47d5630cf129aba00d36b74b9d5788f635542297",
+        "blob": "50a91a1c05c76b1008887c7d842760bcbdd10f5f",
         "content": "sha256:a1356092a1a60b54bc25f2190223356276caba8d8fb3b4cdd83980e39717ea24",
         "locator": {
           "kind": "symbol",
@@ -122,7 +122,7 @@
     },
     {
       "anchor": {
-        "blob": "47d5630cf129aba00d36b74b9d5788f635542297",
+        "blob": "50a91a1c05c76b1008887c7d842760bcbdd10f5f",
         "content": "sha256:919b4c229d33f0528235da33afcbb7f5cf52b0f9ea03a03e85d8bb727a9632b2",
         "locator": {
           "kind": "symbol",
@@ -139,7 +139,7 @@
     },
     {
       "anchor": {
-        "blob": "47d5630cf129aba00d36b74b9d5788f635542297",
+        "blob": "50a91a1c05c76b1008887c7d842760bcbdd10f5f",
         "content": "sha256:cbfedb20d14becc7095131e0f304bb7ed21b62a1cf9895ec4b9dab444220008d",
         "locator": {
           "kind": "symbol",
@@ -162,7 +162,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "47d5630cf129aba00d36b74b9d5788f635542297",
+            "blob": "50a91a1c05c76b1008887c7d842760bcbdd10f5f",
             "content": "sha256:a1356092a1a60b54bc25f2190223356276caba8d8fb3b4cdd83980e39717ea24",
             "locator": {
               "kind": "symbol",
@@ -178,7 +178,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "47d5630cf129aba00d36b74b9d5788f635542297",
+            "blob": "50a91a1c05c76b1008887c7d842760bcbdd10f5f",
             "content": "sha256:69763c88255f11bf68402d4f1d839165bfd458b1c4deacbe2fa082a628558848",
             "locator": {
               "kind": "symbol",
@@ -194,7 +194,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "47d5630cf129aba00d36b74b9d5788f635542297",
+            "blob": "50a91a1c05c76b1008887c7d842760bcbdd10f5f",
             "content": "sha256:cbfedb20d14becc7095131e0f304bb7ed21b62a1cf9895ec4b9dab444220008d",
             "locator": {
               "kind": "symbol",
@@ -215,6 +215,23 @@
             "locator": {
               "kind": "symbol",
               "name": "test_sync_failure_names_both_uv_versions"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "The sync-failure case copies bootstrap/runtime scripts into a temporary repository, creates its own predecessor marker, and asserts diagnostics/restoration without using the live venv fixture.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "50a91a1c05c76b1008887c7d842760bcbdd10f5f",
+            "content": "sha256:24b4193e739fb62249987be43a63dce825939d99521d527070cef31cc7afe6aa",
+            "locator": {
+              "end": 390,
+              "kind": "line_range",
+              "start": 356
             }
           },
           "kind": "test"

@@ -1,0 +1,230 @@
+{
+  "path": "skills/c-05-create-or-update-onboarding-files/workflows/repo-entity-catalog-workflow.md",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The workflow selects one repo-level catalog of load-bearing real entities, not a glossary or exhaustive ontology.\n\nAnchor: `# Repo Entity Catalog Workflow`; `## Scope`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "383d5a621300fc24ab3147149866821ad29a8aa7",
+            "content": "sha256:da514b2ed3f7fc87722d5ba16d2048a6cfdc9e03f3e5765ce27ffc22a96d0fc4",
+            "locator": {
+              "end": 15,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "Canonical converted-memory precedence forbids hand-written sidecar JSON and does not permit ordinary unconverted writes.\n\nAnchor: `## Converted Memory`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4d90c238185e61a3bec8347aa1f8b50292cbc1dd",
+            "content": "sha256:af15e8a2eefaf79a119062872a1813e646d8259e28b6f8cdebc52ccb3bdff965",
+            "locator": {
+              "end": 53,
+              "kind": "line_range",
+              "start": 42
+            },
+            "path": "skills/c-05-create-or-update-onboarding-files/SKILL.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "Converted cards use a source-path title, relative governing link and temporary evidence-table authoring with fixer-owned references.\n\nAnchor: `## What a converted card is`; `## Create a card for a new source file`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e071ead508fb6ee46a9f883dc3a5bf12260ebd28",
+            "content": "sha256:b875ec336bc6b654781a768a9778d4fd41a7a8356dd97552bd49827685997804",
+            "locator": {
+              "end": 87,
+              "kind": "line_range",
+              "start": 7
+            },
+            "path": "skills/c-05-create-or-update-onboarding-files/workflows/converted-card-workflow.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "Converted no-impact answers use writer-owned source and route history rows, and converted cards exclude legacy metadata/history and self-assigned references.\n\nAnchor: `## When the card needs no change`; `## Never on converted memory`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e071ead508fb6ee46a9f883dc3a5bf12260ebd28",
+            "content": "sha256:615ab0c3220877ec3808a7b622f93fbc71d5dbc076b15e3a393acc638fd1a60c",
+            "locator": {
+              "end": 183,
+              "kind": "line_range",
+              "start": 159
+            },
+            "path": "skills/c-05-create-or-update-onboarding-files/workflows/converted-card-workflow.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Entity discovery follows configured domain evidence, treats live sources as authoritative and cites proving materials rather than the registry.\n\nAnchor: `## Source Discovery Rules`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "383d5a621300fc24ab3147149866821ad29a8aa7",
+            "content": "sha256:6b4da7ea526e2798374ed9d4cbfb47ef4d6d440c74f080344d0f6365789cc6f1",
+            "locator": {
+              "end": 24,
+              "kind": "line_range",
+              "start": 17
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The retained catalog complements the root overview and carries legacy timestamp and draft/active metadata.\n\nAnchor: `## Placement Rules`; `## Metadata Rules`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "383d5a621300fc24ab3147149866821ad29a8aa7",
+            "content": "sha256:48e36596911b5606a222ccf2e2a45c8f10d583c27a906bf5ce23a8c829454e59",
+            "locator": {
+              "end": 40,
+              "kind": "line_range",
+              "start": 26
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Fingerprints use git-blob-set-v1 and curated load-bearing paths; drift requires review and missing/orphaned rows require relocation/deletion investigation.\n\nAnchor: `## Entity Fingerprint Rules`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "383d5a621300fc24ab3147149866821ad29a8aa7",
+            "content": "sha256:43a0f49b2121dc9953f4c6847b2901e6c083ca2a4f34627eb5a87e57cc5ba536",
+            "locator": {
+              "end": 50,
+              "kind": "line_range",
+              "start": 42
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Canonical names, explicit drift and selective entry criteria prevent duplicate synonyms and vocabulary-only entries.\n\nAnchor: `## Entity Entry Rules`; `## Recommended Entry Criteria`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "383d5a621300fc24ab3147149866821ad29a8aa7",
+            "content": "sha256:cb788f20b578485c7f5b06c83059429369ebe4c5362d110a99db3bbb8e5dcaf9",
+            "locator": {
+              "end": 73,
+              "kind": "line_range",
+              "start": 52
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Creation, maintenance and review inspect evidence, seed useful entities, handle fingerprint coverage and preserve legacy history.\n\nAnchor: `## Create Workflow`; `## Maintain Workflow`; `## Review Heuristics`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "383d5a621300fc24ab3147149866821ad29a8aa7",
+            "content": "sha256:8280d585537679e8e59531ab3734142755c94fc155a0a98410f35a6590635baf",
+            "locator": {
+              "end": 107,
+              "kind": "line_range",
+              "start": 75
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The catalog template records fingerprints, real referents, canonical ownership, relationships, naming drift and cross-layer projections.\n\nAnchor: `## Entity Fingerprints`; `## Entity Inventory`; `## Cross-Layer Projections`; `## Ownership Notes`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a7517db42228431dfa7e199b2e7d450e342163a9",
+            "content": "sha256:c53d46ea253a6890ebf38bf0ea6b28b5465945e294e4c9771b6f21fd85430b8d",
+            "locator": {
+              "end": 52,
+              "kind": "line_range",
+              "start": 14
+            },
+            "path": "skills/c-05-create-or-update-onboarding-files/templates/repo-entity-catalog-template.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The template retains metadata and append-only Update History as legacy catalog shape, not converted-card requirements.\n\nAnchor: `# Entities`; `## Update History`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a7517db42228431dfa7e199b2e7d450e342163a9",
+            "content": "sha256:f1b071806fa5a4f8dd57e0a6f2a285b8e4e56c2b5d080f8a4b95375a390e55ea",
+            "locator": {
+              "end": 12,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "skills/c-05-create-or-update-onboarding-files/templates/repo-entity-catalog-template.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a7517db42228431dfa7e199b2e7d450e342163a9",
+            "content": "sha256:fefbcbb716ed2872aa08d5e6f3a9069b90ab82ff839c955a7cfc048f62c0bab2",
+            "locator": {
+              "end": 56,
+              "kind": "line_range",
+              "start": 54
+            },
+            "path": "skills/c-05-create-or-update-onboarding-files/templates/repo-entity-catalog-template.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The canonical skill describes c-05 fingerprint curation and c-02 comparison/coverage roles.\n\nAnchor: `## Quick Rules`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4d90c238185e61a3bec8347aa1f8b50292cbc1dd",
+            "content": "sha256:11f7e3d55aa3dbfa00dbb685ecda453e792c5e0804f13dccb0a78e4722a4b1dd",
+            "locator": {
+              "end": 130,
+              "kind": "line_range",
+              "start": 122
+            },
+            "path": "skills/c-05-create-or-update-onboarding-files/SKILL.md"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

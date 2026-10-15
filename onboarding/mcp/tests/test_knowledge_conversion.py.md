@@ -6,7 +6,7 @@
 
 ## Purpose
 
-**MIK-R24 rules 1–4 and 6: the conversion command over fixture cards and a legacy database.** Six cases
+**MIK-R24 rules 1–4 and 6: the conversion command over fixture cards and a legacy database.** Its original six-case population is historical, not a current collected total; the module remains
 in the `unit-regression` lane. It also carries the evidence-only back-to-prose renderer (`render_legacy`),
 which lives here, beside its only consumer, rather than in the product (review R1 finding 7).
 
@@ -58,6 +58,8 @@ which lives here, beside its only consumer, rather than in the product (review R
 
 None recorded.
 
+Two additional definitions exercise filename eligibility in both cache-priming orders. Equal ordinary/test-file blobs resolve the common helper symbol but expose the plain-string case title only for the test filename. After an unrelated helper change, the proof observation is `current` only on the eligible test path and `stale` on the ordinary path, with no read failure. This checks source assertions against the actual conversion/currentness owners; it does not alter the pinned conversion output format or attest execution.
+
 ## Evidence
 
 ### Docs References
@@ -90,3 +92,5 @@ No cross-repo boundary is crossed by this file.
 
 - Rule 6 source assertions: deterministic conversion, version refusal and no-op, followed by based validation refusing the carried anchor at a deleted path (`R22.6-carried-stale`, exit 1). [3]
 - Current source delta inspected statically: Replace final converted-validation PASS with based carried-stale refusal; retain determinism, version, no-op and golden-input boundaries. [8]
+
+- Equal-blob definition and changed-blob proof observations retain filename eligibility in either priming order. [9]

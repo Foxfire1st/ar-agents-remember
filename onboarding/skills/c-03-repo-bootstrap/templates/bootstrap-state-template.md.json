@@ -1,0 +1,93 @@
+{
+  "path": "skills/c-03-repo-bootstrap/templates/bootstrap-state-template.md",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The state template records bootstrap mode, memory root, onboarding root, branch, topology, source inventory status, and phase status across the full `c-03-repo-bootstrap` skill lifecycle.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0514c95ee8e115043f9cbc9aed04159e39348c70",
+            "content": "sha256:6d531dc45542e5adfe29850acd3c738b3f31d6fbe04d0d49b14a9267c18625e0",
+            "locator": {
+              "end": 31,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The state template tracks areas, governing routes, slice maintenance, waves, decisions, parking lot items, blockers, deferred files, closeout boundary status, and next action.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0514c95ee8e115043f9cbc9aed04159e39348c70",
+            "content": "sha256:016804f9b28ead43f10e620ef044adc6b28dff143a4b9598176e5023a76c76f7",
+            "locator": {
+              "end": 88,
+              "kind": "line_range",
+              "start": 33
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Wave examples, curator result and human review fields are distinct from decisions, LOW-confidence questions and blockers.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0514c95ee8e115043f9cbc9aed04159e39348c70",
+            "content": "sha256:bf9fddf1bf516f22e83796a42e6f0b80bbd683a2db54cfd4d7feca126cc3d574",
+            "locator": {
+              "end": 72,
+              "kind": "line_range",
+              "start": 51
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Deferred-file triggers, separate closeout request and one recommended next step complete the state format.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0514c95ee8e115043f9cbc9aed04159e39348c70",
+            "content": "sha256:69491af18d84a29e466d5b19776daf2baae037932f626970cc5c06add1972982",
+            "locator": {
+              "end": 88,
+              "kind": "line_range",
+              "start": 74
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Every bootstrap maintains bootstrap/STATE.md, reads it first and updates it last, using this template.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6169b610d2b722a17c4d18645df947444b62f260",
+            "content": "sha256:d38e4cbe34b21a998a7952ecbcc9d2bf1aa7fe03fddba2adaa6cf45e17841fc1",
+            "locator": {
+              "end": 439,
+              "kind": "line_range",
+              "start": 429
+            },
+            "path": "skills/c-03-repo-bootstrap/SKILL.md"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

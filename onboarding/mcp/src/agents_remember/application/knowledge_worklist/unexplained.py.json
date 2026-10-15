@@ -1,6 +1,25 @@
 {
   "path": "mcp/src/agents_remember/application/knowledge_worklist/unexplained.py",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "0cb1f808ea70c1133423ea224e66a9c4547836dd",
+        "content": "sha256:06eab91e96cf7f1a7493f5f968f76bb841e9414023a39e96c216472e7fc46a22",
+        "locator": {
+          "kind": "symbol",
+          "name": "unexplained_items"
+        }
+      },
+      "id": "RLZ-60CVGQ",
+      "invariant": "INV-CCNH0Z",
+      "origin": {
+        "handoffEntry": "L54-curator-MIK-R55-v1-rule-2-actual-guards",
+        "leaf": "260928-MIK-L54"
+      },
+      "rationale": "The caller limits grouping to uncovered changes, distinguishes real cards and retains every grouped base/candidate source blob before currentness evaluation.",
+      "role": "enforcement"
+    }
+  ],
   "references": {
     "1": {
       "note": "The module docstring: registration, what is raised, coverage and satisfaction.\n\nAnchor: \"MIK-R10's unexplained changes\"",
@@ -24,7 +43,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2fd25829eecb328f37c2a31bfc1352e0eedcf2c8",
+            "blob": "0cb1f808ea70c1133423ea224e66a9c4547836dd",
             "content": "sha256:5eb5d559eb20a3b46096d9e51689888d23a0f0ad572c85b62bc91ad27ddc0902",
             "locator": {
               "kind": "symbol",
@@ -40,7 +59,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2fd25829eecb328f37c2a31bfc1352e0eedcf2c8",
+            "blob": "0cb1f808ea70c1133423ea224e66a9c4547836dd",
             "content": "sha256:5309017309cf9d83a2f13d3a3eb98edc77eb7a0103a03a4a27835f525690ba45",
             "locator": {
               "kind": "symbol",
@@ -83,7 +102,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2fd25829eecb328f37c2a31bfc1352e0eedcf2c8",
+            "blob": "0cb1f808ea70c1133423ea224e66a9c4547836dd",
             "content": "sha256:2f0e0080f68de63c363a568fb205d06078dff73ac1579a5434f10fd0f2b25a6f",
             "locator": {
               "kind": "symbol",
@@ -99,7 +118,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2fd25829eecb328f37c2a31bfc1352e0eedcf2c8",
+            "blob": "0cb1f808ea70c1133423ea224e66a9c4547836dd",
             "content": "sha256:04a6f9f0d60fd958f99fa5a2711797e2ff875994f9aa956a24f37d25c1759811",
             "locator": {
               "kind": "symbol",
@@ -111,52 +130,28 @@
       ]
     },
     "15": {
-      "note": "The ID, row subject, candidate source blob and eligible source-current onboarding `satisfiedBy`.",
+      "note": "The representative item binds its complete source map, actual counted change and eligible current onboarding row",
       "targets": [
         {
           "anchor": {
-            "blob": "9d990dcc6eac569a6f753323f72e145aa24de54d",
-            "content": "sha256:845941bc2143d324f21646b1e636c42725fa89c360da992f7846e6a2f82c7306",
+            "blob": "0cb1f808ea70c1133423ea224e66a9c4547836dd",
+            "content": "sha256:d039bd0971aaf71503545f4b6c9bb7bea0c4bbefe1a3da7fdf7413b9e2ee7d3e",
             "locator": {
-              "end": 429,
+              "end": 444,
               "kind": "line_range",
-              "start": 404
+              "start": 417
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "9d990dcc6eac569a6f753323f72e145aa24de54d",
-            "content": "sha256:d043bf8de1b8baa890b994fd2da16a32a43f402aeecd3819e82671491e93e396",
+            "blob": "0cb1f808ea70c1133423ea224e66a9c4547836dd",
+            "content": "sha256:acfbd8faf74c35ab5cd3f2290a0702e186114fa37f3c9856ca65b2aea6450790",
             "locator": {
-              "end": 279,
+              "end": 311,
               "kind": "line_range",
-              "start": 274
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "2fd25829eecb328f37c2a31bfc1352e0eedcf2c8",
-            "content": "sha256:9c5c41fa1a69576396f26ab44afa3567b264bb29c0619dcd0bacd980c53a377a",
-            "locator": {
-              "end": 295,
-              "kind": "line_range",
-              "start": 292
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "2fd25829eecb328f37c2a31bfc1352e0eedcf2c8",
-            "content": "sha256:d695b4271eff1061e666f3a07266785c0173e5ba0e94ffe9ac764d311c410579",
-            "locator": {
-              "end": 544,
-              "kind": "line_range",
-              "start": 538
+              "start": 277
             }
           },
           "kind": "code"
@@ -180,64 +175,28 @@
       ]
     },
     "17": {
-      "note": "Uncovered items bound to their file's trace ID, source blobs, counted flag and current-row answer.",
+      "note": "Settlement retains complete source maps and the trace item currency without inventing an answer",
       "targets": [
         {
           "anchor": {
-            "blob": "2fd25829eecb328f37c2a31bfc1352e0eedcf2c8",
+            "blob": "0cb1f808ea70c1133423ea224e66a9c4547836dd",
             "content": "sha256:ea50f126a3994d5bec71303ffe17d2bf702f68a0313710d8b7d08c61a7df406a",
             "locator": {
-              "end": 494,
+              "end": 540,
               "kind": "line_range",
-              "start": 483
+              "start": 529
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "2fd25829eecb328f37c2a31bfc1352e0eedcf2c8",
+            "blob": "0cb1f808ea70c1133423ea224e66a9c4547836dd",
             "content": "sha256:b540290b6094547f641a3bf013dfa1e92d9f83b5297f0bc8a5c7e0f00889b83d",
             "locator": {
-              "end": 550,
+              "end": 596,
               "kind": "line_range",
-              "start": 522
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "9d990dcc6eac569a6f753323f72e145aa24de54d",
-            "content": "sha256:d043bf8de1b8baa890b994fd2da16a32a43f402aeecd3819e82671491e93e396",
-            "locator": {
-              "end": 279,
-              "kind": "line_range",
-              "start": 274
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "2fd25829eecb328f37c2a31bfc1352e0eedcf2c8",
-            "content": "sha256:9c5c41fa1a69576396f26ab44afa3567b264bb29c0619dcd0bacd980c53a377a",
-            "locator": {
-              "end": 295,
-              "kind": "line_range",
-              "start": 292
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "2fd25829eecb328f37c2a31bfc1352e0eedcf2c8",
-            "content": "sha256:d695b4271eff1061e666f3a07266785c0173e5ba0e94ffe9ac764d311c410579",
-            "locator": {
-              "end": 544,
-              "kind": "line_range",
-              "start": 538
+              "start": 568
             }
           },
           "kind": "code"
@@ -249,7 +208,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2fd25829eecb328f37c2a31bfc1352e0eedcf2c8",
+            "blob": "0cb1f808ea70c1133423ea224e66a9c4547836dd",
             "content": "sha256:f05f597dcee0086a922c3d7c951103e1952f0d806adaaf5cc5896d5266815a38",
             "locator": {
               "kind": "symbol",
@@ -265,7 +224,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2fd25829eecb328f37c2a31bfc1352e0eedcf2c8",
+            "blob": "0cb1f808ea70c1133423ea224e66a9c4547836dd",
             "content": "sha256:c9b4f541cf2e79cea8df65a6ba276e94e5baa95902e77e295a9242f48d7a7c7a",
             "locator": {
               "kind": "symbol",
@@ -311,35 +270,62 @@
       ]
     },
     "21": {
-      "note": "A delete-only hunk is linked only by a K_B range; since MIK-R09 an insertion-only hunk is linked only by a K_C range (the symmetric correction L10's N3 carried to L09), which can only add `unexplained_hunk` items.\n\nAnchor: \"def _linked(\"; \"hunk.new_count > 0 and any(hits_new(hunk, span) for span in candidate_spans)\"",
+      "note": "Per-change linkage belongs to linkage._Linkage._change; linkage._linked symmetrically requires changed lines on the side supplying coverage: delete-only B, insertion-only C.",
       "targets": [
         {
           "anchor": {
-            "blob": "a9361b86286bca9cc42dd02954bfb370d3f6ac13",
-            "content": "sha256:033e36db176b1d3e36a27335c39eddedf3572b96f51e878f34855cdadfc20170",
+            "blob": "8f2174f431d1314684097c47a8a4ebcd365a15ee",
+            "content": "sha256:bfcfe1d10a8145d49c2e35e1120bfda4c136912bb3eb5f7f627ac1711aa2c6bc",
             "locator": {
-              "end": 635,
+              "end": 56,
               "kind": "line_range",
-              "start": 623
+              "start": 31
             },
-            "path": "mcp/src/agents_remember/application/knowledge_worklist/compute.py"
+            "path": "mcp/src/agents_remember/application/knowledge_worklist/linkage.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8f2174f431d1314684097c47a8a4ebcd365a15ee",
+            "content": "sha256:db79a7714ac6d5e7970f07a1b22fa6ecc32e8977493f6b38478764d462d52f4f",
+            "locator": {
+              "end": 106,
+              "kind": "line_range",
+              "start": 95
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_worklist/linkage.py"
           },
           "kind": "code"
         }
       ]
     },
     "22": {
-      "note": "The leaf route settles uncovered items after the onboarding trace.",
+      "note": "leaf_completion settles uncovered items after worklist_onboarding and recomputes their digest and unnecessary-row projection.",
       "targets": [
         {
           "anchor": {
-            "blob": "755bdc4c33e077b8eb9590027c0c3050d8fae12c",
+            "blob": "cc3ddad2210e25566378995fa748618b9afcee64",
+            "content": "sha256:3cb8a543d732ea06c4ab9a18f5942b93c08652327a951a5f5cf58ee5cf83e24e",
+            "locator": {
+              "end": 78,
+              "kind": "line_range",
+              "start": 76
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_worklist/leaf_completion.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "cc3ddad2210e25566378995fa748618b9afcee64",
             "content": "sha256:41d6beee0030108837165c928f5c4f7652f325700e0f354a1f47e5bc5c7fe92c",
             "locator": {
-              "kind": "symbol",
-              "name": "_settled_unexplained"
+              "end": 122,
+              "kind": "line_range",
+              "start": 103
             },
-            "path": "mcp/src/agents_remember/application/knowledge_worklist/leaf.py"
+            "path": "mcp/src/agents_remember/application/knowledge_worklist/leaf_completion.py"
           },
           "kind": "code"
         }
@@ -350,7 +336,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5ba297941c50aa39a86f83d5a0242b64565ee77e",
+            "blob": "4db279a6707405d8691a10946c71c433d9c71823",
             "content": "sha256:f825d81bd20d8cf7850de9ef4ce58be1edd7e52c35259ddf0b59e1dd617218e2",
             "locator": {
               "kind": "symbol",
@@ -367,7 +353,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5ba297941c50aa39a86f83d5a0242b64565ee77e",
+            "blob": "4db279a6707405d8691a10946c71c433d9c71823",
             "content": "sha256:d60461cab31a7c45c0e524c82d34be464ca2c9d9459174deddd897f0e1e51c71",
             "locator": {
               "kind": "symbol",
@@ -397,40 +383,16 @@
       ]
     },
     "26": {
-      "note": "Current source delta inspected statically: Fix source-bound onboarding currency, provenance and settlement; separate stable hunk IDs from reopened answers.",
+      "note": "Current source-bound trace construction and row admission use the complete blob map",
       "targets": [
         {
           "anchor": {
-            "blob": "9d990dcc6eac569a6f753323f72e145aa24de54d",
-            "content": "sha256:d043bf8de1b8baa890b994fd2da16a32a43f402aeecd3819e82671491e93e396",
+            "blob": "0cb1f808ea70c1133423ea224e66a9c4547836dd",
+            "content": "sha256:acfbd8faf74c35ab5cd3f2290a0702e186114fa37f3c9856ca65b2aea6450790",
             "locator": {
-              "end": 279,
+              "end": 311,
               "kind": "line_range",
-              "start": 274
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "2fd25829eecb328f37c2a31bfc1352e0eedcf2c8",
-            "content": "sha256:9c5c41fa1a69576396f26ab44afa3567b264bb29c0619dcd0bacd980c53a377a",
-            "locator": {
-              "end": 295,
-              "kind": "line_range",
-              "start": 292
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "2fd25829eecb328f37c2a31bfc1352e0eedcf2c8",
-            "content": "sha256:d695b4271eff1061e666f3a07266785c0173e5ba0e94ffe9ac764d311c410579",
-            "locator": {
-              "end": 544,
-              "kind": "line_range",
-              "start": 538
+              "start": 277
             }
           },
           "kind": "code"
@@ -452,12 +414,46 @@
         }
       ]
     },
+    "28": {
+      "note": "Exact generated-copy filtering, representative collection and complete source/base maps precede item settlement.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0cb1f808ea70c1133423ea224e66a9c4547836dd",
+            "content": "sha256:06eab91e96cf7f1a7493f5f968f76bb841e9414023a39e96c216472e7fc46a22",
+            "locator": {
+              "end": 526,
+              "kind": "line_range",
+              "start": 458
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "29": {
+      "note": "Current onboarding row selection consumes the complete source blob map, never a counted edit alone.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0cb1f808ea70c1133423ea224e66a9c4547836dd",
+            "content": "sha256:faf6006c77a6aa18f14aa32b7260f77c5627a4503e902253699b69bec54b5b08",
+            "locator": {
+              "end": 311,
+              "kind": "line_range",
+              "start": 275
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
     "3": {
       "note": "A hunk item's row is found by its item ID.",
       "targets": [
         {
           "anchor": {
-            "blob": "2fd25829eecb328f37c2a31bfc1352e0eedcf2c8",
+            "blob": "0cb1f808ea70c1133423ea224e66a9c4547836dd",
             "content": "sha256:4a65282322584e98f66101055886ad09d1f8490c0d9e490771dbbd0a8cbdd325",
             "locator": {
               "kind": "symbol",
@@ -473,7 +469,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2fd25829eecb328f37c2a31bfc1352e0eedcf2c8",
+            "blob": "0cb1f808ea70c1133423ea224e66a9c4547836dd",
             "content": "sha256:0afb2afcf4382d030f2b17a5d4abd8ff3b8de798026bb5f4abc85382799cecab",
             "locator": {
               "kind": "symbol",
@@ -484,7 +480,7 @@
         },
         {
           "anchor": {
-            "blob": "2fd25829eecb328f37c2a31bfc1352e0eedcf2c8",
+            "blob": "0cb1f808ea70c1133423ea224e66a9c4547836dd",
             "content": "sha256:5eb3ad767767d947549662bc7773c7c2302bddb2d0b48cff3728ddea256a9501",
             "locator": {
               "kind": "symbol",
@@ -500,7 +496,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2fd25829eecb328f37c2a31bfc1352e0eedcf2c8",
+            "blob": "0cb1f808ea70c1133423ea224e66a9c4547836dd",
             "content": "sha256:76a15ededbb3106b633c5592d2f07b0de71740c1bc24eef7be909e96ef64ba8e",
             "locator": {
               "kind": "symbol",
@@ -516,7 +512,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2fd25829eecb328f37c2a31bfc1352e0eedcf2c8",
+            "blob": "0cb1f808ea70c1133423ea224e66a9c4547836dd",
             "content": "sha256:93ac376c08b839d4c4200ca7e6dde93a414b52b7225233c506cf7437fbefa0e9",
             "locator": {
               "kind": "symbol",
@@ -527,7 +523,7 @@
         },
         {
           "anchor": {
-            "blob": "2fd25829eecb328f37c2a31bfc1352e0eedcf2c8",
+            "blob": "0cb1f808ea70c1133423ea224e66a9c4547836dd",
             "content": "sha256:69d0379c187f44fdb84c6aeee09116d2ad523b3c229be37b1ae0677d706f9205",
             "locator": {
               "kind": "symbol",
@@ -543,7 +539,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2fd25829eecb328f37c2a31bfc1352e0eedcf2c8",
+            "blob": "0cb1f808ea70c1133423ea224e66a9c4547836dd",
             "content": "sha256:8d8f51b897e5e5239fc174977bb78781f99781cfc0df3dc8e0adf10cc449a16e",
             "locator": {
               "kind": "symbol",
@@ -559,7 +555,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2fd25829eecb328f37c2a31bfc1352e0eedcf2c8",
+            "blob": "0cb1f808ea70c1133423ea224e66a9c4547836dd",
             "content": "sha256:6faca4c637c6f850986b96dd16d34e9bd91de267852ca0546df40e8917c30079",
             "locator": {
               "kind": "symbol",
@@ -571,26 +567,16 @@
       ]
     },
     "9": {
-      "note": "The summary under the document's `unexplained` key.",
+      "note": "Unexplained items retain groups and expose open counts with unnecessary covered rows",
       "targets": [
         {
           "anchor": {
-            "blob": "2fd25829eecb328f37c2a31bfc1352e0eedcf2c8",
-            "content": "sha256:08fd014aec9d9fc5de0c30de91c409b91ddbc270d9695afdac972737c66c2925",
+            "blob": "0cb1f808ea70c1133423ea224e66a9c4547836dd",
+            "content": "sha256:c7771ba87604b475ea215eee61f01211dcf224cd547a03320f09fcdde563d7af",
             "locator": {
-              "kind": "symbol",
-              "name": "Unexplained"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "2fd25829eecb328f37c2a31bfc1352e0eedcf2c8",
-            "content": "sha256:5dc65924b9d5d7902d0a724a0d7f53bd4111ea64c221035a7094839691b617f6",
-            "locator": {
-              "kind": "symbol",
-              "name": "_summary"
+              "end": 253,
+              "kind": "line_range",
+              "start": 232
             }
           },
           "kind": "code"

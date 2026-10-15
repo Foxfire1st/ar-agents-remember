@@ -1,0 +1,94 @@
+{
+  "path": "skills/c-03-repo-bootstrap/templates/file-card-template.md",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The file card records targets, classification, governing context, inputs, bounded reads, explanations, traps, questions and done criteria.\n\nAnchor: `# File Card — <source path>`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "92f758512fc431462605a457307cb8ea90f92e8b",
+            "content": "sha256:e567f0b4095d2131560f3866b306e798cc06d219d707680712bdfcd9e60cab1e",
+            "locator": {
+              "end": 102,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Required output uses a source-path title, relative governing-overview link, prose and temporary citation tables; the fixer owns numbering and sidecar generation.\n\nAnchor: `## Required Onboarding Sections`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "92f758512fc431462605a457307cb8ea90f92e8b",
+            "content": "sha256:52994071382f4f93fd5b5bc2fdb41b78d5453716ed109a4c35d2d124bd11b71b",
+            "locator": {
+              "end": 77,
+              "kind": "line_range",
+              "start": 67
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Phase 4G writes file cards for priority files and requires them before assignment except for tiny repositories.\n\nAnchor: `### 4G — File Card Generation`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6169b610d2b722a17c4d18645df947444b62f260",
+            "content": "sha256:0ce8a587313b9bdab6c4b3dd29ea725a18d9450dec788580feb91c5c3396063b",
+            "locator": {
+              "end": 984,
+              "kind": "line_range",
+              "start": 960
+            },
+            "path": "skills/c-03-repo-bootstrap/SKILL.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Phase 4H gives each file worker one card and delegates file-level onboarding to c-05 while preserving bounded reads, self-sufficiency and one-to-one mapping.\n\nAnchor: `### 4H — File-Level Onboarding Waves`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6169b610d2b722a17c4d18645df947444b62f260",
+            "content": "sha256:946e7a1f2a142b02491bfb38d52f4c51795398c20e126daf3815b70817c2925f",
+            "locator": {
+              "end": 1020,
+              "kind": "line_range",
+              "start": 985
+            },
+            "path": "skills/c-03-repo-bootstrap/SKILL.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Done criteria require concrete-file onboarding, a governing backlink, evidence-backed references, no task-local planning and questions in review or state.\n\nAnchor: `## Done When`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "92f758512fc431462605a457307cb8ea90f92e8b",
+            "content": "sha256:fa0500c26bea3c94256266c6440bffc2d963656e681d715394f2b4713d53e152",
+            "locator": {
+              "end": 102,
+              "kind": "line_range",
+              "start": 95
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

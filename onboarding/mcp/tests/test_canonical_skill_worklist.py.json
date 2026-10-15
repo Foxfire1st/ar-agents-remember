@@ -1,0 +1,41 @@
+{
+  "path": "mcp/tests/test_canonical_skill_worklist.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "ad44dc6a40dd50beafc434a9ed209b4796f570e4",
+        "content": "sha256:4022d0f2a23dc67947a3b68e5615000c50cc7f826e8b8a853d49e83320a28935",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_canonical_skill_card_closes_without_nine_generated_copy_rows"
+        }
+      },
+      "facet": "Source-defined regression check; not executed by Curator: Canonical skill curation closes the fixture without nine redundant equal-copy rows.",
+      "id": "PRF-Z65SPM",
+      "invariant": "INV-0NEA6F",
+      "origin": {
+        "handoffEntry": "L54-curator-proof-MIK-R55-v1-rule-11-wave-76",
+        "leaf": "260928-MIK-L54"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Describes the integration assertion that a canonical skill card answers its own change without independent equal generated-copy rows. Equal declared copies do not make ordinary paths unchanged. This is an assertion contract using a synthetic World, not a run result, current repository suppression measurement or authority to bypass this leaf’s master producer.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ad44dc6a40dd50beafc434a9ed209b4796f570e4",
+            "content": "sha256:63e165884913678745169cd3a05c6b6f1aec29a0267eadb60e52e4ca049c3deb",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

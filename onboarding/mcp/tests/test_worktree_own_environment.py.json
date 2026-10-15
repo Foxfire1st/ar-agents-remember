@@ -3,7 +3,7 @@
   "proves": [
     {
       "anchor": {
-        "blob": "4a177dd386845d2f9f41c60ac7884e3644bbad24",
+        "blob": "ea9892bb5d4717dcf27606f3fc6ca8694ad0419b",
         "content": "sha256:07d369082bba32393797225673368f15b55744f61957647b11b5c5113f405624",
         "locator": {
           "kind": "symbol",
@@ -20,8 +20,8 @@
     },
     {
       "anchor": {
-        "blob": "4a177dd386845d2f9f41c60ac7884e3644bbad24",
-        "content": "sha256:15de6b181acfaacae9313a07c413776d4e8d0bf123771ea719f74878d22e7651",
+        "blob": "ea9892bb5d4717dcf27606f3fc6ca8694ad0419b",
+        "content": "sha256:7f018d8406443dcf8b4c9e0c9254e8427362d1a36e4e2d6a2d8fb56ef5b5b2e2",
         "locator": {
           "kind": "symbol",
           "name": "test_candidate_accounting_excludes_worktree_environments"
@@ -37,7 +37,7 @@
     },
     {
       "anchor": {
-        "blob": "4a177dd386845d2f9f41c60ac7884e3644bbad24",
+        "blob": "ea9892bb5d4717dcf27606f3fc6ca8694ad0419b",
         "content": "sha256:1ed433becb49a8350fe3995d2bdc1b24e990cb3d7ec4fe6f1f8ef052fe6cfca3",
         "locator": {
           "kind": "symbol",
@@ -54,7 +54,7 @@
     },
     {
       "anchor": {
-        "blob": "4a177dd386845d2f9f41c60ac7884e3644bbad24",
+        "blob": "ea9892bb5d4717dcf27606f3fc6ca8694ad0419b",
         "content": "sha256:cb9682c662985f74bb3eb713b7e30a30d7965aaaa590f17743e525744bf75c5b",
         "locator": {
           "kind": "symbol",
@@ -73,8 +73,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "4a177dd386845d2f9f41c60ac7884e3644bbad24",
-        "content": "sha256:15de6b181acfaacae9313a07c413776d4e8d0bf123771ea719f74878d22e7651",
+        "blob": "ea9892bb5d4717dcf27606f3fc6ca8694ad0419b",
+        "content": "sha256:7f018d8406443dcf8b4c9e0c9254e8427362d1a36e4e2d6a2d8fb56ef5b5b2e2",
         "locator": {
           "kind": "symbol",
           "name": "test_candidate_accounting_excludes_worktree_environments"
@@ -96,7 +96,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4a177dd386845d2f9f41c60ac7884e3644bbad24",
+            "blob": "ea9892bb5d4717dcf27606f3fc6ca8694ad0419b",
             "content": "sha256:07d369082bba32393797225673368f15b55744f61957647b11b5c5113f405624",
             "locator": {
               "kind": "symbol",
@@ -112,7 +112,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4a177dd386845d2f9f41c60ac7884e3644bbad24",
+            "blob": "ea9892bb5d4717dcf27606f3fc6ca8694ad0419b",
             "content": "sha256:1ed433becb49a8350fe3995d2bdc1b24e990cb3d7ec4fe6f1f8ef052fe6cfca3",
             "locator": {
               "kind": "symbol",
@@ -128,7 +128,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4a177dd386845d2f9f41c60ac7884e3644bbad24",
+            "blob": "ea9892bb5d4717dcf27606f3fc6ca8694ad0419b",
             "content": "sha256:cb9682c662985f74bb3eb713b7e30a30d7965aaaa590f17743e525744bf75c5b",
             "locator": {
               "kind": "symbol",
@@ -149,6 +149,23 @@
             "locator": {
               "kind": "symbol",
               "name": "test_candidate_accounting_excludes_worktree_environments"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "The accounting case creates a temporary Git/venv/node_modules fixture with product ignore rules and checks both environment directories are absent from the changed-worktree inventory.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ea9892bb5d4717dcf27606f3fc6ca8694ad0419b",
+            "content": "sha256:7f018d8406443dcf8b4c9e0c9254e8427362d1a36e4e2d6a2d8fb56ef5b5b2e2",
+            "locator": {
+              "end": 123,
+              "kind": "line_range",
+              "start": 102
             }
           },
           "kind": "test"

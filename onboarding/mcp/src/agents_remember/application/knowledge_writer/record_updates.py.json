@@ -1,0 +1,59 @@
+{
+  "path": "mcp/src/agents_remember/application/knowledge_writer/record_updates.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "3cc74f8529f185441f0fdd1265d9a199b0fcd0fe",
+        "content": "sha256:761c5ab0350a5c7731e1426c4212411d61acb696ce47f14a0d69a1201816740c",
+        "locator": {
+          "kind": "symbol",
+          "name": "remap_links"
+        }
+      },
+      "id": "RLZ-BG6BP8",
+      "invariant": "INV-E6KFRX",
+      "origin": {
+        "handoffEntry": "MIK-R54@v1 rule 7",
+        "leaf": "260928-MIK-L54"
+      },
+      "rationale": "This update remaps stored alternative ordinals by exact option text and refuses missing or ambiguous matches.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "3cc74f8529f185441f0fdd1265d9a199b0fcd0fe",
+        "content": "sha256:d3281efa2a2f7ac7d6b1ead6a92ca876e7c57127aa1640385fdc5c30530635cb",
+        "locator": {
+          "kind": "symbol",
+          "name": "record_origin"
+        }
+      },
+      "id": "RLZ-R81M13",
+      "invariant": "INV-WQBG6R",
+      "origin": {
+        "handoffEntry": "MIK-R54@v1 rule 4",
+        "leaf": "260928-MIK-L54"
+      },
+      "rationale": "This origin update owns replacement versus append without replacing another owner’s origin.",
+      "role": "propagation-persistence"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Preserves stored authorship while updating origin evidence and remapping reconsideration links across alternative reordering. A caller may restate links explicitly rather than relying on automatic remapping. A reorder cannot silently change the option a reconsideration link means, and incoming evidence cannot silently relabel another owner’s provenance.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3cc74f8529f185441f0fdd1265d9a199b0fcd0fe",
+            "content": "sha256:cff1ccb400208ee5627710261617084f076e6a659cfd631f745860b19fbe2d29",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

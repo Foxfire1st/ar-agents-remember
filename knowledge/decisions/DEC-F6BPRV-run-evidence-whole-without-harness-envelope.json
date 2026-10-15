@@ -27,7 +27,16 @@
   "links": [
     {
       "relation": "constrains",
-      "target": "route:notes"
+      "target": {
+        "blob": "eca15d36771f6cdd4ceabe7b07f0c4c93aa0cbdc",
+        "content": "sha256:fa6535d3cb89d0b9f7d1a492032103f0616d7641f6e2a1b80b6e60a986edfeb8",
+        "locator": {
+          "end": 18,
+          "kind": "line_range",
+          "start": 14
+        },
+        "path": "skills/l-01-agent-lifecycles/core/acceptance.md"
+      }
     }
   ],
   "origin": {
@@ -38,7 +47,7 @@
     "leaf": "260928-MIK-L101",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-decision/v1",
   "status": "active",
   "supersedes": []

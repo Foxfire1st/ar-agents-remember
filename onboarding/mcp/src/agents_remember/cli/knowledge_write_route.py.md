@@ -14,6 +14,8 @@ Leaf writes use the supplied enclosure and its leaf owner; named waves use their
 
 ### Logic
 
+Before calling `write_knowledge`, `run_leaf_write` reads the persisted leaf worklist and refuses unreadable or invalid-shaped input with its path and compute/recompute remedy. It passes that admitted value, rather than fabricating one. `LeafQuestions` also forwards `append_many` and the resolved destination lazily; loaded settings must resolve to the contract’s same coordination root before a task_doc port is created. This does not add a leaf-worklist prerequisite to wave/crossing owners.
+
 - `leaf_owner`: the leaf is the contract's `leaf_id` (else task name); the task is `task.json` `id`, else the
   leaf ID's prefix before `-L<n>`.
 - **`LeafQuestions` (MIK-R14).** A `dataclass` over the parsed arguments and the contract that implements the
@@ -30,8 +32,7 @@ Leaf writes use the supplied enclosure and its leaf owner; named waves use their
   the bootstrap scope (architect ruling 2). Since MIK-R13 it takes an optional keyword `coordination_root` (default `None`) and
   passes it to `WriteRequest`; `cli/knowledge_bootstrap._run` passes the admitted authority's root. Without
   it every requirement endpoint is reported `requirement-task-plane-unavailable`.
-- Exit status: 0 written or planned, 1 refused (every problem in the report, nothing written), 2 invocation
-  refused. `--json` prints `WriteReport.to_document()`.
+- Exit status: 0 written or planned, 1 refused, 2 invocation refused. `--json` prints `WriteReport.to_document()`. A refused state alone is not universal zero-publication evidence: separately reported question publication and native rollback outcomes retain their exact custody. Do not repeat a mutator to recover its result.
 - **`run_leaf_write` passes `code_base=contract.code_base_commit`** (L37, review R1 F10b): the commit a
   trailerless unconverted `HEAD` is converted at, which is the gate's and the worklist's fallback, so the three
   share one converted-base cache key.
@@ -50,6 +51,9 @@ Leaf writes use the supplied enclosure and its leaf owner; named waves use their
 - `--commit` stays the commit word: without it the run plans, validates and reports.
 
 ## Evidence
+
+- Leaf writes preflight the persisted worklist; lazy question forwarding uses batched publication and same-coordination-root authority. [35]
+
 
 ### Repo-Internal References
 

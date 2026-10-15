@@ -15,8 +15,8 @@
 - **Doc14 example.** `test_the_doc14_family_example_validates_with_every_route_holding_realizations` asserts the exact route-to-files table of Doc14 §4.2 and that the proof `PRF-T3ST0K` is not among the family's locations.
 - **Coverage and Non-empty.** An added realization outside every route is refused under `R04.2-coverage`; a route whose only realization is removed, and a route (`mcp/tests`) holding only a proof entry, are refused under `routes.<i>: [R04.2-non-empty]`. One broad route (`mcp`) passes the rules while the suggestion offers the three local routes.
 - **Route existence.** An added absent route is refused (`R04.1-route-directory`); a carried absent route refuses off merge (`R04.1-carried-route-absent`, alongside `R22.6-carried-stale` when anchors are absent); at a sync merge it reports, and a route carried by neither parent is refused as added. A standalone conversion checks no route directory. Both code trees answer `has_directory`, the root included.
-- **Writer reporting.** `test_the_refusing_route_rules_are_reported_inside_the_writer` pins MIK-R04's five writer-reported rules exactly through `ROUTE_RULES` (route-directory, coverage, non-empty, carried-route-absent and unrealized-family) and shows a Non-empty break still refuses in `validate_tree` while all its refusals fall inside `writer_reported_rule_ids()`.
-- **The root route.** Eight spellings are parametrised: `.` is accepted and `""`, `" ."`, `"./"`, `"./mcp"`, `".."`, `"/"`, `"mcp/./src"` and `"mcp/"` are refused by `FamilyRecord`. A realization in `setup.py` violates Coverage until `.` is added; a family whose only route is `.` passes both rules.
+- **Writer reporting.** `test_the_refusing_route_rules_are_reported_inside_the_writer` pins the writer-reported `ROUTE_RULES` set including nested-routes alongside route-directory, coverage, non-empty, carried-route-absent and unrealized-family and shows a Non-empty break still refuses in `validate_tree` while all its refusals fall inside `writer_reported_rule_ids()`.
+- **The root route.** Eight spellings are parametrised: `.` is accepted and `""`, `" ."`, `"./"`, `"./mcp"`, `".."`, `"/"`, `"mcp/./src"` and `"mcp/"` are refused by `FamilyRecord`. A realization in `setup.py` violates Coverage under the narrower routes; replacing the route set with `.` alone covers it and passes both rules. Root-plus-descendant route sets are nested and refuse rather than being an alternative passing control.
 - **Route states.** `test_an_unrealized_family_refuses_off_merge_and_non_empty_is_waived`
   asserts unrealized-family refusal on one base and reporting at sync, while preserving the
   Non-empty waiver. A realized family with no routes still violates Coverage unless an unassessed
@@ -46,6 +46,8 @@
 ### Todos
 
 None recorded.
+
+The added nested-route fixtures cover both an ordinary ancestor/descendant pair and root-plus-descendant; the finding names the nested route and remains writer-reported. A counted wrapper around `family_route_state` observes its fixture family exactly once during one validation, an operation-count assertion rather than elapsed-time evidence. The routes command checks `differs` in JSON and text as well as unchanged memory bytes.
 
 ## Evidence
 
@@ -80,3 +82,5 @@ No cross-repo boundary is crossed by this file.
 - Based root-route fixtures pin coverage/non-empty and only carried incomplete legacy-debt reporting; not a no-base pass. [5]
 - Current unrealized-family off-merge refusal/sync reporting, actual carried route-unassigned debt and the retired exemption. [6]
 - Current source delta inspected statically: Repair route/debt/writer reporting and based controls; retain root routes, waivers and retired exemption. [10]
+
+- Nested-route refusal, one state computation per fixture family/validation and explicit routes-command difference output are source assertions. [11]

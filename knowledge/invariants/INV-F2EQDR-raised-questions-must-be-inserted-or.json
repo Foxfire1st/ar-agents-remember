@@ -1,0 +1,38 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake",
+      "spans_locations"
+    ],
+    "justification": "Publishing through an old copied question list can silently erase another author’s question, and loading authority settings from a different coordination root can publish to the wrong task plane. The keyed task-owner edit and the separate loaded-root refusal jointly prevent those distinct costly misattributions."
+  },
+  "applicability": "Raised reconsideration questions published to a canonical leaf task document through the knowledge-ingest CLI question port and task owner.",
+  "conditions": [
+    "Each supplied question has a nonempty key and text beginning with that key; all supplied fields validate before the keyed list mutation.",
+    "The task owner performs keyed insertion/rewording against the task document read inside its own publication transaction; the port does not republish its earlier copied question list, so unrelated intervening questions remain.",
+    "The lazy CLI port loads authority settings and compares resolved coordination roots before constructing TaskDocOpenQuestions; missing authority or a mismatched root gives an unavailable/refusing port."
+  ],
+  "exclusions": [
+    "The loaded-root check is the CLI port-acquisition boundary, not an independent check by TaskDocOpenQuestions or an ongoing settings-file watcher.",
+    "This preserves other questions within the task owner transaction; it does not promise distributed/crash durability, undo already-published task questions after a memory-file failure, or certify an executed concurrency test."
+  ],
+  "id": "INV-F2EQDR",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "/home/firefox/projects/ar-coordination/tasks/agents-remember/260928_maintained-invariant-knowledge/notes/reports/worker/0e651ec5-2eed-4b58-b19f-e2336d4978ca/repair-freeze-0a36ddc4/builder-report.md#mik-r54-rule-6",
+        "/home/firefox/projects/ar-coordination/worktrees/agents-remember/54_writer-and-validator-corrections-a4b3b3af8d-ar/role-reports/curator/1ad64580-9e4a-42ce-adc0-169869767dba/wave-49/mechanism-review.json",
+        "/home/firefox/projects/ar-coordination/worktrees/agents-remember/54_writer-and-validator-corrections-a4b3b3af8d-ar/role-reports/curator/1ad64580-9e4a-42ce-adc0-169869767dba/wave-75/proof-source-review.json"
+      ],
+      "path": "wave-48-complete-history.json"
+    },
+    "handoffEntry": "MIK-R54@v1 rule 6",
+    "leaf": "260928-MIK-L54",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Raised questions must be inserted or reworded by keyed task-document publication without dropping concurrent questions and must refuse a mismatched loaded coordination root.",
+  "status": "proposed",
+  "supersedes": []
+}

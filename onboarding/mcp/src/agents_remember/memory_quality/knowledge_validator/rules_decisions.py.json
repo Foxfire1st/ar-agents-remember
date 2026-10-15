@@ -1,6 +1,25 @@
 {
   "path": "mcp/src/agents_remember/memory_quality/knowledge_validator/rules_decisions.py",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "0dc8698f6b27df068fed1ae69ebc0dc3dc618b5a",
+        "content": "sha256:a2148c1be1509f6169b2b49d45f809d67d691b21612f149335e9b418ee3c90fb",
+        "locator": {
+          "kind": "symbol",
+          "name": "check_superseded_not_stored"
+        }
+      },
+      "id": "RLZ-ZKBZ0T",
+      "invariant": "INV-DWPSRR",
+      "origin": {
+        "handoffEntry": "L54-curator-MIK-R54-v1-rule-8-actual-guards",
+        "leaf": "260928-MIK-L54"
+      },
+      "rationale": "The validator independently inspects raw decision fields and names the same derived-state recovery.",
+      "role": "enforcement"
+    }
+  ],
   "references": {
     "1": {
       "note": "The decision files the raw superseded check reads.",

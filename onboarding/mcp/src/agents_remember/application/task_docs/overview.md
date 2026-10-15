@@ -49,7 +49,9 @@ Create and replace share `task_doc_section_scaffolding.py`. It validates a suppl
 
 `_build_doc` rejects the removed `light` kind. Without an explicit kind it derives `subTask` from a leaf contract and otherwise defaults to `master`. With a resolved contract it stamps the series path and, for a leaf contract, enclosure registration and applicable lifecycle identity.
 
-Without a contract, a non-master candidate passes `_require_bindable_leaf_authoring`. The helper permits planning when `task_root/task.json` exists and otherwise refuses with the missing path, derived fields, and remedy. Its stated intent is master-first planning followed by first-start/attach binding of `seriesContractPath` and `enclosures`. Its actual predicate checks path existence; it does not read that file to prove it is a valid master. The downstream binding guarantee is retained as stated intent, pending verification of the start/attach publishers.
+Current task-document publication validates the actual master and matching leaf row through `validate_task_doc_transaction`; a path-existence-only local guard is not publication authority. `task_doc_tool` takes the repository task-root lock before source preparation, and the central transaction holds that same lock through validation, publication, refresh and rollback, refusing nested publication before writes. Keyed questions and flat-list edit types belong to `task_flat_list_edits`; the shared set-field allowlist belongs to `task_doc_phrases`.
+
+Historical pre-central-publication account, not a current route: `_require_bindable_leaf_authoring` checked only whether `task_root/task.json` existed. Its stated first-start/attach binding intent did not prove a valid master from those bytes. That helper is retired; its former limitation does not authorize current orphan planning or publication.
 
 ### Checklist Operations
 
@@ -112,7 +114,7 @@ The existing statement that finalizing a master never archives it remains an int
 - **Retained historical source account — superseded by the current route account:** Zero-or-one graph-bearing publication batch and in-memory title context. [2]
 - **Retained historical source account — superseded by the current route account:** Atomic raw-section shape validation and missing-register scaffolding. [3]
 - **Retained historical source account — superseded by the current route account:** The step plane owns exact addressing, mutations, and the focused read projection. [4]
-- **Retained historical source account — superseded by the current route account:** The settable flat fields include the knowledge-effect declaration. [5]
+- The shared set-field allowlist includes the knowledge-effect declaration and belongs to the phrase owner. [5]
 - **Retained historical source account — superseded by the current route account:** Execution evidence checks real code and memory output cells. [6]
 - **Retained historical source account — superseded by the current route account:** Canonical task, locator, enclosure, operation, seat, and report facts determine unstarted evidence. [7]
 - **Retained historical source account — superseded by the current route account:** The sprint retirement route publishes the sprint edit with the folder move and restores sources and folder on pre-archival failure. [8]
@@ -120,7 +122,7 @@ The existing statement that finalizing a master never archives it remains an int
 - **Retained historical source account — superseded by the current route account:** Caught archive-hook exceptions are reported failures. [10]
 - **Retained historical source account — superseded by the current route account:** Generic task-document edits preserve complete retired rows. [11]
 - **Retained historical source account — superseded by the current route account:** The shared fact publisher performs publication, then invalidation and independent rebuild without acquiring a lock in this function. [12]
-- **Retained historical source account — superseded by the current route account:** The no-contract leaf guard tests whether task.json exists; its valid-master and first-binding descriptions are stated intent. [13]
+- Current task-document publication validates actual master/leaf-row authority, and preparation shares the central repository publication lock; the retired local path-existence guard supplies no current authority. [13]
 - **Retained historical source account — superseded by the current route account:** Commanded-master completion requires abandonment or Completed without completion blockers. [14]
 
 - task_doc authoring no longer exposes successful get/read_steps projections or step_payloads. The early operation-removed answer guides canonical JSON/rendered-file reading. Ordinary writes deliver bounded phrases, create retains renderedPath, changed reviewState stays visible, and dry answers carry wouldLose/diff with independently retained locations; rich identity/preview/masterSync remains whole-result custody and a validly addressed parent-sync failure is an answered refusal. Invalid caller master references are refused by the shared master_json_path_from_ref resolver with TaskDocError during candidate validation after retirement-proof comparison, before publication; a changed or Order-refreshed parent must also pass the in-place document guard. Linkage reporting writes its facts JSON and delivers counts/location; attach/detach retain per-document previews internally. Shared task_doc_phrases owns the actual mutable allowlist, excluding seriesContractPath/enclosures. Publication refreshes the own leaf plus declared requirement copies with rollback, without turning copies into task authority. Strict model facts come from models/task_doc.py; no historical pending-model statement certifies a live session. [15]

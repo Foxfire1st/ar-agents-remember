@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "96e5923aa0f7bd5f68283c7cf18dd00486c7ac1f",
+        "blob": "7fc90cf2f9b7de0a9224b5b7154a90f22c6567d1",
         "content": "sha256:f9b71afca0e6013d1fafb809f404d8a680817229fc4d8d9b1c937b4329d84550",
         "locator": {
           "kind": "symbol",
@@ -26,7 +26,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "96e5923aa0f7bd5f68283c7cf18dd00486c7ac1f",
+            "blob": "7fc90cf2f9b7de0a9224b5b7154a90f22c6567d1",
             "content": "sha256:f9b71afca0e6013d1fafb809f404d8a680817229fc4d8d9b1c937b4329d84550",
             "locator": {
               "kind": "symbol",
@@ -42,7 +42,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "96e5923aa0f7bd5f68283c7cf18dd00486c7ac1f",
+            "blob": "7fc90cf2f9b7de0a9224b5b7154a90f22c6567d1",
             "content": "sha256:5a239dc42af40bcdbee58742203d70dac2f1db9a7243566b74f6e72fb15712ac",
             "locator": {
               "kind": "symbol",
@@ -58,7 +58,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "96e5923aa0f7bd5f68283c7cf18dd00486c7ac1f",
+            "blob": "7fc90cf2f9b7de0a9224b5b7154a90f22c6567d1",
             "content": "sha256:8ba499ffc4184b09520db9275a8540d67a7667ce62dd2fcd666b536aec275cd0",
             "locator": {
               "kind": "symbol",
@@ -74,7 +74,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "96e5923aa0f7bd5f68283c7cf18dd00486c7ac1f",
+            "blob": "7fc90cf2f9b7de0a9224b5b7154a90f22c6567d1",
             "content": "sha256:5cd33fcc73bfc937f72af914b9c247f4340b7542163a05797d6371e358d65ee0",
             "locator": {
               "kind": "symbol",
@@ -111,6 +111,23 @@
             "locator": {
               "kind": "symbol",
               "name": "_apply_l111_shaped_rows"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "The updated-answer illustration supplies the put_open_question operation text; it is not a live task-document publication result.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7fc90cf2f9b7de0a9224b5b7154a90f22c6567d1",
+            "content": "sha256:17459c2fc015adcd234abf2995369e98ee02cebfecaa2b265d561a12c8235813",
+            "locator": {
+              "end": 591,
+              "kind": "line_range",
+              "start": 573
             }
           },
           "kind": "test"

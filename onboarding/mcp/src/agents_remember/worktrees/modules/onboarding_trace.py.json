@@ -1,13 +1,32 @@
 {
   "path": "mcp/src/agents_remember/worktrees/modules/onboarding_trace.py",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "0921ffa900bd3bbaa170662ce74d5914de793998",
+        "content": "sha256:ce40cdb84e422e6ec6c6092b2af488a602aaacd6693964de6f7f446bbb5331d5",
+        "locator": {
+          "kind": "symbol",
+          "name": "onboarding_trace_result"
+        }
+      },
+      "id": "RLZ-GARSNT",
+      "invariant": "INV-WM6BTP",
+      "origin": {
+        "handoffEntry": "MIK-R55@v1 rule 8",
+        "leaf": "260928-MIK-L54"
+      },
+      "rationale": "This onboarding boundary refuses a root file whose card subject would collide with the root overview.",
+      "role": "enforcement"
+    }
+  ],
   "references": {
     "1": {
       "note": "References-only counting and readable repair.",
       "targets": [
         {
           "anchor": {
-            "blob": "f7d38c229865151d2aeba56c56b61c5a8acac3a2",
+            "blob": "0921ffa900bd3bbaa170662ce74d5914de793998",
             "content": "sha256:ddd226cd3005097d3a57f053081ae6fe228d72cf55c9a1c3be954a4dd45cf3a4",
             "locator": {
               "end": 222,
@@ -24,7 +43,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f7d38c229865151d2aeba56c56b61c5a8acac3a2",
+            "blob": "0921ffa900bd3bbaa170662ce74d5914de793998",
             "content": "sha256:7ccb04d31918c6bba53245cf73a870df37fa58df77c5401bc223b7068043e0e6",
             "locator": {
               "end": 320,
@@ -41,7 +60,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f7d38c229865151d2aeba56c56b61c5a8acac3a2",
+            "blob": "0921ffa900bd3bbaa170662ce74d5914de793998",
             "content": "sha256:6e84a85e25e251079015d419f87e3bd57925eea2ebb80f8ff107f6d81499f538",
             "locator": {
               "end": 492,
@@ -64,6 +83,23 @@
               "end": 665,
               "kind": "line_range",
               "start": 545
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Trace items consume caller-provided groups with every source/blob, and an existing root overview-file/card collision refuses as incomplete.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0921ffa900bd3bbaa170662ce74d5914de793998",
+            "content": "sha256:ce40cdb84e422e6ec6c6092b2af488a602aaacd6693964de6f7f446bbb5331d5",
+            "locator": {
+              "end": 667,
+              "kind": "line_range",
+              "start": 539
             }
           },
           "kind": "code"

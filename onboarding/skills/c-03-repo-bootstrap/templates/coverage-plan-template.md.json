@@ -1,0 +1,93 @@
+{
+  "path": "skills/c-03-repo-bootstrap/templates/coverage-plan-template.md",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The coverage plan template captures strategy, area goals, route classification, file classification, and evidence pack queues.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e5d6a8913af356157f6c681e63d87e4719d6ff83",
+            "content": "sha256:08f6263f7e9feb76c4cad7ec4e39ef0ddaab22e07cf034580e74b8e10df3e9d7",
+            "locator": {
+              "end": 36,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The template records deferred routes/files, slice cleanup decisions, developer review questions, and decisions for later waves.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e5d6a8913af356157f6c681e63d87e4719d6ff83",
+            "content": "sha256:5d1dd6c2b2c3088ab4ff80b5fe22e9d7541c3273abc770ae87f1e409cb57dce2",
+            "locator": {
+              "end": 65,
+              "kind": "line_range",
+              "start": 38
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Existing-memory slice cleanup identifies affected memory, disposition and review needed for moved or disappeared routes.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e5d6a8913af356157f6c681e63d87e4719d6ff83",
+            "content": "sha256:81be07ec27638a0af0c6852b6c66a8ca71e1b632a499db304cd522d0524135d8",
+            "locator": {
+              "end": 50,
+              "kind": "line_range",
+              "start": 44
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Developer review challenges ordering, risk, deprecation, classification, first wave and historical preservation before recording decisions.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e5d6a8913af356157f6c681e63d87e4719d6ff83",
+            "content": "sha256:e7c1230b6bdd9f78ef64f4642fa2829d267c38118584dfe42272bda0dd26753a",
+            "locator": {
+              "end": 65,
+              "kind": "line_range",
+              "start": 52
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The skill places coverage planning before governing-route mapping and the later overview/file waves.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6169b610d2b722a17c4d18645df947444b62f260",
+            "content": "sha256:19ea56fe4d329d3274874d8c72963e91da5e787f45088c8b671da401856753b0",
+            "locator": {
+              "end": 805,
+              "kind": "line_range",
+              "start": 758
+            },
+            "path": "skills/c-03-repo-bootstrap/SKILL.md"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

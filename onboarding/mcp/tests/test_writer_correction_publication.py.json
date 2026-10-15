@@ -1,0 +1,75 @@
+{
+  "path": "mcp/tests/test_writer_correction_publication.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "e08b22c4e38c29684cfc9301e08c157d838dd73b",
+        "content": "sha256:bb397cfb50439b0d95e09368ae7cca4abb2a5b76d0d001c49fa30588e825c233",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_write_failure_after_second_file_rolls_back"
+        }
+      },
+      "facet": "Source-defined regression check; not executed by Curator: An injected third-file replacement failure restores earlier writes, leaves the fixture tree unchanged and reports no completed records.",
+      "id": "PRF-ES6TGA",
+      "invariant": "INV-TW1224",
+      "origin": {
+        "handoffEntry": "L54-curator-proof-MIK-R54-v1-rule-5-wave-75",
+        "leaf": "260928-MIK-L54"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "e08b22c4e38c29684cfc9301e08c157d838dd73b",
+        "content": "sha256:26fc10fca413380bcd275593cb7a2b51491c8058efe86070a5218a53119ab51d",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_replaced_created_and_deleted_files_restore_together"
+        }
+      },
+      "facet": "Source-defined regression check; not executed by Curator: Replacement, creation and deletion operands restore together when publication fails.",
+      "id": "PRF-M4VC42",
+      "invariant": "INV-TW1224",
+      "origin": {
+        "handoffEntry": "L54-curator-proof-MIK-R54-v1-rule-5-wave-75",
+        "leaf": "260928-MIK-L54"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "e08b22c4e38c29684cfc9301e08c157d838dd73b",
+        "content": "sha256:8c0395a451ea4d2d6749176aaa08525097d227d0314abb3ff090423807329699",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_rollback_failure_keeps_original_error_and_names_survivor"
+        }
+      },
+      "facet": "Source-defined regression check; not executed by Curator: An unverified restoration preserves the original failure and names the surviving changed file.",
+      "id": "PRF-YQNKMT",
+      "invariant": "INV-TW1224",
+      "origin": {
+        "handoffEntry": "L54-curator-proof-MIK-R54-v1-rule-5-wave-75",
+        "leaf": "260928-MIK-L54"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Describes filesystem-failure rollback assertions for validated writer publication. The successful-restore and incomplete-rollback cases are distinct contracts. They do not justify retrying a native write that actually succeeded before an unrelated wrapper failed.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e08b22c4e38c29684cfc9301e08c157d838dd73b",
+            "content": "sha256:51f13336ccff5a0eb8ab6886438fd85d4b04069decc6bb810abbe6aa70daa62b",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

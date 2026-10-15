@@ -1,6 +1,25 @@
 {
   "path": "mcp/src/agents_remember/memory_quality/knowledge_review.py",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "9af566a4f50f42d95a977d28b8159d6e434cd27c",
+        "content": "sha256:18f74e6be2791e368b8a5c62d02d98ff87b727c9d6350084654ba70646a88853",
+        "locator": {
+          "kind": "symbol",
+          "name": "knowledge_review_section"
+        }
+      },
+      "id": "RLZ-VTNHP0",
+      "invariant": "INV-3PHJ0H",
+      "origin": {
+        "handoffEntry": "L54-curator-MIK-R55-v1-rule-7-actual-guards",
+        "leaf": "260928-MIK-L54"
+      },
+      "rationale": "The knowledge review section explicitly says it gates nothing and points to the worklist for actual gate obligations.",
+      "role": "presentation"
+    }
+  ],
   "references": {
     "1": {
       "note": "The report-only boundary as recorded in the module's own contract: the rendered section states it in one sentence inside the artifact.\n\nAnchor: \"Report-only. This section records what the curator-coherence authority holds; it adds no \"",

@@ -8,7 +8,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e48ba8a62abf80de78c8dc2ef01811c33ead0fa8",
+            "blob": "c016bb78fdf29532debe7734de0bd6f6011834c1",
             "content": "sha256:e2ca03cd0a34dbb72b4f38d2908e4853d3445f69d07a5cb65542f3e5301245a1",
             "locator": {
               "kind": "symbol",
@@ -24,7 +24,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e48ba8a62abf80de78c8dc2ef01811c33ead0fa8",
+            "blob": "c016bb78fdf29532debe7734de0bd6f6011834c1",
             "content": "sha256:432b064a00745b45c2f92ada9cc90e82a00e54d25719d455ed05367fd43fa534",
             "locator": {
               "kind": "symbol",
@@ -57,7 +57,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e48ba8a62abf80de78c8dc2ef01811c33ead0fa8",
+            "blob": "c016bb78fdf29532debe7734de0bd6f6011834c1",
             "content": "sha256:58dc89da5bb2e5cdb0c63283035c14c34efa6c1aadf9c671360ef5fa9d671156",
             "locator": {
               "kind": "symbol",
@@ -73,7 +73,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e48ba8a62abf80de78c8dc2ef01811c33ead0fa8",
+            "blob": "c016bb78fdf29532debe7734de0bd6f6011834c1",
             "content": "sha256:e2ca03cd0a34dbb72b4f38d2908e4853d3445f69d07a5cb65542f3e5301245a1",
             "locator": {
               "kind": "symbol",
@@ -89,7 +89,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e48ba8a62abf80de78c8dc2ef01811c33ead0fa8",
+            "blob": "c016bb78fdf29532debe7734de0bd6f6011834c1",
             "content": "sha256:58dc89da5bb2e5cdb0c63283035c14c34efa6c1aadf9c671360ef5fa9d671156",
             "locator": {
               "kind": "symbol",
@@ -105,7 +105,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e48ba8a62abf80de78c8dc2ef01811c33ead0fa8",
+            "blob": "c016bb78fdf29532debe7734de0bd6f6011834c1",
             "content": "sha256:ad59d7490f0b787ad04ed0b0b830ff5e658ba7f33388cc6303d949ec7a89c754",
             "locator": {
               "kind": "symbol",
@@ -121,7 +121,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e48ba8a62abf80de78c8dc2ef01811c33ead0fa8",
+            "blob": "c016bb78fdf29532debe7734de0bd6f6011834c1",
             "content": "sha256:90ef0a79d28cba45adfa3c32bf160933160454021bc92240fc51b1f974a28b53",
             "locator": {
               "kind": "symbol",
@@ -137,7 +137,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e48ba8a62abf80de78c8dc2ef01811c33ead0fa8",
+            "blob": "c016bb78fdf29532debe7734de0bd6f6011834c1",
             "content": "sha256:432b064a00745b45c2f92ada9cc90e82a00e54d25719d455ed05367fd43fa534",
             "locator": {
               "kind": "symbol",
@@ -170,14 +170,31 @@
       "targets": [
         {
           "anchor": {
-            "blob": "512be564b35aaf6f9d3b9709113b613309efe221",
+            "blob": "c0d03d6f8c3e85258c715229658aa79b26afff5e",
             "content": "sha256:5fc838a1a57ff06ca36f1af8828a79e2c501daac8ea86a7f4c3cddce2a7f34fe",
             "locator": {
-              "end": 143,
+              "end": 137,
               "kind": "line_range",
-              "start": 143
+              "start": 137
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "27": {
+      "note": "Archive fallback requires the active task directory to be absent; an existing empty active directory wins and remains unresolved.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c016bb78fdf29532debe7734de0bd6f6011834c1",
+            "content": "sha256:c9e4b47f3d40b8b26b944cd8993f19e7e084b4fccfd3179c4fa1d1f053b086ee",
+            "locator": {
+              "end": 209,
+              "kind": "line_range",
+              "start": 186
+            }
           },
           "kind": "test"
         }
@@ -188,7 +205,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e48ba8a62abf80de78c8dc2ef01811c33ead0fa8",
+            "blob": "c016bb78fdf29532debe7734de0bd6f6011834c1",
             "content": "sha256:ad59d7490f0b787ad04ed0b0b830ff5e658ba7f33388cc6303d949ec7a89c754",
             "locator": {
               "kind": "symbol",
@@ -204,7 +221,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e48ba8a62abf80de78c8dc2ef01811c33ead0fa8",
+            "blob": "c016bb78fdf29532debe7734de0bd6f6011834c1",
             "content": "sha256:90ef0a79d28cba45adfa3c32bf160933160454021bc92240fc51b1f974a28b53",
             "locator": {
               "kind": "symbol",

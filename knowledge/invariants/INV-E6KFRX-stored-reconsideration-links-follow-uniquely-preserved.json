@@ -1,0 +1,38 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake",
+      "spans_locations"
+    ],
+    "justification": "Alternative positions are not stable identities; a reordering or obsolete same-leaf refresh must not silently retarget a stored authorial reconsideration link."
+  },
+  "applicability": "Updates to existing decision alternatives without explicitly supplied links, and restoration of an eligible same-leaf still_rejected subject absent from the current reconsideration item map.",
+  "conditions": [
+    "For each stored reconsider_on link, preserve the exact unique old alternative option text in the new alternatives; missing or ambiguous matches require explicitly restated links and otherwise refuse the operation.",
+    "Restoration requires existing current and base decisions, the same link relation/alternative, the same target path/locator and base-target content that resolves current at the candidate. Restore the whole base link only when it differs and these guards hold.",
+    "Only this leaf history supplies the stored still_rejected subjects, and a currently present reconsideration subject is not auto-restored."
+  ],
+  "exclusions": [
+    "An explicit links field owns the replacement and suppresses automatic option remapping; other link relations are not remapped.",
+    "No arbitrary decision mutation, path/locator recovery, cross-leaf or non-leaf restoration, transitive trigger evaluation or replacement of INV-YA1T3N trigger/gate meaning."
+  ],
+  "id": "INV-E6KFRX",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "/home/firefox/projects/ar-coordination/tasks/agents-remember/260928_maintained-invariant-knowledge/notes/reports/worker/0e651ec5-2eed-4b58-b19f-e2336d4978ca/repair-freeze-0a36ddc4/builder-report.md#mik-r54-rule-7",
+        "/home/firefox/projects/ar-coordination/worktrees/agents-remember/54_writer-and-validator-corrections-a4b3b3af8d-ar/role-reports/curator/1ad64580-9e4a-42ce-adc0-169869767dba/wave-41/producer-and-source-review.json",
+        "/home/firefox/projects/ar-coordination/worktrees/agents-remember/54_writer-and-validator-corrections-a4b3b3af8d-ar/role-reports/curator/1ad64580-9e4a-42ce-adc0-169869767dba/wave-75/proof-source-review.json"
+      ],
+      "path": "wave-41-complete-history.json"
+    },
+    "handoffEntry": "MIK-R54@v1 rule 7",
+    "leaf": "260928-MIK-L54",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Stored reconsideration links follow uniquely preserved alternative option text unless explicitly restated, and an eligible unfired same-leaf refresh restores its current base link.",
+  "status": "proposed",
+  "supersedes": []
+}

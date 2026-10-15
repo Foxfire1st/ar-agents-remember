@@ -25,9 +25,15 @@ neither row changes an alternative, its status or the chosen option.
 - **`raise`** (`raise_question`): the question is keyed by `question_key` (`[reconsider:<DEC>#<i> raised by
   <leaf>]`) and composed from the option, its status, the curator's reason, the row ID, the rejection reason and
   `reconsider_when`, ending "The decision is under_reconsideration until the developer decides." The text is
-  mechanical (worker Q7); a rerun finds the key and appends nothing, so a reworded reason is not re-appended.
-- **`append_questions`** runs in a committing run before any file is written; every refusal (no task owner, or the
-  owner's own reason) is returned so `writer.py` refuses the whole operation.
+  mechanical (worker Q7). The key still prevents a duplicate question; the current task owner
+  replaces the matching keyed text when its reason changes while preserving intervening questions.
+- **`append_questions`** runs in a committing run before knowledge files are written. It sends the
+  complete nonempty raised list to `OpenQuestions.append_many` in one call, rather than appending
+  questions one at a time. With no raised questions it returns two empty lists without needing
+  a task owner. Success returns every requested key; no task owner or one batch refusal returns
+  no successful keys and one refusal naming all requested keys, so `writer.py` can refuse the
+  whole operation. The return keys are batch-success identifiers, not a count of newly inserted
+  questions when the port deduplicates an existing key.
 - **`still_rejected` refresh** (`refreshed_links`, rulings 04:37:56 Q2/Q3 and 05:31:11 F1–F4). Only the links whose
   trigger fired on the answered item and is in `REFRESHED_TRIGGERS` are touched; a `record_file` or `history_row`
   link is left as it is. A fired link must still be a `reconsider_on` link of the same alternative at the same
@@ -94,11 +100,25 @@ neither row changes an alternative, its status or the chosen option.
 
 ### Todos
 
-- **Accepted note R6-1 (ruling 11:53:13):** a same-leaf revert of the anchored code after a refresh leaves the
-  refreshed content, which never lands; the next leaf raises `anchor_stale` once (loud, not silent).
-- **Recorded limit (ruling 04:37:56 Q7, review F7):** the question append and the knowledge write are two stores;
-  an `OSError` between them, or a second `raise` whose append fails, leaves a question with no knowledge written. A
-  rerun appends nothing twice (key prefix).
+- **Historical R6-1 boundary, now qualified:** the former same-leaf-revert account is not
+  unconditional. Before entry authoring, `Authoring.run` invokes `restore_refreshes`: for this leaf's
+  earlier `still_rejected` subjects absent from the current reconsideration map, it can restore the
+  base link when relation, alternative, path and locator still match and the original content is
+  current again. Other re-authored targets and unresolved original anchors are not restored.
+  This wrapper does not implement that restoration; `refresh_restoration` owns it.
+- **Recorded cross-store boundary:** the question append and the knowledge write remain two stores.
+  An `OSError` after a successful question batch but before knowledge persistence can still leave
+  questions with no knowledge written; a rerun relies on the port's existing-key idempotence.
+  The former per-question partial-success account (a later `raise` append failing after an
+  earlier one succeeded) describes the replaced sequential loop, not the current one-call
+  `append_many` wrapper. This wrapper does not implement rollback across the two stores.
+
+### Batch question submission and cross-store boundary
+
+`OpenQuestions` now includes `append_many(raised)` alongside the existing per-question `check` and `append` methods. `append_questions` calls the batch method exactly once for a nonempty list. It returns `(keys, [])` when the port returns `None`, otherwise `([], [combined refusal])`; the combined refusal prefixes the port's reason with the requested keys in order. An empty list returns `([], [])` without touching the port.
+
+This is an all-or-none reporting boundary around one port call, not a transaction implemented in this module. Batch mutation, keyed insertion/replacement and task-document durability belong to the port implementation, and a later knowledge-file write is still a separate store. The rejected/deferred-alternative check, mechanical question construction and fired-link refresh functions in this module are unchanged; the external restoration owner qualifies the historical same-leaf-revert boundary above.
+
 
 ## Evidence
 
@@ -140,6 +160,12 @@ No configured live documentation source was available for this pass.
 - A newer version needs the new item named (R4-3, explicit answer). [24]
 - A second change inside the range needs the new item; a stale worklist is refused (R5-1). [25]
 - A curator-set unapproved version and an anchor re-pointed to other code are re-authored (R5-2). [26]
+
+- The question port exposes append_many in addition to the existing check and append methods. [27]
+- A nonempty raise list is submitted once as a batch; success reports all keys and a refusal reports none, while an empty list needs no owner. [28]
+
+- The task owner validates the entire question batch before replacing matching keyed text or appending new keys; intervening questions are retained. [29]
+- The separate restoration owner can undo an obsolete leaf refresh when the matching original base anchor is current again. [30]
 
 ### Cross-Repo References
 

@@ -7,10 +7,44 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3e5fee6e11a1a75881f6b906e164fc998ab050c8",
-            "content": "sha256:ac18fb73cec3a2ac362e5efee2f28666003df747b6aa4a163d223197490daae9",
+            "blob": "edad7b9d825ab3a241a0917f1627d688e34954f3",
+            "content": "sha256:e791cf309e2f6ef9f2d1f7830a3cf0973f031617f8d7b50e028f35d6453d5381",
             "locator": {
               "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Writer refusal is retained before the independent hand-written counterexample. [2]",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "edad7b9d825ab3a241a0917f1627d688e34954f3",
+            "content": "sha256:e363e886e1c2bacf0973de316c42a2ec08c824085dce1c8872d8121290156a69",
+            "locator": {
+              "end": 97,
+              "kind": "line_range",
+              "start": 67
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Missing/malformed worklists do not publish a first history file. [3]",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "edad7b9d825ab3a241a0917f1627d688e34954f3",
+            "content": "sha256:6a63ac2e59d6375f9c40f8b17f9503f81f1cdb1b84cb35fe26a8042e6fe57c66",
+            "locator": {
+              "end": 368,
+              "kind": "line_range",
+              "start": 335
             }
           },
           "kind": "test"

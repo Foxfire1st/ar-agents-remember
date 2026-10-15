@@ -1,0 +1,54 @@
+{
+  "admission": {
+    "criteria": [
+      "constrains_future_work"
+    ],
+    "justification": "Future language/anchor extensions must either supply a supported grammar with uniquely resolvable symbols or retain the language-independent line_range route. They cannot make an unsupported symbol valid by renaming the error; consumers must keep an actual resolvable locator."
+  },
+  "alternatives": [
+    {
+      "option": "Refuse a symbol where no grammar exists and offer the language-independent line_range locator.",
+      "reason": "The appendix retains this boundary for other languages and supplies an actual locator rather than inventing a definition.",
+      "status": "chosen"
+    },
+    {
+      "option": "Accept the requested symbol despite having no supported grammar.",
+      "reason": "The appendix retains this boundary for other languages and supplies an actual locator rather than inventing a definition.",
+      "reconsider_when": "Only if the owning approved requirement is explicitly revised to authorize this changed boundary; this prose is not a computed trigger.",
+      "status": "rejected"
+    }
+  ],
+  "consequences": [
+    "Keep the explicit unsupported-language symbol refusal and the line_range alternative; changing grammar support requires an intentional implemented extension.",
+    "Rejected unsafe behavior is retained as a boundary, not promoted to a plausible serious alternative; no new implementation, execution or independent acceptance is asserted."
+  ],
+  "context": "MIK-R54 appendix entry 49 retains the chosen current boundary stated in this record. Admission is constrains_future_work, not real_alternatives: the rejected text records disallowed contrary behavior, not evidence that a serious competing design was historically considered. No design-discussion history is inferred from appendix provenance.",
+  "decider": "Architect-approved MIK-R54 v1 corpus; Curator records its continuing choice under R54.13/R55.10.",
+  "id": "DEC-17JRSD",
+  "links": [
+    {
+      "relation": "explains",
+      "target": {
+        "id": "MIK-R54",
+        "packet": "requirements/MIK-R54-v1-writer-and-validator-corrections.md",
+        "task": {
+          "path": "260928_maintained-invariant-knowledge",
+          "repository": "agents-remember"
+        },
+        "version": "v1"
+      }
+    }
+  ],
+  "origin": {
+    "handoff": {
+      "path": "wave-82-complete-history.json"
+    },
+    "handoffEntry": "L54-by-design-unsupported-symbol",
+    "leaf": "260928-MIK-L54",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-decision/v1",
+  "status": "active",
+  "supersedes": []
+}

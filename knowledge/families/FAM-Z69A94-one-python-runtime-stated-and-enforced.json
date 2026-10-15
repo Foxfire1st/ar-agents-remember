@@ -20,10 +20,8 @@
     "leaf": "260928-MIK-L91",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "routes": [
-    "scripts",
-    "mcp",
     "."
   ],
   "schema": "ar-family/v1",

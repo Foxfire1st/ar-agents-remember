@@ -26,14 +26,17 @@
 
 - It only reads: the memory bytes are unchanged after a run (the CLI test asserts it).
 - Exit status: 0 when the families are read, 2 when an input cannot be read.
-- Before MIK-R37 the real memory worktree holds no family record, so the command answers "no family records".
-- The human-readable output does not mark that the routes differ from the suggestion; the curator compares the two lists (review R1 finding 4, not required).
+- The pre-MIK-R37 no-family observation is historical, not a current command applicability limit; an actually empty family population still prints "no family records".
+- Each document exposes `differs` from set equality between authored and mechanically suggested routes; text prints an explicit difference line only when true. Order alone is not a difference. The suggestion stays mechanical and read-only, not route-authoring authority.
 
 ### Todos
 
 None recorded.
 
 ## Evidence
+
+- The read-only output names differs using route-set equality and prints it explicitly without authoring routes. [7]
+
 
 ### Docs References
 

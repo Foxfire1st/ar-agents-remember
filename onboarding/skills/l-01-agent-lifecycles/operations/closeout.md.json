@@ -57,6 +57,22 @@
       "role": "support"
     }
   ],
-  "references": {},
+  "references": {
+    "1": {
+      "note": "The authored source owns this contract; the distribution copy is not a separate authority.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "797c78c090a39734d316d12fab86fd41820ab528",
+            "content": "sha256:baea8d9c29a19b55b3bd58cb8c81382965f4ad5f2d665e42839f2843ef3411f0",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
   "schema": "ar-onboarding-file/v1"
 }

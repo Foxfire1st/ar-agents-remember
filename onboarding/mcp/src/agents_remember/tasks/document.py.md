@@ -212,10 +212,7 @@ the architect's approval) through `task_doc`. Absent means no declaration, and e
   (`REQUIREMENT_REF_PATTERN`, `<stable ID>@v<n>`, ruling Q5). The patterns are imported from
   `models/knowledge_files/planned.py`; the task plane checks shape only and never reads knowledge, so an ID
   the memory does not hold is the worklist's `subject_unknown` fact.
-- **`_check_expected_knowledge_effects`**, called from the document validator, refuses: the field on a
-  master (there is no master history file), an empty list (clear it with `null` instead), and two
-  declarations with the same subject and effect, even under different `requirementRef`s, because their
-  planned keys would collide.
+- **`_check_expected_knowledge_effects`**, called with the document’s requirements, retains the master/nonempty/duplicate-key checks. When requirements contains typed `ApprovedRequirementPacketRef` entries, each declared `requirementRef` must match a listed `stableId@version`; unknown references refuse. With no typed packets this added membership check does not apply. This schema-only check neither reads packet contents nor approves a requirement. Two declarations with the same subject/effect still collide even under different references.
 - It is classified `NORMATIVE_INTENT`, unlike `knowledgeMaintenanceScope`: it is in the `task-intent/v1`
   allowlist as an optional slot, so a declaration changes the leaf's intent digest while an absent one leaves
   every existing digest unchanged (`task_intent.py`).
@@ -234,6 +231,9 @@ the architect's approval) through `task_doc`. Absent means no declaration, and e
 - The field's tests: optional, normative, settable, rendered and refused when malformed. [8]
 
 ## Evidence
+
+- Expected effect requirement references must name a listed stableId/version when typed packet references are present; no packet is resolved by this schema check. [22]
+
 
 ### Docs References
 

@@ -25,7 +25,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "090227ddbf3517ad95c4044c66d1229cfcb79006",
+            "blob": "6911f4e91b865b417e527ca7e981e32791b8022a",
             "content": "sha256:5435dccb3334bda8a6528f218deaa9ae72c3f25a488101ec37b0d2a7cf8b1bd3",
             "locator": {
               "end": 10,
@@ -42,7 +42,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "090227ddbf3517ad95c4044c66d1229cfcb79006",
+            "blob": "6911f4e91b865b417e527ca7e981e32791b8022a",
             "content": "sha256:01cdacc64123d8d2b1c8c6fad5c3859df5e808aed2d3c719f87f021947c27fc3",
             "locator": {
               "end": 61,
@@ -65,6 +65,108 @@
               "end": 84,
               "kind": "line_range",
               "start": 72
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The authored source owns this contract; the distribution copy is not a separate authority.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6911f4e91b865b417e527ca7e981e32791b8022a",
+            "content": "sha256:7480ca74ce7c7d68939f5e55ce47e2b2d5c47c786ba58e24b5ad2e09fd610457",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The sprint document holds the request before one role_start; Architect start carries no brief or document and the developer selects the sprint in the dashboard.\n\nAnchor: current qualified source",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8efa7f111f0097556ba44ada42513af10cd44a0b",
+            "content": "sha256:d2db485228e6ff58b3dcbd890303bf38fdd3433f0f745a4933252d080f2a4d16",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Starting agents uses role_start/role_message and forbids fallback after refusal, not the retired hosted dispatch transaction.\n\nAnchor: current qualified source",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8efa7f111f0097556ba44ada42513af10cd44a0b",
+            "content": "sha256:d2db485228e6ff58b3dcbd890303bf38fdd3433f0f745a4933252d080f2a4d16",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The canonical skill tree is synchronized into package data and harness mirrors.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "52ead88df5abcc06f44245c1a48ebae0f190b1a6",
+            "content": "sha256:556c2515bac2a5348f19a93d199ce8620848ee26c5e67dea565240287f582394",
+            "locator": {
+              "kind": "symbol",
+              "name": "CANONICAL_SKILLS"
+            },
+            "path": "scripts/sync-skills.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "52ead88df5abcc06f44245c1a48ebae0f190b1a6",
+            "content": "sha256:749faa913fd02887de600f0c5da29e8e5d815d3ab4936ea5bb847d1a302f9b7d",
+            "locator": {
+              "kind": "symbol",
+              "name": "sync_targets"
+            },
+            "path": "scripts/sync-skills.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "52ead88df5abcc06f44245c1a48ebae0f190b1a6",
+            "content": "sha256:8fbd9ebfe0acdf40f935fe337d0cddb9b12b37bdefd46155ad53f319f950f16f",
+            "locator": {
+              "end": 203,
+              "kind": "line_range",
+              "start": 195
+            },
+            "path": "scripts/sync-skills.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "Messages wake; complete payloads and evidence travel as files.\n\nAnchor: current qualified source",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8efa7f111f0097556ba44ada42513af10cd44a0b",
+            "content": "sha256:d2db485228e6ff58b3dcbd890303bf38fdd3433f0f745a4933252d080f2a4d16",
+            "locator": {
+              "kind": "file"
             }
           },
           "kind": "code"

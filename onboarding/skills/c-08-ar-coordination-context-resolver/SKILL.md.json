@@ -1,0 +1,160 @@
+{
+  "path": "skills/c-08-ar-coordination-context-resolver/SKILL.md",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Identity and normal repository-name contract\n\nAnchor: \"# c-08-ar-coordination-context-resolver AR Coordination Resolver\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "087f2ea84a096539969bb76988efab2c66b869f5",
+            "content": "sha256:9084d72052c2ead78670f0d15ac1db263387f3167865528bd3c678d5fc81c6cf",
+            "locator": {
+              "end": 11,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Inputs, series-contract layout and JSON preference\n\nAnchor: \"## Inputs\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "087f2ea84a096539969bb76988efab2c66b869f5",
+            "content": "sha256:48c07a59c09719d71b01a726117396c2aa3357ea9688847c4fd93c52d5a2ff59",
+            "locator": {
+              "end": 28,
+              "kind": "line_range",
+              "start": 12
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Full context outputs and distinct settings/metadata sources\n\nAnchor: \"## Outputs\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "087f2ea84a096539969bb76988efab2c66b869f5",
+            "content": "sha256:eeafc1c740cc2fb334011222040e6b25defe6290cb2511e759eb81215270d802",
+            "locator": {
+              "end": 59,
+              "kind": "line_range",
+              "start": 29
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "External-only rules, named refusals and per-repository roots\n\nAnchor: \"## Resolution Rules\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "087f2ea84a096539969bb76988efab2c66b869f5",
+            "content": "sha256:105f47dc9bd7dc3fa2f5c03f6c89900eadde875fe65841b83d2b907de6a2b655",
+            "locator": {
+              "end": 71,
+              "kind": "line_range",
+              "start": 60
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Normal context_packet route and freshness write caveat\n\nAnchor: \"## MCP Tools\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "087f2ea84a096539969bb76988efab2c66b869f5",
+            "content": "sha256:249a6dac28f935ce1dbe8f0de2c08b28bccac06d9a6d7a8289def7efc326d5ee",
+            "locator": {
+              "end": 84,
+              "kind": "line_range",
+              "start": 72
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Admitted roots, compact answer and removed resolver\n\nAnchor: \"A canonical leaf adds its `task_context` (`task_document_ref` plus `contract_path`);\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "087f2ea84a096539969bb76988efab2c66b869f5",
+            "content": "sha256:c36fc582b0a36487f6fb9e8e276456bdb9e7e33a3a5f4a11c2b66e932d4f2164",
+            "locator": {
+              "end": 109,
+              "kind": "line_range",
+              "start": 85
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "Delegation policy location and instruction-only tree\n\nAnchor: \"Delegation policy (who decides leaf gates) lives in the user's own settings\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "087f2ea84a096539969bb76988efab2c66b869f5",
+            "content": "sha256:baffdc0678fe0a9feafcd785e515cb5c18050c56a9ac5c3faa6e639ae0b379b6",
+            "locator": {
+              "end": 116,
+              "kind": "line_range",
+              "start": 110
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "Downstream quality, retrieval and worktree consumers\n\nAnchor: \"## Consumers\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "087f2ea84a096539969bb76988efab2c66b869f5",
+            "content": "sha256:e63a98b25c8475d63fa74d9fc96c41e088cd8911d15428dc5b57cadcd9ef014d",
+            "locator": {
+              "end": 123,
+              "kind": "line_range",
+              "start": 117
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "Single resolver ownership and creation/mutation exclusions\n\nAnchor: \"## Boundaries\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "087f2ea84a096539969bb76988efab2c66b869f5",
+            "content": "sha256:c032807168c6ee965e4946a760f280914b0b757aa6663af6a9cd50561d861037",
+            "locator": {
+              "end": 129,
+              "kind": "line_range",
+              "start": 124
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

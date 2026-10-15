@@ -36,6 +36,40 @@
         }
       ]
     },
+    "11": {
+      "note": "Asserted master-without-row is also refused with the named repair route. [11]",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "70d9de59d009b41f635314e7983e9594bf29c35e",
+            "content": "sha256:deac699db6150bfc10fb0e4f9ad8e07e38782248dba7a4e99d70cffd80ad7e54",
+            "locator": {
+              "end": 398,
+              "kind": "line_range",
+              "start": 354
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "12": {
+      "note": "The retained test name now encloses four fail-closed ownership cases and byte-preservation assertions. [10]",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "70d9de59d009b41f635314e7983e9594bf29c35e",
+            "content": "sha256:0ac90eb06a46b65aa0acc85be80bf8895811f89da4bf6162c5714e6323b85fb7",
+            "locator": {
+              "end": 352,
+              "kind": "line_range",
+              "start": 316
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
     "2": {
       "note": "Second document publish failure rolls back leaf and parent.",
       "targets": [

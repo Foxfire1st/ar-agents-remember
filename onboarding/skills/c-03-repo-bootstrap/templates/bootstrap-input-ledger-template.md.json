@@ -1,0 +1,111 @@
+{
+  "path": "skills/c-03-repo-bootstrap/templates/bootstrap-input-ledger-template.md",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The input ledger records run metadata, onboarding root, source inventory gate status, and the presented source inventory with status, planned use, and user decision.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6dbd803ead31b1ec9368b823c0996f522331ba4d",
+            "content": "sha256:a48381719299a83ed6f2d3e5106dbc2216d5320b3f10e7651fc34477b59317e3",
+            "locator": {
+              "end": 19,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The template captures excluded sources, weak source categories, additional user sources, corrections, source deltas, settings path-rule exclude review, cross-repo context, assumptions, hard stops, and proceed/no-proceed decision.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6dbd803ead31b1ec9368b823c0996f522331ba4d",
+            "content": "sha256:6f56edbd8b23987a555930d8308e5a2de34cb5e04721410742bcba4188eae51f",
+            "locator": {
+              "end": 100,
+              "kind": "line_range",
+              "start": 21
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Settings excludes are a review checklist and not a hidden substitute for pathRules.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6dbd803ead31b1ec9368b823c0996f522331ba4d",
+            "content": "sha256:f7e87593bd23fc35c7642035db9156ef76fad03aca21c0565382ff04e2e66d37",
+            "locator": {
+              "end": 74,
+              "kind": "line_range",
+              "start": 53
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Expected/actual branch context, assumptions, hard stops and operator decision are explicit intake fields.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6dbd803ead31b1ec9368b823c0996f522331ba4d",
+            "content": "sha256:4dda52df0417e3528f3135b75e32ced31900d8baecc646fccd4c38f57e7636a2",
+            "locator": {
+              "end": 100,
+              "kind": "line_range",
+              "start": 76
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The bootstrap skill requires accepted or corrected source inventory to be recorded in bootstrap/input-ledger.md before automated execution.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6169b610d2b722a17c4d18645df947444b62f260",
+            "content": "sha256:8e79cc13e2fe4c4f7f063f71244158da91f25feb23be503c240d706f89dd1d67",
+            "locator": {
+              "end": 203,
+              "kind": "line_range",
+              "start": 197
+            },
+            "path": "skills/c-03-repo-bootstrap/SKILL.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The reviewed source inventory is written to the input ledger using this template.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6169b610d2b722a17c4d18645df947444b62f260",
+            "content": "sha256:99de1810a49b2892fddfeab2874ffbbbd4a20e6af5411844d01662a00c6caa5c",
+            "locator": {
+              "end": 270,
+              "kind": "line_range",
+              "start": 264
+            },
+            "path": "skills/c-03-repo-bootstrap/SKILL.md"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

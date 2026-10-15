@@ -1,0 +1,54 @@
+{
+  "admission": {
+    "criteria": [
+      "real_alternatives"
+    ],
+    "justification": "The approved appendix names this continuing choice and explains why the contrary requested behavior is not adopted: The appendix explicitly rejects a chain/prose reading because it would raise candidates nobody linked, matching MIK-R14 exclusions."
+  },
+  "alternatives": [
+    {
+      "option": "Reconsideration follows one explicitly linked hop and does not read requirement prose to infer further candidates.",
+      "reason": "The appendix explicitly rejects a chain/prose reading because it would raise candidates nobody linked, matching MIK-R14 exclusions.",
+      "status": "chosen"
+    },
+    {
+      "option": "Traverse a chain or infer reconsideration candidates by reading prose.",
+      "reason": "The appendix explicitly rejects a chain/prose reading because it would raise candidates nobody linked, matching MIK-R14 exclusions.",
+      "reconsider_when": "Only if the owning approved requirement is explicitly revised to authorize this changed boundary; this prose is not a computed trigger.",
+      "status": "rejected"
+    }
+  ],
+  "consequences": [
+    "Retain the chosen current design and the rejected alternative with its actual recorded reason; do not relabel it as a gap or later work.",
+    "No executed test, new implementation, changed inherited guarantee, relocation permission or independent acceptance follows from this decision."
+  ],
+  "context": "Continuing approved MIK-R55 appendix entry 52. | 52 (worklist part) | Supersession from K_B only; route targets; manifest lookup; one hop; prose | Built for supersession and routes. By design: only `packets[]` holds approved requirements (the other manifest keys hold superseded and withdrawn packets); one hop and no reading of prose are MIK-R14's own exclusions, because a chain or a prose reading would raise candidates nobody linked | 3 | Current normative amendments govern over historical illustrative wording. This records the existing choice, not a new feature or future-work gap.",
+  "decider": "Architect-approved MIK-R55 v1 corpus; Curator records its continuing choice under R54.13/R55.10.",
+  "id": "DEC-74K7SD",
+  "links": [
+    {
+      "relation": "explains",
+      "target": {
+        "id": "MIK-R55",
+        "packet": "requirements/MIK-R55-v1-worklist-and-gate-corrections.md",
+        "task": {
+          "path": "260928_maintained-invariant-knowledge",
+          "repository": "agents-remember"
+        },
+        "version": "v1"
+      }
+    }
+  ],
+  "origin": {
+    "handoff": {
+      "path": "wave-83-complete-history.json"
+    },
+    "handoffEntry": "L54-by-design-one-hop",
+    "leaf": "260928-MIK-L54",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-decision/v1",
+  "status": "active",
+  "supersedes": []
+}

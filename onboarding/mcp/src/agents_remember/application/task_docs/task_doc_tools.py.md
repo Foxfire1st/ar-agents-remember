@@ -36,9 +36,13 @@ task_doc is the canonical mutating author. get/read_steps are removed and return
 
 Current candidate validation first calls `task_doc_field_homes.enforce_prose_field_homes`, then `enforce_waits_for_write`, before retirement-proof comparison and the shared named-master validation, then disposition/review authority, unresolved-work preservation, terminal status, master completion, register shape and execution-topology checks. Reserved freeform headings/header labels are grandfathered by normalized multiplicity: existing occurrences may be edited or removed, but a new extra reserved occurrence refuses. Nonempty `waitsFor` is validated only when explicitly supplied by `create`, `replace`, or `set_field`; `None`/empty lists return before kind/target checks. That nonempty write requires a subTask, not self, a readable non-sprint master, listed non-abandoned targets, no detected foreign-master child, and no dependency cycle containing the candidate. Missing child payloads are not themselves a target refusal; list membership and the loader predicates matter. This is write-time validation, not start authorization.
 
-The scalar/prose implementations `_apply_set_status`, `_apply_set_field`, `_apply_append_decision`, `_upsert_subtask`, and `_upsert_section` now live in [task_doc_content_edits](task_doc_content_edits.py.md), imported here for dispatch. The shared mutable allowlist remains in [task_doc_phrases](task_doc_phrases.py.md); it includes `nonGoals`, `acceptance`, and `waitsFor`, not `completedAt`, `seriesContractPath`, or `enclosures`. Status requires a non-None input; field updates need at least one allowlisted key; decision append and number/heading upserts retain their distinct payload semantics. This move does not transfer candidate validation or publication ownership.
+Scalar/prose `_apply_set_status`, `_apply_set_field` and `_upsert_section` remain imported from [task_doc_content_edits](task_doc_content_edits.py.md). Flat `append_decision`, keyed `put_open_question` and `TaskMutationEdit` (the `_Edit` alias) come from [task_flat_list_edits](task_flat_list_edits.py.md). `put_open_question` is a registered mutation. The removed local `_Edit` and build-time `_require_bindable_leaf_authoring` implementations are not current definitions; required master authority is checked by the central publication path, including dry preflight. The shared mutable allowlist remains in [task_doc_phrases](task_doc_phrases.py.md); it includes `nonGoals`, `acceptance`, and `waitsFor`, not `completedAt`, `seriesContractPath`, or `enclosures`. Status requires a non-None input; field updates need at least one allowlisted key; decision append and number/heading upserts retain their distinct payload semantics. This move does not transfer candidate validation or publication ownership.
 
 An explicit `waitsFor` field on `create`/`replace`/`set_field`, or a changed normalized dependency list on an existing candidate, republishes a resolved parent master even when `master_sync.changed` is false, so its derived Order rendering sees the candidate dependency edit. The parent must have accepted source bytes; a selected changed/Order-refreshed parent with a named path must also pass require_task_document_in_place so the read and write target agree. Otherwise publication refuses. Dry-run passes a path-keyed override map for the prepared document batch into task_doc_preview, including nested master-sync rendering. Special linkage, graph-authoring and remove operations keep their separate paths. No persisted sprint graph does not imply no ordinary-master derived Order.
+
+### Task-root serialization and nested refusal
+
+`task_doc_tool` delegates its existing body to `_task_doc_tool_locked` through `run_task_doc_call`. The one repository task-root file lock therefore spans authoritative source read, candidate preparation and central publication, rather than starting only after an edit has been prepared. The central publisher re-enters the same lock. Its call-scoped publication-active marker refuses a nested publication before any write; another thread/process waits and reads the restored source after a failed batch. Existing exact-CAS validation is retained; independently prepared topology/retirement/linkage calls may refuse a race cleanly, without retries. Whole-snapshot source rollback remains the design, not a per-key inverse.
 
 ### Settings-owned review state
 
@@ -201,6 +205,9 @@ An explicit `waitsFor` field on `create`/`replace`/`set_field`, or a changed nor
 
 ## Evidence
 
+- The facade serializes source preparation through run_task_doc_call and dispatches flat decision/question edits through their extracted owner. [33]
+
+
 ### Repo-Internal References
 
 
@@ -235,6 +242,7 @@ An explicit `waitsFor` field on `create`/`replace`/`set_field`, or a changed nor
 
 - Normal dispatch prepares and validates the complete candidate; publication retains accepted sources and includes a resolved parent for changed sync, explicit waitsFor refresh, or changed normalized dependencies, requires accepted parent bytes and a selected named parent to agree with its in-place write target, and supplies prepared-batch overrides to dry-run rendering. [15]
 
+- The public dispatcher enters the task-root lock before its private body prepares and validates the edit, then delegates preview/apply to the central boundary. [32]
 - Create and replace share `_build_doc`, which invokes the raw-section scaffolding boundary before task-model validation. [16]
 - The extracted helper atomically validates list/member shape and appends only missing canonical register scaffolds. [17]
 
@@ -325,7 +333,9 @@ an authoring lock and not an owner of claimed-operation lifecycle evidence.
 
 
 - This facade exposes TaskDocTarget, TaskDocEdit and task_doc_tool, while scalar/prose implementations are imported from task_doc_content_edits. [26]
-## 260913-LCA-L5 Leaf Authoring Fails Closed On A Missing Master Link
+## Historical 260913-LCA-L5 Build-Time Master-Link Guard
+
+The following is the earlier guard account. R55 replaces the local `_require_bindable_leaf_authoring` check with central transaction master/row validation; no current implementation or permission should be inferred from the old helper name below.
 
 The authoring plane must not silently drop a derived field. `_build_doc` stamps
 `seriesContractPath` and `enclosures[]` inside `if contract is not None`, reached only from `create`

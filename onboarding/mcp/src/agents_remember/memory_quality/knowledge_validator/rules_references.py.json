@@ -1,13 +1,32 @@
 {
   "path": "mcp/src/agents_remember/memory_quality/knowledge_validator/rules_references.py",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "b18ae156940a53d406fe6604e8b36808d0178a09",
+        "content": "sha256:9163bd0d92e3706e172ad9d4984159bb64ca311a20c59b1602d6d7681bc480a5",
+        "locator": {
+          "kind": "symbol",
+          "name": "_unpaired_marker_message"
+        }
+      },
+      "id": "RLZ-1W1SNB",
+      "invariant": "INV-DWPSRR",
+      "origin": {
+        "handoffEntry": "L54-curator-MIK-R54-v1-rule-8-actual-guards",
+        "leaf": "260928-MIK-L54"
+      },
+      "rationale": "This marker diagnostic includes literal escaped brackets, fenced blocks and code spans where the literal-recovery hint applies.",
+      "role": "presentation"
+    }
+  ],
   "references": {
     "1": {
       "note": "Markers and references are paired both ways.",
       "targets": [
         {
           "anchor": {
-            "blob": "2ecfa88ded94dfd365f7efbde99024c310ed630a",
+            "blob": "b18ae156940a53d406fe6604e8b36808d0178a09",
             "content": "sha256:f2cf68bcf4d21caa9b24c23cc08d2541140e32e4b22cc4179eecc739ee898dc8",
             "locator": {
               "kind": "symbol",
@@ -18,7 +37,7 @@
         },
         {
           "anchor": {
-            "blob": "2ecfa88ded94dfd365f7efbde99024c310ed630a",
+            "blob": "b18ae156940a53d406fe6604e8b36808d0178a09",
             "content": "sha256:b432c54ada3a8b7d902256c29b16aaf45274eb39b2ed3a9d9a57b885ad05621d",
             "locator": {
               "kind": "symbol",
@@ -34,7 +53,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2ecfa88ded94dfd365f7efbde99024c310ed630a",
+            "blob": "b18ae156940a53d406fe6604e8b36808d0178a09",
             "content": "sha256:6b4a7faa23e2d753a66fa0749a19ab68d87b7f29e0d980e83c9b6e33897e1de7",
             "locator": {
               "kind": "symbol",
@@ -45,7 +64,7 @@
         },
         {
           "anchor": {
-            "blob": "2ecfa88ded94dfd365f7efbde99024c310ed630a",
+            "blob": "b18ae156940a53d406fe6604e8b36808d0178a09",
             "content": "sha256:b476be30586ef1134009e351102049b3716bbed3c2912304eac174840089a87b",
             "locator": {
               "kind": "symbol",
@@ -61,72 +80,72 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2ecfa88ded94dfd365f7efbde99024c310ed630a",
+            "blob": "b18ae156940a53d406fe6604e8b36808d0178a09",
             "content": "sha256:a97ec32fc055120417e3cf885e924e4f22a8bbe20cb8d30a42e3d1fb70b7555c",
             "locator": {
-              "end": 268,
+              "end": 270,
               "kind": "line_range",
-              "start": 258
+              "start": 260
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "2ecfa88ded94dfd365f7efbde99024c310ed630a",
+            "blob": "b18ae156940a53d406fe6604e8b36808d0178a09",
             "content": "sha256:e506d7dd100403a3b254b93a9454166fa636c68a816f2dd8a74dd033b0defb5e",
             "locator": {
-              "end": 288,
-              "kind": "line_range",
-              "start": 271
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "2ecfa88ded94dfd365f7efbde99024c310ed630a",
-            "content": "sha256:b403e4187d164a8f6ea83381bc5c452deafe2604705f04e24beb62badc764e61",
-            "locator": {
-              "end": 300,
-              "kind": "line_range",
-              "start": 296
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "2ecfa88ded94dfd365f7efbde99024c310ed630a",
-            "content": "sha256:31d2caadb745be2875b9930c139ceb25a6658dee019a1db252e92aea425bab70",
-            "locator": {
-              "end": 313,
-              "kind": "line_range",
-              "start": 309
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "2ecfa88ded94dfd365f7efbde99024c310ed630a",
-            "content": "sha256:c13d3fa64cc4f803ba01c84e47cf624d95b9385997eaf59eea1eae1ef8d238fb",
-            "locator": {
-              "end": 330,
-              "kind": "line_range",
-              "start": 325
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "7778e9e7bc24dc8ed3dc6acf189a8df1730198f7",
-            "content": "sha256:60d20ae02f06dfcb8d5ac2d168cd459b2680bc40bd667edaf4effa47e4c0c7db",
-            "locator": {
-              "end": 273,
+              "end": 290,
               "kind": "line_range",
               "start": 273
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b18ae156940a53d406fe6604e8b36808d0178a09",
+            "content": "sha256:b403e4187d164a8f6ea83381bc5c452deafe2604705f04e24beb62badc764e61",
+            "locator": {
+              "end": 302,
+              "kind": "line_range",
+              "start": 298
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b18ae156940a53d406fe6604e8b36808d0178a09",
+            "content": "sha256:31d2caadb745be2875b9930c139ceb25a6658dee019a1db252e92aea425bab70",
+            "locator": {
+              "end": 315,
+              "kind": "line_range",
+              "start": 311
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b18ae156940a53d406fe6604e8b36808d0178a09",
+            "content": "sha256:c13d3fa64cc4f803ba01c84e47cf624d95b9385997eaf59eea1eae1ef8d238fb",
+            "locator": {
+              "end": 332,
+              "kind": "line_range",
+              "start": 327
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6cf0f93cec095913e9f6675b6797d147529e4399",
+            "content": "sha256:60d20ae02f06dfcb8d5ac2d168cd459b2680bc40bd667edaf4effa47e4c0c7db",
+            "locator": {
+              "end": 278,
+              "kind": "line_range",
+              "start": 278
             },
             "path": "mcp/src/agents_remember/memory_quality/knowledge_validator/registry.py"
           },
@@ -134,12 +153,12 @@
         },
         {
           "anchor": {
-            "blob": "7778e9e7bc24dc8ed3dc6acf189a8df1730198f7",
+            "blob": "6cf0f93cec095913e9f6675b6797d147529e4399",
             "content": "sha256:5610e49d8b7983b6d483140ffd4eb8471d1dbf28c37d0169e8649481f3d4af3e",
             "locator": {
-              "end": 286,
+              "end": 291,
               "kind": "line_range",
-              "start": 284
+              "start": 289
             },
             "path": "mcp/src/agents_remember/memory_quality/knowledge_validator/registry.py"
           },
@@ -147,12 +166,12 @@
         },
         {
           "anchor": {
-            "blob": "2ecfa88ded94dfd365f7efbde99024c310ed630a",
+            "blob": "b18ae156940a53d406fe6604e8b36808d0178a09",
             "content": "sha256:12a68ff677ceb29aea1069c3d1fd40388fc435c18bd53d2b7395efa66a9e597e",
             "locator": {
-              "end": 196,
+              "end": 198,
               "kind": "line_range",
-              "start": 196
+              "start": 198
             }
           },
           "kind": "code"
@@ -164,48 +183,48 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2ecfa88ded94dfd365f7efbde99024c310ed630a",
+            "blob": "b18ae156940a53d406fe6604e8b36808d0178a09",
             "content": "sha256:b403e4187d164a8f6ea83381bc5c452deafe2604705f04e24beb62badc764e61",
             "locator": {
-              "end": 300,
+              "end": 302,
               "kind": "line_range",
-              "start": 296
+              "start": 298
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "2ecfa88ded94dfd365f7efbde99024c310ed630a",
+            "blob": "b18ae156940a53d406fe6604e8b36808d0178a09",
             "content": "sha256:31d2caadb745be2875b9930c139ceb25a6658dee019a1db252e92aea425bab70",
             "locator": {
-              "end": 313,
+              "end": 315,
               "kind": "line_range",
-              "start": 309
+              "start": 311
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "2ecfa88ded94dfd365f7efbde99024c310ed630a",
+            "blob": "b18ae156940a53d406fe6604e8b36808d0178a09",
             "content": "sha256:c13d3fa64cc4f803ba01c84e47cf624d95b9385997eaf59eea1eae1ef8d238fb",
             "locator": {
-              "end": 330,
+              "end": 332,
               "kind": "line_range",
-              "start": 325
+              "start": 327
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "7778e9e7bc24dc8ed3dc6acf189a8df1730198f7",
+            "blob": "6cf0f93cec095913e9f6675b6797d147529e4399",
             "content": "sha256:60d20ae02f06dfcb8d5ac2d168cd459b2680bc40bd667edaf4effa47e4c0c7db",
             "locator": {
-              "end": 273,
+              "end": 278,
               "kind": "line_range",
-              "start": 273
+              "start": 278
             },
             "path": "mcp/src/agents_remember/memory_quality/knowledge_validator/registry.py"
           },
@@ -213,12 +232,12 @@
         },
         {
           "anchor": {
-            "blob": "7778e9e7bc24dc8ed3dc6acf189a8df1730198f7",
+            "blob": "6cf0f93cec095913e9f6675b6797d147529e4399",
             "content": "sha256:5610e49d8b7983b6d483140ffd4eb8471d1dbf28c37d0169e8649481f3d4af3e",
             "locator": {
-              "end": 286,
+              "end": 291,
               "kind": "line_range",
-              "start": 284
+              "start": 289
             },
             "path": "mcp/src/agents_remember/memory_quality/knowledge_validator/registry.py"
           },
@@ -226,12 +245,12 @@
         },
         {
           "anchor": {
-            "blob": "2ecfa88ded94dfd365f7efbde99024c310ed630a",
+            "blob": "b18ae156940a53d406fe6604e8b36808d0178a09",
             "content": "sha256:12a68ff677ceb29aea1069c3d1fd40388fc435c18bd53d2b7395efa66a9e597e",
             "locator": {
-              "end": 196,
+              "end": 198,
               "kind": "line_range",
-              "start": 196
+              "start": 198
             }
           },
           "kind": "code"
@@ -277,48 +296,48 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2ecfa88ded94dfd365f7efbde99024c310ed630a",
+            "blob": "b18ae156940a53d406fe6604e8b36808d0178a09",
             "content": "sha256:b403e4187d164a8f6ea83381bc5c452deafe2604705f04e24beb62badc764e61",
             "locator": {
-              "end": 300,
+              "end": 302,
               "kind": "line_range",
-              "start": 296
+              "start": 298
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "2ecfa88ded94dfd365f7efbde99024c310ed630a",
+            "blob": "b18ae156940a53d406fe6604e8b36808d0178a09",
             "content": "sha256:31d2caadb745be2875b9930c139ceb25a6658dee019a1db252e92aea425bab70",
             "locator": {
-              "end": 313,
+              "end": 315,
               "kind": "line_range",
-              "start": 309
+              "start": 311
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "2ecfa88ded94dfd365f7efbde99024c310ed630a",
+            "blob": "b18ae156940a53d406fe6604e8b36808d0178a09",
             "content": "sha256:c13d3fa64cc4f803ba01c84e47cf624d95b9385997eaf59eea1eae1ef8d238fb",
             "locator": {
-              "end": 330,
+              "end": 332,
               "kind": "line_range",
-              "start": 325
+              "start": 327
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "7778e9e7bc24dc8ed3dc6acf189a8df1730198f7",
+            "blob": "6cf0f93cec095913e9f6675b6797d147529e4399",
             "content": "sha256:60d20ae02f06dfcb8d5ac2d168cd459b2680bc40bd667edaf4effa47e4c0c7db",
             "locator": {
-              "end": 273,
+              "end": 278,
               "kind": "line_range",
-              "start": 273
+              "start": 278
             },
             "path": "mcp/src/agents_remember/memory_quality/knowledge_validator/registry.py"
           },
@@ -326,12 +345,12 @@
         },
         {
           "anchor": {
-            "blob": "7778e9e7bc24dc8ed3dc6acf189a8df1730198f7",
+            "blob": "6cf0f93cec095913e9f6675b6797d147529e4399",
             "content": "sha256:5610e49d8b7983b6d483140ffd4eb8471d1dbf28c37d0169e8649481f3d4af3e",
             "locator": {
-              "end": 286,
+              "end": 291,
               "kind": "line_range",
-              "start": 284
+              "start": 289
             },
             "path": "mcp/src/agents_remember/memory_quality/knowledge_validator/registry.py"
           },
@@ -339,12 +358,29 @@
         },
         {
           "anchor": {
-            "blob": "2ecfa88ded94dfd365f7efbde99024c310ed630a",
+            "blob": "b18ae156940a53d406fe6604e8b36808d0178a09",
             "content": "sha256:12a68ff677ceb29aea1069c3d1fd40388fc435c18bd53d2b7395efa66a9e597e",
             "locator": {
-              "end": 196,
+              "end": 198,
               "kind": "line_range",
-              "start": 196
+              "start": 198
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "Literal-markup recovery names escapes, fenced blocks and code spans.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b18ae156940a53d406fe6604e8b36808d0178a09",
+            "content": "sha256:9dea247707da15b0af434a949e7505e4071c51d153162274be0f7913d34aa4dc",
+            "locator": {
+              "end": 59,
+              "kind": "line_range",
+              "start": 57
             }
           },
           "kind": "code"

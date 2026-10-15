@@ -176,16 +176,16 @@
       ]
     },
     "27": {
-      "note": "The enforced collected-case pair is 5000 unit/1000 integration; the unit-only policy raise leaves the guard unchanged.",
+      "note": "The current collected-case declaration is6000unit/1000integration; this is policy, not a collected or executed population.",
       "targets": [
         {
           "anchor": {
-            "blob": "6fdaf3bc5c0ebf2ced1c450d5973ed55b2515f3c",
-            "content": "sha256:ce36f45d8abc47ff28e835599564f9783a30a7b30220e19ba24e701ff8307f49",
+            "blob": "af953e99eac7b81b2df5e99c648d3a83eab4bca1",
+            "content": "sha256:c2fab1dfc67fea847e424402e7a10e7de50462b8d521d5f1b19c6d999eb8e446",
             "locator": {
-              "end": 299,
+              "end": 300,
               "kind": "line_range",
-              "start": 278
+              "start": 299
             },
             "path": "pyproject.toml"
           },
@@ -287,16 +287,16 @@
       ]
     },
     "30": {
-      "note": "The bootstrap note and root configuration now state 5,000/1,000; host development runs and diagnostic metrics remain documented.",
+      "note": "The bootstrap policy and current root declarations agree on6000unit/1000integration; host-versus-certifying evidence remains separate.",
       "targets": [
         {
           "anchor": {
-            "blob": "8527778e192cdd31589a2e41e7824e9afdc01c38",
-            "content": "sha256:374e31541bb47ef8da09d5e30a1b09214f4b0d51ae13433b390363e30bb67eb1",
+            "blob": "bf1a1fc036d1d9cf2b7ded5184097aaf78616792",
+            "content": "sha256:0a66ddeff8bd159bc623fbe5bf83ae0ea91707dd8e73a056e7cd4f989f8f9b40",
             "locator": {
-              "end": 14,
+              "end": 13,
               "kind": "line_range",
-              "start": 9
+              "start": 1
             },
             "path": "docs/design/python-pytest-bootstrap.md"
           },
@@ -304,25 +304,12 @@
         },
         {
           "anchor": {
-            "blob": "8527778e192cdd31589a2e41e7824e9afdc01c38",
-            "content": "sha256:31af9ea52292f5f6afa3bde4d8da2b4f10d307e2a6817df631b6d38951bc281c",
+            "blob": "af953e99eac7b81b2df5e99c648d3a83eab4bca1",
+            "content": "sha256:c2fab1dfc67fea847e424402e7a10e7de50462b8d521d5f1b19c6d999eb8e446",
             "locator": {
-              "end": 53,
+              "end": 300,
               "kind": "line_range",
-              "start": 26
-            },
-            "path": "docs/design/python-pytest-bootstrap.md"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "6fdaf3bc5c0ebf2ced1c450d5973ed55b2515f3c",
-            "content": "sha256:4eaf913583adc97708111cd7ade739a0f30d50b79cfac37e3f8a9d1e36cc0d52",
-            "locator": {
-              "end": 279,
-              "kind": "line_range",
-              "start": 278
+              "start": 299
             },
             "path": "pyproject.toml"
           },
@@ -528,7 +515,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8527778e192cdd31589a2e41e7824e9afdc01c38",
+            "blob": "bf1a1fc036d1d9cf2b7ded5184097aaf78616792",
             "content": "sha256:b09ffb5d4dc406d5da95535a47409d0b7b687f973669afecb344fa6d195387bf",
             "locator": {
               "end": 24,

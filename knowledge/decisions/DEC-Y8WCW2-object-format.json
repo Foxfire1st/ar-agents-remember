@@ -1,0 +1,54 @@
+{
+  "admission": {
+    "criteria": [
+      "constrains_future_work"
+    ],
+    "justification": "Future Git-object-format support must explicitly resolve object identities in the repository own format or add an intentional translation mechanism. Until then, an unresolvable foreign-format object is incomplete input, never a successful empty/unchanged observation; downstream consumers must preserve the safe refusal."
+  },
+  "alternatives": [
+    {
+      "option": "An object ID of the other repository format yields incomplete input and refuses safely.",
+      "reason": "The appendix says it cannot name an object of this repository; incomplete is a safe refusal, not a successful empty observation.",
+      "status": "chosen"
+    },
+    {
+      "option": "Treat that unverifiable foreign-format object name as usable or omit its obligation.",
+      "reason": "The appendix says it cannot name an object of this repository; incomplete is a safe refusal, not a successful empty observation.",
+      "reconsider_when": "Only if the owning approved requirement is explicitly revised to authorize this changed boundary; this prose is not a computed trigger.",
+      "status": "rejected"
+    }
+  ],
+  "consequences": [
+    "Retain the incomplete-input refusal rather than treating an unreadable foreign-format object as usable or absent.",
+    "Rejected unsafe behavior is retained as a boundary, not promoted to a plausible serious alternative; no new implementation, execution or independent acceptance is asserted."
+  ],
+  "context": "MIK-R55 appendix entry 151 retains the chosen current boundary stated in this record. Admission is constrains_future_work, not real_alternatives: the rejected text records disallowed contrary behavior, not evidence that a serious competing design was historically considered. No design-discussion history is inferred from appendix provenance.",
+  "decider": "Architect-approved MIK-R55 v1 corpus; Curator records its continuing choice under R54.13/R55.10.",
+  "id": "DEC-Y8WCW2",
+  "links": [
+    {
+      "relation": "explains",
+      "target": {
+        "id": "MIK-R55",
+        "packet": "requirements/MIK-R55-v1-worklist-and-gate-corrections.md",
+        "task": {
+          "path": "260928_maintained-invariant-knowledge",
+          "repository": "agents-remember"
+        },
+        "version": "v1"
+      }
+    }
+  ],
+  "origin": {
+    "handoff": {
+      "path": "wave-83-complete-history.json"
+    },
+    "handoffEntry": "L54-by-design-object-format",
+    "leaf": "260928-MIK-L54",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-decision/v1",
+  "status": "active",
+  "supersedes": []
+}

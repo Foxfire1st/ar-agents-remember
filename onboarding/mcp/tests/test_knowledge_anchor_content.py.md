@@ -6,8 +6,9 @@
 
 ## Purpose
 
-**The one definition of an anchor's `content` bytes, pinned.** Registered in the `unit-regression`
-lane; 5 collected cases (4 parametrized plus 1).
+**The one definition of an anchor's `content` bytes, pinned.** Registered in the `unit-regression` lane. Byte-range cases are joined by a two-arm non-UTF8 symbol-observation case; this card records source assertions, not collection or execution.
+
+Whether its recorded blob changed or already matches, a non-UTF8 symbol source remains `unverifiable`, names the path and UTF-8 reason, and has `read_failed=False`. Candidate membership is checked through `CodeTrees`; extractor v2 is asserted. Undecodable content is not treated as a successful symbol observation or mislabeled as a failed blob read.
 
 ## Code Commentary
 
@@ -30,6 +31,9 @@ lane; 5 collected cases (4 parametrized plus 1).
 None recorded.
 
 ## Evidence
+
+- Non-UTF8 symbol observations are unverifiable whether recorded blobs change or match, with a UTF-8/path reason, read_failed false and the versioned extractor. [3]
+
 
 ### Docs References
 

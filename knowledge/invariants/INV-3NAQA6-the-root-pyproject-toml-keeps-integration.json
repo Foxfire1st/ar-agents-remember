@@ -6,7 +6,7 @@
     ],
     "justification": "A stale current-budget declaration or mirror can either prevent all collection or make a green boundary screen prove a ceiling the repository no longer uses."
   },
-  "applicability": "The repository root selected-case budget declarations and this screen's current5000/1000 policy on the maintained-invariant line.",
+  "applicability": "The repository root selected-case budget declarations and this screen's current6000/1000 policy on the maintained-invariant line.",
   "conditions": [
     "Selected parametrized cases are classified by the integration marker.",
     "The guard reads the root pytest ini configuration; a subsequent deliberate policy raise must update these stated values and mirrors together."
@@ -28,7 +28,7 @@
     "leaf": "260928-MIK-L146",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-invariant/v1",
   "statement": "The root pyproject.toml keeps integration_case_budget = 1000.",
   "status": "accepted",

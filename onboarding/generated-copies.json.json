@@ -1,0 +1,74 @@
+{
+  "path": "generated-copies.json",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "7f87344928ff3c3658db530b4d3e5e3766e69523",
+        "content": "sha256:7ecb0f5d8725e0a7caaac40448a9f7be1ce183423e4db3ff98a134f050002834",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-WVSPZX",
+      "invariant": "INV-0NEA6F",
+      "origin": {
+        "handoffEntry": "MIK-R55@v1 rule 11",
+        "leaf": "260928-MIK-L54"
+      },
+      "rationale": "This whole declarative mapping is the single authority consumed by both the skill generator and candidate-aware generated-copy recognition.",
+      "role": "primary-authority"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Versioned declaration names canonical skills, package/harness targets and exact ignore-name/suffix policy.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7f87344928ff3c3658db530b4d3e5e3766e69523",
+            "content": "sha256:7ecb0f5d8725e0a7caaac40448a9f7be1ce183423e4db3ff98a134f050002834",
+            "locator": {
+              "end": 21,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Candidate recognition compares declared source and copy blobs and keeps present nonregular declarations distinct from absence.\n\nAnchor: generated_copy_facts",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f7d81663443ba0fafe18885b1e6e9c84ca6f1b3a",
+            "content": "sha256:648e93cdb161118b6a25b918de836a26518f4eafad5b5f54bc704555d457cd3c",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_worklist/generated_copies.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The common parser validates the declaration and constructs parsed copy projections.\n\nAnchor: parse_generated_copies",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8beea1a406558620606049cf0f3a006bde239fc1",
+            "content": "sha256:9f5f62b8b0ba5e11818ae0289cea43d5bdabd2840dca7c84ff9adb0dfa2c25d2",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/kernel/generated_copies.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

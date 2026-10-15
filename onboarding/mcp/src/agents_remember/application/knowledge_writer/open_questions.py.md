@@ -6,7 +6,7 @@
 
 ## Purpose
 
-**A `raise` row's question, appended to the leaf's task document through `task_doc` (MIK-R14 rule 4).**
+**A `raise` row's keyed question, appended or replaced through the task owner (MIK-R14).**
 `TaskDocOpenQuestions` implements the writer's `reconsideration.OpenQuestions` port over the task owner:
 `check` is a dry run of the edit, `append` publishes it. `UnavailableOpenQuestions` is the port when no task owner
 can be reached (no MCP authority settings): every question is refused with that reason. The CLI's `LeafQuestions`
@@ -20,12 +20,16 @@ can be reached (no MCP authority settings): every question is refused with that 
   documents claiming the leaf, or the leaf's document in an unreadable state, are the owner's named refusals
   (`LeafDocumentUnresolved`); a leaf with no document is "the leaf … has no task document under …". Each existing
   question is kept as a document (a string, or the model dumped with `exclude_none`).
-- **Idempotence.** A question whose key (`question_key`, `[<subject> raised by <leaf>]`) already starts an existing
-  string question is not appended again: a rerun of the same `raise` returns success and writes nothing.
-- **Modify-write** (`_edit`): `task_doc_tool(set_field)` publishes `openQuestions` as the existing questions plus the
-  new one, addressed by the repository, the contract path and the document's slug. `openQuestions` is a
-  `NORMATIVE_INTENT` field, so the change is the developer's to answer. `check` passes `dry_run=True`: the task owner
-  validates the whole publication and writes nothing.
+- **Keyed publication.** The key (`question_key`, `[<subject> raised by <leaf>]`) identifies the existing
+  string question. Repeating identical text is idempotent; rewording the reason replaces that question
+  instead of silently keeping the old wording or appending a duplicate.
+- **Modify-write** (`_edit`): strict lookup selects the slug, then `task_doc_tool(put_open_question)` receives
+  `{key, text}`, repository and contract. The task owner reads its current `openQuestions` and appends or
+  replaces inside its own publication, preserving concurrent unrelated questions. The adapter does not
+  replace the whole list with a stale caller-side copy. The question still asks the developer to answer;
+  `check` passes `dry_run=True`, so the same owner validation runs without publication.
+- **Batch and rollback boundary.** `append_many` sends every keyed question in one `put_open_question` call using the `questions` list; the owner validates the batch before publishing any member. The adapter’s early lookup selects the slug, but its returned question list is discarded: the authoritative read/prepare occurs inside the task owner’s repository-root file lock. The central publisher re-enters that lock and refuses same-call nested publication through its active marker. Failed copy refresh restores the pre-batch task sources before releasing the lock; a different thread/process then prepares and publishes its question against the restored source. No per-key inverse is used.
+- **Destination.** The `destination` property names the resolved task-document path for writer reporting.
 - **Refusals are returned, never raised.** An `AgentsRememberError`, `ValueError` or `OSError` from the task owner
   becomes "task_doc refused the openQuestions edit: …", so the writer refuses the `raise` and the item stays open.
 
@@ -36,21 +40,19 @@ can be reached (no MCP authority settings): every question is refused with that 
 
 ### Invariants And Boundaries
 
-- **A `raise` puts the question in the task document before any knowledge file is written; on failure it writes
-  nothing.** Candidate invariant (the ordering half is `writer.py`'s). Realized here by the dry-run `check` at
-  authoring time and the refusal-returning `append`; proved by
-  `test_the_task_document_append_preserves_questions_through_task_doc` (a real `task_doc` publication in tmp: the
-  earlier question is kept, the `.md` is re-rendered, the dry run writes nothing, the rerun is idempotent, a leaf
-  with no document is refused) and by `test_raise_sets_the_status_and_appends_the_question_or_is_refused`.
-- **Existing questions are preserved.** The edit is a read-modify-write of the whole list.
+- **Question publication precedes knowledge-file publication.** `check` validates the keyed edit as a dry
+  run; a task-owner refusal prevents that question publication and refuses the writer run. Once a question
+  is published, a later knowledge-filesystem failure is a separate-store failure: the writer reports the
+  surviving question and idempotent retry, rather than claiming nothing anywhere changed.
+- **Unrelated questions are preserved.** The task owner changes only the keyed string in its current list.
+  Tests name the preserved-question, reworded-reason, dry-run, missing-document and retry boundaries; their
+  presence is not an assertion that this card ran them.
 
 ### Todos
 
-- **Recorded limit (ruling 04:37:56 Q7):** the read and the `set_field` are two `task_doc` calls. The task owner's
-  publication CAS covers only its own read, so a question another writer appends between the two calls could be
-  lost. No `task_doc` append operation was added in this leaf.
-- **L37 (review F10, ruling 05:31:11):** confirm that installed mode honours `knowledge-ingest --config` for a real
-  `raise` after the cutover.
+The former whole-list `set_field` lost-update limit is removed by the keyed task-owner publication; it is
+not deferred work. The separate installed `--config` real-raise demonstration belongs to L36. No installed
+execution is inferred from this source contract or the adapter's tests.
 
 ## Evidence
 
@@ -65,10 +67,15 @@ No configured live documentation source was available for this pass.
 
 ### Repo-Internal References
 
-- The module docstring: the read-modify-write in three steps and the unavailable port. [1]
+- The task owner publishes a keyed append or replacement and preserves intervening questions. [1]
 - The port over `task_doc`: `check` is the dry run, `append` the publication. [2]
 - The leaf's one document found strictly, with its questions. [3]
-- A present key appends nothing; otherwise `set_field` with the whole list; refusals returned. [4]
+- The adapter submits put_open_question with key and text; dry-run and refusal-return behavior remain explicit. [4]
+
+- The owner replaces the matching keyed question or appends to its current list without replacing unrelated entries. [10]
+- A multi-raise submits one keyed batch to the same task owner, not a stale whole-list replacement. [11]
+- Task-owner entry acquires the task-root file lock before preparation; active nested publication refuses before invoking the edit body. [12]
+
 - No task owner: every question refused with the reason. [5]
 - The strict leaf-document lookup it reuses (L11). [6]
 - The task owner's tool entry point. [7]

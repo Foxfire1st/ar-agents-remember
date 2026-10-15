@@ -1,0 +1,22 @@
+{
+  "path": "mcp/tests/test_knowledge_correction_guidance.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Describes source-level checks that canonical curator/planner guidance and writer/gate docstrings explain supported corrections. Marker assertions protect documentation compatibility, not implementation behavior, runtime installation or full semantic acceptance of every sentence in the referenced guides.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d11a931be72188488a9f5b140ecc9b0ee4da7bde",
+            "content": "sha256:2f5da4df96ec37be02a3926803be0392f2ba1566f1f91f60c0968d1513ab2a28",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

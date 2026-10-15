@@ -10,6 +10,8 @@ Pure onboarding-trace computation over explicit K_B/K_C byte maps and the candid
 
 ## Code Commentary
 
+The optional caller-supplied `source_groups` mapping suppresses alias card subjects and gives each representative card item its complete grouped source tuple and blob map. This routine consumes the mapping; the worklist owner, not this parameter, proves equal uncovered B/C changes. Each governing route retains its own obligation. A root code file literally named `overview` with an existing colliding card subject returns a named incomplete problem and no items, rather than pretending it is the root route. These are source-defined boundaries, not a new grouping, judgment or acceptance result.
+
 A counted change is a Markdown byte change or a meaningful change of sidecar `references` after removing mechanical anchor fields. `realizes`/`proves` alone do not count; absent versus empty-reference sidecars are equivalent for that rule. An unreadable new sidecar cannot count, while a readable repair of an unreadable prior reference map can. [1]
 
 Each `TraceItem` carries source blobs, whether its row remains current, whether the row actually answers, and readability. `open` means unreadable or not answered; a counted edit is a fact, not an ordinary answer by itself. The stored item carries `sourceBlobs`, counted-change state and an eligible satisfying row ID. Missing, stale and otherwise ineligible rows have distinct repair messages. [2]
@@ -23,6 +25,9 @@ The stored-item predicate rejects missing/unreadable facts, absent satisfying-ro
 The leaf's amended R53 rule 1 permits its own measured counted-card change under the still-serving pre-landing producer. That finite rollout exception neither restores presence-only history nor authorizes invented `updated` rows, changed-card `no_impact`, or later backfill.
 
 ## Evidence
+
+- Trace items consume caller-provided groups with every source/blob, and an existing root overview-file/card collision refuses as incomplete. [5]
+
 
 ### Repo-Internal References
 

@@ -3,7 +3,7 @@
   "proves": [
     {
       "anchor": {
-        "blob": "86edaf064d848420532474444e9d69dfed9e83e0",
+        "blob": "0ab3450c0494a600707fd97b72f54b632f05f0ee",
         "content": "sha256:4b31f829a9e66f99017480733838b5c33a01705b4151d94b4e20a9beb8c8fe34",
         "locator": {
           "kind": "symbol",
@@ -37,7 +37,7 @@
         },
         {
           "anchor": {
-            "blob": "86edaf064d848420532474444e9d69dfed9e83e0",
+            "blob": "0ab3450c0494a600707fd97b72f54b632f05f0ee",
             "content": "sha256:693e282817bd69306dfddd37f2eeb6bceb5953adebfb4e2c801eec6897cf0765",
             "locator": {
               "kind": "symbol",
@@ -48,11 +48,28 @@
         },
         {
           "anchor": {
-            "blob": "86edaf064d848420532474444e9d69dfed9e83e0",
+            "blob": "0ab3450c0494a600707fd97b72f54b632f05f0ee",
             "content": "sha256:f88629b38a93ffeac2e8ddce6eb88c654277fa48c07a34a30c9557e2064e610f",
             "locator": {
               "kind": "symbol",
               "name": "_write_converted_layout"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Mounted sync and completed poll retain computed proof counts and the actual blocking count in bounded answers while full checks remain in the retained log.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0ab3450c0494a600707fd97b72f54b632f05f0ee",
+            "content": "sha256:68e6c8137b3985a11ca978ad720c26f0dc47754f4392eb7cfca545c1bb1ad016",
+            "locator": {
+              "end": 249,
+              "kind": "line_range",
+              "start": 198
             }
           },
           "kind": "test"

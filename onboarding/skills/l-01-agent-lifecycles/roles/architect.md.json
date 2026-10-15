@@ -3,12 +3,12 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "713c3575f90a80ca1b29c6084ad37f0024a0c7e5",
+        "blob": "55753bd253d2eccdfe03bc6ea646b17576c4bc66",
         "content": "sha256:46f1ba247426a51bdbc0582688ec4bf236587c6044e4bf69131f40088de7167e",
         "locator": {
-          "end": 52,
+          "end": 54,
           "kind": "line_range",
-          "start": 52
+          "start": 54
         }
       },
       "id": "RLZ-1GCP9C",
@@ -22,12 +22,12 @@
     },
     {
       "anchor": {
-        "blob": "713c3575f90a80ca1b29c6084ad37f0024a0c7e5",
+        "blob": "55753bd253d2eccdfe03bc6ea646b17576c4bc66",
         "content": "sha256:1a037eb21173fb839661b344bf5886756e560da5642dc4347b03911c6587ed3c",
         "locator": {
-          "end": 36,
+          "end": 38,
           "kind": "line_range",
-          "start": 36
+          "start": 38
         }
       },
       "id": "RLZ-2T4Z9R",
@@ -41,12 +41,12 @@
     },
     {
       "anchor": {
-        "blob": "713c3575f90a80ca1b29c6084ad37f0024a0c7e5",
+        "blob": "55753bd253d2eccdfe03bc6ea646b17576c4bc66",
         "content": "sha256:64b014bf72a3ddf76a265ac494a328b3a6dd7cefdbc2e4057605d5664f140527",
         "locator": {
-          "end": 54,
+          "end": 56,
           "kind": "line_range",
-          "start": 54
+          "start": 56
         }
       },
       "id": "RLZ-418WGG",
@@ -60,8 +60,8 @@
     },
     {
       "anchor": {
-        "blob": "713c3575f90a80ca1b29c6084ad37f0024a0c7e5",
-        "content": "sha256:91f9d81abf15c4679a1e37659eac3b95d052b98c807be20f17089129ba0b272f",
+        "blob": "55753bd253d2eccdfe03bc6ea646b17576c4bc66",
+        "content": "sha256:cf4e5d6b85fa8f16e296d7a72da4bb4db79a5061a4be35fcc6fb976f8baca462",
         "locator": {
           "kind": "file"
         }
@@ -77,12 +77,12 @@
     },
     {
       "anchor": {
-        "blob": "713c3575f90a80ca1b29c6084ad37f0024a0c7e5",
+        "blob": "55753bd253d2eccdfe03bc6ea646b17576c4bc66",
         "content": "sha256:b86ed0ec194e278b441cef1148daa0cf7592bd50a2542659a5f085efe326d984",
         "locator": {
-          "end": 22,
+          "end": 24,
           "kind": "line_range",
-          "start": 22
+          "start": 24
         }
       },
       "id": "RLZ-8W0HVX",
@@ -96,8 +96,8 @@
     },
     {
       "anchor": {
-        "blob": "713c3575f90a80ca1b29c6084ad37f0024a0c7e5",
-        "content": "sha256:91f9d81abf15c4679a1e37659eac3b95d052b98c807be20f17089129ba0b272f",
+        "blob": "55753bd253d2eccdfe03bc6ea646b17576c4bc66",
+        "content": "sha256:cf4e5d6b85fa8f16e296d7a72da4bb4db79a5061a4be35fcc6fb976f8baca462",
         "locator": {
           "kind": "file"
         }
@@ -113,7 +113,7 @@
     },
     {
       "anchor": {
-        "blob": "713c3575f90a80ca1b29c6084ad37f0024a0c7e5",
+        "blob": "55753bd253d2eccdfe03bc6ea646b17576c4bc66",
         "content": "sha256:4a9dc567094ef1b313f0aa20658894f0313277c6e1e16e7c914234496a883352",
         "locator": {
           "end": 10,
@@ -132,12 +132,12 @@
     },
     {
       "anchor": {
-        "blob": "713c3575f90a80ca1b29c6084ad37f0024a0c7e5",
+        "blob": "55753bd253d2eccdfe03bc6ea646b17576c4bc66",
         "content": "sha256:8954e24288f5e81d675e3ce856592924eb75933b4cc3ca2626896200d59d9581",
         "locator": {
-          "end": 24,
+          "end": 26,
           "kind": "line_range",
-          "start": 24
+          "start": 26
         }
       },
       "id": "RLZ-QVQ9HA",
@@ -151,12 +151,12 @@
     },
     {
       "anchor": {
-        "blob": "713c3575f90a80ca1b29c6084ad37f0024a0c7e5",
+        "blob": "55753bd253d2eccdfe03bc6ea646b17576c4bc66",
         "content": "sha256:beb680d06c4adf9d4d1fa54719c8035f522b3291e395fe1ceded3bba42016d85",
         "locator": {
-          "end": 18,
+          "end": 20,
           "kind": "line_range",
-          "start": 18
+          "start": 20
         }
       },
       "id": "RLZ-SV2W4A",
@@ -170,8 +170,8 @@
     },
     {
       "anchor": {
-        "blob": "713c3575f90a80ca1b29c6084ad37f0024a0c7e5",
-        "content": "sha256:91f9d81abf15c4679a1e37659eac3b95d052b98c807be20f17089129ba0b272f",
+        "blob": "55753bd253d2eccdfe03bc6ea646b17576c4bc66",
+        "content": "sha256:cf4e5d6b85fa8f16e296d7a72da4bb4db79a5061a4be35fcc6fb976f8baca462",
         "locator": {
           "kind": "file"
         }
@@ -187,12 +187,12 @@
     },
     {
       "anchor": {
-        "blob": "713c3575f90a80ca1b29c6084ad37f0024a0c7e5",
+        "blob": "55753bd253d2eccdfe03bc6ea646b17576c4bc66",
         "content": "sha256:01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
         "locator": {
-          "end": 43,
+          "end": 45,
           "kind": "line_range",
-          "start": 43
+          "start": 45
         }
       },
       "id": "RLZ-XSMK0N",
@@ -206,12 +206,12 @@
     },
     {
       "anchor": {
-        "blob": "713c3575f90a80ca1b29c6084ad37f0024a0c7e5",
+        "blob": "55753bd253d2eccdfe03bc6ea646b17576c4bc66",
         "content": "sha256:4b2c97839463054b2f5307414e25c52bc948a6e1929f9f1a2b90ef7baf9d2a19",
         "locator": {
-          "end": 32,
+          "end": 34,
           "kind": "line_range",
-          "start": 32
+          "start": 34
         }
       },
       "id": "RLZ-Y1FRYJ",
@@ -225,7 +225,7 @@
     },
     {
       "anchor": {
-        "blob": "713c3575f90a80ca1b29c6084ad37f0024a0c7e5",
+        "blob": "55753bd253d2eccdfe03bc6ea646b17576c4bc66",
         "content": "sha256:cff008a580b31483b82250166a7d30f245042524986ab6a536f026323e0baaf1",
         "locator": {
           "end": 8,
@@ -244,8 +244,8 @@
     },
     {
       "anchor": {
-        "blob": "713c3575f90a80ca1b29c6084ad37f0024a0c7e5",
-        "content": "sha256:91f9d81abf15c4679a1e37659eac3b95d052b98c807be20f17089129ba0b272f",
+        "blob": "55753bd253d2eccdfe03bc6ea646b17576c4bc66",
+        "content": "sha256:cf4e5d6b85fa8f16e296d7a72da4bb4db79a5061a4be35fcc6fb976f8baca462",
         "locator": {
           "kind": "file"
         }
@@ -287,6 +287,23 @@
               "end": 66,
               "kind": "line_range",
               "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The Architect declares recorded invariant/family effects through task_doc before implementation only when the packet names them.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "55753bd253d2eccdfe03bc6ea646b17576c4bc66",
+            "content": "sha256:2128e942e3b0ccb9cbd2e813f09585bea2ec8c46d7bf92e0085fd8452be1ddf0",
+            "locator": {
+              "end": 16,
+              "kind": "line_range",
+              "start": 16
             }
           },
           "kind": "code"

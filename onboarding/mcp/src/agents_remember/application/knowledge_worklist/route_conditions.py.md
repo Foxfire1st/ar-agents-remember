@@ -27,8 +27,8 @@ predicate the generic closeout gate (MIK-R09, L09) applies.
   up the family row, so every condition of a family is answered by the family's one row in the leaf's history
   file (MIK-R07 rule 5).
 - **Which families are evaluated (`_Evaluation.conditions`, ruling Q1).**
-  - Every family with a `reached_family` item is evaluated on all four conditions.
-  - Any other family, on either side, is evaluated only for `route_path_absent`, and only on a route **this
+  - Only family IDs present in K_B enter this pass. A reached K_B family is evaluated on all four conditions; a family introduced only in K_C is excluded.
+  - Any other K_B family is evaluated only for `route_path_absent`, and only on a route **this
     leaf's range killed**: its directory exists at B and is absent at C (`_killed`, `_with_killed_routes`).
     This is the decision carried from L04 (ruling 1): a carried dead route the validator only reports
     (`R04.1-carried-route-absent`) becomes a mandatory item for the leaf that killed it.
@@ -107,8 +107,7 @@ predicate the generic closeout gate (MIK-R09, L09) applies.
   ruling 2026-09-29T22:40:22+02:00; ruling Q7 is recorded on L09.
 - **Review N4 (intended):** once one of an unreached family's routes is killed, `recordSatisfiesRoutes`
   requires the whole K_C record to satisfy MIK-R04, so the leaf repairs older drift of that family too.
-- **Review N8:** a family that exists only in K_C cannot be answered by a family row (`FamilyRow` judges a
-  K_B family); it needs a new family routed at a directory the same range deletes, so nothing is done now.
+- **Current new-family boundary.** `_Evaluation.conditions` now intersects discovered/reached IDs with `self.base.families`, so the old candidate-only-family route-condition gap is excluded here. This is no waiver of the candidate's structural validator obligations.
 
 ## Evidence
 
@@ -134,7 +133,11 @@ No configured live documentation source was available for this pass.
 - What each condition names in one view. [7]
 - The base view: K_B's routes over the current members. [8]
 - The facts shared by a family's conditions, recorded and effective locations. [9]
-- Reached families on all four conditions, others only on a killed route; retired skipped. [10]
+
+
+- Evaluate only K_B families; reached ones keep all four conditions, other killed-route families the existing subset [10]
+
+
 - Entries judged where their files lie at C. [11]
 - A killed route, and the families that have one. [12]
 - The two views; an unreached family answers only for killed routes. [13]
@@ -155,3 +158,15 @@ No meaningful cross-repo references found: the module reads the parsed memory si
 one code repository, handed to it by the worklist run.
 
 No cross-repo boundary is crossed by this file.
+
+
+## Current source contract
+
+The evaluated-family set is explicitly intersected with K_B family IDs before any four-condition or killed-route evaluation. A family introduced only in K_C is therefore excluded from this route-maintenance pass, even if reached/killed-route discovery mentions it.
+
+Retired-family skip, base/current route views, effective renamed locations, non-no_impact answering dispositions and recordSatisfiesRoutes remain as before. This does not waive validator rules or revive a retired family.
+
+These spans and input-card identities were independently rechecked after the supported L61 sync. Source observation supplies no test execution, installed-host acceptance or semantic verdict for unrelated inherited material.
+
+
+- Only family IDs already in K_B enter reached/killed-route evaluation; retired families remain skipped. [24]

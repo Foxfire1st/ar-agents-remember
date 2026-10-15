@@ -3,8 +3,26 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "e653d144087d2870170ba2bb24f20b6514eb46ac",
-        "content": "sha256:73394d3a217e092d64a67692e2ba76b8dd38753c7d9a9073e5ddd8257d31ded9",
+        "blob": "ada223b3a8283f105d8a9fd4a4ee2a9b915f0115",
+        "content": "sha256:9dee1270100f78df8c7b1c6db6fa1cf5ede8bf09651af1087d322c46e3a76489",
+        "locator": {
+          "kind": "symbol",
+          "name": "owner_history_problems"
+        }
+      },
+      "id": "RLZ-2GCRQ4",
+      "invariant": "INV-THFEVY",
+      "origin": {
+        "handoffEntry": "L54-curator-MIK-R54-v1-rule-11-actual-guards",
+        "leaf": "260928-MIK-L54"
+      },
+      "rationale": "The Writer applies literal new-token checks to its owned history without normalizing preserved closed labels.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "ada223b3a8283f105d8a9fd4a4ee2a9b915f0115",
+        "content": "sha256:0b37e950233e9dbcb7578bccba130f0cedc9b3f843d18509633d8cd210f885fe",
         "locator": {
           "kind": "file"
         }
@@ -20,8 +38,8 @@
     },
     {
       "anchor": {
-        "blob": "e653d144087d2870170ba2bb24f20b6514eb46ac",
-        "content": "sha256:ff72ddefd2aa6f5a09b880445b5007ea83b951c0ed16d885a579ee75430a88e9",
+        "blob": "ada223b3a8283f105d8a9fd4a4ee2a9b915f0115",
+        "content": "sha256:9dee1270100f78df8c7b1c6db6fa1cf5ede8bf09651af1087d322c46e3a76489",
         "locator": {
           "kind": "symbol",
           "name": "owner_history_problems"
@@ -38,8 +56,8 @@
     },
     {
       "anchor": {
-        "blob": "e653d144087d2870170ba2bb24f20b6514eb46ac",
-        "content": "sha256:ff72ddefd2aa6f5a09b880445b5007ea83b951c0ed16d885a579ee75430a88e9",
+        "blob": "ada223b3a8283f105d8a9fd4a4ee2a9b915f0115",
+        "content": "sha256:9dee1270100f78df8c7b1c6db6fa1cf5ede8bf09651af1087d322c46e3a76489",
         "locator": {
           "kind": "symbol",
           "name": "owner_history_problems"
@@ -56,7 +74,7 @@
     },
     {
       "anchor": {
-        "blob": "e653d144087d2870170ba2bb24f20b6514eb46ac",
+        "blob": "ada223b3a8283f105d8a9fd4a4ee2a9b915f0115",
         "content": "sha256:3cd222aedb40c187c6d3bd4813d007c090ed727bf40f4b65fa695ee893f8d186",
         "locator": {
           "kind": "symbol",
@@ -79,11 +97,28 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e653d144087d2870170ba2bb24f20b6514eb46ac",
+            "blob": "ada223b3a8283f105d8a9fd4a4ee2a9b915f0115",
             "content": "sha256:c57a75f0a25aa52a8c8a6e45108c1a1734ba06beaae78a50b30f151b5905424c",
             "locator": {
               "kind": "symbol",
               "name": "_FROZEN"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "Every non-base-frozen history row reports invalid item tokens with the row identity and current re-authoring remedy; base-frozen rows skip this added token check.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ada223b3a8283f105d8a9fd4a4ee2a9b915f0115",
+            "content": "sha256:9dee1270100f78df8c7b1c6db6fa1cf5ede8bf09651af1087d322c46e3a76489",
+            "locator": {
+              "end": 99,
+              "kind": "line_range",
+              "start": 64
             }
           },
           "kind": "code"
@@ -143,7 +178,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e653d144087d2870170ba2bb24f20b6514eb46ac",
+            "blob": "ada223b3a8283f105d8a9fd4a4ee2a9b915f0115",
             "content": "sha256:a3d28fc52505d21b8e41965767c5da4a5b3291441398c20b5b0187640ec2595a",
             "locator": {
               "kind": "symbol",
@@ -159,7 +194,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e653d144087d2870170ba2bb24f20b6514eb46ac",
+            "blob": "ada223b3a8283f105d8a9fd4a4ee2a9b915f0115",
             "content": "sha256:de44e03ca872897b86a4888c162830f5fb7c3e202f6cfec5883a03a3f5901c1f",
             "locator": {
               "kind": "symbol",
@@ -175,7 +210,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e653d144087d2870170ba2bb24f20b6514eb46ac",
+            "blob": "ada223b3a8283f105d8a9fd4a4ee2a9b915f0115",
             "content": "sha256:3cd222aedb40c187c6d3bd4813d007c090ed727bf40f4b65fa695ee893f8d186",
             "locator": {
               "kind": "symbol",

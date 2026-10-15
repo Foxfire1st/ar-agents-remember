@@ -42,7 +42,7 @@ re-anchored, and which K_B families' records changed. Since MIK-R14 it also clas
   that change also applies to link anchors through this shared body.
 - `Classification` holds the entry ID and kind (`EntryKind`: `realization` or `proof`, from `ProofEntry`, or
   `link`), invariant,
-  path, class, anchor, both blobs, both resolutions, the hitting hunks, `renamed_to` and `unique_match`.
+  path, class, anchor, both blobs, both resolutions, the hitting hunks, `renamed_to`, `unique_match` and optional mechanical `reason`.
   `contents()` is the per-side content identity used in item IDs (`absent` where unresolved);
   `to_document()` is its facts form.
 - The classifier memoizes: each entry is classified once per run (`classify`, `classified`).
@@ -106,7 +106,11 @@ No configured live documentation source was available for this pass.
 - Raising and covering classes. [2]
 - One entry's class and facts; the per-side content identity. [3]
 - Classify once per run. [4]
-- An entry's kind handed to the shared body, which decides the class with the unchanged-blob `untouched` rule. [5]
+
+
+- Shared anchor classification records an unavailable line-range source-blob reason without changing class precedence [5]
+
+
 - A `reconsider_on` link's anchor, classified like an entry with kind `link` and never recorded as one. [6]
 - The hunks that hit the range; `None` for a binary pair. [7]
 - The writer's carry-forward is not a re-anchor. [8]
@@ -130,3 +134,19 @@ No cross-repo boundary is crossed by this file.
 
 - The shared class order, with B-side resolution explicitly selected and C-side resolution using the candidate default; the definition-4 ruling and definition-7 rules remain. [1]
 - Current source delta inspected statically: Select B/C symlink modes without changing class precedence, link identity or carry; qualify the historical moved-code claim and caption. [19]
+
+
+## Current source contract
+
+Classification can now include an explanatory reason when a line-range anchor was recorded against a blob unavailable from the store, while either observed B/C blob differs from it. The same reason can be carried into a stale-invariant fact.
+
+The optional reason does not change the existing precedence of stale_at_base, moved_or_absent, touched, unchanged-blob untouched and carried. A failed blob-existence read raises CodeReadError; it is not evidence of ordinary absence. The reason is a mechanical observation, not a business-cause or execution verdict.
+
+These spans and input-card identities were independently rechecked after the supported L61 sync. Source observation supplies no test execution, installed-host acceptance or semantic verdict for unrelated inherited material.
+
+
+- Classification values retain optional mechanical reason beside the ordinary class and source facts. [20]
+
+- Unavailable recorded line-range blobs add a reason without replacing classification precedence. [21]
+
+- A failed blob-existence read raises CodeReadError rather than proving absence. [22]

@@ -1,0 +1,147 @@
+{
+  "path": "skills/c-05-create-or-update-onboarding-files/templates/inline-onboarding-block-template.md",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The inline adapter source reuses the file-level semantic model and describes storage, syntax, placement, metadata and digest differences.\n\nAnchor: \"It reuses the same semantic content model\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "80e865858386a4b52c71367b215e08eeba959df7",
+            "content": "sha256:c7b900b5eedb3458dfab97f4d7e270770e8079594f85b7963e63f8bcef1fe014",
+            "locator": {
+              "end": 5,
+              "kind": "line_range",
+              "start": 3
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The sample places governingOverview and the governing-overview link before purpose and the remaining semantic sections.\n\nAnchor: \"Governing Overview:\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "80e865858386a4b52c71367b215e08eeba959df7",
+            "content": "sha256:d598b2d8137dcea39dde385a77532eb5cc7f5fe9b63269be645a6bca939423de",
+            "locator": {
+              "end": 32,
+              "kind": "line_range",
+              "start": 9
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The docs placeholder ties no-evidence wording to live-source checks and explicitly allows recording a retrieval blocker.\n\nAnchor: \"Docs References:\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "80e865858386a4b52c71367b215e08eeba959df7",
+            "content": "sha256:964ed51d562e61af5b5ee71635e2a243f6c13bdd36d99f33e259dcfa582cd265",
+            "locator": {
+              "end": 41,
+              "kind": "line_range",
+              "start": 34
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The inline source guidelines preserve markers/keys, adapt outer delimiters, respect leading syntax and recompute the digest with the block removed.\n\nAnchor: \"Guidelines:\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "80e865858386a4b52c71367b215e08eeba959df7",
+            "content": "sha256:a1d8dd1b96a3e74100033d01f85b62fedab0b14e2368f852007d28d7dfe0501e",
+            "locator": {
+              "end": 51,
+              "kind": "line_range",
+              "start": 46
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The current c-05 package treats inline as an adapter to the shared file-level semantic content model.\n\nAnchor: \"Inline onboarding does not replace the file-level content model.\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4d90c238185e61a3bec8347aa1f8b50292cbc1dd",
+            "content": "sha256:a0b73a113d0a93d9298988c987656bf2953dc012b534baada30846f83b1be99a",
+            "locator": {
+              "end": 15,
+              "kind": "line_range",
+              "start": 8
+            },
+            "path": "skills/c-05-create-or-update-onboarding-files/SKILL.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The c-05 converted-memory branch selects the converted workflow rather than legacy metadata and history rules.\n\nAnchor: \"## Converted Memory\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4d90c238185e61a3bec8347aa1f8b50292cbc1dd",
+            "content": "sha256:af15e8a2eefaf79a119062872a1813e646d8259e28b6f8cdebc52ccb3bdff965",
+            "locator": {
+              "end": 53,
+              "kind": "line_range",
+              "start": 42
+            },
+            "path": "skills/c-05-create-or-update-onboarding-files/SKILL.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The converted workflow, not the inline template, documents writer entry movement before card relocation and reference re-authoring.\n\nAnchor: \"## A source file moved\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e071ead508fb6ee46a9f883dc3a5bf12260ebd28",
+            "content": "sha256:46d0183d24358fb6ddeaf2873d61694395199e74d9cceaedb329f68d21e4132e",
+            "locator": {
+              "end": 144,
+              "kind": "line_range",
+              "start": 130
+            },
+            "path": "skills/c-05-create-or-update-onboarding-files/workflows/converted-card-workflow.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "Converted cards have no legacy metadata table or in-card Update History and do not hand-author sidecars.\n\nAnchor: \"## What a converted card is\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e071ead508fb6ee46a9f883dc3a5bf12260ebd28",
+            "content": "sha256:c37c684764deb1c742f510fd62758673324a7bfe663c6447d4150822d0483643",
+            "locator": {
+              "end": 33,
+              "kind": "line_range",
+              "start": 7
+            },
+            "path": "skills/c-05-create-or-update-onboarding-files/workflows/converted-card-workflow.md"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

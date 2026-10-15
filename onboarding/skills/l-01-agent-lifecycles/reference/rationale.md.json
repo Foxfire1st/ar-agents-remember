@@ -1,0 +1,319 @@
+{
+  "path": "skills/l-01-agent-lifecycles/reference/rationale.md",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The manifest declares rationale reference-only and non-injected.\n\nAnchor: `\"rationale\"`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2d42ad92abef03a1873de4fd715985616f122689",
+            "content": "sha256:46cf9abcabb71f0d575741d738e327c06b92a104a33db0ca4777fa8344228ab9",
+            "locator": {
+              "end": 563,
+              "kind": "line_range",
+              "start": 558
+            },
+            "path": "skills/l-01-agent-lifecycles/composition-manifest.json"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "The reference retains ten-role/bootstrap session-open history separately from launcher identity.\n\nAnchor: `The registry holds **ten** roles`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9ea7c90c8ae558faed9ab19b4a8eb9bd4a87c2cb",
+            "content": "sha256:ccfa36a0ca8f12c1f2cab3e26fe149801e0149e07ed6135e90481b253e072b3c",
+            "locator": {
+              "end": 59,
+              "kind": "line_range",
+              "start": 55
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "The manifest retains bootstrap as a free-agent registry entry; this does not prove current native launchability.\n\nAnchor: `\"bootstrap\"`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2d42ad92abef03a1873de4fd715985616f122689",
+            "content": "sha256:561cb05064c9529b4853daa32f263fb73e79a4411b29448bbd25e20a83f787b3",
+            "locator": {
+              "end": 520,
+              "kind": "line_range",
+              "start": 508
+            },
+            "path": "skills/l-01-agent-lifecycles/composition-manifest.json"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "The source heading concerns launcher identity, not whether the native launcher exposes ten roles.\n\nAnchor: `## Why the launcher is not a tenth role`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9ea7c90c8ae558faed9ab19b4a8eb9bd4a87c2cb",
+            "content": "sha256:1791c6655d866da9d6e8aba5902a24b2fdda509adb22f2e14fb7836de8a1bac7",
+            "locator": {
+              "end": 48,
+              "kind": "line_range",
+              "start": 48
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "Canonical skill ownership remains explicit in the generator.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bfc9168b3d1a727fc00d12e21e949acfed4d3537",
+            "content": "sha256:556c2515bac2a5348f19a93d199ce8620848ee26c5e67dea565240287f582394",
+            "locator": {
+              "kind": "symbol",
+              "name": "CANONICAL_SKILLS"
+            },
+            "path": "scripts/sync-skills.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "14": {
+      "note": "The generator has a read-only check implementation; its presence does not prove a check passed.\n\nAnchor: `def check_targets`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bfc9168b3d1a727fc00d12e21e949acfed4d3537",
+            "content": "sha256:1c8dbc9ac78cd4e8aecbfeaece0b1cee9d5e1ab7d1d4ae36c7dc40afff255e22",
+            "locator": {
+              "end": 230,
+              "kind": "line_range",
+              "start": 213
+            },
+            "path": "scripts/sync-skills.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "15": {
+      "note": "The --check command branch dispatches to the check implementation, not a synchronization write.\n\nAnchor: `if args.check:`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bfc9168b3d1a727fc00d12e21e949acfed4d3537",
+            "content": "sha256:d530d65bfb82a61b4f9c1da86186da3e6b9eda71acdde53d70b7d6325ac792f4",
+            "locator": {
+              "end": 260,
+              "kind": "line_range",
+              "start": 254
+            },
+            "path": "scripts/sync-skills.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "16": {
+      "note": "The current thin router exposes seven role IDs and distinguishes retained registry entries.\n\nAnchor: `The role launcher supports these seven role IDs`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a8e2b869f7f277422f7b891f9c31efa0b3c45d4c",
+            "content": "sha256:3113377b9afc7711187a0731e67c7dd3abc4a91833280f7ce60eec772bbc83ae",
+            "locator": {
+              "end": 12,
+              "kind": "line_range",
+              "start": 6
+            },
+            "path": "skills/l-01-agent-lifecycles/SKILL.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "17": {
+      "note": "Consolidation provenance, excluded LOCR runtime changes and the later-compiler account are historical reference content.\n\nAnchor: `## Provenance of the consolidation`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9ea7c90c8ae558faed9ab19b4a8eb9bd4a87c2cb",
+            "content": "sha256:da78eddb7ca1a64ceb46028a4b64ce441a65db847f78bda55c8fc6d4b75f1c9b",
+            "locator": {
+              "end": 46,
+              "kind": "line_range",
+              "start": 27
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "18": {
+      "note": "Template categories, credits and historical notes remain reference prose, not universal role injection.\n\nAnchor: `## Why some templates keep their own shape`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9ea7c90c8ae558faed9ab19b4a8eb9bd4a87c2cb",
+            "content": "sha256:f213731ca811f32b8f8d1619961f62128c41d1da4304dd3f8166a996ea554880",
+            "locator": {
+              "end": 91,
+              "kind": "line_range",
+              "start": 61
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The current manifest order is role then operation; the old core-first manifest claim is historical.\n\nAnchor: `\"composition_order\"`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2d42ad92abef03a1873de4fd715985616f122689",
+            "content": "sha256:f184b155d9ef15df3ea506df8864ca5d9f62fb2f256c485415c047e030de9d72",
+            "locator": {
+              "end": 593,
+              "kind": "line_range",
+              "start": 585
+            },
+            "path": "skills/l-01-agent-lifecycles/composition-manifest.json"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The compiler vocabulary retains the older generic composition order without proving a current role capsule used it.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6d58977d0180423326b3c4c33f1de00b9453702e",
+            "content": "sha256:605c2bee8b0d54f4fe588a7becc0e193efc32cb36d5ccf70788f982e1e948e05",
+            "locator": {
+              "kind": "symbol",
+              "name": "CAPSULE_COMPOSITION_ORDER"
+            },
+            "path": "mcp/src/agents_remember/models/role_capsules/vocabulary.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The role-specific vocabulary separately declares role plus operation, not injected shared core.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6d58977d0180423326b3c4c33f1de00b9453702e",
+            "content": "sha256:6d5b484f150a59af3421ec71ca4228ec8d99521ef7b03f287932f07a5f0309fa",
+            "locator": {
+              "kind": "symbol",
+              "name": "CAPSULE_ROLE_COMPOSITION_ORDER"
+            },
+            "path": "mcp/src/agents_remember/models/role_capsules/vocabulary.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The reference retains its four-way separation and source-epoch operations count.\n\nAnchor: `## Why the corpus is shaped this way`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9ea7c90c8ae558faed9ab19b4a8eb9bd4a87c2cb",
+            "content": "sha256:a41a838bef1ac4fb8d17cd181e46459de15634684d784be4d79920c3c96216cb",
+            "locator": {
+              "end": 25,
+              "kind": "line_range",
+              "start": 8
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The operations row says nine blocks; it is the retained corpus account, not a live module census.\n\nAnchor: `nine blocks`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9ea7c90c8ae558faed9ab19b4a8eb9bd4a87c2cb",
+            "content": "sha256:bc4d69692c1a398555c83f05c61b52bd86c3da3aa696100457b4ef85ea7d4062",
+            "locator": {
+              "end": 18,
+              "kind": "line_range",
+              "start": 18
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "Repetition never becomes authority; the old/new obligation map belongs to the historical task.\n\nAnchor: `frequency of repetition is never authority`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9ea7c90c8ae558faed9ab19b4a8eb9bd4a87c2cb",
+            "content": "sha256:76f6de885fb88206cc93be2f4479d0ce8087b4437fe9847894b6dea7ac0aef8b",
+            "locator": {
+              "end": 25,
+              "kind": "line_range",
+              "start": 21
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "Nine files is historical consolidation wording, not a role or operation registry total.\n\nAnchor: `nine files`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9ea7c90c8ae558faed9ab19b4a8eb9bd4a87c2cb",
+            "content": "sha256:89fab4a28c0636e758a14317f910ce2559c94d86677660a8c2bd369541077ca9",
+            "locator": {
+              "end": 22,
+              "kind": "line_range",
+              "start": 22
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The launcher section describes a routing condition rather than a registry role.\n\nAnchor: `## Why the launcher is not a tenth role`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9ea7c90c8ae558faed9ab19b4a8eb9bd4a87c2cb",
+            "content": "sha256:825bac0ccc2433b3044b2180671a459f569cc38975ce6b8b196bacda9918095a",
+            "locator": {
+              "end": 53,
+              "kind": "line_range",
+              "start": 48
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

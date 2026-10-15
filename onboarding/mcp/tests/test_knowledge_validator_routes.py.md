@@ -41,6 +41,8 @@ Resolved: MIK-R09's routes have their own refusal tests, each entered through th
 
 Incoming converted-memory fast-forwards now have their own refusal-before-ref-movement cases. Structured refusal preserves per-path/rule violations and the full total while bounding the displayed list; repair clears the stored refusal. Text-only fallback remains a distinct case, not proof of structured validator output.
 
+Four further source cases pin literal-markup recovery (`fenced code block`/`code span`), Git-visible working-tree existence (untracked included, ignored excluded), text/JSON no-base notes that authored records are new, and optional endpoint observations. The endpoint fixture resolves an archived record packet while a sidecar version mismatch remains unresolved; both observations are printed without becoming validator refusals. These are fixture/CLI assertions, not a live endpoint publication or execution receipt.
+
 ## Evidence
 
 ### Docs References
@@ -73,3 +75,5 @@ No cross-repo boundary is crossed by this file.
 - Current source delta inspected statically: Distinguish the based pass from baseless JSON refusal and repair the stale legacy reportOnly=True caption; retain sync/publication and reader-boundary accounts. [7]
 
 - Incoming converted-memory fast-forwards now have their own refusal-before-ref-movement cases. Structured refusal preserves per-path/rule violations and the full total while bounding the displayed list; repair clears the stored refusal. Text-only fallback remains a distinct case, not proof of structured validator output. [8]
+
+- The four added CLI/source cases pin literal recovery, Git-visible paths, baseless notes and nongating archived/unresolved endpoint observations. [9]

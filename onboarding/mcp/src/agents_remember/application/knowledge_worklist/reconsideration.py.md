@@ -10,7 +10,7 @@
 `reconsideration_candidate` item.** It is step 8 of `compute.py` (after L10's step 7). Importing it registers the
 kind with its four declarations: subject `reconsider:<DEC-ID>#<alternative index>`, the facts (`decision`,
 `alternative`, `option`, `alternativeStatus`, `reconsiderWhen`, `decisionStatus`, `changed`), the satisfying row
-(the leaf's `reconsideration` row with that subject, `still_rejected` or `raise`) and the owner MIK-R14. The run
+(ordinarily the leaf's `reconsideration` row with that subject, `still_rejected` or `raise`, but not a noncurrent candidate refresh) and the owner MIK-R14. The run
 returns the items, each with `satisfiedBy`, and a `reconsideration.links` summary of every link it evaluated.
 
 ## Code Commentary
@@ -31,11 +31,7 @@ returns the items, each with `satisfiedBy`, and a `reconsideration.links` summar
     (`KnowledgeSide.record_file`, as MIK-R08 compares records), else `history_row` when this leaf's history file
     in K_C holds a row about it with one of `TRIGGERING_DISPOSITIONS` (`history.row_about`);
   - a `DEC-` target never fires: the summary notes "one hop: a change to a decision never chains on" (rule 3);
-  - a `route:<dir>` target (`_route_trigger`, ruling Q1) fires only through `history_row`: a row of this leaf
-    with disposition `rerouted`, `retired` or `deleted` whose subject is the route itself or a family whose routes
-    in K_B or K_C contain the directory (exact string match, review F8). A family `changed` row also fires when
-    its routes differ between K_B and K_C; a guarantee-only change with unchanged routes does not.
-    No directory-absence trigger exists, and the validator keeps allowing route targets;
+  - a `route:<dir>` target first fires `route_absent` when CodeTrees has at least one base path and no candidate path beneath the directory. Otherwise a qualifying family row fires `history_row` when either side gives the family a route equal to or under that directory (`.` covers all). Rerouted/retired/deleted dispositions qualify, as does a changed family row whose routes differ. A guarantee-only change does not. No registered row uses the route itself as subject.
   - an anchor (`_anchor_trigger`) is classified by L08's own `Classifier.classify_anchor`, like an entry but never
     one: `touched` or `moved_or_absent` fires `anchor`; `stale_at_base` fires `anchor_stale` (review F3, ruling
     05:31:11), so a stale link anchor asks for a judgment instead of going quiet. The summary records the class.
@@ -51,11 +47,7 @@ returns the items, each with `satisfiedBy`, and a `reconsideration.links` summar
   `rowSubject`, `disposition`, `entry`, `version`, `latestApproved`, `latestPacket`). The item ID is the registry's
   `item_id` over the kind, the subject and each fired link's `[link, target, trigger, identity]`, so a new change
   to the same target gives a new ID while the subject stays the same.
-- **`satisfiedBy`.** The leaf's rows by subject (from K_C's history file of the owner leaf) feed
-  `reconsideration_item_open`, with the superseded-decision IDs derived by this run; `satisfiedBy` names the row
-  or is `null`. Superseded links are skipped before item construction. The gate and direct judge recompute
-  their worklist, so their unchanged two-argument predicate receives only items of that fresh evaluation,
-  not an old persisted superseded item (MIK-R148 rule3, architect ruling a00091c0).
+- **`satisfiedBy` and currentness.** Ordinary triggers use the leaf's subject row. A candidate reauthored anchor at the linked reconsider_on position is first classified; when it differs from the base target and is not current at C, refresh_not_current remains open regardless of an ordinary answering row. The current link must be restored to K_B or made current. Superseded decisions remain a separate prior exemption. Fresh gate/direct evaluations additionally observe the candidate target and can discard the repaired currentness trigger before judging any remaining ordinary trigger; this is not blanket row satisfaction of a stale target.
 - **Summary.** `reconsideration_candidates` returns `ReconsiderationRun(items, {"links": evaluated})`, which
   `compute.py` persists as the document's `reconsideration` key.
 
@@ -86,9 +78,7 @@ returns the items, each with `satisfiedBy`, and a `reconsideration.links` summar
 
 ### Todos
 
-- **Accepted note R6-1 (ruling 11:53:13):** after a `still_rejected` refresh, reverting the anchored code in the
-  same leaf leaves the link at content that never lands, so the next leaf raises the same subject as
-  `anchor_stale`. It is loud, not silent, and one answer clears it.
+- **Current correction to historical R6-1.** Reverting code after a still_rejected anchor refresh can now surface refresh_not_current in this same leaf. The earlier next-leaf-only/loud-and-one-row-clears-it limitation is no longer the current contract: an invalid current target needs restoration or repair, not another unchanged judgment row.
 - **L09:** an unanswered candidate blocks closeout (D29) through the gate's generic rule.
 
 ## Evidence
@@ -106,7 +96,11 @@ No configured live documentation source was available for this pass.
 ### Repo-Internal References
 
 
-- The module docstring: base-only link evaluation, both-side supersession, unchanged triggers and row meanings. [1]
+
+
+- Base-only reconsideration evaluation includes route absence and noncurrent candidate-refresh refusal, with both-side supersession retained [1]
+
+
 
 - The route dispositions and the decision prefix of the one-hop guard. [2]
 - The kind registered with its facts, satisfying row and owner. [3]
@@ -123,9 +117,17 @@ No configured live documentation source was available for this pass.
 
 - Record targets: route, one-hop note, record file, then a triggering row. [9]
 
-- A route fires through rerouting/retiring/deleting rows, or a changed family row whose routes differ. [10]
 
-- An anchor classified like an entry; `stale_at_base` fires `anchor_stale` (F3). [11]
+
+- Route absence needs no history row; family fallback accepts equal or nested routes and no route-subject row [10]
+
+
+
+
+
+- Candidate anchor refreshes are checked for currentness before ordinary base-anchor trigger classification [11]
+
+
 - A requirement fires only when resolved and a newer version is approved; facts carry `latestPacket` (F4). [12]
 
 - The item facts/ID and row satisfaction use the run's superseded set. [13]
@@ -136,7 +138,7 @@ No configured live documentation source was available for this pass.
 - `touched` and `moved_or_absent` fire, `carried` does not, and the link joins no entries. [17]
 - Only a newer approved version fires; no manifest, an unresolved endpoint or no root never does. [18]
 - One hop: D12 raises nothing when D18 changes. [19]
-- A route target fires only on a retiring row; code gone with no row raises nothing. [20]
+The predecessor route-row-only regression caption is historical; the now-released test source asserts route_absent without a row. Its original group remains inherited custody, not the old proposition renewed. [20]
 - A superseded decision raises nothing and its links are listed skipped. [21]
 - A stale link anchor raises `anchor_stale`. [22]
 
@@ -171,3 +173,23 @@ assertion alone is not a stimulus-rich proof about newly wired candidate links.
 The source evaluation loop remains base-only. Cited assertions are not a fresh
 collection or execution result. Supersession rationale formerly attributed to
 a3d79e94 is convergently owned by the landed MIK-R148 account above.
+
+
+## Current source contract
+
+Route reconsideration now fires when a route had files at B and none at C without needing a history row; family-row fallback accepts a family route equal to or beneath the requested directory rather than requiring exact membership. Candidate reauthored reconsider anchors that are not current at C raise refresh_not_current.
+
+No registered row has the route itself as its subject. A noncurrent refresh is not answered merely by still_rejected/raise: restore the base link or make the target current. Supersession is checked separately and takes precedence; the direct gate also re-observes restored/current targets before judging remaining ordinary triggers. Base-only link evaluation and the one-hop decision-target guard remain.
+
+These spans and input-card identities were independently rechecked after the supported L61 sync. Source observation supplies no test execution, installed-host acceptance or semantic verdict for unrelated inherited material.
+
+
+- Directory absence fires without a history row; fallback family routes may be equal or nested. [30]
+
+- A reauthored candidate reconsider anchor is checked for currentness before the base-anchor trigger. [31]
+
+- Current reconsideration facts use the shared satisfying predicate after deriving supersession. [32]
+
+- A noncurrent refresh remains open even with an ordinary answering row, except superseded decisions. [33]
+
+- The gate independently observes restoration/currentness before judging remaining triggers. [34]

@@ -71,8 +71,7 @@ None.
 
 - **Informational, never counted (architect ruling, 2026-09-29).** The section says so in its own text: the
   admission rule (MIK-R27) accepts criteria other than a proving test. It is not an input to
-  `curator_actionable_count`, the attestation or the wire summary, for the same reason as the
-  `knowledgeReview` section. No count field is added to the strict summary model.
+  `curator_actionable_count` or the attestation's count fields. The wire summary now separately exposes optional `invariantsWithoutProofCount` when the input is present; that informational count adds no gate or actionable finding.
 - **Unconverted trees render nothing.** The controller passes `None` for every tree without the layout
   marker, so today's checklist bytes are unchanged before MIK-R37.
 - Each row names the tests the invariant's recorded `origin.handoff.evidence` mentions (the migrated
@@ -81,7 +80,6 @@ None.
 
 - The defaulted input and its rows. [1]
 - The section renders only for a list, as information that moves no count. [2]
-- The wire summary is identical with and without the list; an unconverted checklist has no section. [3]
 
 ## 260928-MIK-L08 The Knowledge-Worklist Section (MIK-R08 Rule 7)
 
@@ -185,3 +183,5 @@ that a second consumer can *consume* the formula instead of restating it: the fa
 routing report calls this function, so the report cannot drift from the checklist it reports into, and
 "gains no fourth term" is a property of one function rather than a convention each caller re-implements.
 The `knowledgeReview` section remains outside it, for the same reason as before.
+
+- The proof-coverage count is informational in the summary; after normalizing that count and artifact paths, actionable count still stays zero. [3]

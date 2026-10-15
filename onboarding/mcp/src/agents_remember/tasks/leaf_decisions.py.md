@@ -39,7 +39,7 @@ recording block, and afterwards replays into the caller's recording only part of
 
 - when the document is established: the rows of the leaf's own document, and every row whose identity is
   not a plain `sha256:` value, that is, a file that was absent, unreadable or read at two identities. A
-  sibling that was read in full and ruled out leaves no row;
+  sibling read in full and ruled out becomes an examined audit observation, not a kept dependency row;
 - when the leaf has no claimant: every row it opened — each sibling read in full and the exact direct
   JSON listing. The terminal task-root resolution is one of the admitted unrecorded B5 selectors, so no
   resolution row exists. A performed lookup that finds no claimant is evidence of absence: those
@@ -48,8 +48,7 @@ recording block, and afterwards replays into the caller's recording only part of
 
 A caller that keeps a result with its recorded rows therefore depends on the leaf's own document. When the
 lookup established a claimant it depends on no sibling it merely ruled out; when the lookup found no
-claimant, every opened document and the exact listing are inputs. A sibling that starts to claim the leaf
-changes the answer of the next lookup, which a keyed caller makes again before it uses what it kept.
+claimant, every opened document and the exact listing are inputs. Ruled-out sibling observations and their listing remain outside the admitted kept dependency set. A sibling later claiming the leaf is not silently an input of an already kept view until its age/capacity bound expires; request identity checks remain separate and unchanged.
 Outside any recording block the lookup records nothing and its answers are the same. A caller that only
 rechecks recorded rows — the moved-input check of the leaf-wide computation — performs no lookup and
 records no such rows.
@@ -61,6 +60,9 @@ decision entry whose `at` equals the citation. Otherwise it returns the reason: 
 task document, no entry at `at`, or several entries at `at`.
 
 ## Evidence
+
+- Strict lookup replays the claimant and failed observations while recording readable ruled-out siblings as examined, outside kept dependencies. [17]
+
 
 - The module docstring: the strict lookup and what it records as read. [9]
 - The lookup inside a nested recording, and the rows it replays to the caller. [10]

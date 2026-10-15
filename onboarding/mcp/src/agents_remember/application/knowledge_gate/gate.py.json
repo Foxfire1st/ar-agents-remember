@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "8c4a9c988250c29d23f6ac74838fe8a92a2feb4c",
+        "blob": "7d84e7737b95e1959b2d2e7b08c35395c662367f",
         "content": "sha256:1557b61d8f9f64ea72f61cb3d47d899a22625aadf36044fd5f6bf1a4cfa9d0d4",
         "locator": {
           "kind": "symbol",
@@ -18,6 +18,24 @@
       },
       "rationale": "Names in the gate's findings the file a row goes to, reading an attempt as frozen when it is closed in a base or in the leaf's memory HEAD, as the writer does.",
       "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "7d84e7737b95e1959b2d2e7b08c35395c662367f",
+        "content": "sha256:067ab8a8ca9e3383a2c81592c90d0bb97dc556787c82f1288f1c8ebb39c2eda9",
+        "locator": {
+          "kind": "symbol",
+          "name": "evaluate_leaf_gate"
+        }
+      },
+      "id": "RLZ-ZVCKFC",
+      "invariant": "INV-7PGZ9Y",
+      "origin": {
+        "handoffEntry": "L54-curator-MIK-R55-v1-rule-6-actual-guards-wave-70",
+        "leaf": "260928-MIK-L54"
+      },
+      "rationale": "Computed gate reads are replayed into the caller before remembering the result, so a non-memo-hit does not lose consumed dependencies.",
+      "role": "propagation-persistence"
     }
   ],
   "references": {
@@ -77,7 +95,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8c4a9c988250c29d23f6ac74838fe8a92a2feb4c",
+            "blob": "7d84e7737b95e1959b2d2e7b08c35395c662367f",
             "content": "sha256:1557b61d8f9f64ea72f61cb3d47d899a22625aadf36044fd5f6bf1a4cfa9d0d4",
             "locator": {
               "kind": "symbol",
@@ -93,7 +111,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8c4a9c988250c29d23f6ac74838fe8a92a2feb4c",
+            "blob": "7d84e7737b95e1959b2d2e7b08c35395c662367f",
             "content": "sha256:ee396c2f7e34b571e447ffdf355dad7fd2a1f32c3f18f68a2a7d82020fc34e2b",
             "locator": {
               "kind": "symbol",
@@ -109,7 +127,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "43c3ce60b302f5e61445491c0fe97a0fd7d84a69",
+            "blob": "896036cda96da332680be444bab8b463b0170846",
             "content": "sha256:42d698d6d5a57601141e324cf8d1b1385a279dcabd6fcca186537e83e130e427",
             "locator": {
               "kind": "symbol",
@@ -142,7 +160,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8c4a9c988250c29d23f6ac74838fe8a92a2feb4c",
+            "blob": "7d84e7737b95e1959b2d2e7b08c35395c662367f",
             "content": "sha256:00e8d3c2644548425cdaf3a7df1b879b6c11e4353bb44cae12464f1ba9e0ac17",
             "locator": {
               "kind": "symbol",
@@ -158,7 +176,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8c4a9c988250c29d23f6ac74838fe8a92a2feb4c",
+            "blob": "7d84e7737b95e1959b2d2e7b08c35395c662367f",
             "content": "sha256:77a0a195ed0edbb32108aed3e34a5581ea4c853012dfae7fa18fb3a23d2d1833",
             "locator": {
               "kind": "symbol",
@@ -174,7 +192,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8c4a9c988250c29d23f6ac74838fe8a92a2feb4c",
+            "blob": "7d84e7737b95e1959b2d2e7b08c35395c662367f",
             "content": "sha256:f16ec98d0f124b63defc04a2c45d39f39297256d91a1796d218a356a25e50d9b",
             "locator": {
               "kind": "symbol",
@@ -207,7 +225,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8c4a9c988250c29d23f6ac74838fe8a92a2feb4c",
+            "blob": "7d84e7737b95e1959b2d2e7b08c35395c662367f",
             "content": "sha256:fd1c2453eab711c730a817cd061eb137272c4a519a223ec660826f949f200f7e",
             "locator": {
               "kind": "symbol",
@@ -218,11 +236,45 @@
         },
         {
           "anchor": {
-            "blob": "8c4a9c988250c29d23f6ac74838fe8a92a2feb4c",
+            "blob": "7d84e7737b95e1959b2d2e7b08c35395c662367f",
             "content": "sha256:8a568b536b4ae188bd7d81571bc2bc7d76953c74f7a8c911d3cdf2639fad9382",
             "locator": {
               "kind": "symbol",
               "name": "GateFinding"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "20": {
+      "note": "Cold evaluation replays its collected reads before memo admission; memo-hit worklist persistence remains optional.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7d84e7737b95e1959b2d2e7b08c35395c662367f",
+            "content": "sha256:a00fe7e6c55be9203adeba74cad6c0c85e69e67e151ca5a12f50d7a6370797f4",
+            "locator": {
+              "end": 300,
+              "kind": "line_range",
+              "start": 277
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "21": {
+      "note": "Applicability delegates to leaf_gate_applies and treats unreadable layout probes as applicable.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7d84e7737b95e1959b2d2e7b08c35395c662367f",
+            "content": "sha256:590b94dd5e304d0e3da4bb3e7ba39a4f75b4c940dfc1cb75c8ef909560292014",
+            "locator": {
+              "end": 327,
+              "kind": "line_range",
+              "start": 321
             }
           },
           "kind": "code"
@@ -234,7 +286,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8c4a9c988250c29d23f6ac74838fe8a92a2feb4c",
+            "blob": "7d84e7737b95e1959b2d2e7b08c35395c662367f",
             "content": "sha256:6ddf9b4dfc8bd9675596ce7343efb9344a7e35d2a1f3fb1f0d3414ea3b59fa99",
             "locator": {
               "kind": "symbol",
@@ -250,7 +302,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8c4a9c988250c29d23f6ac74838fe8a92a2feb4c",
+            "blob": "7d84e7737b95e1959b2d2e7b08c35395c662367f",
             "content": "sha256:740c17c91d0fc3c65e5ed3530761e8e984c2510390b236c50389c77dbe5d5432",
             "locator": {
               "kind": "symbol",
@@ -266,7 +318,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8c4a9c988250c29d23f6ac74838fe8a92a2feb4c",
+            "blob": "7d84e7737b95e1959b2d2e7b08c35395c662367f",
             "content": "sha256:d933a755a1153049feff1f7157f4afed912fe5f0ff83b43663061e60bc24506f",
             "locator": {
               "kind": "symbol",
@@ -293,7 +345,7 @@
         },
         {
           "anchor": {
-            "blob": "8c4a9c988250c29d23f6ac74838fe8a92a2feb4c",
+            "blob": "7d84e7737b95e1959b2d2e7b08c35395c662367f",
             "content": "sha256:590b94dd5e304d0e3da4bb3e7ba39a4f75b4c940dfc1cb75c8ef909560292014",
             "locator": {
               "kind": "symbol",
@@ -304,7 +356,7 @@
         },
         {
           "anchor": {
-            "blob": "8c4a9c988250c29d23f6ac74838fe8a92a2feb4c",
+            "blob": "7d84e7737b95e1959b2d2e7b08c35395c662367f",
             "content": "sha256:4b0d9dfa5ed953514cf630cae717815b34cc2297755e9258dd9d44e5b77339bb",
             "locator": {
               "kind": "symbol",
@@ -320,7 +372,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8c4a9c988250c29d23f6ac74838fe8a92a2feb4c",
+            "blob": "7d84e7737b95e1959b2d2e7b08c35395c662367f",
             "content": "sha256:cff94d892139825bcfba923200a8dc2a07fef59b881fb2b760cb268ecb249eac",
             "locator": {
               "kind": "symbol",
@@ -331,7 +383,7 @@
         },
         {
           "anchor": {
-            "blob": "8c4a9c988250c29d23f6ac74838fe8a92a2feb4c",
+            "blob": "7d84e7737b95e1959b2d2e7b08c35395c662367f",
             "content": "sha256:3af1450a2461edec9852f158e36e1ee5bcb7bc8b28bc87377fa717436d877abd",
             "locator": {
               "kind": "symbol",
@@ -347,7 +399,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8c4a9c988250c29d23f6ac74838fe8a92a2feb4c",
+            "blob": "7d84e7737b95e1959b2d2e7b08c35395c662367f",
             "content": "sha256:17037a175f4593b8725b96f39919c45e55126337a9a2eb70e4be495d849db0f8",
             "locator": {
               "kind": "symbol",
@@ -358,7 +410,7 @@
         },
         {
           "anchor": {
-            "blob": "8c4a9c988250c29d23f6ac74838fe8a92a2feb4c",
+            "blob": "7d84e7737b95e1959b2d2e7b08c35395c662367f",
             "content": "sha256:db034f419381cdeaaae2de3db0235fd24e8c1790df7b66963a6d0848f2e9b589",
             "locator": {
               "kind": "symbol",
@@ -369,7 +421,7 @@
         },
         {
           "anchor": {
-            "blob": "8c4a9c988250c29d23f6ac74838fe8a92a2feb4c",
+            "blob": "7d84e7737b95e1959b2d2e7b08c35395c662367f",
             "content": "sha256:6c218e48ab1053e4ab0d65a1ea4e7486a8768d8badb050a32279c09fa393bc3f",
             "locator": {
               "kind": "symbol",
@@ -385,7 +437,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8c4a9c988250c29d23f6ac74838fe8a92a2feb4c",
+            "blob": "7d84e7737b95e1959b2d2e7b08c35395c662367f",
             "content": "sha256:f16ec98d0f124b63defc04a2c45d39f39297256d91a1796d218a356a25e50d9b",
             "locator": {
               "kind": "symbol",
@@ -396,7 +448,7 @@
         },
         {
           "anchor": {
-            "blob": "8c4a9c988250c29d23f6ac74838fe8a92a2feb4c",
+            "blob": "7d84e7737b95e1959b2d2e7b08c35395c662367f",
             "content": "sha256:cba31d7e6cdb7ddbc1ae81b2bfd2b43ffea73bd6575b3ff3ee5040f50514e3e2",
             "locator": {
               "kind": "symbol",

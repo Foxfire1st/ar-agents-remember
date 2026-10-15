@@ -1,0 +1,59 @@
+{
+  "path": "mcp/src/agents_remember/application/knowledge_writer/entry_handles.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "86fab3d664062528f6b8931fc09d8f5075cc6212",
+        "content": "sha256:4699002d9185894e75e299754c900f08f35055b2746113cd364f4f4b8129c2c0",
+        "locator": {
+          "kind": "symbol",
+          "name": "assign_entries"
+        }
+      },
+      "id": "RLZ-0NFQEF",
+      "invariant": "INV-FJQQ5A",
+      "origin": {
+        "handoffEntry": "MIK-R54@v1 rule 3",
+        "leaf": "260928-MIK-L54"
+      },
+      "rationale": "This boundary resolves a same-document authoring entry, refuses an unequal attachment statement, and maps the attachment to the author's allocated invariant only after equality succeeds.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "86fab3d664062528f6b8931fc09d8f5075cc6212",
+        "content": "sha256:bb2c4f10df1a304437e698e0a8cab534c91a773e2e81f7a412e985d06f0937ec",
+        "locator": {
+          "kind": "symbol",
+          "name": "ordered_entries"
+        }
+      },
+      "id": "RLZ-Q259VV",
+      "invariant": "INV-FJQQ5A",
+      "origin": {
+        "handoffEntry": "MIK-R54@v1 rule 3",
+        "leaf": "260928-MIK-L54"
+      },
+      "rationale": "This ordering seam places same-document authoring entries before dependent attachments.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Resolves same-document handoff invariant handles after allocating the entries that author those invariants. A local handoff handle is not a separately minted canonical truth identity. Input list position cannot make a valid author inaccessible, and a matching-looking handle with a different statement is a reported authoring problem.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "86fab3d664062528f6b8931fc09d8f5075cc6212",
+            "content": "sha256:0acd2af598b2eeaa83823dd10013e2732cf885bce0679854f28d3a55f12ca13f",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

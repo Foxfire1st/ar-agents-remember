@@ -7,7 +7,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d539eb85c4a5a310b10e166e6ca1991af3fa83ed",
+            "blob": "0256098f652dc34be5986d7dcab77243a655f959",
             "content": "sha256:c96d2dfa77ba3d0c63814481350ff4213d554a8204cc3ea10c15c7c1ce8d7f0b",
             "locator": {
               "end": 11,
@@ -40,7 +40,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d539eb85c4a5a310b10e166e6ca1991af3fa83ed",
+            "blob": "0256098f652dc34be5986d7dcab77243a655f959",
             "content": "sha256:4e8f0ee59e4dac2a9e38a8452d74ed20d42dacb261a6b17b7b83ef550ba19e86",
             "locator": {
               "kind": "symbol",
@@ -52,15 +52,16 @@
       ]
     },
     "12": {
-      "note": "The checklist section is information that moves no count.",
+      "note": "The checklist normalizes artifact paths and the informational proof count while actionable count stays zero and the section remains not a gate.",
       "targets": [
         {
           "anchor": {
-            "blob": "598b84d6b63c399c08e71e94ec6d7c3ea806afeb",
-            "content": "sha256:34525bc8d9a84d228dd0827a93d992f393828d1cea11be4ea34a57b1aa483e74",
+            "blob": "0256098f652dc34be5986d7dcab77243a655f959",
+            "content": "sha256:cc162acf98173fc3468f60f2cdc618d85d01b5ecd4304bf633a08ad91e6766cd",
             "locator": {
-              "kind": "symbol",
-              "name": "test_the_checklist_shows_the_list_as_information_that_moves_no_count"
+              "end": 429,
+              "kind": "line_range",
+              "start": 399
             }
           },
           "kind": "test"
@@ -119,7 +120,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d539eb85c4a5a310b10e166e6ca1991af3fa83ed",
+            "blob": "0256098f652dc34be5986d7dcab77243a655f959",
             "content": "sha256:2708f82dd0fb86f72c4046a5d04a43445e5bfeb547fd1efeede558d0142ed98e",
             "locator": {
               "kind": "symbol",
@@ -130,7 +131,7 @@
         },
         {
           "anchor": {
-            "blob": "d539eb85c4a5a310b10e166e6ca1991af3fa83ed",
+            "blob": "0256098f652dc34be5986d7dcab77243a655f959",
             "content": "sha256:c19db846abeb908c1fd2011ee55ba15281fa1c1b10e64813591a19ea20d26710",
             "locator": {
               "kind": "symbol",
@@ -194,7 +195,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d539eb85c4a5a310b10e166e6ca1991af3fa83ed",
+            "blob": "0256098f652dc34be5986d7dcab77243a655f959",
             "content": "sha256:c95af7a1bbc79d3a8a1eae9131731e4171e3f7349832637befc86e6fcf0bcc78",
             "locator": {
               "kind": "symbol",
@@ -210,7 +211,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d539eb85c4a5a310b10e166e6ca1991af3fa83ed",
+            "blob": "0256098f652dc34be5986d7dcab77243a655f959",
             "content": "sha256:3feaa92e5c0f2bc4e07e617dcf5763ba806f550724bd4e5ef87504cd1cdbcc1f",
             "locator": {
               "kind": "symbol",

@@ -57,7 +57,7 @@ The same-size, same-second Git rewrite scenario imports the single `rewrite_in_t
     a frozen invariant row whose entry the writer carried is not judged again; the landing check freezes the first attempt
     only once the contract records that closeout.
   - `test_the_latest_row_about_a_subject_governs_across_attempts`: for the writer, the gate's currentness and
-    the validator's re-anchor rule; a `changed` row that restates no earlier `changed` row is refused.
+    the validator's re-anchor rule; a `changed` row that restates no earlier `changed` row is refused. The refusal request explicitly supplies `world.gate().worklist`, so it reaches revision/changed-row admission rather than stopping at missing-worklist preflight.
 
 ### Conventions
 - The world is `knowledge_gate_test_support.build_gated`; `_close_out_and_integrate` closes the history, commits
@@ -85,11 +85,9 @@ The same-size, same-second Git rewrite scenario imports the single `rewrite_in_t
 - `test_a_reopened_leaf_writes_its_next_attempt_and_its_history_is_every_file` owns the current boundary described above. [25]
 - `test_the_public_closeout_refuses_an_open_item_and_commits_once_it_is_answered` owns the current boundary described above. [26]
 
-- `test_the_latest_row_about_a_subject_governs_across_attempts` owns the current boundary described above. [28]
 
 - The shared owner establishes a same-size rewrite in the index-write second. [29]
 
-- `test_a_file_rewritten_while_the_gate_runs_is_never_committed_unjudged` owns the current boundary described above. [27]
 
 - The module docstring: reopen after a converted closeout. [30]
 - Attempt files are named, ordered and backward compatible. [32]
@@ -103,7 +101,6 @@ The same-size, same-second Git rewrite scenario imports the single `rewrite_in_t
 - Legacy preview refuses without evaluating the invariant gate or changing the compared sides. [40]
 
 - A file rewritten while the gate runs is never committed unjudged. [42]
-- The latest row about a subject governs across attempts. [43]
 - A world whose contract records the leaf's completed closeout that was not integrated. [44]
 - The public closeout, run whole. [45]
 
@@ -125,3 +122,7 @@ No cross-repo boundary is crossed by this file.
 - The merged reading includes refreshed attempt-2 traces, and `_history_rows` keeps the winning row's own closed flag. [37]
 - A continued leaf writes its next attempt, including file/overview source-bound traces after the new edit; frozen invariant history remains separate. [41]
 - Current source delta inspected statically: Replace closed-trace presence claims with refreshed source bindings and own-file closed provenance; retain freeze and exact-tree assertions. [46]
+
+- `test_a_file_rewritten_while_the_gate_runs_is_never_committed_unjudged` owns the current boundary described above. [27]
+- `test_the_latest_row_about_a_subject_governs_across_attempts` owns the current boundary described above. [28]
+- The latest row about a subject governs across attempts. [43]

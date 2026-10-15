@@ -10,12 +10,13 @@ Proof that a leaf authored before its series contract exists gets its master lin
 
 ## Code Commentary
 
-Each case builds one scratch coordination root, one code repository and one external memory repository, authors both documents through the real `task_doc` plane, and drives the real public start. `_start_leaf` runs `worktree_start` with `memory_mode="external"`, so the binding proof exercises the only supported topology. The four cases are unchanged in intent: the pre-contract leaf gets its series-contract path, enclosure ref and lifecycle stamp at start; an already-damaged document is repaired additively; a leaf with no master document is refused with its remedy and writes nothing; and master-first planning stays usable with leaves unstamped until start.
+Each case builds one scratch coordination root, one code repository and one external memory repository, authors both documents through the real `task_doc` plane, and drives the real public start. `_start_leaf` runs `worktree_start` with `memory_mode="external"`, so the binding proof exercises the only supported topology. The four cases are unchanged in intent: the pre-contract leaf gets its series-contract path, enclosure ref and lifecycle stamp at start; an already-damaged document is repaired additively; a leaf explicitly supplied with `master=None` is refused with `Sub-task publication requires a master.` and leaves both task-directory JSON/Markdown populations and master/leaf paths absent; and master-first planning stays usable with leaves unstamped until start.
 
 ## Evidence
 
 - Start runs with external memory [16]
 - Pre-contract leaf gains its link at start [17]
 - Damaged document repaired additively by its next start [18]
-- Leaf with no master document refused with remedy, nothing written [19]
 - Master-first planning leaves stay unstamped until start [20]
+
+- Explicit master=None refuses with the exact master-required message and leaves all task JSON/Markdown and master/leaf paths absent. [19]

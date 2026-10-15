@@ -14,6 +14,8 @@ The instruction-removal sweep includes all eight shipped harness skill roots as 
 
 ### Current Contract
 
+The added no-master matrix calls the real `task_doc_tool` for `create`, `replace`, `set_field` and `set_status`. Each call must raise exactly `Sub-task publication requires a master.` and preserve the immediate task-root file mapping and bytes. Low-level writes construct the orphan fixture; they do not demonstrate successful public orphan publication. A final assertion retains the saved document's `subTask` kind. This is source inspection, not execution or completion authority.
+
 Removed-read tests assert ok=false/operation-removed, canonical file guidance, unchanged JSON/Markdown, no steps and rejection of an undeclared model key. Ordinary write fixtures use their fixed 40-character coordination root; that measure is distinct from location-separated content measurement. ApplicationWriteAnswers and TaskDocReadRemovalSweepTests cover phrase answers, dry diffs without master/rendered dumps, by-file section bytes/SHA256 and conflict/nonregular input refusal, and removal of read instructions/helpers. Earlier successful checklist-read defects are historical. These source tests do not forbid best-effort identity parsing or certify a fresh registered session. Parent synchronization preserves manual scope. The renamed test_explicit_cross_series_master_ref_is_refused_not_fallen_back expects TaskDocError containing the invalid reference, folder constraint and remedy; it checks unchanged parent bytes and an empty subtask list, not an answered successful create. The pending-parent/done-child create case now reports `0/1` and keeps the parent row inProgress. The added five-major/eight-child case uses the real create tool and persisted JSON plus step_done/step_total to assert `1/5`; it is not just an object with fabricated summary counters.
 
 ### Logic
@@ -62,6 +64,9 @@ The native create call persists five major steps and eight nested children. Retu
 - Real create tool plus saved JSON declares five-major/eight-child count assertions; source inspection is not a test run or acceptance. [29]
 
 ## Evidence
+
+- All four public task_doc publication operations refuse the masterless subTask with the exact message and preserve the immediate task-root file set and bytes. [30]
+
 
 ### Docs References
 

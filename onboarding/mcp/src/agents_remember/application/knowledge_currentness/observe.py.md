@@ -25,8 +25,10 @@ identity (`models/knowledge_files/anchor_content`), so there is no second resolv
   packet table's checks that need no resolution, in this order:
   1. no tree, or an unreadable tree: `unverifiable`, with the tree's problem;
   2. the path is absent at T (no regular file): `stale`;
-  3. T's blob equals the recorded blob: `current`, whatever the locator kind;
-  4. only for a changed blob, an unsupported locator kind (`_unsupported`: a kind outside
+  3. for a `symbol` locator, read the observed blob as UTF-8; invalid UTF-8 is
+     `unverifiable`, even when the blob equals the recorded blob;
+  4. T's blob equals the recorded blob: `current`, after that symbol-read check;
+  5. only for a changed blob, an unsupported locator kind (`_unsupported`: a kind outside
      `_SUPPORTED_LOCATORS`, or a `symbol` in a file no shipped grammar reads, such as Markdown):
      `unverifiable`.
 - Otherwise `_observed_content` resolves the locator in T's blob. `None` (the symbol is bound twice or
@@ -56,7 +58,7 @@ identity (`models/knowledge_files/anchor_content`), so there is no second resolv
 - **The cache (rule 5).** `observation_key` is `(blob, locator, path, recorded blob, extractor version)`.
   The locator is its canonical JSON; the path is included because its suffix chooses the grammar; the
   recorded blob is included only for a line range, whose mapping starts there (ruling 4, 18:42:37).
-  `EXTRACTOR_VERSION` is `anchor-observation/v1` plus the measured tree-sitter grammar versions, so a changed
+  `EXTRACTOR_VERSION` is `anchor-observation/v2` plus the measured tree-sitter grammar versions, so a changed
   extractor never reads an old answer. `OBSERVATIONS` is a `BoundedMemo` (ICR L56's
   `read_anchor_memo`) of **8,192 entries** (`_OBSERVATION_CAPACITY`, ruling N3): about 600 bytes per entry,
   about 5 MB in total, under 10 MB even at 1.2 KB per entry. A whole-repository run needs about 180.
@@ -85,6 +87,19 @@ identity (`models/knowledge_files/anchor_content`), so there is no second resolv
 
 - None recorded.
 
+### Symbol decoding before blob equality
+
+A present symbol anchor must have an observed blob that decodes as UTF-8 before blob equality can
+establish currentness. Invalid UTF-8 returns `unverifiable` with the path-specific reason that the file
+is not valid UTF-8; no locator resolution or observation-cache insertion is reached on that branch.
+This direct verdict does not set `read_failed` when the opened tree has no problem. Actual blob-read
+exceptions still reach `observe_entry`'s existing read-error handling. File and line-range locators do
+not take this symbol-only decoding branch.
+
+The observation-rule component is `anchor-observation/v2`; measured grammar versions still complete
+`EXTRACTOR_VERSION`. The version change separates cached answers under the revised observation rule.
+
+
 ## Evidence
 
 ### Docs References
@@ -110,6 +125,10 @@ No configured live documentation source was available for this pass.
 - The two causes of a failed read, told apart (L09 review R2-3). [8]
 - The observation catches every read error and sets `read_failed` only for a Git failure. [9]
 - A persistent unavailability is not a Git failure. [10]
+The retained ruling-N1 summary below describes the earlier ordering. The current ordering inserts
+the symbol UTF-8 check between absent-path handling and the unchanged-blob shortcut; the historical
+summary is not an unconditional unchanged-blob guarantee.
+
 - The ruling-N1 order: no tree, absent path, unchanged blob, then an unsupported kind. [11]
 - Which locator kinds cannot be re-resolved in a changed blob. [12]
 - Resolution through the worklist's resolver; a missing line-range blob is raised as `CodeObjectUnavailable`, and only answers are put in the cache. [13]
@@ -117,6 +136,9 @@ No configured live documentation source was available for this pass.
 - The order cases: unchanged Markdown is current, changed is unverifiable, deleted is stale. [15]
 - A timed-out Git call is unverifiable and is not cached. [16]
 - The cache key's contents and its reuse. [17]
+
+- Symbol UTF-8 decoding precedes the unchanged-blob shortcut and names invalid bytes as unverifiable. [18]
+- The observation-rule version is v2 and remains combined with measured grammar versions. [19]
 
 ### Cross-Repo References
 

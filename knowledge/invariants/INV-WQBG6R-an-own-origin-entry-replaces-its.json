@@ -1,0 +1,36 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake"
+    ],
+    "justification": "A future evidence-refresh change must not silently discard earlier own-owner provenance or replace a foreign owner history, making later readers unable to distinguish amendment from erasure."
+  },
+  "applicability": "Evidence updates to an invariant or record whose existing origin belongs to the same task and leaf owner as the authoring operation.",
+  "conditions": [
+    "Without replace_evidence, preserve existing evidence and append distinct supplied evidence in stable order.",
+    "With replace_evidence, replace that owner-held evidence; an explicitly empty replacement removes the evidence field.",
+    "Preserve stored origin identity/handoff entry; another owner retains its origin and receives separate foreign-evidence handling rather than an overwrite."
+  ],
+  "exclusions": [
+    "No replacement of a foreign owner origin.",
+    "Scope is owner identity and task, not a new promise of same-handoff-entry equality or altered invariant meaning."
+  ],
+  "id": "INV-WQBG6R",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "/home/firefox/projects/ar-coordination/tasks/agents-remember/260928_maintained-invariant-knowledge/notes/reports/worker/0e651ec5-2eed-4b58-b19f-e2336d4978ca/repair-freeze-0a36ddc4/builder-report.md#mik-r54-rule-4",
+        "/home/firefox/projects/ar-coordination/worktrees/agents-remember/54_writer-and-validator-corrections-a4b3b3af8d-ar/role-reports/curator/1ad64580-9e4a-42ce-adc0-169869767dba/wave-75/proof-source-review.json"
+      ],
+      "path": "wave-35-complete-history.json"
+    },
+    "handoffEntry": "MIK-R54@v1 rule 4",
+    "leaf": "260928-MIK-L54",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "An own-origin entry replaces its stored evidence only when replace_evidence is true and otherwise appends it.",
+  "status": "proposed",
+  "supersedes": []
+}

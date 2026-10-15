@@ -1,19 +1,89 @@
 {
   "path": "mcp/src/agents_remember/application/knowledge_writer/open_questions.py",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "0e1c84f88f3d212ffcd4d47b3b346de09d7e1da6",
+        "content": "sha256:5f01e8b18827b93c61647bd55c30e5d0201149005248b63addc9315dc0a8d673",
+        "locator": {
+          "kind": "symbol",
+          "name": "TaskDocOpenQuestions"
+        }
+      },
+      "id": "RLZ-W794BP",
+      "invariant": "INV-F2EQDR",
+      "origin": {
+        "handoffEntry": "L54-curator-R54-6-key-validation-and-task-owner-bridge",
+        "leaf": "260928-MIK-L54"
+      },
+      "rationale": "This task-owned bridge resolves the leaf, forwards keyed/batched fields through task_doc and propagates refusal without publishing its previously read question list; the separate CLI LeafQuestions._open owns loaded-root comparison.",
+      "role": "propagation-persistence"
+    }
+  ],
   "references": {
     "1": {
-      "note": "The module docstring: the read-modify-write in three steps and the unavailable port.\n\nAnchor: \"row's question, appended to the leaf's task document\"",
+      "note": "The task owner publishes a keyed append or replacement and preserves intervening questions.\n\nAnchor: lines 1-10",
       "targets": [
         {
           "anchor": {
-            "blob": "2d0b6d2a16d3fb736655ef2f71a8f54013ddeb8a",
-            "content": "sha256:113a56cf6112fb0db4b9810a285349fe690529d8f0d5318badd28dc733ea9f05",
+            "blob": "0e1c84f88f3d212ffcd4d47b3b346de09d7e1da6",
+            "content": "sha256:27d5e31e24a89e45033d38e6d98e8db5a282555323493634665fabdc95ab0f38",
             "locator": {
-              "end": 17,
+              "end": 10,
               "kind": "line_range",
               "start": 1
             }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "The owner replaces the matching keyed question or appends to its current list without replacing unrelated entries.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "75c0e1d109bc254efc2fbb0a504090a983b0499a",
+            "content": "sha256:f2813b2efb99a4e3f45159a20f4bf8c8934200a62e201ac301ca32bc87ca2c41",
+            "locator": {
+              "kind": "symbol",
+              "name": "put_open_question"
+            },
+            "path": "mcp/src/agents_remember/application/task_docs/task_flat_list_edits.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "A multi-raise submits one keyed batch to the same task owner, not a stale whole-list replacement.\n\nAnchor: `TaskDocOpenQuestions.append_many`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0e1c84f88f3d212ffcd4d47b3b346de09d7e1da6",
+            "content": "sha256:2f12ba99b01942744acdc8db9e0dd7cd77e389e00c42acbf3db4a303920a5853",
+            "locator": {
+              "end": 56,
+              "kind": "line_range",
+              "start": 53
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "Task-owner entry acquires the task-root file lock before preparation; active nested publication refuses before invoking the edit body.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "eb17f15ae8c3ab296c94191b81ec35737c0625e8",
+            "content": "sha256:4f28ba262a9548b71c9f8272d0ff337b9257c577a0c59072448065bfd61bc8ac",
+            "locator": {
+              "kind": "symbol",
+              "name": "run_task_doc_call"
+            },
+            "path": "mcp/src/agents_remember/application/task_docs/task_doc_publication.py"
           },
           "kind": "code"
         }
@@ -40,7 +110,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2d0b6d2a16d3fb736655ef2f71a8f54013ddeb8a",
+            "blob": "0e1c84f88f3d212ffcd4d47b3b346de09d7e1da6",
             "content": "sha256:164b13c2a9874a99273a73eadb08c95dac73ea6a73f6f3b87cd38b80425f6446",
             "locator": {
               "kind": "symbol",
@@ -52,15 +122,16 @@
       ]
     },
     "4": {
-      "note": "A present key appends nothing; otherwise `set_field` with the whole list; refusals returned.\n\nAnchor: \"task_doc refused the openQuestions edit\"",
+      "note": "The adapter submits put_open_question with key and text; dry-run and refusal-return behavior remain explicit.\n\nAnchor: `TaskDocOpenQuestions._edit`",
       "targets": [
         {
           "anchor": {
-            "blob": "2d0b6d2a16d3fb736655ef2f71a8f54013ddeb8a",
-            "content": "sha256:8fcf7dbd6af2b0b1c2dbcec788a37ca3b4505f3c9c4c06ee8f959d499bc42d79",
+            "blob": "9c458237d43a988471be17f4cf3df8aa4383aeeb",
+            "content": "sha256:4bc04aa8b40e234fbabf1387bfd945d63c1096d181159e11104f96dcc293e42a",
             "locator": {
-              "kind": "symbol",
-              "name": "_edit"
+              "end": 84,
+              "kind": "line_range",
+              "start": 69
             }
           },
           "kind": "code"
@@ -72,7 +143,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2d0b6d2a16d3fb736655ef2f71a8f54013ddeb8a",
+            "blob": "9c458237d43a988471be17f4cf3df8aa4383aeeb",
             "content": "sha256:c37f4436d3d00b4542bb6f47e22d0609d5669b4e1c27e0c40bf744608258bcda",
             "locator": {
               "kind": "symbol",

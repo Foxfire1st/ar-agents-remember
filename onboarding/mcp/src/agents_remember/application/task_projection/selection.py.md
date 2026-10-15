@@ -16,10 +16,8 @@ is encoded as declared data rather than as a filter applied after loading everyt
 
 Two declared tables carry the whole decision:
 
-- **`_READ_ALTITUDES`** is keyed by `(own altitude, parent bucket)` and is **total** over the nine
-  pairs, so there is no default branch and no pair that silently falls back to a wider read. The
-  `_PARENT_BUCKETS` vocabulary is `master`/`sprint`/`none`, where `none` covers a standalone leaf,
-  a standalone master and every sprint.
+- **`_READ_ALTITUDES`** is keyed by `(seat kind, own altitude, parent bucket)` and is **total** over the declared role and launcher combinations, so there is no default branch and no pair that silently falls back to a wider read. The
+  `_PARENT_BUCKETS` vocabulary is `master`/`sprint`/`none`, where `none` describes a master without a commanding sprint and every sprint; a low-level table row does not grant no-master leaf authoring authority.
 - **`_OPERATION_CHANNELS`** maps each of the eight frozen `CapsuleOperation` members to the channel
   set that operation's projection carries. `operation_channels` **raises**
   `projection-operation-unsupported` for an unknown operation rather than returning an empty tuple:
@@ -43,7 +41,7 @@ preservation dossier and no handoff obligation it does not have.
 
 ### Invariants And Boundaries
 
-- `_READ_ALTITUDES` must stay total over `(altitude, bucket)`. Adding a "convenient" extra read
+- `_READ_ALTITUDES` must stay total over `(seat kind, altitude, bucket)`. Adding a "convenient" extra read
   there breaks the altitude rule; seeded mutations `M01`/`M03` in the leaf's falsifiability probe
   target exactly that.
 - A leaf never reads a sprint ancestor. This is a structural property of the table, not a runtime
@@ -85,3 +83,5 @@ consumes the plan.
 No sibling-repository contract consumes this read plan.
 
 No meaningful cross-repo references found.
+
+- The declared role/launcher read table uses seat-kind, own-altitude and parent-bucket keys; none is not no-master leaf authoring permission. [9]

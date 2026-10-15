@@ -17,7 +17,6 @@ and translates registry outcomes into stable public results.
 The full quality execution binds two independent base ports: knowledge validation still uses its converted operation base, while landing observations use the contract's admitted memory/code base. Resolving the landing port changes neither candidate capture/revalidation nor existing refusing findings; it retains cuts and additions already committed within the leaf.
 
 
-
 ### Logic
 
 `run_memory_quality_request` executes an explicit sync request. `start_memory_quality_request`
@@ -27,9 +26,11 @@ returns its existing run, while full live capacity returns `capacity-reached` pl
 repeat the admitted `contract_path` and re-prove the stored code/memory pair. A wrong repository
 observes the same `run-not-found` result as an absent or evicted run.
 
-`MemoryQualityExecution.identity` freezes repository, resolved scope, normalized checks,
-`detail_limit`, and the report-publication decision. A full leaf check composes missing-onboarding,
-route-index preview, drift rows, and commit-owned versus curator-owned findings into the one
+`MemoryQualityExecution.identity` freezes repository, resolved scope, check-selection semantics,
+`detail_limit`, and the report-publication decision. A full run uses the empty-check identity
+sentinel; an explicit subset retains its normalized checks, even if it enumerates all checks.
+A full leaf check composes missing-onboarding, prepared route-index results, drift rows, and
+commit-owned versus curator-owned findings into the one
 enclosure-local checklist. Sync and async paths therefore share one execution implementation.
 Public delivery additionally uses `application.memory_quality.answer`: status/counts, the complete
 blocking total and first actionable work orders, plus retained report locations. The whole result
@@ -155,14 +156,20 @@ the crossing sync (`worktree_sync`) as the only way such a leaf converts.
 
 ## 260928-MIK-L28 The "Invariants Without Proof" Input (MIK-R28 Rule 5)
 
-`_attach_curator_checklist` now passes `without_proof=_without_proof(<memory root>, config.coordination_root)`
-to the checklist. `_without_proof` asks `application/knowledge_proofs.invariants_without_proof` for the
-memory tree and turns its rows into `WithoutProof`. For every unconverted tree, which is every tree before
-MIK-R37, it returns `None`, and the checklist renders nothing new.
+`_execute_memory_quality` computes `_without_proof(<memory root>, config.coordination_root)`
+after the primary scan, before the no-checklist early return. `_without_proof` is now imported
+from `memory_quality.knowledge_inputs`, rather than defined in this controller. Its helper asks
+`application/knowledge_proofs.invariants_without_proof` for the memory tree and turns the rows
+into `WithoutProof`. The produced value travels to the checklist as `prepared.without_proof`,
+so checklist rendering reuses the same observation rather than computing it again. A `None`
+result adds no count field; where a result exists, the whole response includes
+`invariantsWithoutProofCount=len(proof.rows)`.
 
-- **Information, not a gate (architect ruling, 2026-09-29).** The list stays in the rendered checklist
-  only. It never enters `curatorActionableCount`, the attestation or the strict wire summary; no count
-  field is added.
+- **Information, not a gate.** The list remains informational and is not turned into
+  `curatorActionableCount` by this controller. The old checklist-only/no-count account is
+  superseded: the whole result now carries `invariantsWithoutProofCount` when the observation
+  exists, including runs that publish no checklist. This field is not evidence of executed
+  proofs or a new certification authority.
 - The tree's index comes from the coordination index cache when a coordination root is configured. A tree,
   index or cache that cannot be read becomes a `problem` line in the section, never an exception, so the
   run that shows the list cannot fail because of it.
@@ -179,9 +186,10 @@ worklist applies (both memory sides unconverted, which is every production leaf 
 - When a worklist exists, the response gains `knowledgeWorklist` (`worklist_summary`: state, path, digest,
   item count, counts by kind, unreadable inputs), and the checklist receives `knowledge_worklist` and
   `knowledge_worklist_path`, rendered as the "Knowledge worklist (MIK-R08)" section.
-- The census and the worklist travel to `_attach_curator_checklist` together as `_PreparedInputs(census,
-  worklist)`, keeping the function within the argument and statement limits; the old `census=` keyword is
-  now `prepared=`.
+- The census and worklist travel to `_attach_curator_checklist` as named fields on
+  `_PreparedInputs`, together with the prepared proof observation and route-index build result.
+  The checklist consumes those prepared values; `prepared=` is the current handoff keyword,
+  not a positional `_PreparedInputs(census, worklist)` construction.
 - **The section counts nothing itself.** Until MIK-R09 the worklist was information only. Since L09 the
   mandatory gate turns every open item into one `knowledge-gate` repair finding that counts toward
   `curatorActionableCount` (see the L09 section below); the section still only renders.
@@ -251,7 +259,8 @@ The curator publication is one of MIK-R09's leaf routes. `_execute_memory_qualit
   unconverted leaf, whose run is unchanged. The gate recomputes the worklist over those trees and persists it; that
   worklist is the one summarized (`knowledgeWorklist`) and rendered. Where no gate applies, `_knowledge_worklist`
   recomputes as before.
-- **`_knowledge_briefs`** adds `knowledgeWorklist` and, when the gate ran, `knowledgeGate` (`GateResult.brief()`:
+- **`_knowledge_briefs`**, imported from `memory_quality.knowledge_inputs`, adds
+  `knowledgeWorklist` and, when the gate ran, `knowledgeGate` (`GateResult.brief()`:
   state, owner, worklist state/digest/path, and the finding, open-item, incomplete, violation and report-only
   counts).
 - **`_with_gate`** (in the checklist's leaf block, `prepared.gate` on `_PreparedInputs`) turns every gate finding
@@ -282,6 +291,17 @@ The current conversion-first refusal is unconditional; the L24/L37 account below
 The companion test invokes `run_memory_quality_request` on an actual unconverted external-memory fixture and checks `unconverted-memory`, whole/delivered equality (`failed`, `0`, `worktree_sync`) and the delivered-key subset except framework keys. These are source assertions; the recorded Reviewer R8 CODE PASS is a bounded repair result, not whole-MEMORY or final certification.
 
 
+### Full-run derived inputs and response identity
+
+`_resolve_execution` derives `full_run` from the absence of a requested check subset, separately from whether the resolved scope publishes a curator report. The registry identity uses `checks=()` for full work and the normalized explicit check tuple otherwise. Thus a repository diagnostic can still be a full run, and an explicit all-check subset does not alias the full-run request semantics.
+
+On a full run, `_execute_memory_quality` calls the imported `knowledge_inputs.build_route_indexes` before the primary checker, using the same quality code root, onboarding root, repository name and storage as the scan. That helper builds absent derived caches through their owner rather than overwriting existing stale caches. Subset requests skip this build. The result contributes `routeIndexCacheBuild` to the whole response and is passed through `_PreparedInputs`; `_attach_curator_checklist` requires that prepared result and reuses its `stale_indexes` for both the checklist and final-catalog projection. This replaces the former checklist-local dry-run preview. Cache preparation does not authorize stale-cache replacement or alter the frozen code/memory-candidate comparison.
+
+The proof observation is computed once after the scan on both full and subset paths, before any no-publication return. A present observation supplies `invariantsWithoutProofCount` and, on checklist-producing runs, `prepared.without_proof`. `_answered_quality_response` deliberately excludes `routeIndexCacheBuild` from answer-key overlay, preserving the build summary already held in the whole response rather than replacing it with the delivery projection. These are response/preparation contracts, not executed proof results or final readiness certification.
+
+Existing numbered reference notes retain their earlier source/fixture scope, including fixed fixture counts; they do not describe a newly measured current population. Historical local-helper references refer to the earlier controller implementation; current helper ownership and call sites are described here.
+
+
 ## Evidence
 
 
@@ -295,6 +315,9 @@ Full leaf checks compose and atomically publish the curator checklist: the tail 
 
 Anchor: "if not execution.publish_curator_report"; "_attach_curator_checklist(" [21] | `_attach_curator_checklist` | mcp/src/agents_remember/application/memory_quality/controller.py:635-789; mcp/src/agents_remember/application/memory_quality/controller.py:518-518; mcp/src/agents_remember/application/memory_quality/controller.py:522-522 |
 
+- Full runs use an empty-check identity sentinel while explicit subsets retain their normalized check tuple. [29]
+- Full execution prepares route-index caches before checking, exposes the build summary and proof count, and hands prepared values to checklist composition. [30]
+- Answer-key overlay preserves the existing routeIndexCacheBuild summary rather than overwriting it from the delivery projection. [31]
 
 ### Cross-Repo References
 

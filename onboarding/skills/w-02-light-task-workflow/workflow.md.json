@@ -140,6 +140,39 @@
           "kind": "code"
         }
       ]
+    },
+    "7": {
+      "note": "The Curator owner requires the complete curation operation; optional full-quality/test requests do not waive it.\n\nAnchor: \"complete curation operation\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e0b3bcfc145479a365a748510d7bd04490842c91",
+            "content": "sha256:ea5fde3590fb0703a8a19f03c7c9a29477b15ccabf3d041ce8e42308eebbf346",
+            "locator": {
+              "end": 147,
+              "kind": "line_range",
+              "start": 134
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/curator.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "Light-task workflow preserves corpus approval, one primary revision, exact handoff attempts, non-gating summaries and explicit finalization/cleanup order.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3418e1537501d916cc328862570c72992ae7a62d",
+            "content": "sha256:32ea6895090f27a68a2279fd8a72dffaf820672a20417e7aca14962a0a7f4ef0",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
     }
   },
   "schema": "ar-onboarding-file/v1"

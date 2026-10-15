@@ -3,12 +3,12 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "The module docstring: why a reorder would retarget a link, and how an alternative is followed.\n\nAnchor: \"Reordering a decision's alternatives\"",
+      "note": "The module explains the exact-option complete-link exception rather than an unconditional index prohibition.",
       "targets": [
         {
           "anchor": {
-            "blob": "d53d75c0de9f4b7c54edf3c96142cdcd1f4c9cc2",
-            "content": "sha256:87ad05709b24ee4b4c3d3042ccceb508ecd2fd777acacba8bf2b1535250ca13a",
+            "blob": "9852c4fa906f02f3ecb23e4e745cc44de82d82ae",
+            "content": "sha256:c848782bc3599f686d8e1d396a5e07fa6514b7f97f8a098e77f9c7263c79d3de",
             "locator": {
               "end": 17,
               "kind": "line_range",
@@ -24,7 +24,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d53d75c0de9f4b7c54edf3c96142cdcd1f4c9cc2",
+            "blob": "9852c4fa906f02f3ecb23e4e745cc44de82d82ae",
             "content": "sha256:1a20278d41f4c64e0f3763503a87fb52e6747ba758631747b7e2078bed11a081",
             "locator": {
               "kind": "symbol",
@@ -35,7 +35,7 @@
         },
         {
           "anchor": {
-            "blob": "d53d75c0de9f4b7c54edf3c96142cdcd1f4c9cc2",
+            "blob": "9852c4fa906f02f3ecb23e4e745cc44de82d82ae",
             "content": "sha256:c767891207c08921d89d1b922859d240198f41226b25a4f71195f197ec24da6a",
             "locator": {
               "kind": "symbol",
@@ -46,7 +46,7 @@
         },
         {
           "anchor": {
-            "blob": "d53d75c0de9f4b7c54edf3c96142cdcd1f4c9cc2",
+            "blob": "9852c4fa906f02f3ecb23e4e745cc44de82d82ae",
             "content": "sha256:ed14277411946071ccdc92b3b0e89e283309450eec4ada0ffbd07b015c3dad5b",
             "locator": {
               "kind": "symbol",
@@ -58,15 +58,16 @@
       ]
     },
     "3": {
-      "note": "Moves followed from both sides by unique option text.",
+      "note": "Only moves lacking complete-link equality remain after following unique options on both sides.",
       "targets": [
         {
           "anchor": {
-            "blob": "d53d75c0de9f4b7c54edf3c96142cdcd1f4c9cc2",
-            "content": "sha256:96442805cb33aad47927e26f08b7296f806f532e8d770d3439ad66636142d432",
+            "blob": "9852c4fa906f02f3ecb23e4e745cc44de82d82ae",
+            "content": "sha256:e1b8a8dc86898abfaec26bdafe4029e72a31f9ed900246cde25bf67a54583d47",
             "locator": {
-              "kind": "symbol",
-              "name": "moved_linked_alternatives"
+              "end": 126,
+              "kind": "line_range",
+              "start": 89
             }
           },
           "kind": "code"
@@ -74,15 +75,16 @@
       ]
     },
     "4": {
-      "note": "One refusing finding per move, against every base.",
+      "note": "Each remaining move receives the exact option-link recovery and one finding per compared base.",
       "targets": [
         {
           "anchor": {
-            "blob": "d53d75c0de9f4b7c54edf3c96142cdcd1f4c9cc2",
-            "content": "sha256:7fc4f9ae043cec82515dbbf1366527e86365d82fb1f814ccb4901468032153ef",
+            "blob": "9852c4fa906f02f3ecb23e4e745cc44de82d82ae",
+            "content": "sha256:44c819e3b172e513901aba191fa5a06326246aec5874801485155fc2969439a5",
             "locator": {
-              "kind": "symbol",
-              "name": "check_linked_alternative_order"
+              "end": 152,
+              "kind": "line_range",
+              "start": 129
             }
           },
           "kind": "code"
@@ -110,13 +112,31 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e499f1cf47ad6bc42fb86c1314767b975f0653ac",
+            "blob": "e1b050eefa6faeac6a1313ba1100336442c14936",
             "content": "sha256:6c2ef4dc7cb430d9ca3d73589947736f199c964bc71a10bbecdedcce90418653",
             "locator": {
               "kind": "symbol",
               "name": "test_a_reorder_of_linked_alternatives_is_refused"
             },
             "path": "mcp/tests/test_reconsideration_surfacing.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "Mapped indices preserve R14 identity and a deliberately misbound index is the refusing source control; no execution is inferred.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "886a6295ef58c5cdbfa1e1682723c34ea51e94c1",
+            "content": "sha256:57e87619cdfba331edc83c53720555b9dddffd5d872f15adf86f8da15835ccff",
+            "locator": {
+              "end": 187,
+              "kind": "line_range",
+              "start": 172
+            },
+            "path": "mcp/tests/test_knowledge_decisions.py"
           },
           "kind": "test"
         }

@@ -1,0 +1,163 @@
+{
+  "path": "skills/l-01-agent-lifecycles/criteria/report-verification.md",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The canonical catalog owns report-verification doctrine rather than the generated bundle.\n\nAnchor: `# Criteria Catalog — Report Verification`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5c75e9ce27286f2452a9bf06200dc7cf73a16f11",
+            "content": "sha256:4567047561af0de0e464f04e27fe1035d20edafa9215b4a10f84b041636f586b",
+            "locator": {
+              "end": 10,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The generator retains a target record type; this declaration is not a fresh synchronization check.\n\nAnchor: `class SkillTarget:`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bfc9168b3d1a727fc00d12e21e949acfed4d3537",
+            "content": "sha256:932ecfb6de5eb944491881bceacb9f148bc06c2a7032a15f5f3eaad604b79419",
+            "locator": {
+              "end": 42,
+              "kind": "line_range",
+              "start": 39
+            },
+            "path": "scripts/sync-skills.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The current generator derives skill targets from the checkout declaration rather than an old TARGETS constant.\n\nAnchor: `def skill_targets`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bfc9168b3d1a727fc00d12e21e949acfed4d3537",
+            "content": "sha256:85a6ecbf26f073eb808b51188d26c5a82d2fab9a4fe948b844219a67de9e60c5",
+            "locator": {
+              "end": 59,
+              "kind": "line_range",
+              "start": 56
+            },
+            "path": "scripts/sync-skills.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The reviewer binding table includes report-verification in every listed review type.\n\nAnchor: \"`report-verification`\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "696db71c1cdd1ea9215c7212533d609be9b2a1cf",
+            "content": "sha256:313d6ae5d5d3eea6d4393cfae149e951e5d6fd2f165516d17d276b153d78b921",
+            "locator": {
+              "end": 59,
+              "kind": "line_range",
+              "start": 50
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/reviewer.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "RV-1 requires artifacts behind claims and checks both content and mode in the same filesystem view.\n\nAnchor: `### RV-1 — Report-vs-artifact on EVERY claim`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5c75e9ce27286f2452a9bf06200dc7cf73a16f11",
+            "content": "sha256:82fff9cace9b4cc5830e527e3d81a796d30a40a0636efb363c2dec0bc152d2e0",
+            "locator": {
+              "end": 25,
+              "kind": "line_range",
+              "start": 14
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "RV-1 adds path-safe untracked enumeration, no-follow inspection, bounded content and explicit race/intent handling.\n\nAnchor: `**every nonignored untracked path**`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5c75e9ce27286f2452a9bf06200dc7cf73a16f11",
+            "content": "sha256:fb758055f17c5605ff7c13f6f217871b28ed0fe06aac6076ce73d034c2d94b08",
+            "locator": {
+              "end": 46,
+              "kind": "line_range",
+              "start": 27
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "RV-2 enumerates sibling classes; RV-4 records load-bearing disclosures in the decision log.\n\nAnchor: `### RV-2 — CLASS-completeness`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5c75e9ce27286f2452a9bf06200dc7cf73a16f11",
+            "content": "sha256:c34489b8b6468023c56eb0766c5924a91959718fa75db23f81be90df0c0ca93c",
+            "locator": {
+              "end": 81,
+              "kind": "line_range",
+              "start": 56
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "RV-5 proves the resolved invocation source and contract rather than trusting nominally canonical commands.\n\nAnchor: `### RV-5 — Canonical invocation target provenance`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5c75e9ce27286f2452a9bf06200dc7cf73a16f11",
+            "content": "sha256:435c38a8b6ccec6945a58cda9d5969d4eb573c709bbc5e13a10bf82be9142e95",
+            "locator": {
+              "end": 98,
+              "kind": "line_range",
+              "start": 83
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "RV-3 remains a candidate; baseline exploration and promotion do not expand sealed fix-verification.\n\nAnchor: `### RV-3 — Partial-fix-creates-falsehoods`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5c75e9ce27286f2452a9bf06200dc7cf73a16f11",
+            "content": "sha256:6e65a3317092a75d950e5f15f1657498a9cd681780c1a95f81bd698693e894c3",
+            "locator": {
+              "end": 135,
+              "kind": "line_range",
+              "start": 100
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

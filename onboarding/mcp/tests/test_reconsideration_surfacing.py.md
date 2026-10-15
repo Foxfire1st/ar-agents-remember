@@ -4,202 +4,222 @@
 
 [tests route overview](overview.md)
 
-## Purpose
-
-**The MIK-R14@v2 reconsideration cases, including same-leaf supersession (MIK-R148@v1), over real Git code and converted memory
-repositories.** The fixture is MIK-R08's (`test_knowledge_worklist.World`) plus two decisions in K_B: D18
-(`DEC-D18TXT`: the rejected "Canonical SQLite" reconsidered on an assumption record, the deferred "Both, kept in
-sync" on a symbol anchor (`third` in `pkg/review.py`) and on the requirement endpoint `MIK-R21@v1`) and D12
-(`DEC-D12RTE`: its rejected alternative reconsidered on a family and on D18 itself). A case commits a code candidate
-C and a memory candidate K_C and computes the leaf's worklist; the writer cases write the rows as leaf
-`260928-MIK-L99` through the real writer, and every answered item is checked against the stored predicate the gate
-uses.
-
-## Code Commentary
-
-### Logic
-
-- **Helpers.** `decision`, `assumption`, `d18`, `d12` build canonical records; `world` commits them into K_B;
-  `_manifest` writes an `approved-requirement-corpus` manifest and `_task` the owning task with its v1 packet;
-  `_v2_approved` adds an approved v2 with its packet; `_candidates`, `_triggers` and `_links` read the worklist's
-  items and `reconsideration.links` summary; `FakeQuestions` stands in for the task owner (checks, appends, or refuses
-  either); `_write` runs `write_knowledge` with `questions` and `worklist`; `_next_leaf` lands the leaf's memory
-  (history file set aside) as the next leaf's base; `_reauthor_link` edits K_C's D18 link in the working tree;
-  `_write_twice`, `_assert_refreshed_once` and `_assert_rerun_after_recompute` pin the rerun rule;
-  `_approve_v3`, `_assert_names_both_versions` and `_assert_refused` serve the R4/R5 cases.
-- **Cases, by rule and ruling:**
-  - rule 2, the manifest lookup: v10 is newer than v2 by the integer after `v`, a draft and a superseded entry do not
-    count, another ID is `not_approved`, a missing or wrong-format manifest is `unknown`;
-  - rule 1, the triggers: a revised assumption (the packet's conforming example; an unchanged tree raises nothing),
-    a `rerouted` row (and `no_impact` does not fire), a linked anchor `touched` and `moved_or_absent` (and `carried`
-    does not fire; the link never joins `entries`), a requirement endpoint only on a newer approved version (no
-    manifest, an unresolved endpoint or no coordination root never fires);
-  - rule 3, one hop: D18 under reconsideration raises nothing for D12, whose link notes "one hop";
-  - rules 4 and 5, the rows: `still_rejected` answers the item and the stored predicate agrees, with the writer's
-    refusals (`no_impact`, an extra `effect`, the chosen alternative, an index out of range, an unknown decision);
-    `raise` sets `under_reconsideration` at revision 1 and appends the question, and is refused writing nothing
-    without a task owner, on a check refusal and on an append refusal; a real `task_doc` append keeps the earlier
-    question, re-renders the `.md`, is a dry run under `check`, is idempotent, and refuses a leaf with no document;
-  - L13's carried decision: a reorder of linked alternatives is refused (`R14.1`), a reword in place and an append
-    pass, and both loops of `moved_linked_alternatives` are exercised; the row and item kinds are registered;
-  - ruling 04:37:56: a route target fires only through a retiring row (Q1); a superseded decision is listed skipped
-    (Q5); `still_rejected` re-points a persistent requirement link once and re-anchors a linked anchor so it stays
-    live (Q2/Q3);
-  - ruling 05:31:11: only fired links are refreshed and a line range is mapped through the diff (F1), an unmappable
-    range or a row naming another item refuses, a stale link anchor raises `anchor_stale` (F3), the re-point takes the
-    item's version (F4); the decision's revision goes to 2 (F2);
-  - ruling 06:17:11: a re-authored, lookalike or moved link refuses (N1, N2);
-  - ruling 07:13:54 (R3-1): reruns after a requirement or anchor refresh are written with no second bump;
-  - rulings 10:05:18 and 10:39:15 (R4): a rerun after more code changes carries the anchor; committed lookalikes and
-    re-authors stay refused; a link reverted after a committed refresh is refreshed again; a version approved after
-    the refresh needs the new item named;
-  - same-leaf supersession: a candidate successor suppresses its base decision despite a changed target and
-    the skipped summary names that successor; the stored predicate closes only when supplied the superseded
-    set. The unchanged two-argument rule stays open. Without a successor the item still fires; an unrelated
-    candidate decision suppresses nothing and raises no item itself. `_candidate_successor` constructs the
-    candidate decision; no test claims newly wired gate context.
-  - rulings 11:01:18 and 11:24:12 (R5): a second change inside the anchored range needs the new item, and a stale
-    worklist is refused as a stale item; a curator-set unapproved version (v4) and an anchor re-pointed to other code
-    are re-authored.
-
-The candidate-successor cases additionally assert no base-decision item, skipped summary
-with the successor ID and stored-rule closure without a row; without a successor the changed
-target still raises, and an unrelated supersedes target does not silence it. The unrelated
-new decision fixture omits reconsider_on links, so its absence assertion alone is not a
-stimulus-rich proof that new candidate links never fire. The base-only evaluation loop is
-the source boundary; these are source assertions, not Curator execution.
-
-### Conventions
-
-- The module is in the `unit-regression` lane (`test-evidence-lanes.toml:253`); the evidence catalog derives it as a
-  consumer of `fixtures/repository_profiles/node/package-lock.json` (`evidence-lifecycle.toml:1446`, the Forty-second
-  deliberate re-pin).
-- Refusal cases assert the decision file is byte-identical afterwards.
-
-### Invariants And Boundaries
-
-- The worker and reviewers removed each guard in turn (the one-hop guard, the refresh call, the superseded skip,
-  `newer_than`, the append order, the second reorder loop, the stale handling, the line-range mapping, the item-ID
-  check, `_place_record`, the N1 key check, `alternative != index`, the idempotent branches, the carried and
-  new-change states, the R5-2 upper bound, the stale-item check, the packet comparison): each removal fails at least
-  one case here.
-- **Size boundary.** The earlier R6-2 account was 1,172 lines and required a split before another case.
-  The taken supersession regressions now leave 1,223 lines, above the 1,200 rail. The bounded b17b9a0a/mark48
-  disposition permits this gate change without splitting these taken bytes; L68 owns the split. This is a
-  disclosed limit, not a size PASS, a raised threshold or permission for further growth. Surfacing versus
-  writer-refresh remains the smallest documented extraction seam.
-
-### Todos
-
-- L68 owns the split of the oversized module; do not treat the bounded taken-change disposition as a
-  general exception for another case.
-
-## Evidence
-
-### Docs References
-
-No domain documentation source is configured for this repository (`system/sources.md` carries no
-`Domain Documentation` entries). The design authority is the requirement packet `MIK-R14@v2` of task
-`260928_maintained-invariant-knowledge` and its leaf document `14_reconsideration-surfacing.json`; they live outside
-the code and memory repositories, so they are named here and not cited as rows.
-
-No configured live documentation source was available for this pass.
-
-### Repo-Internal References
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-- The unit-lane row. [19]
-- The catalog consumer row. [20]
-
-### Cross-Repo References
-
-No meaningful cross-repo references found: every repository, task root and coordination root the cases use is built
-under `tmp_path`.
-
-No cross-repo boundary is crossed by this file.
-
-
-## Requalified checked-source evidence
-
-- The module docstring: the fixture's two decisions and the case shape. [1]
-
-- The task-owner stand-in and the writer call. [10]
-
-- Rules 4 and 5: `still_rejected`, `raise`, and the real `task_doc` append. [11]
-
-- The reorder guard and the registrations. [12]
-
-- Ruling 04:37:56: route targets, superseded decisions and the refresh. [13]
-
-- Ruling 05:31:11: F1, the unmappable range, F3 and F4. [14]
-
-- Ruling 06:17:11: N1 and N2. [15]
-
-- R3-1: idempotent reruns. [16]
-
-- R4: carried anchor, committed lookalikes, a reverted link, a newer approved version. [17]
-
-- R5: a second change in the range, an unapproved version, an anchor re-pointed to other code. [18]
-
-
-- The unit-regression list includes this test module. [19]
-
-
-
-
-- The evidence catalog consumer list includes this test module. [20]
-
-
-
-
-
-- A candidate successor suppresses the base decision and lists its ID; the stored rule requires supplied context. [21]
-
-- Without a successor the changed target still raises. [22]
-
-- An unrelated candidate decision suppresses nothing and raises no item itself. [23]
-
-- D18's three links: an assumption, a symbol anchor and a requirement endpoint. [2]
-
-- D12, reconsidered on a family and on D18. [3]
-
-- The fixture world with both decisions and the assumption in K_B. [4]
-
-- The manifest and the owning task. [5]
-
-- Rule 2: the highest approved version by integer. [6]
-
-- Rule 1 and the conforming example. [7]
-
-- Rule 1: rows, anchors and requirement endpoints. [8]
-
-- Rule 3: one hop. [9]
-
-
-## Candidate-aware succession evidence
-
-Inspected source assertions, not a fresh Curator test run or deployment of the
-checked leaf repair to the serving build.
-
-- The candidate successor silences its changed base decision, names the successor and agrees with stored-item closure. [24]
-
-- Without a successor the same changed target still raises. [25]
-
-- An unrelated supersedes target retains the base item; its fixture carries no reconsider_on link, limiting the new-decision absence assertion. [26]
+## Current source account — Reconsideration route absence and task-question assertions
+
+The current fixture supplies persisted worklists and the parent master; FakeQuestions supports append_many. The real task_doc append preserves an earlier question and replaces a keyed question with its rewording. Directory absence now triggers route_absent even without a rerouting/retiring history row. Earlier source-epoch route-row-only and exact question-spelling assertions are superseded on these seams; the tests are described, not run.
+
+This source-bound correction covers the described L54 seams only. Unrelated inherited prose and references below are preserved, not recertified; no installed behavior, test execution, permission, landing or MEMORY acceptance is inferred.
+
+## Current evidence
+
+- Question publication has a batch fixture port and a root-aware writer request. \[27] [27]
+- Task-document question preservation/rewording is asserted through the real owner. \[28] [28]
+- Directory absence fires route_absent without a history row. \[29] [29]
+
+## Inherited source-epoch account (non-operative)
+
+The following complete predecessor retains useful explanations, old observations and provenance. Its superseded claims on the updated seams are historical, not a parallel current contract; its numbered groups keep their original meanings.
+
+> ## Governing Overview
+>
+> [tests route overview](overview.md)
+>
+> ## Purpose
+>
+> **The MIK-R14@v2 reconsideration cases, including same-leaf supersession (MIK-R148@v1), over real Git code and converted memory
+> repositories.** The fixture is MIK-R08's (`test_knowledge_worklist.World`) plus two decisions in K_B: D18
+> (`DEC-D18TXT`: the rejected "Canonical SQLite" reconsidered on an assumption record, the deferred "Both, kept in
+> sync" on a symbol anchor (`third` in `pkg/review.py`) and on the requirement endpoint `MIK-R21@v1`) and D12
+> (`DEC-D12RTE`: its rejected alternative reconsidered on a family and on D18 itself). A case commits a code candidate
+> C and a memory candidate K_C and computes the leaf's worklist; the writer cases write the rows as leaf
+> `260928-MIK-L99` through the real writer, and every answered item is checked against the stored predicate the gate
+> uses.
+>
+> ## Code Commentary
+>
+> ### Logic
+>
+> - **Helpers.** `decision`, `assumption`, `d18`, `d12` build canonical records; `world` commits them into K_B;
+>   `_manifest` writes an `approved-requirement-corpus` manifest and `_task` the owning task with its v1 packet;
+>   `_v2_approved` adds an approved v2 with its packet; `_candidates`, `_triggers` and `_links` read the worklist's
+>   items and `reconsideration.links` summary; `FakeQuestions` stands in for the task owner (checks, appends, or refuses
+>   either); `_write` runs `write_knowledge` with `questions` and `worklist`; `_next_leaf` lands the leaf's memory
+>   (history file set aside) as the next leaf's base; `_reauthor_link` edits K_C's D18 link in the working tree;
+>   `_write_twice`, `_assert_refreshed_once` and `_assert_rerun_after_recompute` pin the rerun rule;
+>   `_approve_v3`, `_assert_names_both_versions` and `_assert_refused` serve the R4/R5 cases.
+> - **Cases, by rule and ruling:**
+>   - rule 2, the manifest lookup: v10 is newer than v2 by the integer after `v`, a draft and a superseded entry do not
+>     count, another ID is `not_approved`, a missing or wrong-format manifest is `unknown`;
+>   - rule 1, the triggers: a revised assumption (the packet's conforming example; an unchanged tree raises nothing),
+>     a `rerouted` row (and `no_impact` does not fire), a linked anchor `touched` and `moved_or_absent` (and `carried`
+>     does not fire; the link never joins `entries`), a requirement endpoint only on a newer approved version (no
+>     manifest, an unresolved endpoint or no coordination root never fires);
+>   - rule 3, one hop: D18 under reconsideration raises nothing for D12, whose link notes "one hop";
+>   - rules 4 and 5, the rows: `still_rejected` answers the item and the stored predicate agrees, with the writer's
+>     refusals (`no_impact`, an extra `effect`, the chosen alternative, an index out of range, an unknown decision);
+>     `raise` sets `under_reconsideration` at revision 1 and appends the question, and is refused writing nothing
+>     without a task owner, on a check refusal and on an append refusal; a real `task_doc` append keeps the earlier
+>     question, re-renders the `.md`, is a dry run under `check`, is idempotent, and refuses a leaf with no document;
+>   - L13's carried decision: a reorder of linked alternatives is refused (`R14.1`), a reword in place and an append
+>     pass, and both loops of `moved_linked_alternatives` are exercised; the row and item kinds are registered;
+>   - ruling 04:37:56: a route target fires only through a retiring row (Q1); a superseded decision is listed skipped
+>     (Q5); `still_rejected` re-points a persistent requirement link once and re-anchors a linked anchor so it stays
+>     live (Q2/Q3);
+>   - ruling 05:31:11: only fired links are refreshed and a line range is mapped through the diff (F1), an unmappable
+>     range or a row naming another item refuses, a stale link anchor raises `anchor_stale` (F3), the re-point takes the
+>     item's version (F4); the decision's revision goes to 2 (F2);
+>   - ruling 06:17:11: a re-authored, lookalike or moved link refuses (N1, N2);
+>   - ruling 07:13:54 (R3-1): reruns after a requirement or anchor refresh are written with no second bump;
+>   - rulings 10:05:18 and 10:39:15 (R4): a rerun after more code changes carries the anchor; committed lookalikes and
+>     re-authors stay refused; a link reverted after a committed refresh is refreshed again; a version approved after
+>     the refresh needs the new item named;
+>   - same-leaf supersession: a candidate successor suppresses its base decision despite a changed target and
+>     the skipped summary names that successor; the stored predicate closes only when supplied the superseded
+>     set. The unchanged two-argument rule stays open. Without a successor the item still fires; an unrelated
+>     candidate decision suppresses nothing and raises no item itself. `_candidate_successor` constructs the
+>     candidate decision; no test claims newly wired gate context.
+>   - rulings 11:01:18 and 11:24:12 (R5): a second change inside the anchored range needs the new item, and a stale
+>     worklist is refused as a stale item; a curator-set unapproved version (v4) and an anchor re-pointed to other code
+>     are re-authored.
+>
+> The candidate-successor cases additionally assert no base-decision item, skipped summary
+> with the successor ID and stored-rule closure without a row; without a successor the changed
+> target still raises, and an unrelated supersedes target does not silence it. The unrelated
+> new decision fixture omits reconsider_on links, so its absence assertion alone is not a
+> stimulus-rich proof that new candidate links never fire. The base-only evaluation loop is
+> the source boundary; these are source assertions, not Curator execution.
+>
+> ### Conventions
+>
+> - The module is in the `unit-regression` lane (`test-evidence-lanes.toml:253`); the evidence catalog derives it as a
+>   consumer of `fixtures/repository_profiles/node/package-lock.json` (`evidence-lifecycle.toml:1446`, the Forty-second
+>   deliberate re-pin).
+> - Refusal cases assert the decision file is byte-identical afterwards.
+>
+> ### Invariants And Boundaries
+>
+> - The worker and reviewers removed each guard in turn (the one-hop guard, the refresh call, the superseded skip,
+>   `newer_than`, the append order, the second reorder loop, the stale handling, the line-range mapping, the item-ID
+>   check, `_place_record`, the N1 key check, `alternative != index`, the idempotent branches, the carried and
+>   new-change states, the R5-2 upper bound, the stale-item check, the packet comparison): each removal fails at least
+>   one case here.
+> - **Size boundary.** The earlier R6-2 account was 1,172 lines and required a split before another case.
+>   The taken supersession regressions now leave 1,223 lines, above the 1,200 rail. The bounded b17b9a0a/mark48
+>   disposition permits this gate change without splitting these taken bytes; L68 owns the split. This is a
+>   disclosed limit, not a size PASS, a raised threshold or permission for further growth. Surfacing versus
+>   writer-refresh remains the smallest documented extraction seam.
+>
+> ### Todos
+>
+> - L68 owns the split of the oversized module; do not treat the bounded taken-change disposition as a
+>   general exception for another case.
+>
+> ## Evidence
+>
+> ### Docs References
+>
+> No domain documentation source is configured for this repository (`system/sources.md` carries no
+> `Domain Documentation` entries). The design authority is the requirement packet `MIK-R14@v2` of task
+> `260928_maintained-invariant-knowledge` and its leaf document `14_reconsideration-surfacing.json`; they live outside
+> the code and memory repositories, so they are named here and not cited as rows.
+>
+> No configured live documentation source was available for this pass.
+>
+> ### Repo-Internal References
+>
+>
+>
+>
+>
+>
+>
+>
+>
+>
+>
+>
+>
+>
+>
+>
+>
+>
+>
+> - The unit-lane row. [19]
+> - The catalog consumer row. [20]
+>
+> ### Cross-Repo References
+>
+> No meaningful cross-repo references found: every repository, task root and coordination root the cases use is built
+> under `tmp_path`.
+>
+> No cross-repo boundary is crossed by this file.
+>
+>
+> ## Requalified checked-source evidence
+>
+> - The module docstring: the fixture's two decisions and the case shape. [1]
+>
+> - The task-owner stand-in and the writer call. [10]
+>
+> - Rules 4 and 5: `still_rejected`, `raise`, and the real `task_doc` append. [11]
+>
+> - The reorder guard and the registrations. [12]
+>
+> - Ruling 04:37:56: route targets, superseded decisions and the refresh. [13]
+>
+> - Ruling 05:31:11: F1, the unmappable range, F3 and F4. [14]
+>
+> - Ruling 06:17:11: N1 and N2. [15]
+>
+> - R3-1: idempotent reruns. [16]
+>
+> - R4: carried anchor, committed lookalikes, a reverted link, a newer approved version. [17]
+>
+> - R5: a second change in the range, an unapproved version, an anchor re-pointed to other code. [18]
+>
+>
+> - The unit-regression list includes this test module. [19]
+>
+>
+>
+>
+> - The evidence catalog consumer list includes this test module. [20]
+>
+>
+>
+>
+>
+> - A candidate successor suppresses the base decision and lists its ID; the stored rule requires supplied context. [21]
+>
+> - Without a successor the changed target still raises. [22]
+>
+> - An unrelated candidate decision suppresses nothing and raises no item itself. [23]
+>
+> - D18's three links: an assumption, a symbol anchor and a requirement endpoint. [2]
+>
+> - D12, reconsidered on a family and on D18. [3]
+>
+> - The fixture world with both decisions and the assumption in K_B. [4]
+>
+> - The manifest and the owning task. [5]
+>
+> - Rule 2: the highest approved version by integer. [6]
+>
+> - Rule 1 and the conforming example. [7]
+>
+> - Rule 1: rows, anchors and requirement endpoints. [8]
+>
+> - Rule 3: one hop. [9]
+>
+>
+> ## Candidate-aware succession evidence
+>
+> Inspected source assertions, not a fresh Curator test run or deployment of the
+> checked leaf repair to the serving build.
+>
+> - The candidate successor silences its changed base decision, names the successor and agrees with stored-item closure. [24]
+>
+> - Without a successor the same changed target still raises. [25]
+>
+> - An unrelated supersedes target retains the base item; its fixture carries no reconsider_on link, limiting the new-decision absence assertion. [26]

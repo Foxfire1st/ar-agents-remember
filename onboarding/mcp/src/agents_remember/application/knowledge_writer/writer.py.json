@@ -1,13 +1,68 @@
 {
   "path": "mcp/src/agents_remember/application/knowledge_writer/writer.py",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "06964bc2760b01d95702515c2e573072c426b42e",
+        "content": "sha256:76336a59c7d319c2759ef0906e5d2b0583511d1b3cfac93a8f5f54147fb68d48",
+        "locator": {
+          "kind": "symbol",
+          "name": "_finish"
+        }
+      },
+      "id": "RLZ-CG79NZ",
+      "invariant": "INV-TW1224",
+      "origin": {
+        "handoffEntry": "L54-curator-R54-5-guard-reporting-sites",
+        "leaf": "260928-MIK-L54"
+      },
+      "rationale": "The finish boundary distinguishes PublicationError.restored from incomplete/unverifiable rollback and retains recovery notice when questions_published is already nonempty.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "06964bc2760b01d95702515c2e573072c426b42e",
+        "content": "sha256:0f0344999699a65a079729555bd446bfc6658ca70797e4e4b17a4f90aa42bcc8",
+        "locator": {
+          "kind": "symbol",
+          "name": "write_knowledge"
+        }
+      },
+      "id": "RLZ-EYFZY9",
+      "invariant": "INV-A6571D",
+      "origin": {
+        "handoffEntry": "L54-curator-MIK-R54-v1-rule-1-actual-guards",
+        "leaf": "260928-MIK-L54"
+      },
+      "rationale": "The public owner performs leaf-only shape admission, composes same-run worklist refusals after virtual authoring and stops before file publication.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "06964bc2760b01d95702515c2e573072c426b42e",
+        "content": "sha256:4dad4e5cccc7b45a4e0d04e4823fdf5a3a51f07fbfc42fe69168f0a5431d6d03",
+        "locator": {
+          "kind": "symbol",
+          "name": "_render"
+        }
+      },
+      "id": "RLZ-R56PA0",
+      "invariant": "INV-DWPSRR",
+      "origin": {
+        "handoffEntry": "L54-curator-MIK-R54-v1-rule-8-actual-guards",
+        "leaf": "260928-MIK-L54"
+      },
+      "rationale": "Raw superseded fields are diagnosed with the derived-state recovery before generic record-model parsing.",
+      "role": "enforcement"
+    }
+  ],
   "references": {
     "1": {
       "note": "The refusal text for an unconverted memory tree.",
       "targets": [
         {
           "anchor": {
-            "blob": "373f27fe85b66dcfbd01a61751f5e85ba5597c3b",
+            "blob": "06964bc2760b01d95702515c2e573072c426b42e",
             "content": "sha256:ddc54a1d609b26aa73aab617bb80e631c4b24c0510c9aa059a1015bb8f084f8c",
             "locator": {
               "kind": "symbol",
@@ -55,7 +110,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7778e9e7bc24dc8ed3dc6acf189a8df1730198f7",
+            "blob": "6cf0f93cec095913e9f6675b6797d147529e4399",
             "content": "sha256:912287966d4ad2fe95234b62f0cfb089d5c40649015a914445b40054ba8d0797",
             "locator": {
               "kind": "symbol",
@@ -89,7 +144,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "087f86b0f5ccb42c7a61d639d9e8e2fc0bb83461",
+            "blob": "43cc02abb5fcb2756a0b9757b355dbd669352a5f",
             "content": "sha256:654b94ba75c1212248cbaf2ffa17769545593edae0d2756d9d1ac199fdaf8df8",
             "locator": {
               "kind": "symbol",
@@ -102,15 +157,16 @@
       ]
     },
     "15": {
-      "note": "The coordination root requirement endpoints resolve against; never a reason to refuse.",
+      "note": "New or changed unresolved requirement links refuse when the coordination root is supplied; absent-root observations do not",
       "targets": [
         {
           "anchor": {
-            "blob": "373f27fe85b66dcfbd01a61751f5e85ba5597c3b",
-            "content": "sha256:a6e265e444834737cdd8a5cf31ae14d6c5a125d733c689102c0782e16cefde9d",
+            "blob": "06964bc2760b01d95702515c2e573072c426b42e",
+            "content": "sha256:c7f692199f11ad3fa15b1ca963f1c49f1bce699db6bd05c739630783f3aa244a",
             "locator": {
-              "kind": "symbol",
-              "name": "coordination_root"
+              "end": 184,
+              "kind": "line_range",
+              "start": 137
             }
           },
           "kind": "code"
@@ -118,16 +174,16 @@
       ]
     },
     "16": {
-      "note": "The report's requirement endpoints, resolved for every record the run touched.\n\nAnchor: `requirement_endpoints`",
+      "note": "Endpoints are resolved with stored prior-link identity before the pre-publication refusal check",
       "targets": [
         {
           "anchor": {
-            "blob": "373f27fe85b66dcfbd01a61751f5e85ba5597c3b",
-            "content": "sha256:d099d9466ef2f09e4fe287bfac74368bc3b8e1188ce211df74063b04a32eb305",
+            "blob": "06964bc2760b01d95702515c2e573072c426b42e",
+            "content": "sha256:c7f692199f11ad3fa15b1ca963f1c49f1bce699db6bd05c739630783f3aa244a",
             "locator": {
-              "end": 158,
+              "end": 184,
               "kind": "line_range",
-              "start": 158
+              "start": 137
             }
           },
           "kind": "code"
@@ -139,7 +195,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "373f27fe85b66dcfbd01a61751f5e85ba5597c3b",
+            "blob": "06964bc2760b01d95702515c2e573072c426b42e",
             "content": "sha256:8f7556548b74107eb9d5e2ff72f583a0542f95e2c983e87fe02a0f91ba3dd441",
             "locator": {
               "kind": "symbol",
@@ -155,7 +211,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "373f27fe85b66dcfbd01a61751f5e85ba5597c3b",
+            "blob": "06964bc2760b01d95702515c2e573072c426b42e",
             "content": "sha256:3dd771e602d47815062e4946dceb4f68e3ace03fc22cf93f41c8d467bc695efc",
             "locator": {
               "kind": "symbol",
@@ -171,7 +227,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f05c9d56341ea7f7ee838e165cd9754129f30e34",
+            "blob": "fab936dda80543f94c1a840030ce192da6fa5616",
             "content": "sha256:2d725e4fb04dce11fb1a3ea1efbdbf994c3716be4bfcb804a064de312f082d5d",
             "locator": {
               "kind": "symbol",
@@ -184,52 +240,16 @@
       ]
     },
     "2": {
-      "note": "One operation's inputs, including authorization, task-owner decision resolver and paired onboarding memory base.",
+      "note": "Current request inputs include paired memory-base binding and leaf-required worklist admission",
       "targets": [
         {
           "anchor": {
-            "blob": "373f27fe85b66dcfbd01a61751f5e85ba5597c3b",
-            "content": "sha256:739912d8bb4095cd3b5bb90b1964b037729dbb793fc2797e60084e00d98ec4b5",
+            "blob": "06964bc2760b01d95702515c2e573072c426b42e",
+            "content": "sha256:a00ea9e16040ed4caf6ef34c7e140c76a715453ad1468673f885acdf8cd071e7",
             "locator": {
-              "end": 109,
+              "end": 118,
               "kind": "line_range",
-              "start": 72
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "373f27fe85b66dcfbd01a61751f5e85ba5597c3b",
-            "content": "sha256:b35b7429993be941156840aaf87fe3a56d1da3a883974aec12dbc6dfae6ef86e",
-            "locator": {
-              "end": 141,
-              "kind": "line_range",
-              "start": 139
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "373f27fe85b66dcfbd01a61751f5e85ba5597c3b",
-            "content": "sha256:e5a927d8d89e0fce279ffd565c631e388dd36072288663dfd6af14258bf4f685",
-            "locator": {
-              "end": 281,
-              "kind": "line_range",
-              "start": 280
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "373f27fe85b66dcfbd01a61751f5e85ba5597c3b",
-            "content": "sha256:fd67c2417b32b350d97b8fc7090a40b8bf31e3d0da4acd71fa443b4440aa63df",
-            "locator": {
-              "end": 353,
-              "kind": "line_range",
-              "start": 352
+              "start": 81
             }
           },
           "kind": "code"
@@ -258,48 +278,48 @@
       "targets": [
         {
           "anchor": {
-            "blob": "373f27fe85b66dcfbd01a61751f5e85ba5597c3b",
+            "blob": "06964bc2760b01d95702515c2e573072c426b42e",
             "content": "sha256:f2bf08a6cb4481b6ff1a8f0165715e893688bf95470cd77ca7126ab28b36e1ac",
             "locator": {
-              "end": 249,
+              "end": 282,
               "kind": "line_range",
-              "start": 237
+              "start": 270
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "373f27fe85b66dcfbd01a61751f5e85ba5597c3b",
+            "blob": "06964bc2760b01d95702515c2e573072c426b42e",
             "content": "sha256:b35b7429993be941156840aaf87fe3a56d1da3a883974aec12dbc6dfae6ef86e",
             "locator": {
-              "end": 141,
+              "end": 153,
               "kind": "line_range",
-              "start": 139
+              "start": 151
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "373f27fe85b66dcfbd01a61751f5e85ba5597c3b",
+            "blob": "06964bc2760b01d95702515c2e573072c426b42e",
             "content": "sha256:e5a927d8d89e0fce279ffd565c631e388dd36072288663dfd6af14258bf4f685",
             "locator": {
-              "end": 281,
+              "end": 314,
               "kind": "line_range",
-              "start": 280
+              "start": 313
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "373f27fe85b66dcfbd01a61751f5e85ba5597c3b",
+            "blob": "06964bc2760b01d95702515c2e573072c426b42e",
             "content": "sha256:fd67c2417b32b350d97b8fc7090a40b8bf31e3d0da4acd71fa443b4440aa63df",
             "locator": {
-              "end": 353,
+              "end": 390,
               "kind": "line_range",
-              "start": 352
+              "start": 389
             }
           },
           "kind": "code"
@@ -307,40 +327,79 @@
       ]
     },
     "22": {
-      "note": "Current source delta inspected statically: Document paired-base/source projection and registry-driven writer deferral without weakening whole-tree validation, carry, base conversion or all-or-nothing writes.",
+      "note": "Paired-base/source projection and registry-driven writer reports retain validation, carry and conversion; later refusal preserves actual question effects and distinguishes verified from incomplete file restoration.",
       "targets": [
         {
           "anchor": {
-            "blob": "373f27fe85b66dcfbd01a61751f5e85ba5597c3b",
-            "content": "sha256:b35b7429993be941156840aaf87fe3a56d1da3a883974aec12dbc6dfae6ef86e",
+            "blob": "06964bc2760b01d95702515c2e573072c426b42e",
+            "content": "sha256:0f0344999699a65a079729555bd446bfc6658ca70797e4e4b17a4f90aa42bcc8",
             "locator": {
-              "end": 141,
+              "end": 209,
               "kind": "line_range",
-              "start": 139
+              "start": 121
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "373f27fe85b66dcfbd01a61751f5e85ba5597c3b",
-            "content": "sha256:e5a927d8d89e0fce279ffd565c631e388dd36072288663dfd6af14258bf4f685",
+            "blob": "06964bc2760b01d95702515c2e573072c426b42e",
+            "content": "sha256:76336a59c7d319c2759ef0906e5d2b0583511d1b3cfac93a8f5f54147fb68d48",
             "locator": {
-              "end": 281,
+              "end": 427,
               "kind": "line_range",
-              "start": 280
+              "start": 394
             }
           },
           "kind": "code"
-        },
+        }
+      ]
+    },
+    "23": {
+      "note": "Worklist and changed-link admission precede validation and file publication.",
+      "targets": [
         {
           "anchor": {
-            "blob": "373f27fe85b66dcfbd01a61751f5e85ba5597c3b",
-            "content": "sha256:fd67c2417b32b350d97b8fc7090a40b8bf31e3d0da4acd71fa443b4440aa63df",
+            "blob": "06964bc2760b01d95702515c2e573072c426b42e",
+            "content": "sha256:5e4cc2411ece08795df1a08360b9f5ec56e58c3d091f4d639b618cca725d2750",
             "locator": {
-              "end": 353,
+              "end": 208,
               "kind": "line_range",
-              "start": 352
+              "start": 121
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "24": {
+      "note": "File publication reports actual restoration and already-published question recovery.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "06964bc2760b01d95702515c2e573072c426b42e",
+            "content": "sha256:971607dbb764dc7801b378cfa228c8e819810e24cb8d36796f08574e20dac421",
+            "locator": {
+              "end": 427,
+              "kind": "line_range",
+              "start": 392
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "25": {
+      "note": "A stored derived superseded field refuses before canonical rendering.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "06964bc2760b01d95702515c2e573072c426b42e",
+            "content": "sha256:f0455925d2e444b461e2fa780106865fb6c325d3c27de03afc5ee85633a5223f",
+            "locator": {
+              "end": 456,
+              "kind": "line_range",
+              "start": 432
             }
           },
           "kind": "code"
@@ -364,26 +423,16 @@
       ]
     },
     "4": {
-      "note": "The worklist and the task document's questions, both optional (MIK-R14).",
+      "note": "A leaf requires the persisted worklist before capture; question publication has its separate task-owner port",
       "targets": [
         {
           "anchor": {
-            "blob": "373f27fe85b66dcfbd01a61751f5e85ba5597c3b",
-            "content": "sha256:ed5dee9ba3dbac016c0c14ecd5552b6ef1e9d3400688e2513340b52ce011635e",
+            "blob": "06964bc2760b01d95702515c2e573072c426b42e",
+            "content": "sha256:c1363b6b250cdfc8b329d17cf693db7de96277c5960578ab4174b9d9c515b2f6",
             "locator": {
-              "kind": "symbol",
-              "name": "worklist"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "373f27fe85b66dcfbd01a61751f5e85ba5597c3b",
-            "content": "sha256:c26e3780f40b7d1c48bf762e87a29cf7869068f921e04454b26ef5e861801d49",
-            "locator": {
-              "kind": "symbol",
-              "name": "questions"
+              "end": 112,
+              "kind": "line_range",
+              "start": 90
             }
           },
           "kind": "code"
@@ -408,26 +457,28 @@
       ]
     },
     "6": {
-      "note": "The worklist's reconsideration items by subject; the append in a committing run.",
+      "note": "Reconsideration items are projected by subject; committing question append returns published keys and refusals",
       "targets": [
         {
           "anchor": {
-            "blob": "373f27fe85b66dcfbd01a61751f5e85ba5597c3b",
+            "blob": "06964bc2760b01d95702515c2e573072c426b42e",
             "content": "sha256:5bbbf40b90825b25eabe42452a741017154c176841529067516e25f62091e44f",
             "locator": {
-              "kind": "symbol",
-              "name": "_reconsideration_items"
+              "end": 263,
+              "kind": "line_range",
+              "start": 257
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "373f27fe85b66dcfbd01a61751f5e85ba5597c3b",
-            "content": "sha256:bc1f66cbbc78a9c605a0c6d245b3d621a7c48cc7c21a377137fd25801d77e5ad",
+            "blob": "06964bc2760b01d95702515c2e573072c426b42e",
+            "content": "sha256:228f60a32f02597b678534f7a9baf03f83513c245bf5547b5680c14b39903e48",
             "locator": {
-              "kind": "symbol",
-              "name": "_append_raised"
+              "end": 362,
+              "kind": "line_range",
+              "start": 352
             }
           },
           "kind": "code"
@@ -473,48 +524,48 @@
       "targets": [
         {
           "anchor": {
-            "blob": "373f27fe85b66dcfbd01a61751f5e85ba5597c3b",
+            "blob": "06964bc2760b01d95702515c2e573072c426b42e",
             "content": "sha256:fbcded7d21926324d4c4a1decd4bc85781d3a8850515172b454ce5e5ba240a56",
             "locator": {
-              "end": 345,
+              "end": 382,
               "kind": "line_range",
-              "start": 328
+              "start": 365
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "373f27fe85b66dcfbd01a61751f5e85ba5597c3b",
+            "blob": "06964bc2760b01d95702515c2e573072c426b42e",
             "content": "sha256:b35b7429993be941156840aaf87fe3a56d1da3a883974aec12dbc6dfae6ef86e",
             "locator": {
-              "end": 141,
+              "end": 153,
               "kind": "line_range",
-              "start": 139
+              "start": 151
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "373f27fe85b66dcfbd01a61751f5e85ba5597c3b",
+            "blob": "06964bc2760b01d95702515c2e573072c426b42e",
             "content": "sha256:e5a927d8d89e0fce279ffd565c631e388dd36072288663dfd6af14258bf4f685",
             "locator": {
-              "end": 281,
+              "end": 314,
               "kind": "line_range",
-              "start": 280
+              "start": 313
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "373f27fe85b66dcfbd01a61751f5e85ba5597c3b",
+            "blob": "06964bc2760b01d95702515c2e573072c426b42e",
             "content": "sha256:fd67c2417b32b350d97b8fc7090a40b8bf31e3d0da4acd71fa443b4440aa63df",
             "locator": {
-              "end": 353,
+              "end": 390,
               "kind": "line_range",
-              "start": 352
+              "start": 389
             }
           },
           "kind": "code"

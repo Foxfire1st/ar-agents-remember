@@ -1,0 +1,58 @@
+{
+  "path": "mcp/tests/test_generated_copy_worklist.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "e084d8c908f5a655c2f0ddd6a3f1f9e8252125e8",
+        "content": "sha256:674d800a10ba9912700c995f56ffbb2a353fc62c49f5a1fc343ae2129c873fff",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_full_worklist_suppresses_only_equal_declared_copies"
+        }
+      },
+      "facet": "Source-defined regression check; not executed by Curator: Only equal declared copies are suppressed in the full fixture worklist; divergence and ordinary exclusions retain their obligations.",
+      "id": "PRF-0H9Q1M",
+      "invariant": "INV-0NEA6F",
+      "origin": {
+        "handoffEntry": "L54-curator-proof-MIK-R55-v1-rule-11-wave-76",
+        "leaf": "260928-MIK-L54"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "e084d8c908f5a655c2f0ddd6a3f1f9e8252125e8",
+        "content": "sha256:355ebd611e9da964b8c32c8f4a8b181386acecddde320b2cb7b024452a801fc9",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_present_empty_tree_declaration_is_incomplete"
+        }
+      },
+      "facet": "Source-defined regression check; not executed by Curator: Native Git empty-tree and empty-subtree declaration entries remain present invalid input, not absence.",
+      "id": "PRF-KG44DN",
+      "invariant": "INV-43KAHE",
+      "origin": {
+        "handoffEntry": "L54-curator-proof-L54-R1-C12-round3-raw-declaration-entry-wave-75",
+        "leaf": "260928-MIK-L54"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Describes candidate-owned generated-copy suppression and its negative controls over full worklist computation. Tests use synthetic Git trees and generator fixtures. These assertions neither execute here nor authorize real copy-card migration, and raw blob equality alone is not the specified generated-payload equality.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e084d8c908f5a655c2f0ddd6a3f1f9e8252125e8",
+            "content": "sha256:88825e9a9264277ad31e087c7d27ffc2688acc6aaf36b2782c25f03929cc61ba",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,59 @@
+{
+  "path": "mcp/src/agents_remember/application/memory_quality/knowledge_inputs.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "b20d5ffa05036534aafe210797d31b3b83d9fad0",
+        "content": "sha256:19189b87477f6189d9644c9846e1eacb19a6da7eb21eea4beb96664ee3246770",
+        "locator": {
+          "kind": "symbol",
+          "name": "without_proof"
+        }
+      },
+      "id": "RLZ-CMACSP",
+      "invariant": "INV-3PHJ0H",
+      "origin": {
+        "handoffEntry": "MIK-R55@v1 rule 7",
+        "leaf": "260928-MIK-L54"
+      },
+      "rationale": "This input projection supplies the explicit count of invariants lacking proof.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "b20d5ffa05036534aafe210797d31b3b83d9fad0",
+        "content": "sha256:137e61e9e81506b0434187d74018517b5e7206be132d9909a6919b77d74ad11b",
+        "locator": {
+          "kind": "symbol",
+          "name": "build_route_indexes"
+        }
+      },
+      "id": "RLZ-SM06F0",
+      "invariant": "INV-3PHJ0H",
+      "origin": {
+        "handoffEntry": "MIK-R55@v1 rule 7",
+        "leaf": "260928-MIK-L54"
+      },
+      "rationale": "This quality-input seam invokes the existing route-index owner for absent caches.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Prepares derived route-index inputs and compact worklist/gate/proof-coverage summaries without taking over their judgments. Building an absent cache is distinct from refreshing a stale index. Without-proof inventory is not actionable merely because it is populated, and a summary never recomputes or accepts the worklist or gate.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b20d5ffa05036534aafe210797d31b3b83d9fad0",
+            "content": "sha256:683d9f79d4ade5fd726f833012a85cbea147b6ff71d908293d4b19992fbcc9b8",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -51,6 +51,36 @@
           "kind": "code"
         }
       ]
+    },
+    "3": {
+      "note": "The ruling index preserves supersession while marking LOCR relay/sweep/observer material historical and retaining the current role_start/host-signal account.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "12233802168a4fbcc739126cb74dce8be8b9db1c",
+            "content": "sha256:dba289ae416cae22588527dde26b6c2a6f3cec0c0b0f5fd2646f913f75849c70",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The authored source owns this contract; the distribution copy is not a separate authority.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "12233802168a4fbcc739126cb74dce8be8b9db1c",
+            "content": "sha256:dba289ae416cae22588527dde26b6c2a6f3cec0c0b0f5fd2646f913f75849c70",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
     }
   },
   "schema": "ar-onboarding-file/v1"

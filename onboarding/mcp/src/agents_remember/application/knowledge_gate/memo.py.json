@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "fc1b6b690406fd769aa648ac04acf77e2d181e1c",
+        "blob": "3757f3ea9584a7d0d02c49e3df9d27e0590b50a6",
         "content": "sha256:d4387f176962b40e3cb6e1fe5d8de862e52bfdb35cd9373e00d9af9faf7a7878",
         "locator": {
           "kind": "symbol",
@@ -21,7 +21,25 @@
     },
     {
       "anchor": {
-        "blob": "fc1b6b690406fd769aa648ac04acf77e2d181e1c",
+        "blob": "3757f3ea9584a7d0d02c49e3df9d27e0590b50a6",
+        "content": "sha256:c5a9d47dc523af4fae2607acdf66554200cd2e8bd1f4c866c038d40df8626399",
+        "locator": {
+          "kind": "symbol",
+          "name": "memo_key"
+        }
+      },
+      "id": "RLZ-CCQGJK",
+      "invariant": "INV-7PGZ9Y",
+      "origin": {
+        "handoffEntry": "L54-curator-MIK-R55-v1-rule-6-actual-guards-wave-70",
+        "leaf": "260928-MIK-L54"
+      },
+      "rationale": "Memo-key preparation obtains its contract and selected task bytes through the recorded-read owner rather than unrecorded read_bytes.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "3757f3ea9584a7d0d02c49e3df9d27e0590b50a6",
         "content": "sha256:96b092d4d4a66f0747bbafba84cb48420a17836884d23279ea5b47d18f31d7a9",
         "locator": {
           "kind": "symbol",
@@ -39,8 +57,8 @@
     },
     {
       "anchor": {
-        "blob": "fc1b6b690406fd769aa648ac04acf77e2d181e1c",
-        "content": "sha256:30ee54a0949b5d8e434add6a188d8fab6cb75d013e454a2c954de9067bf3383d",
+        "blob": "3757f3ea9584a7d0d02c49e3df9d27e0590b50a6",
+        "content": "sha256:b39177eaf8b3e81dfe79efe83442283b20c4396ec8d18929cd6562fc8d41fbe1",
         "locator": {
           "kind": "symbol",
           "name": "remembered"
@@ -54,6 +72,24 @@
       },
       "rationale": "Serves a kept verdict only when it is young enough and its kept rows report no change.",
       "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "3757f3ea9584a7d0d02c49e3df9d27e0590b50a6",
+        "content": "sha256:e400485720addf668d9714aae3e9dcec952731a90ef9e533ed61f8b4314a6b58",
+        "locator": {
+          "kind": "symbol",
+          "name": "_read_bytes"
+        }
+      },
+      "id": "RLZ-ZQY7EV",
+      "invariant": "INV-7PGZ9Y",
+      "origin": {
+        "handoffEntry": "L54-curator-MIK-R55-v1-rule-6-actual-guards-wave-70",
+        "leaf": "260928-MIK-L54"
+      },
+      "rationale": "The consumed-byte wrapper records exact successful bytes or actual absence/read failure before memo-key construction.",
+      "role": "propagation-persistence"
     }
   ],
   "references": {
@@ -62,7 +98,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "fc1b6b690406fd769aa648ac04acf77e2d181e1c",
+            "blob": "3757f3ea9584a7d0d02c49e3df9d27e0590b50a6",
             "content": "sha256:b15d1f6b81e9a221ebd9c3d648d0696359dc6ba353ff330d7853f9595499f3f8",
             "locator": {
               "end": 36,
@@ -79,12 +115,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "fc1b6b690406fd769aa648ac04acf77e2d181e1c",
+            "blob": "3757f3ea9584a7d0d02c49e3df9d27e0590b50a6",
             "content": "sha256:55915acaf0717a6bc45f1bfd22f0947e187787359d6b88944394b280fa234504",
             "locator": {
-              "end": 60,
+              "end": 67,
               "kind": "line_range",
-              "start": 59
+              "start": 66
             }
           },
           "kind": "code"
@@ -96,7 +132,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "fc1b6b690406fd769aa648ac04acf77e2d181e1c",
+            "blob": "3757f3ea9584a7d0d02c49e3df9d27e0590b50a6",
             "content": "sha256:aab67928384bb56185a5012e48968fc984b9903efe98efd451719d8da9852db6",
             "locator": {
               "kind": "symbol",
@@ -112,7 +148,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "fc1b6b690406fd769aa648ac04acf77e2d181e1c",
+            "blob": "3757f3ea9584a7d0d02c49e3df9d27e0590b50a6",
             "content": "sha256:d4387f176962b40e3cb6e1fe5d8de862e52bfdb35cd9373e00d9af9faf7a7878",
             "locator": {
               "kind": "symbol",
@@ -160,7 +196,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "fc1b6b690406fd769aa648ac04acf77e2d181e1c",
+            "blob": "3757f3ea9584a7d0d02c49e3df9d27e0590b50a6",
             "content": "sha256:96b092d4d4a66f0747bbafba84cb48420a17836884d23279ea5b47d18f31d7a9",
             "locator": {
               "kind": "symbol",
@@ -193,7 +229,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b8f75c0db0ff78135ca05f2e8d2d82d0a8f2350e",
+            "blob": "b3e66f1ca7de4909a676f0be1d097db319d68067",
             "content": "sha256:1446cc189bdfc847e52f08f12e39dc316d9482c56ebba34c7493d19936aa29de",
             "locator": {
               "kind": "symbol",
@@ -210,7 +246,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b8f75c0db0ff78135ca05f2e8d2d82d0a8f2350e",
+            "blob": "b3e66f1ca7de4909a676f0be1d097db319d68067",
             "content": "sha256:525de24ac76e4627bf2b0ffd1ba7d5e701c5ec644922ae6ffdbf7c3ae47c2e32",
             "locator": {
               "kind": "symbol",
@@ -227,7 +263,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b8f75c0db0ff78135ca05f2e8d2d82d0a8f2350e",
+            "blob": "b3e66f1ca7de4909a676f0be1d097db319d68067",
             "content": "sha256:34bdc078eebaf81a6714ca4f9ec68744347a1449fe40e06e26a458638d867962",
             "locator": {
               "kind": "symbol",
@@ -261,7 +297,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "690ead62160c1245c795067d4e119ae6d4e80a22",
+            "blob": "cd9c5537287afcf467e163d880cd215185351a3f",
             "content": "sha256:208b8ef141a1c32d17061d4ba27d38bd67d44d2ba97e3898f030725c419679f5",
             "locator": {
               "kind": "symbol",
@@ -285,6 +321,40 @@
               "name": "leaf_refusal"
             },
             "path": "mcp/src/agents_remember/application/knowledge_gate/adapter.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "24": {
+      "note": "Contract and found task-document reads record their digest or read failure while constructing the exact memo key.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3757f3ea9584a7d0d02c49e3df9d27e0590b50a6",
+            "content": "sha256:d95f05732be7fdccf66028ec8adf539d0dd2af05f3b55b7122573976db020a91",
+            "locator": {
+              "end": 145,
+              "kind": "line_range",
+              "start": 103
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "25": {
+      "note": "A valid memo hit replays its kept observations; memo admission still excludes failed observations.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3757f3ea9584a7d0d02c49e3df9d27e0590b50a6",
+            "content": "sha256:8c35db0cbe32f7d608f07f9c38cc0650dd0cb7b6fba2578254f05931317925ea",
+            "locator": {
+              "end": 167,
+              "kind": "line_range",
+              "start": 148
+            }
           },
           "kind": "code"
         }

@@ -3,7 +3,25 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "14d13d9d5b69ad58a42bb4e0f5f630509388e1f4",
+        "blob": "034702acb1217ed379f0fc5ec0d2ba979494d1a4",
+        "content": "sha256:3022e49248d0278059a1859a3b985482685a69840a7aecf0997c598a1627ed3d",
+        "locator": {
+          "kind": "symbol",
+          "name": "LeafQuestions._open"
+        }
+      },
+      "id": "RLZ-BS7E38",
+      "invariant": "INV-F2EQDR",
+      "origin": {
+        "handoffEntry": "MIK-R54@v1 rule 6",
+        "leaf": "260928-MIK-L54"
+      },
+      "rationale": "This lazy CLI boundary loads the MCP authority settings, refuses a coordination-root mismatch with the leaf contract, and constructs the task-owned question port only after the roots agree.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "034702acb1217ed379f0fc5ec0d2ba979494d1a4",
         "content": "sha256:f2d33b0a8d65e2b5cb81516998f3280a3eb04dfa627971261b56bd36633d0f8f",
         "locator": {
           "kind": "symbol",
@@ -42,7 +60,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "14d13d9d5b69ad58a42bb4e0f5f630509388e1f4",
+            "blob": "034702acb1217ed379f0fc5ec0d2ba979494d1a4",
             "content": "sha256:e3c94617fa4d9490b39fc29a41e5813e626c107cc0bb036b680fd0004cfa4b05",
             "locator": {
               "kind": "symbol",
@@ -58,7 +76,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "14d13d9d5b69ad58a42bb4e0f5f630509388e1f4",
+            "blob": "034702acb1217ed379f0fc5ec0d2ba979494d1a4",
             "content": "sha256:c81455329dc01ef30d6eaaea0fe16cf16a2f4a8c788b42b0e725cfa5bbfc00e5",
             "locator": {
               "kind": "symbol",
@@ -90,7 +108,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "14d13d9d5b69ad58a42bb4e0f5f630509388e1f4",
+            "blob": "034702acb1217ed379f0fc5ec0d2ba979494d1a4",
             "content": "sha256:a112b2c3820ab58c029bff65415f3dd36e0fdcb72fc9d69ca74a838382440604",
             "locator": {
               "kind": "symbol",
@@ -122,7 +140,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "14d13d9d5b69ad58a42bb4e0f5f630509388e1f4",
+            "blob": "034702acb1217ed379f0fc5ec0d2ba979494d1a4",
             "content": "sha256:d4f4b98251aa354744e3ee82c0ff6886e9d7e5ec6ffaa9ac29ff181febdcf80f",
             "locator": {
               "kind": "symbol",
@@ -138,7 +156,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "14d13d9d5b69ad58a42bb4e0f5f630509388e1f4",
+            "blob": "034702acb1217ed379f0fc5ec0d2ba979494d1a4",
             "content": "sha256:3a021993eccc5e40819cd6621e55eb6f19ad750ac8656e4511b65fb04f8b5c11",
             "locator": {
               "kind": "symbol",
@@ -186,7 +204,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "14d13d9d5b69ad58a42bb4e0f5f630509388e1f4",
+            "blob": "034702acb1217ed379f0fc5ec0d2ba979494d1a4",
             "content": "sha256:e3c94617fa4d9490b39fc29a41e5813e626c107cc0bb036b680fd0004cfa4b05",
             "locator": {
               "kind": "symbol",
@@ -236,7 +254,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "087f86b0f5ccb42c7a61d639d9e8e2fc0bb83461",
+            "blob": "43cc02abb5fcb2756a0b9757b355dbd669352a5f",
             "content": "sha256:ec8a1d3dc66ec9c2792c2151fb4a7a86b2391fe4840f4062350c71ca1c0cb72c",
             "locator": {
               "kind": "symbol",
@@ -270,7 +288,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "14d13d9d5b69ad58a42bb4e0f5f630509388e1f4",
+            "blob": "034702acb1217ed379f0fc5ec0d2ba979494d1a4",
             "content": "sha256:c81455329dc01ef30d6eaaea0fe16cf16a2f4a8c788b42b0e725cfa5bbfc00e5",
             "locator": {
               "kind": "symbol",
@@ -286,7 +304,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "14d13d9d5b69ad58a42bb4e0f5f630509388e1f4",
+            "blob": "034702acb1217ed379f0fc5ec0d2ba979494d1a4",
             "content": "sha256:cb3a38d645b8c3a5daa0cc926f9700da20728e70a2235232c6c223fea0e97af2",
             "locator": {
               "kind": "symbol",
@@ -308,6 +326,35 @@
               "end": 249,
               "kind": "line_range",
               "start": 206
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "35": {
+      "note": "Leaf writes preflight the persisted worklist; lazy question forwarding uses batched publication and same-coordination-root authority.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "034702acb1217ed379f0fc5ec0d2ba979494d1a4",
+            "content": "sha256:b7040d40ce7afbe718a0132d7511326467d0d43ff88de05963658fcb9cde2aa8",
+            "locator": {
+              "end": 277,
+              "kind": "line_range",
+              "start": 237
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "034702acb1217ed379f0fc5ec0d2ba979494d1a4",
+            "content": "sha256:26440d3c3c08d67cf71f1995971aee84e961e2299efc09de1ffacb6c63051882",
+            "locator": {
+              "end": 217,
+              "kind": "line_range",
+              "start": 167
             }
           },
           "kind": "code"

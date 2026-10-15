@@ -1,0 +1,230 @@
+{
+  "path": "skills/l-01-agent-lifecycles/core/invariants.md",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Shared durable continuity and artifact-of-record obligation.\n\nAnchor: \"## Continuity lives in durable state, never in transcripts\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "eb99c95f071db499252c12ef9e4dc01bfedc46fe",
+            "content": "sha256:8dcc78812092daf6f788be86ec379e186a990a3098247ebb7477d99e313cfadd",
+            "locator": {
+              "end": 11,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "Task intent creates its branch and build worktree; design and chat are not build routes. [10]\n\nAnchor: source extent 36–50",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ec4f4e39a6e4cd08c740a6ad21690b3fb5f66761",
+            "content": "sha256:41254bd7a80fd4ab95f339ec8329794cd3f136e73f6abe8c0edcba0e6cf69d17",
+            "locator": {
+              "end": 50,
+              "kind": "line_range",
+              "start": 36
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "Launch settings own current knob rows; removed launchArgs/sessionCommands/promptKeywords load but are unused. [11]\n\nAnchor: source extent 65–82",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ec4f4e39a6e4cd08c740a6ad21690b3fb5f66761",
+            "content": "sha256:8c9396bb24f4664d95957e974e43191dc2d78442e0eb940a6f51352b91f7b538",
+            "locator": {
+              "end": 82,
+              "kind": "line_range",
+              "start": 65
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "Task collaboration, format, memory-specific commands and role/operation duties have separate instruction owners. [12]\n\nAnchor: source extent 84–94",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ec4f4e39a6e4cd08c740a6ad21690b3fb5f66761",
+            "content": "sha256:609a60de3427b8cf33f7b622f3b5a819ef5afed14f40d71f9d431e78cbef22d6",
+            "locator": {
+              "end": 94,
+              "kind": "line_range",
+              "start": 84
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "Core inheritance is retained corpus doctrine and does not prove current native capsule contents. [13]\n\nAnchor: source extent 84–94",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ec4f4e39a6e4cd08c740a6ad21690b3fb5f66761",
+            "content": "sha256:609a60de3427b8cf33f7b622f3b5a819ef5afed14f40d71f9d431e78cbef22d6",
+            "locator": {
+              "end": 94,
+              "kind": "line_range",
+              "start": 84
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Questions, analysis, rulings and retained Architect relay.\n\nAnchor: \"## The decision surface\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "eb99c95f071db499252c12ef9e4dc01bfedc46fe",
+            "content": "sha256:3bbe151503f42b6c21f9344d6a8b6a2ca3e799f108d05395797609988613519b",
+            "locator": {
+              "end": 21,
+              "kind": "line_range",
+              "start": 13
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Dependency-based sequencing and retained observability doctrine.\n\nAnchor: \"## Sequencing is decided by the dependency graph, not by habit\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "eb99c95f071db499252c12ef9e4dc01bfedc46fe",
+            "content": "sha256:8fd828c06acb06c55497069b1eb0e5c3789e99cb3f7ed6864aa558379157207c",
+            "locator": {
+              "end": 34,
+              "kind": "line_range",
+              "start": 23
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Task/branch/worktree intent and chat/build boundary.\n\nAnchor: \"## The spine: task doc → branch → worktree\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "eb99c95f071db499252c12ef9e4dc01bfedc46fe",
+            "content": "sha256:41254bd7a80fd4ab95f339ec8329794cd3f136e73f6abe8c0edcba0e6cf69d17",
+            "locator": {
+              "end": 50,
+              "kind": "line_range",
+              "start": 36
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Small blanks, one-rung escalation and Orchestrator-only spirit test.\n\nAnchor: \"## Default behavior, and where it is overridden\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "eb99c95f071db499252c12ef9e4dc01bfedc46fe",
+            "content": "sha256:41700ff66c7bf1710de7095a2c52b1c01f58b650db1512a2fb891b1515049200",
+            "locator": {
+              "end": 63,
+              "kind": "line_range",
+              "start": 52
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Portable roles, settings precedence, permitted launch keys and harness-independent dispatch.\n\nAnchor: \"## Knob resolution and capability doctrine\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "eb99c95f071db499252c12ef9e4dc01bfedc46fe",
+            "content": "sha256:feaa19cdc47088d902e2e948496ca0f58b6be05433c7c6d51e83b627afc36d7e",
+            "locator": {
+              "end": 81,
+              "kind": "line_range",
+              "start": 65
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "Task, memory, role, operation and rationale ownership; retained core composition sentence.\n\nAnchor: \"## Instruction-surface boundaries\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "eb99c95f071db499252c12ef9e4dc01bfedc46fe",
+            "content": "sha256:609a60de3427b8cf33f7b622f3b5a819ef5afed14f40d71f9d431e78cbef22d6",
+            "locator": {
+              "end": 93,
+              "kind": "line_range",
+              "start": 83
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "Selected Orientation starts from supplied assignment and forbids loading other role/core files.\n\nAnchor: \"Do not add `.json`\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "66b580e5158b30270e6f97efbfda840f38d784d7",
+            "content": "sha256:bb414048acd785bfbb9d72af5af3511356fa4fd93d2034371fc1a3e87be40956",
+            "locator": {
+              "end": 7,
+              "kind": "line_range",
+              "start": 3
+            },
+            "path": "skills/l-01-agent-lifecycles/operations/orientation.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "Present parent routing and explicit parentless exception qualify the retained universal Architect-only statement.\n\nAnchor: \"Without a parent\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "66b580e5158b30270e6f97efbfda840f38d784d7",
+            "content": "sha256:f19996a6e39c8ced671ebe691144c37fa09460938d267fda2eea936e1639ed46",
+            "locator": {
+              "end": 20,
+              "kind": "line_range",
+              "start": 18
+            },
+            "path": "skills/l-01-agent-lifecycles/operations/orientation.md"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

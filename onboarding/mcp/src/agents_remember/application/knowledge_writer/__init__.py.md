@@ -16,8 +16,9 @@ modules (`requirement_links` since MIK-R13; `reconsideration` and `open_question
 
 - `__all__` is exactly the four names above. The history check (`history_check.py`) is not listed in the
   docstring's module map, although the writer calls it; it is an internal step of `write_knowledge`.
-- Since MIK-R13 the module map names `requirement_links`: the requirement endpoints a run's records link, resolved
-  by their owner and reported, never refused. Nothing is re-exported for it; the report carries its result.
+- The module map names `requirement_links`: the requirement owner resolves endpoints, and the report carries
+  its result. With a coordination root, a newly authored or changed unresolved link refuses the writer run;
+  unchanged unresolved links remain observations. This authoring rule is not a task-plane commit gate.
 - Since MIK-R14 the map names `reconsideration` (the `still_rejected` and `raise` rows: `raise` sets the decision
   `under_reconsideration` and appends a question for the developer; `still_rejected` refreshes the fired links) and
   `open_questions` (that question, appended to the leaf's task document through `task_doc`). Nothing is re-exported
@@ -30,10 +31,8 @@ modules (`requirement_links` since MIK-R13; `reconsideration` and `open_question
 ### Invariants And Boundaries
 
 - `knowledge-ingest` and `knowledge-bootstrap` reach this package only when the memory tree they write is
-  **converted** (it holds `knowledge/layout.json`). Unconverted memory keeps the installed database ingest
-  until the cutover (MIK-R37); the database modules (`application/knowledge_ingest.py`,
-  `knowledge_curator_ingest.py`, `knowledge_bootstrap*.py`) are untouched, and their removal is MIK-R26's
-  (L26).
+  **converted** (it holds `knowledge/layout.json`). An unconverted tree must convert before using this writer;
+  database ingest is retired, not a supported fallback. The package still exposes the same four public names.
 
 ### Todos
 
@@ -59,7 +58,7 @@ The package surface.
 - The package's public surface: the owner, the report, the request and the one operation. [1]
 - The one operation it exports. [2]
 - The module map names the reconsideration rows and the task-document question (MIK-R14). [3]
-- The module map names the requirement endpoints module (MIK-R13). [4]
+- Requirement-owner observations include writer refusal of new or changed unresolved links with a coordination root; the writer requires converted memory and has no database-ingest fallback. [4]
 
 ### Cross-Repo References
 

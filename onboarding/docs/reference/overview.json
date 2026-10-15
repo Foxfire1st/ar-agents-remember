@@ -35,12 +35,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "93cde78e1cfbadf26596b1da769dfad9109abdd6",
+            "blob": "167c28bf3a5d1b7ea0ee02e83892bf55ee9a32aa",
             "content": "sha256:db2e5557cc428798a0a83e5f4d6a5a7b97ce6b56fc98780eac1d5e6b49eb4cc8",
             "locator": {
-              "end": 159,
+              "end": 161,
               "kind": "line_range",
-              "start": 122
+              "start": 124
             },
             "path": "mcp/src/agents_remember/models/memory.py"
           },
@@ -292,29 +292,16 @@
       ]
     },
     "20": {
-      "note": "Finalization resolves the named or exact folder parent rather than inventing a parent.\n\nAnchor: _resolve_parent_target / _folder_parent",
+      "note": "Finalization requires the exact contract-bound leaf and its named or exact folder master row; missing authority refuses, without a standalone fallback.",
       "targets": [
         {
           "anchor": {
-            "blob": "471082802727d562a439135d2393de74c82bc831",
-            "content": "sha256:895d7ab17f6fabe40ee8ad68547af4cdb4227c0455d278c1b9463da0a703b9bd",
+            "blob": "f20e2bdd349f2d6f8d541fd954bb6cb6f6028ade",
+            "content": "sha256:4357c9332bc368600523e68b45bd67bec7d54f4a8ecb52de5c90b49808bc6bc0",
             "locator": {
-              "end": 154,
+              "end": 189,
               "kind": "line_range",
-              "start": 115
-            },
-            "path": "mcp/src/agents_remember/worktrees/modules/finalize_task_documents.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "471082802727d562a439135d2393de74c82bc831",
-            "content": "sha256:97d7d439c49779161d3656f6b2b73ecca61271b27d675c63e4c74d8680162d84",
-            "locator": {
-              "end": 199,
-              "kind": "line_range",
-              "start": 177
+              "start": 113
             },
             "path": "mcp/src/agents_remember/worktrees/modules/finalize_task_documents.py"
           },
@@ -345,12 +332,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "091ddadd2d4f4e30e71f798c050ea011606bc638",
+            "blob": "d624a37ecd8800604aa5b08f6343e8e771bd8cb7",
             "content": "sha256:21276d40d9fd521f37d482c3fd99f34938c9dbbc406db52d816c89ff77dba7c3",
             "locator": {
-              "end": 194,
+              "end": 195,
               "kind": "line_range",
-              "start": 111
+              "start": 112
             },
             "path": "mcp/src/agents_remember/application/review_external_git_movement.py"
           },

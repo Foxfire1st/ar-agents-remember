@@ -20,6 +20,8 @@ The Curator seat opens only on a leaf task document. Before any task exists, Boo
 
 ### Logic
 
+The Writer/worklist correction section requires a readable persisted leaf worklist and governing changed rows, with the stated raise/new-record and wave/crossing exemptions. It describes order-independent same-list invariant handles, own-origin evidence replacement, plain test-title proofs with line-range recovery for unsupported forms, full grouped source bindings, supersession/route/refresh reconsideration, actual broken-link repair and equal-versus-divergent generated copies. Continuing rejected simplifications/workarounds become decisions with the real rejected option and reason, not unfinished implementation. These source instructions do not claim that pending decisions or proofs have already been authored; typed claims and task/Git powers remain unchanged.
+
 Batch changed-card citation previews and repairs with one documents list per wave. The stage writes, checks and publishes task knowledge with the installed build and a clean quality check; own-input/coherence faults are corrected through the same admitted tool, never relabeled or bypassed. Valid product/permission/authority/out-of-ground blockers stop dependent work. MEMORY beyond-settings authority comes from architect/developer through the recorded Manager act; independent review and publication are not acceptance.
 
 This canonical role/operation requires messages to be short wake-ups naming requested work or a handover and its files. Report, verdict, list and evidence contents travel through file-only `body` or existing-file `attach`, not pasted into message text. Within a shared task, files stay with its record and a leaf workspace exposes the message-folder link. Text uses the effective settings limit without a pinned number. The canonical source and generated copies share this contract; transport does not change their existing write/start powers, peer destinations or independent acceptance authority.
@@ -114,6 +116,9 @@ Worker ends with requirement-satisfying bytes, focused checks and report with Re
 A cut-card observation calls for a causal account: the handover names the change of this task that made the removed master text untrue. Removing text to silence a quality finding is never the remedy. Evidence and working files belong to the task record or scratch root, not the memory worktree; durable onboarding and knowledge remain the Curator’s writable memory surface. This adds review content without transferring the one writer, full-quality loop or landing authority.
 
 ## Evidence
+
+- The canonical section states corrected Writer/worklist/recovery duties and records real rejected design alternatives rather than inventing future work. [16]
+
 
 - Required task, source, handoff and publication inputs. [1]
 - Three-way reconciliation, explicit retention, writer/readback and full quality duties. [2]

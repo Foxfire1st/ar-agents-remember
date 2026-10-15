@@ -1,0 +1,180 @@
+{
+  "path": "mcp/src/agents_remember/application/knowledge_worklist/generated_copies.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "f7d81663443ba0fafe18885b1e6e9c84ca6f1b3a",
+        "content": "sha256:293fbbfd933a1daf6d3661c605ac8dfb4fcb81e177558d68f8cf13f5dab84957",
+        "locator": {
+          "kind": "symbol",
+          "name": "generated_copy_facts"
+        }
+      },
+      "id": "RLZ-0AQGNN",
+      "invariant": "INV-43KAHE",
+      "origin": {
+        "handoffEntry": "L54-R1-C12 round3 raw declaration entry",
+        "leaf": "260928-MIK-L54"
+      },
+      "rationale": "The exact entry mode is checked before filtered blob lookup, refusing present nonregular declarations by name.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "f7d81663443ba0fafe18885b1e6e9c84ca6f1b3a",
+        "content": "sha256:293fbbfd933a1daf6d3661c605ac8dfb4fcb81e177558d68f8cf13f5dab84957",
+        "locator": {
+          "kind": "symbol",
+          "name": "generated_copy_facts"
+        }
+      },
+      "id": "RLZ-40STN3",
+      "invariant": "INV-0NEA6F",
+      "origin": {
+        "handoffEntry": "MIK-R55@v1 rule 11",
+        "leaf": "260928-MIK-L54"
+      },
+      "rationale": "This predicate evaluates the declaration and candidate source bytes, suppressing only equal generated copies.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Raw declaration mode is checked before filtered blob lookup, then per-payload canonical/equality facts are derived from the candidate.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f7d81663443ba0fafe18885b1e6e9c84ca6f1b3a",
+            "content": "sha256:293fbbfd933a1daf6d3661c605ac8dfb4fcb81e177558d68f8cf13f5dab84957",
+            "locator": {
+              "kind": "symbol",
+              "name": "generated_copy_facts"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "One bounded nonrecursive Git entry read observes even a tree with no recursive leaves.\n\nAnchor: `CodeObjects.tree_entry_mode`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7ac14e416b82c9b4d3547ea9afcff041d038a511",
+            "content": "sha256:8a563d2dbba88ee1e753a308ffe54c534ade411f77c97c5e979261cb0e0541f8",
+            "locator": {
+              "end": 150,
+              "kind": "line_range",
+              "start": 141
+            },
+            "path": "mcp/src/agents_remember/memory/conversion/code_objects.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Full worklist fixtures retain canonical and ordinary changes, suppress only equal declared copies and restore a divergent copy's obligation.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e084d8c908f5a655c2f0ddd6a3f1f9e8252125e8",
+            "content": "sha256:674d800a10ba9912700c995f56ffbb2a353fc62c49f5a1fc343ae2129c873fff",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_full_worklist_suppresses_only_equal_declared_copies"
+            },
+            "path": "mcp/tests/test_generated_copy_worklist.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "Grouped members keep their canonical bindings and complete source/base populations regardless of the representative.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e084d8c908f5a655c2f0ddd6a3f1f9e8252125e8",
+            "content": "sha256:a0a5a03cadb626208d3c1ece512145faba950c5fcb5f3ac991be39d6b1524faf",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_grouped_generated_members_keep_each_canonical_binding"
+            },
+            "path": "mcp/tests/test_generated_copy_worklist.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "Both source-side and target-side symlinks retain full worklist obligations even when their link blobs compare equal.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e084d8c908f5a655c2f0ddd6a3f1f9e8252125e8",
+            "content": "sha256:f6faf82c8eb6323184c5c3f6f06f3ef6610a2c0031963f25c5866083d583127d",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_symlink_payloads_never_suppress_full_worklist"
+            },
+            "path": "mcp/tests/test_generated_copy_worklist.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "Invalid JSON, nonempty directories and symlink declarations are named incomplete; true absence supplies no suppression.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e084d8c908f5a655c2f0ddd6a3f1f9e8252125e8",
+            "content": "sha256:dee7625078a03c95aadc481ec3f455d3386c0057d662bc8408351edd8a2c6069",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_absent_declaration_is_no_suppression_but_invalid_candidate_is_unreadable"
+            },
+            "path": "mcp/tests/test_generated_copy_worklist.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "A gitlink declaration is incomplete in both changed and equal-tree cases.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e084d8c908f5a655c2f0ddd6a3f1f9e8252125e8",
+            "content": "sha256:7b8a1a68188faf3cbed4516c5f4bc7c2765db7f9b6c7db5486baedfacc6b703f",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_present_gitlink_declaration_is_incomplete"
+            },
+            "path": "mcp/tests/test_generated_copy_worklist.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "Native empty-tree and nested-empty-tree fixtures use equal base/candidate trees and require named refusal plus an incomplete full worklist.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e084d8c908f5a655c2f0ddd6a3f1f9e8252125e8",
+            "content": "sha256:355ebd611e9da964b8c32c8f4a8b181386acecddde320b2cb7b024452a801fc9",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_present_empty_tree_declaration_is_incomplete"
+            },
+            "path": "mcp/tests/test_generated_copy_worklist.py"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

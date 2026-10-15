@@ -1,6 +1,25 @@
 {
   "path": "mcp/src/agents_remember/worktrees/source_lineage.py",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "0698b4d3060c69466daeccba41780544dbc5a11d",
+        "content": "sha256:ce8b21908e635c8653e525d3856b4a9d7cddb666adb285c5e78b9c14ce220a86",
+        "locator": {
+          "kind": "symbol",
+          "name": "_organizational_source_branch"
+        }
+      },
+      "id": "RLZ-T863R2",
+      "invariant": "INV-6WXVEA",
+      "origin": {
+        "handoffEntry": "L54-curator-MIK-R55-v1-rule-9-actual-guards",
+        "leaf": "260928-MIK-L54"
+      },
+      "rationale": "A leaf without a parent series must resolve organizational-master and commanding-sprint branch authority rather than starting standalone.",
+      "role": "enforcement"
+    }
+  ],
   "references": {
     "1": {
       "note": "Canonical task altitude selects the correct contract and missing-edge relation.",

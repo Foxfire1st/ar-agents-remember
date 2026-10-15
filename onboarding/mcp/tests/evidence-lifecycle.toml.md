@@ -2,7 +2,7 @@
 
 ## Current paired source contract — scoped assertions and incoming catalogs
 
-The current parsed catalog has 12 contract rows and 70 artifact rows after the retired L113 surfaces were removed. The source-owned regeneration adds 25 current consumers to `_user_settings_guard.py`, removes six deleted test consumers and one duplicate from the Node fixture lockfile row, and orders the derived lists. Contract identities and every non-consumer artifact field remain unchanged by that regeneration. Earlier 14-contract and 102-artifact accounts below describe prior snapshots, not this catalog. Registration remains ownership and reachability metadata, never invocation or acceptance.
+The current parsed catalog declares 12 contracts and 73 artifacts. Three permanent shared-support artifacts cover reconsideration setup, writer-correction fixtures and the native persisted-worklist prerequisite; their replacement nodes and exact consumer lists declare reusable evidence ownership, not invocation. The earlier 12-contract/70-artifact catalog preceded these support declarations. Its regeneration account—25 added settings-guard consumers and six deleted plus one duplicate Node-fixture consumers removed—remains historical, as do the older 14-contract/102-artifact populations. Source-owned canonicalization preserves unaffected lifecycle metadata and applies the owner’s complete supported delta.
 
 The held catalog declares consumers for held queues, native retirement, role_start_set, comparison changesets, the citation/quality/packaging shaped memory-tool row modules, coherence file transport, takeover and uv-minimum bootstrap modules. The permanent tool_answer_l110_rows support has an artifact declaration and a replacement test node. The role-agent and role-message declarations remain on the existing settings-guard, Node-lockfile, Paseo-launch and Paseo-runtime rows. test_paseo_role_agents.py is declared on settings-guard, Node-lockfile and Paseo-runtime; test_role_message_files.py on those three plus Paseo-launch; test_role_message_wording.py on Node-lockfile. These are present catalog declarations, not a source-diff account or evidence of invocation. Node-lockfile membership follows the syntactic dependency oracle and does not by itself establish use of that particular fixture. The existing nine Doc14 fixture rows and validator support also declare `test_mik_r53_judgment_rows.py` and `test_mik_r53_report_only_rules.py`; writer support declares judgment_rows and onboarding_gate; the Node lockfile row declares all three. This extends consumer reachability only, not artifact/contract identity, lane assignment or execution.
 
@@ -53,16 +53,18 @@ The existing `tool_answer_l110_rows.py` artifact includes `test_legacy_refusal_e
 
 ## Code Commentary
 
+The exact derived consumer list for writer_worklist_test_support.py declares test_closeout_live_gate.py and test_workspace_wake_zero_census.py. The settings-guard and Node-fixture canonicalization only restores validator-link-target ordering, without changing those two membership sets. The complete owner-generated repair spans both catalogs and reinterprets no category, scope, guard, limit or replacement contract.
+
 The current artifact paths and every exact consumer list are canonically sorted. The eight L109 fixture blocks retain their identities and nonconsumer fields. The retained L109 consumer edges declare the diff-report, naming-projection and paging modules. The current refusal suite is also declared on existing reader fixtures and shared supports, through its answer-table import. These memberships add no artifact and certify no invocation.
 
 The L109 incoming 101-artifact caption and the refusal-suite registration account are retained historical observations, not the current population or L162 additions. The current Node-lockfile artifact still declares native reapply and now also task-document Order; membership alone proves no invocation.
 
-- The current composed catalog declares 12 contracts and 70 artifacts; CODE6/passed 14-contract/102-artifact and incoming 101-artifact populations remain historical on their own objects. Native reapply and task-document Order remain declared on the existing Node lockfile artifact; task-document Order also remains on the settings guard. Compared with landed L162 (6be1b3fa), four consumer lists expand: settings guard and Node lockfile each gain 25 consumers, coherence support gains three, and enclosure support gains one. Contract/artifact identities and non-consumer fields are unchanged in this comparison. Declarations and canonical ordering establish no invocation or acceptance. [271]
+The pre-support-split catalog declared 12 contracts and 70 artifacts; CODE6/passed 14-contract/102-artifact and incoming 101-artifact populations remain historical on their own objects. Native reapply and task-document Order remain declared on the existing Node lockfile artifact; task-document Order also remains on the settings guard. Compared with landed L162 (6be1b3fa), four consumer lists expand: settings guard and Node lockfile each gain 25 consumers, coherence support gains three, and enclosure support gains one. Contract/artifact identities and non-consumer fields are unchanged in this comparison. Declarations and canonical ordering establish no invocation or acceptance. That comparison is retained at its own source epoch; the current parsed inventory is 12 contracts/73 artifacts.
 
 
 ### Current Contract
 
-The current source TOML declares 12 contract rows and 70 artifact rows. L113 removes retired owners and their governed artifacts; the earlier composed 14-contract/102-artifact population is historical. The remaining R111 shaped-row support retains its declaration and replacement contract. Counts are source inventory, not executed catalog validation or acceptance.
+The current source TOML declares 12 contract rows and 73 artifact rows; the earlier 70-artifact epoch preceded the three shared-support declarations. L113 removes retired owners and their governed artifacts; the earlier composed 14-contract/102-artifact population is historical. The remaining R111 shaped-row support retains its declaration and replacement contract. Counts are source inventory, not executed catalog validation or acceptance.
 The incoming 101-artifact and prior 14-contract/102-artifact populations remain historical on their own objects. Native source-reference currency alone cannot establish semantic correspondence.
 
 
@@ -201,7 +203,7 @@ The catalog declares the grant, dashboard, direct-leaf integration/role-start an
 
 ## Task-Document Order Consumer
 
-`mcp/tests/test_task_document_order.py` is an exact declared consumer of both `mcp/tests/fixtures/repository_profiles/node/package-lock.json` and the canonical support artifact `mcp/tests/_user_settings_guard.py`. The current parsed inventory has 12 contracts and 70 artifacts. These registrations change consumer membership, not artifact identity, lifetime, fidelity, replacement contract or other metadata. TOML declaration/parsing is not fixture use, loader or test execution.
+`mcp/tests/test_task_document_order.py` is an exact declared consumer of both `mcp/tests/fixtures/repository_profiles/node/package-lock.json` and the canonical support artifact `mcp/tests/_user_settings_guard.py`. The current parsed inventory has 12 contracts and 73 artifacts; the earlier 70-artifact inventory predates the three shared-support declarations. These registrations change consumer membership, not artifact identity, lifetime, fidelity, replacement contract or other metadata. TOML declaration/parsing is not fixture use, loader or test execution.
 
 
 - Existing Node package-lock artifact includes test_task_document_order.py as an exact consumer; no new artifact/contract or executed invocation is inferred. [290]
@@ -763,3 +765,8 @@ The existing `paseo_launch_test_support.py` shared-support row now describes the
 - **Historical source-bound reference account, not an operative override:** The role-agent and role-message consumer additions belong to the existing settings-guard, Node-lockfile, Paseo-launch and Paseo-runtime artifact rows; declarations establish reachability, not execution. [267]
 
 - Diff-scope support declares line/movement/reach as canonically ordered exact consumers; the prior newest-last caption is historical, not a current ordering rule. [220]
+
+
+- The current catalog declares 12 contracts and 73 artifacts, including three permanent reconsideration, writer-correction and native-worklist shared supports. Ownership, lifetimes, replacement nodes and exact consumers are declarations, not observed execution or acceptance. [271]
+
+- Native-worklist support declares the closeout-live-gate and workspace-wake-zero-census consumers. Source-owned sorting preserves settings-guard and Node-fixture membership and changes no non-consumer metadata in that repair. [292]

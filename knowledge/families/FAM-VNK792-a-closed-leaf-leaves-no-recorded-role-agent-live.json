@@ -27,15 +27,14 @@
     "leaf": "260928-MIK-L76",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "routes": [
-    "mcp",
     "mcp/src/agents_remember/application",
     "mcp/src/agents_remember/cli",
+    "mcp/src/agents_remember/mcp",
     "mcp/src/agents_remember/models/lifecycles",
     "mcp/src/agents_remember/serving",
-    "mcp/src/agents_remember/worktrees",
-    "mcp/src/agents_remember/worktrees/modules"
+    "mcp/src/agents_remember/worktrees"
   ],
   "schema": "ar-family/v1",
   "status": "proposed",

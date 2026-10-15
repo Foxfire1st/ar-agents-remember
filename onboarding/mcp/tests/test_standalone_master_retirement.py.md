@@ -20,11 +20,10 @@ reuses the `World` fixture of `test_master_retirement.py`. The module is in the 
 
 ### Logic
 
-- **Finalization never archives a master (three cases).** A sprint-commanded master completes its sprint row, keeps its
+- **Valid master finalization and missing-document refusals are distinct.** A sprint-commanded master completes its sprint row, keeps its
   folder, and the archive result is `skipped` with `reason: sprint-commands-master`, the sprint named and
   `task_doc.retire_master` in the detail. A master no sprint commands keeps its folder, no ref moves, and the archive
-  result is `master-archived-only-by-retire` with no `reviewArtifacts` and no `archivePath`. An ordinary standalone task
-  keeps today's `root-series-still-active` result and its leaf update `skipped`. `archive_completed_root_task` itself
+  result is `master-archived-only-by-retire` with no `reviewArtifacts` and no `archivePath`. The legacy-named ordinary-standalone and no-task-document skip cases now refuse as `task-document-resolution-blocked`, name the contract-bound document/master-row requirement and compare unchanged world snapshots. They no longer assert successful finalization, a skipped leaf update or `root-series-still-active`. `archive_completed_root_task` itself
   never archives a task that holds a series contract. An organizational master that no sprint commands finalizes with
   its folder kept.
 - **Contradictory typed sprint rows refuse finalization.** Two typed rows for the same master refuse as
@@ -64,9 +63,13 @@ open-work witness. The retirement refusal and its no-write assertions remain the
 
 ## Evidence
 
+- Both legacy-named standalone/no-document skip cases now assert contract-bound-document/master-row refusal and unchanged world snapshots rather than successful finalization. [13]
+
+
 - Finalizing a sprint-commanded master completes its row, keeps the folder and names the sprint. [1]
 - Finalizing a master no sprint commands keeps it and names the retire route. [2]
-- An ordinary standalone task keeps today's skip. [3]
+- The ordinary unbound subTask refuses finalization with the contract-bound document/master-row message and unchanged world snapshot. [3]
+
 - The archive step never archives a task that holds a series contract. [4]
 - A partial hook failure on a lone master keeps the retirement and retries the cleanup only. [5]
 - A retry with other edge arguments is refused with no change. [6]

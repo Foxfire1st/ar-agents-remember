@@ -1,9 +1,45 @@
 {
   "path": "mcp/tests/test_knowledge_worklist_leaf.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "c6812adcc6ab02a7d3f4171a191ff52abb61c1c9",
+        "content": "sha256:5ad4d144fa287d52e3a44949b08eb51c86f6194fef6e3672ba5969fccf2f9c47",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_base_cache_store_survives_a_file_deleted_between_listing_and_stat"
+        }
+      },
+      "facet": "Source-defined regression check; not executed by Curator: Eviction tolerates the injected listing/stat disappearance and leaves the newly stored cache entry loadable.",
+      "id": "PRF-T79QCZ",
+      "invariant": "INV-6WXVEA",
+      "origin": {
+        "handoffEntry": "L54-curator-proof-MIK-R55-v1-rule-9-wave-76",
+        "leaf": "260928-MIK-L54"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "c6812adcc6ab02a7d3f4171a191ff52abb61c1c9",
+        "content": "sha256:9cd7042800489013f9be4956aafa55119033beb23078722d1dc3a0e7b1d0d567",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_the_memory_quality_controller_persists_the_worklist_and_renders_it_in_the_checklist"
+        }
+      },
+      "facet": "Source-defined regression check; not executed by Curator: The real controller composition in a stubbed external-readiness fixture retains proof count in both report modes, builds absent fresh-clone indexes, persists the worklist and labels review nongating; not live end-to-end acceptance.",
+      "id": "PRF-Y1F1CY",
+      "invariant": "INV-3PHJ0H",
+      "origin": {
+        "handoffEntry": "L54-curator-proof-MIK-R55-v1-rule-7-wave-76",
+        "leaf": "260928-MIK-L54"
+      }
+    }
+  ],
   "realizes": [
     {
       "anchor": {
-        "blob": "57e1ed667583a6785be6fac21796aa8a1314bc0d",
+        "blob": "c6812adcc6ab02a7d3f4171a191ff52abb61c1c9",
         "content": "sha256:de92200ab1ef77d40740f40d55d8c4176fd03703c8dff3ea08a3b75281b90689",
         "locator": {
           "kind": "symbol",
@@ -26,7 +62,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "bb33d32e66cacf8fa81aad1a23356a78e271e230",
+            "blob": "c6812adcc6ab02a7d3f4171a191ff52abb61c1c9",
             "content": "sha256:bf96f8181cea1ece869f2921b57b402ee8d34458f1dac0650e67d08f57291323",
             "locator": {
               "end": 5,
@@ -43,7 +79,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "bb33d32e66cacf8fa81aad1a23356a78e271e230",
+            "blob": "c6812adcc6ab02a7d3f4171a191ff52abb61c1c9",
             "content": "sha256:26d048924a5f466e265c649ec7e10c4cdecb4aedf219eddc3e47dc4bb510b081",
             "locator": {
               "kind": "symbol",
@@ -59,7 +95,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "bb33d32e66cacf8fa81aad1a23356a78e271e230",
+            "blob": "c6812adcc6ab02a7d3f4171a191ff52abb61c1c9",
             "content": "sha256:e443416bd568ce0600bd81d13d4c26056a9cfa83ed8bea722eff3af6f5592cc8",
             "locator": {
               "kind": "symbol",
@@ -75,7 +111,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "bb33d32e66cacf8fa81aad1a23356a78e271e230",
+            "blob": "c6812adcc6ab02a7d3f4171a191ff52abb61c1c9",
             "content": "sha256:cbd1939ce9438a98ec3d33abda34e01b8a9eaaf4ae7db54346077b9112aac33b",
             "locator": {
               "kind": "symbol",
@@ -91,7 +127,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "bb33d32e66cacf8fa81aad1a23356a78e271e230",
+            "blob": "c6812adcc6ab02a7d3f4171a191ff52abb61c1c9",
             "content": "sha256:d18fd70894e0d97b5c2558ce098100f31b3fd328ae799b05ee7658604cbfad7f",
             "locator": {
               "kind": "symbol",
@@ -107,7 +143,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "bb33d32e66cacf8fa81aad1a23356a78e271e230",
+            "blob": "c6812adcc6ab02a7d3f4171a191ff52abb61c1c9",
             "content": "sha256:a0ed35805dbb7d23462f50b23ed19b8548656e86ab6bc977c4c81e898a3b032b",
             "locator": {
               "kind": "symbol",
@@ -123,7 +159,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "bb33d32e66cacf8fa81aad1a23356a78e271e230",
+            "blob": "c6812adcc6ab02a7d3f4171a191ff52abb61c1c9",
             "content": "sha256:0ce0d8b09fe446eae103436346e55cb41b36e1e6300b7d5aa90f8b87faf24161",
             "locator": {
               "kind": "symbol",
@@ -139,7 +175,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "172b440738a1d8071271d873fec1d5482306a954",
+            "blob": "f37070c96f3a4fed9384eaf18b66037e1403baaa",
             "content": "sha256:abafcdb467fd570de9c45647ea00c8748d46a43a39359b135720ca1eff1ffcfd",
             "locator": {
               "kind": "symbol",
@@ -156,7 +192,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "bb33d32e66cacf8fa81aad1a23356a78e271e230",
+            "blob": "c6812adcc6ab02a7d3f4171a191ff52abb61c1c9",
             "content": "sha256:631732cc4652b28279cb4a9d3dfcfefeae8c845e53b51d7d509f2544625fbe01",
             "locator": {
               "kind": "symbol",
@@ -172,7 +208,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "bb33d32e66cacf8fa81aad1a23356a78e271e230",
+            "blob": "c6812adcc6ab02a7d3f4171a191ff52abb61c1c9",
             "content": "sha256:d18fd70894e0d97b5c2558ce098100f31b3fd328ae799b05ee7658604cbfad7f",
             "locator": {
               "kind": "symbol",
@@ -204,7 +240,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "bb33d32e66cacf8fa81aad1a23356a78e271e230",
+            "blob": "c6812adcc6ab02a7d3f4171a191ff52abb61c1c9",
             "content": "sha256:0e1d8485e897e8b22b166d411644a2fdfd746159caa43fc3bf9374e22b44af3c",
             "locator": {
               "kind": "symbol",
@@ -215,7 +251,7 @@
         },
         {
           "anchor": {
-            "blob": "bb33d32e66cacf8fa81aad1a23356a78e271e230",
+            "blob": "c6812adcc6ab02a7d3f4171a191ff52abb61c1c9",
             "content": "sha256:937d94c896844458b5e41fd6790d1ffa4746413e2a958637b6598034ee6748ae",
             "locator": {
               "end": 238,
@@ -232,7 +268,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "bb33d32e66cacf8fa81aad1a23356a78e271e230",
+            "blob": "c6812adcc6ab02a7d3f4171a191ff52abb61c1c9",
             "content": "sha256:26d048924a5f466e265c649ec7e10c4cdecb4aedf219eddc3e47dc4bb510b081",
             "locator": {
               "kind": "symbol",
@@ -248,7 +284,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "bb33d32e66cacf8fa81aad1a23356a78e271e230",
+            "blob": "c6812adcc6ab02a7d3f4171a191ff52abb61c1c9",
             "content": "sha256:f502708a58ed54430b132b804c481f2306f4b588d8aa14c03de9a181e0b0900b",
             "locator": {
               "kind": "symbol",
@@ -280,7 +316,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "bb33d32e66cacf8fa81aad1a23356a78e271e230",
+            "blob": "c6812adcc6ab02a7d3f4171a191ff52abb61c1c9",
             "content": "sha256:631732cc4652b28279cb4a9d3dfcfefeae8c845e53b51d7d509f2544625fbe01",
             "locator": {
               "kind": "symbol",
@@ -296,7 +332,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "bb33d32e66cacf8fa81aad1a23356a78e271e230",
+            "blob": "c6812adcc6ab02a7d3f4171a191ff52abb61c1c9",
             "content": "sha256:de92200ab1ef77d40740f40d55d8c4176fd03703c8dff3ea08a3b75281b90689",
             "locator": {
               "kind": "symbol",
@@ -328,7 +364,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "bb33d32e66cacf8fa81aad1a23356a78e271e230",
+            "blob": "c6812adcc6ab02a7d3f4171a191ff52abb61c1c9",
             "content": "sha256:288294c171cacc7cfd64e90e9efda89801b7578942f1b21a3af9edf119eedebc",
             "locator": {
               "kind": "symbol",
@@ -360,7 +396,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "bb33d32e66cacf8fa81aad1a23356a78e271e230",
+            "blob": "c6812adcc6ab02a7d3f4171a191ff52abb61c1c9",
             "content": "sha256:a0ed35805dbb7d23462f50b23ed19b8548656e86ab6bc977c4c81e898a3b032b",
             "locator": {
               "kind": "symbol",
@@ -376,7 +412,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "bb33d32e66cacf8fa81aad1a23356a78e271e230",
+            "blob": "c6812adcc6ab02a7d3f4171a191ff52abb61c1c9",
             "content": "sha256:a4fc414282b6f160e216925263e21a8d7581649fe3bbc52910c20da74d521c43",
             "locator": {
               "kind": "symbol",
@@ -392,7 +428,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "bb33d32e66cacf8fa81aad1a23356a78e271e230",
+            "blob": "c6812adcc6ab02a7d3f4171a191ff52abb61c1c9",
             "content": "sha256:d18fd70894e0d97b5c2558ce098100f31b3fd328ae799b05ee7658604cbfad7f",
             "locator": {
               "kind": "symbol",
@@ -416,6 +452,35 @@
               "start": 1239
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "41": {
+      "note": "The controller source exercises a fresh shared clone, real index building, informational proof counts and distinct report modes; cache store tolerates listing/stat disappearance.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c6812adcc6ab02a7d3f4171a191ff52abb61c1c9",
+            "content": "sha256:c818c2f11964b91e1dac9c354d30fba65d70c8fe163868d42f9f03eb9d297e50",
+            "locator": {
+              "end": 706,
+              "kind": "line_range",
+              "start": 590
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "c6812adcc6ab02a7d3f4171a191ff52abb61c1c9",
+            "content": "sha256:5ad4d144fa287d52e3a44949b08eb51c86f6194fef6e3672ba5969fccf2f9c47",
+            "locator": {
+              "end": 816,
+              "kind": "line_range",
+              "start": 803
+            }
           },
           "kind": "test"
         }

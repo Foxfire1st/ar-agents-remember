@@ -47,6 +47,8 @@
 
 MIK-R06 is expected to reuse `family_route_state` and `suggest_family_routes` for its route-maintenance item facts.
 
+`RoutedFamily` carries one family record path plus its state. `family_route_states(parsed)` builds the realization-location map once and derives one state for every parsed family; `ValidationContext.route_families` caches this tuple for the route rules of that one validation. The location map still excludes proof-only entries, and the cache is not reused across candidate contexts.
+
 ## Evidence
 
 ### Docs References
@@ -79,3 +81,5 @@ No cross-repo boundary is crossed by this file.
 
 - One family's route state: retired, unrealized, unassigned, uncovered, emptied, routeless; Coverage/Non-empty waivers do not waive separate finding enforcement. [3]
 - Current source delta inspected statically: Keep pure route computations and retired exemptions but replace the unconditional reports-both claim with the separate merge_reports and migration_debt enforcement policies. [9]
+
+- The parsed-tree family-state population is shared by the validation context. [10]

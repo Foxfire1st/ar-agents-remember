@@ -1,6 +1,25 @@
 {
   "path": "mcp/src/agents_remember/cli/knowledge_validate.py",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "151403083daa285dde3b0cbff00801440a07f954",
+        "content": "sha256:096f6e8a0dbc99005240f7b0fa61dbe2ef28decdc7a64acc48a54ed3a77d01fb",
+        "locator": {
+          "kind": "symbol",
+          "name": "_print"
+        }
+      },
+      "id": "RLZ-WSEQ0Q",
+      "invariant": "INV-DWPSRR",
+      "origin": {
+        "handoffEntry": "MIK-R54@v1 rule 8",
+        "leaf": "260928-MIK-L54"
+      },
+      "rationale": "This CLI rendering names the no-base/new-record consequence beside its native result.",
+      "role": "presentation"
+    }
+  ],
   "references": {
     "1": {
       "note": "Arguments, RawDescriptionHelpFormatter and the ten-rule reason/refusing-route table.",
@@ -19,48 +38,48 @@
         },
         {
           "anchor": {
-            "blob": "754bd9162775645ee6e3e707b0b4e4b948882a98",
+            "blob": "151403083daa285dde3b0cbff00801440a07f954",
             "content": "sha256:880023ef4bc6d8dfbb8c07e043ee8c8e70bfd19563a7abf3faa4c634c80cb8bf",
             "locator": {
-              "end": 45,
+              "end": 49,
               "kind": "line_range",
-              "start": 42
+              "start": 46
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "754bd9162775645ee6e3e707b0b4e4b948882a98",
+            "blob": "151403083daa285dde3b0cbff00801440a07f954",
             "content": "sha256:14a91b42ad95453579bdeeb465127a77eceafe856afab80c4c6e31223b20a18a",
             "locator": {
-              "end": 58,
+              "end": 62,
               "kind": "line_range",
-              "start": 57
+              "start": 61
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "754bd9162775645ee6e3e707b0b4e4b948882a98",
+            "blob": "151403083daa285dde3b0cbff00801440a07f954",
             "content": "sha256:25d2c13d16f57f101fb9280d22903dfedf7bc98eab7b65e3cb7efd3a5d6a2a3f",
             "locator": {
-              "end": 68,
+              "end": 72,
               "kind": "line_range",
-              "start": 65
+              "start": 69
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "3c93b0c72ae53a54e25c424ae1a27b1b447f5621",
+            "blob": "96a8f88b672003959586599c7c8b8849e9b062da",
             "content": "sha256:8b988f8c6609629b959976cbbbf8e3e81d41c98a61c810caee5f4ab898518292",
             "locator": {
-              "end": 300,
+              "end": 514,
               "kind": "line_range",
-              "start": 300
+              "start": 514
             },
             "path": "mcp/tests/test_knowledge_validator_routes.py"
           },
@@ -123,12 +142,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3c93b0c72ae53a54e25c424ae1a27b1b447f5621",
+            "blob": "96a8f88b672003959586599c7c8b8849e9b062da",
             "content": "sha256:4f0adf7e76356668861fdbafaf5028f592f47b86b055ae658a3e439e74825d0d",
             "locator": {
-              "end": 308,
+              "end": 522,
               "kind": "line_range",
-              "start": 280
+              "start": 494
             },
             "path": "mcp/tests/test_knowledge_validator_routes.py"
           },
@@ -136,48 +155,48 @@
         },
         {
           "anchor": {
-            "blob": "754bd9162775645ee6e3e707b0b4e4b948882a98",
+            "blob": "151403083daa285dde3b0cbff00801440a07f954",
             "content": "sha256:880023ef4bc6d8dfbb8c07e043ee8c8e70bfd19563a7abf3faa4c634c80cb8bf",
             "locator": {
-              "end": 45,
+              "end": 49,
               "kind": "line_range",
-              "start": 42
+              "start": 46
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "754bd9162775645ee6e3e707b0b4e4b948882a98",
+            "blob": "151403083daa285dde3b0cbff00801440a07f954",
             "content": "sha256:14a91b42ad95453579bdeeb465127a77eceafe856afab80c4c6e31223b20a18a",
             "locator": {
-              "end": 58,
+              "end": 62,
               "kind": "line_range",
-              "start": 57
+              "start": 61
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "754bd9162775645ee6e3e707b0b4e4b948882a98",
+            "blob": "151403083daa285dde3b0cbff00801440a07f954",
             "content": "sha256:25d2c13d16f57f101fb9280d22903dfedf7bc98eab7b65e3cb7efd3a5d6a2a3f",
             "locator": {
-              "end": 68,
+              "end": 72,
               "kind": "line_range",
-              "start": 65
+              "start": 69
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "3c93b0c72ae53a54e25c424ae1a27b1b447f5621",
+            "blob": "96a8f88b672003959586599c7c8b8849e9b062da",
             "content": "sha256:8b988f8c6609629b959976cbbbf8e3e81d41c98a61c810caee5f4ab898518292",
             "locator": {
-              "end": 300,
+              "end": 514,
               "kind": "line_range",
-              "start": 300
+              "start": 514
             },
             "path": "mcp/tests/test_knowledge_validator_routes.py"
           },
@@ -190,52 +209,86 @@
       "targets": [
         {
           "anchor": {
-            "blob": "754bd9162775645ee6e3e707b0b4e4b948882a98",
+            "blob": "151403083daa285dde3b0cbff00801440a07f954",
             "content": "sha256:880023ef4bc6d8dfbb8c07e043ee8c8e70bfd19563a7abf3faa4c634c80cb8bf",
             "locator": {
-              "end": 45,
+              "end": 49,
               "kind": "line_range",
-              "start": 42
+              "start": 46
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "754bd9162775645ee6e3e707b0b4e4b948882a98",
+            "blob": "151403083daa285dde3b0cbff00801440a07f954",
             "content": "sha256:14a91b42ad95453579bdeeb465127a77eceafe856afab80c4c6e31223b20a18a",
             "locator": {
-              "end": 58,
+              "end": 62,
               "kind": "line_range",
-              "start": 57
+              "start": 61
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "754bd9162775645ee6e3e707b0b4e4b948882a98",
+            "blob": "151403083daa285dde3b0cbff00801440a07f954",
             "content": "sha256:25d2c13d16f57f101fb9280d22903dfedf7bc98eab7b65e3cb7efd3a5d6a2a3f",
             "locator": {
-              "end": 68,
+              "end": 72,
               "kind": "line_range",
-              "start": 65
+              "start": 69
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "3c93b0c72ae53a54e25c424ae1a27b1b447f5621",
+            "blob": "96a8f88b672003959586599c7c8b8849e9b062da",
             "content": "sha256:8b988f8c6609629b959976cbbbf8e3e81d41c98a61c810caee5f4ab898518292",
             "locator": {
-              "end": 300,
+              "end": 514,
               "kind": "line_range",
-              "start": 300
+              "start": 514
             },
             "path": "mcp/tests/test_knowledge_validator_routes.py"
           },
           "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "Optional root and baseless notes are explicit CLI output, not validator task-plane mutation. [7]",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "151403083daa285dde3b0cbff00801440a07f954",
+            "content": "sha256:62d18c550d762f6304a7dca09042c5ac3118eb294fe2aae83e6cee8c8d2617b0",
+            "locator": {
+              "end": 127,
+              "kind": "line_range",
+              "start": 82
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The code working-directory reader, validation and optional endpoint observation are composed before the exit decision. [8]",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "151403083daa285dde3b0cbff00801440a07f954",
+            "content": "sha256:f601beddd89ff1d203ad0783b31793f54c0060a98187fa6d94b685dae71306de",
+            "locator": {
+              "end": 159,
+              "kind": "line_range",
+              "start": 130
+            }
+          },
+          "kind": "code"
         }
       ]
     }

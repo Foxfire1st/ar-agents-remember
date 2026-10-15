@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "51f9b6abddfd252e7608a114af2561ae130b078b",
+        "blob": "8e5fe3cc06555aa24b7a8353a5a2649d6e080876",
         "content": "sha256:f203fbf19bf92f2d70df908f282767b722a1619b2889873eac53c0a17084ffe5",
         "locator": {
           "kind": "symbol",
@@ -21,7 +21,43 @@
     },
     {
       "anchor": {
-        "blob": "51f9b6abddfd252e7608a114af2561ae130b078b",
+        "blob": "8e5fe3cc06555aa24b7a8353a5a2649d6e080876",
+        "content": "sha256:0f7668579f2406c9df23d8f91027cfb6d4d0b6bc90397e058a4ede4ae275a178",
+        "locator": {
+          "kind": "symbol",
+          "name": "recorded_reads"
+        }
+      },
+      "id": "RLZ-94X4JH",
+      "invariant": "INV-7PGZ9Y",
+      "origin": {
+        "handoffEntry": "L54-curator-MIK-R55-v1-rule-6-actual-guards-wave-70",
+        "leaf": "260928-MIK-L54"
+      },
+      "rationale": "The context manager installs kept reads and a caller-owned/inherited examined bucket and resets both tokens in finally.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "8e5fe3cc06555aa24b7a8353a5a2649d6e080876",
+        "content": "sha256:c87cc3a4ea29b59b6f2405103a00cb5710e4655b2607dec6c2e514f3d3187386",
+        "locator": {
+          "kind": "symbol",
+          "name": "_record"
+        }
+      },
+      "id": "RLZ-FDBKA2",
+      "invariant": "INV-7PGZ9Y",
+      "origin": {
+        "handoffEntry": "L54-curator-MIK-R55-v1-rule-6-actual-guards-wave-70",
+        "leaf": "260928-MIK-L54"
+      },
+      "rationale": "This actual write boundary selects the examined or kept bucket and preserves conflicting observed identities.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "8e5fe3cc06555aa24b7a8353a5a2649d6e080876",
         "content": "sha256:f203fbf19bf92f2d70df908f282767b722a1619b2889873eac53c0a17084ffe5",
         "locator": {
           "kind": "symbol",
@@ -39,7 +75,25 @@
     },
     {
       "anchor": {
-        "blob": "51f9b6abddfd252e7608a114af2561ae130b078b",
+        "blob": "8e5fe3cc06555aa24b7a8353a5a2649d6e080876",
+        "content": "sha256:e2eb089baa0dcd772d2ea5d230bd5dd048bfeab1317dff686f3041c2f38babce",
+        "locator": {
+          "kind": "symbol",
+          "name": "record_read"
+        }
+      },
+      "id": "RLZ-PQ6SK9",
+      "invariant": "INV-7PGZ9Y",
+      "origin": {
+        "handoffEntry": "MIK-R55@v1 rule 6",
+        "leaf": "260928-MIK-L54"
+      },
+      "rationale": "This recorder owns consumed read identities and their enclosing observation bucket.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "8e5fe3cc06555aa24b7a8353a5a2649d6e080876",
         "content": "sha256:6da8d9496b8ae2e495bf6563dc29b7f421a9d4a5bebb08b51b9087461dc45d7d",
         "locator": {
           "kind": "symbol",
@@ -57,7 +111,7 @@
     },
     {
       "anchor": {
-        "blob": "51f9b6abddfd252e7608a114af2561ae130b078b",
+        "blob": "8e5fe3cc06555aa24b7a8353a5a2649d6e080876",
         "content": "sha256:5067986102da40975eb1326239556e72461cb71ebc7a10ed07aa3029d4f9a5c8",
         "locator": {
           "kind": "symbol",
@@ -112,7 +166,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "51f9b6abddfd252e7608a114af2561ae130b078b",
+            "blob": "8e5fe3cc06555aa24b7a8353a5a2649d6e080876",
             "content": "sha256:0c18356448cc30876afdea357f1a3357f3b308ff4bc7d301c520c61ee2b3d9b2",
             "locator": {
               "kind": "symbol",
@@ -144,7 +198,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "51f9b6abddfd252e7608a114af2561ae130b078b",
+            "blob": "8e5fe3cc06555aa24b7a8353a5a2649d6e080876",
             "content": "sha256:4d577415c8af3d961097b05c07c6b00663e34f4b4eb306d24196d72761cf63a9",
             "locator": {
               "kind": "symbol",
@@ -160,7 +214,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "51f9b6abddfd252e7608a114af2561ae130b078b",
+            "blob": "8e5fe3cc06555aa24b7a8353a5a2649d6e080876",
             "content": "sha256:f203fbf19bf92f2d70df908f282767b722a1619b2889873eac53c0a17084ffe5",
             "locator": {
               "kind": "symbol",
@@ -176,7 +230,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "51f9b6abddfd252e7608a114af2561ae130b078b",
+            "blob": "8e5fe3cc06555aa24b7a8353a5a2649d6e080876",
             "content": "sha256:5067986102da40975eb1326239556e72461cb71ebc7a10ed07aa3029d4f9a5c8",
             "locator": {
               "kind": "symbol",
@@ -192,7 +246,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "51f9b6abddfd252e7608a114af2561ae130b078b",
+            "blob": "8e5fe3cc06555aa24b7a8353a5a2649d6e080876",
             "content": "sha256:6da8d9496b8ae2e495bf6563dc29b7f421a9d4a5bebb08b51b9087461dc45d7d",
             "locator": {
               "kind": "symbol",
@@ -208,7 +262,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "51f9b6abddfd252e7608a114af2561ae130b078b",
+            "blob": "8e5fe3cc06555aa24b7a8353a5a2649d6e080876",
             "content": "sha256:dabd96664201b6cf646625fc8ea3f6ed0b0c97b8830e928319f3f2f6a01aaa52",
             "locator": {
               "kind": "symbol",
@@ -224,7 +278,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "51f9b6abddfd252e7608a114af2561ae130b078b",
+            "blob": "8e5fe3cc06555aa24b7a8353a5a2649d6e080876",
             "content": "sha256:7f62b031768c3439106d46110e3a664a0a6fc84e1d085beb6626a63fdcb57395",
             "locator": {
               "kind": "symbol",
@@ -240,7 +294,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "51f9b6abddfd252e7608a114af2561ae130b078b",
+            "blob": "8e5fe3cc06555aa24b7a8353a5a2649d6e080876",
             "content": "sha256:e786348fd708fd63c48c22be7a4bb9715f5c1ae97ba0ff3a8f903c1247849231",
             "locator": {
               "kind": "symbol",
@@ -273,7 +327,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b8f75c0db0ff78135ca05f2e8d2d82d0a8f2350e",
+            "blob": "9719c9159d392a3e5377a242638474a1a15b1f37",
             "content": "sha256:525de24ac76e4627bf2b0ffd1ba7d5e701c5ec644922ae6ffdbf7c3ae47c2e32",
             "locator": {
               "kind": "symbol",
@@ -290,7 +344,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b8f75c0db0ff78135ca05f2e8d2d82d0a8f2350e",
+            "blob": "9719c9159d392a3e5377a242638474a1a15b1f37",
             "content": "sha256:3bf7b12c1f3082937f37f7520c12c1a725d905a9747082a3fee52c9c35fda60e",
             "locator": {
               "kind": "symbol",
@@ -307,7 +361,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "fc194aa17593ec2d603455736dcb23d65070cffc",
+            "blob": "dcea734d01a9e0e0e0f63ee8bfbf5ce1d40ee24d",
             "content": "sha256:02431587b667b51c68fb0775145957ebce0bc0f469719fbfa18351347f736a95",
             "locator": {
               "kind": "symbol",
@@ -341,11 +395,52 @@
       "targets": [
         {
           "anchor": {
-            "blob": "51f9b6abddfd252e7608a114af2561ae130b078b",
+            "blob": "8e5fe3cc06555aa24b7a8353a5a2649d6e080876",
             "content": "sha256:a4efcf6cd61b31017d9fad5d27b488f8acb9e61a9f8307f6df1d6d70c5677b15",
             "locator": {
               "kind": "symbol",
               "name": "observed_json_files"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "27": {
+      "note": "Nested recording inherits or accepts a separate examined audit bucket; examined reads use its conflict handling without becoming kept dependencies.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8e5fe3cc06555aa24b7a8353a5a2649d6e080876",
+            "content": "sha256:c45cc44528e9e870507447df1c0a469f6700bb8616765a73e3e699708d9a67a5",
+            "locator": {
+              "end": 89,
+              "kind": "line_range",
+              "start": 75
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8e5fe3cc06555aa24b7a8353a5a2649d6e080876",
+            "content": "sha256:e2eb089baa0dcd772d2ea5d230bd5dd048bfeab1317dff686f3041c2f38babce",
+            "locator": {
+              "end": 99,
+              "kind": "line_range",
+              "start": 92
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8e5fe3cc06555aa24b7a8353a5a2649d6e080876",
+            "content": "sha256:c87cc3a4ea29b59b6f2405103a00cb5710e4655b2607dec6c2e514f3d3187386",
+            "locator": {
+              "end": 107,
+              "kind": "line_range",
+              "start": 102
             }
           },
           "kind": "code"
@@ -357,7 +452,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "51f9b6abddfd252e7608a114af2561ae130b078b",
+            "blob": "8e5fe3cc06555aa24b7a8353a5a2649d6e080876",
             "content": "sha256:86eab7353b094837175ccb15436698ac9e992dfb4d637ffb5c0609c66a8ab203",
             "locator": {
               "end": 19,
@@ -374,7 +469,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "51f9b6abddfd252e7608a114af2561ae130b078b",
+            "blob": "8e5fe3cc06555aa24b7a8353a5a2649d6e080876",
             "content": "sha256:fe1e9891355ad52b088934e5bd85db7d6ec77b5813f5e09be14a85d7b0d8ad51",
             "locator": {
               "kind": "symbol",

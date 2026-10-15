@@ -26,6 +26,8 @@ The unreadable-sibling happy path distinguishes completing the master itself fro
 - Finalization assertion setup forces real master completion; dry-run preserves complete world, real call requires completedAt and unchanged master/sprint decisions with absent sprint completedAt. [5]
 
 
+A readable ordinary no-master document still cannot authorize completion: after restoring its bytes, the source case requires `task-document-resolution-blocked` and byte equality. The genuinely absent ordinary-document case requires the same refusal in both dry and real calls, names the contract-bound document/master-row requirement and leaves the path absent. These are distinct negative controls from the admitted master-completion case above.
+
 ## Evidence
 
 
@@ -36,3 +38,5 @@ The unreadable-sibling happy path distinguishes completing the master itself fro
 - An unreadable proven canonical sibling is reported as a fact without changing its membership, row, node or bytes; an unbound title is a named unresolved identity. [3]
 
 - The finalization control supplies the external-memory leaf cells before testing retained landing truth. [4]
+
+- Restoring readability is not authority for a no-master completion, and dry/real absent-document finalization preserves absence. [6]

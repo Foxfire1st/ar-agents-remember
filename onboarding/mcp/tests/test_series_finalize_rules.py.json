@@ -3,7 +3,7 @@
   "proves": [
     {
       "anchor": {
-        "blob": "e89ec5efe67ba51352880546dd6e198b930fca93",
+        "blob": "dc4577a3f94d4af3411e041bba434c8a6e234ab8",
         "content": "sha256:7f92fa4ae4c5921ff54eb0e10c719329bdfa8482df22c4d3b18845700ecd1234",
         "locator": {
           "kind": "symbol",
@@ -41,7 +41,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e89ec5efe67ba51352880546dd6e198b930fca93",
+            "blob": "dc4577a3f94d4af3411e041bba434c8a6e234ab8",
             "content": "sha256:d79a8ecc71e28916f002d592fdcf45320d466564fc27be9b49c617464cc5a411",
             "locator": {
               "end": 162,
@@ -85,7 +85,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e89ec5efe67ba51352880546dd6e198b930fca93",
+            "blob": "dc4577a3f94d4af3411e041bba434c8a6e234ab8",
             "content": "sha256:6ed613a81d1f81ced9727b4749e5e286174ba8dbb0f632345568caa7bfb50fc1",
             "locator": {
               "kind": "symbol",
@@ -105,6 +105,35 @@
             "content": "sha256:f7074ed77a68e2c99bb382303c50b5d418e35f8b1f10cb8dd61cde5d399d810d",
             "locator": {
               "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "Restoring readability is not authority for a no-master completion, and dry/real absent-document finalization preserves absence.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dc4577a3f94d4af3411e041bba434c8a6e234ab8",
+            "content": "sha256:7550130bf9c5422379c5a3a044a5af488cadc9ee67aad9dcdeb581eaf6984d4a",
+            "locator": {
+              "end": 313,
+              "kind": "line_range",
+              "start": 280
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "dc4577a3f94d4af3411e041bba434c8a6e234ab8",
+            "content": "sha256:ed0c575d987e15a204d40f5f091e2055a8967ec8e60bb38e5a806e8d7b2aa05e",
+            "locator": {
+              "end": 356,
+              "kind": "line_range",
+              "start": 346
             }
           },
           "kind": "test"

@@ -16,6 +16,8 @@ Generate citation ranges for anchors inside one file.
 
 ### Logic
 
+`Extent.test_case` is carried from grammar bindings. An exact-name lookup in `qualified_spans` keeps every test-case occurrence, even equal line spans, so same-line duplicate bare titles remain ambiguous. Ordinary exact bindings still deduplicate; only a name without an exact key uses dotted containment. `definitions` accepts `Sequence[str]`. This current mechanism qualifies the older unconditional distinct-span description below; quote, heading and unsupported-title behavior are not broadened, and no execution result is claimed.
+
 Module-level surface:
 
 - `Extent` (class, lines 39-49) — One range an anchor occupies in a file, and how it was found. A `DEFINITION` extent also carries `declaration`: the line the declaration itself begins on, which differs from `start` for a decorated Python definition because the extent is widened to cover its decorator (it is `None` for every other kind, where the two coincide).
@@ -60,6 +62,9 @@ Module-level definitions follow the package conventions; names prefixed with `_`
 None.
 
 ## Evidence
+
+- Definition extents carry the test-case tag, and exact-name test-case spans preserve occurrence multiplicity while ordinary names retain deduplication. [51]
+
 
 
 ### Repo-Internal References

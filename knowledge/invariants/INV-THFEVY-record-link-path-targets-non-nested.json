@@ -1,0 +1,39 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake"
+    ],
+    "justification": "A filesystem-only existence check, nested route or malformed new item could make publication appear to cover an authority it never named. The exact publication checks prevent that costly false completion while preserving legacy readability."
+  },
+  "applicability": "Paired-code record-link checks, active family route checks, new history-token authoring/publication, and Git-visible working-tree path sets.",
+  "conditions": [
+    "Anchored file and route links must name a paired-code file/directory; carried identical targets retain only their explicit merge-report policy, not a waiver for new targets.",
+    "A non-retired family's routes must not nest beneath one another, including beneath the repository root; the registered Writer reporting policy remains separate from commit refusal.",
+    "Newly authored history item tokens are checked literally; stored labels remain readable and closed-base history is not rewritten.",
+    "Working-directory existence uses regular nonsymlink files Git tracks or would add, excluding ignored paths; a listing failure is not an empty accepted tree."
+  ],
+  "exclusions": [
+    "These checks do not resolve requirement-owner task-plane states or infer semantic equality of arbitrary links.",
+    "No historical-label normalization, automatic route placement, commit, parser run or acceptance grade is authorized."
+  ],
+  "id": "INV-THFEVY",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "/home/firefox/projects/ar-coordination/tasks/agents-remember/260928_maintained-invariant-knowledge/notes/reports/worker/0e651ec5-2eed-4b58-b19f-e2336d4978ca/repair-freeze-0a36ddc4/builder-report.md#mik-r54-rule-11",
+        "/home/firefox/projects/ar-coordination/worktrees/agents-remember/54_writer-and-validator-corrections-a4b3b3af8d-ar/role-reports/curator/1ad64580-9e4a-42ce-adc0-169869767dba/wave-67/mechanism-review.json",
+        "/home/firefox/projects/ar-coordination/worktrees/agents-remember/54_writer-and-validator-corrections-a4b3b3af8d-ar/role-reports/curator/1ad64580-9e4a-42ce-adc0-169869767dba/wave-70/mechanism-review.json",
+        "/home/firefox/projects/ar-coordination/worktrees/agents-remember/54_writer-and-validator-corrections-a4b3b3af8d-ar/role-reports/curator/1ad64580-9e4a-42ce-adc0-169869767dba/wave-76/proof-source-review.json"
+      ],
+      "path": "wave-66-complete-history.json"
+    },
+    "handoffEntry": "MIK-R54@v1 rule 11",
+    "leaf": "260928-MIK-L54",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Record-link path targets, non-nested family routes, strict newly authored history item IDs and Git-visible working-tree existence must be checked at their publication boundaries.",
+  "status": "proposed",
+  "supersedes": []
+}

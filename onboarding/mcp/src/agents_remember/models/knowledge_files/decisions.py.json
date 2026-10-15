@@ -1,13 +1,32 @@
 {
   "path": "mcp/src/agents_remember/models/knowledge_files/decisions.py",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "aa48f8380a2084f6763db85c434d6acd394a2d0f",
+        "content": "sha256:6ccd493ce1d93dcb271771838c4fef2eaba5320c34fb6b21bd2b66a313c1a8a7",
+        "locator": {
+          "kind": "symbol",
+          "name": "stored_superseded_fields"
+        }
+      },
+      "id": "RLZ-JQP4A8",
+      "invariant": "INV-DWPSRR",
+      "origin": {
+        "handoffEntry": "MIK-R54@v1 rule 8",
+        "leaf": "260928-MIK-L54"
+      },
+      "rationale": "This detector identifies authored superseded fields before model enumeration can obscure the intended derived-state refusal.",
+      "role": "enforcement"
+    }
+  ],
   "references": {
     "1": {
       "note": "The governs relations, the reconsiderable statuses and the minimum count.",
       "targets": [
         {
           "anchor": {
-            "blob": "4808d0caf492ad9fd7c23dd4450965297e5c7bad",
+            "blob": "aa48f8380a2084f6763db85c434d6acd394a2d0f",
             "content": "sha256:5202900c1e03ace121f8d4c4f497c64b64c82345e6ff44da6ff412660f034025",
             "locator": {
               "kind": "symbol",
@@ -18,7 +37,7 @@
         },
         {
           "anchor": {
-            "blob": "4808d0caf492ad9fd7c23dd4450965297e5c7bad",
+            "blob": "aa48f8380a2084f6763db85c434d6acd394a2d0f",
             "content": "sha256:d8a3c3b842b6367e7b623c18533bbe52951c0d450203130c31f0f3e94cf3c2b1",
             "locator": {
               "kind": "symbol",
@@ -29,7 +48,7 @@
         },
         {
           "anchor": {
-            "blob": "4808d0caf492ad9fd7c23dd4450965297e5c7bad",
+            "blob": "aa48f8380a2084f6763db85c434d6acd394a2d0f",
             "content": "sha256:a96f11975ba48af194c529f934197df4b175ed23a5e77c69aadfdafaa011d934",
             "locator": {
               "kind": "symbol",
@@ -74,7 +93,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4808d0caf492ad9fd7c23dd4450965297e5c7bad",
+            "blob": "aa48f8380a2084f6763db85c434d6acd394a2d0f",
             "content": "sha256:88292cb6c6eec5290446f021499c8935b772913b12077df292f1d833c45e4e0c",
             "locator": {
               "kind": "symbol",
@@ -90,7 +109,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4808d0caf492ad9fd7c23dd4450965297e5c7bad",
+            "blob": "aa48f8380a2084f6763db85c434d6acd394a2d0f",
             "content": "sha256:adc1a91adfd9a30ced2608184041f567cc595790c49ed8a5a06d278737d67f63",
             "locator": {
               "kind": "symbol",
@@ -106,7 +125,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4808d0caf492ad9fd7c23dd4450965297e5c7bad",
+            "blob": "aa48f8380a2084f6763db85c434d6acd394a2d0f",
             "content": "sha256:6c447e8d60d82df2f3f5077553166b76339c5bc87910afef611a55e0133340ed",
             "locator": {
               "kind": "symbol",
@@ -122,7 +141,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4808d0caf492ad9fd7c23dd4450965297e5c7bad",
+            "blob": "aa48f8380a2084f6763db85c434d6acd394a2d0f",
             "content": "sha256:707d81cfb8780b3ed470125bd30646b90f935eb663a131cb2f79d7c835fab9c0",
             "locator": {
               "kind": "symbol",
@@ -134,15 +153,40 @@
       ]
     },
     "6": {
-      "note": "The three refusing checks together.",
+      "note": "The three live pure checks remain independent after removal of their unused aggregate helper.",
       "targets": [
         {
           "anchor": {
-            "blob": "4808d0caf492ad9fd7c23dd4450965297e5c7bad",
-            "content": "sha256:d806d2d6d1b49ff7be0476478bd6d154d273ca1ab62af56441eaad4f8ba20f63",
+            "blob": "aa48f8380a2084f6763db85c434d6acd394a2d0f",
+            "content": "sha256:adc1a91adfd9a30ced2608184041f567cc595790c49ed8a5a06d278737d67f63",
             "locator": {
-              "kind": "symbol",
-              "name": "content_problems"
+              "end": 95,
+              "kind": "line_range",
+              "start": 73
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "aa48f8380a2084f6763db85c434d6acd394a2d0f",
+            "content": "sha256:6c447e8d60d82df2f3f5077553166b76339c5bc87910afef611a55e0133340ed",
+            "locator": {
+              "end": 109,
+              "kind": "line_range",
+              "start": 98
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "aa48f8380a2084f6763db85c434d6acd394a2d0f",
+            "content": "sha256:707d81cfb8780b3ed470125bd30646b90f935eb663a131cb2f79d7c835fab9c0",
+            "locator": {
+              "end": 139,
+              "kind": "line_range",
+              "start": 112
             }
           },
           "kind": "code"
@@ -154,7 +198,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4808d0caf492ad9fd7c23dd4450965297e5c7bad",
+            "blob": "aa48f8380a2084f6763db85c434d6acd394a2d0f",
             "content": "sha256:87877b5723af351d82142e6597ab89d1207c983c5fba9c27a95cbf251aa5b895",
             "locator": {
               "kind": "symbol",
@@ -165,7 +209,7 @@
         },
         {
           "anchor": {
-            "blob": "4808d0caf492ad9fd7c23dd4450965297e5c7bad",
+            "blob": "aa48f8380a2084f6763db85c434d6acd394a2d0f",
             "content": "sha256:348b2767db3522712968f707a9d176b54646d86c16514cb63a51cd5b0dc673d5",
             "locator": {
               "kind": "symbol",
@@ -181,7 +225,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4808d0caf492ad9fd7c23dd4450965297e5c7bad",
+            "blob": "aa48f8380a2084f6763db85c434d6acd394a2d0f",
             "content": "sha256:ccb3dac648d342792064d74c1304150b735d7461840afdb588cd35564d54d9db",
             "locator": {
               "kind": "symbol",
@@ -192,7 +236,7 @@
         },
         {
           "anchor": {
-            "blob": "4808d0caf492ad9fd7c23dd4450965297e5c7bad",
+            "blob": "aa48f8380a2084f6763db85c434d6acd394a2d0f",
             "content": "sha256:f6d9d41902b3ed595af78185f9c9431dba2cbb148b3bc6f4950dd02870cd48dd",
             "locator": {
               "kind": "symbol",
@@ -208,7 +252,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4808d0caf492ad9fd7c23dd4450965297e5c7bad",
+            "blob": "aa48f8380a2084f6763db85c434d6acd394a2d0f",
             "content": "sha256:6ccd493ce1d93dcb271771838c4fef2eaba5320c34fb6b21bd2b66a313c1a8a7",
             "locator": {
               "kind": "symbol",
