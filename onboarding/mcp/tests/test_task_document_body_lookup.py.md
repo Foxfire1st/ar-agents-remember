@@ -38,7 +38,7 @@ review finding L42-R1-F2).
 - `test_every_document_kind_projects_the_same_body_as_the_corpus_wide_join` compares
   `read_task_document_body` with `_corpus_wide_body` for the master, leaf, standalone, both named
   masters and the sprint. `_corpus_wide_body` reproduces the removed path: the full
-  `_iter_task_document_payloads` enumeration fed to `_master_docs_by_ref`. The case compares the
+  `_iter_task_document_payloads` enumeration through `_validated_task_documents` into `documents_by_ref`; no enclosure/lifecycle map is supplied. The case compares the
   serialized bodies, then checks that the sprint graph shows `Master A`, `Master B` and the
   `repo-a/missing/task.json` fallback, and that an absent path returns `None`.
 - `test_one_body_read_touches_the_same_files_whatever_the_corpus_size[leaf|master|sprint]` uses `touches`, now patching _common, _task_documents and _task_order _read_json plus os.scandir. Recorded read/listing lists must match at 4 and 40 unrelated tasks. The leaf now expects its own JSON then its owner task.json, while the master fixture expects only itself; neither lists directories in this fixture because its master rows have no explicit child files. The sprint still expects itself and the three graph-named candidate files, including the refused schema-less decoy, and only the specified repository/task-folder listings. This is not a claim that dependency-bearing ordinary masters read no children.
@@ -88,7 +88,7 @@ No external domain claim is required.
 
 - The corpus fixture and its decoys, including the schema-less master the schema filter alone excludes. [2]
 
-- The reference projection: the corpus-wide enumeration fed to the unchanged join builder. [3]
+- Reference body projection uses validated corpus documents and documents_by_ref without a lifecycle map. [11]
 
 - Original fixture-specific serialized body comparison, sprint graph titles/fallback and absent-path refusal remain; RF01 separately asserts owner/listed-child schema admission by comparing dependency/graph fields with the corpus reader. [4]
 

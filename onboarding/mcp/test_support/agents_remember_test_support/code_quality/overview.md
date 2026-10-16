@@ -16,6 +16,8 @@ Repository verification infrastructure for quality planning, exact test selectio
 
 `projection_types.py` renders the dashboard projection contract from the Python wire schemas. It folds the served projection's additional definitions into generated TypeScript and compares that supplemental definition set exactly with its declared renames. A new supplemental definition therefore requires updating that declaration and regenerating the output. Refinements TypeScript cannot enforce structurally, including numeric bounds, lengths and patterns, remain documented beside the affected property. Unsupported schema keywords or shapes refuse generation.
 
+Its named vocabularies now concern attention severity/lane and process fact/health only. Task stage/activity/eventAt, task counts and entry membership are rendered from the current Python schema like other model fields; the generator no longer reconstructs a session-state partition, lifecycle-count extension, lifecycle metrics factory or `SubTaskRow` union. Task presentation vocabulary remains a consumer concern, not a second lifecycle model synthesized by this generator.
+
 `quality_plan.py` owns typed configuration and command planning; `check.py` executes and interprets the rails. `profile_selection.py` derives the selected population, and `profile_rails.py` rederives and validates exact scope before execution. `dependency_ownership.py` and `scope.py` establish supported consumers and explicit product/verification ownership. `catalog_selection.py` reads both catalog versions through the shared reader `parse_catalog`; invalid catalog input remains an explicit selection refusal. `retry_proof.py`, `retry_coverage.py` and the child-environment helper preserve admitted retry inputs and remove outer retry/progress controls from candidate-test environments.
 
 ## Construction And Ownership
@@ -100,3 +102,6 @@ No lifecycle/status metadata in this overview grants execution or acceptance aut
 
 - Projection generation validates schema vocabulary and exact supplemental definitions. [18]
 - Helper test imports, source figures, historical Git pin and conditional record availability. [25]
+
+- The retained named vocabularies are attention severity/lane and process fact/health, not removed session state/phase. [30]
+- Ordinary schema interfaces are rendered without a lifecycle-count extension or injected metrics factory/legacy subtask union. [31]

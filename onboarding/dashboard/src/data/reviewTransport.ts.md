@@ -71,13 +71,7 @@ acyclic.** The typed refusal's wire fields (`code`, `detail`, `next_action`, opt
 so the import runs one way only: `data/review.ts` → here. A second import direction would make the pair
 a cycle, because `review.ts` is the review client's public entry and this module is imported by it.
 
-**`getReviewJson` is the one GET, and the body is read whatever the status.** It `fetch`es once; a
-thrown `fetch` becomes `networkFailure(cause)` inside a `ReviewTransportError`; otherwise the body is
-parsed with `response.json().catch(() => null)` and **a body whose `state` is a string is returned as
-the answer** (`return body as T`). Everything else — including a 200 whose body carries no `state`, a
-proxy page, an empty body — falls through to `failureFromBody`. The last case is load-bearing: a 200
-with no `state` used to render a blank surface, and it is now a stated failure, so an unadmitted answer
-can never be read as a review of an empty candidate.
+`getReviewJson` performs one GET, wraps network failures as ReviewTransportError and delegates to exported decodeReviewJson. The decoder reads a body once and admits a string state even on non-2xx; other bodies use named refusal/unreadable classification. ConditionalReads handles a valid 304 separately by returning retained identity without decoding another body.
 
 **`namedFailure` is the single transport-level classification, and it is what makes an unrecognized
 body honest.** `failureFromBody` reads the body's own `status` string and hands it to `namedFailure`,
@@ -120,14 +114,12 @@ itself. Its two non-exported helpers (`failureFromBody`, `namedFailure`) and its
 projections are plain functions; the one class is the error. Exported names are the vocabulary a
 consumer needs (`ReviewFailureToken`, `ReviewFailure`, `ReviewRefusalFacts`, `ReviewTransportError`,
 `getReviewJson`, `intentOnlyRefusal`, `reviewFailureToken`, `reviewProblemFromRefusal`,
-`unreadableAnswer`, `reviewProblemFromCause`) and every one of them is re-exported from
-`data/review.ts`, so `panels/review/*` and `panels/detail-panel/changeSetBar.tsx` keep importing one
-public entry and no existing importer changed its import path. The `Review*` prefix keeps a review
+`unreadableAnswer`, `reviewProblemFromCause`, `decodeReviewJson`). `data/review.ts` re-exports the original transport surface, but not `decodeReviewJson`; `reviewIntentSummary.ts` imports that decoder directly for store-owned conditional summary reads. Panel failure consumers continue importing the shared public review entry. The `Review*` prefix keeps a review
 display value distinguishable from the change-set client's own types, matching `data/review.ts`.
 
 ### Invariants And Boundaries
 
-- **One decode per review read.** One GET, one body read, one classification; the only code→state table
+- **One decode per body-bearing review response.** A shared conditional cache may return retained data on 304 without invoking the decoder; otherwise one body read and one classification; the only code→state table
   in `dashboard/src` is this module's `TOKEN_BY_CODE`, and the only review-route URL literals live in
   `data/review.ts`.
 - **The body is the answer, whatever the status.** A body carrying this route's `state` is returned as
@@ -156,12 +148,10 @@ and outside this leaf's packet:
 
 ## Evidence
 
-- The module comment: one decode per read, and nothing is selected or substituted. [21]
 - The tokens a reader can be shown. [22]
 - The codes and their tokens, with the two transient codes of the leaf-wide view. [23]
 - The refusals of the intent half alone. [24]
 - The error a review read throws. [25]
-- The one GET: the optional abort signal, the body read whatever the status, and the two failures. [26]
 - A typed refusal becomes a failure with its fields unchanged. [27]
 - A superseded request's signal is aborted. [28]
 
@@ -190,7 +180,6 @@ bodies. Every anchor in a row occurs inside the range that row cites.
 - The one error, staying a `FilesApiError` for existing catchers while carrying the whole failure. [36]
 - **The single transport-level classification: the body's own `status`, the optional fields read only where published, and `path` accepted as the port's own spelling of the offending input.** [37]
 - **A failure with no HTTP response is its own token and carries no status.** [38]
-- **The one GET: the body is read whatever the status, and a body carrying this route's `state` IS the answer.** [39]
 - **A typed refusal projected through the same classifier, so the entry and the surface cannot disagree about a code.** [40]
 - An answer whose `state` this client does not admit is named, never rendered as a review. [41]
 - Any thrown cause as a failure: the transport error's own, anything else as the network failure it must be. [42]

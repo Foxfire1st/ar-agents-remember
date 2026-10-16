@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "fff797d50bb152439f7d2805314942ed27286b5b",
+        "blob": "a454ea6183379b1a887f489de261b2f5f8bd11ff",
         "content": "sha256:2078006d528ed120367cdbaff430b3c8a884c697282d74206e04d1568c35b858",
         "locator": {
           "kind": "symbol",
@@ -21,11 +21,12 @@
     },
     {
       "anchor": {
-        "blob": "fff797d50bb152439f7d2805314942ed27286b5b",
+        "blob": "a454ea6183379b1a887f489de261b2f5f8bd11ff",
         "content": "sha256:9ef462c0aeffef117a3c267a2028dfc1064d298dface6036341aa50be1d7a3ee",
         "locator": {
-          "kind": "symbol",
-          "name": "_serving_lifespan"
+          "end": 357,
+          "kind": "line_range",
+          "start": 297
         }
       },
       "id": "RLZ-9KM829",
@@ -39,7 +40,7 @@
     },
     {
       "anchor": {
-        "blob": "fff797d50bb152439f7d2805314942ed27286b5b",
+        "blob": "a454ea6183379b1a887f489de261b2f5f8bd11ff",
         "content": "sha256:ad2bae9b4636ad639cb42c916442297460ce550fb8cae6845509efd7c5ff0e2e",
         "locator": {
           "kind": "symbol",
@@ -181,7 +182,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "fff797d50bb152439f7d2805314942ed27286b5b",
+            "blob": "a454ea6183379b1a887f489de261b2f5f8bd11ff",
             "content": "sha256:ad2bae9b4636ad639cb42c916442297460ce550fb8cae6845509efd7c5ff0e2e",
             "locator": {
               "kind": "symbol",

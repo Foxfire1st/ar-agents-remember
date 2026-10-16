@@ -37,15 +37,16 @@
       ]
     },
     "3": {
-      "note": "The `ar-durable-store/1.0` contract this store routes every append and rewrite through: `exclusive_access`, `append_line`, `rewrite_lines`, `read_log_text`, and `GATE_OWNERSHIP`, which names the MCP process the compaction owner and the MCP, dashboard and lifecycle-operation roles as declared writers.  Anchor: `exclusive_access`, `append_line`, `rewrite_lines`, `read_log_text`, `GATE_OWNERSHIP`",
+      "note": "The `ar-durable-store/1.0` contract this store routes every append and rewrite through: `exclusive_access`, `append_line`, `rewrite_lines`, `read_log_text`, and `GATE_OWNERSHIP`, which names the MCP process the compaction owner and the MCP, dashboard and lifecycle-operation roles as declared writers.  Anchor: `exclusive_access`, `append_line`, `rewrite_lines`, `read_log_text`, `GATE_OWNERSHIP`\n\nAnchor: actual current supporting source",
       "targets": [
         {
           "anchor": {
-            "blob": "938131908d1c91afc46e26f64e36ef90306c0971",
-            "content": "sha256:d99b53ff95bbbc0395003498264051f916b0da5e4c67e2ebc07259709fa1e071",
+            "blob": "59a148a711df3a07d0424f5448d9871b6aac6930",
+            "content": "sha256:d260e889dbb0ffafb0ab1dbac18137b0f3bf1040432c20bf21313017974629f0",
             "locator": {
-              "kind": "symbol",
-              "name": "exclusive_access"
+              "end": 263,
+              "kind": "line_range",
+              "start": 225
             },
             "path": "mcp/src/agents_remember/controlplane/durable_store.py"
           },
@@ -53,11 +54,12 @@
         },
         {
           "anchor": {
-            "blob": "938131908d1c91afc46e26f64e36ef90306c0971",
+            "blob": "59a148a711df3a07d0424f5448d9871b6aac6930",
             "content": "sha256:0ded9b079f84c73f5175084976631a4985862953421df8bf5c3d577c55e6e9a0",
             "locator": {
-              "kind": "symbol",
-              "name": "append_line"
+              "end": 305,
+              "kind": "line_range",
+              "start": 294
             },
             "path": "mcp/src/agents_remember/controlplane/durable_store.py"
           },
@@ -65,11 +67,12 @@
         },
         {
           "anchor": {
-            "blob": "938131908d1c91afc46e26f64e36ef90306c0971",
+            "blob": "59a148a711df3a07d0424f5448d9871b6aac6930",
             "content": "sha256:8c0f0428a50f72a5b10c5cb639e33fa58ae8e6acc131bff8d36937b871b54c9f",
             "locator": {
-              "kind": "symbol",
-              "name": "rewrite_lines"
+              "end": 348,
+              "kind": "line_range",
+              "start": 337
             },
             "path": "mcp/src/agents_remember/controlplane/durable_store.py"
           },
@@ -77,11 +80,12 @@
         },
         {
           "anchor": {
-            "blob": "d392d8cbf6d4794e8787608af948dfc9059bba33",
+            "blob": "59a148a711df3a07d0424f5448d9871b6aac6930",
             "content": "sha256:17f59a1bb0b5ecc96439d18353d2e83dbcede6f21f9c1ff6524a5f4dff55f738",
             "locator": {
-              "kind": "symbol",
-              "name": "read_log_text"
+              "end": 291,
+              "kind": "line_range",
+              "start": 287
             },
             "path": "mcp/src/agents_remember/controlplane/durable_store.py"
           },
@@ -89,11 +93,12 @@
         },
         {
           "anchor": {
-            "blob": "938131908d1c91afc46e26f64e36ef90306c0971",
-            "content": "sha256:831226bd8c7be6da3e315dd64063c8ad360114e5042276b0aab2a7f9c65d30fe",
+            "blob": "59a148a711df3a07d0424f5448d9871b6aac6930",
+            "content": "sha256:005aea2be6eec02db291698f5c57a39418e1d965a2c8f33f7170b1d484524cc4",
             "locator": {
-              "kind": "symbol",
-              "name": "GATE_OWNERSHIP"
+              "end": 154,
+              "kind": "line_range",
+              "start": 143
             },
             "path": "mcp/src/agents_remember/controlplane/durable_store.py"
           },
@@ -106,7 +111,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "627668dce374cd5ebd8fca644392303de17b6c66",
+            "blob": "6406e9c672efe030b99804ddf6ef6d1485a64bdc",
             "content": "sha256:c43409f84bf7bc84003c36ae0e676299be6a2244c72101edcdb80cfbc057dac0",
             "locator": {
               "kind": "symbol",
@@ -118,7 +123,7 @@
         },
         {
           "anchor": {
-            "blob": "627668dce374cd5ebd8fca644392303de17b6c66",
+            "blob": "6406e9c672efe030b99804ddf6ef6d1485a64bdc",
             "content": "sha256:8d6f0070efbb54d7e2eb3582332406b20b8356387839b427ac2d18585a884fc9",
             "locator": {
               "kind": "symbol",
@@ -186,34 +191,17 @@
         }
       ]
     },
-    "8": {
-      "note": "`read_gates` at snapshots.py:513-546 now folds through the tolerant `projected_current` and rewrites nothing; its docstring records that the 30-second prune cadence this tick used to run was removed.  Anchor: \"def read_gates(coordination_root: Path\"",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "df32deacb6a4361f29bf225adf9a60ef91947857",
-            "content": "sha256:20414df6cadd583e68e6fb313ae2539bec28f1158b0f7860c8d2d6c475774b94",
-            "locator": {
-              "end": 107,
-              "kind": "line_range",
-              "start": 107
-            },
-            "path": "mcp/src/agents_remember/serving/projections/snapshots_impl/_runtime.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
     "9": {
-      "note": "Durable exclusion guards the checkout target before invoking shared kernel locking and preserves typed unsafe-filesystem refusal.",
+      "note": "Durable exclusion guards the checkout target before invoking shared kernel locking and preserves typed unsafe-filesystem refusal.\n\nAnchor: actual current supporting source",
       "targets": [
         {
           "anchor": {
-            "blob": "938131908d1c91afc46e26f64e36ef90306c0971",
-            "content": "sha256:d99b53ff95bbbc0395003498264051f916b0da5e4c67e2ebc07259709fa1e071",
+            "blob": "59a148a711df3a07d0424f5448d9871b6aac6930",
+            "content": "sha256:d260e889dbb0ffafb0ab1dbac18137b0f3bf1040432c20bf21313017974629f0",
             "locator": {
-              "kind": "symbol",
-              "name": "exclusive_access"
+              "end": 263,
+              "kind": "line_range",
+              "start": 225
             },
             "path": "mcp/src/agents_remember/controlplane/durable_store.py"
           },

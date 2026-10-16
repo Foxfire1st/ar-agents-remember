@@ -19,12 +19,12 @@
       ]
     },
     "2": {
-      "note": "Read fresh role/task/report facts for notifications without polling or source inference.",
+      "note": "Read current role/task/report registrations through one replaceable stat-generation cache; absence clears it and malformed content remains visible.",
       "targets": [
         {
           "anchor": {
-            "blob": "f681eb532cb05a8e3b97f5c47f6d2a0fc3a17936",
-            "content": "sha256:ba900179adad25bcba73d9745f14250bd7d31d99a91f548c8c3b51ef72b0062d",
+            "blob": "22f5e74821ea81289840c2fd5e82169b8d322e5c",
+            "content": "sha256:578ed2cd0d73524217c50231df424d79f87f5bd88974ec1cb74642688e8400ad",
             "locator": {
               "kind": "symbol",
               "name": "readRoleAgents"
@@ -47,6 +47,40 @@
               "name": "installBridge"
             },
             "path": "mcp/src/agents_remember/package_data/paseo_plugin/client/bridge.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Host activity is boot-qualified, record-bounded and event-driven; concurrent events win over the whole host read and no idle event time is invented.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "908cd59d77b69bd40d9bc75fa6187363fbbf7d53",
+            "content": "sha256:2303afd446ffa09552fc1102abbe260b4b7bca4c282ba0cd382077e61355f6c4",
+            "locator": {
+              "kind": "symbol",
+              "name": "HostActivityPublisher"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/host_activity.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Parent-wake handlers retain the existing gates and send through explicit host steering.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5dcb7031b563ff6a932a970d782fb0d1bb680619",
+            "content": "sha256:89bb35437919671e558fe2a18184c9652b552f2cf5950ac040a19a79e9a059e4",
+            "locator": {
+              "kind": "symbol",
+              "name": "registerParentWakeEvents"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_events.ts"
           },
           "kind": "code"
         }

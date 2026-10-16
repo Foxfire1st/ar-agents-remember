@@ -3,11 +3,12 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "941a70a1df5c5222acbc4406144f6ef096c74b18",
-        "content": "sha256:8c8ca524ce69a3db3143bfec8000a8950cde7d99247caa0033574585cb5a97a4",
+        "blob": "3e5006c2738aece314723414d6d8eaf932383598",
+        "content": "sha256:ed1740679b7559e4812d67c7965b8b371cbc4c7dc29ccee0df79a1a6cd02978e",
         "locator": {
-          "kind": "symbol",
-          "name": "Projector._tick"
+          "end": 396,
+          "kind": "line_range",
+          "start": 368
         }
       },
       "id": "RLZ-7JZBQ0",
@@ -21,11 +22,12 @@
     },
     {
       "anchor": {
-        "blob": "941a70a1df5c5222acbc4406144f6ef096c74b18",
+        "blob": "3e5006c2738aece314723414d6d8eaf932383598",
         "content": "sha256:93938db965dc5cb662fceaaf4e77b2fff0c3c5003fb497ec8ad83c27d444c7fa",
         "locator": {
-          "kind": "symbol",
-          "name": "Projector.has_subscribers"
+          "end": 217,
+          "kind": "line_range",
+          "start": 215
         }
       },
       "id": "RLZ-ASMCG7",
@@ -39,8 +41,8 @@
     },
     {
       "anchor": {
-        "blob": "941a70a1df5c5222acbc4406144f6ef096c74b18",
-        "content": "sha256:f426613718f681ac44c8e20977fb4eb29629b12de5a4f94dcc0aa62b6c653299",
+        "blob": "3e5006c2738aece314723414d6d8eaf932383598",
+        "content": "sha256:c52d2078d26138a4597480b9927d42db90c5b019174b217c604124fbfca9813f",
         "locator": {
           "kind": "symbol",
           "name": "Projector.run"
@@ -57,11 +59,12 @@
     },
     {
       "anchor": {
-        "blob": "941a70a1df5c5222acbc4406144f6ef096c74b18",
-        "content": "sha256:4c50cf164c06270f673daf6f0ce716b7bd94a007f8726b44270542bfb58a0431",
+        "blob": "3e5006c2738aece314723414d6d8eaf932383598",
+        "content": "sha256:66dd14931f05fe6fd7c2c1b15158a75458bec592465aeca01a9250beb60f2af0",
         "locator": {
-          "kind": "symbol",
-          "name": "Projector._next_refresh"
+          "end": 263,
+          "kind": "line_range",
+          "start": 244
         }
       },
       "id": "RLZ-S8TKV9",
@@ -80,12 +83,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "941a70a1df5c5222acbc4406144f6ef096c74b18",
+            "blob": "3e5006c2738aece314723414d6d8eaf932383598",
             "content": "sha256:1bc048a329b741374a79ec926485102fb060c79d82a6fcd448157d4bbafb4a3e",
             "locator": {
-              "end": 407,
+              "end": 442,
               "kind": "line_range",
-              "start": 407
+              "start": 442
             }
           },
           "kind": "code"
@@ -97,24 +100,24 @@
       "targets": [
         {
           "anchor": {
-            "blob": "941a70a1df5c5222acbc4406144f6ef096c74b18",
+            "blob": "3e5006c2738aece314723414d6d8eaf932383598",
             "content": "sha256:18cca4d32ee2d3c3397ff23be7c1560237452174f7e631917420743020adb519",
             "locator": {
-              "end": 461,
+              "end": 496,
               "kind": "line_range",
-              "start": 461
+              "start": 496
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "941a70a1df5c5222acbc4406144f6ef096c74b18",
+            "blob": "3e5006c2738aece314723414d6d8eaf932383598",
             "content": "sha256:0174f49a6c0f72cd96c6a5c567604dc84f4a2a766afd12af379076c88dbca096",
             "locator": {
-              "end": 469,
+              "end": 504,
               "kind": "line_range",
-              "start": 469
+              "start": 504
             }
           },
           "kind": "code"
@@ -126,12 +129,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2c0373c265618b820bcf5acdd0f43f477567c3f4",
+            "blob": "f1d9f2bdf6b5346afa468b367e7ed3fc0f3824c1",
             "content": "sha256:f8e896637491deb00e88b80bed125b1b3e732c2d2f06eaa0de47af8d6857aa2b",
             "locator": {
-              "end": 135,
+              "end": 116,
               "kind": "line_range",
-              "start": 100
+              "start": 81
             },
             "path": "mcp/src/agents_remember/serving/_app_common.py"
           },
@@ -174,12 +177,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "941a70a1df5c5222acbc4406144f6ef096c74b18",
+            "blob": "3e5006c2738aece314723414d6d8eaf932383598",
             "content": "sha256:93938db965dc5cb662fceaaf4e77b2fff0c3c5003fb497ec8ad83c27d444c7fa",
             "locator": {
-              "end": 199,
+              "end": 217,
               "kind": "line_range",
-              "start": 197
+              "start": 215
             }
           },
           "kind": "code"

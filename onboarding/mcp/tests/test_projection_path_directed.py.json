@@ -3,7 +3,7 @@
   "proves": [
     {
       "anchor": {
-        "blob": "618930c0518d03b56930cc7b7bc0db92aa779570",
+        "blob": "b63855dcaac8041b7ce631d4f4f85b11f9f497bf",
         "content": "sha256:fd338e6248c66872065ca3e8e2ace308754b669ee17fa031358c604912918db6",
         "locator": {
           "kind": "symbol",
@@ -21,15 +21,48 @@
   ],
   "realizes": [],
   "references": {
-    "1": {
-      "note": "Current path-directed task/lifecycle cases compare bytes and read counts at both corpus sizes. The ordered-sibling case checks dependency lists and master frontier after breaking a cycle; the deleted gate-projection mutation is no current case.\n\nAnchor: `PathDirectedRefreshTests`",
+    "2": {
+      "note": "Task edits match the full reference and reciprocal membership chooses one parent.",
       "targets": [
         {
           "anchor": {
-            "blob": "618930c0518d03b56930cc7b7bc0db92aa779570",
-            "content": "sha256:02e1393b1945562bda583e3e4a81c00ade02d6c0cf19a1c179668c1e7433be78",
+            "blob": "b63855dcaac8041b7ce631d4f4f85b11f9f497bf",
+            "content": "sha256:ad50331b7076910543a295483ff35161c998b44e8eb423cc2e774b318dc42320",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "test_append_delete_and_cross_document_join"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Task-only atomic replacement/deletion read sets stay bounded at both sizes.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b63855dcaac8041b7ce631d4f4f85b11f9f497bf",
+            "content": "sha256:78aa15f4d8b4c3547a4dac6c2e000b69de62a26c8b7f019760ae63a127d7d273",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_atomic_rewrites_and_deletes_at_both_sizes"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "Breaking a cycle updates master frontier and both dependency directions.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b63855dcaac8041b7ce631d4f4f85b11f9f497bf",
+            "content": "sha256:167fd30df47985805e23fa3c6aea1184db0ddfa6a4776742aeb2655ca13f5455",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_ordered_sibling_edit_refreshes_master_and_both_dependency_lists"
             }
           },
           "kind": "test"

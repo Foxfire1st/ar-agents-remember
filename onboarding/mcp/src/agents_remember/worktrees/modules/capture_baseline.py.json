@@ -3,7 +3,26 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "38423e04feedc1824e017110ec9f4cd40eaf5917",
+        "blob": "f87e4882334717b4528aa4384f167e1d68686821",
+        "content": "sha256:dc5bfb65b065b21dd38d78ffdccfc8ddef3522621e313f4b15f85c756665498e",
+        "locator": {
+          "end": 58,
+          "kind": "line_range",
+          "start": 39
+        }
+      },
+      "id": "RLZ-3JP7V8",
+      "invariant": "INV-7TMGB0",
+      "origin": {
+        "handoffEntry": "L168-CUR-M2-21-N18",
+        "leaf": "260928-MIK-L168"
+      },
+      "rationale": "The read-local on_capture observer is inherited or overridden through nested scopes and restored on every exit; the baseline scope stays request-local. It reports native capture dependencies to the content-generation owner without extending memo lifetime.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "f87e4882334717b4528aa4384f167e1d68686821",
         "content": "sha256:9b4711bab06a351b18433aa09d2e997bc474952583ee117b160dab8626e7dc6c",
         "locator": {
           "kind": "symbol",
@@ -18,6 +37,25 @@
       },
       "rationale": "The existing request-scoped capture baseline includes the memory HEAD observed around capture and checks it natively before reuse; HEAD-only movement with identical files/index refuses a stale review, while subject reads keep the40-child limit.",
       "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "f87e4882334717b4528aa4384f167e1d68686821",
+        "content": "sha256:8dfc8d85beaedf8809130c94f03ed4d3b1e2023e66474b2cac04cc0be082e393",
+        "locator": {
+          "end": 84,
+          "kind": "line_range",
+          "start": 71
+        }
+      },
+      "id": "RLZ-HMXXXB",
+      "invariant": "INV-7TMGB0",
+      "origin": {
+        "handoffEntry": "L168-CUR-M2-21-N19",
+        "leaf": "260928-MIK-L168"
+      },
+      "rationale": "note_capture_baseline notifies the current observer only after before/after native snapshots compare equal and the baseline is retained. This is an observation seam, not authority to reuse a changed or unproved capture.",
+      "role": "propagation-persistence"
     }
   ],
   "references": {
@@ -53,6 +91,35 @@
               "kind": "file"
             },
             "path": "mcp/src/agents_remember/worktrees/modules/future_code_candidate.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Capture dependency observation is request-local and restored on every scope exit.\n\nAnchor: memo observer scope",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f87e4882334717b4528aa4384f167e1d68686821",
+            "content": "sha256:6aebb57026d25f72d8427bf2bf9e32811fda32b0e55e192baa18b4419d8d13fc",
+            "locator": {
+              "end": 58,
+              "kind": "line_range",
+              "start": 40
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f87e4882334717b4528aa4384f167e1d68686821",
+            "content": "sha256:8dfc8d85beaedf8809130c94f03ed4d3b1e2023e66474b2cac04cc0be082e393",
+            "locator": {
+              "end": 84,
+              "kind": "line_range",
+              "start": 71
+            }
           },
           "kind": "code"
         }

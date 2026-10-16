@@ -17,7 +17,7 @@ Never shipped: `App` loads `DevApp` only under `import.meta.env.DEV`.
 
 `DocumentChatHarness` installs the fetch stub once and renders the real right rail for the
 switched document: Projects (no ref), Master, Task and the agentless ghost refs feed `RightRail`
-with the shared `sprint/master/leaf` fixtures, and rail-toggle buttons walk river and chat.
+with native TaskEntry `sprint/master/leaf` fixtures and exact references, and rail-toggle buttons walk river and chat.
 `installFetchStub` answers the frame-descriptor and document-chats
 HTTP calls with a fixed two-workspace agent table and passes everything else to native fetch, so
 the chat under test resolves agents exactly as the stubbed backend states them.

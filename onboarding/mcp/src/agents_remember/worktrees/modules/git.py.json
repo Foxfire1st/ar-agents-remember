@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "efee7fe64f98139d46ac0ff8997b4d38d2e6af7b",
+        "blob": "0b6b466e2bdb6883fcd50a9ca855e2ca4c9e6599",
         "content": "sha256:3b8db8b4e62cfdec25f14dea3fc0df03f4245fb5289f5caef8cca3fc3e05e295",
         "locator": {
           "kind": "symbol",
@@ -21,7 +21,7 @@
     },
     {
       "anchor": {
-        "blob": "efee7fe64f98139d46ac0ff8997b4d38d2e6af7b",
+        "blob": "0b6b466e2bdb6883fcd50a9ca855e2ca4c9e6599",
         "content": "sha256:103e227873dd44c7a39e41d3501ffd4894d3bf88901ee6f9c4003e40c0290f60",
         "locator": {
           "kind": "symbol",
@@ -39,7 +39,7 @@
     },
     {
       "anchor": {
-        "blob": "efee7fe64f98139d46ac0ff8997b4d38d2e6af7b",
+        "blob": "0b6b466e2bdb6883fcd50a9ca855e2ca4c9e6599",
         "content": "sha256:b1bff66ce31f00a3e25ff2e50d3c6a4f3d2ace0229322eb2bf102aca69cfe16f",
         "locator": {
           "kind": "symbol",
@@ -57,10 +57,12 @@
     },
     {
       "anchor": {
-        "blob": "efee7fe64f98139d46ac0ff8997b4d38d2e6af7b",
-        "content": "sha256:b8baa99bc2699b0ca9812160770a3139a7158238c739b6034172113818afac1b",
+        "blob": "0b6b466e2bdb6883fcd50a9ca855e2ca4c9e6599",
+        "content": "sha256:a88ffa1507c6e77e24074a1f6c004ed3e304206cd45ae46207e0b2a3d3c6248c",
         "locator": {
-          "kind": "file"
+          "end": 1080,
+          "kind": "line_range",
+          "start": 1
         }
       },
       "id": "RLZ-3T98VE",
@@ -74,7 +76,7 @@
     },
     {
       "anchor": {
-        "blob": "efee7fe64f98139d46ac0ff8997b4d38d2e6af7b",
+        "blob": "0b6b466e2bdb6883fcd50a9ca855e2ca4c9e6599",
         "content": "sha256:cdef36782d299040f81fdd1ea2fb2d6bc8991b1368898a07355b5ab4b5173d4b",
         "locator": {
           "kind": "symbol",
@@ -92,7 +94,7 @@
     },
     {
       "anchor": {
-        "blob": "efee7fe64f98139d46ac0ff8997b4d38d2e6af7b",
+        "blob": "0b6b466e2bdb6883fcd50a9ca855e2ca4c9e6599",
         "content": "sha256:b1bff66ce31f00a3e25ff2e50d3c6a4f3d2ace0229322eb2bf102aca69cfe16f",
         "locator": {
           "kind": "symbol",
@@ -110,7 +112,7 @@
     },
     {
       "anchor": {
-        "blob": "efee7fe64f98139d46ac0ff8997b4d38d2e6af7b",
+        "blob": "0b6b466e2bdb6883fcd50a9ca855e2ca4c9e6599",
         "content": "sha256:3b8db8b4e62cfdec25f14dea3fc0df03f4245fb5289f5caef8cca3fc3e05e295",
         "locator": {
           "kind": "symbol",
@@ -128,7 +130,7 @@
     },
     {
       "anchor": {
-        "blob": "efee7fe64f98139d46ac0ff8997b4d38d2e6af7b",
+        "blob": "0b6b466e2bdb6883fcd50a9ca855e2ca4c9e6599",
         "content": "sha256:b1bff66ce31f00a3e25ff2e50d3c6a4f3d2ace0229322eb2bf102aca69cfe16f",
         "locator": {
           "kind": "symbol",
@@ -146,7 +148,7 @@
     },
     {
       "anchor": {
-        "blob": "efee7fe64f98139d46ac0ff8997b4d38d2e6af7b",
+        "blob": "0b6b466e2bdb6883fcd50a9ca855e2ca4c9e6599",
         "content": "sha256:3b8db8b4e62cfdec25f14dea3fc0df03f4245fb5289f5caef8cca3fc3e05e295",
         "locator": {
           "kind": "symbol",
@@ -164,7 +166,7 @@
     },
     {
       "anchor": {
-        "blob": "efee7fe64f98139d46ac0ff8997b4d38d2e6af7b",
+        "blob": "0b6b466e2bdb6883fcd50a9ca855e2ca4c9e6599",
         "content": "sha256:103e227873dd44c7a39e41d3501ffd4894d3bf88901ee6f9c4003e40c0290f60",
         "locator": {
           "kind": "symbol",
@@ -182,7 +184,7 @@
     },
     {
       "anchor": {
-        "blob": "efee7fe64f98139d46ac0ff8997b4d38d2e6af7b",
+        "blob": "0b6b466e2bdb6883fcd50a9ca855e2ca4c9e6599",
         "content": "sha256:457bf2374ac715bd7a283bd847f4954e5a05883d3b7990fc10a17ccd5e5fe20f",
         "locator": {
           "kind": "symbol",
@@ -200,7 +202,7 @@
     },
     {
       "anchor": {
-        "blob": "efee7fe64f98139d46ac0ff8997b4d38d2e6af7b",
+        "blob": "0b6b466e2bdb6883fcd50a9ca855e2ca4c9e6599",
         "content": "sha256:788f7387fb34f8d84bd0b1772e1f0490c89644795c199dfffa337bd6d84ce4f3",
         "locator": {
           "kind": "symbol",
@@ -218,7 +220,7 @@
     },
     {
       "anchor": {
-        "blob": "efee7fe64f98139d46ac0ff8997b4d38d2e6af7b",
+        "blob": "0b6b466e2bdb6883fcd50a9ca855e2ca4c9e6599",
         "content": "sha256:4db92bb6277ae2bbf7288903a7351835ee366648856b722649ca901233ad400f",
         "locator": {
           "kind": "symbol",
@@ -236,7 +238,7 @@
     },
     {
       "anchor": {
-        "blob": "efee7fe64f98139d46ac0ff8997b4d38d2e6af7b",
+        "blob": "0b6b466e2bdb6883fcd50a9ca855e2ca4c9e6599",
         "content": "sha256:b97684cc2ac76c4fccebf4b9798b3174f988a5b6ff37fa0aa659ddeafa089b67",
         "locator": {
           "kind": "symbol",
@@ -254,7 +256,7 @@
     },
     {
       "anchor": {
-        "blob": "efee7fe64f98139d46ac0ff8997b4d38d2e6af7b",
+        "blob": "0b6b466e2bdb6883fcd50a9ca855e2ca4c9e6599",
         "content": "sha256:b1bff66ce31f00a3e25ff2e50d3c6a4f3d2ace0229322eb2bf102aca69cfe16f",
         "locator": {
           "kind": "symbol",
@@ -272,7 +274,7 @@
     },
     {
       "anchor": {
-        "blob": "efee7fe64f98139d46ac0ff8997b4d38d2e6af7b",
+        "blob": "0b6b466e2bdb6883fcd50a9ca855e2ca4c9e6599",
         "content": "sha256:3b8db8b4e62cfdec25f14dea3fc0df03f4245fb5289f5caef8cca3fc3e05e295",
         "locator": {
           "kind": "symbol",
@@ -290,7 +292,7 @@
     },
     {
       "anchor": {
-        "blob": "efee7fe64f98139d46ac0ff8997b4d38d2e6af7b",
+        "blob": "0b6b466e2bdb6883fcd50a9ca855e2ca4c9e6599",
         "content": "sha256:b1bff66ce31f00a3e25ff2e50d3c6a4f3d2ace0229322eb2bf102aca69cfe16f",
         "locator": {
           "kind": "symbol",
@@ -308,7 +310,7 @@
     },
     {
       "anchor": {
-        "blob": "efee7fe64f98139d46ac0ff8997b4d38d2e6af7b",
+        "blob": "0b6b466e2bdb6883fcd50a9ca855e2ca4c9e6599",
         "content": "sha256:b97684cc2ac76c4fccebf4b9798b3174f988a5b6ff37fa0aa659ddeafa089b67",
         "locator": {
           "kind": "symbol",
@@ -347,7 +349,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "efee7fe64f98139d46ac0ff8997b4d38d2e6af7b",
+            "blob": "0b6b466e2bdb6883fcd50a9ca855e2ca4c9e6599",
             "content": "sha256:b97684cc2ac76c4fccebf4b9798b3174f988a5b6ff37fa0aa659ddeafa089b67",
             "locator": {
               "kind": "symbol",
@@ -379,7 +381,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "efee7fe64f98139d46ac0ff8997b4d38d2e6af7b",
+            "blob": "0b6b466e2bdb6883fcd50a9ca855e2ca4c9e6599",
             "content": "sha256:b1bff66ce31f00a3e25ff2e50d3c6a4f3d2ace0229322eb2bf102aca69cfe16f",
             "locator": {
               "kind": "symbol",
@@ -395,7 +397,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "efee7fe64f98139d46ac0ff8997b4d38d2e6af7b",
+            "blob": "0b6b466e2bdb6883fcd50a9ca855e2ca4c9e6599",
             "content": "sha256:103e227873dd44c7a39e41d3501ffd4894d3bf88901ee6f9c4003e40c0290f60",
             "locator": {
               "kind": "symbol",
@@ -427,7 +429,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "efee7fe64f98139d46ac0ff8997b4d38d2e6af7b",
+            "blob": "0b6b466e2bdb6883fcd50a9ca855e2ca4c9e6599",
             "content": "sha256:5777bc0b0c3621a8045a8da3a987b5244a609c00b57b01cd3ceffa06cc74901a",
             "locator": {
               "kind": "symbol",
@@ -471,28 +473,12 @@
         }
       ]
     },
-    "22": {
-      "note": "Changed-file reporting preserves its distinct deletion/rename/count semantics.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "efee7fe64f98139d46ac0ff8997b4d38d2e6af7b",
-            "content": "sha256:e624c577a6a46da2a9dcc5305a454f893acaedde7b3be3e81951754ececf4337",
-            "locator": {
-              "kind": "symbol",
-              "name": "changed_files_with_counts"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
     "23": {
       "note": "`stage_tree` makes the index exactly one tree and reads nothing from the working tree.",
       "targets": [
         {
           "anchor": {
-            "blob": "efee7fe64f98139d46ac0ff8997b4d38d2e6af7b",
+            "blob": "0b6b466e2bdb6883fcd50a9ca855e2ca4c9e6599",
             "content": "sha256:b97684cc2ac76c4fccebf4b9798b3174f988a5b6ff37fa0aa659ddeafa089b67",
             "locator": {
               "kind": "symbol",
@@ -525,7 +511,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "efee7fe64f98139d46ac0ff8997b4d38d2e6af7b",
+            "blob": "0b6b466e2bdb6883fcd50a9ca855e2ca4c9e6599",
             "content": "sha256:457bf2374ac715bd7a283bd847f4954e5a05883d3b7990fc10a17ccd5e5fe20f",
             "locator": {
               "kind": "symbol",
@@ -557,6 +543,119 @@
             "path": "mcp/src/agents_remember/worktrees/modules/capture_index.py"
           },
           "kind": "code"
+        }
+      ]
+    },
+    "26": {
+      "note": "The serving count reader retains deletion/rename/binary path facts outside this mutation module.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5c5bad11e569807e1f8ac3f6b751e29506700331",
+            "content": "sha256:9bd1058368a641b153f336e91799b4bbcc487930c3c224d971f824b3df7de61e",
+            "locator": {
+              "kind": "symbol",
+              "name": "changed_files_with_counts"
+            },
+            "path": "mcp/src/agents_remember/serving/changeset_reads.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "27": {
+      "note": "Native NUL-delimited statuses/counts live in `git_changes`; the serving wrapper caches that one implementation.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7811241b103c8c1b3f9f931a62c42f51a8bc3742",
+            "content": "sha256:868cceba358df705e894864d6ecc17a750a328ae788c89cc4fb803b32930a54f",
+            "locator": {
+              "kind": "symbol",
+              "name": "changed_files_with_counts"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/git_changes.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5c5bad11e569807e1f8ac3f6b751e29506700331",
+            "content": "sha256:9bd1058368a641b153f336e91799b4bbcc487930c3c224d971f824b3df7de61e",
+            "locator": {
+              "end": 48,
+              "kind": "line_range",
+              "start": 25
+            },
+            "path": "mcp/src/agents_remember/serving/changeset_reads.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "28": {
+      "note": "Only the change-set wrapper adds diff.autoRefreshIndex=false; the native landing worklist keeps ordinary Git refresh behavior, and the existing identical-byte/native-stage regression asserts an empty worklist.\n\nAnchor: native-stage regression",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0b6b466e2bdb6883fcd50a9ca855e2ca4c9e6599",
+            "content": "sha256:1195728b19af21f629571abbfeb4fded7ff821b5d4e5eaa5b03576e2bdf0cb6d",
+            "locator": {
+              "kind": "symbol",
+              "name": "_nul_git"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0b6b466e2bdb6883fcd50a9ca855e2ca4c9e6599",
+            "content": "sha256:09041fbb1dc62ffbb3e5d7e1edc8feb428539e8c960cd11661e8c32767ef56b7",
+            "locator": {
+              "kind": "symbol",
+              "name": "changed_worktree_paths"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7811241b103c8c1b3f9f931a62c42f51a8bc3742",
+            "content": "sha256:18e608c3f1400a83796ed494079304faa02fbf672491f6b4d259a1d6747f6cda",
+            "locator": {
+              "end": 14,
+              "kind": "line_range",
+              "start": 8
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/git_changes.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "df5edfba8893347476b297d9d8664953015ae4ae",
+            "content": "sha256:1ce13ae86c3b7f29490adfe9da0eab9d81ab15abd2f98117395ea1fc9f14d683",
+            "locator": {
+              "end": 168,
+              "kind": "line_range",
+              "start": 156
+            },
+            "path": "mcp/src/agents_remember/kernel/git_command.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "68ace12aad0a8e57a12575a620a5640da7ef6e6e",
+            "content": "sha256:2c79c3b514ec9eb6abb1f6b979d3fc080ab73a76af897ff3584bed10d22ce78a",
+            "locator": {
+              "end": 559,
+              "kind": "line_range",
+              "start": 547
+            },
+            "path": "mcp/tests/test_changeset_cache.py"
+          },
+          "kind": "test"
         }
       ]
     },

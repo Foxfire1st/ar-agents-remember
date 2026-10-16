@@ -10,8 +10,8 @@ Read the product's per-role-agent facts for event-driven silent-turn notificatio
 
 ## Contract And Boundaries
 
-`PASEO_HOME` locates `agents-remember/role-agents.json`. Missing/empty home or ENOENT returns an empty record set; malformed present JSON, malformed agents and non-string facts fail visibly. The accepted result copies only role, task and reportPath. The plugin reads it fresh for each turn end, while other event state stays in the in-memory tracker. This module starts no polling, publishes no facts and does not identify or replace a parent.
+`PASEO_HOME` locates `agents-remember/role-agents.json`. Missing/empty home or ENOENT returns an empty record set; malformed present JSON, malformed agents and non-string facts fail visibly. The accepted result copies only role, task and reportPath. One stat-keyed cached mapping is reused while path/device/inode/size/mtime/ctime match; a changed registration replaces it. Missing/read-error paths clear the cache, and malformed present data still throws. Other event state stays in its own tracker. This module starts no polling, publishes no facts and does not identify or replace a parent.
 
 ## Evidence
 
-- Absent configuration/file yields no records, while malformed present facts throw; each read reconstructs the typed fact set. [1]
+- Absent configuration/file yields no records and malformed facts throw; equal stat identity reuses one parsed mapping until registration changes. [1]

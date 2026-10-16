@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "7cf302eb50c45f037ae310ce5db71ccb9e0f5be3",
-        "content": "sha256:64d28d5db2468949a9721097cbaaa884c086821e600d20b67ad8ab364ea93f95",
+        "blob": "04fdf2c91d67354e710c414b6fdff30389c73fec",
+        "content": "sha256:21fc75e4c35d28e8f7cee8a93f3bfdba919a9436076a26cc9fd36a38433bf87b",
         "locator": {
           "kind": "symbol",
           "name": "assert_preview_read_only"
@@ -26,7 +26,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7cf302eb50c45f037ae310ce5db71ccb9e0f5be3",
+            "blob": "04fdf2c91d67354e710c414b6fdff30389c73fec",
             "content": "sha256:dde936bee470bbc8071b6fc18b3b25d2906244d935f208cac65d6a8548ed60f3",
             "locator": {
               "kind": "symbol",
@@ -42,7 +42,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7cf302eb50c45f037ae310ce5db71ccb9e0f5be3",
+            "blob": "04fdf2c91d67354e710c414b6fdff30389c73fec",
             "content": "sha256:3b873f33ca3d133d9f4d5d28f36562106d2cd5af30596f5b186a0afb6d5c1978",
             "locator": {
               "kind": "symbol",
@@ -58,7 +58,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7cf302eb50c45f037ae310ce5db71ccb9e0f5be3",
+            "blob": "04fdf2c91d67354e710c414b6fdff30389c73fec",
             "content": "sha256:95a24aee52f58dd1ceb8201f0604c41be8d112212ecc0d1b00b0d7f076bf22e6",
             "locator": {
               "kind": "symbol",
@@ -74,7 +74,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7cf302eb50c45f037ae310ce5db71ccb9e0f5be3",
+            "blob": "04fdf2c91d67354e710c414b6fdff30389c73fec",
             "content": "sha256:de836cb1d111a2ef3a180ea7f87bc002d7b8788fb0d9d74024fcb66c35859b0a",
             "locator": {
               "kind": "symbol",
@@ -90,7 +90,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7cf302eb50c45f037ae310ce5db71ccb9e0f5be3",
+            "blob": "04fdf2c91d67354e710c414b6fdff30389c73fec",
             "content": "sha256:fb966693894c05db612461c57137e2045b1a90e3f929091ce5164465f4b8a18a",
             "locator": {
               "kind": "symbol",
@@ -106,7 +106,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7cf302eb50c45f037ae310ce5db71ccb9e0f5be3",
+            "blob": "04fdf2c91d67354e710c414b6fdff30389c73fec",
             "content": "sha256:225f022321368b9e8f713ce6c07a20bbebb0ae4fd3e46d2b69b99cb37ca2c484",
             "locator": {
               "kind": "symbol",
@@ -122,7 +122,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7cf302eb50c45f037ae310ce5db71ccb9e0f5be3",
+            "blob": "04fdf2c91d67354e710c414b6fdff30389c73fec",
             "content": "sha256:b3645a2b40953deb8c46ad9c3151e5f2a497c79ab3fe025266dc0619a7a6488a",
             "locator": {
               "kind": "symbol",
@@ -138,8 +138,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7cf302eb50c45f037ae310ce5db71ccb9e0f5be3",
-            "content": "sha256:64d28d5db2468949a9721097cbaaa884c086821e600d20b67ad8ab364ea93f95",
+            "blob": "04fdf2c91d67354e710c414b6fdff30389c73fec",
+            "content": "sha256:21fc75e4c35d28e8f7cee8a93f3bfdba919a9436076a26cc9fd36a38433bf87b",
             "locator": {
               "kind": "symbol",
               "name": "assert_preview_read_only"
@@ -150,15 +150,16 @@
       ]
     },
     "9": {
-      "note": "The sole ambient caller separately proves its lifecycle append and preserves event metadata.",
+      "note": "The current preview regression judges a real workspace-river append without a session lifecycle and rejects a later mode change.\n\nAnchor: real start, second-leaf preview and mode-change rejection",
       "targets": [
         {
           "anchor": {
-            "blob": "8d86ca26f65f28f7054fb550878c3120abc18eab",
-            "content": "sha256:fc22676a09959764cfccf60d2fd721f544303a91a24b792f72bda0a5de0b35e0",
+            "blob": "f3436af2db562512e7ad0be1208627a54ba670ac",
+            "content": "sha256:535df0c89ab40847b8b965dc53958c357520da8a2f904e592cf1056e126d07b2",
             "locator": {
-              "kind": "symbol",
-              "name": "_assert_ambient_request_observes_only_tool_completion"
+              "end": 874,
+              "kind": "line_range",
+              "start": 836
             },
             "path": "mcp/tests/test_worktree_start_preview.py"
           },

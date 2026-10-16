@@ -1,0 +1,23 @@
+{
+  "path": "mcp/src/agents_remember/serving/projections/snapshots_impl/_task_graph_view.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Adapt task-domain execution graphs to the primitives-only observer graph builder.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8d4c20edb91d6a2241205464912d1987ad1e3d87",
+            "content": "sha256:f81e266c63510a0ff6d201d1516df6e56f7fc1726ad4539a3469ef02ef92f8eb",
+            "locator": {
+              "kind": "symbol",
+              "name": "declared_task_reference"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

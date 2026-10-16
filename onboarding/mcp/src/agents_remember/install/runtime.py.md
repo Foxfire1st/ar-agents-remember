@@ -5,7 +5,7 @@
 The current source facts below replace the former operative inventory. The separately labelled superseded claims describe only the pre-repair card. Original paragraphs, dated closures, evidence and citation identities remain intact in the explicitly historical section; they grant no current call, restored route or fresh execution acceptance.
 
 - Current install attempts only old-watcher stop and continues on failed stop.
-- Current assets include docs and leftover/unused-provider reporting.
+- Current assets include docs and leftover/unused-provider reporting. Removed-store discovery and report formatting are imported from the shared `install/removed_stores.py` owner; this installer no longer defines a second store/gate/lock inventory and still performs no automatic deletion.
 - The explicit upgrade copies the complete settings bytes and metadata to an exclusively created user file before removing the old file. R137 then closes file permissions to0444 and its folder to0555; permission bits are deliberately normalized, not preserved unchanged. Closure OSError leaves the completed move and a permissionsNote/protection report. Dry-run performs no transfer or closure. This read does not run an upgrade or edit the user file.
 
 ### Superseded inventory
@@ -243,3 +243,6 @@ fields the entry point reads cannot drift apart.
 - The application entry that composes the host step onto the lower service result. [11]
 
 </details>
+
+- Install consumes the one shared removed-store inventory without defining or deleting it. [14]
+- The shared no-follow store/gate/lock inventory and reporting retain explicit user-owned removal. [15]

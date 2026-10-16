@@ -1,0 +1,47 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test",
+      "prevents_costly_mistake",
+      "spans_locations"
+    ],
+    "justification": "Future changes to host intake, task projection or task-status consumers must preserve this bounded authority: duplicate task truth, unsupported paused observations, reconstructed membership or conflicting status/age presentation produce incorrect task operations. The named current source assertions guard the specified facets; this is no fresh Curator execution grade."
+  },
+  "applicability": "The single server TaskEntry/taskCounts wire surface and qualified browser tasks map.",
+  "conditions": [
+    "The native producer joins authored summaries, bound host observations and independently bound worktrees before consumers receive entries.",
+    "Task-owned identity, stage/activity, progress and ordered child membership are not duplicated into the optional summary.",
+    "Independent provider, attention, analytics, landing-operation and unbound-enclosure facts remain their own surfaces, not another task collection."
+  ],
+  "exclusions": [
+    "On-demand task document resources and their body/revision caches are content, not a second task-stage collection.",
+    "No claim that independent operational records are removed, nor that every raw input is read on every watcher wake."
+  ],
+  "id": "INV-MGGEBY",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "L168-final-consumer-inventory.md; L168-engine-admission-30.md; architect accepted size settlement in main report",
+        "L168-M1-21 N04 dashboard/src/panels/detail-panel/taskDocPanels.tsx:24-66; static A013 source; no execution.",
+        "L168-M1-21 N08 dashboard/src/panels/detail-panel/task-groups.tsx:440-460; static A013 source; no execution.",
+        "L168-M1-21 N10 dashboard/src/cockpit/roleLaunchModel.ts:188-196; static A013 source; no execution.",
+        "L168-M1-21 N11 dashboard/src/cockpit/Cockpit.tsx:404-408; static A013 source; no execution.",
+        "L168-M1-21 N12 dashboard/src/cockpit/Cockpit.tsx:928-940; static A013 source; no execution.",
+        "L168-M1-21 N14 dashboard/src/panels/detail-panel/docHead.tsx:102-110; static A013 source; no execution.",
+        "L168-M1-21 N20 dashboard/src/data/stream.ts:6-13; static A013 source; no execution.",
+        "L168-M1-21 N21 mcp/src/agents_remember/serving/projections/snapshots_impl/_task_documents.py:83-131; static A013 source; no execution.",
+        "L168-M1-21 N23 dashboard/src/panels/detail-panel/task-groups.tsx:47-80; static A013 source; no execution.",
+        "L168-M1-21 N26 dashboard/src/panels/lifecycle-list/rowState.ts:20-23; static A013 source; no execution."
+      ],
+      "path": "A011-host-driven-native-task-core-31.json"
+    },
+    "handoffEntry": "L168-W-R167-13-14",
+    "leaf": "260928-MIK-L168",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "A single server-built TaskEntry replaces the separate lifecycle, task-document and series task collections, while independent operational facts remain visible.",
+  "status": "proposed",
+  "supersedes": []
+}

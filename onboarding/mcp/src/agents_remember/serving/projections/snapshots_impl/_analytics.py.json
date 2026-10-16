@@ -1,0 +1,24 @@
+{
+  "path": "mcp/src/agents_remember/serving/projections/snapshots_impl/_analytics.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "5cfbd19decdabe5ffc9f3a30e626b7a87d258577",
+        "content": "sha256:ae72dddce3257482fbd3888ac2711c0ac46c9634a19c5f0e03a26be7584db263",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-7FGAXV",
+      "invariant": "INV-TT5CTW",
+      "origin": {
+        "handoffEntry": "L168-W-R166-03",
+        "leaf": "260928-MIK-L168"
+      },
+      "rationale": "This reader carries the persisted full-set actionable fingerprint into drift nodes and observes available fingerprints for current branch identities without inventing a replacement identity from sampled counts or findings.",
+      "role": "propagation-persistence"
+    }
+  ],
+  "references": {},
+  "schema": "ar-onboarding-file/v1"
+}

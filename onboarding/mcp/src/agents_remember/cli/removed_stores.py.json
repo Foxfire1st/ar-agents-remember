@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "f0ccd44a27aa75224b1585c1790e1216099c188e",
-        "content": "sha256:452b1361eae1bd0bc6971e45880566c4a1e477c309eb830a5c816007bcbb27e7",
+        "blob": "da2b03b6526af1108b7a5ad87d55bc027e5d4bb0",
+        "content": "sha256:6f0f511a4925a487c7211c4ee23bac266fc0efb7ba0a65029f019021fc447526",
         "locator": {
           "kind": "symbol",
           "name": "run"
@@ -26,12 +26,29 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f0ccd44a27aa75224b1585c1790e1216099c188e",
+            "blob": "da2b03b6526af1108b7a5ad87d55bc027e5d4bb0",
             "content": "sha256:c3d7596802c4e719523a1daf1802322dab878cbb96602e9d509b0012fce748fd",
             "locator": {
               "kind": "symbol",
               "name": "_contained_target"
             }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The native removed-store owner inventories the known retired parts, including separately admitted terminal lock residues.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "919a71b491ed753daa97927f49bcf27947690f71",
+            "content": "sha256:30df359dcfb250d017428959e8ac344766868db94af85d56522a271b5bba720a",
+            "locator": {
+              "kind": "symbol",
+              "name": "removed_part_stores"
+            },
+            "path": "mcp/src/agents_remember/install/removed_stores.py"
           },
           "kind": "code"
         }

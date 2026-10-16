@@ -7,7 +7,7 @@
 ## Purpose
 
 Generated TypeScript mirror of the served workspace projection plus its enumerable runtime
-vocabularies. It carries canonical `TaskDocumentRef` values on retained task-document projections, not removed pickup/expectation DTOs, without
+vocabularies. It carries canonical `TaskDocumentRef` values on native task entries/dependencies, not removed pickup/expectation DTOs, without
 turning runtime session/lifecycle ids into work identity. Since 260831-CCR (commit `99dc249b`)
 it also mirrors the canonical `TaskIntentIdentity` wire shape (`task-intent/v1` schema + 64-hex
 digest) and attaches it optionally to the lifecycle operation projection.
@@ -16,12 +16,19 @@ digest) and attaches it optionally to the lifecycle operation projection.
 
 ### Task-reader wire fields
 
-The generated TaskDocNode carries required sprint/master/task `form`, type, headerNotes and
-statusNoteTruncated; branch/status note, headerNotesTotal and reviewState remain optional.
-A present TaskReviewStateNode requires whole-round openFindings and totalFindings, independently of
-the findings preview array. TaskStepNode requires note/outcome truncation flags beside optional prose;
-TaskSubStepNode adds optional note without a truncation flag. The consumer's supported older-recording
-recovery is not permission to hand-invent a malformed present review object missing required counts.
+`TaskSummary` requires `form` (`sprint`/`master`/`task`), `type`, `headerNotes` and
+`statusNoteTruncated`; `integrationBranch`, `statusNote`, `headerNotesTotal` and `reviewState`
+remain optional. Its required reader fields also include `bodyRevision`, `codeExamples`,
+`createdAt`, `decisions`, `executionWaves`, `kind`, `objective`, `openQuestions`, `orchestrates`,
+`references`, `requirements`, `seats`, `sections` and `steps`; acceptance/design/completion,
+direct-grant, discard, graph and dependency additions remain optional as declared.
+`TaskStepNode` requires `noteTruncated` and `outcomeTruncated` beside optional `note`/`outcome`;
+`TaskSubStepNode` has optional `note` without a note-truncation flag. A present
+`TaskReviewStateNode` still requires whole-round `openFindings` and `totalFindings`, independently
+of its findings preview. Supported older-recording recovery is not permission to invent a
+malformed present review object missing those counts. `TaskEntry` separately owns key/id/title,
+served stage, ordered membership, counts, major-step totals and worktrees; its `reference`,
+`activity` and `summary` are optional. `TaskSummary` is reader content, not a second status authority.
 
 
 The lifecycle phase vocabulary now includes `recovering-private-preparation`. This exposes the existing private-preparation recovery phase without granting publication or lifecycle authority to the dashboard. Evidence: dashboard/src/types/projection.ts:352-352.
@@ -32,10 +39,7 @@ The generated `LifecycleOperationProjection.phase` union has no `ledger-commit` 
 `direct-ledger-commit` member. It mirrors the Python lifecycle vocabulary: code and memory output
 publication remain observable, while the downstream ledger cache creates no separate commit phase.
 
-The generator emits lifecycle, task, attention, engine, and metrics wire shapes together with checked
-state vocabularies. Structural additions share one `TaskDocumentRef` interface. Task documents
-remain the hierarchy authority; lifecycle and hosted-occupant fields are optional runtime
-attachments.
+One TaskEntry/TaskCounts grammar replaces session lifecycle state constants and duplicate analytics document/series joins. The browser consumes stage/activity and counts rather than inferring them. TaskSummary is content, not a second task-status authority. TaskEntry retains eventAt but no longer declares task-event ageSeconds; the browser owns its event-age display. Other projection age fields are separate contracts.
 
 `LifecycleOperationProjection` gains the optional `taskIntent?: TaskIntentIdentity` (line 349),
 and the new `TaskIntentIdentity` interface (line 750-754) mirrors the JSON Schema refinements:
@@ -72,19 +76,26 @@ None.
 
 ## Optional direct grant display
 
-Generated TaskDocNode and SeriesChild shapes carry optional directGrant evidence with giver/time data, mirroring the Python observer schema. This is display evidence only; task authoring and grant mutation remain distinct owners. Regenerate from the schema rather than hand-maintain these types.
+TaskSummary carries optional directGrant giver/time evidence for display. Backend grant mutation and task authoring retain separate authority; generated declarations are not hand-maintained permission rules.
 
 ## Dependency Display Shape
 
-TaskDependencyNode requires id/status/title and makes docPath optional. TaskDocNode adds optional nonGoals/acceptance/completedAt strings, waitsFor IDs and waitsForTasks/neededByTasks arrays. TaskExecutionNodeView adds optional cycle and is reused for sprint/master display. These are generated output types, not scheduling or validation functions. Default-null core schema properties become optional non-null TypeScript properties because the generator models exclude_none serialization; they are not `string | null` fields.
+TaskDependencyNode requires id/title; its canonical reference is optional. A file-less dependency has no reference to resolve, task-state word or navigation target. TaskSummary carries optional fixed prose/completion/dependencies; graph display nodes retain optional cycle. Default-null producer fields become optional non-null output properties under exclude_none serialization. These are declarations, not membership validation or scheduling functions.
 
 
-- Generated task/graph display DTOs declare optional fixed prose/completion/dependencies and cycle state; absent older fields remain representable. [14]
 
 - Core nullable properties are emitted as optional non-null output properties, except explicitly null-preserving models. [15] [15]
 - Current CloseoutCandidateNode uses string classification/priority; queue members reference that interface. [16] [16]
 
 ## Evidence
+
+- TaskSummary separates required reader fields from optional branch/note/review, content and graph additions. [19]
+- TaskStepNode requires note/outcome truncation booleans beside optional prose; TaskSubStepNode has optional note without a truncation flag. [20]
+- A present TaskReviewStateNode requires openFindings and totalFindings independently of its findings array. [21]
+
+- A dependency keeps id/title without inventing a reference; TaskEntry event time is not a served age. [18]
+
+
 
 ### Docs References
 
@@ -95,15 +106,12 @@ No configured external domain-documentation source applies.
 ### Repo-Internal References
 
 - The lifecycle phase union mirrors the code/memory-only vocabulary. Anchor: `refinements` [1]
-- Structural analytics fields use the shared task-document reference. Anchor: `string` [2]
-- TaskDocNode preserves hierarchy/runtime separation and adds six optional task fields: nonGoals, acceptance, completedAt, waitsFor and resolved dependency-direction arrays. [3]
 
 - Execution nodes retain kind/leafIds/ref; display nodes add cycle?: boolean and retain graph-rendering fields. Shared DTO declarations are not order derivation. [4]
 
 - An execution endpoint carries a task reference and optional leaf id. [5]
 - Execution edges bind predecessor and successor endpoints with a reason and optional judgment id. [6]
 - The graph contains typed node and edge arrays. [7]
-- WorkspaceProjection declares the persisted projection core plus the served tail servingBuild and watcherHealth; retired terminal/notifier heartbeat fields are absent. Generated types describe wire shape, not live producer execution. [8]
 
 - The optional canonical task-intent identity on lifecycle operations. [9]
 - The generated `task-intent/v1` identity interface. Anchor: "task-intent/v1" [10]
@@ -129,7 +137,7 @@ The L4 delta keeps the generated dashboard contract aligned with the backend's o
 
 ## 260815-DAG-L12 Render-Ready Graph View Types
 
-The generated mirror gains the render-ready sprint graph wire shapes (L12-R4): `TaskExecutionGraphView` (nodes), `TaskExecutionNodeView` (kind `lump`/`segment`, masterRef + masterTitle, leafIds + leafTitles, waveIndex, frontierState, optional executionNature, predecessors), and `TaskExecutionPredecessorNode` (predecessorRef + predecessorTitle + reason + optional judgmentId); `TaskDocNode` gains the optional `executionGraphView` field. Regenerated by `scripts/sync-projection-types.py`.
+The generated mirror gains the render-ready sprint graph wire shapes (L12-R4): `TaskExecutionGraphView` (nodes), `TaskExecutionNodeView` (kind `lump`/`segment`, masterRef + masterTitle, leafIds + leafTitles, waveIndex, frontierState, optional executionNature, predecessors), and `TaskExecutionPredecessorNode` (predecessorRef + predecessorTitle + reason + optional judgmentId); `TaskSummary` carries the optional `executionGraphView` field. Regenerated by `scripts/sync-projection-types.py`.
 
 
 ## 260821-CLIVE-L2 Lifecycle Operation Projection Contract
@@ -151,8 +159,7 @@ carries no item ceiling since 260913-LCA-L6 — see that section below — while
 each row's `reasons` keep their 256-entry refinements.
 
 `DiscardUnstartedProofNode` and `DiscardedSubTaskNode` expose audited discard-before-start evidence.
-Required series and optional task-document discard count/history fields remain distinct from live
-subtasks and completed progress. Supported runtime-only schema constraints are emitted immediately
+TaskSummary discard count/history remains distinct from live child membership/counts and completed progress. Supported runtime-only schema constraints are emitted immediately
 above their TypeScript properties as stable `JSON Schema refinements` comments, including nested item
 constraints; TypeScript shape alone is not runtime validation.
 
@@ -174,21 +181,9 @@ explicit non-admitting result rather than interpreting file absence as lifecycle
 
 ## 260831-LOCR-L17 Terminal-Observer-Health Mirror
 
-The regenerated mirror gains the `TerminalObserverHealth` interface — the exact
-`ar-terminal-observer-health/v1` record plus the four serve-time computed fields
-(`ageSeconds`, `lastSuccessAgeSeconds`, `staleCutoffSeconds`, `status`) — and the optional
-`terminalObserverHealth?` property on `WorkspaceProjection`, beside `servingBuild?` and the two
-heartbeat names. Three properties of the mirror matter to a dashboard reader:
+The served-only tail declares servingBuild and watcherHealth. TerminalObserverHealth and the old notifier/supervisor heartbeat fields are absent; their former declarations are not current fixture gaps.
 
-- Its **five literal unions are CLOSED** (`status`, `schemaVersion`, `activeFailureCategory`,
-  `activeFailureSummary`, `activeFailureType`), so `test/contract.test.ts` walks them and the
-  served sample must carry a value for each — the residue allowlist cannot absorb them.
-- Its **nulls are meaningful**: the payload is declared in `NULL_PRESERVING_MODELS`, so its
-  nullable properties stay required `T | null` instead of becoming optional. `lastAttemptAt: null`
-  is how "no observer attempt has completed in this serving lifetime" is served, and the dashboard
-  distinguishes that from a server that reports no observer health at all (the key is then absent).
-- Its **counter ceiling is a refinement comment**, `{"maximum":4294967295,"minimum":0}`, beside
-  both serving-lifetime counters, because TypeScript cannot enforce it structurally.
+The current served-only diagnostics retain their own generated vocabularies and optional-field semantics. Native task state/activity and landing-operation phase/status remain separate contracts.
 
 The file remains generated by `scripts/sync-projection-types.py` and drift-checked; nothing in it is
 hand-edited, and adding a serve-time key here implies the companion updates described in
@@ -216,8 +211,6 @@ dashboard mirror of the durable CCR-R15 wait cursor that the lifecycle status-ch
 returns on snapshots.
 
 - The lifecycle phase union mirrors the code/memory-only vocabulary. Anchor: `refinements` [1]
-- Structural analytics fields use the shared task-document reference. Anchor: `string` [2]
-- TaskDocNode preserves hierarchy/runtime separation and adds six optional task fields: nonGoals, acceptance, completedAt, waitsFor and resolved dependency-direction arrays. [3]
 - Execution nodes retain kind/leafIds/ref; display nodes add cycle?: boolean and retain graph-rendering fields. Shared DTO declarations are not order derivation. [4]
 - An execution endpoint carries a task reference and optional leaf id. [5]
 - Execution edges bind predecessor and successor endpoints with a reason and optional judgment id. [6]
@@ -227,3 +220,5 @@ returns on snapshots.
 - The generated closeout-queue node carries an unbounded `members` array beside its 256-bounded `sourceProblems`. Anchor: `string` [11]
 - The lifecycle operation wire type keeps generation optional, controls opaque, and kind/status vocabularies closed. Anchor: `string` [12]
 - The queue members remain unbounded while sourceProblems and candidate reasons retain their bounds. Anchor: `string`; "sourceProblems: CloseoutProjectionProblemNode[]" [13]
+
+- Generated TaskEntry retains stage/activity and eventAt without a task-event ageSeconds field. [17]

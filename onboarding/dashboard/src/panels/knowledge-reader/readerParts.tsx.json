@@ -6,8 +6,9 @@
         "blob": "f10d3af559ce1dcc1fea8e6f543f672a0f92bba3",
         "content": "sha256:47d02ce4c83243c402d501789605db2db56c8ce56ac0aac9f75f6aa8c64ce20f",
         "locator": {
-          "kind": "symbol",
-          "name": "ProseWithReferences"
+          "end": 467,
+          "kind": "line_range",
+          "start": 417
         }
       },
       "id": "RLZ-P2XBAV",

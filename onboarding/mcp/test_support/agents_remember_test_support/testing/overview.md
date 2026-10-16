@@ -56,6 +56,8 @@ The lane loader runs during test collection. The lifecycle loader runs through t
 
 The closed register also gives the existing closeout digest-file stats, lifecycle location cache and lifecycle operation-record cache ordinary `_clear` resets at module boundaries. It adds no scanner exemption or production reset; restored rows retain their per-test treatment.
 
+Those retained lifecycle caches belong to the independent worktree landing chain. The removed ambient-session singleton and lifecycle-log cache are no longer registered, and their ambient heartbeat reset helper is gone. Module-boundary reset still visits only already-imported owners; removing retired owners adds neither a scanner exemption nor a new production reset.
+
 ## Local Invariants And Boundaries
 
 - Ordinary pytest setup has no certifying or external-service authority. Dagger admission is mandatory at the certifying composition boundary; neither admission nor running the bootstrap alone establishes acceptance.
@@ -101,3 +103,5 @@ The generated route index lists the source files of this route and their cards.
 - **Historical source-bound reference account, not an operative override:** The register assigns distinct reset, restored and constant treatments. [19]
 
 - The closed register also gives the existing closeout digest-file stats, lifecycle location cache and lifecycle operation-record cache ordinary `_clear` resets at module boundaries. It adds no scanner exemption or production reset; restored rows retain their per-test treatment. [27]
+
+- The current closed register omits retired ambient-session/log owners while retaining closeout and worktree landing-chain cache resets. [28]

@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "a111e133b0966f3fee0ac50fdf4ca7ffc181ac16",
-        "content": "sha256:ede743eb1404b73d5b1c55162a6fff8c24be84f0dec4232a6c9d9c394acb3c5a",
+        "blob": "d19f997fc5ce9cd991b0eb7b4f8b24c36ef9eea2",
+        "content": "sha256:4eed52431310247cf3a11bea879b6f5e33cf92916025760dcbcca66d136907ce",
         "locator": {
           "kind": "file"
         }
@@ -21,37 +21,16 @@
   ],
   "references": {
     "1": {
-      "note": "The three disclosure classes.",
+      "note": "The three disclosure classes.\n\nAnchor: disclosure recipes",
       "targets": [
         {
           "anchor": {
-            "blob": "27e37add168df29a60e5bdd5bd620141e925bb22",
-            "content": "sha256:2063c5121eb7c1c49b39b37f93a47cce83512d06e61daee202f060cdcd469669",
+            "blob": "d19f997fc5ce9cd991b0eb7b4f8b24c36ef9eea2",
+            "content": "sha256:431c511e5b0dc75118b9d056103232a2d67947c30e339d753c6cf9c8595034e4",
             "locator": {
-              "kind": "symbol",
-              "name": "entryStateDetails"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "27e37add168df29a60e5bdd5bd620141e925bb22",
-            "content": "sha256:546ce106c54de41bb5fffa39ab5f6e482d7472db352483c39e6ce9d46a44ff44",
-            "locator": {
-              "kind": "symbol",
-              "name": "entryStateSummary"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "27e37add168df29a60e5bdd5bd620141e925bb22",
-            "content": "sha256:03f9427fcb001c9bd73da7812fdff4877fda682f17dd9d20f6957af4c6ad1fe0",
-            "locator": {
-              "kind": "symbol",
-              "name": "entryStateBody"
+              "end": 184,
+              "kind": "line_range",
+              "start": 159
             }
           },
           "kind": "code"
@@ -59,48 +38,16 @@
       ]
     },
     "2": {
-      "note": "The panel layout/stepper/badge recipes.",
+      "note": "The retained panel layout, step-mark and badge recipes.\n\nAnchor: retained layout and step marks",
       "targets": [
         {
           "anchor": {
-            "blob": "27e37add168df29a60e5bdd5bd620141e925bb22",
-            "content": "sha256:44165541b2682e021e2dc99aaab44a51dc76bf3ec5250040b3e933b6d9636cb5",
+            "blob": "d19f997fc5ce9cd991b0eb7b4f8b24c36ef9eea2",
+            "content": "sha256:148a1976d412773719eb72231110bd53cc3c2ba5129f2e02d7d02277cc91beae",
             "locator": {
-              "kind": "symbol",
-              "name": "sizing"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "27e37add168df29a60e5bdd5bd620141e925bb22",
-            "content": "sha256:7d1868998bc75d03268170e00209fafcea859fc93c61257035afaf5cff7f5580",
-            "locator": {
-              "kind": "symbol",
-              "name": "stepper"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "27e37add168df29a60e5bdd5bd620141e925bb22",
-            "content": "sha256:6a4ae25869b1941650f88463ccd248a15b2c580ff2afd331ab4c25b4203b2e9d",
-            "locator": {
-              "kind": "symbol",
-              "name": "step"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "27e37add168df29a60e5bdd5bd620141e925bb22",
-            "content": "sha256:a89433942b2876257ac6aaaba16fb21ac8f2b24189c3242bc5bceb0d86d3429e",
-            "locator": {
-              "kind": "symbol",
-              "name": "badge"
+              "end": 42,
+              "kind": "line_range",
+              "start": 5
             }
           },
           "kind": "code"
@@ -108,48 +55,28 @@
       ]
     },
     "3": {
-      "note": "The slice/cross/spine recipes.",
+      "note": "The retained slice-container, breadcrumb and worktree-lane recipes.\n\nAnchor: retained slice, breadcrumb and worktree recipes",
       "targets": [
         {
           "anchor": {
-            "blob": "27e37add168df29a60e5bdd5bd620141e925bb22",
-            "content": "sha256:77edbd05c27953d5d05884003ab4827a1201d91e6ef92a7a9109cce91056bef8",
+            "blob": "d19f997fc5ce9cd991b0eb7b4f8b24c36ef9eea2",
+            "content": "sha256:e6f4b21d315c3ff0c95cb89784f8d738786aea82db4fe1836df27119c9aad9c1",
             "locator": {
-              "kind": "symbol",
-              "name": "slice"
+              "end": 51,
+              "kind": "line_range",
+              "start": 44
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "27e37add168df29a60e5bdd5bd620141e925bb22",
-            "content": "sha256:936441ef9c23fc788b58660bb716ecd81003ade739066c12a63b6e7f87cb4173",
+            "blob": "d19f997fc5ce9cd991b0eb7b4f8b24c36ef9eea2",
+            "content": "sha256:26f99e3560fa578fa3dd6bb02466d1fa538e5ae47e2b5cd2e05c3156c8432f96",
             "locator": {
-              "kind": "symbol",
-              "name": "sliceButton"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "27e37add168df29a60e5bdd5bd620141e925bb22",
-            "content": "sha256:1878566b0114f3bdb5bbc4689feea8654159293b8e924b17542a6a00abb7b488",
-            "locator": {
-              "kind": "symbol",
-              "name": "crossButton"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "27e37add168df29a60e5bdd5bd620141e925bb22",
-            "content": "sha256:f83d8166c27eca11a3bff5e686c53c774c629fc4472a7d02d53b8f35075960f8",
-            "locator": {
-              "kind": "symbol",
-              "name": "lane"
+              "end": 131,
+              "kind": "line_range",
+              "start": 88
             }
           },
           "kind": "code"
@@ -157,32 +84,46 @@
       ]
     },
     "4": {
-      "note": "The current track-and-knob switch uses token styling; pending disables the button in the reader, not through a retained grantButton recipe.",
+      "note": "The current track-and-knob switch uses token styling; pending disables the button in the reader, not through a retained grantButton recipe.\n\nAnchor: track and pending boundary",
       "targets": [
         {
           "anchor": {
-            "blob": "a111e133b0966f3fee0ac50fdf4ca7ffc181ac16",
-            "content": "sha256:2a5ed9933a2369048d5c190801d4d25318bc35e0b2403857395839cc14ebf59e",
+            "blob": "d19f997fc5ce9cd991b0eb7b4f8b24c36ef9eea2",
+            "content": "sha256:227bb5cdd33a765cd1dde7e169a160ff814adabab31f0afe661bdc1d7b41ffe7",
             "locator": {
-              "kind": "symbol",
-              "name": "directSwitch"
+              "end": 86,
+              "kind": "line_range",
+              "start": 52
             }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8727e6986904131489c13104c706b28a118acb8a",
+            "content": "sha256:e5b3890998c79d888e554bd070b9b94e26a500d1a619a6b8f6606cfd84f9945c",
+            "locator": {
+              "end": 140,
+              "kind": "line_range",
+              "start": 86
+            },
+            "path": "dashboard/src/panels/detail-panel/directGrant.tsx"
           },
           "kind": "code"
         }
       ]
     },
     "5": {
-      "note": "The direct-execution line has one track, positional variants, knob and giver/notice text styles.",
+      "note": "The direct-execution line has one track, positional variants, knob and giver/notice text styles.\n\nAnchor: direct-execution recipes",
       "targets": [
         {
           "anchor": {
-            "blob": "a111e133b0966f3fee0ac50fdf4ca7ffc181ac16",
+            "blob": "d19f997fc5ce9cd991b0eb7b4f8b24c36ef9eea2",
             "content": "sha256:227bb5cdd33a765cd1dde7e169a160ff814adabab31f0afe661bdc1d7b41ffe7",
             "locator": {
-              "end": 97,
+              "end": 86,
               "kind": "line_range",
-              "start": 63
+              "start": 52
             }
           },
           "kind": "code"

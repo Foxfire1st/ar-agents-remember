@@ -24,8 +24,9 @@
         "blob": "564085c743dd7291495142a4e226e92d5ebfcc0a",
         "content": "sha256:4c6f20a32357e0827749ee248a06240d94a2c9155362d6d432017729c28414c8",
         "locator": {
-          "kind": "symbol",
-          "name": "RoleLaunchDefaults"
+          "end": 195,
+          "kind": "line_range",
+          "start": 176
         }
       },
       "id": "RLZ-G82K8R",

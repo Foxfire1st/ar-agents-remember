@@ -140,18 +140,17 @@
       ]
     },
     "104": {
-      "note": "Creation ordering preserves partially stamped input.",
+      "note": "Browser selection keys carry the server entry key verbatim, rather than reconstructing a hierarchy or partially stamped creation ordering.",
       "targets": [
         {
           "anchor": {
-            "blob": "213518abed80e566e38ea691861377467f06ee0d",
-            "content": "sha256:94d2629a2da6a37aa159f3dafba5f0cdc035bd9a56bafe0f8fad2a58998370ae",
+            "blob": "62a20f9e70cd4f0fce12131c2c8aaa5103ee7f5b",
+            "content": "sha256:50274195c24a58bd49806a1768684914b088c8cb7d3af6c802c22b090ac412d8",
             "locator": {
-              "end": 149,
-              "kind": "line_range",
-              "start": 137
+              "kind": "symbol",
+              "name": "taskEntrySelectionKey"
             },
-            "path": "dashboard/src/data/taskHierarchy.ts"
+            "path": "dashboard/src/data/taskReference.ts"
           },
           "kind": "code"
         }
@@ -175,12 +174,12 @@
         },
         {
           "anchor": {
-            "blob": "9a9d8ebbb21affe07f6d689a89624db06bcb2e3e",
+            "blob": "1c145f123802e351486f43a75568001266214b95",
             "content": "sha256:7167d802018c691c0cc3de7659d70516afa06d247e39775df693b559b3dd7148",
             "locator": {
-              "end": 54,
+              "end": 53,
               "kind": "line_range",
-              "start": 36
+              "start": 35
             },
             "path": "mcp/src/agents_remember/serving/delta.py"
           },
@@ -219,6 +218,23 @@
               "start": 118
             },
             "path": "dashboard/src/data/selectors.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "108": {
+      "note": "The store owns task-document resources and separate bounded conditional-read caches for change-set lists, files and intent summaries.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "68121e9668db87a9d23260c691ac8c1ba4513e6d",
+            "content": "sha256:79e265ba1c0dff3d6818c191e7366898deed8ab3e5712e09514ae56b63dd286b",
+            "locator": {
+              "kind": "symbol",
+              "name": "emptyWorkspace"
+            },
+            "path": "dashboard/src/data/store.ts"
           },
           "kind": "code"
         }
@@ -334,17 +350,17 @@
       ]
     },
     "24": {
-      "note": "The shared creation-order helper sorts only when every row has createdAt; unstamped task-document rows retain input order.",
+      "note": "The server builds one native task forest from declared child rows; the browser no longer runs the removed creation-order hierarchy helper.",
       "targets": [
         {
           "anchor": {
-            "blob": "213518abed80e566e38ea691861377467f06ee0d",
-            "content": "sha256:f86d2d2b3b470b09bca48768dc634712d657abcb4d6b1b22df566e48f5a4ef61",
+            "blob": "9e4b2543510affa9e5cc0d4f7e4ee8b261894051",
+            "content": "sha256:b925dcd46887d9d1f145bcfbf499a5ead0e8ae231c2927f6bb436051d0c3534b",
             "locator": {
               "kind": "symbol",
-              "name": "orderedByCreation"
+              "name": "build_task_entries"
             },
-            "path": "dashboard/src/data/taskHierarchy.ts"
+            "path": "mcp/src/agents_remember/observer/task_entries.py"
           },
           "kind": "code"
         }
@@ -367,7 +383,7 @@
         },
         {
           "anchor": {
-            "blob": "88aaa04262766c094a76bb241c87655a34aa8414",
+            "blob": "68121e9668db87a9d23260c691ac8c1ba4513e6d",
             "content": "sha256:cced200f36c56e8c93fbe17acab52d082f0cf155115644acc4f21d0020efd118",
             "locator": {
               "kind": "symbol",
@@ -392,55 +408,15 @@
       ]
     },
     "26": {
-      "note": "Series sub-task rows carry optional creation time; task-document sub-task references have a separate shape and share a union for readers.",
+      "note": "The served TaskEntry mirror carries optional document reference, identity, state, parent/children and counts; the old separate series-child consumer union is not the native entry model.",
       "targets": [
         {
           "anchor": {
-            "blob": "0a7b6191513aef9e10995d64766fa3c5f6e77005",
-            "content": "sha256:27ec9b71daba3d093d6759d0bebe7435884ac1bb4781ba7b4e43f1d983dfc9f6",
+            "blob": "8774e82c7f7a93dda014fdb8b987e2391fd21fd1",
+            "content": "sha256:51d0432de61b27fb95ce483e9491b0e76d8c8b399982ca329a0a8591145e909e",
             "locator": {
-              "end": 493,
-              "kind": "line_range",
-              "start": 486
-            },
-            "path": "dashboard/src/types/projection.ts"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "0a7b6191513aef9e10995d64766fa3c5f6e77005",
-            "content": "sha256:4febe9305bdcf88985d693776ac3ca954a03c75b80f6c7702ee91ba410a1f6a1",
-            "locator": {
-              "end": 769,
-              "kind": "line_range",
-              "start": 761
-            },
-            "path": "dashboard/src/types/projection.ts"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "0a7b6191513aef9e10995d64766fa3c5f6e77005",
-            "content": "sha256:8559661a3931118b1672c7cc3d4b2f32aa157c9bdd61f407feceda1947d80a2e",
-            "locator": {
-              "end": 492,
-              "kind": "line_range",
-              "start": 492
-            },
-            "path": "dashboard/src/types/projection.ts"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "515f0ba8c943b7277a947fc67dd4459490674de3",
-            "content": "sha256:01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
-            "locator": {
-              "end": 878,
-              "kind": "line_range",
-              "start": 878
+              "kind": "symbol",
+              "name": "TaskEntry"
             },
             "path": "dashboard/src/types/projection.ts"
           },
@@ -449,17 +425,17 @@
       ]
     },
     "27": {
-      "note": "The server series builder sorts only fully stamped rows before projection.",
+      "note": "Membership links each child to one deterministic parent and rejects a cycle; the removed series creation-sort builder is not the current producer.",
       "targets": [
         {
           "anchor": {
-            "blob": "4ad034f2c786af9281d3d7fe9b6575c6bf86670e",
-            "content": "sha256:296136e64a87af46fe65aabd38c09da708dcc402e7c4b2b0817081585bc4e60c",
+            "blob": "9e4b2543510affa9e5cc0d4f7e4ee8b261894051",
+            "content": "sha256:89ccdac2a602d1f3e4194569c47009daa62a60e2b5da13dfc5c6df65682c504a",
             "locator": {
               "kind": "symbol",
-              "name": "_series_subtask_nodes"
+              "name": "_Membership"
             },
-            "path": "mcp/src/agents_remember/serving/projections/snapshots_impl/_task_documents.py"
+            "path": "mcp/src/agents_remember/observer/task_entries.py"
           },
           "kind": "code"
         }
@@ -470,12 +446,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f5de7f24aac5a38162a3a5e588e1ba71fa5d4da4",
+            "blob": "87457953dd5427f8b2f7422448efb41f018e7ede",
             "content": "sha256:c2bf5021b544e1bfe592d8e2a9412c95408aa10143a16a263841f69607846b3a",
             "locator": {
-              "end": 24,
+              "end": 13,
               "kind": "line_range",
-              "start": 24
+              "start": 13
             },
             "path": "dashboard/src/test/contract.test.ts"
           },
@@ -483,7 +459,7 @@
         },
         {
           "anchor": {
-            "blob": "9748f432f9443a640ef5221d0bace3f986bed50e",
+            "blob": "a863e49a83213f748fa2993ef0953d7e0f2362a4",
             "content": "sha256:0fe35945de3839b430de57e38d38345b5ea32cd57ba071ec316fe800bdc3d6f2",
             "locator": {
               "end": 22,
@@ -496,7 +472,7 @@
         },
         {
           "anchor": {
-            "blob": "0a7b6191513aef9e10995d64766fa3c5f6e77005",
+            "blob": "8774e82c7f7a93dda014fdb8b987e2391fd21fd1",
             "content": "sha256:2edac0ee8097af47d9c9db4c61be9b599f4697cf3391c5c775b59226ff6dd8dd",
             "locator": {
               "end": 1,
@@ -890,7 +866,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d0e0f3a0a209313492e7cb61a2066cf40519f66e",
+            "blob": "b8a91035417026d4649506297946286a4abd6d17",
             "content": "sha256:335ea7b3eadaa98c1fbaaaf8a34a21c953fdc1ea2d43753075dcbe78482b1084",
             "locator": {
               "kind": "symbol",
@@ -1103,7 +1079,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1da3bab20ae2b0b070c790c820476038d043758c",
+            "blob": "8d239fc2e55f0351e0ed72114b79b8048a172148",
             "content": "sha256:518ba97a2e876a750a674facde42ec49d1f01b376028d44f80204506341ecca1",
             "locator": {
               "kind": "symbol",
@@ -1115,7 +1091,7 @@
         },
         {
           "anchor": {
-            "blob": "1da3bab20ae2b0b070c790c820476038d043758c",
+            "blob": "8d239fc2e55f0351e0ed72114b79b8048a172148",
             "content": "sha256:e2a13520375f7b850be1252be1a1a0852a60585640444d8778b26b8651a29b2c",
             "locator": {
               "kind": "symbol",
@@ -1127,7 +1103,7 @@
         },
         {
           "anchor": {
-            "blob": "1da3bab20ae2b0b070c790c820476038d043758c",
+            "blob": "8d239fc2e55f0351e0ed72114b79b8048a172148",
             "content": "sha256:5916c4a623a8d92d33dd2e79fe2de9624a4b08b8f31d531a8769a86d5dda886a",
             "locator": {
               "kind": "symbol",
@@ -1139,12 +1115,12 @@
         },
         {
           "anchor": {
-            "blob": "1da3bab20ae2b0b070c790c820476038d043758c",
+            "blob": "8d239fc2e55f0351e0ed72114b79b8048a172148",
             "content": "sha256:6e718064d432e3f615529ebd114610cc6182210cdbbaf5888f87bfa3102c05a1",
             "locator": {
-              "end": 74,
+              "end": 75,
               "kind": "line_range",
-              "start": 74
+              "start": 75
             },
             "path": "dashboard/src/data/changeset.ts"
           },
@@ -1557,7 +1533,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "25250cf4f41daf7721dd292a421845d64fefdd4c",
+            "blob": "944960a629ae679b6412bdfdc583c9a18b17dfc3",
             "content": "sha256:7b9fe6175f1d844ad530843fa9ed0f9d23c69e1763a7f719181b8dc227269084",
             "locator": {
               "end": 16,

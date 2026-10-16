@@ -52,12 +52,28 @@
         }
       ]
     },
+    "12": {
+      "note": "Invalid sprint stage refuses before either preview or actual bootstrap publication.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d47e2bc09187643af69ca1e07519d5ce75c4e69a",
+            "content": "sha256:979805575185036abd1981b826656078492a539fdb60e5dc15730672526863e1",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_invalid_sprint_stage_refuses_before_series_bootstrap"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
     "2": {
       "note": "Contracts sharing one source pair hold independent selection.",
       "targets": [
         {
           "anchor": {
-            "blob": "4d50d05471260de792a25e40a495b73d67945071",
+            "blob": "d47e2bc09187643af69ca1e07519d5ce75c4e69a",
             "content": "sha256:c062e91578cfb1b4519422df2d0a0c88eb7306555482d82ed9cb4980ba469252",
             "locator": {
               "kind": "symbol",
@@ -73,7 +89,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4d50d05471260de792a25e40a495b73d67945071",
+            "blob": "d47e2bc09187643af69ca1e07519d5ce75c4e69a",
             "content": "sha256:30e94ca03276ffd3493206b6f1023107cdd2404f65b738ce467b1dfc0baba886",
             "locator": {
               "kind": "symbol",
@@ -89,7 +105,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4d50d05471260de792a25e40a495b73d67945071",
+            "blob": "d47e2bc09187643af69ca1e07519d5ce75c4e69a",
             "content": "sha256:2b2821cc9654e625c2ee4838b0c714cdb24333411aece77c9fd98e0f2cb0e66e",
             "locator": {
               "kind": "symbol",
@@ -105,7 +121,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4d50d05471260de792a25e40a495b73d67945071",
+            "blob": "d47e2bc09187643af69ca1e07519d5ce75c4e69a",
             "content": "sha256:c994d6631624e0b42bac96c1dc9152ced9ea882b373716bfb76c079d7a5995ca",
             "locator": {
               "kind": "symbol",
@@ -121,7 +137,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4d50d05471260de792a25e40a495b73d67945071",
+            "blob": "d47e2bc09187643af69ca1e07519d5ce75c4e69a",
             "content": "sha256:72e1d53850093a378e1070231ec2389c05061fc429c941349dacc6951c1074f3",
             "locator": {
               "kind": "symbol",
@@ -137,7 +153,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4d50d05471260de792a25e40a495b73d67945071",
+            "blob": "d47e2bc09187643af69ca1e07519d5ce75c4e69a",
             "content": "sha256:5e76dec374aeeebd693fb2aa28e0afc884036e219be49ea97f2f3a7d53cd3de7",
             "locator": {
               "kind": "symbol",
@@ -148,7 +164,7 @@
         },
         {
           "anchor": {
-            "blob": "4d50d05471260de792a25e40a495b73d67945071",
+            "blob": "d47e2bc09187643af69ca1e07519d5ce75c4e69a",
             "content": "sha256:71913bc9949e69e309bc5da8f0be4dcd08741e317b1c6694ad0337579f7cb74d",
             "locator": {
               "kind": "symbol",
@@ -164,7 +180,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4d50d05471260de792a25e40a495b73d67945071",
+            "blob": "d47e2bc09187643af69ca1e07519d5ce75c4e69a",
             "content": "sha256:93af19cd674003c9aba7a4daae0fa11b812ec3fab562b1d13e9c1be18cd448d5",
             "locator": {
               "kind": "symbol",
@@ -175,12 +191,12 @@
         },
         {
           "anchor": {
-            "blob": "ff96dbc4a7bc81bcfcaaa7eaae871eff3d759b82",
+            "blob": "62bf48665f1375408886ec0c3c4e30c5fd58a172",
             "content": "sha256:ea05cd69d2800a2c3aa4fabb826af781496ab06d3aa7a199b00d121bda4f49f4",
             "locator": {
-              "end": 294,
+              "end": 480,
               "kind": "line_range",
-              "start": 280
+              "start": 466
             },
             "path": "mcp/src/agents_remember/worktrees/activation/atomic_series_activation_transaction.py"
           },
@@ -188,12 +204,12 @@
         },
         {
           "anchor": {
-            "blob": "ff96dbc4a7bc81bcfcaaa7eaae871eff3d759b82",
+            "blob": "62bf48665f1375408886ec0c3c4e30c5fd58a172",
             "content": "sha256:d859ade20e14875fb6e8933036d66394899f9ba1d0037a0d02155fcbd2bf2516",
             "locator": {
-              "end": 335,
+              "end": 521,
               "kind": "line_range",
-              "start": 297
+              "start": 483
             },
             "path": "mcp/src/agents_remember/worktrees/activation/atomic_series_activation_transaction.py"
           },

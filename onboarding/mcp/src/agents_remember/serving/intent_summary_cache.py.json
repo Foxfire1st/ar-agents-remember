@@ -1,0 +1,56 @@
+{
+  "path": "mcp/src/agents_remember/serving/intent_summary_cache.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Configurable dependency-observing port.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6e8fa34f998fd0681f5e3bb76d461b442e5b65dd",
+            "content": "sha256:3e399cf9a15a5f7224ee449429bfb6b9d6829d98683a0b85970cdc2c87dfef93",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewIntentSummaryPort"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Native production, additional dependencies and retention condition.\n\nAnchor: `IntentSummaryCache._response`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6e8fa34f998fd0681f5e3bb76d461b442e5b65dd",
+            "content": "sha256:ee14b27c733ca6bf2cc28c613c21dc5b13b5659032e952675c8d529b433b7cf1",
+            "locator": {
+              "end": 79,
+              "kind": "line_range",
+              "start": 41
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Conditional response owner and retained-key diagnostic.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6e8fa34f998fd0681f5e3bb76d461b442e5b65dd",
+            "content": "sha256:fb5374411c5c1d4d9c49e626e327d47090a4a3fc27df425650961dc1151cc9e9",
+            "locator": {
+              "kind": "symbol",
+              "name": "IntentSummaryCache"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

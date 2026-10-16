@@ -4,7 +4,11 @@
 
 The source still separates archive-ready from completed cleanup, exact retry arguments from defaults and task authoring from projection admission. Its initial start/attach description no longer carries fleeting on_unsaved save/discard promotion; developer-gated start/integration/finalization wait for approval relayed through the parent or parentless chat. Inspection does not select. The corrected compatibility statement excludes cache bytes as authority; historical incoming direct-recovery wording is scoped below, with current c-12 receipt recovery retained.
 
-- Current instruction adopts the new contract lifecycle, uses parent role_message approval relays, limits selectors to atomic start/attach and retains strict source lineage and terminal evidence; old fleeting-save/dispatch/automatic-resume accounts are not current authority. \[8] [8]
+
+
+- Current start/attach records worktree locations and preserves contract-owned landing; parent approval and exact-source authority remain. [8]
+
+
 
 
 ## Governing Overview
@@ -184,7 +188,7 @@ is not evidence of implemented L113 runtime handling.
 
 ## Current source qualification
 
-This candidate's finalizer text reconciles the parent's exact child row and validates the independently optional parent assertions; each parent-child edge is finalized separately and the parent itself is not recursively completed. The former explicit standalone/no-parent support sentence was removed. An older card aside saying a task.json finalizes standalone is retained only as historical commentary, not a supported-candidate promise. The current L113 contract-adoption, parent approval-relay and start/attach selector qualifications above remain governing.
+This candidate's finalizer text reconciles the parent's exact child row and validates the independently optional parent assertions; each parent-child edge is finalized separately and the parent itself is not recursively completed. The former explicit standalone/no-parent support sentence was removed. An older card aside saying a task.json finalizes standalone is retained only as historical commentary, not a supported-candidate promise. The current contract-location, parent approval-relay and start/attach selector qualifications above remain governing.
 
 - Finalizer edge reconciliation no longer advertises the removed standalone/no-parent support sentence. [9]
 

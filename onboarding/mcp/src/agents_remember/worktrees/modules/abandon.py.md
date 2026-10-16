@@ -20,6 +20,8 @@ or queue state. Leaves, dry-runs, and blocked abandon results do not mutate the 
 
 Abandon evaluates provider liveness and terminal blockers for dry run as well as apply. A blocked preview returns abandon-blocked/blocked with the original coded blockers rather than would-abandon where the real call refuses. Force keeps its existing discard override; explicit approval, check order and unrecognized fail-closed exceptions retain their owners. Recognized terminal-state failures are answered before mutation, not generalized to every RuntimeError.
 
+Abandon now publishes the admitted contract cleanup result, canonical task stage `abandoned` and mirrored master row through `publish_abandoned_task`. That shared helper plans/validates exact task candidates, publishes stage then contract under `guard.complete`, and restores both if its publication fails; returned projection effects are included in the result. The no-remains route checks `plan_task_stage` before provider teardown and reports the typed task-stage refusal rather than beginning destructive work with invalid task authority. This is an ownership/publication boundary, not permission to call abandon from documentation.
+
 `_abandon_outputs_result` now passes `preview=args.dry_run` into terminal result validation, matching cleanup. A planned worktree or directory removal therefore stays a preview result. Shared preflight and removal owners treat only the external-memory root ledger as disposable; real uncommitted content and unmerged branch commits remain protected unless explicitly forced.
 
 ### Logic
@@ -186,3 +188,7 @@ Rule 5 no-remains exception: with no locator, no worktree folder and no work bra
 [governing overview](overview.md)
 
 - Abandon evaluates provider liveness and terminal blockers for dry run as well as apply. A blocked preview returns abandon-blocked/blocked with the original coded blockers rather than would-abandon where the real call refuses. Force keeps its existing discard override; explicit approval, check order and unrecognized fail-closed exceptions retain their owners. Recognized terminal-state failures are answered before mutation, not generalized to every RuntimeError. [16]
+
+- No-remains abandon validates task-stage authority before teardown. [17]
+- The normal publication returns shared task/contract projection effects. [18]
+- One shared owner publishes/restores task stage and contract under the terminal guard. [19]

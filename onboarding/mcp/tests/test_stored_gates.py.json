@@ -7,7 +7,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e5deaf3790b1cf0d73b3eb97371a06763c7da968",
+            "blob": "b28cef119c370c63e8c82509116309b631f9e9bc",
             "content": "sha256:b3dd2f993f595eba3195a65747f9bd64f06cac1535f68f46dc424656288bed8a",
             "locator": {
               "kind": "symbol",
@@ -23,7 +23,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e5deaf3790b1cf0d73b3eb97371a06763c7da968",
+            "blob": "b28cef119c370c63e8c82509116309b631f9e9bc",
             "content": "sha256:a65288d941158785adb44ce246d96b33eac44ffc20d869d0c58ce291644c110e",
             "locator": {
               "kind": "symbol",
@@ -34,7 +34,7 @@
         },
         {
           "anchor": {
-            "blob": "e5deaf3790b1cf0d73b3eb97371a06763c7da968",
+            "blob": "b28cef119c370c63e8c82509116309b631f9e9bc",
             "content": "sha256:b3dd2f993f595eba3195a65747f9bd64f06cac1535f68f46dc424656288bed8a",
             "locator": {
               "kind": "symbol",
@@ -45,7 +45,7 @@
         },
         {
           "anchor": {
-            "blob": "e5deaf3790b1cf0d73b3eb97371a06763c7da968",
+            "blob": "b28cef119c370c63e8c82509116309b631f9e9bc",
             "content": "sha256:476b900cd02c924eef93e09ba981d1fa4a8edc4a52c8689f895b85baa8af783c",
             "locator": {
               "kind": "symbol",
@@ -56,12 +56,28 @@
         },
         {
           "anchor": {
-            "blob": "e5deaf3790b1cf0d73b3eb97371a06763c7da968",
+            "blob": "b28cef119c370c63e8c82509116309b631f9e9bc",
             "content": "sha256:28195778a917d6c4760fe29a71a54f6ee3027b33de814894fedf99c15210f007",
             "locator": {
-              "end": 246,
+              "end": 265,
               "kind": "line_range",
-              "start": 232
+              "start": 251
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Absent approval has no store footprint; an existing approval is spent exactly once.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b28cef119c370c63e8c82509116309b631f9e9bc",
+            "content": "sha256:e992f9c11ed1454cd7cba91ffb9d0d96ad78ce94a4546a9c22fe3daac8d86cfc",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_gateless_claim_leaves_no_lock_and_existing_approval_is_spent_once"
             }
           },
           "kind": "test"

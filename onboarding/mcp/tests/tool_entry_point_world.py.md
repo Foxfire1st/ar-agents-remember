@@ -20,9 +20,9 @@ A support world for registered tool probes, paging/naming/table fixtures and pro
 
 It builds the fixture world, calls registered tools through it and closes its sessions for its importing consumers. The current test_tool_entry_point_sweep.py defines a separate EntryPointWorld; importing this support class does not prove that sweep uses it. Its current benign table has the 40 public roster keys. The earlier 41-key account describes the predecessor inventory, before `dispatch_agent` retirement; the prior removal of twelve nonpublic lifecycle, gate, role-capsule and skill-catalog inputs remains historical context. Table membership is fixture preparation, not registration authority or proof that a sweep ran. Its read_ar_files fixture deliberately supplies an object-form path, which the MIK-R109 boundary refuses as argument-removed rather than serving source text; it no longer includes resolve_context. A returned call is judged from two objects: the whole result, read back from the file the delivered answer names in `log` and validated under the tool's registered model, and the delivered answer in its own shape — none of the four envelope fields, and no key that neither the whole result at the same place nor the shaping's framework keys account for. Refusal actionability is read from the delivered answer. EntryPointWorld.call re-raises _ToolCallTimeout with tool and phase. This shared module’s own sweep records that named timeout and continues to later tools. The separate self-contained sweep in test_tool_entry_point_sweep.py instead calls its timeout-re-raising call method without a sweep-level handler; a timeout therefore propagates there rather than recording a result and continuing. These are distinct source policies, not an observed timeout execution. A direct caller of call must handle the raised timeout itself.
 
-## Fixture lifecycle policy
+## Fixture binding policy
 
-`EntryPointWorld.build(*, keep_lifecycle=False)` keeps the previous default of ending the adopted lifecycle. An explicit true value leaves it open so the checked call’s log/report is written under the enclosure. Three answer-table consumers and one knowledge-diff consumer opt in; this bounded fixture choice is not an execution result and does not change the separately defined sweep’s timeout policy.
+EntryPointWorld.build() authors the master/leaf and opens the real enclosure; it has no keep_lifecycle parameter or ambient attach/end operation. Caller AgentBinding, not fixture session lifetime, controls enclosure logging. Sweep prepared_state/state_after are fixed "none" labels, not activity observations. The shared sweep still records named phase timeout and continues; the independently defined self-contained sweep still propagates it.
 
 ## Settings isolation
 
@@ -50,4 +50,5 @@ The shared benign table supplies exactly the 40 current public roster members an
 
 - The shared benign table contains the 40 current roster keys; the earlier 41-key account predates dispatch_agent retirement. Table membership is preparation, not registration or execution. [10]
 
-- Build ends the adopted lifecycle by default; keyword-only keep_lifecycle=True preserves it for in-enclosure answer/log checks. This is fixture policy, not a live check result. \[12] [12]
+- Build authors and starts the addressed enclosure without a session lifecycle option. [13]
+- Shared sweep uses fixed fixture labels and preserves named timeout continuation. [14]

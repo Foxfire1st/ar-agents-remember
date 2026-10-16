@@ -1,0 +1,43 @@
+{
+  "path": "mcp/src/agents_remember/cli/role_activity.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "c7802873c1a67ff9cf7024b59cd2ad83838feaf8",
+        "content": "sha256:4df62a309c9297b418d3a432286648b3977d819b0b295b3f0f20bb8e6a6c4455",
+        "locator": {
+          "end": 63,
+          "kind": "line_range",
+          "start": 60
+        }
+      },
+      "id": "RLZ-9GVD09",
+      "invariant": "INV-X0KED3",
+      "origin": {
+        "handoffEntry": "L168-CUR-M1-21-A013-16",
+        "leaf": "260928-MIK-L168"
+      },
+      "rationale": "resume_role_agent republishes the role receipt identity before native resume, supplying the recorded-agent eligibility input used by host activity. Publication is best-effort, not a delivery/acceptance guarantee.",
+      "role": "propagation-persistence"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Publish receipt-bound role identity before native start or resume can emit its first event.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c7802873c1a67ff9cf7024b59cd2ad83838feaf8",
+            "content": "sha256:64ba8532cdb432763b80608e5f697c7ef552cc5cf5c4e76dc54c97cdc163c8f9",
+            "locator": {
+              "kind": "symbol",
+              "name": "publish_role_agent_for_plugin"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

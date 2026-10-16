@@ -1,0 +1,36 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test",
+      "prevents_costly_mistake",
+      "spans_locations"
+    ],
+    "justification": "Future changes to task-page reads, conditional transport, native generation capture or retained-content ownership must prevent stale or unbounded cache reuse and a counter failure blocking the document. Named current source assertions guard the specified facets; historical timing/count samples remain task-local, not enduring obligations or fresh Curator grades."
+  },
+  "applicability": "Existing native change-set endpoint computation behind cacheable landed/working reads.",
+  "conditions": [
+    "Retained reads preserve the native result bytes for unchanged admitted generations, including counter/file variants.",
+    "An unprovable or changing generation falls back to the ordinary native read and does not retain the result; native refusals remain refusals.",
+    "Deep copies isolate retained native values from live sidecar annotation; native sources still decide repository/layout, object and attribute semantics."
+  ],
+  "exclusions": [
+    "No claim that an unreadable generation means native content must itself be unavailable or that a current refusal can be replaced by stale cached success."
+  ],
+  "id": "INV-ZNXX7H",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "sync-L81-primary-regressions.txt"
+      ],
+      "path": "A011-bounded-generation-content-33.json"
+    },
+    "handoffEntry": "L168-W-R168-PRESERVATION",
+    "leaf": "260928-MIK-L168",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Cached and uncached change sets are byte-identical for landed and working states, and unreadable native inputs are computed without retention.",
+  "status": "proposed",
+  "supersedes": []
+}

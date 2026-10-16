@@ -1,0 +1,37 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test",
+      "prevents_costly_mistake",
+      "spans_locations"
+    ],
+    "justification": "Occurrence identity must survive maintenance of fingerprint production, reader propagation and acknowledgement observations. Using sampled rows, counts or timestamps can hide genuinely new findings or re-alert unchanged failures; current full-set and recovery/restart source assertions guard that specific failure."
+  },
+  "applicability": "Persisted acknowledgement and source-derived visibility for the four currently supported operational attention kinds, including full actionable drift occurrence fingerprints.",
+  "conditions": [
+    "Identity is the fully qualified current itemId; fingerprint input is the complete canonical actionable finding list, including multiplicity, not its sample, count, order or checkedAt.",
+    "Healthy recovery includes complete source proof that a configured/current subject left its live set; a later failure is then a new occurrence.",
+    "Missing legacy fingerprints can adopt the first complete current identity without resurfacing merely for migration; a source restart or changed check timestamp is not recurrence."
+  ],
+  "exclusions": [
+    "Removed lifecycle attention kinds or task-state/review acceptance.",
+    "A claim that an incomplete read must hide a valid positive changed occurrence; visibility and destructive acknowledgement cleanup are distinct."
+  ],
+  "id": "INV-TT5CTW",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "sync-L81-primary-regressions.txt; design amendment3"
+      ],
+      "path": "A011-R166-operational-acknowledgement-curator-input-26-corrected-proofs.json"
+    },
+    "handoffEntry": "L168-W-R166-03",
+    "leaf": "260928-MIK-L168",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Only a changed actionable drift set or an observed healthy-to-failed recurrence resurfaces a dismissed operational item.",
+  "status": "proposed",
+  "supersedes": []
+}

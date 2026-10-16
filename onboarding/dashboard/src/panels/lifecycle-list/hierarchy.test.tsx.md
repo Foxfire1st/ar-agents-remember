@@ -6,21 +6,17 @@
 
 ## Purpose
 
-The hierarchy/phase-grouping suite split from `LifecycleList.test.tsx` by the
-260731-EFA-L8 test split. Pins row grouping, phase ordering, and collapsible
-hierarchy behavior of the Operations list. The current suite holds one `describe`
-("LifecycleList task labels — hierarchy and phase grouping") with the live cases.
+The native Operations hierarchy suite pins served parent/children, repository-name ordering, need bands and stage/activity grouping. BY PHASE is retained UI wording, not lifecycle reconstruction.
 
 ## Code Commentary
 
 ### Logic
 
-Seeds actual component projections and asserts hierarchy/phase grouping, persisted parent-collapse keys, selection-held ancestor/fold reach, need ordering, in-place completed folds, unmodified parent arrow keys and modifier preservation. Typeahead covers displayed numbered rows and the standalone task title prefix, even when its id is displayed in a separate cell. Attention-origin lifecycle selection marks/focuses the carrier row once without changing the controlled selection key; an absent row never triggers a later delayed scroll.
+Native parent/child/order/count facts retain persisted independent disclosures, selected ancestor reach, accessible terminal folds, plain-arrow/modifier behavior, numbered/title typeahead and full hover. Completed-parent folds ignore active descendants until opened; phase grouping is flat. Aborted counts stay outside progress, and mismatched count/tree fixtures require served activity totals, not client recounting.
 
 ### Invariants And Boundaries
 
-Assertions preserved from the monolithic suite; shared cleanup from
-`test-utils.tsx`.
+Shared cleanup and disclosure/keyboard boundaries remain. Native parent/child keys and status/count facts replace lifecycle/series inference; source inspection is not fresh mounted execution.
 
 ### Todos
 
@@ -87,4 +83,4 @@ re-worded or weakened.
 
 ## 260821-CLIVE Discarded Progress Proof
 
-A planning master with one live leaf and one discarded-before-start entry renders `0/1`, explicitly not `1/1`; the complete hover says `Tasks completed: 0 of 1, 1 discarded`. Abandoned rows remain outside the denominator, and a master with only abandoned work has no misleading `0/` figure. The approved compact-row presentation moves secondary counts to the hover without losing audited removal or claiming completed execution.
+Native completed/aborted fixtures retain accessible hidden/shown terminal folds and exclude aborted work from progress. Discarded-before-start derivation is historical; these cases consume published counts, not prove their production.

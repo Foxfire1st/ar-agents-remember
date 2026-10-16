@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "1d628c838dc068656971378f114183addcef346f",
+        "blob": "f4e60103b854b700f62e7ca7a1dbd8f21367cfb0",
         "content": "sha256:0bde9c4a4127b2a17edee190daf33496aad845ee1c27dbffd538383865183a6e",
         "locator": {
           "kind": "symbol",
@@ -21,7 +21,7 @@
     },
     {
       "anchor": {
-        "blob": "1d628c838dc068656971378f114183addcef346f",
+        "blob": "f4e60103b854b700f62e7ca7a1dbd8f21367cfb0",
         "content": "sha256:39bdfb87152031c42af7914c04214f93c0d17c55a3969ef22bbba0d7d5da1dc0",
         "locator": {
           "kind": "symbol",
@@ -39,11 +39,12 @@
     },
     {
       "anchor": {
-        "blob": "1d628c838dc068656971378f114183addcef346f",
+        "blob": "f4e60103b854b700f62e7ca7a1dbd8f21367cfb0",
         "content": "sha256:31e4b2e4974fde590c271366b702116379d31fcf74f0aef94cd05b76a3c1e689",
         "locator": {
-          "kind": "symbol",
-          "name": "_build_start_contract"
+          "end": 1100,
+          "kind": "line_range",
+          "start": 1001
         }
       },
       "id": "RLZ-S6D64F",
@@ -57,7 +58,7 @@
     },
     {
       "anchor": {
-        "blob": "1d628c838dc068656971378f114183addcef346f",
+        "blob": "f4e60103b854b700f62e7ca7a1dbd8f21367cfb0",
         "content": "sha256:0bde9c4a4127b2a17edee190daf33496aad845ee1c27dbffd538383865183a6e",
         "locator": {
           "kind": "symbol",
@@ -244,7 +245,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1d628c838dc068656971378f114183addcef346f",
+            "blob": "f4e60103b854b700f62e7ca7a1dbd8f21367cfb0",
             "content": "sha256:f5daf2397ff0b2a452c8306adfef34ccba84c8905b80a16950887a757c2b30be",
             "locator": {
               "kind": "symbol",
@@ -277,7 +278,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1d628c838dc068656971378f114183addcef346f",
+            "blob": "f4e60103b854b700f62e7ca7a1dbd8f21367cfb0",
             "content": "sha256:54ada2250a6412b2f9e23b361e014590e1cbde4243bf4b8dec0abd58938936ed",
             "locator": {
               "kind": "symbol",
@@ -352,6 +353,99 @@
         }
       ]
     },
+    "21": {
+      "note": "The facade carries the exact spec and arguments to the extracted activation owner.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f4e60103b854b700f62e7ca7a1dbd8f21367cfb0",
+            "content": "sha256:071e46223f63203b7dc7f86a12a63bd9d976dba790f3b8952a367951b910c0d7",
+            "locator": {
+              "kind": "symbol",
+              "name": "ensure_master_series_contract"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "22": {
+      "note": "The extracted owner retains bootstrap locking, outside-authority fetch and exact activation reconciliation.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0bfe4ab16af2c6dd0b8b1b96c98c1bd3d1378dde",
+            "content": "sha256:4642f7a53e4c7a1b6f2948b255bf0108f328719f0a81b908c95da06376a082ae",
+            "locator": {
+              "kind": "symbol",
+              "name": "activate_master_series"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/startup/series_contract_activation.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "23": {
+      "note": "The facade forwards the operation label; preflight and second-read admission refusals use it in the extracted owner.\n\nAnchor: `leaf_admission_operation`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f4e60103b854b700f62e7ca7a1dbd8f21367cfb0",
+            "content": "sha256:071e46223f63203b7dc7f86a12a63bd9d976dba790f3b8952a367951b910c0d7",
+            "locator": {
+              "end": 229,
+              "kind": "line_range",
+              "start": 217
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0bfe4ab16af2c6dd0b8b1b96c98c1bd3d1378dde",
+            "content": "sha256:87d8ce2edeace219868bd86b84d428084e2e349836836ae13a963fa4341a57d5",
+            "locator": {
+              "end": 54,
+              "kind": "line_range",
+              "start": 52
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/startup/series_contract_activation.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0bfe4ab16af2c6dd0b8b1b96c98c1bd3d1378dde",
+            "content": "sha256:9b45b5b77fd9c9ddae2911673a4f3174ea089e5570ce43a8a9a2dffc5502c271",
+            "locator": {
+              "end": 86,
+              "kind": "line_range",
+              "start": 79
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/startup/series_contract_activation.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "24": {
+      "note": "The activation docstring and non-nesting comment now reside with the actual implementation.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0bfe4ab16af2c6dd0b8b1b96c98c1bd3d1378dde",
+            "content": "sha256:4642f7a53e4c7a1b6f2948b255bf0108f328719f0a81b908c95da06376a082ae",
+            "locator": {
+              "kind": "symbol",
+              "name": "activate_master_series"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/startup/series_contract_activation.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
     "3": {
       "note": "The start preflight projects a persisted master-edge refusal before protected-surface calculation.",
       "targets": [
@@ -405,12 +499,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1d628c838dc068656971378f114183addcef346f",
+            "blob": "f4e60103b854b700f62e7ca7a1dbd8f21367cfb0",
             "content": "sha256:f0ecfd0a31daeb79921da6fc95121fef13d96b5019555e6983cf75cfd94eeab8",
             "locator": {
-              "end": 226,
+              "end": 222,
               "kind": "line_range",
-              "start": 226
+              "start": 222
             }
           },
           "kind": "code"

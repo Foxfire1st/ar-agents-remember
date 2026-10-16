@@ -113,6 +113,57 @@
         }
       ]
     },
+    "101": {
+      "note": "Start binds and mirrors admitted stage through task-fact publication; explicit attach preserves stage and dry-run publishes nothing.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a83e3b0ba83b697ae4190cd329fec12aefa5f8f7",
+            "content": "sha256:645749bc10470be4dc5c58ed620ffce1275f51c22b7d7ceedddf24aacd7a5758",
+            "locator": {
+              "kind": "symbol",
+              "name": "publish_start_task_facts"
+            },
+            "path": "mcp/src/agents_remember/worktrees/start_task_publication.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "102": {
+      "note": "Native stage preparation preserves absent documents, promotes only admitted input stages and prepares matching master-row synchronization.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "156779ca466f0289eb12c8623810b3798a9ca962",
+            "content": "sha256:471a1e70b1b5ad16c47341831113689485549bee8319d85dd8d91a696ec960d3",
+            "locator": {
+              "kind": "symbol",
+              "name": "plan_task_stage"
+            },
+            "path": "mcp/src/agents_remember/worktrees/task_stage.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "103": {
+      "note": "Abandon publication restores task and contract sources on publication failure; this does not recreate prior reclaimed resources.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0b8256aef2d4c0a07621d321e9efa78148b84942",
+            "content": "sha256:371d5ba827d99b7cc19a57ae8a47f83034c87c651fe721108944dcb00cd016f0",
+            "locator": {
+              "kind": "symbol",
+              "name": "publish_abandoned_task"
+            },
+            "path": "mcp/src/agents_remember/worktrees/abandon_task_publication.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
     "11": {
       "note": "The child-admission seal is deleted: the parent-series helper is now resolution only and no lifecycle cell refuses a leaf.",
       "targets": [
@@ -584,7 +635,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "da0c7ac4a2e79d714a660304cb301e2cf9dfe651",
+            "blob": "42706ec8841265b7c6d29565c7cc973f7b5baba9",
             "content": "sha256:d424aed091836a5806346e94edcebe40e4716778073398e69ca2ae6bb72acd2e",
             "locator": {
               "kind": "symbol",
@@ -601,7 +652,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "da0c7ac4a2e79d714a660304cb301e2cf9dfe651",
+            "blob": "42706ec8841265b7c6d29565c7cc973f7b5baba9",
             "content": "sha256:6f76d11d967ef1fb2c051e6f87386385c0d22c61b95dc28b23fab5df4dac9066",
             "locator": {
               "kind": "symbol",
@@ -618,7 +669,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "da0c7ac4a2e79d714a660304cb301e2cf9dfe651",
+            "blob": "42706ec8841265b7c6d29565c7cc973f7b5baba9",
             "content": "sha256:9ea03eced1a2215a49cecf290c94ccbc727d96250f4393b2a920350ca1cc0c0d",
             "locator": {
               "kind": "symbol",
@@ -647,7 +698,7 @@
         },
         {
           "anchor": {
-            "blob": "da0c7ac4a2e79d714a660304cb301e2cf9dfe651",
+            "blob": "42706ec8841265b7c6d29565c7cc973f7b5baba9",
             "content": "sha256:ed87aa1001f8f50db3e1e01f775557a7358c9377813a609c920c75dec8290262",
             "locator": {
               "kind": "symbol",
@@ -664,7 +715,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "da0c7ac4a2e79d714a660304cb301e2cf9dfe651",
+            "blob": "42706ec8841265b7c6d29565c7cc973f7b5baba9",
             "content": "sha256:0fe4e5f2b94af6a5f6576a562adea5a9718eb2f9cb62a038a56c674be4509ee9",
             "locator": {
               "kind": "symbol",
@@ -1277,7 +1328,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f905b3045e11c6eb6ee0e0c2a762989a0de28d7b",
+            "blob": "d58c63ecee8f999fb207fe2c6b4fd35956213d82",
             "content": "sha256:3800c4595e1f9a984649face53b7226fad3aae0895f842726784da91c9f124bb",
             "locator": {
               "end": 459,
@@ -2150,12 +2201,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "da0c7ac4a2e79d714a660304cb301e2cf9dfe651",
+            "blob": "42706ec8841265b7c6d29565c7cc973f7b5baba9",
             "content": "sha256:9ea03eced1a2215a49cecf290c94ccbc727d96250f4393b2a920350ca1cc0c0d",
             "locator": {
-              "end": 375,
+              "end": 376,
               "kind": "line_range",
-              "start": 319
+              "start": 320
             },
             "path": "mcp/src/agents_remember/worktrees/reopen_series.py"
           },
@@ -2163,12 +2214,12 @@
         },
         {
           "anchor": {
-            "blob": "da0c7ac4a2e79d714a660304cb301e2cf9dfe651",
+            "blob": "42706ec8841265b7c6d29565c7cc973f7b5baba9",
             "content": "sha256:ed87aa1001f8f50db3e1e01f775557a7358c9377813a609c920c75dec8290262",
             "locator": {
-              "end": 516,
+              "end": 517,
               "kind": "line_range",
-              "start": 464
+              "start": 465
             },
             "path": "mcp/src/agents_remember/worktrees/reopen_series.py"
           },

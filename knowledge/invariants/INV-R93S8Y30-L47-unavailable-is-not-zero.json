@@ -2,7 +2,7 @@
   "admission": "legacy-unassessed",
   "applicability": "Every changed-intent summary answer for a leaf comparison, from the server model through the served route to the entry's rendering.",
   "conditions": [
-    "The comparison's knowledge could not be read (absent or unreadable half, unresolved candidate) or some identity has no single head on a side."
+    "The comparison knowledge could not be read, or the compared head sets differ for an identity without a single head on a side."
   ],
   "exclusions": [
     "A comparison that was read and measured no changed head, which is a counted +0 -0."
@@ -13,9 +13,9 @@
     "legacyId": "52d86afe-3d04-4cca-a764-21e906e6dfb6",
     "task": "260921-ICR"
   },
-  "revision": 2,
+  "revision": 3,
   "schema": "ar-invariant/v1",
-  "statement": "A comparison whose knowledge cannot be read, or whose identity has no single head, is reported as the typed state unavailable (with the owner's refusal and no counts) or partial (with the unresolved count), never as a measured +0 −0.",
+  "statement": "Unreadable comparison knowledge is typed unavailable with its owner refusal and no counts. A changed identity without a single head contributes an unresolved partial count, not a measured zero; identical ambiguous head sets are not counted as a changed identity.",
   "status": "proposed",
   "supersedes": []
 }

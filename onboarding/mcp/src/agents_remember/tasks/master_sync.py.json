@@ -3,8 +3,27 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "6a9f8b91641c869b1c20b3bcf11d566744f94855",
-        "content": "sha256:1410479f56ef2858bc0f794bfb74c0822dde19fa6436d5c14f8883b7560bea46",
+        "blob": "4568c29f3b900b0d0b94dce225776b17f1e981be",
+        "content": "sha256:9d4246aa736486f94b56714748fd5c2482e7e7d2366006d8b26553deace81559",
+        "locator": {
+          "end": 155,
+          "kind": "line_range",
+          "start": 104
+        }
+      },
+      "id": "RLZ-3JH1XT",
+      "invariant": "INV-Z0BXKJ",
+      "origin": {
+        "handoffEntry": "L168-CUR-M1-21-A013-02",
+        "leaf": "260928-MIK-L168"
+      },
+      "rationale": "_plan_sprint_sync captures the exact commanding sprint source, refuses unreadable/ambiguous/retired linkage, and mirrors the same native master.status into its exact row for the prepared publication batch.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "4568c29f3b900b0d0b94dce225776b17f1e981be",
+        "content": "sha256:f35b07f664cde35ec08c5843108af88899efc3ac60edacf32f84d26f9763f638",
         "locator": {
           "kind": "symbol",
           "name": "plan_master_sync"
@@ -21,8 +40,8 @@
     },
     {
       "anchor": {
-        "blob": "6a9f8b91641c869b1c20b3bcf11d566744f94855",
-        "content": "sha256:1410479f56ef2858bc0f794bfb74c0822dde19fa6436d5c14f8883b7560bea46",
+        "blob": "4568c29f3b900b0d0b94dce225776b17f1e981be",
+        "content": "sha256:f35b07f664cde35ec08c5843108af88899efc3ac60edacf32f84d26f9763f638",
         "locator": {
           "kind": "symbol",
           "name": "plan_master_sync"
@@ -71,6 +90,23 @@
             "locator": {
               "kind": "symbol",
               "name": "_master_json_path"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "Master documents mirror status to one commanded sprint through the typed/legacy canonical census.\n\nAnchor: commanding-sprint stage mirror",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4568c29f3b900b0d0b94dce225776b17f1e981be",
+            "content": "sha256:9d4246aa736486f94b56714748fd5c2482e7e7d2366006d8b26553deace81559",
+            "locator": {
+              "end": 155,
+              "kind": "line_range",
+              "start": 104
             }
           },
           "kind": "code"
@@ -139,26 +175,28 @@
       ]
     },
     "5": {
-      "note": "Strict master-row status derivation and unresolved-master demotion.",
+      "note": "Document status is mirrored directly; unresolved-parent demotion remains a separate progress check.\n\nAnchor: current owner",
       "targets": [
         {
           "anchor": {
-            "blob": "6a9f8b91641c869b1c20b3bcf11d566744f94855",
-            "content": "sha256:7b3f9a3a00f0613b5a8135a6f371a364a0eb73b8a1cb69d892d9b3d123ef0d28",
+            "blob": "4568c29f3b900b0d0b94dce225776b17f1e981be",
+            "content": "sha256:e520eb63d25e90b91f915ecc2cda1fceb145ecccfe451ec533fcb837b2b54652",
             "locator": {
-              "kind": "symbol",
-              "name": "derived_master_status"
+              "end": 177,
+              "kind": "line_range",
+              "start": 171
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "6a9f8b91641c869b1c20b3bcf11d566744f94855",
+            "blob": "4568c29f3b900b0d0b94dce225776b17f1e981be",
             "content": "sha256:babd9be98c04c56449db00db98436348a11f87bd8acf030fbc3002ae39e47eae",
             "locator": {
-              "kind": "symbol",
-              "name": "demote_completed_master_if_unresolved"
+              "end": 186,
+              "kind": "line_range",
+              "start": 180
             }
           },
           "kind": "code"

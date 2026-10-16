@@ -137,7 +137,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "edeeeb3ef43858631e19d87155bbc9aaa1bace61",
+            "blob": "28cbe55d2100b6fb6780c7126fab86611025738a",
             "content": "sha256:079de00442547608494ea779313d31548d090d062f696bc106bca3c6c57d6bc4",
             "locator": {
               "end": 50,
@@ -884,7 +884,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4450f6dd38b171916d86a8af858b4da0d30493f4",
+            "blob": "a0ed662a42a3b5b6c0fec263b6c9d5eb5f77fa83",
             "content": "sha256:d6fde4cb534c458665bcbbcaf1b3e0d6a124b41dcac11ecfe26c05a0a7987503",
             "locator": {
               "end": 304,
@@ -1008,6 +1008,24 @@
               "start": 20
             },
             "path": "scripts/sync-skills.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "49": {
+      "note": "Manager leaves native operation stage/mirror publication to its owner; explicit corrections and organizational-master completion retain their task-document route.\n\nAnchor: `Start, finalize and abandon publish task stage`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6c14bda6d478f9d220063774ea8b13852e31a0f0",
+            "content": "sha256:9b8a0bd77133a911eda02d798594b6181aac50e9399f1000649385784cc6dc27",
+            "locator": {
+              "end": 20,
+              "kind": "line_range",
+              "start": 20
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/manager.md"
           },
           "kind": "code"
         }

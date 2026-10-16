@@ -39,10 +39,12 @@
     },
     {
       "anchor": {
-        "blob": "a3dc9e7e90fa284c9945fbf10a449595a8f90a31",
-        "content": "sha256:7418ed815fe11f5de3b2d754dee45ae1e90df912dd82ae2fac3fbee0a7abc016",
+        "blob": "79b6458f44e14d66a0e48b4f16d91348378ba8c2",
+        "content": "sha256:6d11da56a4a3a3fbb37b3819731a2f9d94f8924f3e59c32ac6f130726d395c23",
         "locator": {
-          "kind": "file"
+          "end": 33,
+          "kind": "line_range",
+          "start": 14
         }
       },
       "id": "RLZ-3W9GWW",

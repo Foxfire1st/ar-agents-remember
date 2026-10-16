@@ -19,7 +19,7 @@ and task/worktree artifacts.
 
 The scenario creates a sprint with an atomic master and leaf, starts that leaf with external
 memory, and checks the exact series/leaf branch and parent-contract relationships. It verifies the
-leaf document's lifecycle/enclosure references and checks that reattach preserves them.
+leaf document's lifecycle/enclosure binding references and checks that reattach preserves them. Start also asserts inProgress on both the leaf document and exact master row; abandon later asserts abandoned on both. The retained lifecycleId is an enclosure binding, not session activity or heartbeat inference.
 
 The early-closeout helper alters binding facts to prove refusal, then restores the task document.
 The queue helper publishes fixture curator evidence, declares a closeout door with priority

@@ -7,7 +7,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1c147e49186856432d1727f94eafe42adc285660",
+            "blob": "a7e3771a7aa22ab17a33fb29a6462353bb8ccae2",
             "content": "sha256:0235cc2a3f435dc6f95d5ad9ebf7f065f4a49503a944cbb4daa08a5d0f6e3625",
             "locator": {
               "kind": "symbol",
@@ -23,7 +23,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1c147e49186856432d1727f94eafe42adc285660",
+            "blob": "a7e3771a7aa22ab17a33fb29a6462353bb8ccae2",
             "content": "sha256:89e912b951809361ce333976f5bfb4f63c79932b6f51aff8d1b2e72cf1b98475",
             "locator": {
               "kind": "symbol",
@@ -124,12 +124,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4e5ab6df08aada7bd6f6297ae5af459c4d22fb48",
+            "blob": "676446dd3dec2866b0d8b4914250105067b14d96",
             "content": "sha256:b78fff81f43c6d30e5e8b25d49358e2b1ed7d8595b49fe2de0249401357402bf",
             "locator": {
-              "end": 321,
+              "end": 358,
               "kind": "line_range",
-              "start": 321
+              "start": 358
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },
@@ -167,6 +167,22 @@
         }
       ]
     },
+    "19": {
+      "note": "Removed-tool guidance remains invalid even though the obsolete switch-refusal fixture is deleted.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a7e3771a7aa22ab17a33fb29a6462353bb8ccae2",
+            "content": "sha256:b1fb539c7af3b367765054b4f3504e76764f6812b931b2f5bf4f8b1c775819c1",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_old_removed_tool_guidance_stays_a_negative_control"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
     "2": {
       "note": "The seventeen invocations that legitimately answer `ok: true`, each with its reason.",
       "targets": [
@@ -177,6 +193,22 @@
             "locator": {
               "kind": "symbol",
               "name": "ALWAYS_ANSWERS"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "20": {
+      "note": "Identity, reason and navigation stripping still fail the real refusal completeness predicate.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a7e3771a7aa22ab17a33fb29a6462353bb8ccae2",
+            "content": "sha256:9bc159d38fb1cd1fea807112aba341977c100be768cdb19d2dce02b489cfa87a",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_stripping_each_axis_of_a_real_refusal_makes_the_predicate_fail"
             }
           },
           "kind": "test"
@@ -220,7 +252,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1c147e49186856432d1727f94eafe42adc285660",
+            "blob": "a7e3771a7aa22ab17a33fb29a6462353bb8ccae2",
             "content": "sha256:87fc319ca947b359f418d49e1ac324e5b8dcf4dbcd8cc7f2c8bfcd3e90c21bf3",
             "locator": {
               "kind": "symbol",
@@ -236,7 +268,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1c147e49186856432d1727f94eafe42adc285660",
+            "blob": "a7e3771a7aa22ab17a33fb29a6462353bb8ccae2",
             "content": "sha256:b984fec30800fe8e9939dddcfc551d5e1b9e1d9554d8d5098876dfedb50a12fb",
             "locator": {
               "kind": "symbol",
@@ -268,7 +300,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1c147e49186856432d1727f94eafe42adc285660",
+            "blob": "a7e3771a7aa22ab17a33fb29a6462353bb8ccae2",
             "content": "sha256:c857c40d90be1b2386d31ed5480e7b9ed477d2651713be13f3953fa145726cd7",
             "locator": {
               "kind": "symbol",

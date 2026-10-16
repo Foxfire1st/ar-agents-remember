@@ -2,7 +2,8 @@
   "admission": "legacy-unassessed",
   "applicability": "HTTP answers of GET /api/review/intent/summary served by the dashboard process.",
   "conditions": [
-    "The process is composed with the review_intent_summary port for 200 answers; without it the route answers 503 by name."
+    "The configured native summary port produces typed result bodies; the app-owned conditional cache may validate retained bytes without another response body.",
+    "Without the port the route answers 503 by name."
   ],
   "exclusions": [
     "The other reviewer routes (/api/review/intent, /entries, /source-content), which keep their own refusal statuses."
@@ -13,9 +14,9 @@
     "legacyId": "b5d1ae36-71c6-4f30-8008-bb4face7bb65",
     "task": "260921-ICR"
   },
-  "revision": 2,
+  "revision": 3,
   "schema": "ar-invariant/v1",
-  "statement": "GET /api/review/intent/summary answers every typed state (counted, partial, unavailable with its refusal) with HTTP 200 and the state in the body, and 503 only when the process was composed without the port.",
+  "statement": "GET /api/review/intent/summary returns body-bearing typed states counted, partial or unavailable with its refusal as HTTP 200; conditional revalidation may return an empty 304 with ETag for retained bytes, and a process composed without the port answers named 503.",
   "status": "proposed",
   "supersedes": []
 }

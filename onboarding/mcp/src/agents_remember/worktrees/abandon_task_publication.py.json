@@ -1,0 +1,42 @@
+{
+  "path": "mcp/src/agents_remember/worktrees/abandon_task_publication.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "0b8256aef2d4c0a07621d321e9efa78148b84942",
+        "content": "sha256:371d5ba827d99b7cc19a57ae8a47f83034c87c651fe721108944dcb00cd016f0",
+        "locator": {
+          "kind": "symbol",
+          "name": "publish_abandoned_task"
+        }
+      },
+      "id": "RLZ-TM4MJN",
+      "invariant": "INV-Z0BXKJ",
+      "origin": {
+        "handoffEntry": "L168-W-R167-05",
+        "leaf": "260928-MIK-L168"
+      },
+      "rationale": "Abandon publishes the terminal native stage instead of relying on an agent call.",
+      "role": "propagation-persistence"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The existing terminal guard receives the paired publication and restoration callbacks.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0b8256aef2d4c0a07621d321e9efa78148b84942",
+            "content": "sha256:371d5ba827d99b7cc19a57ae8a47f83034c87c651fe721108944dcb00cd016f0",
+            "locator": {
+              "kind": "symbol",
+              "name": "publish_abandoned_task"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

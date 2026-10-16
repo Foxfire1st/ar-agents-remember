@@ -1,0 +1,41 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test",
+      "prevents_costly_mistake",
+      "spans_locations"
+    ],
+    "justification": "Future changes to host intake, task projection or task-status consumers must preserve this bounded authority: duplicate task truth, unsupported paused observations, reconstructed membership or conflicting status/age presentation produce incorrect task operations. The named current source assertions guard the specified facets; this is no fresh Curator execution grade."
+  },
+  "applicability": "Task-status words and tones on the dashboard task surfaces that consume canonical TaskEntry facts.",
+  "conditions": [
+    "Shared taskStatusKey/statusLabel/statusTone presentation formats the native task stage and started-task activity.",
+    "TaskStatusWord derives displayed event age from eventAt and its shared/local display clock; a missing/inactive clock does not invent epoch zero."
+  ],
+  "exclusions": [
+    "Operational severity dots, process phases, dependency-readiness badges and review/landing verdict vocabulary are distinct domains, not task-status words.",
+    "No second served task-entry elapsed age or browser-derived lifecycle/frontier task truth."
+  ],
+  "id": "INV-XZYGEB",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "sync-L81-dashboard.txt",
+        "M1-21: ROW-94JFAS; dashboard/src/panels/detail-panel/pageParts.tsx:69-89. Static source witness on A013; no Curator execution.",
+        "L168-M1-21 N03 dashboard/src/panels/sprint-graph/SprintGraphView.tsx:168-201; static A013 source; no execution.",
+        "L168-M1-21 N06 dashboard/src/panels/detail-panel/taskDocPanels.tsx:51-56; static A013 source; no execution.",
+        "L168-M1-21 N13 dashboard/src/cockpit/Cockpit.tsx:946-949; static A013 source; no execution.",
+        "L168-M1-21 N15 dashboard/src/panels/detail-panel/docHead.tsx:104-106; static A013 source; no execution."
+      ],
+      "path": "A011-host-driven-native-task-core-31.json"
+    },
+    "handoffEntry": "L168-W-R167-04",
+    "leaf": "260928-MIK-L168",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "All dashboard status words and tones format the canonical entry through one presentation table.",
+  "status": "proposed",
+  "supersedes": []
+}

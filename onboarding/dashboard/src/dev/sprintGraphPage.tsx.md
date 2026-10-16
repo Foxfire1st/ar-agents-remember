@@ -15,11 +15,7 @@ queue at one URL (`/dev/sprint-graph`).
 
 ### Logic
 
-`SprintGraphPage` builds a `SPRINT_GRAPH_PROJECTION` from the dev wire fixture
-(`projection({ analytics: ... taskDocuments: [SPRINT_GRAPH_TASK_DOC], closeoutQueues:
-[SPRINT_GRAPH_QUEUE] })`), applies it to the dashboard store on mount, and renders
-`<DetailPanel selectedId="taskdoc:/tasks/agents-remember/sprint-graph/task.json" />` — the
-real sprint page showing the wave-grid view and the scoped queue.
+SprintGraphPage seeds native tasks and SPRINT_GRAPH_QUEUE, then selects the qualified entry key in the real DetailPanel. These deterministic DEV graph/queue inputs are not mutable scheduling or lifecycle authority.
 
 ### Invariants And Boundaries
 
@@ -31,7 +27,7 @@ real sprint page showing the wave-grid view and the scoped queue.
 ### Repo-Internal References
 
 - The dev sprint-graph page. [1]
-- The fixture data it seeds. [2]
+- The page seeds the native sprint entry and its closeout queue. [2]
 - The real page surface rendered. [3]
 - The dev route dispatch. [4]
 

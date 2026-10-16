@@ -38,7 +38,13 @@ work. This source inspection does not claim a newly executed test or acceptance 
 
 No additional implementation scope is opened by this memory reconciliation.
 
+A child document inProgress keeps both ordinary-master and sprint-segment frontiers in-flight even when the stored master row says Completed; its dependent stays waiting. On-demand bodies match summary graphs. Progress now comes from build_task_entries/read_task_sources and shared planned/started/completed/aborted counts, not read_series_documents.
+
 ## Evidence
+
+- Child document stage owns both master and sprint frontier, with body/summary graph equality. [6]
+- Shared TaskEntry counts distinguish completed, planned/started and aborted rows. [7]
+
 
 ### Docs References
 

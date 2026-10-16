@@ -1,6 +1,6 @@
 {
   "admission": "legacy-unassessed",
-  "guarantee": "Task-body projection avoids canonical task-corpus enumeration: it opens its requested document, graph-named masters for sprint annotations, and the owning master and explicitly listed task files for ordinary dependency facts, never another master by enumeration. Always-on projection retains canonical folder-level enumeration and ordering. Both retain the current external direct-grant annotation contract; the task-addressed census and legacy unaddressed fallback are explicit additional I/O, not zero-directory I/O. Body/corpus byte parity and schema-bearing admission remain governing intent.",
+  "guarantee": "Task-body projection avoids canonical task-corpus enumeration: it opens its addressed document, graph-named schema-valid masters and their explicitly listed valid task documents for sprint annotations, plus the owning master and explicitly listed tasks for ordinary dependency facts; it does not discover another master by corpus enumeration. Always-on projection retains its separate canonical folder enumeration and ordering. Current direct-grant annotations and schema-bearing document admission remain shared; addressed census and the admitted legacy unaddressed fallback are explicit additional I/O, not a zero-directory-I/O claim.",
   "id": "FAM-33YQGFXE",
   "members": [
     "INV-1BRT5DX6",
@@ -12,7 +12,7 @@
     "legacyId": "30c87d69-3945-4417-b037-18fee5330c79",
     "task": "260921-ICR"
   },
-  "revision": 4,
+  "revision": 5,
   "routes": [
     "mcp/src/agents_remember/serving/projections/snapshots_impl"
   ],

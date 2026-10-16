@@ -80,7 +80,7 @@ before comparing, because a CodeMirror editor renders its own gutter and line el
 assertion is about the text rather than the editor's layout. `open(view, path)` finds the path label's
 closest button and clicks it, throwing when no openable entry exists — so a case
 that forgot to make its row expandable fails loudly instead of asserting against nothing.
-`afterEach` runs cleanup, unstubs globals and clears localStorage so neither stubs nor view preference outlive a case.
+`afterEach` runs cleanup, resets `dashboardStore`, unstubs globals and clears localStorage so cached conditional reads, stubs and view preferences do not outlive a case.
 
 ### Conventions
 
@@ -112,8 +112,7 @@ about the request the surface made and not about a state update that outlives th
   row with no control, so a drifted case cannot degrade into a vacuous pass.
 - **Boundary.** This module owns the renderer half's expectations only; the values it feeds are the
   shape the server's route returns, and the server half is asserted against real Git objects by
-  `mcp/tests/test_knowledge_review_source_content.py`. It exercises no store, no route and no cockpit
-  dispatch.
+  `mcp/tests/test_knowledge_review_source_content.py`. The viewer uses the real store-owned change-set read caches, which cleanup resets between cases; no server route or cockpit dispatch is exercised.
 
 ### Todos
 

@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "972bfe128d72a489b3cdb2563a352563c594856e",
+        "blob": "44d27a65dd2c90b37ee5338cafbd1564796e6c80",
         "content": "sha256:eaa397ca2502ada8e0ddc0503cca873d55f6564cd5900f01ae9a096d711c8972",
         "locator": {
           "kind": "symbol",
@@ -21,11 +21,12 @@
     },
     {
       "anchor": {
-        "blob": "972bfe128d72a489b3cdb2563a352563c594856e",
+        "blob": "44d27a65dd2c90b37ee5338cafbd1564796e6c80",
         "content": "sha256:b21739c63223a27b2a7cb70528aa785ecec37fe55ce96834808eaa463a5d4ca0",
         "locator": {
-          "kind": "symbol",
-          "name": "workspace_river_read"
+          "end": 95,
+          "kind": "line_range",
+          "start": 61
         }
       },
       "id": "RLZ-6TWJSK",
@@ -39,8 +40,8 @@
     },
     {
       "anchor": {
-        "blob": "972bfe128d72a489b3cdb2563a352563c594856e",
-        "content": "sha256:51da4b124f3734816bf9d7afb1f5bd740eae16451caa24141d3dfe21b276fbc1",
+        "blob": "44d27a65dd2c90b37ee5338cafbd1564796e6c80",
+        "content": "sha256:56e6379d37cd0fbaf62b745381a04b2f797cf7af8b396d2e93c5bdb4932b5d8c",
         "locator": {
           "kind": "symbol",
           "name": "EventStore.append"
@@ -52,22 +53,21 @@
         "handoffEntry": "L114-W37",
         "leaf": "260928-MIK-L114"
       },
-      "rationale": "The shared lifecycle-less append now routes through the admission, so existing seat and replay writers cannot push the river over the ceiling.",
+      "rationale": "All EventStore appends share river admission; no lifecycle namespace.",
       "role": "enforcement"
     }
   ],
   "references": {
     "1": {
-      "note": "The event envelope serialized and validated by the observer model.\n\nAnchor: \"class Event\"",
+      "note": "EventStore serializes and validates the shared Event envelope.",
       "targets": [
         {
           "anchor": {
-            "blob": "5f8e07469944c4ce00a3b6c6682130855c7ba8a3",
-            "content": "sha256:b475a5b8491fe6b783223d7c1b26257d74dddab44165049dfa45f767536b96ab",
+            "blob": "b5f4a15e3c26371377e98403ffbb1c7888478853",
+            "content": "sha256:bf1c889ad3d2ed153a0777aff4a42198118bdd11bb158fd8a134d739afae6244",
             "locator": {
-              "end": 39,
-              "kind": "line_range",
-              "start": 39
+              "kind": "symbol",
+              "name": "Event"
             },
             "path": "mcp/src/agents_remember/observer/events.py"
           },
@@ -76,18 +76,49 @@
       ]
     },
     "2": {
-      "note": "The store layout, retention tiers, and TTL prune rule.\n\nAnchor: \"TTL is fleeting-only\"",
+      "note": "Every append uses bounded workspace admission; tolerant reads admit valid records only.",
       "targets": [
         {
           "anchor": {
-            "blob": "b44e3eee34f91c2acb39280530878ac403090e77",
-            "content": "sha256:c852d3fd8997736875423fc6c1ef9f8381c4aa2286b89b1856dbed0108a5197e",
+            "blob": "44d27a65dd2c90b37ee5338cafbd1564796e6c80",
+            "content": "sha256:b54dd4dde4a0dffb6e89ba453123cfdcd054b3db298b6d656d98936f6c5b2417",
             "locator": {
-              "end": 107,
-              "kind": "line_range",
-              "start": 107
+              "kind": "symbol",
+              "name": "EventStore"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The read helper reports whether an existing shared lock was actually acquired; it does not perform a lockless read.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "44d27a65dd2c90b37ee5338cafbd1564796e6c80",
+            "content": "sha256:b21739c63223a27b2a7cb70528aa785ecec37fe55ce96834808eaa463a5d4ca0",
+            "locator": {
+              "kind": "symbol",
+              "name": "workspace_river_read"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Serving, not the helper, owns the guarded missing-lock base/file window and the confirmed-hold fallback.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "91d04c0b9f1ef75ed3894240899e238bde789901",
+            "content": "sha256:007af41a1ada26ba42ef2e0a39ce2b7366f01f0a018b64c81b0cd1609be680f4",
+            "locator": {
+              "kind": "symbol",
+              "name": "_read_source_lines"
             },
-            "path": "docs/design/observable-lifecycle.md"
+            "path": "mcp/src/agents_remember/serving/events.py"
           },
           "kind": "code"
         }

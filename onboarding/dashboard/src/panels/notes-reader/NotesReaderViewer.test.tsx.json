@@ -82,23 +82,6 @@
         }
       ]
     },
-    "21": {
-      "note": "Analytics requires agentPickups and expectationRows arrays, along with the other projected collections.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "8ec36cc6a3c8c3f226840e93b077c60c903e12b1",
-            "content": "sha256:162c26c0cad036357bad30e157f8f2604877fbdae3e2b73ed0f5d7f6e6658d23",
-            "locator": {
-              "kind": "symbol",
-              "name": "Analytics"
-            },
-            "path": "dashboard/src/types/projection.ts"
-          },
-          "kind": "code"
-        }
-      ]
-    },
     "22": {
       "note": "The seeded snapshot satisfies the generated workspace contract.",
       "targets": [
@@ -109,23 +92,6 @@
             "locator": {
               "kind": "symbol",
               "name": "WorkspaceProjection"
-            },
-            "path": "dashboard/src/types/projection.ts"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "23": {
-      "note": "The seed derives metrics through the shared lifecycle rollup helper.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "beed4630e21dc2735b84b146d4ff9a6e1b18512d",
-            "content": "sha256:e9ee85ebb381e09c4f6b9a60589ab9f2ae16b5bf020fa42a6b9c53b47f0aa00a",
-            "locator": {
-              "kind": "symbol",
-              "name": "metricsFor"
             },
             "path": "dashboard/src/types/projection.ts"
           },

@@ -17,8 +17,7 @@ reader's document text through two opt-in extensions rather than a second render
 
 ### Logic
 
-`Markdown({ children, inline, referenceMarkers, headingIds, components })` wraps
-`<ReactMarkdown remarkPlugins={plugins}>`. **Block mode** (default) renders into a `box` styled via
+`Markdown` always renders through one `ReactMarkdown` instance with GFM and the requested opt-in plugins. When text is at least 1000 characters and no caller component overrides are supplied, `markdownPlugins` additionally installs `remarkCachedParse` with the store’s `TaskDocumentResources`; shorter text or caller overrides omit only that cached-parse plugin. **Block mode** (default) renders into a `box` styled via
 Panda **descendant selectors** (`& p`, `& table`, `& code`, `& blockquote`, `& h1…h4`, …) so every
 rendered node is themed without hand-wrapping each; a custom `table` component keeps a real `<table>`
 but wraps it in a horizontal **scroll box** (`tableScroll`) so a wide table can't blow out the detail
@@ -45,7 +44,7 @@ control.
 
 ### Invariants And Boundaries
 
-Presentational and pure: it renders its `children` string with no data fetching and no state. **No raw
+Presentational with no data fetching: long bodies without caller component overrides may reuse pure GFM syntax through store-owned TaskDocumentResources. Cached trees are cloned before later plugins mutate them; React nodes and handlers are not cached. **No raw
 HTML** — react-markdown does not render embedded HTML by default, so arbitrary task-doc content is
 XSS-safe. The `React.memo` is load-bearing for performance: the projection SSE re-renders `DetailPanel`
 about every second, and without memo every section body would re-parse on each tick. A wide table

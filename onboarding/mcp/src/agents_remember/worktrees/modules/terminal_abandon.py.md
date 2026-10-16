@@ -14,7 +14,7 @@ and result shape while adding the archive report.
 
 ### Logic
 
-`_abandon_with_guard` is the extracted body of the admitted abandon transaction. After terminal
+`_abandon_with_guard` first plans the abandoned task stage and returns the named task-stage refusal on an invalid binding. Under refreshed terminal authority it repeats stage planning before agent archival and destructive outputs. It is the extracted body of the admitted abandon transaction. After terminal
 admission succeeds and the terminal authority is re-read, its `publish` step archives the current
 contract's leaf agents through `archive_terminal_agents` before calling the abandon outputs, wraps
 the terminal archive result, and merges the non-empty `agentArchive` report into the payload. A
@@ -30,3 +30,8 @@ still return the `abandon-blocked` result with the preserved cache and the helpe
 ## Evidence
 
 - Archival runs inside the admitted publish step before destructive outputs. [1]
+
+## Current source evidence
+
+
+- Task-stage binding is checked before terminal work and again before archival/destructive outputs under current authority. [2]

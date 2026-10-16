@@ -1,0 +1,44 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test",
+      "prevents_costly_mistake"
+    ],
+    "justification": "Future changes to host intake, task projection or task-status consumers must preserve this bounded authority: duplicate task truth, unsupported paused observations, reconstructed membership or conflicting status/age presentation produce incorrect task operations. The named current source assertions guard the specified facets; this is no fresh Curator execution grade."
+  },
+  "applicability": "Ordered task-entry membership projected from native declared child rows and commanded-master relations.",
+  "conditions": [
+    "A documented subTask joins only its reciprocally declared parent; missing/unlisted parent declarations leave a reachable root.",
+    "Authored child row order is retained, while deterministic membership and cycle/seen guards avoid duplicate or cyclic attachment.",
+    "A declared row may supply one placeholder entry until its document exists; worktree binding does not establish task hierarchy."
+  ],
+  "exclusions": [
+    "No inferred parent solely from filesystem/worktree proximity.",
+    "A declared row scope is presentation context, not task-stage authority; unauthored-row fallback is distinct from fileless dependency display."
+  ],
+  "id": "INV-WQ8YGE",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "sync-L81-primary-regressions.txt; amendments1/2/4",
+        "M1-21: ROW-HC6DY4, ROW-HGRCWR; dashboard/src/cockpit/roleLaunchModel.ts:199-222. Static source witness on A013; no Curator execution.",
+        "M1-21: ROW-YHCA8B, ROW-JSB8DA; dashboard/src/panels/detail-panel/model.ts:203-222. Static source witness on A013; no Curator execution.",
+        "L168-M1-21 N01 dashboard/src/cockpit/document-chat/model.ts:25-50; static A013 source; no execution.",
+        "L168-M1-21 N02 dashboard/src/cockpit/document-chat/model.ts:53-70; static A013 source; no execution.",
+        "L168-M1-21 N05 dashboard/src/panels/detail-panel/taskDocPanels.tsx:24-34; static A013 source; no execution.",
+        "L168-M1-21 N07 dashboard/src/panels/detail-panel/task-groups.tsx:243-271; static A013 source; no execution.",
+        "L168-M1-21 N22 mcp/src/agents_remember/serving/projections/snapshots_impl/_task_documents.py:103-130; static A013 source; no execution.",
+        "L168-M1-21 N24 dashboard/src/cockpit/role-launcher/RoleLauncher.tsx:1063-1077; static A013 source; no execution."
+      ],
+      "path": "A011-host-driven-native-task-core-31.json"
+    },
+    "handoffEntry": "L168-W-R167-11",
+    "leaf": "260928-MIK-L168",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Parent membership and authored child order are projected once from reciprocal declared rows and orchestrates relations, independent of worktree existence.",
+  "status": "proposed",
+  "supersedes": []
+}

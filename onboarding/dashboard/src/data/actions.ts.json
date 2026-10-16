@@ -2,24 +2,6 @@
   "path": "dashboard/src/data/actions.ts",
   "realizes": [],
   "references": {
-    "1": {
-      "note": "The serving route this POSTs to (records the developer/dashboard gate decision).\n\nAnchor: \"def _gate_decision_response(\"",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "1fc264615fc571535afdb52edcec869ec5228657",
-            "content": "sha256:dc0775a1f4b0fe82b7f102900d3d755c43e8dcaa2e09957c316725fa26a2c412",
-            "locator": {
-              "end": 252,
-              "kind": "line_range",
-              "start": 252
-            },
-            "path": "mcp/src/agents_remember/serving/_app_routes.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
     "3": {
       "note": "The attention queue that calls `postAttentionDismiss`.",
       "targets": [
@@ -32,21 +14,6 @@
               "name": "AttentionQueueImpl"
             },
             "path": "dashboard/src/panels/AttentionQueue.tsx"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "4": {
-      "note": "The current module retains only the attention-dismiss client, its target-optional body and HTTP202/error mapping. [4]",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "957086c0561577ae1f33af5ea1648e95ada32924",
-            "content": "sha256:14946f08253bbffcb308a35d13073d5d918f9d0cfeb7bf1718b95fcd86c009b6",
-            "locator": {
-              "kind": "file"
-            }
           },
           "kind": "code"
         }

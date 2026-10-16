@@ -121,6 +121,35 @@
           "kind": "code"
         }
       ]
+    },
+    "5": {
+      "note": "Projection scopes and overrides retain explicit source paths rather than deriving every target under one leaf root.\n\nAnchor: source responsibility",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "476c1c24ac02e05fb96b654322bf771287e6cbff",
+            "content": "sha256:f683765b809d8ed03750b515fa64cfe32532e72dc5f5af77bcdefffa7c5c8e12",
+            "locator": {
+              "end": 100,
+              "kind": "line_range",
+              "start": 71
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "476c1c24ac02e05fb96b654322bf771287e6cbff",
+            "content": "sha256:489e171ccfdda0b64d84670fea5130ab277769385fe62fbf47aec61b80a82a73",
+            "locator": {
+              "end": 147,
+              "kind": "line_range",
+              "start": 136
+            }
+          },
+          "kind": "code"
+        }
+      ]
     }
   },
   "schema": "ar-onboarding-file/v1"

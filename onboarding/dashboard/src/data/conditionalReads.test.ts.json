@@ -1,0 +1,111 @@
+{
+  "path": "dashboard/src/data/conditionalReads.test.ts",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "a9b54b688602506f5ce6ad230ba00c36bd9dc05a",
+        "content": "sha256:c549023ccb46f385375aa00bc90fb03c5297150664065222dc398fcb0e45df60",
+        "locator": {
+          "kind": "symbol",
+          "name": "bounded conditional page results > deduplicates in flight, bounds pending reads and rejects late aborted retention"
+        }
+      },
+      "facet": "A capacity-two resource deduplicates one current promise, cancels the older request at the bound and refuses its late completion from retention.",
+      "id": "PRF-4HYJN8",
+      "invariant": "INV-GDWJKR",
+      "origin": {
+        "handoffEntry": "L168-W-R168-07",
+        "leaf": "260928-MIK-L168"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "a9b54b688602506f5ce6ad230ba00c36bd9dc05a",
+        "content": "sha256:8cb12317447405a2c93532439f2f0b4196763a696d7c5db4e2a71b737837f59b",
+        "locator": {
+          "kind": "symbol",
+          "name": "bounded conditional page results > retains parsed identity on 304 without reading a body, and replaces it on a new ETag"
+        }
+      },
+      "facet": "A 304 keeps the parsed identity without calling json, validates the new facts token and sends the prior ETag; new response bytes replace that identity.",
+      "id": "PRF-FQRGS0",
+      "invariant": "INV-WNHAWD",
+      "origin": {
+        "handoffEntry": "L168-W-R168-03",
+        "leaf": "260928-MIK-L168"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "a9b54b688602506f5ce6ad230ba00c36bd9dc05a",
+        "content": "sha256:8cb12317447405a2c93532439f2f0b4196763a696d7c5db4e2a71b737837f59b",
+        "locator": {
+          "kind": "symbol",
+          "name": "retains parsed identity on 304 without reading a body, and replaces it on a new ETag"
+        }
+      },
+      "facet": "Retained values are visible only under their confirmed facts; a 304 confirms bytes for the newly revalidated facts without decoding.",
+      "id": "PRF-NPX3QW",
+      "invariant": "INV-74578B97",
+      "origin": {
+        "handoffEntry": "L168-CUR-INV-74578B97-C01-support",
+        "leaf": "260928-MIK-L168"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Facts-qualified 304 identity with no body decode.\n\nAnchor: retains parsed identity on 304 without reading a body, and replaces it on a new ETag",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a9b54b688602506f5ce6ad230ba00c36bd9dc05a",
+            "content": "sha256:8cb12317447405a2c93532439f2f0b4196763a696d7c5db4e2a71b737837f59b",
+            "locator": {
+              "end": 34,
+              "kind": "line_range",
+              "start": 13
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Actual-store entry and byte bounds over growing histories.\n\nAnchor: the actual file-response store reaches its 16 MiB byte bound over two growing histories",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a9b54b688602506f5ce6ad230ba00c36bd9dc05a",
+            "content": "sha256:c5c07198a78a4b50fc06a8f134271e1d02b4bdfb0878c1ee34e51fbba1b08677",
+            "locator": {
+              "end": 87,
+              "kind": "line_range",
+              "start": 36
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Oversize, same-facts pending sharing, abort and current failure.\n\nAnchor: bounds retained bytes and keeps an oversized active result out of history",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a9b54b688602506f5ce6ad230ba00c36bd9dc05a",
+            "content": "sha256:86e2cfee79b387c0059f675fb4ebe138d443c37b71ce247eb622b5b7a1d9b8e4",
+            "locator": {
+              "end": 132,
+              "kind": "line_range",
+              "start": 89
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

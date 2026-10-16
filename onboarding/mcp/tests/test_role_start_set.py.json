@@ -3,7 +3,7 @@
   "proves": [
     {
       "anchor": {
-        "blob": "9f02613785f18fbb4413badd74904bab9f5ad2ed",
+        "blob": "5024a7ad33c837d26fe69debaa4da32cf2b3bfa8",
         "content": "sha256:805e27f2f746ffc03cde030f6a9917a757a4e148b7797b2c9a10849c09acb466",
         "locator": {
           "kind": "symbol",
@@ -20,7 +20,7 @@
     },
     {
       "anchor": {
-        "blob": "9f02613785f18fbb4413badd74904bab9f5ad2ed",
+        "blob": "5024a7ad33c837d26fe69debaa4da32cf2b3bfa8",
         "content": "sha256:7ef25dcb854cac1cd5b1e5dab5f6b1f1adf8f92a03a907ae69d064e194530a35",
         "locator": {
           "kind": "symbol",
@@ -43,12 +43,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8ca5ea9025c7b768c0dd23a792e662716a5ead8a",
+            "blob": "5024a7ad33c837d26fe69debaa4da32cf2b3bfa8",
             "content": "sha256:7ef25dcb854cac1cd5b1e5dab5f6b1f1adf8f92a03a907ae69d064e194530a35",
             "locator": {
-              "end": 62,
+              "end": 74,
               "kind": "line_range",
-              "start": 38
+              "start": 50
             }
           },
           "kind": "test"
@@ -77,12 +77,28 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8ca5ea9025c7b768c0dd23a792e662716a5ead8a",
+            "blob": "5024a7ad33c837d26fe69debaa4da32cf2b3bfa8",
             "content": "sha256:7bab40ff0cc245f871dff2f90ef71e8e3ef284de9738c217dcbec581641f07be",
             "locator": {
-              "end": 178,
+              "end": 231,
               "kind": "line_range",
-              "start": 162
+              "start": 215
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "Held opener restores missing role facts before native agent-create and leaves the other held.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5024a7ad33c837d26fe69debaa4da32cf2b3bfa8",
+            "content": "sha256:436c850241439a47f7d84d3a6a3582f6262b408d5442cf9b57636291b3149620",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_first_message_opens_a_held_seat_and_leaves_the_other_held"
             }
           },
           "kind": "test"

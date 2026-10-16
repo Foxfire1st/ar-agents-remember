@@ -1,0 +1,42 @@
+{
+  "path": "mcp/src/agents_remember/serving/projections/host_activity.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "64247b1567681e2b8e60bb36434fadd33ed6a347",
+        "content": "sha256:541866508eb5aaab01e63f9a9a359c845064db140dd95972551fa7381a98e3ef",
+        "locator": {
+          "kind": "symbol",
+          "name": "HostActivityInput"
+        }
+      },
+      "id": "RLZ-FJCF4Y",
+      "invariant": "INV-X0KED3",
+      "origin": {
+        "handoffEntry": "L168-W-R167-02",
+        "leaf": "260928-MIK-L168"
+      },
+      "rationale": "This input consumes notifications and boot reconciliation rather than periodically reading host state.",
+      "role": "propagation-persistence"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Intake the plugin’s event-driven host publication only at startup or host invalidation, reconciling boot identity before exposing known activity.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "64247b1567681e2b8e60bb36434fadd33ed6a347",
+            "content": "sha256:541866508eb5aaab01e63f9a9a359c845064db140dd95972551fa7381a98e3ef",
+            "locator": {
+              "kind": "symbol",
+              "name": "HostActivityInput"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

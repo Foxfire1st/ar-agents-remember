@@ -10,13 +10,13 @@
 
 ## Purpose
 
-This directory defines lifecycle signal responses and strict transaction models for task-addressed closeout, integration and direct landing. It describes accepted inputs, durable operation records, public observations, preparation, certification, cancellation and enclosure identity. It also defines curator-coherence generations and the separate knowledge-review assessment collection.
+This directory defines strict transaction models for task-addressed closeout, integration and direct landing. The former agent-session lifecycle signal response/vocabulary in responses.py is removed; transaction package naming does not restore that API. It describes accepted inputs, durable operation records, public observations, preparation, certification, cancellation and enclosure identity. It also defines curator-coherence generations and the separate knowledge-review assessment collection.
 
 Execution, persistence, physical publication readback and tool payload assembly belong to the consuming observer, worktree, application and MCP layers. A model accepting a record establishes its structural validity; it does not establish that Git mutation, certification execution or publication occurred.
 
 ## Hot Path Summary
 
-Use `responses.py` for lifecycle signal state/phase vocabulary, `finalize.py` for terminal finalization responses, and `operation.py` for accepted transaction inputs and durable records. `operation_projection.py` owns the versioned public envelope, re-exported by `operation.py`; `operation_kinds.py` centralizes operation kinds, statuses, phases and control actions.
+Use `finalize.py` for terminal finalization responses and `operation.py` for accepted transaction inputs and durable records. Native task stage/activity/eventAt belongs to observer/projection.py and its task-entry producer, not the removed responses.py session State/Phase domain. `operation_projection.py` owns the versioned public envelope, re-exported by `operation.py`; `operation_kinds.py` centralizes operation kinds, statuses, phases and control actions.
 
 Recovery output fields distinguish the code commit from the memory-content commit. `mutation_evidence.py` retains actual Git `head` and `headTree` alongside optional `contentHeadTree`. Preparation retains the ordered code/memory-content prefix and keeps private output selection separate from published mutation authority.
 
@@ -28,7 +28,7 @@ DirectLandingOperationInput retains canonical leafTaskDocumentRef, optional code
 
 ### Signal and transaction models
 
-The package marker introduces no facade. `responses.py` owns lifecycle signal vocabulary and the shared response carrying lifecycle ID, state and phase. These signal states are distinct from the asynchronous operation vocabulary in `operation_kinds.py`.
+The package marker introduces no facade. The former responses.py session state/phase vocabulary and lifecycle-id signal response are historical only. The retained asynchronous transaction-operation vocabulary belongs to operation_kinds.py; native task state is a separate model, not a rename of the deleted signal response.
 
 `CloseoutOperationInput` retains normalized effective input, approval note, gate-policy snapshots and corrective dispositions. `IntegrateOperationInput` retains strategy, gate-policy snapshots and the completion-seat choice. Their discriminated union also admits the separate direct-landing input.
 
@@ -90,7 +90,6 @@ The original claim that normal closeout/integration workers do not select, popul
 ## File-Level Onboarding Map
 
 - [`__init__.py.md`](__init__.py.md) — side-effect-free package marker.
-- [`responses.py.md`](responses.py.md) — lifecycle signal vocabularies and responses.
 - [`finalize.py.md`](finalize.py.md) — terminal task-finalization response.
 - [`operation.py.md`](operation.py.md) — asynchronous lifecycle operation inputs, record, and projection re-export.
 - [`certification.py.md`](certification.py.md) — exact closeout selection, retained memory observations and append-only original terminal history.
@@ -107,7 +106,9 @@ Read the focused model card, then its producer and consumer references. Use the 
 
 ## Evidence
 
-- Lifecycle response vocabularies and models are owned together. [1]
+
+
+- Native task stage/activity/eventAt is declared separately; the removed session response/state vocabulary is not an operative model in this route. [1]
 - Finalization exposes edge proof and completion-seat result sets. [2]
 - Asynchronous operation records keep private execution identity out of the declared public projection fields. [3]
 - Recovery records have code and memory-content output-commit fields. [4]

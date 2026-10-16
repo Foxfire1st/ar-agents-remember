@@ -9,9 +9,7 @@
   "conditions": [
     "A writer is installed at server start; outside a server process the call is not observed."
   ],
-  "exclusions": [
-    "Calls owned by an active earlier-kind lifecycle, which that path writes."
-  ],
+  "exclusions": [],
   "id": "INV-18B62F",
   "origin": {
     "handoff": {
@@ -24,7 +22,7 @@
     "leaf": "260928-MIK-L114",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-invariant/v1",
   "statement": "Rule-1 workspace-river writer: facts-only tool.completed per call, caller/targetRole/dropped facts, 120-char cap, per-append admission, counted failures.",
   "status": "proposed",

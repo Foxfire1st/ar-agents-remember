@@ -337,7 +337,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "316629d0c8fb07af90b3b3526997da60f2a46898",
+            "blob": "cb170808c1e7ad3aa75e0bfd0860f2206b2291c8",
             "content": "sha256:14e80730ab07d7d43dc99018799af181b630e96b07f7bc9ba74c1111b4c462a1",
             "locator": {
               "kind": "symbol",
@@ -1134,53 +1134,17 @@
         }
       ]
     },
-    "155": {
-      "note": "Current ownership/control, without execution or runtime tool exposure inferred.\n\nAnchor: `buildEngineRoomModel(engineProcesses, Object.values(lifecycles)),`",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "20386ce24dbf50d2623c264f361b4a10dff165c5",
-            "content": "sha256:fe72de382df0b3d7f24adde324c8db7df4b51e35eb5d7e1ca3ce4be52c001fd9",
-            "locator": {
-              "end": 177,
-              "kind": "line_range",
-              "start": 119
-            },
-            "path": "dashboard/src/panels/EngineRoom.tsx"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "156": {
-      "note": "Current ownership/control, without execution or runtime tool exposure inferred.\n\nAnchor: `export function OfficialLineLayer({`",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "596dec5c6c7c633b293640144a05def6c8ef4578",
-            "content": "sha256:0b75b11bb39be418cd7ac4a0f535284d932b9e1757e220fc93b14bbb10461c2c",
-            "locator": {
-              "end": 252,
-              "kind": "line_range",
-              "start": 187
-            },
-            "path": "dashboard/src/panels/engine-room/sceneLayers.tsx"
-          },
-          "kind": "code"
-        }
-      ]
-    },
     "159": {
-      "note": "Current ownership/control, without execution or runtime tool exposure inferred.\n\nAnchor: `const TOOL_LABELS: Record<string, string> = {`",
+      "note": "Current ownership/control, without execution or runtime tool exposure inferred.\n\nAnchor: actual current supporting source",
       "targets": [
         {
           "anchor": {
-            "blob": "02b856c5abc15a186564c83888ec1016bd161179",
-            "content": "sha256:e7c4b3581a01a7c689b0129e8b740af8f540d77b02b7391b44f3ff5752263ed4",
+            "blob": "ea76263611577cad45322c53e6e5c0e2c1b80251",
+            "content": "sha256:5343816681490d792f1c4967f78c6dc843bbcba8360a77e48683cc8f0d446822",
             "locator": {
-              "end": 81,
+              "end": 57,
               "kind": "line_range",
-              "start": 65
+              "start": 27
             },
             "path": "dashboard/src/panels/eventSummary.ts"
           },
@@ -1821,12 +1785,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d0e0f3a0a209313492e7cb61a2066cf40519f66e",
+            "blob": "b8a91035417026d4649506297946286a4abd6d17",
             "content": "sha256:2a76976b11ff89568e439d47aaa17b994079b63859d4903a0c217d78827135fd",
             "locator": {
-              "end": 414,
+              "end": 401,
               "kind": "line_range",
-              "start": 386
+              "start": 373
             },
             "path": "dashboard/src/panels/changeset/ChangeSetViewer.tsx"
           },
@@ -1869,12 +1833,12 @@
         },
         {
           "anchor": {
-            "blob": "316629d0c8fb07af90b3b3526997da60f2a46898",
+            "blob": "cb170808c1e7ad3aa75e0bfd0860f2206b2291c8",
             "content": "sha256:27eca251139a989327cfb8d6404c0eeca8e1e11087ce592e55827e3def5db13e",
             "locator": {
-              "end": 163,
+              "end": 124,
               "kind": "line_range",
-              "start": 148
+              "start": 109
             },
             "path": "dashboard/src/panels/detail-panel/changeSetBar.tsx"
           },
@@ -2016,6 +1980,23 @@
               "kind": "file"
             },
             "path": "dashboard/src/panels/lifecycle-list/treeRows.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "193": {
+      "note": "The task-page grant switch keys on native planned stage and the document subTask kind; other granted states show bare words. This does not move grant authority into the browser.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8727e6986904131489c13104c706b28a118acb8a",
+            "content": "sha256:04eb9177a3fc0fbb280e198071fcdb0abe455a18b12e3746d98fe6b3822a23da",
+            "locator": {
+              "kind": "symbol",
+              "name": "TaskDirectGrant"
+            },
+            "path": "dashboard/src/panels/detail-panel/directGrant.tsx"
           },
           "kind": "code"
         }
@@ -2314,7 +2295,7 @@
         },
         {
           "anchor": {
-            "blob": "88aaa04262766c094a76bb241c87655a34aa8414",
+            "blob": "68121e9668db87a9d23260c691ac8c1ba4513e6d",
             "content": "sha256:c0420b2dd5bea4a4f594d8ed95ced8b024a0ed142835e84b314d6e1d298ec012",
             "locator": {
               "kind": "symbol",
@@ -2326,12 +2307,12 @@
         },
         {
           "anchor": {
-            "blob": "88aaa04262766c094a76bb241c87655a34aa8414",
+            "blob": "68121e9668db87a9d23260c691ac8c1ba4513e6d",
             "content": "sha256:fdbcca409a845b5ec0a408ab1849630b644e54948c9faeb6905fb090804f5d3d",
             "locator": {
-              "end": 18,
+              "end": 21,
               "kind": "line_range",
-              "start": 17
+              "start": 20
             },
             "path": "dashboard/src/data/store.ts"
           },
@@ -2421,16 +2402,15 @@
       ]
     },
     "52": {
-      "note": "`LifecycleList` owns Operations navigation, row grouping, the selection callback, and hidden-list re-show behavior.\n\nAnchor: \"function LifecycleListImpl({\"",
+      "note": "LifecycleList consumes native entry rows and preserves grouping, selection and one-shot reveal without the removed lifecycle hierarchy adapter.",
       "targets": [
         {
           "anchor": {
-            "blob": "ecdae05db864c7b971d33f96f89359d5c51988bc",
-            "content": "sha256:5b487559c73456bae39b7786613a353219273ea6f3723c6f4f972a9411df18c8",
+            "blob": "a1da64452b66ed600866ad56b37418f973ed3e37",
+            "content": "sha256:287351439ac3133ecca869d13066ff5e9b4169c5ae421229c43f5c5fedf41dca",
             "locator": {
-              "end": 260,
-              "kind": "line_range",
-              "start": 225
+              "kind": "symbol",
+              "name": "LifecycleListImpl"
             },
             "path": "dashboard/src/panels/lifecycle-list/LifecycleList.tsx"
           },
@@ -2439,40 +2419,15 @@
       ]
     },
     "53": {
-      "note": "`DetailPanel` resolves the selected task/lifecycle/series reader target and renders the task document content.",
+      "note": "DetailPanel resolves the selected native entry through its state owner and renders TaskDocumentPanel, rather than separate lifecycle/series reader targets.",
       "targets": [
         {
           "anchor": {
-            "blob": "2f8b273cc44c9365e0b7df0d1fa61dc61c5e1aa3",
-            "content": "sha256:c8150dcbcc14f9af288755d9698b804f56e7e450b0df2f2af54283478deb6825",
+            "blob": "1b073b40c856a543a8a8616ba9888a747125bdf7",
+            "content": "sha256:9dbbcbe36a3cda1c7585567e7f9a54a76b077037089a898bdf60f33498a3d764",
             "locator": {
               "kind": "symbol",
-              "name": "displayedReaderDoc"
-            },
-            "path": "dashboard/src/panels/detail-panel/model.ts"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "29a2217745a3ef92625b3283471bf70a9453482f",
-            "content": "sha256:7f2b29039b5eb969df5f4cdea1bf659589096ce678be8ff62784684c7e8d8777",
-            "locator": {
-              "kind": "symbol",
-              "name": "TaskReader"
-            },
-            "path": "dashboard/src/panels/detail-panel/taskReader.tsx"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "f96cdd9be0b6931b1633809cb781c9be0cfa0874",
-            "content": "sha256:36eb7db918cf362094b42a7696eb4db5dcda6113c52439a2bce0cbc199739ab5",
-            "locator": {
-              "end": 66,
-              "kind": "line_range",
-              "start": 14
+              "name": "DetailPanelImpl"
             },
             "path": "dashboard/src/panels/detail-panel/DetailPanel.tsx"
           },
@@ -2481,108 +2436,32 @@
       ]
     },
     "54": {
-      "note": "The lifecycle state vocabulary is the live/terminal partition consumed by the lifecycle panel; the `State`/`Phase` literals moved to `models/lifecycle.py` by 260731-EFA-L9 while the live/terminal sets stay in observer.\n\nAnchor: \"State = Literal[LiveState\"; \"LIVE_STATES: tuple[LiveState\"; \"TERMINAL_STATES: frozenset[str] = frozenset(vocabulary_names(TerminalState, label=\\\"TerminalState\\\"))\"; \"export const LifecycleList = memo(LifecycleListImpl);\"",
+      "note": "Native task stage/activity/eventAt replaces the removed session State/Phase live-terminal partition as the Operations state input. This is a distinct model, not a renamed session vocabulary.",
       "targets": [
         {
           "anchor": {
-            "blob": "9030c326e5e16730e1dff8af52680f98eaa923fa",
-            "content": "sha256:44c8d45e3b5599ef3ead09d582379cfa8aad059442a8ba986d59a79c55752845",
+            "blob": "cb7649c76f226f56141cd36720b382cea60352c7",
+            "content": "sha256:e345bcf52910f1d43fcff54700f85ea691a6b896120f54a78d4be96269c1b309",
             "locator": {
-              "end": 14,
-              "kind": "line_range",
-              "start": 14
+              "kind": "symbol",
+              "name": "TaskState"
             },
-            "path": "mcp/src/agents_remember/models/lifecycles/responses.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "a40e70f0c1f1496f2b5e3830ef390e1e16ae1ddf",
-            "content": "sha256:4603a9739fe3f72c132302525a83ad80786c7fdb576a68cdd57cc7c686255062",
-            "locator": {
-              "end": 107,
-              "kind": "line_range",
-              "start": 105
-            },
-            "path": "mcp/src/agents_remember/observer/lifecycle_state.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "a40e70f0c1f1496f2b5e3830ef390e1e16ae1ddf",
-            "content": "sha256:8c4374938879f79e4d6802c63925956662c216e71284014a1a4b7cc3a49d882d",
-            "locator": {
-              "end": 108,
-              "kind": "line_range",
-              "start": 108
-            },
-            "path": "mcp/src/agents_remember/observer/lifecycle_state.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "ae0b34f8138b4a85b281c7a8b0009da082f7bad9",
-            "content": "sha256:362a526d7c69b979144059ab47c90f76c1088d5e0ad3599ff42d6dcb84b41e7d",
-            "locator": {
-              "end": 326,
-              "kind": "line_range",
-              "start": 326
-            },
-            "path": "dashboard/src/panels/lifecycle-list/LifecycleList.tsx"
+            "path": "mcp/src/agents_remember/observer/projection.py"
           },
           "kind": "code"
         }
       ]
     },
     "55": {
-      "note": "The shared fixture builders seed lifecycle and projection nodes from served fixtures, with required lifecycle fields copied from the served lifecycle. Ranges re-derived: the `lifecycle` occurrences this row names are at `:90-90`, `:243-243` and `:257-257`.",
+      "note": "Native entry fixture defaults copy specific sampled identities while explicitly declaring planned/count/collection defaults; there is no current lifecycle factory or claim that every value is server-derived.",
       "targets": [
         {
           "anchor": {
-            "blob": "9748f432f9443a640ef5221d0bace3f986bed50e",
-            "content": "sha256:1ec7c03aacff4fca142143c53ebffb23a0ebeaa58260d527613090632daacb30",
+            "blob": "a863e49a83213f748fa2993ef0953d7e0f2362a4",
+            "content": "sha256:f6b5bf5a981ee7a6120113585214555db8fbb1e14381b488209bca7a7fddd52a",
             "locator": {
               "kind": "symbol",
-              "name": "SERVED_LIFECYCLE"
-            },
-            "path": "dashboard/src/test/fixtures/wire.ts"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "57f5f5953cc48ef38638da1236bf0556faeb5077",
-            "content": "sha256:9218a35ede1b356e59b2071632ffa1bbcd7f21b68d73f3220b6b303a83cb45ab",
-            "locator": {
-              "kind": "symbol",
-              "name": "BASE_LIFECYCLE"
-            },
-            "path": "dashboard/src/test/fixtures/wire.ts"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "9748f432f9443a640ef5221d0bace3f986bed50e",
-            "content": "sha256:d0a2ab51fc39e99c785427195b81e8d28bda217130654c318b480eaad0b95c1e",
-            "locator": {
-              "kind": "symbol",
-              "name": "lifecycle"
-            },
-            "path": "dashboard/src/test/fixtures/wire.ts"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "9748f432f9443a640ef5221d0bace3f986bed50e",
-            "content": "sha256:d2af665eedc8a50a5532a15b550ca9fa03188b3a307676167301b39926ac8c24",
-            "locator": {
-              "kind": "symbol",
-              "name": "projection"
+              "name": "BASE_TASK_ENTRY"
             },
             "path": "dashboard/src/test/fixtures/wire.ts"
           },
@@ -2591,39 +2470,15 @@
       ]
     },
     "56": {
-      "note": "The typed lifecycle and projection factories are shape-aligned; the served lifecycle binding supplies copied identities without making every content/default value served-derived.",
+      "note": "The typed native projection factory supplies tasks/taskCounts and analytics defaults. Mirror-conforming sampled shape is not producer completeness or fresh test/runtime acceptance.",
       "targets": [
         {
           "anchor": {
-            "blob": "9748f432f9443a640ef5221d0bace3f986bed50e",
-            "content": "sha256:d0a2ab51fc39e99c785427195b81e8d28bda217130654c318b480eaad0b95c1e",
-            "locator": {
-              "kind": "symbol",
-              "name": "lifecycle"
-            },
-            "path": "dashboard/src/test/fixtures/wire.ts"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "9748f432f9443a640ef5221d0bace3f986bed50e",
-            "content": "sha256:d2af665eedc8a50a5532a15b550ca9fa03188b3a307676167301b39926ac8c24",
+            "blob": "a863e49a83213f748fa2993ef0953d7e0f2362a4",
+            "content": "sha256:43d7fa211254618f78077618747b1904a3ff72893e350c1d497d3b23f5f3fd9f",
             "locator": {
               "kind": "symbol",
               "name": "projection"
-            },
-            "path": "dashboard/src/test/fixtures/wire.ts"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "9748f432f9443a640ef5221d0bace3f986bed50e",
-            "content": "sha256:1ec7c03aacff4fca142143c53ebffb23a0ebeaa58260d527613090632daacb30",
-            "locator": {
-              "kind": "symbol",
-              "name": "SERVED_LIFECYCLE"
             },
             "path": "dashboard/src/test/fixtures/wire.ts"
           },
@@ -2671,7 +2526,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "316629d0c8fb07af90b3b3526997da60f2a46898",
+            "blob": "cb170808c1e7ad3aa75e0bfd0860f2206b2291c8",
             "content": "sha256:78a2511b6bd78a873823e850522c8de72b55eb97adc68077bed4883b68d1ea72",
             "locator": {
               "end": 4,
@@ -2745,30 +2600,18 @@
       ]
     },
     "61": {
-      "note": "The shared leaf-liveness predicate chooses live versus recorded entry context; it is not a catalogue-subject admission gate.",
+      "note": "`DocChangeSetBar` checks whether any entry worktree has `codeWorktreeExists` or `memoryWorktreeExists`; that liveness selects live versus recorded entry context, not catalogue-subject admission.",
       "targets": [
         {
           "anchor": {
-            "blob": "316629d0c8fb07af90b3b3526997da60f2a46898",
-            "content": "sha256:71cd159561dfafcdf346e22ba29fd069090dca1ef6108584c65a420dcae544ab",
+            "blob": "cb170808c1e7ad3aa75e0bfd0860f2206b2291c8",
+            "content": "sha256:0a87fba4ecb4544157cf70cbcc24d00ad21e1dbf75db9704e93ef8d81673ddcc",
             "locator": {
-              "kind": "symbol",
-              "name": "leafIsLive"
+              "end": 315,
+              "kind": "line_range",
+              "start": 275
             },
             "path": "dashboard/src/panels/detail-panel/changeSetBar.tsx"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "78855920faa4d3b0902e62b1fe548015cb9bb2a0",
-            "content": "sha256:bade70637a901da6626b5e6987e58d6665b89ed1b4d6d9edd47c6d5a9e3ba416",
-            "locator": {
-              "end": 14,
-              "kind": "line_range",
-              "start": 10
-            },
-            "path": "dashboard/src/panels/detail-panel/intentReviewEntry.tsx"
           },
           "kind": "code"
         }
@@ -2821,12 +2664,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "316629d0c8fb07af90b3b3526997da60f2a46898",
+            "blob": "cb170808c1e7ad3aa75e0bfd0860f2206b2291c8",
             "content": "sha256:b36d13058eb8d6367c672f9857f4b4d248d9152e4085fd36681eb1724395bcf0",
             "locator": {
-              "end": 164,
+              "end": 125,
               "kind": "line_range",
-              "start": 151
+              "start": 112
             },
             "path": "dashboard/src/panels/detail-panel/changeSetBar.tsx"
           },

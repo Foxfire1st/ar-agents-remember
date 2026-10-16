@@ -7,7 +7,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9a9d8ebbb21affe07f6d689a89624db06bcb2e3e",
+            "blob": "1c145f123802e351486f43a75568001266214b95",
             "content": "sha256:567ab9b81cb0e6e60e55666a5387dcf304ec220fdf89a2cc25868f28af814f7b",
             "locator": {
               "kind": "symbol",
@@ -24,7 +24,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "771d1ca849e63161968eb0f54325d6f5a4fcd0e2",
+            "blob": "68121e9668db87a9d23260c691ac8c1ba4513e6d",
             "content": "sha256:926d6a6de6cec9af70b4ca36310f6f429f5a6c996284d53811f49b3bb4e27ef7",
             "locator": {
               "kind": "symbol",
@@ -49,12 +49,12 @@
         },
         {
           "anchor": {
-            "blob": "771d1ca849e63161968eb0f54325d6f5a4fcd0e2",
+            "blob": "68121e9668db87a9d23260c691ac8c1ba4513e6d",
             "content": "sha256:e9c633ebc73de48d066399d876c832266cc82beb1eb5f3b7762cd9de31961566",
             "locator": {
-              "end": 121,
+              "end": 105,
               "kind": "line_range",
-              "start": 101
+              "start": 85
             },
             "path": "dashboard/src/data/store.ts"
           },
@@ -63,16 +63,42 @@
       ]
     },
     "3": {
-      "note": "The display sites' shared import pattern (`servedAgeSeconds` + `useNowMs`): Hangar, AttentionQueue, MemoryMirror, LifecycleList.\n\nAnchor: \"import { servedAgeSeconds, useNowMs } from \\\"../data/servedAges\\\";\"",
+      "note": "MemoryMirror and AttentionQueue retain the shared served-age/clock imports. Hangar instead renders the bound task through TaskStatusWord, not the removed enclosure-age ticker.\n\nAnchor: actual current supporting source",
       "targets": [
         {
           "anchor": {
-            "blob": "8a2d5b192fc4938c0730d528dfbc497ae3763c2d",
-            "content": "sha256:30522fa138fa03363c399e87865abe2f7ef96d9ac36d92a5a4ead1fd836f7e28",
+            "blob": "9569d88720f6e78045675d93303f7a4752fb92e1",
+            "content": "sha256:4519cd3a4a0d0e19968005a69b275e088eb40e015c4bdcc27d45d1aae4291259",
             "locator": {
-              "end": 3,
+              "end": 4,
               "kind": "line_range",
-              "start": 3
+              "start": 1
+            },
+            "path": "dashboard/src/panels/MemoryMirror.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a563b9fb8bb0e0538d458ea35dfc154a0761ec68",
+            "content": "sha256:72208a62817acef365ce82646c98d9f765ce6886e39373d79394be541b5c5314",
+            "locator": {
+              "end": 9,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "dashboard/src/panels/AttentionQueue.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "680165d45ec58ec145ee32803409c4b439281a09",
+            "content": "sha256:b101fea90de03725075af6ec1a428181d3c0f1e0f9eb352b613a0f21f408e176",
+            "locator": {
+              "end": 95,
+              "kind": "line_range",
+              "start": 57
             },
             "path": "dashboard/src/panels/Hangar.tsx"
           },

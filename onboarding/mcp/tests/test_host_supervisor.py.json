@@ -1,0 +1,71 @@
+{
+  "path": "mcp/tests/test_host_supervisor.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "No subscription means unknown activity and no bridge call.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cbb927538eefcdf61ef241586f6d0e1a88c87752",
+            "content": "sha256:e0b45c0d5583fadaa07193d70e77f28c1a846394a51a7a8926e5b6d8a66f5e6d",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_unknown_without_a_supervisor_subscription_does_not_certify_old_activity"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "A stale post-open identity refuses the subscription.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cbb927538eefcdf61ef241586f6d0e1a88c87752",
+            "content": "sha256:a1526e55c0fda774654af1b0bdb7002a1298631ea2b67a6938ba2106e17cf21d",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_supervisor_identity_is_proved_again_after_pidfd_open"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Disposable native child exit emits one invalidation and disarms.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cbb927538eefcdf61ef241586f6d0e1a88c87752",
+            "content": "sha256:ba70fe5170ddd5180ac94527585f9e228f54a22896f756f919d512ab3e156d39",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_native_pidfd_exit_invalidates_once_and_releases_the_subscription"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "Permission failure leaves a started but unarmed subscription, not the old proof.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cbb927538eefcdf61ef241586f6d0e1a88c87752",
+            "content": "sha256:0d345b1531b85a282cf20637e47542bd0dac3f4689948edf35d1b29589c14c17",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_subscription_failure_is_unknown_and_does_not_keep_the_old_handle"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

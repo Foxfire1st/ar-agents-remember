@@ -16,26 +16,23 @@ re-emission that OOM'd long-lived dashboard tabs.
 
 ## Code Commentary
 
-`VOLATILE_AGE_FIELDS` — the five now-relative age keys recomputed from the tick clock every
+`VOLATILE_AGE_FIELDS` — the six now-relative age keys recomputed from the tick clock every
 projection (`staleSeconds`, `snapshotStaleSeconds`, `ageSeconds`, `waitSeconds`,
-`heartbeatAgeSeconds`). Mirrored byte-for-byte client-side (`dashboard/src/data/servedAges.ts`);
+`heartbeatAgeSeconds`, `elapsedSeconds`). Mirrored byte-for-byte client-side (`dashboard/src/data/servedAges.ts`);
 both sides carry lockstep tests.
 
 `_strip_volatile` / `_stable_dump` — a node's stable form: the wire dump (by-alias, none-free)
 with volatile keys recursively removed. `StableProjectionState` holds one projection's stable
-forms (id-keyed per collection + metrics/analytics/activeWorktreeGroups);
+forms (tasks by qualified key, enclosures/providers by their own identities, plus taskCounts/metrics/analytics/activeWorktreeGroups);
 `stable_projection_state(projection)` computes them once (~4–5 ms on the ~800 KB live payload).
 
-`DeltaEvent(event, data)` is a frozen dataclass: `event` is the SSE event name
-(`lifecycle`, `lifecycle.removed`, `enclosure`, `provider`, `activeWorktreeGroups`, `metrics`,
-`analytics`), `data` is an upserted projection node (`BaseModel`) or a `dict` payload (a `{key: id}`
-removal marker, or the `activeWorktreeGroups` whole-value wrapper).
+`DeltaEvent(event, data)` is a frozen transport value: task upserts use `task`, removals `task.removed` with `{key: ...}`, and aggregate count changes use `taskCounts`. Enclosure/provider and activeWorktreeGroups/metrics/analytics events retain their own contracts. There are no lifecycle collection deltas.
 
 `diff_projection(previous, current, *, previous_state=None, current_state=None)` returns `[]` on
 the first tick (`previous is None` — the first projection is delivered as the snapshot, not
-deltas). Otherwise it diffs the three flat collections via `_collection_deltas` on their stable
+deltas). Otherwise it diffs the task/enclosure/provider collections via `_collection_deltas` on their stable
 forms, and emits a whole-value event for `activeWorktreeGroups` and a whole-block event for
-`metrics`/`analytics` when the *stable* forms differ. The optional `*_state` arguments accept
+`taskCounts`/`metrics`/`analytics` when the *stable* forms differ. The optional `*_state` arguments accept
 precomputed stable forms — the projector caches the previous tick's so each tick pays for ONE
 stable dump — while the pure two-argument call form still works (tests, ad-hoc use). An emitted
 node is always the CURRENT model in full, so fresh ages ride along with every real change.
@@ -58,6 +55,6 @@ deterministic (replay/sim fixtures compare byte-for-byte).
 
 ### Repo-Internal References
 
-- The projection schema diffed here (flat, id-keyed collections). [1]
+- WorkspaceProjection version 2 carries native tasks and taskCounts, unbound enclosures, providers, active worktree groups, optional closeout queues, metrics and analytics; each TaskEntry has a qualified key/reference and may own worktrees. Stable diff state keys tasks by entry.key, enclosures by enclosure and providers by id; counts, active groups, metrics and analytics use whole-value comparisons. There is no lifecycles collection in this schema. [1]
 - The projector calls the stable-state and diff functions, publishes the projection, and broadcasts resulting items. [2]
 - The client mirror of the volatile set + local age advancement. [3]

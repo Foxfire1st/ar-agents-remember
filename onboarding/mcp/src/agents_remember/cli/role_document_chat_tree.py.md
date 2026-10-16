@@ -10,7 +10,7 @@
 
 ## Code Commentary
 
-A request accepts at most 256 selections, reads each distinct receipt path once, retains its chat projection and releases all readings at request end. Accepted records are bounded by 1 MiB each and a 16 MiB request budget, consumed in selection order; a bounded read allows one sentinel byte to detect growth. No cross-request receipt or host-result cache is created.
+A request accepts at most 256 selections, reads each distinct receipt path once, retains its chat projection and releases all readings at request end. Accepted records are bounded by 1 MiB each and a 16 MiB request budget, consumed in selection order; a bounded read allows one sentinel byte to detect growth. No cross-request receipt or host-result cache is created. The retained chat projection also preserves `report.path` when it is a string, so warmup can republish receipt-bound role identity before resume. This does not add another receipt or status writer.
 
 `agents: null` means unknown: documentless/Projects scope, unreadable/non-regular/damaged/foreign receipt, exceeded receipt budget, or a recorded agent absent from an incomplete listing. Missing role receipts or absence from a complete census can yield `agents: []`; listed live IDs remain usable even on an incomplete census. Corruption affects only its document, whereas unreachable/unreadable host census returns request-level `unavailable` with its reason and no per-selection rows.
 

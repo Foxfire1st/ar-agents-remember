@@ -53,9 +53,11 @@ shell's routing, rails or change-set plumbing changed with it: the target choose
 
 ### Logic
 
-- **Shared streams.** Cockpit wires connectState and one connectEvents raw-line consumer into the Event River/store, with a ready marker used for hydration. There is no seat-event reconciler, catalog poll driver or eager/cross-tab hosted-seat reconciler. Native Chats remains the retained host-chat surface; screen/wake-lock behavior must be attributed only to its actual current owner.
+- **Shared streams.** Cockpit wires connectState and one connectEvents raw-line consumer into the Event River/store, with a ready marker used for hydration. There is no seat-event reconciler, catalog poll driver or eager/cross-tab hosted-seat reconciler. Native Chats remains the retained host-chat surface. `CockpitShell` starts the screen wake lock once on mount through `useEffect(() => startScreenWakeLock(), [])`, using the returned stop function on unmount. The browser releases the lock while hidden, and `startScreenWakeLock` reacquires on visibility return; unsupported or denied requests do not add a banner.
 
 ### 260928-MIK-L114 Ready Last-Feed Handoff
+
+Native tasks come from the shared `s.tasks` map and a memoized `Object.values` array. The stable empty-array fallback belongs to `analytics?.engineProcesses`, not to a second analytics task collection.
 
 The event-stream ready handler receives the parsed `ready` marker and passes
 `ready?.lastEventTs` into `markEventsHydrated`, so the store — and the panel head — name
@@ -74,7 +76,7 @@ shared honest-motion gate.
   shell. Any browser reload remains operator-owned outside that cue.
 - The shell pins to `100vh` with `overflow:hidden`, so rails and viewport scroll internally and the
   bars stay fixed. Full-bleed hides the rails, never the alarm summary.
-- The left rail is why `grammar/Dot.tsx` cannot lean on colour alone: the attention layer and the lifecycle
+- The left rail is why `grammar/Dot.tsx` cannot lean on colour alone: the attention layer and the task
   tree carry different grammars in the same column and must stay distinguishable by glyph.
 - A page outside the product bar is not built and fetches nothing at page load; its folder code and
   layout behavior stay tested through an injected initial view.
@@ -95,10 +97,9 @@ neutral rather than falsely stale.
 
 ### Logic
 
-MainLayers mounts RoleChatsPane in the existing keep-alive ViewLayer, passing current taskDocuments and series. active reflects Chats visibility and takeover coverage. A view switch hides the existing pane rather than replacing it. Shared session poll/reconciliation retain their separate consumers; the RailChat context is gone with the module's removal under MIK-R95. Persistent layer identity is independent of task acceptance.
+MainLayers keeps RoleChatsPane in its existing keep-alive ViewLayer, passing the single served TaskEntry array. active reflects Chats visibility and takeover coverage; hiding the view preserves pane identity. Native host-chat and rail discovery retain their own request and transport authorities.
 
-The current Chats mount does not receive the old SessionsView lifecycle/leaf props; it receives
-canonical taskDocuments and series, while HighlightComposer retains its own context; RailChat's context went with its removal under MIK-R95.
+
 
 The raw event stream calls the store Event River consumer and marks hydration on the ready event. It has no per-connection seatEvents backlog applier or onInterrupt callback; a reconnect does not restore those deleted consumers. Current ordering/hydration and the independent native host-chat mounting remain distinct source-owned behavior.
 
@@ -112,8 +113,8 @@ their transitions use a `motion.aside` gated by `useShouldAnimate()` (instant un
 **Operations-integration L4** adds a `changeSet` TAKEOVER: `CockpitShell` holds a `changeSet:
 ChangeSetTarget | null` state; when set, a full-bleed `<ChangeSetViewer>` shows (its back link clears it,
 restoring the rails), and `open(id)` plus a mode-bar switch (`changeView`) also clear it — the takeover is
-transient (a task-scoped screen), not a standing view. `onOpenChangeSet` is threaded through `ViewBody`
-into `DetailPanel`. **L4a** changes the takeover from *replacing* the railed body to **overlaying** it:
+transient (a task-scoped screen), not a standing view. `onOpenChangeSet` passes from `RailedBody` through `MainLayers`
+into its retained `DetailPanel`; `ViewBody` accepts only `view` and `onOpen`. **L4a** changes the takeover from *replacing* the railed body to **overlaying** it:
 the railed body is now kept mounted but `display:none`/`aria-hidden` while the takeover shows (the same
 hidden-not-unmounted pattern as the File Viewer + Chats layers), so the `DetailPanel`'s drill state (which
 leaf you were reading) survives — the viewer's back link returns you to exactly where you opened it from
@@ -126,35 +127,12 @@ a full-bleed view. **Top-bar humanization + honesty (V15/V6/R7):** `ServingBuild
 HUMANIZED uptime (`humanizeDuration(Date.now() - bootedAt)`, one time format in the bar; the absolute
 start stamp stays in the tooltip — was a second 12h clock, V15); the brand `title` + each fact-chip
 (`dim`, `caution`, `connBadge`) are `whiteSpace:nowrap` and the `statusRow` is `flex-wrap:wrap` so the
-bar wraps BETWEEN chips, never mid-phrase (`1 running · 0/blocked`, V6); and the lifecycle counts are
-explicitly scope-labeled `tasks N running · N blocked` with a tooltip naming them
-lifecycle/task-scoped (a different authority from the Chats rail's chat-seat states — R7, no backend
-change). **260731-EFA-L4** gives that same `dim` span a `data-testid="task-metrics"` and appends one
-CONDITIONAL segment to it: `· {metrics.awaitingDeveloperCount} awaiting you`, rendered only while
-`metrics.awaitingDeveloperCount > 0`. Server-side `reducer.py::_metrics` stopped hand-writing one
-`sum(1 for lc in ...)` line per bucket and now expands `STATE_COUNT_FIELDS` (derived from the live-state
-vocabulary), so `awaiting-developer` has a bucket at last; before that a lifecycle which had stopped and
-handed the turn back was inside `lifecycleCount` and `totalTokens` and inside **none** of the numbers on
-this bar. The current bar displays running/blocked and conditional awaiting, not a token chip;
-this does not remove the underlying `totalTokens` metric. At zero awaiting, the span emits
-`tasks N running · N blocked` —
-running/blocked are the workspace's standing rhythm and read fine at zero, while a permanent
-`0 awaiting you` would be the same reassurance-zero lie the `⚠ N waiting` chip refuses to tell. The
-client mirror of the reducer rollup is `metricsFor(lifecycles)` in `types/projection.ts`, and `Metrics`
-now `extends LifecycleStateCounts` (one required `…Count` field mapped from each `ActiveState`), so a
-fixture or test seed states its lifecycles instead of re-listing buckets beside them — the hand-kept
-copies are where this gap kept reappearing. **5g G6** adds an `EffectsToggle` to the `TopBar`
+bar wraps BETWEEN chips, never mid-phrase (`1 running · 0/blocked`, V6); and the task metrics use the server's taskCounts: planned, started, completed, aborted, works, paused and unknown, labeled by the shared status grammar. The unknown bucket is omitted when its count is zero; a nonempty bucket retains the shared started/host-state-unknown wording. The other buckets keep their served counts. The browser does not count raw lifecycle states. **5g G6** adds an `EffectsToggle` to the `TopBar`
 (`effects-toggle`): a ✦ Effects / ❄ Calm button that flips `html[data-effects]` (which `useShouldAnimate`
 reads live, so the engine-room backdrop + all gated motion respond at once) and persists the choice to the
-`calm-cockpit` localStorage flag `main.tsx` reads on the next load. **Slice 6f** mounts the
-`HighlightComposer` once in `CockpitShell` (after the mode bar): a cockpit text selection raises it to
-send a context package to a chat session, and its `onSent` still flips to the Chats view after
-accepted delivery. That existing session-target flow does not by itself steer the native iframe;
-RoleChatsPane targets its own selected native execution receipt.
+`calm-cockpit` localStorage flag `main.tsx` reads on the next load.
 
-**Slice 6g** threads `open` into `DetailPanel` as `onOpenLifecycle`, so a
-cross-master `→` row or a parent `↑` breadcrumb in the task reader switches the selected lifecycle
-through the same `open(id)` path.
+The existing onOpenLifecycle callback name is retained as a navigation seam: it carries the opaque taskdoc-prefixed entry selection to open(id), which selects Operations and clears a takeover. It does not identify a session lifecycle.
 
 **Historical FEUI-L1/FEUI-L8 seam.** FEUI-L1 briefly registered a separate "sessions" route
 and mounted SessionsView there. FEUI-L8 retired that route and the legacy Chats component, then
@@ -163,13 +141,7 @@ the existing display/aria-hidden keep-alive layer remains. The retained session-
 and their WebTUI/keyboard markers still describe their own legacy consumers. ChatContextBar owns
 those modules' launch/attach/move controls, not the current full-page Role chats launcher.
 
-**Task 17** keeps `selectedId` as the shared Operations selection key, but normalizes raw ids from
-older surfaces through `lifecycleSelectionKey(id)` so the list/detail path can use typed keys
-(`taskdoc:` / `series:` / `lifecycle:`). `selectedLifecycleId` is derived through
-`lifecycleIdForSelection`, so HighlightComposer retains the lifecycle context behind a
-selected runtime row or task-document row. The old SessionsView attach seam belongs to the
-historical session surface; current RoleChatsPane launch selection comes from canonical task
-references rather than the Operations lifecycle selection.
+selectedId is the shared Operations selection. open(id) preserves the opaque entry selection exactly; taskdoc: carries a served entry key. Task state, activity, membership and workspace counts come from server entries and taskCounts, not raw-id normalization or lifecycle/series resolution.
 
 **One comment, and it records a shape the dispatch already supported.** The `ChangeSetTakeover` component's review branch gained a comment stating that a review target may carry a subject's selector **or none at all** — the task-context entry opens the review on the task, and `ReviewSurface` asks the server for exactly what it was handed. The dispatch itself was not changed: it already forwarded an optional selector, which is why the task-context target reaches the surface without a code change here. Nothing else in the cockpit moved, and the two lines are the whole of this file's diff.
 
@@ -197,16 +169,29 @@ rails/viewport scroll internally and the bars stay fixed. The master-caution liv
 top bar; full-bleed only hides the rails, never the alarm summary (§4.1). The `EffectsToggle` is the only
 writer of `html[data-effects]` from the UI (vs the `?effects=off` URL param / `calm-cockpit` flag
 `main.tsx` applies at boot); default is effects-on.
-**The left column keeps attention severity and lifecycle state distinct.** The bell opens the queue layer over the task tree; the old sibling-panel account no longer holds. A queue warning and a developer handoff can share amber while meaning different facts, and must retain distinct glyphs. The whole-shell test opens the bell to compare both marks; the reducer does not derive an attention row merely from awaiting-developer. Layer topology does not remove the state/severity naming lesson.
-`selectedId` is no longer assumed to be a raw lifecycle id. Any consumer that needs lifecycle context
-must derive it through the task-identity helper.
-`AgentNotifierHeartbeatBadge` (260707-HFX2-L2, renamed in 260713-TES-L1) renders `null` for a never-ticked heartbeat rather than a
-false "stale" alarm — the same "absence is not evidence of a problem" posture `servingBuild` already
-follows for a pre-L15 server.
+**The left column keeps attention severity and task status distinct.** The bell opens the queue layer over the task tree; the old sibling-panel account no longer holds. Severity glyphs and shared task marks have separate meanings; neither creates the other fact.
+`selectedId` is an opaque entry selection, not a raw lifecycle id; consumers resolve it in the shared tasks map.
+Missing serving-build evidence stays neutral; it is not evidence of staleness.
 
 ### Todos
 
 No task-independent technical debt was identified during FEUI-L9R review.
+
+## 260921-ICR-L12 The Takeover Hands The Record To The Review Surface
+
+`260921-ICR-L12` (`ICR-R12@v1`) adds one prop at the takeover: when the change-set target's review
+carries `historical`, `ChangeSetTakeover` mounts `ReviewSurface` with `history="recorded"`, and
+otherwise with `undefined` — the live candidate, which is what every ordinary entry asks for. The
+target's own comment records why the record travels this way: a closed leaf's entry carries it, so the
+surface asks for that leaf's recorded comparison rather than for a live candidate there is none of.
+
+Nothing else in the takeover changed: the review target's subject still travels as it did, the
+`onBack` contract is the same, and the cockpit adds no resolution of its own — the browser names a
+record and the server owns which comparison that record is.
+
+## Document Rail — native entry binding and keepalive
+
+The right rail passes the viewed canonical `taskDocumentRef` and shared `TaskEntry[]` to `DocumentChat`, not a separate series or lifecycle collection. Its unkeyed wrapper stays mounted and hides behind `display:none` and `aria-hidden` when the River is shown; the River itself mounts conditionally. `active` requires both the chat toggle and a non-full-bleed shell. This shell-level keepalive preserves the chat component, not every native iframe generation: fallback, retry and host-return behavior belong to `DocumentChat` and its native host owner. The former `RailChat`, `viewedLeafKey` prop and leaf-chat context are historical, not current rail inputs.
 
 ## Evidence
 
@@ -275,21 +260,11 @@ No relevant domain documentation was found for this file.
 
 - The reader's hash parser. [75]
 
-- The refcounted catalog poll driver started unconditionally here. [77]
 
-- Typed task/lifecycle selection helpers used by `open` and `selectedLifecycleId`. [78]
 - The frontend `Analytics` projection includes the `engineProcesses` process-map collection. [79]
-- Metrics extends the mapped active-state counts and adds total lifecycle/token and histogram fields. [80]
-- Every ActiveState maps to a required count field. [81]
-- The count-field name is derived from the camel-cased state vocabulary. [82]
-- metricsFor builds the client rollup from lifecycles and spreads the derived state counts. [83]
-- The server rollup this bar's `awaitingDeveloperCount` comes from: `_metrics` expands `STATE_COUNT_FIELDS`. [84]
 
-- `AgentNotifierHeartbeatBadge` reads the store field this top-bar indicator renders. [85]
 
-- The `AgentNotifierHeartbeat` type this badge's props shape mirrors. [86]
 
-- The shell starts the screen wake lock once on mount and releases it while hidden. [87]
 
 
 
@@ -304,6 +279,14 @@ No relevant domain documentation was found for this file.
 
 - The sole Chats destination mounts RoleChatsPane directly, has no Chats-mode selector or SessionsView child, and keeps the pane identity while hiding/showing the existing layer. [91]
 
+- Native task selection and memoization are separate from the Engine Room stable-empty fallback. [95]
+- The right rail keeps the chat side mounted in an unkeyed stable wrapper and hides it when the River shows; the River still mounts conditionally. [92]
+- The hidden chat side stays mounted but out of reach behind display:none and aria-hidden. [93]
+
+- The header labels served taskCounts through the shared status table and hides only an empty unknown bucket. [94]
+
+- The shell starts the screen wake lock once on mount; the wake-lock helper follows document visibility and releases its held sentinel on stop. [96]
+
 
 ### Cross-Repo References
 
@@ -313,25 +296,3 @@ This card maps a repository-local agents-remember source. Import and task-bounda
 cross-repository implementation source that governs its behavior.
 
 No applicable cross-repository source was found.
-
-## 260921-ICR-L12 The Takeover Hands The Record To The Review Surface
-
-`260921-ICR-L12` (`ICR-R12@v1`) adds one prop at the takeover: when the change-set target's review
-carries `historical`, `ChangeSetTakeover` mounts `ReviewSurface` with `history="recorded"`, and
-otherwise with `undefined` — the live candidate, which is what every ordinary entry asks for. The
-target's own comment records why the record travels this way: a closed leaf's entry carries it, so the
-surface asks for that leaf's recorded comparison rather than for a live candidate there is none of.
-
-Nothing else in the takeover changed: the review target's subject still travels as it did, the
-`onBack` contract is the same, and the cockpit adds no resolution of its own — the browser names a
-record and the server owns which comparison that record is.
-
-## MIK-R95 Document Rail
-
-The Chat side of the right rail now mounts `DocumentChat` on the canonical viewed task plus the shared task series; the `RailChat` module, its `viewedLeafKey` plumbing and the leaf-chat context it consumed were removed (rule 8). `RightRail` receives `series` and `active={!fullBleed}` instead of engine/context values, so the retained rail keeps one frame while a full-bleed page hides it. Since MIK-R122 `RightRail` renders `DocumentChat` in an unkeyed stable keepalive wrapper and hides — never unmounts — the chat side, while the Event River still mounts only when shown, so one `DocumentChat` panel serves the whole dashboard lifetime after the first shown chat; the native iframe element itself is still replaced when the fallback loads, Retry refetches, or the host returns (generation rises, key follows). Where the selection names no effective agent the frame stays mounted behind the bound launcher; a matching Projects Architect remains an effective chat target and switches in the same frame (Owner no-document reading). The highlight composer no longer receives a direct leaf-chat target.
-
-
-- The right rail keeps the chat side mounted in an unkeyed stable wrapper and hides it when the river shows; the river still mounts conditionally. \[92] [92]
-
-
-- The hidden chat side stays mounted but out of reach behind display:none and aria-hidden. \[93] [93]

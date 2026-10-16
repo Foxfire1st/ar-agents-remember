@@ -12,7 +12,7 @@ Observer append routing and exact event round-trip.
 
 ### Logic
 
-Lifecycle-bound events append to their lifecycle log and lifecycleless events append to the workspace log. Reading the store returns the two emitted events with the original started event intact.
+Both scopeKey-bearing and unbound facts append to workspace/events.jsonl; a scoped event must not create a lifecycles directory. Reading the workspace store round-trips the original tool.completed event and its task scope exactly. Append success still grants no mutation authority.
 
 ### Conventions
 
@@ -38,8 +38,9 @@ No configured domain evidence applies to the file-local claims above.
 
 The retained source anchors below support the fixture roles and assertion boundaries described above. They identify current behavior, not a request to restore historical test counts or percentage targets.
 
-- Append routes per lifecycle. [1]
-- Workspace log for lifecycleless events. [2]
+- Task scope remains in the workspace river and creates no lifecycle directory. [4]
+- Unbound tool facts use the same workspace log. [5]
+
 - Round trip through store. [3]
 
 ### Cross-Repo References

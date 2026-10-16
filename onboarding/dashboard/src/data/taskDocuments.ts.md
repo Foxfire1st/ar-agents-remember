@@ -7,36 +7,25 @@ frontend source overview governs this client helper.
 
 ## Purpose
 
-Small fetch adapter for the dashboard's on-demand full task-document body endpoint. It keeps HTTP
-URL construction and response-status handling out of `DetailPanel`, while sharing the projection's
-`TaskDocNode` wire type.
+Transport and dashboard-store-owned resources for full task bodies and pure revision preparation; selection and availability remain with the reader hook.
 
 ## Code Commentary
 
 ### Logic
 
-`fetchTaskDocument(docPath, base="")` URL-encodes the projected document path into
-`GET {base}/api/task-document?path=...`. A non-2xx response raises an error containing the status;
-a successful response is decoded as `TaskDocNode`. The optional base supports hosted/test contexts
-without changing the production same-origin default.
+`fetchTaskDocument(reference, base, signal)` URL-encodes taskReferenceKey, rejects non-OK status and returns TaskSummary/ETag/UTF-8 bytes. taskBodyKey adds revision. TaskDocumentResources owns separate 64-entry/16-MiB body and preparation LRUs and at most 64 pending reads. Duplicate keys share a promise; capacity aborts oldest pending. Storage uses returned bodyRevision, not the initiating revision.
 
 ### Conventions
 
-This module follows the other `dashboard/src/data` adapters: one narrow transport operation, browser
-`fetch`, typed return data, and no React state. `useTaskDocumentBody.ts` owns cache and availability
-state; `DetailPanel` chooses the visible document and consumes that state.
+The store owns resources across navigation and unmounts. `prepare` caches pure data; callbacks and rendered nodes remain with live readers.
 
 ### Invariants And Boundaries
 
-The helper does not decide which document is visible, cache bodies, retry, or validate path
-confinement. `DetailPanel` owns selection, `useTaskDocumentBody` owns hydration/cache policy, and the
-serving snapshot layer resolves and confines the client-supplied path under `coordination_root/tasks`
-before reading.
+No visible-document choice, path authorization or task-state inference occurs here. The serving endpoint owns path confinement. Budgets limit history, not one active document, and confer no transactional workspace-read guarantee.
 
 ### Todos
 
-No file-local follow-up. Long-lived body-cache eviction belongs to `useTaskDocumentBody`, not this
-transport adapter.
+No additional file-local work is asserted.
 
 ## Evidence
 
@@ -50,16 +39,9 @@ No configured external/domain document defines this internal endpoint adapter.
 
 ### Repo-Internal References
 
-The helper is the frontend edge of the F6 split: selection/cache policy calls it, the server exposes
-the endpoint, and the snapshot reader performs the confined full-body read. The new helper exists in
-the named L13 code worktree but not yet in the official `agents-remember` checkout, so its durable
-workspace-relative source link becomes live when closeout integrates L13; this pre-integration source-
-link state is recorded rather than silently treated as already landed.
+The transport fetches the qualified visible body; the store resource owns retention and pending-read deduplication; the hook owns current-summary merge and availability.
 
-- The helper encodes `docPath`, rejects non-OK responses, and returns the decoded task node. [1]
-- `useTaskDocumentBody` calls the adapter for the visible document and keys cached bodies by path plus revision. [2]
 - The serving route maps projection readiness and the confined snapshot read to HTTP responses. [3]
-- The snapshot reader resolves under `tasks`, validates the schema, and builds the full node. [4]
 - That reader reaches the schema through the shared tolerant parse, so a field a newer build wrote no longer turns a readable body into a 404. [5]
 
 ### Cross-Repo References

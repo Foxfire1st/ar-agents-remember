@@ -25,7 +25,7 @@ branches differ. Because `activation_path` names its record by `contract_fingerp
 resolved contract path, the two contracts address two different record files even though they share
 the pair.
 
-`AtomicSeriesActivationTests` then forces five contract-scoped behaviours:
+`AtomicSeriesActivationTests` forces contract-scoped behaviours and pre-bootstrap stage admission:
 
 - `test_contracts_sharing_one_source_pair_hold_independent_selection` asserts the shared
   `code_source_branch` and two distinct `activation_path` values, publishes `active` on A and
@@ -82,7 +82,12 @@ verification stamps above are closeout-owned and are not advanced by this card's
 
 No file-local implementation change is requested by this reconciliation.
 
+The malformed sprint-stage case seeds duplicate master rows. Both preview and apply refuse `task-leaf-binding-invalid` with an ambiguous-row reason before bootstrap; captured task JSON bytes, code/memory refs and the absent series contract stay unchanged. This is distinct from selecting or repairing the activation record.
+
 ## Evidence
+
+- Invalid sprint stage refuses before either preview or actual bootstrap publication. [12]
+
 
 ### Docs References
 

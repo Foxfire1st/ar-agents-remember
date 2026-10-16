@@ -8,8 +8,9 @@
   },
   "applicability": "Sprint Order preview and its complete graph own view.",
   "conditions": [
-    "Rows use the producer wave/state and exclude finished masters from active rows.",
-    "Landed units remain a count and the full graph stays one link away."
+    "Entry stage determines completed/aborted exclusion and entry activity determines now versus wave membership; task words and tones use the shared status table.",
+    "Graph waves, ready/waiting/cycle annotations and edges remain dependency facts, not a second task-state vocabulary.",
+    "No separate graph-derived done/abandoned count is presented; the complete graph remains available in its own view."
   ],
   "exclusions": [
     "Re-deriving graph waves or master task order.",
@@ -27,9 +28,9 @@
     "leaf": "260928-MIK-L127",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-invariant/v1",
-  "statement": "The Order block of a sprint draws the masters that are not finished in one row per wave from the projected execution graph, with the server's wave and state, shows what has landed as a count, and keeps the whole graph with the tasks of every unit and the reason of every edge one link away in a view of its own.",
+  "statement": "The sprint Order preview groups supplied unfinished graph units by producer dependency wave, resolving each against its native task entry and the shared status table for task state, tone and activity. Only units with works entry activity stand in now; paused or host-unknown started units remain once in their wave. Graph-derived done/abandoned totals are absent; the complete projected graph with every unit, task and edge reason remains one link away.",
   "status": "proposed",
   "supersedes": []
 }

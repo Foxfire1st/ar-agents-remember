@@ -1,0 +1,58 @@
+{
+  "path": "mcp/src/agents_remember/worktrees/start_task_publication.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "a83e3b0ba83b697ae4190cd329fec12aefa5f8f7",
+        "content": "sha256:645749bc10470be4dc5c58ed620ffce1275f51c22b7d7ceedddf24aacd7a5758",
+        "locator": {
+          "kind": "symbol",
+          "name": "publish_start_task_facts"
+        }
+      },
+      "id": "RLZ-53QCJP",
+      "invariant": "INV-Z0BXKJ",
+      "origin": {
+        "handoffEntry": "L168-W-R167-05",
+        "leaf": "260928-MIK-L168"
+      },
+      "rationale": "Start publishes the document stage with the existing task facts transaction.",
+      "role": "propagation-persistence"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Start and attachment use one stage planner and task-fact publication owner.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a83e3b0ba83b697ae4190cd329fec12aefa5f8f7",
+            "content": "sha256:645749bc10470be4dc5c58ed620ffce1275f51c22b7d7ceedddf24aacd7a5758",
+            "locator": {
+              "kind": "symbol",
+              "name": "publish_start_task_facts"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Series bootstrap checks stage authority before mutation.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a83e3b0ba83b697ae4190cd329fec12aefa5f8f7",
+            "content": "sha256:8240a06604b826135e1fe3df08d4bc592f49f525d52b524dd9d212e8fe6ccd49",
+            "locator": {
+              "kind": "symbol",
+              "name": "validate_start_task_stage"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

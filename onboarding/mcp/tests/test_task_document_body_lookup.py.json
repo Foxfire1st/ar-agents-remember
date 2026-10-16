@@ -7,7 +7,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f96369f98348ae7d84d5fa7345534ad4471fa3f0",
+            "blob": "6524de15cb8e3481454eaa8e94d67a6e646fa201",
             "content": "sha256:8ffee803f6bdd67a4251ed9f4de7abc75b132843b165156877b982558700e831",
             "locator": {
               "end": 6,
@@ -24,14 +24,30 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ce39e43c081a7a78de49dfa60e14f7a8ec7f17b1",
+            "blob": "676446dd3dec2866b0d8b4914250105067b14d96",
             "content": "sha256:e482c45e3d110a00982634d3608a4d43b38463d26bd5f3a5a4a7a06ab59ea07a",
             "locator": {
-              "end": 335,
+              "end": 331,
               "kind": "line_range",
-              "start": 335
+              "start": 331
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "11": {
+      "note": "Reference body projection uses validated corpus documents and documents_by_ref without a lifecycle map.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6524de15cb8e3481454eaa8e94d67a6e646fa201",
+            "content": "sha256:535b8ae1bafbcadcf608335bb012e15eb91d93e66f0035bd7000a1d8bb2cf986",
+            "locator": {
+              "kind": "symbol",
+              "name": "_corpus_wide_body"
+            }
           },
           "kind": "test"
         }
@@ -42,29 +58,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f96369f98348ae7d84d5fa7345534ad4471fa3f0",
+            "blob": "6524de15cb8e3481454eaa8e94d67a6e646fa201",
             "content": "sha256:4863ce9cde2ec96c8439f7ae4ee87549025c043435f3f474def99fe3780fa531",
             "locator": {
               "end": 120,
               "kind": "line_range",
               "start": 70
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "3": {
-      "note": "The reference projection: the corpus-wide enumeration fed to the unchanged join builder.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "f96369f98348ae7d84d5fa7345534ad4471fa3f0",
-            "content": "sha256:eed2639788bea62ea33ab181a0d7c8b682857b3386259cf016a0a96e12f637ac",
-            "locator": {
-              "end": 136,
-              "kind": "line_range",
-              "start": 123
             }
           },
           "kind": "test"
@@ -105,12 +104,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f96369f98348ae7d84d5fa7345534ad4471fa3f0",
+            "blob": "6524de15cb8e3481454eaa8e94d67a6e646fa201",
             "content": "sha256:577184d3f1cf64cdd1f0aa8e0df4c29374a676435216f7da008a6f738e4dd238",
             "locator": {
-              "end": 189,
+              "end": 186,
               "kind": "line_range",
-              "start": 172
+              "start": 169
             }
           },
           "kind": "test"
@@ -151,12 +150,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f96369f98348ae7d84d5fa7345534ad4471fa3f0",
+            "blob": "6524de15cb8e3481454eaa8e94d67a6e646fa201",
             "content": "sha256:e4e7373a4db7d90ca804d5ca71f2dc4ad4f836df93ffe5d686418a483ba0799a",
             "locator": {
-              "end": 267,
+              "end": 264,
               "kind": "line_range",
-              "start": 235
+              "start": 232
             }
           },
           "kind": "test"
@@ -212,7 +211,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "37cd61129911b6adcb58b188b89c24f3848bea28",
+            "blob": "0729e2487febb7fcc3087bbe5a033d9a994ed5b9",
             "content": "sha256:45b54e5ed6dd2be8acd7f18f3f7ee57c6fae68f5832298a4beb58681b1bdc554",
             "locator": {
               "kind": "symbol",
@@ -224,7 +223,7 @@
         },
         {
           "anchor": {
-            "blob": "37cd61129911b6adcb58b188b89c24f3848bea28",
+            "blob": "0729e2487febb7fcc3087bbe5a033d9a994ed5b9",
             "content": "sha256:38555019cde060fc859dc1909193cc15341e8b6ebcfded13c0f49e34d5c3a9c8",
             "locator": {
               "kind": "symbol",

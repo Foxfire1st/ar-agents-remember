@@ -2195,6 +2195,60 @@
           "kind": "code"
         }
       ]
+    },
+    "97": {
+      "note": "Converted snapshot identity uses all stale findings rather than the sampled packet and is withheld for unreadable sidecars; legacy snapshots hash their complete actionable rows, independently of snapshot time.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5b3b70d80062f5d1c8a6f0142d7f93f8069780d4",
+            "content": "sha256:70d63a867b12ab9d8704a2b2f994638d3bf62eced816429de8aeeb326479428a",
+            "locator": {
+              "kind": "symbol",
+              "name": "_write_converted_snapshot"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/summary.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5b3b70d80062f5d1c8a6f0142d7f93f8069780d4",
+            "content": "sha256:034787bbbe9b222a77c974016f699c0aac3dfa36bdb6a38ad2e9c6711f7f7f54",
+            "locator": {
+              "kind": "symbol",
+              "name": "_write_drift_snapshot"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/summary.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5b3b70d80062f5d1c8a6f0142d7f93f8069780d4",
+            "content": "sha256:58518732777ec0a6e7a4abbc0383c64c465f3a89147d3a45020983f206b9d44b",
+            "locator": {
+              "kind": "symbol",
+              "name": "_actionable_fingerprint"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/summary.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5b3b70d80062f5d1c8a6f0142d7f93f8069780d4",
+            "content": "sha256:0bace92726b90b756ef47ca3a075058ee359679f75da72e088861394f45d3d5a",
+            "locator": {
+              "end": 213,
+              "kind": "line_range",
+              "start": 168
+            },
+            "path": "mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/summary.py"
+          },
+          "kind": "code"
+        }
+      ]
     }
   },
   "schema": "ar-onboarding-route/v1"

@@ -3,11 +3,12 @@
   "proves": [
     {
       "anchor": {
-        "blob": "aabbc6cdb4f5b362a92890b27762ac894e03088a",
-        "content": "sha256:6de38cdc98b6d20a185a82d5c191d33cdbd06d25a8cb8e92ee0fcbb67f76f3ed",
+        "blob": "5297bd3928044594df0953d6e59103d4ab409223",
+        "content": "sha256:01dff5ac63dec089a6fd59c435495e979a902462c3bcf9a575172ffb284ca23a",
         "locator": {
-          "kind": "symbol",
-          "name": "PacerHealingTests.test_failed_full_wake_does_not_advance_the_heal_bound"
+          "end": 82,
+          "kind": "line_range",
+          "start": 68
         }
       },
       "facet": "The exact controlled source case failed full wake does not advance the heal bound; this is a focused executable facet, not installed-runtime or full performance acceptance.",

@@ -18,6 +18,22 @@
           "kind": "test"
         }
       ]
+    },
+    "2": {
+      "note": "Full relative prerequisite address and child stage survive projection/body joins.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fcb4e3f3b8cd2af3bef4f40d647fa178230fca41",
+            "content": "sha256:c91c9c1bffb9691ec0c72cca199961233aa0ab2fc172c2ed7df424ddd2f949e3",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_dependency_keeps_its_full_relative_reference_and_own_document_stage"
+            }
+          },
+          "kind": "test"
+        }
+      ]
     }
   },
   "schema": "ar-onboarding-file/v1"

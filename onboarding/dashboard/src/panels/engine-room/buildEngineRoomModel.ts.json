@@ -19,52 +19,17 @@
         }
       ]
     },
-    "10": {
-      "note": "Builder takes engineProcesses and lifecycles only, maps node/lifecycle/gate/enclosureKey, sorts phase priority then leaf — source ownership, not executed visual proof.\n\nAnchor: `const PHASE_ORDER: Record<string, number> = {`",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "17b5df5bbd40a7851bc8af3aa48a9c214f8d7bed",
-            "content": "sha256:3e76e3203dc83dde5a88edc9d75febaf3d79581889e818034cd575c19a05de3a",
-            "locator": {
-              "end": 54,
-              "kind": "line_range",
-              "start": 7
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "11": {
-      "note": "Builder takes engineProcesses and lifecycles only, maps node/lifecycle/gate/enclosureKey, sorts phase priority then leaf — source ownership, not executed visual proof.\n\nAnchor: `export function groupEngines(providers: ProviderNode[]): EngineStack[] {`",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "b130c9f33b2078e3adf38d6e87cde8c376ba65b9",
-            "content": "sha256:39686253ab57b49c197444f777ca38607c1940957b35e49682d31bdd1f4e3594",
-            "locator": {
-              "end": 165,
-              "kind": "line_range",
-              "start": 147
-            },
-            "path": "dashboard/src/data/selectors.ts"
-          },
-          "kind": "code"
-        }
-      ]
-    },
     "2": {
       "note": "Each view assigns `enclosureKey` from `node.worktreeGroup`.\n\nAnchor: `enclosureKey`",
       "targets": [
         {
           "anchor": {
-            "blob": "17b5df5bbd40a7851bc8af3aa48a9c214f8d7bed",
+            "blob": "a941853ffe69e4fe546c6c360148ed1b57599f4f",
             "content": "sha256:81e01e1435083a2c1a1c5a6ed80c9025a7fbda19131c779b302def0d11420bea",
             "locator": {
-              "end": 39,
+              "end": 31,
               "kind": "line_range",
-              "start": 39
+              "start": 31
             }
           },
           "kind": "code"
@@ -100,91 +65,6 @@
               "name": "EngineProcessView"
             },
             "path": "dashboard/src/panels/engine-room/engineRoomTypes.ts"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "5": {
-      "note": "The model assigns the joined lifecycle gate into the process view.\n\nAnchor: \"lifecycle?.gate\"",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "17b5df5bbd40a7851bc8af3aa48a9c214f8d7bed",
-            "content": "sha256:34d515708beb1a5b626922d2ccf7fc43eb03e1bafd0ee33512cfabc8f228f8b9",
-            "locator": {
-              "end": 42,
-              "kind": "line_range",
-              "start": 42
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "6": {
-      "note": "`EngineProcessView` exposes the gate field.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "1ffc2f02408d6dff5a12c0dc71c9bdd17a195784",
-            "content": "sha256:781de27d3b75f15264927e15d255afd82b244214d46a860e3643990507c267dd",
-            "locator": {
-              "kind": "symbol",
-              "name": "EngineProcessView"
-            },
-            "path": "dashboard/src/panels/engine-room/engineRoomTypes.ts"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "7": {
-      "note": "`groupEngines` + `EngineStack.scope` workspace/worktree split",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "b130c9f33b2078e3adf38d6e87cde8c376ba65b9",
-            "content": "sha256:39686253ab57b49c197444f777ca38607c1940957b35e49682d31bdd1f4e3594",
-            "locator": {
-              "kind": "symbol",
-              "name": "groupEngines"
-            },
-            "path": "dashboard/src/data/selectors.ts"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "8": {
-      "note": "`EngineProcessNode.worktreeGroup` and `lifecycleId`",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "32f61ad92158b8a4519a35f725ce765c87f2ec99",
-            "content": "sha256:db0f63a67e32561c8d0d178904d2e3ed60574e0643583158dd20b2c7cd5c625f",
-            "locator": {
-              "kind": "symbol",
-              "name": "EngineProcessNode"
-            },
-            "path": "dashboard/src/types/projection.ts"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "9": {
-      "note": "`ProviderNode.scope`",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "32f61ad92158b8a4519a35f725ce765c87f2ec99",
-            "content": "sha256:c4eb47dea37bcb6e098e1dbd63f83c331a23500caca95398f712629d7fc34174",
-            "locator": {
-              "kind": "symbol",
-              "name": "ProviderNode"
-            },
-            "path": "dashboard/src/types/projection.ts"
           },
           "kind": "code"
         }

@@ -3,11 +3,12 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "2f8b273cc44c9365e0b7df0d1fa61dc61c5e1aa3",
-        "content": "sha256:5cd27bafa78bfa61a0991b4eb80aac562a66ab8a42403d18e0d2abf593c75d80",
+        "blob": "3be95c5b972460e2635e7ad50f9c0682bddd23a0",
+        "content": "sha256:64342114a70015496fbff79458f7c8433479877aaa642f27144bca98ae92df59",
         "locator": {
-          "kind": "symbol",
-          "name": "primaryRequirement"
+          "end": 272,
+          "kind": "line_range",
+          "start": 251
         }
       },
       "id": "RLZ-6GCZGM",
@@ -21,26 +22,7 @@
     },
     {
       "anchor": {
-        "blob": "2f8b273cc44c9365e0b7df0d1fa61dc61c5e1aa3",
-        "content": "sha256:4e96913fa6978e0b2934686c11dbecfeccedbb216c0b86a0515fc78bc2676b33",
-        "locator": {
-          "end": 233,
-          "kind": "line_range",
-          "start": 230
-        }
-      },
-      "id": "RLZ-7660ZX",
-      "invariant": "INV-T3TNTX",
-      "origin": {
-        "handoffEntry": "curator-extra-source-links-INV-T3TNTX",
-        "leaf": "260928-MIK-L162"
-      },
-      "rationale": "Extends the reader content-block union to nonGoals/acceptance/completedAt/waitsFor; this is supporting reachability/type vocabulary, not dependency derivation or a lifecycle gate.",
-      "role": "propagation-persistence"
-    },
-    {
-      "anchor": {
-        "blob": "2f8b273cc44c9365e0b7df0d1fa61dc61c5e1aa3",
+        "blob": "3be95c5b972460e2635e7ad50f9c0682bddd23a0",
         "content": "sha256:902f4948895e4fedf5ead4a5e6a1a01b57c115cb63c2b64e2e43c5369f729ab3",
         "locator": {
           "kind": "symbol",
@@ -58,7 +40,7 @@
     },
     {
       "anchor": {
-        "blob": "2f8b273cc44c9365e0b7df0d1fa61dc61c5e1aa3",
+        "blob": "3be95c5b972460e2635e7ad50f9c0682bddd23a0",
         "content": "sha256:c89be5656420ad59749572504b8c0778b970d4220b0da996b106d307b7c5917b",
         "locator": {
           "kind": "symbol",
@@ -76,8 +58,8 @@
     },
     {
       "anchor": {
-        "blob": "2f8b273cc44c9365e0b7df0d1fa61dc61c5e1aa3",
-        "content": "sha256:559d90cd9c4941878dd24d916e1f233c5b38c1721bc2c2040f34b40a29f97ee0",
+        "blob": "3be95c5b972460e2635e7ad50f9c0682bddd23a0",
+        "content": "sha256:4f4a4be10e345042e48d4bb5e23d9b6844f4fb7ad0c3a0e6bcd3acc3ac30ae9b",
         "locator": {
           "kind": "symbol",
           "name": "docForm"
@@ -89,16 +71,17 @@
         "handoffEntry": "curator-fixed-form-and-optional-blocks",
         "leaf": "260928-MIK-L127"
       },
-      "rationale": "Classifies explicit form with the model-rule fallback, independent of visible child counts.",
+      "rationale": "Returns server model-derived form; no client fallback classification.",
       "role": "primary-authority"
     },
     {
       "anchor": {
-        "blob": "2f8b273cc44c9365e0b7df0d1fa61dc61c5e1aa3",
+        "blob": "3be95c5b972460e2635e7ad50f9c0682bddd23a0",
         "content": "sha256:6a7dc5a62252810328f533481c447488de83f12910607cc8b31d0978ef8f4f99",
         "locator": {
-          "kind": "symbol",
-          "name": "substepDisplayState"
+          "end": 326,
+          "kind": "line_range",
+          "start": 322
         }
       },
       "id": "RLZ-KT4Z9R",
@@ -112,12 +95,12 @@
     },
     {
       "anchor": {
-        "blob": "2f8b273cc44c9365e0b7df0d1fa61dc61c5e1aa3",
+        "blob": "3be95c5b972460e2635e7ad50f9c0682bddd23a0",
         "content": "sha256:d040fcb9ca18ef81dc73abeeb0af8d97c2ef5b0fef5ccd8bc87f302dc5bb47d3",
         "locator": {
-          "end": 699,
+          "end": 332,
           "kind": "line_range",
-          "start": 673
+          "start": 306
         }
       },
       "id": "RLZ-MAT6CH",
@@ -131,66 +114,12 @@
     },
     {
       "anchor": {
-        "blob": "2f8b273cc44c9365e0b7df0d1fa61dc61c5e1aa3",
-        "content": "sha256:a6e281fc366a73b40645259ceb48f01a70f69881db8bd4bc083b4b8bb3b8fda0",
-        "locator": {
-          "kind": "symbol",
-          "name": "docIdentity"
-        }
-      },
-      "id": "RLZ-MY1HNA",
-      "invariant": "INV-1XA7H3",
-      "origin": {
-        "handoffEntry": "F5-V02",
-        "leaf": "260928-MIK-L127"
-      },
-      "rationale": "Says what makes two selections the same document: its file, or repository and id where a series stands in for a document without a file.",
-      "role": "primary-authority"
-    },
-    {
-      "anchor": {
-        "blob": "2f8b273cc44c9365e0b7df0d1fa61dc61c5e1aa3",
-        "content": "sha256:1d071d65839be808fa1a1f35184ebc7895e1ba360bfa26d66ae0d57d2b2f7297",
-        "locator": {
-          "kind": "symbol",
-          "name": "seriesAsMasterDoc"
-        }
-      },
-      "id": "RLZ-MZ21TT",
-      "invariant": "INV-PHG1PR",
-      "origin": {
-        "handoffEntry": "curator-fixed-form-and-optional-blocks",
-        "leaf": "260928-MIK-L127"
-      },
-      "rationale": "A series-only adapter remains a master and invents none of the missing document blocks.",
-      "role": "enforcement"
-    },
-    {
-      "anchor": {
-        "blob": "2f8b273cc44c9365e0b7df0d1fa61dc61c5e1aa3",
-        "content": "sha256:6d5612df2abb16a6145f4ac74248565770fbafd592d9fcedb952eeb9c7fb9229",
-        "locator": {
-          "end": 200,
-          "kind": "line_range",
-          "start": 197
-        }
-      },
-      "id": "RLZ-Q4GTQ8",
-      "invariant": "INV-DMAS27",
-      "origin": {
-        "handoffEntry": "curator-realizations-INV-DMAS27",
-        "leaf": "260928-MIK-L162"
-      },
-      "rationale": "This summary accessor reuses producer-supplied major-step done and total values instead of reconstructing a different child-inclusive denominator.",
-      "role": "propagation-persistence"
-    },
-    {
-      "anchor": {
-        "blob": "2f8b273cc44c9365e0b7df0d1fa61dc61c5e1aa3",
+        "blob": "3be95c5b972460e2635e7ad50f9c0682bddd23a0",
         "content": "sha256:5b6c60e522cfe63faea8e6a4689dceb96e0eb7a44199ba51285bc3c7b736c665",
         "locator": {
-          "kind": "symbol",
-          "name": "stepMarkStates"
+          "end": 332,
+          "kind": "line_range",
+          "start": 329
         }
       },
       "id": "RLZ-QTMXBW",
@@ -201,54 +130,39 @@
       },
       "rationale": "Produces one compact state per major step, aligning heading marks with major-only producer counts while child activity can promote an unfinished parent. Nested rows remain separate.",
       "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "3be95c5b972460e2635e7ad50f9c0682bddd23a0",
+        "content": "sha256:5b7c2d53eeecbe87a72783e9595e23aaed908b96d578e253327a1d34d215199c",
+        "locator": {
+          "end": 222,
+          "kind": "line_range",
+          "start": 203
+        }
+      },
+      "id": "RLZ-VA5H6T",
+      "invariant": "INV-WQ8YGE",
+      "origin": {
+        "handoffEntry": "L168-CUR-M1-21-A013-20",
+        "leaf": "260928-MIK-L168"
+      },
+      "rationale": "docChain follows served parent keys with a seen-key guard and stops at a missing parent; there is no document/series/path-derived parent fallback.",
+      "role": "propagation-persistence"
     }
   ],
   "references": {
-    "1": {
-      "note": "displayedReaderDoc and displayedLeafDoc resolve projected selections through their shared lifecycle/series helpers without fabricating a leaf for an overview.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "2f8b273cc44c9365e0b7df0d1fa61dc61c5e1aa3",
-            "content": "sha256:76513cc32814f2f35094eb5efda1146fbb4a01a0a54e21d6dec59c259b74078e",
-            "locator": {
-              "end": 196,
-              "kind": "line_range",
-              "start": 87
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "2": {
-      "note": "seriesAsMasterDoc adapts a series as a master, creation-orders its rows, passes discarded audit values and leaves absent document blocks absent.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "2f8b273cc44c9365e0b7df0d1fa61dc61c5e1aa3",
-            "content": "sha256:1d071d65839be808fa1a1f35184ebc7895e1ba360bfa26d66ae0d57d2b2f7297",
-            "locator": {
-              "end": 285,
-              "kind": "line_range",
-              "start": 249
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
     "3": {
       "note": "Decision ordering is parsed-time descending, stable for ties and invalid peers, with invalid timestamps after valid ones.",
       "targets": [
         {
           "anchor": {
-            "blob": "2f8b273cc44c9365e0b7df0d1fa61dc61c5e1aa3",
+            "blob": "3be95c5b972460e2635e7ad50f9c0682bddd23a0",
             "content": "sha256:902f4948895e4fedf5ead4a5e6a1a01b57c115cb63c2b64e2e43c5369f729ab3",
             "locator": {
-              "end": 54,
+              "end": 34,
               "kind": "line_range",
-              "start": 42
+              "start": 22
             }
           },
           "kind": "code"

@@ -11,17 +11,12 @@ invalidated by the filesystem watcher.
 
 ## Code Commentary
 
-A complete path sample refreshes changed task/lifecycle inputs and their actual document consumers rather than rereading the corpus. Documentary changes do not force unrelated structural domains. Closeout queues separately authenticate each sprint's code/memory/source-tip/document inputs; workspace-only wakes do not demand a full census. Full/incomplete-path reconciliation retains complete semantics.
+Complete path samples refresh canonical task sources and document-consumer closure; incomplete samples reconcile fully. Documentary edits do not refresh unrelated structural domains. Closeout queues authenticate their own source generation; no lifecycle/series fold remains.
 
 
 ### Logic
 
-`ProjectionRefresh` distinguishes full, change, and heartbeat ticks across tasks, lifecycles,
-workspace, drift, providers, start progress, and tool reports. `ProjectionInputState.read`
-advances display ages, refreshes invalidated domains, recomputes admission sets when their source
-domains change, and returns a complete immutable-shaped `ProjectionInputs` aggregate. Domain
-collections are replaced as a whole, so deletions reclaim retained rows on their next relevant
-refresh.
+Refresh domains are tasks/workspace/drift/providers/start-progress/tool-reports/HOST_ACTIVITY. Ordinary full healing excludes HOST_ACTIVITY; only startup or explicit invalidation reads it. Display age advancement is separate from acquisition.
 
 The state also reuses one contract snapshot cache and the task-document payload cache rather than
 re-enumerating and parsing unrelated workspace surfaces every second.
@@ -30,24 +25,20 @@ re-enumerating and parsing unrelated workspace surfaces every second.
 sake — each bundles values that are only meaningful read against one another, and each private
 `_refresh_*` method now takes the bundle rather than re-receiving its members:
 
-- `RefreshPass(now, refresh, tasks_changed=False)` — the frame every domain refresher runs in.
-  `read()` re-binds it once via `dataclasses.replace(pass_, tasks_changed=self._refresh_tasks(...))`,
-  so the task-tree verdict reaches lifecycles, engine facts and drift as part of the same frame
-  instead of as a separate argument each of them takes.
-- `ActiveGroups(groups, changed)` — a worktree-group admission set plus whether it moved since the
-  last pass. `read()` builds two: `providers` (from `admitted_worktree_groups`) and `engines`
-  (from `active_enclosure_worktree_groups`). The set says what to read, the flag says whether to
-  read at all; splitting them either re-reads every tick or never re-reads.
-- `ProjectionReaders(lifecycle, repo_surfaces, landing_state=None)` — the pass's I/O seam, so a
-  test can replace the whole outside-world set coherently.
+- `RefreshPass(now, refresh, tasks_changed=False)` carries the clock, invalidation and
+  structural task-change flag together. `_read_inputs` re-binds it with `dataclasses.replace`
+  after `_refresh_tasks`; it does not mutate a frame that later refreshers share.
+- `ActiveGroups(groups, changed)` carries both an admission set and whether it moved. The
+  provider set comes from `admitted_worktree_groups(self._enclosures)` and the engine set from
+  `active_enclosure_worktree_groups(self._enclosures)`: the set says what to read and the flag
+  whether to reread, preventing both unconditional rereads and permanently retained stale groups.
+- `ProjectionReaders(repo_surfaces, landing_state=None)` is the frozen I/O bundle; it has no
+  lifecycle reader. `ProjectionInputState.read(config, readers, *, observer_root, pass_)` takes
+  those bundles rather than independent clocks/readers. Refreshers retain their domain-specific
+  arguments, including attention observations where an actual read must supply proof.
+- `task_sources` and default-unknown host facts replace task_documents/series/session slots.
 
-`ProjectionInputState.read(config, readers, *, observer_root, pass_)` is the current signature —
-`now`, `refresh`, `landing_state`, `lifecycle_reader` and `repo_surface_reader` are no longer
-individual parameters. `_refresh_tasks(config, pass_)`, `_refresh_drift(config, pass_)` and
-`_refresh_progress(config, pass_)` take only the pass; `_refresh_providers(config, pass_, groups)`
-and `_refresh_engine_facts(config, pass_, groups, *, landing_state)` take the pass plus their own
-admission set; `_refresh_lifecycles(observer_root, pass_, *, lifecycle_reader)` and
-`_refresh_workspace(config, pass_, *, observer_root)` keep the one path each still needs.
+`_read_inputs` updates task/closeout slots and first/invalidated host facts, then contract admission. Only actually read kinds supply AttentionObservation proof. Provider/setup/drift/start readers contribute completeness, existence, explicit health and fingerprints; unread/failed kinds prove no removal. Workspace reconciliation locks read/rewrite and retains last successful acknowledgements on OSError; incomplete sibling proof does not hide valid changed drift.
 
 `_advance_model_age` no longer carries a `# noqa: UP047` suppression — the whole gate now runs
 without exemptions.
@@ -59,12 +50,18 @@ retention and invalidation explicit rather than heuristic.
 
 ### Invariants And Boundaries
 
-- Heartbeats advance display ages and reconcile lifecycles/providers/workspace; repository surfaces are read only on full passes or after their 120-second TTL, and a pending failure forces a full retry.
-- Lifecycle-only invalidation retains task/drift inputs. Providers refresh if lifecycle-derived admission changes; repository surfaces refresh when their TTL expires or full reconciliation is required.
-- Admission groups are recomputed when their task/lifecycle inputs change.
-- Deleted rows are removed on the next refresh of their owning domain.
-- The pass is re-bound, never mutated: `RefreshPass` / `ActiveGroups` / `ProjectionReaders` are all
-  frozen, so a refresher cannot change the frame a later refresher reads.
+- Heartbeat advances ages and existing non-host provider/workspace owners, never host census.
+- Repository surfaces are requested only on full passes or after their 120-second TTL
+  (`_REPO_SURFACES_TTL_SECONDS`); all other passes retain sidecar-staleness, route-coverage and
+  ledger slots without calling the surface reader. A missing snapshot is stale immediately.
+  The injected production reader has its own 120-second cache, so a full input pass does not
+  imply a fresh physical walk when that cache is still valid.
+- `RefreshPass`, `ActiveGroups` and `ProjectionReaders` are frozen: pass updates use replacement,
+  not mutation of a frame that a later refresher reads.
+- Host requires startup/invalidation plus armed boot reconciliation.
+- Contract admission changes refresh provider/engine input independently of sessions.
+- Owning-domain closure replacement drops deleted/invalid sources, not a whole-corpus admission proof.
+- Failure heals non-host plus pending domains without all-slot rollback.
 
 ### Todos
 
@@ -78,6 +75,10 @@ No Domain Documentation source is configured.
 
 ### Repo-Internal References
 
+- Full input passes or an expired/missing 120-second retained-surface snapshot reach the repo-surface reader; other passes retain its three collections unread. [3]
+- The production repo-surface reader can itself reuse its 120-second cache. [4]
+- The three parameter objects are frozen; the task-change frame is replaced, and provider/engine admission sets travel with their change flags. [5]
+
 
 
 ### Cross-Repo References
@@ -86,7 +87,7 @@ No meaningful cross-repository references found.
 
 ## 2026-08-26 Atomic Task Refresh Retry
 
-A failed input pass sets `_task_refresh_pending`; the next read forces full reconciliation and clears the flag only after success. `_refresh_tasks_full` gathers its task nodes before replacing task slots. Incremental refresh assigns contracts/enclosures before reprojecting documents, and later domain readers can fail after task slots changed; the reader does not promise an all-slot last-good rollback. Failed passes do not return a new ProjectionInputs aggregate.
+A failed input pass sets `_task_refresh_pending`; the next read heals every non-host domain plus pending invalidations and clears the flag only after success. Full task refresh prepares sources before replacing task slots; incremental and later domain work can still mutate slots before another read fails. Failed passes return no new ProjectionInputs aggregate, but do not roll back every changed slot. Host intake remains startup/explicit-invalidation only during retry.
 
 - Projection write edge consumes this retained input state. [1]
 - The serialized worker maps watcher wakes to refresh kinds. [2]

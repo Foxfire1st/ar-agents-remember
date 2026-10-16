@@ -16,15 +16,7 @@ gate plane — `claim_approval`, the only way to spend a human approval.
 
 ### 260731-EFA-L5 Two Writing Processes, And The Authority They Carry
 
-This log has **two** writing processes, and the docstring that used to claim "one writer per file
-in practice, because a lifecycle is owned by one live session" was false on both counts. The MCP
-server mints, decides, applies and deletes gates; the dashboard raises and resolves
-`agent-question` gates for adapter-owned sessions (`serving/hosted_interactions.py`) and its entire
-purpose is to decide gates for lifecycles owned by other sessions. A third participant, the
-compactor, ran on the dashboard's 30-second projection tick. Measured cost of believing the
-docstring: **11.50 percent** of appended gate snapshots lost under ordinary two-process operation
-at the base commit, and 100 percent in the deterministic forced-window scenario. Zero torn lines —
-records disappeared whole, which is why no reader-side validation could ever have caught it.
+The old MCP/dashboard gate writers are historical. Today the landing chain’s `claim_approval` writes applied snapshots; shared exclusion, not session ownership, protects whole read/modify/write.
 
 Measured 0 lost across 10 runs of all three scenarios once the contract was in place.
 
@@ -61,7 +53,7 @@ everything this card used to say about how an approval is consumed is superseded
 (`current`), the policy verdict (`enforcement.evaluate_gate`) and the `applied` append all happen
 inside **one held `exclusive_access`**, so `approved -> applied` is atomic against every other
 writer of this log: exactly one caller can see the gate approved and be the one that marks it
-consumed. A later caller reads the `applied` snapshot. A different or absent operation key refuses; the same non-null key matching `appliedOperation` may recover the already-bound operation without appending another applied snapshot.
+consumed. A later caller reads the `applied` snapshot. A different or absent operation key refuses; the same non-null key matching `appliedOperation` may recover the already-bound operation without appending another applied snapshot. An absent gate log is evaluated as an empty gate set before opening the lock, so an ordinary gateless claim creates no lock-only lifecycle directory. This changes neither existing-log claim serialization nor the boundary between durable approval consumption and subsequent Git work.
 
 **The unsafe primitive was deleted, not deprecated.** `worktrees/modules/closeout.py`'s
 `_mark_closeout_gate_applied` — a bare `current()` read followed by an unlocked `append(apply_gate(...))`,
@@ -89,12 +81,10 @@ same thread re-taking the same lock rather than deadlocking, so the write keeps 
 ### 260731-EFA-L5 Reads Are Deliberately Not Uniform
 
 `read` is **strict** and raises on a torn or unknown-major line. It backs `current`, `find` and
-`all_current` — the enforcement fold `serving/hosted_interactions.py` and
-`worktrees/modules/integrate.py` consult before a mutation. Skipping a malformed record there could
+`all_current` — the retained landing enforcement fold consults before a mutation. Skipping a malformed record there could
 drop an `applied` marker and let the fold conclude the approval was never consumed.
 
-`read_for_projection` is **tolerant** and skips the bad line. It is new in this leaf and is used by
-`projected_current` and by nothing that decides. A tolerant read never writes back what it read, so
+`read_for_projection` is **tolerant** and skips the bad line. It backs the retained `projected_current` helper, not an approval decision. A tolerant read never writes back what it read, so
 a skipped line is skipped for one tick and no longer.
 
 **Every rewrite of this log reads strictly**: both `delete` and `compact` take their record list
@@ -108,21 +98,11 @@ reader surfaces it, the tolerant reader skips it.
 
 ### 260731-EFA-L5 Compaction Moved To The Owner
 
-`compact_current(lifecycle_id, now=, rewrite=)` is **gone**, replaced by
-`projected_current(lifecycle_id, *, now)`. The single read that HFX2-L12 introduced is kept; the
-rewrite that used to ride it is removed. The projection applies the same keep-filter in memory, so
-what the dashboard renders is unchanged — but reclaiming the log on the projection tick was
-compaction running in a process that owns nothing here, and it was the source of the measured loss.
-`now=None` folds without the retention filter, which is what a caller holding no clock has always
-been given.
+`projected_current(lifecycle_id, now=...)` remains a tolerant in-memory keep-filter, never a rewrite or current projection/TTL job. No clock means no helper age filter.
 
-Physical reclamation is `compact`, driven from `controlplane/gate_decisions.py::_reclaim_gate_log` after a gate
-decision, guarded by `GATE_OWNERSHIP.is_compaction_owner()`.
+`compact` remains a locked strict-read/filter/rewrite primitive. No product decision or periodic age-reclamation loop is restored by retaining it; explicit `removed-stores` owns deletion of stored gate logs.
 
-**Accepted behavioural consequence:** gate reclamation now follows owner activity rather than a
-wall clock. A gate raised and expired by the dashboard is reclaimed on the next MCP decision on
-that lifecycle, rather than within 30 seconds. Space-only, never correctness — the projection is
-keep-filtered every tick regardless of what is still on disk.
+Applied consumed approvals have no TTL; explicit cleanup never mistakes approval history for terminal lock-only residue.
 
 `_replace` no longer unlinks an emptied log, no longer builds `<log>.tmp`, and no longer calls
 `os.replace` itself; it delegates to `durable_store.rewrite_lines`, which refuses unless the calling
@@ -138,8 +118,7 @@ parameter and the physical prune it drove were removed, because that prune ran i
 owns nothing here.
 
 `GateStore(observer_root)` holds the observer root. `log_path(lifecycle_id)`
-routes to `lifecycles/<id>/gates.jsonl` beside that lifecycle's `events.jsonl`,
-or `workspace/gates.jsonl` when lifecycle-less. `append(record)` creates parent
+routes to `lifecycles/<id>/gates.jsonl` or `workspace/gates.jsonl` for unscoped retained records; the old per-session event file no longer exists. `append(record)` creates parent
 dirs on first write and appends `record.model_dump_json(by_alias=True,
 exclude_none=True)`. `read(lifecycle_id)` validates the log back into
 `GateRecord`s. `current(lifecycle_id)` folds the log by gate id, last snapshot
@@ -149,7 +128,7 @@ Task 23/24 added real deletion/compaction. `delete(gate_id, lifecycle_id)`
 rewrites the log without that gate id, `compact(lifecycle_id, now=...)` removes
 expired/open-too-long or already-consumed interaction gates according to
 `interaction_retention.gate_keep_ids`, and `lifecycle_ids()` enumerates gate logs
-for projection-time TTL cleanup. Rewrites were atomic tmp-write + `os.replace`, and empty logs
+for retained gate-log folds, not a current projection-time TTL cleanup job. Rewrites were atomic tmp-write + `os.replace`, and empty logs
 were unlinked — **both superseded by 260731-EFA-L5**. Rewrites now go through
 `durable_store.rewrite_lines`, which holds the caller to the log's lock, uses a pid-scoped hidden
 temp name, fsyncs the temp and the parent directory, and **never unlinks**: an empty kept set is
@@ -160,7 +139,7 @@ into an inode with no remaining links.
 
 - **Append while active; compact when consumed — except for the kinds a mutating tool consumes.**
   Gate history is preserved while a gate is active or waiting for a consuming tool, and
-  dismiss/clear/TTL still physically remove throwaway interaction rows. The earlier
+  retained helper compaction is not automatic age reclamation or session UI cleanup. The earlier
   "and applied handoffs" half of this invariant is **retracted**: since 260731-EFA-L5 an `applied`
   snapshot whose kind is in `interaction_retention.CONSUMED_APPROVAL_GATE_KINDS` is retained with
   **no TTL at all**, because it is the whole and only proof that a human approval was spent.
@@ -170,15 +149,7 @@ into an inode with no remaining links.
   refusal both write nothing. `_mark_closeout_gate_applied` was deleted rather than deprecated, so
   no caller can reach the old check-then-act shape by accident.
 - **An approval binds one mutation operation, not one success.** The claim precedes the first irreversible act. Failure leaves the approval applied; a different mutation needs a fresh gate, while recovery under the same non-null operation key is admitted without spending it again. The earlier unconditional fresh-gate requirement is superseded by operation-bound recovery.
-- **Two writing processes, not one.** The earlier "one writer per lifecycle file in practice,
-  the same single-writer assumption the event store makes" is retracted: it was false, and
-  believing it cost 11.50 percent of appended gate snapshots. Both the MCP process and the
-  dashboard append here, and every append and every rewrite takes the log's lock in both.
-- **The lock is the mechanism; the compaction owner is advisory.** `GATE_OWNERSHIP` names the MCP
-  process as the owner, and `controlplane/gate_decisions.py::_reclaim_gate_log` asks
-  `is_compaction_owner()` before reclaiming. That question never raises and is answered `True` in
-  any process that declared no role. Remove the lock and the loss returns; remove the ownership
-  check and a dashboard-side reclaim comes back, but no record is lost to it.
+- **Exclusion, not a session-owner assumption:** every append and whole-read/rewrite takes the shared durable lock. Historical MCP/dashboard gate writers are not the current roster. Approval consumption is not atomic execution of later Git work.
 - **`read` is strict, `read_for_projection` is tolerant, and every rewrite reads strictly.**
   `delete` and `compact` both take their record list from `read`, so a compaction can never erase a
   gate record it could not parse. Point either rewrite at the tolerant reader and a torn line
@@ -194,7 +165,9 @@ into an inode with no remaining links.
 
 - The gate envelope serialized and validated here. [1]
 - Mirrors the observer event store (same append / read / JSONL shape). [2]
-- The `ar-durable-store/1.0` contract this store routes every append and rewrite through: `exclusive_access`, `append_line`, `rewrite_lines`, `read_log_text`, and `GATE_OWNERSHIP`, which names the MCP process the compaction owner and the MCP, dashboard and lifecycle-operation roles as declared writers. [3]
+
+- The `ar-durable-store/1.0` contract this store routes every append and rewrite through: `exclusive_access`, `append_line`, `rewrite_lines`, `read_log_text`, and `GATE_OWNERSHIP`, which names the MCP process the compaction owner and the MCP, dashboard and lifecycle-operation roles as declared writers.  Anchor: `exclusive_access`, `append_line`, `rewrite_lines`, `read_log_text`, `GATE_OWNERSHIP` [3]
+
 - `CONSUMED_APPROVAL_GATE_KINDS` and `_keep_gate`'s authority branch: what stops `compact` from reclaiming the `applied` snapshot this store's atomicity exists to protect. [5]
 
 - `evaluate_gate` is the pure verdict taken under the lock. An already-applied gate refuses a different/absent operation key but admits the same non-null `appliedOperation` recovery without another spend. [6]
@@ -233,5 +206,5 @@ first validates the checkout coordination target, then acquires the shared kerne
 lock-capability failures retain the durable-store error family. Advisory compaction ownership
 does not replace exclusion or the checkout guard.
 
-- `read_gates` at snapshots.py:513-546 now folds through the tolerant `projected_current` and rewrites nothing; its docstring records that the 30-second prune cadence this tick used to run was removed.  Anchor: "def read_gates(coordination_root: Path" [8]
+
 - Durable exclusion guards the checkout target before invoking shared kernel locking and preserves typed unsafe-filesystem refusal. [9]

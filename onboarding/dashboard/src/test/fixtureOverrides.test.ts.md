@@ -14,9 +14,7 @@ catches a field the mirror never declared, an `any` with no shape at all, and ev
 opting out. It cannot catch a fixture whose names are all correct and whose VALUE is `undefined` on a
 field the server always sends. `provider({ state: undefined })` has correct field names and no cast/suppression, yet asks a required wire field to be absent. The retained probe uses this provider call; conversationPage/conversationWire are removed and supply no current fixture coverage.
 
-`exactOptionalPropertyTypes` is what would make that a compile error project-wide. It is not on here —
-measured at 222 errors across 71 files, most of them in app code this leaf does not own — so the
-builders carry the constraint themselves via `Overrides<O, T>`. This file is the proof that they do.
+Overrides constrain builder calls without enabling exactOptionalPropertyTypes in the virtual program. Historical project diagnostic counts are not a current typecheck measurement.
 
 **And it runs over the guard's in-memory program precisely BECAUSE that program does not set the flag**
 cit:([`GUARD_COMPILER_OPTIONS`], dashboard/src/test/wireFixtureGuard.ts:138-149). Whatever these assertions catch, they catch without it. That is the point of borrowing
@@ -26,32 +24,9 @@ cit:([`GUARD_COMPILER_OPTIONS`], dashboard/src/test/wireFixtureGuard.ts:138-149)
 
 ### Logic
 
-- `ROOT` / cit:([`PROBE_DIR`], dashboard/src/test/fixtureOverrides.test.ts:23-23): probe sources are planted under `src/__override_probe__`, a directory
-  that never exists on disk.
-- cit:([`PROBE_FILES`], dashboard/src/test/fixtureOverrides.test.ts:25-78): three virtual modules, each importing the REAL builders and the REAL mirror.
-  - `impossible.test.ts` cit:([`PROBE_FILES`], dashboard/src/test/fixtureOverrides.test.ts:25-78): the four calls that must fail — `provider({ state: undefined })`, `lifecycle({ state: undefined })`, `taskDoc({ steps: undefined })`,
-    `projection({ enclosures: undefined })`. All four compiled before `Overrides` replaced the builders'
-    bare `Partial<Node>`.
-  - `excess.test.ts` cit:([`PROBE_FILES`], dashboard/src/test/fixtureOverrides.test.ts:25-78): the property `Overrides` must not cost — `lifecycle({ refusedPolarity:
-    "amber" })` and `taskDoc({ createdAtButMisspelled: … })`. These are the two proven defects of this
-    leaf restated as call sites; excess-property checking is where both would have died.
-  - `honest.test.ts` cit:([`PROBE_FILES`], dashboard/src/test/fixtureOverrides.test.ts:25-78): eleven shapes the server DOES send, none of which may cost a diagnostic
-    — no-argument calls, ordinary overrides, an OPTIONAL field written as `undefined` (the mirror marks
-    it `?`, so absent is a real shape), builders whose override is required rather than defaulted, and
-    the documented residue at entry `k`.
-- cit:([`buildProgramWithVirtualFiles`], dashboard/src/test/fixtureOverrides.test.ts:80-80) builds one program; cit:([`diagnosticsFor`], dashboard/src/test/fixtureOverrides.test.ts:82-89)
-  reads `getSemanticDiagnostics` for a named probe and flattens each message to a string. A probe file
-  the program failed to load throws rather than returning `[]` — an empty diagnostic list must never be
-  reachable by accident.
-- The three assertions cit:(["a builder override cannot state that a required field is absent"], dashboard/src/test/fixtureOverrides.test.ts:91-117):
-  1. **exactly four** diagnostics from `impossible.test.ts`, each containing
-     `Type 'undefined' is not assignable to type 'never'` — one per call and no more, so the constraint
-     bites exactly where it is aimed.
-  2. **exactly two** from `excess.test.ts`, naming `refusedPolarity` and `createdAtButMisspelled`, each
-     containing `Object literal may only specify known properties`. The comment states the stake: the
-     constraint is laid OVER `O extends Partial<Node>`, not in place of it, and if generic inference had
-     swallowed excess-property checking the builders would have lost the property they exist for.
-  3. **zero** from `honest.test.ts`.
+- Virtual impossible calls supply undefined to provider.state, taskEntry.stage, taskSummary.steps and projection.enclosures: exactly four undefined-to-never diagnostics.
+- Excess calls add refusedPolarity to taskEntry and createdAtButMisspelled to taskSummary: exactly two unknown-property diagnostics.
+- Honest native calls, optional undefined and pre-widened Partial<TaskEntry> remain diagnostic-free. Missing probe modules throw before reading diagnostics.
 
 ### Conventions
 
@@ -71,16 +46,7 @@ diagnostic arriving for the wrong reason fails rather than passing as evidence.
 
 **What this file does not cover.**
 
-- It measures a VALUE-level hole for the four builders it names, at the CALL SITE, on a FRESH literal.
-  Entry `k` of `honest.test.ts` cit:(["LC-2"], dashboard/src/test/fixtureOverrides.test.ts:74-74) asserts the documented residue as a **known pass**: an override
-  pre-widened through a variable (`const widened: Partial<LifecycleProjection> = …`) infers
-  `Partial<…>` for `O`, every slot admits `undefined` again, and it compiles. That is asserted so it is
-  a known pass rather than a surprise — only `exactOptionalPropertyTypes` closes it.
-- Nested override constraints are not established by these flat call-site probes. No removed conversation-capability builder is a current example or probe.
-- Nothing outside the retained `fixtures/wire.ts` builders is covered. Any other
-  `Partial<WireType>` parameter in the tree still admits an explicit `undefined`.
-- These are **semantic diagnostics from an in-memory program**, not a run of the project's real
-  `tsc -b`. They prove the constraint's shape; the typecheck gate is what proves the tree.
+Fresh flat call sites only: pre-widened Partial<TaskEntry> remains a known pass. Nested overrides/other Partial APIs are not established. Virtual semantic diagnostics are not the real tsc -b gate or execution in this preparation.
 
 ## Evidence
 
@@ -95,15 +61,15 @@ being pinned is the `exactOptionalPropertyTypes`-off rule described in the TSCon
 ### Repo-Internal References
 
 - The header: what no guard rule can see, and why running over the guard's flag-free program is the point. [3]
-- The four impossible calls, the two excess-property calls, and the eleven honest shapes. [4]
+- Current native impossible/excess/honest call forms supply exact diagnostic-count controls. [4]
 - The three exact-count assertions and their message checks. [5]
-- The residue asserted as a known pass: a pre-widened `Partial<LifecycleProjection>` override still compiles. [6]
+- A pre-widened Partial<TaskEntry> override remains the documented known-pass residue. [6]
 - The constraint under test, and the three limits it documents. [7]
 - `buildProgramWithVirtualFiles` and `GUARD_COMPILER_OPTIONS` — the harness these probes borrow, whose option set is strict/bundler/`resolveJsonModule` and contains no `exactOptionalPropertyTypes` entry. [8]
 - The guard's own statement of the same hole — item 5, "A VALUE" — which names this file as the answer. [9]
-- The builders whose parameters are being pinned. [10]
-- The current fixture-override regression deliberately supplies undeclared `refusedPolarity` to `lifecycle` and `createdAtButMisspelled` to `taskDoc`, and asserts two unknown-property diagnostics. [12]
-- The schema distinction is deliberate: the full `TaskDocNode` legitimately carries `createdAt`; a master's `TaskSubTaskRefNode` does not and instead may carry `linkedLifecycleId`; `SeriesSubTaskNode` may carry `createdAt`; the contract type assertions pin the master/series distinction. [13]
+- Current builders are provider, taskEntry, taskSummary and projection. [10]
+- The excess-property probe supplies undeclared refusedPolarity to taskEntry and createdAtButMisspelled to taskSummary. Its regression expects exactly two diagnostics, checks each offending name and requires the unknown-property message for both; lifecycle/taskDoc are not the builders used in this probe. [12]
+
 
 ### Cross-Repo References
 

@@ -3,12 +3,69 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "af22582bd9d5d67626d9be4d1441a3d1843d84da",
-        "content": "sha256:1de9357b27e349ecd68e79749107cace67e1a2fd397c5ebac633ca44a6b91064",
+        "blob": "000b39968c5ff7d771056230e212a2e10ff219fe",
+        "content": "sha256:708048c047d937c21f6b84435c3ab5fcb660dd6651ee8c09e942e85d5f28f1f7",
         "locator": {
-          "end": 157,
+          "end": 162,
           "kind": "line_range",
-          "start": 16
+          "start": 154
+        }
+      },
+      "id": "RLZ-5X2J6F",
+      "invariant": "INV-WNHAWD",
+      "origin": {
+        "handoffEntry": "L168-CUR-M2-21-N16",
+        "leaf": "260928-MIK-L168"
+      },
+      "rationale": "availableBody uses bounded resources first and allows the active reader settled body only for the identical requested key; the active oversized-body exception cannot retain unrelated navigation history.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "000b39968c5ff7d771056230e212a2e10ff219fe",
+        "content": "sha256:7e658f34b65c14c107d371271c0a8a95406548f6d3910f3055f6c350c637ad4e",
+        "locator": {
+          "end": 206,
+          "kind": "line_range",
+          "start": 164
+        }
+      },
+      "id": "RLZ-E66Q6G",
+      "invariant": "INV-WNHAWD",
+      "origin": {
+        "handoffEntry": "L168-CUR-M1-21-A013-07",
+        "leaf": "260928-MIK-L168"
+      },
+      "rationale": "useTaskDocumentBody captures the requested qualified body key/revision, ignores callbacks after effect cleanup, and marks a crossing-revision answer failed without retaining it in the initiating local slot.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "000b39968c5ff7d771056230e212a2e10ff219fe",
+        "content": "sha256:a33de359713a3247adbc79c964c0c42d8819027bf099f6dea6eec058c00b92df",
+        "locator": {
+          "end": 229,
+          "kind": "line_range",
+          "start": 208
+        }
+      },
+      "id": "RLZ-ZG9MJ3",
+      "invariant": "INV-WNHAWD",
+      "origin": {
+        "handoffEntry": "L168-CUR-M2-21-N17",
+        "leaf": "260928-MIK-L168"
+      },
+      "rationale": "bodyKeyFor requires exact qualified reference plus summary.bodyRevision; mergeAvailableBody delegates current-summary-preserving merge, while resolveBodyState reports absent/loading/unavailable/available without a second task-state producer.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "000b39968c5ff7d771056230e212a2e10ff219fe",
+        "content": "sha256:3b346c9d88940e4d80dfc7ea4d38d332d234f7ee9abb6a7ddbedb69d7b8cf38b",
+        "locator": {
+          "end": 152,
+          "kind": "line_range",
+          "start": 13
         }
       },
       "id": "RLZ-ZJ4AM6",
@@ -22,136 +79,32 @@
     }
   ],
   "references": {
-    "1": {
-      "note": "The hook keys requests and body-payload storage by path/revision, merges into the current summary, records terminal availability, and discards late results.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "af22582bd9d5d67626d9be4d1441a3d1843d84da",
-            "content": "sha256:2cb44bcb92dcaed905d6a31066c54e37c1476f17af14831516a0a7cea23ddc69",
-            "locator": {
-              "end": 11,
-              "kind": "line_range",
-              "start": 9
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "af22582bd9d5d67626d9be4d1441a3d1843d84da",
-            "content": "sha256:a819d5032c59381ed5bdb09fd2f73e8f2a39dd0f776636975c5ea25e67641c3b",
-            "locator": {
-              "end": 202,
-              "kind": "line_range",
-              "start": 138
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "2": {
-      "note": "`DetailPanelImpl` delegates reader selection to `useDetailPanelState`; that state owner resolves the displayed document and calls the body hook.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "5fc47d2f0162a9f76bea5427359161727342a013",
-            "content": "sha256:cf37a68b51bebfa60c8554376ad0fcf4ffe269be68b78e066ff064513413a932",
-            "locator": {
-              "end": 43,
-              "kind": "line_range",
-              "start": 14
-            },
-            "path": "dashboard/src/panels/detail-panel/DetailPanel.tsx"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "9103556cb5e9e43b57000aabf4de913b20130267",
-            "content": "sha256:8f4b16b718a008b9af2671bdcb5b68ef408ef875bf8058913ae9112ac1e893c9",
-            "locator": {
-              "end": 151,
-              "kind": "line_range",
-              "start": 143
-            },
-            "path": "dashboard/src/panels/detail-panel/state.ts"
-          },
-          "kind": "code"
-        }
-      ]
-    },
     "3": {
-      "note": "The enclosure change-set controls and reader-head controls wait until the body reader is no longer loading.",
+      "note": "Current TaskPage passes bodyState into ReaderHead, whose change-set controls are unmounted while loading; the deleted lifecycleBody is not its caller.\n\nAnchor: TaskPage and ReaderHead (inclusive ranges)",
       "targets": [
         {
           "anchor": {
-            "blob": "98b3a5ce52dcbefe1a88012783d0118d8842fca1",
-            "content": "sha256:2b7388c967a97b88992198f03cf00766f8a1906a9d05290882c1678b8bf868aa",
+            "blob": "66607c8748bbb4f94154ffd1893a44a92f9486e8",
+            "content": "sha256:d5c5c20b5d07228370c6cb87170db303aadd58c62d6bad25bafb8f7839b349a4",
             "locator": {
-              "end": 450,
+              "end": 130,
               "kind": "line_range",
-              "start": 410
+              "start": 80
             },
-            "path": "dashboard/src/panels/detail-panel/lifecycleBody.tsx"
+            "path": "dashboard/src/panels/detail-panel/taskReader.tsx"
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "f6529ed9614c2c5b19d9b9a0050bcb2e4f544603",
-            "content": "sha256:9daa3680863669c5022b237e0425c1b2f4628b854d391ab433723c18f21a9fa1",
+            "blob": "8bdfed60355162c97f6db2e53d9d0ab3543220a5",
+            "content": "sha256:7ec99986e821c1d335a0476c94f836c45ed14f73cd3751f1c1de703aee711803",
             "locator": {
-              "end": 745,
+              "end": 732,
               "kind": "line_range",
-              "start": 711
+              "start": 715
             },
             "path": "dashboard/src/panels/detail-panel/skeletons.tsx"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "4": {
-      "note": "The task-document reader delays its notes/reference/report readers until the body reader is no longer loading.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "29a2217745a3ef92625b3283471bf70a9453482f",
-            "content": "sha256:2926c33e8a22c5e5fe171059aa1e50cc7cb3980a7607bf39057bc6fd97d7762f",
-            "locator": {
-              "end": 347,
-              "kind": "line_range",
-              "start": 340
-            },
-            "path": "dashboard/src/panels/detail-panel/taskReader.tsx"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "29a2217745a3ef92625b3283471bf70a9453482f",
-            "content": "sha256:2926c33e8a22c5e5fe171059aa1e50cc7cb3980a7607bf39057bc6fd97d7762f",
-            "locator": {
-              "end": 561,
-              "kind": "line_range",
-              "start": 554
-            },
-            "path": "dashboard/src/panels/detail-panel/taskReader.tsx"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "29a2217745a3ef92625b3283471bf70a9453482f",
-            "content": "sha256:aad14a1d983f8889af0aad4eab8163d09d766c9bd6fb7781b05948c908ae9b71",
-            "locator": {
-              "end": 810,
-              "kind": "line_range",
-              "start": 806
-            },
-            "path": "dashboard/src/panels/detail-panel/taskReader.tsx"
           },
           "kind": "code"
         }
@@ -232,24 +185,6 @@
         }
       ]
     },
-    "7": {
-      "note": "Source-defined Cockpit composition assertions cover direct leaf, master, drilled, lifecycle-bound, analytics-churn, and pending A-to-B late-response selection paths. Source inspection only; no fresh execution.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "310ecdeb85c617d0ac5a90969e89d37249179541",
-            "content": "sha256:411af7a820e2eba7312723b5074932aceba52b1d0dadd176c5496e3844d40d6f",
-            "locator": {
-              "end": 449,
-              "kind": "line_range",
-              "start": 335
-            },
-            "path": "dashboard/src/cockpit/Cockpit.test.tsx"
-          },
-          "kind": "test"
-        }
-      ]
-    },
     "8": {
       "note": "Fixed prose is merged by the production body hook; separate native-operand mounted DetailPanel cases start from summaries missing nonGoals/acceptance, stub transport, and declare assertions for restored fields, fixed-block order, legacy access and one body request. This is source inspection, not a new producer/test run or acceptance.",
       "targets": [
@@ -289,6 +224,23 @@
             "path": "dashboard/src/panels/detail-panel/body-hydration.test.tsx"
           },
           "kind": "test"
+        }
+      ]
+    },
+    "9": {
+      "note": "Retained body identity combines the qualified repository/path reference with the body revision, not a path-only key.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cb56539089a61b868c10348e34bfac4506eac81b",
+            "content": "sha256:5179e3e01a7bf30378f0ce9801d22a53a54b752227a6d879964c5debc3d128d5",
+            "locator": {
+              "kind": "symbol",
+              "name": "taskBodyKey"
+            },
+            "path": "dashboard/src/data/taskDocuments.ts"
+          },
+          "kind": "code"
         }
       ]
     }

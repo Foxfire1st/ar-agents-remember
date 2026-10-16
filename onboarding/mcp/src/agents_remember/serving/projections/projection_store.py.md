@@ -6,24 +6,19 @@
 
 ## Purpose
 
-`projection_store.py` is the reducer's I/O edge: it reads the per-lifecycle logs
-plus the structural, analytical, and (slice 5e) engine surfaces, ties reading +
-the pure reduction + the atomic write together, and writes the projection where
-the dashboard reads it (slice 3a).
+`projection_store.py` is the reducer’s I/O edge: domain-invalidated canonical task/host, structural and analytical sources flow through pure workspace assembly and individual atomic projection-file replacement.
 
 ## Code Commentary
 
-Semantically unchanged stable projections retain their existing publication rather than manufacturing own-write input events. Directed input reads and the shared stat-gated lifecycle-log owner feed the same reducer; subscriber publication order and immutable projected facts remain unchanged.
+Semantically unchanged stable projections retain existing files. Worker-owned input state supplies canonical task sources and boot-reconciled host facts; subscriber publication ordering remains with Projector, not a lifecycle-log cache.
 
 
 ### 260712-PTS-L2 One Contract Pass Per Tick — historical acquisition account; superseded by worker-owned domain refresh below
 
-A module-level `_contract_snapshot_cache = ContractSnapshotCache()` now sits beside
-`_lifecycle_log_cache`, following the same module-cache discipline: it is mutated only on the
+A module-level `_contract_snapshot_cache = ContractSnapshotCache()` is retained for cold acquisition, following the module-cache discipline: it is mutated only on the
 projection worker thread (ticks are serialized by the projector's awaited `asyncio.to_thread`), so no
 locking is needed. `project_and_write` calls `_contract_snapshot_cache.build(coordination_root /
-"tasks")` at tick start — ONE leaf-enclosure-contract enumeration + at-most-one parse per contract
-per tick — and hands the resulting immutable `ContractSnapshot` to all three consumers:
+"tasks")` when task acquisition requires it — one shared leaf-enclosure-contract snapshot for those consumers — and hands the resulting immutable `ContractSnapshot` to all three consumers:
 `read_enclosures(coordination_root, contracts=contract_snapshot)`,
 `prune_orphaned_drift_snapshots(config, contracts=contract_snapshot)`, and
 `read_engine_process_facts(..., contracts=contract_snapshot)`. Each of those previously ran its own
@@ -33,22 +28,9 @@ walk + `load_contract` pass (3x per tick; a py-spy 15s sample on 2026-07-12 show
 build. The landing refresher and supervisor sweep are deliberately not consumers (event-loop thread
 would need locks; `serving/` territory) and keep their own passes.
 
-### 260707-HFX2-L13 Heartbeat-Sidecar Merge
+### Task and host sources
 
-The lifecycle-log cache now stores only parsed `events.jsonl` rows. A projection read reuses that
-parse while independently reading and merging the latest `heartbeat.json` sidecar, so every heartbeat
-tick remains visible to reducer staleness without changing the log fingerprint or forcing a full-log
-reparse. The merge copies the cached list before appending the sidecar. Current timestamp ordering is
-a raw string comparison; the round-1 reviewer accepted unifying it with `EventStore`'s parsed compare
-as non-blocking N6.
-
-### 260707-HFX2-L12 CS-6 Update
-
-Projection now caches unchanged lifecycle logs by `(mtime_ns, size)`, rate-limits warnings for over-budget task-document body payloads, and passes the projection clock to engine-process facts so the git-status cache can bound per-tick subprocess fan-out.
-
-`read_lifecycle_logs(root)` enumerates `lifecycles/<id>/events.jsonl` under the
-store root (via `EventStore.read`), returning one validated `list[Event]` per
-non-empty log.
+Session-log enumeration, parsed lifecycle caches and heartbeat-sidecar merging are removed. Retained task sources and the default-unknown host snapshot enter the one TaskEntry join; no periodic host census is implied by ordinary heartbeat/full healing.
 
 `write_projection(root, projection)` writes `latest-state.json` (the whole
 `WorkspaceProjection`) and `latest-metrics.json` (just `metrics`). Both go through
@@ -66,57 +48,17 @@ logged and the previous snapshot is used: this containment is necessary because 
 and provider watcher reads are external control-plane I/O, and a failed provider probe
 must not stop the dashboard from projecting the rest of the workspace.
 
-`project_and_write(config, *, now=None, refresh=None, tick=None)` is the entry the serving layer
-drives on a tick (slice 04). Since 260731-EFA-L2 the projector's three long-lived collaborators
-travel together in the frozen `ProjectionTickState(input_state=None, provider_refresher=None,
-landing_state=None)` passed as `tick=` — a tick given some of them and not others silently reverts
-to a cold read, so they are one object. `tick or ProjectionTickState()` is the cold-read default.
-It resolves the root via `paths.observer_root`, prunes expired
-lifecycle event logs with `prune_expired_lifecycle_event_logs`, reads the lifecycle logs +
-structural snapshots (`read_enclosures`, optional provider refresh, `read_providers`), and — slice 3b — the
-analytical surfaces too: the coordination-level readers (drift snapshots, setup
-summaries/progress, tool reports, active task documents
-(`read_task_documents`, with optional lifecycle attachment) — slice 3c) and — slice 5e — the engine
-surfaces (`read_engine_process_facts(coordination_root, active_worktree_groups=...)` and
-`read_start_progress_entries(coordination_root, now=...)`), plus, via
-`_gather_repo_surfaces_cached`, the per-repo readers (sidecar staleness, route coverage,
-ledger — now `read_ledger(scope.memory_root, code_root=scope.path)`, threading the scope's code root so
-the official coupler's window carries the slice-5h Tier 2 per-side commit message/date) iterated over
-`config.repositories` (each scope's `memory_root`/onboarding).
-It then calls `reducer.project_workspace`, threading every surface through **two bundles rather
-than a keyword list** (260731-EFA-L2): `structure=WorkspaceStructure(enclosures=…, providers=…,
-active_worktree_groups=…)` for the structural tree, and `given=AnalyticalInputs(…)` for every
-analytical surface — drift snapshots, sidecar staleness, setup summaries/progress, route coverage,
-tool reports, agent pickups, expectation rows, ledgers, task documents, series, the slice-5e
-`engine_process_facts` / `engine_start_progress`, the slice-6c `gates`, and the attention
-dismissals. `series` is the R1 master-series surface from `read_series_documents`; `agent_pickups`
-(Task 23/24) is the pending operator-inbox projection that drives task-row
-waiting-for-agent/check-chat feedback; `expectation_rows` (260707-HFX2-L1 R5) is the durable
-deadline-row projection surfaced for dashboard/architect observability — surfacing only, since an
-L2 predicate reads `ExpectationRowStore` directly and never this projection. Task 28 S5.2
-constructs `AttentionDismissalStore(root)`, threads `attention_store.current()` into the reducer, then
-calls `attention_store.prune_lifecycles(...)` with the projected non-terminal lifecycle ids before the
-atomic write, so completed/abandoned lifecycle acknowledgement rows are physically removed as part of the
-normal tick. It then writes atomically and returns the projection.
-`McpRuntimeConfig` is imported under `TYPE_CHECKING` (config is only passed
-through).
+`project_and_write` receives ProjectionTickState(input_state, provider_refresher, landing_state), with a cold default. It resolves observer_root, optionally refreshes provider state, and reads input state through ProjectionReaders(repo_surfaces, landing_state) plus RefreshPass. WorkspaceStructure and AnalyticalInputs pass canonical task_sources/host_activity, worktrees/providers, analytics, engine facts, closeout and source-reconciled acknowledgements to the sole reducer join. No lifecycle/series/pickup/expectation/gate fold or post-reducer dismissal prune remains.
 
-**Slice-6g / Task 17:** the enclosure list read by `ProjectionInputState` reaches both
-`WorkspaceStructure(enclosures=…)` and `read_task_documents(coordination_root, enclosures=...)`, so
-the reader can attach lifecycle context to leaf/root task documents when structured enclosure
-bindings exist while still projecting unbound active docs.
+Warning measures summary previews only; full bodies stay on demand. Semantic changes replace each projection file individually; pair-atomic publication/all-slot rollback are not promised. Projector owns tuple-before-notify.
 
-**Task 32:** after `read_enclosures(coordination_root)` and before
-`read_drift_snapshots(coordination_root, now=...)`, `project_and_write` calls
-`prune_orphaned_drift_snapshots(config)`. That keeps the reducer's drift snapshot
-input physically pruned: configured repo snapshots remain, current leaf
-worktree snapshots remain while their code worktree still exists, and valid
-worktree snapshots for deleted worktrees are removed before the projection is
-written.
+Input state retains canonical full/directed sources and enclosures; task-entry production binds worktrees without lifecycle attachment.
+
+Drift orphans require complete native branch/contract/snapshot proof. Configuration and checkout presence alone do not prove a live branch; incomplete proof retains acknowledgements/diagnostics.
 
 **Task 29:** `project_and_write` now splits worktree runtime admission before reading
-runtime surfaces. `admitted_worktree_groups(enclosures, lifecycle_logs, now=...)`
-feeds `read_providers` and `read_setup_progress_nodes`, so parked provider-runtime files do not
+runtime surfaces. `admitted_worktree_groups(enclosures)`
+feeds `read_providers` and `read_setup_progress_nodes`, so contract-inactive provider-runtime files do not
 produce provider nodes or provider-down attention. `active_enclosure_worktree_groups(...)`
 feeds `read_engine_process_facts`, avoiding git/status probes for historical enclosure contracts
 while preserving non-terminal close/integration work in the Engine Room. The same task also wraps
@@ -126,17 +68,9 @@ staleness, route coverage, and ledgers do not re-walk every memory tree on every
 **Task 33:** `project_and_write` also passes `active_worktree_groups=inputs.active_worktree_groups`
 inside `WorkspaceStructure`, so the served `WorkspaceProjection.activeWorktreeGroups` reuses the exact
 `active_enclosure_worktree_groups` set already computed for the Engine Room. The Topology constellation
-and the Engine Room therefore share one definition of "active", and the shared `enclosures`/`lifecycles`
-collections still carry all-time history for the other views.
+and the Engine Room therefore share one definition of "active", and the task-bound and unbound worktrees preserve operational evidence for the other views.
 
-**L5 (260628_operations-integration):** retention is now **enclosure-aware**. `read_enclosures` is
-hoisted *above* the prune call, and `prune_expired_lifecycle_event_logs` is invoked with
-`protected_lifecycle_ids=series_retained_lifecycle_ids(enclosures, now=moment)`. The effect: every leaf
-of a not-yet-retired master series is exempt from the inactivity TTL, so a running durable task (and its
-sibling leaves) never lose their Event River history mid-task. This closed the regression where the
-hour-long inactivity prune deleted a live task's log — and admission then keyed on the now-missing log,
-making the worktree vanish from the Engine Room. The protection set is derived entirely from durable
-enclosure state in `worktree_provider_admission`; this file only reorders the read and threads the set.
+Lifecycle event dormancy/series-retention exemptions are removed, not relocated onto the surviving River. Contract-derived admission remains independent of session logs and does not author task stage.
 
 ### 260712-TRH-L7 status-source split
 
@@ -162,15 +96,9 @@ The recurring projection path uses projected status plus the latest landing snap
 - **Drift snapshot retention is enforced at the I/O edge:** projection pruning happens
   before `read_drift_snapshots`, so the reducer receives a current snapshot list rather
   than an ever-growing set that clients merely filter.
-- **Attention acknowledgement pruning is tick-bound:** `project_and_write` uses the reducer's projected
-  lifecycle states as the live set and prunes `AttentionDismissalStore` rows outside that set.
-- **Raw event retention is tick-bound and enclosure-aware:** dormant lifecycle event logs are pruned
-  before the lifecycle log read, but `enclosures` is read first so a not-yet-retired master series'
-  leaf ids are passed as `protected_lifecycle_ids` — a live durable task's history is never pruned by
-  inactivity, and admission (which keys on the durable enclosure) keeps the worktree visible.
-- **Slow repo surfaces are cached, not fast attention inputs:** `_gather_repo_surfaces_cached` caches
-  per-repo onboarding/ledger walks, while lifecycle logs, gates, admitted providers/setup progress,
-  pickups, task documents, and dismissals are still read every projection tick.
+- **Acknowledgement cleanup:** native per-kind complete source observations, not reduced lifecycle/task status, decide recovery/removal/fingerprint change. Partial failure is not health.
+- **Host intake:** startup or HOST_ACTIVITY invalidation only; periodic heartbeat/full healing does not read the host.
+- **Repo surfaces:** retain their cache/TTL rather than being reread on every event.
 - **Engine status probes are active-enclosure scoped:** `read_engine_process_facts` receives only
   non-terminal enclosure groups, preventing historical contracts from causing a long git/status tail.
 - **Contracts refresh only when task inputs require it, and shared snapshots are read-only:**
@@ -183,15 +111,13 @@ The recurring projection path uses projected status plus the latest landing snap
 ### Repo-Internal References
 
 - The shared store-root resolver. [1]
-- The append-only store whose logs are read back. [2]
-- The pure fold this drives. [3]
+- project_and_write drives the pure project_workspace assembler, passing retained structural and analytical inputs. The assembler enriches enclosure actions, builds native task entries from task sources and host activity, returns their tasks/counts and unbound enclosures, and builds provider/attention/Engine Room analytics and metrics. The pure enclosure action helpers gate integrate/cleanup by durable closeout/integration/cleanup facts; there is no project_lifecycle fold. [3]
 - The worker-owned state refreshes task inputs. [4]
 - The worker-owned state refreshes engine facts. [5]
 - The worker-owned state refreshes progress inputs. [6]
 - The input state refresh pass owns its delegated task, provider, and drift refreshes before returning the projection inputs. [12]
 
 | The pure fold consumes the threaded `engine_process_facts` / `engine_start_progress` inputs. | `project_workspace` | mcp/src/agents_remember/observer/reducer.py:128-181 |
-| The compact lifecycle-scoped attention acknowledgement store is pruned by `project_and_write`. | `project_and_write` | mcp/src/agents_remember/serving/projections/projection_store.py:212-275 |
 | The atomic-write design requirement and serving placement are specified in §2.5 and §5. | `### 2.5 The observer and its projections`; `## 5. Placement and Packaging` | docs/design/observable-lifecycle.md:241-251; docs/design/observable-lifecycle.md:323-338 |
 | The tick calls the TTL-gated provider refresher before `ProjectionInputState.read`, whose delegated `_refresh_providers` performs provider reads. | "tick.provider_refresher.maybe_refresh("; "inputs = state.read("; `_refresh_providers` | mcp/src/agents_remember/serving/projections/projection_inputs.py:319-338; mcp/src/agents_remember/serving/projections/projection_store.py:226-226; mcp/src/agents_remember/serving/projections/projection_store.py:228-228 |
 | `ProjectionInputState.read` owns the delegated domain refreshes and returns the complete input bundle. | "def read("; "return ProjectionInputs" | mcp/src/agents_remember/serving/projections/projection_inputs.py:214-264 |
@@ -210,13 +136,12 @@ This entry supersedes any earlier description in this sidecar that conflicts wit
 `project_and_write` receives an optional worker-owned `ProjectionInputState` (now carried on
 `ProjectionTickState`) plus exact `ProjectionRefresh` and consumes its complete `ProjectionInputs`.
 The reducer and atomic-write boundary are unchanged; input acquisition and reclamation belong to
-the state object. `state.read(...)` is called with a `ProjectionReaders(lifecycle=read_lifecycle_logs,
-repo_surfaces=_gather_repo_surfaces_cached, landing_state=tick.landing_state)` and a
+the state object. `state.read(...)` is called with a `ProjectionReaders(repo_surfaces=_gather_repo_surfaces_cached, landing_state=tick.landing_state)` and a
 `RefreshPass(now=moment, refresh=refresh or ProjectionRefresh.full())`.
 
 - Input acquisition and reclamation belong to the worker-owned state. [7]
 - The complete acquired input bundle is represented by `ProjectionInputs`. [8]
 - `project_and_write` invokes the input state rather than owning those reads itself. [9]
-- `ProjectionInputState._refresh_drift` prunes stale drift snapshots for deleted worktrees before the analytical read.  Anchor: "def _refresh_drift(self"; "def prune_orphaned_drift_snapshots(" [10]
+- On task-structure or drift invalidation, ProjectionInputState._refresh_drift passes its retained contracts and an actionable-drift observation to pruning before reading analytical snapshots. Pruning deletes valid branch-orphaned snapshots only with complete native branch/contract/snapshot proof; failure of that proof retains snapshots. A deleted checkout/worktree alone does not prove its branch is gone, and a valid changed occurrence remains visible even when a sibling read is incomplete. [10]
 
 - The shared contract snapshot is retained across unaffected ticks, built for full task refresh and updated for directed task refresh.  Anchor: "_contract_snapshot_cache = ContractSnapshotCache()"; "def build(self"; "contract_cache=_contract_snapshot_cache"; "self._contract_cache.build(" [11]

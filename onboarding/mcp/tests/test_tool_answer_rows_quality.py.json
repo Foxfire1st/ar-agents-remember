@@ -6,8 +6,9 @@
         "blob": "0ab3450c0494a600707fd97b72f54b632f05f0ee",
         "content": "sha256:4b31f829a9e66f99017480733838b5c33a01705b4151d94b4e20a9beb8c8fe34",
         "locator": {
-          "kind": "symbol",
-          "name": "QualityProductionTests.test_blocking_projects_the_populations_in_repair_order"
+          "end": 607,
+          "kind": "line_range",
+          "start": 511
         }
       },
       "facet": "Missing-only, stale-only, census-only and mixed cases assert projected entries and repair order; the missing-only case also asserts blockingCount=1.",

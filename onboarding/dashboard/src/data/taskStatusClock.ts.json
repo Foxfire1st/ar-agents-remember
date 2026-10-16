@@ -1,0 +1,23 @@
+{
+  "path": "dashboard/src/data/taskStatusClock.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Implementation",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "48d6394f8647e24fdb9e7305b160d27740f5f3e9",
+            "content": "sha256:d8f2791bba21c3026f789e07283a3e7ac2059aac4e583c23dcc28b9ce4e39c4e",
+            "locator": {
+              "kind": "symbol",
+              "name": "subscribe"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

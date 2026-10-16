@@ -6,15 +6,14 @@
 
 ## Purpose
 
-Pure presentation facts for one Operations row: the mark, single task-state word, need band, numeric progress and complete hover text.
+Pure presentation helpers for one Operations row: `rowBand`, `shortTaskId`, `progressFigure` and `rowHover`. Shared task-status words and age rendering belong to `detail-panel/pageParts`; this module does not render the row’s mark or status word.
 
 ## Code Commentary
 
-A lifecycle inferred without any last event is not a report of pause: the document status speaks, or waiting when no document exists. Reported lifecycles speak their own state and eligible age; completed and abandoned states use document-style marks. `rowWord` now returns only that task state and its eligible age. Asking and blocked lifecycle states remain band zero, ahead of working, waiting and over bands; this is the task-state classification, not the former gate/inbox/chat priority selector. Hover text preserves current lifecycle facts, document status, current step, worktree/repository and abandoned/discarded progress. Short IDs are derived from an exact master-folder/id prefix, not guessed filename numbering. The removed `askingWord` helper and gate/pickup/chat-activity inputs belong to the historical L144 priority promise, narrowed by the architect's L113 INV-7GVWYD ruling; they are not current consumers.
+rowBand orders works, started, planned, terminal; tree order breaks ties. pageParts owns shared status/age, never inferred lifecycle precedence. Hover contains title, unauthored-document notice, state/stage, repository, current step, progress and contributing host event when present, including abandoned/discarded counts; it does not display entry.scope or the full document-reference path. shortTaskId strips only the exact parent.id prefix; no gate/inbox/chat priority or runtime-id guessing.
 
 ## Evidence
 
-- State comes from a reporting lifecycle or the document, without mutating either. [1]
 
-- The one word is the task state with eligible age; removed outside-attention inputs no longer participate. [2]
-- Whole-row hover retains the other current document, lifecycle and worktree facts. \[3] [3]
+
+- The hover explicitly selects its actual rendered fields; scope and full reference path are not among them. This corrects an earlier Curator wording overstatement, not product behavior. [1]

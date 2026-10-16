@@ -10,7 +10,7 @@ Pin document-local expansion state across task, master and sprint selection.
 
 ## Code Commentary
 
-Switching documents closes the objective, note expansion and own view. Refreshing the same document preserves an opened objective while updating its status. These cases discriminate document identity from transient projection-object identity.
+Switching canonical task-entry keys closes the objective, note expansion and own view. A refreshed object with the same key preserves the opened objective while its summary.statusNote updates; it does not compete with a second document-status field. These cases distinguish stable entry identity from projection-object identity.
 
 ## Boundaries
 

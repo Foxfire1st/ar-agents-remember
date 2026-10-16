@@ -3,11 +3,12 @@
   "proves": [
     {
       "anchor": {
-        "blob": "e5371d09e4eaf0b62868b3d7051e44683ae9f62f",
-        "content": "sha256:1a612666e1a9f2eaa0f74227135e98c8d305a211d3cd97faf1c4a76de95c1a02",
+        "blob": "5d59f1fc657238de180b82c194dc8c5ed3a64c6d",
+        "content": "sha256:a3a43acfa67b45cc0b7954e7fcb151d0ffe77e11b3e32294be8422497d08d7ee",
         "locator": {
-          "kind": "symbol",
-          "name": "ProjectionReaderRetryTests.test_before_and_after_each_reader_failure_retries_complete_projection"
+          "end": 102,
+          "kind": "line_range",
+          "start": 51
         }
       },
       "facet": "The exact controlled source case before and after each reader failure retries complete projection; this is a focused executable facet, not installed-runtime or full performance acceptance.",

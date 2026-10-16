@@ -20,7 +20,7 @@ Plans and publishes a task reopen transition under the existing repository, cont
 
 **Both documents reopen rewrites must be in place (review R1 finding 1, rulings 2026-09-30T13:11:32 and 13:35:32).** `_plan_leaf_doc_reset` and `_plan_master_index_reset` call `tasks/leaf_doc.require_task_document_in_place` after their existing checks, so a leaf or master that the store would write to another file (a hand-made `light` leaf `01_x.json`, a hand-made master `other.json`, both written as the folder's `task.json`) is refused as `blocked`, in the preview and under the publication CAS, before any write. On base the misnamed light leaf crashed with `duplicate task document write target`, and the misnamed master silently replaced the series `task.json`. Correctly placed documents reopen exactly as before.
 
-The frozen landing observation clear, leaf/master task updates, and contract reset publish in one task-fact CAS batch. Apply reloads and repeats the terminal/source checks inside that publication. Original artifacts support rollback of a failed canonical write; derived projection refresh happens afterward. Recreating worktrees remains worktree_start's responsibility.
+Preview and protected publication supply the shared scope owner with each prepared document's explicit JSON path. The frozen landing observation clear, leaf/master task updates, and contract reset publish in one task-fact CAS batch. Apply reloads and repeats the terminal/source checks inside that publication. Original artifacts support rollback of a failed canonical write; derived projection refresh happens afterward. Recreating worktrees remains worktree_start's responsibility.
 
 **The series half shares the terminal path's publication route.** The series half uses the same tombstone proof, the same guards and the same archive citation as the terminal path — there is no second publication route.
 
@@ -68,3 +68,8 @@ These current source spans identify the implementation owners and the specific a
 ### Cross-Repo References
 
 The operation and fixture boundaries described here are defined by same-repository contracts and Git helpers. No separate cross-repository document is used as evidence for this card.
+
+## Current source evidence
+
+
+- Leaf reopen supplies actual path/document pairs in preview and under the existing publication authority. [31]

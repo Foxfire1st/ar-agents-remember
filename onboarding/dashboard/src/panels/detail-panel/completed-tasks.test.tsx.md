@@ -10,16 +10,17 @@ Declare mounted regression assertions for time-first completed master rows and t
 
 ## Code Commentary
 
-Fabricated task nodes supply explicit completion times, exact legacy finalizer decisions and an unknown time. Legacy controls assert newest valid exact-text dates regardless of storage order (including invalid, empty and pre-epoch controls), completedAt precedence, nonmutation, and no fallback from similar prose or absent documents. Mounted cases assert both time directions with unknown last, numeric ID direction, aria-sort and mount-local reset. Preview assertions cover populated/short/empty groups and navigation to the full view.
+Native summary.completedAt and served children replace legacy finalizer parsing. Master rows retain time/numeric-id sorting, unknown-last, aria-sort and mount-local reset. Seven/three/zero-row controls retain newest-five preview and full-view reachability.
 
-Composed lookup controls parameterize 100 and 300 rows. Counted docPath getters compare completedEntries output to an uninstrumented control and bound preparation reads at size * 2. Whole-list and preview cases compare exact rendered HTML, click each visible local target with the full-list position-derived slug, retain the first duplicate slug, leave folder-qualified/empty-file rows inert, exercise sorting in the whole list, and bound reads at size * 4 + 30. These counters constrain the inspected indexed lookup path; they are not elapsed-time benchmarks or a claim every dashboard loop is linear.
+At 100/300 children in preview/full modes, a Proxy counts native task-map reads: completedEntries requires size+1 and mounted work <=(size+1)*4. HTML matches an uninstrumented control; visible buttons navigate by served child position/key, including a completed entry with no summary. Sorting remains; these are lookup counts, not elapsed-time/global linearity proof.
 
-Abandoned-master and sprint groups assert authored order without completion sort controls. These seeded DOM cases do not produce timestamps through the real finalizer, migrate documents or constitute live projection/browser acceptance. Source-defined assertions are not a claim this Curator ran them.
+Aborted-master/sprint groups retain authored order without sort controls. Seeded timestamps are not finalizer/legacy-parser, live-projection, browser or executed-test evidence.
 
 ## Evidence
 
 - Seeded completed-table cases assert time/number ordering, preview and retained non-completed/sprint order, not timestamp production. [1]
 
-- Exact legacy-time controls assert valid-date selection independently of storage order, completedAt precedence, nonmutation and rejection of similar prose/absent documents without a finalizer opportunity. [2]
 
-- Instrumented preparation and mounted whole-list/preview controls declare unchanged output/navigation and bounded docPath reads at 100 and 300 rows; not a fresh test or performance run. [3]
+
+- The parameterized lookup control uses 100 and 300 rows in whole-list and preview modes, plus an entry with no summary. A Proxy counts native task-map reads: preparation equals the uninstrumented result with size + 1 reads; mounted HTML is identical, qualified child navigation is checked, and preview shows five rows. In whole-list mode the missing-document row is observed before clicking the number and completed sort controls. After those clicks the test asserts only the total read bound, reads <= (size + 1) * 4; it does not reassert that row's presence or position. This is source-defined evidence, not a fresh test, timing or performance run; no docPath getter is instrumented. [3]
+- The dataset supplies served task entries with explicit summary.completedAt values and canonical parent/child keys. [4]

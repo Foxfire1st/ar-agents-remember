@@ -1,0 +1,43 @@
+{
+  "path": "dashboard/src/panels/changeset/ChangeSetViewer.cache.test.tsx",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "4da9c75c2bbdb93366e2dad5e8304a728283d6d2",
+        "content": "sha256:71687f6b613f24326693171fbcda6d786010db938801cb6ca4700fab6bd4b773",
+        "locator": {
+          "kind": "symbol",
+          "name": "keeps the parsed list and real editor on unchanged polls, then renders edits and current refusals"
+        }
+      },
+      "facet": "The source-defined working-viewer case manually advances the 2500ms callback, preserves parsed-list and real .cm-mergeView identity on 304, then observes changed-content replacement, current refusal and recovery.",
+      "id": "PRF-3P1P5F",
+      "invariant": "INV-QK8XNM",
+      "origin": {
+        "handoffEntry": "L168-W-R168-06",
+        "leaf": "260928-MIK-L168"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "List/editor retention and current refusal\n\nAnchor: keeps the parsed list and real editor on unchanged polls, then renders edits and current refusals",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4da9c75c2bbdb93366e2dad5e8304a728283d6d2",
+            "content": "sha256:71687f6b613f24326693171fbcda6d786010db938801cb6ca4700fab6bd4b773",
+            "locator": {
+              "end": 104,
+              "kind": "line_range",
+              "start": 14
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

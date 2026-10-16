@@ -27,13 +27,7 @@ module was rewritten, and those cases no longer exist.
 
 ### Logic
 
-**Fixtures.** `UNAVAILABLE` is the summary route's `unavailable` answer carrying the real
-never-initialized refusal (`candidate_dataset_absent`, its detail and next action verbatim, offending
-input `knowledge-candidate.sqlite`). `counted(added, removed, extra)` builds a counted (or, with
-`unresolved`, partial) body whose parts sum to its totals. `COUNTERS` carries change-set **line totals
-that must never appear** on the Intent review control. `serve(summaries)` answers the summary route
-with each answer in turn and every other route with `COUNTERS`; `urlsOf` counts requests per route;
-`liveLeaf` seeds a live enclosure; `mount` renders the bar and returns the `onOpen` spy.
+UNAVAILABLE preserves owner refusal fields; counted/partial parts sum to totals. COUNTERS are line totals forbidden on the Intent review control. serve/urlsOf count routes; liveLeaf supplies a native entry with its bound worktree, and mount passes that entry to the real bar.
 
 **The compact entry.** One control, `⇄ Intent review+4 −2`, whose text never contains the line totals;
 the removed constructs (subject picker, catalogue totals, entry state paragraph, entry refresh control)
@@ -48,9 +42,7 @@ the control still opens the review. A body the route did not produce (a 502) is 
 status in the disclosure and no invented refusal. A partial answer shows its counts plus `partial`, and
 the disclosure says how many subjects were left out.
 
-**Invalidation (ICR-R17).** An unrelated workspace publication (the analytics delta) causes no summary
-re-read, while a move in this leaf's own lifecycle facts does; an answer for a previous leaf, held open
-until after the bar moved to another leaf, is dropped.
+**Invalidation.** Unrelated analytics does not re-read; this entry’s bound-worktree change does, despite the retained lifecycle test title. A pending summary is held while closeout facts change: a second request is required, older-first completion stays loading with no old counts, and newer-first completion remains visible after the older response returns. Switching leaves also drops the earlier late answer. This is comparison-scoped invalidation, not a lifecycle-store join.
 
 **Committed counter state (B6, from L25).** A committed read of a leaf whose range nothing recorded
 shows the brief `unrecorded` state, the route's sentence only in the disclosure, and never its zero as a
@@ -58,10 +50,7 @@ total; it stays apart from a measured-empty range and from a refusal.
 
 ### Conventions
 
-It imports the real bar and the shipped `enclosure`/`seedProjection` helpers from `./test-utils`, so
-the store it seeds is the store the dashboard reads. Assertions read `data-intent-state`,
-`data-review-state`, `data-review-code`, element text and the `onOpen` spy's recorded target; the
-disclosure is asserted closed by default. Global fetch is restored in `afterEach`.
+The real bar receives native entry/worktree inputs from shared seeds, with only fetch stubbed. State codes/text/exact onOpen targets and closed disclosure remain asserted; there is no lifecycle-store join.
 
 ### Invariants And Boundaries
 
@@ -99,17 +88,14 @@ Every anchor in a row occurs inside the range that row cites.
 - A counted or partial body whose parts sum to its totals. [4]
 - Line totals that must never appear on the Intent review control. [5]
 - The one stub and the per-route request counter. [6]
-- The live-leaf seeding and the mount. [7]
 - **One control with intent counts and nothing beside it; the click opens the task context.** [8]
 - **One summary read, no catalogue read, one committed read.** [9]
 - **Missing knowledge stated briefly, never as `+0 −0`, with the refusal in a closed disclosure.** [10]
 - An unreadable answer, with no invented refusal. [11]
 - Partial counts marked and explained. [12]
-- **No re-read for unrelated publications; a re-read when this leaf's lifecycle moves.** [13]
 - A previous leaf's late answer is dropped. [14]
 - **260921-ICR-L25, register B6: the unrecorded committed range shown briefly, its sentence on demand, never its zero as a total, and kept apart from measured-empty and from a refusal.** [15]
 - The control, its summary read and the disclosure these cases drive. [16]
-- The bar's composition and the leaf-scoped invalidation facts. [17]
 
 ### Cross-Repo References
 
@@ -128,3 +114,8 @@ replaced. What L17 pinned survives in its current form: a previous leaf's late a
 and invalidation is now leaf-scoped (an unrelated publication re-reads nothing), as the Logic section
 above records. The cockpit-level re-validation points ruled for L47-R1-F2 are pinned in
 `cockpit/Cockpit.intentEntry.test.tsx`.
+
+- [7]
+- [13]
+- [17]
+- A pending facts move starts a second read and old counts never replace the new identity, in both completion orders. [18]

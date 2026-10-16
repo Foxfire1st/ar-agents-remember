@@ -11,11 +11,11 @@ Role launch instructions are generic capsule-or-refused values; compilation and 
 
 ## Hot Path Summary
 
-app.create_app builds the app-scoped collaborators and registers retained reader/action/grant routes before the static mount. Projection state carries task summaries and servingBuild; /api/task-document is the separately confined body reader. The retained action path acknowledges/dismisses attention and the developer grant route calls shared grant authority; gate-decision and operator-inbox routes are absent.
+`app.create_app` builds app-scoped collaborators and registers retained reader/action/grant routes before the static mount. Projection version 2 serves reference-keyed `tasks` (TaskEntry), `taskCounts`, unbound enclosures and retained analytics; state SSE uses task/task.removed/taskCounts rather than lifecycle rows. `/api/task-document` returns separately requested TaskSummary content, not another status authority. The retained action path acknowledges/dismisses attention and the developer grant route calls shared grant authority; gate-decision and operator-inbox routes are absent.
 
 _app_lifespan compacts the workspace river, primes the projector and starts projection, provider-metrics, leaf-archive recovery, held native-role message delivery and river-compaction tasks. Optional heap/allocator tasks remain opt-in. It does not prime or poll a terminal catalogue or run a hosted-seat notifier. The archive worker drains cancellation before close; held-message sweep failures are contained. Shutdown invokes the injected review-tree owner, cancels and awaits owned background tasks; there is no removed terminal-host shutdown.
 
-The projector retains change-driven invalidation, stable/current publication, subscription delivery and task-input retry ownership. File-surface readers and the observer reducer keep their own absence and last-good-data policies. Review/read shims do not turn an unwired adapter into an empty catalogue, body or comparison.
+The projector retains change-driven invalidation, stable/current publication, subscription delivery and task-input retry ownership. Canonical task status maps to planned/started/aborted/completed; only started tasks receive bound host-agent works/paused/unknown activity and contributing eventAt. Declared reciprocal rows and commanded-master relations determine membership independently of worktree bindings. Host reads occur at startup and host invalidation, with boot reconciliation and a proved supervisor-exit subscription; ordinary heartbeat/full healing is not host polling. File readers retain their own absence and last-good-data policies. Review/read shims do not turn an unwired adapter into an empty catalogue, body or comparison.
 
 ## Construction And Ownership
 
@@ -109,13 +109,19 @@ Source account retained from the parked claim (anchor currency not renewed here)
 
 - A numbered recorded comparison is looked up exactly; code/memory ranges use its recorded sides (converted memory base when present), and the list returns those four tree operands.
 
-The retained app shares one always-on background ledger across actual worker units, synchronous publication, event tails and startup. Diagnostics expose owner/wake facts with explicit incomplete windows rather than acceptance. Transaction-bound own-write suppression and pending invalidations retain independent full healing. Server-side host-start loading keeps its shared OS lease/progress and cancellation-drained driver without restoring the removed terminal catalogue or notifier plane.
+The retained app shares one always-on background ledger across actual worker units, synchronous publication, event tails and startup. Diagnostics expose owner/wake facts with explicit incomplete windows rather than acceptance. Transaction-bound own-write suppression and pending invalidations retain healing for their admitted domains; native host activity is excluded from periodic healing. Raw event SSE reads only the workspace River, with writer/compactor-owned retention and virtual offsets; it is neither a lifecycle catalogue nor task/activity truth. Server-side host-start loading keeps its shared OS lease/progress and cancellation-drained driver without restoring the removed terminal catalogue or notifier plane.
 
 ## Landing Interest And Periodic Safety
 
 Landing discovery and new remote-probe admission are conditional on the Projector's actual shared state-stream subscribers, bound by app composition before startup. Per current exact contract identity, semantic-answer age increases the due interval from 30 seconds to 120, 600 and 3600; changed answers/contracts reset it. One-shot state reads and frontend signals create no landing interest. Existing accounting, drained cancellation, sweep-local remote sharing and exact terminal-final/reopen boundaries remain.
 
-This is not a dashboard-wide stop switch. Projection/watch/healing and other owned loops retain their obligations. In particular, provider sample/record/degradation/compact remains periodic and independent of page interest or launch-authority absence: leftover labelled stacks must stay observable after revocation/restart or malformed authority. No fleet-retirement witness is inferred from permission to launch. Runtime measurements and installation acceptance remain separate from these source contracts.
+This is not a dashboard-wide stop switch. Projection/watch/healing and other owned loops retain obligations within their domains; native host activity has no periodic healing poll. In particular, provider sample/record/degradation/compact remains periodic and independent of page interest or launch-authority absence: leftover labelled stacks must stay observable after revocation/restart or malformed authority. No fleet-retirement witness is inferred from permission to launch. Runtime measurements and installation acceptance remain separate from these source contracts.
+
+## Native Read Reuse And Content Boundaries
+
+`register_changeset_routes` creates one bounded ChangesetCache, shared with the intent-summary route through its typed inputs/read port. Native Git remains the selector/diff owner. Reuse observes repository/configuration/reference/object and, when needed, working-tree generations plus dependencies discovered before consumption. Pending results enter retention only after matching fresh post-read observations; incomplete/changing dependencies and failed native reads do not become reusable successes. Object-absence proofs also invalidate on additions. This is not TTL-based permission to serve stale inputs or a new comparison generation. Successful change-set/summary responses derive weak ETags from their returned bytes and honor If-None-Match; an unwired summary keeps its named 503.
+
+Full task bodies have a separate app-scoped LRU of at most 1,024 entries/16 MiB, distinct from the background task-payload parse cache and native change-set/summary reuse. Captured filesystem inputs revalidate before body reuse; serialized TaskSummary bytes define its content revision. Unreadable/changing generations are served uncached and cannot justify a 304. State GET/SSE retain their separate projection-instance dump memo and servingBuild tail. None of these caches changes task stage, host activity, recorded operands, permission or acceptance.
 
 ## Evidence
 
@@ -231,8 +237,12 @@ This is not a dashboard-wide stop switch. Projection/watch/healing and other own
 - App registers three intent handlers plus separate summary, tree and reader ports before static delivery. [110]
 - Startup ordering, native held-message sweep registration, worklist-first shutdown, and awaited background teardown are explicit.  Anchor: `_serving_lifespan`, `_held_delivery_loop`, `_to_thread_owned` (delegating to accounted cancellation-drained offload) [111]
 - Leaf-archive recovery alone uses the retained completion-relative background loop; no terminal-observation prime/poll remains. [112]
-- Live pacing adds post-completion rest, so interval/heartbeat alone is not a total freshness bound. [113]
-- Missing wheel exits degraded; watch establishment, retry and native-watch options are explicit. [114]
+
+- Live pacing adds post-completion rest, so interval/heartbeat alone is not a total freshness bound.  Anchor: projection_completed; _next_deadline [113]
+
+
+- Missing wheel exits degraded; watch establishment, retry and native-watch options are explicit.  Anchor: run; _watch_once [114]
+
 - Tick cancellation drains filesystem work; state commits before subscriber notification. [115]
 - Source content admits attributed unchanged context only with measured requested inventory. [120]
 - Leaf range returns empty for missing repository before endpoint-owner admission. [121]
@@ -248,3 +258,9 @@ This is not a dashboard-wide stop switch. Projection/watch/healing and other own
 - Shared app composition binds real landing interest before startup. [129]
 - Landing interest gates actual discovery and probe admission, while due policy retains exact identities. [130]
 - Provider safety remains an independent periodic sequence. [131]
+
+- Complete reconciled host input joins role-agent task identities only while its supervisor observation is armed. [132]
+- Native cache values reuse only complete matching input generations; additional consumed inputs must have pre-read observations. [133]
+- Pending cache results are retained only when fresh post-read input observations match their captured generation. [134]
+- Full TaskSummary preparation has separate bounded retention and generation checks, not a second task-status producer. [135]
+- Task-body 304 requires a still-current captured generation and matching content revision. [136]

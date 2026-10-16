@@ -8,8 +8,8 @@
   "applicability": "The serving-build evidence pins carried by the current sweep.",
   "conditions": [
     "Identify the self-contained merged sweep and separate shared-world populations independently.",
-    "Derive the current positive population from retained advertised tools and keep deliberate empty pins.",
-    "Retain exact pin equality and historical L110/L111 repair ownership without renewing historical observations."
+    "Derive the current positive population from retained advertised tools; keep the explicitly declared empty envelope-loss and unmarked-not-ok pins, not the removed ambient-state pin.",
+    "Retain exact equality for the surviving pins and historical L110/L111 repair ownership without renewing historical observations."
   ],
   "exclusions": [
     "Product repairs in this leaf, which belong to L111 for lifecycle and L110 for MQ projection.",
@@ -27,9 +27,9 @@
     "leaf": "260928-MIK-L71",
     "task": "260928-MIK"
   },
-  "revision": 4,
+  "revision": 5,
   "schema": "ar-invariant/v1",
-  "statement": "The composed self-contained sweep declares an empty envelope-loss pin, an empty ambient-state raiser pin and an empty unmarked-not-ok pin after the admitted same-change repairs; its positive population is memory_baseline_adopt, not the retired search tools. The separate shared entry-point world has its own empty unmarked-not-ok pin. Exact-equality and same-change repair ownership controls remain; these declarations are not an executed new failure census.",
+  "statement": "The composed self-contained sweep declares the retained empty envelope-loss and empty unmarked-not-ok pins after the admitted same-change repairs; its positive population is memory_baseline_adopt, not the retired search tools. The separate shared entry-point world has its own empty unmarked-not-ok pin. The ambient-state raiser pin, ambient-state matrix and their case have been removed; they are not current declarations or evidence. Exact-equality checks on the retained pins and historical same-change repair ownership remain; these declarations are not an executed new failure census.",
   "status": "proposed",
   "supersedes": []
 }

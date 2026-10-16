@@ -10,7 +10,7 @@
     "Reads hold the shared lock, or proceed lockless only with no lockfile before and after."
   ],
   "exclusions": [
-    "Lifecycle-log reclamation, owned by the projection pass.",
+    "Workspace Event River retention and compaction, owned by the river writer and compactor rather than the read-only stream.",
     "Cursors inside reclaimed history, which reseat at the retained head."
   ],
   "id": "INV-S11488",
@@ -25,7 +25,7 @@
     "leaf": "260928-MIK-L114",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-invariant/v1",
   "statement": "Rule-7 stream is write-free; ready carries lastEventTs; protocol otherwise unchanged.",
   "status": "proposed",

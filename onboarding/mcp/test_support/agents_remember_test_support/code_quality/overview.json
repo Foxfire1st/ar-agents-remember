@@ -666,6 +666,40 @@
         }
       ]
     },
+    "30": {
+      "note": "The retained named vocabularies are attention severity/lane and process fact/health, not removed session state/phase.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "27a538af0bc1ef798d4b4413fbd4b8b0acf7436a",
+            "content": "sha256:eba3c55cf4b81ad365144e350b08a71c116e8a889d16929011467149d0bb9d75",
+            "locator": {
+              "kind": "symbol",
+              "name": "NAMED_VOCABULARIES"
+            },
+            "path": "mcp/test_support/agents_remember_test_support/code_quality/projection_types.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "31": {
+      "note": "Ordinary schema interfaces are rendered without a lifecycle-count extension or injected metrics factory/legacy subtask union.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "27a538af0bc1ef798d4b4413fbd4b8b0acf7436a",
+            "content": "sha256:9e779eec0a5bb3435a4889ad985fe339292f653ed4f4a290181666889168dc56",
+            "locator": {
+              "kind": "symbol",
+              "name": "render_typescript"
+            },
+            "path": "mcp/test_support/agents_remember_test_support/code_quality/projection_types.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
     "5": {
       "note": "Final memory adapter requires the selected four-code-terminal prefix and compares published producer bytes.",
       "targets": [

@@ -24,8 +24,9 @@
         "blob": "78f277b5ed8c400a748841e464ebb4f9e3457ab9",
         "content": "sha256:c80779f7fe5d090b8f34c42292a7983b2eab492bd4576850c935dc6ad93977eb",
         "locator": {
-          "kind": "symbol",
-          "name": "_citation_fix_answer"
+          "end": 250,
+          "kind": "line_range",
+          "start": 199
         }
       },
       "id": "RLZ-G52W6N",
@@ -60,8 +61,9 @@
         "blob": "78f277b5ed8c400a748841e464ebb4f9e3457ab9",
         "content": "sha256:d4d8ce5521b5faaf8a62fd9bf5d1f16bcbd5efa38e76d465158f818005c4728b",
         "locator": {
-          "kind": "symbol",
-          "name": "_route_index_answer"
+          "end": 460,
+          "kind": "line_range",
+          "start": 439
         }
       },
       "id": "RLZ-NKTNVE",

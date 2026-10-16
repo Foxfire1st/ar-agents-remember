@@ -3,8 +3,8 @@
   "proves": [
     {
       "anchor": {
-        "blob": "e9e3b8a889f277e7a8f5d34c6cb79825dd994d42",
-        "content": "sha256:717ef3f153b6432006eff447860616dc8fc74f32306da0cc89d5fe5bcf37092a",
+        "blob": "6bdc243d3ad1d537675952942d2f2872d9bec368",
+        "content": "sha256:095da9f2ff142e0464763a8ee03bd05f696f29d852e731612aa46725f9c2e514",
         "locator": {
           "kind": "symbol",
           "name": "test_reviewer_binding_opens_repairs_and_preserves_sealed_round_limits"
@@ -22,10 +22,12 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "e9e3b8a889f277e7a8f5d34c6cb79825dd994d42",
-        "content": "sha256:486ca433713d952e74945c8aacf5bad076135c784e23ab3c3adf318be27a6bd4",
+        "blob": "6bdc243d3ad1d537675952942d2f2872d9bec368",
+        "content": "sha256:e5082f0657f86656442c332d5002c57184bd035d28b7a08fe95fb80565492cda",
         "locator": {
-          "kind": "file"
+          "end": 153,
+          "kind": "line_range",
+          "start": 1
         }
       },
       "id": "RLZ-68PVA6",

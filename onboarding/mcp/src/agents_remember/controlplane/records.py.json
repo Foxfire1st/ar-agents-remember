@@ -54,7 +54,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4fc4aa39e56131539fd54a9c9cb364fc993b2008",
+            "blob": "20698dea707fc36c65a7dbcaca8f04e5ae067b5e",
             "content": "sha256:6fccc769ef95e64d5c53e3ec6afd3a1828fc5ac5b1385c032b2b52665415ce52",
             "locator": {
               "kind": "symbol",
@@ -71,7 +71,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5af2a37e3cdff5f67bda1c0fd35069fcde2489e7",
+            "blob": "4c5bfb1e292fbf123166776a484851f67ac6f142",
             "content": "sha256:e5c0b9f39701e93fc902434314625b8e41e4f8627df07b304467256fe1dac109",
             "locator": {
               "kind": "symbol",
@@ -83,53 +83,16 @@
       ]
     },
     "5": {
-      "note": "`DurableRecord` supplies the `extra=\"forbid\"` config and the `schemaVersion` validator that rejects an unknown major and accepts an unknown minor.",
+      "note": "`DurableRecord` supplies the `extra=\"forbid\"` config and the `schemaVersion` validator that rejects an unknown major and accepts an unknown minor.\n\nAnchor: actual current supporting source",
       "targets": [
         {
           "anchor": {
-            "blob": "0ed5c1cbe0f613e46179d6661e364602677f9935",
-            "content": "sha256:592e3db0cf23a5975acd675c9f0ea4cd776f9197a5228977f32c151529dd34b5",
+            "blob": "59a148a711df3a07d0424f5448d9871b6aac6930",
+            "content": "sha256:d077238c9276af8e28f4dc284252fa4d479184853fd11ab3254379e087a8fbd8",
             "locator": {
-              "kind": "symbol",
-              "name": "DurableRecord"
-            },
-            "path": "mcp/src/agents_remember/controlplane/durable_store.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "0ed5c1cbe0f613e46179d6661e364602677f9935",
-            "content": "sha256:a71288d370592aafc207460d9f442cc9d640f82b9fd50f219a7220431a17d397",
-            "locator": {
-              "kind": "symbol",
-              "name": "schema_version_supported"
-            },
-            "path": "mcp/src/agents_remember/controlplane/durable_store.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "0ed5c1cbe0f613e46179d6661e364602677f9935",
-            "content": "sha256:7cdd7ebf24d5534ce80d66e4639f3017b81142344eabfb895bf7400158b17a50",
-            "locator": {
-              "end": 245,
+              "end": 221,
               "kind": "line_range",
-              "start": 224
-            },
-            "path": "mcp/src/agents_remember/controlplane/durable_store.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "0ed5c1cbe0f613e46179d6661e364602677f9935",
-            "content": "sha256:9e106904ce26833811676a71061bc28df2135311590e7fd62e8faf50634c7722",
-            "locator": {
-              "end": 271,
-              "kind": "line_range",
-              "start": 248
+              "start": 175
             },
             "path": "mcp/src/agents_remember/controlplane/durable_store.py"
           },

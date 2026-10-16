@@ -1,0 +1,23 @@
+{
+  "path": "mcp/src/agents_remember/serving/projections/task_body_generation.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Capture native input generations for a task body and recheck them before cache reuse/304.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2dd44d08efc626126c686e8990755305a7b91ce5",
+            "content": "sha256:ab87e98cc1fe139f1026cb3fb9e5bf5d7965b8c71e3ea4abee3b2bac3907f771",
+            "locator": {
+              "kind": "symbol",
+              "name": "_identity"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

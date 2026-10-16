@@ -10,8 +10,8 @@ Pure regression tests for need ordering, completed folds and selection reach in 
 
 ## Code Commentary
 
-The synthetic tree assertions cover sibling creation order, scoped in-place folds, completed parents with open work, held selected descendants and both active/completed parent cycles. Flattened keys and depths must retain rows once; the suite does not render React Aria or prove keyboard and click behavior.
+Pure native tree assertions keep a completed master folded despite an active child and open its ancestors to a selected descendant. At 109/300 terminal-child history sizes closed folds construct no child rows; opening preserves authored entry order. Supplied roots for unlisted/missing-parent tasks and their declared children are reached exactly once. No browser-side creation-order/parent reconstruction or legacy cycle algorithm is claimed; React Aria keyboard/click behavior remains outside this pure suite.
 
 ## Evidence
 
-- The tests protect ordering, fold scope, selected reach and cyclic parent handling. [1]
+- Native parent/children, lazy terminal folds, selected reach and authored root/child order are the current pure assertions. [1]

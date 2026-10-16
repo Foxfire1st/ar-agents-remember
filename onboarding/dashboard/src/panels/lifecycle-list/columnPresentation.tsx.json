@@ -3,7 +3,26 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "b3584fb65433d45a91df8120d205194541bcfc75",
+        "blob": "e619eda0f192808b9ff9a988c7cffb3ebfdbcd04",
+        "content": "sha256:48a973522b2f73edcd783ec2c921d240158eedd9a0a35779e1884ed0090b8092",
+        "locator": {
+          "end": 207,
+          "kind": "line_range",
+          "start": 172
+        }
+      },
+      "id": "RLZ-89SXF2",
+      "invariant": "INV-K9B8G8",
+      "origin": {
+        "handoffEntry": "MIK-R144@v1 rule 3a",
+        "leaf": "260928-MIK-L144"
+      },
+      "rationale": "Places the bell at the right end of the column's head, beside the grouping switch; the queue has no block of its own in the column.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "e619eda0f192808b9ff9a988c7cffb3ebfdbcd04",
         "content": "sha256:38e85062975ff4236ae8af2b451b60fbd74e6d1b361a6702aca3271cc3082f89",
         "locator": {
           "end": 166,

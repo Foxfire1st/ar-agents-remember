@@ -1,5 +1,24 @@
 {
   "path": "dashboard/src/panels/lifecycle-list/signals.test.tsx",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "094aefce5c2e973a5258549950ab20787044fda4",
+        "content": "sha256:001662af8ba2ab194f29e5419cfd56735a4f10bdc8a863e88ae0804dd5c6da76",
+        "locator": {
+          "kind": "symbol",
+          "name": "row and page share host-time age through deltas and a later page mount"
+        }
+      },
+      "facet": "The source-defined fake-clock case asserts identical row/page works and paused words/ages through a later page mount and task delta, with one display interval.",
+      "id": "PRF-1A20PB",
+      "invariant": "INV-XZYGEB",
+      "origin": {
+        "handoffEntry": "L168-W-R167-04",
+        "leaf": "260928-MIK-L168"
+      }
+    }
+  ],
   "realizes": [],
   "references": {
     "1": {

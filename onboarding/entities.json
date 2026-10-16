@@ -144,7 +144,7 @@
         },
         {
           "anchor": {
-            "blob": "13a3397260777a0db5b7bf2d2854037b42f8f18b",
+            "blob": "e45cbd6127d560f2f834a2b326c1f9a481c697ac",
             "content": "sha256:ef564c710b907427001e9603a40253491e4142e02a3a221ae967282adf1b550c",
             "locator": {
               "kind": "symbol",
@@ -161,7 +161,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9abba82adbe3808aecb5027997fd396da8ea5d2f",
+            "blob": "97d891cffc76560263390fb8f9b22f38c8260a8b",
             "content": "sha256:3a9ed852bded5a0be69300f9238acb27569c8e4621028fc2de9200cdf5ef2c08",
             "locator": {
               "end": 224,
@@ -174,7 +174,7 @@
         },
         {
           "anchor": {
-            "blob": "9abba82adbe3808aecb5027997fd396da8ea5d2f",
+            "blob": "97d891cffc76560263390fb8f9b22f38c8260a8b",
             "content": "sha256:ecf13dc8ed059a3e33a54b93596d18e2ef1b67905eac792832e52a61c0cb41d9",
             "locator": {
               "kind": "symbol",
@@ -191,7 +191,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "00dc29b96c884b0f82fd5a67b0de544d71f3917e",
+            "blob": "270f5e2139bc6d77e9b3830019d960948454ba06",
             "content": "sha256:bc89365e4597d139bd67aa8bc5de94e80ae2b709f1713129da4483d7e4fa1545",
             "locator": {
               "kind": "symbol",
@@ -297,6 +297,40 @@
         }
       ]
     },
+    "18": {
+      "note": "Native task stage/activity and eventAt are produced once; planned and terminal documents take precedence over host observations.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9e4b2543510affa9e5cc0d4f7e4ee8b261894051",
+            "content": "sha256:348ca25847f5af1de648007ac662ec749f8e0b70d74d88d9bdf446f78299339e",
+            "locator": {
+              "kind": "symbol",
+              "name": "task_state"
+            },
+            "path": "mcp/src/agents_remember/observer/task_entries.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "19": {
+      "note": "Declared children and reciprocal parent links form the canonical task entries independently of worktree bindings.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9e4b2543510affa9e5cc0d4f7e4ee8b261894051",
+            "content": "sha256:b925dcd46887d9d1f145bcfbf499a5ead0e8ae231c2927f6bb436051d0c3534b",
+            "locator": {
+              "kind": "symbol",
+              "name": "build_task_entries"
+            },
+            "path": "mcp/src/agents_remember/observer/task_entries.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
     "2": {
       "note": "Cache write failure is reported without a Git publication.",
       "targets": [
@@ -321,6 +355,41 @@
               "name": "prepare_memory_cache"
             },
             "path": "mcp/src/agents_remember/kernel/memory_cache.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "20": {
+      "note": "Native stage preparation captures document sources and matching master-row synchronization without inventing absent documents.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "156779ca466f0289eb12c8623810b3798a9ca962",
+            "content": "sha256:471a1e70b1b5ad16c47341831113689485549bee8319d85dd8d91a696ec960d3",
+            "locator": {
+              "kind": "symbol",
+              "name": "plan_task_stage"
+            },
+            "path": "mcp/src/agents_remember/worktrees/task_stage.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "21": {
+      "note": "Manager guidance distinguishes native stage publication from explicit correction and organizational-master completion.\n\nAnchor: \"Start, finalize and abandon publish task stage\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6c14bda6d478f9d220063774ea8b13852e31a0f0",
+            "content": "sha256:9b8a0bd77133a911eda02d798594b6181aac50e9399f1000649385784cc6dc27",
+            "locator": {
+              "end": 20,
+              "kind": "line_range",
+              "start": 20
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/manager.md"
           },
           "kind": "code"
         }
@@ -502,12 +571,12 @@
         },
         {
           "anchor": {
-            "blob": "00dc29b96c884b0f82fd5a67b0de544d71f3917e",
+            "blob": "270f5e2139bc6d77e9b3830019d960948454ba06",
             "content": "sha256:ebd8def7005648fdd3cd109b8a1423b9bd7d99e3c5b0e7dc3dc1fa8bcc0efaba",
             "locator": {
-              "end": 570,
+              "end": 602,
               "kind": "line_range",
-              "start": 563
+              "start": 595
             },
             "path": "mcp/src/agents_remember/memory/baseline.py"
           },
@@ -520,7 +589,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "00dc29b96c884b0f82fd5a67b0de544d71f3917e",
+            "blob": "270f5e2139bc6d77e9b3830019d960948454ba06",
             "content": "sha256:bf362a4869836a58bd9398725054613b098abc324776ebd66726107f6b454efe",
             "locator": {
               "kind": "symbol",
@@ -532,7 +601,7 @@
         },
         {
           "anchor": {
-            "blob": "00dc29b96c884b0f82fd5a67b0de544d71f3917e",
+            "blob": "270f5e2139bc6d77e9b3830019d960948454ba06",
             "content": "sha256:f4919bee988d4473dce9ce42789930a3b179417eb1c07e1d5ba1f0c40270d283",
             "locator": {
               "kind": "symbol",
@@ -557,12 +626,12 @@
         },
         {
           "anchor": {
-            "blob": "00dc29b96c884b0f82fd5a67b0de544d71f3917e",
+            "blob": "270f5e2139bc6d77e9b3830019d960948454ba06",
             "content": "sha256:5a6b1c2938cdd94d020e4577fede262e2d07ac0c0819d28ab391196777696fd2",
             "locator": {
-              "end": 619,
+              "end": 651,
               "kind": "line_range",
-              "start": 610
+              "start": 642
             },
             "path": "mcp/src/agents_remember/memory/baseline.py"
           },

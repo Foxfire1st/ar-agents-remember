@@ -1,24 +1,6 @@
 {
   "path": "mcp/src/agents_remember/serving/_app_common.py",
-  "realizes": [
-    {
-      "anchor": {
-        "blob": "2c0373c265618b820bcf5acdd0f43f477567c3f4",
-        "content": "sha256:23fb9fa0ee40073b6454d160eeb630f9c5ef8099a4967dd132f3beb1c175329e",
-        "locator": {
-          "kind": "file"
-        }
-      },
-      "id": "RLZ-KEYCH7",
-      "invariant": "INV-YJZKYC",
-      "origin": {
-        "handoffEntry": "R3 Note 15",
-        "leaf": "260928-MIK-L26"
-      },
-      "rationale": "The common serving payload carries the description.",
-      "role": "presentation"
-    }
-  ],
+  "realizes": [],
   "references": {
     "12": {
       "note": "Anchor: Optional review/reader collaborators, distinct missing-port capabilities.",
@@ -88,7 +70,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a63806f02dcb39f57b535017de881cd393e6655c",
+            "blob": "f1d9f2bdf6b5346afa468b367e7ed3fc0f3824c1",
             "content": "sha256:3a08851ee543ee9789179be4031f95e49748c0c359eaea0788a8b22a426a4209",
             "locator": {
               "kind": "symbol",
@@ -104,12 +86,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "50caa42c56ebc702bcbec8e9cb06472cefba74d7",
+            "blob": "f1d9f2bdf6b5346afa468b367e7ed3fc0f3824c1",
             "content": "sha256:519cff90173f7ea436f312b9bc50f4b6301f4a4a8aecc8b60d2610a840e5dcf4",
             "locator": {
-              "end": 72,
+              "end": 75,
               "kind": "line_range",
-              "start": 45
+              "start": 48
             }
           },
           "kind": "code"

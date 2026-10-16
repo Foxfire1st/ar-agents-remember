@@ -4243,6 +4243,57 @@
         }
       ]
     },
+    "316": {
+      "note": "The answer boundary preserves producer guidance, permits the same-call summary stop, and bounds actionable guidance to the response's own contract address.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e0e46bc6a90dd3b9da4bab12c43f61d1e4e71a70",
+            "content": "sha256:71804e304a6ad2937390236ebe79f54948d63dacb84e089c2362c47b2846a2b4",
+            "locator": {
+              "kind": "symbol",
+              "name": "_attach_contract_guidance"
+            },
+            "path": "mcp/src/agents_remember/application/tool_response.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "317": {
+      "note": "Strict envelope fields retain contract guidance and answer/log accounting without notifier banners.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "929a3e608b76db907cfb41bd92cb7d2453b386c5",
+            "content": "sha256:f2255e93851cd6bd0da5c5ad433f8ba26b7e65963b82470e14643e1406607308",
+            "locator": {
+              "kind": "symbol",
+              "name": "ResponseModel"
+            },
+            "path": "mcp/src/agents_remember/models/base.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "318": {
+      "note": "Flexible envelope fields use the same current guidance/answer/log header without restoring removed declared banner fields.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "929a3e608b76db907cfb41bd92cb7d2453b386c5",
+            "content": "sha256:1c9b74dac013890af9899b87fd7eaa33ce492153b679c57509c72e4b2e564903",
+            "locator": {
+              "kind": "symbol",
+              "name": "FlexibleResponseEnvelope"
+            },
+            "path": "mcp/src/agents_remember/models/base.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
     "32": {
       "note": "The one continuation token and what it binds.",
       "targets": [
@@ -5709,16 +5760,15 @@
       ]
     },
     "81": {
-      "note": "The next-step engine that fills `nextStep` from the active lifecycle.\n\nAnchor: `nextStep`",
+      "note": "Next-step computation consumes the resolved worktree contract and retains its landing approval stops, not ambient session state.",
       "targets": [
         {
           "anchor": {
-            "blob": "7cb1e42b65b42df8b7e5324c27ed10bbf9e3a14b",
-            "content": "sha256:8df267814017e5f14d30ac10bdb351ab6403b7678b69dd9414cc02b0f6759977",
+            "blob": "a0ebc421a6c1cbf393461876ac120f34d348d7ac",
+            "content": "sha256:ed56376de2aca839183a36527b98b1606a2befdc8f3a1b1ee0cfd64c2bfe4bed",
             "locator": {
-              "end": 251,
-              "kind": "line_range",
-              "start": 241
+              "kind": "symbol",
+              "name": "compute_next_step"
             },
             "path": "mcp/src/agents_remember/application/next_step.py"
           },

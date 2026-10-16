@@ -24,8 +24,9 @@
         "blob": "07c5dd5a94d8b14a8d703da903c1d9cc166288a0",
         "content": "sha256:591eb8a2d42759d33be61fca4b9853b61fcaaeac92eee7015a538f47c3d49c17",
         "locator": {
-          "kind": "symbol",
-          "name": "review_records_of"
+          "end": 115,
+          "kind": "line_range",
+          "start": 101
         }
       },
       "id": "RLZ-D75THA",

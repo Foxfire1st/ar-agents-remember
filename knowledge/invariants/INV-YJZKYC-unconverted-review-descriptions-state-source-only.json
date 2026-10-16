@@ -7,7 +7,7 @@
   },
   "applicability": "Unconverted review descriptions.",
   "conditions": [
-    "The requested review input is positively identified as legacy-format; lack of a readable Git answer is not that identification."
+    "The requested input is positively identified as unconverted; lack of a readable Git answer is not that identification."
   ],
   "exclusions": [
     "Converted reviews, which use tree comparisons and their own validator."
@@ -24,9 +24,9 @@
     "leaf": "260928-MIK-L26",
     "task": "260928-MIK"
   },
-  "revision": 2,
+  "revision": 3,
   "schema": "ar-invariant/v1",
-  "statement": "Unconverted review descriptions retain source-only identities, mark memory legacy-format and attach no knowledge comparison; an unreadable official-line probe retains its named error instead of becoming an unconverted fact.",
+  "statement": "A positively identified unconverted review is described as source-only legacy-unavailable; an unreadable native probe remains a named probe refusal rather than evidence that the input is legacy.",
   "status": "proposed",
   "supersedes": []
 }

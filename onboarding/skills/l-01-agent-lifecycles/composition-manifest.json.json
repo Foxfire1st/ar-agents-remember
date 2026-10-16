@@ -4,7 +4,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "fae8c014dbfcfdd40ef9d82d06334470a9d5ec1d",
+        "blob": "949f7a9837986e5610b4d7ec2c7f6e69d1b620a1",
         "content": "sha256:f0e5f1ddda35f33ad0d76ff1c2fe6870a84e9a567b5aca9d8c3003a70d1f4843",
         "locator": {
           "end": 224,
@@ -23,7 +23,7 @@
     },
     {
       "anchor": {
-        "blob": "fae8c014dbfcfdd40ef9d82d06334470a9d5ec1d",
+        "blob": "949f7a9837986e5610b4d7ec2c7f6e69d1b620a1",
         "content": "sha256:2fa7b5ec23e247702fc2471a649873e5be15b3bf2f7940224fab1131e612af55",
         "locator": {
           "end": 329,
@@ -42,8 +42,8 @@
     },
     {
       "anchor": {
-        "blob": "fae8c014dbfcfdd40ef9d82d06334470a9d5ec1d",
-        "content": "sha256:f50b8eddaff06e86599f0abadc1df208e541378dc94b16d34b6b1ab9c43f2ea7",
+        "blob": "949f7a9837986e5610b4d7ec2c7f6e69d1b620a1",
+        "content": "sha256:fc24164c16348a67296b049d65fa659fbc4dbbbee7a30b4638d8cf5aed281904",
         "locator": {
           "kind": "file"
         }
@@ -59,7 +59,7 @@
     },
     {
       "anchor": {
-        "blob": "fae8c014dbfcfdd40ef9d82d06334470a9d5ec1d",
+        "blob": "949f7a9837986e5610b4d7ec2c7f6e69d1b620a1",
         "content": "sha256:d4a12d5c146197e4304e0b7d638b884b09f48878c611eddf27b3afd7a3702606",
         "locator": {
           "end": 27,
@@ -78,7 +78,7 @@
     },
     {
       "anchor": {
-        "blob": "fae8c014dbfcfdd40ef9d82d06334470a9d5ec1d",
+        "blob": "949f7a9837986e5610b4d7ec2c7f6e69d1b620a1",
         "content": "sha256:e91a9e18b058506863abb8bfafb7e45d6c8b6f8f7023b93dcdce5c0f8413ddfc",
         "locator": {
           "end": 36,
@@ -97,7 +97,7 @@
     },
     {
       "anchor": {
-        "blob": "fae8c014dbfcfdd40ef9d82d06334470a9d5ec1d",
+        "blob": "949f7a9837986e5610b4d7ec2c7f6e69d1b620a1",
         "content": "sha256:049e07153602a51202aa82c5e8a72bf741f8b30e6dac36373c2c308edc359ff2",
         "locator": {
           "end": 178,
@@ -116,7 +116,7 @@
     },
     {
       "anchor": {
-        "blob": "fae8c014dbfcfdd40ef9d82d06334470a9d5ec1d",
+        "blob": "949f7a9837986e5610b4d7ec2c7f6e69d1b620a1",
         "content": "sha256:f184b155d9ef15df3ea506df8864ca5d9f62fb2f256c485415c047e030de9d72",
         "locator": {
           "end": 593,
@@ -135,7 +135,7 @@
     },
     {
       "anchor": {
-        "blob": "fae8c014dbfcfdd40ef9d82d06334470a9d5ec1d",
+        "blob": "949f7a9837986e5610b4d7ec2c7f6e69d1b620a1",
         "content": "sha256:28505dbb3f7e2ed85116de1c35f58e92c921b4259d27ba9e27b961993fc25988",
         "locator": {
           "end": 57,
@@ -521,40 +521,16 @@
       ]
     },
     "4": {
-      "note": "The six shared core blocks a role may be composed with, including the launcher block authored here so the registry holds only roles.\n\nAnchor: \"core\"; \"authority\"; \"launcher\"",
+      "note": "Retained core-source map names task worktree records and the landing contract, not session adoption.\n\nAnchor: lines 130-155",
       "targets": [
         {
           "anchor": {
-            "blob": "9f01b458769e29ba24c9cc3c0ff187e9e5eb2cf2",
-            "content": "sha256:500fea54367b7895f3da35e99d8a7a0f9b31bfe9fcd72a997f6c1413dc712745",
+            "blob": "949f7a9837986e5610b4d7ec2c7f6e69d1b620a1",
+            "content": "sha256:88ed6728edc7b582a001a249d7c519d96f0598ad8a0bb43ded034bc2fc812e80",
             "locator": {
               "end": 155,
               "kind": "line_range",
               "start": 130
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "9f01b458769e29ba24c9cc3c0ff187e9e5eb2cf2",
-            "content": "sha256:3d650911791e5ad97f0a163aad515505996e30f380c9fa5885bbbbbbb14eabb8",
-            "locator": {
-              "end": 134,
-              "kind": "line_range",
-              "start": 131
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "fae8c014dbfcfdd40ef9d82d06334470a9d5ec1d",
-            "content": "sha256:d5dbf6217eb897a1e7b5f1c521d7672ba5cd52addda580e4bd9c9e1026d52e26",
-            "locator": {
-              "end": 154,
-              "kind": "line_range",
-              "start": 151
             }
           },
           "kind": "code"

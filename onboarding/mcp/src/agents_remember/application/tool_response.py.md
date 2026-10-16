@@ -14,10 +14,10 @@ Complete one tool result at the application boundary.
 
 Module-level surface:
 
-- `_attach_lifecycle_tail` — Preserve producer recovery guidance and bind ambient task addresses.
+- `_attach_contract_guidance` — Preserve explicit producer recovery; otherwise derive only exact-contract guidance and the two argument-bound preview stops.
 - `complete_tool_response` — Validate the whole result, shape or receive its status projection, log, measure final delivery, and observe one application result.
 
-The registered response model is selected and validated before final output. Lifecycle hints
+The registered response model is selected and validated before final output. Contract-bounded operational hints
 are attached as model fields through the finalizer's enrichment callback; the removed notifier contributes no banner,
 then whole-result serialization retains that finalized payload. An explicit caller-sized `answer`
 projection wins when supplied. Without it, `_select_shaped_answer` applies the task/landing/role
@@ -29,15 +29,14 @@ Caller diffs are separate readable reports: `_attach_caller_diff_report` attempt
 complete diff independently of the investigation detail. A cut diff names that report when it
 exists, otherwise the available detail or an honest not-retained marker. Waited role replies are
 fitted to keep their beginning after log attachment and again after a late line error, before the
-generic guard. These answer changes preserve lifecycle-versus-workspace event ownership and do
+generic guard. These answer changes preserve one workspace completed-call event and do
 not supply Git, task or review acceptance.
 
 ### 260928-MIK-L114 Event River Feed At The Completion Choke
 
-`complete_tool_response` now divides at the lifecycle boundary: a call owned by an active
-lifecycle of the earlier kind writes its event as before with no second row; every other
-call goes to the workspace river through `record_tool_completed` with the delivered
-answer count, needing no lifecycle and no call before it. The tool answers as if the
+`complete_tool_response` always records the call once in the workspace river through
+`record_tool_completed`, with the finalized whole payload and delivered answer count.
+There is no ambient lifecycle branch, session-adoption prerequisite or second event stream. The tool answers as if the
 event had been written even when the write is counted as dropped.
 
 ### MIK-R108 answer boundary and log wiring
@@ -69,7 +68,7 @@ None.
 
 This module defines the top-level symbols cited below; each row points at the exact source range holding the anchor.
 
-- `_attach_lifecycle_tail` binds lifecycle guidance to the response while preserving explicit producer recovery. [2]
+- Exact-contract enrichment preserves explicit recovery guidance, with guarded preview stops from the call argument. [2]
 
 - The completion choke validates the whole, selects the answer, retains available caller diff reports, measures final delivery and emits one event through its existing owner. [3]
 
@@ -79,11 +78,15 @@ The response completion boundary continues to normalize bounded task-addressed p
 operation phase and report evidence can pass through the existing response contract, while private
 operation keys, worker PIDs, leases, and resume tokens remain absent.
 
-## CCR-R18@v1 Task-Addressed Next-Step Bounding
+## Historical CCR-R18@v1 Task-Addressed Next-Step Bounding
+
+**Historical producer account, not the present ambient-state architecture.** The retained account below records the earlier guard and its original coordinates. The current owner is `_attach_contract_guidance`: it preserves explicit recovery, uses only response-bound contract guidance or the same-call summary-only approval stops, and retains the response-address comparison. Removed ambient producers and their old source/test coordinates below are provenance, not current implementation or fresh execution evidence.
 
 260831-CCR-L18 added `bound_next_step(response, step)` (line 30): before a lifecycle tool response advertises `nextStep`, any guidance whose `nextArgs` name a task address (`contract_path` / `enclosure_path` / camel-case variants) is checked against the response's own exact address (`contractPath` / `enclosurePath`). Guidance that names a different task address — or whose response is ambiguously addressed across multiple paths — is omitted (step becomes None), while exact-address and address-free/external guidance survives unchanged. `_attach_lifecycle_tail` now routes both the producer-supplied `nextStep` and the ambient-derived step through this guard before publishing the envelope, so a cross-task recovery edge can never be offered from another contract's response.
 
-## 260918-TSIP-L6 The Guidance Guard Binds Guidance To The Response's Own Address
+## Historical 260918-TSIP-L6 Guidance-Guard Defect And Repair
+
+The following source-bound defect/repair account is retained as historical evidence. Its ambient source, producer paths, line numbers and case counts do not describe the current contract-only producer; the current active guard is described and cited above.
 
 `bound_next_step` (`:58-99`) is the only thing connecting guidance derived from the
 *process-global* ambient lifecycle (`application/next_step.py::next_step_for` reads

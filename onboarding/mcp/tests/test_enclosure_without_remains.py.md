@@ -22,7 +22,13 @@ The leafless fixture carries a memory repository made with shared `init_repo` an
 
 The populated-series-log regression calls `_abandon_directories` directly: it snapshots the group's byte tree, verifies dry-run leaves it unchanged, then verifies apply removes `logs/`. Both responses contain exactly `reports` and `lifecycle`. This is helper-level preview/removal evidence, not a public terminal-admission or real-host execution witness.
 
+Abandon now has explicit stage-transaction witnesses: terminal-contract write failure restores all four captured leaf/master JSON/Markdown files and leaves cleanup pending; retry publishes abandoned on both documents and contract. Duplicate parent rows refuse in preview and apply with `task-stage-invalid` and repair guidance before contract publication.
+
 ## Evidence
+
+- Failed terminal publication restores captured task/master bytes; retry publishes matching abandoned stages. [4]
+- Invalid parent stage refuses preview/apply without changing the pending contract. [5]
+
 
 - No-remains abandon and cleanup with persisted reason are pinned. [1]
 

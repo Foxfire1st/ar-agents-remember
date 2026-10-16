@@ -14,7 +14,7 @@ doc-reader change-set bar rendering and interactions.
 
 ### 260921-ICR-L32 The Refusal Cases For The Live-Leaf Change-Set Read
 
-Three cases in a new `describe("the counter read's refusal (L32/D01)")` block pin the defect D01 was: `renders a refused counter read's own code and reason, never as a read that has not answered` (the refusal's code and reason reach the control, and a refusal no longer renders as a read that has not answered), `keeps a measured empty answer apart from a refusal and from a read that has not answered` (three states, three renderings), and `does not let a superseded read's refusal land on the control that replaced it` (the liveness guard is load-bearing). Against the leaf's base production bytes the first two **fail** — the base-defect witness — while on the candidate the module is **14 passed** (11 pre-existing plus these three). Restoring the old empty rejection handler fails two of them, and deleting the liveness guard fails the third.
+Refusal cases distinguish own code/reason, unanswered reads and measured empty, and drop superseded refusals. Historical L32 fail-before/mutation receipts are not a current passing total or a run in this preparation.
 
 ### Logic
 
@@ -71,10 +71,7 @@ No relevant domain documentation was found.
 
 ### Repo-Internal References
 
-- The change-set bar suite, now with the generation-bound series entry case and the complete-catalogue traversal case. [1]
-- **The Intent review opens the task-context review and the reviewer chooses the subject; a failed summary read keeps the entry with `offline` and the reason in the disclosure.** [2]
-- **The closed leaf's recorded entry with intent counts, and its survival when knowledge is unavailable.** [3]
-- The net's leaf attribution rendered beside the total, the request that asks for it, and the absent-answer rule. [4]
+- The change-set bar suite retains the exact generation-bound master series entry and compact Intent review controls: a closed leaf opens its recorded comparison (even when knowledge is unavailable) and explicitly has no review-subject picker; a live leaf opens review: {} for task-context review and leaves subject selection to the reviewer. The series click carries the published code/memory endpoints and digest. These cases do not exercise complete-catalogue traversal or provide a complete-catalogue picker. [1]
 
 ### Cross-Repo References
 

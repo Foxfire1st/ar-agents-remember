@@ -6,31 +6,17 @@
 
 ## Purpose
 
-Vitest + `@testing-library/react` render tests for `AttentionQueue`: the original §9 blocked-start
-alarm parity still reaches the cockpit, and lifecycle-bound attention entries now resolve through
-`analytics.taskDocuments` so the visible row is task-centric. Task 28 S5.2 adds the lifecycle-scoped
-dismiss contract; Task 29 extends it so actionable-drift repo rows are dismissible targetless one-shot
-signals and dismiss/clear hides rows optimistically while the POST is in flight.
+Attention bell/layer assertions cover provider-down, actionable-drift, failed-setup and blocked-start. All dismiss by itemId/kind; lifecycle/gate joins and restricted dismissibility are retired.
 
 ## Code Commentary
 
 ### Logic
 
-The tests open the bell through renderOpen before querying entries. The first test seeds the real Zustand store from the `engine-fleet` `GALLERY` projection with its
-`analytics.attentionQueue` overridden to a single `blocked-start` `AttentionItem` and asserts the title
-and reason text. The second test adds a `TaskDocNode` with `lifecycleId: "LC19"` plus a lifecycle gate
-attention item, then asserts the cause retains the original gate text and the second-line `19 Gate interaction polish` button opens LC19 and closes the layer. The dismiss tests seed lifecycle rows, actionable drift, and a
-blocked-start alarm, click per-row/header controls, assert the actionable-drift row disappears
-immediately, and assert only dismissible lifecycle/gate/drift rows are posted while the blocked-start
-alarm has neither lifecycle opener nor dismissal/Clear all. Additional cases assert empty/no count, count and urgency independent of server order, Dialog opening, Escape/outside-close without dismissal, retained alarms and empty state after the last dismissal.
-`afterEach` runs RTL `cleanup` and resets the dashboard store.
+Explicit served queues drive blocked-start cause/severity without joins or opener. Every kind dismisses optimistically; Clear all includes all. Failed writes restore affected rows with an alert; successful retry clears it. Empty/count/urgency, server order, Dialog and non-dismissing Escape/outside close remain. Cleanup resets DOM/store/mocks.
 
 ### Invariants And Boundaries
 
-Pure render assertion — relies on the shared `test/setup.ts` jsdom stubs. It proves the parity is achieved
-without any `AttentionQueue` special-casing: the panel renders items generically by `severity`, so a new
-`kind` surfaces with no UI change. The item carries no `lifecycleId` (a pre-contract start has no lifecycle
-yet), so no "Open" or dismissal affordance is asserted.
+Seeded render and mocked writes do not prove server persistence. Severity rendering remains generic; every remaining kind is dismissible regardless of absent lifecycleId. Layer close is not dismissal.
 
 ## Evidence
 
@@ -44,7 +30,7 @@ yet), so no "Open" or dismissal affordance is asserted.
 - The store `applySnapshot` path used by this fixture's projection seed. [3]
 
 
-- Targetless actionable drift dismissal hides immediately and posts a nullable lifecycle target. [4]
+- The four-kind fixture covers provider-down, actionable-drift, failed-setup and blocked-start. Parameterized dismissal asserts immediate optimistic hiding and a request containing exactly itemId/kind for each kind; the actionable-drift failure case restores the row, reports that dismissal did not hold and clears the alert on a successful retry. No nullable lifecycle target is posted. [4]
 
 
-- Clear all includes gate, lifecycle, and actionable-drift rows but skips worktree alarms. [5]
+- Clear all optimistically removes every listed provider-down, actionable-drift, failed-setup and blocked-start item, and sends each exact itemId/kind pair. The mixed-result case restores only the failed provider-down row and reports that dismissal did not hold; worktree-lane setup/start failures are included, not skipped. [5]

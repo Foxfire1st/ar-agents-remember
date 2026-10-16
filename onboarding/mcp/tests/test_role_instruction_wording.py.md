@@ -49,7 +49,12 @@ The leaf startup positive guard now requires the one bound `role_start_set` call
 
 The compiled architect handover asserts read_ar_files inputs as path strings and the sentence that a read names locations and carries no file text, followed by an instruction to open files with the harness own file tool. This is a compiled-wording assertion, not a concrete harness read or sandbox consumption witness.
 
+The Manager wording guard now requires start/finalize/abandon to publish task stage and its master-row mirror without a second status write. task_doc set_status remains explicit correction, while organizational-master completion remains the Manager act. Direct repair-loop handovers follow coordination.md. This is a text guard, not performed publication.
+
 ## Evidence
+
+- Protected Manager text separates automatic stage publication, explicit correction and organizational completion. [7]
+
 
 
 ## Current Investigator contract impact

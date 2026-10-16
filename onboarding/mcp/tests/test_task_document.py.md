@@ -41,7 +41,12 @@ work. This source inspection does not claim a newly executed test or acceptance 
 
 No additional implementation scope is opened by this memory reconciliation.
 
+Master-row derivation now follows the child document stage: Completed remains Completed despite an active unresolved step, and planning remains planning even with a done step. Progress and completion readiness still have their separate checklist meanings; step state does not infer task startedness or undo documentary stage.
+
 ## Evidence
+
+- Master row mirrors document stage rather than inferring it from old step progress. [11]
+
 
 ### Docs References
 

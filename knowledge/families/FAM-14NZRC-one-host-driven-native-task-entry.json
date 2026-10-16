@@ -1,0 +1,44 @@
+{
+  "admission": {
+    "criteria": [
+      "joint_guarantee"
+    ],
+    "justification": "Host publication/intake, native state selection, hierarchy joining, wire/store shape and task presentation jointly prevent a second task truth. Correct words over a competing collection, or a canonical map fed stale/unqualified host facts, cannot establish the guarantee. This proposed cross-boundary family leaves the approved Operations family and all its eight members untouched."
+  },
+  "guarantee": "A task has one qualified server entry and one browser task map: native document stage has precedence, bound host observations supply only started-task activity and event time, declared reciprocal rows and commanded relations supply ordered membership independently of worktrees, and task surfaces format that same state through the shared presentation table. Startup/new-boot reconciliation qualifies host activity while idle/full-heal/degraded wakes do not turn into status polling. Optional summaries, on-demand document bodies, dependency readiness and independent operational projections are not competing task truth. Display age is derived from eventAt and a display clock, not a second served elapsed-age value. Native start and abandon publish task/parent stage through the existing task-fact transaction, attach retains stage, and finalize/reopen retain their distinct authority. Task-source/contract publication rollback is not restoration of already-reclaimed worktrees.",
+  "id": "FAM-14NZRC",
+  "members": [
+    "INV-X0KED3",
+    "INV-VDWN33",
+    "INV-XZYGEB",
+    "INV-WQ8YGE",
+    "INV-MGGEBY",
+    "INV-Z0BXKJ"
+  ],
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "L168-final-consumer-inventory.md; L168-engine-admission-30.md; architect accepted size settlement in main report"
+      ],
+      "path": "A011-host-driven-native-task-core-31.json"
+    },
+    "handoffEntry": "L168-W-R167-13-14",
+    "leaf": "260928-MIK-L168",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "routes": [
+    "dashboard/src/cockpit",
+    "dashboard/src/data",
+    "dashboard/src/panels",
+    "mcp/src/agents_remember/cli",
+    "mcp/src/agents_remember/observer",
+    "mcp/src/agents_remember/package_data/paseo_plugin/server",
+    "mcp/src/agents_remember/serving",
+    "mcp/src/agents_remember/tasks",
+    "mcp/src/agents_remember/worktrees"
+  ],
+  "schema": "ar-family/v1",
+  "status": "proposed",
+  "title": "One host-driven native task entry"
+}

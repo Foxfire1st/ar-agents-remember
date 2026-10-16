@@ -13,9 +13,7 @@ entry count with a link opening the reader at the notes root; no total over the 
 computed for a page. Beside the link, a task's page shows its references (each a link where
 it names an existing note) and the reports of the role agents the product started for this
 task — newest first, at most twenty, with a link to their folder in the explorer where there
-are more. The page of a master shows its own references and the link. Rendered by
-`DetailPanel`'s `TaskReader` (with the doc's references) and `MasterOverview`; both thread
-`onOpenNotes` from `CockpitShell`.
+are more. The page of a master shows its own references and the link. `DetailPanel`’s `TaskReader` composes these surfaces through `OverviewBody` for master/sprint forms and through the separate `TaskPageRefsReports` and `TaskPageNotesLine` islands for task forms. Both routes receive `onOpenNotes` through the retained `TaskDocumentPanel`; there is no separate `MasterOverview` reader.
 
 ## Code Commentary
 
@@ -96,7 +94,7 @@ A same-origin view over the local notes API; nothing crosses repositories.
 - The surface passes a shared discriminated artifact target. [2]
 
 
-- The task reader mounts this component and threads `onOpenNotes`. [5]
+- The task reader’s overview and task-specific notes/reference/report islands thread the shared `onOpenNotes` artifact callback. [5]
 
 
 - The folder, resolve and read endpoints behind the client. [6]

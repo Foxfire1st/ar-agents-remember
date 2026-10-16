@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "87ddf3e7bc98c88968d898c9015557ca7e7145f3",
+        "blob": "b57a7faeabd73c5872db8d333a7970835083e727",
         "content": "sha256:5b806fc7db0020a90078216e041a449dbd3a46410158b2fa9a941156ffd586cd",
         "locator": {
           "kind": "symbol",
@@ -22,14 +22,14 @@
   ],
   "references": {
     "1": {
-      "note": "Module docstring: one pass per tick, three prior walks, stat-identity cache, and the serialized-tick concurrency discipline.  Anchor: \"One immutable leaf-enclosure-contract snapshot per projection tick\"",
+      "note": "Module docstring: one pass per tick, three prior walks, stat-identity cache, and the serialized-tick concurrency discipline.  Anchor: \"One immutable leaf-enclosure-contract snapshot per projection tick\"\n\nAnchor: current module contract",
       "targets": [
         {
           "anchor": {
-            "blob": "83dd17a352b5292eba904d3ad3a081e7767cc88e",
-            "content": "sha256:2ce48d9c51070d983eb0732f571cff3737c40cf3123e183e07ce2c3f26f5307e",
+            "blob": "b57a7faeabd73c5872db8d333a7970835083e727",
+            "content": "sha256:c700528b83fd4eaf0cf79a3f5589aa61b0c3a064c56302d12ce1e9a11e84017c",
             "locator": {
-              "end": 1,
+              "end": 18,
               "kind": "line_range",
               "start": 1
             }

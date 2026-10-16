@@ -3,19 +3,32 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "The retained client builds attention-dismiss itemId/kind and optional lifecycle target, maps 202 to dismissed and other/network failures to error; gate-decision export is removed.",
+      "note": "The attention-dismiss client posts only itemId/kind as JSON to /api/actions/dismiss. HTTP 202 maps to dismissed, other statuses and thrown/network failures map to error; the exported target shape has no lifecycle target and the module exports no gate-decision client. Source tests assert the exact provider-down and actionable-drift bodies and a non-202 error.",
       "targets": [
         {
           "anchor": {
-            "blob": "957086c0561577ae1f33af5ea1648e95ada32924",
-            "content": "sha256:ff1eb86e64a5a3c571b7f2c02ca4e9325df20e15ba3cd43a9a89e3231cb65c5a",
+            "blob": "c366eb88c8c30aef6662204cdf8ff4a18aaa3648",
+            "content": "sha256:e8ee2ed7f5fac9dbb3edc62273cb0e060d494f761733c5da2fa6473bb4784141",
             "locator": {
-              "kind": "symbol",
-              "name": "postAttentionDismiss"
+              "end": 25,
+              "kind": "line_range",
+              "start": 1
             },
             "path": "dashboard/src/data/actions.ts"
           },
           "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a327cdca8c65a0458f53966d202ec487bd9cad59",
+            "content": "sha256:a15f4075d63b699856eb8abd76e059301d2eb2b0b814e0af204af7737028c2e7",
+            "locator": {
+              "end": 53,
+              "kind": "line_range",
+              "start": 9
+            }
+          },
+          "kind": "test"
         }
       ]
     },

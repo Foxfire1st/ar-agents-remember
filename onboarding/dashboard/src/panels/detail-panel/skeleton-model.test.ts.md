@@ -6,11 +6,11 @@
 
 ## Purpose
 
-Pin pure form, grouping, register, ancestry and review-summary mappings.
+Pin pure served-form, step/review-summary, register/table and parent-chain display mappings.
 
 ## Code Commentary
 
-The explicit projected form wins; an older object falls back to the model rule. Unknown row statuses remain in waiting, abandoned rows leave live completion totals, and review text uses supplied whole-round counts. Table classification, canonical register order, exact objective-repeat filtering and repository-qualified ancestry preserve document structure without store reads.
+Supplied forms, first-open steps, whole-round review and table/register/objective-echo helpers remain display-only. docChain follows qualified served parents and stops at absent/repeated keys; form fallback and reconstructed row grouping are removed.
 
 ## Boundaries
 

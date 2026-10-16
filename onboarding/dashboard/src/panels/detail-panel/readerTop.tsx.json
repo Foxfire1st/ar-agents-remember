@@ -3,26 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "dc5f265ecd8e05888dc19f2e710fc5d3cb81da70",
-        "content": "sha256:eb228814fd62c6dcc3eb95f67db11badbf8a91802f0cb5a82c7a9bf7209a09be",
-        "locator": {
-          "end": 40,
-          "kind": "line_range",
-          "start": 37
-        }
-      },
-      "id": "RLZ-BAJBAG",
-      "invariant": "INV-T3TNTX",
-      "origin": {
-        "handoffEntry": "MIK-R128@v1 rule 6",
-        "leaf": "260928-MIK-L162"
-      },
-      "rationale": "This overview-header extent places Non-goals immediately after Objective for the supported master form.",
-      "role": "presentation"
-    },
-    {
-      "anchor": {
-        "blob": "dc5f265ecd8e05888dc19f2e710fc5d3cb81da70",
+        "blob": "1e7d5f6f8a48aa9708e77d591ae7de97833682d3",
         "content": "sha256:2bd524db0bebdba85ca53bb4b8f6c7f4c1e5c9237bd9251a733193e7f683ba8c",
         "locator": {
           "kind": "symbol",
@@ -37,61 +18,8 @@
       },
       "rationale": "Loading and unavailable body states remain explicit rather than pretending previews are complete.",
       "role": "enforcement"
-    },
-    {
-      "anchor": {
-        "blob": "dc5f265ecd8e05888dc19f2e710fc5d3cb81da70",
-        "content": "sha256:1d88819d8fcf06e0da4f6e4a718f34e504a3712ee4cbbb5baf663e7591d7fa84",
-        "locator": {
-          "kind": "symbol",
-          "name": "OverviewTop"
-        }
-      },
-      "id": "RLZ-SKSCWV",
-      "invariant": "INV-PHG1PR",
-      "origin": {
-        "handoffEntry": "curator-fixed-form-and-optional-blocks",
-        "leaf": "260928-MIK-L127"
-      },
-      "rationale": "The common overview top composes identity head, body notice and ReaderHead series/change-set chrome before ObjectiveLead, then optional Non-goals. It owns the complete-head boundary, not form selection or body acquisition.",
-      "role": "enforcement"
-    },
-    {
-      "anchor": {
-        "blob": "dc5f265ecd8e05888dc19f2e710fc5d3cb81da70",
-        "content": "sha256:141f6d3619fc577db99eeae541559f440e18c504cfb9722448eacbff8cf38e89",
-        "locator": {
-          "end": 43,
-          "kind": "line_range",
-          "start": 32
-        }
-      },
-      "id": "RLZ-WPHR7X",
-      "invariant": "INV-PHG1PR",
-      "origin": {
-        "handoffEntry": "curator-realizations-INV-PHG1PR",
-        "leaf": "260928-MIK-L162"
-      },
-      "rationale": "This shared overview top orders document facts, body notice and series chrome before Objective, so both sprint and master overviews inherit the corrected order.",
-      "role": "presentation"
     }
   ],
-  "references": {
-    "1": {
-      "note": "The extracted top orders full head chrome before Objective and distinguishes loading/unavailable body notices.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "dc5f265ecd8e05888dc19f2e710fc5d3cb81da70",
-            "content": "sha256:6903e02914a0d3315cd39502a5598ed54e2c4eeef8d3f79e9fc9bab133326438",
-            "locator": {
-              "kind": "file"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    }
-  },
+  "references": {},
   "schema": "ar-onboarding-file/v1"
 }

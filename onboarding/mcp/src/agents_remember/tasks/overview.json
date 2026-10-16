@@ -713,12 +713,12 @@
       ]
     },
     "39": {
-      "note": "All-done progress cannot substitute for terminal leaf document status",
+      "note": "Parent-row stage mirrors the native task document directly, not a step-derived rollup or an independent landing verdict.",
       "targets": [
         {
           "anchor": {
-            "blob": "55abfd6f453d2c1fd50283bd978936948b9367b2",
-            "content": "sha256:7b3f9a3a00f0613b5a8135a6f371a364a0eb73b8a1cb69d892d9b3d123ef0d28",
+            "blob": "4568c29f3b900b0d0b94dce225776b17f1e981be",
+            "content": "sha256:e520eb63d25e90b91f915ecc2cda1fceb145ecccfe451ec533fcb837b2b54652",
             "locator": {
               "kind": "symbol",
               "name": "derived_master_status"
@@ -1050,6 +1050,23 @@
               "start": 22
             },
             "path": "mcp/src/agents_remember/tasks/execution_graph_titles.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "54": {
+      "note": "Master-to-sprint mirroring uses the native commanding census and exact typed/legacy row correlation with named ambiguity/unreadability refusals.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4568c29f3b900b0d0b94dce225776b17f1e981be",
+            "content": "sha256:9d4246aa736486f94b56714748fd5c2482e7e7d2366006d8b26553deace81559",
+            "locator": {
+              "kind": "symbol",
+              "name": "_plan_sprint_sync"
+            },
+            "path": "mcp/src/agents_remember/tasks/master_sync.py"
           },
           "kind": "code"
         }

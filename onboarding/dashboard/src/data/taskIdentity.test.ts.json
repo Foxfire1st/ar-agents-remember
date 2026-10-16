@@ -3,47 +3,17 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "The retained single assertion resolves the selected task document to its master folder; no tree or pre-drill cases remain.",
+      "note": "The single task-identity case keeps repository qualification in the taskdoc selection key, master document key and role-chat leaf key. Reference comparison accepts a copied identical repository/path reference, rejects a changed repository and rejects two undefined references; it is not a master-folder resolution or tree/pre-drill test.",
       "targets": [
         {
           "anchor": {
-            "blob": "d4f29ca6d9f2ac2829e7c5fda30eed1f795ce1fd",
-            "content": "sha256:6e2b4a047231eb643658554a806266c5c5af26dcbe35558d76e2dc0354294cd2",
+            "blob": "c766c75870a3dd1a35d791f0cd7114e648e8f1d3",
+            "content": "sha256:7cd732922192d7b4d58a562ed50b2dde169fa3b96eb19c67e74c9e5dc2eeb882",
             "locator": {
-              "kind": "file"
+              "end": 15,
+              "kind": "line_range",
+              "start": 5
             }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "3": {
-      "note": "The test file's `doc` fixture helper.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "d4f29ca6d9f2ac2829e7c5fda30eed1f795ce1fd",
-            "content": "sha256:823195d889f453bf52504ec468662ba2058d0c2ed49313d10de105deb6321798",
-            "locator": {
-              "kind": "symbol",
-              "name": "doc"
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "4": {
-      "note": "Typed taskDoc and analytics builders supply the retained served-base fields rather than casts.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "9748f432f9443a640ef5221d0bace3f986bed50e",
-            "content": "sha256:9e4988d50d577c3315ffd24ab112bb09d6968afaa3d18e257685d7b25f6920f2",
-            "locator": {
-              "kind": "file"
-            },
-            "path": "dashboard/src/test/fixtures/wire.ts"
           },
           "kind": "test"
         }

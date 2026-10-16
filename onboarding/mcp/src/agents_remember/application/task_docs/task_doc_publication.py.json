@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "eb17f15ae8c3ab296c94191b81ec35737c0625e8",
+        "blob": "3cdbb47739fd9663671343886ca7985545584789",
         "content": "sha256:4f28ba262a9548b71c9f8272d0ff337b9257c577a0c59072448065bfd61bc8ac",
         "locator": {
           "kind": "symbol",
@@ -21,7 +21,7 @@
     },
     {
       "anchor": {
-        "blob": "eb17f15ae8c3ab296c94191b81ec35737c0625e8",
+        "blob": "3cdbb47739fd9663671343886ca7985545584789",
         "content": "sha256:c5e141f1dc8fee5e0f37869b0f85bddc6ad170fb3e149c5c9c62fb4a208f7be8",
         "locator": {
           "kind": "symbol",
@@ -39,7 +39,7 @@
     },
     {
       "anchor": {
-        "blob": "eb17f15ae8c3ab296c94191b81ec35737c0625e8",
+        "blob": "3cdbb47739fd9663671343886ca7985545584789",
         "content": "sha256:c5e141f1dc8fee5e0f37869b0f85bddc6ad170fb3e149c5c9c62fb4a208f7be8",
         "locator": {
           "kind": "symbol",
@@ -57,7 +57,7 @@
     },
     {
       "anchor": {
-        "blob": "eb17f15ae8c3ab296c94191b81ec35737c0625e8",
+        "blob": "3cdbb47739fd9663671343886ca7985545584789",
         "content": "sha256:3abe16a2f405376575435d7501ee6496991c46ebc9cde7f150dbfb6622861422",
         "locator": {
           "kind": "symbol",
@@ -75,7 +75,7 @@
     },
     {
       "anchor": {
-        "blob": "eb17f15ae8c3ab296c94191b81ec35737c0625e8",
+        "blob": "3cdbb47739fd9663671343886ca7985545584789",
         "content": "sha256:f87c2333bd59de7c06184e730d1fbb75cd54b21d4ac2cf5edd41320be92e5b75",
         "locator": {
           "kind": "symbol",
@@ -156,6 +156,35 @@
             "path": "mcp/tests/test_writer_question_publication.py"
           },
           "kind": "test"
+        }
+      ]
+    },
+    "11": {
+      "note": "Prepared document/root pairs preserve each real write target through the shared exact-source publication.\n\nAnchor: source responsibility",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3cdbb47739fd9663671343886ca7985545584789",
+            "content": "sha256:2f67119657d5277a452af212cbd58e79ac3ed07930b8c8ec2eab3d4404ed023e",
+            "locator": {
+              "end": 267,
+              "kind": "line_range",
+              "start": 238
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3cdbb47739fd9663671343886ca7985545584789",
+            "content": "sha256:5c31b629b4b3d7bd088ab7b8212998815dcaec48f8a9feb2f5b2d22cee8d7de2",
+            "locator": {
+              "end": 386,
+              "kind": "line_range",
+              "start": 370
+            }
+          },
+          "kind": "code"
         }
       ]
     },

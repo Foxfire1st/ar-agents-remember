@@ -24,6 +24,8 @@ The converted summary explicitly calls the shared converted checker with `includ
 
 ### Logic
 
+Explicit report writes also publish actionableFingerprint over the complete actionable finding population, not its bounded preview or a clock. Rows are individually canonicalized and sorted before hashing. Converted unreadable-sidecar results leave that fingerprint unknown (None), rather than claiming a complete measured identity.
+
 The helper discovers sidecar onboarding, inline onboarding, and entity catalog
 rows through `drift.py` and returns counts plus a bounded actionable sample. A read files nothing
 at all (rule 6): the Markdown report and the observer snapshot are written only for an explicit
@@ -121,3 +123,8 @@ when it suppresses intermediate filing, that same flag suppresses the observer w
 - `ACTIONABLE_CLASSIFICATIONS` and, since 260731-EFA-L4, `DriftSummaryPacket`/`DriftStatus` are sourced from the shared models module (`DriftStatus` declared in `models/drift.py`). [3]
 - The context-packet wire model that validates this packet's `status` — the one that used to lack `error`. [4]
 - The tool response model that validates the same packet. [5]
+
+## Current source evidence
+
+
+- Explicit snapshots fingerprint complete actionable findings, with unknown identity for unreadable converted sidecars. [14]

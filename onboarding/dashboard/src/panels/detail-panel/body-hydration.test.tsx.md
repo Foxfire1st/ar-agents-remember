@@ -12,7 +12,7 @@ Declare mounted DetailPanel regression assertions for restoring nonGoals and acc
 
 The source identifies its literal summary/body pairs as native F01 producer operands from L162-F01-native-reader-operands.json. Both summaries omit nonGoals and acceptance; each body supplies those fields, objective, design and a legacy freeform section at the same bodyRevision. The two pairs crossed with the two fixed-prose fields declare four cases. This inspection does not independently reproduce that historical producer opportunity. [1]
 
-Each case seeds only the summary, mounts DetailPanel by its exact taskdoc:docPath key, and stubs the /api/task-document? transport with the body while retaining the ancillary fetch stub. Assertions check the requested canonical path, restored nonGoals/acceptance/design, objective → nonGoals → design → acceptance block order, reachable legacy Further notes, and exactly one body request. This exercises the production summary-to-body hydration composition when run; it is distinct from directly hand-populating fixed prose in renderer input fixtures. [2] [3] [4] [5] [6]
+Each summary is wrapped in TaskEntry and selected by its qualified taskdoc key. The body stub checks the canonical qualified key, not absolute docPath. NonGoals/acceptance/design, fixed prose order, Further notes and exactly one body request remain hydration-composition assertions, not direct full-body renderer setup. [2] [3] [4] [5] [6]
 
 ## Boundaries
 

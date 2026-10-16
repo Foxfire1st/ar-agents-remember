@@ -5,7 +5,7 @@
 The current source facts below replace the former operative inventory. The separately labelled superseded claims describe only the pre-repair card. Original paragraphs, dated closures, evidence and citation identities remain intact in the explicitly historical section; they grant no current call, restored route or fresh execution acceptance.
 
 - The failure table omits resolve_context, removed lifecycle primitives, providers, benchmarks, old structural calls and capsule/skill tools; lifecycle_finalize_task remains. read_ar_files deliberately receives an object entry to drive argument-removed, not to request source text. The adoption invocation uses `absent_contract(world)`, a nonexistent path inside the coordination root; `expected_worktree_group` is `(world.coord / "tasks" / REPO).as_posix()`, `rationale` is the string "refusal census", and `dry_run=True`. This dictionary is a refusal stimulus, not successful adoption or this Curator's executed probe.
-- drive_census arranges current.start through ambient API, not world.call lifecycle_start.
+- drive_census checks the failure table against PUBLIC_TOOLS and calls it without arranging any session lifecycle; returned rows retain delivered payload and log-read whole facts.
 - Returned rows carry both delivered payload and whole result read from log.
 - Failure inputs include role_start_set without a bound caller and native retire_child selected by LEAF_REF task_document_ref plus role=worker, not an unknown native ID. The roster equality remains the population authority; these inputs own no acceptance assertion and restore no old structural plane.
 
@@ -18,9 +18,11 @@ Source inspection supplies no new test, native-host, whole-build, landing or mem
 
 ## Grant failure dispatch
 
-The refusal driver adds the canonical grant failure input under its current ambient API. Its `direct_landing` failure request also names the canonical absent leaf explicitly, so the intended refusal is reached through the current input grammar. It creates cases, not assertions or acceptance. Retained historical invocation/retired-lifecycle inventories remain historical rather than current tool counts.
+The refusal driver supplies the canonical absent-task grant failure input without arranging an ambient lifecycle. Its `direct_landing` failure request also names the canonical absent leaf explicitly, so the intended refusal is reached through the current input grammar. It creates cases, not assertions or acceptance. Retained historical invocation/retired-lifecycle inventories remain historical rather than current tool counts.
 
 ## Current source contract evidence
+
+- The driver checks failure_invocations against PUBLIC_TOOLS for missing and extra names before calling each roster tool, then records kind, delivered payload and logged whole result; it arranges no session lifecycle. [2]
 
 - Current synced source supports the qualified account; declarations, mirrors and fixture assertions are not executed acceptance. [9]
 
@@ -120,7 +122,7 @@ The anchors below identify current behaviour of this module; they are not execut
 they make no acceptance claim.
 
 - The 67 production failure invocations, one per advertised tool. [1]
-- The driver: roster equality first, then one drive per tool, with the lifecycle arranged so `lifecycle_start`'s own failure path is measured. [2]
+- The driver: roster equality first, then one drive per tool, with the lifecycle arranged so `lifecycle_start`'s own failure path is measured. (Historical caption; obsolete.)
 - An absent contract path inside the coordination root, for the contract-address family. [3]
 - A contract-shaped path outside the coordination root, for the confinement refusals. [4]
 - The fixture document addresses a tool must resolve to reach a later refusal. [5]

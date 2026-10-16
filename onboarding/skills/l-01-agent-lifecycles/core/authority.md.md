@@ -10,13 +10,17 @@ Retained shared authority corpus defining structural seat addresses, escalation 
 
 ## Current Contract
 
-The current source binds ordinary seats to canonical task selection plus role at role_start, while the Architect starts at Projects without a document. Role-start binding is not lifecycle adoption; a role that never calls worktree_start or worktree_attach has no lifecycle. The caller of role_start is the started agent's parent; a dashboard or roleless-chat start has none. An identical request ID/selection reconciles one agent; a refused start has no alternative-tool fallback, and a leaf trio uses role_start_set. Harness helpers hold no AR seat or independent-review authority. Questions travel one rung to the actual parent, the watcher ban remains, and host turn-end wake-up replaces the old notifier. A source clause about capsule composition does not establish actual runtime injection. Curation supplies full memory-quality evidence; the transaction carries it and owns Git. The removed dispatch_agent transaction, plane/ambient caller split and queued notifier vocabulary are historical, not current launch instructions.
+The current source binds ordinary seats to canonical task selection plus role at role_start, while the Architect starts at Projects without a document. Task worktree location records and the landing chain contract lifecycle do not define whether a role has a structural seat. The caller of role_start is the started agent's parent; a dashboard or roleless-chat start has none. An identical request ID/selection reconciles one agent; a refused start has no alternative-tool fallback, and a leaf trio uses role_start_set. Harness helpers hold no AR seat or independent-review authority. Questions travel one rung to the actual parent, the watcher ban remains, and host turn-end wake-up replaces the old notifier. A source clause about capsule composition does not establish actual runtime injection. Curation supplies full memory-quality evidence; the transaction carries it and owns Git. The removed dispatch_agent transaction, plane/ambient caller split and queued notifier vocabulary are historical, not current launch instructions.
 
 ## Canonical Source Ownership
 
 The byte-equal packaged skill is a distribution carrier, not an independent role, task or permission authority. The current source account above does not certify inherited prose, actual execution, launch delivery or grading.
 
-- The canonical source supplies the current instruction or template contract described above; the package copy is derived. [1]
+
+
+- Canonical structural seat and parent authority; shared corpus is not proof of capsule injection. [1]
+
+
 
 ## Inherited Source-Epoch Commentary
 

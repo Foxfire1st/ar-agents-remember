@@ -3,15 +3,16 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "The component under test (filters rows through `hasLiveWorktree`).",
+      "note": "The component under test (filters rows through `hasLiveWorktree`).\n\nAnchor: actual current supporting source",
       "targets": [
         {
           "anchor": {
-            "blob": "8a2d5b192fc4938c0730d528dfbc497ae3763c2d",
-            "content": "sha256:4030a419c9c9b939130582ee958c68f1db25099b11da18e09c7c73efb5d8f537",
+            "blob": "680165d45ec58ec145ee32803409c4b439281a09",
+            "content": "sha256:e2d5222934784229526552e732ce0a056c563410b92f748bfd66bc2aaa3a0bb3",
             "locator": {
-              "kind": "symbol",
-              "name": "Hangar"
+              "end": 122,
+              "kind": "line_range",
+              "start": 57
             },
             "path": "dashboard/src/panels/Hangar.tsx"
           },
@@ -37,15 +38,78 @@
       ]
     },
     "3": {
-      "note": "The dashboard store the test seeds `enclosures` / `lifecycles` into and resets between cases.",
+      "note": "Hangar tests seed and reset the shared dashboard store: existence cases set enclosures directly, while the owning-task case applies a snapshot with native task entries and their bound worktrees. The store carries tasks keyed by entry.key and enclosures keyed by enclosure, applies snapshots through applySnapshotState and resets through emptyWorkspace; it has no lifecycles store.",
       "targets": [
         {
           "anchor": {
-            "blob": "f98d8c6a89931775693af8e1c31cf9dafd5a7589",
-            "content": "sha256:a481771a6a1f49857fdf4bab41702258222f16824150f29d9da3b3906411dccd",
+            "blob": "9d424691e3a6ac196a136276f1575955a48f0c53",
+            "content": "sha256:0d855548b4471462ef0d2e623ddf006a16b2cefc71458d487638a94787fbfd7e",
             "locator": {
-              "kind": "symbol",
-              "name": "dashboardStore"
+              "end": 36,
+              "kind": "line_range",
+              "start": 33
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "9d424691e3a6ac196a136276f1575955a48f0c53",
+            "content": "sha256:6a5c5fc567fc0d77e68556f584e0e96c7611b1a6afa3dcff35d9dc99ab3cb7cc",
+            "locator": {
+              "end": 72,
+              "kind": "line_range",
+              "start": 39
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "9d424691e3a6ac196a136276f1575955a48f0c53",
+            "content": "sha256:48e69ecf66a75c7ab3774eefcb7a8d7482c696a56a44321c39f266b4c61666dd",
+            "locator": {
+              "end": 170,
+              "kind": "line_range",
+              "start": 157
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "68121e9668db87a9d23260c691ac8c1ba4513e6d",
+            "content": "sha256:9c8cc6fc73334bcb43cb9c20f9ca7f21cb45be87fa03bddc18c7864a292a3fef",
+            "locator": {
+              "end": 64,
+              "kind": "line_range",
+              "start": 26
+            },
+            "path": "dashboard/src/data/store.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "68121e9668db87a9d23260c691ac8c1ba4513e6d",
+            "content": "sha256:41e34c047e42f60857bf7b0892f4df206359cfb4f04e5788cd2849fbbfbd5d5a",
+            "locator": {
+              "end": 275,
+              "kind": "line_range",
+              "start": 232
+            },
+            "path": "dashboard/src/data/store.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "68121e9668db87a9d23260c691ac8c1ba4513e6d",
+            "content": "sha256:8886b3f70cd1cfa6788a2642ee77a29e659e6523d769ea59e2eeb754f4cdb99c",
+            "locator": {
+              "end": 375,
+              "kind": "line_range",
+              "start": 299
             },
             "path": "dashboard/src/data/store.ts"
           },
@@ -58,7 +122,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "32f61ad92158b8a4519a35f725ce765c87f2ec99",
+            "blob": "8774e82c7f7a93dda014fdb8b987e2391fd21fd1",
             "content": "sha256:5e7617b273ad3b1f42e12a7e7ad04fdc602557ac4de78278b73514a2327c4656",
             "locator": {
               "kind": "symbol",
@@ -71,16 +135,16 @@
       ]
     },
     "5": {
-      "note": "The running-operation fixture supplies required `legalControls: []` and `projectionEffects: []` while the assertion remains scoped to durable `currentCommand` rendering.\n\nAnchor: `legalControls`; `projectionEffects`; \"shows the durable live command\"",
+      "note": "The running-operation test copies `SERVED.enclosures[0].lifecycleOperation` and overrides currentCommand. Its assertions check that the full durable command appears inline and as the operation title; it does not author legalControls: [] or projectionEffects: [] in this fixture.",
       "targets": [
         {
           "anchor": {
-            "blob": "8a41b3deb51e3a2595b4ba57959e578a2566c4e5",
-            "content": "sha256:5374ae48e2c5a5df95f9d047e81134f672ca05faf2131df392f50b610e9959f7",
+            "blob": "9d424691e3a6ac196a136276f1575955a48f0c53",
+            "content": "sha256:7f34d3d974c97a3bb2b80b9f507ba3759e024906b751a1dd7252b4a7c4df9d06",
             "locator": {
-              "end": 169,
+              "end": 154,
               "kind": "line_range",
-              "start": 140
+              "start": 138
             }
           },
           "kind": "test"

@@ -7,12 +7,12 @@
   },
   "applicability": "The single task-state word and full hover of an Operations task row.",
   "conditions": [
-    "The word and mark come from the reporting lifecycle, or from the document when no lifecycle has reported an event.",
-    "Asking and blocked lifecycle states retain the developer-first band within task-state classification; removed gate, pickup and own-hosted-chat activity are not competing word inputs.",
-    "The whole-row hover keeps current document, lifecycle, progress, worktree and repository facts."
+    "Server TaskEntry stage/activity own the word and mark; browser colour and elapsed silence do not infer state.",
+    "Need ordering uses each entry own works/started/planned/terminal band.",
+    "Hover uses served entry/content/count facts without lifecycle or worktree-status reconstruction."
   ],
   "exclusions": [
-    "Deriving a gate or lifecycle event from UI colour or a session state."
+    "Deriving task stage or activity from UI colour, elapsed silence or a retired lifecycle event."
   ],
   "id": "INV-7GVWYD",
   "origin": {
@@ -26,9 +26,9 @@
     "leaf": "260928-MIK-L144",
     "task": "260928-MIK"
   },
-  "revision": 2,
+  "revision": 3,
   "schema": "ar-invariant/v1",
-  "statement": "An Operations row says its task’s own state as its one word; asking and blocked task states occupy the developer-first band, and every other current fact the row knows remains in the whole-row hover text.",
+  "statement": "An Operations row formats its own served task stage and started-task activity through the common status word and mark; need bands order works, other started, planned and terminal tasks. Its hover presents title, unauthored-document notice, state/stage, repository, current step, progress, host event and abandoned/discarded counts when present, not removed lifecycle/worktree reports or an unrendered scope/reference path.",
   "status": "accepted",
   "supersedes": []
 }

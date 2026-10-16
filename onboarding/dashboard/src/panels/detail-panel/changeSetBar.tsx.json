@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "316629d0c8fb07af90b3b3526997da60f2a46898",
+        "blob": "cb170808c1e7ad3aa75e0bfd0860f2206b2291c8",
         "content": "sha256:14e80730ab07d7d43dc99018799af181b630e96b07f7bc9ba74c1111b4c462a1",
         "locator": {
           "kind": "symbol",
@@ -20,8 +20,8 @@
     },
     {
       "anchor": {
-        "blob": "316629d0c8fb07af90b3b3526997da60f2a46898",
-        "content": "sha256:5893e0ccb478f7ddb7f5363b31684d2172f3a903818cf528a472e0fc0521b5ec",
+        "blob": "cb170808c1e7ad3aa75e0bfd0860f2206b2291c8",
+        "content": "sha256:329ae5e2eb0c7afebb27a424cd37bf6edd3267537d770c7b4db095db5997e88e",
         "locator": {
           "kind": "symbol",
           "name": "leafFacts"
@@ -32,12 +32,12 @@
       "origin": {
         "leaf": "260921-ICR-L46"
       },
-      "rationale": "Builds the entry's facts key from only this leaf's liveness, closeout, integration and cleanup status and whether its code worktree exists. The summary read, which is keyed on these facts, is therefore re-run when these move and not when unrelated parts of the global analytics document change.",
+      "rationale": "Serializes live and the exact entry-bound worktrees enclosure/closeout/integration/cleanup/existence facts; no global analytics or lifecycle join.",
       "role": "primary-authority"
     },
     {
       "anchor": {
-        "blob": "316629d0c8fb07af90b3b3526997da60f2a46898",
+        "blob": "cb170808c1e7ad3aa75e0bfd0860f2206b2291c8",
         "content": "sha256:14e80730ab07d7d43dc99018799af181b630e96b07f7bc9ba74c1111b4c462a1",
         "locator": {
           "kind": "symbol",
@@ -54,7 +54,7 @@
     },
     {
       "anchor": {
-        "blob": "316629d0c8fb07af90b3b3526997da60f2a46898",
+        "blob": "cb170808c1e7ad3aa75e0bfd0860f2206b2291c8",
         "content": "sha256:f709534c1e156d88c7c1b3e810cd1d44b90ecf1b34df0d9f7f3842e54e67095c",
         "locator": {
           "kind": "symbol",
@@ -68,6 +68,23 @@
       },
       "rationale": "Reduces the change-set control's read to a single-word state carrying data-review-state (and data-review-code for a problem): briefProblem's word, 'unrecorded', '…' while loading, or 'empty' when neither half lists a changed file. It prints no backend paragraph.",
       "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "cb170808c1e7ad3aa75e0bfd0860f2206b2291c8",
+        "content": "sha256:582603b7dda5305dac858f07ff7dfc943b8ca50eb72d0b07a2f9cf36f157b09d",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-ZBAHA3",
+      "invariant": "INV-C1RTSG",
+      "origin": {
+        "handoffEntry": "L168-W-R168-05",
+        "leaf": "260928-MIK-L168"
+      },
+      "rationale": "Counter reads are downstream of body availability and do not gate the document reader.",
+      "role": "presentation"
     }
   ],
   "references": {
@@ -76,28 +93,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "316629d0c8fb07af90b3b3526997da60f2a46898",
+            "blob": "cb170808c1e7ad3aa75e0bfd0860f2206b2291c8",
             "content": "sha256:f4a7aed8100db99e8f239d60c9f5f1f3b42093d7bced0cc7bbe7958b4c35f240",
             "locator": {
               "end": 7,
               "kind": "line_range",
               "start": 1
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "10": {
-      "note": "**The one liveness predicate both live-dependent entries read.**",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "316629d0c8fb07af90b3b3526997da60f2a46898",
-            "content": "sha256:71cd159561dfafcdf346e22ba29fd069090dca1ef6108584c65a420dcae544ab",
-            "locator": {
-              "kind": "symbol",
-              "name": "leafIsLive"
             }
           },
           "kind": "code"
@@ -275,7 +276,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "316629d0c8fb07af90b3b3526997da60f2a46898",
+            "blob": "cb170808c1e7ad3aa75e0bfd0860f2206b2291c8",
             "content": "sha256:55a6f36386827134ae03d6d26f985c11cfe31e6e3b7c4134223598550787b27f",
             "locator": {
               "kind": "symbol",
@@ -286,7 +287,7 @@
         },
         {
           "anchor": {
-            "blob": "316629d0c8fb07af90b3b3526997da60f2a46898",
+            "blob": "cb170808c1e7ad3aa75e0bfd0860f2206b2291c8",
             "content": "sha256:fcb911d82cc539f1a15caad42cea72e6b269843840362abedc22c9792d066f81",
             "locator": {
               "kind": "symbol",
@@ -302,49 +303,11 @@
       "targets": [
         {
           "anchor": {
-            "blob": "316629d0c8fb07af90b3b3526997da60f2a46898",
+            "blob": "cb170808c1e7ad3aa75e0bfd0860f2206b2291c8",
             "content": "sha256:14900451fbebe4f90a222b189a32d495f591e4fa898838cb6a4ac457812006e8",
             "locator": {
               "kind": "symbol",
               "name": "changesetTotal"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "4": {
-      "note": "The change-set control: its own counter read, the generation threaded into the viewer target, the unrecorded state, the refusal filed rather than swallowed, and the disclosure beside the button.\n\nAnchor: \"<ChangeSetStateDetails\"",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "316629d0c8fb07af90b3b3526997da60f2a46898",
-            "content": "sha256:e35cabbbff34cd2a8ca427ea32bb54c51df1efc804f65d529106da5de03ea2a8",
-            "locator": {
-              "kind": "symbol",
-              "name": "ChangeSetButton"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "316629d0c8fb07af90b3b3526997da60f2a46898",
-            "content": "sha256:0e12a38e9a6c0abfcd653bf77d01ea1e5f5732609c6a81b3f8b94b431b41a9f2",
-            "locator": {
-              "kind": "symbol",
-              "name": "setUnrecorded"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "316629d0c8fb07af90b3b3526997da60f2a46898",
-            "content": "sha256:b39c613b87564e70addda80223790a5d95758b477ee34d11588c7ad9ebc5fbac",
-            "locator": {
-              "kind": "symbol",
-              "name": "setProblem"
             }
           },
           "kind": "code"
@@ -388,65 +351,11 @@
       "targets": [
         {
           "anchor": {
-            "blob": "316629d0c8fb07af90b3b3526997da60f2a46898",
+            "blob": "cb170808c1e7ad3aa75e0bfd0860f2206b2291c8",
             "content": "sha256:14e80730ab07d7d43dc99018799af181b630e96b07f7bc9ba74c1111b4c462a1",
             "locator": {
               "kind": "symbol",
               "name": "LeafEntries"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "8": {
-      "note": "**The bar: the master/leaf branch, the one liveness predicate, and the leaf-scoped facts plus re-validation generation the summary is keyed on.**\n\nAnchor: `useIntentEntryGeneration`",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "316629d0c8fb07af90b3b3526997da60f2a46898",
-            "content": "sha256:c587ea8deb1c6a365edf8c2412dd58d0e6264ad04b1c3ba77b176f34246f8d27",
-            "locator": {
-              "kind": "symbol",
-              "name": "DocChangeSetBar"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "316629d0c8fb07af90b3b3526997da60f2a46898",
-            "content": "sha256:5893e0ccb478f7ddb7f5363b31684d2172f3a903818cf528a472e0fc0521b5ec",
-            "locator": {
-              "kind": "symbol",
-              "name": "leafFacts"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "9": {
-      "note": "This leaf's lifecycle facts as one comparable value.\n\nAnchor: `closeoutStatus`",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "316629d0c8fb07af90b3b3526997da60f2a46898",
-            "content": "sha256:c5f56ba11cf4f9ad8ca6044f9b0fa32dc07e077962f9d5aa32e8965d0ea82ec2",
-            "locator": {
-              "kind": "symbol",
-              "name": "leafEnclosure"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "316629d0c8fb07af90b3b3526997da60f2a46898",
-            "content": "sha256:5893e0ccb478f7ddb7f5363b31684d2172f3a903818cf528a472e0fc0521b5ec",
-            "locator": {
-              "kind": "symbol",
-              "name": "leafFacts"
             }
           },
           "kind": "code"

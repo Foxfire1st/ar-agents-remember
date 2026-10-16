@@ -348,6 +348,23 @@
         }
       ]
     },
+    "28": {
+      "note": "The current closed register omits retired ambient-session/log owners while retaining closeout and worktree landing-chain cache resets.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f4aaacfcd15bb64cc5150682f4748512e07174bf",
+            "content": "sha256:7beed00ba2a1a811cef48ee655b56bf0a4ecd5c7987bab19ae9371f43ebabe01",
+            "locator": {
+              "kind": "symbol",
+              "name": "PROCESS_MUTABLE_STATES"
+            },
+            "path": "mcp/test_support/agents_remember_test_support/testing/global_state.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
     "3": {
       "note": "Retry execution keeps only explicitly supplied files of the collected population; dependency ownership is supplied by the caller.",
       "targets": [

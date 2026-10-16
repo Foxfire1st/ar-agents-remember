@@ -1,0 +1,135 @@
+{
+  "path": "mcp/tests/test_intent_summary_cache.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Exact native counted bytes and ETag 304 reuse do not recount or spawn repeat Git.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c8b6883ccbf30ebd54724e39a4d71f1370e0fe49",
+            "content": "sha256:62af6d0a43774b87332fa3fb4b3e1919762014c4a240df483a99f47aaedd7c44",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_native_counted_bytes_and_conditional_return_use_zero_git"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Native code/memory/index/HEAD/record inputs invalidate and then settle.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c8b6883ccbf30ebd54724e39a4d71f1370e0fe49",
+            "content": "sha256:45d57dd35b218895fec25419013e088605fd9bc5b772e0fdcf15a464d3251aea",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_native_input_changes_invalidate_then_settle_without_more_git"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Derived-index timestamp and content changes are distinguished.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c8b6883ccbf30ebd54724e39a4d71f1370e0fe49",
+            "content": "sha256:111bb7ca4221cdfd4d982141c2478a576ba61e4d45e3ae74a4696292b438eecb",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_derived_index_timestamp_touch_reuses_but_changed_bytes_are_reopened"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "Unobservable index inputs fall back to native reads every time.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c8b6883ccbf30ebd54724e39a4d71f1370e0fe49",
+            "content": "sha256:7e2cd553df5b9f20d1e68d7a3d3668d6f8dc9500cc4d5bf4c9648788959464d0",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_unreadable_index_observation_uses_native_read_each_time"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "Dependency manifests and retained values share a finite bound.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c8b6883ccbf30ebd54724e39a4d71f1370e0fe49",
+            "content": "sha256:1acbeb545692c358a9ceb920790f16d959a0c298f85fb503f9446a8a7297d5b7",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_dependency_manifest_and_values_remain_bounded_over_growing_histories"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "Unchanged refusals revalidate without Git and restored objects regain counted native answers.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c8b6883ccbf30ebd54724e39a4d71f1370e0fe49",
+            "content": "sha256:bf7b4f7cedd3eacb76794ec8896a05c522124bde6afba346abd878dcb2f296da",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_first_refused_revalidation_is_free_and_restored_objects_are_seen"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "A restoration during refusal composition cannot bind that refusal to new inputs.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c8b6883ccbf30ebd54724e39a4d71f1370e0fe49",
+            "content": "sha256:a11870588db9e0f85c71b26bfb3320ae0a539fe3e9f3b1ee806e413031018797",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_object_restored_after_native_refusal_is_not_adopted_as_the_refusals_input"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "A blocked summary fixture does not block task/file/master HTTP reads.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c8b6883ccbf30ebd54724e39a4d71f1370e0fe49",
+            "content": "sha256:1574024665af18a0c3ec70433811a3f843986f4b7fef938a7a7044971b1d44ef",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_slow_intent_does_not_serialize_other_reads"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

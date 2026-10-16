@@ -1,0 +1,58 @@
+{
+  "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/host_activity.test.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Boot and permission/terminal transitions.\n\nAnchor: host transitions preserve permission waits through turn end and individual resolutions",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c99c43d87281f3ca4df3726664649bda1251d349",
+            "content": "sha256:3cc180fc6d601a23745ec6933ad7c7daafd338e962722c609ec59a0881766bad",
+            "locator": {
+              "end": 71,
+              "kind": "line_range",
+              "start": 35
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Pagination, failed listing, population bounds and hook names.\n\nAnchor: events during the full listing win; all pages are read and event time survives reconnect",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c99c43d87281f3ca4df3726664649bda1251d349",
+            "content": "sha256:e493780e99045f875c831f798c35ef7f8aa5281596fb9610e9333e1ca1d18bec",
+            "locator": {
+              "end": 115,
+              "kind": "line_range",
+              "start": 73
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "One file and turn-start age through permission/reconciliation.\n\nAnchor: a turn keeps its host start through permission requests and resolutions, including reconciliation",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c99c43d87281f3ca4df3726664649bda1251d349",
+            "content": "sha256:cdcce1a47e289372c6bf81747d3c88302b641cd821c94fce6c263641b44c9523",
+            "locator": {
+              "end": 144,
+              "kind": "line_range",
+              "start": 117
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

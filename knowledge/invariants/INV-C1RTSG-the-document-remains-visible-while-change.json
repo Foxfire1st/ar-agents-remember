@@ -1,0 +1,34 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test",
+      "prevents_costly_mistake"
+    ],
+    "justification": "Future changes to task-page reads, conditional transport, native generation capture or retained-content ownership must prevent stale or unbounded cache reuse and a counter failure blocking the document. Named current source assertions guard the specified facets; historical timing/count samples remain task-local, not enduring obligations or fresh Curator grades."
+  },
+  "applicability": "Task-document presentation independently of committed/working/master change-set counter completion.",
+  "conditions": [
+    "The available summary/document remains rendered while the downstream counter request is pending or fails.",
+    "Counter controls retain their own loading, unrecorded, measured-empty and refusal states without gating the document reader."
+  ],
+  "exclusions": [
+    "This is not a guarantee that missing or failed document-body reads become available, nor an acceptance of failed change-set reads."
+  ],
+  "id": "INV-C1RTSG",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "sync-L81-dashboard.txt; document-first/failure cases in full dashboard suite"
+      ],
+      "path": "A011-bounded-generation-content-33.json"
+    },
+    "handoffEntry": "L168-W-R168-05",
+    "leaf": "260928-MIK-L168",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "The document remains visible while change-set requests are pending or fail.",
+  "status": "proposed",
+  "supersedes": []
+}

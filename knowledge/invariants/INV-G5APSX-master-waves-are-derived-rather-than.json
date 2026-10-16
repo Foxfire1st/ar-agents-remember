@@ -3,12 +3,12 @@
     "criteria": [
       "prevents_costly_mistake"
     ],
-    "justification": "Deriving from prerequisite IDs and current master-row states prevents a separately stored or manually edited wave plan from lying about which unfinished work blocks the next task."
+    "justification": "Deriving waves from prerequisite IDs and the matched child document status when available, with the declared master-row status only as fallback, prevents a separately stored or manually edited wave plan from lying about which unfinished work blocks the next task."
   },
   "applicability": "The current derived waves of an ordinary master’s explicitly listed task population.",
   "conditions": [
-    "waitsFor and authoritative master-row task states are the inputs; waves are computed rather than persisted.",
-    "Tasks in work precede ready tasks; a waiting task follows its latest unfinished prerequisite."
+    "waitsFor and current child-document status, or the declared master-row fallback when no child document is available, are inputs; waves are computed rather than persisted.",
+    "Tasks in work precede ready tasks; waiting tasks follow their latest unfinished prerequisite."
   ],
   "exclusions": [
     "Sprint graph authoring changes.",
@@ -26,9 +26,9 @@
     "leaf": "260928-MIK-L162",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-invariant/v1",
-  "statement": "Master waves are derived rather than stored from waitsFor and authoritative task-row states, placing work first, ready tasks next and waiting tasks after their latest unfinished prerequisite.",
+  "statement": "Ordinary-master waves are derived, not stored, from waitsFor and each listed child document status when available, falling back to the declared master-row status otherwise; work precedes ready tasks and waiting tasks follow their latest unfinished prerequisite.",
   "status": "proposed",
   "supersedes": []
 }

@@ -3,12 +3,12 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "The reopen application entry point and its ambient-lifecycle handoff.",
+      "note": "The confined application entry delegates reopen without ambient lifecycle access.",
       "targets": [
         {
           "anchor": {
-            "blob": "0cb442fb250bb6b6710d5f2fd336dd5f036cf9b4",
-            "content": "sha256:5b2c3264aed7bba000d01a99e0dd05f9522757943e36e262fd6bed32a0d452e1",
+            "blob": "2e7b4e4063062583a8100ef01afb46478ae25085",
+            "content": "sha256:8d6329c7b789884aaa6dc015e12cfdf386458ba18a62e5412de87ccec53ca039",
             "locator": {
               "kind": "symbol",
               "name": "task_reopen_tool"
@@ -19,28 +19,15 @@
       ]
     },
     "2": {
-      "note": "The enclosure-contract reset this delegates to.",
+      "note": "The worktree owner dispatches series separately and performs admitted leaf reset, leaving worktree recreation to start.",
       "targets": [
         {
           "anchor": {
-            "blob": "c37e9b93e5f0f0d202a686f86eea0d2907dbb28e",
-            "content": "sha256:e5b3c3219952a6e9f5f8875a72a3fa5394f4d24ba8780e0c409d956fde10299d",
+            "blob": "d58c63ecee8f999fb207fe2c6b4fd35956213d82",
+            "content": "sha256:1cbe90be5cd321c244ae936a34438999e3f74f3a1c4851876fde8d25c8d99a66",
             "locator": {
               "kind": "symbol",
               "name": "reopen_task"
-            },
-            "path": "mcp/src/agents_remember/worktrees/reopen.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "c37e9b93e5f0f0d202a686f86eea0d2907dbb28e",
-            "content": "sha256:bad744533d0565031c3d6f40043f255bca909d15d7aa2c9f5bcd49fe6c40516f",
-            "locator": {
-              "end": 289,
-              "kind": "line_range",
-              "start": 212
             },
             "path": "mcp/src/agents_remember/worktrees/reopen.py"
           },
@@ -49,28 +36,30 @@
       ]
     },
     "3": {
-      "note": "The facade re-export keeping the old import path working.",
+      "note": "The current task-doc facade re-exports the same application entry.",
       "targets": [
         {
           "anchor": {
-            "blob": "0cb442fb250bb6b6710d5f2fd336dd5f036cf9b4",
-            "content": "sha256:5b2c3264aed7bba000d01a99e0dd05f9522757943e36e262fd6bed32a0d452e1",
+            "blob": "5feac1ca27da9704636c3bd2e080ed7572232898",
+            "content": "sha256:5404d8f594b8635610d5cafae8b3ff70ae6d8fccc7b30298283c9b89f2e9a1c6",
             "locator": {
-              "kind": "symbol",
-              "name": "task_reopen_tool"
-            }
+              "end": 121,
+              "kind": "line_range",
+              "start": 117
+            },
+            "path": "mcp/src/agents_remember/application/task_docs/task_doc_tools.py"
           },
           "kind": "code"
         }
       ]
     },
     "4": {
-      "note": "The application entry point delegates reopen through its current worktree owner; deleted suites provide no current execution evidence.",
+      "note": "The application entry confines the contract and delegates; this is source evidence, not a test execution.",
       "targets": [
         {
           "anchor": {
-            "blob": "0cb442fb250bb6b6710d5f2fd336dd5f036cf9b4",
-            "content": "sha256:5b2c3264aed7bba000d01a99e0dd05f9522757943e36e262fd6bed32a0d452e1",
+            "blob": "2e7b4e4063062583a8100ef01afb46478ae25085",
+            "content": "sha256:8d6329c7b789884aaa6dc015e12cfdf386458ba18a62e5412de87ccec53ca039",
             "locator": {
               "kind": "symbol",
               "name": "task_reopen_tool"

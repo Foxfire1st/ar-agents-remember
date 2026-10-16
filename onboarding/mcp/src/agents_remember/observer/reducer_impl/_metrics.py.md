@@ -6,17 +6,16 @@
 
 ## Purpose
 
-Analytical rollups: staleness histogram and workspace metrics. The reducer's slice-3b rollups: the verification-age histogram, the workspace metrics rollup, and the analytics assembly. All remain pure functions of already-read inputs. No token aggregate is computed here; `tool.completed` is liveness-only.
+Pure analytical assembly, verification-age staleness histogram and stalest-sidecar ranking over already-read inputs. Task stage/activity counts belong to task-entry production, not lifecycle buckets here.
 
 ## Code Commentary
 
-- `_metrics`
 - `staleness_histogram`
 - `_staleness_bucket`
 - `build_analytics`
 - `_stalest`
 
-The metrics vocabulary buckets and staleness histogram/ranking remain pure. Analytics assembly retains the caller-derived series/attention/engine surfaces but no longer projects agentPickups or expectationRows; removal of those fields is not restoration of old session/gate machinery.
+Analytics retains drift, sidecar staleness, setup, route, tool-report, ledger, attention and Engine Room surfaces. It emits no lifecycle buckets, taskDocuments, series, pickup or expectation collections and owns no task-stage or action authority.
 
 ## Invariants And Boundaries
 
@@ -24,7 +23,7 @@ The metrics vocabulary buckets and staleness histogram/ranking remain pure. Anal
 
 ## Evidence
 
-- Pure metrics and analytics assembly retain surviving inputs, not removed pickup/expectation projections. [1]
+- Pure staleness/ranking and analytics assembly consume already-read surviving inputs. [1]
 
 
 

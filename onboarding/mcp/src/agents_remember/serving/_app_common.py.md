@@ -10,7 +10,7 @@ Shared serving collaborators, the runtime bundle, and projection/SSE helpers. Th
 
 ## Code Commentary
 
-ServingCollaborators holds the distinct subject-review, entry-list, source-content, intent-summary, tree-view and path-reader ports plus tree-view shutdown and extra-route hooks. An omitted port is a missing capability, not an empty result. The runtime contains configuration, projector, clock, build, interval and the tree-child shutdown hook; it is not a terminal host. LiveProjectionInputs resolves unset provider/landing/change-watch toggles from the replay seam. The projection dump is memoized by published instance, copied before the serve-time build tail, and reused for SSE snapshots; deltas remain individual nodes.
+ServingCollaborators holds the distinct subject-review, entry-list, source-content, intent-summary, tree-view and path-reader ports plus tree-view shutdown and extra-route hooks. An omitted port is a missing capability, not an empty result. The runtime contains configuration, projector, clock, build, interval and the tree-child shutdown hook; it is not a terminal host. LiveProjectionInputs resolves unset provider/landing/change-watch toggles from the replay seam. The projection dump is memoized by published instance, copied before the serve-time build tail, and reused for SSE snapshots; deltas remain individual nodes. Optional `host_activity_reconcile` supplies the config-bound full-host boot reconciliation port; omission leaves activity unknown rather than proving absence. Each runtime owns its `TaskDocumentBodyCache`. Conditional-read ETag parsing now belongs to `conditional_read`, not this helper module.
 
 The shared runtime also carries the optional background ledger. Routes, projection owners and background loops use that same account; the runtime bundle does not restore a terminal host or notifier owner.
 
@@ -34,4 +34,3 @@ This is current-source interpretation of the A9 candidate, not a new test result
 - [27]
 - [28]
 - [30]
-

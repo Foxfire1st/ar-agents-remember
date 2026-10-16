@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "7e45705913d75b0494c3fbdd477dea21727c2533",
+        "blob": "a44e94849cddcfdaa693be8e4c9deeaa42953b0f",
         "content": "sha256:cba32f5e008c1e624e17bde27b2724781142040bb9dcef401e396d64dc308d59",
         "locator": {
           "kind": "symbol",
@@ -21,25 +21,7 @@
     },
     {
       "anchor": {
-        "blob": "7e45705913d75b0494c3fbdd477dea21727c2533",
-        "content": "sha256:a45ce0a6149eac41ceceecf0bfab60dfcc28238b19716d584db241c3cf0d566d",
-        "locator": {
-          "kind": "symbol",
-          "name": "REMOVED_PART_STORE_PATHS"
-        }
-      },
-      "id": "RLZ-8RPPPA",
-      "invariant": "INV-7XBR6C",
-      "origin": {
-        "handoffEntry": "MIK-R113@v1 rule 5",
-        "leaf": "260928-MIK-L113"
-      },
-      "rationale": "The list of the stores of removed parts; discovery and removal both read it and nothing else decides what counts as such a store.",
-      "role": "primary-authority"
-    },
-    {
-      "anchor": {
-        "blob": "7e45705913d75b0494c3fbdd477dea21727c2533",
+        "blob": "a44e94849cddcfdaa693be8e4c9deeaa42953b0f",
         "content": "sha256:cba32f5e008c1e624e17bde27b2724781142040bb9dcef401e396d64dc308d59",
         "locator": {
           "kind": "symbol",
@@ -57,25 +39,7 @@
     },
     {
       "anchor": {
-        "blob": "7e45705913d75b0494c3fbdd477dea21727c2533",
-        "content": "sha256:f763fb8a76e54f81a097d2649a7a80121361cb0127d059300242b19d5f6c72ad",
-        "locator": {
-          "kind": "symbol",
-          "name": "removed_part_stores_report"
-        }
-      },
-      "id": "RLZ-NYH1WY",
-      "invariant": "INV-7XBR6C",
-      "origin": {
-        "handoffEntry": "MIK-R113@v1 rule 5",
-        "leaf": "260928-MIK-L113"
-      },
-      "rationale": "The part of an install's result on these stores: count, size, the sentence that names the command, the way out of a stored gate, and the list.",
-      "role": "propagation-persistence"
-    },
-    {
-      "anchor": {
-        "blob": "7e45705913d75b0494c3fbdd477dea21727c2533",
+        "blob": "a44e94849cddcfdaa693be8e4c9deeaa42953b0f",
         "content": "sha256:3ddacb8bd5f0122befc3730a4c21219d9b5cee1a1ab9ae73fc27f26bb0dd1a2d",
         "locator": {
           "kind": "symbol",
@@ -93,7 +57,7 @@
     },
     {
       "anchor": {
-        "blob": "7e45705913d75b0494c3fbdd477dea21727c2533",
+        "blob": "a44e94849cddcfdaa693be8e4c9deeaa42953b0f",
         "content": "sha256:0d4616c9c928bd4215f0cb657bfa5b9ec8bd5764b1eb62c24befb667145c76db",
         "locator": {
           "kind": "symbol",
@@ -111,7 +75,7 @@
     },
     {
       "anchor": {
-        "blob": "7e45705913d75b0494c3fbdd477dea21727c2533",
+        "blob": "a44e94849cddcfdaa693be8e4c9deeaa42953b0f",
         "content": "sha256:4a4fbcdc676ad9917989247e03cc4a140247855c8d37a56e5289407799f4d305",
         "locator": {
           "kind": "symbol",
@@ -129,26 +93,7 @@
     },
     {
       "anchor": {
-        "blob": "7e45705913d75b0494c3fbdd477dea21727c2533",
-        "content": "sha256:d0074fa1308ad52a6b1895dc053dd5634ab681ad123ba28ad826d27ce475815b",
-        "locator": {
-          "end": 399,
-          "kind": "line_range",
-          "start": 376
-        }
-      },
-      "id": "RLZ-X20BVH",
-      "invariant": "INV-7XBR6C",
-      "origin": {
-        "handoffEntry": "MIK-R113@v1 rule 5",
-        "leaf": "260928-MIK-L113"
-      },
-      "rationale": "Finds the stores with their files and sizes without following a link, and records every place that is there and could not be read.",
-      "role": "support"
-    },
-    {
-      "anchor": {
-        "blob": "7e45705913d75b0494c3fbdd477dea21727c2533",
+        "blob": "a44e94849cddcfdaa693be8e4c9deeaa42953b0f",
         "content": "sha256:0a1920a2dc1e0b2cc2579092042bd0ceee94bb1fc401b9038a32668a90e8d710",
         "locator": {
           "kind": "symbol",
@@ -255,6 +200,39 @@
               "kind": "symbol",
               "name": "user_settings_protection_report"
             }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "14": {
+      "note": "Install consumes the one shared removed-store inventory without defining or deleting it.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a44e94849cddcfdaa693be8e4c9deeaa42953b0f",
+            "content": "sha256:76043812ac2da2b5922ba9d23c2f269fbacdb4844790588f25baa5c250838182",
+            "locator": {
+              "kind": "symbol",
+              "name": "_install_runtime"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "15": {
+      "note": "The shared no-follow store/gate/lock inventory and reporting retain explicit user-owned removal.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "919a71b491ed753daa97927f49bcf27947690f71",
+            "content": "sha256:30df359dcfb250d017428959e8ac344766868db94af85d56522a271b5bba720a",
+            "locator": {
+              "kind": "symbol",
+              "name": "removed_part_stores"
+            },
+            "path": "mcp/src/agents_remember/install/removed_stores.py"
           },
           "kind": "code"
         }

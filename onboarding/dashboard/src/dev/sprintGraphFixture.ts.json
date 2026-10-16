@@ -3,15 +3,15 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "The seeded sprint document.",
+      "note": "The seeded native sprint entry carries the segmented execution graph in its summary.",
       "targets": [
         {
           "anchor": {
-            "blob": "90f6f8567000deb643b5669dd35b04fbcb487642",
-            "content": "sha256:012cea94c63f5fb154dc31b1a924042c3618c6049803e91c877be6f6daacda80",
+            "blob": "ca3e4a735bf2f8cd11dcb8e2a103212ec6835783",
+            "content": "sha256:63493f41b5fa5ffaec1ba44a816747f8df92f8a896e4f922b08f818dbf9dd842",
             "locator": {
               "kind": "symbol",
-              "name": "SPRINT_GRAPH_TASK_DOC"
+              "name": "SPRINT_GRAPH_TASK_ENTRY"
             }
           },
           "kind": "code"
@@ -56,7 +56,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "32f61ad92158b8a4519a35f725ce765c87f2ec99",
+            "blob": "8774e82c7f7a93dda014fdb8b987e2391fd21fd1",
             "content": "sha256:aba557ba3e3dd7a0538e54add74e8b5a26632e69e6fbd0805b7b5e653c9c6735",
             "locator": {
               "kind": "symbol",

@@ -2,38 +2,6 @@
   "path": "mcp/tests/test_observer.py",
   "realizes": [],
   "references": {
-    "1": {
-      "note": "Append routes per lifecycle.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "229a1284fa08b85c28e7751a26ce2251e9567dd9",
-            "content": "sha256:23841b9dfc83f34dc90a0548ed684b3050f1652da3762fe57c45d052420bd061",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_append_routes_per_lifecycle"
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "2": {
-      "note": "Workspace log for lifecycleless events.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "229a1284fa08b85c28e7751a26ce2251e9567dd9",
-            "content": "sha256:43330721f2c9b4b311386443a3d832ffa45c2908f5d6b8f9d5ad82dcc598381e",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_workspace_log_for_lifecycleless_events"
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
     "3": {
       "note": "Round trip through store.",
       "targets": [
@@ -44,6 +12,38 @@
             "locator": {
               "kind": "symbol",
               "name": "test_round_trip_through_store"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "Task scope remains in the workspace river and creates no lifecycle directory.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "954cf5b3913a1fd199f81cc088876e9cb40903b0",
+            "content": "sha256:400fb81e4d787990cb8ddbcabe8a6e8ff36710788eea6a1925ce04decf7c43cc",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_scope_key_stays_in_the_workspace_river"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "Unbound tool facts use the same workspace log.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "954cf5b3913a1fd199f81cc088876e9cb40903b0",
+            "content": "sha256:20a1d20941a2871c07633743392f1023d2441b8e3b52fd29b70739b66c3d52c7",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_workspace_log_for_unbound_events"
             }
           },
           "kind": "test"

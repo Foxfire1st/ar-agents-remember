@@ -23,8 +23,9 @@
         "blob": "387f7657e824f6bdf14d470a49720a49a625a57f",
         "content": "sha256:ece909d587bfb4b1b2f1d3b82d362afc61f400b5f280c1627bd99c4047e67928",
         "locator": {
-          "kind": "symbol",
-          "name": "test_each_parent_has_upward_notice_and_unchanged_downward_answer_duties"
+          "end": 97,
+          "kind": "line_range",
+          "start": 50
         }
       },
       "facet": "Requires every starter role to carry the authority triage, the unchanged upward relay, the quoted downward answer and the permission notice with its named or not-supplied permission.",

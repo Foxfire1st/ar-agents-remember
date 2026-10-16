@@ -105,7 +105,9 @@ advance). All helpers are pure.
 - The append-only store that serializes and folds these snapshots. [2]
 - Ids come from the local ULID mint. [3]
 - `GateRecord` now subclasses `DurableRecord` and its docstring states why `schema` and `schemaVersion` answer different questions. [4]
+
 - `DurableRecord` supplies the `extra="forbid"` config and the `schemaVersion` validator that rejects an unknown major and accepts an unknown minor. [5]
+
 
 As of the 260703-L8 seam ruling the GateKind vocabulary includes `master-handover-approval`: the master-exit seam gate the manager raises with the reviewer verdict attached and the orchestrator decides (delegable, never human-pinned — human review concentrates at the super gate).
 

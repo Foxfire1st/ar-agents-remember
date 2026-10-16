@@ -23,7 +23,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ca90cf963accfb9a020d0034126399ba21a7aa04",
+            "blob": "622f209da29e162caf4826d983ce3c7b3b928484",
             "content": "sha256:19def97c240bedafb45d15377960ff50d79409d1b23282c321abbfc1ac2f1053",
             "locator": {
               "kind": "symbol",
@@ -55,7 +55,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ca90cf963accfb9a020d0034126399ba21a7aa04",
+            "blob": "622f209da29e162caf4826d983ce3c7b3b928484",
             "content": "sha256:b4321b57435254c6139ce6673143b99ccd7d1e31d0b8afbb710a816d8f13d9c9",
             "locator": {
               "kind": "symbol",
@@ -114,12 +114,28 @@
         }
       ]
     },
+    "16": {
+      "note": "Server-info, gate and file calls preserve the synthetic seat; resolve_context is not called and file inputs do not prove successful naming.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "622f209da29e162caf4826d983ce3c7b3b928484",
+            "content": "sha256:229d83bd2be96d5c403080aa6fa8b223d5ef00a81798d9a05b622615211ae6a0",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_miscellaneous_description_called_reads_write_nothing"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
     "2": {
       "note": "A mutated read is caught, so the roster cannot pass vacuously.",
       "targets": [
         {
           "anchor": {
-            "blob": "ca90cf963accfb9a020d0034126399ba21a7aa04",
+            "blob": "622f209da29e162caf4826d983ce3c7b3b928484",
             "content": "sha256:477a55b059b7eeeca6409cf1b6466f05c1803dc3e451c1c240bcd31fa335766c",
             "locator": {
               "kind": "symbol",
@@ -135,7 +151,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ca90cf963accfb9a020d0034126399ba21a7aa04",
+            "blob": "622f209da29e162caf4826d983ce3c7b3b928484",
             "content": "sha256:1d064e20942fb4eab7468fc660ac0549fea8deb06ca98d4314df77edc5764676",
             "locator": {
               "kind": "symbol",
@@ -167,7 +183,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ca90cf963accfb9a020d0034126399ba21a7aa04",
+            "blob": "622f209da29e162caf4826d983ce3c7b3b928484",
             "content": "sha256:70c9f83cd51184503b0b74e39bc9099c3e16d712970ff8581b821620fa7fd039",
             "locator": {
               "kind": "symbol",
@@ -183,27 +199,11 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ca90cf963accfb9a020d0034126399ba21a7aa04",
+            "blob": "622f209da29e162caf4826d983ce3c7b3b928484",
             "content": "sha256:f52a08e56ca15af64b4c27180c08d8e8131fffe916fbfbd4ff042b31d009ce70",
             "locator": {
               "kind": "symbol",
               "name": "test_converted_drift_check_read_writes_nothing"
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "7": {
-      "note": "Server-info, resolver, gate and file reads preserve the synthetic seat.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "0c67077cbd94cacbe8f28924d4a86ef35dbfd607",
-            "content": "sha256:a1684f1ff198d630b57d774a98eee32d1e5925269dbe03e8dedee1a1f1ae3587",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_miscellaneous_description_called_reads_write_nothing"
             }
           },
           "kind": "test"
@@ -215,7 +215,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ca90cf963accfb9a020d0034126399ba21a7aa04",
+            "blob": "622f209da29e162caf4826d983ce3c7b3b928484",
             "content": "sha256:9814eaca47855c7619925788073005507e10a218d83b8f96086ed7d532a735b3",
             "locator": {
               "kind": "symbol",
@@ -231,7 +231,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ca90cf963accfb9a020d0034126399ba21a7aa04",
+            "blob": "622f209da29e162caf4826d983ce3c7b3b928484",
             "content": "sha256:87a7db096e1c7ff7c155e019995a19e3eedf7ae8b10905b12de86d541078e5dd",
             "locator": {
               "kind": "symbol",

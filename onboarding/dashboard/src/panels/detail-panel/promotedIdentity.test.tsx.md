@@ -6,16 +6,13 @@
 
 ## Purpose
 
-The promoted-lifecycle identity suite split from `DetailPanel.test.tsx` by the
-260731-EFA-L8 test split. Pins that a promoted leaf renders its real lifecycle/task
-identity rather than a generic placeholder.
+The promoted task identity suite pins the native leaf’s real task ID/title/form rather than a generic lifecycle or master placeholder.
 
 ## Code Commentary
 
 ### Logic
 
-Seeds the promoted lifecycle via `seedPromotedLeaf` and asserts the reader shows the
-promoted document's title/identity.
+seedPromotedLeaf publishes a native entry and its parent; both cases open the canonical qualified taskdoc key. Assertions retain the real identity/title and task form, separate step labels, Further-notes return and exact qualified parent navigation.
 
 ### Invariants And Boundaries
 

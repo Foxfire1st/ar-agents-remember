@@ -149,9 +149,11 @@
     {
       "anchor": {
         "blob": "e0b3bcfc145479a365a748510d7bd04490842c91",
-        "content": "sha256:b23e5254409f20d3f8820bd77c13ac39d9f0a31e342e9f74f252616ae0c53469",
+        "content": "sha256:4bb7e353046acc115fc0c955cdaa26476cd86c88f61d4e038e63c315e8cf684c",
         "locator": {
-          "kind": "file"
+          "end": 58,
+          "kind": "line_range",
+          "start": 57
         }
       },
       "id": "RLZ-N4VK1C",

@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "4450f6dd38b171916d86a8af858b4da0d30493f4",
-        "content": "sha256:16b8206380a8f6c2cf8e474b1b8a569816b1237e30754d8aaecd3e3cd17d0c4b",
+        "blob": "a0ed662a42a3b5b6c0fec263b6c9d5eb5f77fa83",
+        "content": "sha256:c80dfdf8d84f1ec625798c15cf8ff02716fb4a6dcba5473eb4a59d2274b388c4",
         "locator": {
           "kind": "symbol",
           "name": "_start_leaf_enclosure"
@@ -16,12 +16,12 @@
         "handoffEntry": "MIK-R95@v1 rule5",
         "leaf": "260928-MIK-L95"
       },
-      "rationale": "Both entry points prepare through this one checked child, so the caller's persistent lifecycle is neither consulted nor changed.",
+      "rationale": "Both entry points prepare through this one checked child while preserving the caller AgentBinding environment; the removed ambient persistent lifecycle is neither a current owner nor a required preparation route.",
       "role": "enforcement"
     },
     {
       "anchor": {
-        "blob": "4450f6dd38b171916d86a8af858b4da0d30493f4",
+        "blob": "a0ed662a42a3b5b6c0fec263b6c9d5eb5f77fa83",
         "content": "sha256:7bed85c3ee2f4d1ae1c5b044416633c88910d9c88b9339b2c63237f830a60da3",
         "locator": {
           "kind": "symbol",
@@ -39,7 +39,7 @@
     },
     {
       "anchor": {
-        "blob": "4450f6dd38b171916d86a8af858b4da0d30493f4",
+        "blob": "a0ed662a42a3b5b6c0fec263b6c9d5eb5f77fa83",
         "content": "sha256:d6fde4cb534c458665bcbbcaf1b3e0d6a124b41dcac11ecfe26c05a0a7987503",
         "locator": {
           "kind": "symbol",
@@ -57,7 +57,7 @@
     },
     {
       "anchor": {
-        "blob": "4450f6dd38b171916d86a8af858b4da0d30493f4",
+        "blob": "a0ed662a42a3b5b6c0fec263b6c9d5eb5f77fa83",
         "content": "sha256:cb430d253a9c2b63fcc122062f3be8cd0ca6fade4f825ee4dc4c97f3af2b9795",
         "locator": {
           "kind": "symbol",
@@ -75,7 +75,7 @@
     },
     {
       "anchor": {
-        "blob": "4450f6dd38b171916d86a8af858b4da0d30493f4",
+        "blob": "a0ed662a42a3b5b6c0fec263b6c9d5eb5f77fa83",
         "content": "sha256:94e6b420c05d940e37bafcec32fddb20cf0fe89a2f660e6a203c6f8061cdc174",
         "locator": {
           "kind": "symbol",
@@ -93,7 +93,7 @@
     },
     {
       "anchor": {
-        "blob": "4450f6dd38b171916d86a8af858b4da0d30493f4",
+        "blob": "a0ed662a42a3b5b6c0fec263b6c9d5eb5f77fa83",
         "content": "sha256:d6fde4cb534c458665bcbbcaf1b3e0d6a124b41dcac11ecfe26c05a0a7987503",
         "locator": {
           "kind": "symbol",
@@ -111,7 +111,7 @@
     },
     {
       "anchor": {
-        "blob": "4450f6dd38b171916d86a8af858b4da0d30493f4",
+        "blob": "a0ed662a42a3b5b6c0fec263b6c9d5eb5f77fa83",
         "content": "sha256:1d362164da7db151e71462781701fa326cc8dc10a271661bb475223d16689e94",
         "locator": {
           "kind": "symbol",
@@ -129,7 +129,7 @@
     },
     {
       "anchor": {
-        "blob": "4450f6dd38b171916d86a8af858b4da0d30493f4",
+        "blob": "a0ed662a42a3b5b6c0fec263b6c9d5eb5f77fa83",
         "content": "sha256:94e6b420c05d940e37bafcec32fddb20cf0fe89a2f660e6a203c6f8061cdc174",
         "locator": {
           "kind": "symbol",
@@ -147,7 +147,7 @@
     },
     {
       "anchor": {
-        "blob": "4450f6dd38b171916d86a8af858b4da0d30493f4",
+        "blob": "a0ed662a42a3b5b6c0fec263b6c9d5eb5f77fa83",
         "content": "sha256:94e6b420c05d940e37bafcec32fddb20cf0fe89a2f660e6a203c6f8061cdc174",
         "locator": {
           "kind": "symbol",
@@ -165,7 +165,7 @@
     },
     {
       "anchor": {
-        "blob": "4450f6dd38b171916d86a8af858b4da0d30493f4",
+        "blob": "a0ed662a42a3b5b6c0fec263b6c9d5eb5f77fa83",
         "content": "sha256:a23cf9cfa008bf8a2ee317fb605d5039754507de4e00f40c91703884303d46c6",
         "locator": {
           "kind": "symbol",
@@ -183,7 +183,7 @@
     },
     {
       "anchor": {
-        "blob": "4450f6dd38b171916d86a8af858b4da0d30493f4",
+        "blob": "a0ed662a42a3b5b6c0fec263b6c9d5eb5f77fa83",
         "content": "sha256:26cbb4abc68e5d67daed1998e00b4db205be18fc3eefa6d190344b501db21ec8",
         "locator": {
           "kind": "symbol",
@@ -206,7 +206,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c3a08a9d9503d34ee2845f00e0fb45d8873617ea",
+            "blob": "a0ed662a42a3b5b6c0fec263b6c9d5eb5f77fa83",
             "content": "sha256:7bed85c3ee2f4d1ae1c5b044416633c88910d9c88b9339b2c63237f830a60da3",
             "locator": {
               "kind": "symbol",
@@ -222,7 +222,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c3a08a9d9503d34ee2845f00e0fb45d8873617ea",
+            "blob": "a0ed662a42a3b5b6c0fec263b6c9d5eb5f77fa83",
             "content": "sha256:1d362164da7db151e71462781701fa326cc8dc10a271661bb475223d16689e94",
             "locator": {
               "kind": "symbol",
@@ -238,7 +238,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c3a08a9d9503d34ee2845f00e0fb45d8873617ea",
+            "blob": "a0ed662a42a3b5b6c0fec263b6c9d5eb5f77fa83",
             "content": "sha256:a23cf9cfa008bf8a2ee317fb605d5039754507de4e00f40c91703884303d46c6",
             "locator": {
               "kind": "symbol",
@@ -250,15 +250,16 @@
       ]
     },
     "4": {
-      "note": "The common resolver creates or finds the enclosure and returns its validated roots and preparation outcome.",
+      "note": "The common resolver creates or finds the enclosure and returns its validated roots and preparation outcome.\n\nAnchor: actual current supporting source",
       "targets": [
         {
           "anchor": {
-            "blob": "b1a881404e3c96e9033bee68b81e6c639eebb2ff",
-            "content": "sha256:cc03ce5de4729e22af1abeb11fc8ff8c17b4eea33b01180fdceaa87b6588750f",
+            "blob": "a0ed662a42a3b5b6c0fec263b6c9d5eb5f77fa83",
+            "content": "sha256:94e6b420c05d940e37bafcec32fddb20cf0fe89a2f660e6a203c6f8061cdc174",
             "locator": {
-              "kind": "symbol",
-              "name": "_resolve_workspace"
+              "end": 253,
+              "kind": "line_range",
+              "start": 202
             }
           },
           "kind": "code"
@@ -270,7 +271,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c3a08a9d9503d34ee2845f00e0fb45d8873617ea",
+            "blob": "a0ed662a42a3b5b6c0fec263b6c9d5eb5f77fa83",
             "content": "sha256:d6fde4cb534c458665bcbbcaf1b3e0d6a124b41dcac11ecfe26c05a0a7987503",
             "locator": {
               "kind": "symbol",
@@ -282,12 +283,12 @@
       ]
     },
     "6": {
-      "note": "Both entry points prepare through the one checked child without touching the caller lifecycle.",
+      "note": "Both role-start entry points use the existing checked preparation child for this operation, retaining its root, writer-admission and cut-off checks; public worktree_start retains its caller semantics.",
       "targets": [
         {
           "anchor": {
-            "blob": "c3a08a9d9503d34ee2845f00e0fb45d8873617ea",
-            "content": "sha256:16b8206380a8f6c2cf8e474b1b8a569816b1237e30754d8aaecd3e3cd17d0c4b",
+            "blob": "a0ed662a42a3b5b6c0fec263b6c9d5eb5f77fa83",
+            "content": "sha256:c80dfdf8d84f1ec625798c15cf8ff02716fb4a6dcba5473eb4a59d2274b388c4",
             "locator": {
               "kind": "symbol",
               "name": "_start_leaf_enclosure"
@@ -298,16 +299,16 @@
       ]
     },
     "7": {
-      "note": "Call-time granted leaves reuse master series checkouts and keep role artifacts in the separate group.",
+      "note": "Call-time granted leaves reuse master series checkouts and keep role artifacts in the separate group.\n\nAnchor: actual current supporting source",
       "targets": [
         {
           "anchor": {
-            "blob": "c3a08a9d9503d34ee2845f00e0fb45d8873617ea",
-            "content": "sha256:ccef60b6ffa4b0b26bd7c5e8eb65d4bc51ae7ce23355dab9813aabf371f6eaa1",
+            "blob": "a0ed662a42a3b5b6c0fec263b6c9d5eb5f77fa83",
+            "content": "sha256:423878d0ce0f3c0d8cfb591c2805f2094298754f6e505e0c23d1a233e388b9e6",
             "locator": {
-              "end": 315,
+              "end": 253,
               "kind": "line_range",
-              "start": 1
+              "start": 105
             }
           },
           "kind": "code"

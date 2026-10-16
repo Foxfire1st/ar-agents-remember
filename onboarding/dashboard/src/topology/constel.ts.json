@@ -41,15 +41,28 @@
       ]
     },
     "2": {
-      "note": "`mountConstel` builds its reader over `getComputedStyle`, calls `constelColors(v)` once, and `col` indexes the result with no `??` fallback.",
+      "note": "`mountConstel` builds its token reader and stores `constelColors(v)` in the scene once; `statusColor` indexes the resulting total map without a fallback.",
       "targets": [
         {
           "anchor": {
             "blob": "fd60525c1bd140fad9fd83c38f79075c7556039d",
-            "content": "sha256:1cdd58c292429d5b544ac150cc706f587d9a4c30410eb81af1c423e20be10719",
+            "content": "sha256:70df06c77ae8d21055d2c259e4d56e0e85876786c79759f01b7a637489f0ba1b",
             "locator": {
-              "kind": "symbol",
-              "name": "mountConstel"
+              "end": 76,
+              "kind": "line_range",
+              "start": 76
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "fd60525c1bd140fad9fd83c38f79075c7556039d",
+            "content": "sha256:01952958727382fbeab1945f74c9b32a53e5aeb3a9d28a6178f87512188a0da5",
+            "locator": {
+              "end": 433,
+              "kind": "line_range",
+              "start": 408
             }
           },
           "kind": "code"
@@ -73,7 +86,7 @@
         },
         {
           "anchor": {
-            "blob": "59f64541870e7ff5dc2349ca590ec159703d74d1",
+            "blob": "3eb18c18613cf970752953563d62d26763e6d251",
             "content": "sha256:42573ce5c78e597a8799eec27360bf40b57381b7f19ba075170a2b29e01cb18f",
             "locator": {
               "kind": "symbol",
@@ -86,15 +99,16 @@
       ]
     },
     "4": {
-      "note": "`lifecycleStatus` is the only producer of the statuses this file paints; its `UNCLASSIFIED_STATUS` is why an unrecognised state no longer arrives here as `undefined`.",
+      "note": "`worktreeStatus` maps a bound TaskEntry through shared status/tone and returns `idle` when unbound; `buildTopology` separately supplies workspace/repository and provider statuses.",
       "targets": [
         {
           "anchor": {
-            "blob": "59f64541870e7ff5dc2349ca590ec159703d74d1",
-            "content": "sha256:7b65740d0a61f6c98d5fe366a26beae041534dfb70f1dbc8da6f89f0c14852e9",
+            "blob": "3eb18c18613cf970752953563d62d26763e6d251",
+            "content": "sha256:d6c061b2bf9f32b160e796212e1d8d724a8d4a57d15d7f18803d71dc3c1d3caa",
             "locator": {
-              "kind": "symbol",
-              "name": "lifecycleStatus"
+              "end": 90,
+              "kind": "line_range",
+              "start": 86
             },
             "path": "dashboard/src/topology/model.ts"
           },
@@ -102,11 +116,25 @@
         },
         {
           "anchor": {
-            "blob": "59f64541870e7ff5dc2349ca590ec159703d74d1",
-            "content": "sha256:94db2618aaf24dd20956df08690ad730be78d11b5a801a1710f1f094ab67bf65",
+            "blob": "3eb18c18613cf970752953563d62d26763e6d251",
+            "content": "sha256:1e0a427bdaa5dce035239fcbd766a51a6efa0b9ea72979a8fd5526f9a9cefe8c",
             "locator": {
-              "kind": "symbol",
-              "name": "UNCLASSIFIED_STATUS"
+              "end": 164,
+              "kind": "line_range",
+              "start": 112
+            },
+            "path": "dashboard/src/topology/model.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3eb18c18613cf970752953563d62d26763e6d251",
+            "content": "sha256:fa495b5bda99fac776e92ceb3cc390fe544f0085c7396889c357d03042847871",
+            "locator": {
+              "end": 209,
+              "kind": "line_range",
+              "start": 183
             },
             "path": "dashboard/src/topology/model.ts"
           },
@@ -119,7 +147,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0a8841055fcd74ad579fda642fd56f6c010400c2",
+            "blob": "5cd90de22d3d3f04486ad0a2e6b381a9a947f997",
             "content": "sha256:dd68c3374aab0ffce0e884470a9e866efce01ad2f6738a101167414fedfb8a8f",
             "locator": {
               "end": 30,
@@ -132,7 +160,7 @@
         },
         {
           "anchor": {
-            "blob": "0a8841055fcd74ad579fda642fd56f6c010400c2",
+            "blob": "5cd90de22d3d3f04486ad0a2e6b381a9a947f997",
             "content": "sha256:2be4d83dca97257d0da851a444e7d50a181bde6f4debd6f47f931b163f0e6ffa",
             "locator": {
               "end": 39,
@@ -145,7 +173,7 @@
         },
         {
           "anchor": {
-            "blob": "0a8841055fcd74ad579fda642fd56f6c010400c2",
+            "blob": "5cd90de22d3d3f04486ad0a2e6b381a9a947f997",
             "content": "sha256:a43f92d53bff2a94cf80bfa307c990669fc82f457b873a8343bb97e4d35ae6e9",
             "locator": {
               "end": 57,

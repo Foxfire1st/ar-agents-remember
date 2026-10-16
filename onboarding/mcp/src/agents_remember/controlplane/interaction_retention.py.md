@@ -10,9 +10,8 @@ Retained pure gate-record retention utilities, not an operator-inbox/pickup poli
 
 ## Code Commentary
 
-gate_keep_ids folds the latest GateRecord per id. _keep_gate preserves applied consumed-approval kinds without using age, drops cancelled/expired snapshots, and applies the bounded age rule to other snapshots, retaining an unknown age. The declared consumed-kind set combines mutating-tool approvals with the master-handover seam kind. These helper semantics do not imply that the removed gate hosting, decision/store reader or inbox retention still runs.
+gate_keep_ids folds the latest GateRecord per id. _keep_gate preserves applied consumed-approval kinds without using age, drops cancelled/expired snapshots, and applies the bounded age rule to other snapshots, retaining an unknown age. The declared consumed-kind set combines mutating-tool approvals with the master-handover seam kind. These helper semantics do not imply that the removed gate hosting, decision/store reader or inbox retention still runs. No automatic age-based job reclaims authority logs: only the explicit `removed-stores` command deletes stored gate logs. A complete native contract census may separately admit terminal lock-only lifecycle directories; a directory carrying approval history is not such residue. This retained helper is not a running retention scheduler.
 
 ## Evidence boundary
 
 This account is current source interpretation only. It creates no executed test/host/bootstrap result and supplies no new CODE or MEMORY grade.
-

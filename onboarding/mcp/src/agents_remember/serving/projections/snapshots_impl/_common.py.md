@@ -6,18 +6,16 @@
 
 ## Purpose
 
-Shared file-surface helpers for the observer snapshot readers. The readers split by responsibility (providers, runtime enclosures, analytical surfaces, task documents) share the task-document payload cache, the status payload TTL cache, and the small JSON/stat helpers collected here. No reader logic lives in this module; it is the common leaf the split modules import.
+Shared file-surface helpers for the observer snapshot readers. The readers split by responsibility (providers, runtime enclosures, analytical surfaces, task documents) share the task-document payload cache, the status payload TTL cache, and the small JSON/stat helpers collected here. The common leaf also supplies fixed-level completeness-aware source enumeration and body-input generation capture.
 
 This module also owns **the one canonical task-document enumeration** (`_iter_task_json`) and its
 bounded companion (`_canonical_task_json_candidates`). The enumeration feeds every always-on reader
-(`read_task_documents`, `read_series_documents`, the closeout-queue reader), so its cost is paid on
-each projection pass. Since 260921-ICR-L42 it walks only the three canonical levels
+(canonical task-source/document readers and the closeout-queue reader), on full task acquisition rather than every unaffected tick. Since 260921-ICR-L42 it walks only the three canonical levels
 `tasks/<repository>/<task>/` instead of recursively globbing every JSON under `tasks/` and
 discarding most of the results.
 
 ## Code Commentary
 
-- `_TaskDocumentLifecycleMaps`
 - `_iter_task_document_payloads`
 - `_iter_task_json` (since 260921-ICR-L42: lists the repository folders, then their task folders, then
   each task folder's `*.json` entries; drops archive and enclosure paths; sorts only what is left)
@@ -38,6 +36,8 @@ discarding most of the results.
 - `_report_label`
 - `_file_age_seconds`
 - `_current_phase_text`
+- `surface_paths` (fixed pattern levels, sorted results; listing errors mark source proof incomplete)
+- `_walked_directories`, `_json_entries` and `_read_json` record dependency identities through `body_input` during body-generation capture
 
 ## Invariants And Boundaries
 
@@ -83,7 +83,7 @@ payload schema filter are unchanged.
 `_canonical_task_json_candidates` gives the on-demand body read what it needs: the enumeration entries
 for named tails, at a cost that follows the names rather than the corpus. Keeping it defined through
 the same `_task_directories` / `_json_entries` / `_outside_archive_and_enclosures` helpers is what makes
-the subset exact. That is why the body read projects byte-identical bodies.
+the subset exact. This preserves the named candidate subset, not universal body parity or a whole-corpus freshness guarantee.
 
 ## L23 Final Candidate Disposition
 

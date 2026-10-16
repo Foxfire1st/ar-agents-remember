@@ -9,23 +9,15 @@
 The sprint execution graph wave-grid view (260815-DAG-L12 R2/R6). The backend projects a
 render-ready per-node model (`executionGraphView`) — kind, master ref + title, leaf ids +
 titles, derived wave index, frontier state, execution nature, and predecessors with
-reasons — so this component renders projected facts verbatim and never joins raw refs or
-re-derives waves.
+reasons. Those remain graph facts; each box separately resolves its qualified master reference in the existing task-entry store for the shared task-state word and tone. The component does not derive graph waves or task stage/activity.
 
 ## Code Commentary
 
 ### Logic
 
-`SprintGraphViewImpl` groups `graphView.nodes` (already ordered by derived wave then node
-order — the server contract) into a `Map<waveIndex, nodes>`, sorts the rows by wave, and
-renders one `<section class="wave">` per wave with a `Wave {n}` heading and a
-`waveGrid` div of `GraphBox` elements. `GraphBox` renders the master title header with a
-frontier-state badge (`data-frontier` for styling), then either a leaf list (`node.kind ===
-"segment"` — one ellipsized `leafIds[i] — leafTitles[i]` line per leaf) or an atomic lump
-(`data-testid="graph-lump"`, "atomic unit" — no leaf list), then the textual predecessor
-labels (`← {predecessorTitle} — {reason}`, keyed by ref) when present. The component is
-memoized; no layout algorithm lives here (coordinates come from the server-derived
-`waveIndex` — the documented L12-R3 fallback).
+`SprintGraphViewImpl` groups the supplied nodes into ordered wave rows and renders one GraphBox per supplied unit. GraphBox subscribes to its exact taskReferenceKey in the existing dashboard store. taskStatusKey/statusLabel/StatusWord supply the task-state text, tone and accessible label, so an entry change updates the box even when the graph object is unchanged. A missing entry renders no task-status badge and its accessible label says task unavailable; it does not borrow landed/in-flight/abandoned as a task state.
+
+The separate dependency annotation is ready or waiting, with cycle taking precedence. Graph-supplied membership, leaf lists, lump presentation and Markdown predecessor reasons remain. Complete-graph membership is not filtered to unfinished tasks. Memoization does not introduce a cache, poll or second task-state producer.
 
 ### Shared marking and Markdown edges
 
@@ -35,17 +27,17 @@ node surviving blur. relatedGraphNodes includes the selected master's segments, 
 its dependents by qualified references. Both helpers are shared by the inline sprint Order rows.
 useReducedMotion disables the fade, not the rest. Unmount clears the outstanding timer.
 GraphPredecessors renders the edge reason through inline Markdown, preserving actual links.
-These interactions do not replace projected wave/frontier authority or introduce another graph model.
+These interactions do not replace graph wave/readiness authority or the task-entry state owner, and introduce no second graph model.
 
 ### Conventions
 
 - Deterministic render: nodes arrive ordered; the component preserves that order.
-- Test-surface attributes (`data-testid`, `data-node`, `data-frontier`) are part of the
+- Test-surface attributes (`data-testid`, `data-node`, `data-readiness`) are part of the
   component contract for the L12-R7 mounted-UI proof.
 
 ### Invariants And Boundaries
 
-- Never joins raw refs to titles; never re-derives waves or frontier state.
+- Graph titles and wave/readiness facts remain supplied; qualified reference lookup is only for the native task entry and its shared status presentation.
 - A node without predecessors renders no label list (zero-edge graphs show independent
   boxes).
 

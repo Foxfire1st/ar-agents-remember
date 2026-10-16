@@ -15,7 +15,9 @@ This overview governs the bounded `cockpit/` and `dev/` slices as well as the so
 
 ## Hot Path Summary
 
-Task wire shapes include optional nonGoals, acceptance, completedAt and forward/reverse dependency facts plus cycle-marked graph nodes. Core JSON Schema remains producer-generated; TypeScript supplements the served tail, while dev and manual snapshot values only illustrate shape. They do not prove native dependency derivation or completion.
+Operations consumes one server-composed TaskEntry forest: authored task status supplies planned/started/aborted/completed, and only started entries receive works/paused/unknown plus an optional host eventAt. Bound in-turn or permission activity means works; a known complete host observation with no working contributor means paused; an unavailable or unreconciled host means unknown, never inferred pause. Reciprocal ordered parent/children membership comes from declared task relations independently of physical worktrees. The browser shares the keyed task map and task-status/age presentation across the task column, reader, launch selectors and document chat; it does not derive a competing lifecycle. Raw Event River remains a separate diagnostic feed.
+
+TaskSummary supplies revision-qualified prose, optional nonGoals, acceptance, completedAt and forward/reverse dependency references, with optional cycle-marked graph views. The producer generates the core schema and TypeScript/served tail; dev and manual snapshot values illustrate shape, not native derivation, task completion or host execution.
 
 Start at `cockpit/Cockpit.tsx` for navigation, shell drivers, retained layers, task selection and full-page takeovers. Operations keeps its DetailPanel mounted; File Viewer and Knowledge keep their readers mounted while hidden and use activation to control reader work. Knowledge addresses and reading state belong to its reader/hash, not to a duplicate shell state. Role Chats remains mounted across view switches and receives an active flag that also accounts for a takeover.
 
@@ -27,15 +29,15 @@ For change sets and Intent Review, start at `panels/detail-panel/changeSetBar.ts
 
 The current card inventory link opens the existing change-set page for all changed files; measured inventory count and unavailable/unmeasured state remain distinct, and non-text file badges use the supplied inventory rather than Engine Room fixtures.
 
-For projection contract changes, follow the producer schema and projection generator before the generated TypeScript/schema or manual snapshot. For lifecycle observation, the generated envelope carries version, identity, component bindings, worker/approval/recommended-action facts and optional meaningful revision/task intent. Those fields are server-owned observations, not browser-created authority or activity counters.
+For projection contract changes, follow the producer schema and projection generator before generated TypeScript/schema or the manual snapshot. TaskEntry stage/activity/eventAt is the shared task-status input. The distinct enclosure lifecycle-operation envelope retains version, identity, component bindings, worker/approval/recommended-action facts and optional meaningful revision/task intent for operation diagnostics and recovery; those fields are not a second task activity clock or browser-created authority.
 
 ## Construction And Ownership
 
-The task reader presents one track-and-knob Direct execution switch only on a planning subTask's own page, through the existing external grant adapter. Other granted task states show bare giver words; masters and sprints show neither a row control nor a mark. The client cannot self-grant by editing TaskDocument or settings, and projection evidence never authorizes execution.
+The task reader presents one track-and-knob Direct execution switch only on a planned-stage subTask's own page, through the existing external grant adapter. Other granted task states show bare giver words; masters and sprints show neither a row control nor a mark. The client cannot self-grant by editing TaskDocument or settings, and projection evidence never authorizes execution.
 
 ### Shell and retained surfaces
 
-`Cockpit` wires live inputs and chooses the hash-derived initial view. `CockpitShell` owns the screen wake-lock driver and shell state/actions. Removed AR session catalog/reconciliation feeds supply no current driver. Shell state owns navigation, selected task/lifecycle context, rail preference and widths, and artifact/change-set takeover targets.
+`Cockpit` wires live inputs and chooses the hash-derived initial view. `CockpitShell` owns the screen wake-lock driver and shell state/actions. Removed AR session catalog/reconciliation feeds supply no current driver. Shell state owns navigation, selected native task-entry context, rail preference and widths, and artifact/change-set takeover targets.
 
 Operations, File Viewer, Knowledge and Role Chats are mounted layers whose visibility changes. The File Viewer comment explicitly distinguishes retained reader state from its deferred boot catalog read. Notes are mounted after first opening and remain hidden after Back, preserving their listing and open note; a change-set takeover takes screen precedence. Change-set/review takeovers are conditionally mounted through their common target. Retention claims must therefore be scoped to the layer that actually owns them.
 
@@ -43,7 +45,7 @@ The shell's main viewport deliberately hides overflow: panels own their scrollpo
 
 The task list fills the left rail; attention lives behind its header bell in a bounded overlay rather than a sibling height-consuming block. Compact grouping, bell and Clear all controls share viewTabLook authority. These presentation changes retain existing action and identity contracts.
 
-Operations' right rail selects Event River or the selected task's native document chat. The removed contextual RailChat path is not the current owner. HighlightComposer remains a shell-wide selection affordance; the inherited stable-empty-task-document intent avoids manufacturing a fresh external-store snapshot when no projection is available.
+Operations' right rail selects Event River or the selected task's native document chat. The removed contextual RailChat path is not the current owner. There is no shell-mounted HighlightComposer. Native tasks come from `s.tasks` as a memoized `Object.values` array; the stable empty-array fallback belongs to `analytics?.engineProcesses`, not a second task-document collection.
 
 ### Native Chats and execution identity
 
@@ -57,17 +59,17 @@ Sprint provenance remains an inherited cross-dashboard identity requirement: `sp
 
 `data/` owns server transport, normalization, reconciliation and browser stores. `grammar/` owns shared state words, badges, panels and markdown treatment. `panels/` composes focused task/artifact/operator surfaces. Browser caches project server facts; they are not a durable replacement conversation-history database.
 
+The dashboard store owns bounded task bodies and pure reader preparation across navigation, keyed by canonical reference and bodyRevision; callbacks stay with the live reader. A response is retained under the revision it actually returns, and a mismatched body cannot supply current head/step/review facts. Store-owned change-set and file-diff results use bounded conditional reads, with ETag revalidation and abort/identity guards; keeping bytes is not proof of present currentness. The serving app separately owns generation-revalidated full task-body preparation. Neither cache reconstructs membership or task stage/activity.
+
 The projection generator reads `WorkspaceProjection.model_json_schema()` and the served tail from `ServedWorkspaceProjection.model_json_schema()`. It emits the TypeScript mirror and schema, and its stale-file comparison checks committed output against freshly rendered output. `fixtures/snapshot.json` remains a manually maintained sample. Generated producer parity and sampled fixture coverage are separate claims.
 
-The inherited contract discipline requires served-tail changes to move the producer, generated artifacts, sampled values and vocabulary/known-unsampled registries together. Typed fixture builders annotate their result with generated mirror types: this is shape conformance, not proof that every initializer was copied from the manual served sample. Origins include copied cells, recomputed model facts and explicitly admitted neutral defaults. L127's admitted additions are derived `form`, empty `type`, empty `headerNotes` and false `statusNoteTruncated`; earlier literal collections remain historical builder inputs. This narrow admission does not permit undeclared fields or turn neutral values into copied evidence. `AsJsonModule` preserves structural checking while accounting for JSON-module literal widening; it is not a blanket double-cast escape. `Overrides<O,T>` rejects explicit undefined for required fields at fresh override call sites, with deliberately bounded coverage.
+The inherited contract discipline requires served-tail changes to move the producer, generated artifacts, sampled values and vocabulary/known-unsampled registries together. Typed fixture builders demonstrate generated-mirror shape conformance, not universal copying from a served sample. Current taskEntry defaults copy sampled key/id/title/reference and step counts, but explicitly supply planned stage, empty children/worktrees and zero count buckets. TaskSummary copies sampled bodyRevision, kind, form and type while explicitly defaulting collections/headerNotes and truncation flags. L127's earlier derived-form/empty-type admission is historical, not the current initializer. `AsJsonModule` preserves structural checking through JSON-module widening; `Overrides<O,T>` rejects explicit undefined at its deliberately bounded fresh override call sites.
 
-The lifecycle state vocabulary is generated as live and terminal halves. Live includes running, paused, blocked and awaiting-developer; terminal includes completed and abandoned. `ACTIVE_STATES` directly references the live half, and the compile-time overlap constraint rejects a state filed on both halves. Metrics derive their active-state bucket fields rather than maintaining another hand-written list. Producer partition validation and bucket-name mapping are separate from consumer sample coverage. A duplicate within one TypeScript tuple is not rejected by its literal-union type alone; the inherited runtime contract checks own that diagnostic.
-
-`awaiting-developer` is a notify-and-continue turn end: actionable, non-terminal and not itself a fault. The top bar only adds its awaiting-you segment for a positive count. Topology uses a total declared-state table, maps awaiting-developer to warning, reads unknown wire states through an optional read view and gives them the explicit warning treatment. Inferred healthy state is degraded to warning rather than upgraded. Palette totality over locally produced statuses is distinct from accepting unknown wire states.
+TaskEntry uses planned/started/aborted/completed stages and optional works/paused/unknown activity, with taskCounts carrying stage and started-activity buckets. Metrics now carries ignoredHostAgents and stalenessHistogram, not lifecycle-state buckets. TopBar reads taskCounts through the shared status labels. Topology reads the bound entry through that same status-key/tone owner; an unbound enclosure is idle and not selectable as a task. The old State/LIVE_STATES/TERMINAL_STATES/ACTIVE_STATES split, awaiting-developer segment and inferred-state degradation are historical session-projection design, not the present task vocabulary or topology algorithm.
 
 Generated task/projection shapes retain organizational super-to-leaf lineage, sprint seats and master references, optional execution-graph views, and independently mounted closeout scheduling visibility for graph-less sequential sprints. Closeout scheduling is disposable exact-current projection state: classifications, ordering, priorities, source conditions/problems and repair actions remain producer-owned. Audited discard-before-start identity, reason, timestamp and proof are distinct from completion; discarded work never increments completion. JSON Schema owns numeric/string/fingerprint/collection refinements, while TypeScript documents refinements it cannot structurally enforce.
 
-The lifecycle-operation envelope includes schema/state-matrix versions, incoherent status and optional meaningful revision/task intent. Meaningful revision is a server observation cursor; task intent is a canonical digest. The recovery phase `recovering-private-preparation` is projected through the existing lifecycle view and adds no frontend recovery command. Ledger display remains distinct from transaction authority; removal of ledger-mutation vocabulary does not mean removal of displayed ledger evidence. The inherited publication boundary permits real code and memory outputs, not invented ledger transaction outputs. Python 3.14's local `$defs` enum representation does not itself change the vocabulary's meaning.
+The lifecycle-operation envelope includes schema/state-matrix versions, incoherent status and optional meaningful revision/task intent. Meaningful revision is a server observation cursor; task intent is a canonical digest. The recovery phase `recovering-private-preparation` is projected through the existing enclosure lifecycle-operation diagnostics and adds no frontend recovery command. Ledger display remains distinct from transaction authority; removal of ledger-mutation vocabulary does not mean removal of displayed ledger evidence. The inherited publication boundary permits real code and memory outputs, not invented ledger transaction outputs. Python 3.14's local `$defs` enum representation does not itself change the vocabulary's meaning.
 
 ### Change sets and Intent Review
 
@@ -96,7 +98,7 @@ Engine Room currently composes enclosures, their process map/stack, boot timelin
 
 ### Native selection and source-owner qualifications
 
-Chats mounts one persistent RoleChats/Paseo iframe; Operations retains its own one-frame document-chat surface. The host's list, not a dashboard list of chats, owns navigation. View/result reads retain the frame. On Operations a known selection switches by trusted ar.open with the click; bounded tree preknowledge is refreshed by one batch while pane and tab are visible, and a fresh document answer corrects it. An unknown lookup keeps the application's current screen visible and inert under one waiting line. Only a confirmed agentless selection hides the retained frame behind its bound launcher.
+Chats mounts one persistent RoleChats/Paseo iframe; Operations retains its own one-frame document-chat surface. The host's list, not a dashboard list of chats, owns navigation. View/result reads retain the frame. On Operations a known selection switches by trusted ar.open with the click; bounded tree preknowledge is refreshed by one batch while pane and tab are visible, and a fresh document answer corrects it. An unknown lookup keeps the application's current screen visible and inert under one waiting line. Only a confirmed agentless selection hides the retained frame behind its bound launcher. The role-launch selectors and document-chat bindings resolve the shared entries' ordered children and canonical references; they do not reconstruct hierarchy from a second task-document/series catalogue.
 
 A slow host or native drawing answer remains waiting while the application answers pings. Recovery URL loads require application-ping silence, explicit Retry or a returned host; a plugin explicitly unable to open agents keeps its separate URL-only path. With the current plugin, input belongs to the selected native screen once on-chat is reported, the waiting line stays through drawing, and the application's own failed-load pane/Retry ends that wait without dashboard-invented failure prose. A less capable older plugin still switches and its notice names provisioning and any early-answer limitation. Draft/scroll preservation is only the host's native behavior, not an extra dashboard promise.
 
@@ -133,7 +135,7 @@ The product bar contains Chats, Operations, Knowledge and File Viewer. Detail/No
 ## Invariants And Boundaries
 
 - Present navigation has four destinations and one full-page native Chats destination. Injected pages and historical structured Chats must retain their own scope.
-- Shell-lifetime catalog ownership is shared. Browser projection/cache and observer rendering do not acquire server transaction authority.
+- Shared task-map and bounded resource ownership lives in the dashboard store. Browser projection/cache and observer rendering do not acquire server transaction authority.
 - Focus/inspection may address landed history; inherited live-row action and reload routing must not silently convert a historical row into a live actor.
 - Exact request, document, workspace and execution identity must survive restore and asynchronous results. Requested launch intent is disclosed separately from observed host facts.
 - The hosted terminal opener posts to `/api/terminal/{encodedSessionId}` and accepts only a parseable successful response acknowledging exact session/kind/harness identity. Raw terminal responses claiming harness/control facts are protocol contradictions. The session store commits and broadcasts only after acceptance. These hosted-session semantics do not describe native role-launch transport.
@@ -155,7 +157,7 @@ FEUI-L8 and CHATS-L1–L7/L4 describe the earlier full-page session cockpit and 
 
 Explicitly retain the CHATS L5-Facing Register's named limits: interrupt capability gating was attempt-and-reflect on L3 evidence pending a control-capabilities GET or L1-view refresh; virtualization/scale baseline and environmental faults E1/E2 were recorded there. The register's historical witnesses were not examined, so this proposal neither closes those limits nor declares them present native-frame defects. The inherited UA-1 history-capability claim is historical scope, not new acceptance.
 
-The L33 landed-leaf admission/default-collapse change was recorded as withdrawn by `a9a1a41b`, with a direct emergency commit and no curator pass. Current operation-row source filters physical live worktrees; the collapse hook has only `operations.tasks.collapsed.v1`, and the header is bare `Tasks · {count}`. Do not restore the withdrawn `N landed`, opened-set or tooltip claims. Historical 534-document/167-entry and 161-row-subtree figures are not current counts. The surviving per-leaf change-set breakdown is independently present in current readers.
+The L33 landed-leaf admission/default-collapse change was recorded as withdrawn by `a9a1a41b`, with a direct emergency commit and no curator pass. The later physical-live-worktree Operations filter is itself superseded: current LifecycleList consumes every served task entry and follows its parent/children forest, including task entries with no worktree. The retained collapsed-key store is separate from ephemeral terminal folds, which stay open around the selected ancestry. Do not restore the withdrawn `N landed`, second persisted opened-set or tooltip claims. Historical 534-document/167-entry and 161-row-subtree figures are not current counts. The separate per-leaf change-set breakdown remains outside this task-membership change.
 
 Review history includes L22's unreachable subject props, L45's server catalogue gating, L2's live task-context entry and L17's catalogue invalidation/refresh account. Those descriptions must not be merged into today's entry: its separate summary control reads no catalogue, has no subject picker or refresh of its own, and exists for closed as well as live leaves. L16's stale-header problem was routed to R17/R24; current ReviewReadCycle contains question/sequence guards. A01/A13 browser journeys were separately routed to R25 with R24/R17 and remain unverified here.
 
@@ -163,9 +165,9 @@ B3/B7/F2 historical narrow-layout evidence must retain the distinction between t
 
 B1's removal of raw amber literals is different from eliminating token-resolved `oklch`. The historical computed `oklab` wash and hue-215 search are not remeasured. The inherited live-thinking indicator, file-size claims and acceptance pins likewise provide historical implementation context, not present pass receipts. Pending/not-yet-landed pickup description and attribution-only inbox consumption remain inherited projection intent, not frontend authority over producer sweep predicates.
 
-Fixture guard limits remain named: never-marked inline response modules (`data/harnessCatalog.ts`, `data/submissionLifecycleClient.ts`, `data/changeset.ts`, `data/files.ts`, `data/notes.ts`) escape vocabulary discovery; marker loss differs from never having a marker. Rule 4 omits element access, await, new and non-null expression shapes. Generic helpers can defeat rules 1 and 4 together; type predicates/assertion functions narrow without casts; correct property names with explicit undefined evade name-based rules. Broadening discovery to headers mentioning Python was historically rejected because it also captured option types. `Overrides` covers fresh literals, one level deep and only the wire/conversationWire builders: widened variables, nested required leaves and other Partial parameters remain outside it.
+Fixture guard limits remain named: never-marked inline response modules (`data/changeset.ts`, `data/files.ts`, `data/notes.ts`) escape vocabulary discovery; marker loss differs from never having a marker. Rule 4 omits element access, await, new and non-null expression shapes. Generic helpers can defeat rules 1 and 4 together; type predicates/assertion functions narrow without casts; correct property names with explicit undefined evade name-based rules. Broadening discovery to headers mentioning Python was historically rejected because it also captured option types. `Overrides` currently binds fresh override literals in fixtures/wire.ts only; widened variables, nested required leaves and other Partial parameters remain outside it. The older wire/conversationWire two-module scope is historical.
 
-The historical project-wide flag experiments reported 601 errors across 81 files for `noUncheckedIndexedAccess`, and 222 across 71 for `exactOptionalPropertyTypes`; these are reasons recorded for scoped devices, not current diagnostic totals. TypeScript within-half duplicate-state detection belongs to runtime contract coverage, not compile-time union overlap checking.
+The historical project-wide flag experiments reported 601 errors across 81 files for `noUncheckedIndexedAccess`, and 222 across 71 for `exactOptionalPropertyTypes`; these are reasons recorded for scoped devices, not current diagnostic totals. The earlier within-half duplicate-state/compile-time-overlap discussion belongs to the retired session vocabulary; it is not a current TaskEntry partition guarantee.
 
 Historical test policy records a 20,000 ms Testing Library condition guard, 120,000 ms test/hook hang guards, fake time for product delays, and negative assertions after the relevant response/effect/timer opportunity. `loadIndependence.test.ts` owns a bounded source-pattern check with explicit marker/detection limits. None changes browser performance requirements or establishes current passing tests. Generator stale checks, sample coverage assertions and prior clean `tsc -b` claims were not executed here.
 
@@ -200,14 +202,18 @@ in the review surface"* — the dashboard's own tokens are defined in `oklch` (`
 review sources. A reader scanning computed styles for the word `oklch` will otherwise conclude the fix
 failed.
 
-The subtle part is `STATUS_BY_DECLARED_STATE`, a `Partial<Record<string, ConstelStatus>>` **read
-view** over the same table. Indexing `Record<State, …>` directly types the miss away — `tsc` hands
-back `ConstelStatus`, never `undefined` — which would make `?? UNCLASSIFIED_STATUS` in
-`lifecycleStatus()` read as deletable dead code. The read view is what makes that fallback
-load-bearing: delete the `??` and `tsc -b` fails at that line. Remove the alias instead and the
-compiler goes quiet while an unclassified state's `undefined` flows onward.
-`noUncheckedIndexedAccess` would say the same thing project-wide; it is not on (the earlier diagnostic reported 601 errors
-across 81 files; those are not measurements of this pair).
+Historical pre-TaskEntry topology read-view account, retained as a quotation rather than a current implementation or typecheck claim:
+
+> The subtle part is `STATUS_BY_DECLARED_STATE`, a `Partial<Record<string, ConstelStatus>>` **read
+> view** over the same table. Indexing `Record<State, …>` directly types the miss away — `tsc` hands
+> back `ConstelStatus`, never `undefined` — which would make `?? UNCLASSIFIED_STATUS` in
+> `lifecycleStatus()` read as deletable dead code. The read view is what makes that fallback
+> load-bearing: delete the `??` and `tsc -b` fails at that line. Remove the alias instead and the
+> compiler goes quiet while an unclassified state's `undefined` flows onward.
+> `noUncheckedIndexedAccess` would say the same thing project-wide; it is not on (the earlier diagnostic reported 601 errors
+> across 81 files; those are not measurements of this pair).
+
+Current topology instead resolves TaskEntry status through shared taskStatusKey/statusTone; it has no lifecycleStatus or STATUS_BY_DECLARED_STATE owner.
 
 - `test/servedProjection.ts` — `resolveJsonModule` widens every literal in the payload (`"running"`
   becomes `string`, `3` becomes `number`), so `snapshot.json` can never be *assigned* to a mirror
@@ -218,20 +224,8 @@ across 81 files; those are not measurements of this pair).
   `asServedProjection()` is a full structural check of everything widening does not touch. Every
   test reading `snapshot.json` must come through it; a second `as unknown as` elsewhere silently
   re-opens the hole for that file.
-- `test/fixtures/overrides.ts` — `Overrides<O, T>` replaces `Partial<T>` in the builders because
-  `exactOptionalPropertyTypes` is **not set** on this project, so a `Partial<T>` slot admits an
-  explicit `undefined` and `lifecycle({ state: undefined })` compiles a required field into absence
-  with no cast for the guard to find. `Overrides` binds at the call site, in whichever tsconfig
-  project the caller sits in. Its limits are stated in its own header: the override must stay a
-  fresh literal, it reaches one level deep, and it binds only `fixtures/wire.ts` and
-  `fixtures/conversationWire.ts`. The earlier project-wide diagnostic reported 222 errors across
-  71 files and the flag was not adopted; no new diagnostic is claimed here.
-- `dev/fixtures.ts` now delegates every node builder to `test/fixtures/wire.ts` and derives `metrics`
-  through `metricsFor()`; the gallery keeps its own display defaults by passing them explicitly, and
-  no longer keeps a second copy of the required-field list. `dev/cockpitScenarios.ts`'s
-  `/api/harnesses` stub uses `satisfies HarnessInfo[]` precisely because `data/harnessCatalog.ts` is
-  one of the unmarked modules the guard cannot see. `dev/` remains fixtures, not a production
-  authority.
+- `test/fixtures/overrides.ts` — `Overrides<O,T>` guards required-field overrides at fresh call sites in `fixtures/wire.ts`; for example, the current header names `taskEntry({ stage: undefined })`, not a lifecycle factory. It is not project-wide exact optional typing and does not close widened-variable, deeper-property or other-Partial inputs. The former lifecycle example and wire/conversationWire scope are historical. The earlier recorded project-wide diagnostic of 222 errors across 71 files remains a historical experiment, not a measurement of this candidate.
+- `dev/fixtures.ts` delegates projection, provider, enclosure and event construction to `test/fixtures/wire.ts`, passing gallery-specific defaults explicitly rather than maintaining a second required-field list. `engineRoomProjection` supplies scenario processes/workspace and the official ledger over `EMPTY_ANALYTICS`. Native tasks/counts are projection-root fields; no `metricsFor` rollup or harness-catalog stub remains. `dev/` remains fixtures, not a production authority.
 
 The dashboard route absorbed the L7 live-thinking change on top of the L8 split: the conversation-timeline family now renders one coalesced live `thinking` indicator per active turn (`collapse.ts` stable-row refactor + `ThinkingItem` animated indicator), with acceptance pins in `liveThinking.test.tsx` and `collapse.test.ts`. The earlier L7 report described a clean file-size result. The project wrapper defines the detector's TS/TSX scope; this paragraph supplies no fresh file-size or rule6/full-final acceptance.
 
@@ -289,7 +283,7 @@ Source account retained from the parked claim (anchor currency not renewed here)
 - State and authority architecture. [7]
 - Panel composition. [8]
 - Fixture-honesty sweep, its five rules, its scanned roots, and the unmarked-module blind spot. The third anchor is the guard header's own question, quoted as it is written; this row previously carried a paraphrase that occurs in no file. [11]
-- Total state-to-status and status-to-colour grammars; the load-bearing unclassified fallback. [13]
+- Historical lifecycle topology grammar: the former unclassified-state fallback is not the current TaskEntry status algorithm; the constellation palette is a separate retained concern. [13]
 - JSON-module widening and the override type that survives `exactOptionalPropertyTypes` being off. [14]
 - Public lifecycle recovery commits contain only real code and memory outputs. [15]
 - The target variant that turns the existing takeover into a review. [18]
@@ -329,12 +323,12 @@ Source account retained from the parked claim (anchor currency not renewed here)
 - Intent and attribution counts have separate partial/unavailable treatment [49]
 - Review transport reads route-state bodies irrespective of HTTP status [50]
 - Question keys and exact sequence-bound refresh prevent superseded answers writing displayed state [51]
-- Current operations projection uses physical live-worktree admission and a bare count header [52]
+- Historical Operations admission: physical live-worktree filtering is superseded by the complete served TaskEntry forest; this retained reference is not current task-membership evidence. [52]
 - Collapse state has one persisted collapsed set [53]
-- Generated partition comes from producer state/metrics schema and stale comparison covers generated outputs [55]
+- Historical lifecycle partition generator account: the retired state/metrics partition is not the present task model. Generated schema/TypeScript stale comparison remains a distinct source responsibility. [55]
 - Wire discovery and fixture scope retain named blind spots [56]
 - Required-field override protection has explicit fresh-literal/depth/module limits [57]
-- Unknown lifecycle state warns; inferred healthy state degrades [58]
+- Historical lifecycle topology account: the former unknown/inferred-state degradation is not the current bound TaskEntry status mapping. [58]
 - Engine Room's present body composes enclosure map, stack, boot and diagnostics [59]
 
 - The surviving dashboard TypeScript solution declares its project references; the removed browser-probe module contributes no current import contract. [60]
@@ -342,7 +336,15 @@ Source account retained from the parked claim (anchor currency not renewed here)
 - Review inventory navigation displays the measured listed total or unmeasured state; change-set badges derive non-text identity from the supplied inventory. [64]
 - Preclick knowledge is bounded and polling belongs to visible pane/tab lifetime. [63]
 
-- State/phase/severity vocabularies and the derived `Metrics` bucket fields. [12]
+- Historical session State/phase vocabulary and lifecycle-state Metrics buckets, superseded by TaskEntry stage/activity and TaskCounts. [12]
 - The generated lifecycle mirror carries the cursor beside coherent identity and version fields.  Anchor: "export interface LifecycleOperationProjection {" [16]
 - The fixture supplies a meaningful revision for the sample operation.  Anchor: "\"meaningfulRevision\": 1," [17]
 - Unknown chat ownership does not hide the frame; only confirmed absence does. [62]
+
+- Authored stage wins over host observation; only started tasks receive bound contributor activity and eventAt. [65]
+- Declared task sources become one entry forest with worktree binding kept separate from task admission. [66]
+- Task-status words consume served activity/stage, while the shared display clock formats event age rather than deciding task state. [67]
+- Retained body responses are keyed by the revision actually returned, not the requested revision. [68]
+- Conditional reads retain only admitted successful bytes and guard abort/identity before publishing a response. [69]
+- Task fixtures copy sampled identity/content fields while explicitly choosing planned stage and empty collections/count defaults. [70]
+- Topology maps the bound task through shared status presentation; an unbound enclosure is idle. [71]

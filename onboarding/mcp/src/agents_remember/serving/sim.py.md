@@ -16,7 +16,7 @@ serving path.
 `build_sim(config, fixture_dir, *, speed)` loads the sorted fixture events,
 creates a fresh temporary root, removes copied observer-log directories, and
 returns a `SimSetup` whose replaced config points at that root. An empty
-fixture raises `SimError`.
+fixture raises `SimError`. `load_fixture` reads only the workspace `EventStore`, then sorts recorded timestamps. Copied structural fixtures do not synthesize paused session lifecycles; replay does not restore a removed lifecycle-log source. The fresh simulation excludes both copied workspace logs and copied lifecycle gate logs: the feeder replays workspace events only, and the lifecycle gate logs are not replay inputs.
 
 `ReplayClock` maps wall-clock elapsed time to fixture time and freezes at the
 start when speed is non-positive. `ReplayFeeder.feed` appends each due event

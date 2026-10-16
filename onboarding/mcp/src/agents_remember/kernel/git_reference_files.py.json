@@ -1,0 +1,23 @@
+{
+  "path": "mcp/src/agents_remember/kernel/git_reference_files.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Packed-reference parsing and explicit malformed-record failure.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2c7a6f47007b7741bb5e85ba43bf1efd326b637e",
+            "content": "sha256:d0ee75ad67dcccecf00efe8bb0442dc55c4c59a8dc21a987d477c44cff47b465",
+            "locator": {
+              "kind": "symbol",
+              "name": "packed_references"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

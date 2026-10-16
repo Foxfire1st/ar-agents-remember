@@ -14,6 +14,8 @@ publishes truth without touching any disposable projection.
 
 ### Logic
 
+The contract adapters carry explicit source-path/document pairs and construct canonical overrides from those actual paths, not from one assumed leaf task root.
+
 The service validates and publishes authoritative task bytes under the short task-publication lock, derives the before/after sprint-scope union, invalidates every affected projection to invalid-empty, and rebuilds each scope independently from current task and waiting-door sources.
 
 L04 reordered the transaction: scope resolution now happens before publication inside the lock
@@ -51,3 +53,8 @@ No configured domain-documentation source applies to this repository-internal ro
 ### Cross-Repo References
 
 No meaningful cross-repository boundary is owned by this file.
+
+## Current source evidence
+
+
+- Projection scopes and overrides retain explicit source paths rather than deriving every target under one leaf root. [5]

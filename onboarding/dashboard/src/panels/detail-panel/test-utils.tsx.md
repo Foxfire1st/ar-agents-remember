@@ -6,9 +6,7 @@
 
 ## Purpose
 
-Shared fixture builders for the split DetailPanel test files, extracted from
-`DetailPanel.test.tsx` by the 260731-EFA-L8 split. Seeds task documents, series,
-enclosures, projections, promoted-lifecycle scenarios, and counter stubs.
+Shared typed TaskEntry/TaskSummary fixtures for split DetailPanel suites, with explicit membership/counts, qualified body answers and ancillary refusal/counter stubs; not native producer acceptance.
 
 
 ## 260831-CCR-L23 Requirement-Listing Stub
@@ -22,14 +20,11 @@ task-document branches are unchanged.
 
 ## Code Commentary
 
-Since 260815-DAG-L14 the `taskDoc` fixture factory defaults `seats: []` (the new required `TaskDocNode` field).
+TaskSummary construction supplies required seats and other neutral defaults explicitly; native entries carry identity, membership and counts separately.
 
 ### Logic
 
-`seed` / `taskDoc` / `seriesNode` / `enclosure` build minimal typed nodes;
-`seedProjection` assembles a workspace projection; `seedPromotedLeaf` and
-`seedSeriesOrdering` prepare the promoted-identity and ordering scenarios;
-`stubCounters` installs deterministic counter hooks.
+seedTaskEntries and taskTree seed native entry maps with explicit parent/children/counts. seedSeries/ordering/promoted fixture scenarios use that same grammar, not lifecycle or SeriesNode builders. stubCounters remains a deterministic ancillary HTTP stub.
 
 
 **`stubCounters` takes one optional argument, and it is what lets a test choose which answer the Intent review control reads.** Since `260921-ICR-L47` it is `stubCounters(reviewSummary?: unknown)` and answers `/api/review/intent/summary` (previously `reviewEntry` answering `/api/review/intent/entries`, which the entry no longer reads) with whatever the caller passes — counts, partial counts, or an unavailable refusal — and keeps its previous behaviour when the argument is omitted (the route falls through to the counters body, which is what a caller that does not exercise the entry wants). The three answers are deliberately *different* answers that the bar must treat the same way, which is why the argument is untyped at the call site: the stub's job is to reproduce the wire, not to constrain it.
@@ -42,9 +37,7 @@ well-shaped empty reports object instead of its generic counters payload.
 
 ### Conventions
 
-Fixtures are typed through the projection mirror so a fixture that compiles is a shape
-the mirror can produce. Task-document fixture paths use `/tasks/<repository>/...`, so tests exercise
-the same repository-qualified document topology as production selection and projection code.
+Fixtures are checked against the generated mirror but their values are fabricated. Body stubs resolve qualified repository/path addresses from seeded entries; shape validity does not establish producer-value provenance.
 
 ### Invariants And Boundaries
 
@@ -75,8 +68,6 @@ No applicable cross-repository source was found.
 
 ## 260821-CLIVE Projection Fixture Alignment
 
-No helper behavior changed. `seriesNode()` now defaults the required `discardedCount: 0` and
-`discardedSubTasks: []` fields so every detail-panel fixture remains a valid projected series. The
-existing required `seats` and repository-qualified topology defaults remain intact.
+`TaskSummary.discardedCount` and `discardedSubTasks` are optional; the shared summary builder does not install discarded-audit defaults. Cases that exercise discarded history supply it explicitly, separately from native child counts. No seriesNode builder remains.
 
 - The fetch route table delegates to named payload helpers; task body and empty recorded-report payloads have dedicated branches. \[2] [2]

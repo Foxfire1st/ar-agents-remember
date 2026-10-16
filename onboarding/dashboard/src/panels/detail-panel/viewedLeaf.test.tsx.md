@@ -14,12 +14,11 @@ detail panel.
 
 ### Logic
 
-Selects a leaf and asserts the panel reports the viewed leaf key/identity as
-expected.
+Both drilled and directly opened leaf cases use canonical taskdoc: repository-qualified entry keys. The callback reports the exact repository-qualified taskDocumentRef and the compatibility leaf presentation key; it never reports a session/lifecycle id. This is callback/request identity coverage, not real host execution.
 
 ### Invariants And Boundaries
 
-Assertions preserved from the monolithic suite.
+The viewed-task callback boundary remains, but canonical entry selection replaces the prior absolute docPath selector. Qualified document identity and compatibility leaf presentation are asserted separately.
 
 ### Todos
 

@@ -3,11 +3,31 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "0bc4e9078a691ddf2550b55946fe65ec4259ef25",
-        "content": "sha256:c39ad34e6212c0bfdb42e97144091422b72150e85f1c4041adf2a177188b4d63",
+        "blob": "3c1fc9b507b9358e632a0fbcb31c6f9c66435151",
+        "content": "sha256:a38fc109b713a348f9e3d3efd6074cbe05615e596ad2f9eeee92fb8f221d11d1",
         "locator": {
-          "kind": "symbol",
-          "name": "documentChatAgent"
+          "end": 70,
+          "kind": "line_range",
+          "start": 53
+        }
+      },
+      "id": "RLZ-17TQDT",
+      "invariant": "INV-WQ8YGE",
+      "origin": {
+        "handoffEntry": "L168-CUR-M2-21-N02",
+        "leaf": "260928-MIK-L168"
+      },
+      "rationale": "documentBindings indexes canonical entry.key, traverses addressed sprint.children in order, and delegates master children to masterBindings; no repository/name/document parent reconstruction remains.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "3c1fc9b507b9358e632a0fbcb31c6f9c66435151",
+        "content": "sha256:91ffcc405a79913305b9728bf87212deee37fdcc510518e88564bb16b5807c74",
+        "locator": {
+          "end": 124,
+          "kind": "line_range",
+          "start": 96
         }
       },
       "id": "RLZ-6FBZ98",
@@ -21,11 +41,12 @@
     },
     {
       "anchor": {
-        "blob": "0bc4e9078a691ddf2550b55946fe65ec4259ef25",
-        "content": "sha256:bb13fc73ad8359e7de162a49cc04bc28d06df455dcc46e5fef6e9da55d087f98",
+        "blob": "3c1fc9b507b9358e632a0fbcb31c6f9c66435151",
+        "content": "sha256:ab2288547637cff7c16f06c50ad98766ce6071dc8a2491bc8b9274266ed1644a",
         "locator": {
-          "kind": "symbol",
-          "name": "documentChatBinding"
+          "end": 94,
+          "kind": "line_range",
+          "start": 89
         }
       },
       "id": "RLZ-S0YF0Z",
@@ -39,11 +60,12 @@
     },
     {
       "anchor": {
-        "blob": "0bc4e9078a691ddf2550b55946fe65ec4259ef25",
-        "content": "sha256:c39ad34e6212c0bfdb42e97144091422b72150e85f1c4041adf2a177188b4d63",
+        "blob": "3c1fc9b507b9358e632a0fbcb31c6f9c66435151",
+        "content": "sha256:91ffcc405a79913305b9728bf87212deee37fdcc510518e88564bb16b5807c74",
         "locator": {
-          "kind": "symbol",
-          "name": "documentChatAgent"
+          "end": 124,
+          "kind": "line_range",
+          "start": 96
         }
       },
       "id": "RLZ-XM7PZS",
@@ -54,25 +76,28 @@
       },
       "rationale": "The default displayed agent is constrained to the document primary role.",
       "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "3c1fc9b507b9358e632a0fbcb31c6f9c66435151",
+        "content": "sha256:a0f34fb6fbfa3fb538e89a3cf4571cacb8d2ef693fb87b11e08b9c5ddd1bb905",
+        "locator": {
+          "end": 50,
+          "kind": "line_range",
+          "start": 25
+        }
+      },
+      "id": "RLZ-Y2SRXJ",
+      "invariant": "INV-WQ8YGE",
+      "origin": {
+        "handoffEntry": "L168-CUR-M2-21-N01",
+        "leaf": "260928-MIK-L168"
+      },
+      "rationale": "masterBindings resolves only served master.children in their supplied order, requires an addressed task-form child, and keeps Manager versus Worker/Reviewer/Curator bindings; it does not derive membership from names or worktrees.",
+      "role": "propagation-persistence"
     }
   ],
   "references": {
-    "1": {
-      "note": "Tree bindings group parents once and return canonical rows in tree order.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "a01d49d483cccfce6682797979d963fd217d1569",
-            "content": "sha256:2e454b4881846874df62fbebfca97653d574c2f46174611d24234a1c417d7485",
-            "locator": {
-              "kind": "symbol",
-              "name": "documentBindings"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
     "2": {
       "note": "The agent pick matches the document key, skips archived records and picks the newest stable record.\n\nAnchor: `documentChatAgent`",
       "targets": [
@@ -93,7 +118,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a01d49d483cccfce6682797979d963fd217d1569",
+            "blob": "3c1fc9b507b9358e632a0fbcb31c6f9c66435151",
             "content": "sha256:736b6b5e31b96af17f379e99bd08b70658f855cdaf412d2262caca9d18d5e0d0",
             "locator": {
               "kind": "symbol",

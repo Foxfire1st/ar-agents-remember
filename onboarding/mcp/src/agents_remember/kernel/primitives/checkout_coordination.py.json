@@ -84,12 +84,12 @@
         },
         {
           "anchor": {
-            "blob": "08fa67e7d17028c0392d8c20bf1c9499b0681f8f",
+            "blob": "63a74c463004e2f0999c1a9339f16dcae19ecfac",
             "content": "sha256:b6e52c7036534b668cfa45a73e7eae23e712068a1e70031f51f6091b6fe28c0f",
             "locator": {
-              "end": 892,
+              "end": 876,
               "kind": "line_range",
-              "start": 863
+              "start": 847
             },
             "path": "mcp/src/agents_remember/kernel/primitives/runtime_config.py"
           },
@@ -97,12 +97,12 @@
         },
         {
           "anchor": {
-            "blob": "08fa67e7d17028c0392d8c20bf1c9499b0681f8f",
+            "blob": "63a74c463004e2f0999c1a9339f16dcae19ecfac",
             "content": "sha256:1106a905cad686bc3debd52204b677bf61deca30e9c7183e9f2059a025179ef7",
             "locator": {
-              "end": 851,
+              "end": 835,
               "kind": "line_range",
-              "start": 851
+              "start": 835
             },
             "path": "mcp/src/agents_remember/kernel/primitives/runtime_config.py"
           },
@@ -111,15 +111,16 @@
       ]
     },
     "2": {
-      "note": "Durable lock admission authorizes the target before entering the kernel; append and rewrite retain the same guard.",
+      "note": "Durable lock admission authorizes the target before entering the kernel; append and rewrite retain the same guard.\n\nAnchor: actual current supporting source",
       "targets": [
         {
           "anchor": {
-            "blob": "0ed5c1cbe0f613e46179d6661e364602677f9935",
-            "content": "sha256:d99b53ff95bbbc0395003498264051f916b0da5e4c67e2ebc07259709fa1e071",
+            "blob": "59a148a711df3a07d0424f5448d9871b6aac6930",
+            "content": "sha256:d260e889dbb0ffafb0ab1dbac18137b0f3bf1040432c20bf21313017974629f0",
             "locator": {
-              "kind": "symbol",
-              "name": "exclusive_access"
+              "end": 263,
+              "kind": "line_range",
+              "start": 225
             },
             "path": "mcp/src/agents_remember/controlplane/durable_store.py"
           },
@@ -127,11 +128,12 @@
         },
         {
           "anchor": {
-            "blob": "0ed5c1cbe0f613e46179d6661e364602677f9935",
+            "blob": "59a148a711df3a07d0424f5448d9871b6aac6930",
             "content": "sha256:e1d718a6ded42e98065391834cadac19262c3129198696927e3e3d48deecd580",
             "locator": {
-              "kind": "symbol",
-              "name": "_prepare_append_target"
+              "end": 353,
+              "kind": "line_range",
+              "start": 351
             },
             "path": "mcp/src/agents_remember/controlplane/durable_store.py"
           },
@@ -139,11 +141,12 @@
         },
         {
           "anchor": {
-            "blob": "0ed5c1cbe0f613e46179d6661e364602677f9935",
+            "blob": "59a148a711df3a07d0424f5448d9871b6aac6930",
             "content": "sha256:91f641457703ec5caa68ca3d04518070c53c3a51614b2498ef646661328de14a",
             "locator": {
-              "kind": "symbol",
-              "name": "_require_rewrite_access"
+              "end": 358,
+              "kind": "line_range",
+              "start": 356
             },
             "path": "mcp/src/agents_remember/controlplane/durable_store.py"
           },
@@ -156,7 +159,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3139669673aad140278e0fba2c1e12a0723ebfda",
+            "blob": "3ce87362f44ca376e33cad8872407ae5fb0d4be9",
             "content": "sha256:66ae0bf6c579630f2aa12e314647b9610a2f52bddc550fe9b6c7f3338e099a36",
             "locator": {
               "kind": "symbol",

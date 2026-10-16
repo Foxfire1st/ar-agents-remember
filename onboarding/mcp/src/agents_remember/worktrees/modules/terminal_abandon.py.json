@@ -3,11 +3,12 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "a317d7e35d03f98d28edc93201671b5b93a91a8c",
-        "content": "sha256:ecb9aa5f8defae1b6b1ad0098ff1996fe38ae0ea94a0357fd038c028f779f601",
+        "blob": "9a20c2d840a674e9af23f219556692a7667e192e",
+        "content": "sha256:923545409bdbfc7b53afaefe2a1bc90af36b0dbef12227ee7d8fa1f1d8c0513d",
         "locator": {
-          "kind": "symbol",
-          "name": "_abandon_with_guard"
+          "end": 99,
+          "kind": "line_range",
+          "start": 27
         }
       },
       "id": "RLZ-5DE9GE",
@@ -31,6 +32,23 @@
             "locator": {
               "kind": "symbol",
               "name": "_abandon_with_guard"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Task-stage binding is checked before terminal work and again before archival/destructive outputs under current authority.\n\nAnchor: abandon preflight order",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9a20c2d840a674e9af23f219556692a7667e192e",
+            "content": "sha256:923545409bdbfc7b53afaefe2a1bc90af36b0dbef12227ee7d8fa1f1d8c0513d",
+            "locator": {
+              "end": 99,
+              "kind": "line_range",
+              "start": 27
             }
           },
           "kind": "code"

@@ -6,13 +6,7 @@
 
 ## Purpose
 
-`attention_dismissals.py` stores current lifecycle-scoped attention acknowledgements
-for the dashboard attention queue. It is not an audit log: attention rows are derived,
-throwaway UI facts, so the store keeps only the acknowledgement needed to hide the
-current lifecycle-bound occurrence until a newer signal arrives or the lifecycle leaves
-the live set. Task 29 also keeps targetless `actionable-drift` rows as repo-level
-current acknowledgements, because their occurrence is anchored by the drift snapshot
-timestamp instead of by a lifecycle.
+`attention_dismissals.py` keeps the compact current acknowledgements for published provider-down, failed-setup, blocked-start and actionable-drift occurrences. They are disposable UI facts, not an audit or authority log. Occurrences end on proved native recovery/removal, or changed complete drift findings, not on a new clock tick or inferred session status.
 
 ## Code Commentary
 
@@ -24,12 +18,7 @@ lost — the one base-commit figure carried at several independent sites (`durab
 than at one. It also had a
 single writer. Both facts are true at once, and the reason is the most important thing on this card.
 
-`dismiss()` is not an append. It is a **whole-file read-modify-write**: read the current set, upsert
-one row by `itemId`, rewrite everything. And it is reached from the dashboard's HTTP dismiss route
-at `serving/app.py:1164` — a button a person presses. So two concurrent dismisses lose each other
-**with no compactor involved and no second writer required**. The projection sweep's
-`prune_lifecycles` is a second read-modify-write over the same file, from a different thread of the
-same process, making the pair a lost-update race on its own.
+`dismiss()` is a whole-file read/upsert/rewrite keyed by `itemId`, so concurrent button clicks need serialization even in one dashboard process. `reconcile(observations)` is another whole-read/filter/rewrite over the same file and holds that same lock across both halves; a single declared writer does not make concurrent read-modify-writes safe.
 
 The raising was the colliding temp path: `_replace` built `<log>.tmp` with nothing to distinguish
 one writer from another, so two concurrent rewriters shared it, one `os.replace`d it away and the
@@ -44,12 +33,9 @@ fact, not a structural one.
 
 Every rewrite now holds the log's lock across the read **and** the rewrite:
 
-- `dismiss(record)` opens `exclusive_access` before folding `current()` and rewriting.
-- `prune_lifecycles(live_lifecycle_ids)` opens `exclusive_access` and delegates to the new
-  `_prune_locked`, which is the read-filter-rewrite half.
-- `_replace` no longer unlinks an emptied file, no longer builds `<log>.tmp` and no longer calls
-  `os.replace`; it delegates to `durable_store.rewrite_lines`, which refuses unless the calling
-  thread holds the lock, uses a pid-scoped hidden temp name and fsyncs.
+- `dismiss(record)` and `reconcile(observations)` hold `exclusive_access` across the complete read and rewrite.
+- `_replace` delegates to `durable_store.rewrite_lines`, which requires the held lock, uses the shared durable replacement boundary and leaves an empty current set as an empty file rather than unlinking it.
+- An unchanged reconciliation performs no physical rewrite; a cleanup `OSError` returns the pre-cleanup current map, retaining suppression.
 
 `AttentionDismissalRecord` now inherits `DurableRecord` instead of `BaseModel`, so it picks up
 `extra="forbid"` (previously declared locally) plus a validated `schemaVersion`: an unknown major
@@ -67,50 +53,22 @@ the moment a decision depended on one of these rows.
 
 ### 260707-HFX2-L12 CS-6 Update
 
-`AttentionDismissalStore.read()` now treats this disposable UI acknowledgement log as dashboard-tolerant: malformed or torn JSONL rows are skipped, while valid acknowledgement rows still fold by `itemId` and prune by live lifecycle id.
+`AttentionDismissalStore.read()` tolerates malformed/torn UI rows and folds valid rows by `itemId`; it does not interpret a malformed native source as healthy. Malformed acknowledgement rows can disappear on a required rewrite because they carry no execution authority.
 
-`AttentionDismissalRecord` is the compact `ar-attention-dismissal/v1` row keyed by
-`itemId`, carrying `dismissedAt` plus optional `kind`, `lifecycleId`, and `gateId`
-provenance. `AttentionDismissalStore` writes the workspace file
-`<observer_root>/workspace/attention-dismissals.jsonl`, but treats it as a compact
-current set:
+`AttentionDismissalRecord` carries itemId, validated dismissedAt, supported kind and optional actionableFingerprint in workspace/attention-dismissals.jsonl. `dismiss` upserts, `current` folds duplicates.
 
-- `dismiss(record)` upserts by `itemId`, replacing an older row for the same item.
-- `current()` folds any legacy duplicate rows by `itemId` and returns the latest record.
-- `prune_lifecycles(live_lifecycle_ids)` folds legacy duplicate rows, physically removes lifecycle
-  rows whose lifecycle id is outside the live projected lifecycle set, and keeps targetless
-  `actionable-drift` current records.
-
-The reducer consumes these records as lifecycle-scoped acknowledgements; gate-open
-attention rows are consumed by cancelling/deleting the gate itself, so they normally do
-not need a row in this store.
+`AttentionObservation` records actual read-start, completeness, existing/healthy IDs and fingerprints. Only complete observations begun at/after the click reclaim proved recovery/removal or changed fingerprints. Unread kinds, failed enumeration, unknown health and missing fingerprints prove no end. Missing stored fingerprint adopts the first complete available one.
 
 ## Invariants And Boundaries
 
-- Disposable interaction state only; durable task history lives in task docs, contracts,
-  commits, ledgers, and observer events.
-- Lifecycle scope is load-bearing. Rows without a `lifecycleId` are pruned instead of
-  becoming global item-id suppressions, except for `kind == "actionable-drift"`, whose
-  source is a repo/branch drift snapshot with its own `checkedAt` signal timestamp.
-- The store mirrors the gate/inbox physical-delete pattern, but through the shared contract:
-  `durable_store.rewrite_lines` writes the current set. **The file is no longer unlinked when no
-  rows remain** — an empty current set is an empty file. Restore the unlink and a concurrent
-  appender holding an open handle writes into an unlinked inode, which is loss with no torn line
-  and no trace at all.
-- **Locked unconditionally, single writer notwithstanding.** `dismiss` and `prune_lifecycles` both
-  hold `exclusive_access` across their read and their rewrite. Drop the lock on the grounds that
-  one process writes this file and the 31.45 percent returns, because the race is between two
-  read-modify-writes inside that one process.
+- Disposable UI acknowledgement, never approval or mutation authority.
+- Native complete per-kind proof governs cleanup; retained projection state is not a census and unknown is not healthy.
+- Click/read-start ordering and whole read/rewrite locking preserve concurrent clicks; empty sets stay as empty files.
+- Cleanup OSError retains prior suppression; click OSError is `dismissal-not-held` HTTP 503, not success.
 
 ## Evidence
 
 ### Repo-Internal References
 
-- Reducer suppression check that requires the acknowledgement lifecycle to match the item lifecycle. [2]
-
-- Projection tick that prunes rows after folding live lifecycle state.  Anchor: `prune_lifecycles` [1]
-- Serving route that records lifecycle acknowledgements or cancels gate-open items.  Anchor: "def _dismissal_response(" [3]
-- Targetless actionable-drift rows are the only non-lifecycle acknowledgements retained by prune: `prune_lifecycles` through `_prune_locked` and the module-level `_keep_current_record`. [4]
-- `dismiss` holds `exclusive_access` across the read and the rewrite; `_replace` delegates to `rewrite_lines` and never unlinks.  Anchor: `exclusive_access` [5]
-- `ATTENTION_DISMISSAL_OWNERSHIP` records why a single-writer store is still locked and names the 31.45 percent an unlocked draft measured. [6]
-- The HTTP dismiss route at L1164 that makes this whole-file read-modify-write a user-facing click.  Anchor: "def _dismissal_response(" [7]
+- Projection input refreshers collect native per-kind AttentionObservations and reconcile acknowledgements through AttentionDismissalStore. A record can be reclaimed for source absence, healthy recovery or a changed known fingerprint only when the observation is complete and started no earlier than its dismissal; the first complete fingerprint can instead be adopted. Unread/incomplete kinds retain their acknowledgements. Reconciliation is locked, avoids unchanged physical writes and returns prior current acknowledgements if cleanup fails; this is not prune_lifecycles after a lifecycle fold. [1]
+- Whole read/rewrite exclusion and cleanup-failure retention preserve concurrent acknowledgements. [5]

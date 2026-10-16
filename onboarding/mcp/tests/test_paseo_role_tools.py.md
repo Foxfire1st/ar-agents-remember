@@ -25,7 +25,12 @@ Role start enforces the caller's child-role matrix and own sprint/master scope, 
 
 Concurrent role starts observe the second caller's failed nonblocking acquisition of the actual held dispatch lock before asserting it remains pending. Lock-expiration cases assert the refusal and retry behavior, while shared hang guards bound fixture release/join; elapsed speed is not an assertion.
 
+The launch observer now reads role-agent facts during the native agent-create call: worker role, exact leaf key and nonempty report filename must already exist. This strengthens registration-before-first-turn ordering while retaining the held dispatch-lock assertions; the host itself remains a fixture.
+
 ## Evidence
+
+- Role/task/report registration exists before agent-create begins under the existing dispatch lock. [6]
+
 
 
 - The second start reaches the actual held dispatch lock before pending is asserted. [2]

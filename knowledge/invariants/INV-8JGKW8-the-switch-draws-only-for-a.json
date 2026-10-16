@@ -7,7 +7,7 @@
   },
   "applicability": "Status-scoped direct-execution presentation on the selected task own page.",
   "conditions": [
-    "The projected document kind, status and served grant select switch, bare words or absence."
+    "The served entry stage, summary subTask kind and served grant select switch, bare words or absence."
   ],
   "exclusions": [
     "Master/sprint row presentation, which offers neither a control nor a grant mark.",
@@ -25,9 +25,9 @@
     "leaf": "260928-MIK-L150",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-invariant/v1",
-  "statement": "The switch draws only for a planning subTask; any other granted state shows bare Direct given-by words and grantless states show nothing.",
+  "statement": "The direct-execution switch draws only for a selected subTask whose served TaskEntry stage is planned; another granted stage shows bare Direct given-by words, and grantless other stages show nothing.",
   "status": "proposed",
   "supersedes": []
 }

@@ -1,13 +1,51 @@
 {
   "path": "dashboard/src/types/projection.ts",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "8774e82c7f7a93dda014fdb8b987e2391fd21fd1",
+        "content": "sha256:b8e8aeb19a9db1aaff3be58de7dcb40ab4c0d47dcc5746109c9e140764475ea2",
+        "locator": {
+          "kind": "symbol",
+          "name": "TaskSummary"
+        }
+      },
+      "id": "RLZ-7660ZX",
+      "invariant": "INV-T3TNTX",
+      "origin": {
+        "handoffEntry": "curator-extra-source-links-INV-T3TNTX",
+        "leaf": "260928-MIK-L162"
+      },
+      "rationale": "Shared TaskSummary replaces private union with optional fixed reader fields.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "8774e82c7f7a93dda014fdb8b987e2391fd21fd1",
+        "content": "sha256:51d0432de61b27fb95ce483e9491b0e76d8c8b399982ca329a0a8591145e909e",
+        "locator": {
+          "end": 522,
+          "kind": "line_range",
+          "start": 506
+        }
+      },
+      "id": "RLZ-8FGD85",
+      "invariant": "INV-SQ7NQA",
+      "origin": {
+        "handoffEntry": "curator-extra-source-links-INV-SQ7NQA",
+        "leaf": "260928-MIK-L162"
+      },
+      "rationale": "TaskEntry carries an optional TaskSummary whose cached steps supply the row-held major/child disclosure data.",
+      "role": "propagation-persistence"
+    }
+  ],
   "references": {
     "1": {
       "note": "The lifecycle phase union mirrors the code/memory-only vocabulary.\n\nAnchor: `refinements`",
       "targets": [
         {
           "anchor": {
-            "blob": "7d1876a2998158cdcdd603f7e0dcd547eb99c4c5",
+            "blob": "8774e82c7f7a93dda014fdb8b987e2391fd21fd1",
             "content": "sha256:46894d777463298a1a95031da8c618c203b9bf1480eda1c328419e41a1166d1d",
             "locator": {
               "kind": "symbol",
@@ -23,7 +61,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7d1876a2998158cdcdd603f7e0dcd547eb99c4c5",
+            "blob": "8774e82c7f7a93dda014fdb8b987e2391fd21fd1",
             "content": "sha256:8a1c02c1ff4253b43889542d464d4e7bd551e4e420c262c7eaa81b731e75b918",
             "locator": {
               "kind": "symbol",
@@ -39,7 +77,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7d1876a2998158cdcdd603f7e0dcd547eb99c4c5",
+            "blob": "8774e82c7f7a93dda014fdb8b987e2391fd21fd1",
             "content": "sha256:f438b93652328185b63c4a89bf00b0867bf827811ab1fd89500aa85aa11329a9",
             "locator": {
               "kind": "symbol",
@@ -55,7 +93,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7d1876a2998158cdcdd603f7e0dcd547eb99c4c5",
+            "blob": "8774e82c7f7a93dda014fdb8b987e2391fd21fd1",
             "content": "sha256:46894d777463298a1a95031da8c618c203b9bf1480eda1c328419e41a1166d1d",
             "locator": {
               "kind": "symbol",
@@ -71,7 +109,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7d1876a2998158cdcdd603f7e0dcd547eb99c4c5",
+            "blob": "8774e82c7f7a93dda014fdb8b987e2391fd21fd1",
             "content": "sha256:f438b93652328185b63c4a89bf00b0867bf827811ab1fd89500aa85aa11329a9",
             "locator": {
               "kind": "symbol",
@@ -82,26 +120,11 @@
         },
         {
           "anchor": {
-            "blob": "7d1876a2998158cdcdd603f7e0dcd547eb99c4c5",
+            "blob": "8774e82c7f7a93dda014fdb8b987e2391fd21fd1",
             "content": "sha256:c800f6cde277742b70ed38e24e0c12de7f51e38bb8a06eabeaebb24a7b7c24f9",
             "locator": {
               "kind": "symbol",
               "name": "reasons"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "14": {
-      "note": "Generated task/graph display DTOs declare optional fixed prose/completion/dependencies and cycle state; absent older fields remain representable.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "beed4630e21dc2735b84b146d4ff9a6e1b18512d",
-            "content": "sha256:8923e4a0e7a4f194d5a6433792aaf6b79b88b8d8f445743643cab301bf34adc6",
-            "locator": {
-              "kind": "file"
             }
           },
           "kind": "code"
@@ -144,45 +167,109 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7d1876a2998158cdcdd603f7e0dcd547eb99c4c5",
+            "blob": "8774e82c7f7a93dda014fdb8b987e2391fd21fd1",
             "content": "sha256:801fd5997a2c54ddda42184380b4547e3d856e1d7fbb426c325899346284e880",
             "locator": {
-              "end": 110,
+              "end": 81,
               "kind": "line_range",
-              "start": 83
+              "start": 54
             }
           },
           "kind": "code"
         }
       ]
     },
-    "2": {
-      "note": "Structural analytics fields use the shared task-document reference.\n\nAnchor: `string`",
+    "17": {
+      "note": "Generated TaskEntry retains stage/activity and eventAt without a task-event ageSeconds field.\n\nAnchor: TaskEntry declaration",
       "targets": [
         {
           "anchor": {
-            "blob": "7d1876a2998158cdcdd603f7e0dcd547eb99c4c5",
-            "content": "sha256:17f2343c5834d28106452ed00b54e77de7a4617f13bcd8d8cd8c8e1f69f9e59b",
+            "blob": "8774e82c7f7a93dda014fdb8b987e2391fd21fd1",
+            "content": "sha256:51d0432de61b27fb95ce483e9491b0e76d8c8b399982ca329a0a8591145e909e",
             "locator": {
-              "kind": "symbol",
-              "name": "TaskDocumentRef"
+              "end": 522,
+              "kind": "line_range",
+              "start": 506
             }
           },
           "kind": "code"
         }
       ]
     },
-    "3": {
-      "note": "TaskDocNode preserves hierarchy/runtime separation and adds six optional task fields: nonGoals, acceptance, completedAt, waitsFor and resolved dependency-direction arrays.",
+    "18": {
+      "note": "A dependency keeps id/title without inventing a reference; TaskEntry event time is not a served age.\n\nAnchor: optional dependency reference and entry shape",
       "targets": [
         {
           "anchor": {
-            "blob": "7d1876a2998158cdcdd603f7e0dcd547eb99c4c5",
-            "content": "sha256:cfc43fb8a66c321fb3b806f3f8dd959137e15831c693e462dd268d1e5aa976cb",
+            "blob": "8774e82c7f7a93dda014fdb8b987e2391fd21fd1",
+            "content": "sha256:5e8eed25c42986bbff3983a195efc908310b08b684f2341ea01530e70a6c5801",
             "locator": {
-              "end": 636,
+              "end": 484,
               "kind": "line_range",
-              "start": 587
+              "start": 479
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8774e82c7f7a93dda014fdb8b987e2391fd21fd1",
+            "content": "sha256:51d0432de61b27fb95ce483e9491b0e76d8c8b399982ca329a0a8591145e909e",
+            "locator": {
+              "end": 522,
+              "kind": "line_range",
+              "start": 506
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "19": {
+      "note": "TaskSummary separates required reader fields from optional branch/note/review, content and graph additions.\n\nAnchor: TaskSummary declaration",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8774e82c7f7a93dda014fdb8b987e2391fd21fd1",
+            "content": "sha256:b8e8aeb19a9db1aaff3be58de7dcb40ab4c0d47dcc5746109c9e140764475ea2",
+            "locator": {
+              "end": 680,
+              "kind": "line_range",
+              "start": 641
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "20": {
+      "note": "TaskStepNode requires note/outcome truncation booleans beside optional prose; TaskSubStepNode has optional note without a truncation flag.\n\nAnchor: step and substep declarations",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8774e82c7f7a93dda014fdb8b987e2391fd21fd1",
+            "content": "sha256:478fd60391dd7f7c1e45e7807fa9c223a6698bd398d09b9e6f603f89b1be5ba3",
+            "locator": {
+              "end": 639,
+              "kind": "line_range",
+              "start": 621
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "21": {
+      "note": "A present TaskReviewStateNode requires openFindings and totalFindings independently of its findings array.\n\nAnchor: TaskReviewStateNode declaration",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8774e82c7f7a93dda014fdb8b987e2391fd21fd1",
+            "content": "sha256:b7af4e65df145165413b89af9d7770ed7116940dc2028997947205282c858f5a",
+            "locator": {
+              "end": 598,
+              "kind": "line_range",
+              "start": 590
             }
           },
           "kind": "code"
@@ -194,12 +281,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7d1876a2998158cdcdd603f7e0dcd547eb99c4c5",
+            "blob": "8774e82c7f7a93dda014fdb8b987e2391fd21fd1",
             "content": "sha256:7ae8d7b8fcc6d3189e9bfe10e6cf782702aeb4849a1983359cf74c5da6d6c119",
             "locator": {
-              "end": 697,
+              "end": 563,
               "kind": "line_range",
-              "start": 679
+              "start": 545
             }
           },
           "kind": "code"
@@ -211,7 +298,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7d1876a2998158cdcdd603f7e0dcd547eb99c4c5",
+            "blob": "8774e82c7f7a93dda014fdb8b987e2391fd21fd1",
             "content": "sha256:2184ea340071b6e0198af33a56d1c71265c26e7435a74eba29d03b8838b5070e",
             "locator": {
               "kind": "symbol",
@@ -227,7 +314,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7d1876a2998158cdcdd603f7e0dcd547eb99c4c5",
+            "blob": "8774e82c7f7a93dda014fdb8b987e2391fd21fd1",
             "content": "sha256:2184ea340071b6e0198af33a56d1c71265c26e7435a74eba29d03b8838b5070e",
             "locator": {
               "kind": "symbol",
@@ -238,7 +325,7 @@
         },
         {
           "anchor": {
-            "blob": "7d1876a2998158cdcdd603f7e0dcd547eb99c4c5",
+            "blob": "8774e82c7f7a93dda014fdb8b987e2391fd21fd1",
             "content": "sha256:e7fefaa2bcd4c0716efa6e2827d59d8ac4df3bed3d199c8df493edce3757ab19",
             "locator": {
               "kind": "symbol",
@@ -249,12 +336,12 @@
         },
         {
           "anchor": {
-            "blob": "7d1876a2998158cdcdd603f7e0dcd547eb99c4c5",
+            "blob": "8774e82c7f7a93dda014fdb8b987e2391fd21fd1",
             "content": "sha256:1b7434209d1dad0d7a4112bd14310c8dcae979a8b161308ff914ff99c458003b",
             "locator": {
-              "end": 663,
+              "end": 529,
               "kind": "line_range",
-              "start": 658
+              "start": 524
             }
           },
           "kind": "code"
@@ -266,27 +353,11 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7d1876a2998158cdcdd603f7e0dcd547eb99c4c5",
+            "blob": "8774e82c7f7a93dda014fdb8b987e2391fd21fd1",
             "content": "sha256:f4250c96196ae60345f1505ab1ffceb7ed5539b92e056434e2ad73057e882966",
             "locator": {
               "kind": "symbol",
               "name": "TaskExecutionGraphNode"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "8": {
-      "note": "WorkspaceProjection declares the persisted projection core plus the served tail servingBuild and watcherHealth; retired terminal/notifier heartbeat fields are absent. Generated types describe wire shape, not live producer execution.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "7d1876a2998158cdcdd603f7e0dcd547eb99c4c5",
-            "content": "sha256:a17ec1c911a2f8c0e39712db681f9685a183143d435a6c81cbbc4c4d19f6aca7",
-            "locator": {
-              "kind": "symbol",
-              "name": "WorkspaceProjection"
             }
           },
           "kind": "code"
@@ -298,7 +369,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7d1876a2998158cdcdd603f7e0dcd547eb99c4c5",
+            "blob": "8774e82c7f7a93dda014fdb8b987e2391fd21fd1",
             "content": "sha256:8a1c02c1ff4253b43889542d464d4e7bd551e4e420c262c7eaa81b731e75b918",
             "locator": {
               "kind": "symbol",
@@ -309,12 +380,12 @@
         },
         {
           "anchor": {
-            "blob": "7d1876a2998158cdcdd603f7e0dcd547eb99c4c5",
+            "blob": "8774e82c7f7a93dda014fdb8b987e2391fd21fd1",
             "content": "sha256:26a9aa78f2a71020ea82ea802ea2888a62db0cace6d7380a58f4a6828f218009",
             "locator": {
-              "end": 300,
+              "end": 272,
               "kind": "line_range",
-              "start": 300
+              "start": 272
             }
           },
           "kind": "code"

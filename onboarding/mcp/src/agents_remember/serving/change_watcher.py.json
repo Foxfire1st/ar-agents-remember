@@ -3,7 +3,45 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "bd70cad04d4d11b23090b53911254c046d080daf",
+        "blob": "a1ee0ff2565114d0863fefb21fad733a2b220929",
+        "content": "sha256:160ca741dc49a31163ce5b8e33661f67ebee7c9a5daf190967c67ca476e9d018",
+        "locator": {
+          "end": 539,
+          "kind": "line_range",
+          "start": 517
+        }
+      },
+      "id": "RLZ-16GG7T",
+      "invariant": "INV-GP90VQ",
+      "origin": {
+        "handoffEntry": "L168-CUR-M1-21-A013-14",
+        "leaf": "260928-MIK-L168"
+      },
+      "rationale": "note_failed_full preserves the actual failed full-wake domains and path incompleteness for the next eligible cycle without acknowledging failed work.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "a1ee0ff2565114d0863fefb21fad733a2b220929",
+        "content": "sha256:1780ffe6e68c08e4eebdbe069026c6fed8d5d1e2d3101a43768076195e0cb2ff",
+        "locator": {
+          "end": 483,
+          "kind": "line_range",
+          "start": 453
+        }
+      },
+      "id": "RLZ-5Z1XXS",
+      "invariant": "INV-GP90VQ",
+      "origin": {
+        "handoffEntry": "L168-CUR-M1-21-A013-09",
+        "leaf": "260928-MIK-L168"
+      },
+      "rationale": "ChangePacer.notify_change arms one arrival-plus-interval deadline only for TASKS/HOST_ACTIVITY during an unspent original rest window; repeated or other-domain notifications cannot repeatedly shorten it.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "a1ee0ff2565114d0863fefb21fad733a2b220929",
         "content": "sha256:0ea02c3960c70f242eb4d92552851eb64165636d41ed9fa1266e1e4cc116751e",
         "locator": {
           "kind": "symbol",
@@ -21,7 +59,7 @@
     },
     {
       "anchor": {
-        "blob": "bd70cad04d4d11b23090b53911254c046d080daf",
+        "blob": "a1ee0ff2565114d0863fefb21fad733a2b220929",
         "content": "sha256:5cd8cb35835c78911263c2de6b105edfe08b066fb98c34e5b8157b5de8d2d98e",
         "locator": {
           "kind": "symbol",
@@ -39,11 +77,50 @@
     },
     {
       "anchor": {
-        "blob": "bd70cad04d4d11b23090b53911254c046d080daf",
-        "content": "sha256:f705d1325d78462ed6c47528e31a09506c765313ed76a597c52cbe367c217e45",
+        "blob": "a1ee0ff2565114d0863fefb21fad733a2b220929",
+        "content": "sha256:71e4ea7f39dcd3461df068863d91130c9974219fdf2520c630048cf412fd9a3d",
         "locator": {
-          "kind": "symbol",
-          "name": "ChangePacer._next_deadline"
+          "end": 614,
+          "kind": "line_range",
+          "start": 608
+        }
+      },
+      "id": "RLZ-DNHC8T",
+      "invariant": "INV-GP90VQ",
+      "origin": {
+        "handoffEntry": "L168-CUR-M1-21-A013-11",
+        "leaf": "260928-MIK-L168"
+      },
+      "rationale": "When ChangePacer.wait issues a genuinely early wake, it records the original window end in _early_used_until and clears _early_deadline, spending that original-rest allowance exactly once.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "a1ee0ff2565114d0863fefb21fad733a2b220929",
+        "content": "sha256:160ca741dc49a31163ce5b8e33661f67ebee7c9a5daf190967c67ca476e9d018",
+        "locator": {
+          "end": 539,
+          "kind": "line_range",
+          "start": 517
+        }
+      },
+      "id": "RLZ-EPK3F6",
+      "invariant": "INV-X0KED3",
+      "origin": {
+        "handoffEntry": "L168-CUR-M1-21-A013-13",
+        "leaf": "260928-MIK-L168"
+      },
+      "rationale": "note_failed_full requeues wake.domains rather than manufacturing ALL domains, so a failed ordinary heal does not create HOST_ACTIVITY invalidation and periodic host polling.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "a1ee0ff2565114d0863fefb21fad733a2b220929",
+        "content": "sha256:92e3e9861114efbbee4faa7ae26bef3932d1a5cc32d13d50e4d52140ab0bceaf",
+        "locator": {
+          "end": 584,
+          "kind": "line_range",
+          "start": 551
         }
       },
       "id": "RLZ-FQ8G92",
@@ -57,11 +134,12 @@
     },
     {
       "anchor": {
-        "blob": "bd70cad04d4d11b23090b53911254c046d080daf",
-        "content": "sha256:376bcd386c23618b831ec79dd796ca11b2b0bef137272a482ecca26bb5eeb2d2",
+        "blob": "a1ee0ff2565114d0863fefb21fad733a2b220929",
+        "content": "sha256:0464f1b0eadddf4cacf4642dbc45aabd41f5c5891a1f80c5300f8c64d3260a85",
         "locator": {
-          "kind": "symbol",
-          "name": "ChangePacer.projection_completed"
+          "end": 451,
+          "kind": "line_range",
+          "start": 448
         }
       },
       "id": "RLZ-K81ZP2",
@@ -75,11 +153,31 @@
     },
     {
       "anchor": {
-        "blob": "bd70cad04d4d11b23090b53911254c046d080daf",
-        "content": "sha256:f705d1325d78462ed6c47528e31a09506c765313ed76a597c52cbe367c217e45",
+        "blob": "a1ee0ff2565114d0863fefb21fad733a2b220929",
+        "content": "sha256:8d417163f1de0fe67b3770d80d6f3c08d4e194013e4245433237fb361274bbc5",
         "locator": {
-          "kind": "symbol",
-          "name": "ChangePacer._next_deadline"
+          "end": 489,
+          "kind": "line_range",
+          "start": 485
+        }
+      },
+      "id": "RLZ-NMJ797",
+      "invariant": "INV-GP90VQ",
+      "origin": {
+        "handoffEntry": "L168-CUR-M1-21-A013-10",
+        "leaf": "260928-MIK-L168"
+      },
+      "rationale": "ChangePacer._with_rest_exception chooses the earlier eligible deadline without moving an earlier ordinary wake later, and preserves the last-wake interval floor.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "a1ee0ff2565114d0863fefb21fad733a2b220929",
+        "content": "sha256:92e3e9861114efbbee4faa7ae26bef3932d1a5cc32d13d50e4d52140ab0bceaf",
+        "locator": {
+          "end": 584,
+          "kind": "line_range",
+          "start": 551
         }
       },
       "id": "RLZ-V2VB2H",
@@ -90,16 +188,115 @@
       },
       "rationale": "Combines completion floor, change debounce/max-delay, degraded full refresh and quiet heartbeat deadlines.",
       "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "a1ee0ff2565114d0863fefb21fad733a2b220929",
+        "content": "sha256:1061adc59c5e02ea88fd0dc6589ab1b8f50eed13d0106bfb792e211b609df639",
+        "locator": {
+          "end": 624,
+          "kind": "line_range",
+          "start": 618
+        }
+      },
+      "id": "RLZ-YVD1S4",
+      "invariant": "INV-X0KED3",
+      "origin": {
+        "handoffEntry": "L168-CUR-M1-21-A013-12",
+        "leaf": "260928-MIK-L168"
+      },
+      "rationale": "Interval/full wakes combine HEALING_PROJECTION_DOMAINS with genuine pending invalidations; healing excludes HOST_ACTIVITY while pending host publication changes remain eligible.",
+      "role": "enforcement"
     }
   ],
   "references": {
     "1": {
-      "note": "Reader-derived roots and every-directory input filtering; live provider-runtime trees are excluded.",
+      "note": "Reader-derived roots and every-directory input filtering; live provider-runtime trees are excluded.\n\nAnchor: actual current supporting source",
       "targets": [
         {
           "anchor": {
-            "blob": "bd70cad04d4d11b23090b53911254c046d080daf",
-            "content": "sha256:2cb87ad490ae8ef12ce5a6ea23b11e30b555646de177a59c71101e866b9bb4b6",
+            "blob": "a1ee0ff2565114d0863fefb21fad733a2b220929",
+            "content": "sha256:d7be4c7bf6b5aa51764f1a6b538b6857e6f0ac878dd08ee9799889be897a9f1c",
+            "locator": {
+              "end": 199,
+              "kind": "line_range",
+              "start": 172
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a1ee0ff2565114d0863fefb21fad733a2b220929",
+            "content": "sha256:cd641e004b118159e1a6858f216b3feb3e462f481365df68cd322100544f7fad",
+            "locator": {
+              "end": 231,
+              "kind": "line_range",
+              "start": 202
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "Native registration is explicit and retains watcher lifecycle.  Anchor: `ProjectionInputWatcher._watch_once`\n\nAnchor: actual current supporting source",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a1ee0ff2565114d0863fefb21fad733a2b220929",
+            "content": "sha256:5cd8cb35835c78911263c2de6b105edfe08b066fb98c34e5b8157b5de8d2d98e",
+            "locator": {
+              "end": 799,
+              "kind": "line_range",
+              "start": 744
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "The real completion floor preserves accumulated domains.  Anchor: `ChangePacer.projection_completed`\n\nAnchor: actual current supporting source",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a1ee0ff2565114d0863fefb21fad733a2b220929",
+            "content": "sha256:0464f1b0eadddf4cacf4642dbc45aabd41f5c5891a1f80c5300f8c64d3260a85",
+            "locator": {
+              "end": 451,
+              "kind": "line_range",
+              "start": 448
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "Completion rest participates in change/degraded/heartbeat deadlines.  Anchor: `ChangePacer._next_deadline`\n\nAnchor: actual current supporting source",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a1ee0ff2565114d0863fefb21fad733a2b220929",
+            "content": "sha256:92e3e9861114efbbee4faa7ae26bef3932d1a5cc32d13d50e4d52140ab0bceaf",
+            "locator": {
+              "end": 584,
+              "kind": "line_range",
+              "start": 551
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "The source records why recursive worktree watching would repeat scan cost, crash on container permissions and react to WAL churn; admitted roots exclude that tree.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a1ee0ff2565114d0863fefb21fad733a2b220929",
+            "content": "sha256:d7be4c7bf6b5aa51764f1a6b538b6857e6f0ac878dd08ee9799889be897a9f1c",
             "locator": {
               "kind": "symbol",
               "name": "projection_input_roots"
@@ -109,127 +306,299 @@
         },
         {
           "anchor": {
-            "blob": "bd70cad04d4d11b23090b53911254c046d080daf",
-            "content": "sha256:cd641e004b118159e1a6858f216b3feb3e462f481365df68cd322100544f7fad",
+            "blob": "a1ee0ff2565114d0863fefb21fad733a2b220929",
+            "content": "sha256:85db4ec8e3a8ec99007f8880cb2b72ec8f4ae4290f3aae129341d6c808a911b5",
+            "locator": {
+              "end": 40,
+              "kind": "line_range",
+              "start": 27
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "14": {
+      "note": "Native watching skips unreadable subdirectories as defence-in-depth.\n\nAnchor: \"ignore_permission_denied=True\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a1ee0ff2565114d0863fefb21fad733a2b220929",
+            "content": "sha256:e45d975192db0f115cfbb9f97c23e3d1e8bd0e2541fa01d68b4f266bfece6bae",
+            "locator": {
+              "end": 766,
+              "kind": "line_range",
+              "start": 753
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "15": {
+      "note": "Defaults are 0.1-second debounce and 15-second heartbeat; max delay defaults to interval and the pacer starts degraded.\n\nAnchor: `ChangePacer.__init__`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a1ee0ff2565114d0863fefb21fad733a2b220929",
+            "content": "sha256:fb0025ba5c597104022bf1b159ade81063af2e35574b910a7a2a0e7fec81e0cd",
             "locator": {
               "kind": "symbol",
-              "name": "is_projection_input_event"
+              "name": "DEBOUNCE_SECONDS"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a1ee0ff2565114d0863fefb21fad733a2b220929",
+            "content": "sha256:936d9634b71f84e9b4690bd3aacd5e091ab5f141d8428297efbbe73ba86ea2ba",
+            "locator": {
+              "end": 418,
+              "kind": "line_range",
+              "start": 384
             }
           },
           "kind": "code"
         }
       ]
     },
-    "10": {
-      "note": "Native registration is explicit and retains watcher lifecycle.  Anchor: `ProjectionInputWatcher._watch_once`",
+    "16": {
+      "note": "Debounce/max-delay/heartbeat deadlines retain interval and completion floors, subject to the one-use task/host rest exception and due full healing.\n\nAnchor: `ChangePacer._next_deadline`",
       "targets": [
         {
           "anchor": {
-            "blob": "9d31a421160e67d9b9cf8e11e2617356e5cffd2b",
-            "content": "sha256:23434087e371e7a63a15dcd767595e938f514b7d9c42f119f8f1d7fc1cd14126",
+            "blob": "a1ee0ff2565114d0863fefb21fad733a2b220929",
+            "content": "sha256:4a2a92b7c0d4f53d36169e72148bb488479676d0e24d658ea33de00f54262314",
             "locator": {
-              "end": 475,
+              "end": 489,
               "kind": "line_range",
-              "start": 438
+              "start": 448
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a1ee0ff2565114d0863fefb21fad733a2b220929",
+            "content": "sha256:92e3e9861114efbbee4faa7ae26bef3932d1a5cc32d13d50e4d52140ab0bceaf",
+            "locator": {
+              "end": 584,
+              "kind": "line_range",
+              "start": 551
             }
           },
           "kind": "code"
         }
       ]
     },
-    "11": {
-      "note": "The real completion floor preserves accumulated domains.  Anchor: `ChangePacer.projection_completed`",
+    "17": {
+      "note": "Change, full and heartbeat wakes preserve their distinct domain selection; full healing does not reread host activity unless pending.\n\nAnchor: `ChangePacer.wait`",
       "targets": [
         {
           "anchor": {
-            "blob": "bd70cad04d4d11b23090b53911254c046d080daf",
-            "content": "sha256:376bcd386c23618b831ec79dd796ca11b2b0bef137272a482ecca26bb5eeb2d2",
+            "blob": "a1ee0ff2565114d0863fefb21fad733a2b220929",
+            "content": "sha256:85e432ca385061b249012a3b6e910fc7c893809eed1518679ec4a2d02261e6e3",
             "locator": {
-              "end": 448,
+              "end": 627,
               "kind": "line_range",
-              "start": 445
+              "start": 597
             }
           },
           "kind": "code"
         }
       ]
     },
-    "12": {
-      "note": "Completion rest participates in change/degraded/heartbeat deadlines.  Anchor: `ChangePacer._next_deadline`",
+    "18": {
+      "note": "Serving-owner assertions allow one early task/host pass per original rest window; a quick early tick preserves that rest.\n\nAnchor: test_task_and_host_changes_get_one_early_pass_per_original_rest",
       "targets": [
         {
           "anchor": {
-            "blob": "9d31a421160e67d9b9cf8e11e2617356e5cffd2b",
-            "content": "sha256:9ac33691aca711cadf593eadd8370b87735d61cc821cc0361b4ca4ff959ad4ec",
+            "blob": "1ca94f7130bd66555d23ee5ac22800014b7b2d4b",
+            "content": "sha256:942de0bc5ef4f0cc452d104cb6d9ff7c35e68e6eb10fb61524f22e29b09895d9",
             "locator": {
-              "end": 349,
+              "end": 250,
               "kind": "line_range",
-              "start": 340
-            }
+              "start": 221
+            },
+            "path": "mcp/tests/test_serving.py"
           },
-          "kind": "code"
+          "kind": "test"
+        }
+      ]
+    },
+    "19": {
+      "note": "Other domains retain rest without spending the task exception; a task arrival merges the pending set and may use it.\n\nAnchor: test_other_domains_keep_rest_without_spending_the_task_exception",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1ca94f7130bd66555d23ee5ac22800014b7b2d4b",
+            "content": "sha256:4cfc3d642a4e5c57d7fddffe5b6aec1c2d1f7fd195c587604f6dc137472b7e63",
+            "locator": {
+              "end": 276,
+              "kind": "line_range",
+              "start": 252
+            },
+            "path": "mcp/tests/test_serving.py"
+          },
+          "kind": "test"
         }
       ]
     },
     "2": {
-      "note": "Accepted paths map to reader domains; unknown accepted paths request every domain.",
+      "note": "Accepted paths map to reader domains; unknown accepted paths request every domain.\n\nAnchor: actual current supporting source",
       "targets": [
         {
           "anchor": {
-            "blob": "bd70cad04d4d11b23090b53911254c046d080daf",
-            "content": "sha256:681a5dc2e0980891fca43c783fada3fa889ea4f6867b89d78e015f58aafd95b8",
+            "blob": "a1ee0ff2565114d0863fefb21fad733a2b220929",
+            "content": "sha256:8b9d99739f83011e7cabafde3b8ae1be1bc4a045ef29d95138959d34a7a42328",
             "locator": {
-              "kind": "symbol",
-              "name": "projection_domains_for_paths"
+              "end": 280,
+              "kind": "line_range",
+              "start": 234
             }
           },
           "kind": "code"
         }
       ]
     },
-    "3": {
-      "note": "Typed wake reason/domains, structural watcher seams and complete pacer scheduling.",
+    "20": {
+      "note": "The task exception never delays an earlier ordinary deadline.\n\nAnchor: test_task_exception_never_delays_an_earlier_normal_deadline",
       "targets": [
         {
           "anchor": {
-            "blob": "bd70cad04d4d11b23090b53911254c046d080daf",
-            "content": "sha256:f7d2294a8174570e24b7a0af2751b9964fe3b0e5e95514b7f95948230733c46f",
+            "blob": "1ca94f7130bd66555d23ee5ac22800014b7b2d4b",
+            "content": "sha256:10cb6cd7a2918481717ccbf22a14a770cf4c3c48f3830133a8e0dbddf1bcf2df",
             "locator": {
-              "kind": "symbol",
-              "name": "ProjectionWake"
+              "end": 286,
+              "kind": "line_range",
+              "start": 278
+            },
+            "path": "mcp/tests/test_serving.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "21": {
+      "note": "Capped completion rest retains work/rest arrivals and keeps degraded and recovery-full deadlines completion-paced.\n\nAnchor: test_slow_tick_rest_is_capped_and_keeps_changes_received_during_work_and_rest",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1ca94f7130bd66555d23ee5ac22800014b7b2d4b",
+            "content": "sha256:8ed7714230f1e4b8bbb715fb25071581bbf732c620d7cc0149009a5c7a93556d",
+            "locator": {
+              "end": 364,
+              "kind": "line_range",
+              "start": 325
+            },
+            "path": "mcp/tests/test_serving.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "22": {
+      "note": "Prime and failed live ticks invoke the completion callback; replay has no pacer.\n\nAnchor: test_live_tick_completion_paces_success_failure_and_startup",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1ca94f7130bd66555d23ee5ac22800014b7b2d4b",
+            "content": "sha256:e0bbed6e0845709b252777cc98512c9652d12b720aead19045db6bedcfe8d75c",
+            "locator": {
+              "end": 387,
+              "kind": "line_range",
+              "start": 366
+            },
+            "path": "mcp/tests/test_serving.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "23": {
+      "note": "A failed change wake retries its outstanding domains until acknowledgement.\n\nAnchor: test_failed_change_tick_keeps_its_domains",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5297bd3928044594df0953d6e59103d4ab409223",
+            "content": "sha256:d68242671b95e09b8588b6046e8661cd1980b4fe4d10893c85e9602bdf2824eb",
+            "locator": {
+              "end": 105,
+              "kind": "line_range",
+              "start": 84
+            },
+            "path": "mcp/tests/test_pacer_healing.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "24": {
+      "note": "An arrival before acknowledgement advances generation and re-wakes the merged set.\n\nAnchor: test_arrival_during_work_keeps_the_merged_set",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5297bd3928044594df0953d6e59103d4ab409223",
+            "content": "sha256:6071c999daab8860d8c9d5c19052cd8bf86289fb42bcd9f600739d5c1e6bd0fb",
+            "locator": {
+              "end": 125,
+              "kind": "line_range",
+              "start": 107
+            },
+            "path": "mcp/tests/test_pacer_healing.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Typed wake reason/domains, structural watcher seams and complete pacer scheduling.\n\nAnchor: actual current supporting source",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a1ee0ff2565114d0863fefb21fad733a2b220929",
+            "content": "sha256:54e83e819a01211926633c66ef897238e441586958b9cade74b7a8a391076154",
+            "locator": {
+              "end": 308,
+              "kind": "line_range",
+              "start": 284
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "bd70cad04d4d11b23090b53911254c046d080daf",
+            "blob": "a1ee0ff2565114d0863fefb21fad733a2b220929",
             "content": "sha256:420c8d7b01802e2fe3649edc67d8961658ea7bd988775a35c04e39dda9eff5ab",
             "locator": {
-              "kind": "symbol",
-              "name": "WakeTarget"
+              "end": 347,
+              "kind": "line_range",
+              "start": 338
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "bd70cad04d4d11b23090b53911254c046d080daf",
+            "blob": "a1ee0ff2565114d0863fefb21fad733a2b220929",
             "content": "sha256:ec2f4be59f9072063b40142e7c35683d9f83379a399a5d8f86ff75d257d8aab6",
             "locator": {
-              "kind": "symbol",
-              "name": "ChangeWatch"
+              "end": 357,
+              "kind": "line_range",
+              "start": 350
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "bd70cad04d4d11b23090b53911254c046d080daf",
-            "content": "sha256:06ba9e497166b3ebc55f9b5c7db856ef36bb285fb7ceade25e2b9fc4882f9dd5",
+            "blob": "a1ee0ff2565114d0863fefb21fad733a2b220929",
+            "content": "sha256:748fdbd403a958cbed67a13f8168d899005028d5832af0ea0dba71896fb80734",
             "locator": {
-              "kind": "symbol",
-              "name": "ChangePacer"
+              "end": 681,
+              "kind": "line_range",
+              "start": 365
             }
           },
           "kind": "code"
@@ -241,7 +610,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "bd70cad04d4d11b23090b53911254c046d080daf",
+            "blob": "a1ee0ff2565114d0863fefb21fad733a2b220929",
             "content": "sha256:0a4dc25aa7478fb26addc2fbae9d53bcf4d39ff452b09c0442e4a648b6d4e29d",
             "locator": {
               "kind": "symbol",
@@ -332,7 +701,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2c0373c265618b820bcf5acdd0f43f477567c3f4",
+            "blob": "f1d9f2bdf6b5346afa468b367e7ed3fc0f3824c1",
             "content": "sha256:3a08851ee543ee9789179be4031f95e49748c0c359eaea0788a8b22a426a4209",
             "locator": {
               "kind": "symbol",
@@ -349,7 +718,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1d44f615bfc4501ef26607c59032d9f62b6744a3",
+            "blob": "715a8aa55d1508d8e94554a2e3a04dd7b0edcf23",
             "content": "sha256:95dbc1949c157a4444028c5488aebb0d40acbad37773f3bf3022ea859552c58d",
             "locator": {
               "kind": "symbol",
@@ -374,12 +743,12 @@
         },
         {
           "anchor": {
-            "blob": "1d44f615bfc4501ef26607c59032d9f62b6744a3",
+            "blob": "715a8aa55d1508d8e94554a2e3a04dd7b0edcf23",
             "content": "sha256:c6235aa994819787a4ebcf4ff4d2adbdd884eda20a29fd41a4577ecc4d315ba5",
             "locator": {
-              "end": 355,
+              "end": 346,
               "kind": "line_range",
-              "start": 355
+              "start": 346
             },
             "path": "mcp/src/agents_remember/cli/dashboard.py"
           },

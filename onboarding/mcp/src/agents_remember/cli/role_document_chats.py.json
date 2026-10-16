@@ -6,8 +6,9 @@
         "blob": "55ebe83d1d9bc7b363420e0887b3831b6f268132",
         "content": "sha256:f7c968787e1b958cceed458df4784ac3c3704147164999904730fd82b8f1c875",
         "locator": {
-          "kind": "symbol",
-          "name": "_records"
+          "end": 90,
+          "kind": "line_range",
+          "start": 57
         }
       },
       "id": "RLZ-2EZ0DF",
@@ -60,8 +61,9 @@
         "blob": "55ebe83d1d9bc7b363420e0887b3831b6f268132",
         "content": "sha256:a77458e9e828325f3fd044c17eea1c64be4e9babd2c4b3505f9654b7f6d99352",
         "locator": {
-          "kind": "symbol",
-          "name": "_readable_chat_record"
+          "end": 196,
+          "kind": "line_range",
+          "start": 188
         }
       },
       "id": "RLZ-RG2GA1",
@@ -78,8 +80,9 @@
         "blob": "55ebe83d1d9bc7b363420e0887b3831b6f268132",
         "content": "sha256:71d7984f08a8f56a3469b8515a5d0625002b3138876e6d81911404429339f5e2",
         "locator": {
-          "kind": "symbol",
-          "name": "_chat_record"
+          "end": 142,
+          "kind": "line_range",
+          "start": 117
         }
       },
       "id": "RLZ-X564ZP",

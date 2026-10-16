@@ -8,8 +8,7 @@
 
 The change-set bar of the DetailPanel task-document reader, extracted from `DetailPanel.tsx` by the
 260731-EFA-L8 split. `ChangeSetButton` is the per-document change-set control, `DocChangeSetBar` the
-compact bar rendered above the reader content, `LeafEntries` a leaf's own entries, and `leafIsLive` the
-one liveness predicate. A master gets the **series** net button; a leaf gets **committed** (always),
+compact bar rendered above the reader content, `LeafEntries` a leaf's own entries, and the inline entry-worktree existence check. A master gets the **series** net button; a leaf gets **committed** (always),
 **working** (only while its enclosure is live) and the **Intent review** (always — the live candidate
 while the enclosure is live, the leaf's recorded comparison once it is closed, `ICR-R12`).
 
@@ -27,8 +26,8 @@ brief word with the explanation in a closed disclosure ([`entryState.tsx`](entry
 
 ### Logic
 
-**`ChangeSetButton` performs its own change-set read and threads the published generation.** Its
-effect calls `leafChangeset`/`masterChangeset`/`taskChangeset` and stores the counters; for a master net
+**`ChangeSetButton` uses store-owned retained counters while revalidating and threads the published generation.** Its
+effect calls loadChangeSet(target) and stores the counters; for a master net
 it also stores the response's `generation` as `MasterNetPins` and opens the viewer with
 `{ ...target, generation }`, so the view and each file expansion read the listed generation rather than
 re-resolving the live tip (L13). The master read passes `includeLeaves: true`, and `LeafAttribution`
@@ -58,13 +57,7 @@ handler files `reviewProblemFromCause(cause)` so a refusal is never swallowed.
 deliberately **not** a `ChangeSetButton`: that control reads the committed change set (it caused a
 second identical committed request) and would show its line totals as the review's.
 
-**`DocChangeSetBar` branches on `kind` and builds the summary's invalidation facts.** `live` comes
-from `leafIsLive`. `facts` is `leafFacts(...)` — `JSON.stringify` of this leaf's liveness and its
-enclosure's `closeoutStatus`, `integrationStatus`, `cleanup` and `codeWorktreeExists` (found by
-`leafEnclosure`) — plus `#<generation>` from `useIntentEntryGeneration()`. The generation moves when
-the task detail is shown again or the reviewer refreshes (`data/intentEntryRevalidation.tsx`, the
-Architect's 16:27:28 ruling on L47-R1-F2). Only the summary is keyed on `facts`; the committed and
-working reads are not.
+`DocChangeSetBar` branches on entry.summary kind and uses all entry.worktrees for working availability. leafFacts serializes each bound enclosure’s closeout/integration/cleanup/existence facts with live and the revalidation generation; there is no store-wide enclosure/id join.
 
 ### Conventions
 
@@ -82,10 +75,10 @@ rendered state carries a `data-*` attribute so tests read state from the DOM.
 - **The entry reads no subject catalogue.** Choosing a subject and re-reading the comparison belong to
   the reviewer.
 - **Invalidation is leaf-scoped.** An unrelated workspace publication does not re-read the summary; this
-  leaf's own lifecycle facts, a re-show of the task detail and the reviewer's refresh do. A live push of
+  entry's bound worktree facts, a re-show of the task detail and the reviewer's refresh do. A live push of
   a first knowledge ingest while the same panel stays open is **not** delivered (ruling 16:27:28 records
   it as a possible later enhancement).
-- **`leafIsLive` is the one liveness definition** for the working button and the review's record.
+- **Entry-bound worktree existence is the liveness fact** for the working button and the review's record.
 - **The browser names no candidate and no dataset.** Targets carry repo/master/leaf only.
 - **Brief, never swallowed (ICR-R16).** A control shows one word; the owner's code, reason, offending
   input and next action are one click away, and nothing is invented where the owner published nothing.
@@ -113,13 +106,9 @@ Every anchor in a row occurs inside the range that row cites.
 - The module's own statement of which entries a master and a leaf get, and that the Intent review is its own component. [1]
 - The net's leaf attribution, rendered only when the answer carried a breakdown. [2]
 - The total withheld for an unrecorded range. [3]
-- The change-set control: its own counter read, the generation threaded into the viewer target, the unrecorded state, the refusal filed rather than swallowed, and the disclosure beside the button. [4]
 - The counter read's brief states. [5]
 - The explanation in a closed disclosure: the refusal sentence or the unrecorded sentence. [6]
 - **A leaf's entries: working while live, then the Intent review control (not a change-set button).** [7]
-- **The bar: the master/leaf branch, the one liveness predicate, and the leaf-scoped facts plus re-validation generation the summary is keyed on.** [8]
-- This leaf's lifecycle facts as one comparable value. [9]
-- **The one liveness predicate both live-dependent entries read.** [10]
 - The Intent review control and its summary read. [11]
 - The shared brief-state and disclosure helpers. [12]
 - The re-validation generation the facts carry. [13]
@@ -154,7 +143,7 @@ its change:
   at all; the changed-intent summary is read instead, for live and closed leaves alike, and its answer
   is likewise a label and never a gate.)*
 - **`LiveLeafEntries` became `LeafEntries`**, since it is no longer only the live leaf's set, and the
-  `live` prop it now takes is threaded from the bar's one `leafIsLive` predicate so the working button
+  `live` prop it now takes is threaded from the bar's entry-bound worktree existence check so the working button
   and the review's record cannot come to disagree about what "live" means.
 
 The change-set target carries no filesystem path in any branch: the browser still chooses no candidate,
@@ -169,9 +158,9 @@ the entry's catalogue read. The measured problem was that the global projection 
 workspace publication, so the entry re-read on unrelated tasks, and the refresh control was a second
 place to re-read the comparison.
 
-What replaces it: the entry's changed-intent summary is keyed on **this leaf's own lifecycle facts**
+What replaces it: the entry's changed-intent summary is keyed on **this entry's bound worktree facts**
 (`leafFacts`) plus a local re-validation generation that moves when the task detail is shown again,
 when the reviewer is left back to the entry and when the reviewer's own refresh runs (Architect ruling
-2026-09-28T16:27:28+02:00, no event system). The newest-read-wins guard survives in
+2026-09-28T16:27:28+02:00, no event system). The scoped late-answer guard remains in
 `useIntentReviewSummary`, so a previous leaf's late answer is dropped. The reviewer keeps its own
 "Refresh subjects" control.

@@ -6,8 +6,9 @@
         "blob": "df99298926b52f4a9c1f0a4de7d1fbc38f5aa2cb",
         "content": "sha256:46d8278496739fa54a36ce32e23a135f4e2f0bed64a44181dcf389077c8f9859",
         "locator": {
-          "kind": "symbol",
-          "name": "remarkReferenceMarkers"
+          "end": 48,
+          "kind": "line_range",
+          "start": 46
         }
       },
       "id": "RLZ-EXNFBV",

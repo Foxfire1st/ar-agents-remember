@@ -1,0 +1,116 @@
+{
+  "path": "dashboard/src/data/conditionalReads.ts",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "d64c2458cf4416a842ef1eff840bbf025ac0a5a9",
+        "content": "sha256:ec6b17d4b6a918923f7e5eaa7a6e4b544d11cc3c183d3fd6e64649c2f3c53e11",
+        "locator": {
+          "end": 47,
+          "kind": "line_range",
+          "start": 29
+        }
+      },
+      "id": "RLZ-52JCCC",
+      "invariant": "INV-74578B97",
+      "origin": {
+        "handoffEntry": "L168-CUR-INV-74578B97-C01-support",
+        "leaf": "260928-MIK-L168"
+      },
+      "rationale": "`ConditionalReads.load` shares a pending read only when its facts equal the request's facts; a different facts identity aborts the older read and starts its own, so an answer computed for older facts is never handed to a newer request.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "d64c2458cf4416a842ef1eff840bbf025ac0a5a9",
+        "content": "sha256:44d37fc3dc6ab84b9f00155301bafd0fff71fc92794f6ac1dcae8d92d4525c9d",
+        "locator": {
+          "end": 76,
+          "kind": "line_range",
+          "start": 61
+        }
+      },
+      "id": "RLZ-ZC9DFF",
+      "invariant": "INV-74578B97",
+      "origin": {
+        "handoffEntry": "L168-CUR-INV-74578B97-C01-support",
+        "leaf": "260928-MIK-L168"
+      },
+      "rationale": "In `read`, a superseded (aborted) read neither keeps nor relabels an answer; a 304 relabels the kept answer to the facts of the read that confirmed it; a 200 stores the answer with its facts.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "d64c2458cf4416a842ef1eff840bbf025ac0a5a9",
+        "content": "sha256:d1995211f0466e3747dfab76e15c7560a779a734a936b937f77fcdcdea410c4d",
+        "locator": {
+          "end": 27,
+          "kind": "line_range",
+          "start": 24
+        }
+      },
+      "id": "RLZ-ZTFRGJ",
+      "invariant": "INV-74578B97",
+      "origin": {
+        "handoffEntry": "L168-CUR-INV-74578B97-C01-support",
+        "leaf": "260928-MIK-L168"
+      },
+      "rationale": "`ConditionalReads.peek` returns a kept answer only for the facts it was read or revalidated for, so a retained answer from older facts is not shown for newer facts.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Same-facts sharing and bounded pending replacement.\n\nAnchor: `ConditionalReads.load`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d64c2458cf4416a842ef1eff840bbf025ac0a5a9",
+            "content": "sha256:ec6b17d4b6a918923f7e5eaa7a6e4b544d11cc3c183d3fd6e64649c2f3c53e11",
+            "locator": {
+              "end": 47,
+              "kind": "line_range",
+              "start": 29
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Retained values are facts-qualified.\n\nAnchor: `ConditionalReads.peek`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d64c2458cf4416a842ef1eff840bbf025ac0a5a9",
+            "content": "sha256:d1995211f0466e3747dfab76e15c7560a779a734a936b937f77fcdcdea410c4d",
+            "locator": {
+              "end": 27,
+              "kind": "line_range",
+              "start": 24
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Conditional validation and late-abort retention guards.\n\nAnchor: `ConditionalReads.read`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d64c2458cf4416a842ef1eff840bbf025ac0a5a9",
+            "content": "sha256:b3df157420b1e735c5cac196f2bd1eb55b577fa1bb53dadabff38266fbf2f3fd",
+            "locator": {
+              "end": 83,
+              "kind": "line_range",
+              "start": 49
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

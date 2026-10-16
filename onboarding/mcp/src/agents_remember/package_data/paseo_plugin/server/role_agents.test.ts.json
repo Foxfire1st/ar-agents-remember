@@ -1,0 +1,24 @@
+{
+  "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/role_agents.test.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Both history sizes, replacement identity, malformed input and absence.\n\nAnchor: unchanged role files reuse one parsed value at both history sizes; registration replaces it",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "01784929082c30f520d6d6fa80e7ad1e42bfc879",
+            "content": "sha256:20812505e4e5a43f22a7fda5e3b24ff603b8c57b4430c35e3fb915e1f162e388",
+            "locator": {
+              "end": 33,
+              "kind": "line_range",
+              "start": 8
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -7,7 +7,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9bed61ca73d766e293e06dc77a62f9c8282da047",
+            "blob": "abb3eb7808c7997d156b37d46e3829f824496872",
             "content": "sha256:4ec369040c46575201637cbfdc7308f0df7627fa6f3cb58076d76f50402acdea",
             "locator": {
               "kind": "symbol",
@@ -66,7 +66,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9bed61ca73d766e293e06dc77a62f9c8282da047",
+            "blob": "abb3eb7808c7997d156b37d46e3829f824496872",
             "content": "sha256:962a4d4459b521a48802a072556f03624ebf30e8d5995f31f6d9369077d0a73d",
             "locator": {
               "kind": "symbol",
@@ -98,6 +98,38 @@
             "locator": {
               "kind": "symbol",
               "name": "test_completed_leaf_written_by_another_build_stays_reachable_from_the_index"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "Child document stage owns both master and sprint frontier, with body/summary graph equality.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "abb3eb7808c7997d156b37d46e3829f824496872",
+            "content": "sha256:70e960d7545ac902d287b6eac1ea48ea17ada857f9775e34169725041b86d749",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_document_stage_decides_master_and_sprint_frontiers"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "Shared TaskEntry counts distinguish completed, planned/started and aborted rows.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "abb3eb7808c7997d156b37d46e3829f824496872",
+            "content": "sha256:7de2b6db3549abe5bb215ffecbf297efc1e9d23c4c412886743a223804262820",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_abandoned_and_retired_rows_are_left_out_of_the_figure_and_named"
             }
           },
           "kind": "test"

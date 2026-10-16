@@ -29,6 +29,6 @@
   "revision": 1,
   "schema": "ar-invariant/v1",
   "statement": "A task whose lifecycle never reported shows its document's status with the task page's dot and words; a lifecycle that reported speaks with the dashboard's state sign and its age; a lifecycle without a document that never reported says \"waiting\".",
-  "status": "accepted",
+  "status": "retired",
   "supersedes": []
 }

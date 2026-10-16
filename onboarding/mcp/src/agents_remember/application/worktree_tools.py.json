@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "6dc4f1b8b3367b70d63bc4ff2a3983ea2199a42d",
+        "blob": "f70e3d124e543009c5876c7472ccdb85120ff60c",
         "content": "sha256:cf58cc0256d90a4890876d33d0545cbeb4029c462716d4ae6b2fa17c35424e5a",
         "locator": {
           "kind": "symbol",
@@ -21,7 +21,7 @@
     },
     {
       "anchor": {
-        "blob": "6dc4f1b8b3367b70d63bc4ff2a3983ea2199a42d",
+        "blob": "f70e3d124e543009c5876c7472ccdb85120ff60c",
         "content": "sha256:438b89c6e0cc2297422d8e105e2d76877828e4f5288bf43a2f07e995c7b3c960",
         "locator": {
           "kind": "symbol",
@@ -347,6 +347,35 @@
             "locator": {
               "kind": "symbol",
               "name": "worktree_start_tool"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "26": {
+      "note": "Start/attach retain exact task authority without an ambient-session adoption or already-bound-session veto.\n\nAnchor: source responsibility",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f70e3d124e543009c5876c7472ccdb85120ff60c",
+            "content": "sha256:3fd7dc985e59bef427b4594a86c60921dccc4b6fa3874cb48c220075593be308",
+            "locator": {
+              "end": 277,
+              "kind": "line_range",
+              "start": 197
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f70e3d124e543009c5876c7472ccdb85120ff60c",
+            "content": "sha256:945b3f36f81498a17271812f1acc73d17ec0b4924c9852afe0f64647a2f19ab9",
+            "locator": {
+              "end": 304,
+              "kind": "line_range",
+              "start": 301
             }
           },
           "kind": "code"

@@ -2,29 +2,17 @@
   "path": "mcp/src/agents_remember/models/lifecycles",
   "references": {
     "1": {
-      "note": "Lifecycle response vocabularies and models are owned together.",
+      "note": "Native task stage/activity/eventAt is declared separately; the removed session response/state vocabulary is not an operative model in this route.",
       "targets": [
         {
           "anchor": {
-            "blob": "ff30578eff1d11b92f84732e4d4206ab67ebb366",
-            "content": "sha256:bc7ea17ba44e1badcdc204a07a38778a4a22c7bba61e96ccffab247036ee5670",
+            "blob": "cb7649c76f226f56141cd36720b382cea60352c7",
+            "content": "sha256:e345bcf52910f1d43fcff54700f85ea691a6b896120f54a78d4be96269c1b309",
             "locator": {
               "kind": "symbol",
-              "name": "LiveState"
+              "name": "TaskState"
             },
-            "path": "mcp/src/agents_remember/models/lifecycles/responses.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "ff30578eff1d11b92f84732e4d4206ab67ebb366",
-            "content": "sha256:782867d4b13e1c95aef1654d92f0bec55bb2067abaff8867e1a70e3710673517",
-            "locator": {
-              "kind": "symbol",
-              "name": "LifecycleResponse"
-            },
-            "path": "mcp/src/agents_remember/models/lifecycles/responses.py"
+            "path": "mcp/src/agents_remember/observer/projection.py"
           },
           "kind": "code"
         }

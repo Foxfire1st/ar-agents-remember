@@ -3,11 +3,12 @@
   "proves": [
     {
       "anchor": {
-        "blob": "980993c3786795469ff90168ede8d0058753965f",
+        "blob": "8c2b9f24d1ab504624a29f41aba6a73668f15b81",
         "content": "sha256:1033db1d98a5d76b7eab55db81804024709f1f86f4ea90b24100e8e61b273ab8",
         "locator": {
-          "kind": "symbol",
-          "name": "ToolEventRiverTests.test_unbound_server_writes_a_chat_without_a_role_with_its_harness"
+          "end": 241,
+          "kind": "line_range",
+          "start": 227
         }
       },
       "facet": "An unbound server writes a chat without a role with its harness.",
@@ -20,11 +21,12 @@
     },
     {
       "anchor": {
-        "blob": "980993c3786795469ff90168ede8d0058753965f",
+        "blob": "8c2b9f24d1ab504624a29f41aba6a73668f15b81",
         "content": "sha256:2582f568ae1f8d805a070d4630b7a62c08adeb7f9093145a12f91877cdb6ec6c",
         "locator": {
-          "kind": "symbol",
-          "name": "ToolEventRiverTests.test_failed_write_answers_as_written_and_next_events_carry_then_clear"
+          "end": 341,
+          "kind": "line_range",
+          "start": 323
         }
       },
       "facet": "A failed write answers as written; the count rides the next event and clears after success.",
@@ -37,11 +39,12 @@
     },
     {
       "anchor": {
-        "blob": "980993c3786795469ff90168ede8d0058753965f",
+        "blob": "8c2b9f24d1ab504624a29f41aba6a73668f15b81",
         "content": "sha256:d862490e8556a303d5d5a2812d12b3f9aeea4a33d9592c4cf47d152659e42b5d",
         "locator": {
-          "kind": "symbol",
-          "name": "ToolEventRiverTests.test_id_addressed_message_records_the_receipt_role"
+          "end": 665,
+          "kind": "line_range",
+          "start": 649
         }
       },
       "facet": "Id-addressed messages carry the receipt role.",
@@ -54,7 +57,7 @@
     },
     {
       "anchor": {
-        "blob": "980993c3786795469ff90168ede8d0058753965f",
+        "blob": "8c2b9f24d1ab504624a29f41aba6a73668f15b81",
         "content": "sha256:640814848c4ab4f6f34fbbf221a1e0f6334699c5317fc56b6602f0eccf69e59b",
         "locator": {
           "kind": "symbol",
@@ -71,7 +74,7 @@
     },
     {
       "anchor": {
-        "blob": "980993c3786795469ff90168ede8d0058753965f",
+        "blob": "8c2b9f24d1ab504624a29f41aba6a73668f15b81",
         "content": "sha256:d862490e8556a303d5d5a2812d12b3f9aeea4a33d9592c4cf47d152659e42b5d",
         "locator": {
           "kind": "symbol",
@@ -88,11 +91,12 @@
     },
     {
       "anchor": {
-        "blob": "980993c3786795469ff90168ede8d0058753965f",
+        "blob": "8c2b9f24d1ab504624a29f41aba6a73668f15b81",
         "content": "sha256:b148eec9c7669bcfe73630bf5090f4fc554241d98b5a2893eb5947f12c96017a",
         "locator": {
-          "kind": "symbol",
-          "name": "ToolEventRiverTests.test_caller_is_read_once_at_start"
+          "end": 205,
+          "kind": "line_range",
+          "start": 190
         }
       },
       "facet": "The caller snapshot is read once at start.",
@@ -105,24 +109,7 @@
     },
     {
       "anchor": {
-        "blob": "980993c3786795469ff90168ede8d0058753965f",
-        "content": "sha256:e4850aa155b3c6169bdb90f66bec0726c646a3ce4ed84330388a4b8c65309a52",
-        "locator": {
-          "kind": "symbol",
-          "name": "ToolEventRiverTests.test_active_lifecycle_writes_its_event_as_today_and_no_second_one"
-        }
-      },
-      "facet": "Lifecycle-owned calls write once with no second river row.",
-      "id": "PRF-6E54VM",
-      "invariant": "INV-P661EM",
-      "origin": {
-        "handoffEntry": "L114-W03",
-        "leaf": "260928-MIK-L114"
-      }
-    },
-    {
-      "anchor": {
-        "blob": "980993c3786795469ff90168ede8d0058753965f",
+        "blob": "8c2b9f24d1ab504624a29f41aba6a73668f15b81",
         "content": "sha256:3b40582d35a60955e28b352d35426f7a880373c2913862ff8b6ef37764adc678",
         "locator": {
           "kind": "symbol",
@@ -139,7 +126,7 @@
     },
     {
       "anchor": {
-        "blob": "980993c3786795469ff90168ede8d0058753965f",
+        "blob": "8c2b9f24d1ab504624a29f41aba6a73668f15b81",
         "content": "sha256:f6684a08ffb03c8742d05c5ad4cf5d2fbffcb3f53ea8aacd3abe75be4d9e145c",
         "locator": {
           "kind": "symbol",
@@ -156,7 +143,7 @@
     },
     {
       "anchor": {
-        "blob": "980993c3786795469ff90168ede8d0058753965f",
+        "blob": "8c2b9f24d1ab504624a29f41aba6a73668f15b81",
         "content": "sha256:9bca301d684d2122e3c3d00b3f8f42ac7f3e37b66e8d111d4c48050178e8121a",
         "locator": {
           "kind": "symbol",
@@ -173,7 +160,7 @@
     },
     {
       "anchor": {
-        "blob": "980993c3786795469ff90168ede8d0058753965f",
+        "blob": "8c2b9f24d1ab504624a29f41aba6a73668f15b81",
         "content": "sha256:c9f336e830d4b873dacbb3becdac0178353e60a4cbbb98139150349062d1da11",
         "locator": {
           "kind": "symbol",
@@ -190,11 +177,12 @@
     },
     {
       "anchor": {
-        "blob": "980993c3786795469ff90168ede8d0058753965f",
+        "blob": "8c2b9f24d1ab504624a29f41aba6a73668f15b81",
         "content": "sha256:6e172fdfb6a2c73e163ae906867c4fa21da6de4f270979d98d9bc6795573b77b",
         "locator": {
-          "kind": "symbol",
-          "name": "ToolEventRiverTests.test_bound_task_title_is_read_once_at_snapshot"
+          "end": 225,
+          "kind": "line_range",
+          "start": 207
         }
       },
       "facet": "The bound task title is read once at snapshot.",
@@ -207,7 +195,7 @@
     },
     {
       "anchor": {
-        "blob": "980993c3786795469ff90168ede8d0058753965f",
+        "blob": "8c2b9f24d1ab504624a29f41aba6a73668f15b81",
         "content": "sha256:9594a9f4caa5126a7c5f3ebc3112f5be71d9d9e9b062f5a11505a385f899abfb",
         "locator": {
           "kind": "symbol",
@@ -224,7 +212,7 @@
     },
     {
       "anchor": {
-        "blob": "980993c3786795469ff90168ede8d0058753965f",
+        "blob": "8c2b9f24d1ab504624a29f41aba6a73668f15b81",
         "content": "sha256:7ae9b0d0ea24a2ce3652ee70e7802ec39d3cb2fa5a20f59eebd945b5d66aeabd",
         "locator": {
           "kind": "symbol",
@@ -241,11 +229,29 @@
     },
     {
       "anchor": {
-        "blob": "980993c3786795469ff90168ede8d0058753965f",
-        "content": "sha256:bb4060d9e42c990bd6881914820dd9ff3a0b7cc3c5e82b0c291cb6689f57e5be",
+        "blob": "8c2b9f24d1ab504624a29f41aba6a73668f15b81",
+        "content": "sha256:bc8772c58903dd4cbba4043073e5d2b92ca5fcb1629119fbc4f7c798bc5f677c",
         "locator": {
           "kind": "symbol",
           "name": "ToolEventRiverTests.test_bound_first_call_writes_one_workspace_event_with_caller_and_facts"
+        }
+      },
+      "facet": "One workspace tool.completed event retains the exact delivered-answer token count recorded on the log line, without a lifecycle/session identifier.",
+      "id": "PRF-EK44A9",
+      "invariant": "INV-WZR89C",
+      "origin": {
+        "handoffEntry": "L168-CUR-INV-WZR89C-current-proof-definition",
+        "leaf": "260928-MIK-L168"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "8c2b9f24d1ab504624a29f41aba6a73668f15b81",
+        "content": "sha256:bc8772c58903dd4cbba4043073e5d2b92ca5fcb1629119fbc4f7c798bc5f677c",
+        "locator": {
+          "end": 188,
+          "kind": "line_range",
+          "start": 141
         }
       },
       "facet": "A bound first call writes exactly one workspace event carrying caller and facts.",
@@ -258,7 +264,7 @@
     },
     {
       "anchor": {
-        "blob": "980993c3786795469ff90168ede8d0058753965f",
+        "blob": "8c2b9f24d1ab504624a29f41aba6a73668f15b81",
         "content": "sha256:f7abfa7cd0f520295ff496c96bfba577a19478ae2ba99efaaa5fad590b621c8f",
         "locator": {
           "kind": "symbol",
@@ -275,7 +281,7 @@
     },
     {
       "anchor": {
-        "blob": "980993c3786795469ff90168ede8d0058753965f",
+        "blob": "8c2b9f24d1ab504624a29f41aba6a73668f15b81",
         "content": "sha256:9bca301d684d2122e3c3d00b3f8f42ac7f3e37b66e8d111d4c48050178e8121a",
         "locator": {
           "kind": "symbol",
@@ -292,7 +298,7 @@
     },
     {
       "anchor": {
-        "blob": "980993c3786795469ff90168ede8d0058753965f",
+        "blob": "8c2b9f24d1ab504624a29f41aba6a73668f15b81",
         "content": "sha256:f7abfa7cd0f520295ff496c96bfba577a19478ae2ba99efaaa5fad590b621c8f",
         "locator": {
           "kind": "symbol",
@@ -309,24 +315,7 @@
     },
     {
       "anchor": {
-        "blob": "980993c3786795469ff90168ede8d0058753965f",
-        "content": "sha256:bb4060d9e42c990bd6881914820dd9ff3a0b7cc3c5e82b0c291cb6689f57e5be",
-        "locator": {
-          "kind": "symbol",
-          "name": "ToolEventRiverTests.test_bound_first_call_writes_one_workspace_event_with_caller_and_facts"
-        }
-      },
-      "facet": "Non-lifecycle calls take the workspace branch.",
-      "id": "PRF-FSFY6F",
-      "invariant": "INV-P661EM",
-      "origin": {
-        "handoffEntry": "L114-W03",
-        "leaf": "260928-MIK-L114"
-      }
-    },
-    {
-      "anchor": {
-        "blob": "980993c3786795469ff90168ede8d0058753965f",
+        "blob": "8c2b9f24d1ab504624a29f41aba6a73668f15b81",
         "content": "sha256:f6684a08ffb03c8742d05c5ad4cf5d2fbffcb3f53ea8aacd3abe75be4d9e145c",
         "locator": {
           "kind": "symbol",
@@ -343,7 +332,7 @@
     },
     {
       "anchor": {
-        "blob": "980993c3786795469ff90168ede8d0058753965f",
+        "blob": "8c2b9f24d1ab504624a29f41aba6a73668f15b81",
         "content": "sha256:1034c181756b8a89a1d2d77d218093ab5672a27fba8d6a87832e47cc2de6fb4f",
         "locator": {
           "kind": "symbol",
@@ -360,11 +349,12 @@
     },
     {
       "anchor": {
-        "blob": "980993c3786795469ff90168ede8d0058753965f",
+        "blob": "8c2b9f24d1ab504624a29f41aba6a73668f15b81",
         "content": "sha256:f7abfa7cd0f520295ff496c96bfba577a19478ae2ba99efaaa5fad590b621c8f",
         "locator": {
-          "kind": "symbol",
-          "name": "ToolEventRiverTests.test_connected_stream_changes_no_file_and_names_the_last_feed"
+          "end": 539,
+          "kind": "line_range",
+          "start": 465
         }
       },
       "facet": "The stream names the last feed without writing.",
@@ -377,11 +367,12 @@
     },
     {
       "anchor": {
-        "blob": "980993c3786795469ff90168ede8d0058753965f",
+        "blob": "8c2b9f24d1ab504624a29f41aba6a73668f15b81",
         "content": "sha256:e0a6d350d25a5e0aa817044d618973969cdcba18a306fbac556304bc53b4163e",
         "locator": {
-          "kind": "symbol",
-          "name": "ToolEventRiverTests.test_no_argument_answer_or_message_text_reaches_an_event"
+          "end": 273,
+          "kind": "line_range",
+          "start": 249
         }
       },
       "facet": "No argument, answer or message text reaches an event.",
@@ -394,7 +385,7 @@
     },
     {
       "anchor": {
-        "blob": "980993c3786795469ff90168ede8d0058753965f",
+        "blob": "8c2b9f24d1ab504624a29f41aba6a73668f15b81",
         "content": "sha256:8632d0d3002f548527c91187e5e7aaaf4eeed8c57b491209427027eb6cf92037",
         "locator": {
           "kind": "symbol",
@@ -411,7 +402,7 @@
     },
     {
       "anchor": {
-        "blob": "980993c3786795469ff90168ede8d0058753965f",
+        "blob": "8c2b9f24d1ab504624a29f41aba6a73668f15b81",
         "content": "sha256:cd014c75fd15d4bb527c0738f5fb29ec003db0c068444e6db94d19924a41765e",
         "locator": {
           "kind": "symbol",
@@ -482,12 +473,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5aaa934052ba121b4f0be7a1c1fb62a335ff3319",
+            "blob": "8c2b9f24d1ab504624a29f41aba6a73668f15b81",
             "content": "sha256:2d53ca1be7dfe56573e74916179d204e2cb78e4b93d1a89d4de1a050cc878dcf",
             "locator": {
-              "end": 678,
+              "end": 647,
               "kind": "line_range",
-              "start": 649
+              "start": 618
             }
           },
           "kind": "test"

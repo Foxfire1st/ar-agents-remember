@@ -10,7 +10,7 @@ Pure mapping of enclosure action availability and attention dismissals into attr
 
 ## Code Commentary
 
-An ordinary action needs a target and a matching enabled precomputed enclosure action: missing target, unknown target, absent action and disabled action stay distinct. Acceptance returns 202 with attributed intent but no product mutation. Dismissal requires a nonblank itemId and a lifecycle target except for the repo-level actionable-drift signal. The evaluator returns a DismissalIntent; the router owns its durable write. Actor provenance is typed and dashboard source attribution is set server-side. These remaining boundaries do not revive the removed gate UI.
+Ordinary actions need a target and matching enabled precomputed enclosure action; missing/unknown target, absent action and disabled action remain distinct. Lookup includes unbound and task-bound worktrees. Acceptance is attributed 202 intent, not mutation. Dismissal needs nonblank itemId, an actually published item and exact matching kind; unknown item is 404 and kind mismatch 400. The returned DismissalIntent captures the published actionable fingerprint. Lifecycle-target exemption rules are removed; actor and dashboard provenance remain explicit. The router owns persistence and its failure.
 
 ## Evidence boundary
 
@@ -22,5 +22,4 @@ This is current-source interpretation of the A9 candidate, not a new test result
 - [2]
 - [3]
 - [5]
-- [6]
-
+- Dismiss actions bypass target lookup for every published attention kind, require a nonempty itemId and an exactly matching published kind, and return HTTP 202 plus a DismissalIntent carrying the published actionable fingerprint. Missing itemId yields 400, unknown item yields 404 and kind mismatch yields 400. Non-dismiss actions require a target (400 if absent), a known target (404 otherwise) and a published enabled action (409 when absent/disabled); enabled actions return 202. There is no actionable-drift-only missing-target exemption. [6]

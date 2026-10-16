@@ -34,7 +34,7 @@
         },
         {
           "anchor": {
-            "blob": "8c5f7681dcafb9d4dd5b7ff4e210297999ca4fcc",
+            "blob": "e87c7782c9414ddd44713084a9a37d1b860749ab",
             "content": "sha256:f21d8eb560fed0eee217854d3ff81ab2adfb0c8f56cd97417016d5f8cb0d1806",
             "locator": {
               "end": 3,
@@ -47,7 +47,7 @@
         },
         {
           "anchor": {
-            "blob": "8c5f7681dcafb9d4dd5b7ff4e210297999ca4fcc",
+            "blob": "e87c7782c9414ddd44713084a9a37d1b860749ab",
             "content": "sha256:87d9afb339b8148bd37f0e4ad0ab30a715763943d6df7e1aa4ffe338220f0d18",
             "locator": {
               "end": 53,
@@ -122,7 +122,7 @@
         },
         {
           "anchor": {
-            "blob": "0ff368dfb355b387d922b283da2266790d5c1aa8",
+            "blob": "1cd6a799aed038536e2536abe036b5244179c48f",
             "content": "sha256:6f0551e6feea6c5ac5293a4de3eb72fdfe92c5864c12eb7f96bba1c5da212696",
             "locator": {
               "kind": "symbol",
@@ -156,12 +156,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7d1876a2998158cdcdd603f7e0dcd547eb99c4c5",
+            "blob": "8774e82c7f7a93dda014fdb8b987e2391fd21fd1",
             "content": "sha256:46894d777463298a1a95031da8c618c203b9bf1480eda1c328419e41a1166d1d",
             "locator": {
-              "end": 302,
+              "end": 274,
               "kind": "line_range",
-              "start": 273
+              "start": 245
             },
             "path": "dashboard/src/types/projection.ts"
           },
@@ -265,12 +265,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "01fba3cb6e8f87f6cb5855729b1ff805ef49457e",
+            "blob": "b4f749cf2dfc7341eb4fd7dfe8071e85037056de",
             "content": "sha256:c1fda8ac10daf4bfeb28f1a9a5162bdf98c3e127b6f7114bdb43075d05e87938",
             "locator": {
-              "end": 387,
+              "end": 379,
               "kind": "line_range",
-              "start": 387
+              "start": 379
             },
             "path": "dashboard/src/cockpit/Cockpit.tsx"
           },
@@ -323,7 +323,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "316629d0c8fb07af90b3b3526997da60f2a46898",
+            "blob": "cb170808c1e7ad3aa75e0bfd0860f2206b2291c8",
             "content": "sha256:78a2511b6bd78a873823e850522c8de72b55eb97adc68077bed4883b68d1ea72",
             "locator": {
               "end": 4,
@@ -1082,12 +1082,12 @@
         },
         {
           "anchor": {
-            "blob": "072e0a3e6d9a0f3bcc8a2e0a2257f1618d41c10f",
+            "blob": "27a538af0bc1ef798d4b4413fbd4b8b0acf7436a",
             "content": "sha256:ddf496f5974ca1e88639b14b88f629c7c2d2e8ca40bb642f3713d6cb0e2ac01a",
             "locator": {
-              "end": 603,
+              "end": 509,
               "kind": "line_range",
-              "start": 588
+              "start": 494
             },
             "path": "mcp/test_support/agents_remember_test_support/code_quality/projection_types.py"
           },
@@ -1347,12 +1347,144 @@
         }
       ]
     },
+    "65": {
+      "note": "Authored stage wins over host observation; only started tasks receive bound contributor activity and eventAt.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9e4b2543510affa9e5cc0d4f7e4ee8b261894051",
+            "content": "sha256:348ca25847f5af1de648007ac662ec749f8e0b70d74d88d9bdf446f78299339e",
+            "locator": {
+              "kind": "symbol",
+              "name": "task_state"
+            },
+            "path": "mcp/src/agents_remember/observer/task_entries.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "66": {
+      "note": "Declared task sources become one entry forest with worktree binding kept separate from task admission.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9e4b2543510affa9e5cc0d4f7e4ee8b261894051",
+            "content": "sha256:b925dcd46887d9d1f145bcfbf499a5ead0e8ae231c2927f6bb436051d0c3534b",
+            "locator": {
+              "kind": "symbol",
+              "name": "build_task_entries"
+            },
+            "path": "mcp/src/agents_remember/observer/task_entries.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "67": {
+      "note": "Task-status words consume served activity/stage, while the shared display clock formats event age rather than deciding task state.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "17da14e723222a8d50b4ed6f0595390ab1fe1f6a",
+            "content": "sha256:bec535690b5faf1601fe89c5a7f5d82293bac62ca9b92f69bc74eb4b140f1f54",
+            "locator": {
+              "kind": "symbol",
+              "name": "TaskStatusWord"
+            },
+            "path": "dashboard/src/panels/detail-panel/pageParts.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "17da14e723222a8d50b4ed6f0595390ab1fe1f6a",
+            "content": "sha256:73f45554796ee15769aee751c8a9f37a53c8aecd7cd5bd6b09a933b2b36ab464",
+            "locator": {
+              "end": 154,
+              "kind": "line_range",
+              "start": 124
+            },
+            "path": "dashboard/src/panels/detail-panel/pageParts.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "68": {
+      "note": "Retained body responses are keyed by the revision actually returned, not the requested revision.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cb56539089a61b868c10348e34bfac4506eac81b",
+            "content": "sha256:57960419e280e7f91b3aacaa56bbbf5946052af1a838ce6d58cab4261c9c92de",
+            "locator": {
+              "kind": "symbol",
+              "name": "load"
+            },
+            "path": "dashboard/src/data/taskDocuments.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "69": {
+      "note": "Conditional reads retain only admitted successful bytes and guard abort/identity before publishing a response.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d64c2458cf4416a842ef1eff840bbf025ac0a5a9",
+            "content": "sha256:b3df157420b1e735c5cac196f2bd1eb55b577fa1bb53dadabff38266fbf2f3fd",
+            "locator": {
+              "kind": "symbol",
+              "name": "read"
+            },
+            "path": "dashboard/src/data/conditionalReads.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
     "7": {
       "note": "State and authority architecture.\n\nAnchor: `# dashboard/src/data/ — Cockpit State And Authority Overview`",
       "targets": [
         {
           "kind": "unresolved",
           "text": "onboarding/dashboard/src/data/overview.md:1-936"
+        }
+      ]
+    },
+    "70": {
+      "note": "Task fixtures copy sampled identity/content fields while explicitly choosing planned stage and empty collections/count defaults.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a863e49a83213f748fa2993ef0953d7e0f2362a4",
+            "content": "sha256:f6b5bf5a981ee7a6120113585214555db8fbb1e14381b488209bca7a7fddd52a",
+            "locator": {
+              "kind": "symbol",
+              "name": "BASE_TASK_ENTRY"
+            },
+            "path": "dashboard/src/test/fixtures/wire.ts"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "71": {
+      "note": "Topology maps the bound task through shared status presentation; an unbound enclosure is idle.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3eb18c18613cf970752953563d62d26763e6d251",
+            "content": "sha256:d6c061b2bf9f32b160e796212e1d8d724a8d4a57d15d7f18803d71dc3c1d3caa",
+            "locator": {
+              "kind": "symbol",
+              "name": "worktreeStatus"
+            },
+            "path": "dashboard/src/topology/model.ts"
+          },
+          "kind": "code"
         }
       ]
     },

@@ -8,8 +8,8 @@
   },
   "applicability": "Local expansion/own-view state of a selected sprint/master/task document reader.",
   "conditions": [
-    "A different docIdentity starts with the objective clipped, note/row disclosures closed and the main page selected.",
-    "Same-document refresh preserves the open state."
+    "Selecting a different qualified TaskEntry.key (the repository/path document key) remounts TaskPage: the objective starts clipped, note/row disclosures closed and the main page selected.",
+    "A refresh of the same qualified entry key preserves open reader state; a new body object or body revision alone is not a new-document reset boundary."
   ],
   "exclusions": [
     "Resetting the panel scroll position on document navigation (separate deferred mark).",
@@ -27,7 +27,7 @@
     "leaf": "260928-MIK-L127",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-invariant/v1",
   "statement": "What a reader opened on a task page belongs to that document: the next document selected starts with its objective held, its note lines closed, its rows closed and its page instead of a view of its own, while the same document keeps what is open when its data arrive again.",
   "status": "proposed",

@@ -35,6 +35,66 @@
         }
       ]
     },
+    "11": {
+      "note": "Eligible large Markdown uses shared retained syntax, clones before later transforms, and opts out for short text or supplied component overrides.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1a65bd4444779518a555e2e38d8ca30fa0df9f3a",
+            "content": "sha256:ab79e1ea58eb045f61ecb41bd5878c890eebfe71e4cf089b04064a8fa96cd76f",
+            "locator": {
+              "kind": "symbol",
+              "name": "markdownPlugins"
+            },
+            "path": "dashboard/src/grammar/Markdown.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "82fc4e9dae168f5119b5e5dd8419105da6bcaadf",
+            "content": "sha256:da774a245419a63766bf3b9c4dd983187302098d572192e19467c01ca9c90f7c",
+            "locator": {
+              "kind": "symbol",
+              "name": "remarkCachedParse"
+            },
+            "path": "dashboard/src/grammar/markdownParseCache.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1a65bd4444779518a555e2e38d8ca30fa0df9f3a",
+            "content": "sha256:fdf7bb4dfed79550be128183d2031dc6c19d41941539a31bc4c621cf421a9f8d",
+            "locator": {
+              "end": 205,
+              "kind": "line_range",
+              "start": 170
+            },
+            "path": "dashboard/src/grammar/Markdown.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "Cache assertion source checks parse-once across view remounts, transform isolation and the returned view's fresh requirement callback, not execution acceptance.\n\nAnchor: \"retained Markdown syntax\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "654f7d064beee420b8cdfcf2743407f4cf38da47",
+            "content": "sha256:18a1425bd81821d8837d5d7ff3ddb46c60ae159b550192be0c56520e868de4dd",
+            "locator": {
+              "end": 91,
+              "kind": "line_range",
+              "start": 17
+            },
+            "path": "dashboard/src/grammar/Markdown.cache.test.tsx"
+          },
+          "kind": "test"
+        }
+      ]
+    },
     "2": {
       "note": "The React Aria condition reconciliation (data-hovered/-focused).\n\nAnchor: `[data-hovered]`",
       "targets": [
@@ -88,16 +148,39 @@
       ]
     },
     "6": {
-      "note": "The six lifecycle states `Dot`'s variant vocabulary must cover, and the suite that asserts the two lists agree in both directions.\n\nAnchor: `export type State`; `const ALL_VARIANTS`",
+      "note": "Dot covers the queue's attention severities, with a recipe-derived vocabulary, typed glyph table and resting-appearance assertions; not the removed lifecycle-state vocabulary.",
       "targets": [
         {
           "anchor": {
-            "blob": "c398ac1326fc5cb9eba54ae0ba6cab40c3650138",
-            "content": "sha256:9d9b036ca7b758530fc951f101646842785d8c93b5d47ba9ae79b6d724630fc7",
+            "blob": "ad18738b0d781e04a5a6ed715ccbd1f67f02b34b",
+            "content": "sha256:ab0482c579d3c4f2bc618bd18acc0d0aa39a46ef3e0321030d5e58d36a636d04",
             "locator": {
-              "end": 15,
-              "kind": "line_range",
-              "start": 15
+              "kind": "symbol",
+              "name": "DOT_VARIANTS"
+            },
+            "path": "dashboard/src/grammar/Dot.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ad18738b0d781e04a5a6ed715ccbd1f67f02b34b",
+            "content": "sha256:01577f610bf204daad32aa1dd7d3206467f6999978da359472222e63ee6794b1",
+            "locator": {
+              "kind": "symbol",
+              "name": "DOT_GLYPHS"
+            },
+            "path": "dashboard/src/grammar/Dot.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8774e82c7f7a93dda014fdb8b987e2391fd21fd1",
+            "content": "sha256:dd55d08ef804af44cbb330442d1401ec6e37afd5e55b9b8eb9969cf751223fed",
+            "locator": {
+              "kind": "symbol",
+              "name": "ATTENTION_SEVERITIES"
             },
             "path": "dashboard/src/types/projection.ts"
           },
@@ -105,12 +188,12 @@
         },
         {
           "anchor": {
-            "blob": "bc0f3d621d5d0b47243a45338ea8a76800018de4",
-            "content": "sha256:05564ae2982b10ba2b48f196392042f06683b33b1b072ebf9f9d16319de85207",
+            "blob": "abe657a609e6b8169b65273494d0e5dab54df810",
+            "content": "sha256:5268a5a44830d4ccc8b8f882aee8f2b01688a8f67faf6794e4aeec6f9426d3e2",
             "locator": {
-              "end": 17,
+              "end": 69,
               "kind": "line_range",
-              "start": 17
+              "start": 39
             },
             "path": "dashboard/src/grammar/Dot.test.tsx"
           },
@@ -119,15 +202,27 @@
       ]
     },
     "7": {
-      "note": "The OTHER state-to-visual table — a separate, total `Record<State, ConstelStatus>` with its own `UNCLASSIFIED_STATUS`; no import in either direction.",
+      "note": "Topology's distinct current native-entry-to-tone mapping does not reinstate its former State table or couple its vocabulary to Dot.",
       "targets": [
         {
           "anchor": {
-            "blob": "59f64541870e7ff5dc2349ca590ec159703d74d1",
-            "content": "sha256:94db2618aaf24dd20956df08690ad730be78d11b5a801a1710f1f094ab67bf65",
+            "blob": "3eb18c18613cf970752953563d62d26763e6d251",
+            "content": "sha256:6ee5c46f86daa7f42b360c05299e3adfcf42551c5195c6410e87801a5b512907",
             "locator": {
               "kind": "symbol",
-              "name": "UNCLASSIFIED_STATUS"
+              "name": "CONSTEL_STATUSES"
+            },
+            "path": "dashboard/src/topology/model.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3eb18c18613cf970752953563d62d26763e6d251",
+            "content": "sha256:d6c061b2bf9f32b160e796212e1d8d724a8d4a57d15d7f18803d71dc3c1d3caa",
+            "locator": {
+              "kind": "symbol",
+              "name": "worktreeStatus"
             },
             "path": "dashboard/src/topology/model.ts"
           },
@@ -136,16 +231,42 @@
       ]
     },
     "8": {
-      "note": "The shared global `pulse` / `pulseSlow` keyframes and the unlayered `html[data-effects=\"off\"]` freeze the dot's motion rules depend on.\n\nAnchor: `@keyframes pulse {`",
+      "note": "Alarm Dot uses pulse with reduced-motion suppression; shared CSS defines that pulse and the effects-off freeze, not a current awaiting-developer Dot animation.\n\nAnchor: `alarm`; `@keyframes pulse`; \"html[data-effects=\"off\"]\"",
       "targets": [
         {
           "anchor": {
-            "blob": "319b14c211d7a499f34bc89014be9d0a17ca8dea",
-            "content": "sha256:7a5cd245db969b10f90c184c0da06ed1cafed71f7318e8ec7203cf1d4e121ac5",
+            "blob": "ad18738b0d781e04a5a6ed715ccbd1f67f02b34b",
+            "content": "sha256:a04269242455bbc287cc381faa1644ed47a02980e3c4d0eba3cad2e49792f9fa",
             "locator": {
-              "end": 57,
+              "end": 29,
               "kind": "line_range",
-              "start": 57
+              "start": 25
+            },
+            "path": "dashboard/src/grammar/Dot.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "319b14c211d7a499f34bc89014be9d0a17ca8dea",
+            "content": "sha256:c35337d62d2f2a26aabe815e3415684960915a266cba82e4bb7a9652d35d357e",
+            "locator": {
+              "end": 61,
+              "kind": "line_range",
+              "start": 55
+            },
+            "path": "dashboard/src/index.css"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "319b14c211d7a499f34bc89014be9d0a17ca8dea",
+            "content": "sha256:ee651322f63e29055b498b204265d269034c027569f05df9d14168819512900d",
+            "locator": {
+              "end": 96,
+              "kind": "line_range",
+              "start": 88
             },
             "path": "dashboard/src/index.css"
           },
@@ -154,16 +275,17 @@
       ]
     },
     "9": {
-      "note": "The attention layer opens over the task tree in the same column; a handoff state and warning severity retain distinct glyphs despite shared amber.",
+      "note": "The task column's pivot header mounts AttentionQueue; a severity mark is not an old handoff/lifecycle state mark.",
       "targets": [
         {
           "anchor": {
-            "blob": "f2a0c19687a17a6ccf7f4639369c323139256b91",
-            "content": "sha256:403ce849f016995d80f9a15045834c90e5044963798787138719f11ab461e9b6",
+            "blob": "e619eda0f192808b9ff9a988c7cffb3ebfdbcd04",
+            "content": "sha256:48a973522b2f73edcd783ec2c921d240158eedd9a0a35779e1884ed0090b8092",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "TaskPivotBar"
             },
-            "path": "dashboard/src/cockpit/Cockpit.tsx"
+            "path": "dashboard/src/panels/lifecycle-list/columnPresentation.tsx"
           },
           "kind": "code"
         }

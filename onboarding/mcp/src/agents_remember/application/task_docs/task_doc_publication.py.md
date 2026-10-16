@@ -12,7 +12,7 @@ Own exact task-document source-CAS, task-first publication and the repository ta
 
 ### Logic
 
-`TaskDocPublication` carries original/candidate documents, exact JSON/Markdown source snapshots and an optional publisher. The transaction builder checks zero-or-one graph cardinality and derives the complete before/after projection-scope union. `run_task_doc_call` takes `kernel.file_lock.exclusive_file_lock` on `coordination_root/tasks/<repository>` before the task-doc dispatcher reads the authoritative edit source or prepares its candidate. `lock_path_for` names the sibling `<repository>.lock`; the central `publish_task_doc_transaction_and_refresh` re-enters that same lock, with no second task-root lock/order.
+`TaskDocPublication` carries original/candidate documents, exact JSON/Markdown source snapshots and an optional publisher. Its prepared documents retain each owning task-root/document pair, so a synchronized commanding sprint is not rewritten under the leaf root; graph cardinality unwraps those pairs and write_task_doc_batch publishes the exact batch. The transaction builder checks zero-or-one graph cardinality and derives the complete before/after projection-scope union. `run_task_doc_call` takes `kernel.file_lock.exclusive_file_lock` on `coordination_root/tasks/<repository>` before the task-doc dispatcher reads the authoritative edit source or prepares its candidate. `lock_path_for` names the sibling `<repository>.lock`; the central `publish_task_doc_transaction_and_refresh` re-enters that same lock, with no second task-root lock/order.
 
 The central wrapper sets the call-scoped `_publication_active` marker and resets its token in `finally`. A nested task-doc entry answers `task-document-publication-in-progress` before its callback runs; a direct nested central call raises the named `TaskDocError` before its publisher runs. Re-entrant locking therefore does not admit a second successful publication inside the active interval.
 
@@ -82,3 +82,8 @@ The source file itself is the current evidence for this file-specific contract.
 No meaningful cross-repository boundary is owned by this file.
 
 - The waiting second-thread writer prepares after failed-batch rollback and its question remains, for append and replacement cases. [10]
+
+## Current source evidence
+
+
+- Prepared document/root pairs preserve each real write target through the shared exact-source publication. [11]

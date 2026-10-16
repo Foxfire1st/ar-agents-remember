@@ -1,6 +1,24 @@
 {
   "path": "mcp/src/agents_remember/observer/projection.py",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "cb7649c76f226f56141cd36720b382cea60352c7",
+        "content": "sha256:41031c00797f98df98a1fff26b2e1012b1b57ec230be5686b88ede32065280fc",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-6RPNQ9",
+      "invariant": "INV-MGGEBY",
+      "origin": {
+        "handoffEntry": "L168-W-R167-13-14",
+        "leaf": "260928-MIK-L168"
+      },
+      "rationale": "The wire schema defines the sole task entry/count surface and omits retired duplicate collections.",
+      "role": "primary-authority"
+    }
+  ],
   "references": {
     "1": {
       "note": "Retained task-document projection models carry canonical task references; pickup and expectation analytics DTOs are removed.",
@@ -52,12 +70,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b77591cc3b1feea945b7cdfbdd5a7bb910565636",
+            "blob": "4edaf532df1504b4615adce69ce3442646938c12",
             "content": "sha256:9e5fbef4b35c61eae4c730c9a1058e310652578ac1b75fd0d827e3eb33b59e6a",
             "locator": {
-              "end": 260,
+              "end": 256,
               "kind": "line_range",
-              "start": 202
+              "start": 198
             },
             "path": "mcp/src/agents_remember/observer/projection_task_documents.py"
           },
@@ -86,12 +104,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b77591cc3b1feea945b7cdfbdd5a7bb910565636",
+            "blob": "4edaf532df1504b4615adce69ce3442646938c12",
             "content": "sha256:5feea319a1076436bf2e752353cc8e7de062d74fb6849d1db0a27a0427cc7e4e",
             "locator": {
-              "end": 291,
+              "end": 287,
               "kind": "line_range",
-              "start": 263
+              "start": 259
             },
             "path": "mcp/src/agents_remember/observer/projection_task_documents.py"
           },
@@ -112,6 +130,36 @@
               "start": 402
             },
             "path": "mcp/src/agents_remember/observer/projection_task_documents.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "TaskState carries stage, activity and eventAt, without a served task-event age; the browser derives display age.\n\nAnchor: task state and display age",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cb7649c76f226f56141cd36720b382cea60352c7",
+            "content": "sha256:e345bcf52910f1d43fcff54700f85ea691a6b896120f54a78d4be96269c1b309",
+            "locator": {
+              "end": 547,
+              "kind": "line_range",
+              "start": 540
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "17da14e723222a8d50b4ed6f0595390ab1fe1f6a",
+            "content": "sha256:73f45554796ee15769aee751c8a9f37a53c8aecd7cd5bd6b09a933b2b36ab464",
+            "locator": {
+              "end": 154,
+              "kind": "line_range",
+              "start": 124
+            },
+            "path": "dashboard/src/panels/detail-panel/pageParts.tsx"
           },
           "kind": "code"
         }

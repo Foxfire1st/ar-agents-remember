@@ -1158,12 +1158,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "50b7ea1107a61ba7967777c5590f9a95e22f8eb6",
+            "blob": "676446dd3dec2866b0d8b4914250105067b14d96",
             "content": "sha256:b170672021e87a55cb733387c7330e6f1a1c68970520ee51d580f14a35fbc940",
             "locator": {
-              "end": 256,
+              "end": 260,
               "kind": "line_range",
-              "start": 256
+              "start": 260
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },
@@ -1292,12 +1292,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "58281d9cb62afbcee6f8b6ad2efb331bb29b98e4",
+            "blob": "09d3ce0fe82e391b5934a045de836ddd1097568b",
             "content": "sha256:6c9f0b508c6761d91dc59b44c289511fb9a5a67eecd54aa2ff8d11addefa7801",
             "locator": {
-              "end": 178,
+              "end": 179,
               "kind": "line_range",
-              "start": 172
+              "start": 173
             },
             "path": "mcp/src/agents_remember/serving/app.py"
           },
@@ -1326,12 +1326,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1d44f615bfc4501ef26607c59032d9f62b6744a3",
+            "blob": "715a8aa55d1508d8e94554a2e3a04dd7b0edcf23",
             "content": "sha256:f8d2f4f48a6c2d3de5e22aea3cc9ccff969f7a04cb1869dee82016b3ff19cdc9",
             "locator": {
-              "end": 162,
+              "end": 153,
               "kind": "line_range",
-              "start": 160
+              "start": 151
             },
             "path": "mcp/src/agents_remember/cli/dashboard.py"
           },
@@ -1362,12 +1362,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1d44f615bfc4501ef26607c59032d9f62b6744a3",
+            "blob": "715a8aa55d1508d8e94554a2e3a04dd7b0edcf23",
             "content": "sha256:f8d2f4f48a6c2d3de5e22aea3cc9ccff969f7a04cb1869dee82016b3ff19cdc9",
             "locator": {
-              "end": 162,
+              "end": 153,
               "kind": "line_range",
-              "start": 160
+              "start": 151
             },
             "path": "mcp/src/agents_remember/cli/dashboard.py"
           },
@@ -1667,7 +1667,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2c0373c265618b820bcf5acdd0f43f477567c3f4",
+            "blob": "f1d9f2bdf6b5346afa468b367e7ed3fc0f3824c1",
             "content": "sha256:61ab9618cee15153fbd10da2e576ebdcb9311a459ce7184dce1f543f61ad02ac",
             "locator": {
               "kind": "symbol",
@@ -1755,7 +1755,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1d44f615bfc4501ef26607c59032d9f62b6744a3",
+            "blob": "715a8aa55d1508d8e94554a2e3a04dd7b0edcf23",
             "content": "sha256:64f996fc0ef576998b70475499dfe493ca03ceafeb0f1e7e4a979aa8b21b075c",
             "locator": {
               "kind": "symbol",
@@ -2173,12 +2173,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "50b7ea1107a61ba7967777c5590f9a95e22f8eb6",
+            "blob": "676446dd3dec2866b0d8b4914250105067b14d96",
             "content": "sha256:2fa53d75d1a4d6ef8e4c45600fb5f9678bb7206ba3b69dd24ee8963593f7ebfd",
             "locator": {
-              "end": 99,
+              "end": 103,
               "kind": "line_range",
-              "start": 99
+              "start": 103
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },
@@ -2186,12 +2186,12 @@
         },
         {
           "anchor": {
-            "blob": "50b7ea1107a61ba7967777c5590f9a95e22f8eb6",
+            "blob": "676446dd3dec2866b0d8b4914250105067b14d96",
             "content": "sha256:ef900a5b38b3a4393ac60a6d42f336d540dcb806538d4acca19a65c9c1fc194c",
             "locator": {
-              "end": 117,
+              "end": 121,
               "kind": "line_range",
-              "start": 117
+              "start": 121
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },
@@ -2344,12 +2344,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1d44f615bfc4501ef26607c59032d9f62b6744a3",
+            "blob": "715a8aa55d1508d8e94554a2e3a04dd7b0edcf23",
             "content": "sha256:24184649da213fc6afc51b9082b0ff905798fe89459e305b08f32f82e44a62f0",
             "locator": {
-              "end": 165,
+              "end": 156,
               "kind": "line_range",
-              "start": 165
+              "start": 156
             },
             "path": "mcp/src/agents_remember/cli/dashboard.py"
           },
@@ -2652,7 +2652,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1d44f615bfc4501ef26607c59032d9f62b6744a3",
+            "blob": "715a8aa55d1508d8e94554a2e3a04dd7b0edcf23",
             "content": "sha256:b19bc1c2ad3bb2179ea145e7449539dad4eea4ad52e8c276200482e5793a0c88",
             "locator": {
               "kind": "symbol",
@@ -2686,7 +2686,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "00f92c33cea00e38dd04cbc1196de10fb4ec129f",
+            "blob": "eb894372006811f11309935ff863c9c9fe7e4639",
             "content": "sha256:794f0ffb1389207a1356e5f273cc770345d0f64fed5684f4bb27da001f2c7fbf",
             "locator": {
               "kind": "symbol",
@@ -2958,12 +2958,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "50b7ea1107a61ba7967777c5590f9a95e22f8eb6",
+            "blob": "676446dd3dec2866b0d8b4914250105067b14d96",
             "content": "sha256:fab46d2a17b3a29cb28a509254c759df122390dcbb1ce6233793dbfcd0452542",
             "locator": {
-              "end": 153,
+              "end": 157,
               "kind": "line_range",
-              "start": 153
+              "start": 157
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },
@@ -3984,12 +3984,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "50b7ea1107a61ba7967777c5590f9a95e22f8eb6",
+            "blob": "676446dd3dec2866b0d8b4914250105067b14d96",
             "content": "sha256:ec0dd1c1505d15aa1f5a2934d145bf3a19e9bcb63677bac088f2d5dd07452164",
             "locator": {
-              "end": 353,
+              "end": 361,
               "kind": "line_range",
-              "start": 353
+              "start": 361
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },
@@ -4075,6 +4075,110 @@
         }
       ]
     },
+    "324": {
+      "note": "Task stage is authored; only started tasks receive known bound host activity and contributing event time.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9e4b2543510affa9e5cc0d4f7e4ee8b261894051",
+            "content": "sha256:348ca25847f5af1de648007ac662ec749f8e0b70d74d88d9bdf446f78299339e",
+            "locator": {
+              "kind": "symbol",
+              "name": "task_state"
+            },
+            "path": "mcp/src/agents_remember/observer/task_entries.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "325": {
+      "note": "Complete current-boot host reconciliation and the supervisor subscription precede binding activity to tasks.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "64247b1567681e2b8e60bb36434fadd33ed6a347",
+            "content": "sha256:2725fa604b4643d9bb0ad0fe1e159005fcad872513311a0f17c9de6d4664dda0",
+            "locator": {
+              "kind": "symbol",
+              "name": "read"
+            },
+            "path": "mcp/src/agents_remember/serving/projections/host_activity.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "326": {
+      "note": "Replayed role launch publishes receipt identity before invoking its host launch call.\n\nAnchor: \"publish_receipt_role_agent(config, current)\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a2d423462e9fdf28604446fbd634d2063e6c1a4d",
+            "content": "sha256:caea420fdb88051c623d224d8661275bc2b4c9f65c66fa238710367c18dad4d7",
+            "locator": {
+              "end": 113,
+              "kind": "line_range",
+              "start": 95
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_receipts.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "327": {
+      "note": "TaskSummary bodies use a separate bounded generation-qualified cache, with content-derived revision.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "857eb6cbd01cfd193deb00b866acfe3ed5a3aa13",
+            "content": "sha256:4ef96577968fa196bc17bc5619ab1a3bc88ce0f360e9ba9a23629771e1597db6",
+            "locator": {
+              "kind": "symbol",
+              "name": "TaskDocumentBodyCache"
+            },
+            "path": "mcp/src/agents_remember/serving/task_document_cache.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "328": {
+      "note": "Obsolete terminal lock cleanup requires a complete canonical-contract census and preserves any subject not proved terminal.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "919a71b491ed753daa97927f49bcf27947690f71",
+            "content": "sha256:c5d308a941ddba3ca571f06eb4fbecb5a95ae8ab7ff83965f6c85dc84b90dc8a",
+            "locator": {
+              "kind": "symbol",
+              "name": "_terminal_lifecycles"
+            },
+            "path": "mcp/src/agents_remember/install/removed_stores.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "329": {
+      "note": "The composed declaration is 6000 unit and 1000 integration collected cases; declarations are not execution counts.\n\nAnchor: \"unit_case_budget\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "af953e99eac7b81b2df5e99c648d3a83eab4bca1",
+            "content": "sha256:c2fab1dfc67fea847e424402e7a10e7de50462b8d521d5f1b19c6d999eb8e446",
+            "locator": {
+              "end": 300,
+              "kind": "line_range",
+              "start": 299
+            },
+            "path": "pyproject.toml"
+          },
+          "kind": "code"
+        }
+      ]
+    },
     "33": {
       "note": "The four-tree comparison, pinned and recorded.",
       "targets": [
@@ -4148,12 +4252,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "50b7ea1107a61ba7967777c5590f9a95e22f8eb6",
+            "blob": "676446dd3dec2866b0d8b4914250105067b14d96",
             "content": "sha256:d23e1716307e9592d3a5ec1ca9f7c2495a349f8e5ca88d6c0026e6c2ad5c72a2",
             "locator": {
-              "end": 279,
+              "end": 283,
               "kind": "line_range",
-              "start": 279
+              "start": 283
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },
@@ -4161,12 +4265,12 @@
         },
         {
           "anchor": {
-            "blob": "50b7ea1107a61ba7967777c5590f9a95e22f8eb6",
+            "blob": "676446dd3dec2866b0d8b4914250105067b14d96",
             "content": "sha256:526a643244ab1dbb0d8f374c24e9047cc62d337dcb37d130f76a0ab5725ee5b5",
             "locator": {
-              "end": 265,
+              "end": 269,
               "kind": "line_range",
-              "start": 265
+              "start": 269
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },

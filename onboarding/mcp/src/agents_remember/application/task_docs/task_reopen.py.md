@@ -6,36 +6,35 @@
 
 ## Purpose
 
-Owns `task_reopen_tool`, the task-domain application entry point behind the `task_reopen` MCP
-tool. Extracted from `application/task_doc_tools.py` in 260815-DAG-L11 so each tool's application
-logic stays a focused module (the file-size rail); `task_doc_tools.py` re-exports it unchanged as a
-facade, keeping the import surface stable.
+Owns `task_reopen_tool`, the confined task-domain application entry point behind the `task_reopen` MCP tool. The current `application/task_docs/task_doc_tools.py` facade re-exports it unchanged, keeping application composition separate from the worktree reset owner.
 
 ## Code Commentary
 
 ### Logic
 
 `task_reopen_tool(config, *, contract_path, dry_run=False)` confines the contract path inside the
-coordination root, loads the enclosure contract for its lifecycle id, and delegates the reset to
+coordination root and delegates the reset to
 `worktrees.reopen.reopen_task`: the leaf's enclosure contract review/closeout/integration state
 returns to virgin and the leaf's task document returns to planning under the exact same leaf id.
-After a real (non-dry-run) reopen it ends the completed task's anchored ambient lifecycle so the
-next `worktree_start` mints a fresh lifecycle instead of promoting the completed one. The response
+No ambient lifecycle is read or ended. The worktree owner retains the same-leaf reset and successor-workspace authority. The response
 keeps the worktree-command shape (contract state fields plus `ok`/`operation`), so it validates
 against a `WorktreeCommandResponse` subclass in the tool-response registry.
 
 ### Invariants And Boundaries
 
 - A state reset, not a worktree creator: recreating worktrees stays `worktree_start`'s job.
-- Contract confinement and reopen refusal rules (masters, in-flight leaves, existing worktrees)
-  live in `kernel.authority.require_within_coordination` and `worktrees/reopen.py`; this module
-  owns only composition and the ambient-lifecycle handoff.
+- Contract confinement lives in `kernel.authority.require_within_coordination`; `worktrees/reopen.py` dispatches series to their own owner and applies the leaf preflight/refusal and reset rules. This module owns confined application composition, not a blanket master refusal or a session-lifecycle handoff.
 
 ## Evidence
 
 ### Repo-Internal References
 
-- The reopen application entry point and its ambient-lifecycle handoff. [1]
-- The enclosure-contract reset this delegates to. [2]
-- The facade re-export keeping the old import path working. [3]
-- The application entry point delegates reopen through its current worktree owner; deleted suites provide no current execution evidence. [4]
+- The confined application entry delegates reopen without ambient lifecycle access. [1]
+
+- The worktree owner dispatches series separately and performs admitted leaf reset, leaving worktree recreation to start. [2]
+
+
+- The current task-doc facade re-exports the same application entry. [3]
+
+
+- The application entry confines the contract and delegates; this is source evidence, not a test execution. [4]

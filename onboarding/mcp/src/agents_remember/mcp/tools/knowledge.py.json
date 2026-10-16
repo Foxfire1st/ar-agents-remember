@@ -6,8 +6,9 @@
         "blob": "3639d1b611da3713eb7f4619e381959ff1727679",
         "content": "sha256:1ec5dfa3f9ea1ccc6fcd09c04eec66e644a47a42fcb3e5b58ad2019ec3c7b7e6",
         "locator": {
-          "kind": "symbol",
-          "name": "_integrity_answer"
+          "end": 1029,
+          "kind": "line_range",
+          "start": 987
         }
       },
       "id": "RLZ-C0EV68",

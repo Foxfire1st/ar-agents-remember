@@ -3,28 +3,16 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "Sprint display/whole-graph and rest/focus/reduced-motion assertions remain; the seeded master case pins placement, ready-only next tasks, projected progress, relation text and exact navigation. Source inspection only.",
+      "note": "Sprint display/whole-graph and rest/focus/reduced-motion assertions remain; the seeded master case pins placement, ready-only next tasks, projected progress, relation text and exact navigation. Source inspection only.\n\nAnchor: seeded entry-state, graph-navigation and interaction assertions",
       "targets": [
         {
           "anchor": {
-            "blob": "aaff1ab58a622832d60e5cca14d1d226988aacfe",
-            "content": "sha256:da83e059fbab2c5944a96a1b53d40706658d1b50140a913ef1e9b2b0276f1394",
+            "blob": "79cba390a3cc9f043bd2fd84d5e149283fa56137",
+            "content": "sha256:a9ccaae0a3b5eb1f0180a00386519c591cc213257612eabd97f56a1a310050c8",
             "locator": {
-              "end": 221,
+              "end": 342,
               "kind": "line_range",
-              "start": 100
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "aaff1ab58a622832d60e5cca14d1d226988aacfe",
-            "content": "sha256:20c96a82a0a3559f7b4a2f68ead6337ae6f5c3313723dda587c05b05363510d3",
-            "locator": {
-              "end": 264,
-              "kind": "line_range",
-              "start": 223
+              "start": 1
             }
           },
           "kind": "test"
@@ -32,16 +20,16 @@
       ]
     },
     "2": {
-      "note": "Seeded mixed/all-completed cycle assertions name both legacy members where a wave remains, retain completed nodes as counts only, and omit an all-completed wave and ready-next block. This is not a native SCC producer opportunity or new execution.",
+      "note": "Seeded mixed/all-completed cycle assertions name both legacy members where a wave remains, hide completed entry marks and require no separate done row, and omit an all-completed wave and ready-next block. This is not a native SCC producer opportunity or new execution.\n\nAnchor: mixed and all-completed cycle assertions",
       "targets": [
         {
           "anchor": {
-            "blob": "aaff1ab58a622832d60e5cca14d1d226988aacfe",
-            "content": "sha256:0af9a4ebb4698fba5b5418c1006ee4eae390ff49022332c842513f648dcbb087",
+            "blob": "79cba390a3cc9f043bd2fd84d5e149283fa56137",
+            "content": "sha256:e1c2df10b69098f78ef9d70cb6ee1df542a8d2e2c871cfd388fd156401507c34",
             "locator": {
-              "end": 287,
+              "end": 385,
               "kind": "line_range",
-              "start": 266
+              "start": 344
             }
           },
           "kind": "test"

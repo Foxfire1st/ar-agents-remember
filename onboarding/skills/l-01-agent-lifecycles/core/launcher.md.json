@@ -172,12 +172,12 @@
       ]
     },
     "8": {
-      "note": "An unbound free chat answers research inline without becoming a role.\n\nAnchor: `## What it is`",
+      "note": "Unbound free chat has no role binding or worktree; research stays inline and does not become a role.\n\nAnchor: lines 1-18",
       "targets": [
         {
           "anchor": {
-            "blob": "e532bbd0a49d3c16d9273ae5aa89a26c5a6edd70",
-            "content": "sha256:e80ea2c5803309f5f077421658faee212e51a310286cc7fe6fdaf5f8be55856c",
+            "blob": "eb5b38d09d58da629b646590bff51b28d8c0088a",
+            "content": "sha256:087722c44d876fa038dbab177d2784def7af649465b99113e080fb3cd0360a55",
             "locator": {
               "end": 18,
               "kind": "line_range",

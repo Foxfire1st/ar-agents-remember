@@ -61,6 +61,113 @@
           "kind": "code"
         }
       ]
+    },
+    "3": {
+      "note": "Full input passes or an expired/missing 120-second retained-surface snapshot reach the repo-surface reader; other passes retain its three collections unread.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3cedc4c3230d6645fcd5c5ede281b3defc11fdd5",
+            "content": "sha256:c764fe81c6219344b74013ef3bb25a11a92503228e4f3b24514e110856314936",
+            "locator": {
+              "kind": "symbol",
+              "name": "_REPO_SURFACES_TTL_SECONDS"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3cedc4c3230d6645fcd5c5ede281b3defc11fdd5",
+            "content": "sha256:f03d24460a6c0b25e5a7bb5b94f9766207f3551155e27aa69f462d7a23da23e8",
+            "locator": {
+              "kind": "symbol",
+              "name": "_surfaces_stale"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The production repo-surface reader can itself reuse its 120-second cache.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cb0ab4cb5e3a37ea0377727c5e29c1744b0d162b",
+            "content": "sha256:ae819fb65f1d1a25497ac0fc575d13dc21f8551f4119b6dac04ec32fb3cdeac0",
+            "locator": {
+              "kind": "symbol",
+              "name": "_gather_repo_surfaces_cached"
+            },
+            "path": "mcp/src/agents_remember/serving/projections/projection_store.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "cb0ab4cb5e3a37ea0377727c5e29c1744b0d162b",
+            "content": "sha256:080616f28cf77422a2508335a3d7e0cce09a0ba3bc4a682e7069af75dd926be4",
+            "locator": {
+              "end": 65,
+              "kind": "line_range",
+              "start": 65
+            },
+            "path": "mcp/src/agents_remember/serving/projections/projection_store.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The three parameter objects are frozen; the task-change frame is replaced, and provider/engine admission sets travel with their change flags.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3cedc4c3230d6645fcd5c5ede281b3defc11fdd5",
+            "content": "sha256:d349bda07bab0db108ad6222bf15b0ad4f82b7f28890253f6a9495223a3f275d",
+            "locator": {
+              "kind": "symbol",
+              "name": "RefreshPass"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3cedc4c3230d6645fcd5c5ede281b3defc11fdd5",
+            "content": "sha256:3f93a2c5150c7a2af82c3b0eeea4d3656508e91ce278f20f119c1ab224c85f1f",
+            "locator": {
+              "kind": "symbol",
+              "name": "ActiveGroups"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3cedc4c3230d6645fcd5c5ede281b3defc11fdd5",
+            "content": "sha256:5e38e797f15dd310ce2493ea5e332bc00ef6c0576091ff55c18af6d90b6def3c",
+            "locator": {
+              "kind": "symbol",
+              "name": "ProjectionReaders"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3cedc4c3230d6645fcd5c5ede281b3defc11fdd5",
+            "content": "sha256:9b0fa03e8f3270c9040dfc378a7a21431ec05b4e6885f88883dbdcd847ada9be",
+            "locator": {
+              "end": 419,
+              "kind": "line_range",
+              "start": 380
+            }
+          },
+          "kind": "code"
+        }
+      ]
     }
   },
   "schema": "ar-onboarding-file/v1"

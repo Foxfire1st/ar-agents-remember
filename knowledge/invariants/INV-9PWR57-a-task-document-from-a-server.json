@@ -6,10 +6,10 @@
     ],
     "justification": "Compatibility must omit genuinely absent optional display blocks without weakening the current producer contract or using an impossible consumer-authored fixture."
   },
-  "applicability": "A current task reader receiving an older task-document projection without the newly added display fields.",
+  "applicability": "A current native TaskEntry/TaskSummary payload missing optional display fields.",
   "conditions": [
     "An absent whole review state omits its block/count without error.",
-    "Recorded genuine producer envelopes exercise compatibility, not invented wire casts."
+    "The mounted fixture uses current native optional-field absence; retained historical recordings are provenance, not current old-build compatibility execution."
   ],
   "exclusions": [
     "Making current producer review counts optional.",
@@ -27,9 +27,9 @@
     "leaf": "260928-MIK-L127",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-invariant/v1",
-  "statement": "A task document from a server of an older build, which lacks the fields this task added, is drawn without the blocks those fields feed and without an error: a page of this build reads what the task-document projection of commit 3c2285d1 sends and draws no Review block, no count of findings, no status note and no header notes.",
+  "statement": "A current native task-entry reader draws an addressed entry whose optional task-summary display fields are absent without their dependent Review block, finding count, status note or header notes and without an error. Historical old-build envelopes retain provenance but do not establish wire compatibility with the removed parallel projection collections.",
   "status": "proposed",
   "supersedes": []
 }

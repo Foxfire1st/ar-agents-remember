@@ -1,5 +1,24 @@
 {
   "path": "mcp/tests/test_task_execution_topology.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "86a9677fb95bf8018c4461d3f2d507f4a2c93130",
+        "content": "sha256:59e1cd5980306b8e05cd2f158151ea7a9841ea2b1511e264232f2c5e59433ccb",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_series_stage_publication_mirrors_commanding_sprint_in_one_batch"
+        }
+      },
+      "facet": "Prepared series inProgress/abandoned publication retains exact master/sprint override addresses, previews one commanding sprint and writes both native stages.",
+      "id": "PRF-9WGGFE",
+      "invariant": "INV-Z0BXKJ",
+      "origin": {
+        "handoffEntry": "L168-W-R167-05",
+        "leaf": "260928-MIK-L168"
+      }
+    }
+  ],
   "realizes": [],
   "references": {
     "1": {
@@ -7,7 +26,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "974672bf44c30d4a5ae61030c58040b92f60acac",
+            "blob": "86a9677fb95bf8018c4461d3f2d507f4a2c93130",
             "content": "sha256:7ec504ef31efdc6327367fb531f67343a87092bf45861b10dcc981cec483e262",
             "locator": {
               "kind": "symbol",
@@ -23,11 +42,27 @@
       "targets": [
         {
           "anchor": {
-            "blob": "974672bf44c30d4a5ae61030c58040b92f60acac",
+            "blob": "86a9677fb95bf8018c4461d3f2d507f4a2c93130",
             "content": "sha256:7e7183a94f939420357482346527ee3b07f23f66968d4ab703d8c771c9089a95",
             "locator": {
               "kind": "symbol",
               "name": "_master"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Atomic-master stage and commanding sprint row publish through one addressed cross-root batch.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "86a9677fb95bf8018c4461d3f2d507f4a2c93130",
+            "content": "sha256:59e1cd5980306b8e05cd2f158151ea7a9841ea2b1511e264232f2c5e59433ccb",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_series_stage_publication_mirrors_commanding_sprint_in_one_batch"
             }
           },
           "kind": "test"

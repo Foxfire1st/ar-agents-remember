@@ -134,6 +134,23 @@
           "kind": "code"
         }
       ]
+    },
+    "9": {
+      "note": "The registration module leaves compact serialization, application services and FastMCP process composition to create_server.\n\nAnchor: lines 1-8",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d50f977dccbc13a3efc34f7b6fb34083af34cb82",
+            "content": "sha256:8ed6cfec39c93d129d6bc8f8dd0bc802ab7b24aef5ff4d8ce96a0a22ef2033f1",
+            "locator": {
+              "end": 8,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
     }
   },
   "schema": "ar-onboarding-file/v1"

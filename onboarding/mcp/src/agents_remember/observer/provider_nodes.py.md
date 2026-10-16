@@ -9,7 +9,7 @@
 `provider_nodes.py` owns the conversion from provider current-state payloads into
 served `ProviderNode` objects. It keeps provider projection policy out of
 `snapshots.py`, so the snapshot reader remains the file-I/O edge and this module
-owns the repo/worktree binding rules.
+owns the repo/worktree binding rules. `workspace_repository_id` shares CGC’s stable repository identity for provider subjects; dismissal existence checks must use that same producer identity rather than independently guessed provider/repo keys.
 
 ## Code Commentary
 

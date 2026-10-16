@@ -1,0 +1,40 @@
+{
+  "admission": {
+    "criteria": [
+      "joint_guarantee"
+    ],
+    "justification": "Exact native generations, response-preserving fallback, revision/ETag-qualified browser reuse, independent document rendering and bounded retention jointly prevent stale content, repeated unchanged work and history growth. A cache hit, fast page or bounded map alone establishes none of the whole guarantee. Timing samples and code-review outcomes remain separately owned evidence."
+  },
+  "guarantee": "Native change-set computation remains authoritative while reusable results are retained only under complete stable input generations. Qualified body revisions and conditional ETags let bounded dashboard-owned content survive navigation without reparsing or retransmitting unchanged bodies; unchanged working viewer content retains its editor. Every introduced content/pending owner has named retention or cancellation limits. Missing, changing or unreadable generation evidence falls back to native reads without retention, current refusals stay visible, and counter latency/failure never gates the document. Cold reads, actual mutations, eviction, oversized content and changed editor content are outside unchanged-reuse promises.",
+  "id": "FAM-EASWS6",
+  "members": [
+    "INV-7TMGB0",
+    "INV-WNHAWD",
+    "INV-C1RTSG",
+    "INV-QK8XNM",
+    "INV-GDWJKR",
+    "INV-ZNXX7H"
+  ],
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "sync-L81-primary-regressions.txt; backend-candidate11.json master repeat0Git/working repeat0Git; conditional-candidate11-settled.json six304/zero-byte/zero-Git routes; cold intent25then23Git retained"
+      ],
+      "path": "A011-bounded-generation-content-33.json"
+    },
+    "handoffEntry": "L168-W-R168-02",
+    "leaf": "260928-MIK-L168",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "routes": [
+    "dashboard/src/data",
+    "dashboard/src/panels",
+    "mcp/src/agents_remember/serving",
+    "dashboard/src/grammar",
+    "mcp/src/agents_remember/worktrees/modules"
+  ],
+  "schema": "ar-family/v1",
+  "status": "proposed",
+  "title": "Bounded generation-qualified content reuse"
+}

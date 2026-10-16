@@ -36,7 +36,7 @@ stale-base raiser.
 
 ### Logic
 
-Twelve cases, one shared disposable world per class, `unittest.TestCase` throughout, no `pytest` marks.
+The shared disposable world drives registered operations and contract-addressed landing hints, with `unittest.TestCase` and no module pytest marks. Earlier case/pass totals and mutation reports below retain their historical epoch, not renewed collection or execution.
 
 - **The order** (`test_the_chain_runs_in_the_declared_order_through_the_registered_entry_points`,
   `:1094-1109`; `…reaches_every_declared_state_and_the_terminal_contract`, `:1111-1124`;
@@ -50,24 +50,8 @@ Twelve cases, one shared disposable world per class, `unittest.TestCase` through
   from the product's state machine over the real contract file. Case 3 *derives* the order from the
   guidance rather than asserting it beside it: a named move must be the next hop or occur later
   in the remaining chain when the workflow interleaves a step; the case bounds its derivation (`forward >= 4`, `holds >= 1`).
-- **The two guidance channels** (docstring `:35-49`; `_recommendation`, `:644-673`;
-  `test_every_guidance_channel_names_the_callers_own_task`, `:1164-1182`). A worktree response carries
-  the **operational triple** `nextAction`/`nextTool`/`nextArgs`
-  (`WorktreeCommandResponse.nextAction`/`nextTool`/`nextArgs` (current lines 364-366)), produced from the response's own contract by
-  `guidance.py`; and `nextStep`, the **lifecycle overlay** computed at the choke point from the
-  process-global ambient lifecycle (`mcp/src/agents_remember/application/next_step.py:260-260`) and
-  filtered by `bound_next_step` (`mcp/src/agents_remember/application/tool_response.py::bound_next_step` (current lines 85-124)). They
-  are read as two, because a case that inspects only `nextStep` reports "withheld" where the seat in
-  fact received the same operational move top-level. Under MIK-R108 the answer carries the hint as
-  `next` (`{summary, tool, args}`) instead of `nextStep`; the observation translates it back
-  (`emitted_next_step`), so the address binding below measures the same guidance content.
-- **The address guard, with its arrangement asserted** (`_sibling_arrangement`, `:854-902`;
-  `test_a_concurrent_siblings_guidance_never_reaches_this_task`, `:1184-1218`). `T54` was systematic:
-  guidance derived from the process-global lifecycle named a concurrent session's enclosure. The case
-  asserts the arrangement **first** — the unguarded guidance MUST name the sibling enclosure
-  (`:1198-1207`) — so a green cannot mean the guard was never exercised, and then asserts no address-bearing channel
-  of this task’s response names the sibling; when an operational tool is present, it asserts
-  that tool belongs to `PUBLIC_TOOLS`. The separate own-task channel case supplies the address pin.
+- **The two guidance channels.** Top-level nextAction/nextTool/nextArgs come from the response's own contract; nextStep/compact next comes from that addressed target path and is filtered by bound_next_step. The observation translates compact next back into its hint model. Both channels remain independent of any session lifecycle; withholding one does not erase a top-level operational move.
+- **The address guard and sibling premise.** The fixture starts a sibling without ending an ambient session. Raw guidance is computed for the target contract, and the sibling case requires `hop.raw_next` to be non-null. For each emitted channel it checks only present, truthy `contract_path`, `enclosure_path`, `contractPath` or `enclosurePath` values and asserts that none names the sibling. If `hop.top_next_tool is not None`, it also asserts that tool belongs to `PUBLIC_TOOLS`. It does not require an operational tool to exist, a path on every channel, or a present path to name this task; the separate own-task channel case supplies the positive address pin over the observed chain hops. That case checks each present address against the own contract and requires at least as many checked address values as hops, not a nonempty address on every individual channel. The old assertion that unguarded ambient guidance names the sibling is retired, not current coverage.
 - **The derived callability population** (`callability_population`, `:1053-1068`; `_as_given_call`,
   `:709-729`; `classify_call`, `:238-252`; `missing_required_args`, `:275-283`;
   `GUIDANCE_STEPS_MISSING_REQUIRED_ARGS`, `:166-168`;
@@ -93,12 +77,7 @@ Twelve cases, one shared disposable world per class, `unittest.TestCase` through
   `{contract_path, intent_note}`, the one-field-short shape must classify alike (the singular and
   plural refusal spellings), and a call that loses its envelope entirely must classify `raised` —
   otherwise an "answered" classification could be satisfied by a classifier that never refuses.
-- **The withhold, counted** (`WITHHELD_GUIDANCE_HOPS`, `:179-184`;
-  `…the_guidance_that_could_not_be_validated_is_withheld_and_counted`, `:1327-1348`). A response that
-  declares no camelCase address cannot vouch for guidance derived from the process-global lifecycle,
-  so the hint is withheld rather than emitted unchecked; the case pins the count by tool and asserts
-  non-vacuity: at least one withheld hop has a non-null top-level tool. It does not assert equality
-  between that tool and the withheld overlay or prove that every lost move is carried.
+- **The withhold, counted.** Responses lacking their own declared address still withhold unverifiable guidance. The test retains its exact tool/count pin and non-vacuity discriminator; it does not establish equality with a withheld overlay or prove every absent move is carried. This guard is independent of the removed session-state source.
 - **The previews and `T62`'s trigger** (`_walk`, `:773-852`;
   `…every_preview_step_answered_and_the_drift_snapshot_was_actually_read`, `:1352-1392`). The drift
   snapshot is planted at the producer's own path (`drift_snapshot_path`,
@@ -206,7 +185,12 @@ whatever change next touches the module: the three registered residuals above (`
 (either assert them or delete them), and the `nextRequiredArgs` pin `T109` asks for once the tool
 surface ships the field.
 
+Both closeout and would-integrate previews retain an argument-addressed approval stop: the emitted hint must exist, contain stop in its summary, and have no nextArgs. Removing session inference does not retire the landing operation chain or lifecycle_finalize_task. Existing reachable-hop callability, stale-base, drift-preview/reclamation and scope boundaries remain; historical counts are not re-certified.
+
 ## Evidence
+
+- Both previews retain stop guidance and no executable nextArgs. [52]
+
 
 ### Docs References
 
@@ -315,7 +299,8 @@ because the rows name modules that only exist once L8 and L9 have landed.
 - The operational triple's declared home, and the reason it is a channel of the response's own contract.  Anchor: `nextArgs` [36]
 - The overlay's model, which can declare what it leaves to the caller and the operational triple cannot. [37]
 - The guard that withholds a hint which cannot name the response's own place. [38]
-- The process-global ambient lifecycle the overlay is derived from, which is why the guard exists. [39]
+- The sibling case requires a non-null raw hint, excludes the sibling only from present address values, and checks PUBLIC_TOOLS only when top_next_tool exists; it does not assert every channel names the own task. [53]
+- Closeout and would-integrate previews retain approval-stop summaries and no executable nextArgs. [54]
 - The producer that writes `approved_for_commit` and `closeout_status: completed` in one contract write. [40]
 - The snapshot path the preview's drift collection actually reads, derived from worktree and branch. [41]
 - The real reclamation the preservation claim is measured against. [42]
@@ -347,8 +332,9 @@ because the rows name modules that only exist once L8 and L9 have landed.
 - The union of the walk's own as-given calls and every probe, asserted equal to the pin. [23]
 - The order, asserted against what the run actually did rather than stated beside it. [24]
 - A named forward move must be the next hop or a later remaining hop when interleaved; forward/hold lower bounds are asserted. [25]
-- Guidance must name the response's own place, on every channel it uses (`T54`). [26]
-- The sibling arrangement asserted first, then the property (`T54`'s arm). [27]
+- The separate own-task case checks each present address value against the own contract and requires checked >= observed hops; it does not require an address on each individual channel. [26]
+
+- Sibling fixtures must exist and the raw hint must be non-null before present address values are checked not to name the sibling; PUBLIC_TOOLS membership is conditional on top_next_tool. [27]
 - The derived population, asserted equal to the pin over both channels. [28]
 - The population of the case above, so it cannot silently shrink — with its own boundary stated. [29]
 - Expected phase labels are literal test inputs; observed phase membership and endpoints come from product guidance over the walk’s contract. [3]

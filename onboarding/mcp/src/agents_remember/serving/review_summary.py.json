@@ -3,11 +3,12 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "35ef5a9b687f5ae19e5c2b7b8fad4e3a3adf7b7a",
-        "content": "sha256:a1b2fb6cf117b0ba91d7aed34b896c96603e933c55e4bcbff68ffbbfe27e6a97",
+        "blob": "22ca6abf716d87dd794857b061fe128d03769c93",
+        "content": "sha256:71a73986f79d0da400e995914726e4496c3190010cab35b7eddb72c05295ae51",
         "locator": {
-          "kind": "symbol",
-          "name": "register_review_summary_route"
+          "end": 62,
+          "kind": "line_range",
+          "start": 49
         }
       },
       "id": "RLZ-GJM2AWPM",
@@ -15,32 +16,20 @@
       "origin": {
         "leaf": "260921-ICR-L46"
       },
-      "rationale": "Registers the summary route so that every result the port returns, whether counted, partial or unavailable, is serialized with the default HTTP 200 and its state in the body. The only non-200 answer is the named 503 when the process was composed without the summary port.",
+      "rationale": "The registered summary route delegates to IntentSummaryCache: body-bearing counted, partial and unavailable typed answers use HTTP 200; a matching conditional validation returns an empty 304 with ETag for retained bytes. A process without the summary port returns the named 503 refusal. Transport validation errors are not claimed to be enumerated by these typed-result cases.",
       "role": "primary-authority"
     }
   ],
   "references": {
     "1": {
-      "note": "The route path and the port signature (repository, master, leaf).",
+      "note": "The transport uses the task-context summary port and the shared conditional cache.",
       "targets": [
         {
           "anchor": {
-            "blob": "35ef5a9b687f5ae19e5c2b7b8fad4e3a3adf7b7a",
-            "content": "sha256:9098a58d916d46d43525349a09e1eea4ec33f198283d9d400d0077bd6699a907",
+            "blob": "22ca6abf716d87dd794857b061fe128d03769c93",
+            "content": "sha256:fe724a53bbaf6d3da25cb3b4cf8fe9fcd13d56d20177acb751d9f1b060e17648",
             "locator": {
-              "kind": "symbol",
-              "name": "KNOWLEDGE_REVIEW_SUMMARY_ROUTE"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "35ef5a9b687f5ae19e5c2b7b8fad4e3a3adf7b7a",
-            "content": "sha256:339c8c2dc7e87458f12a4b07f43bb6caa7aead2c3100512a8fc2abfa5b5804ae",
-            "locator": {
-              "kind": "symbol",
-              "name": "ReviewIntentSummaryPort"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -52,7 +41,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "35ef5a9b687f5ae19e5c2b7b8fad4e3a3adf7b7a",
+            "blob": "22ca6abf716d87dd794857b061fe128d03769c93",
             "content": "sha256:e605b27e3db38513a69c151e95f55bb108a57a684869c3beebd0ad1301207e7d",
             "locator": {
               "kind": "symbol",
@@ -64,12 +53,12 @@
       ]
     },
     "3": {
-      "note": "Every typed state answered 200 with the body; 503 only without a port.\n\nAnchor: `status_code=503`",
+      "note": "The route delegates typed-body or conditional-304 responses, with 503 when unwired.",
       "targets": [
         {
           "anchor": {
-            "blob": "35ef5a9b687f5ae19e5c2b7b8fad4e3a3adf7b7a",
-            "content": "sha256:a1b2fb6cf117b0ba91d7aed34b896c96603e933c55e4bcbff68ffbbfe27e6a97",
+            "blob": "22ca6abf716d87dd794857b061fe128d03769c93",
+            "content": "sha256:71a73986f79d0da400e995914726e4496c3190010cab35b7eddb72c05295ae51",
             "locator": {
               "kind": "symbol",
               "name": "register_review_summary_route"
@@ -80,16 +69,16 @@
       ]
     },
     "4": {
-      "note": "The route is registered from the app's collaborators.\n\nAnchor: `register_review_summary_route`",
+      "note": "App composition registers the collaborator summary port with the app-owned change-set cache.",
       "targets": [
         {
           "anchor": {
-            "blob": "5fb8e66cec1d7d893d10dd198cc0b06fa0d9a00b",
-            "content": "sha256:e04b749fe36fc805b5c8bef3eadd3f2599165fef9526448b7fbf60b6a2f90890",
+            "blob": "09d3ce0fe82e391b5934a045de836ddd1097568b",
+            "content": "sha256:0aadabdd32bf3d4edd45a0bde956923ad169d3f55eb28a41355216e7f8a6a6a1",
             "locator": {
-              "end": 306,
+              "end": 181,
               "kind": "line_range",
-              "start": 306
+              "start": 172
             },
             "path": "mcp/src/agents_remember/serving/app.py"
           },
@@ -102,7 +91,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e96eb27c26fbd9da56ffd32b2566982a342eaffe",
+            "blob": "f1d9f2bdf6b5346afa468b367e7ed3fc0f3824c1",
             "content": "sha256:cbf1034558b18983a498fffe5a7123fd770b5f7e0809cdc4289fc9938606e09d",
             "locator": {
               "kind": "symbol",
@@ -115,12 +104,12 @@
       ]
     },
     "6": {
-      "note": "The case that pins 200 for every typed state and 503 when unwired.",
+      "note": "The fixture checks counted and unavailable bodies as 200, and the unwired process as 503; it is not a separate partial-state or conditional-304 test.",
       "targets": [
         {
           "anchor": {
-            "blob": "a03ccb63b526f573166dc8f5f25d4746cfeaf963",
-            "content": "sha256:5ec4426310ed577e98649c1676d02f04618802385e4e55646974e99cf95bd8eb",
+            "blob": "b37687afc7aa7645e881bebbea3d0488461f99bb",
+            "content": "sha256:245ba3f5761cd3669b5ad22b755d749d3b4d6b4adeddee4c233d2885e04a4eda",
             "locator": {
               "kind": "symbol",
               "name": "test_the_route_answers_every_typed_state_in_the_body"

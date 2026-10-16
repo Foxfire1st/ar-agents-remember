@@ -62,6 +62,8 @@ No cross-repository evidence is required for these claims.
 
 - One physical suffix, one mutex per resource, and thread-local nesting. [1]
 - Capability probing, complete transaction exclusion, and current-thread hold inspection. [2]
+
 - Control-plane target authorization precedes primitive entry; capability errors are translated. [3]
+
 - The resource lock path. [5]
 - The bounded exclusive lock. [6]

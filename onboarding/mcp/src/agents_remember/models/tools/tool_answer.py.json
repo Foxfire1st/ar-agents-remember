@@ -96,8 +96,9 @@
         "blob": "345f0a5c362cd2c1c2c76f2ac1362793e36a9933",
         "content": "sha256:8061f6fe7812b5ab10b00cd8e4e8b8bfb476711f345649512273cc4291852368",
         "locator": {
-          "kind": "symbol",
-          "name": "_fit_error"
+          "end": 486,
+          "kind": "line_range",
+          "start": 450
         }
       },
       "id": "RLZ-SVSZ9P",

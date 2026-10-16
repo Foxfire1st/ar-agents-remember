@@ -6,8 +6,7 @@
 
 ## Purpose
 
-`events.py` defines the `ar-observer-event/v1` envelope (`Event`) — one
-append-only, durable record of something that happened in or to a lifecycle.
+`events.py` defines the strict persisted `ar-observer-event/v1` workspace envelope (`Event`). Optional `scopeKey` carries launch-bound correlation instead of session/lifecycle identity; it does not authorize task execution.
 
 ## Code Commentary
 

@@ -33,9 +33,7 @@ the direct store regression without manufacturing a broader `ScenarioPlayer` fix
 
 ### Conventions
 
-Use the shared `taskDoc`/`seedTaskDocuments` helpers and a typed `CloseoutQueueNode` builder. Seed
-unique visible markers before asserting their absence, and wrap the synchronous store transition in
-React `act` so subscriber-driven UI updates settle through the normal mounted boundary.
+Use shared taskEntry/taskSummary/seedTaskEntries fixtures and a typed CloseoutQueueNode builder. DetailPanel selects the native sprint’s qualified key; no lifecycle/document projection seed is required. Keep unique visible queue markers and wrap canonical reset in React act so mounted store updates settle normally.
 
 ### Invariants And Boundaries
 

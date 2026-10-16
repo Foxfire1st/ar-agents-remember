@@ -1,0 +1,23 @@
+{
+  "path": "mcp/src/agents_remember/serving/projections/host_supervisor.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Own one native host-exit subscription feeding the existing projection change pacer.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1d394a931a4c8b983b9e40f0255036e8f401409d",
+            "content": "sha256:cbd411054ae7182a46443c3059e4750134c2386934cbadf8ab43f3946ac03c8c",
+            "locator": {
+              "kind": "symbol",
+              "name": "_open_supervisor"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

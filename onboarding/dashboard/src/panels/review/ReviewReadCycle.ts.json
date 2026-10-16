@@ -91,8 +91,9 @@
         "blob": "c39f52a3070e7ea5ae990de1c13944060f41f81e",
         "content": "sha256:d13154c48e362b2880ba2d42570204a59feca465a9b3ae1a70e2abdbf284255b",
         "locator": {
-          "kind": "symbol",
-          "name": "useReviewReadCycle"
+          "end": 483,
+          "kind": "line_range",
+          "start": 370
         }
       },
       "id": "RLZ-HG7CRC9D",

@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "b4c74c37212e432009df876b3276beea828250fa",
-        "content": "sha256:e65a77e2d635bfba5d57e537277bdfe467525e8ee50a1074c263649cbf815cc2",
+        "blob": "1a65bd4444779518a555e2e38d8ca30fa0df9f3a",
+        "content": "sha256:eff54d0360b790954af018d92a06694c3a335b1849a5d2a028b89a7d2a0e225b",
         "locator": {
           "kind": "symbol",
           "name": "Markdown"
@@ -21,11 +21,12 @@
     },
     {
       "anchor": {
-        "blob": "b4c74c37212e432009df876b3276beea828250fa",
-        "content": "sha256:e65a77e2d635bfba5d57e537277bdfe467525e8ee50a1074c263649cbf815cc2",
+        "blob": "1a65bd4444779518a555e2e38d8ca30fa0df9f3a",
+        "content": "sha256:eff54d0360b790954af018d92a06694c3a335b1849a5d2a028b89a7d2a0e225b",
         "locator": {
-          "kind": "symbol",
-          "name": "Markdown"
+          "end": 194,
+          "kind": "line_range",
+          "start": 161
         }
       },
       "id": "RLZ-PTJE41",
@@ -36,6 +37,25 @@
       },
       "rationale": "Markdown owns the rendering or source-selection boundary that implements this obligation: The shared Markdown renderer supports opt-in heading hierarchy, heading identifiers, text-only numbered references and caller-owned card links.",
       "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "1a65bd4444779518a555e2e38d8ca30fa0df9f3a",
+        "content": "sha256:eb4f030e0e9a5d0fd0de472440dcbf63ad6907cdfb4d857467dbf74ca3e03e26",
+        "locator": {
+          "end": 205,
+          "kind": "line_range",
+          "start": 196
+        }
+      },
+      "id": "RLZ-T9HEG6",
+      "invariant": "INV-WNHAWD",
+      "origin": {
+        "handoffEntry": "L168-CUR-M2-21-N25",
+        "leaf": "260928-MIK-L168"
+      },
+      "rationale": "markdownPlugins installs the resources-backed cached parser after GFM and before reference/heading transforms. The retained syntax preparation stays separate from live requirement-link components/callbacks, not an immortal or stage-owning cache.",
+      "role": "propagation-persistence"
     }
   ],
   "references": {

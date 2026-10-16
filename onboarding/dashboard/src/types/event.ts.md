@@ -12,7 +12,7 @@ Declares the dashboard's TypeScript shape for observer events.
 
 ### Logic
 
-Trust has four values and Actor has three. ObserverEvent requires schema, id, ts, kind, trust and actor; data and the lifecycle, enclosure, repository, session and span identifiers are optional.
+Trust has four values and Actor has three. ObserverEvent requires schema, id, ts, kind, trust and actor; data and scopeKey/enclosure/repository/span identifiers are optional. lifecycleId and sessionId are absent from this envelope; this type change does not rewrite retained event history.
 
 ### Conventions
 

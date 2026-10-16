@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "680ee6661cc049e3e6876ee998e85b6371f1aa25",
+        "blob": "b8ccc22f00045bfceb680329d2723611281b8ee4",
         "content": "sha256:0133f2aed3e0146a26eeb89d0b71fc996abe5b86dccac45ca653fb8d1e1028fb",
         "locator": {
           "kind": "symbol",
@@ -21,11 +21,12 @@
     },
     {
       "anchor": {
-        "blob": "680ee6661cc049e3e6876ee998e85b6371f1aa25",
-        "content": "sha256:308568001463a3cfcc97b4b359d2f11113b0a6a323a771b5085f39f97cfff290",
+        "blob": "b8ccc22f00045bfceb680329d2723611281b8ee4",
+        "content": "sha256:8302972fbb6afcd531710e932767677a2c1746703e4c6876ee831e356f75932b",
         "locator": {
-          "kind": "symbol",
-          "name": "_publish_abandon"
+          "end": 487,
+          "kind": "line_range",
+          "start": 431
         }
       },
       "id": "RLZ-6PXMTZ",
@@ -39,7 +40,7 @@
     },
     {
       "anchor": {
-        "blob": "680ee6661cc049e3e6876ee998e85b6371f1aa25",
+        "blob": "b8ccc22f00045bfceb680329d2723611281b8ee4",
         "content": "sha256:af34bd65f334ad4c015282ee8614c0dc2c1169e8bb7f9f4319e61c14e5da6bea",
         "locator": {
           "kind": "symbol",
@@ -57,7 +58,26 @@
     },
     {
       "anchor": {
-        "blob": "680ee6661cc049e3e6876ee998e85b6371f1aa25",
+        "blob": "b8ccc22f00045bfceb680329d2723611281b8ee4",
+        "content": "sha256:367c79d12a1064456921fa57c7b3d8ff8509efb2c529a25cc538d0e4b13fb901",
+        "locator": {
+          "end": 307,
+          "kind": "line_range",
+          "start": 304
+        }
+      },
+      "id": "RLZ-PJVT0S",
+      "invariant": "INV-Z0BXKJ",
+      "origin": {
+        "handoffEntry": "L168-CUR-M1-21-A013-01",
+        "leaf": "260928-MIK-L168"
+      },
+      "rationale": "_finish_abandon_without_remains plans the abandoned task/parent stage and returns task_stage_refusal before provider teardown; this enforces preflight before destructive terminal work.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "b8ccc22f00045bfceb680329d2723611281b8ee4",
         "content": "sha256:4ff8e477f7cf07b5c9cc0495a3d07f5d9234cbc015fab1c5073cbbfaf6421573",
         "locator": {
           "kind": "symbol",
@@ -75,8 +95,8 @@
     },
     {
       "anchor": {
-        "blob": "680ee6661cc049e3e6876ee998e85b6371f1aa25",
-        "content": "sha256:308568001463a3cfcc97b4b359d2f11113b0a6a323a771b5085f39f97cfff290",
+        "blob": "b8ccc22f00045bfceb680329d2723611281b8ee4",
+        "content": "sha256:8302972fbb6afcd531710e932767677a2c1746703e4c6876ee831e356f75932b",
         "locator": {
           "kind": "symbol",
           "name": "_publish_abandon"
@@ -88,7 +108,7 @@
         "handoffEntry": "L82-CODE-R1-06",
         "leaf": "260928-MIK-L82"
       },
-      "rationale": "Current single owner of this sealed acceptance obligation.",
+      "rationale": "Historical retired-defect attachment: this current repair owner persists/returns the durable no-remains reason. It does not establish that the old missing-reason defect still exists.",
       "role": "unclassified"
     }
   ],
@@ -218,6 +238,55 @@
             "locator": {
               "kind": "file"
             }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "17": {
+      "note": "No-remains abandon validates task-stage authority before teardown.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b8ccc22f00045bfceb680329d2723611281b8ee4",
+            "content": "sha256:1cd6600be0a0654cc885b6b086bc65fc722483f905dab9e515eccce97288f9bd",
+            "locator": {
+              "kind": "symbol",
+              "name": "_finish_abandon_without_remains"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "18": {
+      "note": "The normal publication returns shared task/contract projection effects.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b8ccc22f00045bfceb680329d2723611281b8ee4",
+            "content": "sha256:8302972fbb6afcd531710e932767677a2c1746703e4c6876ee831e356f75932b",
+            "locator": {
+              "kind": "symbol",
+              "name": "_publish_abandon"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "19": {
+      "note": "One shared owner publishes/restores task stage and contract under the terminal guard.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0b8256aef2d4c0a07621d321e9efa78148b84942",
+            "content": "sha256:371d5ba827d99b7cc19a57ae8a47f83034c87c651fe721108944dcb00cd016f0",
+            "locator": {
+              "kind": "symbol",
+              "name": "publish_abandoned_task"
+            },
+            "path": "mcp/src/agents_remember/worktrees/abandon_task_publication.py"
           },
           "kind": "code"
         }

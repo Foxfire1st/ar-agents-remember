@@ -7,18 +7,17 @@
 
 ## Current enclosure-only composition
 
-Tests use the two-argument builder. Provider factory/workspace lift and fallback exclusivity cases are removed; an empty-input case asserts zero processes. Lifecycle join/gate, stable worktreeGroup key and active-before-cleanup ordering remain.
+The pure builder now accepts only the published process array. Its view retains exactly node/enclosureKey and the original process identity, without a second session/lifecycle join. Empty input yields no provider fallback; stable worktreeGroup identity and active-before-cleanup sibling ordering remain.
 
 ### Maintenance boundaries
 
-Remove provider helper descriptions, usesFallback/fallbackStacks assertions and mutual-exclusion invariant; document authored empty-surface behavior and surviving joins/key/order cases. Do not call the empty-process assertion a proof of provider-state deletion beyond the new builder API.
+The remaining tests protect published-process identity, honest empty input, stable enclosure keys and phase/leaf ordering. Provider lift/fallback and lifecycle/gate-attachment claims are retired. This is pure source assertion scope, not a mounted or producer-state-deletion proof.
 
 Source/test/fixture inspection is not a fresh mounted capture or a passing test run.
 Historical provider-shaped input data and retained compatibility definitions do not
 restore removed provider visuals or tool exposure.
 
-- Tests use the two-argument builder. Provider factory/workspace lift and fallback exclusivity cases are removed; an empty — source ownership, not executed visual proof. [8]
-- Tests use the two-argument builder. Provider factory/workspace lift and fallback exclusivity cases are removed; an empty — source ownership, not executed visual proof. [9]
+- The tests call buildEngineRoomModel with one process-list argument: a published process is retained by reference with only enclosureKey/node in its view, and empty input produces no provider fallback. Further pure assertions keep worktreeGroup as a stable enclosure key across an id change and order an active leaf before its cleanup-pending sibling. These are source assertions, not a fresh test or visual run. [8]
 
 ## Historical superseded account (non-operative)
 

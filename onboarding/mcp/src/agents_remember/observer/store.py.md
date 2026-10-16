@@ -6,12 +6,11 @@
 
 ## Purpose
 
-`store.py` is the append-only event store: it resolves a given event's log path
-and appends it as one JSONL line.
+`store.py` appends every event to the bounded shared workspace Event River and reads its validated JSONL records.
 
 ## Code Commentary
 
-### 260707-HFX2-L13 Workspace Cursor And Heartbeat Storage
+### Workspace River cursor and lock
 
 Workspace appends now take a POSIX `flock` on `workspace/events.lock`, the same cross-process lock
 used by physical compaction and live reads. `events.cursor.json` stores the non-negative virtual
@@ -19,43 +18,27 @@ used by physical compaction and live reads. `events.cursor.json` stores the non-
 necessary rather than generic defensive code: serving and MCP processes both append while the live
 compactor replaces the file, so an unlocked rewrite can lose writes or tear cursor state.
 
-Lifecycle heartbeats no longer append to `events.jsonl`. They atomically overwrite one
-`heartbeat.json` sidecar per lifecycle; `read()` merges the newest sidecar event into the validated
-log, while `read_log()` and `read_heartbeat()` expose the two storage layers to the projection cache.
-Real lifecycle and workspace events retain their prior JSONL routing.
+All events route to `workspace/events.jsonl`; no per-lifecycle logs or heartbeat-sidecar merge APIs remain. Optional scopeKey is correlation, not physical routing or a writer exemption.
 
 ### 260928-MIK-L114 River Admission And Write-Free Reads
 
-`workspace_river_lock()` takes an optional `timeout`: `None` waits as before, a bound
-raises `TimeoutError` (an `OSError`) so a stuck lock is a counted loss, never a hung tool
-call. `workspace_river_read()` holds the river lock for reading without creating any
-observer file — read-only open under a shared lock, and no lock at all when no lockfile
-exists. `EventStore.append()` routes lifecycle-less events through the shared admission
-every writer obeys; lifecycle logs never take the lock either way.
+`workspace_river_lock` optionally times out with `TimeoutError`/`OSError`. `workspace_river_read` opens an existing lockfile without creating observer files: it yields true only after acquiring the shared lock, and false if opening or locking fails. The helper itself performs no lockless base/file read. Serving's separate `_read_source_lines` owns the missing-lock branch: it admits that window only when the lockfile is absent before and after the read; otherwise it repeats under a confirmed shared hold, returning no rows with the caller's cursor unchanged when that hold is unavailable. `EventStore.append` always enters common size admission under the River lock; session identity cannot bypass it.
 
-`EventStore.read()` skips corrupt, legacy, or torn JSONL lines. That keeps one bad lifecycle event row from freezing the projection tick fleet-wide while preserving append-only write semantics for valid rows.
+`EventStore.read()` skips invalid/torn persisted rows; damaged activity records establish no task status.
 
-`EventStore(observer_root)` holds the `logs/observer/` root. `log_path(lifecycle_id)`
-routes to `lifecycles/<id>/events.jsonl` when a lifecycle id is present, else the
-shared `workspace/events.jsonl`. `append(event)` creates parent dirs on first
-write and appends `event.model_dump_json(by_alias=True, exclude_none=True)`.
-`read(lifecycle_id)` validates a log back into `Event` objects — the minimal,
-validated read that proves the write format round-trips (the projection layer
-will read more richly).
+`EventStore(observer_root).log_path()` is always `workspace/events.jsonl`. `append(event)` creates parent directories and passes alias-serialized bytes to `admit_workspace_river_row`; `read()` validates surviving records as `Event` objects.
 
 ## Invariants And Boundaries
 
-- **Single writer per lifecycle file.** Exclusive adoption (one live session per
-  lifecycle) means appends need no cross-process lock. The only events written to
-  a lifecycle file are written by its live owner; a dormant fleeting lifecycle
-  past TTL is *pruned* (directory deletion), never terminated by a non-owner
-  append — so the single-writer invariant holds without coordination.
-- Append-only: history is never rewritten in place (corrections are later
-  events, by design).
+- River writers and compaction serialize with a shared lock, without an exclusive-live-session exemption.
+- Retention may replace the file and advance its virtual base; this is not crash-atomic across separate files.
+- Browser tailing is separately write-free; events are observations, not authored task-stage authority.
 
 ## Evidence
 
 ### Repo-Internal References
 
-- The event envelope serialized and validated by the observer model. [1]
-- The store layout, retention tiers, and TTL prune rule. [2]
+- EventStore serializes and validates the shared Event envelope. [1]
+- Every append uses bounded workspace admission; tolerant reads admit valid records only. [2]
+- The read helper reports whether an existing shared lock was actually acquired; it does not perform a lockless read. [3]
+- Serving, not the helper, owns the guarded missing-lock base/file window and the confirmed-hold fallback. [4]

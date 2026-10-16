@@ -39,7 +39,7 @@ values; the summary/projection owners carry those separate contracts.
 - Review GET routes read without other protected-state changes. [4]
 - Remaining dashboard GETs read without writing. [5]
 - Converted drift and registered baseline status use the filing oracle; dictionary assertions and the array-valued fixture do not establish clean-card or returned-field semantics. [6]
-- Server-info, gate and file calls preserve the synthetic seat. The file call still supplies removed object entries and asserts only dict/ok and the filing oracle, not successful naming; resolve_context is no longer called. [7]
+- Server-info, gate and file calls preserve the synthetic seat; resolve_context is not called and file inputs do not prove successful naming. [16]
 - Context-packet, internal drift and baseline-status paths preserve the selected memory-backed seat; the current unconverted baseline-status assertion is ok=False and state="legacy-format", not the prior missing-root expectation. [8]
 - Skill catalog list, advertised-URI read and bogus-URI refusal preserve the fixture. [9]
 - Baseline adoption dry run preserves the converted fixture. [10]

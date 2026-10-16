@@ -1545,6 +1545,24 @@
         }
       ]
     },
+    "78": {
+      "note": "Native stage operations need no redundant Manager status call; correction and organizational-completion authority remains explicit.\n\nAnchor: `Start, finalize and abandon publish task stage`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6c14bda6d478f9d220063774ea8b13852e31a0f0",
+            "content": "sha256:9b8a0bd77133a911eda02d798594b6181aac50e9399f1000649385784cc6dc27",
+            "locator": {
+              "end": 20,
+              "kind": "line_range",
+              "start": 20
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/manager.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
     "8": {
       "note": "The planned-row history form in the writer section.\n\nAnchor: \"A planned row (MIK-R11, converted memory only)\"",
       "targets": [

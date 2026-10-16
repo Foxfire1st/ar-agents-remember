@@ -1,0 +1,36 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test",
+      "prevents_costly_mistake",
+      "spans_locations"
+    ],
+    "justification": "Dismissal persistence and UI feedback are a maintained cross-boundary obligation: treating optimistic removal as successful durable acknowledgement silently loses failed clicks. Native action/queue targets and separate bulk/failure/source-defined ASGI assertions establish the bounded contract, not a Curator runtime grade."
+  },
+  "applicability": "Individual and Clear-all acknowledgement controls for actionable-drift, provider-down, failed-setup and blocked-start, through the native dismissal action and current queue presentation.",
+  "conditions": [
+    "Requests use the current itemId and supported kind; Clear all composes per-item requests.",
+    "Presentation may optimistically hide a pending request; an unsuccessful reply restores that item and reports that the dismissal did not hold."
+  ],
+  "exclusions": [
+    "Task/lifecycle/gate acceptance or dismissal of future occurrences.",
+    "An assertion that pending items are hidden only after success."
+  ],
+  "id": "INV-DVQX4T",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "sync-L81-primary-regressions.txt; sync-L81-dashboard.txt"
+      ],
+      "path": "A011-R166-operational-acknowledgement-curator-input-26-corrected-proofs.json"
+    },
+    "handoffEntry": "L168-W-R166-02-04",
+    "leaf": "260928-MIK-L168",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Every remaining operational attention kind accepts individual/bulk dismissal, and a failed write leaves the item visible.",
+  "status": "proposed",
+  "supersedes": []
+}

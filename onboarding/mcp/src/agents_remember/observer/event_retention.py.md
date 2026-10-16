@@ -6,105 +6,15 @@
 
 ## Purpose
 
-`event_retention.py` owns dashboard-served raw observer event retention. The Event
-River is an *agent-activity* feed, not a process-liveness keepalive, so its history
-is retired by **inactivity** — seconds since the last real (non-heartbeat) activity
-event — per lifecycle type, rather than by a written `lifecycle.ended` event (real
-sessions almost never emit one; they die silently). Heartbeats are liveness theater
-and do not count as activity, so a parked lifecycle that only keeps beating is still
-"inactive" and its throwaway log can be cleaned up regardless of lifecycle type.
-Active logs remain replayable. Fresh replay selects the first event not provably older than the time cutoff; it can start at byte zero and retain a whole log, including when the first timestamp is unparseable.
+Workspace River retention owns recent-hour fresh replay and byte admission, not session inactivity or lifecycle deletion.
 
 ## Code Commentary
 
-### 260707-HFX2-L13 Live River And Complete Reclamation
+### Workspace compaction and admission
 
-Workspace compaction is no longer startup-only. It runs under the shared cross-process river lock,
-rewrites only retained rows, and advances the persisted virtual base offset by the reclaimed bytes.
-Fresh-connect offsets therefore use `baseOffset + physicalOffset`, matching the live SSE cursor
-coordinate system. The serving layer owns the sixty-second live compaction cadence.
+`compact_workspace_river` cuts old/oversize prefixes under the common River lock and advances virtual baseOffset. Serving age compaction remains sixty-second paced. Every append checks the 16 MiB ceiling and trims toward 8 MiB; a row still unable to fit is refused and counted by its caller. This lock is not crash-atomic across separate cursor/event files.
 
-Lifecycle pruning now removes the whole dormant, unprotected lifecycle directory with
-`shutil.rmtree` after the existing protection/dormancy gates. This closes the round-1 F7 leak where
-deleting only `events.jsonl` left `heartbeat.json` and served/gate sidecars permanently unreclaimable.
-The whole-directory deletion is intentional: protected or active lifecycles cannot reach this
-boundary.
-
-### 260928-MIK-L114 Per-Append Size Admission
-
-`compact_workspace_river()` now serves both cuts through `_compact_under_lock()`: the cut
-by age (rows older than the replay TTL) and the cut by size (oldest rows until the file
-is at most the trim bound). `admit_workspace_river_row()` admits every append under the
-river lock — file size plus row bytes over the 16 MiB ceiling cuts oldest whole rows to
-8 MiB first, then appends; a row that fits no cut is refused, not written, and the
-caller counts it. There is no interval between size checks, no store beside the river
-and no second event file. The dashboard's age compaction keeps its hour and its interval.
-
-### Logic
-
-`lifecycle_is_dormant(path, *, now)` is the cleanup key: it reads
-`_retention_facts(path)` for the last real activity timestamp and whether the
-lifecycle is still fleeting, then returns true when the seconds since that activity
-exceed the per-type TTL — `FLEETING_INACTIVE_TTL_SECONDS` for an un-promoted fleeting
-lifecycle, `ENCLOSURE_INACTIVE_GRACE_SECONDS` for a promoted/enclosure-backed one
-(both currently one hour). A log with no parseable activity is treated as not-yet-dormant.
-
-`_retention_facts(path)` is the single-pass reader returning
-`(last_real_activity_ts, is_fleeting)`: it skips `HEARTBEAT_KIND` rows entirely (a
-heartbeat never advances the activity timestamp), reads `data.fleeting` off
-`lifecycle.started`, and clears the fleeting flag once a `lifecycle.promoted` row is
-seen. `last_activity_at(path)` exposes just that activity timestamp.
-
-`initial_event_offsets` sends dormant logs to EOF and active logs to `_first_retained_offset`; workspace adds its virtual base to the TTL-selected physical offset. The first retained offset can be zero (recent or unparseable first timestamp), so no strict recent-only byte/count bound follows. Resume remains decode_cursor-owned.
-
-`prune_expired_lifecycle_event_logs(root, *, now, protected_lifecycle_ids=frozenset())`
-physically removes the lifecycle directory for **any** dormant, unprotected log
-(inactivity past its TTL), including its event log and sidecars, not only terminal ones.
-`protected_lifecycle_ids` is an exemption set checked *before* dormancy: a log whose id is in
-the set is skipped no matter how long it has been inactive. The dashboard passes the lifecycle
-ids of every leaf in a not-yet-retired master series (from
-`worktree_provider_admission.series_retained_lifecycle_ids`), so a running durable task — and
-all of its sibling leaves — keep their full event history until the whole series is archived
-(plus a grace window). This **supersedes** the per-log inactivity TTL for durable,
-enclosure-backed work; only fleeting/standalone logs are still retired by inactivity alone.
-`lifecycle_terminal_at(path)` is retained for back-compat (the explicit `lifecycle.ended`
-reader) but is no longer the prune or offset gate.
-
-`_first_retained_offset(path, *, cutoff)` returns the offset of the first event it cannot
-prove is older than `cutoff`. Events whose timestamp is unparseable are **kept** (we never
-silently drop an event we cannot age), so only events with a valid timestamp strictly older
-than the cutoff are skipped. `_iter_event_payloads` is the complete-line JSONL iterator
-(ignores malformed rows, stops at a trailing partial line, yields byte offsets); `_event_time`
-normalizes ISO timestamps to UTC and accepts both `Z` and explicit offsets.
-
-### Conventions
-
-The module is intentionally independent of FastAPI/SSE. It works only from an
-observer log root and a supplied clock so tests can pin retention behavior
-without a live dashboard server.
-
-### Invariants And Boundaries
-
-- Retention keys on **inactivity**, not on a terminal event, so EVERY lifecycle type
-  is cleanable — a dormant promoted/enclosure-backed log is retired even though it never
-  wrote `lifecycle.ended` (real sessions die silently).
-- **A live master series supersedes the inactivity TTL.** `protected_lifecycle_ids` is
-  checked before dormancy, so a durable task in a not-yet-retired series (and its sibling
-  leaves) keeps its whole history even while idle. The protection set is computed from durable
-  enclosure state by the caller; this module just honors it. Without an id in that set, the
-  ordinary per-type TTL applies — so fleeting/standalone logs are unaffected.
-- **Heartbeats are not activity.** A parked lifecycle that only keeps beating still ages
-  out; only real (non-heartbeat) events reset the inactivity clock.
-- No global raw-event count cap lives here; retention is inactivity-time based, and active
-  lifecycle logs are never pruned by count.
-- Fresh active replay skips only the provably old prefix; unparseable timestamps or a retained first row can select byte zero and the whole log. Dormant fresh replay starts at EOF.
-- Workspace events have a separate age window because they have no lifecycle identity.
-- An event whose timestamp cannot be parsed is never aged out — it is kept rather than dropped.
-- The module reads only complete JSONL rows and never consumes a partial append.
-
-### Todos
-
-No file-local todos.
+Fresh offsets are workspace base plus `_first_retained_offset`’s recent-hour physical start. Only provably old timestamps are skipped; malformed rows are ignored and trailing partial lines wait. No session dormancy, heartbeat sidecar, series exemption or lifecycle directory deletion remains.
 
 ## Evidence
 
@@ -117,23 +27,7 @@ No relevant external documentation found after checking in-repo design docs for 
 
 ### Repo-Internal References
 
-The serving layer calls this policy for windowed fresh-offset reads before raw event replay. The production owners below
-define dormant pruning, heartbeat-skipping activity reads and bounded active replay. Lifecycle-log reclamation itself belongs to the projection pass, not to any raw-event reader.
+Fresh offsets and compaction retain the bounded workspace River.
 
-- The protection set is derived from durable enclosure state (a live master series) by the admission module. [5]
-
-### Cross-Repo References
-
-No meaningful cross-repo references found. This policy is local to the observer
-log layout.
-
-No meaningful cross-repo references found.
-
-
-- Fresh offsets use dormant EOF, active first-not-provably-old physical offset and workspace virtual base plus TTL-selected physical offset. Active/workspace physical starts can be zero (the returned workspace cursor is then its base); this is a time-selection policy, not a strict byte/count bound. [1]
-
-- `lifecycle_is_dormant` is the inactivity cleanup key; `_retention_facts`/`last_activity_at` read the last real activity and ignore heartbeats. [2]
-- Any dormant lifecycle log (inactivity past its per-type TTL) is physically removed — not only terminal ones. [3]
-- `protected_lifecycle_ids` exempts a log from pruning regardless of inactivity; the projection store passes a not-yet-retired master series' leaf ids so a live durable task keeps its history.  Anchor: `protected_lifecycle_ids` [4]
-- `_first_retained_offset` keeps unparseable-timestamp events and skips only events with a valid ts strictly older than the cutoff. [6]
-- The raw SSE tailer uses retained initial offsets only when no cursor is supplied; it never prunes — reclamation belongs to the projection pass. [7]
+- Fresh replay uses virtual base plus the first not-provably-old offset. [1]
+- Unparseable timestamps are retained rather than guessed old. [6]

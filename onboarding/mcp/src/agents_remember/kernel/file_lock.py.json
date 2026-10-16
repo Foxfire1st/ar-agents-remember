@@ -79,15 +79,16 @@
       ]
     },
     "3": {
-      "note": "Control-plane target authorization precedes primitive entry; capability errors are translated.",
+      "note": "Control-plane target authorization precedes primitive entry; capability errors are translated.\n\nAnchor: actual current supporting source",
       "targets": [
         {
           "anchor": {
-            "blob": "938131908d1c91afc46e26f64e36ef90306c0971",
-            "content": "sha256:d99b53ff95bbbc0395003498264051f916b0da5e4c67e2ebc07259709fa1e071",
+            "blob": "59a148a711df3a07d0424f5448d9871b6aac6930",
+            "content": "sha256:d260e889dbb0ffafb0ab1dbac18137b0f3bf1040432c20bf21313017974629f0",
             "locator": {
-              "kind": "symbol",
-              "name": "exclusive_access"
+              "end": 263,
+              "kind": "line_range",
+              "start": 225
             },
             "path": "mcp/src/agents_remember/controlplane/durable_store.py"
           },
@@ -95,11 +96,12 @@
         },
         {
           "anchor": {
-            "blob": "938131908d1c91afc46e26f64e36ef90306c0971",
+            "blob": "59a148a711df3a07d0424f5448d9871b6aac6930",
             "content": "sha256:18e19347826e5c2e9e70f9ba584a22c80264b29fda28921c215e951f9fd2e5ca",
             "locator": {
-              "kind": "symbol",
-              "name": "require_lock_held"
+              "end": 284,
+              "kind": "line_range",
+              "start": 266
             },
             "path": "mcp/src/agents_remember/controlplane/durable_store.py"
           },

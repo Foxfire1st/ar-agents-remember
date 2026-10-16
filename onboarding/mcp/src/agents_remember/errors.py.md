@@ -88,7 +88,9 @@ The error families preserve distinct authority, recovery and transport meanings.
 - Bounded configured-contract authority and reread errors. [3]
 - Separate coherence, exact-pair and final-certification response shapes. [4]
 - Composition, integrity, harness retry safety and history failures. [5]
+
 - Control-plane translation preserves the durable-store error family. [6]
+
 - Host registry translation preserves typed pre-launch authority refusal. [7]
 - Role-capsule compilation refusal with its stable status, remedy and frozen conflict rows. [8]
 - The two capsule subclasses that mark which boundary refused. `CapsuleBindingError` was removed on the A3 candidate and must not be cited. [9]

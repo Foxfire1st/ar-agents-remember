@@ -45,9 +45,13 @@ failure's name. `commit_if_dirty` creates an ordinary content commit when its fi
 The generic two-sentence form of this contract (derived-entry removal without reading; ordinary commit when dirty) now stands above in signature-specific form with the private-index interval.
 `publish_tree_commit` publishes the admitted exact tree through `commit-tree` and an expected-old branch update. It settles the message before the per-worktree publication lock, refuses an unfinished Git action or a moved/detached admitted ref, stages the supplied tree, runs the supplied confirmation, then writes and publishes the object. A failure gives the index back only while it still holds this call's staged state. Assume-unchanged, skip-worktree and intent-to-add facts are preserved. Runs pre-commit before commit-tree, refuses tracked/index mutation with index restore, and stamps Commit-Check-Pass.
 
-Changed-path helpers retain their distinct semantics: existing-file worklists omit deletions, while
-`changed_files_with_counts` reports additions/deletions, rename targets, counts, and binary-file
-unknown counts for the serving change-set view.
+Existing-file worklist helpers remain here and omit deletions. Native change-set count/status
+parsing now lives in the sibling `worktrees/modules/git_changes.py`: its
+`changed_files_with_counts` keeps deletions, rename destinations and unknown binary counts with
+NUL-delimited path identity. `serving/changeset_reads.py` is the cached serving wrapper over that
+implementation, not the parser's owner. This mutation/capture module no longer defines that reader.
+
+The two read domains keep different Git refresh behavior. The landing-chain/worklist `_nul_git` here passes its arguments to the guarded runner without adding `diff.autoRefreshIndex=false`; `changed_worktree_paths` therefore retains ordinary Git refresh behavior for its NUL-delimited worklist. Only the sibling change-set `_nul_git` adds that override, preserving the real index generation for its content/count reads. A stat-only identical-byte replacement is not a content change for the landing worklist; the existing regression stages the native exact tree after such a rewrite and then asserts an empty changed-path list. This distinction does not override the shared kernel's `GIT_OPTIONAL_LOCKS=0` policy or authorize a new index write.
 
 `stage_tree(repo, tree)` retargets only differing index entries using cached diff-index and update-index, reading no working files. Unchanged entries retain stat data and flags; replaced entries have assume-unchanged/skip-worktree flags restored, and absent-tree intent-to-add entries remain. The resulting write-tree is exactly the judged tree; later working writes remain uncommitted (INV-49E649). It does not run read-tree or discard every entry's stat data.
 
@@ -88,6 +92,10 @@ No configured external domain-documentation evidence.
 
 ### Repo-Internal References
 
+- Native NUL-delimited statuses/counts live in `git_changes`; the serving wrapper caches that one implementation. [27]
+
+- Only the change-set wrapper adds diff.autoRefreshIndex=false; the native landing worklist keeps ordinary Git refresh behavior, and the existing identical-byte/native-stage regression asserts an empty worklist. [28]
+
 These repository-relative targets and exact ranges were checked against the L9 working source.
 Source declarations and test assertions are distinguished from execution and acceptance evidence.
 
@@ -114,8 +122,10 @@ No additional configured cross-repository evidence.
 - Staging writes a private index file when asked; otherwise the worktree's own index. [15]
 - Ref/repository identity and transport-safe errors have shared implementations. [19]
 - Candidate trees use private indices and exact derived-path exclusions. [20]
-- Changed-file reporting preserves its distinct deletion/rename/count semantics. [22]
+> Historical reference 22 records the former local change-set reader. Its current serving owner is named in the operative account and current source evidence, not re-advertised as a local function.
 - `stage_tree` makes the index exactly one tree and reads nothing from the working tree. [23]
 - checkout_holding_branch reads git worktree list --porcelain and selects the first non-detached, non-bare checkout holding the exact refs/heads branch, returning None if unavailable. [24]
 
 - Capture orchestration delegates private-copy materialization and exclusion pathspecs to their actual owner. [25]
+
+- The serving count reader retains deletion/rename/binary path facts outside this mutation module. [26]

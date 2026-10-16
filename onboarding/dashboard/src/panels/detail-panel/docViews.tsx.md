@@ -16,7 +16,7 @@ References retain server-resolved artifact navigation through `useTaskNotesData`
 
 ## Boundaries
 
-These views do not fetch the full task body or choose the current document. Hydration stays with `useTaskDocumentBody`, and document-local view/scroll state stays with `useDocView`. The dispatcher does not alter records or derive review totals.
+Own views receive the addressed DocumentTaskEntry and TaskSummary, not a synthetic MasterDocView. These views do not fetch the full task body or choose the current document. Hydration stays with `useTaskDocumentBody`, and document-local view/scroll state stays with `useDocView`. The dispatcher does not alter records or derive review totals.
 
 ## Evidence
 

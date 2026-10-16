@@ -3,11 +3,12 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "d9ead04d699c465f6ffb8a1ab78bc3558b7fee4b",
-        "content": "sha256:349117148f42c41bbc0da76d4be4c9d51a5cc82b75281b5a3de4af438ee9772f",
+        "blob": "e10c0513a02460538da5326cc65d4e2cf6bb592c",
+        "content": "sha256:20c01977ae9a74dd90bb2401ea02de9d3ed947d48bf6fc1ce859bf4517aa8e44",
         "locator": {
-          "kind": "symbol",
-          "name": "useDocumentChat"
+          "end": 91,
+          "kind": "line_range",
+          "start": 19
         }
       },
       "id": "RLZ-5WD4V8",
@@ -21,11 +22,12 @@
     },
     {
       "anchor": {
-        "blob": "d9ead04d699c465f6ffb8a1ab78bc3558b7fee4b",
-        "content": "sha256:349117148f42c41bbc0da76d4be4c9d51a5cc82b75281b5a3de4af438ee9772f",
+        "blob": "e10c0513a02460538da5326cc65d4e2cf6bb592c",
+        "content": "sha256:20c01977ae9a74dd90bb2401ea02de9d3ed947d48bf6fc1ce859bf4517aa8e44",
         "locator": {
-          "kind": "symbol",
-          "name": "useDocumentChat"
+          "end": 91,
+          "kind": "line_range",
+          "start": 19
         }
       },
       "id": "RLZ-G8BE9E",
@@ -39,11 +41,12 @@
     },
     {
       "anchor": {
-        "blob": "d9ead04d699c465f6ffb8a1ab78bc3558b7fee4b",
-        "content": "sha256:c67dcfd5536dbfed4298e5964e3afd7a57103d211840c0f44e825a00006a93b6",
+        "blob": "e10c0513a02460538da5326cc65d4e2cf6bb592c",
+        "content": "sha256:a1f2d83f63814a214c478a8afcac253189b0aa9be4193f5bc33998139584816e",
         "locator": {
-          "kind": "symbol",
-          "name": "chatPresentation"
+          "end": 178,
+          "kind": "line_range",
+          "start": 163
         }
       },
       "id": "RLZ-VZXF7A",

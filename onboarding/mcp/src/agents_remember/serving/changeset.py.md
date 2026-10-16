@@ -17,32 +17,33 @@ commits**) or `working` (uncommitted) change-set, resolved by leaf-id straight o
 enclosure contract, so the viewer works with no live worktree.
 
 `serving/changeset.py` registers the read-only change-set API: enclosure, leaf and master selectors with the 400/404 JSON idiom. In W03 both routes accept a recorded-comparison selector that reads the comparison's immutable trees through `serving/changeset_comparison.py`, refusing any `mode` combination.
+## Current read lifetime
+
+`register_changeset_routes` creates and returns one app-owned `ChangesetCache` and wraps task, file-diff and master reads with it. Native reads share captured input generations and retain values only after fresh observations agree; unreadable/changing inputs do not become reusable. HTTP conditional handling hashes the actual successful response body, so a matching ETag can avoid a body without substituting a different comparison or an unrecorded endpoint. Cache currentness is not task/closeout authority or a measured latency result.
+
 ## Code Commentary
 
 ### 260731-EFA-L4 Current Delta — The Three Routes Now Declare What They Answer With
 
 - `GET /api/changeset/task` declares `response_model=ComparisonChangeSet | LeafChangeSet | TaskChangeSet`
-  with `responses=SCOPED_READ_RESPONSES`. There are three success shapes: a recorded `comparison`
+  with `responses=CHANGESET_READ_RESPONSES`. There are three success shapes: a recorded `comparison`
   selects the comparison response; otherwise a `leaf` selects the committed/working leaf view,
   and the enclosure scope selects the task view. `comparison` combined with `mode` is refused.
 - `GET /api/changeset/file-diff` cit:(["/api/changeset/file-diff"], mcp/src/agents_remember/serving/changeset.py:682-682) declares `response_model=FileDiff` with
-  `responses=SCOPED_READ_RESPONSES`.
+  `responses=CHANGESET_READ_RESPONSES`.
 - `GET /api/changeset/master` cit:(["/api/changeset/master"], mcp/src/agents_remember/serving/changeset.py:708-708) declares `response_model=MasterChangeSet` with
-  `responses=SCOPED_READ_RESPONSES`. **The refusal table is new in 260921-ICR-L13 and supersedes
+  `responses=CHANGESET_READ_RESPONSES`. **The refusal table is new in 260921-ICR-L13 and supersedes
   the earlier "no refusal shape" account below**: an *unknown* master (no series contract) still
   degrades to empty lists, but a master the contract names whose code endpoints are missing is
   refused by name (`MasterEndpointAbsent` → the shared 400/404 map) instead of being answered
   from a later branch tip. That absence is a fact about the generation-bound selection, not an omission.
 
-`SCOPED_READ_RESPONSES` (from `serving/response_contract.py`) is the shared 400/404 map the
-files and notes routes use. It covers both refusal paths this module has: `run_scoped`'s error
+`CHANGESET_READ_RESPONSES` (from `serving/response_contract.py`) retains the shared 400/404 refusal map and declares conditional 304 responses for these change-set routes. It covers both refusal paths this module has: `run_scoped`'s error
 map on the `scope` branch, and the hand-rolled `JSONResponse` mapping the `leaf`/`master`
 branches keep (`_leaf_json`, and the `file-diff` master branch's own
 `bad-path`/`not-found` try/except).
 
-Nothing on the wire changed and nothing is validated at runtime — every handler returns a
-`Response` it built itself, and FastAPI applies `response_model` only to values it serializes
-for you. The former broad conformance suite was removed in IAS testing cleanup. The response declaration still specifies the body contract, but this card makes no claim that the removed suite enforces it.
+Handlers build their explicit response bodies; the model declaration alone is not offered as an executed validation/control. The former broad conformance suite was removed in IAS cleanup. Current conditional reads add weak body ETags, no-cache and a bodyless 304 only for a matching successful response; non-200 responses pass through unchanged. The declaration still specifies the body contract without reinstating the removed suite.
 
 Note that the `Conventions` line below — "plain camelCase `dict[str, Any]` responses (no
 pydantic models)" — remains true of the *handlers*: they still build dicts. What changed is that
@@ -84,8 +85,7 @@ raises `FileNotFoundError` (→ `404 not-found`) for a mainline scope or an unre
 contract — mainline has no base, so it has no change-set. Code = `changed_files_with_counts(scope.code_root,
 contract.code_base_commit, None)` (base → the live worktree), each entry tagged with
 `hasSidecar` via `route_sidecar_status`; memory = the same over `contract.memory_worktree` +
-`contract.memory_base_commit` (skipped when there is no memory tree). cit:([`_sum`], mcp/src/agents_remember/serving/changeset.py:91-98)
-produces the `{files, insertions, deletions}` counters (binary `None` counts → 0).
+`contract.memory_base_commit` (skipped when there is no memory tree). The imported `change_counters` alias `_sum` from `serving/changeset_reads.py` produces the `{files, insertions, deletions}` counters (binary `None` counts → 0).
 
 cit:([`file_diff`], mcp/src/agents_remember/serving/changeset.py:122-148) emits BEFORE + AFTER content (not unified-diff
 text) so the L4 pane feeds CodeMirror MergeView `a`/`b` directly. `kind="memory"` diffs
@@ -141,8 +141,7 @@ worktree's `onboarding/` for `working`, else the repo's, for the `hasSidecar` ta
 ### Conventions
 
 Plain camelCase `dict[str, Any]` responses (no pydantic models), matching `files.py`.
-The change-detection primitive is `worktrees/modules/git.changed_files_with_counts`; the
-BEFORE reader is `commit_text_or_none`; scope + error map come from `serving/scope.py`;
+The change-detection/count, commit-text, head and working-text readers now come from `serving/changeset_reads.py`, not the worktree mutation module. Working file reads use that shared `working_text` helper. Scope + error map come from `serving/scope.py`;
 sidecar pairing from `kernel/sidecar_pairing.route_sidecar_status`.
 
 ### Invariants And Boundaries
@@ -191,18 +190,18 @@ sidecar pairing from `kernel/sidecar_pairing.route_sidecar_status`.
 ### Repo-Internal References
 
 - The shared scope resolution + error map (`FileScope`, `run_scoped`, `language_for`). [1]
-- The change-set primitive (counts/status, keeps deletions), branch existence probe, and BEFORE reader. [2]
+> Historical reference 2 groups the former worktree-module primitive ownership. The current serving count/text owner is named above and in current evidence; it is not a current local-definition or runtime claim.
 - Sidecar presence is derived from governing route indexes or a mirrored sidecar-file probe. [3]
 - Shared path confinement resolves the requested path and refuses repository escape. [4]
 - The persisted contract model ("def load_contract(path: Path) -> WorktreeContract:") and loader ("def load_contract(path: Path) -> WorktreeContract:") behind master/leaf accumulation, with leaf-id normalization via "slug = slugify(worktree_name)". `slugify` is now defined in `tasks/task_paths.py` and re-exported by `worktrees/task_resolver.py`. [5]
 - The app factory that calls `register_changeset_routes` before `mount_static`. [6]
 
-| The task change-set envelope carries code/memory changes and counters. | "class TaskChangeSet(" | mcp/src/agents_remember/serving/response_contract.py:834-840 |
-| The leaf change-set extends the task shape with the selected committed/working mode, and (260921-ICR-L25) with the `state`/`stateDetail` pair that keeps an unrecorded range apart from a measured-empty one. | "class LeafChangeSet(" | mcp/src/agents_remember/serving/response_contract.py:843-860 |
-| The master change-set carries net changes and per-leaf counters, beside the generation identity it was selected at. | "class MasterChangeSet("; "class MasterNetGeneration(" | mcp/src/agents_remember/serving/response_contract.py:886-902; mcp/src/agents_remember/serving/response_contract.py:871-883 |
-| The file-diff envelope carries separate optional before and after content. | "class FileDiff(" | mcp/src/agents_remember/serving/response_contract.py:905-1134 |
-| The shared scoped-read refusal table declares 400 and 404 response envelopes. | "SCOPED_READ_RESPONSES: dict[int" | mcp/src/agents_remember/serving/response_contract.py:1136-1169 |
-| Current production declaration; the removed broad suite supplies no current execution proof. | `register_changeset_routes` | mcp/src/agents_remember/serving/changeset.py:325-719 |
+> Historical declaration excerpt (not current extent): | The task change-set envelope carries code/memory changes and counters. | "class TaskChangeSet(" | mcp/src/agents_remember/serving/response_contract.py:834-840 |
+> Historical declaration excerpt (not current extent): | The leaf change-set extends the task shape with the selected committed/working mode, and (260921-ICR-L25) with the `state`/`stateDetail` pair that keeps an unrecorded range apart from a measured-empty one. | "class LeafChangeSet(" | mcp/src/agents_remember/serving/response_contract.py:843-860 |
+> Historical declaration excerpt (not current extent): | The master change-set carries net changes and per-leaf counters, beside the generation identity it was selected at. | "class MasterChangeSet("; "class MasterNetGeneration(" | mcp/src/agents_remember/serving/response_contract.py:886-902; mcp/src/agents_remember/serving/response_contract.py:871-883 |
+> Historical declaration excerpt (not current extent): | The file-diff envelope carries separate optional before and after content. | "class FileDiff(" | mcp/src/agents_remember/serving/response_contract.py:905-1134 |
+> Historical declaration excerpt (not current extent): | The shared scoped-read refusal table declares 400 and 404 response envelopes. | "SCOPED_READ_RESPONSES: dict[int" | mcp/src/agents_remember/serving/response_contract.py:1136-1169 |
+> Historical declaration excerpt (not current extent): | Current production declaration; the removed broad suite supplies no current execution proof. | `register_changeset_routes` | mcp/src/agents_remember/serving/changeset.py:325-719 |
 
 - Comparison and mode cannot be combined on either route [24]
 - Both selectors carry the optional comparison number [25]
@@ -335,3 +334,7 @@ an empty `stateDetail`.
 - **The served vocabulary of the two states.** [21]
 - **The cases that measure this change: the state discriminator with the head absent from the detail, the route-level status, and the one-half degradation.** [22]
 - **The client that carries the state and withholds the total it would misprint.** [23]
+
+- All three change-set routes share and return one app-owned conditional-read cache. [28]
+- Only actual successful response bytes get the ETag/no-cache and matching bodyless 304 path. [29]
+- NUL-safe count/status reads belong to the serving reader, not the worktree mutator. [30]

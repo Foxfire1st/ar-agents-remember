@@ -10,7 +10,7 @@ MIK-R81 rule 2 (F09): one-change reads ignore unrelated corpus size.
 
 ## Code Commentary
 
-The suite checks documentary rewrite is path local and byte equal; append, delete and cross-document joins; lifecycle append is path local and byte equal; task/lifecycle atomic rewrites and deletes at both corpus sizes; new membership and cross-folder consumers at both sizes; closure validation ignores unrelated document count. The ordered-sibling regression breaks a retained two-child dependency cycle, compares the refreshed projection with a full reference, checks both directional dependency lists and the master frontier, and compares read sets at two unrelated-corpus sizes. This is a controlled assertion, not installed timing proof. The retired gate mutation case is absent with L113's removed gate projection. Tests assert only their named facets; they do not confer MEMORY, installation, lifecycle or broad performance acceptance.
+The suite checks documentary rewrite, append/delete, task atomic rewrite/delete, declared membership and cross-folder consumers with byte-equal full references and read sets at two corpus sizes. Lifecycle-log inputs and their append/rewrite/delete cases are removed. Reciprocal membership chooses one parent; child entries own their facts, each parent lists the child key once, and all canonical task entries remain reachable. The ordered-sibling regression still breaks a retained dependency cycle, compares the full reference and checks both dependency lists and master frontier. Closure validation ignores unrelated documents. These controlled counts are not installed timing, host-delivery or acceptance proof; retired gate/terminal projection cases are not current coverage.
 
 ## Boundaries
 
@@ -18,4 +18,6 @@ Local implementation and executable evidence do not replace requirement authorit
 
 ## Evidence
 
-- Current path-directed task/lifecycle cases compare bytes and read counts at both corpus sizes. The ordered-sibling case checks dependency lists and master frontier after breaking a cycle; the deleted gate-projection mutation is no current case. [1]
+- Task edits match the full reference and reciprocal membership chooses one parent. [2]
+- Task-only atomic replacement/deletion read sets stay bounded at both sizes. [3]
+- Breaking a cycle updates master frontier and both dependency directions. [4]

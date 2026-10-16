@@ -45,8 +45,7 @@ returns a synthetic `var(<name>|<fallback>)` string, so the assertions never tou
 ### Conventions
 
 The vocabulary is **imported and iterated**, never restated: `CONSTEL_STATUSES` comes from
-`./model`, so a sixth status is a failure here rather than an untested key. This mirrors
-`model.test.ts` iterating `LIFECYCLE_STATES`, one layer down the same grammar. The reader is
+`./model`, so a sixth status is a failure here rather than an untested key. The same import-and-iterate discipline keeps this palette tied to its actual constellation vocabulary; it no longer relies on a removed lifecycle-state tuple. The reader is
 injected per test, so no test depends on a stylesheet, a canvas, or `getComputedStyle`.
 
 ### Invariants And Boundaries
@@ -82,7 +81,7 @@ The suite is the runtime half of a claim the type system already makes, so both 
 - `constelColors(cssVar): Record<ConstelStatus, string>` and the `CssVarReader` type are extracted from `mountConstel` for jsdom. [2]
 - `col` indexes the palette with no `??` fallback, which makes test 2's `undefined` expectation correct. [3]
 - `CONSTEL_STATUSES` is the `as const` tuple from which `ConstelStatus` is derived. [4]
-- The topology model maps `LIFECYCLE_STATES` into `CONSTEL_STATUS_BY_STATE` rather than restating the vocabulary. [5]
+- The topology resolves a task entry through the common task-status tone, while the constellation keeps its own colour vocabulary. [5]
 
 ### Cross-Repo References
 

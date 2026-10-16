@@ -50,7 +50,7 @@ Read route indexes, overviews and source in the worktrees; use read_ar_files to 
 
 ## Current role boundary
 
-The strategist source retains its planning/design artifact boundary. It forbids worktree_start/worktree_attach and therefore has no adopted lifecycle; lifecycle_finalize_task and other owning-seat machinery remain prohibited. Harness/model/effort are settings, not role-selected launch commands. Earlier dispatch_agent readiness/transaction vocabulary is historical, not a current callable or a launch claim.
+The strategist source retains its planning/design artifact boundary. It forbids worktree_start/worktree_attach; lifecycle_finalize_task and other owning-seat machinery remain prohibited. No removed session-adoption inference is made from that prohibition. Harness/model/effort are settings, not role-selected launch commands. Earlier dispatch_agent readiness/transaction vocabulary is historical, not a current callable or a launch claim.
 
 - The current strategist role owns its artifacts, not worktree/lifecycle or role-start authority; operator knobs remain settings. \[12] [12]
 

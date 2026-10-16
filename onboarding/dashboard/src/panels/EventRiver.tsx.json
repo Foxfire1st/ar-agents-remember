@@ -3,11 +3,12 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "539e6e0dfac6147013ce80409fdc72508cca76fd",
-        "content": "sha256:8af2b3b6fef974e84352c5cde2d37ddd0510b1be6b37c35e4b342b3287ec2405",
+        "blob": "ec46a3a25c36c5a79747ac7d9485027c7a7e7973",
+        "content": "sha256:52d5c2b624edca68050e2a73c7c23f13ecc2c10c21472e086dc56c7065df8057",
         "locator": {
-          "kind": "symbol",
-          "name": "newestFedTs"
+          "end": 77,
+          "kind": "line_range",
+          "start": 62
         }
       },
       "id": "RLZ-122GPW",
@@ -21,7 +22,7 @@
     },
     {
       "anchor": {
-        "blob": "539e6e0dfac6147013ce80409fdc72508cca76fd",
+        "blob": "ec46a3a25c36c5a79747ac7d9485027c7a7e7973",
         "content": "sha256:8fa41b882b39f2c01f2b107ba9975c64f63f70d38c2a82599c2186bded150e4f",
         "locator": {
           "kind": "symbol",
@@ -44,7 +45,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9872b3d6c0abcdf7af28fba9f2a54ba2f48bb3cb",
+            "blob": "91d04c0b9f1ef75ed3894240899e238bde789901",
             "content": "sha256:8655b987cfbe8b88eca4d7ab5ce44df0a03ab98dea7644e3c3bf8b42eca1b08c",
             "locator": {
               "kind": "symbol",
@@ -56,34 +57,16 @@
         },
         {
           "anchor": {
-            "blob": "9872b3d6c0abcdf7af28fba9f2a54ba2f48bb3cb",
+            "blob": "91d04c0b9f1ef75ed3894240899e238bde789901",
             "content": "sha256:db41d5712b3c35b4099c93ae6a6e562f5b8803bc109859359f791558291ef204",
             "locator": {
-              "end": 81,
+              "end": 68,
               "kind": "line_range",
-              "start": 67
+              "start": 54
             },
             "path": "mcp/src/agents_remember/serving/events.py"
           },
           "kind": "code"
-        }
-      ]
-    },
-    "10": {
-      "note": "The reload-order regression keeps a lifecycle-bound tool row hidden until task-document context arrives.\n\nAnchor: \"waits for lifecycle summary context before rendering lifecycle-bound rows\"",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "45457eab2c475824264e05a7abb33ceaa18b5051",
-            "content": "sha256:b75e3ef2aedd1b326445000dd34afa15712d9955432b270eb12688683ba08208",
-            "locator": {
-              "end": 365,
-              "kind": "line_range",
-              "start": 340
-            },
-            "path": "dashboard/src/panels/EventRiver.test.tsx"
-          },
-          "kind": "test"
         }
       ]
     },
@@ -92,7 +75,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "539e6e0dfac6147013ce80409fdc72508cca76fd",
+            "blob": "ec46a3a25c36c5a79747ac7d9485027c7a7e7973",
             "content": "sha256:42cec3cbb6c23129e71e36b45e24593f1412147d1e0934f2d37a2e28acc8a54a",
             "locator": {
               "kind": "symbol",
@@ -121,15 +104,16 @@
       ]
     },
     "3": {
-      "note": "The formatter layer that owns per-kind Event River copy.",
+      "note": "The formatter layer that owns per-kind Event River copy.\n\nAnchor: actual current supporting source",
       "targets": [
         {
           "anchor": {
-            "blob": "d23908b375ed9c6971426892abe1439883faa3d6",
-            "content": "sha256:ef649fbdcf67961ba5bccd75c6b25d32135ff1e0fe1b5e6b80f96550d18acb28",
+            "blob": "ea76263611577cad45322c53e6e5c0e2c1b80251",
+            "content": "sha256:a53e71cda57d0e11c1c99c30ee69127e0c21eeaeaedef1e2c8a00d2dd063ef91",
             "locator": {
-              "kind": "symbol",
-              "name": "summarizeEvent"
+              "end": 57,
+              "kind": "line_range",
+              "start": 49
             },
             "path": "dashboard/src/panels/eventSummary.ts"
           },
@@ -138,46 +122,17 @@
       ]
     },
     "4": {
-      "note": "The emitter of `tool.completed` and `read.packet` facts this row renders.",
+      "note": "Current completed calls delegate to the workspace Event River writer. Rendering old read.packet data does not restore the deleted ambient emitter.",
       "targets": [
         {
           "anchor": {
-            "blob": "bf408b0d04334071a43207138086e4cfb6f2a374",
-            "content": "sha256:5c3169494e2eca962c3b1ceff848d3eb42176f17d09ea0a6807d1a59634797f0",
+            "blob": "fa329467be28b558f2516086c2e67a82ec134f26",
+            "content": "sha256:db24aaa4c677843b12e305218671e7a210542ea8f41f557a36cfbffdba17b67f",
             "locator": {
               "kind": "symbol",
-              "name": "emit_tool"
+              "name": "record_tool_completed"
             },
-            "path": "mcp/src/agents_remember/observer/ambient.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "289124eb65069d96a2a16ec167d0190a9bbdc367",
-            "content": "sha256:fa7783dbb8fcf07b0759fd347f89bcf01d62f0a98a0a12650e0cdee7c87ddb3c",
-            "locator": {
-              "kind": "symbol",
-              "name": "emit_read_packet"
-            },
-            "path": "mcp/src/agents_remember/observer/ambient.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "5": {
-      "note": "Existing lifecycle/enclosure/task-document helpers used for task labels.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "40a0e24637b2a8f8a50c03cf09db2ea3976e83cc",
-            "content": "sha256:86383b3c238500b02d8f7732008333316d1708d25977d666e54e156794db34ec",
-            "locator": {
-              "kind": "symbol",
-              "name": "taskLabel"
-            },
-            "path": "dashboard/src/data/taskIdentity.ts"
+            "path": "mcp/src/agents_remember/observer/tool_events.py"
           },
           "kind": "code"
         }
@@ -188,7 +143,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "771d1ca849e63161968eb0f54325d6f5a4fcd0e2",
+            "blob": "68121e9668db87a9d23260c691ac8c1ba4513e6d",
             "content": "sha256:2f18f6e7b4d67baf5a8247a5f1b7ef458b6058c1f0ed8858151d5ad447397bbb",
             "locator": {
               "kind": "symbol",
@@ -201,53 +156,20 @@
       ]
     },
     "7": {
-      "note": "The render tests pinning readable event rows (now over a virtualized list).\n\nAnchor: \"EventRiver readable activity feed\"",
+      "note": "The render tests pinning readable event rows (now over a virtualized list).\n\nAnchor: actual current supporting source",
       "targets": [
         {
           "anchor": {
-            "blob": "448c5e3ab54d21267abca8e9d1d1cf1d8851638e",
-            "content": "sha256:0eb374e1ef46e28c50e81f10af0bbd223ea2296d7802f3000deda158751f3628",
+            "blob": "156c6ba6a1374ce1679b8a088ef5d98d8dafc9a3",
+            "content": "sha256:1c2df23bf59499ded89936f42f9a95486f6b96b1959f3a05217033902dca14c9",
             "locator": {
-              "end": 352,
+              "end": 266,
               "kind": "line_range",
-              "start": 144
+              "start": 52
             },
             "path": "dashboard/src/panels/EventRiver.test.tsx"
           },
           "kind": "test"
-        }
-      ]
-    },
-    "8": {
-      "note": "`EventRiver` memoizes the displayed list (reverse to newest-first, gate on `eventSummaryContextReady`, drop hidden rows).",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "539e6e0dfac6147013ce80409fdc72508cca76fd",
-            "content": "sha256:8fa41b882b39f2c01f2b107ba9975c64f63f70d38c2a82599c2186bded150e4f",
-            "locator": {
-              "kind": "symbol",
-              "name": "EventRiver"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "9": {
-      "note": "`eventSummaryContextReady` requires lifecycle/enclosure/task-document context for bound events.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "d23908b375ed9c6971426892abe1439883faa3d6",
-            "content": "sha256:ff4226bd5ed17704780445b06a57d0a29161f1e105b288bc293d963d7dcce2d0",
-            "locator": {
-              "kind": "symbol",
-              "name": "eventSummaryContextReady"
-            },
-            "path": "dashboard/src/panels/eventSummary.ts"
-          },
-          "kind": "code"
         }
       ]
     }

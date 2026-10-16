@@ -1,0 +1,23 @@
+{
+  "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_events.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Native host handlers and explicit steering sends.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5dcb7031b563ff6a932a970d782fb0d1bb680619",
+            "content": "sha256:89bb35437919671e558fe2a18184c9652b552f2cf5950ac040a19a79e9a059e4",
+            "locator": {
+              "kind": "symbol",
+              "name": "registerParentWakeEvents"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

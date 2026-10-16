@@ -124,6 +124,24 @@
         }
       ]
     },
+    "13": {
+      "note": "Start/attach instructions describe task-worktree location and contract resolution, while the landing chain retains its own lifecycle.\n\nAnchor: \"The landing chain keeps its own lifecycle in the contract.\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c29d4d1f5abb5d84654822e8bf0869461435bd85",
+            "content": "sha256:e5b0a4b958310ebdf49363ea7dff66c8fb87cf619ddcd26d77e1bee048953146",
+            "locator": {
+              "end": 100,
+              "kind": "line_range",
+              "start": 98
+            },
+            "path": "skills/c-09-git-worktree-manager/SKILL.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
     "2": {
       "note": "Ordinary series integration and leaf direct landing remain distinct policy routes, with standing-series and raised-gate approval boundaries.",
       "targets": [

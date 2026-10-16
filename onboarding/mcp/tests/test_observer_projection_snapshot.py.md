@@ -12,7 +12,7 @@ Observer snapshot projection and persisted current-state smoke test.
 
 ### Logic
 
-The fixture builds temporary runtime inputs and drives project-and-write end to end. The retained case requires one lifecycle in the projection and a persisted latest-state.json under the configured observer root.
+The fixture builds temporary runtime inputs and drives project-and-write end to end. It requires no lifecycles root and a persisted latest-state.json under the configured observer root. Pending enclosures count as admitted/active runtime groups, while reopened enclosures do not. Setup heartbeat age alone emits no analytics delta; changing setup state to failed does.
 
 ### Conventions
 
@@ -20,13 +20,19 @@ This card describes the retained source at IAS `d3610903`. Historical entries be
 
 ### Invariants And Boundaries
 
-This single smoke case does not prove every historical reader/refusal or root-journal addressing edge. A written projection is derived state rather than mutation authority.
+These focused cases do not prove every historical reader/refusal or root-journal addressing edge. A written projection is derived state rather than mutation authority.
 
 ### Todos
 
 No file-local implementation change is requested by this reconciliation.
 
+The additional predicates are source assertions over real contract files and constructed analytics projections; they do not turn a written projection into mutation authority.
+
 ## Evidence
+
+- Pending but not reopened enclosures admit runtime worktree groups. [2]
+- Age-only setup heartbeat changes do not emit analytics; actual state changes do. [3]
+
 
 ### Docs References
 

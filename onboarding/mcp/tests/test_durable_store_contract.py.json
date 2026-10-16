@@ -3,8 +3,8 @@
   "proves": [
     {
       "anchor": {
-        "blob": "aee447c2b20b0453e48122e428c163639fec94be",
-        "content": "sha256:e4853d2cc0e6c4e60f02b3a46c5893d1841b94ab311320098dba6da240bcd2a8",
+        "blob": "50b8aa9eacaf2a00dc1f0c36569cf2778bce6df8",
+        "content": "sha256:f59be2cc303a49342fbbcfc2bf8d4a6ca1533bce38c5f1fa887518ade66ff002",
         "locator": {
           "kind": "symbol",
           "name": "test_a_dismissal_is_not_lost_to_a_prune_sweeping_on_another_thread"
@@ -22,7 +22,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "aee447c2b20b0453e48122e428c163639fec94be",
+        "blob": "50b8aa9eacaf2a00dc1f0c36569cf2778bce6df8",
         "content": "sha256:a4f1ced4393900704a6f186c6760cf643db0ac9d0bce55e18d8be13609189531",
         "locator": {
           "kind": "symbol",

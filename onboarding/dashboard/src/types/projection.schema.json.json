@@ -7,27 +7,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9c8a6da231a27bda33292696a47cd970aaeba894",
+            "blob": "83b24de587912238054a5ffc35cd2da7152bd31e",
             "content": "sha256:08fd4c678367505913cec7c8f518284e86983114365e0ace8fd824f4a5351510",
             "locator": {
-              "end": 1583,
+              "end": 1568,
               "kind": "line_range",
-              "start": 1546
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "10": {
-      "note": "Generated schema declares optional fixed-prose/completion/dependency fields and the dependency graph DTO; generated declarations are not validation or rendering execution.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "9c8a6da231a27bda33292696a47cd970aaeba894",
-            "content": "sha256:4478e3921085c23f35aa437c136193fda2dbdf834284b2d3c55136fcbbb3ad90",
-            "locator": {
-              "kind": "file"
+              "start": 1531
             }
           },
           "kind": "code"
@@ -39,12 +24,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9c8a6da231a27bda33292696a47cd970aaeba894",
+            "blob": "83b24de587912238054a5ffc35cd2da7152bd31e",
             "content": "sha256:de7a9a2b766a346bf335e024dd411cbde184c3bd15734856db8aa94b8382d688",
             "locator": {
-              "end": 3752,
+              "end": 3173,
               "kind": "line_range",
-              "start": 3737
+              "start": 3158
             }
           },
           "kind": "code"
@@ -82,12 +67,41 @@
         }
       ]
     },
+    "13": {
+      "note": "The generated dependency requires id/title with optional reference, and TaskEntry retains eventAt without task-event ageSeconds.\n\nAnchor: current generated schema definitions",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "eb94033bd3626255e42690157368bb5bbd08addc",
+            "content": "sha256:28ece8176b3079718fe68b53b0699ea398356ddeaa64ead23615cc7eb26b4d96",
+            "locator": {
+              "end": 2785,
+              "kind": "line_range",
+              "start": 2750
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "eb94033bd3626255e42690157368bb5bbd08addc",
+            "content": "sha256:9060ad2e41bf062f2eb8a2dde87edbc1a0092b7f045add1172f5c59f417ef0d4",
+            "locator": {
+              "end": 3021,
+              "kind": "line_range",
+              "start": 2884
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
     "2": {
       "note": "The `$defs` block contains all reusable projection schema definitions.\n\nAnchor: \"$defs\"; `$defs`",
       "targets": [
         {
           "anchor": {
-            "blob": "9c8a6da231a27bda33292696a47cd970aaeba894",
+            "blob": "83b24de587912238054a5ffc35cd2da7152bd31e",
             "content": "sha256:3d163ef9c8b6f0b233ca0b1ea53c0aa93528cd28d158bfd8aaa82d3b800c0364",
             "locator": {
               "end": 2,
@@ -104,7 +118,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9c8a6da231a27bda33292696a47cd970aaeba894",
+            "blob": "83b24de587912238054a5ffc35cd2da7152bd31e",
             "content": "sha256:86fcac0c5945509626938cce67b13b16e99be6eae647e0eed2753d8448428d46",
             "locator": {
               "end": 46,
@@ -116,51 +130,17 @@
         }
       ]
     },
-    "4": {
-      "note": "`AgentPickupNode` declares a pending unacked dashboard response.\n\nAnchor: `type`; `AgentPickupNode`",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "4652e03517c9ef5da2e88ff18c8e62100d5084e8",
-            "content": "sha256:6379cfe6838a961c57e2883c15c3479f8ec65094e92ac0d79c992fd32e1a5ec7",
-            "locator": {
-              "end": 304,
-              "kind": "line_range",
-              "start": 47
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "5": {
-      "note": "TaskIntentIdentity forbids extras, requires digest with a lowercase 64-hex pattern, and fixes schema to task-intent/v1 with a default.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "9c8a6da231a27bda33292696a47cd970aaeba894",
-            "content": "sha256:fcf650a3fd01fe3945118f8e0c9bdb72c1d2a351d7a14bdf2be25943648b7480",
-            "locator": {
-              "end": 3908,
-              "kind": "line_range",
-              "start": 3888
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
     "6": {
       "note": "The optional task-intent reference on the lifecycle operation projection.\n\nAnchor: `null`; \"taskIntent\"",
       "targets": [
         {
           "anchor": {
-            "blob": "9c8a6da231a27bda33292696a47cd970aaeba894",
+            "blob": "83b24de587912238054a5ffc35cd2da7152bd31e",
             "content": "sha256:eb4f79755eff93d54725906fe8bf4c1690bbce5de6de74236e9e572c92fdf856",
             "locator": {
-              "end": 1669,
+              "end": 1654,
               "kind": "line_range",
-              "start": 1659
+              "start": 1644
             }
           },
           "kind": "code"
@@ -172,12 +152,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9c8a6da231a27bda33292696a47cd970aaeba894",
+            "blob": "83b24de587912238054a5ffc35cd2da7152bd31e",
             "content": "sha256:f96067877ac97df77c4da0cf77d05f0e0809220a9ece9807d98580c193fbed3e",
             "locator": {
-              "end": 408,
+              "end": 381,
               "kind": "line_range",
-              "start": 346
+              "start": 319
             }
           },
           "kind": "code"
@@ -189,12 +169,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9c8a6da231a27bda33292696a47cd970aaeba894",
+            "blob": "83b24de587912238054a5ffc35cd2da7152bd31e",
             "content": "sha256:71e5839fb83a7787d8ecf6c3ae6051dd016be94dc896294661d807999b936238",
             "locator": {
-              "end": 1691,
+              "end": 1676,
               "kind": "line_range",
-              "start": 1405
+              "start": 1390
             }
           },
           "kind": "code"
@@ -206,7 +186,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "beed4630e21dc2735b84b146d4ff9a6e1b18512d",
+            "blob": "435f095a70d30fca070deb1186104929ac557935",
             "content": "sha256:46894d777463298a1a95031da8c618c203b9bf1480eda1c328419e41a1166d1d",
             "locator": {
               "kind": "symbol",

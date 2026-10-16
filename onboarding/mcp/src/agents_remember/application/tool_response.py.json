@@ -3,29 +3,12 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "f3a38c69f77db005f94dac33ea9106aef433d4cc",
-        "content": "sha256:6e9ea9e2042fa35e37a3763d2ff28b50e659d2562b3d8c022eb33b39485617b4",
+        "blob": "e0e46bc6a90dd3b9da4bab12c43f61d1e4e71a70",
+        "content": "sha256:fa035cd072435d9389f5b3b0ea910cc8097887cebfb1f1c1cefb3c7a630c04f3",
         "locator": {
-          "kind": "symbol",
-          "name": "complete_tool_response"
-        }
-      },
-      "id": "RLZ-QZ15KH",
-      "invariant": "INV-P661EM",
-      "origin": {
-        "handoffEntry": "L114-W03",
-        "leaf": "260928-MIK-L114"
-      },
-      "rationale": "complete_tool_response is the completion choke where the lifecycle-owned branch and the workspace-river branch divide; one event per call with no double-write depends on this routing.",
-      "role": "enforcement"
-    },
-    {
-      "anchor": {
-        "blob": "f3a38c69f77db005f94dac33ea9106aef433d4cc",
-        "content": "sha256:6e9ea9e2042fa35e37a3763d2ff28b50e659d2562b3d8c022eb33b39485617b4",
-        "locator": {
-          "kind": "symbol",
-          "name": "complete_tool_response"
+          "end": 509,
+          "kind": "line_range",
+          "start": 388
         }
       },
       "id": "RLZ-REZN43",
@@ -39,11 +22,12 @@
     },
     {
       "anchor": {
-        "blob": "f3a38c69f77db005f94dac33ea9106aef433d4cc",
+        "blob": "e0e46bc6a90dd3b9da4bab12c43f61d1e4e71a70",
         "content": "sha256:03442d043942ae3d80abf2a310f23d02fa678e01381424e5c12d8a2059e12bc3",
         "locator": {
-          "kind": "symbol",
-          "name": "_write_delivered_line"
+          "end": 306,
+          "kind": "line_range",
+          "start": 242
         }
       },
       "id": "RLZ-Y18D7W",
@@ -57,7 +41,7 @@
     },
     {
       "anchor": {
-        "blob": "f3a38c69f77db005f94dac33ea9106aef433d4cc",
+        "blob": "e0e46bc6a90dd3b9da4bab12c43f61d1e4e71a70",
         "content": "sha256:03442d043942ae3d80abf2a310f23d02fa678e01381424e5c12d8a2059e12bc3",
         "locator": {
           "kind": "symbol",
@@ -76,15 +60,16 @@
   ],
   "references": {
     "2": {
-      "note": "Defines the function `_attach_lifecycle_tail` (lines 139-158).",
+      "note": "Exact-contract enrichment preserves explicit recovery guidance, with guarded preview stops from the call argument.\n\nAnchor: current owner",
       "targets": [
         {
           "anchor": {
-            "blob": "82511233b54099a86d5c8a35db96c7b26c4ac288",
-            "content": "sha256:b9a1f903280fdf70c544924c96f7717d7189f719708eac93720b3b059a8681be",
+            "blob": "e0e46bc6a90dd3b9da4bab12c43f61d1e4e71a70",
+            "content": "sha256:71804e304a6ad2937390236ebe79f54948d63dacb84e089c2362c47b2846a2b4",
             "locator": {
-              "kind": "symbol",
-              "name": "_attach_lifecycle_tail"
+              "end": 144,
+              "kind": "line_range",
+              "start": 129
             }
           },
           "kind": "code"

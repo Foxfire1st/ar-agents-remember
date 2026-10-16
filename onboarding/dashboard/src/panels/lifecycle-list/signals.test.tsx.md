@@ -6,20 +6,17 @@
 
 ## Purpose
 
-The independent Operations-signals suite split from `LifecycleList.test.tsx` by the
-260731-EFA-L8 test split. Pins the independent signal rendering on rows
-(state marks, attention, gate hints) without coupling to the detail panel.
+The Operations row/page coherence suite pins one served task status word and host-event age across native deltas, with no status borrowed from attention severity. Retired independent lifecycle/gate/inbox signal assertions are not current coverage.
 
 ## Code Commentary
 
 ### Logic
 
-Seeds rows with varied lifecycle states and asserts the per-row signal marks
-(including the `awaiting-developer` live-state mark rule).
+Native row/page deltas require shared stage/activity words, unchanged attention severity and distinct paused/aborted marks. Fake host timestamps retain age through later mounts and deltas. Hidden/inactive/nested owners stop aging; visible dependents share one clock and clean it up. Parameterized dependency pages and 30/150-task rails are real source ranges, not named symbols.
 
 ### Invariants And Boundaries
 
-Signal meaning remains independent of task progress and detail selection. Current assertions locate one priority word and full row hover; inbox dismissal must still be reachable beside a gate, name its inbox target and not select the row. Qualified chat identity and lifecycle/document state remain distinct.
+Task status is shared across row, page and dependencies; attention remains a separate severity lane. These mounted/fake-time assertions cover timer ownership and cleanup, not native host-state acquisition, real elapsed-time performance or backend activity derivation.
 
 ### Todos
 

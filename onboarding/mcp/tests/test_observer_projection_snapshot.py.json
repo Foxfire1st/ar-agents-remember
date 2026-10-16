@@ -17,6 +17,38 @@
           "kind": "test"
         }
       ]
+    },
+    "2": {
+      "note": "Pending but not reopened enclosures admit runtime worktree groups.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "44ca4f75e77c0eaae9b55adbed9b6ad299bbad2b",
+            "content": "sha256:4cdc091931c7a05337d9d823028f44dd1b5fc2cf0799d563ac36d95bd43967b0",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_reopened_enclosure_is_not_runtime_work_but_pending_is"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Age-only setup heartbeat changes do not emit analytics; actual state changes do.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "44ca4f75e77c0eaae9b55adbed9b6ad299bbad2b",
+            "content": "sha256:6cd329cd86d5c3a60bc8de9bc84f9b02fa9988981b630d65d73240f18b494c8a",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_setup_heartbeat_age_alone_emits_no_analytics_delta"
+            }
+          },
+          "kind": "test"
+        }
+      ]
     }
   },
   "schema": "ar-onboarding-file/v1"

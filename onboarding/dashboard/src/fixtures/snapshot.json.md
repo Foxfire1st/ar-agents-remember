@@ -11,7 +11,7 @@ The dashboard's stand-in for the server: one `WorkspaceProjection` payload, 1,98
 TypeScript mirror against the sample), `test/fixtures/wire.ts` (which takes retained builder
 bases from it), and `data/store.test.ts`. The removed production-e2e test is not a current reader.
 
-The task samples exercise the fixed reader's form, header/type/status-note fields, whole review counts and step preview flags. The sample includes six optional task-document samples (`nonGoals`, `acceptance`, `completedAt`, `waitsFor`, `waitsForTasks`, `neededByTasks`) and one graph-node `cycle: false` sample. These are hand-authored wire values, not evidence of a native completion timestamp, dependency resolution or Order derivation. The `SIM-2`/`SIM-3` dependency objects are fabricated shape samples, not a joined same-master scenario. The builder card separately distinguishes copied identities, recomputed form and admitted neutral values.
+Task entries carry native identity, stage/activity, ordered child keys, counts, nested summaries and bound worktrees. Optional reader, completion, dependency and graph values remain hand-authored shape examples, not native finalization, dependency resolution or scheduling proof.
 
 **It is NOT generated.** This file is a hand-maintained sample. The TypeScript mirror it is checked
 against is generated and stale-checked from the Pydantic projection schema, so sample coverage and
@@ -28,11 +28,7 @@ So a green sample-coverage build claims that this manual payload exercises the g
 The projection generator separately binds that mirror to the producer schema, including fields a
 sample could miss because their values are currently null or absent.
 
-L14 extends the manual sample with the new sprint structure: the `dependency-aware sprint` task
-document carries non-empty `seats` (an identity-bearing active orchestrator + an identity-less
-planned strategist) and two typed `masterRef` sub-task rows (both master targets exist in the same
-fixture, so the dev-server exercises the sprint → master navigation for real); every other task
-document defaults `seats: []`.
+The manual sprint/master/leaf examples now use TaskEntry membership and nested TaskSummary content. They exercise qualified navigation without analytics document/series joins; illustrative seats and graph data remain invented samples.
 
 L23 extends the manual sample with representative lifecycle-operation rows. The sample carries public progress/result/failure/guidance fields
 including public identity/component fingerprints and approval state, but no private operation key
@@ -53,23 +49,14 @@ a legal lifecycle phase. Code and memory publication samples remain. The retaine
 `analytics.ledgers` data represents a downstream consumer projection, so removing the obsolete
 Git-operation sample does not remove the ledger from the dashboard fixture.
 
-The current serialized fixture starts with `activeWorktreeGroups` and `analytics`; it also carries
-`closeoutQueues`, `enclosures`, `generatedAt`, `lifecycles`, `metrics`, `providers`, and `version` (1).
-Use the current reference rows below for source locations
-cit:([`activeWorktreeGroups`], dashboard/src/fixtures/snapshot.json:2-2).
+The serialized root carries tasks and taskCounts instead of session lifecycles and duplicate analytics task-document/series catalogues. Operational enclosures, providers, closeout queues, analytics, metrics and watcherHealth remain sample data.
 
-The CCR-R03@v1 curation entry records a formatting-only reserialization at source commit
-`fbc89847233b1c5959f56475f2cb51f936d5ef0b`. That historical statement does not describe
-all later fixture changes: the current operation sample also carries the L15 meaningful revision
-field described below. The current lifecycle sample is
-cit:(["\"lifecycles\": ["], dashboard/src/fixtures/snapshot.json:1878-1998);
-the current metrics sample is cit:(["\"metrics\": {"], dashboard/src/fixtures/snapshot.json:1999-2009).
+The earlier formatting-only reserialization is historical, not a description of later fixture semantics. Native entries and operation meaningfulRevision values are hand-maintained coverage examples.
 
 ### Conventions
 
 - The sample combines the persisted projection core with sampled watcherHealth. servingBuild is absent and is the sole current contract.test.ts::KnownUnsampled residue. The served tail declares only servingBuild and watcherHealth; the removed terminal/notifier heartbeat surfaces are not fixture gaps.
-- Non-uniform on purpose. Arrays are keyed by TYPE in the mirror walk, so one lifecycle carrying
-  `staleSeconds` samples it for all of them. The payload does not have to be uniform; it has to be
+- Non-uniform on purpose. Arrays are keyed by TYPE in the mirror walk, so coverage is accumulated across representative rows. The payload does not have to be uniform; it has to be
   COMPLETE between its rows.
 - Timestamps sit in a single fabricated window around `2026-06-14T09:00`, and identifiers are
   `sim-`/`SIM`-prefixed, so nothing in it reads as a captured production workspace.
@@ -86,10 +73,7 @@ the current metrics sample is cit:(["\"metrics\": {"], dashboard/src/fixtures/sn
 - **Every sampled vocabulary value must be legal, and every registered path must be non-vacuous.**
   The fixture is representative rather than exhaustive. New producer enum members flow through schema
   generation and stale-output validation without forcing unrelated full-object rows into this file.
-- **The rows the builders anchor on must keep existing.** `fixtures/wire.ts` calls `demandServed(…)` on
-  `lifecycles[0]`, `enclosures[0]`, `providers[0]`, `analytics.taskDocuments[0]`,
-  `analytics.engineProcesses[0]`, `analytics.agentPickups[0]`, `analytics.attentionQueue[0]`, and a
-  lifecycle carrying a gate — each throwing a named error rather than spreading `undefined`.
+- **Required fixture anchor rows must remain nonempty.** Shared builders require native tasks, enclosures, providers and retained engine-process/attention samples; demandServed refuses a missing anchor rather than spreading undefined.
 - This file is the ORACLE, not a scenario. Dev-gallery scenarios live in `src/dev/`; per-suite shapes
   are built with `test/fixtures/wire.ts`. Do not add rows here to make one test convenient — a row added
   here changes what every direction of the contract guard measures.
@@ -104,8 +88,7 @@ the current metrics sample is cit:(["\"metrics\": {"], dashboard/src/fixtures/sn
    by `exclude_none=True`, so no sampled payload can reveal it. Only the schema can.
 2. **It does not establish producer vocabulary.** Schema generation owns exhaustive
    producer-to-mirror vocabulary. This sample proves only that values it carries are legal.
-3. **It cannot separate two field-identical models.** `SeriesSectionNode` and `TaskSectionNode` declare
-   the same three fields, so no payload and no structural walk distinguishes them.
+3. **Structural sampling is not nominal identity proof.** A payload walk cannot distinguish field-identical models by their names alone.
 4. **The sample remains manual while the mirror is generated.** Do not describe this JSON payload as
    generated, and do not describe its coverage limits as a missing producer-to-TypeScript contract.
 5. **Provenance wording must preserve that split.** The remaining `test/fixtures/wire.ts` and
@@ -114,14 +97,13 @@ the current metrics sample is cit:(["\"metrics\": {"], dashboard/src/fixtures/sn
 
 ## Manual direct-grant display samples
 
-The L94 sync adds two `directGrant` examples: the first series child's row and the first task-document row each carry the same fabricated developer giver/time node. These hand-maintained shape samples exercise display fields in the generated mirror; they are not live external grants, proof of ordinary-start eligibility, or browser authorization. The current sample remains manual, and no new visual/sandbox qualification is claimed for the port.
+The directGrant examples are nested summary data on native entries and carry fabricated developer giver/time evidence. These hand-maintained shape samples exercise display fields in the generated mirror; they are not live external grants, proof of ordinary-start eligibility, or browser authorization. The current sample remains manual, and no new visual/sandbox qualification is claimed for the port.
 
 ## Manual Order and Completion Samples
 
 The added fields extend wire coverage only. The fixture remains hand-maintained; no producer run, finalization or same-master dependency join is established by these samples.
 
 
-- Six optional task fields and graph cycle=false values are hand-maintained contract examples, not joined dependencies or native Order derivation. [20]
 
 
 ## Evidence
@@ -142,7 +124,6 @@ absent from the file rather than present as `null`.
 
 
 
-- Hand-maintained taskDocuments samples carry fixed task-reader form/header/review/step data, not producer execution. [4]
 
 
 - Representative enclosure rows, two providers, and the `activeWorktreeGroups` join value. Anchor: `activeWorktreeGroups` [5]
@@ -151,7 +132,6 @@ absent from the file rather than present as `null`.
 - Manual decision and task-reader values are sample data, not source-derived provenance. [6]
 
 
-- Eleven nonempty analytics collections remain manual coverage samples, including engineProcesses and taskDocuments; not a scenario or execution receipt. [7]
 
 - The writer of the persisted payload this file is shaped like: `write_projection` dumps with `by_alias=True, exclude_none=True` into `latest-state.json`. [8]
 
@@ -167,7 +147,6 @@ absent from the file rather than present as `null`.
 - KnownUnsampled contains only projection.servingBuild; the manual sample carries watcherHealth, and the served tail declares servingBuild and watcherHealth. [13]
 
 - The snapshot is manual; the projection command generates and stale-checks the schema and TypeScript mirror. Anchor: `generated` [14]
-- `demandServed` and the eight anchor rows the builders require this payload to keep. [15]
 - The narrowing every reader comes through, and why a second `as unknown as` elsewhere would re-open the hole. Anchor: "as unknown as" [16]
 - The store suite consumes the manual fixture and explicitly exercises servingBuild, whose absence in the fixture is separately admitted by KnownUnsampled. [17]
 

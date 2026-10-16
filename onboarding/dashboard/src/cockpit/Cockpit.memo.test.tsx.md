@@ -14,17 +14,7 @@ layers survives switches.
 
 ### Logic
 
-- The layer-count fixture mounts `CockpitShell`; MIK-R79 moved the opening view to Chats, so the
-  cases mount `CockpitShell initialView="operations"` when they need the railed shell.
-- Because Engine Room left the product bar and is not built at load, `counts.engineRoom` is now `0`
-  throughout; the sweep clicks the remaining product entries (Chats, File Viewer, Operations) and
-  the keep-alive assertions use the File Viewer layer in place of the Engine Room layer.
-- The visibility sweep gives the LifecycleList controller three renders but the nested attention bell only its original mount. The hidden rendered-collection gate and then the bell's stable-callback memo gate isolate it from the rail edges.
-- Since MIK-R122 the suite also pins the right-rail chat keep-alive: the River-hidden
-  sidebar case keeps the same document-chat node across the EventRiver presence/absence
-  toggle, and the memoized rail toggle still updates. Sidebar ARIA on the right rail is
-  source, not asserted by this suite; the separate top-level visibility cases cover
-  other panes.
+- Operations is injected explicitly. EngineRoom stays unbuilt; DetailPanel renders 2/2/3 across Chats/File Viewer/Operations because hide/show stops its clock. LifecycleList renders three times; the nested bell once, with no selection-callback prop. File Viewer and sidebar chat retain DOM identity through switches; sidebar ARIA remains outside this suite.
 
 ### Conventions
 

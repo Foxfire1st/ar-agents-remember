@@ -9,7 +9,7 @@ This route owns retained dashboard projection state, task/document identity and 
 
 ## Hot Path Summary
 
-1. store.ts and selectors.ts maintain and derive the retained projected collections; taskIdentity.ts and taskHierarchy.ts distinguish repository-qualified document references from display labels.
+1. store.ts and selectors.ts retain and derive served native TaskEntry facts without reconstructing a lifecycle/series hierarchy. taskReference.ts spells repository-qualified document and opaque entry selection keys; taskIdentity.ts compares exact references and names the document-backed role-chat leaf. The removed taskHierarchy.ts is not a current client authority.
 2. stream.ts consumes projection snapshots/deltas; streamLiveness.ts, screenWakeLock.ts, fetchWithTimeout.ts and inflight.ts coordinate browser transport timing and ownership.
 3. Review entry/summary/catalogue and comparison transports carry selected server identity and typed answer/refusal states. Tree and lane clients are used only where a comparison exists; transport acceptance is not complete schema decoding or dataset truth.
 4. Task-document body, artifacts, reports, notes, files and requirements use their dedicated readers. Knowledge selections and hash navigation remain separate from task projection.
@@ -17,6 +17,8 @@ This route owns retained dashboard projection state, task/document identity and 
 6. Current asynchronous generation ownership prevents retired reads from replacing successor surfaces. Retained development reset/fixture evidence is not product execution.
 
 ## Construction And Ownership
+
+`store.ts` constructs the bounded-read owners for the dashboard store: `TaskDocumentResources` for task bodies, and three `ConditionalReads` instances for change-set lists (`changeSets`, capacity 256), file diffs (`changeSetFiles`, capacity 64 and 16 MiB byte bound) and intent summaries (`intentSummaries`, capacity 128). Clients consume these store resources rather than keeping an independent mounted-reader cache.
 
 The route has a child review-keymap overview and separate panel/view owners. Keymaps retain browser-forbidden validation and chrome/review routing, not composer profiles or PTY interception. React consumers own rendering; Python applications and configured serving ports own canonical authority and answer classification.
 
@@ -52,6 +54,8 @@ These inherited tables are retained verbatim for navigation and custody. Their s
 directExecutionGrant.ts posts Give/Revoke to the developer endpoint and preserves typed refusal. The adapter shapes transport only; product grant and ordinary-start authority remain server-owned.
 
 ## Evidence
+- The store owns task-document resources and separate bounded conditional-read caches for change-set lists, files and intent summaries. [108]
+
 - The mirrored change types and the entry's optional facts. [1]
 - One file's classification as a single read; a transport failure is `unavailable`. [2]
 - The scope that keeps it per surface, only for a tree comparison. [3]
@@ -65,7 +69,9 @@ directExecutionGrant.ts posts Give/Revoke to the developer endpoint and preserve
 - The member source carrying them. [16]
 - `useReviewCatalogue` owns the behavior described above. [17]
 - The entry's summary read and its re-validation generation. [18]
-- The shared creation-order helper sorts only when every row has createdAt; unstamped task-document rows retain input order. [24]
+
+
+- The server builds one native task forest from declared child rows; the browser no longer runs the removed creation-order hierarchy helper. [24]
 - The one full scenario-store reset restores every projected collection, including `closeoutQueues`, in one transaction and is invoked by the development scenario player. [25]
 - The route's read-only client and its comparison call. [29]
 - **The entry call: the task context alone, because a selector is what it is being asked for.** [30]
@@ -125,15 +131,23 @@ directExecutionGrant.ts posts Give/Revoke to the developer endpoint and preserve
 - Lane missing values become unavailable; undefined comparison suppresses the lane hook's request, while the marker client remains promise-based. [100]
 - Entry intent counts and attribution share one response with distinct counted/partial/unavailable states. [101]
 - Family change facts and source locator meanings are mirrored rather than recomputed. [102]
-- Creation ordering preserves partially stamped input. [104]
+
+
+- Browser selection keys carry the server entry key verbatim, rather than reconstructing a hierarchy or partially stamped creation ordering. [104]
+
 - Volatile-age equality includes elapsedSeconds. [105]
 - Full scenario reset increments generation once and clears closeout queues. [106]
 - Drift display consumes reporting counts while provider selector definitions remain. [107]
 
 - The review wire mirror transports recorded meaning steps with their own attempts/revisions and distinguishes readable none from unavailable. [85]
 
-- Series sub-task rows carry optional creation time; task-document sub-task references have a separate shape and share a union for readers. [26]
-- The server series builder sorts only fully stamped rows before projection. [27]
+
+
+- The served TaskEntry mirror carries optional document reference, identity, state, parent/children and counts; the old separate series-child consumer union is not the native entry model. [26]
+
+
+
+- Membership links each child to one deterministic parent and rejects a cycle; the removed series creation-sort builder is not the current producer. [27]
 - The generated projection mirror this route's suites build fixtures from, the manual sample used for coverage, and the fixture/projection stale gates. [28]
 - The module comment: what the adapter carries and the three answers it keeps apart. [60]
 - The answer of the route. [61]

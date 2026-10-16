@@ -2,76 +2,6 @@
   "path": "dashboard/src/panels/EngineRoom.tsx",
   "realizes": [],
   "references": {
-    "1": {
-      "note": "`buildEngineRoomModel` (pure model: joins, lifts workspace stack, sets `enclosureKey`/`usesFallback`).",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "e21098fd928c9d619bc89b750a9475bd3dde3fb5",
-            "content": "sha256:92ef339ef5925e22df44f86aa1f0fd701fba320ac6ab43653559e51e09ecbb80",
-            "locator": {
-              "kind": "symbol",
-              "name": "buildEngineRoomModel"
-            },
-            "path": "dashboard/src/panels/engine-room/buildEngineRoomModel.ts"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "10": {
-      "note": "EngineRoom subscribes to process/ledger slices and lifecycles, uses buildEngineRoomModel(engineProcesses, lifecycles), a — source ownership, not executed visual proof.\n\nAnchor: `function EngineRoomImpl() {`",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "20386ce24dbf50d2623c264f361b4a10dff165c5",
-            "content": "sha256:f4ab1c90d9929275a97a8d0b49974149ee57fa99ffef5ce6bac0243de71c121d",
-            "locator": {
-              "end": 177,
-              "kind": "line_range",
-              "start": 93
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "11": {
-      "note": "EngineRoom subscribes to process/ledger slices and lifecycles, uses buildEngineRoomModel(engineProcesses, lifecycles), a — source ownership, not executed visual proof.\n\nAnchor: `/**`",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "17b5df5bbd40a7851bc8af3aa48a9c214f8d7bed",
-            "content": "sha256:47a2fa749c01368bcf4c9c1ae687629c064281b1f05da19c65317b9bc516d9ef",
-            "locator": {
-              "end": 54,
-              "kind": "line_range",
-              "start": 21
-            },
-            "path": "dashboard/src/panels/engine-room/buildEngineRoomModel.ts"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "12": {
-      "note": "EngineRoom subscribes to process/ledger slices and lifecycles, uses buildEngineRoomModel(engineProcesses, lifecycles), a — source ownership, not executed visual proof.\n\nAnchor: `export function OfficialLineLayer({`",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "596dec5c6c7c633b293640144a05def6c8ef4578",
-            "content": "sha256:0b75b11bb39be418cd7ac4a0f535284d932b9e1757e220fc93b14bbb10461c2c",
-            "locator": {
-              "end": 252,
-              "kind": "line_range",
-              "start": 187
-            },
-            "path": "dashboard/src/panels/engine-room/sceneLayers.tsx"
-          },
-          "kind": "code"
-        }
-      ]
-    },
     "2": {
       "note": "§4.2 3-zone room (`Panel fill` → `roomShell` → header + `roomGrid` [stack \\| `roomStage` \\| `roomZone`]).\n\nAnchor: `roomShell`",
       "targets": [
@@ -117,40 +47,6 @@
         }
       ]
     },
-    "4": {
-      "note": "`OfficialStrip` groups official workspace providers by label + runtime state, renders duplicate peers as counted chips, and exposes grouped repo labels via `title`/`aria-label`.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "9cb152993c6abde275ec7569438fad326e9a3ae1",
-            "content": "sha256:014599f78795057568d2d9ae61ac1df42a915f0f7d6fbe8714edf70689df66ee",
-            "locator": {
-              "kind": "symbol",
-              "name": "OfficialStrip"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "5": {
-      "note": "Official-strip regression tests pin seven same-state CGCs into one `7 CGC · nominal` chip, keep mixed CGC states separate, and assert hover-title repo lists.\n\nAnchor: \"7 CGC · nominal\"",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "a237ea46fb4fa0f7e68107f3403c217b91cc3ae4",
-            "content": "sha256:9198ccc468496d58ef92edb61942fa337827567ea9c08e7db2b98675845c3f3f",
-            "locator": {
-              "end": 205,
-              "kind": "line_range",
-              "start": 205
-            },
-            "path": "dashboard/src/panels/EngineRoom.test.tsx"
-          },
-          "kind": "test"
-        }
-      ]
-    },
     "6": {
       "note": "The bounded-height panel variant the room uses.",
       "targets": [
@@ -168,55 +64,12 @@
         }
       ]
     },
-    "7": {
-      "note": "`groupEngines` (fallback) + `engineState` + `selectQueue`.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "b130c9f33b2078e3adf38d6e87cde8c376ba65b9",
-            "content": "sha256:39686253ab57b49c197444f777ca38607c1940957b35e49682d31bdd1f4e3594",
-            "locator": {
-              "kind": "symbol",
-              "name": "groupEngines"
-            },
-            "path": "dashboard/src/data/selectors.ts"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "b130c9f33b2078e3adf38d6e87cde8c376ba65b9",
-            "content": "sha256:93e13492ef4088c8368594cf9da93e076e02cafdd0db09ad5e78eca35bc3f159",
-            "locator": {
-              "end": 46,
-              "kind": "line_range",
-              "start": 37
-            },
-            "path": "dashboard/src/data/selectors.ts"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "b130c9f33b2078e3adf38d6e87cde8c376ba65b9",
-            "content": "sha256:7c8d459bab45b55e012757985b0777a92df02785f6c09e2ae35eb93eb4a80bbc",
-            "locator": {
-              "end": 127,
-              "kind": "line_range",
-              "start": 123
-            },
-            "path": "dashboard/src/data/selectors.ts"
-          },
-          "kind": "code"
-        }
-      ]
-    },
     "8": {
       "note": "The per-worktree provider + enclosure-process read (surface 4 / `engineProcesses`).\n\nAnchor: \"def read_engine_process_facts(\"",
       "targets": [
         {
           "anchor": {
-            "blob": "a72d91d8fc1a7048c39f3cd85885826c0f14c12a",
+            "blob": "1d18eca6aa7f7a47d12546c8e5b12a68370fb69c",
             "content": "sha256:da26bad4ff847151b2478263ffe4450823fa384e4e8b48012cc1209e3cd1bea2",
             "locator": {
               "end": 90,

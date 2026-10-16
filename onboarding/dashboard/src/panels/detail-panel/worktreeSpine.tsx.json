@@ -1,0 +1,23 @@
+{
+  "path": "dashboard/src/panels/detail-panel/worktreeSpine.tsx",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Implementation",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5808118c1f9c6f301b8666c714e9c7b5fdb99b4d",
+            "content": "sha256:ff5b63eb016b7c4857d6c57d263dd71111752988cd15162e1fa163e302fd63aa",
+            "locator": {
+              "kind": "symbol",
+              "name": "WorktreeSpine"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -67,11 +67,7 @@ No additional work is asserted by this card.
 
 ### 260707-HFX2-L13 Fetch-Fixture Compatibility
 
-The notes-reader fetch stub now serves `/api/task-document` before its notes folder/read branches. The
-notes viewer embeds task-reader flows whose `DetailPanel` dependency fetches full task bodies on
-demand, so this branch preserves the suite's isolation while leaving notes API assertions unchanged.
-(The `notes list/read branches` wording of the earlier era now reads folder/read; resolve and
-reports branches serve the reference and report cases.)
+The body stub looks up tasks[qualifiedKey].summary and returns a real Response. Folder/read/resolve/reports stubs remain controlled; this setup is not a notes transport contract change.
 
 ### Logic
 
@@ -94,17 +90,7 @@ reports branches serve the reference and report cases.)
 
 ### Cockpit seed fixtures
 
-`masterDoc()` + `seedMaster()` build the one-master projection the takeover cases select a row from.
-Both are **typed against the mirror, not cast**: `masterDoc()` returns a `TaskDocNode` outright (its
-trailing `as unknown as TaskDocNode` is gone) and `seedMaster()`'s projection ends in
-`satisfies WorkspaceProjection`. That distinction matters more here than on a shared fixture, because
-these are hand-written literals — the double cast was the only thing between them and the mirror, and
-it made the seed immune to contract change: a new required `Analytics` field failed fifteen other
-files and not this one. `metrics` is now `metricsFor([])` rather than a hand-listed bucket literal, so
-a new lifecycle state adds a required bucket that this seed derives instead of missing.
-`Analytics.agentPickups` and `.expectationRows` are required in the current generated mirror.
-The local `seedMaster` literal supplies both as empty arrays, so it remains checked against
-that contract.
+masterDoc builds typed TaskEntry/reference/summary; seedMaster applies projection({tasks:[masterDoc()]}). No TaskDocNode cast, parallel SeriesNode or metricsFor lifecycle rollup remains.
 
 ### Invariants And Boundaries
 
@@ -142,11 +128,9 @@ A frontend component test; nothing crosses repositories.
 
 - The viewer routes takeover content through the shared pane without a second reader. [9]
 
-- The current viewer integrates the extracted folder cache while retaining content kinds. [17]
-- The shell driven by the takeover-wiring test. [18]
-- `masterDoc` and `seedMaster` — the cast-free seed and its `satisfies WorkspaceProjection`. [19]
-- The cast-free seed is typed against generated TaskDocNode; optional new task fields do not make omitted seed properties runtime-null values. [20]
+- Retained folder/content viewer and shell takeover owners remain. [17] [18]
+- masterDoc/seedMaster publish one typed native entry/summary. [19]
+- The old TaskDocNode seed claim is retired. [20]
 
-- Analytics requires agentPickups and expectationRows arrays, along with the other projected collections. [21]
-- The seeded snapshot satisfies the generated workspace contract. [22]
-- The seed derives metrics through the shared lifecycle rollup helper. [23]
+- Shared builders provide generated WorkspaceProjection. [22]
+- Obsolete Analytics collection/metricsFor lifecycle reference claims are retired.

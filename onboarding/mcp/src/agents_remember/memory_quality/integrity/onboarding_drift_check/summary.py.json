@@ -1,6 +1,24 @@
 {
   "path": "mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/summary.py",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "5b3b70d80062f5d1c8a6f0142d7f93f8069780d4",
+        "content": "sha256:d6f7cfdb0158891c60f2249ec6563549d28894a7729f63c8eabc17615e666248",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-4FXY0Y",
+      "invariant": "INV-TT5CTW",
+      "origin": {
+        "handoffEntry": "L168-W-R166-03",
+        "leaf": "260928-MIK-L168"
+      },
+      "rationale": "The native drift writer fingerprints the complete deterministic actionable set before truncation.",
+      "role": "propagation-persistence"
+    }
+  ],
   "references": {
     "1": {
       "note": "Tier 3 unresolved: context packets and skill-facing drift tools call this summary helper; `context_packet.py` calls `run_drift_summary`, while `skill_tools.py` exposes `skills_install_tool` and no drift-summary call.\n\nAnchor: \"return run_drift_summary(\"",
@@ -90,6 +108,47 @@
             "locator": {
               "kind": "symbol",
               "name": "_run_converted_summary"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "14": {
+      "note": "Explicit snapshots fingerprint complete actionable findings, with unknown identity for unreadable converted sidecars.\n\nAnchor: source responsibility",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5b3b70d80062f5d1c8a6f0142d7f93f8069780d4",
+            "content": "sha256:5d952f371b572cd38438fed79d4ac5b6e7f87d0a736054accee8951ed1d9eca4",
+            "locator": {
+              "end": 214,
+              "kind": "line_range",
+              "start": 139
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5b3b70d80062f5d1c8a6f0142d7f93f8069780d4",
+            "content": "sha256:034787bbbe9b222a77c974016f699c0aac3dfa36bdb6a38ad2e9c6711f7f7f54",
+            "locator": {
+              "end": 386,
+              "kind": "line_range",
+              "start": 343
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5b3b70d80062f5d1c8a6f0142d7f93f8069780d4",
+            "content": "sha256:58518732777ec0a6e7a4abbc0383c64c465f3a89147d3a45020983f206b9d44b",
+            "locator": {
+              "end": 395,
+              "kind": "line_range",
+              "start": 389
             }
           },
           "kind": "code"

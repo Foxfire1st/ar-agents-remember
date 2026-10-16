@@ -3,11 +3,12 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "272f3b9dcb6766eeb7ff857266cc8ac33b4a2775",
-        "content": "sha256:e2a3b5c09937def3837c359eab4e76e9268398a530c21298c24d41c277fd6056",
+        "blob": "91d04c0b9f1ef75ed3894240899e238bde789901",
+        "content": "sha256:25ea22f84b8a64aaca73d60652ba2d7c6f1aea27d774d17236e07fb97faaf836",
         "locator": {
-          "kind": "symbol",
-          "name": "_read_source_lines"
+          "end": 199,
+          "kind": "line_range",
+          "start": 148
         }
       },
       "id": "RLZ-3NREV8",
@@ -21,8 +22,8 @@
     },
     {
       "anchor": {
-        "blob": "272f3b9dcb6766eeb7ff857266cc8ac33b4a2775",
-        "content": "sha256:543e0b2edfce7c8dfbc142b5e92e1e9211df7bf4106871f5808ed01fb3beb8a7",
+        "blob": "91d04c0b9f1ef75ed3894240899e238bde789901",
+        "content": "sha256:f25c0b814c5b1f5d9cd67057b6a56aa86fcebb6b4598c91ce82a46e949702552",
         "locator": {
           "kind": "symbol",
           "name": "stream_raw_events"
@@ -57,12 +58,24 @@
       ]
     },
     "2": {
-      "note": "The log layout (`lifecycles/<id>/events.jsonl`, `workspace/events.jsonl`).",
+      "note": "EventStore appends and reads a single workspace Event River at <observer_root>/workspace/events.jsonl, using WORKSPACE_SOURCE = \"workspace\". Its log_path takes no lifecycle id; lifecycle-specific event logs are not part of this layout.",
       "targets": [
         {
           "anchor": {
-            "blob": "972bfe128d72a489b3cdb2563a352563c594856e",
-            "content": "sha256:5810128edbc2a846a23bc5e2bad43873932f0bc24ea6ffb9013f780640a92de9",
+            "blob": "44d27a65dd2c90b37ee5338cafbd1564796e6c80",
+            "content": "sha256:2d89a190b22c8d4df755715dd641f8b933003a98d805cca006a2a1db4c529092",
+            "locator": {
+              "kind": "symbol",
+              "name": "WORKSPACE_SOURCE"
+            },
+            "path": "mcp/src/agents_remember/observer/store.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "44d27a65dd2c90b37ee5338cafbd1564796e6c80",
+            "content": "sha256:b54dd4dde4a0dffb6e89ba453123cfdcd054b3db298b6d656d98936f6c5b2417",
             "locator": {
               "kind": "symbol",
               "name": "EventStore"
@@ -108,12 +121,12 @@
         },
         {
           "anchor": {
-            "blob": "a63806f02dcb39f57b535017de881cd393e6655c",
+            "blob": "f1d9f2bdf6b5346afa468b367e7ed3fc0f3824c1",
             "content": "sha256:8e5edeb641d69e13c474106df2d1b18aec18b1575842e0646fcbdd1e2002c124",
             "locator": {
-              "end": 133,
+              "end": 82,
               "kind": "line_range",
-              "start": 133
+              "start": 82
             },
             "path": "mcp/src/agents_remember/serving/_app_common.py"
           },
@@ -122,15 +135,99 @@
       ]
     },
     "5": {
-      "note": "The inactivity retention helper computes windowed fresh offsets for connect; lifecycle-log reclamation belongs to the projection pass.",
+      "note": "initial_event_offsets computes fresh-connect offsets for workspace/events.jsonl from the recent replay window plus the persisted virtual base offset. The retained-offset scan keeps events it cannot prove older than the cutoff. Physical reclamation belongs to the workspace River compactor and append-time size-bound admission under the shared lock, not lifecycle-log pruning in a projection pass.",
       "targets": [
         {
           "anchor": {
-            "blob": "4ddf17f4c8fb8920fadc24e6df279efe803cdf01",
-            "content": "sha256:68071c0726caf7a3e3be2cd438354796a804a7749f8f5bd8798b0281c5656b62",
+            "blob": "09233476d16c71cbf49d5a0cd2ff8ac5ec38c348",
+            "content": "sha256:9bdda9a938422cc470b8faa1a5b5591d85004d9f7939d74ea271675ca912f058",
+            "locator": {
+              "kind": "symbol",
+              "name": "WORKSPACE_EVENT_TTL_SECONDS"
+            },
+            "path": "mcp/src/agents_remember/observer/event_retention.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "09233476d16c71cbf49d5a0cd2ff8ac5ec38c348",
+            "content": "sha256:d9327569a4d3c7a9879a2b11fb2f2e18543c82a8d32301a50e6b585ea02f24be",
+            "locator": {
+              "kind": "symbol",
+              "name": "WORKSPACE_EVENT_MAX_BYTES"
+            },
+            "path": "mcp/src/agents_remember/observer/event_retention.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "09233476d16c71cbf49d5a0cd2ff8ac5ec38c348",
+            "content": "sha256:ef06d0e6618a40163c7252dc43ae3353a3ea2651e2ef805336d5583fee672cf6",
+            "locator": {
+              "kind": "symbol",
+              "name": "WORKSPACE_EVENT_TRIM_TO_BYTES"
+            },
+            "path": "mcp/src/agents_remember/observer/event_retention.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "09233476d16c71cbf49d5a0cd2ff8ac5ec38c348",
+            "content": "sha256:effea1d9e0d0bd28c4b04589661ee80fbc462667a111634b0f795bab5d891310",
             "locator": {
               "kind": "symbol",
               "name": "initial_event_offsets"
+            },
+            "path": "mcp/src/agents_remember/observer/event_retention.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "09233476d16c71cbf49d5a0cd2ff8ac5ec38c348",
+            "content": "sha256:0e955a1d8952de1336bb31d23d3c9b72b67a8280f8d6b179b70ca61b04561cd6",
+            "locator": {
+              "kind": "symbol",
+              "name": "compact_workspace_river"
+            },
+            "path": "mcp/src/agents_remember/observer/event_retention.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "09233476d16c71cbf49d5a0cd2ff8ac5ec38c348",
+            "content": "sha256:32c3ff8ecb63687a357edba7ab8d920b8daa7f4a345b19792ad28f92e4c0cd16",
+            "locator": {
+              "kind": "symbol",
+              "name": "_compact_under_lock"
+            },
+            "path": "mcp/src/agents_remember/observer/event_retention.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "09233476d16c71cbf49d5a0cd2ff8ac5ec38c348",
+            "content": "sha256:5f06c9b71ce4cefe9c5c8b466e082a205be69656de4c6a5c2912935517fcd74b",
+            "locator": {
+              "kind": "symbol",
+              "name": "admit_workspace_river_row"
+            },
+            "path": "mcp/src/agents_remember/observer/event_retention.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "09233476d16c71cbf49d5a0cd2ff8ac5ec38c348",
+            "content": "sha256:1198241f4948f356f4e86b0ae21d5057e0000b93fd0d55a3b32f01ef94e2c94a",
+            "locator": {
+              "kind": "symbol",
+              "name": "_first_retained_offset"
             },
             "path": "mcp/src/agents_remember/observer/event_retention.py"
           },
@@ -159,7 +256,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "272f3b9dcb6766eeb7ff857266cc8ac33b4a2775",
+            "blob": "239e8b1c5cac777fdce10e4b35a2aeb3442457a2",
             "content": "sha256:543e0b2edfce7c8dfbc142b5e92e1e9211df7bf4106871f5808ed01fb3beb8a7",
             "locator": {
               "kind": "symbol",

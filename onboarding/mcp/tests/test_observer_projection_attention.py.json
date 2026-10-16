@@ -1,51 +1,249 @@
 {
   "path": "mcp/tests/test_observer_projection_attention.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "e4b04878dc732a1b8b0df5e0fb1168b6fb06403f",
+        "content": "sha256:001d056d904703f9b58c9356f38f5a995dabfb457b106528ca7cb5c521af93cc",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_actual_asgi_click_refresh_restart_and_write_failure"
+        }
+      },
+      "facet": "The parameterized real ASGI harness for provider/setup/start failures asserts 503 dismissal-not-held and visible queue on persistence failure, 202 on success, unchanged/restarted suppression, and recovery then later-failure recurrence.",
+      "id": "PRF-5KXTJR",
+      "invariant": "INV-DVQX4T",
+      "origin": {
+        "handoffEntry": "L168-W-R166-02-04",
+        "leaf": "260928-MIK-L168"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "e4b04878dc732a1b8b0df5e0fb1168b6fb06403f",
+        "content": "sha256:7b1199bede85c207133bbd65d0966c6e71d520a8d5b5b57d904a218134f06cba",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_long_history_reclaims_to_the_current_things_and_compacts_bad_rows"
+        }
+      },
+      "facet": "The parameterized constructed legacy/current history is compacted to its current live rows and a repeated unchanged pass preserves mtime; this is a test definition, not a claim of a Curator load run.",
+      "id": "PRF-9724W9",
+      "invariant": "INV-1ZZNZ6",
+      "origin": {
+        "handoffEntry": "L168-W-R166-07",
+        "leaf": "260928-MIK-L168"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "e4b04878dc732a1b8b0df5e0fb1168b6fb06403f",
+        "content": "sha256:7c656d7d30f9390938a4e7189637d252fe8a6b8d9ad1e6377a8df3b05bfccbd5",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_observed_recovery_ends_dismissal_and_only_a_later_failure_returns"
+        }
+      },
+      "facet": "For each remaining provider/setup/start kind, unchanged source passes and a new reader retain acknowledgement; an observed healthy state removes it and a later failure returns.",
+      "id": "PRF-K53YSK",
+      "invariant": "INV-TT5CTW",
+      "origin": {
+        "handoffEntry": "L168-W-R166-03",
+        "leaf": "260928-MIK-L168"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "e4b04878dc732a1b8b0df5e0fb1168b6fb06403f",
+        "content": "sha256:c170c4bb90378dfdff40f69ad5ea26dbcc1d28ae51ef81f569b02b487400a789",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_cleanup_does_not_remove_a_click_newer_than_its_read"
+        }
+      },
+      "facet": "A click after observation start survives that older complete observation; a subsequent eligible observation can reclaim it.",
+      "id": "PRF-QDYSSD",
+      "invariant": "INV-D9T2BC",
+      "origin": {
+        "handoffEntry": "L168-W-R166-05-06",
+        "leaf": "260928-MIK-L168"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "e4b04878dc732a1b8b0df5e0fb1168b6fb06403f",
+        "content": "sha256:34e44d6173fbd6f89e866bdbb87a43e6f30bd00feaeaf23c0e756b34ee8f51ed",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_partial_or_failed_source_keeps_dismissal_but_a_complete_gone_read_reclaims"
+        }
+      },
+      "facet": "For provider/setup/start kinds, failed and unrelated partial reads retain acknowledgement; a complete native gone-source/configuration observation reclaims it.",
+      "id": "PRF-XTZ1D1",
+      "invariant": "INV-D9T2BC",
+      "origin": {
+        "handoffEntry": "L168-W-R166-05-06",
+        "leaf": "260928-MIK-L168"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "e4b04878dc732a1b8b0df5e0fb1168b6fb06403f",
+        "content": "sha256:d7995e34054558c3b569591bd5bb5c039862414f2b015730ba2447e6b3884d2d",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_no_change_does_not_write_and_failed_cleanup_retains_the_read_map"
+        }
+      },
+      "facet": "An unchanged pass keeps file mtime, and a cleanup write error preserves both the previously read map and original bytes.",
+      "id": "PRF-YYS80T",
+      "invariant": "INV-1ZZNZ6",
+      "origin": {
+        "handoffEntry": "L168-W-R166-07",
+        "leaf": "260928-MIK-L168"
+      }
+    }
+  ],
   "realizes": [],
   "references": {
-    "2": {
-      "note": "Dismiss suppresses actionable drift until newer snapshot.",
+    "10": {
+      "note": "Observation cutoff protects a later click.",
       "targets": [
         {
           "anchor": {
-            "blob": "24522f5389f8d70a29ba7503c8ac343adfbaa7dc",
-            "content": "sha256:36380ba9abd948e9f069974ccc0608dfe6ff451643018944c79dca9c962e9067",
+            "blob": "e4b04878dc732a1b8b0df5e0fb1168b6fb06403f",
+            "content": "sha256:c170c4bb90378dfdff40f69ad5ea26dbcc1d28ae51ef81f569b02b487400a789",
             "locator": {
               "kind": "symbol",
-              "name": "test_dismiss_suppresses_actionable_drift_until_newer_snapshot"
+              "name": "test_cleanup_does_not_remove_a_click_newer_than_its_read"
             }
           },
           "kind": "test"
         }
       ]
     },
-    "4": {
-      "note": "Provider-down ranks ahead of a quiet-session signal, whose lifecycle/time are asserted.\n\nAnchor: `AttentionQueueTests.test_provider_down_ranks_above_a_quiet_session`",
+    "11": {
+      "note": "Long histories retain current subjects and compact invalid retired/torn rows without repeat rewrite.",
       "targets": [
         {
           "anchor": {
-            "blob": "24522f5389f8d70a29ba7503c8ac343adfbaa7dc",
-            "content": "sha256:c3e17816d3afebafe2ee998570f3a4aef8e39e1d2b07f6ff33bcaaaf7a31c533",
+            "blob": "e4b04878dc732a1b8b0df5e0fb1168b6fb06403f",
+            "content": "sha256:7b1199bede85c207133bbd65d0966c6e71d520a8d5b5b57d904a218134f06cba",
             "locator": {
-              "end": 31,
-              "kind": "line_range",
-              "start": 20
+              "kind": "symbol",
+              "name": "test_long_history_reclaims_to_the_current_things_and_compacts_bad_rows"
             }
           },
           "kind": "test"
         }
       ]
     },
-    "5": {
-      "note": "Later heartbeat activity creates a newer stale-session occurrence after dismissal, not a turn-end/awaiting-developer assertion.\n\nAnchor: `AttentionDismissalTests.test_newer_activity_supersedes_dismissal`",
+    "12": {
+      "note": "ASGI persistence failure is 503; accepted dismissals survive refresh and restart.",
       "targets": [
         {
           "anchor": {
-            "blob": "24522f5389f8d70a29ba7503c8ac343adfbaa7dc",
-            "content": "sha256:5822fb41d8212b44f35a305e4d95a8d71d98d98cf0abea98d28c5e262d6038d3",
+            "blob": "e4b04878dc732a1b8b0df5e0fb1168b6fb06403f",
+            "content": "sha256:001d056d904703f9b58c9356f38f5a995dabfb457b106528ca7cb5c521af93cc",
             "locator": {
-              "end": 118,
-              "kind": "line_range",
-              "start": 106
+              "kind": "symbol",
+              "name": "test_actual_asgi_click_refresh_restart_and_write_failure"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "13": {
+      "note": "Precomputed task-worktree disablement remains authoritative.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e4b04878dc732a1b8b0df5e0fb1168b6fb06403f",
+            "content": "sha256:cbca3a7a2d6c30cff7bcd1639c15fceb0aa82a8ab13f8285e6ed8bfc08ee5933",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_precomputed_action_remains_available_on_a_task_bound_worktree"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "14": {
+      "note": "Incomplete provider census cannot clear another provider acknowledgement.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e4b04878dc732a1b8b0df5e0fb1168b6fb06403f",
+            "content": "sha256:bdc065dd3fe0a49642c0e0989d71c65b7d8dbf745d1897a4e983cb4e52020a11",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_failed_provider_read_cannot_end_even_another_providers_dismissal"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "Equal findings remain dismissed across clock changes and a changed fingerprint recurs.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e4b04878dc732a1b8b0df5e0fb1168b6fb06403f",
+            "content": "sha256:4c8b3cb68c0f141c88d92137179a1163a15792d86d0a059f7b72757331dff456",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_dismiss_suppresses_actionable_drift_until_findings_change"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "Severity, wait and ID determine stable ranking.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e4b04878dc732a1b8b0df5e0fb1168b6fb06403f",
+            "content": "sha256:60890a9ddac4b3f31e422675349ccfb0513cca29b7429b156b419f1c131b6b30",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_attention_ranking_keeps_alarm_above_warning_and_then_wait_and_id"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "Explicit recovery ends retained-kind occurrences and later failure returns.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e4b04878dc732a1b8b0df5e0fb1168b6fb06403f",
+            "content": "sha256:7c656d7d30f9390938a4e7189637d252fe8a6b8d9ad1e6377a8df3b05bfccbd5",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_observed_recovery_ends_dismissal_and_only_a_later_failure_returns"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "9": {
+      "note": "Partial/broken input retains acknowledgement; complete gone facts reclaim.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e4b04878dc732a1b8b0df5e0fb1168b6fb06403f",
+            "content": "sha256:34e44d6173fbd6f89e866bdbb87a43e6f30bd00feaeaf23c0e756b34ee8f51ed",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_partial_or_failed_source_keeps_dismissal_but_a_complete_gone_read_reclaims"
             }
           },
           "kind": "test"

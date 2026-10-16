@@ -2,11 +2,11 @@
   "path": "dashboard/src/panels/sprint-graph",
   "references": {
     "1": {
-      "note": "The wave-grid component groups projected nodes into wave rows, preserves node order within each wave, and renders segment or lump boxes with frontier and predecessor information.",
+      "note": "Wave grouping and segment/lump construction retain producer order; each box uses the qualified task entry for its task word and accessible name, independently of the dependency badge.",
       "targets": [
         {
           "anchor": {
-            "blob": "15f76aada9eb203b8005cc4dcc281552d1f5ea95",
+            "blob": "10fa9b314498732151de2f419d952921a92ebe84",
             "content": "sha256:8a4a5f2dcba515362fe6b6a071e6e590dd15c409a05344b8ebbd531c82e4c8d2",
             "locator": {
               "kind": "symbol",
@@ -18,7 +18,7 @@
         },
         {
           "anchor": {
-            "blob": "15f76aada9eb203b8005cc4dcc281552d1f5ea95",
+            "blob": "10fa9b314498732151de2f419d952921a92ebe84",
             "content": "sha256:2aea0e002f184cbb474913641c7579dec80ee3661337bb3bac5e8b95b874f23a",
             "locator": {
               "kind": "symbol",
@@ -30,8 +30,8 @@
         },
         {
           "anchor": {
-            "blob": "15f76aada9eb203b8005cc4dcc281552d1f5ea95",
-            "content": "sha256:2dc9cf479023e140f4aa8515771a4632b093528204a52e8094ca2d7ce7d92f44",
+            "blob": "10fa9b314498732151de2f419d952921a92ebe84",
+            "content": "sha256:b7563252acdaec7fd3e57e8db9cc1053a683950cca8f4f81b73f5969ce6e43aa",
             "locator": {
               "kind": "symbol",
               "name": "GraphBox"
@@ -43,11 +43,11 @@
       ]
     },
     "2": {
-      "note": "The exported responsive layout contracts specify three columns, a narrow single column, and viewport-growing ellipsis caps; frontier styling includes abandoned. The proposed graph dependency remains undeclared.\n\nAnchor: lines 44–67; lines 1–92",
+      "note": "Responsive grid and ellipsis declarations are unchanged contracts; the dependency recipe is ready/waiting/cycle only and the proposed graph dependency remains undeclared.\n\nAnchor: package declarations",
       "targets": [
         {
           "anchor": {
-            "blob": "b6f7defdaa6c95bed085facc4c70b52fbd566704",
+            "blob": "4e9801e315eb3e0cb3f9d8873ee957b31c30c2b6",
             "content": "sha256:a7c143c5403c829dcbcea7c2d72dba4c457a7fbb592b560a6fb03c100d53f3ca",
             "locator": {
               "kind": "symbol",
@@ -59,7 +59,7 @@
         },
         {
           "anchor": {
-            "blob": "b6f7defdaa6c95bed085facc4c70b52fbd566704",
+            "blob": "4e9801e315eb3e0cb3f9d8873ee957b31c30c2b6",
             "content": "sha256:55c93ed4200aed2449d4a61f4b2c6f28e845d0ccc3777d59cc903b605562ac92",
             "locator": {
               "kind": "symbol",
@@ -71,12 +71,11 @@
         },
         {
           "anchor": {
-            "blob": "b6f7defdaa6c95bed085facc4c70b52fbd566704",
-            "content": "sha256:b3ab7049bf79189e4448908982504b156630101a778273f548ec54f0417e80ce",
+            "blob": "4e9801e315eb3e0cb3f9d8873ee957b31c30c2b6",
+            "content": "sha256:51f65c4b0a97ea2d4cdc1af1c8af6c491c8d5c322c06db636f7c2c5879452c1e",
             "locator": {
-              "end": 67,
-              "kind": "line_range",
-              "start": 44
+              "kind": "symbol",
+              "name": "dependency"
             },
             "path": "dashboard/src/panels/sprint-graph/styles.ts"
           },
@@ -84,10 +83,10 @@
         },
         {
           "anchor": {
-            "blob": "fd945329095af1500b083d023415c4f8f24ae210",
-            "content": "sha256:4a16c743dc8a0e8317e4ec54cf489767fdcf994d787f2fe1d05cb02c89e39539",
+            "blob": "e640511ffad3eb7e67c1de5b38581748a9214a53",
+            "content": "sha256:0054a47c92eb82771bb1e8ca0caaadd827b44eba6605b22e112f44eb4accb61a",
             "locator": {
-              "end": 93,
+              "end": 82,
               "kind": "line_range",
               "start": 1
             },
@@ -98,15 +97,15 @@
       ]
     },
     "3": {
-      "note": "The sprint reader retains its scoped CloseoutQueue independently of the optional Order preview and graph own view.",
+      "note": "The current overview reader retains its scoped CloseoutQueue independently of optional graph/Order content, including graphless sprint pages.",
       "targets": [
         {
           "anchor": {
-            "blob": "e72ca56ab09dabd435ea4fd6192f947450d63549",
-            "content": "sha256:91a574b8a85a110788822e80737698d9174ee6a637ef1a59915db5cc1ab8df2e",
+            "blob": "66607c8748bbb4f94154ffd1893a44a92f9486e8",
+            "content": "sha256:3fcb180697451d9eed64fe0956add55c7d7dca6f9c928fadb211dc417699eb63",
             "locator": {
               "kind": "symbol",
-              "name": "SprintPageBody"
+              "name": "OverviewBody"
             },
             "path": "dashboard/src/panels/detail-panel/taskReader.tsx"
           },
@@ -115,14 +114,14 @@
       ]
     },
     "4": {
-      "note": "The shell suite proves graph/queue reachability, sprint scoping, graphless queue access, and mounted canonical-reset clearance. Component tests pin the rendering and responsive declarations; the canonical store reset clears closeout queues.\n\nAnchor: lines 53–174; lines 102–164; lines 394–414",
+      "note": "Current shell/component sources define reachability, graphless queue access, canonical reset, entry-owned words/tones with live updates and qualified missing entries, plus responsive declarations; no Curator execution is claimed.\n\nAnchor: source assertions and canonical reset",
       "targets": [
         {
           "anchor": {
-            "blob": "2ee5d9b5a052d5ef67060701bc74b36f9943475c",
-            "content": "sha256:f28eccbc5e84192ea56e8f29da8c28a6808b2cca945c7c8c4ec46b925bd8181d",
+            "blob": "a97a91b414fa03d0b57576be7f306eb7cca5ce6b",
+            "content": "sha256:a6edc3be17e49e07059c86941f931907a3cf4aaa4469a2b5873fc33248d427a3",
             "locator": {
-              "end": 179,
+              "end": 219,
               "kind": "line_range",
               "start": 53
             },
@@ -132,12 +131,12 @@
         },
         {
           "anchor": {
-            "blob": "6315dff46ed62e7c4c5cd3f8a222c92652aa6821",
-            "content": "sha256:0eee1fbfc0ced265eb604f2373029ddfb58848832815adfa74d3ef2953940fb7",
+            "blob": "15344fb37b57a54e73496120e5afdedcda971695",
+            "content": "sha256:35ddf338632731e9bfce21409dd6359028bd80096b4363118053c63d7138db3d",
             "locator": {
-              "end": 158,
+              "end": 193,
               "kind": "line_range",
-              "start": 102
+              "start": 105
             },
             "path": "dashboard/src/panels/sprint-graph/SprintGraphView.test.tsx"
           },
@@ -145,12 +144,12 @@
         },
         {
           "anchor": {
-            "blob": "771d1ca849e63161968eb0f54325d6f5a4fcd0e2",
-            "content": "sha256:a091318e0f9ed9222511ac5b940425e8b08ed7ed9f5ec25da9bd6935c18d67a7",
+            "blob": "68121e9668db87a9d23260c691ac8c1ba4513e6d",
+            "content": "sha256:4af845c9fea8f1c1b6b995ce683cada1fb5e42174a87b131fbcedbc843a00e4d",
             "locator": {
-              "end": 414,
+              "end": 378,
               "kind": "line_range",
-              "start": 394
+              "start": 368
             },
             "path": "dashboard/src/data/store.ts"
           },
@@ -159,68 +158,15 @@
       ]
     },
     "5": {
-      "note": "The render-ready wire model this route consumes includes nodes, wave indices, frontier states, leaf titles, and predecessor reasons; current serving and observer callers construct those projected facts.",
+      "note": "The wire shape and current serving/observer builders supply graph nodes, waves, graph-frontier facts, leaf titles and predecessor reasons, not a second task-status authority.\n\nAnchor: graph wire declarations",
       "targets": [
         {
           "anchor": {
-            "blob": "cc1a4d8fa8ad9c2ae7d91dff5dc6eba9d3330015",
-            "content": "sha256:aba557ba3e3dd7a0538e54add74e8b5a26632e69e6fbd0805b7b5e653c9c6735",
+            "blob": "82940e3ebb28c7077e598da5addafff90ec6ef78",
+            "content": "sha256:9dd7288f36643ae64d19e5f0a00db07d6ab0b4af1ff77174df63d806d3c827a1",
             "locator": {
-              "end": 734,
-              "kind": "line_range",
-              "start": 732
-            },
-            "path": "dashboard/src/types/projection.ts"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "cc1a4d8fa8ad9c2ae7d91dff5dc6eba9d3330015",
-            "content": "sha256:aaf4594f61d735a88a3580e6cd5f5763836b37158ba663039a45051a4dc7aedd",
-            "locator": {
-              "end": 732,
-              "kind": "line_range",
-              "start": 732
-            },
-            "path": "dashboard/src/types/projection.ts"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "cc1a4d8fa8ad9c2ae7d91dff5dc6eba9d3330015",
-            "content": "sha256:250ab2e0b46605427ef60ff4ddff7deecceab1d3d3c3c1b59caf429f6c59c661",
-            "locator": {
-              "end": 753,
-              "kind": "line_range",
-              "start": 742
-            },
-            "path": "dashboard/src/types/projection.ts"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "cc1a4d8fa8ad9c2ae7d91dff5dc6eba9d3330015",
-            "content": "sha256:e7fefaa2bcd4c0716efa6e2827d59d8ac4df3bed3d199c8df493edce3757ab19",
-            "locator": {
-              "end": 760,
-              "kind": "line_range",
-              "start": 755
-            },
-            "path": "dashboard/src/types/projection.ts"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "b0b00e2c19893632a2e3538aed7e2c3f84153a00",
-            "content": "sha256:0c4000189a23e8764d270dec47e02a8d65de68b8ca418f9e1a34be0e97c799c0",
-            "locator": {
-              "end": 628,
-              "kind": "line_range",
-              "start": 588
+              "kind": "symbol",
+              "name": "_execution_graph_fields"
             },
             "path": "mcp/src/agents_remember/serving/projections/snapshots_impl/_task_documents.py"
           },
@@ -228,12 +174,11 @@
         },
         {
           "anchor": {
-            "blob": "940257b5145711ced84a3f298d7738457d15c9cc",
+            "blob": "126c6bf624775635e3e6217632fd90455ba23e8f",
             "content": "sha256:7c8bc39433a691155dea349646270e97fe137820c85d3f39adb55f0d06f142b9",
             "locator": {
-              "end": 263,
-              "kind": "line_range",
-              "start": 226
+              "kind": "symbol",
+              "name": "_node_view"
             },
             "path": "mcp/src/agents_remember/observer/projection_graph.py"
           },
@@ -241,25 +186,37 @@
         },
         {
           "anchor": {
-            "blob": "940257b5145711ced84a3f298d7738457d15c9cc",
+            "blob": "126c6bf624775635e3e6217632fd90455ba23e8f",
             "content": "sha256:7586b73f5666458f7d53ceb1d846c1138e0cd06a997d3527e1b32c0140218720",
             "locator": {
-              "end": 298,
-              "kind": "line_range",
-              "start": 266
+              "kind": "symbol",
+              "name": "build_execution_graph_view"
             },
             "path": "mcp/src/agents_remember/observer/projection_graph.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8774e82c7f7a93dda014fdb8b987e2391fd21fd1",
+            "content": "sha256:3210b67654efd86b837f892e3568ebe8331b76d1196385091dbe937cc30473ce",
+            "locator": {
+              "end": 570,
+              "kind": "line_range",
+              "start": 536
+            },
+            "path": "dashboard/src/types/projection.ts"
           },
           "kind": "code"
         }
       ]
     },
     "6": {
-      "note": "The deterministic Mermaid document-diagram sibling of this view also preserves machine-readable nodes, dependencies, and derived waves.",
+      "note": "The document renderer retains the Mermaid diagram sibling and its nodes/dependencies/derived-wave lists.",
       "targets": [
         {
           "anchor": {
-            "blob": "da5132595922352e3c822e6b92d4808ef31a248b",
+            "blob": "aacc841ceeb09f0e9e5e4159ff1ba4d2641fd600",
             "content": "sha256:0df2ed738f173bbac2215763230cbab2036a71fc0fa02a330ff7ad358920024d",
             "locator": {
               "kind": "symbol",
@@ -272,12 +229,12 @@
       ]
     },
     "7": {
-      "note": "The one-shot mounted-UI evidence surface applies a seeded projection and opens the real sprint detail panel.\n\nAnchor: lines 8–14",
+      "note": "The deterministic dev surface applies its seeded task-entry/queue projection and opens the real DetailPanel; this is not a fresh screenshot or runtime result.\n\nAnchor: seed projection",
       "targets": [
         {
           "anchor": {
-            "blob": "95a59d4a85525f50216856b227bd1864e2dcb773",
-            "content": "sha256:89acca4aa72ca1af52d10dd2614b0f13d7437e01c52ca83507a39751ee65d4d7",
+            "blob": "7dfc1906ff5bccdc7c4a2fd81c1b939871b6f63a",
+            "content": "sha256:bcd851f028b401c8ea56212eb9661271e128cf6859f0d9f9d2442dfb54471d84",
             "locator": {
               "kind": "symbol",
               "name": "SprintGraphPage"
@@ -288,14 +245,43 @@
         },
         {
           "anchor": {
-            "blob": "95a59d4a85525f50216856b227bd1864e2dcb773",
-            "content": "sha256:a1dd602f7c174baf10eceb52454075fdef276f2b9311a3f7e7912e127910261a",
+            "blob": "7dfc1906ff5bccdc7c4a2fd81c1b939871b6f63a",
+            "content": "sha256:04e67fcd34d4c63985fd5b17d3ef43f4824505669c03b2bf78a7aed2bde29e27",
             "locator": {
               "end": 14,
               "kind": "line_range",
               "start": 8
             },
             "path": "dashboard/src/dev/sprintGraphPage.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "Only ready/waiting or an explicit cycle become dependency badges; absent qualified task entries have no fallback task word.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "10fa9b314498732151de2f419d952921a92ebe84",
+            "content": "sha256:94892f75555830d05e4356c451dee7069bcb4bbc404677b22baee6cf045cf1bc",
+            "locator": {
+              "kind": "symbol",
+              "name": "readinessOf"
+            },
+            "path": "dashboard/src/panels/sprint-graph/SprintGraphView.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "10fa9b314498732151de2f419d952921a92ebe84",
+            "content": "sha256:b7563252acdaec7fd3e57e8db9cc1053a683950cca8f4f81b73f5969ce6e43aa",
+            "locator": {
+              "kind": "symbol",
+              "name": "GraphBox"
+            },
+            "path": "dashboard/src/panels/sprint-graph/SprintGraphView.tsx"
           },
           "kind": "code"
         }

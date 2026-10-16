@@ -6,13 +6,13 @@
 
 ## Purpose
 
-Generated JSON Schema for the core `WorkspaceProjection` contract: projection DTOs and reusable definitions consumed by the cockpit. The HTTP/SSE served-only tail (`ServingBuild`, heartbeat and `TerminalObserverHealth`) is folded into the TypeScript mirror separately; those definitions are not part of this core JSON artifact.
+Generated JSON Schema for core WorkspaceProjection, with TaskEntry/TaskCounts as the sole task identity/state/activity/membership/count contract and TaskSummary as separate content. Served-only servingBuild/watcherHealth diagnostics are folded into the TypeScript mirror by the generator, not this core JSON.
 
 ## Code Commentary
 
 ### Task-reader display definitions
 
-Generated task display definitions now include form, header-note label/value rows and total, status
+Generated TaskSummary display definitions now include form, header-note label/value rows and total, status
 note/preview flag, review state/finding rows and top-level step note/outcome flags. The Python schema
 uses construction defaults for many of these fields; do not confuse a defaulted JSON Schema property
 with the generated TypeScript mirror's required present field. The real producer supplies whole-round
@@ -32,10 +32,9 @@ operation for the dashboard to wait on. The JSON Schema remains generated from t
 
 - `$defs` holds the reusable projection schema definitions.
 - `ActionAvailability` (line 3) declares whether one action is safe, decided by the reducer, never the UI.
-- `AgentPickupNode` declares a pending dashboard response awaiting correlated adapter acceptance at a recipient turn boundary; `operator_inbox_consume` is optional attribution, not the landing condition.
 - `TaskDocumentRef` is the repository-qualified task identity reused by terminal, inbox, and
   projection fields; task ownership is not encoded as a leaf-key string.
-- `TaskDocNode` carries the optional `executionNature` and `executionGraph` contract plus
+- `TaskSummary` carries the optional `executionNature` and `executionGraph` contract plus
   declared graph-derived `executionWaves`; `TaskExecutionGraphNode` and
   `TaskExecutionEdgeNode` preserve canonical task references and dependency reasons without
   adding scheduler priority or judgment to the generated wire schema. Since 260815-DAG-L11 the
@@ -70,19 +69,22 @@ None.
 
 ## External grant display shape
 
-The generated schema admits optional directGrant evidence on task/series-child projections and its typed giver/time node. Schema presence is not grant permission; the backend reads current external authority. Keep schema/type generation synchronized with the Python observer.
+TaskSummary carries optional directGrant display evidence and typed giver/time data. Schema presence is not grant permission; current external authority stays backend-owned. Regenerate together with the Python observer/types.
 
 ## Optional Task Order and Structured Prose
 
-TaskDocNode adds nullable default-null `nonGoals`, `acceptance`, `completedAt`, `waitsFor`, `waitsForTasks` and `neededByTasks`; its required identity list is unchanged. TaskDependencyNode forbids extras, requires id/title/status and defaults nullable docPath to null. TaskExecutionNodeView adds nullable default-null cycle. Declaration of a same-master dependency shape does not itself enforce membership, compute waves, finalize a task or prove browser behavior.
+TaskSummary carries optional fixed prose, completion time, waitsFor and resolved dependency arrays as content. TaskDependencyNode requires id/title and permits an absent canonical reference; no task state or jump is invented for a file-less dependency. TaskEntry owns identity, stage/activity, parent/children/counts and worktrees; TaskCounts covers stages and started activity buckets. Graph cycle remains optional display evidence, not browser scheduling/validation.
 
 
-- Generated schema declares optional fixed-prose/completion/dependency fields and the dependency graph DTO; generated declarations are not validation or rendering execution. [10]
 
 - Optional nullable graph cycle flag. \[11] [11]
 - Generator separates core JSON schema from served TypeScript tail; entry point can sync/check but was not invoked here. \[12] [12]
 
 ## Evidence
+
+- The generated dependency requires id/title with optional reference, and TaskEntry retains eventAt without task-event ageSeconds. [13]
+
+
 
 ### Docs References
 
@@ -96,8 +98,6 @@ No configured external domain source applies.
 - The generated phase enum excludes ledger-commit phases while preserving the code/memory publication vocabulary. [1]
 - The `$defs` block contains all reusable projection schema definitions. [2]
 - `ActionAvailability` declares reducer-decided action safety for the cockpit. [3]
-- `AgentPickupNode` declares a pending unacked dashboard response. [4]
-- TaskIntentIdentity forbids extras, requires digest with a lowercase 64-hex pattern, and fixes schema to task-intent/v1 with a default. [5]
 
 - The optional task-intent reference on the lifecycle operation projection. [6]
 - The served closeout-queue node: no `maxItems` on `members`, `maxItems: 256` still on `sourceProblems`. [7]
@@ -125,7 +125,7 @@ after organizational leaves moved to direct sprint-super ownership.
 
 ## 260815-DAG-L12 Schema Regeneration
 
-The JSON schema was regenerated to mirror the render-ready sprint graph view shapes (L12-R4): `TaskExecutionGraphView`, `TaskExecutionNodeView`, `TaskExecutionPredecessorNode`, and the optional `executionGraphView` on `TaskDocNode`. Generated by `scripts/sync-projection-types.py`; hand edits are overwritten.
+The JSON schema was regenerated to mirror the render-ready sprint graph view shapes (L12-R4): `TaskExecutionGraphView`, `TaskExecutionNodeView`, `TaskExecutionPredecessorNode`, and the optional `executionGraphView` on `TaskSummary`. Generated by `scripts/sync-projection-types.py`; hand edits are overwritten.
 
 
 ## 260821-CLIVE-L2 Lifecycle Operation Projection Contract
@@ -151,7 +151,7 @@ commit, certification, recovery, or terminal evidence.
 
 `DiscardUnstartedProofNode` records the exact absence/state proof and fingerprint used to remove an
 unstarted task, while `DiscardedSubTaskNode` retains its identity, reason, timestamp, and proof.
-`SeriesNode` declares discard count/history; `TaskDocNode` carries the optional equivalent. Discarded
+TaskSummary carries discard count/history as content audit data. Discarded
 work remains separate from live completion.
 
 Runtime refinements including item limits, numeric minima, fingerprints, and string bounds remain
@@ -184,9 +184,4 @@ populate for record-bound envelopes.
 
 ## 260713-TES-L5 Current Delta — Regenerated AgentPickupNode Description
 
-The generated schema's `AgentPickupNode.description` now carries the N16 landing semantics:
-pending rows wait for a turn-boundary landing (the system acks), `operator_inbox_consume` is
-an optional attribution marker with nothing mechanical attached, and the sweep predicates read
-the stores directly and never this projection. Regenerated via `scripts/sync-projection-types.py`
-from the `AgentPickupNode` docstring in `observer/projection.py`; codegen-current per the worker
-report and reviewer verification.
+The schema no longer declares AgentPickupNode or session lifecycle/duplicate task-document/series catalogues. Retained landing-operation envelopes and exact-current queue contracts remain independent projection evidence.

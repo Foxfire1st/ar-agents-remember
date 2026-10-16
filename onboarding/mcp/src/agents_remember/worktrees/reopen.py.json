@@ -214,6 +214,35 @@
           "kind": "code"
         }
       ]
+    },
+    "31": {
+      "note": "Leaf reopen supplies actual path/document pairs in preview and under the existing publication authority.\n\nAnchor: reopen source-path plumbing",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d58c63ecee8f999fb207fe2c6b4fd35956213d82",
+            "content": "sha256:58e3a6aff422b971f46023b0a771ccfc83d95b9649a041601fb38827f203a646",
+            "locator": {
+              "end": 500,
+              "kind": "line_range",
+              "start": 486
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d58c63ecee8f999fb207fe2c6b4fd35956213d82",
+            "content": "sha256:fbedadfc1830e01aa7839085ffe90de4af221cfc2660044caef15ba7ddbf1fa8",
+            "locator": {
+              "end": 568,
+              "kind": "line_range",
+              "start": 504
+            }
+          },
+          "kind": "code"
+        }
+      ]
     }
   },
   "schema": "ar-onboarding-file/v1"

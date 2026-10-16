@@ -8,7 +8,7 @@
 
 The retained unit-regression surface for the host-path Event River feed (MIK-R114):
 first-call write with caller and facts, read-once caller, no content leakage, the 120-char
-omission, target roles, single legacy write, drop carry-then-clear, failed removal, the
+omission, target roles, task-scoped workspace writes, drop carry-then-clear, failed removal, the
 per-append bound, oversized-row refusal, packet constants, one cut function, and the
 silent-stream last feed.
 
@@ -17,8 +17,7 @@ silent-stream last feed.
 `ToolEventRiverTests` pins each feed behavior against the workspace river: the bound
 first call writes one event with caller and facts; the caller snapshot stays fixed; no
 argument, answer or message text reaches an event; role tools name the started or
-addressed role including id-addressed receipts; an active lifecycle writes once with no
-second river row; failed writes answer as written while the count rides the next event
+addressed role including id-addressed receipts; the bound first call carries its exact task scopeKey and no lifecycleId/sessionId in the workspace river; failed writes answer as written while the count rides the next event
 and clears after success; every append lands at or under the 16 MiB ceiling with the
 shared age/size cut; and a connected stream changes no file while naming the last feed.
 

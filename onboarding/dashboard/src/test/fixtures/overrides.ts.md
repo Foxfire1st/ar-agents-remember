@@ -8,7 +8,7 @@
 
 The override parameter type the retained builders in `fixtures/wire.ts` take, and the reason it is not a bare `Partial<T>`. `RequiredKeys<T>` is local; `Overrides<O,T>` and `NoOverrides` are the two exported types. Source length and obsolete conversation-builder populations are not current API counts.
 
-**The defect it closes.** Without exactOptionalPropertyTypes, optional slots in Partial<T> admit an explicit undefined; the builder spread writes it into the result. `provider({state:undefined})` therefore constructs a ProviderNode whose required state is undefined, not a conversation page or missing capabilities. The retained lifecycle.state, taskDoc.steps and projection.enclosures controls are the same required-field move without a cast. Overrides rejects this move at a fresh literal call site; property-name/AST guards alone cannot detect it.
+**The defect it closes.** Without exactOptionalPropertyTypes, optional slots in Partial<T> admit an explicit undefined; the builder spread writes it into the result. `provider({state:undefined})` therefore constructs a ProviderNode whose required state is undefined, not a conversation page or missing capabilities. The retained taskEntry.stage, taskSummary.steps and projection.enclosures controls are the same required-field move without a cast. Overrides rejects this move at a fresh literal call site; property-name/AST guards alone cannot detect it.
 
 Nothing in `wireFixtureGuard.ts` can see any of them, and the source says exactly why (cit:(["no assertion for rule 1"], dashboard/src/test/fixtures/overrides.ts:10-12)): there
 is no assertion for rule 1, no suppression for rule 5, and rule 4 measures property NAMES, which are
@@ -40,7 +40,7 @@ builders the property they exist for.
 
 ### Conventions
 
-Builders pair the constraint with a widening local: `function lifecycle<O extends Partial<X> = NoOverrides>(overrides?: Overrides<O, X>)`
+Builders pair the constraint with a widening local: `function taskEntry<O extends Partial<X> = NoOverrides>(overrides?: Overrides<O, X>)`
 then `const over: Partial<X> = overrides ?? {}` before spreading. The generic is what binds at the call
 site; the local is what makes the spread ordinary.
 
@@ -71,7 +71,7 @@ number — treat it as provenance for the decision rather than as a current coun
 
 **What this does NOT cover.** The current source documents two limits.
 
-1. **Fresh literals only.** `const over: Partial<LifecycleProjection> = {state:undefined}; lifecycle(over);` widens O to Partial<LifecycleProjection>, reopening optional undefined. The retained honest.test.ts probe entry k records this widened-variable residue as a known pass; it is not a conversationPage control. Only the project-wide flag closes that general gap.
+1. **Fresh literals only.** `const over: Partial<TaskEntry> = {stage:undefined}; taskEntry(over);` widens O to `Partial<TaskEntry>`, reopening optional undefined. The retained honest.test.ts probe entry k records this widened-variable residue as a known pass; it is not a conversationPage control. Only the project-wide flag closes that general gap.
 2. **Outside wire.ts builders.** This constraint binds the retained fixtures/wire.ts parameters only. Other Partial<WireType> parameters, component props or decoders still admit explicit undefined under their own configuration. The removed conversationWire/conversationCapabilities builders supply no current scope or nested-control guarantee. This mapped type is not recursive validation, and no new nested test coverage is inferred.
 
 ## Evidence
@@ -88,9 +88,9 @@ No repository-relative Domain Documentation source applies; the two external Typ
 
 ### Repo-Internal References
 
-- Partial overrides can erase required lifecycle/provider state, task steps or projection enclosures without a cast; the value hole is not seen by the property-name guard. [1]
+- Partial overrides can erase required task-entry stage/provider state, task-summary steps or projection enclosures without a cast; the value hole is not seen by the property-name guard. [1]
 - The measured rejection of `exactOptionalPropertyTypes` (222 errors / 71 files) and the call-site property the narrow fix has instead. [2]
-- Current limits are fresh-literal-only and retained wire.ts builders only; the widened LifecycleProjection control is a known pass, not a removed conversation/nested builder promise. [3]
+- Current limits are fresh-literal-only and retained wire.ts builders only; the widened TaskEntry control is a known pass, not a removed conversation/nested builder promise. [3]
 - `RequiredKeys<T>`, `Overrides<O, T>` and `NoOverrides`. [4]
 - The proof that all four rejections fire, that excess-property checking survives, and that the widened-variable case is a known pass. [5]
 - Consumer: every projection builder takes `Overrides<O, Node>`. [6]

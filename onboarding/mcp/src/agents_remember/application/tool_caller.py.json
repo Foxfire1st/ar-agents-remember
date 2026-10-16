@@ -3,11 +3,12 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "95a3eeda739d9956cbd20b2497b65cfd1340d99c",
-        "content": "sha256:eb0b2419810d904dd4d85d8a1729414ebf34ad8c8f11b7cffdd79e383b3ae500",
+        "blob": "8975a2190ade138854226426a16fbe12a1b98887",
+        "content": "sha256:5b734be49536a2b9309f6847a6f86c46d604da6c935134499c0d8adea5098a86",
         "locator": {
-          "kind": "symbol",
-          "name": "snapshot_tool_caller"
+          "end": 51,
+          "kind": "line_range",
+          "start": 20
         }
       },
       "id": "RLZ-J9300H",
@@ -22,12 +23,12 @@
   ],
   "references": {
     "1": {
-      "note": "The caller is snapshotted once from the launch binding and never raises.",
+      "note": "Caller and canonical scope key are snapshotted once from the launch binding without raising.",
       "targets": [
         {
           "anchor": {
-            "blob": "95a3eeda739d9956cbd20b2497b65cfd1340d99c",
-            "content": "sha256:eb0b2419810d904dd4d85d8a1729414ebf34ad8c8f11b7cffdd79e383b3ae500",
+            "blob": "8975a2190ade138854226426a16fbe12a1b98887",
+            "content": "sha256:5b734be49536a2b9309f6847a6f86c46d604da6c935134499c0d8adea5098a86",
             "locator": {
               "kind": "symbol",
               "name": "snapshot_tool_caller"
@@ -42,7 +43,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "95a3eeda739d9956cbd20b2497b65cfd1340d99c",
+            "blob": "8975a2190ade138854226426a16fbe12a1b98887",
             "content": "sha256:f0789362bf72db56af9508b3b7aa03acf691f71944966c466b6f69a3b7696e2c",
             "locator": {
               "kind": "symbol",

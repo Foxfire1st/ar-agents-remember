@@ -3,16 +3,16 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "The host-free suite checks bounded child/task/report lines, suppression, deferral, retry and restart behavior.",
+      "note": "The host-free suite retains suppression/deferral/retry/restart controls and adds actual parent-wake registration against a mock registry with explicit steer sends.\n\nAnchor: current owner",
       "targets": [
         {
           "anchor": {
-            "blob": "4de89d61cc4a59ea9efba598f2aff91e2b3920d4",
-            "content": "sha256:e69f04c7feae94a785515130575ce7d260266e20f06df7deb806f86f4a96a16e",
+            "blob": "23a7a378c6566e2edaf7f39fdc25a5c70fe4e3cd",
+            "content": "sha256:bcab5c00be234dfdfa2f54c68133971194e79dfdd2d710f66569ccaa22342d7d",
             "locator": {
-              "end": 329,
+              "end": 375,
               "kind": "line_range",
-              "start": 59
+              "start": 1
             }
           },
           "kind": "test"

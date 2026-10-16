@@ -12,6 +12,8 @@ Implements single-role starts, the Manager-owned leaf-set start and receipt-boun
 
 Caller binding decides may-start pairs and sprint/master containment. Starts call launcher dispatch with native parent, and only starter or dashboard may replay a stored request. Recipients resolve through current-line receipts. Self-addresses and ambiguous/cut candidate sets refuse; a leaf seat with two live agents is ambiguous too. An unfinished start, permission prompt or unwritable running turn instead holds a message in the recipient workspace when its receipt locates that store. Native message delivery/resume/wait results keep explicit refusal and uncertain-delivery shapes; no second hosted AR seat is created here.
 
+Closed-recipient resume calls `role_activity.resume_role_agent` with the saved receipt, publishing its identity before native resume. `_started` only builds the start answer; post-success role-facts publication was removed from it. The launch-receipt owner publishes before launch/replay. Best-effort publication does not imply host consumption, delivery or task acceptance.
+
 Since 260928-MIK-L114 `send_role_message` carries the resolved recipient's role for the
 river (`_carry_resolved_target_role`): the payload builder only sees the call, whose role
 is absent for id-addressed recipients, so the durable receipt's recorded role is set on

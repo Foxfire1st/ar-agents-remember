@@ -3,11 +3,12 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "a96a85c2db144460392ca6a02561a529e832a851",
+        "blob": "e5630104c8f10440412034a54590fcafa4c71772",
         "content": "sha256:9fc6939bd8a2062d86eb0894f991f40d2fe30e5728ddee39ba7270f94c78fe97",
         "locator": {
-          "kind": "symbol",
-          "name": "DocFacts"
+          "end": 443,
+          "kind": "line_range",
+          "start": 415
         }
       },
       "id": "RLZ-0N51EK",
@@ -21,10 +22,29 @@
     },
     {
       "anchor": {
-        "blob": "a96a85c2db144460392ca6a02561a529e832a851",
-        "content": "sha256:78969f4c06da9779d1706a664260eb348de4f9bfb555ca77328e2faac1c9fee3",
+        "blob": "e5630104c8f10440412034a54590fcafa4c71772",
+        "content": "sha256:084521da53daa61c98bb15a13feb17b75e373e8a5dfdd5355ea58a509bb7fba5",
         "locator": {
-          "end": 290,
+          "end": 106,
+          "kind": "line_range",
+          "start": 104
+        }
+      },
+      "id": "RLZ-1TB49P",
+      "invariant": "INV-XZYGEB",
+      "origin": {
+        "handoffEntry": "L168-CUR-M2-21-N15",
+        "leaf": "260928-MIK-L168"
+      },
+      "rationale": "The selected document head delegates canonical entry words, tone and event age to TaskStatusWord instead of formatting doc.status as an independent task-state vocabulary.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "e5630104c8f10440412034a54590fcafa4c71772",
+        "content": "sha256:06f34dbdb440f90876671263b4bf2057a7f1284de8a74595e33c62b1bd85b529",
+        "locator": {
+          "end": 296,
           "kind": "line_range",
           "start": 262
         }
@@ -40,7 +60,7 @@
     },
     {
       "anchor": {
-        "blob": "a96a85c2db144460392ca6a02561a529e832a851",
+        "blob": "e5630104c8f10440412034a54590fcafa4c71772",
         "content": "sha256:7aae1b90ed246b71f156378e9cda87ab599e95833ed50e9ad2f6989de14fd8bb",
         "locator": {
           "kind": "symbol",
@@ -58,7 +78,26 @@
     },
     {
       "anchor": {
-        "blob": "a96a85c2db144460392ca6a02561a529e832a851",
+        "blob": "e5630104c8f10440412034a54590fcafa4c71772",
+        "content": "sha256:a3cbd097a3b3b01ac5e44dbb111b7f02613565ac84ccca32c31acc1ff80bca24",
+        "locator": {
+          "end": 110,
+          "kind": "line_range",
+          "start": 102
+        }
+      },
+      "id": "RLZ-FND35A",
+      "invariant": "INV-MGGEBY",
+      "origin": {
+        "handoffEntry": "L168-CUR-M2-21-N14",
+        "leaf": "260928-MIK-L168"
+      },
+      "rationale": "DocHead renders id/title from the canonical entry and task status from that same entry, not duplicated reader-summary identity/status.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "e5630104c8f10440412034a54590fcafa4c71772",
         "content": "sha256:eb2460c8f2ef588681a82364f13779e89074a65b27fe6ad9a7c6577a344c6694",
         "locator": {
           "kind": "symbol",
@@ -76,11 +115,12 @@
     },
     {
       "anchor": {
-        "blob": "a96a85c2db144460392ca6a02561a529e832a851",
+        "blob": "e5630104c8f10440412034a54590fcafa4c71772",
         "content": "sha256:2b4046b665d925774facac0fbc88ead3d29a28bf20abe2f6057b7e6702f623e0",
         "locator": {
-          "kind": "symbol",
-          "name": "PrimaryFact"
+          "end": 413,
+          "kind": "line_range",
+          "start": 402
         }
       },
       "id": "RLZ-MSWTZ4",
@@ -94,7 +134,7 @@
     },
     {
       "anchor": {
-        "blob": "a96a85c2db144460392ca6a02561a529e832a851",
+        "blob": "e5630104c8f10440412034a54590fcafa4c71772",
         "content": "sha256:572ecf3770713a5ae098e124f8bece9369774ef3736c810c6d370c92f545c43b",
         "locator": {
           "end": 125,
@@ -108,12 +148,12 @@
         "handoffEntry": "MIK-R128@v1 rule 4",
         "leaf": "260928-MIK-L162"
       },
-      "rationale": "These two fact placements bind the task head to the projected waits-for and needed-by collections rather than reading dependency prose.",
+      "rationale": "Wires both waits-for and needed-by task facts into the same DependencyFact renderer.",
       "role": "presentation"
     },
     {
       "anchor": {
-        "blob": "a96a85c2db144460392ca6a02561a529e832a851",
+        "blob": "e5630104c8f10440412034a54590fcafa4c71772",
         "content": "sha256:0066f0f4af7c035dc923cc72d2e625726ebcdfe3c506e0fe7498b46b7607fa04",
         "locator": {
           "kind": "symbol",
@@ -131,11 +171,12 @@
     },
     {
       "anchor": {
-        "blob": "a96a85c2db144460392ca6a02561a529e832a851",
-        "content": "sha256:78969f4c06da9779d1706a664260eb348de4f9bfb555ca77328e2faac1c9fee3",
+        "blob": "e5630104c8f10440412034a54590fcafa4c71772",
+        "content": "sha256:06f34dbdb440f90876671263b4bf2057a7f1284de8a74595e33c62b1bd85b529",
         "locator": {
-          "kind": "symbol",
-          "name": "ObjectiveLead"
+          "end": 296,
+          "kind": "line_range",
+          "start": 262
         }
       },
       "id": "RLZ-W8JDSE",
@@ -149,12 +190,12 @@
     },
     {
       "anchor": {
-        "blob": "a96a85c2db144460392ca6a02561a529e832a851",
+        "blob": "e5630104c8f10440412034a54590fcafa4c71772",
         "content": "sha256:d37396429351441084354d627e2eb82cf216d6d9882754ac1bfde0ae370b1c12",
         "locator": {
-          "end": 61,
+          "end": 59,
           "kind": "line_range",
-          "start": 60
+          "start": 58
         }
       },
       "id": "RLZ-WX7MVM",
@@ -163,17 +204,17 @@
         "handoffEntry": "curator-extra-source-links-INV-WHBGH5",
         "leaf": "260928-MIK-L162"
       },
-      "rationale": "Extends the HeadDoc type with the two projected dependency collections, enabling task-head propagation of producer-owned references.",
+      "rationale": "HeadDoc consumes the served waitsForTasks and neededByTasks fields rather than independently deriving those relations.",
       "role": "propagation-persistence"
     },
     {
       "anchor": {
-        "blob": "a96a85c2db144460392ca6a02561a529e832a851",
-        "content": "sha256:fd07fa0256c61a6d28d423e27e2c30ea24e3f2775608248125b6eb8718c5bc99",
+        "blob": "e5630104c8f10440412034a54590fcafa4c71772",
+        "content": "sha256:27f8cf1461fcf3760aa9b7119bca9ec2d6b85571bb8b0aafbc22d6e9be139754",
         "locator": {
-          "end": 343,
+          "end": 360,
           "kind": "line_range",
-          "start": 313
+          "start": 319
         }
       },
       "id": "RLZ-ZAEPG4",
@@ -182,72 +223,17 @@
         "handoffEntry": "MIK-R128@v1 rule 4",
         "leaf": "260928-MIK-L162"
       },
-      "rationale": "This dependency fact extent displays each reference title and state and disables navigation when no document path is known.",
+      "rationale": "Looks up the exact referenced TaskEntry for its state and jump; without an entry it retains id/title but shows no state and disables navigation, while gone remains explicit.",
       "role": "presentation"
     }
   ],
   "references": {
-    "1": {
-      "note": "DocHead draws identity, facts and notes, including projected dependency facts; objective placement belongs to readerTop and taskReader composition.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "a96a85c2db144460392ca6a02561a529e832a851",
-            "content": "sha256:41193d78b0df3c10f889b002a65784a223b5ebb5415a07a7af1f8bde24ed6bce",
-            "locator": {
-              "end": 131,
-              "kind": "line_range",
-              "start": 81
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "a96a85c2db144460392ca6a02561a529e832a851",
-            "content": "sha256:ed43277cfec2514408065e33095e85da824bab07f7eee6da93846f5482f5454d",
-            "locator": {
-              "end": 343,
-              "kind": "line_range",
-              "start": 311
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "dc5f265ecd8e05888dc19f2e710fc5d3cb81da70",
-            "content": "sha256:141f6d3619fc577db99eeae541559f440e18c504cfb9722448eacbff8cf38e89",
-            "locator": {
-              "end": 43,
-              "kind": "line_range",
-              "start": 32
-            },
-            "path": "dashboard/src/panels/detail-panel/readerTop.tsx"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "29a2217745a3ef92625b3283471bf70a9453482f",
-            "content": "sha256:69122f63fa843f551f421c1cb20450c32f00c62e61e841fb50bad4512c23ba60",
-            "locator": {
-              "end": 794,
-              "kind": "line_range",
-              "start": 780
-            },
-            "path": "dashboard/src/panels/detail-panel/taskReader.tsx"
-          },
-          "kind": "code"
-        }
-      ]
-    },
     "2": {
       "note": "Already represented chain/primary metadata is suppressed before the six-note selection; total/more account for all notes.",
       "targets": [
         {
           "anchor": {
-            "blob": "a96a85c2db144460392ca6a02561a529e832a851",
+            "blob": "c73f5f1cf1ea97e7d3c445f1415f3fcc72afb6a8",
             "content": "sha256:eb2460c8f2ef588681a82364f13779e89074a65b27fe6ad9a7c6577a344c6694",
             "locator": {
               "kind": "symbol",
@@ -269,6 +255,22 @@
               "end": 290,
               "kind": "line_range",
               "start": 254
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Dependency identity remains visible, while gone and entry resolution gate task wording and navigation.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e5630104c8f10440412034a54590fcafa4c71772",
+            "content": "sha256:27f8cf1461fcf3760aa9b7119bca9ec2d6b85571bb8b0aafbc22d6e9be139754",
+            "locator": {
+              "kind": "symbol",
+              "name": "DependencyFact"
             }
           },
           "kind": "code"

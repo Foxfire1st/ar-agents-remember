@@ -4,9 +4,9 @@
 
 The current source facts below replace the former operative inventory. The separately labelled superseded claims describe only the pre-repair card. Original paragraphs, dated closures, evidence and citation identities remain intact in the explicitly historical section; they grant no current call, restored route or fresh execution acceptance.
 
-- R113 removes the former front-half, blocked/awaiting-developer and terminal loop-back hints, not merely their executable tool pointers. compute_next_step returns None for no state, terminal state or no contract. With an active contract it uses the retained linear guidance owner.
+- R113 removes the former front-half, blocked/awaiting-developer and terminal loop-back hints, not merely their executable tool pointers. compute_next_step takes the resolved contract, not ambient state: no contract yields no hint; otherwise it uses retained landing guidance and contract-substate stop gates.
 - Only the retained closeout-preview, integration and finalize decision overlays are prose-only. Their existing contract-state tests remain exact; an overlay supplies no developer approval or product execution.
-- The exception-contained edge still returns a NextStep model and leaves serialization to the response boundary. A missing/torn contract yields no hint; a guidance read failure leaves the independent turn-end overlay available.
+- The contract-path edge returns a NextStep model and leaves serialization to the response boundary. A missing/torn contract yields no hint; a guidance read failure leaves the independent turn-end overlay available.
 
 ### Superseded inventory
 
@@ -15,11 +15,13 @@ The current source facts below replace the former operative inventory. The separ
 
 ### Source and authority bounds
 
-- No state, terminal state or no contract yields no hint; only the retained operational branch remains. [8]
+
+
+- No contract yields no hint; resolved contract and tool select retained landing guidance. [8]
 
 - Three contract-gated stop overlays are prose, not session/gate notification operations or approval. [9]
 
-- The edge is exception-contained; contract/guidance failure handling stays on existing owners. [10]
+- Contract-path reads contain their own load/guidance failures; only the two declared argument-bound preview stops are admitted. [10]
 
 Source inspection supplies no new test, native-host, whole-build, landing or memory acceptance. Retained internal services and historical fixtures do not re-advertise deleted MCP tools. Numbered references retain historical custody and may include disclosed inherited stale targets; currentness or proof truth is not inferred from them.
 
@@ -230,8 +232,8 @@ and the ambient lifecycle / phase definitions.
 - `NextStep` model + the `nextStep` field on the response envelopes — the declaration that makes setting it at the choke point legal. [2]
 - `lifecycle_guidance` state machine delegated to in the linear half; `_guidance_for` widens its payload with `dict(...)`. [3]
 - `load_contract` / `WorktreeContract` (sub-state fields read by `_gate_after`). [4]
-- `amb.current` — the live `LifecycleState` resolved at the edge. [5]
-- `LifecycleState` (`enclosure`, `is_terminal`) + `Phase` literals (`decide`, …) and the `awaiting-developer` state the parked branch reads (state/phase vocabulary in `models/lifecycle.py` since L9). [6]
+- `amb.current` — the live `LifecycleState` resolved at the edge. (historical source target retired; original citation 5 retained in custody)
+- `LifecycleState` (`enclosure`, `is_terminal`) + `Phase` literals (`decide`, …) and the `awaiting-developer` state the parked branch reads (state/phase vocabulary in `models/lifecycle.py` since L9). (historical source target retired; original citation 6 retained in custody)
 - The next-step entry point derives guidance from the current lifecycle and tool; this source citation does not establish response token-count coverage. [7]
 
 As of HFX-L6, the FRONT_HALF_RUNDOWN reframe bullet names the architect lifecycle explicitly

@@ -6,8 +6,9 @@
         "blob": "1d06daecf8740ea6de32c4565dc4d24506617c0d",
         "content": "sha256:268aaa77dc1b552dbc9360dcac3865c38fef9366f2213c2e986ff926600f5d7d",
         "locator": {
-          "kind": "symbol",
-          "name": "TaskReportRows"
+          "end": 204,
+          "kind": "line_range",
+          "start": 151
         }
       },
       "id": "RLZ-26N9GM",
@@ -78,8 +79,9 @@
         "blob": "1d06daecf8740ea6de32c4565dc4d24506617c0d",
         "content": "sha256:44092296cea2440c514fed6c75569bba587801576fb40501b033b7203993778d",
         "locator": {
-          "kind": "symbol",
-          "name": "ReferenceRows"
+          "end": 127,
+          "kind": "line_range",
+          "start": 96
         }
       },
       "id": "RLZ-VTYFGA",
@@ -177,12 +179,12 @@
         },
         {
           "anchor": {
-            "blob": "b4c74c37212e432009df876b3276beea828250fa",
+            "blob": "1a65bd4444779518a555e2e38d8ca30fa0df9f3a",
             "content": "sha256:64b656a9984283197cc301fc4a52b12707baca3cd7e424a7640c2301382c86d1",
             "locator": {
-              "end": 119,
+              "end": 122,
               "kind": "line_range",
-              "start": 116
+              "start": 119
             },
             "path": "dashboard/src/grammar/Markdown.tsx"
           },
@@ -191,16 +193,29 @@
       ]
     },
     "5": {
-      "note": "The task reader mounts this component and threads `onOpenNotes`.",
+      "note": "The task reader’s overview and task-specific notes/reference/report islands thread the shared `onOpenNotes` artifact callback.",
       "targets": [
         {
           "anchor": {
-            "blob": "5010f4f41e7f40f48b178e0039b7fe40a77875c2",
-            "content": "sha256:9c3b11a5f1a401a7433158a046a8c57069261d60b7e3b6b6265d5ba92738cccc",
+            "blob": "66607c8748bbb4f94154ffd1893a44a92f9486e8",
+            "content": "sha256:0925bd92d68f648a62c62432c01fbe37f66ba3bc6f6cb85c195ca7cfe6007fb8",
             "locator": {
-              "end": 270,
+              "end": 175,
               "kind": "line_range",
-              "start": 254
+              "start": 167
+            },
+            "path": "dashboard/src/panels/detail-panel/taskReader.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "66607c8748bbb4f94154ffd1893a44a92f9486e8",
+            "content": "sha256:1467093f1230940e33bb15fb11a0828e46b0ba7800ec389a7277ee805c0efe85",
+            "locator": {
+              "end": 240,
+              "kind": "line_range",
+              "start": 198
             },
             "path": "dashboard/src/panels/detail-panel/taskReader.tsx"
           },

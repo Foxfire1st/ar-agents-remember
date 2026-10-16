@@ -1,0 +1,87 @@
+{
+  "path": "mcp/tests/test_role_revival_registration.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Warmup after the new boot listing preserves reopened registration until native activity.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0e2f1c1bf9c135c1c59a9c09a5e3074f3df31955",
+            "content": "sha256:471df8601870347338dccea3f430a204bd5967d5858f0bb82b479e397689aee0",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_warmup_driver_after_the_new_boots_listing"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Warmup registration before late listing preserves the same role facts.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0e2f1c1bf9c135c1c59a9c09a5e3074f3df31955",
+            "content": "sha256:70e4b7ae4a4dc17b5682a8d052a1a892c3dac4bae1a2f0060711a641da5775c0",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_warmup_driver_before_the_new_boots_listing"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Explicit revive before late listing uses the same protection.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0e2f1c1bf9c135c1c59a9c09a5e3074f3df31955",
+            "content": "sha256:edc442fc4016b5427b285b6bf60ca2ec2be0d13963cabd74a53ef2f582792620",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_revive_before_the_new_boots_listing"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "Shared composition drives actual Node publisher, injected listings/resume and first-turn task activity.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0e2f1c1bf9c135c1c59a9c09a5e3074f3df31955",
+            "content": "sha256:2c2dee52c403b2760a990e4f0f30686a73d6d313b2e902e9d5c04d82300d576e",
+            "locator": {
+              "kind": "symbol",
+              "name": "_restart_then_reopen"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "Later close/archive and new-boot ended evidence reclaim the registered role.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0e2f1c1bf9c135c1c59a9c09a5e3074f3df31955",
+            "content": "sha256:7c1cadd39c1b4fe2f51a70d4aeef579b81390171a8986b8de2a50ac60eaa54df",
+            "locator": {
+              "kind": "symbol",
+              "name": "_assert_end_reclaimers"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

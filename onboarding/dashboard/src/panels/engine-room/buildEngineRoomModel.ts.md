@@ -7,18 +7,16 @@
 
 ## Current enclosure-only composition
 
-Builder takes engineProcesses and lifecycles only, maps node/lifecycle/gate/enclosureKey, sorts phase priority then leafId/taskName, returns { processes }; no provider grouping or legacy fallback. PHASE_ORDER still includes provider-setup as a projected phase name.
+Builder takes engineProcesses alone, maps node/enclosureKey and sorts by projected phase priority then leafId/taskName. It returns processes only; no lifecycle/gate attachment, provider grouping or fallback. provider-setup remains a projected operation phase name.
 
 ### Maintenance boundaries
 
-Replace signature, return shape and provider/fallback paragraphs with two-input pure join. Preserve clock/React/inference-free rule and stable key/sorting. Do not rename projected phases or claim groupEngines itself was deleted.
+
 
 Source/test/fixture inspection is not a fresh mounted capture or a passing test run.
 Historical provider-shaped input data and retained compatibility definitions do not
 restore removed provider visuals or tool exposure.
 
-- Builder takes engineProcesses and lifecycles only, maps node/lifecycle/gate/enclosureKey, sorts phase priority then leaf — source ownership, not executed visual proof. [10]
-- Builder takes engineProcesses and lifecycles only, maps node/lifecycle/gate/enclosureKey, sorts phase priority then leaf — source ownership, not executed visual proof. [11]
 
 ## Historical superseded account (non-operative)
 
@@ -28,17 +26,17 @@ Current behavior and its limits are the operative contract above.
 
 
 
-The enclosure-centered Engine Room process map's pure builder: it projects the resolved server collections into an `EngineRoomModel` for rendering — joining each server-composed process node to its live lifecycle, exposing the lifecycle's projected gate, lifting the shared workspace (official/main) provider stack, exposing each enclosure's stable key, and falling back to the legacy `groupEngines` view for older projections that carry worktree providers but no process surface. It is React-free, clock-free, and does no semantic inference — the server already supplies the fact-state honesty.
+
 
 ## Code Commentary
 
 ### Logic
 
-`buildEngineRoomModel(engineProcesses, providers, lifecycles)` is the sole export. It calls `groupEngines(providers)` to split providers into scoped stacks, then takes `workspaceEngines` from the single `scope === "workspace"` stack (empty array when absent) and `worktreeStacks` from the `scope === "worktree"` stacks. It builds a `Map` keyed by `lifecycle.id` and maps each `EngineProcessNode` into an `EngineProcessView` carrying `enclosureKey: node.worktreeGroup` (the stable per-enclosure key), the lifecycle resolved from its optional `lifecycleId` against that map (`undefined` when unset or unmatched), and `gate: lifecycle?.gate` for the secondary Engine Room respond surface. Process views are then sorted by a local phase priority so active/setup/sync work appears before cleanup/completed/abandoned work; `leafId || taskName` is the deterministic tie-breaker. The legacy fallback fires only when `engineProcesses.length === 0 && worktreeStacks.length > 0`; `fallbackStacks` is those worktree stacks when `usesFallback`, else empty. Returns `{ processes, workspaceEngines, fallbackStacks, usesFallback }`.
+`buildEngineRoomModel(engineProcesses)` is the sole export. It maps each node to {enclosureKey: node.worktreeGroup, node}, sorts by PHASE_ORDER with unknown phases last, then leafId or taskName, and returns {processes}. No workspace stack or fallback is synthesized; the adapter is pure, clock/React/Git-free and performs no safety inference.
 
 ### Invariants And Boundaries
 
-Inputs are flat arrays (mirroring `buildTopology`) so the seam stays React-free and unit-testable. No re-derivation of observed/derived/planned/missing fact-state or gate semantics — those are owned by the server (`analytics.engineProcesses` and `LifecycleProjection.gate`). `enclosureKey` is always `node.worktreeGroup` (never the node `id`), so it is stable across a fleeting→real promotion. The client may sort process pods by existing lifecycle phase so current work stays selectable ahead of cleanup-pending siblings from the same series, but it does not invent phases or statuses. Fallback and the process surface are mutually exclusive: a non-empty `engineProcesses` always wins and `usesFallback` stays false.
+
 
 ## Evidence
 
@@ -48,8 +46,3 @@ Inputs are flat arrays (mirroring `buildTopology`) so the seam stays React-free 
 - Each view assigns `enclosureKey` from `node.worktreeGroup`. [2]
 - `EngineRoomModel` render shape [3]
 - `EngineProcessView` render shape [4]
-- The model assigns the joined lifecycle gate into the process view. [5]
-- `EngineProcessView` exposes the gate field. [6]
-- `groupEngines` + `EngineStack.scope` workspace/worktree split [7]
-- `EngineProcessNode.worktreeGroup` and `lifecycleId` [8]
-- `ProviderNode.scope` [9]

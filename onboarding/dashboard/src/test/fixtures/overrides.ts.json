@@ -3,16 +3,16 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "Partial overrides can erase required lifecycle/provider state, task steps or projection enclosures without a cast; the value hole is not seen by the property-name guard.",
+      "note": "Partial overrides can erase required task-entry stage/provider state, task-summary steps or projection enclosures without a cast; the value hole is not seen by the property-name guard.\n\nAnchor: current fresh-literal value-hole examples",
       "targets": [
         {
           "anchor": {
-            "blob": "0ff368dfb355b387d922b283da2266790d5c1aa8",
-            "content": "sha256:abe2d5d8b22c913956ece84c9bc2c235d4f871f4a99c40b38341ef8005006c3a",
+            "blob": "1cd6a799aed038536e2536abe036b5244179c48f",
+            "content": "sha256:cf6f5941b6f687d3a84b33f58c613c9ef24e316537c39418c8dfdc933b39d55f",
             "locator": {
-              "end": 10,
+              "end": 12,
               "kind": "line_range",
-              "start": 3
+              "start": 1
             }
           },
           "kind": "test"
@@ -55,14 +55,14 @@
       ]
     },
     "3": {
-      "note": "Current limits are fresh-literal-only and retained wire.ts builders only; the widened LifecycleProjection control is a known pass, not a removed conversation/nested builder promise.",
+      "note": "Current limits are fresh-literal-only and retained wire.ts builders only; the widened TaskEntry control is a known pass, not a removed conversation/nested builder promise.\n\nAnchor: current widened-variable boundary",
       "targets": [
         {
           "anchor": {
-            "blob": "0ff368dfb355b387d922b283da2266790d5c1aa8",
-            "content": "sha256:a0b8be404851af3748a2de31c296cfb49f56f1d41ea6dd32a43e2e862f120c76",
+            "blob": "1cd6a799aed038536e2536abe036b5244179c48f",
+            "content": "sha256:6f5c6282b1639a6f68cf31a8433992d2e13676d8a8fb0e08e2d0c32fe754cecc",
             "locator": {
-              "end": 36,
+              "end": 39,
               "kind": "line_range",
               "start": 22
             }
@@ -76,7 +76,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0ff368dfb355b387d922b283da2266790d5c1aa8",
+            "blob": "1cd6a799aed038536e2536abe036b5244179c48f",
             "content": "sha256:6924ba64bfcc8eb04dd9c7903f8506f57f0c8d524d4732954337e8f92940bbc2",
             "locator": {
               "kind": "symbol",
@@ -135,12 +135,12 @@
         },
         {
           "anchor": {
-            "blob": "9748f432f9443a640ef5221d0bace3f986bed50e",
+            "blob": "a863e49a83213f748fa2993ef0953d7e0f2362a4",
             "content": "sha256:6eee35b108fa6595aa8e2d09a8729ae69e8e45f84511998c39e6462db6bea1e1",
             "locator": {
-              "end": 287,
+              "end": 270,
               "kind": "line_range",
-              "start": 285
+              "start": 268
             },
             "path": "dashboard/src/test/fixtures/wire.ts"
           },

@@ -13,7 +13,7 @@ The map preserves the distinction between observed, derived, planned, missing, s
 
 ## Hot Path Summary
 
-`EngineRoom.tsx` subscribes separately to process and ledger analytics using `stableEquals`, reads lifecycles, and memoizes `buildEngineRoomModel`. The builder joins each process to its optional lifecycle and gate, exposes `worktreeGroup` as `enclosureKey`, then sorts by phase and leaf/task label. It no longer builds a workspace provider stack or legacy provider fallback.
+`EngineRoom.tsx` subscribes separately to process and ledger analytics using `stableEquals` and memoizes `buildEngineRoomModel` over the process slice only. The builder presents each already composed server node with `worktreeGroup` as `enclosureKey`, then sorts by process phase and leaf/task label. It performs no lifecycle/session/gate join and builds no workspace provider stack or legacy provider fallback. `BoundTaskStatus` separately resolves a native task entry whose `worktrees` includes the exact process enclosure; the list and header render that entry through the shared `TaskStatusWord`, or no task word when it is unbound. Process phase/review/closeout chips remain process facts, not another task-state authority.
 
 The selected worktree group resolves to its process, falling back to the first process when the selection is unavailable. The parent finds the official ledger by repository and composes the header, enclosure list, process-map stage, and timeline/diagnostics column inside a fill panel. Store generation keys the process map for scenario-reset remounts; this is distinct from the stable enclosure identity used by the model and selection.
 
@@ -31,7 +31,7 @@ Landing chips omit missing refs and appear only in the listed landing phases or 
 
 ## Construction And Ownership
 
-- `buildEngineRoomModel.ts` and `engineRoomTypes.ts` own the React-free join and enclosure view shape. Server process semantics remain owned by the observer projection and reducer; current implementations of the process builders live in `observer/reducer_impl/_processes.py`.
+- `buildEngineRoomModel.ts` and `engineRoomTypes.ts` own the React-free presentation map and enclosure view shape, containing only the stable enclosure key and published process node. Server process semantics remain owned by the observer projection and reducer; current implementations of the process builders live in `observer/reducer_impl/_processes.py`.
 - `EnclosureCanvas.tsx` owns structural composition. `scene.ts` owns presentation predicates; `geometry.ts` owns coordinates, straight paths, state treatments, and polarity derivation. `sceneLayers.tsx` owns ordered render layers and their conditional presence.
 - `engines.tsx` now renders branch nodes, despite its historical filename. Planned nodes are hidden/offset, observed and derived nodes settled, missing/stale/unknown nodes use distinct opacity treatments. Detaching movement applies when the ref's presentation opacity reaches zero. Labels truncate to fit while hover titles retain details.
 - `conduits.tsx` renders only edge kinds with geometry: worktree-add, ledger-map, sync, integration, and integration-mem. Worktree-add and sync share a centerline. Every settled path is straight, including replay integration; replay survives as a data attribute and hover explanation. Running conduits alone receive draw markers, arrowheads, and effects-gated packets. Planned and retiring conduits fade out.
@@ -39,7 +39,7 @@ Landing chips omit missing refs and appear only in the listed landing phases or 
 - Ledger preview shows eight rows, expands to the served window, and reports older rows remaining in memory.md. The server I/O owner in `serving/projections/snapshots_impl/_analytics.py` bounds both windows to 25 rows and probes commit metadata best-effort, keeping the reducer pure. Missing, invalid, or unreadable worktree ledgers yield an empty window; unreadable official ledgers are omitted. Missing local commit metadata, failed Git probes, and timeouts retain hashes without invented messages or dates. The display has six data fields plus a separate ⇄ seam cell; dates are compacted by string slicing without viewer-timezone conversion. The popover anchors high, opens downward without flipping, and uses its styled scroll area for overflow.
 - `remote.tsx` owns positioned origin chips and the PR merge arrow. Code refs occupy the top dock and memory-main the bottom. Planned is muted/dashed, live amber, landed mint, and stale explicitly distinguished. Full labels and freshness detail remain in hover titles.
 - `BootTimeline.tsx` owns boot, steady, and teardown sequences. Boot leads with “Contract anchor,” then code worktree and external-memory ledger/worktree materialisation; non-external memory is shown as skipped. The contract row is currently hardcoded complete, including for provisional input; it is not proof that a contract exists. Dispose phases include integration-blocked and carryover-pending. Conflict marks closeout complete, push blocked, and later steps pending. Abandon skips landing steps and marks disposal complete.
-- `DiagnosticsPanel.tsx` owns commit fact chips, phase/health/setup/heartbeat text, completed and failed phases, missing observability, source files, and optional source-lineage state with its summary in a hover title. Cleanup and abandon display “powering down” and mute completed-phase marks. A lifecycle ID plus a gate whose kind matches closeout/push/integration/cleanup mounts the compact `GateResponder`; otherwise actions render as `Affordance`.
+- `DiagnosticsPanel.tsx` owns commit fact chips, phase/health/setup/heartbeat text, completed and failed phases, missing observability, source files, and optional source-lineage state with its summary in a hover title. Cleanup and abandon display “powering down” and mute completed-phase marks. Its action row maps supplied actions to descriptive `Affordance` components only; no lifecycle ID, gate kind or `GateResponder` is accepted or mounted by this diagnostics owner.
 - `useShouldAnimate.ts` gates effects on document/window availability, the document effects flag, and OS reduced-motion preference. It reacts to effects-attribute and media-query changes. `useEngineTimeline.ts` owns DrawSVG reveal/retraction, MotionPath packets, scan expansion, surge, attention breathing, terminal flash, and one-shot refused flashes. Its signature includes phase, running kinds, landing state/fact-state, failed/stale kinds, and memory mode; worktree group separately participates in effect dependencies. Completed draw stamps prevent repeated sweeps, are cleared on departure, and are set only after completion to avoid the documented StrictMode interruption.
 - `useElementVisible.ts` supplies an IntersectionObserver gate, initially visible and remaining a no-op where the observer is unavailable. The timeline pauses context-recorded tweens off-screen and resumes them without rebuilding merely for visibility. The backdrop pauses/plays on visibility; the header's repeating phase pulse additionally requires visibility. `EngineFxOverlay.tsx` now owns surge and attention only.
 - `styles.ts` re-exports the six semantic domains: layout, stage, ledger, flow, remote, and backdrop. The historical semantic-axis split remains an ownership rationale; old physical-line counts are not current size measurements. Fixtures, render tests, model/gate tests, and dev scenarios are specimens and source-level assertions, not execution receipts.
@@ -48,7 +48,7 @@ Landing retains three render-position tiers: the integration/source line, a midd
 
 ## Invariants And Boundaries
 
-Server semantics and client presentation remain distinct. The client may derive visual predicates from served states, but this does not authorize new lifecycle decisions, Git operations, clocks, or fabricated observations. The server still carries provider-related facts and produces provider seed/clone edges; their absence from the current rendered geometry is a surface retirement, not proof of removal from the serving pipeline.
+Server semantics and client presentation remain distinct. The client may derive visual predicates from served states, but this does not authorize task-stage or transaction decisions, Git operations, clocks, or fabricated observations. The server still carries provider-related facts and produces provider seed/clone edges; their absence from the current rendered geometry is a surface retirement, not proof of removal from the serving pipeline.
 
 Refused polarity is derived from edge state, never a dedicated payload field: failed → red, stale → amber, only for cgc-seed, grepai-clone, integration, and integration-mem. The overlay must also obtain a shared path. Because current geometry omits provider seed/clone kinds, those retained helper arms do not produce seed flashes. Integration paths retain the transient flash and terminal STOP specimen behavior. No conduit stamps a refused-polarity attribute; the flash overlay carries its own derived polarity.
 
@@ -64,7 +64,7 @@ The landing order remains code-first, memory-after. However, the timeline and ca
 
 Canvas recovery chips are descriptive labels, not operation buttons. The T7B specimen offers retry/abandon without disabled-memory choice, retaining the policy that memory cannot be disabled for an individual task. `resolveRecovery` itself does not filter such a choice from arbitrary served actions; this local observation does not establish whether upstream policy enforcement exists elsewhere.
 
-The diagnostics responder is an exception to display-only action presentation. Its current owner records durable gate decisions and, for non-adapter interactions, posts an operator-inbox response. Adapter interactions use the durable decision as their response source and avoid a duplicate inbox message. The route passes lifecycle/gate data into this owner and places no responder inside the canvas. The old claim of only injecting instructions into hosted chat is too narrow for current ownership; backend effects and authorization are outside this bounded adjudication.
+The former diagnostics responder and operator-inbox decision story are retired here. `DiagnosticsPanel` takes only the process node and displays optional source-lineage information plus descriptive actions; it offers no gate-decision or inbox-posting control. Retained gate approval histories elsewhere do not restore a responder to this view. Native task stage/activity is read through the separate bound-task entry, not inferred from process phase, health or transaction progress.
 
 ## Historical And Verification Limits
 
@@ -100,8 +100,10 @@ These inherited tables are retained verbatim for navigation and custody. Their s
 - Retained reference account (no fresh execution or acceptance inferred): The client mirror of the edge, which no longer declares a polarity field. [7]
 - Retained reference account (no fresh execution or acceptance inferred): Route still owns enclosure visualization, model/types, branch/coupler/ledger, straight worktree/sync/integration conduit — source ownership, not executed visual proof. [8] [9] [10] [11] [12]
 
-- Pure lifecycle join, stable group identity, no provider model fallback [13]
-- Slice equality, memoized join, repository ledger selection, generation map key [14]
+- Published process nodes are mapped and ordered without a lifecycle/session/gate join; only enclosureKey and node are returned. [13]
+
+- Process/ledger slice subscriptions, memoized process-only mapping, selected enclosure and repository ledger retain their own source boundaries. [14]
+
 - Memory/materialisation/fleeting and movement predicates [15]
 - Terminal, recovery, and landing predicates [16]
 - Provider geometry absent; integration paths straight; polarity state-derived [17]
@@ -111,10 +113,13 @@ These inherited tables are retained verbatim for navigation and custody. Their s
 - Actual producer vocabulary and seed-state precedence [21]
 - Extra fields forbidden, kind/state string fields, optional lineage [22]
 - Timeline freshness differs from canvas; abandon/conflict dispositions [23]
-- Source-lineage diagnostic and responder admission [24]
+- Source-lineage state remains a display fact, while the diagnostics action row renders only Affordance and no former gate responder. [24]
+
 - Motion gate, scoped context pause and cleanup [26]
 - Current sibling overlay contains surge and attention [27]
 - EngineRoom conditionally mounted, contrary to inherited keep-alive account [28]
 - T7B assertion source agrees with retirement and recovery policy [29]
 
 - BranchTier mounts integration/source and worktree tiers plus a conditional middle landing tier, with branch labels from projected refs. [30]
+
+- Enclosure status joins the exact native entry worktree.enclosure and delegates to TaskStatusWord; no matching entry renders no task word, not an invented lifecycle status. [31]

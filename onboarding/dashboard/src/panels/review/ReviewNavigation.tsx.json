@@ -24,8 +24,9 @@
         "blob": "1d2ce3087885774bc27b08dba49bdac96fcaa15a",
         "content": "sha256:0f41a9e2d507fe7766185518e6c08c76cefe82a73862688b1c5f7a3aa99fa958",
         "locator": {
-          "kind": "symbol",
-          "name": "useReviewNavigation"
+          "end": 201,
+          "kind": "line_range",
+          "start": 131
         }
       },
       "id": "RLZ-CCAZC6N3",

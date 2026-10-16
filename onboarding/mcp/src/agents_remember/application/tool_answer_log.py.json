@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "772c02e790b0e0c5dde08929c8b18b8fd0adcaf6",
+        "blob": "98f8cd5791ea2314f54ffb009e3f7c5c87558652",
         "content": "sha256:03ec733da445aa6b4d8910bc6875e8f971ccfb913c6a482b1fac7f3b3eb0fc1f",
         "locator": {
           "kind": "symbol",
@@ -21,7 +21,7 @@
     },
     {
       "anchor": {
-        "blob": "772c02e790b0e0c5dde08929c8b18b8fd0adcaf6",
+        "blob": "98f8cd5791ea2314f54ffb009e3f7c5c87558652",
         "content": "sha256:1780cc829057c1c26228475e2789be2e55bd7a9e2102ea099b2f24e586746f7d",
         "locator": {
           "kind": "symbol",
@@ -39,7 +39,7 @@
     },
     {
       "anchor": {
-        "blob": "772c02e790b0e0c5dde08929c8b18b8fd0adcaf6",
+        "blob": "98f8cd5791ea2314f54ffb009e3f7c5c87558652",
         "content": "sha256:8e938807fb5d6538c4803338b19c1800f906615572f3a1c0a91b231a151bf06b",
         "locator": {
           "kind": "symbol",
@@ -57,11 +57,12 @@
     },
     {
       "anchor": {
-        "blob": "772c02e790b0e0c5dde08929c8b18b8fd0adcaf6",
-        "content": "sha256:8554ffa051d9ce4a05a06162946b89846b25a5459d15dcec136da25159378f42",
+        "blob": "98f8cd5791ea2314f54ffb009e3f7c5c87558652",
+        "content": "sha256:fc6c572468e4c29846b3cc9752c6064780279bf2fd776e72531cf7b8878077a6",
         "locator": {
-          "kind": "symbol",
-          "name": "resolve_log_roots"
+          "end": 344,
+          "kind": "line_range",
+          "start": 274
         }
       },
       "id": "RLZ-RRGDHN",
@@ -75,11 +76,12 @@
     },
     {
       "anchor": {
-        "blob": "772c02e790b0e0c5dde08929c8b18b8fd0adcaf6",
-        "content": "sha256:8554ffa051d9ce4a05a06162946b89846b25a5459d15dcec136da25159378f42",
+        "blob": "98f8cd5791ea2314f54ffb009e3f7c5c87558652",
+        "content": "sha256:fc6c572468e4c29846b3cc9752c6064780279bf2fd776e72531cf7b8878077a6",
         "locator": {
-          "kind": "symbol",
-          "name": "resolve_log_roots"
+          "end": 344,
+          "kind": "line_range",
+          "start": 274
         }
       },
       "id": "RLZ-RRJX13",
@@ -93,7 +95,7 @@
     },
     {
       "anchor": {
-        "blob": "772c02e790b0e0c5dde08929c8b18b8fd0adcaf6",
+        "blob": "98f8cd5791ea2314f54ffb009e3f7c5c87558652",
         "content": "sha256:53a373db7a06d0fbb1b0419108122ca31b58886c642b19298de7e385e5cb4599",
         "locator": {
           "kind": "symbol",
@@ -116,7 +118,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "772c02e790b0e0c5dde08929c8b18b8fd0adcaf6",
+            "blob": "98f8cd5791ea2314f54ffb009e3f7c5c87558652",
             "content": "sha256:1780cc829057c1c26228475e2789be2e55bd7a9e2102ea099b2f24e586746f7d",
             "locator": {
               "kind": "symbol",
@@ -128,12 +130,12 @@
       ]
     },
     "2": {
-      "note": "A live ambient enclosure contract selects the enclosure log folder; terminating calls always select the resolved transcript root.",
+      "note": "A canonical caller-task enclosure binding selects a live enclosure log folder; terminating calls always use the transcript root.",
       "targets": [
         {
           "anchor": {
-            "blob": "772c02e790b0e0c5dde08929c8b18b8fd0adcaf6",
-            "content": "sha256:8554ffa051d9ce4a05a06162946b89846b25a5459d15dcec136da25159378f42",
+            "blob": "98f8cd5791ea2314f54ffb009e3f7c5c87558652",
+            "content": "sha256:fc6c572468e4c29846b3cc9752c6064780279bf2fd776e72531cf7b8878077a6",
             "locator": {
               "kind": "symbol",
               "name": "resolve_log_roots"
@@ -148,7 +150,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "772c02e790b0e0c5dde08929c8b18b8fd0adcaf6",
+            "blob": "98f8cd5791ea2314f54ffb009e3f7c5c87558652",
             "content": "sha256:53a373db7a06d0fbb1b0419108122ca31b58886c642b19298de7e385e5cb4599",
             "locator": {
               "kind": "symbol",
@@ -164,7 +166,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "772c02e790b0e0c5dde08929c8b18b8fd0adcaf6",
+            "blob": "98f8cd5791ea2314f54ffb009e3f7c5c87558652",
             "content": "sha256:03ec733da445aa6b4d8910bc6875e8f971ccfb913c6a482b1fac7f3b3eb0fc1f",
             "locator": {
               "kind": "symbol",
@@ -180,7 +182,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "772c02e790b0e0c5dde08929c8b18b8fd0adcaf6",
+            "blob": "98f8cd5791ea2314f54ffb009e3f7c5c87558652",
             "content": "sha256:dcceb9ddc3af3c1b08c2536e0f13911cab65344b646fc4c08f96ca4f856201c3",
             "locator": {
               "kind": "symbol",

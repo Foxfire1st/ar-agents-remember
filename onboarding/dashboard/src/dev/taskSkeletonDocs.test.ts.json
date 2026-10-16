@@ -1,0 +1,24 @@
+{
+  "path": "dashboard/src/dev/taskSkeletonDocs.test.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Native fixture consistency\n\nAnchor: uses one entry per declared child and answers bodies by the qualified reference",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e65d67fffbb2e9242c59c753f43315d2fde77959",
+            "content": "sha256:96eed93a6e064d08b22e26781583f6001fed146bafe568eb873c123cab1c589a",
+            "locator": {
+              "end": 26,
+              "kind": "line_range",
+              "start": 5
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

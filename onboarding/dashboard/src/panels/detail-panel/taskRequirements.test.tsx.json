@@ -7,7 +7,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "134dbed76db1b3d0f5e726f16782674f52cc2377",
+            "blob": "1b073b40c856a543a8a8616ba9888a747125bdf7",
             "content": "sha256:ec573cff53f154d2a9eb7c68b3c09300bab15d36ca8a9d123ec6affa32909ddb",
             "locator": {
               "kind": "symbol",
@@ -20,20 +20,42 @@
       ]
     },
     "2": {
-      "note": "seedTaskDocuments seeds the selected task documents into the shared projection fixture.\n\nAnchor: \"export function seedTaskDocuments(\"",
+      "note": "seedTaskEntries seeds the supplied native TaskEntry list into the shared projection via seedProjection, which calls dashboardStore.applySnapshot(projection(over)); tasks are applied after other caller overrides. The requirement fixture supplies its selected entry through this helper, not seedTaskDocuments.",
       "targets": [
         {
           "anchor": {
-            "blob": "cc54d477f29632154125cbb3bcf40f7bac7adf9f",
-            "content": "sha256:5dcbbbb7a170e419d628cd7262acd611feaaab0fccfd6bfd41503244a22df1c5",
+            "blob": "154d7272959eb18a7f5f80927be651dc6bf6789d",
+            "content": "sha256:339fc3807511945753666053810592f602b2905331e1bbfb29fb4709fbf245ce",
             "locator": {
-              "end": 275,
-              "kind": "line_range",
-              "start": 253
+              "kind": "symbol",
+              "name": "seedProjection"
             },
             "path": "dashboard/src/panels/detail-panel/test-utils.tsx"
           },
           "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "154d7272959eb18a7f5f80927be651dc6bf6789d",
+            "content": "sha256:e2b8b4914c48aa5b2702d168bfa750e4dc375f7286129de7c198da12f80d3ae2",
+            "locator": {
+              "kind": "symbol",
+              "name": "seedTaskEntries"
+            },
+            "path": "dashboard/src/panels/detail-panel/test-utils.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6f6289a54d73383990ea3b4e40595cf54d738bd4",
+            "content": "sha256:7bde645966b53ba6efb3b8be88a841d41ae3ccb195cca6fb4a4d66a09db46dc2",
+            "locator": {
+              "kind": "symbol",
+              "name": "seedRequirementTask"
+            }
+          },
+          "kind": "test"
         }
       ]
     },
@@ -56,16 +78,75 @@
       ]
     },
     "4": {
-      "note": "taskDoc supplies the required generated task-document fields before caller overrides.\n\nAnchor: \"export function taskDoc(over:\"",
+      "note": "taskEntry and taskSummary are re-exported from the shared wire fixtures. They supply typed native-entry and reader-content defaults before caller overrides; taskEntry derives a qualified key from an overridden reference unless the caller supplies a key. The requirement fixture composes taskEntry with taskSummary, rather than taskDoc.",
       "targets": [
         {
           "anchor": {
-            "blob": "cc54d477f29632154125cbb3bcf40f7bac7adf9f",
-            "content": "sha256:9caa3157ead1163db2cbc9cdf39bb534d6f126f13379d1640521764f52183adc",
+            "blob": "a863e49a83213f748fa2993ef0953d7e0f2362a4",
+            "content": "sha256:64dcffd02dd61f5aa8f6f1d95dd0db4075a6daef4ae167adc7723c101b1d3097",
             "locator": {
-              "end": 45,
+              "kind": "symbol",
+              "name": "BASE_TASK_SUMMARY"
+            },
+            "path": "dashboard/src/test/fixtures/wire.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "a863e49a83213f748fa2993ef0953d7e0f2362a4",
+            "content": "sha256:f6b5bf5a981ee7a6120113585214555db8fbb1e14381b488209bca7a7fddd52a",
+            "locator": {
+              "kind": "symbol",
+              "name": "BASE_TASK_ENTRY"
+            },
+            "path": "dashboard/src/test/fixtures/wire.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "a863e49a83213f748fa2993ef0953d7e0f2362a4",
+            "content": "sha256:6e695fd6c7bc2ce9a823ec7e111d9584dd2b4226f707b198ae01c835b828f54e",
+            "locator": {
+              "kind": "symbol",
+              "name": "taskSummary"
+            },
+            "path": "dashboard/src/test/fixtures/wire.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "a863e49a83213f748fa2993ef0953d7e0f2362a4",
+            "content": "sha256:c179fbb2c20209acb3ba521eec8ee441837684bc6f223ea5fb427053fcfd5393",
+            "locator": {
+              "kind": "symbol",
+              "name": "taskEntry"
+            },
+            "path": "dashboard/src/test/fixtures/wire.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "6f6289a54d73383990ea3b4e40595cf54d738bd4",
+            "content": "sha256:7bde645966b53ba6efb3b8be88a841d41ae3ccb195cca6fb4a4d66a09db46dc2",
+            "locator": {
+              "kind": "symbol",
+              "name": "seedRequirementTask"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "154d7272959eb18a7f5f80927be651dc6bf6789d",
+            "content": "sha256:b9e9f307bc6ac4e9a8692d0a3fd8aabdbc916a2480798944adf52c2766deb60c",
+            "locator": {
+              "end": 13,
               "kind": "line_range",
-              "start": 20
+              "start": 12
             },
             "path": "dashboard/src/panels/detail-panel/test-utils.tsx"
           },

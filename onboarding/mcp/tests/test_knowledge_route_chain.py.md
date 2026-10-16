@@ -72,7 +72,7 @@ No configured live documentation source was available for this pass.
 - Expansion from a family seed, and its spellings. [8]
 - The walk helper and the long fixture. [9]
 - The budget, the family-seed resume under any spelling, a lacking revision refused on resume, and the v1 token refused. [10]
-- Repeated read_ar_files calls name the same files, contain no served_earlier, and knowledge_read names the governing family/chain IDs. [11]
+- Repeated calls name the same files, omit served_earlier and retain governing family/chain IDs without session state. [14]
 - The lane row. [12]
 
 ### Cross-Repo References

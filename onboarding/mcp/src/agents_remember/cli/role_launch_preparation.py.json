@@ -359,15 +359,16 @@
       ]
     },
     "3": {
-      "note": "The `_resolve_workspace` implementation now lives in its extracted owner.",
+      "note": "The `_resolve_workspace` implementation now lives in its extracted owner.\n\nAnchor: actual current supporting source",
       "targets": [
         {
           "anchor": {
-            "blob": "b1a881404e3c96e9033bee68b81e6c639eebb2ff",
-            "content": "sha256:cc03ce5de4729e22af1abeb11fc8ff8c17b4eea33b01180fdceaa87b6588750f",
+            "blob": "a0ed662a42a3b5b6c0fec263b6c9d5eb5f77fa83",
+            "content": "sha256:94e6b420c05d940e37bafcec32fddb20cf0fe89a2f660e6a203c6f8061cdc174",
             "locator": {
-              "kind": "symbol",
-              "name": "_resolve_workspace"
+              "end": 253,
+              "kind": "line_range",
+              "start": 202
             },
             "path": "mcp/src/agents_remember/cli/role_launch_workspace.py"
           },

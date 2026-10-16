@@ -7,7 +7,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "17bbc60d5484872ad1863b2a25f337eecf265791",
+            "blob": "d1d22b20b04b8f4ae8fe80c1bbeb5e5d125616c9",
             "content": "sha256:03c7aea9982233ac213eb3413bf30ef1358f384577710222593204a8b9fa6621",
             "locator": {
               "end": 20,
@@ -40,7 +40,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "17bbc60d5484872ad1863b2a25f337eecf265791",
+            "blob": "d1d22b20b04b8f4ae8fe80c1bbeb5e5d125616c9",
             "content": "sha256:9612031039a374929d654988fda4070ea4bd63a743ed45cf25731aded99e640f",
             "locator": {
               "kind": "symbol",
@@ -68,14 +68,78 @@
       "targets": [
         {
           "anchor": {
-            "blob": "512be564b35aaf6f9d3b9709113b613309efe221",
+            "blob": "676446dd3dec2866b0d8b4914250105067b14d96",
             "content": "sha256:6897c1086d34692ed244fe2a89df0b31f713b774b295274504d481dfe90dbc65",
             "locator": {
-              "end": 193,
+              "end": 204,
               "kind": "line_range",
-              "start": 193
+              "start": 204
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "13": {
+      "note": "A foreign address is omitted, not forwarded.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d1d22b20b04b8f4ae8fe80c1bbeb5e5d125616c9",
+            "content": "sha256:33cf0545f8736cc93833a672b4e1200d97cfe1bf3adb89a7ca85e6dbbf3ed4d0",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_hint_naming_another_contract_is_omitted_not_forwarded"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "14": {
+      "note": "An own-address hint is retained by identity.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d1d22b20b04b8f4ae8fe80c1bbeb5e5d125616c9",
+            "content": "sha256:8b9b897aa6701e89769118cce9ac239e18e242f2bcaddfe7f011de2aa4af5511",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_hint_naming_the_addressed_contract_is_kept_unchanged"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "15": {
+      "note": "Two contract-addressed calls yield distinct isolated hints.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d1d22b20b04b8f4ae8fe80c1bbeb5e5d125616c9",
+            "content": "sha256:303f98e83553a2d83dff0a5b8efe77f5fd325208c1a495fdbe5defbe682ba2c6",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_two_addressed_contracts_in_sequence_yield_two_different_hints"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "16": {
+      "note": "An addressless response withholds guidance rather than passing it unchecked.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d1d22b20b04b8f4ae8fe80c1bbeb5e5d125616c9",
+            "content": "sha256:9612031039a374929d654988fda4070ea4bd63a743ed45cf25731aded99e640f",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_an_envelope_with_no_address_has_its_hint_withheld"
+            }
           },
           "kind": "test"
         }
@@ -103,7 +167,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1e151bfd9338a57f52c14bca69c5e9cb90e9398f",
+            "blob": "e0e46bc6a90dd3b9da4bab12c43f61d1e4e71a70",
             "content": "sha256:bcb4397f067ede0b0d258767ef8479189851508c12189ec69b383ba0963a9991",
             "locator": {
               "kind": "symbol",
@@ -115,7 +179,7 @@
         },
         {
           "anchor": {
-            "blob": "1e151bfd9338a57f52c14bca69c5e9cb90e9398f",
+            "blob": "e0e46bc6a90dd3b9da4bab12c43f61d1e4e71a70",
             "content": "sha256:28e88d2fdd54c0eb2f29cc2a4dba93fec3183e1fc4c6731ae273e75a9d3fedef",
             "locator": {
               "kind": "symbol",
@@ -144,22 +208,6 @@
         }
       ]
     },
-    "5": {
-      "note": "One running lifecycle, so the linear half is the branch under test.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "17bbc60d5484872ad1863b2a25f337eecf265791",
-            "content": "sha256:3ee7ee091d37048b52b41ec7d2fa7afcc34eccb14ac2945100e1047f693e2832",
-            "locator": {
-              "kind": "symbol",
-              "name": "_live_state"
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
     "6": {
       "note": "One addressed contract, with the closeout state its hint is derived from.",
       "targets": [
@@ -181,7 +229,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "17bbc60d5484872ad1863b2a25f337eecf265791",
+            "blob": "d1d22b20b04b8f4ae8fe80c1bbeb5e5d125616c9",
             "content": "sha256:53c69e5026dbf42e34c8d9f2e69f446c54bc6bf21a2958c6e29d5981c455ff27",
             "locator": {
               "kind": "symbol",
@@ -197,7 +245,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "17bbc60d5484872ad1863b2a25f337eecf265791",
+            "blob": "d1d22b20b04b8f4ae8fe80c1bbeb5e5d125616c9",
             "content": "sha256:33cf0545f8736cc93833a672b4e1200d97cfe1bf3adb89a7ca85e6dbbf3ed4d0",
             "locator": {
               "kind": "symbol",
@@ -213,7 +261,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "17bbc60d5484872ad1863b2a25f337eecf265791",
+            "blob": "d1d22b20b04b8f4ae8fe80c1bbeb5e5d125616c9",
             "content": "sha256:8b9b897aa6701e89769118cce9ac239e18e242f2bcaddfe7f011de2aa4af5511",
             "locator": {
               "kind": "symbol",

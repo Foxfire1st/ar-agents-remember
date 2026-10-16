@@ -32,11 +32,12 @@ explicit current `ServingCollaborators` value with:
   and the composition;
 - `knowledge_review_entries`: `list_knowledge_review_entries`;
 - `review_source_content`: `read_review_source_content`;
-- `review_intent_summary`: `read_review_intent_summary`;
+- `review_intent_summary`: the config-bound adapter returned by `dashboard_review_summary.review_intent_summary_port(config)`;
 - `review_trees`: `read_review_trees`, called with `processes=worklist_processes`;
 - `review_trees_shutdown`: `worklist_processes.shutdown`;
 - `knowledge_reader`: `read_knowledge_reader`;
 - `extra_api_routes`: `register_role_launch_routes` bound to config.
+- `host_activity_reconcile`: a `host-activity-snapshot` bridge call for boot reconciliation. This is distinct from the warmup/discovery census and from periodic provider safety sampling.
 
 `worklist_processes` is one `ReviewerWorklistProcesses` object created per call of
 `serving_collaborators`, that is, one per composed app. It is the owner of the child processes that
@@ -106,15 +107,9 @@ the worker's real-data captures and the dashboard fixtures were served through.
 
 ## 260921-ICR-L47 The Fourth Reviewer Port: The Changed-Intent Summary
 
-`serving_collaborators` binds a **fourth** reviewer callable, `review_intent_summary_port(repository_id,
-master, leaf_id)`, which returns `read_review_intent_summary(config, repository_id, master, leaf_id)` and
-is placed on the collaborator record as `review_intent_summary`. It is imported at function scope with the
-same deferred-composition idiom as its siblings. Its docstring states the reason it is its own port: it
-answers a fourth question — how many statements each side of the comparison alone holds — from the **same
-resolution** as the other two task-context ports, so the numbers beside the task entry describe the review
-it opens, and it reads no subject catalogue to produce them (`ICR-R24@v3`).
+`serving_collaborators` obtains the changed-intent summary port from `cli.dashboard_review_summary.review_intent_summary_port(config)`. The extracted adapter retains the application-tier summary boundary; this composition supplies configuration rather than defining another inline reader or summary cache.
 
-- The deferred import and the fourth port bound on the collaborator record.
+- The module-level `dashboard_review_summary.review_intent_summary_port` import and the config-bound fourth port on the collaborator record.
 
 ## 260921-ICR-L3 The Third Reviewer Port, And Who Chooses The Generation
 
@@ -255,7 +250,7 @@ existing process-role stamps are unchanged.
 
 
 - The deferred import and the fifth port bound on the collaborator record. [42]
-- The deferred import and the fourth port bound on the collaborator record. [43]
+- The module-level summary-adapter import and the config-bound fourth port on the collaborator record. [43]
 - The umbrella dispatcher that registers this subcommand. [44]
 - The dashboard CLI argument parser (`add_arguments`).
 

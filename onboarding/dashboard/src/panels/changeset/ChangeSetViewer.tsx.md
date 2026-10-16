@@ -32,9 +32,9 @@ refreshes together and schedules the next cycle only after both settle. The
 viewer renders a loading placeholder until data arrives, and a read that was
 REFUSED or that measured empty is NAMED rather than left as an empty pane (see
 the 260921-ICR-L33 section below); stale refresh results are ignored after
-teardown.
+teardown. A current failed poll clears the prior successful value and shows its refusal; cached success is not displayed as current after failure.
 
-Props are `ChangeSetTarget` plus `onBack`, optional `onOpenLeaf` and optional `reviewContext` (`ViewerProps`). `ChangeSetTarget` carries `comparison?: number`, while `reviewContext` is a viewer prop, not a target field. A set comparison selects `comparisonChangeset` first; otherwise selection precedence remains leaf > master > scope, with `includeLeaves: true` and generation pins on master reads. The target-change effect fetches that selected request, ignores stale completion and resets file/diff/partner state. A leaf still qualifies its master; series mode remains master-without-leaf.
+Props are `ChangeSetTarget` plus `onBack`, optional `onOpenLeaf` and optional `reviewContext` (`ViewerProps`). `ChangeSetTarget` carries `comparison?: number`, while `reviewContext` is a viewer prop, not a target field. A set comparison is passed to `loadChangeSet`, whose shared URL builder selects the numbered task-endpoint read first; otherwise selection precedence remains leaf > master > scope, with `includeLeaves: true` and generation pins on master reads. The target-change effect uses the shared conditional list/file resources, ignores stale completion and resets selection-local file/diff/partner state. A 304 reuses the retained parsed identity; callbacks remain local. A leaf still qualifies its master; series mode remains master-without-leaf.
 A second effect **polls the working view** every 2.5s (gated on `mode === "working"`): it refreshes `data`
 (so a file edited *after* the viewer opened shows up in the list, and the counters track) AND re-fetches the
 currently-open file's diff (`active`) so an edit to the file you are LOOKING AT updates in place. The
@@ -105,14 +105,14 @@ with a `comparison` number and `reviewContext`, so a review can now issue change
 
 ### Invariants And Boundaries
 
-Read-only over the L3/L4a API; owns its own component state (no store mutation). Every target opens real
+Read-only over the L3/L4a API; owns selection-local component state while store-owned bounded conditional resources retain list/file results. Every target opens real
 per-file diffs: an enclosure `scope` diffs base→worktree, **master mode** the NET series range
 (`master_base → selected result`, pinned to the listed generation when one is bound) via `masterFileDiff`, and a **leaf** its `committed` (base→code_commit) or
 `working` (HEAD→worktree uncommitted) range via `leafFileDiff` — a `leaf` always carries its `master`
 qualifier. The back link is the only exit it controls (the Cockpit host also clears the takeover on a
 mode-bar switch or a node `open`). Placeholders are stable-size (no flip-flop).
 
-`ChangeSetTarget` carries `comparison?: number`; `ViewerProps` (and the exported component props) carry `reviewContext?: ReviewChangeContext`. A set comparison is selected first (`changesetListRequest` delegates to `comparisonChangeset`, `diffRequestFor` to `comparisonFileDiff`); otherwise leaf > master > scope is unchanged. The review filter state (`all` | `unexplained` | `unknown`) starts from the reviewer's page and narrows the list through `filteredChangeSet`; `ReviewFilters` shows destination counts and `FILTER_NOTES` under a non-all filter. The comparison header names `comparison N · leaf`, offers `← Back to intent review`, and displays the two abbreviated code trees through `ComparisonTreesTag`, not all four operands. `useComparisonFirstFile` opens the initial file. Comparisons do not auto-poll; non-comparison targets remain unfiltered and retain their existing behavior.
+`ChangeSetTarget` carries `comparison?: number`; `ViewerProps` (and the exported component props) carry `reviewContext?: ReviewChangeContext`. A set comparison is selected first (`changesetListRequest` passes the complete address, including `comparison`, to `loadChangeSet`; `diffRequestFor` delegates to `comparisonFileDiff`); otherwise leaf > master > scope is unchanged. The review filter state (`all` | `unexplained` | `unknown`) starts from the reviewer's page and narrows the list through `filteredChangeSet`; `ReviewFilters` shows destination counts and `FILTER_NOTES` under a non-all filter. The comparison header names `comparison N · leaf`, offers `← Back to intent review`, and displays the two abbreviated code trees through `ComparisonTreesTag`, not all four operands. `useComparisonFirstFile` opens the initial file. Comparisons do not auto-poll; non-comparison targets remain unfiltered and retain their existing behavior.
 ## Evidence
 
 ### Repo-Internal References
@@ -128,7 +128,7 @@ mode-bar switch or a node `open`). Placeholders are stable-size (no flip-flop).
 - The DetailPanel controls that open it with a change-set target. [9]
 - The loading, back, and master-file NET-diff behavior pinned in the tests, plus the new generation-binding case. [10]
 
-- A comparison target reads through the new comparison client [18]
+- A comparison target uses `loadChangeSet` with its numbered comparison address. [18]
 - Per-file diffs on a comparison read the recorded trees [19]
 - The filter row shows each destination with its lane file count [20]
 - The comparison header names its number and offers the way back [21]

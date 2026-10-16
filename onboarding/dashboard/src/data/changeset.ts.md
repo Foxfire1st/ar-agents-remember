@@ -9,10 +9,9 @@
 Same-origin browser client for the L3 read-only change-set API. It exposes typed helpers over the three
 GET endpoints (`/api/changeset/task`, `/file-diff`, `/master`), returns camelCase-typed results, and
 uses the shared `qs` query builder with its own `getChangeSetJson` refusal-preserving transport.
-A failure throws `ReviewTransportError`, carrying the route's refusal details. It holds no state — the Change-Set Viewer owns its component state and
-calls these helpers directly.
+A failure throws `ReviewTransportError`, carrying the route's refusal details. URL-keyed conditional results belong to the dashboard store; the viewer retains its selection-local render state.
 
-`data/changeset.ts` is the same-origin client for the read-only change-set API: typed results, a thrown `ReviewTransportError` carrying the route's refusal, and no store mutation. In W03 it also addresses a recorded review comparison: `TaskChangeset` optionally echoes the comparison number and its four trees, and two new readers fetch a comparison's list and per-file diffs.
+`data/changeset.ts` is the same-origin client for the read-only change-set API: typed results, a thrown `ReviewTransportError` carrying the route's refusal, and bounded store-owned HTTP history. W03 added recorded-comparison support. `TaskChangeset` still optionally echoes the comparison number and its four trees, and `comparisonFileDiff` remains the per-file reader. The unused `comparisonChangeset` list helper is removed from this module; that is not removal of the server's comparison-list route.
 ## Code Commentary
 
 ### Logic
@@ -21,7 +20,7 @@ calls these helpers directly.
 explicitly (`options.includeLeaves !== undefined`), so omitting it leaves the server's own default — the
 full response with per-leaf summaries — in force. **260921-ICR-L33 changed who asks for what, not this
 client:** both of the dashboard's master-net readers (`panels/changeset/ChangeSetViewer.tsx` and
-`panels/detail-panel/changeSetBar.tsx`) now pass `includeLeaves: true`, because R33.2 makes the
+`panels/detail-panel/changeSetBar.tsx`) now use `loadChangeSet`, whose master URL sets `includeLeaves: true`, because R33.2 makes the
 per-leaf breakdown part of what a master's net must show. The `false` path is retained and still
 pinned by this module's own contract test; it is simply no longer the choice either reader makes, so
 the older phrasing here — that the option exists "when a caller needs only the coherent series net
@@ -40,7 +39,9 @@ opened entry stays bound to its generation after the branch advances. This leaf 
 the pins and the per-view generation for R24's catalogue/drill-down to build on — no
 catalogue or drill-down is implemented here.
 
-Data contracts plus three fetch helpers:
+`ChangeSetAddress` is the shared list address (`repo` plus optional `scope`, `master`, `leaf`, `mode`, `generation`, `comparison`). Private `listUrl` selects comparison/leaf first, then master, then scope: comparison lists still reuse `/api/changeset/task` with the numbered `comparison` parameter and omit `mode`. Master addresses always include the leaf breakdown and carry generation pins. `peekChangeSet` reads the store’s cached list by that URL; `loadChangeSet` uses the same URL through the conditional-read owner. The viewer's initial list request and the detail-panel counters use this shared list API. The typed helpers also remain active: in a non-comparison working leaf view, `useWorkingChangesetPoll` calls `leafChangeset(repo, master, leaf, 'working')` every 2.5 seconds and independently refreshes the selected file diff. The shared address API does not replace that working-mode poll.
+
+Typed data contracts and GET readers:
 
 - Result interfaces mirror the L3 JSON shape one-for-one: `ChangedFile` (`insertions`/`deletions` are
   `null` for binary; `status` is the git letter A/M/D/R; `hasSidecar?` on code files drives the L4
@@ -71,17 +72,17 @@ Data contracts plus three fetch helpers:
 ### Conventions
 
 Reuses the L1 files client's house style: a `base = ""` same-origin default, typed return values, the
-shared `qs` query builder, refusal-preserving `getChangeSetJson`, thrown `ReviewTransportError`, and no store mutation. The
+shared `qs` query builder, refusal-preserving `getChangeSetJson`, thrown `ReviewTransportError`, and bounded store-owned HTTP history. The
 interfaces mirror `serving/changeset.py`'s dict shapes exactly.
 
 ### Invariants And Boundaries
 
-Transport only — never mutates a store, never interprets diff content; it maps HTTP to typed results or a
+Transport plus store-owned conditional list/file history — never interprets diff content; it maps HTTP to typed results or a
 thrown `ReviewTransportError` (including 404 `unknown-repo`/`unknown-scope`/`not-found` — e.g. a
 completed task whose worktree is gone — and 400 `bad-path`) and stops there. Same-origin by default; the
 FastAPI dashboard server owns repo/scope resolution and path safety.
 
-`TaskChangeset` carries optional `comparison` and `trees` (`codeBase`, `codeTip`, `memoryBase`, `memoryTip`), so a comparison answer uses the task shape with its identity attached. `FileDiff.kind` remains the existing `code` | `memory` discriminator. `comparisonChangeset` and `comparisonFileDiff` call the existing task and file-diff endpoints with `comparison` as a query parameter, which the server treats as the comparison selector (refusing any `mode` combination). Existing scope, leaf and master readers retain their request shapes.
+`TaskChangeset` carries optional `comparison` and `trees` (`codeBase`, `codeTip`, `memoryBase`, `memoryTip`), so a comparison answer uses the task shape with its identity attached. `FileDiff.kind` remains the existing `code` | `memory` discriminator. `comparisonFileDiff` calls the file-diff endpoint with `comparison` as its selector (the server refuses a `mode` combination). The removed `comparisonChangeset` helper is not a current export. Existing scope, leaf and master readers retain their request shapes.
 ## Evidence
 
 ### Docs References
@@ -96,12 +97,15 @@ No configured Domain Documentation source exists for this file.
 
 - Generation pins, the published generation identity, and the `committed`/`working` leaf-row state the master client threads and mirrors. [1]
 - Typed result contracts mirror the L3 endpoints' camelCase JSON (changed files, counters, file-diff, master accumulation), and (260921-ICR-L25) the leaf view's `state`/`stateDetail` pair that keeps an unrecorded range apart from a measured-empty one. [2]
-- Three `base`-arg GET helpers build the `/task`, `/file-diff`, `/master` URLs via the shared `qs`. [3]
+- The `base`-arg GET helpers build the `/task`, `/file-diff`, `/master` URLs via the shared `qs`. [3]
 - Change-set reads use qs and their own refusal-preserving getChangeSetJson, throwing ReviewTransportError rather than discarding refusal detail. [4]
 - The serving layer that defines the endpoints + response shapes this client mirrors. [5]
-- `ChangeSetViewer` orchestrates `taskChangeset`/`fileDiff`/`masterChangeset` + renders `FilesApiError.code`. [6]
-- `DetailPanel`'s change-set button fetches counters via `taskChangeset`/`masterChangeset`. [7]
+- The viewer's initial list request uses loadChangeSet, while its non-comparison working-leaf poll still calls leafChangeset and refreshes an active diff every 2.5 seconds. [6]
+
+- `DetailPanel`’s change-set button restores cached data through `peekChangeSet` and reads counters through `loadChangeSet`. [7]
 - The vitest contract test pins the endpoint URLs + the `FilesApiError` mapping. [8]
+
+- List addresses share one URL builder and store-backed peek/load API; the comparison list reuses the task endpoint with a number and no mode. [13]
 
 ### Cross-Repo References
 
@@ -111,5 +115,4 @@ cross-repository implementation source that governs its behavior.
 No applicable cross-repository source was found.
 - A comparison answer is the task shape plus identity [9]
 - File diffs name which half of the comparison they read [10]
-- The comparison list reuses the task endpoint with a number [11]
 - The comparison file diff adds kind and path [12]

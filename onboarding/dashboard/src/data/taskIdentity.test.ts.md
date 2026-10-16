@@ -6,11 +6,11 @@
 
 ## Purpose
 
-The unit source covers only `masterFolderForSelection` from `taskIdentity.ts`. Its single case resolves the master folder `ops` from the selected task-document key. It no longer declares nested/orphan tree or pre-drill path tests.
+The unit source pins repository-qualified task selection and role-chat identity plus exact task-reference equality. The former masterFolderForSelection case is removed.
 
 ## Code Commentary
 
-A local `doc(partial)` passes typed overrides to the shared `taskDoc` builder rather than casting past `TaskDocNode`. The case places a sub-task under `/tasks/repo/ops/05.json`, supplies `analytics({taskDocuments: docs})` and asserts the resolved folder. Shared builders supply their retained served-base fields. This is a pure function assertion, with no DOM, store, backend or execution claimed by this card. `buildTaskTree` and `findMasterPath` are not imported or tested.
+Shared native chat fixtures pin qualified task selection/master identity, repo/master/LEAF chat identity, copied-reference equality, foreign-repo inequality and undefined/undefined=false. Pure assertions only; no removed master-folder lookup remains.
 
 ## Evidence
 
@@ -24,9 +24,8 @@ No configured Domain Documentation source exists for this file.
 
 ### Repo-Internal References
 
-- The retained single assertion resolves the selected task document to its master folder; no tree or pre-drill cases remain. [1]
-- The test file's `doc` fixture helper. [3]
-- Typed taskDoc and analytics builders supply the retained served-base fields rather than casts. [4]
+- The single task-identity case keeps repository qualification in the taskdoc selection key, master document key and role-chat leaf key. Reference comparison accepts a copied identical repository/path reference, rejects a changed repository and rejects two undefined references; it is not a master-folder resolution or tree/pre-drill test. [1]
+- The former local doc helper and taskDoc/analytics fixture references are retired; native chat entry fixtures are imported directly.
 
 ### Cross-Repo References
 

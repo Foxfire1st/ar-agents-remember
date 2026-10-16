@@ -14,9 +14,9 @@ observer-event stream that feeds the Event River.
 
 ### Logic
 
-`STATE_EVENTS` lists every named state delta the backend emits — the keyed-collection events
-(`lifecycle`/`enclosure`/`provider` plus their `.removed` markers) and the whole-value replacements
-(`activeWorktreeGroups`, `metrics`, `analytics`). `activeWorktreeGroups` (task 33) is the bounded
+`STATE_EVENTS` lists the named deltas this browser connection subscribes to — the keyed-collection events
+(`task`/`enclosure`/`provider` plus their `.removed` markers) and the whole-value replacements
+(`taskCounts`, `activeWorktreeGroups`, `metrics`, `analytics`). There is no named `closeoutQueues` listener or matching delta reducer here; full snapshot application separately retains `projection.closeoutQueues`. This listener list must not be read as proof that every snapshot field has a corresponding delta. `activeWorktreeGroups` (task 33) is the bounded
 active-enclosure set the Topology constellation filters on; its delta arrives as a wrapped
 `{activeWorktreeGroups: [...]}` marker the store unwraps. `connectState(base)` opens
 `GET /api/stream`, applies full `snapshot` payloads through `store.applySnapshot`, sends named deltas to
@@ -60,6 +60,9 @@ No relevant external documentation is needed beyond the browser EventSource API 
 - Raw event stream forwards `event` rows and the backend `ready` marker. [3]
 - `Cockpit` passes `markEventsHydrated` as the raw stream ready callback. [4]
 - The backend raw stream emits a `ready` event once after backlog delivery. [5]
+
+- The browser listener table has task/count and operational events, but no closeoutQueues named listener. [7]
+- Snapshot application separately retains closeoutQueues alongside canonical tasks and operational projections. [8]
 
 ### Cross-Repo References
 

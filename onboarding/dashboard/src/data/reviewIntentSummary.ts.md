@@ -21,8 +21,7 @@ derives a count from change-set line totals or from catalogue size.
   `removed`, per-kind `IntentHeadChanges`, `realization_only`, `membership_only`, `unresolved`)
   and optional `refusal`; since MIK-L32 also optional `attribution` (`ReviewLaneSummary` from `./reviewLane`), the
   unexplained-changes lane's file-level count a tree comparison's summary carries (MIK-R32 rule 9).
-- `intentReviewSummary` GETs `/api/review/intent/summary?repo&master&leaf` through the shared
-  `getReviewJson` decode.
+- `useIntentReviewSummary` loads `/api/review/intent/summary?repo&master&leaf` through the store-owned bounded `intentSummaries` resource and shared `decodeReviewJson` decoder.
 - `summaryRead` maps one answer to the render state `IntentSummaryRead`: `counted`/`partial` with
   counts, or `unavailable` with a `ReviewFailure` (`reviewProblemFromRefusal` for the owner's refusal,
   `unreadableAnswer` for a body that is none of the three shapes). `counts` and `problem` are never
@@ -30,9 +29,7 @@ derives a count from change-set line totals or from catalogue size.
   refused `unavailable` state (ruling 2026-09-30T12:19:20 Q6: the count shows even when the intent counts are
   refused); an unreadable body or a failed request carries none.
 - `useIntentReviewSummary(repo, master, leaf, facts)` reads once per task context and again only when
-  `facts` moves. A sequence number drops a superseded answer, and an answer is only shown under the
-  task key it was read for, so a previous leaf's late answer cannot land on the leaf shown now. A thrown
-  request becomes `unavailable` via `reviewProblemFromCause`.
+  `facts` moves. The render key includes repo, master, leaf and facts. Mounted/sequence checks drop superseded completions; `load` and `peek` both receive the same facts identity. A facts move shows loading until that identity has an answer, never retained old-facts counts. A thrown request becomes `unavailable` via `reviewProblemFromCause`.
 
 ### Conventions
 
@@ -65,9 +62,7 @@ No relevant domain documentation was found.
 ### Repo-Internal References
 
 - The wire types mirroring the server model. [1]
-- The route request through the shared decode. [2]
 - The render state and the answer mapping; an unrecognised body is unreadable, never drawn. [3]
-- The hook: one read per task context and per `facts`, superseded answers dropped. [4]
 - The lane's count carried on both answered states (MIK-L32). [5]
 - The server model it mirrors. [6]
 - The consumer. [7]
@@ -77,3 +72,7 @@ No relevant domain documentation was found.
 No cross-repository behavior.
 
 No meaningful cross-repo references found.
+
+- [2]
+- [4]
+- Pending sharing is same-facts only; superseded transport cannot retain or relabel an answer. [8]

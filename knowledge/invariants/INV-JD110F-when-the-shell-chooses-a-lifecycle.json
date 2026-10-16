@@ -30,6 +30,6 @@
   "revision": 1,
   "schema": "ar-invariant/v1",
   "statement": "When the shell chooses a lifecycle, as an entry's link does, the list's own selection stays the lifecycle's key and the task row that carries the lifecycle is only marked, brought into view once for that request and given the keyboard's focus; a click on the marked row chooses the task's document; where no row carries the lifecycle nothing moves, also when a row comes later.",
-  "status": "accepted",
+  "status": "retired",
   "supersedes": []
 }

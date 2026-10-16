@@ -3,11 +3,12 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "b548cff646dad2bc49995692b60f69ef2f1d973a",
-        "content": "sha256:a9bab9994c9d7548b83fab792d82d5eb91269c24cac8aa81439422ac2a994dda",
+        "blob": "c90e6a248cffca67c3b8e045d6bf885fa4f730d9",
+        "content": "sha256:afe07bf8fcfffb222fee04139648097c27e9960a48b388d5fe9641e11fce073e",
         "locator": {
-          "kind": "symbol",
-          "name": "RoleChatsPane"
+          "end": 94,
+          "kind": "line_range",
+          "start": 17
         }
       },
       "id": "RLZ-5P93PT",
@@ -21,11 +22,12 @@
     },
     {
       "anchor": {
-        "blob": "b548cff646dad2bc49995692b60f69ef2f1d973a",
-        "content": "sha256:a9bab9994c9d7548b83fab792d82d5eb91269c24cac8aa81439422ac2a994dda",
+        "blob": "c90e6a248cffca67c3b8e045d6bf885fa4f730d9",
+        "content": "sha256:afe07bf8fcfffb222fee04139648097c27e9960a48b388d5fe9641e11fce073e",
         "locator": {
-          "kind": "symbol",
-          "name": "RoleChatsPane"
+          "end": 94,
+          "kind": "line_range",
+          "start": 17
         }
       },
       "id": "RLZ-6WEANN",
@@ -39,11 +41,12 @@
     },
     {
       "anchor": {
-        "blob": "b548cff646dad2bc49995692b60f69ef2f1d973a",
-        "content": "sha256:a9bab9994c9d7548b83fab792d82d5eb91269c24cac8aa81439422ac2a994dda",
+        "blob": "c90e6a248cffca67c3b8e045d6bf885fa4f730d9",
+        "content": "sha256:afe07bf8fcfffb222fee04139648097c27e9960a48b388d5fe9641e11fce073e",
         "locator": {
-          "kind": "symbol",
-          "name": "RoleChatsPane"
+          "end": 94,
+          "kind": "line_range",
+          "start": 17
         }
       },
       "id": "RLZ-A0VKEA",
@@ -57,11 +60,12 @@
     },
     {
       "anchor": {
-        "blob": "b548cff646dad2bc49995692b60f69ef2f1d973a",
-        "content": "sha256:a9bab9994c9d7548b83fab792d82d5eb91269c24cac8aa81439422ac2a994dda",
+        "blob": "c90e6a248cffca67c3b8e045d6bf885fa4f730d9",
+        "content": "sha256:afe07bf8fcfffb222fee04139648097c27e9960a48b388d5fe9641e11fce073e",
         "locator": {
-          "kind": "symbol",
-          "name": "RoleChatsPane"
+          "end": 94,
+          "kind": "line_range",
+          "start": 17
         }
       },
       "id": "RLZ-A0WKTC",
@@ -75,11 +79,12 @@
     },
     {
       "anchor": {
-        "blob": "b548cff646dad2bc49995692b60f69ef2f1d973a",
-        "content": "sha256:a9bab9994c9d7548b83fab792d82d5eb91269c24cac8aa81439422ac2a994dda",
+        "blob": "c90e6a248cffca67c3b8e045d6bf885fa4f730d9",
+        "content": "sha256:afe07bf8fcfffb222fee04139648097c27e9960a48b388d5fe9641e11fce073e",
         "locator": {
-          "kind": "symbol",
-          "name": "RoleChatsPane"
+          "end": 94,
+          "kind": "line_range",
+          "start": 17
         }
       },
       "id": "RLZ-XXYE2Y",
@@ -93,11 +98,12 @@
     },
     {
       "anchor": {
-        "blob": "b548cff646dad2bc49995692b60f69ef2f1d973a",
-        "content": "sha256:a9bab9994c9d7548b83fab792d82d5eb91269c24cac8aa81439422ac2a994dda",
+        "blob": "c90e6a248cffca67c3b8e045d6bf885fa4f730d9",
+        "content": "sha256:afe07bf8fcfffb222fee04139648097c27e9960a48b388d5fe9641e11fce073e",
         "locator": {
-          "kind": "symbol",
-          "name": "RoleChatsPane"
+          "end": 94,
+          "kind": "line_range",
+          "start": 17
         }
       },
       "id": "RLZ-YGH2ER",

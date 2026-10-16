@@ -3,7 +3,7 @@
   "proves": [
     {
       "anchor": {
-        "blob": "6a97775f66a9adbc99d3663ac6ab1b585d867072",
+        "blob": "c61467d651e72d83077f8fbb194de03113a4981f",
         "content": "sha256:2200041761481afb1a77501bfcdb24006626a7641f1a37c9bc4b85a1fc79e8d9",
         "locator": {
           "kind": "symbol",
@@ -20,11 +20,12 @@
     },
     {
       "anchor": {
-        "blob": "6a97775f66a9adbc99d3663ac6ab1b585d867072",
+        "blob": "c61467d651e72d83077f8fbb194de03113a4981f",
         "content": "sha256:2200041761481afb1a77501bfcdb24006626a7641f1a37c9bc4b85a1fc79e8d9",
         "locator": {
-          "kind": "symbol",
-          "name": "RepeatAndConflictTests.test_a_repeated_request_converges_on_the_same_agent"
+          "end": 991,
+          "kind": "line_range",
+          "start": 951
         }
       },
       "facet": "Interrupts between receipt and call and checks retry retains one agent identity.",
@@ -37,11 +38,12 @@
     },
     {
       "anchor": {
-        "blob": "6a97775f66a9adbc99d3663ac6ab1b585d867072",
+        "blob": "c61467d651e72d83077f8fbb194de03113a4981f",
         "content": "sha256:6f8f73bbd0ca2b47008d31312529a915e665f412e8eeb3e58b2829507fd558f5",
         "locator": {
-          "kind": "symbol",
-          "name": "RolePreparationChildTests.test_both_entry_points_prepare_in_the_existing_child"
+          "end": 737,
+          "kind": "line_range",
+          "start": 686
         }
       },
       "facet": "The shared dispatch case checks the existing-child argv/request and same-enclosure reuse for Worker then Reviewer dispatch; it does not call a separate role_start entry point or establish native launch proof.",
@@ -54,11 +56,29 @@
     },
     {
       "anchor": {
-        "blob": "6a97775f66a9adbc99d3663ac6ab1b585d867072",
-        "content": "sha256:6447e0d815c4be97baefe556e2e414f92e61b542f57df6fde6150b0ef695760f",
+        "blob": "c61467d651e72d83077f8fbb194de03113a4981f",
+        "content": "sha256:815ab33c18ab4bf09cd07fd01e0ddbd0bc8bee09a6923e6a1cab07f26d6e6438",
         "locator": {
           "kind": "symbol",
-          "name": "RoleFolderAndIdentityTests.test_each_role_class_gets_one_agent_in_its_folder_with_title_and_labels"
+          "name": "RolePreparationChildTests.test_sequential_fresh_leaves_preserve_the_callers_binding"
+        }
+      },
+      "facet": "Sequential fresh-leaf preparations preserve the calling AgentBinding environment rather than consulting or mutating a removed ambient persistent lifecycle.",
+      "id": "PRF-PDGSKS",
+      "invariant": "INV-5ATS9T",
+      "origin": {
+        "handoffEntry": "L168-CUR-INV-5ATS9T-current-caller-binding-proof",
+        "leaf": "260928-MIK-L168"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "c61467d651e72d83077f8fbb194de03113a4981f",
+        "content": "sha256:0d18b8e9ea4ec158848fe67930673bdabc230ec691d3c2bc0bbeedfb216bae65",
+        "locator": {
+          "end": 599,
+          "kind": "line_range",
+          "start": 423
         }
       },
       "facet": "The launch observer checks complete receipt, stable UUID and stored call before runtime launch.",
@@ -71,7 +91,7 @@
     },
     {
       "anchor": {
-        "blob": "6a97775f66a9adbc99d3663ac6ab1b585d867072",
+        "blob": "c61467d651e72d83077f8fbb194de03113a4981f",
         "content": "sha256:efb058c8ca5c6a9df9153a195baff04ee4188e2855945750b226565550720f3b",
         "locator": {
           "kind": "symbol",
@@ -84,23 +104,6 @@
       "origin": {
         "handoffEntry": "PNT-R03@v1 §12 / G6 / A9 / A18",
         "leaf": "260928-MIK-L90"
-      }
-    },
-    {
-      "anchor": {
-        "blob": "6a97775f66a9adbc99d3663ac6ab1b585d867072",
-        "content": "sha256:c22d39abcd0ca89b2038cc515eba85e3ac507957499dfca37e62e1f082595a4c",
-        "locator": {
-          "kind": "symbol",
-          "name": "RolePreparationChildTests.test_sequential_fresh_leaves_preserve_the_callers_persistent_lifecycle"
-        }
-      },
-      "facet": "Sequential fresh-leaf preparations neither consult nor change the calling agent's persistent lifecycle.",
-      "id": "PRF-W3F9CA",
-      "invariant": "INV-5ATS9T",
-      "origin": {
-        "handoffEntry": "MIK-R95@v1 rule5",
-        "leaf": "260928-MIK-L95"
       }
     }
   ],
@@ -145,6 +148,22 @@
             "content": "sha256:80276ddc2fc0fa24941be0f33f6ca16324d01e39e4ab5d398be6123f7525aedd",
             "locator": {
               "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "Sequential child preparation leaves the caller binding environment exact.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c61467d651e72d83077f8fbb194de03113a4981f",
+            "content": "sha256:815ab33c18ab4bf09cd07fd01e0ddbd0bc8bee09a6923e6a1cab07f26d6e6438",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_sequential_fresh_leaves_preserve_the_callers_binding"
             }
           },
           "kind": "test"

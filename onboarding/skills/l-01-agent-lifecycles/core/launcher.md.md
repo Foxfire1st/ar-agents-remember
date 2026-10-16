@@ -10,7 +10,7 @@ Describe the developer-facing chat without a role. It answers research inline an
 
 ## Code Commentary
 
-The current source has no spawn-role or plane identity selector. The launcher has no binding, worktree or lifecycle. It resolves the sprint and writes the developer’s request into its canonical document before one `role_start` call. An Architect start carries neither a brief nor a document reference; the developer is told where the request lives and speaks with the agent in the dashboard. Launch settings supply the choices. `role_message` from this unbound chat is refused, and a refused start never falls back to another tool.
+The current source has no spawn-role or plane identity selector. The launcher has no seat binding or worktree; its free-chat routing name does not imply an ambient session lifecycle. It resolves the sprint and writes the developer’s request into its canonical document before one `role_start` call. An Architect start carries neither a brief nor a document reference; the developer is told where the request lives and speaks with the agent in the dashboard. Launch settings supply the choices. `role_message` from this unbound chat is refused, and a refused start never falls back to another tool.
 
 An explicit developer-named role and task selects the bounded takeover route through the same `role_start`; no incumbent is privately replaced and no exact-id attachment is improvised. After a start the launcher stops local role work. The launcher remains outside `roles/`, because it is not a role seat.
 
@@ -18,7 +18,11 @@ The earlier `dispatch_agent`, queued-brief, plane-identity and conversation-swit
 
 ## Evidence
 
-- An unbound free chat answers research inline without becoming a role. [8]
+
+
+- Unbound free chat has no role binding or worktree; research stays inline and does not become a role. [8]
+
+
 - Managed work is written into the sprint before one parentless Architect start without a brief or document reference. [9]
 - Only an explicitly developer-named role and task takes the bounded takeover route. [10]
 - No other start or message route and no local work after start is permitted. [11]

@@ -3,7 +3,7 @@
   "proves": [
     {
       "anchor": {
-        "blob": "150159e5bcc256365b0bf838bcd4c61640aa84bd",
+        "blob": "76baad82f320b6bc913b549d7778f0dcec74b570",
         "content": "sha256:ea36060b2139ab7e2e953ec363f1bf00186429937907f0973e7cbad23a69ea24",
         "locator": {
           "kind": "symbol",
@@ -20,11 +20,12 @@
     },
     {
       "anchor": {
-        "blob": "150159e5bcc256365b0bf838bcd4c61640aa84bd",
+        "blob": "76baad82f320b6bc913b549d7778f0dcec74b570",
         "content": "sha256:940c00d4ee17489dfe6c436f4085b4200b37bb91538425adcc468fc0927cebb7",
         "locator": {
-          "kind": "symbol",
-          "name": "test_the_recheck_still_refuses_a_candidate_that_moved_while_the_review_was_composed"
+          "end": 307,
+          "kind": "line_range",
+          "start": 277
         }
       },
       "facet": "Code and memory changes between resolution and publication retain candidate_unresolved refusal.",
@@ -37,7 +38,7 @@
     },
     {
       "anchor": {
-        "blob": "150159e5bcc256365b0bf838bcd4c61640aa84bd",
+        "blob": "76baad82f320b6bc913b549d7778f0dcec74b570",
         "content": "sha256:eb41ce34317a35a1adcc663dcbd58c5664caf5d401a36ec890a87e6a36a542c9",
         "locator": {
           "kind": "symbol",
@@ -54,7 +55,7 @@
     },
     {
       "anchor": {
-        "blob": "150159e5bcc256365b0bf838bcd4c61640aa84bd",
+        "blob": "76baad82f320b6bc913b549d7778f0dcec74b570",
         "content": "sha256:4c3f3a30d164c6bb0614de5ad42b2ad7e705671deae823ac73778c8d6bed1948",
         "locator": {
           "kind": "symbol",
@@ -71,7 +72,7 @@
     },
     {
       "anchor": {
-        "blob": "150159e5bcc256365b0bf838bcd4c61640aa84bd",
+        "blob": "76baad82f320b6bc913b549d7778f0dcec74b570",
         "content": "sha256:9b68592881d68647cf2c066f5a7cdf0871cded3077ac462e1a5d7108e78d26c6",
         "locator": {
           "kind": "symbol",
@@ -88,11 +89,12 @@
     },
     {
       "anchor": {
-        "blob": "150159e5bcc256365b0bf838bcd4c61640aa84bd",
+        "blob": "76baad82f320b6bc913b549d7778f0dcec74b570",
         "content": "sha256:2f6887446bef89667a0f49ad5d71ee3d1a5dde19cb56e551e08a743f82facc3f",
         "locator": {
-          "kind": "symbol",
-          "name": "test_a_subject_read_resolves_once_and_captures_each_worktree_once_and_for_the_recheck"
+          "end": 274,
+          "kind": "line_range",
+          "start": 227
         }
       },
       "facet": "The actual dashboard port resolves once, captures each worktree for resolution and publication recheck, preserves index bytes and returns the comparison body.",
@@ -105,7 +107,7 @@
     },
     {
       "anchor": {
-        "blob": "150159e5bcc256365b0bf838bcd4c61640aa84bd",
+        "blob": "76baad82f320b6bc913b549d7778f0dcec74b570",
         "content": "sha256:196f95ccb6ea59ed068e37704ba566888dabc1f4e932077ab56cd1c71bfcfae5",
         "locator": {
           "kind": "symbol",
@@ -122,7 +124,7 @@
     },
     {
       "anchor": {
-        "blob": "150159e5bcc256365b0bf838bcd4c61640aa84bd",
+        "blob": "76baad82f320b6bc913b549d7778f0dcec74b570",
         "content": "sha256:926061922e555bd502b491b56c00c250273dc9c1db29bd4c91ce4cb39f9bce08",
         "locator": {
           "kind": "symbol",
@@ -141,10 +143,12 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "150159e5bcc256365b0bf838bcd4c61640aa84bd",
-        "content": "sha256:9a3546150ac22b3fd9e8daa9b6d6f0af828a4198e900a81d23ad78f4df0b45b8",
+        "blob": "76baad82f320b6bc913b549d7778f0dcec74b570",
+        "content": "sha256:5fb46f70ace426b8a238e687deba28e17ffca5c330976feb3b06eceb47d72ac1",
         "locator": {
-          "kind": "file"
+          "end": 794,
+          "kind": "line_range",
+          "start": 1
         }
       },
       "id": "RLZ-AKBEXR",
@@ -153,7 +157,7 @@
         "handoffEntry": "MIK-R86@v1 W03 source-currentness native resolution",
         "leaf": "260928-MIK-L86"
       },
-      "rationale": "Source-currentness proof of the existing admitted semantics; not a new invariant or product scope.",
+      "rationale": "Historical attachment of the already-retired L86/R87 carriage record; source callback adaptation is not a new execution or current native acceptance claim.",
       "role": "support"
     }
   ],

@@ -1,0 +1,24 @@
+{
+  "path": "mcp/src/agents_remember/package_data/paseo_plugin/shared/rpc.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Embed-list and explicit host-snapshot transports have separate typed empty-input responses.\n\nAnchor: RPC definitions",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "97e1e4c2c35db1e9886a33b12b805e873500679f",
+            "content": "sha256:d9b5a49adb38ff0eb195596928d36218619342c481d7e83f5e164e3f5d22cf41",
+            "locator": {
+              "end": 19,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -16,11 +16,11 @@ Family-center member order follows the sidebar's served outline under the same s
 
 ## Hot Path Summary
 
-Ordinary masters now compose Now then the shared derived Order and ready-next rows. Task heads show both dependency directions; optional Non-goals and Acceptance occupy fixed slots. The complete identity/body/series chrome precedes Objective. Compact progress uses major steps only with cached pointer-rest child details and full nested task reading. Completed master lists use completion time, a newest-five preview and ephemeral reversible sorting; these are display, not start/closeout authority.
+Ordinary masters now compose Now then the shared derived Order and ready-next rows. Task heads show both dependency directions; optional Non-goals and Acceptance occupy fixed slots. The complete native task identity/state/head chrome precedes Objective; there is no separate selected lifecycle/series page. Compact progress uses major steps only with cached pointer-rest child details and full nested task reading. Completed master lists use completion time, a newest-five preview and ephemeral reversible sorting; these are display, not start/closeout authority.
 
 Operations selects a projected task/document and mounts its reader. Task prose and references can open registered requirement packets through TaskRequirementLinks. TaskNotes shows a Notes root-folder count, references and recorded role-start reports without constructing a notes-tree total. TaskArtifactReaderTarget currently distinguishes notes, requirements, task-report and decisions. DecisionPreview shows the five newest authored decisions, excluding product-written records from that preview; an omitted-entry link opens the complete log and names the authored decision count. The shared artifact reader owns the corresponding takeover and transport.
 
-A leaf's Intent review control opens task context without requiring a returned subject. Liveness selects the live or recorded target; it gates the working change-set action, not the intent-review entry. The entry reads changed-intent summary counts, with a separate attribution count, rather than borrowing source-line totals. Pending, partial, unavailable, refused and unrecorded states remain distinct from measured zero. Summary revalidation follows the leaf's own facts and the entry generation; the inherited policy does not promise live delivery while an unchanged detail panel remains open.
+A leaf's Intent review control opens task context without requiring a returned subject. Its resolved task/worktree facts select the live or recorded target; it gates the working change-set action, not the intent-review entry. The entry reads changed-intent summary counts, with a separate attribution count, rather than borrowing source-line totals. Pending, partial, unavailable, refused and unrecorded states remain distinct from measured zero. Summary revalidation follows the leaf's own facts and the entry generation; the inherited policy does not promise live delivery while an unchanged detail panel remains open.
 
 The cockpit mounts ReviewSurface for a change-set target carrying review context, including optional family/invariant selectors and history. ReviewSurface composes navigation, the question-bound read cycle, bounded cache, refresh/retry, workspace and technical disclosure. A subject answer is shown under the question it answers. Pending or unavailable subject reads can keep the workspace mounted over the last admitted task-context frame while the reading area states the requested subject's status. Technical records receive only the current answer.
 
@@ -32,7 +32,7 @@ The review center preserves its mounted navigation/inspection owner while a new 
 
 ### Operations task column
 
-LifecycleList owns the complete left task tree, priority words, completed folds and selection/keyboard reach; AttentionQueue overlays its height with source-scoped open/dismiss/Clear all and accessible severity. rowState separates document truth from reporting lifecycle state and keeps current task/lifecycle/progress/worktree facts in the hover. Removed ChatActivityIndicator and PickupDismiss are not current presentation/action owners. TaskGroupDisclosure retains its shared caret and held-selected-descendant policy. None of these presentation facts changes worktree admission or authors task state.
+LifecycleList owns the complete served native task tree, entry-own need bands, terminal folds and selection/keyboard reach; AttentionQueue overlays its height with source-scoped dismiss/Clear all and accessible severity, without claiming a task-navigation link. rowState formats each TaskEntry stage/activity through shared status presentation; its hover names current state/stage, repository, current step, progress, host event and unauthored-document facts rather than reporting-lifecycle or inferred worktree state. Removed ChatActivityIndicator and PickupDismiss are not current presentation/action owners. TaskGroupDisclosure retains its shared caret and held-selected-descendant policy. None of these presentation facts changes worktree admission or authors task state.
 
 Task detail prose, `TaskNotes.tsx`, and the shared notes reader use `TaskArtifactReaderTarget` for notes or registered requirement packets. A task page shows one Notes line with the root-folder count, its references, and its recorded role-start reports — no notes tree, no total over the tree. The Operations reader has one fixed skeleton per sprint/master/task form: one complete
 head followed by the objective as its first block, before Now or Steps, with omitted empty blocks,
@@ -54,9 +54,9 @@ The removed session-cockpit, hosted-session chooser/rail, context bar, terminal,
 
 ### Operations and operational diagnostics
 
-LifecycleList owns task navigation, grouping, selection and re-show behavior. A bound lifecycle's raw state takes precedence over the task-document status mapping. Document status and lifecycle state are separate vocabularies; awaiting-developer belongs to the inherited live partition. Dot is decorative and aria-hidden: the containing panel must provide the state/severity name through a suitable semantic wrapper or named option.
+LifecycleList navigates the one served TaskEntry forest and formats its own canonical stage and optional host activity. Unknown host activity is not paused, a browser clock does not infer state, and the removed raw-lifecycle-over-document precedence and awaiting-developer partition are historical only. Parent arrows preserve held selected ancestors; modified browser chords and the list's other keyboard reach remain separate. Shared decorative Dot usage still requires a containing semantic state/severity name; native task status/age presentation has its own shared owner.
 
-DetailPanel resolves task, lifecycle and series reader targets. TaskSubTaskRefNode and SeriesSubTaskNode share row fields but retain different navigation/time fields: linkedLifecycleId is a master-task navigation capability, and creation ordering belongs to the series path that carries createdAt. Typed masterRef rows use docPathForRef when a projected destination exists and preserve the explicit unprojected rendering otherwise.
+DetailPanel resolves one native selected entry, hydrates only its addressed authored document, and composes the task reader with its bound worktree/provider facts. The old lifecycle/series target adapters and SeriesSubTaskNode navigation/creation-sort path are removed, not equivalent aliases. Qualified document references and opaque entry keys stay distinct; a file-less native dependency shows id/title without a document jump or invented state.
 
 The sprint execution graph is optional. CloseoutQueue mounts independently when no execution-graph view is supplied; this rendering support does not prove graph-less atomic task authoring is admitted, and displays the producer's service/source/problem/member projection, including invalid-empty repair actions. The browser does not reconstruct readiness or mutate the queue. Discarded-before-start audit rows retain reason, timestamp and proof fingerprint; discarded counts are displayed separately and do not count as completion.
 
@@ -130,7 +130,7 @@ The native role-chat model selects canonical role occupants without buildRailMod
 
 The policies above are inherited semantic intent alongside specifically inspected source predicates. They are not newly adopted invariant or family records. Historical candidate lists for L31–L35 remain proposals, not ingestion or present acceptance.
 
-Panels consume canonical stores and authority clients; they must not create private durable session catalogues, conversation indexes or submission ledgers. The structured conversation's browser projection is reconstructable. Native document chat and accepted-session-row consumers have distinct creation contracts; neither should be collapsed into the other's vocabulary. Reliable submission, withdrawal, interaction answers, bus replies and control remain separate channels without paste fallback.
+Panels consume canonical stores and authority clients; they must not create private durable session catalogues, conversation indexes or submission ledgers. Native document chat and full-page host chat keep their distinct selection/creation contracts and host-owned delivery/readiness. The removed project-session submission, withdrawal and interaction controls are not restored by these panel projections or by compatibility event rendering.
 
 Review remains display/navigation only: it cannot author assessment, waiver, approval or publication. Source inventory is complete within its declared scope regardless of attribution; partial knowledge, unreadable sides, missing totals and unmeasured counts retain their states and reasons. Cached content and kept families are prior reads, not current verification. Bound code trees, memory trees, history context, subject and page identity must remain visible rather than being silently re-resolved.
 
@@ -177,7 +177,7 @@ These inherited tables are retained verbatim for navigation and custody. Their s
 
 ## Task reader grant control
 
-taskReader renders one Direct execution switch only on a planning subTask's own page, bare giver words on other granted task states, and nothing on grantless states. Master/sprint index rows carry neither a grant control nor a grant mark. The grant hook posts only through the existing adapter and preserves real state on refusal; client affordance/status is not the backend start-evidence gate.
+taskReader renders one Direct execution switch only on a document-backed subTask's own page when its native entry stage is planned, bare giver words on other granted task states, and nothing on grantless states. Master/sprint index rows carry neither a grant control nor a grant mark. The grant hook posts only through the existing adapter and preserves real state on refusal; client affordance/status is not the backend start-evidence gate.
 
 ## Evidence
 - Marks only from the owner's response, placed on its side lines. [5]
@@ -208,11 +208,26 @@ taskReader renders one Direct execution switch only on a planning subTask's own 
 - The production application route is owned by `App`. [45]
 - The production route returns `Cockpit`, which wires the live streams and renders `CockpitShell`, opening it on the Knowledge view for a `#knowledge?…` reader URL (MIK-R29). [46]
 - `CockpitShell` defaults `initialView="chats"`; `VIEWS` is the four-entry product bar. [47]
-- `LifecycleList` owns Operations navigation, row grouping, the selection callback, and hidden-list re-show behavior. [52]
-- `DetailPanel` resolves the selected task/lifecycle/series reader target and renders the task document content. [53]
-- The lifecycle state vocabulary is the live/terminal partition consumed by the lifecycle panel; the `State`/`Phase` literals moved to `models/lifecycle.py` by 260731-EFA-L9 while the live/terminal sets stay in observer. [54]
-- The shared fixture builders seed lifecycle and projection nodes from served fixtures, with required lifecycle fields copied from the served lifecycle. Ranges re-derived: the `lifecycle` occurrences this row names are at `:90-90`, `:243-243` and `:257-257`. [55]
-- The typed lifecycle and projection factories are shape-aligned; the served lifecycle binding supplies copied identities without making every content/default value served-derived. [56]
+
+
+- LifecycleList consumes native entry rows and preserves grouping, selection and one-shot reveal without the removed lifecycle hierarchy adapter. [52]
+
+
+
+- DetailPanel resolves the selected native entry through its state owner and renders TaskDocumentPanel, rather than separate lifecycle/series reader targets. [53]
+
+
+
+- Native task stage/activity/eventAt replaces the removed session State/Phase live-terminal partition as the Operations state input. This is a distinct model, not a renamed session vocabulary. [54]
+
+
+
+- Native entry fixture defaults copy specific sampled identities while explicitly declaring planned/count/collection defaults; there is no current lifecycle factory or claim that every value is server-derived. [55]
+
+
+
+- The typed native projection factory supplies tasks/taskCounts and analytics defaults. Mirror-conforming sampled shape is not producer completeness or fresh test/runtime acceptance. [56]
+
 - `Dot` renders its state glyph inside `aria-hidden="true"`. [58]
 
 
@@ -261,7 +276,9 @@ taskReader renders one Direct execution switch only on a planning subTask's own 
 - The mounted case of the key walk on real data. [152]
 - The mounted cases of the reviewer between a selection and its answer. [153]
 - The notice draws nothing for a dataset review. [154]
-- Current ownership/control, without execution or runtime tool exposure inferred. [155] [156] [159]
+
+- Current ownership/control, without execution or runtime tool exposure inferred. [159]
+
 
 
 
@@ -274,7 +291,7 @@ taskReader renders one Direct execution switch only on a planning subTask's own 
 
 - The intent entry always opens task-context review; liveness selects the live or recorded target, while summary state labels rather than gates the button. [59]
 - The subject-catalogue hook serves reviewer navigation, not task-entry admission; the task entry reads a summary and no catalogue. [60]
-- The shared leaf-liveness predicate chooses live versus recorded entry context; it is not a catalogue-subject admission gate. [61]
+- `DocChangeSetBar` checks whether any entry worktree has `codeWorktreeExists` or `memoryWorktreeExists`; that liveness selects live versus recorded entry context, not catalogue-subject admission. [61]
 - The catalogue client and subject shape serve reviewer subject navigation; task-entry summary and clickability are separate. [62]
 - Traversal selects displayed tree nodes with real-change primary facts and reports its ends; partial-roster continuation buttons are not traversal stops. [140]
 - Artifact reader includes task reports and whole decision logs [165]
@@ -322,3 +339,7 @@ taskReader renders one Direct execution switch only on a planning subTask's own 
 - Selected family and invariant centers join recorded steps to their own identities and preserve independent guarantee/statement/source/evidence content. [162]
 - Four product destinations, Chats default and retained Operations/File/Knowledge composition Family-center order shares the outline ranking while retaining the semantic revision roster. [164]
 - Planning marks require matching comparison; subject worklist rendering joins canonical identity and states unavailable reads [179]
+
+
+
+- The task-page grant switch keys on native planned stage and the document subTask kind; other granted states show bare words. This does not move grant authority into the browser. [193]

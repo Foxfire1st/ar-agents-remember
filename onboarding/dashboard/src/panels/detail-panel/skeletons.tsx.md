@@ -18,7 +18,7 @@ Requirements preview eight lines, registers five last-written rows and four visi
 
 ## Boundaries
 
-Shared visual primitives live in pageParts.tsx; the head, task-only blocks and index groups have separate owners. This module neither selects the document nor changes task/knowledge state. Scroll-call unit observations do not substitute for real browser restoration evidence.
+ReaderHead passes the addressed entry directly to its change-set bar rather than joining document identity. Shared visual primitives live in pageParts.tsx; the head, task-only blocks and index groups have separate owners. This module neither selects the document nor changes task/knowledge state. Scroll-call unit observations do not substitute for real browser restoration evidence.
 
 ## Evidence
 

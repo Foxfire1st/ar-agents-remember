@@ -13,7 +13,7 @@ Input bundles shared by the reducer's assembly and its split builders. ``Workspa
 - `WorkspaceStructure`
 - `AnalyticalInputs`
 
-The frozen bundles retain structural enclosures/providers/admitted worktree groups separately from analytical inputs. R113 removes analytical gate, agent-pickup and expectation-row inputs; their old DTOs are not accepted here or materialized through this bundle. Attention dismissals remain an input for the surviving attention queue; this data carrier itself grants no action authority.
+The frozen bundles retain enclosures/providers/admitted groups separately from analytical inputs. `AnalyticalInputs.task_sources` and a default-unknown `HostActivitySnapshot` replace task_documents/series inputs. Attention acknowledgements remain supplied data for pure ranking; these carriers neither infer task stage nor grant action authority.
 
 ## Invariants And Boundaries
 

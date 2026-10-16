@@ -3,47 +3,12 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "29a2217745a3ef92625b3283471bf70a9453482f",
-        "content": "sha256:b2a7b47c52be123373f4ba9eb98b13a7f65b42f79dce535803073d749137d7d0",
+        "blob": "66607c8748bbb4f94154ffd1893a44a92f9486e8",
+        "content": "sha256:2a220e0e6edda594e1155d30d492453ebfc96534bc456854954d740f3c546318",
         "locator": {
-          "kind": "symbol",
-          "name": "useDirectGrant"
-        }
-      },
-      "id": "RLZ-08QD2C",
-      "invariant": "INV-JNYJAG",
-      "origin": {
-        "handoffEntry": "L150-R11",
-        "leaf": "260928-MIK-L150"
-      },
-      "rationale": "Owns the give/revoke request, pending lock, served adoption and late-reply ignore; carried unchanged from the sealed L94 logic.",
-      "role": "unclassified"
-    },
-    {
-      "anchor": {
-        "blob": "29a2217745a3ef92625b3283471bf70a9453482f",
-        "content": "sha256:65057cee68f645165f00c0c22bd77372014ccc54cc26f79fd6ddd61b6031af0b",
-        "locator": {
-          "kind": "symbol",
-          "name": "DirectExecutionSwitch"
-        }
-      },
-      "id": "RLZ-13GQSZ",
-      "invariant": "INV-XPCFCB",
-      "origin": {
-        "handoffEntry": "L150-R10",
-        "leaf": "260928-MIK-L150"
-      },
-      "rationale": "The single switch line; owns label, track-and-knob control, served words and server notice, and no second control.",
-      "role": "unclassified"
-    },
-    {
-      "anchor": {
-        "blob": "29a2217745a3ef92625b3283471bf70a9453482f",
-        "content": "sha256:b12975886d9916cbd01cc81462d0195dce184e751f1b6e14fba01e4e44973897",
-        "locator": {
-          "kind": "symbol",
-          "name": "MasterViewBody"
+          "end": 297,
+          "kind": "line_range",
+          "start": 243
         }
       },
       "id": "RLZ-2W1DRN",
@@ -57,12 +22,12 @@
     },
     {
       "anchor": {
-        "blob": "29a2217745a3ef92625b3283471bf70a9453482f",
-        "content": "sha256:f49bb3daf1c58039a11c042c4cfc1ed59d01a4e9802c64ef0c8c73bda85028ae",
+        "blob": "66607c8748bbb4f94154ffd1893a44a92f9486e8",
+        "content": "sha256:a8b37de9c2de7faff2008ac9f81799549791c4611d90a75a450427b51c86d260",
         "locator": {
-          "end": 551,
+          "end": 164,
           "kind": "line_range",
-          "start": 543
+          "start": 154
         }
       },
       "id": "RLZ-42QH5Y",
@@ -76,12 +41,12 @@
     },
     {
       "anchor": {
-        "blob": "29a2217745a3ef92625b3283471bf70a9453482f",
-        "content": "sha256:cff80ee8eec549eb0ba9637d9249a9c7d08e3ea0d143438f78b2849262fd8a22",
+        "blob": "66607c8748bbb4f94154ffd1893a44a92f9486e8",
+        "content": "sha256:fd61af6acfe3610a52521ea215160ebf3456072db47a82b18d06c1fd96e866cc",
         "locator": {
-          "end": 794,
+          "end": 125,
           "kind": "line_range",
-          "start": 779
+          "start": 100
         }
       },
       "id": "RLZ-4EETEC",
@@ -90,16 +55,17 @@
         "handoffEntry": "curator-realizations-INV-PHG1PR",
         "leaf": "260928-MIK-L162"
       },
-      "rationale": "This task-page extent orders the direct-execution line, body notice and series chrome before Objective and Steps without removing their existing callbacks.",
+      "rationale": "Unified page puts head/direct grant/chrome before Objective and fixed form body.",
       "role": "presentation"
     },
     {
       "anchor": {
-        "blob": "29a2217745a3ef92625b3283471bf70a9453482f",
-        "content": "sha256:7f2b29039b5eb969df5f4cdea1bf659589096ce678be8ff62784684c7e8d8777",
+        "blob": "66607c8748bbb4f94154ffd1893a44a92f9486e8",
+        "content": "sha256:670847d540f0f43726ac3c7d39f7605969e5bf50813769234c99c03f5f453988",
         "locator": {
-          "kind": "symbol",
-          "name": "TaskReader"
+          "end": 78,
+          "kind": "line_range",
+          "start": 57
         }
       },
       "id": "RLZ-4XE0XV",
@@ -113,12 +79,12 @@
     },
     {
       "anchor": {
-        "blob": "29a2217745a3ef92625b3283471bf70a9453482f",
-        "content": "sha256:e22e56a33b34be97dbe38683f72672b64757c1a632e1d02e6c15eec298b6e993",
+        "blob": "66607c8748bbb4f94154ffd1893a44a92f9486e8",
+        "content": "sha256:496349585ed2f96dcf699b64c6fd6823509e9dfeef2693002af31d0e63548657",
         "locator": {
-          "end": 803,
+          "end": 196,
           "kind": "line_range",
-          "start": 791
+          "start": 117
         }
       },
       "id": "RLZ-6XKJAP",
@@ -127,16 +93,16 @@
         "handoffEntry": "MIK-R128@v1 rule 6",
         "leaf": "260928-MIK-L162"
       },
-      "rationale": "This task-body extent places Non-goals after Objective and Acceptance after Design while retaining the intervening task-specific blocks.",
+      "rationale": "Shared Objective/Non-goals precede fixed LeafBody Design/Acceptance.",
       "role": "presentation"
     },
     {
       "anchor": {
-        "blob": "29a2217745a3ef92625b3283471bf70a9453482f",
-        "content": "sha256:8a71db1a5ff20ed637f040a07faccf8351e7096d49dc77891d249a80224994a2",
+        "blob": "66607c8748bbb4f94154ffd1893a44a92f9486e8",
+        "content": "sha256:d5c5c20b5d07228370c6cb87170db303aadd58c62d6bad25bafb8f7839b349a4",
         "locator": {
           "kind": "symbol",
-          "name": "TaskReaderPage"
+          "name": "TaskPage"
         }
       },
       "id": "RLZ-87SCAF",
@@ -145,17 +111,36 @@
         "handoffEntry": "curator-fixed-form-and-optional-blocks",
         "leaf": "260928-MIK-L127"
       },
-      "rationale": "Composes the task fixed form with complete head/series chrome and direct-grant slot before Objective, then optional Non-goals and its remaining fixed nonempty body.",
+      "rationale": "Producer-form dispatch fixes head, Objective, optional Non-goals and body.",
       "role": "enforcement"
     },
     {
       "anchor": {
-        "blob": "29a2217745a3ef92625b3283471bf70a9453482f",
-        "content": "sha256:fd23e3947282832496a9937a7fa3fc84712c726d44e48a9762efc514af9b2b43",
+        "blob": "66607c8748bbb4f94154ffd1893a44a92f9486e8",
+        "content": "sha256:baf123ba6ae4c54bb38ed2cde6c41700b90017f76cc67fc34093a5c418d7e33a",
         "locator": {
-          "end": 534,
+          "end": 120,
           "kind": "line_range",
-          "start": 518
+          "start": 117
+        }
+      },
+      "id": "RLZ-BAJBAG",
+      "invariant": "INV-T3TNTX",
+      "origin": {
+        "handoffEntry": "MIK-R128@v1 rule 6",
+        "leaf": "260928-MIK-L162"
+      },
+      "rationale": "This overview-header extent places Non-goals immediately after Objective for the supported master form.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "66607c8748bbb4f94154ffd1893a44a92f9486e8",
+        "content": "sha256:49d13250bb60e724187db4e34281606e3e65f5d4df83920d7935261734721436",
+        "locator": {
+          "end": 152,
+          "kind": "line_range",
+          "start": 132
         }
       },
       "id": "RLZ-BM077Q",
@@ -164,16 +149,17 @@
         "handoffEntry": "MIK-R128@v1 rule 3",
         "leaf": "260928-MIK-L162"
       },
-      "rationale": "These adjacent master-body blocks place Now before Order and pass the master graph and actual row handlers into the shared drawing.",
+      "rationale": "OverviewBody reuses the same OrderBlock after Now with master form and passes shared native entries.",
       "role": "presentation"
     },
     {
       "anchor": {
-        "blob": "29a2217745a3ef92625b3283471bf70a9453482f",
-        "content": "sha256:6f86a46734ed1ee086caffff3fed8e72cc4896dbea53914f2efd7a101f100b58",
+        "blob": "66607c8748bbb4f94154ffd1893a44a92f9486e8",
+        "content": "sha256:670847d540f0f43726ac3c7d39f7605969e5bf50813769234c99c03f5f453988",
         "locator": {
-          "kind": "symbol",
-          "name": "MasterOverview"
+          "end": 78,
+          "kind": "line_range",
+          "start": 57
         }
       },
       "id": "RLZ-C204CG",
@@ -182,16 +168,16 @@
         "handoffEntry": "F5-V02",
         "leaf": "260928-MIK-L127"
       },
-      "rationale": "The entry of the master page, mounted under the document's identity in the same way.",
+      "rationale": "The shared TaskReader mounts the task page under the exact qualified entry key for master as well as leaf forms.",
       "role": "enforcement"
     },
     {
       "anchor": {
-        "blob": "29a2217745a3ef92625b3283471bf70a9453482f",
-        "content": "sha256:69facaaa12b4f8484816152076427a756302d4bcc5786190ed134135af848181",
+        "blob": "66607c8748bbb4f94154ffd1893a44a92f9486e8",
+        "content": "sha256:3fcb180697451d9eed64fe0956add55c7d7dca6f9c928fadb211dc417699eb63",
         "locator": {
           "kind": "symbol",
-          "name": "MasterOverviewPage"
+          "name": "OverviewBody"
         }
       },
       "id": "RLZ-CH8ER2",
@@ -200,16 +186,17 @@
         "handoffEntry": "curator-fixed-form-and-optional-blocks",
         "leaf": "260928-MIK-L127"
       },
-      "rationale": "This form page composes its fixed body and shared head instead of authored arbitrary section order.",
+      "rationale": "Shared master/sprint body has fixed slots and explicit sprint omissions.",
       "role": "enforcement"
     },
     {
       "anchor": {
-        "blob": "29a2217745a3ef92625b3283471bf70a9453482f",
-        "content": "sha256:144e2cf21263143010633b0c1560c1798a73aad91932d45cf3a102f6f1bd7b7e",
+        "blob": "66607c8748bbb4f94154ffd1893a44a92f9486e8",
+        "content": "sha256:49d13250bb60e724187db4e34281606e3e65f5d4df83920d7935261734721436",
         "locator": {
-          "kind": "symbol",
-          "name": "SprintViewBody"
+          "end": 152,
+          "kind": "line_range",
+          "start": 132
         }
       },
       "id": "RLZ-DD6G8V",
@@ -218,16 +205,17 @@
         "handoffEntry": "L127-F5 sprint Order block",
         "leaf": "260928-MIK-L127"
       },
-      "rationale": "Opens the whole graph as the view 'Order graph', the place the graph of cards moved to.",
+      "rationale": "OverviewBody places the shared OrderBlock after Now and passes native entries, navigation and sprint/master form; it does not reconstruct a separate task status.",
       "role": "presentation"
     },
     {
       "anchor": {
-        "blob": "29a2217745a3ef92625b3283471bf70a9453482f",
-        "content": "sha256:99b9442530e34de571971d8219d9d993f325bf3afa29fe9b5b43551ebf961da6",
+        "blob": "66607c8748bbb4f94154ffd1893a44a92f9486e8",
+        "content": "sha256:7b00a7df3c1cf03584b370ed3e438a47001a8ee07920e9e96472e3e1e66d53be",
         "locator": {
-          "kind": "symbol",
-          "name": "TaskContent"
+          "end": 203,
+          "kind": "line_range",
+          "start": 169
         }
       },
       "id": "RLZ-DGKE4D",
@@ -236,34 +224,17 @@
         "handoffEntry": "curator-body-revision-hydration-currentness",
         "leaf": "260928-MIK-L127"
       },
-      "rationale": "Body-loading notice and settlement gate keep ancillary entry reads behind the selected body request.",
+      "rationale": "Ancillary form reads wait until not loading; unavailable releases them.",
       "role": "enforcement"
     },
     {
       "anchor": {
-        "blob": "29a2217745a3ef92625b3283471bf70a9453482f",
-        "content": "sha256:f2c021e8f2b02c9377f08cea5db588e0297f34094d730d93b901f251c8b22e77",
+        "blob": "66607c8748bbb4f94154ffd1893a44a92f9486e8",
+        "content": "sha256:2a220e0e6edda594e1155d30d492453ebfc96534bc456854954d740f3c546318",
         "locator": {
-          "kind": "symbol",
-          "name": "TaskDirectGrant"
-        }
-      },
-      "id": "RLZ-F5RFVV",
-      "invariant": "INV-8JGKW8",
-      "origin": {
-        "handoffEntry": "L150-R12",
-        "leaf": "260928-MIK-L150"
-      },
-      "rationale": "Routes subTask-plus-planning to the switch, other granted states to words, and the rest to nothing; masters never reach it.",
-      "role": "unclassified"
-    },
-    {
-      "anchor": {
-        "blob": "29a2217745a3ef92625b3283471bf70a9453482f",
-        "content": "sha256:eaa0661f64f2bfbdeec8501ec93dba750d999e371c26def7c96eb254828efdc1",
-        "locator": {
-          "kind": "symbol",
-          "name": "TaskViewBody"
+          "end": 297,
+          "kind": "line_range",
+          "start": 243
         }
       },
       "id": "RLZ-QPFF2D",
@@ -277,29 +248,11 @@
     },
     {
       "anchor": {
-        "blob": "29a2217745a3ef92625b3283471bf70a9453482f",
-        "content": "sha256:b2cbfa30b47b310d2ca5bad90a32d28abf69a916ae96969b11069b584c11fb4e",
+        "blob": "66607c8748bbb4f94154ffd1893a44a92f9486e8",
+        "content": "sha256:3fcb180697451d9eed64fe0956add55c7d7dca6f9c928fadb211dc417699eb63",
         "locator": {
           "kind": "symbol",
-          "name": "DirectExecutionWords"
-        }
-      },
-      "id": "RLZ-R84WB0",
-      "invariant": "INV-8JGKW8",
-      "origin": {
-        "handoffEntry": "L150-R12",
-        "leaf": "260928-MIK-L150"
-      },
-      "rationale": "The bare-words line for states where the grant cannot be changed.",
-      "role": "unclassified"
-    },
-    {
-      "anchor": {
-        "blob": "29a2217745a3ef92625b3283471bf70a9453482f",
-        "content": "sha256:b88a1deda62ce6974c048b066e27c40b145ba69573b8a5dbe862f46481a78c06",
-        "locator": {
-          "kind": "symbol",
-          "name": "SprintOverviewPage"
+          "name": "OverviewBody"
         }
       },
       "id": "RLZ-RX5RNR",
@@ -308,16 +261,36 @@
         "handoffEntry": "curator-fixed-form-and-optional-blocks",
         "leaf": "260928-MIK-L127"
       },
-      "rationale": "This form page composes its fixed body and shared head instead of authored arbitrary section order.",
+      "rationale": "Shared overview sprint branch fixes slots, not authored section order.",
       "role": "enforcement"
     },
     {
       "anchor": {
-        "blob": "29a2217745a3ef92625b3283471bf70a9453482f",
-        "content": "sha256:8df664e2fe24761610c3c7dca8d0b22e89d0b3cc895f0cce8a67ff0132b0c97a",
+        "blob": "66607c8748bbb4f94154ffd1893a44a92f9486e8",
+        "content": "sha256:ed7a0c93167c5769eaf4affb204c6de5cea315a6a56695986addec3b39db6d58",
         "locator": {
-          "kind": "symbol",
-          "name": "SprintOverview"
+          "end": 120,
+          "kind": "line_range",
+          "start": 100
+        }
+      },
+      "id": "RLZ-SKSCWV",
+      "invariant": "INV-PHG1PR",
+      "origin": {
+        "handoffEntry": "curator-fixed-form-and-optional-blocks",
+        "leaf": "260928-MIK-L127"
+      },
+      "rationale": "Unified page top owns complete-head/chrome-before-Objective ordering.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "66607c8748bbb4f94154ffd1893a44a92f9486e8",
+        "content": "sha256:670847d540f0f43726ac3c7d39f7605969e5bf50813769234c99c03f5f453988",
+        "locator": {
+          "end": 78,
+          "kind": "line_range",
+          "start": 57
         }
       },
       "id": "RLZ-TKQSG2",
@@ -326,16 +299,55 @@
         "handoffEntry": "F5-V02",
         "leaf": "260928-MIK-L127"
       },
-      "rationale": "The entry of the sprint page, mounted under the document's identity in the same way.",
+      "rationale": "The shared TaskReader mounts the same keyed task page for sprint form, with one reset boundary per document.",
       "role": "enforcement"
     },
     {
       "anchor": {
-        "blob": "29a2217745a3ef92625b3283471bf70a9453482f",
-        "content": "sha256:f2efbba262a4e728526f083640d0f63b6bc0181bceaaa9edfa66630ec117de94",
+        "blob": "66607c8748bbb4f94154ffd1893a44a92f9486e8",
+        "content": "sha256:e06dbdcf293ae47e7cf0a5e2ec572b740e1d4c9ca8ae1b272029a40c970b7d59",
         "locator": {
-          "kind": "symbol",
-          "name": "TaskPageRefsReports"
+          "end": 317,
+          "kind": "line_range",
+          "start": 302
+        }
+      },
+      "id": "RLZ-VQJH7N",
+      "invariant": "INV-WNHAWD",
+      "origin": {
+        "handoffEntry": "L168-CUR-M1-21-A013-08",
+        "leaf": "260928-MIK-L168"
+      },
+      "rationale": "usePreparedReaderContent retains only pure register/further-section preparation under reader:taskBodyKey(reference,bodyRevision) after body availability; loading paths prepare directly and live handlers remain outside the retained value.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "66607c8748bbb4f94154ffd1893a44a92f9486e8",
+        "content": "sha256:ed7a0c93167c5769eaf4affb204c6de5cea315a6a56695986addec3b39db6d58",
+        "locator": {
+          "end": 120,
+          "kind": "line_range",
+          "start": 100
+        }
+      },
+      "id": "RLZ-WPHR7X",
+      "invariant": "INV-PHG1PR",
+      "origin": {
+        "handoffEntry": "curator-realizations-INV-PHG1PR",
+        "leaf": "260928-MIK-L162"
+      },
+      "rationale": "The unified native TaskPage top orders complete document head, direct grant and current chrome before the sole Objective for model-derived forms; no retired series chrome is claimed.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "66607c8748bbb4f94154ffd1893a44a92f9486e8",
+        "content": "sha256:c7ecb1fea0bab515ff9199fcbd2223a00fb01ee0c8a502f2c1fdd2538adb1c97",
+        "locator": {
+          "end": 231,
+          "kind": "line_range",
+          "start": 208
         }
       },
       "id": "RLZ-WRFPXT",
@@ -344,16 +356,16 @@
         "handoffEntry": "L127-F5 reports request",
         "leaf": "260928-MIK-L127"
       },
-      "rationale": "The caller that passes the document to the reports request; it now passes the path inside the task root and falls back to docPath.",
+      "rationale": "TaskPageRefsReports passes entry.reference.repository and entry.reference.path to useTaskPageNotes, deriving the directory from that same path. Reports are requested with the task-root-relative document path; no physical docPath fallback remains.",
       "role": "enforcement"
     },
     {
       "anchor": {
-        "blob": "29a2217745a3ef92625b3283471bf70a9453482f",
-        "content": "sha256:2dc94a9040249e616e877b430e19a9224e5bbc533ca2d215940c5a0d800f1866",
+        "blob": "66607c8748bbb4f94154ffd1893a44a92f9486e8",
+        "content": "sha256:3fcb180697451d9eed64fe0956add55c7d7dca6f9c928fadb211dc417699eb63",
         "locator": {
           "kind": "symbol",
-          "name": "MasterPageBody"
+          "name": "OverviewBody"
         }
       },
       "id": "RLZ-Y0W92H",
@@ -362,88 +374,22 @@
         "handoffEntry": "curator-fixed-form-and-optional-blocks",
         "leaf": "260928-MIK-L127"
       },
-      "rationale": "Composes the ordinary master fixed body with optional Non-goals, projected Order and Acceptance in their owned slots, without authored arbitrary section order.",
+      "rationale": "Master branch fixes Order and Design/Acceptance slots.",
       "role": "enforcement"
     }
   ],
   "references": {
-    "1": {
-      "note": "Reader entry dispatch selects the sprint/master/task skeleton for the resolved document.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "29a2217745a3ef92625b3283471bf70a9453482f",
-            "content": "sha256:99b9442530e34de571971d8219d9d993f325bf3afa29fe9b5b43551ebf961da6",
-            "locator": {
-              "kind": "symbol",
-              "name": "TaskContent"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
     "10": {
-      "note": "readerTop’s OverviewTop draws identity, body notice and series/change-set chrome before the bounded objective, then optional Non-goals on non-sprint forms.",
+      "note": "Both overview forms compose Now before the scoped closeout queue and Order.\n\nAnchor: Overview composition",
       "targets": [
         {
           "anchor": {
-            "blob": "dc5f265ecd8e05888dc19f2e710fc5d3cb81da70",
-            "content": "sha256:1d88819d8fcf06e0da4f6e4a718f34e504a3712ee4cbbb5baf663e7591d7fa84",
+            "blob": "66607c8748bbb4f94154ffd1893a44a92f9486e8",
+            "content": "sha256:29550d748345c9594886909274bef53624d4be34fa864039f20a900f7299b5fc",
             "locator": {
-              "end": 43,
+              "end": 145,
               "kind": "line_range",
-              "start": 15
-            },
-            "path": "dashboard/src/panels/detail-panel/readerTop.tsx"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "11": {
-      "note": "TaskReaderPage draws DocHead, the task direct-grant slot, body notice and ReaderHead before ObjectiveLead and optional Non-goals, then Steps.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "29a2217745a3ef92625b3283471bf70a9453482f",
-            "content": "sha256:9c91cc3fc4effef4697e52afd9f07798ca4c7b2f45f56affc9a8aa382bcf93c6",
-            "locator": {
-              "end": 795,
-              "kind": "line_range",
-              "start": 780
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "2": {
-      "note": "Typed form pages retain their index and own-view composition owners.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "29a2217745a3ef92625b3283471bf70a9453482f",
-            "content": "sha256:91a574b8a85a110788822e80737698d9174ee6a637ef1a59915db5cc1ab8df2e",
-            "locator": {
-              "kind": "symbol",
-              "name": "SprintPageBody"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "3": {
-      "note": "The master-less slice fallback retains authored-document navigation and creation ordering.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "29a2217745a3ef92625b3283471bf70a9453482f",
-            "content": "sha256:26a5ae1d241cf92d32d9a1ea2245201b15395d984d1628742c36bdde17015ef1",
-            "locator": {
-              "kind": "symbol",
-              "name": "SliceList"
+              "start": 132
             }
           },
           "kind": "code"
@@ -485,12 +431,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f6529ed9614c2c5b19d9b9a0050bcb2e4f544603",
+            "blob": "8bdfed60355162c97f6db2e53d9d0ab3543220a5",
             "content": "sha256:32ab283daa0ee36e5993928a28412835196db8bb609b3ecf64ef3a04254ad545",
             "locator": {
-              "end": 319,
+              "end": 325,
               "kind": "line_range",
-              "start": 274
+              "start": 280
             },
             "path": "dashboard/src/panels/detail-panel/skeletons.tsx"
           },
@@ -504,22 +450,6 @@
               "end": 986,
               "kind": "line_range",
               "start": 984
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "6": {
-      "note": "Task references/reports use a task-root-relative document address after body loading settles.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "29a2217745a3ef92625b3283471bf70a9453482f",
-            "content": "sha256:f2efbba262a4e728526f083640d0f63b6bc0181bceaaa9edfa66630ec117de94",
-            "locator": {
-              "kind": "symbol",
-              "name": "TaskPageRefsReports"
             }
           },
           "kind": "code"
@@ -560,15 +490,16 @@
       ]
     },
     "9": {
-      "note": "The grant hook synchronizes served content and rejects late replies after identity turnover.",
+      "note": "TaskPage identity is the canonical entry key; the surrounding clock observes only shown entry event times.\n\nAnchor: Entry-keyed page",
       "targets": [
         {
           "anchor": {
-            "blob": "29a2217745a3ef92625b3283471bf70a9453482f",
-            "content": "sha256:b2a7b47c52be123373f4ba9eb98b13a7f65b42f79dce535803073d749137d7d0",
+            "blob": "66607c8748bbb4f94154ffd1893a44a92f9486e8",
+            "content": "sha256:670847d540f0f43726ac3c7d39f7605969e5bf50813769234c99c03f5f453988",
             "locator": {
-              "kind": "symbol",
-              "name": "useDirectGrant"
+              "end": 78,
+              "kind": "line_range",
+              "start": 57
             }
           },
           "kind": "code"

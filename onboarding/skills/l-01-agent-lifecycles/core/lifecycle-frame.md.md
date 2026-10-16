@@ -6,13 +6,13 @@
 
 ## Purpose
 
-The canonical minimal frame records the distinction between contract-owned lifecycle adoption and role-start seat binding. The canonical file owns this retained instruction account; the packaged copy is a propagation target, not a replacement source owner. This card does not assert that the whole core frame is injected into each native role capsule.
+The canonical minimal frame distinguishes task worktree location records and the landing chain's retained contract lifecycle from structural seat binding. The canonical file owns this instruction account; the packaged copy is a propagation target, not a replacement source owner. Source presence does not prove injection into every native capsule.
 
 ## Contract and ownership
 
-The current instruction table gives three lifecycle effects: worktree_start adopts a new contract, worktree_attach re-adopts an existing contract, and close records completed or abandoned. Lifecycle correlation is server-side and anchored in the worktree contract, not model state. A role using neither worktree operation may correctly have no lifecycle; a started role neither adopts its starter's lifecycle nor advances another seat's.
+`worktree_start` creates the task worktree and records its location; `worktree_attach` resolves the contract and reports that worktree. The landing chain records completion or abandonment in its contract. There is no ambient session-adoption, outside-lifecycle dropped-call or system-owned paused rule in the corrected frame.
 
-Seat binding is distinct from lifecycle adoption. The Architect starts without a document; other roles bind to their canonical sprint, master, leaf or exact review selection. The role's owning seat alone uses the task/start/closeout machinery assigned by its role file. The Architect's no-document sentence is the canonical propagation witness carried by RLZ-NB3VVA; it stays on this source, not on the generated package copy.
+`role_start` binds a seat to its canonical document and role. The Architect starts without a document; other seats bind to their sprint, master, leaf or exact review seam. Only the owning seat uses the machinery its own role file assigns. The Architect/leaf-Curator sentences remain the propagation witness for INV-CQCPAD.
 
 ## Trust checkpoint and retained safety boundaries
 
@@ -24,9 +24,14 @@ Provider-start/degradation instructions are retained source residue, not authori
 
 ### Repository-local evidence
 
-- Worktree adoption, terminal record, dropped-call and seat-binding rules; Architect starts without a document. \[1] [1]
 
-- Role-bound trust checkpoint and provider degradation response boundaries; not restored provider execution authority. \[2] [2]
+
+- Worktree location records, the landing contract and structural seat bindings; Architect starts without a document. [1]
+- Opening trust checkpoint and provider-degradation report/order/no-kill boundaries, not restored runtime authority. [2]
+
+
+
+
 
 ### External evidence
 

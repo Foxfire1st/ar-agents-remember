@@ -3,11 +3,31 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "1d0b0d1c2f817ec7e6cfef2a5b075f3f9609c857",
-        "content": "sha256:135f4253cb19c40f3b3a54e1a4490bf9a781ae2512d14accd216b48ce0c61c61",
+        "blob": "6e8be56cd905b97635845cad055ebd18423e0214",
+        "content": "sha256:c3fd8a7c8d84e764e3cfa4bd5bec4492ed7110680cbb54bf0bbf9246ecfd9ee2",
         "locator": {
-          "kind": "symbol",
-          "name": "rowHover"
+          "end": 23,
+          "kind": "line_range",
+          "start": 20
+        }
+      },
+      "id": "RLZ-86SP7E",
+      "invariant": "INV-MGGEBY",
+      "origin": {
+        "handoffEntry": "L168-CUR-M2-21-N26",
+        "leaf": "260928-MIK-L168"
+      },
+      "rationale": "progressFigure consumes canonical entry progress through docProgress(entry), retaining the positive-total display guard instead of another row/document progress model.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "6e8be56cd905b97635845cad055ebd18423e0214",
+        "content": "sha256:138750683e397e1e702b20af58432227a0213665386e2b2699d9fc529e8f7d92",
+        "locator": {
+          "end": 47,
+          "kind": "line_range",
+          "start": 25
         }
       },
       "id": "RLZ-A2WBWC",
@@ -16,104 +36,18 @@
         "handoffEntry": "MIK-R144@v1 rule 3b / one word",
         "leaf": "260928-MIK-L144"
       },
-      "rationale": "rowHover renders the heading, state word, kind, document status/progress/current step, lifecycle facts, worktree and repository. The removed gate/hand-over/chat-seat facts are not current hover inputs.",
+      "rationale": "Formats exactly the actual row hover: title, missing-authored-document notice, state/stage, repository, current step, progress with abandoned/discarded counts and host event when present. It does not render entry.scope, the full document reference path, a literal kind field, or retired lifecycle/worktree status.",
       "role": "propagation-persistence"
-    },
-    {
-      "anchor": {
-        "blob": "1d0b0d1c2f817ec7e6cfef2a5b075f3f9609c857",
-        "content": "sha256:94f8c14c986a19eca896b4d40b6ce26ee3ae51e4e1e7abcc2f29e0f5bd838141",
-        "locator": {
-          "kind": "symbol",
-          "name": "rowWord"
-        }
-      },
-      "id": "RLZ-A8JVG7",
-      "invariant": "INV-7GVWYD",
-      "origin": {
-        "handoffEntry": "MIK-R144@v1 rule 3b / one word",
-        "leaf": "260928-MIK-L144"
-      },
-      "rationale": "rowWord derives rowState and eligible state age only. Awaiting-developer and blocked reporting lifecycles retain band zero; no removed gate, pickup or own-hosted-chat priority is selected.",
-      "role": "primary-authority"
-    },
-    {
-      "anchor": {
-        "blob": "1d0b0d1c2f817ec7e6cfef2a5b075f3f9609c857",
-        "content": "sha256:822d9936305c1f480eca335bd1a5e8cbc3f8aac17869a195b9ee89d478d372e3",
-        "locator": {
-          "kind": "symbol",
-          "name": "lifecycleReported"
-        }
-      },
-      "id": "RLZ-JVVP8S",
-      "invariant": "INV-ZPRPXZ",
-      "origin": {
-        "handoffEntry": "MIK-R144@v1 rule 3b / who speaks",
-        "leaf": "260928-MIK-L144"
-      },
-      "rationale": "Says whether a lifecycle ever reported (not inferred, or an event was seen); the server assumes a paused lifecycle for every task with a worktree, and this is what keeps that assumption off the row.",
-      "role": "enforcement"
-    },
-    {
-      "anchor": {
-        "blob": "1d0b0d1c2f817ec7e6cfef2a5b075f3f9609c857",
-        "content": "sha256:af3c2bc651292e118f5abea6720008e29985a08a8ef08276e97a68acb173eb41",
-        "locator": {
-          "kind": "symbol",
-          "name": "rowState"
-        }
-      },
-      "id": "RLZ-KKKE31",
-      "invariant": "INV-ZPRPXZ",
-      "origin": {
-        "handoffEntry": "MIK-R144@v1 rule 3b / who speaks",
-        "leaf": "260928-MIK-L144"
-      },
-      "rationale": "Decides who speaks for a row: the lifecycle once it reported, else the document's status, else \"not begun\".",
-      "role": "primary-authority"
     }
   ],
   "references": {
     "1": {
-      "note": "State comes from a reporting lifecycle or the document, without mutating either.",
+      "note": "The hover explicitly selects its actual rendered fields; scope and full reference path are not among them. This corrects an earlier Curator wording overstatement, not product behavior.",
       "targets": [
         {
           "anchor": {
-            "blob": "1d0b0d1c2f817ec7e6cfef2a5b075f3f9609c857",
-            "content": "sha256:af3c2bc651292e118f5abea6720008e29985a08a8ef08276e97a68acb173eb41",
-            "locator": {
-              "kind": "symbol",
-              "name": "rowState"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "2": {
-      "note": "The one word is the task state with eligible age; removed outside-attention inputs no longer participate.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "1d0b0d1c2f817ec7e6cfef2a5b075f3f9609c857",
-            "content": "sha256:94f8c14c986a19eca896b4d40b6ce26ee3ae51e4e1e7abcc2f29e0f5bd838141",
-            "locator": {
-              "kind": "symbol",
-              "name": "rowWord"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "3": {
-      "note": "Whole-row hover retains the other current document, lifecycle and worktree facts. [3]",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "1d0b0d1c2f817ec7e6cfef2a5b075f3f9609c857",
-            "content": "sha256:135f4253cb19c40f3b3a54e1a4490bf9a781ae2512d14accd216b48ce0c61c61",
+            "blob": "6e8be56cd905b97635845cad055ebd18423e0214",
+            "content": "sha256:138750683e397e1e702b20af58432227a0213665386e2b2699d9fc529e8f7d92",
             "locator": {
               "kind": "symbol",
               "name": "rowHover"

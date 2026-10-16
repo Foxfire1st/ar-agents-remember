@@ -3,11 +3,12 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "a57ea9ec3e2d3fb2a1ec042829d63dd3f127cc81",
-        "content": "sha256:62472323947b36f6e3aea347ca454404ad005901f0b3493434bdd12642287aa9",
+        "blob": "438d84c0d09d0074e5914af96d7e5babdb5a4eaf",
+        "content": "sha256:8bcd5215a5e3295bd54b46a14005c316002cc7da9ca3a04d7d32d3faf907143d",
         "locator": {
-          "kind": "symbol",
-          "name": "_dependency"
+          "end": 49,
+          "kind": "line_range",
+          "start": 43
         }
       },
       "id": "RLZ-4JWQGP",
@@ -16,16 +17,17 @@
         "handoffEntry": "MIK-R128@v1 recovery gone prerequisite",
         "leaf": "260928-MIK-L162"
       },
-      "rationale": "This adapter copies id and title from the supplied derived MasterOrderTask, maps its abandoned status to gone and otherwise preserves its status, and derives a document path only when its file is present. Missing-reference discovery and child-title versus row-name selection occur upstream in the population builder, not in this adapter.",
+      "rationale": "Publishes id/title and gone only for synthetic missing-task state, with a canonical reference only when a file-bearing document exists; native abandoned tasks do not become synthetic gone.",
       "role": "propagation-persistence"
     },
     {
       "anchor": {
-        "blob": "a57ea9ec3e2d3fb2a1ec042829d63dd3f127cc81",
-        "content": "sha256:632cc2ec8eb280fa8e7f4c26a53c664a4d52fad580ec4fa122dfe63a7c15db71",
+        "blob": "438d84c0d09d0074e5914af96d7e5babdb5a4eaf",
+        "content": "sha256:2418f13dcbe3c56d8bd734befdae7c889bb5f417ce6dcb0e56ac5cc5003728f3",
         "locator": {
-          "kind": "symbol",
-          "name": "build_order_fields"
+          "end": 134,
+          "kind": "line_range",
+          "start": 95
         }
       },
       "id": "RLZ-A87D83",
@@ -34,12 +36,12 @@
         "handoffEntry": "MIK-R128@v1 recovery gone prerequisite",
         "leaf": "260928-MIK-L162"
       },
-      "rationale": "This snapshot adapter publishes the derived graph and both forward and reverse dependency references from the master population without treating missing child JSON as permission to erase a known row.",
+      "rationale": "Builds graph and dependency directions from the addressed master/task population; a missing document supplies no fabricated task state or navigation reference.",
       "role": "propagation-persistence"
     },
     {
       "anchor": {
-        "blob": "a57ea9ec3e2d3fb2a1ec042829d63dd3f127cc81",
+        "blob": "438d84c0d09d0074e5914af96d7e5babdb5a4eaf",
         "content": "sha256:dd94032a5dfc13ca09014f4aa8443c8c4b4da32a782487403ae46714aba8fe2c",
         "locator": {
           "kind": "symbol",
@@ -57,11 +59,12 @@
     },
     {
       "anchor": {
-        "blob": "a57ea9ec3e2d3fb2a1ec042829d63dd3f127cc81",
-        "content": "sha256:632cc2ec8eb280fa8e7f4c26a53c664a4d52fad580ec4fa122dfe63a7c15db71",
+        "blob": "438d84c0d09d0074e5914af96d7e5babdb5a4eaf",
+        "content": "sha256:2418f13dcbe3c56d8bd734befdae7c889bb5f417ce6dcb0e56ac5cc5003728f3",
         "locator": {
-          "kind": "symbol",
-          "name": "build_order_fields"
+          "end": 134,
+          "kind": "line_range",
+          "start": 95
         }
       },
       "id": "RLZ-PH0PGN",
@@ -70,7 +73,7 @@
         "handoffEntry": "MIK-R128@v1 rule 4",
         "leaf": "260928-MIK-L162"
       },
-      "rationale": "This snapshot adapter publishes the derived graph and both forward and reverse dependency references from the master population without treating missing child JSON as permission to erase a known row.",
+      "rationale": "Derives both dependency directions from the declared sibling population and emits id/title, an optional document reference and gone; file-less rows do not acquire an entry reference.",
       "role": "propagation-persistence"
     }
   ],

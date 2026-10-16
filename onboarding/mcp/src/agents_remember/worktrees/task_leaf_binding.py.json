@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "751fd4312a5ebc3c45b5175dd45690d0b6d87c7b",
+        "blob": "cd710bd6a033d75cf06cff17f62b2844f8fc6bdd",
         "content": "sha256:872ee911d4622eb04e8af221ab9508e661f856052b27d915344648f190f8ff1c",
         "locator": {
           "kind": "symbol",
@@ -42,6 +42,23 @@
             "locator": {
               "kind": "symbol",
               "name": "resolve_leaf_task_binding"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "Registration planning preserves or normalizes a typed binding failure before publication.\n\nAnchor: source responsibility",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cd710bd6a033d75cf06cff17f62b2844f8fc6bdd",
+            "content": "sha256:55c8f671a3b4681213619790a40780443701a006a878f56ae6b232a18a3c8b97",
+            "locator": {
+              "end": 207,
+              "kind": "line_range",
+              "start": 178
             }
           },
           "kind": "code"

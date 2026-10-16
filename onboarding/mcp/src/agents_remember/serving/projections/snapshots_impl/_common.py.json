@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "37cd61129911b6adcb58b188b89c24f3848bea28",
+        "blob": "0729e2487febb7fcc3087bbe5a033d9a994ed5b9",
         "content": "sha256:500b2ef89b711edc5ae41bbf1e976f5a36257d90d5086d59340e8dfa9ec08fcc",
         "locator": {
           "kind": "symbol",
@@ -20,11 +20,12 @@
     },
     {
       "anchor": {
-        "blob": "37cd61129911b6adcb58b188b89c24f3848bea28",
+        "blob": "0729e2487febb7fcc3087bbe5a033d9a994ed5b9",
         "content": "sha256:38555019cde060fc859dc1909193cc15341e8b6ebcfded13c0f49e34d5c3a9c8",
         "locator": {
-          "kind": "symbol",
-          "name": "_canonical_task_json_candidates"
+          "end": 107,
+          "kind": "line_range",
+          "start": 87
         }
       },
       "id": "RLZ-7Q8K452E",
@@ -37,7 +38,7 @@
     },
     {
       "anchor": {
-        "blob": "37cd61129911b6adcb58b188b89c24f3848bea28",
+        "blob": "0729e2487febb7fcc3087bbe5a033d9a994ed5b9",
         "content": "sha256:45b54e5ed6dd2be8acd7f18f3f7ee57c6fae68f5832298a4beb58681b1bdc554",
         "locator": {
           "kind": "symbol",
@@ -51,6 +52,25 @@
       },
       "rationale": "Enumerates task documents as the direct *.json entries of each tasks/<repository>/<task>/ folder, drops any path through 0_archive or enclosures, and sorts only those entries. Notes, report and enclosure folders are never walked just to be filtered afterwards.",
       "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "0729e2487febb7fcc3087bbe5a033d9a994ed5b9",
+        "content": "sha256:128d80f70959b34f4d52fa7cc2e4442fa137a4564b1182cbbb591376c0aaf526",
+        "locator": {
+          "end": 221,
+          "kind": "line_range",
+          "start": 197
+        }
+      },
+      "id": "RLZ-EMQ775",
+      "invariant": "INV-D9T2BC",
+      "origin": {
+        "handoffEntry": "L168-CUR-M1-21-A013-15",
+        "leaf": "260928-MIK-L168"
+      },
+      "rationale": "surface_paths distinguishes an absent directory from a failed listing: non-missing OSError marks observation.complete=False, preventing negative evidence from authorizing cleanup.",
+      "role": "enforcement"
     }
   ],
   "references": {
@@ -59,7 +79,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "37cd61129911b6adcb58b188b89c24f3848bea28",
+            "blob": "0729e2487febb7fcc3087bbe5a033d9a994ed5b9",
             "content": "sha256:45b54e5ed6dd2be8acd7f18f3f7ee57c6fae68f5832298a4beb58681b1bdc554",
             "locator": {
               "kind": "symbol",
@@ -75,7 +95,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "37cd61129911b6adcb58b188b89c24f3848bea28",
+            "blob": "0729e2487febb7fcc3087bbe5a033d9a994ed5b9",
             "content": "sha256:38555019cde060fc859dc1909193cc15341e8b6ebcfded13c0f49e34d5c3a9c8",
             "locator": {
               "kind": "symbol",
@@ -91,7 +111,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "37cd61129911b6adcb58b188b89c24f3848bea28",
+            "blob": "0729e2487febb7fcc3087bbe5a033d9a994ed5b9",
             "content": "sha256:500b2ef89b711edc5ae41bbf1e976f5a36257d90d5086d59340e8dfa9ec08fcc",
             "locator": {
               "kind": "symbol",
@@ -123,12 +143,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "37cd61129911b6adcb58b188b89c24f3848bea28",
+            "blob": "0729e2487febb7fcc3087bbe5a033d9a994ed5b9",
             "content": "sha256:35d2c236b7be1a224a5fd1487bf4e8bfbe84f319d762016f3b6343e8cf035a49",
             "locator": {
-              "end": 71,
+              "end": 65,
               "kind": "line_range",
-              "start": 65
+              "start": 59
             }
           },
           "kind": "code"
@@ -140,7 +160,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4bd9d1ac3990250728549ef5c1dcb9b3360fe826",
+            "blob": "6524de15cb8e3481454eaa8e94d67a6e646fa201",
             "content": "sha256:e4e7373a4db7d90ca804d5ca71f2dc4ad4f836df93ffe5d686418a483ba0799a",
             "locator": {
               "kind": "symbol",

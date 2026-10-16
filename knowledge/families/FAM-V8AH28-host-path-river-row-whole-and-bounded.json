@@ -3,9 +3,9 @@
     "criteria": [
       "joint_guarantee"
     ],
-    "justification": "Writer, caller snapshot, choke division, bound, write-free stream and panel head together promise one attributed bounded row per completed call with a truthful head under the conditional domain: failed writes are counted in dropped with no cross-restart promise, and active earlier-kind lifecycle calls use that branch; no single place promises the whole chain."
+    "justification": "The workspace writer, once-read caller, shared completion choke, admission bound, noncreating stream and maximum-time panel head jointly preserve an attributed bounded completion/feed account. None alone closes that chain; failed writes remain counted only under the existing process-local rule, and the removed lifecycle branch contributes no current obligation."
   },
-  "guarantee": "Every tool call completed on the host path lands exactly one facts-only row in the workspace river, attributed to its once-read caller and its started or addressed role and admitted under the river bound — unless the write fails, in which case the loss is counted in dropped on the next landed row and nothing is promised across a restart; calls owned by an active earlier-kind lifecycle use that branch instead. The panel names who called and when the river was last fed, while the stream itself writes nothing and deletes nothing.",
+  "guarantee": "A tool call completed on the host path uses the one workspace-river completion writer for one bounded facts-only event attributed to its once-read caller and its started or addressed role. A failed admitted write is counted in dropped on the next landed row, with no cross-restart promise. There is no current active-lifecycle alternative writer: the retired two-branch member remains historical provenance only. The panel reports who called and the latest feed time, while the shared-lock/missing-lock stream creates, rewrites and deletes no observer file.",
   "id": "FAM-V8AH28",
   "members": [
     "INV-18B62F",
@@ -26,7 +26,7 @@
     "leaf": "260928-MIK-L114",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "routes": [
     "mcp/src/agents_remember/observer",
     "mcp/src/agents_remember/application",

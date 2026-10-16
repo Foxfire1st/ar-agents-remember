@@ -15,9 +15,8 @@ produced it.
 
 ### Logic
 
-`initialize_mcp_application` installs worktree-bound ambient lifecycle state and the tool writer
-without reading or migrating removed durable stores. Since 260928-MIK-L114 it also installs the
-workspace-river tool writer (`build_tool_event_writer`): the launch binding and its task
+`initialize_mcp_application` installs the workspace-river tool writer (`build_tool_event_writer`)
+without installing ambient session state or reading or migrating removed durable stores: the launch binding and its task
 document are snapshotted once here, so a server started a second ago writes at its first
 call; an unreadable binding changes nothing about startup. `mcp_serving_build_payload` converts the cached serving
 stamp to the strict shared wire model at the application boundary; MCP registration never imports
@@ -42,7 +41,7 @@ migration path.
 ### Invariants And Boundaries
 
 - MCP startup neither reads nor migrates the retired notifier/seat stores.
-- Worktree ambient state and the workspace Event River writer remain owned collaborators.
+- The workspace Event River writer is the application collaborator; session lifecycle state is not installed.
 - No dual-schema reader is installed.
 - MCP transport reaches serving identity through this application entry point only.
 
@@ -52,5 +51,5 @@ None.
 
 ## Evidence
 
-- Retained ambient/tool-writer collaborators install without removed-store migration. [1]
+- The workspace tool writer installs without an ambient lifecycle or removed-store migration. [1]
 - MCP ownership declaration and optional dashboard autostart precede application initialization. [2]

@@ -3,11 +3,12 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "39da481b0833efb0af34ffefac5d90eebd5c81aa",
-        "content": "sha256:7d5201880d9bad6a4427795595441b98a39ddec3f0a128eb5d7885118df15a52",
+        "blob": "ff9215b1a2f313985809b74a48a92580c95cea2c",
+        "content": "sha256:d60420abbb49571da0d8e06fceed50ea60ec3ac8b7d5a287a18497fc605c7595",
         "locator": {
-          "kind": "symbol",
-          "name": "publish_role_agent"
+          "end": 172,
+          "kind": "line_range",
+          "start": 139
         }
       },
       "id": "RLZ-VXB4Y7",
@@ -26,7 +27,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "39da481b0833efb0af34ffefac5d90eebd5c81aa",
+            "blob": "ff9215b1a2f313985809b74a48a92580c95cea2c",
             "content": "sha256:e3d77c2abcfa749bb54917053d4a7912ccb7856d26e6383a6c667489509e7a02",
             "locator": {
               "kind": "symbol",

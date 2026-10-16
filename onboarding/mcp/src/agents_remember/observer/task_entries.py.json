@@ -1,0 +1,122 @@
+{
+  "path": "mcp/src/agents_remember/observer/task_entries.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "9e4b2543510affa9e5cc0d4f7e4ee8b261894051",
+        "content": "sha256:b925dcd46887d9d1f145bcfbf499a5ead0e8ae231c2927f6bb436051d0c3534b",
+        "locator": {
+          "kind": "symbol",
+          "name": "build_task_entries"
+        }
+      },
+      "id": "RLZ-CE32HP",
+      "invariant": "INV-MGGEBY",
+      "origin": {
+        "handoffEntry": "L168-W-R167-13-14",
+        "leaf": "260928-MIK-L168"
+      },
+      "rationale": "This producer joins document, worktree and host facts once.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "9e4b2543510affa9e5cc0d4f7e4ee8b261894051",
+        "content": "sha256:348ca25847f5af1de648007ac662ec749f8e0b70d74d88d9bdf446f78299339e",
+        "locator": {
+          "kind": "symbol",
+          "name": "task_state"
+        }
+      },
+      "id": "RLZ-FJEEV2",
+      "invariant": "INV-VDWN33",
+      "origin": {
+        "handoffEntry": "L168-W-R167-03-07",
+        "leaf": "260928-MIK-L168"
+      },
+      "rationale": "This function normalizes native stages and host activity once before any consumer sees the entry.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "9e4b2543510affa9e5cc0d4f7e4ee8b261894051",
+        "content": "sha256:b925dcd46887d9d1f145bcfbf499a5ead0e8ae231c2927f6bb436051d0c3534b",
+        "locator": {
+          "kind": "symbol",
+          "name": "build_task_entries"
+        }
+      },
+      "id": "RLZ-VHJM2M",
+      "invariant": "INV-WQ8YGE",
+      "origin": {
+        "handoffEntry": "L168-W-R167-11",
+        "leaf": "260928-MIK-L168"
+      },
+      "rationale": "This single join decides parent/ordered children from the native document sources.",
+      "role": "primary-authority"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Produce the single server-side join of authored task stage, worktree binding, host activity, membership and counts.\n\nAnchor: the task-entry producer",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9e4b2543510affa9e5cc0d4f7e4ee8b261894051",
+            "content": "sha256:0250a816825917b58711fa06231313fba18a8b8374ef69afba824d905bad44df",
+            "locator": {
+              "end": 245,
+              "kind": "line_range",
+              "start": 61
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Task event time is served; display age is computed by the browser.\n\nAnchor: event time and display age",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9e4b2543510affa9e5cc0d4f7e4ee8b261894051",
+            "content": "sha256:26710935a7f43bb1c69e2474e888289148018fe1f059ff53cbf4aaafeb7324d6",
+            "locator": {
+              "end": 83,
+              "kind": "line_range",
+              "start": 61
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "cb7649c76f226f56141cd36720b382cea60352c7",
+            "content": "sha256:e345bcf52910f1d43fcff54700f85ea691a6b896120f54a78d4be96269c1b309",
+            "locator": {
+              "end": 547,
+              "kind": "line_range",
+              "start": 540
+            },
+            "path": "mcp/src/agents_remember/observer/projection.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "17da14e723222a8d50b4ed6f0595390ab1fe1f6a",
+            "content": "sha256:73f45554796ee15769aee751c8a9f37a53c8aecd7cd5bd6b09a933b2b36ab464",
+            "locator": {
+              "end": 154,
+              "kind": "line_range",
+              "start": 124
+            },
+            "path": "dashboard/src/panels/detail-panel/pageParts.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

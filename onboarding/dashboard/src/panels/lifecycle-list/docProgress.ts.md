@@ -6,14 +6,12 @@
 
 ## Purpose
 
-Adapt a task document’s existing progress facts into the sidebar’s numeric figure and noun.
+Adapt served TaskEntry major-step or child-count facts into sidebar/page numeric progress.
 
 ## Code Commentary
 
-Non-master documents delegate to taskStepProgress and use Steps done. Masters delegate to subTaskProgress, retain a separate discarded default of zero and use Tasks completed.
+Task summaries read entry.stepsDone/stepsTotal and use Steps done. Parents use childProgress: completed over planned+started+completed, with aborted outside the denominator and summary.discardedCount separately defaulted to zero. No local sub-task/series recount remains.
 
 The adapter does not recount nested work, author major-step completion or decide lifecycle readiness. Numeric progress and the sidebar’s cached step-dot payload are distinct presentation inputs.
 
 ## Evidence
-
-- Progress adaptation delegates to existing task/master helpers and keeps discarded facts separate. [1]

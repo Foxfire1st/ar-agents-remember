@@ -14,43 +14,22 @@ diagnostics, raw diagnostic kind, and visibility/noise classification.
 
 ### Logic
 
-`buildEventSummaryContext` gathers the existing lifecycle, enclosure, and task-document identity
-inputs from the dashboard store and precomputes `enclosuresByLifecycle` with
-`groupEnclosuresByLifecycle` plus `taskDocsByLifecycle` from projected task documents. `summarizeEvent`
-dispatches only on known event kinds:
+`summarizeEvent(event)` dispatches directly on known kinds with no projection context, lifecycle label join or readiness gate.
 
-- `read.packet` preserves the original full-path hover behavior and uses the read packet's
-  facts-only `data.files[].path` and `data.repoId`.
-- `tool.completed` reads the explicit `data.tool`, `data.ok`, and `data.tokens` fields, maps common
-  MCP tool ids to readable action text, and keeps unknown tool ids on a mechanical humanized fallback.
-- `lifecycle.phase-changed` reads `data.phase` and renders the destination phase through a fixed
-  phase-label table.
-- lifecycle block/gate rows read structured `ask.prompt`, `ask.question`, or `ask.ask` fields so the
-  waiting request is the row's primary text.
-- `lifecycle.heartbeat` returns `visibility: "hidden"` so the default river does not drown useful
-  activity in liveness noise.
-- unknown event kinds fall back to raw `event.kind` and raw diagnostic title text.
+- read.packet uses explicit file paths/repo facts and full-path hover.
+- tool.completed uses explicit tool, caller, outcome and target fields; known roles get friendly labels, unknown roles/tasks remain verbatim.
+- Unknown kinds, including retained historical lifecycle events, remain raw diagnostic kinds rather than guessed state changes. Their displayed context uses the explicit enclosure first and the repository only when no enclosure is present (`enclosure ?? repoId`); it does not repeat the repository beside the enclosure or reintroduce a task-state join.
 
-`eventSummaryContextReady(event, context)` is the display-shaping gate used by `EventRiver.tsx`.
-Lifecycle-bound rows require a live lifecycle, an explicit event enclosure present in the enclosure map,
-or at least one projected task document for the lifecycle. Enclosure-only rows require that enclosure
-to exist. Unbound workspace rows remain immediately displayable. This keeps raw lifecycle ids from
-painting during reload before the projection context catches up.
+No eventSummaryContextReady gate remains. Displaying a raw event does not depend on task, lifecycle or enclosure projection arrival.
 
-`lifecycleContext` reuses `taskDocsForLifecycle`, `findLifecycleEnclosure`, `taskLabel`, and
-`taskDocumentLabel` so event rows share the same task/leaf labels as Operations and Detail. Its label
-fallback order is live lifecycle projection, explicit event enclosure, direct task documents grouped
-by lifecycle id, then the raw event enclosure/lifecycle id. That lets retained event-history rows keep
-the task name even after the corresponding live lifecycle projection disappears. `formatEventTime`
-uses `Intl.DateTimeFormat` and falls back to `-` for malformed timestamps; it does not slice ISO
-strings.
+Task/caller context comes from the event’s explicit fields, not task identity helper joins. formatEventTime uses Intl.DateTimeFormat and returns - for malformed timestamps.
 
 ### 260928-MIK-L114 Host-Path Caller Rows
 
 `summarizeToolCompleted` divides on caller facts: rows carrying them show who called
 (role and task, or chat with harness), the outcome as done / refused with code / reached
 state, and the started or addressed role for role tools. Earlier-kind rows carry no caller
-facts and keep their base ok/failed labels with lifecycle context. Unknown roles and tasks
+facts and keep their base ok/failed labels without inventing caller or lifecycle context. Unknown roles and tasks
 render verbatim; only known roles keep friendly labels.
 
 ### Conventions
@@ -61,16 +40,9 @@ fallbacks are intentionally honest and diagnostic.
 
 ### Invariants And Boundaries
 
-- Protocol actor `model` displays as `agent`; the raw actor remains available in the hover
-  diagnostics.
-- Trust provenance remains visible in row metadata and row colour.
-- Task labels come from existing task identity helpers, not a second lifecycle-id-to-task-name
-  resolver; raw lifecycle ids are display fallbacks only after projection, enclosure, and task-document
-  labels are unavailable.
-- Heartbeat events stay in the store and raw stream; only the default Event River render hides them.
-- Lifecycle/enclosure-bound rows are displayable only after their summary context is ready; this is a
-  presentation gate, not raw-event deletion.
-- Raw unknown kinds must remain visible as raw kinds rather than guessed prose.
+- model displays as agent; raw actor/kind and trust stay visible.
+- Explicit caller/target roles and legacy outcomes survive.
+- Unknown kinds remain verbatim, without lifecycle/context handlers.
 
 ## Evidence
 
@@ -82,14 +54,9 @@ repository's observer event contract.
 ### Repo-Internal References
 
 - The raw observer event envelope rendered by this formatter. [1]
-- Existing task identity helpers reused for lifecycle-attached event labels, including task-document title fallback. [2]
-- Ambient lifecycle emits `tool.completed`, `read.packet`, lifecycle phase, and block events with explicit fields. [3]
 - The Event River component consumes these summaries for rendering. [4]
-- Focused render coverage proves lifecycle-only history rows use task document labels instead of raw lifecycle ids. [5]
-- `eventSummaryContextReady` gates lifecycle/enclosure-bound rows on available lifecycle, enclosure, or task-document context. [6]
-- `EventRiver` drops not-ready rows before calling `summarizeEvent`. [7]
-- Lifecycle-only history rows use task-document labels instead of raw lifecycle ids once context exists. [8]
-- A lifecycle-bound row stays hidden until task-document context arrives, then renders. [9]
+
+- Unknown-event context prefers the explicit enclosure and otherwise the repository; the existing assertion checks enclosure presence and repository absence. [14]
 
 ### Cross-Repo References
 
@@ -102,13 +69,20 @@ Existing unknown-tool humanization statement remains correct. TOOL_LABELS loses 
 
 ### Maintenance boundaries
 
-Extend the tool.completed paragraph with exact removed label-map scope and historical fallback behavior; preserve event visibility/context-ready rules and L114 caller/outcome grammar. Do not say tool history is hidden or that all lifecycle event kinds are retired; label-map removal is not event deletion.
+Removed tool labels take the ordinary mechanical humanization fallback; removing a label is not deleting event history. The only specialized event summarizers are read.packet and tool.completed; lifecycle phase/heartbeat/context handling is absent.
 
 Source/test/fixture inspection is not a fresh mounted capture or a passing test run.
 Historical provider-shaped input data and retained compatibility definitions do not
 restore removed provider visuals or tool exposure.
 
-- Existing unknown-tool humanization statement remains correct. TOOL_LABELS loses cgc callers/callees/complexity/dependenc — source ownership, not executed visual proof. [10]
-- Existing unknown-tool humanization statement remains correct. TOOL_LABELS loses cgc callers/callees/complexity/dependenc — source ownership, not executed visual proof. [11]
-- Existing unknown-tool humanization statement remains correct. TOOL_LABELS loses cgc callers/callees/complexity/dependenc — source ownership, not executed visual proof. [12]
-- Existing unknown-tool humanization statement remains correct. TOOL_LABELS loses cgc callers/callees/complexity/dependenc — source ownership, not executed visual proof. [13]
+
+- The current friendly-tool label map omits removed tool IDs; retained event history is not removed. [10]
+
+
+- An unlisted tool ID uses mechanical humanization rather than reinstating removed tool exposure. [11]
+
+
+- Only read.packet and tool.completed have specialized summary handlers; other kinds use the honest unknown-kind fallback. [12]
+
+
+- The tool.completed formatter preserves explicit failure, caller, target and outcome facts without a task-state projection join. [13]

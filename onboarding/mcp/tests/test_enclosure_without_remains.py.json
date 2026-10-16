@@ -3,11 +3,12 @@
   "proves": [
     {
       "anchor": {
-        "blob": "5edfe64ea4e8df716dd4464aab09d108cff02df8",
+        "blob": "dbe9fc515e4c555a8ec218ec404f423c7eb7703f",
         "content": "sha256:01c9cf14ce21ea60fbafdfbef5add1f606e6d811782915c728a212dfe68ad49c",
         "locator": {
-          "kind": "symbol",
-          "name": "test_external_memory_branch_stays_outside_exception"
+          "end": 439,
+          "kind": "line_range",
+          "start": 396
         }
       },
       "facet": "An external memory branch stays outside the no-remains exception.",
@@ -20,7 +21,7 @@
     },
     {
       "anchor": {
-        "blob": "5edfe64ea4e8df716dd4464aab09d108cff02df8",
+        "blob": "dbe9fc515e4c555a8ec218ec404f423c7eb7703f",
         "content": "sha256:412ed3389506b496cf9838d9b8feea522814ca26cd3e4acf132b24abfd95eb1e",
         "locator": {
           "kind": "symbol",
@@ -37,7 +38,7 @@
     },
     {
       "anchor": {
-        "blob": "5edfe64ea4e8df716dd4464aab09d108cff02df8",
+        "blob": "dbe9fc515e4c555a8ec218ec404f423c7eb7703f",
         "content": "sha256:01c9cf14ce21ea60fbafdfbef5add1f606e6d811782915c728a212dfe68ad49c",
         "locator": {
           "kind": "symbol",
@@ -54,11 +55,12 @@
     },
     {
       "anchor": {
-        "blob": "5edfe64ea4e8df716dd4464aab09d108cff02df8",
+        "blob": "dbe9fc515e4c555a8ec218ec404f423c7eb7703f",
         "content": "sha256:8b9f69a795c2d3b08a55b62fe932c6c8721da4456d5734033edb4191dfec27dd",
         "locator": {
-          "kind": "symbol",
-          "name": "test_abandon_real_run_persists_reason_in_contract"
+          "end": 350,
+          "kind": "line_range",
+          "start": 309
         }
       },
       "facet": "A no-remains abandon real run persists its reason in the contract.",
@@ -71,11 +73,12 @@
     },
     {
       "anchor": {
-        "blob": "5edfe64ea4e8df716dd4464aab09d108cff02df8",
+        "blob": "dbe9fc515e4c555a8ec218ec404f423c7eb7703f",
         "content": "sha256:412ed3389506b496cf9838d9b8feea522814ca26cd3e4acf132b24abfd95eb1e",
         "locator": {
-          "kind": "symbol",
-          "name": "test_cleanup_real_run_persists_reason_in_contract"
+          "end": 393,
+          "kind": "line_range",
+          "start": 353
         }
       },
       "facet": "A no-remains cleanup real run persists its reason in the contract.",
@@ -88,7 +91,7 @@
     },
     {
       "anchor": {
-        "blob": "5edfe64ea4e8df716dd4464aab09d108cff02df8",
+        "blob": "dbe9fc515e4c555a8ec218ec404f423c7eb7703f",
         "content": "sha256:8b9f69a795c2d3b08a55b62fe932c6c8721da4456d5734033edb4191dfec27dd",
         "locator": {
           "kind": "symbol",
@@ -145,6 +148,38 @@
             "content": "sha256:97bde096e591af18159844ee6c9ac395ae9feb7e2b4640807d0772f92a353065",
             "locator": {
               "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "Failed terminal publication restores captured task/master bytes; retry publishes matching abandoned stages.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dbe9fc515e4c555a8ec218ec404f423c7eb7703f",
+            "content": "sha256:cbbe0efa98fa51873fe9b51bf20bf4272f421080b245b7b78d93549a5830646e",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_abandon_restores_task_and_master_if_contract_publication_fails"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "Invalid parent stage refuses preview/apply without changing the pending contract.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dbe9fc515e4c555a8ec218ec404f423c7eb7703f",
+            "content": "sha256:629359ae4624dd9bc92b7bc1b385725e0ccf5b62fa9f40a46a4c519c5df87086",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_invalid_parent_refuses_remains_free_abandon_without_publication"
             }
           },
           "kind": "test"

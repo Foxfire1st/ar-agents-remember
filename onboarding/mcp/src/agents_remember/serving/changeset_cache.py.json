@@ -1,0 +1,129 @@
+{
+  "path": "mcp/src/agents_remember/serving/changeset_cache.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "fd2e21cf15548f5d312e19dede561f645cac01df",
+        "content": "sha256:c33609e42cf46025ca9c8376a8bbc40e8c5dd70d94b2a117c4085574e2268b0b",
+        "locator": {
+          "kind": "symbol",
+          "name": "cached_read"
+        }
+      },
+      "id": "RLZ-340WGH",
+      "invariant": "INV-ZNXX7H",
+      "origin": {
+        "handoffEntry": "L168-W-R168-PRESERVATION",
+        "leaf": "260928-MIK-L168"
+      },
+      "rationale": "This common read path declines retention when a stable generation cannot be proved.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "fd2e21cf15548f5d312e19dede561f645cac01df",
+        "content": "sha256:169f1464d130b73cfd7185885fee84764bf147cdc4a92feef92c86339e338f14",
+        "locator": {
+          "kind": "symbol",
+          "name": "ChangesetCache"
+        }
+      },
+      "id": "RLZ-4XGKMJ",
+      "invariant": "INV-QK8XNM",
+      "origin": {
+        "handoffEntry": "L168-W-R168-06",
+        "leaf": "260928-MIK-L168"
+      },
+      "rationale": "Unchanged viewer reads are answered from exact-generation retained results.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "fd2e21cf15548f5d312e19dede561f645cac01df",
+        "content": "sha256:169f1464d130b73cfd7185885fee84764bf147cdc4a92feef92c86339e338f14",
+        "locator": {
+          "kind": "symbol",
+          "name": "ChangesetCache"
+        }
+      },
+      "id": "RLZ-SZGGGM",
+      "invariant": "INV-7TMGB0",
+      "origin": {
+        "handoffEntry": "L168-W-R168-02",
+        "leaf": "260928-MIK-L168"
+      },
+      "rationale": "The app-owned LRU binds retained values to their observed input generation.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "fd2e21cf15548f5d312e19dede561f645cac01df",
+        "content": "sha256:169f1464d130b73cfd7185885fee84764bf147cdc4a92feef92c86339e338f14",
+        "locator": {
+          "kind": "symbol",
+          "name": "ChangesetCache"
+        }
+      },
+      "id": "RLZ-T4017A",
+      "invariant": "INV-GDWJKR",
+      "origin": {
+        "handoffEntry": "L168-W-R168-07",
+        "leaf": "260928-MIK-L168"
+      },
+      "rationale": "The server's change-set/generation tables share the1024entry bound.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "New results are admitted only when all captured inputs remain readable and equal after the request.\n\nAnchor: `_Read.finish`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fd2e21cf15548f5d312e19dede561f645cac01df",
+            "content": "sha256:ed0baf6a887ccec1d1be2f92113fc5df888b49833f50ba9af8996280965747a6",
+            "locator": {
+              "end": 92,
+              "kind": "line_range",
+              "start": 84
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "All three retained tables are bounded and LRU.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fd2e21cf15548f5d312e19dede561f645cac01df",
+            "content": "sha256:169f1464d130b73cfd7185885fee84764bf147cdc4a92feef92c86339e338f14",
+            "locator": {
+              "kind": "symbol",
+              "name": "ChangesetCache"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Reuse requires exact observed generations and returns isolated copies; otherwise native computation runs.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fd2e21cf15548f5d312e19dede561f645cac01df",
+            "content": "sha256:c33609e42cf46025ca9c8376a8bbc40e8c5dd70d94b2a117c4085574e2268b0b",
+            "locator": {
+              "kind": "symbol",
+              "name": "cached_read"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

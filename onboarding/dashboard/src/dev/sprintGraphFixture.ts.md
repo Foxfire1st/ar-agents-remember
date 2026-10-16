@@ -16,7 +16,7 @@ fixture drives the screenshot-able sprint page.
 
 ### Logic
 
-`SPRINT_GRAPH_TASK_DOC` is a `taskDoc(...)` master with `executionGraphView` nodes: Master
+`SPRINT_GRAPH_TASK_ENTRY` is a TaskEntry whose nested summary carries `executionGraphView` nodes: Master
 A's `seg1` (wave 1, `in-flight`, two leaves), the atomic lump F (wave 2, `waiting`,
 predecessor = Master A with reason "the shared framework must land first"), and Master A's
 `seg2` (wave 3, `ready`, predecessor = atomic F with reason "the atomic block gates the
@@ -34,7 +34,7 @@ It seeds a disposable scheduling view; it does not model a mutable blocker or ca
 
 ### Repo-Internal References
 
-- The seeded sprint document. [1]
+- The seeded native sprint entry carries the segmented execution graph in its summary. [1]
 - The seeded sprint queue. [2]
 - The page that consumes the fixture. [3]
 - The wire model the fixture shapes. [4]

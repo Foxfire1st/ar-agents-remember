@@ -20,10 +20,9 @@
     "leaf": "260928-MIK-L71",
     "task": "260928-MIK"
   },
-  "revision": 2,
+  "revision": 3,
   "routes": [
     "dashboard/src/cockpit",
-    "dashboard/src/test/fixtures",
     "docs",
     "skills/c-13-install-and-onboard",
     "skills/l-01-agent-lifecycles",

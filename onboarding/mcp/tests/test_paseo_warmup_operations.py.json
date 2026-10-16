@@ -3,11 +3,12 @@
   "proves": [
     {
       "anchor": {
-        "blob": "899b0a562147bd5947f52a9cea0dfbea8d130e1c",
-        "content": "sha256:35809d7cdf13b820f1f4064dfab9c57cfee2bb7cd80639d4127838ff6c10207e",
+        "blob": "ff2da9cc714f3cca092eb0e4f3c7ff2aa4318145",
+        "content": "sha256:2a64cacb0be5be2b4054ebdfbc52cb4f40bd740e0c5a01a285f4f70641606d2e",
         "locator": {
-          "kind": "symbol",
-          "name": "WarmupOperationTests.test_cancelled_watch_intake_releases_admitted_claim_after_worker_drains"
+          "end": 177,
+          "kind": "line_range",
+          "start": 129
         }
       },
       "facet": "The exact controlled source case cancelled watch intake releases admitted claim after worker drains; this is a focused executable facet, not installed-runtime or full performance acceptance.",
@@ -20,7 +21,7 @@
     },
     {
       "anchor": {
-        "blob": "92ec6d7f9b195e07b2508742199001ad9cfb9f4c",
+        "blob": "ff2da9cc714f3cca092eb0e4f3c7ff2aa4318145",
         "content": "sha256:915d4bf531b1f07a7313075c8c9d7ed38605f21a9bfcb7954d0bfbbdcd2d6b2e",
         "locator": {
           "kind": "symbol",
@@ -37,11 +38,12 @@
     },
     {
       "anchor": {
-        "blob": "92ec6d7f9b195e07b2508742199001ad9cfb9f4c",
+        "blob": "ff2da9cc714f3cca092eb0e4f3c7ff2aa4318145",
         "content": "sha256:0c9c5124ac1cca725bc22d5db26446a9969c316c7b39a32aa6b6feaf7c9c89d8",
         "locator": {
-          "kind": "symbol",
-          "name": "WarmupOperationTests.test_claim_and_progress_failure_release_and_retry_the_same_start"
+          "end": 322,
+          "kind": "line_range",
+          "start": 304
         }
       },
       "facet": "The named controlled case forces failure of the initial claim-record publication, checks that the start is not consumed, and checks early-holder retirement and same-start retry with a new generation. It does not separately force post-admission progress publication failure.",

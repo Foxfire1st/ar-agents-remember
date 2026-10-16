@@ -7,12 +7,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d0806d69b60e940b8234dd86274b0cf639d05eb0",
+            "blob": "d58c63ecee8f999fb207fe2c6b4fd35956213d82",
             "content": "sha256:3800c4595e1f9a984649face53b7226fad3aae0895f842726784da91c9f124bb",
             "locator": {
-              "end": 411,
+              "end": 459,
               "kind": "line_range",
-              "start": 369
+              "start": 417
             },
             "path": "mcp/src/agents_remember/worktrees/reopen.py"
           },
@@ -63,7 +63,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4a28c7892ba5c9c680f2935747fb0edd11dab426",
+            "blob": "ea5a1d83e55e71447ccf114937714f3e9275c8fe",
             "content": "sha256:07aa32c0e77d63c049371f15d5886529004d1e17196a290f9ee4b2fd00c8539b",
             "locator": {
               "kind": "symbol",
@@ -75,7 +75,7 @@
         },
         {
           "anchor": {
-            "blob": "4a28c7892ba5c9c680f2935747fb0edd11dab426",
+            "blob": "ea5a1d83e55e71447ccf114937714f3e9275c8fe",
             "content": "sha256:5a6fa392e1f7610062dd278030098648d72aabda7cf4cacb138194006dfed9b2",
             "locator": {
               "kind": "symbol",
@@ -87,7 +87,7 @@
         },
         {
           "anchor": {
-            "blob": "4a28c7892ba5c9c680f2935747fb0edd11dab426",
+            "blob": "ea5a1d83e55e71447ccf114937714f3e9275c8fe",
             "content": "sha256:468dab315dedf798ee9bcaa4564f178effddecf0072eadc49a84465f03a93d45",
             "locator": {
               "kind": "symbol",
@@ -121,7 +121,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "fc7e84684d806b4888cf351ade0259f92571b5ee",
+            "blob": "94d6fc691485163fc02f117a88b8cd350ecc9889",
             "content": "sha256:ded9434595ee95aa22bb7a4663f23ce66d79f845bb753c206d9512e29970ee22",
             "locator": {
               "end": 25,
@@ -169,6 +169,52 @@
         }
       ]
     },
+    "16": {
+      "note": "Start and reattachment share one validating task-fact publisher for enclosure registration plus stage; dry-run performs no publication.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a83e3b0ba83b697ae4190cd329fec12aefa5f8f7",
+            "content": "sha256:645749bc10470be4dc5c58ed620ffce1275f51c22b7d7ceedddf24aacd7a5758",
+            "locator": {
+              "kind": "symbol",
+              "name": "publish_start_task_facts"
+            },
+            "path": "mcp/src/agents_remember/worktrees/start_task_publication.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "17": {
+      "note": "The canonical wrapper invokes the task-domain enclosure-registration planner; start's lifecycle-restamp planner call is a read-only blocker preflight.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cd710bd6a033d75cf06cff17f62b2844f8fc6bdd",
+            "content": "sha256:55c8f671a3b4681213619790a40780443701a006a878f56ae6b232a18a3c8b97",
+            "locator": {
+              "kind": "symbol",
+              "name": "plan_current_leaf_enclosure_registration"
+            },
+            "path": "mcp/src/agents_remember/worktrees/task_leaf_binding.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f4e60103b854b700f62e7ca7a1dbd8f21367cfb0",
+            "content": "sha256:25dd2f931db64684a4a83eb1053fb7f01b8bbf6fe258f2b99475f8d5461eb07b",
+            "locator": {
+              "kind": "symbol",
+              "name": "_start_restamp_preflight"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/startup/start_contract.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
     "2": {
       "note": "The placement guard: the store's write target for the document must be the path it was read from, or the caller's refusal is raised.\n\nAnchor: \"def require_task_document_in_place(\"; \"target = json_path_for(json_path.parent, doc)\"; \"would be rewritten to {target}; its file name must match\"",
       "targets": [
@@ -191,7 +237,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e39d70ff98455855cf4ff91e31535253c13ba185",
+            "blob": "b8bda143860aa43bd6865974d210d639a5ffe665",
             "content": "sha256:ab5f2be78181f69e6956754f157288aed9564a3d5c755cd00ad80b5956753b7f",
             "locator": {
               "end": 110,
@@ -204,12 +250,12 @@
         },
         {
           "anchor": {
-            "blob": "e39d70ff98455855cf4ff91e31535253c13ba185",
+            "blob": "b8bda143860aa43bd6865974d210d639a5ffe665",
             "content": "sha256:c4375611d8a906ce2c5dca7fb66b6fcd3c3b502feee719e395cc93b7910620f1",
             "locator": {
-              "end": 235,
+              "end": 226,
               "kind": "line_range",
-              "start": 235
+              "start": 226
             },
             "path": "mcp/src/agents_remember/worktrees/modules/finalize_task_documents.py"
           },
@@ -217,12 +263,12 @@
         },
         {
           "anchor": {
-            "blob": "d0806d69b60e940b8234dd86274b0cf639d05eb0",
+            "blob": "d58c63ecee8f999fb207fe2c6b4fd35956213d82",
             "content": "sha256:971ac8ba4f870866276d1dd33c74c891ee4a6d024f9ca800245d524b5e88d6e9",
             "locator": {
-              "end": 545,
+              "end": 602,
               "kind": "line_range",
-              "start": 545
+              "start": 602
             },
             "path": "mcp/src/agents_remember/worktrees/reopen.py"
           },
@@ -230,12 +276,12 @@
         },
         {
           "anchor": {
-            "blob": "d0806d69b60e940b8234dd86274b0cf639d05eb0",
+            "blob": "d58c63ecee8f999fb207fe2c6b4fd35956213d82",
             "content": "sha256:d7782ce6052e83ac288d7cabfb28de5d383ce8d9c38045f425ed8f3f94d0c83c",
             "locator": {
-              "end": 380,
+              "end": 428,
               "kind": "line_range",
-              "start": 380
+              "start": 428
             },
             "path": "mcp/src/agents_remember/worktrees/reopen.py"
           },
@@ -261,17 +307,17 @@
       ]
     },
     "5": {
-      "note": "The start/attach publisher that actually binds a missing master link — the live repair path, since `restamp_leaf_doc_lifecycle` has no caller.",
+      "note": "Start and attach now publish leaf enclosure registration and task stage through publish_start_task_facts; dry-run returns without publication, and the persisted leaf binding is rechecked. The earlier start.py publisher is historical.",
       "targets": [
         {
           "anchor": {
-            "blob": "4517ff389e5f8ac26676f8b517c15fd5cbc9f94f",
-            "content": "sha256:8af478d5fd0c649ee215e10416d04cbaf1110d83d672561697f4ddf107ebb15d",
+            "blob": "a83e3b0ba83b697ae4190cd329fec12aefa5f8f7",
+            "content": "sha256:645749bc10470be4dc5c58ed620ffce1275f51c22b7d7ceedddf24aacd7a5758",
             "locator": {
               "kind": "symbol",
-              "name": "_publish_leaf_task_enclosure_binding"
+              "name": "publish_start_task_facts"
             },
-            "path": "mcp/src/agents_remember/worktrees/modules/start.py"
+            "path": "mcp/src/agents_remember/worktrees/start_task_publication.py"
           },
           "kind": "code"
         }
@@ -294,7 +340,7 @@
         },
         {
           "anchor": {
-            "blob": "c554da0c00d1dd4aa5f8c386a8e0bc80ed87e050",
+            "blob": "cd710bd6a033d75cf06cff17f62b2844f8fc6bdd",
             "content": "sha256:53e338ecd6b60e94356ce55a36630d7831af36729cf3c38f0e5dde95b2aa8210",
             "locator": {
               "kind": "symbol",
@@ -307,15 +353,16 @@
       ]
     },
     "7": {
-      "note": "Start's read-only restamp preflight, the one `plan_leaf_doc_lifecycle_restamp` caller in `mcp/src`.",
+      "note": "Start's read-only terminal-blocker preflight calls `plan_leaf_doc_lifecycle_restamp`; the unused restamp publisher also calls that planner internally.",
       "targets": [
         {
           "anchor": {
-            "blob": "a5a5d52ff4fc8f4f9e0039688dab818a164a7b84",
+            "blob": "f4e60103b854b700f62e7ca7a1dbd8f21367cfb0",
             "content": "sha256:25dd2f931db64684a4a83eb1053fb7f01b8bbf6fe258f2b99475f8d5461eb07b",
             "locator": {
-              "kind": "symbol",
-              "name": "_start_restamp_preflight"
+              "end": 876,
+              "kind": "line_range",
+              "start": 867
             },
             "path": "mcp/src/agents_remember/worktrees/modules/startup/start_contract.py"
           },
@@ -323,13 +370,13 @@
         },
         {
           "anchor": {
-            "blob": "a5a5d52ff4fc8f4f9e0039688dab818a164a7b84",
-            "content": "sha256:f4bba8c40bb72dd9b65e2b2ec7d464bad2fee174863f4763054cab62ac8da773",
+            "blob": "b62764d58773b7137b2e0509d759e6df21fc8461",
+            "content": "sha256:0c6c9205c794c386ab820fe9fa581bcd2b4aab24fd51d3165141a5ab20b34cb5",
             "locator": {
-              "kind": "symbol",
-              "name": "_start_will_restamp"
-            },
-            "path": "mcp/src/agents_remember/worktrees/modules/startup/start_contract.py"
+              "end": 311,
+              "kind": "line_range",
+              "start": 282
+            }
           },
           "kind": "code"
         }

@@ -50,8 +50,8 @@ good parse FOREVER where the pre-cache readers degraded to skip-every-tick; and 
 `(mtime_ns, size)` was pinned via `os.utime` would never be seen. `ctime` changes on both, while
 staying untouched for genuinely unchanged files — the hardening costs zero extra parses.
 
-The module-level-cache discipline deliberately mirrors `projection_store._lifecycle_log_cache`, and
-consumers take the snapshot through a keyword-only `contracts: ContractSnapshot | None = None`
+Cache mutation is serialized on the projection worker; it is not modeled on a removed lifecycle-log cache.
+Consumers receive the snapshot through a keyword-only `contracts: ContractSnapshot | None = None`
 parameter so reader public signatures are unchanged.
 
 ### Invariants And Boundaries
@@ -66,7 +66,6 @@ parameter so reader public signatures are unchanged.
 - **Parse failures are never cached.** An unreadable or malformed contract is skipped this build and
   retried on the next full build while still enumerated, or scoped build naming an eligible path; only successful parses enter the cache.
 - **Retention is bounded by the live enumeration.** Full builds prune paths no longer enumerated; scoped builds ignore archived/notes names, delete other named missing paths, and retain unrelated entries without enumeration.
-- **Deliberate non-consumers:** the landing refresher (runs on the event-loop thread — sharing the
 - **Deliberate non-consumer:** the landing refresher keeps its independent contract pass and never touches this worker-thread-owned cache. The removed supervisor sweep is not an active consumer or non-consumer owner.
 
 ### Todos

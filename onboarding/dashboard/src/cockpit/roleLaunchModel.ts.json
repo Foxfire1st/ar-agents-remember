@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "93680354b6dfc4e4d80887c70901bce9215a2ea2",
-        "content": "sha256:2e9d7f93c94fa35d5ec0e3a3d64ebb29e3136bf6c898e8802e9f5deb7f4abcaf",
+        "blob": "215d9f5ab84099d6969f9629244e66ba830cb3eb",
+        "content": "sha256:a39d85e8eea0a0302b95121cf39c0c9b51cefaa2ae03024471383733afa53e8b",
         "locator": {
           "kind": "symbol",
           "name": "tasklessRequestStorageKey"
@@ -21,11 +21,12 @@
     },
     {
       "anchor": {
-        "blob": "93680354b6dfc4e4d80887c70901bce9215a2ea2",
-        "content": "sha256:a19b29c99601e546f591336eed4b4788b60b15d8ca7535811b35aeefac124015",
+        "blob": "215d9f5ab84099d6969f9629244e66ba830cb3eb",
+        "content": "sha256:0dce181c2ce4f0edf162a3772b3b5f11e628575894740df84b887f82477945a9",
         "locator": {
-          "kind": "symbol",
-          "name": "usesRequestReceipts"
+          "end": 260,
+          "kind": "line_range",
+          "start": 258
         }
       },
       "id": "RLZ-44423S",
@@ -39,11 +40,31 @@
     },
     {
       "anchor": {
-        "blob": "93680354b6dfc4e4d80887c70901bce9215a2ea2",
-        "content": "sha256:a19b29c99601e546f591336eed4b4788b60b15d8ca7535811b35aeefac124015",
+        "blob": "215d9f5ab84099d6969f9629244e66ba830cb3eb",
+        "content": "sha256:f649a1a5e5f91224b368fe8584c9bce97933e5ffe20e249313226b31b1d6038a",
         "locator": {
-          "kind": "symbol",
-          "name": "usesRequestReceipts"
+          "end": 196,
+          "kind": "line_range",
+          "start": 188
+        }
+      },
+      "id": "RLZ-645WGZ",
+      "invariant": "INV-MGGEBY",
+      "origin": {
+        "handoffEntry": "L168-CUR-M2-21-N10",
+        "leaf": "260928-MIK-L168"
+      },
+      "rationale": "Launch options carry the served entry and exact reference only when reference and summary exist; sprint filtering uses the same canonical entries. Documentless placeholders are not made launchable by synthesizing body identity.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "215d9f5ab84099d6969f9629244e66ba830cb3eb",
+        "content": "sha256:0dce181c2ce4f0edf162a3772b3b5f11e628575894740df84b887f82477945a9",
+        "locator": {
+          "end": 260,
+          "kind": "line_range",
+          "start": 258
         }
       },
       "id": "RLZ-9CP18T",
@@ -57,11 +78,12 @@
     },
     {
       "anchor": {
-        "blob": "93680354b6dfc4e4d80887c70901bce9215a2ea2",
-        "content": "sha256:e4f06fa372a3c98459ffab2a10f1312239b803a3dbc38d0ee55bc890a9d77544",
+        "blob": "215d9f5ab84099d6969f9629244e66ba830cb3eb",
+        "content": "sha256:7ed744ab627d402113afe4684874a13c629adb422c4573b9371debc2d12020a9",
         "locator": {
-          "kind": "symbol",
-          "name": "roleAgentOverrideFor"
+          "end": 546,
+          "kind": "line_range",
+          "start": 528
         }
       },
       "id": "RLZ-EPB617",
@@ -75,11 +97,12 @@
     },
     {
       "anchor": {
-        "blob": "93680354b6dfc4e4d80887c70901bce9215a2ea2",
-        "content": "sha256:7f62c23932dcef110a895a78ecede6df036c913dfef4a6472172da5be7553f6c",
+        "blob": "215d9f5ab84099d6969f9629244e66ba830cb3eb",
+        "content": "sha256:7949c36caa3d602fd123b659c70e6cc475743d745728c6320bc98cb84fdadd04",
         "locator": {
-          "kind": "symbol",
-          "name": "boundTasklessRequest"
+          "end": 186,
+          "kind": "line_range",
+          "start": 169
         }
       },
       "id": "RLZ-PWESKX",
@@ -90,6 +113,25 @@
       },
       "rationale": "It lets a bound Projects row adopt a saved open request while returning an uncertain request unchanged so its exact identity survives reconciliation.",
       "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "215d9f5ab84099d6969f9629244e66ba830cb3eb",
+        "content": "sha256:31f778f0f5a88a1e7b0bdd8ba417cd6318ca9fa59c747038b52659593aa55fb3",
+        "locator": {
+          "end": 222,
+          "kind": "line_range",
+          "start": 199
+        }
+      },
+      "id": "RLZ-QQW438",
+      "invariant": "INV-WQ8YGE",
+      "origin": {
+        "handoffEntry": "L168-CUR-M1-21-A013-19",
+        "leaf": "260928-MIK-L168"
+      },
+      "rationale": "childOptions resolves only the served parent.children keys in their published order; masterOptionsForSprint/taskOptionsForMaster filter the resolved entry forms and do not reconstruct hierarchy from repository names or document paths.",
+      "role": "propagation-persistence"
     }
   ],
   "references": {

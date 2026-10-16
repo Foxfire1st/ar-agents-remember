@@ -36,12 +36,12 @@
         },
         {
           "anchor": {
-            "blob": "1da3bab20ae2b0b070c790c820476038d043758c",
+            "blob": "8d239fc2e55f0351e0ed72114b79b8048a172148",
             "content": "sha256:9cb7c1608471f6293a509aa3b3a4375373af844a648aa37982391749ac30f15b",
             "locator": {
-              "end": 77,
+              "end": 78,
               "kind": "line_range",
-              "start": 76
+              "start": 77
             },
             "path": "dashboard/src/data/changeset.ts"
           },
@@ -49,12 +49,12 @@
         },
         {
           "anchor": {
-            "blob": "1da3bab20ae2b0b070c790c820476038d043758c",
+            "blob": "8d239fc2e55f0351e0ed72114b79b8048a172148",
             "content": "sha256:b52cb6555d13a6037152c24e113693ceb949967d977b1db78682129a9278753e",
             "locator": {
-              "end": 156,
+              "end": 161,
               "kind": "line_range",
-              "start": 156
+              "start": 161
             },
             "path": "dashboard/src/data/changeset.ts"
           },
@@ -169,12 +169,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d0e0f3a0a209313492e7cb61a2066cf40519f66e",
+            "blob": "b8a91035417026d4649506297946286a4abd6d17",
             "content": "sha256:820db497595b065edcce8a209717bec28e5769ccb4bf4e60888edc4bcd8879f6",
             "locator": {
-              "end": 58,
+              "end": 57,
               "kind": "line_range",
-              "start": 57
+              "start": 56
             },
             "path": "dashboard/src/panels/changeset/ChangeSetViewer.tsx"
           },
@@ -187,7 +187,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "931da72d87f38045efdb2c747a84167042b89f79",
+            "blob": "cb170808c1e7ad3aa75e0bfd0860f2206b2291c8",
             "content": "sha256:f4a7aed8100db99e8f239d60c9f5f1f3b42093d7bced0cc7bbe7958b4c35f240",
             "locator": {
               "end": 7,
@@ -277,15 +277,16 @@
       ]
     },
     "21": {
-      "note": "**The one liveness predicate both gated entries share.**",
+      "note": "**The entry’s code-or-memory worktree existence flags select the working control and live-versus-recorded review context.**",
       "targets": [
         {
           "anchor": {
-            "blob": "931da72d87f38045efdb2c747a84167042b89f79",
-            "content": "sha256:71cd159561dfafcdf346e22ba29fd069090dca1ef6108584c65a420dcae544ab",
+            "blob": "cb170808c1e7ad3aa75e0bfd0860f2206b2291c8",
+            "content": "sha256:0a87fba4ecb4544157cf70cbcc24d00ad21e1dbf75db9704e93ef8d81673ddcc",
             "locator": {
-              "kind": "symbol",
-              "name": "leafIsLive"
+              "end": 315,
+              "kind": "line_range",
+              "start": 275
             },
             "path": "dashboard/src/panels/detail-panel/changeSetBar.tsx"
           },
@@ -298,7 +299,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d0e0f3a0a209313492e7cb61a2066cf40519f66e",
+            "blob": "b8a91035417026d4649506297946286a4abd6d17",
             "content": "sha256:35ef29daaaa65e6822669c6c30993e82853488ce26864fe60f897edf8a1a998d",
             "locator": {
               "kind": "symbol",
@@ -327,12 +328,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "931da72d87f38045efdb2c747a84167042b89f79",
+            "blob": "cb170808c1e7ad3aa75e0bfd0860f2206b2291c8",
             "content": "sha256:b36d13058eb8d6367c672f9857f4b4d248d9152e4085fd36681eb1724395bcf0",
             "locator": {
-              "end": 164,
+              "end": 125,
               "kind": "line_range",
-              "start": 151
+              "start": 112
             },
             "path": "dashboard/src/panels/detail-panel/changeSetBar.tsx"
           },
@@ -438,7 +439,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d0e0f3a0a209313492e7cb61a2066cf40519f66e",
+            "blob": "b8a91035417026d4649506297946286a4abd6d17",
             "content": "sha256:ceb70fcc398df510fd323bfc265183451ca0fbdac12b4d52a7258ef237d52e01",
             "locator": {
               "kind": "symbol",
@@ -630,12 +631,12 @@
         },
         {
           "anchor": {
-            "blob": "10bd037f0b55003954928f8873757630e8d12f9e",
+            "blob": "19834e770c2eb7af4e574ccb2385b6ce01dff0f9",
             "content": "sha256:72f42d03b971637de6e84c78fede7747d0c4d4147bf0602cc3330a5443bc47d3",
             "locator": {
-              "end": 527,
+              "end": 541,
               "kind": "line_range",
-              "start": 494
+              "start": 508
             },
             "path": "dashboard/src/panels/review/ExpressionCards.tsx"
           },
@@ -648,12 +649,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2186995d20205912e217dc39a14fa95fcb0e42f3",
+            "blob": "ed2dc3fce7532d17eb6bc8d965c8db487feda835",
             "content": "sha256:c28ff3b0e7e02357c51cb76e0c9c20979d9a43bcfc434b5f5103e66c207bb5d8",
             "locator": {
-              "end": 216,
+              "end": 210,
               "kind": "line_range",
-              "start": 150
+              "start": 144
             },
             "path": "mcp/src/agents_remember/serving/changeset.py"
           },
@@ -661,12 +662,12 @@
         },
         {
           "anchor": {
-            "blob": "2186995d20205912e217dc39a14fa95fcb0e42f3",
+            "blob": "ed2dc3fce7532d17eb6bc8d965c8db487feda835",
             "content": "sha256:2616f966a81149cdf8f38471c10a544a70e65f76433bc4a4f5ad5311c5b0c9ce",
             "locator": {
-              "end": 348,
+              "end": 342,
               "kind": "line_range",
-              "start": 249
+              "start": 243
             },
             "path": "mcp/src/agents_remember/serving/changeset.py"
           },
@@ -674,12 +675,12 @@
         },
         {
           "anchor": {
-            "blob": "2186995d20205912e217dc39a14fa95fcb0e42f3",
+            "blob": "ed2dc3fce7532d17eb6bc8d965c8db487feda835",
             "content": "sha256:f1c88b971953926bf88b7c64cb48ee0d6978cb6c2b43e28f87a331103eb5d0da",
             "locator": {
-              "end": 490,
+              "end": 484,
               "kind": "line_range",
-              "start": 385
+              "start": 379
             },
             "path": "mcp/src/agents_remember/serving/changeset.py"
           },
@@ -705,7 +706,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ea5a7585a7a97301d9e21239404bb2aa6b7a6f59",
+            "blob": "1b23f34074e609afd5c6c30cbb6f0cbb5c272771",
             "content": "sha256:d3207e1d77ab72b1aec5d380d8573b0b31b8352e386de6d85612c79647761f21",
             "locator": {
               "end": 139,
@@ -723,7 +724,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b4325fdc725f89500cac3761c200a846f44e1904",
+            "blob": "6c4737de45af72f420304b097f27413a794c58d4",
             "content": "sha256:9020d263795b293b354176d43084dc37a5dc4699b3d18f682431c773b1604b24",
             "locator": {
               "end": 295,
@@ -931,6 +932,105 @@
         }
       ]
     },
+    "45": {
+      "note": "Target-addressed list loads share the current request/cache owner, and an available cached answer can be restored at selection.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8d239fc2e55f0351e0ed72114b79b8048a172148",
+            "content": "sha256:c44d17e6c9922e6c44c6596244d1adc200e72881ff589d449d00e72eeb15d7e5",
+            "locator": {
+              "kind": "symbol",
+              "name": "peekChangeSet"
+            },
+            "path": "dashboard/src/data/changeset.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8d239fc2e55f0351e0ed72114b79b8048a172148",
+            "content": "sha256:49597522fe4480b3e4e1a2f7715c0bb1b13a59a7a335a5abca23cf1a5542075c",
+            "locator": {
+              "kind": "symbol",
+              "name": "loadChangeSet"
+            },
+            "path": "dashboard/src/data/changeset.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b8a91035417026d4649506297946286a4abd6d17",
+            "content": "sha256:c6208c52420c00fd01116c624f4c0f7c2fcd40e08144a300a64385f7d4fc2978",
+            "locator": {
+              "kind": "symbol",
+              "name": "useChangesetLoad"
+            },
+            "path": "dashboard/src/panels/changeset/ChangeSetViewer.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "46": {
+      "note": "Working refresh does not require hasData, excludes comparisons and handles list/diff fulfillment and failure independently before scheduling its next timer.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b8a91035417026d4649506297946286a4abd6d17",
+            "content": "sha256:080be2e5600ac8b7a9949ade0f6ce6cc8585a729473058f3684659ba7aac78a8",
+            "locator": {
+              "kind": "symbol",
+              "name": "useWorkingChangesetPoll"
+            },
+            "path": "dashboard/src/panels/changeset/ChangeSetViewer.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b8a91035417026d4649506297946286a4abd6d17",
+            "content": "sha256:e41bdca5f06750025dcea84c29dbff5a0c28e87fe8848e67a6e0a9bd01a7fb3c",
+            "locator": {
+              "kind": "symbol",
+              "name": "applyWorkingRead"
+            },
+            "path": "dashboard/src/panels/changeset/ChangeSetViewer.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "47": {
+      "note": "A list problem and selected-file problem have distinct display owners rather than silently leaving a stale successful pane.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b8a91035417026d4649506297946286a4abd6d17",
+            "content": "sha256:a2404de56cc8ff34fa1806257de3e9f76a05ea6dd8b7db911f5510bf0020ca46",
+            "locator": {
+              "kind": "symbol",
+              "name": "ChangeSetWorkspace"
+            },
+            "path": "dashboard/src/panels/changeset/ChangeSetViewer.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b8a91035417026d4649506297946286a4abd6d17",
+            "content": "sha256:c11005854198bb34a597f4a8554884b7a70ab19b0ed7aa7e5324dd998a9d47f1",
+            "locator": {
+              "kind": "symbol",
+              "name": "ChangeSetMainPane"
+            },
+            "path": "dashboard/src/panels/changeset/ChangeSetViewer.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
     "5": {
       "note": "The master request now asks for the per-leaf breakdown; presence of `leaves` is the discriminant.\n\nAnchor: `includeLeaves`",
       "targets": [
@@ -1025,12 +1125,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f0c0a6b35e01547908dcf3f4feb27ba092dde069",
+            "blob": "b4f749cf2dfc7341eb4fd7dfe8071e85037056de",
             "content": "sha256:85e80caa936efbd23fff96182adecab5dbeff27055922e16a62abdf4ce25692a",
             "locator": {
-              "end": 605,
+              "end": 560,
               "kind": "line_range",
-              "start": 605
+              "start": 560
             },
             "path": "dashboard/src/cockpit/Cockpit.tsx"
           },
@@ -1043,7 +1143,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2186995d20205912e217dc39a14fa95fcb0e42f3",
+            "blob": "ed2dc3fce7532d17eb6bc8d965c8db487feda835",
             "content": "sha256:4c1ee7ea52690bf26e08d81dae077c82c25e2b12b98eac954503f2824feda89e",
             "locator": {
               "kind": "symbol",

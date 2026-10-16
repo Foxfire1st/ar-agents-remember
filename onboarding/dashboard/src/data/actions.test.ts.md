@@ -6,14 +6,11 @@
 
 ## Purpose
 
-Three retained Vitest source cases for the attention-dismiss POST client: a stale-session lifecycle target, targetless actionable drift and non-202 error mapping. Gate-decision/gate-id-only cases are removed; this card declares assertions, not executed coverage.
+Vitest source assertions for the attention-dismiss client send only stable `itemId` and `kind`, include an explicit targetless actionable-drift case, and map non-202 replies to error. This card describes transport assertions, not executed coverage.
 
 ## Code Commentary
 
-Historical removed case inventory (not current tests): the tests previously stubbed global `fetch` and exercised `postGateDecision` directly. One case asserts a targeted
-reject sends `{target, gateId, note}` to `/api/actions/reject` and maps `202` to `recorded`. Another
-case asserts gate-id-only `cancel` omits `target` for stale queue cleanup. The final case asserts
-`409` payloads distinguish `stale-gate` from `no-open-gate`. The earlier `postAttentionDismiss` cases included targeted lifecycle/gate and gate-id-only payloads. Current cases instead assert stale-session itemId/kind/target, actionable-drift itemId/kind with no target, and status 500 mapping to error; none retains gateId.
+The fetch stub records `/api/actions/dismiss` and the exact JSON body. There is no lifecycle target or gateId in current dismiss requests. Successful 202 replies map to `dismissed`; the error case maps a non-202 reply to `error`. Removed gate-decision cases are not current coverage.
 
 ## Invariants And Boundaries
 
@@ -31,7 +28,7 @@ No configured Domain Documentation source exists for this file.
 
 ### Repo-Internal References
 
-- The retained client builds attention-dismiss itemId/kind and optional lifecycle target, maps 202 to dismissed and other/network failures to error; gate-decision export is removed. [1]
+- The attention-dismiss client posts only itemId/kind as JSON to /api/actions/dismiss. HTTP 202 maps to dismissed, other statuses and thrown/network failures map to error; the exported target shape has no lifecycle target and the module exports no gate-decision client. Source tests assert the exact provider-down and actionable-drift bodies and a non-202 error. [1]
 
 - The actionable-drift case asserts itemId/kind without target; the old stale-gate locator is not the current proving body. [2]
 

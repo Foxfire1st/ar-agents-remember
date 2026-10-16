@@ -1,0 +1,43 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test",
+      "prevents_costly_mistake",
+      "spans_locations"
+    ],
+    "justification": "Future changes to task-page reads, conditional transport, native generation capture or retained-content ownership must prevent stale or unbounded cache reuse and a counter failure blocking the document. Named current source assertions guard the specified facets; historical timing/count samples remain task-local, not enduring obligations or fresh Curator grades."
+  },
+  "applicability": "Dashboard-owned per-address bodies, change-set results and intent summaries across reader unmount/navigation within their retention bounds.",
+  "conditions": [
+    "Full bodies use qualified reference plus the returned bodyRevision; late or crossing responses do not occupy an unrelated requested/new revision.",
+    "Pure body preparation is revision-keyed with live callbacks/current task facts outside the retained preparation.",
+    "Conditional result stores preserve parsed identity on a matching 304 without decoding a body; task bodies already retained under an unchanged revision need no duplicate body fetch.",
+    "Current refusals/failures are not hidden by an old retained success, and invalidation tokens control when retained counters/summary data can be shown."
+  ],
+  "exclusions": [
+    "No unbounded retention after LRU eviction, no oversized-content retention guarantee, and no immortal cache lifetime across store reset.",
+    "No claim that every browser task-body navigation issues a conditional HTTP request, or that content caches own task stage/activity."
+  ],
+  "id": "INV-WNHAWD",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "sync-L81-dashboard.txt; ordinary-browser10-comparison-summary.json",
+        "M1-21: ROW-BT4V65; dashboard/src/data/useTaskDocumentBody.ts:164-206. Static source witness on A013; no Curator execution.",
+        "M1-21: ROW-90WRE0; dashboard/src/panels/detail-panel/taskReader.tsx:302-317. Static source witness on A013; no Curator execution.",
+        "L168-M1-21 N16 dashboard/src/data/useTaskDocumentBody.ts:154-162; static A013 source; no execution.",
+        "L168-M1-21 N17 dashboard/src/data/useTaskDocumentBody.ts:208-229; static A013 source; no execution.",
+        "L168-M1-21 N25 dashboard/src/grammar/Markdown.tsx:196-205; static A013 source; no execution."
+      ],
+      "path": "A011-bounded-generation-content-33.json"
+    },
+    "handoffEntry": "L168-W-R168-03",
+    "leaf": "260928-MIK-L168",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Per-task bodies, counters and intent summaries survive navigation and unchanged revalidation returns no body.",
+  "status": "proposed",
+  "supersedes": []
+}

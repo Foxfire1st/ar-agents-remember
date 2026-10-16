@@ -67,15 +67,16 @@
       ]
     },
     "4": {
-      "note": "The reader that mounts the provider around task prose.",
+      "note": "`TaskPage` mounts the provider around the selected form and own view, deferring its document listing until body loading settles.",
       "targets": [
         {
           "anchor": {
-            "blob": "5010f4f41e7f40f48b178e0039b7fe40a77875c2",
-            "content": "sha256:1ad8090fcb008f653a440e15d622f8351dda2a90723b5ae5b866c58658a39237",
+            "blob": "66607c8748bbb4f94154ffd1893a44a92f9486e8",
+            "content": "sha256:a96f3d35efcd85c17ab4c16a2e7fa07b22d425c40434835adcea6cb37545cd18",
             "locator": {
-              "kind": "symbol",
-              "name": "TaskRequirementBoundary"
+              "end": 129,
+              "kind": "line_range",
+              "start": 80
             },
             "path": "dashboard/src/panels/detail-panel/taskReader.tsx"
           },

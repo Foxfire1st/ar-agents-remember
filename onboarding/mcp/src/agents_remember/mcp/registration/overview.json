@@ -354,14 +354,15 @@
       ]
     },
     "26": {
-      "note": "Current ordered family composition.",
+      "note": "Ordered composition uses seat retirement, not a removed sessions registrar, and retains the capsule resource position between task and role-agent registration.",
       "targets": [
         {
           "anchor": {
-            "blob": "15396e17a8d6bc3592053c499e32dc655982f46f",
-            "content": "sha256:7214cc6d02be039cb9c725635336955fc02a9de932e9e7d67917b0081e935aff",
+            "blob": "d50f977dccbc13a3efc34f7b6fb34083af34cb82",
+            "content": "sha256:3a21dad9d101ae64efe7a488da80fb0b2724cfb536ac2feb5531e126849440df",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "TOOL_REGISTRARS"
             },
             "path": "mcp/src/agents_remember/mcp/registration/__init__.py"
           },

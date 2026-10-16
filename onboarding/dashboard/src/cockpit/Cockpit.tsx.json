@@ -3,11 +3,12 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "01fba3cb6e8f87f6cb5855729b1ff805ef49457e",
-        "content": "sha256:abc706fc66c912bf079523425599965ecc4855f669690a4a31d28a309280dd04",
+        "blob": "b4f749cf2dfc7341eb4fd7dfe8071e85037056de",
+        "content": "sha256:500525aaa1c27e09b36993a4b253f9914e9624131e35ced3f05cd8a96c06cf2f",
         "locator": {
-          "kind": "symbol",
-          "name": "MainLayers"
+          "end": 765,
+          "kind": "line_range",
+          "start": 710
         }
       },
       "id": "RLZ-1Q53AD",
@@ -16,16 +17,17 @@
         "handoffEntry": "PNT-R15@v1 / PNT-R16@v1 persistent Chats and inline navigation",
         "leaf": "260928-MIK-L90"
       },
-      "rationale": "Directly places RoleChatsPane in the persistent ViewLayer and supplies taskDocuments and series with active visibility.",
+      "rationale": "MainLayers places RoleChatsPane under the persistent Chats ViewLayer, passes the canonical TaskEntry tasks array, and sets active only while Chats is visible without takeover. View switches hide the layer rather than unmounting the pane; no taskDocuments or series prop remains.",
       "role": "primary-authority"
     },
     {
       "anchor": {
-        "blob": "01fba3cb6e8f87f6cb5855729b1ff805ef49457e",
-        "content": "sha256:abc706fc66c912bf079523425599965ecc4855f669690a4a31d28a309280dd04",
+        "blob": "b4f749cf2dfc7341eb4fd7dfe8071e85037056de",
+        "content": "sha256:500525aaa1c27e09b36993a4b253f9914e9624131e35ced3f05cd8a96c06cf2f",
         "locator": {
-          "kind": "symbol",
-          "name": "MainLayers"
+          "end": 765,
+          "kind": "line_range",
+          "start": 710
         }
       },
       "id": "RLZ-405M48",
@@ -39,8 +41,8 @@
     },
     {
       "anchor": {
-        "blob": "01fba3cb6e8f87f6cb5855729b1ff805ef49457e",
-        "content": "sha256:abc706fc66c912bf079523425599965ecc4855f669690a4a31d28a309280dd04",
+        "blob": "b4f749cf2dfc7341eb4fd7dfe8071e85037056de",
+        "content": "sha256:500525aaa1c27e09b36993a4b253f9914e9624131e35ced3f05cd8a96c06cf2f",
         "locator": {
           "kind": "symbol",
           "name": "MainLayers"
@@ -57,8 +59,8 @@
     },
     {
       "anchor": {
-        "blob": "01fba3cb6e8f87f6cb5855729b1ff805ef49457e",
-        "content": "sha256:c23dd6b971f43b7988e7fc3e7f775c1292d6394236c1f6e028713d6a03a65c40",
+        "blob": "b4f749cf2dfc7341eb4fd7dfe8071e85037056de",
+        "content": "sha256:29d3d4539fa8862f31ceefba386db2c2bb6805610e1898aeb18a22f4b2ab535f",
         "locator": {
           "kind": "symbol",
           "name": "VIEWS"
@@ -75,8 +77,8 @@
     },
     {
       "anchor": {
-        "blob": "01fba3cb6e8f87f6cb5855729b1ff805ef49457e",
-        "content": "sha256:c20568f61f713e413277771110ea364e78609d037dd595a5b5c78849c3e3ceab",
+        "blob": "b4f749cf2dfc7341eb4fd7dfe8071e85037056de",
+        "content": "sha256:f2c7b42d4bd6b9463718d09bf3b4e0aa3ee5fbe5621703a3b03f35a74f031323",
         "locator": {
           "kind": "symbol",
           "name": "RightRail"
@@ -88,13 +90,13 @@
         "handoffEntry": "MIK-R95@v1 rule8",
         "leaf": "260928-MIK-L95"
       },
-      "rationale": "The rail switches between the retained Event River and the selected document native chat component. It passes the canonical viewed task and shared task/series context while removing the obsolete contextual session panel and its exclusive highlight target.",
+      "rationale": "The rail retains EventRiver and selected-document native host chat using the canonical current task reference; no retired series context, session panel or composer is mounted.",
       "role": "unclassified"
     },
     {
       "anchor": {
-        "blob": "01fba3cb6e8f87f6cb5855729b1ff805ef49457e",
-        "content": "sha256:4a41317e0bd61197a0cacd9282a3f82478b4151f0b339810a3adb96b072ad0af",
+        "blob": "b4f749cf2dfc7341eb4fd7dfe8071e85037056de",
+        "content": "sha256:ab381fa39ef1b0eafc49c03f625ed3e711249682ff8ff69844f17ca13021aa90",
         "locator": {
           "kind": "symbol",
           "name": "Cockpit"
@@ -111,8 +113,46 @@
     },
     {
       "anchor": {
-        "blob": "01fba3cb6e8f87f6cb5855729b1ff805ef49457e",
-        "content": "sha256:c20568f61f713e413277771110ea364e78609d037dd595a5b5c78849c3e3ceab",
+        "blob": "b4f749cf2dfc7341eb4fd7dfe8071e85037056de",
+        "content": "sha256:ffaaad5daaeed93b8e273cc7db34c010926e5c65a1c4c6b0f7363ce1299f2f50",
+        "locator": {
+          "end": 408,
+          "kind": "line_range",
+          "start": 404
+        }
+      },
+      "id": "RLZ-FZBMHD",
+      "invariant": "INV-MGGEBY",
+      "origin": {
+        "handoffEntry": "L168-CUR-M2-21-N11",
+        "leaf": "260928-MIK-L168"
+      },
+      "rationale": "The shell subscribes to s.tasks and memoizes its values by map identity, replacing the parallel document/series subscriptions. engineProcesses remains separately subscribed operational data, not another task population.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "b4f749cf2dfc7341eb4fd7dfe8071e85037056de",
+        "content": "sha256:16e5970a46910dd1344abb6a52268d0748cff9a6915059c338585f7dd70e77e3",
+        "locator": {
+          "end": 940,
+          "kind": "line_range",
+          "start": 928
+        }
+      },
+      "id": "RLZ-GKR34V",
+      "invariant": "INV-MGGEBY",
+      "origin": {
+        "handoffEntry": "L168-CUR-M2-21-N12",
+        "leaf": "260928-MIK-L168"
+      },
+      "rationale": "TopBar subscribes directly to served taskCounts and enumerates its seven supplied fields instead of calculating task totals from lifecycle metrics; independent queue/generatedAt remain separate.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "b4f749cf2dfc7341eb4fd7dfe8071e85037056de",
+        "content": "sha256:f2c7b42d4bd6b9463718d09bf3b4e0aa3ee5fbe5621703a3b03f35a74f031323",
         "locator": {
           "kind": "symbol",
           "name": "RightRail"
@@ -129,11 +169,12 @@
     },
     {
       "anchor": {
-        "blob": "01fba3cb6e8f87f6cb5855729b1ff805ef49457e",
-        "content": "sha256:0548775398b21f55d77c62b077eea7a89ef0c8cccded5362a6fd0d4f89577a0f",
+        "blob": "b4f749cf2dfc7341eb4fd7dfe8071e85037056de",
+        "content": "sha256:40c2c67ff64a4d59bb8db430c39479f1d6bd0cb50090804414990136514daf45",
         "locator": {
-          "kind": "symbol",
-          "name": "LeftRail"
+          "end": 634,
+          "kind": "line_range",
+          "start": 603
         }
       },
       "id": "RLZ-PPNW5M",
@@ -147,12 +188,12 @@
     },
     {
       "anchor": {
-        "blob": "01fba3cb6e8f87f6cb5855729b1ff805ef49457e",
-        "content": "sha256:83b223cb410abb3db07fecf8f0f5e54797e883c5726dcdf383914f7cecbccb2c",
+        "blob": "b4f749cf2dfc7341eb4fd7dfe8071e85037056de",
+        "content": "sha256:f913c27a9192b5b9bd42ffe35c97ac624638ef212709341fc2bd14bedef097f6",
         "locator": {
-          "end": 701,
+          "end": 685,
           "kind": "line_range",
-          "start": 690
+          "start": 670
         }
       },
       "id": "RLZ-VF6VZ5",
@@ -166,8 +207,27 @@
     },
     {
       "anchor": {
-        "blob": "01fba3cb6e8f87f6cb5855729b1ff805ef49457e",
-        "content": "sha256:db564bf178bdc8088320217bf4217ad7452fabcb414b1be3ca95091114c96563",
+        "blob": "b4f749cf2dfc7341eb4fd7dfe8071e85037056de",
+        "content": "sha256:f908f2d4746d085cee8998340d7c99e4dd8acf6483330fe4a70914a05638bc63",
+        "locator": {
+          "end": 949,
+          "kind": "line_range",
+          "start": 946
+        }
+      },
+      "id": "RLZ-XT3RN1",
+      "invariant": "INV-XZYGEB",
+      "origin": {
+        "handoffEntry": "L168-CUR-M2-21-N13",
+        "leaf": "260928-MIK-L168"
+      },
+      "rationale": "Header bucket wording uses shared statusLabel for the seven native stage/activity keys. The local filter hides only a zero unknown bucket; this link does not add that one-site visibility predicate to the invariant.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "b4f749cf2dfc7341eb4fd7dfe8071e85037056de",
+        "content": "sha256:914583cacaaa8eaf18a2191473e655b54bdcd5382fcf83accfaaf27a836cfd2d",
         "locator": {
           "kind": "symbol",
           "name": "CockpitShell"
@@ -504,182 +564,18 @@
         }
       ]
     },
-    "77": {
-      "note": "The refcounted catalog poll driver started unconditionally here.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "f2a0c19687a17a6ccf7f4639369c323139256b91",
-            "content": "sha256:403ce849f016995d80f9a15045834c90e5044963798787138719f11ab461e9b6",
-            "locator": {
-              "kind": "file"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "78": {
-      "note": "Typed task/lifecycle selection helpers used by `open` and `selectedLifecycleId`.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "40a0e24637b2a8f8a50c03cf09db2ea3976e83cc",
-            "content": "sha256:99e0229a94cf3305d469f57526b91327a4c99a310e6f45c456ba3ee136563c07",
-            "locator": {
-              "kind": "symbol",
-              "name": "lifecycleIdForSelection"
-            },
-            "path": "dashboard/src/data/taskIdentity.ts"
-          },
-          "kind": "code"
-        }
-      ]
-    },
     "79": {
       "note": "The frontend `Analytics` projection includes the `engineProcesses` process-map collection.",
       "targets": [
         {
           "anchor": {
-            "blob": "c398ac1326fc5cb9eba54ae0ba6cab40c3650138",
+            "blob": "8774e82c7f7a93dda014fdb8b987e2391fd21fd1",
             "content": "sha256:56d879b8f546a2afd9edcc95544586acccf0d5aa279185fb83b6c05b3055d47e",
             "locator": {
               "kind": "symbol",
               "name": "engineProcesses"
             },
             "path": "dashboard/src/types/projection.ts"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "80": {
-      "note": "Metrics extends the mapped active-state counts and adds total lifecycle/token and histogram fields.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "c398ac1326fc5cb9eba54ae0ba6cab40c3650138",
-            "content": "sha256:2d5c012b5da58f558f6b064bfb61d20c2f17885b0bf0f5c41396eee1d6caa4b4",
-            "locator": {
-              "kind": "symbol",
-              "name": "Metrics"
-            },
-            "path": "dashboard/src/types/projection.ts"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "81": {
-      "note": "Every ActiveState maps to a required count field.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "c398ac1326fc5cb9eba54ae0ba6cab40c3650138",
-            "content": "sha256:b6804561ec905cf59ad4c54013af8009ff2f4e76ddc7da6dda957bcded54b8a7",
-            "locator": {
-              "kind": "symbol",
-              "name": "LifecycleStateCounts"
-            },
-            "path": "dashboard/src/types/projection.ts"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "82": {
-      "note": "The count-field name is derived from the camel-cased state vocabulary.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "c398ac1326fc5cb9eba54ae0ba6cab40c3650138",
-            "content": "sha256:48e3e062679eeb8c25c438d63cff60432f503bc4cc2c65b9f430962c1b2aba11",
-            "locator": {
-              "kind": "symbol",
-              "name": "StateCountField"
-            },
-            "path": "dashboard/src/types/projection.ts"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "83": {
-      "note": "metricsFor builds the client rollup from lifecycles and spreads the derived state counts.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "c398ac1326fc5cb9eba54ae0ba6cab40c3650138",
-            "content": "sha256:e9ee85ebb381e09c4f6b9a60589ab9f2ae16b5bf020fa42a6b9c53b47f0aa00a",
-            "locator": {
-              "kind": "symbol",
-              "name": "metricsFor"
-            },
-            "path": "dashboard/src/types/projection.ts"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "84": {
-      "note": "The server rollup this bar's `awaitingDeveloperCount` comes from: `_metrics` expands `STATE_COUNT_FIELDS`.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "a1ac5ff62fa39b65bb851d844e0fad99657c0326",
-            "content": "sha256:b8a4ab88879885f101a4b55f4d3a6059bf5a513b952b47ee34e7f3b1555133ef",
-            "locator": {
-              "kind": "symbol",
-              "name": "_metrics"
-            },
-            "path": "mcp/src/agents_remember/observer/reducer_impl/_metrics.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "85": {
-      "note": "`AgentNotifierHeartbeatBadge` reads the store field this top-bar indicator renders.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "f2a0c19687a17a6ccf7f4639369c323139256b91",
-            "content": "sha256:403ce849f016995d80f9a15045834c90e5044963798787138719f11ab461e9b6",
-            "locator": {
-              "kind": "file"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "86": {
-      "note": "The `AgentNotifierHeartbeat` type this badge's props shape mirrors.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "cc1a4d8fa8ad9c2ae7d91dff5dc6eba9d3330015",
-            "content": "sha256:beb31ab5870fb86707cbcaf925ed9404919ee72463ac00eb6889d846dcf8915e",
-            "locator": {
-              "kind": "symbol",
-              "name": "AgentNotifierHeartbeat"
-            },
-            "path": "dashboard/src/types/projection.ts"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "87": {
-      "note": "The shell starts the screen wake lock once on mount and releases it while hidden.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "f2a0c19687a17a6ccf7f4639369c323139256b91",
-            "content": "sha256:403ce849f016995d80f9a15045834c90e5044963798787138719f11ab461e9b6",
-            "locator": {
-              "kind": "file"
-            }
           },
           "kind": "code"
         }
@@ -747,14 +643,15 @@
       ]
     },
     "92": {
-      "note": "The right rail keeps the chat side mounted in an unkeyed stable wrapper and hides it when the river shows; the river still mounts conditionally. \\[92]",
+      "note": "The right rail keeps the chat side mounted in an unkeyed stable wrapper and hides it when the River shows; the River still mounts conditionally.",
       "targets": [
         {
           "anchor": {
-            "blob": "f2a0c19687a17a6ccf7f4639369c323139256b91",
-            "content": "sha256:403ce849f016995d80f9a15045834c90e5044963798787138719f11ab461e9b6",
+            "blob": "b4f749cf2dfc7341eb4fd7dfe8071e85037056de",
+            "content": "sha256:f2c7b42d4bd6b9463718d09bf3b4e0aa3ee5fbe5621703a3b03f35a74f031323",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "RightRail"
             }
           },
           "kind": "code"
@@ -762,15 +659,92 @@
       ]
     },
     "93": {
-      "note": "The hidden chat side stays mounted but out of reach behind display:none and aria-hidden. \\[93]",
+      "note": "The hidden chat side stays mounted but out of reach behind display:none and aria-hidden.\n\nAnchor: Hidden chat wrapper",
       "targets": [
         {
           "anchor": {
-            "blob": "f2a0c19687a17a6ccf7f4639369c323139256b91",
-            "content": "sha256:403ce849f016995d80f9a15045834c90e5044963798787138719f11ab461e9b6",
+            "blob": "b4f749cf2dfc7341eb4fd7dfe8071e85037056de",
+            "content": "sha256:11f4665b48fb6a4ca1da3188309cd19a568e18b4a7a32959dd0c287750e17585",
             "locator": {
-              "kind": "file"
+              "end": 679,
+              "kind": "line_range",
+              "start": 670
             }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "94": {
+      "note": "The header labels served taskCounts through the shared status table and hides only an empty unknown bucket.\n\nAnchor: header counts and shared labels",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b4f749cf2dfc7341eb4fd7dfe8071e85037056de",
+            "content": "sha256:87d5d349334c84e9e7da0f5eb9a69471b665b7ce5cf236292bea90e52a9d3769",
+            "locator": {
+              "end": 949,
+              "kind": "line_range",
+              "start": 926
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "17da14e723222a8d50b4ed6f0595390ab1fe1f6a",
+            "content": "sha256:1f72a31368a7ab1bade3e051bc155321716406653daf2bdf755259f60d7c37d9",
+            "locator": {
+              "end": 89,
+              "kind": "line_range",
+              "start": 69
+            },
+            "path": "dashboard/src/panels/detail-panel/pageParts.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "95": {
+      "note": "Native task selection and memoization are separate from the Engine Room stable-empty fallback.\n\nAnchor: Native selectors",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b4f749cf2dfc7341eb4fd7dfe8071e85037056de",
+            "content": "sha256:ffaaad5daaeed93b8e273cc7db34c010926e5c65a1c4c6b0f7363ce1299f2f50",
+            "locator": {
+              "end": 408,
+              "kind": "line_range",
+              "start": 404
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "96": {
+      "note": "The shell starts the screen wake lock once on mount; the wake-lock helper follows document visibility and releases its held sentinel on stop.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b4f749cf2dfc7341eb4fd7dfe8071e85037056de",
+            "content": "sha256:914583cacaaa8eaf18a2191473e655b54bdcd5382fcf83accfaaf27a836cfd2d",
+            "locator": {
+              "kind": "symbol",
+              "name": "CockpitShell"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "505865bf7a78f9816dc2d5544162cf9c0e92c3b0",
+            "content": "sha256:4dee0d4c201a1796e31c959ca51078d0e1f8db40b32819c6ce9ecabfb47c7d89",
+            "locator": {
+              "kind": "symbol",
+              "name": "startScreenWakeLock"
+            },
+            "path": "dashboard/src/data/screenWakeLock.ts"
           },
           "kind": "code"
         }

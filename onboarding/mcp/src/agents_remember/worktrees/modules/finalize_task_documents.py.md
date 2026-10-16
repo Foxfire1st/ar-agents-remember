@@ -48,6 +48,8 @@ row stands for the commanded master, the result reports `sprint.state="skipped"`
 
 Current leaf/master completion changes the own non-Completed document to Completed and stamps `completedAt` using local aware ISO time to seconds. An already Completed own document is returned unchanged: there is no timestamp backfill or log migration. The series-master path calls the same own-document helper. A selected parent row alone becomes Completed under the existing demotion rule; that row update does not stamp the parent completedAt. Neither helper appends a Finalize decision; all preexisting decision entries are retained. Kind/path/linkage/retired-row guards, exact captured-source rechecks, previews and publication ownership remain separate from the timestamp/log change. Named-parent resolution delegates to master_json_path_from_ref with the actual leaf id; ValueError is converted to FinalizeTaskDocumentError with the shared refusal text. This path guard neither discards L162 completion-time/decision preservation nor grants a parent-address fallback.
 
+The leaf publication retains each owning `(path, document)` pair for the completed leaf and selected parent candidate. Preview and apply pass those pairs to the shared contract task-fact publisher, so a selected document is not silently rebound under the wrong task root. Completion timestamps, preserved decisions, exact-source validation and atomic publication retain their separate meanings above.
+
 ### Conventions
 
 - Every refusal raises `FinalizeTaskDocumentError`; `finalize_result` turns it into
@@ -74,3 +76,5 @@ Current leaf/master completion changes the own non-Completed document to Complet
 
 
 - Retained survey concern: the former static correlated/absent/ambiguous-row evidence includes an obsolete Finalize-decision assertion and cannot establish current behavior. Current source selects targets as before, stamps own completion time once, and preserves own/parent decisions. No test was run or offered as current proof. [5]
+
+- Leaf completion preserves each owning path/document pair for preview and publication. [7]

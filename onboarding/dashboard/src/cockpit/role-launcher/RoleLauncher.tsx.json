@@ -3,11 +3,12 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "e594548fbdb28c98577403ff11fe3366119231d4",
-        "content": "sha256:a5ec52f9863b0e14fd179dd2c894e727f1033ebf1f0784d2da202ecfdda1571f",
+        "blob": "12349c73e7102cf2c539e1e1a17046b66bf58565",
+        "content": "sha256:511aae5576980a7226f1c4525ec3e83cfca5274db988a0ba832f85be27d891d8",
         "locator": {
-          "kind": "symbol",
-          "name": "RoleLauncher"
+          "end": 1159,
+          "kind": "line_range",
+          "start": 1080
         }
       },
       "id": "RLZ-2RCSQR",
@@ -21,11 +22,12 @@
     },
     {
       "anchor": {
-        "blob": "e594548fbdb28c98577403ff11fe3366119231d4",
-        "content": "sha256:a5ec52f9863b0e14fd179dd2c894e727f1033ebf1f0784d2da202ecfdda1571f",
+        "blob": "12349c73e7102cf2c539e1e1a17046b66bf58565",
+        "content": "sha256:511aae5576980a7226f1c4525ec3e83cfca5274db988a0ba832f85be27d891d8",
         "locator": {
-          "kind": "symbol",
-          "name": "RoleLauncher"
+          "end": 1159,
+          "kind": "line_range",
+          "start": 1080
         }
       },
       "id": "RLZ-6DAG9Q",
@@ -39,11 +41,31 @@
     },
     {
       "anchor": {
-        "blob": "e594548fbdb28c98577403ff11fe3366119231d4",
+        "blob": "12349c73e7102cf2c539e1e1a17046b66bf58565",
+        "content": "sha256:b86f86bed78f99f0d2aea43d8777da52b524be369474c1858449c6e583be1c7f",
+        "locator": {
+          "end": 1077,
+          "kind": "line_range",
+          "start": 1063
+        }
+      },
+      "id": "RLZ-9FTBAR",
+      "invariant": "INV-WQ8YGE",
+      "origin": {
+        "handoffEntry": "L168-CUR-M2-21-N24",
+        "leaf": "260928-MIK-L168"
+      },
+      "rationale": "launcherDocuments resolves selected sprint/master by exact references, then obtains descendants through the served-child helpers. It composes canonical options without a document/series parent join.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "12349c73e7102cf2c539e1e1a17046b66bf58565",
         "content": "sha256:ae01e6a809cd47819b696aee450d63c9dec59f9e0be5b9c54b718c11e5fdabdb",
         "locator": {
-          "kind": "symbol",
-          "name": "boundCanStart"
+          "end": 139,
+          "kind": "line_range",
+          "start": 137
         }
       },
       "id": "RLZ-CSKAPQ",
@@ -57,8 +79,8 @@
     },
     {
       "anchor": {
-        "blob": "e594548fbdb28c98577403ff11fe3366119231d4",
-        "content": "sha256:a5ec52f9863b0e14fd179dd2c894e727f1033ebf1f0784d2da202ecfdda1571f",
+        "blob": "12349c73e7102cf2c539e1e1a17046b66bf58565",
+        "content": "sha256:511aae5576980a7226f1c4525ec3e83cfca5274db988a0ba832f85be27d891d8",
         "locator": {
           "kind": "symbol",
           "name": "RoleLauncher"
@@ -75,11 +97,12 @@
     },
     {
       "anchor": {
-        "blob": "e594548fbdb28c98577403ff11fe3366119231d4",
-        "content": "sha256:a5ec52f9863b0e14fd179dd2c894e727f1033ebf1f0784d2da202ecfdda1571f",
+        "blob": "12349c73e7102cf2c539e1e1a17046b66bf58565",
+        "content": "sha256:511aae5576980a7226f1c4525ec3e83cfca5274db988a0ba832f85be27d891d8",
         "locator": {
-          "kind": "symbol",
-          "name": "RoleLauncher"
+          "end": 1159,
+          "kind": "line_range",
+          "start": 1080
         }
       },
       "id": "RLZ-MKJATY",
@@ -93,12 +116,12 @@
     },
     {
       "anchor": {
-        "blob": "e594548fbdb28c98577403ff11fe3366119231d4",
-        "content": "sha256:efe3fd473f85706978420f1e495b0d9acd28d7a821f6bb4921b416fe3f68ae6a",
+        "blob": "12349c73e7102cf2c539e1e1a17046b66bf58565",
+        "content": "sha256:3ce7369a5577704e0156be3fde1ae43e6b2aa2c9eafabc52ca7ec8f99b6e715b",
         "locator": {
-          "end": 450,
+          "end": 686,
           "kind": "line_range",
-          "start": 370
+          "start": 580
         }
       },
       "id": "RLZ-N85X2R",
@@ -112,11 +135,12 @@
     },
     {
       "anchor": {
-        "blob": "e594548fbdb28c98577403ff11fe3366119231d4",
-        "content": "sha256:a5ec52f9863b0e14fd179dd2c894e727f1033ebf1f0784d2da202ecfdda1571f",
+        "blob": "12349c73e7102cf2c539e1e1a17046b66bf58565",
+        "content": "sha256:511aae5576980a7226f1c4525ec3e83cfca5274db988a0ba832f85be27d891d8",
         "locator": {
-          "kind": "symbol",
-          "name": "RoleLauncher"
+          "end": 1159,
+          "kind": "line_range",
+          "start": 1080
         }
       },
       "id": "RLZ-RKR5QW",
@@ -130,11 +154,12 @@
     },
     {
       "anchor": {
-        "blob": "e594548fbdb28c98577403ff11fe3366119231d4",
-        "content": "sha256:18e3536e6f348422306c2cf062f46b8f825a76a9b851c875a0abbac15532992e",
+        "blob": "12349c73e7102cf2c539e1e1a17046b66bf58565",
+        "content": "sha256:1b82c274556b2944144ea73674c31503477db1b7786ae43f615e1ee735c9f4c4",
         "locator": {
-          "kind": "symbol",
-          "name": "roleLauncherGrid"
+          "end": 55,
+          "kind": "line_range",
+          "start": 41
         }
       },
       "id": "RLZ-TNTSC0",
@@ -148,11 +173,12 @@
     },
     {
       "anchor": {
-        "blob": "e594548fbdb28c98577403ff11fe3366119231d4",
-        "content": "sha256:a5ec52f9863b0e14fd179dd2c894e727f1033ebf1f0784d2da202ecfdda1571f",
+        "blob": "12349c73e7102cf2c539e1e1a17046b66bf58565",
+        "content": "sha256:511aae5576980a7226f1c4525ec3e83cfca5274db988a0ba832f85be27d891d8",
         "locator": {
-          "kind": "symbol",
-          "name": "RoleLauncher"
+          "end": 1159,
+          "kind": "line_range",
+          "start": 1080
         }
       },
       "id": "RLZ-W3VMNM",
@@ -187,7 +213,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "01dce06e4fa9d67a182271cf2b78c81f0124ff12",
+            "blob": "12349c73e7102cf2c539e1e1a17046b66bf58565",
             "content": "sha256:6e12c73e518e0dad2a470a82303f8f9f7e83170c8fbf27b24a3acdcc76b3dd43",
             "locator": {
               "kind": "symbol",

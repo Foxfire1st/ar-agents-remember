@@ -70,4 +70,4 @@ The table-local log witnesses retain ordinary-path preservation within the 200-c
 - An explicitly over-long log path becomes its exact length and digest. [3]
 - Authored install-case dimensions normalize the current user-settings XDG prefix. [4]
 
-- The assembled table applies final L111 shaped rows over its scaffold; no built row names L111, and direct_execution_grant is final. L100 interim ownership remains; L109 now has four final shaped rows and no assembled L109 interim owner. The earlier L109 interim wording is historical, not current policy. ToolAnswerRow's actual definition is in tool_answer_l111_test_support; the table imports it. Task operation rows follow VALID_OPERATIONS without successful get/read_steps rows. Authored illustrations and largest-case labels are not observed universal maxima or live acceptance. [5]
+- Final-delivery observer patches record_tool_completed and compares delivered_tokens with returned/logged count; no ambient lifecycle is installed. [6]

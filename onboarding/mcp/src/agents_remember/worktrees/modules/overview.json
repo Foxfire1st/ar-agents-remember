@@ -1995,6 +1995,57 @@
         }
       ]
     },
+    "87": {
+      "note": "Start/attach share native task-fact publication, preserving attach stage and making exact retries no-ops.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a83e3b0ba83b697ae4190cd329fec12aefa5f8f7",
+            "content": "sha256:645749bc10470be4dc5c58ed620ffce1275f51c22b7d7ceedddf24aacd7a5758",
+            "locator": {
+              "kind": "symbol",
+              "name": "publish_start_task_facts"
+            },
+            "path": "mcp/src/agents_remember/worktrees/start_task_publication.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "88": {
+      "note": "Master-series activation validates task-stage publication before bootstrap mutation and publishes stage only for an admitted contract.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0bfe4ab16af2c6dd0b8b1b96c98c1bd3d1378dde",
+            "content": "sha256:4642f7a53e4c7a1b6f2948b255bf0108f328719f0a81b908c95da06376a082ae",
+            "locator": {
+              "kind": "symbol",
+              "name": "activate_master_series"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/startup/series_contract_activation.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "89": {
+      "note": "Counted native change sets have their own relocated NUL parser and changed-path observation hook.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7811241b103c8c1b3f9f931a62c42f51a8bc3742",
+            "content": "sha256:868cceba358df705e894864d6ecc17a750a328ae788c89cc4fb803b32930a54f",
+            "locator": {
+              "kind": "symbol",
+              "name": "changed_files_with_counts"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/git_changes.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
     "9": {
       "note": "The route's new gate over two memory sides.",
       "targets": [
@@ -2007,6 +2058,40 @@
               "name": "onboarding_trace_result"
             },
             "path": "mcp/src/agents_remember/worktrees/modules/onboarding_trace.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "90": {
+      "note": "A capture observer runs only after an unchanged post-capture baseline is established.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f87e4882334717b4528aa4384f167e1d68686821",
+            "content": "sha256:8dfc8d85beaedf8809130c94f03ed4d3b1e2023e66474b2cac04cc0be082e393",
+            "locator": {
+              "kind": "symbol",
+              "name": "note_capture_baseline"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/capture_baseline.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "91": {
+      "note": "Abandon publishes contract/task/parent facts with explicit restoration of those publication inputs.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0b8256aef2d4c0a07621d321e9efa78148b84942",
+            "content": "sha256:371d5ba827d99b7cc19a57ae8a47f83034c87c651fe721108944dcb00cd016f0",
+            "locator": {
+              "kind": "symbol",
+              "name": "publish_abandoned_task"
+            },
+            "path": "mcp/src/agents_remember/worktrees/abandon_task_publication.py"
           },
           "kind": "code"
         }

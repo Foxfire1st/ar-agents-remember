@@ -3,10 +3,12 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "a7d193eeaa4ad21924002e9b53ae660f4a705e46",
-        "content": "sha256:717480f7d1585baf7d9faf0c81f97cabfab65d62548dce91e4682c54c4e75183",
+        "blob": "17a2e16e6ba4cd7ef8eafe7a4e2b0d7be30289e0",
+        "content": "sha256:9e52fec953dfac5244b1c7545a5c1186b0ea21eb58011207d58f67cf8ed1b5a6",
         "locator": {
-          "kind": "file"
+          "end": 20,
+          "kind": "line_range",
+          "start": 3
         }
       },
       "id": "RLZ-NB3VVA",
@@ -21,14 +23,14 @@
   ],
   "references": {
     "1": {
-      "note": "Worktree adoption, terminal record, dropped-call and seat-binding rules; Architect starts without a document. [1]\n\nAnchor: lines 1-25",
+      "note": "Worktree location records, the landing contract and structural seat bindings; Architect starts without a document.\n\nAnchor: lines 1-20",
       "targets": [
         {
           "anchor": {
-            "blob": "06937f0f60f651ef5844d74dedba11764a717c6b",
-            "content": "sha256:33b86993f9bfcb5981ada32ce63525778cd1c284073d74e63b5b114e966c77a7",
+            "blob": "17a2e16e6ba4cd7ef8eafe7a4e2b0d7be30289e0",
+            "content": "sha256:68568839b31e900f8d180f795edc34487536baf650ef94370b39bc4bfb79098f",
             "locator": {
-              "end": 25,
+              "end": 20,
               "kind": "line_range",
               "start": 1
             }
@@ -38,16 +40,16 @@
       ]
     },
     "2": {
-      "note": "Role-bound trust checkpoint and provider degradation response boundaries; not restored provider execution authority. [2]\n\nAnchor: lines 27-58",
+      "note": "Opening trust checkpoint and provider-degradation report/order/no-kill boundaries, not restored runtime authority.\n\nAnchor: lines 22-53",
       "targets": [
         {
           "anchor": {
-            "blob": "06937f0f60f651ef5844d74dedba11764a717c6b",
+            "blob": "17a2e16e6ba4cd7ef8eafe7a4e2b0d7be30289e0",
             "content": "sha256:6389773650a4e37f8e391491f59f45a45d0244182022e3f4fa7e7d9c2329034a",
             "locator": {
-              "end": 58,
+              "end": 53,
               "kind": "line_range",
-              "start": 27
+              "start": 22
             }
           },
           "kind": "code"

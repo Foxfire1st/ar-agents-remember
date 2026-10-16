@@ -10,7 +10,7 @@ The pure model carries canonical role/document/request identity and validates ad
 
 ## Code Commentary
 
-Topology helpers enforce the seven roles' canonical reference needs. Taskless metadata and exact scope comparators preserve active request identity. Role model applies on the role agent, effort on its role model, and service tier on its role agent even for a model override. Fast maps to priority; another agent uses native tier default. Model rows carry host-offered `features` with permission-bearing marks and agents carry `modes`; defaults carry `mode`, `featureValues` and per-choice sources. `agentId` is optional so defaults can stand without an explicit selection, `roleAgentOverrideFor` preserves explicit speed values through model and effort changes, and selection equality compares sorted feature entries.
+Entry option helpers follow server-ordered children and exact references for the seven roles' canonical reference needs; they do not rebuild topology from documents and series. Taskless metadata and exact scope comparators preserve active request identity. Role model applies on the role agent, effort on its role model, and service tier on its role agent even for a model override. Fast maps to priority; another agent uses native tier default. Model rows carry host-offered `features` with permission-bearing marks and agents carry `modes`; defaults carry `mode`, `featureValues` and per-choice sources. `agentId` is optional so defaults can stand without an explicit selection, `roleAgentOverrideFor` preserves explicit speed values through model and effort changes, and selection equality compares sorted feature entries.
 
 ## Invariants And Boundaries
 
@@ -26,7 +26,7 @@ The current source and test assertions below establish the documented ownership;
 
 ## MIK-R95 Bound Selection Helpers
 
-`boundTasklessRequest` lets a bound Projects row adopt an existing saved open request (accepted, running, starting or unknown), marks it pending only when the execution is uncertain (`canRetry` or starting/unknown), and returns an already uncertain current request unchanged so its identity survives reconciliation; an adopted plain accepted/running request stays open, not pending. The document chat reuses this model's topology helpers (`sprintOptionsForDocs`, `masterOptionsForSprint`, `taskOptionsForMaster`, `sameTaskDocumentRef`) to admit exactly the roles a selection can start.
+`boundTasklessRequest` lets a bound Projects row adopt an existing saved open request (accepted, running, starting or unknown), marks it pending only when the execution is uncertain (`canRetry` or starting/unknown), and returns an already uncertain current request unchanged so its identity survives reconciliation; an adopted plain accepted/running request stays open, not pending. The document chat and launcher use `sprintOptionsForEntries`, `masterOptionsForSprint`, `taskOptionsForMaster` and exact reference equality to admit only roles allowed by the served entry hierarchy.
 
 ## Investigator scope and request identity
 

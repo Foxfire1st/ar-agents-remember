@@ -29,7 +29,7 @@ alone, and `bootstrap` to `bootstrap` alone, while `orientation` applies to all 
 direction; the parser refuses a manifest where the two disagree rather than letting the compiler
 resolve the conflict at selection time.
 
-**Retained core metadata.** The six `core` entries still name authority, invariants, lifecycle-frame, loop, acceptance and launcher sources. This frozen map is inert metadata for compiler compatibility: the current native route injects no shared core block.
+**Retained core metadata.** The six `core` entries still name authority, invariants, lifecycle-frame, loop, acceptance and launcher sources. This map is inert metadata for compiler compatibility: the current native route injects no shared core block. The lifecycle-frame purpose names task worktree records and the landing chain contract lifecycle, not ambient adoption.
 
 **`roles` is the per-seat registry and is where the selection actually happens.** Each of the ten
 entries carries `file` (the role source under `roles/`), `altitude`, `tools` (the tool ids the seat
@@ -180,7 +180,11 @@ install-time corpus anchor, and the corpus test that pins the registry wiring.
 
 
 
-- The retained six-block core map is metadata and is not injected into native role capsules. [4]
+
+
+- Retained core-source map names task worktree records and the landing contract, not session adoption. [4]
+
+
 
 
 - The four template lists that register the curator hand-off list, one per seat on either side of that contract (each anchor quotes a sibling entry of the same list, because the shared file name appears in all four). [7]

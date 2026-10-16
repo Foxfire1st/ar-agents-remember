@@ -3,11 +3,11 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "a2601c1651a7802bb5667d6a1e3ab7805c5fff59",
-        "content": "sha256:70720c5564fb8241910252dec905d1ec988b73fc08f8b09e21f6ed3d3716db72",
+        "blob": "ea76263611577cad45322c53e6e5c0e2c1b80251",
+        "content": "sha256:49cadaa4f09826356b9fe14069c6fb81d7f021e189d07b81b02b105a0127c010",
         "locator": {
           "kind": "symbol",
-          "name": "summarizeEvent"
+          "name": "summarizeToolCompleted"
         }
       },
       "id": "RLZ-5XKEGZ",
@@ -16,16 +16,17 @@
         "handoffEntry": "L114-W10",
         "leaf": "260928-MIK-L114"
       },
-      "rationale": "summarizeEvent renders each row's label, caller context, and outcome meta; caller/outcome display with legacy preservation is this function's branching.",
+      "rationale": "Delegates caller, legacy-aware outcome and target-role rendering to helpers.",
       "role": "presentation"
     },
     {
       "anchor": {
-        "blob": "a2601c1651a7802bb5667d6a1e3ab7805c5fff59",
-        "content": "sha256:fe55ae947b3a6fa962f00b29ba3e007c2b1a331d5ff9136f442fee3e8a425c32",
+        "blob": "ea76263611577cad45322c53e6e5c0e2c1b80251",
+        "content": "sha256:49cadaa4f09826356b9fe14069c6fb81d7f021e189d07b81b02b105a0127c010",
         "locator": {
-          "kind": "symbol",
-          "name": "summarizeToolCompleted"
+          "end": 115,
+          "kind": "line_range",
+          "start": 94
         }
       },
       "id": "RLZ-J3YW3P",
@@ -57,16 +58,16 @@
       ]
     },
     "10": {
-      "note": "Existing unknown-tool humanization statement remains correct. TOOL_LABELS loses cgc callers/callees/complexity/dependenc — source ownership, not executed visual proof.\n\nAnchor: `const TOOL_LABELS: Record<string, string> = {`",
+      "note": "The current friendly-tool label map omits removed tool IDs; retained event history is not removed.\n\nAnchor: actual current supporting source",
       "targets": [
         {
           "anchor": {
-            "blob": "02b856c5abc15a186564c83888ec1016bd161179",
-            "content": "sha256:e7c4b3581a01a7c689b0129e8b740af8f540d77b02b7391b44f3ff5752263ed4",
+            "blob": "ea76263611577cad45322c53e6e5c0e2c1b80251",
+            "content": "sha256:65c598ad9648887943367cb17a88d640c69cf2027cfaa4d14addbbb53980e087",
             "locator": {
-              "end": 81,
+              "end": 40,
               "kind": "line_range",
-              "start": 65
+              "start": 27
             }
           },
           "kind": "code"
@@ -74,16 +75,16 @@
       ]
     },
     "11": {
-      "note": "Existing unknown-tool humanization statement remains correct. TOOL_LABELS loses cgc callers/callees/complexity/dependenc — source ownership, not executed visual proof.\n\nAnchor: `function summarizeToolCompleted(`",
+      "note": "An unlisted tool ID uses mechanical humanization rather than reinstating removed tool exposure.\n\nAnchor: actual current supporting source",
       "targets": [
         {
           "anchor": {
-            "blob": "02b856c5abc15a186564c83888ec1016bd161179",
-            "content": "sha256:458a1c01cd0a65a98c1a833fe1a2a66467c8b1dda4976f474cb5a13fdacfdb1b",
+            "blob": "ea76263611577cad45322c53e6e5c0e2c1b80251",
+            "content": "sha256:200d467064e33fb529d53dca9780fbe8a9d6f9df6b50d2b32e2035c81cec97b4",
             "locator": {
-              "end": 209,
+              "end": 238,
               "kind": "line_range",
-              "start": 186
+              "start": 211
             }
           },
           "kind": "code"
@@ -91,16 +92,16 @@
       ]
     },
     "12": {
-      "note": "Existing unknown-tool humanization statement remains correct. TOOL_LABELS loses cgc callers/callees/complexity/dependenc — source ownership, not executed visual proof.\n\nAnchor: `function toolLabel(tool: string   undefined): string {`",
+      "note": "Only read.packet and tool.completed have specialized summary handlers; other kinds use the honest unknown-kind fallback.\n\nAnchor: actual current supporting source",
       "targets": [
         {
           "anchor": {
-            "blob": "02b856c5abc15a186564c83888ec1016bd161179",
-            "content": "sha256:764513e20e271bf3f5dcce21d3aade9741dbfbb0fa46a656067f0e402912b624",
+            "blob": "ea76263611577cad45322c53e6e5c0e2c1b80251",
+            "content": "sha256:a53e71cda57d0e11c1c99c30ee69127e0c21eeaeaedef1e2c8a00d2dd063ef91",
             "locator": {
-              "end": 480,
+              "end": 57,
               "kind": "line_range",
-              "start": 475
+              "start": 49
             }
           },
           "kind": "code"
@@ -108,129 +109,48 @@
       ]
     },
     "13": {
-      "note": "Existing unknown-tool humanization statement remains correct. TOOL_LABELS loses cgc callers/callees/complexity/dependenc — source ownership, not executed visual proof.\n\nAnchor: `function humanizeIdentifier(value: string): string {`",
+      "note": "The tool.completed formatter preserves explicit failure, caller, target and outcome facts without a task-state projection join.\n\nAnchor: actual current supporting source",
       "targets": [
         {
           "anchor": {
-            "blob": "02b856c5abc15a186564c83888ec1016bd161179",
-            "content": "sha256:36a7c05e51281e9730978ebe57af84a5b8ad06e58890bdd8895882cb4d83c569",
+            "blob": "ea76263611577cad45322c53e6e5c0e2c1b80251",
+            "content": "sha256:49cadaa4f09826356b9fe14069c6fb81d7f021e189d07b81b02b105a0127c010",
             "locator": {
-              "end": 516,
+              "end": 115,
               "kind": "line_range",
-              "start": 508
+              "start": 94
             }
           },
           "kind": "code"
         }
       ]
     },
-    "2": {
-      "note": "Existing task identity helpers reused for lifecycle-attached event labels, including task-document title fallback.\n\nAnchor: `findLifecycleEnclosure`, `taskLabel`, `taskDocsForLifecycle`, `taskDocumentLabel`",
+    "14": {
+      "note": "Unknown-event context prefers the explicit enclosure and otherwise the repository; the existing assertion checks enclosure presence and repository absence.\n\nAnchor: existing unknown-event case",
       "targets": [
         {
           "anchor": {
-            "blob": "40a0e24637b2a8f8a50c03cf09db2ea3976e83cc",
-            "content": "sha256:e66ea6f62fbc5c51973b11cb6341f46638064417bb57c17cf820c8a5dcf7f58b",
+            "blob": "ea76263611577cad45322c53e6e5c0e2c1b80251",
+            "content": "sha256:bf0c32db45e3df966658e090820fc117bc270597cfd431c0d9062a6e3efc446f",
             "locator": {
               "kind": "symbol",
-              "name": "findLifecycleEnclosure"
-            },
-            "path": "dashboard/src/data/taskIdentity.ts"
+              "name": "summarizeUnknown"
+            }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "40a0e24637b2a8f8a50c03cf09db2ea3976e83cc",
-            "content": "sha256:86383b3c238500b02d8f7732008333316d1708d25977d666e54e156794db34ec",
+            "blob": "156c6ba6a1374ce1679b8a088ef5d98d8dafc9a3",
+            "content": "sha256:063112214dbdd88f3fcf236503a696b28a6b41064b159b2452c88fdfc2d35f28",
             "locator": {
-              "kind": "symbol",
-              "name": "taskLabel"
-            },
-            "path": "dashboard/src/data/taskIdentity.ts"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "40a0e24637b2a8f8a50c03cf09db2ea3976e83cc",
-            "content": "sha256:d5f608b1933d2b22d1855ff9e584dd667dcb432dd9e662dd92a38371fc1773cf",
-            "locator": {
-              "kind": "symbol",
-              "name": "taskDocsForLifecycle"
-            },
-            "path": "dashboard/src/data/taskIdentity.ts"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "40a0e24637b2a8f8a50c03cf09db2ea3976e83cc",
-            "content": "sha256:d06692e6f0f3b9e031dd184f6ceffee2ef3bef4a16b971b443a233499df51516",
-            "locator": {
-              "kind": "symbol",
-              "name": "taskDocumentLabel"
-            },
-            "path": "dashboard/src/data/taskIdentity.ts"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "3": {
-      "note": "Ambient lifecycle emits `tool.completed`, `read.packet`, lifecycle phase, and block events with explicit fields.\n\nAnchor: \"\\\"tool.completed\\\",\"; \"\\\"read.packet\\\", \\\"observed\\\", \\\"model\\\", repoId=repo_id, files=projected\"; \"self._emit_locked(\\\"lifecycle.phase-changed\\\", \\\"declared\\\", \\\"model\\\", phase=phase)\"; \"\\\"lifecycle.blocked\\\",\"",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "289124eb65069d96a2a16ec167d0190a9bbdc367",
-            "content": "sha256:1c94cf95655949b91d71d652c1ab17b9357ab60f000db84bed8fabaf6be17103",
-            "locator": {
-              "end": 426,
+              "end": 254,
               "kind": "line_range",
-              "start": 426
+              "start": 246
             },
-            "path": "mcp/src/agents_remember/observer/ambient.py"
+            "path": "dashboard/src/panels/EventRiver.test.tsx"
           },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "289124eb65069d96a2a16ec167d0190a9bbdc367",
-            "content": "sha256:dbcbaa2468ece17ff2403bbfb72f11f7e1c714be7e81a8f13df058147f73d948",
-            "locator": {
-              "end": 460,
-              "kind": "line_range",
-              "start": 460
-            },
-            "path": "mcp/src/agents_remember/observer/ambient.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "289124eb65069d96a2a16ec167d0190a9bbdc367",
-            "content": "sha256:862871a9116fbab67aee45d2ba85bd1e35fb5750effb9048fc9ce6fc7355677b",
-            "locator": {
-              "end": 312,
-              "kind": "line_range",
-              "start": 312
-            },
-            "path": "mcp/src/agents_remember/observer/ambient.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "289124eb65069d96a2a16ec167d0190a9bbdc367",
-            "content": "sha256:729c273b64711e2e0ac65dcc92f6a4b72006c2d0c528fd4dd4566ee42b2739aa",
-            "locator": {
-              "end": 217,
-              "kind": "line_range",
-              "start": 217
-            },
-            "path": "mcp/src/agents_remember/observer/ambient.py"
-          },
-          "kind": "code"
+          "kind": "test"
         }
       ]
     },
@@ -249,94 +169,6 @@
             "path": "dashboard/src/panels/EventRiver.tsx"
           },
           "kind": "code"
-        }
-      ]
-    },
-    "5": {
-      "note": "Focused render coverage proves lifecycle-only history rows use task document labels instead of raw lifecycle ids.\n\nAnchor: \"uses task document labels when event history no longer has a live lifecycle row\"",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "45457eab2c475824264e05a7abb33ceaa18b5051",
-            "content": "sha256:3e86001d53aad83fb55843329118a148d0c3bd908c5646d2596e6b54ba5ecbd6",
-            "locator": {
-              "end": 433,
-              "kind": "line_range",
-              "start": 413
-            },
-            "path": "dashboard/src/panels/EventRiver.test.tsx"
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "6": {
-      "note": "`eventSummaryContextReady` gates lifecycle/enclosure-bound rows on available lifecycle, enclosure, or task-document context.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "02b856c5abc15a186564c83888ec1016bd161179",
-            "content": "sha256:ff4226bd5ed17704780445b06a57d0a29161f1e105b288bc293d963d7dcce2d0",
-            "locator": {
-              "kind": "symbol",
-              "name": "eventSummaryContextReady"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "7": {
-      "note": "`EventRiver` drops not-ready rows before calling `summarizeEvent`.\n\nAnchor: `eventSummaryContextReady`, `summarizeEvent`",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "539e6e0dfac6147013ce80409fdc72508cca76fd",
-            "content": "sha256:2c5ce97c9242d264c581d8e1abbf693fad8c82d495fa6a787817afcb6b3fcb04",
-            "locator": {
-              "end": 94,
-              "kind": "line_range",
-              "start": 83
-            },
-            "path": "dashboard/src/panels/EventRiver.tsx"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "8": {
-      "note": "Lifecycle-only history rows use task-document labels instead of raw lifecycle ids once context exists.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "45457eab2c475824264e05a7abb33ceaa18b5051",
-            "content": "sha256:3e86001d53aad83fb55843329118a148d0c3bd908c5646d2596e6b54ba5ecbd6",
-            "locator": {
-              "end": 433,
-              "kind": "line_range",
-              "start": 413
-            },
-            "path": "dashboard/src/panels/EventRiver.test.tsx"
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "9": {
-      "note": "A lifecycle-bound row stays hidden until task-document context arrives, then renders.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "45457eab2c475824264e05a7abb33ceaa18b5051",
-            "content": "sha256:976af7e0e1345c600be688b12cbf679275f4991a6443f03c83bb65fd35c6fc26",
-            "locator": {
-              "end": 366,
-              "kind": "line_range",
-              "start": 341
-            },
-            "path": "dashboard/src/panels/EventRiver.test.tsx"
-          },
-          "kind": "test"
         }
       ]
     }

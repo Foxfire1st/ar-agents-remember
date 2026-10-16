@@ -6,8 +6,9 @@
         "blob": "364d796cb0f78370d3505ff5eb13835028d2e2c3",
         "content": "sha256:cffbd5ac4ed3c5f4587e873152f7f4a891cf08920bb486678e60416dd1854d3d",
         "locator": {
-          "kind": "symbol",
-          "name": "test_parentless_task_document_answers_with_the_code_and_task_doc"
+          "end": 110,
+          "kind": "line_range",
+          "start": 93
         }
       },
       "facet": "The missing-parent quality takeover retains its refusal code and task_doc recovery.",

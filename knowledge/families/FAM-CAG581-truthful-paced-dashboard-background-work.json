@@ -3,9 +3,9 @@
     "criteria": [
       "joint_guarantee"
     ],
-    "justification": "Paced projection, bounded interested landing probes and independent provider safety together reduce unnecessary work without concealing missed inputs, completed facts or leftover fleets; no one member guarantees that combination."
+    "justification": "Paced non-host projection/healing, bounded interested landing probes and independent provider safety jointly reduce unnecessary work without concealing failed pending invalidations, completed facts or leftover fleets. Host activity is separately publication/boot driven and is not polled or healed by periodic full/degraded reconciliation; that exception is not an assurance that missed host invalidations are recovered. No one member guarantees the remaining combination."
   },
-  "guarantee": "Native-watch completion pacing, path-directed refresh, transaction-bound own-write suppression and honest owner accounting together avoid self-echo work without hiding failed or missed inputs. A due full reconciliation is independent of partial traffic, failed invalidations remain pending, and the noncooperating append race is explicitly bounded by that healing path. Terminal arcs with no valid final receive only their exact one permitted finishing attempt, including startup, while abandoned/build-only history remains probe-free. Diagnostic windows state incompleteness; no measured processor share, latency or installation acceptance follows from this guarantee. Serving-bound landing discovery and new probe admission require actual state-stream interest and use bounded current-identity semantic-answer due state; explicit unbound reads remain explicit. Provider safety remains periodic independently of page interest or launch-authority absence so labelled leftovers are not hidden.",
+  "guarantee": "Native-watch completion pacing, path-directed refresh, transaction-bound own-write suppression and honest owner accounting together avoid self-echo work while retaining failed invalidations and healing missed inputs in the non-host healing domains. A due full reconciliation of those domains is independent of partial traffic, and the noncooperating store-append race is explicitly bounded by that healing path. HOST_ACTIVITY is deliberately excluded from periodic full-heal and degraded rereads: admitted host input is retained; initial dashboard intake and host-publication invalidation use the separately qualified host reader and boot reconciliation. A missed host-activity invalidation is not promised recovery by the periodic healing deadline. Terminal arcs with no valid final receive only their exact one permitted finishing attempt, including startup, while abandoned/build-only history remains probe-free. Diagnostic windows state incompleteness; no measured processor share, latency or installation acceptance follows from this guarantee. Serving-bound landing discovery and new probe admission require actual state-stream interest and use bounded current-identity semantic-answer due state; explicit unbound reads remain explicit. Provider safety remains periodic independently of page interest or launch-authority absence so labelled leftovers are not hidden.",
   "id": "FAM-CAG581",
   "members": [
     "INV-AD1MRN",
@@ -35,7 +35,7 @@
     "leaf": "260928-MIK-L40",
     "task": "260928-MIK"
   },
-  "revision": 3,
+  "revision": 4,
   "routes": [
     "mcp/src/agents_remember/serving",
     "mcp/src/agents_remember/controlplane",

@@ -34,8 +34,7 @@ No additional work is asserted by this card.
 
 ### Logic
 
-- `seedTwoLiveLeaves` seeds two live leaves (`direct-leaf`, `other-leaf`) with their task documents,
-  lifecycles and enclosures.
+- `seedTwoLiveLeaves` publishes two native TaskEntry rows (`direct-leaf`, `other-leaf`) with qualified references, reader summaries and their own bound worktrees. The body stub finds each summary by entry key; no lifecycle/document/enclosure join is seeded.
 - `serve` stubs `fetch` for every route the journey touches. `knowledge.present` is the store: the summary
   answers `unavailable` (`candidate_dataset_absent`) until it flips, then `counted` `+2 −0`. It exposes
   `summaryReads(leaf)` and `catalogueReads()`.

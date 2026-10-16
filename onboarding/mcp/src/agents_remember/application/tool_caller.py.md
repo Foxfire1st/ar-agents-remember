@@ -16,10 +16,10 @@ without a binding is a chat without a role, named with its harness.
 `snapshot_tool_caller(binding, *, coordination_root, config_path)` never raises. It takes
 the leaf, master or sprint reference from the binding in that order, resolves its document
 for id and title, and keeps the reference key as `task_path` only when the document cannot
-be read. `derive_harness(config_path)` names the harness from the settings file the server
+be read. The canonical reference key is separately retained as `scope_key` even when id/title are readable, so Event River correlation does not depend on a session id. `derive_harness(config_path)` names the harness from the settings file the server
 started with: the directory owning its `mcp` folder, else the file stem, else nothing.
 
 ## Evidence
 
-- The caller is snapshotted once from the launch binding and never raises. [1]
+- Caller and canonical scope key are snapshotted once from the launch binding without raising. [1]
 - The harness is named from the settings file path. [2]

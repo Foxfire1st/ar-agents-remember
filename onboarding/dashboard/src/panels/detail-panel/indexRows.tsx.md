@@ -6,18 +6,18 @@
 
 ## Purpose
 
-Own shared index-row identities, target resolution and status grouping independently of task-page composition.
+Own shared index-row props, reference-gated target resolution and served child-progress presentation independently of task-page composition.
 
 ## Code Commentary
 
-A target prefers a resolvable master path, then a lifecycle link, then a matched authored slice slug. Unresolved rows remain inert with an explanatory title. Positions come from the full original row list, not a filtered group; matching projected task facts may supply row names and short IDs.
+`resolveRowTarget` uses entry.key for opaque selection only when entry.reference exists; an addressless row remains inert. Full-list positions define stable test/navigation IDs; no masterRef, lifecycle or slug fallback is inferred.
 
-indexSlices builds one call-local Map keyed by the existing sliceSlug spelling, retaining the first document for duplicate slugs. Lookup requires a truthy ref.file and uses stripExt(ref.file) without new basename/path normalization; folder-qualified mismatches and empty files stay unresolved. indexedRows adds this matcher to a copied handler object. resolveRowTarget consumes a supplied matcher, otherwise keeps the legacy sliceForRef scan. taskRowFacts itself still uses the legacy scan; this optimization is not a new cross-call cache or a global dashboard complexity guarantee.
+`TaskIndexProps` carries the parent entry, shared tasks map and onJump. Child progress reads served counts through childProgress/liveChildCount, not a second sub-task tally. No slice index or first-match document scan remains.
 
-Sprint entries retain every row. A resolved commanded master contributes its projected status; seat/unprojected rows retain their authored status. Work, waiting, completed and abandoned groups derive from those facts without authoring state, fetching documents or deciding grants. This is the relocated index-row navigation/grouping seam, not a second identity authority.
+This module does not classify authored seat rows or restore a document/slice fallback. `task-groups` follows served children and their canonical stages; its sprint seat view is separate summary content. Here `ChildProgress` displays published completed/started counts over the live-child total and omits a zero-total progress figure. Neither helper authors task state, fetches a document or decides a grant.
 
 ## Evidence
 
-- Master/lifecycle/slice target precedence, stable full-list positions and retained sprint rows belong to the extracted row seam. [1]
 
-- The call-local slice index retains the first duplicate and exact legacy file spelling; target resolution optionally uses that matcher without changing precedence. [2]
+- Row selection uses the opaque canonical entry key only when a document reference exists. [2]
+- Child progress reads served counts and omits a zero-total figure, without a slice/document matcher. [3]

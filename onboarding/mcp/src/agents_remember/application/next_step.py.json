@@ -44,37 +44,52 @@
       ]
     },
     "10": {
-      "note": "The edge is exception-contained; contract/guidance failure handling stays on existing owners.\n\nAnchor: `next_step_for`, `_guidance_for`, `_load_contract`",
+      "note": "Contract-path reads contain their own load/guidance failures; only the two declared argument-bound preview stops are admitted.\n\nAnchor: current owner",
       "targets": [
         {
           "anchor": {
-            "blob": "e2ec08c81e4a97d5e1d4d4ea743ed9c27f6e869a",
-            "content": "sha256:4c802865c8314376d60ec3b292d315d7b70929b92c3bb9585d5fe7eb46805179",
+            "blob": "a0ebc421a6c1cbf393461876ac120f34d348d7ac",
+            "content": "sha256:be06be8f7a7d85e2cc0381fd08caadbefe845d38d7d49ec8b2e68dae437ed0fc",
             "locator": {
-              "kind": "symbol",
-              "name": "next_step_for"
+              "end": 99,
+              "kind": "line_range",
+              "start": 96
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "e2ec08c81e4a97d5e1d4d4ea743ed9c27f6e869a",
+            "blob": "a0ebc421a6c1cbf393461876ac120f34d348d7ac",
             "content": "sha256:765eac3af59a82635f4e6c038672cdd21d715fbebfb4bf51a7a77b789e3983da",
             "locator": {
-              "kind": "symbol",
-              "name": "_guidance_for"
+              "end": 120,
+              "kind": "line_range",
+              "start": 110
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "e2ec08c81e4a97d5e1d4d4ea743ed9c27f6e869a",
-            "content": "sha256:21cec50169d59995bc298df70e76b03e70a993b36026bf45ddf5a411c0c8273a",
+            "blob": "a0ebc421a6c1cbf393461876ac120f34d348d7ac",
+            "content": "sha256:13bfa74a7f5d088ca77ee06e76447037c2be432b183cb14de2ab37b9a209d702",
             "locator": {
-              "kind": "symbol",
-              "name": "_load_contract"
+              "end": 133,
+              "kind": "line_range",
+              "start": 123
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a0ebc421a6c1cbf393461876ac120f34d348d7ac",
+            "content": "sha256:651b376bfe02b706d636bb5f47c0b192be0979805c07512995afbbe5733127ad",
+            "locator": {
+              "end": 107,
+              "kind": "line_range",
+              "start": 102
             }
           },
           "kind": "code"
@@ -220,66 +235,6 @@
         }
       ]
     },
-    "5": {
-      "note": "`amb.current` — the live `LifecycleState` resolved at the edge.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "bf408b0d04334071a43207138086e4cfb6f2a374",
-            "content": "sha256:d2eeec1c8c6e6fc8d9c8da84dbeb2175f828aa0fb955a2c168655a003b1c47d1",
-            "locator": {
-              "kind": "symbol",
-              "name": "AmbientLifecycle"
-            },
-            "path": "mcp/src/agents_remember/observer/ambient.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "6": {
-      "note": "`LifecycleState` (`enclosure`, `is_terminal`) + `Phase` literals (`decide`, …) and the `awaiting-developer` state the parked branch reads (state/phase vocabulary in `models/lifecycle.py` since L9).\n\nAnchor: \"LiveState = Literal[\"; \"Phase = Literal[\"",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "3bf6f5d80827895aa75614dc7a48e78b9c5bf9e9",
-            "content": "sha256:68300b739da1927db29cec45b98779726e7acc34b5ab1a6256f0a9bc79d96672",
-            "locator": {
-              "kind": "symbol",
-              "name": "LifecycleState"
-            },
-            "path": "mcp/src/agents_remember/observer/lifecycle_state.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "9030c326e5e16730e1dff8af52680f98eaa923fa",
-            "content": "sha256:bc7ea17ba44e1badcdc204a07a38778a4a22c7bba61e96ccffab247036ee5670",
-            "locator": {
-              "end": 11,
-              "kind": "line_range",
-              "start": 11
-            },
-            "path": "mcp/src/agents_remember/models/lifecycles/responses.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "9030c326e5e16730e1dff8af52680f98eaa923fa",
-            "content": "sha256:456bb986c16af0114076552af2472d3ca010830a6f0e8a0cddff06106786870d",
-            "locator": {
-              "end": 15,
-              "kind": "line_range",
-              "start": 15
-            },
-            "path": "mcp/src/agents_remember/models/lifecycles/responses.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
     "7": {
       "note": "The next-step entry point derives guidance from the current lifecycle and tool; this source citation does not establish response token-count coverage.",
       "targets": [
@@ -297,12 +252,12 @@
       ]
     },
     "8": {
-      "note": "No state, terminal state or no contract yields no hint; only the retained operational branch remains.",
+      "note": "No contract yields no hint; resolved contract and tool select retained landing guidance.",
       "targets": [
         {
           "anchor": {
-            "blob": "e2ec08c81e4a97d5e1d4d4ea743ed9c27f6e869a",
-            "content": "sha256:a87f1c5d292edb2047b51349c5a0559f92c61fb49a9224338c0387dc8fff2ccc",
+            "blob": "a0ebc421a6c1cbf393461876ac120f34d348d7ac",
+            "content": "sha256:ed56376de2aca839183a36527b98b1606a2befdc8f3a1b1ee0cfd64c2bfe4bed",
             "locator": {
               "kind": "symbol",
               "name": "compute_next_step"

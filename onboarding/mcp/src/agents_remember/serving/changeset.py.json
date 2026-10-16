@@ -348,60 +348,6 @@
         }
       ]
     },
-    "2": {
-      "note": "The change-set primitive (counts/status, keeps deletions), branch existence probe, and BEFORE reader.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "f10f508c9cbeadef7f1983c4e81f8ecfe9410256",
-            "content": "sha256:e624c577a6a46da2a9dcc5305a454f893acaedde7b3be3e81951754ececf4337",
-            "locator": {
-              "kind": "symbol",
-              "name": "changed_files_with_counts"
-            },
-            "path": "mcp/src/agents_remember/worktrees/modules/git.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "f10f508c9cbeadef7f1983c4e81f8ecfe9410256",
-            "content": "sha256:93f45cc0ccbb9df978b7873846be582ad2735f01b912194107c89447ce06ac3a",
-            "locator": {
-              "kind": "symbol",
-              "name": "branch_exists"
-            },
-            "path": "mcp/src/agents_remember/worktrees/modules/git.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "f10f508c9cbeadef7f1983c4e81f8ecfe9410256",
-            "content": "sha256:a6eb0310bceeffe9f2c38f11f7c2cb8ec958d4b5611af197b85a2360fdf6e4cf",
-            "locator": {
-              "kind": "symbol",
-              "name": "commit_text_or_none"
-            },
-            "path": "mcp/src/agents_remember/worktrees/modules/git.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "f10f508c9cbeadef7f1983c4e81f8ecfe9410256",
-            "content": "sha256:5ca058fd21cdf3ffc9e7563dc3879ef8bab31e70928037f5e75ff29de67e2b3c",
-            "locator": {
-              "end": 1024,
-              "kind": "line_range",
-              "start": 985
-            },
-            "path": "mcp/src/agents_remember/worktrees/modules/git.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
     "20": {
       "note": "**The doc-reader entry point that publishes the absence as the body's `state`/`stateDetail`.**",
       "targets": [
@@ -569,6 +515,40 @@
         }
       ]
     },
+    "28": {
+      "note": "All three change-set routes share and return one app-owned conditional-read cache.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ed2dc3fce7532d17eb6bc8d965c8db487feda835",
+            "content": "sha256:d046806e0fdb63c71529e761b6256673d7d1a4b003a5cffdb4f609c8aa5d0bd5",
+            "locator": {
+              "kind": "symbol",
+              "name": "register_changeset_routes"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "29": {
+      "note": "Only actual successful response bytes get the ETag/no-cache and matching bodyless 304 path.\n\nAnchor: `response`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fd2e21cf15548f5d312e19dede561f645cac01df",
+            "content": "sha256:b201b807f610927bb82bf587c2ca11a8755a1dcc5c0d2fe2ad180d4b514e29b0",
+            "locator": {
+              "end": 212,
+              "kind": "line_range",
+              "start": 202
+            },
+            "path": "mcp/src/agents_remember/serving/changeset_cache.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
     "3": {
       "note": "Sidecar presence is derived from governing route indexes or a mirrored sidecar-file probe.\n\nAnchor: \"def route_sidecar_status(\"",
       "targets": [
@@ -582,6 +562,23 @@
               "start": 91
             },
             "path": "mcp/src/agents_remember/kernel/sidecar_pairing.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "30": {
+      "note": "NUL-safe count/status reads belong to the serving reader, not the worktree mutator.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5c5bad11e569807e1f8ac3f6b751e29506700331",
+            "content": "sha256:9bd1058368a641b153f336e91799b4bbcc487930c3c224d971f824b3df7de61e",
+            "locator": {
+              "kind": "symbol",
+              "name": "changed_files_with_counts"
+            },
+            "path": "mcp/src/agents_remember/serving/changeset_reads.py"
           },
           "kind": "code"
         }

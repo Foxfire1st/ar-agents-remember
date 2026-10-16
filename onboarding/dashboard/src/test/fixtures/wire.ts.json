@@ -7,7 +7,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9748f432f9443a640ef5221d0bace3f986bed50e",
+            "blob": "a863e49a83213f748fa2993ef0953d7e0f2362a4",
             "content": "sha256:8164a66d74351e8aa91df939055a98ff37e89e14c52065eca95f66fce3a8e099",
             "locator": {
               "end": 7,
@@ -24,78 +24,14 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f5de7f24aac5a38162a3a5e588e1ba71fa5d4da4",
+            "blob": "57cab42fcf400a47ed496a496eb8cf73f9a920cd",
             "content": "sha256:da779c827da3795c878647e500000544381770373d5fd6645487b11952e94740",
             "locator": {
-              "end": 493,
+              "end": 562,
               "kind": "line_range",
-              "start": 484
+              "start": 553
             },
             "path": "dashboard/src/test/contract.test.ts"
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "11": {
-      "note": "The contract keeps master and series sub-task row fields distinct.\n\nAnchor: \"keeps the master and series sub-task row models distinct\"",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "f5de7f24aac5a38162a3a5e588e1ba71fa5d4da4",
-            "content": "sha256:7819f6803da0787a2500fee9b4165ef52ada8aefd19dc7e5ff8fa9cec8b903bf",
-            "locator": {
-              "end": 597,
-              "kind": "line_range",
-              "start": 567
-            },
-            "path": "dashboard/src/test/contract.test.ts"
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "12": {
-      "note": "Required base fields are typed, with copied, derived and explicitly neutral defaults distinguished; optional behavior is requested deliberately.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "9748f432f9443a640ef5221d0bace3f986bed50e",
-            "content": "sha256:aafe086c4e33332033301eb13debb000887e6d3d68b9a184fc267d0d7f321e92",
-            "locator": {
-              "kind": "symbol",
-              "name": "BASE_TASK_DOC"
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "13": {
-      "note": "demandServed requires six current sample anchors for lifecycle/enclosure/provider/task/engine/attention, without removed gate/pickup rows.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "9748f432f9443a640ef5221d0bace3f986bed50e",
-            "content": "sha256:9e4988d50d577c3315ffd24ab112bb09d6968afaa3d18e257685d7b25f6920f2",
-            "locator": {
-              "kind": "file"
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "14": {
-      "note": "Six current bases retain generated type checks and scoped copied/derived/neutral origins, not a universal copied-value guarantee.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "9748f432f9443a640ef5221d0bace3f986bed50e",
-            "content": "sha256:9e4988d50d577c3315ffd24ab112bb09d6968afaa3d18e257685d7b25f6920f2",
-            "locator": {
-              "kind": "file"
-            }
           },
           "kind": "test"
         }
@@ -129,29 +65,12 @@
         }
       ]
     },
-    "16": {
-      "note": "`projection()` deriving `metrics` from the lifecycles via `metricsFor` rather than restating buckets.\n\nAnchor: \"metrics: metrics ?? metricsFor(lifecycles)\"",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "9748f432f9443a640ef5221d0bace3f986bed50e",
-            "content": "sha256:57d60c8e86b437ffe78719722f5887f40e0cba080dccc1217045be497702c32f",
-            "locator": {
-              "end": 298,
-              "kind": "line_range",
-              "start": 298
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
     "17": {
       "note": "`reparsed` using `structuredClone`, with the note that `asServedProjection(JSON.parse(…))` is a vacuous check.",
       "targets": [
         {
           "anchor": {
-            "blob": "9748f432f9443a640ef5221d0bace3f986bed50e",
+            "blob": "a863e49a83213f748fa2993ef0953d7e0f2362a4",
             "content": "sha256:ded4c63a96ba260c6abdc2c92b7838df904742362d6880591309bd385839707a",
             "locator": {
               "kind": "symbol",
@@ -162,12 +81,12 @@
         },
         {
           "anchor": {
-            "blob": "9748f432f9443a640ef5221d0bace3f986bed50e",
+            "blob": "a863e49a83213f748fa2993ef0953d7e0f2362a4",
             "content": "sha256:a626b61741f498f98cbe9aa19be1c2dcd4113285ce44e1afdff3938c60f528ee",
             "locator": {
-              "end": 331,
+              "end": 323,
               "kind": "line_range",
-              "start": 329
+              "start": 321
             }
           },
           "kind": "test"
@@ -188,37 +107,6 @@
             "path": "dashboard/src/test/servedProjection.ts"
           },
           "kind": "test"
-        }
-      ]
-    },
-    "19": {
-      "note": "The fixture bases draw their lifecycle sample from the hand-maintained oracle.\n\nAnchor: \"\\\"lifecycles\\\": [\"",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "3d73af07a73ab6150d44276142f7a83df6a9d6e1",
-            "content": "sha256:90eacbf4ff7420dc1aaf065089860bdaa4c971a00ced9d2254baa41933c877a2",
-            "locator": {
-              "end": 1807,
-              "kind": "line_range",
-              "start": 1807
-            },
-            "path": "dashboard/src/fixtures/snapshot.json"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "c9b65d9877cdc2f9732fff8390cf9319481cd743",
-            "content": "sha256:d308383dc412c0d14eb7f1fa510a6fccdbbf242ad86bfaccfa571cabacd0740a",
-            "locator": {
-              "end": 55,
-              "kind": "line_range",
-              "start": 55
-            },
-            "path": "dashboard/src/fixtures/snapshot.json"
-          },
-          "kind": "code"
         }
       ]
     },
@@ -279,37 +167,6 @@
             "content": "sha256:f324dcd98c5301b983a574fe1a0f34be07f4c4d36dbf23692fa268c6d3fe7140",
             "locator": {
               "kind": "file"
-            },
-            "path": "dashboard/src/fixtures/snapshot.json"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "23": {
-      "note": "The task-document builder takes its sample from analytics.\n\nAnchor: \"\\\"taskDocuments\\\": [\"",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "669cc52a8678baebdc75f44c4138b8e92d5f09ca",
-            "content": "sha256:5a4c0d5fbe1b46d2aece4f6acaf8beaaaab3e2ba0c1c3a959f5b17ef0bbff59e",
-            "locator": {
-              "end": 1103,
-              "kind": "line_range",
-              "start": 728
-            },
-            "path": "dashboard/src/fixtures/snapshot.json"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "c9b65d9877cdc2f9732fff8390cf9319481cd743",
-            "content": "sha256:d308383dc412c0d14eb7f1fa510a6fccdbbf242ad86bfaccfa571cabacd0740a",
-            "locator": {
-              "end": 55,
-              "kind": "line_range",
-              "start": 55
             },
             "path": "dashboard/src/fixtures/snapshot.json"
           },
@@ -423,7 +280,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9748f432f9443a640ef5221d0bace3f986bed50e",
+            "blob": "a863e49a83213f748fa2993ef0953d7e0f2362a4",
             "content": "sha256:ded4c63a96ba260c6abdc2c92b7838df904742362d6880591309bd385839707a",
             "locator": {
               "kind": "symbol",
@@ -434,12 +291,12 @@
         },
         {
           "anchor": {
-            "blob": "9748f432f9443a640ef5221d0bace3f986bed50e",
+            "blob": "a863e49a83213f748fa2993ef0953d7e0f2362a4",
             "content": "sha256:a626b61741f498f98cbe9aa19be1c2dcd4113285ce44e1afdff3938c60f528ee",
             "locator": {
-              "end": 331,
+              "end": 323,
               "kind": "line_range",
-              "start": 329
+              "start": 321
             }
           },
           "kind": "test"
@@ -498,7 +355,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9748f432f9443a640ef5221d0bace3f986bed50e",
+            "blob": "a863e49a83213f748fa2993ef0953d7e0f2362a4",
             "content": "sha256:f51bf451e52cbd60dab42d23a4ff11b3b155436ee93eced9600d143735f1a851",
             "locator": {
               "end": 8,
@@ -515,7 +372,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9748f432f9443a640ef5221d0bace3f986bed50e",
+            "blob": "a863e49a83213f748fa2993ef0953d7e0f2362a4",
             "content": "sha256:7e42a5e0e377e61378d25b8c95e783e30197562b5aa89d6979a6c9574b65fed0",
             "locator": {
               "end": 23,
@@ -532,7 +389,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c398ac1326fc5cb9eba54ae0ba6cab40c3650138",
+            "blob": "435f095a70d30fca070deb1186104929ac557935",
             "content": "sha256:048d2be48e5d33c20e3cf9ed45c3edc5ca0c7ab1bb6ad6008e2c4c2d29162b8b",
             "locator": {
               "end": 7,
@@ -605,12 +462,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f5de7f24aac5a38162a3a5e588e1ba71fa5d4da4",
+            "blob": "57cab42fcf400a47ed496a496eb8cf73f9a920cd",
             "content": "sha256:b84bb5fef68c7da2997f26eacdf572410d2f35298b0e8d5959899a076ad27eea",
             "locator": {
-              "end": 446,
+              "end": 521,
               "kind": "line_range",
-              "start": 444
+              "start": 519
             },
             "path": "dashboard/src/test/contract.test.ts"
           },

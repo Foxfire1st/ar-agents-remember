@@ -23,12 +23,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6d7e0b8d0c6d389241824926e4ddda86f395044a",
+            "blob": "c6ae9e37bab754280d5e2a3ee62a46578825f9b4",
             "content": "sha256:0a50c7b047377d17742dea2d7cbed00f4a1cccd93947e1a1bb500aff47307c45",
             "locator": {
-              "end": 611,
+              "end": 606,
               "kind": "line_range",
-              "start": 533
+              "start": 528
             },
             "path": "mcp/src/agents_remember/serving/projections/snapshots_impl/_closeout_queue.py"
           },
@@ -85,12 +85,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c330af3e8e243b9d4ba18d458076cb53a60dd481",
+            "blob": "cb0ab4cb5e3a37ea0377727c5e29c1744b0d162b",
             "content": "sha256:959b8f03573616a2d384631232c632f1f4009fcef82870a0c7d2d2222cf14eec",
             "locator": {
-              "end": 108,
+              "end": 101,
               "kind": "line_range",
-              "start": 102
+              "start": 95
             },
             "path": "mcp/src/agents_remember/serving/projections/projection_store.py"
           },
@@ -111,12 +111,12 @@
         },
         {
           "anchor": {
-            "blob": "c330af3e8e243b9d4ba18d458076cb53a60dd481",
+            "blob": "cb0ab4cb5e3a37ea0377727c5e29c1744b0d162b",
             "content": "sha256:27f85b0e5fcc97c749dc667d6ec9223474cb0655312aa3e45dd824745eab8710",
             "locator": {
-              "end": 320,
+              "end": 301,
               "kind": "line_range",
-              "start": 313
+              "start": 294
             },
             "path": "mcp/src/agents_remember/serving/projections/projection_store.py"
           },
@@ -155,12 +155,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "941a70a1df5c5222acbc4406144f6ef096c74b18",
+            "blob": "3e5006c2738aece314723414d6d8eaf932383598",
             "content": "sha256:ce98c322fa57386a52d92bca23b2e2e8c7aa6e835c04c2a944c4ef6405cdfd8a",
             "locator": {
-              "end": 403,
+              "end": 438,
               "kind": "line_range",
-              "start": 380
+              "start": 415
             },
             "path": "mcp/src/agents_remember/serving/projector.py"
           },
@@ -216,6 +216,75 @@
         }
       ]
     },
+    "16": {
+      "note": "Canonical task sources retain declared children and reciprocal authored-parent references for one downstream task producer.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "82940e3ebb28c7077e598da5addafff90ec6ef78",
+            "content": "sha256:8db0363b7d7bc9531d7ca629a7a6fd0ce3142556fe2723678b33805df2b841ae",
+            "locator": {
+              "kind": "symbol",
+              "name": "project_task_sources"
+            },
+            "path": "mcp/src/agents_remember/serving/projections/snapshots_impl/_task_documents.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "17": {
+      "note": "Full task refresh prepares contracts, enclosures and sources before assigning the retained trio.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3cedc4c3230d6645fcd5c5ede281b3defc11fdd5",
+            "content": "sha256:c45e7a0608de050654ad6d540056877975d60d1e6253c034b5f642c5a0d49f43",
+            "locator": {
+              "kind": "symbol",
+              "name": "_refresh_tasks_full"
+            },
+            "path": "mcp/src/agents_remember/serving/projections/projection_inputs.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "18": {
+      "note": "Incremental task reprojection replaces the whole affected closure and drops newly unreadable/invalid sources.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3cedc4c3230d6645fcd5c5ede281b3defc11fdd5",
+            "content": "sha256:5a60ab73ccef7d9232887bbb84293b43cb48302b60f3c3927b9e22d954144b37",
+            "locator": {
+              "kind": "symbol",
+              "name": "_reproject_task_documents"
+            },
+            "path": "mcp/src/agents_remember/serving/projections/projection_inputs.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "19": {
+      "note": "Startup and explicit host-domain invalidations trigger host intake; ordinary full healing excludes that domain.\n\nAnchor: \"self._host_activity_started\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3cedc4c3230d6645fcd5c5ede281b3defc11fdd5",
+            "content": "sha256:aaec3e5e3a6a192b4348b930347fd109138915a5f8fa8ae3a46005e9877b8b18",
+            "locator": {
+              "end": 406,
+              "kind": "line_range",
+              "start": 404
+            },
+            "path": "mcp/src/agents_remember/serving/projections/projection_inputs.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
     "2": {
       "note": "The projection tick consumes these readers.",
       "targets": [
@@ -233,25 +302,13 @@
         }
       ]
     },
-    "3": {
-      "note": "The body read and its graph-only join table.",
+    "20": {
+      "note": "Requested bodies read only their named graph masters/declared children rather than enumerating the canonical corpus.",
       "targets": [
         {
           "anchor": {
-            "blob": "bf0734d692b9f692063961e9667d537008a28d2d",
-            "content": "sha256:8c8a9080ec2470467a7e0a4ff4b51136f348aee65991f4e5fa1486cdd592a650",
-            "locator": {
-              "kind": "symbol",
-              "name": "read_task_document_body"
-            },
-            "path": "mcp/src/agents_remember/serving/projections/snapshots_impl/_task_documents.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "fc86b4692eee537d0b0c117e72098e4cdb33062e",
-            "content": "sha256:ef9d55fda13cd15ddaabb9abc96ebc76481e9bd9a5e7a1f99f2ce33b8a69aa01",
+            "blob": "82940e3ebb28c7077e598da5addafff90ec6ef78",
+            "content": "sha256:9b6373ba9eeb22e690729f48e7140cac9740485c12a5a1116269682dfa1cf12f",
             "locator": {
               "kind": "symbol",
               "name": "_graph_master_docs"
@@ -262,12 +319,70 @@
         }
       ]
     },
+    "21": {
+      "note": "Body generation tracks link/target identities and rejects unreadable or changing captured inputs.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2dd44d08efc626126c686e8990755305a7b91ce5",
+            "content": "sha256:480f658ced887006140e055b6b8e42e96749f9728c560fffeb81b604c3e52550",
+            "locator": {
+              "kind": "symbol",
+              "name": "BodyGeneration"
+            },
+            "path": "mcp/src/agents_remember/serving/projections/task_body_generation.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The on-demand body reader validates the requested canonical task document, joins only graph-named masters and their declared children through _graph_master_docs, and also obtains ordinary order/dependency fields through read_order_fields, which reads the owning master and its explicitly listed children. It avoids enumeration of the canonical task corpus; the body join is not graph-only.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "82940e3ebb28c7077e598da5addafff90ec6ef78",
+            "content": "sha256:743f5a4309c292bff25529b424208385ef192a9ad191e055dc6a7187a0aabea8",
+            "locator": {
+              "kind": "symbol",
+              "name": "read_task_document_body"
+            },
+            "path": "mcp/src/agents_remember/serving/projections/snapshots_impl/_task_documents.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "82940e3ebb28c7077e598da5addafff90ec6ef78",
+            "content": "sha256:9b6373ba9eeb22e690729f48e7140cac9740485c12a5a1116269682dfa1cf12f",
+            "locator": {
+              "kind": "symbol",
+              "name": "_graph_master_docs"
+            },
+            "path": "mcp/src/agents_remember/serving/projections/snapshots_impl/_task_documents.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "438d84c0d09d0074e5914af96d7e5babdb5a4eaf",
+            "content": "sha256:390c20d8eb1169ccdb88d5cbd8d3df0183783f9f2683e40f51c0bd452f73ee1e",
+            "locator": {
+              "kind": "symbol",
+              "name": "read_order_fields"
+            },
+            "path": "mcp/src/agents_remember/serving/projections/snapshots_impl/_task_order.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
     "4": {
       "note": "The bounded canonical enumeration every always-on reader uses.",
       "targets": [
         {
           "anchor": {
-            "blob": "37cd61129911b6adcb58b188b89c24f3848bea28",
+            "blob": "0729e2487febb7fcc3087bbe5a033d9a994ed5b9",
             "content": "sha256:45b54e5ed6dd2be8acd7f18f3f7ee57c6fae68f5832298a4beb58681b1bdc554",
             "locator": {
               "kind": "symbol",
@@ -298,16 +413,44 @@
       ]
     },
     "6": {
-      "note": "Full task-domain construction preserves prior values on failure; complete incremental dependency updates are not quartet-rollback atomic. Both retry pending refreshes.",
+      "note": "Full task-domain construction stages contracts, enclosures and task_sources in locals and assigns the retained trio only after construction succeeds. Complete incremental dependency refresh is not whole-trio rollback atomic: contracts/enclosures are assigned before affected document closure projection can fail. Any failed read leaves _task_refresh_pending set; a later read forces full healing-domain reconciliation and clears the flag only after success. These guarantees are about the retained trio, not rollback of every cache or aged slot.",
       "targets": [
         {
           "anchor": {
-            "blob": "bb650c9aa0b941f8efa168ab1050b3b5e3f53043",
-            "content": "sha256:f6ac2e56a35bc8a2ac2c51a2532ebc9942ccf67b82ed8b34a0d4339b3f9581f7",
+            "blob": "3cedc4c3230d6645fcd5c5ede281b3defc11fdd5",
+            "content": "sha256:7d8adfdb6418d0e64ef6c45a1c0fa71e0041a5e39dbd50db4efeb581d800baf0",
             "locator": {
-              "kind": "file"
+              "end": 369,
+              "kind": "line_range",
+              "start": 344
             },
             "path": "mcp/src/agents_remember/serving/projections/projection_inputs.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3cedc4c3230d6645fcd5c5ede281b3defc11fdd5",
+            "content": "sha256:8ea3a4195058770b535a3919a609c3cd3a136803f2f890bb57769d3c453cad0d",
+            "locator": {
+              "end": 584,
+              "kind": "line_range",
+              "start": 463
+            },
+            "path": "mcp/src/agents_remember/serving/projections/projection_inputs.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "00854ae6aced8fa39aeb680f81836366daa826ff",
+            "content": "sha256:2c79e0280bf3463d41c1893990c25b1c81b2d715ca381785a6fddb7ad821f936",
+            "locator": {
+              "end": 58,
+              "kind": "line_range",
+              "start": 15
+            },
+            "path": "mcp/src/agents_remember/serving/projections/snapshots_impl/_task_document_closure.py"
           },
           "kind": "code"
         }

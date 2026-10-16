@@ -57,14 +57,7 @@ The current canonical Chats test asserts one directly mounted Role chats pane, O
 
 L15 adds the servingBuild stamp assertions (renders commit + boot time when present; absent-field tolerance for old payloads).
 
-260712-TRH-L1 adds a shape-accurate Operations projection and fetch stub for the permanently mounted
-cockpit surfaces. It clicks a direct leaf, master, drilled subtask, and lifecycle-bound row while
-changing only summary projection objects; each path proves one body request for the unchanged revision
-and renders the complete objective after resolution. A second case holds task A, switches to task B,
-resolves A late, and proves A cannot contaminate B; B remains one request and hydrates only after its
-own response. The fetch fixture returns the response shapes required by the mounted file, harness,
-terminal, change-set, and notes surfaces, modeling composition rather than adding production fallback
-behavior.
+Native direct/master/child/worktree-bound entries hydrate once per unchanged body revision through task deltas. Late task-A answers cannot contaminate task B. Fetch stubs model mounted composition, not production fallback or a real server.
 
 A local `seed(stateName)` applies a `GALLERY` fixture projection to the real Zustand store
 (`dashboardStore.getState().applySnapshot(...)`) — the same hydration the dev bench uses. The lazy
@@ -78,38 +71,15 @@ dashboard store.
   node full-bleed, exposes no Chats-mode tablist and mounts no SessionsView child; returning to
   Operations hides the same pane. This is role-pane existence/persistence coverage, not a PTY-owner
   assertion; the sole current RoleChatsPane JSX mount establishes source cardinality.
-- "workspace rollup — the handoff reaches the header" (**260731-EFA-L4**) — a `withStates(...states)`
-  helper clones the `calm` GALLERY lifecycle once per requested state and derives the rollup with
-  `metricsFor(lifecycles)` rather than hand-listing buckets beside it. Two cases pin the new top-bar
-  segment from both sides: three lifecycles (two `awaiting-developer`, one `running`) put
-  `2 awaiting you` inside `[data-testid="task-metrics"]`; a `running` + `blocked` pair makes the same
-  node contain no `"awaiting"` at all while still reading `1 running` and `1 blocked` — the segment is
-  appended, it displaces nothing, and it never renders a reassurance zero.
-- The left-column signal cases render CockpitShell with a bound awaiting-developer task and a warning entry. Opening the bell exposes the severity layer; the two amber marks differ by glyph. State option naming is checked before opening the modal, with Task progress: your turn; severity is then queried by role=img and name. Axe separately scans the closed bell and complete Popover/Dialog, disabling only jsdom geometry-dependent contrast/region rules. These are not current sibling-panel or standalone inline-queue assertions.
-- The three gallery-state attention cases mirror the edited browser protocol through the same test ids; a separate shell operation opens an entry, closes its layer, marks the carrying option and focuses/scrolls it once. Static assertions and historical unit receipts are not Playwright or real-backend persistence proof.
+- Header rollup reads published taskCounts, retaining the zero paused bucket but showing unknown only while populated, not lifecycle-derived counts.
+- Rail cases distinguish task activity from attention severity, preserve accessible names and scope axe checks under existing jsdom exclusions.
+- Gallery severity counts and server order remain; qualified native task selection no longer comes from an attention-origin lifecycle opener. The sidebar selection case clicks first, second, then first native task, waits for each task id in the reader, and asserts its option is focused with `aria-selected="true"`; the `scrollIntoView` spy is called three times. This preserves the reveal/focus/selection contract under native sidebar selection rather than the retired attention-layer opener. Render assertions are not browser/backend persistence proof.
 
-**Fixtures are now built through the typed wire builders (260731-EFA-L4).** The local `taskDoc(over)`
-factory no longer returns an `as TaskDocNode` object literal — it delegates to
-`taskDoc as wireTaskDoc` from `test/fixtures/wire.ts`, so an excess property fails `tsc -b` at the call
-site instead of being erased by the assertion. That immediately paid: the master's `subTasks[0]` row in
-`seedDrillableMaster` carried `createdAt: "2026-06-20T09:00:00+00:00"`, a field
-`TaskSubTaskRefNode` does not declare on either side (`projection.py::TaskSubTaskRefNode` is
-`extra="forbid"`), so the server could never have sent it — and it is gone. (`TaskDocNode.createdAt`
-itself IS declared and is still set on the doc bases.) Both hand-written `metrics: { lifecycleCount, runningCount, blockedCount, pausedCount,
-totalTokens, stalenessHistogram }` literals — in `seedDrillableMaster` and `taskReaderProjection` — are
-replaced by `metricsFor([...lifecycles])`, the client mirror of `reducer.py::_metrics` (the two new
-projections use it from birth). The hand-kept bucket lists were the reason a new state could be counted
-nowhere. Note what this DID change for the older cases: those seeds now receive complete rollups derived
-from their own lifecycles rather than the numbers the author typed.
+Typed taskEntry/taskSummary/projection/taskTree replace local taskDoc, parallel SeriesNode and metricsFor lifecycle rollups: identity/status stay on the entry, reader prose in summary.
 
 ### Invariants And Boundaries
 
-Relies on the shared jsdom stubs in `test/setup.ts` (`matchMedia` for `useShouldAnimate`, `ResizeObserver`
- for React Aria). The ModeBar items are queried by `role="radio"` (React Aria `ToggleButtonGroup`,
-single-select), driven by `fireEvent.click`. Uses plain `container.querySelector` + vitest `expect`
-(no `@testing-library/jest-dom`). Older cases are pure render assertions; the new body cases stub
-browser `fetch` and drive `dashboardStore.applyDelta("analytics", ...)` to reproduce analytics churn
-and selection timing.
+Shared jsdom stubs and CSS.escape support radio-name/test-id queries. Body cases stub fetch and publish task deltas for refresh/selection timing; no browser or host execution is implied.
 
 ### Conventions
 
@@ -151,7 +121,7 @@ No relevant domain documentation was found for this file.
 
 
 
-- The L1 composition cases cover all four reader entry paths, unchanged-revision analytics churn, and late A-to-B response discard. [31]
+- Direct/master/child/worktree-bound body hydration stays revision-owned through task deltas and late A-to-B responses. [31]
 
 
 
@@ -169,19 +139,20 @@ No relevant domain documentation was found for this file.
 - The production source census establishes the sole current `<RoleChatsPane>` JSX mount. [33]
 
 
-- The `withStates` helper + the two `task-metrics` cases (`2 awaiting you`; nothing at zero). [34]
+- Header totals use published taskCounts, retaining the zero paused bucket but showing unknown only while populated. [34]
 
 
-- `railProjection` / `WARN_ROW` and the three rail cases: differing dot markup, `getByRole("img", { name: "Severity: warn" })` + `getByRole("option", …)`, and the scoped `axe.run`. [35]
+- Rail cases distinguish task activity from severity and retain accessible names plus scoped axe checks. [35]
 
 
 - The `role="img"` + `aria-label` wrapper (`severityMark`, `data-testid="attn-severity"`) the accessibility-tree assertion targets. [36]
 
 
-- The `Task progress: …; phase: …` label on `data-testid="task-state"` that React Aria's `role="option"` absorbs. [37]
+- The task-state mark labels itself Task progress: <statusLabel(taskStatusKey(entry))> with no phase suffix. Presentation takes the served activity when present, otherwise the served stage. The Cockpit accessibility case asserts a React Aria option named Task progress: paused before opening the attention layer, preserving the row-name absorption behavior rather than a lifecycle-phase label. [37]
 
-- The typed builder the local `taskDoc` factory now delegates to (and the header explaining why the `createdAt` it removed compiled before). [38]
-- `metricsFor()` — the client mirror of `reducer.py::_metrics` these seeds now call instead of listing buckets. [39]
+- Typed entry/summary/projection builders keep the composition fixtures checked against the served contract; the former taskDoc/metricsFor anchors are retired.
+
+- Sidebar selection reveals each native task, focuses and marks its option aria-selected=true, and invokes scrollIntoView three times for first/second/first selections. [43]
 
 
 
@@ -207,7 +178,4 @@ No applicable cross-repository source was found.
 
 ## 260821-CLIVE Projection Fixture Alignment
 
-No production behavior or assertion changed in this file. The local projected `SeriesNode` fixture
-now supplies the required `discardedCount: 0` and `discardedSubTasks: []` cells so cockpit tests remain
-type-aligned with the canonical projection contract. Discard rendering is owned by the task-reader and
-lifecycle-list routes, not by this cockpit composition suite.
+Historical CLIVE SeriesNode discard-field alignment is no longer current fixture setup. Native entries retain the composition boundaries above.

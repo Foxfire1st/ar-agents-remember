@@ -20,7 +20,7 @@ Use `startup.py` for trusted MCP process preparation, application collaborators 
 
 ### Startup and measurement identity
 
-Startup declares MCP process ownership before authority settings are loaded. Application initialization migrates control-plane identity logs without taking ownership of the agent notifier signals, installs the ambient lifecycle store and installs the tool-event writer. The event writer captures this server's caller from its launch binding; an unreadable binding is treated as an unbound chat for event recording rather than preventing startup. Optional dashboard supervision is separate from collaborator initialization.
+Startup declares MCP process ownership before authority settings are loaded. Application initialization installs the workspace tool-event writer only; it neither creates an ambient lifecycle collaborator nor migrates identity logs. The event writer captures this server's caller from its launch binding; an unreadable binding is treated as an unbound chat for event recording rather than preventing startup. Optional dashboard supervision is separate from collaborator initialization.
 
 `mcp_serving_build_payload()` exposes the process's cached boot identity to MCP registration. `measuring_build_stamp()` wraps that payload as `servingBuild`: version, boot time, source digest, Python executable, package root, commit and dirty state name the producer of a measurement. That producer can differ from the candidate being measured; a serving-build count must not be represented as execution by the candidate's code. The boot identity is resolved once, so requesting the stamp copies the payload rather than probing each time.
 
@@ -35,7 +35,7 @@ Skill installation requires the configured harness skill root and passes the dry
 - [`__init__.py.md`](__init__.py.md) — side-effect-free package marker.
 - [`install.py.md`](install.py.md) — runtime installation and host-result composition.
 - [`skills.py.md`](skills.py.md) — configuration-bound skill installation.
-- [`startup.py.md`](startup.py.md) — MCP trust declaration, identity migration, ambient/event collaborators, measurement identity and optional supervision.
+- [`startup.py.md`](startup.py.md) — MCP trust declaration, launch-bound workspace event collaborator, measurement identity and optional supervision.
 
 There are no child overviews. Begin with the operation's file card and follow its lower-service references; MCP payload and registration mechanics remain in their own routes.
 
@@ -58,3 +58,5 @@ No Domain Documentation source is configured. No cross-repository implementation
 - Runtime installation composes the lower service result with the public host step at the application entry. [2]
 - Skill installation resolves the configured harness skill root and delegates the copy. [3]
 - The composition with the host part. [4]
+
+- Startup installs only the workspace tool writer, snapshots its launch-bound caller once and falls back to an unbound chat when that binding cannot be read. [7]

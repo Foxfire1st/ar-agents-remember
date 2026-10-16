@@ -3,8 +3,8 @@
   "proves": [
     {
       "anchor": {
-        "blob": "a1af00a919e1a3084e9e5d8788a69ae2017e6c8c",
-        "content": "sha256:0ab0eeb41b8fcd2cfc902f6ae379099494a04435b7ed465c91b4337fcbc69297",
+        "blob": "1ee290eb50d8892bc4ad338c55793256995d804f",
+        "content": "sha256:7362360144c1435f698c0cdb2ba55bcacd4bae7bf9e698d05c8c47ad671c7ad5",
         "locator": {
           "kind": "symbol",
           "name": "NoComputedCounterTests.test_store_write_over_old_field_file_reads_back_clean"
@@ -20,7 +20,7 @@
     },
     {
       "anchor": {
-        "blob": "a1af00a919e1a3084e9e5d8788a69ae2017e6c8c",
+        "blob": "1ee290eb50d8892bc4ad338c55793256995d804f",
         "content": "sha256:3a7c685e81fb3fcc7ce858169a1d5839677a608e229f558774a290c701750267",
         "locator": {
           "kind": "symbol",
@@ -37,28 +37,12 @@
     },
     {
       "anchor": {
-        "blob": "a1af00a919e1a3084e9e5d8788a69ae2017e6c8c",
-        "content": "sha256:a38bd888d8cfa650a5b28206a8ae3ab4286dc818b33e70d4382921b6d8f7676c",
+        "blob": "1ee290eb50d8892bc4ad338c55793256995d804f",
+        "content": "sha256:08f251e584f87efeade166f0996faaed201d750dc1d45ab890769cb0cb404df8",
         "locator": {
-          "kind": "symbol",
-          "name": "NoComputedCounterTests.test_tool_completed_tokens_do_not_fold_into_the_lifecycle"
-        }
-      },
-      "facet": "tool.completed tokens never fold into a lifecycle.",
-      "id": "PRF-D6RD1S",
-      "invariant": "INV-S4MBTJ",
-      "origin": {
-        "handoffEntry": "MIK-R115@v1 rule 1",
-        "leaf": "260928-MIK-L115"
-      }
-    },
-    {
-      "anchor": {
-        "blob": "a1af00a919e1a3084e9e5d8788a69ae2017e6c8c",
-        "content": "sha256:2b7181100b85a1dfefbcbc5a7ca1937dce7d0fa95bdc03d6f0ca1177a7b30ece",
-        "locator": {
-          "kind": "symbol",
-          "name": "NoComputedCounterTests.test_projection_models_carry_no_token_fields"
+          "end": 31,
+          "kind": "line_range",
+          "start": 27
         }
       },
       "facet": "Projection models carry no token fields, so no view can show a per-agent counter from them.",
@@ -71,8 +55,8 @@
     },
     {
       "anchor": {
-        "blob": "a1af00a919e1a3084e9e5d8788a69ae2017e6c8c",
-        "content": "sha256:37d2f03c741020a899691d2fbab3033c3ae4bcc1a0df1c4cb6e5fe45823ecbef",
+        "blob": "1ee290eb50d8892bc4ad338c55793256995d804f",
+        "content": "sha256:ac572e63dd3c95c358e01ebe9836cc246d988eaa55f96299d27a185820b20139",
         "locator": {
           "kind": "symbol",
           "name": "NoComputedCounterTests.test_workspace_metrics_carry_no_token_total"
@@ -88,8 +72,8 @@
     },
     {
       "anchor": {
-        "blob": "a1af00a919e1a3084e9e5d8788a69ae2017e6c8c",
-        "content": "sha256:2b7181100b85a1dfefbcbc5a7ca1937dce7d0fa95bdc03d6f0ca1177a7b30ece",
+        "blob": "1ee290eb50d8892bc4ad338c55793256995d804f",
+        "content": "sha256:08f251e584f87efeade166f0996faaed201d750dc1d45ab890769cb0cb404df8",
         "locator": {
           "kind": "symbol",
           "name": "NoComputedCounterTests.test_projection_models_carry_no_token_fields"
@@ -105,28 +89,29 @@
     },
     {
       "anchor": {
-        "blob": "a1af00a919e1a3084e9e5d8788a69ae2017e6c8c",
-        "content": "sha256:a38bd888d8cfa650a5b28206a8ae3ab4286dc818b33e70d4382921b6d8f7676c",
+        "blob": "1ee290eb50d8892bc4ad338c55793256995d804f",
+        "content": "sha256:08f251e584f87efeade166f0996faaed201d750dc1d45ab890769cb0cb404df8",
         "locator": {
           "kind": "symbol",
-          "name": "NoComputedCounterTests.test_tool_completed_tokens_do_not_fold_into_the_lifecycle"
+          "name": "NoComputedCounterTests.test_projection_models_carry_no_token_fields"
         }
       },
-      "facet": "tool.completed tokens never fold into a lifecycle while events keep them.",
-      "id": "PRF-NVYQ2Z",
+      "facet": "The retained projection model/control namespace contains no computed token sample, total or per-series token field.",
+      "id": "PRF-N5V08W",
       "invariant": "INV-WZR89C",
       "origin": {
-        "handoffEntry": "MIK-R115@v1 rule 3",
-        "leaf": "260928-MIK-L115"
+        "handoffEntry": "L168-CUR-INV-WZR89C-current-proof-definition",
+        "leaf": "260928-MIK-L168"
       }
     },
     {
       "anchor": {
-        "blob": "a1af00a919e1a3084e9e5d8788a69ae2017e6c8c",
+        "blob": "1ee290eb50d8892bc4ad338c55793256995d804f",
         "content": "sha256:3a7c685e81fb3fcc7ce858169a1d5839677a608e229f558774a290c701750267",
         "locator": {
-          "kind": "symbol",
-          "name": "NoComputedCounterTests.test_served_schema_carries_no_token_fields"
+          "end": 38,
+          "kind": "line_range",
+          "start": 33
         }
       },
       "facet": "The served schema carries no token fields for any per-task or per-master figure.",
@@ -139,11 +124,12 @@
     },
     {
       "anchor": {
-        "blob": "a1af00a919e1a3084e9e5d8788a69ae2017e6c8c",
-        "content": "sha256:37d2f03c741020a899691d2fbab3033c3ae4bcc1a0df1c4cb6e5fe45823ecbef",
+        "blob": "1ee290eb50d8892bc4ad338c55793256995d804f",
+        "content": "sha256:ac572e63dd3c95c358e01ebe9836cc246d988eaa55f96299d27a185820b20139",
         "locator": {
-          "kind": "symbol",
-          "name": "NoComputedCounterTests.test_workspace_metrics_carry_no_token_total"
+          "end": 75,
+          "kind": "line_range",
+          "start": 70
         }
       },
       "facet": "Workspace metrics carry no token total for any workspace figure.",
@@ -178,27 +164,11 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a1af00a919e1a3084e9e5d8788a69ae2017e6c8c",
+            "blob": "1ee290eb50d8892bc4ad338c55793256995d804f",
             "content": "sha256:3a7c685e81fb3fcc7ce858169a1d5839677a608e229f558774a290c701750267",
             "locator": {
               "kind": "symbol",
               "name": "test_served_schema_carries_no_token_fields"
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "3": {
-      "note": "`tool.completed` tokens do not fold into the lifecycle.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "a1af00a919e1a3084e9e5d8788a69ae2017e6c8c",
-            "content": "sha256:a38bd888d8cfa650a5b28206a8ae3ab4286dc818b33e70d4382921b6d8f7676c",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_tool_completed_tokens_do_not_fold_into_the_lifecycle"
             }
           },
           "kind": "test"

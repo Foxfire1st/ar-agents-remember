@@ -7,23 +7,19 @@
 ## Purpose
 
 The master/series navigation suite split from `DetailPanel.test.tsx` by the
-260731-EFA-L8 test split. Pins the 6g master overview, sub-task index, drill-in, and
-cross-series navigation behavior of the detail reader.
+260731-EFA-L8 test split. Pins native master and sprint indexes, child drill-in and parent return through served membership keys.
 
 ## Code Commentary
 
-The suite proves the sprint → master → leaf click path: a typed `masterRef` row is a navigation button with separate ID/name cells, opens the commanded master document, then drills to its leaf. An unprojected target retains its visible row and no navigation target.
+The suite follows served sprint → commanded master → leaf child keys. Separate ID/name cells and parent return remain; a declared child or commanded master lacking an authored summary opens an honest not-authored page rather than an invented document.
 
 ### Logic
 
-Seeds a master with sub-task refs and a linked series; asserts the index rows, the
-in-panel drill-in, and the `linkedLifecycleId` cross-series jump.
+Seeds native entries and explicit taskTree parent/child membership, not parallel series/lifecycle indexes. Navigation follows served qualified keys; no linkedLifecycleId cross-series jump remains.
 
 ### Invariants And Boundaries
 
-Uses the shared `test-utils.tsx` seeds (`seedSeriesOrdering`, `seedTaskDocuments`).
-Current skeleton assertions require one index, separate step/substep cells, skip/done state text,
-Now-row projected major-step progress (`6/7`) with seven step marks and the opened task reader's `6 of 7 done`; the former `46/49` parent-plus-child summary is absent. Markdown remains inside Further-notes views. These are seeded DOM assertions, not backend count derivation or an executed navigation result.
+Uses shared seedTaskEntries/taskTree fixtures. One index, separate step/substep cells, intentional skip/done wording, served membership order and task-specific numbers remain asserted. Major progress stays 6/7 with seven marks and 6 of 7 done in the opened page; nested steps do not inflate that count. Markdown remains in Further-notes views. These seeded assertions are not backend count derivation or executed navigation.
 
 ### Todos
 
@@ -53,8 +49,4 @@ No applicable cross-repository source was found.
 
 ## 260821-CLIVE Discarded-Before-Start Proof
 
-The discarded-history case asserts a counted gone-history link separate from the live sub-task index; opening it exposes the discarded row's number/name, reason and proof fingerprint, and Back restores the live row. The fixture supplies `discardedAt`, but this case does not assert its rendered timestamp or live `0/1` progress. The historical lesson remains: discarding unstarted work is audited removal, not synthetic completion.
-The inline proof also carries the exact generated contract's required `childJson` and
-`childMarkdown` missing-state witnesses. Those opaque records establish fixture conformance; the UI
-continues to render the proof fingerprint rather than interpreting or exposing their contents.
-Existing sprint-to-master-to-leaf and cross-series navigation coverage remains in force.
+Discarded history remains separate from live children and exposes number/name, reason and proof fingerprint with Back restoring the live row. childJson/childMarkdown witness fixture conformance, not rendered content. Current navigation follows served child/parent keys, not linkedLifecycleId cross-series jumps; no discard timestamp or live 0/1 assertion is added.

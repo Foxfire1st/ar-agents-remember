@@ -6,11 +6,11 @@
 
 ## Purpose
 
-Pin recovery on genuine recorded older task-document payloads and the matching current producer payload.
+Pin optional reader-fact absence and recorded whole-round review facts on the native task-entry contract, while keeping older recording files only as provenance.
 
 ## Code Commentary
 
-Recorded summaries enter through the stream and recorded bodies through the task-document endpoint mock. The base recording has no review state at all: task and master omit review/count without throwing while retaining their existing content. Current recordings show the required whole-round count. Recording metadata identifies the producer and source documents; the stream frame around the records is not itself a recorded older envelope.
+The historical base recording is checked for provenance only. Mounted cases now serve native taskEntries.recorded.l168.json tasks/taskCounts through SSE and bodies through mocked requests. optionalAbsent omits optional review facts safely; reviewPresent renders whole-round counts. No old-server compatibility parser, producer recapture or execution is proved.
 
 ## Boundaries
 

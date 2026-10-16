@@ -2,151 +2,19 @@
   "path": "dashboard/src/panels/engine-room/engineRoomTypes.ts",
   "realizes": [],
   "references": {
-    "1": {
-      "note": "`EngineProcessView` joins a process node + lifecycle + `enclosureKey`",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "1ffc2f02408d6dff5a12c0dc71c9bdd17a195784",
-            "content": "sha256:781de27d3b75f15264927e15d255afd82b244214d46a860e3643990507c267dd",
-            "locator": {
-              "kind": "symbol",
-              "name": "EngineProcessView"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "2": {
-      "note": "`EngineRoomModel` fields: processes, workspaceEngines, fallbackStacks, usesFallback",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "5e6bbe43f55f80235591a68efa88089992e0933f",
-            "content": "sha256:65b97418d2074cb986575610de4484e388fa2f63a89ab8b34d06dad6656a0585",
-            "locator": {
-              "kind": "symbol",
-              "name": "EngineRoomModel"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
     "3": {
       "note": "EngineProcessNode is the generated projection contract consumed by this surface.\n\nAnchor: \"export interface EngineProcessNode {\"",
       "targets": [
         {
           "anchor": {
-            "blob": "32f61ad92158b8a4519a35f725ce765c87f2ec99",
+            "blob": "435f095a70d30fca070deb1186104929ac557935",
             "content": "sha256:adc5e70699b6beb4f6da806e367cc006d742e94259f35a0eafbb048349540fd4",
             "locator": {
-              "end": 233,
+              "end": 169,
               "kind": "line_range",
-              "start": 233
+              "start": 169
             },
             "path": "dashboard/src/types/projection.ts"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "4": {
-      "note": "LifecycleProjection is the generated projection contract consumed by this surface.\n\nAnchor: \"export interface LifecycleProjection {\"",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "32f61ad92158b8a4519a35f725ce765c87f2ec99",
-            "content": "sha256:0150685acb034ab2c0bf7f04923aef100f5081c94e274216a472aa39b7269672",
-            "locator": {
-              "end": 365,
-              "kind": "line_range",
-              "start": 365
-            },
-            "path": "dashboard/src/types/projection.ts"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "5": {
-      "note": "ProviderNode is the generated projection contract consumed by this surface.\n\nAnchor: \"export interface ProviderNode {\"",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "32f61ad92158b8a4519a35f725ce765c87f2ec99",
-            "content": "sha256:166d2ecbb0660b6f73e4497602a536512544817207b812a075559071aa49a387",
-            "locator": {
-              "end": 509,
-              "kind": "line_range",
-              "start": 509
-            },
-            "path": "dashboard/src/types/projection.ts"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "6": {
-      "note": "`EngineStack` source type + `groupEngines` fallback producer",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "b130c9f33b2078e3adf38d6e87cde8c376ba65b9",
-            "content": "sha256:55a92aa6b203fe4ef20cffe894615dd109c84cc8d6ce32a8e773cf437e755d33",
-            "locator": {
-              "kind": "symbol",
-              "name": "EngineStack"
-            },
-            "path": "dashboard/src/data/selectors.ts"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "b130c9f33b2078e3adf38d6e87cde8c376ba65b9",
-            "content": "sha256:39686253ab57b49c197444f777ca38607c1940957b35e49682d31bdd1f4e3594",
-            "locator": {
-              "kind": "symbol",
-              "name": "groupEngines"
-            },
-            "path": "dashboard/src/data/selectors.ts"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "7": {
-      "note": "EngineRoomModel now has processes: EngineProcessView[] only; EngineProcessView retains enclosureKey,node,lifecycle?,gate — source ownership, not executed visual proof.\n\nAnchor: `// The Engine Room render model (slice 5e). The server composes the enclosure-centered`",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "1ffc2f02408d6dff5a12c0dc71c9bdd17a195784",
-            "content": "sha256:9f7428b8f4e98f3c586a8469b4edd67e9ecd2d1167882427069848006b22b1e1",
-            "locator": {
-              "end": 29,
-              "kind": "line_range",
-              "start": 1
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "8": {
-      "note": "EngineRoomModel now has processes: EngineProcessView[] only; EngineProcessView retains enclosureKey,node,lifecycle?,gate — source ownership, not executed visual proof.\n\nAnchor: `const lifecycleById = new Map(lifecycles.map((lifecycle) => [lifecycle.id, lifecycle]));`",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "17b5df5bbd40a7851bc8af3aa48a9c214f8d7bed",
-            "content": "sha256:5bf4491d4af8180586d33c7703a755647d255e4c2e31b8eb3d146d93190b781c",
-            "locator": {
-              "end": 49,
-              "kind": "line_range",
-              "start": 34
-            },
-            "path": "dashboard/src/panels/engine-room/buildEngineRoomModel.ts"
           },
           "kind": "code"
         }

@@ -10,7 +10,7 @@ Pin form-specific reader dispatch on every supported selection branch.
 
 ## Code Commentary
 
-Direct task-document, series and root-lifecycle selections reach the sprint/master/task skeleton appropriate to the resolved document. The assertions target the real DetailPanel dispatch seams rather than merely checking a form badge.
+Canonical qualified task keys dispatch sprint/master/task forms with or without bound worktrees. Unrelated operational keys resolve no task; series/root-lifecycle branches are retired.
 
 ## Boundaries
 

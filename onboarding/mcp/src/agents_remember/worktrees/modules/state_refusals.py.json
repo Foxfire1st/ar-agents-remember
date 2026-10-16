@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "ee4e1cd7901b67b6e6748eed979f9e18a5632df8",
+        "blob": "a7a08b14c6340768201af155b6a9d5003c0f28b5",
         "content": "sha256:fe24acdcbc3d7b6f961e61e838b9d326e7f823d43c049d5cb28395e8397a9e38",
         "locator": {
           "kind": "symbol",
@@ -96,6 +96,23 @@
             "locator": {
               "kind": "symbol",
               "name": "handover_gate_blocked"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Invalid task/parent stage binding returns a blocked named refusal without a fabricated mutating recovery tool.\n\nAnchor: source responsibility",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a7a08b14c6340768201af155b6a9d5003c0f28b5",
+            "content": "sha256:eb1aa9739995533c5dce23d7d617fdafa517dfff63a7c97339d1b35d7391394c",
+            "locator": {
+              "end": 348,
+              "kind": "line_range",
+              "start": 340
             }
           },
           "kind": "code"

@@ -2,48 +2,24 @@
 
 ## Governing Overview
 
-[Test suite overview](overview.md)
+[Tests overview](overview.md)
 
 ## Purpose
 
-Attention priority and occurrence-scoped dismissal behavior.
+Pin attention ordering, retained-kind dismissal durability and safe occurrence reclamation.
 
 ## Code Commentary
 
-### Logic
-
-Provider-down alarms rank above the surviving quiet-session informational occurrence. A dismissal suppresses the current actionable-drift occurrence until a newer snapshot, and a stale-session occurrence until later heartbeat activity creates a newer quiet signal. These current assertions do not establish the removed blocked-ask/awaiting-developer/turn-end cases.
-
-### Conventions
-
-This card describes the retained source at IAS `d3610903`. Historical entries below record earlier test populations; they do not require restoring removed cases. Source inspection is memory preparation and does not claim a test run or acceptance.
-
-### Invariants And Boundaries
-
-Dismissal acknowledges one triggering occurrence, not every future event of the same kind. Durable timestamps determine resurfacing.
-
-### Todos
-
-No file-local implementation change is requested by this reconciliation.
+Provider alarms sort ahead of drift warnings, then by wait and ID. Drift acknowledgements survive new timestamps when actionableFingerprint stays equal; changed findings recur. Provider-down, failed-setup and blocked-start clicks work without a session and survive unchanged refresh/restart. Only explicit source recovery or a complete gone/configuration census ends those occurrences. Per-repo recovery is not inferred from a workspace-level healthy row; unknown/malformed/partial/unreadable sources retain dismissals, including failures inspecting another provider. Reconciliation does not rewrite unchanged bytes, keeps its read map on failed cleanup, and never removes a click newer than the observation. Retired stale-session JSON is invalid compaction input, not a supported kind. In-process ASGI routes assert failed dismissal persistence returns 503/dismissal-not-held, then successful clicks survive restart. Task-bound worktrees retain precomputed disabled-action reasons. These fixture assertions do not establish live host delivery.
 
 ## Evidence
 
-### Docs References
-
-No Domain Documentation entries are configured in this memory root. These are repository-owned fixture and assertion contracts; no external library behavior is inferred.
-
-No configured domain evidence applies to the file-local claims above.
-
-### Repo-Internal References
-
-The retained source anchors below support the fixture roles and assertion boundaries described above. They identify current behavior, not a request to restore historical test counts or percentage targets.
-
-- Provider-down ranks ahead of a quiet-session signal, whose lifecycle/time are asserted. [4]
-- Dismiss suppresses actionable drift until newer snapshot. [2]
-- Later heartbeat activity creates a newer stale-session occurrence after dismissal, not a turn-end/awaiting-developer assertion. [5]
-
-### Cross-Repo References
-
-No cross-repository implementation evidence is required for these local test and fixture claims.
-
-Fixture repositories and protocol doubles do not establish a live external integration.
+- Equal findings remain dismissed across clock changes and a changed fingerprint recurs. [6]
+- Severity, wait and ID determine stable ranking. [7]
+- Explicit recovery ends retained-kind occurrences and later failure returns. [8]
+- Partial/broken input retains acknowledgement; complete gone facts reclaim. [9]
+- Observation cutoff protects a later click. [10]
+- Long histories retain current subjects and compact invalid retired/torn rows without repeat rewrite. [11]
+- ASGI persistence failure is 503; accepted dismissals survive refresh and restart. [12]
+- Precomputed task-worktree disablement remains authoritative. [13]
+- Incomplete provider census cannot clear another provider acknowledgement. [14]

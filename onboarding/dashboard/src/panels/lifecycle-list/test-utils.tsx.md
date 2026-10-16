@@ -6,18 +6,13 @@
 
 ## Purpose
 
-Shared fixture builders for the split LifecycleList test files, extracted from
-`LifecycleList.test.tsx` by the 260731-EFA-L8 split. Seeds lifecycles, enclosures,
-task documents, series, collapsible hierarchies, and the shared localStorage/store
-cleanup.
+Typed test-only native entry/keyed-map/explicit-count fixtures for LifecycleList suites, with hierarchy and shared DOM/store/storage cleanup and stubbed-global restoration.
 
 ## Code Commentary
 
 ### Logic
 
-`lifecycle` / `enclosure` / `taskDoc` / `seriesNode` build typed nodes;
-`collapsibleHierarchyProjection` builds the grouping scenario;
-`installLifecycleListCleanup` is called explicitly by each mounted suite; its afterEach clears rendered DOM, stubbed globals, dashboard/session stores and localStorage. rowOf and rowHover resolve the actual option and its hover-bearing first child; standInForCssEscape is a test-only jsdom compatibility stand-in restored by cleanup.
+task, taskMap, seed and hierarchy build native entries and served membership/count facts. rowOf finds the actual option. installListCleanup is explicit per-suite setup; it clears rendered DOM, the dashboard store, localStorage and stubbed globals, not production state.
 
 ### Conventions
 
@@ -25,7 +20,7 @@ Typed through the projection mirror; test-only.
 
 ### Invariants And Boundaries
 
-Never imported by production code; mounted split suites must call installLifecycleListCleanup, not rely on an import-time side effect.
+Test-only: mounted suites call installListCleanup explicitly; importing this module is not cleanup installation.
 
 ### Todos
 
@@ -52,6 +47,4 @@ No applicable cross-repository source was found.
 
 ## 260821-CLIVE Projection Fixture Alignment
 
-No helper behavior changed. `seriesNode()` now defaults the required `discardedCount: 0` and
-`discardedSubTasks: []` cells. Existing seat/execution-wave defaults and shared store/localStorage
-cleanup remain unchanged.
+Discarded history remains summary audit data, separate from native child counts. No seriesNode or lifecycle fixture grammar remains.

@@ -3,7 +3,7 @@
   "proves": [
     {
       "anchor": {
-        "blob": "5b8d688bcf4f28ef86029924896779797f40a344",
+        "blob": "331f860739e6b19428bfa91e46593980495319cd",
         "content": "sha256:3f266394d747702cf5fca9a16837a3bd874dfdc8772be3c7aea06f6c9d3ff525",
         "locator": {
           "kind": "symbol",
@@ -15,23 +15,6 @@
       "invariant": "INV-KJN5GP",
       "origin": {
         "handoffEntry": "MIK-R87@v1 7",
-        "leaf": "260928-MIK-L87"
-      }
-    },
-    {
-      "anchor": {
-        "blob": "5b8d688bcf4f28ef86029924896779797f40a344",
-        "content": "sha256:f0309a8aa1a78b7be2c2348c32079b7a69e32fe538a1b15bc952fd49b9543831",
-        "locator": {
-          "kind": "symbol",
-          "name": "GlobalStateLeakDetectionTests.test_reset_stops_the_ambient_heartbeat_and_clears_the_singleton"
-        }
-      },
-      "facet": "The real installed ambient heartbeat is joined and its singleton is cleared by reset.",
-      "id": "PRF-Q64NXX",
-      "invariant": "INV-5YPFVJ",
-      "origin": {
-        "handoffEntry": "MIK-R87@v1 3",
         "leaf": "260928-MIK-L87"
       }
     }
@@ -75,7 +58,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d17bc50782025223405cb1526f0d286a9bc74274",
+            "blob": "331f860739e6b19428bfa91e46593980495319cd",
             "content": "sha256:b3a7b23a9d262802fb2c300d441ec0fb5b1e1606eb79d80ab83fc9f16c2ce008",
             "locator": {
               "kind": "symbol",
@@ -91,7 +74,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d17bc50782025223405cb1526f0d286a9bc74274",
+            "blob": "331f860739e6b19428bfa91e46593980495319cd",
             "content": "sha256:3f266394d747702cf5fca9a16837a3bd874dfdc8772be3c7aea06f6c9d3ff525",
             "locator": {
               "kind": "symbol",

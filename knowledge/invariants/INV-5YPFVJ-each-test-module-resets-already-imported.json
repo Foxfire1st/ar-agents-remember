@@ -3,12 +3,11 @@
     "criteria": [
       "prevents_costly_mistake"
     ],
-    "justification": "A surviving ambient lifecycle makes a later module fail according to file scheduling rather than code."
+    "justification": "A surviving imported product owner can make later modules depend on file scheduling; module-boundary reset/cleanup prevents that cross-module leak without restoring removed ambient state."
   },
   "applicability": "Module boundaries in pytest processes loading the repository bootstrap plugin.",
   "conditions": [
-    "Only already-imported product modules are reset.",
-    "The ambient owner is stopped and its heartbeat joined before the module body and after its completion."
+    "Only already-imported product modules are reset."
   ],
   "exclusions": [
     "No reset between ordered cases of one test file.",
@@ -26,9 +25,9 @@
     "leaf": "260928-MIK-L87",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-invariant/v1",
-  "statement": "Each test module resets already-imported product owners before and after execution and joins the ambient heartbeat.",
+  "statement": "Each test module resets already-imported product owners before and after execution; removed ambient lifecycle and heartbeat owners are not reset or joined.",
   "status": "proposed",
   "supersedes": []
 }

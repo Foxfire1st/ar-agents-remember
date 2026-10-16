@@ -3,11 +3,12 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "a742c89b2cd23728445c96bfb19dd52e8b469330",
-        "content": "sha256:b39bb14feefec7b9a611175aa02e8108b2b6b6e9c6adfddad2d89e3fd17b5a15",
+        "blob": "9428d73e043d1a52e02a94e709a8a0e90b8b1aeb",
+        "content": "sha256:4bcfb50317177298a29872dc1c8e95835aab6ef8c03427a916e792ededae4822",
         "locator": {
-          "kind": "symbol",
-          "name": "check_host_once"
+          "end": 331,
+          "kind": "line_range",
+          "start": 280
         }
       },
       "id": "RLZ-AJJHFC",
@@ -21,11 +22,12 @@
     },
     {
       "anchor": {
-        "blob": "a742c89b2cd23728445c96bfb19dd52e8b469330",
-        "content": "sha256:51dbed287220e16e1d277a490d2e9de2d48d3d3bd8a3776ca7d81d24140056c1",
+        "blob": "9428d73e043d1a52e02a94e709a8a0e90b8b1aeb",
+        "content": "sha256:842ecb7f0b54c004ef33e512586e12626fbed10242f7ad5ecfcf699e74b82f84",
         "locator": {
-          "kind": "symbol",
-          "name": "resume_agent"
+          "end": 83,
+          "kind": "line_range",
+          "start": 64
         }
       },
       "id": "RLZ-BQ33S1",

@@ -207,14 +207,28 @@
       ]
     },
     "9": {
-      "note": "Current candidate source supports the operative account; historical sections grant no current tool or execution acceptance.",
+      "note": "The addressed read names governing knowledge only; it emits no ambient read.packet or source/card content.\n\nAnchor: current owner",
       "targets": [
         {
           "anchor": {
-            "blob": "54abae80d1e32eaea261f41f78d5c4ca7599beb9",
-            "content": "sha256:a46b018c88db1772cf34323b1514e25ebdbc9fd8622e2b8470b23c37b57cd5e9",
+            "blob": "2f532024331db6212eee182a74888735f2460aae",
+            "content": "sha256:90421f7d6c5b13cee6234af98618e2748e39197a7d923652a501dc98fc3a8e6b",
             "locator": {
-              "kind": "file"
+              "end": 173,
+              "kind": "line_range",
+              "start": 87
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2f532024331db6212eee182a74888735f2460aae",
+            "content": "sha256:6ac3b3c9cf146137339b4cb4f9c4a80d45943a770ad17f00258fb8f81ac39e8b",
+            "locator": {
+              "end": 343,
+              "kind": "line_range",
+              "start": 260
             }
           },
           "kind": "code"

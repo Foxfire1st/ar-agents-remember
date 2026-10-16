@@ -10,8 +10,9 @@
 which exact Git objects one master NET change-set binds, and what to say when one is absent.
 It owns the *selection* the net-diff computation runs over — the declared integrated result for
 a live request, or the exact recorded endpoints a pinned request names — while the diff itself
-stays where it is (`serving/changeset.py`'s `base -> tip` diff over
-`worktrees/modules/git.changed_files_with_counts`). It is the new sibling beside
+is orchestrated by `serving/changeset.py`: its `base -> tip` diff reads through the
+cached `serving/changeset_reads.changed_files_with_counts` wrapper, whose native implementation
+is `worktrees/modules/git_changes.changed_files_with_counts`. It is the new sibling beside
 `serving/changeset.py` that the packet's Scope authorizes ("new internal modules belong beside
 those owners"), holding the logic moved out of `changeset.py`'s deleted `_master_task_root`,
 `_load_master_contract`, `_series_tip` and `_net_changed`.
@@ -67,7 +68,8 @@ half with nothing to show, and only on the memory side.
 Purpose-named adjacent module: master task-root/contract loading (`master_task_root`,
 `load_master_contract`), tip resolution without fallback, pins/endpoints/selection
 dataclasses, deterministic digest, one selector. cit:([`master_task_root`], mcp/src/agents_remember/serving/master_net_generation.py:120-125) cit:([`load_master_contract`], mcp/src/agents_remember/serving/master_net_generation.py:128-139)
-The diff primitive stays in `changeset.py` — one implementation, no duplication. Refusal
+Net-diff orchestration stays in `changeset.py`; its serving cache delegates the one native
+status/count implementation to `worktrees/modules/git_changes.py`, with no duplicated parser. Refusal
 messages name the endpoint and the substitution that was refused, so the caller can act on
 the kind.
 
@@ -104,6 +106,8 @@ the reviewed task evidence for any current behavioral claim.
 No configured Domain Documentation source exists for this file.
 
 ### Repo-Internal References
+
+- The serving cache delegates native file statuses and counts to `git_changes`, not the removed function in `git`. [14]
 
 - The one scope the selection ever serves, and the three-state request contract (live / pinned / absent) with the digest and currentness rules. [1]
 - The named refusal for a missing master endpoint, as the committed-range vocabulary applied to the master's base and result. [2]

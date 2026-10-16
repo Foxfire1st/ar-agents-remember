@@ -14,10 +14,8 @@ constel.ts`) stays imperative.
 
 ### Logic
 
-Reads `lifecycles`, `enclosures`, `providers`, and `activeWorktreeGroups` from the store. Builds the
-model with `useMemo`: it first calls `activeTopologyInputs(lifecycles, enclosures, activeWorktreeGroups)`
-to bound the inputs to live worktree groups, then `buildTopology(active.lifecycles, active.enclosures,
-providers)` — so the constellation shows active work only while the shared store maps keep all-time
+Reads selectWorktrees, providers and activeWorktreeGroups from the store. Builds the
+model with useMemo: activeTopologyInputs bounds the pre-bound/unbound worktree rows to active groups, then buildTopology receives those worktrees and providers — so the constellation shows active work only while the shared store maps keep all-time
 history for other views. `mountConstel` runs ONCE (refs to canvas/wrap/tip), and new models
 are pushed via `handle.update(model)` so the rAF loop keeps running (no remount-on-tick reset). The
 container/tip/legend are Panda `css()`; the legend dots a `legdot` `cva`. The renderer styles the tip

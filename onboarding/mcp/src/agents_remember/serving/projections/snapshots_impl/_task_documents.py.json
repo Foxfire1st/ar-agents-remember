@@ -3,11 +3,12 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "fc86b4692eee537d0b0c117e72098e4cdb33062e",
-        "content": "sha256:6aec9c4eb040e8431d3ce831ad8a61867d1c08e2ed4ae49550193e1e2bf866db",
+        "blob": "82940e3ebb28c7077e598da5addafff90ec6ef78",
+        "content": "sha256:0222df1f1b092513c035648b08416d325eb0991703fe014d3e7e4cbf99056ea2",
         "locator": {
-          "kind": "symbol",
-          "name": "_task_doc_node"
+          "end": 575,
+          "kind": "line_range",
+          "start": 480
         }
       },
       "id": "RLZ-1VMSKE",
@@ -21,11 +22,12 @@
     },
     {
       "anchor": {
-        "blob": "fc86b4692eee537d0b0c117e72098e4cdb33062e",
-        "content": "sha256:ef9d55fda13cd15ddaabb9abc96ebc76481e9bd9a5e7a1f99f2ce33b8a69aa01",
+        "blob": "82940e3ebb28c7077e598da5addafff90ec6ef78",
+        "content": "sha256:9b6373ba9eeb22e690729f48e7140cac9740485c12a5a1116269682dfa1cf12f",
         "locator": {
-          "kind": "symbol",
-          "name": "_graph_master_docs"
+          "end": 213,
+          "kind": "line_range",
+          "start": 180
         }
       },
       "id": "RLZ-4JY123GA",
@@ -33,17 +35,17 @@
       "origin": {
         "leaf": "260921-ICR-L46"
       },
-      "rationale": "This graph-master helper adds no master payload for graph-less input; for a sprint it opens only the canonical candidate files named by graph node master references. It does not own the separate ordinary-master dependency reads or direct-grant census.",
+      "rationale": "The addressed graph helper reads named canonical masters and their explicit child task documents without a corpus enumeration; ordinary dependency joins keep their separate addressed inputs.",
       "role": "enforcement"
     },
     {
       "anchor": {
-        "blob": "fc86b4692eee537d0b0c117e72098e4cdb33062e",
-        "content": "sha256:def025019798273ac72cb2ce02fab50f710db764d9d2c9ad10ac55f8ee366367",
+        "blob": "82940e3ebb28c7077e598da5addafff90ec6ef78",
+        "content": "sha256:d9de27c7d82b40ea370dc0f4786fd373f0ce3165b7b1559931bb2225d996f07a",
         "locator": {
-          "end": 131,
+          "end": 112,
           "kind": "line_range",
-          "start": 129
+          "start": 95
         }
       },
       "id": "RLZ-80B2H2",
@@ -52,12 +54,12 @@
         "handoffEntry": "curator-extra-source-links-INV-WHBGH5",
         "leaf": "260928-MIK-L162"
       },
-      "rationale": "Builds the dependency/order projection once from readable projected documents in the current explicitly gathered population; supports master Order and both head dependency directions. It is not permission to scan unrelated masters.",
+      "rationale": "Projects validated task sources through one derived build_order_fields result for the addressed documents, without reconstructing dependency states in the client.",
       "role": "propagation-persistence"
     },
     {
       "anchor": {
-        "blob": "fc86b4692eee537d0b0c117e72098e4cdb33062e",
+        "blob": "82940e3ebb28c7077e598da5addafff90ec6ef78",
         "content": "sha256:7a65f7775f2b252903788fcf406997ae115820add50778526ad4e32d18c74a6c",
         "locator": {
           "kind": "symbol",
@@ -75,11 +77,12 @@
     },
     {
       "anchor": {
-        "blob": "fc86b4692eee537d0b0c117e72098e4cdb33062e",
-        "content": "sha256:ef9d55fda13cd15ddaabb9abc96ebc76481e9bd9a5e7a1f99f2ce33b8a69aa01",
+        "blob": "82940e3ebb28c7077e598da5addafff90ec6ef78",
+        "content": "sha256:9b6373ba9eeb22e690729f48e7140cac9740485c12a5a1116269682dfa1cf12f",
         "locator": {
-          "kind": "symbol",
-          "name": "_graph_master_docs"
+          "end": 213,
+          "kind": "line_range",
+          "start": 180
         }
       },
       "id": "RLZ-D8Y5FWWB",
@@ -87,12 +90,31 @@
       "origin": {
         "leaf": "260921-ICR-L46"
       },
-      "rationale": "Feeds the graph view only payloads that carry the task-document schema, read from the candidate paths for the refs the graph's nodes name, into the same _master_docs_by_ref join the corpus-wide table uses. The graph therefore sees the same entries for those refs, and a schema-less master-shaped JSON cannot enter the join.",
+      "rationale": "Reads schema-valid graph-named master documents and their explicitly listed valid task documents for the bounded graph join; it is not a graph-master-only input.",
       "role": "support"
     },
     {
       "anchor": {
-        "blob": "fc86b4692eee537d0b0c117e72098e4cdb33062e",
+        "blob": "82940e3ebb28c7077e598da5addafff90ec6ef78",
+        "content": "sha256:8dc8f6dd48fc4c5a0d9fa23d2633be4108f7f4a1a864726bd1bac1973a13106c",
+        "locator": {
+          "end": 130,
+          "kind": "line_range",
+          "start": 103
+        }
+      },
+      "id": "RLZ-EMRFV4",
+      "invariant": "INV-WQ8YGE",
+      "origin": {
+        "handoffEntry": "L168-CUR-M2-21-N22",
+        "leaf": "260928-MIK-L168"
+      },
+      "rationale": "The source adapter preserves authored subTasks order as DeclaredTaskSource and passes the normalized declared parent separately; build_task_entries remains the reciprocal-membership/cycle authority independent of worktrees.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "82940e3ebb28c7077e598da5addafff90ec6ef78",
         "content": "sha256:b7cabe376357a0c1eb26004ded85c3e3a154af5d8e76a65f53239dbc03aa8e72",
         "locator": {
           "kind": "symbol",
@@ -110,11 +132,31 @@
     },
     {
       "anchor": {
-        "blob": "fc86b4692eee537d0b0c117e72098e4cdb33062e",
-        "content": "sha256:6af862751831a64220cbb80a2492445c5160cd1febcdfe9d1078ce47a9331a04",
+        "blob": "82940e3ebb28c7077e598da5addafff90ec6ef78",
+        "content": "sha256:fcc0b0267c77599d98fbf89d383b7bbfdc967551852d9f03af4284f7511f4490",
         "locator": {
-          "kind": "symbol",
-          "name": "read_task_document_body"
+          "end": 131,
+          "kind": "line_range",
+          "start": 83
+        }
+      },
+      "id": "RLZ-HNN2VC",
+      "invariant": "INV-MGGEBY",
+      "origin": {
+        "handoffEntry": "L168-CUR-M2-21-N21",
+        "leaf": "260928-MIK-L168"
+      },
+      "rationale": "Full source acquisition uses project_task_sources once, carrying a summary plus qualified declared-child/parent facts into the canonical TaskEntry join. It is not the retired second served document/series collection.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "82940e3ebb28c7077e598da5addafff90ec6ef78",
+        "content": "sha256:743f5a4309c292bff25529b424208385ef192a9ad191e055dc6a7187a0aabea8",
+        "locator": {
+          "end": 177,
+          "kind": "line_range",
+          "start": 134
         }
       },
       "id": "RLZ-MMSNGJN5",
@@ -127,12 +169,12 @@
     },
     {
       "anchor": {
-        "blob": "fc86b4692eee537d0b0c117e72098e4cdb33062e",
-        "content": "sha256:87b695b4666fcead26e796876f949143d993f0ce76cc23337ca99118006c421c",
+        "blob": "82940e3ebb28c7077e598da5addafff90ec6ef78",
+        "content": "sha256:14be2da9745c9ab56baa57940376485eb4d7c53b90e20c56562ec9b63726b2b9",
         "locator": {
-          "end": 146,
+          "end": 125,
           "kind": "line_range",
-          "start": 146
+          "start": 116
         }
       },
       "id": "RLZ-P3YVEH",
@@ -141,12 +183,12 @@
         "handoffEntry": "curator-extra-source-links-INV-WHBGH5",
         "leaf": "260928-MIK-L162"
       },
-      "rationale": "Passes the snapshot-population order_fields into each task-document projection, preserving producer-owned dependencies across the reader boundary.",
+      "rationale": "Passes derived order_fields through the shared task-document projection options used for full and path-directed reads.",
       "role": "propagation-persistence"
     },
     {
       "anchor": {
-        "blob": "fc86b4692eee537d0b0c117e72098e4cdb33062e",
+        "blob": "82940e3ebb28c7077e598da5addafff90ec6ef78",
         "content": "sha256:0390dda0c3bfb0155a500d4b37519d4fde282ff9accd221d6f8eb34bfbb9a0e2",
         "locator": {
           "kind": "symbol",
@@ -164,12 +206,12 @@
     },
     {
       "anchor": {
-        "blob": "fc86b4692eee537d0b0c117e72098e4cdb33062e",
+        "blob": "82940e3ebb28c7077e598da5addafff90ec6ef78",
         "content": "sha256:8736bec245b6ea72df0993a4e8d8d9807eceaa704361970fd1f29dec4c1649d4",
         "locator": {
-          "end": 666,
+          "end": 378,
           "kind": "line_range",
-          "start": 666
+          "start": 378
         }
       },
       "id": "RLZ-YX3P68",
@@ -178,7 +220,7 @@
         "handoffEntry": "curator-extra-source-links-INV-WHBGH5",
         "leaf": "260928-MIK-L162"
       },
-      "rationale": "Adds optional precomputed order_fields to the projection-document adapter so the common snapshot population can propagate derived graph and dependency references.",
+      "rationale": "The shared projection options carry the single derived order_fields table into the task-document builder.",
       "role": "propagation-persistence"
     }
   ],
@@ -188,12 +230,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "fc86b4692eee537d0b0c117e72098e4cdb33062e",
+            "blob": "82940e3ebb28c7077e598da5addafff90ec6ef78",
             "content": "sha256:e181a2ed3a4c9bd7cb0edb661b24ddb2d255fd8bd5bfd81874c97faa82f73d87",
             "locator": {
-              "end": 737,
+              "end": 449,
               "kind": "line_range",
-              "start": 734
+              "start": 446
             }
           },
           "kind": "code"
@@ -229,12 +271,12 @@
         },
         {
           "anchor": {
-            "blob": "37cd61129911b6adcb58b188b89c24f3848bea28",
+            "blob": "0729e2487febb7fcc3087bbe5a033d9a994ed5b9",
             "content": "sha256:1b93354ce790b5b99de83fe5551ac87d02d7c8956bfce1c555e6abe6fe38f330",
             "locator": {
-              "end": 90,
+              "end": 84,
               "kind": "line_range",
-              "start": 44
+              "start": 38
             },
             "path": "mcp/src/agents_remember/serving/projections/snapshots_impl/_common.py"
           },
@@ -243,18 +285,31 @@
       ]
     },
     "11": {
-      "note": "An unresolved authored-document row remains non-clickable; resolveRowTarget and IndexLink now live in the shared indexRows owner, including the same diagnostic text.",
+      "note": "`indexRows.resolveRowTarget` retains the “not authored as a task document yet” diagnostic when the summary is absent. Navigation is enabled by an entry reference, even before the summary is authored; a reference-less entry has no jump. There is no current `IndexLink` component.",
       "targets": [
         {
           "anchor": {
-            "blob": "dddb18f9c1c1c0e58a53ffcf70977c948079a69a",
-            "content": "sha256:ba055acbb87fa051f5929194044346544cf77037060614c5df904012a8ef8226",
+            "blob": "027ddd65987f25c0c7526306a2fe9d29c2f62dc8",
+            "content": "sha256:93cb9f3b0328eb4c90be0129ef564b880ad5991cca6b39555ded9bf01040ede1",
             "locator": {
-              "end": 96,
+              "end": 22,
               "kind": "line_range",
-              "start": 38
+              "start": 7
             },
             "path": "dashboard/src/panels/detail-panel/indexRows.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e3c34e678d99cdf3d9ef8384089af04567c1df26",
+            "content": "sha256:d484296c7d57dc93dc17ecd5587244fcb643462e8570e8cb9dc913c24cdd8cf7",
+            "locator": {
+              "end": 57,
+              "kind": "line_range",
+              "start": 39
+            },
+            "path": "dashboard/src/panels/detail-panel/taskDocPanels.tsx"
           },
           "kind": "code"
         }
@@ -265,7 +320,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ef35d2d921f438cb1f260638e11b337325b8e2e0",
+            "blob": "9db054f67ffb51dddb7d1826e6ad7230dd76e9be",
             "content": "sha256:d2414fde98b5fac3676d9457812d28a6f36aa1735bd880339a492fb99d6c8b64",
             "locator": {
               "kind": "symbol",
@@ -282,7 +337,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6d7e0b8d0c6d389241824926e4ddda86f395044a",
+            "blob": "c6ae9e37bab754280d5e2a3ee62a46578825f9b4",
             "content": "sha256:537bf191e7ce1a541098f60a1d6e6d8abec11008aa72a6f51f941099d643ed8e",
             "locator": {
               "kind": "symbol",
@@ -349,12 +404,12 @@
         },
         {
           "anchor": {
-            "blob": "ef35d2d921f438cb1f260638e11b337325b8e2e0",
+            "blob": "9db054f67ffb51dddb7d1826e6ad7230dd76e9be",
             "content": "sha256:9eee87a86c5a2657062540d297bf2b04b05600629228cd96ed2953092113a0ee",
             "locator": {
-              "end": 670,
+              "end": 683,
               "kind": "line_range",
-              "start": 669
+              "start": 682
             },
             "path": "mcp/src/agents_remember/tasks/document.py"
           },
@@ -384,7 +439,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "37cd61129911b6adcb58b188b89c24f3848bea28",
+            "blob": "0729e2487febb7fcc3087bbe5a033d9a994ed5b9",
             "content": "sha256:38555019cde060fc859dc1909193cc15341e8b6ebcfded13c0f49e34d5c3a9c8",
             "locator": {
               "kind": "symbol",
@@ -491,12 +546,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "fc86b4692eee537d0b0c117e72098e4cdb33062e",
+            "blob": "82940e3ebb28c7077e598da5addafff90ec6ef78",
             "content": "sha256:d1714a1de071de85e622b114fba836aa05706b82892a1a410c55c16601e10742",
             "locator": {
-              "end": 743,
+              "end": 455,
               "kind": "line_range",
-              "start": 740
+              "start": 452
             }
           },
           "kind": "code"
@@ -574,36 +629,36 @@
       "targets": [
         {
           "anchor": {
-            "blob": "fc86b4692eee537d0b0c117e72098e4cdb33062e",
+            "blob": "82940e3ebb28c7077e598da5addafff90ec6ef78",
             "content": "sha256:7a65f7775f2b252903788fcf406997ae115820add50778526ad4e32d18c74a6c",
             "locator": {
-              "end": 949,
+              "end": 655,
               "kind": "line_range",
-              "start": 915
+              "start": 621
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "fc86b4692eee537d0b0c117e72098e4cdb33062e",
+            "blob": "82940e3ebb28c7077e598da5addafff90ec6ef78",
             "content": "sha256:e0217997a9d7d2f98cbd98e3ea3642b86db41ad0e7d55ed063309552ad131c03",
             "locator": {
-              "end": 797,
+              "end": 498,
               "kind": "line_range",
-              "start": 786
+              "start": 487
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "fc86b4692eee537d0b0c117e72098e4cdb33062e",
+            "blob": "82940e3ebb28c7077e598da5addafff90ec6ef78",
             "content": "sha256:b7cabe376357a0c1eb26004ded85c3e3a154af5d8e76a65f53239dbc03aa8e72",
             "locator": {
-              "end": 892,
+              "end": 590,
               "kind": "line_range",
-              "start": 880
+              "start": 578
             }
           },
           "kind": "code"
@@ -687,7 +742,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ef35d2d921f438cb1f260638e11b337325b8e2e0",
+            "blob": "9db054f67ffb51dddb7d1826e6ad7230dd76e9be",
             "content": "sha256:0f8da6cf1800ebe9d9fddec24e4a2847ae52c5c26c23067dc0ffb8302d2e405c",
             "locator": {
               "kind": "symbol",
@@ -699,7 +754,7 @@
         },
         {
           "anchor": {
-            "blob": "ef35d2d921f438cb1f260638e11b337325b8e2e0",
+            "blob": "9db054f67ffb51dddb7d1826e6ad7230dd76e9be",
             "content": "sha256:33f48f246c2109e91baf88f5b616f534fe229ad8dc1d3e318be51af05935a3c7",
             "locator": {
               "end": 133,

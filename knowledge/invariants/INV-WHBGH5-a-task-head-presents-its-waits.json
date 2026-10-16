@@ -8,7 +8,8 @@
   "applicability": "Dependency facts in the head of a task of an ordinary master.",
   "conditions": [
     "Waits-for references come from the field; needed-by references are derived from the listed sibling population.",
-    "Known reference titles and states remain visible, including gone references; absent document paths do not acquire invented navigation."
+    "Known dependency ids and titles stay visible; gone targets remain marked gone and nonnavigable.",
+    "A dependency without a task document has no state and no jump; no second path for task state is added. This is the intentional narrower guarantee in Architect ruling notes/run3/L168-THE-INSTRUCTIONS-OF-THE-REMOVED-ADOPTION-ARE-CORRECTED-A-FILE-LESS-DEPENDENCY-SHOWS-NO-STATE.json (ruling[2])."
   ],
   "exclusions": [
     "Cross-master dependency authoring.",
@@ -27,9 +28,9 @@
     "leaf": "260928-MIK-L162",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-invariant/v1",
-  "statement": "A task head presents its waits-for and derived needed-by tasks with their known titles and states.",
+  "statement": "A task head presents its waits-for and derived needed-by tasks with their known id and title; state and navigation require the referenced native task entry. A dependency without a task document shows id and title, no state and no jump.",
   "status": "proposed",
   "supersedes": []
 }

@@ -6,7 +6,11 @@
 
 ## Current source contract evidence
 
-- Current candidate source supports the operative account; historical sections grant no current tool or execution acceptance. [8]
+
+
+- Current server wiring and tool-call boundary initialize application services without an ambient session lifecycle. [8]
+
+
 
 ## Purpose
 
@@ -32,8 +36,8 @@ Starts the one configured MCP application and registrar loop.
    `structuredContent` or tool behaviour.
 2. Bind default worktree services with `LeafAgentArchive(config)`, initialize the application via
    `server_startup.initialize_mcp_application(config)`, and complete FastMCP settings before
-   constructing the server. Application startup owns ambient initialization; retained internal
-   lifecycle/response consumers do not restore removed lifecycle tools.
+   constructing the server. Application startup initializes application services, including
+   the workspace tool-event writer, without an ambient session lifecycle.
 3. `AgentsRememberMCP("Agents Remember", instructions=launched_server_instructions())`. A readable
    launch binding supplies the canonical task-server instruction line; unbound or unreadable binding
    supplies no instruction line.
@@ -54,8 +58,8 @@ AgentsRememberMCP.list_tools delegates directly to FastMCP. call_tool carries ac
 `call_tool` brackets every call in `tool_call_context` carrying the exact arguments, start time and
 this server's config (`_agents_remember_config`, set once by `create_server`) to the answer boundary,
 which logs the completed call; a call that raises is logged here by `_log_raised_tool_call` and
-re-raised, with the log write itself never raising. Dispatch input refusals happen inside the
-context so they are logged like any other raised call.
+re-raised, with the log write itself never raising. Refusals raised by registered tools happen inside the
+context and are logged like other raised calls.
 
 `main(argv)` parses a required `--config` (an absolute path to trusted MCP settings JSON), calls
 `declare_mcp_process()` **before** `load_config`, turns a `ConfigError` into an argparse error, then
@@ -100,9 +104,10 @@ that skips this line loses no records — it just stops being distinguishable fr
   a new family means a new module plus one entry in `TOOL_REGISTRARS`.
 - The transport subclass may enforce a closed public boundary only when the framework-generated
   boundary is demonstrably weaker. It must not duplicate handlers, invent fallbacks, or become a
-  second tool registry. ARSPAWN-L4's dispatch-only undeclared-input refusal is the current instance.
-- Keep `install_compact_content()` and `install_ambient(...)` at the top of `create_server()`,
-  before tools can be exercised.
+  second tool registry. The earlier dispatch-only undeclared-input refusal is historical, not a
+  current special case.
+- Initialize compact-content serialization and application services before registering tools;
+  no ambient lifecycle installer remains.
 - **`declare_mcp_process()` stays before `load_config`, `prepare_mcp_process(config)` stays before
   `run_server`, and neither declaration may move into `create_server`.**
   `create_server` is called in-process by the test suite and `_declared` has no reset, so declaring

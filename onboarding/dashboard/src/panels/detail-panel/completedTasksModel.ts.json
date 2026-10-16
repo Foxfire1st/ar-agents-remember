@@ -3,10 +3,12 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "13f37e825e7ad0f54fae5ceb05bd2728ad98e08e",
-        "content": "sha256:d271e214aa315893b371babaf1f7cc0b5ece85bf8b559f7c7d90b0fc97737458",
+        "blob": "a390d5efd76ecd0c02f9bf09e12e3d3343620ec8",
+        "content": "sha256:a6c577defda96db8844e9856c00387ed725333765cc21d69697931c6e26d290b",
         "locator": {
-          "kind": "file"
+          "end": 44,
+          "kind": "line_range",
+          "start": 1
         }
       },
       "id": "RLZ-NSHCGH",
@@ -15,70 +17,10 @@
         "handoffEntry": "MIK-R128@v1 rule 16",
         "leaf": "260928-MIK-L162"
       },
-      "rationale": "This cohesive completed-task model chooses the document timestamp or exact legacy finalizer-record fallback and defines newest-first, numeric and unknown-last ordering without rewriting documents.",
+      "rationale": "Consumes served completion time; owns numeric/time sort with unknown last, not legacy fallback.",
       "role": "primary-authority"
     }
   ],
-  "references": {
-    "1": {
-      "note": "Completion time prefers completedAt with finite-date exact legacy finalizer-text fallback, and sorting is nonmutating/local.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "13f37e825e7ad0f54fae5ceb05bd2728ad98e08e",
-            "content": "sha256:c8e46254b356150255f194bdb307a9e1f482a0384fc2ad11bf915082f44d82e2",
-            "locator": {
-              "end": 25,
-              "kind": "line_range",
-              "start": 16
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "13f37e825e7ad0f54fae5ceb05bd2728ad98e08e",
-            "content": "sha256:bcffd5caa06a0c8d63cabf500975e3710284d13a6803d5b558c483cf8ba29248",
-            "locator": {
-              "end": 57,
-              "kind": "line_range",
-              "start": 46
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "2": {
-      "note": "completedEntries uses one default call-local slice index, or a supplied matcher shared with navigation, preserving first-match row facts and original positions.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "13f37e825e7ad0f54fae5ceb05bd2728ad98e08e",
-            "content": "sha256:4898b60b5f5729aed780f85b6a1da2010c134d51d8ea7211eab5a2be446b6dcf",
-            "locator": {
-              "end": 44,
-              "kind": "line_range",
-              "start": 27
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "dddb18f9c1c1c0e58a53ffcf70977c948079a69a",
-            "content": "sha256:a328f1b9ca729b956401c63a238961ed621902031fc3518834e7d3f30b8e8eef",
-            "locator": {
-              "end": 28,
-              "kind": "line_range",
-              "start": 16
-            },
-            "path": "dashboard/src/panels/detail-panel/indexRows.tsx"
-          },
-          "kind": "code"
-        }
-      ]
-    }
-  },
+  "references": {},
   "schema": "ar-onboarding-file/v1"
 }

@@ -3,7 +3,64 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "b5a700be1a97ca2225674bc908709583412a7ed1",
+        "blob": "e3c34e678d99cdf3d9ef8384089af04567c1df26",
+        "content": "sha256:9c52f7c7461f38e6409969a4eef3a7d4cc6bea55f09de41c3eb6e11c989db41f",
+        "locator": {
+          "end": 66,
+          "kind": "line_range",
+          "start": 24
+        }
+      },
+      "id": "RLZ-3CEKPH",
+      "invariant": "INV-MGGEBY",
+      "origin": {
+        "handoffEntry": "L168-CUR-M2-21-N04",
+        "leaf": "260928-MIK-L168"
+      },
+      "rationale": "The selected canonical entry supplies identity, task status and bound worktrees while document is optional reader content. Missing content renders an honest unauthored notice without synthesizing a task document or series truth.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "e3c34e678d99cdf3d9ef8384089af04567c1df26",
+        "content": "sha256:d469a250e50db9dae88629cb398d3e3448e6e0d71d0579ee6160f152abc88507",
+        "locator": {
+          "end": 34,
+          "kind": "line_range",
+          "start": 24
+        }
+      },
+      "id": "RLZ-FVENTP",
+      "invariant": "INV-WQ8YGE",
+      "origin": {
+        "handoffEntry": "L168-CUR-M2-21-N05",
+        "leaf": "260928-MIK-L168"
+      },
+      "rationale": "TaskDocumentPanel uses the already resolved served parent entry and jumps by its qualified key; it no longer re-joins series slices or derives parent paths.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "e3c34e678d99cdf3d9ef8384089af04567c1df26",
+        "content": "sha256:45463f023756e33d7c6ffa549aa93bb8b7eccd5e13d27b721c1417a9271aa0d8",
+        "locator": {
+          "end": 56,
+          "kind": "line_range",
+          "start": 51
+        }
+      },
+      "id": "RLZ-MM7PFZ",
+      "invariant": "INV-XZYGEB",
+      "origin": {
+        "handoffEntry": "L168-CUR-M2-21-N06",
+        "leaf": "260928-MIK-L168"
+      },
+      "rationale": "An unauthored selected task still formats entry state through TaskStatusWord, forwarding active to its display clock instead of reconstructing document or lifecycle status.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "e3c34e678d99cdf3d9ef8384089af04567c1df26",
         "content": "sha256:2a29b71e88f615bfc4589ff59ad294e0a533ef27007175cd333006d08999544d",
         "locator": {
           "kind": "symbol",

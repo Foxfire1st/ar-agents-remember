@@ -1,0 +1,111 @@
+{
+  "path": "dashboard/src/data/taskDocuments.test.tsx",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "b006c831d90995af88efe4c092cf41de90372ecb",
+        "content": "sha256:203f27e7b72fb43eab41260b960e3adb641a562a3263d237c92045471b83dd2d",
+        "locator": {
+          "kind": "symbol",
+          "name": "retained resource bounds > bounds retained bodies and pure preparation across a long navigation history"
+        }
+      },
+      "facet": "A growing navigation history keeps body/preparation entry and byte counts bounded, evicts the old body and recomputes an evicted pure view once.",
+      "id": "PRF-B3E3M3",
+      "invariant": "INV-GDWJKR",
+      "origin": {
+        "handoffEntry": "L168-W-R168-07",
+        "leaf": "260928-MIK-L168"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "b006c831d90995af88efe4c092cf41de90372ecb",
+        "content": "sha256:1da9ad976f9db4460461f293fa59fa851817725bd09d11603ad89db9e4d8c59a",
+        "locator": {
+          "kind": "symbol",
+          "name": "task bodies belong to the store and exact document revision > stores a response crossing a source edit only under the returned revision"
+        }
+      },
+      "facet": "The body returned under a different actual revision is retained only under that returned revision, not the request revision.",
+      "id": "PRF-EY4JFD",
+      "invariant": "INV-WNHAWD",
+      "origin": {
+        "handoffEntry": "L168-W-R168-03",
+        "leaf": "260928-MIK-L168"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "b006c831d90995af88efe4c092cf41de90372ecb",
+        "content": "sha256:b01b0c46176099cbf0836ad245e1c9c86422bc3b4698c08f231b570149462244",
+        "locator": {
+          "kind": "symbol",
+          "name": "task bodies belong to the store and exact document revision > deduplicates concurrent reads and reuses the parsed body after navigation"
+        }
+      },
+      "facet": "Concurrent exact-revision loads share one promise and navigation reuses the same parsed body with one mocked fetch.",
+      "id": "PRF-MGYP5F",
+      "invariant": "INV-WNHAWD",
+      "origin": {
+        "handoffEntry": "L168-W-R168-03",
+        "leaf": "260928-MIK-L168"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Revision identity and crossing responses\n\nAnchor: deduplicates concurrent reads and reuses the parsed body after navigation",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b006c831d90995af88efe4c092cf41de90372ecb",
+            "content": "sha256:02b0b8b0147ebe5f4bacb2fba367d253ad7f1c5335eacd2542772026d7220cf4",
+            "locator": {
+              "end": 69,
+              "kind": "line_range",
+              "start": 32
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Unmount, selection, summary/failure and unauthored controls\n\nAnchor: retains the full body across reader unmount and uses current summary facts on return",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b006c831d90995af88efe4c092cf41de90372ecb",
+            "content": "sha256:500d3809c16fab4e64d5d4b58b6044f6cd89c275c886e9cb973c5cae825c2894",
+            "locator": {
+              "end": 139,
+              "kind": "line_range",
+              "start": 71
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Oversized current body and retained-resource bounds\n\nAnchor: renders an oversized current body without retaining it across navigation",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b006c831d90995af88efe4c092cf41de90372ecb",
+            "content": "sha256:9f039076232eb4f6997a5dd86cd2f8c38436f2d8879b0b20842921733d97b928",
+            "locator": {
+              "end": 194,
+              "kind": "line_range",
+              "start": 141
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

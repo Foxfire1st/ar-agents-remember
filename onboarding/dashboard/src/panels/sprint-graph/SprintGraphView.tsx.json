@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "15f76aada9eb203b8005cc4dcc281552d1f5ea95",
+        "blob": "10fa9b314498732151de2f419d952921a92ebe84",
         "content": "sha256:f21bb4ed973d6fce10ceafbb6ffbe238ef556a5b0a27eb2286f531e9856e4aa9",
         "locator": {
           "kind": "symbol",
@@ -21,7 +21,26 @@
     },
     {
       "anchor": {
-        "blob": "15f76aada9eb203b8005cc4dcc281552d1f5ea95",
+        "blob": "10fa9b314498732151de2f419d952921a92ebe84",
+        "content": "sha256:94892f75555830d05e4356c451dee7069bcb4bbc404677b22baee6cf045cf1bc",
+        "locator": {
+          "end": 152,
+          "kind": "line_range",
+          "start": 148
+        }
+      },
+      "id": "RLZ-ECDCN3",
+      "invariant": "INV-XJ42YM",
+      "origin": {
+        "handoffEntry": "L168-CUR-M1-21-A013-22",
+        "leaf": "260928-MIK-L168"
+      },
+      "rationale": "readinessOf returns cycle when node.cycle is true; otherwise it passes through only ready or waiting frontierState and returns undefined for landed, in-flight or abandoned. These are dependency annotations, not task-status words: GraphBox obtains task state from the canonical entry and shared presentation table.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "10fa9b314498732151de2f419d952921a92ebe84",
         "content": "sha256:032ede3a6fc72c348dab59296f93f491152201d8bbdd2035af22c00e6fcf03b6",
         "locator": {
           "kind": "symbol",
@@ -39,7 +58,7 @@
     },
     {
       "anchor": {
-        "blob": "15f76aada9eb203b8005cc4dcc281552d1f5ea95",
+        "blob": "10fa9b314498732151de2f419d952921a92ebe84",
         "content": "sha256:292ca2a27e7af02425de5c78691fd924c319a23077541d8bc9d84953e38f628d",
         "locator": {
           "kind": "symbol",
@@ -54,20 +73,65 @@
       },
       "rationale": "The one rest logic of rule 11 (180 ms, at once on focus); exported so the rows and the graph cannot drift apart.",
       "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "10fa9b314498732151de2f419d952921a92ebe84",
+        "content": "sha256:eb4288f2212f563aae934cb98a343593e1aa1141708a4d2479f89780a57579ee",
+        "locator": {
+          "end": 201,
+          "kind": "line_range",
+          "start": 168
+        }
+      },
+      "id": "RLZ-Z1ZEK4",
+      "invariant": "INV-XZYGEB",
+      "origin": {
+        "handoffEntry": "L168-CUR-M2-21-N03",
+        "leaf": "260928-MIK-L168"
+      },
+      "rationale": "GraphBox resolves node.masterRef against the qualified tasks map and uses taskStatusKey/statusLabel/StatusWord for accessible and visible task state. readinessOf and the separate ready/waiting/cycle badge remain dependency facts, never a task-state fallback.",
+      "role": "presentation"
     }
   ],
   "references": {
     "1": {
-      "note": "The wave-grid component and box renderer.",
+      "note": "The wave-grid component and box renderer.\n\nAnchor: entry-owned graph boxes and wave composition",
       "targets": [
         {
           "anchor": {
-            "blob": "8829a127167d50f8d61ecb19931a9ea01f2a4cd4",
-            "content": "sha256:97a09c391790911e5e80370caa44a6c2d9109dc5b05ae4e03c253ecd36acb591",
+            "blob": "10fa9b314498732151de2f419d952921a92ebe84",
+            "content": "sha256:56e0e9a3b737fb1f2626d83df52458e2b0a96fe664f54d6b63a369749b70cd40",
             "locator": {
-              "kind": "symbol",
-              "name": "SprintGraphView"
+              "end": 207,
+              "kind": "line_range",
+              "start": 148
             }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "10fa9b314498732151de2f419d952921a92ebe84",
+            "content": "sha256:8f6f11b6c46f7fa3c0c786782a7032b042b5826856eee435d661f9abb67d8de6",
+            "locator": {
+              "end": 334,
+              "kind": "line_range",
+              "start": 264
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "17da14e723222a8d50b4ed6f0595390ab1fe1f6a",
+            "content": "sha256:bc4ae159d2c06abf5b3013b49558caef6bdd9ce2485a940130f171bf32322519",
+            "locator": {
+              "end": 101,
+              "kind": "line_range",
+              "start": 69
+            },
+            "path": "dashboard/src/panels/detail-panel/pageParts.tsx"
           },
           "kind": "code"
         }
@@ -120,16 +184,16 @@
       ]
     },
     "4": {
-      "note": "The component forcing suite.\n\nAnchor: `SprintGraphView` (describe)",
+      "note": "The component forcing suite.\n\nAnchor: seeded component assertions",
       "targets": [
         {
           "anchor": {
-            "blob": "75b9603dea6ab8c4ee6ef96b0d6fc5091ee2ddc7",
-            "content": "sha256:72ee89fcdd379f6750464bc36bcc827745ac7bbf5b8aacf7dde2f94548aaea2b",
+            "blob": "15344fb37b57a54e73496120e5afdedcda971695",
+            "content": "sha256:2d108842a22450524a79c13ded45e79b77d9ce14bbe63b12b3bf9f18b566f375",
             "locator": {
-              "end": 163,
+              "end": 193,
               "kind": "line_range",
-              "start": 102
+              "start": 106
             },
             "path": "dashboard/src/panels/sprint-graph/SprintGraphView.test.tsx"
           },

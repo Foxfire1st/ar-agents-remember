@@ -3,7 +3,24 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "88aaa04262766c094a76bb241c87655a34aa8414",
+        "blob": "68121e9668db87a9d23260c691ac8c1ba4513e6d",
+        "content": "sha256:18bee63a4c544130e5096fcc1f7d244bd4569845af15167d9de30ca66b86f205",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-RG81PB",
+      "invariant": "INV-MGGEBY",
+      "origin": {
+        "handoffEntry": "L168-W-R167-13-14",
+        "leaf": "260928-MIK-L168"
+      },
+      "rationale": "One dashboard store holds the qualified task map consumed by all views.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "68121e9668db87a9d23260c691ac8c1ba4513e6d",
         "content": "sha256:3e95f2199d191216a63e27bcda9874e9c33ec94beb0b0da84399870306b2d4f9",
         "locator": {
           "kind": "symbol",
@@ -61,7 +78,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c398ac1326fc5cb9eba54ae0ba6cab40c3650138",
+            "blob": "435f095a70d30fca070deb1186104929ac557935",
             "content": "sha256:b15319d1168a05c9de103355d5a33dd2a9447e9bb6404ffe235a8c1c9e6191fb",
             "locator": {
               "kind": "symbol",
@@ -78,7 +95,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "505b38f7f19667fa0c0cc4caca3e8a966d548e1d",
+            "blob": "25b46051e848ed30ec884515068da4de250b2117",
             "content": "sha256:92025411c28d48e4f249ed8f091eb66e04313a21b50b65eb2448dd8436e0f39e",
             "locator": {
               "end": 9,
@@ -96,7 +113,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "88aaa04262766c094a76bb241c87655a34aa8414",
+            "blob": "68121e9668db87a9d23260c691ac8c1ba4513e6d",
             "content": "sha256:cced200f36c56e8c93fbe17acab52d082f0cf155115644acc4f21d0020efd118",
             "locator": {
               "kind": "symbol",
@@ -107,12 +124,12 @@
         },
         {
           "anchor": {
-            "blob": "88aaa04262766c094a76bb241c87655a34aa8414",
+            "blob": "68121e9668db87a9d23260c691ac8c1ba4513e6d",
             "content": "sha256:53dd32decd9ed22d1b726bfcccda7d714314cb94874c8fd47c3b9e76c730fd16",
             "locator": {
-              "end": 292,
+              "end": 320,
               "kind": "line_range",
-              "start": 292
+              "start": 320
             }
           },
           "kind": "code"
@@ -124,12 +141,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "88aaa04262766c094a76bb241c87655a34aa8414",
+            "blob": "68121e9668db87a9d23260c691ac8c1ba4513e6d",
             "content": "sha256:3df43af66aa8b16bb3c6c2a3005ae4d5a4cfaaf7bdf810fa802eabe4e46d605f",
             "locator": {
-              "end": 373,
+              "end": 377,
               "kind": "line_range",
-              "start": 373
+              "start": 377
             }
           },
           "kind": "code"
@@ -141,7 +158,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "539e6e0dfac6147013ce80409fdc72508cca76fd",
+            "blob": "ec46a3a25c36c5a79747ac7d9485027c7a7e7973",
             "content": "sha256:8fa41b882b39f2c01f2b107ba9975c64f63f70d38c2a82599c2186bded150e4f",
             "locator": {
               "kind": "symbol",

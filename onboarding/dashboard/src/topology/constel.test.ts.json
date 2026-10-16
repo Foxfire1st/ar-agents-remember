@@ -131,15 +131,16 @@
       ]
     },
     "5": {
-      "note": "The topology model maps `LIFECYCLE_STATES` into `CONSTEL_STATUS_BY_STATE` rather than restating the vocabulary.\n\nAnchor: `LIFECYCLE_STATES`",
+      "note": "The topology resolves a task entry through the common task-status tone, while the constellation keeps its own colour vocabulary.\n\nAnchor: constellation vocabulary and entry-tone adapter",
       "targets": [
         {
           "anchor": {
-            "blob": "59f64541870e7ff5dc2349ca590ec159703d74d1",
-            "content": "sha256:477043ee2435228e00523275b0abe90903326674fc3096400c9cb286046ad7da",
+            "blob": "3eb18c18613cf970752953563d62d26763e6d251",
+            "content": "sha256:29d9bf22bd8fbd2401b5e4ea2d9fcb529fbce95fcc44665fbf4ebc3fc9464921",
             "locator": {
-              "kind": "symbol",
-              "name": "CONSTEL_STATUS_BY_STATE"
+              "end": 20,
+              "kind": "line_range",
+              "start": 14
             },
             "path": "dashboard/src/topology/model.ts"
           },
@@ -147,12 +148,12 @@
         },
         {
           "anchor": {
-            "blob": "59f64541870e7ff5dc2349ca590ec159703d74d1",
-            "content": "sha256:bace088fc0544d3924fce330183bbe6481e1212e177d4cde472a47fd45c5c98c",
+            "blob": "3eb18c18613cf970752953563d62d26763e6d251",
+            "content": "sha256:d6c061b2bf9f32b160e796212e1d8d724a8d4a57d15d7f18803d71dc3c1d3caa",
             "locator": {
-              "end": 40,
+              "end": 90,
               "kind": "line_range",
-              "start": 40
+              "start": 86
             },
             "path": "dashboard/src/topology/model.ts"
           },

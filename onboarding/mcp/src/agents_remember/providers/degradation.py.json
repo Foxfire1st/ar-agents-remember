@@ -54,15 +54,16 @@
       ]
     },
     "12": {
-      "note": "`ar-durable-store/1.0`: `exclusive_access`, `append_line`, `rewrite_lines`, `read_log_text`, `SCHEMA_VERSION`, `schema_version_supported`, and the `StoreOwnership` record `PROVIDER_DEGRADATION_OWNERSHIP` instantiates. Cited by symbol so later additions do not change the claim.\n\nAnchor: \"SCHEMA_VERSION =\"",
+      "note": "`ar-durable-store/1.0`: `exclusive_access`, `append_line`, `rewrite_lines`, `read_log_text`, `SCHEMA_VERSION`, `schema_version_supported`, and the `StoreOwnership` record `PROVIDER_DEGRADATION_OWNERSHIP` instantiates. Cited by symbol so later additions do not change the claim.\n\nAnchor: actual current supporting source",
       "targets": [
         {
           "anchor": {
-            "blob": "0ed5c1cbe0f613e46179d6661e364602677f9935",
-            "content": "sha256:d99b53ff95bbbc0395003498264051f916b0da5e4c67e2ebc07259709fa1e071",
+            "blob": "59a148a711df3a07d0424f5448d9871b6aac6930",
+            "content": "sha256:d260e889dbb0ffafb0ab1dbac18137b0f3bf1040432c20bf21313017974629f0",
             "locator": {
-              "kind": "symbol",
-              "name": "exclusive_access"
+              "end": 263,
+              "kind": "line_range",
+              "start": 225
             },
             "path": "mcp/src/agents_remember/controlplane/durable_store.py"
           },
@@ -70,11 +71,12 @@
         },
         {
           "anchor": {
-            "blob": "d392d8cbf6d4794e8787608af948dfc9059bba33",
-            "content": "sha256:41e194bf39925fd7ac0b4f8e8f1fe63a5298c6d0632a52760bd8eba22ff8b283",
+            "blob": "59a148a711df3a07d0424f5448d9871b6aac6930",
+            "content": "sha256:0ded9b079f84c73f5175084976631a4985862953421df8bf5c3d577c55e6e9a0",
             "locator": {
-              "kind": "symbol",
-              "name": "append_line"
+              "end": 305,
+              "kind": "line_range",
+              "start": 294
             },
             "path": "mcp/src/agents_remember/controlplane/durable_store.py"
           },
@@ -82,11 +84,12 @@
         },
         {
           "anchor": {
-            "blob": "d392d8cbf6d4794e8787608af948dfc9059bba33",
-            "content": "sha256:c9c7808b5010f0a0a197d1a8167b62768116043eb6483dec5b0c49a5b9a46e1b",
+            "blob": "59a148a711df3a07d0424f5448d9871b6aac6930",
+            "content": "sha256:8c0f0428a50f72a5b10c5cb639e33fa58ae8e6acc131bff8d36937b871b54c9f",
             "locator": {
-              "kind": "symbol",
-              "name": "rewrite_lines"
+              "end": 348,
+              "kind": "line_range",
+              "start": 337
             },
             "path": "mcp/src/agents_remember/controlplane/durable_store.py"
           },
@@ -94,11 +97,12 @@
         },
         {
           "anchor": {
-            "blob": "d392d8cbf6d4794e8787608af948dfc9059bba33",
+            "blob": "59a148a711df3a07d0424f5448d9871b6aac6930",
             "content": "sha256:17f59a1bb0b5ecc96439d18353d2e83dbcede6f21f9c1ff6524a5f4dff55f738",
             "locator": {
-              "kind": "symbol",
-              "name": "read_log_text"
+              "end": 291,
+              "kind": "line_range",
+              "start": 287
             },
             "path": "mcp/src/agents_remember/controlplane/durable_store.py"
           },
@@ -106,11 +110,12 @@
         },
         {
           "anchor": {
-            "blob": "d392d8cbf6d4794e8787608af948dfc9059bba33",
+            "blob": "59a148a711df3a07d0424f5448d9871b6aac6930",
             "content": "sha256:a71288d370592aafc207460d9f442cc9d640f82b9fd50f219a7220431a17d397",
             "locator": {
-              "kind": "symbol",
-              "name": "schema_version_supported"
+              "end": 196,
+              "kind": "line_range",
+              "start": 175
             },
             "path": "mcp/src/agents_remember/controlplane/durable_store.py"
           },
@@ -118,11 +123,12 @@
         },
         {
           "anchor": {
-            "blob": "d392d8cbf6d4794e8787608af948dfc9059bba33",
-            "content": "sha256:a7932cb1c5dcd2ae38fe2b12299731934e069b3fb5dfdc61e7c2cf485feb4463",
+            "blob": "59a148a711df3a07d0424f5448d9871b6aac6930",
+            "content": "sha256:b7d7309e000f090142c57ca555420c44e85aea991764e0d3cf81e11f4874e121",
             "locator": {
-              "kind": "symbol",
-              "name": "StoreOwnership"
+              "end": 137,
+              "kind": "line_range",
+              "start": 98
             },
             "path": "mcp/src/agents_remember/controlplane/durable_store.py"
           },
@@ -130,12 +136,12 @@
         },
         {
           "anchor": {
-            "blob": "d392d8cbf6d4794e8787608af948dfc9059bba33",
+            "blob": "59a148a711df3a07d0424f5448d9871b6aac6930",
             "content": "sha256:f9ff027fc10e363ca8bd88ab12e81b09bf2023b046372290f003fd48b199d8d3",
             "locator": {
-              "end": 44,
+              "end": 45,
               "kind": "line_range",
-              "start": 44
+              "start": 45
             },
             "path": "mcp/src/agents_remember/controlplane/durable_store.py"
           },
@@ -184,12 +190,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "95e3bb02fd723653615ef09f7220685e54b3a901",
+            "blob": "7f26c932e6a31d8da2e9f2593954cde82ea1b9ff",
             "content": "sha256:7c3eeb17805bef2edd0e22916d67ef56962c4f8aea9913ea43d8a06e09899139",
             "locator": {
-              "end": 45,
+              "end": 107,
               "kind": "line_range",
-              "start": 45
+              "start": 107
             },
             "path": "mcp/src/agents_remember/controlplane/attention_dismissals.py"
           },
@@ -198,15 +204,16 @@
       ]
     },
     "17": {
-      "note": "Store exclusion keeps checkout coordination ahead of the shared kernel primitive.",
+      "note": "Store exclusion keeps checkout coordination ahead of the shared kernel primitive.\n\nAnchor: actual current supporting source",
       "targets": [
         {
           "anchor": {
-            "blob": "0ed5c1cbe0f613e46179d6661e364602677f9935",
-            "content": "sha256:d99b53ff95bbbc0395003498264051f916b0da5e4c67e2ebc07259709fa1e071",
+            "blob": "59a148a711df3a07d0424f5448d9871b6aac6930",
+            "content": "sha256:d260e889dbb0ffafb0ab1dbac18137b0f3bf1040432c20bf21313017974629f0",
             "locator": {
-              "kind": "symbol",
-              "name": "exclusive_access"
+              "end": 263,
+              "kind": "line_range",
+              "start": 225
             },
             "path": "mcp/src/agents_remember/controlplane/durable_store.py"
           },
@@ -295,12 +302,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "709320161c9744d9aa93d005a483faf721515e33",
+            "blob": "a454ea6183379b1a887f489de261b2f5f8bd11ff",
             "content": "sha256:854764ab5f4f78c17cdb6147bd8976e36131d6257fd9f098b290f7ce4d1b5c00",
             "locator": {
-              "end": 88,
+              "end": 127,
               "kind": "line_range",
-              "start": 88
+              "start": 127
             },
             "path": "mcp/src/agents_remember/serving/_app_lifespan.py"
           },

@@ -3,18 +3,75 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "The projection schema diffed here (flat, id-keyed collections).\n\nAnchor: \"class WorkspaceProjection(BaseModel):\"; \"lifecycles: list[LifecycleProjection]\"; \"enclosures: list[EnclosureNode]\"; \"providers: list[ProviderNode]\"; \"metrics: Metrics\"; \"analytics: Analytics\"",
+      "note": "WorkspaceProjection version 2 carries native tasks and taskCounts, unbound enclosures, providers, active worktree groups, optional closeout queues, metrics and analytics; each TaskEntry has a qualified key/reference and may own worktrees. Stable diff state keys tasks by entry.key, enclosures by enclosure and providers by id; counts, active groups, metrics and analytics use whole-value comparisons. There is no lifecycles collection in this schema.",
       "targets": [
         {
           "anchor": {
-            "blob": "17f2d4a842a364ac445a776090637c466711b266",
-            "content": "sha256:301ef8d70dd58cfea37fec34be64e52db39dffa54148fef28bedb99d169f90f3",
+            "blob": "cb7649c76f226f56141cd36720b382cea60352c7",
+            "content": "sha256:e345bcf52910f1d43fcff54700f85ea691a6b896120f54a78d4be96269c1b309",
             "locator": {
-              "end": 1149,
-              "kind": "line_range",
-              "start": 1127
+              "kind": "symbol",
+              "name": "TaskState"
             },
             "path": "mcp/src/agents_remember/observer/projection.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "cb7649c76f226f56141cd36720b382cea60352c7",
+            "content": "sha256:0f13abd5e42d98d91a257583aeb22701c95de3eec52d239ab7e83e3f7fba9f23",
+            "locator": {
+              "kind": "symbol",
+              "name": "TaskCounts"
+            },
+            "path": "mcp/src/agents_remember/observer/projection.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "cb7649c76f226f56141cd36720b382cea60352c7",
+            "content": "sha256:2d79289d626677dfc961db8ebb3874f7d5c63d09626ef29c7b2aa642a047e54b",
+            "locator": {
+              "kind": "symbol",
+              "name": "TaskEntry"
+            },
+            "path": "mcp/src/agents_remember/observer/projection.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "cb7649c76f226f56141cd36720b382cea60352c7",
+            "content": "sha256:c071ee68ecd02824e9132e33d204422652993b08e6112d67eb3c0ab386eba1a6",
+            "locator": {
+              "kind": "symbol",
+              "name": "WorkspaceProjection"
+            },
+            "path": "mcp/src/agents_remember/observer/projection.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1c145f123802e351486f43a75568001266214b95",
+            "content": "sha256:8343e1d990da5df21764f52c287bb5673491a36287d5714bd3c4a45c9559a354",
+            "locator": {
+              "kind": "symbol",
+              "name": "stable_projection_state"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1c145f123802e351486f43a75568001266214b95",
+            "content": "sha256:58428905fcbb90c48bce6030ebdbfdecee8090fc205e13c3893524ac1620daea",
+            "locator": {
+              "kind": "symbol",
+              "name": "diff_projection"
+            }
           },
           "kind": "code"
         }
@@ -25,7 +82,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9a9d8ebbb21affe07f6d689a89624db06bcb2e3e",
+            "blob": "1c145f123802e351486f43a75568001266214b95",
             "content": "sha256:d04deafb28393c660121cc33f9535f587bd3a6a0cb24c2baa162d0e6667f5ff2",
             "locator": {
               "end": 83,
@@ -37,24 +94,24 @@
         },
         {
           "anchor": {
-            "blob": "9a9d8ebbb21affe07f6d689a89624db06bcb2e3e",
+            "blob": "1c145f123802e351486f43a75568001266214b95",
             "content": "sha256:4d96a68c4b529fac792a7e6701452e2f3cb7aa49ccc03be4278d93cb75205710",
             "locator": {
-              "end": 109,
+              "end": 110,
               "kind": "line_range",
-              "start": 109
+              "start": 110
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "bf18576ae9eb971e8d755db5322569d479c55765",
+            "blob": "3e5006c2738aece314723414d6d8eaf932383598",
             "content": "sha256:ba47a7c5399b7012e1a2bbf959243c7014d63882dbf53875c5a99d1e11c9d87a",
             "locator": {
-              "end": 133,
+              "end": 154,
               "kind": "line_range",
-              "start": 133
+              "start": 154
             },
             "path": "mcp/src/agents_remember/serving/projector.py"
           },
@@ -62,12 +119,12 @@
         },
         {
           "anchor": {
-            "blob": "bf18576ae9eb971e8d755db5322569d479c55765",
+            "blob": "3e5006c2738aece314723414d6d8eaf932383598",
             "content": "sha256:1bc048a329b741374a79ec926485102fb060c79d82a6fcd448157d4bbafb4a3e",
             "locator": {
-              "end": 298,
+              "end": 442,
               "kind": "line_range",
-              "start": 298
+              "start": 442
             },
             "path": "mcp/src/agents_remember/serving/projector.py"
           },
@@ -75,12 +132,12 @@
         },
         {
           "anchor": {
-            "blob": "bf18576ae9eb971e8d755db5322569d479c55765",
+            "blob": "3e5006c2738aece314723414d6d8eaf932383598",
             "content": "sha256:14602b382ca2a8bc280fa2fe5ee0736b592ae516090dc68fdf1c2449cef0e4f3",
             "locator": {
-              "end": 340,
+              "end": 484,
               "kind": "line_range",
-              "start": 340
+              "start": 484
             },
             "path": "mcp/src/agents_remember/serving/projector.py"
           },

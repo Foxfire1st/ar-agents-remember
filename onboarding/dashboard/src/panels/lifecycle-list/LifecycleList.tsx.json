@@ -3,84 +3,12 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "ae0b34f8138b4a85b281c7a8b0009da082f7bad9",
-        "content": "sha256:e541679199412f6566202707609c28104c200712a36c2bca51ddeb929f569aad",
+        "blob": "a1da64452b66ed600866ad56b37418f973ed3e37",
+        "content": "sha256:bda3d07f6eab73a8515ba13aa6a5049fa68379e72de734bf4849c6447571b157",
         "locator": {
-          "kind": "symbol",
-          "name": "readChoice"
-        }
-      },
-      "id": "RLZ-3JDRTC",
-      "invariant": "INV-JD110F",
-      "origin": {
-        "handoffEntry": "MIK-R144@v1 rule 5 / a chosen lifecycle",
-        "leaf": "260928-MIK-L144"
-      },
-      "rationale": "Reads the shell's selection in one place: the list's selected key, the row to mark when the two differ, and whether a reveal was asked for this lifecycle.",
-      "role": "primary-authority"
-    },
-    {
-      "anchor": {
-        "blob": "ae0b34f8138b4a85b281c7a8b0009da082f7bad9",
-        "content": "sha256:7dce572328bdbf25a516134940f2382a7f915f628119e7e49de9264539d576b0",
-        "locator": {
-          "kind": "symbol",
-          "name": "LifecycleListRender"
-        }
-      },
-      "id": "RLZ-89SXF2",
-      "invariant": "INV-K9B8G8",
-      "origin": {
-        "handoffEntry": "MIK-R144@v1 rule 3a",
-        "leaf": "260928-MIK-L144"
-      },
-      "rationale": "Places the bell at the right end of the column's head, beside the grouping switch; the queue has no block of its own in the column.",
-      "role": "presentation"
-    },
-    {
-      "anchor": {
-        "blob": "6529e325f36258a0ec0002389a22d6c65c62bd56",
-        "content": "sha256:b7618357ebe31177eec8d0aa94d94a8d6089dc6fa876c8dc57a2dddc90014ebc",
-        "locator": {
-          "end": 375,
+          "end": 326,
           "kind": "line_range",
-          "start": 375
-        }
-      },
-      "id": "RLZ-8FGD85",
-      "invariant": "INV-SQ7NQA",
-      "origin": {
-        "handoffEntry": "curator-extra-source-links-INV-SQ7NQA",
-        "leaf": "260928-MIK-L162"
-      },
-      "rationale": "Adds optional cached steps to OperationRow; this propagates row-held major/child detail for rule-12 dot disclosure.",
-      "role": "propagation-persistence"
-    },
-    {
-      "anchor": {
-        "blob": "ae0b34f8138b4a85b281c7a8b0009da082f7bad9",
-        "content": "sha256:95abe5abcb86557820713d255742d1f4237a5b48d7d21fa503e3cfab40aab409",
-        "locator": {
-          "kind": "symbol",
-          "name": "useRevealChosen"
-        }
-      },
-      "id": "RLZ-AMQZFX",
-      "invariant": "INV-JD110F",
-      "origin": {
-        "handoffEntry": "MIK-R144@v1 rule 5 / a chosen lifecycle",
-        "leaf": "260928-MIK-L144"
-      },
-      "rationale": "Brings the chosen row into view and focuses it once per request, and uses the request up when there is no row, so a row that appears later does not move the tree.",
-      "role": "enforcement"
-    },
-    {
-      "anchor": {
-        "blob": "ae0b34f8138b4a85b281c7a8b0009da082f7bad9",
-        "content": "sha256:51dc2af098c2dbe329f8ba8911a79ae4cf1400ded74153cac0a10b9a5bba3c30",
-        "locator": {
-          "kind": "symbol",
-          "name": "typedText"
+          "start": 320
         }
       },
       "id": "RLZ-B6TTTQ",
@@ -94,12 +22,12 @@
     },
     {
       "anchor": {
-        "blob": "ae0b34f8138b4a85b281c7a8b0009da082f7bad9",
-        "content": "sha256:3013286fbf8ae473dfc512c591398005641695822d9b8b0bc51015401c7011be",
+        "blob": "a1da64452b66ed600866ad56b37418f973ed3e37",
+        "content": "sha256:9e342015d2f8d06d7f6426f4956cd77817cbe2aced86f806ffda1186d66ee1c7",
         "locator": {
-          "end": 610,
+          "end": 426,
           "kind": "line_range",
-          "start": 610
+          "start": 409
         }
       },
       "id": "RLZ-CSAQ91",
@@ -113,8 +41,25 @@
     },
     {
       "anchor": {
-        "blob": "ae0b34f8138b4a85b281c7a8b0009da082f7bad9",
-        "content": "sha256:d35ebde20d7026521a43b2ba947725d6c4039736a6f01dd8d0737eca177cddd8",
+        "blob": "a1da64452b66ed600866ad56b37418f973ed3e37",
+        "content": "sha256:7c34b7f9e0a2c1a1cd3327c87946b9b48a8bf05cf594b6c384141eb20b689763",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-HFGBT2",
+      "invariant": "INV-XZYGEB",
+      "origin": {
+        "handoffEntry": "L168-W-R167-04",
+        "leaf": "260928-MIK-L168"
+      },
+      "rationale": "The row renders TaskStatusWord directly and does not derive status from contracts or session records.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "a1da64452b66ed600866ad56b37418f973ed3e37",
+        "content": "sha256:c85bd6adc77b39f4b53985c22dbfb6eaede11a71e9bb7c4aed978bab142251d6",
         "locator": {
           "kind": "symbol",
           "name": "plainArrow"
@@ -131,8 +76,8 @@
     },
     {
       "anchor": {
-        "blob": "ae0b34f8138b4a85b281c7a8b0009da082f7bad9",
-        "content": "sha256:ff38ed7a0687c82dcd323a3267c1e424968784216a5e51e989e7d175953abe59",
+        "blob": "a1da64452b66ed600866ad56b37418f973ed3e37",
+        "content": "sha256:4f32f731679e5888b59d7ae7b694a7d7518f22427b0a0c60f4b67552b57352a3",
         "locator": {
           "kind": "symbol",
           "name": "treeKey"
@@ -144,17 +89,17 @@
         "handoffEntry": "MIK-R144@v1 rule 5 / the one addition",
         "leaf": "260928-MIK-L144"
       },
-      "rationale": "Handles the key on a row: it opens or closes a parent on the right or left arrow and leaves every other key to the list.",
+      "rationale": "Handles only unmodified left/right arrows on a parent row; it opens or closes that parent only when the requested state differs and no chosen-document hold is present. Held selected ancestors remain open; every other key stays with the list.",
       "role": "primary-authority"
     },
     {
       "anchor": {
-        "blob": "6529e325f36258a0ec0002389a22d6c65c62bd56",
-        "content": "sha256:f46c0324d2ee7fd1ee35428a052a89e728e4be8e7dfd73891f153ec69fe81890",
+        "blob": "a1da64452b66ed600866ad56b37418f973ed3e37",
+        "content": "sha256:9e342015d2f8d06d7f6426f4956cd77817cbe2aced86f806ffda1186d66ee1c7",
         "locator": {
-          "end": 825,
+          "end": 426,
           "kind": "line_range",
-          "start": 825
+          "start": 409
         }
       },
       "id": "RLZ-RKKZ22",
@@ -163,16 +108,17 @@
         "handoffEntry": "curator-extra-source-links-INV-SQ7NQA",
         "leaf": "260928-MIK-L162"
       },
-      "rationale": "Supplies document steps on non-master OperationRows and leaves masters without them; this is sidebar cached tooltip data propagation, not a document request.",
+      "rationale": "RowFigure passes entry.summary.steps directly to non-master step marks; hover reads cached supplied steps without a document request.",
       "role": "propagation-persistence"
     },
     {
       "anchor": {
-        "blob": "ae0b34f8138b4a85b281c7a8b0009da082f7bad9",
-        "content": "sha256:7c877a960c9fc40e5a518c7c65a5041f85303b2b27698fc87b26083481165514",
+        "blob": "a1da64452b66ed600866ad56b37418f973ed3e37",
+        "content": "sha256:b1138dc97d59a73611f139615940f561bcad835cef99af4fa5bb92676f39b81d",
         "locator": {
-          "kind": "symbol",
-          "name": "TaskRow"
+          "end": 346,
+          "kind": "line_range",
+          "start": 306
         }
       },
       "id": "RLZ-WG0RE0",
@@ -181,143 +127,11 @@
         "handoffEntry": "MIK-R144@v1 rule 5 / typing",
         "leaf": "260928-MIK-L144"
       },
-      "rationale": "Current TaskRow preserves textValue=typedText and named state-mark composition, renders task-own RowWord without removed gate/chat/pickup controls, and adds only non-master cached major-step marks to the progress lane. No admission/typeahead reach is added.",
+      "rationale": "TaskRow supplies the inline visible-prefix textValue from displayed short id plus title for a numbered child, otherwise title alone; no removed typedText helper is implied.",
       "role": "propagation-persistence"
-    },
-    {
-      "anchor": {
-        "blob": "ae0b34f8138b4a85b281c7a8b0009da082f7bad9",
-        "content": "sha256:0d9e3559368d6d704459e972e889f1637b0c26b44b4c1458414df583dffe687a",
-        "locator": {
-          "kind": "symbol",
-          "name": "chosenRowKey"
-        }
-      },
-      "id": "RLZ-WWAC2A",
-      "invariant": "INV-JD110F",
-      "origin": {
-        "handoffEntry": "MIK-R144@v1 rule 5 / a chosen lifecycle",
-        "leaf": "260928-MIK-L144"
-      },
-      "rationale": "Finds the row that carries the chosen lifecycle: the task document's row where one is bound, else the lifecycle's own row.",
-      "role": "support"
-    },
-    {
-      "anchor": {
-        "blob": "ae0b34f8138b4a85b281c7a8b0009da082f7bad9",
-        "content": "sha256:a47a4158072c8505a9d0ee8ee60d2478c937d1ece06a8044f53bf32a0e926cee",
-        "locator": {
-          "kind": "symbol",
-          "name": "heldFoldKeys"
-        }
-      },
-      "id": "RLZ-X1KK3E",
-      "invariant": "INV-ME6CA1",
-      "origin": {
-        "handoffEntry": "MIK-R144@v1 rule 3b / order and fold",
-        "leaf": "260928-MIK-L144"
-      },
-      "rationale": "heldFoldKeys collects only fold-item keys whose emitted held flag is true, so the renderer can retain the selected completed fold open. It collects no parent keys: treeItems computes parent holding and RowCaret passes the parent collapsed/held state to TaskGroupDisclosure.",
-      "role": "enforcement"
     }
   ],
   "references": {
-    "20": {
-      "note": "Admission is derived only from documents and physical live-worktree enclosures with one row per enclosure; removed session-catalog selection is not an admission input.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "ae0b34f8138b4a85b281c7a8b0009da082f7bad9",
-            "content": "sha256:5ac82df4883f9c32ab138c76ced46589dbf54da56afc65d934d8d0db31b821ec",
-            "locator": {
-              "kind": "symbol",
-              "name": "operationRows"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "21": {
-      "note": "enclosureForDoc matches taskRoot and exact case-insensitive leafId against document stem or ID, with no display-number or reopen-suffix heuristic.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "ae0b34f8138b4a85b281c7a8b0009da082f7bad9",
-            "content": "sha256:be3cbe49e68cee9d1eb8ba5f714ccd806d9cedbb4221099eb756c5b3ec23de04",
-            "locator": {
-              "kind": "symbol",
-              "name": "enclosureForDoc"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "22": {
-      "note": "groupRows uses the need-ordered tree for BY REPO and creation-ordered flat rows for BY PHASE, counting admitted members.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "ae0b34f8138b4a85b281c7a8b0009da082f7bad9",
-            "content": "sha256:d4724f8c139e60f57b42d8c14197f5ba2a603a0d46f98a672317793ea08d63b6",
-            "locator": {
-              "kind": "symbol",
-              "name": "groupRows"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "23": {
-      "note": "TaskRow composes caret, named state mark, ID/title, task-state word and progress; non-master document payloads add cached major-step marks in the figure lane.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "ae0b34f8138b4a85b281c7a8b0009da082f7bad9",
-            "content": "sha256:7c877a960c9fc40e5a518c7c65a5041f85303b2b27698fc87b26083481165514",
-            "locator": {
-              "kind": "symbol",
-              "name": "TaskRow"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "24": {
-      "note": "readChoice preserves lifecycle selection while independently marking its carrying task row.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "ae0b34f8138b4a85b281c7a8b0009da082f7bad9",
-            "content": "sha256:e541679199412f6566202707609c28104c200712a36c2bca51ddeb929f569aad",
-            "locator": {
-              "kind": "symbol",
-              "name": "readChoice"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "25": {
-      "note": "useRevealChosen consumes each bell request once, reveals/focuses a current carrying row and consumes an absent-row request without later motion.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "ae0b34f8138b4a85b281c7a8b0009da082f7bad9",
-            "content": "sha256:95abe5abcb86557820713d255742d1f4237a5b48d7d21fa503e3cfab40aab409",
-            "locator": {
-              "kind": "symbol",
-              "name": "useRevealChosen"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
     "26": {
       "note": "Unmodified horizontal arrows affect only a focused parent and do not collapse a held parent; modifiers remain untouched.",
       "targets": [
@@ -416,85 +230,12 @@
         }
       ]
     },
-    "31": {
-      "note": "runtimeForDoc first returns the explicit document lifecycle lookup; without it, a distinct sibling-enclosure join supplies the fallback.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "ae0b34f8138b4a85b281c7a8b0009da082f7bad9",
-            "content": "sha256:7cbfb93e6e8a6766fcd191e0cf28ac77b6863dfad12d24dd4fb062d6638df1f8",
-            "locator": {
-              "kind": "symbol",
-              "name": "runtimeForDoc"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "32": {
-      "note": "treeItems derives held ancestors and completed folds; heldFoldKeys collects only emitted fold keys already marked held.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "ae0b34f8138b4a85b281c7a8b0009da082f7bad9",
-            "content": "sha256:1d0eaecf0fb741da9958a1461919552ef70d3502e816452f34b4b8050a79a924",
-            "locator": {
-              "end": 925,
-              "kind": "line_range",
-              "start": 901
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "0cdb05b43b696a44dd2de57a0ec30412310ff930",
-            "content": "sha256:0dd8f0689c2d4497fef085255807b034f654610df83322b9b62f5b8c3eb08db6",
-            "locator": {
-              "kind": "file"
-            },
-            "path": "dashboard/src/panels/lifecycle-list/treeRows.ts"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "33": {
-      "note": "Applied-object arrival stamps advance only server-served ages and preserve missing values.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "66d20f4008239bf7a9afcd90dfd2fd6ad191d7f4",
-            "content": "sha256:3dfb3ff03be854f5bc6ec2b47091a747f1e77acfcffab8aa0a2add32bc003026",
-            "locator": {
-              "kind": "symbol",
-              "name": "stampServed"
-            },
-            "path": "dashboard/src/data/servedAges.ts"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "66d20f4008239bf7a9afcd90dfd2fd6ad191d7f4",
-            "content": "sha256:6d89d54b8313784d65db2577fb4579e3dc39c353e49ad702f009f5428c7d7217",
-            "locator": {
-              "kind": "symbol",
-              "name": "servedAgeSeconds"
-            },
-            "path": "dashboard/src/data/servedAges.ts"
-          },
-          "kind": "code"
-        }
-      ]
-    },
     "34": {
       "note": "columnPresentation supplies 0.72rem group headings and 0.8rem ordinary row text.",
       "targets": [
         {
           "anchor": {
-            "blob": "b3584fb65433d45a91df8120d205194541bcfc75",
+            "blob": "e619eda0f192808b9ff9a988c7cffb3ebfdbcd04",
             "content": "sha256:c0161d4662536728b1f47a477c0236a9f3dacc3a3e72e8853e1dd4baf4fb9d68",
             "locator": {
               "end": 127,
@@ -512,7 +253,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b3584fb65433d45a91df8120d205194541bcfc75",
+            "blob": "e619eda0f192808b9ff9a988c7cffb3ebfdbcd04",
             "content": "sha256:f80e5b888af5462b4cef92e7b8cb8972cdba700ff47b7914c4a955517062d443",
             "locator": {
               "end": 166,
@@ -547,14 +288,52 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b764267a2ef673d3946c46be1260203ea22d0bc2",
+            "blob": "3c3cb0b2fb52df6c598ce02dadd3b8c3d692d817",
             "content": "sha256:caf6b06ee131a5362479982095ffd91aba4645ed64e94ff5a2f8657330f0e424",
             "locator": {
-              "end": 218,
+              "end": 221,
               "kind": "line_range",
-              "start": 160
+              "start": 163
             },
             "path": "dashboard/src/panels/detail-panel/pageStyles.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "38": {
+      "note": "Non-task forms show served child works/paused counts and a nonzero unknown count before progress; BY PHASE groups use the explicit works-to-aborted order.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a1da64452b66ed600866ad56b37418f973ed3e37",
+            "content": "sha256:6dd67c54fcb3dfa0401aad404dd9e1697da3e42c281ca8b5ed1ee7b7733c7e39",
+            "locator": {
+              "kind": "symbol",
+              "name": "RowFigure"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a1da64452b66ed600866ad56b37418f973ed3e37",
+            "content": "sha256:38f300d90c87d323fb8c6f7e268a8ad1b77e0cc323ea930ab2faaa2259c0e5f1",
+            "locator": {
+              "kind": "symbol",
+              "name": "PHASE_ORDER"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a1da64452b66ed600866ad56b37418f973ed3e37",
+            "content": "sha256:63fbdfadb86d7d4d729806191a645bff1a656de22f56bf4ebc542ab135245f1d",
+            "locator": {
+              "kind": "symbol",
+              "name": "groupRows"
+            }
           },
           "kind": "code"
         }

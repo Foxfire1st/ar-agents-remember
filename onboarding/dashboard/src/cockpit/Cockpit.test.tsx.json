@@ -98,14 +98,16 @@
       ]
     },
     "31": {
-      "note": "The L1 composition cases cover all four reader entry paths, unchanged-revision analytics churn, and late A-to-B response discard.",
+      "note": "Direct/master/child/worktree-bound body hydration stays revision-owned through task deltas and late A-to-B responses.\n\nAnchor: Source assertions (line range)",
       "targets": [
         {
           "anchor": {
-            "blob": "310ecdeb85c617d0ac5a90969e89d37249179541",
-            "content": "sha256:1e115ab472bf80aa6417eb9ade629c8ac90165be320582224271f38ea826e93e",
+            "blob": "0cdb4c4a8c6d1b529919af713a8065ab4dd45af3",
+            "content": "sha256:fd961a5cbd96d3f97343942a049d1058c1275f3122a3c4a8fc650d0e3a650996",
             "locator": {
-              "kind": "file"
+              "end": 298,
+              "kind": "line_range",
+              "start": 193
             }
           },
           "kind": "test"
@@ -144,14 +146,16 @@
       ]
     },
     "34": {
-      "note": "The `withStates` helper + the two `task-metrics` cases (`2 awaiting you`; nothing at zero).",
+      "note": "Header totals use published taskCounts, retaining the zero paused bucket but showing unknown only while populated.\n\nAnchor: native-count and unknown-bucket controls",
       "targets": [
         {
           "anchor": {
-            "blob": "310ecdeb85c617d0ac5a90969e89d37249179541",
-            "content": "sha256:1e115ab472bf80aa6417eb9ade629c8ac90165be320582224271f38ea826e93e",
+            "blob": "0cdb4c4a8c6d1b529919af713a8065ab4dd45af3",
+            "content": "sha256:8b97cd01d3e415b2808b53c24119fc9d8055eb911f3130ae285bf8c89acb7645",
             "locator": {
-              "kind": "file"
+              "end": 358,
+              "kind": "line_range",
+              "start": 300
             }
           },
           "kind": "test"
@@ -190,52 +194,67 @@
       ]
     },
     "37": {
-      "note": "The `Task progress: …; phase: …` label on `data-testid=\"task-state\"` that React Aria's `role=\"option\"` absorbs.",
+      "note": "The task-state mark labels itself Task progress: <statusLabel(taskStatusKey(entry))> with no phase suffix. Presentation takes the served activity when present, otherwise the served stage. The Cockpit accessibility case asserts a React Aria option named Task progress: paused before opening the attention layer, preserving the row-name absorption behavior rather than a lifecycle-phase label.",
       "targets": [
         {
           "anchor": {
-            "blob": "43e17a6f6194ff6dff8b56c726c525f51bee26a0",
-            "content": "sha256:175dfed166e2671d5756266e16671d4d00e6c93b509c153bf553e4a324dcc614",
+            "blob": "a1da64452b66ed600866ad56b37418f973ed3e37",
+            "content": "sha256:de7cf84f64c428a892a4d0f95f4b846928d865881a73b68c10839f7ecb62d3e4",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "RowMark"
             },
             "path": "dashboard/src/panels/lifecycle-list/LifecycleList.tsx"
           },
           "kind": "code"
-        }
-      ]
-    },
-    "38": {
-      "note": "The typed builder the local `taskDoc` factory now delegates to (and the header explaining why the `createdAt` it removed compiled before).",
-      "targets": [
+        },
         {
           "anchor": {
-            "blob": "57f5f5953cc48ef38638da1236bf0556faeb5077",
-            "content": "sha256:b6f4449a610c853dc02c93cbd467d7e51859462c455d37452856c2db473369b9",
+            "blob": "17da14e723222a8d50b4ed6f0595390ab1fe1f6a",
+            "content": "sha256:a2fd5a2df5805b7532ac6f0a46e2ec5e0e5bef5777a858702eb18efafde600bf",
             "locator": {
               "kind": "symbol",
-              "name": "taskDoc"
+              "name": "STATUS_WORDS"
             },
-            "path": "dashboard/src/test/fixtures/wire.ts"
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "39": {
-      "note": "`metricsFor()` — the client mirror of `reducer.py::_metrics` these seeds now call instead of listing buckets.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "cc1a4d8fa8ad9c2ae7d91dff5dc6eba9d3330015",
-            "content": "sha256:e9ee85ebb381e09c4f6b9a60589ab9f2ae16b5bf020fa42a6b9c53b47f0aa00a",
-            "locator": {
-              "kind": "symbol",
-              "name": "metricsFor"
-            },
-            "path": "dashboard/src/types/projection.ts"
+            "path": "dashboard/src/panels/detail-panel/pageParts.tsx"
           },
           "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "17da14e723222a8d50b4ed6f0595390ab1fe1f6a",
+            "content": "sha256:2fc595d5a6cc697737d578b70e7f26f2cdd5a8bc65d162f5f2cb7bd4d081bc77",
+            "locator": {
+              "kind": "symbol",
+              "name": "taskStatusKey"
+            },
+            "path": "dashboard/src/panels/detail-panel/pageParts.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "17da14e723222a8d50b4ed6f0595390ab1fe1f6a",
+            "content": "sha256:c745e1a522d931fd98a81ec77a24002f1a4238eec0b2000f47d70b41b55256f3",
+            "locator": {
+              "kind": "symbol",
+              "name": "statusLabel"
+            },
+            "path": "dashboard/src/panels/detail-panel/pageParts.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0cdb4c4a8c6d1b529919af713a8065ab4dd45af3",
+            "content": "sha256:a4b75b8f1452cb14fd0e0d11a69a355b988a0aadb34221645cf72445c3ed78d2",
+            "locator": {
+              "end": 837,
+              "kind": "line_range",
+              "start": 817
+            }
+          },
+          "kind": "test"
         }
       ]
     },
@@ -278,6 +297,23 @@
             "content": "sha256:1e115ab472bf80aa6417eb9ade629c8ac90165be320582224271f38ea826e93e",
             "locator": {
               "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "43": {
+      "note": "Sidebar selection reveals each native task, focuses and marks its option aria-selected=true, and invokes scrollIntoView three times for first/second/first selections.\n\nAnchor: native sidebar selection assertions",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0cdb4c4a8c6d1b529919af713a8065ab4dd45af3",
+            "content": "sha256:e84ed71a6e74402a494a47e149de9d56ce8a908a072685e55d152c5a8e6526d7",
+            "locator": {
+              "end": 878,
+              "kind": "line_range",
+              "start": 859
             }
           },
           "kind": "test"

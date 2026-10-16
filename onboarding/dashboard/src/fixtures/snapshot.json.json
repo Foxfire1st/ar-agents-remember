@@ -7,12 +7,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "36ed9d8160ca59f109bcf4b2fdfbf014692826c1",
+            "blob": "e63aa9c221c84dcc3c93752c452715cbfb0bb54d",
             "content": "sha256:2e00ca726941656e14bae55188c848c704fabb1beb53c9da3404ef3e655e0fcc",
             "locator": {
-              "end": 569,
+              "end": 574,
               "kind": "line_range",
-              "start": 552
+              "start": 557
             }
           },
           "kind": "code"
@@ -24,7 +24,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f5de7f24aac5a38162a3a5e588e1ba71fa5d4da4",
+            "blob": "57cab42fcf400a47ed496a496eb8cf73f9a920cd",
             "content": "sha256:a189bbea179fd400c95a2351cdfddc4801b54913b80f50cd74b12923c5eb8219",
             "locator": {
               "kind": "symbol",
@@ -36,12 +36,12 @@
         },
         {
           "anchor": {
-            "blob": "f5de7f24aac5a38162a3a5e588e1ba71fa5d4da4",
+            "blob": "57cab42fcf400a47ed496a496eb8cf73f9a920cd",
             "content": "sha256:e14d6ca126d5b033fc5bc8fcb86d95b1355f23c6bd2a36ad21a5c434f1cf45e5",
             "locator": {
-              "end": 40,
+              "end": 29,
               "kind": "line_range",
-              "start": 40
+              "start": 29
             },
             "path": "dashboard/src/test/contract.test.ts"
           },
@@ -149,7 +149,7 @@
         },
         {
           "anchor": {
-            "blob": "9748f432f9443a640ef5221d0bace3f986bed50e",
+            "blob": "a863e49a83213f748fa2993ef0953d7e0f2362a4",
             "content": "sha256:a807aac5fc6f61ac1d43b129bc0ebf6e7570d1eeb846d6be3022661be4517ba6",
             "locator": {
               "kind": "symbol",
@@ -161,7 +161,7 @@
         },
         {
           "anchor": {
-            "blob": "9748f432f9443a640ef5221d0bace3f986bed50e",
+            "blob": "a863e49a83213f748fa2993ef0953d7e0f2362a4",
             "content": "sha256:9741921eda39fb5ee6462359d93e7ce7ac93db599bd71107e8ac0ce9a960a6a2",
             "locator": {
               "end": 34,
@@ -184,23 +184,6 @@
             "path": "scripts/sync-projection-types.py"
           },
           "kind": "code"
-        }
-      ]
-    },
-    "15": {
-      "note": "`demandServed` and the eight anchor rows the builders require this payload to keep.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "9748f432f9443a640ef5221d0bace3f986bed50e",
-            "content": "sha256:a807aac5fc6f61ac1d43b129bc0ebf6e7570d1eeb846d6be3022661be4517ba6",
-            "locator": {
-              "kind": "symbol",
-              "name": "demandServed"
-            },
-            "path": "dashboard/src/test/fixtures/wire.ts"
-          },
-          "kind": "test"
         }
       ]
     },
@@ -268,12 +251,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "36ed9d8160ca59f109bcf4b2fdfbf014692826c1",
+            "blob": "e63aa9c221c84dcc3c93752c452715cbfb0bb54d",
             "content": "sha256:c728004edefb88962a4df291ac88371951e96cbfc685428104dbcb65bf89d2f1",
             "locator": {
-              "end": 346,
+              "end": 351,
               "kind": "line_range",
-              "start": 346
+              "start": 351
             }
           },
           "kind": "code"
@@ -292,48 +275,18 @@
         }
       ]
     },
-    "20": {
-      "note": "Six optional task fields and graph cycle=false values are hand-maintained contract examples, not joined dependencies or native Order derivation.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "1f59b6a29faaf71486e570254845c61fa4c24a77",
-            "content": "sha256:10b599f2f86bdb21e89a30ea12d06a7cdd3d7fd82e254553fecad1b25f90ceae",
-            "locator": {
-              "kind": "file"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
     "3": {
       "note": "`exclude_none=True` omits fields whose value is `None` from the serialized output — the rule that makes an omitted key here indistinguishable from a field the server does not have.  Anchor: `None`",
       "targets": [
         {
           "anchor": {
-            "blob": "c330af3e8e243b9d4ba18d458076cb53a60dd481",
+            "blob": "cb0ab4cb5e3a37ea0377727c5e29c1744b0d162b",
             "content": "sha256:959b8f03573616a2d384631232c632f1f4009fcef82870a0c7d2d2222cf14eec",
             "locator": {
               "kind": "symbol",
               "name": "write_projection"
             },
             "path": "mcp/src/agents_remember/serving/projections/projection_store.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "4": {
-      "note": "Hand-maintained taskDocuments samples carry fixed task-reader form/header/review/step data, not producer execution.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "1f59b6a29faaf71486e570254845c61fa4c24a77",
-            "content": "sha256:10b599f2f86bdb21e89a30ea12d06a7cdd3d7fd82e254553fecad1b25f90ceae",
-            "locator": {
-              "kind": "file"
-            }
           },
           "kind": "code"
         }
@@ -371,27 +324,12 @@
         }
       ]
     },
-    "7": {
-      "note": "Eleven nonempty analytics collections remain manual coverage samples, including engineProcesses and taskDocuments; not a scenario or execution receipt.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "1f59b6a29faaf71486e570254845c61fa4c24a77",
-            "content": "sha256:10b599f2f86bdb21e89a30ea12d06a7cdd3d7fd82e254553fecad1b25f90ceae",
-            "locator": {
-              "kind": "file"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
     "8": {
       "note": "The writer of the persisted payload this file is shaped like: `write_projection` dumps with `by_alias=True, exclude_none=True` into `latest-state.json`.",
       "targets": [
         {
           "anchor": {
-            "blob": "c330af3e8e243b9d4ba18d458076cb53a60dd481",
+            "blob": "cb0ab4cb5e3a37ea0377727c5e29c1744b0d162b",
             "content": "sha256:959b8f03573616a2d384631232c632f1f4009fcef82870a0c7d2d2222cf14eec",
             "locator": {
               "kind": "symbol",

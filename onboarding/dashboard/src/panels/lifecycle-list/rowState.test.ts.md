@@ -10,8 +10,8 @@ Pure regression tests of what an Operations tree row says.
 
 ## Code Commentary
 
-The tests distinguish unreported inference from actual lifecycle events, retain lifecycle ages, check the ordered priority words and need bands, keep overdue inbox dismissal beside a gate, preserve hidden progress/signals in hover text, and shorten IDs only inside their actual master. These are presentation assertions, not backend persistence or mounted visual proof.
+A pure native-entry fixture pins actual-parent ID shortening, served paused/completed hover words and progress figures from entry steps/counts. Aborted children stay outside completion denominators; an all-aborted master shows no misleading progress fraction. Lifecycle inference/priority/inbox/gate assertions are removed. This is neither persistence nor mounted appearance proof.
 
 ## Evidence
 
-- The assertions exercise document/lifecycle truth, priority and retained hover information on synthetic row facts. [1]
+- Synthetic native entry facts drive identity shortening, progress and shared status/hover assertions only. [1]

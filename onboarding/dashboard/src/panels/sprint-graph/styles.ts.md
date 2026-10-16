@@ -25,8 +25,8 @@ contract (jsdom cannot evaluate media queries or `ch` units).
   selected/related/dimmed state. The graph caller omits nodeFade under reduced motion while preserving
   its shared pointer rest; this CSS does not own the delay.
 - The remaining exports are Panda `css()`/`cva()` tokens: `graph` (column flex),
-  `wave`/`waveHead`, `waveGrid`, `box`/`boxHead`/`boxTitle`, the `frontier` cva
-  (landed/ready/waiting/in-flight/abandoned color variants), `leaves`/`leafLine`, `lump`, and
+  `wave`/`waveHead`, `waveGrid`, `box`/`boxHead`/`boxTitle`, and the dependency cva
+  (ready/waiting/cycle only; task-state word/tones belong to the shared task-page status recipe), `leaves`/`leafLine`, `lump`, and
   `preds`/`pred`.
 
 ### Conventions
@@ -49,7 +49,7 @@ None.
 
 - The responsive grid contract (≤3 per row, narrow single column). [1]
 - The ellipsized, viewport-growing leaf line contract. [2]
-- The frontier-state color variants, including the `abandoned` dormant tone the projection can serve. [3]
+- Dependency readiness/cycle styling is separate from the shared task-state presentation; the former task-frontier palette is removed. [3]
 - The component consuming these styles. [4]
 - The responsive-contract forcing tests. [5]
 

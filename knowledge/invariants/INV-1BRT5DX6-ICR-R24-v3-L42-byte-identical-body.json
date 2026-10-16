@@ -2,8 +2,8 @@
   "admission": "legacy-unassessed",
   "applicability": "The projected body of any task document served by read_task_document_body, compared with the projection whose master join table is built from the whole canonical task-document set.",
   "conditions": [
-    "Graph-named masters are found at <repository folder>/<task>/<file>.json tails across every repository folder, in canonical-enumeration order, so duplicate-key last-wins is preserved.",
-    "Only payloads carrying the task-document schema enter the join, because the document model defaults a missing schema and would otherwise admit a schema-less master-shaped JSON."
+    "Graph-named masters and their explicitly listed valid child documents supply the addressed graph join; ordinary dependency projection reads the owning master and its explicit children.",
+    "Only payloads carrying the task-document schema enter the join; schema-less master-shaped JSON is not admitted merely through model defaults."
   ],
   "exclusions": [
     "Documents edited between two reads (a live mtime change is a real difference, not a projection difference).",
@@ -15,9 +15,9 @@
     "legacyId": "112c5122-9c95-4891-885a-04633f7b75bc",
     "task": "260921-ICR"
   },
-  "revision": 2,
+  "revision": 3,
   "schema": "ar-invariant/v1",
-  "statement": "The bounded body read projects the same bytes as the projection with the corpus-wide master join table for leaf, master, standalone and sprint documents, because the graph view looks masters up only by the refs its nodes carry and the candidate probe returns exactly that subset of the canonical enumeration in the same order.",
+  "statement": "The bounded task-document body projection retains the corpus-projection equivalence boundary for leaf, master, standalone and sprint documents by using validated addressed TaskDocuments: graph-named masters and their explicitly listed children, plus the owning master and its listed task documents for ordinary dependency facts. It does not rely on a graph-master-only join.",
   "status": "proposed",
   "supersedes": []
 }

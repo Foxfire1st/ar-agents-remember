@@ -1,0 +1,58 @@
+{
+  "path": "mcp/src/agents_remember/worktrees/task_stage.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "156779ca466f0289eb12c8623810b3798a9ca962",
+        "content": "sha256:471a1e70b1b5ad16c47341831113689485549bee8319d85dd8d91a696ec960d3",
+        "locator": {
+          "kind": "symbol",
+          "name": "plan_task_stage"
+        }
+      },
+      "id": "RLZ-G097HQ",
+      "invariant": "INV-Z0BXKJ",
+      "origin": {
+        "handoffEntry": "L168-W-R167-05",
+        "leaf": "260928-MIK-L168"
+      },
+      "rationale": "This helper plans native task-document bytes without a second persistent stage store.",
+      "role": "support"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Stage planning preserves attachment/completed ownership and mirrors the actual document into its parent row.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "156779ca466f0289eb12c8623810b3798a9ca962",
+            "content": "sha256:471a1e70b1b5ad16c47341831113689485549bee8319d85dd8d91a696ec960d3",
+            "locator": {
+              "kind": "symbol",
+              "name": "plan_task_stage"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Captured document/path pairs validate before the existing batch writer publishes them.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "156779ca466f0289eb12c8623810b3798a9ca962",
+            "content": "sha256:1422848421235b70a6ead16454a5a3f743bfe58ecb57b1a3a4aaebd936938131",
+            "locator": {
+              "kind": "symbol",
+              "name": "TaskStageChange"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

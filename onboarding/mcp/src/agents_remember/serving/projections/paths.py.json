@@ -3,47 +3,34 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "The writer that resolves the root here to install the ambient \"install_ambient(AmbientLifecycle(EventStore(observer_root(config))))\" (\"def create_server(config: McpRuntimeConfig) -> Any:\" → \"def initialize_mcp_application(config: McpRuntimeConfig) -> None:\").\n\nAnchor: \"install_ambient(AmbientLifecycle(\"; \"install_ambient(AmbientLifecycle(EventStore(observer_root(config))))\"",
+      "note": "The application startup writer installs workspace-river ToolEventWriter, using observer_root imported from the observer facade rather than this serving module.\n\nAnchor: startup import and writer initialization",
       "targets": [
         {
           "anchor": {
-            "blob": "fc2da95a5fcd8329ce16067afc1a9291becc04b5",
-            "content": "sha256:901a1be0405722e729702402d5097c8844461e7acc4fa3adfb1b6f6264e2df01",
+            "blob": "611e5a498e074d169eccd6fffb1ac9327bdf7b8a",
+            "content": "sha256:b9a37510447e127c4a067e0e437faf6d9fe945d7f9eda660b598fe3cd1abab0a",
             "locator": {
-              "end": 30,
+              "end": 45,
               "kind": "line_range",
-              "start": 30
+              "start": 7
             },
             "path": "mcp/src/agents_remember/application/runtime/startup.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "933e9cccdeb8316ecccfe17da622e599700d0773",
-            "content": "sha256:ec178ad7578fd9c35feaff1bb1ef9a2ff4e66d6a5d16cddf6dd1c887d66a0e15",
-            "locator": {
-              "end": 22,
-              "kind": "line_range",
-              "start": 18
-            },
-            "path": "mcp/src/agents_remember/mcp/server.py"
           },
           "kind": "code"
         }
       ]
     },
     "2": {
-      "note": "The reader I/O edge that resolves the same root.\n\nAnchor: \"root = observer_root(config)\"",
+      "note": "The projection I/O edge imports this serving module's observer_root and calls it for the projection store root.\n\nAnchor: projection import and call",
       "targets": [
         {
           "anchor": {
-            "blob": "579c3d068accfb68fb4977bf0542061fa39ec6a8",
-            "content": "sha256:1ad959dde11c5e3305eb2ef70d1e8cfcb08ce5075941996f689528f06cb0129b",
+            "blob": "cb0ab4cb5e3a37ea0377727c5e29c1744b0d162b",
+            "content": "sha256:3fbbeece077c1c4ee787909915fd927787269d107d6b5cce2a87b85d66517772",
             "locator": {
-              "end": 224,
+              "end": 168,
               "kind": "line_range",
-              "start": 224
+              "start": 39
             },
             "path": "mcp/src/agents_remember/serving/projections/projection_store.py"
           },
@@ -102,14 +89,85 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b44e3eee34f91c2acb39280530878ac403090e77",
+            "blob": "ed196c9e349d46271a38ab6a543fb27f6a21c07a",
             "content": "sha256:7e36ee1c3550c28c52b2b70c6efc634fc591a11d6d742d00595ceac075b300c9",
             "locator": {
-              "end": 194,
+              "end": 199,
               "kind": "line_range",
-              "start": 172
+              "start": 177
             },
             "path": "docs/design/observable-lifecycle.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "create_server invokes the application startup owner; it does not install an ambient lifecycle.\n\nAnchor: server startup call",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3ce87362f44ca376e33cad8872407ae5fb0d4be9",
+            "content": "sha256:848d2b3e00cd76172e93493f1417ab28e5f59cbb112b88b0810780836e67f92f",
+            "locator": {
+              "end": 160,
+              "kind": "line_range",
+              "start": 154
+            },
+            "path": "mcp/src/agents_remember/mcp/server.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The observer facade re-exports the kernel observer_root definition used by startup.\n\nAnchor: observer_root re-export",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3bdf54a46fc11d63f441640e43571268dcd3bec9",
+            "content": "sha256:c8c4fe8051d441d0b103143f578f4ce016591a65a288ee50f1b4741f22c9d048",
+            "locator": {
+              "end": 5,
+              "kind": "line_range",
+              "start": 5
+            },
+            "path": "mcp/src/agents_remember/observer/__init__.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The kernel observer_root delegates to the kernel observer_logs_root; this is separate from the serving module definition.\n\nAnchor: kernel path definitions",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "55b370f0c63cc924e024f719d082ae36c33558a4",
+            "content": "sha256:92d9d60ff8762c670c3e6acf61155fa2c7e2a9c90f0f32505a0b456b036999af",
+            "locator": {
+              "end": 46,
+              "kind": "line_range",
+              "start": 34
+            },
+            "path": "mcp/src/agents_remember/kernel/primitives/observer_paths.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The serving module separately defines observer_logs_root, observer_root and drift_snapshot_dir; its single-owner docstring is not an importer inventory.\n\nAnchor: serving path definitions",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "199d14e1e97d80f9655d7de2eaa66aa556c4f69f",
+            "content": "sha256:92d9d60ff8762c670c3e6acf61155fa2c7e2a9c90f0f32505a0b456b036999af",
+            "locator": {
+              "end": 41,
+              "kind": "line_range",
+              "start": 29
+            }
           },
           "kind": "code"
         }

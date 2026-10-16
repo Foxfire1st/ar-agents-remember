@@ -1,6 +1,25 @@
 {
   "path": "mcp/src/agents_remember/serving/projections/drift_snapshots.py",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "dddcce3e33bed7ffbd8bec7c711954dc794d4e8d",
+        "content": "sha256:4f5f9e73110087ffa30d44972b7d15224acafef1747f3f2162764b280f7fc181",
+        "locator": {
+          "kind": "symbol",
+          "name": "prune_orphaned_drift_snapshots"
+        }
+      },
+      "id": "RLZ-KTJ626",
+      "invariant": "INV-D9T2BC",
+      "origin": {
+        "handoffEntry": "L168-W-R166-05-06",
+        "leaf": "260928-MIK-L168"
+      },
+      "rationale": "Native branch census proves orphanhood without equating an absent checkout with an absent branch.",
+      "role": "enforcement"
+    }
+  ],
   "references": {
     "1": {
       "note": "The helper centralizes the sanitized drift snapshot filename and exact dry-run/removal payload.  Anchor: \"def drift_snapshot_path(coordination_root: Path\", \"def remove_drift_snapshot(\", \"return _remove_snapshot_file(\"",
@@ -33,12 +52,12 @@
         },
         {
           "anchor": {
-            "blob": "39f4e13a9097020e58d0cf867a143026183b7e6d",
+            "blob": "dddcce3e33bed7ffbd8bec7c711954dc794d4e8d",
             "content": "sha256:2973fd1cde9d06e4f6eec7e2facf9d76c8b41a0522962005b0419e90dcf4b5a5",
             "locator": {
-              "end": 107,
+              "end": 157,
               "kind": "line_range",
-              "start": 85
+              "start": 135
             }
           },
           "kind": "code"
@@ -46,12 +65,12 @@
       ]
     },
     "2": {
-      "note": "Projection pruning keeps configured repositories and still-existing leaf worktrees, skips invalid snapshots, and removes valid orphaned snapshots.  Anchor: `prune_orphaned_drift_snapshots`, `_active_worktree_snapshot_keys`, `_read_valid_snapshot`",
+      "note": "Drift pruning reuses the supplied contract snapshot (or builds one standalone), lists native heads once per configured/contract code repository and observes configured and worktree branch identities. A skipped contract, failed ref census or invalid/unreadable snapshot makes removal proof incomplete: invalid snapshots are skipped and every valid snapshot is retained. Only a complete census permits removal of a valid snapshot whose repository/branch identity is absent; physical checkout existence alone is not the keep policy.",
       "targets": [
         {
           "anchor": {
-            "blob": "39f4e13a9097020e58d0cf867a143026183b7e6d",
-            "content": "sha256:9e8accfe394d6a556e9fc4457092cc23b97b7cfa4824353885310ba49365227f",
+            "blob": "dddcce3e33bed7ffbd8bec7c711954dc794d4e8d",
+            "content": "sha256:4f5f9e73110087ffa30d44972b7d15224acafef1747f3f2162764b280f7fc181",
             "locator": {
               "kind": "symbol",
               "name": "prune_orphaned_drift_snapshots"
@@ -61,22 +80,33 @@
         },
         {
           "anchor": {
-            "blob": "39f4e13a9097020e58d0cf867a143026183b7e6d",
-            "content": "sha256:e72e9b1944a45942700369ee08b85b2bb8971f427ecde59e9b5f0e8d935dc4a6",
+            "blob": "dddcce3e33bed7ffbd8bec7c711954dc794d4e8d",
+            "content": "sha256:d2d8c4fc283cb0fb6bbe33c7f8ed5a78e45f81cda674f95d4148c6ed0b81c8d5",
             "locator": {
               "kind": "symbol",
-              "name": "_active_worktree_snapshot_keys"
+              "name": "_observe_branches"
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "39f4e13a9097020e58d0cf867a143026183b7e6d",
-            "content": "sha256:e290921c4046bf274b788d9689a5afe5bbb61494909fb27617dbb4bc92d3535e",
+            "blob": "dddcce3e33bed7ffbd8bec7c711954dc794d4e8d",
+            "content": "sha256:4fb22d499c4fdfa60dc1b34d2aa3f9292feafe5f4e5928c68ff944261418d8d8",
             "locator": {
               "kind": "symbol",
-              "name": "_read_valid_snapshot"
+              "name": "read_drift_snapshot"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "dddcce3e33bed7ffbd8bec7c711954dc794d4e8d",
+            "content": "sha256:2973fd1cde9d06e4f6eec7e2facf9d76c8b41a0522962005b0419e90dcf4b5a5",
+            "locator": {
+              "kind": "symbol",
+              "name": "_remove_snapshot_file"
             }
           },
           "kind": "code"
@@ -115,7 +145,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "79fe315d5237cfb717072e7c3490257a684907ad",
+            "blob": "b57a7faeabd73c5872db8d333a7970835083e727",
             "content": "sha256:e2084926cf923c0f10655025803960784c6289f7ea2eb9605ad5c137d00c903c",
             "locator": {
               "kind": "symbol",
@@ -127,75 +157,13 @@
         },
         {
           "anchor": {
-            "blob": "79fe315d5237cfb717072e7c3490257a684907ad",
+            "blob": "b57a7faeabd73c5872db8d333a7970835083e727",
             "content": "sha256:44c4cb5f4bc6789d4ef0d90decc659bd1afd279a48ccb1d0ce6f7d25ec7e4166",
             "locator": {
               "kind": "symbol",
               "name": "ContractSnapshotCache"
             },
             "path": "mcp/src/agents_remember/serving/projections/contract_snapshot.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "5": {
-      "note": "The projection-input module exposes the `read` and refresh entries.  Anchor: \"def read(\", \"def _refresh_tasks(\", \"def _refresh_drift(\"",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "bb650c9aa0b941f8efa168ab1050b3b5e3f53043",
-            "content": "sha256:b5a8e4329e4101b4b49c6d2f8732627496457b36554d41da26f250ec3ca8b0ec",
-            "locator": {
-              "end": 401,
-              "kind": "line_range",
-              "start": 401
-            },
-            "path": "mcp/src/agents_remember/serving/projections/projection_inputs.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "bb650c9aa0b941f8efa168ab1050b3b5e3f53043",
-            "content": "sha256:8beb7fe453f843dc0c1adb3efc1f8a792095d1c1d393ea5aa051ad694e6265d8",
-            "locator": {
-              "end": 516,
-              "kind": "line_range",
-              "start": 516
-            },
-            "path": "mcp/src/agents_remember/serving/projections/projection_inputs.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "bb650c9aa0b941f8efa168ab1050b3b5e3f53043",
-            "content": "sha256:4d39cf2eb4bad19720e17974b18eb213bdb5215c16aaf63e43ba92756f9cc540",
-            "locator": {
-              "end": 796,
-              "kind": "line_range",
-              "start": 796
-            },
-            "path": "mcp/src/agents_remember/serving/projections/projection_inputs.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "6": {
-      "note": "The projection-store module exposes the `project_and_write` entry.  Anchor: \"def project_and_write(\"",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "c3c2ff4bb45c68e3c588824c2a1e01c05816700a",
-            "content": "sha256:01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
-            "locator": {
-              "end": 157,
-              "kind": "line_range",
-              "start": 157
-            },
-            "path": "mcp/src/agents_remember/serving/projections/projection_store.py"
           },
           "kind": "code"
         }

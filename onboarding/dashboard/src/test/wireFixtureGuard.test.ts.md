@@ -27,37 +27,21 @@ lies.
 
 ### Logic
 
-**`SANCTIONED_WIRE_SITES`**, keyed `<file> :: <what was written>` so it does not churn on
-line moves, in four groups:
+SANCTIONED_WIRE_SITES retains exact reasoned file/site occurrence exemptions, not file-wide permission.
 
-- **The current decode boundary** names retained store lifecycle/enclosure/provider/metrics/analytics/event casts and taskDocuments body decoding. No seatEvents, terminal, submit or conversation/library decoder is a current sanctioned site. Runtime decoding is distinct from a test authoring a producer answer.
-- **The mirror's own derivations** — two casts inside `types/projection.ts`:
-  `as StateCountField<S>` (the bucket-name rule's runtime twin, re-narrowing what template concatenation
-  widens) and `as LifecycleStateCounts` (`Object.fromEntries` answers a plain record; the KEYS come from
-  the vocabulary).
-- **The current fixture cast sites** are servedProjection's sanctioned narrowing and topology/model.test.ts's deliberately widened State control. No conversationWire brand mint remains. These exact, reasoned registry entries and their counts are bidirectional, not a general permission for consumer-authored casts.
-- **Compiler suppressions** — one entry, `contract.test.ts :: @ts-expect-error`, count **3**,
-  reasoned as the inverted pins: each asserts a field the server CANNOT send is absent from the mirror,
-  and an unused `@ts-expect-error` is itself a compile error, so they fail the moment a field comes back.
+- Decode sites: store TaskEntry/TaskCounts/enclosure/provider/metrics/analytics/events and taskDocuments TaskSummary.
+- Fixture exemption: servedProjection narrowing only.
+- contract.test.ts retains one @ts-expect-error allowance.
+- Removed count-grammar/topology widenings are not exemptions; counts/reasons reconcile bidirectionally.
 
 **The sweep over the real tree** builds the program once and derives `findings` and
 `vocabulary` from it.
 
 **`the guard has something to police`** — the vacuity suite:
 
-- the vocabulary is asserted **non-empty** (`> 100` names) — "an empty vocabulary is not a clean tree, it
-  is a guard that has stopped running";
-- it is asserted to contain the types the two proven defects lived on:
-  `src/types/projection.ts:EngineProcessEdge` (where `refusedPolarity` was invented) and
-  `:TaskDocNode` (where `createdAt` was), plus `src/types/event.ts:ObserverEvent` and
-  `src/data/conversation/types.ts:ConversationCapabilities`;
-- the marker-carrying module set is pinned **exactly** to seven:
-  `data/conversation-library/types.ts`, `data/conversation/types.ts`, `types/event.ts`,
-  `types/harnessCapabilities.ts`, `types/projection.ts`, `types/terminalCatalog.ts`,
-  `types/terminalOpen.ts`;
-- every `.ts` file under `src/types/` must declare itself a mirror on its first line;
-- `isFixtureSurface` is pinned on eight representative paths, including two that must be `false`
-  (`src/data/store.ts`; the removed `src/panels/RailChat.tsx` was the other before MIK-R95).
+- Vocabulary floor is >50, not >100; it is not a pinned total.
+- Required names include EngineProcessEdge, TaskEntry and ObserverEvent.
+- Exact mirror modules are types/event.ts and types/projection.ts; src/types markers and fixture-surface true/false probes remain guarded.
 
 **`no dashboard test asserts against a payload the server cannot produce`** — the
 reconciliation: `unregistered` must be empty (with a failure message telling the author to build the
@@ -69,12 +53,12 @@ it*), `spent` and `miscounted` must be empty, and every entry must carry a writt
 
 | Probe | What it plants |
 | --- | --- |
-| `casts.test.ts` | the plain cast, the double cast, an import rename, a local alias, `Partial<>`/array/`Record<>` wrappers, `as never`/`as any`/`as unknown as`, `typeof template`, and an unbindable type name |
-| `freshness.test.ts` | a spread that loses freshness, `Object.assign` answering an intersection, and `JSON.parse` answering `any` |
-| `suppression.test.ts` | a `@ts-expect-error` above a wire-annotated literal |
-| `union.test.ts` | the `SubTaskRow` blend as a FRESH literal, the same blend non-fresh, and a property no member declares |
-| `helper.ts` + `twoModule.test.ts` | smuggling that happens in another planted module |
-| `honest.test.ts` | annotated literal, `satisfies`, `as const`, a DOM mock, a builder call, and both sides of the union on their own |
+| casts.test.ts | Native TaskEntry/TaskSummary aliases, casts/wrappers, context-supplied never/any/unknown, typeof and unresolved names |
+| freshness.test.ts | Spread/Object.assign extras and JSON.parse any reaching TaskEntry |
+| suppression.test.ts | A suppressed impossible property on a TaskEntry literal |
+| union.test.ts | Fresh/nonfresh blends and impossible extras for TaskDecisionNode or TaskHeaderNoteNode, not retired SubTaskRow |
+| helper.ts + twoModule.test.ts | Cross-module TaskEntry smuggling, with the harness required to resolve the planted import |
+| honest.test.ts | Checked native literals/builders, DOM mocks and each declared union member alone |
 
 **`the guard is shown able to fail`** asserts each rule biting, and two of the assertions are
 harness assertions as much as rule ones. The `twoModule` case exists because a planted file
@@ -117,21 +101,7 @@ a one-site exemption, and an entry with a blank reason.
 
 **What these assertions do not establish.**
 
-- **The KNOWN GAP is written into the module-set assertion itself** rather than papered over:
-  `data/changeset.ts`, `data/files.ts`, `data/notes.ts`, `data/harnessCatalog.ts` and
-  `data/submissionLifecycleClient.ts` declare wire-shaped response types INLINE, beside client-side
-  option and handler types (`MasterChangesetOptions`, `FetchLike`, `ListQuery`). They carry no marker,
-  are not vocabulary, and **a fixture for those routes is unguarded**. Treating "the header cites a `.py`
-  file" as the rule was measured and rejected — it sweeps up the option types too, which are not wire
-  shapes, and would make the guard wrong rather than wider. The real fix is to move those response types
-  into a marker-carrying module: a refactor of app code, not of fixtures. Note the asymmetry the
-  seven-module `toEqual` cannot fix: it catches a module that LOSES its marker, and passes cleanly for
-  one that never had one.
-- The planted suite proves each rule CAN bite on a constructed source. It does not establish that the
-  rules are complete — `wireFixtureGuard.ts`'s own `WHAT THIS DOES NOT COVER` lists five reproduced
-  evasions that are not planted here, because they are known to pass.
-- The vocabulary threshold is a floor (`> 100`), not a pinned count, so a partial loss of vocabulary
-  short of collapse would not fail this assertion.
+Inline changeset/files/notes response models remain outside marker vocabulary. Planted counterexamples show selected rules can bite, not completeness. A >50 floor alone can miss partial vocabulary loss; exact module/required-name guards are separate.
 
 ## Evidence
 
@@ -157,14 +127,14 @@ No external documentation is used for this bounded card.
 - The registry reconciliation unit cases. [9]
 - The five-rule mechanism and discovered vocabulary. [10]
 - The guard's documented uncovered-evasions section names `ElementAccessExpression`. [11]
-- `SubTaskRow` is the union of `TaskSubTaskRefNode` and `SeriesSubTaskNode`. [12]
-- The `StateCountField` mirror-internal cast. [13]
-- The `LifecycleStateCounts` mirror-internal cast. [14]
+
+
+
 - The sanctioned narrowing the registry names. [15]
-- The contract uses @ts-expect-error to assert that master references cannot have createdAt. [19]
-- The contract uses @ts-expect-error to assert that series rows cannot have linkedLifecycleId. [20]
+
+
 - The contract test suppresses the carried `refusedPolarity` property. [21]
-- The deliberate widening in the topology suite. [22]
+
 
 ### Cross-Repo References
 

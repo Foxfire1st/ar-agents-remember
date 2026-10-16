@@ -6,7 +6,7 @@
 
 ## Purpose
 
-`ulid.py` mints ULIDs for observer event and lifecycle ids: 48 bits of
+`ulid.py` mints ULIDs for observer event ids: 48 bits of
 millisecond timestamp + 80 bits of randomness, rendered as 26 Crockford Base32
 characters, so the strings sort lexicographically by creation time.
 
@@ -19,13 +19,9 @@ uppercase minus I, L, O, U).
 
 ## Invariants And Boundaries
 
-- **Stateless ⇒ thread-safe.** Called from both the request thread and (later)
-  the lifecycle heartbeat thread; `os.urandom` / `time.time_ns` are thread-safe,
-  so no lock is held. Within one millisecond two ids share no ordering guarantee
-  — order *within* a lifecycle is the JSONL append order; the id is the
-  cross-lifecycle merge / unique key.
-- Mint-and-compare only: ids are never parsed back, so no decode path exists.
-- A dependency-free local mint by design; the ULID format stays stable when the Python runtime is upgraded, and minting stays in one module.
+- **Stateless and concurrent:** request threads can call `new_ulid` without a mint lock. Within one millisecond two IDs have no ordering guarantee; JSONL append order orders the feed, while the ULID supplies a merge/unique key. There is no lifecycle-heartbeat caller contract.
+- Mint-and-compare only: IDs are never parsed back.
+- The dependency-free local mint owns the stable format across Python upgrades.
 
 ## Evidence
 

@@ -6,23 +6,13 @@
 
 ## Purpose
 
-Vitest coverage for pure store selectors in `dashboard/src/data/selectors.ts`: lifecycle grouping,
-wait-time formatting, and attention queue display filtering.
+Vitest source assertions for pure store selectors: physical-worktree existence, wait-time formatting, server-queue display suppression and converted drift segment ordering. Lifecycle buildTree grouping tests are removed.
 
 ## Code Commentary
 
 ### Logic
 
-The `lifecycle(...)` fixture builds minimal `LifecycleProjection` rows so `buildTree` can be tested by
-phase pipeline order, repo grouping, and the `(unassigned)` fallback. `fmtWait` coverage pins s/m/h/d
-formatting plus the unknown dash. The `hasLiveWorktree` case (260703-L11) pins the four-flag truth
-table of the tasks-surface visibility rule: either existing worktree (code or memory) admits, and only
-both-false hides — no cleanup-state input exists in the signature at all. The `selectQueue` tests
-assert the server-computed queue is returned
-when analytics exists, a stable empty queue is returned when it does not, and optimistic
-`suppressedAttentionIds` hide a matching queue row. The `driftSegments` cases pin the converted
-snapshot contract: `current`, `stale` and `violation` order with exact shares, and legacy
-classifications keep their place ahead of converted-only names.
+hasLiveWorktree pins either-side physical existence; fmtWait retains s/m/h/d and unknown dash. selectQueue consumes served rows, stable empty analytics and optimistic suppression. Drift segments retain converted ordering/shares with legacy names first. Removed buildTree lifecycle grouping is not coverage.
 
 ### Conventions
 
@@ -45,8 +35,8 @@ No relevant external documentation applies to these pure selector tests.
 
 ### Repo-Internal References
 
-- `selectQueue` coverage includes empty analytics and optimistic suppression. [1]
-- Tree grouping and wait formatting tests cover the unchanged selector behavior. [2]
+- `selectQueue` coverage includes absent analytics and optimistic suppression. [1]
+- Pure selector assertions make hasLiveWorktree depend only on stat-derived flags: either existing code/memory worktree admits and neither hides, never a cleanup-state proxy. fmtWait asserts seconds/minutes/hours/days formatting and an em dash for unknown input; this file has no lifecycle buildTree grouping case. [2]
 - The selector under test caches and filters attention rows. [3]
 
 

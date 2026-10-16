@@ -2,18 +2,29 @@
   "path": "mcp/src/agents_remember/controlplane",
   "references": {
     "1": {
-      "note": "Gates mirror the observer event substrate (envelope + append-only JSONL store).\n\nAnchor: \"class EventStore\"",
+      "note": "Retained gate logs have strict authority reads and a separate tolerant projection reader; their namespace is not a current lifecycle event stream.",
       "targets": [
         {
           "anchor": {
-            "blob": "972bfe128d72a489b3cdb2563a352563c594856e",
-            "content": "sha256:6265718c4953782e5e276b9fb819df8c37055dc3ed01a2aeecbe9c701f98a0e5",
+            "blob": "bbb005d14f4c90cbe56e3aecbbd4e5ca9cf52cd5",
+            "content": "sha256:9f24c794129ed2f1561cab7af2168d354922b82d488e59294d9ca82615c46e7e",
             "locator": {
-              "end": 161,
-              "kind": "line_range",
-              "start": 161
+              "kind": "symbol",
+              "name": "GateStore"
             },
-            "path": "mcp/src/agents_remember/observer/store.py"
+            "path": "mcp/src/agents_remember/controlplane/store.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "bbb005d14f4c90cbe56e3aecbbd4e5ca9cf52cd5",
+            "content": "sha256:2f4fb268f341674810c951cf6fff2b4d08fd52b5a88ac028ceb133ff28675c10",
+            "locator": {
+              "kind": "symbol",
+              "name": "read_for_projection"
+            },
+            "path": "mcp/src/agents_remember/controlplane/store.py"
           },
           "kind": "code"
         }
@@ -24,7 +35,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0a2963ea52bab5c1c53f02c7dfdc6ea61ece6523",
+            "blob": "611e5a498e074d169eccd6fffb1ac9327bdf7b8a",
             "content": "sha256:1b2d95322d48ce113abe68a45f6f0f6691c8177f8e35ed2ec4f1fca4abbf552b",
             "locator": {
               "kind": "symbol",
@@ -86,7 +97,7 @@
         },
         {
           "anchor": {
-            "blob": "a37806363d99a9e29e6db9515164e401ffd1664c",
+            "blob": "715a8aa55d1508d8e94554a2e3a04dd7b0edcf23",
             "content": "sha256:e26ef8683885e4c13344e79d00129018e3092fe07925ce6c1070a5facd649158",
             "locator": {
               "end": 1,
@@ -99,7 +110,7 @@
         },
         {
           "anchor": {
-            "blob": "0a2963ea52bab5c1c53f02c7dfdc6ea61ece6523",
+            "blob": "611e5a498e074d169eccd6fffb1ac9327bdf7b8a",
             "content": "sha256:b92153e2d4b5e8e39fb22f8e3c36fbfaf92ad1984a562be174679233df2efa5a",
             "locator": {
               "end": 1,
@@ -112,48 +123,30 @@
         }
       ]
     },
-    "12": {
-      "note": "The projection tick reads folded gates and pending expectation rows without rewriting them.  Anchor: \"def read_gates(coordination_root: Path, *, now: datetime\"; \"def read_expectation_rows(\"",
+    "14": {
+      "note": "JSONL admission precedes shared locking; appends fsync and replacement requires a held lock  Anchor: exclusive_access; append_line; append_lines; rewrite_lines\n\nAnchor: actual current supporting source",
       "targets": [
         {
           "anchor": {
-            "blob": "df32deacb6a4361f29bf225adf9a60ef91947857",
-            "content": "sha256:20414df6cadd583e68e6fb313ae2539bec28f1158b0f7860c8d2d6c475774b94",
+            "blob": "59a148a711df3a07d0424f5448d9871b6aac6930",
+            "content": "sha256:d260e889dbb0ffafb0ab1dbac18137b0f3bf1040432c20bf21313017974629f0",
             "locator": {
-              "end": 107,
+              "end": 263,
               "kind": "line_range",
-              "start": 107
+              "start": 225
             },
-            "path": "mcp/src/agents_remember/serving/projections/snapshots_impl/_runtime.py"
+            "path": "mcp/src/agents_remember/controlplane/durable_store.py"
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "df32deacb6a4361f29bf225adf9a60ef91947857",
-            "content": "sha256:208bb0111a1236aa4d6bfe71f851f610139b92595c80b956b76eeace1997d9d9",
+            "blob": "59a148a711df3a07d0424f5448d9871b6aac6930",
+            "content": "sha256:ee7d10966885efb5b3d71703725d97303b12467af342735b33babd8882b5d4f2",
             "locator": {
-              "end": 239,
+              "end": 358,
               "kind": "line_range",
-              "start": 239
-            },
-            "path": "mcp/src/agents_remember/serving/projections/snapshots_impl/_runtime.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "14": {
-      "note": "JSONL admission precedes shared locking; appends fsync and replacement requires a held lock  Anchor: exclusive_access; append_line; append_lines; rewrite_lines",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "938131908d1c91afc46e26f64e36ef90306c0971",
-            "content": "sha256:b43d87b44146483511a8c41bac75db097cd21a0bd7ec8f0c84e4b8ba4a63548e",
-            "locator": {
-              "end": 456,
-              "kind": "line_range",
-              "start": 321
+              "start": 294
             },
             "path": "mcp/src/agents_remember/controlplane/durable_store.py"
           },
@@ -162,16 +155,27 @@
       ]
     },
     "15": {
-      "note": "Ownership is advisory; inbox has no single compaction owner; schema accepts only major 1  Anchor: StoreOwnership; ownership register; schema_version_supported",
+      "note": "Daemon ownership checks are advisory and independent of unconditional locking; schema admission rejects unknown majors, without preserving an inbox ownership register.",
       "targets": [
         {
           "anchor": {
-            "blob": "938131908d1c91afc46e26f64e36ef90306c0971",
-            "content": "sha256:43b9dc72847acba64b41ebecab7c3758b101220d3edc188686c98466ea200916",
+            "blob": "59a148a711df3a07d0424f5448d9871b6aac6930",
+            "content": "sha256:a7932cb1c5dcd2ae38fe2b12299731934e069b3fb5dfdc61e7c2cf485feb4463",
             "locator": {
-              "end": 281,
-              "kind": "line_range",
-              "start": 100
+              "kind": "symbol",
+              "name": "StoreOwnership"
+            },
+            "path": "mcp/src/agents_remember/controlplane/durable_store.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "59a148a711df3a07d0424f5448d9871b6aac6930",
+            "content": "sha256:a71288d370592aafc207460d9f442cc9d640f82b9fd50f219a7220431a17d397",
+            "locator": {
+              "kind": "symbol",
+              "name": "schema_version_supported"
             },
             "path": "mcp/src/agents_remember/controlplane/durable_store.py"
           },
@@ -324,16 +328,15 @@
       ]
     },
     "28": {
-      "note": "Protected ids can exceed the nominal cap; pending compaction awaits surfaced expiry; spent gate kinds survive TTL\n\nAnchor: inbox_keep_ids; _keep_gate; _keep_inbox_entry",
+      "note": "Consumed approval kinds keep applied authority without TTL; explicit removed-stores removal is distinct from native-census-qualified lock-only residue. Old inbox caps/expiry have no current owner here.",
       "targets": [
         {
           "anchor": {
-            "blob": "761b1d373595ea6c51afcaf2f9ac26743d60ebd2",
-            "content": "sha256:fe799140d604fe3809dfb8069505a235c0ace20d9dcc929d5e492e7d34c26d5b",
+            "blob": "6406e9c672efe030b99804ddf6ef6d1485a64bdc",
+            "content": "sha256:c43409f84bf7bc84003c36ae0e676299be6a2244c72101edcdb80cfbc057dac0",
             "locator": {
-              "end": 179,
-              "kind": "line_range",
-              "start": 145
+              "kind": "symbol",
+              "name": "CONSUMED_APPROVAL_GATE_KINDS"
             },
             "path": "mcp/src/agents_remember/controlplane/interaction_retention.py"
           },
@@ -341,12 +344,11 @@
         },
         {
           "anchor": {
-            "blob": "761b1d373595ea6c51afcaf2f9ac26743d60ebd2",
-            "content": "sha256:9e5d1269a052414b586b6aec37419f2d0b16e733021a063c379fc2e6d226fc66",
+            "blob": "6406e9c672efe030b99804ddf6ef6d1485a64bdc",
+            "content": "sha256:8d6f0070efbb54d7e2eb3582332406b20b8356387839b427ac2d18585a884fc9",
             "locator": {
-              "end": 237,
-              "kind": "line_range",
-              "start": 199
+              "kind": "symbol",
+              "name": "_keep_gate"
             },
             "path": "mcp/src/agents_remember/controlplane/interaction_retention.py"
           },
@@ -377,12 +379,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "10e812f1f833b1b85b91249f1f1e9a49c9705556",
+            "blob": "476c1c24ac02e05fb96b654322bf771287e6cbff",
             "content": "sha256:51c71c325cda52ea89e46620bcaac74a90165279b50b3668573225bec6712f9d",
             "locator": {
-              "end": 69,
+              "end": 68,
               "kind": "line_range",
-              "start": 39
+              "start": 38
             },
             "path": "mcp/src/agents_remember/worktrees/task_fact_publication.py"
           },
@@ -391,29 +393,15 @@
       ]
     },
     "4": {
-      "note": "Gate response models, including the structural public boundary and internal exact correlations.\n\nAnchor: \"class GateCreateResponse\"; \"class StructuralGateResponse\"",
+      "note": "The structural gate facade re-exports kernel vocabulary only, not removed public gate-response operations or a native task-state model.\n\nAnchor: `GateKind`; `GateState`",
       "targets": [
         {
           "anchor": {
-            "blob": "440b9b2c878491059ad01444fc78b008d7a4ff35",
-            "content": "sha256:4e00f71a695b1c426fe55515342f6a13bc5f57134773a8648b99b587a06ccf1e",
+            "blob": "0293e1f8c2efa7f2159e4e430fe6aa292dd78162",
+            "content": "sha256:15624091d624bc3490aead19b05aa7a1b08bd56114b307aad0d0245e9355c2d2",
             "locator": {
-              "end": 61,
-              "kind": "line_range",
-              "start": 61
-            },
-            "path": "mcp/src/agents_remember/models/structural/gates.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "440b9b2c878491059ad01444fc78b008d7a4ff35",
-            "content": "sha256:65a249d36e56cea8ec93c427b39ad7e5bdb5e9b836ee74716155cf4bfadd3fac",
-            "locator": {
-              "end": 121,
-              "kind": "line_range",
-              "start": 121
+              "kind": "symbol",
+              "name": "__all__"
             },
             "path": "mcp/src/agents_remember/models/structural/gates.py"
           },
@@ -438,35 +426,70 @@
         }
       ]
     },
-    "41": {
-      "note": "Lifecycle pruning removes whole unprotected dormant directories  Anchor: prune_expired_lifecycle_event_logs",
+    "42": {
+      "note": "Approval claiming keeps fold/evaluate/applied append under one log lock; no existing log yields gateless policy before opening a lock.",
       "targets": [
         {
           "anchor": {
-            "blob": "4ddf17f4c8fb8920fadc24e6df279efe803cdf01",
-            "content": "sha256:90e8a1f7dbc24ca7544f3fa9e544e6622a7393fb79fb7539de6da480a59b7f68",
+            "blob": "bbb005d14f4c90cbe56e3aecbbd4e5ca9cf52cd5",
+            "content": "sha256:4d6b9a16d976b064cf3916a01fcfcb59edaeed4b2143e8d016fc2b49ee434277",
             "locator": {
-              "end": 122,
-              "kind": "line_range",
-              "start": 94
+              "kind": "symbol",
+              "name": "claim_approval"
             },
-            "path": "mcp/src/agents_remember/observer/event_retention.py"
+            "path": "mcp/src/agents_remember/controlplane/store.py"
           },
           "kind": "code"
         }
       ]
     },
     "6": {
-      "note": "The attention acknowledgement store keeps current lifecycle-scoped queue dismissals only.  Anchor: \"class AttentionDismissalStore\"",
+      "note": "Workspace acknowledgements admit only published kinds and reclaim only with complete, time-qualified native observations; partial/unread kinds and newer clicks remain protected.",
       "targets": [
         {
           "anchor": {
-            "blob": "95e3bb02fd723653615ef09f7220685e54b3a901",
-            "content": "sha256:7c3eeb17805bef2edd0e22916d67ef56962c4f8aea9913ea43d8a06e09899139",
+            "blob": "7f26c932e6a31d8da2e9f2593954cde82ea1b9ff",
+            "content": "sha256:bf2b292a04660e076aed7253cc2c4d5b67f9934c0d255594ff542cb6218f3008",
             "locator": {
-              "end": 45,
+              "kind": "symbol",
+              "name": "AttentionDismissalRecord"
+            },
+            "path": "mcp/src/agents_remember/controlplane/attention_dismissals.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7f26c932e6a31d8da2e9f2593954cde82ea1b9ff",
+            "content": "sha256:0a7bc5a96c604f4fa5eda34411cd1f051bd79e89f5f61210472af06892927215",
+            "locator": {
+              "kind": "symbol",
+              "name": "AttentionObservation"
+            },
+            "path": "mcp/src/agents_remember/controlplane/attention_dismissals.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7f26c932e6a31d8da2e9f2593954cde82ea1b9ff",
+            "content": "sha256:503187d3d3034f9c234c22145dd5e8b9898cf62ec8911984541e6154b0824586",
+            "locator": {
+              "kind": "symbol",
+              "name": "reconcile"
+            },
+            "path": "mcp/src/agents_remember/controlplane/attention_dismissals.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7f26c932e6a31d8da2e9f2593954cde82ea1b9ff",
+            "content": "sha256:b9fa9b1ea936faf990fddb121b071d765dca6e41a98e0d5975b32ee0e9d6e2db",
+            "locator": {
+              "end": 118,
               "kind": "line_range",
-              "start": 45
+              "start": 107
             },
             "path": "mcp/src/agents_remember/controlplane/attention_dismissals.py"
           },
@@ -491,15 +514,16 @@
       ]
     },
     "8": {
-      "note": "Guarded durable-store composition preserves coordinator containment and held-lock rewrite.",
+      "note": "Guarded durable-store composition preserves coordinator containment and held-lock rewrite.\n\nAnchor: actual current supporting source",
       "targets": [
         {
           "anchor": {
-            "blob": "938131908d1c91afc46e26f64e36ef90306c0971",
-            "content": "sha256:d99b53ff95bbbc0395003498264051f916b0da5e4c67e2ebc07259709fa1e071",
+            "blob": "59a148a711df3a07d0424f5448d9871b6aac6930",
+            "content": "sha256:d260e889dbb0ffafb0ab1dbac18137b0f3bf1040432c20bf21313017974629f0",
             "locator": {
-              "kind": "symbol",
-              "name": "exclusive_access"
+              "end": 263,
+              "kind": "line_range",
+              "start": 225
             },
             "path": "mcp/src/agents_remember/controlplane/durable_store.py"
           },
@@ -507,11 +531,12 @@
         },
         {
           "anchor": {
-            "blob": "d392d8cbf6d4794e8787608af948dfc9059bba33",
+            "blob": "59a148a711df3a07d0424f5448d9871b6aac6930",
             "content": "sha256:18e19347826e5c2e9e70f9ba584a22c80264b29fda28921c215e951f9fd2e5ca",
             "locator": {
-              "kind": "symbol",
-              "name": "require_lock_held"
+              "end": 284,
+              "kind": "line_range",
+              "start": 266
             },
             "path": "mcp/src/agents_remember/controlplane/durable_store.py"
           },
@@ -519,11 +544,12 @@
         },
         {
           "anchor": {
-            "blob": "938131908d1c91afc46e26f64e36ef90306c0971",
+            "blob": "59a148a711df3a07d0424f5448d9871b6aac6930",
             "content": "sha256:8c0f0428a50f72a5b10c5cb639e33fa58ae8e6acc131bff8d36937b871b54c9f",
             "locator": {
-              "kind": "symbol",
-              "name": "rewrite_lines"
+              "end": 348,
+              "kind": "line_range",
+              "start": 337
             },
             "path": "mcp/src/agents_remember/controlplane/durable_store.py"
           },

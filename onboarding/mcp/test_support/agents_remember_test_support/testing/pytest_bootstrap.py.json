@@ -6,8 +6,9 @@
         "blob": "5df318e710939f0e89d6ca2d08598cd1084cca3d",
         "content": "sha256:86da6bbe0013022c34b2ebcb04c9f92bf3148dd69c895c7e6277a5054e352b01",
         "locator": {
-          "kind": "symbol",
-          "name": "reset_process_state_at_module_boundaries"
+          "end": 80,
+          "kind": "line_range",
+          "start": 74
         }
       },
       "id": "RLZ-N4E7JJ",

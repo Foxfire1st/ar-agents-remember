@@ -3,11 +3,11 @@
     "criteria": [
       "guarded_by_test"
     ],
-    "justification": "The no-fold regression test and the untouched ambient writer pin preservation at the event source; the projection folds nothing from single-event tokens. Admission claims guarded_by_test only: the invariant is proved by named regression tests rather than multi-file realizations."
+    "justification": "Named current controls retain delivered-answer tokens on one workspace event and reject computed token fields in the projection. No removed ambient implementation or lifecycle-fold test is counted as a current witness."
   },
   "applicability": "The single-event tokens writer and every projection fold: events keep their tokens and no fold sums them.",
   "conditions": [
-    "The ambient writer records tokens per tool answer as before."
+    "The workspace tool-event writer records delivered_tokens as a per-event answer fact; no ambient session writer or aggregate counter is retained."
   ],
   "exclusions": [
     "Computed aggregates over events, which no longer exist."
@@ -24,7 +24,7 @@
     "leaf": "260928-MIK-L115",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-invariant/v1",
   "statement": "The tokens of a single event stay as a fact of its event; a row of the Event River may show them as the size of that one answer.",
   "status": "proposed",

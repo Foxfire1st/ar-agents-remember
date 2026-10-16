@@ -10,7 +10,7 @@ Repair seeded document references and stale explicit overrides against current c
 
 ## Code Commentary
 
-Pure functions choose the first invalid document/override tier and produce its existing reset payload. The document effect runs before the override effect at the launcher call site. Override repair waits for optionsReady; valid selections remain quiescent and callbacks stay live.
+Pure functions validate seeded document references against served TaskEntry options and choose the first invalid document/override tier and produce its existing reset payload. The document effect runs before the override effect at the launcher call site. Override repair waits for optionsReady; valid selections remain quiescent and callbacks stay live.
 
 ## Boundaries
 

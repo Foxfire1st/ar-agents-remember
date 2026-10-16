@@ -3,7 +3,7 @@
   "proves": [
     {
       "anchor": {
-        "blob": "b642596f4b6acaa784b65125ddcbdbf4a7a78bca",
+        "blob": "aebc614febc40ee2626937fa362e4bc9fa5e58b7",
         "content": "sha256:96636db2be5105a40156aa3589d6f6f2c4a031b6015e88af6efe672978fa5840",
         "locator": {
           "kind": "symbol",
@@ -20,11 +20,12 @@
     },
     {
       "anchor": {
-        "blob": "b642596f4b6acaa784b65125ddcbdbf4a7a78bca",
+        "blob": "aebc614febc40ee2626937fa362e4bc9fa5e58b7",
         "content": "sha256:2700d6456c8018530039ec9b02d2694e0ab7dccc05bbddd8df0108f004962075",
         "locator": {
-          "kind": "symbol",
-          "name": "BuildInputTests.test_the_environment_loses_what_selects_another_runtime_and_keeps_logins"
+          "end": 676,
+          "kind": "line_range",
+          "start": 604
         }
       },
       "facet": "exact selector/session names disappear, credentials remain, the seven sandbox-owned values are installed, and real children receive their own PWD",
@@ -37,7 +38,7 @@
     },
     {
       "anchor": {
-        "blob": "b642596f4b6acaa784b65125ddcbdbf4a7a78bca",
+        "blob": "aebc614febc40ee2626937fa362e4bc9fa5e58b7",
         "content": "sha256:cad4adea94c879b94dbff0221013264d5138fba94e504d4e786d6d24ce20c042",
         "locator": {
           "kind": "symbol",
@@ -54,11 +55,12 @@
     },
     {
       "anchor": {
-        "blob": "b642596f4b6acaa784b65125ddcbdbf4a7a78bca",
+        "blob": "aebc614febc40ee2626937fa362e4bc9fa5e58b7",
         "content": "sha256:98704aaa566498774fd01e768a5074195ab087022195507b18d0dbd1abff499f",
         "locator": {
-          "kind": "symbol",
-          "name": "test_public_install_retires_success_for_cut_timeout_and_malformed"
+          "end": 875,
+          "kind": "line_range",
+          "start": 835
         }
       },
       "facet": "each cut, timeout and malformed outcome replaces the old success with a fresh failure naming the underlying error and paths",
@@ -71,7 +73,7 @@
     },
     {
       "anchor": {
-        "blob": "b642596f4b6acaa784b65125ddcbdbf4a7a78bca",
+        "blob": "aebc614febc40ee2626937fa362e4bc9fa5e58b7",
         "content": "sha256:0bb58bd0020c02562e0c2a38ad3496cf80739fa7f75a09491769b05120330ec0",
         "locator": {
           "kind": "symbol",
@@ -88,7 +90,7 @@
     },
     {
       "anchor": {
-        "blob": "b642596f4b6acaa784b65125ddcbdbf4a7a78bca",
+        "blob": "aebc614febc40ee2626937fa362e4bc9fa5e58b7",
         "content": "sha256:bf8a21caf8e5effe5de7d127f91031dc83d0ab298782b129508ce281f22f2bf5",
         "locator": {
           "kind": "symbol",
@@ -105,7 +107,7 @@
     },
     {
       "anchor": {
-        "blob": "b642596f4b6acaa784b65125ddcbdbf4a7a78bca",
+        "blob": "aebc614febc40ee2626937fa362e4bc9fa5e58b7",
         "content": "sha256:a5b6a3e37de2bcbb6df62241ead9f2edad128d25d9c0235193ee834a5e5cfa6d",
         "locator": {
           "kind": "symbol",
@@ -122,7 +124,7 @@
     },
     {
       "anchor": {
-        "blob": "b642596f4b6acaa784b65125ddcbdbf4a7a78bca",
+        "blob": "aebc614febc40ee2626937fa362e4bc9fa5e58b7",
         "content": "sha256:347f754740815636a9c2c441f97112b4bb9ac3b1f6ba561e5309150d9186adcd",
         "locator": {
           "kind": "symbol",
@@ -139,7 +141,7 @@
     },
     {
       "anchor": {
-        "blob": "b642596f4b6acaa784b65125ddcbdbf4a7a78bca",
+        "blob": "aebc614febc40ee2626937fa362e4bc9fa5e58b7",
         "content": "sha256:d4413865144e3a314bd07da2efaf556962edb40240f6a9995d13534f1646b026",
         "locator": {
           "kind": "symbol",
@@ -156,7 +158,7 @@
     },
     {
       "anchor": {
-        "blob": "b642596f4b6acaa784b65125ddcbdbf4a7a78bca",
+        "blob": "aebc614febc40ee2626937fa362e4bc9fa5e58b7",
         "content": "sha256:735915a18141318ff9784dee9761cd3ecf5f0b3f63c1a520e5694be8771f6ce4",
         "locator": {
           "kind": "symbol",
@@ -173,7 +175,7 @@
     },
     {
       "anchor": {
-        "blob": "b642596f4b6acaa784b65125ddcbdbf4a7a78bca",
+        "blob": "aebc614febc40ee2626937fa362e4bc9fa5e58b7",
         "content": "sha256:468ee39c8fc698464f45a0cdd950d626041e07632408e7c813ee0562393c0686",
         "locator": {
           "kind": "symbol",
@@ -239,7 +241,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b642596f4b6acaa784b65125ddcbdbf4a7a78bca",
+            "blob": "aebc614febc40ee2626937fa362e4bc9fa5e58b7",
             "content": "sha256:98704aaa566498774fd01e768a5074195ab087022195507b18d0dbd1abff499f",
             "locator": {
               "kind": "symbol",
@@ -255,7 +257,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b642596f4b6acaa784b65125ddcbdbf4a7a78bca",
+            "blob": "aebc614febc40ee2626937fa362e4bc9fa5e58b7",
             "content": "sha256:bf8a21caf8e5effe5de7d127f91031dc83d0ab298782b129508ce281f22f2bf5",
             "locator": {
               "kind": "symbol",
@@ -275,6 +277,22 @@
             "content": "sha256:4825effc53db0c8ae492bf4271cd1e032f2f546b98a5d583b313c955fd5e568a",
             "locator": {
               "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "Compact report fallback and inline-host precedence determine started bookkeeping without changing retained receipt bytes.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "aebc614febc40ee2626937fa362e4bc9fa5e58b7",
+            "content": "sha256:03f5a88dcf9e81fbd44f02000018eb08d33f5d033c6b5aaea8c85750a574fd8b",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_launcher_provisions_from_the_compact_installs_named_report"
             }
           },
           "kind": "test"

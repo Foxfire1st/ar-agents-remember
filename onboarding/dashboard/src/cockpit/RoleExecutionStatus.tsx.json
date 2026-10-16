@@ -6,8 +6,9 @@
         "blob": "9dbf10e96bbc9385b16d5d5f9eaf97a582c5b9e9",
         "content": "sha256:7cc1e0a4e26d81dabac0ac87dba3478528608c588c18fd1b3605493bf29e5a20",
         "locator": {
-          "kind": "symbol",
-          "name": "RoleExecutionStatus"
+          "end": 31,
+          "kind": "line_range",
+          "start": 6
         }
       },
       "id": "RLZ-59C2R6",
@@ -24,8 +25,9 @@
         "blob": "9dbf10e96bbc9385b16d5d5f9eaf97a582c5b9e9",
         "content": "sha256:7cc1e0a4e26d81dabac0ac87dba3478528608c588c18fd1b3605493bf29e5a20",
         "locator": {
-          "kind": "symbol",
-          "name": "RoleExecutionStatus"
+          "end": 31,
+          "kind": "line_range",
+          "start": 6
         }
       },
       "id": "RLZ-FDMVYM",

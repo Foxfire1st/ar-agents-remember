@@ -14,7 +14,7 @@ MIK-R109: core registration removes `resolve_context`; `context_packet` advertis
 
 The L111 predecessor declared41 public names after L109 removed resolve_context (earlier42 was historical); the composed R113 source has40 after dispatch_agent removal. Family registrars keep their existing request/response/application owners while using compact descriptions and docs/reference/mcp-tools.md for the longer account. Task write operations accept forwarded fields_file/section_body_file inputs; removed reads guide canonical file reading. Sync accepts the exact continue/cancel action, not a knowledge_resolution input; memory content resolution remains file-authored and staged under its transaction owner. Reachable task-state refusals and role outcomes are bounded answers, not new authority from a docstring or a finished tool turn.
 
-`create_server` calls nine registrars in order: core, sessions, memory, worktrees, closeout, tasks, capsule/skill resources, native role agents, and knowledge. Eight declare tools; the capsule registrar publishes resources and installs skill protocol support without declaring tools. The current `PUBLIC_TOOLS` literal contains 40 names, adding native `retire_child` and `role_start_set` to the old 39-name tuple.
+`create_server` calls nine registrars in order: core, native seat retirement, memory, worktrees, closeout, tasks, capsule/skill resources, native role agents, and knowledge. Eight declare tools; the capsule registrar publishes resources and installs skill protocol support without declaring tools. The current source `PUBLIC_TOOLS` literal contains 40 names, including native `retire_child` and `role_start_set`, with `dispatch_agent` absent. This is the current source declaration, not a claim that adding those names to an old population alone computes its size or that a live server was interrogated.
 
 > **Retained historical source account — superseded by the current route account:**
 > A tool handler normally constructs its request value and forwards it to a payload builder. Memory quality dispatches its typed request by mode; native role calls use `asyncio.to_thread` around their payload builders. The shared `_tool_payload` adapter delegates the whole result and an optional compact answer to the application boundary; the boundary validates and logs the whole result and guards the delivered answer. Registration does not independently grant approval, retry, publication, or actor authority.
@@ -148,7 +148,8 @@ The following inherited metadata is retained verbatim and is not lifecycle or ac
 - **Retained historical source account — superseded by the current route account:** Current citation handler includes converted-memory, finite card selection, status-answer and caller-exclude descriptions. [23]
 - **Retained historical source account — superseded by the current route account:** Native role registration declares start, set start and messaging; it does not witness task retirement. [24]
 - **Retained historical source account — superseded by the current route account:** Core identity, reader-context, and install registration. [25]
-- **Retained historical source account — superseded by the current route account:** Current ordered family composition. [26]
+- Ordered composition uses seat retirement, not a removed sessions registrar, and retains the capsule resource position between task and role-agent registration. [26]
+
 - **Retained historical source account — superseded by the current route account:** Server wiring and strict dispatch boundary. [27]
 - **Retained historical source account — superseded by the current route account:** Runtime request construction and current installation description. [28]
 

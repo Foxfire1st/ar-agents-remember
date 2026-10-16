@@ -6,14 +6,7 @@
 
 ## Purpose
 
-The hangar (notes 01/06): persistent worktree-backed lifecycles are NEVER auto-reaped — when they
-rot, this surfaces the staleness for the developer to step in (the TTL reaper is fleeting-only). It lists
-only **LIVE** worktree enclosures: a finalized worktree keeps its enclosure contract on disk (it records
-the landed state for memory lineage) even after its directory is reaped, so the raw enclosure set only
-ever grows. Since 260703-L11 "live" means the projection's stat'ed worktree-existence truth
-(`hasLiveWorktree`: `codeWorktreeExists || memoryWorktreeExists`), never a cleanup-state proxy — the
-count reflects worktrees that physically exist / still need action, and a reopened contract
-(`cleanup: reopened`, worktrees gone) stays hidden until `worktree_start` recreates them.
+Hangar displays pre-bound task worktrees and unbound enclosures from selectWorktrees, admitting only physical code or memory worktree existence. Bound entries use shared task status and exact opaque selection; it does not infer staleness from session state. Retained contracts without directories remain absent; reopened worktrees reappear only when they exist.
 
 ## Code Commentary
 
@@ -25,7 +18,7 @@ available through the badge's `title`. Absent operation state still renders no p
 
 ### Logic
 
-Since L15 the panel's served ages advance LOCALLY: the wire carries stable forms without the volatile *Seconds fields, so the panel derives display ages from per-object arrival anchors (data/servedAges.ts) refreshed by a 10-second useNowMs ticker — the deliberate, disclosed deviation from the no-re-render ideal that replaced the per-second whole-payload churn.
+Hangar renders task status and enclosure review, closeout, integration, cleanup and optional lifecycle-operation badges. It renders no served-age span and installs no age ticker.
 
 Available enclosure actions render display-only `Affordance` entries. No GateResponder or durable gate-response interaction is mounted. The existing progress text, CSS-ellipsized current command and full-value title retain their actual projection boundary.
 
@@ -45,6 +38,4 @@ badges and viewport size.
 ### Repo-Internal References
 
 - The `EnclosureNode` statuses (closeout/integration/cleanup) and existence flags shown/filtered on. [1]
-- The shared `hasLiveWorktree` tasks-surface visibility rule. [2]
-- The render tests pinning existence-only visibility (reopened hidden, visible again after restart, completed/abandoned gone). [4]
 - The running-operation regression proves the durable command is visible and preserved as the full badge title. [5]

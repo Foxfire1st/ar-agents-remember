@@ -35,16 +35,30 @@
       ]
     },
     "3": {
-      "note": "The frontier-state color variants, including the `abandoned` dormant tone the projection can serve.",
+      "note": "Dependency readiness/cycle styling is separate from the shared task-state presentation; the former task-frontier palette is removed.\n\nAnchor: dependency-only palette",
       "targets": [
         {
           "anchor": {
-            "blob": "cc87a76606193c60a16b87908c901278951e8362",
-            "content": "sha256:b3d4b5829c473d149bea24fd03881627685222a69fcb1666ebafaa86d9925c8f",
+            "blob": "4e9801e315eb3e0cb3f9d8873ee957b31c30c2b6",
+            "content": "sha256:51f65c4b0a97ea2d4cdc1af1c8af6c491c8d5c322c06db636f7c2c5879452c1e",
             "locator": {
-              "kind": "symbol",
-              "name": "frontier"
+              "end": 63,
+              "kind": "line_range",
+              "start": 44
             }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "17da14e723222a8d50b4ed6f0595390ab1fe1f6a",
+            "content": "sha256:bc4ae159d2c06abf5b3013b49558caef6bdd9ce2485a940130f171bf32322519",
+            "locator": {
+              "end": 101,
+              "kind": "line_range",
+              "start": 69
+            },
+            "path": "dashboard/src/panels/detail-panel/pageParts.tsx"
           },
           "kind": "code"
         }

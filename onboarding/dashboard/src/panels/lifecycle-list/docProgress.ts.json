@@ -1,22 +1,6 @@
 {
   "path": "dashboard/src/panels/lifecycle-list/docProgress.ts",
   "realizes": [],
-  "references": {
-    "1": {
-      "note": "Progress adaptation delegates to existing task/master helpers and keeps discarded facts separate.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "1a4a3aeaada260ffe7a404eedb893a7f61615eff",
-            "content": "sha256:e62a91771335fb3567f2c8e03935b196b1086fcbad45b5200847c508da310d41",
-            "locator": {
-              "kind": "file"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    }
-  },
+  "references": {},
   "schema": "ar-onboarding-file/v1"
 }

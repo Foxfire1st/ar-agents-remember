@@ -19,46 +19,34 @@
         }
       ]
     },
-    "2": {
-      "note": "Exact legacy-time controls assert valid-date selection independently of storage order, completedAt precedence, nonmutation and rejection of similar prose/absent documents without a finalizer opportunity.",
+    "3": {
+      "note": "The parameterized lookup control uses 100 and 300 rows in whole-list and preview modes, plus an entry with no summary. A Proxy counts native task-map reads: preparation equals the uninstrumented result with size + 1 reads; mounted HTML is identical, qualified child navigation is checked, and preview shows five rows. In whole-list mode the missing-document row is observed before clicking the number and completed sort controls. After those clicks the test asserts only the total read bound, reads <= (size + 1) * 4; it does not reassert that row's presence or position. This is source-defined evidence, not a fresh test, timing or performance run; no docPath getter is instrumented.\n\nAnchor: complete parameterized lookup assertions",
       "targets": [
         {
           "anchor": {
-            "blob": "17205ed0b1b0bb073866d3e7718e5db5a2e60a15",
-            "content": "sha256:bd4892c8be0795e998f43b25db9100d1f6a6a782e091a0be4a65cc7d82090b13",
+            "blob": "972379661df5248133ad722ce2285f700ca00755",
+            "content": "sha256:c50e406178da9da270152644fd165fb204710dc77197baf187baf8e78af67e94",
             "locator": {
-              "end": 110,
+              "end": 178,
               "kind": "line_range",
-              "start": 78
+              "start": 119
             }
           },
           "kind": "test"
         }
       ]
     },
-    "3": {
-      "note": "Instrumented preparation and mounted whole-list/preview controls declare unchanged output/navigation and bounded docPath reads at 100 and 300 rows; not a fresh test or performance run.",
+    "4": {
+      "note": "The dataset supplies served task entries with explicit summary.completedAt values and canonical parent/child keys.\n\nAnchor: dataset definition",
       "targets": [
         {
           "anchor": {
-            "blob": "17205ed0b1b0bb073866d3e7718e5db5a2e60a15",
-            "content": "sha256:55a3bc062976f5f3bd31d532f99aa79a2feb4f45696b690b47846806bf4474ab",
+            "blob": "972379661df5248133ad722ce2285f700ca00755",
+            "content": "sha256:b8637dbf71968d08e41463bfa69568d76e792102781e093a93faf87ad1ccf439",
             "locator": {
-              "end": 205,
+              "end": 40,
               "kind": "line_range",
-              "start": 187
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "17205ed0b1b0bb073866d3e7718e5db5a2e60a15",
-            "content": "sha256:8f5ce1400cfd88fa435f94322e6bf1268464eabf1b2f90dadcf9d349589a9cce",
-            "locator": {
-              "end": 283,
-              "kind": "line_range",
-              "start": 207
+              "start": 9
             }
           },
           "kind": "test"

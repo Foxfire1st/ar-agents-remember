@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "7f1a2758d96e3ab64746d28850368f2739af1e7f",
+        "blob": "cebce5d8bde7f517ca1274ce11b50e35b9a9e59e",
         "content": "sha256:ebfc822a554c149abe5852fee01d68f04212a0e011c245452f17ae0688d1c75c",
         "locator": {
           "kind": "symbol",
@@ -21,11 +21,12 @@
     },
     {
       "anchor": {
-        "blob": "7f1a2758d96e3ab64746d28850368f2739af1e7f",
+        "blob": "cebce5d8bde7f517ca1274ce11b50e35b9a9e59e",
         "content": "sha256:9455f23c617c68aea5bf0de4459004f48e5bc9ac72b0f9f4d6d2e9fe15654dc3",
         "locator": {
-          "kind": "symbol",
-          "name": "Operations._archive_install_receipts"
+          "end": 321,
+          "kind": "line_range",
+          "start": 305
         }
       },
       "id": "RLZ-99CM4D",
@@ -39,11 +40,12 @@
     },
     {
       "anchor": {
-        "blob": "7f1a2758d96e3ab64746d28850368f2739af1e7f",
-        "content": "sha256:5dcdaa21b73d05beb883a3063dddf03ef0e31fad094e3141d68276b5f4b7b25c",
+        "blob": "cebce5d8bde7f517ca1274ce11b50e35b9a9e59e",
+        "content": "sha256:adec97cd444226069a7ec1ba3addcbae39abc95d943087dcff993bcce4a71411",
         "locator": {
-          "kind": "symbol",
-          "name": "Operations"
+          "end": 441,
+          "kind": "line_range",
+          "start": 72
         }
       },
       "id": "RLZ-9F0JC0",
@@ -57,11 +59,12 @@
     },
     {
       "anchor": {
-        "blob": "7f1a2758d96e3ab64746d28850368f2739af1e7f",
-        "content": "sha256:d516a936cd0aa1c036bc98daed66e7048652cbe3edd6520821faed8d9e5f79c2",
+        "blob": "cebce5d8bde7f517ca1274ce11b50e35b9a9e59e",
+        "content": "sha256:9485da31500b0fd651d55b73e2bbc0376f167d760668db2a3b0fa4a258aff5b5",
         "locator": {
-          "kind": "symbol",
-          "name": "Operations.runtime_install"
+          "end": 263,
+          "kind": "line_range",
+          "start": 204
         }
       },
       "id": "RLZ-AWECY6",
@@ -75,11 +78,12 @@
     },
     {
       "anchor": {
-        "blob": "7f1a2758d96e3ab64746d28850368f2739af1e7f",
+        "blob": "cebce5d8bde7f517ca1274ce11b50e35b9a9e59e",
         "content": "sha256:b146b6a0195a5a81dc7df59ea1124ce6acd998d21dbf799b852331262bc58789",
         "locator": {
-          "kind": "symbol",
-          "name": "Operations._refuse_install"
+          "end": 295,
+          "kind": "line_range",
+          "start": 281
         }
       },
       "id": "RLZ-W99KFF",
@@ -93,7 +97,7 @@
     },
     {
       "anchor": {
-        "blob": "7f1a2758d96e3ab64746d28850368f2739af1e7f",
+        "blob": "cebce5d8bde7f517ca1274ce11b50e35b9a9e59e",
         "content": "sha256:ebfc822a554c149abe5852fee01d68f04212a0e011c245452f17ae0688d1c75c",
         "locator": {
           "kind": "symbol",
@@ -148,6 +152,23 @@
               "end": 220,
               "kind": "line_range",
               "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "A compact install response reads its confined whole report without overwriting the response outcome.\n\nAnchor: host report adapter",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cebce5d8bde7f517ca1274ce11b50e35b9a9e59e",
+            "content": "sha256:e5133e1427a059326756bbd86a2f52bf244bc2204f39c7ce750407e6ac524dce",
+            "locator": {
+              "end": 279,
+              "kind": "line_range",
+              "start": 265
             }
           },
           "kind": "code"

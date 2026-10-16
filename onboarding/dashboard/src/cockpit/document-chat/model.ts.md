@@ -10,7 +10,7 @@ Pure selection and record-reading model for the document chat: which roles a sel
 
 ## Code Commentary
 
-`documentBindings` groups commanding sprints, their masters and each master's leaves once, then emits the tree's canonical selections in order. The work grows with document count rather than a per-master rescan. `bindingInTree` resolves one reference or names the missing hierarchy relationship; Projects and explicit Investigator admission retain their existing owners.
+`documentBindings` indexes served entries by entry.key and follows their ordered children to emit canonical sprint, master and leaf selections. It does not reconstruct topology from document/series joins. `bindingInTree` resolves an exact reference or names the missing relationship; Projects and explicit Investigator admission retain their existing owners.
 
 `documentChatAgent` matches canonical labels to the exact selected document, rejects archival/missing workspace, excludes Investigator and system-specialist from primary discovery, and chooses newest creation time with stable agent-ID tiebreak. `documentAgents` returns null for an unreadable answer, distinct from an empty confirmed array. The same bindings feed both batch preknowledge and fresh selected-document reads.
 ## Evidence
@@ -29,6 +29,5 @@ Projects, sprint, commanded master and leaf roles retain explicit selection admi
 
 ## Refreshed current evidence
 
-- Tree bindings group parents once and return canonical rows in tree order. [1]
 - An unsupported selection admits no start, and the ordinary Projects selection keeps its own role set. [5]
 - The agent pick matches the document key, skips archived records and picks the newest stable record. [2]

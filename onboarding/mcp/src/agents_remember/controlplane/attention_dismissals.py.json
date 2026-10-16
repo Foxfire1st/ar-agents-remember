@@ -1,71 +1,111 @@
 {
   "path": "mcp/src/agents_remember/controlplane/attention_dismissals.py",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "7f26c932e6a31d8da2e9f2593954cde82ea1b9ff",
+        "content": "sha256:0a7bc5a96c604f4fa5eda34411cd1f051bd79e89f5f61210472af06892927215",
+        "locator": {
+          "kind": "symbol",
+          "name": "AttentionObservation"
+        }
+      },
+      "id": "RLZ-C2MYQB",
+      "invariant": "INV-TT5CTW",
+      "origin": {
+        "handoffEntry": "L168-W-R166-03",
+        "leaf": "260928-MIK-L168"
+      },
+      "rationale": "This observed source proof defines recurrence/coverage rather than check timestamps or assumed activity.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "7f26c932e6a31d8da2e9f2593954cde82ea1b9ff",
+        "content": "sha256:503187d3d3034f9c234c22145dd5e8b9898cf62ec8911984541e6154b0824586",
+        "locator": {
+          "kind": "symbol",
+          "name": "AttentionDismissalStore.reconcile"
+        }
+      },
+      "id": "RLZ-RNDG0J",
+      "invariant": "INV-D9T2BC",
+      "origin": {
+        "handoffEntry": "L168-W-R166-05-06",
+        "leaf": "260928-MIK-L168"
+      },
+      "rationale": "The locked fold applies only complete per-kind evidence and retains unread/failed kinds.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "7f26c932e6a31d8da2e9f2593954cde82ea1b9ff",
+        "content": "sha256:df926cc722b19c59341fe2accca8d76593aeea5d313c35efd984560f68529633",
+        "locator": {
+          "kind": "symbol",
+          "name": "AttentionDismissalStore"
+        }
+      },
+      "id": "RLZ-Y0E9E1",
+      "invariant": "INV-1ZZNZ6",
+      "origin": {
+        "handoffEntry": "L168-W-R166-07",
+        "leaf": "260928-MIK-L168"
+      },
+      "rationale": "The single locked current set folds duplicates, reclaims observed obsolete rows and skips unchanged physical rewrites.",
+      "role": "primary-authority"
+    }
+  ],
   "references": {
     "1": {
-      "note": "Projection tick that prunes rows after folding live lifecycle state.  Anchor: `prune_lifecycles`",
+      "note": "Projection input refreshers collect native per-kind AttentionObservations and reconcile acknowledgements through AttentionDismissalStore. A record can be reclaimed for source absence, healthy recovery or a changed known fingerprint only when the observation is complete and started no earlier than its dismissal; the first complete fingerprint can instead be adopted. Unread/incomplete kinds retain their acknowledgements. Reconciliation is locked, avoids unchanged physical writes and returns prior current acknowledgements if cleanup fails; this is not prune_lifecycles after a lifecycle fold.",
       "targets": [
         {
           "anchor": {
-            "blob": "c3c2ff4bb45c68e3c588824c2a1e01c05816700a",
-            "content": "sha256:7a07b8c0296677d21a34d2a022cc47ec152daf1d41cb5bf8b784fd5138eabe53",
+            "blob": "3cedc4c3230d6645fcd5c5ede281b3defc11fdd5",
+            "content": "sha256:459548e6a17602484127655b7441dc1bca9ea3d2ac22e126e094af194f90b1c2",
             "locator": {
-              "end": 223,
+              "end": 419,
               "kind": "line_range",
-              "start": 187
+              "start": 414
             },
-            "path": "mcp/src/agents_remember/serving/projections/projection_store.py"
+            "path": "mcp/src/agents_remember/serving/projections/projection_inputs.py"
           },
           "kind": "code"
-        }
-      ]
-    },
-    "2": {
-      "note": "Reducer suppression check that requires the acknowledgement lifecycle to match the item lifecycle.\n\nAnchor: \"def _is_dismissed(\"",
-      "targets": [
+        },
         {
           "anchor": {
-            "blob": "ec11f958c3ba654dad0a65a51861381d8b81ad90",
-            "content": "sha256:5aba9451b1e6d3aa523c2e27c2a597c94e4fa4a0ebcf3889452f07b0e6dfde40",
+            "blob": "3cedc4c3230d6645fcd5c5ede281b3defc11fdd5",
+            "content": "sha256:f0b85983516e18e6a4a409f87f814f9fdd14c204049f8801b4f1d39cb9ec7b2d",
             "locator": {
-              "end": 79,
+              "end": 684,
               "kind": "line_range",
-              "start": 79
+              "start": 641
             },
-            "path": "mcp/src/agents_remember/observer/reducer_impl/_attention.py"
+            "path": "mcp/src/agents_remember/serving/projections/projection_inputs.py"
           },
           "kind": "code"
-        }
-      ]
-    },
-    "3": {
-      "note": "Serving route that records lifecycle acknowledgements or cancels gate-open items.  Anchor: \"def _dismissal_response(\"",
-      "targets": [
+        },
         {
           "anchor": {
-            "blob": "1eadcc2da70e41c823649f67e3afb112e4619a71",
-            "content": "sha256:f239ea868edea436d5145c60ea555a3ab205164c02ca475ebe9bd75123a575bf",
+            "blob": "7f26c932e6a31d8da2e9f2593954cde82ea1b9ff",
+            "content": "sha256:0a7bc5a96c604f4fa5eda34411cd1f051bd79e89f5f61210472af06892927215",
             "locator": {
-              "end": 291,
+              "end": 104,
               "kind": "line_range",
-              "start": 291
-            },
-            "path": "mcp/src/agents_remember/serving/_app_routes.py"
+              "start": 56
+            }
           },
           "kind": "code"
-        }
-      ]
-    },
-    "4": {
-      "note": "Targetless actionable-drift rows are the only non-lifecycle acknowledgements retained by prune: `prune_lifecycles` through `_prune_locked` and the module-level `_keep_current_record`.",
-      "targets": [
+        },
         {
           "anchor": {
-            "blob": "853c93c007b2d0d1fecabbb71e5ae6a7bb068160",
-            "content": "sha256:609ffe4283b75ee3f0fb29759003824e9d80b6e7d717d656bb289249e4068d7b",
+            "blob": "7f26c932e6a31d8da2e9f2593954cde82ea1b9ff",
+            "content": "sha256:503187d3d3034f9c234c22145dd5e8b9898cf62ec8911984541e6154b0824586",
             "locator": {
-              "kind": "symbol",
-              "name": "_keep_current_record"
+              "end": 191,
+              "kind": "line_range",
+              "start": 164
             }
           },
           "kind": "code"
@@ -77,12 +117,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "853c93c007b2d0d1fecabbb71e5ae6a7bb068160",
+            "blob": "7f26c932e6a31d8da2e9f2593954cde82ea1b9ff",
             "content": "sha256:60e95c95e5646d85ef8f0c9a41f649dbd72a170534264bb5ebf54afb48a199eb",
             "locator": {
-              "end": 77,
+              "end": 139,
               "kind": "line_range",
-              "start": 58
+              "start": 120
             }
           },
           "kind": "code"
@@ -96,54 +136,6 @@
               "kind": "line_range",
               "start": 125
             }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "6": {
-      "note": "`ATTENTION_DISMISSAL_OWNERSHIP` records why a single-writer store is still locked and names the 31.45 percent an unlocked draft measured.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "938131908d1c91afc46e26f64e36ef90306c0971",
-            "content": "sha256:8b9748afe47010b4698f23d863167efa5a70a053911627ef22686b1e1f43e065",
-            "locator": {
-              "kind": "symbol",
-              "name": "ATTENTION_DISMISSAL_OWNERSHIP"
-            },
-            "path": "mcp/src/agents_remember/controlplane/durable_store.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "938131908d1c91afc46e26f64e36ef90306c0971",
-            "content": "sha256:81dadbed3c0f368c0022ed6370e4aed05bb1c7b1479609827b11a16a711cfae2",
-            "locator": {
-              "end": 182,
-              "kind": "line_range",
-              "start": 166
-            },
-            "path": "mcp/src/agents_remember/controlplane/durable_store.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "7": {
-      "note": "The HTTP dismiss route at L1164 that makes this whole-file read-modify-write a user-facing click.  Anchor: \"def _dismissal_response(\"",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "1eadcc2da70e41c823649f67e3afb112e4619a71",
-            "content": "sha256:f239ea868edea436d5145c60ea555a3ab205164c02ca475ebe9bd75123a575bf",
-            "locator": {
-              "end": 291,
-              "kind": "line_range",
-              "start": 291
-            },
-            "path": "mcp/src/agents_remember/serving/_app_routes.py"
           },
           "kind": "code"
         }

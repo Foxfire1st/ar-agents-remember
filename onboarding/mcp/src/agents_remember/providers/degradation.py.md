@@ -270,7 +270,9 @@ No external/product documentation governs this protocol; it is a repository-inte
 - `providerDegradation` settings this module consumes (thresholds, `fail_safe_enabled`, `recent_sample_limit`). [9]
 - `_metrics_loop` — the sole production caller: `metrics_store.record`, `evaluate_provider_degradation` and `metrics_store.compact` on one 30s tick. This is why the dashboard is the declared compaction owner of both provider stores, and it is where the ownership is enforced structurally. [10]
 
+
 - `ar-durable-store/1.0`: `exclusive_access`, `append_line`, `rewrite_lines`, `read_log_text`, `SCHEMA_VERSION`, `schema_version_supported`, and the `StoreOwnership` record `PROVIDER_DEGRADATION_OWNERSHIP` instantiates. Cited by symbol so later additions do not change the claim. [12]
+
 - The sibling provider store put on the same contract in the same change. [13]
 - The provider-store durability suite: `lost == 0`, `torn_lines == 0` and `stragglers == []` over the forced single-record window for both provider stores, asserted rather than restated as a base-commit rate. [14]
 - The attention-dismissal control-plane log whose unlocked draft measured 31.45% loss — the precedent that refused "one writer" as a reason not to lock. [15]
@@ -289,7 +291,9 @@ owner validates the checkout target before shared kernel locking and maps lock-c
 failures into the existing durable error family. This source verification does not change the
 provider thresholds, hysteresis or failsafe behavior.
 
+
 - Store exclusion keeps checkout coordination ahead of the shared kernel primitive. [17]
+
 
 
 ## Current Investigator contract impact

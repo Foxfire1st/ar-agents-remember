@@ -1,0 +1,172 @@
+{
+  "path": "mcp/tests/test_host_activity_projection.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "f0de2c3d3ee0f63ebbdc18be70d0ad02b5d6a858",
+        "content": "sha256:aa691a2ffe46be638aee5faa6072731811a8a9728109981a671e8efbb044836c",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_periodic_full_and_degraded_wakes_retain_host_without_reads"
+        }
+      },
+      "facet": "The source-defined healthy full and degraded interval wakes retain host state while publication and role-record reads are made fatal.",
+      "id": "PRF-145T4R",
+      "invariant": "INV-X0KED3",
+      "origin": {
+        "handoffEntry": "L168-W-R167-02",
+        "leaf": "260928-MIK-L168"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "f0de2c3d3ee0f63ebbdc18be70d0ad02b5d6a858",
+        "content": "sha256:70ee01f2462af39bfe2a744fbb2ff9e788a2798240cbcb4f15506246edda3b41",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_new_host_boot_and_a_new_dashboard_each_require_the_whole_read"
+        }
+      },
+      "facet": "A changed host boot rejects the old acknowledgement and attempts a fresh bridge reconciliation; a separate input attempts its own initial read.",
+      "id": "PRF-643PEQ",
+      "invariant": "INV-X0KED3",
+      "origin": {
+        "handoffEntry": "L168-W-R167-02",
+        "leaf": "260928-MIK-L168"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "f0de2c3d3ee0f63ebbdc18be70d0ad02b5d6a858",
+        "content": "sha256:e0995e249ab658fa143f64b48325869ccbb6ca58b83c7b2d8033550080707ac6",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_idle_heartbeats_do_not_read_activity_or_launch_another_snapshot"
+        }
+      },
+      "facet": "After an initial full read, heartbeat input passes retain known host state with publication reads made fatal and no additional bridge call.",
+      "id": "PRF-NGD3WQ",
+      "invariant": "INV-X0KED3",
+      "origin": {
+        "handoffEntry": "L168-W-R167-02",
+        "leaf": "260928-MIK-L168"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Watch roots admit the activity directory, not the supervisor lease or broad host home.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f0de2c3d3ee0f63ebbdc18be70d0ad02b5d6a858",
+            "content": "sha256:8ed3c47a3a64e62450b12f5c997f6547a5785dfbdf0ef1c5e72e5023475ba49c",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_supervisor_lease_heartbeat_is_not_a_host_activity_input"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Composition binds host-activity-snapshot to the existing bridge.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f0de2c3d3ee0f63ebbdc18be70d0ad02b5d6a858",
+            "content": "sha256:2f9b67ebf0f9fa417a790ab4d1ede0e1f37e603a34e6233ac788c3d68123f87f",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_dashboard_composition_binds_the_existing_bridge"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Reconciliation replaces stale startup activity and joins only registered roles.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f0de2c3d3ee0f63ebbdc18be70d0ad02b5d6a858",
+            "content": "sha256:61d92044ddf1da7d826246696516e1fdd0d7e618ff2e1d052551756295d276d5",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_startup_replaces_old_activity_before_it_can_be_served"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "New boot requires matching acknowledgement and failed bridge reads remain unknown.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f0de2c3d3ee0f63ebbdc18be70d0ad02b5d6a858",
+            "content": "sha256:70ee01f2462af39bfe2a744fbb2ff9e788a2798240cbcb4f15506246edda3b41",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_new_host_boot_and_a_new_dashboard_each_require_the_whole_read"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "Idle heartbeat passes neither read publications nor relaunch the bridge snapshot.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f0de2c3d3ee0f63ebbdc18be70d0ad02b5d6a858",
+            "content": "sha256:e0995e249ab658fa143f64b48325869ccbb6ca58b83c7b2d8033550080707ac6",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_idle_heartbeats_do_not_read_activity_or_launch_another_snapshot"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "Periodic healing/degraded wakes do not poll host activity or role records.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f0de2c3d3ee0f63ebbdc18be70d0ad02b5d6a858",
+            "content": "sha256:aa691a2ffe46be638aee5faa6072731811a8a9728109981a671e8efbb044836c",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_periodic_full_and_degraded_wakes_retain_host_without_reads"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "A failed boot attempt retries only after new publication bytes.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f0de2c3d3ee0f63ebbdc18be70d0ad02b5d6a858",
+            "content": "sha256:657c81f0bca6a3a7f93cd2503b1e31f6283716859818c06fd738baa68a29e8d4",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_failed_boot_reconcile_retries_only_after_a_new_publication"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

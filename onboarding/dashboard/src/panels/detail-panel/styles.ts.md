@@ -7,8 +7,8 @@
 ## Purpose
 
 The Panda CSS recipes of the DetailPanel, extracted from `DetailPanel.tsx` by the
-260731-EFA-L8 split. Owns the detail container, lifecycle phase/identity chrome, breadcrumb,
-master-less slice fallback, worktree spine and change-set/brief-state disclosure styles.
+260731-EFA-L8 split. Owns the detail container, step marks, breadcrumb, worktree spine and the remaining
+change-set, grant and brief-state disclosure styles.
 The fixed document pages and their rows now use pageStyles.ts; retired old-page recipe definitions
 are not a second appearance owner.
 
@@ -16,7 +16,7 @@ are not a second appearance owner.
 
 ### Logic
 
-Static atoms are `css({...})`; `step` and `lane` are `cva` keyed on state. All colours
+Static atoms are `css({...})`; `step` is a `cva` keyed on step state; `lane` is keyed on code/memory kind. All colours
 go through `token(colors.*)`.
 
 Since `260921-ICR-L47`, three classes style the brief-state disclosure the entry controls share
@@ -59,8 +59,9 @@ No relevant domain documentation was found.
 
 ### Repo-Internal References
 
-- The panel layout/stepper/badge recipes. [2]
-- The slice/cross/spine recipes. [3]
+- The retained panel layout, step-mark and badge recipes. [2]
+
+- The retained slice-container, breadcrumb and worktree-lane recipes. [3]
 
 ### Cross-Repo References
 
@@ -69,3 +70,5 @@ No cross-repository implementation source governs this file.
 No applicable cross-repository source was found.
 
 - The current track-and-knob switch uses token styling; pending disables the button in the reader, not through a retained grantButton recipe. [4]
+
+The obsolete stepper, taskHead, sliceMeta and sliceButton exports are removed; those names are not current appearance owners. Task-page-specific recipes remain in pageStyles.ts.

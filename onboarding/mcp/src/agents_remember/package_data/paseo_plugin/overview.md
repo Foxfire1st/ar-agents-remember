@@ -10,7 +10,7 @@ The product-owned plugin bridges provisioned embed data and role-agent lifecycle
 
 ## Hot Path Summary
 
-`index.server.ts` exposes the embed RPC and wires host turn/permission/archive events into a shared tracker. `server/role_agents.ts` reads published role/task/report facts on each turn end; `server/turn_ended.ts` decides suppression, holding, claim invalidation and sending through the supplied host client.
+`index.server.ts` retains the embed RPC, contributes the host-activity snapshot RPC and installs two separate event owners. `server/host_activity.ts` publishes recorded agents' activity; `server/turn_events.ts` wires parent wakes through the shared tracker in `server/turn_ended.ts`. `server/role_agents.ts` supplies published role/task/report facts through one replaceable stat-generation cache, not a fresh JSON parse on each event.
 
 ## Structure And Boundaries
 
@@ -18,14 +18,18 @@ The client bridge steers the one native frame through exact parent-window/origin
 
 
 
-The provisioned embed list is read at plugin load, retaining visible malformed-data failure. Role facts have a different lifetime: role start publishes them and the turn-end handler reads them fresh. Pure decision tests establish selected event schedules without proving live-host installation or event delivery. Asynchronous turn-end/permission handlers catch and log failures instead of throwing into the host loop. Missing role facts yield no line; they are not reconstructed from source or titles.
+The provisioned embed list is read at plugin load, retaining visible malformed-data failure. Role facts have a different lifetime: role start publishes them, and readers stat their path and reuse the parsed value only for the same device/inode/size/mtime/ctime generation. A changed registration replaces that single cached value; absence clears it and returns no records, while malformed content fails visibly. Pure decision tests establish selected event schedules without proving live-host installation or event delivery. Asynchronous turn-end/permission handlers catch and log failures instead of throwing into the host loop. Missing role facts yield no line; they are not reconstructed from source or titles.
+
+Host activity is a separate replaceable publication, bounded by the existing role-agent records. It starts incomplete, becomes usable only after a complete paginated host reconciliation, and returns to incomplete on unload. Events arriving during the whole read win over its older snapshot. Permission waits remain activity, and an idle snapshot invents no event timestamp. The snapshot RPC returns the plugin boot identity after reconciliation; the dashboard input qualifies that boot at its startup and on a newly observed plugin boot, not by periodic status polling. Parent-wake sends separately retain their turn/permission gates and use the host's explicit steer behavior.
 
 A line carries no agent final text. Parent permission waits and running turns defer notification; child activity holds it, while descendant restarts drop the older owed line, including an already claimed deferred one. The tracker is process-local and the source cap is distinct from the settings-reloaded role_message limit.
 
 ## Load-Bearing Files
 
-- `index.server.ts`: existing embed RPC and lifecycle event wiring.
-- `server/role_agents.ts`: typed per-agent fact reader.
+- `index.server.ts`: embed and host-activity RPCs, independent event owners and unload publication.
+- `server/host_activity.ts`: bound, boot-qualified host activity and atomic publication.
+- `server/role_agents.ts`: typed, stat-generation-cached per-agent fact reader.
+- `server/turn_events.ts`: contributed parent-wake handlers and steering sends.
 - `server/turn_ended.ts`: stateful pure notification decision.
 - `server/turn_ended.test.ts`: host-free schedules and preservation controls.
 
@@ -35,4 +39,6 @@ A line carries no agent final text. Parent permission waits and running turns de
 
 - The client bridge negotiates display replies while keeping native navigation, selected-screen admission and drawing/failure distinct. [3]
 - Keep embed RPC while wiring turn, permission and archive events to product-owned decisions; asynchronous handler failures are logged. [1]
-- Read fresh role/task/report facts for notifications without polling or source inference. [2]
+- Read current role/task/report registrations through one replaceable stat-generation cache; absence clears it and malformed content remains visible. [2]
+- Host activity is boot-qualified, record-bounded and event-driven; concurrent events win over the whole host read and no idle event time is invented. [4]
+- Parent-wake handlers retain the existing gates and send through explicit host steering. [5]

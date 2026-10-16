@@ -7,7 +7,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b764267a2ef673d3946c46be1260203ea22d0bc2",
+            "blob": "0f9f05a944c31ee07779d26dc71f162c2ace12bb",
             "content": "sha256:b8f6d12fa291cd4d4a7bd5a213fbc901e7f153a784282002b912a3053d6de1a6",
             "locator": {
               "kind": "symbol",
@@ -23,12 +23,54 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b764267a2ef673d3946c46be1260203ea22d0bc2",
+            "blob": "0f9f05a944c31ee07779d26dc71f162c2ace12bb",
             "content": "sha256:81f655e98837354e888e7b9a738a05ddaf73f699fab2cb94bbd527f4903437f1",
             "locator": {
               "kind": "symbol",
               "name": "formBadge"
             }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Order styling uses readiness and relation marks rather than a second task-state colour vocabulary.\n\nAnchor: Order CSS and common status presentation",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3c3cb0b2fb52df6c598ce02dadd3b8c3d692d817",
+            "content": "sha256:c59849315a9da1fb892e2e473b7172292f66628f3d24d867cd79b07d47f18a73",
+            "locator": {
+              "end": 783,
+              "kind": "line_range",
+              "start": 744
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3c3cb0b2fb52df6c598ce02dadd3b8c3d692d817",
+            "content": "sha256:9dfd3887a45addd84412a42a803e00b8fad72b2cb7f2b341091c3e1304347952",
+            "locator": {
+              "end": 825,
+              "kind": "line_range",
+              "start": 810
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "17da14e723222a8d50b4ed6f0595390ab1fe1f6a",
+            "content": "sha256:bc4ae159d2c06abf5b3013b49558caef6bdd9ce2485a940130f171bf32322519",
+            "locator": {
+              "end": 101,
+              "kind": "line_range",
+              "start": 69
+            },
+            "path": "dashboard/src/panels/detail-panel/pageParts.tsx"
           },
           "kind": "code"
         }

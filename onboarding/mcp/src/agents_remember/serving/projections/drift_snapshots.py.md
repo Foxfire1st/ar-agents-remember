@@ -24,44 +24,21 @@ repository/branch pair and returns a small result payload with the path,
 repository, branch, removal state, and an honest reason when the file is already
 absent or unlink fails.
 
-`prune_orphaned_drift_snapshots(config, *, contracts=None)` scans the coordination drift snapshot
-directory. It keeps valid snapshots for configured repositories, keeps valid
-snapshots whose `(repository, branch)` still matches a leaf enclosure with an
-existing `code_worktree`, skips unreadable or wrong-schema JSON files, and
-physically deletes the remaining valid worktree snapshots. This keeps invalid
-diagnostic files available for manual inspection while pruning rows the memory
-mirror would otherwise keep rendering forever.
+`prune_orphaned_drift_snapshots` first enumerates actual native branch refs for configured repositories and contract code repositories. Only a complete branch/contract/snapshot census permits valid orphan removal. Configured membership or an existing code-worktree directory alone does not preserve a nonexistent branch, and a failed Git/listing read or skipped contract proves no removal. Unlink failure is explicit; malformed/unreadable snapshots are kept diagnostically and invalidate the kind’s removal proof.
 
-Since 260712-PTS-L2 the live-worktree keys come from a `ContractSnapshot`:
-`_active_worktree_snapshot_keys(coordination_root, *, contracts=None)` iterates
-`snapshot.contracts.values()` instead of running its own
-`iter_leaf_enclosure_contracts` walk + `load_contract` parse. The projection tick
-passes its shared per-tick snapshot, so pruning adds ZERO contract parses — the
-third per-tick contract walk is gone; a standalone call (`contracts=None`) builds
-a local one-shot snapshot with identical behavior. The snapshot's contracts are
-shared across ticks and are only read here, never mutated.
+The injected immutable `ContractSnapshot` is reused for repository/branch identities; a standalone call builds its own snapshot. `_observe_branches` lists refs once per repository root on drift/task invalidation, not idle heartbeat, and uses the same subject names as the producing snapshots. `read_drift_snapshot` is shared by pruning and projection and validates schema, nonempty repository/branch, nonnegative integer counts (not bool) and optional nonempty fingerprint. Missing fingerprints preserve older acknowledgements; they are not invented recovery evidence.
 
 ### Conventions
 
-The filename contract is shared through the kernel primitive rather than reconstructed in
-each producer or test. Snapshot validity is schema-based
-(`ar-drift-snapshot/v1`), matching the observer reader's contract.
+Filename naming remains kernel-owned. Shared `read_drift_snapshot` enforces more than the schema tag; pruning and projection consume the same validated payload shape.
 
 ### Invariants And Boundaries
 
-- The drift snapshot path helper is the single naming contract for drift
-  producer writes, reader fixtures, projection pruning, and cleanup deletion.
-- Pruning only deletes valid drift-snapshot JSON with a recognized schema.
-  Malformed, unreadable, or wrong-schema files are skipped rather than guessed.
-- Configured repository snapshots are durable analytical inputs and are never
-  pruned as worktree orphans.
-- Worktree snapshots survive while their leaf contract exists and the recorded
-  code worktree path still exists.
-- Cleanup removes only the exact code-worktree snapshot named by its contract;
-  unrelated repository/branch snapshots remain for their own lifecycle.
-- Pruning never parses contracts inside the projection tick: it consumes the
-  injected shared `ContractSnapshot` (and treats its contracts as immutable);
-  only a standalone call builds its own local snapshot.
+- Kernel naming/exact cleanup boundaries remain distinct from serving orphan pruning.
+- Native branch existence decides live drift subjects; configured repository and directory presence are insufficient.
+- Any incomplete source proof prevents removal for the kind; invalid snapshots remain available for diagnosis.
+- Contract snapshots are read-only and shared; standalone calls may build their own.
+- Changed complete fingerprints identify drift recurrence; missing fingerprints and unknown health do not.
 
 ### Todos
 
@@ -86,9 +63,7 @@ drift producer, the observer projection tick, and worktree cleanup.
 
 No meaningful cross-repo references found.
 
-- The helper centralizes the sanitized drift snapshot filename and exact dry-run/removal payload.  Anchor: "def drift_snapshot_path(coordination_root: Path", "def remove_drift_snapshot(", "return _remove_snapshot_file(" [1]
-- Projection pruning keeps configured repositories and still-existing leaf worktrees, skips invalid snapshots, and removes valid orphaned snapshots.  Anchor: `prune_orphaned_drift_snapshots`, `_active_worktree_snapshot_keys`, `_read_valid_snapshot` [2]
-- `prune_orphaned_drift_snapshots` and `_active_worktree_snapshot_keys` take the keyword-only `contracts` snapshot; the tick-injected snapshot means zero pruning-time contract parses.  Anchor: `prune_orphaned_drift_snapshots`, `_active_worktree_snapshot_keys` [3]
-- The shared per-tick contract snapshot + stat-identity parse cache the pruner consumes.  Anchor: `ContractSnapshot`, `ContractSnapshotCache` [4]
-- The projection-input module exposes the `read` and refresh entries.  Anchor: "def read(", "def _refresh_tasks(", "def _refresh_drift(" [5]
-- The projection-store module exposes the `project_and_write` entry.  Anchor: "def project_and_write(" [6]
+- Kernel naming/exact cleanup retains its boundary. [1]
+- Drift pruning reuses the supplied contract snapshot (or builds one standalone), lists native heads once per configured/contract code repository and observes configured and worktree branch identities. A skipped contract, failed ref census or invalid/unreadable snapshot makes removal proof incomplete: invalid snapshots are skipped and every valid snapshot is retained. Only a complete census permits removal of a valid snapshot whose repository/branch identity is absent; physical checkout existence alone is not the keep policy. [2]
+- Shared snapshot parsing rejects malformed counters/identity/fingerprint data. [3]
+- Contract snapshots remain immutable shared inputs. [4]

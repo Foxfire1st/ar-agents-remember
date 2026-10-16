@@ -27,6 +27,6 @@
   "revision": 1,
   "schema": "ar-invariant/v1",
   "statement": "Choke point routes non-active-lifecycle calls to the workspace writer; active-lifecycle path unchanged.",
-  "status": "proposed",
+  "status": "retired",
   "supersedes": []
 }

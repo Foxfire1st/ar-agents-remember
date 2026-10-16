@@ -1,0 +1,239 @@
+{
+  "path": "mcp/tests/test_drift_dismissal_occurrences.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "76f09e623a85d583ee25fa05949870915f30d8e1",
+        "content": "sha256:2402aa264b4152b80dff028d35d1aaff7288af2abddbddd6570280d002216f2b",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_drift_actual_http_click_restart_and_new_occurrence"
+        }
+      },
+      "facet": "The real ASGI drift case asserts accepted dismissal with its published fingerprint, unchanged queue suppression over changed check timestamps and a newly constructed server, then returns the same itemId when the fixture publishes a changed occurrence fingerprint. It does not claim to compute that fixture fingerprint from finding rows.",
+      "id": "PRF-8S5Q21",
+      "invariant": "INV-TT5CTW",
+      "origin": {
+        "handoffEntry": "L168-W-R166-03",
+        "leaf": "260928-MIK-L168"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "76f09e623a85d583ee25fa05949870915f30d8e1",
+        "content": "sha256:6530d1d2fab2cafc6619f3658b250e9e5a55dc1debf3a103c563fb4371e4f64d",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_incomplete_drift_census_still_publishes_valid_changed_occurrences"
+        }
+      },
+      "facet": "Malformed/unusable sibling snapshots or a failed branch census do not suppress a valid changed positive occurrence, but preserve the prior acknowledgement bytes and fingerprint in both retained and newly constructed readers.",
+      "id": "PRF-EHFR5G",
+      "invariant": "INV-D9T2BC",
+      "origin": {
+        "handoffEntry": "L168-W-R166-05-06",
+        "leaf": "260928-MIK-L168"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "76f09e623a85d583ee25fa05949870915f30d8e1",
+        "content": "sha256:136a88c6b7f88b54815acbacbc52877646e486e0953972e374c4c210f474787b",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_legacy_snapshot_fingerprint_uses_all_actionable_rows_and_no_clock"
+        }
+      },
+      "facet": "The legacy drift-writer case passes two actionable DriftRows, reverses their order without changing identity, changes a finding note at the same counts to obtain a different fingerprint, and ignores an added up-to-date row. It does not exercise a truncated sample window.",
+      "id": "PRF-MAKR8R",
+      "invariant": "INV-TT5CTW",
+      "origin": {
+        "handoffEntry": "L168-W-R166-03",
+        "leaf": "260928-MIK-L168"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "76f09e623a85d583ee25fa05949870915f30d8e1",
+        "content": "sha256:b4a9f70b2f0dc8caac5152dd7e8c72f5c9a6a7c3d1997b7e664aa9bd127f5b07",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_failed_or_partial_drift_pass_adopts_and_prunes_nothing"
+        }
+      },
+      "facet": "The parameterized source case combines legacy/current acknowledgement fingerprints with partial refresh, malformed snapshot, failed native branch read, failed directory enumeration, explicitly partial fingerprint and invalid counts. It asserts unchanged acknowledgement bytes/identity; one valid changed positive item may still be visible on a failed census.",
+      "id": "PRF-PEZ75P",
+      "invariant": "INV-D9T2BC",
+      "origin": {
+        "handoffEntry": "L168-W-R166-05-06",
+        "leaf": "260928-MIK-L168"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "76f09e623a85d583ee25fa05949870915f30d8e1",
+        "content": "sha256:93af76b84b44e2526606dd44602d0d2eb2d7294f2e35bcbad34abffd428d94d8",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_healthy_drift_and_deleted_branch_end_only_their_occurrences"
+        }
+      },
+      "facet": "A healthy current drift snapshot ends its acknowledgement; a native temporary branch with no snapshot retains its acknowledgement, then actual branch removal permits removing its acknowledgement and orphan snapshot without deleting the main branch snapshot.",
+      "id": "PRF-RHDJR0",
+      "invariant": "INV-D9T2BC",
+      "origin": {
+        "handoffEntry": "L168-W-R166-05-06",
+        "leaf": "260928-MIK-L168"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "76f09e623a85d583ee25fa05949870915f30d8e1",
+        "content": "sha256:7f4f76ec1a942b71b3a6d16952f1ab5f96a1f263ed2cd659c33ae45972e82753",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_existing_drift_row_adopts_once_without_resurfacing_then_changes"
+        }
+      },
+      "facet": "A pre-fingerprint acknowledgement survives missing fingerprint reads, adopts the first usable fingerprint silently, retains that identity through another missing read and returns only when a different fingerprint is published.",
+      "id": "PRF-S8WKYW",
+      "invariant": "INV-TT5CTW",
+      "origin": {
+        "handoffEntry": "L168-W-R166-03",
+        "leaf": "260928-MIK-L168"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Fingerprint ignores order and nonactionable rows but changes with a finding despite equal counts.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "76f09e623a85d583ee25fa05949870915f30d8e1",
+            "content": "sha256:136a88c6b7f88b54815acbacbc52877646e486e0953972e374c4c210f474787b",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_legacy_snapshot_fingerprint_uses_all_actionable_rows_and_no_clock"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Click retains the shown fingerprint; time-only refreshes stay dismissed and changed findings return.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "76f09e623a85d583ee25fa05949870915f30d8e1",
+            "content": "sha256:c16d27ced3fd06f1a411c6049fbf278bd18df5422dbf35720b10fd202807bab2",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_drift_click_keeps_published_fingerprint_and_only_changed_findings_return"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Legacy acknowledgement adopts once and later changed findings recur.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "76f09e623a85d583ee25fa05949870915f30d8e1",
+            "content": "sha256:7f4f76ec1a942b71b3a6d16952f1ab5f96a1f263ed2cd659c33ae45972e82753",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_existing_drift_row_adopts_once_without_resurfacing_then_changes"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "Partial, malformed, unreadable and invalid-count inputs leave acknowledgement bytes intact.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "76f09e623a85d583ee25fa05949870915f30d8e1",
+            "content": "sha256:b4a9f70b2f0dc8caac5152dd7e8c72f5c9a6a7c3d1997b7e664aa9bd127f5b07",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_failed_or_partial_drift_pass_adopts_and_prunes_nothing"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "Incomplete overall census may publish good changed findings without mutating stored dismissals.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "76f09e623a85d583ee25fa05949870915f30d8e1",
+            "content": "sha256:6530d1d2fab2cafc6619f3658b250e9e5a55dc1debf3a103c563fb4371e4f64d",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_incomplete_drift_census_still_publishes_valid_changed_occurrences"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "Healthy drift and proved branch deletion reclaim only their own occurrences.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "76f09e623a85d583ee25fa05949870915f30d8e1",
+            "content": "sha256:93af76b84b44e2526606dd44602d0d2eb2d7294f2e35bcbad34abffd428d94d8",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_healthy_drift_and_deleted_branch_end_only_their_occurrences"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "Real in-process ASGI dismiss/state routes survive restart and reveal a new finding.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "76f09e623a85d583ee25fa05949870915f30d8e1",
+            "content": "sha256:2402aa264b4152b80dff028d35d1aaff7288af2abddbddd6570280d002216f2b",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_drift_actual_http_click_restart_and_new_occurrence"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "Invalid retired-session rows are compacted and only surviving native branch subjects remain; unchanged reread does not rewrite.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "76f09e623a85d583ee25fa05949870915f30d8e1",
+            "content": "sha256:44eaef062aa34d5d2267c255ee3c7e4a9b5056686bc13205194b3d47bbc62f25",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_native_branch_census_bounds_ten_thousand_sessions_and_one_thousand_worktrees"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -32,7 +32,12 @@ not witness concurrent edits, ignore-file restoration or mode, preparation failu
 
 The description case rejects restoration of `drift_check` registration, then checks the surviving `context_packet` include-drift description, its longer-explanation pointer and both shipped skill populations. It also requires each c-02 copy to contain the ordinary-candidate statements "a current `onboarding_trace` row about the file" and "a counted change of its card alone never answers". Those static corpus assertions do not remove L53's amended, leaf-local old-MAIN-LINE counted-card exception. Measurement/currentness/advisory obligations survive the retired tool; the removed registration sentence does not. Context requests no longer carry the removed `include_providers` argument.
 
+The complete-finding regression changes a reference slot beyond the retained one-row sample: counts and sample remain equal while `actionableFingerprint` changes. Repeating the same measurement or using detail_limit=0 leaves the fingerprint unchanged; malformed sidecar input yields null instead of a trusted complete fingerprint.
+
 ## Evidence
+
+- Full actionable findings, not the limited sample, own fingerprint identity; incomplete input yields null. [16]
+
 
 - Converted trees take the converted branch and skip legacy discovery. [1]
 - The converted result names every measured field. [2]

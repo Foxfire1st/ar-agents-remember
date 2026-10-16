@@ -14,7 +14,7 @@ Hermetic converted Git repositories distinguish added/deleted/modified names and
 
 Failure controls separately check unwritable destinations, failed replace, mid-stream failure and cleanup failure. Successful cleanup preserves earlier final bytes and removes partial files; failed cleanup reports an actual sibling .part residual and carries that truth to the caller. This is not a universal no-residue promise.
 
-Resource witnesses exercise admitted/refused report sizes, budget-family accounting, unmeasurable usage, repeated whole report content, paged realization identity coverage, cache reuse and declaration/line work at two sizes. Prepared work-count contrast is not a live aggregate CPU/RSS benchmark. The entry-point placement control checks a parseable report with a reports path component, not a universal runtime-path proof.
+Resource witnesses exercise admitted/refused report sizes, budget-family accounting, unmeasurable usage, repeated whole report content, paged realization identity coverage, cache reuse and declaration/line work at two sizes. Prepared work-count contrast is not a live aggregate CPU/RSS benchmark. The entry-point placement control supplies an explicit leaf `AgentBinding`, checks a parseable report and requires containment under the loaded contract's `worktree_group/reports`, not merely a `reports` component. This is fixture-bound placement, not a universal runtime-path proof.
 
 ## Evidence
 

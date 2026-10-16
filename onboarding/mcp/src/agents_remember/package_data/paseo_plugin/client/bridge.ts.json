@@ -133,8 +133,9 @@
         "blob": "663b73fe37299fe6e79d10c208cbb7663e90a281",
         "content": "sha256:d6e760ba1c471642d54b85a3dd2d74ce54bdbc71c7c35563d07708efc8db2421",
         "locator": {
-          "kind": "symbol",
-          "name": "installBridge"
+          "end": 576,
+          "kind": "line_range",
+          "start": 142
         }
       },
       "id": "RLZ-C3ZC91",

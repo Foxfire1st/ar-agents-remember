@@ -18,22 +18,6 @@
         }
       ]
     },
-    "2": {
-      "note": "Lifecycle tree grouping and wait formatting are pure display derivations.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "30cb14732f6d4d548c1ee9550ab342b849d1eb10",
-            "content": "sha256:b7d8d2f08c7133249b2f9e95e24cfe22c08f422f577c2fa7accefe7d51b0f870",
-            "locator": {
-              "kind": "symbol",
-              "name": "buildTree"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
     "3": {
       "note": "The converted drift names order with the legacy classifications, healthy first.",
       "targets": [

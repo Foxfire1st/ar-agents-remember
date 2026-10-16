@@ -100,34 +100,58 @@
       ]
     },
     "13": {
-      "note": "Pure lifecycle join, stable group identity, no provider model fallback\n\nAnchor: buildEngineRoomModel",
+      "note": "Published process nodes are mapped and ordered without a lifecycle/session/gate join; only enclosureKey and node are returned.",
       "targets": [
         {
           "anchor": {
-            "blob": "17b5df5bbd40a7851bc8af3aa48a9c214f8d7bed",
-            "content": "sha256:372a8285476452b89d202aa03e1d42f8cadce44de35371482779d44d54bf6218",
+            "blob": "a941853ffe69e4fe546c6c360148ed1b57599f4f",
+            "content": "sha256:bcda3aa2cce27047c0cb5733f48b675cf7fe6f3c7d6f70c8d4a4fce04ced66a4",
             "locator": {
-              "end": 53,
-              "kind": "line_range",
-              "start": 21
+              "kind": "symbol",
+              "name": "buildEngineRoomModel"
             },
             "path": "dashboard/src/panels/engine-room/buildEngineRoomModel.ts"
           },
           "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "bad0be86dae1aed46744012ec801cf83eccc8277",
+            "content": "sha256:4bfa8e024c7cdd1d3df1964521866e0686f43c426311412575cf353d467f200f",
+            "locator": {
+              "end": 60,
+              "kind": "line_range",
+              "start": 40
+            },
+            "path": "dashboard/src/panels/engine-room/buildEngineRoomModel.test.ts"
+          },
+          "kind": "test"
         }
       ]
     },
     "14": {
-      "note": "Slice equality, memoized join, repository ledger selection, generation map key\n\nAnchor: EngineRoomImpl",
+      "note": "Process/ledger slice subscriptions, memoized process-only mapping, selected enclosure and repository ledger retain their own source boundaries.",
       "targets": [
         {
           "anchor": {
-            "blob": "20386ce24dbf50d2623c264f361b4a10dff165c5",
-            "content": "sha256:077d5808972124166673c4916a3678f5200701eaaa2e49727a280fb9361280b7",
+            "blob": "c89382b7530853796de958e287f52a05bf0222f3",
+            "content": "sha256:2aede7278b5afa2f34d995f55e47a09251c5042e5d230c595155d47469266519",
             "locator": {
-              "end": 162,
+              "kind": "symbol",
+              "name": "EngineRoomImpl"
+            },
+            "path": "dashboard/src/panels/EngineRoom.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c89382b7530853796de958e287f52a05bf0222f3",
+            "content": "sha256:54510dd877359167a4bf16da1db9e12cc0059f54475251600c808b394e850204",
+            "locator": {
+              "end": 167,
               "kind": "line_range",
-              "start": 88
+              "start": 105
             },
             "path": "dashboard/src/panels/EngineRoom.tsx"
           },
@@ -367,16 +391,15 @@
       ]
     },
     "24": {
-      "note": "Source-lineage diagnostic and responder admission\n\nAnchor: DiagnosticsPanel, DiagnosticActionRow",
+      "note": "Source-lineage state remains a display fact, while the diagnostics action row renders only Affordance and no former gate responder.",
       "targets": [
         {
           "anchor": {
             "blob": "a5f4ae8184249b0af91433e1c8892c6dc9713e32",
-            "content": "sha256:d3442e6ec15ac0a8224a0cb2fea1ce92ac3d81c8f62236f6bc90238a10335b4a",
+            "content": "sha256:ed306a367ccf998264a92f03640990df03491a65a104219da50204f201d02220",
             "locator": {
-              "end": 64,
-              "kind": "line_range",
-              "start": 59
+              "kind": "symbol",
+              "name": "DiagnosticsPanel"
             },
             "path": "dashboard/src/panels/engine-room/DiagnosticsPanel.tsx"
           },
@@ -384,12 +407,11 @@
         },
         {
           "anchor": {
-            "blob": "b8f943240da1fdfbe832351f9f1f6646dbaebe0e",
-            "content": "sha256:5a6b63c76bb156b98c500b4c8f52697e46f58d2c3e8c6a72e37d0c4569c999c0",
+            "blob": "a5f4ae8184249b0af91433e1c8892c6dc9713e32",
+            "content": "sha256:ccaa718c09af11cc7b3d63386664583d9bdf8d7b6175a239c5d752fbf9941cf1",
             "locator": {
-              "end": 193,
-              "kind": "line_range",
-              "start": 163
+              "kind": "symbol",
+              "name": "DiagnosticActionRow"
             },
             "path": "dashboard/src/panels/engine-room/DiagnosticsPanel.tsx"
           },
@@ -538,6 +560,36 @@
               "start": 63
             },
             "path": "dashboard/src/panels/engine-room/EnclosureCanvas.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "31": {
+      "note": "Enclosure status joins the exact native entry worktree.enclosure and delegates to TaskStatusWord; no matching entry renders no task word, not an invented lifecycle status.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "054ead2663c65b7d2efb4b784b2c7d7ae25d7dca",
+            "content": "sha256:054b7d812da4a60d9f8bde34d7598a2e63c5d89fef4ec123063c50fda9ebe32b",
+            "locator": {
+              "kind": "symbol",
+              "name": "BoundTaskStatus"
+            },
+            "path": "dashboard/src/panels/engine-room/EnclosureStackList.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "054ead2663c65b7d2efb4b784b2c7d7ae25d7dca",
+            "content": "sha256:c408d1856263ac544e7b8bcc91f3739c27d6e1abeaea499b75932c2a951cebe6",
+            "locator": {
+              "end": 107,
+              "kind": "line_range",
+              "start": 78
+            },
+            "path": "dashboard/src/panels/engine-room/EnclosureStackList.tsx"
           },
           "kind": "code"
         }

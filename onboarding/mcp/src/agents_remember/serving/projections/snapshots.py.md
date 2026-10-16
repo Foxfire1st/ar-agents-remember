@@ -10,7 +10,7 @@ File-surface projection edge for current provider snapshots and re-exported encl
 
 ## Code Commentary
 
-read_providers combines the captured workspace snapshot with only admitted active worktree provider groups. Worktree resource identities come from the isolated provider settings and are inspected together, with individual fallback for partial Docker failures; unavailable inspection is not invented readiness. The facade re-exports split current readers so file I/O remains at the edge while observer reduction is pure. Shared ContractSnapshot permits one per-tick contract census; task-document readers retain JSON-primary validation and lifecycle/series identity, while engine landing refresh keeps its own publication boundary.
+`read_providers` combines the configured workspace snapshot with contract-admitted worktree groups. Workspace existence uses configured identities via `workspace_repository_id`; only explicit producer health proves recovery. Worktree resources/settings are inspected with existing partial-Docker fallback, never invented readiness. Incomplete current-state, settings, container or fixed-level enumeration reads invalidate removal proof, even if some nodes remain displayable. The facade exports canonical task readers rather than lifecycle/series readers, and enclosure/engine readers reuse supplied immutable ContractSnapshot values. Engine landing refresh retains its separate publication owner.
 
 Task-document observation deliberately tolerates unknown writer-version fields without loosening authoring: `_projected_document` removes only paths diagnosed as extra_forbidden and validates again in a bounded pass loop. Any missing-required, bad enum or malformed nested field without that removable-extra route still withholds the document. A newer optional field must not erase an otherwise valid completed leaf; tolerance does not admit arbitrary malformed truth. The facade re-exports the canonical reader from snapshots_impl/_task_documents.py, where the enforcement lives.
 
@@ -20,10 +20,8 @@ Current source interpretation only; no fresh execution or grade.
 
 ## Source-bound reference inputs
 
-- [1]
-- [2]
-- The canonical projected-document reader prunes only extra_forbidden paths, revalidates in bounded passes and still withholds other malformed truth. [5]
-- [6]
+- Canonical task-source and document readers remain read-only. [1]
+- The extracted parser retains addressed unknown-field pruning without forgiving other malformed data. [5]
 - [7]
 - [8]
 - [9]

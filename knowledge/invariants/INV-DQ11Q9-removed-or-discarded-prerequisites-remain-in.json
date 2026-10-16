@@ -5,10 +5,11 @@
     ],
     "justification": "The explicit-write checker and dependency snapshot adapter are separate owners whose contract prevents a read from erasing historical removed-task IDs while a later field write silently keeps invalid prerequisites."
   },
-  "applicability": "Existing waitsFor references whose prerequisite was removed, discarded or abandoned, and the next explicit authoring of that field.",
+  "applicability": "Existing waitsFor references to removed tasks, and the next explicit authoring of that field; retained abandoned tasks are distinct.",
   "conditions": [
-    "Existing data retains the ID and dependency facts show it as gone.",
-    "The next explicit field write must remove IDs no longer admitted by the master’s current task index."
+    "Existing references are not rewritten during a read; synthetic missing tasks display as gone.",
+    "The next explicit field write removes IDs no longer admitted by the master current task index.",
+    "Abandonment alone is not synthetic gone."
   ],
   "exclusions": [
     "Silently rewriting the historical reference during a read or an unrelated edit.",
@@ -26,9 +27,9 @@
     "leaf": "260928-MIK-L162",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-invariant/v1",
-  "statement": "Removed or discarded prerequisites remain in existing waitsFor data and display as gone, but the next explicit write of that field must drop those IDs.",
+  "statement": "Removed prerequisites remain in existing waitsFor data and display as gone; the next explicit write of that field drops IDs no longer admitted by the master task index. A known abandoned task instead retains its native aborted state, not a fabricated gone marker.",
   "status": "proposed",
   "supersedes": []
 }

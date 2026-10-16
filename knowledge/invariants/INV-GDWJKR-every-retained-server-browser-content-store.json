@@ -1,0 +1,37 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test",
+      "prevents_costly_mistake",
+      "spans_locations"
+    ],
+    "justification": "Future changes to task-page reads, conditional transport, native generation capture or retained-content ownership must prevent stale or unbounded cache reuse and a counter failure blocking the document. Named current source assertions guard the specified facets; historical timing/count samples remain task-local, not enduring obligations or fresh Curator grades."
+  },
+  "applicability": "The introduced server/browser response-content retention owners, top-level generation tables and pending-read collections.",
+  "conditions": [
+    "Server result/repository/object-observation tables and per-read observations/pending values use the named capacity; full-body retention also uses its byte limit.",
+    "Browser body/preparation and conditional result owners enforce their named entry/byte limits; excess pending reads are cancelled and late aborted results cannot be retained.",
+    "LRU eviction and oversized-result nonretention permit the current answer without allowing navigation history to grow retained content indefinitely."
+  ],
+  "exclusions": [
+    "Named bounded content tables are distinct from the native repository corpus they observe and the independent observer/event stores.",
+    "Historical producer run/capacity samples are not assertions of current configured limits or fresh Curator execution."
+  ],
+  "id": "INV-GDWJKR",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "sync-L81-primary-regressions.txt; sync-L81-dashboard.txt; counters256/summaries128/files256 bounds exercised"
+      ],
+      "path": "A011-bounded-generation-content-33.json"
+    },
+    "handoffEntry": "L168-W-R168-07",
+    "leaf": "260928-MIK-L168",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Every retained server/browser content store and pending-read set has a named LRU or cancellation bound.",
+  "status": "proposed",
+  "supersedes": []
+}

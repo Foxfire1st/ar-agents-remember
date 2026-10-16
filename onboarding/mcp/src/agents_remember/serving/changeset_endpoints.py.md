@@ -76,9 +76,10 @@ records no leaf id.
 The side names are the words the change-set shape already publishes (`code`/`memory`), so a reader who
 is told which side is missing reads the same word the payload uses for it. The absence kind is a
 `Literal` alias with a named constant for the one degradable value, rather than a bare string at each
-raise site. The module imports `run_git` from `kernel/git_command` and `WorktreeContract` from
-`worktrees/worktree_contract` — the same two owners `serving/changeset.py` uses — and nothing else; it
-holds no FastAPI import, so it cannot become a second route surface.
+raise site. The module imports `read_git as run_git` from `serving/changeset_reads` and
+`WorktreeContract` from `worktrees/worktree_contract`. The serving reader caches successful fixed
+Git reads and delegates execution to the guarded kernel runner; this module itself imports no
+FastAPI owner and cannot become a second route surface.
 
 ### Invariants And Boundaries
 
@@ -104,6 +105,8 @@ No domain documentation source is configured for this repository (`system/source
 No configured domain documentation could be checked.
 
 ### Repo-Internal References
+
+- The endpoint resolver imports the serving cached reader as its local `run_git`; successful reads use the sole kernel Git runner. [14]
 
 Every claim on this card is checkable in the shipped candidate: this module's own docstring and
 functions, the contract loader whose recorded cells it reads, the Git helper it probes with, the

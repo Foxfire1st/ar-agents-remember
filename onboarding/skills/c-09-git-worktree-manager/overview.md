@@ -16,6 +16,8 @@ Closeout, sync, checkpoint and integration bind the actual code/memory refs and 
 
 The configured enclosure contract is the public operation address. Public sync loads that contract, validates the request and worktree authority, and delegates to the selection or sync transaction owner. Its preview skips fetching and does not publish selection or mutate journal residue.
 
+`worktree_start` creates the task worktree and records its location; `worktree_attach` resolves the configured contract and reports that worktree. Neither instruction adopts or resumes an ambient session lifecycle. The landing chain retains its own contract lifecycle, distinct from native task stage and host activity.
+
 Atomic-series admission is contract-scoped: each canonical series contract owns its activation record, including when masters share an exact code/memory source pair. The skill identifies manager dispatch, worker dispatch, atomic start, and attach as selecting operations; reviewer and curator inspection is not selection. Selection publishes `reconciling` without suspending chat, process, worktree, contract, or an already-claimed lifecycle journal. It reconciles both protected source tips and publishes `active` only when they are current. One master's selection excludes no other, and multiple nonterminal contracts remain valid. Task authoring does not consult activation authority; the closeout queue projects active, reconciling, or vacant waiting candidates.
 
 The graph-less `atomic-sequential` default describes sprint shape: every commanded master executes atomically, with no declared dependency serializing independent masters. The queue implementation nevertheless refuses a sprint without `executionGraph` as `task-execution-topology-migration-required`; its message describes that default and offers graph authoring. The concurrency description therefore does not promise graph-less queue admission.
@@ -74,3 +76,5 @@ The memory layer's configured onboarding include paths do not contain `skills/**
 - The graph-less default describes concurrency, but queue admission refuses a missing execution graph. [3]
 - Finalization preserves immediate-parent identity assertions and nonterminal cleanup boundaries; actual leaf target resolution now refuses missing master/row authority instead of standalone completion. [7]
 - Closeout preview asks the mandatory gate on converted memory. [8]
+
+- Start/attach instructions describe task-worktree location and contract resolution, while the landing chain retains its own lifecycle. [13]

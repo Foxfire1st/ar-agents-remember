@@ -1,16 +1,16 @@
 {
   "path": "mcp/src/agents_remember/application/task_docs",
   "references": {
-    "1": {
-      "note": "Task-first publication and projection refresh, with shared preview and source preflight; atomic-lock intent has the disclosed discrepancy.",
+    "13": {
+      "note": "Source preparation and central publication use the repository lock, exclude nested publication and validate accepted bytes; the unbound-subTask guard reads its actual master and matching row number rather than only path existence.",
       "targets": [
         {
           "anchor": {
-            "blob": "eb17f15ae8c3ab296c94191b81ec35737c0625e8",
-            "content": "sha256:4d206d0dab49978f058b58afa65ebd16a43e03dd1ee6e725c91c5083efa842b7",
+            "blob": "3cdbb47739fd9663671343886ca7985545584789",
+            "content": "sha256:4f28ba262a9548b71c9f8272d0ff337b9257c577a0c59072448065bfd61bc8ac",
             "locator": {
               "kind": "symbol",
-              "name": "publish_task_doc_set"
+              "name": "run_task_doc_call"
             },
             "path": "mcp/src/agents_remember/application/task_docs/task_doc_publication.py"
           },
@@ -18,20 +18,8 @@
         },
         {
           "anchor": {
-            "blob": "eb17f15ae8c3ab296c94191b81ec35737c0625e8",
-            "content": "sha256:383cc34c4f8c6c784b4792da6156ab0c51348125af4d6277cd6a2e0c8d32f556",
-            "locator": {
-              "kind": "symbol",
-              "name": "publish_prepared_task_documents"
-            },
-            "path": "mcp/src/agents_remember/application/task_docs/task_doc_publication.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "0dcc3c1c6d4cd7078c1c23ab2db0215845db9a40",
-            "content": "sha256:0215690d3822c887adf5b93ab430bbd3991405ad216b390e0c5007bcf1eb37d4",
+            "blob": "3cdbb47739fd9663671343886ca7985545584789",
+            "content": "sha256:c5e141f1dc8fee5e0f37869b0f85bddc6ad170fb3e149c5c9c62fb4a208f7be8",
             "locator": {
               "kind": "symbol",
               "name": "publish_task_doc_transaction_and_refresh"
@@ -42,11 +30,11 @@
         },
         {
           "anchor": {
-            "blob": "eb17f15ae8c3ab296c94191b81ec35737c0625e8",
-            "content": "sha256:4bc67f0bcc1f1ceae7f2c62d0b8739e80465e397f0f076f7778761cceb513265",
+            "blob": "3cdbb47739fd9663671343886ca7985545584789",
+            "content": "sha256:3abe16a2f405376575435d7501ee6496991c46ebc9cde7f150dbfb6622861422",
             "locator": {
               "kind": "symbol",
-              "name": "preview_task_doc_projection_effects"
+              "name": "validate_task_doc_transaction"
             },
             "path": "mcp/src/agents_remember/application/task_docs/task_doc_publication.py"
           },
@@ -54,124 +42,13 @@
         },
         {
           "anchor": {
-            "blob": "eb17f15ae8c3ab296c94191b81ec35737c0625e8",
-            "content": "sha256:349152e3128018486243d62f95488305bb95b709485f6463e151842eee199c38",
+            "blob": "5feac1ca27da9704636c3bd2e080ed7572232898",
+            "content": "sha256:3683c3b6d4eec67c6b438ca80bef4fb7f29ccea83892e6481120c46493c46d39",
             "locator": {
               "kind": "symbol",
-              "name": "preview_task_doc_transaction_projection_effects"
+              "name": "task_doc_tool"
             },
-            "path": "mcp/src/agents_remember/application/task_docs/task_doc_publication.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "10": {
-      "note": "Caught archive-hook exceptions are reported failures.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "2db7333575772368f1d89440b5564a8734508da2",
-            "content": "sha256:ef342c0972e113bf14e6ae3438aef79de3067e82771d702495a3db30961a3451",
-            "locator": {
-              "kind": "symbol",
-              "name": "archive_hook"
-            },
-            "path": "mcp/src/agents_remember/application/task_docs/task_retirement_shared.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "11": {
-      "note": "Generic task-document edits preserve complete retired rows.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "712e27b2a76f23bb6a4b07b91b2c5e6d0de8bc48",
-            "content": "sha256:01f22d03770fe85bc3442abfdbac845b661905c2adbeff52ed34ec62cb9f3b8f",
-            "locator": {
-              "kind": "symbol",
-              "name": "require_retirement_proofs_unchanged"
-            },
-            "path": "mcp/src/agents_remember/application/task_docs/task_retirement_authority.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "12": {
-      "note": "The shared fact publisher performs publication, then invalidation and independent rebuild without acquiring a lock in this function.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "10e812f1f833b1b85b91249f1f1e9a49c9705556",
-            "content": "sha256:51c71c325cda52ea89e46620bcaac74a90165279b50b3668573225bec6712f9d",
-            "locator": {
-              "kind": "symbol",
-              "name": "publish_task_fact_mutation"
-            },
-            "path": "mcp/src/agents_remember/worktrees/task_fact_publication.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "13": {
-      "note": "Current task-document publication validates actual master/leaf-row authority, and preparation shares the central repository publication lock; the retired local path-existence guard supplies no current authority.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "eb17f15ae8c3ab296c94191b81ec35737c0625e8",
-            "content": "sha256:4f28ba262a9548b71c9f8272d0ff337b9257c577a0c59072448065bfd61bc8ac",
-            "locator": {
-              "end": 61,
-              "kind": "line_range",
-              "start": 46
-            },
-            "path": "mcp/src/agents_remember/application/task_docs/task_doc_publication.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "eb17f15ae8c3ab296c94191b81ec35737c0625e8",
-            "content": "sha256:3ebe67231d6ee4ac5adbea0e3618b82cd344f98fd7ad2eb05446492646c01d56",
-            "locator": {
-              "end": 174,
-              "kind": "line_range",
-              "start": 88
-            },
-            "path": "mcp/src/agents_remember/application/task_docs/task_doc_publication.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "14": {
-      "note": "Commanded-master completion requires abandonment or Completed without completion blockers.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "62da1ede0d811ea4f2eace680ae8014f504076ab",
-            "content": "sha256:2b210e22397bcbb2de02727b1307d66e3d68968cae6faa1de711857b129e60ca",
-            "locator": {
-              "kind": "symbol",
-              "name": "require_commanded_masters_completed"
-            },
-            "path": "mcp/src/agents_remember/application/task_docs/task_execution_topology.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "9a4dadaca3d9016d1bb15ecc4b32f28703d8697b",
-            "content": "sha256:7f28306c886b1b52741e3ebc61fe68455459adcd69b875eed46a30bd2b01c491",
-            "locator": {
-              "kind": "symbol",
-              "name": "master_is_terminal"
-            },
-            "path": "mcp/src/agents_remember/tasks/readiness.py"
+            "path": "mcp/src/agents_remember/application/task_docs/task_doc_tools.py"
           },
           "kind": "code"
         }
@@ -237,136 +114,83 @@
         }
       ]
     },
-    "2": {
-      "note": "Zero-or-one graph-bearing publication batch and in-memory title context.",
+    "16": {
+      "note": "Task-document batches keep each root/document destination, check one graph-bearing document and refuse task-root escapes before the common batch publisher.",
       "targets": [
         {
           "anchor": {
-            "blob": "ba61924c0c6d86077e472fcbb1704b53f58dbd8c",
-            "content": "sha256:029e36395687bcb19a3110d10d1a8633c0c6a2756ff73e891f0cc6a72c9f3967",
+            "blob": "3cdbb47739fd9663671343886ca7985545584789",
+            "content": "sha256:fc8e94630e2c131bf31b7b415eb66b7d1915330351c09c494347f018579b8e8d",
             "locator": {
               "kind": "symbol",
-              "name": "require_single_graph_document"
+              "name": "TaskDocPublication"
             },
-            "path": "mcp/src/agents_remember/application/task_docs/task_doc_graph_titles.py"
+            "path": "mcp/src/agents_remember/application/task_docs/task_doc_publication.py"
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "ba61924c0c6d86077e472fcbb1704b53f58dbd8c",
-            "content": "sha256:2265e240bd2e35f506d67c192f943bec0001760f46dd2b074c9f9775f1e7d11a",
+            "blob": "3cdbb47739fd9663671343886ca7985545584789",
+            "content": "sha256:2f67119657d5277a452af212cbd58e79ac3ed07930b8c8ec2eab3d4404ed023e",
             "locator": {
               "kind": "symbol",
-              "name": "build_publication_batch_graph_titles"
+              "name": "task_doc_publication_transaction"
             },
-            "path": "mcp/src/agents_remember/application/task_docs/task_doc_graph_titles.py"
+            "path": "mcp/src/agents_remember/application/task_docs/task_doc_publication.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3cdbb47739fd9663671343886ca7985545584789",
+            "content": "sha256:5c31b629b4b3d7bd088ab7b8212998815dcaec48f8a9feb2f5b2d22cee8d7de2",
+            "locator": {
+              "kind": "symbol",
+              "name": "_prepared_task_doc_overrides"
+            },
+            "path": "mcp/src/agents_remember/application/task_docs/task_doc_publication.py"
           },
           "kind": "code"
         }
       ]
     },
-    "3": {
-      "note": "Atomic raw-section shape validation and missing-register scaffolding.",
+    "17": {
+      "note": "Audited never-started discard retains source/evidence CAS and central preview/publication; reopen delegates the exact same contract identity to its owner.",
       "targets": [
         {
           "anchor": {
-            "blob": "cc9474f17cea3e11aea4acc45cbdc50a845748a8",
-            "content": "sha256:201c8c239a60abe73c9c1b17ef3c8aceabc8a804d252fe9f04b04af3f9ba9b0a",
+            "blob": "3a7be537ed0736785c1cae2541486c59a55e5861",
+            "content": "sha256:24f659ff6aebac8ef9a046573cd4485cc79ac6f4624c7775059c2313be125d2e",
             "locator": {
               "kind": "symbol",
-              "name": "scaffold_register_sections"
+              "name": "discard_unstarted_subtask"
             },
-            "path": "mcp/src/agents_remember/application/task_docs/task_doc_section_scaffolding.py"
+            "path": "mcp/src/agents_remember/application/task_docs/task_doc_discard.py"
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "cc9474f17cea3e11aea4acc45cbdc50a845748a8",
-            "content": "sha256:00e2cb0892599c527c41262733eae192a273b03e30399a1e0b4fc21e5cc03dde",
+            "blob": "3a7be537ed0736785c1cae2541486c59a55e5861",
+            "content": "sha256:66ac6e815d2e9c8ad965a98f5370140ec94a59469c9480d78361611fda79e686",
             "locator": {
               "kind": "symbol",
-              "name": "_validated_section_list"
+              "name": "_discard_candidate_result"
             },
-            "path": "mcp/src/agents_remember/application/task_docs/task_doc_section_scaffolding.py"
+            "path": "mcp/src/agents_remember/application/task_docs/task_doc_discard.py"
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "cc9474f17cea3e11aea4acc45cbdc50a845748a8",
-            "content": "sha256:36df522c5be895764f584db34afe331d60d8808e006440e17c44a1a26be304d1",
+            "blob": "2e7b4e4063062583a8100ef01afb46478ae25085",
+            "content": "sha256:8d6329c7b789884aaa6dc015e12cfdf386458ba18a62e5412de87ccec53ca039",
             "locator": {
               "kind": "symbol",
-              "name": "_requires_register_scaffolding"
+              "name": "task_reopen_tool"
             },
-            "path": "mcp/src/agents_remember/application/task_docs/task_doc_section_scaffolding.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "4": {
-      "note": "The step plane owns exact addressing and mutations. Its pre-L109 focused read projection is historical: current task_doc.read_steps returns operation-removed and callers read the canonical JSON/rendered files.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "cb6dc5c747288c4957f06245f18a89aee2f6abf9",
-            "content": "sha256:686a84728208b38930b1e1d555a55e2448fb53971e0808542af2ffff1864108b",
-            "locator": {
-              "kind": "symbol",
-              "name": "exact_step_target"
-            },
-            "path": "mcp/src/agents_remember/application/task_docs/task_doc_steps.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "cb6dc5c747288c4957f06245f18a89aee2f6abf9",
-            "content": "sha256:07aa3475c79541ba7178f4918565264e2ca301032a77c3e2e185ee6ad44e34e4",
-            "locator": {
-              "kind": "symbol",
-              "name": "set_step"
-            },
-            "path": "mcp/src/agents_remember/application/task_docs/task_doc_steps.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "cb6dc5c747288c4957f06245f18a89aee2f6abf9",
-            "content": "sha256:40f10bb1136cc4587f43c14f2e8202d578f2807156e9eae9ffb0b4c3e396e87c",
-            "locator": {
-              "kind": "symbol",
-              "name": "add_step"
-            },
-            "path": "mcp/src/agents_remember/application/task_docs/task_doc_steps.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "cb6dc5c747288c4957f06245f18a89aee2f6abf9",
-            "content": "sha256:0110412065db6535f1263f0e86b274b7f15308da44b8d61e422f3a493c09e2fb",
-            "locator": {
-              "kind": "symbol",
-              "name": "remove_step"
-            },
-            "path": "mcp/src/agents_remember/application/task_docs/task_doc_steps.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "587d8ac1d783ee53cfe3bcd9606019c82e4e4f6f",
-            "content": "sha256:b5efeb0ecc0551cda6ac5bc107af70b9350ff46c90db57b3a5ed72bcec624ad1",
-            "locator": {
-              "kind": "symbol",
-              "name": "step_payloads"
-            },
-            "path": "mcp/src/agents_remember/application/task_docs/task_doc_steps.py"
+            "path": "mcp/src/agents_remember/application/task_docs/task_reopen.py"
           },
           "kind": "code"
         }
@@ -383,109 +207,6 @@
               "kind": "file"
             },
             "path": "mcp/src/agents_remember/application/task_docs/task_doc_phrases.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "6": {
-      "note": "Execution evidence checks real code and memory output cells.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "3a5b76f8edef3f6348d35d03c421fa11f0458b9c",
-            "content": "sha256:b0409d0df5f5c85fdc04feb0b21787d2e816d36dccfb3383dd8fc9240423583b",
-            "locator": {
-              "kind": "symbol",
-              "name": "_contract_fact"
-            },
-            "path": "mcp/src/agents_remember/application/task_docs/task_unstarted_evidence.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "7": {
-      "note": "Canonical task, locator, enclosure, operation, seat, and report facts determine unstarted evidence.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "b8eb6d5507d20cefbb7c891fecbbd39b920a18b2",
-            "content": "sha256:b670432360795ec9bfc8c277e0a0fa10afed6dc066aaf91d5f06be431c693c40",
-            "locator": {
-              "kind": "symbol",
-              "name": "prove_task_unstarted"
-            },
-            "path": "mcp/src/agents_remember/application/task_docs/task_unstarted_evidence.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "8": {
-      "note": "The sprint retirement route publishes the sprint edit with the folder move and restores sources and folder on pre-archival failure.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "030a9c583f38ba2151341a9a2c7218f88f6be12f",
-            "content": "sha256:33e443b8d07b875e7539ba454f19759e24e7f77b76b166dbf979c4977e7da818",
-            "locator": {
-              "kind": "symbol",
-              "name": "retire_master"
-            },
-            "path": "mcp/src/agents_remember/application/task_docs/task_master_retirement.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "030a9c583f38ba2151341a9a2c7218f88f6be12f",
-            "content": "sha256:2cf4d5d3a831fc9b9b19a5370f10e9bc6350b2864c3355ec41f498e2a7a802a6",
-            "locator": {
-              "kind": "symbol",
-              "name": "_admit"
-            },
-            "path": "mcp/src/agents_remember/application/task_docs/task_master_retirement.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "030a9c583f38ba2151341a9a2c7218f88f6be12f",
-            "content": "sha256:a3513e0ae48124cdc2f33560fed1d38b11351728d897298e96fe022fcf0d7f81",
-            "locator": {
-              "kind": "symbol",
-              "name": "_publish_on_sprint"
-            },
-            "path": "mcp/src/agents_remember/application/task_docs/task_master_retirement.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "030a9c583f38ba2151341a9a2c7218f88f6be12f",
-            "content": "sha256:6295d0fd62ec91e3852ab1d3a5260471e33e9e93919b8318ed047bda89a48359",
-            "locator": {
-              "kind": "symbol",
-              "name": "_restore_source"
-            },
-            "path": "mcp/src/agents_remember/application/task_docs/task_master_retirement.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "9": {
-      "note": "The lone-master route writes its proof into the master's folder and moves that folder.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "030a9c583f38ba2151341a9a2c7218f88f6be12f",
-            "content": "sha256:99f39434dff0d4d2466ea1e1c9f186ab655643bcb2f9113016614a3de525dd58",
-            "locator": {
-              "kind": "file"
-            },
-            "path": "mcp/src/agents_remember/application/task_docs/task_master_retirement.py"
           },
           "kind": "code"
         }

@@ -11,6 +11,12 @@ The current source facts below replace the former operative inventory. The separ
 
 - Pre-repair card claim: Card declares fifteen registrars and lists six retired families. This is superseded archival wording, not a current prescription.
 
+The module docstring assigns process wiring to `create_server`: compact-content serialization, application services and the FastMCP instance. It does not install or advertise an ambient session lifecycle.
+
+
+
+- The registration module leaves compact serialization, application services and FastMCP process composition to create_server. [9]
+
 ### Source and authority bounds
 
 - Source comparison: `mcp/src/agents_remember/mcp/registration/__init__.py:33 (TOOL_REGISTRARS:)`.

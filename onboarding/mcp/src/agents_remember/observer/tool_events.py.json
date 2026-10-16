@@ -3,11 +3,30 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "1ce75e52bb168b85b81156109a18ca23cfa7b801",
-        "content": "sha256:2ad0c4b014e0ab79c3ed2458a859b378be9ed027f119369f088492819a6fcf2d",
+        "blob": "fa329467be28b558f2516086c2e67a82ec134f26",
+        "content": "sha256:f40a0e9c4ddacfbe2782d7b95dc9623a9e26a547faeb9b59fd28434d5d5c112b",
         "locator": {
           "kind": "symbol",
-          "name": "ToolEventWriter"
+          "name": "_answer_facts"
+        }
+      },
+      "id": "RLZ-3JQQSX",
+      "invariant": "INV-WZR89C",
+      "origin": {
+        "handoffEntry": "MIK-R115@v1 rule 3",
+        "leaf": "260928-MIK-L115"
+      },
+      "rationale": "The workspace event answer-facts owner records the actual delivered answer token count as one event fact; no ambient owner or projected aggregate is retained.",
+      "role": "unclassified"
+    },
+    {
+      "anchor": {
+        "blob": "fa329467be28b558f2516086c2e67a82ec134f26",
+        "content": "sha256:2ad0c4b014e0ab79c3ed2458a859b378be9ed027f119369f088492819a6fcf2d",
+        "locator": {
+          "end": 247,
+          "kind": "line_range",
+          "start": 189
         }
       },
       "id": "RLZ-TGXA8G",
@@ -26,7 +45,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1ce75e52bb168b85b81156109a18ca23cfa7b801",
+            "blob": "fa329467be28b558f2516086c2e67a82ec134f26",
             "content": "sha256:2ad0c4b014e0ab79c3ed2458a859b378be9ed027f119369f088492819a6fcf2d",
             "locator": {
               "kind": "symbol",
@@ -58,7 +77,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1ce75e52bb168b85b81156109a18ca23cfa7b801",
+            "blob": "fa329467be28b558f2516086c2e67a82ec134f26",
             "content": "sha256:d05666d40d53f780bef9ee3807bbfa4dee669370ccc05f22f2c0c2a3c696dd06",
             "locator": {
               "kind": "symbol",
@@ -74,7 +93,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1ce75e52bb168b85b81156109a18ca23cfa7b801",
+            "blob": "fa329467be28b558f2516086c2e67a82ec134f26",
             "content": "sha256:db24aaa4c677843b12e305218671e7a210542ea8f41f557a36cfbffdba17b67f",
             "locator": {
               "kind": "symbol",

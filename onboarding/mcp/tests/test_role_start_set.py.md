@@ -8,7 +8,12 @@ Operation-level fake-host tests prove the Manager-owned three-seat path: Worker 
 
 The suite also refuses an Architect set and a wrong-master Manager set without launch effects, while an ordinary Architect single Worker start remains admitted. These are executable fixture assertions, not evidence of the required paid sandbox/real-host journey.
 
+Set start publishes all three role facts. When an older held receipt lacks its role index, the first addressed message restores the Reviewer registration before agent-create starts its turn; the other held seat stays closed.
+
 ## Evidence
+
+- Held opener restores missing role facts before native agent-create and leaves the other held. [4]
+
 
 - One Manager call creates three agents with exactly the Worker opened. [1]
 - A partial creation completes with the same set identities and held seats intact. [2]

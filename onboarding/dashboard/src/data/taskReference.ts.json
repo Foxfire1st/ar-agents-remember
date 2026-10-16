@@ -1,0 +1,43 @@
+{
+  "path": "dashboard/src/data/taskReference.ts",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "62a20f9e70cd4f0fce12131c2c8aaa5103ee7f5b",
+        "content": "sha256:63740ae6755ced323dab287e2fa2c091f82fb86eafc12de9fa50c1dab340a7a1",
+        "locator": {
+          "end": 7,
+          "kind": "line_range",
+          "start": 5
+        }
+      },
+      "id": "RLZ-MY1HNA",
+      "invariant": "INV-1XA7H3",
+      "origin": {
+        "handoffEntry": "F5-V02",
+        "leaf": "260928-MIK-L127"
+      },
+      "rationale": "The repository/path taskReferenceKey qualifies document identity; no series/id fallback synthesizes a missing document address.",
+      "role": "primary-authority"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Implementation",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "62a20f9e70cd4f0fce12131c2c8aaa5103ee7f5b",
+            "content": "sha256:d352ee1818ed0442ecd9d14de3374ebec6467a4a0fa1ffa2bb50f64b5a787c86",
+            "locator": {
+              "kind": "symbol",
+              "name": "taskReferenceKey"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

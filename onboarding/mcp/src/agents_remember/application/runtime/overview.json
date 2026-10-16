@@ -138,6 +138,35 @@
           "kind": "code"
         }
       ]
+    },
+    "7": {
+      "note": "Startup installs only the workspace tool writer, snapshots its launch-bound caller once and falls back to an unbound chat when that binding cannot be read.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "611e5a498e074d169eccd6fffb1ac9327bdf7b8a",
+            "content": "sha256:883820f44db3e589d0d39935430a9aeb1c38331b86496c2268875938ac2a1a85",
+            "locator": {
+              "kind": "symbol",
+              "name": "initialize_mcp_application"
+            },
+            "path": "mcp/src/agents_remember/application/runtime/startup.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "611e5a498e074d169eccd6fffb1ac9327bdf7b8a",
+            "content": "sha256:2ffb803c1fa60fbe5b634fe22da023a150409f46617f6c60ffe3345f553d154e",
+            "locator": {
+              "kind": "symbol",
+              "name": "build_tool_event_writer"
+            },
+            "path": "mcp/src/agents_remember/application/runtime/startup.py"
+          },
+          "kind": "code"
+        }
+      ]
     }
   },
   "schema": "ar-onboarding-route/v1"

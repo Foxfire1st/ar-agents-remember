@@ -17,6 +17,38 @@
           "kind": "test"
         }
       ]
+    },
+    "2": {
+      "note": "Explicit cleanup reclaims only proved terminal lock-only subjects, preserving all exclusions at two sizes.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "296117d80139f8ec043d8af5744e643dc0c56939",
+            "content": "sha256:9c1bcdfee527e27cf530cb4d2c75185291b3447eb021a01a77144196f0f4bbfd",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_explicit_command_reclaims_terminal_lock_only_subjects_at_two_sizes"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Incomplete contract census names failure and preserves terminal locks.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "296117d80139f8ec043d8af5744e643dc0c56939",
+            "content": "sha256:d8c23e6f2894b2c61c6e78b0d113c16a5178d7da7128d6183f35934ca21acd9a",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_an_incomplete_contract_census_preserves_terminal_locks"
+            }
+          },
+          "kind": "test"
+        }
+      ]
     }
   },
   "schema": "ar-onboarding-file/v1"

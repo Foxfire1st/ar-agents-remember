@@ -3,16 +3,16 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "The component forcing suite.\n\nAnchor: `SprintGraphView` (describe)",
+      "note": "The component forcing suite.\n\nAnchor: seeded component assertions",
       "targets": [
         {
           "anchor": {
-            "blob": "75b9603dea6ab8c4ee6ef96b0d6fc5091ee2ddc7",
-            "content": "sha256:72ee89fcdd379f6750464bc36bcc827745ac7bbf5b8aacf7dde2f94548aaea2b",
+            "blob": "15344fb37b57a54e73496120e5afdedcda971695",
+            "content": "sha256:2d108842a22450524a79c13ded45e79b77d9ce14bbe63b12b3bf9f18b566f375",
             "locator": {
-              "end": 163,
+              "end": 193,
               "kind": "line_range",
-              "start": 102
+              "start": 106
             }
           },
           "kind": "test"
@@ -20,15 +20,29 @@
       ]
     },
     "2": {
-      "note": "The component under test.",
+      "note": "The component under test.\n\nAnchor: entry subscriptions and graph composition",
       "targets": [
         {
           "anchor": {
-            "blob": "8829a127167d50f8d61ecb19931a9ea01f2a4cd4",
-            "content": "sha256:97a09c391790911e5e80370caa44a6c2d9109dc5b05ae4e03c253ecd36acb591",
+            "blob": "10fa9b314498732151de2f419d952921a92ebe84",
+            "content": "sha256:56e0e9a3b737fb1f2626d83df52458e2b0a96fe664f54d6b63a369749b70cd40",
             "locator": {
-              "kind": "symbol",
-              "name": "SprintGraphView"
+              "end": 207,
+              "kind": "line_range",
+              "start": 148
+            },
+            "path": "dashboard/src/panels/sprint-graph/SprintGraphView.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "10fa9b314498732151de2f419d952921a92ebe84",
+            "content": "sha256:8f6f11b6c46f7fa3c0c786782a7032b042b5826856eee435d661f9abb67d8de6",
+            "locator": {
+              "end": 334,
+              "kind": "line_range",
+              "start": 264
             },
             "path": "dashboard/src/panels/sprint-graph/SprintGraphView.tsx"
           },

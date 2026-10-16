@@ -3,11 +3,11 @@
   "proves": [
     {
       "anchor": {
-        "blob": "6485197ec57fcccf71b04c0b2c5c1edadba69951",
-        "content": "sha256:9cbe2ca1368110e86096ffc93afd5ec53306e91e3a674b08777ddcd14455a11f",
+        "blob": "1706d2d63b87ac9534be9f4c5ce7fcf6d26afea2",
+        "content": "sha256:f6b837378f7db952e556be4625bb9be302e8328da117ae630beccdad172e7d55",
         "locator": {
           "kind": "symbol",
-          "name": "NativeWriterCompositionTests.test_whole_projection_settles_and_heals_capture_window_then_wakes_on_outside_update"
+          "name": "NativeWriterCompositionTests.test_whole_projection_settles_then_wakes_on_outside_task_update"
         }
       },
       "facet": "The exact controlled source case whole projection settles and heals capture window then wakes on outside update; this is a focused executable facet, not installed-runtime or full performance acceptance.",
@@ -21,15 +21,16 @@
   ],
   "realizes": [],
   "references": {
-    "1": {
-      "note": "The retained whole-projection witness asserts quiet own writes, bounded capture-window healing and genuine outside-write wake using lifecycle phase equality; no retired terminal/notifier/gate composition is claimed.",
+    "2": {
+      "note": "Quiet native own writes settle; dismissal capture-window healing and genuine outside task writes reach memory/disk projections.",
       "targets": [
         {
           "anchor": {
-            "blob": "179ce71625e9e37dfaf6fa901937de8bc0a7378f",
-            "content": "sha256:075701d526f14db01b7b1b575bfdd0037f961fd79db0b216455afd641c70a102",
+            "blob": "1706d2d63b87ac9534be9f4c5ce7fcf6d26afea2",
+            "content": "sha256:f6b837378f7db952e556be4625bb9be302e8328da117ae630beccdad172e7d55",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "test_whole_projection_settles_then_wakes_on_outside_task_update"
             }
           },
           "kind": "test"

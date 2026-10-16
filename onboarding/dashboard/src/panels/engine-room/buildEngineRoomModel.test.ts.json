@@ -120,12 +120,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "32f61ad92158b8a4519a35f725ce765c87f2ec99",
+            "blob": "8774e82c7f7a93dda014fdb8b987e2391fd21fd1",
             "content": "sha256:adc5e70699b6beb4f6da806e367cc006d742e94259f35a0eafbb048349540fd4",
             "locator": {
-              "end": 233,
+              "end": 169,
               "kind": "line_range",
-              "start": 233
+              "start": 169
             },
             "path": "dashboard/src/types/projection.ts"
           },
@@ -156,12 +156,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "32f61ad92158b8a4519a35f725ce765c87f2ec99",
+            "blob": "8774e82c7f7a93dda014fdb8b987e2391fd21fd1",
             "content": "sha256:166d2ecbb0660b6f73e4497602a536512544817207b812a075559071aa49a387",
             "locator": {
-              "end": 509,
+              "end": 369,
               "kind": "line_range",
-              "start": 509
+              "start": 369
             },
             "path": "dashboard/src/types/projection.ts"
           },
@@ -170,37 +170,55 @@
       ]
     },
     "8": {
-      "note": "Tests use the two-argument builder. Provider factory/workspace lift and fallback exclusivity cases are removed; an empty — source ownership, not executed visual proof.\n\nAnchor: `describe(\"buildEngineRoomModel\", () => {`",
+      "note": "The tests call buildEngineRoomModel with one process-list argument: a published process is retained by reference with only enclosureKey/node in its view, and empty input produces no provider fallback. Further pure assertions keep worktreeGroup as a stable enclosure key across an id change and order an active leaf before its cleanup-pending sibling. These are source assertions, not a fresh test or visual run.",
       "targets": [
         {
           "anchor": {
-            "blob": "2dc248c73a83b5fddc1b5884cbd6a534aa870820",
-            "content": "sha256:98747470f8a4055950f3d02d5d330bfa456520e421b98d432e1634c81f638341",
+            "blob": "bad0be86dae1aed46744012ec801cf83eccc8277",
+            "content": "sha256:6a95a4db556d25b70d1950b8ac868425e6e8ac280547470db7ced24e7c9a65f7",
             "locator": {
-              "end": 122,
+              "end": 47,
               "kind": "line_range",
-              "start": 57
+              "start": 41
             }
           },
           "kind": "test"
-        }
-      ]
-    },
-    "9": {
-      "note": "Tests use the two-argument builder. Provider factory/workspace lift and fallback exclusivity cases are removed; an empty — source ownership, not executed visual proof.\n\nAnchor: `export function buildEngineRoomModel(`",
-      "targets": [
+        },
         {
           "anchor": {
-            "blob": "17b5df5bbd40a7851bc8af3aa48a9c214f8d7bed",
-            "content": "sha256:06edae3b1f707ca3a669467fa064fdfbee75dac11f606210f04b52db81317568",
+            "blob": "bad0be86dae1aed46744012ec801cf83eccc8277",
+            "content": "sha256:c4ba3e887133ee733610301606b8196ad50b048f8cd3f29f83526285079fa5c8",
             "locator": {
-              "end": 54,
+              "end": 52,
               "kind": "line_range",
-              "start": 30
-            },
-            "path": "dashboard/src/panels/engine-room/buildEngineRoomModel.ts"
+              "start": 49
+            }
           },
-          "kind": "code"
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "bad0be86dae1aed46744012ec801cf83eccc8277",
+            "content": "sha256:7972010f0c2ee0f634c5c7bf33516fb114fb99f648ae004ad7a9e5cb4fdb7e9e",
+            "locator": {
+              "end": 60,
+              "kind": "line_range",
+              "start": 54
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "bad0be86dae1aed46744012ec801cf83eccc8277",
+            "content": "sha256:e68186036805de8ac63263b1ac69dc3403bab9ebac09b37580a6d2d922babe6a",
+            "locator": {
+              "end": 82,
+              "kind": "line_range",
+              "start": 62
+            }
+          },
+          "kind": "test"
         }
       ]
     }

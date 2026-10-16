@@ -1,0 +1,73 @@
+{
+  "path": "mcp/src/agents_remember/serving/changeset_reads.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "5c5bad11e569807e1f8ac3f6b751e29506700331",
+        "content": "sha256:06ce5567518bb5993819a7819480576ef5d30912e00f0833290d9626d0687545",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-3D6G48",
+      "invariant": "INV-ZNXX7H",
+      "origin": {
+        "handoffEntry": "L168-W-R168-PRESERVATION",
+        "leaf": "260928-MIK-L168"
+      },
+      "rationale": "All endpoint variants use the existing native computation under an exact observation capture.",
+      "role": "propagation-persistence"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Working diff counters use the native reader and register attribute inputs.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5c5bad11e569807e1f8ac3f6b751e29506700331",
+            "content": "sha256:9bd1058368a641b153f336e91799b4bbcc487930c3c224d971f824b3df7de61e",
+            "locator": {
+              "kind": "symbol",
+              "name": "changed_files_with_counts"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "A missing text result needs successful native absence proof before retention.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5c5bad11e569807e1f8ac3f6b751e29506700331",
+            "content": "sha256:58d968db46a6fa1635856ce62c7884812309e8cdc0bb9577d19ad4e5a04d9e01",
+            "locator": {
+              "kind": "symbol",
+              "name": "commit_text_or_none"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Only successful fixed native command results are retained.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5c5bad11e569807e1f8ac3f6b751e29506700331",
+            "content": "sha256:01c6c46ebf65ba9cad0beeef883a618899fe3f0ef4eaab6d199c65ec693da674",
+            "locator": {
+              "kind": "symbol",
+              "name": "read_git"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

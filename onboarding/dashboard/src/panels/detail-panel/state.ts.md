@@ -6,22 +6,15 @@
 
 ## Purpose
 
-The selection-state hook of the DetailPanel, extracted from `DetailPanel.tsx` by the
-260731-EFA-L8 split. `useDetailPanelState` resolves the selected task/lifecycle/series and derives
-the canonical viewed-task document reference, optional compatibility leaf key, and direct document
-set from props.
+DetailPanel selection state over the tasks map, with scoped local jump state, canonical viewed reference and optional role-chat leaf context.
 
 ## Code Commentary
 
-Since 260815-DAG-L14 `useDetailPanelState` exposes `docPathForRef` — resolves a sub-task row typed `masterRef` against the full projected task-document pool and dispatches it through `jump(taskDocSelectionKey(...))`, the same mechanism the parent-series crumb uses.
+Only taskdoc-prefixed opaque entry keys resolve tasks; raw lifecycle, series, slug and projected-path fallbacks are absent. The body hook receives the selected entry; parent/worktrees come from its served fields.
 
 ### Logic
 
-The pure resolvers (`resolveSelectedTaskDoc`, `resolveLifecycleId`,
-`resolveDirectDocs`, `isRootTaskSelection`, `resolveSelectedSeries`,
-`resolveViewedLeafKey`) narrow the prop selection; `taskDocumentRefForDoc` supplies the primary
-viewed-task identity passed through `onViewTask`. The hook memoizes the derived state the render
-tree consumes.
+The hook follows served parent/worktrees, reports the actual reference/leaf through onViewTask and scopes local jumps to incoming selectedId. The existing callback name remains navigation, not runtime identity.
 
 ### Conventions
 

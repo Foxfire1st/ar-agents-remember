@@ -18,58 +18,17 @@
         }
       ]
     },
-    "10": {
-      "note": "Bucket suites: a bucket per live state, per-state counting, non-injectivity, and spelling parity with the server.\n\nAnchor: `expect`; \"a bucket per live state\"",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "e38500a66db86825287340b04f5b87e554e7a9f2",
-            "content": "sha256:4fdf198169600bebd5baabb448a5309af2cb4c729ea5da37c2843a01f36cb5fd",
-            "locator": {
-              "end": 541,
-              "kind": "line_range",
-              "start": 536
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "e38500a66db86825287340b04f5b87e554e7a9f2",
-            "content": "sha256:61e3cb49b5c0efc8a04bae9613f3b9ef9ffee37ea696eb90e2745d67a1fc515b",
-            "locator": {
-              "end": 559,
-              "kind": "line_range",
-              "start": 559
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
     "11": {
-      "note": "The three inverted pins for `createdAt`, `linkedLifecycleId` and `refusedPolarity`.\n\nAnchor: `distinct`; \"refusedPolarity\"",
+      "note": "The retained inverted field pin is the single EngineProcessEdge.refusedPolarity case: an @ts-expect-error access must remain invalid while the example edge keeps state stale. The suite does not retain the former createdAt/linkedLifecycleId master/series pins; this is source-defined typecheck evidence, not a fresh typecheck or test run.",
       "targets": [
         {
           "anchor": {
-            "blob": "e38500a66db86825287340b04f5b87e554e7a9f2",
-            "content": "sha256:afb987596f26101f99c7d07f4c1aabdaebaf264183a6f81ae1e0af25d517ab5e",
+            "blob": "87457953dd5427f8b2f7422448efb41f018e7ede",
+            "content": "sha256:86ab2c05032a1fe9b632c7f44b708814a74929b9f727332fe4a8e846ba55b471",
             "locator": {
-              "end": 624,
+              "end": 632,
               "kind": "line_range",
-              "start": 624
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "e38500a66db86825287340b04f5b87e554e7a9f2",
-            "content": "sha256:2786017e5745b4345f7ae661353f54b7d86a48944579b51a0cd648a35282a2ab",
-            "locator": {
-              "end": 670,
-              "kind": "line_range",
-              "start": 625
+              "start": 609
             }
           },
           "kind": "test"
@@ -105,35 +64,6 @@
         }
       ]
     },
-    "13": {
-      "note": "The generated mirror's gate and lifecycle projection declarations.\n\nAnchor: `string`",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "cc1a4d8fa8ad9c2ae7d91dff5dc6eba9d3330015",
-            "content": "sha256:57a7a8bc6d2a1ec60cf29ffe090ca55ab2f3ca6707ae423858f4aa93dd2c0b38",
-            "locator": {
-              "kind": "symbol",
-              "name": "GateNode"
-            },
-            "path": "dashboard/src/types/projection.ts"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "5e4cacc3f5f41b68b1399a4064fb89ccec6b2a7e",
-            "content": "sha256:854d33cad103c4456fc4c84048f8d629c64bb56c814e7546253dae94289104bf",
-            "locator": {
-              "kind": "symbol",
-              "name": "LifecycleProjection"
-            },
-            "path": "dashboard/src/types/projection.ts"
-          },
-          "kind": "code"
-        }
-      ]
-    },
     "14": {
       "note": "The sanctioned narrowing the fixture enters through.",
       "targets": [
@@ -151,124 +81,12 @@
         }
       ]
     },
-    "15": {
-      "note": "The independent fixture supplies the lifecycle rows sampled by the contract.\n\nAnchor: `false`; \"lifecycles\"",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "00e94e0e17b03efa5592ddf3a94e51b3c2664009",
-            "content": "sha256:46d4626b8bd41a074f75c46766223a0cd01f4f848734f1cea9c3b028566020b8",
-            "locator": {
-              "end": 1929,
-              "kind": "line_range",
-              "start": 1792
-            },
-            "path": "dashboard/src/fixtures/snapshot.json"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "16": {
-      "note": "The independent fixture supplies the metrics rollup checked against generated count fields.\n\nAnchor: `awaitingDeveloperCount`; \"metrics\"",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "00e94e0e17b03efa5592ddf3a94e51b3c2664009",
-            "content": "sha256:63b8e78ba186f2f42199de2860280d6caefdb63eb192f2fd41ec6b10f75beb78",
-            "locator": {
-              "end": 1941,
-              "kind": "line_range",
-              "start": 1930
-            },
-            "path": "dashboard/src/fixtures/snapshot.json"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "17": {
-      "note": "The server's own bucket-name rule and its refusal of a non-injective mapping, which the spelling and uniqueness assertions mirror.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "df5cdb15895a682c2a835aa5221de4677a3a19cd",
-            "content": "sha256:9c042907be28e211e81249997aac7c7f3e0835ecfaf4cf8219a2f663179de916",
-            "locator": {
-              "kind": "symbol",
-              "name": "state_count_field"
-            },
-            "path": "mcp/src/agents_remember/observer/projection.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "df5cdb15895a682c2a835aa5221de4677a3a19cd",
-            "content": "sha256:3ce2853b26b82778b30e9230c97b479776f3d256d011658ac43fa2bc74328a12",
-            "locator": {
-              "kind": "symbol",
-              "name": "state_count_fields"
-            },
-            "path": "mcp/src/agents_remember/observer/projection.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "18": {
-      "note": "The producer's typed lifecycle vocabularies.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "ff30578eff1d11b92f84732e4d4206ab67ebb366",
-            "content": "sha256:44c8d45e3b5599ef3ead09d582379cfa8aad059442a8ba986d59a79c55752845",
-            "locator": {
-              "kind": "symbol",
-              "name": "State"
-            },
-            "path": "mcp/src/agents_remember/models/lifecycles/responses.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "ff30578eff1d11b92f84732e4d4206ab67ebb366",
-            "content": "sha256:ea37c106bd70d708b0af987224aec3b4e5ee490743a05f8286ef5ba0c0bda493",
-            "locator": {
-              "kind": "symbol",
-              "name": "Phase"
-            },
-            "path": "mcp/src/agents_remember/models/lifecycles/responses.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "19": {
-      "note": "The registry entry sanctioning exactly three `@ts-expect-error` directives in this file, with its reason.\n\nAnchor: `error`; \"@ts-expect-error\"",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "422820d3b137d6391b4633f25bc2bee615473d94",
-            "content": "sha256:6fb3069befefdbf0b993642000d2799d21ed30e2d0319e6c669b5c44fc852211",
-            "locator": {
-              "end": 188,
-              "kind": "line_range",
-              "start": 51
-            },
-            "path": "dashboard/src/test/wireFixtureGuard.test.ts"
-          },
-          "kind": "test"
-        }
-      ]
-    },
     "2": {
       "note": "Persisted projection state is written by `write_projection` with omitted `None` values.",
       "targets": [
         {
           "anchor": {
-            "blob": "579c3d068accfb68fb4977bf0542061fa39ec6a8",
+            "blob": "cb0ab4cb5e3a37ea0377727c5e29c1744b0d162b",
             "content": "sha256:959b8f03573616a2d384631232c632f1f4009fcef82870a0c7d2d2222cf14eec",
             "locator": {
               "kind": "symbol",
@@ -285,7 +103,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "422820d3b137d6391b4633f25bc2bee615473d94",
+            "blob": "980a29c38e96a7c41d2ec79a71f8310445eaa91c",
             "content": "sha256:19ce2bbc6b38863728b1d9d5c3634cf4065296a982b4988bc428c9980485d82c",
             "locator": {
               "end": 20,
@@ -298,7 +116,7 @@
         },
         {
           "anchor": {
-            "blob": "422820d3b137d6391b4633f25bc2bee615473d94",
+            "blob": "980a29c38e96a7c41d2ec79a71f8310445eaa91c",
             "content": "sha256:ea1acfc19fc5f9efabd2579b0931bb02b2f813054f37dd37262c8a1fb1b7ef5a",
             "locator": {
               "end": 40,
@@ -368,7 +186,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e38500a66db86825287340b04f5b87e554e7a9f2",
+            "blob": "87457953dd5427f8b2f7422448efb41f018e7ede",
             "content": "sha256:b11c19a7afaf928444a3387cf589035b202a9705875f862b421afb105b61137e",
             "locator": {
               "kind": "symbol",
@@ -395,7 +213,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e38500a66db86825287340b04f5b87e554e7a9f2",
+            "blob": "87457953dd5427f8b2f7422448efb41f018e7ede",
             "content": "sha256:77239ba352a111c3c40f271e0f00cfbe46702e2215d52a4e2a61f8d1963fc990",
             "locator": {
               "kind": "symbol",
@@ -418,11 +236,11 @@
       ]
     },
     "7": {
-      "note": "`AbsorbingPaths` + `INDEX_SIGNATURE_SITES` — the current fifteen index-signature keys, derived and closed.\n\nAnchor: `AbsorbingPaths` + `INDEX_SIGNATURE_SITES`",
+      "note": "AbsorbingPaths derives every string-index-signature boundary and INDEX_SIGNATURE_SITES is an exhaustive, closed Record of that derived path set, with reasons for opaque nodes in the current native-entry shape. The current literal registry has 13 keys; this is an observed census, not a fixed schema-count contract. The source test requires at least one sampled value and a nonempty reason at every registered site.",
       "targets": [
         {
           "anchor": {
-            "blob": "e38500a66db86825287340b04f5b87e554e7a9f2",
+            "blob": "87457953dd5427f8b2f7422448efb41f018e7ede",
             "content": "sha256:4bce69eaa9645ba5566f4a0e67cba692db90a38e54177e3135ef2a6038858381",
             "locator": {
               "kind": "symbol",
@@ -433,11 +251,23 @@
         },
         {
           "anchor": {
-            "blob": "e38500a66db86825287340b04f5b87e554e7a9f2",
-            "content": "sha256:313f2576933f201d766ef5118c3305727c3dcdbdd25923fd4c206d3079e37c26",
+            "blob": "87457953dd5427f8b2f7422448efb41f018e7ede",
+            "content": "sha256:9fee5ea8a1aa224921c7644f25f3ea183716b20b55000ec94ab9ab229468c668",
             "locator": {
               "kind": "symbol",
               "name": "INDEX_SIGNATURE_SITES"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "87457953dd5427f8b2f7422448efb41f018e7ede",
+            "content": "sha256:02d4fb8493e000904244cba921ee08000e6fbcf9580c57dee8f961d386344ee2",
+            "locator": {
+              "end": 549,
+              "kind": "line_range",
+              "start": 539
             }
           },
           "kind": "test"
@@ -465,7 +295,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e38500a66db86825287340b04f5b87e554e7a9f2",
+            "blob": "87457953dd5427f8b2f7422448efb41f018e7ede",
             "content": "sha256:990940ed55ea9b857b23d30d0b037a09ab1d6d81bc3410767572ce1ed42685b6",
             "locator": {
               "kind": "symbol",

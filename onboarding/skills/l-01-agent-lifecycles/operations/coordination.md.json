@@ -25,7 +25,9 @@
         "blob": "65a10dcac925975e4ae642d264a343857bdae9c4",
         "content": "sha256:4d0e8fe886c1806091a9355cad05d3d28199bf7b5bd9d1f5d4283c0ee015b2be",
         "locator": {
-          "kind": "file"
+          "end": 29,
+          "kind": "line_range",
+          "start": 1
         }
       },
       "id": "RLZ-GNQNEF",

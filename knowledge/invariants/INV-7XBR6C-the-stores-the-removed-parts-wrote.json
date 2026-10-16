@@ -9,7 +9,8 @@
   "conditions": [
     "Discovery/reporting never automatically deletes or consumes former control-plane stores.",
     "Only the user's explicit removal command deletes eligible contained store files.",
-    "Inaccessible discovery/deletion names the path/reason, preserves failures, continues independent targets and exits nonzero."
+    "Inaccessible discovery/deletion names the path/reason, preserves failures, continues independent targets and exits nonzero.",
+    "Inventory includes retired lifecycle event/heartbeat/served files; lone gate-lock stores require complete canonical-contract terminal proof before the explicit removal command may reclaim them."
   ],
   "exclusions": [
     "Unrelated user state and paths outside the selected coordination root.",
@@ -27,7 +28,7 @@
     "leaf": "260928-MIK-L113",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-invariant/v1",
   "statement": "The stores the removed parts wrote under a coordination root are no longer read and no install deletes them; the install's result names them with count, size, every store and the two sentences, its answer carries all but the list, and only `agents-remember removed-stores` removes them, naming what it cannot read or remove and ending 1 then.",
   "status": "accepted",

@@ -6,23 +6,13 @@
 
 ## Purpose
 
-Vitest render tests for `Hangar` (260703-L11): they pin the **worktree-existence** visibility contract —
-a row renders ONLY while a worktree physically exists (`hasLiveWorktree` over the projection's stat'ed
-`codeWorktreeExists`/`memoryWorktreeExists`), never from a cleanup-state proxy. That covers the L9-reopen
-defect (a `cleanup: reopened` contract with no worktrees rendered as live under the old
-`ARCHIVED_CLEANUP` proxy) plus the as-before hiding of completed/abandoned enclosures whose worktrees
-were reaped. The tests drive the panel through the real `dashboardStore` (the hangar reads `enclosures` /
-`lifecycles` from the store), so they cover the filter end-to-end at the render layer.
+Hangar render/store assertions retain physical-worktree existence (either side admits), reopened-without-directory exclusion and full durable-command hover. Native owning task entries now supply status/qualified selection, not a lifecycle join.
 
 ## Code Commentary
 
 ### Logic
 
-A local `enclosure(partial)` factory builds a full `EnclosureNode` from a minimal `{ enclosure }` plus
-overrides, defaulting `cleanup: "pending"` **and** `codeWorktreeExists: true` / `memoryWorktreeExists:
-true` (a live worktree), so a case only overrides the existence flags (and cleanup label) to mark a row
-gone. `afterEach` runs `cleanup()` and `dashboardStore.getState().reset()` so cases don't leak state.
-Five cases:
+A typed enclosure fixture defaults both existence flags true. Teardown resets DOM/store; cases override flags or cleanup labels explicitly.
 
 1. **Existence-only filter** — seeds a live enclosure, a memory-only one (`codeWorktreeExists: false`,
    `memoryWorktreeExists: true` — either side admits), and completed + abandoned ones with both flags
@@ -33,33 +23,25 @@ Five cases:
    again: existence, not the cleanup label, re-admits the row.
 4. **Empty state** — every enclosure's worktrees physically gone → zero rows and the
    `/no live persistent worktrees/i` text.
-5. **Durable current command** — a running closeout operation renders its projected
-   `currentCommand` in the compact lifecycle badge and preserves that complete value in `title`.
-   Its inline projection fixture carries the generated contract's required `legalControls: []` and
-   `projectionEffects: []`; the test does not invent an advertised operation control or projection
-   refresh effect merely to exercise command rendering.
+5. **Durable current command** — a copied served operation supplies currentCommand, shown inline and complete in title. No hand-listed empty controls/effects fixture remains.
+6. **Owning task entry** — a native entry bound to the worktree renders works and selects its qualified key, without a lifecycle join.
 
 ### Invariants And Boundaries
 
-Render + store state only; no backend, no gate posting, no WebSocket. The test treats the existence filter
-as display-only: it seeds enclosure contracts and asserts they are *hidden*, never that they are deleted.
-The existence flags themselves are server-stat'ed truth owned by the observer/projection layer
-(`snapshots._enclosure_from_contract`); the tests only assert the client filters on them.
-The command case is likewise projection/render coverage only: it seeds the already-durable
-operation field and proves visibility, not execution or operation-state mutation. Its empty
-`legalControls` and `projectionEffects` lists are fixture-contract conformance, not claims that live
-operations never expose controls or projection refresh effects.
+Seeded render/store assertions consume existence flags, never stat or delete worktrees. The copied served operation substitutes only currentCommand: inline/full-hover visibility is not execution or mutation. Native task selection checks its bound entry, not lifecycle-derived host state.
 
 ## Evidence
 
 ### Repo-Internal References
 
+
 - The component under test (filters rows through `hasLiveWorktree`). [1]
+
 - The shared existence-truth visibility selector. [2]
-- The dashboard store the test seeds `enclosures` / `lifecycles` into and resets between cases. [3]
+- Hangar tests seed and reset the shared dashboard store: existence cases set enclosures directly, while the owning-task case applies a snapshot with native task entries and their bound worktrees. The store carries tasks keyed by entry.key and enclosures keyed by enclosure, applies snapshots through applySnapshotState and resets through emptyWorkspace; it has no lifecycles store. [3]
 - The `EnclosureNode` shape (incl. `codeWorktreeExists`/`memoryWorktreeExists`) the `enclosure(...)` factory fills. [4]
-- The running-operation fixture supplies required `legalControls: []` and `projectionEffects: []` while the assertion remains scoped to durable `currentCommand` rendering. [5]
+- The running-operation test copies `SERVED.enclosures[0].lifecycleOperation` and overrides currentCommand. Its assertions check that the full durable command appears inline and as the operation title; it does not author legalControls: [] or projectionEffects: [] in this fixture. [5]
 
 ## CCR-R18@v1 Fixture Envelope Fields
 
-260831-CCR-L18 added `schemaVersion: "lifecycle-operation-projection/v1"` and `stateMatrixVersion: "lifecycle-operation-state-matrix/v1"` to the hand-built `lifecycleOperation` fixture inside the Hangar worktree-truth test, matching the generated mirror's now-required version literals. The worktree-existence visibility contract under test is unchanged.
+Historical CCR-L18 hand-listed operation version fields; current setup copies the served lifecycleOperation and overrides only currentCommand. Worktree-existence and full-command assertions are unchanged.

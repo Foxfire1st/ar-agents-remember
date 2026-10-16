@@ -112,15 +112,28 @@
       ]
     },
     "15": {
-      "note": "`SubTaskRow` and the two `extra=\"forbid\"` models whose collapse the union rule reproduces.",
+      "note": "The current TaskEntry/TaskSummary pair illustrates why every union member is checked independently.\n\nAnchor: current union example and generated member shapes",
       "targets": [
         {
           "anchor": {
-            "blob": "c398ac1326fc5cb9eba54ae0ba6cab40c3650138",
-            "content": "sha256:1de5db4b96d7237e56eaa8a3137a8d59d1f15bcffb40093cf54a0435b21a76f9",
+            "blob": "e87c7782c9414ddd44713084a9a37d1b860749ab",
+            "content": "sha256:d8528ab7118305d925e7480c2b19902f8e8f39947002c7a357640fb406b14cff",
             "locator": {
-              "kind": "symbol",
-              "name": "SubTaskRow"
+              "end": 369,
+              "kind": "line_range",
+              "start": 361
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "8774e82c7f7a93dda014fdb8b987e2391fd21fd1",
+            "content": "sha256:51d0432de61b27fb95ce483e9491b0e76d8c8b399982ca329a0a8591145e909e",
+            "locator": {
+              "end": 522,
+              "kind": "line_range",
+              "start": 506
             },
             "path": "dashboard/src/types/projection.ts"
           },
@@ -354,27 +367,16 @@
       ]
     },
     "8": {
-      "note": "`wireSlotTarget` answering a union with every member, with the `SubTaskRow` worked example.\n\nAnchor: `SubTaskRow`",
+      "note": "`wireSlotTarget` answering a union with every member, with the current `TaskEntry | TaskSummary` worked example.\n\nAnchor: current union-slot example and implementation",
       "targets": [
         {
           "anchor": {
-            "blob": "8c5f7681dcafb9d4dd5b7ff4e210297999ca4fcc",
-            "content": "sha256:710b5990c2fcb3a9476e6808bf153a2b91f239107126e64c31438c95d698fd43",
+            "blob": "e87c7782c9414ddd44713084a9a37d1b860749ab",
+            "content": "sha256:e78676eabc731a146b0ae29909de21362e8527f6e0785fbf6c72ab758eba2b1f",
             "locator": {
-              "kind": "symbol",
-              "name": "wireSlotTarget"
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "8c5f7681dcafb9d4dd5b7ff4e210297999ca4fcc",
-            "content": "sha256:37fa7a666edda7372e11f6d96c4a548626c71b879f0f47a493c60ebbc098a19b",
-            "locator": {
-              "end": 363,
+              "end": 394,
               "kind": "line_range",
-              "start": 363
+              "start": 355
             }
           },
           "kind": "test"

@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "0a2963ea52bab5c1c53f02c7dfdc6ea61ece6523",
+        "blob": "611e5a498e074d169eccd6fffb1ac9327bdf7b8a",
         "content": "sha256:2ffb803c1fa60fbe5b634fe22da023a150409f46617f6c60ffe3345f553d154e",
         "locator": {
           "kind": "symbol",
@@ -22,12 +22,12 @@
   ],
   "references": {
     "1": {
-      "note": "Retained ambient/tool-writer collaborators install without removed-store migration.",
+      "note": "The workspace tool writer installs without an ambient lifecycle or removed-store migration.",
       "targets": [
         {
           "anchor": {
-            "blob": "0a2963ea52bab5c1c53f02c7dfdc6ea61ece6523",
-            "content": "sha256:6f621b98fc778484ac2af4b8bc641371ec84fdb67e088464a7ed9fcfa65314e4",
+            "blob": "611e5a498e074d169eccd6fffb1ac9327bdf7b8a",
+            "content": "sha256:883820f44db3e589d0d39935430a9aeb1c38331b86496c2268875938ac2a1a85",
             "locator": {
               "kind": "symbol",
               "name": "initialize_mcp_application"
@@ -42,7 +42,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0a2963ea52bab5c1c53f02c7dfdc6ea61ece6523",
+            "blob": "611e5a498e074d169eccd6fffb1ac9327bdf7b8a",
             "content": "sha256:1b2d95322d48ce113abe68a45f6f0f6691c8177f8e35ed2ec4f1fca4abbf552b",
             "locator": {
               "kind": "symbol",

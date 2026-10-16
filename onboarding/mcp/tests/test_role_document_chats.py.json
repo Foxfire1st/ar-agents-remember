@@ -40,8 +40,9 @@
         "blob": "8eb41bc3857bbaa5b8fc9d6f7a658b61516acc0a",
         "content": "sha256:76871f7093532bd088efb1f4f6b08975519e3fc13bd1e845407fbd19a9796cec",
         "locator": {
-          "kind": "symbol",
-          "name": "DocumentChatReadTests.test_a_damaged_record_refuses_the_read_of_its_document_and_never_fails_it"
+          "end": 128,
+          "kind": "line_range",
+          "start": 102
         }
       },
       "facet": "The single-document route returns 409 with unreadable/malformed reconcile advice for the enumerated receipt damages rather than no chat or server failure.",
@@ -142,8 +143,9 @@
         "blob": "8eb41bc3857bbaa5b8fc9d6f7a658b61516acc0a",
         "content": "sha256:f548d04cdd4f48c3c1090948b71eb980f5abf2c7bff2e6f62b8f3caf96e79c26",
         "locator": {
-          "kind": "symbol",
-          "name": "DocumentChatTreeTests.test_a_damaged_record_leaves_its_own_document_unknown_and_every_other_answered"
+          "end": 302,
+          "kind": "line_range",
+          "start": 255
         }
       },
       "facet": "The enumerated byte/shape/non-regular damages yield agents:null only for the owning document while the other document retains its manager and the request uses one agents-live call.",
@@ -176,8 +178,9 @@
         "blob": "8eb41bc3857bbaa5b8fc9d6f7a658b61516acc0a",
         "content": "sha256:a0b752f1eb7712371d7530a440179fbf636ed00b86a46f91830f49bf04e21801",
         "locator": {
-          "kind": "symbol",
-          "name": "DocumentChatReadTests.test_read_filters_archived_and_missing_agents_and_keeps_document_workspaces"
+          "end": 87,
+          "kind": "line_range",
+          "start": 71
         }
       },
       "facet": "The record read returns only live agents with their document workspace and skips archived or missing records.",

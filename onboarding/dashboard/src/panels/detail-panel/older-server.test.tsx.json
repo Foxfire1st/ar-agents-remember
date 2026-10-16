@@ -3,10 +3,12 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "170d3ca3914cc9d0b633d6ae2eb96087ea6a9370",
-        "content": "sha256:27c4471e5270c6bacdb8ba3cda1b0c228dd95f0ff64cd0712d759ffa6e6a7a3c",
+        "blob": "f76448eca21376a4a2c5f163cc761546f92b9200",
+        "content": "sha256:3414bda6d4cf7446494ea71daf1a9cd574739cee56fedf0213e46d580317e575",
         "locator": {
-          "kind": "file"
+          "end": 176,
+          "kind": "line_range",
+          "start": 1
         }
       },
       "id": "RLZ-4BA1K8",
@@ -15,7 +17,7 @@
         "handoffEntry": "MIK-R127@v1 failure and recovery",
         "leaf": "260928-MIK-L127"
       },
-      "rationale": "The witness of the recovery clause: both recordings reach the page as the text of a snapshot frame through connectState and as the answer of /api/task-document, with no cast and no fixture builder.",
+      "rationale": "The mounted current-native optionalAbsent fixture reaches the actual reader and omits absent Review/count/note blocks without error; old-build recordings are provenance, not current wire-compatibility execution.",
       "role": "enforcement"
     }
   ],

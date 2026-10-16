@@ -31,7 +31,7 @@ display-side read: served seconds + wall-clock elapsed since arrival, clamped ne
 An unanchored node (fixtures, tests) serves its value as-is; a missing served value stays
 `undefined` (never fabricated).
 
-`useNowMs(stepMs = 10_000)` — the coarse ticking clock age panels re-render on; `fmtWait`'s
+`useNowMs(stepMs = 10_000)` — the coarse ticking clock retained served-age consumers re-render on; `fmtWait`'s
 grain (s → m → h → d) makes the 10 s step visually seamless above the first minute.
 
 ## Invariants And Boundaries
@@ -62,7 +62,9 @@ No configured Domain Documentation source exists for this file.
 
 - The server half: stable-form diff + the canonical volatile set. [1]
 - The consuming merge (identity reuse + stamping on apply). [2]
-- The display sites' shared import pattern (`servedAgeSeconds` + `useNowMs`): Hangar, AttentionQueue, MemoryMirror, LifecycleList. [3]
+
+- MemoryMirror and AttentionQueue retain the shared served-age/clock imports. Hangar instead renders the bound task through TaskStatusWord, not the removed enclosure-age ticker. [3]
+
 
 ### Cross-Repo References
 

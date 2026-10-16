@@ -16,6 +16,23 @@
           "kind": "code"
         }
       ]
+    },
+    "2": {
+      "note": "Series reopen passes source-path/document pairs to the existing scope owner.\n\nAnchor: series reopen publication",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "42706ec8841265b7c6d29565c7cc973f7b5baba9",
+            "content": "sha256:01c3deb5c259511fd6a7b2d0007df44b2cd2f255a23b4ac746f67b1ca7885a1b",
+            "locator": {
+              "end": 674,
+              "kind": "line_range",
+              "start": 593
+            }
+          },
+          "kind": "code"
+        }
+      ]
     }
   },
   "schema": "ar-onboarding-file/v1"

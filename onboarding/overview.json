@@ -6,7 +6,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "87b72cdc7d6d88d7c19f034525f308e405d909d7",
+            "blob": "c29d4d1f5abb5d84654822e8bf0869461435bd85",
             "content": "sha256:02b07dc98dece4abf336abe33df3337a149cd230990a0e26a19f6078721b4b88",
             "locator": {
               "end": 549,
@@ -19,7 +19,7 @@
         },
         {
           "anchor": {
-            "blob": "f20e2bdd349f2d6f8d541fd954bb6cb6f6028ade",
+            "blob": "b8bda143860aa43bd6865974d210d639a5ffe665",
             "content": "sha256:4357c9332bc368600523e68b45bd67bec7d54f4a8ecb52de5c90b49808bc6bc0",
             "locator": {
               "end": 189,
@@ -577,12 +577,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7e45705913d75b0494c3fbdd477dea21727c2533",
+            "blob": "a44e94849cddcfdaa693be8e4c9deeaa42953b0f",
             "content": "sha256:c49482e1392005a1d4105aa1077df95f426e690642b52eea93c95b90b3586a79",
             "locator": {
-              "end": 58,
+              "end": 59,
               "kind": "line_range",
-              "start": 55
+              "start": 56
             },
             "path": "mcp/src/agents_remember/install/runtime.py"
           },
@@ -984,7 +984,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "87b72cdc7d6d88d7c19f034525f308e405d909d7",
+            "blob": "c29d4d1f5abb5d84654822e8bf0869461435bd85",
             "content": "sha256:10504dfc6142bea874588a95b095a471fb2fe64d00aa13f21acbe842d6f73baa",
             "locator": {
               "end": 535,
@@ -2240,12 +2240,12 @@
         },
         {
           "anchor": {
-            "blob": "7e45705913d75b0494c3fbdd477dea21727c2533",
+            "blob": "a44e94849cddcfdaa693be8e4c9deeaa42953b0f",
             "content": "sha256:ba0b7f0e3d725b8ba0c42f4edad6df046c6b298cff8664b0118dd49bc96e4c6d",
             "locator": {
-              "end": 1033,
+              "end": 859,
               "kind": "line_range",
-              "start": 1015
+              "start": 841
             },
             "path": "mcp/src/agents_remember/install/runtime.py"
           },
@@ -2817,6 +2817,88 @@
               "start": 141
             },
             "path": "mcp/src/agents_remember/memory/conversion/code_objects.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "335": {
+      "note": "The server builds entries from authored documents and declared relations, independently binding worktrees.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9e4b2543510affa9e5cc0d4f7e4ee8b261894051",
+            "content": "sha256:b925dcd46887d9d1f145bcfbf499a5ead0e8ae231c2927f6bb436051d0c3534b",
+            "locator": {
+              "kind": "symbol",
+              "name": "build_task_entries"
+            },
+            "path": "mcp/src/agents_remember/observer/task_entries.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "336": {
+      "note": "Host authority requires a complete current-boot reconciliation and armed supervisor observation before role-agent task binding.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "64247b1567681e2b8e60bb36434fadd33ed6a347",
+            "content": "sha256:2725fa604b4643d9bb0ad0fe1e159005fcad872513311a0f17c9de6d4664dda0",
+            "locator": {
+              "kind": "symbol",
+              "name": "read"
+            },
+            "path": "mcp/src/agents_remember/serving/projections/host_activity.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "337": {
+      "note": "Manager instructions assign native stage publication and master-row mirroring to start/finalize/abandon; explicit corrections retain their separate route.\n\nAnchor: \"Start, finalize and abandon publish task stage\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6c14bda6d478f9d220063774ea8b13852e31a0f0",
+            "content": "sha256:9b8a0bd77133a911eda02d798594b6181aac50e9399f1000649385784cc6dc27",
+            "locator": {
+              "end": 20,
+              "kind": "line_range",
+              "start": 20
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/manager.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "338": {
+      "note": "The dashboard store retains bounded body/preparation resources by document reference and revision without taking task-state authority.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cb56539089a61b868c10348e34bfac4506eac81b",
+            "content": "sha256:228218234627a8957755a790bae4f98cd01ce9934483c26e077d94884103acb0",
+            "locator": {
+              "kind": "symbol",
+              "name": "TaskDocumentResources"
+            },
+            "path": "dashboard/src/data/taskDocuments.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "cb56539089a61b868c10348e34bfac4506eac81b",
+            "content": "sha256:c7cfaa82061cd4f3bec7870681e207ffb06492dbd8cbcabe055cf125ef327921",
+            "locator": {
+              "end": 67,
+              "kind": "line_range",
+              "start": 14
+            },
+            "path": "dashboard/src/data/taskDocuments.ts"
           },
           "kind": "code"
         }

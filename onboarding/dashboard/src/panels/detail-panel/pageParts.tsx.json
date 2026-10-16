@@ -3,11 +3,12 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "719124fd66726cad75b1ad8af738799795f4ca48",
+        "blob": "17da14e723222a8d50b4ed6f0595390ab1fe1f6a",
         "content": "sha256:5ff6719474406bbbda3d3631e7b34975aed52bc4f967c603368c5ee52d73484d",
         "locator": {
-          "kind": "symbol",
-          "name": "wantsToOpen"
+          "end": 415,
+          "kind": "line_range",
+          "start": 412
         }
       },
       "id": "RLZ-2YCQ8R",
@@ -21,12 +22,68 @@
     },
     {
       "anchor": {
-        "blob": "719124fd66726cad75b1ad8af738799795f4ca48",
+        "blob": "17da14e723222a8d50b4ed6f0595390ab1fe1f6a",
+        "content": "sha256:1f72a31368a7ab1bade3e051bc155321716406653daf2bdf755259f60d7c37d9",
+        "locator": {
+          "end": 89,
+          "kind": "line_range",
+          "start": 69
+        }
+      },
+      "id": "RLZ-3BN5C1",
+      "invariant": "INV-XZYGEB",
+      "origin": {
+        "handoffEntry": "L168-CUR-M1-21-A013-06",
+        "leaf": "260928-MIK-L168"
+      },
+      "rationale": "STATUS_WORDS is the single stage/activity-to-tone/word table read by statusTone/statusLabel; taskStatusKey selects served activity or stage rather than deriving task truth.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "17da14e723222a8d50b4ed6f0595390ab1fe1f6a",
+        "content": "sha256:bec535690b5faf1601fe89c5a7f5d82293bac62ca9b92f69bc74eb4b140f1f54",
+        "locator": {
+          "kind": "symbol",
+          "name": "TaskStatusWord"
+        }
+      },
+      "id": "RLZ-918MDG",
+      "invariant": "INV-XZYGEB",
+      "origin": {
+        "handoffEntry": "L168-W-R167-04",
+        "leaf": "260928-MIK-L168"
+      },
+      "rationale": "The page and row share TaskStatusWord, which formats served stage/activity through the common status table and derives display age from eventAt and its shared or local display clock.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "17da14e723222a8d50b4ed6f0595390ab1fe1f6a",
+        "content": "sha256:dc1bd7c87b3db5901dad9ef08c6a6686143d7c0329cd997b0541067d92e51126",
+        "locator": {
+          "end": 101,
+          "kind": "line_range",
+          "start": 79
+        }
+      },
+      "id": "RLZ-A8JVG7",
+      "invariant": "INV-7GVWYD",
+      "origin": {
+        "handoffEntry": "MIK-R144@v1 rule 3b / one word",
+        "leaf": "260928-MIK-L144"
+      },
+      "rationale": "The common status-key/word table presents served task stage/activity; Operations need bands are each entry own works/started/planned/terminal band, not retired lifecycle attention priority.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "17da14e723222a8d50b4ed6f0595390ab1fe1f6a",
         "content": "sha256:6275e656f0c00da3209adea8a68ba93d83917caa67e459418e7a268757c9798d",
         "locator": {
-          "end": 405,
+          "end": 469,
           "kind": "line_range",
-          "start": 386
+          "start": 450
         }
       },
       "id": "RLZ-F7T6YN",
@@ -40,7 +97,7 @@
     },
     {
       "anchor": {
-        "blob": "719124fd66726cad75b1ad8af738799795f4ca48",
+        "blob": "17da14e723222a8d50b4ed6f0595390ab1fe1f6a",
         "content": "sha256:255370dc0990d76d02e89d825196686fa95474d734c58c05e5db15cf94e84c4f",
         "locator": {
           "kind": "symbol",
@@ -58,12 +115,12 @@
     },
     {
       "anchor": {
-        "blob": "719124fd66726cad75b1ad8af738799795f4ca48",
+        "blob": "17da14e723222a8d50b4ed6f0595390ab1fe1f6a",
         "content": "sha256:6275e656f0c00da3209adea8a68ba93d83917caa67e459418e7a268757c9798d",
         "locator": {
-          "end": 405,
+          "end": 469,
           "kind": "line_range",
-          "start": 386
+          "start": 450
         }
       },
       "id": "RLZ-SB78XK",
@@ -77,7 +134,7 @@
     },
     {
       "anchor": {
-        "blob": "719124fd66726cad75b1ad8af738799795f4ca48",
+        "blob": "17da14e723222a8d50b4ed6f0595390ab1fe1f6a",
         "content": "sha256:255370dc0990d76d02e89d825196686fa95474d734c58c05e5db15cf94e84c4f",
         "locator": {
           "kind": "symbol",
@@ -100,7 +157,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "719124fd66726cad75b1ad8af738799795f4ca48",
+            "blob": "17da14e723222a8d50b4ed6f0595390ab1fe1f6a",
             "content": "sha256:255370dc0990d76d02e89d825196686fa95474d734c58c05e5db15cf94e84c4f",
             "locator": {
               "kind": "symbol",
@@ -116,7 +173,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "719124fd66726cad75b1ad8af738799795f4ca48",
+            "blob": "17da14e723222a8d50b4ed6f0595390ab1fe1f6a",
             "content": "sha256:5ff6719474406bbbda3d3631e7b34975aed52bc4f967c603368c5ee52d73484d",
             "locator": {
               "kind": "symbol",
@@ -132,7 +189,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "719124fd66726cad75b1ad8af738799795f4ca48",
+            "blob": "17da14e723222a8d50b4ed6f0595390ab1fe1f6a",
             "content": "sha256:da21dddbd4edb2227181ed80354a96876d33cba2997a335f908cad1329dd2f15",
             "locator": {
               "kind": "symbol",
@@ -148,12 +205,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "719124fd66726cad75b1ad8af738799795f4ca48",
+            "blob": "17da14e723222a8d50b4ed6f0595390ab1fe1f6a",
             "content": "sha256:a82df5c8a1137a00c5f9ee037e12d9daa91149d43e73c31432e6168219405d5a",
             "locator": {
-              "end": 415,
+              "end": 479,
               "kind": "line_range",
-              "start": 382
+              "start": 446
             }
           },
           "kind": "code"

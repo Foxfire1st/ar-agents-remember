@@ -7,7 +7,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "37f3a95fcca67d1d7b98e09655ad32f2d1dfec31",
+            "blob": "e9a3886d60b0254d8c3216ef2c50867f44b99c6b",
             "content": "sha256:08aac0a0196a05c30d1bb2ab4d4fc51f53983d02b7b27e5feb78cf9a9e8cd8de",
             "locator": {
               "kind": "symbol",
@@ -28,6 +28,38 @@
             "locator": {
               "kind": "symbol",
               "name": "RoleStartPublishesForPluginTests"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Only authoritative ended occurrences reclaim registration; revival supersedes older ends at both fixture sizes.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e9a3886d60b0254d8c3216ef2c50867f44b99c6b",
+            "content": "sha256:ef16bcc6fcf9ced2317016136a6abb09b37a70538dc3512da091f53dff0158ae",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_registration_reclaims_only_explicitly_ended_roles"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "Concurrent registrations retain every published agent fact.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e9a3886d60b0254d8c3216ef2c50867f44b99c6b",
+            "content": "sha256:9af7a7a35274afdef35c47589cbbf75bdbf1a89237e6aec64a5e5d954b190d25",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_concurrent_role_registrations_preserve_each_others_facts"
             }
           },
           "kind": "test"

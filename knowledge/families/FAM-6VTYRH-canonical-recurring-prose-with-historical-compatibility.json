@@ -21,11 +21,12 @@
     "leaf": "260928-MIK-L162",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "routes": [
     "mcp/src/agents_remember/tasks",
     "mcp/src/agents_remember/application/task_docs",
-    "dashboard/src/panels/detail-panel"
+    "dashboard/src/panels/detail-panel",
+    "dashboard/src/types"
   ],
   "schema": "ar-family/v1",
   "status": "proposed",

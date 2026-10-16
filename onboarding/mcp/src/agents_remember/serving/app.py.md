@@ -14,70 +14,13 @@ app has no authentication; the command line binds it to `127.0.0.1` by default.
 
 The app constructs one landing refresher with its shared background ledger, passes that exact instance to the Projector and binds its interest predicate to `Projector.has_subscribers` before any background loop starts. Only actual state-stream subscribers express landing interest; one-shot state reads and frontend signals do not. The live/sim input choice still controls whether the refresher exists. Provider safety sampling is a separate periodic lifespan owner and is not gated by page interest or launch authority.
 
-Current composition contains no terminal host/catalog/paster, liveness sweeper, notifier store, operator-inbox or harness-control registration. It builds the projector, runtime clock/build/shutdown port and metrics store; registers projection/action, files, changeset, notes, requirement, review/summary/tree/knowledge and optional collaborator routes; and mounts static assets last. The retained sections below describe earlier source epochs where those removed collaborators existed, not current endpoints or construction.
+Composition builds the projector with provider/landing/watch refreshers, the optional host reconciliation collaborator, runtime clock/build/shutdown port and metrics store. It registers projection/action, files, changeset, notes, requirements, review/summary/tree/knowledge and optional injected routes, then static assets. One changeset cache returned by route registration is shared with review summary. No terminal host, liveness sweeper, notifier, operator-inbox or harness-control registrar is constructed.
 
-## Code Commentary — Historical Source Accounts
+## Code Commentary
 
-### The runtime (`_build_serving_runtime`)
+`_build_serving_runtime` supplies `host_activity_reconcile` to `ProjectionRefreshers`; host intake remains event-driven and boot-reconciled rather than a periodic census. The existing landing refresher, actual-subscriber interest, shared background ledger and review-child shutdown remain their owners’ contracts. Provider safety sampling is independent of page interest.
 
-- The projector is built with the refreshers that the resolved live inputs enable: provider state, landing
-  state and the change watcher.
-- The terminal host, catalog and paster come from the supplied collaborators or are constructed.
-- One serving clock (`replay.now` or the wall clock) is given to the liveness sweeper, the runtime and the
-  observer-health publisher.
-- The liveness sweeper is wired with the hosted-interaction synchronizer, the turn-state event logger and,
-  when supplied, the terminal execution-evidence registrar.
-- `_ServingRuntime` receives the build stamp (`process_serving_build()`, resolved once), the notifier
-  heartbeat store, the observer-health publisher, the inbox evidence registrar, the projection interval,
-  `capsule_launch`, and `review_trees_shutdown` copied from the collaborators. The lifespan reads that
-  last field to stop the tree route's child computations when serving ends.
-- The provider metrics store is returned beside the runtime.
-
-### The app (`create_app`)
-
-`create_app(config, cadence=..., replay=..., live_inputs=..., collaborators=...)` builds the runtime,
-creates the app with `_serving_lifespan`, adds gzip compression at level 6, and registers, in this order:
-the projection routes, the action routes, the terminal session and control routes, the files, changeset,
-notes and requirements routes, the review routes (`knowledge_review`, `knowledge_review_entries`,
-`review_source_content`), the review summary route, the tree view route (`review_trees`), the knowledge
-reader route, the harness control routes, and the static mount last.
-
-`OWNED_SERVING_COLLABORATORS` is an empty collaborator record: the app then constructs its own terminal
-objects and every port-backed route refuses by name.
-
-### Endpoints named by the module
-
-`GET /api/state` returns the projection once. `GET /api/stream` is the state stream: a snapshot, then
-deltas. `GET /api/events` tails the raw observer event log with byte-offset resume.
-`POST /api/actions/<action>` is the gate return channel. `POST /api/operator-inbox` records a developer
-response for an agent without a hosted session.
-
-### Role Runtime and Scope
-
-create_app invokes collaborators.extra_api_routes when supplied after built-in routes and before mount_static. Thus role launch routes coexist with MIK knowledge-reader/summary/tree routes and cannot be shadowed by the greedy asset mount. The factory adds no second launch route owner.
-
-### Logic
-
-`create_app` builds runtime collaborators, registers route families, installs the lifespan, and
-returns the app. Terminal assignment exports now use `TerminalAttachTaskRequest` and
-`_attach_task_response`; removed leaf-ref helpers are absent. Detailed routing behavior remains in
-the private route modules. Serving runtime composition receives `process_serving_build()`, the same
-cached process identity projected by MCP `server_info`.
-
-### Conventions
-
-This facade re-exports tested patch/import seams but does not reimplement their behavior.
-
-### Invariants And Boundaries
-
-- Public serving composition exposes task assignment, not leaf assignment.
-- Startup migration is delegated to the lifespan.
-- Route behavior stays in owned submodules.
-- Dashboard and MCP surfaces must not resolve separate build identities inside one process.
-
-### Todos
-
-None.
+`create_app` installs lifespan and gzip, registers built-in routes and optional `extra_api_routes` before static delivery. Empty collaborator capabilities refuse their own routes, not the entire app or an invented empty result. `/api/state` serves the projection; `/api/stream` sends task/key entity and taskCounts deltas; `/api/events` uses the raw workspace River’s virtual cursor. Ordinary action acknowledgement is not mutation or a gate decision. Runtime/build identity is shared within the process.
 
 ## Evidence
 
@@ -92,7 +35,6 @@ No Domain Documentation source is configured.
 ### Repo-Internal References
 
 - The route it registers. [19]
-- The gate whose behaviour the port's presence decides. [28]
 
 ### Cross-Repo References
 
@@ -188,39 +130,7 @@ after `register_notes_routes`, mounting the read-only task-local
 handlers live in `serving/requirements.py`; composition here is one registration
 call plus the import.
 
-## 260821-CLIVE Serving Composition
-
-App construction now threads the two task-execution registrars into their owning flows. Terminal
-liveness receives `TerminalLivenessActions` containing turn-state observation plus the terminal
-registrar; the notifier runtime receives the inbox registrar. Registration is deliberately outside
-catalog/inbox deletion decisions and uses task-owned proof, while ordinary injected test seams that
-omit registrars remain fail-closed.
-
-## 260831-LOCR-L17 Observer-Health Composition
-
-`_build_serving_runtime` resolves one `serving_clock` (`replay.now or utc_now`) and hands it to the
-liveness sweeper, the runtime and the observer-health publisher, so a completion stamp and the age
-computed from it cannot come from two clocks — a sim replay substitutes all three together. It also
-constructs exactly one `TerminalObserverHealthPublisher(observer_root(config), serving_clock)` and
-places it on `_ServingRuntime.observer_health`: that is the object the lifespan PUBLISHES this
-serving lifetime's accumulator through, and the same object the read routes resolve the persisted row
-through. One construction site therefore means the two halves of the reading cannot be wired to
-different roots or different lifetimes. The publisher's store is opened under the same observer root
-as every other durable control-plane store; no second endpoint, alias, history log or fallback store
-is introduced, and nothing in this composition grants health any catalog, closeout, queue or
-task-authoring authority.
-
-## 260915-CAPS-L15 Capsule-Compiler Composition
-
-`_build_serving_runtime` copies `collaborators.capsule_launch` onto
-`_ServingRuntime.capsule_launch`. This file composes; it does not construct the compiler and does not
-know what it is beyond the port type — the composition root (`cli/dashboard.py::serving_collaborators`)
-binds the `application`-rank callable, because `serving` may not import that tier. The consequence is
-deliberate: a dashboard app whose collaborator record omits the port still builds, and its launch route
-then **refuses** a role-configured launch by name rather than opening a seat with no instructions.
-
 - Frozen implementation of create_app supporting the stated file behavior. [12]
-- The runtime: projector, terminal objects, one serving clock, and the fields copied from the collaborators. [13]
 
 - The current _build_serving_runtime copies the collaborators' review_trees_shutdown callable onto the runtime; this retained shutdown boundary also has a current owner, separate from the historical constructor accounts. [14]
 
@@ -231,11 +141,7 @@ then **refuses** a role-configured launch by name rather than opening a seat wit
 - The import and the registration after the summary route.  Anchor: `register_review_trees_route` [20]
 - The import and the registration after the reviewer family.  Anchor: `register_review_summary_route` [21]
 - App creation composes the serving route and lifespan families. [22]
-- One serving clock, and the observer-health publisher built on it and on the observer root, so the record's completion stamp and every age computed from it share one source. [23]
-- The facade exports structural task-assignment names.  Anchor: `TerminalAttachTaskRequest` [24]
-- The one line that places the capsule-compiler port on the serving runtime.  Anchor: `capsule_launch` [25]
 - **The reviewer route family registered with all three collaborator ports, the third one being this leaf's entry-content port.**  Anchor: `register_review_routes` [26]
-- The composition root that binds the real compiler into the collaborator record every `create_app` call uses. [27]
 
 - Current construction shares one landing instance, binds actual subscriber interest before startup and supplies the shared ledger. [29]
 - Retained route registration and optional collaborator routes precede static delivery; removed terminal/notifier collaborators are absent. [30]

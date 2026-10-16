@@ -9,16 +9,13 @@
 The transport for `GET /api/review/intent/summary?repo=&master=&leaf=`: the one small read the task
 entry makes before the reviewer opens (`ICR-R24@v3`, leaf `260921-ICR-L47`). It takes task context
 only (never a path), calls the `ReviewIntentSummaryPort` the composition root wires, and serializes the
-typed [`ReviewIntentSummaryResult`](../models/knowledge/review_intent_summary.py.md) once.
+typed [`ReviewIntentSummaryResult`](../models/knowledge/review_intent_summary.py.md) through the app-owned conditional reader.
 
 ## Code Commentary
 
 ### Logic
 
-`register_review_summary_route(app, port)` registers the route (before the greedy static mount).
-With a port, every typed answer — `counted`, `partial`, `unavailable` — is **HTTP 200** with the state
-in the body (`model_dump(mode="json", exclude_none=True)`). Without a port, it answers **503** with
-`_UNWIRED_SUMMARY`, because "this process cannot count" is a different fact from "nothing changed".
+`register_review_summary_route(app, port, cache)` registers the route before the greedy static mount. With a port, the shared `IntentSummaryCache` validates the captured inputs and supplies typed counted, partial or unavailable bodies as HTTP 200, or bodyless HTTP 304 when the conditional ETag still matches. Without a port, it answers HTTP 503 with `_UNWIRED_SUMMARY`: an unwired process is not a measured zero. Cache ownership and generation capture remain outside the transport.
 
 ### Conventions
 
@@ -31,7 +28,7 @@ repository's size rail. Like the other review routes it is transport only; no se
   review routes answer a refusal with its own non-2xx status. This route does not: an uninitialized
   leaf is the ordinary state of a new leaf, and a 404 would put a console error on every such task page.
   The reviewer route itself still refuses with its own status when opened.
-- Unwired is the only non-2xx answer, and it never reads as zero.
+- Unwired is the error response; an unchanged conditional representation may instead be bodyless 304. Neither is a counted zero.
 
 ### Todos
 
@@ -47,12 +44,16 @@ No relevant domain documentation was found.
 
 ### Repo-Internal References
 
-- The route path and the port signature (repository, master, leaf). [1]
+- The transport uses the task-context summary port and the shared conditional cache. [1]
 - The unwired answer: named, and never a zero. [2]
-- Every typed state answered 200 with the body; 503 only without a port. [3]
-- The route is registered from the app's collaborators. [4]
+- The route delegates typed-body or conditional-304 responses, with 503 when unwired. [3]
+
+- App composition registers the collaborator summary port with the app-owned change-set cache. [4]
+
 - The optional collaborator slot the route reads. [5]
-- The case that pins 200 for every typed state and 503 when unwired. [6]
+
+- The fixture checks counted and unavailable bodies as 200, and the unwired process as 503; it is not a separate partial-state or conditional-304 test. [6]
+
 
 ### Cross-Repo References
 

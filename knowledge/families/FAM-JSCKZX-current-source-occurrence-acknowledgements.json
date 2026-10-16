@@ -1,0 +1,37 @@
+{
+  "admission": {
+    "criteria": [
+      "joint_guarantee"
+    ],
+    "justification": "Visibility, acknowledgement persistence, full occurrence identity and proof-qualified bounded cleanup jointly keep a successful current dismissal durable without concealing a later source event. UI-only success, stable identity alone or cleanup alone cannot establish that end-to-end obligation. This proposed family is distinct from the approved Operations overlay family, whose roster/guarantee are untouched."
+  },
+  "guarantee": "Operational dismissal is a current source-occurrence acknowledgement, never task or review acceptance: failed writes are restored/reported, unchanged occurrences stay suppressed across rereads/restarts, and changed full findings or observed recovery followed by failure can return. Valid supported current acknowledgements and valid drift snapshots are destructively reclaimed only from complete successful source evidence; a read cannot remove a newer click. Locked compact storage keeps one live acknowledgement per current thing without rewriting an unchanged set. Incomplete negative observations cannot authorize cleanup even when valid positive data can show a changed occurrence. Tolerant normalization of invalid or removed-kind legacy lines is outside that current-occurrence guarantee; the file is no audit trail.",
+  "id": "FAM-JSCKZX",
+  "members": [
+    "INV-DVQX4T",
+    "INV-TT5CTW",
+    "INV-D9T2BC",
+    "INV-1ZZNZ6"
+  ],
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "sync-L81-primary-regressions.txt; design amendment3"
+      ],
+      "path": "A011-R166-operational-acknowledgement-curator-input-26-corrected-proofs.json"
+    },
+    "handoffEntry": "L168-W-R166-03",
+    "leaf": "260928-MIK-L168",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "routes": [
+    "dashboard/src/panels",
+    "mcp/src/agents_remember/controlplane",
+    "mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check",
+    "mcp/src/agents_remember/serving"
+  ],
+  "schema": "ar-family/v1",
+  "status": "proposed",
+  "title": "Current source-occurrence acknowledgements"
+}

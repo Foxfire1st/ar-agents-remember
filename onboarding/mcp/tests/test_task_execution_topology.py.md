@@ -6,7 +6,7 @@
 
 ## Purpose
 
-Provides shared topology fixtures only: canonical repository/task references, a minimal runtime configuration and a typed master-document constructor. No test functions remain in this module. The former full topology/publication/observer assertions are historical; retained segment suites consume these helpers without turning helper imports into executed protection.
+Provides canonical topology references/configuration/master fixtures and a stage-publication regression. The regression plans inProgress and abandoned on an atomic master plus its commanding sprint row, previews both exact TaskDocumentRef overrides in one cross-root batch, and publishes/readbacks both stages. Former broad topology/observer matrices remain historical; helper imports are not executed protection.
 
 ## Code Commentary
 
@@ -18,8 +18,7 @@ still run. The retained behavior and its fixture limits, described above, govern
 
 ### Conventions
 
-The test-shaped filename is retained for imports by other suites. Helper availability is not
-a passing test, and the module has no collected test definitions of its own.
+The filename remains an import owner for other suites. Its stage-publication definition is an assertion carrier, not evidence of collection or execution.
 
 ### Invariants And Boundaries
 
@@ -32,7 +31,12 @@ work. This source inspection does not claim a newly executed test or acceptance 
 
 No additional implementation scope is opened by this memory reconciliation.
 
+The stage case keeps both native addresses in the real preview and checks would-publish on the sprint projection effect before document publication.
+
 ## Evidence
+
+- Atomic-master stage and commanding sprint row publish through one addressed cross-root batch. [3]
+
 
 ### Docs References
 

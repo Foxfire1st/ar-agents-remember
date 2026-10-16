@@ -3,11 +3,12 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "30971ab15c58d068972151ebe7526002779182d5",
-        "content": "sha256:f3ec8aa18e0d9d282e79ac204dccaddbd652209745cd39958060b210a10efb1c",
+        "blob": "e20d8d9082d46c768c1c8a0e24561733469b5394",
+        "content": "sha256:eb6fcb63db16588e6450691417a27bc7dd6da68480e749cd2771d86f94dd9a3d",
         "locator": {
-          "kind": "symbol",
-          "name": "comparison_changeset"
+          "end": 113,
+          "kind": "line_range",
+          "start": 91
         }
       },
       "id": "RLZ-9JM0HE",
@@ -21,7 +22,26 @@
     },
     {
       "anchor": {
-        "blob": "30971ab15c58d068972151ebe7526002779182d5",
+        "blob": "e20d8d9082d46c768c1c8a0e24561733469b5394",
+        "content": "sha256:2004ff3886977e74a42ca44019dd8aa47b7256e3bc806fc648423fd938eb54b1",
+        "locator": {
+          "end": 13,
+          "kind": "line_range",
+          "start": 12
+        }
+      },
+      "id": "RLZ-EJJDVZ",
+      "invariant": "INV-7TMGB0",
+      "origin": {
+        "handoffEntry": "L168-CUR-M2-21-N09",
+        "leaf": "260928-MIK-L168"
+      },
+      "rationale": "The read_git alias routes the four native Git read sites through the shared exact-address/generation-qualified cached_read context; change_counters delegates identical file-count inputs. This is consumer wiring, not unconditional zero Git or a second diff parser.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "e20d8d9082d46c768c1c8a0e24561733469b5394",
         "content": "sha256:4b21a74e7d64f63a8df861e72f951fb8f24fa338f35f2da810ae512b27ab35f4",
         "locator": {
           "kind": "symbol",
@@ -44,7 +64,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "30971ab15c58d068972151ebe7526002779182d5",
+            "blob": "e20d8d9082d46c768c1c8a0e24561733469b5394",
             "content": "sha256:3092e49db7bc8b6a343d522b949931b4c8bd211ecfa3e439c9e44b707b2b7874",
             "locator": {
               "kind": "symbol",
@@ -60,7 +80,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "30971ab15c58d068972151ebe7526002779182d5",
+            "blob": "e20d8d9082d46c768c1c8a0e24561733469b5394",
             "content": "sha256:783ab7b384ab9f8d28393380340e929d7bf278f5c796745cd79c2abd4c23390c",
             "locator": {
               "kind": "symbol",
@@ -72,12 +92,12 @@
       ]
     },
     "3": {
-      "note": "The list echoes trees with code, memory and counters",
+      "note": "The list echoes recorded code/memory trees and uses the shared native counters.",
       "targets": [
         {
           "anchor": {
-            "blob": "30971ab15c58d068972151ebe7526002779182d5",
-            "content": "sha256:f3ec8aa18e0d9d282e79ac204dccaddbd652209745cd39958060b210a10efb1c",
+            "blob": "e20d8d9082d46c768c1c8a0e24561733469b5394",
+            "content": "sha256:eb6fcb63db16588e6450691417a27bc7dd6da68480e749cd2771d86f94dd9a3d",
             "locator": {
               "kind": "symbol",
               "name": "comparison_changeset"
@@ -92,7 +112,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "30971ab15c58d068972151ebe7526002779182d5",
+            "blob": "e20d8d9082d46c768c1c8a0e24561733469b5394",
             "content": "sha256:4b21a74e7d64f63a8df861e72f951fb8f24fa338f35f2da810ae512b27ab35f4",
             "locator": {
               "kind": "symbol",

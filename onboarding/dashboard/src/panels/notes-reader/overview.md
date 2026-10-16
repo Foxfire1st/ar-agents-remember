@@ -32,7 +32,7 @@ A `task-report` target fetches its recorded report through `readRoleReport`, usi
 
 Cockpit owns the target and selection callbacks. Selecting a note clears folder-open mode; selecting a requirement changes its path. Back hides the takeover without clearing its target, and Cockpit retains the reader mounted with `display: none`. A mode-bar change, node opening, or Change-Set opening also hides it. Retention preserves component state while that reader remains mounted; it is not browser-history persistence.
 
-The local notes API fixture recognizes `/api/task-document` and returns the matching dashboard task document or its master fixture, alongside the notes-specific responses. This describes fixture construction, not executed verification.
+The local notes API fixture recognizes `/api/task-document`, looks up the requested path in the dashboard's native `tasks` map and returns that entry's `summary`, or a 404 with null when it is absent. The cockpit fixture is seeded through the shared `projection`, `taskEntry` and `taskSummary` builders with a native reference, stage and activity; it does not rebuild an analytics.taskDocuments/series world or supply a fallback master for an unknown path. This describes fixture construction, not the production endpoint contract or executed verification.
 
 ## Invariants And Boundaries
 
@@ -57,3 +57,5 @@ The current source-backed Notes Reader integration is recorded by the repository
 
 - Cockpit renders NotesReaderViewer. [6]
 - TaskNotes resolves registered requirement references first; a requirement address never falls through to a note target. [7]
+
+- The task-body fixture returns the path-addressed native entry summary or 404; the cockpit seed uses canonical native wire fixture builders. [8]

@@ -39,12 +39,17 @@ returns a small `{docPath, lifecycleId, changed}` report, or `None` when the lea
 **`restamp_leaf_doc_lifecycle` has no caller anywhere in `mcp/src` or `mcp/tests` — only its
 definition.** The card previously implied it was the live repair path; it is not. Measured with
 `grep -rn --include=*.py restamp_leaf_doc_lifecycle mcp/src mcp/tests`, which returns exactly one
-line, `mcp/src/agents_remember/tasks/leaf_doc.py:282`. The live bind-at-start publisher is
-`plan_leaf_doc_enclosure_registration` (`:351-410`) reached through
-`worktrees/task_leaf_binding.py`'s `plan_current_leaf_enclosure_registration` (`:178-202`) from
-`_publish_leaf_task_enclosure_binding` (`worktrees/modules/start.py:912-985`), and
+line, `mcp/src/agents_remember/tasks/leaf_doc.py:282`. The live bind-at-start owner is
+`worktrees/start_task_publication.py::publish_start_task_facts` (`:20-90`). Its validation
+calls `worktrees/task_leaf_binding.py::plan_current_leaf_enclosure_registration` (`:178-207`),
+which delegates to this module's `plan_leaf_doc_enclosure_registration` (`:351-410`).
+The resulting candidate feeds `plan_task_stage` and is published through
+`publish_task_fact_mutation`, then the persisted leaf/enclosure binding is rechecked.
+The earlier `_publish_leaf_task_enclosure_binding` in `worktrees/modules/start.py` is
+historical: BASE contains that binding publisher, while A013 removes it and routes start/attach
+through `publish_start_task_facts`. It is not a current caller or publication target.
 `plan_leaf_doc_lifecycle_restamp` is itself reached from start only read-only, as
-`_start_restamp_preflight`'s terminal-blocker check (`worktrees/modules/startup/start_contract.py:870-879`).
+`_start_restamp_preflight`'s terminal-blocker check (`startup/start_contract.py:867-876`).
 
 `_derived_bindings` (`:217-240`) and `_derived_leaf_bindings` (`:243-253`) compute only the ABSENT
 derived fields, so an existing binding is never rewired: `seriesContractPath` is
@@ -109,13 +114,16 @@ too; correctly placed documents pass unchanged (review R2's read-only sweep of t
 
 ### Repo-Internal References
 
+- Start and reattachment share one validating task-fact publisher for enclosure registration plus stage; dry-run performs no publication. [16]
+- The canonical wrapper invokes the task-domain enclosure-registration planner; start's lifecycle-restamp planner call is a read-only blocker preflight. [17]
+
 - The atomic reopen plan refuses a leaf the store would write to another file, then clears the doc's stamp before the next start restamps it. [1]
 - The placement guard: the store's write target for the document must be the path it was read from, or the caller's refusal is raised. [2]
 - Its four call sites: the leaf and every master in finalize, the leaf and the master in reopen. [3]
 - Post-contract start revalidates and publishes the lifecycle restamp through the task-first mutation owner. [4]
-- The start/attach publisher that actually binds a missing master link — the live repair path, since `restamp_leaf_doc_lifecycle` has no caller. [5]
+- Start and attach now publish leaf enclosure registration and task stage through publish_start_task_facts; dry-run returns without publication, and the persisted leaf binding is rechecked. The earlier start.py publisher is historical. [5]
 - The worktree-side wrapper that resolves the canonical parent row and delegates to this module's enclosure-registration planner. [6]
-- Start's read-only restamp preflight, the one `plan_leaf_doc_lifecycle_restamp` caller in `mcp/src`. [7]
+- Start's read-only terminal-blocker preflight calls `plan_leaf_doc_lifecycle_restamp`; the unused restamp publisher also calls that planner internally. [7]
 - The two derived-field computations: absent-only binding, never a rewire. [8]
 - The start/reopen planner that now returns a candidate when only a derived field is missing, and the publisher it feeds. [9]
 - The enclosure-registration planner whose exact no-op now requires the derived link, plus the candidate builder and the state classifier that names `master-link-missing`. [10]
@@ -127,10 +135,11 @@ too; correctly placed documents pass unchanged (review R2's read-only sweep of t
 
 ## 260815-DAG-L3 Governed Lifecycle Restamp
 
-`restamp_leaf_doc_lifecycle` now plans the same exact leaf-doc change but delegates publication to
-an injected writer. Worktree start supplies the queue-governed task-fact publisher, so lifecycle
-restamping cannot bypass an active sprint lane or atomic blocker; standalone tests can inject the
-ordinary task-doc writer without duplicating policy.
+`restamp_leaf_doc_lifecycle` retains an injected-writer API, but has no current production or
+test caller; this earlier governed-restamp account is historical, not a live start path.
+Current start/reattachment use `publish_start_task_facts`: validate canonical enclosure
+registration and terminal blockers, combine the candidate with task-stage facts, then publish
+through the shared task-fact mutation owner. A dry run returns without publication.
 
 ## CCR-L42 current candidate
 
@@ -155,10 +164,11 @@ Two things a reader must not mis-take from this change:
 
 1. **`restamp_leaf_doc_lifecycle` is dead code.** It has no caller in `mcp/src` or `mcp/tests`
    (one grep hit: its own definition). It was *not* the repair path before this change and it is
-   not one now. The live publisher is `plan_leaf_doc_enclosure_registration`, reached from
-   `_publish_leaf_task_enclosure_binding` through
-   `plan_current_leaf_enclosure_registration`; the restamp planner is reached from start only as a
-   read-only terminal-blocker preflight.
+   not one now. The live publisher is `publish_start_task_facts` in
+   `worktrees/start_task_publication.py`, which reaches this module's
+   `plan_leaf_doc_enclosure_registration` through `plan_current_leaf_enclosure_registration`,
+   combines the candidate with task-stage facts and publishes through `publish_task_fact_mutation`.
+   The restamp planner is reached from start only as a read-only terminal-blocker preflight.
 2. **A document with an exact enclosure address but no `seriesContractPath` now REFUSES closeout
    by name** (`task-enclosure-binding-master-link-missing`, raised by
    `worktrees/task_leaf_binding.py`) instead of passing silently. That is the intended,

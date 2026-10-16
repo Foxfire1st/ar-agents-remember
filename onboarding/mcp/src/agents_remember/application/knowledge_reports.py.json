@@ -3,15 +3,16 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "Reports resolve through the existing enclosure or log root.",
+      "note": "Report placement resolves the caller bound contract or the admitted log root, not ambient-session adoption.\n\nAnchor: lines 51-95",
       "targets": [
         {
           "anchor": {
-            "blob": "c3a9f2e9c8bf79ce5613d263f05ba8080a32ad5f",
-            "content": "sha256:c055d1f039eeb8b89e35a1de40a71ddb434c1d018640b958a472ed0c2d322e63",
+            "blob": "3b92fa4d330ca60e7a815bdf0e492e78e4ec0f1c",
+            "content": "sha256:2d82853f637ea66b649295b2eae4773d1984abfc734a9c4e829b50ce57215326",
             "locator": {
-              "kind": "symbol",
-              "name": "resolve_reports_dir"
+              "end": 95,
+              "kind": "line_range",
+              "start": 51
             }
           },
           "kind": "code"

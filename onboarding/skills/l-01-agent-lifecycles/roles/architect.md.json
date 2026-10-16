@@ -173,7 +173,9 @@
         "blob": "55753bd253d2eccdfe03bc6ea646b17576c4bc66",
         "content": "sha256:cf4e5d6b85fa8f16e296d7a72da4bb4db79a5061a4be35fcc6fb976f8baca462",
         "locator": {
-          "kind": "file"
+          "end": 68,
+          "kind": "line_range",
+          "start": 1
         }
       },
       "id": "RLZ-SZMT6X",

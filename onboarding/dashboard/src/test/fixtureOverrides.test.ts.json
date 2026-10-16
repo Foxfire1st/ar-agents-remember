@@ -100,24 +100,24 @@
       ]
     },
     "12": {
-      "note": "The current fixture-override regression deliberately supplies undeclared `refusedPolarity` to `lifecycle` and `createdAtButMisspelled` to `taskDoc`, and asserts two unknown-property diagnostics.\n\nAnchor: `refusedPolarity`; `createdAtButMisspelled`; \"still rejects a field the mirror does not declare\"",
+      "note": "The excess-property probe supplies undeclared refusedPolarity to taskEntry and createdAtButMisspelled to taskSummary. Its regression expects exactly two diagnostics, checks each offending name and requires the unknown-property message for both; lifecycle/taskDoc are not the builders used in this probe.",
       "targets": [
         {
           "anchor": {
-            "blob": "4d075a3b14a63e51fde0521c960138addc02ad48",
-            "content": "sha256:e1e17b33e7a1462483a3065cbcb7767beac274282e3483fe1f8ed9d6ce1a2fed",
+            "blob": "d75337f8b42efc75ce4b8d596f54fee22736c4ea",
+            "content": "sha256:6b6515259ef6e880529387771cc66a706ad4fc286a537b39736106dc95220047",
             "locator": {
-              "end": 44,
+              "end": 46,
               "kind": "line_range",
-              "start": 43
+              "start": 38
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "4d075a3b14a63e51fde0521c960138addc02ad48",
-            "content": "sha256:e38fc562b0e7ea3cf845bfe980a002d10e926bdbf1cba0f2f110d5efac0aaebc",
+            "blob": "d75337f8b42efc75ce4b8d596f54fee22736c4ea",
+            "content": "sha256:9c0877c53e64ae6620ccd99197756efe3aa6fd71f8f0ac43864b968ef35ee32c",
             "locator": {
               "end": 107,
               "kind": "line_range",
@@ -125,76 +125,6 @@
             }
           },
           "kind": "test"
-        }
-      ]
-    },
-    "13": {
-      "note": "The schema distinction is deliberate: the full `TaskDocNode` legitimately carries `createdAt`; a master's `TaskSubTaskRefNode` does not and instead may carry `linkedLifecycleId`; `SeriesSubTaskNode` may carry `createdAt`; the contract type assertions pin the master/series distinction.\n\nAnchor: \"class TaskDocNode(BaseModel):\"; \"class TaskSubTaskRefNode(BaseModel):\"; \"class SeriesSubTaskNode(BaseModel):\"; \"keeps the master and series sub-task row models distinct\"",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "f5de7f24aac5a38162a3a5e588e1ba71fa5d4da4",
-            "content": "sha256:ddb191f3d9a6f808cd69fd8fc3347dbf5487eae66924bd13ecf1aed48fea3b3f",
-            "locator": {
-              "end": 576,
-              "kind": "line_range",
-              "start": 546
-            },
-            "path": "dashboard/src/test/contract.test.ts"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "f5de7f24aac5a38162a3a5e588e1ba71fa5d4da4",
-            "content": "sha256:68b99325902ac69315f5e188f186d0b2421f56333a992af097b6e8438a80822b",
-            "locator": {
-              "end": 617,
-              "kind": "line_range",
-              "start": 587
-            },
-            "path": "dashboard/src/test/contract.test.ts"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "f2e7fe58c2b1df6c0dc6fddecd7cf6177bf4c0e6",
-            "content": "sha256:6520211641614e8c0c3ab88e09ef3d926a19d7ea317fc355f02022a338e2e846",
-            "locator": {
-              "end": 543,
-              "kind": "line_range",
-              "start": 543
-            },
-            "path": "mcp/src/agents_remember/observer/projection.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "f2e7fe58c2b1df6c0dc6fddecd7cf6177bf4c0e6",
-            "content": "sha256:cf34cd8801fcc7ff74a08348c28e55e776d4d5696f4e64a85c1e74950683cd25",
-            "locator": {
-              "end": 689,
-              "kind": "line_range",
-              "start": 689
-            },
-            "path": "mcp/src/agents_remember/observer/projection.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "f2e7fe58c2b1df6c0dc6fddecd7cf6177bf4c0e6",
-            "content": "sha256:a5cec98b47e0ad6353d0dcc68a3359b4b6686a61e4216251732a1d232b0c5464",
-            "locator": {
-              "end": 798,
-              "kind": "line_range",
-              "start": 798
-            },
-            "path": "mcp/src/agents_remember/observer/projection.py"
-          },
-          "kind": "code"
         }
       ]
     },
@@ -218,7 +148,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4d075a3b14a63e51fde0521c960138addc02ad48",
+            "blob": "d75337f8b42efc75ce4b8d596f54fee22736c4ea",
             "content": "sha256:53664f361037866ac39bc5d2343d194230bd87a7e5f2ca2200aa31dff112ffd3",
             "locator": {
               "end": 15,
@@ -246,7 +176,7 @@
         },
         {
           "anchor": {
-            "blob": "8c5f7681dcafb9d4dd5b7ff4e210297999ca4fcc",
+            "blob": "e87c7782c9414ddd44713084a9a37d1b860749ab",
             "content": "sha256:0c1963e5cd5a238d452bac7b1ed7c6deadd83bafbf1164e771793307a2c6165b",
             "locator": {
               "kind": "symbol",
@@ -313,7 +243,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0ff368dfb355b387d922b283da2266790d5c1aa8",
+            "blob": "1cd6a799aed038536e2536abe036b5244179c48f",
             "content": "sha256:6f0551e6feea6c5ac5293a4de3eb72fdfe92c5864c12eb7f96bba1c5da212696",
             "locator": {
               "kind": "symbol",
@@ -330,7 +260,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8c5f7681dcafb9d4dd5b7ff4e210297999ca4fcc",
+            "blob": "e87c7782c9414ddd44713084a9a37d1b860749ab",
             "content": "sha256:8ecca33cdfb7e0b823d4923484faf52c8b455c7c8c5b93334df94dc82f59e9c0",
             "locator": {
               "kind": "symbol",
@@ -342,7 +272,7 @@
         },
         {
           "anchor": {
-            "blob": "8c5f7681dcafb9d4dd5b7ff4e210297999ca4fcc",
+            "blob": "e87c7782c9414ddd44713084a9a37d1b860749ab",
             "content": "sha256:0c1963e5cd5a238d452bac7b1ed7c6deadd83bafbf1164e771793307a2c6165b",
             "locator": {
               "kind": "symbol",

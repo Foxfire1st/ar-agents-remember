@@ -18,6 +18,8 @@ Architect delegates one master to one Manager, or concurrent masters to an Orche
 
 The Manager prepares Worker, Reviewer and Curator as siblings in one `role_start_set` call. Worker opens immediately; Reviewer and Curator are held until their first addressed work, unless the call carries Reviewer's first work. Reviewer cold-reads the requirement before a candidate exists, without opening a code round. Worker freezes and reports directly to Reviewer; Reviewer returns sealed findings or code PASS, and supplies the passed freeze and its producer list directly to Curator. Curator and Reviewer exchange the memory candidate and memory verdict directly. The Manager reads reports, decides delegated gates, and owns task acceptance, closeout, integration and landing order; it does not relay ordinary freeze, finding, verdict or memory contents.
 
+Native start, finalize and abandon already publish task stage and its mirrored parent row. The Manager must not repeat those transitions with a separate status call; `task_doc set_status` remains for an explicit correction or organizational-master completion. This narrows redundant coordination work without granting a new task-state, review or paired-Git power to another role. Canonical Manager instructions own this account; package/harness copies remain generated propagation, not separate authority.
+
 Normal curation reconciles existing intent, ruled change and implementation, places durable meaning in affected cards/routes/records, writes through one admitted producer and clears complete leaf-scoped quality/coherence. A seat that wrote none of the changed cards/records then independently checks every statement against final code, every history disposition/effect/reason against the diff and important omissions; blocking findings are repaired before closeout. This is role evidence, not a new transaction predicate. Report-only admission still performs only its requested report/message and claims no normal authoring pass.
 
 Handoffs carry actual code/memory candidates, report and verdict paths, unresolved facts and scoped evidence. They do not require a ledger commit, cache-freshness proof or cache-repair transaction. A finished turn, implementation delivery, independent review, curation, semantic acceptance and paired-Git publication remain separate facts.
@@ -133,6 +135,8 @@ Worker ends with requirement-satisfying bytes, focused checks and report with Re
 The same Reviewer can repair a Worker-record-only finding on its last recorded round without `begin_review` only if the candidate is byte-identical under the authority-resolved identity. A changed or unproven candidate requires a new begin; remaining sealed finding IDs can only shrink. A showing case is proof of the required property, not the entire finding; an unsuccessful repair or extra-round request must account for that property and its construction.
 
 ## Evidence
+
+- Native stage operations need no redundant Manager status call; correction and organizational-completion authority remains explicit. [78]
 
 - The reconsideration-row bullet in the writer section. [1]
 - The decision section's reorder refusal. [2]

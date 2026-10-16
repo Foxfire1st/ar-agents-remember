@@ -91,6 +91,8 @@ rather than the current memory checkout. Existing `task.json` master artifacts a
 Standalone/light tasks are accepted through the same start builder because `leaf_ref_start` delegates to
 the shared resolver, which indexes non-master `task.json` docs as leaf candidates.
 
+**Current composition ownership.** `ensure_master_series_contract` is now the delegating public seam for `startup/series_contract_activation.py::activate_master_series`, carrying the exact spec, dry-run, activation arguments and leaf-operation label. That extracted owner runs the existing bootstrap/lock/fetch/activation sequence described below; this file retains contract construction, exact parent/memory authority and the facade, not a second activation implementation.
+
 **Contract-keyed activation replaces the old global sequential lane.** Series bootstrap still gates on
 the *effective* execution nature and commanding sprint, but contract existence is durable work truth,
 not scheduling ownership. Multiple non-terminal series contracts may coexist. Apply-time preflight
@@ -120,13 +122,14 @@ could never admit another leaf after its first landing. The developer ruled the 
 narrowing it: a master is meant to be paused and resumed, never locked by its own landing. This
 module's three call sites are gone and no replacement admission predicate was added.
 
-What survives here:
+What survives at this boundary (with the activation implementation extracted):
 
-- `leaf_admission_operation` (parameter at code line 220) still labels the master-series admission
-  refusals with the operation the caller performed
-  (`operation=leaf_admission_operation or "worktree_start"` at 244, 261 and 291). Only the seal call
-  was removed, not the operation label.
-- `_parent_series_contract` (code lines 742-799) still builds or recovers the leaf's parent series
+- `leaf_admission_operation` is retained by the facade (`start_contract.py:217-229`) and
+  forwarded unchanged to `activate_master_series`. The extracted owner supplies the caller's
+  operation to preflight (`series_contract_activation.py:52-54`) and the authoritative second-read
+  refusal (`:79-86`), falling back to `"worktree_start"`. The operation label survived; the
+  implementation no longer resides in this file.
+- `_parent_series_contract` (`start_contract.py:724-780`) still builds or recovers the leaf's parent series
   through `ensure_master_series_contract`, but now returns it directly. The former
   `isinstance(series, WorktreeCommandResult)` short-circuit and the follow-up seal check are gone, so
   a `WorktreeCommandResult` the parent builder returns is no longer filtered here.
@@ -202,6 +205,9 @@ No Domain Documentation source is configured for this memory root.
 
 ### Repo-Internal References
 
+- The facade forwards the operation label; preflight and second-read admission refusals use it in the extracted owner. [23]
+- The activation docstring and non-nesting comment now reside with the actual implementation. [24]
+
 - Master bootstrap separates durable contract creation from that contract's own disposable activation selection: it publishes that contract's own activation as reconciling without touching another master's record, then syncs the pinned source pair and reconciles it active before returning implementation authority. [1]
 - The admission error type gives persisted master-edge mismatches a typed, contract-bound payload before branch-protection projection. [2]
 - The start preflight projects a persisted master-edge refusal before protected-surface calculation. [3]
@@ -247,17 +253,21 @@ master in that contract's own activation record, and no other master is paused, 
 a waiting reason. The module's own frozen source now says so, so this card no longer carries a
 source-side debt note.
 
-- `ensure_master_series_contract`'s docstring (code lines 229-233) reads: "Contract presence proves
-  durable work exists; it does not own scheduling. Once this operation has recovered or created the
-  requested contract, it publishes that contract's own activation as reconciling (no other master's
-  record is touched), syncs its pinned source pair, and publishes it active before returning
-  implementation authority." The retired "selects that master for the exact protected source pair,
-  marks it reconciling (logically pausing the previous selection)" phrasing no longer occurs.
-- The lock-order comment guarding the second mutex (code lines 276-277) now names "the per-contract
-  activation store" instead of the former source-pair store.
+- The contract-presence/activation docstring now belongs to
+  `series_contract_activation.py::activate_master_series` (`:38-50`), not to
+  `ensure_master_series_contract`, which is a docstring-less delegating facade at
+  `start_contract.py:217-229`. It says: "Contract presence proves durable work exists; it does
+  not own scheduling", then describes publishing only this contract's activation as
+  reconciling, syncing its pinned source pair and publishing active before implementation authority.
+- The lock-order comment is in `series_contract_activation.py:70-71`: finish the per-master
+  bootstrap journal transaction before reading or writing the per-contract activation store.
+  It no longer resides in this file.
 
-Read the docstring for the mechanism it describes; it is now the same per-contract rule this card
-documents.
+Read the extracted owner's docstring and lock boundary for that mechanism; the facade forwards
+the same spec, dry-run, activation arguments and operation label without a second implementation.
 
 
 - Parent/source assertions are validated read-only before actual bootstrap; apply still re-resolves durable authority. [20]
+
+- The facade carries the exact spec and arguments to the extracted activation owner. [21]
+- The extracted owner retains bootstrap locking, outside-authority fetch and exact activation reconciliation. [22]

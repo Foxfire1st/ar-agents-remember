@@ -18,18 +18,8 @@ queue filtering unit-testable without a live browser stream.
 `DashboardState.suppressedAttentionIds`. It returns a stable shared empty array when analytics is absent,
 and caches the filtered result by queue reference plus suppression-map reference so Zustand
 `useStore(selectQueue)` does not see a fresh array on every render. `hasLiveWorktree(enclosure)`
-(260703-L11) is the shared tasks-surface visibility rule: true when `codeWorktreeExists ||
-memoryWorktreeExists` — the projection's stat'ed worktree-existence truth — never inferring liveness
-from a cleanup-state proxy (a `cleanup: reopened` contract stays hidden until `worktree_start`
-recreates its worktrees). **Its consumers read the same way again (corrected by the `260921-ICR-L34`
-curation).** `Hangar` renders a leaf ONLY while a worktree physically exists, and so does
-`LifecycleList`: the selector is the whole admission rule for both. **The landed-leaf rule this
-paragraph used to describe is withdrawn** — commit `a9a1a41b` (*"Revert L33's operations-list change;
-clear the pre-existing ruff-format red"*, a direct emergency commit with no curator pass behind it)
-deleted `panels/lifecycle-list/landedLeaves.ts` after `260921-ICR-L33` added it, so a `Completed` leaf
-whose worktree closeout removed is **not** rendered as a row under its master and the module that owned
-that second rule exists in neither tree. `buildTree` pivots lifecycle rows by
-l-01 phase or repo with deterministic ordering. `fmtWait` formats server-computed ages only. The lower
+selects physical worktree surfaces only: true when `codeWorktreeExists ||
+memoryWorktreeExists`, using the projection’s server-observed existence flags rather than a cleanup-state proxy. A reopened enclosure with neither path remains absent from Hangar; its task entry is still reachable regardless of whether worktrees exist, were cleaned up or have yet to start. Hangar retains physical-existence admission. Operations instead admits every served TaskEntry, including planned and terminal tasks without a worktree. `selectWorktrees` memoizes entry-bound worktrees plus unbound enclosures by source map identities, without matching identities. `fmtWait` formats server-computed ages only. The lower
 helpers translate provider snapshots into engine-room display groupings and drift snapshot counts into a
 stable segment list. `DRIFT_ORDER` also orders the converted names `stale` and `violation`, so a converted
 repository's bar reads the same good-to-actionable way as a legacy one.
@@ -56,7 +46,6 @@ No relevant documentation found after checking live sources.
 ### Repo-Internal References
 
 - `selectQueue` caches filtered queue arrays by source references and filters optimistic suppression ids. [1]
-- Lifecycle tree grouping and wait formatting are pure display derivations. [2]
 
 - The converted drift names order with the legacy classifications, healthy first. [3]
 

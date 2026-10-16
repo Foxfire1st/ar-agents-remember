@@ -8,7 +8,7 @@
 
 Defines the canonical workspace projection models and re-exports the extracted task DTOs. Retained task-document projections carry structural references; removed pickup and expectation analytics DTOs are not current carriers. Runtime ids remain observation/correlation, not routing authority.
 
-Current ownership split: workspace/lifecycle/process/analytics composition remains here; task-reader, graph-shape, closeout and series DTO definitions now live in [projection_task_documents](projection_task_documents.py.md). This file imports that module and keeps public task DTO class names as aliases. The canonical `TaskDocumentRef` identity is defined in `models.task_document_ref`, not exported as an incidental import by this schema facade; readers import that defining module directly. Retained DTO contracts below describe those definitions, not an alias as independent schema authority. `TaskDependencyNode` and optional completion/dependency/fixed-prose fields are served display data, never task mutation or execution permission.
+Workspace/task/process/analytics composition remains here; task-summary, full-reader, graph and closeout DTOs live in [projection_task_documents](projection_task_documents.py.md) and are re-exported. `TaskDocumentRef` comes from its defining `models.task_document_ref` module. `TaskDependencyNode` carries qualified reference/gone display facts, not copied task status or execution permission.
 
 ## Code Commentary
 
@@ -30,20 +30,9 @@ L23 adds optional `lifecycleOperation` state to `EnclosureNode`; the browser rec
 
 ### Logic
 
-Retained task-document projections expose `TaskDocumentRef` so the dashboard
-joins the same real sprint/master/leaf hierarchy used by routing. Removed pickup and expectation
-analytics DTOs are not current structural-reference carriers. `TaskDocNode` remains the
-JSON-primary task view; lifecycle attachment is optional. Since 260815-DAG-L11 the sprint graph
-projection is leaf-segmented: `TaskExecutionNode` (kind `master` lump or `segment` + `leafIds`)
-and `TaskExecutionEndpointNode` (ref + optional segment-sampling `leafId`) mirror the persisted
-schema, with before-validators lifting legacy bare refs into the uniform served shape;
-`TaskExecutionEdgeNode` carries the optional `judgmentId`, and `TaskDocNode.executionWaves` derives
-over execution nodes. The observer does not choose current seat occupants or authorize relations. Since
-260815-DAG-L14 the task projection also carries first-class sprint structure:
-`TaskSubTaskRefNode.masterRef` (the typed commanded-master link — the dashboard opens that
-document directly; `None` for ordinary leaf rows and legacy slug-only rows) and `TaskSeatNode`
-(role/label/identity/state, `extra="forbid"`, mirroring `tasks.document.SprintSeat`), projected
-from `TaskDocument.seats`; `TaskDocNode.seats` defaults to empty so non-sprint docs are untouched.
+`TaskState` carries authored `stage` and optional runtime `activity` and `eventAt`; it no longer declares a served `ageSeconds`. The browser computes task-event display age from `eventAt`. This is not removal of the separate task-document/file-age fields, which the ruling routes outside this leaf. `TaskEntry` adds qualified key/reference, summary, bound worktrees, one parent, ordered children and `TaskCounts`. `WorkspaceProjection.tasks` and `taskCounts` replace lifecycle and parallel series collections; top-level enclosures are the unbound remainder. `task_entries.build_task_entries` is the single stage/activity and membership producer, not this DTO module or the client.
+
+Reader DTOs retain canonical references, lump/segment graph nodes and legacy bare-ref lifting, typed sprint seats and commanded-master links. `TaskSummary` holds reader content; `TaskDocNode` adds full identity, status and membership. Display fields do not choose occupants, authorize relationships or infer task completion from a host turn. Enclosure `lifecycleId` still binds operations, and `LifecycleOperationProjection` remains operation progress rather than session activity.
 
 ### Conventions
 
@@ -71,7 +60,7 @@ None.
 
 ## Display-only grant projection
 
-Task nodes and series-child rows may carry strict directGrant evidence (grantedBy/grantedAt). None means no displayed readable grant. This observer schema neither reads nor writes the store and cannot authorize direct execution; TaskDocument remains unchanged. Generated projection schema/types mirror this display model.
+`TaskSummary`/`TaskDocNode` may carry strict directGrant evidence (`grantedBy`/`grantedAt`). None means no displayed readable grant. This schema does not read/write the grant store or authorize direct execution; the authored TaskDocument is unchanged.
 
 ## Evidence
 
@@ -122,7 +111,7 @@ Current view: the field is defined by `projection_task_documents.TaskDocNode`. A
 Closeout nodes now expose service condition, source classification/fingerprint/problems, and exact
 waiting-generation members with classification, effective priority, order, and reasons. Candidate
 lifecycle state, active blocker, grade mutation, and commit/certification fields are removed.
-Task/master and series nodes also expose typed discarded-unstarted history and counts; `None`
+Task summaries and full task nodes also expose typed discarded-unstarted history and counts; `None`
 distinguishes a non-master from a master with an empty audit. The shared discard node/proof models
 come from the dedicated closeout projection module.
 
@@ -147,4 +136,6 @@ by that number.
 
 
 
-- Task nodes and series-child rows carry optional strict directGrant evidence defined by the extracted DTO owner; it is display, not authorization. [6]
+- Task summaries and full reader nodes carry optional strict directGrant display evidence, not authorization. [6]
+
+- TaskState carries stage, activity and eventAt, without a served task-event age; the browser derives display age. [7]

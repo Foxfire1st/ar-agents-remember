@@ -24,8 +24,9 @@
         "blob": "542874bcabd656533eaefaee6f2312907bcd6696",
         "content": "sha256:882487e587eee14441347202eb83cf92538943de0b597836077fb57762c095d1",
         "locator": {
-          "kind": "symbol",
-          "name": "resolve_role_launch_context"
+          "end": 122,
+          "kind": "line_range",
+          "start": 89
         }
       },
       "id": "RLZ-RA6D0D",

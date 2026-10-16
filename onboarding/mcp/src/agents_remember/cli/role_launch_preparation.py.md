@@ -76,7 +76,9 @@ The condition is now parent presence: every parentable role (orchestrator, manag
 
 - Frozen implementation of prepare_role_handover supporting the stated file behavior. [1]
 - Frozen implementation of _ar_mcp_context supporting the stated file behavior. [2]
+
 - The `_resolve_workspace` implementation now lives in its extracted owner. [3]
+
 
 
 

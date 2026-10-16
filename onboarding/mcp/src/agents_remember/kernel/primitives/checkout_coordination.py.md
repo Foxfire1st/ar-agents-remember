@@ -84,7 +84,9 @@ No configured domain documentation source.
 ### Repo-Internal References
 
 - Runtime config asks this checkout policy before selecting the synthetic leaf configuration. [1]
+
 - Durable lock admission authorizes the target before entering the kernel; append and rewrite retain the same guard. [2]
+
 - MCP establishes trusted mode before `load_config`; pytest establishes explicit test mode before importing application services. [3]
 
 

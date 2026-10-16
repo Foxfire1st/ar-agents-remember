@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "1844ef71d022f6b31f30ce714a2452018d2e9b8f",
+        "blob": "59a148a711df3a07d0424f5448d9871b6aac6930",
         "content": "sha256:ca209309bbbfa7a581514295808f050d319d764960a7cb1ab364eabe09339050",
         "locator": {
           "kind": "symbol",
@@ -26,7 +26,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d392d8cbf6d4794e8787608af948dfc9059bba33",
+            "blob": "59a148a711df3a07d0424f5448d9871b6aac6930",
             "content": "sha256:9b3d07bdf17d9bd2985743dbc9bb23b4f57bac652620508b9a4eeea9207a3474",
             "locator": {
               "kind": "symbol",
@@ -37,7 +37,7 @@
         },
         {
           "anchor": {
-            "blob": "d392d8cbf6d4794e8787608af948dfc9059bba33",
+            "blob": "59a148a711df3a07d0424f5448d9871b6aac6930",
             "content": "sha256:4b2101040ea61780c5642640b2c071823f76000fadea025465e6717cd2d428f0",
             "locator": {
               "kind": "symbol",
@@ -48,7 +48,7 @@
         },
         {
           "anchor": {
-            "blob": "d392d8cbf6d4794e8787608af948dfc9059bba33",
+            "blob": "59a148a711df3a07d0424f5448d9871b6aac6930",
             "content": "sha256:a7932cb1c5dcd2ae38fe2b12299731934e069b3fb5dfdc61e7c2cf485feb4463",
             "locator": {
               "kind": "symbol",
@@ -64,7 +64,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ea2488d7e1a524583dd02dc2468d07c4ffb0d35d",
+            "blob": "a1ee0ff2565114d0863fefb21fad733a2b220929",
             "content": "sha256:cd641e004b118159e1a6858f216b3feb3e462f481365df68cd322100544f7fad",
             "locator": {
               "kind": "symbol",
@@ -106,27 +106,106 @@
         }
       ]
     },
-    "2": {
-      "note": "Major equality and validated record base; tolerant rewrite policy is declared in the module front matter.",
+    "12": {
+      "note": "Current attention writes read and replace under one store hold; reconciliation uses actual observations rather than lifecycle pruning.\n\nAnchor: `AttentionDismissalStore.dismiss`; `AttentionDismissalStore.reconcile`",
       "targets": [
         {
           "anchor": {
-            "blob": "d392d8cbf6d4794e8787608af948dfc9059bba33",
-            "content": "sha256:a71288d370592aafc207460d9f442cc9d640f82b9fd50f219a7220431a17d397",
+            "blob": "7f26c932e6a31d8da2e9f2593954cde82ea1b9ff",
+            "content": "sha256:60e95c95e5646d85ef8f0c9a41f649dbd72a170534264bb5ebf54afb48a199eb",
+            "locator": {
+              "end": 139,
+              "kind": "line_range",
+              "start": 120
+            },
+            "path": "mcp/src/agents_remember/controlplane/attention_dismissals.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7f26c932e6a31d8da2e9f2593954cde82ea1b9ff",
+            "content": "sha256:40060f9dcbef2663741f4e2b9ba101e6b633ed8fa380be2d8d45f077244fbf18",
+            "locator": {
+              "end": 207,
+              "kind": "line_range",
+              "start": 164
+            },
+            "path": "mcp/src/agents_remember/controlplane/attention_dismissals.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "The lock-at-replacement check cannot prove the earlier read was inside the same hold; retained gate delete/compact do hold across the full sequence.\n\nAnchor: `GateStore.compact`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "59a148a711df3a07d0424f5448d9871b6aac6930",
+            "content": "sha256:18e19347826e5c2e9e70f9ba584a22c80264b29fda28921c215e951f9fd2e5ca",
             "locator": {
               "kind": "symbol",
-              "name": "schema_version_supported"
+              "name": "require_lock_held"
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "938131908d1c91afc46e26f64e36ef90306c0971",
-            "content": "sha256:592e3db0cf23a5975acd675c9f0ea4cd776f9197a5228977f32c151529dd34b5",
+            "blob": "bbb005d14f4c90cbe56e3aecbbd4e5ca9cf52cd5",
+            "content": "sha256:fbffe192b9fee0e46e4502a9b95fd44135c9f2953cdf7a238e13b82f5df53a30",
             "locator": {
-              "kind": "symbol",
-              "name": "DurableRecord"
+              "end": 299,
+              "kind": "line_range",
+              "start": 258
+            },
+            "path": "mcp/src/agents_remember/controlplane/store.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "14": {
+      "note": "The current read-policy split is strict gate authority versus tolerant non-authoritative attention acknowledgements.\n\nAnchor: \"Read policy is part of each store's authority contract\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "59a148a711df3a07d0424f5448d9871b6aac6930",
+            "content": "sha256:05e0312f154b2a79f44ea0bbb2ec839d7bc11edf5c603e8cb26da58590c0413e",
+            "locator": {
+              "end": 22,
+              "kind": "line_range",
+              "start": 13
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Major equality and validated record base; tolerant rewrite policy is declared in the module front matter.\n\nAnchor: actual current supporting source",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "59a148a711df3a07d0424f5448d9871b6aac6930",
+            "content": "sha256:a71288d370592aafc207460d9f442cc9d640f82b9fd50f219a7220431a17d397",
+            "locator": {
+              "end": 196,
+              "kind": "line_range",
+              "start": 175
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "59a148a711df3a07d0424f5448d9871b6aac6930",
+            "content": "sha256:740fdd5efc7bcfc3de4459c558cfe48a7790ce9ffc24c2ddda6e7a94501b3e9f",
+            "locator": {
+              "end": 221,
+              "kind": "line_range",
+              "start": 199
             }
           },
           "kind": "code"
@@ -134,15 +213,16 @@
       ]
     },
     "3": {
-      "note": "Guarded coordinator entry translates the shared capability failure.",
+      "note": "Guarded coordinator entry translates the shared capability failure.\n\nAnchor: actual current supporting source",
       "targets": [
         {
           "anchor": {
-            "blob": "938131908d1c91afc46e26f64e36ef90306c0971",
-            "content": "sha256:d99b53ff95bbbc0395003498264051f916b0da5e4c67e2ebc07259709fa1e071",
+            "blob": "59a148a711df3a07d0424f5448d9871b6aac6930",
+            "content": "sha256:d260e889dbb0ffafb0ab1dbac18137b0f3bf1040432c20bf21313017974629f0",
             "locator": {
-              "kind": "symbol",
-              "name": "exclusive_access"
+              "end": 263,
+              "kind": "line_range",
+              "start": 225
             }
           },
           "kind": "code"
@@ -231,7 +311,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d392d8cbf6d4794e8787608af948dfc9059bba33",
+            "blob": "59a148a711df3a07d0424f5448d9871b6aac6930",
             "content": "sha256:18e19347826e5c2e9e70f9ba584a22c80264b29fda28921c215e951f9fd2e5ca",
             "locator": {
               "kind": "symbol",
@@ -242,7 +322,7 @@
         },
         {
           "anchor": {
-            "blob": "d392d8cbf6d4794e8787608af948dfc9059bba33",
+            "blob": "59a148a711df3a07d0424f5448d9871b6aac6930",
             "content": "sha256:e1d718a6ded42e98065391834cadac19262c3129198696927e3e3d48deecd580",
             "locator": {
               "kind": "symbol",
@@ -253,7 +333,7 @@
         },
         {
           "anchor": {
-            "blob": "d392d8cbf6d4794e8787608af948dfc9059bba33",
+            "blob": "59a148a711df3a07d0424f5448d9871b6aac6930",
             "content": "sha256:91f641457703ec5caa68ca3d04518070c53c3a51614b2498ef646661328de14a",
             "locator": {
               "kind": "symbol",
@@ -269,7 +349,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d392d8cbf6d4794e8787608af948dfc9059bba33",
+            "blob": "59a148a711df3a07d0424f5448d9871b6aac6930",
             "content": "sha256:17f59a1bb0b5ecc96439d18353d2e83dbcede6f21f9c1ff6524a5f4dff55f738",
             "locator": {
               "kind": "symbol",
@@ -280,7 +360,7 @@
         },
         {
           "anchor": {
-            "blob": "938131908d1c91afc46e26f64e36ef90306c0971",
+            "blob": "59a148a711df3a07d0424f5448d9871b6aac6930",
             "content": "sha256:0ded9b079f84c73f5175084976631a4985862953421df8bf5c3d577c55e6e9a0",
             "locator": {
               "kind": "symbol",
@@ -291,7 +371,7 @@
         },
         {
           "anchor": {
-            "blob": "938131908d1c91afc46e26f64e36ef90306c0971",
+            "blob": "59a148a711df3a07d0424f5448d9871b6aac6930",
             "content": "sha256:ca209309bbbfa7a581514295808f050d319d764960a7cb1ab364eabe09339050",
             "locator": {
               "kind": "symbol",
@@ -302,27 +382,11 @@
         },
         {
           "anchor": {
-            "blob": "938131908d1c91afc46e26f64e36ef90306c0971",
+            "blob": "59a148a711df3a07d0424f5448d9871b6aac6930",
             "content": "sha256:8c0f0428a50f72a5b10c5cb639e33fa58ae8e6acc131bff8d36937b871b54c9f",
             "locator": {
               "kind": "symbol",
               "name": "rewrite_lines"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "7": {
-      "note": "Explicit migration validates every transformed record before replacement.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "938131908d1c91afc46e26f64e36ef90306c0971",
-            "content": "sha256:3bb5b7ab70ad8348952df536895cf62b2790aa98ad21a26c911a591c65f3c8a5",
-            "locator": {
-              "kind": "symbol",
-              "name": "migrate_jsonl_records"
             }
           },
           "kind": "code"

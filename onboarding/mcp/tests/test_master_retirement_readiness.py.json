@@ -3,8 +3,8 @@
   "proves": [
     {
       "anchor": {
-        "blob": "c17ab1e5adb372b7dd9ce0314c87cf89c485c78b",
-        "content": "sha256:b6bb493edc3b9a6a54355d0b9ef902b3be2c5d36ccad0b060717c4cffa882dcf",
+        "blob": "f43d00cdb4b04314b57b9b486c035fed3d6772ab",
+        "content": "sha256:4e4553f6ac3518c8fc39aa402aeda7de9e1f48ca09fa51d9c30307134c05e2c4",
         "locator": {
           "kind": "symbol",
           "name": "test_a_real_paired_enclosures_named_tool_is_carried_out_then_retirement_is_repeated"
@@ -20,7 +20,7 @@
     },
     {
       "anchor": {
-        "blob": "c17ab1e5adb372b7dd9ce0314c87cf89c485c78b",
+        "blob": "f43d00cdb4b04314b57b9b486c035fed3d6772ab",
         "content": "sha256:28a7d6e1bea131baf727f056e96a8d5c973504040bc7f4838a53ecc879b84825",
         "locator": {
           "kind": "symbol",
@@ -37,7 +37,7 @@
     },
     {
       "anchor": {
-        "blob": "c17ab1e5adb372b7dd9ce0314c87cf89c485c78b",
+        "blob": "f43d00cdb4b04314b57b9b486c035fed3d6772ab",
         "content": "sha256:927b26e73d1403f7cf56b511412203c885c2cced526c7a73a23d32c93aacef01",
         "locator": {
           "kind": "symbol",
@@ -54,7 +54,7 @@
     },
     {
       "anchor": {
-        "blob": "c17ab1e5adb372b7dd9ce0314c87cf89c485c78b",
+        "blob": "f43d00cdb4b04314b57b9b486c035fed3d6772ab",
         "content": "sha256:4788cee4aef1abfe1273eedd1cea8566c458af9469290058e623940516274503",
         "locator": {
           "kind": "symbol",
@@ -122,7 +122,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c17ab1e5adb372b7dd9ce0314c87cf89c485c78b",
+            "blob": "f43d00cdb4b04314b57b9b486c035fed3d6772ab",
             "content": "sha256:94b3da847aaec6aafd579ed2158c6035438fd32be9a7e891526b9c0f5aa19595",
             "locator": {
               "kind": "symbol",
@@ -138,7 +138,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c17ab1e5adb372b7dd9ce0314c87cf89c485c78b",
+            "blob": "f43d00cdb4b04314b57b9b486c035fed3d6772ab",
             "content": "sha256:846acc4178e847785a8cd1816c293367b1c35978c4c703c6369a41131f1cd7cf",
             "locator": {
               "kind": "symbol",

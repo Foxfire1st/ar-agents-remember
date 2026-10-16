@@ -17,7 +17,7 @@ The expected owner is the kernel checkout-execution declaration, whose normal py
 `GlobalStateLeakDetectionTests` deliberately leaks the checkout role, then observes both the named
 leak and restoration to test mode before failure. It verifies that only restored rows enter
 per-test snapshots, that reset never imports unloaded owners, and that a subsequently loaded cache
-is cleared. The actual ambient heartbeat is stopped and joined. Each other reset row exercises its
+is cleared. Every registered reset row exercises its
 declared cleanup through a local owner double, with the sweep-cursor and tool-writer rows asserting delegation to their owner resetters; each restored row keeps its original table while
 reporting the leaked addition.
 
@@ -29,8 +29,8 @@ and environment, lease and temporary cleanup before the original error propagate
 
 This suite runs under the ordinary shared pytest bootstrap as well as admitted certifying routes.
 The bootstrap's explicit test-mode baseline is required; a raw import without that composition is
-not an independent proof. Registry-row doubles and the actual heartbeat establish different cleanup
-boundaries and must not be described as full native-service execution.
+not an independent proof. Registry-row doubles establish declared loaded-owner cleanup,
+not native heartbeat or full native-service execution.
 
 ## Evidence
 

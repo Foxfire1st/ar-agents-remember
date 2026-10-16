@@ -6,11 +6,11 @@
 
 ## Purpose
 
-The shared definition types the canonical ar.embed-list server/client transport.
+The shared definitions type ar.embed-list and the explicit ar.host-activity-snapshot server/client transports.
 
 ## Code Commentary
 
-Its empty input returns string dashboardOrigin/frameBaseUrl pairs. The server uses provisioning and the client rechecks its actual framing/serving origin pair.
+ar.embed-list takes empty input and returns string dashboardOrigin/frameBaseUrl pairs; provisioning and client origin checks remain separate. ar.host-activity-snapshot takes empty input and returns a bootId string after the server-owned reconciliation. It is an explicit startup/plugin-boot read, not a host poll or task-stage producer.
 
 ## Invariants And Boundaries
 
@@ -20,7 +20,4 @@ Schema shape is not origin authorization, independent frame permission or a secr
 
 The current source and test assertions below establish the documented ownership; test citations do not claim a rerun in this pass.
 
-| Finding | Anchor | Source at frozen tree |
-| --- | --- | --- |
-| Current source owner or exact assertion described above. | `arEmbedList` | `mcp/src/agents_remember/package_data/paseo_plugin/shared/rpc.ts:6-12` |
-| Current source owner or exact assertion described above. | `ar.embed-list` | `mcp/src/agents_remember/package_data/paseo_plugin/shared/rpc.ts:7-12` |
+- Embed-list and explicit host-snapshot transports have separate typed empty-input responses. [1]

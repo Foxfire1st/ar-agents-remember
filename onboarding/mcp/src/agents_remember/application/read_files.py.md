@@ -6,11 +6,11 @@
 
 ## Current operative account — MIK-R109
 
-`read_ar_files_tool` names governing knowledge for one to `READ_AR_FILES_MAX_PATHS` (20) repository-relative path strings. It resolves admitted context once, measures record states at the code checkout's HEAD tree, and returns per-path existence, a readable governing card location or none, state counts/card state and bounded action-asking record names/headings. Source text, card text, sidecar bodies and overview text never leave this answer. Missing/unconverted memory names no card; unavailable HEAD leaves states unmeasured. A confined outside path is refused in its row without losing valid siblings. Existing sidecar storage and authoritative route-index decisions remain; overview locations are deduplicated once per call, deeper-first and deterministic. There is no published_intent payload, source-range parser, refresh/reset-marker consumer, served ledger or continuation. Ambient read.packet emission still carries facts only and zero content bytes. Removed refresh is refused by the payload boundary, while object/non-string entries are refused here with argument-removed.
+`read_ar_files_tool` names governing knowledge for one to `READ_AR_FILES_MAX_PATHS` (20) repository-relative path strings. It resolves admitted context once, measures record states at the code checkout's HEAD tree, and returns per-path existence, a readable governing card location or none, state counts/card state and bounded action-asking record names/headings. Source text, card text, sidecar bodies and overview text never leave this answer. Missing/unconverted memory names no card; unavailable HEAD leaves states unmeasured. A confined outside path is refused in its row without losing valid siblings. Existing sidecar storage and authoritative route-index decisions remain; overview locations are deduplicated once per call, deeper-first and deterministic. There is no published_intent payload, source-range parser, refresh/reset-marker consumer, served ledger or continuation. There is no ambient read.packet emission or per-file event-facts accumulator; completed-call observation belongs to the separate response boundary. Removed refresh is refused by the payload boundary, while object/non-string entries are refused here with argument-removed.
 
 ## Current source contract evidence
 
-- Current candidate source supports the operative account; historical sections grant no current tool or execution acceptance. [9]
+- The addressed read names governing knowledge only; it emits no ambient read.packet or source/card content. [9]
 
 ## Historical original card — all remaining original prose and evidence are non-operative
 

@@ -6,19 +6,13 @@
 
 ## Purpose
 
-Vitest + Testing Library coverage for `Dot`, the one place a lifecycle state or an attention severity
-becomes something a developer can see. Three flat properties, and deliberately nothing else:
+Attention-severity Dot assertions only; task stage/activity marks belong to row/page owners.
 
-1. the variant vocabulary equals what the wire can send plus what the queue can rank;
-2. every variant renders differently from every other variant **and** from a variant the component
-   does not know;
-3. every variant carries an ink of its own, so the glyph is redundancy rather than a replacement.
+1. DOT_VARIANTS equals alarm/warn/info.
+2. Every severity and fallback differ without animation.
+3. Each declared variant has ink distinct from fallback, independently of its glyph.
 
-The suite exists because `awaiting-developer` reached this component with no treatment at all — a
-hand-copied `KNOWN` list missed it, `variant` resolved to `undefined`, and only the base applied. An
-unrecognised variant does not throw and does not render blank; it silently ships looking like the
-base. That is why the fallback is carried in the variant list as an extra citizen rather than as a
-special case: "distinct from the fallback" and "distinct from each other" are the same requirement.
+Fallback remains in ALL_VARIANTS. Lifecycle vocabulary equality is retired; no replacement task-state list belongs in this suite.
 
 ## Code Commentary
 
@@ -38,40 +32,18 @@ or `prefers-reduced-motion` set.
 
 Three `it`s:
 
-1. *treats exactly the states the wire can send and the severities the queue can rank* — asserts
-   `[...DOT_VARIANTS].sort()` equals `[...LIFECYCLE_STATES, "alarm", "warn", "info"].sort()`.
-   Asserted in **both** directions: a new lifecycle state with no dot treatment fails, and so does a
-   recipe variant nothing can ever send. `DOT_VARIANTS` is read off the recipe, never hand-copied.
-2. *renders every state and severity differently from every other, and from a variant it does not
-   know* — walks `ALL_VARIANTS` into a `Map<appearance, variant>`, failing with the colliding
-   variant's name, and finally asserts `seen.size === ALL_VARIANTS.length`. It also asserts each mark
-   has non-empty `textContent`. Colour alone cannot carry this: `blocked`/`alarm`, `running`/`info`
-   and `awaiting-developer`/`warn` are three hues each shared by a state and a severity the cockpit's
-   left rail shows at the same time, so the glyph is what makes it pass.
-3. *gives every variant an ink of its own, so the glyph is redundancy and not a replacement* —
-   extracts the first `c_*` class per variant, asserts it exists, and asserts it differs from the
-   fallback's. Without this a build that stripped every hue would still pass test 2 on glyphs alone.
-   Sharing the base's tone is the one collision that is never safe, because every consumer can reach
-   the base — while the base was `amber` that was literally true of `warn`.
+Vocabulary equals alarm/warn/info. Appearance keys exclude animation, require nonempty glyphs and reject pairwise collisions including fallback. Ink is independently required and differs from fallback; these are class/glyph assertions, not computed CSS.
 
 ### Conventions
 
-The vocabulary is imported from the unit under test (`DOT_VARIANTS`) and from the wire mirror
-(`LIFECYCLE_STATES`); this file holds no list of its own. Assertions read the rendered class list
-rather than computed styles, because under jsdom the atomic class name is the declaration. `cleanup`
-runs in `afterEach` since several helpers render inside loops.
+DOT_VARIANTS comes from the recipe; no LIFECYCLE_STATES import remains. Tests inspect atomic classes under jsdom and clean up looped renders.
 
 ### Invariants And Boundaries
 
-- No stylesheet, no browser, no snapshot. The suite must stay readable as three properties, not as a
-  table of expected class names — a snapshot would pass on a wrong-but-stable rendering.
-- Animation atoms must stay excluded from the appearance key. Counting them would let a variant
-  "differ" only by moving, which is exactly what the Calm toggle and reduced motion erase.
-- The fallback stays a member of `ALL_VARIANTS`, never a separate assertion.
-- Test 3 must keep asserting colour separately from test 2. Together they say "colour is required and
-  the glyph is redundancy"; either one alone permits dropping a channel.
-- Scope is the mark's own appearance. Accessible naming lives with the consumers (`LifecycleList`'s
-  "Task progress: …" label, `AttentionQueue`'s "Severity: …" image); `Dot` is `aria-hidden`.
+- No browser, stylesheet or snapshot proof.
+- Animation cannot be the only distinction; Calm/reduced motion removes it.
+- Fallback stays in ALL_VARIANTS and ink remains independent of glyph assertions.
+- Dot is aria-hidden; severity naming belongs to consumers, task marks to row/page owners.
 
 ### Todos
 
@@ -88,22 +60,21 @@ No configured Domain Documentation source exists for this file.
 
 ### Repo-Internal References
 
-The suite closes over three declarations it does not own: the recipe's variant map, the wire state
-vocabulary, and the glyph table. All three are cited so a reader can see why no list is restated here.
+The local recipe and glyph table govern severity marks, not a lifecycle vocabulary.
 
 - The suite declares `ALL_VARIANTS` with the explicit `FALLBACK` member. [1]
 - `markOf` renders one mark and returns the rendered element for assertions. [2]
 - `appearanceOf` derives the observable appearance key from the rendered mark. [3]
-- The suite asserts the wire/recipe vocabulary equality. [4]
+- The vocabulary assertion requires exactly alarm/warn/info. [4]
 - The suite asserts distinct appearances for every variant and the fallback. [5]
 - The suite asserts that every variant carries its own ink. [6]
 - `DOT_VARIANTS = dot.variantMap.variant` is the derived vocabulary this suite imports rather than copying. [7]
 - `DOT_GLYPHS` is the glyph table used by the dot recipe. [8]
 - The `cva` base uses `color: "muted"`. [9]
-- The `dot` recipe defines the state/severity color pairs that the glyph tests distinguish. [10]
-- `LIFECYCLE_STATES` is the composed lifecycle vocabulary. [11]
-- `LIVE_STATES` declares the live lifecycle vocabulary. [12]
-- `TERMINAL_STATES` declares the terminal lifecycle vocabulary. [13]
+- The recipe defines attention-severity appearances, not task lifecycle marks. [10]
+
+
+
 - The effects-off source comment explicitly keeps the rule unlayered so it wins over the effects layer. [14]
 - The `html[data-effects="off"]` selector is declared here. [15]
 - The effects-off rule disables animation with `!important`. [16]
@@ -113,7 +84,6 @@ vocabulary, and the glyph table. All three are cited so a reader can see why no 
 
 ### Cross-Repo References
 
-No meaningful cross-repo references found. The vocabulary mirrors the served lifecycle states, but the
-mirror (`types/projection.ts`) is in this repository.
+No cross-repository behavior is exercised; these are local severity-mark assertions, not lifecycle-wire coverage.
 
 No meaningful cross-repo references found.

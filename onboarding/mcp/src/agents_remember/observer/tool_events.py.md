@@ -22,7 +22,7 @@ names the bound agent or a chat, and over-long scalars are left out past
 `TOOL_EVENT_VALUE_MAX_CHARS` (120). `call_target_role` carries the started/addressed role
 around the completion choke on a context variable, because the choke receives the answer,
 not the call. `record_tool_completed` is the choke's one call into the river; outside a
-server process there is no writer and the call is simply not observed.
+server process there is no writer and the call is simply not observed. `ToolCaller.scope_key` is snapshotted from launch binding and emitted as optional `Event.scopeKey`. No active ambient session or alternate lifecycle-event route is required; every recorded completion targets the workspace River.
 
 ## Evidence
 

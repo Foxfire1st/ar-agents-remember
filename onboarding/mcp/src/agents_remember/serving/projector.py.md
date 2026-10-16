@@ -32,19 +32,12 @@ loop on debounced input changes or an idle heartbeat; without one, fixed-interva
 
 ## Code Commentary
 
-Every prime/live/watcherless projection wake records its actual reason, domains and path evidence. Consumed invalidations are acknowledged only after required refresh and publication succeed; failures and cancellation-drained work retain them alongside later arrivals. Stable projection/metrics files write only on semantic change; heartbeat and independent full healing remain permitted.
+Every prime/live/watcherless projection wake records its actual reason, domains and path evidence. Consumed invalidations are acknowledged only after required refresh and publication succeed; failures and cancellation-drained work retain them alongside later arrivals. Stable projection/metrics files write only on semantic change; heartbeat and independent full healing remain permitted. Ordinary heartbeat/full healing excludes host activity unless HOST_ACTIVITY is already pending; the retained host snapshot is not periodically reread.
 
 
 ### Logic
 
-`Projector(config, *, interval=1.0, heartbeat=None, now=None, before_tick=None,
-provider_refresher=None, landing_refresher=None, change_watcher=None)` holds the
-published `(seq, WorkspaceProjection)` tuple, the previous tick's `StableProjectionState`, a boot
-nonce, and a set of per-connection `asyncio.Queue` subscribers. `now` is the clock the tick
-projects at (defaults to `_utcnow`, wall-clock UTC re-read every tick); `before_tick` is an
-optional hook run with that same moment just before each projection (sim feeds the next due
-fixture events through it). `provider_refresher` follows the `ProviderStateRefresh` protocol and
-is passed into `project_and_write` after `before_tick`. All default to live behaviour.
+`Projector(config, cadence, replay, refreshers, ledger)` owns the published tuple, stable comparison, boot nonce, subscriber queues and one HostSupervisorSubscription. A watched live input state receives host reconciliation and the subscription’s armed predicate. Replay clock/feeder, provider/landing and change watcher retain their separate roles; there is no second task-status producer or publication path.
 
 - `prime()` computes the first projection (so the first client gets an immediate snapshot) and
   seeds the stable-form cache; it is resilient — a failure is logged and left for the tick loop
@@ -61,7 +54,7 @@ is passed into `project_and_write` after `before_tick`. All default to live beha
 - **Watch-task lifecycle (260712-PTS-L3)** mirrors the landing-refresher task: `run()` starts
   `self._change_watcher.run(self._pacer)` as a task, and shutdown cancels-and-awaits both through
   the shared `_shutdown_task` helper (a stored exception from an already-dead task is logged, never
-  allowed to replace the Projector cancellation and skip the lifespan's terminal-host cleanup). The
+  allowed to replace the Projector cancellation and skip other lifespan cleanup). The
   watch task gets an `add_done_callback(self._on_watch_task_done)`: a watcher task that dies (or
   returns) must not leave the pacer believing changes are still detected — that would silently
   stretch every wake to the heartbeat — so the callback logs a loud ERROR and flips
@@ -70,7 +63,7 @@ is passed into `project_and_write` after `before_tick`. All default to live beha
   a single `_published` tuple; two separate attributes could tear (a bumped seq read against the
   previous snapshot would hand a poller a stale body under a fresh ETag).
 - `_tick_sync(moment)` (off the loop thread) runs `before_tick(moment)` if set, then returns
-  `project_and_write(config, now=moment, provider_refresher=...)`.
+  `project_and_write(config, now=moment, refresh=refresh, tick=ProjectionTickState(...))`.
 - `_publish_projection(current)` is the only successful-tick publication boundary. It computes the
   stable state and event batch first, emits a full `snapshot` only when prior authority is absent,
   increments sequence numbers, commits `_latest_stable` and `_published`, then broadcasts the
@@ -106,14 +99,14 @@ is passed into `project_and_write` after `before_tick`. All default to live beha
 - **seq advances only on content change** — the stable-form diff makes the sequence a content
   revision; volatile-age-only ticks broadcast nothing and mint no new revision.
 - **Reads only through `McpRuntimeConfig`** (NS #5) — `project_and_write` owns path resolution;
-  no host paths here.
+  host supervision resolves its configured activity directory, never a guessed host path.
 - `_tick_sync` runs in a thread so its blocking file I/O never stalls the event loop.
 - **Sim is a seam, not a fork:** `now`/`before_tick` default to live; the same loop drives sim
   with a replay clock + fixture feeder, so the SSE output is byte-identical. Sim (and every
   injected-`now()` test) gets NO pacer — `change_watcher=None` keeps the exact legacy
   `sleep(interval)` pacemaker, because the sim feeder writes only *inside* a tick and a
   change-gated loop would never wake.
-- **Live waking changes scheduling, not publication semantics.** A completed/failed/drained tick adds `max(interval, min(duration, 3 seconds))` rest; pending domains survive until the next eligible deadline. The quiet heartbeat keeps its 15-second scheduling interval; long ticks and publication contribute additional total lag. Failed watchers retain reported interval-driven full refreshes with this same floor. Watcherless replay retains fixed sleep cadence.
+- **Live waking changes scheduling, not publication semantics.** A completed/failed/drained tick adds `max(interval, min(duration, 3 seconds))` rest; pending domains survive until the next eligible deadline. Task/host inputs may spend the pacer’s one early pass per rest window without erasing original rest. The quiet heartbeat keeps its 15-second scheduling interval; long ticks and publication contribute additional total lag. Failed watchers retain reported interval-driven full refreshes with this same floor. Watcherless replay retains fixed sleep cadence.
 - The diff lives in `delta.py` (pure); this module only orchestrates, caches, and broadcasts.
 
 ### Conventions
@@ -154,9 +147,7 @@ The reviewed projector, app, and tests are wholly repository-local.
 
 ## 260727-CHATS-IM-L2 Current Delta
 
-The watched production worker owns one `ProjectionInputState`. Startup uses a full refresh;
-change wakes pass the coalesced domain set; heartbeats advance only heartbeat-owned state.
-Watcherless execution and failed watcher fallback retain full-refresh behavior.
+The watched production worker owns one ProjectionInputState. Host supervisor refresh occurs at startup or HOST_ACTIVITY invalidation; native exit closes the subscription and invalidates that domain through the existing pacer. Shutdown closes descriptors before draining watch/landing tasks. Missing/unarmed subscription leaves host activity unknown. Ordinary healing/heartbeat advances non-host inputs without host polling, including degraded/watcherless full refresh semantics. Event-driven host intake does not replace periodic provider safety or landing observation.
 
 ## 260731-EFA-L2 Current Delta
 
@@ -169,11 +160,11 @@ concepts, all with module-level defaults:
   serving) — the sim/replay seam. **They are one substitution**: sim wires a replay clock together
   with the feeder that writes the world that clock is about, and a replay clock without its feeder
   ticks over a world that never moves.
-- **`ProjectionRefreshers`** (`provider`, `landing`, `change_watcher`; `NO_PROJECTION_REFRESHERS`)
-  — the side-inputs a LIVE tick drives, plus the watcher that lets it wake early. All three are
+- **`ProjectionRefreshers`** (`provider`, `landing`, `change_watcher`, `host_activity_reconcile`; `NO_PROJECTION_REFRESHERS`)
+  — the side-inputs a LIVE tick drives, plus the watcher that lets it wake early. Production composition supplies the native reconcile port with the existing live inputs, which are
   enabled together for live serving and disabled together for sim replay (the feeder only writes
   *inside* a tick, so a change-gated loop would never wake). One choice — "is this projector
-  attached to a moving world?" — not three independent hooks.
+  attached to a moving world?" — not independent status producers.
 
 Live waking is completion-paced: with a change watcher the run loop paces via the `ChangePacer`
 (change-driven + heartbeat, with interval and completion-rest floors); without one — sim replay and the

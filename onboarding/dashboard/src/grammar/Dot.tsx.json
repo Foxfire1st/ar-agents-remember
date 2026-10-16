@@ -17,42 +17,6 @@
         }
       ]
     },
-    "2": {
-      "note": "The shared `pulse` keyframe used by `blocked`/`alarm`, documented as ≤3 flashes/s under WCAG 2.3.1.\n\nAnchor: \"@keyframes pulse {\"",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "f6f4905f6238821e495131ba80290cba55ca4a21",
-            "content": "sha256:7a5cd245db969b10f90c184c0da06ed1cafed71f7318e8ec7203cf1d4e121ac5",
-            "locator": {
-              "end": 60,
-              "kind": "line_range",
-              "start": 60
-            },
-            "path": "dashboard/src/index.css"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "3": {
-      "note": "The `pulseSlow` keyframe used by `awaiting-developer` — the developer's 2026-07-16 ruling that the cockpit state pulse is a slow ease-in-out, never `steps()` blinking.\n\nAnchor: `pulseSlow`",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "f6f4905f6238821e495131ba80290cba55ca4a21",
-            "content": "sha256:c99157bfbb246757bd22b124d4473f0d0f828facb52f77c59fac18d4620cd07d",
-            "locator": {
-              "end": 73,
-              "kind": "line_range",
-              "start": 66
-            },
-            "path": "dashboard/src/index.css"
-          },
-          "kind": "code"
-        }
-      ]
-    },
     "4": {
       "note": "The unlayered `html[data-effects=\"off\"]` rule that nulls `animation`/`transition` with `!important` — why motion can never carry identity here.\n\nAnchor: \"unlayered html[data-effects=\"off\"] freeze\"",
       "targets": [
@@ -71,40 +35,6 @@
         }
       ]
     },
-    "5": {
-      "note": "LIFECYCLE_STATES composes the six lifecycle names from LIVE_STATES and TERMINAL_STATES; Dot.test.tsx pins vocabulary equality.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "cc1a4d8fa8ad9c2ae7d91dff5dc6eba9d3330015",
-            "content": "sha256:f3250e2eaf18970a71c4dd84fd5bab7aa999d6f25fab248c3382d2dbf49e65f5",
-            "locator": {
-              "end": 13,
-              "kind": "line_range",
-              "start": 9
-            },
-            "path": "dashboard/src/types/projection.ts"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "6": {
-      "note": "RowMark passes the reported lifecycle state selected by rowState to Dot and supplies the Task progress label; document/unreported/terminal cases use the task-page mark.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "43e17a6f6194ff6dff8b56c726c525f51bee26a0",
-            "content": "sha256:175dfed166e2671d5756266e16671d4d00e6c93b509c153bf553e4a324dcc614",
-            "locator": {
-              "kind": "file"
-            },
-            "path": "dashboard/src/panels/lifecycle-list/LifecycleList.tsx"
-          },
-          "kind": "code"
-        }
-      ]
-    },
     "7": {
       "note": "`AttentionQueue` passes the raw `q.severity`.",
       "targets": [
@@ -118,40 +48,6 @@
             "path": "dashboard/src/panels/AttentionQueue.tsx"
           },
           "kind": "code"
-        }
-      ]
-    },
-    "8": {
-      "note": "The attention layer and lifecycle tree meet in the same task column; their glyphs distinguish a handoff from a queue warning even when both are amber.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "f2a0c19687a17a6ccf7f4639369c323139256b91",
-            "content": "sha256:403ce849f016995d80f9a15045834c90e5044963798787138719f11ab461e9b6",
-            "locator": {
-              "kind": "file"
-            },
-            "path": "dashboard/src/cockpit/Cockpit.tsx"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "9": {
-      "note": "The three flat properties this component is held to: vocabulary equality, every variant distinguishable from every other and from the fallback, and every variant carrying its own ink.\n\nAnchor: \"const ALL_VARIANTS\"",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "bc0f3d621d5d0b47243a45338ea8a76800018de4",
-            "content": "sha256:05564ae2982b10ba2b48f196392042f06683b33b1b072ebf9f9d16319de85207",
-            "locator": {
-              "end": 17,
-              "kind": "line_range",
-              "start": 17
-            },
-            "path": "dashboard/src/grammar/Dot.test.tsx"
-          },
-          "kind": "test"
         }
       ]
     }

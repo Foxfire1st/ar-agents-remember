@@ -295,8 +295,9 @@
         "blob": "544012e9af8e00c13cb558c0885e93e23ee2c4f4",
         "content": "sha256:66ee31d73bce2a90d98ca0024b96fb3e996242eafa5385dc58d75e1ab4f670f1",
         "locator": {
-          "kind": "symbol",
-          "name": "PaseoFrameControl"
+          "end": 453,
+          "kind": "line_range",
+          "start": 73
         }
       },
       "id": "RLZ-SFPH0W",

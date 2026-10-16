@@ -3,11 +3,12 @@
   "proves": [
     {
       "anchor": {
-        "blob": "34efef63b8b8a88b5224420b4f7bfacca40cedeb",
+        "blob": "f3436af2db562512e7ad0be1208627a54ba670ac",
         "content": "sha256:78c1c690590688c72fca7c0405a4dccac2df6b27fbe1a96c59818b363a67c4cb",
         "locator": {
-          "kind": "symbol",
-          "name": "test_admitted_record_rejects_a_rewritten_earlier_line"
+          "end": 764,
+          "kind": "line_range",
+          "start": 747
         }
       },
       "facet": "A modified earlier log line violates the byte-prefix append requirement.",
@@ -20,11 +21,12 @@
     },
     {
       "anchor": {
-        "blob": "34efef63b8b8a88b5224420b4f7bfacca40cedeb",
+        "blob": "f3436af2db562512e7ad0be1208627a54ba670ac",
         "content": "sha256:90b9acc72cd7ad859a7b9ae161a4cd4310d596d56b1d91dfa2dd5a9f56bba985",
         "locator": {
-          "kind": "symbol",
-          "name": "test_admitted_record_rejects_a_file_beside_the_line_file"
+          "end": 744,
+          "kind": "line_range",
+          "start": 738
         }
       },
       "facet": "A differently named file beside the daily log is rejected, not hidden by excluding the logs subtree.",
@@ -37,11 +39,12 @@
     },
     {
       "anchor": {
-        "blob": "34efef63b8b8a88b5224420b4f7bfacca40cedeb",
-        "content": "sha256:3bf811586700629c2ae24de72b0d3ae46021022e4fae3023c5e48fbabf7a40ab",
+        "blob": "f3436af2db562512e7ad0be1208627a54ba670ac",
+        "content": "sha256:ebc3e5d8445732b38d109d03ffd984cb0a0711086022ba273727731986d3376e",
         "locator": {
-          "kind": "symbol",
-          "name": "test_public_apply_re_resolves_source_and_persisted_parent_preview_stays_read_only"
+          "end": 434,
+          "kind": "line_range",
+          "start": 384
         }
       },
       "facet": "Actual apply re-resolves changed current source; an existing valid parent is read-only in preview.",
@@ -54,11 +57,12 @@
     },
     {
       "anchor": {
-        "blob": "34efef63b8b8a88b5224420b4f7bfacca40cedeb",
+        "blob": "f3436af2db562512e7ad0be1208627a54ba670ac",
         "content": "sha256:f9b0ff1c796c84cacf9b2008984d93638cac24ca8d520264c2ebd1b1190f35a8",
         "locator": {
-          "kind": "symbol",
-          "name": "test_registered_first_leaf_preview_is_repeatable_without_publication"
+          "end": 300,
+          "kind": "line_range",
+          "start": 271
         }
       },
       "facet": "Repeated admitted external-memory first-leaf previews carry the same owner-validated parent and bases, preserve startup/Git state except the separately checked daily call-log and completed-call river records, and publish no parent.",
@@ -71,11 +75,12 @@
     },
     {
       "anchor": {
-        "blob": "34efef63b8b8a88b5224420b4f7bfacca40cedeb",
+        "blob": "f3436af2db562512e7ad0be1208627a54ba670ac",
         "content": "sha256:f19addd277973e293c9dac65d7f6c767bfe43ee25afa336577edee7220d58d74",
         "locator": {
-          "kind": "symbol",
-          "name": "test_invalid_public_leaf_source_base_and_protected_ref_stay_refused_without_writes"
+          "end": 623,
+          "kind": "line_range",
+          "start": 562
         }
       },
       "facet": "Canonical leaf/source/base/protected-ref invalidity preserves refusal and product-state equality.",
@@ -88,11 +93,12 @@
     },
     {
       "anchor": {
-        "blob": "34efef63b8b8a88b5224420b4f7bfacca40cedeb",
+        "blob": "f3436af2db562512e7ad0be1208627a54ba670ac",
         "content": "sha256:538104ce3f245bf86b9cb9b29e2760c1a7c7f2424461ff552ae95903b3635c42",
         "locator": {
-          "kind": "symbol",
-          "name": "test_foreign_or_unreadable_persisted_parent_after_preview_is_never_replaced"
+          "end": 559,
+          "kind": "line_range",
+          "start": 508
         }
       },
       "facet": "Foreign/unreadable persisted artifacts retain explicit refusal and are never replaced by a valid plan.",
@@ -105,11 +111,29 @@
     },
     {
       "anchor": {
-        "blob": "34efef63b8b8a88b5224420b4f7bfacca40cedeb",
-        "content": "sha256:b6077b2d15d6c04deaf7b966ebff69fa3ab4166b7e27a0dd92fe634ba8f8f45e",
+        "blob": "f3436af2db562512e7ad0be1208627a54ba670ac",
+        "content": "sha256:535df0c89ab40847b8b965dc53958c357520da8a2f904e592cf1056e126d07b2",
         "locator": {
           "kind": "symbol",
-          "name": "test_admitted_record_rejects_a_directory_touch_without_entry"
+          "name": "test_observer_event_mode_change_is_rejected"
+        }
+      },
+      "facet": "The admitted workspace-river append passes before chmod, while a subsequent kind/mode change is rejected by the caller-owned metadata guard.",
+      "id": "PRF-8RSTA9",
+      "invariant": "INV-GAKDNC",
+      "origin": {
+        "handoffEntry": "L168-CUR-INV-GAKDNC-current-proof-definition",
+        "leaf": "260928-MIK-L168"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "f3436af2db562512e7ad0be1208627a54ba670ac",
+        "content": "sha256:b6077b2d15d6c04deaf7b966ebff69fa3ab4166b7e27a0dd92fe634ba8f8f45e",
+        "locator": {
+          "end": 833,
+          "kind": "line_range",
+          "start": 825
         }
       },
       "facet": "A directory mtime touch without an admitted new direct child is rejected.",
@@ -122,11 +146,12 @@
     },
     {
       "anchor": {
-        "blob": "34efef63b8b8a88b5224420b4f7bfacca40cedeb",
+        "blob": "f3436af2db562512e7ad0be1208627a54ba670ac",
         "content": "sha256:1fed1e0cf07033e9e4a221c18793b98dfd1c994bddc03dfd8c3c3035392fe1d6",
         "locator": {
-          "kind": "symbol",
-          "name": "test_preview_handoff_is_failure_sensitive_and_cannot_supply_durable_authority"
+          "end": 505,
+          "kind": "line_range",
+          "start": 437
         }
       },
       "facet": "Removing the exact plan handoff restores refusal; the preview value cannot authorize default/durable parent admission.",
@@ -139,11 +164,12 @@
     },
     {
       "anchor": {
-        "blob": "34efef63b8b8a88b5224420b4f7bfacca40cedeb",
+        "blob": "f3436af2db562512e7ad0be1208627a54ba670ac",
         "content": "sha256:3f5b70ea805ee76b57412f00adb4d44ffcbf38f8f1086ca0076791e24122092b",
         "locator": {
-          "kind": "symbol",
-          "name": "test_admitted_record_rejects_a_stale_day_detail_folder"
+          "end": 822,
+          "kind": "line_range",
+          "start": 814
         }
       },
       "facet": "An unrelated old-day detail folder is not admitted by daily-record-shaped spelling.",
@@ -156,8 +182,8 @@
     },
     {
       "anchor": {
-        "blob": "34efef63b8b8a88b5224420b4f7bfacca40cedeb",
-        "content": "sha256:bd88ae17f239e405f1886b308af909fe2e7a42d92c4c60e95759ab86575cefb0",
+        "blob": "f3436af2db562512e7ad0be1208627a54ba670ac",
+        "content": "sha256:4b86d25b3cc452ff2f653026c226afad1c47956a77c15c70692b76c8e9b480a4",
         "locator": {
           "kind": "symbol",
           "name": "test_public_partial_bootstrap_preview_is_read_only_then_apply_recovers_same_journal"
@@ -173,11 +199,12 @@
     },
     {
       "anchor": {
-        "blob": "34efef63b8b8a88b5224420b4f7bfacca40cedeb",
+        "blob": "f3436af2db562512e7ad0be1208627a54ba670ac",
         "content": "sha256:79fba9a76f372513eb4e950976d84ea8eacfe81e11ae3b51ad8d86e7e093381e",
         "locator": {
-          "kind": "symbol",
-          "name": "test_admitted_record_rejects_a_detail_file_no_line_names"
+          "end": 775,
+          "kind": "line_range",
+          "start": 767
         }
       },
       "facet": "A new detail file with no new line naming it is rejected.",
@@ -190,28 +217,12 @@
     },
     {
       "anchor": {
-        "blob": "34efef63b8b8a88b5224420b4f7bfacca40cedeb",
-        "content": "sha256:137e5cb0ffae92ce39e71a2fcea84feb24c878932b9bcdf6b8d60a4b4137f262",
-        "locator": {
-          "kind": "symbol",
-          "name": "test_observer_event_mode_change_is_rejected"
-        }
-      },
-      "facet": "The legitimate ambient append passes before chmod, while a kind/mode change is rejected by the caller-owned metadata guard.",
-      "id": "PRF-MST172",
-      "invariant": "INV-GAKDNC",
-      "origin": {
-        "handoffEntry": "MIK-R131@v1/R2/worker",
-        "leaf": "260928-MIK-L131"
-      }
-    },
-    {
-      "anchor": {
-        "blob": "34efef63b8b8a88b5224420b4f7bfacca40cedeb",
+        "blob": "f3436af2db562512e7ad0be1208627a54ba670ac",
         "content": "sha256:f9b0ff1c796c84cacf9b2008984d93638cac24ca8d520264c2ebd1b1190f35a8",
         "locator": {
-          "kind": "symbol",
-          "name": "test_registered_first_leaf_preview_is_repeatable_without_publication"
+          "end": 300,
+          "kind": "line_range",
+          "start": 271
         }
       },
       "facet": "Repeated registered first-leaf previews preserve startup/Git state while each actual call is accounted for by checked log and completed-call river records.",
@@ -224,11 +235,12 @@
     },
     {
       "anchor": {
-        "blob": "34efef63b8b8a88b5224420b4f7bfacca40cedeb",
+        "blob": "f3436af2db562512e7ad0be1208627a54ba670ac",
         "content": "sha256:e7a4d7f610b39623e8bbff0e6798a9c380238137ac0f82291405a1a4ff7c742a",
         "locator": {
-          "kind": "symbol",
-          "name": "test_admitted_record_rejects_a_stale_day_line_file"
+          "end": 811,
+          "kind": "line_range",
+          "start": 802
         }
       },
       "facet": "An unrelated old-day line path is not admitted by daily-record-shaped spelling.",
@@ -241,11 +253,12 @@
     },
     {
       "anchor": {
-        "blob": "34efef63b8b8a88b5224420b4f7bfacca40cedeb",
+        "blob": "f3436af2db562512e7ad0be1208627a54ba670ac",
         "content": "sha256:d17ecd65dd2757031c9aae2a7fd06e29dcd96fb82d860ac02eb0ce02a77e5f5a",
         "locator": {
-          "kind": "symbol",
-          "name": "test_admitted_record_rejects_a_rewritten_earlier_event"
+          "end": 799,
+          "kind": "line_range",
+          "start": 778
         }
       },
       "facet": "A modified earlier workspace event violates the byte-prefix append requirement.",
@@ -260,11 +273,12 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "34efef63b8b8a88b5224420b4f7bfacca40cedeb",
-        "content": "sha256:f78eccb29e35c8aa73f6612012f0fcc28c01990aab8ec80aae4d4415dec1d400",
+        "blob": "f3436af2db562512e7ad0be1208627a54ba670ac",
+        "content": "sha256:958750e9b559631f06dbf7a647ec57e513014e9c08cf45c61dd9b1c5a948edba",
         "locator": {
-          "kind": "symbol",
-          "name": "PreviewFixture"
+          "end": 263,
+          "kind": "line_range",
+          "start": 45
         }
       },
       "id": "RLZ-CNGGMS",
@@ -299,7 +313,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "34efef63b8b8a88b5224420b4f7bfacca40cedeb",
+            "blob": "f3436af2db562512e7ad0be1208627a54ba670ac",
             "content": "sha256:a86b1d3b4dcaf22dffa4ddc8ec4271b03e6e8bb2606eb4890fc57c6f51e00ef4",
             "locator": {
               "kind": "symbol",
@@ -332,7 +346,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "34efef63b8b8a88b5224420b4f7bfacca40cedeb",
+            "blob": "f3436af2db562512e7ad0be1208627a54ba670ac",
             "content": "sha256:1fed1e0cf07033e9e4a221c18793b98dfd1c994bddc03dfd8c3c3035392fe1d6",
             "locator": {
               "kind": "symbol",
@@ -348,7 +362,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "34efef63b8b8a88b5224420b4f7bfacca40cedeb",
+            "blob": "f3436af2db562512e7ad0be1208627a54ba670ac",
             "content": "sha256:538104ce3f245bf86b9cb9b29e2760c1a7c7f2424461ff552ae95903b3635c42",
             "locator": {
               "kind": "symbol",
@@ -369,22 +383,6 @@
             "locator": {
               "kind": "symbol",
               "name": "test_public_partial_bootstrap_preview_is_read_only_then_apply_recovers_same_journal"
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "16": {
-      "note": "After a real start adopts the lifecycle, the second-leaf refusal changes its event file; unchanged kind/mode passes and deliberately changed mode fails the guard.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "34efef63b8b8a88b5224420b4f7bfacca40cedeb",
-            "content": "sha256:137e5cb0ffae92ce39e71a2fcea84feb24c878932b9bcdf6b8d60a4b4137f262",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_observer_event_mode_change_is_rejected"
             }
           },
           "kind": "test"
@@ -427,12 +425,28 @@
       "targets": [
         {
           "anchor": {
-            "blob": "34efef63b8b8a88b5224420b4f7bfacca40cedeb",
+            "blob": "f3436af2db562512e7ad0be1208627a54ba670ac",
             "content": "sha256:080663dfa3f4222320b0db8a233c42a2091aa8f6d1ae5227416ecb2a05278073",
             "locator": {
-              "end": 336,
+              "end": 334,
               "kind": "line_range",
-              "start": 305
+              "start": 303
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "20": {
+      "note": "A successful second-leaf preview appends to the workspace river; unchanged kind/mode passes and deliberate mode change fails.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f3436af2db562512e7ad0be1208627a54ba670ac",
+            "content": "sha256:535df0c89ab40847b8b965dc53958c357520da8a2f904e592cf1056e126d07b2",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_observer_event_mode_change_is_rejected"
             }
           },
           "kind": "test"
@@ -476,7 +490,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "34efef63b8b8a88b5224420b4f7bfacca40cedeb",
+            "blob": "f3436af2db562512e7ad0be1208627a54ba670ac",
             "content": "sha256:36e9ba2dd735e9c299b8956bc5d2846f5427a811ae0411d60ca250e68495c2bf",
             "locator": {
               "kind": "symbol",

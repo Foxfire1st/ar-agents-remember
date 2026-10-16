@@ -1,0 +1,38 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test",
+      "prevents_costly_mistake",
+      "spans_locations"
+    ],
+    "justification": "A future cleanup optimization must not infer absence or recovery from an unread kind, failed ref listing or missing checkout. The two destructive owners and complete/partial/click-race/branch-without-checkout assertions guard against lost live acknowledgements and deleted current snapshots."
+  },
+  "applicability": "Reconciliation of supported current acknowledgement rows and pruning of valid drift snapshots whose native repository/branch subject is demonstrably gone.",
+  "conditions": [
+    "Removal needs an actual complete successful observation of the corresponding kind; missing, failed or incomplete kind reads cannot prove recovery or absence.",
+    "An acknowledgement newer than the observation read start is retained; valid UTC-aware source observations provide the comparison.",
+    "Branch existence comes from a successful native branch census and complete contract/directory inputs, not absence of a snapshot or checkout; usable snapshot identities are required."
+  ],
+  "exclusions": [
+    "Tolerant cleanup of malformed/unsupported retired-kind log lines; these are not live supported acknowledgement rows.",
+    "Treating stale retained projection slots, a missing snapshot, an absent checkout or a failed git/ref/directory read as proof that a live subject ended."
+  ],
+  "id": "INV-D9T2BC",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "sync-L81-primary-regressions.txt; partial/read-failure/restart/branch-without-checkout cases",
+        "M1-21: ROW-TBM8W7; mcp/src/agents_remember/serving/projections/snapshots_impl/_common.py:197-221. Static source witness on A013; no Curator execution."
+      ],
+      "path": "A011-R166-operational-acknowledgement-curator-input-26-corrected-proofs.json"
+    },
+    "handoffEntry": "L168-W-R166-05-06",
+    "leaf": "260928-MIK-L168",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Dismissal cleanup reclaims only things or ended occurrences proved gone by a complete successful source observation.",
+  "status": "proposed",
+  "supersedes": []
+}

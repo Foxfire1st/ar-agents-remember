@@ -77,18 +77,6 @@
     {
       "relation": "explains",
       "target": {
-        "blob": "e72ca56ab09dabd435ea4fd6192f947450d63549",
-        "content": "sha256:43aa31f3bd0ca6e274db2984d5b48a278d61067b530d27cf7b83a028634fc552",
-        "locator": {
-          "kind": "symbol",
-          "name": "TaskDirectGrant"
-        },
-        "path": "dashboard/src/panels/detail-panel/taskReader.tsx"
-      }
-    },
-    {
-      "relation": "explains",
-      "target": {
         "blob": "7a2d57a7d0c0a584ad58ad93fc87f64b49ea837e",
         "content": "sha256:3b006595eaa5da0d884db33d12e04a2809c0042e3ed94c8c9b7604e13303220c",
         "locator": {
@@ -119,7 +107,7 @@
     "leaf": "260928-MIK-L127",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-decision/v1",
   "status": "active",
   "supersedes": []

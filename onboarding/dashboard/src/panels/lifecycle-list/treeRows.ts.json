@@ -3,11 +3,12 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "0cdb05b43b696a44dd2de57a0ec30412310ff930",
-        "content": "sha256:81b2ece97f126349e7025970f27a135c348597ba55130dcaa796c8a53e3ce57b",
+        "blob": "9b2154a3b6fe3dfc85fc7a8b780f7138f8ba4d90",
+        "content": "sha256:bafb429745f1cf766aab86f9896ac0d8a88c903f5ab22aae8e9ab1f09aecf583",
         "locator": {
-          "kind": "symbol",
-          "name": "treeItems"
+          "end": 116,
+          "kind": "line_range",
+          "start": 49
         }
       },
       "id": "RLZ-79CD08",
@@ -16,72 +17,29 @@
         "handoffEntry": "MIK-R144@v1 rule 3b / order and fold",
         "leaf": "260928-MIK-L144"
       },
-      "rationale": "treeItems derives subtree need and selected-descendant containment, orders open siblings by need band then compareRows, emits each row once, and holds selected ancestor rows and completed folds open without mutating persisted collapse choices.",
+      "rationale": "Orders by each entry own need band and stable supplied tree order, with cycle/seen guards, terminal folds and held selected ancestors; it does not reconstruct subtree urgency or chronology.",
       "role": "primary-authority"
     },
     {
       "anchor": {
-        "blob": "0cdb05b43b696a44dd2de57a0ec30412310ff930",
-        "content": "sha256:762638344217c053411c6ba0fd920d9cba6afaeda8f577896fd32c390c1a0b78",
+        "blob": "9b2154a3b6fe3dfc85fc7a8b780f7138f8ba4d90",
+        "content": "sha256:8ac5439b404debbba38e45263ca47a6e4b0395b9e63cd3dcd55d3eb0ac47c0eb",
         "locator": {
-          "kind": "symbol",
-          "name": "compareRows"
+          "end": 45,
+          "kind": "line_range",
+          "start": 34
         }
       },
-      "id": "RLZ-QKE8AG",
+      "id": "RLZ-X1KK3E",
       "invariant": "INV-ME6CA1",
       "origin": {
         "handoffEntry": "MIK-R144@v1 rule 3b / order and fold",
         "leaf": "260928-MIK-L144"
       },
-      "rationale": "compareRows supplies only the createdAt then fallbackOrder chronological tie-break, including creation order within an over fold. treeItems separately composes subtree-need band order before calling that tie-break; this symbol does not choose the need band.",
-      "role": "primary-authority"
+      "rationale": "The current terminal-fold constructor retains selected descendant reach and a held-open fold; chosenAncestors separately protects selected parents.",
+      "role": "enforcement"
     }
   ],
-  "references": {
-    "1": {
-      "note": "The tree walk combines subtree need, selection containment, fold state and one-time row emission.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "0cdb05b43b696a44dd2de57a0ec30412310ff930",
-            "content": "sha256:81b2ece97f126349e7025970f27a135c348597ba55130dcaa796c8a53e3ce57b",
-            "locator": {
-              "kind": "symbol",
-              "name": "treeItems"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "2": {
-      "note": "Chronological comparison is separate from subtree-need ordering and held-selection flattening.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "0cdb05b43b696a44dd2de57a0ec30412310ff930",
-            "content": "sha256:762638344217c053411c6ba0fd920d9cba6afaeda8f577896fd32c390c1a0b78",
-            "locator": {
-              "kind": "symbol",
-              "name": "compareRows"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "0cdb05b43b696a44dd2de57a0ec30412310ff930",
-            "content": "sha256:81b2ece97f126349e7025970f27a135c348597ba55130dcaa796c8a53e3ce57b",
-            "locator": {
-              "kind": "symbol",
-              "name": "treeItems"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    }
-  },
+  "references": {},
   "schema": "ar-onboarding-file/v1"
 }

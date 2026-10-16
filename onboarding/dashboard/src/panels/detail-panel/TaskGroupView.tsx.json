@@ -3,12 +3,12 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "26e91f4fe081577ba544237a794733dfd1d377c5",
-        "content": "sha256:5ce9e35bd9be543af71427bd93f5cd7295e499db4f184e540b10b2a82edcdb11",
+        "blob": "1609d4607dea0ec7d83e230bda4ea335a0f38151",
+        "content": "sha256:42dda64f67199cf66aee1760a8eaee66605cfcec88507fa504d9383ece440e17",
         "locator": {
-          "end": 111,
+          "end": 88,
           "kind": "line_range",
-          "start": 21
+          "start": 12
         }
       },
       "id": "RLZ-0Q2WJ2",
@@ -21,24 +21,6 @@
       "role": "unclassified"
     }
   ],
-  "references": {
-    "1": {
-      "note": "Completed-master sorting is conditional and shares one call-local slice index for facts/navigation; other groups and discarded audit keep their separate ownership.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "26e91f4fe081577ba544237a794733dfd1d377c5",
-            "content": "sha256:5ce9e35bd9be543af71427bd93f5cd7295e499db4f184e540b10b2a82edcdb11",
-            "locator": {
-              "end": 111,
-              "kind": "line_range",
-              "start": 21
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    }
-  },
+  "references": {},
   "schema": "ar-onboarding-file/v1"
 }

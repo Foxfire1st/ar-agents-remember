@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "0102ac360df50ba77dd71ffd151b6884a98b36c6",
+        "blob": "7da9f46c5df58baebae20d92e34e2121b5c6f2a3",
         "content": "sha256:117cf11c0828775f1b56b948879c541782e828208fbb89880b663ca48a119689",
         "locator": {
           "kind": "symbol",
@@ -21,11 +21,12 @@
     },
     {
       "anchor": {
-        "blob": "0102ac360df50ba77dd71ffd151b6884a98b36c6",
+        "blob": "7da9f46c5df58baebae20d92e34e2121b5c6f2a3",
         "content": "sha256:dde50cf0bec6cf7fc7a6809b96a87f20c5c75ea29c2713f3a59f6303f8c04b74",
         "locator": {
-          "kind": "symbol",
-          "name": "_component_waves"
+          "end": 204,
+          "kind": "line_range",
+          "start": 142
         }
       },
       "id": "RLZ-H1FD2Z",
@@ -39,7 +40,7 @@
     },
     {
       "anchor": {
-        "blob": "0102ac360df50ba77dd71ffd151b6884a98b36c6",
+        "blob": "7da9f46c5df58baebae20d92e34e2121b5c6f2a3",
         "content": "sha256:665053f8d2822bfd03cee886c0d16ad38befd56ec6b3ea59830aba8c0e5c0a76",
         "locator": {
           "kind": "symbol",
@@ -57,7 +58,7 @@
     },
     {
       "anchor": {
-        "blob": "0102ac360df50ba77dd71ffd151b6884a98b36c6",
+        "blob": "7da9f46c5df58baebae20d92e34e2121b5c6f2a3",
         "content": "sha256:dde50cf0bec6cf7fc7a6809b96a87f20c5c75ea29c2713f3a59f6303f8c04b74",
         "locator": {
           "kind": "symbol",
@@ -75,11 +76,12 @@
     },
     {
       "anchor": {
-        "blob": "0102ac360df50ba77dd71ffd151b6884a98b36c6",
+        "blob": "7da9f46c5df58baebae20d92e34e2121b5c6f2a3",
         "content": "sha256:7f1c8eabc79d6b37aa94c86706168ce6a441fa2d4cb0152d5e6b6f935f190405",
         "locator": {
-          "kind": "symbol",
-          "name": "derive_master_order"
+          "end": 236,
+          "kind": "line_range",
+          "start": 207
         }
       },
       "id": "RLZ-QPKY0E",
@@ -88,16 +90,17 @@
         "handoffEntry": "MIK-R128@v1 rule 2",
         "leaf": "260928-MIK-L162"
       },
-      "rationale": "This derivation constructs the current master Order from the listed matched-child prerequisites and authoritative row states, retaining full stored cycle identity supplied by _component_waves. It indexes cyclic IDs once, excludes every cyclic member from ready_ids, admits only planning tasks whose prerequisites are Completed, and returns no Order when no matching listed child supplies nonempty dependency data.",
+      "rationale": "derive_master_order uses _task_population: each explicitly listed row takes the matching subTask child document status (matching id/kind) when available, otherwise its declared master-row status. Each waitsFor prerequisite absent from that listed population is instead inserted with synthetic status \"gone\", not taken from either a child document or a row. _component_waves retains stored-cycle identity; ready_ids admits only noncyclic planning tasks whose prerequisites are Completed. No Order is returned unless a matching listed child has nonempty waitsFor.",
       "role": "primary-authority"
     },
     {
       "anchor": {
-        "blob": "0102ac360df50ba77dd71ffd151b6884a98b36c6",
-        "content": "sha256:44498f2232bb9b100eac2b7be315665eb32c12ca28028b04005f0cd80e0b45dd",
+        "blob": "7da9f46c5df58baebae20d92e34e2121b5c6f2a3",
+        "content": "sha256:8e392b789fd5dbe8fc3788dd69af26738e8a3424ffbe8f361bbf4674401ae1e2",
         "locator": {
-          "kind": "symbol",
-          "name": "_task_population"
+          "end": 139,
+          "kind": "line_range",
+          "start": 119
         }
       },
       "id": "RLZ-YXXT68",
@@ -106,12 +109,12 @@
         "handoffEntry": "MIK-R128@v1 rule 2",
         "leaf": "260928-MIK-L162"
       },
-      "rationale": "For each indexed task, this population builder uses the matching subTask child's title when that child exists, otherwise the master row's name, and always takes status from the master row; it combines matched-child prerequisite data while retaining rows without a readable matching child.",
+      "rationale": "Uses the matched child document status when available, otherwise the declared master-row fallback for wave derivation; that calculation is not a file-less dependency display-state promise.",
       "role": "primary-authority"
     },
     {
       "anchor": {
-        "blob": "0102ac360df50ba77dd71ffd151b6884a98b36c6",
+        "blob": "7da9f46c5df58baebae20d92e34e2121b5c6f2a3",
         "content": "sha256:7f1c8eabc79d6b37aa94c86706168ce6a441fa2d4cb0152d5e6b6f935f190405",
         "locator": {
           "kind": "symbol",
@@ -130,16 +133,14 @@
   ],
   "references": {
     "1": {
-      "note": "Explicit child loading and authoritative row status determine the read-only population; full stored SCC identity survives Completed filtering, while unfinished scheduling derives waves and cyclic members never become ready.",
+      "note": "Explicit child loading prefers canonical child status and falls back only when absent; SCC/wave construction remains display-only.",
       "targets": [
         {
           "anchor": {
-            "blob": "0102ac360df50ba77dd71ffd151b6884a98b36c6",
-            "content": "sha256:b7ef5712cdb12e130a824b8c3da294b9c0dfaed4f69baae3bfb034b535c62a4f",
+            "blob": "7da9f46c5df58baebae20d92e34e2121b5c6f2a3",
+            "content": "sha256:1bfa0358102062decc80e2fc44b9205f1683a09d621841b0a8dae374b7eeaa03",
             "locator": {
-              "end": 236,
-              "kind": "line_range",
-              "start": 1
+              "kind": "file"
             }
           },
           "kind": "code"

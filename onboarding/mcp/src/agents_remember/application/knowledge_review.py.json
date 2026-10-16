@@ -7,8 +7,9 @@
         "blob": "6d7ca4345e18c4dd21a1dc2cde146f53513626f9",
         "content": "sha256:18707450de745e56f58caa82bfb8742fac36c10913d25651a326f54b7852885d",
         "locator": {
-          "kind": "symbol",
-          "name": "read_complete_knowledge_review"
+          "end": 268,
+          "kind": "line_range",
+          "start": 240
         }
       },
       "id": "RLZ-5BFBN1",

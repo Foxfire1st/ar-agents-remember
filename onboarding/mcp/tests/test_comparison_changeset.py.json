@@ -6,8 +6,9 @@
         "blob": "c7526b6cbfbb42906ef104c261abe6878262c042",
         "content": "sha256:9ddf2d332e7f5b6a2635f16d434bf083afeeb91f24194bdf50bac142e6a01644",
         "locator": {
-          "kind": "symbol",
-          "name": "test_comparison_paths_ignore_current_aliases_on_both_git_halves"
+          "end": 272,
+          "kind": "line_range",
+          "start": 212
         }
       },
       "facet": "Comparison paths ignore current aliases",
@@ -23,8 +24,9 @@
         "blob": "c7526b6cbfbb42906ef104c261abe6878262c042",
         "content": "sha256:d6e124db718e578f4b5a50d0d80ee21f849b2779c394622d527e846ee47ee59e",
         "locator": {
-          "kind": "symbol",
-          "name": "test_recorded_comparison_is_exact_including_dirty_and_rename_and_scoped_memory"
+          "end": 159,
+          "kind": "line_range",
+          "start": 69
         }
       },
       "facet": "Recorded comparison exact incl. dirty/rename/scoped memory",

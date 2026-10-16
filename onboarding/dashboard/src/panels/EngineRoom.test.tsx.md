@@ -7,18 +7,17 @@
 
 ## Current enclosure-only composition
 
-The two official aggregation tests and workspace provider helper factories were removed. A new test asserts official-strip and engine-room-fallback are absent while enclosure-canvas exists. Header, gate, lineage, leaf identity and memoized slice cases remain.
+The suite reads task status from the TaskEntry owning the process worktree while retaining the separate operation phase. A paused→works→completed task delta changes header/card status without replacing that phase. Provider-strip/fallback absence, phase-active flags, source lineage, leaf-first identity and narrowed model rebuild assertions remain.
 
 ### Maintenance boundaries
 
-Replace provider aggregation fixture/coverage paragraphs and OfficialStrip references with the authored absence case; retain phase-active, gate/lineage, leaf identity and narrowed-subscription cases. Label these test declarations/assertions, not a passing execution or mounted proof.
+The fixture publishes native entry/worktree binding, not a lifecycle state join. Operation phases remain separate machine-operation facts; phase-active assertions do not measure animation. Source inspection is not an executed mounted capture or passing test run.
 
 Source/test/fixture inspection is not a fresh mounted capture or a passing test run.
 Historical provider-shaped input data and retained compatibility definitions do not
 restore removed provider visuals or tool exposure.
 
-- The two official aggregation tests and workspace provider helper factories were removed. A new test asserts official-str — source ownership, not executed visual proof. [6]
-- The two official aggregation tests and workspace provider helper factories were removed. A new test asserts official-str — source ownership, not executed visual proof. [7]
+- Task status and operation phase remain separate; provider strip and fallback are absent in the rendered component fixture. [6] [7]
 
 ## Historical superseded account (non-operative)
 

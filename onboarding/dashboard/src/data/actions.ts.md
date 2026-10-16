@@ -2,13 +2,12 @@
 
 ## Current A8 source account
 
-The only retained exported function is postAttentionDismiss; AttentionDismissStatus and AttentionDismissTarget types also remain. It sends itemId and kind to the literal same-origin /api/actions/dismiss URL, adding target only for a truthy lifecycleId; no gateId is sent. Only HTTP202 maps to dismissed; every other status or a fetch throw maps to error. It does not retry or change the store itself. Its AttentionQueue caller suppresses rows and releases them on non-dismissed results, so the historical blanket no-optimistic-UI account does not describe that caller. The gate-decision clients, GateResponder and old gate-only cleanup account below are historical; neither a live serving route nor an execution verdict is established here.
+The retained action client is `postAttentionDismiss`. Its input and JSON body contain only itemId and kind; it sends no lifecycle target or gateId. The literal same-origin route is /api/actions/dismiss. Only HTTP 202 returns dismissed; other statuses and fetch failures return error. It does not retry or mutate the store. AttentionQueue owns optimistic suppression and failed-result rollback.
 
-- The current module retains only the attention-dismiss client, its target-optional body and HTTP202/error mapping. \[4] [4]
 
 - The current AttentionQueue caller uses suppressAttention before posting and releaseAttention for failed results; this is caller behavior, not an execution or server-authority claim. \[5] [5]
 
-## Historical original source account — retained, not authority for removed behavior
+
 
 
 ## Governing Overview
@@ -17,43 +16,21 @@ The only retained exported function is postAttentionDismiss; AttentionDismissSta
 
 ## Purpose
 
-The dashboard's **action POST client**: `postGateDecision` POSTs a targeted gate decision to the
-serving layer's `POST /api/actions/{verb}`, `postGateDecisionDetailed` (260715-FEUI-L6) is the
-same POST keeping the server's words for verbatim-error surfaces, and `postAttentionDismiss`
-POSTs lifecycle-bound attention dismissals to `POST /api/actions/dismiss`. The read-only zustand
-store stays read-only; these are fire-and-report actions, not optimistic local state.
+The same-origin attention-dismiss POST client transports itemId and kind only. Server authority decides the effect; the caller owns its local display suppression.
 
 ## Code Commentary
 
 ### Logic
 
-`postGateDecision(lifecycleId, verb, options)` `fetch`es `POST /api/actions/{verb}` with a JSON
-body containing `{ target: lifecycleId, gateId?, note? }` when a lifecycle id is present, or
-`{ gateId, note? }` for gate-id-only cancel cleanup. It maps the HTTP outcome to a
-`GateDecisionStatus`:
-`202` → `recorded`; `409 {"status":"stale-gate"}` → `stale-gate`; other `409` → `no-open-gate`;
-anything else → `error`; a network throw is caught → `error`. No retry, no optimistic state — callers
-render the returned status honestly.
 
-`postGateDecisionDetailed(lifecycleId, verb, options)` (260715-FEUI-L6 R4, L40-L83) sends the
-SAME body to the same route but returns `{status, detail?}` — `detail` carries the server's own
-words (response body / `HTTP <status>` line / network error message) instead of collapsing
-everything past 202 into a bare status. The 409 mapping (`stale-gate` vs `no-open-gate`) is
-preserved WITH the raw body attached. Consumers are the verbatim-error + retry surfaces: the
-InteractionBar's answer path renders POST failures in the server's words (design §7.3 F7). The
-original `postGateDecision` is untouched for its existing callers.
 
-`postAttentionDismiss(item)` sends `{itemId, kind, target?, gateId?}` to `/api/actions/dismiss`.
-The caller only uses it for lifecycle-bound attention rows or gate-open rows; `target` is omitted when
-`lifecycleId` is null, preserving the gate-id-only cleanup path. It maps `202` to `dismissed`, anything
-else or a network throw to `error`.
+
+
+`postAttentionDismiss` POSTs {itemId, kind} to /api/actions/dismiss. Only 202 returns dismissed; a non-202 response or network throw returns error, without retry or store mutation.
 
 ### Invariants And Boundaries
 
-Same-origin POST (the dashboard is served by the FastAPI app that owns `/api/actions`). The UI never
-decides safety — the gate's state, lifecycle-scoped acknowledgement rules, and server-side closeout
-enforcement are the boundary; this helper only transports the request. Never reports a fake "sent":
-only `202` reads as successful.
+The helper transports an identifier/kind pair, not a gate decision or lifecycle target. Server-side validation remains the authority; the client never reports success without HTTP 202.
 
 ## Evidence
 
@@ -67,7 +44,6 @@ No configured Domain Documentation source exists for this file.
 
 ### Repo-Internal References
 
-- The serving route this POSTs to (records the developer/dashboard gate decision). [1]
 - The attention queue that calls `postAttentionDismiss`. [3]
 
 ### Cross-Repo References

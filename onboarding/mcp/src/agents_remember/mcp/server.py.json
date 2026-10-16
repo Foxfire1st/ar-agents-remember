@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "a910753217690db972088e80e392623703633acd",
-        "content": "sha256:756e467291e2f71364db580ec029734bd64c2531224c9da57f6187d0f968f8d4",
+        "blob": "3ce87362f44ca376e33cad8872407ae5fb0d4be9",
+        "content": "sha256:97ab535702b6ed0fb143e42ecea352e0341a086866bcc660be01c1be03e62ca1",
         "locator": {
           "kind": "symbol",
           "name": "create_server"
@@ -21,8 +21,8 @@
     },
     {
       "anchor": {
-        "blob": "a910753217690db972088e80e392623703633acd",
-        "content": "sha256:756e467291e2f71364db580ec029734bd64c2531224c9da57f6187d0f968f8d4",
+        "blob": "3ce87362f44ca376e33cad8872407ae5fb0d4be9",
+        "content": "sha256:97ab535702b6ed0fb143e42ecea352e0341a086866bcc660be01c1be03e62ca1",
         "locator": {
           "kind": "symbol",
           "name": "create_server"
@@ -197,14 +197,16 @@
       ]
     },
     "8": {
-      "note": "Current candidate source supports the operative account; historical sections grant no current tool or execution acceptance.",
+      "note": "Current server wiring and tool-call boundary initialize application services without an ambient session lifecycle.\n\nAnchor: lines 1-203",
       "targets": [
         {
           "anchor": {
-            "blob": "0e5fca4f5809ae7204baa1edf8daee0d1048fdee",
-            "content": "sha256:8adf102b6961155732a9e1b6465180fb9ebd911b6fb110058cfe4b50735a15e5",
+            "blob": "3ce87362f44ca376e33cad8872407ae5fb0d4be9",
+            "content": "sha256:83afea35e5c2c2716672012f6f4b0b5b051062d8292e7a498bec3cffac25b528",
             "locator": {
-              "kind": "file"
+              "end": 203,
+              "kind": "line_range",
+              "start": 1
             }
           },
           "kind": "code"

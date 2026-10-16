@@ -10,7 +10,7 @@ F08: native events from actual serving producers converge without self wakes.
 
 ## Code Commentary
 
-The retained composition runs the real Projector and EventStore at the durable lifecycle append boundary. It checks quiet own writes, capture-window healing within the configured 300-second full-refresh bound, and a prompt genuine outside-write wake, with lifecycle phase equality in the in-memory and disk projections. The clock and interposed outside append are test inputs. The removed terminal-relay, notifier, death-watch and gate composition is not current coverage; generic capacity protections remain in the own-write suite. Tests assert only their named facets; they do not confer MEMORY, installation, lifecycle or broad performance acceptance.
+The retained composition runs the real Projector/watch owner with native task documents, provider state and a retained dismissal log. A lock-ignoring dismissal append is interposed after the owned append flush at descriptor capture. Its echo remains quiet, then full healing removes the acknowledged blocked-start item from both in-memory and disk attention queues within the configured full-refresh bound while retaining the dismissal. A subsequent real write_task_doc outside update wakes the composition and publishes its changed task title in memory and on disk. The clock and interposed append are controlled test inputs. The removed terminal-relay, notifier, death-watch and gate composition is not current coverage; generic capacity protections remain in the own-write suite. Tests assert only their named facets; they do not confer MEMORY, installation, lifecycle or broad performance acceptance.
 
 ## Boundaries
 
@@ -18,4 +18,4 @@ Local implementation and executable evidence do not replace requirement authorit
 
 ## Evidence
 
-- The retained whole-projection witness asserts quiet own writes, bounded capture-window healing and genuine outside-write wake using lifecycle phase equality; no retired terminal/notifier/gate composition is claimed. [1]
+- Quiet native own writes settle; dismissal capture-window healing and genuine outside task writes reach memory/disk projections. [2]

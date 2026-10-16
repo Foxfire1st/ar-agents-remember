@@ -1,18 +1,36 @@
 {
   "path": "mcp/src/agents_remember/serving/actions.py",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "557abba2302ca85e5116b31bb6ebf0b630f667ab",
+        "content": "sha256:a3d6a621e81385f5c78c3629d4576b6f6e970004ad8b98022da0b729211f3485",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-SPG550",
+      "invariant": "INV-DVQX4T",
+      "origin": {
+        "handoffEntry": "L168-W-R166-02-04",
+        "leaf": "260928-MIK-L168"
+      },
+      "rationale": "The dismissal action accepts all four operational kinds and reports whether persistence held.",
+      "role": "primary-authority"
+    }
+  ],
   "references": {
     "1": {
       "note": "Anchor: Current precomputed enclosure availability and workspace shape.",
       "targets": [
         {
           "anchor": {
-            "blob": "f2e7fe58c2b1df6c0dc6fddecd7cf6177bf4c0e6",
+            "blob": "cb7649c76f226f56141cd36720b382cea60352c7",
             "content": "sha256:94d8ede398dc9d392cd88616bba2585f18a5b2371222324d5462a93590296c7c",
             "locator": {
-              "end": 67,
+              "end": 80,
               "kind": "line_range",
-              "start": 54
+              "start": 67
             },
             "path": "mcp/src/agents_remember/observer/projection.py"
           },
@@ -38,7 +56,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "31f34dadebf6c89b987bcc33fb85dd72d7281f94",
+            "blob": "b5f4a15e3c26371377e98403ffbb1c7888478853",
             "content": "sha256:5d440db2ec53db4e801ae88f57b6831e8985ddfcec07b85404616e277c358261",
             "locator": {
               "end": 31,
@@ -56,12 +74,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "bcadca1a12cda0f8f1fb6d1e92f0116f8f5cfd6c",
+            "blob": "dce086086d22328f958229b966a6618d9685b303",
             "content": "sha256:142a5e594b7a980f474f7d6a7dd3ba9db880a5e1a26d49bc44ff0a030cbaf9b7",
             "locator": {
-              "end": 206,
+              "end": 234,
               "kind": "line_range",
-              "start": 187
+              "start": 215
             },
             "path": "mcp/src/agents_remember/serving/_app_routes.py"
           },
@@ -88,16 +106,37 @@
       ]
     },
     "6": {
-      "note": "Anchor: Missing-target exemption is actionable-drift only, not an old gate-open item.",
+      "note": "Dismiss actions bypass target lookup for every published attention kind, require a nonempty itemId and an exactly matching published kind, and return HTTP 202 plus a DismissalIntent carrying the published actionable fingerprint. Missing itemId yields 400, unknown item yields 404 and kind mismatch yields 400. Non-dismiss actions require a target (400 if absent), a known target (404 otherwise) and a published enabled action (409 when absent/disabled); enabled actions return 202. There is no actionable-drift-only missing-target exemption.",
       "targets": [
         {
           "anchor": {
-            "blob": "b3d2abd1a2bdb544b4c4f227eb92ed86df07e671",
-            "content": "sha256:f24e904c8401fd0676fef96b324e40731c40b5cf4ee44eee076104d4fc4dc080",
+            "blob": "557abba2302ca85e5116b31bb6ebf0b630f667ab",
+            "content": "sha256:861e8f8a0ad7723ef582c677f705c9ca0d67e0c4e7c6a25277b8c86f2c16b848",
             "locator": {
-              "end": 165,
-              "kind": "line_range",
-              "start": 122
+              "kind": "symbol",
+              "name": "evaluate_action"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "557abba2302ca85e5116b31bb6ebf0b630f667ab",
+            "content": "sha256:6298188d2ef649b023ceaa1b9999097cc84044e9ad4c1417fa6fab4d516eb401",
+            "locator": {
+              "kind": "symbol",
+              "name": "_dismiss_action_outcome"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "557abba2302ca85e5116b31bb6ebf0b630f667ab",
+            "content": "sha256:6a734e85324a7c74a84d6a2b9b193ae22cb5a7594c004353078e9c2930f3fcf2",
+            "locator": {
+              "kind": "symbol",
+              "name": "_precomputed_action_outcome"
             }
           },
           "kind": "code"

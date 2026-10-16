@@ -2,7 +2,7 @@
 
 ## Current operative account — MIK-R112
 
-The composed source declares four shapes, eleven bare-raiser pins, four always-answer pins and seventeen test definitions. These are independently parsed source declarations; prior twelve-raiser/five-always-answer captions below remain historical, not fresh executed measurements.
+The retained census partitions delivered outcomes and checks refusal identity, reason and navigation separately. The removed session-switch refusal fixture is not current coverage. Old removed-tool guidance must still fail model validation, and stripping each axis from a real refusal must still fail completeness. Prior source-population captions below remain historical, not a re-certified execution census.
 
 The current source facts below replace the former operative inventory. The separately labelled superseded claims describe only the pre-repair card. Original paragraphs, dated closures, evidence and citation identities remain intact in the explicitly historical section; they grant no current call, restored route or fresh execution acceptance.
 
@@ -185,7 +185,8 @@ No repository or external-system boundary is proved by this module.
 
 </details>
 
-- The composed BARE_RAISERS declaration has eleven entries after task_doc's same-change repair. Four response shapes, four always-answer pins and seventeen test definitions remain; the earlier five-always-answer account is historical. Earlier larger-tool/raiser captions are historical; current source pins and fixture assertions are not a fresh live advertisement or execution census. [17]
+- Removed-tool guidance remains invalid even though the obsolete switch-refusal fixture is deleted. [19]
+- Identity, reason and navigation stripping still fail the real refusal completeness predicate. [20]
 
 - Only the repaired enclosure_adopt bare-raiser exclusion is removed. The declared bare-raiser set now has ten names. Both-direction census and invocation of actual failure cases remain source assertions, not this Curator's execution. [18]
 

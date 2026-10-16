@@ -20,7 +20,12 @@ Creating a fixture record is not a restored production gate channel. Refused cla
 
 The stored-gate refusal matrix now includes closeout-preview and integration-dry-run alongside real integration and prior refusal cases. Each requires the removed-stores way out and forbids removed tools/new gate channels; direct handover refusal retains its exact coded blocker, reason and non-tool nextOperation. These are source/assertion facts, not new executed evidence.
 
+At two absent-subject sizes, claim_approval permits a gateless claim without creating even the store root or a lock. A real fixture approval is permitted once, then applied and unavailable to a second claim. This retained record contract restores no public gate tool.
+
 ## Evidence
+
+- Absent approval has no store footprint; an existing approval is spent exactly once. [3]
+
 
 No Domain Documentation source is configured for this repository-specific boundary.
 

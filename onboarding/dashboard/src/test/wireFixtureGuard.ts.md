@@ -11,8 +11,8 @@ tree answering one question — *can a test assert against a payload the server 
 
 **Why a guard and not just `tsc`.** TypeScript already refuses an impossible field on a wire-typed
 object literal; `{ refusedPolarity: "amber" } satisfies EngineProcessEdge` does not compile. The leak is
-that a fixture can OPT OUT, and every opt-out is one token long. The header lists seven cit:(["as unknown as LifecycleProjection"], dashboard/src/test/wireFixtureGuard.ts:10-10):
-`as EngineProcessEdge`; `as unknown as LifecycleProjection`; `as never` / `as any`;
+that a fixture can OPT OUT, and every opt-out is one token long. The header lists seven cit:(["as unknown as TaskEntry"], dashboard/src/test/wireFixtureGuard.ts:10-10):
+`as EngineProcessEdge`; `as unknown as TaskEntry`; `as never` / `as any`;
 `// @ts-expect-error`; `const raw = {…}; use(raw)` (a literal loses FRESHNESS in a variable, and
 excess-property checking only applies to fresh literals); `Object.assign(base, {…})` (the result is an
 intersection, which is assignable); `use(JSON.parse(text))` (`any` assigns to anything). **The last
@@ -54,7 +54,7 @@ a virtual file that never imports them would leave the vocabulary empty and ever
 
 **Type resolution.** cit:([`mentionedByTypeNode`], dashboard/src/test/wireFixtureGuard.ts:289-335) walks a written type ANNOTATION, unaliasing
 imports and local `type X = …` indirection and descending into arrays, unions and type arguments — so
-`Partial<TaskDocNode>`, `LifecycleProjection[]`, `Record<string, Analytics>` and `typeof someWireValue`
+`Partial<TaskDocNode>`, `TaskEntry[]`, `Record<string, Analytics>` and `typeof someWireValue`
 all answer. Two deliberate behaviours: `as const` is skipped by name (it can only NARROW a literal), and
 a name the checker cannot bind returns cit:([`UNRESOLVED`], dashboard/src/test/wireFixtureGuard.ts:239-239) rather than `null` — "the guard did not
 understand this" must read as a failure, not a pass. cit:([`mentionedByType`], dashboard/src/test/wireFixtureGuard.ts:338-357) does the same for a
@@ -64,11 +64,7 @@ resolved contextual type, which has no syntax.
 remaining member through `wireObject` cit:([`wireObject`], dashboard/src/test/wireFixtureGuard.ts:397-410) (which unwraps a single-argument alias such as
 `Partial<TaskDocNode>` and bails on anything with an index signature), and **answers with EVERY member**.
 That is the point: TypeScript's excess-property check against a non-discriminated union only requires
-each property to exist in SOME member, so `SubTaskRow = TaskSubTaskRefNode | SeriesSubTaskNode` accepts a
-row bearing `linkedLifecycleId` (only the first declares it) AND `createdAt` (only the second does) — a
-blend of two `extra="forbid"` server models neither could send. **That pair is this leaf's own defect
-reproduced as a type**, and `types/projection.ts` carries the comment explaining the collapse that caused
-it. Conservative in the other direction: one member the guard cannot name abandons the whole slot rather
+each property to exist in SOME member, so the current `TaskEntry | TaskSummary` example admits `key` from the entry and `objective` from the summary even though neither extra-forbid member admits the combined shape. Each member must be checked separately; the earlier SubTaskRow collapse is historical provenance, not a retained wire type. Conservative in the other direction: one member the guard cannot name abandons the whole slot rather
 than measuring against half a union.
 
 **The five rules**, in cit:([`collectWireFixtureFindings`], dashboard/src/test/wireFixtureGuard.ts:484-587):
@@ -134,11 +130,11 @@ was reproduced against this tree; none is fixed.
    wire slot is unread today, and so is `sink(await built())`.
 2. **A generic helper defeats rules 1 and 4 together.** `function make<T>(shape: object): T { return
    shape as T; }` names no wire type at the assertion (rule 1 sees a type PARAMETER, not vocabulary), and
-   `make<LifecycleProjection>({ … })` answers the wire type exactly, so rule 4 has no undeclared property
+   `make<TaskEntry>({ … })` answers the wire type exactly, so rule 4 has no undeclared property
    to weigh. One helper re-opens every evasion the five rules close.
 3. **A new UNMARKED mirror module is invisible.** The discovery mechanism is fail-closed in one direction
-   only: a mirror that LOSES its marker fails the test's seven-module assertion loudly, while one that
-   never carried a marker never appears — **and that assertion still passes**. Live instances today:
+   only: a mirror that LOSES its marker fails the test's discovered-module assertion loudly, while one that
+   never carried a marker never appears — **and that assertion can still pass**. Recorded client-module examples (not a current module census):
    `data/harnessCatalog.ts`, `data/submissionLifecycleClient.ts`, `data/changeset.ts`, `data/files.ts`,
    `data/notes.ts`. Each declares wire-shaped response types INLINE beside client-side option and handler
    types, so **fixtures for those routes are unguarded**. Both of the impossible fixtures this leaf
@@ -148,12 +144,12 @@ was reproduced against this tree; none is fixed.
    rather than wider. The real fix is to move those response types into a marker-carrying module — a
    refactor of app code, not of fixtures.
 4. **Type predicates and assertion functions narrow with no `as` anywhere.**
-   `function isPage(v: unknown): v is ConversationPage { return true; }` and
-   `function assertPage(v: unknown): asserts v is ConversationPage {}` both put an arbitrary value into a
+   `function isPage(v: unknown): v is TaskEntry { return true; }` and
+   `function assertPage(v: unknown): asserts v is TaskEntry {}` both put an arbitrary value into a
    wire slot carrying a wire type, with nothing syntactic to ban and nothing structural to compare.
 5. **A value, not a name.** Every rule here measures property NAMES. An override whose names are all
    correct and whose VALUE is `undefined` on a field the server always sends is invisible to all five —
-   `conversationPage({ capabilities: undefined })` asserts nothing, suppresses nothing and declares
+   `taskEntry({ stage: undefined })` asserts nothing, suppresses nothing and declares
    nothing undeclared. `exactOptionalPropertyTypes` is the general answer and is NOT set on this project
    (measured: 222 errors across 71 files); the builders carry the constraint themselves instead
    (`fixtures/overrides.ts`, proven by `fixtureOverrides.test.ts`).
@@ -177,14 +173,14 @@ External language references retained for reading only: [TypeScript Wiki — Usi
 - `GUARD_COMPILER_OPTIONS` (strict, bundler, `resolveJsonModule`, and no `exactOptionalPropertyTypes`). [5]
 - `buildProgramWithVirtualFiles`, including the `directoryExists` override without which a two-module planted case silently degrades to `any`. [6]
 - `mentionedByTypeNode` / `mentionedByType`, and `UNRESOLVED` as a finding rather than a skip. [7]
-- `wireSlotTarget` answering a union with every member, with the `SubTaskRow` worked example. [8]
+- `wireSlotTarget` answering a union with every member, with the current `TaskEntry | TaskSummary` worked example. [8]
 - `collectWireFixtureFindings` — the five rules, and the fresh-literal exception that keeps rule 4 from second-guessing `tsc`. [9]
 - `isCandidateForExcessCheck` — the four node kinds, which is the exact shape of gap 1. [10]
 - `directiveLines` + `DIRECTIVE` — suppressions read as comment trivia, not raw lines. [11]
 - `excessPropertyVerdict` — undeclared properties, and the union blend no single member declares. [12]
 - `reconcileWithRegistry` — unregistered / spent / miscounted / unreasoned. [13]
 - The registry, planted bypasses and vacuity checks this module deliberately does not own. [14]
-- `SubTaskRow` and the two `extra="forbid"` models whose collapse the union rule reproduces. [15]
+- The current TaskEntry/TaskSummary pair illustrates why every union member is checked independently. [15]
 - Gap 3, live: the first line is a "Same-origin client for …" header, not a `mirror of` marker, so nothing this module declares enters the vocabulary. [16]
 - Same, for the read-only files API client. [17]
 - Same, for the coordination-notes API client. [18]

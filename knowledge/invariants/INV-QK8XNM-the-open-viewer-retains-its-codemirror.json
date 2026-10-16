@@ -1,0 +1,37 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test",
+      "prevents_costly_mistake",
+      "spans_locations"
+    ],
+    "justification": "Future changes to the open working change-set viewer or shared conditional/native caches must not destroy and recreate an unchanged CodeMirror MergeView on each 2500ms validation, losing the mounted editor state, nor repeat Git computation for already warm unchanged native generations. The retained editor-identity and native Git-child assertions guard those costly mistakes; cold, changed, refused or evicted generations remain outside the unchanged-reuse promise. Source assertions and historical witnesses are not a new Curator execution or acceptance grade."
+  },
+  "applicability": "An open working-leaf change-set viewer while its selected before/after content generation remains unchanged.",
+  "conditions": [
+    "The existing settled 2500ms validation loop uses shared conditional list/file resources; comparison snapshots are excluded from working polling.",
+    "Unchanged retained values preserve the mounted CodeMirror MergeView; changed content may replace it and a current refusal remains visible.",
+    "After an admitted native generation is warm and unchanged, repeated list/file validation reuses native results without Git computation."
+  ],
+  "exclusions": [
+    "Cold loads, actual native input changes, changed selected content and failures are not zero-work/no-remount claims.",
+    "No independent timing threshold, first-visit performance grade or new Curator browser/Git witness."
+  ],
+  "id": "INV-QK8XNM",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "sync-L81-dashboard.txt; sync-L81-primary-regressions.txt; body-viewer-witness12.json six304/zero-body polls over8.502s, sameCodeMirror; conditional-candidate11-settled.json zeroGit after settled warmup"
+      ],
+      "path": "A011-bounded-generation-content-33.json"
+    },
+    "handoffEntry": "L168-W-R168-06",
+    "leaf": "260928-MIK-L168",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "The open viewer retains its CodeMirror node and unchanged2.5s polls cause no Git computation.",
+  "status": "proposed",
+  "supersedes": []
+}

@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "4ddf17f4c8fb8920fadc24e6df279efe803cdf01",
+        "blob": "09233476d16c71cbf49d5a0cd2ff8ac5ec38c348",
         "content": "sha256:5f06c9b71ce4cefe9c5c8b466e082a205be69656de4c6a5c2912935517fcd74b",
         "locator": {
           "kind": "symbol",
@@ -21,7 +21,7 @@
     },
     {
       "anchor": {
-        "blob": "4ddf17f4c8fb8920fadc24e6df279efe803cdf01",
+        "blob": "09233476d16c71cbf49d5a0cd2ff8ac5ec38c348",
         "content": "sha256:5f06c9b71ce4cefe9c5c8b466e082a205be69656de4c6a5c2912935517fcd74b",
         "locator": {
           "kind": "symbol",
@@ -39,7 +39,7 @@
     },
     {
       "anchor": {
-        "blob": "4ddf17f4c8fb8920fadc24e6df279efe803cdf01",
+        "blob": "09233476d16c71cbf49d5a0cd2ff8ac5ec38c348",
         "content": "sha256:32c3ff8ecb63687a357edba7ab8d920b8daa7f4a345b19792ad28f92e4c0cd16",
         "locator": {
           "kind": "symbol",
@@ -57,8 +57,8 @@
     },
     {
       "anchor": {
-        "blob": "4ddf17f4c8fb8920fadc24e6df279efe803cdf01",
-        "content": "sha256:8e7587c4c4843b3580e929a5f5c8185682724c6df776c7140f16c5704d248bb7",
+        "blob": "09233476d16c71cbf49d5a0cd2ff8ac5ec38c348",
+        "content": "sha256:0e955a1d8952de1336bb31d23d3c9b72b67a8280f8d6b179b70ca61b04561cd6",
         "locator": {
           "kind": "symbol",
           "name": "compact_workspace_river"
@@ -90,119 +90,16 @@
         }
       ]
     },
-    "2": {
-      "note": "`lifecycle_is_dormant` is the inactivity cleanup key; `_retention_facts`/`last_activity_at` read the last real activity and ignore heartbeats.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "4ddf17f4c8fb8920fadc24e6df279efe803cdf01",
-            "content": "sha256:2c8077691841e0e49e9ca04a447d27f3c93b121e67acd44cdabf623c3b5a67b3",
-            "locator": {
-              "kind": "symbol",
-              "name": "lifecycle_is_dormant"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "4ddf17f4c8fb8920fadc24e6df279efe803cdf01",
-            "content": "sha256:682a2a3b69286c2c2056d61708310d77be4864db7342614637646ac1ef3dcfa5",
-            "locator": {
-              "kind": "symbol",
-              "name": "_retention_facts"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "4ddf17f4c8fb8920fadc24e6df279efe803cdf01",
-            "content": "sha256:24b73539de8a71cedb5394cef159bb87e05ae0279e1023e64d0b4758e3f4b582",
-            "locator": {
-              "kind": "symbol",
-              "name": "last_activity_at"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "3": {
-      "note": "Any dormant lifecycle log (inactivity past its per-type TTL) is physically removed — not only terminal ones.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "4ddf17f4c8fb8920fadc24e6df279efe803cdf01",
-            "content": "sha256:085612c3986e774666cfa7eb1b877f2c2f4a02350179f79e24a00c22174e1047",
-            "locator": {
-              "kind": "symbol",
-              "name": "prune_expired_lifecycle_event_logs"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "4": {
-      "note": "`protected_lifecycle_ids` exempts a log from pruning regardless of inactivity; the projection store passes a not-yet-retired master series' leaf ids so a live durable task keeps its history.  Anchor: `protected_lifecycle_ids`",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "4ddf17f4c8fb8920fadc24e6df279efe803cdf01",
-            "content": "sha256:085612c3986e774666cfa7eb1b877f2c2f4a02350179f79e24a00c22174e1047",
-            "locator": {
-              "kind": "symbol",
-              "name": "prune_expired_lifecycle_event_logs"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "5": {
-      "note": "The protection set is derived from durable enclosure state (a live master series) by the admission module.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "27b63af8ca769d6da55674e76fa7d13b4e32200a",
-            "content": "sha256:f08e1c0714c6fb7a2ed60409168206516283e202cb56b5b10c6ab14557cfb0cc",
-            "locator": {
-              "kind": "symbol",
-              "name": "series_retained_lifecycle_ids"
-            },
-            "path": "mcp/src/agents_remember/observer/worktree_provider_admission.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
     "6": {
       "note": "`_first_retained_offset` keeps unparseable-timestamp events and skips only events with a valid ts strictly older than the cutoff.",
       "targets": [
         {
           "anchor": {
-            "blob": "4ddf17f4c8fb8920fadc24e6df279efe803cdf01",
+            "blob": "09233476d16c71cbf49d5a0cd2ff8ac5ec38c348",
             "content": "sha256:1198241f4948f356f4e86b0ae21d5057e0000b93fd0d55a3b32f01ef94e2c94a",
             "locator": {
               "kind": "symbol",
               "name": "_first_retained_offset"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "7": {
-      "note": "The raw SSE tailer uses retained initial offsets only when no cursor is supplied; it never prunes — reclamation belongs to the projection pass.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "4ddf17f4c8fb8920fadc24e6df279efe803cdf01",
-            "content": "sha256:68071c0726caf7a3e3be2cd438354796a804a7749f8f5bd8798b0281c5656b62",
-            "locator": {
-              "kind": "symbol",
-              "name": "initial_event_offsets"
             }
           },
           "kind": "code"

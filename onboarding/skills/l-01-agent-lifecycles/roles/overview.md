@@ -34,6 +34,8 @@ Architect authors requirements, plans, tasks and rulings, preserving exact stabl
 
 Manager coordinates one selected master, its leaves, readiness and landing order. Orchestrator coordinates the accepted sprint objective through Managers and verifies their aggregate delivery without absorbing the leaf repair loop. Both preserve task, candidate, role-agent, report and publication identities, keep acceptance separate from review recommendations, and use existing AR task/data and paired-Git owners. An uncertain start is reconciled with the same request ID; a refused coordinating start is reported and never silently replaced by direct coordination.
 
+Native start, finalize and abandon publish task stage and mirror the parent's row; Manager does not follow them with a redundant status write. Explicit corrections and organizational-master completion still use `task_doc set_status` under their existing authority. This instruction does not let Worker or Curator make task-state decisions, does not merge review with acceptance, and does not turn edits to rendered copies into canonical publication.
+
 Worker changes only the selected leaf's approved primary requirement and explicit preservation constraints in its supplied code worktree. It reads memory as context, leaves the candidate uncommitted, reports exact changes/checks/limitations, and recovers the same assignment after compaction. It does not accept or review its work, edit memory, rewrite packets, change lifecycle/status, commit, merge or publish. Out-of-scope manifestations are named for their owners rather than repaired inside this leaf.
 
 Reviewer is independently assigned at the reviewed seam's altitude: leaf route, atomic-master integration, master-exit, sprint plan or super-exit. A verdict is pass/block evidence for that seam's decider, never a gate decision. Baseline review covers the complete assigned diff, including unattributed changes, with durable coverage and reports for every material route. Invariant/family attribution adds a review dimension rather than filtering files. Bound catalogs and completion, implementation and onboarding lenses govern the work. Evidence must match the requirement class: mounted UI for rendering, operation-level proof for ordering, parsed artifacts for persisted shape, and source plus enforcing mechanism for doctrine. The reviewer reports every bound standing criterion, including those finding nothing.
@@ -115,6 +117,8 @@ Worker ends with requirement-satisfying bytes, focused checks and report with Re
 The same Reviewer can repair a Worker-record-only finding on its last recorded round without `begin_review` only if the candidate is byte-identical under the authority-resolved identity. A changed or unproven candidate requires a new begin; remaining sealed finding IDs can only shrink. A showing case is proof of the required property, not the entire finding; an unsuccessful repair or extra-round request must account for that property and its construction.
 
 ## Evidence
+
+- Manager leaves native operation stage/mirror publication to its owner; explicit corrections and organizational-master completion retain their task-document route. [49]
 
 - The retained-sibling process is read under its storage interface: converted families use invariant-member identities and stored family/revision readback, not legacy membership-row selectors. [3]
 - The curator's step-3 rationale duty. [4]

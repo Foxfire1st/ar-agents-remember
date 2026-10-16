@@ -2,9 +2,10 @@
 
 ## Purpose
 
-`serving/projections/paths.py` (moved from `observer/paths.py` by 260731-EFA-L9) is the single resolution point for the observer store root — the one
-read/write path abstraction (design §2.3 / North-Star #5) so a future synced
-coordination store is a swap at one site, not a refactor (slice 3a).
+`serving/projections/paths.py` (moved from `observer/paths.py` by 260731-EFA-L9) retains
+the serving projection path helpers for `logs/observer` and drift snapshots. The original
+single-resolution-point design is historical intent, not a current ownership census: this
+module and `kernel/primitives/observer_paths.py` define separate same-named helpers.
 
 ## Governing Overview
 
@@ -12,11 +13,18 @@ coordination store is a swap at one site, not a refactor (slice 3a).
 
 ## Code Commentary
 
-`observer_root(config)` returns `config.coordination_root / "logs" / "observer"`.
-The module is deliberately dependency-light: `McpRuntimeConfig` is imported only
-under `TYPE_CHECKING` (the body just walks `coordination_root`), so the **write**
-side — `server.create_server` installing the ambient `EventStore` — can resolve
-the root without importing the read-side reducer/snapshot machinery.
+This module's `observer_root(config)` delegates to its own `observer_logs_root` and returns
+`config.coordination_root / "logs" / "observer"`. It imports `McpRuntimeConfig` only under
+`TYPE_CHECKING` and has no reducer/snapshot imports. `serving/projections/projection_store.py`
+imports this definition and calls it at the projection I/O edge.
+
+The startup writer uses a different definition: `application/runtime/startup.py` imports
+`observer_root` from `agents_remember.observer`, whose `__init__.py` re-exports it from
+`kernel/primitives/observer_paths.py`. That kernel definition delegates to its own
+`observer_logs_root`; matching results do not make the two definitions one owner.
+`build_tool_event_writer` constructs `ToolEventWriter(EventStore(observer_root(config)), caller)`,
+and `initialize_mcp_application` installs that workspace-river writer. `create_server` invokes
+that application startup owner; it no longer installs an ambient lifecycle/EventStore.
 
 Slice 3b adds the shared **drift-snapshot contract**: `observer_logs_root(
 coordination_root)` (the `logs/observer` base both helpers share),
@@ -28,11 +36,12 @@ between the two sides (North-Star #5).
 
 ## Invariants And Boundaries
 
-- **One place resolves `logs/observer`.** Both the writer (`server.py`) and the
-  reader (`projection_store`) call `observer_root`; no call site hard-codes the
-  path.
-- Keep this module free of reducer/snapshot imports so importing it stays cheap
-  for the write side.
+- **Two definitions currently resolve `logs/observer`.** The projection I/O edge imports
+  this module's `observer_root`; the application startup writer imports the separate kernel
+  definition through the `observer` facade. Each delegates to its own `observer_logs_root`.
+  Do not infer shared definition ownership from their equal path result.
+- Keep this module free of reducer/snapshot imports; the startup writer does not currently
+  import it for `observer_root`.
 - The drift-snapshot dir + schema (slice 3b) live here as the single shared
   contract the producer and reader both import — neither hard-codes the path.
 
@@ -40,8 +49,14 @@ between the two sides (North-Star #5).
 
 ### Repo-Internal References
 
-- The writer that resolves the root here to install the ambient "install_ambient(AmbientLifecycle(EventStore(observer_root(config))))" ("def create_server(config: McpRuntimeConfig) -> Any:" → "def initialize_mcp_application(config: McpRuntimeConfig) -> None:"). [1]
-- The reader I/O edge that resolves the same root. [2]
+- The application startup writer installs workspace-river ToolEventWriter, using observer_root imported from the observer facade rather than this serving module. [1]
+- create_server invokes the application startup owner; it does not install an ambient lifecycle. [6]
+- The observer facade re-exports the kernel observer_root definition used by startup. [7]
+- The kernel observer_root delegates to the kernel observer_logs_root; this is separate from the serving module definition. [8]
+
+- The projection I/O edge imports this serving module's observer_root and calls it for the projection store root. [2]
 - The drift snapshot reader using `drift_snapshot_dir` + the schema (3b). [3]
 - The drift-run producer that writes the snapshot to `drift_snapshot_dir` (3b). [4]
 - The store-layout + one-read-abstraction design. [5]
+
+- The serving module separately defines observer_logs_root, observer_root and drift_snapshot_dir; its single-owner docstring is not an importer inventory. [9]

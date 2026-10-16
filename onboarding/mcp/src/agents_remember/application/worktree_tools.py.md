@@ -5,7 +5,7 @@
 The current source facts below replace the former operative inventory. The separately labelled superseded claims describe only the pre-repair card. Original paragraphs, dated closures, evidence and citation identities remain intact in the explicitly historical section; they grant no current call, restored route or fresh execution acceptance.
 
 - Current start calls parameterless write_lifecycle_settings().
-- Persistent-session refusal now asks for a new session with no switch tool.
+- Worktree start/attach no longer adopt or switch an ambient lifecycle, and an already-bound session supplies no start refusal. lifecycleId remains stable contract/event-scope identity; native task-stage publication has its own owner.
 
 ### Superseded inventory
 
@@ -21,6 +21,13 @@ Source inspection supplies no new test, native-host, whole-build, landing or mem
 ## Granted leaf worktree-start refusal
 
 Before worktree_start prepares an enclosure, the application owner resolves the exact canonical leaf id/path and reads its current grant. A granted or unreadable-grant leaf refuses with direct-leaf-no-enclosure; the readable case names role_start on the same leaf and master series checkouts as the remedy. Series and genuinely ungranted/unresolved leaf cases keep ordinary start admission. The predicate creates no enclosure and does not authorize from a harness setting.
+
+
+## Current source evidence
+
+
+- Start/attach retain exact task authority without an ambient-session adoption or already-bound-session veto. [26]
+
 
 ## Historical original card — preserved, not the current operative account
 

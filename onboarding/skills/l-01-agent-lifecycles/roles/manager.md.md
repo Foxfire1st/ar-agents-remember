@@ -9,6 +9,10 @@ This account controls the named changed seams; contradictory earlier card wordin
 - A leaf Worker/Reviewer/Curator is started as one set, not Worker+Reviewer followed by Curator at freeze. Manager keeps whole-stage sync/closeout/integration/task/start boundaries and repairs own recording/address/input faults. Extra rounds beyond settings are requested from the task architect with the Worker property/construction account and recorded approval. Permission-held messages are product-owned for delivery; ordinary leaf peer artifacts are not couriered through Manager. [9]
 
 
+## Task-stage publication boundary
+
+Start, finalize and abandon publish the task stage and mirror the master row themselves. Manager does not follow those operations with a second status write. `task_doc set_status` remains the explicit correction route and the completion act for an organizational master; closeout/integration and acceptance ownership remain unchanged.
+
 ## Message/file transport and return addressing
 
 Messages are short wake-ups naming work and files; report/verdict/evidence content travels in file-only `body` or existing-file `attach`, not pasted text. Within a shared task the files stay in its record and a leaf workspace exposes the folder link. Wake text uses the settings limit without a pinned number. Ordinary report-written notices and final report-path returns use the supplied parent role/task address, including an instructed reporting-recipient change. Developer-needed questions remain addressed to the actual parent/instructed-recipient ID. These are distinct message purposes, not an ID exception to the return rule. Fixed launch-parent identity and existing role/peer/write/acceptance boundaries remain preserved.
@@ -27,8 +31,8 @@ completed master to the orchestrator.
 
 ## Logic
 
-For each dependency-ready real leaf, the manager starts the Worker and Reviewer together and the
-Curator at the first freeze with native `role_start` on the `agents-remember-task` tool server,
+For each dependency-ready real leaf, the manager starts Worker, Reviewer and Curator as one set
+with native `role_start_set` on the `agents-remember-task` tool server,
 naming the role and the exact canonical leaf references with a request ID it chooses. The call
 resolves or creates the AR paired enclosure and writes the complete handover; it returns the agent
 ID, report path, handover path and status, which the manager keeps and reuses. The same request ID
@@ -42,12 +46,7 @@ report and curator's scoped onboarding handoff before the closeout transaction. 
 integration do not launch or require full quality, full tests, full memory quality, certification, or
 review; any explicitly requested operation remains owned by its existing lifecycle workflow.
 
-The role table advertises this seat as a hosted, parentless-capable caller and an explicit
-ambient-takeover target. The orchestrator ordinarily starts it; once hosted, it starts only its
-direct worker/reviewer/curator children with native `role_start` and addresses them with
-`role_message`. Its public request never selects caller kind, and a plane authorization refusal
-never retries as an ambient launch. The `tools` row describes bound capability rather than
-settings keys.
+The canonical Manager coordinates its own master through the retained role tools and exact task references. The leaf trio starts as a set; an Investigator has its separately admitted concern scope. A dashboard-started Manager needs no fabricated parent or Architect ID. Tool capability is not a grant to infer caller kind, adopt removed ambient authority or bypass a refusal.
 
 Before starting a role, the manager independently verifies that every exact stable ID + version points to
 the approved version-addressed packet and that the packet carries its durable corpus-ruling
@@ -108,7 +107,7 @@ This role card follows the transaction-only lifecycle boundary: the role reports
 
 ## 260928-MIK-L99 — a leaf's agents hand over to each other
 
-The Manager no longer carries freezes, findings, verdicts or memory changes between a leaf's agents: it starts the Worker and Reviewer together and the Curator at the first freeze, reads the leaf's state from reports and task records, hears from the leaf only on its named occasions (closeout readiness, rule-5/6 notices, ownership or authority, an extra round or pass, a disputed Curator code finding, a Manager-owned sync step), decides the gate and keeps closeout, integration, status, acceptance and landing order. It gains the same harness-freedom paragraph.
+The Manager no longer carries freezes, findings, verdicts or memory changes between a leaf's agents: it starts the Worker, Reviewer and Curator as one set, reads the leaf's state from reports and task records, hears from the leaf only on its named occasions (closeout readiness, rule-5/6 notices, ownership or authority, an extra round or pass, a disputed Curator code finding, a Manager-owned sync step), decides the gate and keeps closeout, integration, acceptance and landing order. Task-stage publication follows the native start/finalize/abandon operation; an explicit correction or organizational-master completion uses the admitted task_doc status operation. It gains the same harness-freedom paragraph.
 
 ## 260928-MIK-R93 — questions received from children
 
@@ -131,8 +130,7 @@ each worker/reviewer/curator dispatch re-proves the complete parent chain.
 Recovery is contract-addressed and replacement-safe; no agent supplies branch
 commit or session identity.
 
-Pre-curator admission is manager-owned: the Curator is started when the Worker's first freeze
-exists, and the leaf's seats hand their inputs directly before any onboarding work. If super or master moved, the manager synchronizes and reconciles the code first;
+Leaf start-set admission is manager-owned: Curator starts with Worker and Reviewer, and curation waits for the exact admitted producer freeze/evidence rather than treating early seat creation as authority to publish. The leaf's seats hand their inputs directly before onboarding work. If super or master moved, the manager synchronizes and reconciles the code first;
 the curator is never asked to document a stale leaf. Closeout and integration independently repeat
 lineage after long quality gates to close their later time-of-check/time-of-use windows.
 
@@ -195,3 +193,5 @@ The review budget is the settings number `orchestration.loops.defaults.maxRounds
 
 
 - Current settings-budget, recorded approval and preserved stage/ownership boundaries are carried by this canonical instruction source. [8]
+
+- Native operations publish mirrored task stage; explicit correction and organizational-master completion retain task_doc ownership. [10]

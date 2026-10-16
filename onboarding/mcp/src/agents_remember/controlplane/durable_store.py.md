@@ -73,13 +73,12 @@ the record says it means something this code was not written to interpret. If a 
 ever genuinely introduced, accepting it is a deliberate change here plus the migration to go with
 it, not a comparison operator that already quietly said yes.
 
-**`DurableRecord`** is the pydantic base all six record types inherit. It carries
-`model_config = ConfigDict(extra="forbid")` (previously repeated in each of the six) and a
+**`DurableRecord`** is the common pydantic record base. It carries
+`model_config = ConfigDict(extra="forbid")` (historically repeated in the six-store census) and a
 `schemaVersion` field validated on the way in. This is the whole mechanism behind the two read
 policies: an unknown major raises `ValidationError` at parse time, so a strict reader surfaces it
-and a tolerant reader skips the row, and **no reader anywhere contains a version branch**. Verified
-directly against all six record classes: minor `1.99` accepted, major `2.0` rejected, `banana`
-rejected. Undo the validator and every reader silently accepts a record it cannot be trusted to
+and a tolerant reader skips the row, and **no reader anywhere contains a version branch**. The historical six-class check recorded minor `1.99` accepted, major `2.0` rejected and
+`banana` rejected; it is prior evidence, not a fresh execution or a current six-class inventory. Undo the validator and every reader silently accepts a record it cannot be trusted to
 interpret.
 
 **Process role and checkout execution.** `ProcessRole` includes `mcp`, `dashboard`, and `lifecycle-operation`; compaction ownership remains `mcp`/`dashboard`. `declare_process_role` delegates execution-mode state to `kernel.primitives.checkout_coordination`, and `declared_process_role` narrows that state to those three shared-store writer roles. Explicit test mode and an undeclared CLI return `None`. Declarations belong to actual process entry points: MCP, the dashboard foreground/reload worker, and the detached lifecycle-operation worker. Factories invoked in-process do not impersonate those processes.
@@ -130,8 +129,9 @@ The current module has no `migrate_jsonl_records` helper. Retained schema-versio
 
 The contract keeps the distinction between serialization and advisory ownership explicit:
 
-- **The lock is unconditional.** Every append and every rewrite of every one of the six logs takes
-  that log's lock, in every process, whether or not that process declared anything. There is no
+- **The lock is unconditional.** Every retained store's append and rewrite takes its log's
+  lock, in every process, whether or not that process declared anything. The historical
+  six-store census is not the current ownership register. There is no
   flag that turns it off and no store exempt from it. The `serialized` opt-out an earlier draft
   carried was deleted. This is what took the measured loss to zero.
 - **Ownership is advisory and opt-in.** `check_declared_writer` raises only for a declared shared-store writer;
@@ -155,6 +155,15 @@ The split is deliberate and must not be filed as an inconsistency.
   must not 500 an endpoint or freeze the fleet-wide projection. A tolerant read never writes back
   what it read, so a skipped line is skipped for the duration of one tick.
 
+The current declared split is gate (strict authority input) versus attention dismissals
+(tolerant disposable UI acknowledgements). Gate rewrites use strict input; attention rewrites
+may permanently drop malformed rows only while those rows carry no mutation authority. Before
+using a tolerant log to suppress or permit a mutation, move its read/rewrite path to strict
+validation in the same change.
+
+<details>
+<summary>Historical six-store read-policy census — not current caller guidance</summary>
+
 By store: gate, expectation-rows and operator-inbox are the strict three (their rows change a
 decision); attention-dismissals, orchestration-nudges and supervisor-signals are the tolerant three
 (their rows only render or rate-limit). Gate **and** expectation-rows additionally expose a
@@ -169,6 +178,9 @@ of the three strict stores drives its rewrites from its strict `read`, and each 
 tolerant stores drives its rewrites from its tolerant `read`. The tolerant three therefore *do*
 drop an unparseable row on compaction — which is safe only because none of them carries authority,
 and would stop being safe the moment one of them did.
+
+
+</details>
 
 ### The Process-Wide Mutex — What It Adds And What It Does Not
 
@@ -210,18 +222,16 @@ The kernel's double-open probe checks actual exclusion on each lock path instead
 
 ### Conventions
 
-- One rewrite entry point, with the log's lock held unbroken across the read, the filter **and** the
-  rewrite. That invariant holds in all six stores. The *code shape* it is written in does not, so do
-  not read the shape as the rule — this was checked store by store rather than taken from the
-  module's own summary. Three stores use a named locked half: `ExpectationRowStore.compact` →
-  `_compact_locked`, `AgentNotifierSignalCooldownStore.compact` → `_compact_locked`, and
-  `AttentionDismissalStore.prune_lifecycles` → `_prune_locked`. The other three inline the read, the
-  filter and the rewrite in one method body under a single `exclusive_access`: `GateStore.compact`
-  and `GateStore.delete`, `OrchestrationNudgeStore.compact`, and every `OperatorInboxStore` rewrite
-  (which is the near miss — it has `_read_unlocked` and `_replace_unlocked` halves, but filters
-  between them in the public method). Even the split store splits only one of its two rewrites:
-  `AttentionDismissalStore.dismiss` inlines. What must never happen is locking the write half alone:
-  that looks safe and loses records. `require_lock_held` catches an unlocked rewrite, but a caller that reads outside the lock and acquires it only for replacement passes that check; read-filter-rewrite ordering must be verified at the caller.
+- The rule is one uninterrupted log hold across the read, filter and rewrite, not a
+  particular helper shape. Current attention writes are `AttentionDismissalStore.dismiss`
+  (`attention_dismissals.py:120-139`) and `reconcile` (`:164-191`); both read inside
+  `exclusive_access` and call `_replace`, whose `rewrite_lines` requires the hold. `reconcile`
+  reclaims only occurrences proved ended or gone by actual complete observations; unread or
+  failed kinds prove no removal, and an unchanged set performs no physical write. There is no
+  current `prune_lifecycles` or `_prune_locked` method. `GateStore.delete` and `compact` still
+  read/filter/replace inside one hold (`store.py:258-299`). What must never happen is locking
+  the write half alone: `require_lock_held` catches an unlocked replacement but cannot prove
+  that the caller's earlier read and filter occurred under the same uninterrupted hold.
 - Errors are a small tree rooted at `DurableStoreError(RuntimeError)`, with `CompactionOwnerError`
   and `UnsafeLockFilesystemError` beneath it. None is ever downgraded to a warning or a no-op.
 - Atomic publication owns hidden pid-and-UUID temp names (`.<log>.<pid>.<uuid>.tmp`), so calls use distinct temporary paths and the watcher skips them through its dot-prefix and `.tmp` filters.
@@ -232,16 +242,15 @@ The kernel's double-open probe checks actual exclusion on each lock path instead
   `lock_path_for` is what keeps the filter in step when a lockfile is renamed — the literal
   `"operator-inbox.lock"` this replaced had silently stopped matching anything once `lock_path_for`
   moved to `operator-inbox.jsonl.lock`. Matching by suffix rather than by basename is what a list
-  structurally could not do: five of the six logs live only under `workspace/`, but `gates.jsonl`
-  lives there **and** once per lifecycle, so `gates.jsonl.lock` appears in every lifecycle directory
-  too. No projection input is named `*.jsonl.lock` — the inputs are the `.jsonl` logs themselves and
+  structurally could not do: the retained gate store can address `gates.jsonl` under
+  `workspace/` or an existing lifecycle directory. Sibling locks must be filtered wherever
+  a retained watched input lives; that does not reinstate lifecycle-log watch roots. No projection input is named `*.jsonl.lock` — the inputs are the `.jsonl` logs themselves and
   their `.json` sidecars — so the suffix rule cannot over-match.
 - Schema interpretation remains one explicit major-version rule. The removed migration helper is not current calling guidance; retained writes validate through their actual record owners and lock boundary.
 
 ### Invariants And Boundaries
 
-- **Unconditional locking.** Every append and every rewrite of every one of the six logs holds that
-  log's lock. Add a store, a writer or a code path that skips it and the lost-update window this
+- **Unconditional locking.** Every retained store append and rewrite holds that log's lock. Add a store, a writer or a code path that skips it and the lost-update window this
   module was created to close re-opens silently.
 - **The lock is held across the read AND the rewrite.** A record list chosen by a read that
   happened outside the lock is already stale, and rewriting from it is the same lost update under
@@ -251,9 +260,11 @@ The kernel's double-open probe checks actual exclusion on each lock path instead
   links — the record vanished with no torn line and no trace.
 - **Ownership never decides whether to lock.** `exclusive_access` takes an `ownership` argument
   only to name the log in the refusal when the filesystem turns out not to support locking.
-- **One compaction owner per log, with one declared exception.** operator-inbox carries
-  `compaction_owner=None` because both processes must physically remove rows and neither move
-  travels without the decision it implements.
+- **Current compaction owners are explicit:** `GATE_OWNERSHIP` names MCP and
+  `ATTENTION_DISMISSAL_OWNERSHIP` names dashboard. The former operator-inbox
+  `compaction_owner=None` exception is historical; that ownership constant is removed.
+  The generic `StoreOwnership` policy still admits `None`, without advertising a retained
+  operator-inbox consumer.
 - This module owns coordinator write policy, durable I/O composition and the record base class. Kernel owners provide exclusion and atomic publication. It owns no record
   vocabulary, no retention policy and no MCP surface; those stay in the per-store modules and in
   `interaction_retention.py`.
@@ -271,6 +282,10 @@ No external Domain Documentation source is configured. The current contract is r
 No configured external domain documentation source.
 
 ### Repo-Internal References
+
+- Current attention writes read and replace under one store hold; reconciliation uses actual observations rather than lifecycle pruning. [12]
+- The lock-at-replacement check cannot prove the earlier read was inside the same hold; retained gate delete/compact do hold across the full sequence. [13]
+- The current read-policy split is strict gate authority versus tolerant non-authoritative attention acknowledgements. [14]
 
 The current owner map is verified against the prepared source. Kernel mechanics, coordinator authorization, and caller-specific host registry policy are separate.
 
@@ -294,11 +309,15 @@ whose ownership record includes them; the gate and lifecycle-operation/queue pat
 longer rely on the earlier undeclared-process bypass.
 
 - Current writer declaration, advisory ownership and compaction roles. [1]
+
 - Major equality and validated record base; tolerant rewrite policy is declared in the module front matter. [2]
+
+
 - Guarded coordinator entry translates the shared capability failure. [3]
+
 - The kernel owns lock naming, thread mutexes, nesting, capability and hold observation. [4]
 - Rewrite refuses without a hold; append and rewrite targets retain containment. [5]
 - Current raw read, single/batched durable append and atomic rewrite. [6]
-- Explicit migration validates every transformed record before replacement. [7]
+Historical reference 7 in the preserved F001 card records the removed explicit migration helper; it is not a current callable or migration instruction.
 - Per-call temporary names and atomic publication have one kernel owner. [8]
 - Watcher exclusion derives the shared lock suffix and filters every directory. [10]

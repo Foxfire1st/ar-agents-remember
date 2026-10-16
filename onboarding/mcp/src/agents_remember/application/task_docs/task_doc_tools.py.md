@@ -30,6 +30,8 @@
 
 ### Current Contract
 
+Prepared ordinary/remove publications retain each document with its owning task root, including a synchronized parent outside the leaf root. Dry-run overrides resolve paths from those pairs; the shared exact-source transaction publishes the batch.
+
 The parent-master publication predicate includes an available parent when master synchronization changes it, when a create/replace/set_field payload explicitly contains waitsFor, or when an existing document’s normalized dependency list changes: (original.waitsFor or []) != (doc.waitsFor or []). Thus replacing a nonempty waitsFor list by omitting that field now triggers parent refresh, even if the parent row itself is unchanged. None and [] compare as the same empty dependency list. The resolved parent must still have accepted source bytes. This is the operative RF01 source account, not an unconditional all-path no-stale-master or execution-currentness finding. Historically, F01 cc238585 used only the explicit-key trigger in addition to master_sync.changed and left omitted-replacement dependency removal outside that trigger; retain that earlier defect and evidence as history, not as a current implementation claim.
 
 task_doc is the canonical mutating author. get/read_steps are removed and return operation-removed with canonical JSON/rendered-file guidance; surviving observations use file tools and linkage_report. begin/record answers retain reviewState, while grant display belongs to rendered task/dashboard. fields_file for create/replace/set_field and section_body_file for set_section are mutually exclusive with their inline values: one absolute regular UTF-8 input is read once, then checked against its byte budget and reported with its digest. This is not a pre-read allocation bound. Rich identity, preview and successful masterSync facts remain in the whole result; bounded delivery uses write phrases, create's renderedPath, changed reviewState, and wouldLose/diff with the independently retained diff location. For a validly addressed parent, master synchronization failures remain answered master-sync-failed refusals. Invalid caller master references, including cross-series addresses, are checked by the shared master_json_path_from_ref resolver with refusal=TaskDocError after retirement-proof comparison and before publication. The actual shared mutable allowlist lives in task_doc_phrases, and does not admit seriesContractPath/enclosures as generic fields.
@@ -376,3 +378,8 @@ constant, by `mcp/tests/test_tool_response_conformance.py::test_task_doc_descrip
 - Retained history: get formerly showed readable directGrant without an authored grant field. Current get/read_steps are removed; rendered/projected grant display is a separate input and never canonical task JSON. [30]
 
 - Canonical mutation, removed-read refusal, inline/by-file exclusivity and post-read byte budget, prepared-candidate validation, validly addressed answered sync failure, invalid named-master refusal, parent in-place guard and parent Order refresh remain separate boundaries. Shared field filtering belongs to phrases/content_edits; review evidence is not a grant. [31]
+
+## Current source evidence
+
+
+- Ordinary and remove operations prepare per-root document pairs for the same source-CAS transaction. [34]

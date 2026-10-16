@@ -20,28 +20,28 @@
       ]
     },
     "2": {
-      "note": "Tree grouping and wait formatting tests cover the unchanged selector behavior.\n\nAnchor: \"BY PHASE groups by l-01 phase in pipeline order\"; \"scales seconds → s/m/h/d and renders unknown as a dash\"",
+      "note": "Pure selector assertions make hasLiveWorktree depend only on stat-derived flags: either existing code/memory worktree admits and neither hides, never a cleanup-state proxy. fmtWait asserts seconds/minutes/hours/days formatting and an em dash for unknown input; this file has no lifecycle buildTree grouping case.",
       "targets": [
         {
           "anchor": {
-            "blob": "7079a30e132aed793dd2c5155541995699c83ab8",
-            "content": "sha256:035ec6bcb3a963f8ec92a2f5d11ca4e77a131094f63212c53d42742b14ccfebd",
+            "blob": "9f29c215613966a7d5dc4db44a530aebe84f5ef4",
+            "content": "sha256:125b2d5e62d6f77a1881f1a5a3266e19d6faf890d2e6d25ae70a049d4651dae7",
             "locator": {
-              "end": 34,
+              "end": 15,
               "kind": "line_range",
-              "start": 23
+              "start": 7
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "7079a30e132aed793dd2c5155541995699c83ab8",
-            "content": "sha256:2ebeffc72ebab0fafbe4f52343de12824f0d8fed3efc859454fe43068ca02546",
+            "blob": "9f29c215613966a7d5dc4db44a530aebe84f5ef4",
+            "content": "sha256:e3ddf58f7626e130cf541d6d4abb0685664560640ad1b8275e5157c1446a909f",
             "locator": {
-              "end": 68,
+              "end": 25,
               "kind": "line_range",
-              "start": 62
+              "start": 17
             }
           },
           "kind": "test"

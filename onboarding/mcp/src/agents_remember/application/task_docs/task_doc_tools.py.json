@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "bef5e39c23243380c101b17019da47127de487e5",
+        "blob": "5feac1ca27da9704636c3bd2e080ed7572232898",
         "content": "sha256:e1d4e6f390890a00451ccd505945555d4ad47c4ee63ea85b8936e07ebfedce1c",
         "locator": {
           "kind": "symbol",
@@ -21,11 +21,12 @@
     },
     {
       "anchor": {
-        "blob": "bef5e39c23243380c101b17019da47127de487e5",
-        "content": "sha256:d248bc6dd4d56890a5e82d0dccb018f05085c037bcd779a7a994eb00ad754686",
+        "blob": "5feac1ca27da9704636c3bd2e080ed7572232898",
+        "content": "sha256:66fa6da7f95ae38c7d6c2aef3061dfdd31dc4694b46b7ff6b65621edd1f402fd",
         "locator": {
-          "kind": "symbol",
-          "name": "_publish_task_doc_candidate"
+          "end": 575,
+          "kind": "line_range",
+          "start": 490
         }
       },
       "id": "RLZ-D0NMQA",
@@ -39,7 +40,7 @@
     },
     {
       "anchor": {
-        "blob": "bef5e39c23243380c101b17019da47127de487e5",
+        "blob": "5feac1ca27da9704636c3bd2e080ed7572232898",
         "content": "sha256:3683c3b6d4eec67c6b438ca80bef4fb7f29ccea83892e6481120c46493c46d39",
         "locator": {
           "kind": "symbol",
@@ -57,7 +58,7 @@
     },
     {
       "anchor": {
-        "blob": "bef5e39c23243380c101b17019da47127de487e5",
+        "blob": "5feac1ca27da9704636c3bd2e080ed7572232898",
         "content": "sha256:33c13a52705c29d7c1c2178bd67aa79056b43e683db6782fad32c0e27c92ba23",
         "locator": {
           "end": 459,
@@ -828,6 +829,35 @@
               "end": 885,
               "kind": "line_range",
               "start": 871
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "34": {
+      "note": "Ordinary and remove operations prepare per-root document pairs for the same source-CAS transaction.\n\nAnchor: source responsibility",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5feac1ca27da9704636c3bd2e080ed7572232898",
+            "content": "sha256:66fa6da7f95ae38c7d6c2aef3061dfdd31dc4694b46b7ff6b65621edd1f402fd",
+            "locator": {
+              "end": 575,
+              "kind": "line_range",
+              "start": 490
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5feac1ca27da9704636c3bd2e080ed7572232898",
+            "content": "sha256:f9921e2c69257dbfce61c04eb9ea8a2264d325ba1328d55e3003e893dc03a935",
+            "locator": {
+              "end": 1134,
+              "kind": "line_range",
+              "start": 1041
             }
           },
           "kind": "code"

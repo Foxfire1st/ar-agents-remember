@@ -3,8 +3,27 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "dc68d0e1a5417881f6c8e20a216389140d5ab54b",
-        "content": "sha256:3a76eff7e606222874ff9e11f60d9e83ce1a40a217b4450ec5ecf45670cf2e22",
+        "blob": "fd8a63153d92e122e337addca365b8a2260cbcf5",
+        "content": "sha256:d35205fe9e6cf8658a264e2bf4ccb94f2f8f6820bdb9676b67f7467f34020d8f",
+        "locator": {
+          "end": 460,
+          "kind": "line_range",
+          "start": 440
+        }
+      },
+      "id": "RLZ-48F336",
+      "invariant": "INV-MGGEBY",
+      "origin": {
+        "handoffEntry": "L168-CUR-M2-21-N08",
+        "leaf": "260928-MIK-L168"
+      },
+      "rationale": "OpenGroups uses entry.counts.started/planned and stage-filtered IndexRows. Started entries are linked to Now and planned entries remain Planned, not a reconstructed graph/lifecycle waiting population.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "fd8a63153d92e122e337addca365b8a2260cbcf5",
+        "content": "sha256:16695ad77806a8d5b51a1af55642517cae60547f507cb1f41991e51ef4f2a323",
         "locator": {
           "kind": "symbol",
           "name": "ReviewWord"
@@ -21,11 +40,12 @@
     },
     {
       "anchor": {
-        "blob": "dc68d0e1a5417881f6c8e20a216389140d5ab54b",
-        "content": "sha256:4c07780fe519c32dbdbfae1022ce862674b1095a2d0e8d5409b8e84d681a0311",
+        "blob": "fd8a63153d92e122e337addca365b8a2260cbcf5",
+        "content": "sha256:591618796ac62d81a92dbac7f69d6b5fc99279184b55cb4d7503742ec04c700a",
         "locator": {
-          "kind": "symbol",
-          "name": "SprintRowsViewBody"
+          "end": 387,
+          "kind": "line_range",
+          "start": 341
         }
       },
       "id": "RLZ-C7FVQY",
@@ -39,12 +59,31 @@
     },
     {
       "anchor": {
-        "blob": "dc68d0e1a5417881f6c8e20a216389140d5ab54b",
-        "content": "sha256:cc99540bcbbdcbeb0e6697b995e244195cdea1f474292bc40d7c7f55d266dcfe",
+        "blob": "fd8a63153d92e122e337addca365b8a2260cbcf5",
+        "content": "sha256:dbe49d5a69cfb1581e9b50572a15ef3854e761048028856d12e1ef937c86cfdc",
         "locator": {
-          "end": 246,
+          "end": 80,
           "kind": "line_range",
-          "start": 113
+          "start": 47
+        }
+      },
+      "id": "RLZ-DN3M1F",
+      "invariant": "INV-MGGEBY",
+      "origin": {
+        "handoffEntry": "L168-CUR-M2-21-N23",
+        "leaf": "260928-MIK-L168"
+      },
+      "rationale": "TaskIndexRow takes one canonical child entry and its served parent, displays entry id/title, and permits navigation only with entry.reference. It composes current task/master cells without a parallel document-row identity.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "fd8a63153d92e122e337addca365b8a2260cbcf5",
+        "content": "sha256:3734d8dc3f42621be9065d01258e25ae30a5a46cb60e88570d1e4e9a87bb86a1",
+        "locator": {
+          "end": 301,
+          "kind": "line_range",
+          "start": 274
         }
       },
       "id": "RLZ-G8WYZY",
@@ -58,12 +97,50 @@
     },
     {
       "anchor": {
-        "blob": "dc68d0e1a5417881f6c8e20a216389140d5ab54b",
-        "content": "sha256:b23126a1f952f07af798bc30b2ec872b0deedd0cc56c4035518b6661fd8a5afc",
+        "blob": "fd8a63153d92e122e337addca365b8a2260cbcf5",
+        "content": "sha256:ecb9c4678b31232029af67f5cedfd91ad0051f90444c7841dcad5fb365b570f7",
         "locator": {
-          "end": 532,
+          "end": 271,
           "kind": "line_range",
-          "start": 515
+          "start": 243
+        }
+      },
+      "id": "RLZ-H3H1XK",
+      "invariant": "INV-WQ8YGE",
+      "origin": {
+        "handoffEntry": "L168-CUR-M2-21-N07",
+        "leaf": "260928-MIK-L168"
+      },
+      "rationale": "IndexRows iterates entry.children in supplied order, resolves each key from tasks, filters the requested canonical stage and retains the full-list index+1; no document matching or hierarchy inference selects the rows.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "fd8a63153d92e122e337addca365b8a2260cbcf5",
+        "content": "sha256:99ef2c76fc9f209c548d24c81938d4649e17824ec801c1f39e02d7bce5a6ed64",
+        "locator": {
+          "end": 120,
+          "kind": "line_range",
+          "start": 83
+        }
+      },
+      "id": "RLZ-Q4GTQ8",
+      "invariant": "INV-DMAS27",
+      "origin": {
+        "handoffEntry": "curator-realizations-INV-DMAS27",
+        "leaf": "260928-MIK-L162"
+      },
+      "rationale": "This summary accessor reuses producer-supplied major-step done and total values instead of reconstructing a different child-inclusive denominator.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "fd8a63153d92e122e337addca365b8a2260cbcf5",
+        "content": "sha256:51469d56adaf0a7cae254495649e81cdb791e2422d464a54e916f0b9885ab86e",
+        "locator": {
+          "end": 422,
+          "kind": "line_range",
+          "start": 403
         }
       },
       "id": "RLZ-VFXNP6",
@@ -77,12 +154,12 @@
     },
     {
       "anchor": {
-        "blob": "dc68d0e1a5417881f6c8e20a216389140d5ab54b",
-        "content": "sha256:e4b59b2e5cdb64c20105014632d146acf05705ff7b8191f7f935bdce21120095",
+        "blob": "fd8a63153d92e122e337addca365b8a2260cbcf5",
+        "content": "sha256:822479f7734fae906c6a81e61122d46a3938e42cdb2d66a1cd49ee81dd57e7ca",
         "locator": {
-          "end": 541,
+          "end": 337,
           "kind": "line_range",
-          "start": 439
+          "start": 303
         }
       },
       "id": "RLZ-WKA99C",
@@ -96,12 +173,12 @@
     },
     {
       "anchor": {
-        "blob": "dc68d0e1a5417881f6c8e20a216389140d5ab54b",
-        "content": "sha256:9b2d76f558d292da3d2aacb53fa2cef43145273bfb920de860bb412e64ae1933",
+        "blob": "fd8a63153d92e122e337addca365b8a2260cbcf5",
+        "content": "sha256:99ef2c76fc9f209c548d24c81938d4649e17824ec801c1f39e02d7bce5a6ed64",
         "locator": {
-          "end": 122,
+          "end": 120,
           "kind": "line_range",
-          "start": 113
+          "start": 83
         }
       },
       "id": "RLZ-XRDYTZ",
@@ -115,54 +192,6 @@
     }
   ],
   "references": {
-    "1": {
-      "note": "indexRows owns exact commanded-master, linked-series and authored-slice target precedence and stable full-index positions.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "dddb18f9c1c1c0e58a53ffcf70977c948079a69a",
-            "content": "sha256:70a4cc7a9a3bb3a08d5016a9018ee310f85b9da0444f5db471a129ae6e6c8b37",
-            "locator": {
-              "end": 100,
-              "kind": "line_range",
-              "start": 38
-            },
-            "path": "dashboard/src/panels/detail-panel/indexRows.tsx"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "2": {
-      "note": "indexRows retains unresolved and seat rows with their authored status for grouping; task-groups renders them in the raw all-row view.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "dddb18f9c1c1c0e58a53ffcf70977c948079a69a",
-            "content": "sha256:e7552cee2147a934ca0041d96ea7882705af709f14d08f0a04022fdf467b4482",
-            "locator": {
-              "end": 173,
-              "kind": "line_range",
-              "start": 121
-            },
-            "path": "dashboard/src/panels/detail-panel/indexRows.tsx"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "dc68d0e1a5417881f6c8e20a216389140d5ab54b",
-            "content": "sha256:4c07780fe519c32dbdbfae1022ce862674b1095a2d0e8d5409b8e84d681a0311",
-            "locator": {
-              "end": 749,
-              "kind": "line_range",
-              "start": 700
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
     "3": {
       "note": "Master Tasks keeps discarded-before-start history reachable beside abandoned rows, and GroupViewBody renders that audit even without live group rows.",
       "targets": [
@@ -205,23 +234,6 @@
         }
       ]
     },
-    "4": {
-      "note": "The raw sprint view keeps row and master truth visibly separate.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "dc68d0e1a5417881f6c8e20a216389140d5ab54b",
-            "content": "sha256:4c07780fe519c32dbdbfae1022ce862674b1095a2d0e8d5409b8e84d681a0311",
-            "locator": {
-              "end": 749,
-              "kind": "line_range",
-              "start": 700
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
     "5": {
       "note": "Master Now keeps served step counts and cached major-step dots without grant controls; readiness remains a navigation-only graph display.",
       "targets": [
@@ -239,43 +251,14 @@
         },
         {
           "anchor": {
-            "blob": "e9348bf45a919572856585dacbda62cbfd292808",
+            "blob": "1b883ac7b89c8dc599645f119c56e8cf6b612998",
             "content": "sha256:303f86859199f6069c2bca474c1ac301e62b3336168e86ac36b1e2266663e3a7",
             "locator": {
-              "end": 321,
+              "end": 332,
               "kind": "line_range",
-              "start": 302
+              "start": 313
             },
             "path": "dashboard/src/panels/detail-panel/orderGraph.tsx"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "6": {
-      "note": "MasterTasksBlock shares one call-local matcher between completed preview facts and navigation, with the completed count/all-link below the preview.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "dc68d0e1a5417881f6c8e20a216389140d5ab54b",
-            "content": "sha256:79c932363d385119f11d7027493c41f3075074b07cf9411ed99a65f7fdc8c80e",
-            "locator": {
-              "end": 478,
-              "kind": "line_range",
-              "start": 476
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "dc68d0e1a5417881f6c8e20a216389140d5ab54b",
-            "content": "sha256:b23126a1f952f07af798bc30b2ec872b0deedd0cc56c4035518b6661fd8a5afc",
-            "locator": {
-              "end": 532,
-              "kind": "line_range",
-              "start": 515
-            }
           },
           "kind": "code"
         }

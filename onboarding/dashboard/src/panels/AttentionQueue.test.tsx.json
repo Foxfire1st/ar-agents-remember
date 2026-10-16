@@ -1,5 +1,41 @@
 {
   "path": "dashboard/src/panels/AttentionQueue.test.tsx",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "6c10ae5cdd58d4abdcc308463495ea415c746ec9",
+        "content": "sha256:b95533b748ef4044558eb70d0300144ec03878f831967fc8a1c927c4398f56ca",
+        "locator": {
+          "kind": "symbol",
+          "name": "the four remaining attention kinds > Clear all sends every listed item, including provider, setup and start failures"
+        }
+      },
+      "facet": "The current plain-title case seeds all four supported kinds and asserts one itemId/kind request per listed item after Clear all.",
+      "id": "PRF-657JSC",
+      "invariant": "INV-DVQX4T",
+      "origin": {
+        "handoffEntry": "L168-W-R166-02-04",
+        "leaf": "260928-MIK-L168"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "6c10ae5cdd58d4abdcc308463495ea415c746ec9",
+        "content": "sha256:d5d6b5b237043fc9e7a3b0f701061f581d9bcc9e050d24a991ebc03fd2f8d7f7",
+        "locator": {
+          "kind": "symbol",
+          "name": "the four remaining attention kinds > restores an item and reports that its click did not hold when the write fails"
+        }
+      },
+      "facet": "The mocked unsuccessful reply restores the optimistically hidden row with a failure alert, and a successful retry clears that alert.",
+      "id": "PRF-7WDXWS",
+      "invariant": "INV-DVQX4T",
+      "origin": {
+        "handoffEntry": "L168-W-R166-02-04",
+        "leaf": "260928-MIK-L168"
+      }
+    }
+  ],
   "realizes": [],
   "references": {
     "1": {
@@ -23,12 +59,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ec11f958c3ba654dad0a65a51861381d8b81ad90",
+            "blob": "5fea81ac6e51630ad7f1031515b2b432882154bc",
             "content": "sha256:2f86385c2a6b0479a5f16362c7a03aa7dc50b9676692719235518453a47d7a0f",
             "locator": {
-              "end": 335,
+              "end": 150,
               "kind": "line_range",
-              "start": 335
+              "start": 150
             },
             "path": "mcp/src/agents_remember/observer/reducer_impl/_attention.py"
           },
@@ -52,14 +88,40 @@
       ]
     },
     "4": {
-      "note": "Targetless actionable drift dismissal hides immediately and posts a nullable lifecycle target.",
+      "note": "The four-kind fixture covers provider-down, actionable-drift, failed-setup and blocked-start. Parameterized dismissal asserts immediate optimistic hiding and a request containing exactly itemId/kind for each kind; the actionable-drift failure case restores the row, reports that dismissal did not hold and clears the alert on a successful retry. No nullable lifecycle target is posted.",
       "targets": [
         {
           "anchor": {
-            "blob": "89d4e63a66ed0f97022b672f5b76c65cbf72b990",
-            "content": "sha256:1d3e2b9790a3913a855f585df589827cddad449a489f3cd511dde2cb6176ba61",
+            "blob": "6c10ae5cdd58d4abdcc308463495ea415c746ec9",
+            "content": "sha256:eb11a5af06a0021f0a6eca7d41574a75aef4fc42d53a7f9ca91b1d469e2cfbc4",
             "locator": {
-              "kind": "file"
+              "end": 45,
+              "kind": "line_range",
+              "start": 13
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "6c10ae5cdd58d4abdcc308463495ea415c746ec9",
+            "content": "sha256:cc7a9b3317b667fb6ab93b78bbed24639d84a472186a9462a6dc4847a3b550fc",
+            "locator": {
+              "end": 94,
+              "kind": "line_range",
+              "start": 77
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "6c10ae5cdd58d4abdcc308463495ea415c746ec9",
+            "content": "sha256:d5d6b5b237043fc9e7a3b0f701061f581d9bcc9e050d24a991ebc03fd2f8d7f7",
+            "locator": {
+              "end": 118,
+              "kind": "line_range",
+              "start": 107
             }
           },
           "kind": "test"
@@ -67,14 +129,40 @@
       ]
     },
     "5": {
-      "note": "Clear all includes gate, lifecycle, and actionable-drift rows but skips worktree alarms.",
+      "note": "Clear all optimistically removes every listed provider-down, actionable-drift, failed-setup and blocked-start item, and sends each exact itemId/kind pair. The mixed-result case restores only the failed provider-down row and reports that dismissal did not hold; worktree-lane setup/start failures are included, not skipped.",
       "targets": [
         {
           "anchor": {
-            "blob": "89d4e63a66ed0f97022b672f5b76c65cbf72b990",
-            "content": "sha256:1d3e2b9790a3913a855f585df589827cddad449a489f3cd511dde2cb6176ba61",
+            "blob": "6c10ae5cdd58d4abdcc308463495ea415c746ec9",
+            "content": "sha256:eb11a5af06a0021f0a6eca7d41574a75aef4fc42d53a7f9ca91b1d469e2cfbc4",
             "locator": {
-              "kind": "file"
+              "end": 45,
+              "kind": "line_range",
+              "start": 13
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "6c10ae5cdd58d4abdcc308463495ea415c746ec9",
+            "content": "sha256:b95533b748ef4044558eb70d0300144ec03878f831967fc8a1c927c4398f56ca",
+            "locator": {
+              "end": 105,
+              "kind": "line_range",
+              "start": 96
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "6c10ae5cdd58d4abdcc308463495ea415c746ec9",
+            "content": "sha256:3b9928e90564a626e19f9527bcca7e40caee31c48d1d5ebbcb23c9a8e3917d4d",
+            "locator": {
+              "end": 130,
+              "kind": "line_range",
+              "start": 120
             }
           },
           "kind": "test"

@@ -11,7 +11,8 @@
   "conditions": [
     "At default one-second interval the added rest is one to three seconds; an explicitly larger interval keeps its configured larger floor.",
     "Pending domain notifications during work or rest survive completion/failure/watcher-health transitions and are consumed at the next eligible deadline.",
-    "Degraded watchers retain full-refresh wakes; quiet heartbeat keeps its existing 15-second scheduling interval."
+    "Degraded watchers retain full-refresh wakes; quiet heartbeat keeps its existing 15-second scheduling interval.",
+    "The ruled task-document/host-state exception is at most one early pass in an original rest window; independent full-healing deadlines remain."
   ],
   "exclusions": [
     "Watcherless replay keeps its existing fixed sleep cadence.",
@@ -30,9 +31,9 @@
     "leaf": "260928-MIK-L40",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-invariant/v1",
-  "statement": "After the actual live tick finishes or its worker drains on cancellation, the next tick's added scheduler rest is max(interval, min(actual_tick_duration, 3 seconds)).",
+  "statement": "After a live tick finishes or its worker drains on cancellation, the ordinary added rest is max(interval, min(actual_tick_duration, 3 seconds)); one task-document or host-activity notification arriving during that rest may cause one early pass one interval after arrival per original rest window. Later notifications and other domains do not repeatedly shorten that window.",
   "status": "proposed",
   "supersedes": []
 }

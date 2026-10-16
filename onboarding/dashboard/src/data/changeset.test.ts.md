@@ -24,8 +24,7 @@ path the product takes. The test file is byte-unchanged by that leaf, and this s
 mechanism correctly before and after; the note exists so a reader does not infer the product's request
 shape from the pinned flag.
 
-- cit:([`stubFetch`, `afterEach`], dashboard/src/data/changeset.test.ts:6-12; dashboard/src/data/changeset.test.ts:14-14) installs a `vi.fn` `fetch`
-  returning a minimal `Response`-shaped object and restores globals after each test.
+- stubFetch returns a real Response; teardown unstubs globals and resets shared conditional-read caches. URL/pin/error assertions are unchanged.
 - cit:(["includeLeaves=false"], dashboard/src/data/changeset.test.ts:16-32)
   covers the task, file-diff, and master URLs, including the optional `includeLeaves=false` selector:
   `/api/changeset/task?repo&scope`,

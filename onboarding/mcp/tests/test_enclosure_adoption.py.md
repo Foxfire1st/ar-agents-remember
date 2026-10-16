@@ -18,7 +18,7 @@ These are current source/assertion-carrier meanings. The qualified attempt14 COD
 
 MIK-R82 rule 4: the tool takes contract path, expected worktree group and a non-blank rationale, dry-runs by default and needs explicit approval for the real run. Every case fails without the change: the tool, its payload builder, and its refusal naming.
 
-The dry-run witness keeps the delivered envelope free of `operation`, but asserts the actual operation identity from the logged whole result named by `log`. The outcome, no-effect and next-action assertions remain on their own respective surfaces. Absence alone is not the identity proof.
+The dry-run witness keeps the delivered envelope free of `operation`, but asserts the actual operation identity from the logged whole result named by `log`. The outcome and no-effect assertions remain; executable `nextArgs` including approval, dry-run and publication request identity are read from the logged whole result, while compact next-action fields remain on their delivered surface. Absence alone is not the identity proof.
 
 ## Evidence
 

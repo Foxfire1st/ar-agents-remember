@@ -3,11 +3,12 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "f681eb532cb05a8e3b97f5c47f6d2a0fc3a17936",
-        "content": "sha256:ba900179adad25bcba73d9745f14250bd7d31d99a91f548c8c3b51ef72b0062d",
+        "blob": "22f5e74821ea81289840c2fd5e82169b8d322e5c",
+        "content": "sha256:dd03b6ef895ec97d1dd2f6495b952ccec74bf3750ffa7aabae03392ce0a75a76",
         "locator": {
-          "kind": "symbol",
-          "name": "readRoleAgents"
+          "end": 60,
+          "kind": "line_range",
+          "start": 26
         }
       },
       "id": "RLZ-42490J",
@@ -16,21 +17,22 @@
         "handoffEntry": "L117-R11",
         "leaf": "260928-MIK-L117"
       },
-      "rationale": "The plugin reads the role-start-published facts fresh on every turn end, so no reload or poll is needed.",
+      "rationale": "readRoleAgents stats the current role-agents path on access and reuses parsed facts only for the same path and dev/inode/size/mtimeNs/ctimeNs generation. A changed generation rereads and validates the file; ENOENT returns no records and read errors clear the cache, while malformed records fail visibly. New registration facts require no process reload or background polling; this is not a fresh physical file read/parse on every turn end.",
       "role": "enforcement"
     }
   ],
   "references": {
     "1": {
-      "note": "Absent configuration/file yields no records, while malformed present facts throw; each read reconstructs the typed fact set.",
+      "note": "Absent configuration/file yields no records and malformed facts throw; equal stat identity reuses one parsed mapping until registration changes.\n\nAnchor: current owner",
       "targets": [
         {
           "anchor": {
-            "blob": "f681eb532cb05a8e3b97f5c47f6d2a0fc3a17936",
-            "content": "sha256:ba900179adad25bcba73d9745f14250bd7d31d99a91f548c8c3b51ef72b0062d",
+            "blob": "22f5e74821ea81289840c2fd5e82169b8d322e5c",
+            "content": "sha256:164d260d9e805caaa9f2b1fec724fa58e2cd91c500977650e087deeb50e8d20e",
             "locator": {
-              "kind": "symbol",
-              "name": "readRoleAgents"
+              "end": 60,
+              "kind": "line_range",
+              "start": 1
             }
           },
           "kind": "code"

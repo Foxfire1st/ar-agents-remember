@@ -136,6 +136,47 @@
           "kind": "code"
         }
       ]
+    },
+    "8": {
+      "note": "The task-body fixture returns the path-addressed native entry summary or 404; the cockpit seed uses canonical native wire fixture builders.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6e4fa860ed82c382b919d20a08e564ea69c9f2f4",
+            "content": "sha256:a377081a233a4d51374df30b6e2894df93bfdb93868ec5894db13d7e2270128c",
+            "locator": {
+              "kind": "symbol",
+              "name": "stubNotesApi"
+            },
+            "path": "dashboard/src/panels/notes-reader/NotesReaderViewer.test.tsx"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "6e4fa860ed82c382b919d20a08e564ea69c9f2f4",
+            "content": "sha256:f6188f8b32ffa555cdbd34de70979b9eec4b9df43808fcd1fadf8308a6de4ca3",
+            "locator": {
+              "kind": "symbol",
+              "name": "masterDoc"
+            },
+            "path": "dashboard/src/panels/notes-reader/NotesReaderViewer.test.tsx"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "6e4fa860ed82c382b919d20a08e564ea69c9f2f4",
+            "content": "sha256:6ae5d75afe0113c5e9bcd6ed32849d8526f988c3ead338da53a7d54babcdf05f",
+            "locator": {
+              "kind": "symbol",
+              "name": "seedMaster"
+            },
+            "path": "dashboard/src/panels/notes-reader/NotesReaderViewer.test.tsx"
+          },
+          "kind": "test"
+        }
+      ]
     }
   },
   "schema": "ar-onboarding-route/v1"

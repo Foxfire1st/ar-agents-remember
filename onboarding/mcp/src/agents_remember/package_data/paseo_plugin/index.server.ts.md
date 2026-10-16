@@ -6,13 +6,13 @@
 
 ## Purpose
 
-The canonical server entry exposes the provisioned embed list and wires native role-agent lifecycle events into product-owned silent-turn notifications.
+The canonical server entry exposes the provisioned embed list, composes host-activity publication and registers parent-wake notifications as distinct event-driven owners.
 
 ## Code Commentary
 
 contribute reads the list once at load, logs the entry count and registers ar.embed-list with that value. Provisioning/reload owns refresh, while malformed present data fails visibly.
 
-The same plugin instance owns a shared turn tracker. Turn-start, turn-end, permission-request/resolution and archive events update it; turn-end reads published role/task/report facts fresh and delegates the pure decision to `server/turn_ended.ts`, sending through the supplied host client. Asynchronous turn-end and permission-resolution errors are caught and logged. Embed data remains load-time data; role facts are event-time data. Neither path polls the host.
+A host-activity publisher is created from PASEO_HOME, registers its own event handlers, and supplies the explicit ar.host-activity-snapshot RPC: a full reconciliation returns the publisher boot identity. Initialization and unload-publication failures are logged; an unavailable publisher makes the RPC fail visibly. Unload marks publication incomplete. registerParentWakeEvents separately owns its tracker and steer sends, preserving turn/permission gates without conflating wake behavior with task-state publication. Embed data remains load-time data; neither owner starts a poll.
 
 ## Invariants And Boundaries
 
@@ -23,4 +23,4 @@ The server does not infer parent trust, poll another registry or gain dashboard 
 The current source and test assertions below establish the documented ownership; test citations do not claim a rerun in this pass.
 
 - The server entry reads the embed list at load and registers the existing embed RPC. [1]
-- Native turn, permission and archive callbacks share one tracker; turn-end reads facts fresh and asynchronous callback errors are caught. [2]
+- The entry composes independent activity publication/RPC and parent-wake registration, with explicit initialization and unload failure handling. [2]

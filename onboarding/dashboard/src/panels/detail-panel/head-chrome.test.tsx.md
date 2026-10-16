@@ -6,7 +6,7 @@
 
 ## Purpose
 
-Pin one document identity/title owner and content-sensitive headings across direct, series and drilled readers.
+Pin one document identity/title owner and content-sensitive headings across directly selected task/master pages and drilled native child pages.
 
 ## Code Commentary
 

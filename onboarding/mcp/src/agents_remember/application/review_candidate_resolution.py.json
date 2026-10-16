@@ -4,8 +4,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "c8319fb42311c030f1339a491c666d1eea5f271d",
-        "content": "sha256:15c85cc33f1e7e214573b6ddb4d8135b307f5327ab47e100509cac8056ff3c39",
+        "blob": "01ac0a95eb1334d83c3add208b295b8dd0dfdd6d",
+        "content": "sha256:856564a960ef04352062097e477b4d61fac7a79ad277df76382439e3774903c7",
         "locator": {
           "kind": "symbol",
           "name": "resolve_review_candidate"
@@ -19,6 +19,24 @@
       },
       "rationale": "The resolver binds the read to current captured worktrees; a stored composed response is the rejected alternative.",
       "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "01ac0a95eb1334d83c3add208b295b8dd0dfdd6d",
+        "content": "sha256:1048677485b9d7a25cc429abe9365cd2d264b278c7097db437b9bacaac0b70ea",
+        "locator": {
+          "kind": "symbol",
+          "name": "_live_resolution"
+        }
+      },
+      "id": "RLZ-KEYCH7",
+      "invariant": "INV-YJZKYC",
+      "origin": {
+        "handoffEntry": "R3 Note 15",
+        "leaf": "260928-MIK-L26"
+      },
+      "rationale": "The actual candidate-resolution owner distinguishes source-only legacy-unavailable from a named native probe refusal; generic app wiring does not establish that classification.",
+      "role": "presentation"
     }
   ],
   "references": {

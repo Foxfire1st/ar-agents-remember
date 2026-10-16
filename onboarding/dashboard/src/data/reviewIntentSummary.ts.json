@@ -3,8 +3,25 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "cdc2029bbb7da71feb49f14ec9d60611087b8410",
-        "content": "sha256:3fef816c5f454621fbf268a196236890351373d251adc7d08c338bb4073c19a3",
+        "blob": "9674aeae19ce9cb39553f39a2033dba7c8c4eccd",
+        "content": "sha256:b7cdb6034aad057fabfa698da4d17ae9d6d28ea97acdcce1f1d7d64ede36da5d",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-2GQXAF",
+      "invariant": "INV-WNHAWD",
+      "origin": {
+        "handoffEntry": "L168-W-R168-03",
+        "leaf": "260928-MIK-L168"
+      },
+      "rationale": "The bounded summary cache survives page navigation and validates its exact generation.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "9674aeae19ce9cb39553f39a2033dba7c8c4eccd",
+        "content": "sha256:0bedb67cb69c913430b635e65a5e89ad418b2a5205bf38e9d9cf448cdce0e422",
         "locator": {
           "kind": "symbol",
           "name": "IntentSummaryRead"
@@ -20,8 +37,8 @@
     },
     {
       "anchor": {
-        "blob": "cdc2029bbb7da71feb49f14ec9d60611087b8410",
-        "content": "sha256:2c2f13de9b2747a0cb5b73e3de999c831e5a9998999a146030f4f95c02d5dca6",
+        "blob": "9674aeae19ce9cb39553f39a2033dba7c8c4eccd",
+        "content": "sha256:73a1735fc963d15d125c6f4257f711ba8a6ed11c60e9b4836441b203201769b7",
         "locator": {
           "kind": "symbol",
           "name": "useIntentReviewSummary"
@@ -32,16 +49,17 @@
       "origin": {
         "leaf": "260921-ICR-L46"
       },
-      "rationale": "Re-runs the summary read only when repo, master, leaf or the passed facts change, never on the analytics document itself. Each read takes a sequence number, and only the newest still-mounted read may store its answer, which is filed under its repo/master/leaf key; a late answer for a previous leaf is dropped or shown as loading.",
+      "rationale": "Keys display by repo/master/leaf/facts, passes facts to the store conditional resource, and drops mounted/sequence-superseded completions; peek never displays old-facts bytes.",
       "role": "enforcement"
     },
     {
       "anchor": {
-        "blob": "cdc2029bbb7da71feb49f14ec9d60611087b8410",
-        "content": "sha256:2c2f13de9b2747a0cb5b73e3de999c831e5a9998999a146030f4f95c02d5dca6",
+        "blob": "9674aeae19ce9cb39553f39a2033dba7c8c4eccd",
+        "content": "sha256:73a1735fc963d15d125c6f4257f711ba8a6ed11c60e9b4836441b203201769b7",
         "locator": {
-          "kind": "symbol",
-          "name": "useIntentReviewSummary"
+          "end": 125,
+          "kind": "line_range",
+          "start": 90
         }
       },
       "id": "RLZ-YNCHSBQT",
@@ -49,7 +67,7 @@
       "origin": {
         "leaf": "260921-ICR-L46"
       },
-      "rationale": "Is the entry's only knowledge read when a leaf is selected: one intentReviewSummary request per repo/master/leaf key, repeated only when that leaf's projection facts change, with just the latest request allowed to store its answer. It returns loading for any other key, and a rejected request becomes an unavailable state rather than counts.",
+      "rationale": "useIntentReviewSummary makes the selected task context summary read through the dashboard-owned conditional store, keyed locally by repo/master/leaf/facts. Mounted sequence checks prevent a superseded request from setting local state. A matching local answer is returned first; otherwise peek may return the retained same-address, same-facts answer, with loading only when neither is available. Rejected loads become unavailable rather than counts; this hook does not read the subject catalogue.",
       "role": "primary-authority"
     }
   ],
@@ -59,7 +77,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "cdc2029bbb7da71feb49f14ec9d60611087b8410",
+            "blob": "9674aeae19ce9cb39553f39a2033dba7c8c4eccd",
             "content": "sha256:b40ecffaa5128d54b1dfa64768b2c48fd623dca66e034c5d4b447be9e40e3302",
             "locator": {
               "kind": "symbol",
@@ -82,15 +100,14 @@
       ]
     },
     "2": {
-      "note": "The route request through the shared decode.\n\nAnchor: `getReviewJson`; \"/api/review/intent/summary\"",
       "targets": [
         {
           "anchor": {
-            "blob": "cdc2029bbb7da71feb49f14ec9d60611087b8410",
-            "content": "sha256:6c80a16fba30eb0ed60f763c52163cdd0ea53d4a3f8a8ca79388e86acf03e4dc",
+            "blob": "9674aeae19ce9cb39553f39a2033dba7c8c4eccd",
+            "content": "sha256:73a1735fc963d15d125c6f4257f711ba8a6ed11c60e9b4836441b203201769b7",
             "locator": {
               "kind": "symbol",
-              "name": "intentReviewSummary"
+              "name": "useIntentReviewSummary"
             }
           },
           "kind": "code"
@@ -125,12 +142,11 @@
       ]
     },
     "4": {
-      "note": "The hook: one read per task context and per `facts`, superseded answers dropped.\n\nAnchor: `reads.current === seq`",
       "targets": [
         {
           "anchor": {
-            "blob": "cdc2029bbb7da71feb49f14ec9d60611087b8410",
-            "content": "sha256:2c2f13de9b2747a0cb5b73e3de999c831e5a9998999a146030f4f95c02d5dca6",
+            "blob": "9674aeae19ce9cb39553f39a2033dba7c8c4eccd",
+            "content": "sha256:73a1735fc963d15d125c6f4257f711ba8a6ed11c60e9b4836441b203201769b7",
             "locator": {
               "kind": "symbol",
               "name": "useIntentReviewSummary"
@@ -145,12 +161,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "cdc2029bbb7da71feb49f14ec9d60611087b8410",
+            "blob": "9674aeae19ce9cb39553f39a2033dba7c8c4eccd",
             "content": "sha256:1b9422615ee1b87596c992a3e70f0455265397a2496108e2854652ae817e8915",
             "locator": {
-              "end": 57,
+              "end": 58,
               "kind": "line_range",
-              "start": 57
+              "start": 58
             }
           },
           "kind": "code"
@@ -199,6 +215,23 @@
               "start": 131
             },
             "path": "dashboard/src/panels/detail-panel/intentReviewEntry.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "Pending sharing is same-facts only; superseded transport cannot retain or relabel an answer.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d64c2458cf4416a842ef1eff840bbf025ac0a5a9",
+            "content": "sha256:e6db7948a6285509052250f33afd2f49c6cbfc13f7849132b214641fdc465660",
+            "locator": {
+              "kind": "symbol",
+              "name": "ConditionalReads"
+            },
+            "path": "dashboard/src/data/conditionalReads.ts"
           },
           "kind": "code"
         }

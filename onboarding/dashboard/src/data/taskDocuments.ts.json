@@ -1,40 +1,44 @@
 {
   "path": "dashboard/src/data/taskDocuments.ts",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "cb56539089a61b868c10348e34bfac4506eac81b",
+        "content": "sha256:228218234627a8957755a790bae4f98cd01ce9934483c26e077d94884103acb0",
+        "locator": {
+          "kind": "symbol",
+          "name": "TaskDocumentResources"
+        }
+      },
+      "id": "RLZ-EZ1D8Q",
+      "invariant": "INV-GDWJKR",
+      "origin": {
+        "handoffEntry": "L168-W-R168-07",
+        "leaf": "260928-MIK-L168"
+      },
+      "rationale": "Bodies/preparation use64entries/16MiB and in-flight bodies are capped64.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "cb56539089a61b868c10348e34bfac4506eac81b",
+        "content": "sha256:228218234627a8957755a790bae4f98cd01ce9934483c26e077d94884103acb0",
+        "locator": {
+          "kind": "symbol",
+          "name": "TaskDocumentResources"
+        }
+      },
+      "id": "RLZ-XTZBXS",
+      "invariant": "INV-WNHAWD",
+      "origin": {
+        "handoffEntry": "L168-W-R168-03",
+        "leaf": "260928-MIK-L168"
+      },
+      "rationale": "The dashboard-owned body/preparation resources outlive a reader mount.",
+      "role": "propagation-persistence"
+    }
+  ],
   "references": {
-    "1": {
-      "note": "The helper encodes `docPath`, rejects non-OK responses, and returns the decoded task node.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "e556f123a00e478e3cda966c38b2f5f480d44563",
-            "content": "sha256:d23293d031664a859281a7265df52025938e3fdac9a61838eb3ea0b58b43dad7",
-            "locator": {
-              "kind": "symbol",
-              "name": "fetchTaskDocument"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "2": {
-      "note": "`useTaskDocumentBody` calls the adapter for the visible document and keys cached bodies by path plus revision.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "8bf51b0a984191e58aeaf7c6434f659bb37dac0a",
-            "content": "sha256:0d6ffc85f1a3edeb5da304402725eb14f95437a157cb23bc8c307b97856cf82e",
-            "locator": {
-              "kind": "symbol",
-              "name": "useTaskDocumentBody"
-            },
-            "path": "dashboard/src/data/useTaskDocumentBody.ts"
-          },
-          "kind": "code"
-        }
-      ]
-    },
     "3": {
       "note": "The serving route maps projection readiness and the confined snapshot read to HTTP responses.\n\nAnchor: \"def _task_document_response(runtime: _ServingRuntime\"",
       "targets": [
@@ -48,24 +52,6 @@
               "start": 109
             },
             "path": "mcp/src/agents_remember/serving/_app_routes.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "4": {
-      "note": "The snapshot reader resolves under `tasks`, validates the schema, and builds the full node.\n\nAnchor: \"def read_task_document_body(  # pragma: no cover\"",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "6030d7e7f82fadbdbcdedfda71855155018b84c0",
-            "content": "sha256:c8efa303d6cb9cd9949c2ddfd78a4511ef56b40341431c6ef5efbe6eb0973dbf",
-            "locator": {
-              "end": 163,
-              "kind": "line_range",
-              "start": 163
-            },
-            "path": "mcp/src/agents_remember/serving/projections/snapshots_impl/_task_documents.py"
           },
           "kind": "code"
         }

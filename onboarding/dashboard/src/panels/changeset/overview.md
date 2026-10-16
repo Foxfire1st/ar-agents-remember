@@ -38,11 +38,11 @@ The selected file occupies the second column through `ChangeSetPane`. A successf
 
 The standing intent of the rail is to make the master net attributable by leaf. The implementation supplies per-leaf counters alongside the net, but computes those counters against each leaf's own base and current worktree or recorded commit. They are not a decomposition whose sum is guaranteed to equal the integrated net. A live leaf's breakdown counters are base→worktree, whereas clicking its working row opens HEAD→worktree. The source and the attribution intent therefore describe different ranges; this overview does not certify them as equivalent.
 
-The initial list read shows an explicit loading placeholder and preserves a rejection as a `ReviewFailure`. `ChangeSetRefusal` renders its code, optional HTTP status, detail, offending input and next action when supplied. The client decodes non-success response bodies and carries the route's refusal in `ReviewTransportError`, using the shared failure vocabulary rather than a separate viewer decoder.
+The initial list read can restore a matching cached answer through `peekChangeSet`, then uses the shared `loadChangeSet` request owner. A missing answer shows an explicit loading placeholder; a rejection is retained as a `ReviewFailure`. `ChangeSetRefusal` renders its code, optional HTTP status, detail, offending input and next action when supplied. The client decodes non-success response bodies and carries the route's refusal in `ReviewTransportError`, using the shared failure vocabulary rather than a separate viewer decoder.
 
 The counters control in `changeSetBar.tsx` distinguishes loading, unrecorded, measured-empty and failed/refused reads. It renders a brief failure state in the control and the owner's code and reason in a disclosure beside it. The existing rendering case inspects that disclosure and clicks the control to assert the target it opens; this describes the test source, not an executed test result.
 
-A working leaf refresh starts the list and active-file requests together, waits for both to settle, applies fulfilled results and schedules the next cycle after 2.5 seconds. It starts only after the first list response, clears its timer on teardown, and refreshes the active diff rather than the partner column. Rejected polls do not update the initial error state. Individual file-read rejections clear the corresponding diff instead of rendering the list refusal surface.
+A working leaf refresh starts its timer without requiring an initial successful list, unless a recorded comparison was selected. Each refresh starts list and active-file requests together, waits for both to settle and independently applies each result; success replaces its value and clears its problem, while rejection clears its value and stores the named failure. The next timer is scheduled after settlement at 2500 milliseconds, and teardown cancels it. This refresh concerns the active main diff, not the partner column. `ChangeSetWorkspace` displays list failures; `ChangeSetMainPane` displays the independent selected-diff failure. A failed initial working list can therefore recover through the normal timer rather than becoming a permanent loading gate.
 
 The server explicitly returns an unrecorded state when a leaf's committed code endpoint has not been recorded. The counters control displays that state. The viewer's main-pane decision checks file-list lengths, without reading `state` or `stateDetail`; consequently an unrecorded response with empty lists reaches its measured-empty wording. The intended distinction between an unrecorded range and a measured empty range remains visible here as an implementation discrepancy.
 
@@ -60,7 +60,7 @@ The optional `marks` prop connects `DiffPane` to `useMarkedPane`. Each builder p
 
 The presence of `ChangeSetTarget.review` selects the review variant; `{}` is the task-context entry, and optional selector kind/id fields can name a recorded subject. The optional `historical` field addresses the leaf's recorded comparison. These are review dispatch fields, rather than additional change-set modes.
 
-`DocChangeSetBar` renders a series change-set control for a master. For a leaf it renders the committed control and `LeafEntries`: a working control when the leaf is live, plus `IntentReviewEntry` regardless of that liveness. The shared `leafIsLive` predicate compares the leaf's enclosure with active worktree groups. Its result gates working reads and selects which review record the entry addresses; it does not gate the review entry on a subject or a catalogue answer.
+`DocChangeSetBar` renders a series change-set control for a master. For a leaf it renders the committed control and `LeafEntries`: a working control when the leaf is live, plus `IntentReviewEntry` regardless of that liveness. `DocChangeSetBar` derives liveness with `entry.worktrees.some(worktree => worktree.codeWorktreeExists || worktree.memoryWorktreeExists)`. That result gates working reads and selects which review record the entry addresses; it does not gate the review entry on a subject or a catalogue answer.
 
 `IntentReviewEntry` opens the repository/master/leaf task context with `review: {}` for a live leaf or `review: { historical: true }` otherwise. It uses its own comparison-summary read, rather than a `ChangeSetButton` or change-set line counters, and does not read the subject catalogue. The reviewer reads the catalogue through `useReviewNavigation` and `useReviewCatalogue`, whose request uses `intentReviewEntries`. The target carries identities rather than a filesystem path.
 
@@ -106,7 +106,7 @@ The preserved route metadata below is descriptive metadata, outside the operativ
 - **The reviewer entry: offered for every leaf beside the working/committed actions (the recorded comparison for a closed leaf, `ICR-R12`).** [18]
 - **The identity the entry carries instead of a filesystem path (since `260921-ICR-L47`): the task context only, `review: {}` for a live leaf and `{ historical: true }` for a closed one — no subject.** [19]
 - **The read that supplies the subject now belongs to the reviewer, taking the comparison's task context and nothing else.** [20]
-- **The one liveness predicate both gated entries share.** [21]
+- **The entry’s code-or-memory worktree existence flags select the working control and live-versus-recorded review context.** [21]
 - **The generation the open series view is bound to, and the caption that renders it.** [22]
 - **The entry button threading the published generation into the viewer target.** [23]
 - **The target type whose review field may carry no selector, with presence as the marker and an empty object as the task context.** [24]
@@ -132,3 +132,8 @@ The preserved route metadata below is descriptive metadata, outside the operativ
 
 - Comparison takes precedence in list and file requests, and the held-lane filter does not classify hunks. [43]
 - Recorded comparison ranges retain exact code/memory operands and named unavailable-tree states. [44]
+
+
+- Target-addressed list loads share the current request/cache owner, and an available cached answer can be restored at selection. [45]
+- Working refresh does not require hasData, excludes comparisons and handles list/diff fulfillment and failure independently before scheduling its next timer. [46]
+- A list problem and selected-file problem have distinct display owners rather than silently leaving a stale successful pane. [47]

@@ -1,0 +1,115 @@
+{
+  "path": "dashboard/src/panels/detail-panel/directGrant.tsx",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "8727e6986904131489c13104c706b28a118acb8a",
+        "content": "sha256:e5b3890998c79d888e554bd070b9b94e26a500d1a619a6b8f6606cfd84f9945c",
+        "locator": {
+          "end": 140,
+          "kind": "line_range",
+          "start": 86
+        }
+      },
+      "id": "RLZ-08QD2C",
+      "invariant": "INV-JNYJAG",
+      "origin": {
+        "handoffEntry": "L150-R11",
+        "leaf": "260928-MIK-L150"
+      },
+      "rationale": "Owns the give/revoke request, pending lock, served adoption and late-reply ignore; carried unchanged from the sealed L94 logic.",
+      "role": "unclassified"
+    },
+    {
+      "anchor": {
+        "blob": "8727e6986904131489c13104c706b28a118acb8a",
+        "content": "sha256:d64f365cefe7a023e10b154b9963bc92faf3980666dcc39df6fcf368207ec901",
+        "locator": {
+          "kind": "symbol",
+          "name": "DirectExecutionSwitch"
+        }
+      },
+      "id": "RLZ-13GQSZ",
+      "invariant": "INV-XPCFCB",
+      "origin": {
+        "handoffEntry": "L150-R10",
+        "leaf": "260928-MIK-L150"
+      },
+      "rationale": "Single switch/knob/giver/notice; TaskDirectGrant selects planned native subTasks.",
+      "role": "unclassified"
+    },
+    {
+      "anchor": {
+        "blob": "8727e6986904131489c13104c706b28a118acb8a",
+        "content": "sha256:04eb9177a3fc0fbb280e198071fcdb0abe455a18b12e3746d98fe6b3822a23da",
+        "locator": {
+          "end": 71,
+          "kind": "line_range",
+          "start": 67
+        }
+      },
+      "id": "RLZ-F5RFVV",
+      "invariant": "INV-8JGKW8",
+      "origin": {
+        "handoffEntry": "L150-R12",
+        "leaf": "260928-MIK-L150"
+      },
+      "rationale": "The selected subTask gets a switch only while its served entry stage is planned; another granted stage gets bare words and other grantless stages get neither.",
+      "role": "unclassified"
+    },
+    {
+      "anchor": {
+        "blob": "8727e6986904131489c13104c706b28a118acb8a",
+        "content": "sha256:77963540861f2ca86a9219dd352723ab48c720aec645e39ee91a0e6b3e979055",
+        "locator": {
+          "end": 62,
+          "kind": "line_range",
+          "start": 54
+        }
+      },
+      "id": "RLZ-R84WB0",
+      "invariant": "INV-8JGKW8",
+      "origin": {
+        "handoffEntry": "L150-R12",
+        "leaf": "260928-MIK-L150"
+      },
+      "rationale": "The bare-words line for states where the grant cannot be changed.",
+      "role": "unclassified"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Implementation",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8727e6986904131489c13104c706b28a118acb8a",
+            "content": "sha256:04eb9177a3fc0fbb280e198071fcdb0abe455a18b12e3746d98fe6b3822a23da",
+            "locator": {
+              "kind": "symbol",
+              "name": "TaskDirectGrant"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Implementation",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8727e6986904131489c13104c706b28a118acb8a",
+            "content": "sha256:e5b3890998c79d888e554bd070b9b94e26a500d1a619a6b8f6606cfd84f9945c",
+            "locator": {
+              "kind": "symbol",
+              "name": "useDirectGrant"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

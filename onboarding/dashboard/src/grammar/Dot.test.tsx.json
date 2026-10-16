@@ -7,7 +7,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "bc0f3d621d5d0b47243a45338ea8a76800018de4",
+            "blob": "abe657a609e6b8169b65273494d0e5dab54df810",
             "content": "sha256:05564ae2982b10ba2b48f196392042f06683b33b1b072ebf9f9d16319de85207",
             "locator": {
               "kind": "symbol",
@@ -35,68 +35,17 @@
         }
       ]
     },
-    "11": {
-      "note": "`LIFECYCLE_STATES` is the composed lifecycle vocabulary.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "32f61ad92158b8a4519a35f725ce765c87f2ec99",
-            "content": "sha256:03593dcea707b4ee6a05583a3cc4507d5b13f6e6675c9b59445350e98b773870",
-            "locator": {
-              "kind": "symbol",
-              "name": "LIFECYCLE_STATES"
-            },
-            "path": "dashboard/src/types/projection.ts"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "12": {
-      "note": "`LIVE_STATES` declares the live lifecycle vocabulary.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "32f61ad92158b8a4519a35f725ce765c87f2ec99",
-            "content": "sha256:ac609c9000a57be0454d5aae606cc68bbfe372b0f20faab99ec8a7db9dac562e",
-            "locator": {
-              "kind": "symbol",
-              "name": "LIVE_STATES"
-            },
-            "path": "dashboard/src/types/projection.ts"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "13": {
-      "note": "`TERMINAL_STATES` declares the terminal lifecycle vocabulary.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "32f61ad92158b8a4519a35f725ce765c87f2ec99",
-            "content": "sha256:7b5d61f0f6a98202a5ae07bcfff41c5c6e4dd2931ef587c7be65679752ef3186",
-            "locator": {
-              "kind": "symbol",
-              "name": "TERMINAL_STATES"
-            },
-            "path": "dashboard/src/types/projection.ts"
-          },
-          "kind": "code"
-        }
-      ]
-    },
     "14": {
       "note": "The effects-off source comment explicitly keeps the rule unlayered so it wins over the effects layer.\n\nAnchor: \"Unlayered + !important so it always wins over the effects layer.\"",
       "targets": [
         {
           "anchor": {
-            "blob": "bd74702f1b4598051baa688e9823eda3c7605407",
+            "blob": "319b14c211d7a499f34bc89014be9d0a17ca8dea",
             "content": "sha256:bcb3ffa73641c1a7701ce0be35e21850cf69891ec1a8d6e78ed5366ad3cbac67",
             "locator": {
-              "end": 137,
+              "end": 90,
               "kind": "line_range",
-              "start": 136
+              "start": 89
             },
             "path": "dashboard/src/index.css"
           },
@@ -109,12 +58,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "bd74702f1b4598051baa688e9823eda3c7605407",
+            "blob": "319b14c211d7a499f34bc89014be9d0a17ca8dea",
             "content": "sha256:284d9d8f29e4edf764a64141ba53cd62fc163c3aff75290ddb0eaf9a8ba0e571",
             "locator": {
-              "end": 138,
+              "end": 91,
               "kind": "line_range",
-              "start": 138
+              "start": 91
             },
             "path": "dashboard/src/index.css"
           },
@@ -127,12 +76,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "bd74702f1b4598051baa688e9823eda3c7605407",
+            "blob": "319b14c211d7a499f34bc89014be9d0a17ca8dea",
             "content": "sha256:afc0a74be48ac8051e01d5aa56079b0f06b3229de1ccc0ab1504839150c4403f",
             "locator": {
-              "end": 141,
+              "end": 94,
               "kind": "line_range",
-              "start": 141
+              "start": 94
             },
             "path": "dashboard/src/index.css"
           },
@@ -145,12 +94,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "bd74702f1b4598051baa688e9823eda3c7605407",
+            "blob": "319b14c211d7a499f34bc89014be9d0a17ca8dea",
             "content": "sha256:6935588978e4999bc8730141ea3282d45a5034b4d27c9b8b74398c942c1beadb",
             "locator": {
-              "end": 142,
+              "end": 95,
               "kind": "line_range",
-              "start": 142
+              "start": 95
             },
             "path": "dashboard/src/index.css"
           },
@@ -181,12 +130,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "76c1e952f0b6c4c9d708c3edf4cd8b28c0f764ff",
+            "blob": "4b640fd1cc8a08d08a8e813dc3a883c12157110c",
             "content": "sha256:1b4c62b2d5ddd73a0c8b767effdb34e6b7b2c2e903ee29e6601a407745cb329b",
             "locator": {
-              "end": 685,
+              "end": 630,
               "kind": "line_range",
-              "start": 685
+              "start": 630
             },
             "path": "dashboard/src/cockpit/Cockpit.tsx"
           },
@@ -199,7 +148,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "bc0f3d621d5d0b47243a45338ea8a76800018de4",
+            "blob": "abe657a609e6b8169b65273494d0e5dab54df810",
             "content": "sha256:9b4cb9846db623d4e5c023b75d7ae94562bc580cff98795fba8146db1bc1ebea",
             "locator": {
               "kind": "symbol",
@@ -282,7 +231,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8617ee0e8edd92b82484aea936ab97f64f7ddf16",
+            "blob": "ad18738b0d781e04a5a6ed715ccbd1f67f02b34b",
             "content": "sha256:ab0482c579d3c4f2bc618bd18acc0d0aa39a46ef3e0321030d5e58d36a636d04",
             "locator": {
               "kind": "symbol",

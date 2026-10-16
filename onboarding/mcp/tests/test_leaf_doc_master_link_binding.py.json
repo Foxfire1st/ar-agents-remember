@@ -1,5 +1,58 @@
 {
   "path": "mcp/tests/test_leaf_doc_master_link_binding.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "04c4f25a7aca87521760c4c2b1239b02867fa937",
+        "content": "sha256:9a46e428c50a17b7d857de5ff05b0c2751fcf0b53f95dfbdf3cf7b88cfee80e2",
+        "locator": {
+          "kind": "symbol",
+          "name": "LeafDocMasterLinkBindingTests.test_abandoned_leaf_restart_promotes_document_and_parent_row"
+        }
+      },
+      "facet": "The fixture starts and abandons a leaf, then restarts its admitted successor and asserts both native leaf and parent row are inProgress.",
+      "id": "PRF-8HPF4T",
+      "invariant": "INV-Z0BXKJ",
+      "origin": {
+        "handoffEntry": "L168-W-R167-05",
+        "leaf": "260928-MIK-L168"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "04c4f25a7aca87521760c4c2b1239b02867fa937",
+        "content": "sha256:2a07bf5d7993a0c5a83f28fd581566b044fefff0469661152ba5024b264313f9",
+        "locator": {
+          "kind": "symbol",
+          "name": "LeafDocMasterLinkBindingTests.test_start_rolls_back_both_stages_if_the_master_write_fails"
+        }
+      },
+      "facet": "An injected parent JSON publication failure restores both leaf/master JSON and Markdown bytes; a subsequent start publishes both native stages.",
+      "id": "PRF-ENXF45",
+      "invariant": "INV-Z0BXKJ",
+      "origin": {
+        "handoffEntry": "L168-W-R167-05",
+        "leaf": "260928-MIK-L168"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "04c4f25a7aca87521760c4c2b1239b02867fa937",
+        "content": "sha256:f01933133ab1e65e989ed1ac3dd87348c2de144c9e0ff76a3f22369559bc436e",
+        "locator": {
+          "kind": "symbol",
+          "name": "LeafDocMasterLinkBindingTests.test_invalid_parent_refuses_abandon_before_terminal_archive"
+        }
+      },
+      "facet": "Duplicate parent linkage refuses both dry-run and applied abandon before terminal authority exists, retaining contract bytes and the worktree.",
+      "id": "PRF-Y5DZ11",
+      "invariant": "INV-Z0BXKJ",
+      "origin": {
+        "handoffEntry": "L168-W-R167-05",
+        "leaf": "260928-MIK-L168"
+      }
+    }
+  ],
   "realizes": [],
   "references": {
     "16": {
@@ -7,7 +60,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4b7b032032dc3795f44c8326828808db69738894",
+            "blob": "04c4f25a7aca87521760c4c2b1239b02867fa937",
             "content": "sha256:a3e17e34c7533414ff77a0a063b9d12c2486a1c8317c09a1ad07786663e89891",
             "locator": {
               "kind": "symbol",
@@ -39,7 +92,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4b7b032032dc3795f44c8326828808db69738894",
+            "blob": "04c4f25a7aca87521760c4c2b1239b02867fa937",
             "content": "sha256:770c686c79c2d48e58b05719976b3e49c1d1e97998822bbef555f197c66b0f9d",
             "locator": {
               "kind": "symbol",
@@ -55,12 +108,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4b7b032032dc3795f44c8326828808db69738894",
+            "blob": "04c4f25a7aca87521760c4c2b1239b02867fa937",
             "content": "sha256:f0b94f939f3f2767e8bbf2d2426bd3638ef5102aad097cad71ea8d861a8d1ffb",
             "locator": {
-              "end": 250,
+              "end": 345,
               "kind": "line_range",
-              "start": 235
+              "start": 330
             }
           },
           "kind": "test"
@@ -72,11 +125,59 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4b7b032032dc3795f44c8326828808db69738894",
+            "blob": "04c4f25a7aca87521760c4c2b1239b02867fa937",
             "content": "sha256:3b63c0044428e340e875126d98ac86cbdd1b6800ba45726b3c3ba25522a35f48",
             "locator": {
               "kind": "symbol",
               "name": "test_authoring_a_master_and_its_leaves_before_any_start_still_succeeds"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "21": {
+      "note": "Abandoned leaf restart promotes both stages and restores the code worktree.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "04c4f25a7aca87521760c4c2b1239b02867fa937",
+            "content": "sha256:9a46e428c50a17b7d857de5ff05b0c2751fcf0b53f95dfbdf3cf7b88cfee80e2",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_abandoned_leaf_restart_promotes_document_and_parent_row"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "22": {
+      "note": "Invalid parent refuses preview and apply without terminal authority or deletion.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "04c4f25a7aca87521760c4c2b1239b02867fa937",
+            "content": "sha256:f01933133ab1e65e989ed1ac3dd87348c2de144c9e0ff76a3f22369559bc436e",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_invalid_parent_refuses_abandon_before_terminal_archive"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "23": {
+      "note": "Parent write failure restores captured leaf/master files; retry promotes both stages.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "04c4f25a7aca87521760c4c2b1239b02867fa937",
+            "content": "sha256:2a07bf5d7993a0c5a83f28fd581566b044fefff0469661152ba5024b264313f9",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_start_rolls_back_both_stages_if_the_master_write_fails"
             }
           },
           "kind": "test"

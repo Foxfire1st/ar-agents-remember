@@ -3,11 +3,12 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "3007b1080588e8baa67a2353791d8715f232f416",
-        "content": "sha256:45e97a83a26b557d41cf4f209513b506399f6a711e351f838ff6a95b6459168d",
+        "blob": "f4aaacfcd15bb64cc5150682f4748512e07174bf",
+        "content": "sha256:7beed00ba2a1a811cef48ee655b56bf0a4ecd5c7987bab19ae9371f43ebabe01",
         "locator": {
-          "kind": "symbol",
-          "name": "PROCESS_MUTABLE_STATES"
+          "end": 320,
+          "kind": "line_range",
+          "start": 118
         }
       },
       "id": "RLZ-1563PY",
@@ -18,24 +19,6 @@
       },
       "rationale": "The closed register owns treatment and reason for each source-discovered mutable state.",
       "role": "enforcement"
-    },
-    {
-      "anchor": {
-        "blob": "3007b1080588e8baa67a2353791d8715f232f416",
-        "content": "sha256:e1673552694e815f127e6792050708dd5f5c2e12230709353ebda3bc0725fa54",
-        "locator": {
-          "kind": "symbol",
-          "name": "_reset_ambient"
-        }
-      },
-      "id": "RLZ-1RH2BY",
-      "invariant": "INV-5YPFVJ",
-      "origin": {
-        "handoffEntry": "MIK-R87@v1 3",
-        "leaf": "260928-MIK-L87"
-      },
-      "rationale": "The ambient reset stops the singleton and joins its heartbeat so a following module cannot inherit a live lifecycle.",
-      "role": "enforcement"
     }
   ],
   "references": {
@@ -44,7 +27,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3007b1080588e8baa67a2353791d8715f232f416",
+            "blob": "f4aaacfcd15bb64cc5150682f4748512e07174bf",
             "content": "sha256:ffcae9eeee6545e17885b99259aff32e190c7f7246443f57580d5dc308160253",
             "locator": {
               "kind": "symbol",
@@ -76,7 +59,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3007b1080588e8baa67a2353791d8715f232f416",
+            "blob": "f4aaacfcd15bb64cc5150682f4748512e07174bf",
             "content": "sha256:cc9d5c3656d5622c4c4b6fb88b49adeee1266da659b6887d71283ffb81724162",
             "locator": {
               "kind": "symbol",
@@ -130,7 +113,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3007b1080588e8baa67a2353791d8715f232f416",
+            "blob": "f4aaacfcd15bb64cc5150682f4748512e07174bf",
             "content": "sha256:80068ea5fda12ee371d15fa0b0015285dc018e4d29308d159ed6f4214ffcab8d",
             "locator": {
               "kind": "symbol",
@@ -146,27 +129,11 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3007b1080588e8baa67a2353791d8715f232f416",
+            "blob": "f4aaacfcd15bb64cc5150682f4748512e07174bf",
             "content": "sha256:fecf325cce31d06171e585a777aa0d59ef6f55ee13e0b4b5e09a9b3c28567d37",
             "locator": {
               "kind": "symbol",
               "name": "_finish_quality_runs"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "6": {
-      "note": "Ambient reset joins the actual heartbeat before returning.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "3007b1080588e8baa67a2353791d8715f232f416",
-            "content": "sha256:e1673552694e815f127e6792050708dd5f5c2e12230709353ebda3bc0725fa54",
-            "locator": {
-              "kind": "symbol",
-              "name": "_reset_ambient"
             }
           },
           "kind": "code"
@@ -178,7 +145,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3007b1080588e8baa67a2353791d8715f232f416",
+            "blob": "f4aaacfcd15bb64cc5150682f4748512e07174bf",
             "content": "sha256:b526214cf1d90732f739832b696528694ec2db83e24ee3732b5b86a29b7e6201",
             "locator": {
               "kind": "symbol",

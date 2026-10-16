@@ -19,7 +19,7 @@
         },
         {
           "anchor": {
-            "blob": "771d1ca849e63161968eb0f54325d6f5a4fcd0e2",
+            "blob": "68121e9668db87a9d23260c691ac8c1ba4513e6d",
             "content": "sha256:cced200f36c56e8c93fbe17acab52d082f0cf155115644acc4f21d0020efd118",
             "locator": {
               "kind": "symbol",
@@ -36,7 +36,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "771d1ca849e63161968eb0f54325d6f5a4fcd0e2",
+            "blob": "68121e9668db87a9d23260c691ac8c1ba4513e6d",
             "content": "sha256:2f18f6e7b4d67baf5a8247a5f1b7ef458b6058c1f0ed8858151d5ad447397bbb",
             "locator": {
               "kind": "symbol",
@@ -93,23 +93,6 @@
         }
       ]
     },
-    "5": {
-      "note": "`agentNotifierHeartbeat` no-op (incl. null/null) vs. genuine-change write-through cases.\n\nAnchor: \"applies an idle re-snapshot with an unchanged agentNotifierHeartbeat (incl. null/null) with zero store writes\"; \"applies an idle re-snapshot with a genuinely changed agentNotifierHeartbeat\"",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "26e6936b4a667f530ee7c6844814d6f8236857d6",
-            "content": "sha256:71528650ebfebf1220c45faf7422b47eaf1881844331d9cb7a8df6e266692146",
-            "locator": {
-              "end": 190,
-              "kind": "line_range",
-              "start": 153
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
     "6": {
       "note": "The fixture narrowing and the fixture-derived lifecycle count.\n\nAnchor: \"export function asServedProjection\"",
       "targets": [
@@ -158,29 +141,17 @@
       ]
     },
     "8": {
-      "note": "`reparsed` (the `structuredClone` behind `volatileBump`) and the `agentNotifierHeartbeat` builder.",
+      "note": "Typed reparsed supplies cloning; the heartbeat builder is no longer used here.\n\nAnchor: reparsed snapshot and task-delta controls",
       "targets": [
         {
           "anchor": {
-            "blob": "65809f6f38b77f999a84c8301057ae9615842df0",
-            "content": "sha256:ded4c63a96ba260c6abdc2c92b7838df904742362d6880591309bd385839707a",
+            "blob": "2ba1bc3b3c854df3202c4331b0326069119557ec",
+            "content": "sha256:e4f1d4f78af06bd7753fae38a7ea23333baaf60ad8dfda73566e829e5f603e56",
             "locator": {
-              "kind": "symbol",
-              "name": "reparsed"
-            },
-            "path": "dashboard/src/test/fixtures/wire.ts"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "65809f6f38b77f999a84c8301057ae9615842df0",
-            "content": "sha256:a9048f655c4d676fece20706b0e7c844157d2c5dc360bdd6f592c8017d9ef05c",
-            "locator": {
-              "kind": "symbol",
-              "name": "agentNotifierHeartbeat"
-            },
-            "path": "dashboard/src/test/fixtures/wire.ts"
+              "end": 168,
+              "kind": "line_range",
+              "start": 108
+            }
           },
           "kind": "test"
         }

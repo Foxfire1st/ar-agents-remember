@@ -6,17 +6,10 @@
 
 ## Purpose
 
-Shared document-tree fixtures for the document chat tests: a sprint, its commanded master, one leaf and the matching series projection.
+Consumer-authored native TaskEntry fixtures forming one sprint → master → leaf tree for exact role admission/reference tests; not live projection provenance.
 
 ## Code Commentary
 
-The fixture builds the exact three-level shape the binding walks — a sprint whose `orchestrates` names the master, a master a sprint commands, and a leaf of that master — plus the series node that carries the leaf row. Tests use it to assert the role table for each selection kind without depending on live projection data. The series node carries the exact `SeriesNode` field set, including the abandoned-row count the projection reads.
+chatSprint, chatMaster and chatLeaf carry exact references, entry keys and served-shaped parent/children/counts. The binding follows that explicit tree, without an orchestrates/series projection join. The fixture values demonstrate expected consumer shape, not producer execution.
 
 ## Evidence
-
-- The sprint fixture commands the master used by the other fixtures. [1]
-- The master and leaf fixtures model a commanded master and its leaf. [2]
-
-- The series fixture carries the abandoned-row count the projection reads. [4]
-
-- The series projection carries the leaf row the binding needs. [3]

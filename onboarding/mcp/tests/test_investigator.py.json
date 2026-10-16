@@ -6,8 +6,9 @@
         "blob": "69ed8af35d0b9bfbe4ce42d96c344fe83a60a494",
         "content": "sha256:7124f0401a2b6669e727e4fcb27198685d46de896cf65e60526b5d9d6f9d24c9",
         "locator": {
-          "kind": "symbol",
-          "name": "InvestigatorTests.test_public_start_admits_the_six_scopes_and_refuses_foreign_and_leaf_scopes"
+          "end": 147,
+          "kind": "line_range",
+          "start": 124
         }
       },
       "facet": "Admits exactly the six allowed caller/selection combinations and refuses foreign or leaf selections before native launch.",

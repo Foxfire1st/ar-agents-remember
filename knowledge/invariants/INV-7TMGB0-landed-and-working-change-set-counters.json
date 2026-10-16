@@ -1,0 +1,40 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test",
+      "prevents_costly_mistake",
+      "spans_locations"
+    ],
+    "justification": "Future changes to task-page reads, conditional transport, native generation capture or retained-content ownership must prevent stale or unbounded cache reuse and a counter failure blocking the document. Named current source assertions guard the specified facets; historical timing/count samples remain task-local, not enduring obligations or fresh Curator grades."
+  },
+  "applicability": "Retained landed/working change-set lists, counters and file contents within the app-owned native read context.",
+  "conditions": [
+    "Keys carry the exact read address/endpoints and an observed native input generation; successful pending values enter retention only after consumed inputs still agree.",
+    "Working generations include native head/index/configuration/ignore/attribute and worktree identities; recorded ranges retain native object readability/content proof rather than expiring just because unrelated objects or source commits arrive.",
+    "Missing, unreadable, racing or evicted observations do not authorize reuse; a later restored missing object must revoke the earlier absence proof."
+  ],
+  "exclusions": [
+    "No independent Git diff/parser or second task-stage authority.",
+    "No guarantee that cold/mutated/refused reads perform zero Git; the zero-Git property concerns unchanged admitted generations."
+  ],
+  "id": "INV-7TMGB0",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "sync-L81-primary-regressions.txt; backend-candidate11.json master repeat0Git/working repeat0Git; conditional-candidate11-settled.json six304/zero-byte/zero-Git routes; cold intent25then23Git retained",
+        "L168-M1-21 N09 mcp/src/agents_remember/serving/changeset_comparison.py:12-13; static A013 source; no execution.",
+        "L168-M1-21 N18 mcp/src/agents_remember/worktrees/modules/capture_baseline.py:39-58; static A013 source; no execution.",
+        "L168-M1-21 N19 mcp/src/agents_remember/worktrees/modules/capture_baseline.py:71-84; static A013 source; no execution."
+      ],
+      "path": "A011-bounded-generation-content-33.json"
+    },
+    "handoffEntry": "L168-W-R168-02",
+    "leaf": "260928-MIK-L168",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Landed and working change-set counters, files and file diffs are cached only for the exact native content generation that produced them.",
+  "status": "proposed",
+  "supersedes": []
+}

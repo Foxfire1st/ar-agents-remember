@@ -17,7 +17,7 @@
   "exclusions": [
     "Organizational direct-super and ordinary standalone routes, which keep their existing distinct authority shapes.",
     "An unreadable, foreign, malformed, colliding or conflicting persisted parent: it never becomes absence or a synthetic valid plan.",
-    "The enclosing registered call's daily log line and any required detail, plus its completed-call workspace-river event or existing ambient lifecycle event: startup-state no-materialization is not a universal zero-I/O claim."
+    "The enclosing registered call's daily log line and any required detail, plus its completed-call workspace-river event: startup-state no-materialization is not a universal zero-I/O claim."
   ],
   "id": "INV-EX6T0F",
   "origin": {
@@ -31,7 +31,7 @@
     "leaf": "260928-MIK-L47",
     "task": "260928-MIK"
   },
-  "revision": 2,
+  "revision": 3,
   "schema": "ar-invariant/v1",
   "statement": "The first-leaf start preview carries the planned parent returned by that owner within the same request to the existing parent-series admission boundary.",
   "status": "proposed",

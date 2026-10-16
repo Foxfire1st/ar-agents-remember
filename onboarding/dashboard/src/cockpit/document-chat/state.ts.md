@@ -13,7 +13,7 @@ The document chat's state hook: it binds the selected document to the launcher's
 Warmup observation is active-pane bound and uses the current hosted target. Per-agent state/reason wins over older pending/inflight fallback lists; unknown progress does not become a loaded agent. Canonical chat discovery and host-owned frame steering retain their prior authority.
 
 
-The serialized task reference scopes the exact launched request and guards against stale-document completion. `documentBindings` derives the canonical tree once and `bindingInTree` selects its role set. Successful dispatch retains the exact request until scope changes or its own fresh answer is empty; Investigator launch still refreshes rather than replacing a Manager/Orchestrator primary chat.
+The serialized task reference scopes the exact launched request and guards against stale-document completion. `documentBindings` memoizes bindings from the single native tasks array and follows its served children and `bindingInTree` selects its role set. Successful dispatch retains the exact request until scope changes or its own fresh answer is empty; Investigator launch still refreshes rather than replacing a Manager/Orchestrator primary chat.
 
 `useKnownChats` supplies preclick tree knowledge and `useSelectionAgents` prefers a fresh answer, otherwise the bounded prior answer. Exact just-started requests are not substituted by the tree cache. The presentation hides the retained frame only after the selection is known to have no effective chat (or admits no role), never merely because the server is still answering. Unknown selection keeps the native screen visible and held under the dashboard's waiting line; an unreadable answer is not promoted to no-chat.
 ## Evidence

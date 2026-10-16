@@ -1,0 +1,36 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test",
+      "prevents_costly_mistake"
+    ],
+    "justification": "Future changes to host intake, task projection or task-status consumers must preserve this bounded authority: duplicate task truth, unsupported paused observations, reconstructed membership or conflicting status/age presentation produce incorrect task operations. The named current source assertions guard the specified facets; this is no fresh Curator execution grade."
+  },
+  "applicability": "Native task stage, started-task host activity and its contributing event timestamp computed by task_state.",
+  "conditions": [
+    "Document planning/inProgress/abandoned/Completed normalize to planned/started/aborted/completed; non-started stage takes precedence and has no activity/event time.",
+    "An unqualified host observation gives started/unknown, not paused; in-turn or permission gives works, otherwise a complete host observation gives paused.",
+    "The latest timestamp among the working contributors, or all observed contributors when paused, supplies eventAt; display age derives from that timestamp, not a serialized elapsed-age field."
+  ],
+  "exclusions": [
+    "Task body hydration, dependency readiness, worktree/process phase and session records are not additional task-stage authorities.",
+    "No guaranteed timestamp when the host supplied none, and no ageSeconds field in the task-entry wire model."
+  ],
+  "id": "INV-VDWN33",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "sync-L81-primary-regressions.txt; witness-host13-ui.json:1413ms works/278ms paused; archived"
+      ],
+      "path": "A011-host-driven-native-task-core-31.json"
+    },
+    "handoffEntry": "L168-W-R167-03-07",
+    "leaf": "260928-MIK-L168",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Each task's document stage and bound-host activity determine its only stage/activity/age facts, with a permission prompt counting as work.",
+  "status": "proposed",
+  "supersedes": []
+}

@@ -5,7 +5,7 @@
     ],
     "justification": "Valid IDs alone do not produce truthful waves, correct waves alone do not synchronize page/head/Markdown views, and drawing alone does not preserve gone/cyclic/absent-data meaning; only these members together make one dependency order survive writing and every named reader."
   },
-  "guarantee": "Explicit same-master prerequisite data, current master-row states and their derived waves jointly produce a consistent ordinary-master Order in the dashboard and Markdown and both directions in task heads. Invalid new references are refused; gone historical references remain visible until an explicit field write; legacy cycles stay identified in one marked wave, including members in work; no declared dependency data produces no Order. This informs rather than gates task starts and does not replace the sprint’s authored execution graph.",
+  "guarantee": "Explicit same-master prerequisite data determines ordinary-master Order topology, waves, readiness and cycles, with consistent dependency identity in dashboard, Markdown and both task-head directions. Dashboard task words, tones and terminal filtering come from each qualified task entry: only works entries appear under now, and every other unfinished unit appears once in its dependency wave; graph readiness is not a second task state. Invalid new references are refused; retained gone references and legacy cycles remain explicit, and no declared dependency data produces no Order. A dependency with no file-bearing document supplies id/title but no fabricated task-state word or jump. Order informs rather than gates starts and does not replace the sprint authored graph.",
   "id": "FAM-8P577R",
   "members": [
     "INV-8W6XYQ",
@@ -25,7 +25,7 @@
     "leaf": "260928-MIK-L162",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "routes": [
     "mcp/src/agents_remember/tasks",
     "mcp/src/agents_remember/application/task_docs",

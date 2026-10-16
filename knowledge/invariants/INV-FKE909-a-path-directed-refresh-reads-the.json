@@ -11,7 +11,7 @@
     "Incomplete or uncertain paths fall back to full reconciliation."
   ],
   "exclusions": [
-    "Full reconciliation still checks all domains; quiet workspace-only wakes do not imply a full closeout census."
+    "Periodic full reconciliation checks all non-host healing domains; HOST_ACTIVITY retains admitted input unless its separate startup/publication invalidation path requires a read. Quiet workspace-only wakes do not imply a full closeout census."
   ],
   "id": "INV-FKE909",
   "origin": {
@@ -25,7 +25,7 @@
     "leaf": "260928-MIK-L81",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-invariant/v1",
   "statement": "A path-directed refresh reads the changed document and its actual dependency consumers, while explicit full reconciliation preserves complete projection semantics.",
   "status": "proposed",

@@ -38,9 +38,7 @@ keyed to the exact task document, matching the reader-scoped lifecycle.
 
 ### Invariants And Boundaries
 
-- The provider is mounted per task-document reader (taskReader's
-  `TaskRequirementBoundary` wraps `MasterOverview` and `TaskReader`),
-  so the listing is scoped to the document being read.
+- `taskReader.tsx` mounts `TaskRequirementLinksProvider` directly in `TaskPage`, around both the fixed form skeleton and its own-view branch. It receives the selected entry’s repository and path-derived master directory; `document` stays undefined during body loading and otherwise is the exact `entry.reference.path`. The listing is scoped to that document, with no `TaskRequirementBoundary` or separate `MasterOverview` wrapper.
 - No document means no fetch and no `open` (an absent `document` is only
   valid on the notes variant of the artifact target).
 - Opening is delegated to `onOpenArtifact`; the provider itself never navigates
@@ -65,7 +63,7 @@ No relevant domain documentation was found.
 - The markdown consumer that renders registered addresses as buttons. [3]
 
 
-- The reader that mounts the provider around task prose. [4]
+- `TaskPage` mounts the provider around the selected form and own view, deferring its document listing until body loading settles. [4]
 
 ### Cross-Repo References
 

@@ -7,9 +7,9 @@
   },
   "applicability": "The non-flat Operations task hierarchy under its admitted parents.",
   "conditions": [
-    "Need ordering preserves each admitted row once.",
-    "Completed/abandoned folds open to preserve selected-document reach.",
-    "Held selected ancestors cannot be collapsed by the disclosure."
+    "Need ordering uses each entry own band, preserving supplied sibling order for ties.",
+    "Completed/aborted folds preserve selected-document reach.",
+    "Held selected ancestors cannot be collapsed."
   ],
   "exclusions": [
     "Widening admission or changing document hierarchy ownership.",
@@ -27,9 +27,9 @@
     "leaf": "260928-MIK-L144",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-invariant/v1",
-  "statement": "Under a parent the rows stand by need (what asks, in work, waiting) and the completed ones stand behind one line that opens in place and is never the chosen row; the tree is always open down to the chosen document, so a parent that holds the chosen document does not close and a line that hides it opens by itself; a row is listed once, also when two parents name each other.",
+  "statement": "Under a parent, Operations rows use each served entry own works/started/planned/terminal need band and stable supplied tree order, without a subtree urgency or chronology reconstruction. Terminal rows stand behind an in-place fold that is never the chosen task; selected ancestors remain open, hidden selected descendants reveal their fold, and cycle/seen guards list an entry once.",
   "status": "accepted",
   "supersedes": []
 }

@@ -10,7 +10,7 @@ Provide the shared page-block, row, in-place text, status and progress presentat
 
 ## Code Commentary
 
-`DocView` enumerates own-view kinds, leaving document selection and content to the reader. `Block` draws a heading and optional count; callers omit an empty block. Status labels translate known document states and preserve the authored word for an unknown state.
+`DocView` enumerates own views; Block draws a heading/count only when composed. Shared TaskStatusKey maps served stage/activity to label and tone for task surfaces. TaskStatusWord uses activity only for a started entry, and its age display advances host-event age using the shared visible clock. Display time never decides stage or activity.
 
 `Clip` renders Markdown in a single line with an accessible more/less control when measured overflow requires it. Without usable layout it falls back to a text-length threshold; an opened truncated summary is explicitly labelled a preview. It does not fetch content or claim the preview is a full string.
 

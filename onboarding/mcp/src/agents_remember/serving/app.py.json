@@ -3,11 +3,12 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "58281d9cb62afbcee6f8b6ad2efb331bb29b98e4",
-        "content": "sha256:b42df87008df02e6b9183098c8b0d038d57846a31a02700689179eda34a11fdd",
+        "blob": "09d3ce0fe82e391b5934a045de836ddd1097568b",
+        "content": "sha256:e28e608b953c3adabb04fcb3848a2dd879bdf965d8483c9a10ccd2a2c98cbd91",
         "locator": {
-          "kind": "symbol",
-          "name": "_build_serving_runtime"
+          "end": 133,
+          "kind": "line_range",
+          "start": 84
         }
       },
       "id": "RLZ-K8504A",
@@ -31,22 +32,6 @@
             "locator": {
               "kind": "symbol",
               "name": "create_app"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "13": {
-      "note": "The runtime: projector, terminal objects, one serving clock, and the fields copied from the collaborators.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "12d6cb3bc032e00e82aca12cc5a55851a52edb24",
-            "content": "sha256:39b5a49dcdfb1b2de61aadfe1828f7a79ea20da0732107d0233214b581fcf686",
-            "locator": {
-              "kind": "symbol",
-              "name": "_build_serving_runtime"
             }
           },
           "kind": "code"
@@ -91,7 +76,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "58281d9cb62afbcee6f8b6ad2efb331bb29b98e4",
+            "blob": "09d3ce0fe82e391b5934a045de836ddd1097568b",
             "content": "sha256:fd94d584cf704f759112a787d339f29819555b15105c7339d151630c57235f32",
             "locator": {
               "kind": "symbol",
@@ -158,12 +143,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "58281d9cb62afbcee6f8b6ad2efb331bb29b98e4",
+            "blob": "09d3ce0fe82e391b5934a045de836ddd1097568b",
             "content": "sha256:62e1a313541161d26a2040048127f55ecdf8707d01fb7edd6255fb2a2e0f9a43",
             "locator": {
-              "end": 181,
+              "end": 182,
               "kind": "line_range",
-              "start": 180
+              "start": 181
             }
           },
           "kind": "code"
@@ -203,56 +188,6 @@
         }
       ]
     },
-    "23": {
-      "note": "One serving clock, and the observer-health publisher built on it and on the observer root, so the record's completion stamp and every age computed from it share one source.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "12d6cb3bc032e00e82aca12cc5a55851a52edb24",
-            "content": "sha256:39b5a49dcdfb1b2de61aadfe1828f7a79ea20da0732107d0233214b581fcf686",
-            "locator": {
-              "kind": "symbol",
-              "name": "_build_serving_runtime"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "24": {
-      "note": "The facade exports structural task-assignment names.  Anchor: `TerminalAttachTaskRequest`",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "12d6cb3bc032e00e82aca12cc5a55851a52edb24",
-            "content": "sha256:fa197ea3b563c49beffeb8d8b9b42491f654774c4c8d7e5f73f14e691a1abb10",
-            "locator": {
-              "end": 362,
-              "kind": "line_range",
-              "start": 358
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "25": {
-      "note": "The one line that places the capsule-compiler port on the serving runtime.  Anchor: `capsule_launch`",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "12d6cb3bc032e00e82aca12cc5a55851a52edb24",
-            "content": "sha256:00bdfbd87947673a205b8a5fd534e52a4c8162086f4a50603ad1f432c4945edb",
-            "locator": {
-              "end": 259,
-              "kind": "line_range",
-              "start": 253
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
     "26": {
       "note": "**The reviewer route family registered with all three collaborator ports, the third one being this leaf's entry-content port.**  Anchor: `register_review_routes`",
       "targets": [
@@ -265,40 +200,6 @@
               "kind": "line_range",
               "start": 173
             }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "27": {
-      "note": "The composition root that binds the real compiler into the collaborator record every `create_app` call uses.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "e8cc72095ab2776b399324509f546821f1e0b683",
-            "content": "sha256:f52fafd5838afa3ab615762f3c9e2e4af18e0c0e0dfe454aa13dfdcc4f34ef49",
-            "locator": {
-              "kind": "symbol",
-              "name": "serving_collaborators"
-            },
-            "path": "mcp/src/agents_remember/cli/dashboard.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "28": {
-      "note": "The gate whose behaviour the port's presence decides.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "07dbb4559839c3bb99d5e22b19ab0aeffde8d577",
-            "content": "sha256:b078024718ecb17ceaac272f3c33c7e6951de04fc083356f008b91cc408c21b5",
-            "locator": {
-              "kind": "symbol",
-              "name": "resolve_launch_capsule"
-            },
-            "path": "mcp/src/agents_remember/serving/launch_capsule.py"
           },
           "kind": "code"
         }

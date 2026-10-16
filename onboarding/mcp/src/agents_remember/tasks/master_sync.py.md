@@ -6,16 +6,13 @@
 
 ## Purpose
 
-Plans the automatic same-series synchronization from a leaf JSON task document to
-its parent master `subTasks[]` row. It is the task-document layer's bridge between
-leaf progress edits and the master checklist, without making the renderer or store
-know task-series policy.
+Plans authored task-stage mirroring from a leaf document to its parent master row and from a master to its one commanding sprint row. Step progress is not another stage source. The planner reads exact canonical sources and returns a proposed batch; it writes neither task truth nor derived projection output.
 
 ## Code Commentary
 
 ### Logic
 
-`plan_master_sync(task_root, leaf)` only acts on `kind == "subTask"` documents.
+`plan_master_sync(task_root, leaf)` dispatches a master to `_plan_sprint_sync`, a subTask to the parent-master path, and other kinds to none. The sprint path uses the native typed/legacy commanding-sprint census, refuses unreadable or ambiguous authority and retired rows, and updates only the one correlated row from the master document status. No commanding sprint or row yields none; equal status yields unchanged.
 When a leaf has a `master` reference, `_master_json_path` calls the shared
 `master_json_path_from_ref`: task, task.md and task.json resolve to the same
 same-folder document. Missing, escaping or nested named masters raise
@@ -53,15 +50,9 @@ not render markdown; the application/store boundary owns that.
   the task root. Missing, escaping or nested named masters refuse; task/task.md/task.json resolve uniformly across all three writers.
 - Manual master-row `scope` is preserved; the sync only owns deterministic row
   fields that can be derived from the leaf.
-- With statuses present, leaf document status already `Completed`, and no
-  `completion_blockers`, the derived row is `Completed`. Any done, in-progress, or blocked status otherwise derives
-  `inProgress`; an inconsistent completed leaf also derives
-  `inProgress`, and the remaining case keeps the leaf status.
+- `derived_master_status` returns the document status directly; done/in-progress/blocked step cells do not derive a second stage. Native start/abandon/finalize and explicit corrections own that stage. The separate unresolved-parent demotion still inspects the parent's current child rows.
 - **One resolution rule for every writer of a leaf's master row (MIK-R38).** All three writers share folder_master_json_path for unnamed leaves and master_json_path_from_ref for named masters.
-- **An abandoned leaf projects `abandoned` unchanged:** `derived_master_status`
-  returns `abandoned` before the rollup, so a deliberately dropped leaf does not
-  collapse back to `inProgress` and a later master sync cannot silently reopen a
-  row that was abandoned on purpose.
+- An abandoned document mirrors abandoned directly, just as the other document stages do; there is no step-state rollup that could reopen it.
 
 ### Todos
 
@@ -83,7 +74,7 @@ No relevant external documentation found; behavior is defined by repo task-docum
 
 - The finalizer and reopen resolve an unnamed leaf through the same helper. [3]
 - Deterministic leaf-to-row mapping with manual scope preservation. [4]
-- Strict master-row status derivation and unresolved-master demotion. [5]
+- Document status is mirrored directly; unresolved-parent demotion remains a separate progress check. [5]
 - Existing-row path validation. [6]
 - Parent document loading uses the exact accepted JSON snapshot. [7]
 
@@ -103,3 +94,8 @@ The current source seams include `MasterSyncError`, `MasterSyncPlan`, `plan_mast
 - The current module exposes `MasterSyncError`, `MasterSyncPlan`, `plan_master_sync` at this ownership boundary. [8]
 
 - The shared folder-master helper corrects the historical omitted parent row and grants no standalone-leaf publication authority. [9]
+
+## Current source evidence
+
+
+- Master documents mirror status to one commanded sprint through the typed/legacy canonical census. [10]

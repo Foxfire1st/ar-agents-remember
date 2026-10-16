@@ -7,12 +7,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "539e6e0dfac6147013ce80409fdc72508cca76fd",
+            "blob": "ec46a3a25c36c5a79747ac7d9485027c7a7e7973",
             "content": "sha256:ef26f0328200084e026f5713fdda36413dfcfcca991070029e6f373e3f3a1a71",
             "locator": {
-              "end": 115,
+              "end": 111,
               "kind": "line_range",
-              "start": 115
+              "start": 111
             },
             "path": "dashboard/src/panels/EventRiver.tsx"
           },
@@ -20,51 +20,17 @@
         }
       ]
     },
-    "2": {
-      "note": "The summary layer whose known-kind behavior, lifecycle-only task-document label fallback, and context-ready gate the render tests exercise.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "02b856c5abc15a186564c83888ec1016bd161179",
-            "content": "sha256:c43940496069d26b63f6d95ff62712356ca52b330d42480d9ff58d598a2630b1",
-            "locator": {
-              "kind": "symbol",
-              "name": "summarizeReadPacket"
-            },
-            "path": "dashboard/src/panels/eventSummary.ts"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "3": {
-      "note": "The render regression pins that a lifecycle-bound row stays hidden until task-document context is available.\n\nAnchor: \"waits for lifecycle summary context before rendering lifecycle-bound rows\"",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "a281b517751d80e270b95efa9775af8700dde2df",
-            "content": "sha256:1ffa0255f4164d5a50cf45b97f7fcf4b64b881614a89165d8a325dadc708ffce",
-            "locator": {
-              "end": 368,
-              "kind": "line_range",
-              "start": 343
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
     "4": {
-      "note": "The hydration, virtualization, and jsdom-layout-stub regressions pin no premature empty state and that the full window is retained + virtualized (header count `Event river · 66`, newest row mounts).\n\nAnchor: \"retains and virtualizes the full window beyond the old newest-60 cap\"",
+      "note": "The hydration, virtualization, and jsdom-layout-stub regressions pin no premature empty state and that the full window is retained + virtualized (header count `Event river · 66`, newest row mounts).\n\nAnchor: actual current supporting source",
       "targets": [
         {
           "anchor": {
-            "blob": "a281b517751d80e270b95efa9775af8700dde2df",
-            "content": "sha256:8ba2a6b60f7fc23bc292cd77946130bed62dfccec0251d3aa6ab59e12ca593ae",
+            "blob": "156c6ba6a1374ce1679b8a088ef5d98d8dafc9a3",
+            "content": "sha256:b4a4ffe83306a73e4b3bb6275c50b97a6c4e18087aa3023686a80db0da7fd7ab",
             "locator": {
-              "end": 222,
+              "end": 126,
               "kind": "line_range",
-              "start": 200
+              "start": 53
             }
           },
           "kind": "test"
@@ -132,19 +98,19 @@
       ]
     },
     "7": {
-      "note": "The `read.packet` emitter that carries `data.repoId` + facts-only `files`.",
+      "note": "read.packet rows are synthetic compatibility fixtures in these declared rendering cases, not evidence that the removed ambient emitter still exists. Source inspection, not execution.\n\nAnchor: Source-defined basename and multi-file fixture cases",
       "targets": [
         {
           "anchor": {
-            "blob": "289124eb65069d96a2a16ec167d0190a9bbdc367",
-            "content": "sha256:fa7783dbb8fcf07b0759fd347f89bcf01d62f0a98a0a12650e0cdee7c87ddb3c",
+            "blob": "156c6ba6a1374ce1679b8a088ef5d98d8dafc9a3",
+            "content": "sha256:fad45c7260c08bdd74d0f41e6d4da6e363bd876435566ba720941cd8f2907ff1",
             "locator": {
-              "kind": "symbol",
-              "name": "emit_read_packet"
-            },
-            "path": "mcp/src/agents_remember/observer/ambient.py"
+              "end": 102,
+              "kind": "line_range",
+              "start": 63
+            }
           },
-          "kind": "code"
+          "kind": "test"
         }
       ]
     },
@@ -160,23 +126,6 @@
               "name": "ObserverEvent"
             },
             "path": "dashboard/src/types/event.ts"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "9": {
-      "note": "`qualifiedLeafKey`/`leafTitleForKey` — the task identity helpers used by the lifecycle-attached and lifecycle-only row tests.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "40a0e24637b2a8f8a50c03cf09db2ea3976e83cc",
-            "content": "sha256:d89aefbc0307a52e699efa13f8b71184a74a065efb162c4a603c138f896689ed",
-            "locator": {
-              "kind": "symbol",
-              "name": "leafTitleForKey"
-            },
-            "path": "dashboard/src/data/taskIdentity.ts"
           },
           "kind": "code"
         }

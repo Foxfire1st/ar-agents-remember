@@ -6,36 +6,19 @@
 
 ## Purpose
 
-Hand-authored bench gallery: the grammar-state × attention-taxonomy `WorkspaceProjection`s the
-`--sim` replay can't produce (sim emits one lifecycle). The bench hydrates each into the store and
-component tests import them directly. Slice 5e folds the enclosure-centered Engine Room process map
-in by spreading `ENGINE_ROOM_SCENARIOS` into `GALLERY` and defaulting `engineProcesses` in
-`EMPTY_ANALYTICS`. The shared empty analytics fixture also defaults `series: []`, matching the
-folder-keyed master surface added to the served projection.
+Hand-authored WorkspaceProjection gallery. The bench hydrates scenarios into the store; component suites consume them directly. Engine Room scenes reuse ENGINE_ROOM_SCENARIOS. Invented inputs are neither live producer output nor browser acceptance.
 
 Since 260731-EFA-L4 the split of responsibility is explicit in the file's own header: **the scenarios
 are this file's business; the nodes are not.** Every node builder delegates to
 `src/test/fixtures/wire.ts`, and `EMPTY_ANALYTICS` is imported from there rather than declared here.
-What the gallery keeps is its own *defaults* — a running lifecycle reads better in a gallery than the
-snapshot's blocked one — passed explicitly to the shared builders. What it no longer keeps is a second
+What the gallery keeps is its own *defaults* — native entries provide the gallery’s task examples — passed explicitly to the shared builders. What it no longer keeps is a second
 copy of the required-field list, which is the part that drifts.
 
 ## Code Commentary
 
 ### Logic
 
-**The wire delegation (260731-EFA-L4).** `project()` is now a thin call to `wire.ts`'s `projection()`
-carrying only the gallery's two defaults (`version: 2`, the fixed `generatedAt`) plus the caller's
-`over`. The shared builder supplies the required top-level fields (`enclosures`, `providers`,
-`activeWorktreeGroups: []`), merges caller `analytics` over `EMPTY_ANALYTICS`, and — the load-bearing
-part — **derives `metrics` via `metricsFor(lifecycles)`**, one bucket per active state read off the
-state vocabulary. What that replaced was three hand-written `filter` counts here
-(`runningCount`/`blockedCount`/`pausedCount`), a copy of the reducer's bucket list that missed
-`awaiting-developer` exactly as the server's own copy did — so the gallery could not show the state
-either. `lifecycle()`, `enclosure()`, and `evt()` delegate the same way to `servedLifecycle`,
-`servedEnclosure`, and `servedObserverEvent` while keeping their gallery defaults ahead of `...over`;
-the provider factories `ok`/`down`/`indexing` delegate to `servedProvider`, with the shared
-`memory`/`code` role rule lifted out into a `providerRole(id)` helper instead of repeated three times.
+`project` delegates to the shared builder with gallery version/generatedAt defaults. Native task/count bases replace simulated session lifecycles and metricsFor rollups; EMPTY_ANALYTICS retains operational lists, not document/series catalogues. Provider, enclosure and event factories delegate with gallery defaults before caller overrides.
 
 A fixture that type-checks through these builders is a shape **the mirror** (`types/projection.ts`)
 can produce. `wire.ts` bases are assembled from `src/fixtures/snapshot.json`, which is **hand-maintained
@@ -47,15 +30,8 @@ mirror ⊆ server is held by hand.
 `engineRoomProjection(scenario)` — `project({ providers: scenario.workspace, analytics: { ...EMPTY_ANALYTICS,
 engineProcesses: scenario.processes, ledgers: [OFFICIAL_LEDGER] } })` — the single mapping now shared by
 **both** the `GALLERY` Engine Room entries (which call it instead of the old inline `project(...)`) and the
-slice-5i scenario-player frames (`dev/scenarios.ts`). Helpers `lifecycle()`, `enclosure()`, and `evt()` fill
-sensible defaults over a required key; `providerRole(id)` stamps `role` as
-`memory` when the id contains `memory`/`grepai`, else `code`. `EMPTY_ANALYTICS` — imported from
-`test/fixtures/wire.ts` since 260731-EFA-L4, previously declared here — includes both
-`taskDocuments: []` and `series: []`, so gallery projections satisfy the full dashboard analytics shape
-even when a scene has no task reader data. `GALLERY` (typed `GalleryEntry[]`)
-lists the `calm`/`blocked`/`alarm`/`full`/`gate-review`/`empty` scenes (the `gate-review` scene, slice
-6c, carries an open `closeout-approval` `gate` on a lifecycle + a `gate-open` attention item so the Gate
-Review drawer renders), then spreads
+slice-5i scenario-player frames (`dev/scenarios.ts`). Typed node factories retain explicit gallery defaults. `enclosure()` supplies enclosure identity and worktree/landing defaults, and `evt()` supplies an event timestamp before caller overrides. `providerRole(id)` stamps `role` as `memory` when the id contains `memory`/`grepai`, else `code`. `EMPTY_ANALYTICS`, imported from `test/fixtures/wire.ts`, supplies empty operational collections: drift, stale-sidecar, setup, route-coverage, tool-report, ledger, attention and engine-process lists. Native tasks/counts are projection-root fields; no `lifecycle()` helper or analytics task-document/series catalogue remains. `GALLERY` (typed `GalleryEntry[]`)
+retains its invented scenario choices and then spreads
 `...ENGINE_ROOM_SCENARIOS.filter((s) => !s.name.startsWith("engine-boot-")).map(...)` — each mapped to a
 projection whose `providers` = the scenario's `workspace` and whose `analytics.engineProcesses` = the
 scenario's `processes`. The `engine-boot-*` build-up frames (the 6 boot-step frames) are **filtered out of
@@ -69,11 +45,7 @@ resolves its repo's ledger in `EngineRoom`; the `full` cockpit scene's hand-auth
 
 ### Conventions
 
-Each builder takes a `Partial<Node>` widened with the keys the gallery insists on naming
-(`Pick<…, "id">` for lifecycles, `"enclosure" | "repoName" | "taskName"` for enclosures), puts its
-gallery defaults first and `...over` last, and hands the result to the matching `served*` builder from
-`test/fixtures/wire.ts`. Scene data is authored inline in `GALLERY`; Engine Room scenes are never
-re-authored here — they are mapped from `ENGINE_ROOM_SCENARIOS` through `engineRoomProjection`.
+
 
 ### Todos
 
@@ -81,20 +53,15 @@ No open file-local todos.
 
 ### Invariants And Boundaries
 
-`EMPTY_ANALYTICS` carries `series: []` and `engineProcesses: []`, so every projection has those keys.
-`dashboard/**` is out of memory scope and the attention queues here are kept in sync with the reducer's
-`build_attention_queue` by eye (sidecar-free); this onboarding file is the slice-5e exception. The
-Engine Room scenes reuse the `engine-room/fixtures` source of truth rather than re-author processes.
+
 
 Since 260731-EFA-L4:
 
 - **No node builder may hold its own required-field list.** Every builder delegates to
   `test/fixtures/wire.ts`; a required field the mirror adds must fail to compile here rather than be
   filled in a second place.
-- **No bucket count may be hand-written here.** `metrics` comes from `metricsFor`, which reads the
-  state vocabulary. A hand-kept bucket list is what hid `awaiting-developer` from the gallery.
-- Gallery *defaults* are legitimate and stay: they are presentation choices (a running lifecycle, a
-  fixed `generatedAt`), passed explicitly as overrides, not a parallel definition of the shape.
+- Shared task/count bases and explicit overrides are fixture construction, not evidence of live counting.
+- Gallery *defaults* are legitimate and stay: they are presentation choices (native task examples and fixed `generatedAt`), passed explicitly as overrides, not a parallel definition of the shape.
 - `snapshot.json` behind those builders is hand-maintained and has no generator; a green build here
   claims the **mirror** could produce the shape, not that the server sent it.
 
@@ -113,14 +80,9 @@ No configured Domain Documentation source exists for this file.
 The gallery is now a consumer of the shared wire builders rather than a second definition of the wire
 shape, so both sides of that delegation are cited.
 
-- The header stating the split (scenarios here, nodes in `wire.ts`) and the import block pulling `EMPTY_ANALYTICS` plus the five `served*` builders. [1]
 - `project()` calls `servedProjection`. [2]
-- `lifecycle()`, provider states, `enclosure()`, and `evt()` retain gallery defaults ahead of `...over`. [3]
 - The gallery maps Engine Room scenarios through `engineRoomProjection`. [4]
-- `EMPTY_ANALYTICS` now lives in the shared wire fixtures and still carries `series: []` and `engineProcesses: []`. [5]
-- `projection()` assigns `metrics` from `metricsFor(lifecycles)`. [6]
 - The gallery consumes each `ENGINE_ROOM_SCENARIOS` entry by projecting its `processes` and `workspace` data. [7]
-- Analytics requires series and engineProcesses arrays. [8]
 - WorkspaceProjection owns analytics as a required field. [9]
 
 ### Cross-Repo References
@@ -132,4 +94,4 @@ No meaningful cross-repo references found.
 
 ## Series-Contract Notes
 
-The dev projection fixture now includes `enclosureId`, `leafId`, and `taskRoot` on each `EnclosureNode`, matching the server projection after leaf enclosure contracts moved under `enclosures/<leaf-id>/series-contract.md`. Since 260703-L11 the `enclosure(...)` factory also defaults the required existence-truth flags `codeWorktreeExists`/`memoryWorktreeExists` to `true`, so the seeded gallery enclosures render as live worktrees under the tasks surface's existence-only visibility rule.
+The dev projection fixture now includes `enclosureId`, `leafId`, and `taskRoot` on each `EnclosureNode`, matching the server projection after leaf enclosure contracts moved under `enclosures/<leaf-id>/series-contract.md`. Since 260703-L11 the `enclosure(...)` factory also defaults the required existence-truth flags `codeWorktreeExists`/`memoryWorktreeExists` to `true`, so the seeded gallery enclosures render as live worktrees on physical-worktree surfaces such as Hangar; Operations task admission is independent of those flags.

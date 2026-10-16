@@ -23,8 +23,9 @@
         "blob": "44ae9bdf5a3c32b1ef555c6ff2548e53ee1a9cac",
         "content": "sha256:e7c544b6a2b7d51c734c050e7f3fe41e86c0c16c6b46f6e79ee65286a8ccca99",
         "locator": {
-          "kind": "symbol",
-          "name": "useReviewCatalogue"
+          "end": 141,
+          "kind": "line_range",
+          "start": 91
         }
       },
       "id": "RLZ-DGEFJX48",

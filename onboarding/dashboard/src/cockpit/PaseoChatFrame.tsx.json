@@ -25,8 +25,9 @@
         "blob": "36db0aaa90c6f74f1438c57a8ccbd5308a5645ae",
         "content": "sha256:2ad23f2eb1c29f04a4941d7688b8a638864629088b1aacf4aa37eebb091bed6c",
         "locator": {
-          "kind": "symbol",
-          "name": "PaseoChatFrame"
+          "end": 295,
+          "kind": "line_range",
+          "start": 271
         }
       },
       "id": "RLZ-6CV9KK",

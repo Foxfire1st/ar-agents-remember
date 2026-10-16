@@ -20,17 +20,30 @@
       ]
     },
     "2": {
-      "note": "Native turn, permission and archive callbacks share one tracker; turn-end reads facts fresh and asynchronous callback errors are caught.\n\nAnchor: `28-70`",
+      "note": "The entry composes independent activity publication/RPC and parent-wake registration, with explicit initialization and unload failure handling.\n\nAnchor: current owner",
       "targets": [
         {
           "anchor": {
-            "blob": "9b7786810e75cffea857615f9eb5306eea34bbfd",
-            "content": "sha256:f9aa22b18abc6b15b51c7fe832aa4144cfd41e6f4b98061f559761be15183630",
+            "blob": "5b68ba06fadc90ada7343b781d0d24f97d961648",
+            "content": "sha256:3692fdc416363268b266939f5e43f0dfc7af5055e19817ca72ba0e9280bb977a",
             "locator": {
-              "end": 70,
+              "end": 44,
               "kind": "line_range",
-              "start": 28
+              "start": 1
             }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5dcb7031b563ff6a932a970d782fb0d1bb680619",
+            "content": "sha256:effb6b463609951b20d995d719cbdff4517c7aa04335d2d5f2d526ee6a053c61",
+            "locator": {
+              "end": 60,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_events.ts"
           },
           "kind": "code"
         }

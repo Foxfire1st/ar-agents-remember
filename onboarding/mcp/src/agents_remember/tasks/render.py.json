@@ -6,8 +6,9 @@
         "blob": "aacc841ceeb09f0e9e5e4159ff1ba4d2641fd600",
         "content": "sha256:074658d0ac91e8c9480b3b28dc56fb2635ac317eaccb25610986f78d4a12bf44",
         "locator": {
-          "kind": "symbol",
-          "name": "_master_order_lines"
+          "end": 186,
+          "kind": "line_range",
+          "start": 166
         }
       },
       "id": "RLZ-239GGQ",
@@ -24,8 +25,9 @@
         "blob": "aacc841ceeb09f0e9e5e4159ff1ba4d2641fd600",
         "content": "sha256:12c3925765bc8cc86ce7f5a521634700e5ce3d2de67d3d1b849d7b7fb455c6ee",
         "locator": {
-          "kind": "symbol",
-          "name": "_render_master"
+          "end": 148,
+          "kind": "line_range",
+          "start": 109
         }
       },
       "id": "RLZ-91799E",

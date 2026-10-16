@@ -8,7 +8,12 @@
 
 The safety suite judges outside, missing and defaulted AR roots, exact sandbox values and resolving-build identity. Build-input cases preserve unmarked directories, marker replacement, repeatable incomplete reset, generated layout/settings and exact environment scrub. Port and environment checks use real child processes; failed-rmdir recovery includes a mock. The resolver-success control executes the real `build_roots.py` command and checks the JSON rather than exit zero alone: errors are empty, roots have exactly the expected keys and all values are non-null, including the five repository resolver roots. This protects the existing sandbox script; it does not claim that script was repaired here.
 
+The compact-install fixture files a named whole report and feeds only an overflow/reportPath answer to the sandbox launcher. Provisioning uses its host facts and retains the compact receipt. A second answer with inline host action untouched overrides a disagreeing named report, so the launcher does not mark that host as newly started. This uses prepared Operations/supervisor collaborators, not a live install.
+
 ## Evidence
+
+- Compact report fallback and inline-host precedence determine started bookkeeping without changing retained receipt bytes. [6]
+
 
 - The scoped current source carries the module/document behavior described above. [1]
 

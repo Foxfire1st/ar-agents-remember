@@ -3,10 +3,12 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "4d9d9623cbe73bc5056696b8091f3fe78595516e",
-        "content": "sha256:5d85738cb8562a732ff2812b86aac6acbc9f3033396c32dfa1b06dd7478921ae",
+        "blob": "c43823ed0215be2bd0ae9e12b8f7c961f5f8fcbb",
+        "content": "sha256:d0c79546b37d6352f85cea0cad655e2c549c46e61c469929e3f23535b7e22ee4",
         "locator": {
-          "kind": "file"
+          "end": 29,
+          "kind": "line_range",
+          "start": 16
         }
       },
       "id": "RLZ-BNWWSD",
@@ -20,8 +22,8 @@
     },
     {
       "anchor": {
-        "blob": "4d9d9623cbe73bc5056696b8091f3fe78595516e",
-        "content": "sha256:5d85738cb8562a732ff2812b86aac6acbc9f3033396c32dfa1b06dd7478921ae",
+        "blob": "c43823ed0215be2bd0ae9e12b8f7c961f5f8fcbb",
+        "content": "sha256:1c964d530cce44c4b24e70577d9c0bd935b60b642937afccb0b4ab6eb5fd767a",
         "locator": {
           "kind": "file"
         }
@@ -37,8 +39,8 @@
     },
     {
       "anchor": {
-        "blob": "4d9d9623cbe73bc5056696b8091f3fe78595516e",
-        "content": "sha256:5d85738cb8562a732ff2812b86aac6acbc9f3033396c32dfa1b06dd7478921ae",
+        "blob": "c43823ed0215be2bd0ae9e12b8f7c961f5f8fcbb",
+        "content": "sha256:1c964d530cce44c4b24e70577d9c0bd935b60b642937afccb0b4ab6eb5fd767a",
         "locator": {
           "kind": "file"
         }
@@ -55,14 +57,16 @@
   ],
   "references": {
     "1": {
-      "note": "The canonical source supplies the current instruction or template contract described above; the package copy is derived.",
+      "note": "Canonical structural seat and parent authority; shared corpus is not proof of capsule injection.\n\nAnchor: lines 1-164",
       "targets": [
         {
           "anchor": {
-            "blob": "4d9d9623cbe73bc5056696b8091f3fe78595516e",
-            "content": "sha256:5d85738cb8562a732ff2812b86aac6acbc9f3033396c32dfa1b06dd7478921ae",
+            "blob": "c43823ed0215be2bd0ae9e12b8f7c961f5f8fcbb",
+            "content": "sha256:1c964d530cce44c4b24e70577d9c0bd935b60b642937afccb0b4ab6eb5fd767a",
             "locator": {
-              "kind": "file"
+              "end": 164,
+              "kind": "line_range",
+              "start": 1
             }
           },
           "kind": "code"

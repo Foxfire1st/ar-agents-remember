@@ -3,11 +3,12 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "dfc56ac646754ed443e017689871871e79b81d90",
+        "blob": "2a30f40dedc072fef25b7f1cec5e8a8d7ed1d9db",
         "content": "sha256:1f55299fdc0743f470ed6fbc002652e45e36d9b364a87b7d20427e97f2d0b558",
         "locator": {
-          "kind": "symbol",
-          "name": "_parent_lineage_start_block"
+          "end": 701,
+          "kind": "line_range",
+          "start": 672
         }
       },
       "id": "RLZ-4BP8FB",
@@ -21,7 +22,26 @@
     },
     {
       "anchor": {
-        "blob": "dfc56ac646754ed443e017689871871e79b81d90",
+        "blob": "2a30f40dedc072fef25b7f1cec5e8a8d7ed1d9db",
+        "content": "sha256:c8193055fb8f5bd54d03a11c297cc2b2415785aa78bb6690df6db60fa48c9379",
+        "locator": {
+          "end": 607,
+          "kind": "line_range",
+          "start": 604
+        }
+      },
+      "id": "RLZ-4C6AGR",
+      "invariant": "INV-Z0BXKJ",
+      "origin": {
+        "handoffEntry": "L168-CUR-M1-21-A013-04",
+        "leaf": "260928-MIK-L168"
+      },
+      "rationale": "Start/retry calls publish_start_task_facts to publish the admitted native stage; dry_run remains nonpublishing and TaskLeafBindingError returns the existing refusal. This is a propagation call site, not a second stage writer or a rollback-of-worktree guarantee.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "2a30f40dedc072fef25b7f1cec5e8a8d7ed1d9db",
         "content": "sha256:bcd4e52ac6bd51f3f29f0a48d6a70b28eabae342fbf347b8873f8a3b51756299",
         "locator": {
           "kind": "symbol",
@@ -39,11 +59,12 @@
     },
     {
       "anchor": {
-        "blob": "dfc56ac646754ed443e017689871871e79b81d90",
+        "blob": "2a30f40dedc072fef25b7f1cec5e8a8d7ed1d9db",
         "content": "sha256:dc43c1e231297170abed39368b5dd7e562aa6377ea5ef4b6a2585821b87a2fe9",
         "locator": {
-          "kind": "symbol",
-          "name": "_materialize_start_enclosure"
+          "end": 910,
+          "kind": "line_range",
+          "start": 810
         }
       },
       "id": "RLZ-5F6FY8",
@@ -57,11 +78,31 @@
     },
     {
       "anchor": {
-        "blob": "dfc56ac646754ed443e017689871871e79b81d90",
+        "blob": "2a30f40dedc072fef25b7f1cec5e8a8d7ed1d9db",
+        "content": "sha256:0dbc85356fb5d99d02efe6d575b4746a65bb463cbe62c1652c022e8111f8aad1",
+        "locator": {
+          "end": 253,
+          "kind": "line_range",
+          "start": 250
+        }
+      },
+      "id": "RLZ-A9B09Z",
+      "invariant": "INV-Z0BXKJ",
+      "origin": {
+        "handoffEntry": "L168-CUR-M1-21-A013-03",
+        "leaf": "260928-MIK-L168"
+      },
+      "rationale": "Attach calls publish_start_task_facts with started=False so it retains document stage; dry_run remains nonpublishing and TaskLeafBindingError returns the existing refusal. This is a propagation call site, not a second stage writer or a rollback-of-worktree guarantee.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "2a30f40dedc072fef25b7f1cec5e8a8d7ed1d9db",
         "content": "sha256:b4d904af9292974d1ec56bbae104b4aaf973cfe81c3f06951c6ab4bfd9c9d155",
         "locator": {
-          "kind": "symbol",
-          "name": "_plan_start_enclosure"
+          "end": 807,
+          "kind": "line_range",
+          "start": 758
         }
       },
       "id": "RLZ-HS8RJP",
@@ -75,7 +116,26 @@
     },
     {
       "anchor": {
-        "blob": "dfc56ac646754ed443e017689871871e79b81d90",
+        "blob": "2a30f40dedc072fef25b7f1cec5e8a8d7ed1d9db",
+        "content": "sha256:9568d4ac7bbdf73c0c5be3456de95752f329513a0177d085589ca21bafbc7ab3",
+        "locator": {
+          "end": 720,
+          "kind": "line_range",
+          "start": 717
+        }
+      },
+      "id": "RLZ-JD0KQR",
+      "invariant": "INV-Z0BXKJ",
+      "origin": {
+        "handoffEntry": "L168-CUR-M1-21-A013-05",
+        "leaf": "260928-MIK-L168"
+      },
+      "rationale": "Start/retry calls publish_start_task_facts to publish the admitted native stage; dry_run remains nonpublishing and TaskLeafBindingError returns the existing refusal. This is a propagation call site, not a second stage writer or a rollback-of-worktree guarantee.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "2a30f40dedc072fef25b7f1cec5e8a8d7ed1d9db",
         "content": "sha256:4de71b5551e1489cdcb2dd4f2d826e4345860c01e1c6351b0c61557fd3982a88",
         "locator": {
           "kind": "symbol",
@@ -93,11 +153,12 @@
     },
     {
       "anchor": {
-        "blob": "dfc56ac646754ed443e017689871871e79b81d90",
+        "blob": "2a30f40dedc072fef25b7f1cec5e8a8d7ed1d9db",
         "content": "sha256:85b06a877328df7797297eb6fe45cd70602017caeca3cab20b6eff82cd70b230",
         "locator": {
-          "kind": "symbol",
-          "name": "start_result"
+          "end": 540,
+          "kind": "line_range",
+          "start": 516
         }
       },
       "id": "RLZ-T7WGDA",
@@ -192,11 +253,11 @@
       ]
     },
     "21": {
-      "note": "A tool call records its daily line and any required detail under the existing log owner. [21]",
+      "note": "A tool call records its daily line and required detail under the retained log owner.",
       "targets": [
         {
           "anchor": {
-            "blob": "772c02e790b0e0c5dde08929c8b18b8fd0adcaf6",
+            "blob": "98f8cd5791ea2314f54ffb009e3f7c5c87558652",
             "content": "sha256:ff6599cd6ddf244ac14b2ec5cfdf351e8576cecf52d65b5ee608ed8a9aacee21",
             "locator": {
               "kind": "symbol",
@@ -209,11 +270,11 @@
       ]
     },
     "22": {
-      "note": "The completed-answer observer records the workspace event outside an ambient lifecycle. [22]",
+      "note": "Completed answers use the one workspace event writer, with no ambient-lifecycle alternative.",
       "targets": [
         {
           "anchor": {
-            "blob": "1ce75e52bb168b85b81156109a18ca23cfa7b801",
+            "blob": "fa329467be28b558f2516086c2e67a82ec134f26",
             "content": "sha256:db24aaa4c677843b12e305218671e7a210542ea8f41f557a36cfbffdba17b67f",
             "locator": {
               "kind": "symbol",
@@ -226,11 +287,11 @@
       ]
     },
     "23": {
-      "note": "The public result path carries the same owner-validated plan. [23]",
+      "note": "The public result path carries the owner-validated start plan.",
       "targets": [
         {
           "anchor": {
-            "blob": "dfc56ac646754ed443e017689871871e79b81d90",
+            "blob": "2a30f40dedc072fef25b7f1cec5e8a8d7ed1d9db",
             "content": "sha256:85b06a877328df7797297eb6fe45cd70602017caeca3cab20b6eff82cd70b230",
             "locator": {
               "kind": "symbol",
@@ -242,11 +303,11 @@
       ]
     },
     "24": {
-      "note": "Only an actual carried preview parent qualifies for planned-lineage recognition. [24]",
+      "note": "Only the actually carried preview parent qualifies for planned-lineage recognition.",
       "targets": [
         {
           "anchor": {
-            "blob": "dfc56ac646754ed443e017689871871e79b81d90",
+            "blob": "2a30f40dedc072fef25b7f1cec5e8a8d7ed1d9db",
             "content": "sha256:1f55299fdc0743f470ed6fbc002652e45e36d9b364a87b7d20427e97f2d0b558",
             "locator": {
               "kind": "symbol",
@@ -258,16 +319,49 @@
       ]
     },
     "25": {
-      "note": "Preview admission and memory preparation use that exact admitted parent. [25]",
+      "note": "Preview admission and memory preparation use the exact admitted parent.",
       "targets": [
         {
           "anchor": {
-            "blob": "dfc56ac646754ed443e017689871871e79b81d90",
+            "blob": "2a30f40dedc072fef25b7f1cec5e8a8d7ed1d9db",
             "content": "sha256:b4d904af9292974d1ec56bbae104b4aaf973cfe81c3f06951c6ab4bfd9c9d155",
             "locator": {
               "kind": "symbol",
               "name": "_plan_start_enclosure"
             }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "26": {
+      "note": "Attach delegates with started=False and retains typed binding refusal.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2a30f40dedc072fef25b7f1cec5e8a8d7ed1d9db",
+            "content": "sha256:275dd6ce5c8d15cf125955f1235039b330d35c58231da592476c7446db69af28",
+            "locator": {
+              "kind": "symbol",
+              "name": "attach_result"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "27": {
+      "note": "The shared publisher promotes start, preserves attach stage, mirrors the row and reads binding back.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a83e3b0ba83b697ae4190cd329fec12aefa5f8f7",
+            "content": "sha256:645749bc10470be4dc5c58ed620ffce1275f51c22b7d7ceedddf24aacd7a5758",
+            "locator": {
+              "kind": "symbol",
+              "name": "publish_start_task_facts"
+            },
+            "path": "mcp/src/agents_remember/worktrees/start_task_publication.py"
           },
           "kind": "code"
         }

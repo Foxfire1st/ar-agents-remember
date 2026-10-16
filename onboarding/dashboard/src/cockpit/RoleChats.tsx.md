@@ -6,7 +6,7 @@
 
 ## Purpose
 
-RoleChatsPane keeps canonical launcher intent, report takeover state and refresh generations, and composes the scope hook, run controls, options loader and persistent view. Stored requests and receipt actions belong to roleChatControls; the native-frame mount belongs to RoleChatsView.
+RoleChatsPane accepts the single served TaskEntry array and keeps canonical launcher intent, report takeover state and refresh generations, and composes the scope hook, run controls, options loader and persistent view. Stored requests and receipt actions belong to roleChatControls; the native-frame mount belongs to RoleChatsView.
 
 ## Code Commentary
 

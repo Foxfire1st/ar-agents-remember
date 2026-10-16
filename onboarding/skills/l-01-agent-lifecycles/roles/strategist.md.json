@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "edeeeb3ef43858631e19d87155bbc9aaa1bace61",
-        "content": "sha256:9f990306f95f202f7a384c70a3325bb4c6a55c908d40ed74d50e78a8a3452088",
+        "blob": "28cbe55d2100b6fb6780c7126fab86611025738a",
+        "content": "sha256:e3da6f98ec29ec9b204b950e17c80b8a9ff13ec621467ab71a6b901582061377",
         "locator": {
           "kind": "file"
         }
@@ -20,8 +20,8 @@
     },
     {
       "anchor": {
-        "blob": "edeeeb3ef43858631e19d87155bbc9aaa1bace61",
-        "content": "sha256:9f990306f95f202f7a384c70a3325bb4c6a55c908d40ed74d50e78a8a3452088",
+        "blob": "28cbe55d2100b6fb6780c7126fab86611025738a",
+        "content": "sha256:e3da6f98ec29ec9b204b950e17c80b8a9ff13ec621467ab71a6b901582061377",
         "locator": {
           "kind": "file"
         }
@@ -55,14 +55,14 @@
       ]
     },
     "2": {
-      "note": "The current strategist role owns its artifacts, not worktree/lifecycle or role-start authority; operator knobs remain settings. [2]\n\nAnchor: Prohibited mutations and settings authority",
+      "note": "Strategist mutation prohibitions and plan ownership, without an ambient-session inference.\n\nAnchor: lines 93-105",
       "targets": [
         {
           "anchor": {
-            "blob": "edeeeb3ef43858631e19d87155bbc9aaa1bace61",
-            "content": "sha256:50c1605c38ce1a109ebb2dcf26219632e4003f70e76f1f659bca1a6f3c198afe",
+            "blob": "28cbe55d2100b6fb6780c7126fab86611025738a",
+            "content": "sha256:3a8a5aa2e184efd3d9074487d8dc629a267ca67204d932b9c29ddc66053ffdb5",
             "locator": {
-              "end": 106,
+              "end": 105,
               "kind": "line_range",
               "start": 93
             }

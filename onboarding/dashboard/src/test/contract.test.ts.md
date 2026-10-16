@@ -40,72 +40,29 @@ without requiring a fictitious ledger publication sample.
 **Three seams, named in the header.**
 cit:(["the server grows a field", "the mirror declares something the server never sends", "THE ORACLE ITSELF"], dashboard/src/test/contract.test.ts:32-32; dashboard/src/test/contract.test.ts:40-40; dashboard/src/test/contract.test.ts:45-45)
 
-1. **`mirror ⊇ sampled payload`** — the sample carries a field the generated mirror does not.
-   `ServedOnlyPaths<Served, Mirror, Path>` names the assertion; a non-`never` union fails `tsc -b`.
-2. **`served ⊇ mirror`** — held by passing the fixture through `asServedProjection` plus the
-   `@ts-expect-error` pins at the bottom.
-3. **`fixture ⊇ mirror`** — **sample coverage** through `MirrorOnlyPaths` and `fixtureMustSample`;
-   the current residue has three paths: `projection.servingBuild`,
-   `projection.agentNotifierHeartbeat`, and `projection.supervisorHeartbeat`. `KnownUnsampled`
-   names them and `allowlistMustStayEarned` rejects stale allowances.
+ServedOnlyPaths, asServedProjection and MirrorOnlyPaths guard the three sample/mirror directions. fixtureMustSample and allowlistMustStayEarned retain only projection.servingBuild as KnownUnsampled; heartbeat allowances are removed.
 
-**The walls of the walk, derived rather than described.**
-`AbsorbingPaths`/`INDEX_SIGNATURE_SITES` (currently fifteen index-signature keys) and
-`ClosedUnionPaths`/`VOCABULARIES` (every literal-union path registered and sampled) are `Record`s
-over derived path unions, replacing prose lists cit:([`INDEX_SIGNATURE_SITES`, `VOCABULARIES`], dashboard/src/test/contract.test.ts:225-249; dashboard/src/test/contract.test.ts:289-430).
-`valuesAt` reads every value at a dotted path, fanning out over arrays
-cit:([`valuesAt`], dashboard/src/test/contract.test.ts:459-474).
+Derived open-map/closed-union Record registries now walk native entry stage/activity, summary and bound operations. valuesAt fans arrays; historical registry key counts are not a current quota.
 
-**The runtime suites** (`the mirror declares everything the server sends`; `the fixture
-samples everything the mirror declares`; `every closed vocabulary in the mirror is checked
-against the payload`; `projection contract fixture`; `metrics bucket every live
-lifecycle state`; `mirror does not invent fields the server cannot send`) carry
-the runtime membership, non-vacuity, bucket-uniqueness, spelling-parity, and inverted-pin checks
-cit:(["the served payload carries a bucket per live state"], dashboard/src/test/contract.test.ts:559-564).
+Nonvacuous runtime checks retain sample paths/vocabularies. Native task assertions require qualified identity and forbid duplicate identity/status/children/progress in summary. Lifecycle bucket suites/master-series pins are removed; only the edge.refusedPolarity inverted pin remains.
 
 ### Historical 260831-LOCR-L17 — the observer-health vocabulary entries
 
-`VOCABULARIES` gained the five `projection.terminalObserverHealth.*` paths (the closed unions
-`status`, `schemaVersion`, `activeFailureCategory`, `activeFailureSummary`, `activeFailureType`),
-and at that leaf’s epoch `KnownUnsampled` remained at two entries (not the current three-path
-census above): the new field was sampled by
-`fixtures/snapshot.json`, so allowlisting it instead would have failed
-`allowlistMustStayEarned` and left the mirror's new surface unmeasured. Two consequences are worth
-recording, because both were live failure modes in this leaf's review round. First, this registry is
-the reason a serve-time key cannot be added to the mirror by the producer alone: `ClosedUnionPaths`
-and `VOCABULARIES` are `Record`s over derived path unions, so an unregistered closed union is a
-compile error (`TS2344`/`TS2739`) rather than a silent gap — and a type-only allowlist patch turns
-`tsc` green while the RUNTIME walk still fails with `no served value at
-projection.terminalObserverHealth.status`. Second, the runtime check is what makes the entry
-evidence rather than paperwork: it asserts a non-zero sample count first, so an entry whose fixture
-value is missing or null reads as a failure instead of passing vacuously.
+Historical LOCR-L17 added terminalObserverHealth vocabulary paths to that epoch’s sample guard. The enduring rule is nonvacuous path reach plus earned allowances, not a historical residue quota; native entries now leave only servingBuild unsampled.
 
 ### Conventions
 
-- All three structural directions are TYPE-level: free at runtime, enforced by `npm run typecheck`
-  (`tsc -b`). The runtime vocabulary assertions cover the sample facts JSON-module widening hides.
-- Every assertion reads a vocabulary or a derived registry rather than a hand-written list; the
-  three `@ts-expect-error` directives are registered as one sanctioned site in
-  `wireFixtureGuard.test.ts` (count 3).
+Structural guards are type-level; sample vocabulary assertions are runtime. The fixture guard sanctions one retained @ts-expect-error, not the former three. Source inspection runs neither gate.
 
 ### Invariants And Boundaries
 
-- The fixture enters through `asServedProjection` and nowhere else.
-- `INDEX_SIGNATURE_SITES` and `VOCABULARIES` are `Record`s over derived path unions; never convert
-  their keys to an untyped list.
-- `KnownUnsampled` names the actual current unsampled residue (three paths here), not a permanent
-  two-entry quota. Its entries must remain earned by the derived fixture/mirror checks.
-- A vacuous check must read as a failure; both the per-path vocabulary loop and the absorbing-node
-  loop assert a non-zero sample count first.
+Keep asServedProjection, derived Record registries, earned servingBuild-only residue and nonzero sample reach. Do not restore removed heartbeat allowances.
 
 ### Todos
 
 **What schema codegen closes — and what this sample guard still cannot prove.**
 
-1. Omitted nullable fields and complete producer vocabularies are covered by schema generation.
-2. Two field-identical models (`SeriesSectionNode`/`TaskSectionNode`) remain structurally
-   interchangeable in TypeScript.
-3. The snapshot remains a manual sample; these assertions are coverage, not provenance.
+Schema/stale-output checks own nullable-field and exhaustive vocabulary parity. A manual sample proves neither producer provenance nor nominal distinction between structurally equal models.
 
 ## Evidence
 
@@ -130,19 +87,19 @@ makes the behaviour load-bearing HERE.
 - The header: three fixture-coverage seams, the double cast that disabled checking, and the boundary now closed by schema codegen. [4]
 - `ServedOnlyPaths` + `mirrorMustDeclare` — the `mirror ⊇ served` direction, naming the path. [5]
 - `MirrorOnlyPaths` + `KnownUnsampled` + `fixtureMustSample` + `allowlistMustStayEarned` — the oracle guarded, including why an empty array is worse than a missing field. [6]
-- `AbsorbingPaths` + `INDEX_SIGNATURE_SITES` — the current fifteen index-signature keys, derived and closed. [7]
+- AbsorbingPaths derives every string-index-signature boundary and INDEX_SIGNATURE_SITES is an exhaustive, closed Record of that derived path set, with reasons for opaque nodes in the current native-entry shape. The current literal registry has 13 keys; this is an observed census, not a fixed schema-count contract. The source test requires at least one sampled value and a nonempty reason at every registered site. [7]
 - `ClosedUnionPaths` + `VOCABULARIES` — every registered path bound to its value set, replacing hand-written checks. [8]
 - Sample vocabulary assertion: every registered path is reached and every carried value is declared by its vocabulary. [9]
-- Bucket suites: a bucket per live state, per-state counting, non-injectivity, and spelling parity with the server. [10]
-- The three inverted pins for `createdAt`, `linkedLifecycleId` and `refusedPolarity`. [11]
+
+- The retained inverted field pin is the single EngineProcessEdge.refusedPolarity case: an @ts-expect-error access must remain invalid while the example edge keeps state stale. The suite does not retain the former createdAt/linkedLifecycleId master/series pins; this is source-defined typecheck evidence, not a fresh typecheck or test run. [11]
 - The generated mirror's metric and analytics declarations. [12]
-- The generated mirror's gate and lifecycle projection declarations. [13]
+
 - The sanctioned narrowing the fixture enters through. [14]
-- The independent fixture supplies the lifecycle rows sampled by the contract. [15]
-- The independent fixture supplies the metrics rollup checked against generated count fields. [16]
-- The server's own bucket-name rule and its refusal of a non-injective mapping, which the spelling and uniqueness assertions mirror. [17]
-- The producer's typed lifecycle vocabularies. [18]
-- The registry entry sanctioning exactly three `@ts-expect-error` directives in this file, with its reason. [19]
+
+
+
+
+
 - The other half of the claim: this file makes the MIRROR honest; the guard makes the FIXTURES honest. [20]
 
 ### Cross-Repo References
@@ -166,7 +123,7 @@ The L4 delta keeps the generated dashboard contract aligned with the backend's o
 
 ## 260815-DAG-L12 Vocabulary Additions
 
-The closed-vocabulary registry includes the two `executionGraphView` node-union paths (L12-R4): `projection.analytics.taskDocuments[].executionGraphView.nodes[].kind` and `...nodes[].frontierState`. The fixture must reach both paths and carry only declared values; schema generation owns their complete member sets.
+Execution-graph kind/frontierState paths move to projection.tasks[].summary.executionGraphView.nodes[]. Derived sample reach/value checks remain; schema generation owns complete vocabulary membership.
 
 ## CCR-R18@v1 Envelope Contract Vocabulary
 

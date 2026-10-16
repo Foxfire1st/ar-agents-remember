@@ -3,12 +3,12 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "e9348bf45a919572856585dacbda62cbfd292808",
-        "content": "sha256:87495856e989cbc5e61937aba90abea649713a5f83af632a7fdf7212c94a1e63",
+        "blob": "93ffe77d936316b626b29345160cb4f334d0451b",
+        "content": "sha256:f3f819a3c4294b159775caa8d1019db8d199e0d9fddab47cd8df1d251dfda6ba",
         "locator": {
-          "end": 252,
+          "end": 249,
           "kind": "line_range",
-          "start": 43
+          "start": 123
         }
       },
       "id": "RLZ-015DRS",
@@ -17,17 +17,17 @@
         "handoffEntry": "MIK-R128@v1 rule 3",
         "leaf": "260928-MIK-L162"
       },
-      "rationale": "These graph node and relation-reading extents distinguish work and ready nodes and implement pointer-rest highlighting with the shared relation and fade presentation.",
+      "rationale": "Shared OrderNode/OrderRowsView present entry-owned words/tones and graph readiness separately, retaining shared rest/focus relation presentation.",
       "role": "presentation"
     },
     {
       "anchor": {
-        "blob": "e9348bf45a919572856585dacbda62cbfd292808",
-        "content": "sha256:fadbd55f08ae752d5fe37d07fe3b69c5b2741c02374980a5cf0dbb8f83774157",
+        "blob": "93ffe77d936316b626b29345160cb4f334d0451b",
+        "content": "sha256:14c288bf49275ee4d0dbd7de0c50a6659fb7648032621e9f0eb7a93fbc628750",
         "locator": {
-          "end": 300,
+          "end": 292,
           "kind": "line_range",
-          "start": 258
+          "start": 256
         }
       },
       "id": "RLZ-28QBJB",
@@ -41,11 +41,12 @@
     },
     {
       "anchor": {
-        "blob": "e9348bf45a919572856585dacbda62cbfd292808",
-        "content": "sha256:fadbd55f08ae752d5fe37d07fe3b69c5b2741c02374980a5cf0dbb8f83774157",
+        "blob": "93ffe77d936316b626b29345160cb4f334d0451b",
+        "content": "sha256:14c288bf49275ee4d0dbd7de0c50a6659fb7648032621e9f0eb7a93fbc628750",
         "locator": {
-          "kind": "symbol",
-          "name": "OrderBlock"
+          "end": 292,
+          "kind": "line_range",
+          "start": 256
         }
       },
       "id": "RLZ-4ZVZXW",
@@ -54,17 +55,17 @@
         "handoffEntry": "L127-F5 sprint Order block",
         "leaf": "260928-MIK-L127"
       },
-      "rationale": "Draws the block: the row of what is done with the link to the whole graph, the rows by wave, the key and the line that says what it is drawn from.",
+      "rationale": "Draws the entry-driven Order preview and its whole-graph link without a duplicate done/abandoned graph counter.",
       "role": "presentation"
     },
     {
       "anchor": {
-        "blob": "e9348bf45a919572856585dacbda62cbfd292808",
-        "content": "sha256:f4d93bedffe8a0200bda23748fa1b667a1e58ed65fbeb1caaa87a42f83af4e8f",
+        "blob": "93ffe77d936316b626b29345160cb4f334d0451b",
+        "content": "sha256:e62d99c56d259261f024f1c8a512fd52370be12d7b458d411086613ec6c61942",
         "locator": {
-          "end": 128,
+          "end": 119,
           "kind": "line_range",
-          "start": 123
+          "start": 114
         }
       },
       "id": "RLZ-8PXSCT",
@@ -73,16 +74,17 @@
         "handoffEntry": "curator-extra-source-links-INV-5PPM67",
         "leaf": "260928-MIK-L162"
       },
-      "rationale": "Uses producer stepsDone/stepsTotal for a graph node resolving to a leaf instead of treating it as a master task-count row; this enables the shared master-task Order surface.",
+      "rationale": "Leaf targets show served major-step progress; master targets show completed/live-child counts from the resolved entry rather than a duplicate graph total.",
       "role": "propagation-persistence"
     },
     {
       "anchor": {
-        "blob": "e9348bf45a919572856585dacbda62cbfd292808",
-        "content": "sha256:aa1f596e190a9da37eec84b5926597dc66e258499550a664aa2543453d8515ff",
+        "blob": "93ffe77d936316b626b29345160cb4f334d0451b",
+        "content": "sha256:a88c4a040fb9f9d56261d8d6c326c55f48831efeb3f90a2a90cd77fe71f2a0bd",
         "locator": {
-          "kind": "symbol",
-          "name": "orderRows"
+          "end": 79,
+          "kind": "line_range",
+          "start": 51
         }
       },
       "id": "RLZ-DST0RZ",
@@ -91,16 +93,17 @@
         "handoffEntry": "L127-F5 sprint Order block",
         "leaf": "260928-MIK-L127"
       },
-      "rationale": "Sorts the projected units into the row of work in progress and one row per server wave; it derives no wave and no state of its own.",
+      "rationale": "Filters terminal entries by native stage, places only works activity in now, and keeps each other unfinished supplied unit in its producer dependency wave; ready ordering remains a graph fact.",
       "role": "primary-authority"
     },
     {
       "anchor": {
-        "blob": "e9348bf45a919572856585dacbda62cbfd292808",
-        "content": "sha256:5b0cdd658d9fd68e127a97a90e4d45ddef15f9148694a80ef5ba41fb9005cf8b",
+        "blob": "93ffe77d936316b626b29345160cb4f334d0451b",
+        "content": "sha256:a271bfc4524472210cdc0dd64f0ab8dccb0531466c4b20998152ad037ec8e3d3",
         "locator": {
-          "kind": "symbol",
-          "name": "OrderRowsView"
+          "end": 249,
+          "kind": "line_range",
+          "start": 197
         }
       },
       "id": "RLZ-EDFDJW",
@@ -114,12 +117,12 @@
     },
     {
       "anchor": {
-        "blob": "e9348bf45a919572856585dacbda62cbfd292808",
-        "content": "sha256:0dea8c55ee90abbcd5c86cc7ef8bb1ce0874788861a09a617dd4d4f5dc54d9c9",
+        "blob": "93ffe77d936316b626b29345160cb4f334d0451b",
+        "content": "sha256:14c288bf49275ee4d0dbd7de0c50a6659fb7648032621e9f0eb7a93fbc628750",
         "locator": {
-          "end": 321,
+          "end": 292,
           "kind": "line_range",
-          "start": 258
+          "start": 256
         }
       },
       "id": "RLZ-VSG7ME",
@@ -128,63 +131,88 @@
         "handoffEntry": "MIK-R128@v1 rule 3",
         "leaf": "260928-MIK-L162"
       },
-      "rationale": "These Order and CanStartNext extents render the shared sprint/master graph, completed count and eligible next-task rows from the projected frontier.",
+      "rationale": "The same preview labels sprint units as masters and ordinary-master units as tasks, keeping the complete graph one action away without separate graph done counts.",
       "role": "presentation"
     }
   ],
   "references": {
     "1": {
-      "note": "Order renders supplied wave/frontier facts for sprint masters or master tasks; cycle labels read full marked membership while finished nodes remain counts only, and the own graph view retains the supplied graph.",
+      "note": "Order uses entry stage/activity and the shared status presentation while retaining producer dependency waves/readiness; graph-derived done/abandoned totals are absent, and the own graph view retains the supplied graph.\n\nAnchor: entry rows, node state and whole-graph view",
       "targets": [
         {
           "anchor": {
-            "blob": "e9348bf45a919572856585dacbda62cbfd292808",
-            "content": "sha256:aa1f596e190a9da37eec84b5926597dc66e258499550a664aa2543453d8515ff",
+            "blob": "93ffe77d936316b626b29345160cb4f334d0451b",
+            "content": "sha256:a88c4a040fb9f9d56261d8d6c326c55f48831efeb3f90a2a90cd77fe71f2a0bd",
             "locator": {
-              "end": 85,
+              "end": 79,
               "kind": "line_range",
-              "start": 60
+              "start": 51
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "e9348bf45a919572856585dacbda62cbfd292808",
-            "content": "sha256:e9c5d1bdbb3556bdff8c5e86330dbdfa72e5e561607d7053f4ea936f287a7f73",
+            "blob": "93ffe77d936316b626b29345160cb4f334d0451b",
+            "content": "sha256:f3183abfa389ede38a838c5676e0641e1c656b80747d2faac871151fcb476270",
             "locator": {
-              "end": 327,
+              "end": 156,
               "kind": "line_range",
-              "start": 258
+              "start": 123
             }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "93ffe77d936316b626b29345160cb4f334d0451b",
+            "content": "sha256:9aeb62ff9b6010a63e3203e84125c5fe0bcc8c864aae409aa65d4c44408b21fa",
+            "locator": {
+              "end": 319,
+              "kind": "line_range",
+              "start": 256
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "17da14e723222a8d50b4ed6f0595390ab1fe1f6a",
+            "content": "sha256:bc4ae159d2c06abf5b3013b49558caef6bdd9ce2485a940130f171bf32322519",
+            "locator": {
+              "end": 101,
+              "kind": "line_range",
+              "start": 69
+            },
+            "path": "dashboard/src/panels/detail-panel/pageParts.tsx"
           },
           "kind": "code"
         }
       ]
     },
     "2": {
-      "note": "OrderRowsView wires pointer rest and immediate focus to shared graph highlighting, with reduced motion disabling fade and relations omitting finished dependencies.",
+      "note": "OrderRowsView wires pointer rest and immediate focus to shared graph highlighting, with reduced motion disabling fade and relations omitting finished dependencies.\n\nAnchor: relations and rest/focus handling",
       "targets": [
         {
           "anchor": {
-            "blob": "e9348bf45a919572856585dacbda62cbfd292808",
-            "content": "sha256:fc546467053bd98b406d5affb971b997f711c53c58b6f07c0d3f69e9da7eff31",
+            "blob": "93ffe77d936316b626b29345160cb4f334d0451b",
+            "content": "sha256:e899c5be54ab133d18790e84b786b1057c80422c6f0631e476e77afec4b82bae",
             "locator": {
-              "end": 108,
+              "end": 103,
               "kind": "line_range",
-              "start": 88
+              "start": 82
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "e9348bf45a919572856585dacbda62cbfd292808",
-            "content": "sha256:41c2a0399d40f5e77cf450251be7490d3df78c68c8dd73a39a351bd789132fa4",
+            "blob": "93ffe77d936316b626b29345160cb4f334d0451b",
+            "content": "sha256:a271bfc4524472210cdc0dd64f0ab8dccb0531466c4b20998152ad037ec8e3d3",
             "locator": {
-              "end": 252,
+              "end": 249,
               "kind": "line_range",
-              "start": 132
+              "start": 197
             }
           },
           "kind": "code"
