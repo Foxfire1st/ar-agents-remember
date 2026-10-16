@@ -1,0 +1,163 @@
+{
+  "path": "mcp/tests/test_conversion_cost_scans.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "45175638120aa0d65cfac15d7846fd8f67cbd7e6",
+        "content": "sha256:170bbaab8ded9240e83208337bde60554b6725246d954f63ef049db778799fb6",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_constructed_rows_keep_the_same_table_boundary_behavior"
+        }
+      },
+      "facet": "Direct Row construction preserves table start/body behavior and equals materialized rows despite the stored divider fact.",
+      "id": "PRF-48NM2H",
+      "invariant": "INV-V2QBEP",
+      "origin": {
+        "handoffEntry": "MIK-R85@v1 §2",
+        "leaf": "260928-MIK-L59"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "45175638120aa0d65cfac15d7846fd8f67cbd7e6",
+        "content": "sha256:49eb2ec0aeea4301d63a803323231a173b0fb195a72fea192414b72dbdbe6e24",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_each_blob_is_split_once_per_conversion_objects_instance"
+        }
+      },
+      "facet": "Two independent conversion-owned instances split a shared blob once each while repeated counts, file/symbol/range content and out-of-range refusal preserve exact byte semantics.",
+      "id": "PRF-MT7DVG",
+      "invariant": "INV-V2QBEP",
+      "origin": {
+        "handoffEntry": "MIK-R85@v1 §2",
+        "leaf": "260928-MIK-L59"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "45175638120aa0d65cfac15d7846fd8f67cbd7e6",
+        "content": "sha256:865e89dce59bf126806551bc835146241fe485c5c7d2aecb19705bcb5f3fc972",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_table_cells_are_scanned_once_only_on_pipe_bearing_lines"
+        }
+      },
+      "facet": "At two prose sizes, scanner calls are bounded by eligible unfenced pipe-bearing lines and the concrete table/cell outcomes remain unchanged.",
+      "id": "PRF-YRJ8GM",
+      "invariant": "INV-V2QBEP",
+      "origin": {
+        "handoffEntry": "MIK-R85@v1 §2",
+        "leaf": "260928-MIK-L59"
+      }
+    }
+  ],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "45175638120aa0d65cfac15d7846fd8f67cbd7e6",
+        "content": "sha256:865e89dce59bf126806551bc835146241fe485c5c7d2aecb19705bcb5f3fc972",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_table_cells_are_scanned_once_only_on_pipe_bearing_lines"
+        }
+      },
+      "id": "RLZ-5MDQXX",
+      "invariant": "INV-V2QBEP",
+      "origin": {
+        "handoffEntry": "MIK-R85@v1 §2",
+        "leaf": "260928-MIK-L59"
+      },
+      "rationale": "At two prose sizes the spy bounds scans by eligible unfenced pipe-bearing lines and pins escaped, fenced, invalid-header and table-boundary answers.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "45175638120aa0d65cfac15d7846fd8f67cbd7e6",
+        "content": "sha256:170bbaab8ded9240e83208337bde60554b6725246d954f63ef049db778799fb6",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_constructed_rows_keep_the_same_table_boundary_behavior"
+        }
+      },
+      "id": "RLZ-82R0M7",
+      "invariant": "INV-V2QBEP",
+      "origin": {
+        "handoffEntry": "MIK-R85@v1 §2",
+        "leaf": "260928-MIK-L59"
+      },
+      "rationale": "Constructed Row compatibility and the same table/body boundaries remain pinned independently of the row-materialization fast path.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "45175638120aa0d65cfac15d7846fd8f67cbd7e6",
+        "content": "sha256:49eb2ec0aeea4301d63a803323231a173b0fb195a72fea192414b72dbdbe6e24",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_each_blob_is_split_once_per_conversion_objects_instance"
+        }
+      },
+      "id": "RLZ-SYW8J9",
+      "invariant": "INV-V2QBEP",
+      "origin": {
+        "handoffEntry": "MIK-R85@v1 §2",
+        "leaf": "260928-MIK-L59"
+      },
+      "rationale": "Two fresh CodeObjects instances each split the blob once while repeated line-count, symbol/range and whole-file demands preserve CRLF/lone-CR/final-line bytes and out-of-range refusal.",
+      "role": "support"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Table materialization scans eligible lines at most once and preserves concrete boundary/cell results.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "45175638120aa0d65cfac15d7846fd8f67cbd7e6",
+            "content": "sha256:865e89dce59bf126806551bc835146241fe485c5c7d2aecb19705bcb5f3fc972",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_table_cells_are_scanned_once_only_on_pipe_bearing_lines"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Directly constructed and materialized rows preserve table-boundary and equality behavior.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "45175638120aa0d65cfac15d7846fd8f67cbd7e6",
+            "content": "sha256:170bbaab8ded9240e83208337bde60554b6725246d954f63ef049db778799fb6",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_constructed_rows_keep_the_same_table_boundary_behavior"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Each conversion-owned instance splits one blob once while repeated counts and content requests preserve byte semantics.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "45175638120aa0d65cfac15d7846fd8f67cbd7e6",
+            "content": "sha256:49eb2ec0aeea4301d63a803323231a173b0fb195a72fea192414b72dbdbe6e24",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_each_blob_is_split_once_per_conversion_objects_instance"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

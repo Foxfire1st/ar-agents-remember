@@ -16,11 +16,11 @@ this module hashes it).
 
 ### Logic
 
-- `blob_lines` splits on `\n` only (it rejoins what `splitlines` also splits on `\r`, `\v`, `\f`, `\x85`
-  …); the last line may have no newline.
+- `blob_lines` returns byte lines ending only at LF. Its `bytes.splitlines(keepends=True)` step also separates lone CR; the implementation rejoins fragments until LF, preserving every original CR/LF terminator and an unterminated final line. Unlike `str.splitlines`, that bytes method does not split VT, FF or NEL; no text decoding or newline normalization occurs.
 - `line_count` counts lines: a final newline ends the last line rather than opening one.
 - `range_bytes` raises `RangeOutsideBlobError` for a zero start, an inverted range, or lines the blob does
   not hold.
+- `range_from_lines` selects the same one-based inclusive extent from previously split, unmodified byte lines. It performs the same bounds checks and joins the selected lines without decoding or normalizing terminators; `range_bytes` delegates to it after splitting. Callers that retain lines own their lifetime and memory cost.
 - Bytes are never decoded, so a non-UTF-8 blob still has a content identity.
 
 ### Conventions
@@ -55,9 +55,13 @@ The definition and its pins.
 
 - The content prefix. [1]
 - Lines end at `\n` only. [2]
-- A range's bytes, or a refusal. [3]
+
+- Byte-input range selection delegates to the reusable split-line helper, preserving one-based inclusive bounds and refusal text. [3]
+
 - The content identity. [4]
-- The writer's only use: resolving an anchor at C. [5]
+
+- The writer resolves an anchor at the selected candidate without replacing its identity. [5]
+
 - LF, CRLF, lone CR and invalid UTF-8 pinned. [6]
 
 ### Cross-Repo References

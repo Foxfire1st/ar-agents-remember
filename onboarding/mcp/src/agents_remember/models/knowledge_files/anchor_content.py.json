@@ -1,13 +1,32 @@
 {
   "path": "mcp/src/agents_remember/models/knowledge_files/anchor_content.py",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "6ab59bcfe206b710044ff478c9b3c3bd53a1f2b5",
+        "content": "sha256:47be086f6bdf2221dc2fa358a6c491caab4644a33ae9b8d72d8acf9acffb5029",
+        "locator": {
+          "kind": "symbol",
+          "name": "range_from_lines"
+        }
+      },
+      "id": "RLZ-AHRB1M",
+      "invariant": "INV-V2QBEP",
+      "origin": {
+        "handoffEntry": "MIK-R85@v1 §2",
+        "leaf": "260928-MIK-L59"
+      },
+      "rationale": "The inclusive range helper joins already split unmodified byte lines and preserves invalid-range refusal and exact original line terminators.",
+      "role": "enforcement"
+    }
+  ],
   "references": {
     "1": {
       "note": "The content prefix.",
       "targets": [
         {
           "anchor": {
-            "blob": "4c76781389f335adb81f79534d98c5a9404f9dd3",
+            "blob": "6ab59bcfe206b710044ff478c9b3c3bd53a1f2b5",
             "content": "sha256:e2229ddc48d18c2493c977ebf1435739caf15faa33566812b24e440b3648e990",
             "locator": {
               "kind": "symbol",
@@ -23,7 +42,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4c76781389f335adb81f79534d98c5a9404f9dd3",
+            "blob": "6ab59bcfe206b710044ff478c9b3c3bd53a1f2b5",
             "content": "sha256:50b6f19ef4488ef9bb1169c2100c2aab4239ba1a0c78e306f79881c7ea895ae0",
             "locator": {
               "kind": "symbol",
@@ -35,15 +54,26 @@
       ]
     },
     "3": {
-      "note": "A range's bytes, or a refusal.",
+      "note": "Byte-input range selection delegates to the reusable split-line helper, preserving one-based inclusive bounds and refusal text.",
       "targets": [
         {
           "anchor": {
-            "blob": "4c76781389f335adb81f79534d98c5a9404f9dd3",
-            "content": "sha256:7af4560fe8210f3f54801e9e9d159a19e39e936cfa20a4d8fc1d01d0d37e5bb2",
+            "blob": "6ab59bcfe206b710044ff478c9b3c3bd53a1f2b5",
+            "content": "sha256:f2d3cefd868db997c60180d639e7b4cfa1043f1713de0aa03d07dd67a4614242",
             "locator": {
               "kind": "symbol",
               "name": "range_bytes"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6ab59bcfe206b710044ff478c9b3c3bd53a1f2b5",
+            "content": "sha256:47be086f6bdf2221dc2fa358a6c491caab4644a33ae9b8d72d8acf9acffb5029",
+            "locator": {
+              "kind": "symbol",
+              "name": "range_from_lines"
             }
           },
           "kind": "code"
@@ -55,7 +85,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4c76781389f335adb81f79534d98c5a9404f9dd3",
+            "blob": "6ab59bcfe206b710044ff478c9b3c3bd53a1f2b5",
             "content": "sha256:42002f6ab9b9208963081163ebd96fdae9decf7573a0ab3b3580daf1b259f239",
             "locator": {
               "kind": "symbol",
@@ -67,15 +97,16 @@
       ]
     },
     "5": {
-      "note": "The writer's only use: resolving an anchor at C.",
+      "note": "The writer resolves an anchor at the selected candidate without replacing its identity.\n\nAnchor: `CodeSnapshot.resolve`",
       "targets": [
         {
           "anchor": {
-            "blob": "5e20674c1184914b1d449552cc09a38fe5416098",
-            "content": "sha256:e22efd530081de646d8ac5be7f15b57e4f84ba2e6d2b9875051db516a9c77e75",
+            "blob": "971ce5978516219ef12fa09414e1223af629c9de",
+            "content": "sha256:318ebb51a6b0ea119ee47b8b9ec40eb74ddf5ebd916796988de78a4550e23305",
             "locator": {
-              "kind": "symbol",
-              "name": "resolve"
+              "end": 160,
+              "kind": "line_range",
+              "start": 138
             },
             "path": "mcp/src/agents_remember/application/knowledge_writer/code_anchors.py"
           },
@@ -88,7 +119,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6d0249c233d5eabbf837f6e775a297e28ff520d1",
+            "blob": "95aed562d3258ae4a4df6ecbfd044b66d35756ef",
             "content": "sha256:3aacf785be37c33f9c51961d3f77e693e21d0cfb57f9477407d50d0f36b982f3",
             "locator": {
               "kind": "symbol",

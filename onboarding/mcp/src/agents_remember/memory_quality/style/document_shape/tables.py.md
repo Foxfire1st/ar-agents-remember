@@ -12,17 +12,9 @@ Report Markdown table rows whose cell count differs from the header.
 
 ### Logic
 
-Module-level surface:
+`rows_of` computes cell-divider positions at most once per pipe-bearing unfenced line and does not call the scanner for a no-pipe line. It derives stripped cells from those same positions and stores their presence in `Row.has_divider`. `starts_table` and `read_body` consume that stored fact, preserving adjacent header/delimiter checks and termination at blanks, gaps or non-row lines without rescanning.
 
-- `Row` (class, lines 36-41) — One line of a candidate table: where it was, and how many cells it holds.
-- `check_onboarding_root` (function, lines 44-52)
-- `check_file` (function, lines 55-60)
-- `rows_of` (function, lines 63-66)
-- `tables` (function, lines 69-86) — Every GFM table in the file, as its header row and its body rows.
-- `starts_table` (function, lines 89-96)
-- `read_body` (function, lines 99-112)
-- `ragged_findings` (function, lines 119-141)
-- `ragged_message` (function, lines 144-168) — Return the complete repair for a short or long table row.
+Direct `Row` construction derives the flag when omitted. The extra field is excluded from comparison and repr, preserving the existing row-equality surface. A delimiter row still must have the same nonempty width as its header, and cell parsing keeps the existing escaped-pipe, code-span, outer-pipe and fence rules. Ragged findings and their complete repair guidance remain unchanged.
 
 ### Conventions
 
@@ -40,14 +32,29 @@ None.
 
 ### Repo-Internal References
 
-This module defines the top-level symbols cited below; each row points at the exact source range holding the anchor.
+This module defines the top-level symbols cited below; each native symbol reference resolves its definition; no prose line-number inventory overrides that binding.
 
-- Defines the class `Row` (lines 36-41) — One line of a candidate table: where it was, and how many cells it holds.. [1]
-- Defines the function `check_onboarding_root` (lines 44-52). [2]
-- Defines the function `check_file` (lines 55-60). [3]
-- Defines the function `rows_of` (lines 63-66). [4]
-- Defines the function `tables` (lines 69-86) — Every GFM table in the file, as its header row and its body rows.. [5]
-- Defines the function `starts_table` (lines 89-96). [6]
-- Defines the function `read_body` (lines 99-112). [7]
-- Defines the function `ragged_findings` (lines 119-141). [8]
-- Defines the function `ragged_message` (lines 144-168) — Return the complete repair for a short or long table row.. [9]
+- Row stores an already observed divider fact; omitted flags are derived for direct construction without changing equality or repr. [1]
+
+
+- Defines the function `check_onboarding_root`. [2]
+
+
+- Defines the function `check_file`. [3]
+
+
+- Row materialization scans only pipe-bearing lines once and derives cells from the same positions. [4]
+
+
+- Defines the function `tables` — Every GFM table in the file, as its header row and its body rows. [5]
+
+
+- Table start reads the stored divider flag while requiring adjacent same-width header and delimiter. [6]
+
+- Table body termination consumes the stored divider flag without rescanning. [7]
+
+
+- Defines the function `ragged_findings`. [8]
+
+
+- Defines the function `ragged_message` — Return the complete repair for a short or long table row. [9]

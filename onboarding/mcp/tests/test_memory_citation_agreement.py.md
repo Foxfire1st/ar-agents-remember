@@ -4,12 +4,9 @@
 
 [mcp/tests overview](overview.md)
 
-**The stamp names the base, not the bytes, and the distinction is deliberate.** This file is new
-in `260918-TSIP-L7` and **no commit yet carries its content**, so `lastVerifiedCommitHash` names
-the commit the working candidate was cut from rather than one that contains this source; it does
-not claim the uncommitted content was verified at that commit. The recorded working candidate
-names the exact candidate and its digest, and the governed closeout owns the real stamp. Every
-claim below was re-read against the module's current bytes in `260918-TSIP-L12`.
+**Historical L7/L12 provenance, not current verification metadata.** When this module was new in `260918-TSIP-L7`, no commit yet carried those working bytes, so the former `lastVerifiedCommitHash` stamped their base and closeout owned the later real stamp. The L12 reread and working-candidate digest account belong to that earlier epoch. Converted cards carry no such verification-stamp field, and this account authenticates neither A005 nor its current live populations.
+
+**Shipped source address.** The retained source header names the `260918-TSIP-L13` pair: memory `682bbdfd` plus that leaf’s change set, paired with code `1bcf73e7` plus its change set. `BudgetAgreementTests.NON_HISTORY_SUPERSEDED_SITES` is **53**, with the source recording the historical L13 change from 55. These are source-header and constant facts, not a new live-population measurement or L59 acceptance. The L7/L12 pair and measured 55 observations below remain explicitly historical.
 
 ## Purpose
 
@@ -21,7 +18,7 @@ range the definition has left stays green for as long as anything inside it stil
 that declares it, so a route overview can advertise a budget the repository stopped declaring and
 every check stays green.
 
-This module is the durable form of the `260918-TSIP-L7` agreement leaf, extended by
+The following origin account describes the historical `260918-TSIP-L7` agreement leaf, extended by
 `260918-TSIP-L12` when the master-end review falsified its own acceptance pins. It pins four
 populations and one census: the product change the leaf lands (a report-only
 `citation_anchor_definition_outside_range` finding, plus GFM's `\|` escape resolved where cell text
@@ -29,9 +26,7 @@ becomes anchor text), the live populations of both classes as **exact equalities
 **enforced** population, which is **97 and inherited from the merged `260915_knowledge-substrate`
 line**, not this master's — the classification of every stale budget figure the sweep found, the
 superseded-pair worklist **derived from the tree** rather than remembered, and the census of
-qualified `## Update History…` headings. A pin asserted in both directions is the point: a repair
-that is not carried into the pin fails the suite, and a new stale site fails it until it is
-classified.
+qualified `## Update History…` headings. The older-budget cases inspect a fixed three-site dictionary and the figures recorded for those sites; they do not discover new, unlisted older-budget sites. Separately, the superseded-pair worklist is derived by walking the named tree and can detect a change in that derived population. A changed listed figure and a newly discovered superseded-pair site therefore have different detection paths.
 
 ## Code Commentary
 
@@ -98,8 +93,8 @@ hold** — that sentence is in the module's own header, and it is the answer to 
 
 ### Invariants And Boundaries
 
-- **The tree is a pair, and both halves are named.** Every live number is measured against the pair
-  `260918-TSIP-L12` **lands**: memory `ec1cebe5` — the `260918_tool-surface-and-process-integrity`
+- **Historical L12 pair account (superseded by the shipped L13 header above).** At that epoch the live numbers were measured against the pair
+  `260918-TSIP-L12` landed: memory `ec1cebe5` — the `260918_tool-surface-and-process-integrity`
   memory tip after its **third sync**, which merged the concurrent `260915_knowledge-substrate` line
   — plus this leaf's memory change set, paired with code `15e10084` plus this leaf's code change set.
   The **official** memory checkout is a different tree on a different commit and is refused by the
@@ -125,14 +120,14 @@ hold** — that sentence is in the module's own header, and it is the answer to 
   re-read the construct rather than the number). `T58`'s **3** constructs in **2** documents were
   re-measured on the merged tree and hold across the sync.
 - **The superseded-pair constant is DERIVED, and that is `F2`'s repair.** `NON_HISTORY_SUPERSEDED_SITES`
-  (`:758`, value **55**) is pinned against the count `superseded_pair_sites` (`:228-248`) returns, and
+  (shipped value **53**) is pinned against the count `superseded_pair_sites` returns on the named tree, and
   that function is red when the defect grows and when the derivation stops seeing. The constant it
   replaces — `SUPERSEDED_DECLARED_SITES = 20` — was compared with its own literal, so **no change to
   any tree could move it**: a hard-coded fact wearing the clothes of a measurement, in the module
   written to enforce agreement (law 4). Its named producer read **64** outside `## Update History` on
   the very tree the module pinned, and `F1` of the master-end review is the class it was blind to.
-  The worklist reads 64 at base, 47 once this leaf repaired the seventeen lines that stated the
-  superseded pair as current, and **55** on the merged tree; the +8 is the sibling line's own budget
+  Historically at L12 the worklist read 64 at base, 47 after that leaf repaired the seventeen lines that stated the
+  superseded pair as current, and **55** on its merged tree; the +8 was the sibling line's own budget
   prose. It is a **worklist, not a verdict**: each line is a dated or as-of reading reviewed row by
   row, and none is asserted to be wrong by being counted.
 - **The qualified-heading census is a NAMED population, not a zero.**
@@ -167,8 +162,7 @@ hold** — that sentence is in the module's own header, and it is the answer to 
   honest statement of the property is the narrower one, and this bound is register row `T114`.
 - **Scope boundary.** The module proves the *mechanism* on trees it builds and *pins* the live
   populations; it does not repair them. The `T52` rows, the 97 enforced rows and the stale budget
-  figures are worklists for the route curators, and the module's job is to make them move when they
-  move.
+  figures are worklists for the route curators. Derived populations are checked against enumeration; the older-budget dictionary checks only its recorded sites and does not discover additional unlisted sites.
 
 ### Todos
 
@@ -176,6 +170,8 @@ Verification metadata remains closeout-owned; this card records source inspectio
 comment-level findings above (`T58`'s second site, `T114`'s guard bound, `SV-3`'s two derivation
 bounds) belong to whatever change next touches the module. `T138` — the tool reference's 20-row table
 divergence — is registered and not this module's.
+
+The escaped-pipe row case derives stripped cell text from the live cell_spans offsets after removal of the unused split_row wrapper. The same row still has three cells and yields the original useEffect anchor; its inputs and assertions are preserved. This source-path maintenance adds no population measurement or execution claim.
 
 ## Evidence
 
@@ -197,7 +193,9 @@ No configured domain evidence applies to the file-local claims above.
 The anchors below identify current behaviour of this module; they are not execution evidence and they
 make no acceptance claim.
 
-- The memory tree the product refuses, cited at the definition rather than at the module header's old wrong line (`R2-3`, repaired). [1]
+
+- The product citation-mutation guard refuses the official memory repository. [1]
+
 - The world: a code tree and the memory tree that documents it, both under one temporary root, with the citation cache slot its census was built in removed. [2]
 - The live tree, named by the run and skipped when no run names one. [3]
 - The `T52` REPORT-ONLY population pin, re-derived on the pair this leaf lands: **130** rows over 95 documents. It is a report and not a gate, and the rows that moved it are named at the constant. [4]
@@ -206,13 +204,17 @@ make no acceptance claim.
 - The `T52` shape: green membership, definition outside the range, one report-only finding. [7]
 - The negative that makes the check a check: a corrected range clears it. [8]
 - The escape resolved where cell text becomes anchor text, which is where the `T57` blind spot was. [9]
-- Both cells and the quote path: the escaped spelling must yield the anchor the plain spelling yields. [10]
+
+- Both cells and the quote path preserve escaped/plain anchor agreement; the row case now derives text from live cell spans. [10]
+
 - The wrapped-`cit:` detector, proven by a planted shape so the corpus zero is measured. [11]
 - The code repository's own markdown, enumerated: zero wrapped constructs is the pin. [12]
 - The live case: `T52` 130, enforced 97, `T58` 3 constructs in 2 documents, on the pair. [13]
 - Every stale site the sweep found, with the pair it states and the ceiling it was written against. [14]
 - The subset a repair moves, counted separately from the worklist the next curation inherits. [15]
-- The superseded-pair worklist: **DERIVED from the tree**, never remembered. The rule is `superseded_pair_sites`, the producer it carries is `notes/reports/tsip-instruments/l7-curator-stale-pair-enum.py`, and a change in either direction is a finding (`T112`, `F2`). [16]
+
+- The shipped superseded-pair constant is 53; the live case compares it with the tree-derived worklist. Historical L12 measured 55, and the source header attributes 55-to-53 to L13 rather than to L59. [16]
+
 - The derived rule itself, so the pin can fail when the derivation stops seeing. [17]
 - The five hermetic arms that prove the derivation fires: counted outside history, dated inside it, not hidden by a qualified heading, the comma-grouped spelling, and the declared pair excluded. [18]
 - The live arm: the worklist count on the named tree equals the derived count. [19]

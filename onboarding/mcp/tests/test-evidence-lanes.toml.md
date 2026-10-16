@@ -65,6 +65,8 @@ The grant and developer-dashboard modules have their declared L3 lanes; direct-l
 - Existing unit-regression lane declares test_task_document_order.py once; membership is selection, not execution. [849]
 
 
+The conversion-cost scan/split regression module is selected once in unit-regression. This adds no lane, budget change or invocation claim.
+
 ## Evidence
 
 - The deletion-cancellation module is declared once in unit-regression; membership selects tests and proves no invocation. [853]
@@ -118,7 +120,9 @@ Source declarations, mirrors and fixture assertions are not executed acceptance.
 
 
 - The current source declares lane membership, including the three MIK-R53 modules in unit-regression; citation-document transaction is integration. Membership does not establish invocation or PASS. [844]
-- Current source delta inspected statically: Add the three exact R53 unit-regression declarations without totals, invocation or PASS; current witness supersedes the prior lead. [848]
+
+- The three R53 modules remain declared in unit-regression; they already exist in this leaf’s base and are not L59 additions. Membership proves no invocation or PASS. [848]
+
 
 - Native reapply remains declared in unit-regression; membership is selection only and the list remains canonically ordered. [847]
 - Extracted capsule surface suite in unit-regression Anchor: `test_capsule_serving_surface.py` [835]
@@ -137,3 +141,5 @@ Source declarations, mirrors and fixture assertions are not executed acceptance.
 
 
 - Source-owned canonicalization preserves seven lane identities and every per-lane membership set; validator-link-target and the split writer/worklist modules are declared in unit-regression, not newly executed evidence. [851]
+
+- The conversion-cost module is declared in unit-regression; selection is not execution. [854]

@@ -1,0 +1,37 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "guarded_by_test"
+    ],
+    "justification": "Row materialization and boundary-span reuse in the table owners cooperate with blob-line reuse in the conversion/content owners; three deterministic regression proofs separately protect scan counts, constructed-row boundaries and two-instance blob reuse with exact byte/refusal semantics."
+  },
+  "applicability": "Materializing table rows from unfenced Markdown lines and reusing LF-only blob lines for line-count and anchor-content reads in one conversion-owned CodeObjects instance.",
+  "conditions": [
+    "The boundary positions belong to the same line whose cell offsets are derived.",
+    "Cached byte lines are the unmodified LF-only split of the blob named by the key.",
+    "Line-count and resolved range-content requests share the same CodeObjects instance."
+  ],
+  "exclusions": [
+    "No persistent parse store, cross-instance blob-line reuse, whole worklist/result memo or new tree-enumeration behavior is promised.",
+    "Whole-file anchors continue to hash raw bytes without needing a split.",
+    "No elapsed-time budget, incremental-memory bound or final-cut RSS improvement is established by deterministic reuse."
+  ],
+  "id": "INV-V2QBEP",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "/home/firefox/projects/ar-coordination/worktrees/agents-remember/59_first-view-cold-reads-and-gate-cost-ar/role-reports/worker/925d4c17-a69e-477d-bc47-1198ba05affe/final-A005-resumed-focused.xml"
+      ],
+      "path": "knowledge-handoff-A005.json"
+    },
+    "handoffEntry": "MIK-R85@v1 §2",
+    "leaf": "260928-MIK-L59",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Table materialization scans each eligible pipe-bearing unfenced line at most once, each blob is split once per conversion-owned CodeObjects instance, and reused byte lines and divider facts preserve conversion and table-boundary results.",
+  "status": "proposed",
+  "supersedes": []
+}

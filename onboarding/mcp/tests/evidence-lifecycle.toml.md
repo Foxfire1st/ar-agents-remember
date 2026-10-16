@@ -29,7 +29,7 @@ At the earlier L109 sync3 epoch, the source-owner repair closed the prior consum
 
 The machine-readable inventory declares durable test-evidence ownership and replacement: shared support, fixtures, recordings, recording generators and migration proofs. Each governed artifact has a row for its path, kind, authority, owner label, category, fidelity, cadence, source/version, introduction, lifetime, replacement and consumer scope. Contract rows bind stable identities to an existing owner file and exact executable evidence node. load_evidence_inventory in mcp/test_support/agents_remember_test_support/testing/evidence_lifecycle.py validates schema, declarations, source-derived consumers, node selectors and governed-file coverage. These declarations are not execution proof.
 
-`evidence-lifecycle.toml` declares durable evidence ownership, lifetime and replacement contracts. The current comparison changeset test is an exact-scope consumer of six artifact rows; this is catalog membership, not a claim that an invocation ran or passed.
+`evidence-lifecycle.toml` declares durable evidence ownership, lifetime and replacement contracts. The current comparison changeset test is an exact-scope consumer of seven artifact rows; this is catalog membership, not a claim that an invocation ran or passed.
 ## Parked-candidate test support consumers
 
 `mcp/tests/test_sync_parked_candidate.py` is an exact consumer of three existing support artifacts: `checkpoint_landing_test_support.py`, `curator_coherence_test_support.py` and `knowledge_conversion_test_support.py`. Its identical-byte review-rebinding case reaches that shared support through the existing real-tool fixture helpers. Only consumer membership is extended: no artifact/contract identity, owner, lifetime or replacement contract changes. Registration is reachability accounting, not test execution or acceptance.
@@ -87,7 +87,7 @@ The portable L37 attempt-1 and attempt-2 history fixtures are separate permanent
 
 test_bootstrap_converted_onboarding.py is declared on the curator-coherence and Node lockfile artifact rows. Its test_worktree_support import reaches curator-coherence support; Node membership is syntactic dependency accounting. These declarations do not prove a bootstrap invocation.
 
-The overview-order test module is a consumer of eleven existing artifact rows, alongside the existing validator cases. These additions preserve the rows' incoming fields and existing consumers; no artifact or contract is created for the test module itself. The separate lane catalog assigns its unit-regression membership. These declarations describe source reachability and selection, not a test invocation or acceptance.
+The overview-order test module is a consumer of twelve existing artifact rows, alongside the existing validator cases. These additions preserve the rows' incoming fields and existing consumers; no artifact or contract is created for the test module itself. The separate lane catalog assigns its unit-regression membership. These declarations describe source reachability and selection, not a test invocation or acceptance.
 
 ### Structure
 
@@ -182,7 +182,7 @@ default unit run includes.
 The command keeps a comment that follows a table header on its line, and comment lines that stand
 directly above a table header, with that row. It refuses a comment inside a list.
 
-`mcp/tests/test_comparison_changeset.py` is currently listed on six `consumer_scope = "exact"` artifact rows: `anchor_fixture_models.py`, `diff_scope_test_support.py`, the repository-profile Node `package-lock.json`, `knowledge_row_codec_test_support.py`, `knowledge_rows_test_support.py` and `read_scope_test_support.py` (all beneath `mcp/tests`). Those declarations record the comparison module's artifact population, not evidence execution.
+`mcp/tests/test_comparison_changeset.py` is currently listed on seven `consumer_scope = "exact"` artifact rows: `_user_settings_guard.py`, `anchor_fixture_models.py`, `diff_scope_test_support.py`, the repository-profile Node `package-lock.json`, `knowledge_row_codec_test_support.py`, `knowledge_rows_test_support.py` and `read_scope_test_support.py` (all beneath `mcp/tests`). Those declarations record the comparison module's artifact population, not evidence execution.
 ## 260928-MIK-L99 — a leaf's agents hand over to each other
 
 The Node lockfile artifact declares test_leaf_handover.py and test_leaf_handover_review_rounds.py; the lane manifest places test_leaf_retirement_wording.py in unit-regression. The held catalog has no artifact row for these test modules. These are current source observations, not evidence of addition history or execution.
@@ -197,7 +197,9 @@ test_role_capsule_budgets.py is declared on the Node lockfile artifact consumer 
 
 ## Shared Causal Test Helpers
 
-The conversation-open, Eve event-pump and reviewer-worklist-process artifacts are permanent, internal hand-authored support, with the declared behavior-test owners and exact replacement nodes. Their implementations expose explicit resolution/stream-completion/subprocess opportunities, while their consumer test modules own cases and assertions. Their metadata and source dependencies are catalog accounting, not invocation proof.
+The surviving reviewer-worklist-process artifact is permanent, internal hand-authored support owned by its behavior-test module, with the declared exact replacement node and consumer. Its subprocess-control seam supports those tests; the declaration proves no invocation.
+
+Historical pre-retirement catalogs (including source blob `24afddfd2be326a119ca082e66c08ba1ed7eee9a`) also declared conversation-open and Eve event-pump helpers with resolution/stream-completion controls. Those helpers and their conversation/Eve behavior consumers are absent from the current source and artifact inventory. Their old owners and replacement nodes are historical, not available current contracts; no restored artifact or equivalent replacement is claimed.
 
 ## 260928-MIK-L114 River-Test Registration And Catalog Rewrite
 
@@ -217,6 +219,8 @@ The catalog declares the grant, dashboard, direct-leaf integration/role-start an
 - The existing canonical user-settings guard artifact declares test_task_document_order.py as an exact consumer; membership alone is not test execution. [291]
 
 
+
+The conversion-cost scan/split module is an exact declared consumer of the existing settings-guard, Node-lockfile and conversion-support artifacts. These consumer additions change no artifact ownership, replacement contract, lifetime or authority. Catalog declarations establish reachability, not observed execution or a speed/RSS result.
 
 ## Evidence
 
@@ -352,7 +356,7 @@ The held catalog declares the host modules test_paseo_install_contract.py, test_
 
 ## 260928-MIK-L129 Repeated-cleanup regression test consumers
 
-test_cleanup_repeated_archive_ready.py is declared on thirteen exact artifact consumer rows in the held catalog and in the integration lane. The earlier three-list change describes a dated delta, not its current support population. The canonical writer derives consumer lists but neither these rows nor their order prove the writer or regression ran.
+test_cleanup_repeated_archive_ready.py is declared on fourteen exact artifact consumer rows in the held catalog and in the integration lane. The earlier three-list change describes a dated delta, not its current support population. The canonical writer derives consumer lists but neither these rows nor their order prove the writer or regression ran.
 
 ### Historical empty-caption custody
 
@@ -686,7 +690,7 @@ Reference describes converted-drift consumer declarations. References and descri
 
 ## L112 post-L74 correspondence for parked comparison references
 
-Historical L112 post-L74 intake preserved the parked W03 comparison prose and original261/262/263 targets in its intermediate account; that account is superseded, not current registration authority. The held source retains test_comparison_changeset.py on six exact artifact rows, including read_scope_test_support.py under knowledge-read-scope-cases. The earlier 13-contract/93-artifact observation is historical. The L109 incoming catalog declared13 contract rows and101 artifact rows before R111 composition; this is read-only TOML parsing, not a loader or test invocation. The earlier 13/90 observation belongs only to the named 450ade9c/e06f241b epoch. Neither observation is loader/test execution or CODE/MEMORY acceptance; retained qualified contracts, preview consumers and read-boundary registrations remain declarations.
+Historical L112 post-L74 intake preserved the parked W03 comparison prose and original261/262/263 targets in its intermediate account; that account is superseded, not current registration authority. The held source retains test_comparison_changeset.py on seven exact artifact rows, including read_scope_test_support.py under knowledge-read-scope-cases. The earlier 13-contract/93-artifact observation is historical. The L109 incoming catalog declared13 contract rows and101 artifact rows before R111 composition; this is read-only TOML parsing, not a loader or test invocation. The earlier 13/90 observation belongs only to the named 450ade9c/e06f241b epoch. Neither observation is loader/test execution or CODE/MEMORY acceptance; retained qualified contracts, preview consumers and read-boundary registrations remain declarations.
 
 > **Retained historical source account — superseded by the current contract:**
 > Historical L112 post-L74 intake preserved the parked W03 comparison prose and original261/262/263 targets in its intermediate account; that account is superseded, not current registration authority. The held source retains test_comparison_changeset.py on six exact artifact rows, including read_scope_test_support.py under knowledge-read-scope-cases. The current working catalog declares 13 contract rows and 93 artifact rows; this is read-only TOML parsing, not a loader or test invocation. The earlier 13/90 observation belongs only to the named 450ade9c/e06f241b epoch. Neither observation is loader/test execution or CODE/MEMORY acceptance; retained qualified contracts, preview consumers and read-boundary registrations remain declarations.
@@ -780,3 +784,8 @@ The existing `paseo_launch_test_support.py` shared-support row now describes the
 - The current catalog declares 12 contracts and 73 artifacts, including three permanent reconsideration, writer-correction and native-worklist shared supports. Ownership, lifetimes, replacement nodes and exact consumers are declarations, not observed execution or acceptance. [271]
 
 - Native-worklist support declares the closeout-live-gate and workspace-wake-zero-census consumers. Source-owned sorting preserves settings-guard and Node-fixture membership and changes no non-consumer metadata in that repair. [292]
+
+- The retained conversion-cost tests are declared consumers on the existing three artifact lists. [295]
+
+
+- Current exact consumer populations are seven for comparison, twelve for overview-order and fourteen for repeated cleanup; the reviewer-worklist-process support survives and the retired conversation/Eve artifacts are not declared. [296]

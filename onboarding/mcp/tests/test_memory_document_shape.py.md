@@ -12,7 +12,7 @@ Memory table parsing and history timestamp repair boundaries.
 
 ### Logic
 
-Windows citation cells keep their three columns and fenced diffs are valid content. Missing cells report their original text. Mixed timezone frames are caught and refused for sorting; newly added naive timestamps fail within the closing diff, while a renamed old document is not treated as newly authored.
+Windows citation cells keep their three columns and fenced diffs are valid content. Missing-cell findings report the actual/header cell counts, location and repair guidance; they do not return the original row text. Mixed timezone frames are caught and refused for sorting; newly added naive timestamps fail within the closing diff, while a renamed old document is not treated as newly authored.
 
 ### Conventions
 
@@ -26,6 +26,8 @@ History repair may not guess an offset or reorder incomparable timestamps. Exist
 
 No file-local implementation change is requested by this reconciliation.
 
+The Windows-cell precision case now counts the live cell_spans result rather than the removed stripped-cell wrapper. Its three-column and full-document-clean assertions and inputs are preserved; this is assertion-path maintenance, not a changed table contract.
+
 ## Evidence
 
 ### Docs References
@@ -38,7 +40,9 @@ No configured domain evidence applies to the file-local claims above.
 
 The retained source anchors below support the fixture roles and assertion boundaries described above. They identify current behavior, not a request to restore historical test counts or percentage targets.
 
-- The same windows cell in a three column table keeps its columns. [1]
+
+- The same Windows citation cell keeps three columns through live cell spans and a clean full-document check. [1]
+
 - A diff quoted in a fenced block is the document working. [2]
 - A missing cell is reported. [3]
 - The live mixed frame pair is caught instead of passing silently. [4]

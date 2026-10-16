@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "7ac14e416b82c9b4d3547ea9afcff041d038a511",
+        "blob": "7a1bc697c90301cd12a587a99b0fc71d2bce4c75",
         "content": "sha256:8a563d2dbba88ee1e753a308ffe54c534ade411f77c97c5e979261cb0e0541f8",
         "locator": {
           "kind": "symbol",
@@ -18,16 +18,34 @@
       },
       "rationale": "A bounded nonrecursive ls-tree observation preserves a directory entry even when recursive leaf inventory has no rows.",
       "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "7a1bc697c90301cd12a587a99b0fc71d2bce4c75",
+        "content": "sha256:a10eb80d41000ab131efe21a67ad278956c3d4ae71bdfc5af10778d615d140c1",
+        "locator": {
+          "kind": "symbol",
+          "name": "CodeObjects"
+        }
+      },
+      "id": "RLZ-VDX96S",
+      "invariant": "INV-V2QBEP",
+      "origin": {
+        "handoffEntry": "MIK-R85@v1 §2",
+        "leaf": "260928-MIK-L59"
+      },
+      "rationale": "One conversion-owned instance keeps blob-keyed split lines and shares them across line counts and anchor content requests without caching a whole worklist or changing BASE tree enumeration.",
+      "role": "primary-authority"
     }
   ],
   "references": {
     "1": {
-      "note": "The class and its caches.",
+      "note": "The read-only class retains raw blobs and instance-local blob-keyed split lines; no persistent worklist is stored.",
       "targets": [
         {
           "anchor": {
-            "blob": "f2f5a13feb9d376e1fe17ae88185006334186473",
-            "content": "sha256:3437e7d8c09a7a92c41c77f336f3d4f8f019aab4a2417fa5d3184e3122af3d7b",
+            "blob": "7a1bc697c90301cd12a587a99b0fc71d2bce4c75",
+            "content": "sha256:a10eb80d41000ab131efe21a67ad278956c3d4ae71bdfc5af10778d615d140c1",
             "locator": {
               "kind": "symbol",
               "name": "CodeObjects"
@@ -38,16 +56,16 @@
       ]
     },
     "10": {
-      "note": "Code-object mode snapshots retain symlink blobs and reject symbol extraction through them.",
+      "note": "Tree inventory and mode snapshots retain symlink entry blobs, with link_paths supplying explicit symbol-extraction context.\n\nAnchor: `CodeObjects.tree`; `CodeObjects.tree_modes`; `CodeObjects.link_paths`",
       "targets": [
         {
           "anchor": {
-            "blob": "45422df6652fbcb87bd257227ed2431d41af938d",
-            "content": "sha256:abdb9b0ce08c6498b987ed972b4dedfc76e7f20c85be527b88836bf85b693504",
+            "blob": "7a1bc697c90301cd12a587a99b0fc71d2bce4c75",
+            "content": "sha256:b70809620025174f4dcb3fcfa30de5f463ce55016cd72b93bcf896eb3fe3e520",
             "locator": {
-              "end": 146,
+              "end": 157,
               "kind": "line_range",
-              "start": 117
+              "start": 118
             }
           },
           "kind": "code"
@@ -55,16 +73,16 @@
       ]
     },
     "11": {
-      "note": "Symbol and content locators use explicit symlink context.",
+      "note": "Symbol and content locators use explicit symlink context.\n\nAnchor: `CodeObjects.symbol_span`; `CodeObjects.content`",
       "targets": [
         {
           "anchor": {
-            "blob": "45422df6652fbcb87bd257227ed2431d41af938d",
-            "content": "sha256:ca7e6e7d4b87cb893d62bc0ef32d2083a1254d99d91673753f1ac809e681410b",
+            "blob": "7a1bc697c90301cd12a587a99b0fc71d2bce4c75",
+            "content": "sha256:edfe914755e7333810261c7555580118cdaaf8572fe49f1a01537aa736e028e9",
             "locator": {
-              "end": 271,
+              "end": 288,
               "kind": "line_range",
-              "start": 191
+              "start": 203
             }
           },
           "kind": "code"
@@ -76,12 +94,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7ac14e416b82c9b4d3547ea9afcff041d038a511",
+            "blob": "7a1bc697c90301cd12a587a99b0fc71d2bce4c75",
             "content": "sha256:8a563d2dbba88ee1e753a308ffe54c534ade411f77c97c5e979261cb0e0541f8",
             "locator": {
-              "end": 150,
+              "end": 151,
               "kind": "line_range",
-              "start": 141
+              "start": 142
             }
           },
           "kind": "code"
@@ -93,7 +111,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7ac14e416b82c9b4d3547ea9afcff041d038a511",
+            "blob": "7a1bc697c90301cd12a587a99b0fc71d2bce4c75",
             "content": "sha256:51eac2097846b98da2d5b910557d344a3566ae28c85ccc15643ed91cc2afd83f",
             "locator": {
               "kind": "symbol",
@@ -109,7 +127,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7ac14e416b82c9b4d3547ea9afcff041d038a511",
+            "blob": "7a1bc697c90301cd12a587a99b0fc71d2bce4c75",
             "content": "sha256:8ae960f3597ab9bf56e7c9d1d40d6deadbaea5e38ad3691da134ff12516df22b",
             "locator": {
               "kind": "symbol",
@@ -121,15 +139,16 @@
       ]
     },
     "4": {
-      "note": "A commit's file-to-blob map.",
+      "note": "A commit's regular-file and symlink blob map remains read-only and mode-aware.\n\nAnchor: `CodeObjects.tree`",
       "targets": [
         {
           "anchor": {
-            "blob": "f2f5a13feb9d376e1fe17ae88185006334186473",
-            "content": "sha256:594ca34f55e0be59ef95f21f65825d7af9c29e8fe9e9c324e2e96b40be978e78",
+            "blob": "7a1bc697c90301cd12a587a99b0fc71d2bce4c75",
+            "content": "sha256:8e9c6ebda3259450e41ab1cfdaad8272db8614ec3a39900b94eab44c5ccaf4d6",
             "locator": {
-              "kind": "symbol",
-              "name": "tree"
+              "end": 134,
+              "kind": "line_range",
+              "start": 118
             }
           },
           "kind": "code"
@@ -141,7 +160,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7ac14e416b82c9b4d3547ea9afcff041d038a511",
+            "blob": "7a1bc697c90301cd12a587a99b0fc71d2bce4c75",
             "content": "sha256:a955743b9fa00eb0e6ea52f2d310950bf517c2471adc80030d5478c815e6a1e0",
             "locator": {
               "kind": "symbol",
@@ -152,12 +171,12 @@
         },
         {
           "anchor": {
-            "blob": "7ac14e416b82c9b4d3547ea9afcff041d038a511",
+            "blob": "7a1bc697c90301cd12a587a99b0fc71d2bce4c75",
             "content": "sha256:661c59ba6d84d2c519f21e3f21fcd824a8fe73348aae8310e3d880d9a79b5d3f",
             "locator": {
-              "end": 200,
+              "end": 201,
               "kind": "line_range",
-              "start": 175
+              "start": 176
             }
           },
           "kind": "code"
@@ -169,7 +188,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7ac14e416b82c9b4d3547ea9afcff041d038a511",
+            "blob": "7a1bc697c90301cd12a587a99b0fc71d2bce4c75",
             "content": "sha256:f0fef503a4a201278ce39c9440b4486925c3f6392ff7ca3a82f1922aa9b23efa",
             "locator": {
               "kind": "symbol",
@@ -180,7 +199,7 @@
         },
         {
           "anchor": {
-            "blob": "7ac14e416b82c9b4d3547ea9afcff041d038a511",
+            "blob": "7a1bc697c90301cd12a587a99b0fc71d2bce4c75",
             "content": "sha256:2c5341f0df119c28c9640ec80328e921a435dcb9384d33b6ac03147f3013837c",
             "locator": {
               "kind": "symbol",
@@ -196,12 +215,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7ac14e416b82c9b4d3547ea9afcff041d038a511",
+            "blob": "7a1bc697c90301cd12a587a99b0fc71d2bce4c75",
             "content": "sha256:cd34f0d590f3105feaa6b4060e7551d1bc262963768790a0dc7cf02668cd170b",
             "locator": {
-              "end": 243,
+              "end": 244,
               "kind": "line_range",
-              "start": 202
+              "start": 203
             }
           },
           "kind": "code"
@@ -209,15 +228,16 @@
       ]
     },
     "8": {
-      "note": "An anchor's content in a blob.",
+      "note": "Whole-file content hashes the blob; symbol and line-range content reuse the instance's split lines through the inclusive-range helper.\n\nAnchor: `CodeObjects.content`",
       "targets": [
         {
           "anchor": {
-            "blob": "f2f5a13feb9d376e1fe17ae88185006334186473",
-            "content": "sha256:3098099b5cf798abc118ce1a1c1abf010f10f890d85b05e183207769f97087fa",
+            "blob": "7a1bc697c90301cd12a587a99b0fc71d2bce4c75",
+            "content": "sha256:bc108c15b98e7c62712a7c9800b30e409435384d49a6664bfc08fba87fd528c5",
             "locator": {
-              "kind": "symbol",
-              "name": "content"
+              "end": 288,
+              "kind": "line_range",
+              "start": 256
             }
           },
           "kind": "code"
@@ -225,12 +245,12 @@
       ]
     },
     "9": {
-      "note": "The shared binding rule.",
+      "note": "The shared binding rule preserves qualified symbol extents and unique binding.",
       "targets": [
         {
           "anchor": {
-            "blob": "4757f36e9a477d0e286dfcc9ea3e7446977a1821",
-            "content": "sha256:b2ced6307919efd33b944f30f6c6418bab915d3d05ad6b8ac6cb29f047a21ca0",
+            "blob": "087190e7f9c60631ab5070d48959d160c195be98",
+            "content": "sha256:44560f69157a8e4c415357e36a9724de9d9a3b03f7c865be19a5df27910960e3",
             "locator": {
               "kind": "symbol",
               "name": "qualified_spans"

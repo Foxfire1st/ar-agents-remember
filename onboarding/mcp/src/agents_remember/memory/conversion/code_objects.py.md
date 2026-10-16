@@ -24,12 +24,16 @@ through the shipped extractor.
 
 - `tree_entry_mode(tree, path)` observes the exact raw candidate entry with bounded, nonrecursive `git ls-tree -z <tree> -- <path>`. Unlike recursive leaf inventory it sees an empty tree or a tree of empty subtrees. It returns the mode or `None` for true absence; a failed Git read raises `CodeObjectError`. Generated-copy declaration admission uses this observation before filtered blob lookup; the shared recursive inventory remains leaf-oriented.
 
-- Code-object mode snapshots retain symlink blobs and reject symbol extraction through them. [10]
+
+- Tree inventory and mode snapshots retain symlink entry blobs, with link_paths supplying explicit symbol-extraction context. [10]
+
+
 - Symbol and content locators use explicit symlink context. [11]
+
 - `prefetch(blob_ids)` reads uncached blobs in batches of 1,500 through `read_git_blobs_bytes`, and wraps
-  any failure as `CodeObjectError`. `blob`, `has_blob` and `line_count` read single objects.
+  any failure as `CodeObjectError`. `blob` and `has_blob` read single objects; `line_count` reuses the instance's blob-keyed split-line representation.
 - **`has_blob(blob_id)` tells a missing object from a Git failure (MIK-R09, L09 review R3-2, ruling
-  2026-09-30T19:16:07).** It asks `git cat-file -e` first: Git's documented not-found exit (`_GIT_NOT_FOUND`, 1, with
+  2026-09-30T19:16:07).** An already cached blob returns `True`; for uncached objects it asks `git cat-file -e` first: Git's documented not-found exit (`_GIT_NOT_FOUND`, 1, with
   no error) is `False`; for an object that exists it asks `cat-file -t` for the type (`blob` is `True`); any other
   failure raises `CodeObjectError` naming Git's stderr ("the object store cannot say whether it holds …"), and a
   timeout still raises `subprocess.TimeoutExpired`. Before, any non-zero exit read as "absent". Callers:
@@ -44,7 +48,9 @@ through the shipped extractor.
   name binds more than once (a module-level `def run` and a local `run = …`): if exactly one span is nested
   in no other definition of the file (`_outermost`), that span is the claim's construct.
 - `content(blob, locator, path)` is the anchor `content` for a `file`, `symbol` or `line_range` locator
-  (`anchor_content.content_identity` over `range_bytes`), or `None` when it does not resolve there.
+  (`anchor_content.content_identity` over `range_from_lines` for a resolved range), or `None` when it does not resolve there. Whole-file content hashes the original blob without splitting it.
+- `_blob_lines` keeps the LF-only byte lines once per blob ID per `CodeObjects` instance. Repeated line counts and symbol/range content requests reuse those same lines across source paths. This is instance-local conversion reuse, not a persistent parsed-file store or a worklist/verdict cache.
+- The raw blob in `_blobs` and its split representation in `_lines` coexist for the instance lifetime. The split byte values, list and per-line objects add memory cost; the incremental cost and final-cut peak/RSS are unmeasured. No memory reduction or 1 GB claim follows from this optimization.
 
 ### Conventions
 
@@ -84,16 +90,23 @@ No configured live documentation source was available for this pass.
 
 The object store's read-only surface.
 
-- The class and its caches. [1]
+- The read-only class retains raw blobs and instance-local blob-keyed split lines; no persistent worklist is stored. [1]
+
 - A commit by exact name. [2]
 - Every commit with a prefix, so ambiguity is seen. [3]
-- A commit's file-to-blob map. [4]
+
+- A commit's regular-file and symlink blob map remains read-only and mode-aware. [4]
+
 - Git's not-found exit, and a Git failure named rather than read as absent (R3-2). [5]
 - Batched blob reads. [6]
 - Symbol extraction is cached by blob, grammar and path, preserves the selected symlink context, and supports the explicit top-level reading for recorded claims. [7]
 - Exact nonrecursive entry-mode observation distinguishes present empty trees from absence without broadening recursive source inventory. [12]
-- An anchor's content in a blob. [8]
-- The shared binding rule. [9]
+
+- Whole-file content hashes the blob; symbol and line-range content reuse the instance's split lines through the inclusive-range helper. [8]
+
+
+- The shared binding rule preserves qualified symbol extents and unique binding. [9]
+
 
 ### Cross-Repo References
 

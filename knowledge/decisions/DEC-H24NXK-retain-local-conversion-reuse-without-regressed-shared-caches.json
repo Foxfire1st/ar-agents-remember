@@ -1,0 +1,130 @@
+{
+  "admission": {
+    "criteria": [
+      "real_alternatives",
+      "constrains_future_work"
+    ],
+    "justification": "The choice rejects restoring shared caches and first-view changes merely to recover a historical conversion time; future optimization must justify those distinct regressions and memory costs instead of treating local conversion reuse as approval of the removed design."
+  },
+  "alternatives": [
+    {
+      "option": "Retain conversion-local scan/split hunks and restore shared parser, memo, index and first-view code to the base.",
+      "reason": "The kept local hunks preserve conversion bytes and deliver a measured gain independently of the regressed shared changes; a separate cut measurement supplied the actual retained result.",
+      "status": "chosen"
+    },
+    {
+      "option": "Retain the full wider shared-cache and first-view implementation with the original measured conversion path.",
+      "reason": "First-view and index timings were slower than their controls and the parsed memo failed its admitted memory condition; conversion gain did not justify those regressions.",
+      "reconsider_when": "A separately authorized implementation demonstrates nonregression for the affected first-view/index behavior and satisfies its applicable memory and correctness requirements; the historical conversion number alone is not sufficient. Changes to the first-view composition/memo, index-build or validator parse owners, or to the approved R59/R85 performance and memory requirements, reopen examination of those grounds. A trigger requests that examination; it does not establish measured nonregression, memory compliance or authorization to reverse the chosen cut.",
+      "status": "rejected"
+    }
+  ],
+  "consequences": [
+    "The 20-second conversion target remains missed; retained gain is not full-packet performance acceptance.",
+    "The retained CodeObjects split-lines representation consumes additional memory alongside raw blobs; final-cut peak/RSS and incremental cache cost are unmeasured.",
+    "Removed parsed-store, process-memo, standby, prewarm and index changes are not supplied by the surviving conversion-local helpers."
+  ],
+  "context": "A wider performance implementation improved cold conversion but made first-view and incremental-index controls slower. Its conversion path shared the parser/memo/input readers being removed, so retaining the whole measured path was incompatible with removing the regressions.",
+  "decider": "Architect under developer D304, with06:22 and07:20:05 amendments and bounded F1 successor ruling",
+  "id": "DEC-H24NXK",
+  "links": [
+    {
+      "relation": "constrains",
+      "target": "INV-V2QBEP"
+    },
+    {
+      "relation": "constrains",
+      "target": "route:mcp/src/agents_remember/memory/conversion"
+    },
+    {
+      "alternative": 1,
+      "relation": "reconsider_on",
+      "target": {
+        "blob": "5ea5df2cf694eec99b36b6695d06c40dbf6e731d",
+        "content": "sha256:bc49e2984cd48308fd306bf2fa6e7467240c21bf19b945682638ba128edb2f8b",
+        "locator": {
+          "kind": "file"
+        },
+        "path": "mcp/src/agents_remember/application/review_tree_knowledge.py"
+      }
+    },
+    {
+      "alternative": 1,
+      "relation": "reconsider_on",
+      "target": {
+        "blob": "0ca2cf19b0a09be69c114410accb428ab3c6aafe",
+        "content": "sha256:94a6118087041a991934dc8933cb5b87b1229d68c4d1ef6dc8211998ec898514",
+        "locator": {
+          "kind": "file"
+        },
+        "path": "mcp/src/agents_remember/application/review_leaf_view_memo.py"
+      }
+    },
+    {
+      "alternative": 1,
+      "relation": "reconsider_on",
+      "target": {
+        "blob": "6793c369c3e9e5a9793d6d0ce262a94d418c8820",
+        "content": "sha256:fbf732c03ab8f9392b7cc17d59d774423c59483f1e9a2cff36c8be11805d6dfb",
+        "locator": {
+          "kind": "file"
+        },
+        "path": "mcp/src/agents_remember/memory/knowledge_index/build.py"
+      }
+    },
+    {
+      "alternative": 1,
+      "relation": "reconsider_on",
+      "target": {
+        "blob": "c5d6b3b9d5470c70186e01f9d8361a8d07250f2e",
+        "content": "sha256:708663d5b1b7d23856a8590d86b91601a3e86b642660deebe50bc72050c360ce",
+        "locator": {
+          "kind": "file"
+        },
+        "path": "mcp/src/agents_remember/memory_quality/knowledge_validator/parsed.py"
+      }
+    },
+    {
+      "alternative": 1,
+      "relation": "reconsider_on",
+      "target": {
+        "id": "MIK-R59",
+        "packet": "requirements/MIK-R59-v1-first-view-cold-reads-and-gate-cost.md",
+        "task": {
+          "path": "260928_maintained-invariant-knowledge",
+          "repository": "agents-remember"
+        },
+        "version": "v1"
+      }
+    },
+    {
+      "alternative": 1,
+      "relation": "reconsider_on",
+      "target": {
+        "id": "MIK-R85",
+        "packet": "requirements/MIK-R85-v1-the-base-conversion-and-a-migration-sized-leaf.md",
+        "task": {
+          "path": "260928_maintained-invariant-knowledge",
+          "repository": "agents-remember"
+        },
+        "version": "v1"
+      }
+    }
+  ],
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "notes/run3/L59-D304-L59-LANDS-ONLY-THE-CONVERSION-GAIN-THE-SLOWER-PARTS-GO.json (06:22 boundary and07:20:05 accepted gain); notes/run3/L59-DIFF-READ-OF-THE-FINAL-CUT-SPLIT-ROW-LOST-ITS-LAST-CALLER.json (07:56:58 amendment); final-handover-A005.md and F1-delta-check-A005.md",
+        "notes/reports/reviewer/7d3c489a-75ec-4ba0-bb95-a21ba430d463/role-launch/sealed-findings-memory-M001.json#L59-M1-F07"
+      ],
+      "path": "knowledge-handoff-A005.json"
+    },
+    "handoffEntry": "L59-D304-retained-conversion-cost-owner",
+    "leaf": "260928-MIK-L59",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-decision/v1",
+  "status": "active",
+  "supersedes": []
+}

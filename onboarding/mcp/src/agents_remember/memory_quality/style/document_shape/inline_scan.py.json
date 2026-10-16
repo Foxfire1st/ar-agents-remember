@@ -1,13 +1,50 @@
 {
   "path": "mcp/src/agents_remember/memory_quality/style/document_shape/inline_scan.py",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "feb330826f111adec42f9e4703be0f1f052b5ce5",
+        "content": "sha256:88af3125b32ae1fea53ea77a4eeebcbd55219ae935d66ba2f30fb41b74354745",
+        "locator": {
+          "kind": "symbol",
+          "name": "cell_boundaries"
+        }
+      },
+      "id": "RLZ-V632K8",
+      "invariant": "INV-V2QBEP",
+      "origin": {
+        "handoffEntry": "MIK-R85@v1 §2",
+        "leaf": "260928-MIK-L59"
+      },
+      "rationale": "The boundary scanner preserves escaped-pipe and code-span interpretation; its rows_of caller invokes it only for pipe-bearing lines.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "feb330826f111adec42f9e4703be0f1f052b5ce5",
+        "content": "sha256:506082a61ed7395642c726c0384c88c012dd37123b4e2d36fc2caf3acea01a38",
+        "locator": {
+          "kind": "symbol",
+          "name": "cell_spans_from_boundaries"
+        }
+      },
+      "id": "RLZ-XPP9S2",
+      "invariant": "INV-V2QBEP",
+      "origin": {
+        "handoffEntry": "MIK-R85@v1 §2",
+        "leaf": "260928-MIK-L59"
+      },
+      "rationale": "Cell spans reuse the supplied divider positions instead of rescanning the line.",
+      "role": "support"
+    }
+  ],
   "references": {
     "1": {
-      "note": "Defines the function `backtick_runs` (lines 20-37) — Every maximal run of backticks, as ``(start, length)``..",
+      "note": "Every maximal run of backticks is located without consulting backslash escapes.",
       "targets": [
         {
           "anchor": {
-            "blob": "eedbe14c54d1a0ac265e98dabb9bf2bf76080285",
+            "blob": "feb330826f111adec42f9e4703be0f1f052b5ce5",
             "content": "sha256:c68b6ce0809606a0a427d0b33518fffe89dec5373324726693ef053d1ef87b29",
             "locator": {
               "kind": "symbol",
@@ -15,27 +52,15 @@
             }
           },
           "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "eedbe14c54d1a0ac265e98dabb9bf2bf76080285",
-            "content": "sha256:1d46b431bb97c2e417d1f20c51aa9d511cd2575902f7bf5344615a3ee91f78a4",
-            "locator": {
-              "end": 37,
-              "kind": "line_range",
-              "start": 20
-            }
-          },
-          "kind": "code"
         }
       ]
     },
     "2": {
-      "note": "Defines the function `code_span_ranges` (lines 59-82) — Half-open ``(start, end)`` ranges covering each code span, delimiters included..",
+      "note": "Defines the function `code_span_ranges` — Half-open ``(start, end)`` ranges covering each code span, delimiters included.",
       "targets": [
         {
           "anchor": {
-            "blob": "eedbe14c54d1a0ac265e98dabb9bf2bf76080285",
+            "blob": "feb330826f111adec42f9e4703be0f1f052b5ce5",
             "content": "sha256:15a688d9b80160b3c515d7609aa104a780940b70000ff97700baebe568cd95f4",
             "locator": {
               "kind": "symbol",
@@ -47,11 +72,11 @@
       ]
     },
     "3": {
-      "note": "Defines the function `cell_boundaries` (lines 66-83) — Indexes of the pipes that divide this line into table cells..",
+      "note": "Defines the function `cell_boundaries` — Indexes of the pipes that divide this line into table cells.",
       "targets": [
         {
           "anchor": {
-            "blob": "eedbe14c54d1a0ac265e98dabb9bf2bf76080285",
+            "blob": "feb330826f111adec42f9e4703be0f1f052b5ce5",
             "content": "sha256:88af3125b32ae1fea53ea77a4eeebcbd55219ae935d66ba2f30fb41b74354745",
             "locator": {
               "kind": "symbol",
@@ -63,11 +88,11 @@
       ]
     },
     "4": {
-      "note": "Defines the function `enclosing_span_end` (lines 86-90).",
+      "note": "Defines the function `enclosing_span_end`.",
       "targets": [
         {
           "anchor": {
-            "blob": "eedbe14c54d1a0ac265e98dabb9bf2bf76080285",
+            "blob": "feb330826f111adec42f9e4703be0f1f052b5ce5",
             "content": "sha256:ef8d7c7d3046534ef312b5eb9da5e4b851b5b935fa87275a0067f2fbd84b113f",
             "locator": {
               "kind": "symbol",
@@ -79,12 +104,12 @@
       ]
     },
     "5": {
-      "note": "Defines the function `cell_spans` (lines 93-116) — Where each cell of a table row sits, with GFM's optional outer pipes removed..",
+      "note": "Cell offsets preserve optional outer pipes and reuse supplied boundaries without rescanning.",
       "targets": [
         {
           "anchor": {
-            "blob": "eedbe14c54d1a0ac265e98dabb9bf2bf76080285",
-            "content": "sha256:65c7ea86b01e60472dd1eb15e7bd3036af255e9d61b2a8b1c68b7b325715246a",
+            "blob": "feb330826f111adec42f9e4703be0f1f052b5ce5",
+            "content": "sha256:1f260d0972581bc9fe3e479e50ac1096f12dd791cab63ee20298722254d39a4d",
             "locator": {
               "kind": "symbol",
               "name": "cell_spans"
@@ -94,28 +119,11 @@
         },
         {
           "anchor": {
-            "blob": "eedbe14c54d1a0ac265e98dabb9bf2bf76080285",
-            "content": "sha256:4e5c1374705e3eb999c3510777cfaba5ff045725120af55b2c547334e087df35",
-            "locator": {
-              "end": 116,
-              "kind": "line_range",
-              "start": 93
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "6": {
-      "note": "Defines the function `split_row` (lines 119-121) — The cells of a table row, stripped..",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "eedbe14c54d1a0ac265e98dabb9bf2bf76080285",
-            "content": "sha256:807529a8c51f16f63781fab833f2995dc32aea2a9f8a9664e463efadadeeff8d",
+            "blob": "feb330826f111adec42f9e4703be0f1f052b5ce5",
+            "content": "sha256:506082a61ed7395642c726c0384c88c012dd37123b4e2d36fc2caf3acea01a38",
             "locator": {
               "kind": "symbol",
-              "name": "split_row"
+              "name": "cell_spans_from_boundaries"
             }
           },
           "kind": "code"
@@ -140,7 +148,7 @@
         },
         {
           "anchor": {
-            "blob": "eedbe14c54d1a0ac265e98dabb9bf2bf76080285",
+            "blob": "feb330826f111adec42f9e4703be0f1f052b5ce5",
             "content": "sha256:5e5b7bb39ce895364b7eccfd432d2b3d56f8d1c8af3c43f4ee75928d0f30a546",
             "locator": {
               "end": 18,
@@ -170,7 +178,7 @@
         },
         {
           "anchor": {
-            "blob": "eedbe14c54d1a0ac265e98dabb9bf2bf76080285",
+            "blob": "feb330826f111adec42f9e4703be0f1f052b5ce5",
             "content": "sha256:5e5b7bb39ce895364b7eccfd432d2b3d56f8d1c8af3c43f4ee75928d0f30a546",
             "locator": {
               "end": 18,
