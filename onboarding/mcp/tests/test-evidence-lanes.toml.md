@@ -67,6 +67,10 @@ The grant and developer-dashboard modules have their declared L3 lanes; direct-l
 
 The conversion-cost scan/split regression module is selected once in unit-regression. This adds no lane, budget change or invocation claim.
 
+## Current scoped contract
+
+`test_capsule_replay_integrity.py`, `test_memory_review_lane.py`, `test_role_capsule_audiences.py`, `test_role_capsule_manifest_edges.py`, `test_role_step_up.py`, `test_step_up_choice_validation.py` and `test_step_up_recovery.py` are selected in `unit-regression`. These registrations add no lane or case-budget policy and certify no invocation or pass.
+
 ## Evidence
 
 - The deletion-cancellation module is declared once in unit-regression; membership selects tests and proves no invocation. [853]
@@ -143,3 +147,5 @@ Source declarations, mirrors and fixture assertions are not executed acceptance.
 - Source-owned canonicalization preserves seven lane identities and every per-lane membership set; validator-link-target and the split writer/worklist modules are declared in unit-regression, not newly executed evidence. [851]
 
 - The conversion-cost module is declared in unit-regression; selection is not execution. [854]
+
+- Seven new modules are added to unit-regression: capsule replay integrity, memory review lane, role capsule audiences, manifest edges, role step up, step-up choice validation and step-up recovery. Existing lane identities, other memberships and case-budget policy are not changed. [855]

@@ -34,7 +34,7 @@ Prepared ordinary/remove publications retain each document with its owning task 
 
 The parent-master publication predicate includes an available parent when master synchronization changes it, when a create/replace/set_field payload explicitly contains waitsFor, or when an existing document’s normalized dependency list changes: (original.waitsFor or []) != (doc.waitsFor or []). Thus replacing a nonempty waitsFor list by omitting that field now triggers parent refresh, even if the parent row itself is unchanged. None and [] compare as the same empty dependency list. The resolved parent must still have accepted source bytes. This is the operative RF01 source account, not an unconditional all-path no-stale-master or execution-currentness finding. Historically, F01 cc238585 used only the explicit-key trigger in addition to master_sync.changed and left omitted-replacement dependency removal outside that trigger; retain that earlier defect and evidence as history, not as a current implementation claim.
 
-task_doc is the canonical mutating author. get/read_steps are removed and return operation-removed with canonical JSON/rendered-file guidance; surviving observations use file tools and linkage_report. begin/record answers retain reviewState, while grant display belongs to rendered task/dashboard. fields_file for create/replace/set_field and section_body_file for set_section are mutually exclusive with their inline values: one absolute regular UTF-8 input is read once, then checked against its byte budget and reported with its digest. This is not a pre-read allocation bound. Rich identity, preview and successful masterSync facts remain in the whole result; bounded delivery uses write phrases, create's renderedPath, changed reviewState, and wouldLose/diff with the independently retained diff location. For a validly addressed parent, master synchronization failures remain answered master-sync-failed refusals. Invalid caller master references, including cross-series addresses, are checked by the shared master_json_path_from_ref resolver with refusal=TaskDocError after retirement-proof comparison and before publication. The actual shared mutable allowlist lives in task_doc_phrases, and does not admit seriesContractPath/enclosures as generic fields.
+task_doc is the canonical mutating author. get/read_steps are removed and return operation-removed with canonical JSON/rendered-file guidance; surviving observations use file tools and linkage_report. begin/record answers retain code reviewState and any present independent memoryReviewState, with reviewKind naming the selected lane, while grant display belongs to rendered task/dashboard. fields_file for create/replace/set_field and section_body_file for set_section are mutually exclusive with their inline values: one absolute regular UTF-8 input is read once, then checked against its byte budget and reported with its digest. This is not a pre-read allocation bound. Rich identity, preview and successful masterSync facts remain in the whole result; bounded delivery uses write phrases, create's renderedPath, code/memory review states and reviewKind on review mutations, and wouldLose/diff with the independently retained diff location. For a validly addressed parent, master synchronization failures remain answered master-sync-failed refusals. Invalid caller master references, including cross-series addresses, are checked by the shared master_json_path_from_ref resolver with refusal=TaskDocError after retirement-proof comparison and before publication. The actual shared mutable allowlist lives in task_doc_phrases, and does not admit seriesContractPath/enclosures as generic fields.
 
 Current candidate validation first calls `task_doc_field_homes.enforce_prose_field_homes`, then `enforce_waits_for_write`, before retirement-proof comparison and the shared named-master validation, then disposition/review authority, unresolved-work preservation, terminal status, master completion, register shape and execution-topology checks. Reserved freeform headings/header labels are grandfathered by normalized multiplicity: existing occurrences may be edited or removed, but a new extra reserved occurrence refuses. Nonempty `waitsFor` is validated only when explicitly supplied by `create`, `replace`, or `set_field`; `None`/empty lists return before kind/target checks. That nonempty write requires a subTask, not self, a readable non-sprint master, listed non-abandoned targets, no detected foreign-master child, and no dependency cycle containing the candidate. Missing child payloads are not themselves a target refusal; list membership and the loader predicates matter. This is write-time validation, not start authorization.
 
@@ -205,7 +205,18 @@ An explicit `waitsFor` field on `create`/`replace`/`set_field`, or a changed nor
 > **Retained historical source account — superseded by the current contract:**
 > get returns readable directGrant as response-only evidence; TaskDocument and set_field acquire no grant field. Branch review needs explicit canonical task_name/slug selection, a live grant and no open direct sibling. Enclosed leaf start/attach continues to bind an enclosure; grant-backed role preparation uses the master series contract without creating one. Strict authoring, publication/CAS, retirement and step ownership remain unchanged.
 
+## Current Contract
+
+The repository task-root lock still covers authoritative preparation, validation and publication. Generic and route records now ask candidate_identity_for_review for the selected lane's binding; lane result shaping keeps independent memoryReviewState/reviewKind visible. After run_task_doc_call returns, with_review_step_up adds advice for a successful blocking review. That settings read is advisory and outside the lock: a caught settings error cannot turn an already-published review into a refusal or justify replaying it. Canonical-file guidance for removed reads, by-file input rules, source-CAS, parent synchronization and all existing candidate checks remain unchanged.
+
+
+The governing workflow opens an independent memory review after CODE PASS on the same task using begin_review/record_review with reviewKind=memory. It has its own immutable baseline and shrinking IDs, under the same settings limit and extra-round approval rule, and never resets code reviewState. The signed rollout applies only to memory reviews begun after L88 lands; already-underway reviews (L168, L56, L57, L59) finish with their sealed-report workflow, with no migration/backfill. This describes the candidate contract, not a claim that the serving build already supports it.
+
+This account is bound to the candidate source, not a claim of a running serving build or a fresh execution/acceptance verdict. Existing historical accounts remain historical.
+
 ## Evidence
+
+
 
 - The facade serializes source preparation through run_task_doc_call and dispatches flat decision/question edits through their extracted owner. [33]
 
@@ -383,3 +394,13 @@ constant, by `mcp/tests/test_tool_response_conformance.py::test_task_doc_descrip
 
 
 - Ordinary and remove operations prepare per-root document pairs for the same source-CAS transaction. [34]
+
+- Worker/Curator typed review census, record-only exclusion and unknown history. [35]
+
+- Reason admission, threshold and differing-harness/model inheritance boundary. [36]
+
+- Record-only memory identity comes from memory authority, never the sibling code root. [37]
+
+- File-local implementation of the stated contract; caller-owned effects and governing workflow are separate evidence. [38]
+
+- File-local implementation of the stated contract; caller-owned effects and governing workflow are separate evidence. [39]

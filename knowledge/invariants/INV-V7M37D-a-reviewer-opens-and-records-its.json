@@ -8,9 +8,9 @@
   },
   "applicability": "Every independent leaf code review and its separate memory check.",
   "conditions": [
-    "CODE rounds and separate MEMORY passes use the settings-defined limit, with approved additional rounds; sealed finding IDs and each lane's separate report and count are kept.",
-    "A round or pass beyond that limit needs recorded approval from the task's Architect or the developer, recorded by the Manager; this does not transfer Reviewer bookkeeping or Manager gate authority.",
-    "When candidate findings are closed and only the Worker's record remains to repair, the same Reviewer may record the shrinking result on its last recorded round without begin_review or a count increase, only on the authority-proven unchanged candidate; a changed or unproven candidate requires begin_review."
+    "Code uses reviewState; newly begun memory reviews use reviewKind=memory and memoryReviewState after rollout.",
+    "Each lane preserves its sealed baseline and shrinking IDs, current settings limit and approved extra rounds.",
+    "Record-only unchanged-candidate checks add no try; existing underway checks are not migrated or backfilled."
   ],
   "exclusions": [
     "The Manager's acceptance of the verdict for the gate, which stays the Manager's."
@@ -28,9 +28,9 @@
     "leaf": "260928-MIK-L99",
     "task": "260928-MIK"
   },
-  "revision": 2,
+  "revision": 3,
   "schema": "ar-invariant/v1",
-  "statement": "A Reviewer opens and records its ordinary leaf code review rounds itself through existing operations, while memory checks retain separate sealed reports, IDs and a pass count without resetting code state or bypassing ordinary limits and sealed-ID refusals.",
+  "statement": "The Reviewer owns ordinary code rounds and newly begun post-landing memory rounds in separate task-document lanes, with independent sealed findings, reports and counts under the same settings limit and recorded approvals. Memory recording never resets passed code. Underway pre-rollout memory reviews finish through their existing sealed-file lane without backfill.",
   "status": "proposed",
   "supersedes": []
 }

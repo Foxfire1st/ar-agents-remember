@@ -3,7 +3,7 @@
   "proves": [
     {
       "anchor": {
-        "blob": "76bc4e03dad8f1005ff4fc7eb5f0534c839db1b0",
+        "blob": "9946e7fc31fa11992782193f4af92050e7c18e46",
         "content": "sha256:3fd748ec64359ef4a82172912513ed082ea7ba4c79bf07c9b2ab9a744fe925c0",
         "locator": {
           "kind": "symbol",
@@ -20,7 +20,7 @@
     },
     {
       "anchor": {
-        "blob": "76bc4e03dad8f1005ff4fc7eb5f0534c839db1b0",
+        "blob": "9946e7fc31fa11992782193f4af92050e7c18e46",
         "content": "sha256:62c4c180c456dab8b2ff35749a5aa6c1b3bade743f7a577efe4a41942747ae72",
         "locator": {
           "kind": "symbol",
@@ -68,17 +68,34 @@
         }
       ]
     },
+    "10": {
+      "note": "The semantic test change is only audience=all in fixture_manifest_document. One introductory determinism bullet is rewrapped without changing words. Existing property assertions, test definitions and synthetic source bodies are unchanged; sections projection is covered separately.\n\nAnchor: Current test/support source",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9946e7fc31fa11992782193f4af92050e7c18e46",
+            "content": "sha256:7f8f1e61b40684046d38a6a451ab8ec2c61330a5404e576406dcaeaddf183512",
+            "locator": {
+              "end": 1199,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
     "2": {
       "note": "The carried skill channel these cases pin.\n\nAnchor: \"One reference per skill the selected seat declares, in declaration order.\"; \"One optional skill reference with its origin.\"",
       "targets": [
         {
           "anchor": {
-            "blob": "e0c363f53732c65054fa825f478956800f102db7",
+            "blob": "762c104a0bcdc0375416163993d106dc37c5fb18",
             "content": "sha256:ff997d6960152a420d7b0d10a870728d9c9ba02fba08c8054c25edb8dda93a71",
             "locator": {
-              "end": 190,
+              "end": 214,
               "kind": "line_range",
-              "start": 153
+              "start": 177
             },
             "path": "mcp/src/agents_remember/models/role_capsules/compiler.py"
           },
@@ -86,7 +103,7 @@
         },
         {
           "anchor": {
-            "blob": "59951ae0d9258670a0277ede0b38068df22b48c3",
+            "blob": "3283618c85b66070d98755f6d21a3f2e66f407ff",
             "content": "sha256:99345eadac6c75c3a4347255ea1a62f481d3d3897c7260b3dc146d718db7da09",
             "locator": {
               "end": 431,
@@ -240,7 +257,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "72dc9fa336d744d13e1ba811c6965cafb7a8ff9f",
+            "blob": "fde424ce1c4b108a144b9b7ab8f0d9fe8a807bf1",
             "content": "sha256:ca9e17369d26c82f56020182e6b3d2aab135ccfd389587897d4c4effca97501f",
             "locator": {
               "kind": "symbol",
@@ -269,7 +286,7 @@
         },
         {
           "anchor": {
-            "blob": "f5f5e06015b413b25d9850b5cbec4666d649c85f",
+            "blob": "9246c5aff746378c5e0de36d3e71590ca5a58652",
             "content": "sha256:2c2967c88ee9f13f34c15c2a1f36231718875757913489e62894d4d551dd6035",
             "locator": {
               "kind": "symbol",

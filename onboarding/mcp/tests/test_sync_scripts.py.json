@@ -3,7 +3,7 @@
   "proves": [
     {
       "anchor": {
-        "blob": "a8a9b6fbbeb021b300db9105743af40e2764b54d",
+        "blob": "b588526786203f00c55dfdd6413030b636dc1523",
         "content": "sha256:713db2fc9a66c6019298bca81e6a4cb4edfc4fc287002d1dfc5cd7b2893bb53a",
         "locator": {
           "kind": "symbol",
@@ -20,7 +20,7 @@
     },
     {
       "anchor": {
-        "blob": "a8a9b6fbbeb021b300db9105743af40e2764b54d",
+        "blob": "b588526786203f00c55dfdd6413030b636dc1523",
         "content": "sha256:8964d88607d9a4930e00748d124b947a47eb3ec038b99c815a7a6baa2e4f9c66",
         "locator": {
           "kind": "symbol",
@@ -37,7 +37,7 @@
     },
     {
       "anchor": {
-        "blob": "a8a9b6fbbeb021b300db9105743af40e2764b54d",
+        "blob": "b588526786203f00c55dfdd6413030b636dc1523",
         "content": "sha256:40b893cb03e01c4531019ce3bd905a44ce6ab2db2d7b2d1eddb98fb896e0f812",
         "locator": {
           "kind": "symbol",
@@ -54,7 +54,7 @@
     },
     {
       "anchor": {
-        "blob": "a8a9b6fbbeb021b300db9105743af40e2764b54d",
+        "blob": "b588526786203f00c55dfdd6413030b636dc1523",
         "content": "sha256:d14f832e04e37b46f60b246384ae87c2ae4d04665cdb778d0be630131b6f9c80",
         "locator": {
           "kind": "symbol",
@@ -73,7 +73,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "a8a9b6fbbeb021b300db9105743af40e2764b54d",
+        "blob": "b588526786203f00c55dfdd6413030b636dc1523",
         "content": "sha256:875fcf4be4ec36c73771b353e1cda604414bfc547fcbbd286670731d055377a5",
         "locator": {
           "end": 121,
@@ -143,7 +143,7 @@
         },
         {
           "anchor": {
-            "blob": "a8a9b6fbbeb021b300db9105743af40e2764b54d",
+            "blob": "b588526786203f00c55dfdd6413030b636dc1523",
             "content": "sha256:7b95197c93f288ae1830ba7b56ae9ea89b7be9746ad053dbe3c6b02ea778e3e6",
             "locator": {
               "kind": "symbol",
@@ -165,7 +165,7 @@
         },
         {
           "anchor": {
-            "blob": "a8a9b6fbbeb021b300db9105743af40e2764b54d",
+            "blob": "b588526786203f00c55dfdd6413030b636dc1523",
             "content": "sha256:4e0529e3637638a8fcb3ec332ba11b08f795075b03df756a6448b360c6ba1ab8",
             "locator": {
               "kind": "symbol",
@@ -176,7 +176,7 @@
         },
         {
           "anchor": {
-            "blob": "a8a9b6fbbeb021b300db9105743af40e2764b54d",
+            "blob": "b588526786203f00c55dfdd6413030b636dc1523",
             "content": "sha256:69a86d56d8892411b8c6e86ada9e4c5dc679b8d8dd75cc1b83cdb58ce6a4a6bb",
             "locator": {
               "kind": "symbol",
@@ -252,36 +252,65 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a8a9b6fbbeb021b300db9105743af40e2764b54d",
+            "blob": "b588526786203f00c55dfdd6413030b636dc1523",
             "content": "sha256:8964d88607d9a4930e00748d124b947a47eb3ec038b99c815a7a6baa2e4f9c66",
             "locator": {
-              "end": 313,
+              "end": 317,
               "kind": "line_range",
-              "start": 280
+              "start": 284
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "a8a9b6fbbeb021b300db9105743af40e2764b54d",
+            "blob": "b588526786203f00c55dfdd6413030b636dc1523",
             "content": "sha256:40b893cb03e01c4531019ce3bd905a44ce6ab2db2d7b2d1eddb98fb896e0f812",
             "locator": {
-              "end": 347,
+              "end": 351,
               "kind": "line_range",
-              "start": 323
+              "start": 327
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "a8a9b6fbbeb021b300db9105743af40e2764b54d",
+            "blob": "b588526786203f00c55dfdd6413030b636dc1523",
             "content": "sha256:e398991d72cf06771641a6a073f313211e5baf864bd393c7321fb2d91557b6b3",
             "locator": {
-              "end": 423,
+              "end": 427,
               "kind": "line_range",
-              "start": 364
+              "start": 368
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "The shared-profile marker participates in the positive canonical/copy loop; the seeded missing-copy case selects the Worker acceptance clause, not the profile. The two completion-truth markers and retired omissions remain.\n\nAnchor: Positive reach and Worker-specific seeded control",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b588526786203f00c55dfdd6413030b636dc1523",
+            "content": "sha256:828b48ac3014febba22489ae481ce5ed60c101ed43f9543f36d0652cef5aa7e0",
+            "locator": {
+              "end": 133,
+              "kind": "line_range",
+              "start": 124
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "b588526786203f00c55dfdd6413030b636dc1523",
+            "content": "sha256:ca3ac12c457ae49ca2ff7b4004154aed958dcd921551c0c307702e26562aea14",
+            "locator": {
+              "end": 636,
+              "kind": "line_range",
+              "start": 598
             }
           },
           "kind": "test"

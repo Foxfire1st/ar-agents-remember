@@ -16,7 +16,7 @@ executable statement that it happened.
 
 ## Current source account
 
-The projection guard quotes exactly two completion-truth clauses: (core/acceptance.md, "Terminal truth is mechanical; acceptance is the owner's.") and (roles/worker.md, "A finished turn is not AR acceptance."). The two formerly listed clauses (manager deliverable inspection; worker parent report notice) stay out under the retired-wording register (test_sync_scripts.py:114-118). No third current clause is claimed. Canonical and all nine generated targets must retain each marker; removing one from a packaged copy is detected. Copy/swap recovery and exact inventory guards remain.
+The projection guard retains two completion-truth clauses: (core/acceptance.md, "Terminal truth is mechanical; acceptance is the owner's.") and (roles/worker.md, "A finished turn is not AR acceptance."). The two formerly listed clauses (manager deliverable inspection; worker parent report notice) stay out under the retired-wording register (test_sync_scripts.py:114-118). A third projected clause now comes from `reference/shared-writing-profile.md`: “A clearer rewrite is never proof of preserved meaning.” It is a reach check for guidance, not another completion-truth owner or a semantic validator. Canonical and all nine generated targets must retain each marker; removing one from a packaged copy is detected. Copy/swap recovery and exact inventory guards remain.
 
 ## Code Commentary
 
@@ -39,7 +39,7 @@ Four readings, each defended by a different case class:
 - **The corrected boundary clauses reach every copy** — `BoundaryPropagationTests` (459) re-asserts the
   shipped completion-truth clauses against canonical **plus** the nine copies through
   `boundary_locations()` / `boundary_surface_texts()` / `missing_clause_locations()`, and
-  `test_a_clause_missing_from_one_...` deletes one clause from one copy to prove the reach case bites.
+  `test_a_clause_missing_from_one_...` deletes the Worker acceptance clause from one copy to prove that reach case bites.
 
 `BoundaryClause` (101) is deliberately a **reach** table, not a second vocabulary: *which* clauses each
 surface owes is the doctrine guard's subject (`mcp/tests/test_lifecycle_turn_truth_doctrine.py`), and
@@ -66,6 +66,10 @@ drift into two spellings of one boundary.
 - **Clause reach is not clause meaning.** This module proves a clause arrived; it does not decide what
   the clause should say. Loosening a row here to make a copy pass would defeat the guard's purpose.
 
+## Current scoped contract
+
+The new shared-profile marker is included in `PROJECTED_BOUNDARY_CLAUSES`, so the positive canonical/generated-copy reach loop checks that document too. The seeded missing-copy case explicitly selects the Worker acceptance clause; it is not a separately seeded shared-profile negative control. The two completion-truth markers and retirement exclusions remain. Executed reach checks would establish declared propagation, never equivalence of any rewritten invariant; this curation is source inspection only.
+
 ## Evidence
 
 - Declaration-backed targets, pure profile projection and the normal-sync prevalidation matrix preserve unrelated profile fields and refuse bad profiles before target mutation. [6]
@@ -91,3 +95,6 @@ No configured `Domain Documentation` source applies; the subject is the reposito
 No external repository boundary is exercised; the nine targets are this repository's own skill trees.
 
 No meaningful cross-repo references found.
+
+
+- The shared-profile marker participates in the positive canonical/copy loop; the seeded missing-copy case selects the Worker acceptance clause, not the profile. The two completion-truth markers and retired omissions remain. [7]

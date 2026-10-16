@@ -59,7 +59,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "09a340563bd51c31168737f64744393c3c680ca9",
+            "blob": "6ff9818a6a6c5a5ef08e00fc6c7b8fb6cd907840",
             "content": "sha256:81ec31ab39294ef76c2a29d36ad1b64784b8e1d91f993de8326b7598644a80ca",
             "locator": {
               "end": 18,
@@ -951,7 +951,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "af473a3e8868057c3b3061751a5c06d36531dab0",
+            "blob": "5d6364a3e0174cccc37d69d4ad9edcb9a76681c2",
             "content": "sha256:e32b026f4e11aa5b73033264e3a947639b1db8f67b7f31c8aacadc2f0ea2bfc0",
             "locator": {
               "kind": "symbol",
@@ -963,7 +963,7 @@
         },
         {
           "anchor": {
-            "blob": "af473a3e8868057c3b3061751a5c06d36531dab0",
+            "blob": "5d6364a3e0174cccc37d69d4ad9edcb9a76681c2",
             "content": "sha256:3af4cd2a0cc0480a338416e063c01aa9b5d1800e376218e5478ce2a176f1eccd",
             "locator": {
               "kind": "symbol",
@@ -1158,12 +1158,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "676446dd3dec2866b0d8b4914250105067b14d96",
+            "blob": "14a1b9fd592618df68dce84dca031287e89de2a7",
             "content": "sha256:b170672021e87a55cb733387c7330e6f1a1c68970520ee51d580f14a35fbc940",
             "locator": {
-              "end": 260,
+              "end": 263,
               "kind": "line_range",
-              "start": 260
+              "start": 263
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },
@@ -2173,12 +2173,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "676446dd3dec2866b0d8b4914250105067b14d96",
+            "blob": "14a1b9fd592618df68dce84dca031287e89de2a7",
             "content": "sha256:2fa53d75d1a4d6ef8e4c45600fb5f9678bb7206ba3b69dd24ee8963593f7ebfd",
             "locator": {
-              "end": 103,
+              "end": 105,
               "kind": "line_range",
-              "start": 103
+              "start": 105
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },
@@ -2186,12 +2186,12 @@
         },
         {
           "anchor": {
-            "blob": "676446dd3dec2866b0d8b4914250105067b14d96",
+            "blob": "14a1b9fd592618df68dce84dca031287e89de2a7",
             "content": "sha256:ef900a5b38b3a4393ac60a6d42f336d540dcb806538d4acca19a65c9c1fc194c",
             "locator": {
-              "end": 121,
+              "end": 123,
               "kind": "line_range",
-              "start": 121
+              "start": 123
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },
@@ -2958,12 +2958,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "676446dd3dec2866b0d8b4914250105067b14d96",
+            "blob": "14a1b9fd592618df68dce84dca031287e89de2a7",
             "content": "sha256:fab46d2a17b3a29cb28a509254c759df122390dcbb1ce6233793dbfcd0452542",
             "locator": {
-              "end": 157,
+              "end": 159,
               "kind": "line_range",
-              "start": 157
+              "start": 159
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },
@@ -3054,12 +3054,12 @@
         },
         {
           "anchor": {
-            "blob": "e0b3bcfc145479a365a748510d7bd04490842c91",
+            "blob": "9c3645680ef1a2c5c09b50320b7189006fa67d90",
             "content": "sha256:c9769217d4accd69822b53e04ce60b3bfa49aabd23f5d4655d2e6b5b0b9c693f",
             "locator": {
-              "end": 141,
+              "end": 63,
               "kind": "line_range",
-              "start": 138
+              "start": 60
             },
             "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/curator.md"
           },
@@ -3464,12 +3464,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f56a1f12b59c170e3b2f7e48c156a5e023dd128a",
+            "blob": "d01d128cbae6946dda02f35b63bb394573a888a2",
             "content": "sha256:6e77f12e0543c46c775700024cbb7d40d6cd0499bf89fe2e18a912063d726639",
             "locator": {
-              "end": 829,
+              "end": 805,
               "kind": "line_range",
-              "start": 816
+              "start": 792
             },
             "path": "mcp/src/agents_remember/cli/role_launch_preparation.py"
           },
@@ -3984,12 +3984,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "676446dd3dec2866b0d8b4914250105067b14d96",
+            "blob": "14a1b9fd592618df68dce84dca031287e89de2a7",
             "content": "sha256:ec0dd1c1505d15aa1f5a2934d145bf3a19e9bcb63677bac088f2d5dd07452164",
             "locator": {
-              "end": 361,
+              "end": 369,
               "kind": "line_range",
-              "start": 361
+              "start": 369
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },
@@ -4195,6 +4195,114 @@
         }
       ]
     },
+    "330": {
+      "note": "User alternatives select by manual/prior/threshold facts with no cross-scope choice carry.\n\nAnchor: Current source; preserved L88 property 324",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f341c13a99f485178e73c4ff8bf4de16267ee662",
+            "content": "sha256:ac093d6b5a4eea28a4db8eedd16a5c4d354a599e08f75d762f56fd86071f2683",
+            "locator": {
+              "end": 111,
+              "kind": "line_range",
+              "start": 32
+            },
+            "path": "mcp/src/agents_remember/cli/role_step_up.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "331": {
+      "note": "Worker code and Curator memory failures count independently; incomplete history stays unknown.\n\nAnchor: Current source; preserved L88 property 325",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "29bbfb919fa2a5e25fc3e3ee172407e92e192fc0",
+            "content": "sha256:d156649dee6626036467c78b24418be0fddb44d7cdd18fbd9d1f2ba4845c34bb",
+            "locator": {
+              "end": 240,
+              "kind": "line_range",
+              "start": 233
+            },
+            "path": "mcp/src/agents_remember/worktrees/review_history.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "332": {
+      "note": "Replacement rechecks idle and pending permission at every saved archival call.\n\nAnchor: Current source; preserved L88 property 326",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "aa5a2d6dbd1dfe96c4c37bb5b7fd96dd2824b0ef",
+            "content": "sha256:9f291b64a325fbec3872e5b2b5be867c129236e5c3cfe930860c47f889b99a19",
+            "locator": {
+              "end": 255,
+              "kind": "line_range",
+              "start": 236
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_liveness.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "333": {
+      "note": "Step-up launch metadata is reconciled through the canonical task writer.\n\nAnchor: Current source; preserved L88 property 327",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "896e9adf64c7d3264a18f5bdbb93022e01f28c07",
+            "content": "sha256:1037cdfdeb33285ec1b1e3d52a7f47f146972482b74a964da4193fc0638a083a",
+            "locator": {
+              "end": 97,
+              "kind": "line_range",
+              "start": 44
+            },
+            "path": "mcp/src/agents_remember/cli/role_step_up_decisions.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "334": {
+      "note": "Frozen detail identities and bytes are checked rather than recomputed.\n\nAnchor: Current source; preserved L88 property 328",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "682d4179b094bd4e50d1f67363fe398d5e4e40c9",
+            "content": "sha256:013fd35cb59b3e2dfca99d5eed0a2db2ae42048952a03b6a87761f58fbdd9087",
+            "locator": {
+              "end": 63,
+              "kind": "line_range",
+              "start": 38
+            },
+            "path": "mcp/src/agents_remember/cli/role_instruction_details.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "335": {
+      "note": "Only settled empty stepped-up creation failures retain saved-call retry.\n\nAnchor: Current source; preserved L88 property 329",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ccb1e9b293a9d30073d916aee6085e1ff47f6420",
+            "content": "sha256:61c4e9ff3174d88b2d951a307ebbdcee24d97a19d54ea5c80d052036f5dafa8d",
+            "locator": {
+              "end": 81,
+              "kind": "line_range",
+              "start": 54
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_outcome.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
     "34": {
       "note": "The archive hook's identity sources and confinement.\n\nAnchor: \"Where every target's identity comes from\"",
       "targets": [
@@ -4252,12 +4360,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "676446dd3dec2866b0d8b4914250105067b14d96",
+            "blob": "14a1b9fd592618df68dce84dca031287e89de2a7",
             "content": "sha256:d23e1716307e9592d3a5ec1ca9f7c2495a349f8e5ca88d6c0026e6c2ad5c72a2",
             "locator": {
-              "end": 283,
+              "end": 286,
               "kind": "line_range",
-              "start": 283
+              "start": 286
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },
@@ -4265,12 +4373,12 @@
         },
         {
           "anchor": {
-            "blob": "676446dd3dec2866b0d8b4914250105067b14d96",
+            "blob": "14a1b9fd592618df68dce84dca031287e89de2a7",
             "content": "sha256:526a643244ab1dbb0d8f374c24e9047cc62d337dcb37d130f76a0ab5725ee5b5",
             "locator": {
-              "end": 269,
+              "end": 272,
               "kind": "line_range",
-              "start": 269
+              "start": 272
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },
@@ -4623,7 +4731,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9db054f67ffb51dddb7d1826e6ad7230dd76e9be",
+            "blob": "cc2ee73183eedfded4f8d8ccfa7ecd54ea694fa4",
             "content": "sha256:b7073534eac3f4df0419c5df44e853a6378c3c6d1c07ca9fd5885220f8010212",
             "locator": {
               "kind": "symbol",

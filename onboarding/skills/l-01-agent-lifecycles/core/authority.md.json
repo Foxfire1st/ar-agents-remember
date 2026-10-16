@@ -4,11 +4,9 @@
     {
       "anchor": {
         "blob": "c43823ed0215be2bd0ae9e12b8f7c961f5f8fcbb",
-        "content": "sha256:d0c79546b37d6352f85cea0cad655e2c549c46e61c469929e3f23535b7e22ee4",
+        "content": "sha256:1c964d530cce44c4b24e70577d9c0bd935b60b642937afccb0b4ab6eb5fd767a",
         "locator": {
-          "end": 29,
-          "kind": "line_range",
-          "start": 16
+          "kind": "file"
         }
       },
       "id": "RLZ-BNWWSD",

@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "cc80bde2f56db73274b2722c1957051555a2bb0c",
-        "content": "sha256:48d7a09f73fa36dfd21dbee55c5428912fe0efe05f899663346816278f0feaaa",
+        "blob": "ef574a64f9ec5521c39db2a70a97255951f02fef",
+        "content": "sha256:9cf05c1ed30880129ed3b8491527a1bb23af76ca84e4beb4725512b6918ea120",
         "locator": {
           "kind": "symbol",
           "name": "load_agentic_settings"
@@ -21,8 +21,8 @@
     },
     {
       "anchor": {
-        "blob": "cc80bde2f56db73274b2722c1957051555a2bb0c",
-        "content": "sha256:eb0869ac4a78fcde1bc9d344e94c053a920a69908e819b0637f88c07dcf21b2e",
+        "blob": "ef574a64f9ec5521c39db2a70a97255951f02fef",
+        "content": "sha256:de96f302cddeee779ff7c93fb3235cee8bbb220900f3e0bc32da5d820df43f78",
         "locator": {
           "kind": "symbol",
           "name": "_attach_role_origins"
@@ -39,8 +39,8 @@
     },
     {
       "anchor": {
-        "blob": "cc80bde2f56db73274b2722c1957051555a2bb0c",
-        "content": "sha256:ba42e95c27da27f576a5bcc026d1761f9b3424de9984d7752d79fe75e5013146",
+        "blob": "ef574a64f9ec5521c39db2a70a97255951f02fef",
+        "content": "sha256:6d2e567bf558abc7dc40a5c381054ca64a0584d310a366e16513a38fb7af826d",
         "locator": {
           "kind": "symbol",
           "name": "_refuse_repository_role_authority"
@@ -122,6 +122,171 @@
               "start": 704
             },
             "path": "docs/reference/settings-json.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "Only effective IDs and accepted-unused execution keys remain.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9dbb6bbbe22bedfb9a73df0815fd4a48fd2af7f8",
+            "content": "sha256:b7f96a9a0c1d4c4dd0a10c966f49e118ba228e6519bc59634d2a19a189da9995",
+            "locator": {
+              "kind": "symbol",
+              "name": "_parse_harnesses"
+            },
+            "path": "mcp/src/agents_remember/kernel/_agentic_settings_sections.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "Merged parsing assembles settings and checks spawn IDs, not executable registry completeness.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ef574a64f9ec5521c39db2a70a97255951f02fef",
+            "content": "sha256:80617e5d6d0da8a18cd27c4487d6087b383b71d95e1b5a3b68da32f3e6580f2f",
+            "locator": {
+              "kind": "symbol",
+              "name": "_parse_orchestration"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Per-use layering validates role features and effective alternative distinctness.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ef574a64f9ec5521c39db2a70a97255951f02fef",
+            "content": "sha256:9cf05c1ed30880129ed3b8491527a1bb23af76ca84e4beb4725512b6918ea120",
+            "locator": {
+              "kind": "symbol",
+              "name": "load_agentic_settings"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Exact envelope source/key survives typed projection.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ef574a64f9ec5521c39db2a70a97255951f02fef",
+            "content": "sha256:11c25713eedfff4a37e06ce5cce7318f395e7d40b6cca3a796b8c0bc55e019ef",
+            "locator": {
+              "kind": "symbol",
+              "name": "_with_role_origins"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Field origins bind provider/model and authored alternative path.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ef574a64f9ec5521c39db2a70a97255951f02fef",
+            "content": "sha256:90e67f339d06a4509906d3a8949d1655eea987a519d61673979c752150005722",
+            "locator": {
+              "kind": "symbol",
+              "name": "_step_up_row_origins"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Repository alternatives are refused, including altitude rows.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ef574a64f9ec5521c39db2a70a97255951f02fef",
+            "content": "sha256:6d2e567bf558abc7dc40a5c381054ca64a0584d310a366e16513a38fb7af826d",
+            "locator": {
+              "kind": "symbol",
+              "name": "_refuse_repository_role_authority"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Test source names user-only refusal and repository file.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ae9057ab6c1eea41f64b6351acaddfc7c720f7b9",
+            "content": "sha256:a8332bd7e59b81034de5ccb4ece4be68e2b54b10cbb8306e29069da599618107",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_repository_cannot_supply_step_up"
+            },
+            "path": "mcp/tests/test_role_step_up.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "Removed execution families/fields remain accepted-unused vocabulary.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dde4a9aebceeabecba20e971cbf210ca2e00e951",
+            "content": "sha256:78d7ff988ea8a2487021fd23b3ef8cb706b2be89621f6fb62ff36662ff84526a",
+            "locator": {
+              "kind": "symbol",
+              "name": "UNUSED_ORCHESTRATION_FIELDS"
+            },
+            "path": "mcp/src/agents_remember/kernel/_agentic_settings_core.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "Loop defaults remain separate from step-up thresholds.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dde4a9aebceeabecba20e971cbf210ca2e00e951",
+            "content": "sha256:83dc3d5d9258c885b9054f7ede52253c2c01c2ef1894983e70bfcdbf5e12fda4",
+            "locator": {
+              "kind": "symbol",
+              "name": "DEFAULT_LOOP_MAX_ROUNDS"
+            },
+            "path": "mcp/src/agents_remember/kernel/_agentic_settings_core.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "Typed settings retain their independent defaults.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dde4a9aebceeabecba20e971cbf210ca2e00e951",
+            "content": "sha256:4d1fc369130d355c0fa41fe1373ceebf71abc686c664d6fe43e53bdd21970c31",
+            "locator": {
+              "kind": "symbol",
+              "name": "AgenticSettings"
+            },
+            "path": "mcp/src/agents_remember/kernel/_agentic_settings_core.py"
           },
           "kind": "code"
         }

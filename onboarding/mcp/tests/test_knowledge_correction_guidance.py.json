@@ -16,6 +16,23 @@
           "kind": "test"
         }
       ]
+    },
+    "2": {
+      "note": "Adds a compiled addressed-Curator positive guard for distinct authority/outcome clauses. Existing handoff/role marker check follows declared detail placeholders. New tests require the shared profile to teach actor/trigger/required/forbidden/quantifier/condition/exception preservation, independent boundary-case review, verbatim producer fields, frozen history and no semantic validator; actual authoring links resolve to the single profile, and turn-report reaches the explainer guide.\n\nAnchor: Current test/support source",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "49a9ad8f30a91f043b5acff2052816d4730504ff",
+            "content": "sha256:3d5be96b5eeffce0fa3af8cd66f665b83aaea782b8b7013905079db123f8ad83",
+            "locator": {
+              "end": 111,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "test"
+        }
+      ]
     }
   },
   "schema": "ar-onboarding-file/v1"

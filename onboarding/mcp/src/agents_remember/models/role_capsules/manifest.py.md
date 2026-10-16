@@ -28,7 +28,7 @@ cit:([`CapsuleCompositionManifest`], mcp/src/agents_remember/models/role_capsule
 
 **The declared vocabulary is authoritative over the manifest, not the other way round.** The
 parser is handed the frozen role and operation sets and refuses a manifest that disagrees, so
-a manifest edit cannot quietly mint a new role or a ninth operation. Three structural rules are
+a manifest edit cannot quietly mint a role or operation outside that declared vocabulary. Three structural rules are
 enforced on top of that: cit:([`_require_one_path_serves_one_identity`], mcp/src/agents_remember/models/role_capsules/manifest.py:513-553) refuses routing two identities
 at one file, cit:([`_require_operation_applicability_agrees`], mcp/src/agents_remember/models/role_capsules/manifest.py:554-601) refuses an applicability statement that
 contradicts itself, and cit:([`_require_role_skills_are_declared`], mcp/src/agents_remember/models/role_capsules/manifest.py:479-508) refuses a role whose declared skill the
@@ -63,8 +63,8 @@ or source path that the parser rejects is meant to be rejected.
 ### Invariants And Boundaries
 
 - This module parses bytes; it never opens a file, resolves a root, or reads a source.
-- The role registry is closed at nine and the operation vocabulary at eight. A manifest that
-  disagrees fails compilation instead of extending the vocabulary.
+- The compiler vocabulary is closed at ten roles and nine operations, including Bootstrap. A manifest that
+  disagrees fails compilation instead of extending the vocabulary. These compiler populations are not a claim that ten native task roles can be launched.
 - Exactly one source per instruction. Two identities routed at one path is a defect, not a
   deduplication opportunity.
 - An entry naming a source that does not exist is an error, not a skip.
@@ -82,7 +82,22 @@ or source path that the parser rejects is meant to be rejected.
 
 None recorded.
 
+## Current Contract
+
+CapsuleOperationEntry has audience="all" as a direct-construction default, but authored operation parsing now requires a nonblank audience field. Actual all/sections mode and marker validation belong to audiences.py during composition, not to this parser. CapsuleCompositionManifest carries parsed detail_references, default empty for direct construction; parse_composition_manifest obtains them from parse_detail_declarations. The frozen compiler vocabulary contains ten roles and nine operations, including Bootstrap; it is not the native dispatched-task-role roster. The earlier nine/eight numeric account is superseded, not a newly extended vocabulary. One-source-per-instruction, operation applicability and declared-skill checks remain unchanged. Merely listing ordinary references does not make a launch attachment.
+
+This account is bound to the candidate source, not a claim of a running serving build or a fresh execution/acceptance verdict. Existing historical accounts remain historical.
+
 ## Evidence
+
+
+- Launch copies detail files, substitutes paths, and records frozen revisions. [10]
+- Replay validates regular opened files, content revisions and original canonical report binding, not mutable corpus sources. [11]
+- Per-request detail artifacts use exact admitted bytes beside the handover and write-once publication. [12]
+- File-local implementation of the stated contract; caller-owned effects and governing workflow are separate evidence. [13]
+- File-local implementation of the stated contract; caller-owned effects and governing workflow are separate evidence. [14]
+- File-local implementation of the stated contract; caller-owned effects and governing workflow are separate evidence. [15]
+- File-local implementation of the stated contract; caller-owned effects and governing workflow are separate evidence. [16]
 
 ### Docs References
 
@@ -94,6 +109,9 @@ No relevant documentation found after checking live sources.
 ### Repo-Internal References
 
 - The frozen vocabulary this parser is validated against. [1]
+
+- The frozen compiler vocabulary declares ten roles and nine operations including Bootstrap; compiler vocabulary and native task-seat dispatch availability are distinct. [17]
+
 - The canonical authored metadata this module parses. [2]
 - The tracked generated copy under the governed `mcp/**` surface, produced by the propagation owner. [3]
 - Tool identities declared here are narrowed against the admitted policy, never granted. [4]

@@ -1,0 +1,24 @@
+{
+  "path": "skills/l-01-agent-lifecycles/reference/reviewer-orient-d301.md",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "New step-1 complete-diff and knowledge/sibling comparison detail; unattributed files remain in scope.\n\nAnchor: Candidate instruction body, lines 1–6",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b8e3bb19dae9b9d0e31c0cda7d0c81021e4e4827",
+            "content": "sha256:14ae0ecf03bdee7ef46fdf1de80ba056281630549d7ec76567d11ec7f231d662",
+            "locator": {
+              "end": 6,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -3,10 +3,10 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "d6fc9c48cab61bddf2118950eb2e1c6de48ff308",
-        "content": "sha256:5f419117f328889535fc531f833e60e635b52cd5aa8f0d81abdcfae3c16e56e3",
+        "blob": "b488189ccabecfeddc296a88c877fcda162e7fd9",
+        "content": "sha256:5379650548a22cd2f33240274083f90976d871e2d92d6b6d626137d5127b7fa1",
         "locator": {
-          "end": 12,
+          "end": 14,
           "kind": "line_range",
           "start": 8
         }
@@ -22,24 +22,7 @@
     },
     {
       "anchor": {
-        "blob": "d6fc9c48cab61bddf2118950eb2e1c6de48ff308",
-        "content": "sha256:0048df9616e2543f4e413bee9b4777e503666899a2ad0406f427c443009f61e0",
-        "locator": {
-          "kind": "file"
-        }
-      },
-      "id": "RLZ-3QTBC5",
-      "invariant": "INV-7E3JNX",
-      "origin": {
-        "handoffEntry": "R99-8-own-sync",
-        "leaf": "260928-MIK-L99"
-      },
-      "rationale": "Names Worker sync and supported continue arguments after Manager staging.",
-      "role": "primary-authority"
-    },
-    {
-      "anchor": {
-        "blob": "d6fc9c48cab61bddf2118950eb2e1c6de48ff308",
+        "blob": "b488189ccabecfeddc296a88c877fcda162e7fd9",
         "content": "sha256:192abee0ba936a2346e5374ed7b68c822f2a5aa8d33acffa18bbf681a1617217",
         "locator": {
           "end": 34,
@@ -58,10 +41,12 @@
     },
     {
       "anchor": {
-        "blob": "d6fc9c48cab61bddf2118950eb2e1c6de48ff308",
-        "content": "sha256:0048df9616e2543f4e413bee9b4777e503666899a2ad0406f427c443009f61e0",
+        "blob": "b488189ccabecfeddc296a88c877fcda162e7fd9",
+        "content": "sha256:e41fafc8b37c5fbba5c971104e2036dcedb4e59cfeec8b6dc49db480c0a4190e",
         "locator": {
-          "kind": "file"
+          "end": 64,
+          "kind": "line_range",
+          "start": 62
         }
       },
       "id": "RLZ-6QVTKY",
@@ -75,7 +60,7 @@
     },
     {
       "anchor": {
-        "blob": "d6fc9c48cab61bddf2118950eb2e1c6de48ff308",
+        "blob": "b488189ccabecfeddc296a88c877fcda162e7fd9",
         "content": "sha256:d0dd37230635b4bf60eb9afa2f995a981c26d820d440db56374f8aaa8e0cceca",
         "locator": {
           "end": 26,
@@ -94,10 +79,12 @@
     },
     {
       "anchor": {
-        "blob": "d6fc9c48cab61bddf2118950eb2e1c6de48ff308",
-        "content": "sha256:0048df9616e2543f4e413bee9b4777e503666899a2ad0406f427c443009f61e0",
+        "blob": "b488189ccabecfeddc296a88c877fcda162e7fd9",
+        "content": "sha256:5379650548a22cd2f33240274083f90976d871e2d92d6b6d626137d5127b7fa1",
         "locator": {
-          "kind": "file"
+          "end": 14,
+          "kind": "line_range",
+          "start": 8
         }
       },
       "id": "RLZ-GRG1X8",
@@ -111,10 +98,12 @@
     },
     {
       "anchor": {
-        "blob": "d6fc9c48cab61bddf2118950eb2e1c6de48ff308",
-        "content": "sha256:0048df9616e2543f4e413bee9b4777e503666899a2ad0406f427c443009f61e0",
+        "blob": "b488189ccabecfeddc296a88c877fcda162e7fd9",
+        "content": "sha256:5920dad602942bb5f3dc6789c82b0b637d2d6c627dbf5efaf9011f580e2b4cfb",
         "locator": {
-          "kind": "file"
+          "end": 30,
+          "kind": "line_range",
+          "start": 28
         }
       },
       "id": "RLZ-KCZHQB",
@@ -128,10 +117,12 @@
     },
     {
       "anchor": {
-        "blob": "d6fc9c48cab61bddf2118950eb2e1c6de48ff308",
-        "content": "sha256:0048df9616e2543f4e413bee9b4777e503666899a2ad0406f427c443009f61e0",
+        "blob": "b488189ccabecfeddc296a88c877fcda162e7fd9",
+        "content": "sha256:e00464c5b28be1b6aac093187945eda3d9bf9639c157ac5e832642e1c9222844",
         "locator": {
-          "kind": "file"
+          "end": 42,
+          "kind": "line_range",
+          "start": 34
         }
       },
       "id": "RLZ-MXJ3HX",
@@ -145,10 +136,10 @@
     },
     {
       "anchor": {
-        "blob": "d6fc9c48cab61bddf2118950eb2e1c6de48ff308",
-        "content": "sha256:ce9ef75a40c1628d692cf5778fbde223142c3865e98638d765124d18a8808a79",
+        "blob": "b488189ccabecfeddc296a88c877fcda162e7fd9",
+        "content": "sha256:deb3eb63aba067041c7922d01ca03a16f83c4772a224f3cef556254ded8c0d41",
         "locator": {
-          "end": 55,
+          "end": 60,
           "kind": "line_range",
           "start": 44
         }
@@ -164,12 +155,12 @@
     },
     {
       "anchor": {
-        "blob": "d6fc9c48cab61bddf2118950eb2e1c6de48ff308",
-        "content": "sha256:01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+        "blob": "b488189ccabecfeddc296a88c877fcda162e7fd9",
+        "content": "sha256:192abee0ba936a2346e5374ed7b68c822f2a5aa8d33acffa18bbf681a1617217",
         "locator": {
-          "end": 33,
+          "end": 34,
           "kind": "line_range",
-          "start": 33
+          "start": 34
         }
       },
       "id": "RLZ-X136N6",
@@ -243,6 +234,57 @@
               "end": 60,
               "kind": "line_range",
               "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "Adds completion-only own build/evidence step marking and stopping after three unsuccessful own repairs of one check/finding.\n\nAnchor: Candidate instruction body, lines 8–22",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b488189ccabecfeddc296a88c877fcda162e7fd9",
+            "content": "sha256:278d61465767324f819c14320d910a6f842717d52a77acdda173693369d1ae32",
+            "locator": {
+              "end": 22,
+              "kind": "line_range",
+              "start": 8
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "14": {
+      "note": "Adds completion-only own build/evidence step marking and stopping after three unsuccessful own repairs of one check/finding.\n\nAnchor: Candidate instruction body, lines 28–42",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b488189ccabecfeddc296a88c877fcda162e7fd9",
+            "content": "sha256:6d19eff8e0c7118ec33a566db3ede73e9a148a64ad0600319f83fa3dda751245",
+            "locator": {
+              "end": 42,
+              "kind": "line_range",
+              "start": 28
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "15": {
+      "note": "Adds completion-only own build/evidence step marking and stopping after three unsuccessful own repairs of one check/finding.\n\nAnchor: Candidate instruction body, lines 44–60",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b488189ccabecfeddc296a88c877fcda162e7fd9",
+            "content": "sha256:deb3eb63aba067041c7922d01ca03a16f83c4772a224f3cef556254ded8c0d41",
+            "locator": {
+              "end": 60,
+              "kind": "line_range",
+              "start": 44
             }
           },
           "kind": "code"

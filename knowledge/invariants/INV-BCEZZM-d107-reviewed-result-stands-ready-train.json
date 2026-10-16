@@ -7,7 +7,9 @@
   },
   "applicability": "The six ruled sentences, each standing in exactly one place: review, recovery, coordination, curation (producer and origin-evidence), orientation.",
   "conditions": [
-    "Each ruling stands once; old database-era passages stay absent."
+    "The serving build, not the leaf source, produces leaf memory; every run states its clean main-checkout ruler.",
+    "Curator orientation, curation and recovery each deliver this essential boundary inline; step-detail extraction cannot hide it.",
+    "No installation, disabled guard, substituted producer or alternate permission route is authorized."
   ],
   "exclusions": [
     "Rulings owned by other leaves packets."
@@ -24,9 +26,9 @@
     "leaf": "260928-MIK-L101",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-invariant/v1",
-  "statement": "D107, reviewed-result-stands, ready-train, single producer, external-sources, and permission non-bypass all stated once each and delivered.",
+  "statement": "Common D107, reviewed-result-stands, ready-train, external-sources and permission non-bypass rulings retain their governing homes and are delivered; the serving-build producer boundary is inline in every Curator stage.",
   "status": "proposed",
   "supersedes": []
 }

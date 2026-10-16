@@ -382,14 +382,45 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6c14bda6d478f9d220063774ea8b13852e31a0f0",
+            "blob": "c806e36dfe030ed31b40bfbe0b067abee3a5124b",
             "content": "sha256:9b8a0bd77133a911eda02d798594b6181aac50e9399f1000649385784cc6dc27",
             "locator": {
-              "end": 20,
+              "end": 22,
               "kind": "line_range",
-              "start": 20
+              "start": 22
             },
             "path": "skills/l-01-agent-lifecycles/roles/manager.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "22": {
+      "note": "Selected operation passages and separately frozen named-step detail artifacts preserve source revisions without implying installation or new grants.\n\nAnchor: Current source; preserved L88 property 18",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "682d4179b094bd4e50d1f67363fe398d5e4e40c9",
+            "content": "sha256:3090ebc67acc49b612c0a88971545b2fb79bb76a7df7a3a73b914cc3ae12f91a",
+            "locator": {
+              "end": 98,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "mcp/src/agents_remember/cli/role_instruction_details.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "762c104a0bcdc0375416163993d106dc37c5fb18",
+            "content": "sha256:157949db0f9acdf0d70ebbd6959fb382dccab34600bf2e6cfd9b12f0b9079a74",
+            "locator": {
+              "end": 531,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "mcp/src/agents_remember/models/role_capsules/compiler.py"
           },
           "kind": "code"
         }

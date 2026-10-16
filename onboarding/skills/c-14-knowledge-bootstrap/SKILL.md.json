@@ -4,11 +4,9 @@
     {
       "anchor": {
         "blob": "975f43c2f7fc87b502c806d5d7d1269dc05b945e",
-        "content": "sha256:ee7ff889e65eb93eac9bf22dae6d22f733731d71fd5080e38b8493f723c7f2f4",
+        "content": "sha256:c7017eae1c0844fac8b131ba660f3b3cdcfdff3db906d8878d492f4f42446365",
         "locator": {
-          "end": 64,
-          "kind": "line_range",
-          "start": 39
+          "kind": "file"
         }
       },
       "id": "RLZ-5P4B5T",

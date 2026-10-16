@@ -3,12 +3,12 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "30e8680484ad3aab080ccfe4214bc7bce151f63d",
+        "blob": "80ab1147327fd0f19c47329487efe7f60ecb234d",
         "content": "sha256:012d7f3d967f181785205f452f928dff02fd7fe94ebb2a02a58b7aecf0995ad2",
         "locator": {
-          "end": 700,
+          "end": 720,
           "kind": "line_range",
-          "start": 685
+          "start": 705
         }
       },
       "id": "RLZ-DYXENX",
@@ -22,8 +22,8 @@
     },
     {
       "anchor": {
-        "blob": "30e8680484ad3aab080ccfe4214bc7bce151f63d",
-        "content": "sha256:65cc76a11a57f6bc017feabb1513bc8ecf63e52e9530265b18dd0aaedc9c83c9",
+        "blob": "80ab1147327fd0f19c47329487efe7f60ecb234d",
+        "content": "sha256:87d05fd7a93170bab3e82d82c7e34a0824f68458ea300006be355ee2f0414efb",
         "locator": {
           "kind": "file"
         }
@@ -39,7 +39,7 @@
     },
     {
       "anchor": {
-        "blob": "30e8680484ad3aab080ccfe4214bc7bce151f63d",
+        "blob": "80ab1147327fd0f19c47329487efe7f60ecb234d",
         "content": "sha256:c0c988e3a5aa7cfc196905181be4425b87e970b3cc912c7532f2829f9572c522",
         "locator": {
           "end": 54,
@@ -58,8 +58,8 @@
     },
     {
       "anchor": {
-        "blob": "30e8680484ad3aab080ccfe4214bc7bce151f63d",
-        "content": "sha256:65cc76a11a57f6bc017feabb1513bc8ecf63e52e9530265b18dd0aaedc9c83c9",
+        "blob": "80ab1147327fd0f19c47329487efe7f60ecb234d",
+        "content": "sha256:87d05fd7a93170bab3e82d82c7e34a0824f68458ea300006be355ee2f0414efb",
         "locator": {
           "kind": "file"
         }
@@ -99,6 +99,23 @@
             "content": "sha256:037e6dd8830c1a9bde9693d029fe858877dee48ce41c40792e41453a44e43604",
             "locator": {
               "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The new roles table/paragraphs document one user-layer, nonnested stepUp alternative, default positive afterTries=3 only for Worker/Curator, code versus memory recorded-round tries, record-only nontries and exact-key refusals. The next start validates catalog choices before normal idle-seat retirement; active turn/prompt refuses. Explicit step_up reason/UI Step up use the same alternative without adding permission authority. Cross-harness/model omissions use identified host defaults, durable decisions retain task choice, and reviewer limits/findings do not reset. Removing the alternative changes the next start, not the running actor.\n\nAnchor: Current test/support source",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "80ab1147327fd0f19c47329487efe7f60ecb234d",
+            "content": "sha256:87d05fd7a93170bab3e82d82c7e34a0824f68458ea300006be355ee2f0414efb",
+            "locator": {
+              "end": 884,
+              "kind": "line_range",
+              "start": 1
             }
           },
           "kind": "code"

@@ -23,7 +23,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1d6d4c77ad41eb2f9783975d929a3519d218f22f",
+            "blob": "231672944ca7b848d89e9ce82d950d95d92e5cc2",
             "content": "sha256:8abcac7ac806d6277beff77b9b51e3953c55561505ab4744fc0585e543fd6f1a",
             "locator": {
               "kind": "symbol",
@@ -39,7 +39,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1d6d4c77ad41eb2f9783975d929a3519d218f22f",
+            "blob": "231672944ca7b848d89e9ce82d950d95d92e5cc2",
             "content": "sha256:f32b6275f794d9ad3884ff37bce17d86f6829bac3125192d4135fe46d59727d1",
             "locator": {
               "kind": "symbol",
@@ -55,7 +55,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1d6d4c77ad41eb2f9783975d929a3519d218f22f",
+            "blob": "231672944ca7b848d89e9ce82d950d95d92e5cc2",
             "content": "sha256:b09d8d5e945152990ce57bcd51775a8cc29cde422b5e13f9276d8bc8e91064c5",
             "locator": {
               "kind": "symbol",
@@ -87,12 +87,29 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1d6d4c77ad41eb2f9783975d929a3519d218f22f",
+            "blob": "231672944ca7b848d89e9ce82d950d95d92e5cc2",
             "content": "sha256:cf7c1e6ebbeec1f5d33e9e87ee6575b281ffe9949c1fbe4073eb3615a68c99fc",
             "locator": {
-              "end": 950,
+              "end": 975,
               "kind": "line_range",
-              "start": 946
+              "start": 971
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "20": {
+      "note": "The only source change gives every synthetic operation an explicit audience=all, matching the extended manifest schema without changing expected synthetic operation bodies. All existing no-read-tree-write, role acquisition, task-digest, skill-reference/tool-boundary and resource registry cases remain.\n\nAnchor: Current test/support source",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "231672944ca7b848d89e9ce82d950d95d92e5cc2",
+            "content": "sha256:ad3d94e6364f84bb66c0c762b33c3ee884d2fb94066e18b3964f3c9321ecec05",
+            "locator": {
+              "end": 975,
+              "kind": "line_range",
+              "start": 1
             }
           },
           "kind": "test"

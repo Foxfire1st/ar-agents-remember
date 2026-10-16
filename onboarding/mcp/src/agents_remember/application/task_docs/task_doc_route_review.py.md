@@ -22,14 +22,14 @@ selected_path)`) into `build_route_review`, so the stamped review binds the cano
 
 ### Settings and record-only seams
 
-`review_settings_limit` loads `orchestration.loops.defaults.maxRounds` afresh and translates a settings refusal to `review-settings-unreadable`. `_begin_task_review_bound` passes the selected number to the transition. `candidate_root_for_review` prefers an existing leaf code worktree and otherwise uses the configured repository root; unresolved identity cannot admit a same-round result. Generic and route recorders pass both the settings limit and authority-resolved identity. `_state_payload` takes `candidateTree` from the route builder, not from caller route evidence.
+`review_settings_limit` loads `orchestration.loops.defaults.maxRounds` afresh and translates a settings refusal to `review-settings-unreadable`. `_begin_task_review_bound` passes the selected number to the transition. `candidate_root_for_review` selects the contract memory worktree or configured memory root for memory reviews; code/default still prefers an existing leaf code worktree and otherwise uses the configured repository root; unresolved identity cannot admit a same-round result. Generic and route recorders pass both the settings limit and authority-resolved identity. `_state_payload` takes `candidateTree` from the route builder, not from caller route evidence.
 
 
 ### Logic
 
 `TaskDocCall(dry_run, branch_addressed)` are call-level knobs, not a task edit. Ordinary record_route_review uses the exact leaf enclosure. Branch-addressed review opts in for the exact canonical task_name/slug subTask, requires its current readable external grant, and uses the exact task-root series contract. Missing/unreadable authority names that leaf and the grant givers, never a settings switch. Review evidence still binds the selected document intent and the exact contract mode; create/replace cannot author it. A grant does not waive atomic-child review policy.
 
-`_RouteReviewBinding` captures the contract, task root, exact selected path and branch-addressed opt-in. `_record_route_review_bound` requires a review object. For a master it requires the canonical series/task.json binding and calls `build_master_route_review`; for a leaf it enforces exact leaf or sanctioned branch-addressed binding, rejects atomic-child route review, and calls `build_route_review` with the exact `ResolvedTaskDocument`. Both branches pass the plane-stamped route candidate and independently resolved candidate identity into the shared fixed-list transition, then revalidate the whole document. The legacy positional `_record_route_review` preserves the call shape and delegates to the same binding form.
+`_RouteReviewBinding` captures the contract, task root, exact selected path and branch-addressed opt-in. `_record_route_review_bound` requires a review object and refuses memory kind: memory publication uses record_review with reviewKind=memory. For a master it requires the canonical series/task.json binding and calls `build_master_route_review`; for a leaf it enforces exact leaf or sanctioned branch-addressed binding, rejects atomic-child route review, and calls `build_route_review` with the exact `ResolvedTaskDocument`. Both branches pass the plane-stamped route candidate and independently resolved candidate identity into the shared fixed-list transition, then revalidate the whole document. The legacy positional `_record_route_review` preserves the call shape and delegates to the same binding form.
 
 `_require_route_review_binding` is the L16-R9 error-dialect owner: a missing binding names the
 recovery ("re-stamp the series contract (series-contract.md) or use branch_addressed=true for
@@ -61,7 +61,25 @@ dialect.
 
 None recorded.
 
+## Current Contract
+
+Explicit reviewKind=memory selects the independent memory candidate: contract.memory_worktree when present, otherwise the configured memory root. Default/code still selects an existing leaf code worktree or repository root. `candidate_identity_for_review` validates the lane before resolving its actual byte identity. `with_review_lane_result` retains present memory state and labels review mutations, with memory-specific updated phrases. Route evidence stays code-only: memory results use record_review and are refused by record_route_review before route stamping. Generic create cannot seed memoryReviewState, and replace cannot change or erase it. Existing branch grants, exact task binding and route/intent authority remain separate.
+
+
+The governing workflow opens an independent memory review after CODE PASS on the same task using begin_review/record_review with reviewKind=memory. It has its own immutable baseline and shrinking IDs, under the same settings limit and extra-round approval rule, and never resets code reviewState. The signed rollout applies only to memory reviews begun after L88 lands; already-underway reviews (L168, L56, L57, L59) finish with their sealed-report workflow, with no migration/backfill. This describes the candidate contract, not a claim that the serving build already supports it.
+
+This account is bound to the candidate source, not a claim of a running serving build or a fresh execution/acceptance verdict. Existing historical accounts remain historical.
+
 ## Evidence
+
+
+- Worker/Curator typed review census, record-only exclusion and unknown history. [10]
+- Reason admission, threshold and differing-harness/model inheritance boundary. [11]
+- Record-only memory identity comes from memory authority, never the sibling code root. [12]
+- File-local implementation of the stated contract; caller-owned effects and governing workflow are separate evidence. [13]
+- File-local implementation of the stated contract; caller-owned effects and governing workflow are separate evidence. [14]
+- File-local implementation of the stated contract; caller-owned effects and governing workflow are separate evidence. [15]
+- File-local implementation of the stated contract; caller-owned effects and governing workflow are separate evidence. [16]
 
 ### Docs References
 

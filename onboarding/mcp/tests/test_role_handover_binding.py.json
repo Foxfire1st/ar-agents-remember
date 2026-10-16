@@ -16,6 +16,23 @@
           "kind": "test"
         }
       ]
+    },
+    "2": {
+      "note": "Taskless Architect planning passes role=architect to the resolver and keeps existing binding/no-invented-task/repository assertions.\n\nAnchor: `RoleScopedCapsuleBindingTests.test_taskless_architect_handover_uses_planning_without_inventing_task_or_repository`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3cffd7b61e9afc8bed9670f5bd57ead01d157132",
+            "content": "sha256:3c3c470e5bc61ffc6ee77a3b5f93b52f70bad8e59d4c41e1960c39e897067e6e",
+            "locator": {
+              "end": 538,
+              "kind": "line_range",
+              "start": 400
+            }
+          },
+          "kind": "test"
+        }
+      ]
     }
   },
   "schema": "ar-onboarding-file/v1"

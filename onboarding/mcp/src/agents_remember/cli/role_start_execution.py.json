@@ -1,0 +1,74 @@
+{
+  "path": "mcp/src/agents_remember/cli/role_start_execution.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Exact replay precedes fresh preparation and validated successor reservation.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c460327e477ba9c4fa93f5fe7be8e19e3dfec963",
+            "content": "sha256:a3cd108c46833a0d03c201ec296dbb0919c60be1f704910913d16dc5d78b93d0",
+            "locator": {
+              "kind": "symbol",
+              "name": "start_execution"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The diagnostic scope resets on exit.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f960a935d832cbf64b99d7e8ef97475006c2ded2",
+            "content": "sha256:27a21076f0e2e2a6cbbaa89d9c879b6d558ae58de94d7e8e404c70058cc62849",
+            "locator": {
+              "kind": "symbol",
+              "name": "tolerate_unreadable_review"
+            },
+            "path": "mcp/src/agents_remember/tasks/launch_review_read.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Validated alternatives may infer a base holder without interrupt permission.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c5f0fd4e23fc4ee1450b3d7bb6e848d778444264",
+            "content": "sha256:28ed3ba379a84204cd2fd43dab3275fa460762586c4add5b10e2be722bf94101",
+            "locator": {
+              "kind": "symbol",
+              "name": "step_up_request"
+            },
+            "path": "mcp/src/agents_remember/cli/role_step_up_runtime.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Canonical malformed review source test preserves task bytes and strict ordinary reads.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ae9057ab6c1eea41f64b6351acaddfc7c720f7b9",
+            "content": "sha256:248d1aae20300d5167d7bf66fc2191b16fc2f4f3bb410e7524fb8b402426a89f",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_unreadable_review_launches_base_with_warning"
+            },
+            "path": "mcp/tests/test_role_step_up.py"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

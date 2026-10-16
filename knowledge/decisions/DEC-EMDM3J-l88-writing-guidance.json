@@ -1,0 +1,45 @@
+{
+  "admission": {
+    "criteria": [
+      "constrains_future_work"
+    ],
+    "justification": "A writing heuristic cannot judge retained meaning or authorize a new semantic gate."
+  },
+  "alternatives": [
+    {
+      "option": "Use the shared STE-inspired guide plus independent facet/case meaning review before ordinary writer publication.",
+      "reason": "A writing heuristic cannot judge retained meaning or authorize a new semantic gate.",
+      "status": "chosen"
+    },
+    {
+      "option": "Treat word counts, fluency or a style checker as semantic equivalence.",
+      "reason": "A writing heuristic cannot judge retained meaning or authorize a new semantic gate.",
+      "reconsider_when": "Only a later developer-approved requirement that explicitly revises this boundary and names independently checked replacement safeguards can reopen it; implementation drift, prettier text or a budget pass alone cannot.",
+      "status": "rejected"
+    }
+  ],
+  "consequences": [
+    "A writing heuristic cannot judge retained meaning or authorize a new semantic gate."
+  ],
+  "context": "Clearer wording can conceal a changed actor, condition, exclusion or evidence identity.",
+  "decider": "Developer-approved requirement corpus and L88 signed rulings",
+  "id": "DEC-EMDM3J",
+  "links": [
+    {
+      "relation": "constrains",
+      "target": "route:skills/l-01-agent-lifecycles"
+    }
+  ],
+  "origin": {
+    "handoff": {
+      "path": "whole-curation.json"
+    },
+    "handoffEntry": "L88-writing-guidance",
+    "leaf": "260928-MIK-L88",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-decision/v1",
+  "status": "active",
+  "supersedes": []
+}

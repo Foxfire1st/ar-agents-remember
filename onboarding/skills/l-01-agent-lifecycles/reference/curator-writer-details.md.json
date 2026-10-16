@@ -1,0 +1,61 @@
+{
+  "path": "skills/l-01-agent-lifecycles/reference/curator-writer-details.md",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "bcdffc827a6aabd156e73f322a46e69d89a8e969",
+        "content": "sha256:aef9769872505f712226bfc8d924dead6a24d3c07a185ead6836acf9e51f95c5",
+        "locator": {
+          "end": 31,
+          "kind": "line_range",
+          "start": 29
+        }
+      },
+      "id": "RLZ-PAE912",
+      "invariant": "INV-VN0A3Q",
+      "origin": {
+        "handoffEntry": "MIK-R48@v2 rule 7",
+        "leaf": "260928-MIK-L48"
+      },
+      "rationale": "The writer detail explicitly requires a restated family guarantee to be named as a changed history row with an authored effect, and leaves the family’s own revision to the writer.",
+      "role": "primary-authority"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "New step-2 writer command/options and step-3 family/external/readback detail; same admitted writer remains owner.\n\nAnchor: Candidate instruction body, lines 3–18",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bcdffc827a6aabd156e73f322a46e69d89a8e969",
+            "content": "sha256:efd53bc392b890c52fca2f5f8c01b346991a6405bb6c13579126f01bc26f3fd2",
+            "locator": {
+              "end": 18,
+              "kind": "line_range",
+              "start": 3
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "New step-2 writer command/options and step-3 family/external/readback detail; same admitted writer remains owner.\n\nAnchor: Candidate instruction body, lines 20–40",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bcdffc827a6aabd156e73f322a46e69d89a8e969",
+            "content": "sha256:ad12e3e0f430f470376a7cfa1c03a5a1eb7a05902d007e4faf6febd908ccde1d",
+            "locator": {
+              "end": 40,
+              "kind": "line_range",
+              "start": 20
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

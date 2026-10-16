@@ -26,6 +26,13 @@ The coordination operation instruction.
 
 The instruction owns the manager-side coordination transaction the lifecycle uses.
 
+## Current composition and authoring contract
+
+The common instructions retain explicit canonical bindings, allowed role starts, sibling leaf preparation with role_start_set, direct peer repair handovers, same-request recovery and exact-seat refusal. Held messages, permission-prompt handling, file payloads and ordinary report returns retain their established boundaries.
+
+Only the paragraph assigning Manager report reading, next-seat/time tracking and the sender retry occasion is marked Manager-only; the following all-role marker restores common message-delivery and permission rules. This is a delivery-audience change, not a transfer of Manager work to other coordinating roles or an independent new authority.
+
+
 ## Evidence
 
 No separate reference list: the file's sidecar carries the realization entries this leaf re-anchored.
@@ -151,3 +158,8 @@ Inherited reference 5 commentary (not a revalidated target):
 The byte-equal package copy is a distribution carrier, not an independent role, task or permission authority. Whole-file source evidence does not certify inherited statements, execution, grading or the whole card.
 
 - The authored source owns this contract; the distribution copy is not a separate authority. [2]
+
+
+- Marks common operation text all-role and isolates the Manager-only report/retry-occasion paragraph; no substantive start/message rule is rewritten. [3]
+
+- Marks common operation text all-role and isolates the Manager-only report/retry-occasion paragraph; no substantive start/message rule is rewritten. [4]

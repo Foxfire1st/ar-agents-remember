@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "c8ae8b3a89a31564b1a962d39d7e271d0d682c88",
+        "blob": "aa5a2d6dbd1dfe96c4c37bb5b7fd96dd2824b0ef",
         "content": "sha256:fe67014225f7601da3d42996d7f8a37bb82a036d4ce1597f9be7fda7114b34d0",
         "locator": {
           "kind": "symbol",
@@ -21,12 +21,12 @@
     },
     {
       "anchor": {
-        "blob": "c8ae8b3a89a31564b1a962d39d7e271d0d682c88",
+        "blob": "aa5a2d6dbd1dfe96c4c37bb5b7fd96dd2824b0ef",
         "content": "sha256:784243a52fdd92c085e7878f22e824d1273e31ebb71ea9f786c36661821eb62c",
         "locator": {
-          "end": 413,
+          "end": 459,
           "kind": "line_range",
-          "start": 366
+          "start": 412
         }
       },
       "id": "RLZ-7CJ59T",
@@ -40,12 +40,12 @@
     },
     {
       "anchor": {
-        "blob": "c8ae8b3a89a31564b1a962d39d7e271d0d682c88",
+        "blob": "aa5a2d6dbd1dfe96c4c37bb5b7fd96dd2824b0ef",
         "content": "sha256:fe67014225f7601da3d42996d7f8a37bb82a036d4ce1597f9be7fda7114b34d0",
         "locator": {
-          "end": 337,
+          "end": 383,
           "kind": "line_range",
-          "start": 298
+          "start": 344
         }
       },
       "id": "RLZ-7FJJDH",
@@ -59,7 +59,7 @@
     },
     {
       "anchor": {
-        "blob": "c8ae8b3a89a31564b1a962d39d7e271d0d682c88",
+        "blob": "aa5a2d6dbd1dfe96c4c37bb5b7fd96dd2824b0ef",
         "content": "sha256:d50fdc1880e9960c3005b929057f234787a220d435edcf1b55b56d25735dce49",
         "locator": {
           "kind": "symbol",
@@ -77,8 +77,8 @@
     },
     {
       "anchor": {
-        "blob": "c8ae8b3a89a31564b1a962d39d7e271d0d682c88",
-        "content": "sha256:a706aee8179cc1d51a66c8183e5880695e937db24063a8cc8c5ce88cd164b7cc",
+        "blob": "aa5a2d6dbd1dfe96c4c37bb5b7fd96dd2824b0ef",
+        "content": "sha256:b899be83916082b41cd49fc8be07bb667884652ed0513ac4c0e662015e6c2825",
         "locator": {
           "kind": "symbol",
           "name": "_reconcile_prior_execution"
@@ -100,7 +100,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c8ae8b3a89a31564b1a962d39d7e271d0d682c88",
+            "blob": "aa5a2d6dbd1dfe96c4c37bb5b7fd96dd2824b0ef",
             "content": "sha256:d50fdc1880e9960c3005b929057f234787a220d435edcf1b55b56d25735dce49",
             "locator": {
               "kind": "symbol",
@@ -175,6 +175,75 @@
             }
           },
           "kind": "code"
+        }
+      ]
+    },
+    "14": {
+      "note": "Digest-bound same-request replay reconciles decisions and empty successors.\n\nAnchor: Current source; preserved L88 property 14",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "aa5a2d6dbd1dfe96c4c37bb5b7fd96dd2824b0ef",
+            "content": "sha256:b899be83916082b41cd49fc8be07bb667884652ed0513ac4c0e662015e6c2825",
+            "locator": {
+              "end": 129,
+              "kind": "line_range",
+              "start": 72
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "15": {
+      "note": "Replacement authority remains while step-up adds unconditional idle/prompt checks.\n\nAnchor: Current source; preserved L88 property 15",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "aa5a2d6dbd1dfe96c4c37bb5b7fd96dd2824b0ef",
+            "content": "sha256:c6833e31ea412f48c772fde4a4737ca53aace5d9191325a83939a2139dfa45e9",
+            "locator": {
+              "end": 233,
+              "kind": "line_range",
+              "start": 132
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "16": {
+      "note": "Every saved archival call renews host liveness.\n\nAnchor: Current source; preserved L88 property 16",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "aa5a2d6dbd1dfe96c4c37bb5b7fd96dd2824b0ef",
+            "content": "sha256:9f291b64a325fbec3872e5b2b5be867c129236e5c3cfe930860c47f889b99a19",
+            "locator": {
+              "end": 255,
+              "kind": "line_range",
+              "start": 236
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "17": {
+      "note": "Test source checks turn/prompt/unreachable recovery and no archive/create.\n\nAnchor: Current source; preserved L88 property 17",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "61e380376e4feed4dcb6ae8653515246d8ee8388",
+            "content": "sha256:0852502c1203e1419f3b32b1960bc9c536649c61bcc450c55214020d11fe0ade",
+            "locator": {
+              "end": 85,
+              "kind": "line_range",
+              "start": 55
+            },
+            "path": "mcp/tests/test_step_up_recovery.py"
+          },
+          "kind": "test"
         }
       ]
     },

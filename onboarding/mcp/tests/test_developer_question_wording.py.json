@@ -3,8 +3,8 @@
   "proves": [
     {
       "anchor": {
-        "blob": "387f7657e824f6bdf14d470a49720a49a625a57f",
-        "content": "sha256:560c310997b2a7ff934065bb8a489b3e1be52e294cb7e8876cc385b280e4eab1",
+        "blob": "b76fd5126da4c8aabfd318bd6ad9fc20b6a48315",
+        "content": "sha256:4c95b6bccacc8aacdae473649b4c1a1dcd2455ba4e2c6c7b8faae6b5f2f82805",
         "locator": {
           "kind": "symbol",
           "name": "test_question_operations_keep_conditional_routing_and_pending_recovery"
@@ -20,12 +20,11 @@
     },
     {
       "anchor": {
-        "blob": "387f7657e824f6bdf14d470a49720a49a625a57f",
+        "blob": "b76fd5126da4c8aabfd318bd6ad9fc20b6a48315",
         "content": "sha256:ece909d587bfb4b1b2f1d3b82d362afc61f400b5f280c1627bd99c4047e67928",
         "locator": {
-          "end": 97,
-          "kind": "line_range",
-          "start": 50
+          "kind": "symbol",
+          "name": "test_each_parent_has_upward_notice_and_unchanged_downward_answer_duties"
         }
       },
       "facet": "Requires every starter role to carry the authority triage, the unchanged upward relay, the quoted downward answer and the permission notice with its named or not-supplied permission.",
@@ -38,7 +37,7 @@
     },
     {
       "anchor": {
-        "blob": "387f7657e824f6bdf14d470a49720a49a625a57f",
+        "blob": "b76fd5126da4c8aabfd318bd6ad9fc20b6a48315",
         "content": "sha256:19d28f4d232caef57721e6e512145676b42b4b3527a8f5cea05dc692b37fecd5",
         "locator": {
           "kind": "symbol",
@@ -55,7 +54,7 @@
     },
     {
       "anchor": {
-        "blob": "387f7657e824f6bdf14d470a49720a49a625a57f",
+        "blob": "b76fd5126da4c8aabfd318bd6ad9fc20b6a48315",
         "content": "sha256:feb497f5846ac4fefd8dfeb12f419f02f3fd18ca884682e332b423036f00f58d",
         "locator": {
           "kind": "symbol",
@@ -72,7 +71,7 @@
     },
     {
       "anchor": {
-        "blob": "387f7657e824f6bdf14d470a49720a49a625a57f",
+        "blob": "b76fd5126da4c8aabfd318bd6ad9fc20b6a48315",
         "content": "sha256:f1e0c160a5d37c58d17e9940f3c860554276bd061ffde0c3fcd11fc243c2bb10",
         "locator": {
           "kind": "symbol",
@@ -121,14 +120,15 @@
       ]
     },
     "3": {
-      "note": "The three operations keep conditional routing and pending recovery.\n\nAnchor: `test_question_operations_keep_conditional_routing_and_pending_recovery`",
+      "note": "Orientation retains conditional routing and pending recovery; Reviewer/review and Curator/curation are checked as composed role-plus-operation pairs.",
       "targets": [
         {
           "anchor": {
-            "blob": "731bf63474ee6041fdc12bbf748378e86bbca44f",
-            "content": "sha256:a2844d5eacbbfa62864441cd24984ee9e40d109eef7400a8752c36b350cd1f05",
+            "blob": "b76fd5126da4c8aabfd318bd6ad9fc20b6a48315",
+            "content": "sha256:4c95b6bccacc8aacdae473649b4c1a1dcd2455ba4e2c6c7b8faae6b5f2f82805",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "test_question_operations_keep_conditional_routing_and_pending_recovery"
             }
           },
           "kind": "test"
@@ -170,7 +170,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "387f7657e824f6bdf14d470a49720a49a625a57f",
+            "blob": "b76fd5126da4c8aabfd318bd6ad9fc20b6a48315",
             "content": "sha256:feb497f5846ac4fefd8dfeb12f419f02f3fd18ca884682e332b423036f00f58d",
             "locator": {
               "kind": "symbol",

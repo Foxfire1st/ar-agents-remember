@@ -3,12 +3,10 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "97d02ec0fcdfdcba31ef393276ce3cd8d735e157",
-        "content": "sha256:3ba3edbfdd25cfde62d88b18e05d72986c92697caeb524114e7629d575957629",
+        "blob": "fa6015bebb4f7c199a276cad8ca7e37ee11a3854",
+        "content": "sha256:ca145110727b155248065c232598631a1f7a0f9958c8e78852c2b4b5b3707fde",
         "locator": {
-          "end": 2250,
-          "kind": "line_range",
-          "start": 1
+          "kind": "file"
         }
       },
       "id": "RLZ-9FX5WR",
@@ -23,14 +21,16 @@
   ],
   "references": {
     "1": {
-      "note": "All 38 capsules carry ceil(raw*11/10) budgets recorded with the texts they measure.",
+      "note": "All 38 capsules carry capped eleven-tenths budgets recorded with the texts they measure.\n\nAnchor: Current source; preserved L88 property 1",
       "targets": [
         {
           "anchor": {
-            "blob": "d7a0d90828d1b6ce06b2555df4608b408b1ddff4",
-            "content": "sha256:8460fc4185b567e8190fcb25d617628308f10b93b5d4f92153559356d7b4990f",
+            "blob": "fa6015bebb4f7c199a276cad8ca7e37ee11a3854",
+            "content": "sha256:ca145110727b155248065c232598631a1f7a0f9958c8e78852c2b4b5b3707fde",
             "locator": {
-              "kind": "file"
+              "end": 548,
+              "kind": "line_range",
+              "start": 1
             }
           },
           "kind": "code"
@@ -55,14 +55,16 @@
       ]
     },
     "3": {
-      "note": "The registry retains 38 ceil-based rows and records the 21 L54 capsule renewals with their authority and growth provenance.",
+      "note": "The registry retains 38 capped capsule rows, fourteen step-file rows and the earlier L54 decision account; L88 decisions state the new ceiling and growth provenance.\n\nAnchor: Current source; preserved L88 property 3",
       "targets": [
         {
           "anchor": {
-            "blob": "8d0d6f9d69cda64e9f2be34e06881def8db0acf4",
-            "content": "sha256:d494745e207ae082795c0c2cca7727ea2d40c2141a52da119458e00a95a361b2",
+            "blob": "fa6015bebb4f7c199a276cad8ca7e37ee11a3854",
+            "content": "sha256:ca145110727b155248065c232598631a1f7a0f9958c8e78852c2b4b5b3707fde",
             "locator": {
-              "kind": "file"
+              "end": 548,
+              "kind": "line_range",
+              "start": 1
             }
           },
           "kind": "code"
@@ -78,6 +80,57 @@
             "content": "sha256:d494745e207ae082795c0c2cca7727ea2d40c2141a52da119458e00a95a361b2",
             "locator": {
               "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Replaces uncapped eleven-tenths budgets with capped capsule/step budgets; adds fourteen step sources and L88 provenance while retaining parsed older decision payloads.\n\nAnchor: Current source; preserved L88 property 5",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fa6015bebb4f7c199a276cad8ca7e37ee11a3854",
+            "content": "sha256:5444b63ab1eb28a6ad90d2499136fe6ae446724c6198ee8f05ac0a682f463894",
+            "locator": {
+              "end": 158,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Replaces uncapped eleven-tenths budgets with capped capsule/step budgets; adds fourteen step sources and L88 provenance while retaining parsed older decision payloads.\n\nAnchor: Current source; preserved L88 property 6",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fa6015bebb4f7c199a276cad8ca7e37ee11a3854",
+            "content": "sha256:af2847eb890a79f52c149e2716990a0e43ccb21fbd9462aa038c3dca8e29c1d6",
+            "locator": {
+              "end": 308,
+              "kind": "line_range",
+              "start": 159
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "Replaces uncapped eleven-tenths budgets with capped capsule/step budgets; adds fourteen step sources and L88 provenance while retaining parsed older decision payloads.\n\nAnchor: Current source; preserved L88 property 7",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fa6015bebb4f7c199a276cad8ca7e37ee11a3854",
+            "content": "sha256:88180f27b098acccd39573872e9a531212707d7deb6b1cda9ed7404daeb1927f",
+            "locator": {
+              "end": 547,
+              "kind": "line_range",
+              "start": 311
             }
           },
           "kind": "code"

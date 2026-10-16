@@ -4,12 +4,13 @@
       "spans_locations",
       "family_guarantee"
     ],
-    "justification": "Spans all start routes: refusing caller mode and permission-bearing feature arguments and selecting the least offered working mode is the entry filter for FAM-N17BB4 — unauthorized choices never reach resolution."
+    "justification": "All start routes exclude caller permission authority; the catalog validates ordinary least-mode or explicitly selected cross-scope host-default mode before launch."
   },
   "applicability": "Every role start route that resolves a working mode.",
   "conditions": [
-    "No applicable role, user or profile mode exists, so the least offered working mode is selected.",
-    "An offered mode value is unknown, so it is refused by name."
+    "Existing user/profile precedence remains provider-bound.",
+    "Only an omitted cross-scope step-up mode takes the offered host default; ordinary fallback remains least working.",
+    "Unknown catalogs and unoffered named modes refuse before creation."
   ],
   "exclusions": [
     "Caller-supplied mode arguments or permission-bearing feature arguments, which no start route accepts."
@@ -26,9 +27,9 @@
     "leaf": "260928-MIK-L71",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-invariant/v1",
-  "statement": "No start route accepts a caller mode argument or permission-bearing feature argument. Without an applicable role/user/profile mode, select the explicit least offered working mode and refuse unknown mode offerings by name.",
+  "statement": "No start route accepts a caller mode or permission-bearing feature argument. Ordinary starts without an applicable authored mode use the least offered working mode; an explicitly selected cross-provider/model step-up with omitted mode uses the offered host default. Unknown or unoffered modes refuse by name.",
   "status": "proposed",
   "supersedes": []
 }

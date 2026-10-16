@@ -24,9 +24,7 @@
         "blob": "3033ec12e4c3c52a47055c386828f8e57f36ef9b",
         "content": "sha256:e0af3874ea4771803b0f3dfe69e9bec4ec90d0925d11652a15ca62b118b229cc",
         "locator": {
-          "end": 1229,
-          "kind": "line_range",
-          "start": 1
+          "kind": "file"
         }
       },
       "id": "RLZ-7J6Y4G",

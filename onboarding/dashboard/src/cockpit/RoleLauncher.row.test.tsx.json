@@ -22,7 +22,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1d5570fd7346333f8abeacc5dc55136bfdf6246b",
+            "blob": "4e13f27347667fd31fb2f36947fc5bbeec7476f5",
             "content": "sha256:45a90ddda2900fd23b3c2efac75e263c585e264fac18dbce2cedb555da4f7289",
             "locator": {
               "kind": "symbol",
@@ -33,12 +33,29 @@
         },
         {
           "anchor": {
-            "blob": "1d5570fd7346333f8abeacc5dc55136bfdf6246b",
+            "blob": "4e13f27347667fd31fb2f36947fc5bbeec7476f5",
             "content": "sha256:56ec00729a200f32e02821e9c2ef76c89a889ae2e43aa567fabc04d6e310d6ec",
             "locator": {
-              "end": 64,
+              "end": 90,
               "kind": "line_range",
-              "start": 44
+              "start": 70
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Retains compact-row accessibility, source/label hovers, permission-owned chips, shared recipe and overfull DOM/source controls. The new case mounts RoleLauncher, prompts for a reason, asserts role plus stepUp only, and renders both status owners with host-default then observed-model text.\n\nAnchor: Current test/support source",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4e13f27347667fd31fb2f36947fc5bbeec7476f5",
+            "content": "sha256:20a842ef174576308881eb1bfd0b45d5558ace9aae10f15bb0172170ab475b61",
+            "locator": {
+              "end": 367,
+              "kind": "line_range",
+              "start": 1
             }
           },
           "kind": "test"

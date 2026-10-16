@@ -1,0 +1,119 @@
+{
+  "path": "mcp/tests/test_step_up_choice_validation.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Source assertion: test_step_up_feature_refusal_names_authored_key_before_retirement. The declaration is not an execution receipt.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e94df54b05412105f814ab34a617a605dc0a78f8",
+            "content": "sha256:51dbb31df36dcee7a4f08ca266497400c1fcf62a16e8b663fa11ab254cd36964",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_step_up_feature_refusal_names_authored_key_before_retirement"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Source assertion: test_cross_model_omitted_mode_uses_host_default_without_changing_base. The declaration is not an execution receipt.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e94df54b05412105f814ab34a617a605dc0a78f8",
+            "content": "sha256:8e1cbf50b78103e452181875e3898119f4603b2fe5c917edba5407a5f1d730db",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_cross_model_omitted_mode_uses_host_default_without_changing_base"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Source assertion: test_effective_noop_step_up_refuses_with_authored_file_and_key. The declaration is not an execution receipt.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e94df54b05412105f814ab34a617a605dc0a78f8",
+            "content": "sha256:db94b397178750b01f028a5cf7533d7f576c73656c8654147fa886cd8f187f7d",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_effective_noop_step_up_refuses_with_authored_file_and_key"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "Source assertion: test_per_level_step_up_refusal_preserves_settings_file_and_exact_feature_key. The declaration is not an execution receipt.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e94df54b05412105f814ab34a617a605dc0a78f8",
+            "content": "sha256:9b4f8a46ada0ca1e9ca46d84dc41e65ed36fe962c130493e4319bd6645a4c240",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_per_level_step_up_refusal_preserves_settings_file_and_exact_feature_key"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "Source assertion: test_post_commit_settings_hint_failure_returns_the_recorded_review. The declaration is not an execution receipt.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e94df54b05412105f814ab34a617a605dc0a78f8",
+            "content": "sha256:00f592047d184be5c7fbe6b30f21a5ae58c7753177621484bd673fca7dd31303",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_post_commit_settings_hint_failure_returns_the_recorded_review"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "Source assertion: test_receipt_loss_uses_durable_destination_as_predecessor_in_takeover_material. The declaration is not an execution receipt.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e94df54b05412105f814ab34a617a605dc0a78f8",
+            "content": "sha256:376fb20fdf2e2001cd4f8b6d9da8befda9644a5a6a730d0597a2f22d7009e335",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_receipt_loss_uses_durable_destination_as_predecessor_in_takeover_material"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "Source assertion: test_same_scope_native_tier_step_up_is_not_hidden_by_inherited_alias. The declaration is not an execution receipt.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e94df54b05412105f814ab34a617a605dc0a78f8",
+            "content": "sha256:73b01e6bccf5fa96898160f447ea620bd634903e9fd525b04554e7c73c4987d3",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_same_scope_native_tier_step_up_is_not_hidden_by_inherited_alias"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

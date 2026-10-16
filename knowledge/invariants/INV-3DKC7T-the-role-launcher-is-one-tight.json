@@ -10,7 +10,7 @@
     "The ordinary eleven-control task-needing one-feature composition fits one line at 1440px.",
     "Extra controls or insufficient width wrap by whole controls without an overflow menu.",
     "Selectors retain source spelling and an arrow; ModeBar retains its own phone-spacing overrides.",
-    "Launch offerings, ordering, disabled logic and payload behavior remain unchanged."
+    "The new configured Step up sends canonical selection plus reason, not preview overrides; existing controls retain their owners."
   ],
   "exclusions": [
     "An exact fixed pixel row height or an unconditional one-line requirement for excess features.",
@@ -28,9 +28,9 @@
     "leaf": "260928-MIK-L133",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-invariant/v1",
-  "statement": "The role launcher is one tight row in the look of the view tabs: ordinary eleven-control one-feature row one line at 1440px; excess controls wrap whole without clipping; view tabs and launcher controls share one definition; offered/sent behavior unchanged.",
+  "statement": "The launcher and view tabs share one compact definition: the ordinary eleven-control one-feature composition fits one line at 1440px; excess controls, including a configured Step up, wrap whole without clipping. Styling does not alter existing control behavior; the added reasoned step-up has its own dispatch contract.",
   "status": "accepted",
   "supersedes": []
 }

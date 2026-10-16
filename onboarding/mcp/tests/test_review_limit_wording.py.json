@@ -3,8 +3,8 @@
   "proves": [
     {
       "anchor": {
-        "blob": "a9d5fecd3d69a477d1fdcf2134c5bfa205c4b1e1",
-        "content": "sha256:55c2095e15b43fdbe4f7bd2a029363db48c23da76db18a5a43947efdabf8bbce",
+        "blob": "78f49838b168236d1c840958f72556ffdf3b48d2",
+        "content": "sha256:eadf5d90f2995759314532376b6c1861dc537618d4e80eb6b62888687a1391c7",
         "locator": {
           "kind": "symbol",
           "name": "test_stage_section_binding_fails_on_deletion_and_relocation"
@@ -22,7 +22,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "a9d5fecd3d69a477d1fdcf2134c5bfa205c4b1e1",
+        "blob": "78f49838b168236d1c840958f72556ffdf3b48d2",
         "content": "sha256:2dbaab4852fc1c95bca0dc735510379693e43c1bf198438e89efe440d4c9f92c",
         "locator": {
           "kind": "symbol",
@@ -40,7 +40,7 @@
     },
     {
       "anchor": {
-        "blob": "a9d5fecd3d69a477d1fdcf2134c5bfa205c4b1e1",
+        "blob": "78f49838b168236d1c840958f72556ffdf3b48d2",
         "content": "sha256:0082bede94098b533177d6979c25286c6a80ca2e7026b71482011ed23b72c19d",
         "locator": {
           "kind": "symbol",
@@ -63,7 +63,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a9d5fecd3d69a477d1fdcf2134c5bfa205c4b1e1",
+            "blob": "78f49838b168236d1c840958f72556ffdf3b48d2",
             "content": "sha256:af98bd8aa55fb122c2c941301dd2eb8bef5362a48b52102b2c69487ad0b990b0",
             "locator": {
               "kind": "symbol",
@@ -106,11 +106,28 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a9d5fecd3d69a477d1fdcf2134c5bfa205c4b1e1",
+            "blob": "78f49838b168236d1c840958f72556ffdf3b48d2",
             "content": "sha256:2705e46482371922d94e3970e0acf1bbda85cbd87350ce62dfeb248111b2d881",
             "locator": {
               "kind": "symbol",
               "name": "test_rule_nine_sentences_hold_for_reviewer_worker_manager"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "Reviewer/Curator facet alternatives are explicitly role scoped. Presence, deletion and relocation checks still bind to the extracted Stage end section. Source and compiled controls assert the original surface is complete and mutation actually changes text; compiled relocation is now exercised as well as deletion. The four roles are parametrized individually; numeric budget detector and rule-nine cases remain.\n\nAnchor: Current test/support source",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "78f49838b168236d1c840958f72556ffdf3b48d2",
+            "content": "sha256:57c1dfbbf91a6dc5f351c9be9ade2f95604c6864894ceb3f58a2a0316e9ab7d0",
+            "locator": {
+              "end": 473,
+              "kind": "line_range",
+              "start": 1
             }
           },
           "kind": "test"

@@ -3,12 +3,12 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "66b580e5158b30270e6f97efbfda840f38d784d7",
+        "blob": "1d8ff0d5b32a38eb4b384c61d6beb6855cd9768e",
         "content": "sha256:0a4d3056d41cc4a650de3dd5cc0eb74545e21ff0ca47c4823f77c52c4ab69cda",
         "locator": {
-          "end": 7,
+          "end": 8,
           "kind": "line_range",
-          "start": 7
+          "start": 8
         }
       },
       "id": "RLZ-6CFA2A",
@@ -22,12 +22,12 @@
     },
     {
       "anchor": {
-        "blob": "66b580e5158b30270e6f97efbfda840f38d784d7",
+        "blob": "1d8ff0d5b32a38eb4b384c61d6beb6855cd9768e",
         "content": "sha256:fb88b4cb11d7d27e66b17718d83c21144cbe42b604b12e4b12dde8eac6be3a9b",
         "locator": {
-          "end": 12,
+          "end": 13,
           "kind": "line_range",
-          "start": 12
+          "start": 13
         }
       },
       "id": "RLZ-BPMMTC",
@@ -41,12 +41,12 @@
     },
     {
       "anchor": {
-        "blob": "66b580e5158b30270e6f97efbfda840f38d784d7",
+        "blob": "1d8ff0d5b32a38eb4b384c61d6beb6855cd9768e",
         "content": "sha256:1474575fe1142856b37b1106b95e578f8ad8ae8c1982fe29d9324ceee1abb31e",
         "locator": {
-          "end": 16,
+          "end": 17,
           "kind": "line_range",
-          "start": 16
+          "start": 17
         }
       },
       "id": "RLZ-C5XM1T",
@@ -60,10 +60,12 @@
     },
     {
       "anchor": {
-        "blob": "66b580e5158b30270e6f97efbfda840f38d784d7",
-        "content": "sha256:e532ec7587048c7e6b53cf2fe0fa3b78212f5c6fc2431d57e807c1d2296587da",
+        "blob": "1d8ff0d5b32a38eb4b384c61d6beb6855cd9768e",
+        "content": "sha256:8b6920aa36e98c45ca2ff5f34c7378698411e1b7769d2d63b602d32330f49300",
         "locator": {
-          "kind": "file"
+          "end": 23,
+          "kind": "line_range",
+          "start": 17
         }
       },
       "id": "RLZ-CJF248",
@@ -77,12 +79,31 @@
     },
     {
       "anchor": {
-        "blob": "66b580e5158b30270e6f97efbfda840f38d784d7",
+        "blob": "1d8ff0d5b32a38eb4b384c61d6beb6855cd9768e",
+        "content": "sha256:987e84087b01f41ed3c0b942ef8667bc4e3c675089a471ee387279b16c0afb73",
+        "locator": {
+          "end": 23,
+          "kind": "line_range",
+          "start": 19
+        }
+      },
+      "id": "RLZ-E9F3YP",
+      "invariant": "INV-9S49CW",
+      "origin": {
+        "handoffEntry": "MIK-R93@v1 rules1,2,2a,5,6,7",
+        "leaf": "260928-MIK-L93"
+      },
+      "rationale": "This role/operation source points to operations/orientation.md for developer questions and relayed answers; it is not a self-contained duplicated full-clause home or native delivered-message witness.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "1d8ff0d5b32a38eb4b384c61d6beb6855cd9768e",
         "content": "sha256:90c1134af65243f7ac535323798edcb2b590b7ff96945970bce4dfdc463ef128",
         "locator": {
-          "end": 3,
+          "end": 4,
           "kind": "line_range",
-          "start": 3
+          "start": 4
         }
       },
       "id": "RLZ-PFED6V",
@@ -96,10 +117,12 @@
     },
     {
       "anchor": {
-        "blob": "66b580e5158b30270e6f97efbfda840f38d784d7",
-        "content": "sha256:e532ec7587048c7e6b53cf2fe0fa3b78212f5c6fc2431d57e807c1d2296587da",
+        "blob": "1d8ff0d5b32a38eb4b384c61d6beb6855cd9768e",
+        "content": "sha256:9443caffe60f07440799307778a8e4db7ec6f5e7bc77e7e863a352d2e51cb0c4",
         "locator": {
-          "kind": "file"
+          "end": 17,
+          "kind": "line_range",
+          "start": 8
         }
       },
       "id": "RLZ-Q1RJX3",
@@ -112,6 +135,41 @@
       "role": "primary-authority"
     }
   ],
-  "references": {},
+  "references": {
+    "1": {
+      "note": "Marks common text all-role and adds Curator-only serving-build producer constraints so they remain inline in this stage.\n\nAnchor: Candidate instruction body, lines 1–23",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1d8ff0d5b32a38eb4b384c61d6beb6855cd9768e",
+            "content": "sha256:0fb095f2293912d40518a286cef9f71b9840de540438737213d3c802dd5a812f",
+            "locator": {
+              "end": 23,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Marks common text all-role and adds Curator-only serving-build producer constraints so they remain inline in this stage.\n\nAnchor: Candidate instruction body, lines 25–26",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1d8ff0d5b32a38eb4b384c61d6beb6855cd9768e",
+            "content": "sha256:b2ac0f1d7dbc691a828dfd084d73d9e6fd25958ff2ece342495a65631dfa23bb",
+            "locator": {
+              "end": 26,
+              "kind": "line_range",
+              "start": 25
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
   "schema": "ar-onboarding-file/v1"
 }

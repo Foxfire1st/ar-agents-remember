@@ -1,0 +1,45 @@
+{
+  "admission": {
+    "criteria": [
+      "constrains_future_work"
+    ],
+    "justification": "The arriving role must already hold its required stage duties; only admitted methods travel in frozen linked details."
+  },
+  "alternatives": [
+    {
+      "option": "Select common/addressed stage passages and freeze named-step method details while essential stage boundaries stay inline.",
+      "reason": "The arriving role must already hold its required stage duties; only admitted methods travel in frozen linked details.",
+      "status": "chosen"
+    },
+    {
+      "option": "Move essential boundaries to mutable live files or increase the ceilings to hide an overgrown capsule.",
+      "reason": "The arriving role must already hold its required stage duties; only admitted methods travel in frozen linked details.",
+      "reconsider_when": "Only a later developer-approved requirement that explicitly revises this boundary and names independently checked replacement safeguards can reopen it; implementation drift, prettier text or a budget pass alone cannot.",
+      "status": "rejected"
+    }
+  ],
+  "consequences": [
+    "The arriving role must already hold its required stage duties; only admitted methods travel in frozen linked details."
+  ],
+  "context": "Fixed ceilings must not hide inputs, outputs or authority boundaries.",
+  "decider": "Developer-approved requirement corpus and L88 signed rulings",
+  "id": "DEC-FHJQ2X",
+  "links": [
+    {
+      "relation": "constrains",
+      "target": "route:skills/l-01-agent-lifecycles"
+    }
+  ],
+  "origin": {
+    "handoff": {
+      "path": "whole-curation.json"
+    },
+    "handoffEntry": "L88-capsule-stage-boundaries",
+    "leaf": "260928-MIK-L88",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-decision/v1",
+  "status": "active",
+  "supersedes": []
+}

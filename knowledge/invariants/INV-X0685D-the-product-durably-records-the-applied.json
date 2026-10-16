@@ -1,0 +1,34 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake"
+    ],
+    "justification": "Prevents a successor losing its durable applied identity or resetting the sealed review allowance."
+  },
+  "applicability": "The applied role-seat transition recorded for an admitted stepped-up start and its later exact-request reconciliation.",
+  "conditions": [
+    "Record the applied destination and step-up origin durably without replacing unrelated human decisions.",
+    "Keep sealed findings, round counters and approval limits unchanged; retries preserve the saved request/choice identity."
+  ],
+  "exclusions": [
+    "A task decision is not acceptance or a new review allowance.",
+    "No migration/backfill of underway historical memory reviews."
+  ],
+  "id": "INV-X0685D",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "notes/reports/worker/47d47893-c5d1-4ea1-a7cf-85b7faed8dcd/round1-final-integrated-verification-results.json"
+      ],
+      "path": "whole-curation.json"
+    },
+    "handoffEntry": "MIK-R141@v1/decision",
+    "leaf": "260928-MIK-L88",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "The product durably records the applied seat transition and reports its origin without resetting review findings, rounds or approval limits.",
+  "status": "proposed",
+  "supersedes": []
+}

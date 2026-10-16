@@ -3,10 +3,12 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "679a69b6f6ff4ae1a3b8e536d652b10a633a528e",
-        "content": "sha256:031dcb463d498b130a83c3171f643221a0f3bd58715a3d05b421cb0f007c8047",
+        "blob": "f4d75547bcd9f677f543629759cd16ae47dfcfaf",
+        "content": "sha256:dce12aaba98d34269edbd6cdeee07b7ef354a7ee14cf4fc3798af16d4e3f252a",
         "locator": {
-          "kind": "file"
+          "end": 10,
+          "kind": "line_range",
+          "start": 4
         }
       },
       "id": "RLZ-1AP8C0",
@@ -20,10 +22,31 @@
     },
     {
       "anchor": {
-        "blob": "679a69b6f6ff4ae1a3b8e536d652b10a633a528e",
-        "content": "sha256:031dcb463d498b130a83c3171f643221a0f3bd58715a3d05b421cb0f007c8047",
+        "blob": "f4d75547bcd9f677f543629759cd16ae47dfcfaf",
+        "content": "sha256:335a2fc7ef98e2842cb92854fc68ec1060e996230678bb442449e4d2ee22e7c4",
         "locator": {
-          "kind": "file"
+          "end": 24,
+          "kind": "line_range",
+          "start": 20
+        }
+      },
+      "id": "RLZ-3QTBC5",
+      "invariant": "INV-7E3JNX",
+      "origin": {
+        "handoffEntry": "R99-8-own-sync",
+        "leaf": "260928-MIK-L99"
+      },
+      "rationale": "Names Worker sync and supported continue arguments after Manager staging.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "f4d75547bcd9f677f543629759cd16ae47dfcfaf",
+        "content": "sha256:335a2fc7ef98e2842cb92854fc68ec1060e996230678bb442449e4d2ee22e7c4",
+        "locator": {
+          "end": 24,
+          "kind": "line_range",
+          "start": 20
         }
       },
       "id": "RLZ-7KXE63",
@@ -37,10 +60,12 @@
     },
     {
       "anchor": {
-        "blob": "679a69b6f6ff4ae1a3b8e536d652b10a633a528e",
-        "content": "sha256:031dcb463d498b130a83c3171f643221a0f3bd58715a3d05b421cb0f007c8047",
+        "blob": "f4d75547bcd9f677f543629759cd16ae47dfcfaf",
+        "content": "sha256:dce12aaba98d34269edbd6cdeee07b7ef354a7ee14cf4fc3798af16d4e3f252a",
         "locator": {
-          "kind": "file"
+          "end": 10,
+          "kind": "line_range",
+          "start": 4
         }
       },
       "id": "RLZ-DRT32D",
@@ -108,6 +133,23 @@
             "content": "sha256:031dcb463d498b130a83c3171f643221a0f3bd58715a3d05b421cb0f007c8047",
             "locator": {
               "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Adds only the all-role audience marker; the Worker-only stage body is byte-preserved apart from that added first line.\n\nAnchor: Candidate instruction body, lines 1–26",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f4d75547bcd9f677f543629759cd16ae47dfcfaf",
+            "content": "sha256:4e7d8d6c867b87cd9a56a8e5adddfc0f0b3fd82987fe67d36a21b9eae8d486b8",
+            "locator": {
+              "end": 26,
+              "kind": "line_range",
+              "start": 1
             }
           },
           "kind": "code"

@@ -7,12 +7,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "cecab4606d8747d3f486572f39f2125cf31fbb28",
+            "blob": "40271d9a269d07266a5074e05843d6998341106d",
             "content": "sha256:bbd21ddb4eaf78a34493f5f4e865d5d8ccf1618d7b40d6371fa4506e78767f9b",
             "locator": {
-              "end": 246,
+              "end": 321,
               "kind": "line_range",
-              "start": 221
+              "start": 296
             }
           },
           "kind": "test"
@@ -24,12 +24,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "cecab4606d8747d3f486572f39f2125cf31fbb28",
+            "blob": "40271d9a269d07266a5074e05843d6998341106d",
             "content": "sha256:1de39e87afc108bc02e331a4c803db49d54dc66a87b3b384828a04df14bfba65",
             "locator": {
-              "end": 273,
+              "end": 348,
               "kind": "line_range",
-              "start": 248
+              "start": 323
             }
           },
           "kind": "test"
@@ -47,6 +47,23 @@
               "end": 289,
               "kind": "line_range",
               "start": 275
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "Adds role-specific Reviewer/Curator marker alternatives and deletion/cross-role controls. Curation is checked as both actual Curator and Manager addressed capsules on every known surface; only Curator body/attach markers may be satisfied by its exact delivered workflow-1 message detail. Forbidden-directive scans include both capsule and detail; packaged compiled prompts use the same special case. Other roles/templates and report-return addressing retain their existing contracts.\n\nAnchor: Current test/support source",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "40271d9a269d07266a5074e05843d6998341106d",
+            "content": "sha256:0f8951821333f68aaa60af2980dc3ca6f80cb7a58c1f6fd4528bbc419f3c4ddf",
+            "locator": {
+              "end": 457,
+              "kind": "line_range",
+              "start": 1
             }
           },
           "kind": "test"

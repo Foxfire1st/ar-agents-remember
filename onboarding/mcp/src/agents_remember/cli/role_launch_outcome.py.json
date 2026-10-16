@@ -1,0 +1,73 @@
+{
+  "path": "mcp/src/agents_remember/cli/role_launch_outcome.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Created/held/unknown results preserve prior lifecycle semantics.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ccb1e9b293a9d30073d916aee6085e1ff47f6420",
+            "content": "sha256:960687ba725703cfd98e745a0db18fa6d1bc861426c6548a6a9ed75897ae7f90",
+            "locator": {
+              "kind": "symbol",
+              "name": "publish_launch_outcome"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Only settled empty step-up refusals remain retryable.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ccb1e9b293a9d30073d916aee6085e1ff47f6420",
+            "content": "sha256:61c4e9ff3174d88b2d951a307ebbdcee24d97a19d54ea5c80d052036f5dafa8d",
+            "locator": {
+              "kind": "symbol",
+              "name": "_refused_outcome"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The caller saves and reconciles task metadata around the host outcome.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5017d88ddb594f7f312e0a0098abec8585b38244",
+            "content": "sha256:5b3ef33fe5f69861582551142ecbe7c40b25b6309a8b72837eb3963208ef59a2",
+            "locator": {
+              "kind": "symbol",
+              "name": "_execute_prepared_launch"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_receipts.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Test source checks rejected empty seat and successful same-ID retry.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ae9057ab6c1eea41f64b6351acaddfc7c720f7b9",
+            "content": "sha256:fd2c5cf04335daed3a340cf6fba262fd1e8bb319e6196168572be09a80f5838c",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_failed_step_up_creation_leaves_empty_seat_and_same_request_retries"
+            },
+            "path": "mcp/tests/test_role_step_up.py"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

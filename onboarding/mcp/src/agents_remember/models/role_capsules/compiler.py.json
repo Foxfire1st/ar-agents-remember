@@ -1,6 +1,25 @@
 {
   "path": "mcp/src/agents_remember/models/role_capsules/compiler.py",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "762c104a0bcdc0375416163993d106dc37c5fb18",
+        "content": "sha256:1887eaccb5d5f005cb1e74f059d46449876977184df1293db4f51a2b4c61e567",
+        "locator": {
+          "kind": "symbol",
+          "name": "compile_role_capsule"
+        }
+      },
+      "id": "RLZ-WETFWX",
+      "invariant": "INV-WR3J18",
+      "origin": {
+        "handoffEntry": "MIK-R125@v1/composition",
+        "leaf": "260928-MIK-L88"
+      },
+      "rationale": "Composes the selected role/stage instruction stream under the manifest contract.",
+      "role": "enforcement"
+    }
+  ],
   "references": {
     "1": {
       "note": "The application entry point that admits bytes from disk and calls this compiler, returning success or refusal as a value.",
@@ -39,6 +58,76 @@
               "start": 46
             },
             "path": "mcp/src/agents_remember/application/role_capsules/compilation.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "Replay validates regular opened files, content revisions and original canonical report binding, not mutable corpus sources.\n\nAnchor: L38–L88",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "682d4179b094bd4e50d1f67363fe398d5e4e40c9",
+            "content": "sha256:a3660f0512fa0094c6c5fa934139c0b4e7dbf580921a9fdb0c9218c0600898b7",
+            "locator": {
+              "end": 88,
+              "kind": "line_range",
+              "start": 38
+            },
+            "path": "mcp/src/agents_remember/cli/role_instruction_details.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "Per-request detail artifacts use exact admitted bytes beside the handover and write-once publication.\n\nAnchor: L59–L74",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "85b470bea18f2548365b969746fd9e7ef5ea00cf",
+            "content": "sha256:53ae089e7b885fad8e278a7a4540e98ab4b52f03f6e60ecbb8260f070081a4d4",
+            "locator": {
+              "end": 74,
+              "kind": "line_range",
+              "start": 59
+            },
+            "path": "mcp/src/agents_remember/cli/role_handover_artifacts.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "File-local implementation of the stated contract; caller-owned effects and governing workflow are separate evidence.\n\nAnchor: L105–L169",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "762c104a0bcdc0375416163993d106dc37c5fb18",
+            "content": "sha256:ee255fa155c531dc069a95b5aec956e6cd368473ea8d07355cb77ce649d529a9",
+            "locator": {
+              "end": 169,
+              "kind": "line_range",
+              "start": 105
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "File-local implementation of the stated contract; caller-owned effects and governing workflow are separate evidence.\n\nAnchor: L249–L295",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "762c104a0bcdc0375416163993d106dc37c5fb18",
+            "content": "sha256:08b6fc4a146967951932e336b949c60d323f3f9c5cdc81fc5c7c924c8069f2f2",
+            "locator": {
+              "end": 295,
+              "kind": "line_range",
+              "start": 249
+            }
           },
           "kind": "code"
         }
@@ -129,7 +218,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e0c363f53732c65054fa825f478956800f102db7",
+            "blob": "762c104a0bcdc0375416163993d106dc37c5fb18",
             "content": "sha256:ff997d6960152a420d7b0d10a870728d9c9ba02fba08c8054c25edb8dda93a71",
             "locator": {
               "kind": "symbol",
@@ -145,7 +234,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "76bc4e03dad8f1005ff4fc7eb5f0534c839db1b0",
+            "blob": "9946e7fc31fa11992782193f4af92050e7c18e46",
             "content": "sha256:473474c07b91cebc974210786d8cc7b9818bcc0a13b81d9a7507d283c83df510",
             "locator": {
               "kind": "symbol",
@@ -157,7 +246,7 @@
         },
         {
           "anchor": {
-            "blob": "76bc4e03dad8f1005ff4fc7eb5f0534c839db1b0",
+            "blob": "9946e7fc31fa11992782193f4af92050e7c18e46",
             "content": "sha256:396f24d73d20453da02daf14bb34f184ac316c06e029e9b9649b3a7cd5b40e07",
             "locator": {
               "kind": "symbol",
@@ -169,7 +258,7 @@
         },
         {
           "anchor": {
-            "blob": "76bc4e03dad8f1005ff4fc7eb5f0534c839db1b0",
+            "blob": "9946e7fc31fa11992782193f4af92050e7c18e46",
             "content": "sha256:7f6088caf1914a50ea7f6016a0b5573bd63a4d7ee29439c66c82c42723f83e56",
             "locator": {
               "kind": "symbol",
@@ -186,7 +275,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "76bc4e03dad8f1005ff4fc7eb5f0534c839db1b0",
+            "blob": "9946e7fc31fa11992782193f4af92050e7c18e46",
             "content": "sha256:2628f23bafe64d1e27e4be35c56e9fd1b539d7746fd4f195febbd461ac3a373f",
             "locator": {
               "kind": "symbol",
@@ -198,7 +287,7 @@
         },
         {
           "anchor": {
-            "blob": "76bc4e03dad8f1005ff4fc7eb5f0534c839db1b0",
+            "blob": "9946e7fc31fa11992782193f4af92050e7c18e46",
             "content": "sha256:96e522b9106d44be40439301a8aeccaa8143e27b7d1e5a88574acdcbf786ef0b",
             "locator": {
               "kind": "symbol",
@@ -210,7 +299,7 @@
         },
         {
           "anchor": {
-            "blob": "76bc4e03dad8f1005ff4fc7eb5f0534c839db1b0",
+            "blob": "9946e7fc31fa11992782193f4af92050e7c18e46",
             "content": "sha256:cde89307f7a031255b9f02801ae6b2b58853979b2027c2dc8f7835476757fe5b",
             "locator": {
               "kind": "symbol",
@@ -227,7 +316,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "76bc4e03dad8f1005ff4fc7eb5f0534c839db1b0",
+            "blob": "9946e7fc31fa11992782193f4af92050e7c18e46",
             "content": "sha256:1c7be34037305e689c446275eab98b47307989cabcdb57e58a5f15f6d160b527",
             "locator": {
               "kind": "symbol",
@@ -239,7 +328,7 @@
         },
         {
           "anchor": {
-            "blob": "76bc4e03dad8f1005ff4fc7eb5f0534c839db1b0",
+            "blob": "9946e7fc31fa11992782193f4af92050e7c18e46",
             "content": "sha256:c776f8c06880ce3914eae0dc24aa503d828a05340ff31eee6d0e8790dabfdd6e",
             "locator": {
               "kind": "symbol",
@@ -251,7 +340,7 @@
         },
         {
           "anchor": {
-            "blob": "76bc4e03dad8f1005ff4fc7eb5f0534c839db1b0",
+            "blob": "9946e7fc31fa11992782193f4af92050e7c18e46",
             "content": "sha256:fd3c5ee5684f439f0f58bfbad3a0f7808e2eccd996a54c854f9b67fc296fe1c9",
             "locator": {
               "end": 929,
@@ -264,7 +353,7 @@
         },
         {
           "anchor": {
-            "blob": "76bc4e03dad8f1005ff4fc7eb5f0534c839db1b0",
+            "blob": "9946e7fc31fa11992782193f4af92050e7c18e46",
             "content": "sha256:f4d7fcc172924568359bfaf8ae34878e8c1d677f62df9bf02e854122db72edf7",
             "locator": {
               "end": 961,
@@ -282,7 +371,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "76bc4e03dad8f1005ff4fc7eb5f0534c839db1b0",
+            "blob": "9946e7fc31fa11992782193f4af92050e7c18e46",
             "content": "sha256:f68be40622b6abfe0d2362438100ef630301619d57ed967748239daeade96d73",
             "locator": {
               "kind": "symbol",
@@ -294,7 +383,7 @@
         },
         {
           "anchor": {
-            "blob": "76bc4e03dad8f1005ff4fc7eb5f0534c839db1b0",
+            "blob": "9946e7fc31fa11992782193f4af92050e7c18e46",
             "content": "sha256:d5c34ac6d955df25f6b7d2ca9bf555dbd4a57bfbb3dd318b25550cc4d08032d0",
             "locator": {
               "kind": "symbol",
@@ -306,7 +395,7 @@
         },
         {
           "anchor": {
-            "blob": "76bc4e03dad8f1005ff4fc7eb5f0534c839db1b0",
+            "blob": "9946e7fc31fa11992782193f4af92050e7c18e46",
             "content": "sha256:079569ddf8eff689aabcd9b7a2a97cdaed597ce68ea79db471edf0186f471fcf",
             "locator": {
               "end": 907,
@@ -319,7 +408,7 @@
         },
         {
           "anchor": {
-            "blob": "76bc4e03dad8f1005ff4fc7eb5f0534c839db1b0",
+            "blob": "9946e7fc31fa11992782193f4af92050e7c18e46",
             "content": "sha256:68096c57e97e205f5f3163e6d230b5063533eba3a4ef80003c9c06ff9601f981",
             "locator": {
               "end": 876,
@@ -337,7 +426,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "68e62a4e78041f271e927977fa67c79ca74c18b7",
+            "blob": "f166aefb31d97e1d3806e655e1aea845f5e25c53",
             "content": "sha256:b455239473b006be03beff93864429921efbe0b4fd2402ee452a6276939eff44",
             "locator": {
               "kind": "symbol",
@@ -349,7 +438,7 @@
         },
         {
           "anchor": {
-            "blob": "68e62a4e78041f271e927977fa67c79ca74c18b7",
+            "blob": "f166aefb31d97e1d3806e655e1aea845f5e25c53",
             "content": "sha256:75bfdb3bdf4b9a82ea89850c55be6be6e3713700c9ab9dbe22dc9b58940efe79",
             "locator": {
               "kind": "symbol",
@@ -361,13 +450,31 @@
         },
         {
           "anchor": {
-            "blob": "68e62a4e78041f271e927977fa67c79ca74c18b7",
+            "blob": "f166aefb31d97e1d3806e655e1aea845f5e25c53",
             "content": "sha256:352ee2208b6afea6cb4c3b75274c4d656eeb3f44e99e08e8fbf0e8859a3275ce",
             "locator": {
               "kind": "symbol",
               "name": "CapsuleSourceError"
             },
             "path": "mcp/src/agents_remember/errors.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "Launch copies detail files, substitutes paths, and records frozen revisions.\n\nAnchor: L16–L35",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "682d4179b094bd4e50d1f67363fe398d5e4e40c9",
+            "content": "sha256:60172f37e29d829d04a0c011bfce73b96756f430b581516ca3dce6f39fbf91d8",
+            "locator": {
+              "end": 35,
+              "kind": "line_range",
+              "start": 16
+            },
+            "path": "mcp/src/agents_remember/cli/role_instruction_details.py"
           },
           "kind": "code"
         }

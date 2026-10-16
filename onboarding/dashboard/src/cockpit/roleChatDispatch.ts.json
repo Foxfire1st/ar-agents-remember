@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "618beab737aee6fbc84933d0215734cd0bdc8e51",
+        "blob": "23529e12c8dab32a4452754b164a6d4b58310a63",
         "content": "sha256:b2d309b8b84b2ab06888c308e3bd17aa7839935db0be43653307300687aba9d0",
         "locator": {
           "kind": "symbol",
@@ -26,11 +26,28 @@
       "targets": [
         {
           "anchor": {
-            "blob": "618beab737aee6fbc84933d0215734cd0bdc8e51",
+            "blob": "23529e12c8dab32a4452754b164a6d4b58310a63",
             "content": "sha256:b2d309b8b84b2ab06888c308e3bd17aa7839935db0be43653307300687aba9d0",
             "locator": {
               "kind": "symbol",
               "name": "dispatchRoleAction"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "File-local implementation of the stated contract; caller-owned effects and governing workflow are separate evidence.\n\nAnchor: L355–L390",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "23529e12c8dab32a4452754b164a6d4b58310a63",
+            "content": "sha256:933c7801dadcfd3a331441f9bba32f3456135491108752a4ad5f411c5cab437a",
+            "locator": {
+              "end": 390,
+              "kind": "line_range",
+              "start": 355
             }
           },
           "kind": "code"
@@ -42,7 +59,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "618beab737aee6fbc84933d0215734cd0bdc8e51",
+            "blob": "23529e12c8dab32a4452754b164a6d4b58310a63",
             "content": "sha256:7d94913fccf171b590eb80b35af3f3c001bd9825dd6e76480856330974a9682a",
             "locator": {
               "kind": "symbol",
@@ -58,11 +75,116 @@
       "targets": [
         {
           "anchor": {
-            "blob": "618beab737aee6fbc84933d0215734cd0bdc8e51",
+            "blob": "23529e12c8dab32a4452754b164a6d4b58310a63",
             "content": "sha256:41eebc34005625b0acf4e0760db68637c3e83cbe93ae34c12f3ab7b39c6f5f03",
             "locator": {
               "kind": "symbol",
               "name": "failDispatchOffline"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Worker/Curator typed review census, record-only exclusion and unknown history.\n\nAnchor: L175–L240",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "29bbfb919fa2a5e25fc3e3ee172407e92e192fc0",
+            "content": "sha256:89c09fd0491880de2f7b715bffbe2d6b0605a6dea7400689519c43f40f7b119d",
+            "locator": {
+              "end": 240,
+              "kind": "line_range",
+              "start": 175
+            },
+            "path": "mcp/src/agents_remember/worktrees/review_history.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Reason admission, threshold and differing-harness/model inheritance boundary.\n\nAnchor: L23–L84",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f341c13a99f485178e73c4ff8bf4de16267ee662",
+            "content": "sha256:5a3727f4901933c44cd5f7edc8b16220285a82a9e080326edf482cbb126f0b2f",
+            "locator": {
+              "end": 84,
+              "kind": "line_range",
+              "start": 23
+            },
+            "path": "mcp/src/agents_remember/cli/role_step_up.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Saved taskless UUID/pending plus trimmed reason/override restoration keeps the legacy Investigator storage slot.\n\nAnchor: L265–L303",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5afb423008b1b65fdb77e7f434136c58161a0a1a",
+            "content": "sha256:eee8a4575ac30b8aa5e2006cd3b14ba4d2ca4cf26fbcabc4eb35c268079145b0",
+            "locator": {
+              "end": 303,
+              "kind": "line_range",
+              "start": 265
+            },
+            "path": "dashboard/src/cockpit/roleLaunchModel.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The same start-only reason enters saved retry payload and POST body.\n\nAnchor: L115–L157",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "23529e12c8dab32a4452754b164a6d4b58310a63",
+            "content": "sha256:a68d7b7d28047a14feb0f8f3f85133add244a62e154e9a779c29702492fc08dc",
+            "locator": {
+              "end": 157,
+              "kind": "line_range",
+              "start": 115
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "File-local implementation of the stated contract; caller-owned effects and governing workflow are separate evidence.\n\nAnchor: L115–L157",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "23529e12c8dab32a4452754b164a6d4b58310a63",
+            "content": "sha256:a68d7b7d28047a14feb0f8f3f85133add244a62e154e9a779c29702492fc08dc",
+            "locator": {
+              "end": 157,
+              "kind": "line_range",
+              "start": 115
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "File-local implementation of the stated contract; caller-owned effects and governing workflow are separate evidence.\n\nAnchor: L321–L350",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "23529e12c8dab32a4452754b164a6d4b58310a63",
+            "content": "sha256:01d7fd6e8851c9a1350c5846e5f97f96024134e090dbbdb596492db1c245eb12",
+            "locator": {
+              "end": 350,
+              "kind": "line_range",
+              "start": 321
             }
           },
           "kind": "code"

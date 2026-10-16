@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "497182eddd472d861bd107fd62aaaae0e0e82067",
+        "blob": "eb52d7f13cbceca0492d661ba9ffa5ce3cff99b7",
         "content": "sha256:52a746fc00ed66cb97e7e3436f817ed49c9e0a99dfc8ff19563f50e15c7c8fc5",
         "locator": {
           "kind": "symbol",
@@ -53,7 +53,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "497182eddd472d861bd107fd62aaaae0e0e82067",
+            "blob": "eb52d7f13cbceca0492d661ba9ffa5ce3cff99b7",
             "content": "sha256:555b110693e8fd5bcd0c9de05489a4ef1b674ae4aa306f634a858400c38200c6",
             "locator": {
               "kind": "symbol",
@@ -103,7 +103,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9f01b458769e29ba24c9cc3c0ff187e9e5eb2cf2",
+            "blob": "4da7f03059708d2c36a166a0b1371b8e30be2932",
             "content": "sha256:db9c1016ec2b2f95f7ebc1d9895edf41f06d2ac6a748c9f18fcde8649748dcd6",
             "locator": {
               "end": 2,
@@ -165,12 +165,84 @@
         }
       ]
     },
+    "16": {
+      "note": "The current response registry omits former capsule/catalog tools; retained response types are not public tool exposure.\n\nAnchor: L79–L120",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1d7b6b69cc65c65e39b0a04924fe472490bd1e90",
+            "content": "sha256:c49dc78f5be62ee03bd76da98386d5e55a47bc03e67f5f35427aeec11f18fb8f",
+            "locator": {
+              "end": 120,
+              "kind": "line_range",
+              "start": 79
+            },
+            "path": "mcp/src/agents_remember/models/tools/tool_registry.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "17": {
+      "note": "Launch copies detail files, substitutes paths, and records frozen revisions.\n\nAnchor: L16–L35",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "682d4179b094bd4e50d1f67363fe398d5e4e40c9",
+            "content": "sha256:60172f37e29d829d04a0c011bfce73b96756f430b581516ca3dce6f39fbf91d8",
+            "locator": {
+              "end": 35,
+              "kind": "line_range",
+              "start": 16
+            },
+            "path": "mcp/src/agents_remember/cli/role_instruction_details.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "18": {
+      "note": "Replay validates regular opened files, content revisions and original canonical report binding, not mutable corpus sources.\n\nAnchor: L38–L88",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "682d4179b094bd4e50d1f67363fe398d5e4e40c9",
+            "content": "sha256:a3660f0512fa0094c6c5fa934139c0b4e7dbf580921a9fdb0c9218c0600898b7",
+            "locator": {
+              "end": 88,
+              "kind": "line_range",
+              "start": 38
+            },
+            "path": "mcp/src/agents_remember/cli/role_instruction_details.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "19": {
+      "note": "Per-request detail artifacts use exact admitted bytes beside the handover and write-once publication.\n\nAnchor: L59–L74",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "85b470bea18f2548365b969746fd9e7ef5ea00cf",
+            "content": "sha256:53ae089e7b885fad8e278a7a4540e98ab4b52f03f6e60ecbb8260f070081a4d4",
+            "locator": {
+              "end": 74,
+              "kind": "line_range",
+              "start": 59
+            },
+            "path": "mcp/src/agents_remember/cli/role_handover_artifacts.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
     "2": {
       "note": "The seat is derived from the document's altitude and the role string is validated against it, never used as authority.",
       "targets": [
         {
           "anchor": {
-            "blob": "497182eddd472d861bd107fd62aaaae0e0e82067",
+            "blob": "eb52d7f13cbceca0492d661ba9ffa5ce3cff99b7",
             "content": "sha256:8b510f1c59eadd633e890f61a89296a725ed091b00c234a65eaec0b9fd4c861e",
             "locator": {
               "kind": "symbol",
@@ -181,7 +253,7 @@
         },
         {
           "anchor": {
-            "blob": "497182eddd472d861bd107fd62aaaae0e0e82067",
+            "blob": "eb52d7f13cbceca0492d661ba9ffa5ce3cff99b7",
             "content": "sha256:3b4b59e6b1ef6fdf105dfc962e2fc003c52de84325a23b0295aef1c87d1be435",
             "locator": {
               "end": 348,
@@ -193,12 +265,29 @@
         }
       ]
     },
+    "20": {
+      "note": "File-local implementation of the stated contract; caller-owned effects and governing workflow are separate evidence.\n\nAnchor: L533–L583",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "eb52d7f13cbceca0492d661ba9ffa5ce3cff99b7",
+            "content": "sha256:08ad34f57e19dac00b4031487a9b97943c36606399db81cc1cf4a53f6f8afd0b",
+            "locator": {
+              "end": 583,
+              "kind": "line_range",
+              "start": 533
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
     "3": {
       "note": "The admitted revision is the digest of the JSON bytes the task store handed over.",
       "targets": [
         {
           "anchor": {
-            "blob": "cd24d245a0ef800a3673fd36ae43ad19a28af78a",
+            "blob": "2a64cde126895735be83f19ed1521595ea1c7a01",
             "content": "sha256:580bc2ba7b11f508edd6bbf52a6b4ce9fee772c8c537addc0f34b8b1ea086920",
             "locator": {
               "kind": "symbol",
@@ -232,7 +321,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "497182eddd472d861bd107fd62aaaae0e0e82067",
+            "blob": "eb52d7f13cbceca0492d661ba9ffa5ce3cff99b7",
             "content": "sha256:70a059c5db100360ca2b2701934c524500b3002805425f09381d703bc1a9be8a",
             "locator": {
               "kind": "symbol",
@@ -243,7 +332,7 @@
         },
         {
           "anchor": {
-            "blob": "497182eddd472d861bd107fd62aaaae0e0e82067",
+            "blob": "eb52d7f13cbceca0492d661ba9ffa5ce3cff99b7",
             "content": "sha256:8b47f49c6b049604a4e718c0bda2deb60385ace3c2218a043efbfabdc3c48247",
             "locator": {
               "kind": "symbol",
@@ -281,7 +370,7 @@
         },
         {
           "anchor": {
-            "blob": "497182eddd472d861bd107fd62aaaae0e0e82067",
+            "blob": "eb52d7f13cbceca0492d661ba9ffa5ce3cff99b7",
             "content": "sha256:fd09c489fab32c6097d6cfcb18dbd69e856c1135f85d6258da17db3f572a01cc",
             "locator": {
               "end": 188,
@@ -298,7 +387,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "497182eddd472d861bd107fd62aaaae0e0e82067",
+            "blob": "eb52d7f13cbceca0492d661ba9ffa5ce3cff99b7",
             "content": "sha256:d894e33e9c1370fad5e1185ba814b7e379c6b8c4663f2eb16319d755f40aaaf6",
             "locator": {
               "kind": "symbol",
@@ -309,7 +398,7 @@
         },
         {
           "anchor": {
-            "blob": "497182eddd472d861bd107fd62aaaae0e0e82067",
+            "blob": "eb52d7f13cbceca0492d661ba9ffa5ce3cff99b7",
             "content": "sha256:f3216586d98fa1bc36cb0829601d6140603c2f527602b04d4505578c044809e3",
             "locator": {
               "kind": "symbol",
@@ -320,7 +409,7 @@
         },
         {
           "anchor": {
-            "blob": "497182eddd472d861bd107fd62aaaae0e0e82067",
+            "blob": "eb52d7f13cbceca0492d661ba9ffa5ce3cff99b7",
             "content": "sha256:2bb1b1020f6a676b875c0ed002574c7c443705a92f4b99021d8b6abe85221341",
             "locator": {
               "kind": "symbol",

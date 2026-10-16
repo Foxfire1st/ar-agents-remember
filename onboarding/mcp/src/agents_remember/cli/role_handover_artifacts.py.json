@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "c655a48ebd97a198b42b91e25094adb8a14fb348",
+        "blob": "85b470bea18f2548365b969746fd9e7ef5ea00cf",
         "content": "sha256:8f388258dd27b4c67e47f903f6d0f19c2461e31ff5f7285f5c28ee8b6950c031",
         "locator": {
           "kind": "symbol",
@@ -21,7 +21,7 @@
     },
     {
       "anchor": {
-        "blob": "c655a48ebd97a198b42b91e25094adb8a14fb348",
+        "blob": "85b470bea18f2548365b969746fd9e7ef5ea00cf",
         "content": "sha256:8e25c8959d3e9788f2045e1b977523336d8613b098f6b2ad053c25a9a924858d",
         "locator": {
           "kind": "symbol",
@@ -39,7 +39,7 @@
     },
     {
       "anchor": {
-        "blob": "c655a48ebd97a198b42b91e25094adb8a14fb348",
+        "blob": "85b470bea18f2548365b969746fd9e7ef5ea00cf",
         "content": "sha256:d511c296efb2f506a713204e19ca5f85845323e27cc8b30ba8f41d6cd4296903",
         "locator": {
           "kind": "symbol",
@@ -57,7 +57,7 @@
     },
     {
       "anchor": {
-        "blob": "c655a48ebd97a198b42b91e25094adb8a14fb348",
+        "blob": "85b470bea18f2548365b969746fd9e7ef5ea00cf",
         "content": "sha256:11201fa4812cd40bba10bc1e30029075c24e47cb6e611e89157cf5d07407560b",
         "locator": {
           "kind": "symbol",
@@ -72,6 +72,24 @@
       },
       "rationale": "Publishes finished mode-0444 bytes by hard link and refuses conflicting content.",
       "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "85b470bea18f2548365b969746fd9e7ef5ea00cf",
+        "content": "sha256:53ae089e7b885fad8e278a7a4540e98ab4b52f03f6e60ecbb8260f070081a4d4",
+        "locator": {
+          "kind": "symbol",
+          "name": "write_detail_artifacts"
+        }
+      },
+      "id": "RLZ-EYJCHF",
+      "invariant": "INV-7KDG7C",
+      "origin": {
+        "handoffEntry": "MIK-R125@v1/details",
+        "leaf": "260928-MIK-L88"
+      },
+      "rationale": "Publishes each selected detail under its content-bound adjacent artifact path.",
+      "role": "enforcement"
     }
   ],
   "references": {
@@ -80,7 +98,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c655a48ebd97a198b42b91e25094adb8a14fb348",
+            "blob": "85b470bea18f2548365b969746fd9e7ef5ea00cf",
             "content": "sha256:8e25c8959d3e9788f2045e1b977523336d8613b098f6b2ad053c25a9a924858d",
             "locator": {
               "kind": "symbol",
@@ -91,12 +109,45 @@
         }
       ]
     },
+    "10": {
+      "note": "Descriptor-level regular-file and no-follow checks protect exact reuse.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "85b470bea18f2548365b969746fd9e7ef5ea00cf",
+            "content": "sha256:c6c3dc0e18bbb06a56594672d944cc570eedc938bca150bd10975d42eb65a3a2",
+            "locator": {
+              "kind": "symbol",
+              "name": "_matches"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "Test source models a regular-to-link swap and unchanged foreign bytes.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "61e380376e4feed4dcb6ae8653515246d8ee8388",
+            "content": "sha256:3c80992011479cb850362c7118da9c8d25f5d4ffbd195f2fb4bfd668a8173834",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_takeover_publication_is_write_once_and_checks_the_open_file"
+            },
+            "path": "mcp/tests/test_step_up_recovery.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
     "2": {
       "note": "Frozen implementation of restore_handover_artifact supporting the stated file behavior.",
       "targets": [
         {
           "anchor": {
-            "blob": "c655a48ebd97a198b42b91e25094adb8a14fb348",
+            "blob": "85b470bea18f2548365b969746fd9e7ef5ea00cf",
             "content": "sha256:d511c296efb2f506a713204e19ca5f85845323e27cc8b30ba8f41d6cd4296903",
             "locator": {
               "kind": "symbol",
@@ -112,7 +163,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c655a48ebd97a198b42b91e25094adb8a14fb348",
+            "blob": "85b470bea18f2548365b969746fd9e7ef5ea00cf",
             "content": "sha256:11201fa4812cd40bba10bc1e30029075c24e47cb6e611e89157cf5d07407560b",
             "locator": {
               "kind": "symbol",
@@ -128,12 +179,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1b56203707c56a715059f113fa5c4121ffa2605b",
+            "blob": "92d47bab1d7b32e75d1b90df160b7d90df78662a",
             "content": "sha256:88ecec4dd65503f1c54ee16384abb8df0c3e80d639a9ae19e9850df2f58b6448",
             "locator": {
-              "end": 661,
+              "end": 662,
               "kind": "line_range",
-              "start": 568
+              "start": 569
             },
             "path": "mcp/tests/test_paseo_agent_tools.py"
           },
@@ -146,12 +197,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1b56203707c56a715059f113fa5c4121ffa2605b",
+            "blob": "92d47bab1d7b32e75d1b90df160b7d90df78662a",
             "content": "sha256:3be784b682d17a0d01ae3b40071d847264f7777c4d62ec48665cca2020d9af22",
             "locator": {
-              "end": 742,
+              "end": 743,
               "kind": "line_range",
-              "start": 713
+              "start": 714
             },
             "path": "mcp/tests/test_paseo_agent_tools.py"
           },
@@ -174,6 +225,54 @@
             "path": "mcp/tests/test_paseo_agent_tools.py"
           },
           "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "Per-source deterministic detail names reuse immutable publication.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "85b470bea18f2548365b969746fd9e7ef5ea00cf",
+            "content": "sha256:53ae089e7b885fad8e278a7a4540e98ab4b52f03f6e60ecbb8260f070081a4d4",
+            "locator": {
+              "kind": "symbol",
+              "name": "write_detail_artifacts"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "Takeover reference retains exact bounded bytes.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "85b470bea18f2548365b969746fd9e7ef5ea00cf",
+            "content": "sha256:0a4361d03a45c742cba9e1477163995b1c25d9cfd3dabb6c40d6d3351b40784d",
+            "locator": {
+              "kind": "symbol",
+              "name": "write_step_up_artifact"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "Replay binds takeover bytes to the saved report and primary handover.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "85b470bea18f2548365b969746fd9e7ef5ea00cf",
+            "content": "sha256:5098b3b1fe731a9a1fc025f2a9466f2e6aa51def5dac261ff3fd4d313f2a4ea0",
+            "locator": {
+              "kind": "symbol",
+              "name": "restore_step_up_artifact"
+            }
+          },
+          "kind": "code"
         }
       ]
     }

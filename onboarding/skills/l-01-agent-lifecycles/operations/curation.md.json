@@ -3,10 +3,31 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "79b6458f44e14d66a0e48b4f16d91348378ba8c2",
-        "content": "sha256:324c0e61802210751c2c135c929f7b328c5d6a312cd2c24ef7ba11769b6761c3",
+        "blob": "11b8ef10c8763f50ed20180a7e8e41c2cb9aeb0b",
+        "content": "sha256:ad72247f425470c0e4ce57be3cb9828cf976d89df52c7299886639e3aca431f3",
         "locator": {
-          "kind": "file"
+          "end": 68,
+          "kind": "line_range",
+          "start": 55
+        }
+      },
+      "id": "RLZ-090539",
+      "invariant": "INV-C8SVFY",
+      "origin": {
+        "handoffEntry": "PNT-R04@v1 §1 / F1",
+        "leaf": "260928-MIK-L90"
+      },
+      "rationale": "Curator verifies this build and launch intake before using any writer.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "11b8ef10c8763f50ed20180a7e8e41c2cb9aeb0b",
+        "content": "sha256:bd9199ee230847819c4e49879ece45e85ee855b573e6d73d25fe8784a590ce5e",
+        "locator": {
+          "end": 61,
+          "kind": "line_range",
+          "start": 55
         }
       },
       "id": "RLZ-0GEXHP",
@@ -20,12 +41,12 @@
     },
     {
       "anchor": {
-        "blob": "79b6458f44e14d66a0e48b4f16d91348378ba8c2",
-        "content": "sha256:3a9ad914ea3e63cb5e64b8e3949899427f985baa078e06bc0d87094deaf52738",
+        "blob": "11b8ef10c8763f50ed20180a7e8e41c2cb9aeb0b",
+        "content": "sha256:c393ff51b431981b08e58c81ddcee4925cea7b4a1781e5924ae87a0b8bd6c014",
         "locator": {
-          "end": 90,
+          "end": 68,
           "kind": "line_range",
-          "start": 84
+          "start": 68
         }
       },
       "id": "RLZ-2JHTJ3",
@@ -39,31 +60,12 @@
     },
     {
       "anchor": {
-        "blob": "79b6458f44e14d66a0e48b4f16d91348378ba8c2",
-        "content": "sha256:6d11da56a4a3a3fbb37b3819731a2f9d94f8924f3e59c32ac6f130726d395c23",
+        "blob": "11b8ef10c8763f50ed20180a7e8e41c2cb9aeb0b",
+        "content": "sha256:56db6310803e625bba16b7f88e519e226ca083fd3e8934c2597a678791537349",
         "locator": {
-          "end": 33,
+          "end": 182,
           "kind": "line_range",
-          "start": 14
-        }
-      },
-      "id": "RLZ-3W9GWW",
-      "invariant": "INV-CQCPAD",
-      "origin": {
-        "handoffEntry": "MIK-R113@v1 rule 10",
-        "leaf": "260928-MIK-L113"
-      },
-      "rationale": "The curation operation's own account of its carriers; it names an instructed session for the taskless writer and no taskless Curator seat.",
-      "role": "propagation-persistence"
-    },
-    {
-      "anchor": {
-        "blob": "79b6458f44e14d66a0e48b4f16d91348378ba8c2",
-        "content": "sha256:a2a288dd989f6131292cb6ea8148355c9b71f1a9c4ea5bdeef7b06e319c97f42",
-        "locator": {
-          "end": 289,
-          "kind": "line_range",
-          "start": 289
+          "start": 182
         }
       },
       "id": "RLZ-4YAPS7",
@@ -77,29 +79,12 @@
     },
     {
       "anchor": {
-        "blob": "79b6458f44e14d66a0e48b4f16d91348378ba8c2",
-        "content": "sha256:324c0e61802210751c2c135c929f7b328c5d6a312cd2c24ef7ba11769b6761c3",
+        "blob": "11b8ef10c8763f50ed20180a7e8e41c2cb9aeb0b",
+        "content": "sha256:eff218058531fd40386894cb196cce5cdc2c1313a7badb65986a4b851d3c9113",
         "locator": {
-          "kind": "file"
-        }
-      },
-      "id": "RLZ-E9F3YP",
-      "invariant": "INV-9S49CW",
-      "origin": {
-        "handoffEntry": "MIK-R93@v1 rules1,2,2a,5,6,7",
-        "leaf": "260928-MIK-L93"
-      },
-      "rationale": "This role/operation source points to operations/orientation.md for developer questions and relayed answers; it is not a self-contained duplicated full-clause home or native delivered-message witness.",
-      "role": "primary-authority"
-    },
-    {
-      "anchor": {
-        "blob": "79b6458f44e14d66a0e48b4f16d91348378ba8c2",
-        "content": "sha256:eba122be4be1c258dc81b86a9d07a19de98fe05c582edec04769814a25d5b294",
-        "locator": {
-          "end": 276,
+          "end": 173,
           "kind": "line_range",
-          "start": 274
+          "start": 172
         }
       },
       "id": "RLZ-EEEG4W",
@@ -113,10 +98,12 @@
     },
     {
       "anchor": {
-        "blob": "79b6458f44e14d66a0e48b4f16d91348378ba8c2",
-        "content": "sha256:324c0e61802210751c2c135c929f7b328c5d6a312cd2c24ef7ba11769b6761c3",
+        "blob": "11b8ef10c8763f50ed20180a7e8e41c2cb9aeb0b",
+        "content": "sha256:0965794460729d53e487afa54f336dbcb1defa8d220296156a68cfe5ef89859f",
         "locator": {
-          "kind": "file"
+          "end": 162,
+          "kind": "line_range",
+          "start": 159
         }
       },
       "id": "RLZ-K60P42",
@@ -130,29 +117,50 @@
     },
     {
       "anchor": {
-        "blob": "79b6458f44e14d66a0e48b4f16d91348378ba8c2",
-        "content": "sha256:809390aaeff5d493f342f874194f9463e041ba61bdb008a7f4480d218e4249bb",
+        "blob": "11b8ef10c8763f50ed20180a7e8e41c2cb9aeb0b",
+        "content": "sha256:eff218058531fd40386894cb196cce5cdc2c1313a7badb65986a4b851d3c9113",
         "locator": {
-          "end": 126,
+          "end": 173,
           "kind": "line_range",
-          "start": 124
+          "start": 172
         }
       },
-      "id": "RLZ-PAE912",
-      "invariant": "INV-VN0A3Q",
+      "id": "RLZ-PDP66S",
+      "invariant": "INV-5TKYXM",
       "origin": {
-        "handoffEntry": "MIK-R48@v2 rule 7",
-        "leaf": "260928-MIK-L48"
+        "handoffEntry": "MIK-R70@v1 rule 4",
+        "leaf": "260928-MIK-L70"
       },
-      "rationale": "The curation operation explicitly requires a restated family guarantee to be named as changed with an authored effect, and leaves the family own revision to the writer.",
+      "rationale": "The sentence that makes the curator role a participant, and the place realization RLZ-V1AKR1 of INV-4E130M already anchors.",
       "role": "primary-authority"
     },
     {
       "anchor": {
-        "blob": "79b6458f44e14d66a0e48b4f16d91348378ba8c2",
-        "content": "sha256:324c0e61802210751c2c135c929f7b328c5d6a312cd2c24ef7ba11769b6761c3",
+        "blob": "11b8ef10c8763f50ed20180a7e8e41c2cb9aeb0b",
+        "content": "sha256:bd9199ee230847819c4e49879ece45e85ee855b573e6d73d25fe8784a590ce5e",
         "locator": {
-          "kind": "file"
+          "end": 61,
+          "kind": "line_range",
+          "start": 55
+        }
+      },
+      "id": "RLZ-PFT43W",
+      "invariant": "INV-K6Q2R4",
+      "origin": {
+        "handoffEntry": "PNT-R04@v1 §4 / F10",
+        "leaf": "260928-MIK-L90"
+      },
+      "rationale": "Curator intake preserves launch task-document and reader arguments.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "11b8ef10c8763f50ed20180a7e8e41c2cb9aeb0b",
+        "content": "sha256:56b0c778734c767ddff49a86236102c099824580e231dba432ec64ebb2362fcd",
+        "locator": {
+          "end": 194,
+          "kind": "line_range",
+          "start": 194
         }
       },
       "id": "RLZ-R4SKXV",
@@ -166,12 +174,50 @@
     },
     {
       "anchor": {
-        "blob": "79b6458f44e14d66a0e48b4f16d91348378ba8c2",
-        "content": "sha256:6c0779d2597c480f5f3b0f51c2023c72346db21e49a7f34d00e3597329296977",
+        "blob": "11b8ef10c8763f50ed20180a7e8e41c2cb9aeb0b",
+        "content": "sha256:33ca0e2577c1a109c73df306c67afedf2c86e675c4d51e2031f448ce8159f0ff",
         "locator": {
-          "end": 77,
+          "end": 189,
           "kind": "line_range",
-          "start": 62
+          "start": 169
+        }
+      },
+      "id": "RLZ-VESCVY",
+      "invariant": "INV-ZNJ14G",
+      "origin": {
+        "handoffEntry": "R99-1-direct-loop",
+        "leaf": "260928-MIK-L99"
+      },
+      "rationale": "Owns direct producer intake and memory delivery to Reviewer without routing its result through Manager.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "11b8ef10c8763f50ed20180a7e8e41c2cb9aeb0b",
+        "content": "sha256:ad72247f425470c0e4ce57be3cb9828cf976d89df52c7299886639e3aca431f3",
+        "locator": {
+          "end": 68,
+          "kind": "line_range",
+          "start": 55
+        }
+      },
+      "id": "RLZ-VXHQMN",
+      "invariant": "INV-NNQR91",
+      "origin": {
+        "handoffEntry": "L71-CURRENT242-W-19",
+        "leaf": "260928-MIK-L71"
+      },
+      "rationale": "The canonical roles/curator.md carries the applicable own-file first-read/task_doc-only write and report/scratch instructions for its role/operation; it is the source the public generator ships.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "11b8ef10c8763f50ed20180a7e8e41c2cb9aeb0b",
+        "content": "sha256:ad72247f425470c0e4ce57be3cb9828cf976d89df52c7299886639e3aca431f3",
+        "locator": {
+          "end": 68,
+          "kind": "line_range",
+          "start": 55
         }
       },
       "id": "RLZ-X79EQQ",
@@ -197,6 +243,58 @@
               "kind": "line_range",
               "start": 1
             }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "Partitions all-role versus Curator/Manager text, consolidates inputs/output in the role, extracts named-step authoring details and states the post-landing recorded memory-review lane.\n\nAnchor: Current source; preserved L88 property 7",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "11b8ef10c8763f50ed20180a7e8e41c2cb9aeb0b",
+            "content": "sha256:1b60529184401258f1c835939cabbc6e3d6598c745cb18abda44c4c6285eacb2",
+            "locator": {
+              "end": 146,
+              "kind": "line_range",
+              "start": 117
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "Partitions all-role versus Curator/Manager text, consolidates inputs/output in the role, extracts named-step authoring details and states the post-landing recorded memory-review lane.\n\nAnchor: Current source; preserved L88 property 8",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "11b8ef10c8763f50ed20180a7e8e41c2cb9aeb0b",
+            "content": "sha256:bd10a9540198bfe178e1703d816516cb5cc1f9854bef4eb283f4037199bfd609",
+            "locator": {
+              "end": 198,
+              "kind": "line_range",
+              "start": 152
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "Partitions all-role versus Curator/Manager text, consolidates inputs/output in the role, extracts named-step authoring details and states the post-landing recorded memory-review lane.\n\nAnchor: Current source; preserved L88 property 9",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9c3645680ef1a2c5c09b50320b7189006fa67d90",
+            "content": "sha256:99896d8becd6a7736cde535c6c3c067fd6539387e4e94727e40d0bd155be46af",
+            "locator": {
+              "end": 47,
+              "kind": "line_range",
+              "start": 21
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/curator.md"
           },
           "kind": "code"
         }
@@ -242,6 +340,111 @@
               "end": 201,
               "kind": "line_range",
               "start": 182
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Partitions all-role versus Curator/Manager text, consolidates inputs/output in the role, extracts named-step authoring details and states the post-landing recorded memory-review lane.\n\nAnchor: Current source; preserved L88 property 10",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9c3645680ef1a2c5c09b50320b7189006fa67d90",
+            "content": "sha256:2099c090091bc82897d818a90dd0c0f8003242fd7067ae94ca568a0553b70c52",
+            "locator": {
+              "end": 111,
+              "kind": "line_range",
+              "start": 73
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/curator.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Partitions all-role versus Curator/Manager text, consolidates inputs/output in the role, extracts named-step authoring details and states the post-landing recorded memory-review lane.\n\nAnchor: Current source; preserved L88 property 11",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "69517ee942d200d941aa32f6439d9be3dec88d70",
+            "content": "sha256:8e1c77434d9c4f1a59e0cbeae45782dad3332b830aeacdfe1cd438fd4da1fbda",
+            "locator": {
+              "end": 82,
+              "kind": "line_range",
+              "start": 19
+            },
+            "path": "skills/l-01-agent-lifecycles/reference/curator-authoring-d301.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Partitions all-role versus Curator/Manager text, consolidates inputs/output in the role, extracts named-step authoring details and states the post-landing recorded memory-review lane.\n\nAnchor: Current source; preserved L88 property 12",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bcdffc827a6aabd156e73f322a46e69d89a8e969",
+            "content": "sha256:042c8b984d9938ace67530ee45a908ebf51cc5da3250004773fbbaef5286f1df",
+            "locator": {
+              "end": 40,
+              "kind": "line_range",
+              "start": 8
+            },
+            "path": "skills/l-01-agent-lifecycles/reference/curator-writer-details.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "Partitions all-role versus Curator/Manager text, consolidates inputs/output in the role, extracts named-step authoring details and states the post-landing recorded memory-review lane.\n\nAnchor: Current source; preserved L88 property 4",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "11b8ef10c8763f50ed20180a7e8e41c2cb9aeb0b",
+            "content": "sha256:cf34ebab05c80758750f1027907ea7c1c5d4e8dd0d98b7455eaeab4f60ea2bce",
+            "locator": {
+              "end": 49,
+              "kind": "line_range",
+              "start": 6
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "Partitions all-role versus Curator/Manager text, consolidates inputs/output in the role, extracts named-step authoring details and states the post-landing recorded memory-review lane.\n\nAnchor: Current source; preserved L88 property 5",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "11b8ef10c8763f50ed20180a7e8e41c2cb9aeb0b",
+            "content": "sha256:2a3013f88f4aa44ae23cf11957e7d828f0328b0121d9678be16bda65b43df848",
+            "locator": {
+              "end": 68,
+              "kind": "line_range",
+              "start": 54
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "Partitions all-role versus Curator/Manager text, consolidates inputs/output in the role, extracts named-step authoring details and states the post-landing recorded memory-review lane.\n\nAnchor: Current source; preserved L88 property 6",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "11b8ef10c8763f50ed20180a7e8e41c2cb9aeb0b",
+            "content": "sha256:b922cafea1846d0be2be00c38cfff93f416721f2dc29030c331a6b4ef3b08276",
+            "locator": {
+              "end": 111,
+              "kind": "line_range",
+              "start": 74
             }
           },
           "kind": "code"

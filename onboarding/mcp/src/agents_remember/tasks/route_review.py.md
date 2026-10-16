@@ -26,7 +26,7 @@ evidence digests, the dependency declaration, and record digest as an all-or-not
 
 ### Invariants And Boundaries
 
-- Review state has checked-candidate and authority-resolved identity fields, but no caller-selected review purpose or authentication field; admission is owned by `worktrees/review_history.py`.
+- Each review state has checked-candidate and authority-resolved identity fields. The operation payload now selects code or memory through reviewKind, and typed recorded rounds retain that kind; no authentication field or approval-authenticity proof is added. Admission is owned by `worktrees/review_history.py`.
 - The transition service enforces the settings number plus cumulative approved extras. This model records architect/developer words without authenticating their author and keeps legacy developerApproval readable.
 - Route-review content addressing remains all-or-nothing, and atomic-master scope remains
   integration-owned.
@@ -35,7 +35,22 @@ evidence digests, the dependency declaration, and record digest as an all-or-not
 
 None.
 
+## Current Contract
+
+ReviewRound records positive round number, finite code/memory kind, whether findings remained when that round was recorded, and optional verdict reference. ReviewState gains a default-empty recordedRounds list; its existing baseline/remaining and approval consistency checks remain. MemoryReviewState is an Annotated ReviewState with an after-validator refusing any recorded row whose kind is not memory. Complete ordered history is checked by review_count_unavailable at counting time, not guaranteed by this list declaration; legacy records are not backfilled or reinterpreted. Each lane shares the same settings-limit/extra-round protocol without sharing a counter or baseline.
+
+
+The governing workflow opens an independent memory review after CODE PASS on the same task using begin_review/record_review with reviewKind=memory. It has its own immutable baseline and shrinking IDs, under the same settings limit and extra-round approval rule, and never resets code reviewState. The signed rollout applies only to memory reviews begun after L88 lands; already-underway reviews (L168, L56, L57, L59) finish with their sealed-report workflow, with no migration/backfill. This describes the candidate contract, not a claim that the serving build already supports it.
+
+This account is bound to the candidate source, not a claim of a running serving build or a fresh execution/acceptance verdict. Existing historical accounts remain historical.
+
 ## Evidence
+
+
+- Worker/Curator typed review census, record-only exclusion and unknown history. [4]
+- Reason admission, threshold and differing-harness/model inheritance boundary. [5]
+- Record-only memory identity comes from memory authority, never the sibling code root. [6]
+- File-local implementation of the stated contract; caller-owned effects and governing workflow are separate evidence. [7]
 
 ### Docs References
 

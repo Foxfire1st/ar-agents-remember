@@ -1,0 +1,30 @@
+{
+  "admission": {
+    "criteria": [
+      "joint_guarantee"
+    ],
+    "justification": "Selection correctness alone cannot preserve replay identity; the member obligations jointly bind admitted instruction/choice selection to its immutable durable delivery."
+  },
+  "guarantee": "The addressed capsule delivers only its applicable common/role stage text, and every referenced detail resolves to the exact per-request frozen bytes, so omitted inline method detail cannot silently become live mutable instructions.",
+  "id": "FAM-N36SWD",
+  "members": [
+    "INV-WR3J18",
+    "INV-7KDG7C"
+  ],
+  "origin": {
+    "handoff": {
+      "path": "whole-curation.json"
+    },
+    "handoffEntry": "L88-stage-delivery",
+    "leaf": "260928-MIK-L88",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "routes": [
+    "mcp/src/agents_remember/models/role_capsules",
+    "mcp/src/agents_remember/cli"
+  ],
+  "schema": "ar-family/v1",
+  "status": "proposed",
+  "title": "Selected stage and immutable detail delivery"
+}

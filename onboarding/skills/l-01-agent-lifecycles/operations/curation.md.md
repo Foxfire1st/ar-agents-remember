@@ -32,12 +32,40 @@ The repository-foundation entry is carried by a taskless instructed session foll
 
 ## Code Commentary
 
-The instruction owns the curator's leaf coherence pass: the three-way reconciliation, the hand-off sections, the writer invocation, the full quality check and the coherence authority. Under MIK-R48 its family-coverage step owns the effect/revision rule to which the Curator role delegates: a restated family guarantee is named as a changed row with the curator's effect while the writer fills the family's own revision. RLZ-AHYBRR was repaired under its existing ID, origin and role: its Curator-role anchor now names lines 107–108, and its revised rationale describes delegation to this operation's Normal workflow for family coverage authoring and readback. The formerly mismatched role-file anchor was not left unchanged in this candidate; the delegation pointer is not itself an independent restatement of the effect/revision rule.
+The instruction owns the selected curation workflow, full quality check and coherence authority. The whole role inputs/outputs stay in roles/curator.md; named-step references carry authoring and writer method. Under MIK-R48 the actual effect/revision sentence is now reference/curator-writer-details.md:29–31: restated family guarantee is changed with authored effect, and the writer fills its own revision. The earlier RLZ-AHYBRR repair to role lines 107–108 is a prior-candidate account, not a current locator. Current role 47/56 names the details; curator-authoring-d301 43–54 and curator-writer-details 29–31 contain substantive family/readback and effect/revision support. The admitted writer has already reanchored and relocated same-ID entries; their sidecars, leaf history and retained receipts record actual publication, not a draft changing no entry. Family authorship/readback and the delegated effect/revision instruction remain distinct substantive accounts.
 
 Converted-memory closeout additionally requires a non-author second reader. That seat checks every changed card, sidecar and record statement against final code, every history disposition/effect/reason against the diff, and important omissions. Blocking findings are repaired, with a full curation-operation rerun after each repair. This is a lifecycle duty, explicitly not an automated closeout predicate or a Curator-helper self-check.
 
 - Raw clean curation and the independent second-reader fact-check have separate obligations. [2]
 
+## Current composition and authoring contract
+
+Curation remains the leaf coherence pass and the bounded repository-foundation authoring procedure. Common text retains the captured candidate range, packet rejection, disjoint Curator/Manager transaction ownership, serving-build-only producer, full quality loop, independent non-author fact-check and protected closeout/sync/permission boundaries. Curator-only method details do not enter Manager's stage slice.
+
+The complete Curator intake and result live in roles/curator.md. Its named-step references now carry detailed reconciliation, rationale/record/family authoring, card syntax, trace syntax, commands and read signatures. Do not cite a surviving workflow heading as if it still contained the moved rule: family effect/revision is substantive in curator-writer-details, and target-rationale/readback requirements in curator-authoring-d301.
+
+Reviewer records memory begin/result with `reviewKind=memory`, retaining separate sealed IDs, reports and count under the code-review limit, without opening/resetting a code round. Architect/developer approval for extra passes is recorded by Manager. Reviews already under way finish as begun; recorded lanes apply only after landing. Direct handovers, pending Manager-notice recovery and one admitted Curator writer remain.
+
+
 ## Evidence
 
 No separate reference list: the file's sidecar carries the realization entries this leaf re-anchored.
+
+
+- Partitions all-role versus Curator/Manager text, consolidates inputs/output in the role, extracts named-step authoring details and states the post-landing recorded memory-review lane. [4]
+
+- Partitions all-role versus Curator/Manager text, consolidates inputs/output in the role, extracts named-step authoring details and states the post-landing recorded memory-review lane. [5]
+
+- Partitions all-role versus Curator/Manager text, consolidates inputs/output in the role, extracts named-step authoring details and states the post-landing recorded memory-review lane. [6]
+
+- Partitions all-role versus Curator/Manager text, consolidates inputs/output in the role, extracts named-step authoring details and states the post-landing recorded memory-review lane. [7]
+
+- Partitions all-role versus Curator/Manager text, consolidates inputs/output in the role, extracts named-step authoring details and states the post-landing recorded memory-review lane. [8]
+
+- Partitions all-role versus Curator/Manager text, consolidates inputs/output in the role, extracts named-step authoring details and states the post-landing recorded memory-review lane. [9]
+
+- Partitions all-role versus Curator/Manager text, consolidates inputs/output in the role, extracts named-step authoring details and states the post-landing recorded memory-review lane. [10]
+
+- Partitions all-role versus Curator/Manager text, consolidates inputs/output in the role, extracts named-step authoring details and states the post-landing recorded memory-review lane. [11]
+
+- Partitions all-role versus Curator/Manager text, consolidates inputs/output in the role, extracts named-step authoring details and states the post-landing recorded memory-review lane. [12]

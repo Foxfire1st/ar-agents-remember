@@ -5,6 +5,8 @@
 
 ## Purpose
 
+A configured Step up action stays in the shared wrapping launcher and sends canonical selection plus a reason, not preview permission overrides. The original request identity and trimmed reason survive saved taskless requests, remount and retry. A stepped-up receipt labels base mode, notes and feature chips non-applied and reports only observed model/source, with unreported mode/features explicit. This adds no chat navigation or acceptance authority.
+
 The dashboard is the operator-facing React cockpit for server-composed task, lifecycle, enclosure, observer and native-host evidence. Its browser layer presents that evidence and requests explicitly owned operations; it does not become lifecycle, candidate-selection, certification, recovery, commit or integration authority.
 
 The current product bar is Chats, Operations, Knowledge and File Viewer, in that order. Chats is the default opening destination. A knowledge-reader hash opens Knowledge instead. Engine Room, Memory, Topology and Hangar remain representable through injected `initialView` values but have no product-bar entry. Their retained source and fixtures must not be described as ordinary dashboard navigation or fresh mounted evidence.
@@ -272,6 +274,9 @@ Source account retained from the parked claim (anchor currency not renewed here)
 
 ## Evidence
 
+
+
+
 - The root already says Engine Room has no product-bar entry and is exercised through injected initialView. The changed so — source ownership, not executed visual proof. [42]
 - The root already says Engine Room has no product-bar entry and is exercised through injected initialView. The changed so — source ownership, not executed visual proof. [43]
 - The Knowledge destination in the registry. [1]
@@ -348,3 +353,5 @@ Source account retained from the parked claim (anchor currency not renewed here)
 - Conditional reads retain only admitted successful bytes and guard abort/identity before publishing a response. [69]
 - Task fixtures copy sampled identity/content fields while explicitly choosing planned stage and empty collections/count defaults. [70]
 - Topology maps the bound task through shared status presentation; an unbound enclosure is idle. [71]
+
+- A configured Step up action stays in the shared wrapping launcher and sends canonical selection plus a reason, not preview permission overrides. The original request identity and trimmed reason survive saved taskless requests, remount and retry. A stepped-up receipt labels base mode, notes and feature chips non-applied and reports only observed model/source, with unreported mode/features explicit. This adds no chat navigation or acceptance authority. [72]

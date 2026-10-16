@@ -25,9 +25,7 @@
         "blob": "6bdc243d3ad1d537675952942d2f2872d9bec368",
         "content": "sha256:e5082f0657f86656442c332d5002c57184bd035d28b7a08fe95fb80565492cda",
         "locator": {
-          "end": 153,
-          "kind": "line_range",
-          "start": 1
+          "kind": "file"
         }
       },
       "id": "RLZ-68PVA6",

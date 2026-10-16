@@ -12,7 +12,7 @@ Worker and Bootstrap intake now obtain naming/orientation and open source/card/o
 
 Landing cut/add observations are report-only; use the measurement owner and canonical Curator/Reviewer duties for independent memory judgment.
 
-A native role launch selects an explicit supported role and applicable operation, resolves the canonical task selection, prepares the paired enclosure for leaf roles, and delivers the role instructions and handover. Its instruction stream contains the selected role followed by one operation; task and workspace facts travel separately. Retained shared core is authored doctrine, not a prepended role instruction stream. Missing or unsupported bindings are refusals, never invitations to infer a role, repository, task, parent or substitute operation.
+A native role launch selects an explicit supported role and applicable operation, resolves the canonical task selection, prepares the paired enclosure for leaf roles, and delivers the role instructions and handover. Its instruction stream contains the whole selected role followed by common and matching-role parts of one operation; task and workspace facts travel separately. Retained shared core is authored doctrine, not a prepended role instruction stream. Missing or unsupported bindings are refusals, never invitations to infer a role, repository, task, parent or substitute operation.
 
 The Architect hands execution coordination to its Manager or Orchestrator and continues the developer conversation and status reading without waiting for execution completion. When a second master begins, an Orchestrator reuses the existing Manager; the Architect's explicit message changes that Manager's reporting recipient, not its fixed launch parent. Coordinators record operational rulings, proposed requirement-sentence changes and current seat ownership in durable notes. Ordinary interpretations within the intended promise stay with them; new or dropped scope, a changed promise and human-pinned decisions return to the developer.
 
@@ -40,7 +40,7 @@ Worker changes only the selected leaf's approved primary requirement and explici
 
 Reviewer is independently assigned at the reviewed seam's altitude: leaf route, atomic-master integration, master-exit, sprint plan or super-exit. A verdict is pass/block evidence for that seam's decider, never a gate decision. Baseline review covers the complete assigned diff, including unattributed changes, with durable coverage and reports for every material route. Invariant/family attribution adds a review dimension rather than filtering files. Bound catalogs and completion, implementation and onboarding lenses govern the work. Evidence must match the requirement class: mounted UI for rendering, operation-level proof for ordering, parsed artifacts for persisted shape, and source plus enforcing mechanism for doctrine. The reviewer reports every bound standing criterion, including those finding nothing.
 
-Fix-verification preserves the agreed baseline and verifies only sealed outstanding IDs, with the same Reviewer for the repair stretch. It does not add routes, criteria or findings, rediscover catalogs or reset the cycle after a candidate, model, seat or report-label change. Missing, duplicate, rewritten, reintroduced or outside-list IDs, new criteria under old IDs and passes with unresolved IDs are protocol issues for developer decision. The ordinary budget is settings-owned; the effective task limit, including approved extra rounds, is read from `task_doc.reviewState.limit`. D107 explicitly permits one further look by the same Reviewer when only previously raised, repaired items remain; it covers no new item, and Manager records that authorization. Memory review has its own sealed reports, IDs and count with the same ordinary limit; it opens no code round and resets no passed code baseline. Extra memory passes beyond that settings limit require the task Architect's or the developer's word recorded by the Manager.
+Fix-verification preserves the agreed baseline and verifies only sealed outstanding IDs, with the same Reviewer for the repair stretch. It does not add routes, criteria or findings, rediscover catalogs or reset the cycle after a candidate, model, seat or report-label change. Missing, duplicate, rewritten, reintroduced or outside-list IDs, new criteria under old IDs and passes with unresolved IDs are protocol issues for developer decision. The ordinary budget is settings-owned; the effective task limit, including approved extra rounds, is read from `task_doc.reviewState.limit`. Previously raised repaired items are verified in an ordinary settings-limited round; beyond the limit Manager records architect/developer permission. D107 is no automatic extra-round authorization. Memory review has its own sealed reports, IDs and count with the same ordinary limit; it opens no code round and resets no passed code baseline. Extra memory passes beyond that settings limit require the task Architect's or the developer's word recorded by the Manager.
 
 Reviewer independently adjudicates exact requirement revisions and attempts, with approved packets and durable corpus ruling. Missing approval, wrong-class evidence, absent rationale or invalid citations reject the requirement; no aggregate or sampled acceptance substitutes. Rejections have one of the five named classes: implementation defect, evidence gap, requirement contradiction/overconstraint, test/tool defect or external blocker. A truthful blocked handoff does not make the requirement deliverable or permit a PASS. Declared `expectedKnowledgeEffects` are compared with the packet: no required effect missing and none invented.
 
@@ -62,7 +62,7 @@ Before converted closeout, a non-author second reader checks each changed card/s
 
 Curator scopes leaf tools by the enclosure contract and checks returned roots; unscoped resolution can reach official memory, and route-index refresh writes. It uses the source-bound serving build admitted for that runtime, names its ruler and does not use the leaf's changed producer, another installation, an internal writer or a switched-off guard to evade refusal. Missing writer admission means required records are reported unwritten. An explicitly report-only assignment writes only its requested report and bound message; it performs no onboarding, indexing, MQC, coherence or comparison work and claims none of normal curation complete.
 
-Repository-foundation curation is a bounded second entry: first/resumed foundation for the requested registered repository, resolved context, available sources and current knowledge state. Onboarding is optional input; the foundation entry neither requires it nor writes it. No fake leaf, task, worktree or enclosure is made to satisfy an argument list. Generic hosted-seat policy admits taskless Curator under the recorded 2026-09-24 ruling; the native role launcher still requires a selected leaf for Curator. Taskless `knowledge-bootstrap` resolves the registered repository and rejects an enclosure in scope as `enclosure_in_scope`; it writes an admitted wave of files only with authorization and the developer's write word. Partial scope remains partial with unreached areas named. Existing onboarding and baseline readiness do not establish knowledge-foundation completeness.
+Repository-foundation curation is a bounded second entry: first/resumed foundation for the requested registered repository, resolved context, available sources and current knowledge state. Onboarding is optional input; the foundation entry neither requires it nor writes it. No fake leaf, task, worktree or enclosure is made to satisfy an argument list. The 2026-09-24 generic taskless-Curator admission is historical, not present launch authority. The Curator seat is leaf-task-bound; without a task an instructed session holds the writer and Bootstrap reads/reports. Taskless `knowledge-bootstrap` resolves the registered repository and rejects an enclosure in scope as `enclosure_in_scope`; it writes an admitted wave of files only with authorization and the developer's write word. Partial scope remains partial with unreached areas named. Existing onboarding and baseline readiness do not establish knowledge-foundation completeness.
 
 Bootstrap retains the read-and-report foundation responsibility and setup-surface boundaries; it does not author onboarding or knowledge. Its report preserves resolved state, actual steps, decisions, failures and absent capabilities. It never turns a working installation's later maintenance request into setup authority or rewrites/migrates an existing artifact around a refusal. The retained Designer owns a master-scoped design and declared blind spot, leaving cross/future-master collisions to downstream portfolio review. Material reframing waits for confirmation, truth gaps remain explicit and unnameable surfaces are findings. The retained Strategist drafts an evidence-cited sprint plan, distinguishes detection from judgment, explicitly chooses justified graph scheduling or the graph-less default, and leaves ruling/adoption to Architect/Orchestrator. Its limited draft attachment exception does not grant execution, acceptance or Git authority. These retained roles are not thereby admitted by the seven-role native launcher.
 
@@ -116,6 +116,16 @@ Worker ends with requirement-satisfying bytes, focused checks and report with Re
 
 The same Reviewer can repair a Worker-record-only finding on its last recorded round without `begin_review` only if the candidate is byte-identical under the authority-resolved identity. A changed or unproven candidate requires a new begin; remaining sealed finding IDs can only shrink. A showing case is proof of the required property, not the entire finding; an unsuccessful repair or extra-round request must account for that property and its construction.
 
+### Role-stage selection and step-local authoring
+
+The composition manifest declares section audiences for marked operations and `all` for unchanged authorized closeout. A capsule keeps the whole selected role and the stage's common/matching-role text, not every role's method. Inputs, whole results and all-stage boundaries remain capsule obligations. Named step-detail references provide formats, command options and inspection method at their named step; a surviving heading does not prove a moved substantive rule still stands there. Curator serving-build/no-self-producer constraints appear inline in curation, orientation and recovery.
+
+The shared STE-inspired profile is the single writing guide for new or revised invariant statements, family guarantees, history reasons and walkthrough prose after adoption. It preserves actor, applicability, triggers, quantifiers, negation, conditions, exclusions and exact source/evidence identities. Independent non-author comparison and concrete conforming/violating/boundary cases precede a `clarify` judgment; real changes use the existing effect/history/revision route. Word-count/vocabulary heuristics approve no meaning. Three-real-revision pilot preparation and optional visual explanations are not independent acceptance, and frozen records/closed history are not cosmetically rewritten. Migration procedures link the guide before their waves.
+
+Worker marks only completed matching own build/evidence steps; Curator only its completed curation step; Reviewer only a matching review step after its last round is recorded passed. Missing matching steps are reported and not set. Incomplete, blocked, progress and escalation reports do not mark unfinished work done. Manager sets no step for another agent and retains status/acceptance/publication. Worker/Curator stop after three unsuccessful own repairs of the same check/finding and tell Manager; this local stop is distinct from product review-record try counting.
+
+Reviewer records memory begin/result with `reviewKind=memory`: separate sealed reports, findings and count, the same limit, no code-state reset, and Manager-recorded architect/developer approval beyond it. Under-way memory reviews finish as begun; new recorded lanes apply after landing. Neither this rollout nor clearer prose rewrites prior reviews or history.
+
 ## Evidence
 
 - Manager leaves native operation stage/mirror publication to its owner; explicit corrections and organizational-master completion retain their task-document route. [49]
@@ -155,7 +165,7 @@ The same Reviewer can repair a Worker-record-only finding on its last recorded r
 - Manager prepares the leaf's three sibling seats with role_start_set; direct peer handovers leave gate acceptance and transactions with Manager, and held delivery is not resent.  Anchor: Operation — Coordination \[33] [33]
 - Worker leaves code uncommitted; sync conflict content, staging and continuation have separate owners.  Anchor: Boundaries \[34] [34]
 - Reviewer independently checks exact attempts, knowledge-effect declarations and separately sealed memory evidence.  Anchor: Process; Outputs; Stop and escalate \[35] [35]
-- D107 permits one further look only at previously raised, repaired items; it grants no new finding scope.  Anchor: Outputs \[36] [36]
+- Settings-bound fix verification preserves existing findings; beyond-limit work requires recorded architect/developer approval through Manager. [36]
 - Converted leaf ingest requires a contract/list/authorization, writes only with the file-write flag, and routes converted memory to the file writer.  Anchor: `add_arguments`, `run` \[37] [37]
 - Current family and external-document authoring supersede retired database entry keys.  Anchor: The curator's authored keys beside the thirteen fields \[38] [38]
 - Curator authors scope, completes full MQC and coherence, and records no separate Reviewer-owned Git comparison.  Anchor: Normal workflow; Scope before ingest; Authority gates \[39] [39]
@@ -175,3 +185,30 @@ The same Reviewer can repair a Worker-record-only finding on its last recorded r
 
 - Ordinary converted-card row/source authoring duty. [17]
 - Non-author second-reader fact-check before closeout. [47]
+
+
+- Role-stage selection, precise authoring, narrow own-step completion and independent recorded memory lane; source declarations, no execution acceptance. [50]
+
+- Role-stage selection, precise authoring, narrow own-step completion and independent recorded memory lane; source declarations, no execution acceptance. [51]
+
+- Role-stage selection, precise authoring, narrow own-step completion and independent recorded memory lane; source declarations, no execution acceptance. [52]
+
+- Role-stage selection, precise authoring, narrow own-step completion and independent recorded memory lane; source declarations, no execution acceptance. [53]
+
+- Role-stage selection, precise authoring, narrow own-step completion and independent recorded memory lane; source declarations, no execution acceptance. [54]
+
+- Role-stage selection, precise authoring, narrow own-step completion and independent recorded memory lane; source declarations, no execution acceptance. [55]
+
+- Role-stage selection, precise authoring, narrow own-step completion and independent recorded memory lane; source declarations, no execution acceptance. [56]
+
+- Role-stage selection, precise authoring, narrow own-step completion and independent recorded memory lane; source declarations, no execution acceptance. [57]
+
+- Role-stage selection, precise authoring, narrow own-step completion and independent recorded memory lane; source declarations, no execution acceptance. [58]
+
+- Role-stage selection, precise authoring, narrow own-step completion and independent recorded memory lane; source declarations, no execution acceptance. [59]
+
+- Role-stage selection, precise authoring, narrow own-step completion and independent recorded memory lane; source declarations, no execution acceptance. [60]
+
+- Role-stage selection, precise authoring, narrow own-step completion and independent recorded memory lane; source declarations, no execution acceptance. [61]
+
+- Role-stage selection, precise authoring, narrow own-step completion and independent recorded memory lane; source declarations, no execution acceptance. [62]

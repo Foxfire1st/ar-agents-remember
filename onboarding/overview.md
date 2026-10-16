@@ -164,6 +164,15 @@ L96 records the host-lifecycle move into `serving/paseo/` and the original share
 
 The retained five-gate memory-certification architecture is distinct from transaction-only closeout. Its final adapter demands the exact ordered green Gate 1–4 prefix and exact admitted code candidate before Gate 5 reuse; interactive catalogs name missing authority without eligibility. Source presence neither demonstrates that those gates ran nor makes them an automatic prerequisite of the current closeout transaction. Historical measurements, closure claims and diagnostic scores remain dated evidence only.
 
+### Precise authoring and role-stage detail
+
+Canonical lifecycle guidance now supplies one shared STE-inspired writing profile, referenced from Curator, handoff, migration and optional visual-explainer guidance. After adoption later authored/revised statements, family guarantees, reasons and walkthroughs use it. Exact producer wording/evidence and frozen history remain preserved; independent old/new facet-and-case comparison, not a shorter sentence or automatic language heuristic, establishes whether `clarify` is justified. Conversion is not a cosmetic rewrite and no bulk historical rewrite or new closeout gate is authorized.
+
+Role capsules retain whole role inputs/results/boundaries and select common/matching-role operation sections. Step-local formats/commands/check detail are named references, not a new authority or permission. Capsule and step-file budgets are capped separately at 3,700 and 2,500 words. These are source declarations, not fresh compiled-size, host, synchronization or acceptance evidence.
+
+Own-step bookkeeping is narrow: Worker marks completed matching build/evidence steps, Curator its completed curation step and Reviewer its review step only after a recorded passed final round; no matching step means no write. Manager sets no other agent's step; native operations publish task stage, while Manager retains explicit correction, organizational-master completion, acceptance and landing, and receives Worker/Curator escalation after three unsuccessful own repairs of one check/finding. New memory rounds use a separate `reviewKind=memory` lane without resetting code; under-way reviews finish as begun and recorded lanes apply only after landing.
+
+
 ## Evidence
 
 - Canonical declaration data drives copy recognition; only exact regular candidate source/copy equality suppresses a copy obligation, while present nonregular declarations remain named refusals. This is not synchronization or delivery evidence. [334]
@@ -372,3 +381,29 @@ Historical L111 predecessor account, not the composed R113 roster: - Historical 
 - Host authority requires a complete current-boot reconciliation and armed supervisor observation before role-agent task binding. [336]
 - Manager instructions assign native stage publication and master-row mirroring to start/finalize/abandon; explicit corrections retain their separate route. [337]
 - The dashboard store retains bounded body/preparation resources by document reference and revision without taking task-state authority. [338]
+
+- Role-stage selection, precise authoring, narrow own-step completion and independent recorded memory lane; source declarations, no execution acceptance. [339]
+
+- Role-stage selection, precise authoring, narrow own-step completion and independent recorded memory lane; source declarations, no execution acceptance. [340]
+
+- Role-stage selection, precise authoring, narrow own-step completion and independent recorded memory lane; source declarations, no execution acceptance. [341]
+
+- Role-stage selection, precise authoring, narrow own-step completion and independent recorded memory lane; source declarations, no execution acceptance. [342]
+
+- Role-stage selection, precise authoring, narrow own-step completion and independent recorded memory lane; source declarations, no execution acceptance. [343]
+
+- Role-stage selection, precise authoring, narrow own-step completion and independent recorded memory lane; source declarations, no execution acceptance. [344]
+
+- Role-stage selection, precise authoring, narrow own-step completion and independent recorded memory lane; source declarations, no execution acceptance. [345]
+
+- Role-stage selection, precise authoring, narrow own-step completion and independent recorded memory lane; source declarations, no execution acceptance. [346]
+
+- Role-stage selection, precise authoring, narrow own-step completion and independent recorded memory lane; source declarations, no execution acceptance. [347]
+
+- Role-stage selection, precise authoring, narrow own-step completion and independent recorded memory lane; source declarations, no execution acceptance. [348]
+
+- Role-stage selection, precise authoring, narrow own-step completion and independent recorded memory lane; source declarations, no execution acceptance. [349]
+
+- Role-stage selection, precise authoring, narrow own-step completion and independent recorded memory lane; source declarations, no execution acceptance. [350]
+
+- Role-stage selection, precise authoring, narrow own-step completion and independent recorded memory lane; source declarations, no execution acceptance. [351]

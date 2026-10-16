@@ -3,10 +3,12 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "286df2d316cfbc1b8e1eb218e10111727cffe78c",
-        "content": "sha256:87b0bc12f0f2297bc606d1311d551e8686becdfe03f165a3cd7fcec92071aa49",
+        "blob": "6ebeba78dcb06d9111cec33fcaba5afd0c79979b",
+        "content": "sha256:fb5de159bb4cbe0df7e9f61dcd0a487181219e95c2fa68515c886b807dd6e050",
         "locator": {
-          "kind": "file"
+          "end": 252,
+          "kind": "line_range",
+          "start": 234
         }
       },
       "id": "RLZ-88JBV4",
@@ -20,10 +22,12 @@
     },
     {
       "anchor": {
-        "blob": "286df2d316cfbc1b8e1eb218e10111727cffe78c",
-        "content": "sha256:87b0bc12f0f2297bc606d1311d551e8686becdfe03f165a3cd7fcec92071aa49",
+        "blob": "6ebeba78dcb06d9111cec33fcaba5afd0c79979b",
+        "content": "sha256:769f824dbfe0096ab2bdca0722772df9ef07a88093bd8bbd2740bd27644284ac",
         "locator": {
-          "kind": "file"
+          "end": 108,
+          "kind": "line_range",
+          "start": 92
         }
       },
       "id": "RLZ-ED5HAW",
@@ -37,10 +41,12 @@
     },
     {
       "anchor": {
-        "blob": "286df2d316cfbc1b8e1eb218e10111727cffe78c",
-        "content": "sha256:87b0bc12f0f2297bc606d1311d551e8686becdfe03f165a3cd7fcec92071aa49",
+        "blob": "6ebeba78dcb06d9111cec33fcaba5afd0c79979b",
+        "content": "sha256:7f100080b048a59ff0e21ed4d1f5ee333cbb006e83a96e7af982099f3f984c9b",
         "locator": {
-          "kind": "file"
+          "end": 173,
+          "kind": "line_range",
+          "start": 148
         }
       },
       "id": "RLZ-G2F9YV",
@@ -54,10 +60,12 @@
     },
     {
       "anchor": {
-        "blob": "286df2d316cfbc1b8e1eb218e10111727cffe78c",
-        "content": "sha256:87b0bc12f0f2297bc606d1311d551e8686becdfe03f165a3cd7fcec92071aa49",
+        "blob": "6ebeba78dcb06d9111cec33fcaba5afd0c79979b",
+        "content": "sha256:fb5de159bb4cbe0df7e9f61dcd0a487181219e95c2fa68515c886b807dd6e050",
         "locator": {
-          "kind": "file"
+          "end": 252,
+          "kind": "line_range",
+          "start": 234
         }
       },
       "id": "RLZ-KW0J8V",
@@ -71,12 +79,12 @@
     },
     {
       "anchor": {
-        "blob": "286df2d316cfbc1b8e1eb218e10111727cffe78c",
-        "content": "sha256:eca835c6c4f84d5c847e2a5d4826add1abae5a2272f651e59bc9752d989bc4b2",
+        "blob": "6ebeba78dcb06d9111cec33fcaba5afd0c79979b",
+        "content": "sha256:5e1eac2552301245140d26bb8cac68b34f16064f8dd9191a77cdd020f7d7453d",
         "locator": {
-          "end": 444,
+          "end": 428,
           "kind": "line_range",
-          "start": 395
+          "start": 381
         }
       },
       "id": "RLZ-P2BV6G",
@@ -89,6 +97,92 @@
       "role": "primary-authority"
     }
   ],
-  "references": {},
+  "references": {
+    "1": {
+      "note": "Adds migration-author use of the shared writing profile and independent meaning review; it changes authoring guidance, not converter admission or publication authority.\n\nAnchor: Candidate instruction body, lines 8–23",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6ebeba78dcb06d9111cec33fcaba5afd0c79979b",
+            "content": "sha256:d7ec5758f02f606bb046f25f77df772d688f11e49b28ed06f3bdaa2d352ec04f",
+            "locator": {
+              "end": 23,
+              "kind": "line_range",
+              "start": 8
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Adds migration-author use of the shared writing profile and independent meaning review; it changes authoring guidance, not converter admission or publication authority.\n\nAnchor: Candidate instruction body, lines 48–76",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6ebeba78dcb06d9111cec33fcaba5afd0c79979b",
+            "content": "sha256:9fb5f40c3d84a1162d2279ce0bf54622d84df946e6824fa7a185e26d0251b5cb",
+            "locator": {
+              "end": 76,
+              "kind": "line_range",
+              "start": 48
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Adds migration-author use of the shared writing profile and independent meaning review; it changes authoring guidance, not converter admission or publication authority.\n\nAnchor: Candidate instruction body, lines 334–379",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6ebeba78dcb06d9111cec33fcaba5afd0c79979b",
+            "content": "sha256:58800a0c93bc365ce43216bbf23d2a8d7f63dd7f89f4b6339318558f661325f7",
+            "locator": {
+              "end": 379,
+              "kind": "line_range",
+              "start": 334
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Adds migration-author use of the shared writing profile and independent meaning review; it changes authoring guidance, not converter admission or publication authority.\n\nAnchor: Candidate instruction body, lines 381–443",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6ebeba78dcb06d9111cec33fcaba5afd0c79979b",
+            "content": "sha256:ae5fb7bf9b3d113ccff3fdcd89ab9f3f55e5663ae301e35a9db9ba795077f81b",
+            "locator": {
+              "end": 443,
+              "kind": "line_range",
+              "start": 381
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Adds migration-author use of the shared writing profile and independent meaning review; it changes authoring guidance, not converter admission or publication authority.\n\nAnchor: Candidate instruction body, lines 445–515",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6ebeba78dcb06d9111cec33fcaba5afd0c79979b",
+            "content": "sha256:6391671989fd62cdbb0ba88bac86b67e716c1f12780e464faf68e2c8dd61bc64",
+            "locator": {
+              "end": 515,
+              "kind": "line_range",
+              "start": 445
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
   "schema": "ar-onboarding-file/v1"
 }

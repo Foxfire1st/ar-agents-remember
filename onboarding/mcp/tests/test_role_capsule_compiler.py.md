@@ -129,6 +129,10 @@ editing what is under test. The shipped-corpus end-to-end check belongs in
 
 None recorded.
 
+## Current audience, delivery and evidence contract
+
+The minimal manifest fixture explicitly declares `audience: all` for every operation, keeping its unsectioned synthetic text whole under the expanded schema. The existing compiler property assertions and their source bodies are unchanged. Audience projection and malformed-marker launch behavior belong to the separate audience/manifest-edge suites; old recorded run totals stay historical.
+
 ## Evidence
 
 ### Docs References
@@ -163,3 +167,6 @@ replacement and its seed table must be re-anchored or retired.
 No sibling-repository contract is exercised by these cases.
 
 No meaningful cross-repo references found.
+
+
+- The semantic test change is only audience=all in fixture_manifest_document. One introductory determinism bullet is rewrapped without changing words. Existing property assertions, test definitions and synthetic source bodies are unchanged; sections projection is covered separately. [10]

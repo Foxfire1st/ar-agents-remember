@@ -49,11 +49,7 @@ skill by origin, URI and root source (`agents-remember/skills`, `skill://agents-
 content*, so its identity is server/repository origin plus skill URI — a bare name would collide
 across servers." `launcher` is the ambient launcher's composition: `is_role: false`, the routing
 condition it belongs to, `core/launcher.md` as its instruction source, the `launcher` core block,
-orientation and coordination as its operations, and `architect-brief.md` as its one template. The
-`references` block lists the five reference-only trees — `reference/rationale.md`,
-`reference/rulings.md`, `lenses.md`, `criteria/` and `templates/` — each with a `description` and,
-all carry `injected: false`, so a reader can see what is available without any of it entering
-a composed capsule.
+orientation and coordination as its operations, and `architect-brief.md` as its one template. The `references` block retains rationale, rulings, lenses, criteria and templates and adds fourteen named step details plus visual-explainer guidance. Entries carry `injected: false`; step details declare their reader roles and read step, rather than entering the inline instruction body.
 
 **The identity keys say what the file is and where its authority sits.** `schema` fixes the document
 vocabulary at `ar-role-capsule-composition/v1`; `authority` names `SKILL.md` as the thin router and
@@ -75,7 +71,7 @@ resolve the conflict at selection time.
 **`roles` is the per-seat registry and is where the selection actually happens.** Each of the ten
 entries carries `file` (the role source under `roles/`), `altitude`, `tools` (the tool ids the seat
 may use), `skills` (the skill pointers it may reference), `seat` (the one-line statement of what the
-seat is), `core` (the shared-block names the seat lists for capsule composition), `operations` (the authoritative applicability
+seat is), `core` (retained shared-block metadata, not injected role instructions), `operations` (the authoritative applicability
 list), `templates` (the field schemas and handoff artifacts that seat compiles or emits) and
 `criteria` (the reviewer criteria catalogs bound to it). The lists differ per seat rather than being
 uniform: `implementation` appears only in the worker's operations, the curator's operations are
@@ -162,6 +158,15 @@ the launcher is not a role.
 
 No task-independent follow-up is recorded. The current reference-only entries, including lenses, all explicitly carry injected=false.
 
+## Current composition and authoring contract
+
+Operations now declare `audience`: `sections` for the eight marked operation sources and `all` for the protected authorized-closeout source. The stage markers select common text and named-role text rather than requiring the complete multi-role operation in every capsule. Selected role text remains whole; task facts remain separate handover data.
+
+The references registry now includes thirteen extracted detail files, the shared writing profile and optional visual-explainer guidance, in addition to its earlier reference trees. Fourteen entries declare `step_detail: true`, step text and eligible roles, with `injected: false`; they are separate named-step material, not a second instruction authority. Visual-explainer guidance is reference-only without step_detail. Registration is not proof of a real start or a read at the named step.
+
+Retained core metadata remains non-injected for native role capsules; the ten-role/nine-operation vocabulary is not the seven-role native launcher roster. Requested tools are metadata, not grants. No new may-start permission or new role is added.
+
+
 ## Evidence
 
 ### Docs References
@@ -227,7 +232,7 @@ The manifest exposes canonical Investigator among the seven native roles, reques
 ## Refreshed current evidence
 
 - The document's identity and authority: the schema name, the authority statement naming the thin router, and the authoritative tree the packaged copies are generated from. [1]
-- The role registry in canonical order and the three routing conditions, including the launcher condition that is not a role. [2]
+- The role registry in canonical order and the two routing conditions, with the non-role launcher declared separately. [2]
 - The nine operation blocks, each with its source, purpose and the roles that may run it. [3]
 - The role registry itself and the two role entries that show the per-seat shape. [5]
 - The per-role entry fields a consumer selects on: the altitude, the tool ids, and the one-line seat statement. [6]
@@ -476,3 +481,10 @@ Inherited reference 9 commentary (not a revalidated target):
 The byte-equal package copy is a distribution carrier, not an independent role, task or permission authority. Whole-file source evidence does not certify inherited statements, execution, grading or the whole card.
 
 - The authored source owns this contract; the distribution copy is not a separate authority. [27]
+
+
+- Adds audience selection for all nine operations and fifteen reference entries, fourteen marked step_detail. Routing vocabulary, applicability, role order and role/operation composition order are unchanged. [28]
+
+- Adds audience selection for all nine operations and fifteen reference entries, fourteen marked step_detail. Routing vocabulary, applicability, role order and role/operation composition order are unchanged. [29]
+
+- Adds audience selection for all nine operations and fifteen reference entries, fourteen marked step_detail. Routing vocabulary, applicability, role order and role/operation composition order are unchanged. [30]

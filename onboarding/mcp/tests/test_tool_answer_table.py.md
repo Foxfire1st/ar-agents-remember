@@ -55,7 +55,7 @@ These fixture-largest labels do not establish the mathematically largest legal r
 >   the retained L109/L111 interim populations. L110's ten retained tools and L112's
 >   retained tools keep their final rows. A leaf does not land while a row names it.
 
-The table-local log witnesses retain ordinary-path preservation within the 200-character domain and exact length/digest shortening beyond it. Runtime-install row fixtures use the user-settings location and normalize its XDG prefix for their authored case dimensions; these fixture values are not production settings writes or a changed token ceiling.
+The table-local log witnesses retain ordinary-path preservation within the 200-character domain and exact length/digest shortening beyond it. Runtime-install row fixtures use the user-settings location and normalize its XDG prefix for their authored case dimensions; these fixture values are not production settings writes or a changed token ceiling. Ordinary/largest install examples now pin copiedFiles=122 and createdDirs=173/172 respectively. They remain fixture dimensions checked against the operation projection, not universal filesystem maxima or a new Curator install run.
 
 ## Grant answer row scope
 
@@ -71,3 +71,5 @@ The table-local log witnesses retain ordinary-path preservation within the 200-c
 - Authored install-case dimensions normalize the current user-settings XDG prefix. [4]
 
 - Final-delivery observer patches record_tool_completed and compares delivered_tokens with returned/logged count; no ambient lifecycle is installed. [6]
+
+- Ordinary/largest install fixture dimensions pin copiedFiles=122 and createdDirs=173/172; these are projection-equality fixtures under existing answer bounds, not universal maxima. [7]

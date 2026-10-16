@@ -3,12 +3,12 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "5d110691b9c4137135b9f2a39752d21bf8a86588",
-        "content": "sha256:ab6ab45af96477b755825e21d49465572095d619234a8b6151c5918759b2faef",
+        "blob": "4bcd108017d4bca572ea8ab13288826dee5c1ab0",
+        "content": "sha256:6f9d258a8427c5ceb33ce7abddb01129ae471cab33c9239a8a13e3cac73013b6",
         "locator": {
-          "end": 89,
+          "end": 67,
           "kind": "line_range",
-          "start": 46
+          "start": 54
         }
       },
       "id": "RLZ-942ZBQ",
@@ -32,6 +32,41 @@
             "locator": {
               "kind": "file"
             }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "Adds all-role marking, compresses existing prose and extracts step-7 detail, while making curator-run occurrence explicit in the inline final report. Setup boundaries remain inline.\n\nAnchor: Candidate instruction body, lines 153–157",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4bcd108017d4bca572ea8ab13288826dee5c1ab0",
+            "content": "sha256:addae8c10246d2287dd1d50bc5b1d9255b2e2114cd2572924386c267c9bc7a99",
+            "locator": {
+              "end": 157,
+              "kind": "line_range",
+              "start": 153
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "Adds all-role marking, compresses existing prose and extracts step-7 detail, while making curator-run occurrence explicit in the inline final report. Setup boundaries remain inline.\n\nAnchor: Candidate instruction body, lines 3–13",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ace4771286e68fd5987f369e62d6db1e1304c44f",
+            "content": "sha256:2bf8faf107e1b5d5cde539821d3af19fe01489ed4eedbc6f6ad5e11617ec183b",
+            "locator": {
+              "end": 13,
+              "kind": "line_range",
+              "start": 3
+            },
+            "path": "skills/l-01-agent-lifecycles/reference/bootstrap-foundation-d301.md"
           },
           "kind": "code"
         }
@@ -93,6 +128,74 @@
             "content": "sha256:4d75362596111c5ee9fe9b7245af9dbabc77442d731f220882789fa1605bf432",
             "locator": {
               "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Adds all-role marking, compresses existing prose and extracts step-7 detail, while making curator-run occurrence explicit in the inline final report. Setup boundaries remain inline.\n\nAnchor: Candidate instruction body, lines 1–39",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4bcd108017d4bca572ea8ab13288826dee5c1ab0",
+            "content": "sha256:8d6b8c5a033d86c60228dfdb508b492b571bee82cbcb06abd13713e6effc0d2b",
+            "locator": {
+              "end": 39,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "Adds all-role marking, compresses existing prose and extracts step-7 detail, while making curator-run occurrence explicit in the inline final report. Setup boundaries remain inline.\n\nAnchor: Candidate instruction body, lines 54–70",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4bcd108017d4bca572ea8ab13288826dee5c1ab0",
+            "content": "sha256:2c9aba9996806ce906abf0f0ea7ad270968e8ab5a3241aa28823da7f59eedb83",
+            "locator": {
+              "end": 70,
+              "kind": "line_range",
+              "start": 54
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "Adds all-role marking, compresses existing prose and extracts step-7 detail, while making curator-run occurrence explicit in the inline final report. Setup boundaries remain inline.\n\nAnchor: Candidate instruction body, lines 77–106",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4bcd108017d4bca572ea8ab13288826dee5c1ab0",
+            "content": "sha256:fe20e6a0b0c0eb404dad8bd2bc2cade5ebe08d0ab95c9a376e4d676846e30f78",
+            "locator": {
+              "end": 106,
+              "kind": "line_range",
+              "start": 77
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "Adds all-role marking, compresses existing prose and extracts step-7 detail, while making curator-run occurrence explicit in the inline final report. Setup boundaries remain inline.\n\nAnchor: Candidate instruction body, lines 108–125",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4bcd108017d4bca572ea8ab13288826dee5c1ab0",
+            "content": "sha256:f1531535e662c1652d7eb96a9881e7be9afe97c302dc3cb0a285d347d00e955b",
+            "locator": {
+              "end": 125,
+              "kind": "line_range",
+              "start": 108
             }
           },
           "kind": "code"

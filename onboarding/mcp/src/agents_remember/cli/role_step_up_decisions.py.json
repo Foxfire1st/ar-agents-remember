@@ -1,0 +1,108 @@
+{
+  "path": "mcp/src/agents_remember/cli/role_step_up_decisions.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "896e9adf64c7d3264a18f5bdbb93022e01f28c07",
+        "content": "sha256:1037cdfdeb33285ec1b1e3d52a7f47f146972482b74a964da4193fc0638a083a",
+        "locator": {
+          "kind": "symbol",
+          "name": "record_step_up"
+        }
+      },
+      "id": "RLZ-V7817V",
+      "invariant": "INV-X0685D",
+      "origin": {
+        "handoffEntry": "MIK-R141@v1/decision",
+        "leaf": "260928-MIK-L88"
+      },
+      "rationale": "Records the actual step-up decision and observed destination under the existing task authority.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Newest recognized structured role decision wins; human prose is not parsed as metadata.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "896e9adf64c7d3264a18f5bdbb93022e01f28c07",
+            "content": "sha256:63ce81b7f616c671e141b65580faeb3268595645a6147c6590a20a07541d4042",
+            "locator": {
+              "kind": "symbol",
+              "name": "recorded_step_up"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Existing task lock and writer publish the first decision.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "896e9adf64c7d3264a18f5bdbb93022e01f28c07",
+            "content": "sha256:1037cdfdeb33285ec1b1e3d52a7f47f146972482b74a964da4193fc0638a083a",
+            "locator": {
+              "kind": "symbol",
+              "name": "record_step_up"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Observed destination updates are request-bound and preserve requested fields.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "896e9adf64c7d3264a18f5bdbb93022e01f28c07",
+            "content": "sha256:6bbd00e92cf131d986874bf48076fefab9564ab4fdae192727c3eb400e3a374a",
+            "locator": {
+              "kind": "symbol",
+              "name": "_record_observed"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Test source exercises failed/lost decision acknowledgment, deduplication and receipt loss.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ae9057ab6c1eea41f64b6351acaddfc7c720f7b9",
+            "content": "sha256:09ddf7997e7441f52d855ad48ef90df41fc343122a77b4d00054467b218e6505",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_step_up_replay_reconciles_decision_before_host_and_survives_receipt_loss"
+            },
+            "path": "mcp/tests/test_role_step_up.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "Test source preserves unrelated same-label prose and requested-vs-observed destination.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ae9057ab6c1eea41f64b6351acaddfc7c720f7b9",
+            "content": "sha256:ec4577dac37ddfc486c2922347ed637d56a64c09035bbd602f69e3103b287903",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_host_default_successor_model_is_observed_without_losing_requested_provenance"
+            },
+            "path": "mcp/tests/test_role_step_up.py"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

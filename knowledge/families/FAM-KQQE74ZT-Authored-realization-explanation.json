@@ -14,11 +14,11 @@
     "legacyId": "6a969d42-7652-45ed-946f-4d958ae49499",
     "task": "260921-ICR"
   },
-  "revision": 4,
+  "revision": 5,
   "routes": [
     "mcp/src/agents_remember/application",
-    "skills/l-01-agent-lifecycles/roles",
-    "skills/l-01-agent-lifecycles/templates"
+    "skills/l-01-agent-lifecycles/templates",
+    "skills/l-01-agent-lifecycles/reference"
   ],
   "schema": "ar-family/v1",
   "status": "proposed",

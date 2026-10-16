@@ -1,0 +1,167 @@
+{
+  "path": "mcp/tests/test_step_up_recovery.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Source assertion: test_archive_renews_predecessor_read_on_every_recovery. The declaration is not an execution receipt.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "43773442dc036099b1e1b09e474d46b04e6b0be7",
+            "content": "sha256:5f46971883794a6617fdd8d825271e9a0cb7ab8cb07f5f3270007f4d4610ca4b",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_archive_renews_predecessor_read_on_every_recovery"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "10": {
+      "note": "The hung-child source case checks signal termination/reaping, durable partial recovery and later lock reuse, not an elapsed whole-start deadline.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "43773442dc036099b1e1b09e474d46b04e6b0be7",
+            "content": "sha256:6870e73174b4b30fab5423ef36fc6751dc7e316f4092e812059a82a9fd4a2059",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_hung_git_is_reaped_under_start_lock_with_durable_partial_recovery"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Source assertion: test_retryable_empty_seat_tool_answer_preserves_same_request. The declaration is not an execution receipt.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "43773442dc036099b1e1b09e474d46b04e6b0be7",
+            "content": "sha256:08b0253c5c205f75dcfe81f7f0eebee5baed056d371b558eaa52e7703aa6e34e",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_retryable_empty_seat_tool_answer_preserves_same_request"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Source assertion: test_nonretryable_tool_rejection_keeps_new_request_guidance. The declaration is not an execution receipt.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "43773442dc036099b1e1b09e474d46b04e6b0be7",
+            "content": "sha256:9ced9aed8c51779af29b6e64f032eaff532eb8f55f27832cec4fc17d4d915041",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_nonretryable_tool_rejection_keeps_new_request_guidance"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "Source assertion: test_receipt_loss_uses_durable_applied_destination_in_takeover. The declaration is not an execution receipt.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "43773442dc036099b1e1b09e474d46b04e6b0be7",
+            "content": "sha256:f5eb0f9cf366e22915787901e976fd4e9528a3e3dbbc9639d61a0999826c2fac",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_receipt_loss_uses_durable_applied_destination_in_takeover"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "Source assertion: test_unconfirmed_prior_destination_does_not_claim_the_configured_base. The declaration is not an execution receipt.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "43773442dc036099b1e1b09e474d46b04e6b0be7",
+            "content": "sha256:b2e84c645c42743be0e29fa14a1d5010d576f8acaf16f89ee056b247f5e8c864",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_unconfirmed_prior_destination_does_not_claim_the_configured_base"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "Source assertion: test_saved_takeover_material_is_restored_or_refused_before_create. The declaration is not an execution receipt.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "43773442dc036099b1e1b09e474d46b04e6b0be7",
+            "content": "sha256:991b888d4b19beebccdf8690c2a372058ea500cfb6be0addd6b5f6996bd09979",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_saved_takeover_material_is_restored_or_refused_before_create"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "Source assertion: test_git_inventory_has_explicit_file_budget. The declaration is not an execution receipt.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "43773442dc036099b1e1b09e474d46b04e6b0be7",
+            "content": "sha256:a26a2c5e164e167625fe2e2b6f25b182709af6be739480a0d143666218ecc35c",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_git_inventory_has_explicit_file_budget"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "Source assertion: test_git_inventory_caps_bytes_before_serialization. The declaration is not an execution receipt.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "43773442dc036099b1e1b09e474d46b04e6b0be7",
+            "content": "sha256:dfb0bdb3f2b8d5325a2ec4182a9adf929c8af52f99937e9e2d6e27f937bf57cc",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_git_inventory_caps_bytes_before_serialization"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "9": {
+      "note": "Source assertion: test_takeover_publication_is_write_once_and_checks_the_open_file. The declaration is not an execution receipt.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "43773442dc036099b1e1b09e474d46b04e6b0be7",
+            "content": "sha256:3c80992011479cb850362c7118da9c8d25f5d4ffbd195f2fb4bfd668a8173834",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_takeover_publication_is_write_once_and_checks_the_open_file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

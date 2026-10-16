@@ -53,7 +53,23 @@ family key is refused by `_refuse_null_families` before this parser runs.
 
 - The card mirrors the source file one-to-one at `mcp/src/agents_remember/kernel/_agentic_settings_sections.py`.
 
+## Current Contract — Scoped Launch And Settings Changes
+
+_parse_roles delegates ordinary choice parsing to _role_choices and attaches optional _parse_step_up through dataclasses.replace. Existing flat/per-altitude parsing and per-file role-alias conflict checks remain unchanged.
+
+_parse_step_up admits only ordinary KNOWN_ROLE_LAUNCH_FIELDS plus afterTries. afterTries must be a positive whole integer and is allowed only for Worker/Curator, defaulting to three there and None elsewhere. Unknown keys, nested stepUp, null/wrong shapes and conflicting normalized tier aliases refuse with exact owner/source.
+
+Choice shape remains nonempty harness/model/effort strings, optional mode/notes text and boolean/nonempty-option feature values. Host capability validation and effective no-op checks remain later boundaries; repository stepUp authority is refused by the loader, not silently honored by this parser.
+
+Loop budgets, quality memoryCapBytes-only parser, landing timeout and accepted-unused legacy execution keys retain their existing distinct contracts.
+
 ## Evidence
+
+- Existing role parsing attaches one typed alternative. [4]
+- Ordinary shape parsing is shared without adding a new execution adapter. [5]
+- Counted-role-only threshold defaults to three and refuses nested/unknown fields. [6]
+- Test source names exact author file/key for invalid alternatives. [7]
+- Boolean, zero and fractional thresholds refuse through the shared validator. [8]
 
 ### Repo-Internal References
 

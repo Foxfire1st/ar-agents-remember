@@ -5,6 +5,8 @@
 
 ## Purpose
 
+Capsule operation selection now carries an explicit all/sections audience contract. Sections-mode validation examines the complete source before projecting common and addressed text. Declared step-detail references carry source, revision, bytes and named step separately from inline blocks; the selected-content seal does not change their original source revisions or tool grants.
+
 `mcp/src/agents_remember/models/` owns named contracts shared by MCP responses, serving projections, task and lifecycle owners, capsule compilation, and knowledge readers. It supplies strict package-owned shapes, deliberately flexible detail envelopes, closed vocabularies, immutable identities, and pure construction predicates. Model validation establishes the declared shape and the consistency checks actually implemented; it does not establish observed runtime authority, successful execution, semantic truth, publication approval, or recovery.
 
 The governing route is `mcp/overview.md`. `models/tools/` remains governed here. Responsibility-specific packages include `role_capsules/`, `knowledge_files/`, `closeout/`, `queue/`, `lifecycles/`, `structural/`, and `certification/`. These homes separate stable values from the application, storage, selection, and mutation owners that use them.
@@ -145,6 +147,9 @@ Named limits remain: reference numbered 199's former `candidate.py` extent is ex
 Legacy final-output receipts and sync rebindings remain readable under their explicit v1 classes. Their original verdicts are retained, but exact reviewed memory-tree evidence was not recorded and therefore cannot establish v2 tree-pair coverage. `worktree_status_wait` and its response are historical; a retained lifecycle wait literal is not a mounted replacement operation. Historical union sizes, source line counts, rail repairs, delivery dates, and fixture hashes describe their old witnesses only.
 
 ## Evidence
+
+
+
 - **The refusal record the new code travels in, and the result that carries it as one of exactly two outcomes.** [2]
 - The surface version that stays `/1`, with the reasoning recorded beside the constant. [3] [252]
 - **The availability vocabulary, its five states and the validator that refuses a favourable default.** [4]
@@ -402,3 +407,5 @@ Legacy final-output receipts and sync rebindings remain readable under their exp
 - Each winning row retains its own closed-file provenance. [314]
 
 - Historical L111 predecessor source account (not current R113 roster); composed R113 PUBLIC_TOOLS has40 names, and no new module/handler census is asserted here. Current composed literal public roster has41 names after L109 removes resolve_context; direct_execution_grant is included in those41. The earlier42-name caption and its epoch labels below are historical, not current source counts. Earlier Curator caption retained as historical/withdrawn where it contradicts these current populations: The current public source roster has42 names. SHAPED_TOOL_BOUNDS carries final task/landing/role delivery rows, including direct_execution_grant at150 tokens with no raw interim-map entry. Some other shaped tools retain raw L111 interim-map spellings, so final assembled rows, bound lookup and interim_leaf_for are not interchangeable observations. TaskDocResponse is the rich whole model: removed-read refusal alone may lack parsed identity, successful writes still require it, checklist-read models/steps are gone, and optional phrase, by-file, synchronization-error and fact-report fields support surviving operations. WorktreeSummary adds an optional taskDocumentCopies notice, not exhaustive copy equality or mutation permission. Model declarations and illustration labels are not universal observed maxima or acceptance. [315]
+
+- Capsule operation selection now carries an explicit all/sections audience contract. Sections-mode validation examines the complete source before projecting common and addressed text. Declared step-detail references carry source, revision, bytes and named step separately from inline blocks; the selected-content seal does not change their original source revisions or tool grants. [319]

@@ -20,9 +20,16 @@ Legacy retirement, launchArgs/promptKeywords/sessionCommands, native command/mod
 
 The document is guidance, not parser execution, proof of real permission protection, live host launch, installation or settings mutation. The memory example names memory-repo storage; old internal/external-memory examples and supervisor operational advice are withdrawn from this live owner's account.
 
+## Current scoped contract
+
+The role settings reference now documents a single user-owned `stepUp` alternative. Worker tries are failed recorded code rounds; Curator tries are failed recorded memory rounds. Rechecking the same candidate does not add a try. Automatic selection occurs on the next start at the configured positive threshold, while a one-sentence explicit request selects the same alternative. Catalog validation precedes idle-seat retirement; active turns and permission prompts refuse. Neither UI nor call arguments gain mode/permission authority, omitted foreign-scope choices use identified host defaults, and the task decision retains the step-up without resetting review limits or sealed findings. Removing the alternative affects a later start, not the running actor. This describes the new recorded-memory-lane design after landing; underway reviews are not migrated or backfilled.
+
 ## Evidence
 
 - Five settings homes/cadences, exact user-owned open/close commands and nonmutating live-mode reporting are declared by the current reference. [4]
 - The complete reference separates current host role/features from accepted-but-unused retired settings and product answer authority. [5]
 
 No external Domain Documentation source or fresh executed acceptance is inferred.
+
+
+- The new roles table/paragraphs document one user-layer, nonnested stepUp alternative, default positive afterTries=3 only for Worker/Curator, code versus memory recorded-round tries, record-only nontries and exact-key refusals. The next start validates catalog choices before normal idle-seat retirement; active turn/prompt refuses. Explicit step_up reason/UI Step up use the same alternative without adding permission authority. Cross-harness/model omissions use identified host defaults, durable decisions retain task choice, and reviewer limits/findings do not reset. Removing the alternative changes the next start, not the running actor. [6]

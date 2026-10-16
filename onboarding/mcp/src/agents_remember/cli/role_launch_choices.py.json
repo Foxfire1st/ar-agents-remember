@@ -1,0 +1,92 @@
+{
+  "path": "mcp/src/agents_remember/cli/role_launch_choices.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "aa67492c22dfb0af1fca1cc4c454ffcac086b375",
+        "content": "sha256:9035e82bab1136ccd84d80a21b58606e5d5eba6443a28f89d6804dab6c769cd1",
+        "locator": {
+          "kind": "symbol",
+          "name": "observe_launch_choices"
+        }
+      },
+      "id": "RLZ-Q1N4P2",
+      "invariant": "INV-YDDMGJ",
+      "origin": {
+        "handoffEntry": "L71-CURRENT242-W-07",
+        "leaf": "260928-MIK-L71"
+      },
+      "rationale": "The extracted observation owner retains requested-versus-observed choices and records a host-observed stepped-up model separately from requestedModel; saved replay inputs are not rewritten.",
+      "role": "presentation"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Observed model and requestedModel remain distinct.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "aa67492c22dfb0af1fca1cc4c454ffcac086b375",
+            "content": "sha256:9035e82bab1136ccd84d80a21b58606e5d5eba6443a28f89d6804dab6c769cd1",
+            "locator": {
+              "kind": "symbol",
+              "name": "observe_launch_choices"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Observed values and mode/feature warnings retain source attribution.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "aa67492c22dfb0af1fca1cc4c454ffcac086b375",
+            "content": "sha256:4c92fb58facc50d3452eca9bd366afcb003c0dbb1ee152b039e32a16c09bc767",
+            "locator": {
+              "kind": "symbol",
+              "name": "_observe_choices"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "A created outcome invokes the imported receipt seam.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ccb1e9b293a9d30073d916aee6085e1ff47f6420",
+            "content": "sha256:960687ba725703cfd98e745a0db18fa6d1bc861426c6548a6a9ed75897ae7f90",
+            "locator": {
+              "kind": "symbol",
+              "name": "publish_launch_outcome"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_outcome.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Test source preserves requested default, observed model and same-request correction.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ae9057ab6c1eea41f64b6351acaddfc7c720f7b9",
+            "content": "sha256:ec4577dac37ddfc486c2922347ed637d56a64c09035bbd602f69e3103b287903",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_host_default_successor_model_is_observed_without_losing_requested_provenance"
+            },
+            "path": "mcp/tests/test_role_step_up.py"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

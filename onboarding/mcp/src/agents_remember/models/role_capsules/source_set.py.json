@@ -44,6 +44,57 @@
         }
       ]
     },
+    "10": {
+      "note": "File-local implementation of the stated contract; caller-owned effects and governing workflow are separate evidence.\n\nAnchor: L65–L108",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d2ac87a3213c5859af2fc85728ebd0d3c7cf6d57",
+            "content": "sha256:94986e05f42eaff67da6553897adcebf34498a3b4fdd600121816a4ddec5b235",
+            "locator": {
+              "end": 108,
+              "kind": "line_range",
+              "start": 65
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "File-local implementation of the stated contract; caller-owned effects and governing workflow are separate evidence.\n\nAnchor: L140–L173",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d2ac87a3213c5859af2fc85728ebd0d3c7cf6d57",
+            "content": "sha256:aec18be32dd1e0817de98c50124b1bccd634e4155dfa718d203cae2b07f702b1",
+            "locator": {
+              "end": 173,
+              "kind": "line_range",
+              "start": 140
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "File-local implementation of the stated contract; caller-owned effects and governing workflow are separate evidence.\n\nAnchor: L197–L228",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d2ac87a3213c5859af2fc85728ebd0d3c7cf6d57",
+            "content": "sha256:4ef35ad244d8331b5e5329ca4e43ac3969dee3fc505426a2d2a9e87df459dd8a",
+            "locator": {
+              "end": 228,
+              "kind": "line_range",
+              "start": 197
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
     "2": {
       "note": "The refusals this module raises.",
       "targets": [
@@ -136,7 +187,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "76bc4e03dad8f1005ff4fc7eb5f0534c839db1b0",
+            "blob": "9946e7fc31fa11992782193f4af92050e7c18e46",
             "content": "sha256:6db09a53f2ae7a8af9723114102530780c50e198cb965cefb4fa6cfeb3cdd6b4",
             "locator": {
               "kind": "symbol",
@@ -148,7 +199,7 @@
         },
         {
           "anchor": {
-            "blob": "76bc4e03dad8f1005ff4fc7eb5f0534c839db1b0",
+            "blob": "9946e7fc31fa11992782193f4af92050e7c18e46",
             "content": "sha256:ad6b03053ce452ebd58b3cd633bb69971cbcec1bbde9bf66dd036d42e85647d6",
             "locator": {
               "kind": "symbol",
@@ -160,7 +211,7 @@
         },
         {
           "anchor": {
-            "blob": "76bc4e03dad8f1005ff4fc7eb5f0534c839db1b0",
+            "blob": "9946e7fc31fa11992782193f4af92050e7c18e46",
             "content": "sha256:b166927f64c89e1e382ddc3c321ce6a5d57c6adfb278d5db5c022de2abba0940",
             "locator": {
               "kind": "symbol",
@@ -172,7 +223,7 @@
         },
         {
           "anchor": {
-            "blob": "76bc4e03dad8f1005ff4fc7eb5f0534c839db1b0",
+            "blob": "9946e7fc31fa11992782193f4af92050e7c18e46",
             "content": "sha256:bf86bb84f3b36ab21196af36571956d25d87f5f2d5cf787c6a28987f79849578",
             "locator": {
               "kind": "symbol",
@@ -184,7 +235,7 @@
         },
         {
           "anchor": {
-            "blob": "76bc4e03dad8f1005ff4fc7eb5f0534c839db1b0",
+            "blob": "9946e7fc31fa11992782193f4af92050e7c18e46",
             "content": "sha256:2a90a678caf7cec61e047da6504ca45f45a900f151ec754f713732e98895ff39",
             "locator": {
               "end": 606,
@@ -197,7 +248,7 @@
         },
         {
           "anchor": {
-            "blob": "76bc4e03dad8f1005ff4fc7eb5f0534c839db1b0",
+            "blob": "9946e7fc31fa11992782193f4af92050e7c18e46",
             "content": "sha256:0bab6f81d3809808ee5f9410def2d8003de58ef6845ba4eae73ca1c178e60245",
             "locator": {
               "end": 623,
@@ -210,7 +261,7 @@
         },
         {
           "anchor": {
-            "blob": "76bc4e03dad8f1005ff4fc7eb5f0534c839db1b0",
+            "blob": "9946e7fc31fa11992782193f4af92050e7c18e46",
             "content": "sha256:6d4b486f7e5739c0686d8f4a40f2ccc24b21a71acec43abf4ba4c5fe467e7986",
             "locator": {
               "end": 631,
@@ -228,7 +279,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "37dceffd02563c773f94c4edc9d4c1b7685d46ea",
+            "blob": "d2ac87a3213c5859af2fc85728ebd0d3c7cf6d57",
             "content": "sha256:4ef35ad244d8331b5e5329ca4e43ac3969dee3fc505426a2d2a9e87df459dd8a",
             "locator": {
               "kind": "symbol",
@@ -239,7 +290,7 @@
         },
         {
           "anchor": {
-            "blob": "72dc9fa336d744d13e1ba811c6965cafb7a8ff9f",
+            "blob": "fde424ce1c4b108a144b9b7ab8f0d9fe8a807bf1",
             "content": "sha256:4dc1ee0cc5c50876754bd141161d54fbd568ed3980f2068c571474c66ace4ded",
             "locator": {
               "kind": "symbol",
@@ -251,7 +302,7 @@
         },
         {
           "anchor": {
-            "blob": "72dc9fa336d744d13e1ba811c6965cafb7a8ff9f",
+            "blob": "fde424ce1c4b108a144b9b7ab8f0d9fe8a807bf1",
             "content": "sha256:f1fd300c429f32339032ca6f709d70611c47aeb765cfd715ba209c21edb03567",
             "locator": {
               "kind": "symbol",
@@ -260,6 +311,60 @@
             "path": "mcp/tests/test_role_capsule_admission.py"
           },
           "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "Launch copies detail files, substitutes paths, and records frozen revisions.\n\nAnchor: L16–L35",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "682d4179b094bd4e50d1f67363fe398d5e4e40c9",
+            "content": "sha256:60172f37e29d829d04a0c011bfce73b96756f430b581516ca3dce6f39fbf91d8",
+            "locator": {
+              "end": 35,
+              "kind": "line_range",
+              "start": 16
+            },
+            "path": "mcp/src/agents_remember/cli/role_instruction_details.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "Replay validates regular opened files, content revisions and original canonical report binding, not mutable corpus sources.\n\nAnchor: L38–L88",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "682d4179b094bd4e50d1f67363fe398d5e4e40c9",
+            "content": "sha256:a3660f0512fa0094c6c5fa934139c0b4e7dbf580921a9fdb0c9218c0600898b7",
+            "locator": {
+              "end": 88,
+              "kind": "line_range",
+              "start": 38
+            },
+            "path": "mcp/src/agents_remember/cli/role_instruction_details.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "Per-request detail artifacts use exact admitted bytes beside the handover and write-once publication.\n\nAnchor: L59–L74",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "85b470bea18f2548365b969746fd9e7ef5ea00cf",
+            "content": "sha256:53ae089e7b885fad8e278a7a4540e98ab4b52f03f6e60ecbb8260f070081a4d4",
+            "locator": {
+              "end": 74,
+              "kind": "line_range",
+              "start": 59
+            },
+            "path": "mcp/src/agents_remember/cli/role_handover_artifacts.py"
+          },
+          "kind": "code"
         }
       ]
     }

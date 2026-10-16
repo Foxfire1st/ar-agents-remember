@@ -64,7 +64,21 @@ module that holds both the declared plan and the admitted set at once.
 
 None recorded.
 
+## Current Contract
+
+identity_index maps every parsed detail source to skill:detail:<source-path>, making role-declared detail bytes valid skill-category admission inputs rather than undeclared instruction blocks. The existing bidirectional required-instruction/skill-root/specialization gates stay unchanged. Detail placeholder existence and role eligibility are checked later by compile_detail_references against selected blocks; this added map does not eagerly attach every declared detail to every capsule.
+
+This account is bound to the candidate source, not a claim of a running serving build or a fresh execution/acceptance verdict. Existing historical accounts remain historical.
+
 ## Evidence
+
+
+- Launch copies detail files, substitutes paths, and records frozen revisions. [7]
+- Replay validates regular opened files, content revisions and original canonical report binding, not mutable corpus sources. [8]
+- Per-request detail artifacts use exact admitted bytes beside the handover and write-once publication. [9]
+- File-local implementation of the stated contract; caller-owned effects and governing workflow are separate evidence. [10]
+- File-local implementation of the stated contract; caller-owned effects and governing workflow are separate evidence. [11]
+- File-local implementation of the stated contract; caller-owned effects and governing workflow are separate evidence. [12]
 
 ### Docs References
 

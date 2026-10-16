@@ -1,0 +1,78 @@
+{
+  "path": "mcp/src/agents_remember/application/task_docs/task_review_step_up.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Worker/Curator typed review census, record-only exclusion and unknown history.\n\nAnchor: L175–L240",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "29bbfb919fa2a5e25fc3e3ee172407e92e192fc0",
+            "content": "sha256:89c09fd0491880de2f7b715bffbe2d6b0605a6dea7400689519c43f40f7b119d",
+            "locator": {
+              "end": 240,
+              "kind": "line_range",
+              "start": 175
+            },
+            "path": "mcp/src/agents_remember/worktrees/review_history.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Reason admission, threshold and differing-harness/model inheritance boundary.\n\nAnchor: L23–L84",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f341c13a99f485178e73c4ff8bf4de16267ee662",
+            "content": "sha256:5a3727f4901933c44cd5f7edc8b16220285a82a9e080326edf482cbb126f0b2f",
+            "locator": {
+              "end": 84,
+              "kind": "line_range",
+              "start": 23
+            },
+            "path": "mcp/src/agents_remember/cli/role_step_up.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Record-only memory identity comes from memory authority, never the sibling code root.\n\nAnchor: L251–L296",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f5edfbc3d469737fdadc36945e0204f336dc4eb8",
+            "content": "sha256:90f0dd1b3aad214ad2d499dda3753cc514d16cabd606ee0021a9a7c6e84ed456",
+            "locator": {
+              "end": 296,
+              "kind": "line_range",
+              "start": 251
+            },
+            "path": "mcp/src/agents_remember/application/task_docs/task_doc_route_review.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "File-local implementation of the stated contract; caller-owned effects and governing workflow are separate evidence.\n\nAnchor: L13–L65",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4275baa402a6f13e77dcd678521ef0f41bc31980",
+            "content": "sha256:ed485682ea1932553c8bb311feee6a8a6325803be1652fb23a46403a22af9d4d",
+            "locator": {
+              "end": 65,
+              "kind": "line_range",
+              "start": 13
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

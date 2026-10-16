@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "c16647f099e69e6a494446ba0dafce47196c6300",
-        "content": "sha256:2cf3fcde8291915ff8d76b0e40714e14b41ec5759a7a2bba3a71234a22e7aab3",
+        "blob": "8a9a70a8d78188803743060a92166f0028b70d86",
+        "content": "sha256:deb5817b1cc29eddd77dfb786f9116c0760f59660d4b23199fd2a5487a60531c",
         "locator": {
           "kind": "symbol",
           "name": "launcher_options"
@@ -21,8 +21,8 @@
     },
     {
       "anchor": {
-        "blob": "c16647f099e69e6a494446ba0dafce47196c6300",
-        "content": "sha256:0aea26f2a51302551255d15bb618cc962adbbe210604b2445187661236e05961",
+        "blob": "8a9a70a8d78188803743060a92166f0028b70d86",
+        "content": "sha256:cbf3f160756de1839dd4a7dfc62850475caaa39151e4de3d28ad0c5ded1df7c7",
         "locator": {
           "kind": "symbol",
           "name": "resolve_agent_selection"
@@ -39,7 +39,7 @@
     },
     {
       "anchor": {
-        "blob": "c16647f099e69e6a494446ba0dafce47196c6300",
+        "blob": "8a9a70a8d78188803743060a92166f0028b70d86",
         "content": "sha256:2ee18b0e960d8f26922b3a32dc406473e3eba269f281aaa5250736623678853e",
         "locator": {
           "kind": "symbol",
@@ -57,8 +57,8 @@
     },
     {
       "anchor": {
-        "blob": "c16647f099e69e6a494446ba0dafce47196c6300",
-        "content": "sha256:0996320e34b68a41d7f99f1bf881914fa204fdcf2d0f1458be1329b844bc9c47",
+        "blob": "8a9a70a8d78188803743060a92166f0028b70d86",
+        "content": "sha256:843d1fdf78073c58778d1a9168510ee37a2b38a46810354d96d5cbff39ae1491",
         "locator": {
           "kind": "symbol",
           "name": "_resolve_mode"
@@ -70,12 +70,12 @@
         "handoffEntry": "L71-CURRENT242-W-04",
         "leaf": "260928-MIK-L71"
       },
-      "rationale": "The existing resolution owner applies user/profile precedence and explicit Claude default/Codex auto/Pi no-mode policy instead of catalogDefault or inherited Codex full access.",
+      "rationale": "The mode resolver preserves ordinary least-working-mode fallback but uses an offered host default for omitted mode on an explicitly selected cross-scope step-up, and refuses unknown or unoffered catalogs.",
       "role": "enforcement"
     },
     {
       "anchor": {
-        "blob": "c16647f099e69e6a494446ba0dafce47196c6300",
+        "blob": "8a9a70a8d78188803743060a92166f0028b70d86",
         "content": "sha256:54b6ef2a933944520c73acab6fbbcf27cb55859f30f861d728f627d6fcde5299",
         "locator": {
           "kind": "symbol",
@@ -93,7 +93,7 @@
     },
     {
       "anchor": {
-        "blob": "c16647f099e69e6a494446ba0dafce47196c6300",
+        "blob": "8a9a70a8d78188803743060a92166f0028b70d86",
         "content": "sha256:d6760aa54784fc632ef9b14625915a343b8caf98e0d524bcbdeb1e2e57c253c9",
         "locator": {
           "kind": "symbol",
@@ -111,7 +111,7 @@
     },
     {
       "anchor": {
-        "blob": "c16647f099e69e6a494446ba0dafce47196c6300",
+        "blob": "8a9a70a8d78188803743060a92166f0028b70d86",
         "content": "sha256:6e58dfe9f55b655992db0380942f2820cd9d7ffe9dadd142a288ab55ee10963c",
         "locator": {
           "kind": "symbol",
@@ -129,7 +129,7 @@
     },
     {
       "anchor": {
-        "blob": "c16647f099e69e6a494446ba0dafce47196c6300",
+        "blob": "8a9a70a8d78188803743060a92166f0028b70d86",
         "content": "sha256:8fbf3fd90997084f88cd6d730ec1cc518e3650aed48ea0d26ca3926fac37736c",
         "locator": {
           "kind": "symbol",
@@ -147,8 +147,8 @@
     },
     {
       "anchor": {
-        "blob": "c16647f099e69e6a494446ba0dafce47196c6300",
-        "content": "sha256:0aea26f2a51302551255d15bb618cc962adbbe210604b2445187661236e05961",
+        "blob": "8a9a70a8d78188803743060a92166f0028b70d86",
+        "content": "sha256:cbf3f160756de1839dd4a7dfc62850475caaa39151e4de3d28ad0c5ded1df7c7",
         "locator": {
           "kind": "symbol",
           "name": "resolve_agent_selection"
@@ -165,7 +165,7 @@
     },
     {
       "anchor": {
-        "blob": "c16647f099e69e6a494446ba0dafce47196c6300",
+        "blob": "8a9a70a8d78188803743060a92166f0028b70d86",
         "content": "sha256:66a8b3fc57f621f7f7d97009ee3df3c3d0e7e05bc491e30032c9f07b48e5d835",
         "locator": {
           "kind": "symbol",
@@ -183,7 +183,7 @@
     },
     {
       "anchor": {
-        "blob": "c16647f099e69e6a494446ba0dafce47196c6300",
+        "blob": "8a9a70a8d78188803743060a92166f0028b70d86",
         "content": "sha256:6e58dfe9f55b655992db0380942f2820cd9d7ffe9dadd142a288ab55ee10963c",
         "locator": {
           "kind": "symbol",
@@ -206,7 +206,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c16647f099e69e6a494446ba0dafce47196c6300",
+            "blob": "8a9a70a8d78188803743060a92166f0028b70d86",
             "content": "sha256:8fbf3fd90997084f88cd6d730ec1cc518e3650aed48ea0d26ca3926fac37736c",
             "locator": {
               "kind": "symbol",
@@ -280,6 +280,71 @@
               "start": 361
             },
             "path": "mcp/tests/test_paseo_catalog.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "Options include the configured alternative.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8a9a70a8d78188803743060a92166f0028b70d86",
+            "content": "sha256:deb5817b1cc29eddd77dfb786f9116c0760f59660d4b23199fd2a5487a60531c",
+            "locator": {
+              "kind": "symbol",
+              "name": "launcher_options"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "Host catalog validation and step-up provenance share the existing resolver.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8a9a70a8d78188803743060a92166f0028b70d86",
+            "content": "sha256:cbf3f160756de1839dd4a7dfc62850475caaa39151e4de3d28ad0c5ded1df7c7",
+            "locator": {
+              "kind": "symbol",
+              "name": "resolve_agent_selection"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "Host-default-mode path is conditional, and all concrete modes are checked.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8a9a70a8d78188803743060a92166f0028b70d86",
+            "content": "sha256:843d1fdf78073c58778d1a9168510ee37a2b38a46810354d96d5cbff39ae1491",
+            "locator": {
+              "kind": "symbol",
+              "name": "_resolve_mode"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "Test source contrasts ordinary auto with step-up host default.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e94df54b05412105f814ab34a617a605dc0a78f8",
+            "content": "sha256:8e1cbf50b78103e452181875e3898119f4603b2fe5c917edba5407a5f1d730db",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_cross_model_omitted_mode_uses_host_default_without_changing_base"
+            },
+            "path": "mcp/tests/test_step_up_choice_validation.py"
           },
           "kind": "test"
         }

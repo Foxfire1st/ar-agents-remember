@@ -19,7 +19,7 @@
         },
         {
           "anchor": {
-            "blob": "6d58977d0180423326b3c4c33f1de00b9453702e",
+            "blob": "f82bdc4007083ae4dad1686445d94d0c7e33d03b",
             "content": "sha256:635d6f43e11c20c185494fde019595d0988f977d19d5804a267a56e1a43a727c",
             "locator": {
               "kind": "symbol",
@@ -31,12 +31,12 @@
         },
         {
           "anchor": {
-            "blob": "6d58977d0180423326b3c4c33f1de00b9453702e",
+            "blob": "f82bdc4007083ae4dad1686445d94d0c7e33d03b",
             "content": "sha256:84294edc5e8c2d9d65ce6afe5b9987e4cbc2bc5e894ec577fe2e9b96ce3fb6e1",
             "locator": {
-              "end": 75,
+              "end": 73,
               "kind": "line_range",
-              "start": 64
+              "start": 62
             },
             "path": "mcp/src/agents_remember/models/role_capsules/vocabulary.py"
           },
@@ -44,12 +44,152 @@
         },
         {
           "anchor": {
-            "blob": "6d58977d0180423326b3c4c33f1de00b9453702e",
+            "blob": "f82bdc4007083ae4dad1686445d94d0c7e33d03b",
             "content": "sha256:6428d2e6b1a666556429b65eaf20fad062fa987a65d9d8776b6cc75c80f8a294",
             "locator": {
-              "end": 89,
+              "end": 87,
               "kind": "line_range",
-              "start": 77
+              "start": 75
+            },
+            "path": "mcp/src/agents_remember/models/role_capsules/vocabulary.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "Launch copies detail files, substitutes paths, and records frozen revisions.\n\nAnchor: L16–L35",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "682d4179b094bd4e50d1f67363fe398d5e4e40c9",
+            "content": "sha256:60172f37e29d829d04a0c011bfce73b96756f430b581516ca3dce6f39fbf91d8",
+            "locator": {
+              "end": 35,
+              "kind": "line_range",
+              "start": 16
+            },
+            "path": "mcp/src/agents_remember/cli/role_instruction_details.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "Replay validates regular opened files, content revisions and original canonical report binding, not mutable corpus sources.\n\nAnchor: L38–L88",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "682d4179b094bd4e50d1f67363fe398d5e4e40c9",
+            "content": "sha256:a3660f0512fa0094c6c5fa934139c0b4e7dbf580921a9fdb0c9218c0600898b7",
+            "locator": {
+              "end": 88,
+              "kind": "line_range",
+              "start": 38
+            },
+            "path": "mcp/src/agents_remember/cli/role_instruction_details.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "Per-request detail artifacts use exact admitted bytes beside the handover and write-once publication.\n\nAnchor: L59–L74",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "85b470bea18f2548365b969746fd9e7ef5ea00cf",
+            "content": "sha256:53ae089e7b885fad8e278a7a4540e98ab4b52f03f6e60ecbb8260f070081a4d4",
+            "locator": {
+              "end": 74,
+              "kind": "line_range",
+              "start": 59
+            },
+            "path": "mcp/src/agents_remember/cli/role_handover_artifacts.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "File-local implementation of the stated contract; caller-owned effects and governing workflow are separate evidence.\n\nAnchor: L56–L68",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cd8a486213211e6be0e506486402269997de9b68",
+            "content": "sha256:4576579b88ee50ce6e526af491b0a0ec7e30021e2d89267cb132aaa7d197fe20",
+            "locator": {
+              "end": 68,
+              "kind": "line_range",
+              "start": 56
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "14": {
+      "note": "File-local implementation of the stated contract; caller-owned effects and governing workflow are separate evidence.\n\nAnchor: L130–L145",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cd8a486213211e6be0e506486402269997de9b68",
+            "content": "sha256:da1b20268336d62c9b95b7a112b1f9482695644c4282b7d1c00950dbd9acd5bc",
+            "locator": {
+              "end": 145,
+              "kind": "line_range",
+              "start": 130
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "15": {
+      "note": "File-local implementation of the stated contract; caller-owned effects and governing workflow are separate evidence.\n\nAnchor: L200–L224",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cd8a486213211e6be0e506486402269997de9b68",
+            "content": "sha256:41b48e85155ea9f4779b6a606a0ef1751177a1b9297c0773bb6da61fab652d79",
+            "locator": {
+              "end": 224,
+              "kind": "line_range",
+              "start": 200
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "16": {
+      "note": "File-local implementation of the stated contract; caller-owned effects and governing workflow are separate evidence.\n\nAnchor: L285–L308",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cd8a486213211e6be0e506486402269997de9b68",
+            "content": "sha256:158e27685f71a10a72699779aa2693cccc3893222a496ed6468e7f24ff83318e",
+            "locator": {
+              "end": 308,
+              "kind": "line_range",
+              "start": 285
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "17": {
+      "note": "The frozen compiler vocabulary declares ten roles and nine operations including Bootstrap; compiler vocabulary and native task-seat dispatch availability are distinct.\n\nAnchor: Compiler vocabulary and canonical tuples",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f82bdc4007083ae4dad1686445d94d0c7e33d03b",
+            "content": "sha256:c4224d8b94a35ac2361810b7dbf8e8df332d02d5673d244d091a742730df7023",
+            "locator": {
+              "end": 106,
+              "kind": "line_range",
+              "start": 31
             },
             "path": "mcp/src/agents_remember/models/role_capsules/vocabulary.py"
           },
@@ -62,7 +202,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9f01b458769e29ba24c9cc3c0ff187e9e5eb2cf2",
+            "blob": "4da7f03059708d2c36a166a0b1371b8e30be2932",
             "content": "sha256:db9c1016ec2b2f95f7ebc1d9895edf41f06d2ac6a748c9f18fcde8649748dcd6",
             "locator": {
               "end": 2,
@@ -80,7 +220,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9f01b458769e29ba24c9cc3c0ff187e9e5eb2cf2",
+            "blob": "4da7f03059708d2c36a166a0b1371b8e30be2932",
             "content": "sha256:db9c1016ec2b2f95f7ebc1d9895edf41f06d2ac6a748c9f18fcde8649748dcd6",
             "locator": {
               "end": 2,
@@ -115,7 +255,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e0c363f53732c65054fa825f478956800f102db7",
+            "blob": "762c104a0bcdc0375416163993d106dc37c5fb18",
             "content": "sha256:ff997d6960152a420d7b0d10a870728d9c9ba02fba08c8054c25edb8dda93a71",
             "locator": {
               "kind": "symbol",
@@ -144,7 +284,7 @@
         },
         {
           "anchor": {
-            "blob": "96753fd67b5fc1c702ebbcc0f89dab1182db7156",
+            "blob": "cd8a486213211e6be0e506486402269997de9b68",
             "content": "sha256:398fd6249e5416cdcbdd1e89aa545c9f25b79cc6bdf8c97a201369edbff96715",
             "locator": {
               "kind": "symbol",
@@ -160,7 +300,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "96753fd67b5fc1c702ebbcc0f89dab1182db7156",
+            "blob": "cd8a486213211e6be0e506486402269997de9b68",
             "content": "sha256:d9ebe0c01225ff5c3367abc7ff71348cad9b820eeca4ee81a7871f376414497f",
             "locator": {
               "kind": "symbol",
@@ -171,7 +311,7 @@
         },
         {
           "anchor": {
-            "blob": "37dceffd02563c773f94c4edc9d4c1b7685d46ea",
+            "blob": "d2ac87a3213c5859af2fc85728ebd0d3c7cf6d57",
             "content": "sha256:4ef35ad244d8331b5e5329ca4e43ac3969dee3fc505426a2d2a9e87df459dd8a",
             "locator": {
               "kind": "symbol",
@@ -188,7 +328,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "72dc9fa336d744d13e1ba811c6965cafb7a8ff9f",
+            "blob": "fde424ce1c4b108a144b9b7ab8f0d9fe8a807bf1",
             "content": "sha256:e9be5bbf3ba8918c590832047be89b533e7a00102ff7719fdcf87f05f21bf81e",
             "locator": {
               "kind": "symbol",
@@ -200,7 +340,7 @@
         },
         {
           "anchor": {
-            "blob": "72dc9fa336d744d13e1ba811c6965cafb7a8ff9f",
+            "blob": "fde424ce1c4b108a144b9b7ab8f0d9fe8a807bf1",
             "content": "sha256:0942d375776c856968acb5b0e7f0dff3d1f63262289017f755c53ea041e35edf",
             "locator": {
               "kind": "symbol",
@@ -212,7 +352,7 @@
         },
         {
           "anchor": {
-            "blob": "72dc9fa336d744d13e1ba811c6965cafb7a8ff9f",
+            "blob": "fde424ce1c4b108a144b9b7ab8f0d9fe8a807bf1",
             "content": "sha256:fc8ef3afe9d62913555ae353a8fa5eb4a89f14e0cff60d56daa2dced8d5b0cd9",
             "locator": {
               "kind": "symbol",
@@ -224,7 +364,7 @@
         },
         {
           "anchor": {
-            "blob": "72dc9fa336d744d13e1ba811c6965cafb7a8ff9f",
+            "blob": "fde424ce1c4b108a144b9b7ab8f0d9fe8a807bf1",
             "content": "sha256:528ec79929a0f0aa301c9473f74852ceedb1ee7b1c203ebc00a5e8fb8b2238c1",
             "locator": {
               "kind": "symbol",
@@ -236,12 +376,12 @@
         },
         {
           "anchor": {
-            "blob": "72dc9fa336d744d13e1ba811c6965cafb7a8ff9f",
+            "blob": "fde424ce1c4b108a144b9b7ab8f0d9fe8a807bf1",
             "content": "sha256:1cbdd4296243f6f983293ec781564ecc3d7d169ab6996eb6bf447085c72d40e5",
             "locator": {
-              "end": 196,
+              "end": 192,
               "kind": "line_range",
-              "start": 185
+              "start": 181
             },
             "path": "mcp/tests/test_role_capsule_admission.py"
           },
@@ -249,12 +389,12 @@
         },
         {
           "anchor": {
-            "blob": "72dc9fa336d744d13e1ba811c6965cafb7a8ff9f",
+            "blob": "fde424ce1c4b108a144b9b7ab8f0d9fe8a807bf1",
             "content": "sha256:4bebb192870ac06c757a7902dfc23d61dbb1ff2c0dd09c76affefbd408653c39",
             "locator": {
-              "end": 218,
+              "end": 214,
               "kind": "line_range",
-              "start": 197
+              "start": 193
             },
             "path": "mcp/tests/test_role_capsule_admission.py"
           },
@@ -262,12 +402,12 @@
         },
         {
           "anchor": {
-            "blob": "72dc9fa336d744d13e1ba811c6965cafb7a8ff9f",
+            "blob": "fde424ce1c4b108a144b9b7ab8f0d9fe8a807bf1",
             "content": "sha256:674fbff12a2a16e430a80290d12e709d311f34532d6609d163d0f9429252a406",
             "locator": {
-              "end": 254,
+              "end": 250,
               "kind": "line_range",
-              "start": 241
+              "start": 237
             },
             "path": "mcp/tests/test_role_capsule_admission.py"
           },
@@ -280,7 +420,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "72dc9fa336d744d13e1ba811c6965cafb7a8ff9f",
+            "blob": "fde424ce1c4b108a144b9b7ab8f0d9fe8a807bf1",
             "content": "sha256:f34f06d8b39dee094e6d46952b91a62907f1e7d458fb471227d48cb6a9469142",
             "locator": {
               "kind": "symbol",
@@ -292,12 +432,12 @@
         },
         {
           "anchor": {
-            "blob": "72dc9fa336d744d13e1ba811c6965cafb7a8ff9f",
+            "blob": "fde424ce1c4b108a144b9b7ab8f0d9fe8a807bf1",
             "content": "sha256:a27707ee863517b80993af6b19c719d8766b0385bd1e3df03dcc6ade61d2c8e0",
             "locator": {
-              "end": 228,
+              "end": 224,
               "kind": "line_range",
-              "start": 219
+              "start": 215
             },
             "path": "mcp/tests/test_role_capsule_admission.py"
           },

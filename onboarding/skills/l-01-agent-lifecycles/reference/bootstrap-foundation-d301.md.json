@@ -1,0 +1,24 @@
+{
+  "path": "skills/l-01-agent-lifecycles/reference/bootstrap-foundation-d301.md",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "New separate step-7 detail copied from Bootstrap foundation paragraph; no foundation authoring power is added to Bootstrap.\n\nAnchor: Candidate instruction body, lines 1–13",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ace4771286e68fd5987f369e62d6db1e1304c44f",
+            "content": "sha256:53882407103b249b5b9aed2dfc97e857875e71dd0780cf265b9fc4eea623fcbe",
+            "locator": {
+              "end": 13,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

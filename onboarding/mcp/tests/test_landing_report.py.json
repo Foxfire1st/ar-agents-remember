@@ -3,7 +3,7 @@
   "proves": [
     {
       "anchor": {
-        "blob": "7f1ec122275f7b7eb101249771239eb1553fc818",
+        "blob": "1aa51e331d1bd220d025930c7acee41dce37170d",
         "content": "sha256:7c74a031f8a96e7e44ab92a0cb871465b16711fb48e734e26ea1efb23ef5f3bb",
         "locator": {
           "kind": "symbol",
@@ -20,7 +20,7 @@
     },
     {
       "anchor": {
-        "blob": "7f1ec122275f7b7eb101249771239eb1553fc818",
+        "blob": "1aa51e331d1bd220d025930c7acee41dce37170d",
         "content": "sha256:dc1e0053a244a0d1f0b5a66ffed134469d6019a48125668d90850ccf162ff9c1",
         "locator": {
           "kind": "symbol",
@@ -37,7 +37,7 @@
     },
     {
       "anchor": {
-        "blob": "7f1ec122275f7b7eb101249771239eb1553fc818",
+        "blob": "1aa51e331d1bd220d025930c7acee41dce37170d",
         "content": "sha256:0e8f19085550b441a086814504036835e236d81faa46c40ccf5a86752b1f2b2f",
         "locator": {
           "kind": "symbol",
@@ -54,7 +54,7 @@
     },
     {
       "anchor": {
-        "blob": "7f1ec122275f7b7eb101249771239eb1553fc818",
+        "blob": "1aa51e331d1bd220d025930c7acee41dce37170d",
         "content": "sha256:4eb33fe56ce92a2f4221a05eb0c08b5fe850c6eef0ca1303c830d78b131d61bc",
         "locator": {
           "kind": "symbol",
@@ -71,7 +71,7 @@
     },
     {
       "anchor": {
-        "blob": "7f1ec122275f7b7eb101249771239eb1553fc818",
+        "blob": "1aa51e331d1bd220d025930c7acee41dce37170d",
         "content": "sha256:44281868bedf9ea2c170d3da276d01c094ca58f61d833517fd45946695df1dd2",
         "locator": {
           "kind": "symbol",
@@ -88,7 +88,7 @@
     },
     {
       "anchor": {
-        "blob": "7f1ec122275f7b7eb101249771239eb1553fc818",
+        "blob": "1aa51e331d1bd220d025930c7acee41dce37170d",
         "content": "sha256:2684f3099605ae7e65287e66559645a084a16049c392699db7c59969170af4c7",
         "locator": {
           "kind": "symbol",
@@ -111,11 +111,28 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7f1ec122275f7b7eb101249771239eb1553fc818",
+            "blob": "1aa51e331d1bd220d025930c7acee41dce37170d",
             "content": "sha256:0e8f19085550b441a086814504036835e236d81faa46c40ccf5a86752b1f2b2f",
             "locator": {
               "kind": "symbol",
               "name": "test_card_over_measure_reports_both_numbers"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "10": {
+      "note": "The changed role-text portion accepts one scoped Curator equivalent with deletion controls on every discovered source root and compiles canonical Curator/curation. Both Reviewer landing sentences move to the exact delivered reviewer-memory-d301 step-8 file and are checked with per-sentence deletion controls for each discovered root. Measurement/Git/gate/quality-phase and refusal fixtures are otherwise unchanged.\n\nAnchor: Current test/support source",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1aa51e331d1bd220d025930c7acee41dce37170d",
+            "content": "sha256:5877d6ceb1d7af8975a0a68268f2ee98eb8a38f1992cf5773485f2b55d61b1d8",
+            "locator": {
+              "end": 1307,
+              "kind": "line_range",
+              "start": 1
             }
           },
           "kind": "test"
@@ -127,7 +144,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7f1ec122275f7b7eb101249771239eb1553fc818",
+            "blob": "1aa51e331d1bd220d025930c7acee41dce37170d",
             "content": "sha256:bf3e1d57f3de03738b974243b96e6025fb0a77d6c58cdfec1488d3bdd66ee2da",
             "locator": {
               "kind": "symbol",
@@ -143,7 +160,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7f1ec122275f7b7eb101249771239eb1553fc818",
+            "blob": "1aa51e331d1bd220d025930c7acee41dce37170d",
             "content": "sha256:7c74a031f8a96e7e44ab92a0cb871465b16711fb48e734e26ea1efb23ef5f3bb",
             "locator": {
               "kind": "symbol",
@@ -159,7 +176,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7f1ec122275f7b7eb101249771239eb1553fc818",
+            "blob": "1aa51e331d1bd220d025930c7acee41dce37170d",
             "content": "sha256:4eb33fe56ce92a2f4221a05eb0c08b5fe850c6eef0ca1303c830d78b131d61bc",
             "locator": {
               "kind": "symbol",
@@ -171,18 +188,32 @@
       ]
     },
     "5": {
-      "note": "Discovered role-source mirrors hold all listed sentences; canonical capsule assertions check all three Curator sentences and only the Reviewer removed-text phrase.",
+      "note": "Curator sources and canonical capsule retain the three protected clauses; each discovered Reviewer root delivers both protected landing sentences in the named step-8 memory file.\n\nAnchor: Current substantive owner; original historical evidence remains in the memory base",
       "targets": [
         {
           "anchor": {
-            "blob": "7f1ec122275f7b7eb101249771239eb1553fc818",
-            "content": "sha256:1c9026636a794eb2b01ab9951d31fb1ab3bc95b8b6e27fcd9a98ed00d79a70ef",
+            "blob": "1aa51e331d1bd220d025930c7acee41dce37170d",
+            "content": "sha256:5877d6ceb1d7af8975a0a68268f2ee98eb8a38f1992cf5773485f2b55d61b1d8",
             "locator": {
-              "kind": "symbol",
-              "name": "test_role_texts_hold_landing_sentences_everywhere"
+              "end": 1307,
+              "kind": "line_range",
+              "start": 1
             }
           },
           "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "49a8301d2f85c2182938d3a9123bcaf84dee7a37",
+            "content": "sha256:dbfdd274c550b6896abe3fa44d87269e647fea08ca058d53af6c14811632ba96",
+            "locator": {
+              "end": 5,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "skills/l-01-agent-lifecycles/reference/reviewer-memory-d301.md"
+          },
+          "kind": "code"
         }
       ]
     },
@@ -191,7 +222,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7f1ec122275f7b7eb101249771239eb1553fc818",
+            "blob": "1aa51e331d1bd220d025930c7acee41dce37170d",
             "content": "sha256:a7ade1c9e2a0a3456ece9227da3aacd5dfce9701b7490c02ba9f49ba7f02ae66",
             "locator": {
               "kind": "symbol",
@@ -207,7 +238,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7f1ec122275f7b7eb101249771239eb1553fc818",
+            "blob": "1aa51e331d1bd220d025930c7acee41dce37170d",
             "content": "sha256:f29e9eecbf12964d452b1a2afedc3cfbc1e69114d84a6f886cd2f5629f35e71c",
             "locator": {
               "kind": "symbol",
@@ -223,7 +254,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7f1ec122275f7b7eb101249771239eb1553fc818",
+            "blob": "1aa51e331d1bd220d025930c7acee41dce37170d",
             "content": "sha256:dc1e0053a244a0d1f0b5a66ffed134469d6019a48125668d90850ccf162ff9c1",
             "locator": {
               "kind": "symbol",
@@ -239,7 +270,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7f1ec122275f7b7eb101249771239eb1553fc818",
+            "blob": "1aa51e331d1bd220d025930c7acee41dce37170d",
             "content": "sha256:777274d78a5b22e0722fe012723b952c46c63f187f3dfac9511d563d31a1e3a2",
             "locator": {
               "kind": "symbol",

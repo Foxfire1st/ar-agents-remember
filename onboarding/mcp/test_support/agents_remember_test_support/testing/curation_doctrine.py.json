@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "5e98996e8ec031b13f2d7ae246b428f8f93d4f9c",
+        "blob": "75e19d2f61349598c34a72a40a658ad25fe60adb",
         "content": "sha256:61d118edebbd6c51973dee05211b23e32ad85649f909d676022be0fb8a813846",
         "locator": {
           "kind": "symbol",
@@ -21,7 +21,7 @@
     },
     {
       "anchor": {
-        "blob": "5e98996e8ec031b13f2d7ae246b428f8f93d4f9c",
+        "blob": "75e19d2f61349598c34a72a40a658ad25fe60adb",
         "content": "sha256:61d118edebbd6c51973dee05211b23e32ad85649f909d676022be0fb8a813846",
         "locator": {
           "kind": "symbol",
@@ -39,7 +39,7 @@
     },
     {
       "anchor": {
-        "blob": "5e98996e8ec031b13f2d7ae246b428f8f93d4f9c",
+        "blob": "75e19d2f61349598c34a72a40a658ad25fe60adb",
         "content": "sha256:61d118edebbd6c51973dee05211b23e32ad85649f909d676022be0fb8a813846",
         "locator": {
           "kind": "symbol",
@@ -57,7 +57,7 @@
     },
     {
       "anchor": {
-        "blob": "5e98996e8ec031b13f2d7ae246b428f8f93d4f9c",
+        "blob": "75e19d2f61349598c34a72a40a658ad25fe60adb",
         "content": "sha256:8f981c11f1290686733d9086a5107bdf08e1dfc3328aa7937b4143a226db6598",
         "locator": {
           "end": 573,
@@ -129,7 +129,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5e98996e8ec031b13f2d7ae246b428f8f93d4f9c",
+            "blob": "75e19d2f61349598c34a72a40a658ad25fe60adb",
             "content": "sha256:67a7b91537aa4ee924ffc0f7791af8cf4ade43ee51ad27b8bae097057a50126f",
             "locator": {
               "kind": "symbol",
@@ -180,12 +180,29 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5e98996e8ec031b13f2d7ae246b428f8f93d4f9c",
+            "blob": "75e19d2f61349598c34a72a40a658ad25fe60adb",
             "content": "sha256:e3c89ecf994b9876775b9e606be29b87f5fad2d7ca4842d62adacf63e60aa442",
             "locator": {
               "end": 57,
               "kind": "line_range",
               "start": 36
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "Only the exact Curator positive marker changes to the shorter intake/after-repair/full-curation/coherence sentence. The operation tuple still carries COMPLETE_CURATION_RULE and prepare → publish → validate. Retired sentence census, declared source confinement, normalized matching and any-marker positive reader remain unchanged.\n\nAnchor: Current test/support source",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "75e19d2f61349598c34a72a40a658ad25fe60adb",
+            "content": "sha256:9fffa7aae0fc6fbb6e3002a10ff786a7bcfe8da9faf2e2cc58d5516aeb06b791",
+            "locator": {
+              "end": 770,
+              "kind": "line_range",
+              "start": 1
             }
           },
           "kind": "code"

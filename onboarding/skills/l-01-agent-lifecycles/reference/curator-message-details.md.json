@@ -1,0 +1,24 @@
+{
+  "path": "skills/l-01-agent-lifecycles/reference/curator-message-details.md",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "New step-1 message payload and automatic filing detail; transport boundaries stay inline.\n\nAnchor: Candidate instruction body, lines 1–5",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ad8fd369a10fd8adb73c5175df77e1b1211b80c3",
+            "content": "sha256:a89ca608a033f40afa6ca53918abb9d4c07e38fe1fe57d32615d07449cc922bd",
+            "locator": {
+              "end": 5,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

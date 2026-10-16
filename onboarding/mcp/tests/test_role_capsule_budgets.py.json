@@ -3,34 +3,69 @@
   "proves": [
     {
       "anchor": {
-        "blob": "0af0431175466d1d6d0ef30654277069c9ac6095",
-        "content": "sha256:1a2e5bc3df0f8e53fb9c847cf2b7aa6a397ccae242a38e0b058133b988b79aed",
+        "blob": "17d6acd1f48bded76920424ca5fe5b1de2e153b0",
+        "content": "sha256:3f010d76368f2c7d2dbe47f6b3b34afeaabac4d190d52323516fe2d8e5a47329",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_every_yielded_capsule_has_a_budget_and_no_other_key_does"
+        }
+      },
+      "facet": "Registry capsule keys exactly match the compiler's matrix, and step-detail keys exactly match manifest-declared details.",
+      "id": "PRF-2SHTSX",
+      "invariant": "INV-Y6GVZ7",
+      "origin": {
+        "handoffEntry": "L88-R125-current-budget-proof-facets",
+        "leaf": "260928-MIK-L88"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "17d6acd1f48bded76920424ca5fe5b1de2e153b0",
+        "content": "sha256:0c6ca7dd0173e655fbe1fdabae1004e65beeb63e4dc905d636bd481841f7a00b",
         "locator": {
           "kind": "symbol",
           "name": "test_no_capsule_exceeds_its_recorded_budget"
         }
       },
-      "facet": "Fresh compiled sizes stay at or under the recorded ceil(size_words*11/10) budgets.",
-      "id": "PRF-N8MMW7",
+      "facet": "Fresh capsule and declared-detail sizes stay within recorded budgets; measured size, recorded size and budget stay within their respective 3700/2500 ceilings, and each stored budget follows the capped eleven-tenths formula.",
+      "id": "PRF-G72M5K",
       "invariant": "INV-Y6GVZ7",
       "origin": {
-        "handoffEntry": "MIK-R101@v1 rule 6",
-        "leaf": "260928-MIK-L101"
+        "handoffEntry": "L88-R125-current-budget-proof-facets",
+        "leaf": "260928-MIK-L88"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "17d6acd1f48bded76920424ca5fe5b1de2e153b0",
+        "content": "sha256:b4e48b15714781e0b92c5e3f690fe79483dc2c74620f559c4f7071d52589e77e",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_budget_guard_rejects_growth_ceiling_and_unregistered_details"
+        }
+      },
+      "facet": "The mutation case seeds capsule growth beyond budget, measured and recorded capsule ceiling violations, a missing declared detail and a recorded detail ceiling violation. It does not seed an extra/orphan detail key; exact registry-key equality and the guard’s orphan detection are separate source evidence.",
+      "id": "PRF-TRSH6Y",
+      "invariant": "INV-Y6GVZ7",
+      "origin": {
+        "handoffEntry": "L88-R125-current-budget-proof-facets",
+        "leaf": "260928-MIK-L88"
       }
     }
   ],
   "realizes": [],
   "references": {
     "1": {
-      "note": "Registry keys equal exactly the capsule matrix the source yields.",
+      "note": "Registry keys equal the yielded capsule matrix and declared step-file set.\n\nAnchor: Current substantive owner; original historical evidence remains in the memory base",
       "targets": [
         {
           "anchor": {
-            "blob": "0af0431175466d1d6d0ef30654277069c9ac6095",
-            "content": "sha256:6b19123d802f1d5f72bf6d8ae4258455ffc48e83ffd2c02e2a45711760637f15",
+            "blob": "17d6acd1f48bded76920424ca5fe5b1de2e153b0",
+            "content": "sha256:420b7353050c98b2aa9f11a7e4caf8a9aa7065b6073abb2066afc39b68232674",
             "locator": {
-              "kind": "symbol",
-              "name": "test_every_yielded_capsule_has_a_budget_and_no_other_key_does"
+              "end": 193,
+              "kind": "line_range",
+              "start": 1
             }
           },
           "kind": "test"
@@ -38,15 +73,33 @@
       ]
     },
     "2": {
-      "note": "No compiled capsule exceeds its recorded ceil(raw*11/10) budget.",
+      "note": "The shared guard bounds capsule and detail words under their capped eleven-tenths budgets and absolute ceilings.\n\nAnchor: Current substantive owner; original historical evidence remains in the memory base",
       "targets": [
         {
           "anchor": {
-            "blob": "0af0431175466d1d6d0ef30654277069c9ac6095",
-            "content": "sha256:1a2e5bc3df0f8e53fb9c847cf2b7aa6a397ccae242a38e0b058133b988b79aed",
+            "blob": "17d6acd1f48bded76920424ca5fe5b1de2e153b0",
+            "content": "sha256:420b7353050c98b2aa9f11a7e4caf8a9aa7065b6073abb2066afc39b68232674",
             "locator": {
-              "kind": "symbol",
-              "name": "test_no_capsule_exceeds_its_recorded_budget"
+              "end": 193,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Measures fresh render_instructions whitespace words for the role/operation/launcher matrix and complete source text for every declared detail. Exact registry keys forbid missing/orphan entries. Each stored budget is min(ceil(stored size_words*11/10), ceiling); actual size, stored size and budget must each stay within 3700 capsule/2500 detail ceilings and actual size fit budget. Seed controls invoke the same real guard with mutated inputs, not a duplicate implementation.\n\nAnchor: Current test/support source",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "17d6acd1f48bded76920424ca5fe5b1de2e153b0",
+            "content": "sha256:420b7353050c98b2aa9f11a7e4caf8a9aa7065b6073abb2066afc39b68232674",
+            "locator": {
+              "end": 193,
+              "kind": "line_range",
+              "start": 1
             }
           },
           "kind": "test"

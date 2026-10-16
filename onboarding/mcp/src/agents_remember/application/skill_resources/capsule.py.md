@@ -27,9 +27,9 @@ Four steps, each of which can only refuse, in `compile_task_capsule`:
    taken from the caller, so the admitted facts and the task reference are anchored to the enclosure
    that actually owns them. Since `260915-CAPS-L15` the root that resolution *uses* is resolved first
    by `_declared_repository_root` — the caller's own value when it supplied one, otherwise
-   `code_repo_path` read out of the contract the request already names — because the **registered**
-   `role_capsule_compile` tool exposes no repository field at all and the coordination resolver refuses
-   without one (defect **D13**). The same resolved root travels onto `AdmittedEnclosure` and is what
+   `code_repo_path` read out of the contract the request already names — because the historically registered
+   `role_capsule_compile` tool exposed no repository field and coordination resolution refused
+   without one (defect **D13**). That removed tool is not the present public launch surface. The same resolved root travels onto `AdmittedEnclosure` and is what
    `_projection` hands the task projection, so projection and admission resolve against one root
    instead of two derivations; without that second half the projection refused
    (`projection-binding-unresolved`) in any tree whose repository does not sit directly under the
@@ -95,15 +95,26 @@ seat and revision on a refusal too.
 - **The repository root has one derivation per compile.** A caller-supplied `code_repository_root` wins
   when present; otherwise the named contract's `code_repo_path` is the authority. Nothing re-derives a
   root beside it, and the value the projection receives is the value the admission used.
-- **The registered tool's declared schema is load-bearing.** A schema that loses `contract_path` fails
-  the case that asserts it, because the resolution depends on it — the boundary must stay the surface
-  callers actually have, not a richer request object only tests can build (D13's own lesson).
+- **Historical registered-tool lesson (D13).** The then-registered schema had to expose `contract_path` because its resolver depended on it; a richer test-only request did not prove the real surface usable. The public capsule tool is now removed; current native launch still uses the shared internal admission/compiler owners.
 
 ### Todos
 
 None recorded.
 
+## Current Contract
+
+`routed_admission_for` admits the union of declared skill root paths and every manifest step-detail source whose roles contain the seat role, sorted and deduplicated under the skill source category. This is admission, not unconditional attachment: the pure compiler later retains only detail placeholders in the selected instruction blocks. Both task-bound and taskless launches use this routing rule. Sources remain bounded by the existing admission root; no detail is read or written by this routing function itself. The retained role_capsule_compile-tool account is historical: current native launch composes through the internal capsule surface, not a newly advertised compile tool.
+
+This account is bound to the candidate source, not a claim of a running serving build or a fresh execution/acceptance verdict. Existing historical accounts remain historical.
+
 ## Evidence
+
+
+- The current response registry omits former capsule/catalog tools; retained response types are not public tool exposure. [16]
+- Launch copies detail files, substitutes paths, and records frozen revisions. [17]
+- Replay validates regular opened files, content revisions and original canonical report binding, not mutable corpus sources. [18]
+- Per-request detail artifacts use exact admitted bytes beside the handover and write-once publication. [19]
+- File-local implementation of the stated contract; caller-owned effects and governing workflow are separate evidence. [20]
 
 ### Docs References
 
@@ -121,7 +132,7 @@ sources.
 - Selection comes from the manifest, and the declared skill `source` is the admitted path while the `uri` is provenance. [5]
 - The seat-addressed form of the same routing rule, for a caller with no task document. [6]
 - D13's repair: the root read out of the contract the request names, and carried onto the enclosure so the projection uses the same one. [7]
-- The registered boundary the repair makes usable, and the case that fails if the declared schema loses the field the resolution depends on. [8]
+- Historical D13 registered-boundary repair and its then-current schema test; this is not evidence that the removed capsule tool is currently advertised. [8]
 - The launch compiler that consumes the seat-addressed routing entry point for a taskless seat. [9]
 - The tool policy is a snapshot of the published roster, so a capsule requests tools and never grants them. [10]
 - The advertised roster the tool policy snapshots. [11]

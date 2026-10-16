@@ -17,6 +17,13 @@ The Worker's build contract: implement the leaf's primary requirement in the cod
 
 One report at the canonical task path records change, files, evidence, exact checks and open limitations. The freeze handover also carries the leaf Requirement Attempt Journal records appended before review handoff; it is factual, never a review brief. Sealed findings return as a new freeze to the same Reviewer. The candidate stays uncommitted; the seat starts no role, repairs no transaction authority, and stages nothing. A hand-over counts only on a reply or report naming its exact object; busy refusals are recorded, retried, and reported once more.
 
+## Current composition and authoring contract
+
+This stage still gives Worker the selected primary requirement, paired code edit root and read-only memory context. It requires a truthful canonical report and exact factual freeze/journal handover directly to Reviewer, with producer list to Curator after code PASS.
+
+The new `ar:roles all` marker exposes the existing body to every admitted role of this operation, which remains Worker alone. Candidate-uncommitted, no role start, no self-acceptance, no memory/transaction writes, exact-object handover evidence, retry and split sync ownership are unchanged. This one marker has no new build, check or landing obligation.
+
+
 ## Evidence
 
 - The freeze handover goes directly to the Reviewer and carries the appended journal records. [1]
@@ -111,3 +118,5 @@ Inherited reference 3 commentary (not a revalidated target):
 The byte-equal package copy is a distribution carrier, not an independent role, task or permission authority. Whole-file source evidence does not certify inherited statements, execution, grading or the whole card.
 
 - The authored source owns this contract; the distribution copy is not a separate authority. [4]
+
+- Adds only the all-role audience marker; the Worker-only stage body is byte-preserved apart from that added first line. [5]

@@ -1,5 +1,21 @@
 # mcp/src/agents_remember/cli/role_launch_preparation.py
 
+## Purpose
+
+Resolve launch defaults, workspace, scoped readers, instructions and handover before native creation.
+
+## Governing Overview
+
+[MCP package overview](../../../overview.md)
+
+## Current Contract — Scoped Launch And Settings Changes
+
+prepare_role_handover accepts optional step_up reason, selects defaults from current task/receipt/decision facts, and validates the resulting provider/model/mode/features against the host catalog before workspace/enclosure creation. Ordinary roles without an alternative continue using their own choices.
+
+_role_defaults delegates settings projection to role_launch_defaults while retaining the host role read. _compile_handover delegates to compose_launch_instructions, freezing admitted D301/R125 detail bytes beside the report and binding concrete pointers before existing user append/<overwrite> semantics.
+
+Canonical task JSON/rendered copy metadata, missingCopies disclosure, report/scratch custody, exact parent and leafSeats peer routing, taskless scope and grant-aware revival remain separate existing contracts. A source-bound handover is not code/memory acceptance or live-host proof.
+
 ## Current operative account — MIK-R112
 
 The current source facts below replace the former operative inventory. The separately labelled superseded claims describe only the pre-repair card. Original paragraphs, dated closures, evidence and citation identities remain intact in the explicitly historical section; they grant no current call, restored route or fresh execution acceptance.
@@ -20,7 +36,7 @@ The current source facts below replace the former operative inventory. The separ
 
 Source inspection supplies no new test, native-host, whole-build, landing or memory acceptance. Retained internal services and historical fixtures do not re-advertise deleted MCP tools. Numbered references retain historical custody and may include disclosed inherited stale targets; currentness or proof truth is not inferred from them.
 
-The pre-successor CUR-C04 source concatenated the baseline rather than composed notes. The current moving producer candidate now inserts the composed instructions; source correction is visible, but its genuine successor custody/independent disposition has not yet been adopted. Metadata and a source edit alone are not a CODE PASS or host-actual witness.
+Historical producer-custody note (not an L88 verdict): the pre-successor CUR-C04 source concatenated the baseline rather than composing notes, and the then-moving producer inserted composed instructions without that card independently admitting its successor. Current L88 source composes frozen detail pointers before user notes; source inspection here supplies no new CODE PASS, MEMORY verdict or host-actual witness.
 
 ## Grant-backed leaf preparation and revival
 
@@ -107,3 +123,11 @@ Investigator’s actual started_by parent selects the concern-from-first-message
 - **Retained historical source account — superseded by the current contract:** Leaf revival compares current grant-sensitive canonical task/contract scope before bridge use. [9]
 
 - The launch preparer consumes resolved task identity and canonical files without calling the removed task_doc.get. Read metadata names json_path/rendered_path instead of an operation=get request. taskDocumentFiles includes the own-leaf copy set derived from INDEX, absolute file locations and missingCopies. Compiled task context and launch admission keep their existing owners; file copies do not become task authority or a historical approval witness. [10]
+
+
+## Evidence
+
+- Select and catalog-validate before workspace creation. [11]
+- Defaults extraction preserves host-role lookup. [12]
+- Detail-bound composition enters the existing handover and message binding. [13]
+- Concrete frozen detail pointers retain existing user-note composition. [14]

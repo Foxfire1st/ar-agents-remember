@@ -18,7 +18,20 @@ RoleStartCall extends canonical selection with required UUID and optional overri
 
 `RoleStartSetCall` carries one set request UUID and exact leaf references with separate Worker/Reviewer/Curator choices, optional Reviewer first work and replacement IDs. `SeatLaunchOverride` carries speed choices only. Both single starts and set replacement carry explicit interruption permission. `RoleStartStatus` and `RoleMessageStatus` admit `held`: a held seat exists without a turn, and a held message is product-stored rather than host-accepted. Message output names waiting IDs/counts, retained terminal lines and held-seat opening; withdrawal is a distinct input. `RoleStartSetResponse` reports each seat and partial completion without implying task acceptance.
 
+## Current Contract
+
+RoleStartCall carries optional step_up reason beside the existing selection, UUID, overrides and replacement intent; it does not validate a reason sentence itself. RoleStartResponse declares optional stepUp metadata on the strict rich response. The requested reason and the reported application result are distinct. Mode and permission features are still user-owned, the ordinary no-step-up route is unchanged, and this DTO neither counts review failures nor certifies applied host choices. Existing message-field incompleteness and held-path caveats remain as recorded.
+
+
+This account is bound to the candidate source, not a claim of a running serving build or a fresh execution/acceptance verdict. Existing historical accounts remain historical.
+
 ## Evidence
+
+
+- Worker/Curator typed review census, record-only exclusion and unknown history. [8]
+- Reason admission, threshold and differing-harness/model inheritance boundary. [9]
+- File-local implementation of the stated contract; caller-owned effects and governing workflow are separate evidence. [10]
+- File-local implementation of the stated contract; caller-owned effects and governing workflow are separate evidence. [11]
 
 - Frozen implementation of RoleStartCall supporting the stated file behavior. [1]
 - Current RoleMessageCall declares body/attachment inputs and waiting-message withdrawal; declarations do not prove every composed branch files payloads. [2]

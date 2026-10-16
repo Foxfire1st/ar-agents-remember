@@ -8,8 +8,8 @@
   },
   "applicability": "The launcher bar's measured height at the dashboard's ordinary and narrow widths.",
   "conditions": [
-    "The bar renders its controls, before a reply, after a short reply and after a long reply.",
-    "The failure line of rule 3 is the only text it may add, and that line is present or absent independently of the reply."
+    "The bar renders the same controls/status state before a reply, after a short reply and after a long reply.",
+    "An actionable failure line or permitted compact step-up badge is independent of reply content; reply length never supplies strip content."
   ],
   "exclusions": [
     "A failed state's one line may change the bar's height; rule 3 requires it to be seen.",
@@ -27,7 +27,7 @@
     "leaf": "260928-MIK-L75",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-invariant/v1",
   "statement": "Replies leave launcher height unchanged at both requested widths.",
   "status": "proposed",

@@ -10,9 +10,19 @@ Refreshes receipt facts from one native agent read and reconciles new starts wit
 
 ## Code Commentary
 
-_refresh_execution returns unresolved/rejected launches without an agent read. _apply_reading writes only changed lifecycle fields and never on unreachable reads; response-only unreachable detail preserves last known status. Revive republishes the saved receipt’s role identity through `resume_role_agent` before resuming only the same closed agent, persists answered refusal, and drops that refusal only after seeing the session open. New Start applies open-execution policy to current native facts. For a leaf seat, a finished turn or closed session does not free its unarchived holder. A new request must explicitly name that holder for replacement; only the recorded starter or the dashboard launcher may authorize it, and interrupting an active turn requires the explicit flag. An unreadable holder fails closed rather than appearing free. The replacement records retirement before archiving the prior receipt and preserves predecessor report custody.
+_refresh_execution returns unresolved/rejected launches without an agent read. _apply_reading writes only changed lifecycle fields and never on unreachable reads; response-only unreachable detail preserves last known status. Revive republishes the saved receipt’s role identity through `resume_role_agent` before resuming only the same closed agent, persists answered refusal, and drops that refusal only after seeing the session open. New Start applies open-execution policy to current native facts. For a leaf seat, a finished turn or closed session does not free its unarchived holder. An ordinary new request must explicitly name that holder for replacement; only the recorded starter or the dashboard launcher may authorize it, and interrupting an ordinary active replacement requires the explicit flag. A catalog-validated step-up can infer the current base holder, but still applies that caller authority and always requires idle/no pending permission; its replacement never interrupts an active turn. An unreadable holder fails closed rather than appearing free. The replacement records retirement before archiving the prior receipt and preserves predecessor report custody.
 
 A held receipt keeps the product status `held` through an ordinary host idle reading. Only an archived or vanished holder frees that seat; an unreachable host leaves its saved held state intact. Ordinary revive and closing-mark behavior stays separate.
+
+## Current Contract — Scoped Launch And Settings Changes
+
+Same-request reconciliation checks request digest first, reconciles its task step-up decision, then re-executes starting/unknown or a rejected stepped-up receipt that still has replayRequest. Other resolved receipts continue through refresh; this adds a narrow rejected-successor retry, not a general retry for every refusal.
+
+Ordinary leaf replacement still requires a named holder and starter/launcher authority, with explicit permission to interrupt a normal active replacement. For a validated step-up, runtime wiring can infer that holder but _require_step_up_idle always refuses pending permission or active/running turns even when interruption was requested.
+
+require_step_up_archive_idle re-reads archiveAgentId immediately before every saved step-up call, including retries and history recovery. Unreachable facts refuse; an extant unarchived predecessor must again be idle and prompt-free. A prior reservation or settled archive flag is not a liveness lease.
+
+No finished turn accepts AR work or frees a live leaf holder. Held-state persistence, response-only unreachable refresh, revive refusal custody, predecessor reports and ordinary closing-mark behavior remain unchanged.
 
 ## Evidence
 
@@ -41,3 +51,11 @@ Selected-task Investigator starts reconcile their exact request instead of adopt
 - Changes task/capsule/prompt inputs and verifies repeat returns or replays saved receipt without new preparation. [4]
 - Pins delivered worker doctrine: one parent role_message after report, none for dashboard-started worker, and a finished turn is not AR acceptance. [11]
 - Composes delivered architect/manager/orchestrator capsule text, requires current diff/evidence inspection and owner acceptance clauses, and detects removal of manager inspection; this proves instruction delivery rather than runtime no-mutation. [12]
+
+- Digest-bound same-request replay reconciles decisions and empty successors. [14]
+
+- Replacement authority remains while step-up adds unconditional idle/prompt checks. [15]
+
+- Every saved archival call renews host liveness. [16]
+
+- Test source checks turn/prompt/unreachable recovery and no archive/create. [17]

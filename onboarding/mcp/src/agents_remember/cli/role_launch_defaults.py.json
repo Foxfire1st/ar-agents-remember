@@ -1,0 +1,57 @@
+{
+  "path": "mcp/src/agents_remember/cli/role_launch_defaults.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Repository/altitude defaults and alternative projection are one per-use read.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f652afca5631e32fdd409e0e50ed50d4aa749705",
+            "content": "sha256:0c61bb80c50d088ae98bb7af4daa0e2a41a276a929c44f82c7a396697190794d",
+            "locator": {
+              "kind": "symbol",
+              "name": "role_defaults"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Preparation keeps the host-read wrapper.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d01d128cbae6946dda02f35b63bb394573a888a2",
+            "content": "sha256:d6bee5d8e2ab2748115514e0f60af6b4be865d324bd52a5754df3646272561e7",
+            "locator": {
+              "kind": "symbol",
+              "name": "_role_defaults"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_preparation.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Loader validates authority and effective alternative distinctness.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ef574a64f9ec5521c39db2a70a97255951f02fef",
+            "content": "sha256:9cf05c1ed30880129ed3b8491527a1bb23af76ca84e4beb4725512b6918ea120",
+            "locator": {
+              "kind": "symbol",
+              "name": "load_agentic_settings"
+            },
+            "path": "mcp/src/agents_remember/kernel/agentic_settings.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

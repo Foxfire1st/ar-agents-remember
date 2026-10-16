@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "6cf41432647c72f7e2be6f0e562782ba9916717e",
+        "blob": "9dbb6bbbe22bedfb9a73df0815fd4a48fd2af7f8",
         "content": "sha256:791fa0f64293e04dbc674e09586e0ec065bef86bf01a76208573e56977bd7d8b",
         "locator": {
           "kind": "symbol",
@@ -26,7 +26,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "bbe7fa44d04ab56a157cbf94b983288f32b64a1f",
+            "blob": "9dbb6bbbe22bedfb9a73df0815fd4a48fd2af7f8",
             "content": "sha256:1f3717367e05643747bb649a0f1b85ab934558c626be9ffc1e1bf0d4674677d0",
             "locator": {
               "kind": "symbol",
@@ -64,6 +64,88 @@
               "kind": "line_range",
               "start": 1
             }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Existing role parsing attaches one typed alternative.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9dbb6bbbe22bedfb9a73df0815fd4a48fd2af7f8",
+            "content": "sha256:ff57bae570babe3015cc12b2bac603c06454fb8d8941e740de6cba12987eaef8",
+            "locator": {
+              "kind": "symbol",
+              "name": "_parse_roles"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Ordinary shape parsing is shared without adding a new execution adapter.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9dbb6bbbe22bedfb9a73df0815fd4a48fd2af7f8",
+            "content": "sha256:e9de7e7b7f8d5ad2afffb4a765665320a67f91d145aa7235347502f253882624",
+            "locator": {
+              "kind": "symbol",
+              "name": "_role_choices"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Counted-role-only threshold defaults to three and refuses nested/unknown fields.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9dbb6bbbe22bedfb9a73df0815fd4a48fd2af7f8",
+            "content": "sha256:334a42eb2560a9bc948417c6465a22b915f7282c2fb77ac65ffd8818fd6e0cd3",
+            "locator": {
+              "kind": "symbol",
+              "name": "_parse_step_up"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "Test source names exact author file/key for invalid alternatives.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ae9057ab6c1eea41f64b6351acaddfc7c720f7b9",
+            "content": "sha256:a1232d265e2f4b29c6413394418de25668b81e3d5110bee1c019797a151fd3c0",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_invalid_step_ups_name_file_and_exact_key"
+            },
+            "path": "mcp/tests/test_role_step_up.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "Boolean, zero and fractional thresholds refuse through the shared validator.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dde4a9aebceeabecba20e971cbf210ca2e00e951",
+            "content": "sha256:f20ed00d27338637e8f7a84bdd816ab4bcbcc115e2ed530f1992d85a96462a51",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_positive_int"
+            },
+            "path": "mcp/src/agents_remember/kernel/_agentic_settings_core.py"
           },
           "kind": "code"
         }

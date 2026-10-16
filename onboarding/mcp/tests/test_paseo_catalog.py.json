@@ -3,7 +3,7 @@
   "proves": [
     {
       "anchor": {
-        "blob": "6f42094685d7698118b1351f5290a19cb7130b4f",
+        "blob": "545c126bb8d8e95c4e673ffef86636d738d267ed",
         "content": "sha256:c372e789f68c82ef21a62be1614b6ccabd0f0b9cd0b4ff4870d8cf900d983fb3",
         "locator": {
           "kind": "symbol",
@@ -20,8 +20,8 @@
     },
     {
       "anchor": {
-        "blob": "6f42094685d7698118b1351f5290a19cb7130b4f",
-        "content": "sha256:1dd164bdcba5f0ced9c45f159e2bc2fbf952afc5bce321f11b0ffbfe789c8776",
+        "blob": "545c126bb8d8e95c4e673ffef86636d738d267ed",
+        "content": "sha256:d10a276c7c44c75616ee1554807c92d74fe79102dac507b73d64dd3388b2419b",
         "locator": {
           "kind": "symbol",
           "name": "LaunchValidationTests.test_a_launch_is_validated_against_the_catalog_before_anything_is_created"

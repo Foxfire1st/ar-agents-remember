@@ -1,0 +1,24 @@
+{
+  "path": "skills/l-01-agent-lifecycles/reference/curator-card-details.md",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "New step-local card/citation/trace format reference; no handwritten-sidecar or authored-trace permission change.\n\nAnchor: Candidate instruction body, lines 3–31",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6ebd065137efa6511deb754505556d60730f4647",
+            "content": "sha256:9866f1d3f7e136d032517d1bbf4a8e52cb1747d5acd0844af01cc2eb6cd1dd1a",
+            "locator": {
+              "end": 31,
+              "kind": "line_range",
+              "start": 3
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

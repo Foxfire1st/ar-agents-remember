@@ -1,0 +1,92 @@
+{
+  "path": "dashboard/src/cockpit/RoleChats.stepUp.integration.test.tsx",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Source assertion: replays %s step-up after storage reload and a real 404 result fold. The declaration is not an execution receipt.\n\nAnchor: replays %s step-up after storage reload and a real 404 result fold",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2ea81005714ea7a9b95acd4a26d5ab1404d3b304",
+            "content": "sha256:b116ffd76dc9299784e4374779356f6ddbb406159ba76b6ccf9b26ab02c8ae30",
+            "locator": {
+              "end": 71,
+              "kind": "line_range",
+              "start": 47
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Source assertion: retains ordinary and legacy %s storage without inventing step-up. The declaration is not an execution receipt.\n\nAnchor: retains ordinary and legacy %s storage without inventing step-up",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2ea81005714ea7a9b95acd4a26d5ab1404d3b304",
+            "content": "sha256:2d5b23ed935057a85553d5d4d897e870618746edfff67079c1b0b3e95e67b89c",
+            "locator": {
+              "end": 78,
+              "kind": "line_range",
+              "start": 73
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Source assertion: retries an ordinary saved %s request through the pane without step-up. The declaration is not an execution receipt.\n\nAnchor: retries an ordinary saved %s request through the pane without step-up",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2ea81005714ea7a9b95acd4a26d5ab1404d3b304",
+            "content": "sha256:347061bd5fcd1e1fae9eddbf791dccd8123e3604ba671c329b930260247a83b4",
+            "locator": {
+              "end": 89,
+              "kind": "line_range",
+              "start": 80
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "Source assertion: decodes only a nonempty string step-up reason (%j). The declaration is not an execution receipt.\n\nAnchor: decodes only a nonempty string step-up reason (%j)",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2ea81005714ea7a9b95acd4a26d5ab1404d3b304",
+            "content": "sha256:25bc10c73c830faf891b781554e281f35d4f861b0e5a65d7c461f83ac7bdfb62",
+            "locator": {
+              "end": 95,
+              "kind": "line_range",
+              "start": 91
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "Source assertion: marks the real row's base choices non-applied after a cross-harness step-up receipt. The declaration is not an execution receipt.\n\nAnchor: marks the real row's base choices non-applied after a cross-harness step-up receipt",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2ea81005714ea7a9b95acd4a26d5ab1404d3b304",
+            "content": "sha256:3b406408c08facbdffe671567468922f3e3bf7f167e51cf928e7b8bb441bf3dc",
+            "locator": {
+              "end": 131,
+              "kind": "line_range",
+              "start": 97
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

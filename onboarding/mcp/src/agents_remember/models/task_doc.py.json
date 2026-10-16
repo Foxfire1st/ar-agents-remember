@@ -20,6 +20,41 @@
         }
       ]
     },
+    "10": {
+      "note": "Record-only memory identity comes from memory authority, never the sibling code root.\n\nAnchor: L251–L296",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f5edfbc3d469737fdadc36945e0204f336dc4eb8",
+            "content": "sha256:90f0dd1b3aad214ad2d499dda3753cc514d16cabd606ee0021a9a7c6e84ed456",
+            "locator": {
+              "end": 296,
+              "kind": "line_range",
+              "start": 251
+            },
+            "path": "mcp/src/agents_remember/application/task_docs/task_doc_route_review.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "File-local implementation of the stated contract; caller-owned effects and governing workflow are separate evidence.\n\nAnchor: L215–L237",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e7d80ed372402d196e9af03c6aa40d32a018d7e2",
+            "content": "sha256:5c30e0ea7d83307edc26375e86a6a52b98fee24e8dd5b11983ff02b40b31a8a1",
+            "locator": {
+              "end": 237,
+              "kind": "line_range",
+              "start": 215
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
     "2": {
       "note": "The strict `ToolResponse` envelope base.",
       "targets": [
@@ -77,7 +112,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "51f3efd84d8b158c64a47ee0b4e18ed47338d050",
+            "blob": "0e92b7b46eb13a40302fa1327a2d9e518089810f",
             "content": "sha256:4c41eeb73d547a361a9886505f37ee554236b88d5903a84294f59c8d37179fba",
             "locator": {
               "kind": "symbol",
@@ -115,6 +150,42 @@
             "locator": {
               "kind": "file"
             }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "Worker/Curator typed review census, record-only exclusion and unknown history.\n\nAnchor: L175–L240",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "29bbfb919fa2a5e25fc3e3ee172407e92e192fc0",
+            "content": "sha256:89c09fd0491880de2f7b715bffbe2d6b0605a6dea7400689519c43f40f7b119d",
+            "locator": {
+              "end": 240,
+              "kind": "line_range",
+              "start": 175
+            },
+            "path": "mcp/src/agents_remember/worktrees/review_history.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "Reason admission, threshold and differing-harness/model inheritance boundary.\n\nAnchor: L23–L84",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f341c13a99f485178e73c4ff8bf4de16267ee662",
+            "content": "sha256:5a3727f4901933c44cd5f7edc8b16220285a82a9e080326edf482cbb126f0b2f",
+            "locator": {
+              "end": 84,
+              "kind": "line_range",
+              "start": 23
+            },
+            "path": "mcp/src/agents_remember/cli/role_step_up.py"
           },
           "kind": "code"
         }

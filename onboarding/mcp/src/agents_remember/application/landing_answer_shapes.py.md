@@ -16,7 +16,7 @@ Redundant contract echoes are removed only from copied answer mappings. Preview 
 
 A successful role start retains the agent ID, handover location and a meaningful warning. A successful role message retains outcome/status/taken, adds the recipient ID only for role addressing, and keeps a host cancellation warning. A waited reply additionally carries text and actionable wait detail; an oversized reply is fitted to keep its beginning. Refused role operations retain their producer refusal shape.
 
-Task-document writes retain the changed-unit/value phrase, file-input digest when measured, and review state on review-changing operations. Only create returns the rendered document location. A successful master sync is omitted, but failure stays visible. A dry run retains loss and a bounded diff, not rendered leaf/master contents; the completion owner settles its cut marker against the report/detail that was actually retained.
+Task-document writes retain the changed-unit/value phrase, file-input digest when measured, and supplied code/memory review states plus reviewKind on review-changing operations. Only create returns the rendered document location. A successful master sync is omitted, but failure stays visible. A dry run retains loss and a bounded diff, not rendered leaf/master contents; the completion owner settles its cut marker against the report/detail that was actually retained.
 
 ## Boundaries
 
@@ -25,7 +25,16 @@ Task-document writes retain the changed-unit/value phrase, file-input digest whe
 - The common completion owner still applies list limits, log outcomes and the delivered-answer guard.
 - Ordinary target counts exclude locations recursively; at most two distinct locations are named, while the entire delivered mapping remains subject to its separate bound. This is a measurement/answer contract, not a root-length restriction.
 
+## Current Contract
+
+`project_task_doc_answer` retains any supplied reviewState, memoryReviewState and reviewKind on the three review-changing operations. It does not derive a missing lane or publish a result. Other write/create/dry-run/master-sync projection rules remain intact, and the whole validated result remains separate logging custody. Keeping both states makes a memory publication distinguishable without erasing the passed code state.
+
+This account is bound to the candidate source, not a claim of a running serving build or a fresh execution/acceptance verdict. Existing historical accounts remain historical.
+
 ## Evidence
+
+
+- File-local implementation of the stated contract; caller-owned effects and governing workflow are separate evidence. [6]
 
 - Landing tools select their declared answer fields and preserve producer refusals without altering the transaction. [1]
 - A successful start retains the new agent and handover, while failures keep their shape. [2]

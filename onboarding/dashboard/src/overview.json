@@ -1488,6 +1488,37 @@
         }
       ]
     },
+    "72": {
+      "note": "A configured Step up action stays in the shared wrapping launcher and sends canonical selection plus a reason, not preview permission overrides. The original request identity and trimmed reason survive saved taskless requests, remount and retry. A stepped-up receipt labels base mode, notes and feature chips non-applied and reports only observed model/source, with unreported mode/features explicit. This adds no chat navigation or acceptance authority.\n\nAnchor: Current source; preserved L88 property 65",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "49001f5ff9548e3c0b4a3ba3b69a05fb6fc8646f",
+            "content": "sha256:535316a94eebd817ef3d0c5f01db1c9fd275d85b44caa7168cb9aa5647a3c946",
+            "locator": {
+              "end": 24,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "dashboard/src/cockpit/role-launcher/StepUpControl.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b80702d8154ccb2f28eeee73e070661c0d13db50",
+            "content": "sha256:b946d0da0fb25a84cd36af44373126407b6bddd5f36037d50403c7b8490e83a5",
+            "locator": {
+              "end": 213,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "dashboard/src/cockpit/RoleLaunchFeatures.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
     "8": {
       "note": "Panel composition.\n\nAnchor: `# dashboard/src/panels/ — Cockpit Panels Overview`",
       "targets": [

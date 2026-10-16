@@ -45,8 +45,7 @@ diagnostic manifest.
 
 ### Conventions
 
-Every value type is a `@dataclass(frozen=True, slots=True)` with a `__post_init__` that
-refuses a blank or malformed field rather than normalizing it. Immutability is not decorative:
+Value types use `@dataclass(frozen=True, slots=True)`; types with a `__post_init__` refuse the blank or malformed fields they validate rather than normalizing them. The new CapsuleDetailReference is a frozen carrier without its own post-init validation; admitted-source construction supplies its provenance. Immutability is not decorative:
 these objects travel into the diagnostic manifest, and the digest is computed over their
 fields, so an in-place edit would silently desynchronize identity from content.
 
@@ -61,8 +60,7 @@ fields, so an in-place edit would silently desynchronize identity from content.
   is an explicit value; a caller-controlled string can never become a role.
 - `CapsuleToolPolicy.granted` is what an existing AR owner already permits. A capsule *requests*
   capabilities; nothing here can add a tool the policy did not already permit.
-- A digest field must be a `sha256:`-prefixed digest; a blank identity or a blank authority is
-  refused at construction.
+- Existing validating digest/identity/authority types require their declared nonblank or `sha256:` forms at construction. CapsuleDetailReference adds no independent post-init validation; its revision/content are copied from admitted source values.
 - `CapsuleLauncherSeat.role` and `.block_identity` return `None` permanently. Do not "fix" them
   into returning a launcher-named role — the launcher has its own core block and no role block.
 - These shapes are frozen for the master's consumers. Extending them is an owner decision;
@@ -72,7 +70,19 @@ fields, so an in-place edit would silently desynchronize identity from content.
 
 None recorded.
 
+## Current Contract
+
+CapsuleDetailReference is a frozen slotted value holding source_path, revision, raw content bytes and the named step. CapsuleCapsule adds a default-empty tuple of these values. Instruction rendering remains a concatenation of selected instruction blocks, not injected detail bodies. The new carrier has no __post_init__ validator of its own: construction provenance comes from admitted sources and the detail compiler, while existing validating digest/binding types keep their own checks. Immutability of the tuple/value does not itself prove immutable on-disk launch artifacts.
+
+This account is bound to the candidate source, not a claim of a running serving build or a fresh execution/acceptance verdict. Existing historical accounts remain historical.
+
 ## Evidence
+
+
+- Launch copies detail files, substitutes paths, and records frozen revisions. [7]
+- Replay validates regular opened files, content revisions and original canonical report binding, not mutable corpus sources. [8]
+- Per-request detail artifacts use exact admitted bytes beside the handover and write-once publication. [9]
+- File-local implementation of the stated contract; caller-owned effects and governing workflow are separate evidence. [10]
 
 ### Docs References
 

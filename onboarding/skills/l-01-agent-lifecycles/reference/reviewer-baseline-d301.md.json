@@ -1,0 +1,24 @@
+{
+  "path": "skills/l-01-agent-lifecycles/reference/reviewer-baseline-d301.md",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "New steps-3–5 detail preserving independent evidence-class/lens inspection and empty-baseline termination.\n\nAnchor: Candidate instruction body, lines 3–19",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c5e6cacb287ad1af8d0408628581b64154892663",
+            "content": "sha256:1c36925ce451687bb0b3befa07c5627c3a839d20cdf15941172ac8fda1cc53df",
+            "locator": {
+              "end": 19,
+              "kind": "line_range",
+              "start": 3
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

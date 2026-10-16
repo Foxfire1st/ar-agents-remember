@@ -26,6 +26,13 @@ Independent review that runs only when requested: one pass/block recommendation 
 
 A baseline covers the complete candidate diff; fix-verification checks only the sealed outstanding IDs. Ordinary rounds follow the live settings limit; beyond-limit work requires recorded Architect-or-developer words, which the Manager records. The historical D107 fixed-budget further-look rule is not the ordinary current budget. The Reviewer opens each ordinary leaf round itself, records its own verdict, and never edits, accepts, starts a role or publishes. After code and memory PASS it tells the Manager once that the leaf is ready for closeout. Curator code findings are answered directly even after code PASS, by taking the point into the findings or stating why it does not hold.
 
+## Current composition and authoring contract
+
+Independent requested review retains exact requirement/candidate/mode/catalog inputs, complete baseline diff coverage, sealed-ID fix verification, correct evidence class, explicit pass/block artifact and Manager acceptance authority. Reviewer-only regions contain direct verdict handovers, unchanged-candidate record-only verification and Curator code-concern handling; common limit, permission and authority rules remain available to all admitted stage roles.
+
+Memory uses `begin_review`/`record_review` with `reviewKind=memory`, separate sealed reports, IDs and count, same settings limit and Manager-recorded architect/developer approval for extras. It opens no code round and does not reset code PASS or baseline. Under-way reviews finish as begun; recorded lanes apply after landing, never by rewriting previous reviews.
+
+
 ## Evidence
 
 - The verdict goes directly to the Worker and code PASS directly to the Curator. [1]
@@ -149,3 +156,6 @@ Inherited reference 4 commentary (not a revalidated target):
 The byte-equal package copy is a distribution carrier, not an independent role, task or permission authority. Whole-file source evidence does not certify inherited statements, execution, grading or the whole card.
 
 - The authored source owns this contract; the distribution copy is not a separate authority. [5]
+
+- Partitions Reviewer-only handover/record-only/code-concern method from common review rules and adds the post-landing recorded memory lane. [6]
+- Partitions Reviewer-only handover/record-only/code-concern method from common review rules and adds the post-landing recorded memory lane. [7]

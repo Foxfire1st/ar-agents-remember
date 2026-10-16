@@ -69,9 +69,7 @@ adjudication as another authority.
 **The declared knowledge effects (MIK-R11 rule 2, ruling Q3 of 2026-09-29T21:56:18+02:00).** Step 7 now
 ends with one line: when the leaf's task document declares `expectedKnowledgeEffects`, the reviewer checks
 that declaration against the leaf's requirement packet — its declared subjects and effects match what the
-packet requires, with no effect missing and none invented — and a mismatch is a finding. The line sits in
-the role file, not in a criteria catalog, because the catalogs admit a standing criterion only with
-catching evidence. Who writes the declaration stays procedural; `task_doc` has no per-field role gate.
+packet requires, with no effect missing and none invented — and a mismatch is a finding. The role now names reference/reviewer-adjudication-d301.md for the substantive check at step 7; it is still not an independently added criteria catalog entry. Who writes the declaration stays procedural; `task_doc` has no per-field role gate.
 
 Beside the verdict, the reviewer emits **its own curator hand-off list** (`:92-99`) — its verdicts and
 findings in the shape `../templates/curator-handoff-list.md` owns, as data rather than as verdict prose
@@ -107,6 +105,17 @@ The Reviewer delivers its verdict directly to the Worker and, on a pass, the exa
 ## 260928-MIK-L93 — a question for the developer goes up the chain
 
 A Reviewer with a parent sends developer questions through that actual parent, preserving the quoted words and receiving agent identity on the return path. The earlier developer-only extra-round instruction is superseded: rounds follow the settings limit, and beyond-limit approval names the Architect or developer and is recorded by the Manager. The separate CODE/MEMORY lanes and their sealed IDs remain; record-only unchanged-candidate checks do not increase the count.
+
+## Current composition and authoring contract
+
+Reviewer still requires explicit independent assignment, exact seam/mode, approved revisions and ruling, immutable candidate and attempts, bound catalogs and check contract. Inputs, complete standing-criterion reporting, sealed findings, route coverage, verdict, producer list, route reports and immutable journal remain inline. Complete-diff review is not filtered by invariant attribution.
+
+Step references contain knowledge before/after/family/sibling inspection and producer preservation (orient), evidence-class/lens details (baseline), expectedKnowledgeEffects adjudication, cut-card/added-file checks (memory) and affirmative master-exit completeness. Their old role-file line ranges can resolve to headings or unrelated text; preserved IDs need substantive candidate spans, sometimes in the adjacent detail file.
+
+The same Reviewer records code rounds and the separate memory lane; neither recording is Manager gate acceptance. Memory IDs/reports/count stay separate, with the same ordinary limit and recorded approval for extras. Only a recorded passed last round plus a matching review step permits its own set_step done; cold reads, blocked verdicts and progress do not. No matching step means report and set nothing. Record-only unchanged-candidate checks retain the last round, and scoped fix verification cannot silently reset the sealed baseline.
+
+No role starts, code/onboarding writes or Git publication are granted. Non-leaf seam recipients and owner recording, immutable attempt history, exact caller identity, permission stops and scratch/report custody remain.
+
 
 ## Evidence
 
@@ -158,3 +167,15 @@ The review budget is the settings number `orchestration.loops.defaults.maxRounds
 ## Current Source Evidence
 
 - Current settings-budget, recorded approval and preserved stage/ownership boundaries are carried by this canonical instruction source. [6]
+
+- Rewords without claimed semantic approval, extracts named-step checks, consolidates baseline outputs inline, adds post-landing memory recording and passed-review-only own-step completion. [10]
+- Rewords without claimed semantic approval, extracts named-step checks, consolidates baseline outputs inline, adds post-landing memory recording and passed-review-only own-step completion. [11]
+- Rewords without claimed semantic approval, extracts named-step checks, consolidates baseline outputs inline, adds post-landing memory recording and passed-review-only own-step completion. [12]
+- Rewords without claimed semantic approval, extracts named-step checks, consolidates baseline outputs inline, adds post-landing memory recording and passed-review-only own-step completion. [13]
+- Rewords without claimed semantic approval, extracts named-step checks, consolidates baseline outputs inline, adds post-landing memory recording and passed-review-only own-step completion. [14]
+- Rewords without claimed semantic approval, extracts named-step checks, consolidates baseline outputs inline, adds post-landing memory recording and passed-review-only own-step completion. [15]
+- Rewords without claimed semantic approval, extracts named-step checks, consolidates baseline outputs inline, adds post-landing memory recording and passed-review-only own-step completion. [16]
+- Rewords without claimed semantic approval, extracts named-step checks, consolidates baseline outputs inline, adds post-landing memory recording and passed-review-only own-step completion. [17]
+- Rewords without claimed semantic approval, extracts named-step checks, consolidates baseline outputs inline, adds post-landing memory recording and passed-review-only own-step completion. [18]
+- Rewords without claimed semantic approval, extracts named-step checks, consolidates baseline outputs inline, adds post-landing memory recording and passed-review-only own-step completion. [19]
+- Rewords without claimed semantic approval, extracts named-step checks, consolidates baseline outputs inline, adds post-landing memory recording and passed-review-only own-step completion. [20]

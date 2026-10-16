@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "7771ebd9aa5aefb17abadc2fdaf7d93a22610586",
-        "content": "sha256:11f874ff6a27ddc24e46a53e83f8b367646bb86d0e42e13810f3c12260b419fd",
+        "blob": "f5edfbc3d469737fdadc36945e0204f336dc4eb8",
+        "content": "sha256:83a554087c833ae3e138f92564eb9e53a7d5a47fa1838be2020f32f3edced74a",
         "locator": {
           "kind": "symbol",
           "name": "_state_payload"
@@ -21,7 +21,7 @@
     },
     {
       "anchor": {
-        "blob": "7771ebd9aa5aefb17abadc2fdaf7d93a22610586",
+        "blob": "f5edfbc3d469737fdadc36945e0204f336dc4eb8",
         "content": "sha256:6aba0097d56ada16731dab87617af5e7cf99708fdb95ec181d35e838eec7933d",
         "locator": {
           "kind": "symbol",
@@ -39,8 +39,8 @@
     },
     {
       "anchor": {
-        "blob": "7771ebd9aa5aefb17abadc2fdaf7d93a22610586",
-        "content": "sha256:b058daa859694f257c35e3861a3ec873f04337495ee248bb6a1952c5b4ac4140",
+        "blob": "f5edfbc3d469737fdadc36945e0204f336dc4eb8",
+        "content": "sha256:053c06b33c063ad5db944d7b08e92717c8092fa45cc43a7fbcbafdd6b4bf20ea",
         "locator": {
           "kind": "symbol",
           "name": "candidate_root_for_review"
@@ -52,7 +52,7 @@
         "handoffEntry": "L116-W3-record-only-binding",
         "leaf": "260928-MIK-L116"
       },
-      "rationale": "This adapter resolves the candidate root from the leaf worktree contract with repository-root fallback.",
+      "rationale": "The resolver selects the contract memory worktree or configured memory root for memory-kind records; code/default retains the existing leaf-code-worktree/repository-root rule.",
       "role": "support"
     }
   ],
@@ -62,7 +62,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d881ab5de9364e771102d7ae2acaf20344a91ac9",
+            "blob": "f5edfbc3d469737fdadc36945e0204f336dc4eb8",
             "content": "sha256:5b0b1da1b7bddbef985732db4362271d8eef6d8cd459c67301688f0e548ac47b",
             "locator": {
               "kind": "symbol",
@@ -84,12 +84,12 @@
         },
         {
           "anchor": {
-            "blob": "d881ab5de9364e771102d7ae2acaf20344a91ac9",
+            "blob": "f5edfbc3d469737fdadc36945e0204f336dc4eb8",
             "content": "sha256:ec5cbf5520d96b9d79914936c7895b3acfaca595518db455a2c23b2ae7404438",
             "locator": {
-              "end": 47,
+              "end": 53,
               "kind": "line_range",
-              "start": 38
+              "start": 44
             }
           },
           "kind": "code"
@@ -102,6 +102,127 @@
               "end": 67,
               "kind": "line_range",
               "start": 52
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "Worker/Curator typed review census, record-only exclusion and unknown history.\n\nAnchor: L175–L240",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "29bbfb919fa2a5e25fc3e3ee172407e92e192fc0",
+            "content": "sha256:89c09fd0491880de2f7b715bffbe2d6b0605a6dea7400689519c43f40f7b119d",
+            "locator": {
+              "end": 240,
+              "kind": "line_range",
+              "start": 175
+            },
+            "path": "mcp/src/agents_remember/worktrees/review_history.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "Reason admission, threshold and differing-harness/model inheritance boundary.\n\nAnchor: L23–L84",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f341c13a99f485178e73c4ff8bf4de16267ee662",
+            "content": "sha256:5a3727f4901933c44cd5f7edc8b16220285a82a9e080326edf482cbb126f0b2f",
+            "locator": {
+              "end": 84,
+              "kind": "line_range",
+              "start": 23
+            },
+            "path": "mcp/src/agents_remember/cli/role_step_up.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "Record-only memory identity comes from memory authority, never the sibling code root.\n\nAnchor: L251–L296",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f5edfbc3d469737fdadc36945e0204f336dc4eb8",
+            "content": "sha256:90f0dd1b3aad214ad2d499dda3753cc514d16cabd606ee0021a9a7c6e84ed456",
+            "locator": {
+              "end": 296,
+              "kind": "line_range",
+              "start": 251
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "File-local implementation of the stated contract; caller-owned effects and governing workflow are separate evidence.\n\nAnchor: L155–L169",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f5edfbc3d469737fdadc36945e0204f336dc4eb8",
+            "content": "sha256:7b13234f8b9b05929657a69a1f5438b3b935f2f9ce8a1f42048ddeac5711e5d5",
+            "locator": {
+              "end": 169,
+              "kind": "line_range",
+              "start": 155
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "14": {
+      "note": "File-local implementation of the stated contract; caller-owned effects and governing workflow are separate evidence.\n\nAnchor: L251–L296",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f5edfbc3d469737fdadc36945e0204f336dc4eb8",
+            "content": "sha256:90f0dd1b3aad214ad2d499dda3753cc514d16cabd606ee0021a9a7c6e84ed456",
+            "locator": {
+              "end": 296,
+              "kind": "line_range",
+              "start": 251
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "15": {
+      "note": "File-local implementation of the stated contract; caller-owned effects and governing workflow are separate evidence.\n\nAnchor: L320–L378",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f5edfbc3d469737fdadc36945e0204f336dc4eb8",
+            "content": "sha256:6ec8f6f2932d1d526240344cc4a3780cad32e644b7a047115abb62c8304a4e0b",
+            "locator": {
+              "end": 378,
+              "kind": "line_range",
+              "start": 320
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "16": {
+      "note": "File-local implementation of the stated contract; caller-owned effects and governing workflow are separate evidence.\n\nAnchor: L461–L497",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f5edfbc3d469737fdadc36945e0204f336dc4eb8",
+            "content": "sha256:fd496c2c78f8fbceeb940b6e0f4ea57864326819f6c295a34484e1a6cb5daf6f",
+            "locator": {
+              "end": 497,
+              "kind": "line_range",
+              "start": 461
             }
           },
           "kind": "code"
@@ -129,7 +250,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d881ab5de9364e771102d7ae2acaf20344a91ac9",
+            "blob": "f5edfbc3d469737fdadc36945e0204f336dc4eb8",
             "content": "sha256:2c13594de1ce9714a2b21408eb4f1d0d3d9d08c1abc8382b0b0234296596edb3",
             "locator": {
               "kind": "symbol",
@@ -145,7 +266,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d881ab5de9364e771102d7ae2acaf20344a91ac9",
+            "blob": "f5edfbc3d469737fdadc36945e0204f336dc4eb8",
             "content": "sha256:fb124fced687eb7abeb40d511d845fc4d1b44e290bf302c1be359e2cfd9eb2a9",
             "locator": {
               "kind": "symbol",
@@ -177,7 +298,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0949ba0ebbf02b7ceccbe81478df2eabe7073177",
+            "blob": "d5e95ad7ec9dd109087e19f54bf649eb0bfe4e3e",
             "content": "sha256:a19d6c217a92f988b92ac61567ac6004a483214ee67ae78f776fabec97932f93",
             "locator": {
               "kind": "symbol",
@@ -194,7 +315,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0949ba0ebbf02b7ceccbe81478df2eabe7073177",
+            "blob": "d5e95ad7ec9dd109087e19f54bf649eb0bfe4e3e",
             "content": "sha256:cb4b111e923137661468aa784ee449c699836dcd393da4f0d3e0f36cdfa79340",
             "locator": {
               "kind": "symbol",

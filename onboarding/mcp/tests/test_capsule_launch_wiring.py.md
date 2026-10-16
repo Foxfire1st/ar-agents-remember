@@ -157,6 +157,10 @@ technical debt here:
   (the route does not set `session_backend`), which is defect-class and owned by **L17**; the route case
   therefore teaches a registry row, exactly as the leaf's disclosure says.
 
+## Current audience, delivery and evidence contract
+
+A copied-corpus fixture changes only the source corpus seen by the real launch compiler. The new replacement-route cases require named no-delivery refusals for unmarked section text (with exact source line, including frontmatter), an inapplicable role/operation pair, and a missing required file. The currently retained launch identity/free-agent tests and removed-tool registration check remain; the historical terminal/runner inventory below is not restored.
+
 ## Evidence
 
 ### Docs References
@@ -195,3 +199,6 @@ the fixture it is pinned against lives in this repository.
 - The recorded vendor boundary is the thread-open request, and the capsule travels the instruction field it declares. [20]
 
 </details>
+
+
+- Adds a copied shipped corpus fixture while keeping real admission/selection/compilation. Three launch-boundary cases refuse unmarked section text with the exact line (including frontmatter), an operation that does not apply to the requested role, and a missing required operation file; each requires no delivery and a named status. Existing compiler-identity/free-agent/tool-removal cases remain. [22]

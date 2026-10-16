@@ -80,7 +80,22 @@ inside their own functions and return raw operation payloads; without the declar
 >   the response model must declare every key the handler emits, but it must not be relaxed to
 >   `extra="allow"` to make a mismatch disappear.
 
+## Current Contract
+
+TaskDocResponse additionally declares optional memoryReviewState and reviewKind restricted to code or memory. They admit the producer's independent lane result without making the response model the persisted task schema or a complete displayed answer. Bounded answer projection conditionally retains both states and the kind for review operations. Existing strict undeclared-field refusal and removed-read exception remain unchanged.
+
+
+The governing workflow opens an independent memory review after CODE PASS on the same task using begin_review/record_review with reviewKind=memory. It has its own immutable baseline and shrinking IDs, under the same settings limit and extra-round approval rule, and never resets code reviewState. The signed rollout applies only to memory reviews begun after L88 lands; already-underway reviews (L168, L56, L57, L59) finish with their sealed-report workflow, with no migration/backfill. This describes the candidate contract, not a claim that the serving build already supports it.
+
+This account is bound to the candidate source, not a claim of a running serving build or a fresh execution/acceptance verdict. Existing historical accounts remain historical.
+
 ## Evidence
+
+
+- Worker/Curator typed review census, record-only exclusion and unknown history. [8]
+- Reason admission, threshold and differing-harness/model inheritance boundary. [9]
+- Record-only memory identity comes from memory authority, never the sibling code root. [10]
+- File-local implementation of the stated contract; caller-owned effects and governing workflow are separate evidence. [11]
 
 ### Repo-Internal References
 

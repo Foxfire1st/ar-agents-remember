@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "69d90a2f14a2cda0d67106b08cf0eb8cb6eaa1eb",
-        "content": "sha256:cdee31985ba95e459712f5539146884d471660fb29a065a9d39526cf802c2169",
+        "blob": "7303f44f0642307a880a1f2556003aeb50f98dfe",
+        "content": "sha256:090e98ca37320670e693cf1ab002f7843e54d0ffd9767329aac1b25347af212b",
         "locator": {
           "kind": "symbol",
           "name": "_launch_prepared_role_session"
@@ -21,8 +21,8 @@
     },
     {
       "anchor": {
-        "blob": "69d90a2f14a2cda0d67106b08cf0eb8cb6eaa1eb",
-        "content": "sha256:cdee31985ba95e459712f5539146884d471660fb29a065a9d39526cf802c2169",
+        "blob": "7303f44f0642307a880a1f2556003aeb50f98dfe",
+        "content": "sha256:090e98ca37320670e693cf1ab002f7843e54d0ffd9767329aac1b25347af212b",
         "locator": {
           "kind": "symbol",
           "name": "_launch_prepared_role_session"
@@ -39,8 +39,8 @@
     },
     {
       "anchor": {
-        "blob": "69d90a2f14a2cda0d67106b08cf0eb8cb6eaa1eb",
-        "content": "sha256:6d13c4da947bb6f6aeba43512bb156f9fcae1edfaeb7bb5fc8df85bfd44203c0",
+        "blob": "7303f44f0642307a880a1f2556003aeb50f98dfe",
+        "content": "sha256:e5a6159e125ad5f9700f3da219ee09af0124bd46de52a42b4596f168edf5216d",
         "locator": {
           "kind": "symbol",
           "name": "_start_execution"
@@ -57,7 +57,7 @@
     },
     {
       "anchor": {
-        "blob": "69d90a2f14a2cda0d67106b08cf0eb8cb6eaa1eb",
+        "blob": "7303f44f0642307a880a1f2556003aeb50f98dfe",
         "content": "sha256:b060afa6a4dedda65db379082954429dccd0aee4485c2f6f44996bac9dbd781f",
         "locator": {
           "kind": "symbol",
@@ -75,7 +75,7 @@
     },
     {
       "anchor": {
-        "blob": "69d90a2f14a2cda0d67106b08cf0eb8cb6eaa1eb",
+        "blob": "7303f44f0642307a880a1f2556003aeb50f98dfe",
         "content": "sha256:4c24f13a69cee68fbd2c1dde8d15129b0122f9473303ec967c7745d772f6758b",
         "locator": {
           "kind": "symbol",
@@ -93,7 +93,7 @@
     },
     {
       "anchor": {
-        "blob": "69d90a2f14a2cda0d67106b08cf0eb8cb6eaa1eb",
+        "blob": "7303f44f0642307a880a1f2556003aeb50f98dfe",
         "content": "sha256:8c83d02a661f8baef0a21913522f22a75806dcdec82e8958500fa64d354f04a3",
         "locator": {
           "kind": "symbol",
@@ -111,8 +111,8 @@
     },
     {
       "anchor": {
-        "blob": "69d90a2f14a2cda0d67106b08cf0eb8cb6eaa1eb",
-        "content": "sha256:d7f9bc22ee8dc942fb6674682356a6e0dc67148b9761f8afca5312d0fbd028fd",
+        "blob": "7303f44f0642307a880a1f2556003aeb50f98dfe",
+        "content": "sha256:5d866b3d3cf73004262b0fe261ea0cfc2e06c1db78e36a5230461fe1cc34c25d",
         "locator": {
           "kind": "file"
         }
@@ -128,8 +128,8 @@
     },
     {
       "anchor": {
-        "blob": "69d90a2f14a2cda0d67106b08cf0eb8cb6eaa1eb",
-        "content": "sha256:cdee31985ba95e459712f5539146884d471660fb29a065a9d39526cf802c2169",
+        "blob": "7303f44f0642307a880a1f2556003aeb50f98dfe",
+        "content": "sha256:090e98ca37320670e693cf1ab002f7843e54d0ffd9767329aac1b25347af212b",
         "locator": {
           "kind": "symbol",
           "name": "_launch_prepared_role_session"
@@ -261,6 +261,70 @@
         }
       ]
     },
+    "16": {
+      "note": "The existing route delegates preparation/reconciliation to the new owner.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7303f44f0642307a880a1f2556003aeb50f98dfe",
+            "content": "sha256:e5a6159e125ad5f9700f3da219ee09af0124bd46de52a42b4596f168edf5216d",
+            "locator": {
+              "kind": "symbol",
+              "name": "_start_execution"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "17": {
+      "note": "Occupancy receives the step-up marker and actual predecessor facts.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7303f44f0642307a880a1f2556003aeb50f98dfe",
+            "content": "sha256:de581ef4da625e4f6867fa2525c309ad0371fccedcf1af7e5e44c6a4af768d65",
+            "locator": {
+              "kind": "symbol",
+              "name": "_reserve_message_binding_projection"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "18": {
+      "note": "Frozen takeover and requested reason are recorded before the host call.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7303f44f0642307a880a1f2556003aeb50f98dfe",
+            "content": "sha256:090e98ca37320670e693cf1ab002f7843e54d0ffd9767329aac1b25347af212b",
+            "locator": {
+              "kind": "symbol",
+              "name": "_launch_prepared_role_session"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "19": {
+      "note": "Missing-copy and step-up warnings coexist.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7303f44f0642307a880a1f2556003aeb50f98dfe",
+            "content": "sha256:8ec07c6d797285a2a8d249c453cec3a08a4f0a446b639948695cf35dd3675ef1",
+            "locator": {
+              "kind": "symbol",
+              "name": "_missing_copies_receipt_warning"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
     "2": {
       "note": "Frozen implementation of _start_execution supporting the stated file behavior.",
       "targets": [
@@ -298,7 +362,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "69d90a2f14a2cda0d67106b08cf0eb8cb6eaa1eb",
+            "blob": "7303f44f0642307a880a1f2556003aeb50f98dfe",
             "content": "sha256:4c24f13a69cee68fbd2c1dde8d15129b0122f9473303ec967c7745d772f6758b",
             "locator": {
               "kind": "symbol",

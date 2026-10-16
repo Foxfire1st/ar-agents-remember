@@ -3,12 +3,11 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "9dbf10e96bbc9385b16d5d5f9eaf97a582c5b9e9",
-        "content": "sha256:7cc1e0a4e26d81dabac0ac87dba3478528608c588c18fd1b3605493bf29e5a20",
+        "blob": "8434598e9ac8d189927a8bed217cf6eee18dca61",
+        "content": "sha256:83d308d6473ef4b17e4fbde94e68db79a5bbee6de2261e04fbc8c6f1ed22c673",
         "locator": {
-          "end": 31,
-          "kind": "line_range",
-          "start": 6
+          "kind": "symbol",
+          "name": "RoleExecutionStatus"
         }
       },
       "id": "RLZ-59C2R6",
@@ -22,12 +21,11 @@
     },
     {
       "anchor": {
-        "blob": "9dbf10e96bbc9385b16d5d5f9eaf97a582c5b9e9",
-        "content": "sha256:7cc1e0a4e26d81dabac0ac87dba3478528608c588c18fd1b3605493bf29e5a20",
+        "blob": "8434598e9ac8d189927a8bed217cf6eee18dca61",
+        "content": "sha256:83d308d6473ef4b17e4fbde94e68db79a5bbee6de2261e04fbc8c6f1ed22c673",
         "locator": {
-          "end": 31,
-          "kind": "line_range",
-          "start": 6
+          "kind": "symbol",
+          "name": "RoleExecutionStatus"
         }
       },
       "id": "RLZ-FDMVYM",
@@ -36,13 +34,13 @@
         "handoffEntry": "MIK-R75@v1 current rule 1",
         "leaf": "260928-MIK-L75"
       },
-      "rationale": "The component that used to render the execution state, the last reply and the report path under the controls now renders only the one failure line, so an ordinary answer adds nothing to the strip.",
+      "rationale": "RoleExecutionStatus renders one combined actionable failure line when a message exists. Without a message it returns compact StepUpStatus by default, or null when showStepUp is false; it never renders reply or execution-detail prose. The launcher disables that fallback because its action row renders its own step-up status.",
       "role": "presentation"
     },
     {
       "anchor": {
-        "blob": "9dbf10e96bbc9385b16d5d5f9eaf97a582c5b9e9",
-        "content": "sha256:7cc1e0a4e26d81dabac0ac87dba3478528608c588c18fd1b3605493bf29e5a20",
+        "blob": "8434598e9ac8d189927a8bed217cf6eee18dca61",
+        "content": "sha256:83d308d6473ef4b17e4fbde94e68db79a5bbee6de2261e04fbc8c6f1ed22c673",
         "locator": {
           "kind": "symbol",
           "name": "RoleExecutionStatus"
@@ -54,10 +52,113 @@
         "handoffEntry": "MIK-R75@v1 current rule 3",
         "leaf": "260928-MIK-L75"
       },
-      "rationale": "Renders the combined line, including the unresolved-launch sentence and the host reason, and returns nothing when no failure holds — so the alert is the only text under the controls.",
+      "rationale": "Renders the combined failure alert; when no failure holds, optional StepUpStatus is the fallback unless the caller disables it. The launcher disables that fallback because its action row owns the stepped-up status.",
       "role": "presentation"
     }
   ],
-  "references": {},
+  "references": {
+    "1": {
+      "note": "Worker/Curator typed review census, record-only exclusion and unknown history.\n\nAnchor: L175–L240",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "29bbfb919fa2a5e25fc3e3ee172407e92e192fc0",
+            "content": "sha256:89c09fd0491880de2f7b715bffbe2d6b0605a6dea7400689519c43f40f7b119d",
+            "locator": {
+              "end": 240,
+              "kind": "line_range",
+              "start": 175
+            },
+            "path": "mcp/src/agents_remember/worktrees/review_history.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Reason admission, threshold and differing-harness/model inheritance boundary.\n\nAnchor: L23–L84",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f341c13a99f485178e73c4ff8bf4de16267ee662",
+            "content": "sha256:5a3727f4901933c44cd5f7edc8b16220285a82a9e080326edf482cbb126f0b2f",
+            "locator": {
+              "end": 84,
+              "kind": "line_range",
+              "start": 23
+            },
+            "path": "mcp/src/agents_remember/cli/role_step_up.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "File-local implementation of the stated contract; caller-owned effects and governing workflow are separate evidence.\n\nAnchor: L7–L37",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8434598e9ac8d189927a8bed217cf6eee18dca61",
+            "content": "sha256:a4a6f65116f3cfcc0f7d347f9bf169dbd04466f8c23b91dcdb2183b9cea45e6a",
+            "locator": {
+              "end": 37,
+              "kind": "line_range",
+              "start": 7
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "File-local implementation of the stated contract; caller-owned effects and governing workflow are separate evidence.\n\nAnchor: L40–L58",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8434598e9ac8d189927a8bed217cf6eee18dca61",
+            "content": "sha256:09a74254b1df03861a4dcfd99f714a2fa034a9c8728bdcf1bd73b04f44a7ac9e",
+            "locator": {
+              "end": 58,
+              "kind": "line_range",
+              "start": 40
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Current source owner or exact assertion described above.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8434598e9ac8d189927a8bed217cf6eee18dca61",
+            "content": "sha256:83d308d6473ef4b17e4fbde94e68db79a5bbee6de2261e04fbc8c6f1ed22c673",
+            "locator": {
+              "kind": "symbol",
+              "name": "RoleExecutionStatus"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Current source owner or exact assertion described above.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8434598e9ac8d189927a8bed217cf6eee18dca61",
+            "content": "sha256:81fb217aa26fb64007a69745111526017203626095fe453716bee72d10139d08",
+            "locator": {
+              "kind": "symbol",
+              "name": "RoleReviveControl"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
   "schema": "ar-onboarding-file/v1"
 }

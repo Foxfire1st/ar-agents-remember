@@ -27,7 +27,7 @@ Three bridge-name constants (`ROLE_CAPSULE_COMPILE_OPERATION`, `SKILL_CATALOG_LI
 `RoleCapsuleResponse` is the largest contract. Its identity and provenance fields
 (`role`, `seatAltitude`, `operationName`, `taskReference`, `taskDocumentDigest`, `repositoryId`,
 `workBranch`, `semanticDigest`, `compositionOrder`, `instructionIdentities`, `instructions`,
-`skillReferences`, `requestedTools`, `grantedTools`, `taskContext`, `sources`, `conflictKinds`) are all
+`skillReferences`, `detailReferences`, `requestedTools`, `grantedTools`, `taskContext`, `sources`, `conflictKinds`) are all
 optional or defaulted, because a refusal legitimately carries only the subset that was established
 before it refused. `explanation` is required: every shape has one operator-facing line.
 
@@ -63,14 +63,27 @@ validation rather than misleading a consumer.
   refuse or gate a skill; no field exists through which it becomes an activation.
 - **`revision` and `skillRevision` are distinct.** On a supporting file they differ, and collapsing
   them would make a supporting file's provenance claim something it cannot support.
-- The `operation` literal on each response is the name `tool_registry.py` indexes by, so a response
-  built with the wrong literal fails at the registry rather than reaching a caller mislabeled.
+- The `operation` literals retain the identities of these response formats. Historically the tool registry checked those names; the current TOOL_RESPONSE_MODELS roster no longer registers the former capsule/catalog tools, so the retained models do not establish public availability.
 
 ### Todos
 
 None recorded.
 
+## Current Contract
+
+CapsuleDetailReferencePayload is a strict nested metadata shape with sourcePath, revision and step. RoleCapsuleResponse.detailReferences defaults to an empty list, preserving a legitimate refusal/no-detail result without fabricating detail. Detail payloads contain no content and grant no tool permission. They are separate from skill identities/URIs and from internal CapsuleDetailReference, which carries frozen bytes for launch delivery.
+
+This account is bound to the candidate source, not a claim of a running serving build or a fresh execution/acceptance verdict. Existing historical accounts remain historical.
+
 ## Evidence
+
+
+- The current response registry omits former capsule/catalog tools; retained response types are not public tool exposure. [11]
+- Launch copies detail files, substitutes paths, and records frozen revisions. [12]
+- Replay validates regular opened files, content revisions and original canonical report binding, not mutable corpus sources. [13]
+- Per-request detail artifacts use exact admitted bytes beside the handover and write-once publication. [14]
+- File-local implementation of the stated contract; caller-owned effects and governing workflow are separate evidence. [15]
+- File-local implementation of the stated contract; caller-owned effects and governing workflow are separate evidence. [16]
 
 ### Docs References
 
@@ -89,7 +102,7 @@ extension specification, SEP-2640).
 - The nested capsule payloads, one per fact family. [4]
 - The listing carries relative file names and no content; the read carries two distinct revisions. [5]
 - The constant trust statement every served file declares. [6]
-- The registry rows that make these three names returnable. [7]
+- Historical registry rows for the former capsule/catalog tool responses; the current public tool registry no longer registers these retained response types. [7]
 - The builder that fills these contracts from owner-produced values only. [8]
 - The requested-versus-granted boundary the compiler narrows against: the policy type is declared in the `models` leaf, and the operation snapshots the published roster into it. [9]
 - The case that executes the no-grant guarantee on a served skill's declared tools. [10]

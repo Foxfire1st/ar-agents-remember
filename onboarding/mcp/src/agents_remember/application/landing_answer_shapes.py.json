@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "0a96260738b34d2b82e754bf428c3332affc3a9e",
+        "blob": "bda9d23146f649f039bc5f3774dcfb3bccb206b4",
         "content": "sha256:ca91c86191d4109203694cb52e0a200e334b59b9002fc57c978edfc7233d472b",
         "locator": {
           "kind": "symbol",
@@ -21,8 +21,8 @@
     },
     {
       "anchor": {
-        "blob": "0a96260738b34d2b82e754bf428c3332affc3a9e",
-        "content": "sha256:646d6e0baa4b046f6d01d45ed389f10d7cc4ee6d336c1701660919c238b09566",
+        "blob": "bda9d23146f649f039bc5f3774dcfb3bccb206b4",
+        "content": "sha256:c016fe4b0ebe9fd73ca3ed067cfe9400a17b43bcc1e18dc16a1a55c4fa18798f",
         "locator": {
           "kind": "symbol",
           "name": "project_task_doc_answer"
@@ -39,7 +39,7 @@
     },
     {
       "anchor": {
-        "blob": "0a96260738b34d2b82e754bf428c3332affc3a9e",
+        "blob": "bda9d23146f649f039bc5f3774dcfb3bccb206b4",
         "content": "sha256:b25c16c7bc27c73169c837588029ceb3db014eb77358974ce7fa09959e2b6cf1",
         "locator": {
           "kind": "symbol",
@@ -57,7 +57,7 @@
     },
     {
       "anchor": {
-        "blob": "0a96260738b34d2b82e754bf428c3332affc3a9e",
+        "blob": "bda9d23146f649f039bc5f3774dcfb3bccb206b4",
         "content": "sha256:b25c16c7bc27c73169c837588029ceb3db014eb77358974ce7fa09959e2b6cf1",
         "locator": {
           "kind": "symbol",
@@ -96,7 +96,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0a96260738b34d2b82e754bf428c3332affc3a9e",
+            "blob": "bda9d23146f649f039bc5f3774dcfb3bccb206b4",
             "content": "sha256:17a7d71678f73331b855d34651afd5b6d482dcd202ef6c383205ab26fc74adc2",
             "locator": {
               "kind": "symbol",
@@ -112,7 +112,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0a96260738b34d2b82e754bf428c3332affc3a9e",
+            "blob": "bda9d23146f649f039bc5f3774dcfb3bccb206b4",
             "content": "sha256:b25c16c7bc27c73169c837588029ceb3db014eb77358974ce7fa09959e2b6cf1",
             "locator": {
               "kind": "symbol",
@@ -148,6 +148,23 @@
             "content": "sha256:ff4d07038857d9956ca42087426f54f6b3061dd1f3effbe34617c108c15a3916",
             "locator": {
               "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "File-local implementation of the stated contract; caller-owned effects and governing workflow are separate evidence.\n\nAnchor: L642–L675",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bda9d23146f649f039bc5f3774dcfb3bccb206b4",
+            "content": "sha256:93509cdf5d5f088cd2afc44f80c460c1edb736b99ebe2b28772b0820791e9c48",
+            "locator": {
+              "end": 675,
+              "kind": "line_range",
+              "start": 642
             }
           },
           "kind": "code"

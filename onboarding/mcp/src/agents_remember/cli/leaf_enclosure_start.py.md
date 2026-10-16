@@ -12,7 +12,17 @@ Creates a missing leaf enclosure through a short-lived process of the same AR bu
 
 The dashboard cannot directly write tool-server-owned worktree stores. start_leaf_enclosure_in_child launches this build with the selected config and canonical task context; the child calls the existing worktree start route and returns bounded written/refused facts. Parent verifies reported roots/identity before using them and refuses noncompletion or disagreement.
 
+## Current Contract — Scoped Launch And Settings Changes
+
+The child enters tolerate_unreadable_review only around worktree_start_tool, after identity/config/root checks and together with stdout redirection. Context variables do not cross exec, so the launch-only diagnostic read must be re-established in this process.
+
+This is not a public worktree-reader relaxation or permission to erase broken review evidence. The fallback isolates invalid review lanes; other task identity remains strict and raw evidence survives serialization. Existing native recovery-field passthrough, bounded reply and parent root readback remain unchanged.
+
 ## Evidence
+
+- Root validation precedes the child-local diagnostic scope. [4]
+- Only review-lane validation failures can be isolated. [5]
+- Incidental publication retains raw broken evidence. [6]
 
 - Frozen implementation of start_leaf_enclosure_in_child supporting the stated file behavior. [1]
 

@@ -16,8 +16,15 @@ Removed-read fixtures exercise valid, missing and corrupt content returning oper
 
 These are fixture assertions, not a whole real landing, an unbounded resource witness, or task acceptance.
 
+## Current scoped contract
+
+The route-review delivery case also projects supplied `begin_review`/`record_review` results with distinct code and memory states. It requires `reviewState`, `memoryReviewState` and `reviewKind` unchanged and drops an unprojected debug field. This is a direct answer-projection check, not persisted lane execution or a new target/token measurement for those dictionaries.
+
 ## Evidence
 
 - The create fixture measures its ordinary answer and independent whole result. [1]
 - Corrupt task content still produces the removed-operation refusal. [2]
 - A separate full diff report can survive loss of the investigation detail. [3]
+
+
+- The existing LeafBindingRecoveryTests.test_route_review_delivery_carries_its_document gains a direct projection loop for begin_review and record_review. It supplies different code and memory states, requires reviewState/memoryReviewState/reviewKind to survive exactly, and excludes unprojectedDebug. Existing ordinary answer location/digest/recovery/diff cases remain. [4]

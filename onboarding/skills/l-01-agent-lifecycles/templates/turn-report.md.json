@@ -41,24 +41,24 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d5b494cb12c811d012b526baba4d13fdec553995",
+            "blob": "235404cf390db9a3e608bd52ba6b0371c71de5a5",
             "content": "sha256:fe0511ac6270d1088839ec1c18125dd18d9c69e3c787368dadb3d07311eda1ff",
             "locator": {
-              "end": 163,
+              "end": 170,
               "kind": "line_range",
-              "start": 158
+              "start": 165
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "d5b494cb12c811d012b526baba4d13fdec553995",
+            "blob": "235404cf390db9a3e608bd52ba6b0371c71de5a5",
             "content": "sha256:09fc3341fad9960866b6337f2ca3aac49c8449f051fb5997ec1ad02ec3795ec5",
             "locator": {
-              "end": 204,
+              "end": 211,
               "kind": "line_range",
-              "start": 199
+              "start": 206
             }
           },
           "kind": "code"
@@ -89,6 +89,57 @@
             "content": "sha256:f96edac9a18847be461cf6115a2140fb1615d09c896bfe5474f39e188c9dae98",
             "locator": {
               "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Adds conditional visual-explainer/profile linkage; visuals supplement rather than replace mandatory evidence/report or acceptance.\n\nAnchor: Candidate instruction body, lines 1–45",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "235404cf390db9a3e608bd52ba6b0371c71de5a5",
+            "content": "sha256:1663838b0614609720429c72fa8291e6c4cc683bb63393debc9c81c2673602a4",
+            "locator": {
+              "end": 45,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "Adds conditional visual-explainer/profile linkage; visuals supplement rather than replace mandatory evidence/report or acceptance.\n\nAnchor: Candidate instruction body, lines 67–143",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "235404cf390db9a3e608bd52ba6b0371c71de5a5",
+            "content": "sha256:40b89128f4847bbd29913c35406bd907a559b9089598fde7b5d188ab72affc7e",
+            "locator": {
+              "end": 143,
+              "kind": "line_range",
+              "start": 67
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "Adds conditional visual-explainer/profile linkage; visuals supplement rather than replace mandatory evidence/report or acceptance.\n\nAnchor: Candidate instruction body, lines 145–211",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "235404cf390db9a3e608bd52ba6b0371c71de5a5",
+            "content": "sha256:8cb35673294d46e4acf0c7f41f7b31de48ac98e9bda5f9e7c887d34a4ce8b56e",
+            "locator": {
+              "end": 211,
+              "kind": "line_range",
+              "start": 145
             }
           },
           "kind": "code"

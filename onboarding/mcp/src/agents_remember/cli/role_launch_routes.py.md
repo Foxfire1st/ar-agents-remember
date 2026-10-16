@@ -14,7 +14,7 @@ Registers role launcher options/dispatch/result/frame APIs and serializes prepar
 
 Launch preparation/receipt records retain their rich internal identity and task-copy metadata. Missing requirement sources are reported as missingCopies in handover/index/receipt and a warning; they do not fail a start solely for that absence. Later canonical task publication refreshes copies when sources become available. Ordinary delivered role_start success is the compact id/handover projection, not every internal receipt field.
 
-_start_execution reconciles matching receipt before recompiling and rejects reused request identity or another starter. _launch_prepared_role_session writes artifact and complete starting receipt before saved runtime call. Leaf Revive checks recorded/current task scope before any bridge operation. Register these APIs through the serving injection before static mount; no removed-host route alias is installed. The module also registers the one read-only report route beside them (`role_report.register_role_report_route`, MIK-R75 rule 4a).
+_start_execution delegates to role_start_execution.start_execution, which reconciles a matching receipt before recompiling and rejects reused request identity or another starter through the retained route seams. _launch_prepared_role_session writes artifact and complete starting receipt before saved runtime call. Leaf Revive checks recorded/current task scope before any bridge operation. Register these APIs through the serving injection before static mount; no removed-host route alias is installed. The module also registers the one read-only report route beside them (`role_report.register_role_report_route`, MIK-R75 rule 4a).
 
 ## Leaf-set preparation and replacement
 
@@ -31,7 +31,22 @@ The prepared start writes each held seat’s handover and `heldOpeningPrompt` be
 
 Dashboard leaf Revive uses the shared grant-aware scope verifier before native bridge revival. It compares the saved canonical leaf and contract against the current pair: readable direct grant plus master series contract, or ordinary leaf enclosure. Stored direct-looking context is not permission. Receipt UUID/reconciliation, capacity, launch-before-runtime and report ownership remain with their existing owners.
 
+## Current Contract — Scoped Launch And Settings Changes
+
+_start_execution is now a wrapper around role_start_execution.start_execution, retaining route seams for callers/tests. The extracted owner reconciles exact same requests before fresh compilation; ordinary dispatch locks, reused-ID and other-starter guards retain their authority.
+
+_reserve_message_binding_projection passes the prepared step-up marker to occupancy reconciliation and binds step-up.from to the actual predecessor receipt’s applied/session choices before storing predecessor reports. No new seat/store is introduced.
+
+_launch_prepared_role_session delegates successor prompt assembly to role_step_up_runtime. The prompt retains previous report paths and names frozen takeover bytes. The starting receipt keeps selected stepUp, requestedStepUp and stepUpArtifact, and bindingDigest includes the takeover reference before the saved host call.
+
+Missing-copy warnings are composed with step-up warnings rather than dropping either. Held-opening prompt retention, exclusive receipt-before-native publication, partial leaf-set reconciliation, scoped revive and closing/archive semantics remain unchanged.
+
 ## Evidence
+
+- The existing route delegates preparation/reconciliation to the new owner. [16]
+- Occupancy receives the step-up marker and actual predecessor facts. [17]
+- Frozen takeover and requested reason are recorded before the host call. [18]
+- Missing-copy and step-up warnings coexist. [19]
 
 
 

@@ -28,7 +28,7 @@ in which the sentence is a defect **when it returns**, and it keeps a retained d
 developer request still governs full code quality and full tests — from reading as a regression.
 
 `CURATION_POLICY_STATEMENTS` names only `operations/curation.md` and `roles/curator.md`.
-Each declares its complete-curation rule and `prepare → publish → validate` marker.
+The operation tuple declares its complete-curation rule and `prepare → publish → validate`; the Curator role tuple declares the exact intake/after-repair full-curation/coherence sentence.
 `missing_curation_policy_statements` reports a missing file or a file carrying none of its
 declared markers; its `any` check alone does not establish that both markers survive.
 The canonical test checks every marker, while exact generated-copy byte equality is the
@@ -77,6 +77,10 @@ The curation-doctrine registry keeps its single owner and matcher for retired cu
 
 The retired registry additionally names the actual shipped sentences replaced by sibling set preparation, the single-live-leaf-seat resolver, direct Worker freeze delivery and product-owned permission waiting. Their source-confined probes protect the old wording without changing the matcher into a semantic review. The positive set-start duty belongs to `leaf_instruction_wording.py`; no test-support function starts a role or writes knowledge.
 
+## Current scoped contract
+
+The Curator positive entry now accepts “At intake and after every repair, run the full curation operation and coherence gate”. The operation entry is unchanged. This is a table spelling update, not a wider retirement matcher or an automatic meaning check; existing retired-source custody and the positive reader's `any` limit remain.
+
 ## Evidence
 
 - The generated skill census is derived from the canonical declaration through its parser rather than a duplicated tuple. [7]
@@ -113,3 +117,6 @@ described above.
 No meaningful cross-repo references found.
 
 No meaningful cross-repo references found.
+
+
+- Only the exact Curator positive marker changes to the shorter intake/after-repair/full-curation/coherence sentence. The operation tuple still carries COMPLETE_CURATION_RULE and prepare → publish → validate. Retired sentence census, declared source confinement, normalized matching and any-marker positive reader remain unchanged. [8]

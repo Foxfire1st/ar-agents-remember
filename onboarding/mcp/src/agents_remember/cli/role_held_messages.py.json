@@ -3,12 +3,12 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "fbd0d124dc243bcc9ff9718204086fdffba1ae83",
+        "blob": "40dc59696c90511ab0a56b5166cdc99ea059475a",
         "content": "sha256:452b3a9483c50da17d54e90ef8d7b8ad9a500e045072ed8bed3fc3e7fd50186d",
         "locator": {
-          "end": 1180,
+          "end": 1175,
           "kind": "line_range",
-          "start": 1165
+          "start": 1160
         }
       },
       "id": "RLZ-3FQBKH",
@@ -22,7 +22,7 @@
     },
     {
       "anchor": {
-        "blob": "fbd0d124dc243bcc9ff9718204086fdffba1ae83",
+        "blob": "40dc59696c90511ab0a56b5166cdc99ea059475a",
         "content": "sha256:0b9f1c118723f43006c4966af5cfe7188ea8bd46af5125ef0933237c49bd92f4",
         "locator": {
           "kind": "symbol",
@@ -40,7 +40,7 @@
     },
     {
       "anchor": {
-        "blob": "fbd0d124dc243bcc9ff9718204086fdffba1ae83",
+        "blob": "40dc59696c90511ab0a56b5166cdc99ea059475a",
         "content": "sha256:1e1457bce15f5f3c12e6e4c173d24ae6251f1b7031469a07b672298a27afbe08",
         "locator": {
           "end": 669,
@@ -59,7 +59,7 @@
     },
     {
       "anchor": {
-        "blob": "fbd0d124dc243bcc9ff9718204086fdffba1ae83",
+        "blob": "40dc59696c90511ab0a56b5166cdc99ea059475a",
         "content": "sha256:68d7ec3cfbf19c2da8316497a477f66c751f5bbb391bdd439f973416ceb91fe5",
         "locator": {
           "end": 535,
@@ -78,12 +78,12 @@
     },
     {
       "anchor": {
-        "blob": "fbd0d124dc243bcc9ff9718204086fdffba1ae83",
+        "blob": "40dc59696c90511ab0a56b5166cdc99ea059475a",
         "content": "sha256:58e95aa15b2f4047f24638684731ab41ac1e1d128711d6cf0a9640640a2e0079",
         "locator": {
-          "end": 973,
+          "end": 968,
           "kind": "line_range",
-          "start": 856
+          "start": 851
         }
       },
       "id": "RLZ-EJV806",
@@ -97,12 +97,12 @@
     },
     {
       "anchor": {
-        "blob": "fbd0d124dc243bcc9ff9718204086fdffba1ae83",
+        "blob": "40dc59696c90511ab0a56b5166cdc99ea059475a",
         "content": "sha256:85985ba205ce4a95a16a9c0fd9b1a8c1129a15ab47e52dff88da037f36cc224f",
         "locator": {
-          "end": 1162,
+          "end": 1157,
           "kind": "line_range",
-          "start": 1128
+          "start": 1123
         }
       },
       "id": "RLZ-HDQJ4X",
@@ -116,12 +116,12 @@
     },
     {
       "anchor": {
-        "blob": "fbd0d124dc243bcc9ff9718204086fdffba1ae83",
+        "blob": "40dc59696c90511ab0a56b5166cdc99ea059475a",
         "content": "sha256:607dca2f65168b719bc02c5f82af0b340dd43034cecd691752e6799305c65e44",
         "locator": {
-          "end": 1046,
+          "end": 1041,
           "kind": "line_range",
-          "start": 1020
+          "start": 1015
         }
       },
       "id": "RLZ-JNDNS0",
@@ -135,12 +135,12 @@
     },
     {
       "anchor": {
-        "blob": "fbd0d124dc243bcc9ff9718204086fdffba1ae83",
+        "blob": "40dc59696c90511ab0a56b5166cdc99ea059475a",
         "content": "sha256:ed5f000a1900257819ee196b306192d26a0f4f5e451691ea10b07432ed6712f7",
         "locator": {
-          "end": 1083,
+          "end": 1078,
           "kind": "line_range",
-          "start": 1049
+          "start": 1044
         }
       },
       "id": "RLZ-JRXFCD",
@@ -154,12 +154,12 @@
     },
     {
       "anchor": {
-        "blob": "fbd0d124dc243bcc9ff9718204086fdffba1ae83",
+        "blob": "40dc59696c90511ab0a56b5166cdc99ea059475a",
         "content": "sha256:ed9ce56bda9d4dec77e6c06781d92e1aa03532d0061ce23e7fa857ab856a19b0",
         "locator": {
-          "end": 834,
+          "end": 829,
           "kind": "line_range",
-          "start": 817
+          "start": 812
         }
       },
       "id": "RLZ-KV9BPM",
@@ -173,12 +173,12 @@
     },
     {
       "anchor": {
-        "blob": "fbd0d124dc243bcc9ff9718204086fdffba1ae83",
-        "content": "sha256:06f70aafaa15a15b527d250a926540be9b9b2d4d15fe345c0895233bf98b77b6",
+        "blob": "40dc59696c90511ab0a56b5166cdc99ea059475a",
+        "content": "sha256:27d4c728d4e5b3b53b7b0c95fbbf5e06cb86be74f9165dd70c8b490862f74d3c",
         "locator": {
-          "end": 808,
+          "end": 803,
           "kind": "line_range",
-          "start": 750
+          "start": 749
         }
       },
       "id": "RLZ-XRBVHQ",
@@ -256,7 +256,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "fbd0d124dc243bcc9ff9718204086fdffba1ae83",
+            "blob": "40dc59696c90511ab0a56b5166cdc99ea059475a",
             "content": "sha256:593d022d6af211f9f4b19e3d00fb3cfb77762307a9a2710b8ca988e1fd64c322",
             "locator": {
               "kind": "symbol",
@@ -267,7 +267,7 @@
         },
         {
           "anchor": {
-            "blob": "fbd0d124dc243bcc9ff9718204086fdffba1ae83",
+            "blob": "40dc59696c90511ab0a56b5166cdc99ea059475a",
             "content": "sha256:6ed0a0a863576ae8bf9200d435a12b3d1e55d0f2e6dc860f646d33ed669fe725",
             "locator": {
               "kind": "symbol",
@@ -275,6 +275,59 @@
             }
           },
           "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Validation precedes prompt construction and host launch; failures retain waiting work.\n\nAnchor: Current source; preserved L88 property 5",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "40dc59696c90511ab0a56b5166cdc99ea059475a",
+            "content": "sha256:77ad6d5c3491628e1461b97995707bd7917951f16a6b1280adf22bfc4c443e5c",
+            "locator": {
+              "end": 789,
+              "kind": "line_range",
+              "start": 736
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Common restoration also validates instruction details and takeover references.\n\nAnchor: Current source; preserved L88 property 6",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ce3562637ef9146c730bbacc243e73efb61ace86",
+            "content": "sha256:b5a859b60be97ef213c9d51289edeff5ceb68c0498bb005434e341ae666af600",
+            "locator": {
+              "end": 174,
+              "kind": "line_range",
+              "start": 149
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_receipts.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "Test source checks cannot-open, zero second host calls and retained/reclaimable work.\n\nAnchor: Current source; preserved L88 property 7",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dc353ac323b83fb206adffac4bfcf135542f1f49",
+            "content": "sha256:166c230ed1abed522ea3807eaa5e12ec65cb2ce592fd91c92c565be0cc15176a",
+            "locator": {
+              "end": 220,
+              "kind": "line_range",
+              "start": 182
+            },
+            "path": "mcp/tests/test_capsule_replay_integrity.py"
+          },
+          "kind": "test"
         }
       ]
     }

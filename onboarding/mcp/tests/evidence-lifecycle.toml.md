@@ -222,6 +222,10 @@ The catalog declares the grant, dashboard, direct-leaf integration/role-start an
 
 The conversion-cost scan/split module is an exact declared consumer of the existing settings-guard, Node-lockfile and conversion-support artifacts. These consumer additions change no artifact ownership, replacement contract, lifetime or authority. Catalog declarations establish reachability, not observed execution or a speed/RSS result.
 
+## Current scoped contract
+
+The capsule-replay, memory-review-lane, audience, manifest-edge and three step-up regression modules extend existing source-derived consumer lists. `_user_settings_guard.py` and the Node lockfile list all seven; coherence support also lists manifest edges. Both Paseo support rows retain `test_leaf_enclosure_start.py` through its imported `launch_world` fixture and list the memory/step-up/choice/recovery modules. These are supported dependency declarations only: artifact identities, lifecycle metadata and executable replacements are unchanged, and no test or validator invocation is asserted.
+
 ## Evidence
 
 - The deletion-cancellation module joins the existing settings-guard and Node-lockfile consumer lists without new artifact or replacement contracts. [294]
@@ -789,3 +793,5 @@ The existing `paseo_launch_test_support.py` shared-support row now describes the
 
 
 - Current exact consumer populations are seven for comparison, twelve for overview-order and fourteen for repeated cleanup; the reviewer-worklist-process support survives and the retired conversation/Eve artifacts are not declared. [296]
+
+- Only consumer lists change. The existing user-settings guard and Node lockfile gain seven new regression modules; Curator coherence support gains the manifest-edges consumer; Paseo launch and runtime support both gain leaf_enclosure_start plus memory/step-up/choice/recovery consumers. Artifact/contract identities and executable replacement contracts stay unchanged. [297]

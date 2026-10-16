@@ -19,7 +19,7 @@
         },
         {
           "anchor": {
-            "blob": "6d58977d0180423326b3c4c33f1de00b9453702e",
+            "blob": "f82bdc4007083ae4dad1686445d94d0c7e33d03b",
             "content": "sha256:635d6f43e11c20c185494fde019595d0988f977d19d5804a267a56e1a43a727c",
             "locator": {
               "kind": "symbol",
@@ -60,7 +60,7 @@
         },
         {
           "anchor": {
-            "blob": "96753fd67b5fc1c702ebbcc0f89dab1182db7156",
+            "blob": "cd8a486213211e6be0e506486402269997de9b68",
             "content": "sha256:70cb6e8181c52a286806bbf286ed853dc14e21dbff7c6e46073921b8a5f30b3c",
             "locator": {
               "kind": "symbol",
@@ -72,7 +72,7 @@
         },
         {
           "anchor": {
-            "blob": "96753fd67b5fc1c702ebbcc0f89dab1182db7156",
+            "blob": "cd8a486213211e6be0e506486402269997de9b68",
             "content": "sha256:9128e49587a934636fc7f5a88063b9b6a16a85d90840452fb3e618399482b9de",
             "locator": {
               "kind": "symbol",
@@ -84,7 +84,7 @@
         },
         {
           "anchor": {
-            "blob": "96753fd67b5fc1c702ebbcc0f89dab1182db7156",
+            "blob": "cd8a486213211e6be0e506486402269997de9b68",
             "content": "sha256:d9ebe0c01225ff5c3367abc7ff71348cad9b820eeca4ee81a7871f376414497f",
             "locator": {
               "kind": "symbol",
@@ -130,7 +130,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "37dceffd02563c773f94c4edc9d4c1b7685d46ea",
+            "blob": "d2ac87a3213c5859af2fc85728ebd0d3c7cf6d57",
             "content": "sha256:cbc02076178ee4d24950f063c800c5076a7082d8fdc80267179e9536bc0a6af5",
             "locator": {
               "kind": "symbol",
@@ -142,7 +142,7 @@
         },
         {
           "anchor": {
-            "blob": "37dceffd02563c773f94c4edc9d4c1b7685d46ea",
+            "blob": "d2ac87a3213c5859af2fc85728ebd0d3c7cf6d57",
             "content": "sha256:4ef35ad244d8331b5e5329ca4e43ac3969dee3fc505426a2d2a9e87df459dd8a",
             "locator": {
               "kind": "symbol",
@@ -171,7 +171,7 @@
         },
         {
           "anchor": {
-            "blob": "59951ae0d9258670a0277ede0b38068df22b48c3",
+            "blob": "3283618c85b66070d98755f6d21a3f2e66f407ff",
             "content": "sha256:f01dd531368a0f81cc5dddac18e5ced531455bba62bcff32bed1e8f1fc64642d",
             "locator": {
               "kind": "symbol",
@@ -239,20 +239,58 @@
       ]
     },
     "7": {
-      "note": "The real corpus this module is the only role-capsule test to read.\n\nAnchor: \"ar-role-capsule-composition/v1\"",
+      "note": "The real corpus this module and the distinct audience/launch/manifest-edge modules read.\n\nAnchor: Current substantive owner; original historical evidence remains in the memory base",
       "targets": [
         {
           "anchor": {
-            "blob": "44fc0778eafc508eb0171dad824d435e6cf95374",
-            "content": "sha256:13546d9abdcd5196f3cc0d6f41800b27a79b31fc2c63887e67a76836953abbfd",
+            "blob": "4da7f03059708d2c36a166a0b1371b8e30be2932",
+            "content": "sha256:82f4d67a23206f0ba6f7a64d6bb1e2b5c1e8445444d44cba7e91daecc897a2f6",
             "locator": {
-              "end": 4,
+              "end": 723,
               "kind": "line_range",
               "start": 1
             },
             "path": "skills/l-01-agent-lifecycles/composition-manifest.json"
           },
           "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "fde424ce1c4b108a144b9b7ab8f0d9fe8a807bf1",
+            "content": "sha256:41eab388669cc60d09513c679530323f23325d78af602839380582ef589c8dfa",
+            "locator": {
+              "end": 1177,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e9fe68b54da9fc973d516589d64bdc3d3391df10",
+            "content": "sha256:9d667fb1b94b13c4e610e5b2fde0b8aa0a88b4b2564f12a98b2a234cfa6e8da1",
+            "locator": {
+              "end": 303,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "mcp/tests/test_role_capsule_manifest_edges.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "b76721ef5dfd38359d7165436cf269a657bde04d",
+            "content": "sha256:067a5653b83ef2cff719aecbfac9f86512f739702fb4103beede92b36a562d57",
+            "locator": {
+              "end": 804,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "mcp/tests/test_role_capsule_audiences.py"
+          },
+          "kind": "test"
         }
       ]
     },
@@ -261,13 +299,30 @@
       "targets": [
         {
           "anchor": {
-            "blob": "76bc4e03dad8f1005ff4fc7eb5f0534c839db1b0",
+            "blob": "9946e7fc31fa11992782193f4af92050e7c18e46",
             "content": "sha256:473474c07b91cebc974210786d8cc7b9818bcc0a13b81d9a7507d283c83df510",
             "locator": {
               "kind": "symbol",
               "name": "test_identical_input_compiles_to_identical_ordered_content_and_digest"
             },
             "path": "mcp/tests/test_role_capsule_compiler.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "9": {
+      "note": "The shipped request now admits role-addressed declared details together with skills. The no-frontmatter case compares delivered body after removing audience metadata lines while retaining full-source revision. Six edge-test functions move into test_role_capsule_manifest_edges.py: role lookup, specialization shape/blank declared identity, absent override winner, invalid path root, missing selected manifest and composing-root accessor. Remaining admission cases retain their existing assertions.\n\nAnchor: Current test/support source",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fde424ce1c4b108a144b9b7ab8f0d9fe8a807bf1",
+            "content": "sha256:41eab388669cc60d09513c679530323f23325d78af602839380582ef589c8dfa",
+            "locator": {
+              "end": 1177,
+              "kind": "line_range",
+              "start": 1
+            }
           },
           "kind": "test"
         }

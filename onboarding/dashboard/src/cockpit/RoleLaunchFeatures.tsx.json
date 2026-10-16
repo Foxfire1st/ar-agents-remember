@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "564085c743dd7291495142a4e226e92d5ebfcc0a",
+        "blob": "b80702d8154ccb2f28eeee73e070661c0d13db50",
         "content": "sha256:9e0f636b76e7e7b2a67e44bdc6c06650891e19b0a19a8dd085fdacaf7d401ae8",
         "locator": {
           "kind": "symbol",
@@ -21,12 +21,11 @@
     },
     {
       "anchor": {
-        "blob": "564085c743dd7291495142a4e226e92d5ebfcc0a",
-        "content": "sha256:4c6f20a32357e0827749ee248a06240d94a2c9155362d6d432017729c28414c8",
+        "blob": "b80702d8154ccb2f28eeee73e070661c0d13db50",
+        "content": "sha256:e35d363ea0c0769d4eefb5b11118d0e50e1cf0f355fdc7ae55d488c60f6b2854",
         "locator": {
-          "end": 195,
-          "kind": "line_range",
-          "start": 176
+          "kind": "symbol",
+          "name": "RoleLaunchDefaults"
         }
       },
       "id": "RLZ-G82K8R",
@@ -35,12 +34,12 @@
         "handoffEntry": "L71-CURRENT242-W-17",
         "leaf": "260928-MIK-L71"
       },
-      "rationale": "RoleLaunchDefaults now presents only the applied mode and optional instruction metadata as chips with provenance in hover; agent/model/effort provenance belongs to their selectors in RoleLauncher.",
+      "rationale": "Ordinary defaults present the mode and optional instruction metadata with provenance; the basePreview branch labels both as non-applied Base previews for a stepped-up execution.",
       "role": "presentation"
     },
     {
       "anchor": {
-        "blob": "564085c743dd7291495142a4e226e92d5ebfcc0a",
+        "blob": "b80702d8154ccb2f28eeee73e070661c0d13db50",
         "content": "sha256:9e0f636b76e7e7b2a67e44bdc6c06650891e19b0a19a8dd085fdacaf7d401ae8",
         "locator": {
           "kind": "symbol",
@@ -63,7 +62,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "564085c743dd7291495142a4e226e92d5ebfcc0a",
+            "blob": "b80702d8154ccb2f28eeee73e070661c0d13db50",
             "content": "sha256:9e0f636b76e7e7b2a67e44bdc6c06650891e19b0a19a8dd085fdacaf7d401ae8",
             "locator": {
               "kind": "symbol",
@@ -79,7 +78,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "564085c743dd7291495142a4e226e92d5ebfcc0a",
+            "blob": "b80702d8154ccb2f28eeee73e070661c0d13db50",
             "content": "sha256:beb1dc01ed8c6a7ddacdf6986b39bbe91aa47a708a081eaacf0ac025cbdda884",
             "locator": {
               "kind": "symbol",
@@ -91,15 +90,86 @@
       ]
     },
     "3": {
-      "note": "The ready defaults composition draws the host mode and optional instruction chips.",
+      "note": "The ordinary ready defaults composition draws the host mode and optional instruction chips; basePreview labels them as non-applied Base previews.\n\nAnchor: Current substantive owner; original historical evidence remains in the memory base",
       "targets": [
         {
           "anchor": {
-            "blob": "564085c743dd7291495142a4e226e92d5ebfcc0a",
-            "content": "sha256:4c6f20a32357e0827749ee248a06240d94a2c9155362d6d432017729c28414c8",
+            "blob": "b80702d8154ccb2f28eeee73e070661c0d13db50",
+            "content": "sha256:b946d0da0fb25a84cd36af44373126407b6bddd5f36037d50403c7b8490e83a5",
             "locator": {
-              "kind": "symbol",
-              "name": "RoleLaunchDefaults"
+              "end": 213,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Worker/Curator typed review census, record-only exclusion and unknown history.\n\nAnchor: L175–L240",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "29bbfb919fa2a5e25fc3e3ee172407e92e192fc0",
+            "content": "sha256:89c09fd0491880de2f7b715bffbe2d6b0605a6dea7400689519c43f40f7b119d",
+            "locator": {
+              "end": 240,
+              "kind": "line_range",
+              "start": 175
+            },
+            "path": "mcp/src/agents_remember/worktrees/review_history.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Reason admission, threshold and differing-harness/model inheritance boundary.\n\nAnchor: L23–L84",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f341c13a99f485178e73c4ff8bf4de16267ee662",
+            "content": "sha256:5a3727f4901933c44cd5f7edc8b16220285a82a9e080326edf482cbb126f0b2f",
+            "locator": {
+              "end": 84,
+              "kind": "line_range",
+              "start": 23
+            },
+            "path": "mcp/src/agents_remember/cli/role_step_up.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "File-local implementation of the stated contract; caller-owned effects and governing workflow are separate evidence.\n\nAnchor: L111–L145",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b80702d8154ccb2f28eeee73e070661c0d13db50",
+            "content": "sha256:a25aee52f3020f62c99a41dadc9009860a2560a40e3cf9130e39ba60bacdf8f0",
+            "locator": {
+              "end": 145,
+              "kind": "line_range",
+              "start": 111
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "File-local implementation of the stated contract; caller-owned effects and governing workflow are separate evidence.\n\nAnchor: L184–L213",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b80702d8154ccb2f28eeee73e070661c0d13db50",
+            "content": "sha256:e35d363ea0c0769d4eefb5b11118d0e50e1cf0f355fdc7ae55d488c60f6b2854",
+            "locator": {
+              "end": 213,
+              "kind": "line_range",
+              "start": 184
             }
           },
           "kind": "code"

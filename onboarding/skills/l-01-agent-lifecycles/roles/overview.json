@@ -477,7 +477,7 @@
         },
         {
           "anchor": {
-            "blob": "b1024277b460ece8315abbad24554b4c827340c5",
+            "blob": "14e284444735ed4ed43101ca3775396ae4c53044",
             "content": "sha256:0af2c0c1a1fad68c9f0f1637a5dfcd30bca1454f2b8303d3a1aeb60762bedcac",
             "locator": {
               "end": 32,
@@ -503,7 +503,7 @@
         },
         {
           "anchor": {
-            "blob": "b1024277b460ece8315abbad24554b4c827340c5",
+            "blob": "14e284444735ed4ed43101ca3775396ae4c53044",
             "content": "sha256:ce161272614d41159cb2cd2461007466b8db6bf4c3ad9725c46b82b598305c20",
             "locator": {
               "end": 63,
@@ -628,12 +628,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "65a10dcac925975e4ae642d264a343857bdae9c4",
+            "blob": "f17aa445d3c5fc1b8b1f18ed2be48b8be8b6df7d",
             "content": "sha256:6d46573ed37805030cdd0890398d3892bf680016cad572fa055cc22e21e30d65",
             "locator": {
-              "end": 29,
+              "end": 32,
               "kind": "line_range",
-              "start": 27
+              "start": 30
             },
             "path": "skills/l-01-agent-lifecycles/operations/coordination.md"
           },
@@ -657,12 +657,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "679a69b6f6ff4ae1a3b8e536d652b10a633a528e",
+            "blob": "f4d75547bcd9f677f543629759cd16ae47dfcfaf",
             "content": "sha256:b5ba01214d3621ba29b623cc6f3e726a21c2c34bed936e8b5276a9c6dabc7b5e",
             "locator": {
-              "end": 23,
+              "end": 24,
               "kind": "line_range",
-              "start": 17
+              "start": 18
             },
             "path": "skills/l-01-agent-lifecycles/operations/implementation.md"
           },
@@ -764,12 +764,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "09a340563bd51c31168737f64744393c3c680ca9",
+            "blob": "6ff9818a6a6c5a5ef08e00fc6c7b8fb6cd907840",
             "content": "sha256:9284abc99cafd014ac4634aaecd621628996e9f5ade31a79d05a24523ed73af1",
             "locator": {
-              "end": 342,
+              "end": 355,
               "kind": "line_range",
-              "start": 309
+              "start": 322
             },
             "path": "skills/l-01-agent-lifecycles/templates/curator-handoff-list.md"
           },
@@ -933,12 +933,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "66b580e5158b30270e6f97efbfda840f38d784d7",
+            "blob": "1d8ff0d5b32a38eb4b384c61d6beb6855cd9768e",
             "content": "sha256:8b6920aa36e98c45ca2ff5f34c7378698411e1b7769d2d63b602d32330f49300",
             "locator": {
-              "end": 22,
+              "end": 23,
               "kind": "line_range",
-              "start": 16
+              "start": 17
             },
             "path": "skills/l-01-agent-lifecycles/operations/orientation.md"
           },
@@ -969,12 +969,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e0b3bcfc145479a365a748510d7bd04490842c91",
+            "blob": "9c3645680ef1a2c5c09b50320b7189006fa67d90",
             "content": "sha256:d83cb394cb0e5ad26dc5bf6d6d07c08b4a17148df3bdb4fc8966dc1bffa50715",
             "locator": {
-              "end": 143,
+              "end": 65,
               "kind": "line_range",
-              "start": 139
+              "start": 61
             },
             "path": "skills/l-01-agent-lifecycles/roles/curator.md"
           },
@@ -1018,12 +1018,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6c14bda6d478f9d220063774ea8b13852e31a0f0",
+            "blob": "c806e36dfe030ed31b40bfbe0b067abee3a5124b",
             "content": "sha256:9b8a0bd77133a911eda02d798594b6181aac50e9399f1000649385784cc6dc27",
             "locator": {
-              "end": 20,
+              "end": 22,
               "kind": "line_range",
-              "start": 20
+              "start": 22
             },
             "path": "skills/l-01-agent-lifecycles/roles/manager.md"
           },
@@ -1062,6 +1062,186 @@
         }
       ]
     },
+    "50": {
+      "note": "Role-stage selection, precise authoring, narrow own-step completion and independent recorded memory lane; source declarations, no execution acceptance.\n\nAnchor: Current source; preserved L88 property 49",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "259ed1508440ade327c5265fd38e41e3a2344140",
+            "content": "sha256:d3a0b45666d20afadd425be7e96531a01ae50af0551a336b29dcaa74af20e8bd",
+            "locator": {
+              "end": 137,
+              "kind": "line_range",
+              "start": 38
+            },
+            "path": "skills/l-01-agent-lifecycles/composition-manifest.json"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "51": {
+      "note": "Role-stage selection, precise authoring, narrow own-step completion and independent recorded memory lane; source declarations, no execution acceptance.\n\nAnchor: Current source; preserved L88 property 50",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "259ed1508440ade327c5265fd38e41e3a2344140",
+            "content": "sha256:84ae84a118faa696ea1c03c359d3774c18369093a574fd9de1a8997974f78826",
+            "locator": {
+              "end": 684,
+              "kind": "line_range",
+              "start": 567
+            },
+            "path": "skills/l-01-agent-lifecycles/composition-manifest.json"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "52": {
+      "note": "Role-stage selection, precise authoring, narrow own-step completion and independent recorded memory lane; source declarations, no execution acceptance.\n\nAnchor: Current source; preserved L88 property 51",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fa6015bebb4f7c199a276cad8ca7e37ee11a3854",
+            "content": "sha256:5444b63ab1eb28a6ad90d2499136fe6ae446724c6198ee8f05ac0a682f463894",
+            "locator": {
+              "end": 158,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "skills/l-01-agent-lifecycles/capsule-budgets.json"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "53": {
+      "note": "Role-stage selection, precise authoring, narrow own-step completion and independent recorded memory lane; source declarations, no execution acceptance.\n\nAnchor: Current source; preserved L88 property 52",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fa6015bebb4f7c199a276cad8ca7e37ee11a3854",
+            "content": "sha256:22d3b1a70fe038cd18631b3a29c5d2cddeeb85af125a3f4e35359ebe2c2b3cf2",
+            "locator": {
+              "end": 215,
+              "kind": "line_range",
+              "start": 159
+            },
+            "path": "skills/l-01-agent-lifecycles/capsule-budgets.json"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "54": {
+      "note": "Role-stage selection, precise authoring, narrow own-step completion and independent recorded memory lane; source declarations, no execution acceptance.\n\nAnchor: Current source; preserved L88 property 53",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b488189ccabecfeddc296a88c877fcda162e7fd9",
+            "content": "sha256:408d1f883028992dacd560c58332b1069283cce2dcadeb171c04a15ca57a08b4",
+            "locator": {
+              "end": 56,
+              "kind": "line_range",
+              "start": 44
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/worker.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "55": {
+      "note": "Role-stage selection, precise authoring, narrow own-step completion and independent recorded memory lane; source declarations, no execution acceptance.\n\nAnchor: Current source; preserved L88 property 54",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9c3645680ef1a2c5c09b50320b7189006fa67d90",
+            "content": "sha256:ec5b884bf9ab64fb39e21d13511238e2dbbad25041b3fd19bae019b2863bcd1d",
+            "locator": {
+              "end": 84,
+              "kind": "line_range",
+              "start": 77
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/curator.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "56": {
+      "note": "Role-stage selection, precise authoring, narrow own-step completion and independent recorded memory lane; source declarations, no execution acceptance.\n\nAnchor: Current source; preserved L88 property 55",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9c3645680ef1a2c5c09b50320b7189006fa67d90",
+            "content": "sha256:9fc458926097ec223e5a72a623adf8379e15c97c4e407dc851040c87937b20d4",
+            "locator": {
+              "end": 138,
+              "kind": "line_range",
+              "start": 126
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/curator.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "57": {
+      "note": "Role-stage selection, precise authoring, narrow own-step completion and independent recorded memory lane; source declarations, no execution acceptance.\n\nAnchor: Current source; preserved L88 property 56",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "272c06c18fcf71bad8e04850a1c21f8507f9bf43",
+            "content": "sha256:09e4f1c8986299f8221e667e14779eff2402b7c8f7f352946fe77c6bbedcb151",
+            "locator": {
+              "end": 187,
+              "kind": "line_range",
+              "start": 179
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/reviewer.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "58": {
+      "note": "Role-stage selection, precise authoring, narrow own-step completion and independent recorded memory lane; source declarations, no execution acceptance.\n\nAnchor: Current source; preserved L88 property 57",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c806e36dfe030ed31b40bfbe0b067abee3a5124b",
+            "content": "sha256:1923f8c2e31be2cb645dbb2d906a8274fa4081f4e5ff4f4b79c96ba7b0d0f593",
+            "locator": {
+              "end": 26,
+              "kind": "line_range",
+              "start": 16
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/manager.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "59": {
+      "note": "Role-stage selection, precise authoring, narrow own-step completion and independent recorded memory lane; source declarations, no execution acceptance.\n\nAnchor: Current source; preserved L88 property 58",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "11b8ef10c8763f50ed20180a7e8e41c2cb9aeb0b",
+            "content": "sha256:37acace39292198a835dda5aaac31a302750023a2974d39086c18f9f26a3d5c0",
+            "locator": {
+              "end": 176,
+              "kind": "line_range",
+              "start": 176
+            },
+            "path": "skills/l-01-agent-lifecycles/operations/curation.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
     "6": {
       "note": "The permitted-action line that makes the subcommand this seat's route.  Anchor: `ordinary knowledge authoring route`",
       "targets": [
@@ -1075,6 +1255,60 @@
               "start": 218
             },
             "path": "skills/l-01-agent-lifecycles/roles/curator.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "60": {
+      "note": "Role-stage selection, precise authoring, narrow own-step completion and independent recorded memory lane; source declarations, no execution acceptance.\n\nAnchor: Current source; preserved L88 property 59",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c88f998589d4789d0c221717bf72f8c258070afc",
+            "content": "sha256:c2f707b60c14547c1d017ce0dbf7874cabd45358e8f7b635949e6fe82485b674",
+            "locator": {
+              "end": 28,
+              "kind": "line_range",
+              "start": 28
+            },
+            "path": "skills/l-01-agent-lifecycles/operations/review.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "61": {
+      "note": "Role-stage selection, precise authoring, narrow own-step completion and independent recorded memory lane; source declarations, no execution acceptance.\n\nAnchor: Current source; preserved L88 property 60",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "226c1fec7b47ac8e8178f5ebc4465d1150d7b5a0",
+            "content": "sha256:daa0c67f0a5db4ca0699f097fde6326236b89b03374c5bc8f63405f296675039",
+            "locator": {
+              "end": 124,
+              "kind": "line_range",
+              "start": 54
+            },
+            "path": "skills/l-01-agent-lifecycles/reference/shared-writing-profile.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "62": {
+      "note": "Role-stage selection, precise authoring, narrow own-step completion and independent recorded memory lane; source declarations, no execution acceptance.\n\nAnchor: Current source; preserved L88 property 61",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6ebeba78dcb06d9111cec33fcaba5afd0c79979b",
+            "content": "sha256:c2565480600fdc2f8955bfe282ef689312a608019e72f134fd442d6e9774644a",
+            "locator": {
+              "end": 374,
+              "kind": "line_range",
+              "start": 369
+            },
+            "path": "skills/c-13-install-and-onboard/SKILL.md"
           },
           "kind": "code"
         }

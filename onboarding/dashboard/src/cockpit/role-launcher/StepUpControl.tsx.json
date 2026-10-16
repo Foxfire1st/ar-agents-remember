@@ -1,0 +1,96 @@
+{
+  "path": "dashboard/src/cockpit/role-launcher/StepUpControl.tsx",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Worker/Curator typed review census, record-only exclusion and unknown history.\n\nAnchor: L175–L240",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "29bbfb919fa2a5e25fc3e3ee172407e92e192fc0",
+            "content": "sha256:89c09fd0491880de2f7b715bffbe2d6b0605a6dea7400689519c43f40f7b119d",
+            "locator": {
+              "end": 240,
+              "kind": "line_range",
+              "start": 175
+            },
+            "path": "mcp/src/agents_remember/worktrees/review_history.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Reason admission, threshold and differing-harness/model inheritance boundary.\n\nAnchor: L23–L84",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f341c13a99f485178e73c4ff8bf4de16267ee662",
+            "content": "sha256:5a3727f4901933c44cd5f7edc8b16220285a82a9e080326edf482cbb126f0b2f",
+            "locator": {
+              "end": 84,
+              "kind": "line_range",
+              "start": 23
+            },
+            "path": "mcp/src/agents_remember/cli/role_step_up.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Saved taskless UUID/pending plus trimmed reason/override restoration keeps the legacy Investigator storage slot.\n\nAnchor: L265–L303",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5afb423008b1b65fdb77e7f434136c58161a0a1a",
+            "content": "sha256:eee8a4575ac30b8aa5e2006cd3b14ba4d2ca4cf26fbcabc4eb35c268079145b0",
+            "locator": {
+              "end": 303,
+              "kind": "line_range",
+              "start": 265
+            },
+            "path": "dashboard/src/cockpit/roleLaunchModel.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The same start-only reason enters saved retry payload and POST body.\n\nAnchor: L115–L157",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "23529e12c8dab32a4452754b164a6d4b58310a63",
+            "content": "sha256:a68d7b7d28047a14feb0f8f3f85133add244a62e154e9a779c29702492fc08dc",
+            "locator": {
+              "end": 157,
+              "kind": "line_range",
+              "start": 115
+            },
+            "path": "dashboard/src/cockpit/roleChatDispatch.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "File-local implementation of the stated contract; caller-owned effects and governing workflow are separate evidence.\n\nAnchor: L1–L24",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "49001f5ff9548e3c0b4a3ba3b69a05fb6fc8646f",
+            "content": "sha256:535316a94eebd817ef3d0c5f01db1c9fd275d85b44caa7168cb9aa5647a3c946",
+            "locator": {
+              "end": 24,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

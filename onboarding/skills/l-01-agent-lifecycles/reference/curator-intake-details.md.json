@@ -1,0 +1,24 @@
+{
+  "path": "skills/l-01-agent-lifecycles/reference/curator-intake-details.md",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "New step-1 reader-argument syntax reference; scope/refusal boundaries stay inline.\n\nAnchor: Candidate instruction body, lines 3–7",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7ad11c184492f8e943420dd44a70ae192d5bc7c5",
+            "content": "sha256:e2a568864a81a70982a1d7ec8461a1df802d52855bc84b424374ddd1c57da0c5",
+            "locator": {
+              "end": 7,
+              "kind": "line_range",
+              "start": 3
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

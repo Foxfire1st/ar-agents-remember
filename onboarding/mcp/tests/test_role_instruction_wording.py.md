@@ -51,6 +51,10 @@ The compiled architect handover asserts read_ar_files inputs as path strings and
 
 The Manager wording guard now requires start/finalize/abandon to publish task stage and its master-row mirror without a second status write. task_doc set_status remains explicit correction, while organizational-master completion remains the Manager act. Direct repair-loop handovers follow coordination.md. This is a text guard, not performed publication.
 
+## Current audience, delivery and evidence contract
+
+Positive obligation and removal cases now use the shared delivered-surface oracle. Curator facets are checked on the addressed capsule or exact handoff detail; the complete Git comparison sentence is separately guarded. Writer command syntax is checked in the declared details while the operation retains inline admitted-runtime/no-bypass/selected-root/refusal/report/coherence duties. Reviewer-only parentless wording does not widen untouched roles' alternatives. These are source/compilation guards, not semantic acceptance or a producer grant.
+
 ## Evidence
 
 - Protected Manager text separates automatic stage publication, explicit correction and organizational completion. [7]
@@ -76,3 +80,4 @@ The current wording guards pin canonical Investigator scope and the exact approv
 
 - Long host-consumption instruction checks move to their reference-document owner. Compact registration keeps its intended wording boundary, rather than regaining the removed verbose descriptions. [6]
 
+- Uses capsule_wording to read each relocated facet on its real role/stage/detail surface and apply nonvacuous deletion controls. Curator short forms retain independent writer/admission/foundation/whole-worklist/output boundaries; exact Git code-and-two-memory-tree comparison is checked in the delivered handoff. Reviewer parentless wording is role-specific. Writer syntax moves to declared writer/intake details while inline operation assertions retain no-bypass, selected-root, report/refusal/readback/coherence duties. [8]

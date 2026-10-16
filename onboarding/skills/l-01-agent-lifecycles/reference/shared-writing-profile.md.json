@@ -1,0 +1,93 @@
+{
+  "path": "skills/l-01-agent-lifecycles/reference/shared-writing-profile.md",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "226c1fec7b47ac8e8178f5ebc4465d1150d7b5a0",
+        "content": "sha256:10aa3e5ad2ae9ebd5c24b43f73ec291259f75d5a2ee5588b3d4ba47ecddb83d1",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-GJ34Y7",
+      "invariant": "INV-RKQ450",
+      "origin": {
+        "handoffEntry": "MIK-R88@v1/guide",
+        "leaf": "260928-MIK-L88"
+      },
+      "rationale": "The entire canonical guide owns the shared writing and independent meaning-comparison method.",
+      "role": "primary-authority"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "New shared STE-inspired guidance, independent facet/case review, three-real-revision scratch pilot and after-adoption use; explicitly not an automatic semantic gate.\n\nAnchor: Candidate instruction body, lines 3–18",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "226c1fec7b47ac8e8178f5ebc4465d1150d7b5a0",
+            "content": "sha256:aef873d78af121a2ea677ede66869f3f3f8f0fe62bbdb48fa80680ceadc06396",
+            "locator": {
+              "end": 18,
+              "kind": "line_range",
+              "start": 3
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "New shared STE-inspired guidance, independent facet/case review, three-real-revision scratch pilot and after-adoption use; explicitly not an automatic semantic gate.\n\nAnchor: Candidate instruction body, lines 20–52",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "226c1fec7b47ac8e8178f5ebc4465d1150d7b5a0",
+            "content": "sha256:96427646b2f5bb4fa841c5da6d327cd2f2d292c81ce0c858311b745ae3a610d7",
+            "locator": {
+              "end": 52,
+              "kind": "line_range",
+              "start": 20
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "New shared STE-inspired guidance, independent facet/case review, three-real-revision scratch pilot and after-adoption use; explicitly not an automatic semantic gate.\n\nAnchor: Candidate instruction body, lines 54–97",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "226c1fec7b47ac8e8178f5ebc4465d1150d7b5a0",
+            "content": "sha256:4f5a2c7fb938c95b53c9eef2934641be66422bc6b35f9aa56cd249ed27d407f0",
+            "locator": {
+              "end": 97,
+              "kind": "line_range",
+              "start": 54
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "New shared STE-inspired guidance, independent facet/case review, three-real-revision scratch pilot and after-adoption use; explicitly not an automatic semantic gate.\n\nAnchor: Candidate instruction body, lines 99–124",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "226c1fec7b47ac8e8178f5ebc4465d1150d7b5a0",
+            "content": "sha256:bcd62787e8d29c23e763ff094b3110b61e85ac878e09c8b07ce82f44138257e2",
+            "locator": {
+              "end": 124,
+              "kind": "line_range",
+              "start": 99
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -25,7 +25,7 @@ contract:
 4. cit:([`gather_candidates`, `resolve_instructions`], mcp/src/agents_remember/models/role_capsules/resolution.py:93-134; mcp/src/agents_remember/models/role_capsules/resolution.py:135-191) — reduce each identity to one block and stop on an unresolved contradiction;
 5. cit:([`narrow_tool_requests`], mcp/src/agents_remember/models/role_capsules/tools.py:24-58) — narrow the requested **tool ids** to the admitted policy;
 6. cit:([`skill_references`], mcp/src/agents_remember/models/role_capsules/compiler.py:153-190) — build one reference per declared skill. This step is **not** a narrowing step: no policy is consulted, and the reference is content-addressed from the admitted skill root file;
-7. cit:([`semantic_digest`], mcp/src/agents_remember/models/role_capsules/compiler.py:224-269) — the seal.
+7. `compile_detail_references` resolves placeholders in the audience-selected blocks to exact admitted role-declared bytes; `semantic_digest` seals selected block content and original identities, and detail path/revision/step rows extend the final seal when present.
 
 The work is split across sibling modules so each part can be understood and tested alone. What
 *this* module owns is the seal: the semantic digest and the diagnostic manifest.
@@ -34,7 +34,7 @@ The work is split across sibling modules so each part can be understood and test
 cit:([`semantic_digest`], mcp/src/agents_remember/models/role_capsules/compiler.py:224-269) builds a canonical `\t`-separated document from
 the seat kind, seat key, role, operation, repository, work branch, task reference and its
 document digest, the requirement identities, the specializations **actually composed**, one
-`block` line per composed block with its revision, one `tool` line per requested tool id, one
+`block` line per composed block with its source revision and the digest of its selected content, one `tool` line per requested tool id, one
 `skill` line per carried skill reference (`origin`, `identity`, `revision`), and the task
 context's origin/revision/digest. It deliberately excludes unselected sources, refusal
 detail, wall-clock values, and the diagnostic manifest itself — so the identity of a
@@ -87,7 +87,7 @@ format and is itself part of the digest document.
   dropping it would be the same silent omission as dropping a required instruction block.
 - **The layer contract is a target, not a description of today's tree.** `layers.toml` declares
   that a module in package `P` may import `Q` only when `rank(Q) < rank(P)`, and it deliberately
-  fails against the current tree. Measured on this candidate the tree reports 16 pre-existing
+  fails against the current tree. Historically measured on the earlier capsule candidate, the tree reported 16 pre-existing
   violations (all `worktrees -> memory_quality` and its siblings); **none names a role-capsule
   module**, every internal import from the new modules points at a strictly lower rank, and there
   are 0 undeclared imports. Onboarding that presents the layer contract as currently satisfied is
@@ -97,7 +97,20 @@ format and is itself part of the digest document.
 
 None recorded.
 
+## Current Contract
+
+After normal instruction resolution, only operation-root blocks pass through select_operation_audience with the operation audience mode, applicable roles, scope role and original source text. Other roots stay unchanged. The compiler then verifies task context, narrows tools, carries skills and compiles detail placeholders from the selected blocks. Each semantic block row now seals original identity/revision plus the digest of actual selected UTF-8 content. If details exist, the final digest additionally seals ordered detail path/revision/step rows. Diagnostic metadata and unselected specializations remain outside identity. Output carries exact admitted detail bytes separately; no filesystem access, workspace copy or model call occurs here.
+
+This account is bound to the candidate source, not a claim of a running serving build or a fresh execution/acceptance verdict. Existing historical accounts remain historical.
+
 ## Evidence
+
+
+- Launch copies detail files, substitutes paths, and records frozen revisions. [9]
+- Replay validates regular opened files, content revisions and original canonical report binding, not mutable corpus sources. [10]
+- Per-request detail artifacts use exact admitted bytes beside the handover and write-once publication. [11]
+- File-local implementation of the stated contract; caller-owned effects and governing workflow are separate evidence. [12]
+- File-local implementation of the stated contract; caller-owned effects and governing workflow are separate evidence. [13]
 
 ### Docs References
 

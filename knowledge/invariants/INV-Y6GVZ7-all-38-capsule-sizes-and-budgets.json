@@ -5,14 +5,17 @@
     ],
     "justification": "The budget test bounds every fresh compiled capsule within its recorded budget; without it an overgrown capsule would silently break instruction composition. Registry totals are evidenced by the registry cells and the A8 decisions, not by the test."
   },
-  "applicability": "All 38 role, operation and launcher capsule budgets in skills/l-01-agent-lifecycles/capsule-budgets.json.",
+  "applicability": "All 38 role, operation and launcher capsules and every declared step-detail file budgeted by skills/l-01-agent-lifecycles/capsule-budgets.json.",
   "conditions": [
-    "Each stored budget equals ceil(stored size_words * 11 / 10); fresh compiled sizes stay at or under budget, as checked by the budget test.",
-    "The current registry has 38 cells and its updates carry their decision record. Prior L101/A8 raw, adjusted and compiled totals remain dated evidence, not current-size guarantees."
+    "Each stored budget equals the smaller of ceil(stored size_words * 11 / 10) and its kind's ceiling; fresh measured sizes stay at or under budget, and fresh size, recorded size and budget stay at or below the ceiling.",
+    "The capsule ceiling is 3700 words and the declared detail-file ceiling is 2500 words, under the source-owned whitespace-split counting convention.",
+    "The registry has 38 capsule cells and a detail-files budget for every manifest-declared step detail, with no orphan detail budget keys; its updates carry their decision record.",
+    "Prior L101/A8 raw, adjusted and compiled totals remain dated evidence, not current-size guarantees."
   ],
   "exclusions": [
     "Historical era sums (62748, a1b7 109616, master 107226) and the dated A8 compiled total 93905 as current contract terms.",
-    "The L101 83786 raw and 82200 A8-adjusted totals as current contract terms."
+    "The L101 83786 raw and 82200 A8-adjusted totals as current contract terms.",
+    "Treating a word-count or budget pass as proof that the capsule preserves meaning."
   ],
   "id": "INV-Y6GVZ7",
   "origin": {
@@ -26,9 +29,9 @@
     "leaf": "260928-MIK-L101",
     "task": "260928-MIK"
   },
-  "revision": 2,
+  "revision": 3,
   "schema": "ar-invariant/v1",
-  "statement": "The 38-cell capsule-budget registry records current compiled capsule sizes with each budget equal to ceil(size_words*11/10), updated in the same change with its decisions; fresh compiled sizes stay within those budgets. Dated leaf totals are measurements, not reusable numeric contract terms.",
+  "statement": "The 38-cell capsule registry and its declared step-detail files record current sizes with each budget equal to min(ceil(size_words*11/10), ceiling): 3700 words per capsule and 2500 per detail file. Fresh sizes stay within recorded budgets, and measurements and budgets stay within those ceilings. Registry updates carry their decisions; dated leaf totals remain measurements, not reusable numeric contract terms.",
   "status": "proposed",
   "supersedes": []
 }

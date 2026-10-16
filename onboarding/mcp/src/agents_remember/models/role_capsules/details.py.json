@@ -1,0 +1,78 @@
+{
+  "path": "mcp/src/agents_remember/models/role_capsules/details.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Launch copies detail files, substitutes paths, and records frozen revisions.\n\nAnchor: L16–L35",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "682d4179b094bd4e50d1f67363fe398d5e4e40c9",
+            "content": "sha256:60172f37e29d829d04a0c011bfce73b96756f430b581516ca3dce6f39fbf91d8",
+            "locator": {
+              "end": 35,
+              "kind": "line_range",
+              "start": 16
+            },
+            "path": "mcp/src/agents_remember/cli/role_instruction_details.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Replay validates regular opened files, content revisions and original canonical report binding, not mutable corpus sources.\n\nAnchor: L38–L88",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "682d4179b094bd4e50d1f67363fe398d5e4e40c9",
+            "content": "sha256:a3660f0512fa0094c6c5fa934139c0b4e7dbf580921a9fdb0c9218c0600898b7",
+            "locator": {
+              "end": 88,
+              "kind": "line_range",
+              "start": 38
+            },
+            "path": "mcp/src/agents_remember/cli/role_instruction_details.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Per-request detail artifacts use exact admitted bytes beside the handover and write-once publication.\n\nAnchor: L59–L74",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "85b470bea18f2548365b969746fd9e7ef5ea00cf",
+            "content": "sha256:53ae089e7b885fad8e278a7a4540e98ab4b52f03f6e60ecbb8260f070081a4d4",
+            "locator": {
+              "end": 74,
+              "kind": "line_range",
+              "start": 59
+            },
+            "path": "mcp/src/agents_remember/cli/role_handover_artifacts.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "File-local implementation of the stated contract; caller-owned effects and governing workflow are separate evidence.\n\nAnchor: L18–L74",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fc27398cbb49aa07209ebcbeed8e891bb97bd479",
+            "content": "sha256:dadfe31dd58a2bed1a2df5d3772dee0ac966edb33411e858b929986ab996e634",
+            "locator": {
+              "end": 74,
+              "kind": "line_range",
+              "start": 18
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

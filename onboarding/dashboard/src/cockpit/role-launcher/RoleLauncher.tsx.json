@@ -3,12 +3,11 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "12349c73e7102cf2c539e1e1a17046b66bf58565",
-        "content": "sha256:511aae5576980a7226f1c4525ec3e83cfca5274db988a0ba832f85be27d891d8",
+        "blob": "7fd286e8f506c4eda1b00757ae2dcc75194bab80",
+        "content": "sha256:1712214cf009a7918411578e039ea7a6aa287c819078d4bc0250eee59ee9790a",
         "locator": {
-          "end": 1159,
-          "kind": "line_range",
-          "start": 1080
+          "kind": "symbol",
+          "name": "RoleLauncher"
         }
       },
       "id": "RLZ-2RCSQR",
@@ -22,12 +21,11 @@
     },
     {
       "anchor": {
-        "blob": "12349c73e7102cf2c539e1e1a17046b66bf58565",
-        "content": "sha256:511aae5576980a7226f1c4525ec3e83cfca5274db988a0ba832f85be27d891d8",
+        "blob": "7fd286e8f506c4eda1b00757ae2dcc75194bab80",
+        "content": "sha256:1712214cf009a7918411578e039ea7a6aa287c819078d4bc0250eee59ee9790a",
         "locator": {
-          "end": 1159,
-          "kind": "line_range",
-          "start": 1080
+          "kind": "symbol",
+          "name": "RoleLauncher"
         }
       },
       "id": "RLZ-6DAG9Q",
@@ -41,12 +39,12 @@
     },
     {
       "anchor": {
-        "blob": "12349c73e7102cf2c539e1e1a17046b66bf58565",
+        "blob": "7fd286e8f506c4eda1b00757ae2dcc75194bab80",
         "content": "sha256:b86f86bed78f99f0d2aea43d8777da52b524be369474c1858449c6e583be1c7f",
         "locator": {
-          "end": 1077,
+          "end": 1093,
           "kind": "line_range",
-          "start": 1063
+          "start": 1079
         }
       },
       "id": "RLZ-9FTBAR",
@@ -60,12 +58,11 @@
     },
     {
       "anchor": {
-        "blob": "12349c73e7102cf2c539e1e1a17046b66bf58565",
+        "blob": "7fd286e8f506c4eda1b00757ae2dcc75194bab80",
         "content": "sha256:ae01e6a809cd47819b696aee450d63c9dec59f9e0be5b9c54b718c11e5fdabdb",
         "locator": {
-          "end": 139,
-          "kind": "line_range",
-          "start": 137
+          "kind": "symbol",
+          "name": "boundCanStart"
         }
       },
       "id": "RLZ-CSKAPQ",
@@ -79,8 +76,8 @@
     },
     {
       "anchor": {
-        "blob": "12349c73e7102cf2c539e1e1a17046b66bf58565",
-        "content": "sha256:511aae5576980a7226f1c4525ec3e83cfca5274db988a0ba832f85be27d891d8",
+        "blob": "7fd286e8f506c4eda1b00757ae2dcc75194bab80",
+        "content": "sha256:1712214cf009a7918411578e039ea7a6aa287c819078d4bc0250eee59ee9790a",
         "locator": {
           "kind": "symbol",
           "name": "RoleLauncher"
@@ -97,12 +94,11 @@
     },
     {
       "anchor": {
-        "blob": "12349c73e7102cf2c539e1e1a17046b66bf58565",
-        "content": "sha256:511aae5576980a7226f1c4525ec3e83cfca5274db988a0ba832f85be27d891d8",
+        "blob": "7fd286e8f506c4eda1b00757ae2dcc75194bab80",
+        "content": "sha256:1712214cf009a7918411578e039ea7a6aa287c819078d4bc0250eee59ee9790a",
         "locator": {
-          "end": 1159,
-          "kind": "line_range",
-          "start": 1080
+          "kind": "symbol",
+          "name": "RoleLauncher"
         }
       },
       "id": "RLZ-MKJATY",
@@ -116,12 +112,12 @@
     },
     {
       "anchor": {
-        "blob": "12349c73e7102cf2c539e1e1a17046b66bf58565",
+        "blob": "7fd286e8f506c4eda1b00757ae2dcc75194bab80",
         "content": "sha256:3ce7369a5577704e0156be3fde1ae43e6b2aa2c9eafabc52ca7ec8f99b6e715b",
         "locator": {
-          "end": 686,
+          "end": 687,
           "kind": "line_range",
-          "start": 580
+          "start": 581
         }
       },
       "id": "RLZ-N85X2R",
@@ -135,12 +131,11 @@
     },
     {
       "anchor": {
-        "blob": "12349c73e7102cf2c539e1e1a17046b66bf58565",
-        "content": "sha256:511aae5576980a7226f1c4525ec3e83cfca5274db988a0ba832f85be27d891d8",
+        "blob": "7fd286e8f506c4eda1b00757ae2dcc75194bab80",
+        "content": "sha256:1712214cf009a7918411578e039ea7a6aa287c819078d4bc0250eee59ee9790a",
         "locator": {
-          "end": 1159,
-          "kind": "line_range",
-          "start": 1080
+          "kind": "symbol",
+          "name": "RoleLauncher"
         }
       },
       "id": "RLZ-RKR5QW",
@@ -154,12 +149,12 @@
     },
     {
       "anchor": {
-        "blob": "12349c73e7102cf2c539e1e1a17046b66bf58565",
-        "content": "sha256:1b82c274556b2944144ea73674c31503477db1b7786ae43f615e1ee735c9f4c4",
+        "blob": "7fd286e8f506c4eda1b00757ae2dcc75194bab80",
+        "content": "sha256:5ff2039bc6e242759143b58f72ce76dcec06dd656628e78fb97a4498c870e457",
         "locator": {
-          "end": 55,
+          "end": 1055,
           "kind": "line_range",
-          "start": 41
+          "start": 967
         }
       },
       "id": "RLZ-TNTSC0",
@@ -168,17 +163,16 @@
         "handoffEntry": "MIK-R75@v1 current rule 2",
         "leaf": "260928-MIK-L75"
       },
-      "rationale": "The grid carries the row of controls and, after the change, only the failure line: its height no longer follows the length of an answer.",
+      "rationale": "The launcher grid carries whole controls, including StepUpControl and compact StepUpStatus, and a separate failure line. It disables the failure component’s duplicate status fallback. No reply or execution-detail prose enters the strip, so reply length does not govern its height.",
       "role": "presentation"
     },
     {
       "anchor": {
-        "blob": "12349c73e7102cf2c539e1e1a17046b66bf58565",
-        "content": "sha256:511aae5576980a7226f1c4525ec3e83cfca5274db988a0ba832f85be27d891d8",
+        "blob": "7fd286e8f506c4eda1b00757ae2dcc75194bab80",
+        "content": "sha256:1712214cf009a7918411578e039ea7a6aa287c819078d4bc0250eee59ee9790a",
         "locator": {
-          "end": 1159,
-          "kind": "line_range",
-          "start": 1080
+          "kind": "symbol",
+          "name": "RoleLauncher"
         }
       },
       "id": "RLZ-W3VMNM",
@@ -208,12 +202,65 @@
         }
       ]
     },
+    "10": {
+      "note": "File-local implementation of the stated contract; caller-owned effects and governing workflow are separate evidence.\n\nAnchor: Current source; preserved L88 property 12",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7fd286e8f506c4eda1b00757ae2dcc75194bab80",
+            "content": "sha256:e79ec32916e09bff3269e8f0b39163d3b2494684c7e33ea3596716ecb3461851",
+            "locator": {
+              "end": 1175,
+              "kind": "line_range",
+              "start": 1096
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "Worker/Curator typed review census, record-only exclusion and unknown history.\n\nAnchor: Current source; preserved L88 property 8",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "29bbfb919fa2a5e25fc3e3ee172407e92e192fc0",
+            "content": "sha256:89c09fd0491880de2f7b715bffbe2d6b0605a6dea7400689519c43f40f7b119d",
+            "locator": {
+              "end": 240,
+              "kind": "line_range",
+              "start": 175
+            },
+            "path": "mcp/src/agents_remember/worktrees/review_history.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "Reason admission, threshold and differing-harness/model inheritance boundary.\n\nAnchor: Current source; preserved L88 property 9",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f341c13a99f485178e73c4ff8bf4de16267ee662",
+            "content": "sha256:5a3727f4901933c44cd5f7edc8b16220285a82a9e080326edf482cbb126f0b2f",
+            "locator": {
+              "end": 84,
+              "kind": "line_range",
+              "start": 23
+            },
+            "path": "mcp/src/agents_remember/cli/role_step_up.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
     "2": {
       "note": "Bound mode omits the reference fields the selection already determines.",
       "targets": [
         {
           "anchor": {
-            "blob": "12349c73e7102cf2c539e1e1a17046b66bf58565",
+            "blob": "7fd286e8f506c4eda1b00757ae2dcc75194bab80",
             "content": "sha256:6e12c73e518e0dad2a470a82303f8f9f7e83170c8fbf27b24a3acdcc76b3dd43",
             "locator": {
               "kind": "symbol",
@@ -299,6 +346,40 @@
             "locator": {
               "kind": "symbol",
               "name": "docSelectTitle"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "File-local implementation of the stated contract; caller-owned effects and governing workflow are separate evidence.\n\nAnchor: Current source; preserved L88 property 10",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7fd286e8f506c4eda1b00757ae2dcc75194bab80",
+            "content": "sha256:0ed142ed6c75866f1322e2dec119ef8f604322b6c36fc8a028ba077dd679a38d",
+            "locator": {
+              "end": 796,
+              "kind": "line_range",
+              "start": 717
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "File-local implementation of the stated contract; caller-owned effects and governing workflow are separate evidence.\n\nAnchor: Current source; preserved L88 property 11",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7fd286e8f506c4eda1b00757ae2dcc75194bab80",
+            "content": "sha256:a60a8bbe3adfd46f5a33d8099c09f0f01cd7de205219e045a7657cf1bdef8f69",
+            "locator": {
+              "end": 1052,
+              "kind": "line_range",
+              "start": 926
             }
           },
           "kind": "code"

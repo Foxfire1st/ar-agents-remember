@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "71dbb3f49f4fe25dd453868ddb896fa307b1d4e5",
+        "blob": "49d2854971e987aa28790d27ef4aaf9e62be4a1a",
         "content": "sha256:5ad843bc4b4ed9f2dff420ca46bbe1030730a94f2b2fd64afc91ea7a1684648b",
         "locator": {
           "kind": "symbol",
@@ -21,7 +21,7 @@
     },
     {
       "anchor": {
-        "blob": "71dbb3f49f4fe25dd453868ddb896fa307b1d4e5",
+        "blob": "49d2854971e987aa28790d27ef4aaf9e62be4a1a",
         "content": "sha256:0c03cc75b825635daee440f64a1af5c5fcf0f5fbc57bbc635bf316414983de98",
         "locator": {
           "kind": "symbol",
@@ -39,8 +39,8 @@
     },
     {
       "anchor": {
-        "blob": "71dbb3f49f4fe25dd453868ddb896fa307b1d4e5",
-        "content": "sha256:afca8cc7973cb24d65d5a54bd1d4a2cb129bc4044ec0db400c71ff8316870ab7",
+        "blob": "49d2854971e987aa28790d27ef4aaf9e62be4a1a",
+        "content": "sha256:a1eace51f2373b2c6df49dafef155acac6f5c8520426d33c720a035fd560c3ab",
         "locator": {
           "kind": "symbol",
           "name": "LeafBindingRecoveryTests"
@@ -62,7 +62,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "71dbb3f49f4fe25dd453868ddb896fa307b1d4e5",
+            "blob": "49d2854971e987aa28790d27ef4aaf9e62be4a1a",
             "content": "sha256:207d6422925d39170ea0d8c6aae1963238a875ffc74a07871d7c480eac00f2fc",
             "locator": {
               "end": 157,
@@ -79,7 +79,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "71dbb3f49f4fe25dd453868ddb896fa307b1d4e5",
+            "blob": "49d2854971e987aa28790d27ef4aaf9e62be4a1a",
             "content": "sha256:29cd349507ffae5167716d523cc559d0842b16c6d4e6f586837297cca0a7b970",
             "locator": {
               "end": 387,
@@ -96,12 +96,29 @@
       "targets": [
         {
           "anchor": {
-            "blob": "71dbb3f49f4fe25dd453868ddb896fa307b1d4e5",
+            "blob": "49d2854971e987aa28790d27ef4aaf9e62be4a1a",
             "content": "sha256:9949afc4255476427cf52145fa4bab1f4c419e8df26e5756ac32f57f914918b4",
             "locator": {
-              "end": 654,
+              "end": 670,
               "kind": "line_range",
-              "start": 627
+              "start": 643
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "The existing LeafBindingRecoveryTests.test_route_review_delivery_carries_its_document gains a direct projection loop for begin_review and record_review. It supplies different code and memory states, requires reviewState/memoryReviewState/reviewKind to survive exactly, and excludes unprojectedDebug. Existing ordinary answer location/digest/recovery/diff cases remain.\n\nAnchor: Current test/support source",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "49d2854971e987aa28790d27ef4aaf9e62be4a1a",
+            "content": "sha256:13ac68d46f64e57e5fb36a72a71365270e757ef1bb2e93d12fff8008ac74359b",
+            "locator": {
+              "end": 670,
+              "kind": "line_range",
+              "start": 1
             }
           },
           "kind": "test"

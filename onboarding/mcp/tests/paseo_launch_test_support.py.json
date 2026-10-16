@@ -31,6 +31,23 @@
           "kind": "test"
         }
       ]
+    },
+    "3": {
+      "note": "FakeRuntime._agent_create now records a serviceTier only when featureValues actually contains service_tier, separately copies any supplied featureValues map and retains modeId when supplied. This supports permission-feature-only payloads without a service-tier KeyError and exposes submitted choices to the controlled observations. Default-model and idempotent agent-state behavior remain.\n\nAnchor: Current test/support source",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d3acfa989b137551340c24d0eda9d12ca1dcdc68",
+            "content": "sha256:21e1ec4fbc46c104184009ac129ec92a1bd04624a7d2be6cb52e8297a6b8e4c7",
+            "locator": {
+              "end": 353,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "test"
+        }
+      ]
     }
   },
   "schema": "ar-onboarding-file/v1"

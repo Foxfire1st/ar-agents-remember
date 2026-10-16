@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "b1024277b460ece8315abbad24554b4c827340c5",
-        "content": "sha256:1201a3f4583a5ec9f289d8830ca20c348cd686541811560e022fa4f0d0618d19",
+        "blob": "14e284444735ed4ed43101ca3775396ae4c53044",
+        "content": "sha256:b68ebb2a4cc01f25f38d1648145979d28ff8b4290c2edafee50d5aa57600c8f5",
         "locator": {
           "kind": "file"
         }
@@ -94,6 +94,59 @@
             "locator": {
               "kind": "symbol",
               "name": "RoleDispatchRequest"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Worker/Curator typed review census, record-only exclusion and unknown history.\n\nAnchor: L175–L240",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "29bbfb919fa2a5e25fc3e3ee172407e92e192fc0",
+            "content": "sha256:89c09fd0491880de2f7b715bffbe2d6b0605a6dea7400689519c43f40f7b119d",
+            "locator": {
+              "end": 240,
+              "kind": "line_range",
+              "start": 175
+            },
+            "path": "mcp/src/agents_remember/worktrees/review_history.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "Reason admission, threshold and differing-harness/model inheritance boundary.\n\nAnchor: L23–L84",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f341c13a99f485178e73c4ff8bf4de16267ee662",
+            "content": "sha256:5a3727f4901933c44cd5f7edc8b16220285a82a9e080326edf482cbb126f0b2f",
+            "locator": {
+              "end": 84,
+              "kind": "line_range",
+              "start": 23
+            },
+            "path": "mcp/src/agents_remember/cli/role_step_up.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "File-local implementation of the stated contract; caller-owned effects and governing workflow are separate evidence.\n\nAnchor: L76–L97",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "14e284444735ed4ed43101ca3775396ae4c53044",
+            "content": "sha256:dc189ab05c713c49fc9d94cd82095afb99d0ea70c8ec0abc800940f75e7c2adf",
+            "locator": {
+              "end": 97,
+              "kind": "line_range",
+              "start": 76
             }
           },
           "kind": "code"

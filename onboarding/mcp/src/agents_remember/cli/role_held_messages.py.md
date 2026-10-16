@@ -18,7 +18,14 @@ Stage compact terminal metadata before removing waiting text, then flush it into
 
 The serving loop calls `sweep_held_messages`. Resumable per-root walks yield at most thirty-two candidate paths and read at most thirty-two receipts per tick; drains have the same cap. Each visited directory’s names are materialized and sorted once per pass before yielding paths: that directory-listing cost is not a constant-time or elapsed-time bound. The accepted owner ruling permits this stable per-directory order, while forbidding a materialized set of all receipt paths. Root discovery is a separate glob over execution roots. History and message-binding subtrees are not descended into. `_receipt_needs_drain` checks the store even when a receipt counter is absent or zero. Product shutdown may pause delivery; durable text resumes with serving, without a sender/model turn.
 
+## Current Contract — Scoped Launch And Settings Changes
+
+_open_held_seat now invokes the receipt owner’s _restore_launch_handover with the saved launch call before adding waiting messages to the frozen opening prompt. The common path validates frozen detail identity/revision as well as restoring/verifying the primary handover and any takeover material.
+
+A ValueError releases the claim and returns cannot-open with the specific recovery detail; no host opening occurs and waiting messages remain. Existing successful opening stages terminal metadata before removal, and existing FIFO, batching, store limits, permission guards and bounded sweep contracts remain unchanged.
+
 ## Evidence
+
 
 - Admission appends under the store lock and refuses overflow without dropping text. [1]
 
@@ -27,3 +34,9 @@ The serving loop calls `sweep_held_messages`. Resumable per-root walks yield at 
 - Terminal lines are published separately from ended text and retain failure state. [3]
 
 - Yielded receipt paths, reads and drains are capped; one directory’s names are materialized in stable order per pass. [4]
+
+- Validation precedes prompt construction and host launch; failures retain waiting work. [5]
+
+- Common restoration also validates instruction details and takeover references. [6]
+
+- Test source checks cannot-open, zero second host calls and retained/reclaimable work. [7]

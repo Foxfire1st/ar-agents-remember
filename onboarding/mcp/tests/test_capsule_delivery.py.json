@@ -3,11 +3,22 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "Capsule delivery value boundaries: implementation/assertion boundary described above.",
+      "note": "The exact delivery field census admits separate empty-default detail references while task text has no instruction field; genuine compilation still supplies admitted binding/instructions/digest.\n\nAnchor: `test_task_and_skill_content_cannot_enter_the_instruction_slot`, `test_delivery_consumes_a_genuine_compilation_result`",
       "targets": [
         {
           "anchor": {
-            "blob": "6a19f7826f259455c66c06d9659279251fa147e0",
+            "blob": "d122bf6b1b14b5b5e12c8078079c14f92218190a",
+            "content": "sha256:65a689ae440f9a6b1c357ff2875caff3f0f18e7b0ce667291aa2eee82a22b7b9",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_task_and_skill_content_cannot_enter_the_instruction_slot"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "d122bf6b1b14b5b5e12c8078079c14f92218190a",
             "content": "sha256:c41ec377c7a7d31c946582398d2660f3bdd872269f4507cded13c7adf72a213a",
             "locator": {
               "kind": "symbol",

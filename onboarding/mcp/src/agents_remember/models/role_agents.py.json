@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "9df43447941466461a24b1b312da6bf557915f87",
+        "blob": "105a8bb1e9f5f0acd686f6aaa584300aad0313db",
         "content": "sha256:274997cf278cde1e5c28fc2d05cd73b78a3219085dc7bb579eb8dcb4ac08c09c",
         "locator": {
           "kind": "symbol",
@@ -21,7 +21,7 @@
     },
     {
       "anchor": {
-        "blob": "9df43447941466461a24b1b312da6bf557915f87",
+        "blob": "105a8bb1e9f5f0acd686f6aaa584300aad0313db",
         "content": "sha256:7fb555bc9408240767b57fe97ee031289336323a495483d6cd8c6c2a90e92862",
         "locator": {
           "kind": "symbol",
@@ -39,7 +39,7 @@
     },
     {
       "anchor": {
-        "blob": "9df43447941466461a24b1b312da6bf557915f87",
+        "blob": "105a8bb1e9f5f0acd686f6aaa584300aad0313db",
         "content": "sha256:92235b745ebbe236e99c4f26631380d9cba61ec3e64213e2c3dd8f93a9272538",
         "locator": {
           "kind": "symbol",
@@ -57,7 +57,7 @@
     },
     {
       "anchor": {
-        "blob": "9df43447941466461a24b1b312da6bf557915f87",
+        "blob": "105a8bb1e9f5f0acd686f6aaa584300aad0313db",
         "content": "sha256:93646618e32c968257ef1f5ffe4afbd82e81bbd477a1c10daaad783096376da8",
         "locator": {
           "kind": "symbol",
@@ -75,12 +75,12 @@
     },
     {
       "anchor": {
-        "blob": "9df43447941466461a24b1b312da6bf557915f87",
+        "blob": "105a8bb1e9f5f0acd686f6aaa584300aad0313db",
         "content": "sha256:d9d6a2973a94509b76cf42d4ee79b64677d590f9f7de0709c5198c96a8f70e41",
         "locator": {
-          "end": 79,
+          "end": 80,
           "kind": "line_range",
-          "start": 56
+          "start": 57
         }
       },
       "id": "RLZ-YG8KWM",
@@ -104,6 +104,40 @@
             "locator": {
               "kind": "symbol",
               "name": "RoleStartCall"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "File-local implementation of the stated contract; caller-owned effects and governing workflow are separate evidence.\n\nAnchor: L19–L46",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "105a8bb1e9f5f0acd686f6aaa584300aad0313db",
+            "content": "sha256:ac5df17dfb3be9081abd6566cfde2ee6db2c42a7ba8f1355bd80cf5f0d03aaac",
+            "locator": {
+              "end": 46,
+              "kind": "line_range",
+              "start": 19
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "File-local implementation of the stated contract; caller-owned effects and governing workflow are separate evidence.\n\nAnchor: L158–L184",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "105a8bb1e9f5f0acd686f6aaa584300aad0313db",
+            "content": "sha256:bdfdf369f3a0bd0c0d3eb546f24a878c5abe5dc8a354ad0fc01beb68a937b0e0",
+            "locator": {
+              "end": 184,
+              "kind": "line_range",
+              "start": 158
             }
           },
           "kind": "code"
@@ -203,6 +237,42 @@
               "start": 69
             },
             "path": "mcp/src/agents_remember/application/agent_binding.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "Worker/Curator typed review census, record-only exclusion and unknown history.\n\nAnchor: L175–L240",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "29bbfb919fa2a5e25fc3e3ee172407e92e192fc0",
+            "content": "sha256:89c09fd0491880de2f7b715bffbe2d6b0605a6dea7400689519c43f40f7b119d",
+            "locator": {
+              "end": 240,
+              "kind": "line_range",
+              "start": 175
+            },
+            "path": "mcp/src/agents_remember/worktrees/review_history.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "Reason admission, threshold and differing-harness/model inheritance boundary.\n\nAnchor: L23–L84",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f341c13a99f485178e73c4ff8bf4de16267ee662",
+            "content": "sha256:5a3727f4901933c44cd5f7edc8b16220285a82a9e080326edf482cbb126f0b2f",
+            "locator": {
+              "end": 84,
+              "kind": "line_range",
+              "start": 23
+            },
+            "path": "mcp/src/agents_remember/cli/role_step_up.py"
           },
           "kind": "code"
         }

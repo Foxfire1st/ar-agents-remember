@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "a2d423462e9fdf28604446fbd634d2063e6c1a4d",
+        "blob": "ce3562637ef9146c730bbacc243e73efb61ace86",
         "content": "sha256:f0d882fa36fd738c83a36932b1de094cad0e96e69832602a77b24138a1c689c4",
         "locator": {
           "kind": "symbol",
@@ -21,12 +21,11 @@
     },
     {
       "anchor": {
-        "blob": "a2d423462e9fdf28604446fbd634d2063e6c1a4d",
-        "content": "sha256:22bedcb01f98539e6da3e36456d86eddde018819f0f9ff2ca23b9491e899921c",
+        "blob": "ce3562637ef9146c730bbacc243e73efb61ace86",
+        "content": "sha256:60b0a18c662d3085df362bfa4222460a4715f1dc3cfd134e7970ad2c13be5641",
         "locator": {
-          "end": 128,
-          "kind": "line_range",
-          "start": 80
+          "kind": "symbol",
+          "name": "_execute_prepared_launch"
         }
       },
       "id": "RLZ-5Z2YB3",
@@ -40,8 +39,8 @@
     },
     {
       "anchor": {
-        "blob": "a2d423462e9fdf28604446fbd634d2063e6c1a4d",
-        "content": "sha256:22bedcb01f98539e6da3e36456d86eddde018819f0f9ff2ca23b9491e899921c",
+        "blob": "ce3562637ef9146c730bbacc243e73efb61ace86",
+        "content": "sha256:60b0a18c662d3085df362bfa4222460a4715f1dc3cfd134e7970ad2c13be5641",
         "locator": {
           "kind": "symbol",
           "name": "_execute_prepared_launch"
@@ -58,8 +57,8 @@
     },
     {
       "anchor": {
-        "blob": "a2d423462e9fdf28604446fbd634d2063e6c1a4d",
-        "content": "sha256:42aa2b82c9c214f35819c819269d9114f87933e3f834cb423e42196d9ff3f2f3",
+        "blob": "ce3562637ef9146c730bbacc243e73efb61ace86",
+        "content": "sha256:6be910daf4fe700b9505242274bf0f7b7ab451e415ca9f39bb8a1b9c8f4d5ab8",
         "locator": {
           "kind": "symbol",
           "name": "_public_execution"
@@ -76,12 +75,11 @@
     },
     {
       "anchor": {
-        "blob": "a2d423462e9fdf28604446fbd634d2063e6c1a4d",
+        "blob": "ce3562637ef9146c730bbacc243e73efb61ace86",
         "content": "sha256:e9e967ca283364db610815410bd4c44c92806dd3617fc94747f2a5d2247bf81a",
         "locator": {
-          "end": 912,
-          "kind": "line_range",
-          "start": 897
+          "kind": "symbol",
+          "name": "_create_receipt"
         }
       },
       "id": "RLZ-E1BBP0",
@@ -95,12 +93,11 @@
     },
     {
       "anchor": {
-        "blob": "a2d423462e9fdf28604446fbd634d2063e6c1a4d",
+        "blob": "ce3562637ef9146c730bbacc243e73efb61ace86",
         "content": "sha256:e08154c185afc4568a9c151f6ec848a40847b339eae2ce3694ade6d1156edaa9",
         "locator": {
-          "end": 395,
-          "kind": "line_range",
-          "start": 390
+          "kind": "symbol",
+          "name": "_saved_first_message"
         }
       },
       "id": "RLZ-G892DG",
@@ -114,8 +111,8 @@
     },
     {
       "anchor": {
-        "blob": "a2d423462e9fdf28604446fbd634d2063e6c1a4d",
-        "content": "sha256:42aa2b82c9c214f35819c819269d9114f87933e3f834cb423e42196d9ff3f2f3",
+        "blob": "ce3562637ef9146c730bbacc243e73efb61ace86",
+        "content": "sha256:6be910daf4fe700b9505242274bf0f7b7ab451e415ca9f39bb8a1b9c8f4d5ab8",
         "locator": {
           "kind": "symbol",
           "name": "_public_execution"
@@ -132,8 +129,8 @@
     },
     {
       "anchor": {
-        "blob": "a2d423462e9fdf28604446fbd634d2063e6c1a4d",
-        "content": "sha256:42aa2b82c9c214f35819c819269d9114f87933e3f834cb423e42196d9ff3f2f3",
+        "blob": "ce3562637ef9146c730bbacc243e73efb61ace86",
+        "content": "sha256:6be910daf4fe700b9505242274bf0f7b7ab451e415ca9f39bb8a1b9c8f4d5ab8",
         "locator": {
           "kind": "symbol",
           "name": "_public_execution"
@@ -150,12 +147,11 @@
     },
     {
       "anchor": {
-        "blob": "a2d423462e9fdf28604446fbd634d2063e6c1a4d",
-        "content": "sha256:22bedcb01f98539e6da3e36456d86eddde018819f0f9ff2ca23b9491e899921c",
+        "blob": "ce3562637ef9146c730bbacc243e73efb61ace86",
+        "content": "sha256:60b0a18c662d3085df362bfa4222460a4715f1dc3cfd134e7970ad2c13be5641",
         "locator": {
-          "end": 128,
-          "kind": "line_range",
-          "start": 80
+          "kind": "symbol",
+          "name": "_execute_prepared_launch"
         }
       },
       "id": "RLZ-PDSMW4",
@@ -169,26 +165,8 @@
     },
     {
       "anchor": {
-        "blob": "a2d423462e9fdf28604446fbd634d2063e6c1a4d",
-        "content": "sha256:14ac049261997e14479e0eba54f6bf3c32fee47373a6794adce519f3ae86531e",
-        "locator": {
-          "kind": "symbol",
-          "name": "_observe_launch_choices"
-        }
-      },
-      "id": "RLZ-Q1N4P2",
-      "invariant": "INV-YDDMGJ",
-      "origin": {
-        "handoffEntry": "L71-CURRENT242-W-07",
-        "leaf": "260928-MIK-L71"
-      },
-      "rationale": "Observed host choices are recorded against stated/resolved choices, including a warning when the host does not apply a stated mode.",
-      "role": "presentation"
-    },
-    {
-      "anchor": {
-        "blob": "a2d423462e9fdf28604446fbd634d2063e6c1a4d",
-        "content": "sha256:22bedcb01f98539e6da3e36456d86eddde018819f0f9ff2ca23b9491e899921c",
+        "blob": "ce3562637ef9146c730bbacc243e73efb61ace86",
+        "content": "sha256:60b0a18c662d3085df362bfa4222460a4715f1dc3cfd134e7970ad2c13be5641",
         "locator": {
           "kind": "symbol",
           "name": "_execute_prepared_launch"
@@ -205,12 +183,11 @@
     },
     {
       "anchor": {
-        "blob": "a2d423462e9fdf28604446fbd634d2063e6c1a4d",
+        "blob": "ce3562637ef9146c730bbacc243e73efb61ace86",
         "content": "sha256:7074260c5abeecf94e3db69e79ef974b3cff0f80807c7a583086aa612f46bc8c",
         "locator": {
-          "end": 894,
-          "kind": "line_range",
-          "start": 862
+          "kind": "symbol",
+          "name": "_write_receipt"
         }
       },
       "id": "RLZ-RFNY7Y",
@@ -224,7 +201,7 @@
     },
     {
       "anchor": {
-        "blob": "a2d423462e9fdf28604446fbd634d2063e6c1a4d",
+        "blob": "ce3562637ef9146c730bbacc243e73efb61ace86",
         "content": "sha256:7074260c5abeecf94e3db69e79ef974b3cff0f80807c7a583086aa612f46bc8c",
         "locator": {
           "kind": "symbol",
@@ -242,8 +219,8 @@
     },
     {
       "anchor": {
-        "blob": "a2d423462e9fdf28604446fbd634d2063e6c1a4d",
-        "content": "sha256:62448557802a49e8c1c7ddc07e9640f4c1ffcc068fdef626592c0178af968ec7",
+        "blob": "ce3562637ef9146c730bbacc243e73efb61ace86",
+        "content": "sha256:6e1e9914f4cc0d0fbe3a0f34fc74430708e260aa16b1b528ff2fca05686bbe4f",
         "locator": {
           "kind": "symbol",
           "name": "_request_digest"
@@ -260,8 +237,8 @@
     },
     {
       "anchor": {
-        "blob": "a2d423462e9fdf28604446fbd634d2063e6c1a4d",
-        "content": "sha256:22bedcb01f98539e6da3e36456d86eddde018819f0f9ff2ca23b9491e899921c",
+        "blob": "ce3562637ef9146c730bbacc243e73efb61ace86",
+        "content": "sha256:60b0a18c662d3085df362bfa4222460a4715f1dc3cfd134e7970ad2c13be5641",
         "locator": {
           "kind": "symbol",
           "name": "_execute_prepared_launch"
@@ -278,12 +255,12 @@
     },
     {
       "anchor": {
-        "blob": "a2d423462e9fdf28604446fbd634d2063e6c1a4d",
+        "blob": "ce3562637ef9146c730bbacc243e73efb61ace86",
         "content": "sha256:2980ed72f696b5c2250df1bff2f2769ad6eaf90ff1f71e62571e5b8f13539d1b",
         "locator": {
-          "end": 859,
+          "end": 789,
           "kind": "line_range",
-          "start": 830
+          "start": 760
         }
       },
       "id": "RLZ-VYFJX1",
@@ -297,7 +274,7 @@
     },
     {
       "anchor": {
-        "blob": "a2d423462e9fdf28604446fbd634d2063e6c1a4d",
+        "blob": "ce3562637ef9146c730bbacc243e73efb61ace86",
         "content": "sha256:e9e967ca283364db610815410bd4c44c92806dd3617fc94747f2a5d2247bf81a",
         "locator": {
           "kind": "symbol",
@@ -430,12 +407,80 @@
         }
       ]
     },
+    "16": {
+      "note": "Decision, artifacts, predecessor liveness and outcome reconciliation preserve saved identity.\n\nAnchor: Current source; preserved L88 property 16",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ce3562637ef9146c730bbacc243e73efb61ace86",
+            "content": "sha256:60b0a18c662d3085df362bfa4222460a4715f1dc3cfd134e7970ad2c13be5641",
+            "locator": {
+              "end": 146,
+              "kind": "line_range",
+              "start": 89
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "17": {
+      "note": "Replay validation binds primary/detail/takeover artifacts.\n\nAnchor: Current source; preserved L88 property 17",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ce3562637ef9146c730bbacc243e73efb61ace86",
+            "content": "sha256:b5a859b60be97ef213c9d51289edeff5ceb68c0498bb005434e341ae666af600",
+            "locator": {
+              "end": 174,
+              "kind": "line_range",
+              "start": 149
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "18": {
+      "note": "Optional reason enters request identity without altering absent requests.\n\nAnchor: Current source; preserved L88 property 18",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ce3562637ef9146c730bbacc243e73efb61ace86",
+            "content": "sha256:6e1e9914f4cc0d0fbe3a0f34fc74430708e260aa16b1b528ff2fca05686bbe4f",
+            "locator": {
+              "end": 633,
+              "kind": "line_range",
+              "start": 611
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "19": {
+      "note": "Conditional retry payload preserves original selection/reason.\n\nAnchor: Current source; preserved L88 property 19",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ce3562637ef9146c730bbacc243e73efb61ace86",
+            "content": "sha256:6be910daf4fe700b9505242274bf0f7b7ab451e415ca9f39bb8a1b9c8f4d5ab8",
+            "locator": {
+              "end": 717,
+              "kind": "line_range",
+              "start": 636
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
     "2": {
       "note": "Frozen implementation of _create_receipt supporting the stated file behavior.",
       "targets": [
         {
           "anchor": {
-            "blob": "a2d423462e9fdf28604446fbd634d2063e6c1a4d",
+            "blob": "ce3562637ef9146c730bbacc243e73efb61ace86",
             "content": "sha256:e9e967ca283364db610815410bd4c44c92806dd3617fc94747f2a5d2247bf81a",
             "locator": {
               "kind": "symbol",
@@ -443,6 +488,24 @@
             }
           },
           "kind": "code"
+        }
+      ]
+    },
+    "20": {
+      "note": "Test source checks validator refusal before host replay.\n\nAnchor: Current source; preserved L88 property 20",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dc353ac323b83fb206adffac4bfcf135542f1f49",
+            "content": "sha256:140012d8899387d059b9e033e011bf0db1448125b40f693f41cf32aeea064279",
+            "locator": {
+              "end": 179,
+              "kind": "line_range",
+              "start": 158
+            },
+            "path": "mcp/tests/test_capsule_replay_integrity.py"
+          },
+          "kind": "test"
         }
       ]
     },

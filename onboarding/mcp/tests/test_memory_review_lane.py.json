@@ -1,0 +1,167 @@
+{
+  "path": "mcp/tests/test_memory_review_lane.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Source assertion: test_memory_record_answer_uses_curator_lane_without_reopening_passed_code. The declaration is not an execution receipt.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8a37758fd506b0b1208e26bb4bf7d16197dd3d90",
+            "content": "sha256:323e3f48d42d60f0930a629e2a94adce1a44f3028835b81dd99b29610371b4be",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_memory_record_answer_uses_curator_lane_without_reopening_passed_code"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "10": {
+      "note": "Source assertion: test_invalid_kinds_and_incomplete_memory_count_fail_closed. The declaration is not an execution receipt.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8a37758fd506b0b1208e26bb4bf7d16197dd3d90",
+            "content": "sha256:f5ebe74b66284674f1052ac89d13f150b89c65f533b8948624b63c1de2c30b5b",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_invalid_kinds_and_incomplete_memory_count_fail_closed"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Source assertion: test_memory_baseline_after_code_pass_is_independent_and_persisted. The declaration is not an execution receipt.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8a37758fd506b0b1208e26bb4bf7d16197dd3d90",
+            "content": "sha256:5219bc2cd798e49ce90d5b43adc554ec8ca4db95baaa3be41985356e1e81c183",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_memory_baseline_after_code_pass_is_independent_and_persisted"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Source assertion: test_memory_record_only_binds_memory_bytes_not_code_bytes. The declaration is not an execution receipt.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8a37758fd506b0b1208e26bb4bf7d16197dd3d90",
+            "content": "sha256:bcf3c8cef187c47c2deec746e98ba73ae9d695b00d095741acf9bc84065ec194",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_memory_record_only_binds_memory_bytes_not_code_bytes"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "Source assertion: test_memory_lane_strict_reader_and_launch_only_diagnostic_preserve_raw_state. The declaration is not an execution receipt.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8a37758fd506b0b1208e26bb4bf7d16197dd3d90",
+            "content": "sha256:3bc51e9be9962f5f0e501c30443f4f934f3aa4276b4eff8dfc1b0a3df22ec200",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_memory_lane_strict_reader_and_launch_only_diagnostic_preserve_raw_state"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "Source assertion: test_memory_lane_cannot_be_authored_or_erased_by_generic_task_mutations. The declaration is not an execution receipt.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8a37758fd506b0b1208e26bb4bf7d16197dd3d90",
+            "content": "sha256:7e7eba2185cd42fd69b1ba8df5f576a42921be35551db44329a7f54eca7ee4de",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_memory_lane_cannot_be_authored_or_erased_by_generic_task_mutations"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "Source assertion: test_memory_candidate_authority_uses_contract_or_configured_fallback_only. The declaration is not an execution receipt.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8a37758fd506b0b1208e26bb4bf7d16197dd3d90",
+            "content": "sha256:90b7e6e47a040d99562ac08e2a1067d38178ad8a58766187d7b2b720d2fd8797",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_memory_candidate_authority_uses_contract_or_configured_fallback_only"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "Source assertion: test_memory_kind_cannot_publish_code_route_evidence. The declaration is not an execution receipt.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8a37758fd506b0b1208e26bb4bf7d16197dd3d90",
+            "content": "sha256:efb64a8ded064c4c33f85dcfca8ea6e6eebcec666951993c37073cb6699ba20a",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_memory_kind_cannot_publish_code_route_evidence"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "Source assertion: test_product_memory_threshold_own_limits_approval_and_shrinking_list. The declaration is not an execution receipt.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8a37758fd506b0b1208e26bb4bf7d16197dd3d90",
+            "content": "sha256:677fcc3474efeb644e25ec094364c3a8054b1efafb528533eaf0329cd46cd64d",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_product_memory_threshold_own_limits_approval_and_shrinking_list"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "9": {
+      "note": "Source assertion: test_legacy_mixed_code_records_are_not_migrated_into_curator_count. The declaration is not an execution receipt.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8a37758fd506b0b1208e26bb4bf7d16197dd3d90",
+            "content": "sha256:10ac835b644d6c1fcbcd070bd07e91e353a55d7b02ce15498a373d35cb5a9bc7",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_legacy_mixed_code_records_are_not_migrated_into_curator_count"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

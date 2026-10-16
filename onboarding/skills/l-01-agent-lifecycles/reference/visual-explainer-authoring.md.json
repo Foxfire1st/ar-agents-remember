@@ -1,0 +1,24 @@
+{
+  "path": "skills/l-01-agent-lifecycles/reference/visual-explainer-authoring.md",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "New optional explainer path applying the single writing profile to candidate-bound diagrams, labels and narrative.\n\nAnchor: Candidate instruction body, lines 3–25",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e7ae050ad1dfb1f2aa6e6e6686a92ca5cfd4330a",
+            "content": "sha256:e39fef3b7d741e70f9a6c4d9844f960cce7e4bd2551f0303dff28cf1c0a4ee5a",
+            "locator": {
+              "end": 25,
+              "kind": "line_range",
+              "start": 3
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

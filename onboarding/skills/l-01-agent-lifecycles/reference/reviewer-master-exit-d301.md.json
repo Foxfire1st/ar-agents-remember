@@ -1,0 +1,24 @@
+{
+  "path": "skills/l-01-agent-lifecycles/reference/reviewer-master-exit-d301.md",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "New master-exit-only affirmative completeness detail, retaining the blocking consequence.\n\nAnchor: Candidate instruction body, lines 1–6",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "99a9b9a9f248e28d650a1afb43429172a05d4a67",
+            "content": "sha256:27b342820b8b4f2ed278f83eb00aa30d178fed5cffb267fde6a73ac533703481",
+            "locator": {
+              "end": 6,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -199,7 +199,22 @@ Source account retained from the parked claim (anchor currency not renewed here)
 
 Historical prior wording (superseded by the current namespace/matrix account): **Historical source-bound reference account, not an operative override:** **The record-beside-the-bytes namespace, corrected in place: the receipt when there is one, otherwise the before half's own generation record, and the requested repository only when neither exists.** (prior reference 105)
 
+## Role Launch Alternatives And Frozen Instruction Details
+
+Role launch now has narrow extracted owners: role_launch_defaults projects per-use settings/provenance; role_step_up selects one optional user alternative; role_start_execution performs exact-request preparation/reservation; role_start_answer projects the detailed receipt answer; role_launch_choices and role_launch_outcome own observation and publication while receipts retain call seams.
+
+Only completed failing code review rounds count for Worker; only completed failing memory review rounds count for Curator. Record-only checks of the unchanged candidate do not add a try; no legacy mixed-code row is reinterpreted as a Curator round. The optional user alternative defaults to afterTries=3 for these roles, not to extra review authority.
+
+A configured alternative is not a product-supplied model. Cross-provider/model omitted fields never inherit base mode/features/notes; the successor’s offered host default mode is explicit and distinct from ordinary least-working-mode resolution. Validate alternatives before retiring the current holder. Step-up replacement retains existing starter/launcher authority, never interrupts a turn or permission prompt, and renews liveness before every saved archive attempt.
+
+Canonical task decisions retain selected step-up provenance across later starts and receipt loss. This is a task-writer publication of launch metadata, not execution-receipt authority over review findings, rounds, limits or acceptance. Host-observed destination stays distinct from requested choices; unconfirmed receipt-loss predecessors are unknown, not today’s base defaults.
+
+Frozen D301/R125 details are immutable request siblings named by source-path hash, composed into instruction pointers before user notes and validated for canonical report identity and revision on ordinary replay and held opening. Missing details require original bytes. Primary/takeover restoration uses saved bytes; it never regenerates from the current corpus or overwrites changed/nonregular targets.
+
+Takeover material retains previous model/provenance, verdict, remaining findings, earlier report paths and advisory bounded dirty inventories in the unchanged worktree. A failed creation after settled retirement can leave an empty step-up seat; repeat the same request/selection/reason/overrides against its saved call. This changes no Reviewer or review budget and is not a review verdict.
+
 ## Evidence
+
 
 - Explicit task preparation follows deterministic bounded archive successors and returns only a validated live workspace; folder opening stays separate. [323]
 
@@ -566,3 +581,15 @@ Historical prior wording (superseded by the current namespace/matrix account): *
 - TaskSummary bodies use a separate bounded generation-qualified cache, with content-derived revision. [327]
 - Obsolete terminal lock cleanup requires a complete canonical-contract census and preserves any subject not proved terminal. [328]
 - The composed declaration is 6000 unit and 1000 integration collected cases; declarations are not execution counts. [329]
+
+- User alternatives select by manual/prior/threshold facts with no cross-scope choice carry. [330]
+
+- Worker code and Curator memory failures count independently; incomplete history stays unknown. [331]
+
+- Replacement rechecks idle and pending permission at every saved archival call. [332]
+
+- Step-up launch metadata is reconciled through the canonical task writer. [333]
+
+- Frozen detail identities and bytes are checked rather than recomputed. [334]
+
+- Only settled empty stepped-up creation failures retain saved-call retry. [335]

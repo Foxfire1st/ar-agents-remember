@@ -3,10 +3,31 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "ec9c3e6658331150d5e253965df7876d572ba086",
-        "content": "sha256:b6f88d3195695321b41c9182d1c837378fb680523f732d21c670ba9f10b95594",
+        "blob": "c88f998589d4789d0c221717bf72f8c258070afc",
+        "content": "sha256:729df695a7a574a5311c4211594373ffe0fab1a0b1c95b7942bf2da47669b86f",
         "locator": {
-          "kind": "file"
+          "end": 28,
+          "kind": "line_range",
+          "start": 14
+        }
+      },
+      "id": "RLZ-MN85JH",
+      "invariant": "INV-V7M37D",
+      "origin": {
+        "handoffEntry": "R99-2a-code-memory-lanes",
+        "leaf": "260928-MIK-L99"
+      },
+      "rationale": "The operation assigns ordinary leaf code-round begin/result to Reviewer and separates memory reports, IDs and count from passed code review. Recorded memory lanes apply after landing; under-way memory checks finish as begun.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "c88f998589d4789d0c221717bf72f8c258070afc",
+        "content": "sha256:71bd7eb7f9aea55163c813b0b4e6299f8e63d8bb45d0412e21a186f94a1725e6",
+        "locator": {
+          "end": 36,
+          "kind": "line_range",
+          "start": 36
         }
       },
       "id": "RLZ-QBD8GV",
@@ -20,10 +41,31 @@
     },
     {
       "anchor": {
-        "blob": "ec9c3e6658331150d5e253965df7876d572ba086",
-        "content": "sha256:b6f88d3195695321b41c9182d1c837378fb680523f732d21c670ba9f10b95594",
+        "blob": "c88f998589d4789d0c221717bf72f8c258070afc",
+        "content": "sha256:418b3754fb2a5b8a89b36b550b4b4e217a619f7723d9292c1af0b228474e0e29",
         "locator": {
-          "kind": "file"
+          "end": 31,
+          "kind": "line_range",
+          "start": 28
+        }
+      },
+      "id": "RLZ-R5RASM",
+      "invariant": "INV-RKGNF8",
+      "origin": {
+        "handoffEntry": "R99-D95-curator-code-concerns",
+        "leaf": "260928-MIK-L99"
+      },
+      "rationale": "Requires an answer/adjudication and separate code-concern evidence without silently changing fixed-list IDs.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "c88f998589d4789d0c221717bf72f8c258070afc",
+        "content": "sha256:5503aa8df111151ae30db644bf56b144778f7649d50b3e921df92d545f000586",
+        "locator": {
+          "end": 20,
+          "kind": "line_range",
+          "start": 14
         }
       },
       "id": "RLZ-ZP7MHN",
@@ -110,6 +152,40 @@
             "content": "sha256:b6f88d3195695321b41c9182d1c837378fb680523f732d21c670ba9f10b95594",
             "locator": {
               "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Partitions Reviewer-only handover/record-only/code-concern method from common review rules and adds the post-landing recorded memory lane.\n\nAnchor: Candidate instruction body, lines 1–20",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c88f998589d4789d0c221717bf72f8c258070afc",
+            "content": "sha256:d62617ec9e71bb9243c0e2d40d657c8f76d10a5c23203270f5a1900fd273e9e4",
+            "locator": {
+              "end": 20,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "Partitions Reviewer-only handover/record-only/code-concern method from common review rules and adds the post-landing recorded memory lane.\n\nAnchor: Candidate instruction body, lines 22–38",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c88f998589d4789d0c221717bf72f8c258070afc",
+            "content": "sha256:0c44e6bd1626b44cba2f7aae1d92b52a295a8002084910ce6883c21a73f2b766",
+            "locator": {
+              "end": 38,
+              "kind": "line_range",
+              "start": 22
             }
           },
           "kind": "code"

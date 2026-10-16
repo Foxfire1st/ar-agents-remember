@@ -37,6 +37,77 @@
         }
       ]
     },
+    "11": {
+      "note": "Launch copies detail files, substitutes paths, and records frozen revisions.\n\nAnchor: L16–L35",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "682d4179b094bd4e50d1f67363fe398d5e4e40c9",
+            "content": "sha256:60172f37e29d829d04a0c011bfce73b96756f430b581516ca3dce6f39fbf91d8",
+            "locator": {
+              "end": 35,
+              "kind": "line_range",
+              "start": 16
+            },
+            "path": "mcp/src/agents_remember/cli/role_instruction_details.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "Replay validates regular opened files, content revisions and original canonical report binding, not mutable corpus sources.\n\nAnchor: L38–L88",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "682d4179b094bd4e50d1f67363fe398d5e4e40c9",
+            "content": "sha256:a3660f0512fa0094c6c5fa934139c0b4e7dbf580921a9fdb0c9218c0600898b7",
+            "locator": {
+              "end": 88,
+              "kind": "line_range",
+              "start": 38
+            },
+            "path": "mcp/src/agents_remember/cli/role_instruction_details.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "Per-request detail artifacts use exact admitted bytes beside the handover and write-once publication.\n\nAnchor: L59–L74",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "85b470bea18f2548365b969746fd9e7ef5ea00cf",
+            "content": "sha256:53ae089e7b885fad8e278a7a4540e98ab4b52f03f6e60ecbb8260f070081a4d4",
+            "locator": {
+              "end": 74,
+              "kind": "line_range",
+              "start": 59
+            },
+            "path": "mcp/src/agents_remember/cli/role_handover_artifacts.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "14": {
+      "note": "File-local implementation of the stated contract; caller-owned effects and governing workflow are separate evidence.\n\nAnchor: L85–L119",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2f9008e97604943a305aca323ecb9410f0e66057",
+            "content": "sha256:aa22f760fb62bf83b923181ab6aedd840795b5752dd9e472e0a273ff74d2bc81",
+            "locator": {
+              "end": 119,
+              "kind": "line_range",
+              "start": 85
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
     "2": {
       "note": "Provenance travels with the bytes: origin, identity, this file's revision, and the trust statement.",
       "targets": [
@@ -91,7 +162,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "90a25a6f5ceee4fe834fa6cf854b9b489659cdf2",
+            "blob": "2f9008e97604943a305aca323ecb9410f0e66057",
             "content": "sha256:4d21205c243e338e7f56dbfb552057f9abfe5064e20860150c824aea796e2f87",
             "locator": {
               "kind": "symbol",
@@ -102,7 +173,7 @@
         },
         {
           "anchor": {
-            "blob": "90a25a6f5ceee4fe834fa6cf854b9b489659cdf2",
+            "blob": "2f9008e97604943a305aca323ecb9410f0e66057",
             "content": "sha256:f61bb4a6dce52283d4e93751b139e978b37d86010095e966a03b8849f337baf1",
             "locator": {
               "kind": "symbol",
@@ -118,7 +189,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "930081c5d499f7270a7cb697d458ef0bb62d2e97",
+            "blob": "6df57ae981982e091e8dd11888f3f8af12865542",
             "content": "sha256:e2bed5eb9ba75146d7e2bd781cb38307db5b90b91663f16f75bfa7d5e8016403",
             "locator": {
               "kind": "symbol",
@@ -147,7 +218,7 @@
         },
         {
           "anchor": {
-            "blob": "930081c5d499f7270a7cb697d458ef0bb62d2e97",
+            "blob": "6df57ae981982e091e8dd11888f3f8af12865542",
             "content": "sha256:c3fcf3648ee9a334adea687e5219d8eaa03852026cc43e2a36e5c481ef8a5cd1",
             "locator": {
               "kind": "symbol",
@@ -159,7 +230,7 @@
         },
         {
           "anchor": {
-            "blob": "930081c5d499f7270a7cb697d458ef0bb62d2e97",
+            "blob": "6df57ae981982e091e8dd11888f3f8af12865542",
             "content": "sha256:101b00e18d3e8cfe9badf6f0a19c0b0bd84063be7b88c8504e56a399b33234c5",
             "locator": {
               "kind": "symbol",
@@ -176,7 +247,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1d6d4c77ad41eb2f9783975d929a3519d218f22f",
+            "blob": "231672944ca7b848d89e9ce82d950d95d92e5cc2",
             "content": "sha256:e8181a0720290a24893083991566ddd792976aeb263d08e9046d7d6ef75c9097",
             "locator": {
               "kind": "symbol",
@@ -188,12 +259,12 @@
         },
         {
           "anchor": {
-            "blob": "1d6d4c77ad41eb2f9783975d929a3519d218f22f",
+            "blob": "231672944ca7b848d89e9ce82d950d95d92e5cc2",
             "content": "sha256:23240413395f0870408b2e3081f13621edce1e1fd1bfd54b1e279e2fe0c1da41",
             "locator": {
-              "end": 828,
+              "end": 853,
               "kind": "line_range",
-              "start": 794
+              "start": 819
             },
             "path": "mcp/tests/test_capsule_serving.py"
           },

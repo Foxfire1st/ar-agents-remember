@@ -57,6 +57,10 @@ run or issue an acceptance verdict.
 
 The combined public API and master integration exercise remains parent-owned.
 
+## Current scoped contract
+
+The `tools` fault-injection alias now names `task_doc_route_review`, where the candidate resolver is consumed. The unchanged real-mutation/unavailable-identity test therefore targets the actual review admission seam. Its round/findings-preservation assertions, public task_doc caller and source-only evidence class remain unchanged.
+
 ## Evidence
 
 ### Docs References
@@ -97,3 +101,6 @@ behavior. No focused pass, landed commit identity, independent review, or accept
 verification metadata remains blank until governed closeout stamps a genuine code commit.
 
 - Canonical JSON is read through _leaf_doc; absent-state projection uses review_state_payload, and _effective_limit combines settings with additionalRounds. Legacy get-named methods no longer call get. Begin/record responses still expose reviewState/limit, while mutation/refusal assertions reread stored state. These helper/application seams preserve rounds, count, sealed findings and budget rules without claiming a removed read operation remains supported. [7]
+
+
+- Only the tools alias changes from task_doc_tools to task_doc_route_review. The unchanged test_failed_identity_reads_refuse_around_a_real_mutation monkeypatches tools.resolve_candidate_identity, which is now the actual owner consulted by review candidate admission. Its tracked mutation/unproven binding refusals and persisted round/findings checks are unchanged. [8]

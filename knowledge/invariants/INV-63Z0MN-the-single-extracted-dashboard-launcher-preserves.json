@@ -8,8 +8,9 @@
   },
   "applicability": "Every dashboard role launch through the single extracted launcher.",
   "conditions": [
-    "Model and effort changes carry all five operands including featureValues.",
-    "Defaults remain displayed in their selectors/chips; complete selected labels and the source of each default remain available in the corresponding control hover."
+    "Ordinary model/effort changes preserve the five existing operands including featureValues.",
+    "After step-up, base chips and speed controls are non-applied previews, not evidence of selected-host mode/features.",
+    "Observed model/source come from the receipt; unreported mode/features remain explicitly unknown."
   ],
   "exclusions": [
     "Merging host-offered speed controls into permission policy.",
@@ -27,9 +28,9 @@
     "leaf": "260928-MIK-L71",
     "task": "260928-MIK"
   },
-  "revision": 2,
+  "revision": 3,
   "schema": "ar-invariant/v1",
-  "statement": "The single extracted dashboard launcher preserves every stated feature through model and effort changes; defaults and provenance are visible and host-offered speed controls remain distinct from permission policy.",
+  "statement": "The single extracted dashboard launcher preserves ordinary selected features through model/effort changes with visible default provenance. A stepped-up receipt instead labels base choices as non-applied previews and displays only reported step-up observations; speed remains separate from permission policy.",
   "status": "proposed",
   "supersedes": []
 }

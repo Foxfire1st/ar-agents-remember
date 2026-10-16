@@ -10,7 +10,7 @@ Owns durable current-line launch receipts, immutable saved-call replay, report b
 
 ## Code Commentary
 
-Receipt creation is exclusive and complete before native launch. `_execute_prepared_launch` republishes receipt-bound role facts before the native launch/replay call; this best-effort publication and host execution are separate boundaries, not one atomic transaction; unknown outcomes retain replayRequest with original UUID/prompt/options. Resolved ordinary receipts drop replayRequest. A created held seat instead keeps its saved call and opening handover, reports `held`, and restores the artifact from `heldOpeningPrompt` on retry without inventing a first message. Public projection names an eligible leaf holder for the launcher; closing-mark refusals still override retry/revive/start affordances without erasing archival debt. Taskless canonical storage/migration remains bounded to exact receipt identities; old schema at current address refuses, previous host receipts are not execution authority. Public execution whitelists lifecycle fields and requested/observed tier disclosure, never task acceptance.
+Receipt creation is exclusive and complete before native launch. `_execute_prepared_launch` republishes receipt-bound role facts before the native launch/replay call; this best-effort publication and host execution are separate boundaries, not one atomic transaction; unknown outcomes retain replayRequest with original UUID/prompt/options. Resolved ordinary receipts drop replayRequest. A rejected step-up with a settled predecessor and no lost successor instead retains its saved call for same-request retry; other rejections remain closed. A created held seat instead keeps its saved call and opening handover, reports `held`, and restores the artifact from `heldOpeningPrompt` on retry without inventing a first message. Public projection names an eligible leaf holder for the launcher; closing-mark refusals still override retry/revive/start affordances without erasing archival debt. Taskless canonical storage/migration remains bounded to exact receipt identities; old schema at current address refuses, previous host receipts are not execution authority. Public execution whitelists lifecycle fields and requested/observed tier disclosure, never task acceptance.
 
 `_read_receipt` distinguishes a missing receipt from an unreadable or malformed one: non-regular paths refuse, decoding/JSON/value-conversion/depth failures return HTTP 409 with reconcile advice, and non-object/wrong-schema records are malformed. The document reader adds shared chat-shape validation; none of these refusals rewrites a receipt or starts/replays a launch.
 
@@ -25,7 +25,19 @@ saved-call replay semantics are otherwise unchanged.
 
 ## Predecessor reports, observed choices and public fields
 
-`_execute_prepared_launch` collects predecessor reports before running and settles them after the host answers; a settlement failure keeps the host's actual result and records the collection error instead of misreporting. `_observe_launch_choices` records observed mode and feature values against stated choices and warns when the host reports something else. `_public_execution` additionally exposes `choices`, `instructionComposition`, `taskDocumentFiles`, `assignmentReadGrant`, `predecessorCollectionError` and `reportCollection`. `_request_digest` drops an empty feature map so old requests keep their digest, and `_archived_receipt_for_selection` returns the archived receipt so the dispatch route can record predecessor reports.
+`_execute_prepared_launch` collects predecessor reports before running and settles them after the host answers; a settlement failure keeps the host's actual result and records the collection error instead of misreporting. The imported compatibility name `_observe_launch_choices` delegates to `role_launch_choices.observe_launch_choices`: it records requested/observed model, effort, mode and feature facts, updates a step-up’s displayed model while retaining requestedModel, and warns on stated mode/feature mismatches. The former local implementation no longer exists here. `_public_execution` additionally exposes `choices`, `instructionComposition`, `taskDocumentFiles`, `assignmentReadGrant`, `predecessorCollectionError` and `reportCollection`. `_request_digest` drops an empty feature map so old requests keep their digest, and `_archived_receipt_for_selection` returns the archived receipt so the dispatch route can record predecessor reports.
+
+## Current Contract — Scoped Launch And Settings Changes
+
+_execute_prepared_launch honors closing barriers, reconciles the task step-up decision before execution, restores/verifies saved artifacts, collects predecessor reports and renews step-up predecessor liveness before the native call. After publishing a nonclosing host outcome it reconciles observed choices into the same task decision; a failed acknowledgment keeps receipt facts for same-request recovery, not a second launch.
+
+_restore_launch_handover rebinds report access then validates every frozen detail, selects heldOpeningPrompt or the saved first message, and restores/verifies primary and takeover artifacts. Missing detail bytes require original snapshots, never current-corpus regeneration. A detail-free legacy composition remains permitted.
+
+Outcome publication and observed choice bookkeeping move to role_launch_outcome and role_launch_choices; this file keeps compatibility seams. Rejected settled empty step-up receipts retain replayRequest, while ordinary resolved launches drop it and held seats retain their opening call.
+
+_request_digest includes stepUp only when explicitly present, keeping absence-compatible digests. _public_execution exposes stepUp and permits rejected-stepUp retry only with a saved call; retryPayload includes the original requested reason and overrides. This projection is not a new review verdict or unconditional permission to start.
+
+Existing schema/read refusals, exclusive receipt creation, canonical taskless identity, closing/archive debt and predecessor report custody remain in force.
 
 ## Evidence
 
@@ -67,3 +79,13 @@ Selected-task Investigator receipts are per request rather than singleton select
 ## Current contract evidence
 
 - `_read_receipt` distinguishes a missing receipt from an unreadable or malformed one: non-regular paths refuse, decoding/JSON/value-conversion/depth failures return HTTP 409 with reconcile advice, and non-object/wrong-schema records are malformed. The document reader adds shared chat-shape validation; none of these refusals rewrites a receipt or starts/replays a launch. [15]
+
+- Decision, artifacts, predecessor liveness and outcome reconciliation preserve saved identity. [16]
+
+- Replay validation binds primary/detail/takeover artifacts. [17]
+
+- Optional reason enters request identity without altering absent requests. [18]
+
+- Conditional retry payload preserves original selection/reason. [19]
+
+- Test source checks validator refusal before host replay. [20]

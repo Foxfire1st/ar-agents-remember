@@ -22,7 +22,7 @@ in this module decides a selection, a permission or a trust level.
   why a caller can see the whole authorized surface even on a refusal that got as far as the binding.
 - `_fill_manifest` (called in both shapes) fills `compositionOrder`, `instructionIdentities`,
   `conflictKinds` and `sources` from the compilation's diagnostic manifest, then — only when a result
-  exists — `semanticDigest`, `instructions`, `skillReferences`, `requestedTools` and `taskContext`
+  exists — `semanticDigest`, `instructions`, `skillReferences`, `detailReferences`, `requestedTools` and `taskContext`
   from the capsule. It returns early on `None` at either step, so a refusal keeps the manifest facts it
   does have and no fabricated capsule content.
 - `skill_catalog_list_response(catalog)` renders discovery rows through `_entry_payload` and the
@@ -58,7 +58,19 @@ in a separate error type, which is what lets one response model serve both shape
 
 None recorded.
 
+## Current Contract
+
+`_fill_manifest` additionally maps each compiled detail to a strict CapsuleDetailReferencePayload containing sourcePath, revision and step. The wire reference carries no detail body and decides no selection, trust or permission. It is filled only after a result exists; refusal retains only established manifest/binding facts. Actual frozen detail bytes travel through the internal capsule/delivery values to the launch artifact owner.
+
+This account is bound to the candidate source, not a claim of a running serving build or a fresh execution/acceptance verdict. Existing historical accounts remain historical.
+
 ## Evidence
+
+
+- Launch copies detail files, substitutes paths, and records frozen revisions. [11]
+- Replay validates regular opened files, content revisions and original canonical report binding, not mutable corpus sources. [12]
+- Per-request detail artifacts use exact admitted bytes beside the handover and write-once publication. [13]
+- File-local implementation of the stated contract; caller-owned effects and governing workflow are separate evidence. [14]
 
 ### Docs References
 

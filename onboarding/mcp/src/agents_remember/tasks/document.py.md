@@ -230,7 +230,25 @@ the architect's approval) through `task_doc`. Absent means no declaration, and e
 - The shared patterns. [7]
 - The field's tests: optional, normative, settable, rendered and refused when malformed. [8]
 
+## Current Contract
+
+TaskDocument adds optional independent memoryReviewState typed with the memory-only round validator. In ordinary reads all fields still validate strictly. Only within the context-local launch tolerance, validation errors wholly located under reviewState/memoryReviewState may be retried with those broken lanes temporarily None; all other task identity, plan and topology still validate. Exact raw broken lane values and diagnostics are stored privately, review_read_error exposes the diagnostic, and wrapped serialization restores raw evidence unless include/exclude omits that lane. Begin/record reject that recovered document rather than overwriting damaged review evidence. Recovery restores context binding on exit, not task mutations.
+
+
+The governing workflow opens an independent memory review after CODE PASS on the same task using begin_review/record_review with reviewKind=memory. It has its own immutable baseline and shrinking IDs, under the same settings limit and extra-round approval rule, and never resets code reviewState. The signed rollout applies only to memory reviews begun after L88 lands; already-underway reviews (L168, L56, L57, L59) finish with their sealed-report workflow, with no migration/backfill. This describes the candidate contract, not a claim that the serving build already supports it.
+
+This account is bound to the candidate source, not a claim of a running serving build or a fresh execution/acceptance verdict. Existing historical accounts remain historical.
+
 ## Evidence
+
+
+- Worker/Curator typed review census, record-only exclusion and unknown history. [23]
+- Reason admission, threshold and differing-harness/model inheritance boundary. [24]
+- Launch scope opts in to review-only tolerance and forwards the same request reason. [25]
+- Child start opts into tolerance after root identity validation; context does not cross exec. [26]
+- Record-only memory identity comes from memory authority, never the sibling code root. [27]
+- File-local implementation of the stated contract; caller-owned effects and governing workflow are separate evidence. [28]
+- File-local implementation of the stated contract; caller-owned effects and governing workflow are separate evidence. [29]
 
 - Expected effect requirement references must name a listed stableId/version when typed packet references are present; no packet is resolved by this schema check. [22]
 

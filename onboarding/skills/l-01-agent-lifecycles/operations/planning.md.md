@@ -14,6 +14,13 @@ For one master the Architect's first delegation is one Manager on that canonical
 
 Before implementation, when a leaf's packet names an effect on a recorded invariant or family, the Architect declares that effect in `expectedKnowledgeEffects` through `task_doc` on `agents-remember-task`. A packet naming no such effect requires no declaration.
 
+## Current composition and authoring contract
+
+The shared planning contract still requires bounded approved canonical packets, one primary requirement per executable leaf, preserved prior approvals and explicit owner/delegation/evidence/publication scope. Developer authority remains required for changed promises.
+
+The `expectedKnowledgeEffects` declaration is selected only for Architect: when a leaf packet names a recorded invariant/family effect, Architect records it before implementation; no named effect means no declaration. This audience change removes an Architect-only instruction from Designer/Strategist/Orchestrator capsules without changing its actor or weakening the common planning and permission boundaries.
+
+
 ## Evidence
 
 - One master takes one Manager, two or more take one Orchestrator; direct coordination is the developer-chosen exception. [1]
@@ -97,3 +104,5 @@ Inherited reference 2 commentary (not a revalidated target):
 The authored file is the canonical contract; its measured byte-equal package copy is a distribution carrier, not an independent role, task or permission authority. The following whole-file reference locates that authored contract; it does not convert inherited statements into executed or whole-card acceptance.
 
 - The authored source owns this contract; the distribution copy is not a separate authority. [4]
+
+- Marks all common text all-role and limits the preimplementation expectedKnowledgeEffects declaration to Architect, restoring all-role afterward. [5]

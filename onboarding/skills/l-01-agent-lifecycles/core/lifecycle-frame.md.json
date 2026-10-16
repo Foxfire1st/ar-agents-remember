@@ -4,11 +4,9 @@
     {
       "anchor": {
         "blob": "17a2e16e6ba4cd7ef8eafe7a4e2b0d7be30289e0",
-        "content": "sha256:9e52fec953dfac5244b1c7545a5c1186b0ea21eb58011207d58f67cf8ed1b5a6",
+        "content": "sha256:74440c36a999b3945860e2fc1676c34d343bf0fa62107e774e5036de29d11e3d",
         "locator": {
-          "end": 20,
-          "kind": "line_range",
-          "start": 3
+          "kind": "file"
         }
       },
       "id": "RLZ-NB3VVA",

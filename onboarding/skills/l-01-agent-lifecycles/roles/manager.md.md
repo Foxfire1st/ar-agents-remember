@@ -113,6 +113,12 @@ The Manager no longer carries freezes, findings, verdicts or memory changes betw
 
 The Manager answers a child's developer question itself where its authority reaches and says the answer is its own, or passes it up unchanged with the originating role, task and agent id and its own recommendation apart; without a parent it puts it to the developer in its own chat. A child that waits at a permission prompt is reported at once with the permission as supplied or "not supplied", and the try-once-per-turn occasion applies until MIK-R100 lands. Developer answers travel down with the receiving agent's id and the quoted words, and every parent passes those three unchanged. Its own developer questions now go to its parent when it has one.
 
+## Current composition and authoring contract
+
+Manager retains one-master coordination, role starts/replacements, report-based state, delegated gate acceptance, transaction ownership and landing order. The new sentence says Manager sets no step for another agent. Worker, Reviewer and Curator completion bookkeeping does not transfer acceptance or publication authority to those roles; task stage is published by its native owner, with Manager correction/organizational-completion authority as the landed account states.
+
+The set-preparation/direct-handover contract remains in the role and coordination operation. Older card prose describing Worker+Reviewer followed by Curator at first freeze must not be repeated as current behavior. This source addition does not itself prove a product per-field role gate.
+
 ## Evidence
 
 ### Repo-Internal References
@@ -195,3 +201,7 @@ The review budget is the settings number `orchestration.loops.defaults.maxRounds
 - Current settings-budget, recorded approval and preserved stage/ownership boundaries are carried by this canonical instruction source. [8]
 
 - Native operations publish mirrored task stage; explicit correction and organizational-master completion retain task_doc ownership. [10]
+
+- Adds an express prohibition on completing another agent’s task step; coordination, gate and publication powers remain unchanged. [11]
+
+- Adds an express prohibition on completing another agent’s task step; coordination, gate and publication powers remain unchanged. [12]

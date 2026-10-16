@@ -1,0 +1,327 @@
+{
+  "path": "mcp/tests/test_role_step_up.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Source assertion: test_user_step_up_accepts_own_choices_and_defaults_to_three. The declaration is not an execution receipt.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ae9057ab6c1eea41f64b6351acaddfc7c720f7b9",
+            "content": "sha256:17d27212117ac5fd6f3e20a54fe8606d69f3f8483134de71b725f0049c1b8d20",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_user_step_up_accepts_own_choices_and_defaults_to_three"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "10": {
+      "note": "Source assertion: test_recorded_round_names_the_step_up_without_granting_a_round. The declaration is not an execution receipt.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ae9057ab6c1eea41f64b6351acaddfc7c720f7b9",
+            "content": "sha256:788677c00ab50b9d5a5c3df7a44b2e017e54e7d023d1be1f1af1426e374877ab",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_recorded_round_names_the_step_up_without_granting_a_round"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "11": {
+      "note": "Source assertion: test_failed_step_up_creation_leaves_empty_seat_and_same_request_retries. The declaration is not an execution receipt.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ae9057ab6c1eea41f64b6351acaddfc7c720f7b9",
+            "content": "sha256:fd2c5cf04335daed3a340cf6fba262fd1e8bb319e6196168572be09a80f5838c",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_failed_step_up_creation_leaves_empty_seat_and_same_request_retries"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "12": {
+      "note": "Source assertion: test_host_refusal_keeps_holder_and_user_permission_authority. The declaration is not an execution receipt.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ae9057ab6c1eea41f64b6351acaddfc7c720f7b9",
+            "content": "sha256:d01335d1b15977ae1b08a9be4f4cbe4636bf6af16d18b69c3b964c61577f280f",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_host_refusal_keeps_holder_and_user_permission_authority"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "13": {
+      "note": "Source assertion: test_third_failed_round_changes_harness_with_own_mode_and_keeps_reviewer. The declaration is not an execution receipt.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ae9057ab6c1eea41f64b6351acaddfc7c720f7b9",
+            "content": "sha256:b2d8bad2f29a92bb5edd44c48bc1149e4c537919ac026b41d44f57b4e35f74ff",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_third_failed_round_changes_harness_with_own_mode_and_keeps_reviewer"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "14": {
+      "note": "Source assertion: test_unreadable_review_launches_base_with_warning. The declaration is not an execution receipt.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ae9057ab6c1eea41f64b6351acaddfc7c720f7b9",
+            "content": "sha256:248d1aae20300d5167d7bf66fc2191b16fc2f4f3bb410e7524fb8b402426a89f",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_unreadable_review_launches_base_with_warning"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "15": {
+      "note": "Source assertion: test_unreadable_review_preserves_explicit_or_prior_step_up. The declaration is not an execution receipt.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ae9057ab6c1eea41f64b6351acaddfc7c720f7b9",
+            "content": "sha256:f92b93af8c28a7e6e00fd14515249740d08e6f4356b337b5aabbf71ceaae019d",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_unreadable_review_preserves_explicit_or_prior_step_up"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "16": {
+      "note": "Source assertion: test_launch_review_fallback_preserves_raw_evidence_and_other_validation. The declaration is not an execution receipt.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ae9057ab6c1eea41f64b6351acaddfc7c720f7b9",
+            "content": "sha256:55767c61f878de9374903a0f4f6f6385fb0d63c55ca28b7d89d9d025715e71fc",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_launch_review_fallback_preserves_raw_evidence_and_other_validation"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "17": {
+      "note": "Source assertion: test_step_up_replay_reconciles_decision_before_host_and_survives_receipt_loss. The declaration is not an execution receipt.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ae9057ab6c1eea41f64b6351acaddfc7c720f7b9",
+            "content": "sha256:09ddf7997e7441f52d855ad48ef90df41fc343122a77b4d00054467b218e6505",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_step_up_replay_reconciles_decision_before_host_and_survives_receipt_loss"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "18": {
+      "note": "Source assertion: test_host_default_successor_model_is_observed_without_losing_requested_provenance. The declaration is not an execution receipt.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ae9057ab6c1eea41f64b6351acaddfc7c720f7b9",
+            "content": "sha256:ec4577dac37ddfc486c2922347ed637d56a64c09035bbd602f69e3103b287903",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_host_default_successor_model_is_observed_without_losing_requested_provenance"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "19": {
+      "note": "Source assertion: test_incomplete_historical_count_warns_without_inventing_tries. The declaration is not an execution receipt.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ae9057ab6c1eea41f64b6351acaddfc7c720f7b9",
+            "content": "sha256:4606c69fc28d15e3fb0f12b5223bfd1789c834a6bf839644b8857d088323a913",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_incomplete_historical_count_warns_without_inventing_tries"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Source assertion: test_invalid_step_ups_name_file_and_exact_key. The declaration is not an execution receipt.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ae9057ab6c1eea41f64b6351acaddfc7c720f7b9",
+            "content": "sha256:a1232d265e2f4b29c6413394418de25668b81e3d5110bee1c019797a151fd3c0",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_invalid_step_ups_name_file_and_exact_key"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "20": {
+      "note": "Source assertion: test_repository_cannot_supply_step_up. The declaration is not an execution receipt.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ae9057ab6c1eea41f64b6351acaddfc7c720f7b9",
+            "content": "sha256:a8332bd7e59b81034de5ccb4ece4be68e2b54b10cbb8306e29069da599618107",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_repository_cannot_supply_step_up"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Source assertion: test_failed_tries_are_review_kind_rounds_not_record_checks. The declaration is not an execution receipt.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ae9057ab6c1eea41f64b6351acaddfc7c720f7b9",
+            "content": "sha256:edbe022986603c36ac4e49e867b6705b0c766bccecdf39c22898c96a98cd26bc",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_failed_tries_are_review_kind_rounds_not_record_checks"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "Source assertion: test_step_up_selection_uses_own_choices_and_never_steps_down. The declaration is not an execution receipt.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ae9057ab6c1eea41f64b6351acaddfc7c720f7b9",
+            "content": "sha256:bcf1923fe175b370e5f6f65f8139fbb9b1d35be0227b81d840b8e3c195fe2255",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_step_up_selection_uses_own_choices_and_never_steps_down"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "Source assertion: test_count_selects_step_up_at_and_above_threshold. The declaration is not an execution receipt.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ae9057ab6c1eea41f64b6351acaddfc7c720f7b9",
+            "content": "sha256:9444c7bb134e61c4a4025b6fac4255bd5243b5b1c8c8473a823eb0473671223f",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_count_selects_step_up_at_and_above_threshold"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "Source assertion: test_step_up_catalog_provenance_and_unoffered_choice. The declaration is not an execution receipt.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ae9057ab6c1eea41f64b6351acaddfc7c720f7b9",
+            "content": "sha256:dbfb045c9e82c8c7505e8a4b23bcf735b76b377fb2bf1de93da960394aa108a6",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_step_up_catalog_provenance_and_unoffered_choice"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "Source assertion: test_manual_start_replaces_idle_holder_and_keeps_step_up_on_restart. The declaration is not an execution receipt.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ae9057ab6c1eea41f64b6351acaddfc7c720f7b9",
+            "content": "sha256:4e2e55b983fc0e2679d032f0d485986b67b24d20c9a8931c908b00775d1bdaa8",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_manual_start_replaces_idle_holder_and_keeps_step_up_on_restart"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "Source assertion: test_step_up_provenance_uses_actual_predecessor_choices. The declaration is not an execution receipt.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ae9057ab6c1eea41f64b6351acaddfc7c720f7b9",
+            "content": "sha256:2e4e5b86e4c0bfd8ab698baea38b118a3dbf41ed1e6d23ce23a3234f57f76e7a",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_step_up_provenance_uses_actual_predecessor_choices"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "9": {
+      "note": "Source assertion: test_step_up_refuses_active_turn_or_permission_without_archiving. The declaration is not an execution receipt.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ae9057ab6c1eea41f64b6351acaddfc7c720f7b9",
+            "content": "sha256:4eec77435efd9353d3600875003c2c30673f37d20aca5de312645eb9778f9abf",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_step_up_refuses_active_turn_or_permission_without_archiving"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,24 @@
+{
+  "path": "docs/guides/first-conversion.md",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The source declares the qualified helper/document contract above; no execution is inferred.\n\nAnchor: complete source",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "223948290e2eddea7650695e8c1e8843da5290a2",
+            "content": "sha256:d46d1dc9fe9edc20a20b023d7be00bdc552a062c2265e4d705423dd9ae3072ca",
+            "locator": {
+              "end": 81,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

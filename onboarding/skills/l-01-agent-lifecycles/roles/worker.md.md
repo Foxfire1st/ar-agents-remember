@@ -99,6 +99,15 @@ The Worker now freezes its candidate and sends it directly to the leaf's Reviewe
 
 With a parent the Worker sends every developer question to it with `role_message` on `agents-remember-task`, saying what it holds back and recommends, and keeps working without ending its turn on the question. An actual busy refusal stays pending under **Pending developer questions** in its report and is retried before the turn ends; a product-held answer is waiting work owned by delivery and is not resent; only an unreachable parent opens the own chat, and having no work left does not. A relayed answer counts only with the developer's quoted words and the receiving agent's id, recorded where the role requires a record. The retired own-chat sentence is registered against return.
 
+## Current composition and authoring contract
+
+Worker still implements the approved leaf only, leaves code uncommitted, uses memory read-only, supplies exact evidence/journal/report and hands freeze to Reviewer then its producer list to Curator after code PASS. It starts no checker and owns no gate, curation or publication.
+
+After its own build/evidence part is complete, Worker marks only matching task steps done through task_doc on agents-remember-task with set_step/id/note. Without matching steps it reports that and sets nothing; incomplete, blocked, progress and escalation reports never mark unfinished work done. This narrow bookkeeping instruction does not authorize review/curation steps, task status or acceptance.
+
+If the same check or finding remains failing after three repairs of its own, Worker stops repairing, records what was tried/fails and tells Manager, who decides step-up or another response. This local stop is not an automatic failed-review-round counter and names no model. Required final-byte focused tests/lint/types and truthful blocked evidence remain unchanged.
+
+
 ## Evidence
 
 ### Repo-Internal References
@@ -115,7 +124,7 @@ With a parent the Worker sends every developer question to it with `role_message
 
 - The worker emits its requirement-shaped items as one curator hand-off list in the shared producer shape. [6]
 
-- Tool authority excludes lifecycle, gates, task state, and memory writes. [7]
+- Tool authority excludes lifecycle/status, gates and memory writes; only completed matching own build/evidence steps are marked done, not task acceptance. [7]
 
 - The worker records the complete acceptance envelope once for every stable requirement ID. [8]
 
@@ -156,3 +165,7 @@ The review budget is the settings number `orchestration.loops.defaults.maxRounds
 
 
 - Current settings-budget, recorded approval and preserved stage/ownership boundaries are carried by this canonical instruction source. [11]
+
+- Adds completion-only own build/evidence step marking and stopping after three unsuccessful own repairs of one check/finding. [13]
+- Adds completion-only own build/evidence step marking and stopping after three unsuccessful own repairs of one check/finding. [14]
+- Adds completion-only own build/evidence step marking and stopping after three unsuccessful own repairs of one check/finding. [15]

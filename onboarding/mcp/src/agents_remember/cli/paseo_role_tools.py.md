@@ -48,7 +48,16 @@ The Worker successor/addendum reports the composed 1835-line file breaches the 1
 
 Message-time leaf resume uses the same call-time grant-aware scope verifier as dashboard Revive before native resume. The saved canonical leaf and master series contract must equal the current granted pair; an ordinary leaf retains its enclosure comparison. Receipt evidence never replaces the live grant. Recipient identity, parent-first remedies, uncertain delivery, report collection and role containment remain separate contracts.
 
+## Current Contract — Scoped Launch And Settings Changes
+
+_start_role carries call.step_up into the typed RoleDispatchRequest beside unchanged selection, override, replacement and chat-start facts. It does not manufacture a settings alternative or bypass the caller/start matrix.
+
+_started delegates receipt-based answer projection to role_start_answer.started_answer. Running/held/unknown/refused meanings and report paths remain receipt-derived; the extracted answer adds observed step-up disclosure and conditional same-request recovery advice for an empty retryable successor. Plugin role-facts publication is not an answer-side effect: the receipt-aware launch/resume owners publish before their host call, best effort and separately from host execution.
+
+The role-message facade, native held ordering, recipient identity, parent containment, scope-sensitive revival and report collection are unchanged by this extraction. This module is not an independent review or task-acceptance owner.
+
 ## Evidence
+
 
 
 - Frozen implementation of _start_role supporting the stated file behavior. [2]
@@ -95,3 +104,12 @@ Architect, Orchestrator and Manager may start Investigator only within their adm
 - Upstream held-message ordering is decided before native send; permission holding never answers a prompt. [14]
 
 - Leaf revival compares current grant-sensitive canonical task/contract scope before bridge use. [11]
+
+- Typed public start conversion includes stepUp. [15]
+
+- Projection now delegates to the extracted answer owner. [16]
+
+- Readback, provenance and retry advice are extracted without changing receipt identity. [17]
+
+
+- On valid saved receipt context, role-facts publication belongs to pre-launch/replay and receipt-aware resume, not to the post-answer projection; filesystem/runtime publication is best effort, not host execution or plugin-consumption evidence. [18]

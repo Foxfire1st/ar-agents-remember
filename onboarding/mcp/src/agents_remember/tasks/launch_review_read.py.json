@@ -1,0 +1,96 @@
+{
+  "path": "mcp/src/agents_remember/tasks/launch_review_read.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Worker/Curator typed review census, record-only exclusion and unknown history.\n\nAnchor: L175–L240",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "29bbfb919fa2a5e25fc3e3ee172407e92e192fc0",
+            "content": "sha256:89c09fd0491880de2f7b715bffbe2d6b0605a6dea7400689519c43f40f7b119d",
+            "locator": {
+              "end": 240,
+              "kind": "line_range",
+              "start": 175
+            },
+            "path": "mcp/src/agents_remember/worktrees/review_history.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Reason admission, threshold and differing-harness/model inheritance boundary.\n\nAnchor: L23–L84",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f341c13a99f485178e73c4ff8bf4de16267ee662",
+            "content": "sha256:5a3727f4901933c44cd5f7edc8b16220285a82a9e080326edf482cbb126f0b2f",
+            "locator": {
+              "end": 84,
+              "kind": "line_range",
+              "start": 23
+            },
+            "path": "mcp/src/agents_remember/cli/role_step_up.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Launch scope opts in to review-only tolerance and forwards the same request reason.\n\nAnchor: L21–L65",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c460327e477ba9c4fa93f5fe7be8e19e3dfec963",
+            "content": "sha256:5fe1ad5d62604e25c59f356dfc0cd2c60397b74344624a2d74a62b5a49fedc9a",
+            "locator": {
+              "end": 65,
+              "kind": "line_range",
+              "start": 21
+            },
+            "path": "mcp/src/agents_remember/cli/role_start_execution.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Child start opts into tolerance after root identity validation; context does not cross exec.\n\nAnchor: L207–L216",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f89c07d5c76650bfb7a058e9cdd8e721a48e1e5a",
+            "content": "sha256:cb09339423a25dd1049b0da0ed04667f7160a9c1b9ec8d5dd02513c4c94dbca9",
+            "locator": {
+              "end": 216,
+              "kind": "line_range",
+              "start": 207
+            },
+            "path": "mcp/src/agents_remember/cli/leaf_enclosure_start.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "File-local implementation of the stated contract; caller-owned effects and governing workflow are separate evidence.\n\nAnchor: L14–L52",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f960a935d832cbf64b99d7e8ef97475006c2ded2",
+            "content": "sha256:67285b696c93f4648b8b0f32caeac32d15a6f7ee4208f62cd68563fe4d17d9fb",
+            "locator": {
+              "end": 52,
+              "kind": "line_range",
+              "start": 14
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

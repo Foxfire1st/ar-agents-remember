@@ -19,6 +19,13 @@ The canonical worker report retains exact candidate, immutable requirement-attem
 
 The original prose, exact parameters, references and dated producer accounts below remain intact as history, not present-tense authority for superseded behavior. Current evidence is the source path `skills/l-01-agent-lifecycles/templates/turn-report.md` and the source-specific before/after extents preserved in the residual-hunk account. No code edit, proof rerun or new execution acceptance is claimed.
 
+## Current composition and authoring contract
+
+A visual walkthrough is optional. If included, its prose follows visual-explainer-authoring and the shared writing profile; it remains supplementary and supplies no acceptance verdict or replacement for required report sections.
+
+The report remains the Worker's main-loop artifact at the supplied path, not delegated to a helper. Requirement attempt journal anchors, immutable expanded evidence, exact checks, separate durable-evidence hold point, direct handover evidence, harness contributions and respawn state retain their existing contracts. A shorter label, diagram or host turn-end signal proves no semantic acceptance.
+
+
 ## Historical original card — preserved, not the current operative account
 
 <details>
@@ -273,3 +280,7 @@ Inherited reference 5 commentary (not a revalidated target):
 The authored file is the canonical contract; its measured byte-equal package copy is a distribution carrier, not an independent role, task or permission authority. The following whole-file reference locates that authored contract; it does not convert inherited statements into executed or whole-card acceptance.
 
 - The authored source owns this contract; the distribution copy is not a separate authority. [5]
+
+- Adds conditional visual-explainer/profile linkage; visuals supplement rather than replace mandatory evidence/report or acceptance. [6]
+- Adds conditional visual-explainer/profile linkage; visuals supplement rather than replace mandatory evidence/report or acceptance. [7]
+- Adds conditional visual-explainer/profile linkage; visuals supplement rather than replace mandatory evidence/report or acceptance. [8]

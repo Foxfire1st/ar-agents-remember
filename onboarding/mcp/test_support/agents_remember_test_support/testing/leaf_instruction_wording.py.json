@@ -3,12 +3,12 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "fd5fec7d4c985cfc3bb7945ee7adfdb8d1863c70",
+        "blob": "446dd8459833bdf3c6d25cfedf8dd4cec8518c14",
         "content": "sha256:4ae08cafe90f1b70f5b3a77366af04014967be4758d960684d311f6be1d54609",
         "locator": {
-          "end": 102,
+          "end": 206,
           "kind": "line_range",
-          "start": 100
+          "start": 204
         }
       },
       "id": "RLZ-645J3W",
@@ -32,6 +32,23 @@
             "locator": {
               "kind": "symbol",
               "name": "autonomy_clauses"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Adds delivered_step, which parses the manifest, routes real admission/compilation, selects exactly one detail with exact source/step/bytes, composes launch instructions, asserts one recorded artifact, a resolved Markdown pointer, no unresolved detail token and exact stored bytes. Reviewer and Curator tables gain role-scoped accepted rewordings; memory clauses now allow the separate recorded memory lane while preserving code-state isolation and approval/limit facets. Existing Worker/set-start clauses remain.\n\nAnchor: Current test/support source",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "446dd8459833bdf3c6d25cfedf8dd4cec8518c14",
+            "content": "sha256:5dc9310e27291c58aa9730209dd98899aebe332b431538fef8938b191714df06",
+            "locator": {
+              "end": 449,
+              "kind": "line_range",
+              "start": 1
             }
           },
           "kind": "code"

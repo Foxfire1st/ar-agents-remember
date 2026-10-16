@@ -24,7 +24,19 @@ The existing typed start/message/set registrars remain the public surface. Curre
 > **Retained historical source account — superseded by the current contract:**
 > role_start constructs RoleStartCall and role_message constructs RoleMessageCall, running blocking application work in a thread so waiting does not block server transport. Descriptions name caller binding, permitted child scope, same-request retry, receipt-bound addressing, role-message final reply behavior and bounded wait. No developer gate is transported through an invented tool. `role_start` accepts `feature_values` for speed features beside agent/model/effort; its description states that a start call cannot state a mode or a permission-bearing feature, which belong in user settings or the host profile.
 
+## Current Contract
+
+The existing role_start registrar accepts optional step_up and passes it unchanged into RoleStartCall before delegating blocking work through asyncio.to_thread. The registrar adds no mode parameter, permission override, counted-try policy, retirement or launch authority; its compact description remains only the short public summary. role_start_set and role_message keep their existing registration/ownership and do not gain this new argument.
+
+
+This account is bound to the candidate source, not a claim of a running serving build or a fresh execution/acceptance verdict. Existing historical accounts remain historical.
+
 ## Evidence
+
+
+- Worker/Curator typed review census, record-only exclusion and unknown history. [4]
+- Reason admission, threshold and differing-harness/model inheritance boundary. [5]
+- File-local implementation of the stated contract; caller-owned effects and governing workflow are separate evidence. [6]
 
 
 ## Investigator scope and request identity

@@ -10,6 +10,15 @@ For fresh memory the procedure orders first onboarding with the existing pre-bas
 
 The original prose, exact parameters, references and dated producer accounts below remain intact as history, not present-tense authority for superseded behavior. No code edit, proof rerun or new execution acceptance is claimed.
 
+## Current composition and authoring contract
+
+The only carrier is taskless Bootstrap, not a leaf seat. Workspace roots, setup state and developer decisions are inputs; missing task documents, briefs and contracts are normal, not gaps to fill. A working attributed installation is not re-entered for maintenance.
+
+The operation is marked for all of its admitted roles (Bootstrap alone). Step 7 names a separately delivered foundation procedure read only at that step. Its read/report ownership and no-record-authoring boundary also remain in Authority gates. Fresh setup retains scaffold/fixer → baseline → foundation ordering; the moved detail states the existing-memory-commit exception.
+
+The exit remains a durable surface-derived report: roots, branch, baseline commit, onboarding, recorded foundation identity or named absence state, whether the Curator run occurred, provider indexing/defer state and reasons for skipped steps. It is completion truth, never independent acceptance. Existing provider-indexing and failure-table step-label residuals are not evidence of an available retired provider route.
+
+
 ## Historical original card — preserved, not the current operative account
 
 <details>
@@ -338,3 +347,10 @@ Inherited reference 9 commentary (not a revalidated target):
 The byte-equal package copy is a distribution carrier, not an independent role, task or permission authority. Whole-file source evidence does not certify inherited statements, execution, grading or the whole card.
 
 - The authored source owns this contract; the distribution copy is not a separate authority. [5]
+
+- Adds all-role marking, compresses existing prose and extracts step-7 detail, while making curator-run occurrence explicit in the inline final report. Setup boundaries remain inline. [6]
+- Adds all-role marking, compresses existing prose and extracts step-7 detail, while making curator-run occurrence explicit in the inline final report. Setup boundaries remain inline. [7]
+- Adds all-role marking, compresses existing prose and extracts step-7 detail, while making curator-run occurrence explicit in the inline final report. Setup boundaries remain inline. [8]
+- Adds all-role marking, compresses existing prose and extracts step-7 detail, while making curator-run occurrence explicit in the inline final report. Setup boundaries remain inline. [9]
+- Adds all-role marking, compresses existing prose and extracts step-7 detail, while making curator-run occurrence explicit in the inline final report. Setup boundaries remain inline. [10]
+- Adds all-role marking, compresses existing prose and extracts step-7 detail, while making curator-run occurrence explicit in the inline final report. Setup boundaries remain inline. [11]

@@ -20,7 +20,7 @@ The Curator seat opens only on a leaf task document. Before any task exists, Boo
 
 ### Logic
 
-The Writer/worklist correction section requires a readable persisted leaf worklist and governing changed rows, with the stated raise/new-record and wave/crossing exemptions. It describes order-independent same-list invariant handles, own-origin evidence replacement, plain test-title proofs with line-range recovery for unsupported forms, full grouped source bindings, supersession/route/refresh reconsideration, actual broken-link repair and equal-versus-divergent generated copies. Continuing rejected simplifications/workarounds become decisions with the real rejected option and reason, not unfinished implementation. These source instructions do not claim that pending decisions or proofs have already been authored; typed claims and task/Git powers remain unchanged.
+The inline Writer/worklist correction section requires a persisted leaf worklist and names the read step. reference/curator-worklist-details.md contains governing changed rows, raise/new-record/wave/crossing exemptions, order-independent handles, own-origin evidence replacement, plain-title proof rules, grouped blobs, reconsideration/link repair and equal-versus-divergent copy detail. Continuing rejected simplifications/workarounds become decisions with the real rejected option and reason, not unfinished implementation. These source instructions do not claim that pending decisions or proofs have already been authored; typed claims and task/Git powers remain unchanged.
 
 Batch changed-card citation previews and repairs with one documents list per wave. The stage writes, checks and publishes task knowledge with the installed build and a clean quality check; own-input/coherence faults are corrected through the same admitted tool, never relabeled or bypassed. Valid product/permission/authority/out-of-ground blockers stop dependent work. MEMORY beyond-settings authority comes from architect/developer through the recorded Manager act; independent review and publication are not acceptance.
 
@@ -32,7 +32,7 @@ Family coverage is authored from stored member obligations, their evidence and a
 
 The writer is the shipped knowledge-ingest route for leaves and the admitted knowledge-bootstrap route for taskless foundation work. Its written/planned/refused state, actual record and entry IDs, history rows and bound code/memory trees are separate facts; file writing is neither a Git commit nor acceptance. Full scoped memory quality and structured coherence do not substitute for semantic approval.
 
-The curator does not edit code, task/lifecycle state or Git transaction records, directly write SQLite, invent future commit stamps, or repair source movement. Repository-foundation work follows c-14 under real setup authority and does not manufacture an enclosure.
+The curator does not edit code, task status/lifecycle or Git transaction records, directly write SQLite, invent future commit stamps, or repair source movement. Its only new task-step bookkeeping is completed matching own curation set_step; incomplete/blocked/progress/escalation work stays unfinished. Repository-foundation work follows c-14 under real setup authority and does not manufacture an enclosure.
 
 Since MIK-R99 (D92) the Curator’s large-worklist duty is stated in the role text: enumerate one full-intake worklist of distinct outstanding memory actions in the report, count each underlying action once, and exclude already answered work, report-only observations and duplicate summaries. Invariant/family placement, admission, changes of meaning, the single `knowledge-ingest` write, the full memory-quality operation and the handoff stay with the seat. How the seat organises that work — including any harness sub-agents, at any size — is the seat’s own, and a harness without sub-agents does the same work.
 
@@ -100,7 +100,7 @@ A Curator with a parent sends a developer question to that parent with `role_mes
 
 When the curator restates a family's guarantee, the hand-off names the family as a
 changed row with the curator's authored `effect`; the writer fills the family's own
-revision. The same step in the curation operation carries the identical contract.
+revision. The substantive changed-effect and writer-revision sentence is reference/curator-writer-details.md:29–31, reached by the role’s step-2/step-3 references.
 
 - Restated guarantees carry an authored effect; the writer fills the revision. [8]
 
@@ -115,24 +115,54 @@ Worker ends with requirement-satisfying bytes, focused checks and report with Re
 
 A cut-card observation calls for a causal account: the handover names the change of this task that made the removed master text untrue. Removing text to silence a quality finding is never the remedy. Evidence and working files belong to the task record or scratch root, not the memory worktree; durable onboarding and knowledge remain the Curator’s writable memory surface. This adds review content without transferring the one writer, full-quality loop or landing authority.
 
+## Current composition and authoring contract
+
+The role retains complete intake: exact candidate diff, approved packet revisions and durable ruling, direct Worker/Reviewer reports and producer lists, existing affected memory, paired roots and enclosure scope. Producer fields stay verbatim; Curator-owned outcomes, semantic scope, admission, records and history remain the Curator's. Foundation remains a separate bounded instructed-session route; no taskless Curator seat or fabricated task is admitted.
+
+Process detail moves to named-step files. Rationale authoring and continuing-decision lifting are now substantive in curator-authoring-d301; family changed-effect and writer-owned revision in curator-writer-details; citation/card syntax in curator-card-details; full-intake deduplicated worklist and execution support remain whole in Outputs. The capsule keeps one serving-build writer, no handwritten knowledge/sidecar/history, full MQC/coherence, independent non-author fact-check, no helper self-review and no Git or code authority.
+
+Only after its own curation part is complete, the role sets a matching task step done with set_step/id/note; no matching step is reported without a mutation. Incomplete, blocked, progress and escalation reports do not mark unfinished work done. This is not task status, acceptance or landing authority. After three own repairs of the same check/finding still failing, stop, record attempts and tell Manager; no model is prescribed.
+
+Reviewer records the separate memory lane, leaving code state intact. Method relocation does not prove unchanged meaning merely because the old range still maps; inspect the substantive adjacent detail. Existing blanket task-document prohibitions must be read with the explicit narrow own-step completion instruction, not taught as a ban on set_step.
+
+
 ## Evidence
 
-- The canonical section states corrected Writer/worklist/recovery duties and records real rejected design alternatives rather than inventing future work. [16]
+- The named worklist detail states corrected Writer/worklist/link-repair duties; authoring detail107–108 retains real rejected alternatives rather than invented future work. [16]
 
 
 - Required task, source, handoff and publication inputs. [1]
 - Three-way reconciliation, explicit retention, writer/readback and full quality duties. [2]
 - The curator’s prohibited writes and source-stamp boundary. [3]
-- Process step 3 requires an authored rationale on every hand-off target before ingest. [4]
+- The named authoring detail requires each hand-off target’s authored rationale before ingest; a missing producer explanation is authored from evidence under the unchanged template. [4]
 - On converted memory the curator follows the converted-card workflow. [6]
 - On converted memory knowledge-ingest is the file writer and publishes no dataset. [7]
 - Restated guarantees carry an authored effect; the writer fills the revision. [8]
 - Current settings-budget, recorded approval and preserved stage/ownership boundaries are carried by this canonical instruction source. [9]
 
-- Process step 3 lifts the decisions that keep governing code, on converted memory (MIK-R13).  Anchor: "Lift the decisions that keep governing code." [5]
+- The named authoring detail retains continuing-decision lifting; task-only choices stay task-local. [5]
 - Batch changed-card citation previews and repairs with one documents list per wave. The stage writes, checks and publishes task knowledge with the installed build and a clean quality check; own-input/coherence faults are corrected through the same admitted tool, never relabeled or bypassed. Valid product/permission/authority/out-of-ground blockers stop dependent work. MEMORY beyond-settings authority comes from architect/developer through the recorded Manager act; independent review and publication are not acceptance. [10]
 
 - Overview authoring is purpose-first, changes belong in their body section, and citation lines terminate the overview. [11]
 
 - Evidence and working files stay outside the memory worktree. [11]
 - Every reported cut has task-change causality; finding-clearing deletion is forbidden. [12]
+
+
+- Compresses/reorganizes the role around whole inline inputs/outputs and boundaries, references named-step detail, adds completion-only own-step marking and the three-own-repair stop, and names recorded memory review. [17]
+
+- Compresses/reorganizes the role around whole inline inputs/outputs and boundaries, references named-step detail, adds completion-only own-step marking and the three-own-repair stop, and names recorded memory review. [18]
+
+- Compresses/reorganizes the role around whole inline inputs/outputs and boundaries, references named-step detail, adds completion-only own-step marking and the three-own-repair stop, and names recorded memory review. [19]
+
+- Compresses/reorganizes the role around whole inline inputs/outputs and boundaries, references named-step detail, adds completion-only own-step marking and the three-own-repair stop, and names recorded memory review. [20]
+
+- Compresses/reorganizes the role around whole inline inputs/outputs and boundaries, references named-step detail, adds completion-only own-step marking and the three-own-repair stop, and names recorded memory review. [21]
+
+- Compresses/reorganizes the role around whole inline inputs/outputs and boundaries, references named-step detail, adds completion-only own-step marking and the three-own-repair stop, and names recorded memory review. [22]
+
+- Compresses/reorganizes the role around whole inline inputs/outputs and boundaries, references named-step detail, adds completion-only own-step marking and the three-own-repair stop, and names recorded memory review. [23]
+
+- Compresses/reorganizes the role around whole inline inputs/outputs and boundaries, references named-step detail, adds completion-only own-step marking and the three-own-repair stop, and names recorded memory review. [24]
+
+- Compresses/reorganizes the role around whole inline inputs/outputs and boundaries, references named-step detail, adds completion-only own-step marking and the three-own-repair stop, and names recorded memory review. [25]

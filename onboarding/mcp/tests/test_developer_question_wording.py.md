@@ -26,7 +26,8 @@ The module reads the delivered canonical role and operation texts and requires t
 - Every starter role carries the upward notice and unchanged downward answer duties. [2]
 
 
-- The three operations keep conditional routing and pending recovery. [3]
+- Orientation retains conditional routing and pending recovery; Reviewer/review and Curator/curation are checked as composed role-plus-operation pairs. [3]
+
 
 
 - The leaf ownerRelation keeps peer results and named parent occasions. [4]

@@ -7,23 +7,20 @@
 ## Purpose
 
 Focused checks for the **shipped corpus end to end**, source admission, the composition-manifest
-parser, and the frozen vocabulary — the boundaries a later leaf consumes. This is the only module
-in the role-capsule suite that touches the **real** tree; the compiler module builds its own
-fixture so a failure names one boundary instead of a whole corpus.
+parser, and the frozen vocabulary — the boundaries a later leaf consumes. This module reads the shipped tree; the audience, launch and manifest-edge suites also read real corpus bytes. The compiler property module retains a synthetic fixture.
 
-**43 test functions → 54 collected cases** (several are parametrized over the **ten** shipped roles
-and the **nine** operations).
+**Historical recorded population, not the current inventory:** 43 test functions → 54 collected cases. Current source definitions are listed by their actual owners; no collection was performed in this survey.
 
 ## Code Commentary
 
 ### Logic
 
-Fixtures and helpers: `corpus_tree` (104-117), `request_for` (118-129), `worker_binding` (130-147),
+Historical fixture/helper locations (not current source ranges): `corpus_tree` (104-117), `request_for` (118-129), `worker_binding` (130-147),
 `_shipped_parsed` (395-398), `_shipped_request` (399-422), `_shipped_binding` (423-452),
 **`declared_inherits` (453-466)**, `_shipped_document` (852-855), `_refuse` (856-865),
 `_manifest_with` (866-942).
 
-The cases group into seven boundaries:
+Historical seven-boundary inventory (retained prior names/locations, superseded by the current owner account below):
 
 | Group | Cases | Demonstrates |
 | --- | --- | --- |
@@ -38,15 +35,13 @@ The cases group into seven boundaries:
 Traversal is refused for a parametrized set including `../outside.md`, `/etc/passwd`,
 `core/../../outside.md`, and the empty string.
 
-Observed result on the current candidate: **54 passed** here; **104 passed** with the compiler
-module (50 collected there).
+**Retained historical run account, not an L88 execution result:** 54 passed here; 104 passed with the compiler module (50 collected there). No current execution or collection is inferred.
 
 ### Conventions
 
 A fixture-building case uses `tmp_path`; only the shipped-corpus and routing groups read the real
 tree. Parametrizing over all **ten** roles and all **nine** operations is what makes "every shipped role
-compiles to its declared routing" a corpus claim rather than a single-role claim. This module, not
-the compiler module, owns every case that reads real bytes.
+compiles to its declared routing" a corpus claim rather than a single-role claim. The synthetic compiler property module remains distinct; this module is no longer the exclusive reader of real bytes.
 
 ### Invariants And Boundaries
 
@@ -68,7 +63,7 @@ the compiler module, owns every case that reads real bytes.
   `CAPSULE_STATUSES`. It covers the **compiler** tuple; the source-value codes raised outside it
   (`source-not-utf8`, the **`source-empty`** code added by D25's repair, and the admission codes)
   are deliberately not members and are asserted in the compiler module.
-- Only this module may read the real corpus; the compiler module deliberately does not.
+- The compiler property module deliberately uses a synthetic corpus; admission, audience, launch and manifest-edge modules have distinct real-corpus responsibilities.
 - Adding a shipped role or operation requires no new case — the parametrization picks it up — but
   adding one **with no source**, or whose routing disagrees with its own role file, must make the
   routing-agreement cases fail.
@@ -76,6 +71,10 @@ the compiler module, owns every case that reads real bytes.
 ### Todos
 
 None recorded.
+
+## Current audience, delivery and evidence contract
+
+Current assertion ownership differs from the retained historical inventory: six edge functions now live in `test_role_capsule_manifest_edges.py`, with the same current test names and contracts. Entries/ranges in the old inventory that name them here are historical locations, not instructions to restore duplicate tests. `_shipped_request` also admits role-addressed step details, and the frontmatter check removes audience metadata from expected delivered text while keeping the whole-source revision. No historical pass/count becomes current merely through this maintenance.
 
 ## Evidence
 
@@ -94,7 +93,9 @@ No relevant documentation found after checking live sources.
 - The both-directions plan validation, including the skill-root gate. [4]
 - **The carried skill channel** these cases pin, and the helper that names a skill identity. [5]
 - The application entry point that converts an admission refusal into an outcome value — including an **emptied source**, whose refusal reaches the caller as a value rather than as an escaping exception (D25). [6]
-- The real corpus this module is the only role-capsule test to read. [7]
+
+- The real corpus this module and the distinct audience/launch/manifest-edge modules read. [7]
+
 - The sibling module that owns the compiler's own property cases. [8]
 
 ### Cross-Repo References
@@ -102,3 +103,6 @@ No relevant documentation found after checking live sources.
 No sibling-repository contract is exercised by these cases.
 
 No meaningful cross-repo references found.
+
+
+- The shipped request now admits role-addressed declared details together with skills. The no-frontmatter case compares delivered body after removing audience metadata lines while retaining full-source revision. Six edge-test functions move into test_role_capsule_manifest_edges.py: role lookup, specialization shape/blank declared identity, absent override winner, invalid path root, missing selected manifest and composing-root accessor. Remaining admission cases retain their existing assertions. [9]

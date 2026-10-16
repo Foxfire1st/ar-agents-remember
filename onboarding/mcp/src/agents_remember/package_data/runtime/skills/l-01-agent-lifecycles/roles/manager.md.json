@@ -3,12 +3,10 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "6c14bda6d478f9d220063774ea8b13852e31a0f0",
-        "content": "sha256:10c1004c0fa4df1dc05b9a5a6e8d06938d62feb6276ee767e3b9b600a46c0e0d",
+        "blob": "c806e36dfe030ed31b40bfbe0b067abee3a5124b",
+        "content": "sha256:8fee1d74b8d06f0fabab2709937faab156cca289dda5276494539a559c1ba4af",
         "locator": {
-          "end": 70,
-          "kind": "line_range",
-          "start": 1
+          "kind": "file"
         }
       },
       "id": "RLZ-EQZH1P",

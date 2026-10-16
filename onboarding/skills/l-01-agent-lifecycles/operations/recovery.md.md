@@ -12,6 +12,13 @@ The recovery operation instruction.
 
 The instruction owns the recovery routes for parked and failed work the lifecycle can resume.
 
+## Current composition and authoring contract
+
+Recover the same canonical task, paired workspace, request IDs and role agents. Unknown starts reconcile with the same request ID; uncertainty does not create another owner, transport or global-memory fallback. A resume restores execution, not acceptance or publication.
+
+The common clean-sync reviewed-result-stands passage is unchanged. Curator additionally receives the inline serving-build producer boundary in recovery, including no leaf self-production, installs, disabled guards or post-refusal substitution. This keeps an existing boundary across stages, not a new recovery bypass.
+
+
 ## Evidence
 
 No separate reference list: the file's sidecar carries the realization entries this leaf re-anchored.
@@ -93,3 +100,5 @@ Inherited reference 2 commentary (not a revalidated target):
 The byte-equal package copy is a distribution carrier, not an independent role, task or permission authority. Whole-file source evidence does not certify inherited statements, execution, grading or the whole card.
 
 - The authored source owns this contract; the distribution copy is not a separate authority. [1]
+
+- Marks common text all-role and adds Curator-only serving-build constraints for recovery. [2]

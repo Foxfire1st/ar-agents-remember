@@ -1,0 +1,125 @@
+{
+  "path": "mcp/src/agents_remember/cli/role_step_up.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "f341c13a99f485178e73c4ff8bf4de16267ee662",
+        "content": "sha256:ac093d6b5a4eea28a4db8eedd16a5c4d354a599e08f75d762f56fd86071f2683",
+        "locator": {
+          "kind": "symbol",
+          "name": "select_step_up"
+        }
+      },
+      "id": "RLZ-6P74BN",
+      "invariant": "INV-N7G6M8",
+      "origin": {
+        "handoffEntry": "MIK-R141@v1/selection",
+        "leaf": "260928-MIK-L88"
+      },
+      "rationale": "Resolves counted/requested step-up choices and their origins before the launch.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Threshold/manual/prior selection uses scoped choices and sanitized provenance.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f341c13a99f485178e73c4ff8bf4de16267ee662",
+            "content": "sha256:ac093d6b5a4eea28a4db8eedd16a5c4d354a599e08f75d762f56fd86071f2683",
+            "locator": {
+              "kind": "symbol",
+              "name": "select_step_up"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The manual reason has an explicit bounded single-sentence shape.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f341c13a99f485178e73c4ff8bf4de16267ee662",
+            "content": "sha256:e67063904a03911799ff1da6808c97b1946ce5547c6c7c8e55572ade67f8411c",
+            "locator": {
+              "kind": "symbol",
+              "name": "require_step_up_reason"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Only settings-origin selections are relabeled.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f341c13a99f485178e73c4ff8bf4de16267ee662",
+            "content": "sha256:af56bd1828bf5bab8bb58518a671be4a4ed128dc74c06fb075bfae604adfbd20",
+            "locator": {
+              "kind": "symbol",
+              "name": "label_step_up_choices"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Failed counts use role-specific typed lanes, not total record operations.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "29bbfb919fa2a5e25fc3e3ee172407e92e192fc0",
+            "content": "sha256:be91a03f7c25cf3c966cca8e65af7a960cefab7604604a96f66b2a121ead2861",
+            "locator": {
+              "kind": "symbol",
+              "name": "failed_role_tries"
+            },
+            "path": "mcp/src/agents_remember/worktrees/review_history.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Incomplete typed history yields unknown, not an invented zero/count.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "29bbfb919fa2a5e25fc3e3ee172407e92e192fc0",
+            "content": "sha256:d156649dee6626036467c78b24418be0fddb44d7cdd18fbd9d1f2ba4845c34bb",
+            "locator": {
+              "kind": "symbol",
+              "name": "failed_review_tries"
+            },
+            "path": "mcp/src/agents_remember/worktrees/review_history.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Test source keeps record-only checks and the memory sequence independent.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ae9057ab6c1eea41f64b6351acaddfc7c720f7b9",
+            "content": "sha256:edbe022986603c36ac4e49e867b6705b0c766bccecdf39c22898c96a98cd26bc",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_failed_tries_are_review_kind_rounds_not_record_checks"
+            },
+            "path": "mcp/tests/test_role_step_up.py"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

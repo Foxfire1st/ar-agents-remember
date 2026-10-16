@@ -94,7 +94,7 @@ target by name before minting. The committed-entry retry exemption describes the
 
 Normal curation is complete at the leaf's contract scope, not whole-layer scope. Read existing intent before replacing it; separate preserved, extended, deliberately superseded and contradictory meaning, with its ruled authority. Tests establish selected behavior, not ownership, negative knowledge or intent coherence. Historical oddities require causal applicability and reconsideration conditions before promotion. New incidents, opportunities and hypotheses are evidence-backed `capture-candidate` material until their owner adopts them.
 
-Place changes in their actual file/route/entity home. Overviews begin with title and governing overview, then a purpose section headed `## What This Repo Is`, `## What This Area Is` or `## Purpose`, construction, invariants and boundaries, and all citation lines together at the end; they are not leaf/date diaries. WIP registers refusing purpose-first, leaf/date-section and trailing-citation rules, skipping them for standalone conversion that preserves legacy prose. Operational Notes is a last resort. On converted cards, the citation workflow resolves reference anchors. Check all affected cards in one call and repair them in one call, with a dry run first and onboarding-relative `documents`; do not run one call per card. Knowledge entries and history use the admitted writer, never handwritten sidecar/record JSON. Curator writes only its admitted memory surface, never code, raw Git, task status, contracts, transaction state or landing decisions.
+Place changes in their actual file/route/entity home. Overviews begin with title and governing overview, then a purpose section headed `## What This Repo Is`, `## What This Area Is` or `## Purpose`, construction, invariants and boundaries, and all citation lines together at the end; they are not leaf/date diaries. WIP registers refusing purpose-first, leaf/date-section and trailing-citation rules, skipping them for standalone conversion that preserves legacy prose. Operational Notes is a last resort. On converted cards, the citation workflow resolves reference anchors. Check all affected cards in one call and repair them in one call, with a dry run first and onboarding-relative `documents`; do not run one call per card. Knowledge entries and history use the admitted writer, never handwritten sidecar/record JSON. Curator writes only admitted memory plus completed matching own-curation task-step bookkeeping; never code, raw Git, task status, contracts, transaction state or landing decisions.
 
 Contract-scoped MCP calls must select the leaf memory root and verify returned `onboardingRoot`; unscoped diagnostics can describe the official tree; unscoped index apply is admitted only through the explicit pre-baseline exception, otherwise use dry-run or the leaf writer scope. Missing scope or refused capability is a blocker, not authority to use another server, writer, transport or workspace. Denied or unanswered harness permission cannot be bypassed through another command, tool, helper or later turn.
 
@@ -102,7 +102,7 @@ The normal quality loop runs the complete operation at intake and after every re
 
 Coherence names the frozen candidate and has a generated human-readable projection. A finished turn is not its certificate. Closeout history/fingerprint writes do not make the frozen authority certify a later live tree; do not validate that later tree as an invented integration prerequisite. The doctrine calls completed curation handoff evidence while also retaining required curation/coherence prerequisites; this distinction does not authorize removal of existing transaction validation or creation of a new semantic acceptance gate.
 
-Code concerns go directly to Worker and Reviewer even after code PASS. Reviewer reopens the evidenced point or explains why it does not hold; unresolved disagreement or authority goes to Manager. Memory review has its own sealed findings and pass count, does not open/reset code rounds, and uses the same ordinary limit. Requested reviews preserve a sealed baseline and bounded fix-verification scope. The retained settings-limited rule has a present D107 exception: after rounds are exhausted, the same Reviewer may inspect once more only previously raised, now-repaired remaining items, with Manager recording D107; new items are outside that exception. Extra memory passes retain their own developer-approval route.
+Code concerns go directly to Worker and Reviewer even after code PASS. Reviewer reopens the evidenced point or explains why it does not hold; unresolved disagreement or authority goes to Manager. Memory review has its own sealed findings and pass count, does not open/reset code rounds, and uses the same ordinary limit. Requested reviews preserve a sealed baseline and bounded fix-verification scope. Within the settings limit, verification of repaired existing findings is an ordinary round. Beyond it, Manager obtains and records architect/developer approval; prior D107 wording grants no automatic extra round. Memory uses its separate lane and the same approval boundary.
 
 A seat may organize its assignment with harness helpers, but helpers hold no AR seat, start no role, share the same permissions and folder, and cannot provide independent review of their author's work. Boundary messages and product state changes remain the seat's acts. Curator remains responsible for placement, meaning, admission, verification and exactly one writer. Its full-intake worklist counts distinct outstanding actions once and credits delegated parts and how they were checked.
 
@@ -110,7 +110,7 @@ Developer questions follow the supplied parent or documented reporting recipient
 
 Quality commands, executor, retry/resources and evidence contracts resolve from active repository memory. Focused diagnostics remain distinct from explicit full verification and certification; Radon reports are not enforcing passes. Retained R39/CCR-R12 doctrine fixes leaf-closeout/master-integration certification cadence, no leaf-integration rerun, no inferred fallback, suppressed automatic quality/test hooks inside the governed Git transaction, and a ledger refresh without a ledger commit. Those cadence and hook claims are inherited contracts here, not a new execution verdict. Closeout remains owner-run, binds real candidates and evidence, and records actual code/memory commits; Curator never invents future hashes, advances fingerprints onto uncommitted code or silences findings with attestation prose.
 
-The repository-foundation entry has repository/context/scope/source/state inputs rather than a leaf brief, delta or enclosure. Its procedure belongs to `c-14-knowledge-bootstrap`. The older task-binding opener admits taskless Curator alongside chat, terminal and Bootstrap; that policy is distinct from native manual-launch selection, which describes taskless Architect/Investigator. Do not infer universal taskless launch support from either list. Foundation authoring uses the admitted taskless bootstrap writer with no enclosure in scope; `enclosure_in_scope` prevents writing onto a task's disposable line. No synthetic leaf/worktree/contract supplies missing arguments. Planning remains default, developer authorization supplies the write word, and partial scope remains partial.
+The repository-foundation entry has repository/context/scope/source/state inputs rather than a leaf brief, delta or enclosure. Its procedure belongs to `c-14-knowledge-bootstrap`. The older task-binding opener’s taskless-Curator list is historical, not an active admission. The current Curator instruction allows the actual seat only on a leaf task document; an instructed session follows Curator rules for the taskless writer, while Bootstrap reads and reports. Foundation authoring uses the admitted taskless bootstrap writer with no enclosure in scope; `enclosure_in_scope` prevents writing onto a task's disposable line. No synthetic leaf/worktree/contract supplies missing arguments. Planning remains default, developer authorization supplies the write word, and partial scope remains partial.
 
 Bootstrap owns read/report/setup boundaries, not foundation authorship. On a new memory root, initial onboarding/fixer precedes baseline adoption, and foundation requires the memory commit; earlier foundation needs an existing memory commit. Onboarding, attributed baseline and authored knowledge are separate facts. `not-recorded`, recorded exact identity and `unusable` are distinct from `context-not-admitted`; missing revisions are admission failures, not empty knowledge. Unsupported layouts and unusable artifacts are reported rather than quietly overwritten, migrated or deleted.
 
@@ -120,7 +120,7 @@ This account was adjudicated from source reads at the named checkout and the ent
 
 The retained CAPS-L1 account records the 620-to-179-line router restructure and migration of doctrine into sibling layers. It was structural, not measured context reduction. CAPS-L10 recorded a Worker capsule of 11,828 tokens against a 5,928-token legacy chain, an increase of 5,900; the like-for-like implementation capsule was 11,645, an increase of 5,717. Manager and Architect were UNMEASURED with `binding-unresolved`; adoption acceptance was FAILED/REVISE, while obligation preservation was reported as 36/36 across ten roles plus launcher routing. The named witnesses `notes/reports/260915-CAPS-L10-worker-report.md`, `notes/reports/caps-l10-disposition.md` and `notes/reports/caps-l10-measurement-method.md` are absent from this checkout. These figures and the abbreviated method digest are retained historical limits, not revalidated measurements. No context-saving claim follows.
 
-The L27 seat note concerned base `06ed70cfcde7e3860ee5b53435727e7512e4335c` plus its working delta and recorded refusal of document-less Curator. The L32 note concerned base `71a170796f5380bd3a5b65a5c3323ca4f92b0cc0` plus its delta after the 2026-09-24 ruling added Curator. Their old candidate accounts were not replayed. Present task-binding source confirms that set, while present native launcher doctrine has a different manual taskless selection. Preserve both histories without treating an old opener's list as the permanent native product interface.
+The L27 seat note concerned base `06ed70cfcde7e3860ee5b53435727e7512e4335c` plus its working delta and recorded refusal of document-less Curator. The L32 note concerned base `71a170796f5380bd3a5b65a5c3323ca4f92b0cc0` plus its delta after the 2026-09-24 ruling added Curator. Their old candidate accounts were not replayed. That set is retained only as the dated L32 account; it does not establish present taskless Curator admission. Current Curator text specifies the taskless instructed-session writer instead. Preserve both histories without treating an old opener's list as the permanent native product interface.
 
 ICR-L20/L28's published-dataset writer, external-source manifest, family/no-family planes, exact retry exemption and plane states describe the retired database-era account. Their continuing intent is authored semantic scope, justified family responsibility, exact evidence attribution, honest unexamined/partial states, one writer and report-based readback. Current file schema replaces those mechanisms rather than running a parallel publication lane. The old schema note `260915-KS-curator-handoff-list-schema.md` and 41-entry `260915-KS-curator-handoff-fixture-L23-rev1.json` are explicitly outside this repository; their complete contents were not available here. The current template states its target-element supersession; it otherwise defers conflicting revision-1 rules to that note. The inherited corrected fixture claim is three non-route targets plus one empty target list, not the earlier erroneous eleven-of-forty-one count.
 
@@ -133,6 +133,16 @@ The review budget is settings-owned (`orchestration.loops.defaults.maxRounds`), 
 Worker ends with requirement-satisfying bytes, focused checks and report with Reviewer; Reviewer records whole-requirement coverage and verdict; Curator writes, checks and publishes knowledge through the installed build and obtains clean full quality/coherence evidence before handing MEMORY directly to the independent Reviewer. Each stage repairs its own input/instrument slips through the same admitted tool and continues; permission prompts, correct-input guard refusals or unowned state, requirement-meaning questions and out-of-scope effects remain stops.
 
 The same Reviewer can repair a Worker-record-only finding on its last recorded round without `begin_review` only if the candidate is byte-identical under the authority-resolved identity. A changed or unproven candidate requires a new begin; remaining sealed finding IDs can only shrink. A showing case is proof of the required property, not the entire finding; an unsuccessful repair or extra-round request must account for that property and its construction.
+
+### Role-stage selection and step-local authoring
+
+The composition manifest declares section audiences for marked operations and `all` for unchanged authorized closeout. A capsule keeps the whole selected role and the stage's common/matching-role text, not every role's method. Inputs, whole results and all-stage boundaries remain capsule obligations. Named step-detail references provide formats, command options and inspection method at their named step; a surviving heading does not prove a moved substantive rule still stands there. Curator serving-build/no-self-producer constraints appear inline in curation, orientation and recovery.
+
+The shared STE-inspired profile is the single writing guide for new or revised invariant statements, family guarantees, history reasons and walkthrough prose after adoption. It preserves actor, applicability, triggers, quantifiers, negation, conditions, exclusions and exact source/evidence identities. Independent non-author comparison and concrete conforming/violating/boundary cases precede a `clarify` judgment; real changes use the existing effect/history/revision route. Word-count/vocabulary heuristics approve no meaning. Three-real-revision pilot preparation and optional visual explanations are not independent acceptance, and frozen records/closed history are not cosmetically rewritten. Migration procedures link the guide before their waves.
+
+Worker marks only completed matching own build/evidence steps; Curator only its completed curation step; Reviewer only a matching review step after its last round is recorded passed. Missing matching steps are reported and not set. Incomplete, blocked, progress and escalation reports do not mark unfinished work done. Manager sets no step for another agent and retains status/acceptance/publication. Worker/Curator stop after three unsuccessful own repairs of the same check/finding and tell Manager; this local stop is distinct from product review-record try counting.
+
+Reviewer records memory begin/result with `reviewKind=memory`: separate sealed reports, findings and count, the same limit, no code-state reset, and Manager-recorded architect/developer approval beyond it. Under-way memory reviews finish as begun; new recorded lanes apply after landing. Neither this rollout nor clearer prose rewrites prior reviews or history.
 
 ## Evidence
 
@@ -162,7 +172,7 @@ The same Reviewer can repair a Worker-record-only finding on its last recorded r
 - The report facts the foundation entry owes instead of a leaf's, inside the seat's own output section. [23]
 - Permitted actions name both admitted writer entry points and refuse taskless bootstrap within an enclosure. [24]
 - The operation's ownership paragraph: the manager's half is a leaf-entry fact, and the foundation is reached as the procedure states. [25]
-- The comparison table that separates the two entries by carrier, scope, required inputs, writer, onboarding and missing inputs. [26]
+- Curator role Inputs and permitted writer routes preserve leaf/foundation carrier, scope, no-enclosure, onboarding and missing-input distinctions; the former operation comparison table no longer exists. [26]
 - The authority gate that names both writers and keeps the knowledge batch and its publication with their existing owners. [27]
 - The handoff paragraph: on the foundation entry the same facts come from the bootstrap report, with the areas a partial run did not reach named as not reached. [28]
 - The bootstrap role's step 5: reach the foundation, report the state it read, hand the authoring on, and never report a repository whose knowledge is not recorded as ready. [29]
@@ -170,9 +180,9 @@ The same Reviewer can repair a Worker-record-only finding on its last recorded r
 - The bootstrap operation uses scaffold/fixer step 5, baseline step 6 and curator foundation step 7; earlier foundation needs an existing memory commit. [31]
 - The four knowledge rows the operation's failure table gains, keeping `unusable` and a refused admission distinct from `not-recorded`. [32]
 - The bootstrap operation's own prohibition on authoring the foundation, and the completion line that carries the foundation's state. [33]
-- The procedure these carriers delegate to, and its own statement that a taskless curator seat **now exists** and authors the foundation when no task does — the statement L27 landed in the opposite form and `260921-ICR-L32` reversed. [34]
+- Historical L32 taskless-seat account, not current launch authority; current role instructions distinguish Bootstrap read/report and instructed-session taskless writing. [34]
 - **The authoring step the curator role file now carries: the real invocation, what to read from the report, and the identity the handoff owes.** [35]
-- **The same obligation in the curation operation, with the invocation spelled out and the report's consumed fields named.** [36]
+- The curation operation retains boundaries; writer-command syntax and report-consumption method are in the step-local writer/authoring references. [36]
 - The authority gate that keeps the batch and its publication with their existing owners, and the rule that a partial hand-off stays partial. [37]
 - Current file-based handoff: the operation delegates report contents to the Curator role, whose report carries writer state, written record/entry IDs and paths, history rows, refusal reasons and explicit family coverage; no dataset identity is published. [39]
 - The read route whose declaration the write side now publishes to, restated as current truth in the retrieval carrier. [40]
@@ -209,9 +219,36 @@ The same Reviewer can repair a Worker-record-only finding on its last recorded r
 - History preserves governing changed rows and replacement covers; admission and decision rules remain explicit.  Anchor: History; admission; decisions \[69] [69]
 - Raw quality status is preserved; stale coherence rewrites combined status, current coherence sets readiness without rewriting it. \[70] [70]
 - Foundation admission refuses a resolved enclosure. \[72] [72]
-- D107 grants one bounded further inspection of already-raised repaired items; memory passes remain separately governed.  Anchor: Review exception and boundaries \[73] [73]
+- Verification stays on sealed existing findings; settings govern ordinary rounds and Manager-recorded architect/developer approval is required beyond them, separately in each lane. [73]
 - Normal curation remains full scoped quality, with coherence validated before closeout and no later-tree recertification implied.  Anchor: Quality loop and authority gates \[74] [74]
 
 - Normal source-bound onboarding, membership and record judgments. [75]
 - Non-author second-reader review, distinct from author helpers. [76]
 - Named report/refuse policies instead of blanket exemptions. [77]
+
+
+- Role-stage selection, precise authoring, narrow own-step completion and independent recorded memory lane; source declarations, no execution acceptance. [79]
+
+- Role-stage selection, precise authoring, narrow own-step completion and independent recorded memory lane; source declarations, no execution acceptance. [80]
+
+- Role-stage selection, precise authoring, narrow own-step completion and independent recorded memory lane; source declarations, no execution acceptance. [81]
+
+- Role-stage selection, precise authoring, narrow own-step completion and independent recorded memory lane; source declarations, no execution acceptance. [82]
+
+- Role-stage selection, precise authoring, narrow own-step completion and independent recorded memory lane; source declarations, no execution acceptance. [83]
+
+- Role-stage selection, precise authoring, narrow own-step completion and independent recorded memory lane; source declarations, no execution acceptance. [84]
+
+- Role-stage selection, precise authoring, narrow own-step completion and independent recorded memory lane; source declarations, no execution acceptance. [85]
+
+- Role-stage selection, precise authoring, narrow own-step completion and independent recorded memory lane; source declarations, no execution acceptance. [86]
+
+- Role-stage selection, precise authoring, narrow own-step completion and independent recorded memory lane; source declarations, no execution acceptance. [87]
+
+- Role-stage selection, precise authoring, narrow own-step completion and independent recorded memory lane; source declarations, no execution acceptance. [88]
+
+- Role-stage selection, precise authoring, narrow own-step completion and independent recorded memory lane; source declarations, no execution acceptance. [89]
+
+- Role-stage selection, precise authoring, narrow own-step completion and independent recorded memory lane; source declarations, no execution acceptance. [90]
+
+- Role-stage selection, precise authoring, narrow own-step completion and independent recorded memory lane; source declarations, no execution acceptance. [91]

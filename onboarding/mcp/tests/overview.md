@@ -146,7 +146,7 @@ Message transport coverage is split across settings validation, filesystem/colli
 
 `test_landing_report.py` declares controls for measured cuts and the below-measure boundary, proven-deleted sources versus unproven absence, route overviews and full card removals, code-named renames versus duplicate-blob copies, admitted leaf-base comparison after commits and base updates, extra-knowledge file sizes, symlinks without target traversal, Git administrative exclusions, unreadable-base notes, bounded answer rows and linear line-multiset work. Its operation/checklist/gate/adapter cases distinguish descriptive rows from existing refusals; the closeout-phase fixture mocks adjacent services, so it is not whole-landing acceptance.
 
-The role-text case scans generated raw role files, then compiles two canonical role/operation capsules. It is not a live every-harness consumption witness. The module is selected once in `unit-regression`. The lifecycle catalog declares it as an exact consumer of three existing artifacts: `_user_settings_guard.py`, `curator_coherence_test_support.py` and `fixtures/repository_profiles/node/package-lock.json`. This is declarative membership, not evidence of runtime fixture consumption. Registration and these source-described assertions establish neither a new invocation nor a PASS.
+The Curator role-text case retains source/compiled facet checks, including its scoped equivalent. The Reviewer case delivers the exact named step-8 memory artifact for each discovered source root and checks both landing clauses with deletion controls; it no longer treats two canonical capsule scans as that complete account. It is not a live every-harness consumption witness. The module is selected once in `unit-regression`. The lifecycle catalog declares it as an exact consumer of three existing artifacts: `_user_settings_guard.py`, `curator_coherence_test_support.py` and `fixtures/repository_profiles/node/package-lock.json`. This is declarative membership, not evidence of runtime fixture consumption. Registration and these source-described assertions establish neither a new invocation nor a PASS.
 
 
 ### Native selection and source-owner qualifications
@@ -354,6 +354,9 @@ Source account retained from the parked claim (anchor currency not renewed here)
 Both the principal account and repeated operative captions use the same current source epochs; historical counts are not a parallel current limit or a claim of executed collection.
 
 ## Evidence
+
+
+
 
 - Controlled-host cases protect archive successor identity, live-only use, bounded traversal and placement refusal; catalog declarations do not prove execution. [1775]
 
@@ -840,3 +843,5 @@ Both the principal account and repeated operative captions use the same current 
 - The intent-cache concurrency case blocks its own reader while another route completes; static assertion inspection is not measured runtime evidence. [1779]
 - Raw tool-event assertions require task scopeKey and absence of session/lifecycle attribution; not executed here. [1780]
 - The composed evidence catalog declares 12 contracts and 73 artifact identities; this is a parsed source census, not fixture-consumption evidence. [1781]
+
+- Reviewer landing wording is checked in each discovered root’s exact step-8 detail, not only raw role files/two canonical capsules. [1782]

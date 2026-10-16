@@ -9,7 +9,8 @@
   "applicability": "Start or retry with the request id already at the selection receipt address.",
   "conditions": [
     "Request digest and starter ownership still match.",
-    "A receipt carrying its leaf's closing mark is answered archive-only, not replayed."
+    "A receipt carrying its leaf's closing mark is answered archive-only, not replayed.",
+    "The rejected stepped-up retry exception requires retained replayRequest; it does not recompile current instructions or invent a request ID."
   ],
   "exclusions": [
     "Resolved executions may refresh host status under R07 without recompiling.",
@@ -27,9 +28,9 @@
     "leaf": "260928-MIK-L90",
     "task": "260928-MIK"
   },
-  "revision": 2,
+  "revision": 3,
   "schema": "ar-invariant/v1",
-  "statement": "A request whose receipt at its address carries its request id is answered from that receipt and is not compiled again: a `starting` or `unknown` receipt runs its stored call under the minted agent id and with the first message as saved, any other status returns the saved execution; a task document, the capsule or the first message that changed since the launch cannot turn the repeat into a conflict. A receipt that carries its leaf's closing mark is the exception: an unentered creation is refused without replay, and an entered creation stays archive-pending until its returned agent is archived and the start refused, without erasing the retirement record.",
+  "statement": "A request whose receipt at its address carries its request id is answered from that receipt and is not compiled again: a `starting` or `unknown` receipt runs its stored call under the minted agent id and with the first message as saved, any other status returns the saved execution; a task document, the capsule or the first message that changed since the launch cannot turn the repeat into a conflict. A receipt that carries its leaf's closing mark is the exception: an unentered creation is refused without replay, and an entered creation stays archive-pending until its returned agent is archived and the start refused, without erasing the retirement record. A rejected stepped-up receipt retaining replayRequest may retry its exact stored call; frozen detail integrity and refreshed predecessor liveness are checked before any destructive replacement.",
   "status": "proposed",
   "supersedes": []
 }

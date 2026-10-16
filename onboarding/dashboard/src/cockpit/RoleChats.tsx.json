@@ -6,9 +6,8 @@
         "blob": "c90e6a248cffca67c3b8e045d6bf885fa4f730d9",
         "content": "sha256:afe07bf8fcfffb222fee04139648097c27e9960a48b388d5fe9641e11fce073e",
         "locator": {
-          "end": 94,
-          "kind": "line_range",
-          "start": 17
+          "kind": "symbol",
+          "name": "RoleChatsPane"
         }
       },
       "id": "RLZ-5P93PT",
@@ -44,9 +43,8 @@
         "blob": "c90e6a248cffca67c3b8e045d6bf885fa4f730d9",
         "content": "sha256:afe07bf8fcfffb222fee04139648097c27e9960a48b388d5fe9641e11fce073e",
         "locator": {
-          "end": 94,
-          "kind": "line_range",
-          "start": 17
+          "kind": "symbol",
+          "name": "RoleChatsPane"
         }
       },
       "id": "RLZ-A0VKEA",
@@ -63,9 +61,8 @@
         "blob": "c90e6a248cffca67c3b8e045d6bf885fa4f730d9",
         "content": "sha256:afe07bf8fcfffb222fee04139648097c27e9960a48b388d5fe9641e11fce073e",
         "locator": {
-          "end": 94,
-          "kind": "line_range",
-          "start": 17
+          "kind": "symbol",
+          "name": "RoleChatsPane"
         }
       },
       "id": "RLZ-A0WKTC",

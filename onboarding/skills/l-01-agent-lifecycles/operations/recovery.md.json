@@ -3,12 +3,12 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "89de0187db23dce8b3740bb06c1583dad46d62e1",
+        "blob": "3f533feee9cabfd511381109657b10c3cbf0b859",
         "content": "sha256:7654e32665a2cd703bf52c13f91bb959ea3e6471a500b1e2f990c7e0bc8561e3",
         "locator": {
-          "end": 7,
+          "end": 8,
           "kind": "line_range",
-          "start": 7
+          "start": 8
         }
       },
       "id": "RLZ-YTZ3Y1",
@@ -31,6 +31,23 @@
             "content": "sha256:ae7583596bc9f30d49b5d675e48b5076da2aabca5cf3d992ab97ce438e7607b1",
             "locator": {
               "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Marks common text all-role and adds Curator-only serving-build constraints for recovery.\n\nAnchor: Candidate instruction body, lines 1–13",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3f533feee9cabfd511381109657b10c3cbf0b859",
+            "content": "sha256:88f092a0a7a595d106af69ff5f7afb61ecb68c8dd1638c3b8f672956bf57f8a6",
+            "locator": {
+              "end": 13,
+              "kind": "line_range",
+              "start": 1
             }
           },
           "kind": "code"

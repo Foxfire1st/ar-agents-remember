@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "4e29dc59b541ab3eab9fbf66832372abe20353ef",
+        "blob": "0049f555b1338b3ab35a59750be6c0c51cbb63d2",
         "content": "sha256:b963a9650ea973956f73bae4d1fd5f8d06d994fd6abf2772092395c89aaf232b",
         "locator": {
           "kind": "symbol",
@@ -26,7 +26,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "bee504e5f8e26eeb8b4de392655f249c35a0501e",
+            "blob": "0049f555b1338b3ab35a59750be6c0c51cbb63d2",
             "content": "sha256:50e93ee6d6a95ce3372308f2f3ce9df40517b33a420ab5f076da862e136d3697",
             "locator": {
               "kind": "symbol",
@@ -37,7 +37,7 @@
         },
         {
           "anchor": {
-            "blob": "bee504e5f8e26eeb8b4de392655f249c35a0501e",
+            "blob": "0049f555b1338b3ab35a59750be6c0c51cbb63d2",
             "content": "sha256:7f9fc5da30d8d786e759086820d40acf7ca95b7ec2e193c95bf7a104763fec9a",
             "locator": {
               "kind": "symbol",
@@ -48,7 +48,7 @@
         },
         {
           "anchor": {
-            "blob": "bee504e5f8e26eeb8b4de392655f249c35a0501e",
+            "blob": "0049f555b1338b3ab35a59750be6c0c51cbb63d2",
             "content": "sha256:1645a2a76bcb3106fb9b53e5eabd8bf7ca382da58edf1228a78d8d991730e892",
             "locator": {
               "kind": "symbol",
@@ -64,7 +64,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "bee504e5f8e26eeb8b4de392655f249c35a0501e",
+            "blob": "0049f555b1338b3ab35a59750be6c0c51cbb63d2",
             "content": "sha256:123fbc9fd64a7c66b2da8b56cf2765e79813e71904565d8cb12358efd897d03f",
             "locator": {
               "kind": "symbol",
@@ -91,11 +91,82 @@
       "targets": [
         {
           "anchor": {
-            "blob": "bee504e5f8e26eeb8b4de392655f249c35a0501e",
+            "blob": "0049f555b1338b3ab35a59750be6c0c51cbb63d2",
             "content": "sha256:12f59076c4a930fa1b31117b0ca7b7b0d476d705d0de00a07975e53bbc6cc986",
             "locator": {
               "kind": "symbol",
               "name": "RouteReviewRecord"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Worker/Curator typed review census, record-only exclusion and unknown history.\n\nAnchor: L175–L240",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "29bbfb919fa2a5e25fc3e3ee172407e92e192fc0",
+            "content": "sha256:89c09fd0491880de2f7b715bffbe2d6b0605a6dea7400689519c43f40f7b119d",
+            "locator": {
+              "end": 240,
+              "kind": "line_range",
+              "start": 175
+            },
+            "path": "mcp/src/agents_remember/worktrees/review_history.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Reason admission, threshold and differing-harness/model inheritance boundary.\n\nAnchor: L23–L84",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f341c13a99f485178e73c4ff8bf4de16267ee662",
+            "content": "sha256:5a3727f4901933c44cd5f7edc8b16220285a82a9e080326edf482cbb126f0b2f",
+            "locator": {
+              "end": 84,
+              "kind": "line_range",
+              "start": 23
+            },
+            "path": "mcp/src/agents_remember/cli/role_step_up.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Record-only memory identity comes from memory authority, never the sibling code root.\n\nAnchor: L251–L296",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f5edfbc3d469737fdadc36945e0204f336dc4eb8",
+            "content": "sha256:90f0dd1b3aad214ad2d499dda3753cc514d16cabd606ee0021a9a7c6e84ed456",
+            "locator": {
+              "end": 296,
+              "kind": "line_range",
+              "start": 251
+            },
+            "path": "mcp/src/agents_remember/application/task_docs/task_doc_route_review.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "File-local implementation of the stated contract; caller-owned effects and governing workflow are separate evidence.\n\nAnchor: L114–L205",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0049f555b1338b3ab35a59750be6c0c51cbb63d2",
+            "content": "sha256:00acf35ffc9e071896f529c88e8ed018e60b92c83aea837e5879b86b1644f262",
+            "locator": {
+              "end": 205,
+              "kind": "line_range",
+              "start": 114
             }
           },
           "kind": "code"

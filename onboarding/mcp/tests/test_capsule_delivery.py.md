@@ -12,7 +12,7 @@ Protects the conversion of a genuinely compiled role capsule into trusted instru
 
 ### Logic
 
-Independent literals check the delivery dataclass’s exact fields, reject blank instructions, malformed digest and empty binding facts. real_compilation runs the shipped compiler with actual frozen DTOs; conversion checks admitted repository/task/role/operation, rendered instructions and semantic digest. Unknown seat kinds refuse; launcher bindings report the launcher sentinel.
+Independent literals check exactly binding, trusted_instructions, semantic_digest and the separately admitted detail_references field (empty tuple by default), and reject blank instructions, malformed digest and empty binding facts. Task text still has no instruction-shaped field; typed detail references are not task text. real_compilation runs the shipped compiler with actual frozen DTOs; conversion checks admitted repository/task/role/operation, rendered instructions and semantic digest. Unknown seat kinds refuse; launcher bindings report the launcher sentinel.
 
 ### Invariants And Boundaries
 
@@ -22,4 +22,4 @@ The genuine role compilation test is distinct from the launcher-shaped stand-in 
 
 No Domain Documentation source is configured for this repository-specific boundary.
 
-- Capsule delivery value boundaries: implementation/assertion boundary described above. [1]
+- The exact delivery field census admits separate empty-default detail references while task text has no instruction field; genuine compilation still supplies admitted binding/instructions/digest. [1]

@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "b46242836beae1dc5e215f8de325f7ab21c51733",
+        "blob": "31cff56ad7f3d6a8ae849c20ddf444bbb2a26211",
         "content": "sha256:8ed1ddd32ce18bafe1ee0df1609432fd2eae760e091454cf3f10152fc8a79aae",
         "locator": {
           "kind": "symbol",
@@ -21,8 +21,8 @@
     },
     {
       "anchor": {
-        "blob": "b46242836beae1dc5e215f8de325f7ab21c51733",
-        "content": "sha256:80802c799a1fa45219e6805c273c93d3e45e10591c5cdbe7fa8fc171b91c33eb",
+        "blob": "31cff56ad7f3d6a8ae849c20ddf444bbb2a26211",
+        "content": "sha256:6cca9a8573c0ffa2a5afa384ca8d763ead0c1a570be399c2464a0f53ede15a73",
         "locator": {
           "kind": "file"
         }
@@ -79,6 +79,59 @@
             "content": "sha256:038244bfacd5f84c0ca1689249d36257c5e28cae0af72815ad027ec7bc752acd",
             "locator": {
               "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Worker/Curator typed review census, record-only exclusion and unknown history.\n\nAnchor: L175–L240",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "29bbfb919fa2a5e25fc3e3ee172407e92e192fc0",
+            "content": "sha256:89c09fd0491880de2f7b715bffbe2d6b0605a6dea7400689519c43f40f7b119d",
+            "locator": {
+              "end": 240,
+              "kind": "line_range",
+              "start": 175
+            },
+            "path": "mcp/src/agents_remember/worktrees/review_history.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Reason admission, threshold and differing-harness/model inheritance boundary.\n\nAnchor: L23–L84",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f341c13a99f485178e73c4ff8bf4de16267ee662",
+            "content": "sha256:5a3727f4901933c44cd5f7edc8b16220285a82a9e080326edf482cbb126f0b2f",
+            "locator": {
+              "end": 84,
+              "kind": "line_range",
+              "start": 23
+            },
+            "path": "mcp/src/agents_remember/cli/role_step_up.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "File-local implementation of the stated contract; caller-owned effects and governing workflow are separate evidence.\n\nAnchor: L68–L104",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "31cff56ad7f3d6a8ae849c20ddf444bbb2a26211",
+            "content": "sha256:b446107717d02cc92a1a734edf82cd97f5500314c5090b48f930f449dd011cf5",
+            "locator": {
+              "end": 104,
+              "kind": "line_range",
+              "start": 68
             }
           },
           "kind": "code"

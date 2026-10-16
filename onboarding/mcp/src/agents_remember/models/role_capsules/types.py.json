@@ -19,7 +19,7 @@
         },
         {
           "anchor": {
-            "blob": "6d58977d0180423326b3c4c33f1de00b9453702e",
+            "blob": "f82bdc4007083ae4dad1686445d94d0c7e33d03b",
             "content": "sha256:635d6f43e11c20c185494fde019595d0988f977d19d5804a267a56e1a43a727c",
             "locator": {
               "kind": "symbol",
@@ -44,14 +44,31 @@
         },
         {
           "anchor": {
-            "blob": "6d58977d0180423326b3c4c33f1de00b9453702e",
+            "blob": "f82bdc4007083ae4dad1686445d94d0c7e33d03b",
             "content": "sha256:0bf274271690841733f58b8bc693f116df6e639a82269d456b9aa3544cf012cd",
             "locator": {
-              "end": 60,
+              "end": 58,
               "kind": "line_range",
-              "start": 50
+              "start": 48
             },
             "path": "mcp/src/agents_remember/models/role_capsules/vocabulary.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "File-local implementation of the stated contract; caller-owned effects and governing workflow are separate evidence.\n\nAnchor: L450–L496",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3283618c85b66070d98755f6d21a3f2e66f407ff",
+            "content": "sha256:34e323312c9aa00997fdb03b7ac526547641a294f8662453653cd18c3dab8aeb",
+            "locator": {
+              "end": 496,
+              "kind": "line_range",
+              "start": 450
+            }
           },
           "kind": "code"
         }
@@ -218,7 +235,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "76bc4e03dad8f1005ff4fc7eb5f0534c839db1b0",
+            "blob": "9946e7fc31fa11992782193f4af92050e7c18e46",
             "content": "sha256:473474c07b91cebc974210786d8cc7b9818bcc0a13b81d9a7507d283c83df510",
             "locator": {
               "kind": "symbol",
@@ -230,7 +247,7 @@
         },
         {
           "anchor": {
-            "blob": "76bc4e03dad8f1005ff4fc7eb5f0534c839db1b0",
+            "blob": "9946e7fc31fa11992782193f4af92050e7c18e46",
             "content": "sha256:396f24d73d20453da02daf14bb34f184ac316c06e029e9b9649b3a7cd5b40e07",
             "locator": {
               "kind": "symbol",
@@ -242,7 +259,7 @@
         },
         {
           "anchor": {
-            "blob": "76bc4e03dad8f1005ff4fc7eb5f0534c839db1b0",
+            "blob": "9946e7fc31fa11992782193f4af92050e7c18e46",
             "content": "sha256:af0689e280645346bf39bdb24a61d66c358135d1dc894f09389c80c72d18f1fe",
             "locator": {
               "end": 388,
@@ -255,7 +272,7 @@
         },
         {
           "anchor": {
-            "blob": "76bc4e03dad8f1005ff4fc7eb5f0534c839db1b0",
+            "blob": "9946e7fc31fa11992782193f4af92050e7c18e46",
             "content": "sha256:2f4dfead8ec9ce69279fc95f0315fe1d3a38aa543f12346e2aae63e65ab0015e",
             "locator": {
               "end": 446,
@@ -265,6 +282,60 @@
             "path": "mcp/tests/test_role_capsule_compiler.py"
           },
           "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "Launch copies detail files, substitutes paths, and records frozen revisions.\n\nAnchor: L16–L35",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "682d4179b094bd4e50d1f67363fe398d5e4e40c9",
+            "content": "sha256:60172f37e29d829d04a0c011bfce73b96756f430b581516ca3dce6f39fbf91d8",
+            "locator": {
+              "end": 35,
+              "kind": "line_range",
+              "start": 16
+            },
+            "path": "mcp/src/agents_remember/cli/role_instruction_details.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "Replay validates regular opened files, content revisions and original canonical report binding, not mutable corpus sources.\n\nAnchor: L38–L88",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "682d4179b094bd4e50d1f67363fe398d5e4e40c9",
+            "content": "sha256:a3660f0512fa0094c6c5fa934139c0b4e7dbf580921a9fdb0c9218c0600898b7",
+            "locator": {
+              "end": 88,
+              "kind": "line_range",
+              "start": 38
+            },
+            "path": "mcp/src/agents_remember/cli/role_instruction_details.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "Per-request detail artifacts use exact admitted bytes beside the handover and write-once publication.\n\nAnchor: L59–L74",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "85b470bea18f2548365b969746fd9e7ef5ea00cf",
+            "content": "sha256:53ae089e7b885fad8e278a7a4540e98ab4b52f03f6e60ecbb8260f070081a4d4",
+            "locator": {
+              "end": 74,
+              "kind": "line_range",
+              "start": 59
+            },
+            "path": "mcp/src/agents_remember/cli/role_handover_artifacts.py"
+          },
+          "kind": "code"
         }
       ]
     }

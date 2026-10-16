@@ -38,7 +38,7 @@ L23 had added the closed `QualityExecutor` choice defaulting `orchestration.qual
 
 ### Role Runtime and Scope
 
-RoleKnobs now carries optional service_tier. resolved_role_knobs merges tier independently of harness/model/effort, so a lower-level model or effort does not erase a role/altitude tier. Preserve the existing spend/launch-arg/default explanations and add this independent native capability fact. RoleKnobs now also carries `mode`, `feature_values` and `notes` with per-choice `origins`: `NON_PERMISSION_FEATURES` (`service_tier`, `fast_mode`) marks speed authority while unknown features carry permission authority until classified, `native_service_tier` normalizes user `fast` to `priority`, and `role_feature_values` compares the tier alias against `featureValues.service_tier` after merging. `agentic_settings_path` names the repository-local file only; `user_agentic_settings_path` and `require_user_agentic_settings_path` resolve and guard the single user file.
+RoleKnobs now carries optional service_tier. resolved_role_knobs merges tier independently of harness/model/effort, so a lower-level model or effort does not erase a role/altitude tier. Legacy role launch/session fields remain accepted-unused; the independent tier/default facts here are not execution-argument authority. RoleKnobs now also carries `mode`, `feature_values` and `notes` with per-choice `origins`: `NON_PERMISSION_FEATURES` (`service_tier`, `fast_mode`) marks speed authority while unknown features carry permission authority until classified, `native_service_tier` normalizes user `fast` to `priority`, and `role_feature_values` compares the tier alias against `featureValues.service_tier` after merging. `agentic_settings_path` names the repository-local file only; `user_agentic_settings_path` and `require_user_agentic_settings_path` resolve and guard the single user file.
 
 ## 260731-EFA-L17/L24 Quality-Gate Settings
 
@@ -54,7 +54,28 @@ family.
 
 - The card mirrors the source file one-to-one at `mcp/src/agents_remember/kernel/_agentic_settings_core.py`.
 
+## Current Contract — Scoped Launch And Settings Changes
+
+KNOWN_ROLE_LAUNCH_FIELDS isolates the ordinary launch fields; KNOWN_ROLE_KNOB_FIELDS adds stepUp only at the outer role row. RoleKnobs carries optional RoleStepUp(choices, after_tries, source, key); nesting is a parser refusal, not another escalation ladder.
+
+require_distinct_step_up rejects an effective no-op alternative after role/spawn scope and serviceTier fast/priority alias normalization. It compares stated ordinary fields, effective features and tier; it does not validate the host’s offered model/mode/features.
+
+resolved_role_knobs preserves normal flat/per-level field and feature/origin merges and inherits/replaces step_up as an alternative object. It validates distinctness both without an altitude override and after effective merging, so an altitude may not turn an inherited alternative into the role’s own choices.
+
+Only completed failing code review rounds count for Worker; only completed failing memory review rounds count for Curator. Record-only checks of the unchanged candidate do not add a try; no legacy mixed-code row is reinterpreted as a Curator round. The optional user alternative defaults to afterTries=3 for these roles, not to extra review authority.
+
+Existing review maxRounds, roleMessageLimit, landing timeout, optional profile-owned quality memory cap, user-settings location guard and active-versus-unused key vocabulary remain independent.
+
 ## Evidence
+
+- Separate ordinary launch vocabulary from outer stepUp. [3]
+- Typed alternative has choices, count and provenance. [4]
+- No-op validation normalizes native tier aliases. [5]
+- Effective flat/altitude merge rechecks distinctness. [6]
+- Test source checks no-op alternatives caused by altitude or alias equality. [7]
+- Three is the counted-role threshold default, not a new review budget. [8]
+- Worker and Curator read independent persisted lanes. [9]
+- Only recorded rounds ending with findings in the role’s kind count. [10]
 
 ### Repo-Internal References
 

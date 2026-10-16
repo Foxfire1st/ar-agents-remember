@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "09ed728d3b1413ac97bd304e79d2e1406a9b2032",
+        "blob": "fd33ebc2ed88d1d738738abfda0fe11b3c0a2611",
         "content": "sha256:d76d5b2e8837a52a2a5983f15e9d924fffb772f728a7fde5152e6db885f8af24",
         "locator": {
           "kind": "symbol",
@@ -21,7 +21,7 @@
     },
     {
       "anchor": {
-        "blob": "09ed728d3b1413ac97bd304e79d2e1406a9b2032",
+        "blob": "fd33ebc2ed88d1d738738abfda0fe11b3c0a2611",
         "content": "sha256:68dd03c55d195ea34ce52b0977c306487e68c20d24155ca2a4d45d506c606f82",
         "locator": {
           "kind": "symbol",
@@ -39,7 +39,7 @@
     },
     {
       "anchor": {
-        "blob": "09ed728d3b1413ac97bd304e79d2e1406a9b2032",
+        "blob": "fd33ebc2ed88d1d738738abfda0fe11b3c0a2611",
         "content": "sha256:3a5df8c434444736195b1e627b66c2cf60746e20ee0bb88a91149598a4b8af03",
         "locator": {
           "end": 378,
@@ -58,12 +58,12 @@
     },
     {
       "anchor": {
-        "blob": "09ed728d3b1413ac97bd304e79d2e1406a9b2032",
+        "blob": "fd33ebc2ed88d1d738738abfda0fe11b3c0a2611",
         "content": "sha256:be483005f08cd68788ef4e585defc960e7a279129a0122fa2689400717fb478f",
         "locator": {
-          "end": 1737,
+          "end": 1680,
           "kind": "line_range",
-          "start": 1640
+          "start": 1583
         }
       },
       "id": "RLZ-7MG9HB",
@@ -77,7 +77,7 @@
     },
     {
       "anchor": {
-        "blob": "09ed728d3b1413ac97bd304e79d2e1406a9b2032",
+        "blob": "fd33ebc2ed88d1d738738abfda0fe11b3c0a2611",
         "content": "sha256:b0bf53728de4411d8749e98977b4e10f4c738ce7008aaa357f16a50f9d6b6b5d",
         "locator": {
           "kind": "symbol",
@@ -95,7 +95,7 @@
     },
     {
       "anchor": {
-        "blob": "09ed728d3b1413ac97bd304e79d2e1406a9b2032",
+        "blob": "fd33ebc2ed88d1d738738abfda0fe11b3c0a2611",
         "content": "sha256:30415cc3de8770663243189a3306756bc53585d7818bdad9f3c9701f4a705a19",
         "locator": {
           "kind": "symbol",
@@ -113,12 +113,12 @@
     },
     {
       "anchor": {
-        "blob": "09ed728d3b1413ac97bd304e79d2e1406a9b2032",
+        "blob": "fd33ebc2ed88d1d738738abfda0fe11b3c0a2611",
         "content": "sha256:57a1c0380a3c3cc7a0b65560620497386a266066a0af952fccc21086998c72b4",
         "locator": {
-          "end": 1814,
+          "end": 1757,
           "kind": "line_range",
-          "start": 1776
+          "start": 1719
         }
       },
       "id": "RLZ-BVTKAZ",
@@ -132,7 +132,7 @@
     },
     {
       "anchor": {
-        "blob": "09ed728d3b1413ac97bd304e79d2e1406a9b2032",
+        "blob": "fd33ebc2ed88d1d738738abfda0fe11b3c0a2611",
         "content": "sha256:abd8d2ff3ba2ae76819edcfe569cc5228b1732f97797006da1b82761dfc2ee1e",
         "locator": {
           "kind": "symbol",
@@ -150,7 +150,7 @@
     },
     {
       "anchor": {
-        "blob": "09ed728d3b1413ac97bd304e79d2e1406a9b2032",
+        "blob": "fd33ebc2ed88d1d738738abfda0fe11b3c0a2611",
         "content": "sha256:504575e3456b64d092dc7207367c47f23f711d6ceebedffe2b0bad7a1419c513",
         "locator": {
           "kind": "symbol",
@@ -168,7 +168,7 @@
     },
     {
       "anchor": {
-        "blob": "09ed728d3b1413ac97bd304e79d2e1406a9b2032",
+        "blob": "fd33ebc2ed88d1d738738abfda0fe11b3c0a2611",
         "content": "sha256:ce7afe7a2c98da194eacfd8b0c70bcd1cc86e033855db28325a12cfa834e484e",
         "locator": {
           "kind": "symbol",
@@ -186,7 +186,7 @@
     },
     {
       "anchor": {
-        "blob": "09ed728d3b1413ac97bd304e79d2e1406a9b2032",
+        "blob": "fd33ebc2ed88d1d738738abfda0fe11b3c0a2611",
         "content": "sha256:13d18faab6f1cfc943a5beb402c7b520278d3de7892245035abe9426ef87c470",
         "locator": {
           "kind": "symbol",
@@ -204,12 +204,12 @@
     },
     {
       "anchor": {
-        "blob": "09ed728d3b1413ac97bd304e79d2e1406a9b2032",
+        "blob": "fd33ebc2ed88d1d738738abfda0fe11b3c0a2611",
         "content": "sha256:544351a5f4e03a5fdefccc5a2861c3a514970f282dc97e76b3c8154cc254a4f1",
         "locator": {
-          "end": 118,
+          "end": 117,
           "kind": "line_range",
-          "start": 118
+          "start": 117
         }
       },
       "id": "RLZ-HJ854G",
@@ -223,12 +223,12 @@
     },
     {
       "anchor": {
-        "blob": "09ed728d3b1413ac97bd304e79d2e1406a9b2032",
+        "blob": "fd33ebc2ed88d1d738738abfda0fe11b3c0a2611",
         "content": "sha256:7091f164e8a80474cd1ff08c45fd12d0c6c95e2907037dfed4406e193a891d75",
         "locator": {
-          "end": 918,
+          "end": 861,
           "kind": "line_range",
-          "start": 904
+          "start": 847
         }
       },
       "id": "RLZ-J6YQNS",
@@ -242,12 +242,12 @@
     },
     {
       "anchor": {
-        "blob": "09ed728d3b1413ac97bd304e79d2e1406a9b2032",
+        "blob": "fd33ebc2ed88d1d738738abfda0fe11b3c0a2611",
         "content": "sha256:4da243e498ffe93f8bf0e4cd2466b5da0d94d6a5d1f9f6bd243f977e812ac7ed",
         "locator": {
-          "end": 1856,
+          "end": 1799,
           "kind": "line_range",
-          "start": 1817
+          "start": 1760
         }
       },
       "id": "RLZ-KRHPKS",
@@ -261,7 +261,7 @@
     },
     {
       "anchor": {
-        "blob": "09ed728d3b1413ac97bd304e79d2e1406a9b2032",
+        "blob": "fd33ebc2ed88d1d738738abfda0fe11b3c0a2611",
         "content": "sha256:ebc1a4ad94a8accb33e831864452ec335ea91e81251b9bee90dff501552948a5",
         "locator": {
           "kind": "symbol",
@@ -279,7 +279,7 @@
     },
     {
       "anchor": {
-        "blob": "09ed728d3b1413ac97bd304e79d2e1406a9b2032",
+        "blob": "fd33ebc2ed88d1d738738abfda0fe11b3c0a2611",
         "content": "sha256:13d18faab6f1cfc943a5beb402c7b520278d3de7892245035abe9426ef87c470",
         "locator": {
           "end": 160,
@@ -298,7 +298,7 @@
     },
     {
       "anchor": {
-        "blob": "09ed728d3b1413ac97bd304e79d2e1406a9b2032",
+        "blob": "fd33ebc2ed88d1d738738abfda0fe11b3c0a2611",
         "content": "sha256:53f31d090bda3f68a2e83d16b4b0dde4dbc06a5569b939eba6c5e967482dbcb9",
         "locator": {
           "kind": "symbol",
@@ -316,7 +316,7 @@
     },
     {
       "anchor": {
-        "blob": "09ed728d3b1413ac97bd304e79d2e1406a9b2032",
+        "blob": "fd33ebc2ed88d1d738738abfda0fe11b3c0a2611",
         "content": "sha256:be483005f08cd68788ef4e585defc960e7a279129a0122fa2689400717fb478f",
         "locator": {
           "kind": "symbol",
@@ -334,7 +334,7 @@
     },
     {
       "anchor": {
-        "blob": "09ed728d3b1413ac97bd304e79d2e1406a9b2032",
+        "blob": "fd33ebc2ed88d1d738738abfda0fe11b3c0a2611",
         "content": "sha256:7781bfcbcbdf5f6706a7e352e24f8ab303f89836ba57b562ec6410dc1480f2bc",
         "locator": {
           "kind": "symbol",
@@ -352,7 +352,7 @@
     },
     {
       "anchor": {
-        "blob": "09ed728d3b1413ac97bd304e79d2e1406a9b2032",
+        "blob": "fd33ebc2ed88d1d738738abfda0fe11b3c0a2611",
         "content": "sha256:d76d5b2e8837a52a2a5983f15e9d924fffb772f728a7fde5152e6db885f8af24",
         "locator": {
           "kind": "symbol",
@@ -370,7 +370,7 @@
     },
     {
       "anchor": {
-        "blob": "09ed728d3b1413ac97bd304e79d2e1406a9b2032",
+        "blob": "fd33ebc2ed88d1d738738abfda0fe11b3c0a2611",
         "content": "sha256:263fc31278fc9bea43e7e85be88f6e272b56f0b509dcbebb5ed747fc7c1df019",
         "locator": {
           "kind": "symbol",
@@ -388,7 +388,7 @@
     },
     {
       "anchor": {
-        "blob": "09ed728d3b1413ac97bd304e79d2e1406a9b2032",
+        "blob": "fd33ebc2ed88d1d738738abfda0fe11b3c0a2611",
         "content": "sha256:c48df9a1f1aaafe92bbecd9163de74c180b08fd1081068db975efb22b063708d",
         "locator": {
           "kind": "symbol",
@@ -406,7 +406,7 @@
     },
     {
       "anchor": {
-        "blob": "09ed728d3b1413ac97bd304e79d2e1406a9b2032",
+        "blob": "fd33ebc2ed88d1d738738abfda0fe11b3c0a2611",
         "content": "sha256:7d1e77434f1ece959cd8f20db179a9a3f78d0a06c010410e11bbf2635a3c8323",
         "locator": {
           "kind": "symbol",
@@ -424,7 +424,7 @@
     },
     {
       "anchor": {
-        "blob": "09ed728d3b1413ac97bd304e79d2e1406a9b2032",
+        "blob": "fd33ebc2ed88d1d738738abfda0fe11b3c0a2611",
         "content": "sha256:df975f80addf619cf119a02cba4faf1530fea468e99ab8f61bf23e117625bf51",
         "locator": {
           "kind": "symbol",
@@ -442,7 +442,7 @@
     },
     {
       "anchor": {
-        "blob": "09ed728d3b1413ac97bd304e79d2e1406a9b2032",
+        "blob": "fd33ebc2ed88d1d738738abfda0fe11b3c0a2611",
         "content": "sha256:c48df9a1f1aaafe92bbecd9163de74c180b08fd1081068db975efb22b063708d",
         "locator": {
           "end": 331,
@@ -466,7 +466,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "09ed728d3b1413ac97bd304e79d2e1406a9b2032",
+            "blob": "fd33ebc2ed88d1d738738abfda0fe11b3c0a2611",
             "content": "sha256:c48df9a1f1aaafe92bbecd9163de74c180b08fd1081068db975efb22b063708d",
             "locator": {
               "kind": "symbol",
@@ -549,12 +549,12 @@
         },
         {
           "anchor": {
-            "blob": "09ed728d3b1413ac97bd304e79d2e1406a9b2032",
+            "blob": "fd33ebc2ed88d1d738738abfda0fe11b3c0a2611",
             "content": "sha256:6662b0ca591afd36d2f367235b45ee3f89346cde5a7aa661164e2e7b8e91b369",
             "locator": {
-              "end": 1084,
+              "end": 1027,
               "kind": "line_range",
-              "start": 1065
+              "start": 1008
             }
           },
           "kind": "code"
@@ -566,7 +566,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "09ed728d3b1413ac97bd304e79d2e1406a9b2032",
+            "blob": "fd33ebc2ed88d1d738738abfda0fe11b3c0a2611",
             "content": "sha256:be483005f08cd68788ef4e585defc960e7a279129a0122fa2689400717fb478f",
             "locator": {
               "kind": "symbol",
@@ -582,12 +582,108 @@
       "targets": [
         {
           "anchor": {
-            "blob": "09ed728d3b1413ac97bd304e79d2e1406a9b2032",
+            "blob": "fd33ebc2ed88d1d738738abfda0fe11b3c0a2611",
             "content": "sha256:b260b056e4a6b1c7d46eba9bb9d542ea4e64399c5f22056b4df951c0d602c1d3",
             "locator": {
               "kind": "symbol",
               "name": "_deliver_or_hold"
             }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "15": {
+      "note": "Typed public start conversion includes stepUp.\n\nAnchor: Current source; preserved L88 property 15",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fd33ebc2ed88d1d738738abfda0fe11b3c0a2611",
+            "content": "sha256:0f61c20b77b2ed91e57728b3e05fffbfc7178e1295f1a3a3534d16b83a9346a0",
+            "locator": {
+              "end": 555,
+              "kind": "line_range",
+              "start": 488
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "16": {
+      "note": "Projection now delegates to the extracted answer owner.\n\nAnchor: Current source; preserved L88 property 16",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fd33ebc2ed88d1d738738abfda0fe11b3c0a2611",
+            "content": "sha256:482394491c5ccfc71c75ec8a1d8cf243273b23a4cb06930b267e4f0a43d713b0",
+            "locator": {
+              "end": 671,
+              "kind": "line_range",
+              "start": 670
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "17": {
+      "note": "Readback, provenance and retry advice are extracted without changing receipt identity.\n\nAnchor: Current source; preserved L88 property 17",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "02279b1899b0f489b0b75330252e236206667193",
+            "content": "sha256:4b0362f72665610bfbdac6b79538e2a7997ee0e08553fa7a09efab05118e0fe7",
+            "locator": {
+              "end": 81,
+              "kind": "line_range",
+              "start": 15
+            },
+            "path": "mcp/src/agents_remember/cli/role_start_answer.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "18": {
+      "note": "On valid saved receipt context, role-facts publication belongs to pre-launch/replay and receipt-aware resume, not to the post-answer projection; filesystem/runtime publication is best effort, not host execution or plugin-consumption evidence.\n\nAnchor: Current receipt publication versus answer projection",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c7802873c1a67ff9cf7024b59cd2ad83838feaf8",
+            "content": "sha256:2d9fcd4224b3aa8a1056860ebc8387fe9f8f371fd84a9ab8c81eaac043799bf1",
+            "locator": {
+              "end": 63,
+              "kind": "line_range",
+              "start": 13
+            },
+            "path": "mcp/src/agents_remember/cli/role_activity.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ce3562637ef9146c730bbacc243e73efb61ace86",
+            "content": "sha256:249d4cb3d2a0b5a446391b2f26b49ae19f17e38d2878f3e54d1431931a206bac",
+            "locator": {
+              "end": 132,
+              "kind": "line_range",
+              "start": 96
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_receipts.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "02279b1899b0f489b0b75330252e236206667193",
+            "content": "sha256:3e6f4cdac0de2c6eb0ac6c8320e731719530146e61410c5495cc82dee0f5148f",
+            "locator": {
+              "end": 80,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "mcp/src/agents_remember/cli/role_start_answer.py"
           },
           "kind": "code"
         }
@@ -720,7 +816,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "09ed728d3b1413ac97bd304e79d2e1406a9b2032",
+            "blob": "fd33ebc2ed88d1d738738abfda0fe11b3c0a2611",
             "content": "sha256:6360d6906f33f67364a091fa810512750413c1193bdccd08992ec081f5f091b8",
             "locator": {
               "kind": "symbol",

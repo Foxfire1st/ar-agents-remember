@@ -237,6 +237,13 @@ writer's input gate, not in this schema.
 
 - Changed family rows need an authored effect; the revision is the writer's. [16]
 
+## Current composition and authoring contract
+
+The new Writing and meaning review section links the single STE-inspired profile for newly authored invariant statements, family guarantees and history reasons. Producer-owned statements and evidence remain verbatim: a separate record draft is compared against the exact old revision/scope, receives independent fact-check, and is labelled clarify only if the obligation stays the same. Real changes need the appropriate authored effect.
+
+Migration assessment/demotion/revision uses the same profile and preserves admission, scope, exact evidence and frozen history; it is no bulk-cosmetic authorization. Procedure links precede waves. The existing thirteen-field shape, per-target rationale/role, no-paraphrase/co-resolution rules, semantic scope, family/external-reference structure, history row domains, admission and decision rules remain the template's owners.
+
+
 ## Evidence
 
 ### Docs References
@@ -690,3 +697,10 @@ Inherited reference 9 commentary (not a revalidated target):
 The byte-equal package copy is a distribution carrier, not an independent role, task or permission authority. Whole-file source evidence does not certify inherited statements, execution, grading or the whole card.
 
 - The authored source owns this contract; the distribution copy is not a separate authority. [21]
+
+- Adds writing-profile and migration guidance without changing the thirteen-field producer schema or writer/history owners. [22]
+- Adds writing-profile and migration guidance without changing the thirteen-field producer schema or writer/history owners. [23]
+- Adds writing-profile and migration guidance without changing the thirteen-field producer schema or writer/history owners. [24]
+- Adds writing-profile and migration guidance without changing the thirteen-field producer schema or writer/history owners. [25]
+- Adds writing-profile and migration guidance without changing the thirteen-field producer schema or writer/history owners. [26]
+- Adds writing-profile and migration guidance without changing the thirteen-field producer schema or writer/history owners. [27]

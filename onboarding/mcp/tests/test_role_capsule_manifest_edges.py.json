@@ -1,0 +1,135 @@
+{
+  "path": "mcp/tests/test_role_capsule_manifest_edges.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Source assertion: test_launch_refuses_malformed_audience_markers_after_common_or_excluded_passages. The declaration is not an execution receipt.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e9fe68b54da9fc973d516589d64bdc3d3391df10",
+            "content": "sha256:1aee787b1b1f9ba42a6e85c9de08d79e89e3cb96a0ddcc1d87533586adcb81e0",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_launch_refuses_malformed_audience_markers_after_common_or_excluded_passages"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Source assertion: test_the_role_lookup_answers_through_the_one_narrowing_gate. The declaration is not an execution receipt.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e9fe68b54da9fc973d516589d64bdc3d3391df10",
+            "content": "sha256:880ffd52d0f2cf6093efe6e5f093589d3e3edfa8b37b6fa09509de74588f29ad",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_role_lookup_answers_through_the_one_narrowing_gate"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Source assertion: test_launch_identity_seals_audience_projection_but_not_unrelated_sources. The declaration is not an execution receipt.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e9fe68b54da9fc973d516589d64bdc3d3391df10",
+            "content": "sha256:f7a8c15b128fbbe1b94d7a56c9f2dc633b53a08a88d26208df3d825d6c4dbd50",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_launch_identity_seals_audience_projection_but_not_unrelated_sources"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "Source assertion: test_the_specializations_field_must_be_an_array_when_present. The declaration is not an execution receipt.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e9fe68b54da9fc973d516589d64bdc3d3391df10",
+            "content": "sha256:bf01b4cfe9a9ddff0257e9be358654f654a4d12a74732e1238bf18e5694a751e",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_specializations_field_must_be_an_array_when_present"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "Source assertion: test_an_override_whose_replacement_file_is_absent_is_refused. The declaration is not an execution receipt.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e9fe68b54da9fc973d516589d64bdc3d3391df10",
+            "content": "sha256:eb7345d4fc079e261dd4ccdcb3ed61ae3cfe65bc41d803f477c155d7ea148a7b",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_an_override_whose_replacement_file_is_absent_is_refused"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "Source assertion: test_a_source_root_that_is_not_a_path_is_refused. The declaration is not an execution receipt.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e9fe68b54da9fc973d516589d64bdc3d3391df10",
+            "content": "sha256:a5bd4a6fd2dcc6ff5a853f1d1b99e516dd8a5370050380bdaead27722c897a0c",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_source_root_that_is_not_a_path_is_refused"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "Source assertion: test_an_admitted_set_that_drops_the_manifest_mid_compile_is_refused. The declaration is not an execution receipt.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e9fe68b54da9fc973d516589d64bdc3d3391df10",
+            "content": "sha256:d30a4ab35d65243f4831bef69681de90577243916998e9dc48e4e03bfd01ce5b",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_an_admitted_set_that_drops_the_manifest_mid_compile_is_refused"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "Source assertion: test_composing_roots_answers_what_each_seat_kind_can_actually_contribute. The declaration is not an execution receipt.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e9fe68b54da9fc973d516589d64bdc3d3391df10",
+            "content": "sha256:43e607fc7ca33f080a794c760c1014fa2cbfed04c0ecea65b79028012ac92a46",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_composing_roots_answers_what_each_seat_kind_can_actually_contribute"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

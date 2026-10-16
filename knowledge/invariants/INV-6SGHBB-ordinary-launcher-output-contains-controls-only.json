@@ -8,8 +8,9 @@
   },
   "applicability": "The ordinary role launcher bar above the chat in the dashboard's Role chats pane.",
   "conditions": [
-    "The bar keeps its row of controls: role, agent, model, effort, Start, Result, Refresh and, where the backend allows it, Revive.",
-    "The one failure line of rule 3 and the Result-opened report of rule 4 are the only text and the only report access the strip offers."
+    "The existing controls remain; configured Step up and receipt-derived model/status badges share their wrapping container.",
+    "Result opens its report in the existing reader; a step-up badge does not expose a reply, path or applied permission claim.",
+    "Base mode, notes and feature chips are explicitly non-applied previews after step-up; applied mode/features are reported unreported."
   ],
   "exclusions": [
     "The chat frame and the messages it shows are outside this obligation.",
@@ -28,9 +29,9 @@
     "leaf": "260928-MIK-L75",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-invariant/v1",
-  "statement": "Ordinary launcher output contains controls only, without execution, reply, capability-summary or report-path prose.",
+  "statement": "Ordinary launcher output contains controls, one actionable failure line and compact receipt-driven step-up identification, without execution-detail, reply, capability-summary or report-path prose.",
   "status": "proposed",
   "supersedes": []
 }

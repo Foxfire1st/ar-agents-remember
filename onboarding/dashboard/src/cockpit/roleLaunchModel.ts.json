@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "215d9f5ab84099d6969f9629244e66ba830cb3eb",
+        "blob": "3aa75e7e06e051f836a57a221e7f05a63b7b4a59",
         "content": "sha256:a39d85e8eea0a0302b95121cf39c0c9b51cefaa2ae03024471383733afa53e8b",
         "locator": {
           "kind": "symbol",
@@ -21,12 +21,11 @@
     },
     {
       "anchor": {
-        "blob": "215d9f5ab84099d6969f9629244e66ba830cb3eb",
+        "blob": "3aa75e7e06e051f836a57a221e7f05a63b7b4a59",
         "content": "sha256:0dce181c2ce4f0edf162a3772b3b5f11e628575894740df84b887f82477945a9",
         "locator": {
-          "end": 260,
-          "kind": "line_range",
-          "start": 258
+          "kind": "symbol",
+          "name": "usesRequestReceipts"
         }
       },
       "id": "RLZ-44423S",
@@ -40,12 +39,12 @@
     },
     {
       "anchor": {
-        "blob": "215d9f5ab84099d6969f9629244e66ba830cb3eb",
+        "blob": "3aa75e7e06e051f836a57a221e7f05a63b7b4a59",
         "content": "sha256:f649a1a5e5f91224b368fe8584c9bce97933e5ffe20e249313226b31b1d6038a",
         "locator": {
-          "end": 196,
+          "end": 199,
           "kind": "line_range",
-          "start": 188
+          "start": 191
         }
       },
       "id": "RLZ-645WGZ",
@@ -59,12 +58,12 @@
     },
     {
       "anchor": {
-        "blob": "215d9f5ab84099d6969f9629244e66ba830cb3eb",
+        "blob": "3aa75e7e06e051f836a57a221e7f05a63b7b4a59",
         "content": "sha256:0dce181c2ce4f0edf162a3772b3b5f11e628575894740df84b887f82477945a9",
         "locator": {
-          "end": 260,
+          "end": 263,
           "kind": "line_range",
-          "start": 258
+          "start": 261
         }
       },
       "id": "RLZ-9CP18T",
@@ -78,12 +77,11 @@
     },
     {
       "anchor": {
-        "blob": "215d9f5ab84099d6969f9629244e66ba830cb3eb",
+        "blob": "3aa75e7e06e051f836a57a221e7f05a63b7b4a59",
         "content": "sha256:7ed744ab627d402113afe4684874a13c629adb422c4573b9371debc2d12020a9",
         "locator": {
-          "end": 546,
-          "kind": "line_range",
-          "start": 528
+          "kind": "symbol",
+          "name": "roleAgentOverrideFor"
         }
       },
       "id": "RLZ-EPB617",
@@ -97,12 +95,11 @@
     },
     {
       "anchor": {
-        "blob": "215d9f5ab84099d6969f9629244e66ba830cb3eb",
+        "blob": "3aa75e7e06e051f836a57a221e7f05a63b7b4a59",
         "content": "sha256:7949c36caa3d602fd123b659c70e6cc475743d745728c6320bc98cb84fdadd04",
         "locator": {
-          "end": 186,
-          "kind": "line_range",
-          "start": 169
+          "kind": "symbol",
+          "name": "boundTasklessRequest"
         }
       },
       "id": "RLZ-PWESKX",
@@ -116,12 +113,12 @@
     },
     {
       "anchor": {
-        "blob": "215d9f5ab84099d6969f9629244e66ba830cb3eb",
+        "blob": "3aa75e7e06e051f836a57a221e7f05a63b7b4a59",
         "content": "sha256:31f778f0f5a88a1e7b0bdd8ba417cd6318ca9fa59c747038b52659593aa55fb3",
         "locator": {
-          "end": 222,
+          "end": 225,
           "kind": "line_range",
-          "start": 199
+          "start": 202
         }
       },
       "id": "RLZ-QQW438",
@@ -145,6 +142,41 @@
             "locator": {
               "kind": "symbol",
               "name": "readTasklessActiveRequests"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "The same start-only reason enters saved retry payload and POST body.\n\nAnchor: Current source; preserved L88 property 8",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "23529e12c8dab32a4452754b164a6d4b58310a63",
+            "content": "sha256:a68d7b7d28047a14feb0f8f3f85133add244a62e154e9a779c29702492fc08dc",
+            "locator": {
+              "end": 157,
+              "kind": "line_range",
+              "start": 115
+            },
+            "path": "dashboard/src/cockpit/roleChatDispatch.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "File-local implementation of the stated contract; caller-owned effects and governing workflow are separate evidence.\n\nAnchor: Current source; preserved L88 property 9",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3aa75e7e06e051f836a57a221e7f05a63b7b4a59",
+            "content": "sha256:13fbcafc5ae9bb05d6cabbc5da84898fe988f69b864f8bb501fdd724654f2283",
+            "locator": {
+              "end": 121,
+              "kind": "line_range",
+              "start": 65
             }
           },
           "kind": "code"
@@ -194,6 +226,93 @@
               "end": 450,
               "kind": "line_range",
               "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "File-local implementation of the stated contract; caller-owned effects and governing workflow are separate evidence.\n\nAnchor: Current source; preserved L88 property 10",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3aa75e7e06e051f836a57a221e7f05a63b7b4a59",
+            "content": "sha256:7772cb0776ba30b4ff02c26afb253dcb92286df2c38b1049dbc73957d09ac00c",
+            "locator": {
+              "end": 338,
+              "kind": "line_range",
+              "start": 292
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "File-local implementation of the stated contract; caller-owned effects and governing workflow are separate evidence.\n\nAnchor: Current source; preserved L88 property 11",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3aa75e7e06e051f836a57a221e7f05a63b7b4a59",
+            "content": "sha256:9afc25e9dd74e822070a4893adadcb7f3a41223bcb1a3ef953852d4de9a2fb9c",
+            "locator": {
+              "end": 369,
+              "kind": "line_range",
+              "start": 348
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "Worker/Curator typed review census, record-only exclusion and unknown history.\n\nAnchor: Current source; preserved L88 property 5",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "29bbfb919fa2a5e25fc3e3ee172407e92e192fc0",
+            "content": "sha256:89c09fd0491880de2f7b715bffbe2d6b0605a6dea7400689519c43f40f7b119d",
+            "locator": {
+              "end": 240,
+              "kind": "line_range",
+              "start": 175
+            },
+            "path": "mcp/src/agents_remember/worktrees/review_history.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "Reason admission, threshold and differing-harness/model inheritance boundary.\n\nAnchor: Current source; preserved L88 property 6",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f341c13a99f485178e73c4ff8bf4de16267ee662",
+            "content": "sha256:5a3727f4901933c44cd5f7edc8b16220285a82a9e080326edf482cbb126f0b2f",
+            "locator": {
+              "end": 84,
+              "kind": "line_range",
+              "start": 23
+            },
+            "path": "mcp/src/agents_remember/cli/role_step_up.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "Saved taskless UUID/pending plus trimmed reason/override restoration keeps the legacy Investigator storage slot.\n\nAnchor: Current source; preserved L88 property 7",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3aa75e7e06e051f836a57a221e7f05a63b7b4a59",
+            "content": "sha256:7772cb0776ba30b4ff02c26afb253dcb92286df2c38b1049dbc73957d09ac00c",
+            "locator": {
+              "end": 338,
+              "kind": "line_range",
+              "start": 292
             }
           },
           "kind": "code"
