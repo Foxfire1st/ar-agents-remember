@@ -7,7 +7,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0f9f05a944c31ee07779d26dc71f162c2ace12bb",
+            "blob": "5c5274962d831fe4690e16c298af3bafe5d0f386",
             "content": "sha256:b8f6d12fa291cd4d4a7bd5a213fbc901e7f153a784282002b912a3053d6de1a6",
             "locator": {
               "kind": "symbol",
@@ -23,7 +23,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0f9f05a944c31ee07779d26dc71f162c2ace12bb",
+            "blob": "5c5274962d831fe4690e16c298af3bafe5d0f386",
             "content": "sha256:81f655e98837354e888e7b9a738a05ddaf73f699fab2cb94bbd527f4903437f1",
             "locator": {
               "kind": "symbol",
@@ -35,38 +35,38 @@
       ]
     },
     "3": {
-      "note": "Order styling uses readiness and relation marks rather than a second task-state colour vocabulary.\n\nAnchor: Order CSS and common status presentation",
+      "note": "Order work/ready/waits and legend accents retain relation marks; task-status words still use the common table.\n\nAnchor: Order CSS, relation marks and shared status presentation",
       "targets": [
         {
           "anchor": {
-            "blob": "3c3cb0b2fb52df6c598ce02dadd3b8c3d692d817",
-            "content": "sha256:c59849315a9da1fb892e2e473b7172292f66628f3d24d867cd79b07d47f18a73",
+            "blob": "5c5274962d831fe4690e16c298af3bafe5d0f386",
+            "content": "sha256:837470520273727fb01ffff69d800c68cebb89266c5ffe554fa5c6c9ad5c44ed",
             "locator": {
-              "end": 783,
+              "end": 810,
               "kind": "line_range",
-              "start": 744
+              "start": 753
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "3c3cb0b2fb52df6c598ce02dadd3b8c3d692d817",
-            "content": "sha256:9dfd3887a45addd84412a42a803e00b8fad72b2cb7f2b341091c3e1304347952",
+            "blob": "5c5274962d831fe4690e16c298af3bafe5d0f386",
+            "content": "sha256:93c831f5372ffb11685fa06bc9a27a36c5cff9b8e075ffdbac3b283870f3edde",
             "locator": {
-              "end": 825,
+              "end": 850,
               "kind": "line_range",
-              "start": 810
+              "start": 815
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "17da14e723222a8d50b4ed6f0595390ab1fe1f6a",
-            "content": "sha256:bc4ae159d2c06abf5b3013b49558caef6bdd9ce2485a940130f171bf32322519",
+            "blob": "901cf61d779e58bf30849e0eea78a9123b9792fd",
+            "content": "sha256:8696a9cbb2aa564405705eb6e1da2c0815a977cde562695dce0594fa14960a6d",
             "locator": {
-              "end": 101,
+              "end": 104,
               "kind": "line_range",
               "start": 69
             },

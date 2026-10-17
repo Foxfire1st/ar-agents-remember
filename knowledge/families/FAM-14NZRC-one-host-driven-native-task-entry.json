@@ -5,7 +5,7 @@
     ],
     "justification": "Host publication/intake, native state selection, hierarchy joining, wire/store shape and task presentation jointly prevent a second task truth. Correct words over a competing collection, or a canonical map fed stale/unqualified host facts, cannot establish the guarantee. This proposed cross-boundary family leaves the approved Operations family and all its eight members untouched."
   },
-  "guarantee": "A task has one qualified server entry and one browser task map: native document stage has precedence, bound host observations supply only started-task activity and event time, declared reciprocal rows and commanded relations supply ordered membership independently of worktrees, and task surfaces format that same state through the shared presentation table. Startup/new-boot reconciliation qualifies host activity while idle/full-heal/degraded wakes do not turn into status polling. Optional summaries, on-demand document bodies, dependency readiness and independent operational projections are not competing task truth. Display age is derived from eventAt and a display clock, not a second served elapsed-age value. Native start and abandon publish task/parent stage through the existing task-fact transaction, attach retains stage, and finalize/reopen retain their distinct authority. Task-source/contract publication rollback is not restoration of already-reclaimed worktrees.",
+  "guarantee": "A task has one qualified server entry and one browser task map: native document stage has precedence, bound host observations supply only started-task activity and event time, and declared lists with documented-subTask master validation and genuinely absent-master fallback, identity/cycle-guarded list placement of other document kinds without own-master validation, and commanded relations supply ordered membership independently of worktrees. Record/list disagreements are served once per declaring master and complete content; they do not repair records or supply a second membership map. Task words and marks format that same native state through the shared presentation table; the Order drawing’s started accent is the explicitly separate presentation choice, not another activity or stage authority. Startup/new-boot reconciliation qualifies host activity while idle/full-heal/degraded wakes do not turn into status polling. Optional summaries, on-demand document bodies, dependency readiness and independent operational projections are not competing task truth. Display age is derived from eventAt and a display clock, not a second served elapsed-age value. Native start and abandon publish task/parent stage through the existing task-fact transaction, attach retains stage, and finalize/reopen retain their distinct authority. Task-source/contract publication rollback is not restoration of already-reclaimed worktrees. A nonzero served global unknown-activity bucket has one shell notice and suppresses works/paused figures; unknown task activity uses the shared started word, not a repeated host sentence. This is presentation, not proof of native host availability or permission to activate the host plugin.",
   "id": "FAM-14NZRC",
   "members": [
     "INV-X0KED3",
@@ -13,7 +13,8 @@
     "INV-XZYGEB",
     "INV-WQ8YGE",
     "INV-MGGEBY",
-    "INV-Z0BXKJ"
+    "INV-Z0BXKJ",
+    "INV-YK0D2W"
   ],
   "origin": {
     "handoff": {
@@ -26,7 +27,7 @@
     "leaf": "260928-MIK-L168",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "routes": [
     "dashboard/src/cockpit",
     "dashboard/src/data",
@@ -36,7 +37,8 @@
     "mcp/src/agents_remember/package_data/paseo_plugin/server",
     "mcp/src/agents_remember/serving",
     "mcp/src/agents_remember/tasks",
-    "mcp/src/agents_remember/worktrees"
+    "mcp/src/agents_remember/worktrees",
+    "dashboard/src/types"
   ],
   "schema": "ar-family/v1",
   "status": "proposed",

@@ -24,6 +24,8 @@ helpers translate provider snapshots into engine-room display groupings and drif
 stable segment list. `DRIFT_ORDER` also orders the converted names `stale` and `violation`, so a converted
 repository's bar reads the same good-to-actionable way as a legacy one.
 
+`selectHostActivityUnknown` reads whether the served workspace unknown count is nonzero. Its consumers suppress unavailable per-row activity figures and show one shell notice; the selector neither polls the host nor decides a task's activity from time.
+
 ### Conventions
 
 No React imports; selectors stay pure functions over projection/store values. Server-projected ordering
@@ -44,6 +46,8 @@ No relevant external documentation is needed for these store selectors.
 No relevant documentation found after checking live sources.
 
 ### Repo-Internal References
+
+- Host-observation availability is read from the served unknown count, not recomputed from agents or elapsed time. [4]
 
 - `selectQueue` caches filtered queue arrays by source references and filters optimistic suppression ids. [1]
 

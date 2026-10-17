@@ -12,7 +12,7 @@ File-surface acquisition, shared task/contract inputs, host-to-task binding, lan
 
 ## Hot Path Summary
 
-1. task_entries.py is the one task/state/membership join; projection.py owns native TaskState, TaskEntry and workspace counts.
+1. task_entries.py is the one task/state/membership join; projection.py owns native TaskState, TaskEntry, optional structured list disagreements and workspace counts. Documented-subTask master precedence and genuinely absent-master list fallback are resolved here, not in the browser. Their present contrary/unresolvable masters stay explicit and unbound, and each distinct disagreement is reported once per declaring master. Other listed kinds use list placement under identity/cycle guards; this path does not reject their kind or validate their own master.
 2. host_activity.py validates published host states and event timestamps; serving/projections/host_activity.py owns publication acquisition and caller/parent task binding.
 3. reducer.project_workspace composes supplied facts, passes native tasks/counts through and returns only unbound worktrees in the separate enclosure collection.
 4. tool_events.py writes selected finalized-call facts to the bounded workspace river; store.py and event_retention.py own its lock, byte admission and cursor-safe retained tail.
@@ -227,12 +227,11 @@ The complete previous account is retained below as explicit historical provenanc
 > - Full reader bodies are omitted from always-on summaries with bounded body-derived previews; the selected full body is confined to the tasks root.  Anchor: `read_task_documents`, `read_task_document_body` (historical reference 29)
 > - Gate reads are nonrewriting, but pickup reads explicitly compact the inbox.  Anchor: `read_gates`, `read_agent_pickups` (historical reference 30)
 
-## Evidence
-
 No external Domain Documentation source is configured for this memory. Current implementation facts are supported by the named source owners; source inspection supplies no new code/test/host/build/landing/memory acceptance.
 
+## Evidence
 
-
+- Master validation in placement applies only to documented subTasks; other listed kinds retain list placement under existing identity/cycle guards, not a kind-rejection or own-master-validation rule. [51]
 - The native workspace fold consumes supplied structural, task and host facts and publishes one TaskEntry collection with counts. [38]
 - Native state separates canonical stage, optional host activity and contributing eventAt. [39]
 - Terminal/planned stage wins; an unknown host cannot establish paused, and timestamp selection uses the contributing agents. [40]

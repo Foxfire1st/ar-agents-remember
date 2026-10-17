@@ -30,7 +30,7 @@ L23 adds optional `lifecycleOperation` state to `EnclosureNode`; the browser rec
 
 ### Logic
 
-`TaskState` carries authored `stage` and optional runtime `activity` and `eventAt`; it no longer declares a served `ageSeconds`. The browser computes task-event display age from `eventAt`. This is not removal of the separate task-document/file-age fields, which the ruling routes outside this leaf. `TaskEntry` adds qualified key/reference, summary, bound worktrees, one parent, ordered children and `TaskCounts`. `WorkspaceProjection.tasks` and `taskCounts` replace lifecycle and parallel series collections; top-level enclosures are the unbound remainder. `task_entries.build_task_entries` is the single stage/activity and membership producer, not this DTO module or the client.
+`TaskState` carries authored `stage` and optional runtime `activity` and `eventAt`; it no longer declares a served `ageSeconds`. The browser computes task-event display age from `eventAt`. This is not removal of the separate task-document/file-age fields, which the ruling routes outside this leaf. `TaskEntry` adds qualified key/reference, summary, bound worktrees, one parent, ordered children and `TaskCounts`. Optional `TaskListDisagreement` rows carry served list/record discrepancies, including the original unresolvable master literal; the field does not create a parallel task surface or a membership-authoring endpoint. `WorkspaceProjection.tasks` and `taskCounts` replace lifecycle and parallel series collections; top-level enclosures are the unbound remainder. `task_entries.build_task_entries` is the single stage/activity and membership producer, not this DTO module or the client.
 
 Reader DTOs retain canonical references, lump/segment graph nodes and legacy bare-ref lifting, typed sprint seats and commanded-master links. `TaskSummary` holds reader content; `TaskDocNode` adds full identity, status and membership. Display fields do not choose occupants, authorize relationships or infer task completion from a host turn. Enclosure `lifecycleId` still binds operations, and `LifecycleOperationProjection` remains operation progress rather than session activity.
 
@@ -63,6 +63,8 @@ None.
 `TaskSummary`/`TaskDocNode` may carry strict directGrant evidence (`grantedBy`/`grantedAt`). None means no displayed readable grant. This schema does not read/write the grant store or authorize direct execution; the authored TaskDocument is unchanged.
 
 ## Evidence
+
+- Native TaskEntry declares optional structured disagreements; each retains required kind/record and optional row, recordMaster, masterLiteral and parent facts. [8]
 
 ### Docs References
 

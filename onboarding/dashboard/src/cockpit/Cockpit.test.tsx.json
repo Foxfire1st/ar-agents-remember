@@ -1,5 +1,41 @@
 {
   "path": "dashboard/src/cockpit/Cockpit.test.tsx",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "179bdf56092d03a6ed7c1f6b76a0c3f0df227faf",
+        "content": "sha256:99bb5a757ea89907e974b8c5c11b57e0233d64ce21f97596001a9330e73068f2",
+        "locator": {
+          "kind": "symbol",
+          "name": "says host activity is unavailable only while an unknown activity is published"
+        }
+      },
+      "facet": "In the mounted task-counts header, initially at unknown=0 asserts works=1, paused=0 and no unavailable notice. After publishing unknown=1 asserts the notice is present and works wording absent. After publishing unknown=0 again asserts only notice removal. It does not assert restored figures after that return, paused suppression or exact notice count at one, per-row suppression, or native host availability.",
+      "id": "PRF-45A26X",
+      "invariant": "INV-YK0D2W",
+      "origin": {
+        "handoffEntry": "D305 item 4 / L168-W-A015-host-activity-once",
+        "leaf": "260928-MIK-L168"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "179bdf56092d03a6ed7c1f6b76a0c3f0df227faf",
+        "content": "sha256:4b561673878538d3131bca4e2f8abf0dfcbd69ddae525ca3b91e69b5c3da7254",
+        "locator": {
+          "kind": "symbol",
+          "name": "shows the published counts, and once that host activity is unavailable"
+        }
+      },
+      "facet": "In the mounted shell task-counts header with an initial nonzero unknown bucket, asserts the published stage-count words, exactly one host-activity-unavailable notice, and no works/paused/unknown/running/blocked/awaiting wording. This case has no transition and no per-row assertion; it does not prove figure restoration or native host availability.",
+      "id": "PRF-Y2GG4X",
+      "invariant": "INV-YK0D2W",
+      "origin": {
+        "handoffEntry": "D305 item 4 / L168-W-A015-host-activity-once",
+        "leaf": "260928-MIK-L168"
+      }
+    }
+  ],
   "realizes": [],
   "references": {
     "13": {
@@ -102,7 +138,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0cdb4c4a8c6d1b529919af713a8065ab4dd45af3",
+            "blob": "179bdf56092d03a6ed7c1f6b76a0c3f0df227faf",
             "content": "sha256:fd961a5cbd96d3f97343942a049d1058c1275f3122a3c4a8fc650d0e3a650996",
             "locator": {
               "end": 298,
@@ -198,7 +234,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a1da64452b66ed600866ad56b37418f973ed3e37",
+            "blob": "6e5e8b5903fcf5108cc0ec06035fdc04c06c8256",
             "content": "sha256:de7cf84f64c428a892a4d0f95f4b846928d865881a73b68c10839f7ecb62d3e4",
             "locator": {
               "kind": "symbol",
@@ -222,7 +258,7 @@
         },
         {
           "anchor": {
-            "blob": "17da14e723222a8d50b4ed6f0595390ab1fe1f6a",
+            "blob": "901cf61d779e58bf30849e0eea78a9123b9792fd",
             "content": "sha256:2fc595d5a6cc697737d578b70e7f26f2cdd5a8bc65d162f5f2cb7bd4d081bc77",
             "locator": {
               "kind": "symbol",
@@ -234,7 +270,7 @@
         },
         {
           "anchor": {
-            "blob": "17da14e723222a8d50b4ed6f0595390ab1fe1f6a",
+            "blob": "901cf61d779e58bf30849e0eea78a9123b9792fd",
             "content": "sha256:c745e1a522d931fd98a81ec77a24002f1a4238eec0b2000f47d70b41b55256f3",
             "locator": {
               "kind": "symbol",
@@ -246,12 +282,12 @@
         },
         {
           "anchor": {
-            "blob": "0cdb4c4a8c6d1b529919af713a8065ab4dd45af3",
+            "blob": "179bdf56092d03a6ed7c1f6b76a0c3f0df227faf",
             "content": "sha256:a4b75b8f1452cb14fd0e0d11a69a355b988a0aadb34221645cf72445c3ed78d2",
             "locator": {
-              "end": 837,
+              "end": 839,
               "kind": "line_range",
-              "start": 817
+              "start": 819
             }
           },
           "kind": "test"
@@ -308,12 +344,41 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0cdb4c4a8c6d1b529919af713a8065ab4dd45af3",
+            "blob": "179bdf56092d03a6ed7c1f6b76a0c3f0df227faf",
             "content": "sha256:e84ed71a6e74402a494a47e149de9d56ce8a908a072685e55d152c5a8e6526d7",
             "locator": {
-              "end": 878,
+              "end": 880,
               "kind": "line_range",
-              "start": 859
+              "start": 861
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "44": {
+      "note": "The initial-nonzero case asserts one notice and no works/paused wording; the separate transition case asserts initial figures, notice/no works at one, and only notice removal on return to zero. No restored figures or native host availability are asserted.\n\nAnchor: Current source assertions at their own phases",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "179bdf56092d03a6ed7c1f6b76a0c3f0df227faf",
+            "content": "sha256:4b561673878538d3131bca4e2f8abf0dfcbd69ddae525ca3b91e69b5c3da7254",
+            "locator": {
+              "end": 329,
+              "kind": "line_range",
+              "start": 301
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "179bdf56092d03a6ed7c1f6b76a0c3f0df227faf",
+            "content": "sha256:99bb5a757ea89907e974b8c5c11b57e0233d64ce21f97596001a9330e73068f2",
+            "locator": {
+              "end": 359,
+              "kind": "line_range",
+              "start": 331
             }
           },
           "kind": "test"

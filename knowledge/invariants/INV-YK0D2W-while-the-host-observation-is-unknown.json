@@ -1,0 +1,37 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test",
+      "spans_locations",
+      "prevents_costly_mistake"
+    ],
+    "justification": "The shared count predicate, one shell notice, per-row figure guards and common word table jointly prevent repeated host-failure wording and falsely presented work/paused figures. Current mounted count assertions and direct A016-bound Reviewer evidence support the named facets; this is not a fresh Curator execution."
+  },
+  "applicability": "Dashboard host-unavailability presentation defined by the served global unknown-activity count, task words and works/paused figures.",
+  "conditions": [
+    "A nonzero served taskCounts.unknown produces one header host-activity-unavailable notice and suppresses works/paused figures in the shell, side-panel and master task rows.",
+    "The shared word for a native started/unknown task is started, without repeating the host sentence per row/node/page.",
+    "The predicate consumes served facts only; it does not rewrite stage, activity, event time, dependency readiness or any host/plugin state."
+  ],
+  "exclusions": [
+    "A zero unknown bucket is not proof that native host observation is available, and this display predicate is not host authentication.",
+    "No live plugin reload, host activation, status-changing migration or browser task-state reconstruction."
+  ],
+  "id": "INV-YK0D2W",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "dashboard/src/cockpit/Cockpit.test.tsx, dashboard/src/panels/lifecycle-list/hierarchy.test.tsx, dashboard/src/panels/lifecycle-list/signals.test.tsx in the dashboard suite (notes/reports/worker/b3bf6f6a-6b1e-4f06-9226-0614819501ab/role-launch/evidence-r14/C1-dashboard-suite.txt); browser header '119 planned · 30 started · 564 completed · 15 aborted · host activity unavailable' with no row figure (notes/reports/worker/b3bf6f6a-6b1e-4f06-9226-0614819501ab/role-launch/evidence-r14/A015-code-alone.json; notes/reports/worker/b3bf6f6a-6b1e-4f06-9226-0614819501ab/role-launch/evidence-r14/A015-after-migration.json). The real fix is the host step that loads L168's plugin, the developer's word (report, Open limitations)."
+      ],
+      "path": "L168-A016-final-carriers-wave5.json"
+    },
+    "handoffEntry": "D305 item 4 / L168-W-A015-host-activity-once",
+    "leaf": "260928-MIK-L168",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "While the host observation is unknown, which the published taskCounts.unknown above zero says, the dashboard header alone says 'host activity unavailable' and leaves out the works and paused counts, no side-panel row or master task row shows a works/paused figure, and the unknown activity's word is 'started'.",
+  "status": "proposed",
+  "supersedes": []
+}

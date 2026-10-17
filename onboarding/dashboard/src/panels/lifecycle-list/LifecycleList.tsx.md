@@ -22,13 +22,13 @@ Every served TaskEntry is admitted, including planned/terminal/addressless rows 
 
 Command hierarchy follows served parent/children; no orchestrates or taskHierarchy reconstruction remains. Indentation and local collapse retain presentation ownership without tier frames, ghost washes or rank chevrons.
 
-The existing collapsed-parent set stays persisted by useCollapsedTaskGroups. Open completed folds are local presentation state and start closed. treeItems derives ancestor holding and held terminal folds directly from served membership. RowCaret separately passes each non-flat parent row's collapsed/held facts to TaskGroupDisclosure. A selected descendant holds its ancestor chain and containing fold open without rewriting the reader's persisted choices; held parents/folds cannot be collapsed over that descendant. Choosing the parent itself does not force it open. Fold keys are not task-document identities, and activating a fold toggles it rather than choosing a document. Heading and group counts count admitted rows, including rows currently hidden by presentation folds.
+The existing collapsed-parent set stays persisted by useCollapsedTaskGroups. Open completed folds are local presentation state and start closed. treeItems derives ancestor holding and held terminal folds directly from served membership. RowCaret passes each non-flat parent's actual collapsed state and a held-aware toggle callback to TaskGroupDisclosure; the button itself receives no held flag. A selected descendant initially holds its ancestor chain and containing fold open without rewriting the reader's persisted choices. An explicit parent-caret or completed-fold click releases that control's hold and can close it without changing the selected document; the existing plain parent-row arrow action does the same when it requests a changed state. Releases last only for the current selection episode. Any selection change, including A→B→A, A→none→A or one observed while the retained list is hidden, starts fresh holds rather than reviving an older release. Choosing the parent itself does not force it open. Fold keys are not task-document identities, and activating a fold toggles it rather than choosing a document. Heading and group counts count admitted rows, including rows currently hidden by presentation folds.
 
 ### State, signals and secondary facts
 
 The row uses shared taskStatusKey/TaskStatusWord from entry stage/activity, with display-only host-event age. rowBand orders own works first, then started, planned and terminal entries; it does not prioritize gates, inbox or chat facts.
 
-Progress reads entry stepsDone/stepsTotal for task summaries or served child counts for parents, excluding aborted from the denominator and preserving aborted/discarded audit in hover. Up to twelve major-step marks may expose cached pointer detail; larger populations use an aggregate bar. For non-task forms the figure prefixes progress with the server’s `counts.works` and `counts.paused`, adding `counts.unknown` only when nonzero; task forms show `StepMarks` instead. No local child-status recount or physical-worktree admission is introduced.
+Progress reads entry stepsDone/stepsTotal for task summaries or served child counts for parents, excluding aborted from the denominator and preserving aborted/discarded audit in hover. Up to twelve major-step marks may expose cached pointer detail; larger populations use an aggregate bar. For non-task forms the figure prefixes progress with served `counts.works` and `counts.paused` unless the served global unknown-activity count is nonzero. A nonzero workspace unknown-activity count suppresses these activity figures on every row; the shell reports unavailability once. Task forms show cached `StepMarks` instead. No per-row unknown flag is added. No local child-status recount or physical-worktree admission is introduced.
 
 There is no PickupDismiss or operator-inbox dismissal interaction in LifecycleList. The mark wrapper remains named inside ListBoxItem option semantics; accessibility must not depend on a removed action. Row selection/hover keep their retained owner without restoring press suppression for a deleted button.
 
@@ -46,7 +46,7 @@ columnPresentation.tsx owns these recipes: rowItem supplies 0.8rem to ordinary r
 
 The approved column uses shared Panel chrome and columnTabButton; the bell and bounded Popover do not consume tree height. Grouping/head/layer controls wrap inside a narrow rail. One-line title/word ellipsis is intentional and its full facts remain one hover away; minmax(0,1fr), constrained tracks and row padding prevent the list from expanding its owner. Do not impose this column's overflow rule on Panel globally.
 
-TaskStatusWord uses one shared visible clock to advance published host-event age. Hidden-list subscriptions are paused; time labels never infer stage/activity from elapsed silence. Missing age/event facts stay unknown.
+TaskStatusWord uses one shared visible clock to advance published host-event age. Hidden-list subscriptions are paused; time labels never infer stage/activity from elapsed silence. The memo comparator still lets a changed selectedId render while hidden, so the release-lifetime owner observes each selection episode. Missing age/event facts stay unknown.
 
 ### Historical boundary to preserve
 
@@ -98,7 +98,7 @@ TaskStatusWord uses one shared visible clock to advance published host-event age
 
 
 
-- Unmodified horizontal arrows affect only a focused parent and do not collapse a held parent; modifiers remain untouched. [26]
+- Unmodified horizontal arrows affect a focused parent, including closing a held parent when the requested state differs; task/fold rows gain no arrow action and modifiers remain untouched. [26]
 
 
 
@@ -111,4 +111,6 @@ TaskStatusWord uses one shared visible clock to advance published host-event age
 
 - The remaining component behavioral suites hold row admission, hierarchy and independent Operations signals; this is source inspection, not a new run. [30]
 
-- Non-task forms show served child works/paused counts and a nonzero unknown count before progress; BY PHASE groups use the explicit works-to-aborted order. [38]
+- Non-task forms suppress child works/paused figures when the served unknown-activity count is nonzero; BY PHASE keeps the explicit works-to-aborted order through its group comparator. [38]
+
+- Explicit disclosure releases a drawn-open parent or fold, while every selection transition expires prior release keys. [39]

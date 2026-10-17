@@ -1,6 +1,25 @@
 {
   "path": "dashboard/src/data/selectors.ts",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "be6915e0b22a01804bf3b8c5138d58b08839d3a3",
+        "content": "sha256:73c94ec98ff59774ca714fc57c18f3a2b416803757d40931678111e3b102ccf7",
+        "locator": {
+          "kind": "symbol",
+          "name": "selectHostActivityUnknown"
+        }
+      },
+      "id": "RLZ-T4JN5H",
+      "invariant": "INV-YK0D2W",
+      "origin": {
+        "handoffEntry": "D305 item 4 / L168-W-A015-host-activity-once",
+        "leaf": "260928-MIK-L168"
+      },
+      "rationale": "The one reading of the published count that every consumer uses.",
+      "role": "primary-authority"
+    }
+  ],
   "references": {
     "1": {
       "note": "`selectQueue` caches filtered queue arrays by source references and filters optimistic suppression ids.",
@@ -28,6 +47,22 @@
             "locator": {
               "kind": "symbol",
               "name": "DRIFT_ORDER"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Host-observation availability is read from the served unknown count, not recomputed from agents or elapsed time.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "be6915e0b22a01804bf3b8c5138d58b08839d3a3",
+            "content": "sha256:73c94ec98ff59774ca714fc57c18f3a2b416803757d40931678111e3b102ccf7",
+            "locator": {
+              "kind": "symbol",
+              "name": "selectHostActivityUnknown"
             }
           },
           "kind": "code"

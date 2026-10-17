@@ -217,12 +217,12 @@
       ]
     },
     "16": {
-      "note": "Canonical task sources retain declared children and reciprocal authored-parent references for one downstream task producer.",
+      "note": "Canonical task sources retain declared children, the resolved record master and its original literal for one downstream producer, preserving absent versus unresolvable input.",
       "targets": [
         {
           "anchor": {
-            "blob": "82940e3ebb28c7077e598da5addafff90ec6ef78",
-            "content": "sha256:8db0363b7d7bc9531d7ca629a7a6fd0ce3142556fe2723678b33805df2b841ae",
+            "blob": "8553750157ecbc4d4c86582aec77207f1b043431",
+            "content": "sha256:344445d0ab83e2546d8cce1eb1abcce26c5bd8f13d089d016b179f8303763ac6",
             "locator": {
               "kind": "symbol",
               "name": "project_task_sources"
@@ -307,7 +307,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "82940e3ebb28c7077e598da5addafff90ec6ef78",
+            "blob": "8553750157ecbc4d4c86582aec77207f1b043431",
             "content": "sha256:9b6373ba9eeb22e690729f48e7140cac9740485c12a5a1116269682dfa1cf12f",
             "locator": {
               "kind": "symbol",
@@ -336,12 +336,43 @@
         }
       ]
     },
+    "22": {
+      "note": "Master validation in placement applies only to documented subTasks; other listed kinds retain list placement under existing identity/cycle guards, not a kind-rejection or own-master-validation rule.\n\nAnchor: Exact producer admission boundary",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d37db285155926a5393191721b105ab17f124661",
+            "content": "sha256:ea350afcbd90c38b00424aee31a6a7a46519c7bdff16982cada2efbe3293bd44",
+            "locator": {
+              "end": 219,
+              "kind": "line_range",
+              "start": 147
+            },
+            "path": "mcp/src/agents_remember/observer/task_entries.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d37db285155926a5393191721b105ab17f124661",
+            "content": "sha256:a9698c32fa9a20bab81fc0f683925767fc43a427ce913e1f3c157c94cc3c4f95",
+            "locator": {
+              "end": 341,
+              "kind": "line_range",
+              "start": 263
+            },
+            "path": "mcp/src/agents_remember/observer/task_entries.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
     "3": {
       "note": "The on-demand body reader validates the requested canonical task document, joins only graph-named masters and their declared children through _graph_master_docs, and also obtains ordinary order/dependency fields through read_order_fields, which reads the owning master and its explicitly listed children. It avoids enumeration of the canonical task corpus; the body join is not graph-only.",
       "targets": [
         {
           "anchor": {
-            "blob": "82940e3ebb28c7077e598da5addafff90ec6ef78",
+            "blob": "8553750157ecbc4d4c86582aec77207f1b043431",
             "content": "sha256:743f5a4309c292bff25529b424208385ef192a9ad191e055dc6a7187a0aabea8",
             "locator": {
               "kind": "symbol",
@@ -353,7 +384,7 @@
         },
         {
           "anchor": {
-            "blob": "82940e3ebb28c7077e598da5addafff90ec6ef78",
+            "blob": "8553750157ecbc4d4c86582aec77207f1b043431",
             "content": "sha256:9b6373ba9eeb22e690729f48e7140cac9740485c12a5a1116269682dfa1cf12f",
             "locator": {
               "kind": "symbol",

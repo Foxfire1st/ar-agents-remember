@@ -156,7 +156,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8774e82c7f7a93dda014fdb8b987e2391fd21fd1",
+            "blob": "27ab725f01e310493256da673c0f870a77b85bbf",
             "content": "sha256:46894d777463298a1a95031da8c618c203b9bf1480eda1c328419e41a1166d1d",
             "locator": {
               "end": 274,
@@ -261,16 +261,16 @@
       ]
     },
     "20": {
-      "note": "The dispatch, and the `intent-review` view marker it selects.\n\nAnchor: `target`; \"intent-review\"",
+      "note": "The dispatch, and the `intent-review` view marker it selects.\n\nAnchor: Actual target dispatch and conditional review takeover",
       "targets": [
         {
           "anchor": {
-            "blob": "b4f749cf2dfc7341eb4fd7dfe8071e85037056de",
-            "content": "sha256:c1fda8ac10daf4bfeb28f1a9a5162bdf98c3e127b6f7114bdb43075d05e87938",
+            "blob": "7c23fc026184269dcb443c859e6aed12dcc0b0ac",
+            "content": "sha256:2d691199e9ba8d902f25e36d5dc9f6d6d329d9b9326007511214b4eac5da4649",
             "locator": {
-              "end": 379,
+              "end": 493,
               "kind": "line_range",
-              "start": 379
+              "start": 487
             },
             "path": "dashboard/src/cockpit/Cockpit.tsx"
           },
@@ -278,12 +278,12 @@
         },
         {
           "anchor": {
-            "blob": "01fba3cb6e8f87f6cb5855729b1ff805ef49457e",
-            "content": "sha256:e48fa5053b848932fff47d4fd3283fd08e1d57057af51e6fe91c5b577ae2192f",
+            "blob": "7c23fc026184269dcb443c859e6aed12dcc0b0ac",
+            "content": "sha256:9a2ee3d98562d34bdeedadf0d79c173a0e3ab362932731718f5b08fb55e2d50c",
             "locator": {
-              "end": 549,
+              "end": 561,
               "kind": "line_range",
-              "start": 549
+              "start": 526
             },
             "path": "dashboard/src/cockpit/Cockpit.tsx"
           },
@@ -1352,7 +1352,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9e4b2543510affa9e5cc0d4f7e4ee8b261894051",
+            "blob": "d37db285155926a5393191721b105ab17f124661",
             "content": "sha256:348ca25847f5af1de648007ac662ec749f8e0b70d74d88d9bdf446f78299339e",
             "locator": {
               "kind": "symbol",
@@ -1386,7 +1386,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "17da14e723222a8d50b4ed6f0595390ab1fe1f6a",
+            "blob": "901cf61d779e58bf30849e0eea78a9123b9792fd",
             "content": "sha256:bec535690b5faf1601fe89c5a7f5d82293bac62ca9b92f69bc74eb4b140f1f54",
             "locator": {
               "kind": "symbol",
@@ -1398,12 +1398,12 @@
         },
         {
           "anchor": {
-            "blob": "17da14e723222a8d50b4ed6f0595390ab1fe1f6a",
+            "blob": "901cf61d779e58bf30849e0eea78a9123b9792fd",
             "content": "sha256:73f45554796ee15769aee751c8a9f37a53c8aecd7cd5bd6b09a933b2b36ab464",
             "locator": {
-              "end": 154,
+              "end": 156,
               "kind": "line_range",
-              "start": 124
+              "start": 126
             },
             "path": "dashboard/src/panels/detail-panel/pageParts.tsx"
           },
@@ -1514,6 +1514,37 @@
               "start": 1
             },
             "path": "dashboard/src/cockpit/RoleLaunchFeatures.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "73": {
+      "note": "Master validation in placement applies only to documented subTasks; other listed kinds retain list placement under existing identity/cycle guards, not a kind-rejection or own-master-validation rule.\n\nAnchor: Exact producer admission boundary",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d37db285155926a5393191721b105ab17f124661",
+            "content": "sha256:ea350afcbd90c38b00424aee31a6a7a46519c7bdff16982cada2efbe3293bd44",
+            "locator": {
+              "end": 219,
+              "kind": "line_range",
+              "start": 147
+            },
+            "path": "mcp/src/agents_remember/observer/task_entries.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d37db285155926a5393191721b105ab17f124661",
+            "content": "sha256:a9698c32fa9a20bab81fc0f683925767fc43a427ce913e1f3c157c94cc3c4f95",
+            "locator": {
+              "end": 341,
+              "kind": "line_range",
+              "start": 263
+            },
+            "path": "mcp/src/agents_remember/observer/task_entries.py"
           },
           "kind": "code"
         }

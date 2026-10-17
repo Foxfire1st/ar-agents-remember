@@ -8,7 +8,7 @@
   "applicability": "Dashboard ordinary-master Order and Now blocks composed from the master’s derived task graph.",
   "conditions": [
     "Order follows Now and uses the drawing shared with sprint Order.",
-    "Entry stage/activity and the shared status table distinguish task work, while graph readiness stays a separate dependency fact. Each paused started graph unit remains once in its dependency wave.",
+    "Task words and status marks use entry stage/activity through the shared presentation; the explicitly separate Order work accent follows the started stage regardless of host activity. Graph readiness remains a dependency fact. Each paused started graph unit remains once in its dependency wave.",
     "Task counts/progress use the shared entry population; the separate graph-derived done/abandoned totals are removed.",
     "Now lists graph-ready tasks whose native entry is planned; pointer rest retains both dependency directions and shared fade behavior."
   ],
@@ -29,9 +29,9 @@
     "leaf": "260928-MIK-L162",
     "task": "260928-MIK"
   },
-  "revision": 2,
+  "revision": 3,
   "schema": "ar-invariant/v1",
-  "statement": "Master pages reuse the sprint Order drawing after Now, with task-entry state/activity and producer dependency waves/readiness, both dependency directions on pointer rest, and graph-ready planned tasks listed as Can start next in Now. Completed/aborted membership and task progress come from the shared entries; Order adds no independent done/abandoned graph totals.",
+  "statement": "Master pages reuse the sprint Order drawing after Now, with task-entry state/activity and producer dependency waves/readiness, both dependency directions on pointer rest, and graph-ready planned tasks listed as Can start next in Now. Completed/aborted membership and task progress come from the shared entries; Order adds no independent done/abandoned graph totals. The Order drawing gives each started entry its work accent regardless of host activity; that accent is neither native activity nor start permission.",
   "status": "proposed",
   "supersedes": []
 }

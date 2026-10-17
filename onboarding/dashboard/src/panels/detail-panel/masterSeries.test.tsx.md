@@ -25,7 +25,11 @@ Uses shared seedTaskEntries/taskTree fixtures. One index, separate step/substep 
 
 None recorded.
 
+The disagreement case checks a separate subheading count, once-only served discrepancy rows and navigation only to present native records. A disagreement-only child block stays visible; counts are not folded into live child counts and rendering does not invent or repair a task document.
+
 ## Evidence
+
+- Master-page discrepancies retain their own count, full row identity and present-record navigation without duplicating the child index. [2]
 
 ### Docs References
 

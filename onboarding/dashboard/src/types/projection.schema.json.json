@@ -7,7 +7,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "83b24de587912238054a5ffc35cd2da7152bd31e",
+            "blob": "966f1ee1ccf363d924b3ca1244903a625fd79afb",
             "content": "sha256:08fd4c678367505913cec7c8f518284e86983114365e0ace8fd824f4a5351510",
             "locator": {
               "end": 1568,
@@ -24,12 +24,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "83b24de587912238054a5ffc35cd2da7152bd31e",
+            "blob": "966f1ee1ccf363d924b3ca1244903a625fd79afb",
             "content": "sha256:de7a9a2b766a346bf335e024dd411cbde184c3bd15734856db8aa94b8382d688",
             "locator": {
-              "end": 3173,
+              "end": 3176,
               "kind": "line_range",
-              "start": 3158
+              "start": 3161
             }
           },
           "kind": "code"
@@ -72,7 +72,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "eb94033bd3626255e42690157368bb5bbd08addc",
+            "blob": "966f1ee1ccf363d924b3ca1244903a625fd79afb",
             "content": "sha256:28ece8176b3079718fe68b53b0699ea398356ddeaa64ead23615cc7eb26b4d96",
             "locator": {
               "end": 2785,
@@ -96,12 +96,41 @@
         }
       ]
     },
+    "14": {
+      "note": "Generated TaskEntry disagreement references and the four-kind closed object preserve qualified record identity and optional discrepancy detail. Schema shape alone is not reconciliation.\n\nAnchor: Current source assertions",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "966f1ee1ccf363d924b3ca1244903a625fd79afb",
+            "content": "sha256:4fff23359a56b850b9fde5ac1cb651839f91cc207f9a5c1797a67d4f44eeac83",
+            "locator": {
+              "end": 2929,
+              "kind": "line_range",
+              "start": 2915
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "966f1ee1ccf363d924b3ca1244903a625fd79afb",
+            "content": "sha256:b0655f9af5de3025e2bcdd48921d052387ff776d332aa46dd99e0a51d1015b3c",
+            "locator": {
+              "end": 3405,
+              "kind": "line_range",
+              "start": 3334
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
     "2": {
       "note": "The `$defs` block contains all reusable projection schema definitions.\n\nAnchor: \"$defs\"; `$defs`",
       "targets": [
         {
           "anchor": {
-            "blob": "83b24de587912238054a5ffc35cd2da7152bd31e",
+            "blob": "966f1ee1ccf363d924b3ca1244903a625fd79afb",
             "content": "sha256:3d163ef9c8b6f0b233ca0b1ea53c0aa93528cd28d158bfd8aaa82d3b800c0364",
             "locator": {
               "end": 2,
@@ -118,7 +147,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "83b24de587912238054a5ffc35cd2da7152bd31e",
+            "blob": "966f1ee1ccf363d924b3ca1244903a625fd79afb",
             "content": "sha256:86fcac0c5945509626938cce67b13b16e99be6eae647e0eed2753d8448428d46",
             "locator": {
               "end": 46,
@@ -135,7 +164,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "83b24de587912238054a5ffc35cd2da7152bd31e",
+            "blob": "966f1ee1ccf363d924b3ca1244903a625fd79afb",
             "content": "sha256:eb4f79755eff93d54725906fe8bf4c1690bbce5de6de74236e9e572c92fdf856",
             "locator": {
               "end": 1654,
@@ -152,7 +181,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "83b24de587912238054a5ffc35cd2da7152bd31e",
+            "blob": "966f1ee1ccf363d924b3ca1244903a625fd79afb",
             "content": "sha256:f96067877ac97df77c4da0cf77d05f0e0809220a9ece9807d98580c193fbed3e",
             "locator": {
               "end": 381,
@@ -169,7 +198,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "83b24de587912238054a5ffc35cd2da7152bd31e",
+            "blob": "966f1ee1ccf363d924b3ca1244903a625fd79afb",
             "content": "sha256:71e5839fb83a7787d8ecf6c3ae6051dd016be94dc896294661d807999b936238",
             "locator": {
               "end": 1676,
@@ -186,7 +215,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "435f095a70d30fca070deb1186104929ac557935",
+            "blob": "27ab725f01e310493256da673c0f870a77b85bbf",
             "content": "sha256:46894d777463298a1a95031da8c618c203b9bf1480eda1c328419e41a1166d1d",
             "locator": {
               "kind": "symbol",

@@ -6,15 +6,17 @@
     ],
     "justification": "Future changes to host intake, task projection or task-status consumers must preserve this bounded authority: duplicate task truth, unsupported paused observations, reconstructed membership or conflicting status/age presentation produce incorrect task operations. The named current source assertions guard the specified facets; this is no fresh Curator execution grade."
   },
-  "applicability": "Ordered task-entry membership projected from native declared child rows and commanded-master relations.",
+  "applicability": "Native declared-list membership, documented-subTask own-master validation and served subTask record/list disagreements on master pages.",
   "conditions": [
-    "A documented subTask joins only its reciprocally declared parent; missing/unlisted parent declarations leave a reachable root.",
-    "Authored child row order is retained, while deterministic membership and cycle/seen guards avoid duplicate or cyclic attachment.",
-    "A declared row may supply one placeholder entry until its document exists; worktree binding does not establish task hierarchy."
+    "Declared row order is preserved. For documented subTasks, a genuinely absent master permits listing-master fallback; a present master must resolve to that master, otherwise the subTask is reported and not adopted. Other listed document kinds are not rejected by kind and their own master is not validated by that placement path; existing identity/cycle guards still apply.",
+    "Deterministic parent admission and cycle/seen guards keep each entry reachable once; commanded-master relations remain their own declared links.",
+    "A declared row may supply one placeholder until its document exists. SubTask records that no child list holds remain roots and are reported through an available named or folder master, rather than being silently reparented.",
+    "Producer deduplication keys the declaring master and the complete disagreement model_dump_json content. The master reader displays those served distinctions once, including disagreement-only content, and performs no membership repair."
   ],
   "exclusions": [
     "No inferred parent solely from filesystem/worktree proximity.",
-    "A declared row scope is presentation context, not task-stage authority; unauthored-row fallback is distinct from fileless dependency display."
+    "A declared row scope is presentation context, not task-stage authority; unauthored-row fallback is distinct from fileless dependency display.",
+    "No general non-subTask kind-rejection or own-master-validation guarantee is supplied by the listed-child placement path."
   ],
   "id": "INV-WQ8YGE",
   "origin": {
@@ -28,7 +30,9 @@
         "L168-M1-21 N05 dashboard/src/panels/detail-panel/taskDocPanels.tsx:24-34; static A013 source; no execution.",
         "L168-M1-21 N07 dashboard/src/panels/detail-panel/task-groups.tsx:243-271; static A013 source; no execution.",
         "L168-M1-21 N22 mcp/src/agents_remember/serving/projections/snapshots_impl/_task_documents.py:103-130; static A013 source; no execution.",
-        "L168-M1-21 N24 dashboard/src/cockpit/role-launcher/RoleLauncher.tsx:1063-1077; static A013 source; no execution."
+        "L168-M1-21 N24 dashboard/src/cockpit/role-launcher/RoleLauncher.tsx:1063-1077; static A013 source; no execution.",
+        "Current canonical ruling, original Worker 9-entry list plus overlay 1, independent Reviewer five-entry list, A016 bindings and R16 verdict; L168-A016-before-after-meaning-witnesses.json preserves actual BASE/current source and records. Source assertions are read, not rerun.",
+        "Exact BASE/current hunks: L168-A016-last-15-hunk-witnesses.json; typed record/primary renderer already written in meaning-wave4b."
       ],
       "path": "A011-host-driven-native-task-core-31.json"
     },
@@ -36,9 +40,9 @@
     "leaf": "260928-MIK-L168",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-invariant/v1",
-  "statement": "Parent membership and authored child order are projected once from reciprocal declared rows and orchestrates relations, independent of worktree existence.",
+  "statement": "The native producer projects ordered membership once from declared lists: for documented subTasks a genuinely absent master may use the listing master, while a present contrary or unresolvable master is not adopted. Other listed document kinds use the list subject to existing identity/cycle guards, without own-master validation or kind rejection by this path. Each child has at most one acyclic parent. SubTask record/list disagreements are served once per declaring master and complete disagreement content for display on that master’s page, without repairing records or creating another task entry. Membership does not depend on worktrees.",
   "status": "proposed",
   "supersedes": []
 }

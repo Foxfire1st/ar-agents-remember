@@ -28,7 +28,10 @@ direct-grant, discard, graph and dependency additions remain optional as declare
 of its findings preview. Supported older-recording recovery is not permission to invent a
 malformed present review object missing those counts. `TaskEntry` separately owns key/id/title,
 served stage, ordered membership, counts, major-step totals and worktrees; its `reference`,
-`activity` and `summary` are optional. `TaskSummary` is reader content, not a second status authority.
+`activity` and `summary` are optional. Optional `TaskListDisagreement[]` carries served list/record
+discrepancies with required kind and record reference and optional row id, recordMaster reference,
+original masterLiteral or actual parent key. It is neither a second task entry nor a
+browser-authored membership edge. `TaskSummary` is reader content, not a second status authority.
 
 
 The lifecycle phase vocabulary now includes `recovering-private-preparation`. This exposes the existing private-preparation recovery phase without granting publication or lifecycle authority to the dashboard. Evidence: dashboard/src/types/projection.ts:352-352.
@@ -88,6 +91,8 @@ TaskDependencyNode requires id/title; its canonical reference is optional. A fil
 - Current CloseoutCandidateNode uses string classification/priority; queue members reference that interface. [16] [16]
 
 ## Evidence
+
+- The generated TaskEntry wire type carries optional structured list disagreements beside its canonical membership and cached summary. [22]
 
 - TaskSummary separates required reader fields from optional branch/note/review, content and graph additions. [19]
 - TaskStepNode requires note/outcome truncation booleans beside optional prose; TaskSubStepNode has optional note without a truncation flag. [20]

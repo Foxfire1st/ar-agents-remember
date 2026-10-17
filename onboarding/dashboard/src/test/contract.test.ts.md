@@ -42,7 +42,7 @@ cit:(["the server grows a field", "the mirror declares something the server neve
 
 ServedOnlyPaths, asServedProjection and MirrorOnlyPaths guard the three sample/mirror directions. fixtureMustSample and allowlistMustStayEarned retain only projection.servingBuild as KnownUnsampled; heartbeat allowances are removed.
 
-Derived open-map/closed-union Record registries now walk native entry stage/activity, summary and bound operations. valuesAt fans arrays; historical registry key counts are not a current quota.
+Derived open-map/closed-union Record registries now walk native entry stage/activity, list-disagreement kind, summary and bound operations. The disagreement registry names `names-another-master`, `not-listed`, `listed-twice` and `unresolvable-master`; sampled-path nonvacuity and legal values remain distinct from exhaustive producer enum membership. valuesAt fans arrays; historical registry key counts are not a current quota.
 
 Nonvacuous runtime checks retain sample paths/vocabularies. Native task assertions require qualified identity and forbid duplicate identity/status/children/progress in summary. Lifecycle bucket suites/master-series pins are removed; only the edge.refusedPolarity inverted pin remains.
 
@@ -128,3 +128,5 @@ Execution-graph kind/frontierState paths move to projection.tasks[].summary.exec
 ## CCR-R18@v1 Envelope Contract Vocabulary
 
 260831-CCR-L18 extended the fixture-coverage guard: `INDEX_SIGNATURE_SITES` now registers `projection.enclosures[].lifecycleOperation.recommendedAction.arguments` as an index-signature site, and the closed-vocabulary registry adds `schemaVersion` / `stateMatrixVersion` (single-member v1 literals), the `incoherent` status member, `identity.operationKind`, `worker.state` (live/termination-requested/termination-required/exited), and `approval.state` (claimed/unclaimed). The exhaustive path registry still requires the representative fixture sample to reach every newly registered path with only legal values.
+
+- The closed-vocabulary registry includes all four task-list disagreement kind values; its existing sample guard is not live record reconciliation. [22]

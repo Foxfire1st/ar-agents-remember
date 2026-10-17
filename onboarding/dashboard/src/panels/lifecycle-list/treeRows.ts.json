@@ -3,12 +3,11 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "9b2154a3b6fe3dfc85fc7a8b780f7138f8ba4d90",
-        "content": "sha256:bafb429745f1cf766aab86f9896ac0d8a88c903f5ab22aae8e9ab1f09aecf583",
+        "blob": "90c9a05c19c4e703bef2f88c75b0d4b0c4303dcc",
+        "content": "sha256:5a6ec3438064bec875e9a600bcb46f43cceb5d316091c0564647ae8c43609f56",
         "locator": {
-          "end": 116,
-          "kind": "line_range",
-          "start": 49
+          "kind": "symbol",
+          "name": "treeItems"
         }
       },
       "id": "RLZ-79CD08",
@@ -17,17 +16,16 @@
         "handoffEntry": "MIK-R144@v1 rule 3b / order and fold",
         "leaf": "260928-MIK-L144"
       },
-      "rationale": "Orders by each entry own need band and stable supplied tree order, with cycle/seen guards, terminal folds and held selected ancestors; it does not reconstruct subtree urgency or chronology.",
+      "rationale": "Orders by each entry’s own band and supplied tree order, with cycle/seen uniqueness; selected ancestors open automatically unless explicitly released for this selection episode.",
       "role": "primary-authority"
     },
     {
       "anchor": {
-        "blob": "9b2154a3b6fe3dfc85fc7a8b780f7138f8ba4d90",
-        "content": "sha256:8ac5439b404debbba38e45263ca47a6e4b0395b9e63cd3dcd55d3eb0ac47c0eb",
+        "blob": "90c9a05c19c4e703bef2f88c75b0d4b0c4303dcc",
+        "content": "sha256:70a094545102e07970acf088c6a8fb59a26f41e65317fd92c80b787c49b808eb",
         "locator": {
-          "end": 45,
-          "kind": "line_range",
-          "start": 34
+          "kind": "symbol",
+          "name": "terminalFold"
         }
       },
       "id": "RLZ-X1KK3E",
@@ -36,10 +34,28 @@
         "handoffEntry": "MIK-R144@v1 rule 3b / order and fold",
         "leaf": "260928-MIK-L144"
       },
-      "rationale": "The current terminal-fold constructor retains selected descendant reach and a held-open fold; chosenAncestors separately protects selected parents.",
+      "rationale": "The terminal fold reveals a selected descendant unless its fold key has been explicitly released; it remains a disclosure line, not the chosen task.",
       "role": "enforcement"
     }
   ],
-  "references": {},
+  "references": {
+    "1": {
+      "note": "The pure flattener combines served ancestors with per-selection released keys for parent collapse and terminal-fold holding; seen guards retain one placement.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "90c9a05c19c4e703bef2f88c75b0d4b0c4303dcc",
+            "content": "sha256:1c0a13b4b3eb31dda2878f8446930ed1f625c3b89f1fb70675d4c073d0e72f16",
+            "locator": {
+              "end": 119,
+              "kind": "line_range",
+              "start": 37
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
   "schema": "ar-onboarding-file/v1"
 }

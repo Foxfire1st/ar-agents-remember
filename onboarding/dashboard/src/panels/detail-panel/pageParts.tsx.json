@@ -3,12 +3,12 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "17da14e723222a8d50b4ed6f0595390ab1fe1f6a",
+        "blob": "901cf61d779e58bf30849e0eea78a9123b9792fd",
         "content": "sha256:5ff6719474406bbbda3d3631e7b34975aed52bc4f967c603368c5ee52d73484d",
         "locator": {
-          "end": 415,
+          "end": 417,
           "kind": "line_range",
-          "start": 412
+          "start": 414
         }
       },
       "id": "RLZ-2YCQ8R",
@@ -22,10 +22,10 @@
     },
     {
       "anchor": {
-        "blob": "17da14e723222a8d50b4ed6f0595390ab1fe1f6a",
-        "content": "sha256:1f72a31368a7ab1bade3e051bc155321716406653daf2bdf755259f60d7c37d9",
+        "blob": "901cf61d779e58bf30849e0eea78a9123b9792fd",
+        "content": "sha256:122fe1c6ccc9c13929d0c2bbad24b068d96281d16a1c843001d08e3578342a15",
         "locator": {
-          "end": 89,
+          "end": 91,
           "kind": "line_range",
           "start": 69
         }
@@ -41,7 +41,25 @@
     },
     {
       "anchor": {
-        "blob": "17da14e723222a8d50b4ed6f0595390ab1fe1f6a",
+        "blob": "901cf61d779e58bf30849e0eea78a9123b9792fd",
+        "content": "sha256:8d0d106a268fd4f452dc06d91f8e80708a833c591dc1bf1ec37ac02670515a52",
+        "locator": {
+          "kind": "symbol",
+          "name": "STATUS_WORDS"
+        }
+      },
+      "id": "RLZ-3YF3YF",
+      "invariant": "INV-YK0D2W",
+      "origin": {
+        "handoffEntry": "D305 item 4 / L168-W-A015-host-activity-once",
+        "leaf": "260928-MIK-L168"
+      },
+      "rationale": "The unknown activity's word is 'started'.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "901cf61d779e58bf30849e0eea78a9123b9792fd",
         "content": "sha256:bec535690b5faf1601fe89c5a7f5d82293bac62ca9b92f69bc74eb4b140f1f54",
         "locator": {
           "kind": "symbol",
@@ -59,12 +77,12 @@
     },
     {
       "anchor": {
-        "blob": "17da14e723222a8d50b4ed6f0595390ab1fe1f6a",
+        "blob": "901cf61d779e58bf30849e0eea78a9123b9792fd",
         "content": "sha256:dc1bd7c87b3db5901dad9ef08c6a6686143d7c0329cd997b0541067d92e51126",
         "locator": {
-          "end": 101,
+          "end": 103,
           "kind": "line_range",
-          "start": 79
+          "start": 81
         }
       },
       "id": "RLZ-A8JVG7",
@@ -78,12 +96,12 @@
     },
     {
       "anchor": {
-        "blob": "17da14e723222a8d50b4ed6f0595390ab1fe1f6a",
+        "blob": "901cf61d779e58bf30849e0eea78a9123b9792fd",
         "content": "sha256:6275e656f0c00da3209adea8a68ba93d83917caa67e459418e7a268757c9798d",
         "locator": {
-          "end": 469,
+          "end": 471,
           "kind": "line_range",
-          "start": 450
+          "start": 452
         }
       },
       "id": "RLZ-F7T6YN",
@@ -97,7 +115,7 @@
     },
     {
       "anchor": {
-        "blob": "17da14e723222a8d50b4ed6f0595390ab1fe1f6a",
+        "blob": "901cf61d779e58bf30849e0eea78a9123b9792fd",
         "content": "sha256:255370dc0990d76d02e89d825196686fa95474d734c58c05e5db15cf94e84c4f",
         "locator": {
           "kind": "symbol",
@@ -115,12 +133,12 @@
     },
     {
       "anchor": {
-        "blob": "17da14e723222a8d50b4ed6f0595390ab1fe1f6a",
+        "blob": "901cf61d779e58bf30849e0eea78a9123b9792fd",
         "content": "sha256:6275e656f0c00da3209adea8a68ba93d83917caa67e459418e7a268757c9798d",
         "locator": {
-          "end": 469,
+          "end": 471,
           "kind": "line_range",
-          "start": 450
+          "start": 452
         }
       },
       "id": "RLZ-SB78XK",
@@ -134,7 +152,7 @@
     },
     {
       "anchor": {
-        "blob": "17da14e723222a8d50b4ed6f0595390ab1fe1f6a",
+        "blob": "901cf61d779e58bf30849e0eea78a9123b9792fd",
         "content": "sha256:255370dc0990d76d02e89d825196686fa95474d734c58c05e5db15cf94e84c4f",
         "locator": {
           "kind": "symbol",
@@ -157,7 +175,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "17da14e723222a8d50b4ed6f0595390ab1fe1f6a",
+            "blob": "901cf61d779e58bf30849e0eea78a9123b9792fd",
             "content": "sha256:255370dc0990d76d02e89d825196686fa95474d734c58c05e5db15cf94e84c4f",
             "locator": {
               "kind": "symbol",
@@ -173,7 +191,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "17da14e723222a8d50b4ed6f0595390ab1fe1f6a",
+            "blob": "901cf61d779e58bf30849e0eea78a9123b9792fd",
             "content": "sha256:5ff6719474406bbbda3d3631e7b34975aed52bc4f967c603368c5ee52d73484d",
             "locator": {
               "kind": "symbol",
@@ -189,7 +207,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "17da14e723222a8d50b4ed6f0595390ab1fe1f6a",
+            "blob": "901cf61d779e58bf30849e0eea78a9123b9792fd",
             "content": "sha256:da21dddbd4edb2227181ed80354a96876d33cba2997a335f908cad1329dd2f15",
             "locator": {
               "kind": "symbol",
@@ -205,12 +223,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "17da14e723222a8d50b4ed6f0595390ab1fe1f6a",
+            "blob": "901cf61d779e58bf30849e0eea78a9123b9792fd",
             "content": "sha256:a82df5c8a1137a00c5f9ee037e12d9daa91149d43e73c31432e6168219405d5a",
             "locator": {
-              "end": 479,
+              "end": 481,
               "kind": "line_range",
-              "start": 446
+              "start": 448
             }
           },
           "kind": "code"
@@ -225,6 +243,35 @@
               "start": 61
             },
             "path": "dashboard/src/panels/detail-panel/StepDot.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Unknown host activity draws the started word without changing the served key; task status and event-age presentation consume the served entry.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "901cf61d779e58bf30849e0eea78a9123b9792fd",
+            "content": "sha256:e70bd580be7d810fd3737b71d0e75824dbcb9349ac8520fa1998c93ec7cd78b5",
+            "locator": {
+              "end": 91,
+              "kind": "line_range",
+              "start": 67
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "901cf61d779e58bf30849e0eea78a9123b9792fd",
+            "content": "sha256:2cd32dbb81c632db9a7dd0f772104d8a8b704a58c4cbaf4002e3bfb27f4693b7",
+            "locator": {
+              "end": 157,
+              "kind": "line_range",
+              "start": 126
+            }
           },
           "kind": "code"
         }

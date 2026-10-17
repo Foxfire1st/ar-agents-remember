@@ -1,0 +1,111 @@
+{
+  "path": "dashboard/src/panels/detail-panel/listDisagreements.tsx",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "85572eb5c023ddcb57cfaa6eed4873d5ceb88d09",
+        "content": "sha256:f0ed83a15510d20fcbd23e95c91789481ae0e65bfa7dfb299076cf4b963acced",
+        "locator": {
+          "kind": "symbol",
+          "name": "ListDisagreements"
+        }
+      },
+      "id": "RLZ-1X4EEC",
+      "invariant": "INV-WQ8YGE",
+      "origin": {
+        "handoffEntry": "L168-C-A016-source-account-INV-WQ8YGE",
+        "leaf": "260928-MIK-L168"
+      },
+      "rationale": "Displays the served master-owned disagreements and existing record navigation without reconstructing or repairing membership.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "85572eb5c023ddcb57cfaa6eed4873d5ceb88d09",
+        "content": "sha256:c92247940d190f4547da9376c8a59c91d620b760e07c8c467dcf46da2efef914",
+        "locator": {
+          "kind": "symbol",
+          "name": "disputeKey"
+        }
+      },
+      "id": "RLZ-9TCZ12",
+      "invariant": "INV-WQ8YGE",
+      "origin": {
+        "handoffEntry": "L168-C-A016-source-account-INV-WQ8YGE",
+        "leaf": "260928-MIK-L168"
+      },
+      "rationale": "Uses the complete served disagreement identity for distinct rendered rows; it is not a second producer deduplication rule.",
+      "role": "presentation"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Render the served disagreement population, with navigation only for a present shared TaskEntry.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "85572eb5c023ddcb57cfaa6eed4873d5ceb88d09",
+            "content": "sha256:f0ed83a15510d20fcbd23e95c91789481ae0e65bfa7dfb299076cf4b963acced",
+            "locator": {
+              "kind": "symbol",
+              "name": "ListDisagreements"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Distinguish disagreements by every served identity field, without recomputing or deduplicating the population.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "85572eb5c023ddcb57cfaa6eed4873d5ceb88d09",
+            "content": "sha256:c92247940d190f4547da9376c8a59c91d620b760e07c8c467dcf46da2efef914",
+            "locator": {
+              "kind": "symbol",
+              "name": "disputeKey"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The task-group block includes disagreements even when no child group exists and composes the section from its own entry and shared task map.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1554453f4bf62ac7a5c7a56e91240e1015a0ef44",
+            "content": "sha256:ca4eb0d1b1ab38922e22dcb92c3f657574a7ee17fd786e8bce96a0c8410f5446",
+            "locator": {
+              "end": 353,
+              "kind": "line_range",
+              "start": 308
+            },
+            "path": "dashboard/src/panels/detail-panel/task-groups.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Disagreement uniqueness is server-owned, keyed by reporting master and the complete serialized disagreement; membership permits one acyclic parent.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d37db285155926a5393191721b105ab17f124661",
+            "content": "sha256:d1fdd46de7e3835f6ab74f75cdd7e66c814beb79b729db03939b5fd86b3711eb",
+            "locator": {
+              "kind": "symbol",
+              "name": "_Membership"
+            },
+            "path": "mcp/src/agents_remember/observer/task_entries.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

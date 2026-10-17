@@ -302,7 +302,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9e4b2543510affa9e5cc0d4f7e4ee8b261894051",
+            "blob": "d37db285155926a5393191721b105ab17f124661",
             "content": "sha256:348ca25847f5af1de648007ac662ec749f8e0b70d74d88d9bdf446f78299339e",
             "locator": {
               "kind": "symbol",
@@ -315,15 +315,29 @@
       ]
     },
     "19": {
-      "note": "Declared children and reciprocal parent links form the canonical task entries independently of worktree bindings.",
+      "note": "Declared-list order and documented-subTask master validation with absent-master fallback form cycle-safe canonical entries; other listed kinds retain guarded list placement without own-master validation.\n\nAnchor: Listed admission, reporting and identity/cycle guards",
       "targets": [
         {
           "anchor": {
-            "blob": "9e4b2543510affa9e5cc0d4f7e4ee8b261894051",
-            "content": "sha256:b925dcd46887d9d1f145bcfbf499a5ead0e8ae231c2927f6bb436051d0c3534b",
+            "blob": "d37db285155926a5393191721b105ab17f124661",
+            "content": "sha256:498b6aad55667bbf47656269670659b9718752be4fe352284b8c87114724fcd3",
             "locator": {
-              "kind": "symbol",
-              "name": "build_task_entries"
+              "end": 248,
+              "kind": "line_range",
+              "start": 147
+            },
+            "path": "mcp/src/agents_remember/observer/task_entries.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d37db285155926a5393191721b105ab17f124661",
+            "content": "sha256:a9698c32fa9a20bab81fc0f683925767fc43a427ce913e1f3c157c94cc3c4f95",
+            "locator": {
+              "end": 341,
+              "kind": "line_range",
+              "start": 263
             },
             "path": "mcp/src/agents_remember/observer/task_entries.py"
           },

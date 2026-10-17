@@ -7,7 +7,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e63aa9c221c84dcc3c93752c452715cbfb0bb54d",
+            "blob": "509354addd9e2aeeda8761fe71e212ceff11c4f2",
             "content": "sha256:2e00ca726941656e14bae55188c848c704fabb1beb53c9da3404ef3e655e0fcc",
             "locator": {
               "end": 574,
@@ -24,7 +24,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "57cab42fcf400a47ed496a496eb8cf73f9a920cd",
+            "blob": "e04bc90c0459913ff00bb72c86e355b1b0d28a8e",
             "content": "sha256:a189bbea179fd400c95a2351cdfddc4801b54913b80f50cd74b12923c5eb8219",
             "locator": {
               "kind": "symbol",
@@ -36,7 +36,7 @@
         },
         {
           "anchor": {
-            "blob": "57cab42fcf400a47ed496a496eb8cf73f9a920cd",
+            "blob": "e04bc90c0459913ff00bb72c86e355b1b0d28a8e",
             "content": "sha256:e14d6ca126d5b033fc5bc8fcb86d95b1355f23c6bd2a36ad21a5c434f1cf45e5",
             "locator": {
               "end": 29,
@@ -251,7 +251,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e63aa9c221c84dcc3c93752c452715cbfb0bb54d",
+            "blob": "509354addd9e2aeeda8761fe71e212ceff11c4f2",
             "content": "sha256:c728004edefb88962a4df291ac88371951e96cbfc685428104dbcb65bf89d2f1",
             "locator": {
               "end": 351,
@@ -269,6 +269,23 @@
               "end": 1816,
               "kind": "line_range",
               "start": 1193
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "20": {
+      "note": "The manual master sample carries three disagreement shapes and the unresolvable literal; this is sample coverage, not live membership evidence.\n\nAnchor: Current source assertions",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "509354addd9e2aeeda8761fe71e212ceff11c4f2",
+            "content": "sha256:f1a21c9db71a179f315e271cd83fd0eff6b089e0ff9148b7776236ec0b4829cb",
+            "locator": {
+              "end": 2156,
+              "kind": "line_range",
+              "start": 2120
             }
           },
           "kind": "code"

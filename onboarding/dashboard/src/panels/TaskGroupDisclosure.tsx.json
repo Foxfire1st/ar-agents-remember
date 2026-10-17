@@ -3,8 +3,26 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "e18c409e57f75c10be2ba7a41c80499f47fda0fd",
-        "content": "sha256:78245f9de446df6d57e42080f9773859a21066cbac2a976e6cfd7ff27bbe6470",
+        "blob": "8dbda171e779d2a6b6f014aad28c5be7fe7d554c",
+        "content": "sha256:43f4e1e74e8457cedb2c5c7e204a683af61c920c59ea31a57b435fa708176db3",
+        "locator": {
+          "kind": "symbol",
+          "name": "disclosure"
+        }
+      },
+      "id": "RLZ-AZVP92",
+      "invariant": "INV-ME6CA1",
+      "origin": {
+        "handoffEntry": "L168-C-A016-extra-carriers-INV-ME6CA1",
+        "leaf": "260928-MIK-L168"
+      },
+      "rationale": "The CSS supports the existing rendered disclosure button by widening pointer ownership without moving its glyph; TaskGroupDisclosure itself owns the action and row-event isolation.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "8dbda171e779d2a6b6f014aad28c5be7fe7d554c",
+        "content": "sha256:6373db1c5b6720fed6fb52d8191711bd5dad50e6eebeedf538d81708e6fd15d5",
         "locator": {
           "kind": "symbol",
           "name": "TaskGroupDisclosure"
@@ -16,18 +34,18 @@
         "handoffEntry": "MIK-R144@v1 rule 3b / order and fold",
         "leaf": "260928-MIK-L144"
       },
-      "rationale": "The caret of a parent row: for a parent that holds the chosen document it says so in its hover and does not close.",
+      "rationale": "The disclosure button reflects actual collapsed state, isolates row-selection events and invokes its caller action even for a chosen-document hold; the list owns transient hold release.",
       "role": "enforcement"
     }
   ],
   "references": {
     "1": {
-      "note": "The parent list's RowCaret renders the disclosure only for non-flat rows with children, passing actual collapsed and held selected-descendant state.",
+      "note": "RowCaret mounts the disclosure only for a non-flat parent, passing actual collapsed state and a callback that delegates the held-state decision to the list.",
       "targets": [
         {
           "anchor": {
-            "blob": "43e17a6f6194ff6dff8b56c726c525f51bee26a0",
-            "content": "sha256:699618ab8c4f010322526c3e6b84857b57c989dcfee011e261f3e4b2752d3160",
+            "blob": "6e5e8b5903fcf5108cc0ec06035fdc04c06c8256",
+            "content": "sha256:6ad12d9f12fac82ad25151d18436b5813abe4b8f7f35030c5796585e716154b4",
             "locator": {
               "kind": "symbol",
               "name": "RowCaret"
@@ -67,6 +85,23 @@
             "path": "dashboard/src/panels/lifecycle-list/hierarchy.test.tsx"
           },
           "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "The native button always invokes the isolated disclosure callback; its transparent hit area extends beyond the unchanged glyph cell.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8dbda171e779d2a6b6f014aad28c5be7fe7d554c",
+            "content": "sha256:7ade65543c41b1215bab2cdcf4d317f6f28b3594658b755f231f66d52bbc5f64",
+            "locator": {
+              "end": 50,
+              "kind": "line_range",
+              "start": 4
+            }
+          },
+          "kind": "code"
         }
       ]
     }

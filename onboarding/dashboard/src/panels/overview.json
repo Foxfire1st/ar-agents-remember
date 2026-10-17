@@ -2002,6 +2002,67 @@
         }
       ]
     },
+    "194": {
+      "note": "The list combines selection-episode releases with parent-only unmodified arrows and observes hidden selectedId changes.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6e5e8b5903fcf5108cc0ec06035fdc04c06c8256",
+            "content": "sha256:008405cd80acbe73ee37a16c867a2678d9dba5263997961af4df2ca3a6c94e40",
+            "locator": {
+              "end": 140,
+              "kind": "line_range",
+              "start": 90
+            },
+            "path": "dashboard/src/panels/lifecycle-list/LifecycleList.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6e5e8b5903fcf5108cc0ec06035fdc04c06c8256",
+            "content": "sha256:7e2587c5e54f3d912c72949970d049517445cbed2c87453589dfbff7050150f7",
+            "locator": {
+              "end": 201,
+              "kind": "line_range",
+              "start": 179
+            },
+            "path": "dashboard/src/panels/lifecycle-list/LifecycleList.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6e5e8b5903fcf5108cc0ec06035fdc04c06c8256",
+            "content": "sha256:174c1ef05448d6ea07371b6c64acd9b92827c1110af971743ad21a86605352c0",
+            "locator": {
+              "end": 213,
+              "kind": "line_range",
+              "start": 207
+            },
+            "path": "dashboard/src/panels/lifecycle-list/LifecycleList.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "195": {
+      "note": "The shared master-page disagreement renderer draws served rows and offers jumps only to records in the task map.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "85572eb5c023ddcb57cfaa6eed4873d5ceb88d09",
+            "content": "sha256:f0ed83a15510d20fcbd23e95c91789481ae0e65bfa7dfb299076cf4b963acced",
+            "locator": {
+              "kind": "symbol",
+              "name": "ListDisagreements"
+            },
+            "path": "dashboard/src/panels/detail-panel/listDisagreements.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
     "24": {
       "note": "The card component.",
       "targets": [
@@ -2440,7 +2501,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "cb7649c76f226f56141cd36720b382cea60352c7",
+            "blob": "359083eb794b3a5462b9e53d4dde2b27ec8ec7a9",
             "content": "sha256:e345bcf52910f1d43fcff54700f85ea691a6b896120f54a78d4be96269c1b309",
             "locator": {
               "kind": "symbol",

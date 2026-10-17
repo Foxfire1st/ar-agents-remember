@@ -162,7 +162,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "82940e3ebb28c7077e598da5addafff90ec6ef78",
+            "blob": "8553750157ecbc4d4c86582aec77207f1b043431",
             "content": "sha256:9dd7288f36643ae64d19e5f0a00db07d6ab0b4af1ff77174df63d806d3c827a1",
             "locator": {
               "kind": "symbol",
@@ -198,12 +198,12 @@
         },
         {
           "anchor": {
-            "blob": "8774e82c7f7a93dda014fdb8b987e2391fd21fd1",
+            "blob": "27ab725f01e310493256da673c0f870a77b85bbf",
             "content": "sha256:3210b67654efd86b837f892e3568ebe8331b76d1196385091dbe937cc30473ce",
             "locator": {
-              "end": 570,
+              "end": 571,
               "kind": "line_range",
-              "start": 536
+              "start": 537
             },
             "path": "dashboard/src/types/projection.ts"
           },

@@ -127,7 +127,7 @@ a full-bleed view. **Top-bar humanization + honesty (V15/V6/R7):** `ServingBuild
 HUMANIZED uptime (`humanizeDuration(Date.now() - bootedAt)`, one time format in the bar; the absolute
 start stamp stays in the tooltip — was a second 12h clock, V15); the brand `title` + each fact-chip
 (`dim`, `caution`, `connBadge`) are `whiteSpace:nowrap` and the `statusRow` is `flex-wrap:wrap` so the
-bar wraps BETWEEN chips, never mid-phrase (`1 running · 0/blocked`, V6); and the task metrics use the server's taskCounts: planned, started, completed, aborted, works, paused and unknown, labeled by the shared status grammar. The unknown bucket is omitted when its count is zero; a nonempty bucket retains the shared started/host-state-unknown wording. The other buckets keep their served counts. The browser does not count raw lifecycle states. **5g G6** adds an `EffectsToggle` to the `TopBar`
+bar wraps BETWEEN chips, never mid-phrase (`1 running · 0/blocked`, V6); and the task metrics use the server's taskCounts: planned, started, completed, aborted, works and paused, labeled by the shared status grammar. When `selectHostActivityUnknown` reports unavailable host observation, the header omits works/paused count words and says `host activity unavailable` once beside the authored-stage counts. It does not display a separate unknown-count bucket or infer paused/working state from the browser clock. The other buckets keep their served counts. The browser does not count raw lifecycle states. **5g G6** adds an `EffectsToggle` to the `TopBar`
 (`effects-toggle`): a ✦ Effects / ❄ Calm button that flips `html[data-effects]` (which `useShouldAnimate`
 reads live, so the engine-room backdrop + all gated motion respond at once) and persists the choice to the
 `calm-cockpit` localStorage flag `main.tsx` reads on the next load.
@@ -283,7 +283,7 @@ No relevant domain documentation was found for this file.
 - The right rail keeps the chat side mounted in an unkeyed stable wrapper and hides it when the River shows; the River still mounts conditionally. [92]
 - The hidden chat side stays mounted but out of reach behind display:none and aria-hidden. [93]
 
-- The header labels served taskCounts through the shared status table and hides only an empty unknown bucket. [94]
+- The header uses shared labels for served taskCounts, omits works/paused words when host observation is unknown, and reports host activity unavailable once rather than drawing an unknown-count bucket. [94]
 
 - The shell starts the screen wake lock once on mount; the wake-lock helper follows document visibility and releases its held sentinel on stop. [96]
 

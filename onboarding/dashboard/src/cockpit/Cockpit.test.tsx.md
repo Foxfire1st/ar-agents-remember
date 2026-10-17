@@ -71,7 +71,7 @@ dashboard store.
   node full-bleed, exposes no Chats-mode tablist and mounts no SessionsView child; returning to
   Operations hides the same pane. This is role-pane existence/persistence coverage, not a PTY-owner
   assertion; the sole current RoleChatsPane JSX mount establishes source cardinality.
-- Header rollup reads published taskCounts, retaining the zero paused bucket but showing unknown only while populated, not lifecycle-derived counts.
+- Header rollup reads published taskCounts. The initial-nonzero case asserts the stage counts, exactly one `host activity unavailable` notice, and no works/paused wording in the header. The separate 0→1→0 case asserts initial works/paused figures and no notice; at one it asserts a notice and no works wording; on return to zero it asserts only notice removal. It does not assert post-return figure restoration, paused suppression or exact notice count in the one phase, per-row suppression, or native host availability.
 - Rail cases distinguish task activity from attention severity, preserve accessible names and scope axe checks under existing jsdom exclusions.
 - Gallery severity counts and server order remain; qualified native task selection no longer comes from an attention-origin lifecycle opener. The sidebar selection case clicks first, second, then first native task, waits for each task id in the reader, and asserts its option is focused with `aria-selected="true"`; the `scrollIntoView` spy is called three times. This preserves the reveal/focus/selection contract under native sidebar selection rather than the retired attention-layer opener. Render assertions are not browser/backend persistence proof.
 
@@ -166,6 +166,8 @@ No relevant domain documentation was found for this file.
 
 - The mounted shell and actual stylesheet omit the scanline layer while retaining pulse and the effects-off freeze. [42]
 
+
+- The initial-nonzero case asserts one notice and no works/paused wording; the separate transition case asserts initial figures, notice/no works at one, and only notice removal on return to zero. No restored figures or native host availability are asserted. [44]
 
 ### Cross-Repo References
 

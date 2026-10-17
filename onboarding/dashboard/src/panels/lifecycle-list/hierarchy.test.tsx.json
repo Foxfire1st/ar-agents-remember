@@ -1,5 +1,41 @@
 {
   "path": "dashboard/src/panels/lifecycle-list/hierarchy.test.tsx",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "ba9872fae85cfd8b36d51d97bfdcc9a35155da34",
+        "content": "sha256:8676356b172ff4839c83ffa4054bad01da4aa3c4a73fc0f4be280ef7e5bcb950",
+        "locator": {
+          "kind": "symbol",
+          "name": "opens and closes the focused parent with plain arrows and leaves modified arrows alone"
+        }
+      },
+      "facet": "Mounted assertions exercise deliberate plain parent-arrow disclosure, including release of the chosen-document hold, while leaving modifier chords alone.",
+      "id": "PRF-GV7YMY",
+      "invariant": "INV-PH90HV",
+      "origin": {
+        "handoffEntry": "L168-C-A016-source-account-INV-PH90HV",
+        "leaf": "260928-MIK-L168"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "ba9872fae85cfd8b36d51d97bfdcc9a35155da34",
+        "content": "sha256:b08f6639cb3e9589967c2f34fc31481c442513b471a034bf69362e2f22b3e2c8",
+        "locator": {
+          "kind": "symbol",
+          "name": "uses served hierarchy and remembers closed parents; a chosen descendant holds its ancestors open until a click"
+        }
+      },
+      "facet": "Mounted assertions close over the chosen child and expire releases after A-to-B-to-A, A-to-none-to-A and hidden-list selection changes.",
+      "id": "PRF-QQ6JRK",
+      "invariant": "INV-ME6CA1",
+      "origin": {
+        "handoffEntry": "L168-C-A016-source-account-INV-ME6CA1",
+        "leaf": "260928-MIK-L168"
+      }
+    }
+  ],
   "realizes": [],
   "references": {
     "1": {
@@ -11,6 +47,35 @@
             "content": "sha256:42c60dce9ee410be231b6c51a0860ac3d9bb957dde97309c2be718bb9797d75d",
             "locator": {
               "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Chosen-document holding yields to explicit disclosure for the current selection episode, while plain arrows stay confined to parent rows.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ba9872fae85cfd8b36d51d97bfdcc9a35155da34",
+            "content": "sha256:57502b089519acebc044dafed2b93779e00d8db992e81ed48db1424dbeab7d32",
+            "locator": {
+              "end": 170,
+              "kind": "line_range",
+              "start": 105
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "ba9872fae85cfd8b36d51d97bfdcc9a35155da34",
+            "content": "sha256:8676356b172ff4839c83ffa4054bad01da4aa3c4a73fc0f4be280ef7e5bcb950",
+            "locator": {
+              "end": 208,
+              "kind": "line_range",
+              "start": 187
             }
           },
           "kind": "test"

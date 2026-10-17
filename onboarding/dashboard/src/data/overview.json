@@ -442,14 +442,14 @@
       ]
     },
     "28": {
-      "note": "The generated projection mirror this route's suites build fixtures from, the manual sample used for coverage, and the fixture/projection stale gates.",
+      "note": "The generated projection mirror this route's suites build fixtures from, the manual sample used for coverage, and the fixture/projection stale gates.\n\nAnchor: Contract direction rationale, fixture provenance, generator header and full check/dispatch bodies",
       "targets": [
         {
           "anchor": {
-            "blob": "87457953dd5427f8b2f7422448efb41f018e7ede",
-            "content": "sha256:c2bf5021b544e1bfe592d8e2a9412c95408aa10143a16a263841f69607846b3a",
+            "blob": "e04bc90c0459913ff00bb72c86e355b1b0d28a8e",
+            "content": "sha256:1b22f1cce75f1642901ce4793b6c0b4c0ae87371505e3f2ad2e3e20c7362a7e5",
             "locator": {
-              "end": 13,
+              "end": 42,
               "kind": "line_range",
               "start": 13
             },
@@ -460,9 +460,9 @@
         {
           "anchor": {
             "blob": "a863e49a83213f748fa2993ef0953d7e0f2362a4",
-            "content": "sha256:0fe35945de3839b430de57e38d38345b5ea32cd57ba071ec316fe800bdc3d6f2",
+            "content": "sha256:f69a6b22129dca8243632068064d9b6114a4fe667815ec9360a06735a3657769",
             "locator": {
-              "end": 22,
+              "end": 38,
               "kind": "line_range",
               "start": 22
             },
@@ -472,10 +472,10 @@
         },
         {
           "anchor": {
-            "blob": "8774e82c7f7a93dda014fdb8b987e2391fd21fd1",
-            "content": "sha256:2edac0ee8097af47d9c9db4c61be9b599f4697cf3391c5c775b59226ff6dd8dd",
+            "blob": "27ab725f01e310493256da673c0f870a77b85bbf",
+            "content": "sha256:278e8f8d38ff16a96bd0f517049952be7cf84b529f633413369ad76d2d713420",
             "locator": {
-              "end": 1,
+              "end": 8,
               "kind": "line_range",
               "start": 1
             },
@@ -486,9 +486,9 @@
         {
           "anchor": {
             "blob": "a679628bfc97d851c7d3246fbeddcdcd95364844",
-            "content": "sha256:35ddfd528ac56b986e0be1a0485486ecfb3d526b8eb7090ac947b4ae9699a484",
+            "content": "sha256:b7406c17cc72921b4db23c556877f4445defbd89af6bd62340ffc15b0d513c18",
             "locator": {
-              "end": 46,
+              "end": 54,
               "kind": "line_range",
               "start": 46
             },
@@ -499,9 +499,9 @@
         {
           "anchor": {
             "blob": "a679628bfc97d851c7d3246fbeddcdcd95364844",
-            "content": "sha256:ab397933a24a801ee923327bd69a01049c077915021cf2ec39dda4f81aa837e4",
+            "content": "sha256:c18f31c577f41468edd16e036b0729ca9394f2cda2fe7364274e3f716a20df86",
             "locator": {
-              "end": 57,
+              "end": 68,
               "kind": "line_range",
               "start": 57
             },

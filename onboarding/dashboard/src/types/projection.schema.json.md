@@ -71,6 +71,10 @@ None.
 
 TaskSummary carries optional directGrant display evidence and typed giver/time data. Schema presence is not grant permission; current external authority stays backend-owned. Regenerate together with the Python observer/types.
 
+## Task-list disagreement wire shape
+
+The generated core schema gives `TaskEntry` an optional `disagreements` array of closed `TaskListDisagreement` objects. Its four kinds are `names-another-master`, `not-listed`, `listed-twice` and `unresolvable-master`; record identity is required, while row, recordMaster, parent and masterLiteral may be absent/null. This exposes producer evidence, not browser membership-repair authority. Regenerate from the Python owner rather than hand-editing this JSON.
+
 ## Optional Task Order and Structured Prose
 
 TaskSummary carries optional fixed prose, completion time, waitsFor and resolved dependency arrays as content. TaskDependencyNode requires id/title and permits an absent canonical reference; no task state or jump is invented for a file-less dependency. TaskEntry owns identity, stage/activity, parent/children/counts and worktrees; TaskCounts covers stages and started activity buckets. Graph cycle remains optional display evidence, not browser scheduling/validation.
@@ -185,3 +189,5 @@ populate for record-bound envelopes.
 ## 260713-TES-L5 Current Delta — Regenerated AgentPickupNode Description
 
 The schema no longer declares AgentPickupNode or session lifecycle/duplicate task-document/series catalogues. Retained landing-operation envelopes and exact-current queue contracts remain independent projection evidence.
+
+- Generated TaskEntry disagreement references and the four-kind closed object preserve qualified record identity and optional discrepancy detail. Schema shape alone is not reconciliation. [14]

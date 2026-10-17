@@ -12,7 +12,7 @@ The Operations row/page coherence suite pins one served task status word and hos
 
 ### Logic
 
-Native row/page deltas require shared stage/activity words, unchanged attention severity and distinct paused/aborted marks. Fake host timestamps retain age through later mounts and deltas. Hidden/inactive/nested owners stop aging; visible dependents share one clock and clean it up. Parameterized dependency pages and 30/150-task rails are real source ranges, not named symbols.
+Native row/page deltas require shared stage/activity words, unchanged attention severity and distinct paused/aborted marks. The parameterized started/unknown case expects `started`, without repeating the host-unavailability sentence per task; the attention layer still must not borrow task activity wording. Fake host timestamps retain age through later mounts and deltas. Hidden/inactive/nested owners stop aging; visible dependents share one clock and clean it up. Parameterized dependency pages and 30/150-task rails are real source ranges, not named symbols.
 
 ### Invariants And Boundaries
 
@@ -40,3 +40,5 @@ No relevant domain documentation was found.
 No cross-repository implementation source governs this file.
 
 No applicable cross-repository source was found.
+
+- Parameterized native row/page cases expect the shared started word for unknown activity and keep attention severity separate. [2]

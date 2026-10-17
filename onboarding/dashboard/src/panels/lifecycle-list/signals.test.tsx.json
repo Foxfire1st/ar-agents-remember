@@ -3,7 +3,7 @@
   "proves": [
     {
       "anchor": {
-        "blob": "094aefce5c2e973a5258549950ab20787044fda4",
+        "blob": "267764a20f0a8b77f0aca50760ae7db675d63c7a",
         "content": "sha256:001662af8ba2ab194f29e5419cfd56735a4f10bdc8a863e88ae0804dd5c6da76",
         "locator": {
           "kind": "symbol",
@@ -30,6 +30,23 @@
             "content": "sha256:b27e244d490269c387de5f8fe1ed56a09b9264d64fdb1da25e8ced8b2e2c8897",
             "locator": {
               "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Parameterized native row/page cases expect the shared started word for unknown activity and keep attention severity separate.\n\nAnchor: Current source assertions",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "267764a20f0a8b77f0aca50760ae7db675d63c7a",
+            "content": "sha256:9acac9f3de01633b6c580da0fcffed06e031b32450b2dbea62cf75c2997c9e0c",
+            "locator": {
+              "end": 208,
+              "kind": "line_range",
+              "start": 149
             }
           },
           "kind": "test"

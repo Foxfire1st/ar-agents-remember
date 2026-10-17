@@ -3,13 +3,14 @@
     "criteria": [
       "spans_locations"
     ],
-    "justification": "The builder, comparator, held-fold selection and disclosure must jointly preserve a single reachable chosen document even under cycles."
+    "justification": "The tree builder, explicit disclosure actions and selection-episode owner must jointly preserve automatic chosen-document reach until a deliberate release, keep selected identity unchanged, and retain cycle/seen uniqueness."
   },
-  "applicability": "The non-flat Operations task hierarchy under its admitted parents.",
+  "applicability": "Non-flat Operations hierarchy ordering, terminal folds and automatic chosen-document reveal with explicit per-selection-episode overrides.",
   "conditions": [
-    "Need ordering uses each entry own band, preserving supplied sibling order for ties.",
-    "Completed/aborted folds preserve selected-document reach.",
-    "Held selected ancestors cannot be collapsed."
+    "Need ordering uses each entry’s own works/started/planned/terminal band and preserves supplied sibling order for ties; it does not reconstruct subtree urgency or chronology.",
+    "The chosen document initially holds its ancestors and containing completed/aborted fold open. A deliberate parent-caret or fold-toggle click can close them without changing that chosen document.",
+    "An existing plain left/right arrow on a focused parent row can release its hold only when it requests a different open state. Completed-fold rows gain no horizontal-arrow handler; modified chords remain browser-owned.",
+    "A different selection, including A-to-B-to-A, A-to-none-to-A and hidden-list transitions, expires releases and starts fresh automatic holds. Remembered collapsed/open preferences remain distinct from these transient releases."
   ],
   "exclusions": [
     "Widening admission or changing document hierarchy ownership.",
@@ -27,9 +28,9 @@
     "leaf": "260928-MIK-L144",
     "task": "260928-MIK"
   },
-  "revision": 2,
+  "revision": 3,
   "schema": "ar-invariant/v1",
-  "statement": "Under a parent, Operations rows use each served entry own works/started/planned/terminal need band and stable supplied tree order, without a subtree urgency or chronology reconstruction. Terminal rows stand behind an in-place fold that is never the chosen task; selected ancestors remain open, hidden selected descendants reveal their fold, and cycle/seen guards list an entry once.",
+  "statement": "Under an admitted parent, Operations orders rows by each entry’s own need band and stable supplied tree order. Terminal rows sit behind an in-place fold that is not the chosen task. Selection automatically reveals ancestors and a containing fold until an explicit disclosure click or an existing plain parent arrow that changes state releases that hold; release ends with the current selection episode, including while the list is hidden. Cycle/seen guards still list an entry once.",
   "status": "accepted",
   "supersedes": []
 }

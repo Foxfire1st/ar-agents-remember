@@ -3,12 +3,30 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "fd8a63153d92e122e337addca365b8a2260cbcf5",
+        "blob": "1554453f4bf62ac7a5c7a56e91240e1015a0ef44",
+        "content": "sha256:04ae78e937a170de15981c51d9284cad58d119039913f3559d107d400999a30c",
+        "locator": {
+          "kind": "symbol",
+          "name": "MasterNowCells"
+        }
+      },
+      "id": "RLZ-3K8RK7",
+      "invariant": "INV-YK0D2W",
+      "origin": {
+        "handoffEntry": "D305 item 4 / L168-W-A015-host-activity-once",
+        "leaf": "260928-MIK-L168"
+      },
+      "rationale": "Hides the master task row's works/paused figure while the host is unknown.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "1554453f4bf62ac7a5c7a56e91240e1015a0ef44",
         "content": "sha256:d35205fe9e6cf8658a264e2bf4ccb94f2f8f6820bdb9676b67f7467f34020d8f",
         "locator": {
-          "end": 460,
+          "end": 476,
           "kind": "line_range",
-          "start": 440
+          "start": 456
         }
       },
       "id": "RLZ-48F336",
@@ -22,7 +40,43 @@
     },
     {
       "anchor": {
-        "blob": "fd8a63153d92e122e337addca365b8a2260cbcf5",
+        "blob": "1554453f4bf62ac7a5c7a56e91240e1015a0ef44",
+        "content": "sha256:93982e481ea7f5da2f115db98bb0637f2fa238b62042f3a2cdc853aad15e6dae",
+        "locator": {
+          "kind": "symbol",
+          "name": "TaskChildrenBlock"
+        }
+      },
+      "id": "RLZ-9N472M",
+      "invariant": "INV-WQ8YGE",
+      "origin": {
+        "handoffEntry": "L168-C-A016-extra-carriers-INV-WQ8YGE",
+        "leaf": "260928-MIK-L168"
+      },
+      "rationale": "Renders served master disagreement evidence independently of the ordinary child index, without repairing membership.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "1554453f4bf62ac7a5c7a56e91240e1015a0ef44",
+        "content": "sha256:06c747829dc40ba797bde883f77a2122e94bfb2ced2107347366cb118f03227b",
+        "locator": {
+          "kind": "symbol",
+          "name": "hasTaskContent"
+        }
+      },
+      "id": "RLZ-AGQEGH",
+      "invariant": "INV-WQ8YGE",
+      "origin": {
+        "handoffEntry": "L168-C-A016-extra-carriers-INV-WQ8YGE",
+        "leaf": "260928-MIK-L168"
+      },
+      "rationale": "Keeps served disagreement-only master content visible even when there are no normal child rows, intro or discarded rows.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "1554453f4bf62ac7a5c7a56e91240e1015a0ef44",
         "content": "sha256:16695ad77806a8d5b51a1af55642517cae60547f507cb1f41991e51ef4f2a323",
         "locator": {
           "kind": "symbol",
@@ -40,12 +94,12 @@
     },
     {
       "anchor": {
-        "blob": "fd8a63153d92e122e337addca365b8a2260cbcf5",
+        "blob": "1554453f4bf62ac7a5c7a56e91240e1015a0ef44",
         "content": "sha256:591618796ac62d81a92dbac7f69d6b5fc99279184b55cb4d7503742ec04c700a",
         "locator": {
-          "end": 387,
+          "end": 403,
           "kind": "line_range",
-          "start": 341
+          "start": 357
         }
       },
       "id": "RLZ-C7FVQY",
@@ -59,12 +113,12 @@
     },
     {
       "anchor": {
-        "blob": "fd8a63153d92e122e337addca365b8a2260cbcf5",
+        "blob": "1554453f4bf62ac7a5c7a56e91240e1015a0ef44",
         "content": "sha256:dbe49d5a69cfb1581e9b50572a15ef3854e761048028856d12e1ef937c86cfdc",
         "locator": {
-          "end": 80,
+          "end": 83,
           "kind": "line_range",
-          "start": 47
+          "start": 50
         }
       },
       "id": "RLZ-DN3M1F",
@@ -78,12 +132,12 @@
     },
     {
       "anchor": {
-        "blob": "fd8a63153d92e122e337addca365b8a2260cbcf5",
+        "blob": "1554453f4bf62ac7a5c7a56e91240e1015a0ef44",
         "content": "sha256:3734d8dc3f42621be9065d01258e25ae30a5a46cb60e88570d1e4e9a87bb86a1",
         "locator": {
-          "end": 301,
+          "end": 306,
           "kind": "line_range",
-          "start": 274
+          "start": 279
         }
       },
       "id": "RLZ-G8WYZY",
@@ -97,12 +151,12 @@
     },
     {
       "anchor": {
-        "blob": "fd8a63153d92e122e337addca365b8a2260cbcf5",
+        "blob": "1554453f4bf62ac7a5c7a56e91240e1015a0ef44",
         "content": "sha256:ecb9c4678b31232029af67f5cedfd91ad0051f90444c7841dcad5fb365b570f7",
         "locator": {
-          "end": 271,
+          "end": 276,
           "kind": "line_range",
-          "start": 243
+          "start": 248
         }
       },
       "id": "RLZ-H3H1XK",
@@ -116,12 +170,12 @@
     },
     {
       "anchor": {
-        "blob": "fd8a63153d92e122e337addca365b8a2260cbcf5",
+        "blob": "1554453f4bf62ac7a5c7a56e91240e1015a0ef44",
         "content": "sha256:99ef2c76fc9f209c548d24c81938d4649e17824ec801c1f39e02d7bce5a6ed64",
         "locator": {
-          "end": 120,
+          "end": 123,
           "kind": "line_range",
-          "start": 83
+          "start": 86
         }
       },
       "id": "RLZ-Q4GTQ8",
@@ -135,12 +189,12 @@
     },
     {
       "anchor": {
-        "blob": "fd8a63153d92e122e337addca365b8a2260cbcf5",
+        "blob": "1554453f4bf62ac7a5c7a56e91240e1015a0ef44",
         "content": "sha256:51469d56adaf0a7cae254495649e81cdb791e2422d464a54e916f0b9885ab86e",
         "locator": {
-          "end": 422,
+          "end": 438,
           "kind": "line_range",
-          "start": 403
+          "start": 419
         }
       },
       "id": "RLZ-VFXNP6",
@@ -154,12 +208,12 @@
     },
     {
       "anchor": {
-        "blob": "fd8a63153d92e122e337addca365b8a2260cbcf5",
-        "content": "sha256:822479f7734fae906c6a81e61122d46a3938e42cdb2d66a1cd49ee81dd57e7ca",
+        "blob": "1554453f4bf62ac7a5c7a56e91240e1015a0ef44",
+        "content": "sha256:93982e481ea7f5da2f115db98bb0637f2fa238b62042f3a2cdc853aad15e6dae",
         "locator": {
-          "end": 337,
+          "end": 353,
           "kind": "line_range",
-          "start": 303
+          "start": 318
         }
       },
       "id": "RLZ-WKA99C",
@@ -173,12 +227,12 @@
     },
     {
       "anchor": {
-        "blob": "fd8a63153d92e122e337addca365b8a2260cbcf5",
+        "blob": "1554453f4bf62ac7a5c7a56e91240e1015a0ef44",
         "content": "sha256:99ef2c76fc9f209c548d24c81938d4649e17824ec801c1f39e02d7bce5a6ed64",
         "locator": {
-          "end": 120,
+          "end": 123,
           "kind": "line_range",
-          "start": 83
+          "start": 86
         }
       },
       "id": "RLZ-XRDYTZ",
@@ -259,6 +313,23 @@
               "start": 313
             },
             "path": "dashboard/src/panels/detail-panel/orderGraph.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The task block remains present for served disagreements and composes their shared renderer beside, not into, the child groups.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1554453f4bf62ac7a5c7a56e91240e1015a0ef44",
+            "content": "sha256:ca4eb0d1b1ab38922e22dcb92c3f657574a7ee17fd786e8bce96a0c8410f5446",
+            "locator": {
+              "end": 353,
+              "kind": "line_range",
+              "start": 308
+            }
           },
           "kind": "code"
         }

@@ -3,12 +3,48 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "a1da64452b66ed600866ad56b37418f973ed3e37",
+        "blob": "6e5e8b5903fcf5108cc0ec06035fdc04c06c8256",
+        "content": "sha256:174c1ef05448d6ea07371b6c64acd9b92827c1110af971743ad21a86605352c0",
+        "locator": {
+          "kind": "symbol",
+          "name": "LifecycleList"
+        }
+      },
+      "id": "RLZ-34GJ8Q",
+      "invariant": "INV-ME6CA1",
+      "origin": {
+        "handoffEntry": "L168-C-A016-source-account-INV-ME6CA1",
+        "leaf": "260928-MIK-L168"
+      },
+      "rationale": "Retains selection changes through memo comparison even while hidden, so old release state cannot survive an unobserved selected-key transition.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "6e5e8b5903fcf5108cc0ec06035fdc04c06c8256",
+        "content": "sha256:4f503828228e8b5155e4d089003b6d36e0e6e982f2af514c693cfbbc22cdf784",
+        "locator": {
+          "kind": "symbol",
+          "name": "useTreeToggles"
+        }
+      },
+      "id": "RLZ-5EN7GW",
+      "invariant": "INV-ME6CA1",
+      "origin": {
+        "handoffEntry": "L168-C-A016-source-account-INV-ME6CA1",
+        "leaf": "260928-MIK-L168"
+      },
+      "rationale": "Composes remembered parent/fold preferences with explicit held-aware release actions for the current chosen document.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "6e5e8b5903fcf5108cc0ec06035fdc04c06c8256",
         "content": "sha256:bda3d07f6eab73a8515ba13aa6a5049fa68379e72de734bf4849c6447571b157",
         "locator": {
-          "end": 326,
+          "end": 388,
           "kind": "line_range",
-          "start": 320
+          "start": 382
         }
       },
       "id": "RLZ-B6TTTQ",
@@ -22,12 +58,12 @@
     },
     {
       "anchor": {
-        "blob": "a1da64452b66ed600866ad56b37418f973ed3e37",
-        "content": "sha256:9e342015d2f8d06d7f6426f4956cd77817cbe2aced86f806ffda1186d66ee1c7",
+        "blob": "6e5e8b5903fcf5108cc0ec06035fdc04c06c8256",
+        "content": "sha256:983658d30481cce4cb5994b573218070fca4fa0f1da1165b9da082abbc504407",
         "locator": {
-          "end": 426,
+          "end": 488,
           "kind": "line_range",
-          "start": 409
+          "start": 471
         }
       },
       "id": "RLZ-CSAQ91",
@@ -41,8 +77,8 @@
     },
     {
       "anchor": {
-        "blob": "a1da64452b66ed600866ad56b37418f973ed3e37",
-        "content": "sha256:7c34b7f9e0a2c1a1cd3327c87946b9b48a8bf05cf594b6c384141eb20b689763",
+        "blob": "6e5e8b5903fcf5108cc0ec06035fdc04c06c8256",
+        "content": "sha256:4da2f3673c7cb49f91e03e8cc7d1fb5e2feaf8d368c897d9712c8fa6c6b375f9",
         "locator": {
           "kind": "file"
         }
@@ -58,7 +94,25 @@
     },
     {
       "anchor": {
-        "blob": "a1da64452b66ed600866ad56b37418f973ed3e37",
+        "blob": "6e5e8b5903fcf5108cc0ec06035fdc04c06c8256",
+        "content": "sha256:90435f3587820390a9d4221c9b44fafba62e33db6c65e15b240904acd990a498",
+        "locator": {
+          "kind": "symbol",
+          "name": "useReleasedHolds"
+        }
+      },
+      "id": "RLZ-KNDKRP",
+      "invariant": "INV-ME6CA1",
+      "origin": {
+        "handoffEntry": "L168-C-A016-source-account-INV-ME6CA1",
+        "leaf": "260928-MIK-L168"
+      },
+      "rationale": "Observes selection changes and expires the released-control set at each selection episode.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "6e5e8b5903fcf5108cc0ec06035fdc04c06c8256",
         "content": "sha256:c85bd6adc77b39f4b53985c22dbfb6eaede11a71e9bb7c4aed978bab142251d6",
         "locator": {
           "kind": "symbol",
@@ -76,8 +130,8 @@
     },
     {
       "anchor": {
-        "blob": "a1da64452b66ed600866ad56b37418f973ed3e37",
-        "content": "sha256:4f32f731679e5888b59d7ae7b694a7d7518f22427b0a0c60f4b67552b57352a3",
+        "blob": "6e5e8b5903fcf5108cc0ec06035fdc04c06c8256",
+        "content": "sha256:9351ab82f065bd3a86a80c178163cca857f254a9ff5d751a6707f3e0e380d506",
         "locator": {
           "kind": "symbol",
           "name": "treeKey"
@@ -89,17 +143,17 @@
         "handoffEntry": "MIK-R144@v1 rule 5 / the one addition",
         "leaf": "260928-MIK-L144"
       },
-      "rationale": "Handles only unmodified left/right arrows on a parent row; it opens or closes that parent only when the requested state differs and no chosen-document hold is present. Held selected ancestors remain open; every other key stays with the list.",
+      "rationale": "Acts only on a focused parent with a plain horizontal arrow whose requested state differs; the held-aware action may release the chosen-document hold. Fold lines and modified/other keys get no new handler.",
       "role": "primary-authority"
     },
     {
       "anchor": {
-        "blob": "a1da64452b66ed600866ad56b37418f973ed3e37",
-        "content": "sha256:9e342015d2f8d06d7f6426f4956cd77817cbe2aced86f806ffda1186d66ee1c7",
+        "blob": "6e5e8b5903fcf5108cc0ec06035fdc04c06c8256",
+        "content": "sha256:983658d30481cce4cb5994b573218070fca4fa0f1da1165b9da082abbc504407",
         "locator": {
-          "end": 426,
+          "end": 488,
           "kind": "line_range",
-          "start": 409
+          "start": 471
         }
       },
       "id": "RLZ-RKKZ22",
@@ -113,12 +167,12 @@
     },
     {
       "anchor": {
-        "blob": "a1da64452b66ed600866ad56b37418f973ed3e37",
-        "content": "sha256:b1138dc97d59a73611f139615940f561bcad835cef99af4fa5bb92676f39b81d",
+        "blob": "6e5e8b5903fcf5108cc0ec06035fdc04c06c8256",
+        "content": "sha256:620b7d1b9785f7f80ae5eb881c3023a5c9e838012593ae99153eb566b9ff65a2",
         "locator": {
-          "end": 346,
+          "end": 408,
           "kind": "line_range",
-          "start": 306
+          "start": 368
         }
       },
       "id": "RLZ-WG0RE0",
@@ -129,20 +183,56 @@
       },
       "rationale": "TaskRow supplies the inline visible-prefix textValue from displayed short id plus title for a numbered child, otherwise title alone; no removed typedText helper is implied.",
       "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "6e5e8b5903fcf5108cc0ec06035fdc04c06c8256",
+        "content": "sha256:667a8f454687242a95d5f434309424e4b5ed60ff0b57e77b831bda47a105f613",
+        "locator": {
+          "kind": "symbol",
+          "name": "RowFigure"
+        }
+      },
+      "id": "RLZ-WSQMQG",
+      "invariant": "INV-YK0D2W",
+      "origin": {
+        "handoffEntry": "D305 item 4 / L168-W-A015-host-activity-once",
+        "leaf": "260928-MIK-L168"
+      },
+      "rationale": "Hides the side-panel row's works/paused figure while the host is unknown.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "6e5e8b5903fcf5108cc0ec06035fdc04c06c8256",
+        "content": "sha256:f0b97f15953fec0a0dc80045526ba2f4ab2afd1efc0dfb96bbb4b6320d41c7a8",
+        "locator": {
+          "kind": "symbol",
+          "name": "FoldRow"
+        }
+      },
+      "id": "RLZ-ZTEXJ0",
+      "invariant": "INV-ME6CA1",
+      "origin": {
+        "handoffEntry": "L168-C-A016-source-account-INV-ME6CA1",
+        "leaf": "260928-MIK-L168"
+      },
+      "rationale": "A completed-fold click uses its held-aware disclosure action without selecting the fold or adding a horizontal-arrow path.",
+      "role": "presentation"
     }
   ],
   "references": {
     "26": {
-      "note": "Unmodified horizontal arrows affect only a focused parent and do not collapse a held parent; modifiers remain untouched.",
+      "note": "Unmodified horizontal arrows affect a focused parent, including closing a held parent when the requested state differs; task/fold rows gain no arrow action and modifiers remain untouched.",
       "targets": [
         {
           "anchor": {
-            "blob": "ae0b34f8138b4a85b281c7a8b0009da082f7bad9",
-            "content": "sha256:659aa7cc8535dd51cebb6943711c1d53552cbb7f5a636e45b285ab1030519005",
+            "blob": "6e5e8b5903fcf5108cc0ec06035fdc04c06c8256",
+            "content": "sha256:7e2587c5e54f3d912c72949970d049517445cbed2c87453589dfbff7050150f7",
             "locator": {
-              "end": 237,
+              "end": 201,
               "kind": "line_range",
-              "start": 200
+              "start": 179
             }
           },
           "kind": "code"
@@ -288,7 +378,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3c3cb0b2fb52df6c598ce02dadd3b8c3d692d817",
+            "blob": "5c5274962d831fe4690e16c298af3bafe5d0f386",
             "content": "sha256:caf6b06ee131a5362479982095ffd91aba4645ed64e94ff5a2f8657330f0e424",
             "locator": {
               "end": 221,
@@ -302,37 +392,57 @@
       ]
     },
     "38": {
-      "note": "Non-task forms show served child works/paused counts and a nonzero unknown count before progress; BY PHASE groups use the explicit works-to-aborted order.",
+      "note": "Non-task forms suppress child works/paused figures when the served unknown-activity count is nonzero; BY PHASE keeps the explicit works-to-aborted order through its group comparator.",
       "targets": [
         {
           "anchor": {
-            "blob": "a1da64452b66ed600866ad56b37418f973ed3e37",
-            "content": "sha256:6dd67c54fcb3dfa0401aad404dd9e1697da3e42c281ca8b5ed1ee7b7733c7e39",
+            "blob": "6e5e8b5903fcf5108cc0ec06035fdc04c06c8256",
+            "content": "sha256:983658d30481cce4cb5994b573218070fca4fa0f1da1165b9da082abbc504407",
             "locator": {
-              "kind": "symbol",
-              "name": "RowFigure"
+              "end": 488,
+              "kind": "line_range",
+              "start": 471
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "a1da64452b66ed600866ad56b37418f973ed3e37",
+            "blob": "6e5e8b5903fcf5108cc0ec06035fdc04c06c8256",
             "content": "sha256:38f300d90c87d323fb8c6f7e268a8ad1b77e0cc323ea930ab2faaa2259c0e5f1",
             "locator": {
-              "kind": "symbol",
-              "name": "PHASE_ORDER"
+              "end": 568,
+              "kind": "line_range",
+              "start": 568
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "a1da64452b66ed600866ad56b37418f973ed3e37",
+            "blob": "6e5e8b5903fcf5108cc0ec06035fdc04c06c8256",
             "content": "sha256:63fbdfadb86d7d4d729806191a645bff1a656de22f56bf4ebc542ab135245f1d",
             "locator": {
-              "kind": "symbol",
-              "name": "groupRows"
+              "end": 603,
+              "kind": "line_range",
+              "start": 570
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "39": {
+      "note": "Explicit disclosure releases a drawn-open parent or fold, while every selection transition expires prior release keys.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6e5e8b5903fcf5108cc0ec06035fdc04c06c8256",
+            "content": "sha256:008405cd80acbe73ee37a16c867a2678d9dba5263997961af4df2ca3a6c94e40",
+            "locator": {
+              "end": 140,
+              "kind": "line_range",
+              "start": 90
             }
           },
           "kind": "code"

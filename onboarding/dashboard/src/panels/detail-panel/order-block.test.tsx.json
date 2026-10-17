@@ -24,12 +24,29 @@
       "targets": [
         {
           "anchor": {
-            "blob": "79cba390a3cc9f043bd2fd84d5e149283fa56137",
+            "blob": "62889f481e3d1aaec57c6c2d8dab97ac76ef4066",
             "content": "sha256:e1c2df10b69098f78ef9d70cb6ee1df542a8d2e2c871cfd388fd156401507c34",
             "locator": {
-              "end": 385,
+              "end": 388,
               "kind": "line_range",
-              "start": 344
+              "start": 347
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Parameterized Order cases pin the started work accent independently of the activity word, the restored legend, and distinct ready/waits wave accents. This is source assertion coverage, not a fresh execution.\n\nAnchor: Current source assertions",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "62889f481e3d1aaec57c6c2d8dab97ac76ef4066",
+            "content": "sha256:54fa9e81d3d435e60d55291ac9dddcfa409060afd1b60e1ec7d0923b3b125ebd",
+            "locator": {
+              "end": 176,
+              "kind": "line_range",
+              "start": 127
             }
           },
           "kind": "test"

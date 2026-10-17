@@ -1,0 +1,94 @@
+{
+  "admission": {
+    "criteria": [
+      "constrains_future_work"
+    ],
+    "justification": "This is presentation from the served count, not proof that a zero count authenticates host availability, not browser-derived task activity and not permission to reload the live host. The alternatives are documented previous/rule-question choices, not invented design-discussion history."
+  },
+  "alternatives": [
+    {
+      "option": "For a nonzero served unknown-activity bucket, show one shell host-unavailability notice and suppress works/paused figures, while each task uses its common native word without the repeated host sentence.",
+      "reason": "D305 amendment 2026-10-16T17:07:02+02:00 rejects repeating host-state-unknown on every started task; host-plugin activation remains developer-owned.",
+      "status": "chosen"
+    },
+    {
+      "option": "Keep the previous started-plus-host-state-unknown caption on every affected task.",
+      "reason": "D305 identifies the repeated host observation as one operational condition to say once; each row/node/page should show its task state instead.",
+      "reconsider_when": "A developer-approved interface introduces independently meaningful per-task host failures that cannot be represented by the single operational notice.",
+      "status": "rejected"
+    }
+  ],
+  "consequences": [
+    "This is presentation from the served count, not proof that a zero count authenticates host availability, not browser-derived task activity and not permission to reload the live host."
+  ],
+  "context": "D305 amendment 2026-10-16T17:07:02+02:00 rejects repeating host-state-unknown on every started task; host-plugin activation remains developer-owned.",
+  "decider": "Developer D305/D307/D309, interpreted by Architect 97e0320d in the canonical L168 ruling; C4 is the direct quoted 2026-10-17T02:27:47+02:00 successor ruling.",
+  "id": "DEC-G7CJBD",
+  "links": [
+    {
+      "relation": "constrains",
+      "target": {
+        "blob": "7c23fc026184269dcb443c859e6aed12dcc0b0ac",
+        "content": "sha256:914583cacaaa8eaf18a2191473e655b54bdcd5382fcf83accfaaf27a836cfd2d",
+        "locator": {
+          "kind": "symbol",
+          "name": "CockpitShell"
+        },
+        "path": "dashboard/src/cockpit/Cockpit.tsx"
+      }
+    },
+    {
+      "relation": "constrains",
+      "target": {
+        "blob": "901cf61d779e58bf30849e0eea78a9123b9792fd",
+        "content": "sha256:8696a9cbb2aa564405705eb6e1da2c0815a977cde562695dce0594fa14960a6d",
+        "locator": {
+          "end": 104,
+          "kind": "line_range",
+          "start": 69
+        },
+        "path": "dashboard/src/panels/detail-panel/pageParts.tsx"
+      }
+    },
+    {
+      "relation": "constrains",
+      "target": {
+        "blob": "6e5e8b5903fcf5108cc0ec06035fdc04c06c8256",
+        "content": "sha256:667a8f454687242a95d5f434309424e4b5ed60ff0b57e77b831bda47a105f613",
+        "locator": {
+          "kind": "symbol",
+          "name": "RowFigure"
+        },
+        "path": "dashboard/src/panels/lifecycle-list/LifecycleList.tsx"
+      }
+    },
+    {
+      "alternative": 1,
+      "relation": "reconsider_on",
+      "target": {
+        "blob": "7c23fc026184269dcb443c859e6aed12dcc0b0ac",
+        "content": "sha256:914583cacaaa8eaf18a2191473e655b54bdcd5382fcf83accfaaf27a836cfd2d",
+        "locator": {
+          "kind": "symbol",
+          "name": "CockpitShell"
+        },
+        "path": "dashboard/src/cockpit/Cockpit.tsx"
+      }
+    }
+  ],
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "D305 amendment 2026-10-16T17:07:02+02:00 rejects repeating host-state-unknown on every started task; host-plugin activation remains developer-owned. Source: /home/firefox/projects/ar-coordination/tasks/agents-remember/260928_maintained-invariant-knowledge/notes/run3/L168-REOPENED-FOR-THE-SIDE-PANEL-TREE-D305.json; C4 authority /home/firefox/projects/ar-coordination/tasks/agents-remember/260928_maintained-invariant-knowledge/notes/messages/20261017T002901Z_manager-5b50bf38_to_curator-2a74a542.md; original producer lists remain separate and unchanged."
+      ],
+      "path": "L168-A016-decisions-wave4a.json"
+    },
+    "handoffEntry": "L168-C-A016-ruling-host",
+    "leaf": "260928-MIK-L168",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-decision/v1",
+  "status": "active",
+  "supersedes": []
+}

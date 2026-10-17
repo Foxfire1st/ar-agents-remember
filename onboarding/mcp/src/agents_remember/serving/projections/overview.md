@@ -12,7 +12,7 @@ This area reads file surfaces published by producing subsystems and assembles na
 
 ## Hot Path Summary
 
-Native task sources feed one server TaskEntry producer: authored status owns stage, and only started tasks carry bound host activity/eventAt. Declared rows with reciprocal authored child links and unambiguous commanded-master relations own membership independently of worktrees. Host intake runs at startup/invalidation, not periodic healing. Full task bodies are separate TaskSummary content with an app-scoped dependency-validated cache.
+Native task sources feed one server TaskEntry producer: authored status owns stage, and only started tasks carry bound host activity/eventAt. Declared lists, preserved record-master facts and unambiguous commanded-master relations own membership independently of worktrees. For documented subTasks, a genuinely absent master permits list fallback; a present contrary or unresolvable master does not. Other listed kinds retain identity/cycle-guarded list placement without kind rejection or own-master validation by that path. Structured disagreements expose the contrary list/record facts without authoring a repair. Host intake runs at startup/invalidation, not periodic healing. Full task bodies are separate TaskSummary content with an app-scoped dependency-validated cache.
 
 The named dependency adapter joins the owning ordinary master and its explicitly listed child files; source state feeds the same pure master-order derivation used by publication. Requested-body/corpus readers and newly read named owner/child inputs require the raw task schema before tolerant parsing. Missing/wrong-schema neighbors are not admitted. The earlier defaulted-schema admission gap remains historical diagnosis, not a current source defect; these predicates and scoped dependency-field assertions do not establish universal serialized-body parity or an executed result.
 
@@ -139,11 +139,15 @@ The schedule advances after actual publication, not a skipped probe. Existing bo
 
 `host_activity.py` admits only complete publications for a bridge-reconciled plugin boot while its proved supervisor subscription is armed. Native agent IDs join to canonical role-agent task bindings; unusable observations remain unknown and unbound agents are ignored/counted, not synthetic activity. `host_supervisor.py` proves the process before/after pidfd acquisition and invalidates the existing pacer on exit; shutdown closes the subscription. Startup and host-domain invalidations drive intake, not recurring healing polls.
 
-The task-entry producer maps planning/inProgress/abandoned/Completed to planned/started/aborted/completed. Only started tasks obtain works/paused/unknown and eventAt: in-turn or permission contributors mean works, a known complete observation without workers means paused, and unknown host means unknown. eventAt is the latest contributing native event, not a projection/feed timestamp. Real child documents own stage; declared-row-only children retain row stage. Authored subTask children require reciprocal parent agreement. Declared rows and unambiguous commanded-master relations form deterministic acyclic membership with one parent per child. Exact repository/task-root/leaf bindings attach worktrees; unmatched enclosures stay visible separately and never create membership or task stage.
+The task-entry producer maps planning/inProgress/abandoned/Completed to planned/started/aborted/completed. Only started tasks obtain works/paused/unknown and eventAt: in-turn or permission contributors mean works, a known complete observation without workers means paused, and unknown host means unknown. eventAt is the latest contributing native event, not a projection/feed timestamp. Real child documents own stage; declared-row-only children retain row stage. An authored subTask's own master takes precedence, while a genuinely absent master permits adoption by its listing master. A documented subTask's present unresolvable master is preserved, reported and not adopted. Distinct subTask list/record disagreements are emitted once per declaring master, including subTasks absent from every list. Declared rows and unambiguous commanded-master relations form deterministic acyclic membership with one parent per child. Exact repository/task-root/leaf bindings attach worktrees; unmatched enclosures stay visible separately and never create membership or task stage.
 
 The body cache records link/target and consumed task/graph/order/grant input identities, including selection directories. It serializes TaskSummary content, hashes its bytes and retains only current generations within entry/byte limits. Native change-set/summary caching has separate repository/object/configuration dependencies. Neither cache owns TaskEntry state or River retention.
 
 ## Evidence
+
+
+
+- Master validation in placement applies only to documented subTasks; other listed kinds retain list placement under existing identity/cycle guards, not a kind-rejection or own-master-validation rule. [22]
 
 
 - The observer store-root conventions are kernel-owned. [1]
@@ -169,7 +173,7 @@ The body cache records link/target and consumed task/graph/order/grant input ide
 - Actual bound page interest gates discovery and admission; skipped work does not advance publication or terminal attempts. [14]
 - Transient due state retains current identities and uses semantic-answer age rather than observation noise. [15]
 
-- Canonical task sources retain declared children and reciprocal authored-parent references for one downstream task producer. [16]
+- Canonical task sources retain declared children, the resolved record master and its original literal for one downstream producer, preserving absent versus unresolvable input. [16]
 - Full task refresh prepares contracts, enclosures and sources before assigning the retained trio. [17]
 - Incremental task reprojection replaces the whole affected closure and drops newly unreadable/invalid sources. [18]
 - Startup and explicit host-domain invalidations trigger host intake; ordinary full healing excludes that domain. [19]

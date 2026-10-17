@@ -5,16 +5,18 @@
       "prevents_costly_mistake",
       "spans_locations"
     ],
-    "justification": "Future changes to host intake, task projection or task-status consumers must preserve this bounded authority: duplicate task truth, unsupported paused observations, reconstructed membership or conflicting status/age presentation produce incorrect task operations. The named current source assertions guard the specified facets; this is no fresh Curator execution grade."
+    "justification": "Future changes to host intake, task projection or task-status consumers must preserve this bounded authority: duplicate task truth, unsupported paused observations, reconstructed membership or conflicting status/age presentation produce incorrect task operations. The named current source assertions guard the specified facets; this is no fresh Curator execution grade. The D305 Order accent is a finite presentation exception, not conflicting native status or a second activity owner."
   },
-  "applicability": "Task-status words and tones on the dashboard task surfaces that consume canonical TaskEntry facts.",
+  "applicability": "Canonical task-status words and marks across dashboard task surfaces, with the finite D305 Order-drawing started-accent exception.",
   "conditions": [
-    "Shared taskStatusKey/statusLabel/statusTone presentation formats the native task stage and started-task activity.",
+    "Shared taskStatusKey/statusLabel/statusTone presentation still formats native task words and status marks; unknown activity uses the task-state word without a repeated host sentence.",
+    "Only the Order drawing’s started border/ID/meta accent follows entry.stage independently of host activity. Its dependency readiness remains a separate fact, not task stage or permission.",
     "TaskStatusWord derives displayed event age from eventAt and its shared/local display clock; a missing/inactive clock does not invent epoch zero."
   ],
   "exclusions": [
     "Operational severity dots, process phases, dependency-readiness badges and review/landing verdict vocabulary are distinct domains, not task-status words.",
-    "No second served task-entry elapsed age or browser-derived lifecycle/frontier task truth."
+    "No second served task-entry elapsed age or browser-derived lifecycle/frontier task truth.",
+    "The explicit Order-drawing started accent is not a second task-status/activity/age owner; the exception does not replace the complete SprintGraphView shared task-word/mark palette."
   ],
   "id": "INV-XZYGEB",
   "origin": {
@@ -33,9 +35,9 @@
     "leaf": "260928-MIK-L168",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-invariant/v1",
-  "statement": "All dashboard status words and tones format the canonical entry through one presentation table.",
+  "statement": "Dashboard task-status words and marks format the canonical entry through one presentation table; the Order drawing’s started-stage border, ID and meta accents are the explicit exception, independent of host activity.",
   "status": "proposed",
   "supersedes": []
 }

@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "cb7649c76f226f56141cd36720b382cea60352c7",
-        "content": "sha256:41031c00797f98df98a1fff26b2e1012b1b57ec230be5686b88ede32065280fc",
+        "blob": "359083eb794b3a5462b9e53d4dde2b27ec8ec7a9",
+        "content": "sha256:c79774887a356bc99797adba5bf7b35aba4b4520204f4e55594ff13d3c106dac",
         "locator": {
           "kind": "file"
         }
@@ -140,7 +140,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "cb7649c76f226f56141cd36720b382cea60352c7",
+            "blob": "359083eb794b3a5462b9e53d4dde2b27ec8ec7a9",
             "content": "sha256:e345bcf52910f1d43fcff54700f85ea691a6b896120f54a78d4be96269c1b309",
             "locator": {
               "end": 547,
@@ -152,14 +152,31 @@
         },
         {
           "anchor": {
-            "blob": "17da14e723222a8d50b4ed6f0595390ab1fe1f6a",
+            "blob": "901cf61d779e58bf30849e0eea78a9123b9792fd",
             "content": "sha256:73f45554796ee15769aee751c8a9f37a53c8aecd7cd5bd6b09a933b2b36ab464",
             "locator": {
-              "end": 154,
+              "end": 156,
               "kind": "line_range",
-              "start": 124
+              "start": 126
             },
             "path": "dashboard/src/panels/detail-panel/pageParts.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "Native TaskEntry declares optional structured disagreements; each retains required kind/record and optional row, recordMaster, masterLiteral and parent facts.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "359083eb794b3a5462b9e53d4dde2b27ec8ec7a9",
+            "content": "sha256:2764a95cb17241c31d76be029b1693d4c7b55233a550d07f9241889f4c326a55",
+            "locator": {
+              "end": 599,
+              "kind": "line_range",
+              "start": 562
+            }
           },
           "kind": "code"
         }

@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "b4f749cf2dfc7341eb4fd7dfe8071e85037056de",
+        "blob": "7c23fc026184269dcb443c859e6aed12dcc0b0ac",
         "content": "sha256:500525aaa1c27e09b36993a4b253f9914e9624131e35ced3f05cd8a96c06cf2f",
         "locator": {
           "end": 765,
@@ -22,7 +22,7 @@
     },
     {
       "anchor": {
-        "blob": "b4f749cf2dfc7341eb4fd7dfe8071e85037056de",
+        "blob": "7c23fc026184269dcb443c859e6aed12dcc0b0ac",
         "content": "sha256:500525aaa1c27e09b36993a4b253f9914e9624131e35ced3f05cd8a96c06cf2f",
         "locator": {
           "end": 765,
@@ -41,7 +41,7 @@
     },
     {
       "anchor": {
-        "blob": "b4f749cf2dfc7341eb4fd7dfe8071e85037056de",
+        "blob": "7c23fc026184269dcb443c859e6aed12dcc0b0ac",
         "content": "sha256:500525aaa1c27e09b36993a4b253f9914e9624131e35ced3f05cd8a96c06cf2f",
         "locator": {
           "kind": "symbol",
@@ -59,7 +59,7 @@
     },
     {
       "anchor": {
-        "blob": "b4f749cf2dfc7341eb4fd7dfe8071e85037056de",
+        "blob": "7c23fc026184269dcb443c859e6aed12dcc0b0ac",
         "content": "sha256:29d3d4539fa8862f31ceefba386db2c2bb6805610e1898aeb18a22f4b2ab535f",
         "locator": {
           "kind": "symbol",
@@ -77,7 +77,7 @@
     },
     {
       "anchor": {
-        "blob": "b4f749cf2dfc7341eb4fd7dfe8071e85037056de",
+        "blob": "7c23fc026184269dcb443c859e6aed12dcc0b0ac",
         "content": "sha256:f2c7b42d4bd6b9463718d09bf3b4e0aa3ee5fbe5621703a3b03f35a74f031323",
         "locator": {
           "kind": "symbol",
@@ -95,7 +95,25 @@
     },
     {
       "anchor": {
-        "blob": "b4f749cf2dfc7341eb4fd7dfe8071e85037056de",
+        "blob": "7c23fc026184269dcb443c859e6aed12dcc0b0ac",
+        "content": "sha256:4d69d5707af5dc8db9b35ba6946016a988176734a494c6a82ffa851172be7d90",
+        "locator": {
+          "kind": "symbol",
+          "name": "TopBar"
+        }
+      },
+      "id": "RLZ-8HK86C",
+      "invariant": "INV-YK0D2W",
+      "origin": {
+        "handoffEntry": "D305 item 4 / L168-W-A015-host-activity-once",
+        "leaf": "260928-MIK-L168"
+      },
+      "rationale": "Drops works and paused and says 'host activity unavailable' once.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "7c23fc026184269dcb443c859e6aed12dcc0b0ac",
         "content": "sha256:ab381fa39ef1b0eafc49c03f625ed3e711249682ff8ff69844f17ca13021aa90",
         "locator": {
           "kind": "symbol",
@@ -113,7 +131,7 @@
     },
     {
       "anchor": {
-        "blob": "b4f749cf2dfc7341eb4fd7dfe8071e85037056de",
+        "blob": "7c23fc026184269dcb443c859e6aed12dcc0b0ac",
         "content": "sha256:ffaaad5daaeed93b8e273cc7db34c010926e5c65a1c4c6b0f7363ce1299f2f50",
         "locator": {
           "end": 408,
@@ -132,10 +150,10 @@
     },
     {
       "anchor": {
-        "blob": "b4f749cf2dfc7341eb4fd7dfe8071e85037056de",
-        "content": "sha256:16e5970a46910dd1344abb6a52268d0748cff9a6915059c338585f7dd70e77e3",
+        "blob": "7c23fc026184269dcb443c859e6aed12dcc0b0ac",
+        "content": "sha256:8159a9f1af02644e3f7b7d0d71e053f914a2d8f225331e632e26ef0ce230396c",
         "locator": {
-          "end": 940,
+          "end": 942,
           "kind": "line_range",
           "start": 928
         }
@@ -151,7 +169,7 @@
     },
     {
       "anchor": {
-        "blob": "b4f749cf2dfc7341eb4fd7dfe8071e85037056de",
+        "blob": "7c23fc026184269dcb443c859e6aed12dcc0b0ac",
         "content": "sha256:f2c7b42d4bd6b9463718d09bf3b4e0aa3ee5fbe5621703a3b03f35a74f031323",
         "locator": {
           "kind": "symbol",
@@ -169,7 +187,7 @@
     },
     {
       "anchor": {
-        "blob": "b4f749cf2dfc7341eb4fd7dfe8071e85037056de",
+        "blob": "7c23fc026184269dcb443c859e6aed12dcc0b0ac",
         "content": "sha256:40c2c67ff64a4d59bb8db430c39479f1d6bd0cb50090804414990136514daf45",
         "locator": {
           "end": 634,
@@ -188,7 +206,7 @@
     },
     {
       "anchor": {
-        "blob": "b4f749cf2dfc7341eb4fd7dfe8071e85037056de",
+        "blob": "7c23fc026184269dcb443c859e6aed12dcc0b0ac",
         "content": "sha256:f913c27a9192b5b9bd42ffe35c97ac624638ef212709341fc2bd14bedef097f6",
         "locator": {
           "end": 685,
@@ -207,12 +225,12 @@
     },
     {
       "anchor": {
-        "blob": "b4f749cf2dfc7341eb4fd7dfe8071e85037056de",
-        "content": "sha256:f908f2d4746d085cee8998340d7c99e4dd8acf6483330fe4a70914a05638bc63",
+        "blob": "7c23fc026184269dcb443c859e6aed12dcc0b0ac",
+        "content": "sha256:64cc963d7185772de2377f6df8b25f628adb638073399e4636cafdaf23f475c9",
         "locator": {
-          "end": 949,
+          "end": 956,
           "kind": "line_range",
-          "start": 946
+          "start": 951
         }
       },
       "id": "RLZ-XT3RN1",
@@ -226,7 +244,7 @@
     },
     {
       "anchor": {
-        "blob": "b4f749cf2dfc7341eb4fd7dfe8071e85037056de",
+        "blob": "7c23fc026184269dcb443c859e6aed12dcc0b0ac",
         "content": "sha256:914583cacaaa8eaf18a2191473e655b54bdcd5382fcf83accfaaf27a836cfd2d",
         "locator": {
           "kind": "symbol",
@@ -569,7 +587,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8774e82c7f7a93dda014fdb8b987e2391fd21fd1",
+            "blob": "27ab725f01e310493256da673c0f870a77b85bbf",
             "content": "sha256:56d879b8f546a2afd9edcc95544586acccf0d5aa279185fb83b6c05b3055d47e",
             "locator": {
               "kind": "symbol",
@@ -647,7 +665,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b4f749cf2dfc7341eb4fd7dfe8071e85037056de",
+            "blob": "7c23fc026184269dcb443c859e6aed12dcc0b0ac",
             "content": "sha256:f2c7b42d4bd6b9463718d09bf3b4e0aa3ee5fbe5621703a3b03f35a74f031323",
             "locator": {
               "kind": "symbol",
@@ -663,7 +681,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b4f749cf2dfc7341eb4fd7dfe8071e85037056de",
+            "blob": "7c23fc026184269dcb443c859e6aed12dcc0b0ac",
             "content": "sha256:11f4665b48fb6a4ca1da3188309cd19a568e18b4a7a32959dd0c287750e17585",
             "locator": {
               "end": 679,
@@ -676,14 +694,14 @@
       ]
     },
     "94": {
-      "note": "The header labels served taskCounts through the shared status table and hides only an empty unknown bucket.\n\nAnchor: header counts and shared labels",
+      "note": "The header uses shared labels for served taskCounts, omits works/paused words when host observation is unknown, and reports host activity unavailable once rather than drawing an unknown-count bucket.",
       "targets": [
         {
           "anchor": {
-            "blob": "b4f749cf2dfc7341eb4fd7dfe8071e85037056de",
-            "content": "sha256:87d5d349334c84e9e7da0f5eb9a69471b665b7ce5cf236292bea90e52a9d3769",
+            "blob": "7c23fc026184269dcb443c859e6aed12dcc0b0ac",
+            "content": "sha256:faa494dd02243b7580d138cc3911a8f2a610c2bfc4ad55b3d56f32c0a019cefc",
             "locator": {
-              "end": 949,
+              "end": 955,
               "kind": "line_range",
               "start": 926
             }
@@ -692,12 +710,12 @@
         },
         {
           "anchor": {
-            "blob": "17da14e723222a8d50b4ed6f0595390ab1fe1f6a",
-            "content": "sha256:1f72a31368a7ab1bade3e051bc155321716406653daf2bdf755259f60d7c37d9",
+            "blob": "901cf61d779e58bf30849e0eea78a9123b9792fd",
+            "content": "sha256:e70bd580be7d810fd3737b71d0e75824dbcb9349ac8520fa1998c93ec7cd78b5",
             "locator": {
-              "end": 89,
+              "end": 91,
               "kind": "line_range",
-              "start": 69
+              "start": 67
             },
             "path": "dashboard/src/panels/detail-panel/pageParts.tsx"
           },
@@ -710,7 +728,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b4f749cf2dfc7341eb4fd7dfe8071e85037056de",
+            "blob": "7c23fc026184269dcb443c859e6aed12dcc0b0ac",
             "content": "sha256:ffaaad5daaeed93b8e273cc7db34c010926e5c65a1c4c6b0f7363ce1299f2f50",
             "locator": {
               "end": 408,
@@ -727,7 +745,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b4f749cf2dfc7341eb4fd7dfe8071e85037056de",
+            "blob": "7c23fc026184269dcb443c859e6aed12dcc0b0ac",
             "content": "sha256:914583cacaaa8eaf18a2191473e655b54bdcd5382fcf83accfaaf27a836cfd2d",
             "locator": {
               "kind": "symbol",

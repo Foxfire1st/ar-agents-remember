@@ -15,7 +15,7 @@ Role launch instructions are generic capsule-or-refused values; compilation and 
 
 _app_lifespan compacts the workspace river, primes the projector and starts projection, provider-metrics, leaf-archive recovery, held native-role message delivery and river-compaction tasks. Optional heap/allocator tasks remain opt-in. It does not prime or poll a terminal catalogue or run a hosted-seat notifier. The archive worker drains cancellation before close; held-message sweep failures are contained. Shutdown invokes the injected review-tree owner, cancels and awaits owned background tasks; there is no removed terminal-host shutdown.
 
-The projector retains change-driven invalidation, stable/current publication, subscription delivery and task-input retry ownership. Canonical task status maps to planned/started/aborted/completed; only started tasks receive bound host-agent works/paused/unknown activity and contributing eventAt. Declared reciprocal rows and commanded-master relations determine membership independently of worktree bindings. Host reads occur at startup and host invalidation, with boot reconciliation and a proved supervisor-exit subscription; ordinary heartbeat/full healing is not host polling. File readers retain their own absence and last-good-data policies. Review/read shims do not turn an unwired adapter into an empty catalogue, body or comparison.
+The projector retains change-driven invalidation, stable/current publication, subscription delivery and task-input retry ownership. Canonical task status maps to planned/started/aborted/completed; only started tasks receive bound host-agent works/paused/unknown activity and contributing eventAt. Declared lists, documented-subTask master precedence and unambiguous commanded-master relations determine membership independently of worktree bindings. Only an absent subTask master uses list fallback; its present contrary or unresolvable master remains explicit and unbound. Other listed document kinds retain list placement under identity/cycle guards without own-master validation by that path. The same producer reports distinct list/record disagreements once per master rather than dropping contrary facts. Host reads occur at startup and host invalidation, with boot reconciliation and a proved supervisor-exit subscription; ordinary heartbeat/full healing is not host polling. File readers retain their own absence and last-good-data policies. Review/read shims do not turn an unwired adapter into an empty catalogue, body or comparison.
 
 ## Construction And Ownership
 
@@ -124,6 +124,10 @@ This is not a dashboard-wide stop switch. Projection/watch/healing and other own
 Full task bodies have a separate app-scoped LRU of at most 1,024 entries/16 MiB, distinct from the background task-payload parse cache and native change-set/summary reuse. Captured filesystem inputs revalidate before body reuse; serialized TaskSummary bytes define its content revision. Unreadable/changing generations are served uncached and cannot justify a 304. State GET/SSE retain their separate projection-instance dump memo and servingBuild tail. None of these caches changes task stage, host activity, recorded operands, permission or acceptance.
 
 ## Evidence
+
+
+- Master validation in placement applies only to documented subTasks; other listed kinds retain list placement under existing identity/cycle guards, not a kind-rejection or own-master-validation rule. [137]
+
 
 - The query, the port and the GET handler with its three answer classes. [3]
 - The collaborator port and the registration before the static mount. [4]

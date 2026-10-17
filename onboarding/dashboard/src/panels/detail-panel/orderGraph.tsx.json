@@ -3,10 +3,10 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "93ffe77d936316b626b29345160cb4f334d0451b",
-        "content": "sha256:f3f819a3c4294b159775caa8d1019db8d199e0d9fddab47cd8df1d251dfda6ba",
+        "blob": "e48c5cc89ac681ebc193fa31cb7a646e9dcc2050",
+        "content": "sha256:054b6c12e0675a1ed31fc8320c8320605ab76746a6ac4978c1e87293fa12e9a9",
         "locator": {
-          "end": 249,
+          "end": 260,
           "kind": "line_range",
           "start": 123
         }
@@ -17,17 +17,17 @@
         "handoffEntry": "MIK-R128@v1 rule 3",
         "leaf": "260928-MIK-L162"
       },
-      "rationale": "Shared OrderNode/OrderRowsView present entry-owned words/tones and graph readiness separately, retaining shared rest/focus relation presentation.",
+      "rationale": "OrderNode/OrderRowsView keep canonical task words/marks while the explicit D305 Order border/ID/meta work accent follows started stage and other accents follow graph readiness; shared relation/rest presentation remains.",
       "role": "presentation"
     },
     {
       "anchor": {
-        "blob": "93ffe77d936316b626b29345160cb4f334d0451b",
+        "blob": "e48c5cc89ac681ebc193fa31cb7a646e9dcc2050",
         "content": "sha256:14c288bf49275ee4d0dbd7de0c50a6659fb7648032621e9f0eb7a93fbc628750",
         "locator": {
-          "end": 292,
+          "end": 303,
           "kind": "line_range",
-          "start": 256
+          "start": 267
         }
       },
       "id": "RLZ-28QBJB",
@@ -41,12 +41,12 @@
     },
     {
       "anchor": {
-        "blob": "93ffe77d936316b626b29345160cb4f334d0451b",
+        "blob": "e48c5cc89ac681ebc193fa31cb7a646e9dcc2050",
         "content": "sha256:14c288bf49275ee4d0dbd7de0c50a6659fb7648032621e9f0eb7a93fbc628750",
         "locator": {
-          "end": 292,
+          "end": 303,
           "kind": "line_range",
-          "start": 256
+          "start": 267
         }
       },
       "id": "RLZ-4ZVZXW",
@@ -60,7 +60,7 @@
     },
     {
       "anchor": {
-        "blob": "93ffe77d936316b626b29345160cb4f334d0451b",
+        "blob": "e48c5cc89ac681ebc193fa31cb7a646e9dcc2050",
         "content": "sha256:e62d99c56d259261f024f1c8a512fd52370be12d7b458d411086613ec6c61942",
         "locator": {
           "end": 119,
@@ -79,7 +79,7 @@
     },
     {
       "anchor": {
-        "blob": "93ffe77d936316b626b29345160cb4f334d0451b",
+        "blob": "e48c5cc89ac681ebc193fa31cb7a646e9dcc2050",
         "content": "sha256:a88c4a040fb9f9d56261d8d6c326c55f48831efeb3f90a2a90cd77fe71f2a0bd",
         "locator": {
           "end": 79,
@@ -98,12 +98,12 @@
     },
     {
       "anchor": {
-        "blob": "93ffe77d936316b626b29345160cb4f334d0451b",
+        "blob": "e48c5cc89ac681ebc193fa31cb7a646e9dcc2050",
         "content": "sha256:a271bfc4524472210cdc0dd64f0ab8dccb0531466c4b20998152ad037ec8e3d3",
         "locator": {
-          "end": 249,
+          "end": 260,
           "kind": "line_range",
-          "start": 197
+          "start": 208
         }
       },
       "id": "RLZ-EDFDJW",
@@ -117,12 +117,12 @@
     },
     {
       "anchor": {
-        "blob": "93ffe77d936316b626b29345160cb4f334d0451b",
+        "blob": "e48c5cc89ac681ebc193fa31cb7a646e9dcc2050",
         "content": "sha256:14c288bf49275ee4d0dbd7de0c50a6659fb7648032621e9f0eb7a93fbc628750",
         "locator": {
-          "end": 292,
+          "end": 303,
           "kind": "line_range",
-          "start": 256
+          "start": 267
         }
       },
       "id": "RLZ-VSG7ME",
@@ -141,7 +141,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "93ffe77d936316b626b29345160cb4f334d0451b",
+            "blob": "e48c5cc89ac681ebc193fa31cb7a646e9dcc2050",
             "content": "sha256:a88c4a040fb9f9d56261d8d6c326c55f48831efeb3f90a2a90cd77fe71f2a0bd",
             "locator": {
               "end": 79,
@@ -165,12 +165,12 @@
         },
         {
           "anchor": {
-            "blob": "93ffe77d936316b626b29345160cb4f334d0451b",
+            "blob": "e48c5cc89ac681ebc193fa31cb7a646e9dcc2050",
             "content": "sha256:9aeb62ff9b6010a63e3203e84125c5fe0bcc8c864aae409aa65d4c44408b21fa",
             "locator": {
-              "end": 319,
+              "end": 330,
               "kind": "line_range",
-              "start": 256
+              "start": 267
             }
           },
           "kind": "code"
@@ -195,7 +195,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "93ffe77d936316b626b29345160cb4f334d0451b",
+            "blob": "e48c5cc89ac681ebc193fa31cb7a646e9dcc2050",
             "content": "sha256:e899c5be54ab133d18790e84b786b1057c80422c6f0631e476e77afec4b82bae",
             "locator": {
               "end": 103,
@@ -207,12 +207,28 @@
         },
         {
           "anchor": {
-            "blob": "93ffe77d936316b626b29345160cb4f334d0451b",
+            "blob": "e48c5cc89ac681ebc193fa31cb7a646e9dcc2050",
             "content": "sha256:a271bfc4524472210cdc0dd64f0ab8dccb0531466c4b20998152ad037ec8e3d3",
             "locator": {
-              "end": 249,
+              "end": 260,
               "kind": "line_range",
-              "start": 197
+              "start": 208
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The graph restores the work border for started task entries independently of host activity, using readiness only for other targets.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e48c5cc89ac681ebc193fa31cb7a646e9dcc2050",
+            "content": "sha256:37a4753fd4ab7e929cefced990df5173966ca4b079fd1540dd290ab56facdda7",
+            "locator": {
+              "kind": "symbol",
+              "name": "toneOf"
             }
           },
           "kind": "code"

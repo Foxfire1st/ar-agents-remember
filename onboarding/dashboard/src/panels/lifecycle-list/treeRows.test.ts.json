@@ -1,5 +1,24 @@
 {
   "path": "dashboard/src/panels/lifecycle-list/treeRows.test.ts",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "784161d6d6f458d16ee11d0e84c087129edc3732",
+        "content": "sha256:7433eebaedcc85bfd1bfa4ca3e2abe229496b1e66300a2052a84776a6b882cac",
+        "locator": {
+          "kind": "symbol",
+          "name": "keeps a completed master folded despite an active child, then opens down to a selected child"
+        }
+      },
+      "facet": "Pure TreeView release inputs let a containing terminal fold and ancestor close over the selected descendant; this is not hook-lifetime execution evidence.",
+      "id": "PRF-51SNZZ",
+      "invariant": "INV-ME6CA1",
+      "origin": {
+        "handoffEntry": "L168-C-A016-source-account-INV-ME6CA1",
+        "leaf": "260928-MIK-L168"
+      }
+    }
+  ],
   "realizes": [],
   "references": {
     "1": {
@@ -11,6 +30,23 @@
             "content": "sha256:208609b64b6668a12ff0c0e6a5b56c29b0a824c508cc6e672d4abc16a18b4d76",
             "locator": {
               "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Pure tree inputs show a released fold or ancestor staying closed over the chosen child; no mounted keyboard or hook-lifetime execution is inferred.\n\nAnchor: Current source assertions",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "784161d6d6f458d16ee11d0e84c087129edc3732",
+            "content": "sha256:f4ade7a5fcf038bc6123c62e53f32f491c6869657be420965b2d81a5eb5ef2c0",
+            "locator": {
+              "end": 58,
+              "kind": "line_range",
+              "start": 13
             }
           },
           "kind": "test"

@@ -26,7 +26,7 @@ and component remounts.
 `useCollapsedTaskGroups` initializes ONE `Set<string>` from `localStorage` when running in a browser,
 otherwise an empty set for non-browser rendering. `STORAGE_KEY` is
 `operations.tasks.collapsed.v1`, and its published meaning is unchanged: a key in it is a row the
-READER collapsed. The hook returns `{ collapsedKeys, toggleCollapsed }`; `toggleCollapsed(key)` inverts
+READER collapsed. The hook returns `{ collapsedKeys, toggleCollapsed, collapse }`; `collapse(key)` unconditionally records the key as collapsed even when a selection hold currently draws it open. `toggleCollapsed(key)` inverts
 that one key immutably and writes the whole set back
 (`window.localStorage.setItem(STORAGE_KEY, JSON.stringify([...next]))`), behind the same
 `typeof window === "undefined"` guard the initializer uses. **`openedKeys`, `setCollapsed` and
@@ -54,7 +54,7 @@ The hook follows the dashboard's small persisted-flag pattern: the storage key i
 
 ### Todos
 
-None recorded. The module is at its pre-L33 shape.
+No additional work is asserted. The single-set storage contract remains; explicit collapse is now available to the current disclosure owner.
 
 ## 260921-ICR-L33 The Second Half Of The Collapse State — **WITHDRAWN BY `a9a1a41b`**
 
@@ -89,6 +89,8 @@ Domain Documentation entries. The storage behavior is a local application contra
 No configured domain-documentation source was available for this local hook.
 
 ### Repo-Internal References
+
+- One immutable persisted set supports both ordinary toggle and unconditional collapse, without a second opened-state store. [4]
 
 - The parent list applies the hook only to BY REPO hierarchy visibility and leaves selection/detail separate. [1]
 - Focused tests verify stable storage keys, remount persistence, independent nested state, and expanded defaults. The landed-master cases this row used to name (`holds a fully landed master closed by default…`, `never closes a row that carries OTHER rows…`) **were deleted with the L33 revert** and no longer exist in `hierarchy.test.tsx`; the row now names the three cases the reverted file really carries. [2]

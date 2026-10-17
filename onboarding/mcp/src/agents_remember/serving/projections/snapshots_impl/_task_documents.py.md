@@ -16,7 +16,7 @@ the frontend `orderDecisionsNewestFirst` helper orders by parsed time) and sets
 `is_product_record_decision(item.decision)` (exact/prefix string match). The
 projection preserves order; it does not decide recency.
 
-Canonical full acquisition admits direct-root raw task-schema payloads and successful tolerant parses. The same `project_task_sources` builder supplies summaries, declared children/parent and Order from full/directed document maps. No separate series or lifecycle-link population remains; bodies avoid corpus enumeration.
+Canonical full acquisition admits direct-root raw task-schema payloads and successful tolerant parses. The same `project_task_sources` builder supplies summaries, declared children/parent and Order from full/directed document maps. No separate series or lifecycle-link population remains; bodies avoid corpus enumeration. Each shared `project_task_sources` result also preserves `doc.master` as `master_literal` beside the normalized `declared_parent`. An unresolvable present literal therefore remains distinguishable from a genuinely absent master when the task-entry producer decides documented-subTask listing fallback. Other listed kinds are not subject to that placement path's own-master validation; the source adapter does not repair records or decide this admission.
 
 The on-demand body resolves an existing requested file within `tasks/`, requires its raw schema key, and parses it without corpus enumeration. Its sprint join remains `_graph_master_docs`: no graph means an empty graph-master table; otherwise canonical candidates for graph-named tails are schema-filtered before the extracted `_task_graph_view.documents_by_ref`, then declared child references are read for authored-stage graph facts. Separately, `read_order_fields` starts with the requested parsed document. For a master it uses that path; for a non-master it reads `path.parent / Path(doc.master or "task.md").with_suffix(".json")`. An unreadable/unparseable owner returns no Order. An owner that is not a master, or is a sprint, returns before child reads. An ordinary owner reads only explicit nonempty `subTasks[].file` JSON paths, skipping paths already in its document map; it neither recursively follows dependency names nor enumerates unrelated masters. Thus a graph-less ordinary master/leaf may read its owner/listed tasks, but a graph-less sprint requests no listed Order children. External grant census is a separate cost.
 
@@ -91,6 +91,10 @@ text alters the body revision and open readers refetch.
 Summaries/bodies join optional display grants by canonical leaf identity; missing/broken grants grant no permission. Body capture records addressed/legacy grant-store directory/file identities. Grant evidence remains outside authored task JSON and permission; HTTP reads do not mutate the summary payload cache.
 
 ## Evidence
+
+
+- Master validation in placement applies only to documented subTasks; other listed kinds retain list placement under existing identity/cycle guards, not a kind-rejection or own-master-validation rule. [22]
+
 
 ### Repo-Internal References
 
@@ -245,3 +249,5 @@ corpus the isolated HTTP route median fell from 0.591 s to 0.019 s for a leaf an
 - Body reads the requested schema-admitted payload plus sprint graph-named masters and their declared children and/or the addressed ordinary owner/listed-task closure, without corpus enumeration. RF01 newly read Order owner/child dicts must carry the raw task schema before tolerant parsing; separate grant-store census remains a distinct cost. [14]
 
 - Summary/body retain optional external grant annotation. Canonical full acquisition and addressed body dependencies have distinct costs. Display grants remain outside authored JSON/permission; captured grant inputs participate in generation currentness. [20]
+
+- The shared source builder carries both normalized parent identity and the original master literal into TaskDocumentSource, preserving absent-versus-unresolvable input. [21]

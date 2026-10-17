@@ -22,7 +22,11 @@ Shared cleanup and disclosure/keyboard boundaries remain. Native parent/child ke
 
 None recorded.
 
+The disclosure cases also check that a click can close a held parent without choosing another document, that selection transitions discard prior release state, and that plain parent arrows release a hold while modified chords remain untouched. Completed-fold clicks remain a separate control; this suite adds no fold-arrow handler.
+
 ## Evidence
+
+- Chosen-document holding yields to explicit disclosure for the current selection episode, while plain arrows stay confined to parent rows. [2]
 
 ### Docs References
 

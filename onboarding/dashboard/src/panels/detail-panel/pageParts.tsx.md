@@ -10,7 +10,7 @@ Provide the shared page-block, row, in-place text, status and progress presentat
 
 ## Code Commentary
 
-`DocView` enumerates own views; Block draws a heading/count only when composed. Shared TaskStatusKey maps served stage/activity to label and tone for task surfaces. TaskStatusWord uses activity only for a started entry, and its age display advances host-event age using the shared visible clock. Display time never decides stage or activity.
+`DocView` enumerates own views; Block draws a heading/count only when composed. Shared `TaskStatusKey` maps served stage/activity to label and tone for task surfaces. Unknown host activity keeps the row's word at `started`, while the shell reports host unavailability once; the underlying served status key remains `unknown`. `TaskStatusWord` advances the served host-event age using the visible display clock. Neither its label mapping nor display time decides stage or activity.
 
 `Clip` renders Markdown in a single line with an accessible more/less control when measured overflow requires it. Without usable layout it falls back to a text-length threshold; an opened truncated summary is explicitly labelled a preview. It does not fetch content or claim the preview is a full string.
 
@@ -27,3 +27,5 @@ No document classification, authoritative step state, review count or task mutat
 - Keyboard expansion belongs to the row itself, not its nested controls. [3]
 
 - StepMarks uses indexed cached StepDot payloads for at most twelve states; larger populations return only the aggregate ProgressBar. [4]
+
+- Unknown host activity draws the started word without changing the served key; task status and event-age presentation consume the served entry. [5]

@@ -5,11 +5,11 @@
     ],
     "justification": "Avoids stealing modified browser chords or silently losing existing task navigation when adding parent arrows."
   },
-  "applicability": "Keyboard interaction on the focused Operations list parent row.",
+  "applicability": "Keyboard disclosure on a focused Operations parent row, not a new keyboard path for completed folds.",
   "conditions": [
-    "Only unmodified left/right arrows toggle parents.",
-    "Non-parent rows and completed-fold lines retain their existing keyboard behavior.",
-    "A selected ancestor held open for the chosen document cannot be collapsed by the left arrow (INV-ME6CA1; MIK-R144 rule 3)."
+    "Only unmodified left/right arrows act on a focused parent row, and an arrow requests a toggle only when its desired state differs.",
+    "A deliberate parent arrow may end the current chosen-document hold and change disclosure without changing the selected document; the release expires when the selection episode changes (INV-ME6CA1).",
+    "Non-parent rows and completed-fold lines gain no arrow handler. Modified chords and all other keys retain their existing browser/list behavior."
   ],
   "exclusions": [
     "Intercepting browser-modified chords.",
@@ -27,9 +27,9 @@
     "leaf": "260928-MIK-L144",
     "task": "260928-MIK"
   },
-  "revision": 2,
+  "revision": 3,
   "schema": "ar-invariant/v1",
-  "statement": "With a parent row in the keyboard's focus the right arrow opens it and the left arrow closes it unless the chosen document holds that ancestor open; on a task row and on the line of completed ones the two keys do nothing; with Alt, Ctrl, Shift or Meta held they are left to the browser; up, down, Enter and typing reach the rows as before.",
+  "statement": "On a focused Operations parent row, plain right opens it and plain left closes it, including a selected ancestor held open for the chosen document when the arrow changes state. Task rows and completed-fold lines gain no left/right action. Alt, Ctrl, Shift and Meta chords stay with the browser; up, down, Enter and visible-text typeahead keep their existing reach.",
   "status": "accepted",
   "supersedes": []
 }

@@ -1,0 +1,93 @@
+{
+  "admission": {
+    "criteria": [
+      "constrains_future_work"
+    ],
+    "justification": "Keep parent-only plain arrows, browser-owned modifier chords and fresh holds after every selection episode, including hidden transitions. A fold click is not a fold-arrow feature. The alternatives are documented previous/rule-question choices, not invented design-discussion history."
+  },
+  "alternatives": [
+    {
+      "option": "Let parent/fold clicks and existing state-changing plain parent arrows override automatic chosen-document reveal for only the current selection episode, without changing the chosen document.",
+      "reason": "D309 and the 2026-10-17T00:34:16+02:00 C2 ruling deliberately replace the old MIK-R144 selected-ancestor immunity; R14-F01 fixes release lifetime without broadening the keyboard path.",
+      "status": "chosen"
+    },
+    {
+      "option": "Keep the old unconditional chosen-document hold and ignore an attempted close.",
+      "reason": "D309 gives deliberate disclosure action precedence. C2 explicitly replaces the held-parent arrow prohibition, while completed folds still receive no arrow handler.",
+      "reconsider_when": "A new developer ruling explicitly requires the chosen document to remain visible despite an intentional close.",
+      "status": "rejected"
+    }
+  ],
+  "consequences": [
+    "Keep parent-only plain arrows, browser-owned modifier chords and fresh holds after every selection episode, including hidden transitions. A fold click is not a fold-arrow feature."
+  ],
+  "context": "D309 and the 2026-10-17T00:34:16+02:00 C2 ruling deliberately replace the old MIK-R144 selected-ancestor immunity; R14-F01 fixes release lifetime without broadening the keyboard path.",
+  "decider": "Developer D305/D307/D309, interpreted by Architect 97e0320d in the canonical L168 ruling; C4 is the direct quoted 2026-10-17T02:27:47+02:00 successor ruling.",
+  "id": "DEC-MGZMT5",
+  "links": [
+    {
+      "relation": "constrains",
+      "target": {
+        "blob": "6e5e8b5903fcf5108cc0ec06035fdc04c06c8256",
+        "content": "sha256:90435f3587820390a9d4221c9b44fafba62e33db6c65e15b240904acd990a498",
+        "locator": {
+          "kind": "symbol",
+          "name": "useReleasedHolds"
+        },
+        "path": "dashboard/src/panels/lifecycle-list/LifecycleList.tsx"
+      }
+    },
+    {
+      "relation": "constrains",
+      "target": {
+        "blob": "6e5e8b5903fcf5108cc0ec06035fdc04c06c8256",
+        "content": "sha256:9351ab82f065bd3a86a80c178163cca857f254a9ff5d751a6707f3e0e380d506",
+        "locator": {
+          "kind": "symbol",
+          "name": "treeKey"
+        },
+        "path": "dashboard/src/panels/lifecycle-list/LifecycleList.tsx"
+      }
+    },
+    {
+      "relation": "constrains",
+      "target": {
+        "blob": "8dbda171e779d2a6b6f014aad28c5be7fe7d554c",
+        "content": "sha256:6373db1c5b6720fed6fb52d8191711bd5dad50e6eebeedf538d81708e6fd15d5",
+        "locator": {
+          "kind": "symbol",
+          "name": "TaskGroupDisclosure"
+        },
+        "path": "dashboard/src/panels/TaskGroupDisclosure.tsx"
+      }
+    },
+    {
+      "alternative": 1,
+      "relation": "reconsider_on",
+      "target": {
+        "blob": "6e5e8b5903fcf5108cc0ec06035fdc04c06c8256",
+        "content": "sha256:90435f3587820390a9d4221c9b44fafba62e33db6c65e15b240904acd990a498",
+        "locator": {
+          "kind": "symbol",
+          "name": "useReleasedHolds"
+        },
+        "path": "dashboard/src/panels/lifecycle-list/LifecycleList.tsx"
+      }
+    }
+  ],
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "D309 and the 2026-10-17T00:34:16+02:00 C2 ruling deliberately replace the old MIK-R144 selected-ancestor immunity; R14-F01 fixes release lifetime without broadening the keyboard path. Source: /home/firefox/projects/ar-coordination/tasks/agents-remember/260928_maintained-invariant-knowledge/notes/run3/L168-REOPENED-FOR-THE-SIDE-PANEL-TREE-D305.json; C4 authority /home/firefox/projects/ar-coordination/tasks/agents-remember/260928_maintained-invariant-knowledge/notes/messages/20261017T002901Z_manager-5b50bf38_to_curator-2a74a542.md; original producer lists remain separate and unchanged."
+      ],
+      "path": "L168-A016-decisions-wave4a.json"
+    },
+    "handoffEntry": "L168-C-A016-ruling-selection",
+    "leaf": "260928-MIK-L168",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-decision/v1",
+  "status": "active",
+  "supersedes": []
+}

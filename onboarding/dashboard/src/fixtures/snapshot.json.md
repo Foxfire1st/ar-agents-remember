@@ -28,7 +28,7 @@ So a green sample-coverage build claims that this manual payload exercises the g
 The projection generator separately binds that mirror to the producer schema, including fields a
 sample could miss because their values are currently null or absent.
 
-The manual sprint/master/leaf examples now use TaskEntry membership and nested TaskSummary content. They exercise qualified navigation without analytics document/series joins; illustrative seats and graph data remain invented samples.
+The manual sprint/master/leaf examples now use TaskEntry membership and nested TaskSummary content. They exercise qualified navigation without analytics document/series joins; illustrative seats and graph data remain invented samples. The master also samples `names-another-master`, `listed-twice` and `unresolvable-master` disagreements, including the unresolved literal. These are hand-maintained wire-shape examples, not a diagnosis or repair of real records, and they do not exhaust every permitted kind.
 
 L23 extends the manual sample with representative lifecycle-operation rows. The sample carries public progress/result/failure/guidance fields
 including public identity/component fingerprints and approval state, but no private operation key
@@ -192,3 +192,5 @@ while writer constants mark records.
 - Ledger analytics remain a consumer sample after the retired Git-operation phase is removed. Anchor: `observer`; "ledgers" [1]
 - Removed the retired ledger-commit operation sample while preserving downstream ledger analytics and real publication phases. Anchor: `lifecycle`; "commit-approval-pending" [2]
 - `exclude_none=True` omits fields whose value is `None` from the serialized output — the rule that makes an omitted key here indistinguishable from a field the server does not have. Anchor: `None` [3]
+
+- The manual master sample carries three disagreement shapes and the unresolvable literal; this is sample coverage, not live membership evidence. [20]

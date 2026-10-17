@@ -13,10 +13,10 @@ button for a group with visible descendants without turning disclosure activatio
 
 ### Logic
 
-`TaskGroupDisclosure` receives the row label, collapsed state, optional held=false and a toggle callback. It renders a
+`TaskGroupDisclosure` receives the row label, collapsed state and a toggle callback. It renders a
 native `button` with `type="button"`, an accurate Expand/Collapse accessible name, and
 `aria-expanded={ !collapsed }`. Pointer-down, key-down, and click handlers stop propagation so the
-button remains independent inside the ListBoxItem. A held ancestor names its selected-descendant reason and suppresses the toggle; aria-expanded still describes the supplied collapsed value rather than forcing it locally.
+button remains independent inside the ListBoxItem. Every click invokes the toggle callback, including a parent drawn open for a selected descendant; the parent list owns releasing that hold. aria-expanded describes the supplied collapsed value rather than forcing it locally. A transparent pseudo-element expands the pointer hit area into the adjacent gap without moving the glyph or neighboring marks.
 
 ### Conventions
 
@@ -44,8 +44,10 @@ No configured domain-documentation source was available for this local UI primit
 
 ### Repo-Internal References
 
+- The native button always invokes the isolated disclosure callback; its transparent hit area extends beyond the unchanged glyph cell. [4]
 
-- The parent list's RowCaret renders the disclosure only for non-flat rows with children, passing actual collapsed and held selected-descendant state. [1]
+
+- RowCaret mounts the disclosure only for a non-flat parent, passing actual collapsed state and a callback that delegates the held-state decision to the list. [1]
 
 
 - The parent list mounts `TaskGroupDisclosure` for the descendant-bearing row. [2]

@@ -16,6 +16,23 @@
           "kind": "test"
         }
       ]
+    },
+    "2": {
+      "note": "Master-page discrepancies retain their own count, full row identity and present-record navigation without duplicating the child index.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f4c12bf1fee634e968a3ce2497d34389b5aeca1a",
+            "content": "sha256:d89b0682860f249f57b8585052adf78269afc905bed6a94626df6f6a66aaafeb",
+            "locator": {
+              "end": 241,
+              "kind": "line_range",
+              "start": 166
+            }
+          },
+          "kind": "test"
+        }
+      ]
     }
   },
   "schema": "ar-onboarding-file/v1"

@@ -13,7 +13,7 @@ The finite STOP-delta ports assertion carriers, not production behavior: direct 
 
 ## Hot Path Summary
 
-Native task/status protection now follows the single server producer. `test_task_entries.py` declares native-stage precedence over host activity, `in-turn`/permission precedence over idle/ended observations, contributor-owned event times, explicit unknown-versus-paused, missing-document/addressless entries, ordered reciprocal membership, deterministic conflict/cycle handling, reachability and shared counts. `test_task_document.py` asserts that mirrored master status follows the native document even when step progress disagrees. Start/abandon source cases inspect both the leaf and mirrored parent stage; the series topology case prepares and publishes one master/sprint batch. These assertion bodies are not fresh execution or acceptance evidence.
+Native task/status protection now follows the single server producer. `test_task_entries.py` declares native-stage precedence over host activity, `in-turn`/permission precedence over idle/ended observations, contributor-owned event times, explicit unknown-versus-paused, missing-document/addressless entries, ordered membership with documented-subTask explicit-master precedence and genuinely absent-master fallback, preserved subTask unresolvable master literals, once-only full-content disagreement reporting, deterministic conflict/cycle handling, reachability and shared counts. `test_task_document.py` asserts that mirrored master status follows the native document even when step progress disagrees. Start/abandon source cases inspect both the leaf and mirrored parent stage; the series topology case prepares and publishes one master/sprint batch. These assertion bodies are not fresh execution or acceptance evidence.
 
 `test_host_activity_projection.py` protects startup/new-boot reconciliation, unknown authority, notification-only intake and no extra activity reads during idle/full/degraded safety wakes. `test_host_supervisor.py` describes real child/pidfd fixtures with controlled identity inspection, double identity proof, one exit invalidation and unknown on subscription failure; it is not a run against a native host here. Role registration/revival tests combine the actual TypeScript publisher in a Node child with controlled native listings/events and a fake runtime, checking registration-before-resume, restart ordering and later-end reclamation. Those process boundaries do not prove a paid turn or installed-host adoption.
 
@@ -356,6 +356,10 @@ Both the principal account and repeated operative captions use the same current 
 ## Evidence
 
 
+
+
+
+- Master validation in placement applies only to documented subTasks; other listed kinds retain list placement under existing identity/cycle guards, not a kind-rejection or own-master-validation rule. [1783]
 
 
 - Controlled-host cases protect archive successor identity, live-only use, bounded traversal and placement refusal; catalog declarations do not prove execution. [1775]

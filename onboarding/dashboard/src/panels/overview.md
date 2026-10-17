@@ -54,7 +54,7 @@ The removed session-cockpit, hosted-session chooser/rail, context bar, terminal,
 
 ### Operations and operational diagnostics
 
-LifecycleList navigates the one served TaskEntry forest and formats its own canonical stage and optional host activity. Unknown host activity is not paused, a browser clock does not infer state, and the removed raw-lifecycle-over-document precedence and awaiting-developer partition are historical only. Parent arrows preserve held selected ancestors; modified browser chords and the list's other keyboard reach remain separate. Shared decorative Dot usage still requires a containing semantic state/severity name; native task status/age presentation has its own shared owner.
+LifecycleList navigates the one served TaskEntry forest and formats its own canonical stage and optional host activity. Unknown host activity is not paused, a browser clock does not infer state, and the removed raw-lifecycle-over-document precedence and awaiting-developer partition are historical only. Selection initially opens its ancestors and terminal fold. An explicit parent-caret or completed-fold click can release that hold, as can the existing plain arrow action on a focused parent; completed folds gain no arrow path. Releases expire on every selection change, even while the retained list is hidden. Modified browser chords and the list's other keyboard reach remain separate. Unknown activity uses the started word and suppresses row works/paused figures while the shell reports host unavailability once. Master-page list disagreements are served facts with their own count and present-record navigation, never browser membership repair. A started Order target retains the golden in-work graph accent independently of host activity. Shared decorative Dot usage still requires a containing semantic state/severity name; native task status/age presentation has its own shared owner.
 
 DetailPanel resolves one native selected entry, hydrates only its addressed authored document, and composes the task reader with its bound worktree/provider facts. The old lifecycle/series target adapters and SeriesSubTaskNode navigation/creation-sort path are removed, not equivalent aliases. Qualified document references and opaque entry keys stay distinct; a file-less native dependency shows id/title without a document jump or invented state.
 
@@ -180,6 +180,9 @@ These inherited tables are retained verbatim for navigation and custody. Their s
 taskReader renders one Direct execution switch only on a document-backed subTask's own page when its native entry stage is planned, bare giver words on other granted task states, and nothing on grantless states. Master/sprint index rows carry neither a grant control nor a grant mark. The grant hook posts only through the existing adapter and preserves real state on refusal; client affordance/status is not the backend start-evidence gate.
 
 ## Evidence
+
+- The list combines selection-episode releases with parent-only unmodified arrows and observes hidden selectedId changes. [194]
+- The shared master-page disagreement renderer draws served rows and offers jumps only to records in the task map. [195]
 - Marks only from the owner's response, placed on its side lines. [5]
 - Every owner hunk a pane draws is placed; the list and the reveal of a return. [6]
 

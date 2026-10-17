@@ -3,12 +3,12 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "82940e3ebb28c7077e598da5addafff90ec6ef78",
+        "blob": "8553750157ecbc4d4c86582aec77207f1b043431",
         "content": "sha256:0222df1f1b092513c035648b08416d325eb0991703fe014d3e7e4cbf99056ea2",
         "locator": {
-          "end": 575,
+          "end": 576,
           "kind": "line_range",
-          "start": 480
+          "start": 481
         }
       },
       "id": "RLZ-1VMSKE",
@@ -22,12 +22,12 @@
     },
     {
       "anchor": {
-        "blob": "82940e3ebb28c7077e598da5addafff90ec6ef78",
+        "blob": "8553750157ecbc4d4c86582aec77207f1b043431",
         "content": "sha256:9b6373ba9eeb22e690729f48e7140cac9740485c12a5a1116269682dfa1cf12f",
         "locator": {
-          "end": 213,
+          "end": 214,
           "kind": "line_range",
-          "start": 180
+          "start": 181
         }
       },
       "id": "RLZ-4JY123GA",
@@ -40,7 +40,7 @@
     },
     {
       "anchor": {
-        "blob": "82940e3ebb28c7077e598da5addafff90ec6ef78",
+        "blob": "8553750157ecbc4d4c86582aec77207f1b043431",
         "content": "sha256:d9de27c7d82b40ea370dc0f4786fd373f0ce3165b7b1559931bb2225d996f07a",
         "locator": {
           "end": 112,
@@ -59,7 +59,7 @@
     },
     {
       "anchor": {
-        "blob": "82940e3ebb28c7077e598da5addafff90ec6ef78",
+        "blob": "8553750157ecbc4d4c86582aec77207f1b043431",
         "content": "sha256:7a65f7775f2b252903788fcf406997ae115820add50778526ad4e32d18c74a6c",
         "locator": {
           "kind": "symbol",
@@ -77,12 +77,12 @@
     },
     {
       "anchor": {
-        "blob": "82940e3ebb28c7077e598da5addafff90ec6ef78",
+        "blob": "8553750157ecbc4d4c86582aec77207f1b043431",
         "content": "sha256:9b6373ba9eeb22e690729f48e7140cac9740485c12a5a1116269682dfa1cf12f",
         "locator": {
-          "end": 213,
+          "end": 214,
           "kind": "line_range",
-          "start": 180
+          "start": 181
         }
       },
       "id": "RLZ-D8Y5FWWB",
@@ -95,10 +95,10 @@
     },
     {
       "anchor": {
-        "blob": "82940e3ebb28c7077e598da5addafff90ec6ef78",
-        "content": "sha256:8dc8f6dd48fc4c5a0d9fa23d2633be4108f7f4a1a864726bd1bac1973a13106c",
+        "blob": "8553750157ecbc4d4c86582aec77207f1b043431",
+        "content": "sha256:12141bcb294203846818af3cdbfb562b8e983736b8b9ea90b87f531865ca92ea",
         "locator": {
-          "end": 130,
+          "end": 132,
           "kind": "line_range",
           "start": 103
         }
@@ -109,12 +109,12 @@
         "handoffEntry": "L168-CUR-M2-21-N22",
         "leaf": "260928-MIK-L168"
       },
-      "rationale": "The source adapter preserves authored subTasks order as DeclaredTaskSource and passes the normalized declared parent separately; build_task_entries remains the reciprocal-membership/cycle authority independent of worktrees.",
+      "rationale": "Preserves authored child order, normalized parent and the original master literal. task_entries owns documented-subTask master validation and absent-only fallback, while other listed kinds keep identity/cycle-guarded list placement; the source adapter neither repairs records nor adds kind rejection.",
       "role": "propagation-persistence"
     },
     {
       "anchor": {
-        "blob": "82940e3ebb28c7077e598da5addafff90ec6ef78",
+        "blob": "8553750157ecbc4d4c86582aec77207f1b043431",
         "content": "sha256:b7cabe376357a0c1eb26004ded85c3e3a154af5d8e76a65f53239dbc03aa8e72",
         "locator": {
           "kind": "symbol",
@@ -132,10 +132,10 @@
     },
     {
       "anchor": {
-        "blob": "82940e3ebb28c7077e598da5addafff90ec6ef78",
-        "content": "sha256:fcc0b0267c77599d98fbf89d383b7bbfdc967551852d9f03af4284f7511f4490",
+        "blob": "8553750157ecbc4d4c86582aec77207f1b043431",
+        "content": "sha256:869704b8d4d60d7c91edde3997921556a5a4aa49dbb0092981e5823ad4f31904",
         "locator": {
-          "end": 131,
+          "end": 132,
           "kind": "line_range",
           "start": 83
         }
@@ -151,12 +151,12 @@
     },
     {
       "anchor": {
-        "blob": "82940e3ebb28c7077e598da5addafff90ec6ef78",
+        "blob": "8553750157ecbc4d4c86582aec77207f1b043431",
         "content": "sha256:743f5a4309c292bff25529b424208385ef192a9ad191e055dc6a7187a0aabea8",
         "locator": {
-          "end": 177,
+          "end": 178,
           "kind": "line_range",
-          "start": 134
+          "start": 135
         }
       },
       "id": "RLZ-MMSNGJN5",
@@ -169,7 +169,7 @@
     },
     {
       "anchor": {
-        "blob": "82940e3ebb28c7077e598da5addafff90ec6ef78",
+        "blob": "8553750157ecbc4d4c86582aec77207f1b043431",
         "content": "sha256:14be2da9745c9ab56baa57940376485eb4d7c53b90e20c56562ec9b63726b2b9",
         "locator": {
           "end": 125,
@@ -188,7 +188,7 @@
     },
     {
       "anchor": {
-        "blob": "82940e3ebb28c7077e598da5addafff90ec6ef78",
+        "blob": "8553750157ecbc4d4c86582aec77207f1b043431",
         "content": "sha256:0390dda0c3bfb0155a500d4b37519d4fde282ff9accd221d6f8eb34bfbb9a0e2",
         "locator": {
           "kind": "symbol",
@@ -206,12 +206,12 @@
     },
     {
       "anchor": {
-        "blob": "82940e3ebb28c7077e598da5addafff90ec6ef78",
+        "blob": "8553750157ecbc4d4c86582aec77207f1b043431",
         "content": "sha256:8736bec245b6ea72df0993a4e8d8d9807eceaa704361970fd1f29dec4c1649d4",
         "locator": {
-          "end": 378,
+          "end": 379,
           "kind": "line_range",
-          "start": 378
+          "start": 379
         }
       },
       "id": "RLZ-YX3P68",
@@ -230,12 +230,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "82940e3ebb28c7077e598da5addafff90ec6ef78",
+            "blob": "8553750157ecbc4d4c86582aec77207f1b043431",
             "content": "sha256:e181a2ed3a4c9bd7cb0edb661b24ddb2d255fd8bd5bfd81874c97faa82f73d87",
             "locator": {
-              "end": 449,
+              "end": 450,
               "kind": "line_range",
-              "start": 446
+              "start": 447
             }
           },
           "kind": "code"
@@ -320,7 +320,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9db054f67ffb51dddb7d1826e6ad7230dd76e9be",
+            "blob": "cc2ee73183eedfded4f8d8ccfa7ecd54ea694fa4",
             "content": "sha256:d2414fde98b5fac3676d9457812d28a6f36aa1735bd880339a492fb99d6c8b64",
             "locator": {
               "kind": "symbol",
@@ -404,12 +404,12 @@
         },
         {
           "anchor": {
-            "blob": "9db054f67ffb51dddb7d1826e6ad7230dd76e9be",
+            "blob": "cc2ee73183eedfded4f8d8ccfa7ecd54ea694fa4",
             "content": "sha256:9eee87a86c5a2657062540d297bf2b04b05600629228cd96ed2953092113a0ee",
             "locator": {
-              "end": 683,
+              "end": 689,
               "kind": "line_range",
-              "start": 682
+              "start": 688
             },
             "path": "mcp/src/agents_remember/tasks/document.py"
           },
@@ -546,12 +546,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "82940e3ebb28c7077e598da5addafff90ec6ef78",
+            "blob": "8553750157ecbc4d4c86582aec77207f1b043431",
             "content": "sha256:d1714a1de071de85e622b114fba836aa05706b82892a1a410c55c16601e10742",
             "locator": {
-              "end": 455,
+              "end": 456,
               "kind": "line_range",
-              "start": 452
+              "start": 453
             }
           },
           "kind": "code"
@@ -624,41 +624,89 @@
         }
       ]
     },
+    "21": {
+      "note": "The shared source builder carries both normalized parent identity and the original master literal into TaskDocumentSource, preserving absent-versus-unresolvable input.\n\nAnchor: Current source assertions",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8553750157ecbc4d4c86582aec77207f1b043431",
+            "content": "sha256:344445d0ab83e2546d8cce1eb1abcce26c5bd8f13d089d016b179f8303763ac6",
+            "locator": {
+              "end": 132,
+              "kind": "line_range",
+              "start": 95
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "22": {
+      "note": "Master validation in placement applies only to documented subTasks; other listed kinds retain list placement under existing identity/cycle guards, not a kind-rejection or own-master-validation rule.\n\nAnchor: Exact producer admission boundary",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d37db285155926a5393191721b105ab17f124661",
+            "content": "sha256:ea350afcbd90c38b00424aee31a6a7a46519c7bdff16982cada2efbe3293bd44",
+            "locator": {
+              "end": 219,
+              "kind": "line_range",
+              "start": 147
+            },
+            "path": "mcp/src/agents_remember/observer/task_entries.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d37db285155926a5393191721b105ab17f124661",
+            "content": "sha256:a9698c32fa9a20bab81fc0f683925767fc43a427ce913e1f3c157c94cc3c4f95",
+            "locator": {
+              "end": 341,
+              "kind": "line_range",
+              "start": 263
+            },
+            "path": "mcp/src/agents_remember/observer/task_entries.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
     "3": {
       "note": "Body revision hashes typed intent values and raw fixed-prose/dependency/time slots; node construction also hashes derived Order graph/dependencies, while completion-time projection prefers stored time then the greatest valid exact-finalization timestamp.",
       "targets": [
         {
           "anchor": {
-            "blob": "82940e3ebb28c7077e598da5addafff90ec6ef78",
+            "blob": "8553750157ecbc4d4c86582aec77207f1b043431",
             "content": "sha256:7a65f7775f2b252903788fcf406997ae115820add50778526ad4e32d18c74a6c",
             "locator": {
-              "end": 655,
+              "end": 656,
               "kind": "line_range",
-              "start": 621
+              "start": 622
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "82940e3ebb28c7077e598da5addafff90ec6ef78",
+            "blob": "8553750157ecbc4d4c86582aec77207f1b043431",
             "content": "sha256:e0217997a9d7d2f98cbd98e3ea3642b86db41ad0e7d55ed063309552ad131c03",
             "locator": {
-              "end": 498,
+              "end": 499,
               "kind": "line_range",
-              "start": 487
+              "start": 488
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "82940e3ebb28c7077e598da5addafff90ec6ef78",
+            "blob": "8553750157ecbc4d4c86582aec77207f1b043431",
             "content": "sha256:b7cabe376357a0c1eb26004ded85c3e3a154af5d8e76a65f53239dbc03aa8e72",
             "locator": {
-              "end": 590,
+              "end": 591,
               "kind": "line_range",
-              "start": 578
+              "start": 579
             }
           },
           "kind": "code"
@@ -742,7 +790,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9db054f67ffb51dddb7d1826e6ad7230dd76e9be",
+            "blob": "cc2ee73183eedfded4f8d8ccfa7ecd54ea694fa4",
             "content": "sha256:0f8da6cf1800ebe9d9fddec24e4a2847ae52c5c26c23067dc0ffb8302d2e405c",
             "locator": {
               "kind": "symbol",
@@ -754,12 +802,12 @@
         },
         {
           "anchor": {
-            "blob": "9db054f67ffb51dddb7d1826e6ad7230dd76e9be",
+            "blob": "cc2ee73183eedfded4f8d8ccfa7ecd54ea694fa4",
             "content": "sha256:33f48f246c2109e91baf88f5b616f534fe229ad8dc1d3e318be51af05935a3c7",
             "locator": {
-              "end": 133,
+              "end": 139,
               "kind": "line_range",
-              "start": 123
+              "start": 129
             },
             "path": "mcp/src/agents_remember/tasks/document.py"
           },

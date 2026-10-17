@@ -560,6 +560,37 @@
         }
       ]
     },
+    "137": {
+      "note": "Master validation in placement applies only to documented subTasks; other listed kinds retain list placement under existing identity/cycle guards, not a kind-rejection or own-master-validation rule.\n\nAnchor: Exact producer admission boundary",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d37db285155926a5393191721b105ab17f124661",
+            "content": "sha256:ea350afcbd90c38b00424aee31a6a7a46519c7bdff16982cada2efbe3293bd44",
+            "locator": {
+              "end": 219,
+              "kind": "line_range",
+              "start": 147
+            },
+            "path": "mcp/src/agents_remember/observer/task_entries.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d37db285155926a5393191721b105ab17f124661",
+            "content": "sha256:a9698c32fa9a20bab81fc0f683925767fc43a427ce913e1f3c157c94cc3c4f95",
+            "locator": {
+              "end": 341,
+              "kind": "line_range",
+              "start": 263
+            },
+            "path": "mcp/src/agents_remember/observer/task_entries.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
     "21": {
       "note": "The shared naming primitive appends the same physical lock suffix.",
       "targets": [

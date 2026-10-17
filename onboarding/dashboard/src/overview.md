@@ -17,7 +17,7 @@ This overview governs the bounded `cockpit/` and `dev/` slices as well as the so
 
 ## Hot Path Summary
 
-Operations consumes one server-composed TaskEntry forest: authored task status supplies planned/started/aborted/completed, and only started entries receive works/paused/unknown plus an optional host eventAt. Bound in-turn or permission activity means works; a known complete host observation with no working contributor means paused; an unavailable or unreconciled host means unknown, never inferred pause. Reciprocal ordered parent/children membership comes from declared task relations independently of physical worktrees. The browser shares the keyed task map and task-status/age presentation across the task column, reader, launch selectors and document chat; it does not derive a competing lifecycle. Raw Event River remains a separate diagnostic feed.
+Operations consumes one server-composed TaskEntry forest: authored task status supplies planned/started/aborted/completed, and only started entries receive works/paused/unknown plus an optional host eventAt. Bound in-turn or permission activity means works; a known complete host observation with no working contributor means paused; an unavailable or unreconciled host means unknown, never inferred pause. Ordered parent/children membership comes from the server's declared-list and record-master reconciliation independently of physical worktrees. For a documented subTask, an absent master can use its listing master; a present contrary or invalid master cannot. Other listed document kinds retain list placement under the existing identity/cycle guards, without validation of their own master by that path. Served disagreements stay visible on the relevant master without client repair. During unknown host observation the shell reports unavailability once, rows suppress works/paused figures and the task word remains started. The browser shares the keyed task map and task-status/age presentation across the task column, reader, launch selectors and document chat; it does not derive a competing lifecycle. Raw Event River remains a separate diagnostic feed.
 
 TaskSummary supplies revision-qualified prose, optional nonGoals, acceptance, completedAt and forward/reverse dependency references, with optional cycle-marked graph views. The producer generates the core schema and TypeScript/served tail; dev and manual snapshot values illustrate shape, not native derivation, task completion or host execution.
 
@@ -273,6 +273,10 @@ Source account retained from the parked claim (anchor currency not renewed here)
 Source account retained from the parked claim (anchor currency not renewed here): `dashboard/src/panels/review/ReviewSurface.tsx:328-392`; `dashboard/src/dev/scenarios.ts:43-119`.
 
 ## Evidence
+
+- Master validation in placement applies only to documented subTasks; other listed kinds retain list placement under existing identity/cycle guards, not a kind-rejection or own-master-validation rule. [73]
+
+
 
 
 

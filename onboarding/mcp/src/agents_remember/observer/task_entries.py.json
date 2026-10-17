@@ -3,8 +3,26 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "9e4b2543510affa9e5cc0d4f7e4ee8b261894051",
-        "content": "sha256:b925dcd46887d9d1f145bcfbf499a5ead0e8ae231c2927f6bb436051d0c3534b",
+        "blob": "d37db285155926a5393191721b105ab17f124661",
+        "content": "sha256:4d73bc201adcf3e1d83326ef3945271c823b12c2bea11d49fcf2b755a14eac26",
+        "locator": {
+          "kind": "symbol",
+          "name": "TaskDocumentSource"
+        }
+      },
+      "id": "RLZ-0CF3DA",
+      "invariant": "INV-WQ8YGE",
+      "origin": {
+        "handoffEntry": "L168-C-A016-extra-carriers-INV-WQ8YGE",
+        "leaf": "260928-MIK-L168"
+      },
+      "rationale": "Carries normalized declared parent and original master literal separately. Documented-subTask admission consumes unresolvable_master to distinguish present invalid input from genuine absence; this carrier does not add own-master validation for other listed kinds.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "d37db285155926a5393191721b105ab17f124661",
+        "content": "sha256:6d6248a533778c85bd2accbc6c603fdf6cb8ad5d93e633cf81f3123e008f8c24",
         "locator": {
           "kind": "symbol",
           "name": "build_task_entries"
@@ -21,7 +39,43 @@
     },
     {
       "anchor": {
-        "blob": "9e4b2543510affa9e5cc0d4f7e4ee8b261894051",
+        "blob": "d37db285155926a5393191721b105ab17f124661",
+        "content": "sha256:48de0c9a5927d664ad57b424366a96de5cbe63165fa355809fa071a02ce44225",
+        "locator": {
+          "kind": "symbol",
+          "name": "_place_listed_child"
+        }
+      },
+      "id": "RLZ-CKRQ0F",
+      "invariant": "INV-WQ8YGE",
+      "origin": {
+        "handoffEntry": "L168-C-A016-source-account-INV-WQ8YGE",
+        "leaf": "260928-MIK-L168"
+      },
+      "rationale": "Validates a documented subTask’s own master: genuine absence allows listing fallback, contrary/unresolvable input is reported and not adopted. Other listed kinds reach the same identity/cycle-guarded link without own-master validation.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "d37db285155926a5393191721b105ab17f124661",
+        "content": "sha256:0eb38b6e2fc63076263a6b8e0b7d2fc798a9d7220c2a0fbf0d8729eaaf73e2e5",
+        "locator": {
+          "kind": "symbol",
+          "name": "_report_unlisted_records"
+        }
+      },
+      "id": "RLZ-E00P61",
+      "invariant": "INV-WQ8YGE",
+      "origin": {
+        "handoffEntry": "L168-C-A016-source-account-INV-WQ8YGE",
+        "leaf": "260928-MIK-L168"
+      },
+      "rationale": "Reports an unlisted subTask through an available named or folder master without inventing a parent link; non-subTask records are outside this unlisted-record reporting loop.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "d37db285155926a5393191721b105ab17f124661",
         "content": "sha256:348ca25847f5af1de648007ac662ec749f8e0b70d74d88d9bdf446f78299339e",
         "locator": {
           "kind": "symbol",
@@ -39,8 +93,8 @@
     },
     {
       "anchor": {
-        "blob": "9e4b2543510affa9e5cc0d4f7e4ee8b261894051",
-        "content": "sha256:b925dcd46887d9d1f145bcfbf499a5ead0e8ae231c2927f6bb436051d0c3534b",
+        "blob": "d37db285155926a5393191721b105ab17f124661",
+        "content": "sha256:6d6248a533778c85bd2accbc6c603fdf6cb8ad5d93e633cf81f3123e008f8c24",
         "locator": {
           "kind": "symbol",
           "name": "build_task_entries"
@@ -54,6 +108,24 @@
       },
       "rationale": "This single join decides parent/ordered children from the native document sources.",
       "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "d37db285155926a5393191721b105ab17f124661",
+        "content": "sha256:d1fdd46de7e3835f6ab74f75cdd7e66c814beb79b729db03939b5fd86b3711eb",
+        "locator": {
+          "kind": "symbol",
+          "name": "_Membership"
+        }
+      },
+      "id": "RLZ-ZGTYYQ",
+      "invariant": "INV-WQ8YGE",
+      "origin": {
+        "handoffEntry": "L168-C-A016-source-account-INV-WQ8YGE",
+        "leaf": "260928-MIK-L168"
+      },
+      "rationale": "Owns deterministic single-parent/cycle guards and per-declaring-master whole-content disagreement deduplication.",
+      "role": "enforcement"
     }
   ],
   "references": {
@@ -79,19 +151,19 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9e4b2543510affa9e5cc0d4f7e4ee8b261894051",
+            "blob": "d37db285155926a5393191721b105ab17f124661",
             "content": "sha256:26710935a7f43bb1c69e2474e888289148018fe1f059ff53cbf4aaafeb7324d6",
             "locator": {
-              "end": 83,
+              "end": 94,
               "kind": "line_range",
-              "start": 61
+              "start": 72
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "cb7649c76f226f56141cd36720b382cea60352c7",
+            "blob": "359083eb794b3a5462b9e53d4dde2b27ec8ec7a9",
             "content": "sha256:e345bcf52910f1d43fcff54700f85ea691a6b896120f54a78d4be96269c1b309",
             "locator": {
               "end": 547,
@@ -104,14 +176,73 @@
         },
         {
           "anchor": {
-            "blob": "17da14e723222a8d50b4ed6f0595390ab1fe1f6a",
+            "blob": "901cf61d779e58bf30849e0eea78a9123b9792fd",
             "content": "sha256:73f45554796ee15769aee751c8a9f37a53c8aecd7cd5bd6b09a933b2b36ab464",
             "locator": {
-              "end": 154,
+              "end": 156,
               "kind": "line_range",
-              "start": 124
+              "start": 126
             },
             "path": "dashboard/src/panels/detail-panel/pageParts.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The source distinguishes an absent master from a present unresolvable master and carries the original literal into list/record reconciliation.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d37db285155926a5393191721b105ab17f124661",
+            "content": "sha256:63760c15950a3b9e89e91991b26a60e778e57486a1e3e5bd02a27100235bdc89",
+            "locator": {
+              "end": 55,
+              "kind": "line_range",
+              "start": 40
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8553750157ecbc4d4c86582aec77207f1b043431",
+            "content": "sha256:28829ceb4df4c3893dc393dcc8e4592a200a38c8a47a286dcf98f60ce819529f",
+            "locator": {
+              "end": 131,
+              "kind": "line_range",
+              "start": 103
+            },
+            "path": "mcp/src/agents_remember/serving/projections/snapshots_impl/_task_documents.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Documented-subTask admission respects its own master, reports its contrary/unresolvable input and deduplicates complete reports; other listed kinds use list placement under identity/cycle guards.\n\nAnchor: Listed admission, reporting and identity/cycle guards",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d37db285155926a5393191721b105ab17f124661",
+            "content": "sha256:498b6aad55667bbf47656269670659b9718752be4fe352284b8c87114724fcd3",
+            "locator": {
+              "end": 248,
+              "kind": "line_range",
+              "start": 147
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d37db285155926a5393191721b105ab17f124661",
+            "content": "sha256:a9698c32fa9a20bab81fc0f683925767fc43a427ce913e1f3c157c94cc3c4f95",
+            "locator": {
+              "end": 341,
+              "kind": "line_range",
+              "start": 263
+            }
           },
           "kind": "code"
         }
