@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "b488189ccabecfeddc296a88c877fcda162e7fd9",
+        "blob": "63a70b856ad6d75ee43c1c61d581a300035ce5a8",
         "content": "sha256:5379650548a22cd2f33240274083f90976d871e2d92d6b6d626137d5127b7fa1",
         "locator": {
           "end": 14,
@@ -22,7 +22,7 @@
     },
     {
       "anchor": {
-        "blob": "b488189ccabecfeddc296a88c877fcda162e7fd9",
+        "blob": "63a70b856ad6d75ee43c1c61d581a300035ce5a8",
         "content": "sha256:192abee0ba936a2346e5374ed7b68c822f2a5aa8d33acffa18bbf681a1617217",
         "locator": {
           "end": 34,
@@ -41,7 +41,7 @@
     },
     {
       "anchor": {
-        "blob": "b488189ccabecfeddc296a88c877fcda162e7fd9",
+        "blob": "63a70b856ad6d75ee43c1c61d581a300035ce5a8",
         "content": "sha256:e41fafc8b37c5fbba5c971104e2036dcedb4e59cfeec8b6dc49db480c0a4190e",
         "locator": {
           "end": 64,
@@ -60,7 +60,7 @@
     },
     {
       "anchor": {
-        "blob": "b488189ccabecfeddc296a88c877fcda162e7fd9",
+        "blob": "63a70b856ad6d75ee43c1c61d581a300035ce5a8",
         "content": "sha256:d0dd37230635b4bf60eb9afa2f995a981c26d820d440db56374f8aaa8e0cceca",
         "locator": {
           "end": 26,
@@ -79,7 +79,7 @@
     },
     {
       "anchor": {
-        "blob": "b488189ccabecfeddc296a88c877fcda162e7fd9",
+        "blob": "63a70b856ad6d75ee43c1c61d581a300035ce5a8",
         "content": "sha256:5379650548a22cd2f33240274083f90976d871e2d92d6b6d626137d5127b7fa1",
         "locator": {
           "end": 14,
@@ -98,7 +98,7 @@
     },
     {
       "anchor": {
-        "blob": "b488189ccabecfeddc296a88c877fcda162e7fd9",
+        "blob": "63a70b856ad6d75ee43c1c61d581a300035ce5a8",
         "content": "sha256:5920dad602942bb5f3dc6789c82b0b637d2d6c627dbf5efaf9011f580e2b4cfb",
         "locator": {
           "end": 30,
@@ -117,8 +117,8 @@
     },
     {
       "anchor": {
-        "blob": "b488189ccabecfeddc296a88c877fcda162e7fd9",
-        "content": "sha256:e00464c5b28be1b6aac093187945eda3d9bf9639c157ac5e832642e1c9222844",
+        "blob": "63a70b856ad6d75ee43c1c61d581a300035ce5a8",
+        "content": "sha256:8fbff667f9c086632c313deb42e998ff450493ebce1f17288c98626793be1b9d",
         "locator": {
           "end": 42,
           "kind": "line_range",
@@ -136,7 +136,7 @@
     },
     {
       "anchor": {
-        "blob": "b488189ccabecfeddc296a88c877fcda162e7fd9",
+        "blob": "63a70b856ad6d75ee43c1c61d581a300035ce5a8",
         "content": "sha256:deb3eb63aba067041c7922d01ca03a16f83c4772a224f3cef556254ded8c0d41",
         "locator": {
           "end": 60,
@@ -155,7 +155,7 @@
     },
     {
       "anchor": {
-        "blob": "b488189ccabecfeddc296a88c877fcda162e7fd9",
+        "blob": "63a70b856ad6d75ee43c1c61d581a300035ce5a8",
         "content": "sha256:192abee0ba936a2346e5374ed7b68c822f2a5aa8d33acffa18bbf681a1617217",
         "locator": {
           "end": 34,
@@ -245,7 +245,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b488189ccabecfeddc296a88c877fcda162e7fd9",
+            "blob": "63a70b856ad6d75ee43c1c61d581a300035ce5a8",
             "content": "sha256:278d61465767324f819c14320d910a6f842717d52a77acdda173693369d1ae32",
             "locator": {
               "end": 22,
@@ -279,12 +279,29 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b488189ccabecfeddc296a88c877fcda162e7fd9",
+            "blob": "63a70b856ad6d75ee43c1c61d581a300035ce5a8",
             "content": "sha256:deb3eb63aba067041c7922d01ca03a16f83c4772a224f3cef556254ded8c0d41",
             "locator": {
               "end": 60,
               "kind": "line_range",
               "start": 44
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "16": {
+      "note": "The Worker boundary requires direct repair and per-finding freeze evidence and delegates sync procedure to implementation.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "63a70b856ad6d75ee43c1c61d581a300035ce5a8",
+            "content": "sha256:8fbff667f9c086632c313deb42e998ff450493ebce1f17288c98626793be1b9d",
+            "locator": {
+              "end": 42,
+              "kind": "line_range",
+              "start": 34
             }
           },
           "kind": "code"

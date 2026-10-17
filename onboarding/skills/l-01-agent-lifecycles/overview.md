@@ -144,7 +144,24 @@ Worker marks only completed matching own build/evidence steps; Curator only its 
 
 Reviewer records memory begin/result with `reviewKind=memory`: separate sealed reports, findings and count, the same limit, no code-state reset, and Manager-recorded architect/developer approval beyond it. Under-way memory reviews finish as begun; new recorded lanes apply after landing. Neither this rollout nor clearer prose rewrites prior reviews or history.
 
+## Clean sync and direct repair ownership
+
+When the master line moves, Worker runs its supported leaf sync. If no path changed on both sides, Worker reruns focused tests once and tells Manager; Manager uses its closeout preview. No new freeze goes to Reviewer and no round begins. An overlapping path or a failing focused test instead needs the exact repair and one look by the same Reviewer. Native memory conflicts still go to Curator for content and Manager for capture, verification and staging before Worker continues the supported transaction.
+
+Worker repairs a sealed finding directly in its own task files. No plan, account, census, approval or Manager go-ahead precedes that repair. The supported whole commit check and the freeze remain required. The freeze gives each repaired finding its own ID, cause, files and line ranges, discriminating failing-before/passing-after test and result; unrelated changes are listed separately. After code PASS, the direct Curator handoff carries those same entries and changed paths.
+
+Reviewer receives no freeze and opens no round for a clean sync with passing focused tests. For a repair freeze, Reviewer checks every finding against its own report entry and returns missing entries to Worker without counting a round. This intake return does not turn an executed fix-verification into a record-only repair or waive the settings limit. Code and memory lanes remain separate; Manager retains the gate and publication.
+
+Before escalating, Manager reads its own rulings and the Architect rulings for this master. Manager settles a same-kind occasion under the earlier ruling and names that ruling in its record. Only an uncovered question goes up through the existing route. Beyond-limit rounds, out-of-requirement scope and developer decisions keep their existing escalation owners; this is not a new scope or approval grant.
+
+The registry records the changed compiled-text budgets under the existing ceilings. Canonical sources remain the owners; generated carriers and brief echoes add no permission.
+
 ## Evidence
+
+- The implementation operation owns clean sync and the direct repair/evidence path. [92]
+- The review operation owns missing-entry return without a round. [93]
+- The Manager role owns precedent settlement and unchanged escalation boundaries. [94]
+
 
 - Native stage operations need no redundant Manager status call; correction and organizational-completion authority remains explicit. [78]
 

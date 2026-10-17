@@ -119,7 +119,18 @@ Manager retains one-master coordination, role starts/replacements, report-based 
 
 The set-preparation/direct-handover contract remains in the role and coordination operation. Older card prose describing Worker+Reviewer followed by Curator at first freeze must not be repeated as current behavior. This source addition does not itself prove a product per-field role gate.
 
+## Settle precedents without adding repair stops
+
+Before escalating, Manager reads its own rulings and the Architect rulings for this master. Manager settles a same-kind occasion under the earlier ruling and names that ruling in its record. Only an uncovered question goes up through the existing route. Beyond-limit rounds, out-of-requirement scope and developer decisions keep their existing escalation owners; this is not a new scope or approval grant.
+
+When the master line moves, Worker runs its supported leaf sync. If no path changed on both sides, Worker reruns focused tests once and tells Manager; Manager uses its closeout preview. No new freeze goes to Reviewer and no round begins. An overlapping path or a failing focused test instead needs the exact repair and one look by the same Reviewer. Native memory conflicts still go to Curator for content and Manager for capture, verification and staging before Worker continues the supported transaction.
+
+A Worker repairing an owned finding needs no plan, account or go-ahead from Manager. Whole-stage delegation does not transfer gate, sync-transaction or landing authority.
+
 ## Evidence
+
+- Manager adds no pre-repair go-ahead, receives the clean-sync result for its closeout preview, and settles covered precedents before escalation. [13]
+
 
 ### Repo-Internal References
 

@@ -88,12 +88,23 @@ runner itself adds none of them: a caller that does not pass them gets Git's con
 
 Exact-object eligibility predicates and their regex constants live in the sibling `git_object_memo_keys.py`. This runner imports the two predicate consumers directly; request scope, memo keys, successful-result retention and Git execution remain here.
 
+## Byte-exact Git observation
+
+A NUL-delimited Git pathname is an exact byte identity. Ordinary run_git still uses text transport, whose universal-newline handling can collapse CR and LF pathnames. run_git_bytes selects raw output through the same _git_run environment, identity guard, working directory, timeout and session options. _tree_change_after_images splits b"\0", keeps pathname keys as bytes, and decodes only the ASCII mode/blob fields. It raises on failed or malformed raw diff output; it does not normalize, rename-pair or infer path equivalence.
+
+The extraction of _git_run shares the former run_git setup; it does not make the general text runner byte-preserving or add a second Git environment policy.
+
 ## Evidence
+
+- The byte runner bypasses text decoding and universal-newline conversion. [54]
+- Both public transports share environment scrubbing, identity validation and execution options. [55]
+- The existing general runner remains text-mode through the shared setup. [34]
+
 
 - The eight repository selectors that are removed from the environment. [31]
 - The scrubbed environment every runner starts from. [32]
 - The options object: work directory, input, timeout and identity. [33]
-- The general runner; an identity that names a selector raises. [34]
+
 - The one argv: work directory, long paths and the exact safe directory. [35]
 - The one spawn: captured output, no check, input or DEVNULL, text or raw bytes. [36]
 - The four timeout classes. [37]

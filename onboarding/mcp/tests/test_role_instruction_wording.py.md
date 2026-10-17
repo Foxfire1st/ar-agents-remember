@@ -55,7 +55,14 @@ The Manager wording guard now requires start/finalize/abandon to publish task st
 
 Positive obligation and removal cases now use the shared delivered-surface oracle. Curator facets are checked on the addressed capsule or exact handoff detail; the complete Git comparison sentence is separately guarded. Writer command syntax is checked in the declared details while the operation retains inline admitted-runtime/no-bypass/selected-root/refusal/report/coherence duties. Reviewer-only parentless wording does not widen untouched roles' alternatives. These are source/compilation guards, not semantic acceptance or a producer grant.
 
+## Repair-loop wording regression
+
+The added wording case checks rendered Worker, Manager and Reviewer capsules and the Worker brief. It asserts the clean-sync no-freeze/no-round path, exact repair path, Manager precedent handling, no pre-repair approval, per-finding evidence and no-round return for missing entries. These are source assertions about delivered instruction text, not proof that an agent performed the process.
+
 ## Evidence
+
+- The wording case pins the conditional sync and visible direct-repair clauses at their delivered audiences. [9]
+
 
 - Protected Manager text separates automatic stage publication, explicit correction and organizational completion. [7]
 

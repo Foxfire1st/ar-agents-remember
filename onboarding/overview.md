@@ -173,7 +173,15 @@ Role capsules retain whole role inputs/results/boundaries and select common/matc
 Own-step bookkeeping is narrow: Worker marks completed matching build/evidence steps, Curator its completed curation step and Reviewer its review step only after a recorded passed final round; no matching step means no write. Manager sets no other agent's step; native operations publish task stage, while Manager retains explicit correction, organizational-master completion, acceptance and landing, and receives Worker/Curator escalation after three unsuccessful own repairs of one check/finding. New memory rounds use a separate `reviewKind=memory` lane without resetting code; under-way reviews finish as begun and recorded lanes apply only after landing.
 
 
+## Role-loop and exact review boundaries
+
+Generated instruction carriers follow their canonical role/operation owners. Clean sync with passing focused tests keeps the existing review; overlap or failed tests returns an exact repair to the same Reviewer. Manager settles covered precedents and retains gate/publication authority. The closeout door carries a review over a changed tree only through ancestral, byte-path-disjoint, blob/mode-exact sync evidence; task intent and evidence-byte checks remain.
+
 ## Evidence
+
+- Canonical Worker and Reviewer boundaries distinguish clean sync from repair evidence. [352]
+- Closeout uses the bounded clean-sync predicate without weakening its other evidence checks. [353]
+
 
 - Canonical declaration data drives copy recognition; only exact regular candidate source/copy equality suppresses a copy obligation, while present nonregular declarations remain named refusals. This is not synchronization or delivery evidence. [334]
 

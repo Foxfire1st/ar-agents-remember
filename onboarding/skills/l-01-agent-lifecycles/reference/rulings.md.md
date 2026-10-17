@@ -12,7 +12,14 @@ The reference-only index of durable rulings this corpus implements: each row rec
 
 Reference-only and normative in one direction only. Frequency of repetition is never authority — these citations are. The index rows name the ruling, its date and anchor, what it decides, and the superseded row.
 
+## Precedent, repair and clean-sync rulings
+
+The index records the conditional clean-sync rule, the Manager's same-kind precedent duty and direct repair with a per-finding freeze trail. It points to the owning role/operation clauses and preserves supersession. The index is reference material, not an extra instruction injected into every capsule.
+
 ## Evidence
+
+- The ruling index names the clean-sync, precedent and visible direct-repair obligations at their authored owners. [5]
+
 
 - Each row records one obeyed ruling with its carrying anchor and supersession. [1]
 - Seats follow rules where authored; reason and supersession live in this index. [2]

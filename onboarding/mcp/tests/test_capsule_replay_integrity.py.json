@@ -1,5 +1,41 @@
 {
   "path": "mcp/tests/test_capsule_replay_integrity.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "57fb922c51f485ce2ca38020f9bbab5e40a0426f",
+        "content": "sha256:974ddafaa5bca02dcb531fc26ef2a93ed3850ce2b5493de1d6e58b601e58a470",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_replay_refuses_a_rebound_report_folder_even_when_detail_bytes_are_unchanged"
+        }
+      },
+      "facet": "Source assertions: equal detail bytes cannot authorize a rebound canonical folder; restoration recreates an absent valid legacy report-access link and validation succeeds again.",
+      "id": "PRF-2607SK",
+      "invariant": "INV-7KDG7C",
+      "origin": {
+        "handoffEntry": "L170-curator-detail-enforcement",
+        "leaf": "260928-MIK-L170"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "57fb922c51f485ce2ca38020f9bbab5e40a0426f",
+        "content": "sha256:8a46591742facec3f20354e1a4addf1e3725784b5b990da40c6ce8c3fd9ee270",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_real_leaf_preparation_restores_details_beside_local_handover"
+        }
+      },
+      "facet": "Source assertions: actual preparation/receipt restore handles real local role-report directories for Worker/Reviewer/Curator detail cases and preserves frozen bytes; Worker detail is injected at the compiler seam and no host is launched.",
+      "id": "PRF-PN3CXR",
+      "invariant": "INV-7KDG7C",
+      "origin": {
+        "handoffEntry": "L170-curator-detail-enforcement",
+        "leaf": "260928-MIK-L170"
+      }
+    }
+  ],
   "realizes": [],
   "references": {
     "1": {
@@ -7,7 +43,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2e14af08701044f290fa1b5bc98277c90beaeece",
+            "blob": "57fb922c51f485ce2ca38020f9bbab5e40a0426f",
             "content": "sha256:a016751694f517d95f771a9fd24683288623338f80bc150bdc5210dc1886dd06",
             "locator": {
               "kind": "symbol",
@@ -23,7 +59,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2e14af08701044f290fa1b5bc98277c90beaeece",
+            "blob": "57fb922c51f485ce2ca38020f9bbab5e40a0426f",
             "content": "sha256:ebd4c8f1b571e5e0e4fd608dbe636a7377baa91c781919f978461b863fd940ac",
             "locator": {
               "kind": "symbol",
@@ -35,12 +71,12 @@
       ]
     },
     "3": {
-      "note": "Source assertion: test_replay_refuses_a_rebound_report_folder_even_when_detail_bytes_are_unchanged. The declaration is not an execution receipt.",
+      "note": "The canonical-folder case refuses a rebound link despite matching bytes and restores an absent valid legacy link. The declaration is not an execution receipt.",
       "targets": [
         {
           "anchor": {
-            "blob": "2e14af08701044f290fa1b5bc98277c90beaeece",
-            "content": "sha256:832220d930d73bdb434a3ac4f32e3610a8363f3007fc18a85392a5be4592eff2",
+            "blob": "57fb922c51f485ce2ca38020f9bbab5e40a0426f",
+            "content": "sha256:974ddafaa5bca02dcb531fc26ef2a93ed3850ce2b5493de1d6e58b601e58a470",
             "locator": {
               "kind": "symbol",
               "name": "test_replay_refuses_a_rebound_report_folder_even_when_detail_bytes_are_unchanged"
@@ -51,12 +87,12 @@
       ]
     },
     "4": {
-      "note": "Source assertion: test_replay_refuses_incomplete_detail_references_instead_of_skipping_them. The declaration is not an execution receipt.",
+      "note": "Shape controls also refuse mismatched source-derived detail names, given paths and malformed or non-sibling saved handover references. The declaration is not an execution receipt.",
       "targets": [
         {
           "anchor": {
-            "blob": "2e14af08701044f290fa1b5bc98277c90beaeece",
-            "content": "sha256:21a394be52c54992f6742f9a89b9818533e2d76dd8e44ae0c70e924bc7178abb",
+            "blob": "57fb922c51f485ce2ca38020f9bbab5e40a0426f",
+            "content": "sha256:dcafaeea8d16380430e14fd5d18650df515a7601d80e2a7802af91112626650b",
             "locator": {
               "kind": "symbol",
               "name": "test_replay_refuses_incomplete_detail_references_instead_of_skipping_them"
@@ -71,7 +107,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2e14af08701044f290fa1b5bc98277c90beaeece",
+            "blob": "57fb922c51f485ce2ca38020f9bbab5e40a0426f",
             "content": "sha256:140012d8899387d059b9e033e011bf0db1448125b40f693f41cf32aeea064279",
             "locator": {
               "kind": "symbol",
@@ -87,11 +123,43 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2e14af08701044f290fa1b5bc98277c90beaeece",
+            "blob": "57fb922c51f485ce2ca38020f9bbab5e40a0426f",
             "content": "sha256:166c230ed1abed522ea3807eaa5e12ec65cb2ce592fd91c92c565be0cc15176a",
             "locator": {
               "kind": "symbol",
               "name": "test_held_opening_refuses_changed_details_and_preserves_waiting_messages"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "Real local preparation and receipt restoration preserve frozen detail bytes for three role cases; Worker detail is supplied at the compiler seam, and no host is launched.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "57fb922c51f485ce2ca38020f9bbab5e40a0426f",
+            "content": "sha256:8a46591742facec3f20354e1a4addf1e3725784b5b990da40c6ce8c3fd9ee270",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_real_leaf_preparation_restores_details_beside_local_handover"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "The fixture closes its private override stack before unittest cleanup and checks the captured compiler identity without undoing the shared pytest stack.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "57fb922c51f485ce2ca38020f9bbab5e40a0426f",
+            "content": "sha256:2e0756dd2648693c636db296d13ce3ad2de3261ab7bb91a92075a454882a13ea",
+            "locator": {
+              "kind": "symbol",
+              "name": "leaf_preparation"
             }
           },
           "kind": "test"

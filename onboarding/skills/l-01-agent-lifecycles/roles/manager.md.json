@@ -3,10 +3,10 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "c806e36dfe030ed31b40bfbe0b067abee3a5124b",
-        "content": "sha256:cea1e7e4808e7089d3cc2b6f8531acd1ec58764d3aa5fdd313e846ce8649ffa9",
+        "blob": "3940f282abb6f48c2dc00a01de5e55b87d64b2f6",
+        "content": "sha256:3647b684a59d9600cd02ab256881a639829eb9c6a0569b1ea86eadb0e3337846",
         "locator": {
-          "end": 26,
+          "end": 28,
           "kind": "line_range",
           "start": 24
         }
@@ -22,12 +22,12 @@
     },
     {
       "anchor": {
-        "blob": "c806e36dfe030ed31b40bfbe0b067abee3a5124b",
+        "blob": "3940f282abb6f48c2dc00a01de5e55b87d64b2f6",
         "content": "sha256:9584ec2f0e50c087c52bdf05ad3a15badcc93a89e7a6cf725a1ec41b45dec705",
         "locator": {
-          "end": 40,
+          "end": 42,
           "kind": "line_range",
-          "start": 38
+          "start": 40
         }
       },
       "id": "RLZ-64DTJW",
@@ -41,10 +41,10 @@
     },
     {
       "anchor": {
-        "blob": "c806e36dfe030ed31b40bfbe0b067abee3a5124b",
-        "content": "sha256:5725734786b88c3d7ae5d51ec5f3df41850c27066c06e30a0dcc44a646f952df",
+        "blob": "3940f282abb6f48c2dc00a01de5e55b87d64b2f6",
+        "content": "sha256:abe963bcdb890c686ae3c516fe080935ad618fb5e9b023b4c045ed687ec6ade8",
         "locator": {
-          "end": 30,
+          "end": 32,
           "kind": "line_range",
           "start": 20
         }
@@ -60,7 +60,7 @@
     },
     {
       "anchor": {
-        "blob": "c806e36dfe030ed31b40bfbe0b067abee3a5124b",
+        "blob": "3940f282abb6f48c2dc00a01de5e55b87d64b2f6",
         "content": "sha256:d98606f040ac27eea89b8ae26808b500633327a2f24dbdc3ea15c5320e941113",
         "locator": {
           "end": 8,
@@ -79,10 +79,10 @@
     },
     {
       "anchor": {
-        "blob": "c806e36dfe030ed31b40bfbe0b067abee3a5124b",
-        "content": "sha256:67d20bb5ae461474f899fe62a5fcc795e358ac90b867fe0f60dea6c44427479c",
+        "blob": "3940f282abb6f48c2dc00a01de5e55b87d64b2f6",
+        "content": "sha256:23da80ee16775525f92af2523fbcfc26ced0fb17a3b22ff3013df5392a94ed00",
         "locator": {
-          "end": 34,
+          "end": 36,
           "kind": "line_range",
           "start": 24
         }
@@ -98,12 +98,12 @@
     },
     {
       "anchor": {
-        "blob": "c806e36dfe030ed31b40bfbe0b067abee3a5124b",
+        "blob": "3940f282abb6f48c2dc00a01de5e55b87d64b2f6",
         "content": "sha256:17e02c23d33a9a03ba6fd21ac422dbf9fd8789751f6da9a3b446da0418bd718a",
         "locator": {
-          "end": 68,
+          "end": 70,
           "kind": "line_range",
-          "start": 62
+          "start": 64
         }
       },
       "id": "RLZ-HSZ8FM",
@@ -117,12 +117,12 @@
     },
     {
       "anchor": {
-        "blob": "c806e36dfe030ed31b40bfbe0b067abee3a5124b",
+        "blob": "3940f282abb6f48c2dc00a01de5e55b87d64b2f6",
         "content": "sha256:d44774695ba017e537e1be312da408ff6d6c5b3a6decd3e9b258c4834072ec9c",
         "locator": {
-          "end": 28,
+          "end": 30,
           "kind": "line_range",
-          "start": 28
+          "start": 30
         }
       },
       "id": "RLZ-JY5TEM",
@@ -136,12 +136,12 @@
     },
     {
       "anchor": {
-        "blob": "c806e36dfe030ed31b40bfbe0b067abee3a5124b",
+        "blob": "3940f282abb6f48c2dc00a01de5e55b87d64b2f6",
         "content": "sha256:ba8abd9f9e0f35351dd58583f8e4ee11986a44b0458ca8427339b40a6cdf3502",
         "locator": {
-          "end": 30,
+          "end": 32,
           "kind": "line_range",
-          "start": 30
+          "start": 32
         }
       },
       "id": "RLZ-M2NFTB",
@@ -155,7 +155,7 @@
     },
     {
       "anchor": {
-        "blob": "c806e36dfe030ed31b40bfbe0b067abee3a5124b",
+        "blob": "3940f282abb6f48c2dc00a01de5e55b87d64b2f6",
         "content": "sha256:6868c233cc81075a62d7000c1a3814ed5a7d7a2704d1e7bc3d764ed1b1f80944",
         "locator": {
           "end": 14,
@@ -174,12 +174,12 @@
     },
     {
       "anchor": {
-        "blob": "c806e36dfe030ed31b40bfbe0b067abee3a5124b",
+        "blob": "3940f282abb6f48c2dc00a01de5e55b87d64b2f6",
         "content": "sha256:5920dad602942bb5f3dc6789c82b0b637d2d6c627dbf5efaf9011f580e2b4cfb",
         "locator": {
-          "end": 60,
+          "end": 62,
           "kind": "line_range",
-          "start": 58
+          "start": 60
         }
       },
       "id": "RLZ-QJ4VJR",
@@ -193,12 +193,12 @@
     },
     {
       "anchor": {
-        "blob": "c806e36dfe030ed31b40bfbe0b067abee3a5124b",
+        "blob": "3940f282abb6f48c2dc00a01de5e55b87d64b2f6",
         "content": "sha256:3eec49854bceee2300f88f1912e594871cefc5b524d2ba720b2742190bbf5111",
         "locator": {
-          "end": 32,
+          "end": 34,
           "kind": "line_range",
-          "start": 32
+          "start": 34
         }
       },
       "id": "RLZ-S372ZT",
@@ -212,12 +212,12 @@
     },
     {
       "anchor": {
-        "blob": "c806e36dfe030ed31b40bfbe0b067abee3a5124b",
+        "blob": "3940f282abb6f48c2dc00a01de5e55b87d64b2f6",
         "content": "sha256:da5ed44631c08fd7b33f83086a4daca41f4d5025d3ab5d3f9550dd794fe31137",
         "locator": {
-          "end": 70,
+          "end": 72,
           "kind": "line_range",
-          "start": 66
+          "start": 68
         }
       },
       "id": "RLZ-V9GWTW",
@@ -231,12 +231,12 @@
     },
     {
       "anchor": {
-        "blob": "c806e36dfe030ed31b40bfbe0b067abee3a5124b",
+        "blob": "3940f282abb6f48c2dc00a01de5e55b87d64b2f6",
         "content": "sha256:553297497d6c255a25f7d34a23f2eb7cfcc657a8b6067117abf7ec47325c684b",
         "locator": {
-          "end": 52,
+          "end": 54,
           "kind": "line_range",
-          "start": 46
+          "start": 48
         }
       },
       "id": "RLZ-WDW9QT",
@@ -304,12 +304,29 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c806e36dfe030ed31b40bfbe0b067abee3a5124b",
+            "blob": "3940f282abb6f48c2dc00a01de5e55b87d64b2f6",
             "content": "sha256:5c699f0b0a3293b618e8b255ccb9f4eaab831d6c5ece397eee15378033fa7d7f",
             "locator": {
-              "end": 52,
+              "end": 54,
               "kind": "line_range",
-              "start": 38
+              "start": 40
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "Manager adds no pre-repair go-ahead, receives the clean-sync result for its closeout preview, and settles covered precedents before escalation.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3940f282abb6f48c2dc00a01de5e55b87d64b2f6",
+            "content": "sha256:934ff58fd7151d05dbb18a4f1254f15752dfec2d41cc4e8ab03e7d5d9ef5f74a",
+            "locator": {
+              "end": 28,
+              "kind": "line_range",
+              "start": 16
             }
           },
           "kind": "code"

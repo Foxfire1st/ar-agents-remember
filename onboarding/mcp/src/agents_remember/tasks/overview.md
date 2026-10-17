@@ -95,7 +95,15 @@ These inherited tables are retained verbatim for navigation and custody. Their s
 | ---------------------- | ------------------------------------------------ |
 | sourceRoute            | `mcp/src/agents_remember/tasks/`                 |
 
+## Review-base evidence
+
+RouteReviewRecord.baseCommit is optional persisted review evidence and is classified in the EVIDENCE plane. Leaf construction stamps the base before its record digest; the field alone does not establish ancestry or currentness. Legacy None-valued fields remain omitted from digest verification. Task-intent, review-state and mutation-class owners remain separate.
+
 ## Evidence
+
+- The persisted route-review record declares the optional base stamp. [56]
+- The exhaustive field taxonomy classifies the stamp as evidence. [57]
+
 
 
 

@@ -1,14 +1,69 @@
 {
   "path": "mcp/src/agents_remember/worktrees/route_review.py",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "f77659efee8d80f8c6cfa6dab23a63501ab76013",
+        "content": "sha256:512501ba84472e1e0959748d4f3ec953e95de1a59795606374f39bc423ecec8c",
+        "locator": {
+          "kind": "symbol",
+          "name": "_tree_change_after_images"
+        }
+      },
+      "id": "RLZ-44RDZ1",
+      "invariant": "INV-X22A1K",
+      "origin": {
+        "handoffEntry": "L170-curator-clean-sync-review-gate",
+        "leaf": "260928-MIK-L170"
+      },
+      "rationale": "The raw NUL-record reader retains bytes as path keys and mode/blob after-images, refusing failed or malformed observations rather than comparing normalized path strings.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "f77659efee8d80f8c6cfa6dab23a63501ab76013",
+        "content": "sha256:1bd5705068bb818ead3f9c2ddb232ebe3c68e5fa177ac13beb9f65a064808341",
+        "locator": {
+          "kind": "symbol",
+          "name": "build_route_review"
+        }
+      },
+      "id": "RLZ-7T6SDY",
+      "invariant": "INV-X22A1K",
+      "origin": {
+        "handoffEntry": "L170-curator-clean-sync-review-gate",
+        "leaf": "260928-MIK-L170"
+      },
+      "rationale": "Leaf construction stamps the contract code base before computing the record digest, so the comparison uses a plane-supplied base rather than a reviewer-authored value.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "f77659efee8d80f8c6cfa6dab23a63501ab76013",
+        "content": "sha256:7a65b3a43ec9a86839f97e43234988f11363361deea0709be2ff20d9a481fe43",
+        "locator": {
+          "kind": "symbol",
+          "name": "clean_sync_keeps_route_review"
+        }
+      },
+      "id": "RLZ-PY1DZY",
+      "invariant": "INV-X22A1K",
+      "origin": {
+        "handoffEntry": "L170-curator-clean-sync-review-gate",
+        "leaf": "260928-MIK-L170"
+      },
+      "rationale": "This predicate proves ancestry, disjoint raw path sets and exact equality of reviewed/current after-image maps; a missing base stamp grants no exception.",
+      "role": "enforcement"
+    }
+  ],
   "references": {
     "1": {
-      "note": "The plane stamps reviewer payloads with the exact candidate and validates task-local evidence.",
+      "note": "The plane stamps candidate and base, while the evidence-byte owner confines and hashes task files.",
       "targets": [
         {
           "anchor": {
-            "blob": "d5e95ad7ec9dd109087e19f54bf649eb0bfe4e3e",
-            "content": "sha256:a19d6c217a92f988b92ac61567ac6004a483214ee67ae78f776fabec97932f93",
+            "blob": "f77659efee8d80f8c6cfa6dab23a63501ab76013",
+            "content": "sha256:1bd5705068bb818ead3f9c2ddb232ebe3c68e5fa177ac13beb9f65a064808341",
             "locator": {
               "kind": "symbol",
               "name": "build_route_review"
@@ -18,11 +73,22 @@
         },
         {
           "anchor": {
-            "blob": "d5e95ad7ec9dd109087e19f54bf649eb0bfe4e3e",
+            "blob": "f77659efee8d80f8c6cfa6dab23a63501ab76013",
             "content": "sha256:b61da9d6eda573fbd5100bb19f4708ea5534f3c5a374f540ce3cc7cf6f9b0d67",
             "locator": {
               "kind": "symbol",
               "name": "_require_evidence_files"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f77659efee8d80f8c6cfa6dab23a63501ab76013",
+            "content": "sha256:26d60589ac252eb92e2edc8cf906f276e6416f1d43d82828aedc6b56cb107eb3",
+            "locator": {
+              "kind": "symbol",
+              "name": "_evidence_file_sha256"
             }
           },
           "kind": "code"
@@ -34,7 +100,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d5e95ad7ec9dd109087e19f54bf649eb0bfe4e3e",
+            "blob": "f77659efee8d80f8c6cfa6dab23a63501ab76013",
             "content": "sha256:a11f53195360d144843350f7167e02b86bfeecb424c1539d6c9b9e3dc7230f82",
             "locator": {
               "kind": "symbol",
@@ -46,11 +112,11 @@
       ]
     },
     "3": {
-      "note": "The R03 evidence-digest stamping and dependency currentness seam.",
+      "note": "R03 evidence digests and declared dependency currentness keep their distinct source owners.",
       "targets": [
         {
           "anchor": {
-            "blob": "d5e95ad7ec9dd109087e19f54bf649eb0bfe4e3e",
+            "blob": "f77659efee8d80f8c6cfa6dab23a63501ab76013",
             "content": "sha256:b71d1bb12180b822420f827acd2350e1bd839ad85a5622c6fec4536d0af43d88",
             "locator": {
               "kind": "symbol",
@@ -61,7 +127,7 @@
         },
         {
           "anchor": {
-            "blob": "d5e95ad7ec9dd109087e19f54bf649eb0bfe4e3e",
+            "blob": "f77659efee8d80f8c6cfa6dab23a63501ab76013",
             "content": "sha256:1028f4d426807d513b9afabcfb1bb176bb6873d278d279c2a0237aee915e7cce",
             "locator": {
               "kind": "symbol",
@@ -72,7 +138,7 @@
         },
         {
           "anchor": {
-            "blob": "d5e95ad7ec9dd109087e19f54bf649eb0bfe4e3e",
+            "blob": "f77659efee8d80f8c6cfa6dab23a63501ab76013",
             "content": "sha256:26d60589ac252eb92e2edc8cf906f276e6416f1d43d82828aedc6b56cb107eb3",
             "locator": {
               "kind": "symbol",
@@ -100,12 +166,12 @@
         },
         {
           "anchor": {
-            "blob": "d5e95ad7ec9dd109087e19f54bf649eb0bfe4e3e",
+            "blob": "f77659efee8d80f8c6cfa6dab23a63501ab76013",
             "content": "sha256:0aa1777f692d1221d9ff36fe608a862949d251aabdc2c03151ced2180003e929",
             "locator": {
-              "end": 274,
+              "end": 275,
               "kind": "line_range",
-              "start": 259
+              "start": 260
             }
           },
           "kind": "code"
@@ -138,6 +204,38 @@
             "content": "sha256:7d0675ce4e26e43ac3461f9d85d560068cf7a9ffc9652ad55f7a1a07ce70ccd8",
             "locator": {
               "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The helper admits only ancestral, path-disjoint sync with an identical reviewed after-image map.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f77659efee8d80f8c6cfa6dab23a63501ab76013",
+            "content": "sha256:7a65b3a43ec9a86839f97e43234988f11363361deea0709be2ff20d9a481fe43",
+            "locator": {
+              "kind": "symbol",
+              "name": "clean_sync_keeps_route_review"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "Raw diff records preserve byte pathname keys, modes and object IDs; malformed observations raise.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f77659efee8d80f8c6cfa6dab23a63501ab76013",
+            "content": "sha256:512501ba84472e1e0959748d4f3ec953e95de1a59795606374f39bc423ecec8c",
+            "locator": {
+              "kind": "symbol",
+              "name": "_tree_change_after_images"
             }
           },
           "kind": "code"

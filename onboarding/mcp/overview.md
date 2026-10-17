@@ -209,11 +209,19 @@ A configured alternative is not a product-supplied model. Cross-provider/model o
 
 Canonical task decisions retain selected step-up provenance across later starts and receipt loss. This is a task-writer publication of launch metadata, not execution-receipt authority over review findings, rounds, limits or acceptance. Host-observed destination stays distinct from requested choices; unconfirmed receipt-loss predecessors are unknown, not today’s base defaults.
 
-Frozen D301/R125 details are immutable request siblings named by source-path hash, composed into instruction pointers before user notes and validated for canonical report identity and revision on ordinary replay and held opening. Missing details require original bytes. Primary/takeover restoration uses saved bytes; it never regenerates from the current corpus or overwrites changed/nonregular targets.
+Frozen D301/R125 details are immutable request siblings named by source-path hash and composed into instruction pointers before user notes. Ordinary replay and held opening check their deterministic given names, saved handover canonical directory and frozen revisions. A real local role-report folder need not be the report's future task collection directory; a valid legacy report-access link still resolves to the saved handover's folder. Missing details require original bytes. Primary/takeover restoration uses saved bytes; it never regenerates from the current corpus or overwrites changed/nonregular targets.
 
 Takeover material retains previous model/provenance, verdict, remaining findings, earlier report paths and advisory bounded dirty inventories in the unchanged worktree. A failed creation after settled retirement can leave an empty step-up seat; repeat the same request/selection/reason/overrides against its saved call. This changes no Reviewer or review budget and is not a review verdict.
 
+## Byte-exact clean-sync evidence
+
+Route-review construction now stamps the leaf code base. The closeout door can preserve that review after a clean sync only with ancestry, disjoint exact pathname bytes and an unchanged reviewed blob/mode delta. The raw Git adapter keeps pathname bytes separate from the general text runner. Packaged instruction copies remain derived carriers, not a second authority. This does not grant atomic-child route-review recording or replace independent CODE/MEMORY lanes.
+
 ## Evidence
+
+- Raw Git output prevents newline normalization from collapsing pathname identities. [337]
+- A changed candidate tree needs the bounded clean-sync proof at the door. [338]
+
 
 - Master validation in placement applies only to documented subTasks; other listed kinds retain list placement under existing identity/cycle guards, not a kind-rejection or own-master-validation rule. [336]
 

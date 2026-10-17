@@ -3,7 +3,25 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "978f59a69f4a2c3ecc3a00de8e0da7e259a9e436",
+        "blob": "bc2b865ceab0e645f6665f038d5f4dc34413e95a",
+        "content": "sha256:4380ec2959c2319a0a7fd7e3b0589bf8c8ec9ba8ce640c5f2485ceb10b068710",
+        "locator": {
+          "kind": "symbol",
+          "name": "_subject_problems"
+        }
+      },
+      "id": "RLZ-4N3YR1",
+      "invariant": "INV-A6571D",
+      "origin": {
+        "handoffEntry": "L170-curator-writer-enforcement",
+        "leaf": "260928-MIK-L170"
+      },
+      "rationale": "This predicate keeps the existing subject and raise boundaries and distinguishes a fresh unnecessary own-leaf judgment from renewal of a subject already held before authoring.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "bc2b865ceab0e645f6665f038d5f4dc34413e95a",
         "content": "sha256:c785dd5564fac750aaa590aece466d24d216bb4f6f2b5080260317e256d35d03",
         "locator": {
           "kind": "symbol",
@@ -21,7 +39,7 @@
     },
     {
       "anchor": {
-        "blob": "978f59a69f4a2c3ecc3a00de8e0da7e259a9e436",
+        "blob": "bc2b865ceab0e645f6665f038d5f4dc34413e95a",
         "content": "sha256:1205eb547720474a083ac0d512f5e58c732a504ef49a075749f5872c5f0d26ae",
         "locator": {
           "kind": "symbol",
@@ -39,7 +57,25 @@
     },
     {
       "anchor": {
-        "blob": "978f59a69f4a2c3ecc3a00de8e0da7e259a9e436",
+        "blob": "bc2b865ceab0e645f6665f038d5f4dc34413e95a",
+        "content": "sha256:fcdc15294058db7a1b5a94bb1707b39d91e6aca239750906067538ecd0a94903",
+        "locator": {
+          "kind": "symbol",
+          "name": "_prior_own_subjects"
+        }
+      },
+      "id": "RLZ-NVH84R",
+      "invariant": "INV-A6571D",
+      "origin": {
+        "handoffEntry": "L170-curator-writer-enforcement",
+        "leaf": "260928-MIK-L170"
+      },
+      "rationale": "This collector reads only captured input history matching the leaf's native owner paths and parsed identity; new virtual rows, foreign owners and unreadable history grant no renewal admission.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "bc2b865ceab0e645f6665f038d5f4dc34413e95a",
         "content": "sha256:ecf4806c9b242eb716bd3ac9b6a7d1bbe4aa9b31d49750914261351b595d8b0e",
         "locator": {
           "kind": "symbol",
@@ -62,11 +98,27 @@
       "targets": [
         {
           "anchor": {
-            "blob": "978f59a69f4a2c3ecc3a00de8e0da7e259a9e436",
+            "blob": "bc2b865ceab0e645f6665f038d5f4dc34413e95a",
             "content": "sha256:ecf4806c9b242eb716bd3ac9b6a7d1bbe4aa9b31d49750914261351b595d8b0e",
             "locator": {
               "kind": "symbol",
               "name": "worklist_shape_problem"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "Renewal eligibility comes from parseable pre-authoring own-leaf history bytes; current-operation rows, foreign history and unreadable documents grant none.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bc2b865ceab0e645f6665f038d5f4dc34413e95a",
+            "content": "sha256:fcdc15294058db7a1b5a94bb1707b39d91e6aca239750906067538ecd0a94903",
+            "locator": {
+              "kind": "symbol",
+              "name": "_prior_own_subjects"
             }
           },
           "kind": "code"
@@ -78,7 +130,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "978f59a69f4a2c3ecc3a00de8e0da7e259a9e436",
+            "blob": "bc2b865ceab0e645f6665f038d5f4dc34413e95a",
             "content": "sha256:4059e5075681b8662f89f1cae8c12640fb303872d653ca43504b3a13352f0bd6",
             "locator": {
               "kind": "symbol",
@@ -90,12 +142,12 @@
       ]
     },
     "3": {
-      "note": "Worklist subject admission resolves handles, keeps raise exemptions and rejects unnecessary rows about this leaf's newly authored records.",
+      "note": "Subject admission resolves handles, keeps raise exemptions and rejects a fresh own-leaf row unless its subject is in the worklist or prior own history.",
       "targets": [
         {
           "anchor": {
-            "blob": "978f59a69f4a2c3ecc3a00de8e0da7e259a9e436",
-            "content": "sha256:7baa4453214ce882a055bc8a0be6c45286e43398db59a6b34760e2b0bed1a809",
+            "blob": "bc2b865ceab0e645f6665f038d5f4dc34413e95a",
+            "content": "sha256:4380ec2959c2319a0a7fd7e3b0589bf8c8ec9ba8ce640c5f2485ceb10b068710",
             "locator": {
               "kind": "symbol",
               "name": "_subject_problems"
@@ -110,7 +162,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "978f59a69f4a2c3ecc3a00de8e0da7e259a9e436",
+            "blob": "bc2b865ceab0e645f6665f038d5f4dc34413e95a",
             "content": "sha256:f311b7f3346d1e980728908c06c6b9dda2ad6592540273d1b0908d4b5b22817e",
             "locator": {
               "kind": "symbol",
@@ -126,7 +178,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "978f59a69f4a2c3ecc3a00de8e0da7e259a9e436",
+            "blob": "bc2b865ceab0e645f6665f038d5f4dc34413e95a",
             "content": "sha256:1205eb547720474a083ac0d512f5e58c732a504ef49a075749f5872c5f0d26ae",
             "locator": {
               "kind": "symbol",
@@ -160,7 +212,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "60a2475e3b9a63ec3c890db89b539e3cda0ea62c",
+            "blob": "f0f6b560a8bb165ff2303ba062a149f660c8e1cb",
             "content": "sha256:1775065562b8d6fc23cedd76da7a4e95dd9e94ab2aeda1355276ff1a5449f0fa",
             "locator": {
               "kind": "symbol",
@@ -177,7 +229,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "60a2475e3b9a63ec3c890db89b539e3cda0ea62c",
+            "blob": "f0f6b560a8bb165ff2303ba062a149f660c8e1cb",
             "content": "sha256:8bfd1ef812435d01c8df456df50e7af5ef4e5490f127203802484879b8b30f07",
             "locator": {
               "kind": "symbol",

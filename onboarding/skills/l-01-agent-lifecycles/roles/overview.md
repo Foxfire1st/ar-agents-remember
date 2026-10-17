@@ -126,7 +126,19 @@ Worker marks only completed matching own build/evidence steps; Curator only its 
 
 Reviewer records memory begin/result with `reviewKind=memory`: separate sealed reports, findings and count, the same limit, no code-state reset, and Manager-recorded architect/developer approval beyond it. Under-way memory reviews finish as begun; new recorded lanes apply after landing. Neither this rollout nor clearer prose rewrites prior reviews or history.
 
+## Repair without an extra coordination stop
+
+Worker repairs a sealed finding directly in its own task files. No plan, account, census, approval or Manager go-ahead precedes that repair. The supported whole commit check and the freeze remain required. The freeze gives each repaired finding its own ID, cause, files and line ranges, discriminating failing-before/passing-after test and result; unrelated changes are listed separately. After code PASS, the direct Curator handoff carries those same entries and changed paths.
+
+Before escalating, Manager reads its own rulings and the Architect rulings for this master. Manager settles a same-kind occasion under the earlier ruling and names that ruling in its record. Only an uncovered question goes up through the existing route. Beyond-limit rounds, out-of-requirement scope and developer decisions keep their existing escalation owners; this is not a new scope or approval grant.
+
+Manager receives the clean-sync focused-test result for its own preview; no clean-sync review round is created. Curator still writes memory only after exact passed-source intake. These instruction changes transfer no gate, task-state or publication authority.
+
 ## Evidence
+
+- Worker repairs owned findings directly and retains the per-finding freeze trail. [63]
+- Manager settles covered precedents and adds no pre-repair go-ahead. [64]
+
 
 - Manager leaves native operation stage/mirror publication to its owner; explicit corrections and organizational-master completion retain their task-document route. [49]
 

@@ -94,7 +94,14 @@ The governing workflow opens an independent memory review after CODE PASS on the
 
 This account is bound to the candidate source, not a claim of a running serving build or a fresh execution/acceptance verdict. Existing historical accounts remain historical.
 
+## Review-base evidence classification
+
+RouteReviewRecord.baseCommit is classified EVIDENCE beside candidateTree. The field changes review evidence, not task intent or structural topology. The exhaustive schema check remains fail-closed: registration is necessary for the new field, not evidence of a new lifecycle or projection-invalidation grant.
+
 ## Evidence
+
+- The new review-base stamp belongs to the existing evidence plane. [16]
+
 
 
 - Worker/Curator typed review census, record-only exclusion and unknown history. [12]

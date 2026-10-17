@@ -33,15 +33,15 @@ requires a passing record for the exact current tree, and rechecks its evidence 
 Under R03 `build_route_review` now stamps per-evidence-file SHA-256 digests
 (`_stamp_evidence_digests`), builds the `route-review/v1` dependency declaration (code tree,
 task intent, every evidence-bytes edge, validator), and computes `recordDigest` over the record's
-canonical JSON cit:([`build_route_review`, `_stamp_evidence_digests`], mcp/src/agents_remember/worktrees/route_review.py:292-347; mcp/src/agents_remember/worktrees/route_review.py:494-516).
-`_require_evidence_files` was replaced by digest-based currentness: `_evidence_file_sha256` names
+canonical JSON (source owners: `build_route_review`, `_stamp_evidence_digests`; native references below).
+`_require_evidence_files` rechecks the stamped verdict and route evidence through digest-based currentness: `_evidence_file_sha256` names
 `route-review-evidence-outside-task` / `route-review-evidence-missing` / `route-review-evidence-stale`
 when evidence bytes change after publication
-cit:([`_evidence_file_sha256`], mcp/src/agents_remember/worktrees/route_review.py:529-549).
+(source owners: `_evidence_file_sha256`; native references below).
 `require_current_route_review_task_intent` and `_require_current_dependencies` refuse
 `route-review-task-intent-missing`, `evidence-dependencies-missing`, or
 `route-review-dependencies-stale` when the declared inputs no longer match the current record
-cit:([`require_current_route_review_task_intent`, `_require_current_dependencies`], mcp/src/agents_remember/worktrees/route_review.py:392-415; mcp/src/agents_remember/worktrees/route_review.py:449-491).
+(source owners: `require_current_route_review_task_intent`, `_require_current_dependencies`; native references below).
 
 > **Retained historical source account — superseded by the current contract:**
 > CCR-R25 adds `route_review_refusal_projection`, a pure explanation layer for an already-observed
@@ -81,7 +81,19 @@ evidence-dependency encoding.
 
 None recorded.
 
+## Exact clean-sync comparison
+
+The closeout door first allows the recorded candidate tree itself. For a different tree, it calls clean_sync_keeps_route_review: the plane-stamped baseCommit must be an ancestor of the current base; the reviewed and incoming changed-path sets must be disjoint; and the current-base-to-candidate after-image map must equal the recorded-base-to-reviewed map exactly. Map identity includes each raw pathname byte sequence, blob and mode. An absent stamp supplies no exception. The door preserves the existing review record digest as its fingerprint and still checks task intent, evidence bytes and dependencies. This exception belongs to the door; require_current_route_review keeps its own exact-current-tree contract.
+
+A NUL-delimited Git pathname is an exact byte identity. Ordinary run_git still uses text transport, whose universal-newline handling can collapse CR and LF pathnames. run_git_bytes selects raw output through the same _git_run environment, identity guard, working directory, timeout and session options. _tree_change_after_images splits b"\0", keeps pathname keys as bytes, and decodes only the ASCII mode/blob fields. It raises on failed or malformed raw diff output; it does not normalize, rename-pair or infer path equivalence.
+
 ## Evidence
+
+- The helper admits only ancestral, path-disjoint sync with an identical reviewed after-image map. [7]
+- Raw diff records preserve byte pathname keys, modes and object IDs; malformed observations raise. [8]
+- The plane stamps candidate and base, while the evidence-byte owner confines and hashes task files. [1]
+- R03 evidence digests and declared dependency currentness keep their distinct source owners. [3]
+
 
 ### Docs References
 
@@ -89,9 +101,9 @@ No configured Domain Documentation source applies.
 
 ### Repo-Internal References
 
-- The plane stamps reviewer payloads with the exact candidate and validates task-local evidence. [1]
+
 - Series altitude is excluded before leaf resolution; changed leaves require a passing record for the current candidate tree. [2]
-- The R03 evidence-digest stamping and dependency currentness seam. [3]
+
 - CCR-R25 maps observed route-review refusals into bounded structured recovery guidance. [4]
 - The route-review record's content-addressed fields and self-digest validator. [5]
 

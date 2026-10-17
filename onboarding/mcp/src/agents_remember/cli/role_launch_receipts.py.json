@@ -492,16 +492,15 @@
       ]
     },
     "20": {
-      "note": "Test source checks validator refusal before host replay.\n\nAnchor: Current source; preserved L88 property 20",
+      "note": "Test source checks validator refusal before host replay.",
       "targets": [
         {
           "anchor": {
-            "blob": "dc353ac323b83fb206adffac4bfcf135542f1f49",
+            "blob": "57fb922c51f485ce2ca38020f9bbab5e40a0426f",
             "content": "sha256:140012d8899387d059b9e033e011bf0db1448125b40f693f41cf32aeea064279",
             "locator": {
-              "end": 179,
-              "kind": "line_range",
-              "start": 158
+              "kind": "symbol",
+              "name": "test_saved_start_replay_refuses_missing_details_before_the_host_call"
             },
             "path": "mcp/tests/test_capsule_replay_integrity.py"
           },

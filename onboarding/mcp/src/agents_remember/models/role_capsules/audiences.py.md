@@ -20,6 +20,6 @@ This is candidate-source onboarding, not execution, CODE/MEMORY acceptance, serv
 
 
 - Launch copies detail files, substitutes paths, and records frozen revisions. [1]
-- Replay validates regular opened files, content revisions and original canonical report binding, not mutable corpus sources. [2]
+- Replay validates regular opened files and frozen revisions at deterministic detail names beside the saved handover in its recorded canonical folder, not mutable corpus sources. [2]
 - Per-request detail artifacts use exact admitted bytes beside the handover and write-once publication. [3]
 - File-local implementation of the stated contract; caller-owned effects and governing workflow are separate evidence. [4]

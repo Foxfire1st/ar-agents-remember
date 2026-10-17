@@ -71,7 +71,14 @@ The conversion-cost scan/split regression module is selected once in unit-regres
 
 `test_capsule_replay_integrity.py`, `test_memory_review_lane.py`, `test_role_capsule_audiences.py`, `test_role_capsule_manifest_edges.py`, `test_role_step_up.py`, `test_step_up_choice_validation.py` and `test_step_up_recovery.py` are selected in `unit-regression`. These registrations add no lane or case-budget policy and certify no invocation or pass.
 
+## Clean-sync regression membership
+
+The new clean-sync door module is added to the unit-regression file population. This is evidence-lane selection metadata, not proof that a named invocation selected or executed the file. Marker filtering and lifecycle consumer membership keep their separate owners.
+
 ## Evidence
+
+- The unit-regression roster adds the clean-sync door module. [856]
+
 
 - The deletion-cancellation module is declared once in unit-regression; membership selects tests and proves no invocation. [853]
 

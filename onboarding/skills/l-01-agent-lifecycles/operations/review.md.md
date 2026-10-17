@@ -2,11 +2,11 @@
 
 ## Current supported-pair account — R100/R116 composition
 
-A record-only repair is checked on the last recorded round only when every candidate finding is closed and candidate bytes are identical; begin_review is not called and the count stays. A changed candidate instead requires the ordinary next round. Fix verification within the settings limit is an ordinary round; a beyond-limit round needs recorded architect/developer approval, not the superseded unconditional D107 further-look account. Separate MEMORY reports/counts do not reset CODE.
+A record-only repair is checked on the last recorded round only when every candidate finding is closed and candidate bytes are identical; begin_review is not called and the count stays. A repair that changes the candidate uses the ordinary next round; a clean sync with passing focused tests sends no new freeze and begins no round. Fix verification within the settings limit is an ordinary round; a beyond-limit round needs recorded architect/developer approval, not the superseded unconditional D107 further-look account. Separate MEMORY reports/counts do not reset CODE.
 
 This account controls the named changed seams; contradictory earlier card wording below is retained only as historical evidence. Unchanged role duties and R117 file-only wake/report transport are preserved. Source inspection supplies no new runtime test, CODE verdict, review counter or acceptance.
 
-- A record-only repair is checked on the last recorded round only when every candidate finding is closed and candidate bytes are identical; begin_review is not called and the count stays. A changed candidate instead requires the ordinary next round. Fix verification within the settings limit is an ordinary round; a beyond-limit round needs recorded architect/developer approval, not the superseded unconditional D107 further-look account. Separate MEMORY reports/counts do not reset CODE. [4]
+- A record-only repair is checked on the last recorded round only when every candidate finding is closed and candidate bytes are identical; begin_review is not called and the count stays. A repair that changes the candidate uses the ordinary next round; a clean sync with passing focused tests sends no new freeze and begins no round. Fix verification within the settings limit is an ordinary round; a beyond-limit round needs recorded architect/developer approval, not the superseded unconditional D107 further-look account. Separate MEMORY reports/counts do not reset CODE. [4]
 
 
 ## Message/file transport
@@ -33,7 +33,14 @@ Independent requested review retains exact requirement/candidate/mode/catalog in
 Memory uses `begin_review`/`record_review` with `reviewKind=memory`, separate sealed reports, IDs and count, same settings limit and Manager-recorded architect/developer approval for extras. It opens no code round and does not reset code PASS or baseline. Under-way reviews finish as begun; recorded lanes apply after landing, never by rewriting previous reviews.
 
 
+## Clean-sync and repair-freeze intake
+
+Reviewer receives no freeze and opens no round for a clean sync with passing focused tests. For a repair freeze, Reviewer checks every finding against its own report entry and returns missing entries to Worker without counting a round. This intake return does not turn an executed fix-verification into a record-only repair or waive the settings limit. Code and memory lanes remain separate; Manager retains the gate and publication.
+
 ## Evidence
+
+- Reviewer returns a repair freeze missing its per-finding entries without counting a round, and receives no new freeze or round for a clean sync. [8]
+
 
 - The verdict goes directly to the Worker and code PASS directly to the Curator. [1]
 
@@ -49,11 +56,11 @@ The following distribution-copy account preserves useful explanations and source
 >
 > ## Current supported-pair account — R100/R116 composition
 >
-> A record-only repair is checked on the last recorded round only when every candidate finding is closed and candidate bytes are identical; begin_review is not called and the count stays. A changed candidate instead requires the ordinary next round. Fix verification within the settings limit is an ordinary round; a beyond-limit round needs recorded architect/developer approval, not the superseded unconditional D107 further-look account. Separate MEMORY reports/counts do not reset CODE.
+> A record-only repair is checked on the last recorded round only when every candidate finding is closed and candidate bytes are identical; begin_review is not called and the count stays. A repair that changes the candidate uses the ordinary next round; a clean sync with passing focused tests sends no new freeze and begins no round. Fix verification within the settings limit is an ordinary round; a beyond-limit round needs recorded architect/developer approval, not the superseded unconditional D107 further-look account. Separate MEMORY reports/counts do not reset CODE.
 >
 > This account controls the named changed seams; contradictory earlier card wording below is retained only as historical evidence. Unchanged role duties and R117 file-only wake/report transport are preserved. Source inspection supplies no new runtime test, CODE verdict, review counter or acceptance.
 >
-> - A record-only repair is checked on the last recorded round only when every candidate finding is closed and candidate bytes are identical; begin_review is not called and the count stays. A changed candidate instead requires the ordinary next round. Fix verification within the settings limit is an ordinary round; a beyond-limit round needs recorded architect/developer approval, not the superseded unconditional D107 further-look account. Separate MEMORY reports/counts do not reset CODE. (historical reference 4)
+> - A record-only repair is checked on the last recorded round only when every candidate finding is closed and candidate bytes are identical; begin_review is not called and the count stays. A repair that changes the candidate uses the ordinary next round; a clean sync with passing focused tests sends no new freeze and begins no round. Fix verification within the settings limit is an ordinary round; a beyond-limit round needs recorded architect/developer approval, not the superseded unconditional D107 further-look account. Separate MEMORY reports/counts do not reset CODE. (historical reference 4)
 >
 >
 > ## Message/file transport
@@ -149,7 +156,7 @@ Inherited reference 3 commentary (not a revalidated target):
 
 Inherited reference 4 commentary (not a revalidated target):
 
-> A record-only repair is checked on the last recorded round only when every candidate finding is closed and candidate bytes are identical; begin_review is not called and the count stays. A changed candidate instead requires the ordinary next round. Fix verification within the settings limit is an ordinary round; a beyond-limit round needs recorded architect/developer approval, not the superseded unconditional D107 further-look account. Separate MEMORY reports/counts do not reset CODE.
+> A record-only repair is checked on the last recorded round only when every candidate finding is closed and candidate bytes are identical; begin_review is not called and the count stays. A repair that changes the candidate uses the ordinary next round; a clean sync with passing focused tests sends no new freeze and begins no round. Fix verification within the settings limit is an ordinary round; a beyond-limit round needs recorded architect/developer approval, not the superseded unconditional D107 further-look account. Separate MEMORY reports/counts do not reset CODE.
 
 ## Canonical Source Ownership
 

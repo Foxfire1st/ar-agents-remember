@@ -7,7 +7,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "682d4179b094bd4e50d1f67363fe398d5e4e40c9",
+            "blob": "90b609572aa48fb2a5e13fbf13040c2f337839b0",
             "content": "sha256:60172f37e29d829d04a0c011bfce73b96756f430b581516ca3dce6f39fbf91d8",
             "locator": {
               "end": 35,
@@ -21,14 +21,14 @@
       ]
     },
     "2": {
-      "note": "Replay validates regular opened files, content revisions and original canonical report binding, not mutable corpus sources.\n\nAnchor: L38–L88",
+      "note": "Replay validates regular opened files and frozen revisions at deterministic detail names beside the saved handover in its recorded canonical folder, not mutable corpus sources.",
       "targets": [
         {
           "anchor": {
-            "blob": "682d4179b094bd4e50d1f67363fe398d5e4e40c9",
-            "content": "sha256:a3660f0512fa0094c6c5fa934139c0b4e7dbf580921a9fdb0c9218c0600898b7",
+            "blob": "90b609572aa48fb2a5e13fbf13040c2f337839b0",
+            "content": "sha256:54e6493669a47ba6cf13fdf525c739de4a1ac59255c99f635a7398b21561700d",
             "locator": {
-              "end": 88,
+              "end": 101,
               "kind": "line_range",
               "start": 38
             },

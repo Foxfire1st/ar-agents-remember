@@ -3,7 +3,7 @@
   "proves": [
     {
       "anchor": {
-        "blob": "f43d3dae7538b4e412abb17c6e298489ddc1f1df",
+        "blob": "f0f6b560a8bb165ff2303ba062a149f660c8e1cb",
         "content": "sha256:149c753ed9a1bb62c55045a3020887418e28d173e5c8dc7d97deac59d9a295fd",
         "locator": {
           "kind": "symbol",
@@ -20,7 +20,24 @@
     },
     {
       "anchor": {
-        "blob": "f43d3dae7538b4e412abb17c6e298489ddc1f1df",
+        "blob": "f0f6b560a8bb165ff2303ba062a149f660c8e1cb",
+        "content": "sha256:526e7d6be9e6313800b3eb37c702ff8e6c0a889245957042e1ec5f58707c264e",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_record_first_authored_in_leaf_needs_no_itemless_row"
+        }
+      },
+      "facet": "Source assertions, independently executed by Reviewer on this code freeze: foreign history and current-operation authoring do not admit fresh itemless own rows under literal/handoff/bare aliases; refusal leaves memory unchanged, while a real worklist subject remains admitted.",
+      "id": "PRF-H4M940",
+      "invariant": "INV-A6571D",
+      "origin": {
+        "handoffEntry": "L170-curator-writer-enforcement",
+        "leaf": "260928-MIK-L170"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "f0f6b560a8bb165ff2303ba062a149f660c8e1cb",
         "content": "sha256:274ac584a113af984a31d835bd7909bee54f55471d843b9aa9f9d8d8b8cece20",
         "locator": {
           "kind": "symbol",
@@ -34,6 +51,23 @@
         "handoffEntry": "L54-curator-proof-L54-W-rule15-cover-path-admission-wave-76",
         "leaf": "260928-MIK-L54"
       }
+    },
+    {
+      "anchor": {
+        "blob": "f0f6b560a8bb165ff2303ba062a149f660c8e1cb",
+        "content": "sha256:cb65d06c6c1f1493e68b7579b3c5f9de500c2d5681effd8a55d0e34d88911dce",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_existing_own_leaf_row_renews_after_anchor_moves_without_worklist_item"
+        }
+      },
+      "facet": "Source assertions, independently executed by Reviewer on this code freeze: a previously held own row can renew without a worklist subject after an anchor shift, preserving row ID, repairing the after-anchor and making a repeat byte-idempotent.",
+      "id": "PRF-MVV3XV",
+      "invariant": "INV-A6571D",
+      "origin": {
+        "handoffEntry": "L170-curator-writer-enforcement",
+        "leaf": "260928-MIK-L170"
+      }
     }
   ],
   "realizes": [],
@@ -43,10 +77,42 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f43d3dae7538b4e412abb17c6e298489ddc1f1df",
-            "content": "sha256:5a88608389fab953fc69f36a266dfd9549054a42f9106db9ae5f700dd9abdcf1",
+            "blob": "f0f6b560a8bb165ff2303ba062a149f660c8e1cb",
+            "content": "sha256:7e5dd9935ec1cd797a317769585b0cc325a12d7943089bc6583ec9b86b5a6999",
             "locator": {
               "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "A persisted own row renews at the shifted after-anchor without a worklist item, retaining row identity and idempotent bytes.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f0f6b560a8bb165ff2303ba062a149f660c8e1cb",
+            "content": "sha256:cb65d06c6c1f1493e68b7579b3c5f9de500c2d5681effd8a55d0e34d88911dce",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_existing_own_leaf_row_renews_after_anchor_moves_without_worklist_item"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Fresh own rows retain refusal despite foreign history or current-operation authoring.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f0f6b560a8bb165ff2303ba062a149f660c8e1cb",
+            "content": "sha256:526e7d6be9e6313800b3eb37c702ff8e6c0a889245957042e1ec5f58707c264e",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_record_first_authored_in_leaf_needs_no_itemless_row"
             }
           },
           "kind": "test"

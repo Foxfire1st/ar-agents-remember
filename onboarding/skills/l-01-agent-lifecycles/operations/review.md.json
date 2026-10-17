@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "c88f998589d4789d0c221717bf72f8c258070afc",
+        "blob": "cc04f76ead30b37896b315dd8532f3bb79e2f6d6",
         "content": "sha256:729df695a7a574a5311c4211594373ffe0fab1a0b1c95b7942bf2da47669b86f",
         "locator": {
           "end": 28,
@@ -22,7 +22,7 @@
     },
     {
       "anchor": {
-        "blob": "c88f998589d4789d0c221717bf72f8c258070afc",
+        "blob": "cc04f76ead30b37896b315dd8532f3bb79e2f6d6",
         "content": "sha256:71bd7eb7f9aea55163c813b0b4e6299f8e63d8bb45d0412e21a186f94a1725e6",
         "locator": {
           "end": 36,
@@ -41,7 +41,7 @@
     },
     {
       "anchor": {
-        "blob": "c88f998589d4789d0c221717bf72f8c258070afc",
+        "blob": "cc04f76ead30b37896b315dd8532f3bb79e2f6d6",
         "content": "sha256:418b3754fb2a5b8a89b36b550b4b4e217a619f7723d9292c1af0b228474e0e29",
         "locator": {
           "end": 31,
@@ -60,7 +60,7 @@
     },
     {
       "anchor": {
-        "blob": "c88f998589d4789d0c221717bf72f8c258070afc",
+        "blob": "cc04f76ead30b37896b315dd8532f3bb79e2f6d6",
         "content": "sha256:5503aa8df111151ae30db644bf56b144778f7649d50b3e921df92d545f000586",
         "locator": {
           "end": 20,
@@ -127,16 +127,14 @@
       ]
     },
     "4": {
-      "note": "A record-only repair is checked on the last recorded round only when every candidate finding is closed and candidate bytes are identical; begin_review is not called and the count stays. A changed candidate instead requires the ordinary next round. Fix verification within the settings limit is an ordinary round; a beyond-limit round needs recorded architect/developer approval, not the superseded unconditional D107 further-look account. Separate MEMORY reports/counts do not reset CODE.",
+      "note": "A record-only repair is checked on the last recorded round only when every candidate finding is closed and candidate bytes are identical; begin_review is not called and the count stays. A repair that changes the candidate uses the ordinary next round; a clean sync with passing focused tests sends no new freeze and begins no round. Fix verification within the settings limit is an ordinary round; a beyond-limit round needs recorded architect/developer approval, not the superseded unconditional D107 further-look account. Separate MEMORY reports/counts do not reset CODE.",
       "targets": [
         {
           "anchor": {
-            "blob": "ec9c3e6658331150d5e253965df7876d572ba086",
-            "content": "sha256:b6f88d3195695321b41c9182d1c837378fb680523f732d21c670ba9f10b95594",
+            "blob": "cc04f76ead30b37896b315dd8532f3bb79e2f6d6",
+            "content": "sha256:c58548cf81b75e9e191d6d6d4103b26fbd022ad3635c501034467f0abf051994",
             "locator": {
-              "end": 31,
-              "kind": "line_range",
-              "start": 1
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -180,12 +178,29 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c88f998589d4789d0c221717bf72f8c258070afc",
+            "blob": "cc04f76ead30b37896b315dd8532f3bb79e2f6d6",
             "content": "sha256:0c44e6bd1626b44cba2f7aae1d92b52a295a8002084910ce6883c21a73f2b766",
             "locator": {
               "end": 38,
               "kind": "line_range",
               "start": 22
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "Reviewer returns a repair freeze missing its per-finding entries without counting a round, and receives no new freeze or round for a clean sync.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cc04f76ead30b37896b315dd8532f3bb79e2f6d6",
+            "content": "sha256:e3299fddcc6423496956cfb549ca031619847f94be967b8bbed763d33aba6952",
+            "locator": {
+              "end": 11,
+              "kind": "line_range",
+              "start": 9
             }
           },
           "kind": "code"

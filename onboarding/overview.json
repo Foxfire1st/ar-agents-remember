@@ -37,7 +37,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3d2cdb8d673290339ac87e1ff36eedc4f5c42855",
+            "blob": "975366e88969eb3dcd065c70a0d8cf83a988a6bc",
             "content": "sha256:4e77b2a1a88bc765ec36507e0e735caefa2e8b5fc79ab93ed78346ea10fddc65",
             "locator": {
               "kind": "symbol",
@@ -2036,12 +2036,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f960269862bf95931fd144e25b408b9bd50852cf",
+            "blob": "f8cf53d44e5dbfaf6281429f001c5b99aebae431",
             "content": "sha256:1e546a9c150fa884bdb29ec9e0659cc43d21acb34fa93743b9253dd0713cd856",
             "locator": {
-              "end": 47,
+              "end": 50,
               "kind": "line_range",
-              "start": 44
+              "start": 47
             },
             "path": "skills/l-01-agent-lifecycles/templates/worker-brief.md"
           },
@@ -2522,7 +2522,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "df5edfba8893347476b297d9d8664953015ae4ae",
+            "blob": "cebb73b6be7b8f1829e91c3404632496f92dd7e1",
             "content": "sha256:b344ad01251b5c2a7a392f415aef4c0dfec5822d46dbf58007b94725f0252e88",
             "locator": {
               "end": 185,
@@ -2861,7 +2861,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c806e36dfe030ed31b40bfbe0b067abee3a5124b",
+            "blob": "3940f282abb6f48c2dc00a01de5e55b87d64b2f6",
             "content": "sha256:9b8a0bd77133a911eda02d798594b6181aac50e9399f1000649385784cc6dc27",
             "locator": {
               "end": 22,
@@ -2981,7 +2981,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "fa6015bebb4f7c199a276cad8ca7e37ee11a3854",
+            "blob": "7a707458c0afa009452584dc52c6c205135b548a",
             "content": "sha256:22d3b1a70fe038cd18631b3a29c5d2cddeeb85af125a3f4e35359ebe2c2b3cf2",
             "locator": {
               "end": 215,
@@ -2999,7 +2999,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b488189ccabecfeddc296a88c877fcda162e7fd9",
+            "blob": "63a70b856ad6d75ee43c1c61d581a300035ce5a8",
             "content": "sha256:408d1f883028992dacd560c58332b1069283cce2dcadeb171c04a15ca57a08b4",
             "locator": {
               "end": 56,
@@ -3107,7 +3107,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c88f998589d4789d0c221717bf72f8c258070afc",
+            "blob": "cc04f76ead30b37896b315dd8532f3bb79e2f6d6",
             "content": "sha256:c2f707b60c14547c1d017ce0dbf7874cabd45358e8f7b635949e6fe82485b674",
             "locator": {
               "end": 28,
@@ -3169,6 +3169,39 @@
               "start": 369
             },
             "path": "skills/c-13-install-and-onboard/SKILL.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "352": {
+      "note": "Canonical Worker and Reviewer boundaries distinguish clean sync from repair evidence.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "df42532960b926133aa1c1f01a73c4ec8c405018",
+            "content": "sha256:70f7a3898cf9c8bf23d2a62cb8d8679eb2073a95f2e75eb0f04a50c77745b0ca",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/operations/implementation.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "353": {
+      "note": "Closeout uses the bounded clean-sync predicate without weakening its other evidence checks.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d0940b70289d43e211b8e08dbeafc3769dc23b64",
+            "content": "sha256:86a20ff12327bbf2f7875dfe057efb888ad604a89225dc396dd6a0d01e677ac4",
+            "locator": {
+              "kind": "symbol",
+              "name": "_review_provenance"
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/closeout/door_evidence.py"
           },
           "kind": "code"
         }

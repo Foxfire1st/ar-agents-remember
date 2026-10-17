@@ -36,6 +36,23 @@
         }
       ]
     },
+    "11": {
+      "note": "The door accepts either its exact recorded tree or the bounded clean-sync relation.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d0940b70289d43e211b8e08dbeafc3769dc23b64",
+            "content": "sha256:86a20ff12327bbf2f7875dfe057efb888ad604a89225dc396dd6a0d01e677ac4",
+            "locator": {
+              "kind": "symbol",
+              "name": "_review_provenance"
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/closeout/door_evidence.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
     "2": {
       "note": "Door source facts use current Git and task authority.",
       "targets": [
@@ -58,12 +75,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "10081759c2352c391ba3ab5713f24de7f02d16c6",
+            "blob": "a61bb8710773ccee56c8016d87b57de1d750388c",
             "content": "sha256:11766a27fc8fc9d2058751fa071256453d4bec1fb8f955f87f95b30a720fa205",
             "locator": {
-              "end": 209,
+              "end": 215,
               "kind": "line_range",
-              "start": 146
+              "start": 152
             },
             "path": "mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence.py"
           },
@@ -71,12 +88,12 @@
         },
         {
           "anchor": {
-            "blob": "10081759c2352c391ba3ab5713f24de7f02d16c6",
+            "blob": "a61bb8710773ccee56c8016d87b57de1d750388c",
             "content": "sha256:0d64f1ab5341d6a3d0e97f6ee334e82815a00911e751e19551b22a39feb10521",
             "locator": {
-              "end": 346,
+              "end": 352,
               "kind": "line_range",
-              "start": 286
+              "start": 292
             },
             "path": "mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence.py"
           },
@@ -84,12 +101,12 @@
         },
         {
           "anchor": {
-            "blob": "10081759c2352c391ba3ab5713f24de7f02d16c6",
+            "blob": "a61bb8710773ccee56c8016d87b57de1d750388c",
             "content": "sha256:639557666dd44e79d32a672d51aa5afbe5463f44e3cc5ab8c28e9fe58e873eef",
             "locator": {
-              "end": 468,
+              "end": 500,
               "kind": "line_range",
-              "start": 372
+              "start": 404
             },
             "path": "mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence.py"
           },
@@ -97,12 +114,12 @@
         },
         {
           "anchor": {
-            "blob": "10081759c2352c391ba3ab5713f24de7f02d16c6",
+            "blob": "a61bb8710773ccee56c8016d87b57de1d750388c",
             "content": "sha256:87bb890fce2ddf85045c57c02c1c2eb61490bfa737234035dbded7a5aecff462",
             "locator": {
-              "end": 562,
+              "end": 594,
               "kind": "line_range",
-              "start": 535
+              "start": 567
             },
             "path": "mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence.py"
           },
@@ -110,12 +127,12 @@
         },
         {
           "anchor": {
-            "blob": "10081759c2352c391ba3ab5713f24de7f02d16c6",
+            "blob": "a61bb8710773ccee56c8016d87b57de1d750388c",
             "content": "sha256:d24efd06d2fa14698f93cd72ece2b34dbd0d412adc32a3f897c3d132e2564873",
             "locator": {
-              "end": 635,
+              "end": 667,
               "kind": "line_range",
-              "start": 575
+              "start": 607
             },
             "path": "mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence.py"
           },
@@ -128,7 +145,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2396376cd715d4d7b646d44e5d83f4304708a636",
+            "blob": "8e48e38066874b65d5c7dec91535af65a658fbe4",
             "content": "sha256:23536224bcc5dc1d36955a44793da1c70344126e5a7f714f428ad67d6f3f2690",
             "locator": {
               "kind": "symbol",
@@ -140,7 +157,7 @@
         },
         {
           "anchor": {
-            "blob": "2396376cd715d4d7b646d44e5d83f4304708a636",
+            "blob": "8e48e38066874b65d5c7dec91535af65a658fbe4",
             "content": "sha256:7d7fe17df0eb2eba57e4a0d4e6835c0a273a3ad49e5ebdd1037d9c813d0e188e",
             "locator": {
               "kind": "symbol",
@@ -164,7 +181,7 @@
         },
         {
           "anchor": {
-            "blob": "2396376cd715d4d7b646d44e5d83f4304708a636",
+            "blob": "8e48e38066874b65d5c7dec91535af65a658fbe4",
             "content": "sha256:1fd80c3a76055f1835f74cefeb20712474288da2da439c8eb87087593cc2fcca",
             "locator": {
               "kind": "symbol",
@@ -176,7 +193,7 @@
         },
         {
           "anchor": {
-            "blob": "2396376cd715d4d7b646d44e5d83f4304708a636",
+            "blob": "8e48e38066874b65d5c7dec91535af65a658fbe4",
             "content": "sha256:421f477ff7368bb7bb4f0fb49df1bc279818f14e55fcc06d36e177f27bdc0bd3",
             "locator": {
               "kind": "symbol",
@@ -188,7 +205,7 @@
         },
         {
           "anchor": {
-            "blob": "2396376cd715d4d7b646d44e5d83f4304708a636",
+            "blob": "8e48e38066874b65d5c7dec91535af65a658fbe4",
             "content": "sha256:1c32af722c9926f2f8cdc23990be98cabcae8403d185f46ace6e39e5e7b6ad80",
             "locator": {
               "kind": "symbol",
@@ -200,7 +217,7 @@
         },
         {
           "anchor": {
-            "blob": "2396376cd715d4d7b646d44e5d83f4304708a636",
+            "blob": "8e48e38066874b65d5c7dec91535af65a658fbe4",
             "content": "sha256:dc472f59702c79e32b43b7e12a39438759cf7aba3c37bc239a7e7abe489b7e7e",
             "locator": {
               "kind": "symbol",
@@ -212,7 +229,7 @@
         },
         {
           "anchor": {
-            "blob": "2396376cd715d4d7b646d44e5d83f4304708a636",
+            "blob": "8e48e38066874b65d5c7dec91535af65a658fbe4",
             "content": "sha256:8cced7d9a25816cd211a9a19fc4dc6cc0d006be0276453187b76fd0c67b761e1",
             "locator": {
               "kind": "symbol",
@@ -224,7 +241,7 @@
         },
         {
           "anchor": {
-            "blob": "182dfb26b30fb5d4dbdadc32d846044b51366829",
+            "blob": "7e534abbc8eddc596c09dd188591a8e33755c064",
             "content": "sha256:bb049a3555b26c9f959e9e5d3289d2e9c71f4641c68da2fb93ffe66838fd75a4",
             "locator": {
               "kind": "symbol",
@@ -236,7 +253,7 @@
         },
         {
           "anchor": {
-            "blob": "182dfb26b30fb5d4dbdadc32d846044b51366829",
+            "blob": "7e534abbc8eddc596c09dd188591a8e33755c064",
             "content": "sha256:6056a8e954ae75eb1c188747da2865b05c86acc1d71b16e70b5c3d533fa37f84",
             "locator": {
               "kind": "symbol",
@@ -248,7 +265,7 @@
         },
         {
           "anchor": {
-            "blob": "182dfb26b30fb5d4dbdadc32d846044b51366829",
+            "blob": "7e534abbc8eddc596c09dd188591a8e33755c064",
             "content": "sha256:d88ff6cfa7d8e4c8df6b7a72e9b6c9ba1856f3e0e86a26998308eb295bc08447",
             "locator": {
               "kind": "symbol",
@@ -363,7 +380,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "92153a583a3f119a02cba25ddf722a99e3b54c8f",
+            "blob": "3d1ec99567502c102e54707aba3a3d8e169af0d5",
             "content": "sha256:34b68b21fbe2ebfb14563f10424ab75e5206ec6befd64444856573161247cbaa",
             "locator": {
               "kind": "symbol",
@@ -405,12 +422,12 @@
         },
         {
           "anchor": {
-            "blob": "f7b59934d4c1a98bbc511a7df67311083ace2c01",
+            "blob": "c53333a189e401b041e0fc4e3501ee1efa2c3001",
             "content": "sha256:2edcbebf3c119000d9068ada61b8d2d6ea0626ba57ca3367106804f3e77d2c9d",
             "locator": {
-              "end": 358,
+              "end": 363,
               "kind": "line_range",
-              "start": 349
+              "start": 354
             },
             "path": "mcp/src/agents_remember/application/prepared_certification.py"
           },

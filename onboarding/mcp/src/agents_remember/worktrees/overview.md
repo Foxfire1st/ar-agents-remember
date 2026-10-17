@@ -178,7 +178,17 @@ A leaf workspace may expose the shared task-owned messages folder through a link
 
 L61 retained source qualification: completed direct ownership uses the shared doorless-record predicate; complete parked reapply proof accepts already-held edits without a sample fallback. Report selection does not include aligned-card count alone, and staged memory merge validates before commit. These qualifications preserve the split implementation account without reviving the quoted historical route claims.
 
+## Clean sync preserves a bounded review
+
+The closeout door first allows the recorded candidate tree itself. For a different tree, it calls clean_sync_keeps_route_review: the plane-stamped baseCommit must be an ancestor of the current base; the reviewed and incoming changed-path sets must be disjoint; and the current-base-to-candidate after-image map must equal the recorded-base-to-reviewed map exactly. Map identity includes each raw pathname byte sequence, blob and mode. An absent stamp supplies no exception. The door preserves the existing review record digest as its fingerprint and still checks task intent, evidence bytes and dependencies. This exception belongs to the door; require_current_route_review keeps its own exact-current-tree contract.
+
+A NUL-delimited Git pathname is an exact byte identity. Ordinary run_git still uses text transport, whose universal-newline handling can collapse CR and LF pathnames. run_git_bytes selects raw output through the same _git_run environment, identity guard, working directory, timeout and session options. _tree_change_after_images splits b"\0", keeps pathname keys as bytes, and decodes only the ASCII mode/blob fields. It raises on failed or malformed raw diff output; it does not normalize, rename-pair or infer path equivalence.
+
 ## Evidence
+
+- Ancestry, disjoint byte paths and equal reviewed after-images define the clean-sync exception. [104]
+- The door keeps the original record-digest provenance while checking its other inputs. [105]
+
 - Retained reference account (no fresh execution or acceptance inferred): Current custody/release of historical pins; no creation. [1] [6]
 - Retained reference account (no fresh execution or acceptance inferred): Task observation, memory/finalization continuation, knowledge validation (since MIK-R22), the knowledge crossing (since MIK-R24), the worklist recompute (since MIK-R08), the review-artifact archive hook (since MIK-R25) and the mandatory invariant gate (since MIK-R09) use explicit service ports; `WorktreeServices` carries each as a field. [8]
 - Retained reference account (no fresh execution or acceptance inferred): The activation record is a strict per-contract fingerprinted snapshot with explicit selection states. [9]

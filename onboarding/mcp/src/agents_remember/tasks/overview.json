@@ -162,7 +162,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3d2cdb8d673290339ac87e1ff36eedc4f5c42855",
+            "blob": "975366e88969eb3dcd065c70a0d8cf83a988a6bc",
             "content": "sha256:1d6e7d0990e843d357c7d547d9a1a175a67b015180df4a504c907f1710f0bf9d",
             "locator": {
               "end": 171,
@@ -261,7 +261,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3d2cdb8d673290339ac87e1ff36eedc4f5c42855",
+            "blob": "975366e88969eb3dcd065c70a0d8cf83a988a6bc",
             "content": "sha256:54cd3c8190fb0392574c7a66f56c6795e7355449c00a2bd44457c3596a827db9",
             "locator": {
               "end": 172,
@@ -274,12 +274,12 @@
         },
         {
           "anchor": {
-            "blob": "3d2cdb8d673290339ac87e1ff36eedc4f5c42855",
+            "blob": "975366e88969eb3dcd065c70a0d8cf83a988a6bc",
             "content": "sha256:36ea23db1c3db012fc05f73163d4fa4440dbd8c79775eecb66063ec36bb1662b",
             "locator": {
-              "end": 297,
+              "end": 298,
               "kind": "line_range",
-              "start": 293
+              "start": 294
             },
             "path": "mcp/src/agents_remember/tasks/document_field_effects.py"
           },
@@ -734,7 +734,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3d2cdb8d673290339ac87e1ff36eedc4f5c42855",
+            "blob": "975366e88969eb3dcd065c70a0d8cf83a988a6bc",
             "content": "sha256:7797fce17a19d4ce6aa361624920dd63f12724edb7472c68660f80c5564acde2",
             "locator": {
               "kind": "symbol",
@@ -802,7 +802,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3d2cdb8d673290339ac87e1ff36eedc4f5c42855",
+            "blob": "975366e88969eb3dcd065c70a0d8cf83a988a6bc",
             "content": "sha256:4e77b2a1a88bc765ec36507e0e735caefa2e8b5fc79ab93ed78346ea10fddc65",
             "locator": {
               "end": 103,
@@ -862,7 +862,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0049f555b1338b3ab35a59750be6c0c51cbb63d2",
+            "blob": "c2275b9792d563997e82c391c04d0f6d885acd58",
             "content": "sha256:0850c563045af2e3c101f1451eccd0b4e69ca7a5df887bd92a22d4d5e8fcfc67",
             "locator": {
               "kind": "symbol",
@@ -1098,6 +1098,41 @@
               "start": 1
             },
             "path": "mcp/src/agents_remember/tasks/launch_review_read.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "56": {
+      "note": "The persisted route-review record declares the optional base stamp.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c2275b9792d563997e82c391c04d0f6d885acd58",
+            "content": "sha256:bd0e6fe4943fbe368d04f63206bc9f889341d54fa1f9b32a6c60a0ad89548662",
+            "locator": {
+              "kind": "symbol",
+              "name": "RouteReviewRecord"
+            },
+            "path": "mcp/src/agents_remember/tasks/route_review.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "57": {
+      "note": "The exhaustive field taxonomy classifies the stamp as evidence.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "975366e88969eb3dcd065c70a0d8cf83a988a6bc",
+            "content": "sha256:646814c90d5daa9fda4778ee2bdad1b002add88f6c64243cad57dc151fe69bf1",
+            "locator": {
+              "end": 260,
+              "kind": "line_range",
+              "start": 249
+            },
+            "path": "mcp/src/agents_remember/tasks/document_field_effects.py"
           },
           "kind": "code"
         }

@@ -22,7 +22,15 @@ Combines synthetic common/selected/excluded audience and separate-detail digest 
 
 This card describes assertion/support/document source, not a test invocation, independent verdict or publication.
 
+## Reviewed audience and fingerprint changes
+
+The reviewer-addressed paragraph literal now includes clean-sync intake and per-finding repair-entry checks. The exact implementation and review body fingerprints are deliberately repinned to the admitted instruction bytes; the role-audience partition remains the property under test. A matching stored fingerprint is not by itself a semantic or execution verdict.
+
 ## Evidence
+
+- The expected Reviewer-only paragraph includes missing-entry return and clean-sync no-round obligations. [23]
+- The approved implementation and review body hashes are repinned in the existing corpus check. [24]
+
 
 - Source assertion: test_compiler_delivers_only_common_and_selected_role_stage_parts. The declaration is not an execution receipt. [1]
 - Source assertion: test_compiler_carries_declared_step_detail_bytes_as_separate_references. The declaration is not an execution receipt. [2]

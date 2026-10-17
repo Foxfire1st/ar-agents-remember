@@ -226,7 +226,15 @@ The conversion-cost scan/split module is an exact declared consumer of the exist
 
 The capsule-replay, memory-review-lane, audience, manifest-edge and three step-up regression modules extend existing source-derived consumer lists. `_user_settings_guard.py` and the Node lockfile list all seven; coherence support also lists manifest edges. Both Paseo support rows retain `test_leaf_enclosure_start.py` through its imported `launch_world` fixture and list the memory/step-up/choice/recovery modules. These are supported dependency declarations only: artifact identities, lifecycle metadata and executable replacements are unchanged, and no test or validator invocation is asserted.
 
+## Clean-sync regression consumer registration
+
+The derived catalog adds the clean-sync door module to the tests.unit and affected.closure consumers. Existing coverage, ownership and bounded certification rules remain. Catalog membership does not create an Owner closure plan or establish test execution.
+
 ## Evidence
+
+- The derived unit consumer registers the new module. [298]
+- The derived affected-closure consumer registers the same module. [299]
+
 
 - The deletion-cancellation module joins the existing settings-guard and Node-lockfile consumer lists without new artifact or replacement contracts. [294]
 

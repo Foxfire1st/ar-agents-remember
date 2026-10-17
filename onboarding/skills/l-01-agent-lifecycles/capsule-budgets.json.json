@@ -3,10 +3,12 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "fa6015bebb4f7c199a276cad8ca7e37ee11a3854",
-        "content": "sha256:ca145110727b155248065c232598631a1f7a0f9958c8e78852c2b4b5b3707fde",
+        "blob": "7a707458c0afa009452584dc52c6c205135b548a",
+        "content": "sha256:0e95431c6f630e5087e444b9a93c5980a35f9b687d6367fa03a0b3cdc4769bc3",
         "locator": {
-          "kind": "file"
+          "end": 596,
+          "kind": "line_range",
+          "start": 1
         }
       },
       "id": "RLZ-9FX5WR",
@@ -108,7 +110,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "fa6015bebb4f7c199a276cad8ca7e37ee11a3854",
+            "blob": "7a707458c0afa009452584dc52c6c205135b548a",
             "content": "sha256:af2847eb890a79f52c149e2716990a0e43ccb21fbd9462aa038c3dca8e29c1d6",
             "locator": {
               "end": 308,
@@ -131,6 +133,21 @@
               "end": 547,
               "kind": "line_range",
               "start": 311
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The registry records the instruction-change measurements and reasons under the existing capped budget policy.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7a707458c0afa009452584dc52c6c205135b548a",
+            "content": "sha256:0e95431c6f630e5087e444b9a93c5980a35f9b687d6367fa03a0b3cdc4769bc3",
+            "locator": {
+              "kind": "file"
             }
           },
           "kind": "code"

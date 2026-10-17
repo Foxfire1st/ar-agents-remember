@@ -164,6 +164,40 @@
         }
       ]
     },
+    "104": {
+      "note": "Ancestry, disjoint byte paths and equal reviewed after-images define the clean-sync exception.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f77659efee8d80f8c6cfa6dab23a63501ab76013",
+            "content": "sha256:7a65b3a43ec9a86839f97e43234988f11363361deea0709be2ff20d9a481fe43",
+            "locator": {
+              "kind": "symbol",
+              "name": "clean_sync_keeps_route_review"
+            },
+            "path": "mcp/src/agents_remember/worktrees/route_review.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "105": {
+      "note": "The door keeps the original record-digest provenance while checking its other inputs.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d0940b70289d43e211b8e08dbeafc3769dc23b64",
+            "content": "sha256:86a20ff12327bbf2f7875dfe057efb888ad604a89225dc396dd6a0d01e677ac4",
+            "locator": {
+              "kind": "symbol",
+              "name": "_review_provenance"
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/closeout/door_evidence.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
     "11": {
       "note": "The child-admission seal is deleted: the parent-series helper is now resolution only and no lifecycle cell refuses a leaf.",
       "targets": [

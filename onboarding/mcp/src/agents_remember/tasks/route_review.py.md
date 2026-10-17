@@ -44,7 +44,15 @@ The governing workflow opens an independent memory review after CODE PASS on the
 
 This account is bound to the candidate source, not a claim of a running serving build or a fresh execution/acceptance verdict. Existing historical accounts remain historical.
 
+## Plane-stamped review base
+
+RouteReviewRecord adds optional baseCommit with the same object-ID shape as candidateTree. A missing value leaves a legacy record without a clean-sync stamp; the model alone neither infers ancestry nor admits a changed candidate. Leaf build_route_review stamps the field from its contract and includes it in the record digest. Legacy digest verification excludes None-valued fields. The closeout door, not this model, owns the bounded clean-sync exception.
+
 ## Evidence
+
+- The route record carries the optional base stamp and keeps all-or-nothing digest coherence. [3]
+- Leaf record construction stamps the contract code base before computing the record digest. [8]
+
 
 
 - Worker/Curator typed review census, record-only exclusion and unknown history. [4]
@@ -62,7 +70,6 @@ No configured external source applies.
 
 - Route and child-intent model shapes. [1]
 - Fixed-list finding, round-cap permission fields, and review-state validation. [2]
-- Candidate-bound route record coherence and content-addressing checks. [3]
 
 ## Historical L41 Source File Binding
 

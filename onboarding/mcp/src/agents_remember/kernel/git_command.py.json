@@ -4,7 +4,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "df5edfba8893347476b297d9d8664953015ae4ae",
+        "blob": "cebb73b6be7b8f1829e91c3404632496f92dd7e1",
         "content": "sha256:228f4980caa3a3d96933ccf66e514d1e51e62bcd7446ab903f7a3a587981b706",
         "locator": {
           "kind": "symbol",
@@ -22,7 +22,7 @@
     },
     {
       "anchor": {
-        "blob": "df5edfba8893347476b297d9d8664953015ae4ae",
+        "blob": "cebb73b6be7b8f1829e91c3404632496f92dd7e1",
         "content": "sha256:a6f31e7ed323bd8751898287365ed85d5e186e252dd9bc4359d3da9e6717ed06",
         "locator": {
           "kind": "symbol",
@@ -40,7 +40,7 @@
     },
     {
       "anchor": {
-        "blob": "df5edfba8893347476b297d9d8664953015ae4ae",
+        "blob": "cebb73b6be7b8f1829e91c3404632496f92dd7e1",
         "content": "sha256:5eaec5043b48ad5d243ddf92eaf49ff4c2d3c1b68b1603733c1b8e558496c4c8",
         "locator": {
           "kind": "symbol",
@@ -58,7 +58,43 @@
     },
     {
       "anchor": {
-        "blob": "df5edfba8893347476b297d9d8664953015ae4ae",
+        "blob": "cebb73b6be7b8f1829e91c3404632496f92dd7e1",
+        "content": "sha256:1ba76dd811007be85dbfa8e9908d0052119f51101d347a1bef9a83228aaf1e8c",
+        "locator": {
+          "kind": "symbol",
+          "name": "_git_run"
+        }
+      },
+      "id": "RLZ-WSKH3E",
+      "invariant": "INV-X22A1K",
+      "origin": {
+        "handoffEntry": "L170-curator-clean-sync-review-gate",
+        "leaf": "260928-MIK-L170"
+      },
+      "rationale": "Both text and byte transports retain the same environment scrub, identity selector guard, work directory, input, timeout and session options. This supports the new raw observation without a separate runner policy.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "cebb73b6be7b8f1829e91c3404632496f92dd7e1",
+        "content": "sha256:1e06d97e083599f069fbf8c197960b4a72ec7557850d39b67dbe97b28275be67",
+        "locator": {
+          "kind": "symbol",
+          "name": "run_git_bytes"
+        }
+      },
+      "id": "RLZ-XYVEDA",
+      "invariant": "INV-X22A1K",
+      "origin": {
+        "handoffEntry": "L170-curator-clean-sync-review-gate",
+        "leaf": "260928-MIK-L170"
+      },
+      "rationale": "Raw output avoids universal-newline decoding of CR/LF pathname bytes; the ordinary run_git text API remains distinct.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "cebb73b6be7b8f1829e91c3404632496f92dd7e1",
         "content": "sha256:8c357bd749a5ff5e48b879374a25213bb7e06baff5e880fad1a0e306c2c9b94a",
         "locator": {
           "kind": "symbol",
@@ -81,7 +117,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "df5edfba8893347476b297d9d8664953015ae4ae",
+            "blob": "cebb73b6be7b8f1829e91c3404632496f92dd7e1",
             "content": "sha256:9be6edd7629b87ba159b0a5805c8d9965ced076237c86d4585d132efd11a3ae5",
             "locator": {
               "kind": "symbol",
@@ -97,7 +133,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "df5edfba8893347476b297d9d8664953015ae4ae",
+            "blob": "cebb73b6be7b8f1829e91c3404632496f92dd7e1",
             "content": "sha256:86485973cec1b30881a8538bc29f5f42f53066c3901c053eb5c3b164acaf512d",
             "locator": {
               "kind": "symbol",
@@ -125,12 +161,12 @@
       ]
     },
     "34": {
-      "note": "The general runner; an identity that names a selector raises.",
+      "note": "The existing general runner remains text-mode through the shared setup.",
       "targets": [
         {
           "anchor": {
-            "blob": "af8d0af3c1cdbec034b7f460d8b013e802e8163e",
-            "content": "sha256:60788cf6b3cf57e313ccacab456fb49fd9601a1930fa8f8de28c01088b22a2af",
+            "blob": "cebb73b6be7b8f1829e91c3404632496f92dd7e1",
+            "content": "sha256:d8a99aac987e11cec4d4a227b859bafd75141708e1dd867b43624caa17286592",
             "locator": {
               "kind": "symbol",
               "name": "run_git"
@@ -145,7 +181,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "df5edfba8893347476b297d9d8664953015ae4ae",
+            "blob": "cebb73b6be7b8f1829e91c3404632496f92dd7e1",
             "content": "sha256:8b566e81821aac98495e378833d2904270c3d535c635f9e8f878f26ab12421f5",
             "locator": {
               "kind": "symbol",
@@ -178,7 +214,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "df5edfba8893347476b297d9d8664953015ae4ae",
+            "blob": "cebb73b6be7b8f1829e91c3404632496f92dd7e1",
             "content": "sha256:4bda05bd5379a7a23bd8864a0d7fce7a0d03fb9a546b486c6f1a85e153940699",
             "locator": {
               "end": 101,
@@ -195,7 +231,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "df5edfba8893347476b297d9d8664953015ae4ae",
+            "blob": "cebb73b6be7b8f1829e91c3404632496f92dd7e1",
             "content": "sha256:ba106bfbc0260beb21bbc745fa63ba4779c042da3bdcf345a7b5f3dcf88575f2",
             "locator": {
               "end": 109,
@@ -212,7 +248,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "df5edfba8893347476b297d9d8664953015ae4ae",
+            "blob": "cebb73b6be7b8f1829e91c3404632496f92dd7e1",
             "content": "sha256:8c357bd749a5ff5e48b879374a25213bb7e06baff5e880fad1a0e306c2c9b94a",
             "locator": {
               "kind": "symbol",
@@ -228,7 +264,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "df5edfba8893347476b297d9d8664953015ae4ae",
+            "blob": "cebb73b6be7b8f1829e91c3404632496f92dd7e1",
             "content": "sha256:5d6aa665636eb1550936699d4cfb0a3bc1ed69266481470ded0e5339e9fef9d6",
             "locator": {
               "kind": "symbol",
@@ -244,7 +280,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "df5edfba8893347476b297d9d8664953015ae4ae",
+            "blob": "cebb73b6be7b8f1829e91c3404632496f92dd7e1",
             "content": "sha256:a6f31e7ed323bd8751898287365ed85d5e186e252dd9bc4359d3da9e6717ed06",
             "locator": {
               "kind": "symbol",
@@ -276,7 +312,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "df5edfba8893347476b297d9d8664953015ae4ae",
+            "blob": "cebb73b6be7b8f1829e91c3404632496f92dd7e1",
             "content": "sha256:b72c1a4870f5a00b969c783678127cfd4352c2d8c36351418bde1e26bc826827",
             "locator": {
               "kind": "symbol",
@@ -292,7 +328,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "df5edfba8893347476b297d9d8664953015ae4ae",
+            "blob": "cebb73b6be7b8f1829e91c3404632496f92dd7e1",
             "content": "sha256:1216e62599880f30d4f676bda410d988a5f73fabbf6783dbdc99e07c6b65a0d2",
             "locator": {
               "kind": "symbol",
@@ -308,7 +344,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "df5edfba8893347476b297d9d8664953015ae4ae",
+            "blob": "cebb73b6be7b8f1829e91c3404632496f92dd7e1",
             "content": "sha256:a48c5b2acba64cfbe711ec202877f26690cc58bf2dc1635070e8b9b430cec9da",
             "locator": {
               "kind": "symbol",
@@ -324,7 +360,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "df5edfba8893347476b297d9d8664953015ae4ae",
+            "blob": "cebb73b6be7b8f1829e91c3404632496f92dd7e1",
             "content": "sha256:c8e601b2afcab622ae91ef823d293c4bb88c0940043fea6600a5d8b5d197ffb5",
             "locator": {
               "kind": "symbol",
@@ -340,7 +376,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "df5edfba8893347476b297d9d8664953015ae4ae",
+            "blob": "cebb73b6be7b8f1829e91c3404632496f92dd7e1",
             "content": "sha256:d6e601a17bc185d0885495f12b41adf50b514f3c3885efde325a7937ddc83573",
             "locator": {
               "kind": "symbol",
@@ -388,7 +424,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "df5edfba8893347476b297d9d8664953015ae4ae",
+            "blob": "cebb73b6be7b8f1829e91c3404632496f92dd7e1",
             "content": "sha256:991c67fb3bd789e589a0602ff557aa73e06c9398db473535f0cd77f3d3f5ec82",
             "locator": {
               "kind": "symbol",
@@ -438,7 +474,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "df5edfba8893347476b297d9d8664953015ae4ae",
+            "blob": "cebb73b6be7b8f1829e91c3404632496f92dd7e1",
             "content": "sha256:228f4980caa3a3d96933ccf66e514d1e51e62bcd7446ab903f7a3a587981b706",
             "locator": {
               "kind": "symbol",
@@ -468,6 +504,38 @@
               "name": "_memo_cat_file"
             },
             "path": "mcp/src/agents_remember/kernel/git_object_memo_keys.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "54": {
+      "note": "The byte runner bypasses text decoding and universal-newline conversion.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cebb73b6be7b8f1829e91c3404632496f92dd7e1",
+            "content": "sha256:1e06d97e083599f069fbf8c197960b4a72ec7557850d39b67dbe97b28275be67",
+            "locator": {
+              "kind": "symbol",
+              "name": "run_git_bytes"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "55": {
+      "note": "Both public transports share environment scrubbing, identity validation and execution options.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cebb73b6be7b8f1829e91c3404632496f92dd7e1",
+            "content": "sha256:1ba76dd811007be85dbfa8e9908d0052119f51101d347a1bef9a83228aaf1e8c",
+            "locator": {
+              "kind": "symbol",
+              "name": "_git_run"
+            }
           },
           "kind": "code"
         }

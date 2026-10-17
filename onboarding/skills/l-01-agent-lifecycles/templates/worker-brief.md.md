@@ -105,7 +105,16 @@ This template records the exact targeted checks and their failed or not-run stat
 
 The worker brief now routes the frozen candidate to the Reviewer and the structured hand-off list to the Curator, and its repair section names the Worker for a repair inside the leaf instead of the Manager.
 
+## Source-owned clean-sync values
+
+When the master line moves, Worker runs its supported leaf sync. If no path changed on both sides, Worker reruns focused tests once and tells Manager; Manager uses its closeout preview. No new freeze goes to Reviewer and no round begins. An overlapping path or a failing focused test instead needs the exact repair and one look by the same Reviewer. Native memory conflicts still go to Curator for content and Manager for capture, verification and staging before Worker continues the supported transaction.
+
+The Worker-only sync row echoes the owning implementation boundary; it does not become a second procedural authority or a shared rule across the four brief templates. The single-home note and the other seats' ownership remain. This is the conditional replacement of the former unconditional new-freeze instruction, not new curation or transaction permission.
+
 ## Evidence
+
+- The Worker template distinguishes clean sync from overlap or failed focused tests while preserving native conflict ownership and continuation. [11]
+
 
 ### Docs References
 

@@ -314,16 +314,15 @@
       ]
     },
     "7": {
-      "note": "Test source checks cannot-open, zero second host calls and retained/reclaimable work.\n\nAnchor: Current source; preserved L88 property 7",
+      "note": "Test source checks cannot-open, zero second host calls and retained/reclaimable work.",
       "targets": [
         {
           "anchor": {
-            "blob": "dc353ac323b83fb206adffac4bfcf135542f1f49",
+            "blob": "57fb922c51f485ce2ca38020f9bbab5e40a0426f",
             "content": "sha256:166c230ed1abed522ea3807eaa5e12ec65cb2ce592fd91c92c565be0cc15176a",
             "locator": {
-              "end": 220,
-              "kind": "line_range",
-              "start": 182
+              "kind": "symbol",
+              "name": "test_held_opening_refuses_changed_details_and_preserves_waiting_messages"
             },
             "path": "mcp/tests/test_capsule_replay_integrity.py"
           },

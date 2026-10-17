@@ -3,12 +3,12 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "14a1b9fd592618df68dce84dca031287e89de2a7",
+        "blob": "2a1004ad304b86ded09b65d14b24b428072be476",
         "content": "sha256:b5dcbe353b74fecbe99d922961ca12bc08068532affba89c85e27c810c573ded",
         "locator": {
-          "end": 342,
+          "end": 343,
           "kind": "line_range",
-          "start": 342
+          "start": 343
         }
       },
       "id": "RLZ-9QPBZK",
@@ -22,12 +22,12 @@
     },
     {
       "anchor": {
-        "blob": "14a1b9fd592618df68dce84dca031287e89de2a7",
+        "blob": "2a1004ad304b86ded09b65d14b24b428072be476",
         "content": "sha256:b34cd52a387bf092bd2484b6a8602413c0028077ff493f0aff91311cbb09d3f1",
         "locator": {
-          "end": 438,
+          "end": 439,
           "kind": "line_range",
-          "start": 438
+          "start": 439
         }
       },
       "id": "RLZ-NJFH31",
@@ -41,7 +41,7 @@
     },
     {
       "anchor": {
-        "blob": "14a1b9fd592618df68dce84dca031287e89de2a7",
+        "blob": "2a1004ad304b86ded09b65d14b24b428072be476",
         "content": "sha256:d78be9a4046b8ffdab5120a0a748737d28d92bec8743be7d5acec6847feb659b",
         "locator": {
           "end": 308,
@@ -65,7 +65,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "14a1b9fd592618df68dce84dca031287e89de2a7",
+            "blob": "2a1004ad304b86ded09b65d14b24b428072be476",
             "content": "sha256:18493d816ddfe444c965fada22a49da99138e70b2c7d80a72152bd3ef8ea7fd3",
             "locator": {
               "end": 23,
@@ -82,7 +82,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "14a1b9fd592618df68dce84dca031287e89de2a7",
+            "blob": "2a1004ad304b86ded09b65d14b24b428072be476",
             "content": "sha256:d7cf84bf950903f2b5bd9eb709520a6cd1fe182a4afec71fcbc3cb138679b6dc",
             "locator": {
               "end": 196,
@@ -166,12 +166,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "14a1b9fd592618df68dce84dca031287e89de2a7",
+            "blob": "2a1004ad304b86ded09b65d14b24b428072be476",
             "content": "sha256:6af2d7f28912ba7425c1cb69a1fa691c5a2c8c17dbc07527bd5c18525ee8f089",
             "locator": {
-              "end": 381,
+              "end": 382,
               "kind": "line_range",
-              "start": 381
+              "start": 382
             }
           },
           "kind": "test"
@@ -229,7 +229,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "14a1b9fd592618df68dce84dca031287e89de2a7",
+            "blob": "2a1004ad304b86ded09b65d14b24b428072be476",
             "content": "sha256:30f212a66e08058a95af77b80d5578d39567a3198521a13cfc42a5debab1f495",
             "locator": {
               "end": 204,
@@ -246,7 +246,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "14a1b9fd592618df68dce84dca031287e89de2a7",
+            "blob": "2a1004ad304b86ded09b65d14b24b428072be476",
             "content": "sha256:c372215cd621c00ce707c322b624640ee13a5cc4659d2d155c9f323929286cc9",
             "locator": {
               "end": 289,
@@ -263,7 +263,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "14a1b9fd592618df68dce84dca031287e89de2a7",
+            "blob": "2a1004ad304b86ded09b65d14b24b428072be476",
             "content": "sha256:92ce09777615fb294c5e4872a2305ccb83a25057dbabc91371fa1688959c34b0",
             "locator": {
               "end": 228,
@@ -275,7 +275,7 @@
         },
         {
           "anchor": {
-            "blob": "14a1b9fd592618df68dce84dca031287e89de2a7",
+            "blob": "2a1004ad304b86ded09b65d14b24b428072be476",
             "content": "sha256:10a9b7676e19fc0e9eabc3dce72230dbbcdaf005331b172b44b6c27f77cf716d",
             "locator": {
               "end": 307,
@@ -292,12 +292,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "14a1b9fd592618df68dce84dca031287e89de2a7",
+            "blob": "2a1004ad304b86ded09b65d14b24b428072be476",
             "content": "sha256:19104a5622961fcd407fd0ae93d74a947fa701acdb4417c116bcb3179481b298",
             "locator": {
-              "end": 331,
+              "end": 332,
               "kind": "line_range",
-              "start": 327
+              "start": 328
             }
           },
           "kind": "test"
@@ -321,7 +321,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "14a1b9fd592618df68dce84dca031287e89de2a7",
+            "blob": "2a1004ad304b86ded09b65d14b24b428072be476",
             "content": "sha256:30f212a66e08058a95af77b80d5578d39567a3198521a13cfc42a5debab1f495",
             "locator": {
               "end": 204,
@@ -383,7 +383,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "14a1b9fd592618df68dce84dca031287e89de2a7",
+            "blob": "2a1004ad304b86ded09b65d14b24b428072be476",
             "content": "sha256:e30fa9bbf54b333553073bb502f318e583b97c176b79185c9d33940f66f81ce0",
             "locator": {
               "end": 227,
@@ -417,7 +417,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "14a1b9fd592618df68dce84dca031287e89de2a7",
+            "blob": "2a1004ad304b86ded09b65d14b24b428072be476",
             "content": "sha256:0429c10cb9952e8e19996e7873c9fb28e8633d00fc915771d4ea082e1b39610b",
             "locator": {
               "end": 55,
@@ -440,6 +440,23 @@
               "end": 529,
               "kind": "line_range",
               "start": 1
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "856": {
+      "note": "The unit-regression roster adds the clean-sync door module.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2a1004ad304b86ded09b65d14b24b428072be476",
+            "content": "sha256:d4a7e33ede15a555823ccc6fe9b17af62aaa675e7e57f988d39c2cad75bd1762",
+            "locator": {
+              "end": 319,
+              "kind": "line_range",
+              "start": 308
             }
           },
           "kind": "test"

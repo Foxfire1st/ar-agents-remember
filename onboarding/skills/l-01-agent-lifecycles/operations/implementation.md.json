@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "f4d75547bcd9f677f543629759cd16ae47dfcfaf",
-        "content": "sha256:dce12aaba98d34269edbd6cdeee07b7ef354a7ee14cf4fc3798af16d4e3f252a",
+        "blob": "df42532960b926133aa1c1f01a73c4ec8c405018",
+        "content": "sha256:7bd690349781880ab353668530859c3965c75536e8586dd6cd793256018a3a81",
         "locator": {
           "end": 10,
           "kind": "line_range",
@@ -22,10 +22,10 @@
     },
     {
       "anchor": {
-        "blob": "f4d75547bcd9f677f543629759cd16ae47dfcfaf",
-        "content": "sha256:335a2fc7ef98e2842cb92854fc68ec1060e996230678bb442449e4d2ee22e7c4",
+        "blob": "df42532960b926133aa1c1f01a73c4ec8c405018",
+        "content": "sha256:2fbab30e287a3c6ed4fb8b02554db542766e1f54b5912dd8468e316b595f957b",
         "locator": {
-          "end": 24,
+          "end": 26,
           "kind": "line_range",
           "start": 20
         }
@@ -41,10 +41,10 @@
     },
     {
       "anchor": {
-        "blob": "f4d75547bcd9f677f543629759cd16ae47dfcfaf",
-        "content": "sha256:335a2fc7ef98e2842cb92854fc68ec1060e996230678bb442449e4d2ee22e7c4",
+        "blob": "df42532960b926133aa1c1f01a73c4ec8c405018",
+        "content": "sha256:2fbab30e287a3c6ed4fb8b02554db542766e1f54b5912dd8468e316b595f957b",
         "locator": {
-          "end": 24,
+          "end": 26,
           "kind": "line_range",
           "start": 20
         }
@@ -60,8 +60,8 @@
     },
     {
       "anchor": {
-        "blob": "f4d75547bcd9f677f543629759cd16ae47dfcfaf",
-        "content": "sha256:dce12aaba98d34269edbd6cdeee07b7ef354a7ee14cf4fc3798af16d4e3f252a",
+        "blob": "df42532960b926133aa1c1f01a73c4ec8c405018",
+        "content": "sha256:7bd690349781880ab353668530859c3965c75536e8586dd6cd793256018a3a81",
         "locator": {
           "end": 10,
           "kind": "line_range",
@@ -140,16 +140,48 @@
       ]
     },
     "5": {
-      "note": "Adds only the all-role audience marker; the Worker-only stage body is byte-preserved apart from that added first line.\n\nAnchor: Candidate instruction body, lines 1–26",
+      "note": "The Worker-only operation now carries conditional sync, direct repair and per-finding freeze evidence; its all-role audience marker adds no other seat.",
       "targets": [
         {
           "anchor": {
-            "blob": "f4d75547bcd9f677f543629759cd16ae47dfcfaf",
-            "content": "sha256:4e7d8d6c867b87cd9a56a8e5adddfc0f0b3fd82987fe67d36a21b9eae8d486b8",
+            "blob": "df42532960b926133aa1c1f01a73c4ec8c405018",
+            "content": "sha256:70f7a3898cf9c8bf23d2a62cb8d8679eb2073a95f2e75eb0f04a50c77745b0ca",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Worker distinguishes a clean sync from an overlapping path or failing focused test, and repairs owned findings without prior approval.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "df42532960b926133aa1c1f01a73c4ec8c405018",
+            "content": "sha256:2fbab30e287a3c6ed4fb8b02554db542766e1f54b5912dd8468e316b595f957b",
             "locator": {
               "end": 26,
               "kind": "line_range",
-              "start": 1
+              "start": 20
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "Each repaired finding has its own freeze entry; code PASS carries the same entries and changed paths directly to Curator.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "df42532960b926133aa1c1f01a73c4ec8c405018",
+            "content": "sha256:910bce8f88798a87f9479c1e2bafe7074eb4e9e0a8ece93d416e4cb84fc07abe",
+            "locator": {
+              "end": 10,
+              "kind": "line_range",
+              "start": 8
             }
           },
           "kind": "code"

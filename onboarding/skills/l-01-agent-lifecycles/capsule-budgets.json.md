@@ -19,7 +19,14 @@ The registry keeps 38 role/operation/launcher rows. Its current rule is `min(cei
 Fourteen admitted step files have separate `step_details` rows. L88 and its repair-round decisions explain the recorded numbers; older L101, L116 and L54 decision objects retain their parsed values despite compact reserialization. Stored size declarations and this static comparison are not freshly executed compiler, budget-test or host evidence. The old unconditional equality-to-ceil promise is false for capped rows; a successful line mapping cannot fix that semantic difference.
 
 
+## Measured instruction changes
+
+decisions_L170 records ten changed capsule measurements for the conditional sync, precedent, direct-repair and evidence obligations. The registry still uses capped eleven-tenths budgets with the existing capsule and step ceilings. Stored measurements are declarations and retained compiler provenance; reading them is not a fresh compiler run, test execution or native-host grade.
+
 ## Evidence
+
+- The registry records the instruction-change measurements and reasons under the existing capped budget policy. [8]
+
 
 
 
@@ -77,4 +84,4 @@ The byte-equal package copy is a distribution carrier, not an independent role, 
 
 - All 38 capsules carry capped eleven-tenths budgets recorded with the texts they measure. [1]
 
-- The registry retains 38 capped capsule rows, fourteen step-file rows and the earlier L54 decision account; L88 decisions state the new ceiling and growth provenance. [3]
+- The registry retains 38 capped capsule rows, fourteen step-file rows and earlier decision accounts; decisions_L170 records the current repair-loop text measurements under the existing ceilings. [3]

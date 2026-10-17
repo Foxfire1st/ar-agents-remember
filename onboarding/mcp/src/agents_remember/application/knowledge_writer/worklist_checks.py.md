@@ -20,7 +20,7 @@ The writer checks that boundary before virtual authoring for a leaf. `worklist_p
 
 A non-raise `still_rejected`, `planned:` or `hunk:` request must answer an existing worklist subject. An unmatched request names the subject and the recompute-or-correct remedy. Handles authored by the same document are resolved through the authoring operation's handle map.
 
-Newly authored rows about records whose origin names this leaf are rejected when no worklist subject names the record: a first-authored record needs no extra judgment row. `raise` rows remain exempt from these subject checks; their question/publication authority belongs to the other writer and task-document owners.
+For a record whose origin names this leaf, the writer rejects a fresh judgment when neither the worklist nor the leaf's parseable pre-authoring history contains its subject. A subject already held in that own history can be named again to renew an existing judgment, even when the worklist contains no item for it. The helper reads captured input bytes, not history rows added by the current authoring operation. Foreign-owner and unreadable history grant no admission. `raise` rows remain exempt from these subject checks; their question/publication authority belongs to the other writer and task-document owners.
 
 ### Governing-row check
 
@@ -43,7 +43,9 @@ No Domain Documentation entries are configured in `system/sources.md`. These are
 
 - Missing or malformed consumed worklist shapes receive a named compute/recompute refusal. [1]
 - Item scalar types, actual integer base revisions and consumed collection shapes are checked without claiming full-schema validation. [2]
-- Worklist subject admission resolves handles, keeps raise exemptions and rejects unnecessary rows about this leaf's newly authored records. [3]
+- Subject admission resolves handles, keeps raise exemptions and rejects a fresh own-leaf row unless its subject is in the worklist or prior own history. [3]
+
+- Renewal eligibility comes from parseable pre-authoring own-leaf history bytes; current-operation rows, foreign history and unreadable documents grant none. [10]
 - Only newly authored history rows are passed through the same-run governing-row check. [4]
 - Every matching stale/touched/family item is examined until a genuine shared-predicate violation is found. [5]
 - The writer performs leaf shape admission and collects worklist problems after virtual authoring, before publication. [6]

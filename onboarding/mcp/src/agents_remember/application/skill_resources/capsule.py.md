@@ -112,7 +112,7 @@ This account is bound to the candidate source, not a claim of a running serving 
 
 - The current response registry omits former capsule/catalog tools; retained response types are not public tool exposure. [16]
 - Launch copies detail files, substitutes paths, and records frozen revisions. [17]
-- Replay validates regular opened files, content revisions and original canonical report binding, not mutable corpus sources. [18]
+- Replay validates regular opened files and frozen revisions at deterministic detail names beside the saved handover in its recorded canonical folder, not mutable corpus sources. [18]
 - Per-request detail artifacts use exact admitted bytes beside the handover and write-once publication. [19]
 - File-local implementation of the stated contract; caller-owned effects and governing workflow are separate evidence. [20]
 

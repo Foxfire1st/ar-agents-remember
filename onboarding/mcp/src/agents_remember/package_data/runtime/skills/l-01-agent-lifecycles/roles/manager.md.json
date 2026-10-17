@@ -3,10 +3,12 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "c806e36dfe030ed31b40bfbe0b067abee3a5124b",
-        "content": "sha256:8fee1d74b8d06f0fabab2709937faab156cca289dda5276494539a559c1ba4af",
+        "blob": "3940f282abb6f48c2dc00a01de5e55b87d64b2f6",
+        "content": "sha256:5bc82009a4f30cd6ce12fb5eddd7f0bc741146e6f582074f6d1fbf5465bb4375",
         "locator": {
-          "kind": "file"
+          "end": 74,
+          "kind": "line_range",
+          "start": 1
         }
       },
       "id": "RLZ-EQZH1P",
@@ -91,7 +93,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "bab862b563d9cfcd13b59d0aed6d3ae0e6c098c3",
+            "blob": "3940f282abb6f48c2dc00a01de5e55b87d64b2f6",
             "content": "sha256:4e568132297bd1cba5578b07d8fd196d1b317e7048f927a07b9ed5290cdd4297",
             "locator": {
               "end": 4,
@@ -108,7 +110,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "bab862b563d9cfcd13b59d0aed6d3ae0e6c098c3",
+            "blob": "3940f282abb6f48c2dc00a01de5e55b87d64b2f6",
             "content": "sha256:4e568132297bd1cba5578b07d8fd196d1b317e7048f927a07b9ed5290cdd4297",
             "locator": {
               "end": 4,
@@ -146,6 +148,21 @@
               "end": 70,
               "kind": "line_range",
               "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The generated role carries its canonical repair-loop instructions without independent authority.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3940f282abb6f48c2dc00a01de5e55b87d64b2f6",
+            "content": "sha256:5bc82009a4f30cd6ce12fb5eddd7f0bc741146e6f582074f6d1fbf5465bb4375",
+            "locator": {
+              "kind": "file"
             }
           },
           "kind": "code"

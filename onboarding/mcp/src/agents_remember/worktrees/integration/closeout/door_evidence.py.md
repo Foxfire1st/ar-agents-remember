@@ -4,7 +4,7 @@
 | --- | --- |
 | verificationStatus | working-candidate |
 
-The body describes the uncommitted LCA L9 working candidate. The commit fields identify the latest real commit touching this source file; they do not claim that the candidate is committed or accepted.
+The body describes the uncommitted source candidate, including the bounded clean-sync review exception. The retained working-candidate label is not a commit or acceptance claim.
 
 ## Governing Overview
 
@@ -20,7 +20,7 @@ Capture the exact code, memory-content, review, and source-base evidence for a c
 
 `require_source_bases_current` proves transitive source lineage and exact immediate code/memory source heads before candidate capture. The evidence fingerprint includes code and memory candidate trees, recorded bases, and review/memory provenance. The memory tree is built through the shared private-index helper with root `memory.md` excluded. Ledger bytes, mapping rows, ledger provenance, and a ledger commit are absent from the evidence model and stale checks.
 
-Review provenance still consumes the current route-review record when applicable. No-code-change and explicit atomic deferrals produce non-applicable provenance; an applicable review must match the candidate tree and task intent and must not block. Its fingerprint is the review record digest. Task evidence files remain confined to the task root and their bytes are hashed. External-memory curator evidence retains its own existing provenance boundary.
+Review provenance still consumes the current route-review record when applicable. No-code-change and explicit atomic deferrals produce non-applicable provenance; an applicable review must either match the candidate tree or satisfy the bounded clean-sync relation; task intent, passing verdict and evidence currentness are still required. Its fingerprint is the review record digest. Task evidence files remain confined to the task root and their bytes are hashed. External-memory curator evidence retains its own existing provenance boundary.
 
 ### Conventions
 
@@ -37,7 +37,14 @@ One evidence snapshot feeds declaration and comparison. The cache exclusion chan
 
 No new file-local follow-up is identified by this source reconciliation.
 
+## Bounded clean-sync review provenance
+
+The closeout door first allows the recorded candidate tree itself. For a different tree, it calls clean_sync_keeps_route_review: the plane-stamped baseCommit must be an ancestor of the current base; the reviewed and incoming changed-path sets must be disjoint; and the current-base-to-candidate after-image map must equal the recorded-base-to-reviewed map exactly. Map identity includes each raw pathname byte sequence, blob and mode. An absent stamp supplies no exception. The door preserves the existing review record digest as its fingerprint and still checks task intent, evidence bytes and dependencies. This exception belongs to the door; require_current_route_review keeps its own exact-current-tree contract.
+
 ## Evidence
+
+- The door admits only exact-tree or bounded clean-sync review provenance, with task evidence still independently validated. [3]
+
 
 ### Docs References
 
@@ -49,7 +56,7 @@ These current source spans identify the implementation owners and the specific a
 
 - The door candidate contains only real candidate/base and review/memory facts. [1]
 - Current source bases and cache-excluding memory tree capture. [2]
-- Review and task evidence remain independently validated. [3]
+
 - Cache changes leave memory candidate identity stable while real content changes it. [4]
 
 ### Cross-Repo References

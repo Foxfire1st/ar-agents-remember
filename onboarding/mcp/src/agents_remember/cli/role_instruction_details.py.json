@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "682d4179b094bd4e50d1f67363fe398d5e4e40c9",
+        "blob": "90b609572aa48fb2a5e13fbf13040c2f337839b0",
         "content": "sha256:60172f37e29d829d04a0c011bfce73b96756f430b581516ca3dce6f39fbf91d8",
         "locator": {
           "kind": "symbol",
@@ -18,6 +18,42 @@
       },
       "rationale": "Composes launch instructions against the adjacent frozen detail targets.",
       "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "90b609572aa48fb2a5e13fbf13040c2f337839b0",
+        "content": "sha256:636a4d62d5d5bd7dc78e7d0e719348663ab2ea3a6bf9388698ca6bb011d2060c",
+        "locator": {
+          "kind": "symbol",
+          "name": "_require_detail_target"
+        }
+      },
+      "id": "RLZ-K57X9H",
+      "invariant": "INV-7KDG7C",
+      "origin": {
+        "handoffEntry": "L170-curator-detail-enforcement",
+        "leaf": "260928-MIK-L170"
+      },
+      "rationale": "This target boundary requires the report-adjacent handover identity and deterministic detail name in the saved handover's canonical folder, supporting real local report directories without borrowing the report's collection destination.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "90b609572aa48fb2a5e13fbf13040c2f337839b0",
+        "content": "sha256:013fd35cb59b3e2dfca99d5eed0a2db2ae42048952a03b6a87761f58fbdd9087",
+        "locator": {
+          "kind": "symbol",
+          "name": "validate_instruction_detail_artifacts"
+        }
+      },
+      "id": "RLZ-NN7YJ0",
+      "invariant": "INV-7KDG7C",
+      "origin": {
+        "handoffEntry": "L170-curator-detail-enforcement",
+        "leaf": "260928-MIK-L170"
+      },
+      "rationale": "This saved-detail boundary combines reference/target identity with a no-follow, nonblocking regular-file open and exact frozen revision before replay or held opening.",
+      "role": "enforcement"
     }
   ],
   "references": {
@@ -26,7 +62,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "682d4179b094bd4e50d1f67363fe398d5e4e40c9",
+            "blob": "90b609572aa48fb2a5e13fbf13040c2f337839b0",
             "content": "sha256:60172f37e29d829d04a0c011bfce73b96756f430b581516ca3dce6f39fbf91d8",
             "locator": {
               "kind": "symbol",
@@ -42,7 +78,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "682d4179b094bd4e50d1f67363fe398d5e4e40c9",
+            "blob": "90b609572aa48fb2a5e13fbf13040c2f337839b0",
             "content": "sha256:013fd35cb59b3e2dfca99d5eed0a2db2ae42048952a03b6a87761f58fbdd9087",
             "locator": {
               "kind": "symbol",
@@ -54,12 +90,12 @@
       ]
     },
     "3": {
-      "note": "The target must be the deterministic sibling of the saved report.",
+      "note": "The detail keeps its deterministic report sibling name and resolves beside the saved handover's canonical path, not the report's collection destination.",
       "targets": [
         {
           "anchor": {
-            "blob": "682d4179b094bd4e50d1f67363fe398d5e4e40c9",
-            "content": "sha256:200af3799f56592d904cbf6a3d5732a05e79d752e469ee0b3e1d7d494a70ca9e",
+            "blob": "90b609572aa48fb2a5e13fbf13040c2f337839b0",
+            "content": "sha256:636a4d62d5d5bd7dc78e7d0e719348663ab2ea3a6bf9388698ca6bb011d2060c",
             "locator": {
               "kind": "symbol",
               "name": "_require_detail_target"
@@ -74,7 +110,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5017d88ddb594f7f312e0a0098abec8585b38244",
+            "blob": "ce3562637ef9146c730bbacc243e73efb61ace86",
             "content": "sha256:b5a859b60be97ef213c9d51289edeff5ceb68c0498bb005434e341ae666af600",
             "locator": {
               "kind": "symbol",
@@ -87,12 +123,12 @@
       ]
     },
     "5": {
-      "note": "Test source distinguishes matching bytes from canonical identity.",
+      "note": "The replay regression refuses a rebound canonical folder despite equal detail bytes and restores a missing valid legacy access link.",
       "targets": [
         {
           "anchor": {
-            "blob": "2e14af08701044f290fa1b5bc98277c90beaeece",
-            "content": "sha256:832220d930d73bdb434a3ac4f32e3610a8363f3007fc18a85392a5be4592eff2",
+            "blob": "57fb922c51f485ce2ca38020f9bbab5e40a0426f",
+            "content": "sha256:974ddafaa5bca02dcb531fc26ef2a93ed3850ce2b5493de1d6e58b601e58a470",
             "locator": {
               "kind": "symbol",
               "name": "test_replay_refuses_a_rebound_report_folder_even_when_detail_bytes_are_unchanged"

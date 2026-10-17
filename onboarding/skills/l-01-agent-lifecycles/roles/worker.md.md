@@ -108,7 +108,18 @@ After its own build/evidence part is complete, Worker marks only matching task s
 If the same check or finding remains failing after three repairs of its own, Worker stops repairing, records what was tried/fails and tells Manager, who decides step-up or another response. This local stop is not an automatic failed-review-round counter and names no model. Required final-byte focused tests/lint/types and truthful blocked evidence remain unchanged.
 
 
+## Direct repair and source-owned sync
+
+Worker repairs a sealed finding directly in its own task files. No plan, account, census, approval or Manager go-ahead precedes that repair. The supported whole commit check and the freeze remain required. The freeze gives each repaired finding its own ID, cause, files and line ranges, discriminating failing-before/passing-after test and result; unrelated changes are listed separately. After code PASS, the direct Curator handoff carries those same entries and changed paths.
+
+When the master line moves, Worker runs its supported leaf sync. If no path changed on both sides, Worker reruns focused tests once and tells Manager; Manager uses its closeout preview. No new freeze goes to Reviewer and no round begins. An overlapping path or a failing focused test instead needs the exact repair and one look by the same Reviewer. Native memory conflicts still go to Curator for content and Manager for capture, verification and staging before Worker continues the supported transaction.
+
+These are instruction obligations, not proof that a particular Worker run complied. Worker still owns no onboarding, acceptance, staging or closeout.
+
 ## Evidence
+
+- The Worker boundary requires direct repair and per-finding freeze evidence and delegates sync procedure to implementation. [16]
+
 
 ### Repo-Internal References
 

@@ -353,7 +353,15 @@ Source account retained from the parked claim (anchor currency not renewed here)
 
 Both the principal account and repeated operative captions use the same current source epochs; historical counts are not a parallel current limit or a claim of executed collection.
 
+## Clean-sync and visible-repair regressions
+
+The clean-sync door module tests real Git path/blob/mode comparison and the original review-digest provenance, including distinct CR/LF pathname identities. Rendered instruction wording and audience tests guard clean-sync no-round behavior, immediate repair, per-finding evidence and Manager precedent handling. Its unit/affected-closure catalog registration is selection metadata, not an executed certificate or an Owner closure plan.
+
 ## Evidence
+
+- The door regression exercises exact clean-sync provenance and byte path discrimination. [1784]
+- Delivered role wording keeps sync, precedent and repair-entry obligations visible. [1785]
+
 
 
 
