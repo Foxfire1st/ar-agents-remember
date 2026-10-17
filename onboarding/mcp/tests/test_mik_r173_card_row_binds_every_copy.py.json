@@ -1,0 +1,174 @@
+{
+  "path": "mcp/tests/test_mik_r173_card_row_binds_every_copy.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "d464857b419ba83e861fca53e10b8983464be9ba",
+        "content": "sha256:f78970c70167dfd00400699fc648c7019a0595f2d97b1f371fd4f3958dd637cc",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_grouped_card_row_binds_the_copies_blobs_when_they_are_present"
+        }
+      },
+      "facet": "The same group reworded at C binds each copy's candidate blob and the item closes.",
+      "id": "PRF-A4X4R8",
+      "invariant": "INV-7V4K9G",
+      "origin": {
+        "handoffEntry": "MIK-R173@v1",
+        "leaf": "260928-MIK-L173"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "d464857b419ba83e861fca53e10b8983464be9ba",
+        "content": "sha256:388761932550c36268a0123b45f10b13dd1a300e24cdd23d8d437a122b5f15fa",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_an_author_supplied_sources_field_is_still_refused"
+        }
+      },
+      "facet": "A hand-off that supplies a sources field is refused because the writer owns it, so the row's sources never become an author input.",
+      "id": "PRF-C0D4Z8",
+      "invariant": "INV-7V4K9G",
+      "origin": {
+        "handoffEntry": "MIK-R173@v1",
+        "leaf": "260928-MIK-L173"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "d464857b419ba83e861fca53e10b8983464be9ba",
+        "content": "sha256:9be05b9da078cf8d6b077727a04316c74b6888bdc93720938787f5d6c49a2144",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_single_source_card_row_is_unchanged"
+        }
+      },
+      "facet": "Both parametrizations -- no item names the card, and its item names only its own path -- keep the one-source row.",
+      "id": "PRF-N8X059",
+      "invariant": "INV-7V4K9G",
+      "origin": {
+        "handoffEntry": "MIK-R173@v1",
+        "leaf": "260928-MIK-L173"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "d464857b419ba83e861fca53e10b8983464be9ba",
+        "content": "sha256:21b53c5bf18a202eb89d61bd833879fd2e50c4ed00eedc29e0e250dae297308b",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_an_overview_row_keeps_its_refusal_and_binds_its_items_sources"
+        }
+      },
+      "facet": "An overview no item covers is refused with the original problem, while an overview whose item names its governed files binds exactly those sources.",
+      "id": "PRF-R90E8Y",
+      "invariant": "INV-7V4K9G",
+      "origin": {
+        "handoffEntry": "MIK-R173@v1",
+        "leaf": "260928-MIK-L173"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "d464857b419ba83e861fca53e10b8983464be9ba",
+        "content": "sha256:1ca00edbe823cf704b557c025fcee0e6038903b7f86be3c3ab8171389c16e82c",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_card_row_binds_every_copy_of_its_source"
+        }
+      },
+      "facet": "A ten-copy group deleted at C: the leaf worklist raises the item open with ten absent sources, the writer's own snapshot produces a row carrying ten (path, absent) pairs, and the re-run worklist returns the item satisfiedBy that row.",
+      "id": "PRF-V640YP",
+      "invariant": "INV-7V4K9G",
+      "origin": {
+        "handoffEntry": "MIK-R173@v1",
+        "leaf": "260928-MIK-L173"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "A card row binds all ten sources of its deleted group, and the item comes back satisfied by that row.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d464857b419ba83e861fca53e10b8983464be9ba",
+            "content": "sha256:1ca00edbe823cf704b557c025fcee0e6038903b7f86be3c3ab8171389c16e82c",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_card_row_binds_every_copy_of_its_source"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "A reworded group binds each copy's own blob.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d464857b419ba83e861fca53e10b8983464be9ba",
+            "content": "sha256:f78970c70167dfd00400699fc648c7019a0595f2d97b1f371fd4f3958dd637cc",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_grouped_card_row_binds_the_copies_blobs_when_they_are_present"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "A card with one source keeps its one-source row whether or not an item names it.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d464857b419ba83e861fca53e10b8983464be9ba",
+            "content": "sha256:9be05b9da078cf8d6b077727a04316c74b6888bdc93720938787f5d6c49a2144",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_single_source_card_row_is_unchanged"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "An uncovered overview is refused and a covered one binds its item's files.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d464857b419ba83e861fca53e10b8983464be9ba",
+            "content": "sha256:21b53c5bf18a202eb89d61bd833879fd2e50c4ed00eedc29e0e250dae297308b",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_an_overview_row_keeps_its_refusal_and_binds_its_items_sources"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "An author-supplied `sources` field is still refused.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d464857b419ba83e861fca53e10b8983464be9ba",
+            "content": "sha256:388761932550c36268a0123b45f10b13dd1a300e24cdd23d8d437a122b5f15fa",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_an_author_supplied_sources_field_is_still_refused"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}
