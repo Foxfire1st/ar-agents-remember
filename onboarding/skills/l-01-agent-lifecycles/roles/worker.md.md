@@ -168,7 +168,7 @@ independent reviewer rejection permits a successor.
 
 The Worker ends with a requirement-satisfying candidate, focused tests/lint/types passing on final bytes, and its report with the Reviewer. A failed or unrun check is reported as such only when it cannot be made to pass on its own ground.
 
-Own work/instrument slips and invalid caller input are repaired through the same admitted tool and work continues. Stops remain permission prompts, correct-input product/AR refusals or unowned state, requirement-meaning questions, and effects outside the worktree/scratch/task. An unfinished final turn names what is awaited and from whom. Worker/Reviewer repairs answer the required property and construction, not a succession of examples; extra-round requests carry that account.
+Own work/instrument slips and invalid caller input are repaired through the same admitted tool and work continues. Stops remain permission prompts, correct-input product/AR refusals or unowned state, requirement-meaning questions, and effects outside the worktree/scratch/task. An unfinished final turn sends what is awaited, and from whom, to its parent with `role_message` on `agents-remember-task`. Worker/Reviewer repairs answer the required property and construction, not a succession of examples; extra-round requests carry that account.
 
 The review budget is the settings number `orchestration.loops.defaults.maxRounds`, read at each begin; the effective task limit includes approved extras and is read from `task_doc.reviewState.limit`. CODE and MEMORY retain separate counts under the same setting. Beyond-limit work needs recorded Architect or developer approval; the Manager asks the task Architect, not the developer.
 

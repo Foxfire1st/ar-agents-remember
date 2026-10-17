@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "1d8ff0d5b32a38eb4b384c61d6beb6855cd9768e",
+        "blob": "541f15fba478277772b410bd15974fb889feaabc",
         "content": "sha256:0a4d3056d41cc4a650de3dd5cc0eb74545e21ff0ca47c4823f77c52c4ab69cda",
         "locator": {
           "end": 8,
@@ -22,8 +22,8 @@
     },
     {
       "anchor": {
-        "blob": "1d8ff0d5b32a38eb4b384c61d6beb6855cd9768e",
-        "content": "sha256:fb88b4cb11d7d27e66b17718d83c21144cbe42b604b12e4b12dde8eac6be3a9b",
+        "blob": "541f15fba478277772b410bd15974fb889feaabc",
+        "content": "sha256:3777b7cda5bc54537ba433f45e2058507fddc5ad723fcd1769c521855a2e3889",
         "locator": {
           "end": 13,
           "kind": "line_range",
@@ -41,7 +41,7 @@
     },
     {
       "anchor": {
-        "blob": "1d8ff0d5b32a38eb4b384c61d6beb6855cd9768e",
+        "blob": "541f15fba478277772b410bd15974fb889feaabc",
         "content": "sha256:1474575fe1142856b37b1106b95e578f8ad8ae8c1982fe29d9324ceee1abb31e",
         "locator": {
           "end": 17,
@@ -60,8 +60,8 @@
     },
     {
       "anchor": {
-        "blob": "1d8ff0d5b32a38eb4b384c61d6beb6855cd9768e",
-        "content": "sha256:8b6920aa36e98c45ca2ff5f34c7378698411e1b7769d2d63b602d32330f49300",
+        "blob": "541f15fba478277772b410bd15974fb889feaabc",
+        "content": "sha256:ef52b8633abf33e327cc8c7d5fcd5c0e8256de40797c52340738b2714ee1a36a",
         "locator": {
           "end": 23,
           "kind": "line_range",
@@ -79,8 +79,8 @@
     },
     {
       "anchor": {
-        "blob": "1d8ff0d5b32a38eb4b384c61d6beb6855cd9768e",
-        "content": "sha256:987e84087b01f41ed3c0b942ef8667bc4e3c675089a471ee387279b16c0afb73",
+        "blob": "541f15fba478277772b410bd15974fb889feaabc",
+        "content": "sha256:b5dd7e76af9ae885092e013ed37f601ae0f3fb90bd166d075e39de593a088c20",
         "locator": {
           "end": 23,
           "kind": "line_range",
@@ -98,7 +98,24 @@
     },
     {
       "anchor": {
-        "blob": "1d8ff0d5b32a38eb4b384c61d6beb6855cd9768e",
+        "blob": "541f15fba478277772b410bd15974fb889feaabc",
+        "content": "sha256:743206fd0aa45bc40d42fdaa4c664eb1ceeee8b594a9f3bc20e95988ed500d8f",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-EB0X1K",
+      "invariant": "INV-QZW2X2",
+      "origin": {
+        "handoffEntry": "L172-INV-C",
+        "leaf": "260928-MIK-L172"
+      },
+      "rationale": "The all-role orientation carries the same reply rule for every role, including the sending of what is awaited.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "541f15fba478277772b410bd15974fb889feaabc",
         "content": "sha256:90c1134af65243f7ac535323798edcb2b590b7ff96945970bce4dfdc463ef128",
         "locator": {
           "end": 4,
@@ -117,8 +134,8 @@
     },
     {
       "anchor": {
-        "blob": "1d8ff0d5b32a38eb4b384c61d6beb6855cd9768e",
-        "content": "sha256:9443caffe60f07440799307778a8e4db7ec6f5e7bc77e7e863a352d2e51cb0c4",
+        "blob": "541f15fba478277772b410bd15974fb889feaabc",
+        "content": "sha256:c011e78b94b97cccdcf45e5fc1da33852adad5ee8b7a50f9fa6bc1d876a02383",
         "locator": {
           "end": 17,
           "kind": "line_range",
@@ -158,7 +175,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1d8ff0d5b32a38eb4b384c61d6beb6855cd9768e",
+            "blob": "541f15fba478277772b410bd15974fb889feaabc",
             "content": "sha256:b2ac0f1d7dbc691a828dfd084d73d9e6fd25958ff2ece342495a65631dfa23bb",
             "locator": {
               "end": 26,

@@ -59,6 +59,10 @@ Positive obligation and removal cases now use the shared delivered-surface oracl
 
 The added wording case checks rendered Worker, Manager and Reviewer capsules and the Worker brief. It asserts the clean-sync no-freeze/no-round path, exact repair path, Manager precedent handling, no pre-repair approval, per-finding evidence and no-round return for missing entries. These are source assertions about delivered instruction text, not proof that an agent performed the process.
 
+## 260928-MIK-L172 — the capsules send a return
+
+The wording suite now pins the rule-1 change. The new case `test_the_capsules_send_a_return_and_never_point_at_the_agent_chat` requires the Worker, Reviewer, Curator and Manager stage capsules to carry the sending clause, every orientation capsule of those four roles to carry the reply rule, and the acceptance home to carry the artifact clause, and it fails if any capsule of those roles still couples the agent's chat with an answer or a report. The router, orientation and hand-over sentences and the stage-end facets are re-pinned to the shipped text. These remain source and compilation assertions.
+
 ## Evidence
 
 - The wording case pins the conditional sync and visible direct-repair clauses at their delivered audiences. [9]

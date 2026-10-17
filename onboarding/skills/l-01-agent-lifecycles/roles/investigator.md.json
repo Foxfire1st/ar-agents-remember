@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "0132f87337a9300c812803a830a8117bd94b1230",
-        "content": "sha256:f311f843cabda40d3ae8fc6016b55385067edb6f65209a9fa46f69b10f1ed145",
+        "blob": "61e88989c300f3783c4e50987a0ec98378fc2ab0",
+        "content": "sha256:4cf9656f8621f433e4db4c68b65f2b168fc66cab629ded109fdc9b473357f82e",
         "locator": {
           "kind": "file"
         }
@@ -20,8 +20,8 @@
     },
     {
       "anchor": {
-        "blob": "0132f87337a9300c812803a830a8117bd94b1230",
-        "content": "sha256:f311f843cabda40d3ae8fc6016b55385067edb6f65209a9fa46f69b10f1ed145",
+        "blob": "61e88989c300f3783c4e50987a0ec98378fc2ab0",
+        "content": "sha256:4cf9656f8621f433e4db4c68b65f2b168fc66cab629ded109fdc9b473357f82e",
         "locator": {
           "kind": "file"
         }
@@ -37,8 +37,8 @@
     },
     {
       "anchor": {
-        "blob": "0132f87337a9300c812803a830a8117bd94b1230",
-        "content": "sha256:f311f843cabda40d3ae8fc6016b55385067edb6f65209a9fa46f69b10f1ed145",
+        "blob": "61e88989c300f3783c4e50987a0ec98378fc2ab0",
+        "content": "sha256:4cf9656f8621f433e4db4c68b65f2b168fc66cab629ded109fdc9b473357f82e",
         "locator": {
           "kind": "file"
         }
@@ -54,8 +54,8 @@
     },
     {
       "anchor": {
-        "blob": "0132f87337a9300c812803a830a8117bd94b1230",
-        "content": "sha256:f311f843cabda40d3ae8fc6016b55385067edb6f65209a9fa46f69b10f1ed145",
+        "blob": "61e88989c300f3783c4e50987a0ec98378fc2ab0",
+        "content": "sha256:4cf9656f8621f433e4db4c68b65f2b168fc66cab629ded109fdc9b473357f82e",
         "locator": {
           "kind": "file"
         }
@@ -71,8 +71,8 @@
     },
     {
       "anchor": {
-        "blob": "0132f87337a9300c812803a830a8117bd94b1230",
-        "content": "sha256:f311f843cabda40d3ae8fc6016b55385067edb6f65209a9fa46f69b10f1ed145",
+        "blob": "61e88989c300f3783c4e50987a0ec98378fc2ab0",
+        "content": "sha256:4cf9656f8621f433e4db4c68b65f2b168fc66cab629ded109fdc9b473357f82e",
         "locator": {
           "kind": "file"
         }
@@ -88,8 +88,8 @@
     },
     {
       "anchor": {
-        "blob": "0132f87337a9300c812803a830a8117bd94b1230",
-        "content": "sha256:f311f843cabda40d3ae8fc6016b55385067edb6f65209a9fa46f69b10f1ed145",
+        "blob": "61e88989c300f3783c4e50987a0ec98378fc2ab0",
+        "content": "sha256:4cf9656f8621f433e4db4c68b65f2b168fc66cab629ded109fdc9b473357f82e",
         "locator": {
           "kind": "file"
         }
@@ -105,8 +105,8 @@
     },
     {
       "anchor": {
-        "blob": "0132f87337a9300c812803a830a8117bd94b1230",
-        "content": "sha256:f311f843cabda40d3ae8fc6016b55385067edb6f65209a9fa46f69b10f1ed145",
+        "blob": "61e88989c300f3783c4e50987a0ec98378fc2ab0",
+        "content": "sha256:4cf9656f8621f433e4db4c68b65f2b168fc66cab629ded109fdc9b473357f82e",
         "locator": {
           "kind": "file"
         }
@@ -122,7 +122,7 @@
     },
     {
       "anchor": {
-        "blob": "0132f87337a9300c812803a830a8117bd94b1230",
+        "blob": "61e88989c300f3783c4e50987a0ec98378fc2ab0",
         "content": "sha256:e881e74a4df65491672d2262d8bd37652610292484ddcf59e4edd03acbe01619",
         "locator": {
           "end": 10,
@@ -141,8 +141,8 @@
     },
     {
       "anchor": {
-        "blob": "0132f87337a9300c812803a830a8117bd94b1230",
-        "content": "sha256:f311f843cabda40d3ae8fc6016b55385067edb6f65209a9fa46f69b10f1ed145",
+        "blob": "61e88989c300f3783c4e50987a0ec98378fc2ab0",
+        "content": "sha256:4cf9656f8621f433e4db4c68b65f2b168fc66cab629ded109fdc9b473357f82e",
         "locator": {
           "kind": "file"
         }
@@ -155,6 +155,23 @@
       },
       "rationale": "The source preserves the old report-first and explicit-order boundary.",
       "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "61e88989c300f3783c4e50987a0ec98378fc2ab0",
+        "content": "sha256:4cf9656f8621f433e4db4c68b65f2b168fc66cab629ded109fdc9b473357f82e",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-Z9Z18P",
+      "invariant": "INV-QZW2X2",
+      "origin": {
+        "handoffEntry": "L172-INV-C",
+        "leaf": "260928-MIK-L172"
+      },
+      "rationale": "The Investigator sends its report to the supplied parent role/task address, and only a parentless run leaves it to the developer's chat.",
+      "role": "enforcement"
     }
   ],
   "references": {

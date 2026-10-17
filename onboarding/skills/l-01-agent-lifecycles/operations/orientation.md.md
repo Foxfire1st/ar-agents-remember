@@ -14,7 +14,7 @@ The instruction owns the session orientation that resolves context and source be
 
 ## Current composition and authoring contract
 
-Orientation still binds exact role/task/root/report facts, native task-file reads and canonical task_doc writes, scoped task-server discovery, parent questions, quoted-answer provenance and permission non-bypass. These common instructions stay in the all-role region.
+Orientation still binds exact role/task/root/report facts, native task-file reads and canonical task_doc writes, scoped task-server discovery, parent questions, quoted-answer provenance and permission non-bypass. It also carries the reply rule: an agent's reply in a turn reaches a sender only when that sender waits on its own call, and otherwise the hand-over is sent with `role_message` on `agents-remember-task`; an agent that ends its turn unfinished sends what it awaits, and from whom. These common instructions stay in the all-role region.
 
 A final Curator-only region supplies the existing development producer boundary in this stage: starting server or same-build CLI, clean main serving commit as ruler, no leaf self-production, fixture/scratch proof only, no install, guard disabling or substitute producer. It does not permit writes during orientation or give other roles a new producer.
 

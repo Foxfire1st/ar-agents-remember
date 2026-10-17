@@ -83,6 +83,10 @@ The launch preparer consumes resolved task identity and canonical files without 
 
 The condition is now parent presence: every parentable role (orchestrator, manager, worker, reviewer, curator, investigator) gets the parent-routed `developerQuestions` naming the actual parent agent id, and the leaf Worker, Reviewer and Curator additionally get `leafSeats` peer routes with no routine result ordered to the parent. Every parentless or dashboard launch keeps the base sentence byte for byte; native parent identity and unrelated tool grants remain unchanged; the approved R98 concern/delegation wording exception is stated below.
 
+## 260928-MIK-L172 — the compiled hand-over sends, it does not point at the chat
+
+The `roleTools.usage` value this module compiles now tells a role that a reply in a turn reaches its sender only when that sender waits on its own call, and that otherwise the answer goes with `role_message` to that agent id; a refusal still names its reason. The compiled capsule keeps the same tool grants, parent identity and report path, so this is instruction text only.
+
 ## Host-resolved choices, folders, copies and instructions
 
 > **Retained historical source account — superseded by the current contract:**

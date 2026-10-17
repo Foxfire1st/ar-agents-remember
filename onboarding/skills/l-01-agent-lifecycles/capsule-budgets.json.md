@@ -21,7 +21,7 @@ Fourteen admitted step files have separate `step_details` rows. L88 and its repa
 
 ## Measured instruction changes
 
-decisions_L170 records ten changed capsule measurements for the conditional sync, precedent, direct-repair and evidence obligations. The registry still uses capped eleven-tenths budgets with the existing capsule and step ceilings. Stored measurements are declarations and retained compiler provenance; reading them is not a fresh compiler run, test execution or native-host grade.
+decisions_L170 records ten changed capsule measurements for the conditional sync, precedent, direct-repair and evidence obligations. decisions_L172 records 22 changed capsule measurements for the rule-1 change that makes the role and operation texts send what is handed over and awaited with `role_message` instead of pointing at the agent's own chat; `curator/curation` replaces text and adds none, standing at 3,698 words, and no capsule exceeds 3,700. The registry still uses capped eleven-tenths budgets with the existing capsule and step ceilings. Stored measurements are declarations and retained compiler provenance; reading them is not a fresh compiler run, test execution or native-host grade.
 
 ## Evidence
 

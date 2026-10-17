@@ -1,6 +1,24 @@
 {
   "path": "skills/l-01-agent-lifecycles/core/acceptance.md",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "2a112bdb1148478a8a719636588cb908fab01cac",
+        "content": "sha256:d5befbda41400231019fb7e8114fe9dede7e0156279e01e3a63477f8b2b4bcb7",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-AH7N65",
+      "invariant": "INV-QZW2X2",
+      "origin": {
+        "handoffEntry": "L172-INV-C",
+        "leaf": "260928-MIK-L172"
+      },
+      "rationale": "The acceptance home states that a written artifact is sent with role_message to the agent that waits, and that a file on record wakes no one.",
+      "role": "enforcement"
+    }
+  ],
   "references": {
     "1": {
       "note": "Mechanical completion, artifact-blind relay, owner validation and unchanged authority.\n\nAnchor: \"# Core — Completion Truth And Handoff Acceptance (one home — this file owns the truth boundary)\"",
@@ -24,7 +42,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4f6181bc4f0045bcaf1828fe6e777bf68c490a9a",
+            "blob": "2a112bdb1148478a8a719636588cb908fab01cac",
             "content": "sha256:e45d40052ad3a1054cc3d351cef0e1c7cd4fb683d9a2bffb1ed5a12ea8dd65b5",
             "locator": {
               "end": 77,
@@ -41,7 +59,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4f6181bc4f0045bcaf1828fe6e777bf68c490a9a",
+            "blob": "2a112bdb1148478a8a719636588cb908fab01cac",
             "content": "sha256:81a39d100c2261a6c5b71e4c22154182bb73da55478cd87b6feed7a696bafdc8",
             "locator": {
               "end": 116,
@@ -58,7 +76,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4f6181bc4f0045bcaf1828fe6e777bf68c490a9a",
+            "blob": "2a112bdb1148478a8a719636588cb908fab01cac",
             "content": "sha256:5364aa15699f91bebe4d5cff19d19691b72f4efb0d62c5d847bf7e49f66f4748",
             "locator": {
               "end": 142,
@@ -75,7 +93,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "eca15d36771f6cdd4ceabe7b07f0c4c93aa0cbdc",
+            "blob": "2a112bdb1148478a8a719636588cb908fab01cac",
             "content": "sha256:f3e8156709459f850000138c7a722004f1c0a9b2d2f5475959b948d80551a2bd",
             "locator": {
               "end": 42,
@@ -92,7 +110,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "eca15d36771f6cdd4ceabe7b07f0c4c93aa0cbdc",
+            "blob": "2a112bdb1148478a8a719636588cb908fab01cac",
             "content": "sha256:e45d40052ad3a1054cc3d351cef0e1c7cd4fb683d9a2bffb1ed5a12ea8dd65b5",
             "locator": {
               "end": 77,
@@ -109,7 +127,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "eca15d36771f6cdd4ceabe7b07f0c4c93aa0cbdc",
+            "blob": "2a112bdb1148478a8a719636588cb908fab01cac",
             "content": "sha256:81a39d100c2261a6c5b71e4c22154182bb73da55478cd87b6feed7a696bafdc8",
             "locator": {
               "end": 116,
@@ -126,7 +144,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "eca15d36771f6cdd4ceabe7b07f0c4c93aa0cbdc",
+            "blob": "2a112bdb1148478a8a719636588cb908fab01cac",
             "content": "sha256:4ec210df4448129f58df7e7d8f70eac24de904054c6469ff5d08d80ca772021a",
             "locator": {
               "end": 124,
@@ -143,7 +161,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "eca15d36771f6cdd4ceabe7b07f0c4c93aa0cbdc",
+            "blob": "2a112bdb1148478a8a719636588cb908fab01cac",
             "content": "sha256:5364aa15699f91bebe4d5cff19d19691b72f4efb0d62c5d847bf7e49f66f4748",
             "locator": {
               "end": 142,
@@ -160,7 +178,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d6fc9c48cab61bddf2118950eb2e1c6de48ff308",
+            "blob": "0d6a077cfd4c3913268626c0ab9f40ea6777fece",
             "content": "sha256:3a10683d368086ac0139fc1328c73ac7fc08613e6e2c193ba7964ab30b09258f",
             "locator": {
               "end": 20,
@@ -195,7 +213,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4f6181bc4f0045bcaf1828fe6e777bf68c490a9a",
+            "blob": "2a112bdb1148478a8a719636588cb908fab01cac",
             "content": "sha256:f3e8156709459f850000138c7a722004f1c0a9b2d2f5475959b948d80551a2bd",
             "locator": {
               "end": 42,

@@ -1,5 +1,313 @@
 {
   "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.test.ts",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "02028fc1ac562ad5c7f21f4fe9ca6b9c1a254de1",
+        "content": "sha256:c3a046543a6f6f7a7103cb121c262c9e5b92bb775be24d5cb7f614bae8f2938d",
+        "locator": {
+          "kind": "symbol",
+          "name": "the last line is shortened to 300 characters"
+        }
+      },
+      "facet": "A last line longer than 300 characters is cut to 300 in the wake.",
+      "id": "PRF-09JM5B",
+      "invariant": "INV-1ZKP4R",
+      "origin": {
+        "handoffEntry": "L172-TURN-END-WAKE",
+        "leaf": "260928-MIK-L172"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "02028fc1ac562ad5c7f21f4fe9ca6b9c1a254de1",
+        "content": "sha256:7f9357d76cece40b447f597a588c43a0e8e597ebda9792b4c892223347f5bccd",
+        "locator": {
+          "kind": "symbol",
+          "name": "a line for a parent in a turn waits for that turn and is not sent into it (MIK-R172@v2 rule 6)"
+        }
+      },
+      "facet": "A recipient in a turn is not steered into; the line is held and goes when that turn ends.",
+      "id": "PRF-0VFQAF",
+      "invariant": "INV-1ZKP4R",
+      "origin": {
+        "handoffEntry": "L172-TURN-END-WAKE",
+        "leaf": "260928-MIK-L172"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "02028fc1ac562ad5c7f21f4fe9ca6b9c1a254de1",
+        "content": "sha256:0d8d143294ebaa7bd28c5a584bb1fb62dfde1700278687512accb40f33b1737f",
+        "locator": {
+          "kind": "symbol",
+          "name": "a refused return gives the line (MIK-R172 rule 4)"
+        }
+      },
+      "facet": "A `role_message` call answered as refused does not count as a return, so the line goes out.",
+      "id": "PRF-1PXCQM",
+      "invariant": "INV-1ZKP4R",
+      "origin": {
+        "handoffEntry": "L172-TURN-END-WAKE",
+        "leaf": "260928-MIK-L172"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "02028fc1ac562ad5c7f21f4fe9ca6b9c1a254de1",
+        "content": "sha256:71ec7fd1279ea5dfe4fdbc9d548ef1ed5e3643dafd7d259d51589dbba61674c9",
+        "locator": {
+          "kind": "symbol",
+          "name": "a parent whose provider is unknown is treated as one that does not steer"
+        }
+      },
+      "facet": "An absent provider reads as unknown, and unknown holds.",
+      "id": "PRF-5DNF5B",
+      "invariant": "INV-1ZKP4R",
+      "origin": {
+        "handoffEntry": "L172-TURN-END-WAKE",
+        "leaf": "260928-MIK-L172"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "02028fc1ac562ad5c7f21f4fe9ca6b9c1a254de1",
+        "content": "sha256:cdde4e3b554f9983ce065886e826e027ad684bd35e97ba88cd82b7e5ec0d1c73",
+        "locator": {
+          "kind": "symbol",
+          "name": "turn-end order survives an in-flight prior flush (L172-R4-F02, schedule one)"
+        }
+      },
+      "facet": "A later flush waits for the one in flight, so an earlier line is never overtaken.",
+      "id": "PRF-6CBT49",
+      "invariant": "INV-1ZKP4R",
+      "origin": {
+        "handoffEntry": "L172-TURN-END-WAKE",
+        "leaf": "260928-MIK-L172"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "02028fc1ac562ad5c7f21f4fe9ca6b9c1a254de1",
+        "content": "sha256:1dea8a869df4fbaa45106b9481b2537fb2e95e22f37da77fe37b4d0befebd48b",
+        "locator": {
+          "kind": "symbol",
+          "name": "held lines are sent in the order the turns ended, across a requeue (rule 6)"
+        }
+      },
+      "facet": "Three lines held for one running parent are delivered together, in the order their turns ended, once that turn ends. The test's own failed-send call is never reached because the parent is still in its turn, so it exercises held order, not a requeue.",
+      "id": "PRF-BHBAB8",
+      "invariant": "INV-1ZKP4R",
+      "origin": {
+        "handoffEntry": "L172-TURN-END-WAKE",
+        "leaf": "260928-MIK-L172"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "02028fc1ac562ad5c7f21f4fe9ca6b9c1a254de1",
+        "content": "sha256:49d372d200894d99cad37a40559ced49e062a4a8057f4294d13dc06370c1a1c1",
+        "locator": {
+          "kind": "symbol",
+          "name": "a second batch is not sent into the parent turn the first batch started (L172-R4-F01)"
+        }
+      },
+      "facet": "The gate is asked again at each actual send, and the unsent tail stays owed.",
+      "id": "PRF-DKQNE4",
+      "invariant": "INV-1ZKP4R",
+      "origin": {
+        "handoffEntry": "L172-TURN-END-WAKE",
+        "leaf": "260928-MIK-L172"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "02028fc1ac562ad5c7f21f4fe9ca6b9c1a254de1",
+        "content": "sha256:91c9a4f28f6bc3cf705e73553fa930bd44e66e3197dd087c1cb17722fe929817",
+        "locator": {
+          "kind": "symbol",
+          "name": "provider history is reclaimed on archive and capped (L172-R4-F03)"
+        }
+      },
+      "facet": "Archive reclaims the provider entry and the history keeps its named bound.",
+      "id": "PRF-FHYFYQ",
+      "invariant": "INV-1ZKP4R",
+      "origin": {
+        "handoffEntry": "L172-TURN-END-WAKE",
+        "leaf": "260928-MIK-L172"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "02028fc1ac562ad5c7f21f4fe9ca6b9c1a254de1",
+        "content": "sha256:b4efde863e683bc72a89dc2a759dcfb6e5b73614251e266dc0095e10df6082c4",
+        "locator": {
+          "kind": "symbol",
+          "name": "a silent end sends one line with the facts and the agent's last line"
+        }
+      },
+      "facet": "A silent end's single line names the role, agent, task and newest report and carries that turn's last line.",
+      "id": "PRF-GQ2EVM",
+      "invariant": "INV-1ZKP4R",
+      "origin": {
+        "handoffEntry": "L172-TURN-END-WAKE",
+        "leaf": "260928-MIK-L172"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "02028fc1ac562ad5c7f21f4fe9ca6b9c1a254de1",
+        "content": "sha256:b4d955c0f0149c2e4e1a89ea2c444947724665795bb13c065c58bd9d29a0aae8",
+        "locator": {
+          "kind": "symbol",
+          "name": "an empty last text says no text and an unreadable one says so"
+        }
+      },
+      "facet": "An empty turn says `no text` and an unreadable timeline says `unreadable`, and neither suppresses the line.",
+      "id": "PRF-JBJD6A",
+      "invariant": "INV-1ZKP4R",
+      "origin": {
+        "handoffEntry": "L172-TURN-END-WAKE",
+        "leaf": "260928-MIK-L172"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "02028fc1ac562ad5c7f21f4fe9ca6b9c1a254de1",
+        "content": "sha256:34e2c008f921658b4dafa829be4331b3b4cceba17d4e1c6b842be2106788eaee",
+        "locator": {
+          "kind": "symbol",
+          "name": "a parent whose provider is known to steer gets the line at once (MIK-R172@v2 rule 6)"
+        }
+      },
+      "facet": "Named steering knowledge is the only case in which a mid-turn recipient takes the line immediately.",
+      "id": "PRF-KCYXP2",
+      "invariant": "INV-1ZKP4R",
+      "origin": {
+        "handoffEntry": "L172-TURN-END-WAKE",
+        "leaf": "260928-MIK-L172"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "02028fc1ac562ad5c7f21f4fe9ca6b9c1a254de1",
+        "content": "sha256:f576654d8678badd8189f5f4e05e6dfebfbcb2feebb373cd7caf4eeec51538b2",
+        "locator": {
+          "kind": "symbol",
+          "name": "turn-end order survives Manager rebinding (L172-R4-F02, schedule two)"
+        }
+      },
+      "facet": "Rebinding to the current Manager keeps the order the turns ended in.",
+      "id": "PRF-M4B1KY",
+      "invariant": "INV-1ZKP4R",
+      "origin": {
+        "handoffEntry": "L172-TURN-END-WAKE",
+        "leaf": "260928-MIK-L172"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "02028fc1ac562ad5c7f21f4fe9ca6b9c1a254de1",
+        "content": "sha256:7ed48b55cdeb12dba6e278cdac1fe094a6e9eaa933507e7d5e54a9c98b6dba5b",
+        "locator": {
+          "kind": "symbol",
+          "name": "an agent whose recorded parent is archived wakes the current Manager of its master"
+        }
+      },
+      "facet": "An archived parent's ended turn wakes the current Manager of the same master.",
+      "id": "PRF-M65N8C",
+      "invariant": "INV-1ZKP4R",
+      "origin": {
+        "handoffEntry": "L172-TURN-END-WAKE",
+        "leaf": "260928-MIK-L172"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "02028fc1ac562ad5c7f21f4fe9ca6b9c1a254de1",
+        "content": "sha256:349bf3a5f00712194e05b8e09370aa5ced9da29fed823576c9eeebd31d8bfac1",
+        "locator": {
+          "kind": "symbol",
+          "name": "a real failed send keeps the debt and is retried in order, once (L172-R4-F02 retry)"
+        }
+      },
+      "facet": "A throwing sender leaves the debt owed and the retry delivers it once, in order.",
+      "id": "PRF-PFG976",
+      "invariant": "INV-1ZKP4R",
+      "origin": {
+        "handoffEntry": "L172-TURN-END-WAKE",
+        "leaf": "260928-MIK-L172"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "02028fc1ac562ad5c7f21f4fe9ca6b9c1a254de1",
+        "content": "sha256:76ce9a73110b214716ddd00ec9a633570a932b405a50dfbaf87a2f1a2f2092e6",
+        "locator": {
+          "kind": "symbol",
+          "name": "a held line reaches the successor when the archive has no alternate yet (L172-R1-F02)"
+        }
+      },
+      "facet": "With no alternate recorded at archive time the line stays owed and reaches the successor exactly once.",
+      "id": "PRF-QSEPFH",
+      "invariant": "INV-1ZKP4R",
+      "origin": {
+        "handoffEntry": "L172-TURN-END-WAKE",
+        "leaf": "260928-MIK-L172"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "02028fc1ac562ad5c7f21f4fe9ca6b9c1a254de1",
+        "content": "sha256:c104ed9463d2031b92566c6dbf5eaf9bef515f8f1ffccf3abd28e85b8a8f5c0c",
+        "locator": {
+          "kind": "symbol",
+          "name": "an empty ended turn says no text, never an earlier turn's text (L172-R1-F01)"
+        }
+      },
+      "facet": "An ended turn with no text of its own reports `no text` instead of repeating an earlier turn's line.",
+      "id": "PRF-VEZBDV",
+      "invariant": "INV-1ZKP4R",
+      "origin": {
+        "handoffEntry": "L172-TURN-END-WAKE",
+        "leaf": "260928-MIK-L172"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "02028fc1ac562ad5c7f21f4fe9ca6b9c1a254de1",
+        "content": "sha256:bf63407c151714dd5e5e018e0889ed7f45b346f4ca3c094fc982ecc23a883c25",
+        "locator": {
+          "kind": "symbol",
+          "name": "an agent the agent list does not hold is named in the host log once"
+        }
+      },
+      "facet": "An agent outside the product's list yields no line and one host-log entry, not silence.",
+      "id": "PRF-ZSC2T3",
+      "invariant": "INV-1ZKP4R",
+      "origin": {
+        "handoffEntry": "L172-TURN-END-WAKE",
+        "leaf": "260928-MIK-L172"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "02028fc1ac562ad5c7f21f4fe9ca6b9c1a254de1",
+        "content": "sha256:1b0b7a0284fd0f028677b03f245b9fb9dbbbbb42c51f054cfa23b03b9373c642",
+        "locator": {
+          "kind": "symbol",
+          "name": "a return in an earlier turn does not silence this turn's line (L172-R1-F01)"
+        }
+      },
+      "facet": "An accepted return in an earlier turn does not suppress the ended turn's line.",
+      "id": "PRF-ZXQ4R7",
+      "invariant": "INV-1ZKP4R",
+      "origin": {
+        "handoffEntry": "L172-TURN-END-WAKE",
+        "leaf": "260928-MIK-L172"
+      }
+    }
+  ],
   "realizes": [],
   "references": {
     "1": {

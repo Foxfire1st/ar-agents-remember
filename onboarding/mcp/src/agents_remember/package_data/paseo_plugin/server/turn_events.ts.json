@@ -1,6 +1,25 @@
 {
   "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_events.ts",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "5ccc7bf4679fed087954ded749224fb69c462518",
+        "content": "sha256:63242da817153793e5a05f3743450bfb5205ecd7e03da5ad1a457071e88d0593",
+        "locator": {
+          "kind": "symbol",
+          "name": "registerParentWakeEvents"
+        }
+      },
+      "id": "RLZ-1HAN2T",
+      "invariant": "INV-1ZKP4R",
+      "origin": {
+        "handoffEntry": "L172-TURN-END-WAKE",
+        "leaf": "260928-MIK-L172"
+      },
+      "rationale": "Feeds the host event, its timeline and its turn id to the decision, and prints the once-only entry for an agent the product's list does not hold.",
+      "role": "support"
+    }
+  ],
   "references": {
     "1": {
       "note": "Native host handlers and explicit steering sends.",

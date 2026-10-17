@@ -88,6 +88,10 @@ The router now states the all-role harness freedom and its bounds: every role or
 
 The router now states the parent rule: with a parent named in `host.parent`, every question requiring the developer's decision goes to that parent with `role_message` on `agents-remember-task`, with what is held back and what is recommended; the agent keeps working, and when nothing independent remains it records its state and ends waiting for its parent's message. A refused delivery stays pending under **Pending developer questions** and is retried before the turn ends; only a parentless or unreachable-parent agent asks in its own chat. A relayed answer is the developer's only with the quoted words and the receiving agent's id. The retired universal own-chat sentence is registered so it cannot return unnoticed.
 
+## 260928-MIK-L172 — a reply reaches the sender only when it waits
+
+The router now separates a reply from a hand-over. A message another agent sent begins with a `From` line; the agent's reply in that turn reaches the sender only when the sender waits on its own call, and otherwise the answer is sent with `role_message` on `agents-remember-task`. An agent that ends its turn with its stage unfinished sends what it awaits, and from whom, to its parent the same way; a final chat line may repeat it but is not the transport. The retired own-chat answer sentence is registered against return, and the role and operation texts carry the same rule.
+
 ## Evidence
 
 ### Docs References

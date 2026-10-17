@@ -73,6 +73,8 @@ The existing MIK writer remains authoritative. Use only the source-bound command
 
 An explicitly report-only admission supplies only the requested report and bound upstream message and claims none of the normal authoring pass complete. The normal pass retains its complete contract-scoped MQC, exact blocked findings, reruns and required prepare → publish → validate coherence. Developer questions go to the parent when one exists and to the own chat only without one; native peer clarification uses the actual parent/task role, and dashboard launch needs no parent. Operator settings, including serviceTier, remain outside Curator authority.
 
+At its stage end an unfinished Curator sends what it awaits, and from whom, to its parent with `role_message` on `agents-remember-task`; its own chat text is not a return. Faults its own work or instrument causes — a faulty-input refusal, a wrong anchor — are repaired through the same admitted tool and reported, and a coherence finding on its writes is repaired rather than relabelled.
+
 ### Conventions
 
 Canonical skills own instructions. Generated copies are synchronized artifacts; curate the matching sidecar against its own source path. One output list preserves the producer’s nine fields and fills only curator-owned decisions.

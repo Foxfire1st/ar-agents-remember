@@ -1,19 +1,25 @@
 {
   "admission": {
     "criteria": [
-      "spans_locations"
+      "spans_locations",
+      "guarded_by_test"
     ],
-    "justification": "The public producer, file storage, lifecycle or native transport owners must preserve this same boundary across their distinct source locations."
+    "justification": "The obligation is split between the pure decision that composes and scopes the line and the host handler that feeds it the event and its turn id, and the host-free suite proves the carried last line, its 300-character shortening, the no-text and unreadable results, the two Manager-replacement orders and that an earlier turn's return or text cannot answer for this one."
   },
-  "applicability": "Product-plugin handling of role-agent turn-end and readiness events.",
+  "applicability": "Every `agent.turn_ended` event the AR Paseo plugin handles for a role agent the product's agent list holds, where the ended turn resolves a recipient.",
   "conditions": [
-    "The host supplies lifecycle events and role start has published the needed subject/parent facts."
+    "The host supplies the ended turn's id and the agent's timeline; rows tagged with that id are the turn's rows, and without tags the turn begins at the last `user_message`.",
+    "The line carries the last non-empty line of that turn's own agent text, shortened to 300 characters; a turn with no such text says `no text` and an unreadable timeline says `unreadable`, and the line still goes out.",
+    "The recorded parent receives the line while its record exists and it is not archived; otherwise the current Manager of the agent's master does, and a line already held is re-resolved at send time.",
+    "Only an accepted `role_message` call to that recipient within the turn suppresses the line; a refused, failed, canceled or still-running call does not.",
+    "A permission-waiting subject, a subject with a running direct child, and a recipient the product cannot show to keep its turn under a steer defer the line; a recipient whose provider the product names as steering takes it at once. The gate is asked again at every actual send, so a batch that has just started a turn in the recipient leaves the rest of the batch owed.",
+    "Each owed line is delivered exactly once and in the order the turns ended: the sequence is taken when the event arrives, flushes do not overlap, and requeues are re-sorted, so delivery order holds across a requeue and a Manager rebind. An agent outside the product's agent list is named in the host log once instead of being skipped silently.",
+    "The tracker's historical stores keep bounded recent windows and hold no owed line: the held queue is bounded by who is waiting, the provider history is capped and reclaimed when its agent is archived, and reclamation never drops an owed line. An evicted or absent provider reads as unknown, and unknown holds."
   ],
   "exclusions": [
-    "role_start assignment briefs",
-    "Developer chat text and native host chat display",
-    "Messages via removed earlier orchestration tools",
-    "No host polling; no developer-chat parent line; no repeated-event or cross-process durable deduplication claim."
+    "The tool, the bridge and the held-message store are outside this obligation; it covers the plugin's turn-end decision and its host handler.",
+    "No duty falls on the product to keep a Manager present: with no manager record the line stays owed and undelivered.",
+    "The record claims no live-host delivery and no semantic acceptance; the suite is a host-free composition."
   ],
   "id": "INV-1ZKP4R",
   "origin": {
@@ -27,9 +33,9 @@
     "leaf": "260928-MIK-L117",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-invariant/v1",
-  "statement": "A silent role-agent turn end wakes its parent with one four-fact line (role, agent, task, newest report); a return, a permission wait, a developer-chat parent, or a running descendant yields or defers it exactly once.",
+  "statement": "A silent role-agent turn end wakes the agent that waits — its recorded parent, or the current Manager of its master when that parent is archived or missing — with one line naming the role, agent, task, the ended turn's own last line of text and the newest report; only a delivered return in that turn suppresses it, a turn with no text says so, and a recipient that is in a turn is told when that turn ends rather than steered into it, unless the product knows that provider keeps its turn under a steer.",
   "status": "proposed",
   "supersedes": []
 }

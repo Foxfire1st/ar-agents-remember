@@ -30,3 +30,7 @@ Reviewer and Curator stage facets accept only their scoped explicit alternative 
 
 
 - Reviewer/Curator facet alternatives are explicitly role scoped. Presence, deletion and relocation checks still bind to the extracted Stage end section. Source and compiled controls assert the original surface is complete and mutation actually changes text; compiled relocation is now exercised as well as deletion. The four roles are parametrized individually; numeric budget detector and rule-nine cases remain. [4]
+
+## 260928-MIK-L172 — the stage-end facets follow the shipped sentence
+
+The stage-end facet and its Reviewer and Curator equivalents were re-pinned to the sentences that send what an agent awaits to its parent with `role_message` instead of naming it in a last line, and the Curator repair marker follows the tightened repair sentence. The extracted-section binding, deletion and relocation controls are unchanged.

@@ -54,3 +54,7 @@ The reviewer-addressed paragraph literal now includes clean-sync intake and per-
 - Source assertion: test_real_operation_audiences_preserve_pinned_common_and_only_addressed_paragraphs. The declaration is not an execution receipt. [20]
 - Source assertion: test_operation_audience_markings_preserve_pinned_bytes_and_immutable_closeout. The declaration is not an execution receipt. [21]
 - Source assertion: test_repairing_roles_stop_after_three_repairs_of_the_same_check_or_finding. The declaration is not an execution receipt. [22]
+
+## 260928-MIK-L172 — the orientation fingerprint is re-pinned deliberately
+
+The R125 orientation fingerprint was re-pinned to `cb21c41525efc28773e5497b396701ef0f9b246833958c3d7b3448c57a5b11f1` for the deliberate rule-1 sentence change, with the reason recorded above the pin. The audience declaration itself did not change.

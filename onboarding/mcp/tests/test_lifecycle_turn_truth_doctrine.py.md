@@ -112,3 +112,7 @@ No external repository boundary is exercised by this guard; it reads this reposi
 and its packaged copies.
 
 No meaningful cross-repo references found.
+
+## 260928-MIK-L172 — the acceptance surface states the sending obligation
+
+The acceptance-surface marker list now expects the shipped clause instead of the retired completion-post sentence: a file hands itself over to nobody, the artifact is sent with `role_message` to the agent that waits, and a file on record wakes no one. The contradiction sweep and the roster are otherwise unchanged, and this remains an instruction-wording reading, not an executed acceptance.

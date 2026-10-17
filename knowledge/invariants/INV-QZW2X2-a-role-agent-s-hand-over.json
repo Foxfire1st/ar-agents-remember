@@ -1,0 +1,37 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "guarded_by_test"
+    ],
+    "justification": "The rule is realized in the router, the orientation operation, the acceptance home, five role files and the compiled hand-over value, and a wording case fails on any of those capsules that still names the agent's chat as the place of an answer or a report while requiring the sending clause in its place."
+  },
+  "applicability": "Every canonical role, operation and router text of `l-01-agent-lifecycles` that states how a role agent answers, hands over or names what it awaits, and the hand-over text compiled from those sources.",
+  "conditions": [
+    "A message another agent sent begins with a `From` line; the agent's reply in that turn reaches the sender only when the sender waits on its own call.",
+    "Otherwise the answer, the hand-over and the statement of what is awaited, and from whom, are sent with `role_message` on `agents-remember-task` to the agent that waits; a final chat line may repeat that statement and is not its transport.",
+    "An agent without a parent asks the developer, and reports to the developer, in its own chat."
+  ],
+  "exclusions": [
+    "The harness permission prompt is answered in the agent's own chat; that answer is not a return.",
+    "Tool grants, parent identity, report paths, capsule budgets and the start and message powers are unchanged; this obligation is instruction text only.",
+    "The package-data and eight harness skill copies are generated carriers, not independent authorities for this rule."
+  ],
+  "id": "INV-QZW2X2",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "notes/reports/reviewer/9f3dcccf-061b-4c47-b97d-69b014de984b/r3-code-verdict.md; requirements/MIK-R172-v1-the-end-of-a-turn-reaches-whoever-waits.md rule 1"
+      ],
+      "path": "L172-native-handoff.json"
+    },
+    "handoffEntry": "L172-INV-C",
+    "leaf": "260928-MIK-L172",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "A role agent's hand-over, and its statement of what it awaits, reach the waiting agent with role_message; its own chat text is an answer only for a sender that waits on its own call.",
+  "status": "proposed",
+  "supersedes": []
+}

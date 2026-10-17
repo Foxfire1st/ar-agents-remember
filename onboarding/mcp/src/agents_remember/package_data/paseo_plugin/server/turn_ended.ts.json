@@ -3,8 +3,278 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "09f339b7c9d38caf120e180d2ae2331bdebc0bcb",
-        "content": "sha256:09cfd507ab1eafdf2dc904cd5c5b9e3bca3fe88ff57a6e3746a2428ea406a0aa",
+        "blob": "2227e467e79051787c31b1ecf346b8e2fd8bfa62",
+        "content": "sha256:b6b127b1042ef423bac37449efcf8848eb557d88c0248fa7441e1e52637ec9b5",
+        "locator": {
+          "kind": "symbol",
+          "name": "TURN_ENDED_STEERING_PROVIDERS"
+        }
+      },
+      "id": "RLZ-29Q98S",
+      "invariant": "INV-1ZKP4R",
+      "origin": {
+        "handoffEntry": "L172-TURN-END-WAKE",
+        "leaf": "260928-MIK-L172"
+      },
+      "rationale": "The product's own knowledge of which providers keep a running turn under a steer; empty in this build, so an in-turn recipient holds the line.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "2227e467e79051787c31b1ecf346b8e2fd8bfa62",
+        "content": "sha256:b9b235f19d4d4d73249b9a94adc99c25866c028ce2725bc55f69820bf2a1efbd",
+        "locator": {
+          "kind": "symbol",
+          "name": "composeTurnEndedLine"
+        }
+      },
+      "id": "RLZ-712BJ3",
+      "invariant": "INV-1ZKP4R",
+      "origin": {
+        "handoffEntry": "L172-TURN-END-WAKE",
+        "leaf": "260928-MIK-L172"
+      },
+      "rationale": "Composes the wake line and applies its 1000-character limit; the last-line phrase and the 300-character shortening of the text are chosen here.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "2227e467e79051787c31b1ecf346b8e2fd8bfa62",
+        "content": "sha256:9fb79052ae73cc3187d731165e770120c6a57df5194ac5c67648dbcbd8fab176",
+        "locator": {
+          "kind": "symbol",
+          "name": "flushHeldLines"
+        }
+      },
+      "id": "RLZ-9VEJKT",
+      "invariant": "INV-1ZKP4R",
+      "origin": {
+        "handoffEntry": "L172-TURN-END-WAKE",
+        "leaf": "260928-MIK-L172"
+      },
+      "rationale": "Re-resolves a departed parent at each send point, so a line owed across an ordinary Manager replacement reaches the successor exactly once.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "2227e467e79051787c31b1ecf346b8e2fd8bfa62",
+        "content": "sha256:5f704ccd5e767e325484a8e8fa360844afeb1586605eb2d37433bcca2b0b23eb",
+        "locator": {
+          "kind": "symbol",
+          "name": "turnHasReturnToParent"
+        }
+      },
+      "id": "RLZ-C1KP4R",
+      "invariant": "INV-1ZKP4R",
+      "origin": {
+        "handoffEntry": "L172-TURN-END-WAKE",
+        "leaf": "260928-MIK-L172"
+      },
+      "rationale": "Decides whether the turn holds a delivered `role_message` return to its recipient, and ignores a failed, canceled, running or refused call.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "2227e467e79051787c31b1ecf346b8e2fd8bfa62",
+        "content": "sha256:2563114c90d0bac3a177989383c568e47dbbe21ca267c9b1e14ad14056d80793",
+        "locator": {
+          "kind": "symbol",
+          "name": "providerOf"
+        }
+      },
+      "id": "RLZ-CCGKX4",
+      "invariant": "INV-1ZKP4R",
+      "origin": {
+        "handoffEntry": "L172-TURN-END-WAKE",
+        "leaf": "260928-MIK-L172"
+      },
+      "rationale": "Holds the provider each agent runs on; the gate reads it and an absent entry reads as unknown.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "2227e467e79051787c31b1ecf346b8e2fd8bfa62",
+        "content": "sha256:4fb34b9b3863421de2cbf0fa071758261db2cabd6590e40937285df2b8b4bbe5",
+        "locator": {
+          "kind": "symbol",
+          "name": "noteAgentArchived"
+        }
+      },
+      "id": "RLZ-D5653M",
+      "invariant": "INV-1ZKP4R",
+      "origin": {
+        "handoffEntry": "L172-TURN-END-WAKE",
+        "leaf": "260928-MIK-L172"
+      },
+      "rationale": "Moves an owed line to the alternate it names or keeps it owed, instead of dropping it when its parent departs.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "2227e467e79051787c31b1ecf346b8e2fd8bfa62",
+        "content": "sha256:db613d606f6686bca62c109a34995ca6d35ebe37ef2e86dff44d8623fb611df2",
+        "locator": {
+          "kind": "symbol",
+          "name": "parentMayTakeLineNow"
+        }
+      },
+      "id": "RLZ-DKJY6H",
+      "invariant": "INV-1ZKP4R",
+      "origin": {
+        "handoffEntry": "L172-TURN-END-WAKE",
+        "leaf": "260928-MIK-L172"
+      },
+      "rationale": "Decides whether the line may go now: a free recipient takes it, a permission wait does not, and a recipient in a turn only when the product names its provider as steering.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "2227e467e79051787c31b1ecf346b8e2fd8bfa62",
+        "content": "sha256:56bab8b10e056df08d661be864473c28c7cda3b8b533c3c33b2ccc259001de52",
+        "locator": {
+          "kind": "symbol",
+          "name": "noteTurnEnded"
+        }
+      },
+      "id": "RLZ-EC5NRM",
+      "invariant": "INV-1ZKP4R",
+      "origin": {
+        "handoffEntry": "L172-TURN-END-WAKE",
+        "leaf": "260928-MIK-L172"
+      },
+      "rationale": "Runs the decision: flush, permission gate, recipient resolution, suppression test, then the hold and its delivery outcome.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "2227e467e79051787c31b1ecf346b8e2fd8bfa62",
+        "content": "sha256:8a3aaab7ecab50d39c4b31b8b1a8557b6a9d683ec012d9342f76158bb6fa7ab2",
+        "locator": {
+          "kind": "symbol",
+          "name": "resolveWakeParent"
+        }
+      },
+      "id": "RLZ-F0RH12",
+      "invariant": "INV-1ZKP4R",
+      "origin": {
+        "handoffEntry": "L172-TURN-END-WAKE",
+        "leaf": "260928-MIK-L172"
+      },
+      "rationale": "Chooses the recorded parent, or the current Manager of the agent's master when that parent is archived or missing.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "2227e467e79051787c31b1ecf346b8e2fd8bfa62",
+        "content": "sha256:2cdba7021787671ef106e8b22f49742d45ef5eebed4a70d8d25ac207c2ff0393",
+        "locator": {
+          "kind": "symbol",
+          "name": "createTurnEndedTracker"
+        }
+      },
+      "id": "RLZ-H3YF9Z",
+      "invariant": "INV-1ZKP4R",
+      "origin": {
+        "handoffEntry": "L172-TURN-END-WAKE",
+        "leaf": "260928-MIK-L172"
+      },
+      "rationale": "Takes the steering set, the turn-end sequence counter and the in-flight flush slot the hold and the order rest on.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "2227e467e79051787c31b1ecf346b8e2fd8bfa62",
+        "content": "sha256:e849bf3b385184f6fd49c3108d60621e40ea6fe181d43bf9d93e80b2778db5f4",
+        "locator": {
+          "kind": "symbol",
+          "name": "TURN_ENDED_PROVIDER_LIMIT"
+        }
+      },
+      "id": "RLZ-HD9RDK",
+      "invariant": "INV-1ZKP4R",
+      "origin": {
+        "handoffEntry": "L172-TURN-END-WAKE",
+        "leaf": "260928-MIK-L172"
+      },
+      "rationale": "The named finite cap on provider history whose eviction leaves an unknown provider, and therefore a hold.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "2227e467e79051787c31b1ecf346b8e2fd8bfa62",
+        "content": "sha256:de3480e09ce7d2f3c90d97895001cfcebd49d40600ada729447660bd0101b4ec",
+        "locator": {
+          "kind": "symbol",
+          "name": "keepTurnEndOrder"
+        }
+      },
+      "id": "RLZ-J5K3GT",
+      "invariant": "INV-1ZKP4R",
+      "origin": {
+        "handoffEntry": "L172-TURN-END-WAKE",
+        "leaf": "260928-MIK-L172"
+      },
+      "rationale": "Re-sorts the held queue by turn-end sequence across a requeue, so a later line cannot overtake an earlier one.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "2227e467e79051787c31b1ecf346b8e2fd8bfa62",
+        "content": "sha256:ff687f1496efef565939cb4c7861dab7c03641ae48a3d251a0f791f53fc05b33",
+        "locator": {
+          "kind": "symbol",
+          "name": "turnRows"
+        }
+      },
+      "id": "RLZ-KGDGST",
+      "invariant": "INV-1ZKP4R",
+      "origin": {
+        "handoffEntry": "L172-TURN-END-WAKE",
+        "leaf": "260928-MIK-L172"
+      },
+      "rationale": "Scopes both reads to the ended turn, by the event's turn id or from the last user message, so an earlier turn's return or text cannot answer for this one.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "2227e467e79051787c31b1ecf346b8e2fd8bfa62",
+        "content": "sha256:12d27939ebe98d478357e1d46d240ded00b6e4cbf25dd17095519bc0a6e344d9",
+        "locator": {
+          "kind": "symbol",
+          "name": "lastLineOfTurn"
+        }
+      },
+      "id": "RLZ-NT30EH",
+      "invariant": "INV-1ZKP4R",
+      "origin": {
+        "handoffEntry": "L172-TURN-END-WAKE",
+        "leaf": "260928-MIK-L172"
+      },
+      "rationale": "Selects the last non-empty line of the ended turn's own agent text, and reports `empty` or `unreadable` instead of suppressing the line.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "2227e467e79051787c31b1ecf346b8e2fd8bfa62",
+        "content": "sha256:650f3573b5b41e241967e99cbf467d147556d65473f455dea0c52aacee1c413b",
+        "locator": {
+          "kind": "symbol",
+          "name": "rememberProvider"
+        }
+      },
+      "id": "RLZ-RTMAJK",
+      "invariant": "INV-1ZKP4R",
+      "origin": {
+        "handoffEntry": "L172-TURN-END-WAKE",
+        "leaf": "260928-MIK-L172"
+      },
+      "rationale": "Records the provider at turn start and turn end, newest last, and evicts the oldest beyond the named cap.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "2227e467e79051787c31b1ecf346b8e2fd8bfa62",
+        "content": "sha256:9fb79052ae73cc3187d731165e770120c6a57df5194ac5c67648dbcbd8fab176",
         "locator": {
           "kind": "symbol",
           "name": "flushHeldLines"
@@ -21,8 +291,26 @@
     },
     {
       "anchor": {
-        "blob": "09f339b7c9d38caf120e180d2ae2331bdebc0bcb",
-        "content": "sha256:9269a8f06d37cd197480018986cd10f245238a2c5f3f7aa6636bf66c02df565e",
+        "blob": "2227e467e79051787c31b1ecf346b8e2fd8bfa62",
+        "content": "sha256:f657b26103b4299ea7c702e3c25feef8aeffc35894366f58395c5583729677a5",
+        "locator": {
+          "kind": "symbol",
+          "name": "currentManagerOf"
+        }
+      },
+      "id": "RLZ-YWH75T",
+      "invariant": "INV-1ZKP4R",
+      "origin": {
+        "handoffEntry": "L172-TURN-END-WAKE",
+        "leaf": "260928-MIK-L172"
+      },
+      "rationale": "Defines the current Manager the fallback resolves to: the newest-started, non-archived manager record of the same repo/master, excluding the agent and its recorded parent.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "2227e467e79051787c31b1ecf346b8e2fd8bfa62",
+        "content": "sha256:56bab8b10e056df08d661be864473c28c7cda3b8b533c3c33b2ccc259001de52",
         "locator": {
           "kind": "symbol",
           "name": "noteTurnEnded"
