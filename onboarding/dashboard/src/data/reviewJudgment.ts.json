@@ -1,0 +1,73 @@
+{
+  "path": "dashboard/src/data/reviewJudgment.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Row and structured requirement preserve history identity and because without conclusions.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9b969193c7b2b0b2c5e0547a916ed7acf8f98fbe",
+            "content": "sha256:95060548d68709422f2f89a7edce77af92feb900a064c7afb6d73b362859bf11",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewJudgmentRow"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Proof entry state and pane history state remain independent.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9b969193c7b2b0b2c5e0547a916ed7acf8f98fbe",
+            "content": "sha256:eef19a550dba41ea75bcaa8a9c79774705298c41de102893268c92f89792f1aa",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewJudgmentPane"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Producer says proof currentness is not a run result and validates rows-state correlation.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "026fac6c48fdbd8d9b2e11fd869d715015c09ac7",
+            "content": "sha256:bb9abd73bae0fb7ef13b0aa8c0a0aff51795cb6c34e5be0d474229b5d92eb8f3",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewJudgmentPane"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/review_judgment.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Consumer rejects missing/misaddressed judgment and renders rows and proofs.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5998106166bd7ead48ac09f5173c06c3cacb5f39",
+            "content": "sha256:9a537c4f259d8e6387f67a8426e2f23197407fa6e00aeea42e92753f646c84bf",
+            "locator": {
+              "kind": "symbol",
+              "name": "SubjectJudgment"
+            },
+            "path": "dashboard/src/panels/review/SubjectJudgment.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

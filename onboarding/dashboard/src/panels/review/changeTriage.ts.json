@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "1e222a11645bef99a66457ef1e9ff68d8a883083",
+        "blob": "dcdfc2afd22582bf272d997fb8a964748eb602b2",
         "content": "sha256:2d0df6a17726c69577bbc1e97c6f3e4dbef468d49b15c98c1e12a7e52a050748",
         "locator": {
           "kind": "symbol",
@@ -21,7 +21,7 @@
     },
     {
       "anchor": {
-        "blob": "1e222a11645bef99a66457ef1e9ff68d8a883083",
+        "blob": "dcdfc2afd22582bf272d997fb8a964748eb602b2",
         "content": "sha256:67021a87fbc959540a2d8159025c1be96534e8fe2fc2bca10ec89b49e7f89b23",
         "locator": {
           "kind": "symbol",
@@ -39,7 +39,7 @@
     },
     {
       "anchor": {
-        "blob": "1e222a11645bef99a66457ef1e9ff68d8a883083",
+        "blob": "dcdfc2afd22582bf272d997fb8a964748eb602b2",
         "content": "sha256:1bb786f40ea6fb174005970fdfc3794f4871c1d5d99ca1689c7c23250e56d8fb",
         "locator": {
           "kind": "symbol",
@@ -57,8 +57,8 @@
     },
     {
       "anchor": {
-        "blob": "1e222a11645bef99a66457ef1e9ff68d8a883083",
-        "content": "sha256:7d0308073cdf3310fb4c9705b7e37f9c98246cd6220faa7bc7e007fa9e998007",
+        "blob": "dcdfc2afd22582bf272d997fb8a964748eb602b2",
+        "content": "sha256:00943742cde6b7ac228adc1d4851d30ef95f3cb98b3c8b4494b5eaf6caee1f78",
         "locator": {
           "kind": "symbol",
           "name": "outlineGroups"
@@ -70,13 +70,31 @@
         "handoffEntry": "MIK-R86@v1 rule 3",
         "leaf": "260928-MIK-L86"
       },
-      "rationale": "It combines outline record and membership changes with walked-family code facts before assigning the displayed row badge.",
+      "rationale": "Groups one primary badge per outline row after outlineMember/memberBadge join the supplied leaf-wide code map, or walked facts only when no map was supplied. Unknown intent remains unknown; numeric sort weights and separate recorded-effect labels are not interchangeable with that prerequisite.",
       "role": "presentation"
     },
     {
       "anchor": {
-        "blob": "1e222a11645bef99a66457ef1e9ff68d8a883083",
-        "content": "sha256:d28e035ee4651ba0922693da921f9ac186d85438463120e2b56278bf241a2d1d",
+        "blob": "dcdfc2afd22582bf272d997fb8a964748eb602b2",
+        "content": "sha256:ea8ed2719c7ec65af7f238bf6c73c2fcdc029d4e966e9fa74401683eae89d21a",
+        "locator": {
+          "kind": "symbol",
+          "name": "memberBadge"
+        }
+      },
+      "id": "RLZ-KARAA7",
+      "invariant": "INV-W09GQM",
+      "origin": {
+        "handoffEntry": "CUR-L57-unknown-intent-badge-boundary",
+        "leaf": "260928-MIK-L57"
+      },
+      "rationale": "Keeps an unknown intent badge unknown before consulting narrower implementation or membership facts; only measured unchanged intent can be enriched by an established code fact. It preserves one primary label independently of numeric sort weight and compact recorded-effect labels.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "dcdfc2afd22582bf272d997fb8a964748eb602b2",
+        "content": "sha256:0a0026a77956468bbd9f3bfc6f207085c0d111917ac645d6064146bbedfff714",
         "locator": {
           "kind": "symbol",
           "name": "outlineMember"
@@ -222,14 +240,98 @@
       ]
     },
     "17": {
-      "note": "These helpers hold navigation grouping, ordering, primary badge precedence, counts and member change facts as pure projections of the delivered outline and kept family context. Existing semantic roster ordering is separate from compact sidebar ordering. Recorded meaning is transported as the own row’s typed state/labels, never a new CHANGE_KIND, sorting weight, count or computed overall effect. An older catalogue-only listing without an admitted outline remains unbadged. OutlineRow also carries the delivered meaning state and ordered labels. memberMeaning takes the exact member’s answer from its family outline occurrence, falling back to the invariant outline entry; it never assigns the family’s labels to a member. This transports recorded judgments beside existing primary change/ordering facts and neither reclassifies change kinds nor computes a net effect.",
+      "note": "These pure helpers project outline grouping, ordering, primary badges, counts and member facts. outlineGroups optionally accepts an invariant-ID code-change map; undefined uses walked facts, while a supplied map or null replaces that fact source. memberBadge preserves real or unknown outline changes, then considers established implementation, membership and unknown implementation in that order. Semantic roster ordering remains separate from compact sidebar ordering. OutlineRow carries recorded meaning state and labels separately from its badge. memberMeaning selects the exact member's family occurrence meaning when defined, otherwise the invariant entry's meaning, never the family's labels. Meaning adds no change kind, sorting weight, count or computed net effect. A catalogue-only listing remains unbadged; outlineCounts and firstOutlineChange do not pass the optional code map.\n\nAnchor: inclusive source ranges",
       "targets": [
         {
           "anchor": {
-            "blob": "1e222a11645bef99a66457ef1e9ff68d8a883083",
-            "content": "sha256:5917f98bf29aaf0d482c53e02c3da74df2153be2c488db6d5d7871863197ed80",
+            "blob": "dcdfc2afd22582bf272d997fb8a964748eb602b2",
+            "content": "sha256:bfb8963ed0fcab46bfffa7fb36f453543a051fa10a4a84d28fc311d9e9b0dad1",
             "locator": {
-              "kind": "file"
+              "end": 403,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "18": {
+      "note": "The module projects delivered facts. Missing member facts read unknown through occurrenceKind; familyTriage still returns undefined without change_kinds. The former missing-facts early returns in orderFamilies and orderMemberRows are removed; this is not a blanket guarantee that dataset rows retain their original order.\n\nAnchor: inclusive source ranges",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dcdfc2afd22582bf272d997fb8a964748eb602b2",
+            "content": "sha256:d468b58cdc4781433b2802cbd66d15ed0680538cc1d6d20be3239f440bac504c",
+            "locator": {
+              "end": 80,
+              "kind": "line_range",
+              "start": 75
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "dcdfc2afd22582bf272d997fb8a964748eb602b2",
+            "content": "sha256:c5a228733b24ee7ca8880db8d02ec4a2ee4d6e766e9e9d17df2dbe512783c1ad",
+            "locator": {
+              "end": 94,
+              "kind": "line_range",
+              "start": 91
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "dcdfc2afd22582bf272d997fb8a964748eb602b2",
+            "content": "sha256:10573284b6e7f3e7e06448aa4021abb5d9c2173212a0988700d12c42e63b3ace",
+            "locator": {
+              "end": 151,
+              "kind": "line_range",
+              "start": 142
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "dcdfc2afd22582bf272d997fb8a964748eb602b2",
+            "content": "sha256:160d1823b57e146488c2e999ecd517fd0bb6a9c098c5fdf64b2ef6e90f14935e",
+            "locator": {
+              "end": 176,
+              "kind": "line_range",
+              "start": 156
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "19": {
+      "note": "outlineGroups builds family/member groups from an admitted outline, tracks listed invariants, appends unlisted invariants, applies authored or badge-weight order and aggregates real member changes under unchanged families. Without an outlined state it returns identity-only catalogue groups. Its optional code map is passed to both family members and unlisted invariant rows; undefined retains walked facts, whereas a map or null replaces that source.\n\nAnchor: inclusive source ranges",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dcdfc2afd22582bf272d997fb8a964748eb602b2",
+            "content": "sha256:00943742cde6b7ac228adc1d4851d30ef95f3cb98b3c8b4494b5eaf6caee1f78",
+            "locator": {
+              "end": 374,
+              "kind": "line_range",
+              "start": 322
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "dcdfc2afd22582bf272d997fb8a964748eb602b2",
+            "content": "sha256:0a0026a77956468bbd9f3bfc6f207085c0d111917ac645d6064146bbedfff714",
+            "locator": {
+              "end": 315,
+              "kind": "line_range",
+              "start": 289
             }
           },
           "kind": "code"
@@ -268,6 +370,35 @@
             "locator": {
               "kind": "symbol",
               "name": "CHANGE_MEANING"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "20": {
+      "note": "memberBadge preserves a real outline change or an unknown outline badge first; otherwise established implementation yields code changed, then joined/left membership wins, then unknownImplementation yields unknown, otherwise the original badge remains. unknownImplementation recognizes implementation unknown and, on facts carrying primary, primary unknown. This accepts walked-member or code-change facts and does not infer recorded meaning.\n\nAnchor: inclusive source ranges",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dcdfc2afd22582bf272d997fb8a964748eb602b2",
+            "content": "sha256:ea8ed2719c7ec65af7f238bf6c73c2fcdc029d4e966e9fa74401683eae89d21a",
+            "locator": {
+              "end": 265,
+              "kind": "line_range",
+              "start": 255
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "dcdfc2afd22582bf272d997fb8a964748eb602b2",
+            "content": "sha256:d062b0ba1c7be5a207cdf14811836fa2a826ded81d7d2b645eb984c11fc96cdb",
+            "locator": {
+              "end": 254,
+              "kind": "line_range",
+              "start": 249
             }
           },
           "kind": "code"

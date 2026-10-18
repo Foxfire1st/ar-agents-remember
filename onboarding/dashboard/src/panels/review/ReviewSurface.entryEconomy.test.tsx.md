@@ -20,9 +20,12 @@ The mounted 300 ms and 600 ms catalogue cases keep one catalogue read and one ch
 
 ### Logic
 
-- Fixtures come from the captured family review (`familyReview.complete.captured.json`): `CATALOGUE` lists
-  its families; `familyReview(familyId, afterSnapshot)` returns that family's review under a chosen
-  after-snapshot digest so a refresh can reach a "new candidate generation".
+- Two independent captured family-selector answers, `subjectReview.successorFamily.captured.json` and
+  `l86.family.captured.json`, supply the families used to assemble `CATALOGUE`; `l86.task.captured.json`
+  supplies task context. `familyReview(familyId, afterSnapshot)` selects the matching family capture or
+  the task capture for null selection, refuses unknown family IDs, and only perturbs the comparison's
+  after-snapshot digest for a new candidate generation. Other routes use the shared `replyFor` dispatcher,
+  except the explicitly stubbed catalogue and source-content routes.
 - **Economy case:** mounting `ReviewSurface` makes one catalogue read and no review read until it answers;
   then exactly one review read asks for the first family (`selectorKind=family`). Choosing another family
   reads that family and never the catalogue again; an unrelated analytics publication does not re-read it;
@@ -45,7 +48,7 @@ Only `fetch` is stubbed; requests are classified by URL path and query. The hold
 
 None.
 
-The first case counts catalogue against review requests after entry and selection, proving one catalogue read and subject-only review reads. The second holds the catalogue unanswered, opens the task-context review instead, and keeps the All changes row working from that answer. Fixtures come from the recorded catalogue and family review captures.
+The first case counts catalogue against review requests after entry and selection, proving one catalogue read and subject-only review reads. The second holds the catalogue unanswered, opens the task-context review instead, and keeps the All changes row working from that answer. The catalogue is assembled from two independent recorded family-selector answers; a separate task capture supplies task context.
 ## Evidence
 
 ### Docs References
@@ -57,7 +60,6 @@ No relevant domain documentation was found.
 ### Repo-Internal References
 
 - The economy the cases hold the reviewer to, including the bounded wait. [1]
-- The catalogue fixture and the per-family review under a chosen snapshot. [2]
 - One catalogue read, then only the chosen subject; re-read once for a new generation. [3]
 - A stalled catalogue releases into the task-context review within the bound. [4]
 - The hold and the comparison-keyed catalogue under test. [5]
@@ -72,7 +74,9 @@ No meaningful cross-repo references found.
 ### Clock And Settlement Evidence
 
 - Catalogue delays and the product hold run on the same fake clock. A stalled catalogue yields zero review reads at `SUBJECT_HOLD_MS - 1` and one task-context read at the next millisecond; answered catalogues remain at one chosen-subject read even after advancing past the hold. No wall-clock elapsed inequality establishes this economy. [6]
-- Recorded catalogue, family and review fixture identities [7]
-- Family review capture served for the chosen subject [8]
 - Catalogue-once counting on the entry journey [9]
 - Held-catalogue journey keeping All changes reachable [10]
+
+- CATALOGUE is assembled from two independent family-selector captures. familyReview selects the matching family capture or the separate task capture for null selection and changes only the comparison generation digest when needed. [2]
+- The family captures are subjectReview.successorFamily.captured.json and l86.family.captured.json; task context comes from l86.task.captured.json. [7]
+- familyReview selects captured family or task answers, explicitly refuses uncaptured family selectors and only perturbs after_snapshot_digest. Other non-catalogue/non-source-content routes delegate to replyFor. [8]

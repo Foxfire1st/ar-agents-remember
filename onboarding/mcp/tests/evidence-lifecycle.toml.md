@@ -2,7 +2,7 @@
 
 ## Current paired source contract — scoped assertions and incoming catalogs
 
-The current parsed catalog declares 12 contracts and 73 artifacts. Three permanent shared-support artifacts cover reconsideration setup, writer-correction fixtures and the native persisted-worklist prerequisite; their replacement nodes and exact consumer lists declare reusable evidence ownership, not invocation. The earlier 12-contract/70-artifact catalog preceded these support declarations. Its regeneration account—25 added settings-guard consumers and six deleted plus one duplicate Node-fixture consumers removed—remains historical, as do the older 14-contract/102-artifact populations. Source-owned canonicalization preserves unaffected lifecycle metadata and applies the owner’s complete supported delta.
+The current parsed catalog declares 12 contracts and 75 artifacts. Compared with base91bb7e2d, L57 adds two permanent integration/local-composition shared supports: `review_curator_fixture_support.py`, with three consumers and an integrity-rejection replacement node, and `reviewer_leaf_view_support.py`, with five consumers and a real-child-parity replacement node. Eight existing artifact consumer lists change; existing non-consumer fields and all contract rows are preserved. Three permanent shared-support artifacts cover reconsideration setup, writer-correction fixtures and the native persisted-worklist prerequisite; their replacement nodes and exact consumer lists declare reusable evidence ownership, not invocation. The earlier 12-contract/70-artifact catalog preceded these support declarations. Its regeneration account—25 added settings-guard consumers and six deleted plus one duplicate Node-fixture consumers removed—remains historical, as do the older 14-contract/102-artifact populations. Source-owned canonicalization preserves unaffected lifecycle metadata and applies the owner’s complete supported delta.
 
 The held catalog declares consumers for held queues, native retirement, role_start_set, comparison changesets, the citation/quality/packaging shaped memory-tool row modules, coherence file transport, takeover and uv-minimum bootstrap modules. The permanent tool_answer_l110_rows support has an artifact declaration and a replacement test node. The role-agent and role-message declarations remain on the existing settings-guard, Node-lockfile, Paseo-launch and Paseo-runtime rows. test_paseo_role_agents.py is declared on settings-guard, Node-lockfile and Paseo-runtime; test_role_message_files.py on those three plus Paseo-launch; test_role_message_wording.py on Node-lockfile. These are present catalog declarations, not a source-diff account or evidence of invocation. Node-lockfile membership follows the syntactic dependency oracle and does not by itself establish use of that particular fixture. The existing nine Doc14 fixture rows and validator support also declare `test_mik_r53_judgment_rows.py` and `test_mik_r53_report_only_rules.py`; writer support declares judgment_rows and onboarding_gate; the Node lockfile row declares all three. This extends consumer reachability only, not artifact/contract identity, lane assignment or execution.
 
@@ -65,12 +65,12 @@ The current artifact paths and every exact consumer list are canonically sorted.
 
 The L109 incoming 101-artifact caption and the refusal-suite registration account are retained historical observations, not the current population or L162 additions. The current Node-lockfile artifact still declares native reapply and now also task-document Order; membership alone proves no invocation.
 
-The pre-support-split catalog declared 12 contracts and 70 artifacts; CODE6/passed 14-contract/102-artifact and incoming 101-artifact populations remain historical on their own objects. Native reapply and task-document Order remain declared on the existing Node lockfile artifact; task-document Order also remains on the settings guard. Compared with landed L162 (6be1b3fa), four consumer lists expand: settings guard and Node lockfile each gain 25 consumers, coherence support gains three, and enclosure support gains one. Contract/artifact identities and non-consumer fields are unchanged in this comparison. Declarations and canonical ordering establish no invocation or acceptance. That comparison is retained at its own source epoch; the current parsed inventory is 12 contracts/73 artifacts.
+The pre-support-split catalog declared 12 contracts and 70 artifacts; CODE6/passed 14-contract/102-artifact and incoming 101-artifact populations remain historical on their own objects. Native reapply and task-document Order remain declared on the existing Node lockfile artifact; task-document Order also remains on the settings guard. Compared with landed L162 (6be1b3fa), four consumer lists expand: settings guard and Node lockfile each gain 25 consumers, coherence support gains three, and enclosure support gains one. Contract/artifact identities and non-consumer fields are unchanged in this comparison. Declarations and canonical ordering establish no invocation or acceptance. That comparison is retained at its own source epoch; the current parsed inventory is 12 contracts/75 artifacts.
 
 
 ### Current Contract
 
-The current source TOML declares 12 contract rows and 73 artifact rows; the earlier 70-artifact epoch preceded the three shared-support declarations. L113 removes retired owners and their governed artifacts; the earlier composed 14-contract/102-artifact population is historical. The remaining R111 shaped-row support retains its declaration and replacement contract. Counts are source inventory, not executed catalog validation or acceptance.
+The current source TOML declares 12 contract rows and 75 artifact rows; the earlier 70-artifact epoch preceded the three shared-support declarations. L113 removes retired owners and their governed artifacts; the earlier composed 14-contract/102-artifact population is historical. The remaining R111 shaped-row support retains its declaration and replacement contract. Counts are source inventory, not executed catalog validation or acceptance.
 The incoming 101-artifact and prior 14-contract/102-artifact populations remain historical on their own objects. Native source-reference currency alone cannot establish semantic correspondence.
 
 
@@ -211,7 +211,7 @@ The catalog declares the grant, dashboard, direct-leaf integration/role-start an
 
 ## Task-Document Order Consumer
 
-`mcp/tests/test_task_document_order.py` is an exact declared consumer of both `mcp/tests/fixtures/repository_profiles/node/package-lock.json` and the canonical support artifact `mcp/tests/_user_settings_guard.py`. The current parsed inventory has 12 contracts and 73 artifacts; the earlier 70-artifact inventory predates the three shared-support declarations. These registrations change consumer membership, not artifact identity, lifetime, fidelity, replacement contract or other metadata. TOML declaration/parsing is not fixture use, loader or test execution.
+`mcp/tests/test_task_document_order.py` is an exact declared consumer of both `mcp/tests/fixtures/repository_profiles/node/package-lock.json` and the canonical support artifact `mcp/tests/_user_settings_guard.py`. The current parsed inventory has 12 contracts and 75 artifacts; the earlier 70-artifact inventory predates the three shared-support declarations. These registrations change consumer membership, not artifact identity, lifetime, fidelity, replacement contract or other metadata. TOML declaration/parsing is not fixture use, loader or test execution.
 
 
 - Existing Node package-lock artifact includes test_task_document_order.py as an exact consumer; no new artifact/contract or executed invocation is inferred. [290]
@@ -233,6 +233,7 @@ The derived catalog adds the clean-sync door module to the tests.unit and affect
 ## Evidence
 
 - The derived unit consumer registers the new module. [298]
+
 - The derived affected-closure consumer registers the same module. [299]
 
 
@@ -372,7 +373,15 @@ test_cleanup_repeated_archive_ready.py is declared on fourteen exact artifact co
 
 ### Historical empty-caption custody
 
-Historical empty-caption carriers [233], [237], [248], [249], [250], [251], [253], [255], [256]: these preserved numbers have no operative proposition and confer no current declaration, execution or acceptance. Their recorded source custody is not a missing semantic claim to invent.
+- Historical empty-caption carriers: these preserved numbers have no operative proposition and confer no current declaration, execution or acceptance. Their recorded source custody is not a missing semantic claim to invent. [233]
+- Historical empty-caption carriers: these preserved numbers have no operative proposition and confer no current declaration, execution or acceptance. Their recorded source custody is not a missing semantic claim to invent. [237]
+- Historical empty-caption carriers: these preserved numbers have no operative proposition and confer no current declaration, execution or acceptance. Their recorded source custody is not a missing semantic claim to invent. [248]
+- Historical empty-caption carriers: these preserved numbers have no operative proposition and confer no current declaration, execution or acceptance. Their recorded source custody is not a missing semantic claim to invent. [249]
+- Historical empty-caption carriers: these preserved numbers have no operative proposition and confer no current declaration, execution or acceptance. Their recorded source custody is not a missing semantic claim to invent. [250]
+- Historical empty-caption carriers: these preserved numbers have no operative proposition and confer no current declaration, execution or acceptance. Their recorded source custody is not a missing semantic claim to invent. [251]
+- Historical empty-caption carriers: these preserved numbers have no operative proposition and confer no current declaration, execution or acceptance. Their recorded source custody is not a missing semantic claim to invent. [253]
+- Historical empty-caption carriers: these preserved numbers have no operative proposition and confer no current declaration, execution or acceptance. Their recorded source custody is not a missing semantic claim to invent. [255]
+- Historical empty-caption carriers: these preserved numbers have no operative proposition and confer no current declaration, execution or acceptance. Their recorded source custody is not a missing semantic claim to invent. [256]
 
 ## Refreshed current evidence
 
@@ -716,84 +725,143 @@ The existing `paseo_launch_test_support.py` shared-support row now describes the
 
 
 - All nine retained Doc14 fixture artifact rows declare the R53 judgment-row and report-policy modules as consumers; their artifact identities are unchanged. [224]
+
 - Durable-artifact declarations include the R53 consumers on Doc14 fixtures, validator/writer support and the existing Node lockfile; lane rows remain in test-evidence-lanes.toml. [14]
+
 - At the pre-L109 L53 freeze (CODE d457a9ae / MEMORY bacaaf79), Current source delta inspected statically: The code-base-to-candidate diff adds consumers only to twelve existing artifact rows. Retain the statically parsed 13-contract/93-artifact account and historical earlier counts; catalog declarations are reachability, not a loader, test, lane or acceptance result. This retained 13-contract/93-artifact source observation is historical on the successor with13contracts/101artifacts; it remains no loader/test/acceptance result. Retained historical passed-L111 catalog observation (not a current post-sync census): The current declarative catalog has 14 contract rows and 94 artifact rows. It includes the permanent local-composition tool_answer_l111_test_support artifact and tool-answer-l111-shaped-rows replacement contract. These declarations establish ownership/reachability, not observed execution or a fresh acceptance census; older catalog populations are historical. [273]
 
 
-- At the pre-L109 L53 freeze (CODE d457a9ae / MEMORY bacaaf79), Current source delta inspected statically: The code-base-to-candidate diff adds consumers only to twelve existing artifact rows. Retain the statically parsed 13-contract/93-artifact account and historical earlier counts; catalog declarations are reachability, not a loader, test, lane or acceptance result. This retained 13-contract/93-artifact source observation is historical on the successor with13contracts/101artifacts; it remains no loader/test/acceptance result. Retained historical passed-L111 catalog observation (not a current post-sync census): The current declarative catalog has 14 contract rows and 94 artifact rows. It includes the permanent local-composition tool_answer_l111_test_support artifact and tool-answer-l111-shaped-rows replacement contract. These declarations establish ownership/reachability, not observed execution or a fresh acceptance census; older catalog populations are historical. [273]
+- At the pre-L109 L53 freeze (CODE d457a9ae / MEMORY bacaaf79), Current source delta inspected statically: The code-base-to-candidate diff adds consumers only to twelve existing artifact rows. Retain the statically parsed 13-contract/93-artifact account and historical earlier counts; catalog declarations are reachability, not a loader, test, lane or acceptance result. This retained 13-contract/93-artifact source observation is historical on the successor with13contracts/101artifacts; it remains no loader/test/acceptance result. Retained historical passed-L111 catalog observation (not a current post-sync census): The current declarative catalog has 14 contract rows and 94 artifact rows. It includes the permanent local-composition tool_answer_l111_test_support artifact and tool-answer-l111-shaped-rows replacement contract. These declarations establish ownership/reachability, not observed execution or a fresh acceptance census; older catalog populations are historical. [300]
 
 - The fifteen-artifact STOP-delta caption retains its prior epoch and scoped source/grade history. Current L162 task-order consumers on existing Node-lockfile/user-settings guard artifacts coexist with landed L61 guard-consumer maintenance; identities and metadata are distinct from consumer membership, and neither establishes execution or acceptance. [274]
 
 
 - Consumers of `mcp/tests/anchor_fixture_models.py` add `mcp/tests/test_landing_state_refusals.py`, `mcp/tests/test_tool_answer_rows_l111.py`. All other governed row attributes are preserved; declaration is not execution. Anchor: Changed existing consumer row [275]
+
 - Consumers of `mcp/tests/curator_coherence_test_support.py` add `mcp/tests/test_tool_answer_rows_l111.py`. All other governed row attributes are preserved; declaration is not execution. Anchor: Changed existing consumer row [276]
+
 - Consumers of `mcp/tests/fixtures/l109_tool_answers/context_packet_largest.json` add `mcp/tests/test_landing_state_refusals.py`, `mcp/tests/test_tool_answer_rows_l111.py`. All other governed row attributes are preserved; declaration is not execution. Anchor: Changed existing consumer row [277]
+
 - Consumers of `mcp/tests/fixtures/l109_tool_answers/context_packet_ordinary.json` add `mcp/tests/test_landing_state_refusals.py`, `mcp/tests/test_tool_answer_rows_l111.py`. All other governed row attributes are preserved; declaration is not execution. Anchor: Changed existing consumer row [278]
+
 - Consumers of `mcp/tests/fixtures/l109_tool_answers/knowledge_diff_largest.json` add `mcp/tests/test_landing_state_refusals.py`, `mcp/tests/test_tool_answer_rows_l111.py`. All other governed row attributes are preserved; declaration is not execution. Anchor: Changed existing consumer row [279]
+
 - Consumers of `mcp/tests/fixtures/l109_tool_answers/knowledge_diff_ordinary.json` add `mcp/tests/test_landing_state_refusals.py`, `mcp/tests/test_tool_answer_rows_l111.py`. All other governed row attributes are preserved; declaration is not execution. Anchor: Changed existing consumer row [280]
+
 - Consumers of `mcp/tests/fixtures/l109_tool_answers/knowledge_read_largest.json` add `mcp/tests/test_landing_state_refusals.py`, `mcp/tests/test_tool_answer_rows_l111.py`. All other governed row attributes are preserved; declaration is not execution. Anchor: Changed existing consumer row [281]
+
 - Consumers of `mcp/tests/fixtures/l109_tool_answers/knowledge_read_ordinary.json` add `mcp/tests/test_landing_state_refusals.py`, `mcp/tests/test_tool_answer_rows_l111.py`. All other governed row attributes are preserved; declaration is not execution. Anchor: Changed existing consumer row [282]
+
 - Consumers of `mcp/tests/fixtures/l109_tool_answers/read_ar_files_largest.json` add `mcp/tests/test_landing_state_refusals.py`, `mcp/tests/test_tool_answer_rows_l111.py`. All other governed row attributes are preserved; declaration is not execution. Anchor: Changed existing consumer row [283]
+
 - Consumers of `mcp/tests/fixtures/l109_tool_answers/read_ar_files_ordinary.json` add `mcp/tests/test_landing_state_refusals.py`, `mcp/tests/test_tool_answer_rows_l111.py`. All other governed row attributes are preserved; declaration is not execution. Anchor: Changed existing consumer row [284]
+
 - Consumers of `mcp/tests/knowledge_index_test_support.py` add `mcp/tests/test_landing_state_refusals.py`, `mcp/tests/test_tool_answer_rows_l111.py`. All other governed row attributes are preserved; declaration is not execution. Anchor: Changed existing consumer row [285]
+
 - Consumers of `mcp/tests/knowledge_rows_test_support.py` add `mcp/tests/test_landing_state_refusals.py`, `mcp/tests/test_tool_answer_rows_l111.py`. All other governed row attributes are preserved; declaration is not execution. Anchor: Changed existing consumer row [286]
+
 - Consumers of `mcp/tests/knowledge_writer_test_support.py` add `mcp/tests/test_landing_state_refusals.py`, `mcp/tests/test_tool_answer_rows_l111.py`. All other governed row attributes are preserved; declaration is not execution. Anchor: Changed existing consumer row [287]
+
 - Consumers of `mcp/tests/read_boundary_oracle_test_support.py` add `mcp/tests/test_abandoned_series_closeout.py`, `mcp/tests/test_closeout_refusal_aftermath.py`, `mcp/tests/test_direct_landing_leaf_identity.py`, `mcp/tests/test_enclosure_without_remains.py`, `mcp/tests/test_knowledge_gate_routes.py`, `mcp/tests/test_master_chain_public_routes.py`. All other governed row attributes are preserved; declaration is not execution. Anchor: Changed existing consumer row [288]
+
 - Consumers of `mcp/tests/read_scope_test_support.py` add `mcp/tests/test_landing_state_refusals.py`, `mcp/tests/test_tool_answer_rows_l111.py`. All other governed row attributes are preserved; declaration is not execution. Anchor: Changed existing consumer row [289]
 
 - **Historical source-bound reference account, not an operative override:** The schema version and the large-fixture threshold at the top of the file. [1]
+
 - **Historical source-bound reference account, not an operative override:** A contract row: identity, owner file and exact evidence node. [2]
+
 - **Historical source-bound reference account, not an operative override:** Existing Node package-lock fixture keeps its hand-authored authority, independent-boundary fidelity, permanent lifetime, replacement contract and exact consumer scope; declaration is not invocation. [94]
+
 - **Historical source-bound reference account, not an operative override:** The Node lockfile artifact declares the two reviewer-worklist modules as consumers. [95]
+
 - **Historical source-bound reference account, not an operative override:** Worklist process support declares a permanent local-composition artifact and its replacement test node. Anchor: file [98]
+
 - **Historical source-bound reference account, not an operative override:** The catalog declares test_converted_onboarding_drift.py on the curator-coherence, Node lockfile and knowledge-conversion artifact consumer lists. [99]
+
 - **Historical source-bound reference account, not an operative override:** The schema version and large-fixture discovery threshold remain explicit. Anchor: file [212]
+
 - **Historical source-bound reference account, not an operative override:** The four retained knowledge contracts declare their owners and exact evidence nodes. Anchor: file [213]
+
 - **Historical source-bound reference account, not an operative override:** Existing Node package-lock fixture keeps its hand-authored authority, independent-boundary fidelity, permanent lifetime, replacement contract and exact consumer scope; declaration is not invocation. [216]
 - **Historical source-bound reference account, not an operative override:** The shared build_endpoint_fixture builder composes the existing diff fixture and an optional external-memory enclosure for synthetic-identity composition tests. [217]
+
 - **Historical source-bound reference account, not an operative override:** The member-source cases are registered on the read-scope artifact's exact consumer list in canonical ascending order; the older append-at-end account is historical. Anchor: `mcp/tests/test_review_family_member_sources.py` [218]
+
 - **Historical source-bound reference account, not an operative override:** The shared build_endpoint_fixture builder composes the existing diff fixture and an optional external-memory enclosure for synthetic-identity composition tests. [219]
+
 - **Historical source-bound reference account, not an operative override:** The read-scope artifact declares the relationship-line, relationship-movement and relationship-reach modules as exact consumers. [221]
+
 - **Historical source-bound reference account, not an operative override:** The shared build_endpoint_fixture builder composes the existing diff fixture and an optional external-memory enclosure for synthetic-identity composition tests. [222]
+
 - **Historical source-bound reference account, not an operative override:** The read-scope artifact declares test_knowledge_review_attributed_source_content.py as an exact consumer. [223]
+
 - **Historical source-bound reference account, not an operative override:** The conversion-toolchain module is declared on the curator-coherence and read-scope artifact rows. Generation support currently declares test_knowledge_read_boundaries.py and test_knowledge_read_paths.py. [225]
+
 - **Historical source-bound reference account, not an operative override:** The current catalog declares test_knowledge_proofs.py as a consumer of five exact artifact rows. [226]
+
 - **Historical source-bound reference account, not an operative override:** Existing Node package-lock fixture keeps its hand-authored authority, independent-boundary fidelity, permanent lifetime, replacement contract and exact consumer scope; declaration is not invocation. [227]
+
 - **Historical source-bound reference account, not an operative override:** The current catalog declares mcp/tests/test_knowledge_worklist_leaf.py on 1 exact artifact consumer list. [228]
+
 - **Historical source-bound reference account, not an operative override:** Existing Node package-lock fixture keeps its hand-authored authority, independent-boundary fidelity, permanent lifetime, replacement contract and exact consumer scope; declaration is not invocation. [229]
+
 - **Historical source-bound reference account, not an operative override:** The current catalog declares mcp/tests/test_knowledge_currentness.py on 1 exact artifact consumer list. [230]
+
 - **Historical source-bound reference account, not an operative override:** Existing Node package-lock fixture keeps its hand-authored authority, independent-boundary fidelity, permanent lifetime, replacement contract and exact consumer scope; declaration is not invocation. [231]
+
 - **Historical source-bound reference account, not an operative override:** The Node lockfile artifact declares mcp/tests/test_knowledge_paging.py as a consumer. [232]
+
 - **Historical source-bound reference account, not an operative override:** The current catalog declares mcp/tests/test_planned_knowledge_effects.py on 1 exact artifact consumer list. [234]
+
 - **Historical source-bound reference account, not an operative override:** Existing Node package-lock fixture keeps its hand-authored authority, independent-boundary fidelity, permanent lifetime, replacement contract and exact consumer scope; declaration is not invocation. [235]
+
 - **Historical source-bound reference account, not an operative override:** The Node lockfile artifact declares mcp/tests/test_knowledge_leaf_read.py as a consumer. [236]
+
 - **Historical source-bound reference account, not an operative override:** Existing Node package-lock fixture keeps its hand-authored authority, independent-boundary fidelity, permanent lifetime, replacement contract and exact consumer scope; declaration is not invocation. [238]
+
 - **Historical source-bound reference account, not an operative override:** The Node lockfile artifact declares mcp/tests/test_unexplained_change_disposition.py as a consumer. [239]
+
 - **Historical source-bound reference account, not an operative override:** Existing Node package-lock fixture keeps its hand-authored authority, independent-boundary fidelity, permanent lifetime, replacement contract and exact consumer scope; declaration is not invocation. [240]
+
 - **Historical source-bound reference account, not an operative override:** The current catalog declares mcp/tests/test_knowledge_route_chain.py on nine exact artifact consumer lists. [241]
+
 - **Historical source-bound reference account, not an operative override:** The current catalog declares mcp/tests/test_reconsideration_surfacing.py on 1 exact artifact consumer list. [242]
+
 - **Historical source-bound reference account, not an operative override:** Existing Node package-lock fixture keeps its hand-authored authority, independent-boundary fidelity, permanent lifetime, replacement contract and exact consumer scope; declaration is not invocation. [243]
+
 - **Historical source-bound reference account, not an operative override:** The schema version and large-fixture discovery threshold remain explicit. [244]
+
 - **Historical source-bound reference account, not an operative override:** The four retained knowledge contracts declare their owners and exact evidence nodes. [245]
+
 - **Historical source-bound reference account, not an operative override:** Closeout fixture support declares the retained code/memory transaction test as its replacement node. [246]
+
 - **Historical source-bound reference account, not an operative override:** Closeout-input support declares test_automatic_post_integration_cleanup.py and test_cleanup_repeated_archive_ready.py among its exact consumers. [247]
-- **Historical source-bound reference account, not an operative override:** The registered-preview comparator's artifact row retains its replacement contract and lists both direct and transitive consumers. Anchor: 2072-2089 [260]
-- **Historical source-bound reference account, not an operative override:** The Node lockfile artifact declares test_worktree_own_environment.py as a consumer; this is dependency accounting, not evidence execution. [261]
+
+- **Historical source-bound reference account, not an operative override:** The registered-preview comparator's artifact row retains its replacement contract and lists both direct and transitive consumers. Anchor: 2072-2089 [301]
+
+- **Historical source-bound reference account, not an operative override:** The Node lockfile artifact declares test_worktree_own_environment.py as a consumer; this is dependency accounting, not evidence execution. [302]
+
 - **Historical source-bound reference account, not an operative override:** The permanent shared settings guard declares its owner, replacement node and exact consumers. [262]
-- **Historical source-bound reference account, not an operative override:** The read_scope_test_support artifact registers test_comparison_changeset as an exact consumer of knowledge-read-scope-cases. [264]
+
+- **Historical source-bound reference account, not an operative override:** The read_scope_test_support artifact registers test_comparison_changeset as an exact consumer of knowledge-read-scope-cases. [304]
+
 - **Historical source-bound reference account, not an operative override:** Historical pre-L43 catalog ownership/reachability witness; not a current registration or execution claim. [265]
+
 - **Historical source-bound reference account, not an operative override:** The portable L37 attempt-1 and attempt-2 history fixtures are separate permanent fixture artifacts for the same recorded-meaning regression consumer. [266]
+
 - **Historical source-bound reference account, not an operative override:** The parked-candidate module consumes the existing checkpoint-landing support artifact without changing its lifecycle contract. Anchor: `mcp/tests/evidence-lifecycle.toml:371-395` [268]
+
 - **Historical source-bound reference account, not an operative override:** The parked-candidate module consumes the existing Curator coherence support artifact without changing its lifecycle contract. Anchor: `mcp/tests/evidence-lifecycle.toml:478-599` [269]
+
 - **Historical source-bound reference account, not an operative override:** The parked-candidate module consumes the existing knowledge-conversion support artifact without changing its lifecycle contract. Anchor: `mcp/tests/evidence-lifecycle.toml:1826-1852` [270]
+
 - **Historical source-bound reference account, not an operative override:** The L110 shared-support artifact declares the refusal suite as a transitive consumer through test_tool_answer_table; declarations establish reachability, not execution. [272]
 
 - **Historical source-bound reference account, not an operative override:** The role-agent and role-message consumer additions belong to the existing settings-guard, Node-lockfile, Paseo-launch and Paseo-runtime artifact rows; declarations establish reachability, not execution. [267]
 
-- Diff-scope support declares line/movement/reach as canonically ordered exact consumers; the prior newest-last caption is historical, not a current ordering rule. [220]
+- Diff-scope support declares line/movement/reach as canonically ordered exact consumers; the prior newest-last caption is historical, not a current ordering rule. [303]
 
 
-- The current catalog declares 12 contracts and 73 artifacts, including three permanent reconsideration, writer-correction and native-worklist shared supports. Ownership, lifetimes, replacement nodes and exact consumers are declarations, not observed execution or acceptance. [271]
 
 - Native-worklist support declares the closeout-live-gate and workspace-wake-zero-census consumers. Source-owned sorting preserves settings-guard and Node-fixture membership and changes no non-consumer metadata in that repair. [292]
 
@@ -802,4 +870,6 @@ The existing `paseo_launch_test_support.py` shared-support row now describes the
 
 - Current exact consumer populations are seven for comparison, twelve for overview-order and fourteen for repeated cleanup; the reviewer-worklist-process support survives and the retired conversation/Eve artifacts are not declared. [296]
 
-- Only consumer lists change. The existing user-settings guard and Node lockfile gain seven new regression modules; Curator coherence support gains the manifest-edges consumer; Paseo launch and runtime support both gain leaf_enclosure_start plus memory/step-up/choice/recovery consumers. Artifact/contract identities and executable replacement contracts stay unchanged. [297]
+- The current parsed inventory declares 12 contracts and 75 artifacts. The two L57 supports are permanent integration/local-composition declarations with three and five exact consumers respectively; declarations establish no invocation or acceptance. Earlier catalog populations and landed-L162 comparisons remain historical. [271]
+
+- The L88 consumer-only account is historical. The current comparison adds review_curator_fixture_support.py and reviewer_leaf_view_support.py; eight existing artifact rows change consumers, with existing non-consumer metadata and contract rows preserved. [297]

@@ -3,7 +3,7 @@
   "proves": [
     {
       "anchor": {
-        "blob": "a306e6c17747dcb7de5c2287af5e111db4c020d7",
+        "blob": "4f1ab6d9c150e96c234127a7f40c93a768c81e1f",
         "content": "sha256:02e6866af0b572691a8d2c1719817c5423efa1069ffbca4c1a36c737df1582ed",
         "locator": {
           "kind": "symbol",
@@ -63,6 +63,104 @@
               "kind": "file"
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "Memory commits and branches remain selectable beyond the recent list; malformed names are rejected before Git and failed commit-list reads are unavailable.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4f1ab6d9c150e96c234127a7f40c93a768c81e1f",
+            "content": "sha256:2933d89534caad74625cf815268929f4f66ea8a985e87ffc93b2f71c1e36fcc4",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_any_memory_commit_or_branch_is_selectable"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "UTF-8 summaries are byte bounded while whole-prose reads retain full text and selected-tree identity, with named invalid, absent and unavailable outcomes.\n\nAnchor: inclusive source ranges",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4f1ab6d9c150e96c234127a7f40c93a768c81e1f",
+            "content": "sha256:194cd55e12f4b71870a86824dd949848b6a9b91a2f145ab19f2761db9f0788c8",
+            "locator": {
+              "end": 330,
+              "kind": "line_range",
+              "start": 316
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "4f1ab6d9c150e96c234127a7f40c93a768c81e1f",
+            "content": "sha256:8d3c848d75efe35959cd7f043f5eb1db082782cba5ebcc3bfc014646b17680ea",
+            "locator": {
+              "end": 371,
+              "kind": "line_range",
+              "start": 333
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "Timeline pages retain event identity and bound continuations; instrumentation asserts one build and one hash walk. Bounded memo checks cover byte pricing, eviction, mutation isolation and unretained over-budget reads.\n\nAnchor: inclusive source ranges",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4f1ab6d9c150e96c234127a7f40c93a768c81e1f",
+            "content": "sha256:87f1e0a19c7cbb56bca3e6d415ba8b8149f12dc29a8c5a917c81c1ae19d18c11",
+            "locator": {
+              "end": 433,
+              "kind": "line_range",
+              "start": 374
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "4f1ab6d9c150e96c234127a7f40c93a768c81e1f",
+            "content": "sha256:23542fa22a0fb3b01909319e888a333a699be5741ccf6432f4df5c0dc0bb1f6f",
+            "locator": {
+              "end": 512,
+              "kind": "line_range",
+              "start": 436
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "4f1ab6d9c150e96c234127a7f40c93a768c81e1f",
+            "content": "sha256:b3124690e026989311daf49a5b362d9443eb39305bc1fe62b82605474b050169",
+            "locator": {
+              "end": 522,
+              "kind": "line_range",
+              "start": 515
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "4f1ab6d9c150e96c234127a7f40c93a768c81e1f",
+            "content": "sha256:2480a5b7f05851202bea3a918cdfb579be754181f4d6d23a0b8c08f8cfb93de5",
+            "locator": {
+              "end": 569,
+              "kind": "line_range",
+              "start": 525
+            }
           },
           "kind": "test"
         }

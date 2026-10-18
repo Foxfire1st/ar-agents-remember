@@ -1,0 +1,55 @@
+{
+  "path": "mcp/tests/review_curator_fixture_support.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The fixture uses a real world/contract and calls its publication helper.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "31f0adcbc17a05521aedc8127bc5c09e5092a017",
+            "content": "sha256:ad440580b360d5b792dc4c6539e6bf6b1f07f057124170de7482b2e6ee1c387d",
+            "locator": {
+              "kind": "symbol",
+              "name": "build_recorded_fixture"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Fixture evidence and real prepare/publish calls remain separate from review display channels.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "31f0adcbc17a05521aedc8127bc5c09e5092a017",
+            "content": "sha256:e145181187c13871f17436e1edfce763e48ff25e1064a3d3aa674c4b5b8538bb",
+            "locator": {
+              "kind": "symbol",
+              "name": "_publish_assessment"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "The authored assessment names the fixture revision pair and evidence namespace.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "31f0adcbc17a05521aedc8127bc5c09e5092a017",
+            "content": "sha256:7b0cab5c1157024c5e50d2aaf79db63bf0bd1bb3cd25559752afbc555b1f4cd7",
+            "locator": {
+              "kind": "symbol",
+              "name": "_assessment_revision"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

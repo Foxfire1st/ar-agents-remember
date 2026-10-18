@@ -8,8 +8,8 @@
 
 **The review workspace's scope for MIK-R34's per-hunk intent markers:** which tree comparison they describe, each
 changed file's classification (read once per surface and shared by every pane of the file), and the one followed
-marker the reader can return to. Only a tree comparison provides a scope; a dataset review provides none, and every
-diff renders exactly as before, as does any diff rendered outside a review workspace.
+marker the reader can return to. The hook returns no scope while the comparison identifier is undefined and
+provides a scope when it is defined. A diff without a scope draws no review markers.
 
 ## Code Commentary
 
@@ -21,7 +21,7 @@ diff renders exactly as before, as does any diff rendered outside a review works
   the `IntentMarkerScope` context (default `null`).
 - **The inventory (`markerInventory`; review R1 F5, R2).** The change inventory's listed paths, and `partial` when the
   inventory is `partial` **or not `measured` at all**, so a changed file may be unlisted.
-- **The scope (`useIntentMarkerScope`).** `null` when the payload names no comparison. Otherwise: `listed(path)`;
+- **The scope (`useIntentMarkerScope`).** `null` while the input comparison identifier is undefined. Otherwise: `listed(path)`;
   `classify` and `peek` from the cache; `origin` and `target` (the followed marker and the target it opened) and
   `returning` (the marker a return is bringing the reader to), each only for the same repo, master, leaf and
   comparison, so a marker of another comparison (the reader refreshed onto a new one) is never offered. `follow`
@@ -50,7 +50,7 @@ diff renders exactly as before, as does any diff rendered outside a review works
   (recorded on `hunkMarkers.ts.md`): the scope reads only that response, once per changed file per surface; the
   surface case asserts one read per file with `comparison=2`, and `intentMarkerScope.test.ts` asserts an unlisted path
   is never asked about.
-- A dataset review has no scope, so no read and no mark.
+- An undefined comparison identifier yields no scope. `useMarkClassification` returns `none` without a scope; this module does not select behavior by review mode.
 - A missing classification is `none`, `unlisted`, `loading` or `unavailable`, never an empty list of marks.
 
 ### Todos
@@ -67,7 +67,6 @@ No configured live documentation source was available for this pass.
 
 ### Repo-Internal References
 
-- The module's own statement: a tree comparison provides the scope; a dataset review or a diff outside the workspace has none. [1]
 - Where a followed marker sat, the workspace's moves, a pane's read and the scope's value. [2]
 - A return that never finds its mark stops waiting. [3]
 - A partial or unmeasured inventory counts as partial (review R2). [4]
@@ -80,3 +79,5 @@ No configured live documentation source was available for this pass.
 ### Cross-Repo References
 
 No cross-repo boundary is crossed by this file.
+
+- useIntentMarkerScope returns null when comparison is undefined and otherwise returns a scope containing that comparison. IntentMarkerScope defaults to null; useMarkClassification returns none without a scope or when inactive. These implementation checks establish the no-scope boundary without asserting that a dataset review lacks a comparison. [1]

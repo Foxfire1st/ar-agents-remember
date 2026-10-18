@@ -1,0 +1,34 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake"
+    ],
+    "justification": "A future navigation cleanup must not replace the explicit marker return with outside subject selections and accidentally change walk/history semantics."
+  },
+  "applicability": "The recorded reviewer/reader 1 choice of MIK-R67@v2 rule18, or the explicit F07 resource ruling for one-spilled-history.",
+  "conditions": [
+    "Use the review marker’s visible Back operation, not a separate browser-history subject entry.",
+    "Browser-history selection is an outside selection and can reset the walked tree; the review address deliberately has one history entry."
+  ],
+  "exclusions": [
+    "No promise that the current marker return itself preserves every walked family; it restores its owned workspace state.",
+    "This is a source-bound future boundary, not a fresh runtime, visual, suite or independent MEMORY verdict."
+  ],
+  "id": "INV-FREFAX",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "/home/firefox/projects/ar-coordination/tasks/agents-remember/260928_maintained-invariant-knowledge/notes/reports/worker/48060148-87d0-4e1e-ad2e-6f1fa353092d/role-launch/freeze05-builder-curator-handoff.md#producer-53"
+      ],
+      "path": "freeze11-r67-prescribed-boundaries-and-spill-resource-choice-01.json"
+    },
+    "handoffEntry": "MIK-R67@v2 by-design 1",
+    "leaf": "260928-MIK-L57",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "The browser's Back does not return from a followed marker. A selection made through browser history is an outside selection and would drop the walked tree (MIK-R39). The review has one history entry (MIK-R58 rule 8); the visible Back control returns from a marker.",
+  "status": "proposed",
+  "supersedes": []
+}

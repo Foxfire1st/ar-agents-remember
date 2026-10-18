@@ -3,7 +3,25 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "13351816b627d4c17c8e47547ab42767044476f2",
+        "blob": "4283eb12ab754b846590815abd4567d69b342c97",
+        "content": "sha256:5d43d13647af4a54d408949329010e2c38b9ecf9977415b875b7f6aa57dd0277",
+        "locator": {
+          "kind": "symbol",
+          "name": "ReviewScopeHeader"
+        }
+      },
+      "id": "RLZ-8D95SD",
+      "invariant": "INV-P4Z520",
+      "origin": {
+        "handoffEntry": "CUR-L57-open-movement-facts-parent-carrier",
+        "leaf": "260928-MIK-L57"
+      },
+      "rationale": "The actual parent mounts ReviewMovementStatus and ReviewMovementFacts as open siblings before ScopeMetadata. Both receive the current selected-read status, so the owner-state/full-facts renderers decide their own pending/unavailable behavior outside the default-closed provenance container. This is the open-composition carrier of the existing disclosure obligation, not a claim that this parent independently audits all descendant markup or proves a runtime/browser result.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "4283eb12ab754b846590815abd4567d69b342c97",
         "content": "sha256:209e1c2849c607bdd5d46126d880bfa8c565e494b57902065da3f8fe0057ccbb",
         "locator": {
           "kind": "symbol",
@@ -20,7 +38,7 @@
     },
     {
       "anchor": {
-        "blob": "13351816b627d4c17c8e47547ab42767044476f2",
+        "blob": "4283eb12ab754b846590815abd4567d69b342c97",
         "content": "sha256:fe23b30006ef4be89563c0548e217ba643853d12811316d0ccc9e6a6203aa65f",
         "locator": {
           "kind": "symbol",
@@ -38,11 +56,11 @@
   ],
   "references": {
     "1": {
-      "note": "**The module's own statement of which lines are the task's and which describe one subject's read.**\n\nAnchor: \"The inventory and code trees are the task's whichever subject is\"",
+      "note": "The module distinguishes task inventory/code trees from selected-subject comparison/currentness/family lines.\n\nAnchor: inclusive source ranges",
       "targets": [
         {
           "anchor": {
-            "blob": "cda7fc4b409d9cc0fc82d054ec8c237fffbee12f",
+            "blob": "4283eb12ab754b846590815abd4567d69b342c97",
             "content": "sha256:44bf2f9af9651af1e53d050e53533be174e933449f938458bd7e276372308cec",
             "locator": {
               "end": 4,
@@ -55,27 +73,40 @@
       ]
     },
     "2": {
-      "note": "The header and its test ids.\n\nAnchor: `review-scope-header`; `review-scope-comparison`; `review-scope-families`",
+      "note": "The header retains its record/inventory/test IDs and mounts the joint movement state and complete guarded facts openly, outside the metadata container.",
       "targets": [
         {
           "anchor": {
-            "blob": "cda7fc4b409d9cc0fc82d054ec8c237fffbee12f",
-            "content": "sha256:a184f1d918d65f188ab26fa691b96dee20ce026418bfdbeff2aff95e5b98ef15",
+            "blob": "4283eb12ab754b846590815abd4567d69b342c97",
+            "content": "sha256:5d43d13647af4a54d408949329010e2c38b9ecf9977415b875b7f6aa57dd0277",
             "locator": {
               "kind": "symbol",
               "name": "ReviewScopeHeader"
             }
           },
           "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5a6b1d97a9f545bf2bdc1a19893821d020d32657",
+            "content": "sha256:877e8c24f0131d2a59b299d0d52e44eb8497c8b9fb2badd2e5eb54bd15c67bcc",
+            "locator": {
+              "end": 30,
+              "kind": "line_range",
+              "start": 18
+            },
+            "path": "dashboard/src/panels/review/ReviewMovement.tsx"
+          },
+          "kind": "code"
         }
       ]
     },
     "3": {
-      "note": "The subject-bound lines, replaced while pending or unavailable.\n\nAnchor: \"is being read\"; \"could not be read\"",
+      "note": "Selected-subject scope lines become pending or unavailable statements rather than claiming the previous answer.",
       "targets": [
         {
           "anchor": {
-            "blob": "cda7fc4b409d9cc0fc82d054ec8c237fffbee12f",
+            "blob": "4283eb12ab754b846590815abd4567d69b342c97",
             "content": "sha256:209e1c2849c607bdd5d46126d880bfa8c565e494b57902065da3f8fe0057ccbb",
             "locator": {
               "kind": "symbol",
@@ -87,11 +118,11 @@
       ]
     },
     "4": {
-      "note": "The record label.\n\nAnchor: \"Reconstructed from recorded endpoints\"",
+      "note": "Reconstructed recorded endpoints take precedence over recorded/live task labels.",
       "targets": [
         {
           "anchor": {
-            "blob": "cda7fc4b409d9cc0fc82d054ec8c237fffbee12f",
+            "blob": "4283eb12ab754b846590815abd4567d69b342c97",
             "content": "sha256:fe23b30006ef4be89563c0548e217ba643853d12811316d0ccc9e6a6203aa65f",
             "locator": {
               "kind": "symbol",
@@ -103,16 +134,28 @@
       ]
     },
     "5": {
-      "note": "The workspace mounts it with a status derived from `reading`.\n\nAnchor: `ReviewScopeHeader`; `status=`",
+      "note": "The actual workspace maps its ReadingStatus to pending/unavailable/null and passes that status to the header mount.",
       "targets": [
         {
           "anchor": {
-            "blob": "5ff876f9b2c2f34b58783e9658a88bb4d5cec25c",
-            "content": "sha256:3b79d5b276a05b61cf7f7436d16d9f6d7136c7ceb7a3455ff5b05b9edbd930b5",
+            "blob": "9013d5e76d160ec2c25d2edc99c11f391ffecb83",
+            "content": "sha256:bbbf079bba4de16315bb6eb957925a285ebfb2c41dba6eb9127855f331712cc0",
             "locator": {
-              "end": 408,
+              "kind": "symbol",
+              "name": "readingState"
+            },
+            "path": "dashboard/src/panels/review/ReviewWorkspace.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9013d5e76d160ec2c25d2edc99c11f391ffecb83",
+            "content": "sha256:2ec5f4180c2c3d602a86b2c2a921948b47865ce99f620f6c16df49210b700284",
+            "locator": {
+              "end": 311,
               "kind": "line_range",
-              "start": 401
+              "start": 303
             },
             "path": "dashboard/src/panels/review/ReviewWorkspace.tsx"
           },
@@ -121,12 +164,12 @@
       ]
     },
     "6": {
-      "note": "Scope header with record label, inventory and scope",
+      "note": "The header renders record label, inventory and scope while ScopeMetadata separately retains comparison identities/trees/command; the answered metadata container alone is default-closed provenance.",
       "targets": [
         {
           "anchor": {
-            "blob": "13351816b627d4c17c8e47547ab42767044476f2",
-            "content": "sha256:617cc376f77bde9927d55903c9cd9b19ba1db76d502091f184d7fb432e1e140c",
+            "blob": "4283eb12ab754b846590815abd4567d69b342c97",
+            "content": "sha256:5d43d13647af4a54d408949329010e2c38b9ecf9977415b875b7f6aa57dd0277",
             "locator": {
               "kind": "symbol",
               "name": "ReviewScopeHeader"
@@ -136,12 +179,11 @@
         },
         {
           "anchor": {
-            "blob": "13351816b627d4c17c8e47547ab42767044476f2",
-            "content": "sha256:01bc62333d111814ac7a55a86a786bd13f29f94d60b2878f381680a7637cd1f0",
+            "blob": "4283eb12ab754b846590815abd4567d69b342c97",
+            "content": "sha256:dde4010c28079a3cbe9020ca274208e78cb6038fab169a2415721eba1eb1e392",
             "locator": {
-              "end": 26,
-              "kind": "line_range",
-              "start": 8
+              "kind": "symbol",
+              "name": "ScopeMetadata"
             }
           },
           "kind": "code"
@@ -149,11 +191,11 @@
       ]
     },
     "7": {
-      "note": "Family scope block with limitations",
+      "note": "FamilyScope remains marked open content and withholds a previous payload limitation while the subject has no answer.",
       "targets": [
         {
           "anchor": {
-            "blob": "13351816b627d4c17c8e47547ab42767044476f2",
+            "blob": "4283eb12ab754b846590815abd4567d69b342c97",
             "content": "sha256:a24eec38d512c60b98f99a1bea0ce2c56695a52812c42af76a00e3098eac22c7",
             "locator": {
               "kind": "symbol",
@@ -165,11 +207,11 @@
       ]
     },
     "8": {
-      "note": "Subject scope derivation from catalogue or task context",
+      "note": "Selected-subject comparison/currentness/family derivation is payload display with explicit pending/failure guards, not a catalogue read or movement measurement.",
       "targets": [
         {
           "anchor": {
-            "blob": "13351816b627d4c17c8e47547ab42767044476f2",
+            "blob": "4283eb12ab754b846590815abd4567d69b342c97",
             "content": "sha256:209e1c2849c607bdd5d46126d880bfa8c565e494b57902065da3f8fe0057ccbb",
             "locator": {
               "kind": "symbol",
@@ -180,12 +222,12 @@
         },
         {
           "anchor": {
-            "blob": "13351816b627d4c17c8e47547ab42767044476f2",
-            "content": "sha256:b2f874abd58cd3e8db26c3c380f5bfce62c4342ed8cd3481f32d48bf334e6a2a",
+            "blob": "4283eb12ab754b846590815abd4567d69b342c97",
+            "content": "sha256:41e513c35c21278661f45a1dd81223e90b4287c2cbe5504e48e10bf2b1d32a63",
             "locator": {
-              "end": 148,
+              "end": 134,
               "kind": "line_range",
-              "start": 130
+              "start": 131
             }
           },
           "kind": "code"

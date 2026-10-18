@@ -188,6 +188,17 @@ the incomplete entries.
 
 - Mechanical route chains are now added through `route_context.with_route_context` to the four selected item kinds over the already parsed K_C. They are presentation context, not extra reach, an ID change or an independent store read.
 
+## Request-scoped classification sharing
+
+After creating the run's classifier, `_Run.document` now offers that classifier, the input pairing and
+already-read candidate knowledge side to `share_classifier`. An active `classification_run` lets the
+same request's downstream reviewer facts/gate judgments reuse the actual computed inputs; without
+that context the call is inert. Context exit clears the held references even on failure. This is
+in-process request sharing, not a serialized worklist field, a persistent cache or permission to use
+mapped gate placements as reviewer attribution. Existing item assembly, one-pass reach, deterministic
+digest and named incomplete-input rules remain their own mechanisms; no new performance/test grade
+is inferred from this source-only addition.
+
 ## Evidence
 
 - What one run reads. [34]
@@ -280,3 +291,6 @@ These spans and input-card identities were independently rechecked after the sup
 - Retained persistent link targets surface removed route, path or symbol observations. [81]
 
 - Route-chain context is a mechanical projection over the parsed candidate. [82]
+
+- The orchestrator shares its actual classifier, exact pairing and candidate knowledge side with the active request-scoped classification owner before computing scope/linkage. [83]
+- The classification context clears classifier, candidate, pairing and path references on exit, including failures; no active context makes share_classifier inert. [84]

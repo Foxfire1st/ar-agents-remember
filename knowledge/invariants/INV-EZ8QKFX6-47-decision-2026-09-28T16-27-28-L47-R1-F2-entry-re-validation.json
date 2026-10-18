@@ -2,12 +2,15 @@
   "admission": "legacy-unassessed",
   "applicability": "The re-validation of the task entry's changed-intent summary in the dashboard cockpit.",
   "conditions": [
-    "The cockpit shell provides IntentEntryRevalidation with shown = Operations view and no takeover.",
-    "Each trigger costs exactly one summary read."
+    "The cockpit provides IntentEntryRevalidation with shown = Operations view and no takeover; without its provider generation remains zero and revalidate is inert.",
+    "Shown transitions and explicit revalidate callbacks advance the shared generation. The entry's facts key carries that generation into its existing summary-read owner.",
+    "The mounted live review memory hook calls the same revalidate callback after matching its registered scope/revision; initial/reconnect readiness also reconciles. Closed/recorded reviews do not register.",
+    "Read coalescing, conditional retention and superseded-answer admission remain owned by the existing summary hook/store; no unconditional one-network-read-per-notification promise is made."
   ],
   "exclusions": [
-    "A live push of the count while the same panel stays open.",
-    "Any new watcher, projection field or event channel for knowledge writes."
+    "The superseded blanket absence of live memory invalidation or of a knowledge-related signal on the existing state stream.",
+    "A second EventSource, an entry-installed poller, or current counts inferred from an unobserved memory operand.",
+    "Historical L47 ruling provenance is preserved but does not prohibit R57@v2 rule5's now-implemented invalidation path; no new runtime/performance grade."
   ],
   "id": "INV-EZ8QKFX6",
   "origin": {
@@ -15,9 +18,9 @@
     "legacyId": "d91b1603-4a7e-4bfa-9b8a-861d23242fc8",
     "task": "260921-ICR"
   },
-  "revision": 2,
+  "revision": 3,
   "schema": "ar-invariant/v1",
-  "statement": "Architect ruling on blocked L47-R1-F2: no new event or projection system; the entry summary re-reads whenever the task detail is opened or re-shown, whenever the reviewer is left back to the entry, and on the reviewer's own refresh.",
+  "statement": "The shared entry-generation context retains task-open/re-show/return and explicit-refresh revalidation, and accepts the matching mounted live review's memory-invalidation callback. Memory invalidation uses the existing scoped state stream; the context itself remains local React state, not a second event connection, projection authority or poller.",
   "status": "proposed",
   "supersedes": []
 }

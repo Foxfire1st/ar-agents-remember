@@ -7,7 +7,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "169e5ffd9fe788f8208dd5ba209485691b71636c",
+            "blob": "db86a83a1ecd453ac3628c8183f4d2c33268150d",
             "content": "sha256:69d3be37a327994dc938540f79c6b25e4b4002bc83558ce8d45dc2c07e5ab667",
             "locator": {
               "end": 25,
@@ -24,7 +24,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "169e5ffd9fe788f8208dd5ba209485691b71636c",
+            "blob": "db86a83a1ecd453ac3628c8183f4d2c33268150d",
             "content": "sha256:9d9da95471b53659cc2801da86260869df9fb704e788a07d4077a3e0f2ea1c14",
             "locator": {
               "kind": "symbol",
@@ -40,7 +40,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "169e5ffd9fe788f8208dd5ba209485691b71636c",
+            "blob": "db86a83a1ecd453ac3628c8183f4d2c33268150d",
             "content": "sha256:dc69772c15b1b0f196f9c726b4b2d859ea69261cc1698f48567cff7cd615a1be",
             "locator": {
               "kind": "symbol",
@@ -51,7 +51,7 @@
         },
         {
           "anchor": {
-            "blob": "169e5ffd9fe788f8208dd5ba209485691b71636c",
+            "blob": "db86a83a1ecd453ac3628c8183f4d2c33268150d",
             "content": "sha256:1b3f15c3fafd5772ac3ee041c3ceb0aea8626521f5179dcef384c26e59d39c41",
             "locator": {
               "kind": "symbol",
@@ -67,7 +67,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4ec4c95baf015b3298eca6db77c2a032c0632a63",
+            "blob": "19db6df367f5fbe794e1baed60f7491c416043eb",
             "content": "sha256:826741795f9b0683381b217a11e2ce8097aa6a95c446f68e1194650e04fec8b7",
             "locator": {
               "kind": "symbol",
@@ -79,7 +79,7 @@
         },
         {
           "anchor": {
-            "blob": "4ec4c95baf015b3298eca6db77c2a032c0632a63",
+            "blob": "19db6df367f5fbe794e1baed60f7491c416043eb",
             "content": "sha256:3f2a14867bd47b8b67be4a8823f18733c06c696dbb8335ba4fe9ec31d1434ead",
             "locator": {
               "kind": "symbol",
@@ -91,7 +91,7 @@
         },
         {
           "anchor": {
-            "blob": "4ec4c95baf015b3298eca6db77c2a032c0632a63",
+            "blob": "19db6df367f5fbe794e1baed60f7491c416043eb",
             "content": "sha256:e72130690db972dcfb30dc7fc0f2e6a6ad5a1504a95b1416e82910ce02348fa6",
             "locator": {
               "kind": "symbol",
@@ -103,32 +103,122 @@
         }
       ]
     },
-    "2": {
-      "note": "The bounded cache of complete timelines (F7).",
+    "13": {
+      "note": "The page is at most fifty events or an explicitly refused continuation; an `OSError` during page decoding discards the exact manifest.",
       "targets": [
         {
           "anchor": {
-            "blob": "169e5ffd9fe788f8208dd5ba209485691b71636c",
-            "content": "sha256:82570013859cfcdbc77e7718f08413649a5ace464f5a2da67ff413b7a3d2972c",
+            "blob": "db86a83a1ecd453ac3628c8183f4d2c33268150d",
+            "content": "sha256:171bb2d43da2286768161174aaeb1d3f7d5c1c425aa44ddec12fef247b4a277b",
             "locator": {
               "kind": "symbol",
-              "name": "TIMELINES"
+              "name": "record_timeline"
             }
           },
           "kind": "code"
         }
       ]
     },
-    "3": {
-      "note": "A timeline served from the cache, remembered only when every source was read.",
+    "14": {
+      "note": "Continuations bind the tree, policy/version, record and complete manifest position.",
       "targets": [
         {
           "anchor": {
-            "blob": "169e5ffd9fe788f8208dd5ba209485691b71636c",
-            "content": "sha256:fd02e2728eebf77b7f916a4e166994ee25b970441830dac8a024f62aaa0453ce",
+            "blob": "db86a83a1ecd453ac3628c8183f4d2c33268150d",
+            "content": "sha256:ed916963f7e474b8cb0cbe6eafd411d3094c61b366326b6f3cfbcc486042e3cc",
             "locator": {
               "kind": "symbol",
-              "name": "record_timeline"
+              "name": "_timeline_start"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "15": {
+      "note": "A controlled unavailable-entries fixture is checked for its source/detail notice, matching the actual non-read-source renderer, not a native Git-timeout observation.\n\nAnchor: Controlled UI assertion and notice renderer",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d367e2f65ecee70e57338ef9340fbc9d9ca86c7b",
+            "content": "sha256:1a94b154dac50ef4b705924e68fe4e31d2a3537fb6b55552295b0e55d6e0f537",
+            "locator": {
+              "end": 345,
+              "kind": "line_range",
+              "start": 329
+            },
+            "path": "dashboard/src/panels/knowledge-reader/KnowledgeReader.test.tsx"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "993ed3d3c3d6ae3c92dc97591be76c1d9dce3467",
+            "content": "sha256:1d293687a1f596d93d27e56a5da315f3e813088c04fc92d5e56929ebdeb5bdc7",
+            "locator": {
+              "end": 619,
+              "kind": "line_range",
+              "start": 604
+            },
+            "path": "dashboard/src/panels/knowledge-reader/TruthView.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Current cache owner, 8 MiB accounted resident-weight budget and at most one cached anonymous spill.\n\nAnchor: Cache admission, budget and ownership",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "db86a83a1ecd453ac3628c8183f4d2c33268150d",
+            "content": "sha256:e996f548380fb0b1c8fadec08579f137b0617c76a8a57df7f12925200d7c07a9",
+            "locator": {
+              "end": 81,
+              "kind": "line_range",
+              "start": 80
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a1597cede0048e4ad7c99e5b4b0df21cd58fb54d",
+            "content": "sha256:eb3f969a3a410ee9316394ccf2ec49623042b0a45003fe3bdd4f608fe280c170",
+            "locator": {
+              "end": 24,
+              "kind": "line_range",
+              "start": 22
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_reader/timeline_manifest.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "48ca2ee8b29c86c1427433501a71e9da84c6dbcf",
+            "content": "sha256:42df3a0f4cbe0d33cf08fcec57f5154c0169992ad2da7638d6ce776d684e6240",
+            "locator": {
+              "end": 91,
+              "kind": "line_range",
+              "start": 21
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_reader/timeline_memo.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "A complete manifest is reused; history acquisition, digesting and freezing happen on a miss, and only all-read sources are retained.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "db86a83a1ecd453ac3628c8183f4d2c33268150d",
+            "content": "sha256:4ecd6b3b219f1044f22a260c5c3e6d16e96dd37b955bc0498b4746163fd725f0",
+            "locator": {
+              "kind": "symbol",
+              "name": "_full_timeline"
             }
           },
           "kind": "code"
@@ -140,7 +230,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "169e5ffd9fe788f8208dd5ba209485691b71636c",
+            "blob": "db86a83a1ecd453ac3628c8183f4d2c33268150d",
             "content": "sha256:0afb28c33372f46f578b0199a65a661de874ee622aa973b86d753ba2011911c2",
             "locator": {
               "kind": "symbol",
@@ -156,7 +246,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "169e5ffd9fe788f8208dd5ba209485691b71636c",
+            "blob": "db86a83a1ecd453ac3628c8183f4d2c33268150d",
             "content": "sha256:71da79530faff2ae9b00eb3d302b0bf555ca23f7a06be8787623750fb91c4575",
             "locator": {
               "kind": "symbol",
@@ -167,7 +257,7 @@
         },
         {
           "anchor": {
-            "blob": "169e5ffd9fe788f8208dd5ba209485691b71636c",
+            "blob": "db86a83a1ecd453ac3628c8183f4d2c33268150d",
             "content": "sha256:2eebbabd83c12812ac263146c0b6e5da1eb6fc22240bf78954f02d3bb5054146",
             "locator": {
               "kind": "symbol",
@@ -183,7 +273,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "169e5ffd9fe788f8208dd5ba209485691b71636c",
+            "blob": "db86a83a1ecd453ac3628c8183f4d2c33268150d",
             "content": "sha256:5b38d68db3574c0ed51d800ebf43cd0387c59eb9bd78d64ca17ab936a1f019a5",
             "locator": {
               "kind": "symbol",
@@ -194,7 +284,7 @@
         },
         {
           "anchor": {
-            "blob": "169e5ffd9fe788f8208dd5ba209485691b71636c",
+            "blob": "db86a83a1ecd453ac3628c8183f4d2c33268150d",
             "content": "sha256:54f772c4d2d013eb1c67aaeaca34608a995fd905dc78e3b3387229d6b30d2a5e",
             "locator": {
               "kind": "symbol",
@@ -205,7 +295,7 @@
         },
         {
           "anchor": {
-            "blob": "169e5ffd9fe788f8208dd5ba209485691b71636c",
+            "blob": "db86a83a1ecd453ac3628c8183f4d2c33268150d",
             "content": "sha256:baee5f279e1f7d255ef25830db0b6f2d3e00f409b0e18651cfc91c26896c68bb",
             "locator": {
               "kind": "symbol",
@@ -221,7 +311,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "169e5ffd9fe788f8208dd5ba209485691b71636c",
+            "blob": "db86a83a1ecd453ac3628c8183f4d2c33268150d",
             "content": "sha256:3a75b597fb2a3e75d678d8a7bc4d71727e17f9b6591af9a3b02e6e9823bfdbcf",
             "locator": {
               "kind": "symbol",
@@ -233,26 +323,28 @@
       ]
     },
     "8": {
-      "note": "History rows dated by their file's last commit.",
+      "note": "History events retain file-based dating and include the attempt derived from their owning history path.\n\nAnchor: History event and dating implementations",
       "targets": [
         {
           "anchor": {
-            "blob": "169e5ffd9fe788f8208dd5ba209485691b71636c",
-            "content": "sha256:99165d5969efd13135ecd2ad35272960cf2a53bff9fb272b91e80de9afca7c91",
+            "blob": "db86a83a1ecd453ac3628c8183f4d2c33268150d",
+            "content": "sha256:457886b013f28b6be5921df87c9faad7c16311947ed96f67b198c304e47c9bf8",
             "locator": {
-              "kind": "symbol",
-              "name": "_history_events"
+              "end": 391,
+              "kind": "line_range",
+              "start": 369
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "169e5ffd9fe788f8208dd5ba209485691b71636c",
+            "blob": "db86a83a1ecd453ac3628c8183f4d2c33268150d",
             "content": "sha256:586e96145ea7b082229c1d53474f8e19c215a83fb2a098c91ee1bb48bcaf1de9",
             "locator": {
-              "kind": "symbol",
-              "name": "_last_change"
+              "end": 405,
+              "kind": "line_range",
+              "start": 394
             }
           },
           "kind": "code"
@@ -264,7 +356,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "169e5ffd9fe788f8208dd5ba209485691b71636c",
+            "blob": "db86a83a1ecd453ac3628c8183f4d2c33268150d",
             "content": "sha256:43cafac8ca96a46fdfc2fdec5b951432840a013c71ae50ec57e9932ec321d298",
             "locator": {
               "kind": "symbol",
@@ -275,7 +367,7 @@
         },
         {
           "anchor": {
-            "blob": "169e5ffd9fe788f8208dd5ba209485691b71636c",
+            "blob": "db86a83a1ecd453ac3628c8183f4d2c33268150d",
             "content": "sha256:72b40226b56df12f7f5b5d8798ff58be03cd358611b09995d9d66c90d48c7e62",
             "locator": {
               "kind": "symbol",

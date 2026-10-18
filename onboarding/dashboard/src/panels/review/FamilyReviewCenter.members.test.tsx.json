@@ -1,0 +1,24 @@
+{
+  "path": "dashboard/src/panels/review/FamilyReviewCenter.members.test.tsx",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Synthetic changed member statement atop a native family capture asserts must not->mustnot del/ins, one intent-diff, no whitespace-only marker, and both exact revision open callbacks.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dbd0a59afcaf020cc1e1f7581dba64b92e71a21f",
+            "content": "sha256:8894b773b8486c9f1e6f92f3ae867955bb8a6038257b2878ee2c08cc13b660cb",
+            "locator": {
+              "end": 74,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

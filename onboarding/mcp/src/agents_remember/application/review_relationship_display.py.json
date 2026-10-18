@@ -3,27 +3,40 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "**The module's own statement of what it owns: both sides, the unresolved states, the address view, and that nothing here selects, ranks or concludes.**\n\nAnchor: \"\\\"\\\"\\\"What one recorded relationship is displayed as (ICR-R08@v1).\"",
+      "note": "The module exposes movement display and address projection without opening a store or choosing the traversal population. Its current _side_of emits recorded or unresolved side states from anchor readability, with missing identity represented separately by a gap. Broader side descriptions in the inherited module docstring are not a claim that this builder emits every wire state.\n\nAnchor: inclusive source ranges",
       "targets": [
         {
           "anchor": {
-            "blob": "c984d8b550f464426a230e883529d97e81747657",
-            "content": "sha256:85e2a9cc73493a774385e5f4c86f436b0caf739e327bdfebedf5271b5f7af419",
+            "blob": "0d9ce891dc115c70c6c14385dfb732ca0aab63cf",
+            "content": "sha256:c38ede3f3d84569ee49e7f5ec282e0a3296e533883d3d64bcf22250363118cf4",
             "locator": {
-              "kind": "symbol",
-              "name": "paired_movement"
+              "end": 20,
+              "kind": "line_range",
+              "start": 1
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "c984d8b550f464426a230e883529d97e81747657",
-            "content": "sha256:c38ede3f3d84569ee49e7f5ec282e0a3296e533883d3d64bcf22250363118cf4",
+            "blob": "0d9ce891dc115c70c6c14385dfb732ca0aab63cf",
+            "content": "sha256:8fd4e4fad79f177ac243ab200e32966ad1fd9525dd1e796a091bc5258c5386f4",
             "locator": {
-              "end": 20,
+              "end": 181,
               "kind": "line_range",
-              "start": 1
+              "start": 159
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0d9ce891dc115c70c6c14385dfb732ca0aab63cf",
+            "content": "sha256:c2476b6a3fdfe25d9b846cf696f80b6e09c40cd9e827cd3630e21301f475eb18",
+            "locator": {
+              "end": 377,
+              "kind": "line_range",
+              "start": 365
             }
           },
           "kind": "code"
@@ -170,27 +183,42 @@
       ]
     },
     "14": {
-      "note": "The pane row the address view builds, with the movement carried beside the pane's own long-standing fields.",
+      "note": "ReviewSourceLocation and ReviewSourcePane are implemented in review_source.py and imported/re-exported by review.py. The location retains address, claim, revision, role, rationale, source identities, resolution, change state, baseline coverage and reached-via fields, plus movement identity, transition, side, counterpart and movement. The pane independently carries inventory, locations and relationships alongside attribution and unresolved fields. These are DTO fields, not a claim that every field is rendered.\n\nAnchor: inclusive source ranges",
       "targets": [
         {
           "anchor": {
-            "blob": "f9105a09d9fdee4eeed9ab2b715723940337949e",
+            "blob": "5e02f9598b6bfebef7bb44697138a77410c5cda1",
             "content": "sha256:a534925c08ceec61e373170de934a2ef1563aa0de669feb112624761dfcd2f2e",
             "locator": {
-              "kind": "symbol",
-              "name": "ReviewSourceLocation"
+              "end": 102,
+              "kind": "line_range",
+              "start": 69
             },
-            "path": "mcp/src/agents_remember/models/knowledge/review.py"
+            "path": "mcp/src/agents_remember/models/knowledge/review_source.py"
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "f9105a09d9fdee4eeed9ab2b715723940337949e",
+            "blob": "5e02f9598b6bfebef7bb44697138a77410c5cda1",
             "content": "sha256:65dafa202f40ba2a5d96f2c3b652c751c562b0dcd38af89bd10f5ff56bc434b4",
             "locator": {
-              "kind": "symbol",
-              "name": "ReviewSourcePane"
+              "end": 262,
+              "kind": "line_range",
+              "start": 230
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/review_source.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3a9fbebf751c8e0ce26280a3c2bd35bfe3302c8f",
+            "content": "sha256:2d6bbdc0534cd4d552be4eb27f8e6cfe2ea061d879715f4d18deb0692cfaedfb",
+            "locator": {
+              "end": 46,
+              "kind": "line_range",
+              "start": 35
             },
             "path": "mcp/src/agents_remember/models/knowledge/review.py"
           },
@@ -199,15 +227,16 @@
       ]
     },
     "15": {
-      "note": "The current cases measure retraction without authored-line traversal, no invented unique head, unread further revisions staying outside the union, and withdrawal never denying a relationship the same payload displays.",
+      "note": "Stored assertions cover exact retraction wording, no invented unique head, outside-union exclusions and naming the same-citation relationship the payload also displays. These complete test bodies were inspected statically; no fresh execution, fixture provenance or review grade is inferred.\n\nAnchor: inclusive source ranges",
       "targets": [
         {
           "anchor": {
-            "blob": "e7bee46b0313968bdfe98b32695a495069dea976",
+            "blob": "9073f2410a200e85e7e3f2614c9975350cbe254e",
             "content": "sha256:c6a6a077cffd61383aa14c9ed502e32cddf5c8087de1174032a7dda54c21ff19",
             "locator": {
-              "kind": "symbol",
-              "name": "test_two_further_revisions_that_record_relationships_are_a_retraction_and_never_denied"
+              "end": 128,
+              "kind": "line_range",
+              "start": 95
             },
             "path": "mcp/tests/test_knowledge_review_relationship_line.py"
           },
@@ -215,11 +244,12 @@
         },
         {
           "anchor": {
-            "blob": "e7bee46b0313968bdfe98b32695a495069dea976",
+            "blob": "9073f2410a200e85e7e3f2614c9975350cbe254e",
             "content": "sha256:ef4c15461aab324513483b6f2c226f29e8e77adbc68875f24e61e22276357e1f",
             "locator": {
-              "kind": "symbol",
-              "name": "test_two_unpaired_rows_are_two_absences_and_never_a_unique_head"
+              "end": 152,
+              "kind": "line_range",
+              "start": 131
             },
             "path": "mcp/tests/test_knowledge_review_relationship_line.py"
           },
@@ -227,11 +257,12 @@
         },
         {
           "anchor": {
-            "blob": "e7bee46b0313968bdfe98b32695a495069dea976",
+            "blob": "9073f2410a200e85e7e3f2614c9975350cbe254e",
             "content": "sha256:f58554ab3216be8daf222b0ba63518d44c3d6872c26897f2e5b2fb9c469f9e00",
             "locator": {
-              "kind": "symbol",
-              "name": "test_a_further_revision_outside_the_union_states_only_what_was_read"
+              "end": 173,
+              "kind": "line_range",
+              "start": 155
             },
             "path": "mcp/tests/test_knowledge_review_relationship_line.py"
           },
@@ -239,11 +270,12 @@
         },
         {
           "anchor": {
-            "blob": "e7bee46b0313968bdfe98b32695a495069dea976",
-            "content": "sha256:235621a5a23a63adfeaa8b1064dc8a5042ea6b1ee936a5cd8335d86abd2049d6",
+            "blob": "9073f2410a200e85e7e3f2614c9975350cbe254e",
+            "content": "sha256:006d12f7b0dabf4c66e8a2004c8f4c1c2ffedde8c6c8208aa3f5f96259f644a4",
             "locator": {
-              "kind": "symbol",
-              "name": "test_a_relationship_at_a_further_revision_outside_the_union_is_not_displayed"
+              "end": 207,
+              "kind": "line_range",
+              "start": 176
             },
             "path": "mcp/tests/test_knowledge_review_relationship_line.py"
           },
@@ -254,8 +286,9 @@
             "blob": "87ba047e94315cf62e8f34142ded4c8da7211351",
             "content": "sha256:30dc48de3117cc2d439286edbbf4bb9c0de4168fce8d13faa2a5b6ec3878610c",
             "locator": {
-              "kind": "symbol",
-              "name": "test_a_withdrawal_never_denies_a_relationship_the_same_payload_displays"
+              "end": 319,
+              "kind": "line_range",
+              "start": 279
             },
             "path": "mcp/tests/test_knowledge_review_relationship_reach.py"
           },
@@ -264,15 +297,16 @@
       ]
     },
     "16": {
-      "note": "The qualification cases: a pairing states the recorded relation it was made on, and an address resemblance never pairs.",
+      "note": "Stored assertions require recorded pairing bases and leave address resemblance unpaired. These complete test bodies were inspected statically; no fresh execution, fixture provenance or review grade is inferred.\n\nAnchor: inclusive source ranges",
       "targets": [
         {
           "anchor": {
             "blob": "87ba047e94315cf62e8f34142ded4c8da7211351",
             "content": "sha256:7d3e4b2860b3c677908e39ffac57fabcd326447725b3a4e278829ff91e43fb18",
             "locator": {
-              "kind": "symbol",
-              "name": "test_every_two_sided_movement_names_the_recorded_row_it_was_paired_on"
+              "end": 399,
+              "kind": "line_range",
+              "start": 367
             },
             "path": "mcp/tests/test_knowledge_review_relationship_reach.py"
           },
@@ -283,12 +317,57 @@
             "blob": "87ba047e94315cf62e8f34142ded4c8da7211351",
             "content": "sha256:07be7e1a71b4bb131d1bb23f8e8a7645e4ff5451c128acf5429653c0c9f1fec8",
             "locator": {
-              "kind": "symbol",
-              "name": "test_a_row_at_a_matching_address_with_no_recorded_relation_is_only_an_addition"
+              "end": 435,
+              "kind": "line_range",
+              "start": 402
             },
             "path": "mcp/tests/test_knowledge_review_relationship_reach.py"
           },
           "kind": "test"
+        }
+      ]
+    },
+    "17": {
+      "note": "The current traversal owner imports source_locations from review_relationship_display and publishes it through __all__. Its _movements reads both snapshots' union relationships, pairs matching recorded rows, and builds one-sided movements for unmatched baseline sides. The absent old review_relationships.py path does not imply deletion of this behavior.\n\nAnchor: inclusive source ranges",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8810b5f2e85378847113d9ea6246a4fb96def91f",
+            "content": "sha256:7c4b8f2525fb509c2f7edf166f6368e38622192eb6737a7ded6b13b854cbca6f",
+            "locator": {
+              "end": 76,
+              "kind": "line_range",
+              "start": 71
+            },
+            "path": "mcp/src/agents_remember/application/review_relationship_movement.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8810b5f2e85378847113d9ea6246a4fb96def91f",
+            "content": "sha256:233d2c9ae2f7322d67eb612dcb44f30aaead0d095c3df5a457f20bd47c0f4f44",
+            "locator": {
+              "end": 93,
+              "kind": "line_range",
+              "start": 89
+            },
+            "path": "mcp/src/agents_remember/application/review_relationship_movement.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8810b5f2e85378847113d9ea6246a4fb96def91f",
+            "content": "sha256:57bc7816d25d35cbb9c25fcbd2eda99d3df80d1ab69b3331630839297b256901",
+            "locator": {
+              "end": 207,
+              "kind": "line_range",
+              "start": 186
+            },
+            "path": "mcp/src/agents_remember/application/review_relationship_movement.py"
+          },
+          "kind": "code"
         }
       ]
     },
@@ -309,53 +388,70 @@
       ]
     },
     "3": {
-      "note": "**The tested search value a one-sided sentence must be built from.**",
+      "note": "ContinuationSearch is a frozen dataclass carrying candidates and same_citation. Withdrawal wording reads same_citation; outside-selection wording uses the baseline relationship and coverage instead. The traversal constructs the search from candidate union relationships. This value does not validate that its contents were actually read.\n\nAnchor: inclusive source ranges",
       "targets": [
         {
           "anchor": {
-            "blob": "c984d8b550f464426a230e883529d97e81747657",
+            "blob": "0d9ce891dc115c70c6c14385dfb732ca0aab63cf",
             "content": "sha256:bd161fbbb55848619a7de221bf7c588dfb1875b675417dc64e1a2544258495db",
             "locator": {
-              "kind": "symbol",
-              "name": "ContinuationSearch"
+              "end": 59,
+              "kind": "line_range",
+              "start": 47
             }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8810b5f2e85378847113d9ea6246a4fb96def91f",
+            "content": "sha256:e63cb0e1884f10bf1baf211781b92cd7acd854a006c2c96a9a8912a2da0735a7",
+            "locator": {
+              "end": 225,
+              "kind": "line_range",
+              "start": 210
+            },
+            "path": "mcp/src/agents_remember/application/review_relationship_movement.py"
           },
           "kind": "code"
         }
       ]
     },
     "4": {
-      "note": "**The address view: one location per recorded realization side, deduped by relationship and path, each carrying its movement.**",
+      "note": "source_locations iterates realization movements and appends a location for every displayed side with a path, without a cross-movement seen set. _displayed_sides preserves before-then-after order and omits baseline sides matching that movement's after-side relationship and path; it does not deduplicate baseline sides against each other. _location preserves the pane fields and carries identity, transition, recorded side, counterpart path and the movement.\n\nAnchor: inclusive source ranges",
       "targets": [
         {
           "anchor": {
-            "blob": "c984d8b550f464426a230e883529d97e81747657",
-            "content": "sha256:488294f448978f08c347ed6e78b75b026ca7ffe9441de98ea87954771188599e",
+            "blob": "0d9ce891dc115c70c6c14385dfb732ca0aab63cf",
+            "content": "sha256:6c7f6da49f3fe4d9df6fe73939ed354dd2cff25a2fe4ea96e6b20f51c45ab058",
             "locator": {
-              "kind": "symbol",
-              "name": "source_locations"
+              "end": 89,
+              "kind": "line_range",
+              "start": 82
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "c984d8b550f464426a230e883529d97e81747657",
+            "blob": "0d9ce891dc115c70c6c14385dfb732ca0aab63cf",
             "content": "sha256:938582ea39d10f2636545329624f6283a787e9e93ab71a8da40f027948bd569b",
             "locator": {
-              "kind": "symbol",
-              "name": "_displayed_sides"
+              "end": 506,
+              "kind": "line_range",
+              "start": 487
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "c984d8b550f464426a230e883529d97e81747657",
+            "blob": "0d9ce891dc115c70c6c14385dfb732ca0aab63cf",
             "content": "sha256:230d2c3bea6e49ded6cf05c3d8e4009255fd428b9ddfb7b24347ccea5f7410f3",
             "locator": {
-              "kind": "symbol",
-              "name": "_location"
+              "end": 539,
+              "kind": "line_range",
+              "start": 509
             }
           },
           "kind": "code"
@@ -401,26 +497,40 @@
       ]
     },
     "6": {
-      "note": "**The one-sided movement: retraction and outside-selection are different states, and the sentence states only what the search read.**",
+      "note": "single_sided_movement uses the baseline item_coverage to distinguish outside_selection from retracted and derives gaps from that side. Outside-selection wording reads baseline facts; withdrawal wording consumes same_citation from the supplied search. The display does not independently authenticate that search.\n\nAnchor: inclusive source ranges",
       "targets": [
         {
           "anchor": {
-            "blob": "c984d8b550f464426a230e883529d97e81747657",
+            "blob": "0d9ce891dc115c70c6c14385dfb732ca0aab63cf",
             "content": "sha256:043e6fa59a3836c73cc8747ca0b6c0b1f665195aa85d25bb28882ba46c63cad7",
             "locator": {
-              "kind": "symbol",
-              "name": "single_sided_movement"
+              "end": 156,
+              "kind": "line_range",
+              "start": 125
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "c984d8b550f464426a230e883529d97e81747657",
+            "blob": "0d9ce891dc115c70c6c14385dfb732ca0aab63cf",
             "content": "sha256:2b06a228e289da8c34f7c78ab3940a44f63a33f214e874b4b4e73e4efd1bfda7",
             "locator": {
-              "kind": "symbol",
-              "name": "_outside_selection_statement"
+              "end": 191,
+              "kind": "line_range",
+              "start": 184
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0d9ce891dc115c70c6c14385dfb732ca0aab63cf",
+            "content": "sha256:a28945d199355a3d988857d3da6d86700b96dd98d60e032bc70ab15a0a7e8e76",
+            "locator": {
+              "end": 362,
+              "kind": "line_range",
+              "start": 335
             }
           },
           "kind": "code"

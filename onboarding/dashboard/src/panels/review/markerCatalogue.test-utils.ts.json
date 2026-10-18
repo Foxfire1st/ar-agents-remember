@@ -7,7 +7,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b66804a28e84252b133932aaa6c57c5d4718ec72",
+            "blob": "c6a9aeb2f343b34bf902d323cf1fe1ebde695cfb",
             "content": "sha256:9dd8639f9ed708bd4a553bd9797e2546055eacc4945be6b54afdd294323e0813",
             "locator": {
               "kind": "symbol",
@@ -23,11 +23,28 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b66804a28e84252b133932aaa6c57c5d4718ec72",
+            "blob": "c6a9aeb2f343b34bf902d323cf1fe1ebde695cfb",
             "content": "sha256:3395c6c446e067c97a1938b8aa4add295ab7d84f88948126a3cf6e96389cf189",
             "locator": {
               "kind": "symbol",
               "name": "syntheticMarkerFamilyReview"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The helper comment bounds the synthetic paired catalogue to complete-comparison controls. Its derived topology is not a native witness that an unreadable family or missing member exists.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c6a9aeb2f343b34bf902d323cf1fe1ebde695cfb",
+            "content": "sha256:6ad0e1882757623762d42dc910141a39f83cc84999c9ff99f3c8c1f3ec201b90",
+            "locator": {
+              "end": 32,
+              "kind": "line_range",
+              "start": 1
             }
           },
           "kind": "code"

@@ -1,0 +1,37 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test",
+      "prevents_costly_mistake"
+    ],
+    "justification": "The exact current stored regression exercises both false values inside the total that the old less-than-total guard accepted. Losing disposition/count equality could hide a retained unresolved judgment or manufacture one even with a correct binding-state partition; this schema boundary outlives this task."
+  },
+  "applicability": "Construction of the retained SubjectAssessmentState model over its supplied AssessmentEntry tuple.",
+  "conditions": [
+    "assessmentCount equals the carried entry length and currentness counters describe their actual states.",
+    "unresolvedCount equals the number of entries with disposition unresolved, independently of current/stale/not-measured/unavailable.",
+    "Existing stale/unavailable precedence and the model factory remain their separate owners; an exact unresolved count does not claim measured currentness or semantic truth."
+  ],
+  "exclusions": [
+    "The removed tree-review assessment/evidence channel; this model remains independently used by coherence.",
+    "Authenticating the entries, measuring currentness, adjudicating finding truth, requiring a nonempty concern_found finding, or fresh unit/browser/native-host execution acceptance."
+  ],
+  "id": "INV-XYE5A3",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "mcp/tests/test_knowledge_review_evidence_channels.py::test_unresolved_count_must_match_the_entries_not_only_the_total",
+        "Exact current model validator/factory and stored two-sided assertion bodies; no equivalent stored unresolved-count invariant found. Native proof is a source-bound assertion witness, not a fresh execution grade."
+      ],
+      "path": "freeze11-retained-assessment-count-guard-and-trace-01.json"
+    },
+    "handoffEntry": "CUR-L57-assessment-unresolved-population",
+    "leaf": "260928-MIK-L57",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "A subject assessment summary reports exactly the number of carried entries whose disposition is unresolved; binding currentness is a separate partition and cannot substitute for that count.",
+  "status": "proposed",
+  "supersedes": []
+}

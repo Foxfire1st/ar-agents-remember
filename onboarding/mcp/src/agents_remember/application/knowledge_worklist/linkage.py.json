@@ -16,6 +16,39 @@
           "kind": "code"
         }
       ]
+    },
+    "2": {
+      "note": "A path’s computed placements and intersections are shared, while the worklist receives the same linked boolean.\n\nAnchor: `_Linkage._change`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6d7207b62870c112ca4f25941c37846c0152a38a",
+            "content": "sha256:0fb01d1043a945f29f229f795c002a31f504583a6745d12db961ecb3280beb8a",
+            "locator": {
+              "end": 65,
+              "kind": "line_range",
+              "start": 37
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Intersection sets include only sides with positive changed-line counts.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6d7207b62870c112ca4f25941c37846c0152a38a",
+            "content": "sha256:8912f9f67746b904bd5a452b7503ed165cd7c2e8ac09e8ead7b4c1a83286919b",
+            "locator": {
+              "kind": "symbol",
+              "name": "_classify_hunk"
+            }
+          },
+          "kind": "code"
+        }
+      ]
     }
   },
   "schema": "ar-onboarding-file/v1"

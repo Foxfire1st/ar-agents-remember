@@ -6,14 +6,16 @@
     ],
     "justification": "New reviewer obligation from MIK-R86@v1 (packet a78d9ae3, Architect qualification 2026-10-08 11:18:45 UTC); implemented on the W03 successor tree 95f61633, whole-primary CODE PASS verdict 3663bf07. Evidence: leaf-view-8.log; l86-parity/ordered-comparison.json"
   },
-  "applicability": "The knowledge diff leaves the leaf-wide view.",
+  "applicability": "The leaf-wide review/trees answer and its memo path; not the standalone aggregate knowledge-diff reader or a frozen response-field census.",
   "conditions": [
-    "GET review/trees answers carry no knowledge_diff with its file lists/patches; every other part byte-identical; server skips the two-tree listing/patch/blob reads and memo input.",
-    "First leaf-wide view drops three Git children (~2.29M to ~0.8M bytes for L37); memory diff reads move to the change-set page ordered by path with record/sidecar naming.",
-    "Removed computation's tests leave with it; governed decision + requirement-packet choice recorded for anchored invariants."
+    "ReviewTreesResult has no knowledge_diff field, and _view/_compute_leaf_parts/_worklist_view do not invoke knowledge_tree_diff or _measured_tree_diff for the leaf-wide answer.",
+    "The leaf-wide answer may carry currentness, worklist verdicts and code-change facts; those additions do not restore aggregate memory-tree patches.",
+    "LeafViewParts retains the worklist and optional code_changes, with the current caller’s settling and read-observation checks; no byte-identity or unchanged-memo-input promise is made for other fields."
   ],
   "exclusions": [
-    "Keeping the patch/blob reads for this view."
+    "Reintroducing aggregate memory-tree file lists/patches or their computation as part of this leaf-wide response.",
+    "A fixed Git-child/byte measurement, removed-test census, or perpetual byte identity of all other fields and memo conditions; prior W03 measurements and migration evidence remain historical in the preserved origin and before record.",
+    "Removing the surviving public knowledge_tree_diff reader, or prohibiting code-side classification and facts needed by the worklist."
   ],
   "id": "INV-2K9NMR",
   "origin": {
@@ -28,9 +30,9 @@
     "leaf": "260928-MIK-L86",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-invariant/v1",
-  "statement": "The leaf-wide answer omits knowledge_diff and no longer computes memory-tree patches, while its remaining fields and memo conditions remain intact.",
+  "statement": "The leaf-wide reviewer answer omits aggregate knowledge_diff and does not compute the memory-tree file patches of that removed answer. The standalone knowledge_tree_diff helper remains separately owned and is not part of this leaf-wide response or its kept parts.",
   "status": "proposed",
   "supersedes": []
 }

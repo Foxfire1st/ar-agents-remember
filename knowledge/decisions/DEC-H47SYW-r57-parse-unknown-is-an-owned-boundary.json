@@ -1,0 +1,53 @@
+{
+  "admission": {
+    "criteria": [
+      "constrains_future_work"
+    ],
+    "justification": "A future lane change must not certify absence or coverage merely because relevant knowledge could not be read."
+  },
+  "alternatives": [
+    {
+      "option": "Keep Unknown when the relevant parse/knowledge failure prevents establishing a non-text change attribution.",
+      "reason": "Appendix151 calls Unknown the truthful class in this case. The lane reads one shared classifier, preserves non-text gate linkage and measured/partial/unavailable distinctions, and passes the deciding reason rather than guessing.",
+      "status": "chosen"
+    },
+    {
+      "option": "Treat the unreadable attribution as confirmed no invariant or as established attribution to eliminate Unknown.",
+      "reason": "Failure to establish a fact is neither observed absence nor observed coverage; either replacement would invent a classification.",
+      "reconsider_when": "The formerly unavailable relevant knowledge is measured successfully, or an approved requirement provides another authoritative attribution source without inferring absence from failure.",
+      "status": "rejected"
+    }
+  ],
+  "consequences": [
+    "A future lane change must not certify absence or coverage merely because relevant knowledge could not be read.",
+    "Not every parse problem makes every path unknown; the gate and reviewer can differ under their explicit exact-recorded-range versus mapped-range rules."
+  ],
+  "context": "Approved MIK-R57@v2 appendix83/151 and rule6 require this by-design choice to be recorded, not deferred as a gap. Source obligation: MIK-R57@v2 by-design parse-unknown. This is the requirement-prescribed boundary, not a claim that an undocumented alternative was seriously weighed.",
+  "decider": "Approved MIK-R57@v2 under D18/D47/D48; Curator records the specified boundary under constrains_future_work.",
+  "id": "DEC-H47SYW",
+  "links": [
+    {
+      "relation": "constrains",
+      "target": {
+        "blob": "0f038d49f8f1531e4e966dc271dd23033d095a94",
+        "content": "sha256:635dbf01b3bb66c367e06a12ad10157b42b62e52bcf27ef01540edaa53a9ec04",
+        "locator": {
+          "kind": "file"
+        },
+        "path": "mcp/src/agents_remember/application/review_unexplained_lane.py"
+      }
+    }
+  ],
+  "origin": {
+    "handoff": {
+      "path": "freeze11-r57-eight-prescribed-by-design-boundaries-01.json"
+    },
+    "handoffEntry": "CUR-L57-R57-choice-parse-unknown",
+    "leaf": "260928-MIK-L57",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-decision/v1",
+  "status": "active",
+  "supersedes": []
+}

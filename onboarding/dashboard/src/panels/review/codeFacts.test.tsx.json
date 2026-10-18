@@ -1,0 +1,24 @@
+{
+  "path": "dashboard/src/panels/review/codeFacts.test.tsx",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Synthetic leaf facts assert code-only rows only under known unchanged meaning, no unknown relabeling, late-facts row/count/announcement/traversal without selection/focus/scroll movement, and comparison-bound loading/unavailable summary. Native scroll anchoring is simulated in DOM, not browser acceptance.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "741b423a4d0af8b33358c18813ad1976e8ac92f4",
+            "content": "sha256:9fe7319552650d227617a3e5ed7a8567ef57edae44fb6b496964966dff2dc361",
+            "locator": {
+              "end": 162,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -402,6 +402,35 @@
         }
       ]
     },
+    "27": {
+      "note": "Alongside its DOM checks the module asserts observed client request counts and URL selector parameters; source inspection is not a new run.\n\nAnchor: inclusive source ranges",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b75c43b7d10a9525efafb600788e6299f99a2fb9",
+            "content": "sha256:198bd368c96c23d3beb82b3e2560ac341364be9e2646615c654379040c8bb7a1",
+            "locator": {
+              "end": 300,
+              "kind": "line_range",
+              "start": 285
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "b75c43b7d10a9525efafb600788e6299f99a2fb9",
+            "content": "sha256:f3ccb0eb96a2be2df3888020fc9da7de7d3a4fec37fb7bf98c5fbfac0558858e",
+            "locator": {
+              "end": 586,
+              "kind": "line_range",
+              "start": 580
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
     "3": {
       "note": "**The measured refusal bodies, each carrying the digest of the run that produced it, and the reduced task-context fixture labelled as reduced.**",
       "targets": [

@@ -1,270 +1,37 @@
 {
   "path": "mcp/src/agents_remember/application/review_evidence_records.py",
   "proves": [],
-  "realizes": [
-    {
-      "anchor": {
-        "blob": "07c5dd5a94d8b14a8d703da903c1d9cc166288a0",
-        "content": "sha256:8a3e09b08d614e4917acaee1113f4fcb16811776b199633a77947c36e8933738",
-        "locator": {
-          "kind": "symbol",
-          "name": "review_records_for_resolution"
-        }
-      },
-      "id": "RLZ-A6WJPHHK",
-      "invariant": "INV-7W11WKKN",
-      "origin": {
-        "leaf": "260921-ICR-L46"
-      },
-      "rationale": "Collects every record collection for one resolved pair from its own owner (curator assessments from the live curator records or a named immutable generation, plus signals, observations and evidence claims), each with its availability channel. Currentness is measured against this same resolution and emitted as a separate channel next to the assessment channel.",
-      "role": "support"
-    },
-    {
-      "anchor": {
-        "blob": "07c5dd5a94d8b14a8d703da903c1d9cc166288a0",
-        "content": "sha256:591eb8a2d42759d33be61fca4b9853b61fcaaeac92eee7015a538f47c3d49c17",
-        "locator": {
-          "end": 115,
-          "kind": "line_range",
-          "start": 101
-        }
-      },
-      "id": "RLZ-D75THA",
-      "invariant": "INV-61Y147",
-      "origin": {
-        "handoffEntry": "L40-one-resolution",
-        "leaf": "260928-MIK-L40"
-      },
-      "rationale": "Collects records for the supplied resolution without another candidate capture.",
-      "role": "enforcement"
-    },
-    {
-      "anchor": {
-        "blob": "07c5dd5a94d8b14a8d703da903c1d9cc166288a0",
-        "content": "sha256:8a3e09b08d614e4917acaee1113f4fcb16811776b199633a77947c36e8933738",
-        "locator": {
-          "kind": "symbol",
-          "name": "review_records_for_resolution"
-        }
-      },
-      "id": "RLZ-KYNYHP",
-      "invariant": "INV-7W11WKKN",
-      "origin": {
-        "handoffEntry": "L74-E1",
-        "leaf": "260928-MIK-L74"
-      },
-      "rationale": "review_records_for_resolution is the owner-collection composer whose availability vocabulary the rule-8 decision constrains.",
-      "role": "unclassified"
-    }
-  ],
+  "realizes": [],
   "references": {
-    "30": {
-      "note": "`review_records_for_resolution` owns the current boundary described above.",
+    "43": {
+      "note": "Current review composition supplies judgment/proofs and no supporting-record bundle or applicability call.",
       "targets": [
         {
           "anchor": {
-            "blob": "16e7c29f57b7814c6ee69615335aac14aa466a1e",
-            "content": "sha256:fbb49a9450e87dda67fc7e549d6b78f44d160884ef5a1886e724b900aab4b925",
+            "blob": "ac739bfed6942a8a7b701200421aa16e48d35463",
+            "content": "sha256:47fb36bd3b80dcd4fa28db9cad57e12495004dbe4f20c91814d5c7d8d56bf80c",
             "locator": {
               "kind": "symbol",
-              "name": "review_records_for_resolution"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "31": {
-      "note": "`_retired_channel` owns the current boundary described above.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "07c5dd5a94d8b14a8d703da903c1d9cc166288a0",
-            "content": "sha256:5d14090b1a207dda5ca6f77a2cea408ca02c8f4509612a548bd14381371ef2eb",
-            "locator": {
-              "kind": "symbol",
-              "name": "_retired_channel"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "32": {
-      "note": "`without_selected_matrix` owns the current boundary described above.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "16e7c29f57b7814c6ee69615335aac14aa466a1e",
-            "content": "sha256:b9b8b38c8c048b76aa0c17cc3d7377029fcc170898b19e06d1d6139d7ac0d0ae",
-            "locator": {
-              "kind": "symbol",
-              "name": "without_selected_matrix"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "33": {
-      "note": "**The record kinds the authored-effects channel counts, moved here beside the channel that reports them, and the same declaration for the claims collection.**",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "16e7c29f57b7814c6ee69615335aac14aa466a1e",
-            "content": "sha256:61b59a6b5160a907e9bf26bb4c11a903254d3ebfdacfc4e43e8dceb1b253a674",
-            "locator": {
-              "kind": "symbol",
-              "name": "AUTHORED_EFFECT_KINDS"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "34": {
-      "note": "**The currentness owner the bundle names, and the measurement this module now delegates instead of stating.**",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "16e7c29f57b7814c6ee69615335aac14aa466a1e",
-            "content": "sha256:2176413c67df039df2ee1c19e7248d6a3d3d54324d762abd8fe0d1848363a805",
-            "locator": {
-              "kind": "symbol",
-              "name": "_COLLECTION_OWNERS"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "35": {
-      "note": "Assessment collection availability comes from the durable curator bridge: captured records, measured empty, uncaptured, and unreadable expected inputs remain distinct.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "bf1a79f4a160fbd1038927b4869a66fa3abcfcb9",
-            "content": "sha256:b435bd29b84200c6088aef7ce1a7231617dec7bf71412d69952db82d11623abc",
-            "locator": {
-              "kind": "symbol",
-              "name": "review_curator_records"
+              "name": "compose_review"
             },
-            "path": "mcp/src/agents_remember/application/review_curator_records.py"
+            "path": "mcp/src/agents_remember/application/knowledge_review.py"
           },
           "kind": "code"
         }
       ]
     },
-    "36": {
-      "note": "**The unresolvable-candidate bundle: every collection unavailable, one entry per class, because nothing resolved and so no owner was asked.**",
+    "44": {
+      "note": "The surviving pane reads the addressed record’s after-tree leaf-history rows and proof entries; this is not a relocation of the removed behavior.",
       "targets": [
         {
           "anchor": {
-            "blob": "07c5dd5a94d8b14a8d703da903c1d9cc166288a0",
-            "content": "sha256:f264c4441ea27645d05a6fc3ec902648ebf5bb3ff8000c6c0e4aeb8f53cde6c8",
+            "blob": "7915489e9b1bfd326b7927fa39dbc7d55826e3c4",
+            "content": "sha256:3d2ba7c9bb099ac54f2a31d2f629488067e277170ffdc26590526c969bd0ecfa",
             "locator": {
               "kind": "symbol",
-              "name": "_unresolved_channels"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "37": {
-      "note": "The one channel construction point: the answer varies, the owner does not.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "16e7c29f57b7814c6ee69615335aac14aa466a1e",
-            "content": "sha256:56c2f9e8716c22390ce9410dfd12c7e6bd647d7bc535f32c9c708349bda05d72",
-            "locator": {
-              "kind": "symbol",
-              "name": "_answered"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "38": {
-      "note": "**The availability vocabulary this module builds, and the validator that makes \"a count nobody measured\" unrepresentable.**",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "794ec671b12610ad3e698d052473a9231bcd0574",
-            "content": "sha256:dafe017fda5c133ffcdc982c070c12de7eedc57930f07153e09db3295c2b788e",
-            "locator": {
-              "kind": "symbol",
-              "name": "ReviewRecordChannel"
+              "name": "review_judgment"
             },
-            "path": "mcp/src/agents_remember/models/knowledge/review_records.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "39": {
-      "note": "**The task-context composition's call site: no matrix was read, so the matrix-owned collections are reported `not_selected`.**",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "16e7c29f57b7814c6ee69615335aac14aa466a1e",
-            "content": "sha256:b9b8b38c8c048b76aa0c17cc3d7377029fcc170898b19e06d1d6139d7ac0d0ae",
-            "locator": {
-              "kind": "symbol",
-              "name": "without_selected_matrix"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "40": {
-      "note": "**The channel list as part of the served payload, one entry per class the composition read.**",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "2689495ed37e76bf667151b6a75a7ac2577896b2",
-            "content": "sha256:ea88638d284465eef9ab8dd55effba8fd905a19b1c831ef1adcef90fc0afccf1",
-            "locator": {
-              "kind": "symbol",
-              "name": "ReviewEvidencePane"
-            },
-            "path": "mcp/src/agents_remember/models/knowledge/review.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "41": {
-      "note": "All owner records are collected for the already resolved comparison pair.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "16e7c29f57b7814c6ee69615335aac14aa466a1e",
-            "content": "sha256:fbb49a9450e87dda67fc7e549d6b78f44d160884ef5a1886e724b900aab4b925",
-            "locator": {
-              "kind": "symbol",
-              "name": "review_records_for_resolution"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "42": {
-      "note": "Three of the six collection owners are retired canonical records (MIK-R26): `detection_signals`, `verification_observations` and `evidence_claims` name retired-canonical records; `assessments`, `authored_effects` and `assessment_currentness` have live owners.\n\nAnchor: lines 68-77",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "16e7c29f57b7814c6ee69615335aac14aa466a1e",
-            "content": "sha256:f467ef99f87380033b337d1a7fd9bc3c9fbed65dd0f89e8cd8c3ccd4f3525d87",
-            "locator": {
-              "end": 77,
-              "kind": "line_range",
-              "start": 68
-            }
+            "path": "mcp/src/agents_remember/application/review_judgment.py"
           },
           "kind": "code"
         }

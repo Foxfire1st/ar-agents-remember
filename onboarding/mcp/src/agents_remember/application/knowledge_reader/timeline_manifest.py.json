@@ -1,0 +1,73 @@
+{
+  "path": "mcp/src/agents_remember/application/knowledge_reader/timeline_manifest.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "a1597cede0048e4ad7c99e5b4b0df21cd58fb54d",
+        "content": "sha256:8897d718532ab9e1d52c04a5b1ee13c448ac018837f7dfd460952b45943de9ff",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-2KJQVF",
+      "invariant": "INV-DFA51A",
+      "origin": {
+        "handoffEntry": "MIK-R67@v2 by-design one-spilled-history",
+        "leaf": "260928-MIK-L57"
+      },
+      "rationale": "Freezes canonical immutable event content and digest and chooses resident or anonymous-backed representation.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The immutable manifest separates complete ordered storage, digest and resident weight.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a1597cede0048e4ad7c99e5b4b0df21cd58fb54d",
+            "content": "sha256:24c12a305395d83a4ebbaf6c0053367b7babd3544d3f8deb6d2753eecf535a8b",
+            "locator": {
+              "kind": "symbol",
+              "name": "TimelineManifest"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Admission computes resident accounting once and substitutes anonymous spill storage only for oversized events.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a1597cede0048e4ad7c99e5b4b0df21cd58fb54d",
+            "content": "sha256:e38963c5b9f38e71836ab1db08de125ecae834b8024db3da69e76c01947e4f11",
+            "locator": {
+              "kind": "symbol",
+              "name": "freeze_timeline"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The accounted resident-weight cache budget is 8 MiB.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a1597cede0048e4ad7c99e5b4b0df21cd58fb54d",
+            "content": "sha256:49b55ae2ce992edfd1e874e558216815b738f40416b07f4e4cc586d3076bc866",
+            "locator": {
+              "kind": "symbol",
+              "name": "TIMELINE_CACHE_BYTES"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

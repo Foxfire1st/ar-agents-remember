@@ -1,0 +1,56 @@
+{
+  "path": "mcp/src/agents_remember/models/knowledge/review_code_changes.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Each invariant carries an implementation state with independent proof/range marks and evidence/reasons.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f1e04c7bb37a468ff564ab753d928c669da7a6b3",
+            "content": "sha256:71925b105ec5fa311caf1b7012a656790e38a2b5753ca6e8beaa3eb83b1eaf3a",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewCodeChange"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The whole-leaf wrapper distinguishes facts from unavailable; it has no cross-field validator.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f1e04c7bb37a468ff564ab753d928c669da7a6b3",
+            "content": "sha256:9b60a638246f4dbf185365d2e66b7c205a5620603315d914b113f23bff2aa2ea",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewCodeChanges"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The producer checks readable sides/code and reuses implementation_facts rather than a second code-change rule.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fd8bd90e6af383d07dbbf67962d4bfd1ba5271ca",
+            "content": "sha256:942eee266f2cc40baba99df735d4efa23464b0301f23d0aeeb22d82aabbafdd3",
+            "locator": {
+              "kind": "symbol",
+              "name": "code_changes"
+            },
+            "path": "mcp/src/agents_remember/application/review_code_changes.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

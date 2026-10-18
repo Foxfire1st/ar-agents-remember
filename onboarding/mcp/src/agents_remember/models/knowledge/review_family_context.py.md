@@ -6,6 +6,60 @@
 
 ## Purpose
 
+Comparison-bound family values: the supplied family guarantee, exact member-revision identities,
+separate side/selection states, owner roster pages and explicit counts. This model does not read
+storage, assemble a guarantee from members or decide whether a guarantee holds. The current
+references value names only the relationship union and source inventory. Removed reviewer evidence,
+observation, assessment and applicability collections are not reconstructed by stale header prose.
+
+## Code Commentary
+
+The closed whole-context, side and entry states keep unreadable/unresolved/no-family/no-subject
+answers distinct from a recorded roster. Member values retain source references through the
+separately owned review_family_source model, their recorded role/rationale and explicit resolution
+facts; no source region is guessed from a note. Shared member-revision identities and the supplied
+other-family list expose sharing without inventing another revision.
+
+A guarantee value carries the supplied text, display version, origin state, optional acceptance ref,
+provenance and digest. These fields are not an authenticity measurement. In particular this class
+has no origin-state/acceptance-ref pairing validator; the older card's contrary promise is historical.
+
+`ReviewFamilyRosterPage.complete` means end of enumeration, not that the final page contains the
+whole roster. The owner count's returned/total equality is the stated all-members observation.
+Continuation/completion, continued-from state and membership total must agree with the supplied
+counts. A complete first-page side must contain its full declared roster; a completed continued page
+can carry only its own share. A recorded side must identify a revision on its supplied recorded list.
+
+The entry checks pin family identity, before/after side names, label/side pairing, candidate and
+selection states. Candidate guarantees never become the selected family's guarantee by this model.
+Change facts compare member-ID sets to the actually returned member-ID sets; that local check is
+not an independent uniqueness or measured-classification certificate.
+
+Whole-context counts match entry length, roster sums and a distinct member-revision set. They do
+not authenticate the underlying facts. A no-family or no-subject result carries no family entries;
+partial and unavailable keep their reasons, and an empty recorded context is not substituted for a
+measured no-family answer. Production composition, roster reading and task-context selection keep
+their own owners and refusal boundaries.
+
+## Invariants And Boundaries
+
+Values stay comparison-bound; declared origin acceptance, source resolution, currentness and authored
+meaning are not a current family verdict. Optional change facts are the tree-comparison carrier,
+not a surviving database-review branch. Source-only checks and stored assertions below are not new
+runtime, CODE or whole-MEMORY grades. Historical numeric prose extents are retained only in the
+creation-era account; current evidence resolves actual constructs and the explicit roster paragraph.
+
+<details>
+<summary>Historical prior account — retained, not the current contract</summary>
+
+# mcp/src/agents_remember/models/knowledge/review_family_context.py
+
+## Governing Overview
+
+[models route overview](../overview.md)
+
+## Purpose
+
 **The value vocabulary for the comparison-bound family context (ICR-R31@v1), and the four refusals
 that keep a rendering from inventing one.** `ICR-R09@v1`'s flat subject catalogue and `ICR-R08@v1`'s
 relationship movement union answer other questions; neither carries *which recorded families the
@@ -206,39 +260,39 @@ a position in a walk rather than a truncated whole**; and **no field in this mod
 Changed/Passed conclusion, so a member change cannot be rendered as a claim about its family's
 guarantee**.
 
-- **The four refusals this vocabulary encodes: an authored guarantee never assembled from members, a membership citing one exact family revision and one exact member revision, a side stating which snapshot fact it is, and five status dimensions that never collapse.** [1]
-- The published surface: the fifteen names the composition, the roster read, the payload and the transport consume. [2]
-- **The five states one review's family context can be in, and why the measured zero is deliberately not spelled `empty`.** [3]
-- The two snapshots a side context or a label may name, so no value can name a third. [4]
-- **The four distinct facts one side can state — `recorded`, `not_recorded`, `not_resolved`, `unreadable` — none of them an empty roster.** [5]
-- One family's own four states, including the unresolved one that chose no revision. [6]
-- **The one key that joins a member context to the evidence and assessment owners' own collections, so a rendering cannot join on a label or a path.** [7]
-- **The owners this context points into rather than copying: the relationship union, the source inventory, evidence links, observations, assessments and applicability.** [8]
-- One family revision's authored joint guarantee with its display version, origin state, acceptance reference, provenance and payload seal. [9]
-- **One recorded realization claim as an inspectable source reference, with its structured locator, resolved ranges and locator state, imported from its own module and re-exported here.** [10]
-- **The validator refusing an address without its observation or its locator, so a reference never reads as a resolved realization.** [11]
-- One recorded membership carrying its exact member revision and the other family revisions that revision is recorded in. [12]
-- **The validator keeping a member's stated content state and the content it carries one fact, and pinning a movement reference to the row's own recorded identity.** [13]
-- The read owner's own window of one family revision's roster: its counts, its completeness and the cursor that reaches the rest. [14]
-- **The docstring paragraph stating that `complete` is the WALK's flag and not the page's, so a completed continued page is a position in a walk and only a single page may be read as the roster whole.** [15]
-- **The validator refusing a truncated roster presented as a complete one, and a member total that is not the read owner's own count.** [16]
-- One snapshot's context for one family: the selected revision, its guarantee, the roster page it carried and the family owner's own recorded revision list. [17]
-- **The family owner's own list of every revision the snapshot records — a different population from the revisions a selection reached, which is the fix-round-1 field.** [18]
-- **The validator requiring a recorded side to name the revision it read and carry the page it read, requiring that revision to be one the family owner records, and — this delta's correction — holding only a single-page walk (`complete and state == "first_page"`) to the revision-wide member count.** [19]
-- One family's full context: both snapshot sides, the explicit revision selection and the candidate guarantees of an unresolved lineage. [20]
-- The validator pinning an entry's selection to the family it carries and its two sides to the two snapshots. [21]
-- **The validator refusing a chosen revision beside a selection that chose none, an ambiguity with no inspectable candidate, and a guarantee presented as a family's own on an unresolved selection.** [22]
-- Where each independent fact beside this context is owned, and the key that joins them. [23]
-- The comparison-bound family context of one review: its entries, its measured counts, its references and its limitations. [24]
-- **The validator refusing a claimed remainder with no way to reach it, counts that do not describe the entries beside them, and a unique member total inflated by counting rows.** [25]
-- **The composition that builds this value, from the two snapshots, the reviewed selector and the shipped read operation.** [26]
-- The roster read that supplies each side's guarantee, its members and its page. [27]
-- **The production review read that composes the context once and carries it on the payload.** [28]
-- The payload field itself, required rather than optional so an absent field can never be read as a measured zero. [29]
-- The task-context review, which states `no_subject_selected` because it compared no knowledge operand. [30]
-- The values cases that pin the construction rules this module enforces. [31]
-- On a tree comparison the entry carries the change facts of exactly its returned members (MIK-L33). [32]
-- The facts' model. [33]
+- **The four refusals this vocabulary encodes: an authored guarantee never assembled from members, a membership citing one exact family revision and one exact member revision, a side stating which snapshot fact it is, and five status dimensions that never collapse.** (historical reference 1)
+- The published surface: the fifteen names the composition, the roster read, the payload and the transport consume. (historical reference 2)
+- **The five states one review's family context can be in, and why the measured zero is deliberately not spelled `empty`.** (historical reference 3)
+- The two snapshots a side context or a label may name, so no value can name a third. (historical reference 4)
+- **The four distinct facts one side can state — `recorded`, `not_recorded`, `not_resolved`, `unreadable` — none of them an empty roster.** (historical reference 5)
+- One family's own four states, including the unresolved one that chose no revision. (historical reference 6)
+- **The one key that joins a member context to the evidence and assessment owners' own collections, so a rendering cannot join on a label or a path.** (historical reference 7)
+- **The owners this context points into rather than copying: the relationship union, the source inventory, evidence links, observations, assessments and applicability.** (historical reference 8)
+- One family revision's authored joint guarantee with its display version, origin state, acceptance reference, provenance and payload seal. (historical reference 9)
+- **One recorded realization claim as an inspectable source reference, with its structured locator, resolved ranges and locator state, imported from its own module and re-exported here.** (historical reference 10)
+- **The validator refusing an address without its observation or its locator, so a reference never reads as a resolved realization.** (historical reference 11)
+- One recorded membership carrying its exact member revision and the other family revisions that revision is recorded in. (historical reference 12)
+- **The validator keeping a member's stated content state and the content it carries one fact, and pinning a movement reference to the row's own recorded identity.** (historical reference 13)
+- The read owner's own window of one family revision's roster: its counts, its completeness and the cursor that reaches the rest. (historical reference 14)
+- **The docstring paragraph stating that `complete` is the WALK's flag and not the page's, so a completed continued page is a position in a walk and only a single page may be read as the roster whole.** (historical reference 15)
+- **The validator refusing a truncated roster presented as a complete one, and a member total that is not the read owner's own count.** (historical reference 16)
+- One snapshot's context for one family: the selected revision, its guarantee, the roster page it carried and the family owner's own recorded revision list. (historical reference 17)
+- **The family owner's own list of every revision the snapshot records — a different population from the revisions a selection reached, which is the fix-round-1 field.** (historical reference 18)
+- **The validator requiring a recorded side to name the revision it read and carry the page it read, requiring that revision to be one the family owner records, and — this delta's correction — holding only a single-page walk (`complete and state == "first_page"`) to the revision-wide member count.** (historical reference 19)
+- One family's full context: both snapshot sides, the explicit revision selection and the candidate guarantees of an unresolved lineage. (historical reference 20)
+- The validator pinning an entry's selection to the family it carries and its two sides to the two snapshots. (historical reference 21)
+- **The validator refusing a chosen revision beside a selection that chose none, an ambiguity with no inspectable candidate, and a guarantee presented as a family's own on an unresolved selection.** (historical reference 22)
+- Where each independent fact beside this context is owned, and the key that joins them. (historical reference 23)
+- The comparison-bound family context of one review: its entries, its measured counts, its references and its limitations. (historical reference 24)
+- **The validator refusing a claimed remainder with no way to reach it, counts that do not describe the entries beside them, and a unique member total inflated by counting rows.** (historical reference 25)
+- **The composition that builds this value, from the two snapshots, the reviewed selector and the shipped read operation.** (historical reference 26)
+- The roster read that supplies each side's guarantee, its members and its page. (historical reference 27)
+- **The production review read that composes the context once and carries it on the payload.** (historical reference 28)
+- The payload field itself, required rather than optional so an absent field can never be read as a measured zero. (historical reference 29)
+- The task-context review, which states `no_subject_selected` because it compared no knowledge operand. (historical reference 30)
+- The values cases that pin the construction rules this module enforces. (historical reference 31)
+- On a tree comparison the entry carries the change facts of exactly its returned members (MIK-L33). (historical reference 32)
+- The facts' model. (historical reference 33)
 
 ### Cross-Repo References
 
@@ -247,3 +301,44 @@ comparison this same repository's own review surfaces compose, over two knowledg
 resolution selected and a selector its own request named. No remote, credential, network or external
 system appears in any shape here, so no cross-repo reference row is recorded — no cited range proves a
 repository or external-system boundary.
+
+</details>
+
+## Evidence
+
+No Domain Documentation entries are configured. Current declarations, direct producer boundaries
+and the named stored value assertion were inspected; no test execution is asserted here.
+
+- The current model carries family/member/selection state and rejects inconsistent combinations; its retained creation-era header is not evidence of a surviving assessment or observation collection. [1]
+- The published surface: the fifteen names the composition, the roster read, the payload and the transport consume. [2]
+- **The five states one review's family context can be in, and why the measured zero is deliberately not spelled `empty`.** [3]
+- The two snapshots a side context or a label may name, so no value can name a third. [4]
+- **The four distinct facts one side can state — `recorded`, `not_recorded`, `not_resolved`, `unreadable` — none of them an empty roster.** [5]
+- One family's own four states, including the unresolved one that chose no revision. [6]
+- Member contexts carry invariant_revision_id as their join key; this does not resurrect evidence/assessment owners removed from the current references value. [7]
+- The surviving referenced collections are source.relationships and source.inventory; removed evidence, observation, assessment and applicability owner constants are not current destinations. [8]
+- A supplied family guarantee carries authored text and origin/seal fields; this model does not itself authenticate them or enforce an acceptance-ref pair from the origin-state string. [9]
+- **One recorded realization claim as an inspectable source reference, with its structured locator, resolved ranges and locator state, imported from its own module and re-exported here.** [10]
+- **The validator refusing an address without its observation or its locator, so a reference never reads as a resolved realization.** [11]
+- One recorded membership carrying its exact member revision and the other family revisions that revision is recorded in. [12]
+- **The validator keeping a member's stated content state and the content it carries one fact, and pinning a movement reference to the row's own recorded identity.** [13]
+- The read owner's own window of one family revision's roster: its counts, its completeness and the cursor that reaches the rest. [14]
+- The roster docstring distinguishes end-of-enumeration from the population carried by one page; returned equals total is the stated all-members observation. [15]
+- **The validator refusing a truncated roster presented as a complete one, and a member total that is not the read owner's own count.** [16]
+- One snapshot's context for one family: the selected revision, its guarantee, the roster page it carried and the family owner's own recorded revision list. [17]
+- **The family owner's own list of every revision the snapshot records — a different population from the revisions a selection reached, which is the fix-round-1 field.** [18]
+- The side-context validator keeps recorded state/revision/guarantee/page together and compares the full roster size only on a complete first page, not a completed continued page. [19]
+- One family's full context: both snapshot sides, the explicit revision selection and the candidate guarantees of an unresolved lineage. [20]
+- The validator pinning an entry's selection to the family it carries and its two sides to the two snapshots. [21]
+- **The validator refusing a chosen revision beside a selection that chose none, an ambiguity with no inspectable candidate, and a guarantee presented as a family's own on an unresolved selection.** [22]
+- Where each independent fact beside this context is owned, and the key that joins them. [23]
+- The comparison-bound family context of one review: its entries, its measured counts, its references and its limitations. [24]
+- Context checks compare returned counts and roster sums, and compute unique member-revision total from a set; this local arithmetic is not proof that input identities were authenticated or unique. [25]
+- The family-context composition owner supplies its comparison-bound result from the selected records and roster owner. [26]
+- The roster read that supplies each side's guarantee, its members and its page. [27]
+- The review composition carries the family-context result on its payload; this reference is static composition structure, not an executed read count. [28]
+- The payload field itself, required rather than optional so an absent field can never be read as a measured zero. [29]
+- The task-context review, which states `no_subject_selected` because it compared no knowledge operand. [30]
+- The stored value regression rejects a recorded family selection naming a revision outside the recorded list; this is an inspected assertion, not fresh execution. [31]
+- The local change-facts guard compares the returned/described member-ID sets; that comparison alone does not establish occurrence multiplicity or measured code classification. [32]
+- The facts' model. [33]

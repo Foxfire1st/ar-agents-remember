@@ -12,7 +12,7 @@ base and the leaf's candidate, resolved and composed exactly as the reviewer doe
 kind and the review rounds' extra cases. It is the world the dashboard's `triage.*` bodies are captured from
 (`triage.capture-provenance.json`).
 
-`test_review_change_kinds.py` proves the MIK-R33 change-kind facts over a live leaf on four real Git trees, one member per badge kind. In W03 it also proves the outline: index-only reads, catalogue preservation, authored membership order, summary cuts, and the unknown/unavailable states.
+`test_review_change_kinds.py` proves the MIK-R33 change-kind facts over a live leaf on four real Git trees, one member per badge kind. In W03 it also proves the outline: index-only reads, catalogue preservation, authored membership order, summary cuts, and the unknown/unavailable states. Four further test declarations cover leaf-wide code facts, unavailable code facts, public-gate worklist states and answering witnesses, and held-input validation (six parameterized variants).
 ## Code Commentary
 
 ### Logic
@@ -57,7 +57,7 @@ R1 fix round, 4 of 4 at R2, 9 of 9 at the merge round) were run against these ca
 
 No additional work is asserted by this card.
 
-`test_the_outline_reads_only_indexes_and_preserves_catalogue_fields` rewrites family membership (a leave-and-join) and an invariant statement, then replaces TreeLane.classify, CodeTrees._blob, KnowledgeIndex.family/invariant and knowledge_review.compose_review with refusing callbacks: the catalogue entries must equal the subject catalogue's, the dump without `outline` must keep its exact fields, and the outline must show added/removed/changed/unchanged with candidate-first member order, `joined`/`left` membership, word-cut summaries and `text_uuid` selector ids — including that a code-changed but meaning-unchanged invariant reads `unchanged`. `test_the_outline_states_unknown_records_and_unavailable_membership_or_indexes` covers corrupt invariant/family records (`unknown` / `unavailable` naming unparseable files), the dataset case (`trees=None`, no converted memory) and a missing index database.
+`test_the_outline_reads_only_indexes_and_preserves_catalogue_fields` rewrites family membership (a leave-and-join) and an invariant statement, then replaces TreeLane.classify, CodeTrees._blob, KnowledgeIndex.family/invariant and knowledge_review.compose_review with refusing callbacks: the catalogue entries must equal the subject catalogue's, the dump without `outline` must keep its exact fields, and the outline must show added/removed/changed/unchanged with candidate-first member order, `joined`/`left` membership, word-cut summaries and `text_uuid` selector ids — including that a code-changed but meaning-unchanged invariant reads `unchanged`. `test_the_outline_states_unknown_records_and_unavailable_membership_or_indexes` covers corrupt invariant/family records (`unknown` / `unavailable` naming unparseable files), the dataset case (`trees=None`, no converted memory) and a missing index database. The corrupt-family outline detail names `cannot read FAM-F00001`. The leaf-wide agreement case compares the final classified result after its size loop with walked-family implementation, proof and unresolved-range facts; its body does not guard against roster reads. Unreadable code facts are `unavailable` with a detail and no invariant facts. Worklist states equal the public gate result, and a deferred history row supplies the answering witness. Matching readable held inputs agree with ordinary evaluation; mismatched memory, code tree or code root, one-sided held inputs and a failed held code read each yield `undecided` with a reason.
 ## Evidence
 
 ### Docs References
@@ -82,4 +82,7 @@ No cross-repo boundary is crossed by this file.
 - Its lane row.  Anchor: "mcp/tests/test_review_change_kinds.py" [7]
 - The outline reads indexes only and keeps catalogue bytes [8]
 - Families, membership and summaries match the detail's facts  Anchor: `outline` [9]
-- Corrupt records, dataset reviews and lost indexes are named states [10]
+
+- Corrupt invariant records produce unknown outline facts; a corrupt family names cannot read FAM-F00001; dataset and missing-index cases are unavailable. [10]
+- The final classified leaf facts agree with walked-family implementation, proof and unresolved-range facts. Unreadable code facts are unavailable rather than an empty successful result. [11]
+- Worklist states match public gate verdicts and name the answering history row. Six held-input variants fail closed with reasons; matching readable held inputs match ordinary evaluation. [12]

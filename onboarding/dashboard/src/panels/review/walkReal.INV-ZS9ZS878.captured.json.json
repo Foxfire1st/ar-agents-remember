@@ -2,34 +2,18 @@
   "path": "dashboard/src/panels/review/walkReal.INV-ZS9ZS878.captured.json",
   "realizes": [],
   "references": {
-    "1": {
-      "note": "The served answer, whole.",
+    "3": {
+      "note": "The current retained JSON input supplies the literal identities, response states and populations summarized above; these are fixture facts, not live project knowledge or fresh execution evidence.",
       "targets": [
         {
           "anchor": {
-            "blob": "fe5b61bdcb07631ef3f1c1af637eeb92dd8b7de1",
-            "content": "sha256:5d1eb3686b4f381591156f6f7489807a1d4c564c3cb0153884b467087bdb20a6",
+            "blob": "257292d7bee4d503bfc5d0f29684c86970876f88",
+            "content": "sha256:0370157a6a0e7f32273ca62e8ab447cd9c3a1a8a16a2666abc73f0fdd7e79889",
             "locator": {
-              "kind": "file"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "2": {
-      "note": "Its receipt row: route, parameters, status, hash and size.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "902c0c0be258b087605bee85c2c82d10e8a5c7e8",
-            "content": "sha256:e4b8f3e73ba573f26fed1339c9856fad1846bc7ea1fa4d6f9cf6a96586f0736f",
-            "locator": {
-              "end": 141,
+              "end": 1,
               "kind": "line_range",
-              "start": 127
-            },
-            "path": "dashboard/src/panels/review/walkReal.capture-provenance.json"
+              "start": 1
+            }
           },
           "kind": "code"
         }

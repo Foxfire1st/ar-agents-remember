@@ -14,7 +14,7 @@ The child script builds an explicit fixture and records open/list/scandir events
 
 ## Invariants And Boundaries
 
-The parent launches Python directly, not nested pytest, and checks the child result. Source-defined audit coverage and a mutation control do not establish that this candidate was executed or that unrelated host files were audited.
+The parent launches Python directly, not nested pytest, and checks the child result; the in-process double keeps the audited seam's signature, including its comparison-trees argument, so it exercises the identical leaf owner rather than a reduced one. Source-defined audit coverage and a mutation control do not establish that this candidate was executed or that unrelated host files were audited.
 
 ## Evidence Scope
 
@@ -22,4 +22,4 @@ This is a current source account, not an executed test, CODE/MEMORY grade, live 
 
 ## Evidence
 
-- Describes isolated interpreter audits of retained versus examined filesystem dependencies for worklist, gate and reviewer computation. The parent launches Python directly, not nested pytest, and checks the child result. Source-defined audit coverage and a mutation control do not establish that this candidate was executed or that unrelated host files were audited. [1]
+- Describes isolated interpreter audits of retained versus examined filesystem dependencies for worklist, gate and reviewer computation. The parent launches Python directly, not nested pytest, and checks the child result; the in-process double keeps the audited seam's signature, including its comparison-trees argument, so it exercises the identical leaf owner rather than a reduced one. Source-defined audit coverage and a mutation control do not establish that this candidate was executed or that unrelated host files were audited. [1]

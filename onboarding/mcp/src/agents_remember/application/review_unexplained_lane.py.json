@@ -1,6 +1,41 @@
 {
   "path": "mcp/src/agents_remember/application/review_unexplained_lane.py",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "0f038d49f8f1531e4e966dc271dd23033d095a94",
+        "content": "sha256:635dbf01b3bb66c367e06a12ad10157b42b62e52bcf27ef01540edaa53a9ec04",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-23B2HV",
+      "invariant": "INV-5KN2N7",
+      "origin": {
+        "handoffEntry": "MIK-R57@v2 by-design rename",
+        "leaf": "260928-MIK-L57"
+      },
+      "rationale": "Keys classification and changed-file evidence by concrete path and preserves Unknown when parsing cannot establish attribution.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "0f038d49f8f1531e4e966dc271dd23033d095a94",
+        "content": "sha256:635dbf01b3bb66c367e06a12ad10157b42b62e52bcf27ef01540edaa53a9ec04",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-9ABN2Q",
+      "invariant": "INV-N670AG",
+      "origin": {
+        "handoffEntry": "MIK-R57@v2 by-design parse-unknown",
+        "leaf": "260928-MIK-L57"
+      },
+      "rationale": "Keys classification and changed-file evidence by concrete path and preserves Unknown when parsing cannot establish attribution.",
+      "role": "enforcement"
+    }
+  ],
   "references": {
     "1": {
       "note": "The three reads and the membership-state rule, in the module's own words.\n\nAnchor: \"the entry's attribution count\"; \"A family occurrence's membership state compares the side's family record\"",
@@ -326,26 +361,52 @@
       ]
     },
     "9": {
-      "note": "A link's keys, revision and family occurrences.",
+      "note": "_link preserves entry ID/kind, optional proof facet, invariant identity key, optional invariant revision/key and supplied range, and obtains families through _occurrences. With no listed family, _occurrences keeps the completeness-based state and supplies an own-side reason only for membership_unknown. Named occurrences preserve family identity/key/revision and the unchanged _membership state; _occurrence supplies an other-side reason only for membership_unknown. _membership_reason uses the reading's side name and detail, or its incomplete-family sentence, and passes the result through bounded_text. Other states receive reason=None.\n\nAnchor: inclusive source ranges",
       "targets": [
         {
           "anchor": {
-            "blob": "4b7294a6ea2d3e5b452d17b76d428c7df0241116",
+            "blob": "0f038d49f8f1531e4e966dc271dd23033d095a94",
             "content": "sha256:a094d45cfba7d223274aaffebe9682acdf8a58096628306405e650f857ad651a",
             "locator": {
-              "kind": "symbol",
-              "name": "_link"
+              "end": 336,
+              "kind": "line_range",
+              "start": 317
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "4b7294a6ea2d3e5b452d17b76d428c7df0241116",
-            "content": "sha256:a9ef7241fe0bbd8646ac06e7fc1b452ecd5a111328d96d4132572add7e020719",
+            "blob": "0f038d49f8f1531e4e966dc271dd23033d095a94",
+            "content": "sha256:de8e00819c797ee6163e7cfaeca252b0d635d3fbe81bf00fec7bcf311f5e65ef",
             "locator": {
-              "kind": "symbol",
-              "name": "_occurrences"
+              "end": 356,
+              "kind": "line_range",
+              "start": 339
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0f038d49f8f1531e4e966dc271dd23033d095a94",
+            "content": "sha256:0037dcf74b8e9457d62b7c79827eaccc2b97f5f5f40334363c77bfb444962c41",
+            "locator": {
+              "end": 369,
+              "kind": "line_range",
+              "start": 359
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0f038d49f8f1531e4e966dc271dd23033d095a94",
+            "content": "sha256:57bc72d58fbd0e31897d2d60bccd6818fbb5468b0aef71e4403d3194d48f26a9",
+            "locator": {
+              "end": 387,
+              "kind": "line_range",
+              "start": 372
             }
           },
           "kind": "code"

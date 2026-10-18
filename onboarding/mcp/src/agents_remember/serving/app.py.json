@@ -3,10 +3,10 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "09d3ce0fe82e391b5934a045de836ddd1097568b",
-        "content": "sha256:e28e608b953c3adabb04fcb3848a2dd879bdf965d8483c9a10ccd2a2c98cbd91",
+        "blob": "c3f5986fb32e9954b3677b1adf142e0b1fbc029a",
+        "content": "sha256:f734f25e437b55ff245602cc32c56e9cc4c4d21b9b2ddd24da8ab4fbe347f813",
         "locator": {
-          "end": 133,
+          "end": 134,
           "kind": "line_range",
           "start": 84
         }
@@ -22,31 +22,15 @@
     }
   ],
   "references": {
-    "12": {
-      "note": "Frozen implementation of create_app supporting the stated file behavior.",
+    "31": {
+      "note": "One runtime composition shares its ledger/landing interest and forwards actual supplied collaborators.\n\nAnchor: runtime composition",
       "targets": [
         {
           "anchor": {
-            "blob": "12d6cb3bc032e00e82aca12cc5a55851a52edb24",
-            "content": "sha256:4de58c27491cfdc03b99307fb296cacb08c522d7b3164e1738445bbb86cce216",
+            "blob": "c3f5986fb32e9954b3677b1adf142e0b1fbc029a",
+            "content": "sha256:f734f25e437b55ff245602cc32c56e9cc4c4d21b9b2ddd24da8ab4fbe347f813",
             "locator": {
-              "kind": "symbol",
-              "name": "create_app"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "14": {
-      "note": "The current _build_serving_runtime copies the collaborators' review_trees_shutdown callable onto the runtime; this retained shutdown boundary also has a current owner, separate from the historical constructor accounts.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "58281d9cb62afbcee6f8b6ad2efb331bb29b98e4",
-            "content": "sha256:b42df87008df02e6b9183098c8b0d038d57846a31a02700689179eda34a11fdd",
-            "locator": {
-              "end": 132,
+              "end": 134,
               "kind": "line_range",
               "start": 84
             }
@@ -55,183 +39,53 @@
         }
       ]
     },
-    "15": {
-      "note": "The app: lifespan, compression, and the routes in their order with the static mount last.",
+    "32": {
+      "note": "The leaf adds review_memory_root to the runtime beside the retained child-shutdown port.\n\nAnchor: new root wiring",
       "targets": [
         {
           "anchor": {
-            "blob": "12d6cb3bc032e00e82aca12cc5a55851a52edb24",
-            "content": "sha256:4de58c27491cfdc03b99307fb296cacb08c522d7b3164e1738445bbb86cce216",
+            "blob": "c3f5986fb32e9954b3677b1adf142e0b1fbc029a",
+            "content": "sha256:880ac9e02e7fe58eae1b70c0995da1230f237dd256635046f1269cbe1fac701b",
             "locator": {
-              "kind": "symbol",
-              "name": "create_app"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "16": {
-      "note": "The empty collaborator record.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "09d3ce0fe82e391b5934a045de836ddd1097568b",
-            "content": "sha256:fd94d584cf704f759112a787d339f29819555b15105c7339d151630c57235f32",
-            "locator": {
-              "kind": "symbol",
-              "name": "OWNED_SERVING_COLLABORATORS"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "17": {
-      "note": "The module docstring: the endpoints and the local-first posture.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "12d6cb3bc032e00e82aca12cc5a55851a52edb24",
-            "content": "sha256:33b06af08dbf700dbd8a248f079f85d2cc95b07f49a539d52e5da1053597e446",
-            "locator": {
-              "end": 31,
+              "end": 129,
               "kind": "line_range",
-              "start": 1
+              "start": 119
             }
           },
           "kind": "code"
         }
       ]
     },
-    "18": {
-      "note": "The import and the registration after the tree view route, before the static mount.  Anchor: `register_knowledge_reader_route`",
+    "33": {
+      "note": "Lifespan/gzip, shared changeset cache, built-in and optional routes precede the static mount.\n\nAnchor: app composition",
       "targets": [
         {
           "anchor": {
-            "blob": "12d6cb3bc032e00e82aca12cc5a55851a52edb24",
-            "content": "sha256:4ef18c9b235a42a3b81d999a381385da07e8dcff27b106f21811053b6f1cc9ef",
+            "blob": "c3f5986fb32e9954b3677b1adf142e0b1fbc029a",
+            "content": "sha256:1793a84794f4c012e75c0b36d57325ebbf5bac08601d6c9ba647db19f41313f1",
             "locator": {
-              "end": 317,
+              "end": 187,
               "kind": "line_range",
-              "start": 315
+              "start": 137
             }
           },
           "kind": "code"
         }
       ]
     },
-    "19": {
-      "note": "The route it registers.",
+    "34": {
+      "note": "The stream consumer forwards the optional review identity and runtime root port into the multiplexer.\n\nAnchor: actual port consumer",
       "targets": [
         {
           "anchor": {
-            "blob": "3f60b20373629b56db05b6b2cd9dc184622380b3",
-            "content": "sha256:5781c8215b5a6f6de9beb976f79d707fcd24810e3bf4859034a1508daa19895d",
+            "blob": "a0509af9d207b37ed234ce926f06d5bb4f1e7755",
+            "content": "sha256:afe6bb71f23799aae2bf916c71f57ff971b2fd4fca1a69d7520a4e6b3c33f809",
             "locator": {
-              "kind": "symbol",
-              "name": "register_knowledge_reader_route"
+              "end": 174,
+              "kind": "line_range",
+              "start": 146
             },
-            "path": "mcp/src/agents_remember/serving/knowledge_reader.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "20": {
-      "note": "The import and the registration after the summary route.  Anchor: `register_review_trees_route`",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "09d3ce0fe82e391b5934a045de836ddd1097568b",
-            "content": "sha256:62e1a313541161d26a2040048127f55ecdf8707d01fb7edd6255fb2a2e0f9a43",
-            "locator": {
-              "end": 182,
-              "kind": "line_range",
-              "start": 181
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "21": {
-      "note": "The import and the registration after the reviewer family.  Anchor: `register_review_summary_route`",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "58281d9cb62afbcee6f8b6ad2efb331bb29b98e4",
-            "content": "sha256:f8a191bbbe913dd2a1cee2a840e0988371a0c86185cd0cfe610f08d98b3d7a90",
-            "locator": {
-              "end": 180,
-              "kind": "line_range",
-              "start": 173
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "22": {
-      "note": "App creation composes the serving route and lifespan families.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "12d6cb3bc032e00e82aca12cc5a55851a52edb24",
-            "content": "sha256:4de58c27491cfdc03b99307fb296cacb08c522d7b3164e1738445bbb86cce216",
-            "locator": {
-              "kind": "symbol",
-              "name": "create_app"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "26": {
-      "note": "**The reviewer route family registered with all three collaborator ports, the third one being this leaf's entry-content port.**  Anchor: `register_review_routes`",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "58281d9cb62afbcee6f8b6ad2efb331bb29b98e4",
-            "content": "sha256:bac61469b34d41c6ffd7dc99390e910ede7e1e0a71aa63056dd824332428946b",
-            "locator": {
-              "end": 179,
-              "kind": "line_range",
-              "start": 173
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "29": {
-      "note": "Current construction shares one landing instance, binds actual subscriber interest before startup and supplies the shared ledger.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "58281d9cb62afbcee6f8b6ad2efb331bb29b98e4",
-            "content": "sha256:b42df87008df02e6b9183098c8b0d038d57846a31a02700689179eda34a11fdd",
-            "locator": {
-              "kind": "symbol",
-              "name": "_build_serving_runtime"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "30": {
-      "note": "Retained route registration and optional collaborator routes precede static delivery; removed terminal/notifier collaborators are absent.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "58281d9cb62afbcee6f8b6ad2efb331bb29b98e4",
-            "content": "sha256:1a65047821397155f26b7b674bddc4ce06cdda25103879be8738494699797648",
-            "locator": {
-              "kind": "symbol",
-              "name": "create_app"
-            }
+            "path": "mcp/src/agents_remember/serving/_app_routes.py"
           },
           "kind": "code"
         }

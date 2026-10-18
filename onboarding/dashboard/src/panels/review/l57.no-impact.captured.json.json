@@ -1,0 +1,24 @@
+{
+  "path": "dashboard/src/panels/review/l57.no-impact.captured.json",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The retained source supplies the facts and declared boundaries described above.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0de01bdd494d5059bf3feefebf6d36b82f57f30e",
+            "content": "sha256:89ac0771df5638ac9be72b1e80e9a93c5c9b336ac068a368fb4162417914057a",
+            "locator": {
+              "end": 1,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

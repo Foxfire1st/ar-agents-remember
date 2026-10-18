@@ -1582,24 +1582,6 @@
         }
       ]
     },
-    "166": {
-      "note": "Retired supporting-record channels remain unavailable without fabricated counts or proof/worklist substitutions.\n\nAnchor: Review record ownership boundary",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "07c5dd5a94d8b14a8d703da903c1d9cc166288a0",
-            "content": "sha256:c9be157ccbc8404de705b65ce4fc01801cc6e4c4344a882f7d9efacfc371e0d1",
-            "locator": {
-              "end": 14,
-              "kind": "line_range",
-              "start": 1
-            },
-            "path": "mcp/src/agents_remember/application/review_evidence_records.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
     "167": {
       "note": "Durable task reports have one shared root, distinct from the single-file publication route.",
       "targets": [
@@ -1733,6 +1715,57 @@
             "path": "mcp/src/agents_remember/memory/conversion/crossing_sync.py"
           },
           "kind": "code"
+        }
+      ]
+    },
+    "171": {
+      "note": "The response requires judgment and retains knowledge/source identity without the removed supporting-record fields.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3a9fbebf751c8e0ce26280a3c2bd35bfe3302c8f",
+            "content": "sha256:0e006f842e6954082a9d752be51896858f6970f40ff39161b5d4046e191a8da0",
+            "locator": {
+              "kind": "symbol",
+              "name": "KnowledgeReviewPayload"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/review.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "172": {
+      "note": "Selected-subject history and membership rows are rendered in attempt order, with proof entries supplied separately and explicit none/unavailable states.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7915489e9b1bfd326b7927fa39dbc7d55826e3c4",
+            "content": "sha256:3d2ba7c9bb099ac54f2a31d2f629488067e277170ffdc26590526c969bd0ecfa",
+            "locator": {
+              "kind": "symbol",
+              "name": "review_judgment"
+            },
+            "path": "mcp/src/agents_remember/application/review_judgment.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "173": {
+      "note": "The regression asserts required judgment and absence of removed wire channels; this is source/assertion evidence, not a fresh test run.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ea4ef5d83ffe9733de18c20f0e1a405aaf633a41",
+            "content": "sha256:4039a372cb2e3f0ee9783826300476aa2b107fc7bc261b165462bb18de1cd7f8",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_wire_requires_judgment_and_has_no_retired_channels"
+            },
+            "path": "mcp/tests/test_knowledge_review_evidence_channels.py"
+          },
+          "kind": "test"
         }
       ]
     },
@@ -2057,35 +2090,6 @@
         {
           "kind": "unresolved",
           "text": "onboarding/mcp/src/agents_remember/memory/knowledge/durable_evidence.py.md:1-119"
-        }
-      ]
-    },
-    "28": {
-      "note": "Current record owner marks retired classes unavailable.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "16e7c29f57b7814c6ee69615335aac14aa466a1e",
-            "content": "sha256:fbb49a9450e87dda67fc7e549d6b78f44d160884ef5a1886e724b900aab4b925",
-            "locator": {
-              "kind": "symbol",
-              "name": "review_records_for_resolution"
-            },
-            "path": "mcp/src/agents_remember/application/review_evidence_records.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "07c5dd5a94d8b14a8d703da903c1d9cc166288a0",
-            "content": "sha256:5d14090b1a207dda5ca6f77a2cea408ca02c8f4509612a548bd14381371ef2eb",
-            "locator": {
-              "kind": "symbol",
-              "name": "_retired_channel"
-            },
-            "path": "mcp/src/agents_remember/application/review_evidence_records.py"
-          },
-          "kind": "code"
         }
       ]
     },

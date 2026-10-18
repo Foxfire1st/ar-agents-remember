@@ -1,18 +1,36 @@
 {
   "path": "mcp/src/agents_remember/serving/_app_routes.py",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "a0509af9d207b37ed234ce926f06d5bb4f1e7755",
+        "content": "sha256:aadd342e2f3f79e9982698d25fb884bfca6519e662b4e3ecca58af70f7297bb5",
+        "locator": {
+          "kind": "symbol",
+          "name": "api_stream"
+        }
+      },
+      "id": "RLZ-V6QAN5",
+      "invariant": "INV-74578B97",
+      "origin": {
+        "handoffEntry": "CUR-L57-review-state-route-invalidation-transport",
+        "leaf": "260928-MIK-L57"
+      },
+      "rationale": "The state-stream route binds optional addressed review identity to the actual native-watch multiplexer and runtime root-admission callback while retaining the ordinary projection stream on the same connection. The helper supplies scoped invalidation/error notices; the existing client watch owns matching and shared-entry generation. This route does not compute summary counts or imply that argument normalization authenticates a task.",
+      "role": "propagation-persistence"
+    }
+  ],
   "references": {
     "1": {
-      "note": "Anchor: Copy-on-tail state response and bodyless ETag match.",
+      "note": "The state response uses projector revision weak ETags, refuses an absent snapshot, returns bodyless 304 on a match, otherwise copies the memoized projection and adds the served-state tail.",
       "targets": [
         {
           "anchor": {
-            "blob": "bcadca1a12cda0f8f1fb6d1e92f0116f8f5cfd6c",
-            "content": "sha256:809ddeb1544c1e0c0f0fb5ffa25e10a9d8e106278a9aeb347d99cb1db4a7a829",
+            "blob": "a0509af9d207b37ed234ce926f06d5bb4f1e7755",
+            "content": "sha256:fc8981be863b67f3c879c77c9d99d0f4b04cbdcf06e0e3128e612b4b122185b4",
             "locator": {
-              "end": 71,
-              "kind": "line_range",
-              "start": 50
+              "kind": "symbol",
+              "name": "_state_response"
             }
           },
           "kind": "code"
@@ -20,17 +38,72 @@
       ]
     },
     "2": {
-      "note": "Anchor: Projection snapshots/deltas and raw event stream retain distinct contracts.",
+      "note": "The state SSE route passes ordinary snapshot/delta events through the optional review-memory multiplexer under aclosing; the distinct raw-event route still forwards observer records and its own ready marker.\n\nAnchor: inclusive source ranges",
       "targets": [
         {
           "anchor": {
-            "blob": "bcadca1a12cda0f8f1fb6d1e92f0116f8f5cfd6c",
-            "content": "sha256:fc5b00aabb66eb68824fba477acb5f28ad154aa538c59c20ec266561c17565e8",
+            "blob": "a0509af9d207b37ed234ce926f06d5bb4f1e7755",
+            "content": "sha256:aadd342e2f3f79e9982698d25fb884bfca6519e662b4e3ecca58af70f7297bb5",
             "locator": {
-              "end": 157,
+              "end": 174,
               "kind": "line_range",
-              "start": 89
+              "start": 135
             }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a0509af9d207b37ed234ce926f06d5bb4f1e7755",
+            "content": "sha256:91704bae042925876115f062334973d1798e585aab58e5c7d5345f61005f8162",
+            "locator": {
+              "end": 199,
+              "kind": "line_range",
+              "start": 179
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0c7b9ca2d4d5e35569c252b5d2decddec3a4bc33",
+            "content": "sha256:837a64d6bb17f73ad233d08db0f72a1a9bf8b2b8efbb8d26ba161882bedb9f47",
+            "locator": {
+              "end": 230,
+              "kind": "line_range",
+              "start": 199
+            },
+            "path": "mcp/src/agents_remember/serving/review_memory_watch.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "All omitted review selectors opt out; any supplied selector forms a normalized three-string identity for the resolver. The multiplexer—not normalization—checks segments/root admission, emits review.memory.error on admitted failure paths and keeps ordinary events flowing.\n\nAnchor: inclusive source ranges",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a0509af9d207b37ed234ce926f06d5bb4f1e7755",
+            "content": "sha256:afe6bb71f23799aae2bf916c71f57ff971b2fd4fca1a69d7520a4e6b3c33f809",
+            "locator": {
+              "end": 174,
+              "kind": "line_range",
+              "start": 146
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0c7b9ca2d4d5e35569c252b5d2decddec3a4bc33",
+            "content": "sha256:72c7faf1cc0386533c5620f4f3c3b4eb5321ffc7e93e18ae3b8e2dafa59628f0",
+            "locator": {
+              "end": 230,
+              "kind": "line_range",
+              "start": 190
+            },
+            "path": "mcp/src/agents_remember/serving/review_memory_watch.py"
           },
           "kind": "code"
         }

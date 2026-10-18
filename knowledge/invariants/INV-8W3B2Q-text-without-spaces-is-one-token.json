@@ -1,0 +1,34 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake"
+    ],
+    "justification": "A future tokenizer change must not silently alter word boundaries or drop unspaced text while claiming the retained whitespace-token contract."
+  },
+  "applicability": "The recorded reviewer/reader 4 choice of MIK-R67@v2 rule18, or the explicit F07 resource ruling for one-spilled-history.",
+  "conditions": [
+    "Split tokens on the supplied whitespace definition, retaining unspaced and zero-width-space passages whole.",
+    "MIK-R35 rule2 chooses whitespace splitting; the rewrite presentation retains the complete supplied strings rather than hiding such passages."
+  ],
+  "exclusions": [
+    "No natural-language segmentation, Unicode grapheme guarantee or original-file byte-decoding authenticity is claimed.",
+    "This is a source-bound future boundary, not a fresh runtime, visual, suite or independent MEMORY verdict."
+  ],
+  "id": "INV-8W3B2Q",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "/home/firefox/projects/ar-coordination/tasks/agents-remember/260928_maintained-invariant-knowledge/notes/reports/worker/48060148-87d0-4e1e-ad2e-6f1fa353092d/role-launch/freeze05-builder-curator-handoff.md#producer-56"
+      ],
+      "path": "freeze11-r67-prescribed-boundaries-and-spill-resource-choice-01.json"
+    },
+    "handoffEntry": "MIK-R67@v2 by-design 4",
+    "leaf": "260928-MIK-L57",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Text without spaces is one token; a zero-width space is not whitespace. MIK-R35 rule 2 splits on whitespace. Such a passage reads as a rewrite with both texts in full; nothing is hidden.",
+  "status": "proposed",
+  "supersedes": []
+}

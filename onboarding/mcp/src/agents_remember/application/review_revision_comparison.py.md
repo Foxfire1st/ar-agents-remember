@@ -6,6 +6,41 @@
 
 ## Purpose
 
+Select the recorded revision of one invariant or family on each supplied comparison side. The current text-record path has a pair, an addition, a removal or no selected record; it no longer implements retained-population multi-head ambiguity or intermediate-revision selection.
+
+## Code Commentary
+
+`SubjectRevisionSelection` is a frozen holder for the optional selection and the two source items. `select_subject_revisions` first derives an invariant/family identity from the supplied seed. An absent or unsupported selector returns an empty holder without a selection.
+
+For each side, `_side_item` uses the **first** supplied item whose kind/record identity match and whose relevant side has a non-None revision identity. These predicates select the subject, not a collection-wide default. The function does not independently reject duplicate/conflicting matching items; do not retain the old unconditional claim that stream position can never affect arbitrary inputs. The normal upstream text-record projection is the intended input shape, not uniqueness enforced here.
+
+The selected before/after IDs produce empty or singleton heads and retained tuples, with heads equal to retained on each side. `_selection_description` emits `compared` when both IDs exist, `added` with only After, `removed` with only Before, and `unresolved` with neither. The statement names exactly those operands; no `ambiguous` branch, population classifier, authored successor graph or historical-revision winner is computed here.
+
+`revision_heads` remains an exported sorted-tuple helper. The current selection entry point does not call it; a helper’s name/docstring does not restore the removed head-selection algorithm. The module reads the supplied values without opening snapshots, stores or graph tables. Source selection and revision-state semantics are changes from actual BASE, not an equivalent forwarding refactor.
+
+## Evidence
+
+No domain documentation source is configured. The current actual source proves these local boundaries; no new test or MEMORY grade is claimed.
+
+- The selection holder carries optional selection and actual side items. [14]
+- The retained helper sorts a supplied revision sequence without driving the current selector. [15]
+- The entry point selects the subject sides and emits empty/singleton identity tuples. [16]
+- The four current selection states follow the actual chosen before/after IDs. [17]
+- Only invariant and family seed kinds establish a reviewed identity. [18]
+- The first side-present matching item with a revision is selected; duplicate rejection is not implemented here. [19]
+
+## Historical predecessor account
+
+The entire previous account follows as historical provenance. Removed names, old selection/collection semantics and prior execution claims do not describe the current module; prose reference numbers are inert.
+
+### mcp/src/agents_remember/application/review_revision_comparison.py
+
+#### Governing Overview
+
+[application route overview](overview.md)
+
+#### Purpose
+
 The explicit revision comparison's selection policy (MIK-R74 rule 1): which retained revision each
 snapshot's side of the primary statement comparison is rendered from. Every retained revision is a
 head — text records hold no predecessor edge, so no recorded successor relation narrows the
@@ -36,9 +71,9 @@ retained revision still listed — when multiple heads or an empty population pr
 Intermediate revisions stay in the union and stay addressable through the comparison's own per-side
 explicit revision selector; this module removes none of them.
 
-## Code Commentary
+#### Code Commentary
 
-### Logic
+##### Logic
 
 **`revision_heads` is the whole rule in one pure function: every retained revision is a head.**
 Text records hold no predecessor edge (MIK-R74 rule 1), so no recorded successor relation narrows the
@@ -67,7 +102,7 @@ The head the snapshots replaced is found by its revision id wherever the union p
 what makes "never use collection order or presence on both sides as a semantic revision rule" a
 property of the lookup rather than a convention of its callers.
 
-### Conventions
+##### Conventions
 
 The module imports the shipped vocabulary and re-declares nothing: `KnowledgeDiffItem` /
 `KnowledgeReadSeed` are the diff and read models, `ReviewRevisionSelection` is the value module's.
@@ -77,7 +112,7 @@ The module imports the shipped vocabulary and re-declares nothing: `KnowledgeDif
 subject's populations with another's heads) stay private. The dataclasses are frozen, because a
 selection's inputs are facts, not accumulators.
 
-### Invariants And Boundaries
+##### Invariants And Boundaries
 
 - **Heads are retained revisions, never order, presence, recency or resemblance.** The
   module greps clean for timestamp/similarity/latest/HEAD logic (only docstring prohibitions), and
@@ -97,40 +132,40 @@ selection's inputs are facts, not accumulators.
   multi-revision ambiguity for a text tree to express. Family-subject multi-revision choice beyond
   this packet stays R08/R09's; browser rendering of the recorded value stays R25's.
 
-### Todos
+##### Todos
 
 None recorded.
 
-## Evidence
+#### Evidence
 
-### Docs References
+##### Docs References
 
 No domain documentation source is configured for this repository (`system/sources.md` carries no
 `Domain Documentation` entries). The statements below are grounded in repository source only.
 
 No configured domain documentation could be checked.
 
-### Repo-Internal References
+##### Repo-Internal References
 
 Every claim on this card is checkable in the shipped candidate: the module's own docstring and
 policy, its three published names, the pure head rule, the entry point's population source, the
 one-sided versus two-sided decision and the reused explicit ambiguity. No graph reader remains.
 
-- The module's own statement of the one rule, what it reads, what it returns, and why it is its own module. [1]
-- The published surface: one value, two readers, one entry point. [2]
-- The reviewed identity's head selection with the union items its statements render from — and the one-sided item the R06 rendering already reads. [3]
-- The whole rule in one pure function: every retained revision is a head; sorted order as rendering determinism only. [4]
-- No edge read: no snapshot is opened for edges and no predecessor table is consulted; populations come from the comparison's own union items. [5]
-- The one entry point: populations from the comparison's own union, edges from nothing; no-identity selector and empty populations as explicit non-pairs. [6]
-- Established populations route one-sided for a known-empty side and combine for two nonempty sides; no invalid-graph branch remains. [7]
-- Two nonempty sides: multi-head ambiguity with no pair, unique heads compared. [8]
-- A known-empty side stays an R06 addition/removal with the nonempty side's unique head — and a crowded nonempty side is ambiguity, not a one-sided side. [9]
-- Operands keyed by stored revision identity, never by stream position or both-sides presence. [10]
-- The adapter's one call site: the selection computed once in `compose_review` from the comparison's union items, rendered by the pane. [11]
-- The recorded value the policy returns into, with the state/pair/heads validators that make a fabrication unrepresentable. [12]
-- The cases that measure the policy through the real comparison: single-retained-revision pair, heads-are-retained-population, and text-backed snapshots. [13]
+- The module's own statement of the one rule, what it reads, what it returns, and why it is its own module. (historical reference 1)
+- The published surface: one value, two readers, one entry point. (historical reference 2)
+- The reviewed identity's head selection with the union items its statements render from — and the one-sided item the R06 rendering already reads. (historical reference 3)
+- The whole rule in one pure function: every retained revision is a head; sorted order as rendering determinism only. (historical reference 4)
+- No edge read: no snapshot is opened for edges and no predecessor table is consulted; populations come from the comparison's own union items. (historical reference 5)
+- The one entry point: populations from the comparison's own union, edges from nothing; no-identity selector and empty populations as explicit non-pairs. (historical reference 6)
+- Established populations route one-sided for a known-empty side and combine for two nonempty sides; no invalid-graph branch remains. (historical reference 7)
+- Two nonempty sides: multi-head ambiguity with no pair, unique heads compared. (historical reference 8)
+- A known-empty side stays an R06 addition/removal with the nonempty side's unique head — and a crowded nonempty side is ambiguity, not a one-sided side. (historical reference 9)
+- Operands keyed by stored revision identity, never by stream position or both-sides presence. (historical reference 10)
+- The adapter's one call site: the selection computed once in `compose_review` from the comparison's union items, rendered by the pane. (historical reference 11)
+- The recorded value the policy returns into, with the state/pair/heads validators that make a fabrication unrepresentable. (historical reference 12)
+- The cases that measure the policy through the real comparison: single-retained-revision pair, heads-are-retained-population, and text-backed snapshots. (historical reference 13)
 
-### Cross-Repo References
+##### Cross-Repo References
 
 No cross-repository behavior is implemented in this file. The module reads two snapshot files of one
 repository's candidate and carries no identity that ranges beyond the repository namespace the

@@ -6,7 +6,7 @@
 
 ## Purpose
 
-**MIK-R31's card-state and grouping cases (12), over the real served cards body.** The entries start from
+**MIK-R31's card-state and grouping cases, over the real served cards body.** The entries start from
 `gitTrees.cards.captured.json` (the converted scratch leaf's 11 entries, provenance in
 `gitTrees.capture-provenance.json`); each state a real leaf did not produce (unresolved, unavailable, missing
 rationale, shared range, stale) is derived from a real entry with targeted, sometimes multi-field, test-only edits. The
@@ -24,12 +24,10 @@ the workspace does.
 - **Grouping by (path, range) (4):** two regions of one file are two cards with their own rationale; members at the
   same path and range share one card, each with its own rationale; entries whose side did not resolve are never
   merged, and unchanged is counted apart from changed; the family order puts the selected member first.
-- **Review fixes (3):**
+- **Review fixes:**
   - F1: clicking **Full file** on the second of two cards of one path gives exactly one content block, inside that
     card, and exactly one source-content read; clicking again closes it.
-  - F2: over the real walkFinal capture, the bounded family gives "These cards cover the loaded n of m members",
-    and cardScope(complete) is asserted undefined; the rendered scope-line check uses the bounded family. R2-5 (in the same case): a family whose sides load disjoint members
-    gives `loaded <= total`, with total 2.
+  - F2: current truncated and complete captures separately supply the bounded and whole-roster controls. A disjoint-side derivation checks that the union genuinely exceeds the widest-side total while loaded never exceeds that total. A further case keeps loaded==total distinct from incomplete after content: name the unread/missing/unreadable side and never say "load the rest".
   - F4: a stale after side renders "RLZ-D43E5CF2 stale on the after side" (`data-currentness=stale`), and a current
     entry shows no mark.
 
@@ -67,3 +65,5 @@ No cross-repo boundary is crossed by this file.
 - Each card state.  Anchor: "draws a changed range as its real diff and an unchanged range once, labelled unchanged"; "shows an unresolved side with its reason and never a guessed range or a diff"; "labels an unavailable side unavailable, distinct from a file absent on that side"; "names a missing rationale as a gap and never writes text of its own"; "gives a proof entry its facet in place of a role and a rationale" [2]
 - Grouping by (path, range) and the family order.  Anchor: "grouping by (path, range)" [3]
 - The F1, F2 (with R2-5) and F4 cases.  Anchor: "opens one full file, in the card that asked, with one read (F1)"; "cover only the loaded members and points to the walk (F2)"; "marks an entry that is not current on its side with its MIK-R03 state (F4)" [4]
+
+- F2 uses separate bounded and complete captures, checks the disjoint-member union against the widest-side total, and distinguishes incomplete after content even when loaded equals total: identify the unread, missing or unreadable side without offering a false load-the-rest action. [5]

@@ -20,15 +20,16 @@
       ]
     },
     "22": {
-      "note": "`test_the_records_collection_states_the_matrix_walk_and_the_bound_it_applied` supplies the current fixture or assertion described above.",
+      "note": "The removed records collection is a named refusal on first, unsized, continued and crossed requests. The serialized guard requires the evidence field to be absent, not an empty measured channel.\n\nAnchor: inclusive source ranges",
       "targets": [
         {
           "anchor": {
-            "blob": "32a8bd071067ef37d643b2a2e04783aa4fbe7b86",
-            "content": "sha256:0605a71dfb209fb4e671457e2d83dddc4ca392616d4dc26103fcdfd8fc6fb9a5",
+            "blob": "590cec5f16048fe5583eb197ca96f6ed2e29a709",
+            "content": "sha256:28d728a7951709f3a3c32670c35e75b8c4e22e370273157a10f51a8bde7d50dd",
             "locator": {
-              "kind": "symbol",
-              "name": "test_the_records_collection_states_the_matrix_walk_and_the_bound_it_applied"
+              "end": 578,
+              "kind": "line_range",
+              "start": 540
             }
           },
           "kind": "test"
@@ -134,15 +135,28 @@
       ]
     },
     "29": {
-      "note": "**The real two-snapshot fixture, built through the public store operations over two real Git trees.**",
+      "note": "PaginationFixture holds shared test-support fixture state and builds its request/resolution; build_pagination_fixture composes that fixture. Neither is shipped public-store write admission.\n\nAnchor: inclusive source ranges",
       "targets": [
         {
           "anchor": {
-            "blob": "3cf7a8474955955ae6d17d3ea8610d404ddabb21",
-            "content": "sha256:5649cae7a8a3f539af9decc5b1777143459a96e2cad3c745ab7a3c21287c8503",
+            "blob": "590cec5f16048fe5583eb197ca96f6ed2e29a709",
+            "content": "sha256:9a4d754f4f3cd4f5cb971521baa0bdeb3cfb138652b2e7f7fa8ebdaeca9040ce",
             "locator": {
-              "kind": "symbol",
-              "name": "PaginationFixture"
+              "end": 148,
+              "kind": "line_range",
+              "start": 106
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "590cec5f16048fe5583eb197ca96f6ed2e29a709",
+            "content": "sha256:cea4afa20dc9c9c95054fa397b3963c59501752927c29dfe3ac2ec80c8a7692b",
+            "locator": {
+              "end": 229,
+              "kind": "line_range",
+              "start": 206
             }
           },
           "kind": "test"
@@ -366,16 +380,16 @@
       ]
     },
     "42": {
-      "note": "The lane row and the six exact-scope consumer rows this module's registration produced (entries at `:273`, `:531`, `:1310`, `:1712`, `:1777` and `:2034`).\n\nAnchor: `\"mcp/tests/test_review_bounded_pagination.py\"`",
+      "note": "One unit-regression membership and seven exact-scope lifecycle artifact records name this module. These source declarations are neither a six-row census nor test execution.\n\nAnchor: inclusive source ranges",
       "targets": [
         {
           "anchor": {
-            "blob": "dd5b9a11804f0ddc25ae6cc727bbad6bd40f9720",
+            "blob": "84cce0f393581232e13b894229176d4d1c0fa9e1",
             "content": "sha256:66f537e142dc1e12668b4140fd40c746fe4aed23fade443a40607fba20b7a128",
             "locator": {
-              "end": 267,
+              "end": 278,
               "kind": "line_range",
-              "start": 267
+              "start": 278
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },
@@ -383,12 +397,12 @@
         },
         {
           "anchor": {
-            "blob": "074cbb9f1d1da9ee49aa27d3fb94e15ae36ac05c",
-            "content": "sha256:66f537e142dc1e12668b4140fd40c746fe4aed23fade443a40607fba20b7a128",
+            "blob": "6e26eb448f7ada2260e3ada83ae098bb720ffbdf",
+            "content": "sha256:74a425e443b3a05a4eba703c6d5ca94cabe71ea207f75a50311ea99328e0d7cb",
             "locator": {
-              "end": 274,
+              "end": 655,
               "kind": "line_range",
-              "start": 274
+              "start": 125
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
           },
@@ -396,12 +410,12 @@
         },
         {
           "anchor": {
-            "blob": "65ceaeb4c6e3bcf64ec78176b74b507a84a69233",
-            "content": "sha256:66f537e142dc1e12668b4140fd40c746fe4aed23fade443a40607fba20b7a128",
+            "blob": "6e26eb448f7ada2260e3ada83ae098bb720ffbdf",
+            "content": "sha256:031c3b0e2a9443da4986f86c9cf4b1552d4f91c0e9b9dd22b0259a2304cd54c4",
             "locator": {
-              "end": 539,
+              "end": 740,
               "kind": "line_range",
-              "start": 539
+              "start": 656
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
           },
@@ -409,12 +423,12 @@
         },
         {
           "anchor": {
-            "blob": "65ceaeb4c6e3bcf64ec78176b74b507a84a69233",
-            "content": "sha256:66f537e142dc1e12668b4140fd40c746fe4aed23fade443a40607fba20b7a128",
+            "blob": "6e26eb448f7ada2260e3ada83ae098bb720ffbdf",
+            "content": "sha256:880ceed72bf38b6c86651c63583c5a736e415f22a6d216a3ea47895e1e9ae8b2",
             "locator": {
-              "end": 1329,
+              "end": 1024,
               "kind": "line_range",
-              "start": 1329
+              "start": 987
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
           },
@@ -422,12 +436,12 @@
         },
         {
           "anchor": {
-            "blob": "65ceaeb4c6e3bcf64ec78176b74b507a84a69233",
-            "content": "sha256:66f537e142dc1e12668b4140fd40c746fe4aed23fade443a40607fba20b7a128",
+            "blob": "6e26eb448f7ada2260e3ada83ae098bb720ffbdf",
+            "content": "sha256:347378358f59cc09af14b088b83f40737edd6b25d64a46210f6e420d073b8f04",
             "locator": {
-              "end": 1737,
+              "end": 2075,
               "kind": "line_range",
-              "start": 1737
+              "start": 1545
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
           },
@@ -435,12 +449,12 @@
         },
         {
           "anchor": {
-            "blob": "65ceaeb4c6e3bcf64ec78176b74b507a84a69233",
-            "content": "sha256:66f537e142dc1e12668b4140fd40c746fe4aed23fade443a40607fba20b7a128",
+            "blob": "6e26eb448f7ada2260e3ada83ae098bb720ffbdf",
+            "content": "sha256:f305c30dec61d95487dd0f32112478a9ad86885bbb7f6d4b07db0aff15dd7485",
             "locator": {
-              "end": 1803,
+              "end": 2377,
               "kind": "line_range",
-              "start": 1803
+              "start": 2340
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
           },
@@ -448,12 +462,25 @@
         },
         {
           "anchor": {
-            "blob": "65ceaeb4c6e3bcf64ec78176b74b507a84a69233",
-            "content": "sha256:66f537e142dc1e12668b4140fd40c746fe4aed23fade443a40607fba20b7a128",
+            "blob": "6e26eb448f7ada2260e3ada83ae098bb720ffbdf",
+            "content": "sha256:f76d938468678f7d810570d6949255a770be78395278ea7a129c38eab367654a",
             "locator": {
-              "end": 2064,
+              "end": 2462,
               "kind": "line_range",
-              "start": 2064
+              "start": 2378
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "6e26eb448f7ada2260e3ada83ae098bb720ffbdf",
+            "content": "sha256:3651f541dd4816bb80aac7039adae26eefbb8683bbf4b784231e223f33de8ebd",
+            "locator": {
+              "end": 2828,
+              "kind": "line_range",
+              "start": 2776
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
           },

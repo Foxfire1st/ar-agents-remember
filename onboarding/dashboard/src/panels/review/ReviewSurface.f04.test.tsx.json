@@ -2,13 +2,13 @@
   "path": "dashboard/src/panels/review/ReviewSurface.f04.test.tsx",
   "realizes": [],
   "references": {
-    "1": {
-      "note": "The mounted real-ingest fixture shows the sequence in both outline badge and reading block.",
+    "2": {
+      "note": "The retained l57.f04-native two-leaf/two-writer-call fixture supplies selectors, candidate identity, row IDs and family revisions 2 and 3. Mounted playback checks weaken then clarify in the outline and reading block; it does not execute the writer or closeout. Lifecycle-only closed-flag simulation remains a separate fixture-custody disclosure.",
       "targets": [
         {
           "anchor": {
-            "blob": "c53d12b55f9b885e48aff426aff51fb5e1b1efff",
-            "content": "sha256:8775c9b30ff165bba5178828c2aafb7dda09d5d4b1c713de8168fff96959785a",
+            "blob": "4e57207cacc8ceb964151b85e236c55b9b831cc1",
+            "content": "sha256:9a150ec2092d072a5af11dfcc882c5f628729f777c257e64286fc7323af37ab0",
             "locator": {
               "end": 78,
               "kind": "line_range",

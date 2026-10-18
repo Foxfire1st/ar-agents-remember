@@ -49,16 +49,16 @@
       ]
     },
     "11": {
-      "note": "The whole review stays reachable and the selector travels through a paged request.\n\nAnchor: `'keeps the whole review reachable and carries the selector through a paged request'`",
+      "note": "Despite its historical test title, the closing case supplies a null page, asserts whole-review bounds and absent paging controls, and requires selector parameters with no pageOf parameter.\n\nAnchor: inclusive source ranges",
       "targets": [
         {
           "anchor": {
-            "blob": "ade5802102cec795f0b6911aee8134b1f2e244fa",
+            "blob": "7a65b10d5205ab4719c82ba19837e8d7f258d185",
             "content": "sha256:6157879d4e69f1fc234f9dfb731b335122141607cb25a62c80025a69826bfc46",
             "locator": {
-              "end": 494,
+              "end": 484,
               "kind": "line_range",
-              "start": 480
+              "start": 470
             }
           },
           "kind": "test"
@@ -273,11 +273,11 @@
       ]
     },
     "17": {
-      "note": "Records-page cursor fixture for advances",
+      "note": "RECORDS_CURSOR is an opaque fixture literal reused as the continuation of the second knowledge page; it does not demonstrate a records-page journey.\n\nAnchor: inclusive source ranges",
       "targets": [
         {
           "anchor": {
-            "blob": "ade5802102cec795f0b6911aee8134b1f2e244fa",
+            "blob": "7a65b10d5205ab4719c82ba19837e8d7f258d185",
             "content": "sha256:2965fc13ad6c61e1e597782f07863fd676b38987a1381fb1e6ab0894cff81b95",
             "locator": {
               "end": 52,
@@ -286,20 +286,31 @@
             }
           },
           "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "7a65b10d5205ab4719c82ba19837e8d7f258d185",
+            "content": "sha256:dd655e3f39e9f9a2d767acaefc2e86c722ab6eda59e2ffba1a8cdc008cd4b5be",
+            "locator": {
+              "end": 204,
+              "kind": "line_range",
+              "start": 196
+            }
+          },
+          "kind": "test"
         }
       ]
     },
     "18": {
-      "note": "Cursor-carrying payload builder for paged answers",
+      "note": "payloadWith returns a typed synthetic ReviewPayload, including judgment and a nullable page.",
       "targets": [
         {
           "anchor": {
-            "blob": "ade5802102cec795f0b6911aee8134b1f2e244fa",
-            "content": "sha256:e65a95c262425d127f75398bc6b951a78d29e6cdc038ed09697f6bc5ad2f81bd",
+            "blob": "7a65b10d5205ab4719c82ba19837e8d7f258d185",
+            "content": "sha256:7abfb051ab218611d3e3514ac1383729742dd2f24a8879e9278897900f772b13",
             "locator": {
-              "end": 120,
-              "kind": "line_range",
-              "start": 54
+              "kind": "symbol",
+              "name": "payloadWith"
             }
           },
           "kind": "test"
@@ -351,16 +362,15 @@
       ]
     },
     "20": {
-      "note": "Subject mount helper for paged journeys",
+      "note": "mountSubject supplies repository, master, leaf and invariant selector props without an initial page selection; cases use it for both paging and whole-review checks.",
       "targets": [
         {
           "anchor": {
-            "blob": "ade5802102cec795f0b6911aee8134b1f2e244fa",
+            "blob": "7a65b10d5205ab4719c82ba19837e8d7f258d185",
             "content": "sha256:77bfb61bab6e2ccd00825e85dc41aa9480d1f0a44076c8b63e52bc617f3ff52e",
             "locator": {
-              "end": 152,
-              "kind": "line_range",
-              "start": 142
+              "kind": "symbol",
+              "name": "mountSubject"
             }
           },
           "kind": "test"

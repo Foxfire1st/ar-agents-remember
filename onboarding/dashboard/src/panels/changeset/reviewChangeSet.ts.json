@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "0e992022b063f62ec9f96f68da3bfe3ff7408c46",
+        "blob": "d5135eb9e9a5b59401def9955ed068665b05a4ea",
         "content": "sha256:8bf1d07a52431616198b78b8466407e2048feeda505aafd24f78a466da02568e",
         "locator": {
           "kind": "symbol",
@@ -21,8 +21,8 @@
     },
     {
       "anchor": {
-        "blob": "0e992022b063f62ec9f96f68da3bfe3ff7408c46",
-        "content": "sha256:1c602c6358d2aa366794dfcd11061192f9c8c4cad68d5a515a5ee6f99e919116",
+        "blob": "d5135eb9e9a5b59401def9955ed068665b05a4ea",
+        "content": "sha256:b37c3f6b7f99e791d9c61e6403c71e36c5e8ac9af05f24b6f64af8a9b6e1b1cb",
         "locator": {
           "kind": "symbol",
           "name": "fileBadge"
@@ -34,7 +34,7 @@
         "handoffEntry": "L86-CODE-R1-F10",
         "leaf": "260928-MIK-L86"
       },
-      "rationale": "It reads exact inventory non-text facts before destination-specific lane badge facts.",
+      "rationale": "Delegates to the shared badge map whose final exact-inventory pass overrides lane labels with non-text for binary, symlink, submodule and mode-only paths, including All-list paths absent from a lane destination.",
       "role": "presentation"
     }
   ],
@@ -56,15 +56,16 @@
       ]
     },
     "2": {
-      "note": "Each non-all filter explains itself in one sentence",
+      "note": "FILTER_NOTES supplies explanatory strings for unexplained and unknown. The unknown string contains a second sentence describing attaching lines to an invariant or recording that none applies; it is presentation text, not evidence that attribution has been resolved.\n\nAnchor: inclusive source ranges",
       "targets": [
         {
           "anchor": {
-            "blob": "0e992022b063f62ec9f96f68da3bfe3ff7408c46",
-            "content": "sha256:9b90c034d40b5a183b72f834d419c7b486d592456f1f43be05b8c644d501ed97",
+            "blob": "d5135eb9e9a5b59401def9955ed068665b05a4ea",
+            "content": "sha256:45f932f3f5f0b9c8b88cc8eb84832dffab084af319b3ce1ee9fdc770ead65d50",
             "locator": {
-              "kind": "symbol",
-              "name": "FILTER_NOTES"
+              "end": 25,
+              "kind": "line_range",
+              "start": 20
             }
           },
           "kind": "code"
@@ -104,15 +105,52 @@
       ]
     },
     "5": {
-      "note": "Rows carry bucket or hunk-count badges, non-text first",
+      "note": "fileBadge delegates to reviewFileBadges and reads the requested path. reviewFileBadges combines labels from both lane destinations with fileAnswers lookups only for the unexplained page filter, then overrides exact-inventory non-text and mode-change paths with non-text while retaining the lookup. Lane labels use no invariant or N hunks, no invariant for unexplained cases; unknown labels remain unchanged. Calling fileBadge repeatedly rebuilds the map.\n\nAnchor: inclusive source ranges",
       "targets": [
         {
           "anchor": {
-            "blob": "0e992022b063f62ec9f96f68da3bfe3ff7408c46",
-            "content": "sha256:1c602c6358d2aa366794dfcd11061192f9c8c4cad68d5a515a5ee6f99e919116",
+            "blob": "d5135eb9e9a5b59401def9955ed068665b05a4ea",
+            "content": "sha256:b37c3f6b7f99e791d9c61e6403c71e36c5e8ac9af05f24b6f64af8a9b6e1b1cb",
             "locator": {
-              "kind": "symbol",
-              "name": "fileBadge"
+              "end": 56,
+              "kind": "line_range",
+              "start": 54
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d5135eb9e9a5b59401def9955ed068665b05a4ea",
+            "content": "sha256:79ee58dc2dab3ca56857e15e1d1ef020ef60e8d199c9f38ef886094893f97cb0",
+            "locator": {
+              "end": 70,
+              "kind": "line_range",
+              "start": 59
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d5135eb9e9a5b59401def9955ed068665b05a4ea",
+            "content": "sha256:c08e1283b0f6d6250c4662fcd42100a5eecbed346e885bcf999fe0c2e1cc95c1",
+            "locator": {
+              "end": 75,
+              "kind": "line_range",
+              "start": 71
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d5135eb9e9a5b59401def9955ed068665b05a4ea",
+            "content": "sha256:459dd0278077a27773e223742dec92b9831c7340b5c4238f416112d01b0f20c5",
+            "locator": {
+              "end": 83,
+              "kind": "line_range",
+              "start": 76
             }
           },
           "kind": "code"

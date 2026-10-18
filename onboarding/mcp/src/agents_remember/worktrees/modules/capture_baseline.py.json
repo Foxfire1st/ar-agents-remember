@@ -35,7 +35,7 @@
         "handoffEntry": "L81-R1-F17",
         "leaf": "260928-MIK-L81"
       },
-      "rationale": "The existing request-scoped capture baseline includes the memory HEAD observed around capture and checks it natively before reuse; HEAD-only movement with identical files/index refuses a stale review, while subject reads keep the40-child limit.",
+      "rationale": "The existing request-scoped capture baseline includes the memory HEAD observed around capture and checks it natively before reuse; HEAD-only movement with identical files/index refuses a stale review, while subject reads stay within the eighty-child subject-read budget that the current tests use. The forty-child figure is not established by the cited evidence.",
       "role": "enforcement"
     },
     {

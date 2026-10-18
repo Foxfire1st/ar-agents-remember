@@ -544,6 +544,132 @@
         }
       ]
     },
+    "36": {
+      "note": "The first source case preserves selector-free task-context inventory and tree provenance across cleanup without inventing a comparison, while retaining separate subject-byte equality assertions.\n\nAnchor: inclusive source ranges",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d7f0f2dd7de7eea201d9cb40101940adc559cf7f",
+            "content": "sha256:559a51d453e9eeef62c3f1e4cf5bf326a241e0c9769bf4e54574fd36c7dd902c",
+            "locator": {
+              "end": 193,
+              "kind": "line_range",
+              "start": 156
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "37": {
+      "note": "The lane selects this module once and seven exact-scope lifecycle artifact records name it; these are registrations, not executed evidence.\n\nAnchor: inclusive source ranges",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "84cce0f393581232e13b894229176d4d1c0fa9e1",
+            "content": "sha256:c6902ff7c8aa692bca9430990230becb82a9fb157809e18098e9b4671e599c45",
+            "locator": {
+              "end": 90,
+              "kind": "line_range",
+              "start": 90
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "6e26eb448f7ada2260e3ada83ae098bb720ffbdf",
+            "content": "sha256:74a425e443b3a05a4eba703c6d5ca94cabe71ea207f75a50311ea99328e0d7cb",
+            "locator": {
+              "end": 655,
+              "kind": "line_range",
+              "start": 125
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "6e26eb448f7ada2260e3ada83ae098bb720ffbdf",
+            "content": "sha256:031c3b0e2a9443da4986f86c9cf4b1552d4f91c0e9b9dd22b0259a2304cd54c4",
+            "locator": {
+              "end": 740,
+              "kind": "line_range",
+              "start": 656
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "6e26eb448f7ada2260e3ada83ae098bb720ffbdf",
+            "content": "sha256:880ceed72bf38b6c86651c63583c5a736e415f22a6d216a3ea47895e1e9ae8b2",
+            "locator": {
+              "end": 1024,
+              "kind": "line_range",
+              "start": 987
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "6e26eb448f7ada2260e3ada83ae098bb720ffbdf",
+            "content": "sha256:347378358f59cc09af14b088b83f40737edd6b25d64a46210f6e420d073b8f04",
+            "locator": {
+              "end": 2075,
+              "kind": "line_range",
+              "start": 1545
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "6e26eb448f7ada2260e3ada83ae098bb720ffbdf",
+            "content": "sha256:f305c30dec61d95487dd0f32112478a9ad86885bbb7f6d4b07db0aff15dd7485",
+            "locator": {
+              "end": 2377,
+              "kind": "line_range",
+              "start": 2340
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "6e26eb448f7ada2260e3ada83ae098bb720ffbdf",
+            "content": "sha256:f76d938468678f7d810570d6949255a770be78395278ea7a129c38eab367654a",
+            "locator": {
+              "end": 2462,
+              "kind": "line_range",
+              "start": 2378
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "6e26eb448f7ada2260e3ada83ae098bb720ffbdf",
+            "content": "sha256:3651f541dd4816bb80aac7039adae26eefbb8683bbf4b784231e223f33de8ebd",
+            "locator": {
+              "end": 2828,
+              "kind": "line_range",
+              "start": 2776
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
     "9": {
       "note": "Cleanup preserves exact recorded bytes.",
       "targets": [

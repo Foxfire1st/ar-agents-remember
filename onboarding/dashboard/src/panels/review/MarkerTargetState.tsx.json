@@ -1,13 +1,31 @@
 {
   "path": "dashboard/src/panels/review/MarkerTargetState.tsx",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "8e67adcfc8d1b7d1377c80f7343dc2465dc9dc91",
+        "content": "sha256:3970561d02a40b3292fb4fc8430d1a4fe6997dde4a81d1ce07951b0a3323bab2",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-2F4KCS",
+      "invariant": "INV-XMXTQE",
+      "origin": {
+        "handoffEntry": "MIK-R67@v2 by-design 2",
+        "leaf": "260928-MIK-L57"
+      },
+      "rationale": "Reads the active followed marker state until its explicit Back operation clears that target.",
+      "role": "presentation"
+    }
+  ],
   "references": {
     "1": {
-      "note": "The module's own statement: the state at the target, never `No recorded family`, and the review's context kept beside it.\n\nAnchor: \"The review's own family context is kept beside it, never replaced silently\"",
+      "note": "The followed unknown-membership state stays distinct from confirmed no-family while the review context remains separately visible.\n\nAnchor: exact source span",
       "targets": [
         {
           "anchor": {
-            "blob": "73f4af0fd86d1545ba908ef7aec22ed1cfccb658",
+            "blob": "8e67adcfc8d1b7d1377c80f7343dc2465dc9dc91",
             "content": "sha256:0da7729c4919e9d42516772247d82dbb5e92bf723129378a3a3f0c0c3dd14ceb",
             "locator": {
               "end": 7,
@@ -20,16 +38,16 @@
       ]
     },
     "10": {
-      "note": "The real-data case: unknown membership in its own state, apart from no family.\n\nAnchor: \"opens an unknown membership in its own Attribution unknown state, apart from no family\"",
+      "note": "The stored captured-fixture marker case checks the partial roster fallback, delivered reason, center label and focus; this is not a fresh real-data run.\n\nAnchor: `shows the named unknown marker on the invariant when the family has no member row`",
       "targets": [
         {
           "anchor": {
-            "blob": "a1ebcb9fca76b5f51ca56233abcdfcb8f35bec74",
-            "content": "sha256:487c248518bcac9279ffb05f014f318873bda133c7d1f4f4adb3aeef1bca384c",
+            "blob": "cd4cfa3ebb17378cb5e0574b5fe84f331ef32012",
+            "content": "sha256:4b1b2a01d7c3b34a62952fbc3fc57c0df226d73fea3105a5e7518c7d5bb41f2b",
             "locator": {
-              "end": 382,
+              "end": 384,
               "kind": "line_range",
-              "start": 280
+              "start": 369
             },
             "path": "dashboard/src/panels/review/ReviewSurface.markers.test.tsx"
           },
@@ -38,16 +56,42 @@
       ]
     },
     "11": {
-      "note": "The unit cases.\n\nAnchor: \"marks the member's row when the named family is in the tree, and only that row\"; \"shows the state on the invariant view when the named family is not in the review\"",
+      "note": "Stored unit cases distinguish synthetic exact row props, an unreadable native roster and an explicitly synthetic healthy-roster positive branch.\n\nAnchor: `marks only the exact row props and keeps the invariant fallback when its roster is unreadable`; `suppresses a duplicate center state only when the exact member is present`; `shows the state on the invariant view when the named family is not in the review`",
       "targets": [
         {
           "anchor": {
-            "blob": "6d20b62ae0668822438c75d9d06f5e1eb0bccbb2",
-            "content": "sha256:eb34b49e48ad1a2607a2aef02ce37868c2f3acea66398580f5adfbb8ab1af652",
+            "blob": "028e2f843e0b54e53bd6daffa0e44531ed024db3",
+            "content": "sha256:1e412af8fc194b890f8c591c24f7f255db9fd45378b590f9605b9cc844c1f883",
             "locator": {
-              "end": 93,
+              "end": 71,
               "kind": "line_range",
-              "start": 55
+              "start": 56
+            },
+            "path": "dashboard/src/panels/review/MarkerTargetState.test.tsx"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "028e2f843e0b54e53bd6daffa0e44531ed024db3",
+            "content": "sha256:3e22cdbb02f14e6be744a9ba683b8397b7340cc71c435dba1cd6143f30d03a66",
+            "locator": {
+              "end": 79,
+              "kind": "line_range",
+              "start": 73
+            },
+            "path": "dashboard/src/panels/review/MarkerTargetState.test.tsx"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "028e2f843e0b54e53bd6daffa0e44531ed024db3",
+            "content": "sha256:e94a82d425ba20a383d59728b67526f59808294e7e0d68a809f9bffe078c4732",
+            "locator": {
+              "end": 104,
+              "kind": "line_range",
+              "start": 81
             },
             "path": "dashboard/src/panels/review/MarkerTargetState.test.tsx"
           },
@@ -56,16 +100,15 @@
       ]
     },
     "12": {
-      "note": "The note's `id`, by which a dataset row is described (review R3-1), and the space between tag and reason.\n\nAnchor: \"id?: string;\"; \"<span className={tag}>{ATTRIBUTION_UNKNOWN}</span> {target.reason}\"",
+      "note": "The retained note accepts an optional accessible-description ID and separates its tag/reason; it is not a current dataset-row integration.",
       "targets": [
         {
           "anchor": {
-            "blob": "73f4af0fd86d1545ba908ef7aec22ed1cfccb658",
-            "content": "sha256:622d5cf3260bcc532671c20d8d9c6c9051ceac41ed948f4e9754c4240311b873",
+            "blob": "8e67adcfc8d1b7d1377c80f7343dc2465dc9dc91",
+            "content": "sha256:52115f4989e98d3509cf06bba43115e4d2fddb2ea8f73c42f757e06988482f4a",
             "locator": {
-              "end": 90,
-              "kind": "line_range",
-              "start": 76
+              "kind": "symbol",
+              "name": "MemberTargetNote"
             }
           },
           "kind": "code"
@@ -73,12 +116,12 @@
       ]
     },
     "13": {
-      "note": "On a tree comparison the target is a tag on the change facts' membership line (MIK-L33).\n\nAnchor: \"opened from an intent marker\"",
+      "note": "On a tree comparison the target is a tag on the change facts' membership line (MIK-L33).",
       "targets": [
         {
           "anchor": {
-            "blob": "d63fca553096cd956ddff9b3b7f9762050a8d440",
-            "content": "sha256:e103545b7cd5a10188d3d0245f56c0ea5338b5c6ff5d3531862640199259e32c",
+            "blob": "f04ef15a794eef331f4c5784c4d1650727ba4144",
+            "content": "sha256:4ad22a99b49cf75948a92ed9456c1a4ba0b96a4e439bc3b034470376ff630181",
             "locator": {
               "kind": "symbol",
               "name": "MembershipReason"
@@ -94,7 +137,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "24fb3dfbfbc4b61a1e00dec767bc96b6ad08ef80",
+            "blob": "8e67adcfc8d1b7d1377c80f7343dc2465dc9dc91",
             "content": "sha256:189ca7f84d37c7d3192ef9bc1c5d75cd1b0f4b887a0583652c8b7a211d2fed7e",
             "locator": {
               "kind": "symbol",
@@ -106,11 +149,11 @@
       ]
     },
     "15": {
-      "note": "Unknown-target note on the member row",
+      "note": "The retained exact-row note renders only the matched followed target, independently of whether production navigation mounts it.",
       "targets": [
         {
           "anchor": {
-            "blob": "24fb3dfbfbc4b61a1e00dec767bc96b6ad08ef80",
+            "blob": "8e67adcfc8d1b7d1377c80f7343dc2465dc9dc91",
             "content": "sha256:52115f4989e98d3509cf06bba43115e4d2fddb2ea8f73c42f757e06988482f4a",
             "locator": {
               "kind": "symbol",
@@ -118,27 +161,15 @@
             }
           },
           "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "24fb3dfbfbc4b61a1e00dec767bc96b6ad08ef80",
-            "content": "sha256:b1a396d3f91d7aef8a0e57f8bf4dc890c6e2f484b3f19ea3398b729cad2ae7f4",
-            "locator": {
-              "end": 87,
-              "kind": "line_range",
-              "start": 69
-            }
-          },
-          "kind": "code"
         }
       ]
     },
     "17": {
-      "note": "Invariant target state in rail and centre",
+      "note": "Main-page target context and the member-center label retain both marker unknown and the review context.",
       "targets": [
         {
           "anchor": {
-            "blob": "24fb3dfbfbc4b61a1e00dec767bc96b6ad08ef80",
+            "blob": "8e67adcfc8d1b7d1377c80f7343dc2465dc9dc91",
             "content": "sha256:34c2fac167671acf667272fe2d892f148ec96dd370f15dce313224b10e7cbd25",
             "locator": {
               "kind": "symbol",
@@ -149,12 +180,38 @@
         },
         {
           "anchor": {
-            "blob": "24fb3dfbfbc4b61a1e00dec767bc96b6ad08ef80",
-            "content": "sha256:3e0a712ad514f042f0b7f87e4b5c9df03ce9784b9dd3e9ecd69b57bb0a46dd05",
+            "blob": "8e67adcfc8d1b7d1377c80f7343dc2465dc9dc91",
+            "content": "sha256:0910f3aeb46b49518184049b8643d518aff2751c2846a54a7bee25a97d7dbae5",
             "locator": {
-              "end": 134,
-              "kind": "line_range",
-              "start": 116
+              "kind": "symbol",
+              "name": "MemberFamilyLabel"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "18": {
+      "note": "A family-only or unreadable roster cannot suppress the invariant fallback: hasTargetMember requires both the exact family key and a matching invariant revision on either returned side.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8e67adcfc8d1b7d1377c80f7343dc2465dc9dc91",
+            "content": "sha256:b431c22abb8ed5159de9c69499cc118c57874202fdd0391f9661f250f53be362",
+            "locator": {
+              "kind": "symbol",
+              "name": "hasTargetMember"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8e67adcfc8d1b7d1377c80f7343dc2465dc9dc91",
+            "content": "sha256:9810fcba345354841b6116ae412c8da7be99dfde1f18a1f41e932d87920eb959",
+            "locator": {
+              "kind": "symbol",
+              "name": "useInvariantTargetState"
             }
           },
           "kind": "code"
@@ -166,7 +223,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "73f4af0fd86d1545ba908ef7aec22ed1cfccb658",
+            "blob": "8e67adcfc8d1b7d1377c80f7343dc2465dc9dc91",
             "content": "sha256:189ca7f84d37c7d3192ef9bc1c5d75cd1b0f4b887a0583652c8b7a211d2fed7e",
             "locator": {
               "kind": "symbol",
@@ -177,7 +234,7 @@
         },
         {
           "anchor": {
-            "blob": "73f4af0fd86d1545ba908ef7aec22ed1cfccb658",
+            "blob": "8e67adcfc8d1b7d1377c80f7343dc2465dc9dc91",
             "content": "sha256:335fbf5ab0c649259041d1536925333f39036ead05eb2c9f984a097f9e35344b",
             "locator": {
               "kind": "symbol",
@@ -193,7 +250,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "73f4af0fd86d1545ba908ef7aec22ed1cfccb658",
+            "blob": "8e67adcfc8d1b7d1377c80f7343dc2465dc9dc91",
             "content": "sha256:52115f4989e98d3509cf06bba43115e4d2fddb2ea8f73c42f757e06988482f4a",
             "locator": {
               "kind": "symbol",
@@ -209,7 +266,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "73f4af0fd86d1545ba908ef7aec22ed1cfccb658",
+            "blob": "8e67adcfc8d1b7d1377c80f7343dc2465dc9dc91",
             "content": "sha256:e3b039bab277148da1d5ddd8e4206ce1eca83d498c356a04d2c54f8956b51be9",
             "locator": {
               "kind": "symbol",
@@ -221,15 +278,26 @@
       ]
     },
     "5": {
-      "note": "The invariant view's target: no row in this tree for the membership.",
+      "note": "The invariant target fallback is suppressed only when the exact family/member revision actually occurs on a returned side, not merely when the family ID exists.",
       "targets": [
         {
           "anchor": {
-            "blob": "73f4af0fd86d1545ba908ef7aec22ed1cfccb658",
-            "content": "sha256:d3fdc2a3a6b359bc0a65ae92d7482b3edacd0bea4bb5aec4510cecf2edbe2597",
+            "blob": "8e67adcfc8d1b7d1377c80f7343dc2465dc9dc91",
+            "content": "sha256:9810fcba345354841b6116ae412c8da7be99dfde1f18a1f41e932d87920eb959",
             "locator": {
               "kind": "symbol",
               "name": "useInvariantTargetState"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8e67adcfc8d1b7d1377c80f7343dc2465dc9dc91",
+            "content": "sha256:b431c22abb8ed5159de9c69499cc118c57874202fdd0391f9661f250f53be362",
+            "locator": {
+              "kind": "symbol",
+              "name": "hasTargetMember"
             }
           },
           "kind": "code"
@@ -237,12 +305,12 @@
       ]
     },
     "6": {
-      "note": "The rail's focusable state, named by its heading and described by its reason (review R1 F3).\n\nAnchor: \"data-target-state-focus\"",
+      "note": "The focusable main-page state exposes its heading, reason and separate context openly; its legacy rail test ID does not make it a sidebar mount.",
       "targets": [
         {
           "anchor": {
-            "blob": "73f4af0fd86d1545ba908ef7aec22ed1cfccb658",
-            "content": "sha256:d689fe79266a826865e0abdb471720de20d80cb6bb4ea04ba98a9f7bccbabaaa",
+            "blob": "8e67adcfc8d1b7d1377c80f7343dc2465dc9dc91",
+            "content": "sha256:34c2fac167671acf667272fe2d892f148ec96dd370f15dce313224b10e7cbd25",
             "locator": {
               "kind": "symbol",
               "name": "InvariantTargetState"
@@ -257,7 +325,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "73f4af0fd86d1545ba908ef7aec22ed1cfccb658",
+            "blob": "8e67adcfc8d1b7d1377c80f7343dc2465dc9dc91",
             "content": "sha256:3842b55ef5705fc42e4bfc8eebb7eea7032f9df052946b1431dd58710e073395",
             "locator": {
               "kind": "symbol",
@@ -268,7 +336,7 @@
         },
         {
           "anchor": {
-            "blob": "73f4af0fd86d1545ba908ef7aec22ed1cfccb658",
+            "blob": "8e67adcfc8d1b7d1377c80f7343dc2465dc9dc91",
             "content": "sha256:0910f3aeb46b49518184049b8643d518aff2751c2846a54a7bee25a97d7dbae5",
             "locator": {
               "kind": "symbol",
@@ -280,55 +348,54 @@
       ]
     },
     "8": {
-      "note": "Its three mounts: the member button, the rail and the centre.\n\nAnchor: \"<MemberTargetNote\"; \"const unknown = useInvariantTargetState(subject, context);\"; \"<MemberFamilyLabel subject={subject} payload={payload} entry={entry} />\"",
+      "note": "Current integrations are main-page invariant context, the member-center label and main-page change facts; the old member-button mount is removed.\n\nAnchor: exact source span; exact source span",
       "targets": [
         {
           "anchor": {
-            "blob": "90570046945a8192a9dd675068fa67bc5432efb2",
-            "content": "sha256:74a02be2082df868d060fd6e6873574bfb64ac179807e87d09970ea0772e8a68",
+            "blob": "f04ef15a794eef331f4c5784c4d1650727ba4144",
+            "content": "sha256:46ff82ef10a3b8bd6e9f61d4ec11dcaa3339383a1784209d1fc549c54adf69f3",
             "locator": {
-              "end": 806,
-              "kind": "line_range",
-              "start": 806
+              "kind": "symbol",
+              "name": "useMemberChange"
             },
-            "path": "dashboard/src/panels/review/FamilyReviewCenter.tsx"
+            "path": "dashboard/src/panels/review/ChangeBadges.tsx"
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "f8135bda4f4dee8a955d2749f28f82df50cbaa0e",
-            "content": "sha256:6ae6ed71735f3babd607e3c23f0b97d0d47e5c05b396ec8ad4036ee2efb70d1f",
+            "blob": "9013d5e76d160ec2c25d2edc99c11f391ffecb83",
+            "content": "sha256:efe94979bf329348c3a9fe044b6f925b647b9d5a9cfa45e71c58d63fc07e6b54",
             "locator": {
-              "end": 566,
+              "end": 453,
               "kind": "line_range",
-              "start": 566
-            },
-            "path": "dashboard/src/panels/review/FamilyTree.tsx"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "5ff876f9b2c2f34b58783e9658a88bb4d5cec25c",
-            "content": "sha256:b1ac2be0d92757132171f6afa867c1f2cefd660c4e9869ce3756dd1cdc9f72af",
-            "locator": {
-              "end": 719,
-              "kind": "line_range",
-              "start": 719
+              "start": 453
             },
             "path": "dashboard/src/panels/review/ReviewWorkspace.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ac4e85fe7aa5576fda77fc34929e7d5305f09a36",
+            "content": "sha256:74a02be2082df868d060fd6e6873574bfb64ac179807e87d09970ea0772e8a68",
+            "locator": {
+              "end": 663,
+              "kind": "line_range",
+              "start": 663
+            },
+            "path": "dashboard/src/panels/review/FamilyReviewCenter.tsx"
           },
           "kind": "code"
         }
       ]
     },
     "9": {
-      "note": "Focus goes to the state before the tree's current node.",
+      "note": "The current workspace selection-focus chooser retains the explicit target-state destination before its ordinary tree focus path.",
       "targets": [
         {
           "anchor": {
-            "blob": "5ff876f9b2c2f34b58783e9658a88bb4d5cec25c",
+            "blob": "9013d5e76d160ec2c25d2edc99c11f391ffecb83",
             "content": "sha256:37ae6a0769e0069cf4a58d9a119a3cc69c29eda347e970ca0dcde345c749be05",
             "locator": {
               "kind": "symbol",

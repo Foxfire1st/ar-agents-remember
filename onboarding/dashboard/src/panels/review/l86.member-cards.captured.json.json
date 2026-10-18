@@ -2,30 +2,13 @@
   "path": "dashboard/src/panels/review/l86.member-cards.captured.json",
   "realizes": [],
   "references": {
-    "1": {
-      "note": "Located entries of the member and neighbours\n\nAnchor: `entries`",
+    "3": {
+      "note": "The current retained JSON input supplies the literal identities, response states and populations summarized above; these are fixture facts, not live project knowledge or fresh execution evidence.",
       "targets": [
         {
           "anchor": {
-            "blob": "d494b31a0ff7243ea030e6a2ca0d4f7af567540c",
-            "content": "sha256:3bc297d359f1021e9f8d757a44ef9d85adbe79502de612da2ee3b187125c8a30",
-            "locator": {
-              "end": 1,
-              "kind": "line_range",
-              "start": 1
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "2": {
-      "note": "Recorded comparison the entries are located on\n\nAnchor: `comparison`",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "d494b31a0ff7243ea030e6a2ca0d4f7af567540c",
-            "content": "sha256:3bc297d359f1021e9f8d757a44ef9d85adbe79502de612da2ee3b187125c8a30",
+            "blob": "f758d333252b702f84a434691e4a56fde3e92186",
+            "content": "sha256:83a9e83558dd2b21999bc0872449446cf28e91667b522ba53fae75166a147612",
             "locator": {
               "end": 1,
               "kind": "line_range",

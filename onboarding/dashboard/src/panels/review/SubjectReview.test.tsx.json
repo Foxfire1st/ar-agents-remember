@@ -2,128 +2,17 @@
   "path": "dashboard/src/panels/review/SubjectReview.test.tsx",
   "realizes": [],
   "references": {
-    "1": {
-      "note": "The header distinguishing real review-route bodies from exact owner-produced responses, and pointing at the receipt.  Anchor: \"Real review-route bodies\"; \"adjacent receipt\"",
+    "7": {
+      "note": "Selected-owner revision IDs and reconstructed statement text are checked against retained native captures, as are judgment rows. Confirmed no-family reading orders statements, expression cards and the none judgment. Removed assessment-concern, ambiguity and observation journeys are not relabelled as judgment coverage.",
       "targets": [
         {
           "anchor": {
-            "blob": "e08c86af3d373093e732745db3de97edc41f9b7c",
-            "content": "sha256:7452c5726be60b1b5d131983e035c93ecfb243d3ba94da2ee37b27fc3a82c25b",
+            "blob": "3fb7b8c0c30e7da9610860c41f75d735a1b2a176",
+            "content": "sha256:32914c4c5db6b6b0c3b450b5cc7ac8dfd564351b307671b289a4f166463bdc92",
             "locator": {
-              "end": 2,
+              "end": 170,
               "kind": "line_range",
               "start": 1
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "2": {
-      "note": "The case or response retains its declared selected input.  Anchor: \"reads the clicked member owner before displaying its concern, keeps family context, and preserves ambiguous revisions\"",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "e08c86af3d373093e732745db3de97edc41f9b7c",
-            "content": "sha256:007e9022e21781f821e9c67a6427a3c219b119db02861e0fbeaab83322b2196b",
-            "locator": {
-              "end": 152,
-              "kind": "line_range",
-              "start": 103
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "3": {
-      "note": "Assessed family fixture with successor revision\n\nAnchor: `assessedFamily`",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "e08c86af3d373093e732745db3de97edc41f9b7c",
-            "content": "sha256:318f1d1ed0c606be02b521fb317fdc076d45c22147236674226ca47311c92165",
-            "locator": {
-              "kind": "file"
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "4": {
-      "note": "Family-less subject fixture for no-family intent\n\nAnchor: `noFamily`",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "e08c86af3d373093e732745db3de97edc41f9b7c",
-            "content": "sha256:318f1d1ed0c606be02b521fb317fdc076d45c22147236674226ca47311c92165",
-            "locator": {
-              "kind": "file"
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "5": {
-      "note": "Per-subject serving world with request capture",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "e08c86af3d373093e732745db3de97edc41f9b7c",
-            "content": "sha256:d646b7ccab93d270d364ac25ab80f57cffe8ba46885b4316ac14226bbc5f13d5",
-            "locator": {
-              "kind": "symbol",
-              "name": "serve"
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "e08c86af3d373093e732745db3de97edc41f9b7c",
-            "content": "sha256:6857238d9fda9b6b4d7b9068a59c909368c1355525ed156dbd51621fc2fb1901",
-            "locator": {
-              "end": 46,
-              "kind": "line_range",
-              "start": 28
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "e08c86af3d373093e732745db3de97edc41f9b7c",
-            "content": "sha256:318f1d1ed0c606be02b521fb317fdc076d45c22147236674226ca47311c92165",
-            "locator": {
-              "kind": "file"
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "6": {
-      "note": "Centre mount helper for subject journeys",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "e08c86af3d373093e732745db3de97edc41f9b7c",
-            "content": "sha256:e56d1bd09b823300e3ee2681891e4b19695696d75bfd1365554d3bafa4f377c5",
-            "locator": {
-              "kind": "symbol",
-              "name": "mount"
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "e08c86af3d373093e732745db3de97edc41f9b7c",
-            "content": "sha256:318f1d1ed0c606be02b521fb317fdc076d45c22147236674226ca47311c92165",
-            "locator": {
-              "kind": "file"
             }
           },
           "kind": "test"

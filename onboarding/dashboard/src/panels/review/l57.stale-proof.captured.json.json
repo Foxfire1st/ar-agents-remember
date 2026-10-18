@@ -1,0 +1,24 @@
+{
+  "path": "dashboard/src/panels/review/l57.stale-proof.captured.json",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The retained source supplies the facts and declared boundaries described above.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f6dca8cc4374e2ac98de4eb5d175e2226612d6f0",
+            "content": "sha256:3ede5f3f1a9fa3ad5de233dd4b26a58b1d20b388ca1c464ed11314e69db4548a",
+            "locator": {
+              "end": 1,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

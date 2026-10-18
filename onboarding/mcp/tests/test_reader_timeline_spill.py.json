@@ -1,0 +1,42 @@
+{
+  "path": "mcp/tests/test_reader_timeline_spill.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "c2e025c9f3fbc35c3dc1f3d977282dfed67d3313",
+        "content": "sha256:844356b1aaad06b7d67ff42d61f0ec9689761f1fb180faae1875b01cbe8828b9",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-HT3E97",
+      "invariant": "INV-DFA51A",
+      "origin": {
+        "handoffEntry": "MIK-R67@v2 by-design one-spilled-history",
+        "leaf": "260928-MIK-L57"
+      },
+      "rationale": "Regresses legal oversized and resident walks, complete content/bindings, caller acquisition, retry and actual backing reclamation.",
+      "role": "support"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "New timeline-spill tests count one materialization/hash/freeze per legal walk, preserve event ordering/documents/attempt/path, use anonymous unlinked files beyond RAM budget and verify actual fd cleanup on eviction/clear/revision replacement/process exit. Failure creation/read/unreadable-source retry, continuation binding and resident/spill shared budget are separate explicit cases. These declarations are not tests run here.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c2e025c9f3fbc35c3dc1f3d977282dfed67d3313",
+            "content": "sha256:844356b1aaad06b7d67ff42d61f0ec9689761f1fb180faae1875b01cbe8828b9",
+            "locator": {
+              "end": 417,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -2,36 +2,18 @@
   "path": "dashboard/src/panels/review/triage.memberA.captured.json",
   "realizes": [],
   "references": {
-    "1": {
-      "note": "The family context with its change facts.\n\nAnchor: \"family_context\"; \"\\\"change_kinds\\\": {\"",
+    "3": {
+      "note": "The current retained JSON input supplies the literal identities, response states and populations summarized above; these are fixture facts, not live project knowledge or fresh execution evidence.",
       "targets": [
         {
           "anchor": {
-            "blob": "ffdfdb5a4e0f7920d7ffbf9b84a39696b090f663",
-            "content": "sha256:ed27f8eb5316e31c6b2421ed0f6ff0d0f34da447bcaeb5197d9aab0a44215726",
+            "blob": "412312b13cadabfa28b1369948b8909330f5e493",
+            "content": "sha256:65de6741a5a0dc8987ebb2cb40c1d313b73f9b8346f28a0da337dd86f3ce91b0",
             "locator": {
-              "end": 1165,
+              "end": 1,
               "kind": "line_range",
-              "start": 116
+              "start": 1
             }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "2": {
-      "note": "The receipt row for this body.\n\nAnchor: \"src/panels/review/triage.memberA.captured.json\"",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "b898b0f2d0033f2e41c815ea7c0af7c66833337b",
-            "content": "sha256:09ceec9168ab44e981a4e6832e65cc2b89dd900b2c5b2aba269a609d36034cca",
-            "locator": {
-              "end": 88,
-              "kind": "line_range",
-              "start": 88
-            },
-            "path": "dashboard/src/panels/review/triage.capture-provenance.json"
           },
           "kind": "code"
         }

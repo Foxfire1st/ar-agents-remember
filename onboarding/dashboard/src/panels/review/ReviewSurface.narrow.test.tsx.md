@@ -30,9 +30,8 @@ dropped again; it does not claim to be the measurement.
   size is content-based unless told otherwise. The identities this surface prints are single unbreakable tokens
   (a 64-character comparison reference measured **539 px**, a repository path **565 px**), and the inherited
   `break-word` does **not** lower min-content — so one such token held the pane at 565 px inside a 294 px
-  column. The defect's own signature is in this module's fixture: the `comparison.reference` is deliberately a
-  single unbreakable 64-character token, so the payload is the shape that produced the defect rather than a
-  smaller one.
+  column. The defect's own signature is in this module's fixture: the `comparison.reference` is deliberately one
+  unbreakable sixty-character token, the shape that produced the defect rather than a smaller one.
 
 ## Code Commentary
 
@@ -63,8 +62,7 @@ The house idiom of this route's mounted cases: `describe`/`it` from `vitest` wit
 `vi.unstubAllGlobals()` in `afterEach` so the stubbed global cannot leak into the next case; module-level
 `REPO`/`MASTER`/`LEAF` constants reused by the fixture, the mount and the assertions; a lowercase plain function
 for the one helper (`isZeroLength`); and a lower-case `mount()` that returns the DOM node the cases read rather
-than the whole `RenderResult`. Every assertion is on **style or `data-` attributes**, never on prose, because
-prose is not what this pin is about.
+than the whole `RenderResult`. The cases primarily assert **style, classes and `data-` attributes** and also check that scope and provenance text retain the fixture reference. They measure no layout geometry.
 
 ### Invariants And Boundaries
 
@@ -74,7 +72,7 @@ prose is not what this pin is about.
   evidence that the layout is correct at 320 px — that evidence is the served-bundle probe. A future reader who
   needs layout truth must run the browser-class route, which is Dagger-gated.
 - The second case asserts an exact nonempty set of three reading-area nodes before checking their atomic classes. The third asserts the workspace grid exists before checking its classes. Neither case reads layout geometry.
-- **The fixture stays hard.** The 64-character unbreakable reference is the defect's own shape; making the
+- **The fixture stays hard.** The sixty-character unbreakable reference is the defect's own shape; making the
   fixture easier would make the pin green about a payload that never failed.
 - **Boundary.** This module measures nothing and starts no server. It owns one stubbed `fetch` and three
   assertions about the DOM `ReviewSurface` renders; the fix, its cause and its measured evidence belong to
@@ -102,7 +100,7 @@ unbreakable reference, the mount and the two waits that make the disclosure pres
 names, the component each case asserts against, and the measured evidence the pin defers to. Every anchor in a
 row occurs inside the range that row cites.
 
-- **The fixture: a complete payload whose `comparison.reference` is one unbreakable 64-character token — the measured 539 px culprit — with the digest-shaped fields alongside it.** [1]
+- **The fixture: a complete payload whose `comparison.reference` is one unbreakable sixty-character token — the measured 539 px culprit — with the digest-shaped fields alongside it.** [1]
 
 
 - The constructed ReviewResult and real mount wait for the surface and disclosure; fetch and the catalogue hook are isolated, and layout assertions do not measure geometry. [2]
@@ -110,8 +108,6 @@ row occurs inside the range that row cites.
 - The teardown cleans the mounted tree and restores stubbed globals. [3]
 - **The tolerated serialisations of a numeric zero, and why the assertion is on the length rather than on `"0px"`.** [4]
 - The own-root scrollport case checks the reviewer height and vertical overflow boundary. [5]
-- Case 2: exactly three reading-area nodes carry min-width-zero atomic classes and inherit the surface's anywhere wrap without resetting it. [6]
-- Case 3: provenance details retain the reference, the workspace has wide/narrow grid atomic classes, and the root header wraps. [7]
 - The pane helper's own declaration, which the pin's first case depends on (moved unchanged into `ReviewRecordPanes.tsx` by L48). [8]
 - The pane helper's own declaration, which the pin's first case depends on (moved unchanged into `ReviewRecordPanes.tsx` by L48). [9]
 - The shared client whose read this module mounts through, and whose decode the fixture satisfies. [10]
@@ -125,3 +121,6 @@ No meaningful cross-repo references found.
 - Complete payload with the unbreakable reference token [11]
 - Admitted review wrapper served to the mount [12]
 - Mount through the real surface and fetch boundary [13]
+
+- Case 2 asserts exactly three reading-area nodes, their min-width-zero atomic classes, inherited anywhere wrapping without local resets, and the scope's fixture reference. [6]
+- Case 3 checks provenance details and reference text, workspace wide/narrow grid classes, header wrapping and surface/scope wrapping classes. It does not assert the old disclosure-grid inline style. [7]

@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "cbed0390f38016f95305efebdb03f84ca9393d30",
-        "content": "sha256:f2ff0ca348be835eff180ffa1b7fd9adf6dcf061294bb33e422c0e6b100e264c",
+        "blob": "65f556826a27183db12af6615005dd85432e3a8c",
+        "content": "sha256:42f0823901d29770f566e9c1f30512a5e2f10583c142102195d1d2c5cfb8f01e",
         "locator": {
           "kind": "symbol",
           "name": "ReviewTreesResult"
@@ -26,10 +26,10 @@
       "targets": [
         {
           "anchor": {
-            "blob": "cbed0390f38016f95305efebdb03f84ca9393d30",
-            "content": "sha256:f8d2f2474da63691f741b3f50f0616627b666f9a853c16db22daff59b6637a04",
+            "blob": "65f556826a27183db12af6615005dd85432e3a8c",
+            "content": "sha256:7bc00aeb35b184e687d4ac9c7685f3cefdda08865e0e93d6402ec305f7fe2100",
             "locator": {
-              "end": 24,
+              "end": 25,
               "kind": "line_range",
               "start": 1
             }
@@ -39,14 +39,15 @@
       ]
     },
     "11": {
-      "note": "The answer of the route.\n\nAnchor: `ReviewTreesResult`",
+      "note": "The result mirrors current tree comparison, knowledge/code sides, optional gate/currentness/code-change data, entries and refusal.",
       "targets": [
         {
           "anchor": {
-            "blob": "cbed0390f38016f95305efebdb03f84ca9393d30",
-            "content": "sha256:a15a1cfa7b84440b7ed139b286a6af30096c6457d526a316063e1689cf35c831",
+            "blob": "65f556826a27183db12af6615005dd85432e3a8c",
+            "content": "sha256:42f0823901d29770f566e9c1f30512a5e2f10583c142102195d1d2c5cfb8f01e",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "ReviewTreesResult"
             }
           },
           "kind": "code"
@@ -54,14 +55,15 @@
       ]
     },
     "12": {
-      "note": "The worklist view.\n\nAnchor: `ReviewWorklistView`",
+      "note": "The worklist carries source/bound facts, rows and optional native item verdicts/witnesses rather than deriving a gate grade from annotations.",
       "targets": [
         {
           "anchor": {
-            "blob": "cbed0390f38016f95305efebdb03f84ca9393d30",
-            "content": "sha256:a15a1cfa7b84440b7ed139b286a6af30096c6457d526a316063e1689cf35c831",
+            "blob": "65f556826a27183db12af6615005dd85432e3a8c",
+            "content": "sha256:82a9608d70d43fad2bc91f5b5b8d11db384f611033dcd31febcf50eec74395e0",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "ReviewWorklistView"
             }
           },
           "kind": "code"
@@ -69,14 +71,15 @@
       ]
     },
     "13": {
-      "note": "The request, addressed by number, recorded or invariants, with the optional signal.\n\nAnchor: `reviewTrees`",
+      "note": "The request, addressed by number, recorded or invariants, with the optional signal.",
       "targets": [
         {
           "anchor": {
-            "blob": "cbed0390f38016f95305efebdb03f84ca9393d30",
-            "content": "sha256:a15a1cfa7b84440b7ed139b286a6af30096c6457d526a316063e1689cf35c831",
+            "blob": "65f556826a27183db12af6615005dd85432e3a8c",
+            "content": "sha256:978feec7230dd633853c6e090a9ce5f9be60deb92c96b5e2f446663990e4ab4b",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "reviewTrees"
             }
           },
           "kind": "code"
@@ -84,16 +87,37 @@
       ]
     },
     "14": {
-      "note": "The transient codes and the retry delays.",
+      "note": "The transient codes and the retry delays.\n\nAnchor: `TRANSIENT_CODES`, `BUSY_DELAYS_MS`, `BUSY_RETRIES`",
       "targets": [
         {
           "anchor": {
-            "blob": "cbed0390f38016f95305efebdb03f84ca9393d30",
-            "content": "sha256:3e2f91b4b9179d96bad8b6cdd9d3bc1f2c1a8ce7219632f90c3ddcba12f8d5eb",
+            "blob": "65f556826a27183db12af6615005dd85432e3a8c",
+            "content": "sha256:2332d9911e48030dc495c1cf2190d1252b337b2282ee85801a638237cd3ce47d",
             "locator": {
-              "end": 274,
-              "kind": "line_range",
-              "start": 272
+              "kind": "symbol",
+              "name": "TRANSIENT_CODES"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "65f556826a27183db12af6615005dd85432e3a8c",
+            "content": "sha256:b76432d3ae7f9b0d7859a91a19ac1d92e52dea53f533eddf531c0de11ce40624",
+            "locator": {
+              "kind": "symbol",
+              "name": "BUSY_DELAYS_MS"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "65f556826a27183db12af6615005dd85432e3a8c",
+            "content": "sha256:78544ee895596d209aab7699b6cbf4232e61eed0b5b64dd890aa901450b2b1fb",
+            "locator": {
+              "kind": "symbol",
+              "name": "BUSY_RETRIES"
             }
           },
           "kind": "code"
@@ -101,14 +125,15 @@
       ]
     },
     "15": {
-      "note": "A wait that an abort ends.\n\nAnchor: `pause`",
+      "note": "A wait that an abort ends.",
       "targets": [
         {
           "anchor": {
-            "blob": "cbed0390f38016f95305efebdb03f84ca9393d30",
-            "content": "sha256:a15a1cfa7b84440b7ed139b286a6af30096c6457d526a316063e1689cf35c831",
+            "blob": "65f556826a27183db12af6615005dd85432e3a8c",
+            "content": "sha256:40b25b3f1e93401d554239d9f7d148e88756c0a8002b370b88fda13a403e942d",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "pause"
             }
           },
           "kind": "code"
@@ -116,14 +141,15 @@
       ]
     },
     "16": {
-      "note": "The bounded retry of a transient refusal.\n\nAnchor: `reviewTreesRetryingBusy`",
+      "note": "The bounded retry of a transient refusal.",
       "targets": [
         {
           "anchor": {
-            "blob": "cbed0390f38016f95305efebdb03f84ca9393d30",
-            "content": "sha256:a15a1cfa7b84440b7ed139b286a6af30096c6457d526a316063e1689cf35c831",
+            "blob": "65f556826a27183db12af6615005dd85432e3a8c",
+            "content": "sha256:403bc04ae33422eee2d0d909e482f909678c61c9aa8f5697cb96549893b3740b",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "reviewTreesRetryingBusy"
             }
           },
           "kind": "code"
@@ -131,14 +157,15 @@
       ]
     },
     "17": {
-      "note": "One answer as a read state.\n\nAnchor: `reviewTreesRead`",
+      "note": "One answer as a read state.",
       "targets": [
         {
           "anchor": {
-            "blob": "cbed0390f38016f95305efebdb03f84ca9393d30",
-            "content": "sha256:a15a1cfa7b84440b7ed139b286a6af30096c6457d526a316063e1689cf35c831",
+            "blob": "65f556826a27183db12af6615005dd85432e3a8c",
+            "content": "sha256:55e99e194c1c1409679f0f227721a4a9f8adc7a41423e7d67dd71b7d5779532b",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "reviewTreesRead"
             }
           },
           "kind": "code"
@@ -146,14 +173,15 @@
       ]
     },
     "18": {
-      "note": "The comparison a payload names.\n\nAnchor: `treeComparisonNumber`",
+      "note": "The comparison a payload names.",
       "targets": [
         {
           "anchor": {
-            "blob": "cbed0390f38016f95305efebdb03f84ca9393d30",
-            "content": "sha256:a15a1cfa7b84440b7ed139b286a6af30096c6457d526a316063e1689cf35c831",
+            "blob": "65f556826a27183db12af6615005dd85432e3a8c",
+            "content": "sha256:a3d5442795eea509cb163dee4e42b5e386801f9bc9109659dc3c9f072c41fe9d",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "treeComparisonNumber"
             }
           },
           "kind": "code"
@@ -161,14 +189,37 @@
       ]
     },
     "19": {
-      "note": "The entries hook detaches its mount without aborting the shared request; its current question key prevents stale-card rendering.  Anchor: `useReviewTreeEntries`",
+      "note": "The entries hook reads completed trees answers or loading under its sorted-list question key; shared fetch failures/not-converted answers are not retained.\n\nAnchor: `useReviewTreeEntries`, `fetchCardEntries`, `cardsKey`",
       "targets": [
         {
           "anchor": {
-            "blob": "cbed0390f38016f95305efebdb03f84ca9393d30",
-            "content": "sha256:a15a1cfa7b84440b7ed139b286a6af30096c6457d526a316063e1689cf35c831",
+            "blob": "65f556826a27183db12af6615005dd85432e3a8c",
+            "content": "sha256:b86e32e6300e02419fd988a0d990e4d98fe8acac93757b1f7d197a273da76a5c",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "useReviewTreeEntries"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "65f556826a27183db12af6615005dd85432e3a8c",
+            "content": "sha256:33c4a770fbd86c798fbe88530b53f23514e51f57ee9330cd3cc516149edab201",
+            "locator": {
+              "kind": "symbol",
+              "name": "fetchCardEntries"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "65f556826a27183db12af6615005dd85432e3a8c",
+            "content": "sha256:0dfc1b7c8c0443277d0fd5cedc2d8d8cbc3574e69d0767787b2a4ea99a6ed053",
+            "locator": {
+              "kind": "symbol",
+              "name": "cardsKey"
             }
           },
           "kind": "code"
@@ -176,14 +227,15 @@
       ]
     },
     "20": {
-      "note": "The leaf-wide hook: abort on cleanup, sequence number, retry, and the enabled flag.\n\nAnchor: `useReviewTrees`",
+      "note": "The leaf-wide hook: abort on cleanup, sequence number, retry, and the enabled flag.",
       "targets": [
         {
           "anchor": {
-            "blob": "cbed0390f38016f95305efebdb03f84ca9393d30",
-            "content": "sha256:a15a1cfa7b84440b7ed139b286a6af30096c6457d526a316063e1689cf35c831",
+            "blob": "65f556826a27183db12af6615005dd85432e3a8c",
+            "content": "sha256:61f17ead19e8fde64b33e30580d5de5192d3e5b7779072ba82195e12c5e793a8",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "useReviewTrees"
             }
           },
           "kind": "code"
@@ -191,7 +243,7 @@
       ]
     },
     "21": {
-      "note": "A superseded read is aborted and only the newer answer is shown.",
+      "note": "A superseded read is aborted and only the newer answer is shown.\n\nAnchor: `aborts the superseded request and shows only the newer answer`",
       "targets": [
         {
           "anchor": {
@@ -209,14 +261,14 @@
       ]
     },
     "22": {
-      "note": "The reader keeps showing loading while it retries, and its delays add up to at least 25 seconds.",
+      "note": "Stored fake-timer assertions keep loading during initial busy retries and check the declared schedule; this is not fresh elapsed-time evidence.\n\nAnchor: `keeps showing \"computing\" while it retries, and its horizon covers a draining queue`",
       "targets": [
         {
           "anchor": {
-            "blob": "719979b8229e1d3760dbee3ef65e5be048719724",
-            "content": "sha256:411d05d18f06c35a44fb4bae12566019d4441e6c5899aaaac3ea7005027f592a",
+            "blob": "65199f438a6c465e47d5f0ebcc5fc45567949ba4",
+            "content": "sha256:bdf7780ab17942af5e63568d2656baa15a44444ab4102748b181f0fd001ba34d",
             "locator": {
-              "end": 127,
+              "end": 128,
               "kind": "line_range",
               "start": 113
             },
@@ -227,16 +279,16 @@
       ]
     },
     "23": {
-      "note": "Unavailable is shown only after the bounded number of retries.",
+      "note": "Unavailable is shown only after the bounded number of retries.\n\nAnchor: `is shown as unavailable only after the bounded number of retries`",
       "targets": [
         {
           "anchor": {
-            "blob": "719979b8229e1d3760dbee3ef65e5be048719724",
-            "content": "sha256:a164e7330cc42a01c80d1400078bfc890e3b074fe2ca910280b3a83a273717e0",
+            "blob": "65199f438a6c465e47d5f0ebcc5fc45567949ba4",
+            "content": "sha256:062da19aa05c9b8a32b955af633740bb9a3a008553c52b80793d66276fd5a443",
             "locator": {
-              "end": 149,
+              "end": 150,
               "kind": "line_range",
-              "start": 139
+              "start": 140
             },
             "path": "dashboard/src/data/reviewTrees.supersede.test.ts"
           },
@@ -245,14 +297,15 @@
       ]
     },
     "25": {
-      "note": "Busy-retry discipline is unchanged\n\nAnchor: `TRANSIENT_CODES`",
+      "note": "The busy-retry implementation is preserved in BASE/candidate erased JavaScript; its bounds do not certify current service performance.",
       "targets": [
         {
           "anchor": {
-            "blob": "cbed0390f38016f95305efebdb03f84ca9393d30",
-            "content": "sha256:a15a1cfa7b84440b7ed139b286a6af30096c6457d526a316063e1689cf35c831",
+            "blob": "65f556826a27183db12af6615005dd85432e3a8c",
+            "content": "sha256:403bc04ae33422eee2d0d909e482f909678c61c9aa8f5697cb96549893b3740b",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "reviewTreesRetryingBusy"
             }
           },
           "kind": "code"
@@ -260,14 +313,53 @@
       ]
     },
     "26": {
-      "note": "The trees / not-converted / unavailable phases are unchanged\n\nAnchor: `ReviewTreesRead`",
+      "note": "The trees / not-converted / unavailable phases are unchanged",
       "targets": [
         {
           "anchor": {
-            "blob": "cbed0390f38016f95305efebdb03f84ca9393d30",
-            "content": "sha256:a15a1cfa7b84440b7ed139b286a6af30096c6457d526a316063e1689cf35c831",
+            "blob": "65f556826a27183db12af6615005dd85432e3a8c",
+            "content": "sha256:55e99e194c1c1409679f0f227721a4a9f8adc7a41423e7d67dd71b7d5779532b",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "reviewTreesRead"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "27": {
+      "note": "The declared item verdict and implementation-fact shapes preserve answered/open/undecided and facts/unavailable without a favourable missing-data default.\n\nAnchor: `ReviewItemVerdict`, `ReviewCodeChange`, `ReviewCodeChanges`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "65f556826a27183db12af6615005dd85432e3a8c",
+            "content": "sha256:1936933a837673c335db5ee3febae45ef000c9cd1d1c0f52959a111770bee635",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewItemVerdict"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "65f556826a27183db12af6615005dd85432e3a8c",
+            "content": "sha256:f83d7716e331a0e9c28176825b66e68281e4885ba02d865a38941ae2e65bdcc5",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewCodeChange"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "65f556826a27183db12af6615005dd85432e3a8c",
+            "content": "sha256:9e9f16e87566d5bc8a67c441d298f108808140e078dbf37a52bf0f37624034de",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewCodeChanges"
             }
           },
           "kind": "code"

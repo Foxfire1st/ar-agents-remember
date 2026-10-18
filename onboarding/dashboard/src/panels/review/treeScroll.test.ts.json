@@ -1,0 +1,24 @@
+{
+  "path": "dashboard/src/panels/review/treeScroll.test.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Pure synthetic geometry tests panel fitting/upper/lower selected-row reveal and sticky traversal clearance, no ancestor scrollIntoView or changed outer surface scroll. Does not claim actual browser layout.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f9252d09124574803182f4ceff1e17d9a24c6c07",
+            "content": "sha256:e04ea92f521c5a3ea2ce9377f5a774787da6ff490db7b85f01afedb5c91f0307",
+            "locator": {
+              "end": 65,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

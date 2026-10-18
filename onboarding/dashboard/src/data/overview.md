@@ -24,7 +24,7 @@ The route has a child review-keymap overview and separate panel/view owners. Key
 
 The bound reviewer expression-card store retains answers and shares in-flight reads across pending-center remounts, keyed on the complete comparison and invariant set. Selection prefetches a changed set in parallel with its subject answer. This is separate from the retained selected-subject/walk stores and does not mix incompatible questions or infer empty unavailable data.
 
-reviewTrees.ts carries the four code/memory trees and pinning refs, knowledge and index degradation, reopened code-side state, memory diff grouped by record/source, currentness, worklist/history linkage and realization/proof entries on both code sides. Its vocabulary is snake_case. Requests address live, recorded or numbered comparisons and optionally invariants, not arbitrary paths/tree IDs. Trees, not-converted and refused are distinct answers. The card-entry hook shares in-flight reads and suppresses callbacks after unmount without aborting the shared acquisition; the leaf-wide hook aborts superseded reads and uses sequence guards and retries only reviewer_busy/inputs_changing, up to seven retries after the initial read with delays 1500, 2000, 3000, 4000, 5000, 6000 and 8000 ms. Loading remains until the final outcome, and abort ends the wait. Claims that the server stops work on disconnect require server-path evidence beyond the client abort itself.
+reviewTrees.ts carries the four code/memory trees and pinning refs, knowledge and index degradation, reopened code-side state, currentness, worklist/history linkage, supplied implementation facts and realization/proof entries on both code sides. The leaf-wide result no longer carries an aggregate memory diff grouped by record/source; standalone knowledge-tree comparison is a separate owner. Its vocabulary is snake_case. Requests address live, recorded or numbered comparisons and optionally invariants, not arbitrary paths/tree IDs. Trees, not-converted and refused are distinct answers. The card-entry hook shares in-flight reads and suppresses callbacks after unmount without aborting the shared acquisition; the leaf-wide hook aborts superseded reads and uses sequence guards and retries only reviewer_busy/inputs_changing, up to seven retries after the initial read with delays 1500, 2000, 3000, 4000, 5000, 6000 and 8000 ms. Loading remains until the final outcome, and abort ends the wait. Claims that the server stops work on disconnect require server-path evidence beyond the client abort itself.
 
 ## Invariants And Boundaries
 
@@ -81,7 +81,9 @@ directExecutionGrant.ts posts Give/Revoke to the developer endpoint and preserve
 - The closed selector union, the two kinds the server admits. [34]
 - The no-store-mutation boundary, stated in the module header. [35]
 - The typed result the client returns unchanged. [36]
-- The field-for-field mirror of the server's review payload. [37]
+
+- The TypeScript interfaces declare a client display projection, not a field-for-field Python mirror: ReviewSourcePane omits relationships, unknown_attribution_changed_paths and attribution; ReviewMovement is a common displayed subset. This is not a claim of runtime field loss. [37]
+
 - **The inventory's wire types, including the byte form of a name this surface cannot print.** [38]
 - **The comparison identity that states whether knowledge was compared, and the staleness union that gained the task-context state.** [39]
 - The payload whose comparison may be absent, and the pane that says which question was answered. [40]
@@ -96,7 +98,10 @@ directExecutionGrant.ts posts Give/Revoke to the developer endpoint and preserve
 - **Source-content uses the same shared `getReviewJson` status-bearing decoder as the other review reads; the retired direct-fetch exception is historical, not current transport ownership.** [46]
 
 - **The generation as an input: the caller's two published tree ids, echoed back in the spelling the route binds.** [47]
-- Central expression cards mount SourceContent at the inventory exact tree IDs. [48]
+
+- ExpressionCards.FullFile forwards inventory before/after tree IDs to SourceContent; without both it renders the explicit generation-unavailable message. [48]
+- The leaf-wide tree answer carries optional currentness, worklist, implementation facts and focused entries, not an aggregate memory-diff field. [109]
+
 - The renderer the expansion's fields feed, and its three state-decided branches. [49]
 - **The generation pins, the published generation identity, and the pins threaded through both master reads.** [54]
 - **The new family mirror module, and the re-export that keeps `data/review.ts` the route's one public entry.** [55]

@@ -5204,23 +5204,6 @@
         }
       ]
     },
-    "344": {
-      "note": "The over-length unreadable-owner detail summarised; a fitting one kept.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "bf1a79f4a160fbd1038927b4869a66fa3abcfcb9",
-            "content": "sha256:92a583b1da73900df4d9802323f04044622e4686d058af0697d7a693b669bdf2",
-            "locator": {
-              "kind": "symbol",
-              "name": "_unreadable_detail"
-            },
-            "path": "mcp/src/agents_remember/application/review_curator_records.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
     "345": {
       "note": "The entry point, its views and the envelope.",
       "targets": [
@@ -7904,23 +7887,6 @@
         }
       ]
     },
-    "465": {
-      "note": "Retired collections report unavailable; assessment currentness is measured.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "07c5dd5a94d8b14a8d703da903c1d9cc166288a0",
-            "content": "sha256:8a3e09b08d614e4917acaee1113f4fcb16811776b199633a77947c36e8933738",
-            "locator": {
-              "kind": "symbol",
-              "name": "review_records_for_resolution"
-            },
-            "path": "mcp/src/agents_remember/application/review_evidence_records.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
     "466": {
       "note": "Claim-only page revisions participate in exact roster membership projection.",
       "targets": [
@@ -7985,47 +7951,6 @@
               "start": 90
             },
             "path": "mcp/src/agents_remember/application/review_source_admission.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "47": {
-      "note": "The production owner loads curator assessments and measures their dependency currentness. Five collection channel keys remain as vocabulary, but detection signals, verification observations and evidence claims are retired/unavailable and authored effects are unavailable because the matrix was removed; this is not five loaded collections.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "07c5dd5a94d8b14a8d703da903c1d9cc166288a0",
-            "content": "sha256:8a3e09b08d614e4917acaee1113f4fcb16811776b199633a77947c36e8933738",
-            "locator": {
-              "kind": "symbol",
-              "name": "review_records_for_resolution"
-            },
-            "path": "mcp/src/agents_remember/application/review_evidence_records.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "07c5dd5a94d8b14a8d703da903c1d9cc166288a0",
-            "content": "sha256:ff68bceb6ebcb1fd37e7cc0ad2c1246d0e1cdb91738fb029d72f27666e0e7b23",
-            "locator": {
-              "kind": "symbol",
-              "name": "_COLLECTION_NAMES"
-            },
-            "path": "mcp/src/agents_remember/application/review_evidence_records.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "07c5dd5a94d8b14a8d703da903c1d9cc166288a0",
-            "content": "sha256:0c12f822fa0ee249909f98839c83617fc5537294eeb6d62d67035ff096d35949",
-            "locator": {
-              "kind": "symbol",
-              "name": "_removed_matrix_channel"
-            },
-            "path": "mcp/src/agents_remember/application/review_evidence_records.py"
           },
           "kind": "code"
         }
@@ -8506,35 +8431,6 @@
         }
       ]
     },
-    "49": {
-      "note": "**The availability vocabulary, and the validator that refuses a count no owner measured.**",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "794ec671b12610ad3e698d052473a9231bcd0574",
-            "content": "sha256:dafe017fda5c133ffcdc982c070c12de7eedc57930f07153e09db3295c2b788e",
-            "locator": {
-              "kind": "symbol",
-              "name": "ReviewRecordChannel"
-            },
-            "path": "mcp/src/agents_remember/models/knowledge/review_records.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "794ec671b12610ad3e698d052473a9231bcd0574",
-            "content": "sha256:00685c1ca1d8ea3fec1d2faae41ce43abc4ce1afbe7113967c104a33b4e48fe1",
-            "locator": {
-              "kind": "symbol",
-              "name": "ReviewRecordChannelState"
-            },
-            "path": "mcp/src/agents_remember/models/knowledge/review_records.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
     "490": {
       "note": "Report placement resolves the bound canonical task only when it has exactly one matching leaf enclosure.",
       "targets": [
@@ -8586,32 +8482,54 @@
         }
       ]
     },
-    "50": {
-      "note": "The removed matrix's channel is unavailable with its removal reason and no measured count. Task context labels supplied candidate inputs without a selected subject; neither path constructs the removed selection-channel or matrix-remainder machinery.",
+    "493": {
+      "note": "The response requires judgment and retains knowledge/source identity without the removed supporting-record fields.",
       "targets": [
         {
           "anchor": {
-            "blob": "07c5dd5a94d8b14a8d703da903c1d9cc166288a0",
-            "content": "sha256:0c12f822fa0ee249909f98839c83617fc5537294eeb6d62d67035ff096d35949",
+            "blob": "3a9fbebf751c8e0ce26280a3c2bd35bfe3302c8f",
+            "content": "sha256:0e006f842e6954082a9d752be51896858f6970f40ff39161b5d4046e191a8da0",
             "locator": {
               "kind": "symbol",
-              "name": "_removed_matrix_channel"
+              "name": "KnowledgeReviewPayload"
             },
-            "path": "mcp/src/agents_remember/application/review_evidence_records.py"
+            "path": "mcp/src/agents_remember/models/knowledge/review.py"
           },
           "kind": "code"
-        },
+        }
+      ]
+    },
+    "494": {
+      "note": "Selected-subject history and membership rows are rendered in attempt order, with proof entries supplied separately and explicit none/unavailable states.",
+      "targets": [
         {
           "anchor": {
-            "blob": "f76a892ee6eb63250bda023ea16492907a41071e",
-            "content": "sha256:af2e2a797306d1ecdb35a62d1dbbc381a7f50b2858895d3a4cc46ad7e983186b",
+            "blob": "7915489e9b1bfd326b7927fa39dbc7d55826e3c4",
+            "content": "sha256:3d2ba7c9bb099ac54f2a31d2f629488067e277170ffdc26590526c969bd0ecfa",
             "locator": {
               "kind": "symbol",
-              "name": "task_context_applicability"
+              "name": "review_judgment"
             },
-            "path": "mcp/src/agents_remember/application/review_record_applicability.py"
+            "path": "mcp/src/agents_remember/application/review_judgment.py"
           },
           "kind": "code"
+        }
+      ]
+    },
+    "495": {
+      "note": "The regression asserts required judgment and absence of removed wire channels; this is source/assertion evidence, not a fresh test run.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ea4ef5d83ffe9733de18c20f0e1a405aaf633a41",
+            "content": "sha256:4039a372cb2e3f0ee9783826300476aa2b107fc7bc261b165462bb18de1cd7f8",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_wire_requires_judgment_and_has_no_retired_channels"
+            },
+            "path": "mcp/tests/test_knowledge_review_evidence_channels.py"
+          },
+          "kind": "test"
         }
       ]
     },
@@ -8640,33 +8558,6 @@
               "start": 92
             },
             "path": "mcp/src/agents_remember/application/knowledge_review.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "52": {
-      "note": "Retained historical reference account — the mechanism described below is retired/superseded; references and targets are preserved for custody. Current boundary: Current detection/evidence-claim/observation channels are explicitly retired/unavailable; curator assessment acquisition remains separate. Historical account: **The cases that measure the whole thing through the production port, including the two per-record damage cases.**",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "6869acb809e665d1e753cce0c3398b2070a791a1",
-            "content": "sha256:91f91b34a2240eace03810bedeba5859c5a53e497f7925721b567915132ce6ab",
-            "locator": {
-              "kind": "file"
-            },
-            "path": "mcp/tests/test_knowledge_review_evidence_channels.py"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "07c5dd5a94d8b14a8d703da903c1d9cc166288a0",
-            "content": "sha256:906990c167bb9489ebb80748271e6025d4b7d3c8c3d9dcf4ae6d53c393fcd545",
-            "locator": {
-              "kind": "file"
-            },
-            "path": "mcp/src/agents_remember/application/review_evidence_records.py"
           },
           "kind": "code"
         }

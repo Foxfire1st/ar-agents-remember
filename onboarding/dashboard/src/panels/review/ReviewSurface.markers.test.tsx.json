@@ -58,15 +58,16 @@
       ]
     },
     "11": {
-      "note": "Centre review beside the unknown-membership state",
+      "note": "Central target content contains the native reason and excludes the no-family statement; replace the removed centerReview symbol target with the actual assertions.\n\nAnchor: inclusive source ranges",
       "targets": [
         {
           "anchor": {
-            "blob": "589811ed9ea144eba15514df7afe4f621eb07723",
-            "content": "sha256:33cc2f64bde4db0e286d7ad8fcf42115006fbface5b2cba88386cc4e6260bc22",
+            "blob": "cd4cfa3ebb17378cb5e0574b5fe84f331ef32012",
+            "content": "sha256:1aee33e9753095ab4c3edbc40a562e6ea7f6437eb010388ec46c1934b29043e7",
             "locator": {
-              "kind": "symbol",
-              "name": "centerReview"
+              "end": 454,
+              "kind": "line_range",
+              "start": 432
             }
           },
           "kind": "test"
@@ -74,16 +75,16 @@
       ]
     },
     "2": {
-      "note": "Case 1: two marks from one classification read.\n\nAnchor: \"opens a changed file with one marker per hunk, from the one classification\"",
+      "note": "The first case checks two hunk marks from one classification read.\n\nAnchor: inclusive source ranges",
       "targets": [
         {
           "anchor": {
-            "blob": "a1ebcb9fca76b5f51ca56233abcdfcb8f35bec74",
-            "content": "sha256:778fa21fc104c1f5a710028883419bf1fe9fb3af4ff7c86ccc3419d00050c92b",
+            "blob": "cd4cfa3ebb17378cb5e0574b5fe84f331ef32012",
+            "content": "sha256:99a0578fab28aff07ef131afb321b2dbd249d1048dc9795958399225e5b7296c",
             "locator": {
-              "end": 109,
+              "end": 142,
               "kind": "line_range",
-              "start": 92
+              "start": 124
             }
           },
           "kind": "test"
@@ -91,16 +92,28 @@
       ]
     },
     "3": {
-      "note": "Case 2: follow to the member row, card excerpt marks, and the return with layout, list and focus.\n\nAnchor: \"selects the tree position a marker names, and returns to the hunk with focus on the marker\"",
+      "note": "The retained marker journey checks member selection, excerpt marks and Back restoration; the following held-return case checks j selecting the next measured changed row.\n\nAnchor: inclusive source ranges",
       "targets": [
         {
           "anchor": {
-            "blob": "a1ebcb9fca76b5f51ca56233abcdfcb8f35bec74",
-            "content": "sha256:981c5fde9082db034f7ce0ee2a5b9a96030f9d5ea5b3d48ecbf14590e95a9c69",
+            "blob": "cd4cfa3ebb17378cb5e0574b5fe84f331ef32012",
+            "content": "sha256:c3cfe490f955052cf6e4e33217d26c9a0f6dbb7c34ab850888f783417c595adf",
             "locator": {
-              "end": 190,
+              "end": 220,
               "kind": "line_range",
-              "start": 111
+              "start": 143
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "cd4cfa3ebb17378cb5e0574b5fe84f331ef32012",
+            "content": "sha256:b26e0bfd69f9d7884dfe625817d834c4361bbc20a5d27d19dea99e67a244e767",
+            "locator": {
+              "end": 262,
+              "kind": "line_range",
+              "start": 222
             }
           },
           "kind": "test"
@@ -136,16 +149,16 @@
       ]
     },
     "5": {
-      "note": "Case 3: unknown membership in its own state, apart from no family.\n\nAnchor: \"opens an unknown membership in its own Attribution unknown state, apart from no family\"",
+      "note": "Three current unknown-world cases check source availability, a focused named partial target, and before-side absence separated from partial/unavailable after-side unknown membership.\n\nAnchor: inclusive source ranges",
       "targets": [
         {
           "anchor": {
-            "blob": "a1ebcb9fca76b5f51ca56233abcdfcb8f35bec74",
-            "content": "sha256:487c248518bcac9279ffb05f014f318873bda133c7d1f4f4adb3aeef1bca384c",
+            "blob": "cd4cfa3ebb17378cb5e0574b5fe84f331ef32012",
+            "content": "sha256:b7fb4a8d6757e994d9a7c9224d762946bfe6de7bde7910f2abcec60adbbc9ea6",
             "locator": {
-              "end": 382,
+              "end": 457,
               "kind": "line_range",
-              "start": 280
+              "start": 362
             }
           },
           "kind": "test"
@@ -153,16 +166,28 @@
       ]
     },
     "6": {
-      "note": "Case 3's member-row step: the membership line in the description, the comparison's reason, nothing named twice (MIK-L33).\n\nAnchor: \"(MIK-L33 review R3-1: a member row is named by its subject only, and described by its facts).\"",
+      "note": "The named unknown occurrence focuses a partial target state containing its reason; it does not select a fabricated member row.\n\nAnchor: inclusive source ranges",
       "targets": [
         {
           "anchor": {
-            "blob": "a1ebcb9fca76b5f51ca56233abcdfcb8f35bec74",
-            "content": "sha256:ee48042d7d8af0795c079cd59470c1f4683d1c37e70e02aff6d75ca48c4c91e2",
+            "blob": "cd4cfa3ebb17378cb5e0574b5fe84f331ef32012",
+            "content": "sha256:4b1b2a01d7c3b34a62952fbc3fc57c0df226d73fea3105a5e7518c7d5bb41f2b",
             "locator": {
-              "end": 312,
+              "end": 384,
               "kind": "line_range",
-              "start": 311
+              "start": 369
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "cd4cfa3ebb17378cb5e0574b5fe84f331ef32012",
+            "content": "sha256:c54e8f4b0bfddc7a038a57295bb531afaba19866bfa325e473f730fef5c9747e",
+            "locator": {
+              "end": 414,
+              "kind": "line_range",
+              "start": 402
             }
           },
           "kind": "test"

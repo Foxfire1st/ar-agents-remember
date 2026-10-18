@@ -7,13 +7,13 @@
   },
   "applicability": "Badge assignment on every outline row.",
   "conditions": [
-    "One primary change-kind badge per row from MIK-R33 precedence (intent, implementation, membership, unknown, unchanged); MIK-R43 permits the separate ordered recorded-effect badge only on added, removed or changed rows with steps.",
+    "One primary change-kind badge per row. An unknown intent classification remains unknown instead of borrowing an established implementation or membership label; otherwise real intent wins, then established implementation, joined/left membership, unknown implementation and unchanged. The unchanged numeric sort weights order intent, implementation, membership, unknown and unchanged; MIK-R43 separately permits ordered recorded-effect labels only on added, removed or changed rows with steps.",
     "Family N-changed badge only when the family record is unchanged and N members carry real change.",
     "Meaning rides the word + one-sentence tooltip, never color alone."
   ],
   "exclusions": [
     "Other secondary marks and reasons belong to the main page; the separately permitted compact recorded-effect badge is not a new precedence fact.",
-    "code-changed for unread families before MIK-R64 supplies it."
+    "Code-changed without an admitted implementation fact for the displayed comparison. Leaf-wide measured code facts no longer require first walking the family; an unavailable/unknown intent is not overridden by that narrower fact."
   ],
   "id": "INV-W09GQM",
   "origin": {
@@ -27,7 +27,7 @@
     "leaf": "260928-MIK-L86",
     "task": "260928-MIK"
   },
-  "revision": 2,
+  "revision": 3,
   "schema": "ar-invariant/v1",
   "statement": "One plain-word badge carries the precedence of the established intent, code and membership facts.",
   "status": "proposed",

@@ -85,15 +85,16 @@ The module imports its types from `../../data/review`, the region and its phase 
 re-declaring any of it. Fixtures are upper-case where they are constant bodies and lower-case functions
 where they are built (`taskContextPayload`, `emptyPayload`); helpers are plain lower-case functions; and
 the region block declares its own `failure`, `region(...)` renderer and `statements(view)` reader inside
-the `describe`, so the three region cases share one construction. Each case is an `async` `it` that
-awaits the DOM via `findBy*`/`waitFor` rather than asserting synchronously.
+the `describe`, so the three region cases share one construction. Mounted read cases await the DOM via `findBy*`/`waitFor`; the region-only cases can
+assert their direct rendered state synchronously. Not every declaration is an async journey.
 
 ### Invariants And Boundaries
 
 - **`fetch` and the catalogue hook are isolated.** The URL, the status, the body, the shared decode and the component tree
   are all the real ones.
-- **Every assertion reads rendered output.** No case asserts a prop it passed or a value it computed;
-  each reads `data-review-state`, `data-review-code`, a `data-testid` or `textContent` from the DOM.
+- **Assertions observe rendered output and client requests.** DOM assertions read state, codes, test ids
+  and text. Separate request-count, URL and carried-identity assertions read the fetch observations;
+  the module does not restrict every assertion to DOM output.
 - **The bodies are measured, and their digests are quoted.** A case that fails can be re-measured
   against this leaf's evidence run rather than argued about.
 - **Known-empty is a measured result.** It is reachable only from `emptyPayload`, whose inventory is
@@ -126,7 +127,7 @@ No configured domain documentation could be checked.
 
 Every claim on this card is checkable in the shipped candidate: the module's own provenance and defect
 statement, the measured bodies with their digests, the reduced payload builders, the two stubs, and the
-fifteen cases grouped by what they pin. Every anchor in a row occurs inside the range that row cites.
+source-declared cases grouped by what they pin. Every anchor in a row occurs inside the range that row cites.
 
 
 
@@ -199,3 +200,5 @@ whose statement names the uncompared channel, then asserts the three things the 
 the boundary's sentence is rendered through `review-staleness-unmeasured`; no previous input and
 no "current comparison" wording appears; and `review-stale` is absent, so the unmeasured state
 never borrows the stale rendering.
+
+- Alongside its DOM checks the module asserts observed client request counts and URL selector parameters; source inspection is not a new run. [27]

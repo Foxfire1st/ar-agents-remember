@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "701f0ed34d661ec7a976642ac4b7713502d1cb46",
+        "blob": "d3feb8a1751db6eca58b6b0be0a1878f10d95367",
         "content": "sha256:495395edc9c750eb467c472c50a53c55ea59ed7ef0bff8c01a6b1faf156710f8",
         "locator": {
           "kind": "symbol",
@@ -15,23 +15,62 @@
       "origin": {
         "leaf": "260921-ICR-L46"
       },
-      "rationale": "Raises the entry's re-validation generation each time the task detail becomes shown, and exposes revalidate() for the reviewer's return and refresh through a context. It is plain React state, with no event channel or projection field; the change-set bar appends this generation to the entry's facts key, so each step costs exactly one summary re-read.",
+      "rationale": "The provider derives shown transitions and exposes a local revalidate callback through React context. Both explicit reviewer refresh and the matching live-review memory hook use that callback; the entry generation joins its facts key. The context itself creates no transport. Conditional/read coalescing belongs to the existing summary owner, not an unconditional one-network-read-per-callback rule.",
       "role": "primary-authority"
     }
   ],
   "references": {
     "1": {
-      "note": "Why no existing signal can carry a knowledge write, and the three re-validation points.\n\nAnchor: \"change watcher deliberately excludes\"",
+      "note": "The local provider increments generation on a false-to-true shown transition and on revalidate. useReviewMemoryWatch registers only for an active live enclosure and non-recorded history, invokes shared entry revalidation alongside review invalidation/refresh, and filters notifications by exact registered scope. publishReviewMemory reconciles first/initial baselines and changed revisions. connectState carries that scope and dispatches memory events through its existing SSE connection. The original header-only no-signal account is superseded.\n\nAnchor: inclusive source ranges",
       "targets": [
         {
           "anchor": {
-            "blob": "701f0ed34d661ec7a976642ac4b7713502d1cb46",
-            "content": "sha256:e32dd9e06bc0d6eeb04a3450a6294a918e15e1b42280a0dac4f457d981a04b5e",
+            "blob": "d3feb8a1751db6eca58b6b0be0a1878f10d95367",
+            "content": "sha256:495395edc9c750eb467c472c50a53c55ea59ed7ef0bff8c01a6b1faf156710f8",
             "locator": {
-              "end": 20,
+              "end": 52,
               "kind": "line_range",
-              "start": 1
+              "start": 27
             }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a6a7b8ec91405392b2bff6759bb5d4dc1b6d7c46",
+            "content": "sha256:fe19327e1cd3788bbb9080dd2672974d706f4fa69eacfea16f9a4f0572e32044",
+            "locator": {
+              "end": 71,
+              "kind": "line_range",
+              "start": 49
+            },
+            "path": "dashboard/src/data/reviewMemoryWatch.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a6a7b8ec91405392b2bff6759bb5d4dc1b6d7c46",
+            "content": "sha256:6c0edb982debcfbf61447406ab93c2e41d2c7b4eb5f6f1ebed38d69f61b6f5de",
+            "locator": {
+              "end": 42,
+              "kind": "line_range",
+              "start": 34
+            },
+            "path": "dashboard/src/data/reviewMemoryWatch.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9f7f7e826fed6b4eee1642c20e2953c6908a50ae",
+            "content": "sha256:f3d10344cb95e226690f1b00dd53b2598eb11d8f2b4e9a72a81fea114702bf9a",
+            "locator": {
+              "end": 65,
+              "kind": "line_range",
+              "start": 47
+            },
+            "path": "dashboard/src/data/stream.ts"
           },
           "kind": "code"
         }
@@ -92,16 +131,16 @@
       ]
     },
     "4": {
-      "note": "The cockpit wraps its shell with `shown` = Operations view and no takeover.\n\nAnchor: `IntentEntryRevalidation`",
+      "note": "The cockpit shell wraps its body in IntentEntryRevalidation with shown true exactly for Operations view without takeover.\n\nAnchor: inclusive source ranges",
       "targets": [
         {
           "anchor": {
-            "blob": "76c1e952f0b6c4c9d708c3edf4cd8b28c0f764ff",
-            "content": "sha256:3b1060d0170a08b61f3de9e57ac024c13dca376d36b7ff59e983dd7df1aea522",
+            "blob": "9dffc6e41bb9701b7a33ff1b82335a087c154484",
+            "content": "sha256:76cc503132fa72f30c20517804080714b2f6536d062c87aabd81e47a9c0d2ccf",
             "locator": {
-              "end": 895,
+              "end": 621,
               "kind": "line_range",
-              "start": 895
+              "start": 596
             },
             "path": "dashboard/src/cockpit/Cockpit.tsx"
           },
@@ -110,15 +149,16 @@
       ]
     },
     "5": {
-      "note": "The reviewer's refresh calls `revalidate`.\n\nAnchor: `useRevalidateIntentEntry`; `revalidateEntry()`",
+      "note": "ReviewRefresh obtains the shared entry revalidation callback, and its actual button onClick calls onRefresh followed by revalidateEntry. The callback declaration alone is not the invocation witness.\n\nAnchor: inclusive source ranges",
       "targets": [
         {
           "anchor": {
             "blob": "08e0c87565275401e0c5e2b30a49075fca660f5d",
-            "content": "sha256:269a8ec925c566d278e694ce60974e33bbfee7384b0af3f79b95a50e8da78c74",
+            "content": "sha256:850633923a93a1bca2fcd1e63f1ab1447f7ab6c8a7ba5df52d8dd502b6bb34ed",
             "locator": {
-              "kind": "symbol",
-              "name": "revalidateEntry"
+              "end": 74,
+              "kind": "line_range",
+              "start": 49
             },
             "path": "dashboard/src/panels/review/ReviewRefresh.tsx"
           },
@@ -127,34 +167,73 @@
       ]
     },
     "6": {
-      "note": "The summary's facts carry the generation.\n\nAnchor: `useIntentEntryGeneration`",
+      "note": "DocChangeSetBar appends context generation to leaf facts and passes them to LeafEntries; IntentReviewEntry passes facts to useIntentReviewSummary, whose key/effect includes facts. ChangeSetButton separately consumes the same generation in its load effect dependencies. Generation is not a summary-only input.\n\nAnchor: inclusive source ranges",
       "targets": [
         {
           "anchor": {
-            "blob": "931da72d87f38045efdb2c747a84167042b89f79",
-            "content": "sha256:c587ea8deb1c6a365edf8c2412dd58d0e6264ad04b1c3ba77b176f34246f8d27",
+            "blob": "cb170808c1e7ad3aa75e0bfd0860f2206b2291c8",
+            "content": "sha256:507af4b6d58e46ba209a89bf9e7e3ba5fda9df541712fe3d8af2193a693e13be",
             "locator": {
-              "end": 365,
+              "end": 321,
               "kind": "line_range",
-              "start": 315
+              "start": 275
             },
             "path": "dashboard/src/panels/detail-panel/changeSetBar.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "cb170808c1e7ad3aa75e0bfd0860f2206b2291c8",
+            "content": "sha256:63b94c7c8e26448217c6dc19baf678a0007b3de3c5b6fd202a06e1d1554141ba",
+            "locator": {
+              "end": 108,
+              "kind": "line_range",
+              "start": 83
+            },
+            "path": "dashboard/src/panels/detail-panel/changeSetBar.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e7a6bf60038ae40902f419fca145a006573f1587",
+            "content": "sha256:84d64497fac09430505de1e4d6b2b314752a5bf9c2dd8b490516c17093e80f56",
+            "locator": {
+              "end": 170,
+              "kind": "line_range",
+              "start": 149
+            },
+            "path": "dashboard/src/panels/detail-panel/intentReviewEntry.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "aa37dc151156c900a476667b0cbba310a971e51a",
+            "content": "sha256:aa7680d6cb1d873601292f3fd8441a448e4d47ca93eb6ceedc649be043c44888",
+            "locator": {
+              "end": 139,
+              "kind": "line_range",
+              "start": 104
+            },
+            "path": "dashboard/src/data/reviewIntentSummary.ts"
           },
           "kind": "code"
         }
       ]
     },
     "7": {
-      "note": "The cases: re-show, open once, leave the reviewer, reviewer refresh.\n\nAnchor: \"(a) re-validates when the task detail is shown again, once per showing, with no catalogue read\"; \"(c) re-validates when the reviewer's own refresh runs\"",
+      "note": "The current stored test bodies assert summary-read counts and catalogue isolation for re-show/task switching, opening from another view, reviewer return and explicit refresh. These are static assertions, not new execution or proof of memory-event/reconnect request counts. Both former target ranges are replaced by the current complete scenario extents.\n\nAnchor: inclusive source ranges",
       "targets": [
         {
           "anchor": {
-            "blob": "0cdba9694c6e8a4266cdf4bf7f486b082a9ee59e",
-            "content": "sha256:1bbaa01b175b461b75f8c4942efe2486ed61fb4eb30680da7c91a0595a86fab8",
+            "blob": "eb42598c0c350ffa0445f7d80aea0b38979f62b4",
+            "content": "sha256:602e43f9bda6d97b5b235cd7be0ff537a0b1f819ee2e119669c7d06c1da71ace",
             "locator": {
-              "end": 230,
+              "end": 221,
               "kind": "line_range",
-              "start": 211
+              "start": 163
             },
             "path": "dashboard/src/cockpit/Cockpit.intentEntry.test.tsx"
           },
@@ -162,12 +241,12 @@
         },
         {
           "anchor": {
-            "blob": "0cdba9694c6e8a4266cdf4bf7f486b082a9ee59e",
-            "content": "sha256:4f189161e25f3be38756814300eb985d0f506f45f49616a0316642bc8cbf1ca0",
+            "blob": "eb42598c0c350ffa0445f7d80aea0b38979f62b4",
+            "content": "sha256:e8fd8becfed73d543b5c7c076dc5e038b54ca51ee1f2e978054f18c8bd86065c",
             "locator": {
-              "end": 278,
+              "end": 239,
               "kind": "line_range",
-              "start": 264
+              "start": 223
             },
             "path": "dashboard/src/cockpit/Cockpit.intentEntry.test.tsx"
           },

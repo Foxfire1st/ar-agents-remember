@@ -1,0 +1,24 @@
+{
+  "path": "dashboard/src/panels/review/navigation.capture-provenance.json",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The retained source supplies the facts and declared boundaries described above.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "33cfca750ec9f496d38241998cdae1193635a1b0",
+            "content": "sha256:eca5d6e61bf9bf9c7b6b9c695e2d61de9f1f83a6cc687bb5c484ddeffc20c5be",
+            "locator": {
+              "end": 39,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

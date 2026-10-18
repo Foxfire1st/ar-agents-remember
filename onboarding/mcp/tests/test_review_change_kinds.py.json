@@ -3,8 +3,8 @@
   "proves": [
     {
       "anchor": {
-        "blob": "dfbe096adabbc51c06241ec10f75fabdf9ff4ad5",
-        "content": "sha256:aeda00b292d6ac803238e7450dd3b0ae259976d3a9b1b5a6411d54ba065bb394",
+        "blob": "61a1dd237055092b57857a722eaee9d4a762cef4",
+        "content": "sha256:6acfb25453a8d4b685ff3eeeefd71ec1da8c820ed9a557cbc55ed11b37043d20",
         "locator": {
           "kind": "symbol",
           "name": "test_the_outline_states_unknown_records_and_unavailable_membership_or_indexes"
@@ -20,7 +20,7 @@
     },
     {
       "anchor": {
-        "blob": "dfbe096adabbc51c06241ec10f75fabdf9ff4ad5",
+        "blob": "61a1dd237055092b57857a722eaee9d4a762cef4",
         "content": "sha256:b89943cde40c8d4eea4d96ec97ea8e931bbc2e55c5cce26b2d3246359c9ad193",
         "locator": {
           "kind": "symbol",
@@ -56,15 +56,73 @@
       ]
     },
     "10": {
-      "note": "Corrupt records, dataset reviews and lost indexes are named states",
+      "note": "Corrupt invariant records produce unknown outline facts; a corrupt family names cannot read FAM-F00001; dataset and missing-index cases are unavailable.",
       "targets": [
         {
           "anchor": {
-            "blob": "dfbe096adabbc51c06241ec10f75fabdf9ff4ad5",
-            "content": "sha256:aeda00b292d6ac803238e7450dd3b0ae259976d3a9b1b5a6411d54ba065bb394",
+            "blob": "61a1dd237055092b57857a722eaee9d4a762cef4",
+            "content": "sha256:6acfb25453a8d4b685ff3eeeefd71ec1da8c820ed9a557cbc55ed11b37043d20",
             "locator": {
               "kind": "symbol",
               "name": "test_the_outline_states_unknown_records_and_unavailable_membership_or_indexes"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "11": {
+      "note": "The final classified leaf facts agree with walked-family implementation, proof and unresolved-range facts. Unreadable code facts are unavailable rather than an empty successful result.\n\nAnchor: inclusive source ranges",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "61a1dd237055092b57857a722eaee9d4a762cef4",
+            "content": "sha256:44a1f92a0814a62a9be287071726097f0ce7413a731d68475bb47d0dfcdaa6b8",
+            "locator": {
+              "end": 850,
+              "kind": "line_range",
+              "start": 819
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "61a1dd237055092b57857a722eaee9d4a762cef4",
+            "content": "sha256:75294a7c095e0109a74d9ff6f9db68048b52c63a869238640f60c1fe75d3e4f8",
+            "locator": {
+              "end": 863,
+              "kind": "line_range",
+              "start": 853
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "12": {
+      "note": "Worklist states match public gate verdicts and name the answering history row. Six held-input variants fail closed with reasons; matching readable held inputs match ordinary evaluation.\n\nAnchor: inclusive source ranges",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "61a1dd237055092b57857a722eaee9d4a762cef4",
+            "content": "sha256:7508f617a8c3b9db30dd3cfc97ba54fbfdcb3383516c4f58935076d10a0d6ba6",
+            "locator": {
+              "end": 924,
+              "kind": "line_range",
+              "start": 866
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "61a1dd237055092b57857a722eaee9d4a762cef4",
+            "content": "sha256:2b408ca477e35a6833970b94dd239d4203e75ef90e257ac2be53ef0cc4797611",
+            "locator": {
+              "end": 978,
+              "kind": "line_range",
+              "start": 927
             }
           },
           "kind": "test"

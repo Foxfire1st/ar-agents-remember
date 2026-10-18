@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "9bcabc6569d7f2765d324912c0997f4e5f11dc6a",
-        "content": "sha256:ddfc89ee479d865ad3114e7d5190eece4970307e501098567c40873ecc89f7d8",
+        "blob": "a6452e32b37107141d8d2cb94125603cbeb46e68",
+        "content": "sha256:30db6d2d504c23f4ef8163f7c2d92c6723fae4bb2388c9721da188a08a6bc6f0",
         "locator": {
           "kind": "symbol",
           "name": "rowMeaningBadge"
@@ -21,8 +21,8 @@
     },
     {
       "anchor": {
-        "blob": "9bcabc6569d7f2765d324912c0997f4e5f11dc6a",
-        "content": "sha256:ecde36a9d2b369d6de5ccd44051c3e0d34696f39ff21c368c4e4900f28a40e09",
+        "blob": "a6452e32b37107141d8d2cb94125603cbeb46e68",
+        "content": "sha256:9efa7084bd765e9c065b2b6f4a951b90eadf513d9836950bd31408602d1622ee",
         "locator": {
           "kind": "symbol",
           "name": "FamilyTree"
@@ -39,7 +39,7 @@
     },
     {
       "anchor": {
-        "blob": "9bcabc6569d7f2765d324912c0997f4e5f11dc6a",
+        "blob": "a6452e32b37107141d8d2cb94125603cbeb46e68",
         "content": "sha256:0d1dcf40075f5e57cfe31da288a8d5da2ecc009c1f678c77f161959e87c5779a",
         "locator": {
           "kind": "symbol",
@@ -57,7 +57,7 @@
     },
     {
       "anchor": {
-        "blob": "9bcabc6569d7f2765d324912c0997f4e5f11dc6a",
+        "blob": "a6452e32b37107141d8d2cb94125603cbeb46e68",
         "content": "sha256:0d1dcf40075f5e57cfe31da288a8d5da2ecc009c1f678c77f161959e87c5779a",
         "locator": {
           "kind": "symbol",
@@ -75,7 +75,7 @@
     },
     {
       "anchor": {
-        "blob": "9bcabc6569d7f2765d324912c0997f4e5f11dc6a",
+        "blob": "a6452e32b37107141d8d2cb94125603cbeb46e68",
         "content": "sha256:c04559207febe234ab664a796e1cb3ed346e9108a9a92bdc0f68f87f8ffedc42",
         "locator": {
           "kind": "symbol",
@@ -93,7 +93,7 @@
     },
     {
       "anchor": {
-        "blob": "9bcabc6569d7f2765d324912c0997f4e5f11dc6a",
+        "blob": "a6452e32b37107141d8d2cb94125603cbeb46e68",
         "content": "sha256:68e512f44797dfd0b31567f195ce6e02e1e117cb3d915897e31599e2b7071025",
         "locator": {
           "kind": "symbol",
@@ -111,8 +111,8 @@
     },
     {
       "anchor": {
-        "blob": "9bcabc6569d7f2765d324912c0997f4e5f11dc6a",
-        "content": "sha256:ecde36a9d2b369d6de5ccd44051c3e0d34696f39ff21c368c4e4900f28a40e09",
+        "blob": "a6452e32b37107141d8d2cb94125603cbeb46e68",
+        "content": "sha256:9efa7084bd765e9c065b2b6f4a951b90eadf513d9836950bd31408602d1622ee",
         "locator": {
           "kind": "symbol",
           "name": "FamilyTree"
@@ -129,8 +129,8 @@
     },
     {
       "anchor": {
-        "blob": "9bcabc6569d7f2765d324912c0997f4e5f11dc6a",
-        "content": "sha256:ecde36a9d2b369d6de5ccd44051c3e0d34696f39ff21c368c4e4900f28a40e09",
+        "blob": "a6452e32b37107141d8d2cb94125603cbeb46e68",
+        "content": "sha256:9efa7084bd765e9c065b2b6f4a951b90eadf513d9836950bd31408602d1622ee",
         "locator": {
           "kind": "symbol",
           "name": "FamilyTree"
@@ -147,8 +147,8 @@
     },
     {
       "anchor": {
-        "blob": "9bcabc6569d7f2765d324912c0997f4e5f11dc6a",
-        "content": "sha256:ecde36a9d2b369d6de5ccd44051c3e0d34696f39ff21c368c4e4900f28a40e09",
+        "blob": "a6452e32b37107141d8d2cb94125603cbeb46e68",
+        "content": "sha256:9efa7084bd765e9c065b2b6f4a951b90eadf513d9836950bd31408602d1622ee",
         "locator": {
           "kind": "symbol",
           "name": "FamilyTree"
@@ -165,7 +165,7 @@
     },
     {
       "anchor": {
-        "blob": "9bcabc6569d7f2765d324912c0997f4e5f11dc6a",
+        "blob": "a6452e32b37107141d8d2cb94125603cbeb46e68",
         "content": "sha256:0333052dac0303645f8625277c45768f4163d55bcbb1f745c4e684cfde134955",
         "locator": {
           "kind": "symbol",
@@ -187,7 +187,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9bcabc6569d7f2765d324912c0997f4e5f11dc6a",
+            "blob": "a6452e32b37107141d8d2cb94125603cbeb46e68",
             "content": "sha256:68e512f44797dfd0b31567f195ce6e02e1e117cb3d915897e31599e2b7071025",
             "locator": {
               "kind": "symbol",
@@ -203,7 +203,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9bcabc6569d7f2765d324912c0997f4e5f11dc6a",
+            "blob": "a6452e32b37107141d8d2cb94125603cbeb46e68",
             "content": "sha256:eefd1aa08a716e243c5687dfe8e3e6e36ad8ede0eec1a926f6e2a444b263890e",
             "locator": {
               "kind": "symbol",
@@ -219,7 +219,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9bcabc6569d7f2765d324912c0997f4e5f11dc6a",
+            "blob": "a6452e32b37107141d8d2cb94125603cbeb46e68",
             "content": "sha256:0333052dac0303645f8625277c45768f4163d55bcbb1f745c4e684cfde134955",
             "locator": {
               "kind": "symbol",
@@ -235,7 +235,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9bcabc6569d7f2765d324912c0997f4e5f11dc6a",
+            "blob": "a6452e32b37107141d8d2cb94125603cbeb46e68",
             "content": "sha256:3c9efbf2d9d606a17118f92df45cc5b55fdd56629d40f53c6bbb3bca91621a2e",
             "locator": {
               "kind": "symbol",
@@ -251,7 +251,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9bcabc6569d7f2765d324912c0997f4e5f11dc6a",
+            "blob": "a6452e32b37107141d8d2cb94125603cbeb46e68",
             "content": "sha256:50319d40ad93d146cb9c1589211684b18c23802f60f9cc17dc8d836c7425f5a6",
             "locator": {
               "kind": "symbol",
@@ -267,8 +267,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "422af74afc1f13f1a92ba91451b83632760e6750",
-            "content": "sha256:6ebe7990d0b985364c72a68e8ef53fc9bb45844f2a1cb6eec60145914029335a",
+            "blob": "8af58177d688c1f75043eababc9e64be492d706a",
+            "content": "sha256:f0e076fa7a23de01535d871d1215c1a03c393d658377c8edf80e124d7b088d0c",
             "locator": {
               "kind": "symbol",
               "name": "useChangeTraversal"
@@ -284,8 +284,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9bcabc6569d7f2765d324912c0997f4e5f11dc6a",
-            "content": "sha256:ecde36a9d2b369d6de5ccd44051c3e0d34696f39ff21c368c4e4900f28a40e09",
+            "blob": "a6452e32b37107141d8d2cb94125603cbeb46e68",
+            "content": "sha256:9efa7084bd765e9c065b2b6f4a951b90eadf513d9836950bd31408602d1622ee",
             "locator": {
               "kind": "symbol",
               "name": "FamilyTree"
@@ -300,7 +300,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9bcabc6569d7f2765d324912c0997f4e5f11dc6a",
+            "blob": "a6452e32b37107141d8d2cb94125603cbeb46e68",
             "content": "sha256:8b532d664b9b58de51b506ae65c0c6d6f05c95d0683511096396eaeaece300a4",
             "locator": {
               "kind": "symbol",
@@ -316,8 +316,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a25a1fcc8f4dc61d8fc2f05e79105414b62f67ae",
-            "content": "sha256:7876a97f0dd831513c369c66ca6641b9a1bbabbc119b2a421af92455818ad326",
+            "blob": "a6452e32b37107141d8d2cb94125603cbeb46e68",
+            "content": "sha256:0d1dcf40075f5e57cfe31da288a8d5da2ecc009c1f678c77f161959e87c5779a",
             "locator": {
               "kind": "symbol",
               "name": "OutlineNode"
@@ -332,7 +332,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9bcabc6569d7f2765d324912c0997f4e5f11dc6a",
+            "blob": "a6452e32b37107141d8d2cb94125603cbeb46e68",
             "content": "sha256:c0544018e4d6477a283fa4e0ddb7ecde0b2b195dd294c02967193e24f4f7145e",
             "locator": {
               "kind": "symbol",
@@ -348,7 +348,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9bcabc6569d7f2765d324912c0997f4e5f11dc6a",
+            "blob": "a6452e32b37107141d8d2cb94125603cbeb46e68",
             "content": "sha256:c330b9ae246c23542ef334d9fbb4e1a6500c10498b29c943848aac55b3b97811",
             "locator": {
               "kind": "symbol",
@@ -360,11 +360,11 @@
       ]
     },
     "46": {
-      "note": "View filtering that keeps selection and walked rows",
+      "note": "Case-insensitive query matches row identifiers and titles; view selection first retains real changes, selected rows and walked family context. A nonmatching query can still filter those retained rows.",
       "targets": [
         {
           "anchor": {
-            "blob": "9bcabc6569d7f2765d324912c0997f4e5f11dc6a",
+            "blob": "a6452e32b37107141d8d2cb94125603cbeb46e68",
             "content": "sha256:f3bf0dbd57b18703ca5eac0e327530bb84da4ce9ae185328b3aaf2a9dc8a2d75",
             "locator": {
               "kind": "symbol",
@@ -376,16 +376,16 @@
       ]
     },
     "47": {
-      "note": "Traversal keyed to the shown rows\n\nAnchor: `treeRowsKey`",
+      "note": "Traversal keyed to the shown rows",
       "targets": [
         {
           "anchor": {
-            "blob": "9bcabc6569d7f2765d324912c0997f4e5f11dc6a",
+            "blob": "a6452e32b37107141d8d2cb94125603cbeb46e68",
             "content": "sha256:a0c9e6be10161e3832e834cc7ce3d2ceefce34b7e1e44d43c8bdece194c2da0d",
             "locator": {
-              "end": 465,
+              "end": 473,
               "kind": "line_range",
-              "start": 460
+              "start": 468
             }
           },
           "kind": "code"
@@ -397,8 +397,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9bcabc6569d7f2765d324912c0997f4e5f11dc6a",
-            "content": "sha256:8ded825875bfedd801447b50e987fc206df7354c9c481272427c68837586bacd",
+            "blob": "a6452e32b37107141d8d2cb94125603cbeb46e68",
+            "content": "sha256:7747bb72c0c480706cc4fc0f4ccd637439cba69e23851635d4f489b74c6cc05f",
             "locator": {
               "kind": "file"
             }
@@ -408,15 +408,163 @@
       ]
     },
     "49": {
-      "note": "The compact tree consumes the catalogue outline and retained walk/view state, not family guarantee/member statement blocks. One primary change-kind badge preserves existing intent/code/membership precedence and real-change traversal facts; the separately permitted recorded-effect sequence adds no grouping weight, count or stop. Open rows stay one flex line with title ellipsis, the whole-title tooltip and kept-family tag where applicable. Changed/All preference, title/summary filtering, retained selections/walked families and arrow/j/k handling remain owned by the existing tree hooks. Its accessible name includes title, the change badge and eligible recorded labels; full steps/reasons live in the reading area. Recorded meaning labels are an additional compact badge only for added, removed or changed record rows with steps. rowMeaningBadge uses the row’s own outline answer; nodeBadges adds the label sequence to the accessible name without changing the primary change fact or traversal stop. More than three steps abbreviate first/ellipsis/last; complete steps stay in the reading area. none carries no badge. The navigation remains one line and contains no guarantee/statement block or per-row disclosure.",
+      "note": "Compact catalogue navigation delegates outline grouping and badges, filters row identifiers and titles, preserves selected/walked context within the selected view, and renders one-line title/badge/kept buttons rather than semantic statement disclosures. Recorded meaning labels are supplementary, eligible only for changed record rows; aggregate-only family badges are not primary traversal changes.\n\nAnchor: `FamilyTree` `OutlineNode` `nodeBadges` `shownGroup` `useTreeRows`",
       "targets": [
         {
           "anchor": {
-            "blob": "9bcabc6569d7f2765d324912c0997f4e5f11dc6a",
-            "content": "sha256:8ded825875bfedd801447b50e987fc206df7354c9c481272427c68837586bacd",
+            "blob": "a6452e32b37107141d8d2cb94125603cbeb46e68",
+            "content": "sha256:9efa7084bd765e9c065b2b6f4a951b90eadf513d9836950bd31408602d1622ee",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "FamilyTree"
             }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a6452e32b37107141d8d2cb94125603cbeb46e68",
+            "content": "sha256:0d1dcf40075f5e57cfe31da288a8d5da2ecc009c1f678c77f161959e87c5779a",
+            "locator": {
+              "kind": "symbol",
+              "name": "OutlineNode"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a6452e32b37107141d8d2cb94125603cbeb46e68",
+            "content": "sha256:c04559207febe234ab664a796e1cb3ed346e9108a9a92bdc0f68f87f8ffedc42",
+            "locator": {
+              "kind": "symbol",
+              "name": "nodeBadges"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a6452e32b37107141d8d2cb94125603cbeb46e68",
+            "content": "sha256:f3bf0dbd57b18703ca5eac0e327530bb84da4ce9ae185328b3aaf2a9dc8a2d75",
+            "locator": {
+              "kind": "symbol",
+              "name": "shownGroup"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a6452e32b37107141d8d2cb94125603cbeb46e68",
+            "content": "sha256:8b532d664b9b58de51b506ae65c0c6d6f05c95d0683511096396eaeaece300a4",
+            "locator": {
+              "kind": "symbol",
+              "name": "useTreeRows"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "50": {
+      "note": "Optional leaf-wide source facts enter outline grouping only through the supplied tree read and comparison. The exact count is distinct unchanged outline invariant identities whose delivered implementation fact is established; unavailable or mismatched facts stay unknown rather than zero.\n\nAnchor: `FamilyTreeProps` `admittedGroups` `matchingTreeRead` `codeFacts` `codeChangesCount`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a6452e32b37107141d8d2cb94125603cbeb46e68",
+            "content": "sha256:8ec9fa4497e0e61de45c995fc13c719996b77984c97cb24b12479fa4bded5fe4",
+            "locator": {
+              "kind": "symbol",
+              "name": "FamilyTreeProps"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a6452e32b37107141d8d2cb94125603cbeb46e68",
+            "content": "sha256:9b34dc26a8223b978f914490645fe10e38a3277ffa072fc27c9fce61d9825023",
+            "locator": {
+              "kind": "symbol",
+              "name": "admittedGroups"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "cf6d30a7d118ee16b5c90266535475a08063a88c",
+            "content": "sha256:f0723ce21bfe8503275bd8a18e130fda8b8cad35648e882cd8b3b971ae540711",
+            "locator": {
+              "kind": "symbol",
+              "name": "matchingTreeRead"
+            },
+            "path": "dashboard/src/panels/review/codeFacts.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "cf6d30a7d118ee16b5c90266535475a08063a88c",
+            "content": "sha256:a360060b4b0d237bc9e1b05b597a131ae2dd5f59b90561bb71ac2ec6a75ccd45",
+            "locator": {
+              "kind": "symbol",
+              "name": "codeFacts"
+            },
+            "path": "dashboard/src/panels/review/codeFacts.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "cf6d30a7d118ee16b5c90266535475a08063a88c",
+            "content": "sha256:ec0b0e6df571e1df7449e21997766d268b89c8d457ab903e2f23d5829343196d",
+            "locator": {
+              "kind": "symbol",
+              "name": "codeChangesCount"
+            },
+            "path": "dashboard/src/panels/review/codeFacts.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "51": {
+      "note": "Late delivered code facts enrich existing rows with a polite count notice. The same-comparison count-change wrapper snapshots list/ancestor scroll positions before mutation and restores them after update; it does not select or focus a new row.\n\nAnchor: `FamilyTree` `CodeFactsScrollAnchor` `useCodeFactsNotice`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a6452e32b37107141d8d2cb94125603cbeb46e68",
+            "content": "sha256:9efa7084bd765e9c065b2b6f4a951b90eadf513d9836950bd31408602d1622ee",
+            "locator": {
+              "kind": "symbol",
+              "name": "FamilyTree"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "cf6d30a7d118ee16b5c90266535475a08063a88c",
+            "content": "sha256:f274dab8902eaa4694b6b48b4d9b898bf87c5c7d05da3e4d294e3f65627d2355",
+            "locator": {
+              "kind": "symbol",
+              "name": "CodeFactsScrollAnchor"
+            },
+            "path": "dashboard/src/panels/review/codeFacts.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "cf6d30a7d118ee16b5c90266535475a08063a88c",
+            "content": "sha256:ee22685ecc7773d71acd210ca0ce8c61232afe4c0b66753942329ae29061fdcf",
+            "locator": {
+              "kind": "symbol",
+              "name": "useCodeFactsNotice"
+            },
+            "path": "dashboard/src/panels/review/codeFacts.ts"
           },
           "kind": "code"
         }

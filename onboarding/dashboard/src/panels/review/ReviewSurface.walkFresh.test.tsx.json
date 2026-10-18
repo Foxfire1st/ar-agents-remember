@@ -3,7 +3,7 @@
   "proves": [
     {
       "anchor": {
-        "blob": "e943313d29b73489d0d75e00fc9c29aac57f5e3b",
+        "blob": "78ddbab29a5396b25c97cefc6eae6faed7c66c7e",
         "content": "sha256:b1b19551e80087c12870584fdf904149991f4a9635040745830291ccbbe5277d",
         "locator": {
           "kind": "symbol",
@@ -20,7 +20,7 @@
     },
     {
       "anchor": {
-        "blob": "e943313d29b73489d0d75e00fc9c29aac57f5e3b",
+        "blob": "78ddbab29a5396b25c97cefc6eae6faed7c66c7e",
         "content": "sha256:65b31236193cb40763aecbc742393f0d2fb9a7e0b70c99cb92ba9b2e7de0fca9",
         "locator": {
           "kind": "symbol",
@@ -37,7 +37,7 @@
     },
     {
       "anchor": {
-        "blob": "e943313d29b73489d0d75e00fc9c29aac57f5e3b",
+        "blob": "78ddbab29a5396b25c97cefc6eae6faed7c66c7e",
         "content": "sha256:883febb2232efe2d3703979c5a130752b991639a863474f6bdd4d8bf985c5120",
         "locator": {
           "end": 292,
@@ -55,7 +55,7 @@
     },
     {
       "anchor": {
-        "blob": "e943313d29b73489d0d75e00fc9c29aac57f5e3b",
+        "blob": "78ddbab29a5396b25c97cefc6eae6faed7c66c7e",
         "content": "sha256:0e701c1ef5934c8cbc61240b8849758c3df317c38a4cb1614926b8f312b8c3d5",
         "locator": {
           "end": 164,
@@ -73,24 +73,24 @@
     },
     {
       "anchor": {
-        "blob": "e943313d29b73489d0d75e00fc9c29aac57f5e3b",
-        "content": "sha256:261b2d4fda9f21295213f1caadd4b31c5b7e155912fa35bf9e2197b7d552618d",
+        "blob": "78ddbab29a5396b25c97cefc6eae6faed7c66c7e",
+        "content": "sha256:840ddfc695158c9ac5c6b9d2407dc7764d878925b339355ed085ac03f6912d44",
         "locator": {
           "kind": "symbol",
-          "name": "bare"
+          "name": "keeps the families and states the subject when the answer composes no family context"
         }
       },
-      "facet": "When the answer of an in-tree selection composes no family context, both families stay, both tagged as kept, the state is stated above them for the selected subject, and the requested row keeps the mark.",
-      "id": "PRF-CNYVD3",
+      "facet": "When the answer of an in-tree selection composes no family context, both families stay, both are tagged as kept, the reading area states that no family was recorded for the selected subject, and the requested row keeps the mark.",
+      "id": "PRF-HBWR8S",
       "invariant": "INV-NSG0D4",
       "origin": {
-        "handoffEntry": "MIK-R39@v1-in-tree-selection-adds-rows",
-        "leaf": "260928-MIK-L39"
+        "handoffEntry": "L57-M1-facet-PRF-CNYVD3-replacement",
+        "leaf": "260928-MIK-L57"
       }
     },
     {
       "anchor": {
-        "blob": "e943313d29b73489d0d75e00fc9c29aac57f5e3b",
+        "blob": "78ddbab29a5396b25c97cefc6eae6faed7c66c7e",
         "content": "sha256:3d0ab7a6715887bb9d07121bed6d1219451784b3c3615526b9618275f48cd1db",
         "locator": {
           "end": 115,
@@ -108,7 +108,7 @@
     },
     {
       "anchor": {
-        "blob": "e943313d29b73489d0d75e00fc9c29aac57f5e3b",
+        "blob": "78ddbab29a5396b25c97cefc6eae6faed7c66c7e",
         "content": "sha256:e4ffcf3537286d5a771276796c9d19f2f258f7f6dc898784887a4b34312c7b63",
         "locator": {
           "end": 337,
@@ -126,8 +126,8 @@
     },
     {
       "anchor": {
-        "blob": "e943313d29b73489d0d75e00fc9c29aac57f5e3b",
-        "content": "sha256:220f5944430fbbf2f0e46b49a878dbe52418bc66361ea2f25c7510775a79fae0",
+        "blob": "78ddbab29a5396b25c97cefc6eae6faed7c66c7e",
+        "content": "sha256:1f3dc126bfbac6f87c9f6e683837390b48658f60a2d7be267903374eaa36e5ae",
         "locator": {
           "end": 393,
           "kind": "line_range",
@@ -146,8 +146,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "e943313d29b73489d0d75e00fc9c29aac57f5e3b",
-        "content": "sha256:23e5f0d91d677337ca439171e9db555d0cd4e1da3fd028b4f2a815a3532ec3b3",
+        "blob": "78ddbab29a5396b25c97cefc6eae6faed7c66c7e",
+        "content": "sha256:607cc683e16074c2598cfa396f1d4e2627751986a0f692afcdc1a76128f6b227",
         "locator": {
           "kind": "file"
         }
@@ -163,12 +163,12 @@
     },
     {
       "anchor": {
-        "blob": "e943313d29b73489d0d75e00fc9c29aac57f5e3b",
-        "content": "sha256:07103ee542f385824e39a71f8fda7e898d89ad78d5f455f7110a68063c26053d",
+        "blob": "78ddbab29a5396b25c97cefc6eae6faed7c66c7e",
+        "content": "sha256:0a53407b1137e4d1730f469e4add973fb031b3bba3c887654c4a038306308db3",
         "locator": {
-          "end": 427,
+          "end": 479,
           "kind": "line_range",
-          "start": 357
+          "start": 408
         }
       },
       "id": "RLZ-TRH263",
@@ -177,7 +177,7 @@
         "handoffEntry": "OR-R033-D1",
         "leaf": "260928-MIK-L39"
       },
-      "rationale": "The three mounted cases pin the reveal to the stacked layout and to in-tree selections, and pin the moved-focus exception.",
+      "rationale": "The current narrow/wide mounted source cases require no native scrollIntoView during click, cached traversal and reselection, retain selected-row focus and pin the moved-focus exception. They are not a fresh browser or panel-geometry execution result.",
       "role": "enforcement"
     }
   ],
@@ -526,16 +526,16 @@
       ]
     },
     "39": {
-      "note": "An in-tree read reveals the reading area only in the stacked layout, by click and by key; an outside selection scrolls nothing.",
+      "note": "One layout-parametrized declaration exercises true and false viewport matches. Click, cached K and same-row reselect each assert an empty scroll-call list; the case also preserves focus, request-count, workspace and outline checks. It does not measure geometry.\n\nAnchor: inclusive source ranges",
       "targets": [
         {
           "anchor": {
-            "blob": "e943313d29b73489d0d75e00fc9c29aac57f5e3b",
-            "content": "sha256:6782730beeda372a1048f0afcb3d43e4095dd210b7ad513759b03e55b2398ae6",
+            "blob": "78ddbab29a5396b25c97cefc6eae6faed7c66c7e",
+            "content": "sha256:9397cdb59d072dfe38cf041d292c358545095867ddb6c936e0bb43b9d06e7c63",
             "locator": {
-              "end": 391,
+              "end": 446,
               "kind": "line_range",
-              "start": 354
+              "start": 408
             }
           },
           "kind": "test"
@@ -543,16 +543,16 @@
       ]
     },
     "40": {
-      "note": "A stacked in-tree answer does not reveal after the reader moved focus while it was pending.",
+      "note": "The retained pending-answer case moves focus to the family filter before releasing the answer, then asserts that focus remains there, no scrolling occurs and both families remain.\n\nAnchor: inclusive source ranges",
       "targets": [
         {
           "anchor": {
-            "blob": "e943313d29b73489d0d75e00fc9c29aac57f5e3b",
-            "content": "sha256:aab6f97692dc7c1540e960f9c9c08a09d5cb1a0cdbd162c5916fdcb050ddc9fc",
+            "blob": "78ddbab29a5396b25c97cefc6eae6faed7c66c7e",
+            "content": "sha256:4292e8f2a404d780e00cb3001dcbf259e735f0695a7f5372298d2305aee6e379",
             "locator": {
-              "end": 425,
+              "end": 479,
               "kind": "line_range",
-              "start": 393
+              "start": 448
             }
           },
           "kind": "test"

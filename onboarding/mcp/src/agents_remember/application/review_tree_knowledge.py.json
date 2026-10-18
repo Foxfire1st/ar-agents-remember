@@ -4,8 +4,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "5ea5df2cf694eec99b36b6695d06c40dbf6e731d",
-        "content": "sha256:b905f32447788cc095fb8b6f9edc20b971fd2f36be44dc277c8526abcfdb45e2",
+        "blob": "35d4cf1464edc9940c6fbd299f919ad2c959405b",
+        "content": "sha256:a7db6ac6cfbff0fd2c3285cca5f92872aa5519ee0d57dc5ab1da7fae316f5fea",
         "locator": {
           "kind": "symbol",
           "name": "_worklist_view"
@@ -22,8 +22,8 @@
     },
     {
       "anchor": {
-        "blob": "5ea5df2cf694eec99b36b6695d06c40dbf6e731d",
-        "content": "sha256:b905f32447788cc095fb8b6f9edc20b971fd2f36be44dc277c8526abcfdb45e2",
+        "blob": "35d4cf1464edc9940c6fbd299f919ad2c959405b",
+        "content": "sha256:a7db6ac6cfbff0fd2c3285cca5f92872aa5519ee0d57dc5ab1da7fae316f5fea",
         "locator": {
           "kind": "symbol",
           "name": "_worklist_view"
@@ -40,7 +40,7 @@
     },
     {
       "anchor": {
-        "blob": "5ea5df2cf694eec99b36b6695d06c40dbf6e731d",
+        "blob": "35d4cf1464edc9940c6fbd299f919ad2c959405b",
         "content": "sha256:4f733e1ab6cf07fee26124289daf5aab92148b2bb0c5bf7a8333e3e06e418082",
         "locator": {
           "kind": "symbol",
@@ -58,7 +58,7 @@
     },
     {
       "anchor": {
-        "blob": "5ea5df2cf694eec99b36b6695d06c40dbf6e731d",
+        "blob": "35d4cf1464edc9940c6fbd299f919ad2c959405b",
         "content": "sha256:b68adbcba4f772f549b2e6e9540d15881adc327c8f53ae204ff7d4bf6d4ba0ea",
         "locator": {
           "kind": "symbol",
@@ -76,7 +76,7 @@
     },
     {
       "anchor": {
-        "blob": "5ea5df2cf694eec99b36b6695d06c40dbf6e731d",
+        "blob": "35d4cf1464edc9940c6fbd299f919ad2c959405b",
         "content": "sha256:4f733e1ab6cf07fee26124289daf5aab92148b2bb0c5bf7a8333e3e06e418082",
         "locator": {
           "kind": "symbol",
@@ -94,8 +94,8 @@
     },
     {
       "anchor": {
-        "blob": "5ea5df2cf694eec99b36b6695d06c40dbf6e731d",
-        "content": "sha256:bc49e2984cd48308fd306bf2fa6e7467240c21bf19b945682638ba128edb2f8b",
+        "blob": "35d4cf1464edc9940c6fbd299f919ad2c959405b",
+        "content": "sha256:717da16c1b4f7e40792a160b15678df1f23d02908151df30247ae46708770a38",
         "locator": {
           "kind": "file"
         }
@@ -111,7 +111,7 @@
     },
     {
       "anchor": {
-        "blob": "5ea5df2cf694eec99b36b6695d06c40dbf6e731d",
+        "blob": "35d4cf1464edc9940c6fbd299f919ad2c959405b",
         "content": "sha256:a53365169e8b39dedcd16ca6e961a4b554d97d4ab9eb7faca09bd628cc34ec8e",
         "locator": {
           "kind": "symbol",
@@ -129,7 +129,7 @@
     },
     {
       "anchor": {
-        "blob": "5ea5df2cf694eec99b36b6695d06c40dbf6e731d",
+        "blob": "35d4cf1464edc9940c6fbd299f919ad2c959405b",
         "content": "sha256:b9198d9a7c6853fc912135bab8e52985a17a1a7658279c7bb618adfc3f1ceaf1",
         "locator": {
           "kind": "symbol",
@@ -147,7 +147,7 @@
     },
     {
       "anchor": {
-        "blob": "5ea5df2cf694eec99b36b6695d06c40dbf6e731d",
+        "blob": "35d4cf1464edc9940c6fbd299f919ad2c959405b",
         "content": "sha256:1a7b83b1b277da4dc2a0726815efebb30b59ed14939d84e23f14bdf8384c5a52",
         "locator": {
           "kind": "symbol",
@@ -165,7 +165,7 @@
     },
     {
       "anchor": {
-        "blob": "5ea5df2cf694eec99b36b6695d06c40dbf6e731d",
+        "blob": "35d4cf1464edc9940c6fbd299f919ad2c959405b",
         "content": "sha256:a53365169e8b39dedcd16ca6e961a4b554d97d4ab9eb7faca09bd628cc34ec8e",
         "locator": {
           "kind": "symbol",
@@ -183,25 +183,7 @@
     },
     {
       "anchor": {
-        "blob": "5ea5df2cf694eec99b36b6695d06c40dbf6e731d",
-        "content": "sha256:ea6442c4bc3d22d0bbc2140ec45ef2d14072d7e1f939aefbe22c6a694895be5d",
-        "locator": {
-          "kind": "symbol",
-          "name": "side_currentness"
-        }
-      },
-      "id": "RLZ-NB5AJ1",
-      "invariant": "INV-TY4BR7",
-      "origin": {
-        "handoffEntry": "L81-R1-F21",
-        "leaf": "260928-MIK-L81"
-      },
-      "rationale": "The review serialization alone preserves baseline shape while leaving the shared currentness owner and checks complete.",
-      "role": "enforcement"
-    },
-    {
-      "anchor": {
-        "blob": "5ea5df2cf694eec99b36b6695d06c40dbf6e731d",
+        "blob": "35d4cf1464edc9940c6fbd299f919ad2c959405b",
         "content": "sha256:a53365169e8b39dedcd16ca6e961a4b554d97d4ab9eb7faca09bd628cc34ec8e",
         "locator": {
           "kind": "symbol",
@@ -219,25 +201,7 @@
     },
     {
       "anchor": {
-        "blob": "5ea5df2cf694eec99b36b6695d06c40dbf6e731d",
-        "content": "sha256:084c889820ac13c41ce829ca9da28cc8fd479201ebea643531cd56cf76ae4d5a",
-        "locator": {
-          "kind": "symbol",
-          "name": "_governing"
-        }
-      },
-      "id": "RLZ-S35ND0",
-      "invariant": "INV-MS9BMJ",
-      "origin": {
-        "handoffEntry": "L37-frozen-attempts",
-        "leaf": "260928-MIK-L37"
-      },
-      "rationale": "Is the reviewer's own form of the rule: of each owner's rows about one subject it keeps only those from that owner's latest attempt file that answers the subject, so the worklist view shows the judgment that governs. It reads the index's rows and does not go through merged_leaf_history.",
-      "role": "presentation"
-    },
-    {
-      "anchor": {
-        "blob": "5ea5df2cf694eec99b36b6695d06c40dbf6e731d",
+        "blob": "35d4cf1464edc9940c6fbd299f919ad2c959405b",
         "content": "sha256:87dd950d41bd76c27e6902f17c94851c7df49d6461b0ad89a7152dbfcf77cc9f",
         "locator": {
           "kind": "symbol",
@@ -255,8 +219,8 @@
     },
     {
       "anchor": {
-        "blob": "5ea5df2cf694eec99b36b6695d06c40dbf6e731d",
-        "content": "sha256:594b9acc26d0affdeae1932689cf3abd5f0a5f6ec855345bbe6ddf048d34ba79",
+        "blob": "35d4cf1464edc9940c6fbd299f919ad2c959405b",
+        "content": "sha256:80b3d9a19d8c34fbead3b756608e86b81c271de432a59f0b805a8c228e6882b7",
         "locator": {
           "kind": "symbol",
           "name": "_compute_leaf_parts"
@@ -273,7 +237,7 @@
     },
     {
       "anchor": {
-        "blob": "5ea5df2cf694eec99b36b6695d06c40dbf6e731d",
+        "blob": "35d4cf1464edc9940c6fbd299f919ad2c959405b",
         "content": "sha256:b68adbcba4f772f549b2e6e9540d15881adc327c8f53ae204ff7d4bf6d4ba0ea",
         "locator": {
           "kind": "symbol",
@@ -291,7 +255,7 @@
     },
     {
       "anchor": {
-        "blob": "5ea5df2cf694eec99b36b6695d06c40dbf6e731d",
+        "blob": "35d4cf1464edc9940c6fbd299f919ad2c959405b",
         "content": "sha256:3a6ddbbc61d044349950737be174604849a574fb10fb1cfe137b3b3c814dc17d",
         "locator": {
           "kind": "symbol",
@@ -309,7 +273,7 @@
     },
     {
       "anchor": {
-        "blob": "5ea5df2cf694eec99b36b6695d06c40dbf6e731d",
+        "blob": "35d4cf1464edc9940c6fbd299f919ad2c959405b",
         "content": "sha256:251682e00048ea1933419d2aa8f4afb644fec374898474412a95126355e775dd",
         "locator": {
           "kind": "symbol",
@@ -327,7 +291,7 @@
     },
     {
       "anchor": {
-        "blob": "5ea5df2cf694eec99b36b6695d06c40dbf6e731d",
+        "blob": "35d4cf1464edc9940c6fbd299f919ad2c959405b",
         "content": "sha256:4d5f3d4404e73b9a2d98a1d32fdf620ec0e979658e3cb027771e1b082675ec4f",
         "locator": {
           "kind": "symbol",
@@ -345,8 +309,8 @@
     },
     {
       "anchor": {
-        "blob": "5ea5df2cf694eec99b36b6695d06c40dbf6e731d",
-        "content": "sha256:18124b68107b87abdd17b35919b460b95dcbfa93d8693e92470b531ae7de98f3",
+        "blob": "35d4cf1464edc9940c6fbd299f919ad2c959405b",
+        "content": "sha256:402fb9f6b031ec015b4464d0907cc5b08aea3b1ed19ba8f806c34f29ae967f3d",
         "locator": {
           "kind": "symbol",
           "name": "_view"
@@ -358,499 +322,248 @@
         "handoffEntry": "L40-leaf-view-refusal-propagation",
         "leaf": "260928-MIK-L40"
       },
-      "rationale": "Propagates the worklist owner refusal before composing the tree answer. The admitted LeafViewParts supplies worklist only; currentness is computed separately and no aggregate memory diff is composed here.",
+      "rationale": "Propagates the worklist owner refusal before composing the tree answer. The admitted `LeafViewParts` supplies the worklist and an optional code-changes block; this module constructs both and projects both into the answer. Currentness is computed separately and no aggregate memory diff is composed here.",
       "role": "propagation-persistence"
     }
   ],
   "references": {
-    "23": {
-      "note": "The port: refusal, not converted, one focused answer or the leaf-wide view.",
+    "53": {
+      "note": "Request-local lookup reuse, comparison selection and focused dispatch use the actual current path.\n\nAnchor: Current source boundary",
       "targets": [
         {
           "anchor": {
-            "blob": "5ea5df2cf694eec99b36b6695d06c40dbf6e731d",
-            "content": "sha256:3a6ddbbc61d044349950737be174604849a574fb10fb1cfe137b3b3c814dc17d",
+            "blob": "35d4cf1464edc9940c6fbd299f919ad2c959405b",
+            "content": "sha256:8fd377eaf44b5bf8d84306e16f43e1e2de6597cd8db6f756576fe433beae30cb",
             "locator": {
-              "kind": "symbol",
-              "name": "read_review_trees"
+              "end": 223,
+              "kind": "line_range",
+              "start": 139
             }
           },
           "kind": "code"
         }
       ]
     },
-    "24": {
-      "note": "A numbered leaf-wide read is live only for the current number; a focused read reopens.",
+    "54": {
+      "note": "The root view projects currentness, worklist and supplied code-change facts.\n\nAnchor: Current source boundary",
       "targets": [
         {
           "anchor": {
-            "blob": "5ea5df2cf694eec99b36b6695d06c40dbf6e731d",
-            "content": "sha256:9c92527674d0f47ceab571fe67aff14f40ef8cc8f72a2b31257832bab3ab686d",
+            "blob": "35d4cf1464edc9940c6fbd299f919ad2c959405b",
+            "content": "sha256:402fb9f6b031ec015b4464d0907cc5b08aea3b1ed19ba8f806c34f29ae967f3d",
             "locator": {
-              "kind": "symbol",
-              "name": "_comparison"
+              "end": 254,
+              "kind": "line_range",
+              "start": 226
             }
           },
           "kind": "code"
         }
       ]
     },
-    "25": {
-      "note": "The leaf-wide result with its re-keyed currentness.",
+    "55": {
+      "note": "Memo lookup, moved-input retry and process-refusal handling remain explicit.\n\nAnchor: Current source boundary",
       "targets": [
         {
           "anchor": {
-            "blob": "5ea5df2cf694eec99b36b6695d06c40dbf6e731d",
-            "content": "sha256:18124b68107b87abdd17b35919b460b95dcbfa93d8693e92470b531ae7de98f3",
-            "locator": {
-              "kind": "symbol",
-              "name": "_view"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "26": {
-      "note": "Kept parts, one computation, one more when an input moved, then the refusal; process failures are refusals.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "5ea5df2cf694eec99b36b6695d06c40dbf6e731d",
+            "blob": "35d4cf1464edc9940c6fbd299f919ad2c959405b",
             "content": "sha256:a53365169e8b39dedcd16ca6e961a4b554d97d4ab9eb7faca09bd628cc34ec8e",
             "locator": {
-              "kind": "symbol",
-              "name": "_leaf_wide_parts"
+              "end": 304,
+              "kind": "line_range",
+              "start": 257
             }
           },
           "kind": "code"
         }
       ]
     },
-    "27": {
-      "note": "One recorded computation of worklist only; readable sides and settled worklist govern memo eligibility and reads replay to the caller.  Anchor: file",
+    "56": {
+      "note": "Settling checks include decided item states and supplied code-change facts; recorded reads replay in finally.\n\nAnchor: Current source boundary",
       "targets": [
         {
           "anchor": {
-            "blob": "5ea5df2cf694eec99b36b6695d06c40dbf6e731d",
-            "content": "sha256:bc49e2984cd48308fd306bf2fa6e7467240c21bf19b945682638ba128edb2f8b",
+            "blob": "35d4cf1464edc9940c6fbd299f919ad2c959405b",
+            "content": "sha256:80b3d9a19d8c34fbead3b756608e86b81c271de432a59f0b805a8c228e6882b7",
             "locator": {
-              "kind": "file"
+              "end": 334,
+              "kind": "line_range",
+              "start": 307
             }
           },
           "kind": "code"
         }
       ]
     },
-    "28": {
-      "note": "Identifier-shaped keys only are re-spelled.",
+    "57": {
+      "note": "Focused payloads and identifier-shaped key projection stay separate from the leaf-wide body.\n\nAnchor: Current source boundary",
       "targets": [
         {
           "anchor": {
-            "blob": "5ea5df2cf694eec99b36b6695d06c40dbf6e731d",
-            "content": "sha256:dc0ec326b53c9081e2c7254de6fc1c598dcfa41fe0795d2d0d41243cab2c3146",
+            "blob": "35d4cf1464edc9940c6fbd299f919ad2c959405b",
+            "content": "sha256:cdce66acce9e7fe71475d4138a261b00bf6c9678337a891389fe9c49f0012948",
             "locator": {
-              "kind": "symbol",
-              "name": "snake_keys"
+              "end": 391,
+              "kind": "line_range",
+              "start": 337
             }
           },
           "kind": "code"
         }
       ]
     },
-    "29": {
-      "note": "Three Git questions and the completeness of their reads.",
+    "58": {
+      "note": "The public standalone diff delegates to its separately measured aggregate implementation.\n\nAnchor: Current source boundary",
       "targets": [
         {
           "anchor": {
-            "blob": "5ea5df2cf694eec99b36b6695d06c40dbf6e731d",
-            "content": "sha256:4d5f3d4404e73b9a2d98a1d32fdf620ec0e979658e3cb027771e1b082675ec4f",
+            "blob": "35d4cf1464edc9940c6fbd299f919ad2c959405b",
+            "content": "sha256:7f48d7718356a822b2097db4633d1d865ef2834efff79d0cf1ed54fdce4aa490",
             "locator": {
-              "kind": "symbol",
-              "name": "_measured_tree_diff"
+              "end": 489,
+              "kind": "line_range",
+              "start": 397
             }
           },
           "kind": "code"
         }
       ]
     },
-    "30": {
-      "note": "The raw listing with the parsed-diff options.",
+    "59": {
+      "note": "Aggregate diff groups records, sources, history and other without becoming a leaf-wide answer field.\n\nAnchor: Current source boundary",
       "targets": [
         {
           "anchor": {
-            "blob": "5ea5df2cf694eec99b36b6695d06c40dbf6e731d",
-            "content": "sha256:4f733e1ab6cf07fee26124289daf5aab92148b2bb0c5bf7a8333e3e06e418082",
+            "blob": "35d4cf1464edc9940c6fbd299f919ad2c959405b",
+            "content": "sha256:9e26178b34636b3baa763879ac6a2ddac715dbc46fc942de5dfd42a65398f1d6",
             "locator": {
-              "kind": "symbol",
-              "name": "_listed_changes"
+              "end": 545,
+              "kind": "line_range",
+              "start": 492
             }
           },
           "kind": "code"
         }
       ]
     },
-    "31": {
-      "note": "One patch read, repeated once after a failure and then marked incomplete.",
+    "60": {
+      "note": "Exact path listing and bounded retry retain actual standalone patch completeness.\n\nAnchor: Current source boundary",
       "targets": [
         {
           "anchor": {
-            "blob": "5ea5df2cf694eec99b36b6695d06c40dbf6e731d",
-            "content": "sha256:b68adbcba4f772f549b2e6e9540d15881adc327c8f53ae204ff7d4bf6d4ba0ea",
+            "blob": "35d4cf1464edc9940c6fbd299f919ad2c959405b",
+            "content": "sha256:242ecc140f76bd6e00bf8f3d88e2d82c3bdaf652b24342404cda6c2b889a8ba7",
             "locator": {
-              "kind": "symbol",
-              "name": "_patches"
+              "end": 653,
+              "kind": "line_range",
+              "start": 548
             }
           },
           "kind": "code"
         }
       ]
     },
-    "32": {
-      "note": "Patch sections are bound to the exact listed paths.",
+    "61": {
+      "note": "Quoted Git paths, blob recovery and changed-entry grouping belong to the standalone diff.\n\nAnchor: Current source boundary",
       "targets": [
         {
           "anchor": {
-            "blob": "5ea5df2cf694eec99b36b6695d06c40dbf6e731d",
-            "content": "sha256:87dd950d41bd76c27e6902f17c94851c7df49d6461b0ad89a7152dbfcf77cc9f",
+            "blob": "35d4cf1464edc9940c6fbd299f919ad2c959405b",
+            "content": "sha256:0de6bdffdb86fcfc954c11cbbfe97257ab0a0dc9e93b16e5c8a469a5a3730d61",
             "locator": {
-              "kind": "symbol",
-              "name": "_cut_patch"
+              "end": 767,
+              "kind": "line_range",
+              "start": 669
             }
           },
           "kind": "code"
         }
       ]
     },
-    "33": {
-      "note": "The header spellings for either quoting setting.",
+    "62": {
+      "note": "Both live and recorded worklist paths consume isolated review adjuncts, typed verdicts and the current binding owner.\n\nAnchor: Current source boundary",
       "targets": [
         {
           "anchor": {
-            "blob": "5ea5df2cf694eec99b36b6695d06c40dbf6e731d",
-            "content": "sha256:1a7b83b1b277da4dc2a0726815efebb30b59ed14939d84e23f14bdf8384c5a52",
+            "blob": "35d4cf1464edc9940c6fbd299f919ad2c959405b",
+            "content": "sha256:8b0685038c2fa00a0e3c54f186f2ea3def7b3e96d9a20877bd14f8adecf35dec",
             "locator": {
-              "kind": "symbol",
-              "name": "_quoted_git_path"
+              "end": 845,
+              "kind": "line_range",
+              "start": 776
             }
           },
           "kind": "code"
         }
       ]
     },
-    "34": {
-      "note": "One blob batch, with the blob-by-blob recovery marked incomplete.",
+    "63": {
+      "note": "Side currentness is computed against its own code tree and serializes only non-current entries.\n\nAnchor: Current source boundary",
       "targets": [
         {
           "anchor": {
-            "blob": "5ea5df2cf694eec99b36b6695d06c40dbf6e731d",
-            "content": "sha256:251682e00048ea1933419d2aa8f4afb644fec374898474412a95126355e775dd",
-            "locator": {
-              "kind": "symbol",
-              "name": "_documents"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "35": {
-      "note": "Currentness of each side at its own code tree.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "5ea5df2cf694eec99b36b6695d06c40dbf6e731d",
+            "blob": "88e30f8e12521e0ac310f5477de7ff9a732cbd02",
             "content": "sha256:ea6442c4bc3d22d0bbc2140ec45ef2d14072d7e1f939aefbe22c6a694895be5d",
             "locator": {
-              "kind": "symbol",
-              "name": "side_currentness"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "36": {
-      "note": "The live worklist comes from the child on the captured trees and must bind them.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "5ea5df2cf694eec99b36b6695d06c40dbf6e731d",
-            "content": "sha256:b905f32447788cc095fb8b6f9edc20b971fd2f36be44dc277c8526abcfdb45e2",
-            "locator": {
-              "kind": "symbol",
-              "name": "_worklist_view"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "37": {
-      "note": "The pairing test against the comparison's four trees.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "5ea5df2cf694eec99b36b6695d06c40dbf6e731d",
-            "content": "sha256:901fc7b7c8e793dab6b858e52522ccb9fca45874e19d565876dddbbd2aab851c",
-            "locator": {
-              "kind": "symbol",
-              "name": "_bound"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "38": {
-      "note": "Rows about an item's subject and its row subject.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "5ea5df2cf694eec99b36b6695d06c40dbf6e731d",
-            "content": "sha256:a4d789c400e05f658cbf5299a6f7a9fa4d1d0c4e661d85967bbfa58bff9f81ea",
-            "locator": {
-              "kind": "symbol",
-              "name": "_history_rows"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "39": {
-      "note": "Each owner's rows from its latest attempt file.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "5ea5df2cf694eec99b36b6695d06c40dbf6e731d",
-            "content": "sha256:084c889820ac13c41ce829ca9da28cc8fd479201ebea643531cd56cf76ae4d5a",
-            "locator": {
-              "kind": "symbol",
-              "name": "_governing"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "40": {
-      "note": "A moved task document is computed once more; a second move answers inputs_changing and keeps nothing.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "01e2a20863ccb48a974ef6dc523aaf1cfa2b5b85",
-            "content": "sha256:f44f7f2eed3ef68a58aa6edb2d5a6f01d19e411bd2b4e81e40745acbcc4a161a",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_a_task_document_changing_while_the_view_is_computed_is_computed_again"
-            },
-            "path": "mcp/tests/test_reviewer_worklist_reads.py"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "01e2a20863ccb48a974ef6dc523aaf1cfa2b5b85",
-            "content": "sha256:a3c59eb6be04ae6ff34895e6981b3fa4e347eac2e7a7115cba99a58443484e2e",
-            "locator": {
-              "end": 1003,
+              "end": 44,
               "kind": "line_range",
-              "start": 973
+              "start": 15
             },
-            "path": "mcp/tests/test_reviewer_worklist_reads.py"
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "41": {
-      "note": "A child that reads no task document gives the absent view, not a refusal.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "01e2a20863ccb48a974ef6dc523aaf1cfa2b5b85",
-            "content": "sha256:9111c00ba27feb4f70548e74804ee5f8568ddbb1c24001c4dcf7e87e02498307",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_a_worklist_that_reads_no_task_document_is_not_refused_as_changed"
-            },
-            "path": "mcp/tests/test_reviewer_worklist_reads.py"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "01e2a20863ccb48a974ef6dc523aaf1cfa2b5b85",
-            "content": "sha256:80bb95904234ca84ba1534b4cfc7d568be65e6f7f737d0756c69075e97712123",
-            "locator": {
-              "end": 1020,
-              "kind": "line_range",
-              "start": 1006
-            },
-            "path": "mcp/tests/test_reviewer_worklist_reads.py"
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "42": {
-      "note": "An overload from the process owner becomes the reviewer_busy refusal.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "dcea734d01a9e0e0e0f63ee8bfbf5ce1d40ee24d",
-            "content": "sha256:65adab1bfc387fb900f92881d215dc04c32c9fc87838afb427d14dfc3e5a29af",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_overload_is_its_own_refusal_code_with_a_true_action"
-            },
-            "path": "mcp/tests/test_reviewer_worklist_process.py"
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "43": {
-      "note": "Each leaf-wide tree-view body and subject-review body is unchanged between clean and hostile Git configurations. The case explicitly asserts that the tree view carries no knowledge_diff; it neither compares those two bodies to each other nor measures the standalone knowledge diff.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "dcea734d01a9e0e0e0f63ee8bfbf5ce1d40ee24d",
-            "content": "sha256:443c00ec3df518b067e0b38db098cc33a978d3f32f9dfbfab3e7fc022f1787d4",
-            "locator": {
-              "kind": "file"
-            },
-            "path": "mcp/tests/test_reviewer_worklist_process.py"
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "44": {
-      "note": "The view captures nothing itself and is computed once per comparison.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "b9fbd7174980d2bff06e48fcbb124f5605c0da61",
-            "content": "sha256:196f95ccb6ea59ed068e37704ba566888dabc1f4e932077ab56cd1c71bfcfae5",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_the_leaf_wide_view_captures_nothing_itself_and_is_computed_once_per_comparison"
-            },
-            "path": "mcp/tests/test_review_read_latency.py"
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "47": {
-      "note": "The current tree-view fixture proves per-side currentness, computed worklist and linked hunks with no knowledge_diff and no leaf-wide focused entries.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "a630dbb097f2987b418b7f8b477bfe6fcba96132",
-            "content": "sha256:5a43fb42d8cce51ea77b1ac31e28791eabda19d1ab3b31fa0c7b3c10894840ed",
-            "locator": {
-              "end": 278,
-              "kind": "line_range",
-              "start": 242
-            },
-            "path": "mcp/tests/test_review_git_trees.py"
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "48": {
-      "note": "Rows are found by the row subject an item names.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "a630dbb097f2987b418b7f8b477bfe6fcba96132",
-            "content": "sha256:79582a1947c85408de626e1c5eaa801a3e1a75433e409af9ee3f6185e5d25bdb",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_history_rows_are_found_by_the_row_subject_an_item_names"
-            },
-            "path": "mcp/tests/test_review_git_trees.py"
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "49": {
-      "note": "No review path opens a database other than the derived index.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "a630dbb097f2987b418b7f8b477bfe6fcba96132",
-            "content": "sha256:9e50c83bb33d5d0206d2fcd5078e536bf7c5471b2d11edfa30f151bc51983cb2",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_no_review_path_opens_a_database_other_than_the_derived_index"
-            },
-            "path": "mcp/tests/test_review_git_trees.py"
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "50": {
-      "note": "The tree view answers comparison, currentness and worklist",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "5ea5df2cf694eec99b36b6695d06c40dbf6e731d",
-            "content": "sha256:3a6ddbbc61d044349950737be174604849a574fb10fb1cfe137b3b3c814dc17d",
-            "locator": {
-              "kind": "symbol",
-              "name": "read_review_trees"
-            }
+            "path": "mcp/src/agents_remember/application/review_tree_state.py"
           },
           "kind": "code"
         }
       ]
     },
-    "51": {
-      "note": "The leaf-wide answer carries comparison, sides and worklist only",
+    "64": {
+      "note": "The extracted history owner follows item/row subjects and latest owner attempts.\n\nAnchor: Current source boundary",
       "targets": [
         {
           "anchor": {
-            "blob": "5ea5df2cf694eec99b36b6695d06c40dbf6e731d",
-            "content": "sha256:18124b68107b87abdd17b35919b460b95dcbfa93d8693e92470b531ae7de98f3",
+            "blob": "88e30f8e12521e0ac310f5477de7ff9a732cbd02",
+            "content": "sha256:5de4528c9df8c0582d6ba84e5e4d4041b710d386cdd284c5b3c74a4d1188787b",
             "locator": {
-              "kind": "symbol",
-              "name": "_view"
-            }
+              "end": 100,
+              "kind": "line_range",
+              "start": 47
+            },
+            "path": "mcp/src/agents_remember/application/review_tree_state.py"
           },
           "kind": "code"
         }
       ]
     },
-    "52": {
-      "note": "Leaf-wide parts resolve to the worklist or a refusal",
+    "65": {
+      "note": "The current pairing predicate also checks the memory-base tree.\n\nAnchor: Current source boundary",
       "targets": [
         {
           "anchor": {
-            "blob": "5ea5df2cf694eec99b36b6695d06c40dbf6e731d",
-            "content": "sha256:4c935bfac3e23fc54b08f516cfc636ac82a536a3b08e4c898779604822cdf4db",
+            "blob": "ec25892b22ca4d5b42b437c1fd3f4b2c924ac14f",
+            "content": "sha256:dc17ff4f228913616c50052cb3e2d5e3bbb5703bf4dc4b0de9bbcbade080f097",
             "locator": {
-              "kind": "symbol",
-              "name": "worklist"
-            }
+              "end": 57,
+              "kind": "line_range",
+              "start": 46
+            },
+            "path": "mcp/src/agents_remember/application/review_worklist_answers.py"
           },
           "kind": "code"
-        },
+        }
+      ]
+    },
+    "66": {
+      "note": "The child reads persisted work for recorded trees and computes live work before supplying adjunct facts.\n\nAnchor: Current source boundary",
+      "targets": [
         {
           "anchor": {
-            "blob": "5ea5df2cf694eec99b36b6695d06c40dbf6e731d",
-            "content": "sha256:70d75508836f0f68b8409b49564744011bad74377a8c18f1afbc794acdcded5a",
+            "blob": "ebb9479f6b5a06247f609da6c7c5cc6043a3e020",
+            "content": "sha256:76dac756a92940f736744dfd63d7fcdcac9bfa7fc9e2c0114e8a8fca209d5458",
             "locator": {
-              "end": 251,
+              "end": 151,
               "kind": "line_range",
-              "start": 246
-            }
+              "start": 104
+            },
+            "path": "mcp/src/agents_remember/application/reviewer_worklist_child.py"
           },
           "kind": "code"
         }

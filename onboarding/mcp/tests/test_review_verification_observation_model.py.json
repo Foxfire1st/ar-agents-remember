@@ -2,18 +2,39 @@
   "path": "mcp/tests/test_review_verification_observation_model.py",
   "realizes": [],
   "references": {
-    "1": {
-      "note": "The file realizes its current contract at the corrected candidate.",
+    "2": {
+      "note": "Current proof entries describe authored facets and source currentness, not verification run observations.\n\nAnchor: Surviving-source boundary only",
       "targets": [
         {
           "anchor": {
-            "blob": "7027305572393267f2a23cd7b159cc01b5402b03",
-            "content": "sha256:c7552495b68b6d3da2b2e1f34e63885d7dc7a0d1cc3fa6e87f49f2a84e7e96d8",
+            "blob": "026fac6c48fdbd8d9b2e11fd869d715015c09ac7",
+            "content": "sha256:029a49ec780a0f05bc0db3ae7bbc1f6fafaf09fad982a0ebd2479a993e4c9cd7",
             "locator": {
-              "kind": "file"
-            }
+              "end": 58,
+              "kind": "line_range",
+              "start": 34
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/review_judgment.py"
           },
-          "kind": "test"
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The current root payload carries the judgment owner rather than the deleted evidence-model test contract.\n\nAnchor: Surviving-source boundary only",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3a9fbebf751c8e0ce26280a3c2bd35bfe3302c8f",
+            "content": "sha256:d8f7023a73bba41a2b5c124ec1d61a45b95e27ac6f4ae490ad09023ec3e2a1c7",
+            "locator": {
+              "end": 550,
+              "kind": "line_range",
+              "start": 550
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/review.py"
+          },
+          "kind": "code"
         }
       ]
     }

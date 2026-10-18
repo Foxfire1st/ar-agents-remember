@@ -31,8 +31,8 @@ from the tree and never retained with the comparison.
   `refs/ar/review/<task-directory>/`.
 - `ReviewTreeSideState`: `available`, `unavailable-history` (Git can no longer produce the tree; it is named and
   nothing is substituted) or `legacy-unavailable` (a knowledge side recorded before the repository's conversion).
-- `ReviewTreeSide`: repository, tree, and exactly one of `commit` (a committed side) or `ref` (the pin of an
-  uncommitted side) on a side the reviewer recorded.
+- `ReviewTreeSide`: repository and tree with optional `commit`/`ref` addresses. The recorded-side contract
+  uses a commit or pin; this DTO has no validator enforcing their exclusivity and performs no Git read.
 - `ReviewConvertedBase`: the memory commit, the pinned conversion version, the code commit it was anchored at and
   the tree it produced; a reopen re-derives it and checks the tree id rather than pinning it.
 - `ReviewTreeComparisonRecord.same_trees` compares the task, the leaf, the four `(repository, tree)` pairs and the
@@ -45,8 +45,20 @@ from the tree and never retained with the comparison.
 - The diff shapes: `ReviewKnowledgeFileChange` (path, old path, status, patch, truncated),
   `ReviewKnowledgeRecordGroup` (files and the changed entries naming the record as `(entry id, source path,
   change)`), `ReviewKnowledgeSourceGroup` and `ReviewKnowledgeTreeDiff` (records, sources, history, other).
-- `ReviewWorklistView`: `source` (`computed`, `persisted` or `absent`), `bound`, the items verbatim, the history rows
-  without a currency mark (MIK-R09 owns that rule), the gate linkage `changes` and `incomplete`.
+- `ReviewWorklistView` keeps `source` (`computed`, `persisted` or `absent`), `bound`, state/detail,
+  item/history documents, gate linkage `changes` and `incomplete`. The actual owner projects item/history
+  keys to snake_case; this is not byte-verbatim source transport. It now adds gate-owned `item_states`
+  keyed by item identity, with `answered`/`open`/`undecided` and optional witness, row ID and reason.
+  The model does not compute these answers or authenticate the binding. Its optional `code_changes`
+  attribute is excluded from worklist serialization and is an internal carrier for the leaf-wide owner.
+- `ReviewTreesResult.code_changes` is the new public projection of those implementation facts, separate
+  from worklist judgments, authored record changes and on-demand family views. `ReviewCodeChanges`
+  declares facts/unavailable, detail and invariant facts with implementation state, proof/range flags,
+  evidence and unknown reasons; these DTO fields are not a CODE or MEMORY approval.
+- The actual leaf-wide composer carries the worklist and its code facts onto the root result.
+  `_worklist_view` consumes the isolated child's `_review` output, validates its typed values and
+  refuses a complete live child result bound to a different comparison. This wrapper is not an
+  independent second gate predicate.
 - `ReviewTreesResult.entries` (MIK-L31) defaults to `()`: the leaf-wide view never carries entries, because every
   entry's excerpt leaf-wide measured 637 KB on the real repository; only the on-demand cards read fills it.
 - `ReviewTreesResult.lane` and `ReviewTreesResult.file_classification` (MIK-L32) default to `None`: only a lane read
@@ -61,6 +73,11 @@ from the tree and never retained with the comparison.
 ### Invariants And Boundaries
 
 - The record names trees, commits and refs only, never a database path.
+- Constructor shape is not full state admission: these DTOs do not independently enforce that a
+  refusal, optional result fields, bound flag or item verdict actually came from a particular read.
+  The owning readers/gate establish that context.
+- `same_trees` compares task/leaf, repository/tree pairs and converted base, not commit/ref spellings,
+  record number or timestamp.
 
 ### Todos
 
@@ -68,7 +85,8 @@ from the tree and never retained with the comparison.
   the route boundary (`application/review_tree_knowledge.py`, `snake_keys`), so the whole body follows the model
   fields' convention.
 
-`ReviewTreesResult` no longer has a `knowledge_diff` field. The standalone diff models
+`ReviewTreesResult` has no `knowledge_diff` field at either the actual c861abfe BASE or freeze07.
+Its earlier removal is preserved context, not a new removal in this source delta. The standalone diff models
 `ReviewKnowledgeFileChange`, `ReviewKnowledgeRecordGroup`, `ReviewKnowledgeSourceGroup` and
 `ReviewKnowledgeTreeDiff` remain available for shared consumers; their presence does not put patches
 back into the route answer. Comparison records, side/index states, code sides, currentness, worklist,
@@ -85,23 +103,40 @@ No configured live documentation source was available for this pass.
 
 ### Repo-Internal References
 
-- The record schema and the one ref namespace pins live under. [1]
-- The three states a side can resolve to when read back. [2]
-- One tree, kept alive by a commit or a pinning ref. [3]
-- The conversion an unconverted base was read as, recorded by its inputs and tree id. [4]
-- The record, and one comparison being the same task, leaf, four trees and converted base. [5]
-- A knowledge side with its index state and problems; a reopened code side. [6]
-- The diff of the memory trees, grouped by record and by source path. [7]
-- The worklist view: items, history rows without a mark, gate linkage. [8]
-- The route's answer: trees, not converted, or refused; the cards' entries, empty on the leaf-wide view (MIK-R31); the lane or one file's classification, only when asked (MIK-R32). [9]
+- The comparison schema and dedicated review-ref namespace. [1]
+
+- The side state vocabulary distinguishes available, unavailable-history and legacy-unavailable. [2]
+
+- A side names repository/tree and optional commit/ref; this declaration does not enforce exclusive presence. [3]
+
+- Conversion context records its source commit, format version, anchoring code commit and resulting tree. [4]
+
+- Comparison identity uses task, leaf, repository/tree pairs and converted base rather than timestamp, number or commit/ref spelling. [5]
+
+- Knowledge sides carry index state/problems; reopened code sides distinguish available from unavailable history. [6]
+
+- Standalone memory-diff carriers group file changes by record/source and retain history/other populations. [7]
+
+- The worklist carries documents, bound/source metadata, typed gate verdicts and an excluded internal code-facts attribute. [8]
+
+- The public result has route states, comparison/sides/currentness/worklist, new code facts and optional focused entry/lane/file payloads. [9]
+
+- The reopened-code-side carrier remains available, independently of standalone diff shapes. [10]
+
+- The result keeps per-side currentness beside its side descriptors. [11]
+
+- The result retains the worklist and separately adds the public code-facts projection. [12]
+
+- The shared standalone diff carriers remain public exports. [13]
+
+- Shared standalone file/record/source/tree diff definitions survive; they do not imply an embedded leaf-wide patch field. [14]
+
+- The root result has no knowledge_diff field at BASE or current source; its added field is code_changes. [15]
+
+- The actual worklist owner validates child review parts, projects document keys and rejects a complete live result bound to another comparison. [16]
+
+- Gate verdict and implementation-fact DTOs retain different states and optional evidence/reason fields; neither is a review approval. [17]
 
 ### Cross-Repo References
 
-No cross-repo boundary is crossed by this file.
-- The result keeps currentness beside sides [11]
-- The result keeps the worklist where the diff was [12]
-
-- Code sides and shared standalone diff carriers remain; only ReviewTreesResult’s leaf-wide knowledge_diff field is removed. [10]
-- Code sides and shared standalone diff carriers remain; only ReviewTreesResult’s leaf-wide knowledge_diff field is removed. [13]
-- Code sides and shared standalone diff carriers remain; only ReviewTreesResult’s leaf-wide knowledge_diff field is removed. [14]
-- Code sides and shared standalone diff carriers remain; only ReviewTreesResult’s leaf-wide knowledge_diff field is removed. [15]
+No external-system boundary is implemented by this value model. All cited owners are in the same repository.

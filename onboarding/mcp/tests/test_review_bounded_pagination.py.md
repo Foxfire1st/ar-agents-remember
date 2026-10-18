@@ -31,7 +31,6 @@ No Domain Documentation source is configured for this slice.
 - `test_every_page_of_a_large_comparison_is_reachable_without_duplicate_or_loss` supplies the current fixture or assertion described above. [21]
 
 
-- The removed records collection is refused by name on first, unsized, continued and crossed-cursor requests; no page or evidence-channel rows are published. [22]
 
 
 - `test_a_cursor_from_a_moved_generation_is_refused_with_a_new_generation_action` supplies the current fixture or assertion described above. [23]
@@ -48,7 +47,6 @@ No Domain Documentation source is configured for this slice.
 
 - compose_page calls the production review composition and asserts that it answered with a review payload. [27]
 - build_pagination_fixture builds the shared diff fixture, adds extra realization paths and returns its candidate fixture. [28]
-- PaginationFixture holds the diff fixture, recorded subject, extra paths and directory and constructs the review request/resolution. [29]
 - The composition, the real route and the query builder every page is read through. [30]
 - The walk helper and the two independent answer readers the cases compare the published counts with. [31]
 - **A complete comparison is one page: no remainder and no cursor, so a whole selection is never presentable as a truncated one.** [32]
@@ -59,4 +57,7 @@ No Domain Documentation source is configured for this slice.
 - The entry case asserts unpaged subject review reads at both fixture sizes and independently verifies that driving the entry catalogue calls no comparison or view owner. [39]
 - ReviewCollectionPage validates total arithmetic, continuation availability, reset reason and continued-from identity. [40]
 - The transport case checks named input refusals and the page-size bound, including 64 admitted and 65 or negative sizes refused. [41]
-- The lane catalogue registers bounded pagination, and all six exact-scope lifecycle artifact rows retain this module as a consumer. [42]
+
+- The removed records collection is a named refusal on first, unsized, continued and crossed requests. The serialized guard requires the evidence field to be absent, not an empty measured channel. [22]
+- PaginationFixture holds shared test-support fixture state and builds its request/resolution; build_pagination_fixture composes that fixture. Neither is shipped public-store write admission. [29]
+- One unit-regression membership and seven exact-scope lifecycle artifact records name this module. These source declarations are neither a six-row census nor test execution. [42]

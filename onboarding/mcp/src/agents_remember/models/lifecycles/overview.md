@@ -34,7 +34,7 @@ The package marker introduces no facade. The former responses.py session state/p
 
 `LifecycleOperationRecord` is the strict schema-3.0 internal snapshot. It retains accepted identity, generation, revisions, worker ownership, mutation evidence, recovery commits, cancellation and termination evidence, legacy migration proof, preparation, door publication and optional certification selections. The public `LifecycleOperationProjection` is a coherent task-addressed envelope with versioned identity and component bindings, worker and approval observations, recommendations, legal controls and an optional meaningful-state cursor. Its declared fields omit raw operation keys, worker PIDs, leases and process fingerprints; this is not a blanket secrecy guarantee for every nested result value or identity digest.
 
-`LifecycleFinalizeTaskResponse` declares terminal task facts, blockers, cleanup and archive results, projection effects, atomic-series activation facts and completion-seat result sets. Its `agentArchive` defaults to an empty mapping; finalization forwards an archive report when the cleanup or abandon result supplies one.
+`LifecycleFinalizeTaskResponse` declares terminal task facts, blockers, cleanup and archive results, projection effects and atomic-series activation facts. It declares neither completion-seat result sets nor edge proof; the producer emits cleanup/archive/projection and activation facts. Its `agentArchive` defaults to an empty mapping; finalization forwards an archive report when the cleanup or abandon result supplies one.
 
 ### Scheduling, enclosure and private preparation
 
@@ -66,9 +66,19 @@ Recorded judgments may additionally retain evidence custody. The serializer omit
 
 The measurement vocabulary distinguishes not-measured, measured and unavailable observations. A binding reports `unavailable` when measurement failed, `stale` when a measured value disagrees, `not-measured` when declared identities remain uncovered, and otherwise `current`. An empty mapping is a completed measurement with no values, not a measurement failure; coverage of the assessment's declared identities still decides its binding state. The comparison does not decide equivalence, and stale judgments remain readable.
 
-Subject projections distinguish `none-recorded` from `not-measured` and `unavailable`. Currentness counts must describe and partition the entries. Their status follows stale, unavailable, unresolved, not-measured, then current precedence. `assessment_state_for` accepts explicit statuses rather than an instruction to assume currentness.
+Subject projections distinguish `none-recorded` from `not-measured` and `unavailable`. Currentness counts must describe and partition the entries. Independently, unresolvedCount must equal the number of entries whose disposition is unresolved, not merely be bounded by assessmentCount. Their status follows stale, unavailable, unresolved, not-measured, then current precedence. `assessment_state_for` accepts explicit statuses rather than an instruction to assume currentness.
 
 Direct operation input carries optional leafId as retry identity while old journals default it to None. Shared evidence-dependency capacity follows from bounded record populations, including coherence judgments and assessments; valid unrelated evidence need not be coarsened to a bare historical count. Model bounds still refuse before artifact writes.
+
+### Retained comparison availability, not the live judgment pane
+
+`comparison_records.py` defines ComparisonAssessmentAvailability for immutable comparison manifests.
+An answered collection requires its recorded count; none_recorded requires zero, recorded requires a
+positive count, and unanswered states carry no count plus a recovery action. These guards constrain
+supplied values; they do not independently measure the collection or authenticate artifact bytes.
+Retaining this descriptor does not restore the removed observation/evidence/assessment reviewer pane.
+The current live review has its separate judgment/proof contract. Read its concrete model card for
+manifest-versus-physical-artifact validation ownership.
 
 ## Invariants and boundaries
 
@@ -88,6 +98,9 @@ No lifecycle authority or task-status record was assigned to this review. Histor
 The original claim that normal closeout/integration workers do not select, populate or require retained certification fields is not established by model optionality or the examined generation constructor alone. Confirmation belongs to the executing workers. Likewise, deletion provenance for `door_response.py`, `successor.py` and the retired ledger intent, schema-1 removability, queue-invalidation survival, and the complete integration/refusal behavior remain outside the deciding source excerpts examined here. These uncertainties do not assign a new lifecycle status or change standing intent.
 
 ## File-Level Onboarding Map
+
+- [comparison_records.py](comparison_records.py.md) — retained manifest availability, not a live pane.
+- [review_assessment.py](review_assessment.py.md) — stored assessment/count/currentness projection.
 
 - [`__init__.py.md`](__init__.py.md) — side-effect-free package marker.
 - [`finalize.py.md`](finalize.py.md) — terminal task-finalization response.
@@ -109,7 +122,7 @@ Read the focused model card, then its producer and consumer references. Use the 
 
 
 - Native task stage/activity/eventAt is declared separately; the removed session response/state vocabulary is not an operative model in this route. [1]
-- Finalization exposes edge proof and completion-seat result sets. [2]
+- Finalization declares terminal facts, cleanup/archive and activation facts; it declares neither edge proof nor completion-seat result sets. [2]
 - Asynchronous operation records keep private execution identity out of the declared public projection fields. [3]
 - Recovery records have code and memory-content output-commit fields. [4]
 - A filtered content head does not replace actual Git head/tree facts. [5]
@@ -125,8 +138,11 @@ Read the focused model card, then its producer and consumer references. Use the 
 - Prepare consumes the shared publication input statement. [15]
 - Preparation output-command requirements are conditional on retained command history; transitions preserve original observations. [16]
 - Measured binding status separates failure, disagreement and incomplete coverage. [17]
-- Subject counts and status must describe the actual entries. [18]
+
 - Finalization forwards supplied agent archive reports. [19]
 
 - The exact assessment dependency policy and record-to-assessment edge are separately constructed. [20]
 - The snapshot and memory-preparation consumers distinguish filtered content from actual Git trees. [21]
+
+- Currentness partitions entries while unresolvedCount independently equals their unresolved dispositions; status follows the actual recorded population. [18]
+- ComparisonAssessmentAvailability is a retained manifest descriptor, not a current reviewer channel: answered counts and recovery requirements are structurally checked, not independently measured or semantically endorsed. [22]

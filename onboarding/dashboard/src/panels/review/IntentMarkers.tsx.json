@@ -1,13 +1,31 @@
 {
   "path": "dashboard/src/panels/review/IntentMarkers.tsx",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "35af2c8458b2bd51d363ec1f220ab9e592467e3d",
+        "content": "sha256:f2ba8fdf7dd4e84df217e6357bb735be4a4db78d4a62f9116f5ce393e3d0b233",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-15WVXB",
+      "invariant": "INV-ECF6G4",
+      "origin": {
+        "handoffEntry": "MIK-R67@v2 by-design 3",
+        "leaf": "260928-MIK-L57"
+      },
+      "rationale": "Reveals marked changes in their complete collapsed-run context instead of hiding neighboring marks.",
+      "role": "presentation"
+    }
+  ],
   "references": {
     "1": {
       "note": "The module's own statement: marks from the one classification, in the diff's own gutter; no editing, commenting or assessment.\n\nAnchor: \"Every mark comes from the one per-file classification (MIK-R32)\"; \"Nothing here edits, comments on or assesses a change.\"",
       "targets": [
         {
           "anchor": {
-            "blob": "9cc44889e1ae01bfa57db6a0f979fdd404e3dabf",
+            "blob": "35af2c8458b2bd51d363ec1f220ab9e592467e3d",
             "content": "sha256:198b98943a2907fadbea6a8c3c2d2e2d99c66f3ae1b55170e0f02687ffb403cc",
             "locator": {
               "end": 7,
@@ -24,7 +42,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9cc44889e1ae01bfa57db6a0f979fdd404e3dabf",
+            "blob": "35af2c8458b2bd51d363ec1f220ab9e592467e3d",
             "content": "sha256:c5b2075833e60d243bd8dcdc692b1be16dc1454a340b7622ed48ac0a3a5e4c50",
             "locator": {
               "kind": "symbol",
@@ -35,7 +53,7 @@
         },
         {
           "anchor": {
-            "blob": "9cc44889e1ae01bfa57db6a0f979fdd404e3dabf",
+            "blob": "35af2c8458b2bd51d363ec1f220ab9e592467e3d",
             "content": "sha256:ba8d7b7983fb62ba83c62531f9b591d503b79dde054a0aa1fc3025a53cb54642",
             "locator": {
               "kind": "symbol",
@@ -80,12 +98,29 @@
         }
       ]
     },
+    "14": {
+      "note": "Collapsed runs expand whole: The full hunk context and neighbouring marks must remain visible; expanding only the clicked line would hide adjacent attribution.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4706a83eea5f4a686f850036c79c40b13328d5a6",
+            "content": "sha256:29969799cd0e15a896993191e961070b630a3e5a8991e8255fe6fdc6d202cdbf",
+            "locator": {
+              "kind": "symbol",
+              "name": "expandMarkedRuns"
+            },
+            "path": "dashboard/src/panels/file-viewer/markGutter.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
     "2": {
       "note": "A pane's input, named so a return lands in the pane a marker was followed from.",
       "targets": [
         {
           "anchor": {
-            "blob": "9cc44889e1ae01bfa57db6a0f979fdd404e3dabf",
+            "blob": "35af2c8458b2bd51d363ec1f220ab9e592467e3d",
             "content": "sha256:89a3e9e3543ed7ac2acb10c9fe1b5328ae1d9f05c870247d0a2601f90b56e44d",
             "locator": {
               "kind": "symbol",
@@ -96,7 +131,7 @@
         },
         {
           "anchor": {
-            "blob": "9cc44889e1ae01bfa57db6a0f979fdd404e3dabf",
+            "blob": "35af2c8458b2bd51d363ec1f220ab9e592467e3d",
             "content": "sha256:53806678add605b6b4be32c75f300791f7fab0bf0050a22ea6c69f84a16a6e07",
             "locator": {
               "kind": "symbol",
@@ -112,7 +147,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9cc44889e1ae01bfa57db6a0f979fdd404e3dabf",
+            "blob": "35af2c8458b2bd51d363ec1f220ab9e592467e3d",
             "content": "sha256:2343401d5929bb1bcb5579bcf909a7f8d091d810501c633701dbea99ebae117f",
             "locator": {
               "kind": "symbol",
@@ -123,7 +158,7 @@
         },
         {
           "anchor": {
-            "blob": "9cc44889e1ae01bfa57db6a0f979fdd404e3dabf",
+            "blob": "35af2c8458b2bd51d363ec1f220ab9e592467e3d",
             "content": "sha256:a2c4f25f79f714247bc38b9f8630b515864faa51e5376da64eb04a43156ad2c4",
             "locator": {
               "kind": "symbol",
@@ -139,7 +174,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9cc44889e1ae01bfa57db6a0f979fdd404e3dabf",
+            "blob": "35af2c8458b2bd51d363ec1f220ab9e592467e3d",
             "content": "sha256:8740af6c5674a94c7df3fa3cc33e720779590594e897bae8172f9187de47fe0d",
             "locator": {
               "kind": "symbol",
@@ -150,7 +185,7 @@
         },
         {
           "anchor": {
-            "blob": "9cc44889e1ae01bfa57db6a0f979fdd404e3dabf",
+            "blob": "35af2c8458b2bd51d363ec1f220ab9e592467e3d",
             "content": "sha256:6eddfcfe89962c16b5a292dde70b6eefbbff7b75bc494203c02353784da15d00",
             "locator": {
               "end": 64,
@@ -167,7 +202,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9cc44889e1ae01bfa57db6a0f979fdd404e3dabf",
+            "blob": "35af2c8458b2bd51d363ec1f220ab9e592467e3d",
             "content": "sha256:34217c32f6fd01bc01267731a3440774d562a947fd4840404838a83a045d72cc",
             "locator": {
               "kind": "symbol",
@@ -178,7 +213,7 @@
         },
         {
           "anchor": {
-            "blob": "9cc44889e1ae01bfa57db6a0f979fdd404e3dabf",
+            "blob": "35af2c8458b2bd51d363ec1f220ab9e592467e3d",
             "content": "sha256:7917a5bc13886ec95b9caf0bad5f56c3315338a14080f54217357aacf76c9b41",
             "locator": {
               "kind": "symbol",
@@ -194,7 +229,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9cc44889e1ae01bfa57db6a0f979fdd404e3dabf",
+            "blob": "35af2c8458b2bd51d363ec1f220ab9e592467e3d",
             "content": "sha256:7677b544b0a58f82f6e075e6079034f2b644a21d161475bcb1439dcd25fb5761",
             "locator": {
               "kind": "symbol",
@@ -205,7 +240,7 @@
         },
         {
           "anchor": {
-            "blob": "9cc44889e1ae01bfa57db6a0f979fdd404e3dabf",
+            "blob": "35af2c8458b2bd51d363ec1f220ab9e592467e3d",
             "content": "sha256:760a621c045d90601f8e3fcff468369a3f1d631453fbb0fd75452a187bcc58ae",
             "locator": {
               "kind": "symbol",
@@ -216,7 +251,7 @@
         },
         {
           "anchor": {
-            "blob": "9cc44889e1ae01bfa57db6a0f979fdd404e3dabf",
+            "blob": "35af2c8458b2bd51d363ec1f220ab9e592467e3d",
             "content": "sha256:3ca32808ff9d0cc6c668f4657626fdc203b62330ec9c094ee042a7485259b541",
             "locator": {
               "kind": "symbol",
@@ -232,7 +267,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9cc44889e1ae01bfa57db6a0f979fdd404e3dabf",
+            "blob": "35af2c8458b2bd51d363ec1f220ab9e592467e3d",
             "content": "sha256:d0a53eb545ca362ceb43b2a853256e8a44c2b17391c6d3a425da7d506f6e09bf",
             "locator": {
               "kind": "symbol",
@@ -243,7 +278,7 @@
         },
         {
           "anchor": {
-            "blob": "9cc44889e1ae01bfa57db6a0f979fdd404e3dabf",
+            "blob": "35af2c8458b2bd51d363ec1f220ab9e592467e3d",
             "content": "sha256:5719d3559c74924526debec476ee66e7ae00b137167270f1919a327aa137ab23",
             "locator": {
               "kind": "symbol",
@@ -254,7 +289,7 @@
         },
         {
           "anchor": {
-            "blob": "9cc44889e1ae01bfa57db6a0f979fdd404e3dabf",
+            "blob": "35af2c8458b2bd51d363ec1f220ab9e592467e3d",
             "content": "sha256:0df8ca1395e587080a8590f6b022032247a1efe7bfbff4d686eb0c0405dca644",
             "locator": {
               "kind": "symbol",
@@ -266,37 +301,16 @@
       ]
     },
     "8": {
-      "note": "Card excerpts: only the drawn sides compared (review R1 F1); an unchanged file's card never active.",
+      "note": "Excerpt windows use only resolved drawn sides; drawnSidesMatch compares their blobs, and useExcerptMarking reads only changed files and requests excerpt pending presentation.",
       "targets": [
         {
           "anchor": {
-            "blob": "9cc44889e1ae01bfa57db6a0f979fdd404e3dabf",
-            "content": "sha256:176802e693b493038de71fd6b289003744970c02fb3ed37b7961e017bb6bb0e2",
+            "blob": "35af2c8458b2bd51d363ec1f220ab9e592467e3d",
+            "content": "sha256:cb109532940ac64f86e99c351b8cc6acadef38aa48f5e2f1917abaf92fc42136",
             "locator": {
-              "kind": "symbol",
-              "name": "excerptWindow"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "9cc44889e1ae01bfa57db6a0f979fdd404e3dabf",
-            "content": "sha256:3564649a4d4a827324e90f65bc3fc6f6662e712301dcdfb0a96345620682d0ce",
-            "locator": {
-              "kind": "symbol",
-              "name": "drawnSidesMatch"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "9cc44889e1ae01bfa57db6a0f979fdd404e3dabf",
-            "content": "sha256:6efb39f0ef04f2bfa09f7385d6e45542d90f98e9249a685ae4018cca6790c19e",
-            "locator": {
-              "kind": "symbol",
-              "name": "useExcerptMarking"
+              "end": 523,
+              "kind": "line_range",
+              "start": 459
             }
           },
           "kind": "code"
@@ -304,12 +318,12 @@
       ]
     },
     "9": {
-      "note": "Why a changed file shows no marks: unlisted, loading, unavailable or other content; never silence (review R1 F5).",
+      "note": "Why a changed file has no drawn marks: unlisted, visible pending, unavailable or other content; excerpt pending text is intent marks loading…, while full-file default wording is unchanged.",
       "targets": [
         {
           "anchor": {
-            "blob": "9cc44889e1ae01bfa57db6a0f979fdd404e3dabf",
-            "content": "sha256:02baeb7e92de6a8e9e0767b179f1993bbca2c78946f33acfa01766a477b0ee41",
+            "blob": "35af2c8458b2bd51d363ec1f220ab9e592467e3d",
+            "content": "sha256:72931e79bd41ae7bc7f5c35fa722441b782c57f417d591e58aff67fa91d94a8b",
             "locator": {
               "kind": "symbol",
               "name": "MarkReadNote"

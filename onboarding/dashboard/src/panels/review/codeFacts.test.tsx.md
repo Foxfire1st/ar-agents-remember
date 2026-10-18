@@ -1,0 +1,30 @@
+# dashboard/src/panels/review/codeFacts.test.tsx
+
+## Governing Overview
+
+[Owning route overview](../overview.md)
+
+## Purpose
+
+Document the assertion and fixture obligations declared by this test source.
+
+## Code Commentary
+
+Synthetic leaf facts assert code-only rows only under known unchanged meaning, no unknown relabeling, late-facts row/count/announcement/traversal without selection/focus/scroll movement, and comparison-bound loading/unavailable summary. Native scroll anchoring is simulated in DOM, not browser acceptance.
+
+### Declared Assertions
+
+- `it('does not relabel unknown recorded meaning as a code-only change', () => {`
+- `it('preserves the real ancestor scroll container across native anchoring on facts arrival', () => {`
+- `it('adds an unread member without moving the selected node, focus or scroll; traversal reaches it', () => {`
+- `it('does not use facts of another comparison and distinguishes missing and unavailable', () => {`
+
+This is a declaration inventory, not a collected parametrized-case total or execution result.
+
+### Evidence Boundary
+
+The source declares these checks. This card does not attest that pytest/Vitest, a native host, a real browser or an installed producer ran on this candidate. Controlled or captured inputs qualify only the operations named above.
+
+## Evidence
+
+- Synthetic leaf facts assert code-only rows only under known unchanged meaning, no unknown relabeling, late-facts row/count/announcement/traversal without selection/focus/scroll movement, and comparison-bound loading/unavailable summary. Native scroll anchoring is simulated in DOM, not browser acceptance. [1]

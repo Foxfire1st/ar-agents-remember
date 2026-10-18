@@ -2,34 +2,18 @@
   "path": "dashboard/src/panels/review/walkStore.INV-PPPPPP.captured.json",
   "realizes": [],
   "references": {
-    "3": {
-      "note": "The served answer, whole.",
+    "5": {
+      "note": "The current retained JSON input supplies the literal identities, response states and populations summarized above; these are fixture facts, not live project knowledge or fresh execution evidence.",
       "targets": [
         {
           "anchor": {
-            "blob": "7b89b691e9241763951f9616012ddf698f771030",
-            "content": "sha256:e81ea3f2d64f0bfe251b6d8e6da6a71cb15383a969a92c2b72269744219f5f01",
+            "blob": "d4bd8dac5f6bd425dc646b4aad80b99aa08ac352",
+            "content": "sha256:729b47d248eec71e40a663a6077d54aa2e8c3b3508b67e16c4f50ca8e8f28063",
             "locator": {
-              "kind": "file"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "4": {
-      "note": "Its receipt row: route, parameters, status, hash and size.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "9e2d5fc47c3059a144d38ab2cbd0adc1b5034111",
-            "content": "sha256:e9ff5f1515ed587c7b9d43909648967682f199ff17811bc53323bc4d9e732938",
-            "locator": {
-              "end": 83,
+              "end": 1,
               "kind": "line_range",
-              "start": 69
-            },
-            "path": "dashboard/src/panels/review/walkStore.capture-provenance.json"
+              "start": 1
+            }
           },
           "kind": "code"
         }

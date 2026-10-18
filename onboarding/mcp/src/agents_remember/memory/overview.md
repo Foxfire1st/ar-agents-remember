@@ -13,7 +13,7 @@ The route includes baseline adoption, bounded legacy carryover, conversion and s
 
 MIK-R109 adds reverse-locator queries on `KnowledgeIndex`: `entry_sidecar`/`entry_sidecars` identify declaring sidecars, `record_paths` identifies authoritative record files, and `uuid_text_ids` resolves projected UUIDs to text IDs. They read the existing index tables; schema, derived-cache custody and text authority stay unchanged. Caller-visible naming/state projection remains in the application layer.
 
-A selected Git tree is read through objects without checkout; working-directory identity is captured with disposable Git index/object storage. Indexed JSON supplies parsed content. Nonexcluded onboarding Markdown and indexed-record Markdown companions ride alongside it unparsed for card and decision/facet comparison; record prose needs its indexed JSON sibling, onboarding prose does not. The builder skips Markdown before decoding JSON. Other tracked bytes affect the captured tree key without becoming indexed documents; derived route caches, hidden paths and censuses stay excluded.
+A selected Git tree is read through objects without checkout; working-directory identity is captured with disposable Git index/object storage. Indexed JSON supplies parsed content. Nonexcluded onboarding Markdown and indexed-record Markdown companions ride alongside it unparsed for card and decision/facet comparison; record prose needs its indexed JSON sibling, onboarding prose does not. The builder skips Markdown before decoding JSON. Other tracked bytes affect the captured tree key without becoming indexed documents; derived route caches, paths under hidden directories and censuses stay excluded.
 
 The builder parses recorded files, writes `ix_*` relationships and projects the surviving logical tables. Parsing/schema/location/duplicate-ID problems name the offending file and make the index partial; cross-document integrity belongs to the knowledge validator. A complete build is consequently not a substitute for validator acceptance. The query surface carries tree key, converted state, completeness and problems in `Answer` values for its substantive lookups. The UUID-to-text-ID helper returns a plain optional string rather than an `Answer`.
 
@@ -81,7 +81,7 @@ The manifest read records the digest of exactly its read bytes, absence or named
 
 `legacy_db.py` is a read-only export boundary rather than a retained canonical writer. It exports invariant/family heads with derived IDs, preserved legacy identity and origin, revision position in predecessor chains, empty family routes and legacy-unassessed admission. Realizations retain recorded blob/locator identity and compute content from that recorded blob, preserving visible staleness; derived-ID collisions refuse by name. `inputs.py` owns input acquisition and finished-file publication.
 
-`base.py` converts an unconverted comparison base at its own paired code commit and the candidate's pinned version, keeping mechanical conversion separate from semantic change. Crossing moves leaf no-impact markers into source-bound history: each file row binds its paired-commit blob or absent sentinel; an overview binds every tracked source below its route. That full provenance set is not automatically a later changed-path-only answer, so currency may require a new row. An unreadable paired tree raises a markers-step CrossingError, not invented absence. Structural converted merges preserve version disagreement and authored conflicts; commit validation remains the managed consumer's responsibility.
+`base.py` converts an unconverted comparison base at its own paired code commit when the code store holds that commit and otherwise at the caller-supplied code commit, at the candidate's pinned version, keeping mechanical conversion separate from semantic change. Crossing moves leaf no-impact markers into source-bound history: each file row binds its paired-commit blob or absent sentinel; an overview binds every tracked source below its route. That full provenance set is not automatically a later changed-path-only answer, so currency may require a new row. An unreadable paired tree raises a markers-step CrossingError, not invented absence. Structural converted merges preserve version disagreement and authored conflicts; commit validation remains the managed consumer's responsibility.
 
 `crossing.py` merges Markdown by lines, sidecar references by number, realizes/proves by entry ID, and records/other JSON by fields. Mechanical anchor fields are blob, content and line numbers. Authored-versus-mechanical decisions preserve the authored side whole; both-mechanical changes choose incoming; deletion defeats a merely mechanical modification. Differing authored edits remain curator conflicts. Reference alignment moves prose markers together with their reference mapping rather than requiring manual curator renumbering. Conflict markers are explicit validator-refused JSON, not silent acceptance of one side; record conflict resolution belongs to the writer and increments beyond the higher revision. Crossing does not re-resolve anchors: later reads report staleness.
 
@@ -101,7 +101,9 @@ Source measurement and attribution share one population and one absence predicat
 
 Converted adoption requires validation and refuses legacy-format cards independently of accepting drift. Legacy carryover does not write converted targets. Structural crossing resolves mechanical differences under declared rules while preserving authored conflicts for the curator. Prevalidation preparation, conditional ref publication, per-file atomic publication and multi-file rollback are different guarantees and must be described at their actual scope.
 
-Current review retains curator-owned assessments/evidence and their authority availability. Detection signals, verification observations, evidence claims and the removed authored-effects matrix remain unavailable without measured counts. Proof entries and worklist history retain their own answers; neither substitutes for a retired canonical supporting-record channel. No cross-repository authority contract is established by this overview merely because lifecycle helpers address external memory or readers refer to code objects.
+Current tree review requires the judgment pane rather than projecting supporting-record channel bags, curator-assessment displays or applicability summaries. The pane carries this leaf’s selected-subject history rows in attempt order and proof entries with authored facets and after-code currentness; these are not executed proof results or inferred semantic conclusions. Measured no judgment and unreadable history remain distinct. Task context has no selected knowledge subject and reports unavailable judgment rather than an empty successful collection. No cross-repository authority contract is established by this overview merely because lifecycle helpers address external memory or readers refer to code objects.
+
+Historical pre-L57 supporting-record contract, not a current wire or collection producer: Current review retains curator-owned assessments/evidence and their authority availability. Detection signals, verification observations, evidence claims and the removed authored-effects matrix remain unavailable without measured counts. Proof entries and worklist history retain their own answers; neither substitutes for a retired canonical supporting-record channel.
 
 ## Historical And Verification Limits
 
@@ -121,6 +123,14 @@ Earlier claims that the installed runtime never reached conversion/index/census 
 
 Historical test passes, counts, performance figures (including the anchor memo's approximately 1.3–1.6 seconds to 0.3 seconds), golden-digest claims and delivery statements are inherited observations, not fresh acceptance. This proposal examined all supplied card prose and bounded source witnesses at the named checkout. It ran no product code or tests and makes no execution, publication or certification verdict. Old witnesses not examined or no longer present remain explicitly historical/uncertain.
 
+## Historical Reference Provenance
+
+These retired source accounts preserve earlier intent only. Their former citation numbers are inert, not current source guarantees.
+
+- Historical pre-L57 reference account only; the named supporting-record acquisition/availability/applicability owner is removed, not a current wire guarantee: Retained reference account (no fresh execution or acceptance inferred): Current record owner marks retired classes unavailable. (historical reference 28; retired in L57)
+
+- Historical pre-L57 reference account only; the named supporting-record acquisition/availability/applicability owner is removed, not a current wire guarantee: Retired supporting-record channels remain unavailable without fabricated counts or proof/worklist substitutions. (historical reference 166; retired in L57)
+
 ## Evidence
 - Retained reference account (no fresh execution or acceptance inferred): A missing object against a Git failure. [2]
 - Retained reference account (no fresh execution or acceptance inferred): Entries at or under a directory, and of the files directly in it. [5]
@@ -138,7 +148,6 @@ Historical test passes, counts, performance figures (including the anchor memo's
 - Retained reference account (no fresh execution or acceptance inferred): **Its first consumer, which derives the whole generation layout from it.** [25]
 - Retained reference account (no fresh execution or acceptance inferred): The per-file detail for the module that gained the export: the durable root and the shipped value it returns. [26]
 - Retained reference account (no fresh execution or acceptance inferred): The per-file detail for the module that gained the export. [27]
-- Retained reference account (no fresh execution or acceptance inferred): Current record owner marks retired classes unavailable. [28]
 - Retained reference account (no fresh execution or acceptance inferred): The two operations and twelve codes the merge added to the shared vocabulary. [39]
 - Retained reference account (no fresh execution or acceptance inferred): **The read half's selection policy: `F0` frozen before membership expansion, the advertised-and-untraversed frontier, and the declared item order.** [41]
 - Retained reference account (no fresh execution or acceptance inferred): Whole-item paging over an already-selected scope. [42]
@@ -207,7 +216,6 @@ Historical test passes, counts, performance figures (including the anchor memo's
 - Converted card authoring prepares all cards, reports refusals, then writes passing Markdown and sidecar files consecutively. [163]
 - Legacy export preserves recorded anchor identity; crossing keeps authored conflicts explicit and separates mechanical edits. [164]
 - Census validation precedes per-file atomic writes; baseline-last creation has an explicit interrupted-creation state. [165]
-- Retired supporting-record channels remain unavailable without fabricated counts or proof/worklist substitutions. [166]
 - Durable task reports have one shared root, distinct from the single-file publication route. [167]
 
 - Unparsed onboarding versus indexed-record prose companions. [168]
@@ -242,3 +250,7 @@ Historical test passes, counts, performance figures (including the anchor memo's
 - Captured bytes match a disposable captured tree; sparse-checkout omission is treated distinctly from deletion. [150]
 - The cache refuses a Git-worktree location and evicts by age/size around temporary-file publication. [153]
 - Anchor observation retains two named availability residuals and exact-blob identity can lack a resolved range. [158]
+
+- The response requires judgment and retains knowledge/source identity without the removed supporting-record fields. [171]
+- Selected-subject history and membership rows are rendered in attempt order, with proof entries supplied separately and explicit none/unavailable states. [172]
+- The regression asserts required judgment and absence of removed wire channels; this is source/assertion evidence, not a fresh test run. [173]

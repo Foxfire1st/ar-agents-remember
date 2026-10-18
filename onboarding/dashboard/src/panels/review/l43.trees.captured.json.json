@@ -2,15 +2,17 @@
   "path": "dashboard/src/panels/review/l43.trees.captured.json",
   "realizes": [],
   "references": {
-    "1": {
-      "note": "The captured body preserves its response state and comparison-bound facts.",
+    "2": {
+      "note": "The current retained JSON input supplies the literal identities, response states and populations summarized above; these are fixture facts, not live project knowledge or fresh execution evidence.",
       "targets": [
         {
           "anchor": {
-            "blob": "b3aa06b2b287c6bd2a1d298daab685c9ef8d3322",
-            "content": "sha256:4b0417cc7ad038c674bdf32b7d25e568bec5d0fc8f01372b510995fba3300af9",
+            "blob": "752d87d7cd0727cf645af246dcab65c33d1136bf",
+            "content": "sha256:b431e06d15052b48f39082d0c3c76b8145b4f813f54e9d73eb2b57962be4b650",
             "locator": {
-              "kind": "file"
+              "end": 1,
+              "kind": "line_range",
+              "start": 1
             }
           },
           "kind": "code"

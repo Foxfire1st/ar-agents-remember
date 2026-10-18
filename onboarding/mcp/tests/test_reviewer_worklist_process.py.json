@@ -3,7 +3,7 @@
   "proves": [
     {
       "anchor": {
-        "blob": "dcea734d01a9e0e0e0f63ee8bfbf5ce1d40ee24d",
+        "blob": "27133970f3efd75083fdda0b036762cfe19db511",
         "content": "sha256:1a203303ad32e30c6354249d3bd6b29ea0acebd5cdac69545ad0679462fc8b1f",
         "locator": {
           "kind": "symbol",
@@ -20,7 +20,24 @@
     },
     {
       "anchor": {
-        "blob": "dcea734d01a9e0e0e0f63ee8bfbf5ce1d40ee24d",
+        "blob": "27133970f3efd75083fdda0b036762cfe19db511",
+        "content": "sha256:42be1e85887e8380aa4e6c443a4b00a393457ad373cc0e3267e89cec9950e2e6",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_each_published_diff_command_is_the_argument_list_its_measurement_executes"
+        }
+      },
+      "facet": "The published rename and raw/numstat commands are exactly the argument lists the measurement executed and carry PARSED_DIFF_OPTIONS; the blob prefix, colour and external-driver options are asserted by a separate test.",
+      "id": "PRF-5TRTHD",
+      "invariant": "INV-HVGENX",
+      "origin": {
+        "handoffEntry": "L57-M1-facet-PRF-E5KX05-replacement",
+        "leaf": "260928-MIK-L57"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "27133970f3efd75083fdda0b036762cfe19db511",
         "content": "sha256:aea809871ea10d0252b4d985e8b91cb1df3d5efdca848ccb5f7dd05606e4d00e",
         "locator": {
           "kind": "symbol",
@@ -37,7 +54,7 @@
     },
     {
       "anchor": {
-        "blob": "dcea734d01a9e0e0e0f63ee8bfbf5ce1d40ee24d",
+        "blob": "27133970f3efd75083fdda0b036762cfe19db511",
         "content": "sha256:2e80ca17a62ea2cd04e66fe7e1a061de010131c68575711ce6615780c775d4da",
         "locator": {
           "kind": "symbol",
@@ -54,7 +71,7 @@
     },
     {
       "anchor": {
-        "blob": "dcea734d01a9e0e0e0f63ee8bfbf5ce1d40ee24d",
+        "blob": "27133970f3efd75083fdda0b036762cfe19db511",
         "content": "sha256:c480b51e7330af8955178237e13e26612245ef0b0df995ffb799bd32ef3ebb6d",
         "locator": {
           "kind": "symbol",
@@ -71,7 +88,7 @@
     },
     {
       "anchor": {
-        "blob": "dcea734d01a9e0e0e0f63ee8bfbf5ce1d40ee24d",
+        "blob": "27133970f3efd75083fdda0b036762cfe19db511",
         "content": "sha256:280c70155e4161ef2d657b9f29896b7167a326d1eef01e46768f2cb6bc945b6b",
         "locator": {
           "kind": "symbol",
@@ -88,24 +105,7 @@
     },
     {
       "anchor": {
-        "blob": "dcea734d01a9e0e0e0f63ee8bfbf5ce1d40ee24d",
-        "content": "sha256:42be1e85887e8380aa4e6c443a4b00a393457ad373cc0e3267e89cec9950e2e6",
-        "locator": {
-          "kind": "symbol",
-          "name": "test_each_published_diff_command_is_the_argument_list_its_measurement_executes"
-        }
-      },
-      "facet": "The combined raw/numstat argument tuple of the source inventory holds PARSED_DIFF_OPTIONS, and the worklist's blob diff holds the prefix options, --no-color and --no-ext-diff.",
-      "id": "PRF-E5KX05",
-      "invariant": "INV-HVGENX",
-      "origin": {
-        "handoffEntry": "L81-A003-replacement-PRF-14R2KC",
-        "leaf": "260928-MIK-L81"
-      }
-    },
-    {
-      "anchor": {
-        "blob": "dcea734d01a9e0e0e0f63ee8bfbf5ce1d40ee24d",
+        "blob": "27133970f3efd75083fdda0b036762cfe19db511",
         "content": "sha256:17bb2254f821a00b3feef292f750d20cce1e19d4938e9bc1493b55fbb9db8cb9",
         "locator": {
           "kind": "symbol",
@@ -122,8 +122,8 @@
     },
     {
       "anchor": {
-        "blob": "dcea734d01a9e0e0e0f63ee8bfbf5ce1d40ee24d",
-        "content": "sha256:11d92de5942f33a7b54ee88a4a414dbe2f6338aea3d7498796788b81508b746b",
+        "blob": "27133970f3efd75083fdda0b036762cfe19db511",
+        "content": "sha256:2be328ae3701d0e632c29eeda20e618e705c7dc04c492545aba3ef24ddd1d57b",
         "locator": {
           "kind": "symbol",
           "name": "test_real_child_parity_source_reads_and_held_conversion_at_two_result_sizes"
@@ -139,7 +139,7 @@
     },
     {
       "anchor": {
-        "blob": "dcea734d01a9e0e0e0f63ee8bfbf5ce1d40ee24d",
+        "blob": "27133970f3efd75083fdda0b036762cfe19db511",
         "content": "sha256:284ca56a5db3b744fd63c41b57ba2a4ae8824b9192dd5c202d57bf113108c494",
         "locator": {
           "kind": "symbol",
@@ -156,7 +156,7 @@
     },
     {
       "anchor": {
-        "blob": "dcea734d01a9e0e0e0f63ee8bfbf5ce1d40ee24d",
+        "blob": "27133970f3efd75083fdda0b036762cfe19db511",
         "content": "sha256:91efded513d9dbb2d190cd297190d20920ca9be02d640d544f25e2714f7e1d9f",
         "locator": {
           "kind": "symbol",
@@ -173,7 +173,7 @@
     },
     {
       "anchor": {
-        "blob": "dcea734d01a9e0e0e0f63ee8bfbf5ce1d40ee24d",
+        "blob": "27133970f3efd75083fdda0b036762cfe19db511",
         "content": "sha256:28c02f4bfca06bec6ac2fb4607c43637e02eebe4d8f30f2b2483d5f69cb66b05",
         "locator": {
           "kind": "symbol",
@@ -190,7 +190,7 @@
     },
     {
       "anchor": {
-        "blob": "dcea734d01a9e0e0e0f63ee8bfbf5ce1d40ee24d",
+        "blob": "27133970f3efd75083fdda0b036762cfe19db511",
         "content": "sha256:f18605f796f9104d1a3faa081b329c51a9c5a0fee58216be30142fc9386252a8",
         "locator": {
           "kind": "symbol",
@@ -207,7 +207,7 @@
     },
     {
       "anchor": {
-        "blob": "dcea734d01a9e0e0e0f63ee8bfbf5ce1d40ee24d",
+        "blob": "27133970f3efd75083fdda0b036762cfe19db511",
         "content": "sha256:5184096382682aa910695ea621a8dbb7486bff5fafe150e8bb8fc98f92b872cd",
         "locator": {
           "kind": "symbol",
@@ -224,7 +224,7 @@
     },
     {
       "anchor": {
-        "blob": "dcea734d01a9e0e0e0f63ee8bfbf5ce1d40ee24d",
+        "blob": "27133970f3efd75083fdda0b036762cfe19db511",
         "content": "sha256:f0fe54bb03d5bb0fc2a157fd7589817e23668f8b61679d679bf8241e24b3b5dd",
         "locator": {
           "kind": "symbol",
@@ -241,7 +241,7 @@
     },
     {
       "anchor": {
-        "blob": "dcea734d01a9e0e0e0f63ee8bfbf5ce1d40ee24d",
+        "blob": "27133970f3efd75083fdda0b036762cfe19db511",
         "content": "sha256:02431587b667b51c68fb0775145957ebce0bc0f469719fbfa18351347f736a95",
         "locator": {
           "kind": "symbol",
@@ -258,7 +258,7 @@
     },
     {
       "anchor": {
-        "blob": "dcea734d01a9e0e0e0f63ee8bfbf5ce1d40ee24d",
+        "blob": "27133970f3efd75083fdda0b036762cfe19db511",
         "content": "sha256:3fb8e2a96cf5bd585f0d87fa236ff1d553e7f84c2ca578796e7bea069bd1f48b",
         "locator": {
           "kind": "symbol",
@@ -275,7 +275,7 @@
     },
     {
       "anchor": {
-        "blob": "dcea734d01a9e0e0e0f63ee8bfbf5ce1d40ee24d",
+        "blob": "27133970f3efd75083fdda0b036762cfe19db511",
         "content": "sha256:08db73be2e9e8e5bef50cfd8de5ef65754d258fb290cb2af54edfd6fc215cc48",
         "locator": {
           "kind": "symbol",
@@ -292,7 +292,7 @@
     },
     {
       "anchor": {
-        "blob": "dcea734d01a9e0e0e0f63ee8bfbf5ce1d40ee24d",
+        "blob": "27133970f3efd75083fdda0b036762cfe19db511",
         "content": "sha256:65adab1bfc387fb900f92881d215dc04c32c9fc87838afb427d14dfc3e5a29af",
         "locator": {
           "kind": "symbol",
@@ -311,8 +311,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "dcea734d01a9e0e0e0f63ee8bfbf5ce1d40ee24d",
-        "content": "sha256:443c00ec3df518b067e0b38db098cc33a978d3f32f9dfbfab3e7fc022f1787d4",
+        "blob": "27133970f3efd75083fdda0b036762cfe19db511",
+        "content": "sha256:0d5dcf1893f5dd43166d599a4319981049775a685e6d32beb6c990ad5663ab30",
         "locator": {
           "kind": "file"
         }

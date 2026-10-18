@@ -1,0 +1,55 @@
+{
+  "path": "mcp/tests/reviewer_leaf_view_support.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The direct adapter keeps the worklist’s own bytes and adds review facts without persistence.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dda89c7f5ca7a9bf67de30e0a39f8df5657a5879",
+            "content": "sha256:c3aad2beb75692ee811eca61541697b77171df773a019f02d690cc6fa339756b",
+            "locator": {
+              "kind": "symbol",
+              "name": "direct_leaf_view"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The observer records validated child replies and actual transport metadata.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dda89c7f5ca7a9bf67de30e0a39f8df5657a5879",
+            "content": "sha256:09d8f1e68c6bcf91b86b92f7d50f10901adc636d03b2621c6c908b8b875345ac",
+            "locator": {
+              "kind": "symbol",
+              "name": "observe_child"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "The child-script instrumentation separately asserts actual classification reuse and released run-local state.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dda89c7f5ca7a9bf67de30e0a39f8df5657a5879",
+            "content": "sha256:10625df615a628da86552042c97623ef7742072cf2a19ae1cf21932f7e2714db",
+            "locator": {
+              "kind": "symbol",
+              "name": "classified_leaf_view"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

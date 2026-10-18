@@ -1,0 +1,24 @@
+{
+  "path": "dashboard/src/panels/review/FamilyGuarantees.retainedBranch.test.tsx",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Deliberately synthetic equal-wording/distinct-revision control retains identical_text branch for both TreeComparisonScope values; independently uses raw same-revision capture as unchanged_revision. Do not fabricate a native metadata-only capture or treat tree=false here as a surviving dataset transport.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3d91df4d2ac15e5fb34ebefe40d3ce5f37e0386d",
+            "content": "sha256:0e24960e40d1550e1b7881ec1c498fa417c34ba6b2aedbbb4ab42fd9053dce05",
+            "locator": {
+              "end": 91,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

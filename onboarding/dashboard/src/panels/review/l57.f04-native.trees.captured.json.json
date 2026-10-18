@@ -1,0 +1,24 @@
+{
+  "path": "dashboard/src/panels/review/l57.f04-native.trees.captured.json",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The retained source supplies the facts and declared boundaries described above.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5a25d20c0974da300553a33897d17e4553c57c18",
+            "content": "sha256:9f9d6707d0bd75c80643d52a80185a945c0795f73dd7e97e12e9889e887e720d",
+            "locator": {
+              "end": 1,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

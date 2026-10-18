@@ -20,15 +20,16 @@
       ]
     },
     "10": {
-      "note": "Expected destination order with reason sentences",
+      "note": "The mounted destination case asserts Changes without an invariant with 167 files, lane path order, one reason sentence, and the two-file Unknown attribution destination.\n\nAnchor: inclusive source ranges",
       "targets": [
         {
           "anchor": {
-            "blob": "ae19dd95ada9e1cdc002bb29c4ef20a32e7c700d",
-            "content": "sha256:9d58c8f479deb5faf57064edc60b9f835f13e781893f62214d5cf73b970bf8d2",
+            "blob": "5c408f31936d1dfd89f2c899046cd173afa074ca",
+            "content": "sha256:a9b0ad1de68f4173802b4d3d54af0f34408d3d5f55b6d8d1d3e354367fb7751e",
             "locator": {
-              "kind": "symbol",
-              "name": "expected"
+              "end": 42,
+              "kind": "line_range",
+              "start": 18
             }
           },
           "kind": "test"
@@ -36,16 +37,16 @@
       ]
     },
     "11": {
-      "note": "Held-lane rail keeping All usable",
+      "note": "While the lane read is held, All remains usable, both destination filters are disabled, and Changes without an invariant becomes enabled after release.\n\nAnchor: inclusive source ranges",
       "targets": [
         {
           "anchor": {
-            "blob": "ae19dd95ada9e1cdc002bb29c4ef20a32e7c700d",
-            "content": "sha256:af957bc6f23e3996cdad346e9108fd75e4793b4b351d68e6f5a468efe1b92939",
+            "blob": "5c408f31936d1dfd89f2c899046cd173afa074ca",
+            "content": "sha256:3f835bd819577708d1a4517cea2fac1ecd23ec788eae14a5a2785d0522e3d448",
             "locator": {
-              "end": 82,
+              "end": 73,
               "kind": "line_range",
-              "start": 1
+              "start": 43
             }
           },
           "kind": "test"
@@ -53,16 +54,16 @@
       ]
     },
     "12": {
-      "note": "Unanswered worklist reading in its own view",
+      "note": "The held worklist view states that it is reading; after release the rail asserts Worklist 518 open.\n\nAnchor: inclusive source ranges",
       "targets": [
         {
           "anchor": {
-            "blob": "ae19dd95ada9e1cdc002bb29c4ef20a32e7c700d",
-            "content": "sha256:af957bc6f23e3996cdad346e9108fd75e4793b4b351d68e6f5a468efe1b92939",
+            "blob": "5c408f31936d1dfd89f2c899046cd173afa074ca",
+            "content": "sha256:682a9de06deb1baac73988823e7b985bea2e64450958787b0a2667fd2c542a53",
             "locator": {
-              "end": 82,
+              "end": 86,
               "kind": "line_range",
-              "start": 1
+              "start": 74
             }
           },
           "kind": "test"
@@ -189,15 +190,16 @@
       ]
     },
     "9": {
-      "note": "Lane fixture with destinations and file counts",
+      "note": "The module reads its lane fixture from l86.lane.captured.json.\n\nAnchor: inclusive source ranges",
       "targets": [
         {
           "anchor": {
-            "blob": "ae19dd95ada9e1cdc002bb29c4ef20a32e7c700d",
+            "blob": "5c408f31936d1dfd89f2c899046cd173afa074ca",
             "content": "sha256:d987dbb9be8890dcabfba1d461847ddf283759e0937dc7fefd2bd4dce3cb6e7a",
             "locator": {
-              "kind": "symbol",
-              "name": "lane"
+              "end": 17,
+              "kind": "line_range",
+              "start": 17
             }
           },
           "kind": "test"

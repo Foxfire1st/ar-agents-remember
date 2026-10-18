@@ -213,18 +213,84 @@
       ]
     },
     "7": {
-      "note": "The unknown-membership reason from the owner's facts, naming L32's rule as its owner (ruling Q3, review N1).\n\nAnchor: \"The rule's owner is MIK-L32's server\"",
+      "note": "addOccurrence keys by membership state, family key and invariant revision key. An existing occurrence only merges its side; a new target copies family.reason without reconstructing or filtering it. ReviewLaneFamilyOccurrence declares optional reason. The server generates unknown-membership reasons from the own side for family-less occurrences and the other side for named occurrences, using bounded _membership_reason. Current tests assert fixture-reason propagation and an exact substituted reason; they were not executed.\n\nAnchor: inclusive source ranges",
       "targets": [
         {
           "anchor": {
-            "blob": "837bccb687b5f66077b98f4fd65ccd32bf42ff53",
-            "content": "sha256:1307b3ccc49c064cc5531f3e0ff25fc94eb9b696c0080fddfd587dc10d4a7bcd",
+            "blob": "90d785f9ffab30355ae51cdb804b79c0ab4d53c7",
+            "content": "sha256:66818e4c2e55ab199f2abe86e974633a543470c9bb295fb2efa862fdc765268c",
             "locator": {
-              "kind": "symbol",
-              "name": "unknownReason"
+              "end": 198,
+              "kind": "line_range",
+              "start": 170
             }
           },
           "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "42427cf2c755ff5dd21db48d8561569ecc82c094",
+            "content": "sha256:c55c40363c2c39f5fc2c6a519cc7abe01607f80e1ccb8fea0be1752262928acf",
+            "locator": {
+              "end": 60,
+              "kind": "line_range",
+              "start": 54
+            },
+            "path": "dashboard/src/data/reviewLane.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0f038d49f8f1531e4e966dc271dd23033d095a94",
+            "content": "sha256:de8e00819c797ee6163e7cfaeca252b0d635d3fbe81bf00fec7bcf311f5e65ef",
+            "locator": {
+              "end": 356,
+              "kind": "line_range",
+              "start": 339
+            },
+            "path": "mcp/src/agents_remember/application/review_unexplained_lane.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0f038d49f8f1531e4e966dc271dd23033d095a94",
+            "content": "sha256:0037dcf74b8e9457d62b7c79827eaccc2b97f5f5f40334363c77bfb444962c41",
+            "locator": {
+              "end": 369,
+              "kind": "line_range",
+              "start": 359
+            },
+            "path": "mcp/src/agents_remember/application/review_unexplained_lane.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0f038d49f8f1531e4e966dc271dd23033d095a94",
+            "content": "sha256:57bc72d58fbd0e31897d2d60bccd6818fbb5468b0aef71e4403d3194d48f26a9",
+            "locator": {
+              "end": 387,
+              "kind": "line_range",
+              "start": 372
+            },
+            "path": "mcp/src/agents_remember/application/review_unexplained_lane.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0ebec6dd6e9a7e332249d2a3418ffbed6ac44c43",
+            "content": "sha256:123005496febd6cd64246308a7f6aff41a433504e6f0376c6ef48634e1be485a",
+            "locator": {
+              "end": 141,
+              "kind": "line_range",
+              "start": 111
+            },
+            "path": "dashboard/src/panels/review/hunkMarkers.test.ts"
+          },
+          "kind": "test"
         }
       ]
     },

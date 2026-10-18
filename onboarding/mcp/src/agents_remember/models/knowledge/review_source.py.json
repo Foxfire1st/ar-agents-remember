@@ -1,0 +1,103 @@
+{
+  "path": "mcp/src/agents_remember/models/knowledge/review_source.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Absent counts require a reason; measured counts cannot carry a not-applicable reason.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5e02f9598b6bfebef7bb44697138a77410c5cda1",
+            "content": "sha256:999cd446d09503cd2c7f5f4f09ac16680cc1c38f3c3f3ddd195e800165f10e60",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewRemainingCount"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Recorded source locations preserve independent movement and identity fields.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5e02f9598b6bfebef7bb44697138a77410c5cda1",
+            "content": "sha256:a534925c08ceec61e373170de934a2ef1563aa0de669feb112624761dfcd2f2e",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewSourceLocation"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Content classification has detail exactly when unknown.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5e02f9598b6bfebef7bb44697138a77410c5cda1",
+            "content": "sha256:1d997f0a5ada73e13ee6c2655cadd950d5a2b718c76ac3c702d216bff91e8407",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewChangedFile"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Unrepresentable path names retain raw bytes in a safe text spelling.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5e02f9598b6bfebef7bb44697138a77410c5cda1",
+            "content": "sha256:3d9cbcb82a26c29ac0345a74103a6e7e6e1f886791dad08ccc3073acb5a94f0a",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewUnrepresentablePath"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Inventory has two states, a partial flag and explicit count/unavailable/unrepresentable-path checks.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5e02f9598b6bfebef7bb44697138a77410c5cda1",
+            "content": "sha256:a6ded60f6de0902dd814d1c229af2628aaa97baf14d42932e23e87cb7d90bb48",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewSourceInventory"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Whole-comparison inventory is separate from selected attribution and relationship/location collections.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5e02f9598b6bfebef7bb44697138a77410c5cda1",
+            "content": "sha256:65dafa202f40ba2a5d96f2c3b652c751c562b0dcd38af89bd10f5ff56bc434b4",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewSourcePane"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

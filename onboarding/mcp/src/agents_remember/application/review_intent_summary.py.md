@@ -16,8 +16,8 @@ It answers over the reviewer's own resolution, so the entry cannot count a diffe
 it opens: `read_review_intent_summary` resolves the canonical task context through
 `resolve_review_candidate` (a closed leaf resolves to its recorded comparison, `ICR-R12`), and
 `intent_summary_of` refuses the pair through the shared
-[`review_pair_preflight`](review_pair_preflight.py.md) before reading anything, so the catalogue and
-the summary cannot disagree about whether a pair is readable.
+[`review_pair_preflight`](review_pair_preflight.py.md) before its count reads. The catalogue and summary share that pair-admission owner; a later
+storage failure is still handled as unavailable rather than a guarantee against all temporal disagreement.
 
 **Since MIK-L32 a tree comparison's summary also carries `attribution`** (MIK-R32 rule 9): after
 `intent_summary_of` answers, `read_review_intent_summary` adds `lane_summary(resolved.trees)` from
@@ -26,6 +26,12 @@ same resolved trees, in the same request. The entry therefore asks for it exactl
 and never more eagerly. It is attached whatever the intent counts' own state (ruling 2026-09-30T12:19:20 Q6: it is
 read from the trees directly and is true on its own). A dataset comparison (`resolved.trees is None`) carries none.
 
+`unexplained_open` is now attached beside attribution through `stored_unexplained_open`. The
+optional reader admits only complete stored work bound to the exact comparison and with no undecided
+unexplained hunk/file verdict. It counts gate-open items, not raw file attribution, and returns None
+for missing, unreadable, incomplete, mismatched or undecidable work. This auxiliary value can remain
+meaningful independently of the authored-intent result; it is never added to plus/minus.
+
 ## Code Commentary
 
 ### Logic
@@ -33,9 +39,10 @@ read from the trees directly and is true on its own). A dataset comparison (`res
 **Count semantics (master decision on count semantics, `task.json`, entry labelled 12:00 and
 clock-corrected by the 12:10:21 entry; refined by the leaf's 16:15:11 ruling on L47-R1-F3).**
 
-- Each side's current statement of an identity is its **head revision** under
-  `review_revision_comparison.revision_heads` — the rule the reviewer uses to choose which before/after
-  revisions it renders (`ICR-R07`). This module reuses it; it does not define a second head rule.
+- The current text-record projection supplies one revision per identity. `_heads` reuses
+  `review_revision_comparison.revision_heads` as deterministic sorting of the supplied population,
+  not graph-head discovery. The subject reviewer separately takes the matching projected record
+  on each side; no multi-head or intermediate-revision selector is restored by this summary.
 - `+` (`added`) counts invariant and family (joint-guarantee) heads **only the after side holds**; `−`
   (`removed`) counts heads **only the before side holds**. A revised statement is one of each, so it
   counts once on each side. An identity is counted once however many families hold it (memberships
@@ -53,7 +60,7 @@ clock-corrected by the 12:10:21 entry; refined by the leaf's 16:15:11 ruling on 
   (`KnowledgeStorageError`/`apsw.Error`), is **`unavailable`** with the owner's refusal and no counts.
 
 **Read shape.** `_read_side` opens one snapshot read-only and reads, through the shipped
-`read_queries` owners, each identity's retained revision ids, the head rows'
+`read_queries` owners, each identity's projected revision ids, those rows'
 compared fields, the heads' realization claims and the family heads' memberships; then closes it.
 `_tally` walks the union of identities and `_classify` places each one. It runs no subject comparison
 and loads no subject content beyond each head's own fields.
@@ -62,18 +69,22 @@ and loads no subject content beyond each head's own fields.
 
 Pure composition over existing read owners, returning the typed
 [`ReviewIntentSummaryResult`](../models/knowledge/review_intent_summary.py.md). It is a sibling module
-rather than a growth of `review_revision_comparison.py` (worker observation O1: that file is 552
-lines); it imports `revision_heads` from there instead of copying it.
+rather than a growth of `review_revision_comparison.py`; the original size observation was a
+historical separation rationale, not a current source extent. It imports `revision_heads` rather
+than copying it.
 
 ### Invariants And Boundaries
 
-- **Unavailable is never zero.** No count is produced for an unread comparison; the model's validator
-  makes `counts` and `refusal` mutually exclusive.
-- **One head rule.** The summary's head is the revision comparison's head; changing one without the
-  other would let the entry count a revision the reviewer renders as superseded.
+- **Unavailable authored intent is not measured zero.** Its `counts` and `refusal` are mutually
+  exclusive. Separately obtained attribution/stored-open values are not authored-intent totals and
+  can coexist with that refusal; model consistency alone does not authenticate source reads.
+- **One projected record per normal side.** Current selection/counting use the text records'
+  own revisions. The retained no-single-head tally guard remains defensive for supplied populations;
+  it is not evidence that the reviewer still offers an ambiguous multi-head wire state.
 - **Same resolution, same preflight as the catalogue.** No other dataset is substituted and no
   candidate is chosen here.
-- **Read-only.** It writes, retains and freezes nothing.
+- **No authored-intent writer.** This module composes read owners and returns a value. That is not
+  a whole-resolution promise of no I/O or no derived cache/index maintenance by other owners.
 - **The lane's count is a separate fact.** `attribution` is computed from file buckets only (no hunk read; proved by
   `test_the_entry_count_reads_file_buckets_only`) and is never folded into `+`/`−`.
 - **Presentation is not owned here.** Whether an acceptance-only successor is worded differently from a
@@ -99,30 +110,36 @@ No relevant domain documentation was found.
 
 ### Repo-Internal References
 
-The summary composes the reviewer's resolution, the shared pair preflight and the revision comparison's
-head rule; the fixture tests pin every count class.
+- The public reader resolves the task and attaches separate attribution/stored-open facts on the tree path. [1]
 
-- The head rule reused from the revision comparison owner. [9]
-- The fixture that pins added/revised/removed as +/− and realization-only/membership-only as typed counts. [10]
-- A revised member shared by two families counts once on each side. [11]
-- A status-only or version-only successor counts once on each side (L47-R1-F3). [12]
+- Shared preflight precedes both reads; storage failure yields unavailable and unresolved count yields partial. [2]
 
-- Historical divergent-head test removed under MIK-R74 rule 3; the retained missing-knowledge case asserts unavailable with no counts. The production no-single-head branch increments unresolved only for differing head sets. [13]
+- Compared statement/guarantee fields include authored wording and origin status/acceptance, not display version or provenance. [3]
 
-- The composition root wires this read as the fourth review port. [14]
+- The tally keeps unequal-head unresolved, one-sided revisions, relationship-only changes and counted successors distinct. [4]
+
+- The retained predicate detects multiple supplied heads or populated-with-none; this is not a current reviewer ambiguity selector. [5]
+
+- Membership comparisons use canonical invariant identity rather than counting a revised shared member twice. [6]
+
+- Realization equality uses path, locator, recorded source identity, role and rationale independently of claim-record identity. [7]
+
+- The live-tree control reads lane attribution; the historically dataset-named control actually removes conversion knowledge and asserts no attribution. [8]
+
+- The shared helper deterministically sorts a projected revision population; it no longer discovers multi-head lineage. [9]
+
+- The controlled fixture source asserts added/revised/removed plus-minus and separate realization/membership counts, not a fresh execution. [10]
+
+- The single-record shared-member fixture asserts one before/after count and unchanged membership despite two family occurrences. [11]
+
+- The record-only/status fixture asserts successor counts separately from membership-only changes. [12]
+
+- The retained missing-knowledge control asserts refusal/no authored counts; the independent production tally keeps unequal head sets unresolved. The old divergent-head test is historical, not resurrected. [13]
+
+- The CLI now imports the focused summary-port owner and binds its factory, whose native reader supplies dependency observations. [14]
+
+- Optional worklist admission requires complete exact-pair-bound decidable work; the focused port observes the optional worklist path before reuse. [15]
 
 ### Cross-Repo References
 
-No cross-repository behavior is implemented here; the read stays inside one repository namespace's two
-snapshots.
-
-No meaningful cross-repo references found.
-
-- The public read: the reviewer's own resolution, a refused resolution returned as `unavailable`; a tree comparison's lane count attached (MIK-L32).  Anchor: `resolve_review_candidate`; "return summary.model_copy(update={\"attribution\": lane_summary(resolved.trees)})" [1]
-- One resolved pair: the shared preflight first, then both sides read, a mid-read storage failure refused as unreadable, `partial` exactly when something is unresolved.  Anchor: `pair_preflight_refusal`; `unreadable_candidate_refusal` [2]
-- The compared fields, including the record status that makes a record-only successor count. [3]
-- The classification: unresolved, after-only, before-only, relationship-only, or a counted successor.  Anchor: "tally.attached_only"; "tally.after_only" [4]
-- Several heads, or a population with none, is not one head. [5]
-- Family members compared by canonical invariant identity, so a member whose invariant moved is the same membership.  Anchor: "invariant_of.get(invariant_revision, invariant_revision)" [6]
-- What one realization claim asserts, independent of the claim record's own identity. [7]
-- The lane count read on a live tree leaf; none on a dataset leaf. [8]
+All cited model, projection, test, gate and CLI owners are in this repository; no external-system boundary is established by them.

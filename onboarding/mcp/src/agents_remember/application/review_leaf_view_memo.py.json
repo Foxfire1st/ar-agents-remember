@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "0ca2cf19b0a09be69c114410accb428ab3c6aafe",
+        "blob": "ea7a3f0649df8d2f0e8ebb69a320eced33e5c2fa",
         "content": "sha256:0eec46ab95cb5f05e7213fdd08b93624900f6c42f7f2a2489eb9fc962d333de2",
         "locator": {
           "kind": "symbol",
@@ -21,7 +21,7 @@
     },
     {
       "anchor": {
-        "blob": "0ca2cf19b0a09be69c114410accb428ab3c6aafe",
+        "blob": "ea7a3f0649df8d2f0e8ebb69a320eced33e5c2fa",
         "content": "sha256:e6fdc11115c06b7bad72c50bf3c42316da8996f1ee1044cf5a6e119e0ee8c03e",
         "locator": {
           "kind": "symbol",
@@ -39,7 +39,7 @@
     },
     {
       "anchor": {
-        "blob": "0ca2cf19b0a09be69c114410accb428ab3c6aafe",
+        "blob": "ea7a3f0649df8d2f0e8ebb69a320eced33e5c2fa",
         "content": "sha256:d0c75c1b1f556d322b0a75a50ff548a9600174dd82b33c5112163ea124c9ddee",
         "locator": {
           "kind": "symbol",
@@ -57,7 +57,7 @@
     },
     {
       "anchor": {
-        "blob": "0ca2cf19b0a09be69c114410accb428ab3c6aafe",
+        "blob": "ea7a3f0649df8d2f0e8ebb69a320eced33e5c2fa",
         "content": "sha256:0eec46ab95cb5f05e7213fdd08b93624900f6c42f7f2a2489eb9fc962d333de2",
         "locator": {
           "kind": "symbol",
@@ -70,12 +70,12 @@
         "handoffEntry": "L40-actual-read-memo",
         "leaf": "260928-MIK-L40"
       },
-      "rationale": "Reports as moved every task document the computation read whose bytes differ from the key's or that the key does not name, and every recorded row whose recheck gives another identity, so a failed, conflicting or changed read never passes as unchanged. A document the key names that the computation did not open is not reported.",
+      "rationale": "Reports as moved every task document whose recorded identity differs from the key's or that the key does not name, and every recorded row whose recheck gives another identity. It compares identities only: an unreadable observation that stays unreadable keeps the same identity and is reported by nothing as moved, so the exclusion of failed reads is enforced separately by the memo's `remember` through `has_failed_observation`. A document the key names that the computation did not open is not reported.",
       "role": "enforcement"
     },
     {
       "anchor": {
-        "blob": "0ca2cf19b0a09be69c114410accb428ab3c6aafe",
+        "blob": "ea7a3f0649df8d2f0e8ebb69a320eced33e5c2fa",
         "content": "sha256:3d16e67ac7e159315d363192723bd7f0f5adb2bd2d1b2413e9cf426c08a17e71",
         "locator": {
           "kind": "symbol",
@@ -93,7 +93,7 @@
     },
     {
       "anchor": {
-        "blob": "0ca2cf19b0a09be69c114410accb428ab3c6aafe",
+        "blob": "ea7a3f0649df8d2f0e8ebb69a320eced33e5c2fa",
         "content": "sha256:6798b8709c203b1597e511d4bd7157d8a2dccfb7bc3bc241286a11d07b98424a",
         "locator": {
           "kind": "symbol",
@@ -246,44 +246,59 @@
       ]
     },
     "18": {
-      "note": "The memo keeps the settled worklist over the comparison's trees",
+      "note": "The kept value includes the worklist and its optional code-change facts; the actual caller propagates those facts.\n\nAnchor: current stored value and producer",
       "targets": [
         {
           "anchor": {
-            "blob": "0ca2cf19b0a09be69c114410accb428ab3c6aafe",
-            "content": "sha256:9c75b33f0f400bb0a585da6e8fbabff6d9dc3e52776c32f7fd8be8ac80d25129",
+            "blob": "ea7a3f0649df8d2f0e8ebb69a320eced33e5c2fa",
+            "content": "sha256:a61e6c42933e90c535fd55c7b5d38af3c8a6b73b5e14dd3b0505ba857fb1d40c",
             "locator": {
-              "kind": "symbol",
-              "name": "worklist"
+              "end": 118,
+              "kind": "line_range",
+              "start": 113
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "0ca2cf19b0a09be69c114410accb428ab3c6aafe",
-            "content": "sha256:f94f926fdc8221d0e3c769419c3ecb53a20206ea97f6ed2e2b29815e98a3db9e",
+            "blob": "35d4cf1464edc9940c6fbd299f919ad2c959405b",
+            "content": "sha256:3931efd74b39a7336bb56c4a4b94c7935fa6b037d8216f5316844855c8411c5e",
             "locator": {
-              "end": 5,
+              "end": 334,
               "kind": "line_range",
-              "start": 3
-            }
+              "start": 315
+            },
+            "path": "mcp/src/agents_remember/application/review_tree_knowledge.py"
           },
           "kind": "code"
         }
       ]
     },
     "19": {
-      "note": "An unsettled worklist or unreadable side is never kept\n\nAnchor: `complete`",
+      "note": "Caller admission requires readable/settled/decided/facts inputs, then remember separately checks failed/absent/moved observations.\n\nAnchor: current admission boundaries",
       "targets": [
         {
           "anchor": {
-            "blob": "0ca2cf19b0a09be69c114410accb428ab3c6aafe",
-            "content": "sha256:dec0d512600422ea502f0e3c32e5f7e51f79d230b1d0f9abb8e14f61d15514f5",
+            "blob": "35d4cf1464edc9940c6fbd299f919ad2c959405b",
+            "content": "sha256:ac53887638782f9d7ea572e7549f0b651e0caafb8a5c28b6cd75b637b9d73024",
             "locator": {
-              "end": 29,
+              "end": 334,
               "kind": "line_range",
-              "start": 27
+              "start": 276
+            },
+            "path": "mcp/src/agents_remember/application/review_tree_knowledge.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ea7a3f0649df8d2f0e8ebb69a320eced33e5c2fa",
+            "content": "sha256:3d16e67ac7e159315d363192723bd7f0f5adb2bd2d1b2413e9cf426c08a17e71",
+            "locator": {
+              "end": 227,
+              "kind": "line_range",
+              "start": 218
             }
           },
           "kind": "code"
@@ -291,12 +306,12 @@
       ]
     },
     "20": {
-      "note": "The kept parts hold the worklist view and nothing else",
+      "note": "LeafViewParts has worklist and optional code_changes, not worklist alone.",
       "targets": [
         {
           "anchor": {
-            "blob": "0ca2cf19b0a09be69c114410accb428ab3c6aafe",
-            "content": "sha256:6ba8c03194f13fb0acc0163892a02b44bf534953a0813e1da8510ffac309c76c",
+            "blob": "ea7a3f0649df8d2f0e8ebb69a320eced33e5c2fa",
+            "content": "sha256:a61e6c42933e90c535fd55c7b5d38af3c8a6b73b5e14dd3b0505ba857fb1d40c",
             "locator": {
               "kind": "symbol",
               "name": "LeafViewParts"
@@ -307,16 +322,15 @@
       ]
     },
     "21": {
-      "note": "Nested key-construction reads are replayed to the enclosing recorder before the no-key return.",
+      "note": "Nested gate-key observations are replayed before the absent-key return.",
       "targets": [
         {
           "anchor": {
-            "blob": "0ca2cf19b0a09be69c114410accb428ab3c6aafe",
+            "blob": "ea7a3f0649df8d2f0e8ebb69a320eced33e5c2fa",
             "content": "sha256:d0c75c1b1f556d322b0a75a50ff548a9600174dd82b33c5112163ea124c9ddee",
             "locator": {
-              "end": 169,
-              "kind": "line_range",
-              "start": 135
+              "kind": "symbol",
+              "name": "leaf_view_key"
             }
           },
           "kind": "code"

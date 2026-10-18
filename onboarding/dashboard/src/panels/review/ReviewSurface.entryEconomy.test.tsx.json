@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "cf6e436713451eeeb371eb3426f138ed1e478b01",
-        "content": "sha256:9abf06d7d2ae32dc0a9c2584effbe77a5a8e35ffcd244d31df5e60dea1a1a366",
+        "blob": "8104fdd2ee1693e0e811dcad434294463ee40692",
+        "content": "sha256:6c1ad0602c75f0b85537ee407c62afc7f316c6c65eba5d529aeb00633092ec60",
         "locator": {
           "kind": "file"
         }
@@ -20,8 +20,8 @@
     },
     {
       "anchor": {
-        "blob": "cf6e436713451eeeb371eb3426f138ed1e478b01",
-        "content": "sha256:9abf06d7d2ae32dc0a9c2584effbe77a5a8e35ffcd244d31df5e60dea1a1a366",
+        "blob": "8104fdd2ee1693e0e811dcad434294463ee40692",
+        "content": "sha256:6c1ad0602c75f0b85537ee407c62afc7f316c6c65eba5d529aeb00633092ec60",
         "locator": {
           "kind": "file"
         }
@@ -72,26 +72,28 @@
       ]
     },
     "2": {
-      "note": "The catalogue fixture and the per-family review under a chosen snapshot.",
+      "note": "CATALOGUE is assembled from two independent family-selector captures. familyReview selects the matching family capture or the separate task capture for null selection and changes only the comparison generation digest when needed.\n\nAnchor: inclusive source ranges",
       "targets": [
         {
           "anchor": {
-            "blob": "812f2b24ae68e5e0cd0b2d62537cdac763915647",
-            "content": "sha256:fad140451470da52b86b3b1ad9b55b5a4016239092b83f8dff056655f46b5ba2",
+            "blob": "8104fdd2ee1693e0e811dcad434294463ee40692",
+            "content": "sha256:e7155d91a4b3e5db9fb458ed0fbe24e3098723eeebeb053a12f2fb708432b8ab",
             "locator": {
-              "kind": "symbol",
-              "name": "CATALOGUE"
+              "end": 41,
+              "kind": "line_range",
+              "start": 21
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "812f2b24ae68e5e0cd0b2d62537cdac763915647",
-            "content": "sha256:c3ade64bdc103abe38625e0ada3ffd439739a7d338a201e9f94ee4735eb9444f",
+            "blob": "8104fdd2ee1693e0e811dcad434294463ee40692",
+            "content": "sha256:13d2abc0c61a071024899adc714d049d91bc0cee99ea21590a9b81452bf7b1d2",
             "locator": {
-              "kind": "symbol",
-              "name": "familyReview"
+              "end": 61,
+              "kind": "line_range",
+              "start": 50
             }
           },
           "kind": "test"
@@ -179,15 +181,16 @@
       ]
     },
     "7": {
-      "note": "Recorded catalogue, family and review fixture identities",
+      "note": "The family captures are subjectReview.successorFamily.captured.json and l86.family.captured.json; task context comes from l86.task.captured.json.\n\nAnchor: inclusive source ranges",
       "targets": [
         {
           "anchor": {
-            "blob": "cf6e436713451eeeb371eb3426f138ed1e478b01",
-            "content": "sha256:fad140451470da52b86b3b1ad9b55b5a4016239092b83f8dff056655f46b5ba2",
+            "blob": "8104fdd2ee1693e0e811dcad434294463ee40692",
+            "content": "sha256:e7155d91a4b3e5db9fb458ed0fbe24e3098723eeebeb053a12f2fb708432b8ab",
             "locator": {
-              "kind": "symbol",
-              "name": "CATALOGUE"
+              "end": 41,
+              "kind": "line_range",
+              "start": 21
             }
           },
           "kind": "test"
@@ -195,27 +198,28 @@
       ]
     },
     "8": {
-      "note": "Family review capture served for the chosen subject",
+      "note": "familyReview selects captured family or task answers, explicitly refuses uncaptured family selectors and only perturbs after_snapshot_digest. Other non-catalogue/non-source-content routes delegate to replyFor.\n\nAnchor: inclusive source ranges",
       "targets": [
         {
           "anchor": {
-            "blob": "cf6e436713451eeeb371eb3426f138ed1e478b01",
-            "content": "sha256:c3ade64bdc103abe38625e0ada3ffd439739a7d338a201e9f94ee4735eb9444f",
+            "blob": "8104fdd2ee1693e0e811dcad434294463ee40692",
+            "content": "sha256:13d2abc0c61a071024899adc714d049d91bc0cee99ea21590a9b81452bf7b1d2",
             "locator": {
-              "kind": "symbol",
-              "name": "familyReview"
+              "end": 61,
+              "kind": "line_range",
+              "start": 50
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "cf6e436713451eeeb371eb3426f138ed1e478b01",
-            "content": "sha256:f14193d18ede58c6653733ea4d65ea675fb93c5ba0afe33bd825e39120c4dbdb",
+            "blob": "8104fdd2ee1693e0e811dcad434294463ee40692",
+            "content": "sha256:3a153e9b662d99058c6e2232f21cefeffd287a1cd6ac4c243efd99c5b8c202cd",
             "locator": {
-              "end": 67,
+              "end": 84,
               "kind": "line_range",
-              "start": 51
+              "start": 73
             }
           },
           "kind": "test"

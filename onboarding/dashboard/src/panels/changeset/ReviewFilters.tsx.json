@@ -1,0 +1,73 @@
+{
+  "path": "dashboard/src/panels/changeset/ReviewFilters.tsx",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Destination count, named waiting state and empty-versus-missing button behavior.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "60efe56c577dfe1ccaf97ee3a1084d04057a3737",
+            "content": "sha256:65b87b4d9e1257e97f8dca9005de73b76f9f80cb40dbce2787e8dc24fb0e822e",
+            "locator": {
+              "kind": "symbol",
+              "name": "FilterButton"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "No context means no controls; non-all filters show shared notes.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "60efe56c577dfe1ccaf97ee3a1084d04057a3737",
+            "content": "sha256:b3f6eb3c274a014be6d870f328b9d784996a94107cef4633d5e091d18cbe124a",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewFilters"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Lane file selection and intersection are pure held-answer helpers.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d5135eb9e9a5b59401def9955ed068665b05a4ea",
+            "content": "sha256:8bf1d07a52431616198b78b8466407e2048feeda505aafd24f78a466da02568e",
+            "locator": {
+              "kind": "symbol",
+              "name": "filteredChangeSet"
+            },
+            "path": "dashboard/src/panels/changeset/reviewChangeSet.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Actual viewer imports and mounts this owner.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "741a64673f3d3197f2f6630dd5f629a0d045e379",
+            "content": "sha256:ea938b81e12504e03ca2a95192640036cb293d96762add432d1ad4908ef99abc",
+            "locator": {
+              "kind": "symbol",
+              "name": "ChangeSetViewer"
+            },
+            "path": "dashboard/src/panels/changeset/ChangeSetViewer.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

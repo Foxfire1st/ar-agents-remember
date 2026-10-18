@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "148943da796523667a3e85e53c1c3b5d92200aa3",
+        "blob": "21a424c0ceba2885a766a768450e734806b787e5",
         "content": "sha256:2e3708fe2db796a3f646a0bda8af74cdec8000e530a968b5afda2ddb8e3d2eb9",
         "locator": {
           "kind": "symbol",
@@ -21,7 +21,7 @@
     },
     {
       "anchor": {
-        "blob": "148943da796523667a3e85e53c1c3b5d92200aa3",
+        "blob": "21a424c0ceba2885a766a768450e734806b787e5",
         "content": "sha256:bc55cb71db3cb5a0c0700a2e33bdd1b0ddb61804ca39d7c227beb379b42ba0a2",
         "locator": {
           "kind": "symbol",
@@ -39,7 +39,7 @@
     },
     {
       "anchor": {
-        "blob": "148943da796523667a3e85e53c1c3b5d92200aa3",
+        "blob": "21a424c0ceba2885a766a768450e734806b787e5",
         "content": "sha256:1ad06e7f20e4fbdc84b6fe8e84ce1f2b7beba27e1901f6a6e7e5271933be7746",
         "locator": {
           "kind": "symbol",
@@ -57,7 +57,7 @@
     },
     {
       "anchor": {
-        "blob": "148943da796523667a3e85e53c1c3b5d92200aa3",
+        "blob": "21a424c0ceba2885a766a768450e734806b787e5",
         "content": "sha256:a4a07a9d87965025a498d8152fc330a2cace89abdb37b9a5a44119bab1ec96eb",
         "locator": {
           "kind": "symbol",
@@ -75,7 +75,7 @@
     },
     {
       "anchor": {
-        "blob": "148943da796523667a3e85e53c1c3b5d92200aa3",
+        "blob": "21a424c0ceba2885a766a768450e734806b787e5",
         "content": "sha256:422f0b59b8acf13375096e7771c02b1cc885ead57a9537fa3a9c4daa08c77ec6",
         "locator": {
           "kind": "symbol",
@@ -93,7 +93,7 @@
     },
     {
       "anchor": {
-        "blob": "148943da796523667a3e85e53c1c3b5d92200aa3",
+        "blob": "21a424c0ceba2885a766a768450e734806b787e5",
         "content": "sha256:9aa13084228fdc01b1e96f727e6484154ed6335bf01ef7ef82514cf18c7ff8c8",
         "locator": {
           "kind": "symbol",
@@ -111,7 +111,7 @@
     },
     {
       "anchor": {
-        "blob": "148943da796523667a3e85e53c1c3b5d92200aa3",
+        "blob": "21a424c0ceba2885a766a768450e734806b787e5",
         "content": "sha256:0bacdcc3b18f8dd4d92ebf525ed51f585285b27b7bf5dd362d3fd0acd56ed890",
         "locator": {
           "kind": "symbol",
@@ -129,7 +129,7 @@
     },
     {
       "anchor": {
-        "blob": "148943da796523667a3e85e53c1c3b5d92200aa3",
+        "blob": "21a424c0ceba2885a766a768450e734806b787e5",
         "content": "sha256:ff9c89567a848f1ff530ebe59c5e190eadb3acde3c89e75f66a0704e3fa1128d",
         "locator": {
           "kind": "symbol",
@@ -147,7 +147,7 @@
     },
     {
       "anchor": {
-        "blob": "148943da796523667a3e85e53c1c3b5d92200aa3",
+        "blob": "21a424c0ceba2885a766a768450e734806b787e5",
         "content": "sha256:9c9c55583729ea74114f5ca3bd7a65be1d91f81dc1ea67724bdc73072dfa20cf",
         "locator": {
           "kind": "symbol",
@@ -165,8 +165,8 @@
     },
     {
       "anchor": {
-        "blob": "148943da796523667a3e85e53c1c3b5d92200aa3",
-        "content": "sha256:4f17c44be6b9f806a9455bf0a3653d5fdf3ac72a1ad03a00e9eb6029e0fe2a97",
+        "blob": "21a424c0ceba2885a766a768450e734806b787e5",
+        "content": "sha256:321ca1b6588ac03946682ed593ea362853d6f1a789fd5dfcdf2f46cda6185a8b",
         "locator": {
           "kind": "symbol",
           "name": "_reply"
@@ -183,7 +183,7 @@
     },
     {
       "anchor": {
-        "blob": "148943da796523667a3e85e53c1c3b5d92200aa3",
+        "blob": "21a424c0ceba2885a766a768450e734806b787e5",
         "content": "sha256:7611f584012032129c9506190742fe1ef8b53ca43a02171de6485ee29e17029f",
         "locator": {
           "kind": "symbol",
@@ -201,7 +201,7 @@
     },
     {
       "anchor": {
-        "blob": "148943da796523667a3e85e53c1c3b5d92200aa3",
+        "blob": "21a424c0ceba2885a766a768450e734806b787e5",
         "content": "sha256:36f77d4f7816178c6101b5c14aaf917a62926c6748d2b97fc8f1c78f5645e096",
         "locator": {
           "kind": "symbol",
@@ -219,7 +219,7 @@
     },
     {
       "anchor": {
-        "blob": "148943da796523667a3e85e53c1c3b5d92200aa3",
+        "blob": "21a424c0ceba2885a766a768450e734806b787e5",
         "content": "sha256:d0864d204be614f73384c435d228f33335c9f44b8dc05495e9c795332ae9b72b",
         "locator": {
           "kind": "symbol",
@@ -237,7 +237,7 @@
     },
     {
       "anchor": {
-        "blob": "148943da796523667a3e85e53c1c3b5d92200aa3",
+        "blob": "21a424c0ceba2885a766a768450e734806b787e5",
         "content": "sha256:2e308c59d8e7987516edeeeaffb4b022c5d974e027e335abdf5d4dc65163b0ff",
         "locator": {
           "kind": "symbol",
@@ -514,15 +514,27 @@
       ]
     },
     "24": {
-      "note": "A ninth computation is refused while nine more requests share one of the eight.",
+      "note": "The controlled test starts twelve requesters for one flight, including eleven additional sharers, and seven other computations. It expects refusal of a ninth distinct computation, then nineteen answers and eight children after release. These are stored assertions, not a fresh timing measurement.",
       "targets": [
         {
           "anchor": {
-            "blob": "ede6e5022f731d49e9f93adcd04f7eb551be9bad",
-            "content": "sha256:b77b1f2befb3f71b0a632bcca91ec067e017772c39c27278fdb876996b69a77c",
+            "blob": "27133970f3efd75083fdda0b036762cfe19db511",
+            "content": "sha256:3fb8e2a96cf5bd585f0d87fa236ff1d553e7f84c2ca578796e7bea069bd1f48b",
             "locator": {
               "kind": "symbol",
               "name": "test_the_waiting_bound_counts_computations_not_the_requests_sharing_them"
+            },
+            "path": "mcp/tests/test_reviewer_worklist_process.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "27133970f3efd75083fdda0b036762cfe19db511",
+            "content": "sha256:66160759601fd81287fa4cbba0f0041eb852d2bc8cf45be0879da589a64596ce",
+            "locator": {
+              "kind": "symbol",
+              "name": "_prove_computation_bound"
             },
             "path": "mcp/tests/test_reviewer_worklist_process.py"
           },
@@ -729,12 +741,12 @@
       ]
     },
     "9": {
-      "note": "The reply's protocol, identity, process, time and read checks.",
+      "note": "The reply checks its exact protocol including nullable review facts, identity, process, time and consumed reads.",
       "targets": [
         {
           "anchor": {
-            "blob": "148943da796523667a3e85e53c1c3b5d92200aa3",
-            "content": "sha256:4f17c44be6b9f806a9455bf0a3653d5fdf3ac72a1ad03a00e9eb6029e0fe2a97",
+            "blob": "21a424c0ceba2885a766a768450e734806b787e5",
+            "content": "sha256:321ca1b6588ac03946682ed593ea362853d6f1a789fd5dfcdf2f46cda6185a8b",
             "locator": {
               "kind": "symbol",
               "name": "_reply"

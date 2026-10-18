@@ -1,0 +1,24 @@
+{
+  "path": "dashboard/src/panels/review/ReviewKeys.test.tsx",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Key-reference component checks effective rebound N/k, question-mark opening outside editable/other zones, modifiers, close and listener disposal. Registry completeness belongs to commands.test.ts.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3ea6ada39c25006e4c799f93a9fe715a0b3aa46d",
+            "content": "sha256:2df668f26e31e3db55cb414d6606236f168b47768f78bcde811262e58283c69f",
+            "locator": {
+              "end": 51,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

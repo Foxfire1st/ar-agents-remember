@@ -7,7 +7,7 @@
 ## Purpose
 
 **MIK-R32's backend evidence: file buckets, hunk classes, destinations, the per-file response and the entry count
-(11 named test definitions, 715 source lines).** Each comparison is four real Git trees: a code repository with a base and a
+(11 named test definitions).** Each comparison is four real Git trees: a code repository with a base and a
 candidate commit, and a converted memory repository with a base and a candidate commit, reopened as the reviewer
 reopens a recorded comparison (`reopened_trees`), so every knowledge side is read through the derived index of its
 tree. The route and live-leaf cases reuse `test_review_git_trees.py`'s `world` fixture. Registered in the

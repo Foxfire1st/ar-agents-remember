@@ -18,6 +18,6 @@
   "revision": 4,
   "schema": "ar-invariant/v1",
   "statement": "The review evidence collector reads owner records for the exact resolved comparison it is rendering, preserving explicit collection availability and immutable curator-generation provenance. Retired canonical detection, verification and evidence collections remain unavailable, and authored effects are unavailable with the rule-1 removal as the reason; an unread or uncaptured collection never becomes a favorable empty result.",
-  "status": "proposed",
+  "status": "retired",
   "supersedes": []
 }

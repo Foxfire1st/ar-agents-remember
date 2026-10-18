@@ -8,7 +8,7 @@
 
 Protects capsule delivery from production launch points to the recorded consumer boundary,
 with internal compilation rather than a restored public compiler tool. Socket-bearing fixture
-worlds use unique paths under the admitted short root `/tmp/mik-run3/l157/t`; the production
+worlds build under pytest's `tmp_path` rather than a selected short root; the production
 Unix-domain path limit remains enforced. No provider turn or live process acceptance is implied.
 
 ## Current operative account — MIK-R112

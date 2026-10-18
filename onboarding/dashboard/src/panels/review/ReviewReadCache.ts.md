@@ -6,7 +6,7 @@
 
 ## Purpose
 
-What the intent reviewer has already read **for the comparison on screen**, so returning to a subject or reopening a file costs no request. The module holds two bounded stores (whole subject reviews and changed-file content) and the one generation rule that empties both. It is a working surface owned by one mounted review surface, never a record: nothing here is persisted, published or shared between surfaces.
+What the intent reviewer has already read **for the comparison on screen**, so returning to a subject or reopening a file costs no request. The module holds two bounded stores (whole subject reviews and changed-file content) generation changes that empty both, and a separate memory-input epoch invalidation of whole reviews. It is a working surface owned by one mounted review surface, never a record: nothing here is persisted, published or shared between surfaces.
 
 ## Unshown whole-task reuse
 
@@ -26,9 +26,11 @@ What the intent reviewer has already read **for the comparison on screen**, so r
 
 `keepUnshown` keeps an answer that was read but never shown, because its question was replaced while it was in flight. The read cycle hands it only a successful whole answer for the task context ("All source changes") whose read carried no refresh identity. An answer whose generation differs from the known one is dropped; with no known generation the answer establishes one. Once kept it is an answer like any other, so returning to "All source changes" costs no second request.
 
-### The generation empties everything
+### Generation changes and live memory invalidation
 
 Every kept review is read under a comparison generation: the pair of code trees and, when knowledge was compared, the pair of snapshots (`comparisonGenerationOf`). `observe(payload)` is called for every admitted answer, kept or not. When its generation is not the same as the known one (`sameGeneration`), both stores are cleared. A task-context answer compares no knowledge, so it says nothing about the snapshot pair and cannot move it: `sameGeneration` treats a missing snapshot pair as compatible, and `observe` carries the known pair forward. `forgetReview(key)` serves the reader's refresh: the read cycle forgets the question it re-asks, so a refresh always reaches the server.
+
+`inputEpoch` starts at zero. `invalidateReviews()` increments it and clears only whole-review answers, leaving the source-content store and the known comparison generation intact. The mounted read cycle's memory-change callback invalidates reviews before refreshing; `startRead` captures the epoch and drops a callback whose epoch is no longer current, including the superseded-task reuse path. This is a real live-input invalidation boundary, not merely a manual refresh. It does not claim that old labelled content is immediately erased or that source bytes changed.
 
 `comparisonGenerationOf`, `sameGeneration` and the type `ComparisonGeneration` are exported. The walked family tree (`walkedTree.ts`) uses them to decide whether an answer belongs to the comparison its rows were read under, so the tree applies the same test as the cache.
 
@@ -38,20 +40,20 @@ Every kept review is read under a comparison generation: the pair of code trees 
 
 ### Conventions
 
-`ReviewReadCache` is a plain class, constructed by the surface and handed to the read cycle. `ReviewReadCacheContext` (default `null`) is how the source content renderer finds it; content rendered outside a review surface has no provider and reads every time. `sizes` reports the two store sizes. The file is 164 lines.
+`ReviewReadCache` is a plain class, constructed by the surface and handed to the read cycle. `ReviewReadCacheContext` (default `null`) is how the source content renderer finds it; content rendered outside a review surface has no provider and reads every time. `sizes` reports the two store sizes. The declaration span is source-bound rather than a fixed file-length promise.
 
 ### Boundaries
 
 - An answer from another generation never survives beside the new one.
 - No refusal, failure, paged answer or refresh answer is kept.
-- Returning to a kept subject does not re-validate a live candidate that moved; the reader's refresh asks again.
+- A cache hit alone performs no new read, but an observed memory change clears whole-review answers and invalidates earlier callbacks before refresh; source content remains keyed by its explicit tree pair.
 - The cache decides nothing about what is read or displayed: the read cycle decides when to ask and what to keep, and the content renderer decides how content renders.
 - `review()` and `source()` refresh recency when they are read, also when a render path reads them.
 
 ### Logic
 
 **Two stores, each with the key its reader already uses.** `reviews` holds a subject's whole review under
-the read cycle's own target key (task context, record, subject, `whole` position), and `sources` holds a
+the read cycle's own target key (task context, live/recorded history selector, subject, `whole` position), and `sources` holds a
 changed file's content answer under `sourceContentKey(repo, master, leaf, path, beforeCodeTreeId,
 afterCodeTreeId)` — exactly the fields the content request names. One content answer carries both sides,
 so the side needs no key of its own. Paged questions are never kept: a roster walk is a continuation of
@@ -94,9 +96,9 @@ header style.
 - **Bounded and reclaimed.** Both stores are capped and evict least-recently-used entries; the cache lives
   and dies with one mounted surface (the repository's bounded-resources doctrine). Re-entering the
   reviewer starts empty (worker observation O3).
-- **Not a live check.** Returning to a kept subject does not re-validate a live candidate that moved;
-  each kept view stays labelled with its own trees, and the reader's refresh re-asks (review observation
-  O-R1-1, by design).
+- **Cache lookup is not a live check; invalidation is live.** Kept views stay labelled with their
+  own trees. The memory watcher explicitly advances the input epoch and clears whole reviews before
+  refresh, so older callbacks cannot refill them; the separate source cache is not cleared by this operation.
 - **Boundary.** It decides nothing about what is read or displayed: the read cycle decides when to ask
   and what to keep, and `SourceContent` decides how content renders.
 
@@ -109,19 +111,34 @@ during render. Recorded as an observation, not a defect.
 ## Evidence
 
 - The module's own statement of what is kept, under which key, when it is dropped, and its bounds. [14]
+
 - The two bounds. [15]
+
 - The least-recently-used store: recency refreshed on read, oldest evicted on write. [16]
+
 - The generation of a payload, exported: code trees, and snapshots only when knowledge was compared. [17]
+
 - Two generations differ on code trees, or on snapshots when both compared knowledge. [18]
+
 - The content key is exactly the request's fields. [19]
-- The cache: observe, keep, keep unshown, forget, and sources kept only as content with an expansion. [20]
+
+- The cache separates generation changes clearing both stores from input-epoch invalidation clearing whole reviews only. [20]
+
 - The context the content renderer reads it through; `null` outside a surface. [21]
+
 - The walked tree applies the same comparison test to its rows. [22]
+
 - The read cycle serves a kept answer, keeps a whole answer, keeps a superseded task-context answer unshown, or only observes. [23]
+
 - A refresh forgets its question before it asks again. [24]
+
 - The surface owns one cache and provides it. [25]
+
 - The content renderer reads through it under the request key. [26]
+
 - The bounds, refusal, generation and unshown-answer cases. [27]
+
+- Memory changes advance the review epoch before refresh; older read callbacks cannot repopulate whole-review answers. [28]
 
 ### Docs References
 
@@ -137,18 +154,18 @@ renderer are its only callers.
 
 | Restored finding | Primary anchor | Tip range |
 | --- | --- | --- |
-| **The module's own statement of what is kept, under which key, when it is dropped, and its bounds.** | `ReviewReadCache` | dashboard/src/panels/review/ReviewReadCache.ts:1-23 |
-| The two bounds. | `REVIEW_CACHE_LIMIT` | dashboard/src/panels/review/ReviewReadCache.ts:29-30 |
-| The least-recently-used store: recency refreshed on read, oldest evicted on write. | `BoundedStore` | dashboard/src/panels/review/ReviewReadCache.ts:32-67 |
-| The generation of a payload: code trees, and snapshots only when knowledge was compared. | `comparisonGenerationOf` | dashboard/src/panels/review/ReviewReadCache.ts:74-83 |
-| Two generations differ on code trees, or on snapshots when both compared knowledge. | `sameGeneration` | dashboard/src/panels/review/ReviewReadCache.ts:88-93 |
-| The content key is exactly the request's fields. | `sourceContentKey` | dashboard/src/panels/review/ReviewReadCache.ts:95-104 |
-| The bounded mounted-surface cache invalidates by displayed generation; keepUnshown rejects an incompatible answer without advancing that generation, and sources are kept only as content with an expansion. | `ReviewReadCache` | dashboard/src/panels/review/ReviewReadCache.ts:106-160 |
-| The context the content renderer reads it through; `null` outside a surface. | `ReviewReadCacheContext` | dashboard/src/panels/review/ReviewReadCache.ts:162-164 |
-| The read cycle serves, keeps or only observes answers, and a refresh forgets its question. | `startRead` | dashboard/src/panels/review/ReviewReadCycle.ts:169-229 |
-| The surface owns one cache and provides it. | `useSurface` | dashboard/src/panels/review/ReviewSurface.tsx:507-508 |
-| The content renderer reads through it under the request key. | `useSourceContentRead` | dashboard/src/panels/review/SourceContent.tsx:210-250 |
-| The bounds, refusal, generation and key cases. | `keeps at most the bound of reviews and evicts the least recently used (%i inserted)` | dashboard/src/panels/review/ReviewReadCache.test.ts:47-131 |
+| **The module's own statement of what is kept, under which key, when it is dropped, and its bounds.** | `ReviewReadCache` | dashboard/src/panels/review/ReviewReadCache.ts |
+| The two bounds. | `REVIEW_CACHE_LIMIT` | dashboard/src/panels/review/ReviewReadCache.ts |
+| The least-recently-used store: recency refreshed on read, oldest evicted on write. | `BoundedStore` | dashboard/src/panels/review/ReviewReadCache.ts |
+| The generation of a payload: code trees, and snapshots only when knowledge was compared. | `comparisonGenerationOf` | dashboard/src/panels/review/ReviewReadCache.ts |
+| Two generations differ on code trees, or on snapshots when both compared knowledge. | `sameGeneration` | dashboard/src/panels/review/ReviewReadCache.ts |
+| The content key is exactly the request's fields. | `sourceContentKey` | dashboard/src/panels/review/ReviewReadCache.ts |
+| The bounded mounted-surface cache invalidates by displayed generation; keepUnshown rejects an incompatible answer without advancing that generation, and sources are kept only as content with an expansion. | `ReviewReadCache` | dashboard/src/panels/review/ReviewReadCache.ts |
+| The context the content renderer reads it through; `null` outside a surface. | `ReviewReadCacheContext` | dashboard/src/panels/review/ReviewReadCache.ts |
+| The read cycle serves, keeps or only observes answers, and a refresh forgets its question. | `startRead` | dashboard/src/panels/review/ReviewReadCycle.ts |
+| The surface owns one cache and provides it. | `useSurface` | dashboard/src/panels/review/ReviewSurface.tsx |
+| The content renderer reads through it under the request key. | `useSourceContentRead` | dashboard/src/panels/review/SourceContent.tsx |
+| The bounds, refusal, generation and key cases. | `keeps at most the bound of reviews and evicts the least recently used (%i inserted)` | dashboard/src/panels/review/ReviewReadCache.test.ts |
 
 ### Cross-Repo References
 

@@ -1,0 +1,39 @@
+{
+  "path": "dashboard/src/panels/review/ReviewKeys.tsx",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Reviewer key reference: `isHelpKey` owns the described branch.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "75b7859c598d9c7f295f08986fffc0f346eedc64",
+            "content": "sha256:7964b9dddd8c16c221d982e871f5cd808d41cdabd48546f7d5eff439c1572cab",
+            "locator": {
+              "kind": "symbol",
+              "name": "isHelpKey"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Reviewer key reference: `ReviewKeys` owns the described branch.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "75b7859c598d9c7f295f08986fffc0f346eedc64",
+            "content": "sha256:7b3d5ddc895ccfa9ed026b572b06b195be67eab2fc13cdd0a180453e10880f14",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewKeys"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

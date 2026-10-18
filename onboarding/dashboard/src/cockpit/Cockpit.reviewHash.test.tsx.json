@@ -1,0 +1,24 @@
+{
+  "path": "dashboard/src/cockpit/Cockpit.reviewHash.test.tsx",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Adds recorded startup hash/refusal and real browser-history API playback in jsdom; selected-subject query changes do not replace the mounted surface or add an intent read, and Back closes a nested change-set page and restores Knowledge. Fixtures and fetch routing are explicit, not native browser acceptance.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e5613a64f7c351fc126e50011c0e9a640e8f879b",
+            "content": "sha256:3994bad1fbf574a9d211baca0e4506d708e815a988eb96c7778476197bc805a1",
+            "locator": {
+              "end": 157,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

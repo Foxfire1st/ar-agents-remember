@@ -1,0 +1,125 @@
+{
+  "path": "dashboard/src/panels/review/workspaceState.ts",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "e00057f352f49ba21fb0c809e433cdc31c113c91",
+        "content": "sha256:d46469c6cf6233fc47417636e4ea1b93f6fa805add2584a21e5fdfb3ce3be4db",
+        "locator": {
+          "kind": "symbol",
+          "name": "useWorkspaceState"
+        }
+      },
+      "id": "RLZ-6T67PT58",
+      "invariant": "INV-Z385RTQS",
+      "origin": {
+        "leaf": "260921-ICR-L46"
+      },
+      "rationale": "Holds diff layout, full-file disclosure and the open expression path as workspace-level state, with full-file off so changed regions show by default; it remembers the element that opened an expression, and closePath(null) returns focus to that opener.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "e00057f352f49ba21fb0c809e433cdc31c113c91",
+        "content": "sha256:d46469c6cf6233fc47417636e4ea1b93f6fa805add2584a21e5fdfb3ce3be4db",
+        "locator": {
+          "kind": "symbol",
+          "name": "useWorkspaceState"
+        }
+      },
+      "id": "RLZ-MGGXSY",
+      "invariant": "INV-9ZKYWQ",
+      "origin": {
+        "handoffEntry": "MIK-R39@v1-other-selections-start-afresh",
+        "leaf": "260928-MIK-L39"
+      },
+      "rationale": "Holds the tree intent: a number that goes up with every selection and the flag whether that selection keeps the tree. `beginSelection` is the only writer, and the initial intent does not keep.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "e00057f352f49ba21fb0c809e433cdc31c113c91",
+        "content": "sha256:080398a9f01fb5bbc3d478b039e47e7c8db049671beca6a570398c4f9f4b6b62",
+        "locator": {
+          "kind": "symbol",
+          "name": "FocusRequest"
+        }
+      },
+      "id": "RLZ-TJFJ3C",
+      "invariant": "INV-T1ZHP5",
+      "origin": {
+        "handoffEntry": "MIK-R39@v1-focus-request-answered-by-its-selection",
+        "leaf": "260928-MIK-L39"
+      },
+      "rationale": "The request a selection or a refresh leaves: the element that had focus, the number of the tree intent current when it was made (`after`), whether it only scrolls (`scrollOnly`), and whether an answer has arrived since (`answered`). The effect reads these fields together with the external tree intent's id, the payload identity and the catalogue's loading state: it leaves the request alone unless a later render's tree intent number exceeds the recorded one, waits while the catalogue loads and returns while the subject is pending, so the request's own fields do not decide consumption alone.",
+      "role": "support"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "FocusRequest declares the originating element, numbered intent and optional scroll/answered flags; this interface alone does not enforce their consumption.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e00057f352f49ba21fb0c809e433cdc31c113c91",
+            "content": "sha256:080398a9f01fb5bbc3d478b039e47e7c8db049671beca6a570398c4f9f4b6b62",
+            "locator": {
+              "kind": "symbol",
+              "name": "FocusRequest"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "WorkspaceState declares local display values, callbacks, center/focus refs and tree intent; it is not server authority or persistent storage.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e00057f352f49ba21fb0c809e433cdc31c113c91",
+            "content": "sha256:3612848799a3c876620a484e888082b918029fecadbdfda2914949914413a625",
+            "locator": {
+              "kind": "symbol",
+              "name": "WorkspaceState"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The mounted hook owns display state, numbered selection intent, initial media-query layout and focus-neutral versus focus-restoring path callbacks.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e00057f352f49ba21fb0c809e433cdc31c113c91",
+            "content": "sha256:d46469c6cf6233fc47417636e4ea1b93f6fa805add2584a21e5fdfb3ce3be4db",
+            "locator": {
+              "kind": "symbol",
+              "name": "useWorkspaceState"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Revealing a selected center skips narrow screens and otherwise resets the containing review surface scroll, without moving focus here.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e00057f352f49ba21fb0c809e433cdc31c113c91",
+            "content": "sha256:b72d207856757746f99d56c3fc190e610482d89f418a5a05551ef46f8b598f2d",
+            "locator": {
+              "kind": "symbol",
+              "name": "revealCenter"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

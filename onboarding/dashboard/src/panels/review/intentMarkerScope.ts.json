@@ -1,18 +1,60 @@
 {
   "path": "dashboard/src/panels/review/intentMarkerScope.ts",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "682ee6b7ec8192ca5c30b68570db7d4e9c72ea0c",
+        "content": "sha256:39bd172bc40e9441f0cfcff7e05775356deac1331196633c1741a99da17d6ac0",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-MPPHBY",
+      "invariant": "INV-GC92CP",
+      "origin": {
+        "handoffEntry": "MIK-R57@v2 by-design classification-scope",
+        "leaf": "260928-MIK-L57"
+      },
+      "rationale": "Shares the on-demand complete per-file classification among views drawing that file's marks.",
+      "role": "presentation"
+    }
+  ],
   "references": {
     "1": {
-      "note": "The module's own statement: a tree comparison provides the scope; a dataset review or a diff outside the workspace has none.\n\nAnchor: \"Only a tree comparison provides a scope.\"",
+      "note": "useIntentMarkerScope returns null when comparison is undefined and otherwise returns a scope containing that comparison. IntentMarkerScope defaults to null; useMarkClassification returns none without a scope or when inactive. These implementation checks establish the no-scope boundary without asserting that a dataset review lacks a comparison.\n\nAnchor: inclusive source ranges",
       "targets": [
         {
           "anchor": {
-            "blob": "667f28385f40263179298fd17e129d05591551ff",
-            "content": "sha256:8f7ae2577fd4fabdfba40da4ba6a307029f33e08705f007538c27469b597528b",
+            "blob": "682ee6b7ec8192ca5c30b68570db7d4e9c72ea0c",
+            "content": "sha256:462ae2d4435ac736e591813783fe6f120420dfa25a0e0e6fad849efd9d176ff8",
             "locator": {
-              "end": 6,
+              "end": 128,
               "kind": "line_range",
-              "start": 1
+              "start": 90
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "682ee6b7ec8192ca5c30b68570db7d4e9c72ea0c",
+            "content": "sha256:6a0d9f23c6cbc42883f7cdb6366cc1442c3970557b419940b16a8838fd1f4367",
+            "locator": {
+              "end": 53,
+              "kind": "line_range",
+              "start": 53
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "682ee6b7ec8192ca5c30b68570db7d4e9c72ea0c",
+            "content": "sha256:fa1ac77ab6f77f98f5ac3011920b6c41da0b2394f86a4a2c5a64ebfed16340da",
+            "locator": {
+              "end": 210,
+              "kind": "line_range",
+              "start": 175
             }
           },
           "kind": "code"

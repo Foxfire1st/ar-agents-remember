@@ -2,17 +2,17 @@
   "path": "dashboard/src/panels/review/subjectReview.noFamily.captured.json",
   "realizes": [],
   "references": {
-    "1": {
-      "note": "The case or response retains its declared selected input.\n\nAnchor: \"revision_selection\"",
+    "2": {
+      "note": "The current retained JSON input supplies the literal identities, response states and populations summarized above; these are fixture facts, not live project knowledge or fresh execution evidence.",
       "targets": [
         {
           "anchor": {
-            "blob": "785b01c39f5d58d017dcd2b1800f485e204df9a9",
-            "content": "sha256:3d758fdce5b75369b1d0fe6915be54b42f9666f6186c1b1506c80604d5f1e8f7",
+            "blob": "c71c36e06353befee32977af0b4a74ae0c58a859",
+            "content": "sha256:fcf34721bbc361ca3967a038dc294262b8dddd9aa93cdf3bb1b40ffc7bca749f",
             "locator": {
-              "end": 64,
+              "end": 1,
               "kind": "line_range",
-              "start": 59
+              "start": 1
             }
           },
           "kind": "code"

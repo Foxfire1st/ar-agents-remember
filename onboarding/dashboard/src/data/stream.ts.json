@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "6a773125cc623e2db3077af920369e0578744743",
+        "blob": "9f7f7e826fed6b4eee1642c20e2953c6908a50ae",
         "content": "sha256:50ecd99adeea344eab59e1b9a5a7d0e71dc09a700ff0a66c3954afbe0b7ab1e2",
         "locator": {
           "kind": "symbol",
@@ -21,12 +21,12 @@
     },
     {
       "anchor": {
-        "blob": "6a773125cc623e2db3077af920369e0578744743",
+        "blob": "9f7f7e826fed6b4eee1642c20e2953c6908a50ae",
         "content": "sha256:a14aceed65b94153c20574fa615b25fa330f8c70322668da0c850b2c9528c21d",
         "locator": {
-          "end": 13,
+          "end": 14,
           "kind": "line_range",
-          "start": 6
+          "start": 7
         }
       },
       "id": "RLZ-C5YJ9B",
@@ -36,6 +36,24 @@
         "leaf": "260928-MIK-L168"
       },
       "rationale": "The state-event subscription takes task/task.removed/taskCounts instead of lifecycle/lifecycle.removed, forwarding the single server task population while retaining independent state events.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "9f7f7e826fed6b4eee1642c20e2953c6908a50ae",
+        "content": "sha256:2f23951616c27989b3f12f307fdfbe0261488f13f80daa810c6c7082a00ed794",
+        "locator": {
+          "kind": "symbol",
+          "name": "connectState"
+        }
+      },
+      "id": "RLZ-D66VH0",
+      "invariant": "INV-74578B97",
+      "origin": {
+        "handoffEntry": "CUR-L57-sse-live-summary-invalidation-transport",
+        "leaf": "260928-MIK-L57"
+      },
+      "rationale": "Uses the existing state EventSource for the registered memory scope, ignores events from stopped/replaced sources, dispatches initial/change notices and separate errors to the watch owner, resets initial state on open and reopens/disposes the scope subscription. The watch owner invokes shared entry generation invalidation; this transport neither invents summary counts nor authenticates knowledge or opens a second memory connection.",
       "role": "propagation-persistence"
     }
   ],
@@ -51,6 +69,50 @@
               "kind": "symbol",
               "name": "connectState"
             }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "The watch owner selects the first registered scope. Registration changes notify scope listeners when that selected scope changes and reset the revision baseline. publishReviewMemory checks matching scope and a string revision, then notifies matching registrations for an undefined baseline, initial message or changed revision. publishReviewMemoryError invokes matching failure callbacks. These are client coordination checks, not authentication.\n\nAnchor: inclusive source ranges",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a6a7b8ec91405392b2bff6759bb5d4dc1b6d7c46",
+            "content": "sha256:409c6ef3111140632aacba32c4c12ab1c421c1b590cc45faa8c72fa4f4686cda",
+            "locator": {
+              "end": 32,
+              "kind": "line_range",
+              "start": 12
+            },
+            "path": "dashboard/src/data/reviewMemoryWatch.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a6a7b8ec91405392b2bff6759bb5d4dc1b6d7c46",
+            "content": "sha256:6c0edb982debcfbf61447406ab93c2e41d2c7b4eb5f6f1ebed38d69f61b6f5de",
+            "locator": {
+              "end": 42,
+              "kind": "line_range",
+              "start": 34
+            },
+            "path": "dashboard/src/data/reviewMemoryWatch.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a6a7b8ec91405392b2bff6759bb5d4dc1b6d7c46",
+            "content": "sha256:1d11c144cafa8f7a39f87af2cd7d1e94fab807e31b73c8e2c9bee4d2e684929c",
+            "locator": {
+              "end": 48,
+              "kind": "line_range",
+              "start": 43
+            },
+            "path": "dashboard/src/data/reviewMemoryWatch.ts"
           },
           "kind": "code"
         }
@@ -125,27 +187,28 @@
       ]
     },
     "6": {
-      "note": "This client transport module talks only to this package's dashboard serving endpoints.",
+      "note": "The client opens this package’s state and raw-event endpoints through the separate connectState and connectEvents owners; memory scope reuses the existing state connection.\n\nAnchor: inclusive source ranges",
       "targets": [
         {
           "anchor": {
-            "blob": "02afc6e0851be4e730b3b9d0fa41c83479dcc1df",
-            "content": "sha256:e3d90fe0b37e7ff86579270533de22fd1bbb1774e8b5d9e5a9ddf5e0aa70e80b",
+            "blob": "9f7f7e826fed6b4eee1642c20e2953c6908a50ae",
+            "content": "sha256:2f23951616c27989b3f12f307fdfbe0261488f13f80daa810c6c7082a00ed794",
             "locator": {
-              "kind": "symbol",
-              "name": "connectState"
+              "end": 131,
+              "kind": "line_range",
+              "start": 31
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "ce5020b60dcc8107abe2430742d38707074ae80b",
-            "content": "sha256:6476f0bc37887224226626856171dc26e267aa4aa65b8bab6c54899cceed98f5",
+            "blob": "9f7f7e826fed6b4eee1642c20e2953c6908a50ae",
+            "content": "sha256:50ecd99adeea344eab59e1b9a5a7d0e71dc09a700ff0a66c3954afbe0b7ab1e2",
             "locator": {
-              "end": 139,
+              "end": 152,
               "kind": "line_range",
-              "start": 129
+              "start": 143
             }
           },
           "kind": "code"
@@ -180,6 +243,47 @@
               "name": "applySnapshotState"
             },
             "path": "dashboard/src/data/store.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "connectState reads optional review-memory scope into request parameters, guards handlers against stopped or replaced sources, publishes parsed memory messages with an initial flag reset on open, and publishes parsed errors separately. Memory messages mark watchdog liveness; memory errors do not. Disposal unsubscribes scope notifications.\n\nAnchor: inclusive source ranges",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9f7f7e826fed6b4eee1642c20e2953c6908a50ae",
+            "content": "sha256:37a1839a7433d08e809633356f7b67b5dbbede3c44d66c04927285decee2f4f1",
+            "locator": {
+              "end": 66,
+              "kind": "line_range",
+              "start": 47
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9f7f7e826fed6b4eee1642c20e2953c6908a50ae",
+            "content": "sha256:24a65ec340ac93f3d598aa813ff5946fc82aa78c627ee8b85e260cf1105a35ef",
+            "locator": {
+              "end": 80,
+              "kind": "line_range",
+              "start": 78
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9f7f7e826fed6b4eee1642c20e2953c6908a50ae",
+            "content": "sha256:cf0a964c7a74a1c090067a5a56cdbe3b12d9cf6bb1a1a8f5db9cc2f1e262b853",
+            "locator": {
+              "end": 130,
+              "kind": "line_range",
+              "start": 122
+            }
           },
           "kind": "code"
         }

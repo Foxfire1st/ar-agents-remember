@@ -1,0 +1,53 @@
+{
+  "admission": {
+    "criteria": [
+      "constrains_future_work"
+    ],
+    "justification": "A future tokenizer change must not silently alter word boundaries or drop unspaced text while claiming the retained whitespace-token contract."
+  },
+  "alternatives": [
+    {
+      "option": "Split tokens on the supplied whitespace definition, retaining unspaced and zero-width-space passages whole.",
+      "reason": "MIK-R35 rule2 chooses whitespace splitting; the rewrite presentation retains the complete supplied strings rather than hiding such passages.",
+      "status": "chosen"
+    },
+    {
+      "option": "Invent locale/zero-width-space word boundaries for these supplied passages.",
+      "reason": "MIK-R35 rule2 chooses whitespace splitting; the rewrite presentation retains the complete supplied strings rather than hiding such passages.",
+      "reconsider_when": "An approved requirement changes segmentation and proves exact supplied-text preservation and the corresponding truthful change classification.",
+      "status": "rejected"
+    }
+  ],
+  "consequences": [
+    "A future tokenizer change must not silently alter word boundaries or drop unspaced text while claiming the retained whitespace-token contract.",
+    "No natural-language segmentation, Unicode grapheme guarantee or original-file byte-decoding authenticity is claimed."
+  ],
+  "context": "Approved MIK-R67@v2 rule18 and its eight named reasons prescribe these unchanged choices; the separate one-spilled-history choice is expressly approved in L57-F07-ONE-SPILLED-HISTORY-ON-PRIVATE-TEMP-DISK-IS-APPROVED.json. Source obligation: MIK-R67@v2 by-design 4. This records a governing boundary, not an invented design meeting.",
+  "decider": "Approved MIK-R67@v2/D47/D48 for its stated unchanged choices; Architect97e0320d ruling2026-10-16T13:14:22+02:00 for the one-spilled-history resource choice.",
+  "id": "DEC-WPB1WS",
+  "links": [
+    {
+      "relation": "constrains",
+      "target": {
+        "blob": "9b1446f1913be8c289a58d8098020ffd7fabc8e4",
+        "content": "sha256:95deb73f907027c5c9fb94265e870c87d2935e4fff88546b1560524621183d76",
+        "locator": {
+          "kind": "file"
+        },
+        "path": "dashboard/src/panels/review/wordDiff.ts"
+      }
+    }
+  ],
+  "origin": {
+    "handoff": {
+      "path": "freeze11-r67-prescribed-boundaries-and-spill-resource-choice-01.json"
+    },
+    "handoffEntry": "CUR-L57-R67-choice-4",
+    "leaf": "260928-MIK-L57",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-decision/v1",
+  "status": "active",
+  "supersedes": []
+}

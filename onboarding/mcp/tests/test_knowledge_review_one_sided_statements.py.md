@@ -8,18 +8,19 @@
 
 The one-sided statement contract drives real compose_review over two independently built read-side snapshots. Their entries are assembled by knowledge_rows_test_support, the test-only builder; no production canonical database writer is involved. The after half holds an addition and the before half a removal, each selected by its own identity. [15]
 
-The renderer half of the same requirement is `dashboard/src/panels/review/KnowledgeStatements.test.tsx`,
-which uses these same values. A change to either half's contract fails in one of the two.
+The renderer cases in `dashboard/src/panels/review/KnowledgeStatements.test.tsx` use their own
+synthetic statement values and before/after states. They neither share these Python constants nor
+assert the backend acceptance_ref field-row contract. The Python and renderer assertions are distinct.
 
 ## Code Commentary
 
 ### Logic
 
 **The fixture is two independently built snapshots, and that is the preservation boundary made
-mechanical.** The module-scoped `pair` fixture mints one random namespace and builds two
+mechanical.** The module-scoped `pair` fixture uses `INDEX_REPOSITORY_ID` as its namespace and builds two
 `build_read_scope_fixture` trees — the "before" half and the "after" half **under the
 same namespace** — then adds one whole extra invariant apiece via `ExtraInvariantSeed`:
-`ADDED_*` into *after* only, `REMOVED_*` into *before* only, and one shared identity proposed in
+the added seed into *after* only, the removed seed into *before* only, and one shared identity proposed in
 *before* and accepted in *after*. So the addition and the removal are a real difference between two
 real snapshots, not an edit of one tree, and no stored identity is altered to produce a case.
 Module scope is documented in the fixture's own docstring: both trees are read-only once built, no
@@ -27,14 +28,14 @@ case writes after the fixture is built, and a per-case rebuild would pay for two
 measure the same bytes.
 
 The extra-invariant seeds are written through the test-only rows builder; text records carry no
-authored acceptance event, so the accepting side's value is the recorded origin state. Only accepted
-origin data receives an acceptance reference. This constructs read-side data and proves no
-production write refusal. [5] [15]
+authored acceptance event, so the accepting side's acceptance reference is derived by the projection
+as `text-knowledge:<record path>`. Only accepted origin data receives that reference. This constructs read-side data and proves no
+production write refusal. [15]
 
 **`review` is the one composition call, and it fails loudly on a refusal.** It hands `compose_review`
 a hand-assembled `ReviewCandidateResolution` (the two databases, the two `git_root`s and the two
 `git_tree_id`s the fixtures carry), a `ReviewSurfaceRequest` naming the master, the leaf and the
-selector, and an empty `ReviewRecordInputs`; when the result carries no payload it raises with the
+selector; when the result carries no payload it raises with the
 composition's own refusal rather than asserting on `None`. The one case that must render *no*
 subject — `test_a_review_that_compared_no_subject_serves_no_operand_at_all` — calls `compose_review`
 directly with `selector=None` instead, because that path is the point of the case.
@@ -48,15 +49,14 @@ directly with `selector=None` instead, because that path is the point of the cas
 - **A removal**: the mirror image, with `side_absence:after:selector_absent`.
 - **A one-sided field row**: the shared revision identity is proposed in *before* and
   accepted in *after*, so the comparison reports the transition and each side's own value; the roster
-  is asserted **by exact key set** (`acceptance_ref`, `lifecycle`, `payload_digest`, `provenance`),
-  `acceptance_ref` keeps `before_value is None` beside `after_value == SHARED_ACCEPTANCE_REF`, and
+  is asserted **by exact key set** (`acceptance_ref`, `lifecycle`, `payload_digest`),
+  `acceptance_ref` keeps `before_value is None` beside a non-`None` after value starting with `text-knowledge:`, and
   `lifecycle` is `("proposed", "accepted")`. Dropping the row, or printing the side that did record a
   value as blank, is what a one-sided statement must not become.
-- **A structured value**: the `provenance` row the comparison reports as *changed*
-  carries a value on **both** sides, the two differ, and each is parsed back out of its marker and
-  checked against the fixture's own stored authorship envelope (`actor_ref`, `operation_id`,
-  `authorization_ref`) — so the projection invents nothing. The case also pins the projection's
-  canonicality: `structured_value_text({"b": 1, "a": 2}) == structured_value_text({"a": 2, "b": 1})`.
+- **A structured value**: the retained function pins key-order canonicality:
+  `structured_value_text({"b": 1, "a": 2}) == structured_value_text({"a": 2, "b": 1})`.
+  Its former fixture-driven envelope round trip is explicitly retired: the shared text's provenance
+  is equal on both sides, so the comparison reports no changed `provenance` row.
 - **A one-sided record keeps an empty roster**: an addition reports
   `field_changes == ()` and `before_conditions == ()` while `after_conditions == CONDITIONS`, because
   the comparison reports such a record through its coverage and nine field rows would state nine
@@ -87,25 +87,27 @@ module-level and upper-case, and each case's docstring states the property rathe
   produce a removal example.
 - **The composition is real, and it is the adapter's own entry point.** `compose_review` is called
   with the shipped request type; no payload is substituted and no private helper is reached into.
-- **The values the dashboard renders are the values asserted here.** The statements, the
-  absent/unresolved details and the `acceptance_ref`/`provenance` rows are the binding between this
-  module and the renderer suite.
-- **A `None` on a field row is an absence and nothing else.** The structured-value case exists to
-  make that falsifiable from both directions: `before_value is not None` and the two projections
-  differ.
+- **Backend assertions and renderer assertions have separate fixtures and scope.** This module
+  asserts its own statement constants, absent/unresolved details and `acceptance_ref` field row.
+  The renderer suite uses synthetic statements; it supplies no shared-value or acceptance-field binding.
+- **The acceptance row preserves a one-sided value.** Its before value is `None`, while its after
+  value is present and starts with `text-knowledge:`. The structured-value case checks canonicality only.
 - **Read-only after the fixture is built.** No case writes to either dataset, and the fixture is
   module-scoped precisely because that holds.
 - **Boundary.** This is measurement, not a second implementation: the module imports
-  `structured_value_text` to check the projection's markers and canonicality, and it re-derives no
+  `structured_value_text` to check the projection's key-order canonicality, and it re-derives no
   composition rule of its own.
 
 ### Todos
 
-None recorded. One measured limit is deliberately out of this module's scope and is recorded by the
-leaf for R07: when the reviewed subject exists only on one side **and that side holds several retained
-revisions**, `_identity_item` still returns `candidates[0]`, so which revision's statement is shown is
-decided by page order. These cases avoid it by authoring subjects with a single revision and no
-claims.
+No current page-order/retained-revision limitation is established by this module. Current
+composition calls `select_subject_revisions` for each tree's selected subject; an invariant text
+record has one numeric revision and one statement.
+
+**Historical selector account, not a current limitation:** the earlier R07 account described a
+one-sided subject with several retained revisions, `_identity_item` returning `candidates[0]`, and
+page-order-dependent wording. That describes the former model, not the present selector or text
+record shape. The old account is retained here only as history.
 
 ## Evidence
 
@@ -125,29 +127,33 @@ it.
 
 - **The module's own scope statement: six cases over the real adapter and two real datasets, and the load-bearing properties each one owns.** [1]
 - The module's whole lane declaration. [2]
-- The authored identities and words every case asserts against, drawn once in the builder. [3]
-- **The two fixture values: one extra invariant seed (with the origin state that alone decides its acceptance reference) and the pair of snapshots plus the identities cases select by.** [4]
 
-- Fixture insertion through test-only builder, with acceptance provenance tied to accepted origin. [5]
 
 - **The fixture: two independently built snapshots under one namespace, and the four authored revisions that make an addition, a removal and a real transition.** [6]
 - The one composition call, with the hand-assembled resolution and the loud failure on a refusal. [7]
 - **The addition and the removal: the complete present-side statement, the named absent side with `text is None`, and the comparison's own side-absence code.** [8]
-- **The field row: the roster asserted by exact key set, the one-sided value kept, and the lifecycle transition beside it.** [9]
-- **The structured value: both sides present and different, each projection round-tripped back to the stored envelope, and the projection's canonicality pinned.** [10]
 - The one-sided record reported by coverage with an empty roster, against the conditions the after side really recorded. [11]
 - **The task-context case: no comparison, both sides unresolved with the same reason and no text, and no roster.** [12]
-- **The projection owner whose markers and canonicality this module asserts.** [13]
-- The adapter entry point the cases drive, and the one-sided contract its pane values carry. [14]
 
 - Read fixture and test-only row builder supply both datasets. [15]
 
 - **The lane row that selects this module, and the artifact consumer row that registers it against the fixture it consumes.** [16]
 - The `consumer_scope = "exact"` artifact whose list this module joined. [17]
-- **The renderer half that uses these same values, which is what makes a change to either half fail in one of the two.** [18]
+
+- The renderer displays before/after statements and its component tests use synthetic statement values; they neither import the Python statement constants nor assert acceptance_ref field rows. [18]
+- Current revision selection takes the subject's own before/after item for each tree, rather than the historical _identity_item/page-order account. [19]
+- An invariant text record stores one numeric revision and one statement, distinct from the former retained-revision model. [20]
 
 ### Cross-Repo References
 
 No cross-repository implementation evidence is required for these local test and fixture boundaries.
 
 Fixture repositories and protocol doubles do not establish a live external integration.
+
+- Retain the authored statement constants; remove the nonexistent SHARED_ACCEPTANCE_REF target. Acceptance is asserted by its text-knowledge prefix. [3]
+- OneSidedPair remains the local frozen dataclass. Extra seeds are constructed by _extra; the former AuthoredInvariant target does not survive. [4]
+- _extra constructs ExtraInvariantSeed values, and pair supplies them to the test fixture builder. The former author_invariant target is absent. [5]
+- The exact roster is acceptance_ref, lifecycle and payload_digest; accepted provenance uses a text-knowledge acceptance prefix. [9]
+- The retained function asserts key-order canonicality only and explicitly discloses withdrawal of its fixture-driven round trip. [10]
+- The projection owner defines canonical structured-value text and its wrapper markers. The retained local test asserts key-order canonicality; marker round-trip test coverage is not claimed. [13]
+- The current compose_review entry point takes resolution and request; the local review helper invokes it without the removed ReviewRecordInputs bag. [14]

@@ -1,0 +1,24 @@
+{
+  "path": "dashboard/src/panels/review/walkReal.trees.captured.json",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The retained source supplies the facts and declared boundaries described above.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9cd1ca136a237d1586c0a469bbe4870593f886fc",
+            "content": "sha256:1df989878cd1108d9372aa06f10a1c212ed73ed67bb9f01a6dcfe1849bfa1a94",
+            "locator": {
+              "end": 1,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

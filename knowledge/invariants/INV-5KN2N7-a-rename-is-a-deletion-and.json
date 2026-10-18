@@ -1,0 +1,32 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake"
+    ],
+    "justification": "A future classifier must not merge two path-keyed obligations into a guessed renamed item and lose deletion/addition attribution."
+  },
+  "applicability": "The four-tree reviewer rename boundary chosen in MIK-R57@v2 appendix83/151 and rule6.",
+  "conditions": [
+    "Changed-file items and lane-side projections use each concrete changed path; an added path has no before path and a deleted path no after path."
+  ],
+  "exclusions": [
+    "No prohibition on Git itself detecting renames for other purposes and no claim that this projection owns the underlying Git measurement."
+  ],
+  "id": "INV-5KN2N7",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "/home/firefox/projects/ar-coordination/tasks/agents-remember/260928_maintained-invariant-knowledge/notes/reports/worker/48060148-87d0-4e1e-ad2e-6f1fa353092d/role-launch/freeze05-builder-curator-handoff.md#producer-48"
+      ],
+      "path": "freeze11-r57-eight-prescribed-by-design-boundaries-01.json"
+    },
+    "handoffEntry": "MIK-R57@v2 by-design rename",
+    "leaf": "260928-MIK-L57",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "A rename is a deletion and an addition because changed-file items are keyed by path.",
+  "status": "proposed",
+  "supersedes": []
+}

@@ -56,13 +56,9 @@ No configured live documentation source was available for this pass.
 
 ### Repo-Internal References
 
-- The document order, top/Back and citation-pane cases. [8]
 
-- The O1 shared-acquisition cases: held record replies and flushed React effects expose duplicate reads before checking the single acquisition. [9]
 
-- The stale-answer and late-selection cases. [10]
 
-- The captured bodies the cases serve. [11]
 
 
 ### Cross-Repo References
@@ -72,4 +68,8 @@ No cross-repo boundary is crossed by this file.
 
 ### Clock And Settlement Evidence
 
-- Negative stale-answer and duplicate-acquisition assertions follow delivered held replies and flushed React effects in async `act`. This gives the actual stale response or retained-pane effect a chance to run before asserting that it changed nothing; no fixed real sleep supplies that proof. [12]
+- The document-order, top/Back and wide/phone citation cases remain in this suite. [8]
+- Held record replies, branch navigation, rerenders and Back precede the single-acquisition assertion; the following case names a failed shared list without retry. [9]
+- Commit and repository changes clear prior record answers; delivered late selections cannot replace the current selection. [10]
+- captured is imported from readerTestSupport, then used to serve record bodies here; it is not a declaration in this file. [11]
+- Imported heldTree replies and locally held record replies are delivered in async act before negative stale-answer and duplicate-acquisition assertions. [12]

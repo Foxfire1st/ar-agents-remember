@@ -1,0 +1,40 @@
+{
+  "path": "mcp/src/agents_remember/models/lifecycles/comparison_records.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Only assessment availability survives here; count/state/next-action combinations are constructor-checked.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "68801f87ac1b7cdcb236bc14286d61bcf0a7be1b",
+            "content": "sha256:7a0602a1c762ca1c5df340982eea5bf38bcb3e7415e5ff3feec234f30c87780f",
+            "locator": {
+              "kind": "symbol",
+              "name": "ComparisonAssessmentAvailability"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Immutable manifests retain optional captured assessment availability, omit it from old canonical encoding when absent, and check its count against bound assessments.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "251e7c89eb87aa6086e0059351fa20f921d94638",
+            "content": "sha256:1998de33ff7fae2df7457701d4ec82ad7d05a7c91188390b193b84adea85c881",
+            "locator": {
+              "kind": "symbol",
+              "name": "ComparisonRecordBinding"
+            },
+            "path": "mcp/src/agents_remember/application/review_comparison_generation.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

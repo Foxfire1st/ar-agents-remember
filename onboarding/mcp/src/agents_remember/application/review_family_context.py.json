@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "dc06e359c8d4842453f54d5f81f0734cc0406ddd",
-        "content": "sha256:5a4b4e0e83d9a4eac2a212fd5fc7d40fe5f174f33673387ba0075d15d0802f30",
+        "blob": "93fc180a93009cdcbc3a47e37c64fbedecc99396",
+        "content": "sha256:311333c49177973c55eaed86de40a816b2b438d3dd5765b6a9d091d2abdf714a",
         "locator": {
           "kind": "symbol",
           "name": "_entry"
@@ -21,7 +21,7 @@
     },
     {
       "anchor": {
-        "blob": "dc06e359c8d4842453f54d5f81f0734cc0406ddd",
+        "blob": "93fc180a93009cdcbc3a47e37c64fbedecc99396",
         "content": "sha256:62a46c8729b2d8dc2fb0db1d4d4bd75e2134f73e58820049f40503c09059a21a",
         "locator": {
           "kind": "symbol",
@@ -39,8 +39,8 @@
     },
     {
       "anchor": {
-        "blob": "dc06e359c8d4842453f54d5f81f0734cc0406ddd",
-        "content": "sha256:e6142c6ea77e6017929c7c6057fe99d2b883c1b6b83117d8f7151715790bbba2",
+        "blob": "93fc180a93009cdcbc3a47e37c64fbedecc99396",
+        "content": "sha256:8f61b92d4359bbb562ae3b2fa0a3e62a3ada4d372f37730d20bfb75c016fa337",
         "locator": {
           "kind": "symbol",
           "name": "_applicable_family"
@@ -56,7 +56,7 @@
     },
     {
       "anchor": {
-        "blob": "dc06e359c8d4842453f54d5f81f0734cc0406ddd",
+        "blob": "93fc180a93009cdcbc3a47e37c64fbedecc99396",
         "content": "sha256:62a46c8729b2d8dc2fb0db1d4d4bd75e2134f73e58820049f40503c09059a21a",
         "locator": {
           "kind": "symbol",
@@ -73,8 +73,8 @@
     },
     {
       "anchor": {
-        "blob": "dc06e359c8d4842453f54d5f81f0734cc0406ddd",
-        "content": "sha256:5a4b4e0e83d9a4eac2a212fd5fc7d40fe5f174f33673387ba0075d15d0802f30",
+        "blob": "93fc180a93009cdcbc3a47e37c64fbedecc99396",
+        "content": "sha256:311333c49177973c55eaed86de40a816b2b438d3dd5765b6a9d091d2abdf714a",
         "locator": {
           "kind": "symbol",
           "name": "_entry"
@@ -90,160 +90,188 @@
     }
   ],
   "references": {
-    "1": {
-      "note": "Open and close the existing bound roster sides; retain named entry states.",
+    "11": {
+      "note": "Missing/unsupported selectors and opened-side closure use the actual entry path.\n\nAnchor: entry guards",
       "targets": [
         {
           "anchor": {
-            "blob": "dc06e359c8d4842453f54d5f81f0734cc0406ddd",
+            "blob": "93fc180a93009cdcbc3a47e37c64fbedecc99396",
             "content": "sha256:c3a1c68003c00535b8f19dc02b4f5d41b5949bd9c0ff5d05a3a5ed710299d8f8",
             "locator": {
-              "kind": "symbol",
-              "name": "review_family_context"
+              "end": 294,
+              "kind": "line_range",
+              "start": 247
             }
           },
           "kind": "code"
         }
       ]
     },
-    "10": {
-      "note": "Count exact member revisions separately from repeated membership rows.",
+    "12": {
+      "note": "Only the union of directly discovered family identities is composed.\n\nAnchor: composition loop",
       "targets": [
         {
           "anchor": {
-            "blob": "dc06e359c8d4842453f54d5f81f0734cc0406ddd",
-            "content": "sha256:75289f6047406dd94b3371a8fc45309f32287d9542608b0845d6bcab7d3f8500",
-            "locator": {
-              "kind": "symbol",
-              "name": "_unique_members"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "2": {
-      "note": "Discover only the union supplied by the existing direct invariant policy.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "dc06e359c8d4842453f54d5f81f0734cc0406ddd",
+            "blob": "93fc180a93009cdcbc3a47e37c64fbedecc99396",
             "content": "sha256:c8234964ac91da50fbb3f70efa6b1c13325c1a37484866c7e21ca8c6d55c062e",
             "locator": {
-              "kind": "symbol",
-              "name": "_compose"
+              "end": 332,
+              "kind": "line_range",
+              "start": 297
             }
           },
           "kind": "code"
         }
       ]
     },
-    "3": {
-      "note": "Invariant discovery returns family identity keys, not a head-selection subset.",
+    "13": {
+      "note": "Outcome totals, continuation/refusal and delivered-member uniqueness are distinct calculations.\n\nAnchor: outcome and page union",
       "targets": [
         {
           "anchor": {
-            "blob": "dc06e359c8d4842453f54d5f81f0734cc0406ddd",
-            "content": "sha256:194981a2a7e1d110b4a8eb0b79985a63c12c4e6d4427e584979ac1bf87f467ea",
+            "blob": "93fc180a93009cdcbc3a47e37c64fbedecc99396",
+            "content": "sha256:59c3cb4db2f7ed2e2c5e3cda0c2933138cabc48bbb4003e90125015087390b1d",
             "locator": {
-              "kind": "symbol",
-              "name": "_applicable_invariant"
+              "end": 386,
+              "kind": "line_range",
+              "start": 335
             }
           },
           "kind": "code"
         }
       ]
     },
-    "4": {
-      "note": "Family and exact-family-revision populations come from the existing family owner.",
+    "14": {
+      "note": "Exact-revision absence and identity absence are explained separately.\n\nAnchor: selection axis",
       "targets": [
         {
           "anchor": {
-            "blob": "dc06e359c8d4842453f54d5f81f0734cc0406ddd",
-            "content": "sha256:e6142c6ea77e6017929c7c6057fe99d2b883c1b6b83117d8f7151715790bbba2",
+            "blob": "93fc180a93009cdcbc3a47e37c64fbedecc99396",
+            "content": "sha256:370bc96f33d751788b216a719480d6fd0260d7e87187848ba14aebaa755cdd9c",
             "locator": {
-              "kind": "symbol",
-              "name": "_applicable_family"
+              "end": 442,
+              "kind": "line_range",
+              "start": 416
             }
           },
           "kind": "code"
         }
       ]
     },
-    "5": {
-      "note": "Resolve each discovered family independently on both snapshots, then read its own selected rosters.",
+    "15": {
+      "note": "Unread scope never becomes a measured no-family zero.\n\nAnchor: absence boundary",
       "targets": [
         {
           "anchor": {
-            "blob": "09755c1ec83fa9aa2d5aa1888091ae3f978d1183",
-            "content": "sha256:0d57404ce56e5c2fdc5d4d176325362a873f6085e7f13de9b01e502bfe032184",
+            "blob": "93fc180a93009cdcbc3a47e37c64fbedecc99396",
+            "content": "sha256:baec927a6c21c0ce98d6efecad93a622da21ec524e1b59f81b6f7b944f718cfa",
             "locator": {
-              "kind": "symbol",
-              "name": "_entry"
+              "end": 479,
+              "kind": "line_range",
+              "start": 445
             }
           },
           "kind": "code"
         }
       ]
     },
-    "6": {
-      "note": "Use the existing authored-head rule and only edges inside the population.",
+    "16": {
+      "note": "Family/invariant discovery records indexed family failures and independent populations.\n\nAnchor: discovery and indexed failures",
       "targets": [
         {
           "anchor": {
-            "blob": "09755c1ec83fa9aa2d5aa1888091ae3f978d1183",
-            "content": "sha256:d799ee05d689bad242115620e1d7c0a1695e217d1cc1e84e804328f6652aff12",
+            "blob": "93fc180a93009cdcbc3a47e37c64fbedecc99396",
+            "content": "sha256:3c873ac8d11017370c132ea055aac3aaa482d08ddd02d8b3aa144f9d48d63b87",
             "locator": {
-              "kind": "symbol",
-              "name": "_heads"
+              "end": 592,
+              "kind": "line_range",
+              "start": 499
             }
           },
           "kind": "code"
         }
       ]
     },
-    "7": {
-      "note": "State genuine family or exact-revision absence, not primary membership absence.",
+    "17": {
+      "note": "Independent family selection, explicit unread-side override and owner-bound rosters are composed together.\n\nAnchor: entry and roster ownership",
       "targets": [
         {
           "anchor": {
-            "blob": "dc06e359c8d4842453f54d5f81f0734cc0406ddd",
-            "content": "sha256:53c688ea20a29692d02513ddff87bb99f09ee9f651f7a08058ff82167001ec0f",
+            "blob": "93fc180a93009cdcbc3a47e37c64fbedecc99396",
+            "content": "sha256:311333c49177973c55eaed86de40a816b2b438d3dd5765b6a9d091d2abdf714a",
             "locator": {
-              "kind": "symbol",
-              "name": "_not_recorded_detail"
+              "end": 678,
+              "kind": "line_range",
+              "start": 599
             }
           },
           "kind": "code"
         }
       ]
     },
-    "8": {
-      "note": "Preserve compared, one-sided, ambiguous and unresolved selection outcomes.",
+    "18": {
+      "note": "The retained head helper and current four-state family selection choose no arbitrary winner.\n\nAnchor: head and selection states",
       "targets": [
         {
           "anchor": {
-            "blob": "dc06e359c8d4842453f54d5f81f0734cc0406ddd",
-            "content": "sha256:f2cefb08011b42b79a51d3f5190ff123fd1e99028db7abfffa64b1b49008f09c",
+            "blob": "93fc180a93009cdcbc3a47e37c64fbedecc99396",
+            "content": "sha256:17cf21b61a745fb06a25700732849afd04bf40aceb1f7c3bfd1f1d91b9ffb6dd",
             "locator": {
-              "kind": "symbol",
-              "name": "_selection"
+              "end": 765,
+              "kind": "line_range",
+              "start": 697
             }
           },
           "kind": "code"
         }
       ]
     },
-    "9": {
-      "note": "Expose candidate heads’ own guarantees without inventing a selected roster.",
+    "19": {
+      "note": "The shared helper sorts supplied revisions without reading predecessor edges.\n\nAnchor: actual shared rule",
       "targets": [
         {
           "anchor": {
-            "blob": "dc06e359c8d4842453f54d5f81f0734cc0406ddd",
-            "content": "sha256:ac7d7062b2023eb5ca318fa7f3edfa6a99735c2de330110bed82b920aef8b629",
+            "blob": "67d78df305463c86edbf04b1de4baf9b2b37f11f",
+            "content": "sha256:f670f2826238b1feb8b93959f5960ec0709c1aae4a68d731b78bbe111da287c9",
             "locator": {
-              "kind": "symbol",
-              "name": "_unresolved_entry"
+              "end": 32,
+              "kind": "line_range",
+              "start": 29
+            },
+            "path": "mcp/src/agents_remember/application/review_revision_comparison.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "20": {
+      "note": "Unresolved candidates retain readable guarantees and each unread side’s reason.\n\nAnchor: unresolved context",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "93fc180a93009cdcbc3a47e37c64fbedecc99396",
+            "content": "sha256:2270b04fc8dfef98687d3bfac07734323c4628af332059bf409e8dd5ef471fe0",
+            "locator": {
+              "end": 876,
+              "kind": "line_range",
+              "start": 825
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "21": {
+      "note": "Labels and recorded/partial/unavailable entry states use the actual side/page content.\n\nAnchor: label and entry state",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "93fc180a93009cdcbc3a47e37c64fbedecc99396",
+            "content": "sha256:c013ca21d4174c929948d74ceebdd59571ee73a01c497c75c7298c0edb91a65e",
+            "locator": {
+              "end": 922,
+              "kind": "line_range",
+              "start": 879
             }
           },
           "kind": "code"

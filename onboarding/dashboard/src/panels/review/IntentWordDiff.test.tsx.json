@@ -95,17 +95,33 @@
         }
       ]
     },
-    "2": {
-      "note": "The one-field successor, per-side rows and the tree or dataset scope.\n\nAnchor: \"function review(change: Partial<ReviewFamilyMember> = {}, options: Options = {}) {\"",
+    "14": {
+      "note": "Three added declarations assert single computation per passage, accessible descriptions on unequal-gap rows and coarse rendering of 1500-by-1500 lists.\n\nAnchor: inclusive source ranges",
       "targets": [
         {
           "anchor": {
-            "blob": "3d5b09cb94bee944c0558b6a08e7c61804808367",
-            "content": "sha256:86a3ce346364e3e63da8c224bd22a95777c84fc999d969ac6d679c82875b3a76",
+            "blob": "70e7ef18587c0635f9968ddc3fdf159b04f5f6fb",
+            "content": "sha256:ba4c3428ebed3dd6216b165caa6e196806de5a946ac59dc22ba354114bed041b",
             "locator": {
-              "end": 113,
+              "end": 155,
               "kind": "line_range",
-              "start": 65
+              "start": 114
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The review helper derives a successor, supplies per-side member rows and mounts SelectedStatement in the captured payload's IntentWordDiffScope.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "70e7ef18587c0635f9968ddc3fdf159b04f5f6fb",
+            "content": "sha256:798da58cee080de24dfbb9f6a5e18b89c17cec127682b1cf1569f724ca328604",
+            "locator": {
+              "kind": "symbol",
+              "name": "review"
             }
           },
           "kind": "test"
@@ -130,16 +146,16 @@
       ]
     },
     "4": {
-      "note": "Ruling Q4 on both paths, and the three F1 probes.\n\nAnchor: \"reads only the selected revisions' field rows, on tree and dataset reviews alike\"; \"diffs one revision whose texts differ when %s\"",
+      "note": "Selected-revision field sourcing in the captured comparison scope and the retained three-shape same-revision differing-text table.\n\nAnchor: inclusive source ranges",
       "targets": [
         {
           "anchor": {
-            "blob": "3d5b09cb94bee944c0558b6a08e7c61804808367",
-            "content": "sha256:5a98aedde4a6446aeea971599098cbbd6c99d4bcb0db622f978a5d3b4e4d033c",
+            "blob": "70e7ef18587c0635f9968ddc3fdf159b04f5f6fb",
+            "content": "sha256:c4e3cfcf0f6549ffa5a513cfce5f8c8aa0fbb3a1135279a5c8eaa4d867eeee08",
             "locator": {
-              "end": 264,
+              "end": 301,
               "kind": "line_range",
-              "start": 200
+              "start": 238
             }
           },
           "kind": "test"
@@ -181,16 +197,16 @@
       ]
     },
     "7": {
-      "note": "One-sided, unavailable, ambiguous and dataset statements.\n\nAnchor: \"describe('one-sided, unavailable and ambiguous statements'\"",
+      "note": "Three declarations cover known-absent added/removed statements, unreadable sides and unresolved revision selection; no dataset or ambiguous-selection case remains.\n\nAnchor: inclusive source ranges",
       "targets": [
         {
           "anchor": {
-            "blob": "3d5b09cb94bee944c0558b6a08e7c61804808367",
-            "content": "sha256:30b321904edadd727d05c0392f899f87eab6872979af094c0315efccf9abd547",
+            "blob": "70e7ef18587c0635f9968ddc3fdf159b04f5f6fb",
+            "content": "sha256:8668c4ef325106b9b6f29257591389004d3e696aa32b5ba0c0b89d9fae71f519",
             "locator": {
-              "end": 505,
+              "end": 532,
               "kind": "line_range",
-              "start": 424
+              "start": 468
             }
           },
           "kind": "test"
@@ -215,16 +231,16 @@
       ]
     },
     "9": {
-      "note": "F2's labels: the navigator's guarantee and member tag, and the details fact.\n\nAnchor: \"describe('labels of one revision whose texts differ'\"",
+      "note": "The retained center-details guaranteeFact helper case classifies differing text as same_revision_text_changed and identical captured text as unchanged_revision. Navigator guarantee/member-tag tests and the dataset-path helper expectation are absent.\n\nAnchor: inclusive source ranges",
       "targets": [
         {
           "anchor": {
-            "blob": "3d5b09cb94bee944c0558b6a08e7c61804808367",
-            "content": "sha256:6b5af8975502ce167f980cb355a17fc752d0f3e74d4719ef1f0bb637be0ccb2f",
+            "blob": "70e7ef18587c0635f9968ddc3fdf159b04f5f6fb",
+            "content": "sha256:8bf8615f57e0856358286345aa8eff68ee365acfe14653b5edee3bf1e99962f3",
             "locator": {
-              "end": 655,
+              "end": 626,
               "kind": "line_range",
-              "start": 582
+              "start": 612
             }
           },
           "kind": "test"

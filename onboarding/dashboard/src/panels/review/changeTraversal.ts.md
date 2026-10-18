@@ -24,7 +24,7 @@ Move to the next and previous real change in the shown outline tree (MIK-R86). T
 
 `useChangeTraversal(tree, enabled, rows)` returns `move` and `status`.
 
-- **A move.** `move` computes the next stop from where the reader is. At an end it scrolls the selected node into view (`scrollIntoView({ block: 'center' })`), so the status in the sticky triage bar is read where the selection is. Otherwise it focuses the stop first and, for a tree node, clicks it. A key step, the visible previous and next controls and a click on the row are therefore one and the same selection, and the selection's answer returns focus to the node the reader moved to.
+- **A move.** `move` computes the next stop from the focused or selected row. At an end it preserves selection and calls `revealTreeRow` on that selected row. Otherwise it focuses the stop with `{ preventScroll: true }`, reveals it in its own tree panel, then clicks the selected stop. The layout effect repeats the selected-row reveal when a non-empty endpoint status enlarges the sticky controls. The shared helper adjusts only the nearest `[data-review-tree-panel]` scroll offset and responsive height against viewport/surface/control bounds; it does not call `scrollIntoView` on outer ancestors. This describes the requested focus/reveal path, not fresh browser visibility evidence.
 - **The status (`useStatusFor`).** `status` is the polite message of the last move; it is empty after a move that selected a node. The caller's `rows` key contains order, view and the displayed family/selector/badge sequence, not returned roster-member counts. Status is exposed only beside that same committed key; a layout effect drops it when the key changes, so returning to the old rows does not resurrect a message. A new move can produce its own message. No state is updated during render, and repeating the same message for the same key changes no state. Filtering, order/view changes or an answer invalidate the message only when they change this displayed key; central roster pagination is not itself a traversal stop or an unconditional status reset.
 - **Binding.** When `enabled`, the effective keymap's binding of each traversal command is bound with tinykeys on the enclosing `[data-kbzone="review"]` element, which is the root of `ReviewSurface`. Each handler acts only when the target's zone is one of the binding's zones and the keymap owner's `routeKey` answers `handle`; then it prevents the default and moves. The keys therefore act only while focus is inside the reviewer and are inert where the owner's routing makes them so, in inputs, textareas and contenteditable regions. A rebinding in the keymap applies here.
 
@@ -40,17 +40,32 @@ Pure DOM helpers plus two hooks: the private `useStatusFor` and the exported `us
 ## Evidence
 
 - The module enumerates shown real-change rows, excludes unknown/unchanged and retains end messages/keymap ownership without roster stops. [11]
+
 - Items, their occurrence and whether each stops. [12]
+
 - Where the reader is. [13]
+
 - The forward walk selects the next shown real-change occurrence, or returns end; no continuation control is a traversal stop. [14]
+
 - The backward walk, which lands on an occurrence's first row and skips continuation controls. [15]
+
 - The next stop and the polite messages. [16]
+
 - The status is kept with the rows it was said for, given out only beside those rows, and dropped in the commit that shows other rows. [17]
-- A move (focus, then click; an end scrolls the selection into view) and the zone binding through the keymap owner. [18]
+
+- A move focuses without native scrolling, reveals the row inside its own tree panel and then selects; endpoint status triggers a post-layout reveal. [18]
+
 - The reviewer's zone on the surface root. [19]
+
 - The tree keys traversal status by order, view and each shown row's family, selector and badge. [20]
+
 - The hook's own case: no render shows a status beside other rows, and it does not come back with the same rows. [21]
+
 - Historical pre-outline held-answer cases sampled one, three and five further presses; that removed block is not current compact-outline proof. Its original reference is preserved in the task repair custody.
 - Rendered-row stops excluding unknown and unchanged [23]
+
 - Forward and backward steps over occurrences [25]
+
 - Stayed-selection messages at either end [26]
+
+- The shared reveal helper uses the nearest tree panel and visible viewport/surface/sticky-control bounds, not ancestor page scrolling. [27]

@@ -14,10 +14,15 @@ Publication compares the newly evaluated document's exact serialized bytes to th
 
 Recomputation remains imported from leaf_completion: computation failures become incomplete documents; persistence catches OSError and returns an absent output path, while other publication exceptions can propagate. The earlier blanket never-raises account is not the current boundary.
 
+
+Persisted reads now call `observed_text` once before JSON parsing. It records the exact raw-byte identity,
+absence or I/O failure for the active read observer and normalizes UTF-8 universal newlines. Only
+`FileNotFoundError` becomes `None` here; parsed non-object JSON also returns `None`. Other I/O,
+decoding and JSON errors propagate rather than becoming an empty/current worklist. This is an
+additional observed dependency, not a successful cached verdict or a fresh execution result.
+
 ## Current evidence
 
-- Facade imports the actual input and completion owners; no local duplicate class or recompute implementation remains. \[106] [106]
-- Contract worklist selection and marker applicability stay distinct from completion. \[107] [107]
 
 ## Inherited source-epoch account (non-operative)
 
@@ -377,3 +382,7 @@ The complete predecessor below preserves useful explanations and incoming correc
 >
 > - The port adapter the composition binds. [98]
 > - The run reads the paired code and memory repositories named by the leaf's contract. [104]
+
+- The facade imports actual input/completion owners rather than duplicating their implementations. [106]
+- Enclosure worklist location, marker applicability and contract-bound run selection are separate operations. [107]
+- Persisted worklist reads use the observed UTF-8 text reader: missing file returns None, non-object JSON returns None, other read/decode/JSON failures are not silently converted to absence. [108]

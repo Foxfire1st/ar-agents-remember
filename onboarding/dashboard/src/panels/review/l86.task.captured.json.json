@@ -2,30 +2,13 @@
   "path": "dashboard/src/panels/review/l86.task.captured.json",
   "realizes": [],
   "references": {
-    "1": {
-      "note": "Task-context review with uncompared operands\n\nAnchor: `payload`",
+    "3": {
+      "note": "The current retained JSON input supplies the literal identities, response states and populations summarized above; these are fixture facts, not live project knowledge or fresh execution evidence.",
       "targets": [
         {
           "anchor": {
-            "blob": "c00a5a658d65f5b6fa75aa06fb3a48d849134db3",
-            "content": "sha256:81661ffc43d9202d07334afd7a9fd6f7b06a2a05c09dec0dd33a7785335f5329",
-            "locator": {
-              "end": 1,
-              "kind": "line_range",
-              "start": 1
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "2": {
-      "note": "Read through the shipped review operation\n\nAnchor: `operation`",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "c00a5a658d65f5b6fa75aa06fb3a48d849134db3",
-            "content": "sha256:81661ffc43d9202d07334afd7a9fd6f7b06a2a05c09dec0dd33a7785335f5329",
+            "blob": "9b7a5d9c93bfb48414f61c38968325787bab9fe4",
+            "content": "sha256:5e6f2da0a44e626a65a55234a847b02562214b144780306ecada05d266942905",
             "locator": {
               "end": 1,
               "kind": "line_range",

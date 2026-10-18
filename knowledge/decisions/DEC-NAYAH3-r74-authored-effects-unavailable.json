@@ -26,16 +26,8 @@
   "id": "DEC-NAYAH3",
   "links": [
     {
-      "relation": "constrains",
-      "target": {
-        "blob": "f0080ac8512cae6107e8cf65f880a151ca6d19c5",
-        "content": "sha256:0c12f822fa0ee249909f98839c83617fc5537294eeb6d62d67035ff096d35949",
-        "locator": {
-          "kind": "symbol",
-          "name": "_removed_matrix_channel"
-        },
-        "path": "mcp/src/agents_remember/application/review_evidence_records.py"
-      }
+      "relation": "motivated_change_to",
+      "target": "DEC-7VWF08"
     }
   ],
   "origin": {
@@ -46,7 +38,7 @@
     "leaf": "260928-MIK-L74",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-decision/v1",
   "status": "active",
   "supersedes": []

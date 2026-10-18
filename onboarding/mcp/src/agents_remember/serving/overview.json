@@ -591,6 +591,129 @@
         }
       ]
     },
+    "138": {
+      "note": "The injected canonical memory-root port is carried from collaborators into the shared serving runtime, not resolved from arbitrary client roots.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "32a410bfe308b5f05ecfd3a7fca6dcae803271e5",
+            "content": "sha256:6a43dcaf4b4a7528c6db085beeac0fde8d8f9560d5693859d2399b87ef22d8d2",
+            "locator": {
+              "kind": "symbol",
+              "name": "ServingCollaborators"
+            },
+            "path": "mcp/src/agents_remember/serving/_app_common.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "32a410bfe308b5f05ecfd3a7fca6dcae803271e5",
+            "content": "sha256:c71743805fc410bda343e429d03ded5b56e276b1b53773b02ecfff168c91be52",
+            "locator": {
+              "kind": "symbol",
+              "name": "_ServingRuntime"
+            },
+            "path": "mcp/src/agents_remember/serving/_app_common.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c3f5986fb32e9954b3677b1adf142e0b1fbc029a",
+            "content": "sha256:f734f25e437b55ff245602cc32c56e9cc4c4d21b9b2ddd24da8ab4fbe347f813",
+            "locator": {
+              "kind": "symbol",
+              "name": "_build_serving_runtime"
+            },
+            "path": "mcp/src/agents_remember/serving/app.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "139": {
+      "note": "The existing state stream opts into review-memory invalidations only through supplied review identity; no-selector streams retain their ordinary event path.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a0509af9d207b37ed234ce926f06d5bb4f1e7755",
+            "content": "sha256:aadd342e2f3f79e9982698d25fb884bfca6519e662b4e3ecca58af70f7297bb5",
+            "locator": {
+              "kind": "symbol",
+              "name": "api_stream"
+            },
+            "path": "mcp/src/agents_remember/serving/_app_routes.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0c7b9ca2d4d5e35569c252b5d2decddec3a4bc33",
+            "content": "sha256:837a64d6bb17f73ad233d08db0f72a1a9bf8b2b8efbb8d26ba161882bedb9f47",
+            "locator": {
+              "kind": "symbol",
+              "name": "multiplex_review_memory"
+            },
+            "path": "mcp/src/agents_remember/serving/review_memory_watch.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "140": {
+      "note": "The connection-owned watcher filters generated/temporary paths, separates ready from coalesced changes, emits invalidation revisions rather than tree identities and drains its worker/merge ownership on closure.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0c7b9ca2d4d5e35569c252b5d2decddec3a4bc33",
+            "content": "sha256:d8ea71cf421408fd13a245353ba4306fc3b8eb987c03dba3e305979765380f7f",
+            "locator": {
+              "kind": "symbol",
+              "name": "_admitted"
+            },
+            "path": "mcp/src/agents_remember/serving/review_memory_watch.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0c7b9ca2d4d5e35569c252b5d2decddec3a4bc33",
+            "content": "sha256:d9f2db673379acc58d534a3b18520ae6ad39b7de629a3dce884dcad4acf4abf6",
+            "locator": {
+              "kind": "symbol",
+              "name": "_native_worker"
+            },
+            "path": "mcp/src/agents_remember/serving/review_memory_watch.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0c7b9ca2d4d5e35569c252b5d2decddec3a4bc33",
+            "content": "sha256:c5e0c9278dd3b314684bc0023270436c0818bfc3524f44d19c3df52b91bcfd61",
+            "locator": {
+              "kind": "symbol",
+              "name": "_memory_events"
+            },
+            "path": "mcp/src/agents_remember/serving/review_memory_watch.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0c7b9ca2d4d5e35569c252b5d2decddec3a4bc33",
+            "content": "sha256:71f5f75c1fa3c7c085a80828aba8500ad66df49667c50ff4ffa7f4b76d58eb5b",
+            "locator": {
+              "kind": "symbol",
+              "name": "_merge"
+            },
+            "path": "mcp/src/agents_remember/serving/review_memory_watch.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
     "21": {
       "note": "The shared naming primitive appends the same physical lock suffix.",
       "targets": [
@@ -1136,16 +1259,15 @@
       ]
     },
     "51": {
-      "note": "**The 404 for a candidate that does not resolve, is not live, or has no dataset half.**  Anchor: \"def api_review_intent(\"",
+      "note": "The transport still maps the literal legacy candidate_dataset_absent refusal code to404; a status mapping does not establish a currently produced dataset candidate path.",
       "targets": [
         {
           "anchor": {
             "blob": "f586b37f58f8578b6d886336ff8945ad4d88ac29",
             "content": "sha256:d3658b65c38eaf8ef26632324bccda2e7fabada39d524ad7f3c4243dafe3d652",
             "locator": {
-              "end": 709,
-              "kind": "line_range",
-              "start": 661
+              "kind": "symbol",
+              "name": "api_review_intent"
             },
             "path": "mcp/src/agents_remember/serving/review.py"
           },
@@ -1156,9 +1278,8 @@
             "blob": "f586b37f58f8578b6d886336ff8945ad4d88ac29",
             "content": "sha256:90063c8291f95506706a14c495d8eb7191febaac8e868bc666486c4588f7cd53",
             "locator": {
-              "end": 624,
-              "kind": "line_range",
-              "start": 607
+              "kind": "symbol",
+              "name": "_status_for"
             },
             "path": "mcp/src/agents_remember/serving/review.py"
           },
@@ -2326,14 +2447,27 @@
       ]
     },
     "96": {
-      "note": "A payload without a tree comparison number is a dataset review, for which no tree read is made.\n\nAnchor: `treeComparisonNumber`",
+      "note": "An enabled live leaf-wide tree read may start without a comparison number; focused card-entry reads require one. Absence of a number does not imply a dataset review.",
       "targets": [
         {
           "anchor": {
-            "blob": "cbed0390f38016f95305efebdb03f84ca9393d30",
-            "content": "sha256:a15a1cfa7b84440b7ed139b286a6af30096c6457d526a316063e1689cf35c831",
+            "blob": "65f556826a27183db12af6615005dd85432e3a8c",
+            "content": "sha256:61f17ead19e8fde64b33e30580d5de5192d3e5b7779072ba82195e12c5e793a8",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "useReviewTrees"
+            },
+            "path": "dashboard/src/data/reviewTrees.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "65f556826a27183db12af6615005dd85432e3a8c",
+            "content": "sha256:b86e32e6300e02419fd988a0d990e4d98fe8acac93757b1f7d197a273da76a5c",
+            "locator": {
+              "kind": "symbol",
+              "name": "useReviewTreeEntries"
             },
             "path": "dashboard/src/data/reviewTrees.ts"
           },

@@ -1,203 +1,37 @@
 {
   "path": "dashboard/src/panels/review/ReviewExpressions.tsx",
-  "realizes": [
-    {
-      "anchor": {
-        "blob": "f715a0ae08b0747d62ac23144d24a5bd2c745f38",
-        "content": "sha256:99c240c38ebe2da134a4ffaa4d72cf27a84128e1fc8305a5479594850bd6d162",
-        "locator": {
-          "kind": "symbol",
-          "name": "ReviewExpressions"
-        }
-      },
-      "id": "RLZ-KB19K25K",
-      "invariant": "INV-VPX81HXV",
-      "origin": {
-        "leaf": "260921-ICR-L46"
-      },
-      "rationale": "Shows the number of linked changed files loaded and, when linksIncomplete is supplied, explicitly says the source links are not fully loaded and the roster walk must continue. The retained dataset-renderer branch does not render a complete source rail; for member rendering its display text points to the change-set viewer. Current complete-change navigation is owned by workspace/viewer destinations, not this renderer.",
-      "role": "presentation"
-    }
-  ],
+  "realizes": [],
   "references": {
-    "1": {
-      "note": "`ReviewExpressions` owns the behavior described above.",
+    "10": {
+      "note": "Surviving controls are independent presentation callbacks, not a relocated accordion.\n\nAnchor: `ExpressionControls`",
       "targets": [
         {
           "anchor": {
-            "blob": "77d3784bf09b731e42d063c488853eec6d499d97",
-            "content": "sha256:f6cd13b6cf9e21086eddf2112cdd762c5250f13bbe116117db97b27c301bfdcb",
+            "blob": "10ffea4c72932d8d494df8b6cceb9f73aeba7c9e",
+            "content": "sha256:c0f5507159c299b4c278ac376072f9c1ea78c4eb95011d541aea561cb0ad366b",
             "locator": {
-              "kind": "symbol",
-              "name": "ReviewExpressions"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "2": {
-      "note": "`expressionSelection` owns the behavior described above.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "77d3784bf09b731e42d063c488853eec6d499d97",
-            "content": "sha256:211fd4331bbbdf36ab4a153158a31b3139251e5fc0fa9a7612f631e8ccc28f7b",
-            "locator": {
-              "kind": "symbol",
-              "name": "expressionSelection"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "3": {
-      "note": "The layout and full-file controls, exported for the focused cards.\n\nAnchor: \"export function ExpressionControls({\"",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "77d3784bf09b731e42d063c488853eec6d499d97",
-            "content": "sha256:026050f9c99963a4bdc50b2ee24a5bdd0254f3481be00892e73738082e5e68c2",
-            "locator": {
-              "end": 150,
+              "end": 40,
               "kind": "line_range",
-              "start": 103
-            }
+              "start": 15
+            },
+            "path": "dashboard/src/panels/review/ExpressionControls.tsx"
           },
           "kind": "code"
         }
       ]
     },
-    "4": {
-      "note": "The centre mounts this view only when no cards read applies (a dataset review).",
+    "11": {
+      "note": "CenterExpressions has no retired file-view fallback.",
       "targets": [
         {
           "anchor": {
-            "blob": "90570046945a8192a9dd675068fa67bc5432efb2",
-            "content": "sha256:bdbf7e9caade4cd25b816d3f74dc0aebf37c73cd1a9455cb7c8e924ecb725ea8",
+            "blob": "ac4e85fe7aa5576fda77fc34929e7d5305f09a36",
+            "content": "sha256:b2c44821862fca385848ae70e750f2cb6c6d30919f83603d45c61f6fe57256be",
             "locator": {
               "kind": "symbol",
               "name": "CenterExpressions"
             },
             "path": "dashboard/src/panels/review/FamilyReviewCenter.tsx"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "5": {
-      "note": "`ExpressionCard` owns the behavior described above.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "77d3784bf09b731e42d063c488853eec6d499d97",
-            "content": "sha256:fdc389bfbbb89b8165fdbf576417cc03aed096459bae9b6f3ef1dd88fe89e53c",
-            "locator": {
-              "kind": "symbol",
-              "name": "ExpressionCard"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "6": {
-      "note": "Dataset-only expression accordion in the central path",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "f715a0ae08b0747d62ac23144d24a5bd2c745f38",
-            "content": "sha256:99c240c38ebe2da134a4ffaa4d72cf27a84128e1fc8305a5479594850bd6d162",
-            "locator": {
-              "kind": "symbol",
-              "name": "ReviewExpressions"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "f715a0ae08b0747d62ac23144d24a5bd2c745f38",
-            "content": "sha256:a7c81eb786c871189eddf52f05a42ca0d8d13f8072acb911f2e813ca2d993633",
-            "locator": {
-              "end": 54,
-              "kind": "line_range",
-              "start": 36
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "7": {
-      "note": "Shared diff layout and full-file controls for cards reuse\n\nAnchor: `ExpressionControls`",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "f715a0ae08b0747d62ac23144d24a5bd2c745f38",
-            "content": "sha256:bdc45e41e27b0a06dff5a282fe289e9a56d4845aa8b7198ddfaf58dcbad5d1dc",
-            "locator": {
-              "end": 119,
-              "kind": "line_range",
-              "start": 101
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "8": {
-      "note": "Revision-to-location join for the selected intent",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "f715a0ae08b0747d62ac23144d24a5bd2c745f38",
-            "content": "sha256:211fd4331bbbdf36ab4a153158a31b3139251e5fc0fa9a7612f631e8ccc28f7b",
-            "locator": {
-              "kind": "symbol",
-              "name": "expressionSelection"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "f715a0ae08b0747d62ac23144d24a5bd2c745f38",
-            "content": "sha256:a0e8852dc77658af59f4bbe9c2f089cdc65fc3b19e2e51df8b75e67751bf98ba",
-            "locator": {
-              "end": 168,
-              "kind": "line_range",
-              "start": 150
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "9": {
-      "note": "Card byte delegation with exact inventory tree identities",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "f715a0ae08b0747d62ac23144d24a5bd2c745f38",
-            "content": "sha256:967af88e6f864e62d8159a9c4b5786e7702ed6f42b4b0fc51ff2d337d4bcd55d",
-            "locator": {
-              "kind": "symbol",
-              "name": "ExpressionCard"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "f715a0ae08b0747d62ac23144d24a5bd2c745f38",
-            "content": "sha256:a228bee316f570ca797c92e69dd0722ad48b01b4448646b808ef9763a69a58cb",
-            "locator": {
-              "end": 198,
-              "kind": "line_range",
-              "start": 180
-            }
           },
           "kind": "code"
         }

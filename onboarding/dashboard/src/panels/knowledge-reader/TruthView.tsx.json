@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "aa6b3ccd1a3772b0d61f008f017596912dbd0df0",
+        "blob": "993ed3d3c3d6ae3c92dc97591be76c1d9dce3467",
         "content": "sha256:742b961c2627856b947d888db1109b6f5de62b948f133f94fa4b964325399375",
         "locator": {
           "kind": "symbol",
@@ -21,8 +21,8 @@
     },
     {
       "anchor": {
-        "blob": "aa6b3ccd1a3772b0d61f008f017596912dbd0df0",
-        "content": "sha256:ecda97c1eb73e8fee2a67e2bf4b08dacb1d2233ca09c11462ebe7cefae59f257",
+        "blob": "993ed3d3c3d6ae3c92dc97591be76c1d9dce3467",
+        "content": "sha256:e5b046f59385698cb78db05a11ab22d3585d546bce0bc6742ad4a4eb86a2b271",
         "locator": {
           "kind": "symbol",
           "name": "TruthView"
@@ -39,7 +39,43 @@
     },
     {
       "anchor": {
-        "blob": "aa6b3ccd1a3772b0d61f008f017596912dbd0df0",
+        "blob": "993ed3d3c3d6ae3c92dc97591be76c1d9dce3467",
+        "content": "sha256:269a5e24e24f377b10526ef0f2b86ce216978270c52577652107cab68ea1946f",
+        "locator": {
+          "kind": "symbol",
+          "name": "timelineLoadFailure"
+        }
+      },
+      "id": "RLZ-SN05H0",
+      "invariant": "INV-XDJ29E",
+      "origin": {
+        "handoffEntry": "CUR-L57-reader-side-load-coherence",
+        "leaf": "260928-MIK-L57"
+      },
+      "rationale": "Names unreadable/missing/refused timeline responses and rejects unequal supplied treeKey or memoryRevision against the initial record answer.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "993ed3d3c3d6ae3c92dc97591be76c1d9dce3467",
+        "content": "sha256:21b59260d833536eea5d0008e531f401473a8d9e2040fdb8d1b1ca390bb521f8",
+        "locator": {
+          "kind": "symbol",
+          "name": "useTimelinePages"
+        }
+      },
+      "id": "RLZ-ZPRKD5",
+      "invariant": "INV-XDJ29E",
+      "origin": {
+        "handoffEntry": "CUR-L57-reader-side-load-coherence",
+        "leaf": "260928-MIK-L57"
+      },
+      "rationale": "Uses the initial record ID and actual selection check before replacing/restarting or appending timeline events; failure leaves known timeline/record fields in place.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "993ed3d3c3d6ae3c92dc97591be76c1d9dce3467",
         "content": "sha256:a3e174e0dc69e7e3d004205e36adbacd5cf1a1dfe006655b1816bccd625eea4f",
         "locator": {
           "kind": "symbol",
@@ -58,14 +94,15 @@
   ],
   "references": {
     "14": {
-      "note": "The record page in its fixed order.\n\nAnchor: `TruthView`",
+      "note": "The record page keeps lead/fields/relationships/timeline/origin order while wiring timeline paging by the initial answer.",
       "targets": [
         {
           "anchor": {
-            "blob": "aa6b3ccd1a3772b0d61f008f017596912dbd0df0",
-            "content": "sha256:65cbdb3ee48255f44047db285c7b409756465e920faa12a2eff220d21c7c2e72",
+            "blob": "993ed3d3c3d6ae3c92dc97591be76c1d9dce3467",
+            "content": "sha256:e5b046f59385698cb78db05a11ab22d3585d546bce0bc6742ad4a4eb86a2b271",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "TruthView"
             }
           },
           "kind": "code"
@@ -73,14 +110,15 @@
       ]
     },
     "15": {
-      "note": "The header with kind, id, state, derived status and revision.\n\nAnchor: `TruthHeader`",
+      "note": "Kind/id/state/derived-or-stored status/revision are supplied by the current header.",
       "targets": [
         {
           "anchor": {
-            "blob": "aa6b3ccd1a3772b0d61f008f017596912dbd0df0",
-            "content": "sha256:65cbdb3ee48255f44047db285c7b409756465e920faa12a2eff220d21c7c2e72",
+            "blob": "993ed3d3c3d6ae3c92dc97591be76c1d9dce3467",
+            "content": "sha256:e40b40b41f51c0c33bb8d92a433fb713261fe7fbfc6b3d885c3c37a85edb29f6",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "TruthHeader"
             }
           },
           "kind": "code"
@@ -88,14 +126,16 @@
       ]
     },
     "16": {
-      "note": "The field order and the per-kind lead.\n\nAnchor: `ORDER`",
+      "note": "Per-kind lead/order and framing exclusion govern labelled meaning values.\n\nAnchor: current lead, order and fields",
       "targets": [
         {
           "anchor": {
-            "blob": "aa6b3ccd1a3772b0d61f008f017596912dbd0df0",
-            "content": "sha256:65cbdb3ee48255f44047db285c7b409756465e920faa12a2eff220d21c7c2e72",
+            "blob": "993ed3d3c3d6ae3c92dc97591be76c1d9dce3467",
+            "content": "sha256:6440eb45ffbb3f78274f7f3ae23ab88a0c81d0fb76e1a476293d51d125a96e14",
             "locator": {
-              "kind": "file"
+              "end": 133,
+              "kind": "line_range",
+              "start": 40
             }
           },
           "kind": "code"
@@ -103,14 +143,15 @@
       ]
     },
     "17": {
-      "note": "A history-row source leads to the record it is about.\n\nAnchor: `IncomingSource`",
+      "note": "An incoming history-row link names and navigates its subject record.",
       "targets": [
         {
           "anchor": {
-            "blob": "aa6b3ccd1a3772b0d61f008f017596912dbd0df0",
-            "content": "sha256:65cbdb3ee48255f44047db285c7b409756465e920faa12a2eff220d21c7c2e72",
+            "blob": "993ed3d3c3d6ae3c92dc97591be76c1d9dce3467",
+            "content": "sha256:c26126084494697f388bf8f331bad688049ed66e0c86ea9423ed7aa3dfcb1933",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "IncomingSource"
             }
           },
           "kind": "code"
@@ -118,14 +159,15 @@
       ]
     },
     "18": {
-      "note": "The combined newest-first timeline.\n\nAnchor: `TimelineSection`",
+      "note": "The bounded timeline renders owner-ordered events and source problems, with attempt/path facts and paging controls.",
       "targets": [
         {
           "anchor": {
-            "blob": "aa6b3ccd1a3772b0d61f008f017596912dbd0df0",
-            "content": "sha256:65cbdb3ee48255f44047db285c7b409756465e920faa12a2eff220d21c7c2e72",
+            "blob": "993ed3d3c3d6ae3c92dc97591be76c1d9dce3467",
+            "content": "sha256:e2e2b2ac9c1e434185387f29ff4dd4d96a59df862b394eb753c5cd0df920544e",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "TimelineSection"
             }
           },
           "kind": "code"
@@ -133,14 +175,49 @@
       ]
     },
     "19": {
-      "note": "The labelled file, admission and origin close.\n\nAnchor: `RecordOrigin`",
+      "note": "File path, admission and origin close the page as labelled values.",
       "targets": [
         {
           "anchor": {
-            "blob": "aa6b3ccd1a3772b0d61f008f017596912dbd0df0",
-            "content": "sha256:65cbdb3ee48255f44047db285c7b409756465e920faa12a2eff220d21c7c2e72",
+            "blob": "993ed3d3c3d6ae3c92dc97591be76c1d9dce3467",
+            "content": "sha256:a3e174e0dc69e7e3d004205e36adbacd5cf1a1dfe006655b1816bccd625eea4f",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "RecordOrigin"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "20": {
+      "note": "Timeline loads reject non-view/absent/refused responses and changed selection keys, with restart replacing and continuation appending events.\n\nAnchor: current paging and identity guards",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "993ed3d3c3d6ae3c92dc97591be76c1d9dce3467",
+            "content": "sha256:e25f972421141b9d037c99c97ddf85fef1e96eec6847a026bd00bf63a2534f74",
+            "locator": {
+              "end": 603,
+              "kind": "line_range",
+              "start": 534
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "21": {
+      "note": "History effects, historical omissions, requirement labels and record links remain distinct delivered facts.\n\nAnchor: current history-line rendering",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "993ed3d3c3d6ae3c92dc97591be76c1d9dce3467",
+            "content": "sha256:c7c930d8e5e879a81aec126a415bb727c84060ab6acfd0eed60519ca7e0a91a9",
+            "locator": {
+              "end": 486,
+              "kind": "line_range",
+              "start": 429
             }
           },
           "kind": "code"

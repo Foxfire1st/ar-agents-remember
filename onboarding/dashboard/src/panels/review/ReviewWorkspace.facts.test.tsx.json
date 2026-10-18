@@ -1,0 +1,53 @@
+{
+  "path": "dashboard/src/panels/review/ReviewWorkspace.facts.test.tsx",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Synthetic captured-payload wiring covers complete open movement facts and marked roots, owner-state/presence matrices, retained previous-payload pending/failure/new-answer transitions, leaf-wide code/worklist wiring and unmeasured inventory distinct from open work; it is not native movement-classifier proof.\n\nAnchor: inclusive source ranges",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "961aa4663b3aaed40205c5fbf093498ae6cd6fdf",
+            "content": "sha256:8ec920e429bcb7fed31e2c27557dac07518050ae661c6bdd734f8bdc6e99dfb6",
+            "locator": {
+              "end": 150,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The actual workspace retains the previous payload through pending and failed reads without showing its movement facts, then exposes only the new answer; shared helpers assert full JSON equality, root markers, no closed duplicate and separate closed identities.\n\nAnchor: inclusive source ranges",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "961aa4663b3aaed40205c5fbf093498ae6cd6fdf",
+            "content": "sha256:1196e6097e0aa2ba8548a4da6c40868b6caa28ae68f80f0aa5dfcea2164e8ea2",
+            "locator": {
+              "end": 82,
+              "kind": "line_range",
+              "start": 55
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "961aa4663b3aaed40205c5fbf093498ae6cd6fdf",
+            "content": "sha256:834bbfdcec7e108f7b333fb1ba526cf72e536c4f2ebab1323691eac7268414a0",
+            "locator": {
+              "end": 131,
+              "kind": "line_range",
+              "start": 112
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -93,6 +93,54 @@
           "kind": "test"
         }
       ]
+    },
+    "19": {
+      "note": "The summary returns the UTF-8 prefix, a truncation flag and full byte size.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "af90f6f941d94f61cbe62afeef683543347d7244",
+            "content": "sha256:508158b02186098c8205c3d60111f154e867cfbe90511698cab10591f538c09f",
+            "locator": {
+              "kind": "symbol",
+              "name": "_summary_prose"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "20": {
+      "note": "Whole onboarding prose is loaded only through the explicitly selected view.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "af90f6f941d94f61cbe62afeef683543347d7244",
+            "content": "sha256:d421475263957c9812437a6f80cc83f8e5d9b6fab510857be31e35e83e2450ac",
+            "locator": {
+              "kind": "symbol",
+              "name": "path_prose"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "21": {
+      "note": "Deeper live-entry paths are counted separately from the own-level view.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "af90f6f941d94f61cbe62afeef683543347d7244",
+            "content": "sha256:ce5b6dfb907e660372612ef1500215043c11f7531604d1d16c0186bc9f61a5ac",
+            "locator": {
+              "kind": "symbol",
+              "name": "_directory_summary"
+            }
+          },
+          "kind": "code"
+        }
+      ]
     }
   },
   "schema": "ar-onboarding-file/v1"

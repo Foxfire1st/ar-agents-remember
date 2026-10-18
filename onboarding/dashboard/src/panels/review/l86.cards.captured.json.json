@@ -2,30 +2,13 @@
   "path": "dashboard/src/panels/review/l86.cards.captured.json",
   "realizes": [],
   "references": {
-    "1": {
-      "note": "Located entries of the named invariants\n\nAnchor: `entries`",
+    "3": {
+      "note": "The current retained JSON input supplies the literal identities, response states and populations summarized above; these are fixture facts, not live project knowledge or fresh execution evidence.",
       "targets": [
         {
           "anchor": {
-            "blob": "c4144b1d66ce493f4a8faa17440bc2e9d0f3100c",
-            "content": "sha256:c27cc4b1a4bd0d3b4a607ca92a80968d28b297970a4357e6f5fe8a827173590d",
-            "locator": {
-              "end": 1,
-              "kind": "line_range",
-              "start": 1
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "2": {
-      "note": "Recorded comparison the entries are located on\n\nAnchor: `comparison`",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "c4144b1d66ce493f4a8faa17440bc2e9d0f3100c",
-            "content": "sha256:c27cc4b1a4bd0d3b4a607ca92a80968d28b297970a4357e6f5fe8a827173590d",
+            "blob": "88427f6338ed86a91e28ec686cf5a64ba771b42e",
+            "content": "sha256:bc15c97a3527517c87a06135664ba0b2180402a370cfd73b549b15c05eada023",
             "locator": {
               "end": 1,
               "kind": "line_range",

@@ -28,11 +28,11 @@ Most cases start from `keptState()`: the reader has walked from the shared membe
 - **No family context:** both outline families stay, both are kept and the requested row remains selected; the centre states No recorded family.
 - **Non-subject actions:** order/view toggles, Worklist and filtered comparison destinations/Back retain the shown families/tags and make no subject review read.
 
-### The reveal on the stacked layout
+### Panel-local reveal in either layout
 
 Three cases pin the OR-R033 reveal, next to the scroll cases below. `recordingScrolls` records every element asked to come into view.
 
-- **Stacked reveal:** the viewport shim controls whether an in-tree click or cached K step requests the centre column to scroll into view. Reselecting the same outline row follows the same rule and retains both families; the test asserts scroll calls, selection focus, request count and the same workspace, not actual layout.
+- **Panel-local reveal:** the two-value viewport shim exercises both layouts. An in-tree click, cached K step and same-row reselect each request no `scrollIntoView` calls. The case also asserts selection focus after the click, request count, the same workspace and retained outline families. It measures requests rather than geometry; its source points to `ReviewWorkspace.family.test.tsx` for the separate geometry evidence.
 - **A moved focus is kept.** With the viewport stacked, a member row is clicked and its read is held; the family filter takes focus, then the read answers. Nothing is scrolled, focus stays in the filter, the answer is the selected subject's, and both families stay.
 
 ### The scroll after a refresh and after its retry
@@ -91,10 +91,11 @@ Kept-state and tree-row helpers pin the before and after of each journey, with a
 - The retry of a failed refresh is the refresh again: the row is brought into view when it is answered. [34]
 - A refresh asked in the turn that shows a failed read keeps its request. [35]
 - A retry made in the turn that shows the failed refresh is the refresh again. [36]
-- An in-tree read reveals the reading area only in the stacked layout, by click and by key; an outside selection scrolls nothing. [39]
-- A stacked in-tree answer does not reveal after the reader moved focus while it was pending. [40]
 - The late-catalogue opening case advances the imported `SUBJECT_HOLD_MS` on fake time before checking task context, then releases the held catalogue in async `act` before checking the fresh first-family tree. Those assertions follow actual product-hold and response opportunities rather than a local real-time wait.  Anchor: `SUBJECT_HOLD_MS` [41]
 - Tree row resolution in the mounted rail [42]
 - Per-comparison tree routes for lane, file and cards [43]
 - Failed-refresh turn helper for scroll expectations [44]
 - Failed-refresh turn helper for scroll expectations [45]
+
+- One layout-parametrized declaration exercises true and false viewport matches. Click, cached K and same-row reselect each assert an empty scroll-call list; the case also preserves focus, request-count, workspace and outline checks. It does not measure geometry. [39]
+- The retained pending-answer case moves focus to the family filter before releasing the answer, then asserts that focus remains there, no scrolling occurs and both families remain. [40]

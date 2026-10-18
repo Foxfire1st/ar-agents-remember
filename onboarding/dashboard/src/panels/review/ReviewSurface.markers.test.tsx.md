@@ -6,8 +6,7 @@
 
 ## Purpose
 
-**MIK-R34 on real data through the real `ReviewSurface` (3 cases): following a per-hunk intent marker in the review
-workspace, returning, and an unknown membership's own state.** The bodies are the real served answers of the reviewer
+**MIK-R34 on real data through the real `ReviewSurface` (6 cases): hunk marks, marker navigation and Back, held-return keyboard navigation, source availability with an unreadable roster, and unknown-membership target states.** The bodies are the real served answers of the reviewer
 routes for the MIK-L34 worker's converted scratch leaf, re-captured in MIK-L33's merge round over the merged tree
 (MIK-L34's scenario rebuilt under `/tmp/mik-l33-merge`): comparison 2 (`markerReturn.*`) and comparison 3, whose leaf
 FAM-4V4GSQCS has an unreadable after family record in the retained comparison-3 captures. Explicit synthetic catalogue and initial-family-question adapters expose the originating family card; marker targets use untouched served answers, and the leaf-wide read is held. The real component tree and client use the fetch replay, not a new backend capture.
@@ -23,7 +22,8 @@ FAM-4V4GSQCS has an unreadable after family record in the retained comparison-3 
   `list_notes` card, none in an unchanged card; ruling Q4). After the layout is switched at the target, Back restores
   `inline`, reopens the list, scrolls the marker's host into view and focuses the marker; the Back control is gone,
   and the file was classified once.
-- **Case 3:** the comparison-3 hunk list preserves four unknown/confirmed-no-family occurrences. Following the family-named unknown occurrence selects and focuses the member row, but the unknown reason is open in the centre's membership line, not inside the row and not in its accessible name. Confirmed no-family remains separate. For family-less unknown targets, the state retains the historical `review-rail-target-state` test id, receives focus and has the captured reason; where a tree is composed, the test explicitly places it in the centre column and outside the family tree.
+- **Case 3:** after Back restores a held marker, `j` selects and focuses the next measured changed tree row and releases the marker return.
+- **Cases 4–6:** the selected invariant's Full file and marks remain available with an unreadable family roster. The hunk list preserves four unknown/confirmed-no-family occurrences. A family-named unknown occurrence focuses the separate `review-rail-target-state` with partial context and its native reason. Before-side confirmed absence does not establish a current no-family roster. After-side unknown occurrences focus their own partial or unavailable target state with the native reason; the target is outside a member row.
 
 ### Conventions
 
@@ -34,7 +34,7 @@ FAM-4V4GSQCS has an unreadable after family record in the retained comparison-3 
 
 - Proves on real data the candidate invariants recorded on `MarkerTargetState.tsx.md` (unknown membership apart from
   no family; Back returns focus to the marker) and part of those on `hunkMarkers.ts.md` (one read per changed file)
-  and `IntentMarkers.tsx.md` (card excerpts marked). Mutations M8–M10, M13, M16 and Q3-1 to Q3-5 fail here.
+  and `IntentMarkers.tsx.md` (card excerpts marked). Historical mutation reports recorded failures for M8–M10, M13, M16 and Q3-1 to Q3-5; those reports do not establish results for the changed current journeys.
 
 ### Todos
 
@@ -52,11 +52,7 @@ No configured live documentation source was available for this pass.
 ### Repo-Internal References
 
 - The real bodies of comparison 2, the routing and the held leaf-wide read. [1]
-- Case 1: two marks from one classification read. [2]
-- Case 2: follow to the member row, card excerpt marks, and the return with layout, list and focus. [3]
 - Comparison 3's bodies and the focused element's announcement. [4]
-- Case 3: unknown membership in its own state, apart from no family. [5]
-- Case 3's member-row step: the comparison's unknown-membership reason is in open central content, not in the compact row or its accessible name. [6]
 
 ### Cross-Repo References
 
@@ -65,4 +61,9 @@ No cross-repo boundary is crossed by this file.
 - Per-hunk mark extraction for assertions [8]
 - Unknown-membership world with unattributed links [9]
 - Spoken announcement of the followed marker return [10]
-- Centre review beside the unknown-membership state [11]
+
+- The first case checks two hunk marks from one classification read. [2]
+- The retained marker journey checks member selection, excerpt marks and Back restoration; the following held-return case checks j selecting the next measured changed row. [3]
+- Three current unknown-world cases check source availability, a focused named partial target, and before-side absence separated from partial/unavailable after-side unknown membership. [5]
+- The named unknown occurrence focuses a partial target state containing its reason; it does not select a fabricated member row. [6]
+- Central target content contains the native reason and excludes the no-family statement; replace the removed centerReview symbol target with the actual assertions. [11]

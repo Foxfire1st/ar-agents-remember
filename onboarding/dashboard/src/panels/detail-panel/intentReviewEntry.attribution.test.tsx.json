@@ -20,16 +20,16 @@
       ]
     },
     "2": {
-      "note": "Case 1: two elements, one request.\n\nAnchor: \"shows the real leaf's unexplained and unknown files beside +N −N, from the one summary read\"",
+      "note": "The real summary renders attribution as without an invariant beside the intent counts in a separate element, with one summary request.\n\nAnchor: inclusive source ranges",
       "targets": [
         {
           "anchor": {
-            "blob": "1212d288a2e6c5341f27f05db469d7533ea2dd26",
-            "content": "sha256:67cc2d925797f1131e9884e1217c837e877a550d3bb41c36e7506d3ea920d16e",
+            "blob": "2e00968b1dc3795394c0decc980f766b22dd901f",
+            "content": "sha256:22775da99f483d42734e81b9c41e2d9a5d96b0cc48ab689ce82c858f4c09aadc",
             "locator": {
-              "end": 66,
+              "end": 72,
               "kind": "line_range",
-              "start": 55
+              "start": 60
             }
           },
           "kind": "test"
@@ -37,16 +37,16 @@
       ]
     },
     "3": {
-      "note": "Cases 2-7: each state as its own rendering.\n\nAnchor: \"renders %s as its own state\"",
+      "note": "The six-row attribution table uses without an invariant for counted labels and retains null, partial and unavailable states.\n\nAnchor: inclusive source ranges",
       "targets": [
         {
           "anchor": {
-            "blob": "1212d288a2e6c5341f27f05db469d7533ea2dd26",
-            "content": "sha256:2e8800c9b7301c17faab5abd82a0ced61de6bc506dfd8ec530b444a932f28548",
+            "blob": "2e00968b1dc3795394c0decc980f766b22dd901f",
+            "content": "sha256:92d303ed3652b2a8addb0f94643a2337794be028fdb9f96038100374da63f57b",
             "locator": {
-              "end": 136,
+              "end": 143,
               "kind": "line_range",
-              "start": 70
+              "start": 76
             }
           },
           "kind": "test"
@@ -54,16 +54,16 @@
       ]
     },
     "4": {
-      "note": "Case 8: nothing while pending.\n\nAnchor: \"shows nothing while the summary is pending: never a zero\"",
+      "note": "Pending summary state renders no attribution element.\n\nAnchor: inclusive source ranges",
       "targets": [
         {
           "anchor": {
-            "blob": "1212d288a2e6c5341f27f05db469d7533ea2dd26",
-            "content": "sha256:f3678462eb5b85cfcf043dec31d02181375bf9f17ee9cc09df22a9abd24f181d",
+            "blob": "2e00968b1dc3795394c0decc980f766b22dd901f",
+            "content": "sha256:8252402c27d19d86052add4baa0b94bf10f871195a7531ebddb55770aef4bb56",
             "locator": {
-              "end": 148,
+              "end": 156,
               "kind": "line_range",
-              "start": 138
+              "start": 145
             }
           },
           "kind": "test"
@@ -108,6 +108,23 @@
             "path": "dashboard/src/panels/detail-panel/intentReviewEntry.tsx"
           },
           "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "A separate three-row table checks all answered, two open and absent open-work states while preserving attribution and one request.\n\nAnchor: inclusive source ranges",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2e00968b1dc3795394c0decc980f766b22dd901f",
+            "content": "sha256:9412e3038b34dfd3c2798a3052cc9b79073599077e9b0a4c8a0a43d926f29f1f",
+            "locator": {
+              "end": 166,
+              "kind": "line_range",
+              "start": 153
+            }
+          },
+          "kind": "test"
         }
       ]
     }

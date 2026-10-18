@@ -3,11 +3,11 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "The module's statement: every value is the server's fact or a count of them.\n\nAnchor: \"Every value rendered here is the server's fact or a count of them\"",
+      "note": "Presentation consumes delivered change facts or helper counts; badge wording is not a new classifier.\n\nAnchor: exact source span",
       "targets": [
         {
           "anchor": {
-            "blob": "d63fca553096cd956ddff9b3b7f9762050a8d440",
+            "blob": "f04ef15a794eef331f4c5784c4d1650727ba4144",
             "content": "sha256:a39b6f64b9ebc7c89d40a1d6d06f51000282af16233601f82276a4d837f654bb",
             "locator": {
               "end": 3,
@@ -20,12 +20,12 @@
       ]
     },
     "10": {
-      "note": "The order, previous and next controls and the polite status.\n\nAnchor: \"aria-live=\\\"polite\\\"\"",
+      "note": "The order, previous and next controls and the polite status.",
       "targets": [
         {
           "anchor": {
-            "blob": "d63fca553096cd956ddff9b3b7f9762050a8d440",
-            "content": "sha256:52d702bfc29a44655bee486e2c7079e2b1fd649db6c9a51fa5f8fcbb0a2e0b5e",
+            "blob": "f04ef15a794eef331f4c5784c4d1650727ba4144",
+            "content": "sha256:cac7508dba66fd904c3711ec7c524cfdbb5527a9e21110439797a02c94c50d99",
             "locator": {
               "kind": "symbol",
               "name": "TriageControls"
@@ -36,16 +36,16 @@
       ]
     },
     "11": {
-      "note": "Its mounts in the tree.\n\nAnchor: \"<MemberChangeBadge state={change} />\"; \"<GuaranteeChangeBadge kinds={entry.change_kinds} />\"; \"<TriageControls order={order} onMove={traversal.move} status={traversal.status} />\"",
+      "note": "The compact family tree mounts the outline badge and triage controls; it does not mount the detailed member/guarantee facts.\n\nAnchor: exact source span; exact source span",
       "targets": [
         {
           "anchor": {
-            "blob": "f8135bda4f4dee8a955d2749f28f82df50cbaa0e",
-            "content": "sha256:e6256fb6766b956cf787b795d0c7b412b39a8ca083884aa4516a9db9366c6f33",
+            "blob": "a6452e32b37107141d8d2cb94125603cbeb46e68",
+            "content": "sha256:5a70ee04c3ff400751650054686a689e4ff30ffd1b05848f6db68f69952e91dc",
             "locator": {
-              "end": 564,
+              "end": 283,
               "kind": "line_range",
-              "start": 564
+              "start": 283
             },
             "path": "dashboard/src/panels/review/FamilyTree.tsx"
           },
@@ -53,25 +53,12 @@
         },
         {
           "anchor": {
-            "blob": "f8135bda4f4dee8a955d2749f28f82df50cbaa0e",
-            "content": "sha256:18621bd0af1a1cb33a1898de12d79a7c5bb9c5697b94db5ce297a3e2e016dd07",
+            "blob": "a6452e32b37107141d8d2cb94125603cbeb46e68",
+            "content": "sha256:0e000568334244d6ef3ccc7d41abfd2715fd5227ac72aaa637548ded01ced3ba",
             "locator": {
-              "end": 682,
+              "end": 503,
               "kind": "line_range",
-              "start": 679
-            },
-            "path": "dashboard/src/panels/review/FamilyTree.tsx"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "f8135bda4f4dee8a955d2749f28f82df50cbaa0e",
-            "content": "sha256:f1dee9b3c08ed25e7dc695a0d64096f6ae936f99f1a65e3d607ebe3e192f0511",
-            "locator": {
-              "end": 921,
-              "kind": "line_range",
-              "start": 921
+              "start": 503
             },
             "path": "dashboard/src/panels/review/FamilyTree.tsx"
           },
@@ -84,7 +71,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "342a8e6bec7faff90ae4e959a5b0e95904f5aeb2",
+            "blob": "f04ef15a794eef331f4c5784c4d1650727ba4144",
             "content": "sha256:533ad6c5b6073c8daba2320f4e36c2b8e3aaa2661c73746bb58a72d0f6167097",
             "locator": {
               "kind": "symbol",
@@ -96,12 +83,12 @@
       ]
     },
     "13": {
-      "note": "Badge meanings for each outline kind",
+      "note": "Outline meanings include the by-design curation explanation on unknown; this copy does not recompute why a fact was unknown.",
       "targets": [
         {
           "anchor": {
-            "blob": "342a8e6bec7faff90ae4e959a5b0e95904f5aeb2",
-            "content": "sha256:58f5b1c8a8f73f03a47933442e684a0f32345d780320c0c9b4ccd4af126da561",
+            "blob": "f04ef15a794eef331f4c5784c4d1650727ba4144",
+            "content": "sha256:2e261eff5f623f75bd55ed63d95c729bbb38701d2d7a75ca09b23701bb641c29",
             "locator": {
               "kind": "symbol",
               "name": "OUTLINE_MEANING"
@@ -116,7 +103,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "342a8e6bec7faff90ae4e959a5b0e95904f5aeb2",
+            "blob": "f04ef15a794eef331f4c5784c4d1650727ba4144",
             "content": "sha256:46ff82ef10a3b8bd6e9f61d4ec11dcaa3339383a1784209d1fc549c54adf69f3",
             "locator": {
               "kind": "symbol",
@@ -128,11 +115,11 @@
       ]
     },
     "17": {
-      "note": "Membership line keeps both the marker reason and the comparison fact",
+      "note": "Membership line keeps the comparison membership reasons when the membership is unknown, and the marker's own reason only where that branch does not apply",
       "targets": [
         {
           "anchor": {
-            "blob": "342a8e6bec7faff90ae4e959a5b0e95904f5aeb2",
+            "blob": "f04ef15a794eef331f4c5784c4d1650727ba4144",
             "content": "sha256:7d4657e0edc60acead71332a5f0dee9cad72caa2fca430aec4dcb624a89dcf33",
             "locator": {
               "kind": "symbol",
@@ -148,11 +135,49 @@
       "targets": [
         {
           "anchor": {
-            "blob": "342a8e6bec7faff90ae4e959a5b0e95904f5aeb2",
+            "blob": "f04ef15a794eef331f4c5784c4d1650727ba4144",
             "content": "sha256:cac7508dba66fd904c3711ec7c524cfdbb5527a9e21110439797a02c94c50d99",
             "locator": {
               "kind": "symbol",
               "name": "TriageControls"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "19": {
+      "note": "The required by-design curation sentence is appended visibly to unknown reasons and included in the outline unknown tooltip, without modifying delivered fact values.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f04ef15a794eef331f4c5784c4d1650727ba4144",
+            "content": "sha256:7b2bfda75bf701d80b9b6ea2489f0ea218a5c49d62dc5df1cf33ae896cd0c2d0",
+            "locator": {
+              "kind": "symbol",
+              "name": "CURATION_EXPLANATION"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f04ef15a794eef331f4c5784c4d1650727ba4144",
+            "content": "sha256:9772a7b8dd5022ab47e67de4e4b9c531b7c8c7afc7ec1ba87b7085abab84ba1c",
+            "locator": {
+              "kind": "symbol",
+              "name": "UnknownReason"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f04ef15a794eef331f4c5784c4d1650727ba4144",
+            "content": "sha256:2e261eff5f623f75bd55ed63d95c729bbb38701d2d7a75ca09b23701bb641c29",
+            "locator": {
+              "kind": "symbol",
+              "name": "OUTLINE_MEANING"
             }
           },
           "kind": "code"
@@ -164,7 +189,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d63fca553096cd956ddff9b3b7f9762050a8d440",
+            "blob": "f04ef15a794eef331f4c5784c4d1650727ba4144",
             "content": "sha256:52b35a31e42f7cafe9d4e7eeac49302863cc6d666008da042df2667ec8681b53",
             "locator": {
               "kind": "symbol",
@@ -176,11 +201,11 @@
       ]
     },
     "3": {
-      "note": "The sticky triage bar below the workspace's sticky way back.\n\nAnchor: \"top: 'var(--review-sticky-top, 0)',\"",
+      "note": "The sticky triage bar below the workspace's sticky way back.",
       "targets": [
         {
           "anchor": {
-            "blob": "d63fca553096cd956ddff9b3b7f9762050a8d440",
+            "blob": "f04ef15a794eef331f4c5784c4d1650727ba4144",
             "content": "sha256:91ee7ace84534088ccedade39bdae7a79d8112e04fdb022bb65136279eaeb54b",
             "locator": {
               "kind": "symbol",
@@ -192,11 +217,11 @@
       ]
     },
     "4": {
-      "note": "The marks and the labelled reason line.",
+      "note": "Marks and the complete labelled unknown reason remain visible; the removed firstOf helper no longer truncates delivered reasons.",
       "targets": [
         {
           "anchor": {
-            "blob": "d63fca553096cd956ddff9b3b7f9762050a8d440",
+            "blob": "f04ef15a794eef331f4c5784c4d1650727ba4144",
             "content": "sha256:6aaf4cdb0fb8c09756b63ecc3c9edf95931351b82cb37216c51b41324445727e",
             "locator": {
               "kind": "symbol",
@@ -207,22 +232,11 @@
         },
         {
           "anchor": {
-            "blob": "d63fca553096cd956ddff9b3b7f9762050a8d440",
-            "content": "sha256:850c6a8bed7a11e134dac9e5893b5ccba2f02b9d9f16a361953deaa6d711ef1f",
+            "blob": "f04ef15a794eef331f4c5784c4d1650727ba4144",
+            "content": "sha256:9772a7b8dd5022ab47e67de4e4b9c531b7c8c7afc7ec1ba87b7085abab84ba1c",
             "locator": {
               "kind": "symbol",
               "name": "UnknownReason"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "d63fca553096cd956ddff9b3b7f9762050a8d440",
-            "content": "sha256:6fc1456f0a3781af3afbc9eace85223d8f6841596251bf1327bac236d8fa8d34",
-            "locator": {
-              "kind": "symbol",
-              "name": "firstOf"
             }
           },
           "kind": "code"
@@ -234,7 +248,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d63fca553096cd956ddff9b3b7f9762050a8d440",
+            "blob": "f04ef15a794eef331f4c5784c4d1650727ba4144",
             "content": "sha256:77b1efc15989b80b251cb090f36f8c5212d47fb2d70e1aee333468af43b37ca6",
             "locator": {
               "kind": "symbol",
@@ -250,7 +264,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d63fca553096cd956ddff9b3b7f9762050a8d440",
+            "blob": "f04ef15a794eef331f4c5784c4d1650727ba4144",
             "content": "sha256:40a2c2d1b7b412a530b6e933e2d8b59329214045bb9637d056fba0d1e4828df1",
             "locator": {
               "kind": "symbol",
@@ -261,7 +275,7 @@
         },
         {
           "anchor": {
-            "blob": "d63fca553096cd956ddff9b3b7f9762050a8d440",
+            "blob": "f04ef15a794eef331f4c5784c4d1650727ba4144",
             "content": "sha256:46ff82ef10a3b8bd6e9f61d4ec11dcaa3339383a1784209d1fc549c54adf69f3",
             "locator": {
               "kind": "symbol",
@@ -277,8 +291,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d63fca553096cd956ddff9b3b7f9762050a8d440",
-            "content": "sha256:11a9737c8ce657474bfb4fc67cb0f3b4aeb00c2cd7ef2504255f558a8cc4e64f",
+            "blob": "f04ef15a794eef331f4c5784c4d1650727ba4144",
+            "content": "sha256:7d4657e0edc60acead71332a5f0dee9cad72caa2fca430aec4dcb624a89dcf33",
             "locator": {
               "kind": "symbol",
               "name": "membershipLine"
@@ -288,8 +302,8 @@
         },
         {
           "anchor": {
-            "blob": "d63fca553096cd956ddff9b3b7f9762050a8d440",
-            "content": "sha256:e103545b7cd5a10188d3d0245f56c0ea5338b5c6ff5d3531862640199259e32c",
+            "blob": "f04ef15a794eef331f4c5784c4d1650727ba4144",
+            "content": "sha256:4ad22a99b49cf75948a92ed9456c1a4ba0b96a4e439bc3b034470376ff630181",
             "locator": {
               "kind": "symbol",
               "name": "MembershipReason"
@@ -304,7 +318,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d63fca553096cd956ddff9b3b7f9762050a8d440",
+            "blob": "f04ef15a794eef331f4c5784c4d1650727ba4144",
             "content": "sha256:93d8eda1213a1de2402f1eb7638141ed0a062522d28efd376343a2c95da23871",
             "locator": {
               "kind": "symbol",
@@ -320,7 +334,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d63fca553096cd956ddff9b3b7f9762050a8d440",
+            "blob": "f04ef15a794eef331f4c5784c4d1650727ba4144",
             "content": "sha256:f5b6226d71b474564a95ede2304f67d849e54b6485103914c8de57429c3f7dfa",
             "locator": {
               "kind": "symbol",
@@ -331,7 +345,7 @@
         },
         {
           "anchor": {
-            "blob": "d63fca553096cd956ddff9b3b7f9762050a8d440",
+            "blob": "f04ef15a794eef331f4c5784c4d1650727ba4144",
             "content": "sha256:b057aeef247b21c01ef0257fa29b1b0e677f856307a3ad528176649c55ea252f",
             "locator": {
               "kind": "symbol",

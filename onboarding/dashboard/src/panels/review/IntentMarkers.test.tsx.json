@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "ea129e8f199e4f0d0303667f94bd0ab13a681fcd",
-        "content": "sha256:7c744619f2c8bce3ccd0d30b01e6cce311dae4bd28e81480343726fa20c68184",
+        "blob": "7d070c6dc66b03cf9fa5e700048d5ed2d0882740",
+        "content": "sha256:43a8f0c64444314d593ccc446e491d11d32560595538deab4afc4c9f65110ded",
         "locator": {
           "kind": "file"
         }
@@ -82,12 +82,63 @@
         }
       ]
     },
+    "13": {
+      "note": "Removes the no-tree/dataset branch of a combined no-mark case; unchanged-file no-read and other-content cases remain. Old card phrase nothing outside a tree comparison must be retired as current test coverage; no equivalent test relocation is established.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7d070c6dc66b03cf9fa5e700048d5ed2d0882740",
+            "content": "sha256:27bf452ef979e996ab8b82cbe1ec821fbc53bdfacb91d02d8f7973f8ad2dbf67",
+            "locator": {
+              "end": 345,
+              "kind": "line_range",
+              "start": 310
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "14": {
+      "note": "Three excerpt branches crossed with ready/unavailable outcomes verify pending text, no premature marks, state transition and one classification request.\n\nAnchor: \"shows marks loading in the $excerpt excerpt until $outcome (R57 rule 5)\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7d070c6dc66b03cf9fa5e700048d5ed2d0882740",
+            "content": "sha256:959a0cd5107f30f89432d9bac268ae2b3fa6fd7676a9a73c095b977fd13d0c0c",
+            "locator": {
+              "end": 661,
+              "kind": "line_range",
+              "start": 592
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "15": {
+      "note": "A genuinely unchanged file never requests classification or renders a state note, distinct from an unchanged-range excerpt of a changed file.\n\nAnchor: \"never reads, nor speaks for, an unchanged file\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7d070c6dc66b03cf9fa5e700048d5ed2d0882740",
+            "content": "sha256:43e9a3ab03cc371a909dd9ae83b2dafcdfd7eb6058b7f733a5e7e865bb374fef",
+            "locator": {
+              "end": 704,
+              "kind": "line_range",
+              "start": 689
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
     "2": {
       "note": "A full diff's marks, lists, follow, proofs and the unread side.  Anchor: \"marks each owner hunk on the owner's side lines, a deletion in the before editor\"; \"lists a proof entry as a test with its facet, apart from the intents\"",
       "targets": [
         {
           "anchor": {
-            "blob": "ea129e8f199e4f0d0303667f94bd0ab13a681fcd",
+            "blob": "7d070c6dc66b03cf9fa5e700048d5ed2d0882740",
             "content": "sha256:c40a8ced1814d59fbb2ea9d1d461f5f045cea465acb8991585f5ba6995a30d72",
             "locator": {
               "end": 297,
@@ -121,27 +172,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ea129e8f199e4f0d0303667f94bd0ab13a681fcd",
+            "blob": "7d070c6dc66b03cf9fa5e700048d5ed2d0882740",
             "content": "sha256:1cf616942e5f3118aa0842043c36e24a3d4e0b6503876c687d0bb4d5a2e22b1c",
             "locator": {
-              "end": 441,
+              "end": 435,
               "kind": "line_range",
-              "start": 396
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "5": {
-      "note": "Historical lane-window assertion account, superseded: in the pinned source, the retained reference range contains card Full file and excerpt scenarios, not the claimed every-drawn-window-hunk test. Preserve the historical anchor/target without presenting it as current lane-window assertion evidence.  Anchor: \"marks every hunk a window draws: the focused one and each neighbour its context shows\"",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "ea129e8f199e4f0d0303667f94bd0ab13a681fcd",
-            "content": "sha256:7c744619f2c8bce3ccd0d30b01e6cce311dae4bd28e81480343726fa20c68184",
-            "locator": {
-              "kind": "file"
+              "start": 390
             }
           },
           "kind": "test"
@@ -170,12 +206,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ea129e8f199e4f0d0303667f94bd0ab13a681fcd",
+            "blob": "7d070c6dc66b03cf9fa5e700048d5ed2d0882740",
             "content": "sha256:3050d8e1460cc290f242be6ff3680cb26eae0a26f8184bf9f1717082b2cf8662",
             "locator": {
-              "end": 435,
+              "end": 429,
               "kind": "line_range",
-              "start": 417
+              "start": 411
             }
           },
           "kind": "test"
@@ -187,7 +223,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ea129e8f199e4f0d0303667f94bd0ab13a681fcd",
+            "blob": "7d070c6dc66b03cf9fa5e700048d5ed2d0882740",
             "content": "sha256:f3d8ad67c29a580defbe6f822279966a7e42f1ae49f97a0635cb12e2bf4f1579",
             "locator": {
               "kind": "symbol",
@@ -198,7 +234,7 @@
         },
         {
           "anchor": {
-            "blob": "ea129e8f199e4f0d0303667f94bd0ab13a681fcd",
+            "blob": "7d070c6dc66b03cf9fa5e700048d5ed2d0882740",
             "content": "sha256:e139c9bbed7638c4129d1289bc17863368ae600c41281499ff311ac1fb5425c2",
             "locator": {
               "end": 79,
@@ -225,7 +261,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ea129e8f199e4f0d0303667f94bd0ab13a681fcd",
+            "blob": "7d070c6dc66b03cf9fa5e700048d5ed2d0882740",
             "content": "sha256:0ff2a69e7b052935bec19c9adfa334b19d6a7710e88cc5367fc42eb629ecc728",
             "locator": {
               "kind": "symbol",
@@ -236,7 +272,7 @@
         },
         {
           "anchor": {
-            "blob": "ea129e8f199e4f0d0303667f94bd0ab13a681fcd",
+            "blob": "7d070c6dc66b03cf9fa5e700048d5ed2d0882740",
             "content": "sha256:860bfc785f553c060d346ff19fdd0ee68696daaaec01539461cdef6b27232037",
             "locator": {
               "end": 124,

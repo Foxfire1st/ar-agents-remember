@@ -2,30 +2,13 @@
   "path": "dashboard/src/panels/review/l86.classification.captured.json",
   "realizes": [],
   "references": {
-    "1": {
-      "note": "Typed refusal naming the unchanged path\n\nAnchor: `refusal`",
+    "3": {
+      "note": "The current retained JSON input supplies the literal identities, response states and populations summarized above; these are fixture facts, not live project knowledge or fresh execution evidence.",
       "targets": [
         {
           "anchor": {
-            "blob": "37d9cab7cd3060dccc38368f3a06cf60d10efc51",
-            "content": "sha256:5b554e683ec0c799d7927b7a81abadaae4846e74e4871708d9afc20aa117ec76",
-            "locator": {
-              "end": 1,
-              "kind": "line_range",
-              "start": 1
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "2": {
-      "note": "Recorded comparison the refusal is about\n\nAnchor: `comparison`",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "37d9cab7cd3060dccc38368f3a06cf60d10efc51",
-            "content": "sha256:5b554e683ec0c799d7927b7a81abadaae4846e74e4871708d9afc20aa117ec76",
+            "blob": "5c4cc9ecc5c3fb065d1cecb00051e448499fa7fd",
+            "content": "sha256:fbd6f083bb5752092a79f48680ab3ea02cac8e04993ba931bfd2583ca25a9630",
             "locator": {
               "end": 1,
               "kind": "line_range",

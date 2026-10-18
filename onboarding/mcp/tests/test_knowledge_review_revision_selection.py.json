@@ -4,15 +4,15 @@
   "realizes": [],
   "references": {
     "16": {
-      "note": "`test_a_unique_chain_defaults_to_the_first_before_head_versus_the_last_after_head` supplies the current fixture or assertion described above.",
+      "note": "The single retained revision pair compares head to head and records that revision as the sole head on both sides.",
       "targets": [
         {
           "anchor": {
-            "blob": "4dfb58bf4430757ad55e934aa37cc7bc6ed0f69c",
-            "content": "sha256:a485a4566081992cffff071e12917c3dcc0dd65ad82e3b634a583ef5d63ad26d",
+            "blob": "33894208b9dd5fd9cf89d0e267064c6064641774",
+            "content": "sha256:dbc506685ef63f4aaed872147229e93cc8133ea333c3c9e5e16ef91018ce646c",
             "locator": {
               "kind": "symbol",
-              "name": "test_a_unique_chain_defaults_to_the_first_before_head_versus_the_last_after_head"
+              "name": "test_a_single_retained_revision_pair_compares_head_to_head"
             }
           },
           "kind": "test"
@@ -20,31 +20,15 @@
       ]
     },
     "17": {
-      "note": "`test_an_intermediate_revision_stays_selectable_history` supplies the current fixture or assertion described above.",
+      "note": "A known-empty after side produces a removal with the before revision recorded, no after revision and no after heads.",
       "targets": [
         {
           "anchor": {
-            "blob": "4dfb58bf4430757ad55e934aa37cc7bc6ed0f69c",
-            "content": "sha256:cd76141f3174b3a3164780aafdd29aa22e1a31561ce8dd1ba900d1b37e436a69",
+            "blob": "33894208b9dd5fd9cf89d0e267064c6064641774",
+            "content": "sha256:d26029891241c52ddf42e26823c15f3519df3aadbf3151693aadf5719e5b4452",
             "locator": {
               "kind": "symbol",
-              "name": "test_an_intermediate_revision_stays_selectable_history"
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "18": {
-      "note": "`test_a_successor_cycle_is_unresolved_and_names_no_pair` supplies the current fixture or assertion described above.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "4dfb58bf4430757ad55e934aa37cc7bc6ed0f69c",
-            "content": "sha256:3ddd0afb074437b7f09cdf9d25b2863fd9088d241480e4d1f3c08b876e4b2396",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_a_successor_cycle_is_unresolved_and_names_no_pair"
+              "name": "test_a_known_empty_after_side_stays_a_removal_with_the_before_head_recorded"
             }
           },
           "kind": "test"
@@ -102,12 +86,12 @@
       ]
     },
     "23": {
-      "note": "The new module's scope statement: heads from authored successors, the six load-bearing properties, and the fault-injection disclosure.",
+      "note": "_select calls select_subject_revisions with the comparison page items and fixture identity seed, requires an available selection and returns it.",
       "targets": [
         {
           "anchor": {
-            "blob": "4dfb58bf4430757ad55e934aa37cc7bc6ed0f69c",
-            "content": "sha256:c339878c1eb6da08c3ba21d3b8452e19bce0c046adf093cb9e7de01d894aa2d6",
+            "blob": "33894208b9dd5fd9cf89d0e267064c6064641774",
+            "content": "sha256:375986d2e4038d4dd8a64786b69bcd35a674aa295a4d9b9b363c9bc1e53266d8",
             "locator": {
               "kind": "symbol",
               "name": "_select"

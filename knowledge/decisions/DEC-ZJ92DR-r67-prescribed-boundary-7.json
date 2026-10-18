@@ -1,0 +1,53 @@
+{
+  "admission": {
+    "criteria": [
+      "constrains_future_work"
+    ],
+    "justification": "A future navigation consolidation must not substitute working source for the code a knowledge anchor actually records."
+  },
+  "alternatives": [
+    {
+      "option": "Open recorded code in the reader’s own tree/anchor-aware code view.",
+      "reason": "The reader has the selected recorded knowledge/source context; the working File Viewer cannot address that historical tree.",
+      "status": "chosen"
+    },
+    {
+      "option": "Route recorded code into the working-checkout File Viewer.",
+      "reason": "The reader has the selected recorded knowledge/source context; the working File Viewer cannot address that historical tree.",
+      "reconsider_when": "The destination gains an approved historical-tree/anchor contract and preserves the recorded source selection rather than substituting the checkout.",
+      "status": "rejected"
+    }
+  ],
+  "consequences": [
+    "A future navigation consolidation must not substitute working source for the code a knowledge anchor actually records.",
+    "No claim that source bytes are available when the recorded tree/blob is missing or that all reader code requests share one fetched body."
+  ],
+  "context": "Approved MIK-R67@v2 rule18 and its eight named reasons prescribe these unchanged choices; the separate one-spilled-history choice is expressly approved in L57-F07-ONE-SPILLED-HISTORY-ON-PRIVATE-TEMP-DISK-IS-APPROVED.json. Source obligation: MIK-R67@v2 by-design 7. This records a governing boundary, not an invented design meeting.",
+  "decider": "Approved MIK-R67@v2/D47/D48 for its stated unchanged choices; Architect97e0320d ruling2026-10-16T13:14:22+02:00 for the one-spilled-history resource choice.",
+  "id": "DEC-ZJ92DR",
+  "links": [
+    {
+      "relation": "constrains",
+      "target": {
+        "blob": "994adf251ec2014e1a65503fb22e08f41948bf96",
+        "content": "sha256:478a5f127654df76a9f2ef34d7dc7163712a4c296fa5591e268e14f5589f05dd",
+        "locator": {
+          "kind": "file"
+        },
+        "path": "dashboard/src/panels/knowledge-reader/KnowledgeReader.tsx"
+      }
+    }
+  ],
+  "origin": {
+    "handoff": {
+      "path": "freeze11-r67-prescribed-boundaries-and-spill-resource-choice-01.json"
+    },
+    "handoffEntry": "CUR-L57-R67-choice-7",
+    "leaf": "260928-MIK-L57",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-decision/v1",
+  "status": "active",
+  "supersedes": []
+}

@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "035768698be6a583041c67e462c149c44d5ba459",
+        "blob": "74f29568a6476be3bfdd727c3d8db942bc0cc105",
         "content": "sha256:d052946373f3d7e50d396fb830b8c7186d6338b94575abd280b2c91a87365ac2",
         "locator": {
           "kind": "symbol",
@@ -21,7 +21,7 @@
     },
     {
       "anchor": {
-        "blob": "035768698be6a583041c67e462c149c44d5ba459",
+        "blob": "74f29568a6476be3bfdd727c3d8db942bc0cc105",
         "content": "sha256:28c675df07345f4d274f0ecbd5e2491d55afe94b8a1dbc3f41b46a5c98f50b85",
         "locator": {
           "kind": "symbol",
@@ -34,12 +34,12 @@
         "handoffEntry": "MIK-R39@v1-in-tree-selection-adds-rows",
         "leaf": "260928-MIK-L39"
       },
-      "rationale": "Names the kept families: those the walk holds that are not in the context of the latest answer. The tag, the separate count and the catalogue's rows are derived from this one list.",
+      "rationale": "Names the kept families: those the walk holds that are not in the context of the latest answer. The workspace projects this list only into the kept-subject labels of the family rows and provides no separate kept count; the catalogue's rows are derived from the outline and the catalogue with the walked facts as enrichment, not from this list.",
       "role": "support"
     },
     {
       "anchor": {
-        "blob": "035768698be6a583041c67e462c149c44d5ba459",
+        "blob": "74f29568a6476be3bfdd727c3d8db942bc0cc105",
         "content": "sha256:625cb7a072f6849b771085ee0fe24bf3753284790e53ec61d2cb104e07c6d30c",
         "locator": {
           "kind": "symbol",
@@ -57,7 +57,7 @@
     },
     {
       "anchor": {
-        "blob": "035768698be6a583041c67e462c149c44d5ba459",
+        "blob": "74f29568a6476be3bfdd727c3d8db942bc0cc105",
         "content": "sha256:30b4f0708789a9a1253b71abac93875a9cfe1aa77dff295c872a69e4f82430cd",
         "locator": {
           "kind": "symbol",
@@ -75,7 +75,7 @@
     },
     {
       "anchor": {
-        "blob": "035768698be6a583041c67e462c149c44d5ba459",
+        "blob": "74f29568a6476be3bfdd727c3d8db942bc0cc105",
         "content": "sha256:66cab3c39e18f883c05fef12e192c20502ff925d17f267f085ce629679446e8a",
         "locator": {
           "kind": "symbol",
@@ -93,7 +93,7 @@
     },
     {
       "anchor": {
-        "blob": "035768698be6a583041c67e462c149c44d5ba459",
+        "blob": "74f29568a6476be3bfdd727c3d8db942bc0cc105",
         "content": "sha256:5c4647aa04bcd595ae27efa2204bcda1061b6bc0a65962538e7df9305d8cdfd8",
         "locator": {
           "kind": "symbol",
@@ -111,7 +111,7 @@
     },
     {
       "anchor": {
-        "blob": "035768698be6a583041c67e462c149c44d5ba459",
+        "blob": "74f29568a6476be3bfdd727c3d8db942bc0cc105",
         "content": "sha256:85a6e0153858338536f1bea0e76e9d50da338589ccf9100001c92b0b454a334a",
         "locator": {
           "kind": "symbol",
@@ -129,7 +129,7 @@
     },
     {
       "anchor": {
-        "blob": "035768698be6a583041c67e462c149c44d5ba459",
+        "blob": "74f29568a6476be3bfdd727c3d8db942bc0cc105",
         "content": "sha256:30b4f0708789a9a1253b71abac93875a9cfe1aa77dff295c872a69e4f82430cd",
         "locator": {
           "kind": "symbol",
@@ -291,6 +291,23 @@
             "path": "dashboard/src/panels/review/walkedTree.test.ts"
           },
           "kind": "test"
+        }
+      ]
+    },
+    "18": {
+      "note": "The module folds already-read comparison-bound context and issues no request; retained families are data, not a guarantee that every stored member is currently rendered or traversable.\n\nAnchor: inclusive source ranges",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "74f29568a6476be3bfdd727c3d8db942bc0cc105",
+            "content": "sha256:a4ea785950dce361070bbfa39ece37c683f3df492a09c467ddac12ba519f00d8",
+            "locator": {
+              "end": 248,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
         }
       ]
     },

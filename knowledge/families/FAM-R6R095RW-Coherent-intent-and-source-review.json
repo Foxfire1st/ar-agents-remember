@@ -1,6 +1,6 @@
 {
   "admission": "legacy-unassessed",
-  "guarantee": "Within a bound comparison, all changed source files remain reachable while selected intent, recorded evidence and family context stay together and inspection state survives navigation.",
+  "guarantee": "Within a bound comparison, all changed source files remain reachable while the selected intent, the reviewed leaf's owner-recorded judgment rows and the subject's typed proofs, and available family context stay together. Inspection state is retained only within its admitted comparison generation and review-input epoch; refresh and matching memory invalidation retain their separately owned reread/invalidation rules. The removed Reviewer evidence, applicability, assessment and observation collections are not promised or reconstructed by this joint guarantee.",
   "id": "FAM-R6R095RW",
   "members": [
     "INV-21SDZECS",
@@ -33,7 +33,7 @@
     "legacyId": "e19e8b3f-aa4c-4c5b-891d-accdd3462cd0",
     "task": "260921-ICR"
   },
-  "revision": 6,
+  "revision": 7,
   "routes": [
     "dashboard/src/data",
     "dashboard/src/panels/detail-panel",

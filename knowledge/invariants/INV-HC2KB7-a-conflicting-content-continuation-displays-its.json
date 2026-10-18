@@ -3,14 +3,15 @@
     "criteria": [
       "prevents_costly_mistake"
     ],
-    "justification": "Bounded W03 test-port obligation from the amended packet scope (Architect qualification 2026-10-08 11:18:45 UTC); ports-fifth.log: shows an explicit failure and the coherent accumulated review for conflicting content; assertion-fates.md"
+    "justification": "Keeps the current mounted continuation from replacing a coherent selected review on an adverse or later page. The retained W03 origin/log is historical; current source explicitly compares judgment rather than the removed evidence channel. This bounded scope prevents claiming old collection preservation from the new pane."
   },
   "applicability": "Conflicting-content continuations in the family read cycle.",
   "conditions": [
-    "An explicit failure displays while the coherent selected statement, evidence, siblings and complete file inventory are retained."
+    "An explicit failure displays while the coherent selected statement, the current recorded judgment, siblings and complete file inventory are retained."
   ],
   "exclusions": [
-    "Silent content replacement; dropping the coherent review."
+    "Silent content replacement; dropping the coherent review.",
+    "The former supporting evidence/assessment/observation collection is not retained by this contract; the current source compares the judgment pane instead. Historical W03 execution and origin evidence is not a fresh run."
   ],
   "id": "INV-HC2KB7",
   "origin": {
@@ -24,9 +25,9 @@
     "leaf": "260928-MIK-L86",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-invariant/v1",
-  "statement": "A conflicting content continuation displays its explicit failure while retaining the coherent selected statement, evidence, siblings and complete file inventory.",
+  "statement": "A conflicting content continuation displays its explicit failure while retaining the coherent selected statement, the current recorded judgment, siblings and complete file inventory.",
   "status": "proposed",
   "supersedes": []
 }

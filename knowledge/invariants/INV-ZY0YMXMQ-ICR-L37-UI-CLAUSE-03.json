@@ -19,6 +19,6 @@
   "revision": 2,
   "schema": "ar-invariant/v1",
   "statement": "The central evidence view displays the selected subject owner's authored assessment with its recorded currentness and applicability, separately from candidate execution observations.",
-  "status": "proposed",
+  "status": "retired",
   "supersedes": []
 }

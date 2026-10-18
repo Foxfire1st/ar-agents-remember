@@ -1,14 +1,15 @@
 {
   "admission": "legacy-unassessed",
-  "applicability": "Recorded assessment availability and currentness for new captures and previously sealed comparison manifests.",
+  "applicability": "Availability metadata retained in historical comparison manifests; not a current Reviewer assessment or currentness channel.",
   "conditions": [
-    "Owner-measured empty, unavailable and uncaptured collections remain distinct facts.",
-    "Absent optional availability or custody metadata contributes no field to older canonical encodings.",
-    "Uncaptured assessments retain not-selected/not-measured treatment; source measurability alone does not measure an absent collection."
+    "A retained availability descriptor admits only assessments; recorded requires a positive count, none_recorded requires zero, and unanswered states require no count and a nonblank next action.",
+    "A supplied channel’s declared count, when present, agrees with ComparisonRecordBinding.assessments; shape validity does not authenticate an actual owner measurement.",
+    "An absent optional assessment_channel contributes no field to the canonical record-binding encoding."
   ],
   "exclusions": [
-    "Retrofitting missing historical metadata or changing an existing seal.",
-    "Equating a missing capture with no prior authorship, measured absence or currentness."
+    "Reintroducing the removed current Reviewer assessment/currentness collection or its not-selected-to-not-measured composition.",
+    "Retrofitting missing historical metadata, rewriting an existing seal, or equating missing metadata with no prior authorship or measured absence.",
+    "Treating model validation as execution of a collection read or currentness measurement."
   ],
   "id": "INV-53MJW8V0",
   "origin": {
@@ -16,9 +17,9 @@
     "legacyId": "e354385e-d9bb-42b1-b4c3-6a15b457d61a",
     "task": "260921-ICR"
   },
-  "revision": 2,
+  "revision": 3,
   "schema": "ar-invariant/v1",
-  "statement": "Captured assessment availability distinguishes measured-empty, unavailable and not-captured history. Missing optional availability metadata is canonically omitted so old sealed manifests keep their original identities; uncaptured assessments never become measured absence or a favorable currentness result.",
+  "statement": "Retained assessment-availability metadata distinguishes counted recorded/none_recorded states from unavailable, not_measured and not_selected states that carry no count. A supplied availability count must agree with the manifest binding’s declared assessment count. Missing optional assessment_channel metadata is canonically omitted rather than filled or interpreted as a measured collection.",
   "status": "proposed",
   "supersedes": []
 }

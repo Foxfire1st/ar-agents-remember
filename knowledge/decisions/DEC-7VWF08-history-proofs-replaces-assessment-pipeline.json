@@ -1,0 +1,78 @@
+{
+  "admission": {
+    "criteria": [
+      "constrains_future_work"
+    ],
+    "justification": "Prevents later clients from reviving unsupported assessment channels or interpreting their removal as a favorable empty judgment; the history/proof source boundary continues governing review changes."
+  },
+  "alternatives": [
+    {
+      "option": "Read leaf judgments and after-code proofs in one selected-subject answer; remove old assessment/evidence channels and their test-port scope.",
+      "reason": "History files are the actual judgment source. A new text-storage view must not imply that obsolete unavailable channels still have a producer.",
+      "status": "chosen"
+    },
+    {
+      "option": "Keep the old assessment/evidence channels as unavailable placeholders and preserve their direct-treatment tests.",
+      "reason": "The channels have no text-storage carrier and their finite port was explicitly bounded until pane replacement; retaining them continues an unsupported shape.",
+      "reconsider_when": "An approved requirement introduces a real independently owned channel and its supported source.",
+      "status": "rejected"
+    },
+    {
+      "option": "Restore old payload support and compatibility rendering for pre-label assessment fixtures.",
+      "reason": "Pre-label payload support was explicitly refused by the earlier port ruling, and the new four-tree contract removes rather than revives it.",
+      "reconsider_when": "A governing requirement explicitly supports that historical payload and specifies its legitimate producer.",
+      "status": "rejected"
+    }
+  ],
+  "consequences": [
+    "Read failures stay unavailable and missing judgment fields remain failures, not an invented none result.",
+    "The reviewer remains read-only; Curator-coherence publication/validation keeps its separate authority."
+  ],
+  "context": "Tree comparisons read authored leaf history in Git and proof entries; the pre-L57 assessment pane and its finite test-port scope have ended. Approved MIK-R57@v2 rules 1-3 deliberately remove those models, producers and UI channels while preserving Curator-coherence authority.",
+  "decider": "Approved MIK-R57@v2 under D18, D47 and D48; Curator records the specified choice.",
+  "id": "DEC-7VWF08",
+  "links": [
+    {
+      "relation": "constrains",
+      "target": {
+        "blob": "7915489e9b1bfd326b7927fa39dbc7d55826e3c4",
+        "content": "sha256:3d2ba7c9bb099ac54f2a31d2f629488067e277170ffdc26590526c969bd0ecfa",
+        "locator": {
+          "kind": "symbol",
+          "name": "review_judgment"
+        },
+        "path": "mcp/src/agents_remember/application/review_judgment.py"
+      }
+    },
+    {
+      "relation": "constrains",
+      "target": {
+        "blob": "5998106166bd7ead48ac09f5173c06c3cacb5f39",
+        "content": "sha256:9a537c4f259d8e6387f67a8426e2f23197407fa6e00aeea42e92753f646c84bf",
+        "locator": {
+          "kind": "symbol",
+          "name": "SubjectJudgment"
+        },
+        "path": "dashboard/src/panels/review/SubjectJudgment.tsx"
+      }
+    }
+  ],
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "requirements/MIK-R57-v2-the-reviewer-sheds-the-dataset-shape.md rules 1-3; freeze05 deletion of review_evidence_records.py and ReviewSurface.applicability.test.tsx; review_judgment.py and SubjectJudgment.tsx"
+      ],
+      "path": "retired-channel-ingest.json"
+    },
+    "handoffEntry": "CUR-L57-history-proofs-replaces-assessment-pipeline",
+    "leaf": "260928-MIK-L57",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-decision/v1",
+  "status": "active",
+  "supersedes": [
+    "DEC-D0ZZXM",
+    "DEC-NAYAH3"
+  ]
+}

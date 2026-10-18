@@ -6,6 +6,140 @@
 
 ## Purpose
 
+Fifteen current test definitions drive the real review composition over the fixture's two
+text-backed snapshot sides and derived indexes. They cover selected knowledge/source rendering,
+missing roles, the bounded forbidden-field scan, row-count and comparison parity, staleness,
+submission, unresolved references, absent sides, pane types/catalogue properties, and measured-empty
+or partial inventories. The distinct pane types are knowledge, source and judgment; signals and
+authored-effects collections are expressly absent from the knowledge pane.
+
+Seven assessment/observation/signal/worked-journey tests and their three record-input builders are
+removed in L57. The unchanged module header still describes some of that old coverage; its prose is
+not evidence that deleted tests run. This card describes assertions, not a new execution result.
+
+The resolution/refusal/transport cases were historically moved to
+[test_knowledge_review_resolution_and_route.py](test_knowledge_review_resolution_and_route.py.md).
+That module now has eight test declarations: its published-assessment-loader test is also removed.
+The shared config/request/resolution/render helpers stay here.
+
+## Code Commentary
+
+### Logic
+
+**The lane declaration is collection input, not an execution receipt.** The module declares
+`pytest.mark.evidence_unit`, is selected in unit-regression, and is named by seven exact-scope
+lifecycle artifact records. Parsed source registrations, not old line offsets or module counts,
+are the current authority. No lane membership proves a test ran.
+
+**`REPOSITORY_LEAF` and `FORBIDDEN_FIELD_NAMES` are the module's two declared vocabularies.**
+`REPOSITORY_LEAF = "260915-ks-l22"` names the leaf the resolution reports. `FORBIDDEN_FIELD_NAMES` is a
+twenty-member frozenset of the names a generated conclusion would have to be carried in — `summary`,
+`narrative`, `explanation`, `meaning`, `severity`, `score`, `confidence`, `ranking`, `rank`,
+`recommendation`, `verdict`, `conclusion`, `conflict`, `impact`, `importance`, `approved`, `approval`,
+`compatible`, `implied_finding`, `disposition_suggestion` — and the source comment states the scope the
+check reads: the whole payload schema, so a field added anywhere under it is measured rather than only
+a field added to the top.
+
+**`review_config` names no real root, so only the resolution's own refusals can answer.**
+`McpRuntimeConfig` is built with `/nonexistent-workspace`, `/nonexistent-coordination`,
+`/nonexistent-config.json` and `/nonexistent-transcripts`. That is what makes the two
+candidate-resolution cases (in the resolution-and-route module, which imports this helper) measure the
+resolver's behaviour rather than the host's filesystem.
+
+**The `fixture` fixture builds one fresh two-snapshot dataset per case.** `build_diff_fixture(tmp_path
+/ "review")` returns a `DiffFixture` from the shipped `diff_scope_test_support`, so no case observes
+another's candidate state, and the fixture's two databases and two Git roots are real files rather
+than stubs. `resolution_for` then assembles the `ReviewCandidateResolution` **without a contract** —
+the fixture's own before/after database paths, Git roots and tree ids — so the case can exercise
+`compose_review` without standing up a coordination tree, while the resolution-and-route module's cases exercise
+`resolve_review_candidate` against a config that names nothing.
+
+**`render` is the module's one failing-loudly helper.** It calls `compose_review` with the fixture's
+resolution and request, asserts `result.state == "review"` with the refusal as the assertion message,
+asserts the payload is present, and returns it. Every pane case therefore reads a payload the shipped
+composition actually produced, and a composition that starts refusing fails the case rather than
+silently skipping it.
+
+**The old record-input builders are removed.** `published_assessment`, `observation` and `signal`
+no longer construct a review input bag. `render` calls `compose_review` with resolution and request,
+including previous binding on the copied request, and returns only an admitted payload.
+
+**The pane cases assert selected identity, presence, conditions and comparison-owned field changes.**
+The knowledge case records the compared before/after revision IDs, requires both statement states
+present, checks each side's condition tuple and compares the field-change identity set with the
+shipped comparison. It does not assert literal statement-text equality; its title/docstring is not
+stronger evidence than that body. The source cases retain the unchanged sibling, removed before-side
+locations, unmapped/outside-selection counts, and a report whose roles are None or a permitted value;
+the case does not identify an originally missing role or compare emitted roles with recorded roles.
+
+**The schema guard is a bounded name check.** `walk_property_names` recursively collects JSON-schema
+property names and the test requires no intersection with the twenty declared forbidden names.
+The neighboring case checks the vocabulary's record-kind/table/status declarations. These assertions
+do not inspect every free-text value or prove that no imaginable field could carry a conclusion.
+
+**The stores-nothing case compares fixture row counts before and after rendering.** It reads
+`read_row_counts` for both derived fixture indexes and requires equality. That is the measured
+assertion; it is not instrumentation of every possible filesystem write.
+
+**The selects-nothing case compares the payload's identity and counts value for value against the
+shipped comparison.** `test_the_adapter_selects_nothing_because_the_shipped_comparison_is_the_comparison_rendered`
+runs the shipped `diff_knowledge_scope` directly and asserts the payload's comparison identity, item
+identities and counts are that result's own values, so a future re-derivation inside the adapter fails
+the case.
+
+**The retained state cases stay distinct.** Staleness is checked in both directions and the submission
+path points to the existing owner rather than a private writer. The surviving state case renders, asserts
+that the removed `authored_effects` field is absent and checks recorded-reference truthiness; it supplies
+no unpublished-author input and accepts empty unresolved collections. The neighbouring missing-side case
+mixes constructor refusals with rendering assertions, so the pair is not a refusal-only account. The
+removed unassessed/observation/signal/disagreeing-assessment cases are historical, not current rendering
+coverage.
+
+**The pane-type case stays here, under its own section header.** The candidate-resolution and
+transport cases moved to the resolution-and-route module (see Purpose).
+`test_the_rendered_pane_types_are_the_three_the_design_names` remains, beside the two measured-inventory
+cases, and proves the rendered pane types are the three the design names.
+
+**The old worked-review and stale-assessment journey is removed.** Its old account is preserved
+below as historical material. Current composition uses the recorded judgment pane instead of those
+injected evidence collections; the retained fifteen tests do not measure the former journey.
+
+**`260921-ICR-L2` added a narrowing helper, extended the transport case, and added the two cases the new states are measured by.** `reviewed_selector(fixture)` returns the request's selector while asserting it is not `None`, which is what keeps the pyright rail green now that `ReviewSurfaceRequest.selector` is optional rather than papering over it with an ignore. `test_the_transport_admits_exactly_the_two_reviewable_selector_kinds` was extended to assert the third admitted answer — **omitting both parameters** — beside the existing two. (That case now lives in the resolution-and-route module, and as moved it no longer carries the omission assertion; the selector-less route is measured by the source-endpoints module's task-context case.) The two new cases are: `test_a_knowledge_only_change_leaves_an_openable_review_with_a_measured_empty_inventory` (the declared candidate tree equals the base tree while the two real datasets still differ, so the payload carries `inventory.state="measured"`, `entries=()`, `listed_total=0` and the "measured empty change set" sentence *and* an untouched knowledge comparison — both statements `present`, staleness `current`); and `test_an_inventory_that_could_not_carry_a_name_is_partial_by_construction`, which attempts all three refused shapes (`unrepresentable_paths` beside a complete inventory, beside an unavailable one, and on an otherwise-complete inventory) and asserts the one accepted shape is measured **and** partial.
+
+### Conventions
+
+The module imports `DiffFixture`/`build_diff_fixture`, the real comparison and row-count readers,
+`ReviewCandidateResolution`, `compose_review` and the current knowledge/source/judgment types.
+It no longer imports `ReviewRecordInputs` or assessment/observation/signal binders. The resolver and
+HTTP transport live in the neighboring module. Constructor refusals use `pytest.raises(ValidationError)`;
+function-scoped temporary fixtures isolate the cases.
+
+### Invariants And Boundaries
+
+- **No case re-implements what it measures.** The comparison comes from `diff_knowledge_scope`, the
+  comparison data from the shipped view operation, and the row counts from `read_row_counts`.
+- **No snapshot is faked.** The fixture's two datasets and two Git roots are real files under
+  `tmp_path`; no case touches the checkout or the network.
+- **A refusal fails the case that expected a payload.** `render` asserts `state == "review"` with the
+  refusal as its message, so a composition that starts refusing is loud.
+- **The lane registration is a precondition.** An unregistered module makes the lane manifest refuse
+  the repository, which the collection hook turns into a collection error.
+- **Boundary.** This is a test module. It declares one lane (`evidence_unit`), asserts behaviour and
+  owns no production contract.
+
+### Todos
+
+None recorded.
+
+## Historical Coverage Replaced By L57
+
+The following earlier card text is retained verbatim as historical material, not current coverage.
+Its citation markers and table rows are inert inside this fence. Canonical curator assessment
+authoring is not claimed deleted merely because these reviewer tests/builders were removed.
+
+```markdown
+## Purpose
+
 The Intent Reviewer surface's case module: **the three panes, every refusal state, and the worked
 review.** It drives the real adapter over the real two-snapshot comparison built by
 `diff_scope_test_support`, and reads the shipped L20 review matrix through `compose_review`. Nothing
@@ -40,9 +174,7 @@ transport cases, `260921-ICR-L17`'s previous-identity case and the loader case. 
 module's `REPOSITORY_LEAF`, `review_config`, `resolution_for`, `review_request` and `render`, so those
 helpers are shared surface, not private to this file.
 
-## Code Commentary
 
-### Logic
 
 **The lane declaration is a precondition, not metadata.** `pytestmark = pytest.mark.evidence_unit`
 registers the whole module in the unit population, and the leaf also appended the module to the
@@ -50,34 +182,7 @@ registers the whole module in the unit population, and the leaf also appended th
 `mcp/tests/evidence-lifecycle.toml:1412` and `:1447`. An unregistered `test_*.py` module makes the lane
 manifest refuse the repository, so the registration is what lets the module be collected at all.
 
-**`REPOSITORY_LEAF` and `FORBIDDEN_FIELD_NAMES` are the module's two declared vocabularies.**
-`REPOSITORY_LEAF = "260915-ks-l22"` names the leaf the resolution reports. `FORBIDDEN_FIELD_NAMES` is a
-twenty-member frozenset of the names a generated conclusion would have to be carried in — `summary`,
-`narrative`, `explanation`, `meaning`, `severity`, `score`, `confidence`, `ranking`, `rank`,
-`recommendation`, `verdict`, `conclusion`, `conflict`, `impact`, `importance`, `approved`, `approval`,
-`compatible`, `implied_finding`, `disposition_suggestion` — and the source comment states the scope the
-check reads: the whole payload schema, so a field added anywhere under it is measured rather than only
-a field added to the top.
 
-**`review_config` names no real root, so only the resolution's own refusals can answer.**
-`McpRuntimeConfig` is built with `/nonexistent-workspace`, `/nonexistent-coordination`,
-`/nonexistent-config.json` and `/nonexistent-transcripts`. That is what makes the two
-candidate-resolution cases (in the resolution-and-route module, which imports this helper) measure the
-resolver's behaviour rather than the host's filesystem.
-
-**The `fixture` fixture builds one fresh two-snapshot dataset per case.** `build_diff_fixture(tmp_path
-/ "review")` returns a `DiffFixture` from the shipped `diff_scope_test_support`, so no case observes
-another's candidate state, and the fixture's two databases and two Git roots are real files rather
-than stubs. `resolution_for` then assembles the `ReviewCandidateResolution` **without a contract** —
-the fixture's own before/after database paths, Git roots and tree ids — so the case can exercise
-`compose_review` without standing up a coordination tree, while the resolution-and-route module's cases exercise
-`resolve_review_candidate` against a config that names nothing.
-
-**`render` is the module's one failing-loudly helper.** It calls `compose_review` with the fixture's
-resolution and request, asserts `result.state == "review"` with the refusal as the assertion message,
-asserts the payload is present, and returns it. Every pane case therefore reads a payload the shipped
-composition actually produced, and a composition that starts refusing fails the case rather than
-silently skipping it.
 
 **`published_assessment` builds one assessment through the shipped binding seam rather than by
 constructing a stored row.** It builds a `ReviewAssessmentRevision` whose `subject` names the fixture's
@@ -87,17 +192,7 @@ returns `bind_assessment(authorized=revision, inputs=AssessmentInputs(...))`. `o
 `signal(fixture)` do the same for the other two collections, so the evidence pane's three inputs are
 all produced by the modules that own them.
 
-**The pane cases assert the rendering against the comparison's own values — and since leaf
-`260921-ICR-L7` the knowledge-pane case asserts the recorded selection, not the old both-sides
-statements.** One text record holds one revision (rule 3), so the retry identity holds one head
-per snapshot — the baseline's subject revision and the candidate's revised one — and `ICR-R07@v1`
-reports an explicit compared selection: the case asserts both statements render the compared
-heads' own words, the recorded selection names the compared pair, and the pane's field changes are
-exactly the comparison's own. The two source-pane cases read the
-unchanged sibling, the removed claim's before-side, the unmapped path counted through the expansion and
-the records outside the selection. One case is dedicated to a missing role staying unclassified and
-never being guessed from a name, which is the `ReviewSourceLocation.role` boundary asserted at the
-display rather than only in the model.
+
 
 **The whole-schema conclusion check walks the payload rather than listing the models.**
 `walk_property_names` recurses a JSON schema and collects every property name, and
@@ -107,17 +202,15 @@ against `FORBIDDEN_FIELD_NAMES`. Its sibling case,
 module declares nothing of its own. Together they are why "the surface cannot grow a conclusion by
 filling a blank" is measured rather than asserted in prose.
 
+
+
 **The stores-nothing case measures the two datasets' row counts across a full render.**
 `test_the_surface_stores_nothing_so_deleting_every_rendering_loses_no_canonical_information` reads the
 row counts before and after a complete render through the shipped `read_row_counts` and compares them,
 so "deleting every rendering loses no canonical information" is a measured property of the datasets
 rather than a claim about the code.
 
-**The selects-nothing case compares the payload's identity and counts value for value against the
-shipped comparison.** `test_the_adapter_selects_nothing_because_the_shipped_comparison_is_the_comparison_rendered`
-runs the shipped `diff_knowledge_scope` directly and asserts the payload's comparison identity, item
-identities and counts are that result's own values, so a future re-derivation inside the adapter fails
-the case.
+
 
 **The refusal and state cases are one property each.** An unassessed subject is displayed unassessed
 and never defaulted to compatible; no evidence records reads `none_recorded` while source inspection
@@ -130,10 +223,7 @@ own state and never an empty string; two disagreeing assessments are both displa
 and no resolution. The last three read `ValidationError` from the models layer where the prohibition is
 a constructor check rather than a rendering choice.
 
-**The pane-type case stays here, under its own section header.** The candidate-resolution and
-transport cases moved to the resolution-and-route module (see Purpose).
-`test_the_rendered_pane_types_are_the_three_the_design_names` remains, beside the two measured-inventory
-cases, and proves the rendered pane types are the three the design names.
+
 
 **The worked-review case walks the journey rather than sampling it.**
 `test_the_worked_review_journey_renders_every_step_it_walks` drives the sequence the design's §8
@@ -143,9 +233,7 @@ reusable. The measured-binding case and the two-disagreeing-assessments case sit
 currentness axis is asserted from both directions.
 
 
-**`260921-ICR-L2` added a narrowing helper, extended the transport case, and added the two cases the new states are measured by.** `reviewed_selector(fixture)` returns the request's selector while asserting it is not `None`, which is what keeps the pyright rail green now that `ReviewSurfaceRequest.selector` is optional rather than papering over it with an ignore. `test_the_transport_admits_exactly_the_two_reviewable_selector_kinds` was extended to assert the third admitted answer — **omitting both parameters** — beside the existing two. (That case now lives in the resolution-and-route module, and as moved it no longer carries the omission assertion; the selector-less route is measured by the source-endpoints module's task-context case.) The two new cases are: `test_a_knowledge_only_change_leaves_an_openable_review_with_a_measured_empty_inventory` (the declared candidate tree equals the base tree while the two real datasets still differ, so the payload carries `inventory.state="measured"`, `entries=()`, `listed_total=0` and the "measured empty change set" sentence *and* an untouched knowledge comparison — both statements `present`, staleness `current`); and `test_an_inventory_that_could_not_carry_a_name_is_partial_by_construction`, which attempts all three refused shapes (`unrepresentable_paths` beside a complete inventory, beside an unavailable one, and on an otherwise-complete inventory) and asserts the one accepted shape is measured **and** partial.
 
-### Conventions
 
 The module imports the shipped support rather than building its own: `DiffFixture` and
 `build_diff_fixture` come from `diff_scope_test_support`, `bind_assessment`/`AssessmentInputs` from
@@ -157,23 +245,20 @@ through `fastapi.testclient.TestClient`) are imported by the resolution-and-rout
 every constructor-enforced prohibition. Fixtures are function-scoped and take `tmp_path`, so no case
 shares a dataset with another.
 
-### Invariants And Boundaries
 
-- **No case re-implements what it measures.** The comparison comes from `diff_knowledge_scope`, the
-  matrix from the shipped view operation, the assessments from `bind_assessment`, and the row counts
-  from `read_row_counts`.
-- **No snapshot is faked.** The fixture's two datasets and two Git roots are real files under
-  `tmp_path`; no case touches the checkout or the network.
-- **A refusal fails the case that expected a payload.** `render` asserts `state == "review"` with the
-  refusal as its message, so a composition that starts refusing is loud.
-- **The lane registration is a precondition.** An unregistered module makes the lane manifest refuse
-  the repository, which the collection hook turns into a collection error.
-- **Boundary.** This is a test module. It declares one lane (`evidence_unit`), asserts behaviour and
-  owns no production contract.
 
-### Todos
+- The three input builders that produce records through the seams that own them rather than by constructing stored rows. [7]
 
-None recorded.
+- The state cases: unassessed is unassessed; no evidence records reads `none_recorded` with source inspection still available; a passing observation is never invariant-satisfied; a signal carries no severity. [14]
+
+- The two-disagreeing-assessments case and the measured matching-binding case — the currentness axis from both directions, and the case `260921-ICR-L15` renamed so its name and its input agree. [17]
+
+- **The worked review of the design's §8 journey, and the case that closes it: a stale assessment is never reused.** [18]
+
+| The lane row this module occupies. | "mcp/tests/test_knowledge_review_surface.py" | mcp/tests/test-evidence-lanes.toml:111-113 |
+
+| The two consumer registrations this module's fixtures are recorded under. | "mcp/tests/test_knowledge_review_surface.py" | mcp/tests/evidence-lifecycle.toml:1427-1441; mcp/tests/evidence-lifecycle.toml:1471-1471 |
+```
 
 ## Evidence
 
@@ -186,34 +271,30 @@ No configured domain documentation could be checked.
 
 ### Repo-Internal References
 
-Every claim on this card is checkable in the shipped candidate: the module's own docstring and its
-named properties, the lane declaration and the two catalogue registrations that go with it, the two
-declared vocabularies, the helpers that build the fixture's inputs through the shipped seams, and each
-case with the property it pins.
+The operative account below follows current declarations and assertion bodies. The old module
+header and historical card quotation do not establish removed case coverage. Registrations select
+evidence; source inspection supplies no new execution or acceptance grade.
 
-- The module's own statement of the load-bearing properties, one case each, and the worked review of the design's §8 journey. [1]
 - **The lane declaration, which is a precondition rather than metadata.** [2]
 - The leaf id the resolution reports. [3]
 - The config that names no real root, so only the resolution's own refusals can answer. [4]
 - The fresh two-snapshot fixture per case, and the resolution assembled without a contract so the composition can be driven without a coordination tree. [5]
 - The one request shape, the narrowing helper the optional selector obliged, and the one failing-loudly render helper every pane case goes through. [6]
-- The three input builders that produce records through the seams that own them rather than by constructing stored rows. [7]
 - The shipped two-snapshot support the whole module is built on, with the independent byte-safe Git observation this leaf's inventory cases compare against. [8]
-- The pane cases: since `260921-ICR-L7` the knowledge-pane case asserts the recorded ambiguous selection (every head and retained revision named, no pair, both sides `unresolved` with the ambiguity as their detail) and the comparison's own field changes; the source-pane cases read the unchanged sibling and the removed claim's before-side, and the counts the selection did not reach. [9]
-- **The missing-role boundary asserted at the display: unclassified, never guessed from a name.** [10]
-- **The whole-schema walk for a field a generated conclusion could occupy, and the case that the vocabulary defines no record kind, table or status of its own.** [11]
-- **The stores-nothing case, measured as the two datasets' row counts being identical across a full render.** [12]
+- **The missing-role display case: reported roles are None or a permitted value.** [10]
 - **The selects-nothing case, comparing the payload's identity and counts against the shipped comparison value for value.** [13]
-- The state cases: unassessed is unassessed; no evidence records reads `none_recorded` with source inspection still available; a passing observation is never invariant-satisfied; a signal carries no severity. [14]
 - **The staleness pair, asserted from both directions, plus the absent-submission-path case.** [15]
-- The unresolved-author case and the missing-side case, both refusals rather than renderings. [16]
-- The two-disagreeing-assessments case and the measured matching-binding case — the currentness axis from both directions, and the case `260921-ICR-L15` renamed so its name and its input agree. [17]
-- **The worked review of the design's §8 journey, and the case that closes it: a stale assessment is never reused.** [18]
-- **The pane-name case carries the surface's re-contracted entry catalogue (`260921-ICR-L9`): the catalogue the resolver offers is measured identity for identity against the two snapshots' own tables — every recorded invariant and family listed with its label and before/after presence, listing one never comparing it, a subject the comparison cannot answer for still listed (its reason carried by the review it opens), and an identity neither snapshot records absent.** [19]
-- **The two cases this leaf (`260921-ICR-L2`) added: a knowledge-only change leaves an openable review whose inventory is a *measured* empty set while the comparison is untouched, and an inventory that could not carry a name is partial **by construction**, with all three refused shapes asserted — the first now also asserting the corrected attribution (measured empty partition, zero denominator, empty lists, locations still displayed). Since `260921-ICR-L7` the first case also asserts the same explicitly ambiguous selection as the rewritten pane case (the knowledge half is untouched by the empty source half — only the source measurement changed, and only the source pane answers for it).** [20]
+- The surviving state case renders with its removed-field assertion, and the missing-side case mixes constructor refusals with rendering. [16]
 
-| The lane row this module occupies. | "mcp/tests/test_knowledge_review_surface.py" | mcp/tests/test-evidence-lanes.toml:111-113 |
-| The two consumer registrations this module's fixtures are recorded under. | "mcp/tests/test_knowledge_review_surface.py" | mcp/tests/evidence-lifecycle.toml:1427-1441; mcp/tests/evidence-lifecycle.toml:1471-1471 |
+
+
+- The module has fifteen current test declarations. Its old header still names removed coverage and is not a current case census; the bounded forbidden-name vocabulary remains declared. [1]
+- The knowledge case asserts the compared revision pair, statement presence, side-specific condition tuples and comparison-owned field changes, not literal statement-text equality. The source cases retain sibling/before-side and unmapped/outside-selection counts. [9]
+- The recursive schema-name scan excludes the declared forbidden names, and the neighboring vocabulary case checks no record kind/table/status of its own; this is bounded assertion coverage, not a universal free-text conclusion proof. [11]
+- The rendering case compares both fixture indexes row-for-row by count before and after composition; it is not a general filesystem-write audit. [12]
+- Distinct knowledge/source/judgment pane types, no authored_effects/signals, typed labelled catalogue entries, retry identity present on both sides, a direct retry comparison with a page and one absent identity excluded are asserted. The body does not compare every catalogue identity or open an unanswerable subject to assert its reason. [19]
+- A knowledge-only change retains a compared selected pair while its inventory is measured empty; malformed inventory combinations are rejected and unrepresentable names require a partial measured inventory. [20]
+- The module is selected once in the unit-regression lane and named by seven exact-scope lifecycle artifact records; registration is not execution. [21]
 
 ### Cross-Repo References
 

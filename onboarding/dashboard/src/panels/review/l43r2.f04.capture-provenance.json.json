@@ -2,18 +2,21 @@
   "path": "dashboard/src/panels/review/l43r2.f04.capture-provenance.json",
   "realizes": [],
   "references": {
-    "1": {
-      "note": "The provenance identifies its declared capture scope, producer and normalization.",
+    "2": {
+      "note": "The current mounted F04 source names its distinct capture provenance, declares the two-leaf/writer history and closed-flag simulation, and imports l57.f04-native inputs rather than this removed set.",
       "targets": [
         {
           "anchor": {
-            "blob": "2b5017938b4aec82ec928d035d58db647f1bf4b6",
-            "content": "sha256:ebcaebbab718c1b16819a837e0ff8086b29d49a9257ee9350348e27ea849d88e",
+            "blob": "4e57207cacc8ceb964151b85e236c55b9b831cc1",
+            "content": "sha256:029e94ee1c03d15f469f8a7c41055f546695ecae5723157f05ac8dcee7445a6d",
             "locator": {
-              "kind": "file"
-            }
+              "end": 18,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "dashboard/src/panels/review/ReviewSurface.f04.test.tsx"
           },
-          "kind": "code"
+          "kind": "test"
         }
       ]
     }

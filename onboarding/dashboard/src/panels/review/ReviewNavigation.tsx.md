@@ -38,6 +38,11 @@ and comparison change-set destinations passed by the workspace. Walked entries a
 there is no `CatalogueFamilies`, `SubjectButton`, separate all-invariants disclosure or refresh-subjects button.
 
 - `ReviewNavigation` (the component) renders the section `review-catalogue-navigation`: the `Families & invariants` heading, the summary line (`navigationSummary`: changed-family and changed-invariant counts from `outlineCounts` over the walked entries, plus the lane's unexplained/unknown file counts), the outline-unavailable reason when the counts cannot be read, then the tree (`children`) and the change-set destinations.
+The current summary optionally appends caller-supplied codeSummary text without recomputing code
+facts. attributionSummary keeps unavailable measurement explicit as the change set could not be
+measured; otherwise it distinguishes files without an invariant from unknown-attribution files.
+Neither label is a curation decision or permission to treat an unavailable count as zero.
+
 ### Conventions
 
 - Exports: `ReviewSubject`, `SelectionOptions`, `ReviewNavigationState`, the interface and the component `ReviewNavigation`, `SUBJECT_HOLD_MS`, `useReviewNavigation`, `useReaderEngagement` and `useObservedComparison`.
@@ -47,7 +52,7 @@ there is no `CatalogueFamilies`, `SubjectButton`, separate all-invariants disclo
 
 - Catalogue identity and comparison-specific family content have different owners: the catalogue supplies identity, the review supplies family content.
 - Loading, unreadable, confirmed empty and explicit source-only selection are distinct states.
-- The hold never withholds the task-context review beyond the bound; it is not permission to restore a source explorer in the sidebar.
+- Timer expiry releases the configured first-read hold; this is not a fresh measured wall-clock response bound or permission to restore a source explorer in the sidebar.
 - A catalogue answering after the bound never moves a reader who has acted in the reviewer.
 - Engagement only stores the subject already on screen. It never selects, reads or clears anything itself.
 - This module authors no knowledge and no assessment.
@@ -68,9 +73,13 @@ there is no `CatalogueFamilies`, `SubjectButton`, separate all-invariants disclo
 
 
 - Delayed-catalogue coverage retains engagement and mounted-shell ownership; opening follows the current outline/fallback rule. [24]
-- Rail section with summary, tree slot and destinations [25]
-- Summary counts from outline over walked entries [26]
-- One-line changed-family/invariant/lane summary [27]
+
+
+
 - Outline-first opening subject, none without real change [28]
 - Choice, settling, comparison generation and engage [30]
 - Surface-side comparison generation reporting [32]
+
+- The rail combines existing summary text with optional caller-supplied codeSummary, then open reason/tree/destination slots; it makes no new measurement. [25]
+- navigationSummary derives outline counts only after catalogue admission and retains unavailable reason rather than synthesizing an empty count. [26]
+- The summary combines changed-family/invariant counts with attributionSummary; an unavailable lane count says the change set could not be measured. [27]

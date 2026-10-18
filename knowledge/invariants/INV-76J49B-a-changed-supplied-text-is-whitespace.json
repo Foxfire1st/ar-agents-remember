@@ -1,0 +1,35 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test",
+      "prevents_costly_mistake"
+    ],
+    "justification": "The current changed regression isolates the old strip-all-whitespace error. Regressing this guard could hide a joining/splitting edit, including must not into mustnot, as an innocuous whitespace-only result during future wording review."
+  },
+  "applicability": "textDiff classification of two supplied JavaScript strings.",
+  "conditions": [
+    "Exact strings are identical; unequal strings need equal ordered non-whitespace token arrays for whitespace_only.",
+    "Non-whitespace runs retain punctuation; joining or splitting such runs changes that array and reaches words."
+  ],
+  "exclusions": [
+    "Natural-language truth, locale-aware word/grapheme segmentation, original-file byte-decoding preservation, generated semantic effects and fresh runtime acceptance."
+  ],
+  "id": "INV-76J49B",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "dashboard/src/panels/review/wordDiff.test.ts::decides by bytes: identical, whitespace only, or words",
+        "Compared actual BASE/current token predicate, caller and assertion phases; no equivalent current stored word-diff invariant found. This is a source-bound proof, not a new test run."
+      ],
+      "path": "freeze11-word-diff-two-guards-and-current-trace-01.json"
+    },
+    "handoffEntry": "CUR-L57-word-token-boundary-classification",
+    "leaf": "260928-MIK-L57",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "A changed supplied text is whitespace-only only when its ordered non-whitespace tokens are equal; joining or splitting a word is a word change, not hidden by stripping all whitespace.",
+  "status": "proposed",
+  "supersedes": []
+}

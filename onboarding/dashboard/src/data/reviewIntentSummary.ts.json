@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "9674aeae19ce9cb39553f39a2033dba7c8c4eccd",
-        "content": "sha256:b7cdb6034aad057fabfa698da4d17ae9d6d28ea97acdcce1f1d7d64ede36da5d",
+        "blob": "aa37dc151156c900a476667b0cbba310a971e51a",
+        "content": "sha256:7fd1973e6b1bbfdf4ad26218a832228390085e9f41480f41352b07b2bb335c84",
         "locator": {
           "kind": "file"
         }
@@ -20,8 +20,8 @@
     },
     {
       "anchor": {
-        "blob": "9674aeae19ce9cb39553f39a2033dba7c8c4eccd",
-        "content": "sha256:0bedb67cb69c913430b635e65a5e89ad418b2a5205bf38e9d9cf448cdce0e422",
+        "blob": "aa37dc151156c900a476667b0cbba310a971e51a",
+        "content": "sha256:f5cda33a04f44fa1cf3806eb26dd2aea42ba7dc422de549adfa34e80a86b72c9",
         "locator": {
           "kind": "symbol",
           "name": "IntentSummaryRead"
@@ -32,13 +32,13 @@
       "origin": {
         "leaf": "260921-ICR-L46"
       },
-      "rationale": "Declares the entry's read as exactly one of loading, counted/partial with counts, or unavailable with a problem, so the client type cannot hold counts beside an unavailable answer and the entry never draws numbers for an unread comparison.",
+      "rationale": "The client read union separates loading, counted/partial authored-intent counts, and unavailable with an owner problem. Its unavailable branch has no authored-intent counts; separately supplied attribution and unexplainedOpen remain permitted auxiliary facts. This is the declared presentation vocabulary, not proof of actual rendering or authentication of a source read.",
       "role": "presentation"
     },
     {
       "anchor": {
-        "blob": "9674aeae19ce9cb39553f39a2033dba7c8c4eccd",
-        "content": "sha256:73a1735fc963d15d125c6f4257f711ba8a6ed11c60e9b4836441b203201769b7",
+        "blob": "aa37dc151156c900a476667b0cbba310a971e51a",
+        "content": "sha256:08e5aa23021b6bc47bd93b00794cae5bcc77cb996fbb2a48347dea65c3c4391e",
         "locator": {
           "kind": "symbol",
           "name": "useIntentReviewSummary"
@@ -54,12 +54,12 @@
     },
     {
       "anchor": {
-        "blob": "9674aeae19ce9cb39553f39a2033dba7c8c4eccd",
-        "content": "sha256:73a1735fc963d15d125c6f4257f711ba8a6ed11c60e9b4836441b203201769b7",
+        "blob": "aa37dc151156c900a476667b0cbba310a971e51a",
+        "content": "sha256:08e5aa23021b6bc47bd93b00794cae5bcc77cb996fbb2a48347dea65c3c4391e",
         "locator": {
-          "end": 125,
+          "end": 140,
           "kind": "line_range",
-          "start": 90
+          "start": 104
         }
       },
       "id": "RLZ-YNCHSBQT",
@@ -73,26 +73,16 @@
   ],
   "references": {
     "1": {
-      "note": "The wire types mirroring the server model.",
+      "note": "The component counts and result wire shape retain authored intent, optional attribution and optional stored-open facts.\n\nAnchor: Current implementation",
       "targets": [
         {
           "anchor": {
-            "blob": "9674aeae19ce9cb39553f39a2033dba7c8c4eccd",
-            "content": "sha256:b40ecffaa5128d54b1dfa64768b2c48fd623dca66e034c5d4b447be9e40e3302",
+            "blob": "aa37dc151156c900a476667b0cbba310a971e51a",
+            "content": "sha256:f5f89709b8a21456508cc0f10038bbd247352ac865e9fb90132f179a332a4fe1",
             "locator": {
-              "kind": "symbol",
-              "name": "ReviewIntentCounts"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "cdc2029bbb7da71feb49f14ec9d60611087b8410",
-            "content": "sha256:34c1b82d034aad49467300081f0fbb5b04b15c43117c58adbb451073e437a310",
-            "locator": {
-              "kind": "symbol",
-              "name": "ReviewIntentSummaryResult"
+              "end": 60,
+              "kind": "line_range",
+              "start": 40
             }
           },
           "kind": "code"
@@ -100,14 +90,16 @@
       ]
     },
     "2": {
+      "note": "The store-owned hook loads and peeks under the same task/facts key and drops superseded mounted completions.\n\nAnchor: Current implementation",
       "targets": [
         {
           "anchor": {
-            "blob": "9674aeae19ce9cb39553f39a2033dba7c8c4eccd",
-            "content": "sha256:73a1735fc963d15d125c6f4257f711ba8a6ed11c60e9b4836441b203201769b7",
+            "blob": "aa37dc151156c900a476667b0cbba310a971e51a",
+            "content": "sha256:08e5aa23021b6bc47bd93b00794cae5bcc77cb996fbb2a48347dea65c3c4391e",
             "locator": {
-              "kind": "symbol",
-              "name": "useIntentReviewSummary"
+              "end": 140,
+              "kind": "line_range",
+              "start": 104
             }
           },
           "kind": "code"
@@ -115,26 +107,16 @@
       ]
     },
     "3": {
-      "note": "The render state and the answer mapping; an unrecognised body is unreadable, never drawn.\n\nAnchor: `unreadableAnswer`",
+      "note": "The client state and mapping separate authored counts from failure while preserving defined auxiliary values on either declared answer state.\n\nAnchor: Current implementation",
       "targets": [
         {
           "anchor": {
-            "blob": "cdc2029bbb7da71feb49f14ec9d60611087b8410",
-            "content": "sha256:3fef816c5f454621fbf268a196236890351373d251adc7d08c338bb4073c19a3",
+            "blob": "aa37dc151156c900a476667b0cbba310a971e51a",
+            "content": "sha256:df8044be5c2eb9474ae910ca0b23e95d22be15de5d45d1553d05cd791a91ea71",
             "locator": {
-              "kind": "symbol",
-              "name": "IntentSummaryRead"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "cdc2029bbb7da71feb49f14ec9d60611087b8410",
-            "content": "sha256:71bd18dfcd12161f2db4ebc7bf6983acc2d14d5baf4bed1af5a3d40e2c52a4f0",
-            "locator": {
-              "kind": "symbol",
-              "name": "summaryRead"
+              "end": 98,
+              "kind": "line_range",
+              "start": 67
             }
           },
           "kind": "code"
@@ -142,14 +124,16 @@
       ]
     },
     "4": {
+      "note": "Same-key retained fallback and mounted/sequence checks belong to the hook, not a second count computation.\n\nAnchor: Current implementation",
       "targets": [
         {
           "anchor": {
-            "blob": "9674aeae19ce9cb39553f39a2033dba7c8c4eccd",
-            "content": "sha256:73a1735fc963d15d125c6f4257f711ba8a6ed11c60e9b4836441b203201769b7",
+            "blob": "aa37dc151156c900a476667b0cbba310a971e51a",
+            "content": "sha256:c782c72a2d0ab7fb80ecf2ff0483cbbb78809df8ec573c70645e46ebda2753a0",
             "locator": {
-              "kind": "symbol",
-              "name": "useIntentReviewSummary"
+              "end": 140,
+              "kind": "line_range",
+              "start": 110
             }
           },
           "kind": "code"
@@ -157,14 +141,14 @@
       ]
     },
     "5": {
-      "note": "The lane's count carried on both answered states (MIK-L32).\n\nAnchor: \"attribution?: ReviewLaneSummary;\"; \"const attribution = result.attribution ? { attribution: result.attribution } : {};\"",
+      "note": "Attribution and defined unexplained_open are copied separately from authored plus/minus, including on the unavailable branch.\n\nAnchor: Current implementation",
       "targets": [
         {
           "anchor": {
-            "blob": "9674aeae19ce9cb39553f39a2033dba7c8c4eccd",
-            "content": "sha256:1b9422615ee1b87596c992a3e70f0455265397a2496108e2854652ae817e8915",
+            "blob": "aa37dc151156c900a476667b0cbba310a971e51a",
+            "content": "sha256:1665d46bf89699101c854bd144dc26cccb14c9a8dd68d59bca513cbbf8657232",
             "locator": {
-              "end": 58,
+              "end": 59,
               "kind": "line_range",
               "start": 58
             }
@@ -173,12 +157,12 @@
         },
         {
           "anchor": {
-            "blob": "cdc2029bbb7da71feb49f14ec9d60611087b8410",
-            "content": "sha256:71bd18dfcd12161f2db4ebc7bf6983acc2d14d5baf4bed1af5a3d40e2c52a4f0",
+            "blob": "aa37dc151156c900a476667b0cbba310a971e51a",
+            "content": "sha256:8429ef3583d0e275f2382e2d1189484c292e3334a3812ac3e34849d49002de6b",
             "locator": {
-              "end": 90,
+              "end": 98,
               "kind": "line_range",
-              "start": 79
+              "start": 84
             }
           },
           "kind": "code"
@@ -186,15 +170,16 @@
       ]
     },
     "6": {
-      "note": "The server model it mirrors.",
+      "note": "The mirrored server result constrains its declared outcome and optional non-negative stored-open field.\n\nAnchor: Current implementation",
       "targets": [
         {
           "anchor": {
-            "blob": "e131e4295c677d11b892549406df6c26ea52c2dd",
-            "content": "sha256:b3b3d0304191ed5d8827108783c73c2b12de3dfd88ba02b272f7c884d1f27996",
+            "blob": "4d3de3149beba772c4408439aa637fb03436836d",
+            "content": "sha256:a06a94de49bd0b25fcebb01ce3f699bd961fb27e910060f4de1ab6cc8bb0271f",
             "locator": {
-              "kind": "symbol",
-              "name": "ReviewIntentSummaryResult"
+              "end": 124,
+              "kind": "line_range",
+              "start": 93
             },
             "path": "mcp/src/agents_remember/models/knowledge/review_intent_summary.py"
           },
@@ -203,16 +188,16 @@
       ]
     },
     "7": {
-      "note": "The consumer.\n\nAnchor: `useIntentReviewSummary`",
+      "note": "The consumer distinguishes main authored counts/problem, attribution and separate open-work count, and opens the task-bound review.\n\nAnchor: Current implementation",
       "targets": [
         {
           "anchor": {
-            "blob": "9f16a4ea899010aae0203cfd8712a007026dabf6",
-            "content": "sha256:087f9600600b0b76e0eb0c421d8a83a2909722e81f9467a1d97d0ecba7029bf3",
+            "blob": "e7a6bf60038ae40902f419fca145a006573f1587",
+            "content": "sha256:65663d672a0556e603dbc6b40bba3602fb8f8032e1c573b1b94dba732a2253be",
             "locator": {
-              "end": 171,
+              "end": 190,
               "kind": "line_range",
-              "start": 131
+              "start": 31
             },
             "path": "dashboard/src/panels/detail-panel/intentReviewEntry.tsx"
           },
@@ -221,15 +206,16 @@
       ]
     },
     "8": {
-      "note": "Pending sharing is same-facts only; superseded transport cannot retain or relabel an answer.",
+      "note": "The shared cache shares pending work only for equal facts; supersession is abort-guarded before retained-value replacement or revalidation relabeling.\n\nAnchor: Current implementation",
       "targets": [
         {
           "anchor": {
             "blob": "d64c2458cf4416a842ef1eff840bbf025ac0a5a9",
             "content": "sha256:e6db7948a6285509052250f33afd2f49c6cbfc13f7849132b214641fdc465660",
             "locator": {
-              "kind": "symbol",
-              "name": "ConditionalReads"
+              "end": 88,
+              "kind": "line_range",
+              "start": 10
             },
             "path": "dashboard/src/data/conditionalReads.ts"
           },

@@ -1,0 +1,53 @@
+{
+  "admission": {
+    "criteria": [
+      "constrains_future_work"
+    ],
+    "justification": "A future performance cut must not silently omit file entries from marks classification or read every file eagerly before a view requests its marks."
+  },
+  "alternatives": [
+    {
+      "option": "Keep the complete per-file entry classification and read/share it when an admitted view drawing that file marks opens.",
+      "reason": "Appendix151 explicitly chooses the per-file population and on-demand boundary. useMarkClassification honors active/listed/supplied state and the scope shares a changed path pending/ready answer; the native per-file projection returns both side entry populations.",
+      "status": "chosen"
+    },
+    {
+      "option": "Cap or trim the per-file entry population, or eagerly classify unrelated files solely to avoid this admitted on-demand response.",
+      "reason": "Trimming hides potentially deciding entries; eager unrelated reads abandon the chosen file/view acquisition boundary rather than improving its implementation.",
+      "reconsider_when": "An approved requirement specifies a truthful paged/alternative complete entry contract and how marks remain complete without speculative reads.",
+      "status": "rejected"
+    }
+  ],
+  "consequences": [
+    "A future performance cut must not silently omit file entries from marks classification or read every file eagerly before a view requests its marks.",
+    "No obligation to read marks for unchanged or unlisted paths, no unconditional single network request across failures/scopes, and no bound on every response size or a semantic grade."
+  ],
+  "context": "Approved MIK-R57@v2 appendix83/151 and rule6 require this by-design choice to be recorded, not deferred as a gap. Source obligation: MIK-R57@v2 by-design classification-scope. This is the requirement-prescribed boundary, not a claim that an undocumented alternative was seriously weighed.",
+  "decider": "Approved MIK-R57@v2 under D18/D47/D48; Curator records the specified boundary under constrains_future_work.",
+  "id": "DEC-GN2BGF",
+  "links": [
+    {
+      "relation": "constrains",
+      "target": {
+        "blob": "682ee6b7ec8192ca5c30b68570db7d4e9c72ea0c",
+        "content": "sha256:39bd172bc40e9441f0cfcff7e05775356deac1331196633c1741a99da17d6ac0",
+        "locator": {
+          "kind": "file"
+        },
+        "path": "dashboard/src/panels/review/intentMarkerScope.ts"
+      }
+    }
+  ],
+  "origin": {
+    "handoff": {
+      "path": "freeze11-r57-eight-prescribed-by-design-boundaries-01.json"
+    },
+    "handoffEntry": "CUR-L57-R57-choice-classification-scope",
+    "leaf": "260928-MIK-L57",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-decision/v1",
+  "status": "active",
+  "supersedes": []
+}

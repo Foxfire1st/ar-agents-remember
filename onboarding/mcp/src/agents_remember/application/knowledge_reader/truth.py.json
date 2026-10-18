@@ -1,13 +1,48 @@
 {
   "path": "mcp/src/agents_remember/application/knowledge_reader/truth.py",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "429d9030986b5580fecabfb7a347284e223fcd4a",
+        "content": "sha256:9b8ac1bffc5b90b2014f09207e4e9cffcb5e4b6f2698098509ac6eb1b62eb626",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-6KMKCS",
+      "invariant": "INV-DFA51A",
+      "origin": {
+        "handoffEntry": "MIK-R67@v2 by-design one-spilled-history",
+        "leaf": "260928-MIK-L57"
+      },
+      "rationale": "The public record-view caller defers full history acquisition until a manifest miss while retaining membership rows and read-error behavior.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "429d9030986b5580fecabfb7a347284e223fcd4a",
+        "content": "sha256:9b8ac1bffc5b90b2014f09207e4e9cffcb5e4b6f2698098509ac6eb1b62eb626",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-E734EQ",
+      "invariant": "INV-3TJKFH",
+      "origin": {
+        "handoffEntry": "MIK-R67@v2 by-design 8",
+        "leaf": "260928-MIK-L57"
+      },
+      "rationale": "Presents the stored reconsideration state; leaf-specific reconsideration candidates remain worklist data in that leaf's review.",
+      "role": "enforcement"
+    }
+  ],
   "references": {
     "1": {
       "note": "The module's own statement of the truth views per kind and the census view.\n\nAnchor: \"A **truth view** shows one record of the selected tree\"",
       "targets": [
         {
           "anchor": {
-            "blob": "6dfd558533a99e7bc9d3298e5234f0ee65996219",
+            "blob": "429d9030986b5580fecabfb7a347284e223fcd4a",
             "content": "sha256:d3a007e474f1c21391fb40676137d90e75c33ec6cf12201be934372340357e1a",
             "locator": {
               "end": 21,
@@ -20,16 +55,28 @@
       ]
     },
     "10": {
-      "note": "Invariant truth and timeline preserve membership-row provenance.",
+      "note": "Invariant truth retains its dedicated membership projection, while the timeline callback includes membership-subject rows alongside record history.\n\nAnchor: Timeline history and invariant membership",
       "targets": [
         {
           "anchor": {
-            "blob": "6dfd558533a99e7bc9d3298e5234f0ee65996219",
-            "content": "sha256:73642e9cda97b0b73ab0d797fb235e36a37dd877ec774d96b282996f98681729",
+            "blob": "429d9030986b5580fecabfb7a347284e223fcd4a",
+            "content": "sha256:c4e0bf5dcfc88bdfdabb897b6e4b5eb51d54f7b56230d82260fbb82c8928170a",
             "locator": {
-              "end": 91,
+              "end": 104,
               "kind": "line_range",
-              "start": 86
+              "start": 98
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "429d9030986b5580fecabfb7a347284e223fcd4a",
+            "content": "sha256:30cf673ca5f41eba17783aabf908a00bc623a22fa06a130f85d483589444e535",
+            "locator": {
+              "end": 207,
+              "kind": "line_range",
+              "start": 189
             }
           },
           "kind": "code"
@@ -37,16 +84,15 @@
       ]
     },
     "11": {
-      "note": "Membership judgments are rendered with their complete owning history context.",
+      "note": "Membership projections carry owner, owner kind, closed flag, path, row ID, subject, disposition and document.",
       "targets": [
         {
           "anchor": {
-            "blob": "6dfd558533a99e7bc9d3298e5234f0ee65996219",
-            "content": "sha256:76db404c074c166db12ae8b17886543dc5e89eda9209e5b7075c3684e4876ed3",
+            "blob": "429d9030986b5580fecabfb7a347284e223fcd4a",
+            "content": "sha256:7dff5d6bcb0303496c6202a9ba83108ae3675ab0bab252adf9318ec09b818d0f",
             "locator": {
-              "end": 210,
-              "kind": "line_range",
-              "start": 186
+              "kind": "symbol",
+              "name": "_membership_document"
             }
           },
           "kind": "code"
@@ -54,16 +100,15 @@
       ]
     },
     "12": {
-      "note": "Separate unresolved-locator control: the bad-request/code-size case sends a well-formed line-range locator with start=\"x\" and asserts locator.state==unresolved; no locator-detail or unreadable-census assertion. [12]",
+      "note": "The separate bad-request/code-size case supplies string kind=line_range and non-integer start=\"x\", asserting unresolved locator state rather than locator detail or an unreadable census.",
       "targets": [
         {
           "anchor": {
-            "blob": "4ec4c95baf015b3298eca6db77c2a032c0632a63",
-            "content": "sha256:0f53232fcd8dbf08cf4722f083f3ed665a8353a7b21da3868af9f4a84b7ece53",
+            "blob": "19db6df367f5fbe794e1baed60f7491c416043eb",
+            "content": "sha256:e8ea9332fe0e0c03897947e1c5c9208971ac1a1602879d89777d1536932d0709",
             "locator": {
-              "end": 1173,
-              "kind": "line_range",
-              "start": 1157
+              "kind": "symbol",
+              "name": "test_bad_requests_are_400_and_large_or_binary_code_is_a_bounded_notice"
             },
             "path": "mcp/tests/test_knowledge_reader.py"
           },
@@ -72,12 +117,12 @@
       ]
     },
     "2": {
-      "note": "One record's truth view with its links, kind part and timeline.",
+      "note": "One record's truth view carries its links, kind part and timeline, now forwarding a continuation and lazy history callback.",
       "targets": [
         {
           "anchor": {
-            "blob": "3e41d11c06748842a1f0cf24176210b9ac57b47d",
-            "content": "sha256:0ae16615f2e3971029d42490717bec0949e98bb96ce3592718a7172c05144c08",
+            "blob": "429d9030986b5580fecabfb7a347284e223fcd4a",
+            "content": "sha256:b80c5725c35e1b812593a13e2044a48a01bab80a1aad9b4f3c76d94f9f127253",
             "locator": {
               "kind": "symbol",
               "name": "record_view"
@@ -92,7 +137,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6dfd558533a99e7bc9d3298e5234f0ee65996219",
+            "blob": "429d9030986b5580fecabfb7a347284e223fcd4a",
             "content": "sha256:41976ea94dceb0c370b4a9fde5402ce7992ebda5459adc2e37507b773ce6a47a",
             "locator": {
               "kind": "symbol",
@@ -103,7 +148,7 @@
         },
         {
           "anchor": {
-            "blob": "6dfd558533a99e7bc9d3298e5234f0ee65996219",
+            "blob": "429d9030986b5580fecabfb7a347284e223fcd4a",
             "content": "sha256:99218c29b802e572b76feb88b0f0332414ad971c00c7e5925d6bb0c36389b91e",
             "locator": {
               "kind": "symbol",
@@ -119,7 +164,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6dfd558533a99e7bc9d3298e5234f0ee65996219",
+            "blob": "429d9030986b5580fecabfb7a347284e223fcd4a",
             "content": "sha256:cf6a1294113f57e14297b0e4047546d04fb2b39e2bc405752385757e9b6bd0f8",
             "locator": {
               "kind": "symbol",
@@ -130,7 +175,7 @@
         },
         {
           "anchor": {
-            "blob": "6dfd558533a99e7bc9d3298e5234f0ee65996219",
+            "blob": "429d9030986b5580fecabfb7a347284e223fcd4a",
             "content": "sha256:dd388475cbd25655fb9a729ab99bb9d53d1ded378727e448f045c81fba8590c7",
             "locator": {
               "kind": "symbol",
@@ -142,26 +187,28 @@
       ]
     },
     "5": {
-      "note": "The invariant and family parts with their states.",
+      "note": "Invariant and family parts expose their own currentness, entries and locations; the invariant's dedicated membership array queries history independently of the timeline cache.\n\nAnchor: Invariant and family projections",
       "targets": [
         {
           "anchor": {
-            "blob": "3e41d11c06748842a1f0cf24176210b9ac57b47d",
-            "content": "sha256:f9de606ca146c631d08d186b5a68212bebe8bf8a39abc8a62e9740ac89aa8184",
+            "blob": "429d9030986b5580fecabfb7a347284e223fcd4a",
+            "content": "sha256:30cf673ca5f41eba17783aabf908a00bc623a22fa06a130f85d483589444e535",
             "locator": {
-              "kind": "symbol",
-              "name": "_invariant"
+              "end": 207,
+              "kind": "line_range",
+              "start": 189
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "6dfd558533a99e7bc9d3298e5234f0ee65996219",
+            "blob": "429d9030986b5580fecabfb7a347284e223fcd4a",
             "content": "sha256:e29a1a30254b344b0e519a2e866a09c5010464650614c6739650c993f4018b87",
             "locator": {
-              "kind": "symbol",
-              "name": "_family"
+              "end": 252,
+              "kind": "line_range",
+              "start": 225
             }
           },
           "kind": "code"
@@ -173,7 +220,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6dfd558533a99e7bc9d3298e5234f0ee65996219",
+            "blob": "429d9030986b5580fecabfb7a347284e223fcd4a",
             "content": "sha256:801279ae58903d828cbacfe6c38e7637d3588710a6eff99287786d8af1978fc7",
             "locator": {
               "kind": "symbol",
@@ -189,7 +236,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6dfd558533a99e7bc9d3298e5234f0ee65996219",
+            "blob": "429d9030986b5580fecabfb7a347284e223fcd4a",
             "content": "sha256:846355c025bc06ceb4c81f1aea4f10a3f8ad9c45fdc75615f3249e0a3873f73d",
             "locator": {
               "kind": "symbol",
@@ -205,7 +252,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6dfd558533a99e7bc9d3298e5234f0ee65996219",
+            "blob": "429d9030986b5580fecabfb7a347284e223fcd4a",
             "content": "sha256:f1a8b8213aa92860b53e3327748b7fa1e75999cde0a48d611db3b9f403c68c48",
             "locator": {
               "kind": "symbol",
@@ -216,7 +263,7 @@
         },
         {
           "anchor": {
-            "blob": "6dfd558533a99e7bc9d3298e5234f0ee65996219",
+            "blob": "429d9030986b5580fecabfb7a347284e223fcd4a",
             "content": "sha256:c0a17512cfb7cd2868a43a58d45f84d9be9b43d4b884e0d5454a35b8f83bdf76",
             "locator": {
               "kind": "symbol",
@@ -228,15 +275,16 @@
       ]
     },
     "9": {
-      "note": "Family/decision/incident/facet truth assertions, unavailable outgoing links after removing RECORD_MODELS, and normal census measures/history with an unknown-ID not-found control; not an unreadable-census or unresolved-locator control.",
+      "note": "Family/decision/incident/facet assertions, unavailable outgoing links after removing RECORD_MODELS, and normal census measures/history with an unknown-ID control; not an unreadable-census or unresolved-locator control.\n\nAnchor: Four named regression bodies",
       "targets": [
         {
           "anchor": {
-            "blob": "4ec4c95baf015b3298eca6db77c2a032c0632a63",
+            "blob": "19db6df367f5fbe794e1baed60f7491c416043eb",
             "content": "sha256:b16bf1ef7d162c95f1bb1259eefda7931c86c75fb51e44538c92e2bed19fdd41",
             "locator": {
-              "kind": "symbol",
-              "name": "test_a_family_truth_view_shows_guarantee_members_routes_and_every_location"
+              "end": 896,
+              "kind": "line_range",
+              "start": 884
             },
             "path": "mcp/tests/test_knowledge_reader.py"
           },
@@ -244,11 +292,12 @@
         },
         {
           "anchor": {
-            "blob": "d87715367e2ff0b7b83ab4d6c416ed0c569861c3",
-            "content": "sha256:aa44a1dedc3db2bab142d620572c5896682b98cb777e9f1b8d8a538c09f8e63e",
+            "blob": "19db6df367f5fbe794e1baed60f7491c416043eb",
+            "content": "sha256:66d7b2648aa9c2ea81204620774bff3ec6c02471107953ac8d58bfe7d9a327ed",
             "locator": {
-              "kind": "symbol",
-              "name": "test_a_decision_truth_view_shows_alternatives_and_derived_supersession"
+              "end": 925,
+              "kind": "line_range",
+              "start": 899
             },
             "path": "mcp/tests/test_knowledge_reader.py"
           },
@@ -256,11 +305,12 @@
         },
         {
           "anchor": {
-            "blob": "4ec4c95baf015b3298eca6db77c2a032c0632a63",
+            "blob": "19db6df367f5fbe794e1baed60f7491c416043eb",
             "content": "sha256:e87d855ec9ffef79a1148c805a82b272bc5a492c79df1bc3a61dfbdcf099ccf5",
             "locator": {
-              "kind": "symbol",
-              "name": "test_incident_and_facet_views_show_every_field_and_typed_links_both_ways"
+              "end": 950,
+              "kind": "line_range",
+              "start": 928
             },
             "path": "mcp/tests/test_knowledge_reader.py"
           },
@@ -268,11 +318,12 @@
         },
         {
           "anchor": {
-            "blob": "4ec4c95baf015b3298eca6db77c2a032c0632a63",
+            "blob": "19db6df367f5fbe794e1baed60f7491c416043eb",
             "content": "sha256:e353d581810d23c2fc4449c389ce71c54e2d2eb49e7f1a19f91bd8d67084a675",
             "locator": {
-              "kind": "symbol",
-              "name": "test_the_census_view_shows_measures_and_each_routes_status_history"
+              "end": 964,
+              "kind": "line_range",
+              "start": 953
             },
             "path": "mcp/tests/test_knowledge_reader.py"
           },

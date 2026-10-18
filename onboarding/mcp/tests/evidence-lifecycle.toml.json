@@ -3,12 +3,12 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "6d2338c6984dba1d0392f1121cdea452dcc2991d",
+        "blob": "3ef7c4c3c534ad2d67da2d013fb5acb2c31d7cab",
         "content": "sha256:b34cd52a387bf092bd2484b6a8602413c0028077ff493f0aff91311cbb09d3f1",
         "locator": {
-          "end": 1772,
+          "end": 1780,
           "kind": "line_range",
-          "start": 1772
+          "start": 1780
         }
       },
       "id": "RLZ-1WK7P0",
@@ -22,12 +22,12 @@
     },
     {
       "anchor": {
-        "blob": "6d2338c6984dba1d0392f1121cdea452dcc2991d",
+        "blob": "3ef7c4c3c534ad2d67da2d013fb5acb2c31d7cab",
         "content": "sha256:5de1f247d1863d8bccc61be24e00d01530da95a636000ff36bd5ac3ae5b59b83",
         "locator": {
-          "end": 2652,
+          "end": 2670,
           "kind": "line_range",
-          "start": 2652
+          "start": 2670
         }
       },
       "id": "RLZ-A31DQW",
@@ -41,12 +41,12 @@
     },
     {
       "anchor": {
-        "blob": "6d2338c6984dba1d0392f1121cdea452dcc2991d",
+        "blob": "3ef7c4c3c534ad2d67da2d013fb5acb2c31d7cab",
         "content": "sha256:b34cd52a387bf092bd2484b6a8602413c0028077ff493f0aff91311cbb09d3f1",
         "locator": {
-          "end": 911,
+          "end": 915,
           "kind": "line_range",
-          "start": 911
+          "start": 915
         }
       },
       "id": "RLZ-TB9TST",
@@ -60,12 +60,12 @@
     },
     {
       "anchor": {
-        "blob": "6d2338c6984dba1d0392f1121cdea452dcc2991d",
+        "blob": "3ef7c4c3c534ad2d67da2d013fb5acb2c31d7cab",
         "content": "sha256:d78be9a4046b8ffdab5120a0a748737d28d92bec8743be7d5acec6847feb659b",
         "locator": {
-          "end": 1947,
+          "end": 1958,
           "kind": "line_range",
-          "start": 1947
+          "start": 1958
         }
       },
       "id": "RLZ-VQZWNZ",
@@ -80,11 +80,11 @@
   ],
   "references": {
     "1": {
-      "note": "The schema version and the large-fixture threshold at the top of the file.",
+      "note": "**Historical source-bound reference account, not an operative override:** The schema version and the large-fixture threshold at the top of the file.",
       "targets": [
         {
           "anchor": {
-            "blob": "f9e4075c0ee36227fc0514262e5ed902f5307703",
+            "blob": "3ef7c4c3c534ad2d67da2d013fb5acb2c31d7cab",
             "content": "sha256:1b040cdd5c5848b8cd6ef5959a60be2ceff3aa6dbdb5840b8d55f20f5386868b",
             "locator": {
               "end": 2,
@@ -169,48 +169,48 @@
       "targets": [
         {
           "anchor": {
-            "blob": "be67a66191636157ba9a476bc5ebd106beb93941",
+            "blob": "3ef7c4c3c534ad2d67da2d013fb5acb2c31d7cab",
             "content": "sha256:1c4283fcfbf95371e3d500626b85b0fc2a713f59908fa88169ba45c9ddb73704",
             "locator": {
-              "end": 983,
+              "end": 1052,
               "kind": "line_range",
-              "start": 982
+              "start": 1051
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "be67a66191636157ba9a476bc5ebd106beb93941",
-            "content": "sha256:30f212a66e08058a95af77b80d5578d39567a3198521a13cfc42a5debab1f495",
-            "locator": {
-              "end": 1707,
-              "kind": "line_range",
-              "start": 1705
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "be67a66191636157ba9a476bc5ebd106beb93941",
-            "content": "sha256:1c4283fcfbf95371e3d500626b85b0fc2a713f59908fa88169ba45c9ddb73704",
-            "locator": {
-              "end": 2321,
-              "kind": "line_range",
-              "start": 2320
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "be67a66191636157ba9a476bc5ebd106beb93941",
+            "blob": "3ef7c4c3c534ad2d67da2d013fb5acb2c31d7cab",
             "content": "sha256:9408240cc5c77aeb098dd1110fa933254d26ab9ee40948406b9a5f35395fc234",
             "locator": {
-              "end": 2349,
+              "end": 1824,
               "kind": "line_range",
-              "start": 2348
+              "start": 1823
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "3ef7c4c3c534ad2d67da2d013fb5acb2c31d7cab",
+            "content": "sha256:1c4283fcfbf95371e3d500626b85b0fc2a713f59908fa88169ba45c9ddb73704",
+            "locator": {
+              "end": 2491,
+              "kind": "line_range",
+              "start": 2490
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "3ef7c4c3c534ad2d67da2d013fb5acb2c31d7cab",
+            "content": "sha256:9408240cc5c77aeb098dd1110fa933254d26ab9ee40948406b9a5f35395fc234",
+            "locator": {
+              "end": 2524,
+              "kind": "line_range",
+              "start": 2523
             }
           },
           "kind": "test"
@@ -218,11 +218,11 @@
       ]
     },
     "2": {
-      "note": "A contract row: identity, owner file and exact evidence node.",
+      "note": "**Historical source-bound reference account, not an operative override:** A contract row: identity, owner file and exact evidence node.",
       "targets": [
         {
           "anchor": {
-            "blob": "f9e4075c0ee36227fc0514262e5ed902f5307703",
+            "blob": "3ef7c4c3c534ad2d67da2d013fb5acb2c31d7cab",
             "content": "sha256:a58fa86fe18bf3c11bc16759d0f13a04f16adbccc294bbb69c5a5d13c79a30e4",
             "locator": {
               "end": 7,
@@ -235,11 +235,11 @@
       ]
     },
     "212": {
-      "note": "The schema version and large-fixture discovery threshold remain explicit.\n\nAnchor: file",
+      "note": "**Historical source-bound reference account, not an operative override:** The schema version and large-fixture discovery threshold remain explicit. Anchor: file",
       "targets": [
         {
           "anchor": {
-            "blob": "f9e4075c0ee36227fc0514262e5ed902f5307703",
+            "blob": "3ef7c4c3c534ad2d67da2d013fb5acb2c31d7cab",
             "content": "sha256:1b040cdd5c5848b8cd6ef5959a60be2ceff3aa6dbdb5840b8d55f20f5386868b",
             "locator": {
               "end": 2,
@@ -252,11 +252,11 @@
       ]
     },
     "213": {
-      "note": "The four retained knowledge contracts declare their owners and exact evidence nodes.\n\nAnchor: file",
+      "note": "**Historical source-bound reference account, not an operative override:** The four retained knowledge contracts declare their owners and exact evidence nodes. Anchor: file",
       "targets": [
         {
           "anchor": {
-            "blob": "f9e4075c0ee36227fc0514262e5ed902f5307703",
+            "blob": "3ef7c4c3c534ad2d67da2d013fb5acb2c31d7cab",
             "content": "sha256:b12d324df928702e79aecef82adada6377dfffcde430ea229ec8ec845afde0e7",
             "locator": {
               "end": 28,
@@ -307,12 +307,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f9e4075c0ee36227fc0514262e5ed902f5307703",
+            "blob": "3ef7c4c3c534ad2d67da2d013fb5acb2c31d7cab",
             "content": "sha256:ee46da0fe4f4f25f8c39882e722654f89b0dce25aac78ddc22222326707c9815",
             "locator": {
-              "end": 1552,
+              "end": 1561,
               "kind": "line_range",
-              "start": 1538
+              "start": 1547
             }
           },
           "kind": "test"
@@ -324,7 +324,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9e20905eb809b4c5f200ca75c6298b7d0af0165d",
+            "blob": "66b3a35b970d7805894fad1a146cd0957b4e6aab",
             "content": "sha256:7a71c6aa065e4c675cc52debce57c452cc234e283c30bce536b251b1bb363146",
             "locator": {
               "kind": "symbol",
@@ -337,16 +337,16 @@
       ]
     },
     "218": {
-      "note": "The member-source cases are registered on the read-scope artifact's exact consumer list in canonical ascending order; the older append-at-end account is historical.\n\nAnchor: `mcp/tests/test_review_family_member_sources.py`",
+      "note": "**Historical source-bound reference account, not an operative override:** The member-source cases are registered on the read-scope artifact's exact consumer list in canonical ascending order; the older append-at-end account is historical. Anchor: `mcp/tests/test_review_family_member_sources.py`",
       "targets": [
         {
           "anchor": {
-            "blob": "f9e4075c0ee36227fc0514262e5ed902f5307703",
+            "blob": "3ef7c4c3c534ad2d67da2d013fb5acb2c31d7cab",
             "content": "sha256:f8961525d4229afcaf0eea3a3b137f463806a685cc2d13ba8849ef0a72e7d128",
             "locator": {
-              "end": 3048,
+              "end": 3111,
               "kind": "line_range",
-              "start": 3046
+              "start": 3109
             }
           },
           "kind": "test"
@@ -358,7 +358,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9e20905eb809b4c5f200ca75c6298b7d0af0165d",
+            "blob": "66b3a35b970d7805894fad1a146cd0957b4e6aab",
             "content": "sha256:7a71c6aa065e4c675cc52debce57c452cc234e283c30bce536b251b1bb363146",
             "locator": {
               "kind": "symbol",
@@ -375,24 +375,24 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f9e4075c0ee36227fc0514262e5ed902f5307703",
+            "blob": "3ef7c4c3c534ad2d67da2d013fb5acb2c31d7cab",
             "content": "sha256:47d5035b5e804fd83f7a63cc0ad4d09f10e8a2d865ab2d0e90d00cdbbc70bf37",
             "locator": {
-              "end": 998,
+              "end": 1003,
               "kind": "line_range",
-              "start": 985
+              "start": 990
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "be67a66191636157ba9a476bc5ebd106beb93941",
+            "blob": "3ef7c4c3c534ad2d67da2d013fb5acb2c31d7cab",
             "content": "sha256:cced5d9b2847a3ad003a3bc8f755968152fd1c1dd3a119319a5a4a64261ef1e2",
             "locator": {
-              "end": 947,
+              "end": 1015,
               "kind": "line_range",
-              "start": 945
+              "start": 1013
             }
           },
           "kind": "test"
@@ -400,16 +400,16 @@
       ]
     },
     "221": {
-      "note": "The read-scope artifact declares the relationship-line, relationship-movement and relationship-reach modules as exact consumers.",
+      "note": "**Historical source-bound reference account, not an operative override:** The read-scope artifact declares the relationship-line, relationship-movement and relationship-reach modules as exact consumers.",
       "targets": [
         {
           "anchor": {
-            "blob": "be67a66191636157ba9a476bc5ebd106beb93941",
+            "blob": "3ef7c4c3c534ad2d67da2d013fb5acb2c31d7cab",
             "content": "sha256:7fc8a082259e3336a317515e48bf5e4083fbaa4fe3a2324464d097654523f4e8",
             "locator": {
-              "end": 2615,
+              "end": 2813,
               "kind": "line_range",
-              "start": 2613
+              "start": 2811
             }
           },
           "kind": "test"
@@ -421,7 +421,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9e20905eb809b4c5f200ca75c6298b7d0af0165d",
+            "blob": "66b3a35b970d7805894fad1a146cd0957b4e6aab",
             "content": "sha256:7a71c6aa065e4c675cc52debce57c452cc234e283c30bce536b251b1bb363146",
             "locator": {
               "kind": "symbol",
@@ -434,16 +434,16 @@
       ]
     },
     "223": {
-      "note": "The read-scope artifact declares test_knowledge_review_attributed_source_content.py as an exact consumer.",
+      "note": "**Historical source-bound reference account, not an operative override:** The read-scope artifact declares test_knowledge_review_attributed_source_content.py as an exact consumer.",
       "targets": [
         {
           "anchor": {
-            "blob": "be67a66191636157ba9a476bc5ebd106beb93941",
+            "blob": "3ef7c4c3c534ad2d67da2d013fb5acb2c31d7cab",
             "content": "sha256:36e94806cfa84b8bfe20e53e86fe6cb3eb6597b7eb3491265adc724e93371457",
             "locator": {
-              "end": 2611,
+              "end": 2809,
               "kind": "line_range",
-              "start": 2609
+              "start": 2807
             }
           },
           "kind": "test"
@@ -455,48 +455,48 @@
       "targets": [
         {
           "anchor": {
-            "blob": "be67a66191636157ba9a476bc5ebd106beb93941",
+            "blob": "3ef7c4c3c534ad2d67da2d013fb5acb2c31d7cab",
             "content": "sha256:1c4283fcfbf95371e3d500626b85b0fc2a713f59908fa88169ba45c9ddb73704",
             "locator": {
-              "end": 983,
+              "end": 1052,
               "kind": "line_range",
-              "start": 982
+              "start": 1051
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "be67a66191636157ba9a476bc5ebd106beb93941",
+            "blob": "3ef7c4c3c534ad2d67da2d013fb5acb2c31d7cab",
             "content": "sha256:30f212a66e08058a95af77b80d5578d39567a3198521a13cfc42a5debab1f495",
             "locator": {
-              "end": 1707,
+              "end": 1825,
               "kind": "line_range",
-              "start": 1705
+              "start": 1823
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "be67a66191636157ba9a476bc5ebd106beb93941",
+            "blob": "3ef7c4c3c534ad2d67da2d013fb5acb2c31d7cab",
             "content": "sha256:1c4283fcfbf95371e3d500626b85b0fc2a713f59908fa88169ba45c9ddb73704",
             "locator": {
-              "end": 2321,
+              "end": 2491,
               "kind": "line_range",
-              "start": 2320
+              "start": 2490
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "be67a66191636157ba9a476bc5ebd106beb93941",
+            "blob": "3ef7c4c3c534ad2d67da2d013fb5acb2c31d7cab",
             "content": "sha256:9408240cc5c77aeb098dd1110fa933254d26ab9ee40948406b9a5f35395fc234",
             "locator": {
-              "end": 2349,
+              "end": 2524,
               "kind": "line_range",
-              "start": 2348
+              "start": 2523
             }
           },
           "kind": "test"
@@ -504,16 +504,16 @@
       ]
     },
     "225": {
-      "note": "The conversion-toolchain module is declared on the curator-coherence and read-scope artifact rows. Generation support currently declares test_knowledge_read_boundaries.py and test_knowledge_read_paths.py.",
+      "note": "**Historical source-bound reference account, not an operative override:** The conversion-toolchain module is declared on the curator-coherence and read-scope artifact rows. Generation support currently declares test_knowledge_read_boundaries.py and test_knowledge_read_paths.py.",
       "targets": [
         {
           "anchor": {
-            "blob": "1bfb00308241e515a92cac106e6bdc5895b64d83",
-            "content": "sha256:325c3c3ae56ea1d7dd82f80c568f0cf6321150c58a3873118458395a4b6818ae",
+            "blob": "3ef7c4c3c534ad2d67da2d013fb5acb2c31d7cab",
+            "content": "sha256:300472e4d073438c9914c1f698ccd948137ea2c2117b37d9605fdd32d3b73e1b",
             "locator": {
-              "end": 2620,
+              "end": 2716,
               "kind": "line_range",
-              "start": 2618
+              "start": 2662
             }
           },
           "kind": "test"
@@ -521,16 +521,16 @@
       ]
     },
     "226": {
-      "note": "The current catalog declares test_knowledge_proofs.py as a consumer of five exact artifact rows.",
+      "note": "**Historical source-bound reference account, not an operative override:** The current catalog declares test_knowledge_proofs.py as a consumer of five exact artifact rows.",
       "targets": [
         {
           "anchor": {
-            "blob": "68eabe2819683cd161fd0ce5f318d761ca6b06ea",
+            "blob": "3ef7c4c3c534ad2d67da2d013fb5acb2c31d7cab",
             "content": "sha256:9bca88fd70999f7ce4affc0f945d89058aefb4c97445a06f5ba834da611ba2eb",
             "locator": {
-              "end": 253,
+              "end": 421,
               "kind": "line_range",
-              "start": 251
+              "start": 419
             }
           },
           "kind": "test"
@@ -542,12 +542,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f9e4075c0ee36227fc0514262e5ed902f5307703",
+            "blob": "3ef7c4c3c534ad2d67da2d013fb5acb2c31d7cab",
             "content": "sha256:ee46da0fe4f4f25f8c39882e722654f89b0dce25aac78ddc22222326707c9815",
             "locator": {
-              "end": 1552,
+              "end": 1561,
               "kind": "line_range",
-              "start": 1538
+              "start": 1547
             }
           },
           "kind": "test"
@@ -555,16 +555,16 @@
       ]
     },
     "228": {
-      "note": "The current catalog declares mcp/tests/test_knowledge_worklist_leaf.py on 1 exact artifact consumer list.",
+      "note": "**Historical source-bound reference account, not an operative override:** The current catalog declares mcp/tests/test_knowledge_worklist_leaf.py on 1 exact artifact consumer list.",
       "targets": [
         {
           "anchor": {
-            "blob": "f9e4075c0ee36227fc0514262e5ed902f5307703",
+            "blob": "3ef7c4c3c534ad2d67da2d013fb5acb2c31d7cab",
             "content": "sha256:5cc16215ee6d3e68bcf16d75c814aa9b685fd28e949cd9e4249e1aef98b283be",
             "locator": {
-              "end": 1504,
+              "end": 1511,
               "kind": "line_range",
-              "start": 1502
+              "start": 1509
             }
           },
           "kind": "test"
@@ -576,12 +576,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f9e4075c0ee36227fc0514262e5ed902f5307703",
+            "blob": "3ef7c4c3c534ad2d67da2d013fb5acb2c31d7cab",
             "content": "sha256:ee46da0fe4f4f25f8c39882e722654f89b0dce25aac78ddc22222326707c9815",
             "locator": {
-              "end": 1552,
+              "end": 1561,
               "kind": "line_range",
-              "start": 1538
+              "start": 1547
             }
           },
           "kind": "test"
@@ -589,16 +589,16 @@
       ]
     },
     "230": {
-      "note": "The current catalog declares mcp/tests/test_knowledge_currentness.py on 1 exact artifact consumer list.",
+      "note": "**Historical source-bound reference account, not an operative override:** The current catalog declares mcp/tests/test_knowledge_currentness.py on 1 exact artifact consumer list.",
       "targets": [
         {
           "anchor": {
-            "blob": "be67a66191636157ba9a476bc5ebd106beb93941",
+            "blob": "3ef7c4c3c534ad2d67da2d013fb5acb2c31d7cab",
             "content": "sha256:39b82f6f32e640a9ee6b3964dc0b74ba82488722606b67f7c07effa5d8a1d83d",
             "locator": {
-              "end": 1604,
+              "end": 1716,
               "kind": "line_range",
-              "start": 1602
+              "start": 1714
             }
           },
           "kind": "test"
@@ -610,12 +610,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f9e4075c0ee36227fc0514262e5ed902f5307703",
+            "blob": "3ef7c4c3c534ad2d67da2d013fb5acb2c31d7cab",
             "content": "sha256:ee46da0fe4f4f25f8c39882e722654f89b0dce25aac78ddc22222326707c9815",
             "locator": {
-              "end": 1552,
+              "end": 1561,
               "kind": "line_range",
-              "start": 1538
+              "start": 1547
             }
           },
           "kind": "test"
@@ -623,16 +623,16 @@
       ]
     },
     "232": {
-      "note": "The Node lockfile artifact declares mcp/tests/test_knowledge_paging.py as a consumer.",
+      "note": "**Historical source-bound reference account, not an operative override:** The Node lockfile artifact declares mcp/tests/test_knowledge_paging.py as a consumer.",
       "targets": [
         {
           "anchor": {
-            "blob": "be67a66191636157ba9a476bc5ebd106beb93941",
+            "blob": "3ef7c4c3c534ad2d67da2d013fb5acb2c31d7cab",
             "content": "sha256:0fd2577dfe67d57a7a5e92c91462879a6140fcd001a05795c26a8556aab88bee",
             "locator": {
-              "end": 1622,
+              "end": 1734,
               "kind": "line_range",
-              "start": 1622
+              "start": 1734
             }
           },
           "kind": "test"
@@ -640,12 +640,12 @@
       ]
     },
     "233": {
-      "note": "None",
+      "note": "Historical empty-caption carriers: these preserved numbers have no operative proposition and confer no current declaration, execution or acceptance. Their recorded source custody is not a missing semantic claim to invent.",
       "targets": [
         {
           "anchor": {
-            "blob": "be67a66191636157ba9a476bc5ebd106beb93941",
-            "content": "sha256:bae742a074d1c1bdc216fd5101190b7cf0b0fb30b3d39485d98f01da33df28a7",
+            "blob": "3ef7c4c3c534ad2d67da2d013fb5acb2c31d7cab",
+            "content": "sha256:71cb4752b38086c3d97657d840980385fdba2c95f7444a7d5f5011b8d58c94d2",
             "locator": {
               "kind": "file"
             }
@@ -655,16 +655,16 @@
       ]
     },
     "234": {
-      "note": "The current catalog declares mcp/tests/test_planned_knowledge_effects.py on 1 exact artifact consumer list.",
+      "note": "**Historical source-bound reference account, not an operative override:** The current catalog declares mcp/tests/test_planned_knowledge_effects.py on 1 exact artifact consumer list.",
       "targets": [
         {
           "anchor": {
-            "blob": "be67a66191636157ba9a476bc5ebd106beb93941",
+            "blob": "3ef7c4c3c534ad2d67da2d013fb5acb2c31d7cab",
             "content": "sha256:a64a6086d1cecee84d14b7c0bd4336e311073aef076b342bc964b2233d4f9efe",
             "locator": {
-              "end": 1748,
+              "end": 1874,
               "kind": "line_range",
-              "start": 1746
+              "start": 1872
             }
           },
           "kind": "test"
@@ -676,12 +676,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f9e4075c0ee36227fc0514262e5ed902f5307703",
+            "blob": "3ef7c4c3c534ad2d67da2d013fb5acb2c31d7cab",
             "content": "sha256:ee46da0fe4f4f25f8c39882e722654f89b0dce25aac78ddc22222326707c9815",
             "locator": {
-              "end": 1552,
+              "end": 1561,
               "kind": "line_range",
-              "start": 1538
+              "start": 1547
             }
           },
           "kind": "test"
@@ -689,16 +689,16 @@
       ]
     },
     "236": {
-      "note": "The Node lockfile artifact declares mcp/tests/test_knowledge_leaf_read.py as a consumer.",
+      "note": "**Historical source-bound reference account, not an operative override:** The Node lockfile artifact declares mcp/tests/test_knowledge_leaf_read.py as a consumer.",
       "targets": [
         {
           "anchor": {
-            "blob": "be67a66191636157ba9a476bc5ebd106beb93941",
+            "blob": "3ef7c4c3c534ad2d67da2d013fb5acb2c31d7cab",
             "content": "sha256:6027af8247fcbbf12777fca8eae097ec0fc644ead20dc6255cbb7bb10446dd31",
             "locator": {
-              "end": 1619,
+              "end": 1731,
               "kind": "line_range",
-              "start": 1619
+              "start": 1731
             }
           },
           "kind": "test"
@@ -706,12 +706,12 @@
       ]
     },
     "237": {
-      "note": "None",
+      "note": "Historical empty-caption carriers: these preserved numbers have no operative proposition and confer no current declaration, execution or acceptance. Their recorded source custody is not a missing semantic claim to invent.",
       "targets": [
         {
           "anchor": {
-            "blob": "be67a66191636157ba9a476bc5ebd106beb93941",
-            "content": "sha256:bae742a074d1c1bdc216fd5101190b7cf0b0fb30b3d39485d98f01da33df28a7",
+            "blob": "3ef7c4c3c534ad2d67da2d013fb5acb2c31d7cab",
+            "content": "sha256:71cb4752b38086c3d97657d840980385fdba2c95f7444a7d5f5011b8d58c94d2",
             "locator": {
               "kind": "file"
             }
@@ -725,12 +725,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f9e4075c0ee36227fc0514262e5ed902f5307703",
+            "blob": "3ef7c4c3c534ad2d67da2d013fb5acb2c31d7cab",
             "content": "sha256:ee46da0fe4f4f25f8c39882e722654f89b0dce25aac78ddc22222326707c9815",
             "locator": {
-              "end": 1552,
+              "end": 1561,
               "kind": "line_range",
-              "start": 1538
+              "start": 1547
             }
           },
           "kind": "test"
@@ -738,16 +738,16 @@
       ]
     },
     "239": {
-      "note": "The Node lockfile artifact declares mcp/tests/test_unexplained_change_disposition.py as a consumer.",
+      "note": "**Historical source-bound reference account, not an operative override:** The Node lockfile artifact declares mcp/tests/test_unexplained_change_disposition.py as a consumer.",
       "targets": [
         {
           "anchor": {
-            "blob": "5c83d0685d42e8f13f8dbcf94308ac4e52e0750f",
+            "blob": "3ef7c4c3c534ad2d67da2d013fb5acb2c31d7cab",
             "content": "sha256:27d2c739e96d5d6dc8d38934d8cacf98d6b6c491c518159a9e721e8f279d89f3",
             "locator": {
-              "end": 1515,
+              "end": 1641,
               "kind": "line_range",
-              "start": 1513
+              "start": 1639
             }
           },
           "kind": "test"
@@ -759,12 +759,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f9e4075c0ee36227fc0514262e5ed902f5307703",
+            "blob": "3ef7c4c3c534ad2d67da2d013fb5acb2c31d7cab",
             "content": "sha256:ee46da0fe4f4f25f8c39882e722654f89b0dce25aac78ddc22222326707c9815",
             "locator": {
-              "end": 1552,
+              "end": 1561,
               "kind": "line_range",
-              "start": 1538
+              "start": 1547
             }
           },
           "kind": "test"
@@ -772,112 +772,112 @@
       ]
     },
     "241": {
-      "note": "The current catalog declares mcp/tests/test_knowledge_route_chain.py on nine exact artifact consumer lists.",
+      "note": "**Historical source-bound reference account, not an operative override:** The current catalog declares mcp/tests/test_knowledge_route_chain.py on nine exact artifact consumer lists.",
       "targets": [
         {
           "anchor": {
-            "blob": "68eabe2819683cd161fd0ce5f318d761ca6b06ea",
-            "content": "sha256:f3b575941702da2f29e87cb1ffc264db5eadfc7c3f9834eea87e29c5fe734a7e",
+            "blob": "3ef7c4c3c534ad2d67da2d013fb5acb2c31d7cab",
+            "content": "sha256:fab46d2a17b3a29cb28a509254c759df122390dcbb1ce6233793dbfcd0452542",
             "locator": {
-              "end": 284,
+              "end": 341,
               "kind": "line_range",
-              "start": 224
+              "start": 341
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "68eabe2819683cd161fd0ce5f318d761ca6b06ea",
-            "content": "sha256:1de4d41a129908484e57691951ea746c0aeaaba11a44be6b4a2f44cedd4e600e",
+            "blob": "3ef7c4c3c534ad2d67da2d013fb5acb2c31d7cab",
+            "content": "sha256:fab46d2a17b3a29cb28a509254c759df122390dcbb1ce6233793dbfcd0452542",
             "locator": {
-              "end": 363,
+              "end": 712,
               "kind": "line_range",
-              "start": 285
+              "start": 712
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "68eabe2819683cd161fd0ce5f318d761ca6b06ea",
-            "content": "sha256:952b4669b3488ceafd025eddd5eadcf54c09ed198ea18eb668077d13ae57450b",
+            "blob": "3ef7c4c3c534ad2d67da2d013fb5acb2c31d7cab",
+            "content": "sha256:fab46d2a17b3a29cb28a509254c759df122390dcbb1ce6233793dbfcd0452542",
             "locator": {
-              "end": 621,
+              "end": 911,
               "kind": "line_range",
-              "start": 491
+              "start": 911
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "68eabe2819683cd161fd0ce5f318d761ca6b06ea",
-            "content": "sha256:a420e6a96990de1592ba16a351e61f0dc4bc5154ad219ed4d9399b88b347e8b6",
+            "blob": "3ef7c4c3c534ad2d67da2d013fb5acb2c31d7cab",
+            "content": "sha256:fab46d2a17b3a29cb28a509254c759df122390dcbb1ce6233793dbfcd0452542",
             "locator": {
-              "end": 1890,
+              "end": 1763,
               "kind": "line_range",
-              "start": 1339
+              "start": 1763
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "4d6983ba24be976e19d286b4fde1f86a03739d82",
-            "content": "sha256:7cdabe3ba5363e1cad441437f961b4ca35435ccd78229c8f8ce174666fbbd9b3",
+            "blob": "3ef7c4c3c534ad2d67da2d013fb5acb2c31d7cab",
+            "content": "sha256:fab46d2a17b3a29cb28a509254c759df122390dcbb1ce6233793dbfcd0452542",
             "locator": {
-              "end": 2253,
+              "end": 2320,
               "kind": "line_range",
-              "start": 2206
+              "start": 2320
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "f9e4075c0ee36227fc0514262e5ed902f5307703",
-            "content": "sha256:344d20d4cbe925cb65105df727f3378ed29b632634ec9ff6e26bca26f381bc1f",
+            "blob": "3ef7c4c3c534ad2d67da2d013fb5acb2c31d7cab",
+            "content": "sha256:fab46d2a17b3a29cb28a509254c759df122390dcbb1ce6233793dbfcd0452542",
             "locator": {
-              "end": 2408,
+              "end": 2436,
               "kind": "line_range",
-              "start": 2330
+              "start": 2436
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "68eabe2819683cd161fd0ce5f318d761ca6b06ea",
-            "content": "sha256:bc891ee10c9c6eaa870b39001d509bf5edc4daea4d21bbbe2b9620659d157693",
+            "blob": "3ef7c4c3c534ad2d67da2d013fb5acb2c31d7cab",
+            "content": "sha256:fab46d2a17b3a29cb28a509254c759df122390dcbb1ce6233793dbfcd0452542",
             "locator": {
-              "end": 2317,
+              "end": 2518,
               "kind": "line_range",
-              "start": 2289
+              "start": 2518
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "68eabe2819683cd161fd0ce5f318d761ca6b06ea",
-            "content": "sha256:77b483599c5129fe3042c4193ed76118966f8da2e3ec8dca7579e841e48b60f3",
+            "blob": "3ef7c4c3c534ad2d67da2d013fb5acb2c31d7cab",
+            "content": "sha256:fab46d2a17b3a29cb28a509254c759df122390dcbb1ce6233793dbfcd0452542",
             "locator": {
-              "end": 2602,
+              "end": 2817,
               "kind": "line_range",
-              "start": 2553
+              "start": 2817
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "68eabe2819683cd161fd0ce5f318d761ca6b06ea",
-            "content": "sha256:c8ba704201ad3af734842c9c2f4a27631ff6df152a330bf61f456aa49233cd36",
+            "blob": "3ef7c4c3c534ad2d67da2d013fb5acb2c31d7cab",
+            "content": "sha256:fab46d2a17b3a29cb28a509254c759df122390dcbb1ce6233793dbfcd0452542",
             "locator": {
-              "end": 2848,
+              "end": 3100,
               "kind": "line_range",
-              "start": 2816
+              "start": 3100
             }
           },
           "kind": "test"
@@ -885,16 +885,16 @@
       ]
     },
     "242": {
-      "note": "The current catalog declares mcp/tests/test_reconsideration_surfacing.py on 1 exact artifact consumer list.",
+      "note": "**Historical source-bound reference account, not an operative override:** The current catalog declares mcp/tests/test_reconsideration_surfacing.py on 1 exact artifact consumer list.",
       "targets": [
         {
           "anchor": {
-            "blob": "be67a66191636157ba9a476bc5ebd106beb93941",
+            "blob": "3ef7c4c3c534ad2d67da2d013fb5acb2c31d7cab",
             "content": "sha256:2b2a4bdc79feff63fe4110f8b670890332df25bdd25c50c98f625dc2415de9b1",
             "locator": {
-              "end": 1771,
+              "end": 1902,
               "kind": "line_range",
-              "start": 1769
+              "start": 1900
             }
           },
           "kind": "test"
@@ -906,12 +906,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f9e4075c0ee36227fc0514262e5ed902f5307703",
+            "blob": "3ef7c4c3c534ad2d67da2d013fb5acb2c31d7cab",
             "content": "sha256:ee46da0fe4f4f25f8c39882e722654f89b0dce25aac78ddc22222326707c9815",
             "locator": {
-              "end": 1552,
+              "end": 1561,
               "kind": "line_range",
-              "start": 1538
+              "start": 1547
             }
           },
           "kind": "test"
@@ -919,12 +919,12 @@
       ]
     },
     "244": {
-      "note": "The schema version and large-fixture discovery threshold remain explicit.",
+      "note": "**Historical source-bound reference account, not an operative override:** The schema version and large-fixture discovery threshold remain explicit.",
       "targets": [
         {
           "anchor": {
-            "blob": "be67a66191636157ba9a476bc5ebd106beb93941",
-            "content": "sha256:bae742a074d1c1bdc216fd5101190b7cf0b0fb30b3d39485d98f01da33df28a7",
+            "blob": "3ef7c4c3c534ad2d67da2d013fb5acb2c31d7cab",
+            "content": "sha256:71cb4752b38086c3d97657d840980385fdba2c95f7444a7d5f5011b8d58c94d2",
             "locator": {
               "kind": "file"
             }
@@ -934,12 +934,12 @@
       ]
     },
     "245": {
-      "note": "The four retained knowledge contracts declare their owners and exact evidence nodes.",
+      "note": "**Historical source-bound reference account, not an operative override:** The four retained knowledge contracts declare their owners and exact evidence nodes.",
       "targets": [
         {
           "anchor": {
-            "blob": "be67a66191636157ba9a476bc5ebd106beb93941",
-            "content": "sha256:bae742a074d1c1bdc216fd5101190b7cf0b0fb30b3d39485d98f01da33df28a7",
+            "blob": "3ef7c4c3c534ad2d67da2d013fb5acb2c31d7cab",
+            "content": "sha256:71cb4752b38086c3d97657d840980385fdba2c95f7444a7d5f5011b8d58c94d2",
             "locator": {
               "kind": "file"
             }
@@ -949,12 +949,12 @@
       ]
     },
     "246": {
-      "note": "Closeout fixture support declares the retained code/memory transaction test as its replacement node.",
+      "note": "**Historical source-bound reference account, not an operative override:** Closeout fixture support declares the retained code/memory transaction test as its replacement node.",
       "targets": [
         {
           "anchor": {
-            "blob": "be67a66191636157ba9a476bc5ebd106beb93941",
-            "content": "sha256:bae742a074d1c1bdc216fd5101190b7cf0b0fb30b3d39485d98f01da33df28a7",
+            "blob": "3ef7c4c3c534ad2d67da2d013fb5acb2c31d7cab",
+            "content": "sha256:71cb4752b38086c3d97657d840980385fdba2c95f7444a7d5f5011b8d58c94d2",
             "locator": {
               "kind": "file"
             }
@@ -964,12 +964,12 @@
       ]
     },
     "247": {
-      "note": "Closeout-input support declares test_automatic_post_integration_cleanup.py and test_cleanup_repeated_archive_ready.py among its exact consumers.",
+      "note": "**Historical source-bound reference account, not an operative override:** Closeout-input support declares test_automatic_post_integration_cleanup.py and test_cleanup_repeated_archive_ready.py among its exact consumers.",
       "targets": [
         {
           "anchor": {
-            "blob": "be67a66191636157ba9a476bc5ebd106beb93941",
-            "content": "sha256:bae742a074d1c1bdc216fd5101190b7cf0b0fb30b3d39485d98f01da33df28a7",
+            "blob": "3ef7c4c3c534ad2d67da2d013fb5acb2c31d7cab",
+            "content": "sha256:71cb4752b38086c3d97657d840980385fdba2c95f7444a7d5f5011b8d58c94d2",
             "locator": {
               "kind": "file"
             }
@@ -979,12 +979,12 @@
       ]
     },
     "248": {
-      "note": "None",
+      "note": "Historical empty-caption carriers: these preserved numbers have no operative proposition and confer no current declaration, execution or acceptance. Their recorded source custody is not a missing semantic claim to invent.",
       "targets": [
         {
           "anchor": {
-            "blob": "be67a66191636157ba9a476bc5ebd106beb93941",
-            "content": "sha256:bae742a074d1c1bdc216fd5101190b7cf0b0fb30b3d39485d98f01da33df28a7",
+            "blob": "3ef7c4c3c534ad2d67da2d013fb5acb2c31d7cab",
+            "content": "sha256:71cb4752b38086c3d97657d840980385fdba2c95f7444a7d5f5011b8d58c94d2",
             "locator": {
               "kind": "file"
             }
@@ -994,12 +994,12 @@
       ]
     },
     "249": {
-      "note": "None",
+      "note": "Historical empty-caption carriers: these preserved numbers have no operative proposition and confer no current declaration, execution or acceptance. Their recorded source custody is not a missing semantic claim to invent.",
       "targets": [
         {
           "anchor": {
-            "blob": "be67a66191636157ba9a476bc5ebd106beb93941",
-            "content": "sha256:bae742a074d1c1bdc216fd5101190b7cf0b0fb30b3d39485d98f01da33df28a7",
+            "blob": "3ef7c4c3c534ad2d67da2d013fb5acb2c31d7cab",
+            "content": "sha256:71cb4752b38086c3d97657d840980385fdba2c95f7444a7d5f5011b8d58c94d2",
             "locator": {
               "kind": "file"
             }
@@ -1009,12 +1009,12 @@
       ]
     },
     "250": {
-      "note": "None",
+      "note": "Historical empty-caption carriers: these preserved numbers have no operative proposition and confer no current declaration, execution or acceptance. Their recorded source custody is not a missing semantic claim to invent.",
       "targets": [
         {
           "anchor": {
-            "blob": "be67a66191636157ba9a476bc5ebd106beb93941",
-            "content": "sha256:bae742a074d1c1bdc216fd5101190b7cf0b0fb30b3d39485d98f01da33df28a7",
+            "blob": "3ef7c4c3c534ad2d67da2d013fb5acb2c31d7cab",
+            "content": "sha256:71cb4752b38086c3d97657d840980385fdba2c95f7444a7d5f5011b8d58c94d2",
             "locator": {
               "kind": "file"
             }
@@ -1024,12 +1024,12 @@
       ]
     },
     "251": {
-      "note": "None",
+      "note": "Historical empty-caption carriers: these preserved numbers have no operative proposition and confer no current declaration, execution or acceptance. Their recorded source custody is not a missing semantic claim to invent.",
       "targets": [
         {
           "anchor": {
-            "blob": "be67a66191636157ba9a476bc5ebd106beb93941",
-            "content": "sha256:bae742a074d1c1bdc216fd5101190b7cf0b0fb30b3d39485d98f01da33df28a7",
+            "blob": "3ef7c4c3c534ad2d67da2d013fb5acb2c31d7cab",
+            "content": "sha256:71cb4752b38086c3d97657d840980385fdba2c95f7444a7d5f5011b8d58c94d2",
             "locator": {
               "kind": "file"
             }
@@ -1055,16 +1055,15 @@
       ]
     },
     "253": {
-      "note": "None\n\nAnchor: \"mcp/tests/closeout_fixture_test_support.py\"",
+      "note": "Historical empty-caption carriers: these preserved numbers have no operative proposition and confer no current declaration, execution or acceptance. Their recorded source custody is not a missing semantic claim to invent.",
       "targets": [
         {
           "anchor": {
-            "blob": "883313cd4c68474702899e7bd30c740a69201007",
-            "content": "sha256:80abe0eb21e28ddb8efe491f92cc756c58e8d58971b10c5eef7150dd655f7ffd",
+            "blob": "3ef7c4c3c534ad2d67da2d013fb5acb2c31d7cab",
+            "content": "sha256:71cb4752b38086c3d97657d840980385fdba2c95f7444a7d5f5011b8d58c94d2",
             "locator": {
               "kind": "file"
-            },
-            "path": "mcp/tests/closeout_fixture_test_support.py"
+            }
           },
           "kind": "test"
         }
@@ -1087,28 +1086,27 @@
       ]
     },
     "255": {
-      "note": "None\n\nAnchor: \"mcp/tests/curator_coherence_test_support.py\"; \"mcp/tests/test_post_integration_cleanup_guidance.py\"",
+      "note": "Historical empty-caption carriers: these preserved numbers have no operative proposition and confer no current declaration, execution or acceptance. Their recorded source custody is not a missing semantic claim to invent.",
       "targets": [
         {
           "anchor": {
-            "blob": "4403e35bf3a5b5f43f2c2d3a84a4747cc06acad0",
-            "content": "sha256:8d5092f911d50f87a965df0a4176f4271400dd8cde248ecb51aa8834a8a04cac",
+            "blob": "3ef7c4c3c534ad2d67da2d013fb5acb2c31d7cab",
+            "content": "sha256:71cb4752b38086c3d97657d840980385fdba2c95f7444a7d5f5011b8d58c94d2",
             "locator": {
               "kind": "file"
-            },
-            "path": "mcp/tests/curator_coherence_test_support.py"
+            }
           },
           "kind": "test"
         }
       ]
     },
     "256": {
-      "note": "None",
+      "note": "Historical empty-caption carriers: these preserved numbers have no operative proposition and confer no current declaration, execution or acceptance. Their recorded source custody is not a missing semantic claim to invent.",
       "targets": [
         {
           "anchor": {
-            "blob": "be67a66191636157ba9a476bc5ebd106beb93941",
-            "content": "sha256:bae742a074d1c1bdc216fd5101190b7cf0b0fb30b3d39485d98f01da33df28a7",
+            "blob": "3ef7c4c3c534ad2d67da2d013fb5acb2c31d7cab",
+            "content": "sha256:71cb4752b38086c3d97657d840980385fdba2c95f7444a7d5f5011b8d58c94d2",
             "locator": {
               "kind": "file"
             }
@@ -1134,12 +1132,12 @@
       ]
     },
     "260": {
-      "note": "The registered-preview comparator's artifact row retains its replacement contract and lists both direct and transitive consumers.\n\nAnchor: 2072-2089",
+      "note": "The registered-preview comparator's artifact row retains its replacement contract and lists both direct and transitive consumers. Anchor: 2072-2089",
       "targets": [
         {
           "anchor": {
-            "blob": "be67a66191636157ba9a476bc5ebd106beb93941",
-            "content": "sha256:bae742a074d1c1bdc216fd5101190b7cf0b0fb30b3d39485d98f01da33df28a7",
+            "blob": "3ef7c4c3c534ad2d67da2d013fb5acb2c31d7cab",
+            "content": "sha256:71cb4752b38086c3d97657d840980385fdba2c95f7444a7d5f5011b8d58c94d2",
             "locator": {
               "kind": "file"
             }
@@ -1153,12 +1151,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "be67a66191636157ba9a476bc5ebd106beb93941",
+            "blob": "3ef7c4c3c534ad2d67da2d013fb5acb2c31d7cab",
             "content": "sha256:6af2d7f28912ba7425c1cb69a1fa691c5a2c8c17dbc07527bd5c18525ee8f089",
             "locator": {
-              "end": 1909,
+              "end": 2063,
               "kind": "line_range",
-              "start": 1909
+              "start": 2063
             }
           },
           "kind": "test"
@@ -1166,16 +1164,16 @@
       ]
     },
     "262": {
-      "note": "The permanent shared settings guard declares its owner, replacement node and exact consumers.",
+      "note": "**Historical source-bound reference account, not an operative override:** The permanent shared settings guard declares its owner, replacement node and exact consumers.",
       "targets": [
         {
           "anchor": {
-            "blob": "68eabe2819683cd161fd0ce5f318d761ca6b06ea",
-            "content": "sha256:1e66bf082d66912ae9deadd9e7547b35da649aa480559cb7044896e2303dd0aa",
+            "blob": "3ef7c4c3c534ad2d67da2d013fb5acb2c31d7cab",
+            "content": "sha256:b99f1f4f7cb37ccdad9d5313efdd54adebf826f0ac370753c99ab145583c6316",
             "locator": {
-              "end": 272,
+              "end": 657,
               "kind": "line_range",
-              "start": 225
+              "start": 125
             }
           },
           "kind": "test"
@@ -1204,12 +1202,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a5d6a9319831157dd5e41769c4cca5502163c6b4",
-            "content": "sha256:7e4ff68f51da2f5c91995ad7d5a20aa33b0f2342e28f7265604bfd822f428717",
+            "blob": "3ef7c4c3c534ad2d67da2d013fb5acb2c31d7cab",
+            "content": "sha256:3651f541dd4816bb80aac7039adae26eefbb8683bbf4b784231e223f33de8ebd",
             "locator": {
-              "end": 2385,
+              "end": 2833,
               "kind": "line_range",
-              "start": 2340
+              "start": 2781
             }
           },
           "kind": "test"
@@ -1217,16 +1215,14 @@
       ]
     },
     "265": {
-      "note": "Historical pre-L43 catalog ownership/reachability witness; not a current registration or execution claim.",
+      "note": "**Historical source-bound reference account, not an operative override:** Historical pre-L43 catalog ownership/reachability witness; not a current registration or execution claim.",
       "targets": [
         {
           "anchor": {
-            "blob": "68eabe2819683cd161fd0ce5f318d761ca6b06ea",
-            "content": "sha256:29d2ada782ad0cd57d409023f86333fe6bccdaf0c9db6214585f2aba33a0241c",
+            "blob": "3ef7c4c3c534ad2d67da2d013fb5acb2c31d7cab",
+            "content": "sha256:71cb4752b38086c3d97657d840980385fdba2c95f7444a7d5f5011b8d58c94d2",
             "locator": {
-              "end": 2898,
-              "kind": "line_range",
-              "start": 1
+              "kind": "file"
             }
           },
           "kind": "test"
@@ -1234,28 +1230,28 @@
       ]
     },
     "266": {
-      "note": "The portable L37 attempt-1 and attempt-2 history fixtures are separate permanent fixture artifacts for the same recorded-meaning regression consumer.",
+      "note": "**Historical source-bound reference account, not an operative override:** The portable L37 attempt-1 and attempt-2 history fixtures are separate permanent fixture artifacts for the same recorded-meaning regression consumer.",
       "targets": [
         {
           "anchor": {
-            "blob": "f9e4075c0ee36227fc0514262e5ed902f5307703",
-            "content": "sha256:ff1bb545613860f64e9103026265842118d46ac93d1c2ea7169fea5b07812889",
+            "blob": "3ef7c4c3c534ad2d67da2d013fb5acb2c31d7cab",
+            "content": "sha256:cc2ab91636e9b9fdef6a7f7ea7eb2d1702a4fb403ec77a40acdc36a344898c6c",
             "locator": {
-              "end": 1500,
+              "end": 1508,
               "kind": "line_range",
-              "start": 1484
+              "start": 1489
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "f9e4075c0ee36227fc0514262e5ed902f5307703",
-            "content": "sha256:d93c0bc8d592cd08cc840d9a3d456dfd898b12eeee48bbbe5c5f1f0e6b677048",
+            "blob": "3ef7c4c3c534ad2d67da2d013fb5acb2c31d7cab",
+            "content": "sha256:c69306ba305551d0373d13ed46c60aa7d7dbb4c9448657ed553f9aaa4d6542c8",
             "locator": {
-              "end": 1518,
+              "end": 1528,
               "kind": "line_range",
-              "start": 1502
+              "start": 1509
             }
           },
           "kind": "test"
@@ -1263,40 +1259,40 @@
       ]
     },
     "267": {
-      "note": "The role-agent and role-message consumer additions belong to the existing settings-guard, Node-lockfile, Paseo-launch and Paseo-runtime artifact rows; declarations establish reachability, not execution.",
+      "note": "**Historical source-bound reference account, not an operative override:** The role-agent and role-message consumer additions belong to the existing settings-guard, Node-lockfile, Paseo-launch and Paseo-runtime artifact rows; declarations establish reachability, not execution.",
       "targets": [
         {
           "anchor": {
-            "blob": "68eabe2819683cd161fd0ce5f318d761ca6b06ea",
-            "content": "sha256:17870055813d7c8823b593f6f8c5157d0f833d21a9722b52d69d6f9830aaa201",
+            "blob": "3ef7c4c3c534ad2d67da2d013fb5acb2c31d7cab",
+            "content": "sha256:b99f1f4f7cb37ccdad9d5313efdd54adebf826f0ac370753c99ab145583c6316",
             "locator": {
-              "end": 277,
+              "end": 657,
               "kind": "line_range",
-              "start": 224
+              "start": 125
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "68eabe2819683cd161fd0ce5f318d761ca6b06ea",
-            "content": "sha256:193f1923a3d2dd644842717de9729dedafbf4913d05695a0a52d736b68d2617f",
+            "blob": "3ef7c4c3c534ad2d67da2d013fb5acb2c31d7cab",
+            "content": "sha256:8d80df75d4b6f77da49d4b06399793eba1af2087eefee488aafaff3bb1549674",
             "locator": {
-              "end": 1657,
+              "end": 1320,
               "kind": "line_range",
-              "start": 1136
+              "start": 1297
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "68eabe2819683cd161fd0ce5f318d761ca6b06ea",
-            "content": "sha256:7928602099c5c980ea558e21baa4b3b71e5fc69cf659e06a0fc532b3d2c18c2a",
+            "blob": "3ef7c4c3c534ad2d67da2d013fb5acb2c31d7cab",
+            "content": "sha256:f305c30dec61d95487dd0f32112478a9ad86885bbb7f6d4b07db0aff15dd7485",
             "locator": {
-              "end": 2285,
+              "end": 2381,
               "kind": "line_range",
-              "start": 2211
+              "start": 2344
             }
           },
           "kind": "test"
@@ -1304,12 +1300,12 @@
       ]
     },
     "268": {
-      "note": "The parked-candidate module consumes the existing checkpoint-landing support artifact without changing its lifecycle contract.\n\nAnchor: `mcp/tests/evidence-lifecycle.toml:371-395`",
+      "note": "**Historical source-bound reference account, not an operative override:** The parked-candidate module consumes the existing checkpoint-landing support artifact without changing its lifecycle contract. Anchor: `mcp/tests/evidence-lifecycle.toml:371-395`",
       "targets": [
         {
           "anchor": {
-            "blob": "be67a66191636157ba9a476bc5ebd106beb93941",
-            "content": "sha256:bae742a074d1c1bdc216fd5101190b7cf0b0fb30b3d39485d98f01da33df28a7",
+            "blob": "3ef7c4c3c534ad2d67da2d013fb5acb2c31d7cab",
+            "content": "sha256:71cb4752b38086c3d97657d840980385fdba2c95f7444a7d5f5011b8d58c94d2",
             "locator": {
               "kind": "file"
             }
@@ -1319,12 +1315,12 @@
       ]
     },
     "269": {
-      "note": "The parked-candidate module consumes the existing Curator coherence support artifact without changing its lifecycle contract.\n\nAnchor: `mcp/tests/evidence-lifecycle.toml:478-599`",
+      "note": "**Historical source-bound reference account, not an operative override:** The parked-candidate module consumes the existing Curator coherence support artifact without changing its lifecycle contract. Anchor: `mcp/tests/evidence-lifecycle.toml:478-599`",
       "targets": [
         {
           "anchor": {
-            "blob": "be67a66191636157ba9a476bc5ebd106beb93941",
-            "content": "sha256:bae742a074d1c1bdc216fd5101190b7cf0b0fb30b3d39485d98f01da33df28a7",
+            "blob": "3ef7c4c3c534ad2d67da2d013fb5acb2c31d7cab",
+            "content": "sha256:71cb4752b38086c3d97657d840980385fdba2c95f7444a7d5f5011b8d58c94d2",
             "locator": {
               "kind": "file"
             }
@@ -1334,12 +1330,12 @@
       ]
     },
     "270": {
-      "note": "The parked-candidate module consumes the existing knowledge-conversion support artifact without changing its lifecycle contract.\n\nAnchor: `mcp/tests/evidence-lifecycle.toml:1826-1852`",
+      "note": "**Historical source-bound reference account, not an operative override:** The parked-candidate module consumes the existing knowledge-conversion support artifact without changing its lifecycle contract. Anchor: `mcp/tests/evidence-lifecycle.toml:1826-1852`",
       "targets": [
         {
           "anchor": {
-            "blob": "be67a66191636157ba9a476bc5ebd106beb93941",
-            "content": "sha256:bae742a074d1c1bdc216fd5101190b7cf0b0fb30b3d39485d98f01da33df28a7",
+            "blob": "3ef7c4c3c534ad2d67da2d013fb5acb2c31d7cab",
+            "content": "sha256:71cb4752b38086c3d97657d840980385fdba2c95f7444a7d5f5011b8d58c94d2",
             "locator": {
               "kind": "file"
             }
@@ -1349,12 +1345,12 @@
       ]
     },
     "271": {
-      "note": "The current composed catalog declares 12 contracts and 70 artifacts; CODE6/passed 14-contract/102-artifact and incoming 101-artifact populations remain historical on their own objects. Native reapply and task-document Order remain declared on the existing Node lockfile artifact; task-document Order also remains on the settings guard. Compared with landed L162 (6be1b3fa), four consumer lists expand: settings guard and Node lockfile each gain 25 consumers, coherence support gains three, and enclosure support gains one. Contract/artifact identities and non-consumer fields are unchanged in this comparison. Declarations and canonical ordering establish no invocation or acceptance.\n\nAnchor: `evidence-lifecycle.toml`",
+      "note": "The current parsed inventory declares 12 contracts and 75 artifacts. The two L57 supports are permanent integration/local-composition declarations with three and five exact consumers respectively; declarations establish no invocation or acceptance. Earlier catalog populations and landed-L162 comparisons remain historical.",
       "targets": [
         {
           "anchor": {
-            "blob": "6d7a094c890a20a2dbb2057a6ff0a0101578947c",
-            "content": "sha256:8ffc1528d9c2787e007baa60fbbaca5fd28e268261b7eae85e6ab4f8acf4b165",
+            "blob": "3ef7c4c3c534ad2d67da2d013fb5acb2c31d7cab",
+            "content": "sha256:71cb4752b38086c3d97657d840980385fdba2c95f7444a7d5f5011b8d58c94d2",
             "locator": {
               "kind": "file"
             }
@@ -1364,95 +1360,69 @@
       ]
     },
     "272": {
-      "note": "The L110 shared-support artifact declares the refusal suite as a transitive consumer through test_tool_answer_table; declarations establish reachability, not execution.",
+      "note": "**Historical source-bound reference account, not an operative override:** The L110 shared-support artifact declares the refusal suite as a transitive consumer through test_tool_answer_table; declarations establish reachability, not execution.",
       "targets": [
         {
           "anchor": {
-            "blob": "5187de4787560e696cadf94bb6c8cb14583edf45",
-            "content": "sha256:ef6f26f884e88cf8de9a0ff20f817804c85172282e31e5dcf44e116b046dde88",
+            "blob": "3ef7c4c3c534ad2d67da2d013fb5acb2c31d7cab",
+            "content": "sha256:87408e067be28676927e2ec128839c9febe27fe92c338a22ee87f1bc5490be5e",
             "locator": {
-              "end": 2711,
+              "end": 3053,
               "kind": "line_range",
-              "start": 2690
+              "start": 3024
             }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "20cfdca4e1dc9af3bb1ff939513d621d67208274",
-            "content": "sha256:997fa421c57c5bb30299c09a0ba55d4c283f58958f17484a8c9bd4de78d06333",
-            "locator": {
-              "end": 72,
-              "kind": "line_range",
-              "start": 72
-            },
-            "path": "mcp/tests/test_legacy_refusal_envelope.py"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "a5173f6233330baef787bc92fcfbec8340c8a230",
-            "content": "sha256:b3c066f75d82fd5c9de6355becf806c04cd85d0c4eb1f9a8df740bbf2ad67d02",
-            "locator": {
-              "end": 103,
-              "kind": "line_range",
-              "start": 103
-            },
-            "path": "mcp/tests/test_tool_answer_table.py"
           },
           "kind": "test"
         }
       ]
     },
     "273": {
-      "note": "At the pre-L109 L53 freeze (CODE d457a9ae / MEMORY bacaaf79), Current source delta inspected statically: The code-base-to-candidate diff adds consumers only to twelve existing artifact rows. Retain the statically parsed 13-contract/93-artifact account and historical earlier counts; catalog declarations are reachability, not a loader, test, lane or acceptance result. This retained 13-contract/93-artifact source observation is historical on the successor with13contracts/101artifacts; it remains no loader/test/acceptance result.\n\nRetained historical passed-L111 catalog observation (not a current post-sync census): The current declarative catalog has 14 contract rows and 94 artifact rows. It includes the permanent local-composition tool_answer_l111_test_support artifact and tool-answer-l111-shaped-rows replacement contract. These declarations establish ownership/reachability, not observed execution or a fresh acceptance census; older catalog populations are historical.",
+      "note": "At the pre-L109 L53 freeze (CODE d457a9ae / MEMORY bacaaf79), Current source delta inspected statically: The code-base-to-candidate diff adds consumers only to twelve existing artifact rows. Retain the statically parsed 13-contract/93-artifact account and historical earlier counts; catalog declarations are reachability, not a loader, test, lane or acceptance result. This retained 13-contract/93-artifact source observation is historical on the successor with13contracts/101artifacts; it remains no loader/test/acceptance result. Retained historical passed-L111 catalog observation (not a current post-sync census): The current declarative catalog has 14 contract rows and 94 artifact rows. It includes the permanent local-composition tool_answer_l111_test_support artifact and tool-answer-l111-shaped-rows replacement contract. These declarations establish ownership/reachability, not observed execution or a fresh acceptance census; older catalog populations are historical.",
       "targets": [
         {
           "anchor": {
-            "blob": "be67a66191636157ba9a476bc5ebd106beb93941",
+            "blob": "3ef7c4c3c534ad2d67da2d013fb5acb2c31d7cab",
             "content": "sha256:1c4283fcfbf95371e3d500626b85b0fc2a713f59908fa88169ba45c9ddb73704",
             "locator": {
-              "end": 983,
+              "end": 1052,
               "kind": "line_range",
-              "start": 982
+              "start": 1051
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "be67a66191636157ba9a476bc5ebd106beb93941",
+            "blob": "3ef7c4c3c534ad2d67da2d013fb5acb2c31d7cab",
             "content": "sha256:30f212a66e08058a95af77b80d5578d39567a3198521a13cfc42a5debab1f495",
             "locator": {
-              "end": 1707,
+              "end": 1825,
               "kind": "line_range",
-              "start": 1705
+              "start": 1823
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "be67a66191636157ba9a476bc5ebd106beb93941",
+            "blob": "3ef7c4c3c534ad2d67da2d013fb5acb2c31d7cab",
             "content": "sha256:1c4283fcfbf95371e3d500626b85b0fc2a713f59908fa88169ba45c9ddb73704",
             "locator": {
-              "end": 2321,
+              "end": 2491,
               "kind": "line_range",
-              "start": 2320
+              "start": 2490
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "be67a66191636157ba9a476bc5ebd106beb93941",
+            "blob": "3ef7c4c3c534ad2d67da2d013fb5acb2c31d7cab",
             "content": "sha256:9408240cc5c77aeb098dd1110fa933254d26ab9ee40948406b9a5f35395fc234",
             "locator": {
-              "end": 2349,
+              "end": 2524,
               "kind": "line_range",
-              "start": 2348
+              "start": 2523
             }
           },
           "kind": "test"
@@ -1464,24 +1434,24 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f9e4075c0ee36227fc0514262e5ed902f5307703",
+            "blob": "3ef7c4c3c534ad2d67da2d013fb5acb2c31d7cab",
             "content": "sha256:ee46da0fe4f4f25f8c39882e722654f89b0dce25aac78ddc22222326707c9815",
             "locator": {
-              "end": 1552,
+              "end": 1561,
               "kind": "line_range",
-              "start": 1538
+              "start": 1547
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "be67a66191636157ba9a476bc5ebd106beb93941",
-            "content": "sha256:178f95ee687e59cb6402ab47c37c76561ea2905acfdea5207e885c382086f35b",
+            "blob": "3ef7c4c3c534ad2d67da2d013fb5acb2c31d7cab",
+            "content": "sha256:4e7913fde2e1ce1338cf287e2a3952b43af8770068277435e5163b8738e6c842",
             "locator": {
-              "end": 1865,
+              "end": 2079,
               "kind": "line_range",
-              "start": 1855
+              "start": 1547
             }
           },
           "kind": "test"
@@ -1489,16 +1459,16 @@
       ]
     },
     "275": {
-      "note": "Consumers of `mcp/tests/anchor_fixture_models.py` add `mcp/tests/test_landing_state_refusals.py`, `mcp/tests/test_tool_answer_rows_l111.py`. All other governed row attributes are preserved; declaration is not execution.\n\nAnchor: Changed existing consumer row",
+      "note": "Consumers of `mcp/tests/anchor_fixture_models.py` add `mcp/tests/test_landing_state_refusals.py`, `mcp/tests/test_tool_answer_rows_l111.py`. All other governed row attributes are preserved; declaration is not execution. Anchor: Changed existing consumer row",
       "targets": [
         {
           "anchor": {
-            "blob": "f9e4075c0ee36227fc0514262e5ed902f5307703",
-            "content": "sha256:9ec4ccdfc838bb668be5c6922d3bf7bfa969a89fb35b0ee5930ab6c7976cb275",
+            "blob": "3ef7c4c3c534ad2d67da2d013fb5acb2c31d7cab",
+            "content": "sha256:031c3b0e2a9443da4986f86c9cf4b1552d4f91c0e9b9dd22b0259a2304cd54c4",
             "locator": {
-              "end": 735,
+              "end": 742,
               "kind": "line_range",
-              "start": 654
+              "start": 658
             }
           },
           "kind": "test"
@@ -1506,16 +1476,16 @@
       ]
     },
     "276": {
-      "note": "Consumers of `mcp/tests/curator_coherence_test_support.py` add `mcp/tests/test_tool_answer_rows_l111.py`. All other governed row attributes are preserved; declaration is not execution.\n\nAnchor: Changed existing consumer row",
+      "note": "Consumers of `mcp/tests/curator_coherence_test_support.py` add `mcp/tests/test_tool_answer_rows_l111.py`. All other governed row attributes are preserved; declaration is not execution. Anchor: Changed existing consumer row",
       "targets": [
         {
           "anchor": {
-            "blob": "24afddfd2be326a119ca082e66c08ba1ed7eee9a",
-            "content": "sha256:324153d9b1af2a51d1145b8fd0c1c28b736020d4fdd5b075eaddacb4613f64cf",
+            "blob": "3ef7c4c3c534ad2d67da2d013fb5acb2c31d7cab",
+            "content": "sha256:cc6e6996cd84c0f2625632dc580e91071e23eeb36da586063fd669425649315d",
             "locator": {
-              "end": 637,
+              "end": 988,
               "kind": "line_range",
-              "start": 506
+              "start": 853
             }
           },
           "kind": "test"
@@ -1523,16 +1493,16 @@
       ]
     },
     "277": {
-      "note": "Consumers of `mcp/tests/fixtures/l109_tool_answers/context_packet_largest.json` add `mcp/tests/test_landing_state_refusals.py`, `mcp/tests/test_tool_answer_rows_l111.py`. All other governed row attributes are preserved; declaration is not execution.\n\nAnchor: Changed existing consumer row",
+      "note": "Consumers of `mcp/tests/fixtures/l109_tool_answers/context_packet_largest.json` add `mcp/tests/test_landing_state_refusals.py`, `mcp/tests/test_tool_answer_rows_l111.py`. All other governed row attributes are preserved; declaration is not execution. Anchor: Changed existing consumer row",
       "targets": [
         {
           "anchor": {
-            "blob": "f9e4075c0ee36227fc0514262e5ed902f5307703",
+            "blob": "3ef7c4c3c534ad2d67da2d013fb5acb2c31d7cab",
             "content": "sha256:8d80df75d4b6f77da49d4b06399793eba1af2087eefee488aafaff3bb1549674",
             "locator": {
-              "end": 1315,
+              "end": 1320,
               "kind": "line_range",
-              "start": 1292
+              "start": 1297
             }
           },
           "kind": "test"
@@ -1540,16 +1510,16 @@
       ]
     },
     "278": {
-      "note": "Consumers of `mcp/tests/fixtures/l109_tool_answers/context_packet_ordinary.json` add `mcp/tests/test_landing_state_refusals.py`, `mcp/tests/test_tool_answer_rows_l111.py`. All other governed row attributes are preserved; declaration is not execution.\n\nAnchor: Changed existing consumer row",
+      "note": "Consumers of `mcp/tests/fixtures/l109_tool_answers/context_packet_ordinary.json` add `mcp/tests/test_landing_state_refusals.py`, `mcp/tests/test_tool_answer_rows_l111.py`. All other governed row attributes are preserved; declaration is not execution. Anchor: Changed existing consumer row",
       "targets": [
         {
           "anchor": {
-            "blob": "f9e4075c0ee36227fc0514262e5ed902f5307703",
+            "blob": "3ef7c4c3c534ad2d67da2d013fb5acb2c31d7cab",
             "content": "sha256:8bb780442d79edf11962c6a4548117742f5e60c25dd983e6ec2e647e68bee8e7",
             "locator": {
-              "end": 1339,
+              "end": 1344,
               "kind": "line_range",
-              "start": 1316
+              "start": 1321
             }
           },
           "kind": "test"
@@ -1557,16 +1527,16 @@
       ]
     },
     "279": {
-      "note": "Consumers of `mcp/tests/fixtures/l109_tool_answers/knowledge_diff_largest.json` add `mcp/tests/test_landing_state_refusals.py`, `mcp/tests/test_tool_answer_rows_l111.py`. All other governed row attributes are preserved; declaration is not execution.\n\nAnchor: Changed existing consumer row",
+      "note": "Consumers of `mcp/tests/fixtures/l109_tool_answers/knowledge_diff_largest.json` add `mcp/tests/test_landing_state_refusals.py`, `mcp/tests/test_tool_answer_rows_l111.py`. All other governed row attributes are preserved; declaration is not execution. Anchor: Changed existing consumer row",
       "targets": [
         {
           "anchor": {
-            "blob": "f9e4075c0ee36227fc0514262e5ed902f5307703",
+            "blob": "3ef7c4c3c534ad2d67da2d013fb5acb2c31d7cab",
             "content": "sha256:ceca4ec826261215f515f1c106b844d9d61eb9b14996fb49ad0cc44536bfcf51",
             "locator": {
-              "end": 1363,
+              "end": 1368,
               "kind": "line_range",
-              "start": 1340
+              "start": 1345
             }
           },
           "kind": "test"
@@ -1574,16 +1544,16 @@
       ]
     },
     "280": {
-      "note": "Consumers of `mcp/tests/fixtures/l109_tool_answers/knowledge_diff_ordinary.json` add `mcp/tests/test_landing_state_refusals.py`, `mcp/tests/test_tool_answer_rows_l111.py`. All other governed row attributes are preserved; declaration is not execution.\n\nAnchor: Changed existing consumer row",
+      "note": "Consumers of `mcp/tests/fixtures/l109_tool_answers/knowledge_diff_ordinary.json` add `mcp/tests/test_landing_state_refusals.py`, `mcp/tests/test_tool_answer_rows_l111.py`. All other governed row attributes are preserved; declaration is not execution. Anchor: Changed existing consumer row",
       "targets": [
         {
           "anchor": {
-            "blob": "f9e4075c0ee36227fc0514262e5ed902f5307703",
+            "blob": "3ef7c4c3c534ad2d67da2d013fb5acb2c31d7cab",
             "content": "sha256:8632a9cfdb9055d9d4323db355b9fdd69d709ae64aec8173ea24adf78b2385d9",
             "locator": {
-              "end": 1387,
+              "end": 1392,
               "kind": "line_range",
-              "start": 1364
+              "start": 1369
             }
           },
           "kind": "test"
@@ -1591,16 +1561,16 @@
       ]
     },
     "281": {
-      "note": "Consumers of `mcp/tests/fixtures/l109_tool_answers/knowledge_read_largest.json` add `mcp/tests/test_landing_state_refusals.py`, `mcp/tests/test_tool_answer_rows_l111.py`. All other governed row attributes are preserved; declaration is not execution.\n\nAnchor: Changed existing consumer row",
+      "note": "Consumers of `mcp/tests/fixtures/l109_tool_answers/knowledge_read_largest.json` add `mcp/tests/test_landing_state_refusals.py`, `mcp/tests/test_tool_answer_rows_l111.py`. All other governed row attributes are preserved; declaration is not execution. Anchor: Changed existing consumer row",
       "targets": [
         {
           "anchor": {
-            "blob": "f9e4075c0ee36227fc0514262e5ed902f5307703",
+            "blob": "3ef7c4c3c534ad2d67da2d013fb5acb2c31d7cab",
             "content": "sha256:c9760534de905dafc66144f473010aefb282ce744201fe7a9f4d0cdc1a503267",
             "locator": {
-              "end": 1411,
+              "end": 1416,
               "kind": "line_range",
-              "start": 1388
+              "start": 1393
             }
           },
           "kind": "test"
@@ -1608,16 +1578,16 @@
       ]
     },
     "282": {
-      "note": "Consumers of `mcp/tests/fixtures/l109_tool_answers/knowledge_read_ordinary.json` add `mcp/tests/test_landing_state_refusals.py`, `mcp/tests/test_tool_answer_rows_l111.py`. All other governed row attributes are preserved; declaration is not execution.\n\nAnchor: Changed existing consumer row",
+      "note": "Consumers of `mcp/tests/fixtures/l109_tool_answers/knowledge_read_ordinary.json` add `mcp/tests/test_landing_state_refusals.py`, `mcp/tests/test_tool_answer_rows_l111.py`. All other governed row attributes are preserved; declaration is not execution. Anchor: Changed existing consumer row",
       "targets": [
         {
           "anchor": {
-            "blob": "f9e4075c0ee36227fc0514262e5ed902f5307703",
+            "blob": "3ef7c4c3c534ad2d67da2d013fb5acb2c31d7cab",
             "content": "sha256:d6c279ecfbc5584d03c437b025022f4912eb349784be295f2ed2380c8ac98d8f",
             "locator": {
-              "end": 1435,
+              "end": 1440,
               "kind": "line_range",
-              "start": 1412
+              "start": 1417
             }
           },
           "kind": "test"
@@ -1625,16 +1595,16 @@
       ]
     },
     "283": {
-      "note": "Consumers of `mcp/tests/fixtures/l109_tool_answers/read_ar_files_largest.json` add `mcp/tests/test_landing_state_refusals.py`, `mcp/tests/test_tool_answer_rows_l111.py`. All other governed row attributes are preserved; declaration is not execution.\n\nAnchor: Changed existing consumer row",
+      "note": "Consumers of `mcp/tests/fixtures/l109_tool_answers/read_ar_files_largest.json` add `mcp/tests/test_landing_state_refusals.py`, `mcp/tests/test_tool_answer_rows_l111.py`. All other governed row attributes are preserved; declaration is not execution. Anchor: Changed existing consumer row",
       "targets": [
         {
           "anchor": {
-            "blob": "f9e4075c0ee36227fc0514262e5ed902f5307703",
+            "blob": "3ef7c4c3c534ad2d67da2d013fb5acb2c31d7cab",
             "content": "sha256:1fa1c4244eeb7b1fc11e3937b9e3fea657feeac8e69356e2d8241f07c0b44172",
             "locator": {
-              "end": 1459,
+              "end": 1464,
               "kind": "line_range",
-              "start": 1436
+              "start": 1441
             }
           },
           "kind": "test"
@@ -1642,16 +1612,16 @@
       ]
     },
     "284": {
-      "note": "Consumers of `mcp/tests/fixtures/l109_tool_answers/read_ar_files_ordinary.json` add `mcp/tests/test_landing_state_refusals.py`, `mcp/tests/test_tool_answer_rows_l111.py`. All other governed row attributes are preserved; declaration is not execution.\n\nAnchor: Changed existing consumer row",
+      "note": "Consumers of `mcp/tests/fixtures/l109_tool_answers/read_ar_files_ordinary.json` add `mcp/tests/test_landing_state_refusals.py`, `mcp/tests/test_tool_answer_rows_l111.py`. All other governed row attributes are preserved; declaration is not execution. Anchor: Changed existing consumer row",
       "targets": [
         {
           "anchor": {
-            "blob": "f9e4075c0ee36227fc0514262e5ed902f5307703",
+            "blob": "3ef7c4c3c534ad2d67da2d013fb5acb2c31d7cab",
             "content": "sha256:c594b56827a26c141b5e60275a783a07ed9d39c331af1869b72efc6b65e1cf78",
             "locator": {
-              "end": 1483,
+              "end": 1488,
               "kind": "line_range",
-              "start": 1460
+              "start": 1465
             }
           },
           "kind": "test"
@@ -1659,16 +1629,16 @@
       ]
     },
     "285": {
-      "note": "Consumers of `mcp/tests/knowledge_index_test_support.py` add `mcp/tests/test_landing_state_refusals.py`, `mcp/tests/test_tool_answer_rows_l111.py`. All other governed row attributes are preserved; declaration is not execution.\n\nAnchor: Changed existing consumer row",
+      "note": "Consumers of `mcp/tests/knowledge_index_test_support.py` add `mcp/tests/test_landing_state_refusals.py`, `mcp/tests/test_tool_answer_rows_l111.py`. All other governed row attributes are preserved; declaration is not execution. Anchor: Changed existing consumer row",
       "targets": [
         {
           "anchor": {
-            "blob": "f9e4075c0ee36227fc0514262e5ed902f5307703",
-            "content": "sha256:76b4efa736b392162da985e1a9ce7075b88cc01a7247f99ce41f1cd3503a9e57",
+            "blob": "3ef7c4c3c534ad2d67da2d013fb5acb2c31d7cab",
+            "content": "sha256:60f7c25cdab8fe5f2d073eb2d39913caeebbc1e749d1337362f4d980d591e8e0",
             "locator": {
-              "end": 2326,
+              "end": 2343,
               "kind": "line_range",
-              "start": 2276
+              "start": 2289
             }
           },
           "kind": "test"
@@ -1676,16 +1646,16 @@
       ]
     },
     "286": {
-      "note": "Consumers of `mcp/tests/knowledge_rows_test_support.py` add `mcp/tests/test_landing_state_refusals.py`, `mcp/tests/test_tool_answer_rows_l111.py`. All other governed row attributes are preserved; declaration is not execution.\n\nAnchor: Changed existing consumer row",
+      "note": "Consumers of `mcp/tests/knowledge_rows_test_support.py` add `mcp/tests/test_landing_state_refusals.py`, `mcp/tests/test_tool_answer_rows_l111.py`. All other governed row attributes are preserved; declaration is not execution. Anchor: Changed existing consumer row",
       "targets": [
         {
           "anchor": {
-            "blob": "f9e4075c0ee36227fc0514262e5ed902f5307703",
-            "content": "sha256:ff5a6c4f70c10eb475b70bcb010acf872e38e2b89b3cf88628e176e8921c6ae2",
+            "blob": "3ef7c4c3c534ad2d67da2d013fb5acb2c31d7cab",
+            "content": "sha256:f76d938468678f7d810570d6949255a770be78395278ea7a129c38eab367654a",
             "locator": {
-              "end": 2446,
+              "end": 2466,
               "kind": "line_range",
-              "start": 2365
+              "start": 2382
             }
           },
           "kind": "test"
@@ -1693,16 +1663,16 @@
       ]
     },
     "287": {
-      "note": "Consumers of `mcp/tests/knowledge_writer_test_support.py` add `mcp/tests/test_landing_state_refusals.py`, `mcp/tests/test_tool_answer_rows_l111.py`. All other governed row attributes are preserved; declaration is not execution.\n\nAnchor: Changed existing consumer row",
+      "note": "Consumers of `mcp/tests/knowledge_writer_test_support.py` add `mcp/tests/test_landing_state_refusals.py`, `mcp/tests/test_tool_answer_rows_l111.py`. All other governed row attributes are preserved; declaration is not execution. Anchor: Changed existing consumer row",
       "targets": [
         {
           "anchor": {
-            "blob": "7eb596a07bdfccfc2b5cc8c800763e129f7b6049",
-            "content": "sha256:4125cd2d1f0c4fdc4c6dbb4e9fa3fc1264c3a5986e8a108bb51ab86a49a899a6",
+            "blob": "3ef7c4c3c534ad2d67da2d013fb5acb2c31d7cab",
+            "content": "sha256:a98d2e5ceab69047090aa4c2576fb2bf96875bf527d66ac1b882b3f9548e0225",
             "locator": {
-              "end": 2347,
+              "end": 2539,
               "kind": "line_range",
-              "start": 2316
+              "start": 2496
             }
           },
           "kind": "test"
@@ -1710,16 +1680,16 @@
       ]
     },
     "288": {
-      "note": "Consumers of `mcp/tests/read_boundary_oracle_test_support.py` add `mcp/tests/test_abandoned_series_closeout.py`, `mcp/tests/test_closeout_refusal_aftermath.py`, `mcp/tests/test_direct_landing_leaf_identity.py`, `mcp/tests/test_enclosure_without_remains.py`, `mcp/tests/test_knowledge_gate_routes.py`, `mcp/tests/test_master_chain_public_routes.py`. All other governed row attributes are preserved; declaration is not execution.\n\nAnchor: Changed existing consumer row",
+      "note": "Consumers of `mcp/tests/read_boundary_oracle_test_support.py` add `mcp/tests/test_abandoned_series_closeout.py`, `mcp/tests/test_closeout_refusal_aftermath.py`, `mcp/tests/test_direct_landing_leaf_identity.py`, `mcp/tests/test_enclosure_without_remains.py`, `mcp/tests/test_knowledge_gate_routes.py`, `mcp/tests/test_master_chain_public_routes.py`. All other governed row attributes are preserved; declaration is not execution. Anchor: Changed existing consumer row",
       "targets": [
         {
           "anchor": {
-            "blob": "f9e4075c0ee36227fc0514262e5ed902f5307703",
+            "blob": "3ef7c4c3c534ad2d67da2d013fb5acb2c31d7cab",
             "content": "sha256:e61977b9310441aa10da549b3c416255466c4da6f589b78a8b4a38c635b575e2",
             "locator": {
-              "end": 2759,
+              "end": 2780,
               "kind": "line_range",
-              "start": 2734
+              "start": 2755
             }
           },
           "kind": "test"
@@ -1727,16 +1697,16 @@
       ]
     },
     "289": {
-      "note": "Consumers of `mcp/tests/read_scope_test_support.py` add `mcp/tests/test_landing_state_refusals.py`, `mcp/tests/test_tool_answer_rows_l111.py`. All other governed row attributes are preserved; declaration is not execution.\n\nAnchor: Changed existing consumer row",
+      "note": "Consumers of `mcp/tests/read_scope_test_support.py` add `mcp/tests/test_landing_state_refusals.py`, `mcp/tests/test_tool_answer_rows_l111.py`. All other governed row attributes are preserved; declaration is not execution. Anchor: Changed existing consumer row",
       "targets": [
         {
           "anchor": {
-            "blob": "f9e4075c0ee36227fc0514262e5ed902f5307703",
+            "blob": "3ef7c4c3c534ad2d67da2d013fb5acb2c31d7cab",
             "content": "sha256:3651f541dd4816bb80aac7039adae26eefbb8683bbf4b784231e223f33de8ebd",
             "locator": {
-              "end": 2812,
+              "end": 2833,
               "kind": "line_range",
-              "start": 2760
+              "start": 2781
             }
           },
           "kind": "test"
@@ -1748,8 +1718,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "be67a66191636157ba9a476bc5ebd106beb93941",
-            "content": "sha256:bae742a074d1c1bdc216fd5101190b7cf0b0fb30b3d39485d98f01da33df28a7",
+            "blob": "3ef7c4c3c534ad2d67da2d013fb5acb2c31d7cab",
+            "content": "sha256:71cb4752b38086c3d97657d840980385fdba2c95f7444a7d5f5011b8d58c94d2",
             "locator": {
               "kind": "file"
             }
@@ -1763,12 +1733,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "be67a66191636157ba9a476bc5ebd106beb93941",
+            "blob": "3ef7c4c3c534ad2d67da2d013fb5acb2c31d7cab",
             "content": "sha256:b5dcbe353b74fecbe99d922961ca12bc08068532affba89c85e27c810c573ded",
             "locator": {
-              "end": 538,
+              "end": 586,
               "kind": "line_range",
-              "start": 538
+              "start": 586
             }
           },
           "kind": "test"
@@ -1780,8 +1750,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d783c73b33b4233a78c8a0580f4a1966ca71b6e3",
-            "content": "sha256:c91cbf211cbfb18d7e6cddb3fab67d6d8d08885db2ca2015caca7b7c48e64013",
+            "blob": "3ef7c4c3c534ad2d67da2d013fb5acb2c31d7cab",
+            "content": "sha256:71cb4752b38086c3d97657d840980385fdba2c95f7444a7d5f5011b8d58c94d2",
             "locator": {
               "kind": "file"
             }
@@ -1791,40 +1761,40 @@
       ]
     },
     "293": {
-      "note": "The reopened-workspace module is declared as a consumer on the existing settings guard, Node lockfile and Paseo-runtime support artifacts; membership does not prove execution.\n\nAnchor: `\"mcp/tests/test_paseo_reopened_workspace.py\"`",
+      "note": "The reopened-workspace module is declared as a consumer on the existing settings guard, Node lockfile and Paseo-runtime support artifacts; membership does not prove execution.",
       "targets": [
         {
           "anchor": {
-            "blob": "4d6983ba24be976e19d286b4fde1f86a03739d82",
+            "blob": "3ef7c4c3c534ad2d67da2d013fb5acb2c31d7cab",
             "content": "sha256:e30fa9bbf54b333553073bb502f318e583b97c176b79185c9d33940f66f81ce0",
             "locator": {
-              "end": 422,
+              "end": 431,
               "kind": "line_range",
-              "start": 422
+              "start": 431
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "a7da1cb3002e61e68b3f421548f79f6e90201864",
+            "blob": "3ef7c4c3c534ad2d67da2d013fb5acb2c31d7cab",
             "content": "sha256:e30fa9bbf54b333553073bb502f318e583b97c176b79185c9d33940f66f81ce0",
             "locator": {
-              "end": 1816,
+              "end": 1853,
               "kind": "line_range",
-              "start": 1816
+              "start": 1853
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "a7da1cb3002e61e68b3f421548f79f6e90201864",
+            "blob": "3ef7c4c3c534ad2d67da2d013fb5acb2c31d7cab",
             "content": "sha256:e30fa9bbf54b333553073bb502f318e583b97c176b79185c9d33940f66f81ce0",
             "locator": {
-              "end": 2626,
+              "end": 2695,
               "kind": "line_range",
-              "start": 2626
+              "start": 2695
             }
           },
           "kind": "test"
@@ -1832,28 +1802,28 @@
       ]
     },
     "294": {
-      "note": "The deletion-cancellation module joins the existing settings-guard and Node-lockfile consumer lists without new artifact or replacement contracts.\n\nAnchor: existing artifact consumer declarations",
+      "note": "The deletion-cancellation module joins the existing settings-guard and Node-lockfile consumer lists without new artifact or replacement contracts.",
       "targets": [
         {
           "anchor": {
-            "blob": "4d6983ba24be976e19d286b4fde1f86a03739d82",
-            "content": "sha256:e5bee0915b56496efb63eae4a77598da30fd5d6b89f073331151819bdb6a90e6",
+            "blob": "3ef7c4c3c534ad2d67da2d013fb5acb2c31d7cab",
+            "content": "sha256:b99f1f4f7cb37ccdad9d5313efdd54adebf826f0ac370753c99ab145583c6316",
             "locator": {
-              "end": 560,
+              "end": 657,
               "kind": "line_range",
-              "start": 126
+              "start": 125
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "4d6983ba24be976e19d286b4fde1f86a03739d82",
-            "content": "sha256:532795ddc074e94983237f779f67b464a78ecdac91f36e083093bf0b344a8b4b",
+            "blob": "3ef7c4c3c534ad2d67da2d013fb5acb2c31d7cab",
+            "content": "sha256:4e7913fde2e1ce1338cf287e2a3952b43af8770068277435e5163b8738e6c842",
             "locator": {
-              "end": 1950,
+              "end": 2079,
               "kind": "line_range",
-              "start": 1521
+              "start": 1547
             }
           },
           "kind": "test"
@@ -1861,40 +1831,40 @@
       ]
     },
     "295": {
-      "note": "The retained conversion-cost tests are declared consumers on the existing three artifact lists.\n\nAnchor: consumer declarations",
+      "note": "The retained conversion-cost tests are declared consumers on the existing three artifact lists.",
       "targets": [
         {
           "anchor": {
-            "blob": "1bfb00308241e515a92cac106e6bdc5895b64d83",
+            "blob": "3ef7c4c3c534ad2d67da2d013fb5acb2c31d7cab",
             "content": "sha256:0429c10cb9952e8e19996e7873c9fb28e8633d00fc915771d4ea082e1b39610b",
             "locator": {
-              "end": 211,
+              "end": 213,
               "kind": "line_range",
-              "start": 211
+              "start": 213
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "1bfb00308241e515a92cac106e6bdc5895b64d83",
+            "blob": "3ef7c4c3c534ad2d67da2d013fb5acb2c31d7cab",
             "content": "sha256:0429c10cb9952e8e19996e7873c9fb28e8633d00fc915771d4ea082e1b39610b",
             "locator": {
-              "end": 1607,
+              "end": 1635,
               "kind": "line_range",
-              "start": 1607
+              "start": 1635
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "1bfb00308241e515a92cac106e6bdc5895b64d83",
+            "blob": "3ef7c4c3c534ad2d67da2d013fb5acb2c31d7cab",
             "content": "sha256:0429c10cb9952e8e19996e7873c9fb28e8633d00fc915771d4ea082e1b39610b",
             "locator": {
-              "end": 2212,
+              "end": 2258,
               "kind": "line_range",
-              "start": 2212
+              "start": 2258
             }
           },
           "kind": "test"
@@ -1902,16 +1872,14 @@
       ]
     },
     "296": {
-      "note": "Current exact consumer populations are seven for comparison, twelve for overview-order and fourteen for repeated cleanup; the reviewer-worklist-process support survives and the retired conversation/Eve artifacts are not declared.\n\nAnchor: Catalog artifact declarations",
+      "note": "Current exact consumer populations are seven for comparison, twelve for overview-order and fourteen for repeated cleanup; the reviewer-worklist-process support survives and the retired conversation/Eve artifacts are not declared.",
       "targets": [
         {
           "anchor": {
-            "blob": "1bfb00308241e515a92cac106e6bdc5895b64d83",
-            "content": "sha256:bea7bc9aafcce99e755b6579163065fd4a1052c36c2616408380094651a62882",
+            "blob": "3ef7c4c3c534ad2d67da2d013fb5acb2c31d7cab",
+            "content": "sha256:71cb4752b38086c3d97657d840980385fdba2c95f7444a7d5f5011b8d58c94d2",
             "locator": {
-              "end": 3207,
-              "kind": "line_range",
-              "start": 1
+              "kind": "file"
             }
           },
           "kind": "test"
@@ -1919,16 +1887,16 @@
       ]
     },
     "297": {
-      "note": "Only consumer lists change. The existing user-settings guard and Node lockfile gain seven new regression modules; Curator coherence support gains the manifest-edges consumer; Paseo launch and runtime support both gain leaf_enclosure_start plus memory/step-up/choice/recovery consumers. Artifact/contract identities and executable replacement contracts stay unchanged.\n\nAnchor: Current source; preserved L88 property 297",
+      "note": "The L88 consumer-only account is historical. The current comparison adds review_curator_fixture_support.py and reviewer_leaf_view_support.py; eight existing artifact rows change consumers, with existing non-consumer metadata and contract rows preserved.",
       "targets": [
         {
           "anchor": {
-            "blob": "21164a466abc3378e958629585e9f5bebc4acfb0",
-            "content": "sha256:c4a4a26b34cf69dae02a49cdd9b38ee7a17eb77586551c071ef737774bb30326",
+            "blob": "3ef7c4c3c534ad2d67da2d013fb5acb2c31d7cab",
+            "content": "sha256:6080685481d93f88a8a0dc76a7b979d4951d1c5c1023704ab1ee4582a5c87ec1",
             "locator": {
-              "end": 3252,
+              "end": 2942,
               "kind": "line_range",
-              "start": 1
+              "start": 2902
             }
           },
           "kind": "test"
@@ -1940,12 +1908,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f9e4075c0ee36227fc0514262e5ed902f5307703",
+            "blob": "3ef7c4c3c534ad2d67da2d013fb5acb2c31d7cab",
             "content": "sha256:7dbbaeedb0f57f91fd0e574f221afe45f51d21f8e7d84b7fc6c34c1a43f57381",
             "locator": {
-              "end": 543,
+              "end": 547,
               "kind": "line_range",
-              "start": 532
+              "start": 536
             }
           },
           "kind": "test"
@@ -1957,12 +1925,143 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f9e4075c0ee36227fc0514262e5ed902f5307703",
+            "blob": "3ef7c4c3c534ad2d67da2d013fb5acb2c31d7cab",
             "content": "sha256:7dbbaeedb0f57f91fd0e574f221afe45f51d21f8e7d84b7fc6c34c1a43f57381",
             "locator": {
-              "end": 1956,
+              "end": 1969,
               "kind": "line_range",
-              "start": 1945
+              "start": 1958
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "300": {
+      "note": "At the pre-L109 L53 freeze (CODE d457a9ae / MEMORY bacaaf79), Current source delta inspected statically: The code-base-to-candidate diff adds consumers only to twelve existing artifact rows. Retain the statically parsed 13-contract/93-artifact account and historical earlier counts; catalog declarations are reachability, not a loader, test, lane or acceptance result. This retained 13-contract/93-artifact source observation is historical on the successor with13contracts/101artifacts; it remains no loader/test/acceptance result. Retained historical passed-L111 catalog observation (not a current post-sync census): The current declarative catalog has 14 contract rows and 94 artifact rows. It includes the permanent local-composition tool_answer_l111_test_support artifact and tool-answer-l111-shaped-rows replacement contract. These declarations establish ownership/reachability, not observed execution or a fresh acceptance census; older catalog populations are historical.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3ef7c4c3c534ad2d67da2d013fb5acb2c31d7cab",
+            "content": "sha256:1c4283fcfbf95371e3d500626b85b0fc2a713f59908fa88169ba45c9ddb73704",
+            "locator": {
+              "end": 1052,
+              "kind": "line_range",
+              "start": 1051
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "3ef7c4c3c534ad2d67da2d013fb5acb2c31d7cab",
+            "content": "sha256:30f212a66e08058a95af77b80d5578d39567a3198521a13cfc42a5debab1f495",
+            "locator": {
+              "end": 1825,
+              "kind": "line_range",
+              "start": 1823
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "3ef7c4c3c534ad2d67da2d013fb5acb2c31d7cab",
+            "content": "sha256:1c4283fcfbf95371e3d500626b85b0fc2a713f59908fa88169ba45c9ddb73704",
+            "locator": {
+              "end": 2491,
+              "kind": "line_range",
+              "start": 2490
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "3ef7c4c3c534ad2d67da2d013fb5acb2c31d7cab",
+            "content": "sha256:9408240cc5c77aeb098dd1110fa933254d26ab9ee40948406b9a5f35395fc234",
+            "locator": {
+              "end": 2524,
+              "kind": "line_range",
+              "start": 2523
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "301": {
+      "note": "**Historical source-bound reference account, not an operative override:** The registered-preview comparator's artifact row retains its replacement contract and lists both direct and transitive consumers. Anchor: 2072-2089",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3ef7c4c3c534ad2d67da2d013fb5acb2c31d7cab",
+            "content": "sha256:71cb4752b38086c3d97657d840980385fdba2c95f7444a7d5f5011b8d58c94d2",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "302": {
+      "note": "**Historical source-bound reference account, not an operative override:** The Node lockfile artifact declares test_worktree_own_environment.py as a consumer; this is dependency accounting, not evidence execution.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3ef7c4c3c534ad2d67da2d013fb5acb2c31d7cab",
+            "content": "sha256:6af2d7f28912ba7425c1cb69a1fa691c5a2c8c17dbc07527bd5c18525ee8f089",
+            "locator": {
+              "end": 2063,
+              "kind": "line_range",
+              "start": 2063
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "303": {
+      "note": "Diff-scope support declares line/movement/reach as canonically ordered exact consumers; the prior newest-last caption is historical, not a current ordering rule.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3ef7c4c3c534ad2d67da2d013fb5acb2c31d7cab",
+            "content": "sha256:47d5035b5e804fd83f7a63cc0ad4d09f10e8a2d865ab2d0e90d00cdbbc70bf37",
+            "locator": {
+              "end": 1003,
+              "kind": "line_range",
+              "start": 990
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "3ef7c4c3c534ad2d67da2d013fb5acb2c31d7cab",
+            "content": "sha256:cced5d9b2847a3ad003a3bc8f755968152fd1c1dd3a119319a5a4a64261ef1e2",
+            "locator": {
+              "end": 1015,
+              "kind": "line_range",
+              "start": 1013
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "304": {
+      "note": "**Historical source-bound reference account, not an operative override:** The read_scope_test_support artifact registers test_comparison_changeset as an exact consumer of knowledge-read-scope-cases.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3ef7c4c3c534ad2d67da2d013fb5acb2c31d7cab",
+            "content": "sha256:3651f541dd4816bb80aac7039adae26eefbb8683bbf4b784231e223f33de8ebd",
+            "locator": {
+              "end": 2833,
+              "kind": "line_range",
+              "start": 2781
             }
           },
           "kind": "test"
@@ -2043,12 +2142,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f9e4075c0ee36227fc0514262e5ed902f5307703",
+            "blob": "3ef7c4c3c534ad2d67da2d013fb5acb2c31d7cab",
             "content": "sha256:ee46da0fe4f4f25f8c39882e722654f89b0dce25aac78ddc22222326707c9815",
             "locator": {
-              "end": 1552,
+              "end": 1561,
               "kind": "line_range",
-              "start": 1538
+              "start": 1547
             }
           },
           "kind": "test"
@@ -2056,12 +2155,12 @@
       ]
     },
     "95": {
-      "note": "The Node lockfile artifact declares the two reviewer-worklist modules as consumers.",
+      "note": "**Historical source-bound reference account, not an operative override:** The Node lockfile artifact declares the two reviewer-worklist modules as consumers.",
       "targets": [
         {
           "anchor": {
-            "blob": "be67a66191636157ba9a476bc5ebd106beb93941",
-            "content": "sha256:bae742a074d1c1bdc216fd5101190b7cf0b0fb30b3d39485d98f01da33df28a7",
+            "blob": "3ef7c4c3c534ad2d67da2d013fb5acb2c31d7cab",
+            "content": "sha256:71cb4752b38086c3d97657d840980385fdba2c95f7444a7d5f5011b8d58c94d2",
             "locator": {
               "kind": "file"
             }
@@ -2071,16 +2170,16 @@
       ]
     },
     "98": {
-      "note": "Worklist process support declares a permanent local-composition artifact and its replacement test node.\n\nAnchor: file",
+      "note": "**Historical source-bound reference account, not an operative override:** Worklist process support declares a permanent local-composition artifact and its replacement test node. Anchor: file",
       "targets": [
         {
           "anchor": {
-            "blob": "f9e4075c0ee36227fc0514262e5ed902f5307703",
+            "blob": "3ef7c4c3c534ad2d67da2d013fb5acb2c31d7cab",
             "content": "sha256:45d3ad5ebf3b34c0d52363d06a02a1b01f53bcfd29c3edfb51548a3997408dd3",
             "locator": {
-              "end": 2898,
+              "end": 2961,
               "kind": "line_range",
-              "start": 2881
+              "start": 2944
             }
           },
           "kind": "test"
@@ -2088,12 +2187,12 @@
       ]
     },
     "99": {
-      "note": "The catalog declares test_converted_onboarding_drift.py on the curator-coherence, Node lockfile and knowledge-conversion artifact consumer lists.",
+      "note": "**Historical source-bound reference account, not an operative override:** The catalog declares test_converted_onboarding_drift.py on the curator-coherence, Node lockfile and knowledge-conversion artifact consumer lists.",
       "targets": [
         {
           "anchor": {
-            "blob": "be67a66191636157ba9a476bc5ebd106beb93941",
-            "content": "sha256:bae742a074d1c1bdc216fd5101190b7cf0b0fb30b3d39485d98f01da33df28a7",
+            "blob": "3ef7c4c3c534ad2d67da2d013fb5acb2c31d7cab",
+            "content": "sha256:71cb4752b38086c3d97657d840980385fdba2c95f7444a7d5f5011b8d58c94d2",
             "locator": {
               "kind": "file"
             }

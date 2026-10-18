@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "68c085f9fa0f12ede5f7f31e4c3f3ed96cfa89e4",
+        "blob": "ad49bbea3aa27328b16a81b38c0fac81b3448485",
         "content": "sha256:7451fad2a7395cbb0945efec59e2915caa9d695b48c363d98ac7d3e0e4a580f9",
         "locator": {
           "kind": "symbol",
@@ -171,14 +171,14 @@
       ]
     },
     "106": {
-      "note": "Facade imports the actual input and completion owners; no local duplicate class or recompute implementation remains. [106]",
+      "note": "The facade imports actual input/completion owners rather than duplicating their implementations.\n\nAnchor: exact import span",
       "targets": [
         {
           "anchor": {
-            "blob": "8fa5081f630c38538d7c677a173dd64a0c9e8e20",
-            "content": "sha256:cc13b2fad6601298c2565f8df1a3eb9ba7f447f0c0488870d006445956918ff6",
+            "blob": "ad49bbea3aa27328b16a81b38c0fac81b3448485",
+            "content": "sha256:99883935589c4f8fb8ab27d42981f11cadb8149dc49b8081a1261927379799f6",
             "locator": {
-              "end": 105,
+              "end": 104,
               "kind": "line_range",
               "start": 32
             }
@@ -188,17 +188,66 @@
       ]
     },
     "107": {
-      "note": "Contract worklist selection and marker applicability stay distinct from completion. [107]",
+      "note": "Enclosure worklist location, marker applicability and contract-bound run selection are separate operations.",
       "targets": [
         {
           "anchor": {
-            "blob": "8fa5081f630c38538d7c677a173dd64a0c9e8e20",
-            "content": "sha256:08cac62a8cc799a52a99aced8074138c0f9589c2d3c2ead22aff98fa6fdc9559",
+            "blob": "ad49bbea3aa27328b16a81b38c0fac81b3448485",
+            "content": "sha256:d7f4c2b6fc7dbe400b66dd6a3aee3f5f3b2d8d34330293000cbe29e425a1b9b5",
             "locator": {
-              "end": 177,
-              "kind": "line_range",
-              "start": 112
+              "kind": "symbol",
+              "name": "worklist_path"
             }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ad49bbea3aa27328b16a81b38c0fac81b3448485",
+            "content": "sha256:7ee2da3127a980defd0eff7f9137d74b8b4bbbd1949ecfcebf4c4c1000696a28",
+            "locator": {
+              "kind": "symbol",
+              "name": "leaf_gate_applies"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ad49bbea3aa27328b16a81b38c0fac81b3448485",
+            "content": "sha256:1b833292f957f4441a84c5880e8a2775c5e514db5cf58a077590746a33868994",
+            "locator": {
+              "kind": "symbol",
+              "name": "leaf_worklist"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "108": {
+      "note": "Persisted worklist reads use the observed UTF-8 text reader: missing file returns None, non-object JSON returns None, other read/decode/JSON failures are not silently converted to absence.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ad49bbea3aa27328b16a81b38c0fac81b3448485",
+            "content": "sha256:e19889420d0ee7c59605fbcc27eb9fa0925118105f328b2476dddc9533abcdf8",
+            "locator": {
+              "kind": "symbol",
+              "name": "read_leaf_worklist"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8e5fe3cc06555aa24b7a8353a5a2649d6e080876",
+            "content": "sha256:e786348fd708fd63c48c22be7a4bb9715f5c1ae97ba0ff3a8f903c1247849231",
+            "locator": {
+              "kind": "symbol",
+              "name": "observed_text"
+            },
+            "path": "mcp/src/agents_remember/kernel/recorded_reads.py"
           },
           "kind": "code"
         }

@@ -16,7 +16,7 @@ line counts, which the entry showed when it reused the change-set button, and ne
 subject catalogue.
 
 **Since MIK-L32 the entry also shows the unexplained-changes lane's count (MIK-R32 rule 9)** as its own element after
-`+N −N`, from the same summary answer (`attribution`): `· K unexplained`, or `· K unexplained · U unknown` when some
+`+N −N`, from the same summary answer (`attribution`): `· K without an invariant`, or `· K without an invariant · U unknown` when some
 changed file's attribution is unknown (K shown even when 0).
 
 ## Code Commentary
@@ -37,11 +37,16 @@ changed file's attribution is unknown (K shown even when 0).
 - **The lane's count (MIK-L32).** `AttributionCount` renders inside the button, after `IntentCounts`, as a separate
   `changeSetCounts` span (`data-testid="intent-review-attribution"`, `data-attribution-state`, `data-unexplained`,
   `data-unknown`). `attributionText` gives `· attribution partial` for a partially measured change set,
-  `· attribution unknown` for an unmeasured one, `· K unexplained · U unknown` when U > 0, `· K unexplained` when only
+  `· attribution unknown` for an unmeasured one, `· K without an invariant · U unknown` when U > 0, `· K without an invariant` when only
   K > 0, and nothing for 0/0; nothing renders while loading or when the summary carries no `attribution` (a dataset
   comparison). `AttributionDetails` renders beside the button for a partial or unavailable attribution, in
   `EntryStateDetails` labelled "Attribution", naming the unmeasured paths or the reason. The count is shown whatever
   the intent counts' own state (ruling 2026-09-30T12:19:20 Q6).
+
+- `OpenWorkCount` renders after `AttributionCount` inside the button. While loading, or when
+  `read.unexplainedOpen` is undefined, it renders nothing. Otherwise a separate
+  `data-testid="intent-review-open"` span says `· K open` for a truthy count or `· all answered` for zero.
+  The summary owner passes the optional unexplained_open value through as unexplainedOpen for counted, partial or refused answers. It remains a separate supplied open-work fact, not a revision count or independent acceptance verdict.
 
 ### Conventions
 
@@ -50,8 +55,9 @@ a `ChangeSetButton` and performs no change-set read.
 
 ### Invariants And Boundaries
 
-- **Unavailable is not zero.** No numbers are shown for an unread comparison; an unmeasured or pending attribution
-  never reads as zero either.
+- **Unavailable is not zero.** `IntentCounts` shows no revision counts for an unavailable comparison;
+  an unmeasured or pending attribution never reads as zero. `OpenWorkCount` independently renders any
+  defined nonloading `unexplainedOpen` value; this renderer does not gate it on the intent-count phase.
 - **Unexplained is a separate fact.** The lane's count is its own element and is never added to `+N −N`.
 - **The entry reads no subject catalogue, offers no subject picker and has no refresh control of its own.**
   Choosing a subject and re-reading the comparison belong to the reviewer.
@@ -74,17 +80,18 @@ No relevant domain documentation was found.
 
 ### Repo-Internal References
 
-- What the numbers are, what the entry does not do, why unavailable is not zero, and why the lane's count is a separate fact. [1]
-- The brief states and the counts inside the button. [2]
-- The disclosure beside the button for unavailable and partial answers. [3]
-- The lane's count inside the button and its disclosure beside it (MIK-L32). [4]
-- The control: its summary read, the task-context target and the recorded label. [5]
-- The count's states on the real summary: two elements, one request, never a zero. [6]
-- Where the bar mounts it. [7]
-- The cases that pin one control, the request economy and the brief states. [8]
-
 ### Cross-Repo References
 
 No cross-repository behavior.
 
 No meaningful cross-repo references found.
+
+- Revision counts come from the comparison summary, not line totals/catalogue size; targeting is task-context, unavailable is not measured zero, and attribution stays separate. [1]
+- IntentCounts displays loading/refusal or supplied revision counts, with a partial marker where appropriate. [2]
+- IntentDetails places the actual refusal or unresolved-subject explanation beside the control rather than fabricating revision counts. [3]
+- Attribution uses 'without an invariant' plus a separate unknown count, preserves partial/unavailable/zero-zero suppression, and retains its own detail block. [4]
+- IntentReviewEntry retains one task-context summary control, live/historical targeting and the recorded label; it now also mounts the independent open-work span. [5]
+- Stored assertion bodies keep revision and attribution elements separate, use the current without-an-invariant wording, exercise partial/unknown/zero cases and assert one summary request; these are source assertions, not a new run. [6]
+- LeafEntries mounts the control; DocChangeSetBar derives its facts from leaf lifecycle facts plus the shared revalidation generation. [7]
+- Stored refusal/compact-entry cases retain one control, task-context open and no false revision counts while preserving the actual refusal explanation; these are not fresh execution. [8]
+- OpenWorkCount suppresses loading/undefined values, renders a separate open/all-answered span otherwise and follows supplied optional unexplainedOpen even on a refused intent answer; it is not a MEMORY acceptance grade. [9]

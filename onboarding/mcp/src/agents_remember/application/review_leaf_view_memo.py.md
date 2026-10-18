@@ -7,7 +7,7 @@
 ## Purpose
 
 The bounded memo of the reviewer's leaf-wide view in the process that serves the reviewer. It keeps the
-settled worklist view of a live comparison under a key of exact
+settled worklist view and its optional accompanying code-change facts for a live comparison under a key of exact
 identities and together with every row the computation recorded outside the trees. It keeps no composed
 answer, writes nothing to disk, and is empty after a restart.
 
@@ -65,6 +65,12 @@ gets here, so an edit of a worktree is a new tree and a new key.
 
 After the nested gate-key construction recording closes, `leaf_view_key` replays those actual reads into the caller before checking whether the gate key is absent. This preserves enclosing read custody even on that refusal. Ruled-out sibling observations remain distinguished from admitted kept task dependencies; replay does not invent a read or turn an unconsumed candidate into a dependency.
 
+### Kept value and caller admission
+
+`LeafViewParts` now holds `worklist` and optional `code_changes`; the latter is not required merely to construct the dataclass. The current caller copies `worklist.code_changes` into those parts. Before calling `remember`, the caller requires readable sides, its settled result, every delivered item state other than `undecided`, and non-None code changes with state `facts`. Those admission checks belong to `review_tree_knowledge`, not to the dataclass or an inferred guarantee in `remember`.
+
+`remember` itself retains its failed/absent/moved-observation guards. This value is not a whole composed subject answer or a memory-tree patch. The leaf added a code-change fact field; it did not leave the kept value “worklist and nothing else”.
+
 ## Evidence
 
 - The two bounds. [5]
@@ -80,8 +86,9 @@ After the nested gate-key construction recording closes, `leaf_view_key` replays
 - Not read, same bytes, other bytes, a conflict and an unnamed document, each judged. [15]
 - Count and age bounds, and no answer for another key. [16]
 - A view behind which a read failed is not kept. [17]
-- The memo keeps the settled worklist over the comparison's trees [18]
-- An unsettled worklist or unreadable side is never kept [19]
-- The kept parts hold the worklist view and nothing else [20]
 
-- Nested key-construction reads are replayed to the enclosing recorder before the no-key return. [21]
+
+- The kept value includes the worklist and its optional code-change facts; the actual caller propagates those facts. [18]
+- Caller admission requires readable/settled/decided/facts inputs, then remember separately checks failed/absent/moved observations. [19]
+- LeafViewParts has worklist and optional code_changes, not worklist alone. [20]
+- Nested gate-key observations are replayed before the absent-key return. [21]

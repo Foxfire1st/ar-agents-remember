@@ -1,13 +1,32 @@
 {
   "path": "mcp/src/agents_remember/models/lifecycles/review_assessment.py",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "4fd1f27d3283052427f6944c13312ee2c3991752",
+        "content": "sha256:b664e5efcbd2673eda80d73bd27b158a41b965be309db38097bcc7eddb4d527a",
+        "locator": {
+          "kind": "symbol",
+          "name": "_counts_describe_the_records_that_exist"
+        }
+      },
+      "id": "RLZ-9RYCK9",
+      "invariant": "INV-XYE5A3",
+      "origin": {
+        "handoffEntry": "CUR-L57-assessment-unresolved-population",
+        "leaf": "260928-MIK-L57"
+      },
+      "rationale": "Checks unresolvedCount against the actual unresolved-disposition entries, not merely the assessment total, beside the existing exact binding-state partition checks.",
+      "role": "enforcement"
+    }
+  ],
   "references": {
     "1": {
-      "note": "The three kinds of record that must not be promoted into each other.",
+      "note": "Retained assessment and evidence-reference values keep authored records distinct from their citations; this model supplies no conversion operation.\n\nAnchor: `ReviewAssessment`, `AssessmentEvidenceReference`",
       "targets": [
         {
           "anchor": {
-            "blob": "f0a20f3f2923693dfd1ba1d7a1edaba1cf49e5f8",
+            "blob": "4fd1f27d3283052427f6944c13312ee2c3991752",
             "content": "sha256:cff7d39f12dfbf00980e304b6b041a9e1cc2f724673d97086701236a7fe6cb3e",
             "locator": {
               "kind": "symbol",
@@ -18,8 +37,8 @@
         },
         {
           "anchor": {
-            "blob": "64b193a86dfde5bf1f874b750ae2e9664e3734e3",
-            "content": "sha256:3515be5c996dc461c6589ac3549461547bcbf48a3f0deeb9bc875d52daad9ec0",
+            "blob": "4fd1f27d3283052427f6944c13312ee2c3991752",
+            "content": "sha256:70199ab2a7d4359e9940058b10ffaace2732a2069be8bd697d2d34c6f29bbf2d",
             "locator": {
               "kind": "symbol",
               "name": "AssessmentEvidenceReference"
@@ -30,12 +49,12 @@
       ]
     },
     "2": {
-      "note": "What a caller may author, and the stored record that adds provenance and the examined-input binding.",
+      "note": "Caller revision and stored assessment share authored fields; provenance and examined-input binding belong to the stored record, not the caller revision.\n\nAnchor: `ReviewAssessmentRevision`, `ReviewAssessment`, `_AuthoredAssessmentFields`, `ExaminedInputs`, `AssessmentProvenance`",
       "targets": [
         {
           "anchor": {
-            "blob": "64b193a86dfde5bf1f874b750ae2e9664e3734e3",
-            "content": "sha256:16d69ce24987cd3f5dfb1caf822527e05631acf439a3b9d2a015be26e47a1019",
+            "blob": "4fd1f27d3283052427f6944c13312ee2c3991752",
+            "content": "sha256:dc6f59838bb455363519131caba84eb37cf3f4bdf40a3112f16fca55964cbadb",
             "locator": {
               "kind": "symbol",
               "name": "ReviewAssessmentRevision"
@@ -45,7 +64,7 @@
         },
         {
           "anchor": {
-            "blob": "f0a20f3f2923693dfd1ba1d7a1edaba1cf49e5f8",
+            "blob": "4fd1f27d3283052427f6944c13312ee2c3991752",
             "content": "sha256:cff7d39f12dfbf00980e304b6b041a9e1cc2f724673d97086701236a7fe6cb3e",
             "locator": {
               "kind": "symbol",
@@ -56,7 +75,7 @@
         },
         {
           "anchor": {
-            "blob": "f0a20f3f2923693dfd1ba1d7a1edaba1cf49e5f8",
+            "blob": "4fd1f27d3283052427f6944c13312ee2c3991752",
             "content": "sha256:0c22c5b0395667f8b229876c30a0bd5da6e1920c9be69cf6349bffd2b9258e3e",
             "locator": {
               "kind": "symbol",
@@ -67,7 +86,7 @@
         },
         {
           "anchor": {
-            "blob": "f0a20f3f2923693dfd1ba1d7a1edaba1cf49e5f8",
+            "blob": "4fd1f27d3283052427f6944c13312ee2c3991752",
             "content": "sha256:a49e9bc757add94996cbdf161c47ca5b827ed9afdb9b48cf027410333d4723a4",
             "locator": {
               "kind": "symbol",
@@ -78,24 +97,11 @@
         },
         {
           "anchor": {
-            "blob": "f0a20f3f2923693dfd1ba1d7a1edaba1cf49e5f8",
-            "content": "sha256:505c03f7a0cdc6a57ff0bc1ff81775a2435d468f7b5902c9c1b9791cac5e04bb",
+            "blob": "4fd1f27d3283052427f6944c13312ee2c3991752",
+            "content": "sha256:675f1ee6cfff1b17c8de9c428ca427f320301f64b0a58ed5d396f853ce66c960",
             "locator": {
-              "end": 262,
-              "kind": "line_range",
-              "start": 236
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "64b193a86dfde5bf1f874b750ae2e9664e3734e3",
-            "content": "sha256:d0190d13f06fef3f2c0328f78a63af57060c24330d5e220af8a92dba688e02ff",
-            "locator": {
-              "end": 365,
-              "kind": "line_range",
-              "start": 343
+              "kind": "symbol",
+              "name": "AssessmentProvenance"
             }
           },
           "kind": "code"
@@ -103,11 +109,11 @@
       ]
     },
     "3": {
-      "note": "The closed disposition vocabulary and the validator that keeps the three values from being spelled with each other's shape.",
+      "note": "The closed disposition vocabulary and actual validator refuse nonempty no_concern_found finding text; the converse concern_found finding requirement is not enforced.\n\nAnchor: `ReviewAssessmentDisposition`, `_disposition_and_subject_agree`",
       "targets": [
         {
           "anchor": {
-            "blob": "f0a20f3f2923693dfd1ba1d7a1edaba1cf49e5f8",
+            "blob": "4fd1f27d3283052427f6944c13312ee2c3991752",
             "content": "sha256:f779c85d53ae8a0bc0f8848c8c071de34c9b90850c14530aa4684073bfbcbc81",
             "locator": {
               "kind": "symbol",
@@ -118,7 +124,7 @@
         },
         {
           "anchor": {
-            "blob": "f0a20f3f2923693dfd1ba1d7a1edaba1cf49e5f8",
+            "blob": "4fd1f27d3283052427f6944c13312ee2c3991752",
             "content": "sha256:8d791346f531f82cbbb3a572d01980e9ece8ced35b0d196ccc7f9959567a67b6",
             "locator": {
               "kind": "symbol",
@@ -130,12 +136,12 @@
       ]
     },
     "4": {
-      "note": "The subject kinds, the identity any kind carries, and the shape rule that pairs revisions with the kinds that have them.",
+      "note": "Subject identity and revision-bearing-kind constraints are structural and keep comparison subjects tied to their own comparison.\n\nAnchor: `AssessmentSubject`, `_subject_shape_matches_its_kind`",
       "targets": [
         {
           "anchor": {
-            "blob": "64b193a86dfde5bf1f874b750ae2e9664e3734e3",
-            "content": "sha256:32b3054f7acf128052a2256214e0178140c834aec4c0cfa1f6169de1513d800e",
+            "blob": "4fd1f27d3283052427f6944c13312ee2c3991752",
+            "content": "sha256:515cb295ea9367b4adcec664da3b17d4d3d018012b8892ec1f2addbb0c5e6e05",
             "locator": {
               "kind": "symbol",
               "name": "AssessmentSubject"
@@ -145,7 +151,7 @@
         },
         {
           "anchor": {
-            "blob": "f0a20f3f2923693dfd1ba1d7a1edaba1cf49e5f8",
+            "blob": "4fd1f27d3283052427f6944c13312ee2c3991752",
             "content": "sha256:3ca232fcad819b9b8880e0a7f38b8a84b317cdafc15843b5f05075754dc9d2f8",
             "locator": {
               "kind": "symbol",
@@ -157,11 +163,11 @@
       ]
     },
     "5": {
-      "note": "The subject states a read reports and the one function that decides which one a subject is in.",
+      "note": "The projection keeps explicit none-recorded and unmeasured states; the factory derives counted dispositions and uses binding-state precedence without manufacturing measurements.\n\nAnchor: `SubjectAssessmentStatus`, `assessment_state_for`",
       "targets": [
         {
           "anchor": {
-            "blob": "f0a20f3f2923693dfd1ba1d7a1edaba1cf49e5f8",
+            "blob": "4fd1f27d3283052427f6944c13312ee2c3991752",
             "content": "sha256:1f39f1a245c8ddf6ed8949eb5f339e28bd6228fa698dfe92849913975a0f48c0",
             "locator": {
               "kind": "symbol",
@@ -172,7 +178,7 @@
         },
         {
           "anchor": {
-            "blob": "f0a20f3f2923693dfd1ba1d7a1edaba1cf49e5f8",
+            "blob": "4fd1f27d3283052427f6944c13312ee2c3991752",
             "content": "sha256:0b44d7805fec6afeab23ec939d2a7cdba560f0b0f2b65ea8da7d97b637fcc1ec",
             "locator": {
               "kind": "symbol",
@@ -184,11 +190,11 @@
       ]
     },
     "6": {
-      "note": "The read projection a caller receives, which carries identity, disposition and currentness and never a signal's payload.",
+      "note": "Assessment entries retain identity/disposition/currentness and the subject summary validates the actual carried entries and binding-state partition.\n\nAnchor: `AssessmentEntry`, `SubjectAssessmentState`",
       "targets": [
         {
           "anchor": {
-            "blob": "f0a20f3f2923693dfd1ba1d7a1edaba1cf49e5f8",
+            "blob": "4fd1f27d3283052427f6944c13312ee2c3991752",
             "content": "sha256:f1688eed84db7f84d6f5903ca89ba4b1efcb4e1d5a9aafc850b9b80b6df3488d",
             "locator": {
               "kind": "symbol",
@@ -199,14 +205,42 @@
         },
         {
           "anchor": {
-            "blob": "f0a20f3f2923693dfd1ba1d7a1edaba1cf49e5f8",
-            "content": "sha256:4faf2f2634b984c53e7008b3efeefafe750a9af482e72f5c96d16a475fe3d561",
+            "blob": "4fd1f27d3283052427f6944c13312ee2c3991752",
+            "content": "sha256:c973a0216267b57a66a30a0157ca64beb3b3c6b2e5c95f05740faf92c4332215",
             "locator": {
               "kind": "symbol",
               "name": "SubjectAssessmentState"
             }
           },
           "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "Unresolved count is the number of unresolved dispositions, not merely an integer below the total; the stored regression rejects both a false zero and a false one within the total.\n\nAnchor: `_counts_describe_the_records_that_exist`, `test_unresolved_count_must_match_the_entries_not_only_the_total`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4fd1f27d3283052427f6944c13312ee2c3991752",
+            "content": "sha256:b664e5efcbd2673eda80d73bd27b158a41b965be309db38097bcc7eddb4d527a",
+            "locator": {
+              "kind": "symbol",
+              "name": "_counts_describe_the_records_that_exist"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ea4ef5d83ffe9733de18c20f0e1a405aaf633a41",
+            "content": "sha256:d9122ab0fd70e1b4954ac2e3f17bc174e0d4be0b7a026ec96268c9ebbc607b54",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_unresolved_count_must_match_the_entries_not_only_the_total"
+            },
+            "path": "mcp/tests/test_knowledge_review_evidence_channels.py"
+          },
+          "kind": "test"
         }
       ]
     }

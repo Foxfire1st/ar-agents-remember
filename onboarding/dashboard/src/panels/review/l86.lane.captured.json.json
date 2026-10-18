@@ -2,30 +2,13 @@
   "path": "dashboard/src/panels/review/l86.lane.captured.json",
   "realizes": [],
   "references": {
-    "1": {
-      "note": "Lane destinations with per-file buckets\n\nAnchor: `lane`",
+    "3": {
+      "note": "The current retained JSON input supplies the literal identities, response states and populations summarized above; these are fixture facts, not live project knowledge or fresh execution evidence.",
       "targets": [
         {
           "anchor": {
-            "blob": "800ce4e6b44dfe58a87d0ad10caf149c27d3cca5",
-            "content": "sha256:ca89fd115354131d7e7495ff644f99c500ecb3fedde466fc74c216b2a419bd6b",
-            "locator": {
-              "end": 1,
-              "kind": "line_range",
-              "start": 1
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "2": {
-      "note": "Recorded comparison the lane classifies\n\nAnchor: `comparison`",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "800ce4e6b44dfe58a87d0ad10caf149c27d3cca5",
-            "content": "sha256:ca89fd115354131d7e7495ff644f99c500ecb3fedde466fc74c216b2a419bd6b",
+            "blob": "12127e4e4e6a5eda11d0ddd39eb4045c59a85d6e",
+            "content": "sha256:90cbb600bc8a9626973f0439a9a8c5905ab33ac916e7a1da7bfbfc53ac3d668f",
             "locator": {
               "end": 1,
               "kind": "line_range",

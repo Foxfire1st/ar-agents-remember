@@ -1,0 +1,28 @@
+# dashboard/src/panels/review/ReviewKeys.test.tsx
+
+## Governing Overview
+
+[Owning route overview](../overview.md)
+
+## Purpose
+
+Document the assertion and fixture obligations declared by this test source.
+
+## Code Commentary
+
+Key-reference component checks effective rebound N/k, question-mark opening outside editable/other zones, modifiers, close and listener disposal. Registry completeness belongs to commands.test.ts.
+
+### Declared Assertions
+
+- `it('opens a named key reference from a visible Keys control and shows effective bindings', async () => {`
+- `it('opens with ? outside text fields, ignores editable and other zones, and removes its listener', async () => {`
+
+This is a declaration inventory, not a collected parametrized-case total or execution result.
+
+### Evidence Boundary
+
+The source declares these checks. This card does not attest that pytest/Vitest, a native host, a real browser or an installed producer ran on this candidate. Controlled or captured inputs qualify only the operations named above.
+
+## Evidence
+
+- Key-reference component checks effective rebound N/k, question-mark opening outside editable/other zones, modifiers, close and listener disposal. Registry completeness belongs to commands.test.ts. [1]

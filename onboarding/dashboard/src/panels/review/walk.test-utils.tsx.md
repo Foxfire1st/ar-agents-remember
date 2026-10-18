@@ -14,13 +14,13 @@ Serve the mounted walked-tree tests (`ReviewSurface.walk*.test.tsx`, `walkedTree
 ### Serving
 
 - `captured(name)` reads and parses a JSON file that lies beside the test file.
-- `serve(world)` stubs `fetch`. A request whose path ends in `/entries` gets `world.entries`; one ending in `/trees` or `/source-content` gets `world.tree(url)`, or a typed refusal when the world has none; every other request is a review request and gets `world.review(url)`. An answer of `undefined` throws ("Unexpected review request"), and an `Error` value is thrown as a transport failure. Each answer is a `structuredClone` of the body, because the reviewer tells answers apart by identity. The function returns the request log: `all`, and `reviews()`, the requests to `/api/review/intent`.
+- `serve(world)` stubs `fetch`. A request whose path ends in `/entries` gets `world.entries`; one ending in `/trees` or `/source-content` first uses a non-nullish `world.tree(url)` answer. Otherwise, a `/trees` request without `lane`, `file` or `invariants` query keys gets the captured leaf-wide tree answer; other tree or source-content requests get the typed `REFUSED` body; every other request is a review request and gets `world.review(url)`. An answer of `undefined` throws ("Unexpected review request"), and an `Error` value is thrown as a transport failure. Each answer is a `structuredClone` of the body, because the reviewer tells answers apart by identity. The function returns the request log: `all`, and `reviews()`, the requests to `/api/review/intent`.
 - `world` is the mutable description of what the test in progress serves: `answer`, `tree`, `entries` and the `requests` log. `serveWorld()` clears `localStorage`, sets the tree order to `triage`, resets the world to the real-data bodies and stubs `fetch`. `installWorld()` runs `serveWorld` before each test, then cleans up and removes the stub after each. The common Testing Library and Vitest setup owns hang guards.
 - `reviewCount()` is the number of review requests of the test in progress.
 
 ### The real-data world
 
-The default world is the served answers of the scratch leaf 260928-MIK-L33 (`walkReal.capture-provenance.json`): the catalogue, the task-context answer, the reviews of the families FAM-R6R095RW (`R6R`) and FAM-2HBJREC2 (`HBJ`), and the reviews of the seven changed members of FAM-R6R095RW. `CHANGES` lists those seven in the order `j` visits them; the last, INV-2TQGXFAX (`SHARED`), belongs to both families. `R6R_ID`, `HBJ_ID`, `R6R_TITLE` and `HBJ_TITLE` are the families' identifiers and labels as the bodies carry them. `bodyOf(name)` loads any body of the set.
+The default world is the served answers of the scratch leaf 260928-MIK-L33 (`walkReal.capture-provenance.json`): the catalogue, the leaf-wide tree answer (`walkReal.trees.captured.json`), the task-context answer, the reviews of the families FAM-R6R095RW (`R6R`) and FAM-2HBJREC2 (`HBJ`), and the reviews of the seven changed members of FAM-R6R095RW. `CHANGES` lists those seven in the order `j` visits them; the last, INV-2TQGXFAX (`SHARED`), belongs to both families. `R6R_ID`, `HBJ_ID`, `R6R_TITLE` and `HBJ_TITLE` are the families' identifiers and labels as the bodies carry them. `bodyOf(name)` loads any body of the set.
 
 ### Readers and steps
 
@@ -35,7 +35,6 @@ The default world is the served answers of the scratch leaf 260928-MIK-L33 (`wal
 
 ## Evidence
 
-- The `fetch` stub: routes by path, clones each answer, and logs requests. [1]
 - The real-data world: the changes in `j` order and the bodies by subject. [2]
 - The mutable world of the test in progress. [3]
 - Serving the world to one test, with the triage order and a clean preference store. [4]
@@ -52,9 +51,11 @@ The default world is the served answers of the scratch leaf 260928-MIK-L33 (`wal
 - The click on the second family's row after both families are shown in the expected order. [9]
 
 - The receipt of the real-data bodies. [10]
-- Fetch stub answering from the served world [11]
-- Real-data world of the scratch leaf [12]
 - Per-test world with triage order and tree view reset [13]
 - Suite installation with timeout and cleanup [14]
 - Mounted-surface readers of the tree [15]
 - Single presses with asserted request counts [16]
+
+- serve logs requests, prioritizes non-nullish custom tree replies, supplies the captured leaf-wide answer only for unscoped /trees requests, refuses other unanswered tree/source-content requests, and clones answers. [1]
+- The fetch stub preserves custom tree-answer priority, adds the unscoped leaf-wide captured reply, retains scoped/source-content refusal, and preserves request logging, cloning and unexpected-review failures. [11]
+- The default real-data world includes the captured leaf-wide tree reply alongside the catalogue, task and review bodies; preserve the existing CHANGES target. [12]

@@ -3,11 +3,12 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "ed5174dfa793a45df76051be0a6b5db69f61af51",
-        "content": "sha256:b567ee6915ee1c9fca9925a25fad2b9ad0151c27e6c20d818e21a7cf8f91ad27",
+        "blob": "ac4e85fe7aa5576fda77fc34929e7d5305f09a36",
+        "content": "sha256:e0b54be0d4a73b25300008c6bc63f18d525a32122da5c25012426974a2581476",
         "locator": {
-          "kind": "symbol",
-          "name": "ReviewCenterBody"
+          "end": 958,
+          "kind": "line_range",
+          "start": 772
         }
       },
       "id": "RLZ-1PT6BEVC",
@@ -15,12 +16,12 @@
       "origin": {
         "leaf": "260921-ICR-L46"
       },
-      "rationale": "Derives linksIncomplete and the selected family entry from centerSelection and passes both into the one expressions element that every center variant renders (CenterExpressions). That element hands linksIncomplete to ReviewExpressions for a dataset review and the family entry to cardScope for a tree comparison. It also passes onRosterNext to the member, family and unavailable-member centers, so the partial-links notice and the user-driven roster continuation survive whichever view is shown.",
+      "rationale": "The center builds one focused expressions element and carries the selected family entry into CenterExpressions, which supplies cardScope(entry) to ExpressionCards or states that a measured tree comparison is required. ReviewCenterBody and SelectedCenter propagate onRosterNext to member/family/unavailable-member paths. The old dataset ReviewExpressions/linksIncomplete branch is removed, not preserved by this carrier.",
       "role": "propagation-persistence"
     },
     {
       "anchor": {
-        "blob": "ed5174dfa793a45df76051be0a6b5db69f61af51",
+        "blob": "ac4e85fe7aa5576fda77fc34929e7d5305f09a36",
         "content": "sha256:ac7527b346f65bf4501f58177628cd648ffaac83d0c2d6297c6b44dc9a4b2aea",
         "locator": {
           "kind": "symbol",
@@ -33,12 +34,12 @@
         "handoffEntry": "MIK-L154 center follows tree order",
         "leaf": "260928-MIK-L154"
       },
-      "rationale": "displayedMemberRanks obtains positions from the same outlineGroups source as the sidebar rather than computing a second divergent display order.",
+      "rationale": "displayedMemberRanks takes positions from the center's own outlineGroups call, which omits the code-fact map the sidebar supplies; changeTriage uses that map to assign badges and sort, so a member's center rank can differ from the sidebar's.",
       "role": "presentation"
     },
     {
       "anchor": {
-        "blob": "ed5174dfa793a45df76051be0a6b5db69f61af51",
+        "blob": "ac4e85fe7aa5576fda77fc34929e7d5305f09a36",
         "content": "sha256:4adf74cc900f03be6a115eec973db03ee4572d19d3f4d14077901de3802a33a4",
         "locator": {
           "kind": "symbol",
@@ -51,13 +52,13 @@
         "handoffEntry": "MIK-L154 center follows tree order",
         "leaf": "260928-MIK-L154"
       },
-      "rationale": "orderedCenterMembers retains each distinct revision while ordering by the displayed outline ranks when available and using the previous semantic order otherwise.",
+      "rationale": "orderedCenterMembers retains each distinct revision while ordering by the ranks the center itself displays when available and using the previous semantic order otherwise; those ranks are not necessarily the sidebar's.",
       "role": "presentation"
     },
     {
       "anchor": {
-        "blob": "ed5174dfa793a45df76051be0a6b5db69f61af51",
-        "content": "sha256:902393a752acb527186c374a3421c660bc6d5774fef9118c59fa4c7ca6009756",
+        "blob": "ac4e85fe7aa5576fda77fc34929e7d5305f09a36",
+        "content": "sha256:f0062d28f1bcc54e81bb6638608c13d06067b7af42e3914ebd10a44f635f8af7",
         "locator": {
           "kind": "symbol",
           "name": "MemberCenter"
@@ -73,8 +74,8 @@
     },
     {
       "anchor": {
-        "blob": "ed5174dfa793a45df76051be0a6b5db69f61af51",
-        "content": "sha256:2861fc7f1a180414784790d186323d44393a821c03b4583eb353a9dd7d562c97",
+        "blob": "ac4e85fe7aa5576fda77fc34929e7d5305f09a36",
+        "content": "sha256:b2c44821862fca385848ae70e750f2cb6c6d30919f83603d45c61f6fe57256be",
         "locator": {
           "kind": "symbol",
           "name": "CenterExpressions"
@@ -91,8 +92,8 @@
     },
     {
       "anchor": {
-        "blob": "ed5174dfa793a45df76051be0a6b5db69f61af51",
-        "content": "sha256:902393a752acb527186c374a3421c660bc6d5774fef9118c59fa4c7ca6009756",
+        "blob": "ac4e85fe7aa5576fda77fc34929e7d5305f09a36",
+        "content": "sha256:f0062d28f1bcc54e81bb6638608c13d06067b7af42e3914ebd10a44f635f8af7",
         "locator": {
           "kind": "symbol",
           "name": "MemberCenter"
@@ -108,7 +109,7 @@
     },
     {
       "anchor": {
-        "blob": "ed5174dfa793a45df76051be0a6b5db69f61af51",
+        "blob": "ac4e85fe7aa5576fda77fc34929e7d5305f09a36",
         "content": "sha256:a23fe7fbf9f7df76598ff41cf81387beb7b9b670faabffc219887d0524d4c8b5",
         "locator": {
           "kind": "symbol",
@@ -126,8 +127,8 @@
     },
     {
       "anchor": {
-        "blob": "ed5174dfa793a45df76051be0a6b5db69f61af51",
-        "content": "sha256:e1ce9a8a3f098e668996ff97e8cfa6d42a4e0b2b32620d231035d31265e43e46",
+        "blob": "ac4e85fe7aa5576fda77fc34929e7d5305f09a36",
+        "content": "sha256:07050a4346c16a617b9cc82bf3c217ff2b6553a0f5e76bcdbeb92864f725ab99",
         "locator": {
           "kind": "symbol",
           "name": "FamilyCenter"
@@ -144,7 +145,7 @@
     },
     {
       "anchor": {
-        "blob": "ed5174dfa793a45df76051be0a6b5db69f61af51",
+        "blob": "ac4e85fe7aa5576fda77fc34929e7d5305f09a36",
         "content": "sha256:82b12541db763fd15594100311f1562bf38d7501c303868451a6ab6f555d06c5",
         "locator": {
           "kind": "symbol",
@@ -162,8 +163,8 @@
     },
     {
       "anchor": {
-        "blob": "ed5174dfa793a45df76051be0a6b5db69f61af51",
-        "content": "sha256:2a6e86d4b2952915b36c083e08763415e668937544ddbf9c369f370f0178607b",
+        "blob": "ac4e85fe7aa5576fda77fc34929e7d5305f09a36",
+        "content": "sha256:7d311ac9e82ffae01ff0c6f68952199ccd7a9b40288d55b0e58098878a7ea502",
         "locator": {
           "kind": "symbol",
           "name": "UnavailableMember"
@@ -181,29 +182,34 @@
   ],
   "references": {
     "12": {
-      "note": "The guarantee comparison by kind.\n\nAnchor: `GuaranteeComparisonBlock`",
+      "note": "Guarantee comparison is delegated to its surviving extracted owner.\n\nAnchor: current source extent",
       "targets": [
         {
           "anchor": {
-            "blob": "ed5174dfa793a45df76051be0a6b5db69f61af51",
-            "content": "sha256:b0577cc0078831899435364e101aea4a96ba759398c451ae758dfc8c54a01500",
+            "blob": "99713fb4b8e8123ffe1a5353b3575be10ec3a5d8",
+            "content": "sha256:deab132b40316eafd0463e17d08d7a8f2ea90b9b05f09f258dab1aabf86a58f3",
             "locator": {
-              "kind": "file"
-            }
+              "end": 115,
+              "kind": "line_range",
+              "start": 33
+            },
+            "path": "dashboard/src/panels/review/FamilyGuarantees.tsx"
           },
           "kind": "code"
         }
       ]
     },
     "13": {
-      "note": "The unselected centre.\n\nAnchor: `UnselectedCenter`",
+      "note": "Unselected source/intent content with a meaning-field guard.\n\nAnchor: current source extent",
       "targets": [
         {
           "anchor": {
-            "blob": "ed5174dfa793a45df76051be0a6b5db69f61af51",
-            "content": "sha256:b0577cc0078831899435364e101aea4a96ba759398c451ae758dfc8c54a01500",
+            "blob": "ac4e85fe7aa5576fda77fc34929e7d5305f09a36",
+            "content": "sha256:a23fe7fbf9f7df76598ff41cf81387beb7b9b670faabffc219887d0524d4c8b5",
             "locator": {
-              "kind": "file"
+              "end": 181,
+              "kind": "line_range",
+              "start": 152
             }
           },
           "kind": "code"
@@ -211,14 +217,16 @@
       ]
     },
     "14": {
-      "note": "The completeness of a family entry's member context.\n\nAnchor: `membersComplete`",
+      "note": "The roster partial label uses complete pages, exact row totals and recorded member content.\n\nAnchor: current source extent",
       "targets": [
         {
           "anchor": {
-            "blob": "ed5174dfa793a45df76051be0a6b5db69f61af51",
-            "content": "sha256:b0577cc0078831899435364e101aea4a96ba759398c451ae758dfc8c54a01500",
+            "blob": "ac4e85fe7aa5576fda77fc34929e7d5305f09a36",
+            "content": "sha256:213f9df01bcaec61c984b00cbdcffffc910aaf9274175d8cccf67254ecd7d816",
             "locator": {
-              "kind": "file"
+              "end": 360,
+              "kind": "line_range",
+              "start": 351
             }
           },
           "kind": "code"
@@ -226,14 +234,16 @@
       ]
     },
     "15": {
-      "note": "The family centre.\n\nAnchor: `FamilyCenter`",
+      "note": "The family center composes origins, guarantee, semantic steps, member context, expressions and judgment.\n\nAnchor: current source extent",
       "targets": [
         {
           "anchor": {
-            "blob": "ed5174dfa793a45df76051be0a6b5db69f61af51",
-            "content": "sha256:b0577cc0078831899435364e101aea4a96ba759398c451ae758dfc8c54a01500",
+            "blob": "ac4e85fe7aa5576fda77fc34929e7d5305f09a36",
+            "content": "sha256:07050a4346c16a617b9cc82bf3c217ff2b6553a0f5e76bcdbeb92864f725ab99",
             "locator": {
-              "kind": "file"
+              "end": 567,
+              "kind": "line_range",
+              "start": 488
             }
           },
           "kind": "code"
@@ -241,14 +251,16 @@
       ]
     },
     "16": {
-      "note": "The independent facts of a member.\n\nAnchor: `IndependentFacts`",
+      "note": "Independent selected revision, membership and attribution facts do not manufacture a judgment.\n\nAnchor: current source extent",
       "targets": [
         {
           "anchor": {
-            "blob": "ed5174dfa793a45df76051be0a6b5db69f61af51",
-            "content": "sha256:b0577cc0078831899435364e101aea4a96ba759398c451ae758dfc8c54a01500",
+            "blob": "ac4e85fe7aa5576fda77fc34929e7d5305f09a36",
+            "content": "sha256:b8cf71a4d731f3a27acb8b545bb1c473f5eef049b4596b861414826ee761bba0",
             "locator": {
-              "kind": "file"
+              "end": 618,
+              "kind": "line_range",
+              "start": 569
             }
           },
           "kind": "code"
@@ -256,14 +268,16 @@
       ]
     },
     "17": {
-      "note": "The member centre.\n\nAnchor: `MemberCenter`",
+      "note": "Member center preserves its own subject, statement, expressions, resolution and judgment/proof context.\n\nAnchor: current source extent",
       "targets": [
         {
           "anchor": {
-            "blob": "ed5174dfa793a45df76051be0a6b5db69f61af51",
-            "content": "sha256:b0577cc0078831899435364e101aea4a96ba759398c451ae758dfc8c54a01500",
+            "blob": "ac4e85fe7aa5576fda77fc34929e7d5305f09a36",
+            "content": "sha256:f0062d28f1bcc54e81bb6638608c13d06067b7af42e3914ebd10a44f635f8af7",
             "locator": {
-              "kind": "file"
+              "end": 705,
+              "kind": "line_range",
+              "start": 629
             }
           },
           "kind": "code"
@@ -271,14 +285,16 @@
       ]
     },
     "18": {
-      "note": "The exported wrapper sets the word-diff scope.\n\nAnchor: `FamilyReviewCenter`",
+      "note": "The wrapper supplies the wording-diff scope.\n\nAnchor: current source extent",
       "targets": [
         {
           "anchor": {
-            "blob": "ed5174dfa793a45df76051be0a6b5db69f61af51",
-            "content": "sha256:b0577cc0078831899435364e101aea4a96ba759398c451ae758dfc8c54a01500",
+            "blob": "ac4e85fe7aa5576fda77fc34929e7d5305f09a36",
+            "content": "sha256:82b12541db763fd15594100311f1562bf38d7501c303868451a6ab6f555d06c5",
             "locator": {
-              "kind": "file"
+              "end": 770,
+              "kind": "line_range",
+              "start": 764
             }
           },
           "kind": "code"
@@ -286,14 +302,16 @@
       ]
     },
     "19": {
-      "note": "Builds expressions and selected-record SubjectKnowledge, then chooses member, unselected, unavailable-member or family content; the unavailable-member branch receives expressions but not the knowledge panel.\n\nAnchor: `SelectedCenter`",
+      "note": "Composition and four branch selection preserve expressions and onRosterNext propagation.\n\nAnchor: current source extent",
       "targets": [
         {
           "anchor": {
-            "blob": "ed5174dfa793a45df76051be0a6b5db69f61af51",
-            "content": "sha256:b0577cc0078831899435364e101aea4a96ba759398c451ae758dfc8c54a01500",
+            "blob": "ac4e85fe7aa5576fda77fc34929e7d5305f09a36",
+            "content": "sha256:3795cee6009d2a0c670fb0d2d36aee1964597fa206f5c88956067f1d3dbcea3e",
             "locator": {
-              "kind": "file"
+              "end": 870,
+              "kind": "line_range",
+              "start": 772
             }
           },
           "kind": "code"
@@ -301,14 +319,16 @@
       ]
     },
     "20": {
-      "note": "Planning marks only from a leaf-wide read of the same comparison.\n\nAnchor: `pinnedWorklist`",
+      "note": "Planning uses only the supplied ready leaf-wide read of the displayed comparison number.\n\nAnchor: current source extent",
       "targets": [
         {
           "anchor": {
-            "blob": "ed5174dfa793a45df76051be0a6b5db69f61af51",
-            "content": "sha256:b0577cc0078831899435364e101aea4a96ba759398c451ae758dfc8c54a01500",
+            "blob": "ac4e85fe7aa5576fda77fc34929e7d5305f09a36",
+            "content": "sha256:038b3d1c9c429981856a618e8043946b542358f6000ba46ec351e0cf7a19912c",
             "locator": {
-              "kind": "file"
+              "end": 878,
+              "kind": "line_range",
+              "start": 874
             }
           },
           "kind": "code"
@@ -316,14 +336,16 @@
       ]
     },
     "22": {
-      "note": "Cards for a tree comparison, the file view for a dataset review.\n\nAnchor: `CenterExpressions`",
+      "note": "Focused tree entries or an explicit measured-comparison-required sentence, not a dataset accordion.\n\nAnchor: current source extent",
       "targets": [
         {
           "anchor": {
-            "blob": "ed5174dfa793a45df76051be0a6b5db69f61af51",
-            "content": "sha256:b0577cc0078831899435364e101aea4a96ba759398c451ae758dfc8c54a01500",
+            "blob": "ac4e85fe7aa5576fda77fc34929e7d5305f09a36",
+            "content": "sha256:b2c44821862fca385848ae70e750f2cb6c6d30919f83603d45c61f6fe57256be",
             "locator": {
-              "kind": "file"
+              "end": 958,
+              "kind": "line_range",
+              "start": 920
             }
           },
           "kind": "code"
@@ -331,14 +353,16 @@
       ]
     },
     "23": {
-      "note": "The invariants one selection reads.\n\nAnchor: `cardInvariants`",
+      "note": "Sorted loaded family keys, with a selected-invariant fallback when the family contributes no key.\n\nAnchor: current source extent",
       "targets": [
         {
           "anchor": {
-            "blob": "ed5174dfa793a45df76051be0a6b5db69f61af51",
-            "content": "sha256:b0577cc0078831899435364e101aea4a96ba759398c451ae758dfc8c54a01500",
+            "blob": "ac4e85fe7aa5576fda77fc34929e7d5305f09a36",
+            "content": "sha256:86f8040ee912c7ed4105291d597a105a4f3dd4ed97255e2230faadd3d22cfc0f",
             "locator": {
-              "kind": "file"
+              "end": 975,
+              "kind": "line_range",
+              "start": 965
             }
           },
           "kind": "code"
@@ -346,14 +370,16 @@
       ]
     },
     "24": {
-      "note": "The selected entry, member, rows and listed paths.\n\nAnchor: `centerSelection`",
+      "note": "Selection returns entry, selected member row and listed paths, not the retired members/linksIncomplete props.\n\nAnchor: current source extent",
       "targets": [
         {
           "anchor": {
-            "blob": "ed5174dfa793a45df76051be0a6b5db69f61af51",
-            "content": "sha256:b0577cc0078831899435364e101aea4a96ba759398c451ae758dfc8c54a01500",
+            "blob": "ac4e85fe7aa5576fda77fc34929e7d5305f09a36",
+            "content": "sha256:3780e56e76fa52503395ea3d212d11ff55440a708a73e480ca2848f6c6155def",
             "locator": {
-              "kind": "file"
+              "end": 987,
+              "kind": "line_range",
+              "start": 977
             }
           },
           "kind": "code"
@@ -361,65 +387,34 @@
       ]
     },
     "26": {
-      "note": "Guarantee rendering for one side or a compared pair",
+      "note": "Authored guarantee rendering lives in FamilyGuarantees; same wording and one-sided/comparison states are not run evidence.\n\nAnchor: current source extent",
       "targets": [
         {
           "anchor": {
-            "blob": "4f2f05a6d2634aea0f18aa59d0c2f88e50c4e9c2",
-            "content": "sha256:7919a12c47c71c557cab780885137a68a85de5cc2b18492628909897a1799999",
+            "blob": "99713fb4b8e8123ffe1a5353b3575be10ec3a5d8",
+            "content": "sha256:aa95963e120743ee205db2b64702e56a9f3537480a7f8b90a699d7d872465294",
             "locator": {
-              "kind": "symbol",
-              "name": "GuaranteeBlock"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "4f2f05a6d2634aea0f18aa59d0c2f88e50c4e9c2",
-            "content": "sha256:604daa2026617f8f4881f7a7e0ead47e22294270c840fc7283742fa79ea180e8",
-            "locator": {
-              "end": 130,
+              "end": 115,
               "kind": "line_range",
-              "start": 112
-            }
+              "start": 9
+            },
+            "path": "dashboard/src/panels/review/FamilyGuarantees.tsx"
           },
           "kind": "code"
         }
       ]
     },
     "27": {
-      "note": "One expression row per collection with verdict and occurrences",
+      "note": "One carried expression excerpt shows roles, side resolutions, occurrences and source identities.\n\nAnchor: current source extent",
       "targets": [
         {
           "anchor": {
-            "blob": "ed5174dfa793a45df76051be0a6b5db69f61af51",
+            "blob": "ac4e85fe7aa5576fda77fc34929e7d5305f09a36",
             "content": "sha256:faef715c94226048b5b745c58260017be12348faad48f1af8f9cf054dc14fce6",
             "locator": {
-              "kind": "symbol",
-              "name": "FamilyExpressionRow"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "ed5174dfa793a45df76051be0a6b5db69f61af51",
-            "content": "sha256:a41b750f5dcb81372685023b13aff888ec19380a8c16efc14bb5c70da5f3f1d3",
-            "locator": {
-              "end": 243,
+              "end": 283,
               "kind": "line_range",
-              "start": 225
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "ed5174dfa793a45df76051be0a6b5db69f61af51",
-            "content": "sha256:b0577cc0078831899435364e101aea4a96ba759398c451ae758dfc8c54a01500",
-            "locator": {
-              "kind": "file"
+              "start": 229
             }
           },
           "kind": "code"
@@ -427,14 +422,16 @@
       ]
     },
     "28": {
-      "note": "Member review centre with subject rows and states\n\nAnchor: `MemberCenter`",
+      "note": "The member renderer retains its canonical subject and side context.\n\nAnchor: current source extent",
       "targets": [
         {
           "anchor": {
-            "blob": "ed5174dfa793a45df76051be0a6b5db69f61af51",
-            "content": "sha256:b0577cc0078831899435364e101aea4a96ba759398c451ae758dfc8c54a01500",
+            "blob": "ac4e85fe7aa5576fda77fc34929e7d5305f09a36",
+            "content": "sha256:f0062d28f1bcc54e81bb6638608c13d06067b7af42e3914ebd10a44f635f8af7",
             "locator": {
-              "kind": "file"
+              "end": 705,
+              "kind": "line_range",
+              "start": 629
             }
           },
           "kind": "code"
@@ -442,14 +439,16 @@
       ]
     },
     "31": {
-      "note": "Card read assembly for the selected centre\n\nAnchor: `CenterExpressions`",
+      "note": "Card read assembly carries bounded cardScope and the selected seed.\n\nAnchor: current source extent",
       "targets": [
         {
           "anchor": {
-            "blob": "ed5174dfa793a45df76051be0a6b5db69f61af51",
-            "content": "sha256:b0577cc0078831899435364e101aea4a96ba759398c451ae758dfc8c54a01500",
+            "blob": "ac4e85fe7aa5576fda77fc34929e7d5305f09a36",
+            "content": "sha256:b2c44821862fca385848ae70e750f2cb6c6d30919f83603d45c61f6fe57256be",
             "locator": {
-              "kind": "file"
+              "end": 958,
+              "kind": "line_range",
+              "start": 920
             }
           },
           "kind": "code"
@@ -457,16 +456,16 @@
       ]
     },
     "32": {
-      "note": "The selected family/member reading area joins MeaningBlock to its own canonical record beside the guarantee or intent content, never to a kept family’s history.",
+      "note": "Canonical family/member MeaningBlock and no-subject/unidentified-member guards are composed separately.\n\nAnchor: current source extent",
       "targets": [
         {
           "anchor": {
-            "blob": "ed5174dfa793a45df76051be0a6b5db69f61af51",
-            "content": "sha256:b0577cc0078831899435364e101aea4a96ba759398c451ae758dfc8c54a01500",
+            "blob": "ac4e85fe7aa5576fda77fc34929e7d5305f09a36",
+            "content": "sha256:d9f7ee719c82ae10eddea22af37dc5af94bb53b8c11d41dc1009f0e0ec70f146",
             "locator": {
-              "end": 1045,
+              "end": 1001,
               "kind": "line_range",
-              "start": 1
+              "start": 152
             }
           },
           "kind": "code"
@@ -474,14 +473,50 @@
       ]
     },
     "33": {
-      "note": "Member revisions follow outline positions under the stored order, with stable unknown-last and no-outline fallback.\n\nAnchor: `orderedCenterMembers`",
+      "note": "Distinct member revisions use displayed outline positions or the carried ordering fallback.\n\nAnchor: current source extent",
       "targets": [
         {
           "anchor": {
-            "blob": "ed5174dfa793a45df76051be0a6b5db69f61af51",
-            "content": "sha256:b0577cc0078831899435364e101aea4a96ba759398c451ae758dfc8c54a01500",
+            "blob": "ac4e85fe7aa5576fda77fc34929e7d5305f09a36",
+            "content": "sha256:4adf74cc900f03be6a115eec973db03ee4572d19d3f4d14077901de3802a33a4",
             "locator": {
-              "kind": "file"
+              "end": 486,
+              "kind": "line_range",
+              "start": 471
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "34": {
+      "note": "Member statements use the extracted pairing renderer while bounded counts and roster continuation remain here.\n\nAnchor: current delegation",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ac4e85fe7aa5576fda77fc34929e7d5305f09a36",
+            "content": "sha256:43e781cd70db5dd7af87d8387c7e2f2a5ed4f2b3b95198411684225bfba0d35a",
+            "locator": {
+              "end": 445,
+              "kind": "line_range",
+              "start": 383
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "35": {
+      "note": "The family judgment delegates the actual canonical family subject.\n\nAnchor: current judgment delegation",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ac4e85fe7aa5576fda77fc34929e7d5305f09a36",
+            "content": "sha256:8198f71c1bec77e6c29507898d6ba311051dcadd719f4622c60e946e03a3c415",
+            "locator": {
+              "end": 1001,
+              "kind": "line_range",
+              "start": 989
             }
           },
           "kind": "code"

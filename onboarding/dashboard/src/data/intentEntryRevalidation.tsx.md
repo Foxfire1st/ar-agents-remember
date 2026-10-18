@@ -7,11 +7,7 @@
 ## Purpose
 
 Decides **when the task entry's Intent review counts are re-validated** (leaf `260921-ICR-L47`, the
-Architect's ruling of 2026-09-28T16:27:28+02:00 on L47-R1-F2). No signal the dashboard receives moves when
-a leaf's knowledge is generated or published: the candidate and the published dataset live under the
-worktree group and the memory root, which the change watcher deliberately excludes, and no projection field
-or delta carries a knowledge fact. So the entry re-validates where the developer looks at it again, and a
-displayed count is never older than the developer's last navigation to it.
+Architect's ruling of 2026-09-28T16:27:28+02:00 on L47-R1-F2). The original navigation-and-refresh approach predated scoped memory watching. The provider still owns only a shared generation: showing the detail again and explicit reviewer refresh advance it, while an active live reviewer now also advances it through matching memory notifications on the existing state SSE stream. Initial and reconnect baselines reconcile too. Revalidation requests a read; it does not guarantee that a pending or failed read has produced fresh counts.
 
 ## Code Commentary
 
@@ -26,6 +22,7 @@ generation, through React context:
   one read, not one per commit;
 - **reviewer refresh** — `revalidate()` increments it; `panels/review/ReviewRefresh.tsx` calls it after
   the reviewer's own refresh;
+- **live memory notification** — `useReviewMemoryWatch` calls the same callback alongside review invalidation/refresh for the exact registered repo/master/leaf. Registration requires an active live enclosure and excludes recorded history; matching initial/reconnect baselines also reconcile;
 - **task open** needs nothing here: the entry mounts, or its task props change, and reads.
 
 `useIntentEntryGeneration()` reads the number; `useRevalidateIntentEntry()` returns `revalidate`.
@@ -33,16 +30,19 @@ Without a provider the generation is 0 and `revalidate` does nothing.
 
 ### Conventions
 
-Local React state shared through context. It is explicitly **not** an event system and not a projection:
-the ruling forbade widening the watcher or projector for this repair.
+Local React state shared through context. This provider installs no watcher and defines no projection field. Its current live caller consumes scoped memory events from the existing state stream; the earlier ruling describes the original navigation repair.
 
 ### Invariants And Boundaries
 
-- Only the Intent review summary is keyed on the generation (`panels/detail-panel/changeSetBar.tsx`
-  appends it to the summary's facts); the change-set reads and the reviewer's catalogue key are not.
-- Each trigger costs exactly one summary read (review R2 measured this in a real browser).
-- A live push of a first ingest while the same panel stays open is **not** provided; the ruling records it
-  as a possible later enhancement.
+- `DocChangeSetBar` appends generation to the Intent entry's facts; `IntentReviewEntry` passes those facts to `useIntentReviewSummary`. `ChangeSetButton` also reads generation and includes it in its load effect dependencies. Both behaviors already exist in BASE. The reviewer catalogue does not consume this context directly; it can refresh separately when an observed comparison generation changes.
+- Review R2's reported browser measurement is historical. The stored test bodies assert summary counts for navigation, task opening, reviewer return and explicit refresh; they do not establish a universal one-request guarantee for memory events or reconnects. No new execution is reported here.
+
+  Historical prior browser account, not a current per-notification guarantee:
+
+  ```text
+  - Each trigger costs exactly one summary read (review R2 measured this in a real browser).
+  ```
+- Live memory revalidation requires a mounted reviewer with an active live scope. An entry shown without that registration still relies on navigation or explicit refresh; closed and recorded reviews do not register. Unchanged subsequent memory revisions are quiet, while initial/reconnect baselines reconcile.
 
 ### Todos
 
@@ -58,17 +58,16 @@ No relevant domain documentation was found.
 
 ### Repo-Internal References
 
-- Why no existing signal can carry a knowledge write, and the three re-validation points. [1]
 - The provider: the show transition derived during render, and `revalidate`. [2]
 - The no-provider default and the two hooks. [3]
-- The cockpit wraps its shell with `shown` = Operations view and no takeover. [4]
-- The reviewer's refresh calls `revalidate`. [5]
-- The summary's facts carry the generation. [6]
-- The cases: re-show, open once, leave the reviewer, reviewer refresh. [7]
-
-
 ### Cross-Repo References
 
 No cross-repository behavior.
 
 No meaningful cross-repo references found.
+
+- The local provider increments generation on a false-to-true shown transition and on revalidate. useReviewMemoryWatch registers only for an active live enclosure and non-recorded history, invokes shared entry revalidation alongside review invalidation/refresh, and filters notifications by exact registered scope. publishReviewMemory reconciles first/initial baselines and changed revisions. connectState carries that scope and dispatches memory events through its existing SSE connection. The original header-only no-signal account is superseded. [1]
+- The cockpit shell wraps its body in IntentEntryRevalidation with shown true exactly for Operations view without takeover. [4]
+- DocChangeSetBar appends context generation to leaf facts and passes them to LeafEntries; IntentReviewEntry passes facts to useIntentReviewSummary, whose key/effect includes facts. ChangeSetButton separately consumes the same generation in its load effect dependencies. Generation is not a summary-only input. [6]
+- The current stored test bodies assert summary-read counts and catalogue isolation for re-show/task switching, opening from another view, reviewer return and explicit refresh. These are static assertions, not new execution or proof of memory-event/reconnect request counts. Both former target ranges are replaced by the current complete scenario extents. [7]
+- ReviewRefresh obtains the shared entry revalidation callback, and its actual button onClick calls onRefresh followed by revalidateEntry. The callback declaration alone is not the invocation witness. [5]

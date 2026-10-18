@@ -2,90 +2,20 @@
   "path": "dashboard/src/panels/review/familyPaging.captured.json",
   "realizes": [],
   "references": {
-    "1": {
-      "note": "The fixture names its exact selected family, subject and before walk.\n\nAnchor: \"family_id\"; \"subject_id\"; \"before\"",
+    "6": {
+      "note": "The current retained JSON input supplies the literal identities, response states and populations summarized above; these are fixture facts, not live project knowledge or fresh execution evidence.",
       "targets": [
         {
           "anchor": {
-            "blob": "147e8cd697662173bc83d4b592beaeffe9ef8e77",
-            "content": "sha256:388d26851e42e48602629225aee13cae550fd0fe5b5e58cd020b94d095aaed87",
+            "blob": "2b2ced8a0540db9834d72d5c5850966bbc10340c",
+            "content": "sha256:6d5d68b212521a483a779535a7b6f2c58d5bdc1a40a6742ff8e19324c31db1d7",
             "locator": {
-              "end": 5,
+              "end": 31353,
               "kind": "line_range",
               "start": 1
             }
           },
           "kind": "code"
-        }
-      ]
-    },
-    "2": {
-      "note": "The second collection holds the after-side walk.\n\nAnchor: \"\\\"after\\\": [\"",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "147e8cd697662173bc83d4b592beaeffe9ef8e77",
-            "content": "sha256:c3a1c32895b51425cf297269d7ad28cc72c9ee46ad639b8cd25fb064e81bf9a0",
-            "locator": {
-              "end": 3210,
-              "kind": "line_range",
-              "start": 3210
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "3": {
-      "note": "The receipt row for this document in the MIK-L31 re-capture.\n\nAnchor: \"familyPaging.captured.json\"",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "a38cd175bfc6a8526744c4abef8e1fdc571a3a55",
-            "content": "sha256:3728d5bd82839db391db738ff25605d3e5f73ea64e7ea44bb93b8fc769c0c089",
-            "locator": {
-              "end": 88,
-              "kind": "line_range",
-              "start": 88
-            },
-            "path": "dashboard/src/panels/review/familyReview.capture-provenance.json"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "4": {
-      "note": "The producer follows published HTTP cursors under one fixed bound.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "a70c2d16df5498b43894f01d3edfb8942d4e6348",
-            "content": "sha256:49c482e0a0df6e78d44f3ca4bb473d6bb9608bed3a98a66ea00213374d1f4dc0",
-            "locator": {
-              "kind": "symbol",
-              "name": "walk_responses"
-            },
-            "path": "mcp/tests/test_review_family_context_population.py"
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "5": {
-      "note": "The consumer reads the complete captured bodies before mounting the actual read cycle.\n\nAnchor: \"familyPaging.captured.json\"",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "e3355cbeb890e107225cee720162b7b673fa6a5f",
-            "content": "sha256:35e82748bfdb3b9c1a86be9de8d14c7f5ad1b8c35b2741b6280e4901f26af49f",
-            "locator": {
-              "end": 38,
-              "kind": "line_range",
-              "start": 22
-            },
-            "path": "dashboard/src/panels/review/ReviewReadCycle.family.test.tsx"
-          },
-          "kind": "test"
         }
       ]
     }

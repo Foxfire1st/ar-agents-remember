@@ -3,12 +3,12 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "0c8c6b824fad68f15cd3206a573aa7c19633ce15",
-        "content": "sha256:0d283bbb7b335a8ad57c99dcece9cd28725f564cff6062be10c5ee4d9208b4e2",
+        "blob": "3bfe136ea869b3b6b4b87962e3f114d193cc23db",
+        "content": "sha256:9f329d387ced54f0f9735ec8246777be49c922b4572a98cba1b10ad55e6e61f1",
         "locator": {
-          "end": 424,
+          "end": 448,
           "kind": "line_range",
-          "start": 351
+          "start": 371
         }
       },
       "id": "RLZ-B07ZXV",
@@ -17,17 +17,17 @@
         "handoffEntry": "MIK-R86@v1 preservation W03 page refusal",
         "leaf": "260928-MIK-L86"
       },
-      "rationale": "The ported page-refusal case asserting explicit failure with coherent review retained.",
+      "rationale": "The current mounted continuation case preserves selected rendered knowledge and recorded judgment, with its retained context/failure/layout assertions; the old supporting evidence collection and fresh runtime acceptance are not claimed.",
       "role": "unclassified"
     },
     {
       "anchor": {
-        "blob": "0c8c6b824fad68f15cd3206a573aa7c19633ce15",
-        "content": "sha256:44633df0d932e523038409c47ffed6b0c5810f9974fb4519570da1f7877902a1",
+        "blob": "3bfe136ea869b3b6b4b87962e3f114d193cc23db",
+        "content": "sha256:126fa092d9830301e641e6f5f715499819fe93a5bf09503fe21fb7db42fa3425",
         "locator": {
-          "end": 692,
+          "end": 716,
           "kind": "line_range",
-          "start": 556
+          "start": 586
         }
       },
       "id": "RLZ-BJ6TQM",
@@ -36,17 +36,17 @@
         "handoffEntry": "MIK-R86@v1 preservation W03 late expression",
         "leaf": "260928-MIK-L86"
       },
-      "rationale": "The ported late-expression case asserting reachability with layout preserved.",
+      "rationale": "The current mounted continuation case preserves selected rendered knowledge and recorded judgment, with its retained context/failure/layout assertions; the old supporting evidence collection and fresh runtime acceptance are not claimed.",
       "role": "unclassified"
     },
     {
       "anchor": {
-        "blob": "0c8c6b824fad68f15cd3206a573aa7c19633ce15",
-        "content": "sha256:0d283bbb7b335a8ad57c99dcece9cd28725f564cff6062be10c5ee4d9208b4e2",
+        "blob": "3bfe136ea869b3b6b4b87962e3f114d193cc23db",
+        "content": "sha256:9f329d387ced54f0f9735ec8246777be49c922b4572a98cba1b10ad55e6e61f1",
         "locator": {
-          "end": 424,
+          "end": 448,
           "kind": "line_range",
-          "start": 351
+          "start": 371
         }
       },
       "id": "RLZ-HWXRDM",
@@ -55,17 +55,17 @@
         "handoffEntry": "MIK-R86@v1 preservation W03 wrong subject",
         "leaf": "260928-MIK-L86"
       },
-      "rationale": "The ported wrong-subject case asserting explicit failure with coherent review retained.",
+      "rationale": "The current mounted continuation case preserves selected rendered knowledge and recorded judgment, with its retained context/failure/layout assertions; the old supporting evidence collection and fresh runtime acceptance are not claimed.",
       "role": "unclassified"
     },
     {
       "anchor": {
-        "blob": "0c8c6b824fad68f15cd3206a573aa7c19633ce15",
-        "content": "sha256:0d283bbb7b335a8ad57c99dcece9cd28725f564cff6062be10c5ee4d9208b4e2",
+        "blob": "3bfe136ea869b3b6b4b87962e3f114d193cc23db",
+        "content": "sha256:9f329d387ced54f0f9735ec8246777be49c922b4572a98cba1b10ad55e6e61f1",
         "locator": {
-          "end": 424,
+          "end": 448,
           "kind": "line_range",
-          "start": 351
+          "start": 371
         }
       },
       "id": "RLZ-VZXBHS",
@@ -74,22 +74,22 @@
         "handoffEntry": "MIK-R86@v1 preservation W03 conflicting content",
         "leaf": "260928-MIK-L86"
       },
-      "rationale": "The ported conflicting-content case asserting explicit failure with coherent review retained.",
+      "rationale": "The current mounted continuation case preserves the selected rendered knowledge and the recorded judgment: it checks the failure, the selected text, the judgment text, the member rows and the absence of rejected content through an inventory helper. It sets and asserts no layout or focus behaviour, and neither the old supporting evidence collection nor a fresh runtime acceptance is claimed.",
       "role": "unclassified"
     }
   ],
   "references": {
     "1": {
-      "note": "**The header's provenance paragraph: bodies from the public authorship and real review route; `familyPaging.captured.json` re-captured by MIK-L31 and recorded in the receipt; the walked family opened by its `family_id`.**  Anchor: \"re-captured by MIK-L31 with ICR-L44's\"; \"familyReview.capture-provenance.json\"; \"rather than relying on its position\"",
+      "note": "The current header identifies captured page-size-4 tree-route bodies and the receipt. Historical full-tree bytes isolate worklist chrome and do not qualify the current full-tree producer refusal.\n\nAnchor: inclusive source ranges",
       "targets": [
         {
           "anchor": {
-            "blob": "47fa86a1eacef954577cd6675e58dc30d0c13f41",
-            "content": "sha256:b4675237bf275a74485899e379d72e51f78c9a467a4da861a36a52a6e229b543",
+            "blob": "3bfe136ea869b3b6b4b87962e3f114d193cc23db",
+            "content": "sha256:ea01daab4888a4d05dc547b4b54611912b13b7f34b4325d517f820ae37e2c339",
             "locator": {
-              "end": 30,
+              "end": 65,
               "kind": "line_range",
-              "start": 24
+              "start": 25
             }
           },
           "kind": "test"
@@ -279,16 +279,16 @@
       ]
     },
     "3": {
-      "note": "Independent exact walks retain content and claims.  Anchor: \"retains exact content and claim identities while before and after walks advance independently\"",
+      "note": "Independent walks retain exact content and claim identities; knowledge and judgment equal the supplied response values, and inventory equals the initial complete inventory.\n\nAnchor: inclusive source ranges",
       "targets": [
         {
           "anchor": {
-            "blob": "47fa86a1eacef954577cd6675e58dc30d0c13f41",
-            "content": "sha256:dbbf444b22d665b14d935a2a514691225f57d83ccaefc20004f36fdab12c89fc",
+            "blob": "3bfe136ea869b3b6b4b87962e3f114d193cc23db",
+            "content": "sha256:39219cdf89bae92cb61ec0e1e1e5ae8bf720334859f994f1722dc27cf362acc9",
             "locator": {
-              "end": 146,
+              "end": 264,
               "kind": "line_range",
-              "start": 107
+              "start": 225
             }
           },
           "kind": "test"
@@ -364,16 +364,16 @@
       ]
     },
     "8": {
-      "note": "A late source expression becomes reachable beside preserved intent and workspace state; the walked family is opened by the capture's own `family_id`.  Anchor: \"keeps selected intent, evidence, siblings, focus and open layout while a late source expression becomes reachable\"",
+      "note": "The mounted journey selects the captured family's after revision and preserves revision IDs, judgment, siblings, focus, inline layout and expanded expression as roster continuations expose later claims and source paths.\n\nAnchor: inclusive source ranges",
       "targets": [
         {
           "anchor": {
-            "blob": "47fa86a1eacef954577cd6675e58dc30d0c13f41",
-            "content": "sha256:00187761161978a93e412fcedc3ced2ef75b4c2e4d98a79de66a2a897c6f5537",
+            "blob": "3bfe136ea869b3b6b4b87962e3f114d193cc23db",
+            "content": "sha256:126fa092d9830301e641e6f5f715499819fe93a5bf09503fe21fb7db42fa3425",
             "locator": {
-              "end": 571,
+              "end": 716,
               "kind": "line_range",
-              "start": 470
+              "start": 586
             }
           },
           "kind": "test"

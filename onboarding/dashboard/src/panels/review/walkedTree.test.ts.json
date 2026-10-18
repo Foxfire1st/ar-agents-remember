@@ -89,18 +89,18 @@
     {
       "anchor": {
         "blob": "2e9c88934489027a4ce58effd19725b6dc59dc1a",
-        "content": "sha256:dbdf55a6d1725bfcaf45c9c83460b372a9daa22da32859921f2f55febc37460f",
+        "content": "sha256:9467be4268684b001979ac72de131fe61d057e61c87951a1b83b5bfcc1e4854d",
         "locator": {
           "kind": "symbol",
-          "name": "continued"
+          "name": "keeps every member and the furthest cursor of a family read twice, in either order"
         }
       },
-      "facet": "Two reads of one family, in either order, keep every member either returned and the furthest cursor, with the change facts of all returned members.",
-      "id": "PRF-V250CY",
+      "facet": "Two reads of one family, in either order, return the same member set with more than two members, keep the furthest continuation cursor and carry four change-fact members.",
+      "id": "PRF-RPTANE",
       "invariant": "INV-MWCCQM",
       "origin": {
-        "handoffEntry": "MIK-R39@v1-kept-partial-family-stop",
-        "leaf": "260928-MIK-L39"
+        "handoffEntry": "L57-M1-facet-PRF-V250CY-replacement",
+        "leaf": "260928-MIK-L57"
       }
     }
   ],

@@ -1,0 +1,34 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake"
+    ],
+    "justification": "A future diff optimization must not hide neighboring marked context when revealing a collapsed-run mark."
+  },
+  "applicability": "The recorded reviewer/reader 3 choice of MIK-R67@v2 rule18, or the explicit F07 resource ruling for one-spilled-history.",
+  "conditions": [
+    "Expand the whole collapsed run when revealing a mark inside it.",
+    "The approved choice shows the hunk in its full run context and prevents neighboring marks being hidden."
+  ],
+  "exclusions": [
+    "No whole-file expansion or extra source bytes beyond the admitted full-file provider is promised.",
+    "This is a source-bound future boundary, not a fresh runtime, visual, suite or independent MEMORY verdict."
+  ],
+  "id": "INV-ECF6G4",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "/home/firefox/projects/ar-coordination/tasks/agents-remember/260928_maintained-invariant-knowledge/notes/reports/worker/48060148-87d0-4e1e-ad2e-6f1fa353092d/role-launch/freeze05-builder-curator-handoff.md#producer-55"
+      ],
+      "path": "freeze11-r67-prescribed-boundaries-and-spill-resource-choice-01.json"
+    },
+    "handoffEntry": "MIK-R67@v2 by-design 3",
+    "leaf": "260928-MIK-L57",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "A mark inside a collapsed run expands the whole run. The hunk is shown in its full context, and no neighbouring mark is hidden.",
+  "status": "proposed",
+  "supersedes": []
+}

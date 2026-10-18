@@ -2,47 +2,13 @@
   "path": "dashboard/src/panels/review/l86.trees.captured.json",
   "realizes": [],
   "references": {
-    "1": {
-      "note": "Four pinned trees of the recorded comparison\n\nAnchor: `comparison`",
+    "4": {
+      "note": "This retained comparison-5 fixture carries 673 stored worklist items, 155 answered and 518 open gate states, and 101 leaf-wide code facts. These are capture-epoch values, not this leaf’s current gate counts or fresh full-tree producer acceptance.",
       "targets": [
         {
           "anchor": {
-            "blob": "f927c31e59df680678b0868b56a093880d691696",
-            "content": "sha256:28d8e91e6c3fb712d2cb3c75f2f9134eb365ee31908b1c18cd5511bad6fc6b2e",
-            "locator": {
-              "end": 1,
-              "kind": "line_range",
-              "start": 1
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "2": {
-      "note": "Settled worklist with history and gate linkage\n\nAnchor: `worklist`",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "f927c31e59df680678b0868b56a093880d691696",
-            "content": "sha256:28d8e91e6c3fb712d2cb3c75f2f9134eb365ee31908b1c18cd5511bad6fc6b2e",
-            "locator": {
-              "end": 1,
-              "kind": "line_range",
-              "start": 1
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "3": {
-      "note": "Per-side currentness on each side's code tree\n\nAnchor: `currentness`",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "f927c31e59df680678b0868b56a093880d691696",
-            "content": "sha256:28d8e91e6c3fb712d2cb3c75f2f9134eb365ee31908b1c18cd5511bad6fc6b2e",
+            "blob": "cfaf3347e7d44f681292409632b176369ca43723",
+            "content": "sha256:40bee0a6f4ef3683af8369e0385c2d29d9c88644fd15cbe1e658f9c0e69f3799",
             "locator": {
               "end": 1,
               "kind": "line_range",

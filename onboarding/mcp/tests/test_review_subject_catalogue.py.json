@@ -51,11 +51,11 @@
       ]
     },
     "14": {
-      "note": "`test_catalogue_loading_runs_no_comparison` supplies the current fixture or assertion described above.",
+      "note": "Catalogue loading installs raising guards on both comparison bindings and then lists entries. This is negative coverage against entering comparison, not a performed comparison.",
       "targets": [
         {
           "anchor": {
-            "blob": "95ae92e03995a158e235c77289677246a5fa8ff3",
+            "blob": "023adafd667da9294939e4581328d712be6b7a36",
             "content": "sha256:94eedcf69cd83e5ad3444c1af91a4f65d306c3250901b7f1efb9df293f44dbb3",
             "locator": {
               "kind": "symbol",
@@ -94,6 +94,22 @@
               "kind": "file"
             },
             "path": "mcp/tests/knowledge_rows_test_support.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "17": {
+      "note": "The retained family test is renamed and now asserts present, nonempty statement operands on both sides of the recorded joint guarantee.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "023adafd667da9294939e4581328d712be6b7a36",
+            "content": "sha256:f24dd3e7b8e2bfd0c2f34e3a09da759f232d8dcc8ff02db62bf4b557c6516fb7",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_family_subject_is_listed_with_its_recorded_guarantee_sides"
+            }
           },
           "kind": "test"
         }

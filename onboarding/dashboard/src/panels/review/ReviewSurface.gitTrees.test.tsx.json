@@ -2,158 +2,17 @@
   "path": "dashboard/src/panels/review/ReviewSurface.gitTrees.test.tsx",
   "realizes": [],
   "references": {
-    "1": {
-      "note": "The five real bodies, including the cards read and the leaf-wide tree view.  Anchor: \"gitTrees.family.captured.json\"; \"gitTrees.invariant.captured.json\"; \"gitTrees.entries.captured.json\"; \"gitTrees.cards.captured.json\"; \"reviewTrees.captured.json\"",
+    "11": {
+      "note": "The tree-review cases consume the retained L37 comparison-5 captures and assert three members, twelve cards, revision identities, a statement-diff marker, proof identity and excerpt kind, selected-member-first grouping and worklist item-kind equality. The fixture refuses source-content reads; these assertions do not compare exact source bytes or statement operands. The dataset fallback case is removed. Successful playback of this historical full-tree fixture is not current producer acceptance.\n\nAnchor: complete source-refusal fixture and stored assertions",
       "targets": [
         {
           "anchor": {
-            "blob": "c0d1b5287d3b02f5d0c980a0c3c1ddf6c19a2086",
-            "content": "sha256:eaaa595606eba8dbd37deb0a3bf4ba7590d4c0b2313fafab712e107e47d2bd8d",
+            "blob": "87296aefe43bea0d7da4ad364f5a8483c9226cb5",
+            "content": "sha256:73ee3ab18dffbbefa82c1551593c712c2886166d9769eb9898dcc8dc6b37d5c5",
             "locator": {
-              "end": 28,
+              "end": 218,
               "kind": "line_range",
-              "start": 24
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "10": {
-      "note": "Dataset remaining-count block; converted card cases do not assert leaf-wide remaining counts  Anchor: `remaining`",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "c0d1b5287d3b02f5d0c980a0c3c1ddf6c19a2086",
-            "content": "sha256:d4d34e62210795f4c2ffe8bc6335db4b0416ee4ce16ee82a2545af30f92eab77",
-            "locator": {
-              "kind": "file"
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "2": {
-      "note": "The stub: cards body for a named selection, a lane-less answer for the lane read (MIK-L32), leaf-wide body otherwise, every URL recorded.  Anchor: \"const withoutLane = (body: ReviewTreesResult) => ({\"; \"function serve(\"",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "c0d1b5287d3b02f5d0c980a0c3c1ddf6c19a2086",
-            "content": "sha256:4c7d4a9b607d7c289bbaf62f8170bdb683a53fc2506017e8b1210688a2ce7679",
-            "locator": {
-              "end": 82,
-              "kind": "line_range",
-              "start": 39
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "3": {
-      "note": "Case 1: the family review from trees, then the touched member with its own entries first.  Anchor: \"renders a converted leaf family review from its trees and opens the touched member\"",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "c0d1b5287d3b02f5d0c980a0c3c1ddf6c19a2086",
-            "content": "sha256:d9ec4fdd984c6545398fc86e82f00620cd841112b319ae4a1e78102cd2db6a9c",
-            "locator": {
-              "end": 129,
-              "kind": "line_range",
-              "start": 84
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "4": {
-      "note": "Case 2: focused cards, comparison-pinned reads, planning voices and subject/worklist view; both attribution destinations explicitly unavailable. No explorer-label or technical-details assertion is made.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "c0d1b5287d3b02f5d0c980a0c3c1ddf6c19a2086",
-            "content": "sha256:d4d34e62210795f4c2ffe8bc6335db4b0416ee4ce16ee82a2545af30f92eab77",
-            "locator": {
-              "kind": "file"
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "5": {
-      "note": "Case 3: a dataset review makes no tree read, retains the landed expression file view and an open remaining-count block using landed attribution and the captured unattributed count.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "c0d1b5287d3b02f5d0c980a0c3c1ddf6c19a2086",
-            "content": "sha256:d4d34e62210795f4c2ffe8bc6335db4b0416ee4ce16ee82a2545af30f92eab77",
-            "locator": {
-              "kind": "file"
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "6": {
-      "note": "Case 4: no planning mark from another comparison's read (R2-3).  Anchor: \"takes no planning mark from a leaf-wide read of another comparison (review R2-3)\"",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "c0d1b5287d3b02f5d0c980a0c3c1ddf6c19a2086",
-            "content": "sha256:f6f5b40b158457d17864f21790786dd5a2ecdb64b66a651f788d4e25cd3303d2",
-            "locator": {
-              "end": 285,
-              "kind": "line_range",
-              "start": 285
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "7": {
-      "note": "Changed-invariants fixture for the converted leaf\n\nAnchor: `CHANGED`",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "c0d1b5287d3b02f5d0c980a0c3c1ddf6c19a2086",
-            "content": "sha256:d4d34e62210795f4c2ffe8bc6335db4b0416ee4ce16ee82a2545af30f92eab77",
-            "locator": {
-              "kind": "file"
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "8": {
-      "note": "Per-route captured world with one shared cards body for all named invariant selections",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "c0d1b5287d3b02f5d0c980a0c3c1ddf6c19a2086",
-            "content": "sha256:d4d34e62210795f4c2ffe8bc6335db4b0416ee4ce16ee82a2545af30f92eab77",
-            "locator": {
-              "kind": "file"
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "9": {
-      "note": "Touched member resolution in the rendered centre\n\nAnchor: `touched`",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "c0d1b5287d3b02f5d0c980a0c3c1ddf6c19a2086",
-            "content": "sha256:d4d34e62210795f4c2ffe8bc6335db4b0416ee4ce16ee82a2545af30f92eab77",
-            "locator": {
-              "kind": "file"
+              "start": 1
             }
           },
           "kind": "test"

@@ -7,7 +7,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2c4a4f7ed1f5c7b3dc241232a0ea1d28e5b5d04f",
+            "blob": "e93d348be7f3a7d0ed0e91c3d79da2748f55c5ab",
             "content": "sha256:804ef4f34ce6510d01f61cc142905f86d8dfbf6d8279fd6e22c1edceba7547b6",
             "locator": {
               "end": 34,
@@ -24,7 +24,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2c4a4f7ed1f5c7b3dc241232a0ea1d28e5b5d04f",
+            "blob": "e93d348be7f3a7d0ed0e91c3d79da2748f55c5ab",
             "content": "sha256:adee3cc46df2585c19ce0b6c871c3c14cb2c38499e3536ce534b85207b0d7cdd",
             "locator": {
               "kind": "symbol",
@@ -35,7 +35,7 @@
         },
         {
           "anchor": {
-            "blob": "2c4a4f7ed1f5c7b3dc241232a0ea1d28e5b5d04f",
+            "blob": "e93d348be7f3a7d0ed0e91c3d79da2748f55c5ab",
             "content": "sha256:c98c1ae8b22338a659215ab7c42007394f0c429def6a9514a128ae165db8c8ec",
             "locator": {
               "kind": "symbol",
@@ -47,16 +47,16 @@
       ]
     },
     "11": {
-      "note": "Where the summary and the lane travel.\n\nAnchor: \"attribution: ReviewLaneSummary\"; \"lane: ReviewUnexplainedLane\"",
+      "note": "The optional attribution summary travels on the intent result; lane destinations and per-file classification travel on the tree result.\n\nAnchor: Result fields, not a new classification implementation",
       "targets": [
         {
           "anchor": {
-            "blob": "e131e4295c677d11b892549406df6c26ea52c2dd",
-            "content": "sha256:43254b48e6e1a0f00bf70654368131420677a70165c17d966a5e9d1e522dabc5",
+            "blob": "4d3de3149beba772c4408439aa637fb03436836d",
+            "content": "sha256:f39d9d13319067e12a97d986d441116c44418403eb48126753172392663eb53b",
             "locator": {
               "end": 108,
               "kind": "line_range",
-              "start": 108
+              "start": 107
             },
             "path": "mcp/src/agents_remember/models/knowledge/review_intent_summary.py"
           },
@@ -64,12 +64,12 @@
         },
         {
           "anchor": {
-            "blob": "c40d7cca79ecb686a6d8bb8c52405e801d972d9a",
-            "content": "sha256:c05c0bad70b0de6a7be779eb9d42227f066977de784af5da6777ccd61d5e33cf",
+            "blob": "5a504f3e9d1406a27e6629249b02d23155d1980c",
+            "content": "sha256:1502bba5be539e44ce370f5799a3fd14c09a36099fc5ef5e2b3cd1c109833f52",
             "locator": {
-              "end": 265,
+              "end": 269,
               "kind": "line_range",
-              "start": 265
+              "start": 267
             },
             "path": "mcp/src/agents_remember/models/knowledge/review_trees.py"
           },
@@ -82,7 +82,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2c4a4f7ed1f5c7b3dc241232a0ea1d28e5b5d04f",
+            "blob": "e93d348be7f3a7d0ed0e91c3d79da2748f55c5ab",
             "content": "sha256:c7217d975681cf3f7f66987ff7a8701dec79052a1fbe5c5b336b440a66f3787d",
             "locator": {
               "kind": "symbol",
@@ -93,7 +93,7 @@
         },
         {
           "anchor": {
-            "blob": "2c4a4f7ed1f5c7b3dc241232a0ea1d28e5b5d04f",
+            "blob": "e93d348be7f3a7d0ed0e91c3d79da2748f55c5ab",
             "content": "sha256:4770ab7bdcd5936e14029282e5241299d58275d1842d7b0b1eea221d5e386cae",
             "locator": {
               "kind": "symbol",
@@ -104,7 +104,7 @@
         },
         {
           "anchor": {
-            "blob": "2c4a4f7ed1f5c7b3dc241232a0ea1d28e5b5d04f",
+            "blob": "e93d348be7f3a7d0ed0e91c3d79da2748f55c5ab",
             "content": "sha256:4ac5735621e3be57fa9d46dc61924d75389e44da4f8ade3cf6f71e38d16936ec",
             "locator": {
               "kind": "symbol",
@@ -115,7 +115,7 @@
         },
         {
           "anchor": {
-            "blob": "2c4a4f7ed1f5c7b3dc241232a0ea1d28e5b5d04f",
+            "blob": "e93d348be7f3a7d0ed0e91c3d79da2748f55c5ab",
             "content": "sha256:8183a276ee7bb3d994d829ccfb0cd251528355a86724f161e6ad7d6b3f40dc79",
             "locator": {
               "kind": "symbol",
@@ -126,7 +126,7 @@
         },
         {
           "anchor": {
-            "blob": "2c4a4f7ed1f5c7b3dc241232a0ea1d28e5b5d04f",
+            "blob": "e93d348be7f3a7d0ed0e91c3d79da2748f55c5ab",
             "content": "sha256:065d5b9f8a2b4f554ba3fe8278521c10ce8624e772c683c91a86980dd172fca5",
             "locator": {
               "kind": "symbol",
@@ -142,7 +142,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2c4a4f7ed1f5c7b3dc241232a0ea1d28e5b5d04f",
+            "blob": "e93d348be7f3a7d0ed0e91c3d79da2748f55c5ab",
             "content": "sha256:3509738583491768d051d0a7624f97309a73160b6e1ea242e969b52025c7f76d",
             "locator": {
               "kind": "symbol",
@@ -153,7 +153,7 @@
         },
         {
           "anchor": {
-            "blob": "2c4a4f7ed1f5c7b3dc241232a0ea1d28e5b5d04f",
+            "blob": "e93d348be7f3a7d0ed0e91c3d79da2748f55c5ab",
             "content": "sha256:501c2caf964be45db845f741ecae2626692cd8973aac3bb9d256b51588919f05",
             "locator": {
               "kind": "symbol",
@@ -165,26 +165,16 @@
       ]
     },
     "4": {
-      "note": "Family occurrences and links with their keys.",
+      "note": "Family occurrences add a bounded reason exactly for unknown membership; links retain invariant/revision keys, ranges, facets and family occurrences.\n\nAnchor: Occurrence and link declarations",
       "targets": [
         {
           "anchor": {
-            "blob": "2c4a4f7ed1f5c7b3dc241232a0ea1d28e5b5d04f",
-            "content": "sha256:7d81a63f3412edf20dd4bcb2f9e0b81a14e357cf5f68d68eda23f8baec90447f",
+            "blob": "e93d348be7f3a7d0ed0e91c3d79da2748f55c5ab",
+            "content": "sha256:0255f6e7f688c4e77f43ebbde34329220fbc8890947d550773652151ad1640b9",
             "locator": {
-              "kind": "symbol",
-              "name": "ReviewLaneFamilyOccurrence"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "2c4a4f7ed1f5c7b3dc241232a0ea1d28e5b5d04f",
-            "content": "sha256:64c75232afae70d37d0dca237330f1c14b2d89afa832bdc62dd518e3a604acb7",
-            "locator": {
-              "kind": "symbol",
-              "name": "ReviewLaneLink"
+              "end": 162,
+              "kind": "line_range",
+              "start": 122
             }
           },
           "kind": "code"
@@ -196,7 +186,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2c4a4f7ed1f5c7b3dc241232a0ea1d28e5b5d04f",
+            "blob": "e93d348be7f3a7d0ed0e91c3d79da2748f55c5ab",
             "content": "sha256:87028deeccb45a14795db8c80e31c710c8847e5f0d7cb876f73241d9fa6ab3df",
             "locator": {
               "kind": "symbol",
@@ -207,7 +197,7 @@
         },
         {
           "anchor": {
-            "blob": "2c4a4f7ed1f5c7b3dc241232a0ea1d28e5b5d04f",
+            "blob": "e93d348be7f3a7d0ed0e91c3d79da2748f55c5ab",
             "content": "sha256:14061162768ded5cf20c3a0d09a0376968389afb9f332aad82c9168bd3db5ed1",
             "locator": {
               "kind": "symbol",
@@ -218,7 +208,7 @@
         },
         {
           "anchor": {
-            "blob": "2c4a4f7ed1f5c7b3dc241232a0ea1d28e5b5d04f",
+            "blob": "e93d348be7f3a7d0ed0e91c3d79da2748f55c5ab",
             "content": "sha256:4c129de818101088eaf98ba16f5e8dc5beb9f9b80fd52437dea628c7240719a2",
             "locator": {
               "kind": "symbol",
@@ -234,7 +224,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2c4a4f7ed1f5c7b3dc241232a0ea1d28e5b5d04f",
+            "blob": "e93d348be7f3a7d0ed0e91c3d79da2748f55c5ab",
             "content": "sha256:e82ef05ccb29ce10795d4b55f2a655afd487c070bc3a9e670cf8e4ad38a6dcdc",
             "locator": {
               "kind": "symbol",
@@ -245,7 +235,7 @@
         },
         {
           "anchor": {
-            "blob": "2c4a4f7ed1f5c7b3dc241232a0ea1d28e5b5d04f",
+            "blob": "e93d348be7f3a7d0ed0e91c3d79da2748f55c5ab",
             "content": "sha256:e2a0a8d4bfc7469c2f3f209477d9f6d675cb3355550d87c90080604b8b4a3098",
             "locator": {
               "kind": "symbol",
@@ -256,7 +246,7 @@
         },
         {
           "anchor": {
-            "blob": "2c4a4f7ed1f5c7b3dc241232a0ea1d28e5b5d04f",
+            "blob": "e93d348be7f3a7d0ed0e91c3d79da2748f55c5ab",
             "content": "sha256:320df228396e973940fa7c158763cc0b52831e9d7599fa9f2640dbca9f8ad0cf",
             "locator": {
               "kind": "symbol",
@@ -272,7 +262,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2c4a4f7ed1f5c7b3dc241232a0ea1d28e5b5d04f",
+            "blob": "e93d348be7f3a7d0ed0e91c3d79da2748f55c5ab",
             "content": "sha256:04790c18172613a812821ec7bb64da312c4c771b0c0935210f705db289c26f2c",
             "locator": {
               "kind": "symbol",
@@ -283,7 +273,7 @@
         },
         {
           "anchor": {
-            "blob": "2c4a4f7ed1f5c7b3dc241232a0ea1d28e5b5d04f",
+            "blob": "e93d348be7f3a7d0ed0e91c3d79da2748f55c5ab",
             "content": "sha256:04bfa761bf57bd9f0850f0800c5b133c9407c8b5fd0d66525d9221834d63c47d",
             "locator": {
               "kind": "symbol",
@@ -299,7 +289,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2c4a4f7ed1f5c7b3dc241232a0ea1d28e5b5d04f",
+            "blob": "e93d348be7f3a7d0ed0e91c3d79da2748f55c5ab",
             "content": "sha256:29bf6a1cadb20b9d549e739470ca2f53d5425ddc8d42f8c1c74d64584d5c6b79",
             "locator": {
               "kind": "symbol",
@@ -310,7 +300,7 @@
         },
         {
           "anchor": {
-            "blob": "2c4a4f7ed1f5c7b3dc241232a0ea1d28e5b5d04f",
+            "blob": "e93d348be7f3a7d0ed0e91c3d79da2748f55c5ab",
             "content": "sha256:f667e458ab9adb06a6c2a3720e2dbe559d2ac4c324cdf0b0d2291fd720348c5d",
             "locator": {
               "kind": "symbol",
@@ -322,26 +312,40 @@
       ]
     },
     "9": {
-      "note": "The lane reconciles, with every measured path listed once.",
+      "note": "The lane admits measured/partial totals and unavailable absence, checking bucket sums and the number of paths, not uniqueness of path identities.\n\nAnchor: Lane fields and bucket validator",
       "targets": [
         {
           "anchor": {
-            "blob": "2c4a4f7ed1f5c7b3dc241232a0ea1d28e5b5d04f",
+            "blob": "e93d348be7f3a7d0ed0e91c3d79da2748f55c5ab",
             "content": "sha256:e3a1f01daa91af1f0f7221f49fa61a258bf0ea17fa8f2efe6be65910088fd018",
             "locator": {
-              "kind": "symbol",
-              "name": "ReviewUnexplainedLane"
+              "end": 319,
+              "kind": "line_range",
+              "start": 291
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "2c4a4f7ed1f5c7b3dc241232a0ea1d28e5b5d04f",
+            "blob": "e93d348be7f3a7d0ed0e91c3d79da2748f55c5ab",
             "content": "sha256:f82a56dd8a2ed424a377678299d12f5da4dfaca458f99fd68a3c6e1c2072fc8a",
             "locator": {
-              "kind": "symbol",
-              "name": "_buckets_reconcile"
+              "end": 319,
+              "kind": "line_range",
+              "start": 311
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e93d348be7f3a7d0ed0e91c3d79da2748f55c5ab",
+            "content": "sha256:c98c1ae8b22338a659215ab7c42007394f0c429def6a9514a128ae165db8c8ec",
+            "locator": {
+              "end": 368,
+              "kind": "line_range",
+              "start": 352
             }
           },
           "kind": "code"

@@ -132,6 +132,10 @@ contracts locally, delegates the remaining choice, and continues on the named pr
 silently exempting unreadable inputs.
 
 
+### Public gate verdicts for the reviewer
+
+`item_verdicts` is the public per-item projection of the gate’s registered predicates, not a second satisfaction rule. It builds one candidate context, returns `undecided` for every item if that context is unreadable, judges invariant kinds first, and then gives family predicates the subjects of invariants not answered. Optional held K_C/C inputs must both be present and match the memory tree key, code tree and code repository; a partial or mismatched binding is unreadable. This projection does not run validator admission or authorize a write.
+
 ## Evidence
 
 ### Docs References
@@ -143,6 +147,10 @@ outside the repositories.
 No configured live documentation source was available for this pass.
 
 ### Repo-Internal References
+
+- The public gate projection decides invariants before the remaining items and returns typed unreadability. [22]
+- Held reuse admits only both exact candidate sides and the code repository. [23]
+
 
 - The module docstring: the rule, always recomputed, applicability and what is not wired. [1]
 - The finding codes and the repair row. [2]
@@ -163,7 +171,7 @@ No configured live documentation source was available for this pass.
 
 - The validator at the gate, as a leaf publication. [9]
 
-- The packet's examples: ready only once current rows answer every item; a new edit reopens two. [10]
+- The packet's examples: ready only once current rows answer every item, and its case asserts that a new edit reopens four items. [10]
 - A failed Git read inside a predicate or the validator is never a verdict. [11]
 
 - The file a row answering the leaf's items goes to: the latest attempt not closed in a base or in the leaf's memory HEAD. [12]

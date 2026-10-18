@@ -2,53 +2,18 @@
   "path": "dashboard/src/panels/review/markerUnknown.noFamily.captured.json",
   "realizes": [],
   "references": {
-    "1": {
-      "note": "The review's measured zero.\n\nAnchor: \"no_family_recorded\"",
+    "4": {
+      "note": "This retained fixture keeps unreadable after-family scope distinct from confirmed no-family: partial/unavailable family and judgment states are not measured-empty states, and readable selected invariant source does not synthesize an absent member.",
       "targets": [
         {
           "anchor": {
-            "blob": "df116e82e34fb26715c475f024bfd689aa5204b5",
-            "content": "sha256:5ce0a7baa5ec3421da209dd7d5c25f62dc0b9ae09b635c6e3d08fb0a77deed04",
+            "blob": "3bc52f6896fdf0ad644cfb0d387b8615c0354eb7",
+            "content": "sha256:80abc5599691bd91aa9e6ca6e9716fc6a2d712623bd57fcec8691a7d8f99f0f1",
             "locator": {
-              "end": 135,
+              "end": 1,
               "kind": "line_range",
-              "start": 116
+              "start": 1
             }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "2": {
-      "note": "The comparison token and the partial after index.\n\nAnchor: \"review:trees:3\"; \"knowledge-index:after:partial\"",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "df116e82e34fb26715c475f024bfd689aa5204b5",
-            "content": "sha256:0e0c4d0daa196604d93bf3ff3235d266b4dda38338b3c7b3cf3f526117560ff3",
-            "locator": {
-              "end": 246,
-              "kind": "line_range",
-              "start": 237
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "3": {
-      "note": "The receipt row for this body.\n\nAnchor: \"src/panels/review/markerUnknown.noFamily.captured.json\"",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "92897c5349f3345fff3e532e3c2380b0ed621a1c",
-            "content": "sha256:fb86d59acdf5970b87fb3952596f5a5a3291d90c75bea4e983d355986b5e3ef5",
-            "locator": {
-              "end": 89,
-              "kind": "line_range",
-              "start": 89
-            },
-            "path": "dashboard/src/panels/review/markerUnknown.capture-provenance.json"
           },
           "kind": "code"
         }

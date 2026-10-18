@@ -1,5 +1,41 @@
 {
   "path": "dashboard/src/panels/review/ExpressionCards.test.tsx",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "94f9cefa148c27cf96b54f68041a39d57f842a49",
+        "content": "sha256:2fecdb2bcfe09b6f98a4c34b4a19aa1916055f247c576eadb79ffff02b99063f",
+        "locator": {
+          "kind": "symbol",
+          "name": "says a bounded roster's cards cover only the loaded members and points to the walk (F2)"
+        }
+      },
+      "facet": "The current F2 case uses the truncated and complete captured rosters, requires a bounded loaded count and recorded maximum total, constructs disjoint sides whose identity union exceeds that total while displayed loaded count stays clamped, omits a complete scope, and renders the loaded population plus roster-walk direction. This is the asserted bounded-roster facet, not a new execution or the other describe-group cases.",
+      "id": "PRF-3MBVRP",
+      "invariant": "INV-VPX81HXV",
+      "origin": {
+        "handoffEntry": "CUR-L57-R57-7-current-case-proofs",
+        "leaf": "260928-MIK-L57"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "94f9cefa148c27cf96b54f68041a39d57f842a49",
+        "content": "sha256:d55bd38c3874c12d58397f2634fddb982ddf9e972265e05e1332424b55d29c08",
+        "locator": {
+          "kind": "symbol",
+          "name": "names the incomplete side when all members of the widest side are loaded"
+        }
+      },
+      "facet": "At equal loaded/total counts the current case still renders the named after-side missing-content reason without a load-the-rest claim; an empty after member list retains an incomplete-side notice and an unreadable after side renders its actual detail. This is the complementary partial/unavailable-content facet, not execution acceptance.",
+      "id": "PRF-6984YM",
+      "invariant": "INV-VPX81HXV",
+      "origin": {
+        "handoffEntry": "CUR-L57-R57-7-current-case-proofs",
+        "leaf": "260928-MIK-L57"
+      }
+    }
+  ],
   "realizes": [],
   "references": {
     "1": {
@@ -7,7 +43,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "01f07667086e4d24c1208330ea6e80af08dc8020",
+            "blob": "94f9cefa148c27cf96b54f68041a39d57f842a49",
             "content": "sha256:cde89a1608a8303626581c13dcacb8a5664ea4f8bf7730f265d8f77cf68ee7ff",
             "locator": {
               "end": 23,
@@ -24,7 +60,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "01f07667086e4d24c1208330ea6e80af08dc8020",
+            "blob": "94f9cefa148c27cf96b54f68041a39d57f842a49",
             "content": "sha256:244c600948a537039b5b397645a53a90dde69d23544bd184183c8f1daee06223",
             "locator": {
               "end": 163,
@@ -41,7 +77,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "01f07667086e4d24c1208330ea6e80af08dc8020",
+            "blob": "94f9cefa148c27cf96b54f68041a39d57f842a49",
             "content": "sha256:a1e1a5adcd1c0135c1ab2c992adb8d84510cd9929c3dd2d0add0a96626641f50",
             "locator": {
               "end": 209,
@@ -64,6 +100,23 @@
               "end": 283,
               "kind": "line_range",
               "start": 211
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "F2 uses separate bounded and complete captures, checks the disjoint-member union against the widest-side total, and distinguishes incomplete after content even when loaded equals total: identify the unread, missing or unreadable side without offering a false load-the-rest action.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "94f9cefa148c27cf96b54f68041a39d57f842a49",
+            "content": "sha256:efff8f13ac7010572ee6439f2b506399b65a647dd543d099f351964f4f7421f1",
+            "locator": {
+              "end": 297,
+              "kind": "line_range",
+              "start": 238
             }
           },
           "kind": "test"

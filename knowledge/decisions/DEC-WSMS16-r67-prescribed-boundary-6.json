@@ -1,0 +1,53 @@
+{
+  "admission": {
+    "criteria": [
+      "constrains_future_work"
+    ],
+    "justification": "A future preference refactor must not let one temporary passage action silently rewrite saved global presentation."
+  },
+  "alternatives": [
+    {
+      "option": "Persist the general layout preference only; keep a passage Show inline override local to that passage.",
+      "reason": "The general preference is shared/saved, whereas the temporary override is for the passage on screen.",
+      "status": "chosen"
+    },
+    {
+      "option": "Persist every passage override as if it were the global layout preference.",
+      "reason": "The general preference is shared/saved, whereas the temporary override is for the passage on screen.",
+      "reconsider_when": "An approved requirement introduces stable passage identity and explicitly asks for persistent per-passage overrides.",
+      "status": "rejected"
+    }
+  ],
+  "consequences": [
+    "A future preference refactor must not let one temporary passage action silently rewrite saved global presentation.",
+    "The preference module owns global persistence; the passage renderer owns the transient override, and storage failures remain tolerated."
+  ],
+  "context": "Approved MIK-R67@v2 rule18 and its eight named reasons prescribe these unchanged choices; the separate one-spilled-history choice is expressly approved in L57-F07-ONE-SPILLED-HISTORY-ON-PRIVATE-TEMP-DISK-IS-APPROVED.json. Source obligation: MIK-R67@v2 by-design 6. This records a governing boundary, not an invented design meeting.",
+  "decider": "Approved MIK-R67@v2/D47/D48 for its stated unchanged choices; Architect97e0320d ruling2026-10-16T13:14:22+02:00 for the one-spilled-history resource choice.",
+  "id": "DEC-WSMS16",
+  "links": [
+    {
+      "relation": "constrains",
+      "target": {
+        "blob": "e8e7bf594e455235be6cf3b21bc673afc6102f57",
+        "content": "sha256:19e39f6d416ae805667ac81ef386b0f5652bff5536ee1ca80c336e7aeb1dbe8d",
+        "locator": {
+          "kind": "file"
+        },
+        "path": "dashboard/src/panels/review/intentDiffPreference.ts"
+      }
+    }
+  ],
+  "origin": {
+    "handoff": {
+      "path": "freeze11-r67-prescribed-boundaries-and-spill-resource-choice-01.json"
+    },
+    "handoffEntry": "CUR-L57-R67-choice-6",
+    "leaf": "260928-MIK-L57",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-decision/v1",
+  "status": "active",
+  "supersedes": []
+}

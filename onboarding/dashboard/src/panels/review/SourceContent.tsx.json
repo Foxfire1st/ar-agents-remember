@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "9408212dc6bbb8b39c81e874b707478b36dd6319",
+        "blob": "1007f8c974a9b47e37d20a691a0f716894c94d79",
         "content": "sha256:67561911e791ad675588a1b92724f44d6823a545a126458297a30dae3d909e5d",
         "locator": {
           "kind": "symbol",
@@ -20,7 +20,7 @@
     },
     {
       "anchor": {
-        "blob": "9408212dc6bbb8b39c81e874b707478b36dd6319",
+        "blob": "1007f8c974a9b47e37d20a691a0f716894c94d79",
         "content": "sha256:80c602650fbe4d18212c300d5b20ea986bab9d8f666fd0f5ef6ddc9897a00f99",
         "locator": {
           "kind": "symbol",
@@ -38,64 +38,104 @@
     }
   ],
   "references": {
-    "1": {
-      "note": "**The header's own record of the defect and of the three rendering rules, including the rule that an `absent` side is a measured fact rather than an empty file.**\n\nAnchor: `ReviewSourceContentResult`; `DiffPane`; `FilePane`",
+    "35": {
+      "note": "Side state, detail disclosures and the actual text-presence predicate are rendered literally.",
       "targets": [
         {
           "anchor": {
-            "blob": "605a94e6165911a70c8720cc9da1642652343d76",
-            "content": "sha256:53da9e366adefdd56d15abd2b76727a7c7d13d7cab5bd131c1e6c5c2dac79f1a",
+            "blob": "1007f8c974a9b47e37d20a691a0f716894c94d79",
+            "content": "sha256:54e98508aec6caf2237de535c3c137acb0935262ed00751c14fcbe5cd3659f71",
             "locator": {
-              "end": 41,
-              "kind": "line_range",
-              "start": 1
+              "kind": "symbol",
+              "name": "sideLine"
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "9408212dc6bbb8b39c81e874b707478b36dd6319",
-            "content": "sha256:e056304b0eeabd88ad4cbdd60bdf46651ad857ad1e0104e42abff6b043ae8ea0",
+            "blob": "1007f8c974a9b47e37d20a691a0f716894c94d79",
+            "content": "sha256:d1ec3349d49aef33830b013037d5a9a6665b7aa80500c57888e28ec81c0f988f",
             "locator": {
-              "end": 43,
-              "kind": "line_range",
-              "start": 43
+              "kind": "symbol",
+              "name": "contentBlock"
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "9408212dc6bbb8b39c81e874b707478b36dd6319",
-            "content": "sha256:493cf7fae8ecbc416f49722a5361b6bcb1aea05163e96e29bd491a1e938001d1",
+            "blob": "1007f8c974a9b47e37d20a691a0f716894c94d79",
+            "content": "sha256:394c63bb5fb4f1d291035820f78174a48b8a72dfe6b409d3f85d0ddaec2e6ec6",
             "locator": {
-              "end": 224,
-              "kind": "line_range",
-              "start": 224
+              "kind": "symbol",
+              "name": "textual"
             }
           },
           "kind": "code"
         }
       ]
     },
-    "10": {
-      "note": "**The four outcomes in order — transport error, loading, typed refusal, expansion — over one read keyed on the task context, the path and the two published generation ids.**\n\nAnchor: `useEffect`",
+    "36": {
+      "note": "Only the two-present branch draws a diff; other textual sides draw individual panes, with full-file marks and list placement.",
       "targets": [
         {
           "anchor": {
-            "blob": "9408212dc6bbb8b39c81e874b707478b36dd6319",
-            "content": "sha256:80c602650fbe4d18212c300d5b20ea986bab9d8f666fd0f5ef6ddc9897a00f99",
+            "blob": "1007f8c974a9b47e37d20a691a0f716894c94d79",
+            "content": "sha256:17a466031480a2e527003d99f0fc9167e5ffcf84151be67c1b501e4da334cd02",
             "locator": {
               "kind": "symbol",
-              "name": "SourceContent"
+              "name": "Sides"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "37": {
+      "note": "Current-only provenance, open non-current/leaf-bound reasons and bounded-prefix wording are separate rendering decisions.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1007f8c974a9b47e37d20a691a0f716894c94d79",
+            "content": "sha256:153a8093a4d6da67999c95e8e173dc2e713994482ddf3057e102769a1feb834d",
+            "locator": {
+              "kind": "symbol",
+              "name": "Expansion"
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "9408212dc6bbb8b39c81e874b707478b36dd6319",
+            "blob": "1007f8c974a9b47e37d20a691a0f716894c94d79",
+            "content": "sha256:d23d8a2d7c48c308d86f8012ba07731f13f1319ac4fc8a9f17b9eb683a7f9e95",
+            "locator": {
+              "kind": "symbol",
+              "name": "boundedNote"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "38": {
+      "note": "The exported request hook binds results/failures to its exact key, skips a cached read and makes superseded completions inactive.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1007f8c974a9b47e37d20a691a0f716894c94d79",
+            "content": "sha256:a4075a66393cdd657d0cfdf4ae7a54e9d3d522327f762113aff725801aa25bf8",
+            "locator": {
+              "kind": "symbol",
+              "name": "SourceContentRequest"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1007f8c974a9b47e37d20a691a0f716894c94d79",
             "content": "sha256:67561911e791ad675588a1b92724f44d6823a545a126458297a30dae3d909e5d",
             "locator": {
               "kind": "symbol",
@@ -106,75 +146,12 @@
         }
       ]
     },
-    "11": {
-      "note": "The generation-keyed SourceContentRequest and useSourceContentRead remain exported; the focused-lane caller is retired and the retained card Full file consumer passes the review’s own code trees.",
+    "39": {
+      "note": "The source cache key includes all six request fields; only content answers with an expansion are kept.",
       "targets": [
         {
           "anchor": {
-            "blob": "9408212dc6bbb8b39c81e874b707478b36dd6319",
-            "content": "sha256:a4075a66393cdd657d0cfdf4ae7a54e9d3d522327f762113aff725801aa25bf8",
-            "locator": {
-              "end": 211,
-              "kind": "line_range",
-              "start": 204
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "12": {
-      "note": "Where a view's intent markers come from: the pane's name and the classification a caller already holds (MIK-L34).\n\nAnchor: \"export interface SourceMarkers {\"",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "9408212dc6bbb8b39c81e874b707478b36dd6319",
-            "content": "sha256:e2c660504a4c2f69fe3af846b25a863e4f6343183342ee62dcfef32ea262ef5c",
-            "locator": {
-              "end": 70,
-              "kind": "line_range",
-              "start": 63
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "13": {
-      "note": "The marking of this view, and each side's own marks for the one-sided panes.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "9cc44889e1ae01bfa57db6a0f979fdd404e3dabf",
-            "content": "sha256:5719d3559c74924526debec476ee66e7ae00b137167270f1919a327aa137ab23",
-            "locator": {
-              "kind": "symbol",
-              "name": "useSourceMarking"
-            },
-            "path": "dashboard/src/panels/review/IntentMarkers.tsx"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "9cc44889e1ae01bfa57db6a0f979fdd404e3dabf",
-            "content": "sha256:c5b2075833e60d243bd8dcdc692b1be16dc1454a340b7622ed48ac0a3a5e4c50",
-            "locator": {
-              "kind": "symbol",
-              "name": "sideMarks"
-            },
-            "path": "dashboard/src/panels/review/IntentMarkers.tsx"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "15": {
-      "note": "**The key the read is bound to, and the cache it reads through (L48).**",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "28f6044cf9b2ac4f04bd050f54dc1a360b9f7505",
+            "blob": "07826420000445ac2a933cfea990adcb4ec951b6",
             "content": "sha256:258cc647bf202adc5dc0da0e4a7e69cf2a8e39f965230237d5a5f9e4feacec2b",
             "locator": {
               "kind": "symbol",
@@ -186,7 +163,7 @@
         },
         {
           "anchor": {
-            "blob": "28f6044cf9b2ac4f04bd050f54dc1a360b9f7505",
+            "blob": "07826420000445ac2a933cfea990adcb4ec951b6",
             "content": "sha256:a740d3052df748d7f531ad89c2097e4bf54ad7b3bfcc26a384449d1f69c59f4a",
             "locator": {
               "kind": "symbol",
@@ -195,353 +172,15 @@
             "path": "dashboard/src/panels/review/ReviewReadCache.ts"
           },
           "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "28f6044cf9b2ac4f04bd050f54dc1a360b9f7505",
-            "content": "sha256:874ec9bcb067a10e432e2cd1ff53305de4c70fefebbe03e4f3a9f5244d2d2f29",
-            "locator": {
-              "kind": "symbol",
-              "name": "ReviewReadCacheContext"
-            },
-            "path": "dashboard/src/panels/review/ReviewReadCache.ts"
-          },
-          "kind": "code"
         }
       ]
     },
-    "16": {
-      "note": "The client function this module reads through: the typed refusal is read out of the body whatever the HTTP status, and only a body that is not this route's answer throws.",
+    "40": {
+      "note": "Failure/loading/typed refusal/expansion are distinct outcomes; layout/collapse/markers remain display inputs.",
       "targets": [
         {
           "anchor": {
-            "blob": "923faffc20359156074cf02aed9860c41b8b29dd",
-            "content": "sha256:69b212b772094007f73dd9c44e490c832c9950fa7c29b63da605cc6bcafd0155",
-            "locator": {
-              "kind": "symbol",
-              "name": "reviewSourceContent"
-            },
-            "path": "dashboard/src/data/review.ts"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "69f443587646541eb1434c6090c484772f0ac10a",
-            "content": "sha256:68f2cd9abb8c8495ee64946161bcf0b427cbf2099261e7064010023677b47eb9",
-            "locator": {
-              "kind": "symbol",
-              "name": "FilesApiError"
-            },
-            "path": "dashboard/src/data/files.ts"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "c8da7d3848373e1ba06c71f1d25a9244c95b03ff",
-            "content": "sha256:d7e0f790e5a88d7f926e71a86662767eed1f5fbb57f91cefed45ea8b2dd57d03",
-            "locator": {
-              "end": 4,
-              "kind": "line_range",
-              "start": 4
-            },
-            "path": "dashboard/src/data/changeset.test.ts"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "c8da7d3848373e1ba06c71f1d25a9244c95b03ff",
-            "content": "sha256:e5d0f4183543477238d05dfe2257bfe9856dabfe0fe0192f53b5be911d6f1495",
-            "locator": {
-              "end": 54,
-              "kind": "line_range",
-              "start": 54
-            },
-            "path": "dashboard/src/data/changeset.test.ts"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "c8da7d3848373e1ba06c71f1d25a9244c95b03ff",
-            "content": "sha256:1732fd98782fc6d3ad47268b83c50d274b955147717bd964d7f01b450c202fa8",
-            "locator": {
-              "end": 56,
-              "kind": "line_range",
-              "start": 56
-            },
-            "path": "dashboard/src/data/changeset.test.ts"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "1da3bab20ae2b0b070c790c820476038d043758c",
-            "content": "sha256:0f6ace113180807badb9c2aa564233c50bb797a8363183bfe8ebac814ded9d5a",
-            "locator": {
-              "end": 4,
-              "kind": "line_range",
-              "start": 3
-            },
-            "path": "dashboard/src/data/changeset.ts"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "a0fee04577fffdc23ec025ebcb3b1fb8d92bfa29",
-            "content": "sha256:4ab2c98c21852f1df2d707e2002649214b3835abc899650d4c67718a39ca6bb3",
-            "locator": {
-              "end": 4,
-              "kind": "line_range",
-              "start": 4
-            },
-            "path": "dashboard/src/data/files.test.ts"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "a0fee04577fffdc23ec025ebcb3b1fb8d92bfa29",
-            "content": "sha256:b52744260b23bf4515c66a13e2355d1c26c5eda28afd42440e62db19f21ff412",
-            "locator": {
-              "end": 49,
-              "kind": "line_range",
-              "start": 49
-            },
-            "path": "dashboard/src/data/files.test.ts"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "a0fee04577fffdc23ec025ebcb3b1fb8d92bfa29",
-            "content": "sha256:17c5131dbaa74a87a46bad34794aa396391ea104387aa744fb0d161c96e46535",
-            "locator": {
-              "end": 51,
-              "kind": "line_range",
-              "start": 51
-            },
-            "path": "dashboard/src/data/files.test.ts"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "7dea914b7612ec922cac513d3a3384c174847442",
-            "content": "sha256:d7e0f790e5a88d7f926e71a86662767eed1f5fbb57f91cefed45ea8b2dd57d03",
-            "locator": {
-              "end": 3,
-              "kind": "line_range",
-              "start": 3
-            },
-            "path": "dashboard/src/data/notes.test.ts"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "7dea914b7612ec922cac513d3a3384c174847442",
-            "content": "sha256:8aed0a367a05b2774faa3e34ff0cc9fd4ac96fc79a9ed19152d716989f807b42",
-            "locator": {
-              "end": 50,
-              "kind": "line_range",
-              "start": 50
-            },
-            "path": "dashboard/src/data/notes.test.ts"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "7dea914b7612ec922cac513d3a3384c174847442",
-            "content": "sha256:a27d15613065a091f5031a301c9812ddc39b919452f0d6992aabd34ab6c508e5",
-            "locator": {
-              "end": 55,
-              "kind": "line_range",
-              "start": 55
-            },
-            "path": "dashboard/src/data/notes.test.ts"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "45d7df2ebd225f5645b2d6a10524d48f237852f1",
-            "content": "sha256:d1ccb67e5dcd2720be301f0b7a988ff5302386c92c573bb8b39a5e7f7fa734d7",
-            "locator": {
-              "end": 5,
-              "kind": "line_range",
-              "start": 5
-            },
-            "path": "dashboard/src/data/reviewTransport.test.ts"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "25250cf4f41daf7721dd292a421845d64fefdd4c",
-            "content": "sha256:d7e0f790e5a88d7f926e71a86662767eed1f5fbb57f91cefed45ea8b2dd57d03",
-            "locator": {
-              "end": 18,
-              "kind": "line_range",
-              "start": 18
-            },
-            "path": "dashboard/src/data/reviewTransport.ts"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "25250cf4f41daf7721dd292a421845d64fefdd4c",
-            "content": "sha256:97b25a652c3ebdda3eb868f30421f29e59f8ea582105b466bb0c93be95f87a1d",
-            "locator": {
-              "end": 104,
-              "kind": "line_range",
-              "start": 104
-            },
-            "path": "dashboard/src/data/reviewTransport.ts"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "25250cf4f41daf7721dd292a421845d64fefdd4c",
-            "content": "sha256:ef033fcb8c9a26aee6e3c9878f5f221adc995c1d34d47eef1db603ecca2fefa5",
-            "locator": {
-              "end": 106,
-              "kind": "line_range",
-              "start": 106
-            },
-            "path": "dashboard/src/data/reviewTransport.ts"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "86545416eae45e7557f551de907178a8e9174476",
-            "content": "sha256:75f9593fea76939d23696b9e0592a304e1c14880532ae9a59bfe161ce38abcc9",
-            "locator": {
-              "end": 27,
-              "kind": "line_range",
-              "start": 27
-            },
-            "path": "dashboard/src/panels/changeset/ChangeSetViewer.tsx"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "86545416eae45e7557f551de907178a8e9174476",
-            "content": "sha256:8c7e3a0544cedc8517576a5874dec5c3efe6c0911d32e999735798fd0c73d6e4",
-            "locator": {
-              "end": 306,
-              "kind": "line_range",
-              "start": 306
-            },
-            "path": "dashboard/src/panels/changeset/ChangeSetViewer.tsx"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "17e3d12d252e214305fe04d6109ac533785766da",
-            "content": "sha256:4ab2c98c21852f1df2d707e2002649214b3835abc899650d4c67718a39ca6bb3",
-            "locator": {
-              "end": 12,
-              "kind": "line_range",
-              "start": 12
-            },
-            "path": "dashboard/src/panels/file-viewer/FileViewer.tsx"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "17e3d12d252e214305fe04d6109ac533785766da",
-            "content": "sha256:f5386a914e8e6757d9ebe3f9a9f4724a06ec87a82417a9a8451dff5725f62ff8",
-            "locator": {
-              "end": 112,
-              "kind": "line_range",
-              "start": 112
-            },
-            "path": "dashboard/src/panels/file-viewer/FileViewer.tsx"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "17": {
-      "note": "**The wire shape a side is: the closed six-member state literal, the optional `text` that is present only for the two textual states, and the identity facts the state line prints.**",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "923faffc20359156074cf02aed9860c41b8b29dd",
-            "content": "sha256:92f1296ffc3e502b070bc17e51563baa866342e1c5c3c1461bd6f23acae1b788",
-            "locator": {
-              "kind": "symbol",
-              "name": "ReviewSourceSideState"
-            },
-            "path": "dashboard/src/data/review.ts"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "549d07c35309c25062a49eb856d3689a5a9c9b5f",
-            "content": "sha256:75319702001c25b9863f52aece77d448458d187ed5fff17846d210bc1cde33d4",
-            "locator": {
-              "kind": "symbol",
-              "name": "ReviewSourceSide"
-            },
-            "path": "dashboard/src/data/review.ts"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "18": {
-      "note": "**The wire shape one opened entry is: the two sides, both generation ids, the three-member currentness, and the `path_bound` that says which measured change set admitted the path.**",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "923faffc20359156074cf02aed9860c41b8b29dd",
-            "content": "sha256:d6c2f0cb4e05611a6ee870f5ac40440cd1b98f76becc8be2dfd54a95c43ae515",
-            "locator": {
-              "kind": "symbol",
-              "name": "ReviewSourceExpansion"
-            },
-            "path": "dashboard/src/data/review.ts"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "19": {
-      "note": "The response envelope whose two states are the two rendered answers.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "923faffc20359156074cf02aed9860c41b8b29dd",
-            "content": "sha256:3077955a6263794f03a7acf7ae87de8b88be58ed1fe0c79d783f6952e9a80d83",
-            "locator": {
-              "kind": "symbol",
-              "name": "ReviewSourceContentResult"
-            },
-            "path": "dashboard/src/data/review.ts"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "2": {
-      "note": "SourceContent obtains bound bytes through the client; its operand renderers reuse the existing diff and file panes.\n\nAnchor: \"function Sides({\"",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "9408212dc6bbb8b39c81e874b707478b36dd6319",
+            "blob": "1007f8c974a9b47e37d20a691a0f716894c94d79",
             "content": "sha256:80c602650fbe4d18212c300d5b20ea986bab9d8f666fd0f5ef6ddc9897a00f99",
             "locator": {
               "kind": "symbol",
@@ -552,460 +191,8 @@
         },
         {
           "anchor": {
-            "blob": "9408212dc6bbb8b39c81e874b707478b36dd6319",
-            "content": "sha256:d1ec3349d49aef33830b013037d5a9a6665b7aa80500c57888e28ec81c0f988f",
-            "locator": {
-              "kind": "symbol",
-              "name": "contentBlock"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "9408212dc6bbb8b39c81e874b707478b36dd6319",
-            "content": "sha256:45c7a786f6965cb866020baa5be418052e8cd8b2c5376101190b5e4ca8ca1ea2",
-            "locator": {
-              "end": 71,
-              "kind": "line_range",
-              "start": 71
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "22": {
-      "note": "Central expression expansion reuses this bound source renderer.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "77d3784bf09b731e42d063c488853eec6d499d97",
-            "content": "sha256:fdc389bfbbb89b8165fdbf576417cc03aed096459bae9b6f3ef1dd88fe89e53c",
-            "locator": {
-              "kind": "symbol",
-              "name": "ExpressionCard"
-            },
-            "path": "dashboard/src/panels/review/ReviewExpressions.tsx"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "23": {
-      "note": "**The cases that drive the real surface and the real client over a stubbed transport: the addition, the two-sided modification, the binary side, the symlink target and the submodule pointer.**\n\nAnchor: \"draws an added file's entire candidate text beside the named absent side\"; \"draws a modified file as the two-sided diff of its two bound texts\"; \"states a binary side's identity and size and draws no content for it\"; \"carries a symlink's target as content and never claims a document edit\"; \"reports a submodule pointer by its recorded commit and draws nothing for it\"",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "5e53d394f64fbaf6b065bebfc2b705404424d645",
-            "content": "sha256:2efe76cf36d4cd2ea22e2b3f5bf5efb7e87c0ae61c44caa0e5cded2e93aa8fd1",
-            "locator": {
-              "end": 293,
-              "kind": "line_range",
-              "start": 271
-            },
-            "path": "dashboard/src/panels/review/SourceContent.test.tsx"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "5e53d394f64fbaf6b065bebfc2b705404424d645",
-            "content": "sha256:c7b383015ab5034c05a1a35c892b507a574bb1f8eefaff738b7e792ca7b170c0",
-            "locator": {
-              "end": 318,
-              "kind": "line_range",
-              "start": 295
-            },
-            "path": "dashboard/src/panels/review/SourceContent.test.tsx"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "5e53d394f64fbaf6b065bebfc2b705404424d645",
-            "content": "sha256:89714db8572b434b2d4cd2da2a37c2e6bc99cfe79a061ba52436432ecaf0fb48",
-            "locator": {
-              "end": 341,
-              "kind": "line_range",
-              "start": 320
-            },
-            "path": "dashboard/src/panels/review/SourceContent.test.tsx"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "5e53d394f64fbaf6b065bebfc2b705404424d645",
-            "content": "sha256:adab409c6a3e49ea1b88ebfb5cc1d8f7f6c0c259247db6921204bdd12179acc3",
-            "locator": {
-              "end": 366,
-              "kind": "line_range",
-              "start": 343
-            },
-            "path": "dashboard/src/panels/review/SourceContent.test.tsx"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "5e53d394f64fbaf6b065bebfc2b705404424d645",
-            "content": "sha256:33c1c4b40fc31a10d10e5ddca2741d5b771bc6c91f31ea11a58cde2f65cf0d18",
-            "locator": {
-              "end": 387,
-              "kind": "line_range",
-              "start": 368
-            },
-            "path": "dashboard/src/panels/review/SourceContent.test.tsx"
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "24": {
-      "note": "**The generation and boundedness cases: a superseded read keeps the listed generation's text on screen, and a truncated side is stated as a prefix beside its object size.**\n\nAnchor: \"labels a superseded generation while still showing the listed generation's text\"; \"states a bounded expansion as a prefix of the object\"",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "5e53d394f64fbaf6b065bebfc2b705404424d645",
-            "content": "sha256:1dfcf48c13f7e3faff29ca133dc09313536a62ae8297f705958e491c7869cd7e",
-            "locator": {
-              "end": 411,
-              "kind": "line_range",
-              "start": 389
-            },
-            "path": "dashboard/src/panels/review/SourceContent.test.tsx"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "5e53d394f64fbaf6b065bebfc2b705404424d645",
-            "content": "sha256:e0299961d1768d323a41a8d81c63926c13bf1700268148ced7ae8b0e33b30ac7",
-            "locator": {
-              "end": 439,
-              "kind": "line_range",
-              "start": 413
-            },
-            "path": "dashboard/src/panels/review/SourceContent.test.tsx"
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "25": {
-      "note": "**The failure and provenance cases: a typed refusal with no content, the exact generation and path the listing published, and the leaf-change-set bound stated when the requested generation could not be measured.**\n\nAnchor: \"renders a refused entry read as its typed refusal and no content\"; \"sends the generation and path the listing published, not a re-resolved one\"; \"states which measured change set admitted the path when the requested one could not be measured\"",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "5e53d394f64fbaf6b065bebfc2b705404424d645",
-            "content": "sha256:9ff0d7fc6001c785618ca7ee91cb65c3b1998da0641c211e1dd5938f4d4bdb43",
-            "locator": {
-              "end": 459,
-              "kind": "line_range",
-              "start": 441
-            },
-            "path": "dashboard/src/panels/review/SourceContent.test.tsx"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "5e53d394f64fbaf6b065bebfc2b705404424d645",
-            "content": "sha256:fdfb0aac0c3fef74dae022a22caec21d1ca40efe22aafa2ce653085408b18c1d",
-            "locator": {
-              "end": 490,
-              "kind": "line_range",
-              "start": 461
-            },
-            "path": "dashboard/src/panels/review/SourceContent.test.tsx"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "5e53d394f64fbaf6b065bebfc2b705404424d645",
-            "content": "sha256:282657a2db8808d1bf73bdabce2f127971ef0a83661cff117fbd7e9f501f8c54",
-            "locator": {
-              "end": 522,
-              "kind": "line_range",
-              "start": 492
-            },
-            "path": "dashboard/src/panels/review/SourceContent.test.tsx"
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "26": {
-      "note": "**The two boundary cases: the byte-form row is listed without an open control, and an inventory that named no code trees offers no expansion at all.**\n\nAnchor: \"lists a byte-form row without implying it can be opened\"; \"offers no expansion for an inventory that named no code trees\"",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "5e53d394f64fbaf6b065bebfc2b705404424d645",
-            "content": "sha256:c3f16f987c29acd473c5b0c1bfe8066279122f8ca0678b39b5d521e6357aa14c",
-            "locator": {
-              "end": 562,
-              "kind": "line_range",
-              "start": 524
-            },
-            "path": "dashboard/src/panels/review/SourceContent.test.tsx"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "5e53d394f64fbaf6b065bebfc2b705404424d645",
-            "content": "sha256:8809e53dfb2b721ab85dd749064b5dcd3799092ed97c6f9dfdff3da63aeae290",
-            "locator": {
-              "end": 590,
-              "kind": "line_range",
-              "start": 564
-            },
-            "path": "dashboard/src/panels/review/SourceContent.test.tsx"
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "27": {
-      "note": "The generation-keyed SourceContentRequest and useSourceContentRead remain exported; the focused-lane caller is retired and the retained card Full file consumer passes the review’s own code trees.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "9408212dc6bbb8b39c81e874b707478b36dd6319",
-            "content": "sha256:4748280803296a22d4acdebd302c814ef0d0248271eddd61697f6a3647b0b5f7",
-            "locator": {
-              "end": 223,
-              "kind": "line_range",
-              "start": 216
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "28": {
-      "note": "The generation-keyed SourceContentRequest and useSourceContentRead remain exported; the focused-lane caller is retired and the retained card Full file consumer passes the review’s own code trees.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "10bd037f0b55003954928f8873757630e8d12f9e",
-            "content": "sha256:86459cf18e5fe3f8695e2fb0d6df410dd37eca6db4b4210dc234582ad5b10d66",
-            "locator": {
-              "end": 621,
-              "kind": "line_range",
-              "start": 582
-            },
-            "path": "dashboard/src/panels/review/ExpressionCards.tsx"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "29": {
-      "note": "The central card Full file and retained dataset expression renderer supply the exact inventory trees to this source renderer; inventory navigation itself belongs to the comparison viewer.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "10bd037f0b55003954928f8873757630e8d12f9e",
-            "content": "sha256:1dcdadd6be389471b1193b5acb990a279c302ca6cd950a578a2add5621ea07a8",
-            "locator": {
-              "end": 622,
-              "kind": "line_range",
-              "start": 583
-            },
-            "path": "dashboard/src/panels/review/ExpressionCards.tsx"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "3": {
-      "note": "Text renderability is determined by the supplied text value, rather than inferred from a present-state label.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "9408212dc6bbb8b39c81e874b707478b36dd6319",
-            "content": "sha256:394c63bb5fb4f1d291035820f78174a48b8a72dfe6b409d3f85d0ddaec2e6ec6",
-            "locator": {
-              "kind": "symbol",
-              "name": "textual"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "30": {
-      "note": "The central card Full file and retained dataset expression renderer supply the exact inventory trees to this source renderer; inventory navigation itself belongs to the comparison viewer.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "f715a0ae08b0747d62ac23144d24a5bd2c745f38",
-            "content": "sha256:7d3f470d4b91306c2f4b6ac33d1ff0bb3fd3eb177bf25eee2c3bf2718a378e72",
-            "locator": {
-              "end": 234,
-              "kind": "line_range",
-              "start": 225
-            },
-            "path": "dashboard/src/panels/review/ReviewExpressions.tsx"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "31": {
-      "note": "Cached content read keyed on the two bound trees",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "9408212dc6bbb8b39c81e874b707478b36dd6319",
-            "content": "sha256:67561911e791ad675588a1b92724f44d6823a545a126458297a30dae3d909e5d",
-            "locator": {
-              "end": 256,
-              "kind": "line_range",
-              "start": 216
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "32": {
-      "note": "Cached content read keyed on the two bound trees",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "9408212dc6bbb8b39c81e874b707478b36dd6319",
-            "content": "sha256:e8dc29ab1e6055f2ed6193584d5a2618af9ab670ade3c9d0fc0549ae6ed9a94a",
-            "locator": {
-              "end": 232,
-              "kind": "line_range",
-              "start": 214
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "33": {
-      "note": "Retained bound full-file source renderer for expression cards and dataset expression views",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "9408212dc6bbb8b39c81e874b707478b36dd6319",
-            "content": "sha256:80c602650fbe4d18212c300d5b20ea986bab9d8f666fd0f5ef6ddc9897a00f99",
-            "locator": {
-              "end": 311,
-              "kind": "line_range",
-              "start": 258
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "34": {
-      "note": "Retained bound full-file source renderer for expression cards and dataset expression views",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "9408212dc6bbb8b39c81e874b707478b36dd6319",
-            "content": "sha256:cb66cd95d5ff750dc91f865d6f9388ef907ea40f5e80c9f99f08af0a59be8724",
-            "locator": {
-              "end": 274,
-              "kind": "line_range",
-              "start": 256
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "4": {
-      "note": "**One side's state line, carrying its declared state, its measured object identity and size, and the detail only when the state is not a complete untruncated text.**",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "605a94e6165911a70c8720cc9da1642652343d76",
-            "content": "sha256:766d26470d52c5b91fd6b0e8433be9beb12254019fc1f36fec0c81330fc33cb9",
-            "locator": {
-              "kind": "symbol",
-              "name": "sideLine"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "5": {
-      "note": "The single readable operand drawn in the shipped viewer, in its own testid host, for a textual side only.\n\nAnchor: `contentBlock`",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "51f94729899f48cef6ffa98458e7c097fa30497e",
-            "content": "sha256:6c1ef40b74941e5bc4e8f9a286aefb833f98a00d211239b487d8009b8f9f6887",
-            "locator": {
-              "kind": "symbol",
-              "name": "FilePane"
-            },
-            "path": "dashboard/src/panels/file-viewer/FilePane.tsx"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "605a94e6165911a70c8720cc9da1642652343d76",
-            "content": "sha256:1d8296b1490612891473faa8036b266d9586ec8f1d52d4f2b1ffba75c8ec0300",
-            "locator": {
-              "kind": "file"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "6": {
-      "note": "**The branch itself: both sides present draw the shipped two-sided diff, neither textual stops at the state lines, and the one-sided case states that no diff is claimed before drawing each readable side; each branch places the view's intent-marker note, marks and list around the panes it draws (MIK-L34).**\n\nAnchor: \"function Sides({\"; \"const marking = useSourceMarking(expansion, mode, markers);\"; `review-source-no-diff-claimed`",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "9408212dc6bbb8b39c81e874b707478b36dd6319",
-            "content": "sha256:b84fd31944c3c27d5bc513725f1bf10f9e0660fd1009f5d4b8300735f0ad354b",
-            "locator": {
-              "end": 127,
-              "kind": "line_range",
-              "start": 71
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "7": {
-      "note": "**The bounded read stated as a prefix of the object, naming which sides are truncated.**\n\nAnchor: `review-source-truncated`",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "9408212dc6bbb8b39c81e874b707478b36dd6319",
-            "content": "sha256:d23d8a2d7c48c308d86f8012ba07731f13f1319ac4fc8a9f17b9eb683a7f9e95",
-            "locator": {
-              "kind": "symbol",
-              "name": "boundedNote"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "8": {
-      "note": "**The typed refusal rendered with its code, detail, next action and offending input, and with no content beside it.**\n\nAnchor: `review-source-refusal`",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "605a94e6165911a70c8720cc9da1642652343d76",
-            "content": "sha256:434a0d861518953aa331a027354ef83829fc8cd7a658175b94c02ae4cc3a6177",
+            "blob": "1007f8c974a9b47e37d20a691a0f716894c94d79",
+            "content": "sha256:4f2a480e48272d98d277bfe1061fa57291e98d7eb2f020e8397d7b1daced942f",
             "locator": {
               "kind": "symbol",
               "name": "refusalBlock"
@@ -1015,18 +202,177 @@
         }
       ]
     },
-    "9": {
-      "note": "**The read's own provenance: currentness always, the generation and status line, the leaf-change-set bound only when that is the measured bound, and the reproducing command; the optional `markers` passed on to the sides (MIK-L34).**\n\nAnchor: \"function Expansion({\"; `review-source-currentness`; `review-source-path-bound`; `review-source-command`",
+    "41": {
+      "note": "The current expression-card FullFile caller passes the review trees, task context, display inputs and pane marker.",
       "targets": [
         {
           "anchor": {
-            "blob": "605a94e6165911a70c8720cc9da1642652343d76",
-            "content": "sha256:c715e307882f41a9fd2c9ea094f2f0ddb4ee58f0f10846c507e75e2758ea8fd5",
+            "blob": "f0ec90b4f33dfc875cc31a2eae53f6ecb168695c",
+            "content": "sha256:1dcdadd6be389471b1193b5acb990a279c302ca6cd950a578a2add5621ea07a8",
             "locator": {
-              "end": 196,
+              "kind": "symbol",
+              "name": "FullFile"
+            },
+            "path": "dashboard/src/panels/review/ExpressionCards.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "42": {
+      "note": "Marker classification must describe the drawn endpoint objects before pane marking is used.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "35af2c8458b2bd51d363ec1f220ab9e592467e3d",
+            "content": "sha256:5719d3559c74924526debec476ee66e7ae00b137167270f1919a327aa137ab23",
+            "locator": {
+              "kind": "symbol",
+              "name": "useSourceMarking"
+            },
+            "path": "dashboard/src/panels/review/IntentMarkers.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "35af2c8458b2bd51d363ec1f220ab9e592467e3d",
+            "content": "sha256:a5c360f5dbaddb867825033d38a5b917ab6e7f4baf3753308d5c67cac6fe71a7",
+            "locator": {
+              "kind": "symbol",
+              "name": "drawnSides"
+            },
+            "path": "dashboard/src/panels/review/IntentMarkers.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "43": {
+      "note": "The separate marks list admits only the matching active hunk classification, labels unplaced entries and binds reveal to path and placed IDs.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0418e0050cb591ccc3c2ea50fdc4db062bfd1b91",
+            "content": "sha256:e0cdf207f98d69c54605b1b960d00f66e8273d255b688a409a8ed007615e7b9b",
+            "locator": {
+              "kind": "symbol",
+              "name": "useFullFileMarks"
+            },
+            "path": "dashboard/src/panels/review/full-file-marks/useFullFileMarks.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0418e0050cb591ccc3c2ea50fdc4db062bfd1b91",
+            "content": "sha256:7806c55d11b3bed7af34038036149009e62d01791401ce85be8f79376cf6beb7",
+            "locator": {
+              "kind": "symbol",
+              "name": "MarksList"
+            },
+            "path": "dashboard/src/panels/review/full-file-marks/useFullFileMarks.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0418e0050cb591ccc3c2ea50fdc4db062bfd1b91",
+            "content": "sha256:b840eace24728f25e39e0ae0ab02a13370fbbb8d6dc1506c1b7e66b6a2597f08",
+            "locator": {
+              "kind": "symbol",
+              "name": "sourceMarks"
+            },
+            "path": "dashboard/src/panels/review/full-file-marks/useFullFileMarks.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "44": {
+      "note": "The retained component helper and comparison-page helper are distinct, including an added-file case that checks both paths.\n\nAnchor: direct SourceContent mount and comparison mount",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4e86b5b7c4331a4a9147e569d7e55b43dcd4a73b",
+            "content": "sha256:4992de78c2f76a0967374974f5d0aa98204ce4997ee6f050162548b0cf0adffb",
+            "locator": {
+              "end": 287,
               "kind": "line_range",
-              "start": 155
-            }
+              "start": 200
+            },
+            "path": "dashboard/src/panels/review/SourceContent.test.tsx"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "45": {
+      "note": "Binary, symlink, submodule, superseded and prefix declarations inspect the retained full-file renderer.\n\nAnchor: retained fullFile cases",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4e86b5b7c4331a4a9147e569d7e55b43dcd4a73b",
+            "content": "sha256:eea981ba53fc709d0f106cd6ded8f0c5cbb153cc649d16f601520c493304f51e",
+            "locator": {
+              "end": 421,
+              "kind": "line_range",
+              "start": 311
+            },
+            "path": "dashboard/src/panels/review/SourceContent.test.tsx"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "46": {
+      "note": "Refusal/generation cases distinguish comparison route requests from the retained source-content query; the leaf-bound case uses the retained component.\n\nAnchor: refusal and bound-generation cases",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4e86b5b7c4331a4a9147e569d7e55b43dcd4a73b",
+            "content": "sha256:78714c86f9c4100071e39d973cb7d86164874a78afe1af6bdbdf0069721d2d59",
+            "locator": {
+              "end": 532,
+              "kind": "line_range",
+              "start": 423
+            },
+            "path": "dashboard/src/panels/review/SourceContent.test.tsx"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "47": {
+      "note": "Byte-form and unavailable-inventory cases exercise the comparison helper, not a resurrected dataset or source-explorer mount.\n\nAnchor: comparison inventory cases",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4e86b5b7c4331a4a9147e569d7e55b43dcd4a73b",
+            "content": "sha256:99cc4d395857e9cbf4e1bcc18d9c770c450020d99603e8cb65c02fcaa7df1ceb",
+            "locator": {
+              "end": 587,
+              "kind": "line_range",
+              "start": 534
+            },
+            "path": "dashboard/src/panels/review/SourceContent.test.tsx"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "48": {
+      "note": "The client sends all six supplied identity fields to the source-content route.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6aef8710047677b74fa337e6c4e2b6df948df099",
+            "content": "sha256:2e85080d0afdf4756e5a5ec38c385a70d81dfef4fd10255d5cee102791c487cb",
+            "locator": {
+              "kind": "symbol",
+              "name": "reviewSourceContent"
+            },
+            "path": "dashboard/src/data/review.ts"
           },
           "kind": "code"
         }

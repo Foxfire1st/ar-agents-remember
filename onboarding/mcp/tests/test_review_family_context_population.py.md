@@ -22,7 +22,7 @@ population — all pinned through the same production composition.
 The new-member case records the sibling member in the direct family's roster without moving the
 family revision. The removed-member case proves the old membership no longer pins the family
 context. `_assert_primary_unchanged` checks revision selection, statements, conditions, the whole
-evidence pane and the complete source inventory across those family-only changes.
+judgment and the complete source inventory across those family-only changes. Two added parameterized test declarations distinguish malformed after-family records from actual absence: with known before membership, the context is partial, selection unresolved and after context unreadable, retaining the before guarantee; without known membership, it is unavailable and explicitly not a measured zero. Deleting the named family remains removed with recorded before and not_recorded after, including when an unrelated family is malformed.
 
 ### Conventions
 
@@ -54,5 +54,7 @@ These current owners and cases establish the stated behavior.
 - A recorded memberless family retains its guarantee and measured empty roster. [2]
 - A new member retains the family's existing before counterpart. [4]
 - A retained predecessor membership cannot pin the family after selection. [5]
-- Primary knowledge, evidence and complete source inventory stay independent. [6]
-- Sparse pages preserve the recorded population and primary panes through real HTTP walks. [7]
+
+- Family-only changes preserve revision selection, statements, conditions, judgment and complete source inventory. [6]
+- Sparse HTTP walks preserve the recorded population and selected knowledge, judgment, source inventory and comparison. [7]
+- Malformed named after-family records yield partial unresolved retained context with known membership, or unavailable rather than measured zero without it. Actual deletion remains removed despite an unrelated malformed family. Each declaration has two parameter values. [8]

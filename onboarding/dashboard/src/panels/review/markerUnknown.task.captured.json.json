@@ -2,36 +2,18 @@
   "path": "dashboard/src/panels/review/markerUnknown.task.captured.json",
   "realizes": [],
   "references": {
-    "1": {
-      "note": "The comparison token and the partial after index.\n\nAnchor: \"review:trees:3\"; \"knowledge-index:after:partial\"",
+    "3": {
+      "note": "The current retained JSON input supplies the literal identities, response states and populations summarized above; these are fixture facts, not live project knowledge or fresh execution evidence.",
       "targets": [
         {
           "anchor": {
-            "blob": "dab907228cd511dd49d54d5d8e214f2eeceed82c",
-            "content": "sha256:f31506305c1817f31272fe4c45e3b38ef9e2e31c41261564e19d2cc844debc38",
+            "blob": "ac9f749c8a5e3ab0d46bce8921961fdce50fe55b",
+            "content": "sha256:4e512a8c78532ae2dc4650d8e06ef9c2ac4ad16225e341c5e0e797a1ede9e76b",
             "locator": {
-              "end": 193,
+              "end": 1,
               "kind": "line_range",
-              "start": 186
+              "start": 1
             }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "2": {
-      "note": "The receipt row for this body.\n\nAnchor: \"src/panels/review/markerUnknown.task.captured.json\"",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "92897c5349f3345fff3e532e3c2380b0ed621a1c",
-            "content": "sha256:434d08eea1b7a231085d5d4de073da42d42ef2991f361c4900c42ede00287cf7",
-            "locator": {
-              "end": 15,
-              "kind": "line_range",
-              "start": 15
-            },
-            "path": "dashboard/src/panels/review/markerUnknown.capture-provenance.json"
           },
           "kind": "code"
         }

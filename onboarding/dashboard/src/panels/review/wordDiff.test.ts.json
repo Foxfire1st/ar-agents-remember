@@ -1,5 +1,58 @@
 {
   "path": "dashboard/src/panels/review/wordDiff.test.ts",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "4e87d80fee2a5f2684a8e2b6dc49ef39de00e29e",
+        "content": "sha256:c2f58d9699e560e20a3769404025e814536a6fce1ad1423b003a1b0f7c9d15be",
+        "locator": {
+          "kind": "symbol",
+          "name": "pairs a gap with equal counts for a word diff, and never pairs unequal gaps"
+        }
+      },
+      "facet": "Within the alignment bound, equal remaining gaps produce the declared changed pair; unequal gaps remain ordered removed/added items and the inspected gap rows carry unpaired_gap. This is not the over-budget test and no runtime execution is claimed.",
+      "id": "PRF-20XDHV",
+      "invariant": "INV-8Y3BRE",
+      "origin": {
+        "handoffEntry": "CUR-L57-bounded-no-guessed-list-pairs",
+        "leaf": "260928-MIK-L57"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "4e87d80fee2a5f2684a8e2b6dc49ef39de00e29e",
+        "content": "sha256:c83ba072d5546720e2ba953c206a7e80142b3a0383dd7db989fbdcec6baf2d32",
+        "locator": {
+          "kind": "symbol",
+          "name": "bounds list alignment without guessing pairs even for matching positions"
+        }
+      },
+      "facet": "For the two declared large list sizes, including one shared middle item, asserts only removed/added rows with cell_limit and exact ordered reconstruction of both item arrays; does not measure allocation/latency or cover every renderer.",
+      "id": "PRF-708EWC",
+      "invariant": "INV-8Y3BRE",
+      "origin": {
+        "handoffEntry": "CUR-L57-bounded-no-guessed-list-pairs",
+        "leaf": "260928-MIK-L57"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "4e87d80fee2a5f2684a8e2b6dc49ef39de00e29e",
+        "content": "sha256:403b0b03eb5071a292575f15762cb4fbda53ed21f988f452b1a7f3561b8a6292",
+        "locator": {
+          "kind": "symbol",
+          "name": "decides by bytes: identical, whitespace only, or words"
+        }
+      },
+      "facet": "Checks identical/spacing-only results and requires words plus exact side reconstruction for punctuation splits/joins and must-not joins/splits. The title says bytes but the inspected API inputs/results are JavaScript strings; no fresh execution or raw-file-decoding claim.",
+      "id": "PRF-KTJ90R",
+      "invariant": "INV-76J49B",
+      "origin": {
+        "handoffEntry": "CUR-L57-word-token-boundary-classification",
+        "leaf": "260928-MIK-L57"
+      }
+    }
+  ],
   "realizes": [],
   "references": {
     "1": {
@@ -37,14 +90,14 @@
       ]
     },
     "3": {
-      "note": "The conforming example, exact reassembly, runs, whitespace marks and the byte decision (F3).\n\nAnchor: \"marks the replaced words in place within one sentence (the conforming example)\"; \"reassembles both exact texts from its parts, whatever the change\"; \"decides by bytes: identical, whitespace only, or words\"",
+      "note": "The five changed-text declarations retain conforming marks, reconstruction, runs and whitespace marks. Byte decisions classify punctuation spacing and must-not joining/splitting as words and reconstruct both inputs exactly.\n\nAnchor: inclusive source ranges",
       "targets": [
         {
           "anchor": {
-            "blob": "06b268abb52eea105d550a3f5a2d121731e938b1",
-            "content": "sha256:9e7e0d2aba85143fe9c138f279cc681476cb313445a36f3c83a51eb6a989171c",
+            "blob": "4e87d80fee2a5f2684a8e2b6dc49ef39de00e29e",
+            "content": "sha256:22f1cf06f8b2c040c7e2849f91802c2ae82bb385fc0c4d6d52ce000bbfd1cf2f",
             "locator": {
-              "end": 112,
+              "end": 120,
               "kind": "line_range",
               "start": 46
             }
@@ -71,16 +124,16 @@
       ]
     },
     "5": {
-      "note": "Rule 1a: insertions, removals, equal-count pairing, moved items, never positional.\n\nAnchor: \"describe('list alignment (rule 1a)'\"; \"shows a reordered item as moved, never pairing by position across the list\"",
+      "note": "Five list-alignment declarations cover retained pairing/movement rules, unpaired_gap notes and over-budget 1500/3000-item populations preserved as removed/added rows tagged cell_limit.\n\nAnchor: inclusive source ranges",
       "targets": [
         {
           "anchor": {
-            "blob": "06b268abb52eea105d550a3f5a2d121731e938b1",
-            "content": "sha256:cf065f38828fb9b29dd38023f89a5e29706b380563b7e4f425bfe1accb23b7d5",
+            "blob": "4e87d80fee2a5f2684a8e2b6dc49ef39de00e29e",
+            "content": "sha256:65e560220ac647e21ce8c3385b7ad9303e6c8603d68a8b9a5a24a372f90c072b",
             "locator": {
-              "end": 214,
+              "end": 241,
               "kind": "line_range",
-              "start": 150
+              "start": 158
             }
           },
           "kind": "test"

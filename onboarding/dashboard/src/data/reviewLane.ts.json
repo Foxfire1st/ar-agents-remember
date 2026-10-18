@@ -20,16 +20,16 @@
       ]
     },
     "10": {
-      "note": "The one lane read of the surface.\n\nAnchor: \"const laneRead = useReviewLane(\"",
+      "note": "ReviewPanes calls useReviewLane once with the payload's parsed comparison number or undefined, then passes that read to the workspace, details and change-page owner. This does not assert a global count of every possible lane request.\n\nAnchor: inclusive source ranges",
       "targets": [
         {
           "anchor": {
-            "blob": "f7e576bc05a33889caaab2fe6c0396c6d8805922",
-            "content": "sha256:c0a3de7fe67b48f89e71059b05fe33dad9eb0330cae7845b7e3356b1a1751d68",
+            "blob": "bb94e003292e3a408d3607472dacd850e1f8da65",
+            "content": "sha256:144cb791808f89a3867436351e471f4881b1d10cc83fa97745cb58d8a64cf846",
             "locator": {
-              "end": 352,
+              "end": 355,
               "kind": "line_range",
-              "start": 347
+              "start": 337
             },
             "path": "dashboard/src/panels/review/ReviewSurface.tsx"
           },
@@ -83,28 +83,102 @@
       ]
     },
     "14": {
-      "note": "The hook-form file read leaves with the focused lane view",
+      "note": "laneUrl constructs the comparison-bound tree-view request. useReviewLane suppresses the request when comparison is undefined and selects the lane answer otherwise. This module retains readFileClassification as a single-shot file read and declares no exported useReviewFileClassification hook; these local targets do not prove global focused-view removal.\n\nAnchor: inclusive source ranges",
       "targets": [
         {
           "anchor": {
-            "blob": "88413807ae37c2090f387e7240b7777c106afbf7",
+            "blob": "42427cf2c755ff5dd21db48d8561569ecc82c094",
             "content": "sha256:e4fd818a484a072780fa152651b5dfbad944eb2facc444b0b97448528dc2b176",
             "locator": {
-              "kind": "symbol",
-              "name": "laneUrl"
+              "end": 203,
+              "kind": "line_range",
+              "start": 196
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "88413807ae37c2090f387e7240b7777c106afbf7",
-            "content": "sha256:6b222a4c44c7561f5c4d5b2931f2100478fbc795600b76993c659acef530e92a",
+            "blob": "42427cf2c755ff5dd21db48d8561569ecc82c094",
+            "content": "sha256:adeded5837deed40ce045846e3e4646e6f29b62d426d3ab29d976886ce5eb5af",
             "locator": {
-              "end": 256,
+              "end": 259,
               "kind": "line_range",
-              "start": 248
+              "start": 249
             }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "15": {
+      "note": "ReviewLaneFamilyOccurrence preserves optional family identity/revision fields and required membership state, adding optional reason; ReviewLaneLink continues to carry these occurrences. The server declares the corresponding reason field and validates its presence exactly for membership_unknown. This is DTO carriage and server validation, not evidence that every carried field renders.\n\nAnchor: inclusive source ranges",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "42427cf2c755ff5dd21db48d8561569ecc82c094",
+            "content": "sha256:c55c40363c2c39f5fc2c6a519cc7abe01607f80e1ccb8fea0be1752262928acf",
+            "locator": {
+              "end": 60,
+              "kind": "line_range",
+              "start": 54
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "42427cf2c755ff5dd21db48d8561569ecc82c094",
+            "content": "sha256:d5e75c4289a51117ee095dd569352bdbb37ed8bf83987e3b91aa1333fcdba41e",
+            "locator": {
+              "end": 74,
+              "kind": "line_range",
+              "start": 62
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e93d348be7f3a7d0ed0e91c3d79da2748f55c5ab",
+            "content": "sha256:1407f9d97754446a05bcd2c403bac98a32765e839afbe3d809008474eba6f1c4",
+            "locator": {
+              "end": 140,
+              "kind": "line_range",
+              "start": 122
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/review_lane.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "16": {
+      "note": "treeComparisonNumber returns the number from the first matching review:trees:<digits> limitation token, otherwise undefined. The inspected surface uses that result as the lane comparison argument; it does not branch on dataset kind.\n\nAnchor: inclusive source ranges",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "65f556826a27183db12af6615005dd85432e3a8c",
+            "content": "sha256:a3d5442795eea509cb163dee4e42b5e386801f9bc9109659dc3c9f072c41fe9d",
+            "locator": {
+              "end": 354,
+              "kind": "line_range",
+              "start": 348
+            },
+            "path": "dashboard/src/data/reviewTrees.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "bb94e003292e3a408d3607472dacd850e1f8da65",
+            "content": "sha256:c0a3de7fe67b48f89e71059b05fe33dad9eb0330cae7845b7e3356b1a1751d68",
+            "locator": {
+              "end": 345,
+              "kind": "line_range",
+              "start": 340
+            },
+            "path": "dashboard/src/panels/review/ReviewSurface.tsx"
           },
           "kind": "code"
         }
@@ -266,16 +340,29 @@
       ]
     },
     "9": {
-      "note": "Its one caller: the marker scope's per-surface cache, only for a tree comparison.\n\nAnchor: \"comparison === undefined ? null : readFileClassification(repo, master, leaf, comparison, path),\"",
+      "note": "useIntentMarkerScope supplies readFileClassification only when comparison is defined. Its cache refuses unlisted paths, reuses pending reads, retains ready answers and removes unavailable answers from pending so later calls can retry. This is observed caller evidence, not an exhaustive caller catalog.\n\nAnchor: inclusive source ranges",
       "targets": [
         {
           "anchor": {
-            "blob": "667f28385f40263179298fd17e129d05591551ff",
-            "content": "sha256:b4de4cacb6a3d60b886bdac02c57d0fbfe97046151afac25168afdcd10e212f2",
+            "blob": "682ee6b7ec8192ca5c30b68570db7d4e9c72ea0c",
+            "content": "sha256:d774e8121f5d869f641f1e8c593c879b43cac4be4c6305c1495514905caeedd3",
             "locator": {
-              "end": 98,
+              "end": 97,
               "kind": "line_range",
-              "start": 96
+              "start": 90
+            },
+            "path": "dashboard/src/panels/review/intentMarkerScope.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "682ee6b7ec8192ca5c30b68570db7d4e9c72ea0c",
+            "content": "sha256:6b6ce77792d1b02dd65bf7470cfb70679d4969fb433adf3d85890220db957846",
+            "locator": {
+              "end": 169,
+              "kind": "line_range",
+              "start": 151
             },
             "path": "dashboard/src/panels/review/intentMarkerScope.ts"
           },

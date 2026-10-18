@@ -16,11 +16,14 @@ read under the new selection (`ICR-R26` isolation under a retained shell).
 
 ### Logic
 
-`ReviewScopeHeader` renders the record label (`recordLabelOf`), the task's source inventory count (or
-"Source inventory unavailable"), and "Read-only"; then an optional currentness line; then the disclosure
-with normal task identifiers, comparison identity and before → after code trees. `FamilyScope` remains
-open with selected-subject family state and limitations; pending/unavailable metadata renders open
-read-state content rather than a normal closed provenance disclosure.
+`ReviewScopeHeader` renders the record label (`recordLabelOf`), source inventory count or unavailable
+state, and `Read-only`; then an optional currentness line, the joint sync/external movement state and
+**one complete movement-facts block as open siblings**. The same selected-read status reaches both
+movement renderers. Complete owner statements/reasons stay outside `ScopeMetadata`, including normal
+objects and repeated renderings; their actual state/facts roots are marked semantic content.
+`FamilyScope` remains marked open content with selected-subject state and limitations. The separate
+`ScopeMetadata` retains task/comparison identities, code trees and command: answered metadata is a
+closed provenance disclosure, while pending/unavailable metadata is open read-state content.
 
 **Two kinds of line.** The inventory, the code trees and the record label are the **task's**, whichever
 subject is selected, so they always come from the payload the workspace is mounted over. The comparison
@@ -47,7 +50,8 @@ workspace from its `reading` (`null`, `'pending'`, `'unavailable'`).
 - While the selected subject has no answer, no line of this header states the previous subject's
   comparison reference, currentness or family context.
 - Task-level facts (inventory, trees, record) are never withheld while a subject is pending.
-- Display only: no read, no state, no control besides the disclosure.
+- Movement facts are hidden for pending/failed subjects, not for abnormal measurements in answered subjects; no closed duplicate is retained.
+- Display only: no fetch, no local read state, no movement classification, and no control besides the identity disclosure.
 
 ### Todos
 
@@ -64,17 +68,17 @@ No configured domain documentation could be checked.
 
 ### Repo-Internal References
 
-- **The module's own statement of which lines are the task's and which describe one subject's read.** [1]
-- The header and its test ids. [2]
-- The subject-bound lines, replaced while pending or unavailable. [3]
-- The record label. [4]
-- The workspace mounts it with a status derived from `reading`. [5]
-
 ### Cross-Repo References
 
 No cross-repository behavior is implemented in this file.
 
 No meaningful cross-repo references found.
-- Scope header with record label, inventory and scope [6]
-- Family scope block with limitations [7]
-- Subject scope derivation from catalogue or task context [8]
+
+- The module distinguishes task inventory/code trees from selected-subject comparison/currentness/family lines. [1]
+- The header retains its record/inventory/test IDs and mounts the joint movement state and complete guarded facts openly, outside the metadata container. [2]
+- Selected-subject scope lines become pending or unavailable statements rather than claiming the previous answer. [3]
+- Reconstructed recorded endpoints take precedence over recorded/live task labels. [4]
+- The actual workspace maps its ReadingStatus to pending/unavailable/null and passes that status to the header mount. [5]
+- The header renders record label, inventory and scope while ScopeMetadata separately retains comparison identities/trees/command; the answered metadata container alone is default-closed provenance. [6]
+- FamilyScope remains marked open content and withholds a previous payload limitation while the subject has no answer. [7]
+- Selected-subject comparison/currentness/family derivation is payload display with explicit pending/failure guards, not a catalogue read or movement measurement. [8]

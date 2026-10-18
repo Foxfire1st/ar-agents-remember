@@ -1,0 +1,37 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test",
+      "prevents_costly_mistake"
+    ],
+    "justification": "The current new large-list regression guards explicit nonpairing above the cell rail. Future callers must not reintroduce unbounded global alignment or infer a semantic pair from matching position; this would misattribute wording changes while removing a real resource boundary."
+  },
+  "applicability": "alignLists and gapRows over supplied ordered string lists, before presentation.",
+  "conditions": [
+    "The initial whole-list product check is against DIFF_CELL_LIMIT; above it all items remain removed/added without pairing, even at matching positions.",
+    "Within budget, exact-text LCS and one-to-one moved pairs precede pairing equal-size remaining gaps.",
+    "Unpairable outputs retain their supplied strings/indices and a cell_limit or unpaired_gap reason."
+  ],
+  "exclusions": [
+    "A bound on total output size, every allocation, whole-view latency or installed rendering; semantic equivalence of paired text; fresh test/browser execution."
+  ],
+  "id": "INV-8Y3BRE",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "dashboard/src/panels/review/wordDiff.test.ts::bounds list alignment without guessing pairs even for matching positions",
+        "dashboard/src/panels/review/wordDiff.test.ts::pairs a gap with equal counts for a word diff, and never pairs unequal gaps",
+        "Read exact whole-list and gap guards, moved pairing, prepared-passages and renderer note consumers. No input-wide runtime budget or semantic equivalence is inferred."
+      ],
+      "path": "freeze11-word-diff-two-guards-and-current-trace-01.json"
+    },
+    "handoffEntry": "CUR-L57-bounded-no-guessed-list-pairs",
+    "leaf": "260928-MIK-L57",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Intent list alignment never invents a pair when its whole-list cell budget or remaining gap cardinality does not support one: over-budget lists and unequal remaining gaps retain ordered removed/added items with an explicit cell_limit or unpaired_gap reason.",
+  "status": "proposed",
+  "supersedes": []
+}

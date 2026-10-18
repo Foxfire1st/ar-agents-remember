@@ -34,10 +34,13 @@ searches and guesses nothing: every range comes from the server's MIK-R08 defini
   `rangeLabel` prints `L<a>–<b>`, `no file` or the state.
 - **Not current (rule 1).** `notCurrent` lists every recorded side whose MIK-R03 state is not `current`, with its
   reason.
-- **Scope of a bounded roster (review F2, R2-5).** `cardScope` is `undefined` when every recorded side's page is
-  complete, carries all `members_total` rows and every member row is `recorded`. Otherwise it takes the side
-  recording the most membership rows and counts that side's distinct loaded members against that side's own
-  total, capped at the total, so the loaded count never exceeds it.
+- **Scope of a bounded or unreadable roster (review F2, R2-5).** `cardScope` skips `not_recorded` sides, names other
+  unread-side details, and collects reasons from a recorded side whose page is explicitly incomplete, whose loaded
+  row count is below `members_total`, or whose member content is not `recorded`. Without an entry, missing reasons,
+  or any recorded side it returns `undefined`; that return alone is not proof that the family was read completely.
+  Otherwise it takes the recorded side with the greatest `members_total` (ties retain `before`), deduplicates its
+  loaded `invariant_id ?? member_id` values, caps that count at its own total, and returns the explicit `missing`
+  reasons alongside those two counts. It does not combine before/after populations or fetch another page.
 - `languageOfPath` maps a path suffix to the highlighting ids `data/review.ts` uses; it styles and decides nothing.
 
 ### Conventions
@@ -46,23 +49,27 @@ searches and guesses nothing: every range comes from the server's MIK-R08 defini
 
 ### Invariants And Boundaries
 
-- **Candidate invariant (not ingested): focused cards group expressions by (path, range) with the rationale
-  directly above the excerpt, and a missing rationale is shown as a gap.** Realized here by `cardKey`,
-  `expressionCards` and `cardVoice`, and in `ExpressionCards.tsx` by the voices above the excerpt. Proved by
-  `ExpressionCards.test.tsx` (two regions give two cards; a shared range gives one card with two voices; unresolved
-  entries never merge; a missing rationale is a gap) and by `ReviewSurface.gitTrees.test.tsx` on real data (4 cards
-  in `review_source_admission.py`, 4 distinct rationales, the rationale before the excerpt in the DOM).
-- **Candidate invariant (not ingested): a bounded roster never reads as the whole family; the cards state the
-  loaded n of m.** Realized by `cardScope` and `ScopeLine`. Proved by the F2 case over the real walkFinal capture
-  (bounded family gives the line; complete family gives none) and the R2-5 disjoint-sides case (`loaded <= total`).
-- **Accepted note R3-N1 (09:38:03):** `cardScope` can say "loaded 2 of 2 … load the rest" when the widest side is
-  fully loaded and the incompleteness is only on the other side (for example that side's members are
-  `content_not_on_page`; ties go to `before`). The line never overstates coverage, so it was accepted as a note.
+- **Design boundary: focused cards group expression regions and keep authored voices above the excerpt; an
+  absent rationale remains a gap.** `cardKey`, `expressionCards` and `cardVoice` supply that arithmetic; the
+  renderer owns placement. The grouping fixtures check distinct/shared regions, unresolved isolation and order.
+  The current mounted `ReviewSurface.gitTrees.test.tsx` family case asserts 12 cards, separate changed/unchanged
+  counts and rationale-before-excerpt DOM order. Those are checked-in fixture assertions, not fresh measurements.
+  The earlier account of four cards in `review_source_admission.py` is historical fixture provenance, not the
+  current mounted case or a new formal-invariant admission.
+- **Recorded invariant `INV-VPX81HXV`: bounded linked-source scope is not the whole family.** `cardScope`
+  carries the loaded member count and the actual missing reasons; `ExpressionCards.ScopeLine` distinguishes an
+  unfinished roster from missing content when the widest side's member count is already complete. The F2 test
+  source checks a captured bounded/complete pair and a disjoint-sides variant. A separate case checks unread
+  content, an underfilled side and an unreadable memory side when the widest side is fully loaded.
+- **Historical accepted note R3-N1 (09:38:03):** the earlier implementation could say "loaded 2 of 2 … load the
+  rest" when only the other side was incomplete. That accepted wording note remains provenance, not a description
+  of the current `ScopeLine`: current text names missing content instead of promising that continuation fills it.
+- Test references describe checked-in fixture assertions, not a test execution or a new CODE/MEMORY grade.
 
 ### Todos
 
-- **R3-N1 (optional, not ruled as work):** take the side that is actually incomplete, or reword the line for rows
-  loaded but content not on the page.
+No open R3-N1 wording task is asserted here: current source distinguishes its two scope cases. This card does not
+certify all consumers, all malformed input shapes or full-family retrieval.
 
 ## Evidence
 
@@ -83,10 +90,12 @@ No configured live documentation source was available for this pass.
 - Unchanged excluded from the changed count. [5]
 - Each member's voice, with `missing` for an absent rationale. [6]
 - Gutter starts, range labels and not-current marks. [7]
-- The loaded n of m, counted on the widest side and capped. [8]
-- The grouping cases. [9]
-- The F2 scope case. [10]
+- Loaded scope includes explicit missing reasons, deduplicates one widest recorded side and caps its count; undefined alone does not prove full retrieval. [8]
+- Checked-in grouping assertions cover distinct regions, shared voices, unresolved isolation, separate change counts and seed ordering; no new execution. [9]
+- Bounded/complete and disjoint-side F2 fixtures plus equal-count missing content, an underfilled side and an unreadable-side regression. [10]
+
+- The current mounted family fixture asserts 12 cards with separate changed/unchanged counts and rationale-before-excerpt DOM order; this is source evidence, not a new test run. [11]
 
 ### Cross-Repo References
 
-No cross-repo boundary is crossed by this file.
+No cross-repository boundary is asserted by this module.

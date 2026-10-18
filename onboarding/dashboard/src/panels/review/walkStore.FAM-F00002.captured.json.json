@@ -2,34 +2,18 @@
   "path": "dashboard/src/panels/review/walkStore.FAM-F00002.captured.json",
   "realizes": [],
   "references": {
-    "3": {
-      "note": "The served answer, whole.",
+    "5": {
+      "note": "The current retained JSON input supplies the literal identities, response states and populations summarized above; these are fixture facts, not live project knowledge or fresh execution evidence.",
       "targets": [
         {
           "anchor": {
-            "blob": "e200703dcf08215cc8fe8cba938138bfded47038",
-            "content": "sha256:e2a31b8b39bcebd93897c04d1b3863f6c994860e1169220eb560c7c05462e841",
+            "blob": "34016365c773945f8be4d9ab56854961331115b6",
+            "content": "sha256:53c1773d8d6d9f0ae3ac0843ffc219887c805af3edbbeec900a36b8c68acf987",
             "locator": {
-              "kind": "file"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "4": {
-      "note": "Its receipt row: route, parameters, status, hash and size.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "9e2d5fc47c3059a144d38ab2cbd0adc1b5034111",
-            "content": "sha256:09e5aff33ab9374a3404c7534216db1e9d819b9a0cdcccab5c476c59158dce9d",
-            "locator": {
-              "end": 68,
+              "end": 1,
               "kind": "line_range",
-              "start": 54
-            },
-            "path": "dashboard/src/panels/review/walkStore.capture-provenance.json"
+              "start": 1
+            }
           },
           "kind": "code"
         }

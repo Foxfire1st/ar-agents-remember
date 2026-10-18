@@ -1,0 +1,24 @@
+{
+  "path": "dashboard/src/panels/review/markerUnknown.family.captured.json",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The retained source supplies the facts and declared boundaries described above.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4e7056c31deabb7f0e5441d2f761c802478abefe",
+            "content": "sha256:2080ecc261478dbbeed7feaf7eec9ac7e567022094127522b021c1543c5847c6",
+            "locator": {
+              "end": 1,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

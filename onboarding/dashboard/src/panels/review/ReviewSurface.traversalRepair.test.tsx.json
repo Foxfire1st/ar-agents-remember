@@ -1,0 +1,24 @@
+{
+  "path": "dashboard/src/panels/review/ReviewSurface.traversalRepair.test.tsx",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The explicit jsdom assertions preserve window scroll and avoid row.scrollIntoView; surface.scrollTop stays 137 at 390 pixels and resets to zero at 1280 pixels. Narrow endpoint assertions retain 137 and the selected, focused row. This is static assertion evidence, not real-browser proof.\n\nAnchor: complete traversal and endpoint assertion phases",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "74953c1d32a2b2d2b0fbf1dc8d534fd55af3fb94",
+            "content": "sha256:f53ce868495fa05c05b484301e555fd7c47347992058a0f3c07664b9b4c71812",
+            "locator": {
+              "end": 125,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

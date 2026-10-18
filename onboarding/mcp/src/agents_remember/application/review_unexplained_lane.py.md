@@ -55,6 +55,7 @@ The last two are dispatched by `review_tree_knowledge.py`; the route and its bou
   family record there was read), and `membership_unknown` when the after knowledge could not be read or a family
   record there did not parse. An invariant no family lists is `confirmed_no_family` only when every family record
   of the side was read, otherwise `membership_unknown`.
+- **Unknown-membership reasons.** `_occurrences` attaches a reason from the own-side reading when no family is listed and completeness is unknown. Named families are built by `_occurrence`, which attaches a reason from the other-side reading only for `membership_unknown`. `_membership_reason` names the side, includes its read detail when present or states that not every family record could be read, and passes the resulting sentence through `bounded_text`. Other states receive `reason=None`. The membership-state mapping itself is unchanged.
 
 ### Conventions
 
@@ -64,9 +65,9 @@ The last two are dispatched by `review_tree_knowledge.py`; the route and its bou
 
 ### Invariants And Boundaries
 
-- **Candidate invariant (not ingested): on tree comparisons, the explorer and the technical details take their
-  attribution from the lane, so no two surfaces disagree.** Realized by `paths` here, then
-  `laneFocus.explorerAttribution` and `laneFocus.laneAttributionFacts` on the client (rulings Q1 at 12:19:20 and
+- **Lane-attribution boundary.** Measured lane counts and unknown/unavailable state remain native
+  facts. `paths` carries them here; the current main-page facts use `laneFocus.laneAttributionFacts`
+  rather than the removed explorer or a favorable landed-count fallback (rulings Q1 at 12:19:20 and
   F1 at 13:07:38). Proved by `_every_path_bucket` in
   `test_every_changed_file_takes_one_bucket_and_the_destinations_reconcile` and by the surface cases in
   `ReviewSurface.lane.test.tsx`.
@@ -92,9 +93,9 @@ The last two are dispatched by `review_tree_knowledge.py`; the route and its bou
   window draws, a neighbour inside its context lines included, carries its own per-hunk intent mark
   (`dashboard/src/panels/review/LaneFileFocus.tsx`, from this module's per-file response).
 - **Ruling Q5 (L34 may refine the membership states): L34 kept them as mapped.** Each state maps directly onto a
-  marker target, and ruling 2026-09-30T16:19:34 Q2 left the response unchanged. The dashboard's
-  `hunkMarkers.unknownReason` restates `_membership` and `_occurrences`' rule for an unknown membership and names this
-  module as its owner (review R1 N1): **if that mapping changes here, that sentence must change with it.**
+  marker target, and ruling 2026-09-30T16:19:34 Q2 left the response unchanged. The former client-side `hunkMarkers.unknownReason` derivation is removed. Unknown-membership
+  reasons now travel with each native occurrence from the side that decides its state; current markers
+  consume that supplied reason rather than reconstructing the membership rule.
 
 ## Evidence
 
@@ -116,7 +117,6 @@ No configured live documentation source was available for this pass.
 - One listed file with its unknown reasons. [6]
 - The per-file response, or the typed refusal with clipped input (review F2). [7]
 - Both sides, every entry's range or reason, and every hunk. [8]
-- A link's keys, revision and family occurrences. [9]
 - The membership states (ruling Q5). [10]
 - The lane and file reads dispatched. [11]
 - The entry's count carried on the summary. [12]
@@ -127,3 +127,5 @@ No configured live documentation source was available for this pass.
 ### Cross-Repo References
 
 No cross-repo boundary is crossed by this file.
+
+- _link preserves entry ID/kind, optional proof facet, invariant identity key, optional invariant revision/key and supplied range, and obtains families through _occurrences. With no listed family, _occurrences keeps the completeness-based state and supplies an own-side reason only for membership_unknown. Named occurrences preserve family identity/key/revision and the unchanged _membership state; _occurrence supplies an other-side reason only for membership_unknown. _membership_reason uses the reading's side name and detail, or its incomplete-family sentence, and passes the result through bounded_text. Other states receive reason=None. [9]

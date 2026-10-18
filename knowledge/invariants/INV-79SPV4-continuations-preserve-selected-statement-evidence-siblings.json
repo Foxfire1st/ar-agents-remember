@@ -3,15 +3,17 @@
     "criteria": [
       "prevents_costly_mistake"
     ],
-    "justification": "Bounded W03 test-port obligation from the amended packet scope (Architect qualification 2026-10-08 11:18:45 UTC); ports-fifth.log: keeps selected intent, evidence, siblings, focus and open layout while a late source expression becomes reachable; assertion-fates.md"
+    "justification": "Keeps the current mounted continuation from replacing a coherent selected review on an adverse or later page. The retained W03 origin/log is historical; current source explicitly compares judgment rather than the removed evidence channel. This bounded scope prevents claiming old collection preservation from the new pane."
   },
   "applicability": "Late source expressions in the family read cycle.",
   "conditions": [
-    "Selected intent, evidence, siblings, focus, inline layout and explicitly open files are preserved while every captured late expression becomes reachable.",
-    "The first reachable card is explicitly collapsed/reopened so continuation preservation is real."
+    "Selected intent, the current recorded judgment, siblings, focus, inline layout and explicitly open files are preserved while every captured late expression becomes reachable.",
+    "The first reachable card is explicitly collapsed/reopened so continuation preservation is real.",
+    "The current source waits for the selected revision identifiers and compares the rendered statement across the walk; it no longer independently asserts both literal statement operands as the old case did."
   ],
   "exclusions": [
-    "Freezing text before the editor is awaited; vacuous open-state claims."
+    "Freezing text before the editor is awaited; vacuous open-state claims.",
+    "The former supporting evidence/assessment/observation collection is not retained by this contract; the current source compares the judgment pane instead. Historical W03 execution and origin evidence is not a fresh run."
   ],
   "id": "INV-79SPV4",
   "origin": {
@@ -25,9 +27,9 @@
     "leaf": "260928-MIK-L86",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-invariant/v1",
-  "statement": "Continuations preserve selected statement, evidence, siblings, focus, inline layout and an explicitly open file while making every captured late source expression reachable.",
+  "statement": "Continuations preserve selected statement, the current recorded judgment, siblings, focus, inline layout and an explicitly open file while making every captured late source expression reachable.",
   "status": "proposed",
   "supersedes": []
 }

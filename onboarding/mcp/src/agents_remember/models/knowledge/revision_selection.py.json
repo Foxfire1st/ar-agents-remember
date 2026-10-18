@@ -3,27 +3,28 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "The module's own statement of what it owns: the value the comparison is made with, the pair-or-explicit-non-pair rule, the heads beside the pair, and the vocabulary no fabrication can occupy.",
+      "note": "The current module and value describe a projected record pair, not multi-head lineage or unforgeable input provenance.\n\nAnchor: Current ownership and value",
       "targets": [
         {
           "anchor": {
-            "blob": "6ef72398371f5f2860e6facde63443ade5055a34",
-            "content": "sha256:20d0caaa29ddeed4149843915c3866b9867af707b27905938a430d226d3c9b4d",
+            "blob": "ce9297d93e2e12ddbd46a3b00289f9e9edcfb18c",
+            "content": "sha256:1028dbc06402a5ac3ddaeb49767a73d02017db106bd079de8cb3ba54da5819f6",
             "locator": {
-              "kind": "symbol",
-              "name": "ReviewRevisionSelection"
+              "end": 5,
+              "kind": "line_range",
+              "start": 1
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "6ef72398371f5f2860e6facde63443ade5055a34",
-            "content": "sha256:eadd8bd10e303fcb11b37b49465b6ec2209882406f2ea259ca22a9fd58d238e4",
+            "blob": "ce9297d93e2e12ddbd46a3b00289f9e9edcfb18c",
+            "content": "sha256:1e1aa0171d4e2e47153eed53e61550742c4bff40b8062c7321e3722fc4c06614",
             "locator": {
-              "end": 27,
+              "end": 71,
               "kind": "line_range",
-              "start": 1
+              "start": 24
             }
           },
           "kind": "code"
@@ -31,15 +32,16 @@
       ]
     },
     "10": {
-      "note": "The policy that computes this value from authored heads.",
+      "note": "The current subject-specific producer constructs empty/singleton lists and explicit state/statement from projected side items; sorting is not multi-head lineage selection.\n\nAnchor: Producer, identity filter, side lookup and description",
       "targets": [
         {
           "anchor": {
-            "blob": "a052c7649e04f9df319c1eb28521f65e5a314970",
-            "content": "sha256:e869785b3bfadaf409edcfe34e1a6db893cca324a55a6b94e04c953f1196bddd",
+            "blob": "67d78df305463c86edbf04b1de4baf9b2b37f11f",
+            "content": "sha256:2ffd6ff748f2e5c993fc1820e0e26bd6d4889450f6a8b0cd2b175aacfebcc4fb",
             "locator": {
-              "kind": "symbol",
-              "name": "select_subject_revisions"
+              "end": 121,
+              "kind": "line_range",
+              "start": 29
             },
             "path": "mcp/src/agents_remember/application/review_revision_comparison.py"
           },
@@ -48,12 +50,12 @@
       ]
     },
     "2": {
-      "note": "The published surface: the model and its state union.",
+      "note": "The public exports remain the model and its state union.",
       "targets": [
         {
           "anchor": {
-            "blob": "6ef72398371f5f2860e6facde63443ade5055a34",
-            "content": "sha256:151a444b9b78cdf47dc08e82ee57a52913a62b5ed82793a4c1033487b2cd4d12",
+            "blob": "ce9297d93e2e12ddbd46a3b00289f9e9edcfb18c",
+            "content": "sha256:2e771ab1912acb38611a12784be33b4679dfcd08438b08555279bb2b88cebc78",
             "locator": {
               "kind": "symbol",
               "name": "__all__"
@@ -64,12 +66,12 @@
       ]
     },
     "3": {
-      "note": "The closed five-member union of which question one subject comparison answered.",
+      "note": "The closed state vocabulary is compared, unresolved, added and removed; ambiguous is no longer admitted.",
       "targets": [
         {
           "anchor": {
-            "blob": "6ef72398371f5f2860e6facde63443ade5055a34",
-            "content": "sha256:f22674f988da12cbe069f1d19733a1edc660f02981481c3a8ce2e23c5c94e87a",
+            "blob": "ce9297d93e2e12ddbd46a3b00289f9e9edcfb18c",
+            "content": "sha256:177b73af5f8bfb2a23efc8a5b450eee79012bc166644d63714091597afe876f8",
             "locator": {
               "kind": "symbol",
               "name": "RevisionSelectionState"
@@ -80,12 +82,12 @@
       ]
     },
     "4": {
-      "note": "One subject's explicit selection with its own statement: the pair present exactly when the snapshots were compared on one revision each.",
+      "note": "The value records subject kind/identity, optional pair, side lists and bounded statement; tuples have no singleton-size validator.",
       "targets": [
         {
           "anchor": {
-            "blob": "6ef72398371f5f2860e6facde63443ade5055a34",
-            "content": "sha256:20d0caaa29ddeed4149843915c3866b9867af707b27905938a430d226d3c9b4d",
+            "blob": "ce9297d93e2e12ddbd46a3b00289f9e9edcfb18c",
+            "content": "sha256:1e1aa0171d4e2e47153eed53e61550742c4bff40b8062c7321e3722fc4c06614",
             "locator": {
               "kind": "symbol",
               "name": "ReviewRevisionSelection"
@@ -96,12 +98,12 @@
       ]
     },
     "5": {
-      "note": "The state/pair agreement: a compared selection names both heads, a one-sided selection names its one head, an ambiguous or unresolved selection names none.",
+      "note": "The declared state requires the exact presence pattern of the before/after pair, with unresolved carrying neither.",
       "targets": [
         {
           "anchor": {
-            "blob": "6ef72398371f5f2860e6facde63443ade5055a34",
-            "content": "sha256:0a56a4b3da6aba50ac4f891aed9926259206eebe05959fdcb9887bba61f29ed8",
+            "blob": "ce9297d93e2e12ddbd46a3b00289f9e9edcfb18c",
+            "content": "sha256:19118967de3e7fe5d4c72c8b0d5a13be323301438a72e462b44e3aec6ef397a1",
             "locator": {
               "kind": "symbol",
               "name": "_require_the_state_to_match_the_pair"
@@ -112,12 +114,12 @@
       ]
     },
     "6": {
-      "note": "The pair drawn from the heads: a selected revision outside the recorded heads is not a head selection.",
+      "note": "A non-None selection must belong to its declared side heads; this is membership consistency, not source authentication.",
       "targets": [
         {
           "anchor": {
-            "blob": "6ef72398371f5f2860e6facde63443ade5055a34",
-            "content": "sha256:eb04e51873f3ddf74ac20f6725f845bf276232b86ddca901092735a49d026be9",
+            "blob": "ce9297d93e2e12ddbd46a3b00289f9e9edcfb18c",
+            "content": "sha256:4dcc35e6984bb6fac6a3dbadf494f2555c2ea81df6295b28412890c16cde32ec",
             "locator": {
               "kind": "symbol",
               "name": "_require_the_pair_to_come_from_the_heads"
@@ -128,12 +130,12 @@
       ]
     },
     "7": {
-      "note": "The heads drawn from the retained: a head outside its side's retained list is invented beside the snapshots.",
+      "note": "Every declared head must belong to the declared retained set; no lineage traversal or provenance check is performed.",
       "targets": [
         {
           "anchor": {
-            "blob": "6ef72398371f5f2860e6facde63443ade5055a34",
-            "content": "sha256:7cf7d09a4fc072404f2c5476dae5caf3642fad45f73aaa0a5980b3b83aeef94d",
+            "blob": "ce9297d93e2e12ddbd46a3b00289f9e9edcfb18c",
+            "content": "sha256:3eb31aa98cc6aede39fe891032f70197449965b6b7c8f4dab4145fca329f8d2b",
             "locator": {
               "kind": "symbol",
               "name": "_require_the_heads_to_come_from_the_retained"
@@ -144,15 +146,16 @@
       ]
     },
     "8": {
-      "note": "The shared bounds every field reads rather than restating.",
+      "note": "The value reuses reference/prose bounds and the frozen extra-forbidden base model, not new per-item tuple bounds.\n\nAnchor: Shared constants and base model",
       "targets": [
         {
           "anchor": {
             "blob": "138358a5feab44724703f06dfe3ff24c231ee322",
             "content": "sha256:2a98361d8a179d85a9ffb5448c0bda56c6c851b999dbc4e20fc845fce696b036",
             "locator": {
-              "kind": "symbol",
-              "name": "PROSE_MAX_LENGTH"
+              "end": 24,
+              "kind": "line_range",
+              "start": 24
             },
             "path": "mcp/src/agents_remember/models/knowledge/base.py"
           },
@@ -163,8 +166,9 @@
             "blob": "138358a5feab44724703f06dfe3ff24c231ee322",
             "content": "sha256:86e0636be3244bdbadf287486e0f5c74204862d312948070ba2364a55edbf612",
             "locator": {
-              "kind": "symbol",
-              "name": "REFERENCE_MAX_LENGTH"
+              "end": 26,
+              "kind": "line_range",
+              "start": 26
             },
             "path": "mcp/src/agents_remember/models/knowledge/base.py"
           },
@@ -175,8 +179,9 @@
             "blob": "138358a5feab44724703f06dfe3ff24c231ee322",
             "content": "sha256:770c387ee275ee397402391f33ba68467fe3c4e8fd0f6411e59f57807632a7d0",
             "locator": {
-              "kind": "symbol",
-              "name": "KnowledgeModel"
+              "end": 37,
+              "kind": "line_range",
+              "start": 34
             },
             "path": "mcp/src/agents_remember/models/knowledge/base.py"
           },
@@ -185,15 +190,16 @@
       ]
     },
     "9": {
-      "note": "The pane field that carries this value, absent exactly when no subject was compared, with its one-direction validator.",
+      "note": "The pane field and one-direction guard allow selection only for subject_selected, without requiring every compared path seed to carry one.\n\nAnchor: Pane field and actual implication",
       "targets": [
         {
           "anchor": {
-            "blob": "f9105a09d9fdee4eeed9ab2b715723940337949e",
+            "blob": "3a9fbebf751c8e0ce26280a3c2bd35bfe3302c8f",
             "content": "sha256:cbdcd572a23fc6e8182083d61d637275f0c46f2d864a4038af40681f7900f8cd",
             "locator": {
-              "kind": "symbol",
-              "name": "revision_selection"
+              "end": 490,
+              "kind": "line_range",
+              "start": 490
             },
             "path": "mcp/src/agents_remember/models/knowledge/review.py"
           },
@@ -201,11 +207,12 @@
         },
         {
           "anchor": {
-            "blob": "f9105a09d9fdee4eeed9ab2b715723940337949e",
+            "blob": "3a9fbebf751c8e0ce26280a3c2bd35bfe3302c8f",
             "content": "sha256:7595d5578633490dde3d9ef4ee22d542536d440bd20bce0c720bea95db8535dc",
             "locator": {
-              "kind": "symbol",
-              "name": "_require_a_compared_subject_to_record_its_selection"
+              "end": 516,
+              "kind": "line_range",
+              "start": 505
             },
             "path": "mcp/src/agents_remember/models/knowledge/review.py"
           },

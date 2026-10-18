@@ -3,24 +3,24 @@
   "proves": [
     {
       "anchor": {
-        "blob": "7d0ade55777d022632b8de4cfdf32b219a1c7261",
-        "content": "sha256:7ec621df8b3a737555a4592b72ab1eb71914033cff209d9afcbce8d1c02fb5ac",
+        "blob": "72ef64962e7d8cf125a630aa69be9c89ae748ac8",
+        "content": "sha256:1250e08e19ae0d854b0f1853162b9473cdb4c74b0881c3e0879acd5d3b2d76a7",
         "locator": {
           "kind": "symbol",
-          "name": "tag"
+          "name": "tags a kept family, counts it apart, describes the subject context only and reads one answer"
         }
       },
-      "facet": "The kept family's tag is visible, is its row's accessible description and names the subject it was last read for; the selected subject's own family has none. The scope line counts \"1 families · 1 kept\", the context details describe one family, and the reading area shows nothing of the kept family.",
-      "id": "PRF-62MDSP",
+      "facet": "The kept family's tag is visible and is its row's accessible description naming the subject it was last read for; the selected subject's own family has none. No family scope line or family-context details are rendered, and the reading area shows nothing of the kept family.",
+      "id": "PRF-M20D7Q",
       "invariant": "INV-NSG0D4",
       "origin": {
-        "handoffEntry": "MIK-R39@v1-in-tree-selection-adds-rows",
-        "leaf": "260928-MIK-L39"
+        "handoffEntry": "L57-M1-facet-PRF-62MDSP-replacement",
+        "leaf": "260928-MIK-L57"
       }
     },
     {
       "anchor": {
-        "blob": "7d0ade55777d022632b8de4cfdf32b219a1c7261",
+        "blob": "72ef64962e7d8cf125a630aa69be9c89ae748ac8",
         "content": "sha256:fbe243212b4c2edd2a1a59768fc3a237a2a15d0d24c9be62e3601b8a2767da6a",
         "locator": {
           "kind": "symbol",
@@ -37,7 +37,7 @@
     },
     {
       "anchor": {
-        "blob": "7d0ade55777d022632b8de4cfdf32b219a1c7261",
+        "blob": "72ef64962e7d8cf125a630aa69be9c89ae748ac8",
         "content": "sha256:a5d9054a3b17ea9562d64c9a4b0a82f205d28200b959041bc00a3db21bfb0cfe",
         "locator": {
           "kind": "symbol",
@@ -54,7 +54,7 @@
     },
     {
       "anchor": {
-        "blob": "7d0ade55777d022632b8de4cfdf32b219a1c7261",
+        "blob": "72ef64962e7d8cf125a630aa69be9c89ae748ac8",
         "content": "sha256:fbe243212b4c2edd2a1a59768fc3a237a2a15d0d24c9be62e3601b8a2767da6a",
         "locator": {
           "kind": "symbol",
@@ -73,8 +73,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "7d0ade55777d022632b8de4cfdf32b219a1c7261",
-        "content": "sha256:56836f6c92fc3622fbf05cf8bcfff9c85f63a9c3eed0c340cc5bf55c579ac0e1",
+        "blob": "72ef64962e7d8cf125a630aa69be9c89ae748ac8",
+        "content": "sha256:db538509d7f210db73e2d01bd814fa756a59c358262b6ac1c85169c1acddd101",
         "locator": {
           "kind": "file"
         }

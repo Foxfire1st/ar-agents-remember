@@ -240,6 +240,23 @@
         }
       ]
     },
+    "109": {
+      "note": "The leaf-wide tree answer carries optional currentness, worklist, implementation facts and focused entries, not an aggregate memory-diff field.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "65f556826a27183db12af6615005dd85432e3a8c",
+            "content": "sha256:42f0823901d29770f566e9c1f30512a5e2f10583c142102195d1d2c5cfb8f01e",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewTreesResult"
+            },
+            "path": "dashboard/src/data/reviewTrees.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
     "15": {
       "note": "The three locator declarations.",
       "targets": [
@@ -710,18 +727,42 @@
       ]
     },
     "37": {
-      "note": "The field-for-field mirror of the server's review payload.",
+      "note": "The TypeScript interfaces declare a client display projection, not a field-for-field Python mirror: ReviewSourcePane omits relationships, unknown_attribution_changed_paths and attribution; ReviewMovement is a common displayed subset. This is not a claim of runtime field loss.\n\nAnchor: Python source-pane fields",
       "targets": [
         {
           "anchor": {
-            "blob": "c1c7c67ada2e84e90b5ac05efb33bdb19e6951a4",
-            "content": "sha256:e5e56934dda35c28531aacb932e8add4a2db538d633fbe3256495d98adc19df2",
+            "blob": "6aef8710047677b74fa337e6c4e2b6df948df099",
+            "content": "sha256:8180393cd0c5609e7551fcae068f9d4a94397f6829ea5768ff30b8c98aec0f40",
             "locator": {
-              "end": 465,
-              "kind": "line_range",
-              "start": 465
+              "kind": "symbol",
+              "name": "ReviewSourcePane"
             },
             "path": "dashboard/src/data/review.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6aef8710047677b74fa337e6c4e2b6df948df099",
+            "content": "sha256:9ae896a10dad7d4c5f4f7cab603a529c3c5e41269f3c6d22f6128aae1e8f54dd",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewMovement"
+            },
+            "path": "dashboard/src/data/review.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5e02f9598b6bfebef7bb44697138a77410c5cda1",
+            "content": "sha256:d1973580a516d150e34d1095c7be8fe9530dc577e4218732d485b4428c294280",
+            "locator": {
+              "end": 262,
+              "kind": "line_range",
+              "start": 246
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/review_source.py"
           },
           "kind": "code"
         }
@@ -1010,18 +1051,17 @@
       ]
     },
     "48": {
-      "note": "Central expression cards mount SourceContent at the inventory exact tree IDs.",
+      "note": "ExpressionCards.FullFile forwards inventory before/after tree IDs to SourceContent; without both it renders the explicit generation-unavailable message.",
       "targets": [
         {
           "anchor": {
-            "blob": "f715a0ae08b0747d62ac23144d24a5bd2c745f38",
-            "content": "sha256:967af88e6f864e62d8159a9c4b5786e7702ed6f42b4b0fc51ff2d337d4bcd55d",
+            "blob": "f0ec90b4f33dfc875cc31a2eae53f6ecb168695c",
+            "content": "sha256:1dcdadd6be389471b1193b5acb990a279c302ca6cd950a578a2add5621ea07a8",
             "locator": {
-              "end": 239,
-              "kind": "line_range",
-              "start": 182
+              "kind": "symbol",
+              "name": "FullFile"
             },
-            "path": "dashboard/src/panels/review/ReviewExpressions.tsx"
+            "path": "dashboard/src/panels/review/ExpressionCards.tsx"
           },
           "kind": "code"
         }

@@ -27,18 +27,6 @@
   "links": [
     {
       "relation": "constrains",
-      "target": {
-        "blob": "f0080ac8512cae6107e8cf65f880a151ca6d19c5",
-        "content": "sha256:8a3e09b08d614e4917acaee1113f4fcb16811776b199633a77947c36e8933738",
-        "locator": {
-          "kind": "symbol",
-          "name": "review_records_for_resolution"
-        },
-        "path": "mcp/src/agents_remember/application/review_evidence_records.py"
-      }
-    },
-    {
-      "relation": "constrains",
       "target": "route:mcp/src/agents_remember/application/knowledge_paging"
     }
   ],
@@ -50,7 +38,7 @@
     "leaf": "260928-MIK-L74",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-decision/v1",
   "status": "active",
   "supersedes": []

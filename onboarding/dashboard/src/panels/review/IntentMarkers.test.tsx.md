@@ -6,7 +6,7 @@
 
 ## Purpose
 
-**MIK-R34 at the retained renderers: full diffs, no-mark states, marker returns, a card's Full file and card excerpts.** The file contains 18 `it` declarations. Captured hunk classifications and source texts feed `SourceContent`; the scope is a plain test value, and excerpt entries/read states are constructed explicitly where needed. The original MIK-L32 lane-fixture provenance and `gitTrees.cards`/`gitTrees.family` capture identities remain historical inputs, but the lane-window/full-lane test block is gone.
+**MIK-R34 at the retained renderers: full diffs, no-mark states, marker returns, a card's Full file and card excerpts.** The retained renderer cases now include six parameterized public-component pending-to-ready/failure cases, not six new independent hook implementations. Captured hunk classifications and source texts feed `SourceContent`; the scope is a plain test value, and excerpt entries/read states are constructed explicitly where needed. The original MIK-L32 lane-fixture provenance and `gitTrees.cards`/`gitTrees.family` capture identities remain historical inputs, but the lane-window/full-lane test block is gone.
 
 ## Code Commentary
 
@@ -17,7 +17,7 @@
   family occurrences and following one calls `follow` with the target; a proof is listed as a test with its facet,
   apart from the intents; `before_unread` keeps the readable side's marks and names the unread side's lines unknown.
 - **No per-hunk marks (5).** A confirmed-unregistered file has one file-level `unexplained` mark; a file with no
-  readable side one `attribution unknown` note; nothing outside a tree comparison, for an unchanged file (no read), or
+  readable side one `attribution unknown` note; nothing for an unchanged file (no read) or
   for other content (the `other-content` note, including a case where only the before object differs: review R1 N3);
   a changed file a partial inventory does not list says so, with `classify` never called (review R1 F5); hunks past a
   bounded text are named.
@@ -30,6 +30,10 @@
 >   three marks, and a neighbour's list follows from that window's pane (the L32 F5 carry); the more-hunks wording for
 >   both kinds of file; the lane's full file reopens on a return with its list and focus.
 - **Card Full file and excerpts.** Full file reopens the originating card rather than the first same-path card. Excerpts keep the readable drawn side's mark when the other memory side is unavailable; differing drawn blobs suppress marks and explain other content. The unchanged-file excerpt case flushes effects and asserts no classification call and no marks-state note.
+
+### Excerpt pending state on the passed successor
+
+The actual `ExpressionCards` unchanged-range, changed-diff and separate-side branches each use a controlled classification promise, crossed with ready and unavailable outcomes. Before resolution each excerpt displays `intent marks loading…`, has no premature hunk marks and requests classification exactly once. Ready resolution reveals fixture marks and removes the pending note; unavailable resolution preserves the failure reason and no hunk marks. These are mounted public-component tests with synthetic/captured scope inputs, not a live API or installed-browser claim. The genuinely unchanged-file case still requests nothing and emits no marks-state note.
 
 ### Conventions
 
@@ -61,7 +65,7 @@ No configured live documentation source was available for this pass.
 
 **Historical pre-R86 card account — superseded, not current assertion evidence.**
 
-> - The lane's windows: every drawn hunk marked (F5), the wording, the full file's return. [5]
+> - The lane's windows: every drawn hunk marked (F5), the wording, the full file's return.
 
 ### Cross-Repo References
 
@@ -82,4 +86,9 @@ No cross-repo boundary is crossed by this file.
 - Shown-mark extraction from the rendered diff [11]
 - Unchanged-file classifier for no-mark shapes  Anchor: `classify` [12]
 
-- Historical lane-window assertion account, superseded: in the pinned source, the retained reference range contains card Full file and excerpt scenarios, not the claimed every-drawn-window-hunk test. Preserve the historical anchor/target without presenting it as current lane-window assertion evidence.  Anchor: "marks every hunk a window draws: the focused one and each neighbour its context shows" [5]
+- Historical lane-window assertions are superseded, not current coverage. Their original text is retained above as history; the unused live reference is retired because no current assertion body supplies that claim.
+
+- Removes the no-tree/dataset branch of a combined no-mark case; unchanged-file no-read and other-content cases remain. Old card phrase nothing outside a tree comparison must be retired as current test coverage; no equivalent test relocation is established. [13]
+
+- Three excerpt branches crossed with ready/unavailable outcomes verify pending text, no premature marks, state transition and one classification request. [14]
+- A genuinely unchanged file never requests classification or renders a state note, distinct from an unchanged-range excerpt of a changed file. [15]

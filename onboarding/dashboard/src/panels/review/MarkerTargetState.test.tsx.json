@@ -2,77 +2,20 @@
   "path": "dashboard/src/panels/review/MarkerTargetState.test.tsx",
   "realizes": [],
   "references": {
-    "1": {
-      "note": "The real payload and target.\n\nAnchor: \"markerUnknown.memberUnknown.captured.json\"",
+    "4": {
+      "note": "An unreadable native roster retains the invariant-level state even when synthetic row props match; a healthy native roster with the exact member can suppress the duplicate center state. Assertions compare the supplied target reason instead of inventing a fixed reason.",
       "targets": [
         {
           "anchor": {
-            "blob": "6d20b62ae0668822438c75d9d06f5e1eb0bccbb2",
-            "content": "sha256:2b583c94e95303b74b2ae73c7bf45facc2a3bc12e25f334910be9abbff13a038",
+            "blob": "028e2f843e0b54e53bd6daffa0e44531ed024db3",
+            "content": "sha256:6c5306a970f33886ef53e938e045b79d985f29627c4fbb434ba047e6b6d82cec",
             "locator": {
-              "kind": "symbol",
-              "name": "inScope"
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "6d20b62ae0668822438c75d9d06f5e1eb0bccbb2",
-            "content": "sha256:86e7725cda1482e81476173349fcbd5d8fefdd774cd7ebca0108da14abe37e8a",
-            "locator": {
-              "end": 20,
+              "end": 104,
               "kind": "line_range",
-              "start": 20
+              "start": 1
             }
           },
           "kind": "test"
-        }
-      ]
-    },
-    "2": {
-      "note": "The two cases.\n\nAnchor: \"marks the member's row when the named family is in the tree, and only that row\"; \"shows the state on the invariant view when the named family is not in the review\"",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "6d20b62ae0668822438c75d9d06f5e1eb0bccbb2",
-            "content": "sha256:eb34b49e48ad1a2607a2aef02ce37868c2f3acea66398580f5adfbb8ab1af652",
-            "locator": {
-              "end": 93,
-              "kind": "line_range",
-              "start": 55
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "3": {
-      "note": "The components under test.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "24fb3dfbfbc4b61a1e00dec767bc96b6ad08ef80",
-            "content": "sha256:52115f4989e98d3509cf06bba43115e4d2fddb2ea8f73c42f757e06988482f4a",
-            "locator": {
-              "kind": "symbol",
-              "name": "MemberTargetNote"
-            },
-            "path": "dashboard/src/panels/review/MarkerTargetState.tsx"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "24fb3dfbfbc4b61a1e00dec767bc96b6ad08ef80",
-            "content": "sha256:0910f3aeb46b49518184049b8643d518aff2751c2846a54a7bee25a97d7dbae5",
-            "locator": {
-              "kind": "symbol",
-              "name": "MemberFamilyLabel"
-            },
-            "path": "dashboard/src/panels/review/MarkerTargetState.tsx"
-          },
-          "kind": "code"
         }
       ]
     }

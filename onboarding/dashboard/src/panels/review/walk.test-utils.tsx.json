@@ -3,12 +3,12 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "The `fetch` stub: routes by path, clones each answer, and logs requests.",
+      "note": "serve logs requests, prioritizes non-nullish custom tree replies, supplies the captured leaf-wide answer only for unscoped /trees requests, refuses other unanswered tree/source-content requests, and clones answers.",
       "targets": [
         {
           "anchor": {
-            "blob": "4ffc8aa0d49f9dac940aa42ae2d990d199f0c7ff",
-            "content": "sha256:227b979c553e18491b648c175cf77cea37ccf29d8d5f6c3242ff3206a3432565",
+            "blob": "b048f7cdd6883468efddb91df6536399a749ee3d",
+            "content": "sha256:4afa37ab0ff4132b3d4f59b8598ddf7825232f84a85f7f4ab1b0a281e483243e",
             "locator": {
               "kind": "symbol",
               "name": "serve"
@@ -35,27 +35,15 @@
       ]
     },
     "11": {
-      "note": "Fetch stub answering from the served world",
+      "note": "The fetch stub preserves custom tree-answer priority, adds the unscoped leaf-wide captured reply, retains scoped/source-content refusal, and preserves request logging, cloning and unexpected-review failures.",
       "targets": [
         {
           "anchor": {
-            "blob": "e70824e3c32b3e86eda516a55f32bea2a0e4370b",
-            "content": "sha256:227b979c553e18491b648c175cf77cea37ccf29d8d5f6c3242ff3206a3432565",
+            "blob": "b048f7cdd6883468efddb91df6536399a749ee3d",
+            "content": "sha256:4afa37ab0ff4132b3d4f59b8598ddf7825232f84a85f7f4ab1b0a281e483243e",
             "locator": {
               "kind": "symbol",
               "name": "serve"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "e70824e3c32b3e86eda516a55f32bea2a0e4370b",
-            "content": "sha256:cf69ddea8b485728e35fc437eba3f85492ade989867494768ea26f34c81c9c63",
-            "locator": {
-              "end": 74,
-              "kind": "line_range",
-              "start": 55
             }
           },
           "kind": "code"
@@ -63,27 +51,28 @@
       ]
     },
     "12": {
-      "note": "Real-data world of the scratch leaf",
+      "note": "The default real-data world includes the captured leaf-wide tree reply alongside the catalogue, task and review bodies; preserve the existing CHANGES target.\n\nAnchor: inclusive source ranges",
       "targets": [
         {
           "anchor": {
-            "blob": "e70824e3c32b3e86eda516a55f32bea2a0e4370b",
-            "content": "sha256:61bfe7c10f11eb066fed43641f63da6d0f21a3a4183e85bd3e201f16cd020d88",
+            "blob": "b048f7cdd6883468efddb91df6536399a749ee3d",
+            "content": "sha256:25709f89efcdedae3b6f5bc40610828f6d1581b60a1469716cb9dc0d0546f555",
             "locator": {
-              "kind": "symbol",
-              "name": "CHANGES"
+              "end": 132,
+              "kind": "line_range",
+              "start": 130
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "e70824e3c32b3e86eda516a55f32bea2a0e4370b",
-            "content": "sha256:8b79512a59012838aef60f3af29c46267fb443391d0815cd45399041e936433a",
+            "blob": "b048f7cdd6883468efddb91df6536399a749ee3d",
+            "content": "sha256:61bfe7c10f11eb066fed43641f63da6d0f21a3a4183e85bd3e201f16cd020d88",
             "locator": {
-              "end": 139,
+              "end": 142,
               "kind": "line_range",
-              "start": 131
+              "start": 134
             }
           },
           "kind": "code"

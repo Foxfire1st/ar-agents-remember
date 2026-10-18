@@ -123,35 +123,6 @@
         }
       ]
     },
-    "109": {
-      "note": "Current curator records and explicit retired-channel unavailability",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "16e7c29f57b7814c6ee69615335aac14aa466a1e",
-            "content": "sha256:fbb49a9450e87dda67fc7e549d6b78f44d160884ef5a1886e724b900aab4b925",
-            "locator": {
-              "kind": "symbol",
-              "name": "review_records_for_resolution"
-            },
-            "path": "mcp/src/agents_remember/application/review_evidence_records.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "07c5dd5a94d8b14a8d703da903c1d9cc166288a0",
-            "content": "sha256:5d14090b1a207dda5ca6f77a2cea408ca02c8f4509612a548bd14381371ef2eb",
-            "locator": {
-              "kind": "symbol",
-              "name": "_retired_channel"
-            },
-            "path": "mcp/src/agents_remember/application/review_evidence_records.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
     "11": {
       "note": "The one classification and where it differs from the gate.\n\nAnchor: \"An entry supplies a range on a side only at its own recorded blob.\"",
       "targets": [
@@ -2630,23 +2601,6 @@
         }
       ]
     },
-    "257": {
-      "note": "**The availability vocabulary and the field that carries it on the served payload.**",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "794ec671b12610ad3e698d052473a9231bcd0574",
-            "content": "sha256:dafe017fda5c133ffcdc982c070c12de7eedc57930f07153e09db3295c2b788e",
-            "locator": {
-              "kind": "symbol",
-              "name": "ReviewRecordChannel"
-            },
-            "path": "mcp/src/agents_remember/models/knowledge/review_records.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
     "258": {
       "note": "**The production port the cases drive, and the two states F09 collapsed.**",
       "targets": [
@@ -3407,36 +3361,6 @@
               "name": "unexplained_satisfied_by"
             },
             "path": "mcp/src/agents_remember/models/knowledge_files/unexplained.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "300": {
-      "note": "Retired canonical/matrix collections remain unavailable without measured counts",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "07c5dd5a94d8b14a8d703da903c1d9cc166288a0",
-            "content": "sha256:8a3e09b08d614e4917acaee1113f4fcb16811776b199633a77947c36e8933738",
-            "locator": {
-              "kind": "symbol",
-              "name": "review_records_for_resolution"
-            },
-            "path": "mcp/src/agents_remember/application/review_evidence_records.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "07c5dd5a94d8b14a8d703da903c1d9cc166288a0",
-            "content": "sha256:c9be157ccbc8404de705b65ce4fc01801cc6e4c4344a882f7d9efacfc371e0d1",
-            "locator": {
-              "end": 14,
-              "kind": "line_range",
-              "start": 1
-            },
-            "path": "mcp/src/agents_remember/application/review_evidence_records.py"
           },
           "kind": "code"
         }
@@ -4335,36 +4259,53 @@
       ]
     },
     "337": {
-      "note": "Raw Git output prevents newline normalization from collapsing pathname identities.",
+      "note": "The response requires judgment and retains knowledge/source identity without the removed supporting-record fields.",
       "targets": [
         {
           "anchor": {
-            "blob": "cebb73b6be7b8f1829e91c3404632496f92dd7e1",
-            "content": "sha256:1e06d97e083599f069fbf8c197960b4a72ec7557850d39b67dbe97b28275be67",
+            "blob": "3a9fbebf751c8e0ce26280a3c2bd35bfe3302c8f",
+            "content": "sha256:0e006f842e6954082a9d752be51896858f6970f40ff39161b5d4046e191a8da0",
             "locator": {
               "kind": "symbol",
-              "name": "run_git_bytes"
+              "name": "KnowledgeReviewPayload"
             },
-            "path": "mcp/src/agents_remember/kernel/git_command.py"
+            "path": "mcp/src/agents_remember/models/knowledge/review.py"
           },
           "kind": "code"
         }
       ]
     },
     "338": {
-      "note": "A changed candidate tree needs the bounded clean-sync proof at the door.",
+      "note": "Selected-subject history and membership rows are rendered in attempt order, with proof entries supplied separately and explicit none/unavailable states.",
       "targets": [
         {
           "anchor": {
-            "blob": "d0940b70289d43e211b8e08dbeafc3769dc23b64",
-            "content": "sha256:86a20ff12327bbf2f7875dfe057efb888ad604a89225dc396dd6a0d01e677ac4",
+            "blob": "7915489e9b1bfd326b7927fa39dbc7d55826e3c4",
+            "content": "sha256:3d2ba7c9bb099ac54f2a31d2f629488067e277170ffdc26590526c969bd0ecfa",
             "locator": {
               "kind": "symbol",
-              "name": "_review_provenance"
+              "name": "review_judgment"
             },
-            "path": "mcp/src/agents_remember/worktrees/integration/closeout/door_evidence.py"
+            "path": "mcp/src/agents_remember/application/review_judgment.py"
           },
           "kind": "code"
+        }
+      ]
+    },
+    "339": {
+      "note": "The regression asserts required judgment and absence of removed wire channels; this is source/assertion evidence, not a fresh test run.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ea4ef5d83ffe9733de18c20f0e1a405aaf633a41",
+            "content": "sha256:4039a372cb2e3f0ee9783826300476aa2b107fc7bc261b165462bb18de1cd7f8",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_wire_requires_judgment_and_has_no_retired_channels"
+            },
+            "path": "mcp/tests/test_knowledge_review_evidence_channels.py"
+          },
+          "kind": "test"
         }
       ]
     },
@@ -4381,6 +4322,40 @@
               "start": 25
             },
             "path": "mcp/src/agents_remember/application/review_artifact_cleanup.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "340": {
+      "note": "Raw Git output prevents newline normalization from collapsing pathname identities.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cebb73b6be7b8f1829e91c3404632496f92dd7e1",
+            "content": "sha256:1e06d97e083599f069fbf8c197960b4a72ec7557850d39b67dbe97b28275be67",
+            "locator": {
+              "kind": "symbol",
+              "name": "run_git_bytes"
+            },
+            "path": "mcp/src/agents_remember/kernel/git_command.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "341": {
+      "note": "A changed candidate tree needs the bounded clean-sync proof at the door.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d0940b70289d43e211b8e08dbeafc3769dc23b64",
+            "content": "sha256:86a20ff12327bbf2f7875dfe057efb888ad604a89225dc396dd6a0d01e677ac4",
+            "locator": {
+              "kind": "symbol",
+              "name": "_review_provenance"
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/closeout/door_evidence.py"
           },
           "kind": "code"
         }

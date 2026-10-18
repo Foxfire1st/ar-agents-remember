@@ -70,10 +70,11 @@ No configured live documentation source was available for this pass.
 ### Cross-Repo References
 
 No cross-repo boundary is crossed by this file.
-- Synthetic outline exercising every badge branch [7]
 - Mounted tree harness with kept-family support [8]
 - Compact rows and persisted views [9]
 - First-real-change opening and no-change selection [10]
 - Kept families, filtering and unknown-skipping traversal [11]
 - Catalogue-only listing and summary count states [12]
 - Conditional polite comparison-reset status [13]
+
+- Representative synthetic outline supplying unchanged, unknown, joined, left, changed and added shapes; not exhaustive badge-branch proof. [7]

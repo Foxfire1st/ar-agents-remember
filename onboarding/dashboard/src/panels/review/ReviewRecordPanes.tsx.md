@@ -6,15 +6,15 @@
 
 ## Purpose
 
-Render one admitted review payload's open main-page facts separately from compact technical identities. `ReviewMainFacts` owns the visible changed non-authored fields, detection signals, unresolved references, attribution counts, staleness and submission reason. `ReviewTechnicalDetails` keeps only record/provenance identities in its Technical details disclosure. Neither export computes a review, fetches, publishes or selects a subject.
+Render one admitted review payload's open main-page facts separately from compact technical identities. `ReviewMainFacts` owns the visible changed non-authored fields, knowledge/source unresolved references, attribution counts, staleness and submission reason. `ReviewTechnicalDetails` keeps only record/provenance identities in its Technical details disclosure. Neither export computes a review, fetches, publishes or selects a subject.
 
 ## Code Commentary
 
 ### Logic
 
-- `RecordFacts` excludes statement, applicability, conditions, exclusions, essential_conditions and joint_guarantee from its non-authored field-change list. `fieldValue` distinguishes undefined `(absent)` from a present empty string `(recorded empty)`; neither is printed as a blank. Other recorded text is passed through unchanged. These field rows are main-page facts, not content moved back into Technical details. It renders detection signals and combines knowledge/source/evidence/link unresolved references, with reason content explicitly marked in the open page.
-- `ReviewMainFacts({ payload, laneRead, onAllChanges })` consumes the optional lane read for attribution count wording, otherwise displays the payload's landed counts. It prints non-current staleness, the assessment submission state/reason and next action. Its optional All changes button invokes the supplied callback; it does not fetch or own comparison selection. There is no SourceExplorer pointer or LaneAttributionLists renderer here.
-- `ReviewTechnicalDetails({ payload, unanswered, paging })` renders a pending/unavailable paragraph outside the disclosure when payload is null, then the supplied paging node and always-mounted provenance `<details>`. With a payload it prints comparison/policy, retained revision groups, source expansion reference/command, evidence/observation/assessment IDs and the dispositions accepted by the existing authority. Those dispositions are not publication approval.
+- `RecordFacts` excludes statement, applicability, conditions, exclusions, essential_conditions and joint_guarantee from its non-authored field-change list. `fieldValue` distinguishes undefined `(absent)` from a present empty string `(recorded empty)`; neither is printed as a blank. Other recorded text is passed through unchanged. These field rows are main-page facts, not content moved back into Technical details. It combines only knowledge/source unresolved references, with reason content explicitly marked in the open page. Detection signals and legacy evidence/link unresolved collections are no longer read here.
+- `ReviewMainFacts({ payload, laneRead, onAllChanges })` passes the optional lane read to `laneAttributionFacts`, or supplies `{ state: 'unknown' }` when no read is present. Every remaining-count row first calls `laneCountText`; only a nullish helper result uses the payload's value/reason text. The count paragraph always carries `data-attribution-source="lane"`. It prints non-current staleness, `Read-only review` with the submission reason, and the next action. Its optional All changes button invokes the supplied callback; it does not fetch or own comparison selection. There is no SourceExplorer pointer or LaneAttributionLists renderer here.
+- `ReviewTechnicalDetails({ payload, unanswered, paging })` renders a pending/unavailable paragraph outside the disclosure when payload is null, then the supplied paging node and always-mounted provenance `<details>`. With a payload it prints comparison/policy, retained revision groups, source expansion reference/command, judgment row IDs/history paths and proof IDs through `JudgmentIdentifiers` and the dispositions accepted by the existing authority. Those dispositions are not publication approval.
 - The TechnicalDetails type still permits an optional laneRead compatibility prop, but this export does not destructure or use it; current lane attribution is in ReviewMainFacts. No old KnowledgePane, SourcePane, EvidencePane, SubmissionBlock or KnowledgeStatements delegation survives in this module.
 
 ### Invariants And Boundaries
@@ -29,11 +29,8 @@ The parent owns admitted payload/subject binding. A pending or unavailable subje
 
 
 
-- The open record facts filter authored fields and display detection signals and combined unresolved references. [12]
 
-- Main-page facts render lane/landed counts, staleness, submission reason and optional All changes callback. [13]
 
-- Compact provenance identities remain in the technical disclosure, with pending state and paging outside it. [14]
 
 ## Historical pre-R86 account — preserved, superseded, not current assertions
 
@@ -147,3 +144,7 @@ records.
 No meaningful cross-repo references found.
 
 </details>
+
+- RecordFacts filters authoredFields out of knowledge.field_changes, renders other transitions through fieldValue, and combines only knowledge.unresolved and source.unresolved. It conditionally displays these references as reason content. Detection signals and legacy evidence/link unresolved collections are no longer read. [12]
+- ReviewMainFacts renders RecordFacts and maps source.remaining through laneCountText using laneAttributionFacts(laneRead), or an explicit unknown state without a read. A nullish helper result retains payload value/reason wording. The paragraph is always marked as lane attribution. Non-current staleness keeps its existing test IDs; the submission block now says Read-only review with reason and next action. The optional All changes button invokes the supplied callback. [13]
+- ReviewTechnicalDetails keeps pending/unavailable text and supplied paging outside the always-mounted provenance disclosure. A present payload gates comparison/policy, retained revision groups, expansion reference/command, JudgmentIdentifiers and accepted dispositions with the publication-approval disclaimer. Its optional laneRead type member remains unused. JudgmentIdentifiers prints each judgment row's row_id/history_path and each proof's id, labels empty lists none returned, and explicitly labels an absent judgment pane as not supplied; it does not render judgment outcomes or legacy evidence/observation/assessment IDs. [14]

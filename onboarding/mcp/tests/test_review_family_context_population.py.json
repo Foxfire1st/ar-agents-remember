@@ -51,12 +51,12 @@
       ]
     },
     "6": {
-      "note": "Primary knowledge, evidence and complete source inventory stay independent.",
+      "note": "Family-only changes preserve revision selection, statements, conditions, judgment and complete source inventory.",
       "targets": [
         {
           "anchor": {
-            "blob": "ec20a93655b5e1ebc7f083eca50b59f5645a1cfe",
-            "content": "sha256:e2e735333b325b12bef57fc0c8f59cdffa07cb3f601dad1f19c4d9f737e6e24d",
+            "blob": "54fbdbbfa712edeba863208bcf50313b08770968",
+            "content": "sha256:5d6fc7f87bab2faf847e6f512f1be8d3ebc4a88b8f5865ae1b95fc4b011b83cc",
             "locator": {
               "kind": "symbol",
               "name": "_assert_primary_unchanged"
@@ -67,15 +67,44 @@
       ]
     },
     "7": {
-      "note": "Sparse pages preserve the recorded population and primary panes through real HTTP walks.",
+      "note": "Sparse HTTP walks preserve the recorded population and selected knowledge, judgment, source inventory and comparison.",
       "targets": [
         {
           "anchor": {
-            "blob": "ec20a93655b5e1ebc7f083eca50b59f5645a1cfe",
-            "content": "sha256:0e404388860b9d659e14f151ef9c52a5a043b0ccc3483357f9b89e6a7d196964",
+            "blob": "54fbdbbfa712edeba863208bcf50313b08770968",
+            "content": "sha256:d6c4b2d530f05380720a77d5ba9e518b282e7012fc17c3ada6bfc3dd73c8b7fe",
             "locator": {
               "kind": "symbol",
               "name": "test_content_and_claim_only_pages_preserve_the_authored_population"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "Malformed named after-family records yield partial unresolved retained context with known membership, or unavailable rather than measured zero without it. Actual deletion remains removed despite an unrelated malformed family. Each declaration has two parameter values.\n\nAnchor: inclusive source ranges",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "54fbdbbfa712edeba863208bcf50313b08770968",
+            "content": "sha256:f083868bef9846785aa29c7e0570327bdfa75a874cc0c8d7e0b7b83e4268b47c",
+            "locator": {
+              "end": 98,
+              "kind": "line_range",
+              "start": 63
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "54fbdbbfa712edeba863208bcf50313b08770968",
+            "content": "sha256:42bf500aad03eea8d3b4f62de5b518912e3ece328d86999c3cba5abf935a4187",
+            "locator": {
+              "end": 117,
+              "kind": "line_range",
+              "start": 101
             }
           },
           "kind": "test"

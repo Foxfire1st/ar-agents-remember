@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "cbd4e1e033b1822b9c6cdf0d8c0879f0b51cfb0b",
-        "content": "sha256:8be7277f12d2f9a8704aabf235cce5f1d4e734a372eb4153c1c7d0757b4d4d83",
+        "blob": "c18a078a87a4bf5adc68342854e722257a33b8e1",
+        "content": "sha256:3deaabf5668d0bbf3878e9780637aabb9462b9e733b610a20e551be42e37c3aa",
         "locator": {
           "kind": "symbol",
           "name": "ReaderOutline"
@@ -16,7 +16,7 @@
         "handoffEntry": "MIK-R79@v1 required behavior 10",
         "leaf": "260928-MIK-L79"
       },
-      "rationale": "ReaderOutline owns the rendering or source-selection boundary that implements this obligation: On this page lists rendered chapters and record sections, marks the current chapter and yields its pane to cited code.",
+      "rationale": "ReaderOutline owns the rendering or source-selection boundary that implements this obligation: On this page lists the chapters the rendered pane holds - those of the summary and those a whole-prose replacement adds in place - marks the current chapter and yields its pane to cited code.",
       "role": "presentation"
     }
   ],

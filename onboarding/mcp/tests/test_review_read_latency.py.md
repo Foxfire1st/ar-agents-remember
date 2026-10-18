@@ -15,7 +15,7 @@ and Git children do not depend on the machine. The module also exports the helpe
 
 ## Code Commentary
 
-- **One resolution.** A subject read resolves once and captures each worktree once; the unchanged resolve-time baseline stands for the remembered trees during the publication recheck. The recheck still refuses a candidate that moved while the review was composed.
+- **One resolution.** A subject read matches a direct `read_knowledge_review` answer and has a judgment, resolves once and captures each worktree once; the unchanged resolve-time baseline stands for the remembered trees during the publication recheck. The recheck still refuses a candidate that moved while the review was composed.
 - **Converted base.** A converted base tree that Git holds is not written again; each mismatched input
   and an absent tree are written again.
 - **Leaf-wide view.** `test_the_leaf_wide_view_captures_nothing_itself_and_is_computed_once_per_comparison`
@@ -29,13 +29,15 @@ and Git children do not depend on the machine. The module also exports the helpe
   returned each time and no view is kept.
 - **Edit during the computation.** `test_a_task_edit_restored_during_computation_refuses_and_the_next_read_uses_original_inputs`
   changes the leaf's task document while the worklist is computed and restores it afterwards, at three
-  points of the lookup. The injected race repeats on every computation, so the view is computed twice and
-  the answer is the refusal `inputs_changing` with the document as offending input and an action that says
-  to retry. Nothing is kept, and the next read equals a fresh read of the original inputs.
+  timings: before both lookups, between them, and absent-then-present. Only the between-lookups timing
+  patches the parent's `leaf_expected_effects`, and the worklist computation runs in the child's own
+  interpreter, so that callback cannot restore bytes inside the child's lookups. The injected race repeats
+  on every computation, so the view is computed twice and the answer is the refusal `inputs_changing` with
+  the document as offending input and an action that says to retry. Nothing is kept, and the next read equals a fresh read of the original inputs.
 - **Memo bounds.** The view memo holds at most `CAPACITY` entries at two population sizes, serves nothing
   older than `MAX_AGE_SECONDS`, never answers another key, and has no key for a recorded comparison or for
   a leaf whose memory head or parent tip cannot be read.
-- **Retired knowledge-diff subjects:** the aggregate three-Git-question/per-file-parity and literal two-size patch-selection cases were removed from this module. Its nine current top-level test definitions retain resolution/capture counts, exact supplied candidate/base operands, no leaf memory-tree diff, observed task-read refusal/recovery, bounded memo reuse and freshness; no current literal aggregate patch proof is claimed.
+- **Retired knowledge-diff subjects:** the aggregate three-Git-question/per-file-parity and literal two-size patch-selection cases were removed from this module. Its ten current top-level test definitions retain resolution/capture counts, exact supplied candidate/base operands, no leaf memory-tree diff, observed task-read refusal/recovery, bounded memo reuse and freshness; no current literal aggregate patch proof is claimed. The recorded leaf-view case reads a bound complete stored worklist as `persisted`, with the child's exact CRLF-byte identity imported into the parent. A missing worklist has source `absent`, no state or items, and an imported `ABSENT` identity; both readable outcomes retain code facts. Malformed JSON and a directory at the worklist path refuse with the observed byte or unreadable identity. None of these recorded reads enters `LEAF_VIEW_MEMO`.
 - **Freshness.** A read after an edit shows the new content, also for a same-size rewrite in the second of
   the index write, and nothing composed is kept on the server.
 
@@ -50,7 +52,6 @@ The same-size, same-second Git rewrite scenario imports the single `rewrite_in_t
 
 - The module docstring: the port every case enters through and the machine-independent counts. [6]
 - The four review ports as the routes call them. [7]
-- One resolution and the captures of one subject read. [8]
 - The recheck refuses a moved candidate. [9]
 - A held converted base tree is not written again. [10]
 - The leaf-wide view passes the captured trees and base commits and is computed once. [11]
@@ -61,6 +62,9 @@ The same-size, same-second Git rewrite scenario imports the single `rewrite_in_t
 - An edit restored during the computation is computed twice and answered as inputs_changing. [14]
 - The memo's bounds and keys. [15]
 - A read after an edit shows the new content.  Anchor: `test_a_read_after_an_edit_shows_the_new_content_and_nothing_composed_is_kept` [18]
-- The leaf view is computed once per exact comparison [20]
-- No diff invocation spans the two memory trees  Anchor: `memory_base` [21]
-- The worklist gets the comparison's own candidate trees  Anchor: `isolated_leaf_worklist` [22]
+
+- The subject read matches direct read_knowledge_review composition, carries judgment, resolves once and captures each worktree once. [8]
+- The live leaf view computes once for an unchanged exact comparison, with subsequent edits changing the computation key. [20]
+- An explicit negative assertion forbids a diff invocation containing both comparison memory trees. [21]
+- The worklist receives the comparison's candidate trees and base commits; it performs no directory snapshot or code capture of its own. [22]
+- the recorded leaf-view declaration distinguishes persisted and absent worklists while retaining code facts, refuses malformed and unreadable inputs, checks read identities and leaves LEAF_VIEW_MEMO empty. [23]

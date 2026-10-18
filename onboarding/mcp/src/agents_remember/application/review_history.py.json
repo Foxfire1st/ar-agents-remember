@@ -1,0 +1,73 @@
+{
+  "path": "mcp/src/agents_remember/application/review_history.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "fccd0935574f17332e5452e6abbcf8f0c87d8cc3",
+        "content": "sha256:02a33f719699a09baa064830643423a9807284f1fc6494dabf583000cbfc0879",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-BY1X5H",
+      "invariant": "INV-0XK6PR",
+      "origin": {
+        "handoffEntry": "MIK-R57@v2 by-design retained-history",
+        "leaf": "260928-MIK-L57"
+      },
+      "rationale": "Reads the Git-owned leaf histories used for judgments, avoiding a second retained assessment channel.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Baseline fallback recovers identity only; history remains after-tree.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fccd0935574f17332e5452e6abbcf8f0c87d8cc3",
+            "content": "sha256:5052e06f16a5cd4788e12e72af156bbe576a879873663428966ade49f60b8ac7",
+            "locator": {
+              "kind": "symbol",
+              "name": "raw_subject"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Rows are owner/attempt-path filtered, with explicit incomplete-index refusal.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fccd0935574f17332e5452e6abbcf8f0c87d8cc3",
+            "content": "sha256:278f25c0a7076c4e62ddba8ceaa1c51078fe8b6912d4bc2c501156f2867e15ae",
+            "locator": {
+              "kind": "symbol",
+              "name": "owner_rows"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Unavailable history names failed paths and never claims no rows.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fccd0935574f17332e5452e6abbcf8f0c87d8cc3",
+            "content": "sha256:51e3ee2717d3a067836eedd0dada0393f857b572f5fb052fed52baa254f8602e",
+            "locator": {
+              "kind": "symbol",
+              "name": "incomplete_detail"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

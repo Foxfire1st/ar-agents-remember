@@ -2,15 +2,17 @@
   "path": "dashboard/src/panels/review/l43.capture-provenance.json",
   "realizes": [],
   "references": {
-    "1": {
-      "note": "The provenance identifies its declared capture scope, producer and normalization.",
+    "2": {
+      "note": "The current receipt preserves its explicit section names and declared capture custody; reading the metadata does not independently execute or validate any recorded run.",
       "targets": [
         {
           "anchor": {
-            "blob": "6a7ed3fcbf3dedaab792aebcba993ec48d901794",
-            "content": "sha256:fe042a71bea316907d510baf6e8e690d3a577cab67df77b77f1beb9dd0b4d17b",
+            "blob": "c4dae720575390761b4f4c0db84d1165fbe8d38b",
+            "content": "sha256:aab0fa527563433177ac162d49732ce572b2b92bbd43e7cccc0c11e54bdaa011",
             "locator": {
-              "kind": "file"
+              "end": 208,
+              "kind": "line_range",
+              "start": 1
             }
           },
           "kind": "code"

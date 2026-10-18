@@ -29,8 +29,8 @@ nothing to disk; request and reply travel through pipes.
 
 ### Errors
 
-Every failure is a `WorklistProcessError` with a `code` and a `next_action` that the reviewer's route turns
-into a refusal. The base class has the code `candidate_unresolved` and the action "correct the named worklist
+Expected process failures use `WorklistProcessError` with a `code` and a `next_action` that the reviewer's route turns
+into a refusal; this is not a universal wrapper for arbitrary malformed caller inputs. The base class has the code `candidate_unresolved` and the action "correct the named worklist
 process failure, then reopen the review". `WorklistOverloaded` has the code `reviewer_busy` and the action
 "the reviewer is computing other worklists; retry". `WorklistBuildMismatch` keeps the base code and asks to
 restart the dashboard so that it serves the installed build.
@@ -73,9 +73,9 @@ moment the flight is created until its thread has reaped the child.
   raises `WorklistOverloaded` if the flight never got a child and a plain deadline failure otherwise. A
   failed flight raises a new error of the same class for each requester.
 - **Leaving.** `_leave` counts the requester out. When the last requester leaves an unfinished flight, the
-  flight's cancel event is set, and `compute` waits up to five seconds for the flight to finish, so the
-  request does not return before the child is reaped. A requester that leaves while others wait does not
-  stop the child.
+  flight's cancel event is set, and `compute` waits up to five seconds for the flight to finish. That bounded
+  wait is not itself an unconditional completion assertion; `_fly` owns stop/reap and pipe closure in its
+  finally path. A requester that leaves while others wait does not stop the child.
 
 ### Collecting and validating the reply
 
@@ -86,7 +86,9 @@ moment the flight is created until its thread has reaped the child.
   stream. The size of a reply is not capped.
 - `_reply` decodes the JSON and refuses a literal `NaN` or `Infinity` and a number that overflows to
   infinity. The reply must have exactly the keys `operation`, `request`, `source`, `module`, `pid`,
-  `document`, `reads`, `computation` and `error`. The operation and the request digest must equal the
+  `document`, `review`, `reads`, `computation` and `error`. A non-null `review` must be a dictionary
+  and cannot coexist with an error; null remains allowed. This is envelope validation, not validation of
+  every nested verdict/code-fact value, which the owning application models handle. The operation and the request digest must equal the
   request's. The source identity and the module path must equal the parent's own, otherwise the failure is a
   `WorklistBuildMismatch`. The process ID must be an integer other than the parent's, and `_fly` also
   requires it to be the ID of the process it started. `computation` must be two finite monotonic times in
@@ -124,7 +126,7 @@ moment the flight is created until its thread has reaped the child.
 - The build identity and its four required fields. [6]
 - The child's environment: the parent's own package root and interpreter, or a refusal. [7]
 - Stopping a child signals its whole process group. [8]
-- The reply's protocol, identity, process, time and read checks. [9]
+- The reply checks its exact protocol including nullable review facts, identity, process, time and consumed reads. [9]
 - The checks of the returned document and error. [10]
 - One request: digest, join, wait, leave, and a copy for a sharer. [11]
 - Joining: a cancelled flight is absent, and the bound applies only to a new flight. [12]
@@ -139,7 +141,9 @@ moment the flight is created until its thread has reaped the child.
 - The child ends its whole group, or itself alone when it leads none. [21]
 - The child's handlers, alarm, parent-death signal and parent check. [22]
 - Four identical requests get one child; three other computations get one each, and at most two children run at once. [23]
-- A ninth computation is refused while nine more requests share one of the eight. [24]
+
+- The controlled test starts twelve requesters for one flight, including eleven additional sharers, and seven other computations. It expects refusal of a ninth distinct computation, then nineteen answers and eight children after release. These are stored assertions, not a fresh timing measurement. [24]
+
 - Overload is raised at once past the bound and at the deadline for a flight without a child. [25]
 - A leaving requester does not stop a shared child; the last one reaps it before returning. [26]
 - A request that arrives while a cancelled flight is reaped starts its own computation. [27]

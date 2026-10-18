@@ -3,7 +3,7 @@
   "proves": [
     {
       "anchor": {
-        "blob": "76baad82f320b6bc913b549d7778f0dcec74b570",
+        "blob": "05410847e15edb174cfb7c55ea920722adaa6102",
         "content": "sha256:ea36060b2139ab7e2e953ec363f1bf00186429937907f0973e7cbad23a69ea24",
         "locator": {
           "kind": "symbol",
@@ -20,12 +20,29 @@
     },
     {
       "anchor": {
-        "blob": "76baad82f320b6bc913b549d7778f0dcec74b570",
+        "blob": "05410847e15edb174cfb7c55ea920722adaa6102",
+        "content": "sha256:eb41ce34317a35a1adcc663dcbd58c5664caf5d401a36ec890a87e6a36a542c9",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_the_view_memo_is_bounded_by_count_and_by_age_and_never_answers_another_key"
+        }
+      },
+      "facet": "Count eviction is checked at two population sizes; age expiry and a key that was never computed are each checked once afterwards.",
+      "id": "PRF-6M60EY",
+      "invariant": "INV-5M9WY3",
+      "origin": {
+        "handoffEntry": "L57-M1-facet-PRF-BVAJTK-replacement",
+        "leaf": "260928-MIK-L57"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "05410847e15edb174cfb7c55ea920722adaa6102",
         "content": "sha256:940c00d4ee17489dfe6c436f4085b4200b37bb91538425adcc468fc0927cebb7",
         "locator": {
-          "end": 307,
+          "end": 306,
           "kind": "line_range",
-          "start": 277
+          "start": 276
         }
       },
       "facet": "Code and memory changes between resolution and publication retain candidate_unresolved refusal.",
@@ -38,24 +55,7 @@
     },
     {
       "anchor": {
-        "blob": "76baad82f320b6bc913b549d7778f0dcec74b570",
-        "content": "sha256:eb41ce34317a35a1adcc663dcbd58c5664caf5d401a36ec890a87e6a36a542c9",
-        "locator": {
-          "kind": "symbol",
-          "name": "test_the_view_memo_is_bounded_by_count_and_by_age_and_never_answers_another_key"
-        }
-      },
-      "facet": "Count/age eviction and exact-key isolation are checked at two population sizes.",
-      "id": "PRF-BVAJTK",
-      "invariant": "INV-5M9WY3",
-      "origin": {
-        "handoffEntry": "L40-actual-read-memo",
-        "leaf": "260928-MIK-L40"
-      }
-    },
-    {
-      "anchor": {
-        "blob": "76baad82f320b6bc913b549d7778f0dcec74b570",
+        "blob": "05410847e15edb174cfb7c55ea920722adaa6102",
         "content": "sha256:4c3f3a30d164c6bb0614de5ad42b2ad7e705671deae823ac73778c8d6bed1948",
         "locator": {
           "kind": "symbol",
@@ -72,7 +72,7 @@
     },
     {
       "anchor": {
-        "blob": "76baad82f320b6bc913b549d7778f0dcec74b570",
+        "blob": "05410847e15edb174cfb7c55ea920722adaa6102",
         "content": "sha256:9b68592881d68647cf2c066f5a7cdf0871cded3077ac462e1a5d7108e78d26c6",
         "locator": {
           "kind": "symbol",
@@ -89,12 +89,12 @@
     },
     {
       "anchor": {
-        "blob": "76baad82f320b6bc913b549d7778f0dcec74b570",
-        "content": "sha256:2f6887446bef89667a0f49ad5d71ee3d1a5dde19cb56e551e08a743f82facc3f",
+        "blob": "05410847e15edb174cfb7c55ea920722adaa6102",
+        "content": "sha256:4c6a1bcda6a30da655b3380347c13940fa05c6556a2d25ba202340133a1c94a8",
         "locator": {
           "end": 274,
           "kind": "line_range",
-          "start": 227
+          "start": 228
         }
       },
       "facet": "The actual dashboard port resolves once, captures each worktree for resolution and publication recheck, preserves index bytes and returns the comparison body.",
@@ -107,8 +107,25 @@
     },
     {
       "anchor": {
-        "blob": "76baad82f320b6bc913b549d7778f0dcec74b570",
-        "content": "sha256:196f95ccb6ea59ed068e37704ba566888dabc1f4e932077ab56cd1c71bfcfae5",
+        "blob": "05410847e15edb174cfb7c55ea920722adaa6102",
+        "content": "sha256:926061922e555bd502b491b56c00c250273dc9c1db29bd4c91ce4cb39f9bce08",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_task_edit_restored_during_computation_refuses_and_the_next_read_uses_original_inputs"
+        }
+      },
+      "facet": "Three task-edit timings around the isolated child's computation each refuse with inputs_changing and keep no view entry, and a stable next read equals fresh original input; the between-lookups callback is patched in the parent process only, not inside the child's lookups.",
+      "id": "PRF-Q5RPS3",
+      "invariant": "INV-5M9WY3",
+      "origin": {
+        "handoffEntry": "L57-M1-facet-PRF-YZPTEQ-replacement",
+        "leaf": "260928-MIK-L57"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "05410847e15edb174cfb7c55ea920722adaa6102",
+        "content": "sha256:83df0f6567c80bec4aff6e2b836dfa550603a7a14e18245d59948e2e5536d07f",
         "locator": {
           "kind": "symbol",
           "name": "test_the_leaf_wide_view_captures_nothing_itself_and_is_computed_once_per_comparison"
@@ -121,32 +138,15 @@
         "handoffEntry": "L40-actual-read-memo",
         "leaf": "260928-MIK-L40"
       }
-    },
-    {
-      "anchor": {
-        "blob": "76baad82f320b6bc913b549d7778f0dcec74b570",
-        "content": "sha256:926061922e555bd502b491b56c00c250273dc9c1db29bd4c91ce4cb39f9bce08",
-        "locator": {
-          "kind": "symbol",
-          "name": "test_a_task_edit_restored_during_computation_refuses_and_the_next_read_uses_original_inputs"
-        }
-      },
-      "facet": "Both real task lookups consume observed JSON bytes; ABA edits and a temporarily appearing claiming doc refuse, keep no entry, and a stable next read equals fresh original input.",
-      "id": "PRF-YZPTEQ",
-      "invariant": "INV-5M9WY3",
-      "origin": {
-        "handoffEntry": "L40-actual-read-memo",
-        "leaf": "260928-MIK-L40"
-      }
     }
   ],
   "realizes": [
     {
       "anchor": {
-        "blob": "76baad82f320b6bc913b549d7778f0dcec74b570",
-        "content": "sha256:5fb46f70ace426b8a238e687deba28e17ffca5c330976feb3b06eceb47d72ac1",
+        "blob": "05410847e15edb174cfb7c55ea920722adaa6102",
+        "content": "sha256:d2f87055baaf93fc3942dedb2d0aa20d71610d04aae9f5d855978c4e3b58c769",
         "locator": {
-          "end": 794,
+          "end": 798,
           "kind": "line_range",
           "start": 1
         }
@@ -290,27 +290,15 @@
       ]
     },
     "20": {
-      "note": "The leaf view is computed once per exact comparison",
+      "note": "The live leaf view computes once for an unchanged exact comparison, with subsequent edits changing the computation key.",
       "targets": [
         {
           "anchor": {
-            "blob": "b9fbd7174980d2bff06e48fcbb124f5605c0da61",
-            "content": "sha256:196f95ccb6ea59ed068e37704ba566888dabc1f4e932077ab56cd1c71bfcfae5",
+            "blob": "05410847e15edb174cfb7c55ea920722adaa6102",
+            "content": "sha256:83df0f6567c80bec4aff6e2b836dfa550603a7a14e18245d59948e2e5536d07f",
             "locator": {
               "kind": "symbol",
               "name": "test_the_leaf_wide_view_captures_nothing_itself_and_is_computed_once_per_comparison"
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "b9fbd7174980d2bff06e48fcbb124f5605c0da61",
-            "content": "sha256:d74f38bbf014f59438eb1804f38db829010b4b9bfca5b9c62ea28373b8cd3e97",
-            "locator": {
-              "end": 410,
-              "kind": "line_range",
-              "start": 404
             }
           },
           "kind": "test"
@@ -318,16 +306,16 @@
       ]
     },
     "21": {
-      "note": "No diff invocation spans the two memory trees  Anchor: `memory_base`",
+      "note": "An explicit negative assertion forbids a diff invocation containing both comparison memory trees.\n\nAnchor: inclusive source ranges",
       "targets": [
         {
           "anchor": {
-            "blob": "b9fbd7174980d2bff06e48fcbb124f5605c0da61",
-            "content": "sha256:429bb4b7db9f05f105b61a10cd77dd4e6c5970c6ac4ef7262dc54a64759ad3af",
+            "blob": "05410847e15edb174cfb7c55ea920722adaa6102",
+            "content": "sha256:df4ccd09aae1a4267a4b2fe41b84991219c431b0ead6fae6eb636ea13ef50341",
             "locator": {
-              "end": 426,
+              "end": 428,
               "kind": "line_range",
-              "start": 420
+              "start": 423
             }
           },
           "kind": "test"
@@ -335,16 +323,32 @@
       ]
     },
     "22": {
-      "note": "The worklist gets the comparison's own candidate trees  Anchor: `isolated_leaf_worklist`",
+      "note": "The worklist receives the comparison's candidate trees and base commits; it performs no directory snapshot or code capture of its own.\n\nAnchor: inclusive source ranges",
       "targets": [
         {
           "anchor": {
-            "blob": "b9fbd7174980d2bff06e48fcbb124f5605c0da61",
-            "content": "sha256:543e27839f38703ce41b4b3f677d80d4f728017db1d1269ff4de6293c0b2ebfe",
+            "blob": "05410847e15edb174cfb7c55ea920722adaa6102",
+            "content": "sha256:513da189787a4d586882ec602c928e8e05d81b70635116cf08a3ef294e54eb36",
             "locator": {
-              "end": 413,
+              "end": 439,
               "kind": "line_range",
-              "start": 409
+              "start": 429
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "23": {
+      "note": "the recorded leaf-view declaration distinguishes persisted and absent worklists while retaining code facts, refuses malformed and unreadable inputs, checks read identities and leaves LEAF_VIEW_MEMO empty.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "05410847e15edb174cfb7c55ea920722adaa6102",
+            "content": "sha256:ef22b8c17e735a9cf6ccb3a4d336bf7fd842d6cb4dbb413c4ad716605beeefd5",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_recorded_leaf_view_observes_its_stored_worklist_and_keeps_absence_distinct"
             }
           },
           "kind": "test"
@@ -385,12 +389,12 @@
       ]
     },
     "8": {
-      "note": "One resolution and the captures of one subject read.",
+      "note": "The subject read matches direct read_knowledge_review composition, carries judgment, resolves once and captures each worktree once.",
       "targets": [
         {
           "anchor": {
-            "blob": "b9fbd7174980d2bff06e48fcbb124f5605c0da61",
-            "content": "sha256:2f6887446bef89667a0f49ad5d71ee3d1a5dde19cb56e551e08a743f82facc3f",
+            "blob": "05410847e15edb174cfb7c55ea920722adaa6102",
+            "content": "sha256:73d046db0e6e27ec07a0c50f96d7b55f90dc0a05152417f23bad3956ad08991d",
             "locator": {
               "kind": "symbol",
               "name": "test_a_subject_read_resolves_once_and_captures_each_worktree_once_and_for_the_recheck"

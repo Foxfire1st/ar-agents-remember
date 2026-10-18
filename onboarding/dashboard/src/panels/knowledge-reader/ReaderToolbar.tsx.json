@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "c912caf7f7b6b8a458edab167db0974d883b2cb4",
-        "content": "sha256:1d29bea3e026868efea24994fc2d8b6e6ca9f55a293252109bc08dcca21f3e4c",
+        "blob": "a01cef75c71aa3fda6bae526501fa075f45f4197",
+        "content": "sha256:69e9de28a5de4fd4d8ec6318264799f01f1d9f3863d4e9ac1d174c1654a65655",
         "locator": {
           "kind": "symbol",
           "name": "ReaderToolbar"
@@ -21,8 +21,8 @@
     },
     {
       "anchor": {
-        "blob": "c912caf7f7b6b8a458edab167db0974d883b2cb4",
-        "content": "sha256:6c5d20df6acc17948a3dc39b3b539bf8ef12d758718070d5ba569700c00acf4d",
+        "blob": "a01cef75c71aa3fda6bae526501fa075f45f4197",
+        "content": "sha256:8f7a2ed92a97965a87303ccd9b4b229cb777e35ea86dc0f370ce3329a79f68be",
         "locator": {
           "kind": "symbol",
           "name": "SelectionNotes"
@@ -39,8 +39,8 @@
     },
     {
       "anchor": {
-        "blob": "c912caf7f7b6b8a458edab167db0974d883b2cb4",
-        "content": "sha256:1d29bea3e026868efea24994fc2d8b6e6ca9f55a293252109bc08dcca21f3e4c",
+        "blob": "a01cef75c71aa3fda6bae526501fa075f45f4197",
+        "content": "sha256:69e9de28a5de4fd4d8ec6318264799f01f1d9f3863d4e9ac1d174c1654a65655",
         "locator": {
           "kind": "symbol",
           "name": "ReaderToolbar"
@@ -57,8 +57,8 @@
     },
     {
       "anchor": {
-        "blob": "c912caf7f7b6b8a458edab167db0974d883b2cb4",
-        "content": "sha256:fc51a911345377ed4d5a442c219f72094d48157533070543a7a81aa59379cc1f",
+        "blob": "a01cef75c71aa3fda6bae526501fa075f45f4197",
+        "content": "sha256:175889d32e1cfd550a81a8890951baa02be4ae50e555558cb3b038ccfae9949d",
         "locator": {
           "kind": "symbol",
           "name": "useRead"
@@ -76,14 +76,15 @@
   ],
   "references": {
     "1": {
-      "note": "One memoized promise per view and selection; late answers never published.\n\nAnchor: `useRead`",
+      "note": "One mounted view/parameter promise, keyed visibility and ignored inactive effect completions.",
       "targets": [
         {
           "anchor": {
-            "blob": "c912caf7f7b6b8a458edab167db0974d883b2cb4",
-            "content": "sha256:c2190ed93ac03f0480a9070370a93059433f5065eeec57f34871e808acd416ec",
+            "blob": "a01cef75c71aa3fda6bae526501fa075f45f4197",
+            "content": "sha256:175889d32e1cfd550a81a8890951baa02be4ae50e555558cb3b038ccfae9949d",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "useRead"
             }
           },
           "kind": "code"
@@ -91,14 +92,15 @@
       ]
     },
     "2": {
-      "note": "The failures of the toolbar's own reads are named beside it.\n\nAnchor: `SideFailures`",
+      "note": "Named choices, commit-list and record-list failures.",
       "targets": [
         {
           "anchor": {
-            "blob": "c912caf7f7b6b8a458edab167db0974d883b2cb4",
-            "content": "sha256:c2190ed93ac03f0480a9070370a93059433f5065eeec57f34871e808acd416ec",
+            "blob": "a01cef75c71aa3fda6bae526501fa075f45f4197",
+            "content": "sha256:846ebb9d089004adb02297d97f7e25585b287c111eebb834a2a8843278d96dbf",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "SideFailures"
             }
           },
           "kind": "code"
@@ -106,14 +108,16 @@
       ]
     },
     "3": {
-      "note": "The memory-tree selector with live leaves and unconverted commits disabled.\n\nAnchor: `CommitSelect`",
+      "note": "Published/live-leaf/commit options, including disabled unconverted entries and the URL-selected value.\n\nAnchor: current options and selector",
       "targets": [
         {
           "anchor": {
-            "blob": "c912caf7f7b6b8a458edab167db0974d883b2cb4",
-            "content": "sha256:c2190ed93ac03f0480a9070370a93059433f5065eeec57f34871e808acd416ec",
+            "blob": "a01cef75c71aa3fda6bae526501fa075f45f4197",
+            "content": "sha256:20daa7626161117a1f3f3ca274a8052a79a23ee8af4ea7dad7c61245e21ceaea",
             "locator": {
-              "kind": "file"
+              "end": 190,
+              "kind": "line_range",
+              "start": 133
             }
           },
           "kind": "code"
@@ -121,14 +125,28 @@
       ]
     },
     "4": {
-      "note": "The selection banner and its pin.\n\nAnchor: `SelectionBanner`",
+      "note": "Supplied selection identities and a supplied non-commit pin, not a renderer-owned cleanliness measurement.\n\nAnchor: current pin and selection banner",
       "targets": [
         {
           "anchor": {
-            "blob": "c912caf7f7b6b8a458edab167db0974d883b2cb4",
-            "content": "sha256:c2190ed93ac03f0480a9070370a93059433f5065eeec57f34871e808acd416ec",
+            "blob": "a01cef75c71aa3fda6bae526501fa075f45f4197",
+            "content": "sha256:2e4fea711b5e76a83ecafd84bd24393fba7b5b2f3b020cdea244d5e84c21e38d",
             "locator": {
-              "kind": "file"
+              "end": 83,
+              "kind": "line_range",
+              "start": 62
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a01cef75c71aa3fda6bae526501fa075f45f4197",
+            "content": "sha256:15488436c281155d45816d9231b1965b878eddc4461593c59acc00ba79bcb856",
+            "locator": {
+              "end": 131,
+              "kind": "line_range",
+              "start": 104
             }
           },
           "kind": "code"
@@ -136,15 +154,93 @@
       ]
     },
     "5": {
-      "note": "The partial index and code note lines.\n\nAnchor: `SelectionNotes`",
+      "note": "The code note and complete supplied partial-index problem list.",
       "targets": [
         {
           "anchor": {
-            "blob": "c912caf7f7b6b8a458edab167db0974d883b2cb4",
-            "content": "sha256:c2190ed93ac03f0480a9070370a93059433f5065eeec57f34871e808acd416ec",
+            "blob": "a01cef75c71aa3fda6bae526501fa075f45f4197",
+            "content": "sha256:8f7a2ed92a97965a87303ccd9b4b229cb777e35ea86dc0f370ce3329a79f68be",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "SelectionNotes"
             }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The added mounted name-selection field validates through a root path read and navigates only on a view answer.\n\nAnchor: current commit/branch field",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a01cef75c71aa3fda6bae526501fa075f45f4197",
+            "content": "sha256:d109b39f497d41bf33faf6e2c02268a62d8ee7ec17c38e7eebb8419124cdff4d",
+            "locator": {
+              "end": 252,
+              "kind": "line_range",
+              "start": 192
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "One-line control layout and the narrow-width Browse callback remain separate from parent full-screen layout.\n\nAnchor: current style and toolbar body",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a01cef75c71aa3fda6bae526501fa075f45f4197",
+            "content": "sha256:32f943be61894defa95400e7da22cdf92defd33b9be8efe3ab2ee63801fb4e40",
+            "locator": {
+              "end": 60,
+              "kind": "line_range",
+              "start": 13
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a01cef75c71aa3fda6bae526501fa075f45f4197",
+            "content": "sha256:69e9de28a5de4fd4d8ec6318264799f01f1d9f3863d4e9ac1d174c1654a65655",
+            "locator": {
+              "end": 393,
+              "kind": "line_range",
+              "start": 321
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The parent’s single records acquisition feeds lookup and the Records loader.\n\nAnchor: current parent/consumer wiring",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "994adf251ec2014e1a65503fb22e08f41948bf96",
+            "content": "sha256:d18713ade55909472b2c303833d774305a4bffe8b61c447dce90dfd4b9c5657b",
+            "locator": {
+              "end": 281,
+              "kind": "line_range",
+              "start": 203
+            },
+            "path": "dashboard/src/panels/knowledge-reader/KnowledgeReader.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "13d16ed646c66456c46a044d8f55fae75ceb3ca3",
+            "content": "sha256:850b3a42cabc9276dbe59a2665989300ba30bcdc5b47b22202fc95d93568e94d",
+            "locator": {
+              "end": 131,
+              "kind": "line_range",
+              "start": 118
+            },
+            "path": "dashboard/src/panels/knowledge-reader/KnowledgeTree.tsx"
           },
           "kind": "code"
         }

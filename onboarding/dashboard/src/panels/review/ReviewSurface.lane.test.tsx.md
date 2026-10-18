@@ -14,9 +14,9 @@ The lane destinations in the mounted reviewer: each destination draws in the lan
 ### Logic
 
 The imported `serve` in `l86.test-utils.ts` routes captured catalogue, review, trees, source-content and comparison-viewer replies; it can hold the lane or worklist read. These are recorded HTTP bodies replayed through fetch, not a newly started backend.
-- **Destination case:** the unexplained destination reports 167 files; the comparison page's code paths follow the lane answer order, its reason sentence appears once, and changed onboarding is absent in that filter. Unknown attribution reports two code files, every delivered unknown path is present, its reason appears once, and no details are mounted.
-- **Held-lane case:** the summary reports pending unexplained files; All changes opens the 179-code-file comparison list while the Unexplained and Unknown filters are disabled. All stays enabled, and the unexplained filter becomes enabled when the held lane resolves.
-- **Held-worklist case:** the worklist's own view says it is reading, not that no item names the record; resolving the held response produces the captured 673-item destination count.
+- **Destination case:** the Changes without an invariant destination reports 167 files; the comparison page's code paths follow the lane answer order, its reason sentence appears once, and changed onboarding is absent in that filter. Unknown attribution reports two code files, every delivered unknown path is present, its reason appears once, and no details are mounted.
+- **Held-lane case:** the summary reports `… files without an invariant`; All changes opens the 179-code-file comparison list while the Changes without an invariant and Unknown attribution filters are disabled. All stays enabled, and Changes without an invariant becomes enabled when the held lane resolves.
+- **Held-worklist case:** the worklist's own view says it is reading, not that no item names the record; resolving the held response produces the rail label `Worklist 518 open`, an open-item count.
 
 ### Conventions
 
@@ -62,8 +62,8 @@ No configured live documentation source was available for this pass.
 ### Cross-Repo References
 
 No cross-repo boundary is crossed by this file.
-- Lane fixture with destinations and file counts [9]
-- Expected destination order with reason sentences [10]
-- Held-lane rail keeping All usable [11]
 
-- Unanswered worklist reading in its own view [12]
+- The module reads its lane fixture from l86.lane.captured.json. [9]
+- The mounted destination case asserts Changes without an invariant with 167 files, lane path order, one reason sentence, and the two-file Unknown attribution destination. [10]
+- While the lane read is held, All remains usable, both destination filters are disabled, and Changes without an invariant becomes enabled after release. [11]
+- The held worklist view states that it is reading; after release the rail asserts Worklist 518 open. [12]

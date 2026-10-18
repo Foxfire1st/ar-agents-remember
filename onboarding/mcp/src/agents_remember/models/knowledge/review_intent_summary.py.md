@@ -9,8 +9,9 @@
 The typed vocabulary of the changed-intent summary (`ICR-R24@v3`, leaf `260921-ICR-L47`): what the
 task entry's `+N −N` count, what they cannot be, and the three states an answer can take. The
 application owner ([`review_intent_summary`](../../application/review_intent_summary.py.md)) computes
-the counts; this module fixes the shape and the arithmetic they must satisfy, so no caller can be handed
-a total its parts do not make or a zero for a comparison nobody read.
+the counts; this module fixes the declared shape and the arithmetic they must satisfy. An unavailable
+result cannot carry counts, and the declared totals must equal their parts. These are constructor
+consistency checks, not independent evidence that a producer actually read the comparison.
 
 ## Code Commentary
 
@@ -31,6 +32,15 @@ a total its parts do not make or a zero for a comparison nobody read.
   counts or beside a refusal, ruling 2026-09-30T12:19:20 Q6), and a dataset comparison carries none; the route
   serializes with `exclude_none`, so a dataset body is unchanged.
 
+`unexplained_open` is a newly added optional non-negative integer, defaulting to `None`. It is
+separate from authored-intent plus/minus and from file-attribution buckets; the one-outcome validator
+does not couple it to the intent state. The tree-comparison producer asks `stored_unexplained_open`
+for it alongside attribution. That owner requires a complete stored worklist bound to the exact
+comparison, filters unexplained hunk/file items, delegates to gate verdicts, and withholds the count
+if any relevant verdict is undecided. Missing, unreadable, incomplete or differently bound stored
+work returns `None`, not an invented zero. The dashboard adapter preserves a supplied value as
+`unexplainedOpen`; no additional rendering or freshness guarantee follows from the DTO field alone.
+
 The module docstring states the count semantics after the F3 ruling: every successor revision counts
 once on each side (new text, changed origin state or acceptance reference, or a version-only
 successor); only a same-content successor whose relationships moved, or an unchanged head whose
@@ -45,8 +55,9 @@ checks, like the sibling review models.
 
 - **A missing dataset is never a measured `+0 −0`**: `unavailable` carries a refusal and no counts, by
   construction.
-- `+`/`−` are exactly the invariant and guarantee head counts; relationship-only changes cannot be
-  folded in without breaking the sum check.
+- The intended `+`/`−` inputs are invariant and guarantee head counts. The validator checks only
+  their arithmetic against declared parts; it cannot authenticate those inputs against a tree.
+  Relationship-only and stored-open counts remain separate fields, not additional plus/minus terms.
 - This module selects and compares nothing.
 - **The lane's count is never folded into `+N −N`:** it is a separate field with its own states, where `partial` and
   `unavailable` carry no count.
@@ -68,9 +79,12 @@ No relevant domain documentation was found.
 - The three answer states. [1]
 - One kind's after-only/before-only head counts. [2]
 - The counts, the typed counts outside plus/minus, and the sum check. [3]
-- Exactly one outcome per state; unavailable carries no counts. [4]
+- The result declares the optional non-negative stored-open field while the outcome validator constrains counts/refusal and partial/unresolved, not that auxiliary count. [4]
 - The lane's entry count, for a tree comparison only (MIK-R32 rule 9). [5]
-- The dashboard's mirror of this shape. [6]
+- The dashboard mirrors the component counts and optional stored-open result, then preserves a supplied value as unexplainedOpen without adding it to authored-intent counts. [6]
+
+- The tree-comparison summary attaches attribution and the separately computed stored-open count. [7]
+- Matching complete stored work and decidable gate verdicts are required for an open count; absent or unusable work is not zero. [8]
 
 ### Cross-Repo References
 

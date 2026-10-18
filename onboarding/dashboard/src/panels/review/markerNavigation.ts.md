@@ -21,7 +21,8 @@ target in the tree through the rail's own selection, and the return puts the rea
   the family selection directly.
 - **The return (`restore`).** `capture` records the subject, the family selection, the worklist-open flag, the opened
   path, the diff layout and the full-file choice. The restore selects the subject and family again and **clears
-  `focusSelection`**, so focus goes to the originating marker and not to the tree's selection; then the worklist flag (after the
+  `focusSelection` when a navigation exists**, so focus goes to the originating marker and not to the tree's selection; a
+  workspace without navigation only sets the chosen subject and clears no request. Then the worklist flag (after the
   subject selection), the opened path, the layout and
   the full-file choice.
 - **Back navigation.** The reviewer has no in-reviewer back history, so the way back is the visible `Back to <file>`
@@ -76,4 +77,4 @@ No configured live documentation source was available for this pass.
 No cross-repo boundary is crossed by this file.
 - Capture/open pair built from workspace state [10]
 
-- Restores the captured subject and chosen context, clears the selection focus request for marker return, then restores worklist, open path, diff layout and full-file mode. [12]
+- Restores the captured subject and chosen context, clears the selection focus request for marker return only when a navigation exists, then restores worklist, open path, diff layout and full-file mode. [12]

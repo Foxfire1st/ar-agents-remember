@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "1d2ce3087885774bc27b08dba49bdac96fcaa15a",
+        "blob": "9583164e407b2b0ceb6df90ee3694633f7ca74a1",
         "content": "sha256:68997ff7d2cf0414b3c209e1f50fa32b2716ce3a54d5f5064231efaa6ff66f27",
         "locator": {
           "kind": "symbol",
@@ -21,12 +21,12 @@
     },
     {
       "anchor": {
-        "blob": "1d2ce3087885774bc27b08dba49bdac96fcaa15a",
+        "blob": "9583164e407b2b0ceb6df90ee3694633f7ca74a1",
         "content": "sha256:0f41a9e2d507fe7766185518e6c08c76cefe82a73862688b1c5f7a3aa99fa958",
         "locator": {
-          "end": 201,
+          "end": 209,
           "kind": "line_range",
-          "start": 131
+          "start": 139
         }
       },
       "id": "RLZ-CCAZC6N3",
@@ -39,10 +39,10 @@
     },
     {
       "anchor": {
-        "blob": "1d2ce3087885774bc27b08dba49bdac96fcaa15a",
-        "content": "sha256:14ea0fe41f1d3f751228d060bd99e91bdc30fd9e68e602ed69f0f000c58d0d66",
+        "blob": "9583164e407b2b0ceb6df90ee3694633f7ca74a1",
+        "content": "sha256:f17d723da8071b6659af84c887f6bf7501b40710766d9f7a35caaa81ccdd1031",
         "locator": {
-          "end": 113,
+          "end": 121,
           "kind": "line_range",
           "start": 64
         }
@@ -58,7 +58,7 @@
     },
     {
       "anchor": {
-        "blob": "1d2ce3087885774bc27b08dba49bdac96fcaa15a",
+        "blob": "9583164e407b2b0ceb6df90ee3694633f7ca74a1",
         "content": "sha256:a0b2fafe30cb36e103b0264be04de090dd9f5418df933ce58bc88398ae5a9e53",
         "locator": {
           "kind": "symbol",
@@ -76,7 +76,7 @@
     },
     {
       "anchor": {
-        "blob": "1d2ce3087885774bc27b08dba49bdac96fcaa15a",
+        "blob": "9583164e407b2b0ceb6df90ee3694633f7ca74a1",
         "content": "sha256:9ab07617d668d06418fea3d3b6c2381aaf882d9e8e0904d135fe0ea1fa723623",
         "locator": {
           "kind": "symbol",
@@ -93,7 +93,7 @@
     },
     {
       "anchor": {
-        "blob": "1d2ce3087885774bc27b08dba49bdac96fcaa15a",
+        "blob": "9583164e407b2b0ceb6df90ee3694633f7ca74a1",
         "content": "sha256:26cf22d37531dad22a1d29776e25369192889e02820270e33cc11aac1de5a895",
         "locator": {
           "kind": "symbol",
@@ -110,7 +110,7 @@
     },
     {
       "anchor": {
-        "blob": "1d2ce3087885774bc27b08dba49bdac96fcaa15a",
+        "blob": "9583164e407b2b0ceb6df90ee3694633f7ca74a1",
         "content": "sha256:0f41a9e2d507fe7766185518e6c08c76cefe82a73862688b1c5f7a3aa99fa958",
         "locator": {
           "kind": "symbol",
@@ -127,7 +127,7 @@
     },
     {
       "anchor": {
-        "blob": "1d2ce3087885774bc27b08dba49bdac96fcaa15a",
+        "blob": "9583164e407b2b0ceb6df90ee3694633f7ca74a1",
         "content": "sha256:0f41a9e2d507fe7766185518e6c08c76cefe82a73862688b1c5f7a3aa99fa958",
         "locator": {
           "kind": "symbol",
@@ -144,7 +144,7 @@
     },
     {
       "anchor": {
-        "blob": "1d2ce3087885774bc27b08dba49bdac96fcaa15a",
+        "blob": "9583164e407b2b0ceb6df90ee3694633f7ca74a1",
         "content": "sha256:0f41a9e2d507fe7766185518e6c08c76cefe82a73862688b1c5f7a3aa99fa958",
         "locator": {
           "kind": "symbol",
@@ -320,25 +320,14 @@
       ]
     },
     "25": {
-      "note": "Rail section with summary, tree slot and destinations",
+      "note": "The rail combines existing summary text with optional caller-supplied codeSummary, then open reason/tree/destination slots; it makes no new measurement.\n\nAnchor: exact current function span",
       "targets": [
         {
           "anchor": {
-            "blob": "1d2ce3087885774bc27b08dba49bdac96fcaa15a",
-            "content": "sha256:8d88230fc9eb29adac1bee57b1b2aa2e4da2a0a7abe027989c247357ee6a15d2",
+            "blob": "9583164e407b2b0ceb6df90ee3694633f7ca74a1",
+            "content": "sha256:1004c70f25eaa7e79bec391600c26eddd24513c3839c750cade67bef6d96cd7c",
             "locator": {
-              "kind": "symbol",
-              "name": "ReviewNavigation"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "1d2ce3087885774bc27b08dba49bdac96fcaa15a",
-            "content": "sha256:a784c1fcc98ceb94b39412ce6f967be4cbb95ae7abc3003a35c75dab25199560",
-            "locator": {
-              "end": 92,
+              "end": 94,
               "kind": "line_range",
               "start": 64
             }
@@ -348,16 +337,16 @@
       ]
     },
     "26": {
-      "note": "Summary counts from outline over walked entries\n\nAnchor: `navigationSummary`",
+      "note": "navigationSummary derives outline counts only after catalogue admission and retains unavailable reason rather than synthesizing an empty count.\n\nAnchor: exact current function span",
       "targets": [
         {
           "anchor": {
-            "blob": "1d2ce3087885774bc27b08dba49bdac96fcaa15a",
+            "blob": "9583164e407b2b0ceb6df90ee3694633f7ca74a1",
             "content": "sha256:8f7bdbae2559b33230329256df0782848e0757ec05c169b63493ab7de90c5a65",
             "locator": {
-              "end": 104,
+              "end": 106,
               "kind": "line_range",
-              "start": 94
+              "start": 96
             }
           },
           "kind": "code"
@@ -365,15 +354,26 @@
       ]
     },
     "27": {
-      "note": "One-line changed-family/invariant/lane summary",
+      "note": "The summary combines changed-family/invariant counts with attributionSummary; an unavailable lane count says the change set could not be measured.",
       "targets": [
         {
           "anchor": {
-            "blob": "1d2ce3087885774bc27b08dba49bdac96fcaa15a",
-            "content": "sha256:ebe73e7633a72c538544a6424e8137841e1cf06eebe2cb4d0efaba21eca45a20",
+            "blob": "9583164e407b2b0ceb6df90ee3694633f7ca74a1",
+            "content": "sha256:de77db673e551ec98707bc9fe834959b0457cbb0dd98111d81b6ec567b5afee7",
             "locator": {
               "kind": "symbol",
               "name": "summaryText"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9583164e407b2b0ceb6df90ee3694633f7ca74a1",
+            "content": "sha256:267afb2d67acfb5e8eaef6e11ed9e50f1948cdd0b5b16bf91e50f41ec97d7988",
+            "locator": {
+              "kind": "symbol",
+              "name": "attributionSummary"
             }
           },
           "kind": "code"

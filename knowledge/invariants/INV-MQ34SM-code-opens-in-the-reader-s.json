@@ -1,0 +1,34 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake"
+    ],
+    "justification": "A future navigation consolidation must not substitute working source for the code a knowledge anchor actually records."
+  },
+  "applicability": "The recorded reviewer/reader 7 choice of MIK-R67@v2 rule18, or the explicit F07 resource ruling for one-spilled-history.",
+  "conditions": [
+    "Open recorded code in the reader’s own tree/anchor-aware code view.",
+    "The reader has the selected recorded knowledge/source context; the working File Viewer cannot address that historical tree."
+  ],
+  "exclusions": [
+    "No claim that source bytes are available when the recorded tree/blob is missing or that all reader code requests share one fetched body.",
+    "This is a source-bound future boundary, not a fresh runtime, visual, suite or independent MEMORY verdict."
+  ],
+  "id": "INV-MQ34SM",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "/home/firefox/projects/ar-coordination/tasks/agents-remember/260928_maintained-invariant-knowledge/notes/reports/worker/48060148-87d0-4e1e-ad2e-6f1fa353092d/role-launch/freeze05-builder-curator-handoff.md#producer-59"
+      ],
+      "path": "freeze11-r67-prescribed-boundaries-and-spill-resource-choice-01.json"
+    },
+    "handoffEntry": "MIK-R67@v2 by-design 7",
+    "leaf": "260928-MIK-L57",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Code opens in the reader's own code view, not in the File Viewer. The reader shows code at the tree and anchor the knowledge was recorded against. The File Viewer reads the working checkout and cannot address a tree.",
+  "status": "proposed",
+  "supersedes": []
+}

@@ -20,12 +20,12 @@
       ]
     },
     "10": {
-      "note": "**The structured value: both sides present and different, each projection round-tripped back to the stored envelope, and the projection's canonicality pinned.**",
+      "note": "The retained function asserts key-order canonicality only and explicitly discloses withdrawal of its fixture-driven round trip.",
       "targets": [
         {
           "anchor": {
-            "blob": "0e63bbe0a355c2157ece83f1a76b83ae5c16a6e2",
-            "content": "sha256:ee1098a65dfd5c1400da329ddfc55569773a7a1a1f5a6c28b4119ff196270c00",
+            "blob": "512bf1dcd15d3e70a90a9c7373fd4e554842a30d",
+            "content": "sha256:056271f4deb8b666d2f45b67c4eafddeeffb39380e30e41e997ff4244a1f8a04",
             "locator": {
               "kind": "symbol",
               "name": "test_a_structured_field_value_is_rendered_as_its_own_text_and_never_as_an_absence"
@@ -68,15 +68,16 @@
       ]
     },
     "13": {
-      "note": "**The projection owner whose markers and canonicality this module asserts.**",
+      "note": "The projection owner defines canonical structured-value text and its wrapper markers. The retained local test asserts key-order canonicality; marker round-trip test coverage is not claimed.\n\nAnchor: inclusive source ranges",
       "targets": [
         {
           "anchor": {
-            "blob": "321fc3b9e4dae852de22da94711a422fd4dcbcee",
+            "blob": "a2cdf1b16e61a977a5f7246ee6647b6114f1413d",
             "content": "sha256:ca5e40a13ef3f5dc67e0e73be19c58df5f8e36bc3948c61d5c51d15e632dcaae",
             "locator": {
-              "kind": "symbol",
-              "name": "structured_value_text"
+              "end": 87,
+              "kind": "line_range",
+              "start": 73
             },
             "path": "mcp/src/agents_remember/application/review_statement_sides.py"
           },
@@ -84,11 +85,12 @@
         },
         {
           "anchor": {
-            "blob": "321fc3b9e4dae852de22da94711a422fd4dcbcee",
+            "blob": "a2cdf1b16e61a977a5f7246ee6647b6114f1413d",
             "content": "sha256:e7d9c01374ec55e37ec25b09e76f30bc5ab3d0246db555e5007035ed7e94ab1b",
             "locator": {
-              "kind": "symbol",
-              "name": "STRUCTURED_VALUE_LEAD"
+              "end": 65,
+              "kind": "line_range",
+              "start": 65
             },
             "path": "mcp/src/agents_remember/application/review_statement_sides.py"
           },
@@ -96,28 +98,42 @@
         },
         {
           "anchor": {
-            "blob": "321fc3b9e4dae852de22da94711a422fd4dcbcee",
+            "blob": "a2cdf1b16e61a977a5f7246ee6647b6114f1413d",
             "content": "sha256:66a8bd6cc2d648216ace0c0e498a81f2cf2338ce60e271adfca99e2f7460e724",
             "locator": {
-              "kind": "symbol",
-              "name": "STRUCTURED_VALUE_TAIL"
+              "end": 66,
+              "kind": "line_range",
+              "start": 66
             },
             "path": "mcp/src/agents_remember/application/review_statement_sides.py"
           },
           "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "512bf1dcd15d3e70a90a9c7373fd4e554842a30d",
+            "content": "sha256:056271f4deb8b666d2f45b67c4eafddeeffb39380e30e41e997ff4244a1f8a04",
+            "locator": {
+              "end": 276,
+              "kind": "line_range",
+              "start": 262
+            }
+          },
+          "kind": "test"
         }
       ]
     },
     "14": {
-      "note": "The adapter entry point the cases drive, and the one-sided contract its pane values carry.\n\nAnchor: `ReviewCandidateResolution`; `ReviewRecordInputs`",
+      "note": "The current compose_review entry point takes resolution and request; the local review helper invokes it without the removed ReviewRecordInputs bag.\n\nAnchor: inclusive source ranges",
       "targets": [
         {
           "anchor": {
-            "blob": "75a68c3874ea545bd49e863046a120e320587404",
-            "content": "sha256:cccdeadc30f88b4527694d3c2e46f16c82c0784cb1d38b04bece61b9ec6bd1d8",
+            "blob": "ac739bfed6942a8a7b701200421aa16e48d35463",
+            "content": "sha256:47fb36bd3b80dcd4fa28db9cad57e12495004dbe4f20c91814d5c7d8d56bf80c",
             "locator": {
-              "kind": "symbol",
-              "name": "compose_review"
+              "end": 489,
+              "kind": "line_range",
+              "start": 270
             },
             "path": "mcp/src/agents_remember/application/knowledge_review.py"
           },
@@ -125,29 +141,15 @@
         },
         {
           "anchor": {
-            "blob": "e82e48a3fe51cf1b33e2db3907db00759c429781",
-            "content": "sha256:01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+            "blob": "512bf1dcd15d3e70a90a9c7373fd4e554842a30d",
+            "content": "sha256:c6d5a67fdce71b90de5a53aecc875edf27e0a2b7666cdabad12da4346553bf61",
             "locator": {
-              "end": 69,
+              "end": 184,
               "kind": "line_range",
-              "start": 69
-            },
-            "path": "mcp/src/agents_remember/application/knowledge_review.py"
+              "start": 161
+            }
           },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "e82e48a3fe51cf1b33e2db3907db00759c429781",
-            "content": "sha256:44ac1ebe3cbc12ec3b67b91ce589ffd67f3e24704fe3eaf6f55482d743f8bf45",
-            "locator": {
-              "end": 80,
-              "kind": "line_range",
-              "start": 80
-            },
-            "path": "mcp/src/agents_remember/application/knowledge_review.py"
-          },
-          "kind": "code"
+          "kind": "test"
         }
       ]
     },
@@ -242,11 +244,11 @@
       ]
     },
     "18": {
-      "note": "**The renderer half that uses these same values, which is what makes a change to either half fail in one of the two.**\n\nAnchor: `names an absent field value and a recorded empty one without printing either as blank`",
+      "note": "The renderer displays before/after statements and its component tests use synthetic statement values; they neither import the Python statement constants nor assert acceptance_ref field rows.\n\nAnchor: component test body",
       "targets": [
         {
           "anchor": {
-            "blob": "70c46c265a4b64aadc447f8b84d72673f1342b78",
+            "blob": "3ec8b719eedb51c18c3d1a2825a6e5d398f6de5d",
             "content": "sha256:a667fc3ff593802fe44012abfe3ffac077cc366db14fe4ddade1cf72080370b8",
             "locator": {
               "kind": "symbol",
@@ -258,16 +260,45 @@
         },
         {
           "anchor": {
-            "blob": "9fc7ae026d3ce705b15a299244ef1ac429f0e7c6",
-            "content": "sha256:52ea8f8874cb037e250132b8c25aeb40ba8c6a0049725cd613aadd0448a0a881",
+            "blob": "7f2d946c1268b25f315a17f941b59eb3bee95f1c",
+            "content": "sha256:010f0b92fc3ae97bc6b7ca3dc2e9250d6a98b841ad4f1276a88efb86acb41888",
             "locator": {
-              "end": 336,
+              "end": 44,
               "kind": "line_range",
-              "start": 291
+              "start": 1
             },
             "path": "dashboard/src/panels/review/KnowledgeStatements.test.tsx"
           },
           "kind": "test"
+        }
+      ]
+    },
+    "19": {
+      "note": "Current revision selection takes the subject's own before/after item for each tree, rather than the historical _identity_item/page-order account.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "67d78df305463c86edbf04b1de4baf9b2b37f11f",
+            "content": "sha256:ed85ffc8e3669967e8c127ea209d3874e3a7ba72fcdb5ec6fb49af98cff3410e",
+            "locator": {
+              "kind": "symbol",
+              "name": "select_subject_revisions"
+            },
+            "path": "mcp/src/agents_remember/application/review_revision_comparison.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "67d78df305463c86edbf04b1de4baf9b2b37f11f",
+            "content": "sha256:82cb514fc25f5d47f59cf2a8724bfa386f7a06e9d7a20732607859a0843961d3",
+            "locator": {
+              "kind": "symbol",
+              "name": "_side_item"
+            },
+            "path": "mcp/src/agents_remember/application/review_revision_comparison.py"
+          },
+          "kind": "code"
         }
       ]
     },
@@ -287,49 +318,35 @@
         }
       ]
     },
-    "3": {
-      "note": "The authored identities and words every case asserts against, drawn once in the builder.",
+    "20": {
+      "note": "An invariant text record stores one numeric revision and one statement, distinct from the former retained-revision model.\n\nAnchor: invariant record fields",
       "targets": [
         {
           "anchor": {
-            "blob": "dc6a0fb1abcb7408ed5e6b137794f6871206f7f7",
-            "content": "sha256:addd5eb70c0ead5afbd3dce1fb8ecfd31e027aea6005dbe6122906d53b434a60",
+            "blob": "80a46b4a973050dcbea27c42e098e302a0e8694f",
+            "content": "sha256:e1294300e672bdb270cada4f27d2b8a310508ebb019d00774e8579be7f80cd1d",
             "locator": {
-              "kind": "symbol",
-              "name": "ADDED_STATEMENT"
-            }
+              "end": 130,
+              "kind": "line_range",
+              "start": 117
+            },
+            "path": "mcp/src/agents_remember/models/knowledge_files/records.py"
           },
-          "kind": "test"
-        },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Retain the authored statement constants; remove the nonexistent SHARED_ACCEPTANCE_REF target. Acceptance is asserted by its text-knowledge prefix.\n\nAnchor: inclusive source ranges",
+      "targets": [
         {
           "anchor": {
-            "blob": "dc6a0fb1abcb7408ed5e6b137794f6871206f7f7",
-            "content": "sha256:2cca14cdd1ef87194592f714370bf07258ad5ccdee1a867c202800e4c2bcbf0a",
+            "blob": "512bf1dcd15d3e70a90a9c7373fd4e554842a30d",
+            "content": "sha256:2876ec40462e3de6470a7e854ad32b7f3b8d24908c9032a958cb0fd0e3a611d4",
             "locator": {
-              "kind": "symbol",
-              "name": "REMOVED_STATEMENT"
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "dc6a0fb1abcb7408ed5e6b137794f6871206f7f7",
-            "content": "sha256:cc3d59bddb6e541f82175f9a6f0ccc5f0b915abda72d7441b62f30676c02eaf1",
-            "locator": {
-              "kind": "symbol",
-              "name": "SHARED_STATEMENT"
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "0e63bbe0a355c2157ece83f1a76b83ae5c16a6e2",
-            "content": "sha256:078371233142b8e77a2a634ed33a5780e27e3e2592e120c4f1d351c4e320d45b",
-            "locator": {
-              "kind": "symbol",
-              "name": "SHARED_ACCEPTANCE_REF"
+              "end": 74,
+              "kind": "line_range",
+              "start": 68
             }
           },
           "kind": "test"
@@ -337,26 +354,28 @@
       ]
     },
     "4": {
-      "note": "**The two frozen fixture values: one invariant to author (with the origin state that alone decides its acceptance reference) and the pair of snapshots plus the identities cases select by.**",
+      "note": "OneSidedPair remains the local frozen dataclass. Extra seeds are constructed by _extra; the former AuthoredInvariant target does not survive.\n\nAnchor: inclusive source ranges",
       "targets": [
         {
           "anchor": {
-            "blob": "0e63bbe0a355c2157ece83f1a76b83ae5c16a6e2",
-            "content": "sha256:755cf6d5480e236f6ab157ff65c03ce2f6b0743d3bb5968e613c45c882513a56",
+            "blob": "512bf1dcd15d3e70a90a9c7373fd4e554842a30d",
+            "content": "sha256:6ce4bcbc2f0dff118e6a557595020f024fdfa8723e0c89fd1fcbf2b48613c321",
             "locator": {
-              "kind": "symbol",
-              "name": "AuthoredInvariant"
+              "end": 92,
+              "kind": "line_range",
+              "start": 80
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "dc6a0fb1abcb7408ed5e6b137794f6871206f7f7",
-            "content": "sha256:6ce4bcbc2f0dff118e6a557595020f024fdfa8723e0c89fd1fcbf2b48613c321",
+            "blob": "512bf1dcd15d3e70a90a9c7373fd4e554842a30d",
+            "content": "sha256:a5d9b108152d2d163e0f01b10f83cc437e68fe639a1b43bfafed4335af092ad8",
             "locator": {
-              "kind": "symbol",
-              "name": "OneSidedPair"
+              "end": 112,
+              "kind": "line_range",
+              "start": 95
             }
           },
           "kind": "test"
@@ -364,15 +383,28 @@
       ]
     },
     "5": {
-      "note": "Fixture insertion through test-only builder, with acceptance provenance tied to accepted origin.",
+      "note": "_extra constructs ExtraInvariantSeed values, and pair supplies them to the test fixture builder. The former author_invariant target is absent.\n\nAnchor: inclusive source ranges",
       "targets": [
         {
           "anchor": {
-            "blob": "0e63bbe0a355c2157ece83f1a76b83ae5c16a6e2",
-            "content": "sha256:d64a7c5a638fc3e7099c3e58f90430cf7f402d328b1e1857d6991f54b5fc9fef",
+            "blob": "512bf1dcd15d3e70a90a9c7373fd4e554842a30d",
+            "content": "sha256:a5d9b108152d2d163e0f01b10f83cc437e68fe639a1b43bfafed4335af092ad8",
             "locator": {
-              "kind": "symbol",
-              "name": "author_invariant"
+              "end": 112,
+              "kind": "line_range",
+              "start": 95
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "512bf1dcd15d3e70a90a9c7373fd4e554842a30d",
+            "content": "sha256:e1ef6447bacc2005e2fbe74aaca336ca4bff125093ca770b3e1e2504d65ca83b",
+            "locator": {
+              "end": 158,
+              "kind": "line_range",
+              "start": 115
             }
           },
           "kind": "test"
@@ -439,12 +471,12 @@
       ]
     },
     "9": {
-      "note": "**The field row: the roster asserted by exact key set, the one-sided value kept, and the lifecycle transition beside it.**",
+      "note": "The exact roster is acceptance_ref, lifecycle and payload_digest; accepted provenance uses a text-knowledge acceptance prefix.",
       "targets": [
         {
           "anchor": {
-            "blob": "0e63bbe0a355c2157ece83f1a76b83ae5c16a6e2",
-            "content": "sha256:b87075404e39a14342660043a0e36da8e5e184daf13e2ff48c8f048a00cb3a19",
+            "blob": "512bf1dcd15d3e70a90a9c7373fd4e554842a30d",
+            "content": "sha256:175621daedeb7d823db4cbacc5ba5ddc72e5dda27328ca966756a83af8253f04",
             "locator": {
               "kind": "symbol",
               "name": "test_a_field_row_keeps_the_side_that_recorded_a_value_and_names_the_side_that_did_not"

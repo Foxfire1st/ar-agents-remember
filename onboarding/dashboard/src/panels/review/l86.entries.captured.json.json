@@ -2,47 +2,13 @@
   "path": "dashboard/src/panels/review/l86.entries.captured.json",
   "realizes": [],
   "references": {
-    "1": {
-      "note": "Catalogue subjects with presence\n\nAnchor: `entries`",
+    "4": {
+      "note": "The current retained JSON input supplies the literal identities, response states and populations summarized above; these are fixture facts, not live project knowledge or fresh execution evidence.",
       "targets": [
         {
           "anchor": {
-            "blob": "bafb666fe25c4466b1e16a9acf28e399e5bee1e4",
-            "content": "sha256:cc982e94c0e865b94a6061c9125f087a967526f43b6e704a7cecbff76647ce2f",
-            "locator": {
-              "end": 1,
-              "kind": "line_range",
-              "start": 1
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "2": {
-      "note": "Navigation tree with meaning changes\n\nAnchor: `outline`",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "bafb666fe25c4466b1e16a9acf28e399e5bee1e4",
-            "content": "sha256:cc982e94c0e865b94a6061c9125f087a967526f43b6e704a7cecbff76647ce2f",
-            "locator": {
-              "end": 1,
-              "kind": "line_range",
-              "start": 1
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "3": {
-      "note": "Labelled catalogue totals\n\nAnchor: `total_subjects`",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "bafb666fe25c4466b1e16a9acf28e399e5bee1e4",
-            "content": "sha256:cc982e94c0e865b94a6061c9125f087a967526f43b6e704a7cecbff76647ce2f",
+            "blob": "ac191f0e1ab36f98b42e75072f031f740180e895",
+            "content": "sha256:d801f194e4cce5e4dbd683510cec8b81fea0e51aaf9ab0c3f69bd3042f119091",
             "locator": {
               "end": 1,
               "kind": "line_range",

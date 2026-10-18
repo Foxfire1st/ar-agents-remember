@@ -1,0 +1,32 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake"
+    ],
+    "justification": "A future performance cut must not silently omit file entries from marks classification or read every file eagerly before a view requests its marks."
+  },
+  "applicability": "The four-tree reviewer classification-scope boundary chosen in MIK-R57@v2 appendix83/151 and rule6.",
+  "conditions": [
+    "For a listed changed path with a comparison, an active marks view obtains the shared per-file classification unless supplied by its caller; failed reads may be retried and late reads cannot draw another path/scope."
+  ],
+  "exclusions": [
+    "No obligation to read marks for unchanged or unlisted paths, no unconditional single network request across failures/scopes, and no bound on every response size or a semantic grade."
+  ],
+  "id": "INV-GC92CP",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "/home/firefox/projects/ar-coordination/tasks/agents-remember/260928_maintained-invariant-knowledge/notes/reports/worker/48060148-87d0-4e1e-ad2e-6f1fa353092d/role-launch/freeze05-builder-curator-handoff.md#producer-51"
+      ],
+      "path": "freeze11-r57-eight-prescribed-by-design-boundaries-01.json"
+    },
+    "handoffEntry": "MIK-R57@v2 by-design classification-scope",
+    "leaf": "260928-MIK-L57",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Per-file classification includes every entry of the requested file and is read when a view drawing that file's marks opens.",
+  "status": "proposed",
+  "supersedes": []
+}

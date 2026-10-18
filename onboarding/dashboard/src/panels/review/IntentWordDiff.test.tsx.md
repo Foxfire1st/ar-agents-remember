@@ -6,7 +6,7 @@
 
 ## Purpose
 
-**MIK-R35's rendering cases (26 test declarations, including one three-shape `it.each`), with accessible-text assertions.** The knowledge pane and member rows start from
+**MIK-R35's rendering cases (28 test declarations, including one three-shape `it.each`), with accessible-text assertions.** The knowledge pane and member rows start from
 the real served invariant review of the converted scratch leaf (`gitTrees.invariant.captured.json`, a tree
 comparison `review:trees:1`), and the family cases from `gitTrees.family.captured.json`; `review()` derives the
 second revision by changing exactly the field each case is about, as `statementWording.test.tsx` does, and mounts
@@ -17,14 +17,17 @@ the real `SelectedStatement` inside `IntentWordDiffScope`. Assertions read what 
 
 ### Logic
 
-- **A tree comparison statement (19):**
+- **A tree comparison statement (20 declarations):**
+  - each text passage computed once for layout choice and drawing;
+  - unequal list gaps shown as removed and added rows with an accessible explanation;
+  - 1500-by-1500 lists shown without alignment, with the coarse explanation, 3000 rows and no changed row;
   - the statement marked in place in one passage, read as "…links is removed: refused added: rejected and reported
     with…", with `<del>` / `<ins>` elements and no `diff-pane`;
   - a condition-only revision: the changed condition marked in place and the statement once;
   - R2-1: a paired condition whose only change is whitespace offers no layout control;
   - conditions and exclusions aligned by exact text (unchanged, moved, added, removed), with no control;
   - a changed applicability as its own passage;
-  - **ruling Q4:** only the selected revisions' field rows are read, on tree and dataset reviews alike (another
+  - **ruling Q4:** only the selected revisions' field rows are read in the captured comparison scope (another
     record's `applicability` row is ignored, the subject's own row is read);
   - **review R1 F1**, three probe cases: one revision whose texts differ when the after row is not on the page, the
     before row is not on the page, or the member is listed on the after side only (moved in, wording touched) —
@@ -42,14 +45,13 @@ the real `SelectedStatement` inside `IntentWordDiffScope`. Assertions read what 
   - a rewrite shown side by side with its reason, and "Show inline" switching that passage;
   - the toggle switching every passage and writing `review.intent-diff.layout.v1`;
   - inline when storage throws on read, and a throwing `setItem` still switching.
-- **One-sided, unavailable and ambiguous statements (4):** added and removed statements with the known-absent line;
-  an unreadable side named as unreadable and never diffed against; no diff for an ambiguous or unresolved selection;
-  a dataset review keeping the landed rendering (its `diff-pane`, no passage, no control).
+- **One-sided and unavailable statements (3 declarations):** added and removed statements with the known-absent line;
+  an unreadable side named as unreadable and never diffed against; no diff for an unresolved selection.
 - **The family guarantee (4):** a changed guarantee word-diffed with compact revision metadata and a control; one
   revision with different text diffed (and `guaranteeTextChange` null for identical text or a missing side); no
   control for a whitespace-only guarantee; a one-sided guarantee labelled a known absence only when the other side is
   `not_recorded`.
-- **Labels of one revision whose texts differ (one surviving helper case; historical R1 F2 subject):** `guaranteeFact` returns `same_revision_text_changed` for differing bytes on a tree comparison, `unchanged_revision` for the same differing fixture on the dataset path, and `unchanged_revision` for identical captured bytes. The navigator guarantee and member-tag rendering cases were removed.
+- **Labels of one revision whose texts differ (one surviving helper case; historical R1 F2 subject):** `guaranteeFact` returns `same_revision_text_changed` for differing bytes and `unchanged_revision` for identical captured bytes. The navigator guarantee and member-tag rendering cases were removed.
 
 ### Conventions
 
@@ -78,14 +80,10 @@ No configured live documentation source was available for this pass.
 ### Repo-Internal References
 
 - The real bodies the cases start from, and the accessible-text reader. [1]
-- The one-field successor, per-side rows and the tree or dataset scope. [2]
 - The conforming example, condition-only, R2-1, list alignment and applicability cases. [3]
-- Ruling Q4 on both paths, and the three F1 probes. [4]
 - F4's cases and the same-revision label. [5]
 - Whitespace-only, the rewrite and the preference. [6]
-- One-sided, unavailable, ambiguous and dataset statements. [7]
 - The family guarantee. [8]
-- F2's retained helper case: the centre-details guarantee fact for same-revision differing text. [9]
 
 ### Cross-Repo References
 
@@ -94,3 +92,9 @@ No cross-repo boundary is crossed by this file.
 - Review mount helper with scope and revision options [11]
 - Tree scope fixture for comparison passages [12]
 - Layout persistence assertions across passages [13]
+
+- The review helper derives a successor, supplies per-side member rows and mounts SelectedStatement in the captured payload's IntentWordDiffScope. [2]
+- Selected-revision field sourcing in the captured comparison scope and the retained three-shape same-revision differing-text table. [4]
+- Three declarations cover known-absent added/removed statements, unreadable sides and unresolved revision selection; no dataset or ambiguous-selection case remains. [7]
+- The retained center-details guaranteeFact helper case classifies differing text as same_revision_text_changed and identical captured text as unchanged_revision. Navigator guarantee/member-tag tests and the dataset-path helper expectation are absent. [9]
+- Three added declarations assert single computation per passage, accessible descriptions on unequal-gap rows and coarse rendering of 1500-by-1500 lists. [14]

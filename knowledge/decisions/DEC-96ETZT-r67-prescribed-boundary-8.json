@@ -1,0 +1,53 @@
+{
+  "admission": {
+    "criteria": [
+      "constrains_future_work"
+    ],
+    "justification": "A future reader must not infer task-specific reconsideration candidates from stored status alone."
+  },
+  "alternatives": [
+    {
+      "option": "Show stored under_reconsideration in the reader and keep leaf-specific candidates in that leaf’s worklist/review.",
+      "reason": "A candidate belongs to the comparison and worklist of one leaf, not to the stored reconsideration state alone.",
+      "status": "chosen"
+    },
+    {
+      "option": "Synthesize a global reconsideration-candidate list in the record reader.",
+      "reason": "A candidate belongs to the comparison and worklist of one leaf, not to the stored reconsideration state alone.",
+      "reconsider_when": "An approved requirement gives the reader a separately bound leaf-worklist source and truthful candidate scope.",
+      "status": "rejected"
+    }
+  ],
+  "consequences": [
+    "A future reader must not infer task-specific reconsideration candidates from stored status alone.",
+    "Stored status is not a live leaf candidate enumeration or semantic approval."
+  ],
+  "context": "Approved MIK-R67@v2 rule18 and its eight named reasons prescribe these unchanged choices; the separate one-spilled-history choice is expressly approved in L57-F07-ONE-SPILLED-HISTORY-ON-PRIVATE-TEMP-DISK-IS-APPROVED.json. Source obligation: MIK-R67@v2 by-design 8. This records a governing boundary, not an invented design meeting.",
+  "decider": "Approved MIK-R67@v2/D47/D48 for its stated unchanged choices; Architect97e0320d ruling2026-10-16T13:14:22+02:00 for the one-spilled-history resource choice.",
+  "id": "DEC-96ETZT",
+  "links": [
+    {
+      "relation": "constrains",
+      "target": {
+        "blob": "429d9030986b5580fecabfb7a347284e223fcd4a",
+        "content": "sha256:9b8ac1bffc5b90b2014f09207e4e9cffcb5e4b6f2698098509ac6eb1b62eb626",
+        "locator": {
+          "kind": "file"
+        },
+        "path": "mcp/src/agents_remember/application/knowledge_reader/truth.py"
+      }
+    }
+  ],
+  "origin": {
+    "handoff": {
+      "path": "freeze11-r67-prescribed-boundaries-and-spill-resource-choice-01.json"
+    },
+    "handoffEntry": "CUR-L57-R67-choice-8",
+    "leaf": "260928-MIK-L57",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-decision/v1",
+  "status": "active",
+  "supersedes": []
+}

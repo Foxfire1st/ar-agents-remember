@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "212acbd24fc8a00da8ec01809285a8d7744f01a9",
-        "content": "sha256:b857f1efa288e4562e3b83c9e50d247f93c10c6035d93a06bc2bba88c33a0ed2",
+        "blob": "ebb9479f6b5a06247f609da6c7c5cc6043a3e020",
+        "content": "sha256:28d150c1d0542f6b041c67516ed7e8beb1bab925267b740cbd75c04b7bde8a6e",
         "locator": {
           "kind": "symbol",
           "name": "isolated_leaf_worklist"
@@ -21,8 +21,8 @@
     },
     {
       "anchor": {
-        "blob": "212acbd24fc8a00da8ec01809285a8d7744f01a9",
-        "content": "sha256:b857f1efa288e4562e3b83c9e50d247f93c10c6035d93a06bc2bba88c33a0ed2",
+        "blob": "ebb9479f6b5a06247f609da6c7c5cc6043a3e020",
+        "content": "sha256:28d150c1d0542f6b041c67516ed7e8beb1bab925267b740cbd75c04b7bde8a6e",
         "locator": {
           "kind": "symbol",
           "name": "isolated_leaf_worklist"
@@ -39,8 +39,8 @@
     },
     {
       "anchor": {
-        "blob": "212acbd24fc8a00da8ec01809285a8d7744f01a9",
-        "content": "sha256:2b4a78121c1ffd1e1d0b4a5d0cc1faa80d47ad5f45ad91e62b9d828cca185cc4",
+        "blob": "ebb9479f6b5a06247f609da6c7c5cc6043a3e020",
+        "content": "sha256:76dac756a92940f736744dfd63d7fcdcac9bfa7fc9e2c0114e8a8fca209d5458",
         "locator": {
           "kind": "symbol",
           "name": "_run"
@@ -57,7 +57,7 @@
     },
     {
       "anchor": {
-        "blob": "212acbd24fc8a00da8ec01809285a8d7744f01a9",
+        "blob": "ebb9479f6b5a06247f609da6c7c5cc6043a3e020",
         "content": "sha256:b1f85f1dde4c3a8064c2576050d490fb8ce31d166ddcf2846481105c5ff807a3",
         "locator": {
           "kind": "symbol",
@@ -75,152 +75,71 @@
     }
   ],
   "references": {
-    "1": {
-      "note": "The default owner for callers without one, stopped at interpreter exit.",
+    "10": {
+      "note": "Default process ownership, optional review input, read replay before error and document/adjunct return.\n\nAnchor: parent boundary",
       "targets": [
         {
           "anchor": {
-            "blob": "212acbd24fc8a00da8ec01809285a8d7744f01a9",
-            "content": "sha256:fc2a42e33c1e116949be41c5510142cd9aa0ada27065e820e30c42ad7bedae78",
+            "blob": "ebb9479f6b5a06247f609da6c7c5cc6043a3e020",
+            "content": "sha256:329ffb1d9e0580782b9a7f996225207a64aee9dd1d44f08727b959d3a75b3602",
             "locator": {
-              "end": 38,
+              "end": 80,
               "kind": "line_range",
-              "start": 35
+              "start": 44
             }
           },
           "kind": "code"
         }
       ]
     },
-    "2": {
-      "note": "The parent side: payload, build identity, one compute call, replayed reads, error or document.",
+    "11": {
+      "note": "Exact contract fields and typed path/tuple reconstruction.\n\nAnchor: contract reconstruction",
       "targets": [
         {
           "anchor": {
-            "blob": "212acbd24fc8a00da8ec01809285a8d7744f01a9",
-            "content": "sha256:b857f1efa288e4562e3b83c9e50d247f93c10c6035d93a06bc2bba88c33a0ed2",
-            "locator": {
-              "kind": "symbol",
-              "name": "isolated_leaf_worklist"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "3": {
-      "note": "The contract is rebuilt from exactly its own fields.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "212acbd24fc8a00da8ec01809285a8d7744f01a9",
+            "blob": "ebb9479f6b5a06247f609da6c7c5cc6043a3e020",
             "content": "sha256:9be4e7d32d4935c6b1ef66f13f591e381748f3c8457d65b4f65b79512b16b4c2",
             "locator": {
-              "kind": "symbol",
-              "name": "_contract"
+              "end": 101,
+              "kind": "line_range",
+              "start": 89
             }
           },
           "kind": "code"
         }
       ]
     },
-    "4": {
-      "note": "The child side: request and build checks, the one worklist call under both recorders, the reply.",
+    "12": {
+      "note": "Request/build validation, shared recorded computation, recorded/live owner branch and explicit reply fields.\n\nAnchor: child computation",
       "targets": [
         {
           "anchor": {
-            "blob": "212acbd24fc8a00da8ec01809285a8d7744f01a9",
-            "content": "sha256:2b4a78121c1ffd1e1d0b4a5d0cc1faa80d47ad5f45ad91e62b9d828cca185cc4",
+            "blob": "ebb9479f6b5a06247f609da6c7c5cc6043a3e020",
+            "content": "sha256:76dac756a92940f736744dfd63d7fcdcac9bfa7fc9e2c0114e8a8fca209d5458",
             "locator": {
-              "kind": "symbol",
-              "name": "_run"
+              "end": 151,
+              "kind": "line_range",
+              "start": 104
             }
           },
           "kind": "code"
         }
       ]
     },
-    "5": {
-      "note": "The entry point: lifetime, collector, request, reply, and exit status 75 on a build mismatch.",
+    "13": {
+      "note": "The one child entry point owns lifetime, JSON framing and dedicated build-mismatch exit.\n\nAnchor: child entry point",
       "targets": [
         {
           "anchor": {
-            "blob": "212acbd24fc8a00da8ec01809285a8d7744f01a9",
-            "content": "sha256:b1f85f1dde4c3a8064c2576050d490fb8ce31d166ddcf2846481105c5ff807a3",
+            "blob": "ebb9479f6b5a06247f609da6c7c5cc6043a3e020",
+            "content": "sha256:0e0132d8ee5b267bc7f69f5fa9226687bf471eea8cb0caab6432d7f9eaf84977",
             "locator": {
-              "kind": "symbol",
-              "name": "main"
+              "end": 167,
+              "kind": "line_range",
+              "start": 154
             }
           },
           "kind": "code"
-        }
-      ]
-    },
-    "6": {
-      "note": "The process owner's compute call and its reply validation.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "148943da796523667a3e85e53c1c3b5d92200aa3",
-            "content": "sha256:36f77d4f7816178c6101b5c14aaf917a62926c6748d2b97fc8f1c78f5645e096",
-            "locator": {
-              "kind": "symbol",
-              "name": "compute"
-            },
-            "path": "mcp/src/agents_remember/kernel/reviewer_worklist_process.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "7": {
-      "note": "The child's document, reads and body equal the in-process computation at two sizes; the child does no second capture, pairing or conversion.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "fc194aa17593ec2d603455736dcb23d65070cffc",
-            "content": "sha256:11d92de5942f33a7b54ee88a4a414dbe2f6338aea3d7498796788b81508b746b",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_real_child_parity_source_reads_and_held_conversion_at_two_result_sizes"
-            },
-            "path": "mcp/tests/test_reviewer_worklist_process.py"
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "8": {
-      "note": "The bytes the child consumed reach the parent for a changed-and-restored, a twice-read, an absent and an unreadable task document.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "b8f75c0db0ff78135ca05f2e8d2d82d0a8f2350e",
-            "content": "sha256:476d36f11d9d5960f0cde08bca7ec29433ee2dab175cddc3aab9d3f33efa4bad",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_child_consumed_task_bytes_survive_aba_conflict_absence_and_read_errors"
-            },
-            "path": "mcp/tests/test_reviewer_worklist_reads.py"
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "9": {
-      "note": "A child that exits with the build-mismatch status, or answers with another source, asks for a dashboard restart.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "fc194aa17593ec2d603455736dcb23d65070cffc",
-            "content": "sha256:28c02f4bfca06bec6ac2fb4607c43637e02eebe4d8f30f2b2483d5f69cb66b05",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_build_mismatch_asks_for_a_dashboard_restart"
-            },
-            "path": "mcp/tests/test_reviewer_worklist_process.py"
-          },
-          "kind": "test"
         }
       ]
     }

@@ -169,12 +169,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b8a91035417026d4649506297946286a4abd6d17",
+            "blob": "6993a184aeaa068823584aaf01432b6cb2a43a80",
             "content": "sha256:820db497595b065edcce8a209717bec28e5769ccb4bf4e60888edc4bcd8879f6",
             "locator": {
-              "end": 57,
+              "end": 56,
               "kind": "line_range",
-              "start": 56
+              "start": 55
             },
             "path": "dashboard/src/panels/changeset/ChangeSetViewer.tsx"
           },
@@ -299,7 +299,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b8a91035417026d4649506297946286a4abd6d17",
+            "blob": "6993a184aeaa068823584aaf01432b6cb2a43a80",
             "content": "sha256:35ef29daaaa65e6822669c6c30993e82853488ce26864fe60f897edf8a1a998d",
             "locator": {
               "kind": "symbol",
@@ -392,7 +392,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f7e576bc05a33889caaab2fe6c0396c6d8805922",
+            "blob": "bb94e003292e3a408d3607472dacd850e1f8da65",
             "content": "sha256:adca9206f69580ac76715414d13bcff3f68a4002df6cdd9dcc7abbc99826d1aa",
             "locator": {
               "kind": "symbol",
@@ -439,7 +439,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b8a91035417026d4649506297946286a4abd6d17",
+            "blob": "6993a184aeaa068823584aaf01432b6cb2a43a80",
             "content": "sha256:ceb70fcc398df510fd323bfc265183451ca0fbdac12b4d52a7258ef237d52e01",
             "locator": {
               "kind": "symbol",
@@ -456,7 +456,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0e992022b063f62ec9f96f68da3bfe3ff7408c46",
+            "blob": "d5135eb9e9a5b59401def9955ed068665b05a4ea",
             "content": "sha256:8bf1d07a52431616198b78b8466407e2048feeda505aafd24f78a466da02568e",
             "locator": {
               "kind": "symbol",
@@ -631,12 +631,12 @@
         },
         {
           "anchor": {
-            "blob": "19834e770c2eb7af4e574ccb2385b6ce01dff0f9",
+            "blob": "f0ec90b4f33dfc875cc31a2eae53f6ecb168695c",
             "content": "sha256:72f42d03b971637de6e84c78fede7747d0c4d4147bf0602cc3330a5443bc47d3",
             "locator": {
-              "end": 541,
+              "end": 542,
               "kind": "line_range",
-              "start": 508
+              "start": 509
             },
             "path": "dashboard/src/panels/review/ExpressionCards.tsx"
           },
@@ -857,12 +857,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1d2ce3087885774bc27b08dba49bdac96fcaa15a",
+            "blob": "9583164e407b2b0ceb6df90ee3694633f7ca74a1",
             "content": "sha256:1c18878ba6ba29af469e97217f541c327d96875773b067320e6d3816047656b1",
             "locator": {
-              "end": 237,
+              "end": 245,
               "kind": "line_range",
-              "start": 175
+              "start": 183
             },
             "path": "dashboard/src/panels/review/ReviewNavigation.tsx"
           },
@@ -961,7 +961,7 @@
         },
         {
           "anchor": {
-            "blob": "b8a91035417026d4649506297946286a4abd6d17",
+            "blob": "6993a184aeaa068823584aaf01432b6cb2a43a80",
             "content": "sha256:c6208c52420c00fd01116c624f4c0f7c2fcd40e08144a300a64385f7d4fc2978",
             "locator": {
               "kind": "symbol",
@@ -978,7 +978,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b8a91035417026d4649506297946286a4abd6d17",
+            "blob": "6993a184aeaa068823584aaf01432b6cb2a43a80",
             "content": "sha256:080be2e5600ac8b7a9949ade0f6ce6cc8585a729473058f3684659ba7aac78a8",
             "locator": {
               "kind": "symbol",
@@ -990,7 +990,7 @@
         },
         {
           "anchor": {
-            "blob": "b8a91035417026d4649506297946286a4abd6d17",
+            "blob": "6993a184aeaa068823584aaf01432b6cb2a43a80",
             "content": "sha256:e41bdca5f06750025dcea84c29dbff5a0c28e87fe8848e67a6e0a9bd01a7fb3c",
             "locator": {
               "kind": "symbol",
@@ -1007,7 +1007,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b8a91035417026d4649506297946286a4abd6d17",
+            "blob": "6993a184aeaa068823584aaf01432b6cb2a43a80",
             "content": "sha256:a2404de56cc8ff34fa1806257de3e9f76a05ea6dd8b7db911f5510bf0020ca46",
             "locator": {
               "kind": "symbol",
@@ -1019,11 +1019,79 @@
         },
         {
           "anchor": {
-            "blob": "b8a91035417026d4649506297946286a4abd6d17",
+            "blob": "6993a184aeaa068823584aaf01432b6cb2a43a80",
             "content": "sha256:c11005854198bb34a597f4a8554884b7a70ab19b0ed7aa7e5324dd998a9d47f1",
             "locator": {
               "kind": "symbol",
               "name": "ChangeSetMainPane"
+            },
+            "path": "dashboard/src/panels/changeset/ChangeSetViewer.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "48": {
+      "note": "The existing viewer composes delegated filters and one badge map from held facts; same-generation comparison context can accept late matching worklist/lane data without reopening another comparison.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bb94e003292e3a408d3607472dacd850e1f8da65",
+            "content": "sha256:7eb4320d096d15812d412b43403c5195111312be5b6b9b32f4c59fb339568f6c",
+            "locator": {
+              "kind": "symbol",
+              "name": "useHeldPageLane"
+            },
+            "path": "dashboard/src/panels/review/ReviewSurface.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "60efe56c577dfe1ccaf97ee3a1084d04057a3737",
+            "content": "sha256:20ecb57362ed0ef33d42ecde07277374f703ead7998f79cdab2bb8cd29bbf890",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/changeset/ReviewFilters.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d5135eb9e9a5b59401def9955ed068665b05a4ea",
+            "content": "sha256:ef586e464091ea9904c9a703e252a0959a6737d15468a3f10aff1712b028e806",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/changeset/reviewChangeSet.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "49": {
+      "note": "The partner predicate excludes slash-suffixed overview/entities and .index bases, but root onboarding/overview.md strips to bare overview and can produce an affordance. Target existence/read success is not established; this predicate already exists at both actual BASE operands.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6993a184aeaa068823584aaf01432b6cb2a43a80",
+            "content": "sha256:2f219116e804e8824fe2db735a2565dcafba8aa6bc45afdac7fd2ad31aba0ea3",
+            "locator": {
+              "kind": "symbol",
+              "name": "partnerCodePath"
+            },
+            "path": "dashboard/src/panels/changeset/ChangeSetViewer.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6993a184aeaa068823584aaf01432b6cb2a43a80",
+            "content": "sha256:de97b09bf077e170d0fe5fb0d988cd854779fd3f5ae6cbf2e38f438628e859c6",
+            "locator": {
+              "kind": "symbol",
+              "name": "partnerTargetFor"
             },
             "path": "dashboard/src/panels/changeset/ChangeSetViewer.tsx"
           },
@@ -1125,12 +1193,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b4f749cf2dfc7341eb4fd7dfe8071e85037056de",
+            "blob": "9dffc6e41bb9701b7a33ff1b82335a087c154484",
             "content": "sha256:85e80caa936efbd23fff96182adecab5dbeff27055922e16a62abdf4ce25692a",
             "locator": {
-              "end": 560,
+              "end": 313,
               "kind": "line_range",
-              "start": 560
+              "start": 313
             },
             "path": "dashboard/src/cockpit/Cockpit.tsx"
           },

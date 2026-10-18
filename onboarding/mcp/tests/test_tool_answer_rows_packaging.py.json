@@ -3,11 +3,11 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "A constructed forty-path population survives compaction with and without a supplied report path; the retained real carryover case derives plan only.\n\nAnchor: `CarryoverProductionTests.test_forty_path_population_passes_through_whole`; `CarryoverProductionTests.test_plan_and_apply_derive_the_row_cases`",
+      "note": "A constructed forty-path population survives compaction with and without a supplied report path; the retained real carryover case derives plan only.\n\nAnchor: current source extent",
       "targets": [
         {
           "anchor": {
-            "blob": "b6bc8af29249c854568e3ea9a69cbd5e87852149",
+            "blob": "5afb4f3f2ac22a5619a7c83302cf7b3897e3df9e",
             "content": "sha256:ee3656b577ac3b41f1bfc9af88c88d654b4a5568766fa73131696d0ac9dd58bb",
             "locator": {
               "end": 435,
@@ -19,7 +19,7 @@
         },
         {
           "anchor": {
-            "blob": "b6bc8af29249c854568e3ea9a69cbd5e87852149",
+            "blob": "5afb4f3f2ac22a5619a7c83302cf7b3897e3df9e",
             "content": "sha256:f30e5edc7a435b55f8aa77aa89c7b764ea7adc559ae891002c4c9be430d8cb6d",
             "locator": {
               "end": 417,
@@ -32,15 +32,16 @@
       ]
     },
     "2": {
-      "note": "Refresh and stale-preview results derive the route row.",
+      "note": "Refresh and stale-preview results derive the route row.\n\nAnchor: current source extent",
       "targets": [
         {
           "anchor": {
-            "blob": "b6bc8af29249c854568e3ea9a69cbd5e87852149",
+            "blob": "5afb4f3f2ac22a5619a7c83302cf7b3897e3df9e",
             "content": "sha256:162da5204e2b02dabbc9644da169776902466e0ccf2f775570cf33794fdb6fbf",
             "locator": {
-              "kind": "symbol",
-              "name": "RouteProductionTests"
+              "end": 225,
+              "kind": "line_range",
+              "start": 177
             }
           },
           "kind": "test"
@@ -48,15 +49,16 @@
       ]
     },
     "3": {
-      "note": "Actual validator results derive integrity answer cases.",
+      "note": "Actual validator results derive integrity answer cases.\n\nAnchor: current source extent",
       "targets": [
         {
           "anchor": {
-            "blob": "b6bc8af29249c854568e3ea9a69cbd5e87852149",
+            "blob": "5afb4f3f2ac22a5619a7c83302cf7b3897e3df9e",
             "content": "sha256:8c868e437eb58b49841cc87267bf18ad94210a156d5eb22f7f0342dec7c7158a",
             "locator": {
-              "kind": "symbol",
-              "name": "IntegrityProductionTests"
+              "end": 478,
+              "kind": "line_range",
+              "start": 438
             }
           },
           "kind": "test"
@@ -64,15 +66,16 @@
       ]
     },
     "4": {
-      "note": "Actual coherence actions derive bounded cases.",
+      "note": "Actual coherence actions derive bounded cases.\n\nAnchor: current source extent",
       "targets": [
         {
           "anchor": {
-            "blob": "b6bc8af29249c854568e3ea9a69cbd5e87852149",
-            "content": "sha256:f37a402e535a54fbbb7fddecbf6c928c248af5c72b5285329b9847898f2e899e",
+            "blob": "5afb4f3f2ac22a5619a7c83302cf7b3897e3df9e",
+            "content": "sha256:8bc2e7b85fa80587808541e57663dcbcb1b9bf49e524a87bcd049897106a6144",
             "locator": {
-              "kind": "symbol",
-              "name": "test_coherence_paths_derive_the_row_cases"
+              "end": 550,
+              "kind": "line_range",
+              "start": 483
             }
           },
           "kind": "test"
@@ -80,15 +83,16 @@
       ]
     },
     "5": {
-      "note": "Fixture width is authored and the owned root is cleaned at context exit.",
+      "note": "Fixture width is authored and the owned root is cleaned at context exit.\n\nAnchor: current source extent",
       "targets": [
         {
           "anchor": {
-            "blob": "b6bc8af29249c854568e3ea9a69cbd5e87852149",
-            "content": "sha256:85d3929540360c8bf7aba91b8a47a8a658e909a4fb87d313701e52279211e515",
+            "blob": "5afb4f3f2ac22a5619a7c83302cf7b3897e3df9e",
+            "content": "sha256:515d8fb88513db21608d2d3156b355793c73bcb9b57c8f85ec05e347b7a08d17",
             "locator": {
-              "kind": "symbol",
-              "name": "_fixed_width_case_root"
+              "end": 99,
+              "kind": "line_range",
+              "start": 93
             }
           },
           "kind": "test"
@@ -96,15 +100,63 @@
       ]
     },
     "6": {
-      "note": "Embedded XDG roots share that fixture and restore through patch.dict.",
+      "note": "Embedded XDG roots share that fixture and restore through patch.dict.\n\nAnchor: current source extent",
       "targets": [
         {
           "anchor": {
-            "blob": "b6bc8af29249c854568e3ea9a69cbd5e87852149",
+            "blob": "5afb4f3f2ac22a5619a7c83302cf7b3897e3df9e",
             "content": "sha256:bb3972e97bdaafef025ac35956cc99aa9ae002488e9f022563945af413a3648c",
             "locator": {
-              "kind": "symbol",
-              "name": "_case_xdg"
+              "end": 113,
+              "kind": "line_range",
+              "start": 102
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "Packaging imports the surviving fixture owner directly; this replaces only the removed test-module provider edge.\n\nAnchor: current import",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5afb4f3f2ac22a5619a7c83302cf7b3897e3df9e",
+            "content": "sha256:ac72a16b665675f225524aa477bbb79a5a41543e4ad14a9a01f32906e1bbdc4a",
+            "locator": {
+              "end": 71,
+              "kind": "line_range",
+              "start": 71
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "The actual fixture builder composes its review world and owned topology; packaging's coherence case exercises real service actions over forty constructed candidates without changing guard assertions.\n\nAnchor: current fixture and case",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "31f0adcbc17a05521aedc8127bc5c09e5092a017",
+            "content": "sha256:6bec4e588b3a9d4ce53576b39f803c406856389e0d68e51c3fd1c4dd13c60903",
+            "locator": {
+              "end": 109,
+              "kind": "line_range",
+              "start": 46
+            },
+            "path": "mcp/tests/review_curator_fixture_support.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "5afb4f3f2ac22a5619a7c83302cf7b3897e3df9e",
+            "content": "sha256:8bc2e7b85fa80587808541e57663dcbcb1b9bf49e524a87bcd049897106a6144",
+            "locator": {
+              "end": 550,
+              "kind": "line_range",
+              "start": 483
             }
           },
           "kind": "test"

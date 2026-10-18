@@ -27,28 +27,8 @@
   "id": "DEC-D0ZZXM",
   "links": [
     {
-      "relation": "constrains",
-      "target": {
-        "blob": "414196eb7345aa87d3ccc1cba87aed4b4d7945ca",
-        "content": "sha256:7c774625fbf5601b76e1fe313562a9358ccdfc6bba1d369084d231e84bca0dc6",
-        "locator": {
-          "kind": "symbol",
-          "name": "payload"
-        },
-        "path": "dashboard/src/panels/review/ReviewSurface.applicability.test.tsx"
-      }
-    },
-    {
-      "relation": "constrains",
-      "target": {
-        "blob": "414196eb7345aa87d3ccc1cba87aed4b4d7945ca",
-        "content": "sha256:77bfb61bab6e2ccd00825e85dc41aa9480d1f0a44076c8b63e52bc617f3ff52e",
-        "locator": {
-          "kind": "symbol",
-          "name": "mountSubject"
-        },
-        "path": "dashboard/src/panels/review/ReviewSurface.applicability.test.tsx"
-      }
+      "relation": "motivated_change_to",
+      "target": "DEC-7VWF08"
     }
   ],
   "origin": {
@@ -59,7 +39,7 @@
     "leaf": "260928-MIK-L86",
     "task": "260928-MIK"
   },
-  "revision": 2,
+  "revision": 3,
   "schema": "ar-decision/v1",
   "status": "active",
   "supersedes": []

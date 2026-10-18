@@ -191,15 +191,40 @@
       ]
     },
     "38": {
-      "note": "The selections: commits, published, a leaf, and a partial index with no code tree.",
+      "note": "Published selection reads uncommitted memory without writes and pins only clean state; live-leaf selection names excluded uncommitted code; partial-index and missing-code-tree notices remain covered. The hexadecimal-name selection test is absent.\n\nAnchor: inclusive source ranges",
       "targets": [
         {
           "anchor": {
-            "blob": "4ec4c95baf015b3298eca6db77c2a032c0632a63",
-            "content": "sha256:20dea8da31a88de46854922338de60c279f59f310d30dc87822cf32b26e99e18",
+            "blob": "19db6df367f5fbe794e1baed60f7491c416043eb",
+            "content": "sha256:3a33f23e636a1dc6724100475094f0c70c0b3f67543a6666600260c53cd3726a",
             "locator": {
-              "kind": "symbol",
-              "name": "test_any_commit_is_selectable_by_its_hexadecimal_name_only"
+              "end": 995,
+              "kind": "line_range",
+              "start": 972
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "19db6df367f5fbe794e1baed60f7491c416043eb",
+            "content": "sha256:d64bbdc08aca662eaea96d5e531025d449cbf9b84099f74f1caff203b52605c6",
+            "locator": {
+              "end": 1008,
+              "kind": "line_range",
+              "start": 998
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "19db6df367f5fbe794e1baed60f7491c416043eb",
+            "content": "sha256:7ba76dccb0277ce2e031287870cfc6441590966069bee5e4aee72542a979ea82",
+            "locator": {
+              "end": 1074,
+              "kind": "line_range",
+              "start": 1055
             }
           },
           "kind": "test"

@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "78855920faa4d3b0902e62b1fe548015cb9bb2a0",
-        "content": "sha256:c4eeb2f3ed8b12d26a8d19faaca6f97968a8b673bc9bd021a00141f34312a0ef",
+        "blob": "e7a6bf60038ae40902f419fca145a006573f1587",
+        "content": "sha256:1d8cc4caad0b328ac6d93a4d95887feb3eaa9322bfbd30d515319ea256d87f02",
         "locator": {
           "kind": "symbol",
           "name": "IntentReviewEntry"
@@ -21,12 +21,12 @@
   ],
   "references": {
     "1": {
-      "note": "What the numbers are, what the entry does not do, why unavailable is not zero, and why the lane's count is a separate fact.\n\nAnchor: \"WHAT THE NUMBERS ARE\"; \"UNAVAILABLE IS NOT ZERO\"; \"UNEXPLAINED IS A SEPARATE FACT\"",
+      "note": "Revision counts come from the comparison summary, not line totals/catalogue size; targeting is task-context, unavailable is not measured zero, and attribution stays separate.\n\nAnchor: inclusive source ranges",
       "targets": [
         {
           "anchor": {
-            "blob": "78855920faa4d3b0902e62b1fe548015cb9bb2a0",
-            "content": "sha256:c38ab296fb553ba25b829153e309bc21da142b530d311af53b0e11448e4c1015",
+            "blob": "e7a6bf60038ae40902f419fca145a006573f1587",
+            "content": "sha256:6e8ac5418ae5e6e7cf8523783226c6c09c7a9f1033308ab0ed2dfd7cf7991bf3",
             "locator": {
               "end": 24,
               "kind": "line_range",
@@ -38,12 +38,12 @@
       ]
     },
     "2": {
-      "note": "The brief states and the counts inside the button.\n\nAnchor: `briefProblem`; `data-added`",
+      "note": "IntentCounts displays loading/refusal or supplied revision counts, with a partial marker where appropriate.",
       "targets": [
         {
           "anchor": {
-            "blob": "9f16a4ea899010aae0203cfd8712a007026dabf6",
-            "content": "sha256:31a2a63519622a636a703b774f2a4c9e321e208d6eb41793cf09fe6ec2ca0ba5",
+            "blob": "e7a6bf60038ae40902f419fca145a006573f1587",
+            "content": "sha256:d90e0701c32b94f95b08c778b49acac7a630ddfa39f11574d3447cf9435fff4d",
             "locator": {
               "kind": "symbol",
               "name": "IntentCounts"
@@ -54,12 +54,12 @@
       ]
     },
     "3": {
-      "note": "The disclosure beside the button for unavailable and partial answers.\n\nAnchor: `problemSentence`",
+      "note": "IntentDetails places the actual refusal or unresolved-subject explanation beside the control rather than fabricating revision counts.",
       "targets": [
         {
           "anchor": {
-            "blob": "9f16a4ea899010aae0203cfd8712a007026dabf6",
-            "content": "sha256:c342ff64edde800ba9a9b31ef001275f9ae03a927d49a89d5bad13de00a9da72",
+            "blob": "e7a6bf60038ae40902f419fca145a006573f1587",
+            "content": "sha256:77fecd1eeae9453b3270ad60809bfccbb6821eb2243395c6e790efc6a8e89146",
             "locator": {
               "kind": "symbol",
               "name": "IntentDetails"
@@ -70,12 +70,12 @@
       ]
     },
     "4": {
-      "note": "The lane's count inside the button and its disclosure beside it (MIK-L32).",
+      "note": "Attribution uses 'without an invariant' plus a separate unknown count, preserves partial/unavailable/zero-zero suppression, and retains its own detail block.",
       "targets": [
         {
           "anchor": {
-            "blob": "9f16a4ea899010aae0203cfd8712a007026dabf6",
-            "content": "sha256:9e22e2645d3b1d91a5dd37f4578d13472ea9fabbcedb940b2ebab83de9a174be",
+            "blob": "e7a6bf60038ae40902f419fca145a006573f1587",
+            "content": "sha256:ee3d0e19d4489a43379f96fd41b7314f5c9bb708b17cb268857684244f3dd9e7",
             "locator": {
               "kind": "symbol",
               "name": "attributionText"
@@ -85,8 +85,8 @@
         },
         {
           "anchor": {
-            "blob": "9f16a4ea899010aae0203cfd8712a007026dabf6",
-            "content": "sha256:a4b2b612e17165e9f6d36b9ac10e6f34715027b57b1b9d56baef8973f49ce833",
+            "blob": "e7a6bf60038ae40902f419fca145a006573f1587",
+            "content": "sha256:74b86a2d5cf6499dc5873623d25167273233ce65b9e3dd4b84cfbceeb88aac6b",
             "locator": {
               "kind": "symbol",
               "name": "AttributionCount"
@@ -96,8 +96,8 @@
         },
         {
           "anchor": {
-            "blob": "9f16a4ea899010aae0203cfd8712a007026dabf6",
-            "content": "sha256:b97e9c7ab455a45dababfe31c12adb079fbd1ddbb56b54e2e1fc28cbbfb4da43",
+            "blob": "e7a6bf60038ae40902f419fca145a006573f1587",
+            "content": "sha256:9eaedccc6ca06590a5d2f9d74aff66c235196a10c5aab2cd8da4b9763ea0cc25",
             "locator": {
               "kind": "symbol",
               "name": "AttributionDetails"
@@ -108,12 +108,12 @@
       ]
     },
     "5": {
-      "note": "The control: its summary read, the task-context target and the recorded label.\n\nAnchor: `useIntentReviewSummary`; \"Intent review (recorded)\"",
+      "note": "IntentReviewEntry retains one task-context summary control, live/historical targeting and the recorded label; it now also mounts the independent open-work span.",
       "targets": [
         {
           "anchor": {
-            "blob": "9f16a4ea899010aae0203cfd8712a007026dabf6",
-            "content": "sha256:087f9600600b0b76e0eb0c421d8a83a2909722e81f9467a1d97d0ecba7029bf3",
+            "blob": "e7a6bf60038ae40902f419fca145a006573f1587",
+            "content": "sha256:1d8cc4caad0b328ac6d93a4d95887feb3eaa9322bfbd30d515319ea256d87f02",
             "locator": {
               "kind": "symbol",
               "name": "IntentReviewEntry"
@@ -124,16 +124,16 @@
       ]
     },
     "6": {
-      "note": "The count's states on the real summary: two elements, one request, never a zero.\n\nAnchor: \"shows the real leaf's unexplained and unknown files beside +N −N, from the one summary read\"; \"renders %s as its own state\"",
+      "note": "Stored assertion bodies keep revision and attribution elements separate, use the current without-an-invariant wording, exercise partial/unknown/zero cases and assert one summary request; these are source assertions, not a new run.\n\nAnchor: inclusive source ranges",
       "targets": [
         {
           "anchor": {
-            "blob": "1212d288a2e6c5341f27f05db469d7533ea2dd26",
-            "content": "sha256:6d035ac8c4dcee1f1f9a3ae86ff2501d82639b1083e6558dd9c6547ea10cb6a1",
+            "blob": "2e00968b1dc3795394c0decc980f766b22dd901f",
+            "content": "sha256:910ddbdaad104bb67a26b6bf732d7ba29170d913987c5af8cbef7d7c8bb485db",
             "locator": {
-              "end": 136,
+              "end": 139,
               "kind": "line_range",
-              "start": 55
+              "start": 58
             },
             "path": "dashboard/src/panels/detail-panel/intentReviewEntry.attribution.test.tsx"
           },
@@ -142,11 +142,11 @@
       ]
     },
     "7": {
-      "note": "Where the bar mounts it.\n\nAnchor: `IntentReviewEntry`",
+      "note": "LeafEntries mounts the control; DocChangeSetBar derives its facts from leaf lifecycle facts plus the shared revalidation generation.",
       "targets": [
         {
           "anchor": {
-            "blob": "316629d0c8fb07af90b3b3526997da60f2a46898",
+            "blob": "cb170808c1e7ad3aa75e0bfd0860f2206b2291c8",
             "content": "sha256:14e80730ab07d7d43dc99018799af181b630e96b07f7bc9ba74c1111b4c462a1",
             "locator": {
               "kind": "symbol",
@@ -155,20 +155,32 @@
             "path": "dashboard/src/panels/detail-panel/changeSetBar.tsx"
           },
           "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "cb170808c1e7ad3aa75e0bfd0860f2206b2291c8",
+            "content": "sha256:c9916dfeff8632353c5ff9e5577530b17de00762552e772fd092288914935ec3",
+            "locator": {
+              "kind": "symbol",
+              "name": "DocChangeSetBar"
+            },
+            "path": "dashboard/src/panels/detail-panel/changeSetBar.tsx"
+          },
+          "kind": "code"
         }
       ]
     },
     "8": {
-      "note": "The cases that pin one control, the request economy and the brief states.\n\nAnchor: \"is one control with the comparison's changed-intent counts and nothing beside it\"; \"states missing knowledge briefly, never as +0 −0, with the owner's refusal in the disclosure\"",
+      "note": "Stored refusal/compact-entry cases retain one control, task-context open and no false revision counts while preserving the actual refusal explanation; these are not fresh execution.\n\nAnchor: inclusive source ranges",
       "targets": [
         {
           "anchor": {
-            "blob": "ccaecf3c76ce6bf357fe47964866e2133c36eb42",
-            "content": "sha256:46bfd4743067f13b1f3d46b57c9e21f8cd1db58079f97f14d3cd4ba61d97b76e",
+            "blob": "56e48c445177308f7420c6a934e402bebf797664",
+            "content": "sha256:f3916ee06943d068c3cf6af8a7aac0ec2c2f55558cacae4be1999834345fecad",
             "locator": {
-              "end": 150,
+              "end": 167,
               "kind": "line_range",
-              "start": 127
+              "start": 144
             },
             "path": "dashboard/src/panels/detail-panel/reviewEntryRefusal.test.tsx"
           },
@@ -176,16 +188,56 @@
         },
         {
           "anchor": {
-            "blob": "ccaecf3c76ce6bf357fe47964866e2133c36eb42",
-            "content": "sha256:abffe14419e4e7726a20364d99a98ec86189881050ad4084b44e7e7861a0ed2f",
+            "blob": "56e48c445177308f7420c6a934e402bebf797664",
+            "content": "sha256:46c1500f8ce73eeb3e26ac248436654e92a818065f2990d71d309d035151b025",
             "locator": {
-              "end": 198,
+              "end": 215,
               "kind": "line_range",
-              "start": 171
+              "start": 188
             },
             "path": "dashboard/src/panels/detail-panel/reviewEntryRefusal.test.tsx"
           },
           "kind": "test"
+        }
+      ]
+    },
+    "9": {
+      "note": "OpenWorkCount suppresses loading/undefined values, renders a separate open/all-answered span otherwise and follows supplied optional unexplainedOpen even on a refused intent answer; it is not a MEMORY acceptance grade.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e7a6bf60038ae40902f419fca145a006573f1587",
+            "content": "sha256:ddc7236c8af1b6ef56df4db5a4b399ad6deeb329f3054bef5d6135177e7e880f",
+            "locator": {
+              "kind": "symbol",
+              "name": "OpenWorkCount"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e7a6bf60038ae40902f419fca145a006573f1587",
+            "content": "sha256:1d8cc4caad0b328ac6d93a4d95887feb3eaa9322bfbd30d515319ea256d87f02",
+            "locator": {
+              "kind": "symbol",
+              "name": "IntentReviewEntry"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "aa37dc151156c900a476667b0cbba310a971e51a",
+            "content": "sha256:df8044be5c2eb9474ae910ca0b23e95d22be15de5d45d1553d05cd791a91ea71",
+            "locator": {
+              "end": 98,
+              "kind": "line_range",
+              "start": 67
+            },
+            "path": "dashboard/src/data/reviewIntentSummary.ts"
+          },
+          "kind": "code"
         }
       ]
     }

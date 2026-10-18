@@ -6,7 +6,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "cb7649c76f226f56141cd36720b382cea60352c7",
+            "blob": "359083eb794b3a5462b9e53d4dde2b27ec8ec7a9",
             "content": "sha256:e345bcf52910f1d43fcff54700f85ea691a6b896120f54a78d4be96269c1b309",
             "locator": {
               "kind": "symbol",
@@ -299,16 +299,27 @@
       ]
     },
     "18": {
-      "note": "Subject counts and status must describe the actual entries.",
+      "note": "Currentness partitions entries while unresolvedCount independently equals their unresolved dispositions; status follows the actual recorded population.",
       "targets": [
         {
           "anchor": {
-            "blob": "f0a20f3f2923693dfd1ba1d7a1edaba1cf49e5f8",
-            "content": "sha256:fbfa2df47bcf6a46ff495a6abe11dd1827b98ab79e82215da0dc35538d4d574f",
+            "blob": "4fd1f27d3283052427f6944c13312ee2c3991752",
+            "content": "sha256:c973a0216267b57a66a30a0157ca64beb3b3c6b2e5c95f05740faf92c4332215",
             "locator": {
-              "end": 560,
-              "kind": "line_range",
-              "start": 460
+              "kind": "symbol",
+              "name": "SubjectAssessmentState"
+            },
+            "path": "mcp/src/agents_remember/models/lifecycles/review_assessment.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4fd1f27d3283052427f6944c13312ee2c3991752",
+            "content": "sha256:0b44d7805fec6afeab23ec939d2a7cdba560f0b0f2b65ea8da7d97b637fcc1ec",
+            "locator": {
+              "kind": "symbol",
+              "name": "assessment_state_for"
             },
             "path": "mcp/src/agents_remember/models/lifecycles/review_assessment.py"
           },
@@ -348,15 +359,14 @@
       ]
     },
     "2": {
-      "note": "Finalization exposes edge proof and completion-seat result sets.",
+      "note": "Finalization declares terminal facts, cleanup/archive and activation facts; it declares neither edge proof nor completion-seat result sets.\n\nAnchor: `LifecycleFinalizeTaskResponse`",
       "targets": [
         {
           "anchor": {
-            "blob": "4a8bad95a8ce2bb91f9b627103d767d6537085b9",
-            "content": "sha256:cb67fa9fd82141384f080fb614f4bc6bf53123093893769620d484c1b0d26387",
+            "blob": "0acadadf7d340bd8e01e8ca3cd1491d045ccb136",
+            "content": "sha256:dd0efba7750af6e0ddd82d4a931c5efe4d5792a32f350a66d1f892e7e0ee1608",
             "locator": {
-              "kind": "symbol",
-              "name": "LifecycleFinalizeTaskResponse"
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/models/lifecycles/finalize.py"
           },
@@ -395,12 +405,12 @@
         },
         {
           "anchor": {
-            "blob": "747ceef9f19039b540d51ee10fd567e30e334606",
+            "blob": "d641c183171962d4b4496d7d8daaa1f74b440e10",
             "content": "sha256:aa29c81b988277fc56e839d40c65d2ea0a116c55ca31a2b05be96ce3f90d0e2d",
             "locator": {
-              "end": 221,
+              "end": 223,
               "kind": "line_range",
-              "start": 211
+              "start": 213
             },
             "path": "mcp/src/agents_remember/models/lifecycles/evidence_dependencies.py"
           },
@@ -439,14 +449,31 @@
         },
         {
           "anchor": {
-            "blob": "60dfba4348720d4ded58fa04f6b2ca7f9f747a92",
+            "blob": "0cc2bb91dea1e4ae50eef66e4ef5d71d83a9310c",
             "content": "sha256:8b7d02094a03fcf486be16f9fa460ebfd9f51ac3c045df0cd7eee3b4345eb28a",
             "locator": {
-              "end": 236,
+              "end": 241,
               "kind": "line_range",
-              "start": 201
+              "start": 206
             },
             "path": "mcp/src/agents_remember/worktrees/integration/closeout/preparation/memory_output.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "22": {
+      "note": "ComparisonAssessmentAvailability is a retained manifest descriptor, not a current reviewer channel: answered counts and recovery requirements are structurally checked, not independently measured or semantically endorsed.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "68801f87ac1b7cdcb236bc14286d61bcf0a7be1b",
+            "content": "sha256:7a0602a1c762ca1c5df340982eea5bf38bcb3e7415e5ff3feec234f30c87780f",
+            "locator": {
+              "kind": "symbol",
+              "name": "ComparisonAssessmentAvailability"
+            },
+            "path": "mcp/src/agents_remember/models/lifecycles/comparison_records.py"
           },
           "kind": "code"
         }

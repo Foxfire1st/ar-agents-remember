@@ -3,14 +3,14 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "The module's own statement: one classification, no hunk arithmetic of its own, and where it differs from the gate.\n\nAnchor: \"An entry supplies a range on a side only at its own recorded blob.\"; \"Only changed lines are intersected.\"",
+      "note": "The lane describes reviewer attribution from the shared hunk/non-text definitions, retaining stricter recorded-blob range admission than the gate.\n\nAnchor: exact source span",
       "targets": [
         {
           "anchor": {
-            "blob": "91508f84f484281ed56e0b92bfa267724f647e35",
-            "content": "sha256:1d08ad48bb183092ae91e6f56a11de9f703293d5f2631dca1f90228fdd050053",
+            "blob": "c1be4a93f9f439494392335d622c492485ad335a",
+            "content": "sha256:35e744003383b125cef2802af2d073840be05788bcc90c8a18f08c5e6a20c9aa",
             "locator": {
-              "end": 33,
+              "end": 36,
               "kind": "line_range",
               "start": 1
             }
@@ -20,12 +20,12 @@
       ]
     },
     "10": {
-      "note": "The trees opened once; a side with no index or an unopenable one named.",
+      "note": "The lane opens code trees only if none were supplied, lists their files and scopes both index handles through ExitStack; unavailable sides are explicit.",
       "targets": [
         {
           "anchor": {
-            "blob": "91508f84f484281ed56e0b92bfa267724f647e35",
-            "content": "sha256:f53c8461e253c6b1ef28be076ab6d5b9c810b35072086f7f842c6f5daa84fd71",
+            "blob": "c1be4a93f9f439494392335d622c492485ad335a",
+            "content": "sha256:133fe429db70c1ee3d4262c063525198127296355d926a1befec21c69a6d6d20",
             "locator": {
               "kind": "symbol",
               "name": "open_tree_lane"
@@ -35,7 +35,7 @@
         },
         {
           "anchor": {
-            "blob": "91508f84f484281ed56e0b92bfa267724f647e35",
+            "blob": "c1be4a93f9f439494392335d622c492485ad335a",
             "content": "sha256:f2df5bb8676ce123c0121c3b6f96825c94441787444ed9ede6d9a6076422b432",
             "locator": {
               "kind": "symbol",
@@ -47,11 +47,11 @@
       ]
     },
     "11": {
-      "note": "A range resolved at its own recorded blob, through the placements the cards read shares.\n\nAnchor: \"PLACEMENTS.get(key)\"",
+      "note": "A range resolved at its own recorded blob, through the placements the cards read shares.",
       "targets": [
         {
           "anchor": {
-            "blob": "91508f84f484281ed56e0b92bfa267724f647e35",
+            "blob": "c1be4a93f9f439494392335d622c492485ad335a",
             "content": "sha256:ffe46a5955b7afb271627c2feb4251364f679188f78099565ffdb606571110d9",
             "locator": {
               "kind": "symbol",
@@ -67,7 +67,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "91508f84f484281ed56e0b92bfa267724f647e35",
+            "blob": "c1be4a93f9f439494392335d622c492485ad335a",
             "content": "sha256:416d108dc4f75a83b38ead38fe4cb5fc87503079df98478cc8dd2d83ef90c472",
             "locator": {
               "kind": "symbol",
@@ -83,7 +83,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "91508f84f484281ed56e0b92bfa267724f647e35",
+            "blob": "c1be4a93f9f439494392335d622c492485ad335a",
             "content": "sha256:a6afd6662ae71a3372afd95457ca78a2c8a8a9c3550d26ef8cda5aad9bb2d648",
             "locator": {
               "kind": "symbol",
@@ -94,7 +94,7 @@
         },
         {
           "anchor": {
-            "blob": "91508f84f484281ed56e0b92bfa267724f647e35",
+            "blob": "c1be4a93f9f439494392335d622c492485ad335a",
             "content": "sha256:a80264633e463ea72a0026f5c5a657292245fb0e5d2d0bcbae794aa89ee1b160",
             "locator": {
               "kind": "symbol",
@@ -110,7 +110,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "91508f84f484281ed56e0b92bfa267724f647e35",
+            "blob": "c1be4a93f9f439494392335d622c492485ad335a",
             "content": "sha256:efe79b414dc48cdf280d1dab4d26c01ced75221c0769c8683f2a5d74538b9062",
             "locator": {
               "kind": "symbol",
@@ -121,7 +121,7 @@
         },
         {
           "anchor": {
-            "blob": "91508f84f484281ed56e0b92bfa267724f647e35",
+            "blob": "c1be4a93f9f439494392335d622c492485ad335a",
             "content": "sha256:523ae266b6dac8da9aa7fc825d4dcd02b4e180b63cbe15ece3c318930e37c8a2",
             "locator": {
               "kind": "symbol",
@@ -132,7 +132,7 @@
         },
         {
           "anchor": {
-            "blob": "91508f84f484281ed56e0b92bfa267724f647e35",
+            "blob": "c1be4a93f9f439494392335d622c492485ad335a",
             "content": "sha256:2ad076452fd3cf9f0adf8339b430764b2582496c4d919e47f9b828ad61f43214",
             "locator": {
               "kind": "symbol",
@@ -144,11 +144,11 @@
       ]
     },
     "15": {
-      "note": "Only sides with changed lines are intersected (the exported `changes_lines`, MIK-L33); linked, unknown or unexplained.\n\nAnchor: \"def changes_lines(hunk: Hunk, side: LaneSideName) -> bool:\"",
+      "note": "Direct hunk classification uses changed-line sides and the shared hit tests, then the common linked/unknown/unexplained result.",
       "targets": [
         {
           "anchor": {
-            "blob": "91508f84f484281ed56e0b92bfa267724f647e35",
+            "blob": "c1be4a93f9f439494392335d622c492485ad335a",
             "content": "sha256:260dca97689fa4262ff24f733962d1d478b6066349a45460fa79fa16b2ce1ef3",
             "locator": {
               "kind": "symbol",
@@ -159,7 +159,7 @@
         },
         {
           "anchor": {
-            "blob": "91508f84f484281ed56e0b92bfa267724f647e35",
+            "blob": "c1be4a93f9f439494392335d622c492485ad335a",
             "content": "sha256:48fc0ba5390e33779dbffe0064a41c50c8c7146c9967b5a00ddca2899e6e398d",
             "locator": {
               "kind": "symbol",
@@ -170,8 +170,8 @@
         },
         {
           "anchor": {
-            "blob": "91508f84f484281ed56e0b92bfa267724f647e35",
-            "content": "sha256:d2746fda32c57d5439bbfc6f4627158d4df1fb445481b2ef646eb3322b8b60fb",
+            "blob": "c1be4a93f9f439494392335d622c492485ad335a",
+            "content": "sha256:a7cc67b63780957264ba1d9c0ad37d279bfb88cf833acd9886ba3adf080fe576",
             "locator": {
               "kind": "symbol",
               "name": "_classified"
@@ -181,12 +181,22 @@
         },
         {
           "anchor": {
-            "blob": "91508f84f484281ed56e0b92bfa267724f647e35",
+            "blob": "c1be4a93f9f439494392335d622c492485ad335a",
             "content": "sha256:fb0e979d776b181b1c93c2c43a069f1e403e459c5034bfb7b6668e4578cf9fee",
             "locator": {
-              "end": 476,
-              "kind": "line_range",
-              "start": 473
+              "kind": "symbol",
+              "name": "changes_lines"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c1be4a93f9f439494392335d622c492485ad335a",
+            "content": "sha256:73299354ff179a0df7fbc22f8d1a40950503bfc90ee8a89e1a8e56e032c9ac51",
+            "locator": {
+              "kind": "symbol",
+              "name": "_hunk_result"
             }
           },
           "kind": "code"
@@ -198,7 +208,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "91508f84f484281ed56e0b92bfa267724f647e35",
+            "blob": "c1be4a93f9f439494392335d622c492485ad335a",
             "content": "sha256:61107841a282960d49da6900b453ef9b15b44ae0f067c9e7cd88e1f7ee6a828a",
             "locator": {
               "kind": "symbol",
@@ -210,11 +220,11 @@
       ]
     },
     "17": {
-      "note": "The gate's non-text linkage, unknown unless both sides were read whole (review F3).\n\nAnchor: \"if not (before.side.complete and after.side.complete):\"",
+      "note": "The gate's non-text linkage, unknown unless both sides were read whole (review F3).",
       "targets": [
         {
           "anchor": {
-            "blob": "91508f84f484281ed56e0b92bfa267724f647e35",
+            "blob": "c1be4a93f9f439494392335d622c492485ad335a",
             "content": "sha256:81960dd4bb06c32004d823d4e158521af49ea6edd22a6037de9a6362ebd407fa",
             "locator": {
               "kind": "symbol",
@@ -230,7 +240,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "172b440738a1d8071271d873fec1d5482306a954",
+            "blob": "f37070c96f3a4fed9384eaf18b66037e1403baaa",
             "content": "sha256:11585a1ae94100e7cdae9228394a6ce0d0d41fa109edf13642d3c29ad5a055a1",
             "locator": {
               "kind": "symbol",
@@ -243,17 +253,17 @@
       ]
     },
     "19": {
-      "note": "The gate's non-text predicate, now shared (definition 8).",
+      "note": "The shared non-text file-locator predicate is defined in linkage, not in the compute re-export.",
       "targets": [
         {
           "anchor": {
-            "blob": "b59daaf83db5958a313a61186e00d81273c8c347",
+            "blob": "6d7207b62870c112ca4f25941c37846c0152a38a",
             "content": "sha256:37a6335fc10fcc09a120845217ca9d018c84ee4a1988d1d6cb675849b3b226c6",
             "locator": {
               "kind": "symbol",
               "name": "non_text_linked"
             },
-            "path": "mcp/src/agents_remember/application/knowledge_worklist/compute.py"
+            "path": "mcp/src/agents_remember/application/knowledge_worklist/linkage.py"
           },
           "kind": "code"
         }
@@ -264,7 +274,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "91508f84f484281ed56e0b92bfa267724f647e35",
+            "blob": "c1be4a93f9f439494392335d622c492485ad335a",
             "content": "sha256:019a8ca3e7f6baecaa79ddfdd8e215d1ee75cc161fff33badb24c115c6a1603b",
             "locator": {
               "kind": "symbol",
@@ -275,7 +285,7 @@
         },
         {
           "anchor": {
-            "blob": "91508f84f484281ed56e0b92bfa267724f647e35",
+            "blob": "c1be4a93f9f439494392335d622c492485ad335a",
             "content": "sha256:be490b3021702767234f6729e458602d30477586fc5c04ec5c3c6096e0ef05ed",
             "locator": {
               "kind": "symbol",
@@ -291,7 +301,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4b7294a6ea2d3e5b452d17b76d428c7df0241116",
+            "blob": "0f038d49f8f1531e4e966dc271dd23033d095a94",
             "content": "sha256:de55749b523c54125a20a8012a3d21e4213513a6362866e19cfbbd4abc6fca71",
             "locator": {
               "kind": "symbol",
@@ -303,7 +313,7 @@
         },
         {
           "anchor": {
-            "blob": "4b7294a6ea2d3e5b452d17b76d428c7df0241116",
+            "blob": "0f038d49f8f1531e4e966dc271dd23033d095a94",
             "content": "sha256:2320cef1a9917fc0103b0a719669b24a6920f9f4046d17f1ecac1818b8964f54",
             "locator": {
               "kind": "symbol",
@@ -315,7 +325,7 @@
         },
         {
           "anchor": {
-            "blob": "4b7294a6ea2d3e5b452d17b76d428c7df0241116",
+            "blob": "0f038d49f8f1531e4e966dc271dd23033d095a94",
             "content": "sha256:d2c330c6473570b740b0f45e319fe82465a52934e2b5a07a6d32068b14a8dc14",
             "locator": {
               "kind": "symbol",
@@ -332,7 +342,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "378aa0f26f857bdb1593d1772ee9afd1ce8ccb12",
+            "blob": "07c3794ccbb87694674d2cbeddbf9e7f93466f8f",
             "content": "sha256:620d4c189edbd120db7f2bb91c474d027aabc04c57aae5fa80ac6618fc764ebe",
             "locator": {
               "kind": "symbol",
@@ -344,7 +354,7 @@
         },
         {
           "anchor": {
-            "blob": "378aa0f26f857bdb1593d1772ee9afd1ce8ccb12",
+            "blob": "07c3794ccbb87694674d2cbeddbf9e7f93466f8f",
             "content": "sha256:dd64e90fd7071044f48ec01d688a0e6b58510d49b2c4b047d839977e26220c14",
             "locator": {
               "kind": "symbol",
@@ -361,7 +371,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "378aa0f26f857bdb1593d1772ee9afd1ce8ccb12",
+            "blob": "07c3794ccbb87694674d2cbeddbf9e7f93466f8f",
             "content": "sha256:aa503b171d9d4befae3099468be654723d1f61b5440c2052d420d2b9aecfb594",
             "locator": {
               "kind": "symbol",
@@ -373,8 +383,8 @@
         },
         {
           "anchor": {
-            "blob": "378aa0f26f857bdb1593d1772ee9afd1ce8ccb12",
-            "content": "sha256:6aac683aae1ffc076fd275fd883c8bfb3ea60340194fad762d9f730e0b2ee620",
+            "blob": "07c3794ccbb87694674d2cbeddbf9e7f93466f8f",
+            "content": "sha256:f5559547a3250a476c35ded6e7d9c56e4c3eaebd8e114b2bc0de6cfd9194d15b",
             "locator": {
               "kind": "symbol",
               "name": "test_a_partial_index_makes_only_its_unparsed_files_unknown"
@@ -385,7 +395,7 @@
         },
         {
           "anchor": {
-            "blob": "378aa0f26f857bdb1593d1772ee9afd1ce8ccb12",
+            "blob": "07c3794ccbb87694674d2cbeddbf9e7f93466f8f",
             "content": "sha256:931e0b9237960a1240cbb2108aa64677f8512b886405414ff5e938bd8ac87198",
             "locator": {
               "kind": "symbol",
@@ -398,28 +408,37 @@
       ]
     },
     "23": {
-      "note": "`changes_lines` is exported, the lane's own helper renamed with its one caller, and the change kinds reuse it (MIK-L33, review R1 note).\n\nAnchor: \"\\\"changes_lines\\\",\"; \"if not (\"; \"_non_text_content(result) or any(changes_lines(one.hunk, name) for one in result.hunks)\"",
+      "note": "changes_lines is exported and the change-kind unknown-range check reuses that per-side rule.",
       "targets": [
         {
           "anchor": {
-            "blob": "91508f84f484281ed56e0b92bfa267724f647e35",
-            "content": "sha256:bb5ccb4f43ef6292a4249946b1a6f72779e5f3a3e5e5c72847f97e28bd1a0262",
+            "blob": "c1be4a93f9f439494392335d622c492485ad335a",
+            "content": "sha256:5bba01008d0bfddfbb91d2f7c8b22ec0e13b987c137563c67dd36dadc60cbd5b",
             "locator": {
-              "end": 95,
-              "kind": "line_range",
-              "start": 95
+              "kind": "symbol",
+              "name": "__all__"
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "94a748941e53de00baa9e62505f4f1ee7c66d3d3",
-            "content": "sha256:cfe656fa1aeeca680d7c565aa8ad3b01d491cb4817e6ec36fcaac98cbdab22ef",
+            "blob": "c1be4a93f9f439494392335d622c492485ad335a",
+            "content": "sha256:fb0e979d776b181b1c93c2c43a069f1e403e459c5034bfb7b6668e4578cf9fee",
             "locator": {
-              "end": 617,
-              "kind": "line_range",
-              "start": 615
+              "kind": "symbol",
+              "name": "changes_lines"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "81d2d1ce629a30d3d1ab1b7f31b7a1fa0506b924",
+            "content": "sha256:c09738f5090d85fd56fc726ccd1987826177f39a4035c71f7e4013068afa8f95",
+            "locator": {
+              "kind": "symbol",
+              "name": "_unresolved"
             },
             "path": "mcp/src/agents_remember/application/review_change_kinds.py"
           },
@@ -427,12 +446,80 @@
         }
       ]
     },
-    "3": {
-      "note": "A side's knowledge of one path: an unread side, or the path's own unparsed sidecar.\n\nAnchor: \"problem = self.problems.get(sidecar)\"",
+    "24": {
+      "note": "Shared worklist placements pass through the reviewer exact-recorded-blob checks before use; missing supplied placements remain unresolved rather than triggering a fallback lookup.\n\nAnchor: `TreeLane._place`; `TreeLane._reading`; `TreeLane.from_worklist`",
       "targets": [
         {
           "anchor": {
-            "blob": "91508f84f484281ed56e0b92bfa267724f647e35",
+            "blob": "c1be4a93f9f439494392335d622c492485ad335a",
+            "content": "sha256:cd4279dd269003b9f546095bebc9a465823e292700e1dd5ef4568f31cdcb1b88",
+            "locator": {
+              "end": 328,
+              "kind": "line_range",
+              "start": 296
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c1be4a93f9f439494392335d622c492485ad335a",
+            "content": "sha256:23520fa516c2a1d8e31a7c39f886fcbd10554a1d67371af930fbfa50da55e114",
+            "locator": {
+              "end": 294,
+              "kind": "line_range",
+              "start": 286
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c1be4a93f9f439494392335d622c492485ad335a",
+            "content": "sha256:dead213a528ea82c87c89d96cf88a9e44bcc90b6519bedc0e15ff9cd38d63796",
+            "locator": {
+              "end": 354,
+              "kind": "line_range",
+              "start": 342
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "25": {
+      "note": "Projected gate intersections are filtered by entries the reviewer can actually supply, while changed-side unknown reasons retain the common result rule.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c1be4a93f9f439494392335d622c492485ad335a",
+            "content": "sha256:49de06c0af944ebeccd998fbeacc970d56943b903b5451f431d442554d170c8a",
+            "locator": {
+              "kind": "symbol",
+              "name": "_projected_hunk"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c1be4a93f9f439494392335d622c492485ad335a",
+            "content": "sha256:73299354ff179a0df7fbc22f8d1a40950503bfc90ee8a89e1a8e56e032c9ac51",
+            "locator": {
+              "kind": "symbol",
+              "name": "_hunk_result"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "A side's knowledge of one path: an unread side, or the path's own unparsed sidecar.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c1be4a93f9f439494392335d622c492485ad335a",
             "content": "sha256:f3d7c4b089e4d8df5faeed1c9724a79d7f5af2638485f2b1619527d3167a6bbe",
             "locator": {
               "kind": "symbol",
@@ -444,11 +531,11 @@
       ]
     },
     "4": {
-      "note": "A side read whole; realization and proof entries at a path; family records all read.\n\nAnchor: \"return self.index is not None and not self.problems\"; \"return (*found.realizations, *found.proofs)\"",
+      "note": "Side completeness, realization/proof entries and family-record parse completeness are separate indexed observations.\n\nAnchor: `LaneSide.complete`; `LaneSide.entries_at`",
       "targets": [
         {
           "anchor": {
-            "blob": "91508f84f484281ed56e0b92bfa267724f647e35",
+            "blob": "c1be4a93f9f439494392335d622c492485ad335a",
             "content": "sha256:4f8733d94c2ad4ce85da1cc15ed97a61637c43c6ad02b6d12e1ab82ddcd85225",
             "locator": {
               "kind": "symbol",
@@ -459,10 +546,10 @@
         },
         {
           "anchor": {
-            "blob": "91508f84f484281ed56e0b92bfa267724f647e35",
-            "content": "sha256:d9b7cfa345735df32e8355055e690a73d3720802f9238f2974979e7abde57804",
+            "blob": "c1be4a93f9f439494392335d622c492485ad335a",
+            "content": "sha256:5396dcb55264074395a50be8bb499f50d5102094901c195f1e89dc5f21f57a01",
             "locator": {
-              "end": 148,
+              "end": 152,
               "kind": "line_range",
               "start": 148
             }
@@ -471,10 +558,10 @@
         },
         {
           "anchor": {
-            "blob": "91508f84f484281ed56e0b92bfa267724f647e35",
-            "content": "sha256:d8c84439632396946987e33915d7a0c0bdede6be7a0ec8c3920dc3e15357981d",
+            "blob": "c1be4a93f9f439494392335d622c492485ad335a",
+            "content": "sha256:6bf27a68e384109cf1666e7964e3784ace4b1e2eb46dbd10bbc0dd343c014159",
             "locator": {
-              "end": 154,
+              "end": 158,
               "kind": "line_range",
               "start": 154
             }
@@ -488,7 +575,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "91508f84f484281ed56e0b92bfa267724f647e35",
+            "blob": "c1be4a93f9f439494392335d622c492485ad335a",
             "content": "sha256:e06b60e428c24458a65468522ef70f878d1a255657d7dd125844c385903a01b4",
             "locator": {
               "kind": "symbol",
@@ -499,7 +586,7 @@
         },
         {
           "anchor": {
-            "blob": "91508f84f484281ed56e0b92bfa267724f647e35",
+            "blob": "c1be4a93f9f439494392335d622c492485ad335a",
             "content": "sha256:2dccb2499f2921534e90df5c95025690df6f63a9206250cc0f8c138aaa3c7bbd",
             "locator": {
               "kind": "symbol",
@@ -510,7 +597,7 @@
         },
         {
           "anchor": {
-            "blob": "91508f84f484281ed56e0b92bfa267724f647e35",
+            "blob": "c1be4a93f9f439494392335d622c492485ad335a",
             "content": "sha256:8f524c2424b75872857f5d88b2b76f76f486fc43aaf856e83d24b81fc36a7f1d",
             "locator": {
               "kind": "symbol",
@@ -521,7 +608,7 @@
         },
         {
           "anchor": {
-            "blob": "91508f84f484281ed56e0b92bfa267724f647e35",
+            "blob": "c1be4a93f9f439494392335d622c492485ad335a",
             "content": "sha256:e6329f36900467d86afa80520e51dfbd7f9dc42c45a180fd9bf4644abaebbb19",
             "locator": {
               "kind": "symbol",
@@ -533,16 +620,16 @@
       ]
     },
     "6": {
-      "note": "The comparison's changed paths, from the landed change inventory.\n\nAnchor: \"def observe(self) -> TreePaths:\"",
+      "note": "The lane observes the addressed code pair inventory, retaining its own denominator.\n\nAnchor: `TreeLane.observe`",
       "targets": [
         {
           "anchor": {
-            "blob": "91508f84f484281ed56e0b92bfa267724f647e35",
-            "content": "sha256:4efb7a26bbb0447c1d3a2a586556f9b0066d833dbccd0e22aa690b5ca1d87f0e",
+            "blob": "c1be4a93f9f439494392335d622c492485ad335a",
+            "content": "sha256:f5204f68197bccaaf14f60b343ae6063fba89860bbdcb9a7640b3bed7f6b74b3",
             "locator": {
-              "end": 264,
+              "end": 271,
               "kind": "line_range",
-              "start": 257
+              "start": 264
             }
           },
           "kind": "code"
@@ -550,12 +637,12 @@
       ]
     },
     "7": {
-      "note": "The file bucket, read without any hunk.\n\nAnchor: \"def bucket(self, path: str)\"",
+      "note": "Path bucketing obtains side readings without reading hunks.\n\nAnchor: exact source span",
       "targets": [
         {
           "anchor": {
-            "blob": "91508f84f484281ed56e0b92bfa267724f647e35",
-            "content": "sha256:6ce7625629e51ece0c00a91a08be980b463fc6b181fd870ec06a37d6c5b31daa",
+            "blob": "c1be4a93f9f439494392335d622c492485ad335a",
+            "content": "sha256:23520fa516c2a1d8e31a7c39f886fcbd10554a1d67371af930fbfa50da55e114",
             "locator": {
               "kind": "symbol",
               "name": "_reading"
@@ -565,12 +652,12 @@
         },
         {
           "anchor": {
-            "blob": "91508f84f484281ed56e0b92bfa267724f647e35",
-            "content": "sha256:e87a816ff6a43fc8d8279193042e8c07217072c97a4c8650a26a445fe96f4029",
+            "blob": "c1be4a93f9f439494392335d622c492485ad335a",
+            "content": "sha256:c86c56eb8c627925ad8b61cb9771eedd98dd03edba0eebeda82052fd39f0b02f",
             "locator": {
-              "end": 277,
+              "end": 284,
               "kind": "line_range",
-              "start": 277
+              "start": 281
             }
           },
           "kind": "code"
@@ -578,12 +665,12 @@
       ]
     },
     "8": {
-      "note": "The exact-blob rule and the other reasons an entry supplies no range.\n\nAnchor: \"if recorded != blob:\"",
+      "note": "The exact-blob rule and the other reasons an entry supplies no range.",
       "targets": [
         {
           "anchor": {
-            "blob": "91508f84f484281ed56e0b92bfa267724f647e35",
-            "content": "sha256:e9aa2ac44c4ed1514a633c737f1da5379fabe6a79a00e2d4154ab984dcdd1b1e",
+            "blob": "c1be4a93f9f439494392335d622c492485ad335a",
+            "content": "sha256:cd4279dd269003b9f546095bebc9a465823e292700e1dd5ef4568f31cdcb1b88",
             "locator": {
               "kind": "symbol",
               "name": "_place"
@@ -594,16 +681,39 @@
       ]
     },
     "9": {
-      "note": "One path whole: bucket, the gate's hunks, and the non-text fact.\n\nAnchor: \"def classify(self, change: TreeChange) -> FileResult:\"; \"hunks = change_hunks(self.code, change, before.blob, after.blob)\"",
+      "note": "Direct classification and shared-worklist projection assemble the same file result and separate non-text fact.\n\nAnchor: `TreeLane.classify`; `TreeLane.from_worklist`",
       "targets": [
         {
           "anchor": {
-            "blob": "91508f84f484281ed56e0b92bfa267724f647e35",
-            "content": "sha256:bcaa0092be97853bcdfb197e4c72d1c6d35de24d00dd27601f906c8df56c2f44",
+            "blob": "c1be4a93f9f439494392335d622c492485ad335a",
+            "content": "sha256:7dc1968d4d0a891746403d67e867aebc36aa3877450061f5ca4bf7e94fd86b3e",
+            "locator": {
+              "kind": "symbol",
+              "name": "_file_result"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c1be4a93f9f439494392335d622c492485ad335a",
+            "content": "sha256:e5b2641054050a52edf91ae8a65f15ae0a2463b68ed640f12eac846425feb97a",
             "locator": {
               "end": 340,
               "kind": "line_range",
-              "start": 317
+              "start": 332
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c1be4a93f9f439494392335d622c492485ad335a",
+            "content": "sha256:dead213a528ea82c87c89d96cf88a9e44bcc90b6519bedc0e15ff9cd38d63796",
+            "locator": {
+              "end": 354,
+              "kind": "line_range",
+              "start": 342
             }
           },
           "kind": "code"

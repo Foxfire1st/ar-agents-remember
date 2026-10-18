@@ -11,7 +11,7 @@ Nothing here classifies: bucket/hunk facts are server-owned. R86 removed destina
 lane windows; change-set destinations are comparison filters instead. Surviving explorer-named label
 helpers do not imply that a source explorer is still rendered.
 
-State the unexplained-changes lane's shared presentation facts (MIK-R32) apart from its readers: the explorer labels, the technical details' attribution facts and remaining counts, and the hunk line helpers the intent markers reuse. Nothing here classifies: every bucket, hunk and class comes from the server's per-file response.
+State the unexplained-changes lane's shared presentation facts (MIK-R32) apart from its readers: the explorer labels, the open main-page attribution facts and remaining counts, and the hunk line helpers the intent markers reuse. Nothing here classifies: every bucket, hunk and class comes from the server's per-file response.
 ## Code Commentary
 
 ### Logic
@@ -23,11 +23,12 @@ State the unexplained-changes lane's shared presentation facts (MIK-R32) apart f
   landed words (`attributed` → `Mapped`, `unexplained` → `Unmapped`, `attribution_unknown` → `Attribution unknown`).
   `EXPLORER_PENDING` retains the pending vocabulary. The former `explorerAttribution` function is gone;
   the constants do not classify or label a currently rendered explorer.
-- **The technical details' facts (review R1 F1, ruling 13:07:38).** `laneAttributionFacts(read)` is `pending`,
+- **The open main-page facts (review R1 F1, ruling 13:07:38).** `laneAttributionFacts(read)` is `pending`,
   `unknown` (an unread or unavailable lane), or `read` with `partial`, the unexplained paths and the unknown paths.
-  `laneCountText(name, facts)` states the landed remaining counts `unattributed_changed_paths` and
-  `unknown_attribution_changed_paths` from the lane (the count of each list, marked `(partial)`), or pending or
-  unknown; other counts return `undefined` and keep the landed text.
+  `laneCountText(name, facts)` labels `unattributed_changed_paths` as `changed files without an invariant`
+  and `unknown_attribution_changed_paths` as `changed files of unknown attribution`. Read facts use each
+  destination-file list's length with an optional ` (partial)` suffix. Pending facts use `Attribution pending`;
+  unknown facts use `the change set could not be measured`. Other count names return `undefined`.
 
 ### Conventions
 
@@ -45,7 +46,7 @@ State the unexplained-changes lane's shared presentation facts (MIK-R32) apart f
 No remaining focused-window implementation is asserted by this card; R86 replaced that reading surface.
 
 - `EXPLORER_LABELS`/`EXPLORER_PENDING` retain bucket/pending vocabulary for surviving count text, not a claim that a lane and explorer are still rendered.
-- `laneAttributionFacts` turns a lane read into `pending`, `unknown` (unread or unavailable) or the read paths of each bucket with the lane's partial flag; `laneCountText` states the held lane's remaining counts from those facts, and answers undefined for counts the lane does not own, keeping the landed text.
+- `laneAttributionFacts` retains pending/unknown/read states and derives paths from the two destination file lists with the lane's partial flag. `laneCountText` labels their lengths as changed files without an invariant or changed files of unknown attribution, uses the explicit pending/unmeasured wording above, and returns undefined for names it does not own.
 - Earlier focus-window and destination-grouping helpers are gone with the lane's own file views: R86 reads those destinations as filters of the change-set viewer instead.
 ## Evidence
 
@@ -58,21 +59,19 @@ No configured live documentation source was available for this pass.
 
 ### Repo-Internal References
 
-- Nothing here classifies; marks sit on the owner's hunks. [1]
-
-- spanLabel and sideLines retain server-side hunk naming and pane line measurement; the focused-window API is retired. [6]
-- Bucket and pending constants retain compatible vocabulary without a rendered explorer or explorerAttribution function. [7]
-- The technical details' facts and counts from the lane (review F1). [8]
-
-- The intent markers' use of the window helpers (MIK-L34). [10]
-- The details' counts and lists from the lane. [11]
-
 ### Cross-Repo References
 
 No cross-repo boundary is crossed by this file.
-- Explorer labels in the explorer's landed words [13]
-- Pending label while the lane is read [14]
-- Technical-details attribution facts from the lane [15]
-- Remaining counts as the lane states them [16]
-- Hunk side-line naming reused by markers [17]
-- Side-text splitting reused by marker panes [18]
+
+- These presentation helpers do not classify; supplied server hunks own the marks' positions. [1]
+- spanLabel and sideLines retain range/gap naming and side-text line splitting; no focused-window API is restored. [6]
+- Explorer-named constants preserve vocabulary only, not a current explorer implementation. [7]
+- Held lane reads preserve pending/unknown/read states; destination file lists, partialness and owned count formatting remain distinct responsibilities. [8]
+- IntentMarkers imports and actually calls spanLabel for hunk names/attributes and sideLines for full-side/excerpt extent measurement. [10]
+- The current ReviewMainFacts—not the closed technical details—uses held lane facts for openly marked remaining counts and preserves fallback for unowned names. [11]
+- Explorer label vocabulary remains the mapped/unmapped/unknown constants. [13]
+- Pending vocabulary remains Attribution pending. [14]
+- laneAttributionFacts derives paths from the two held destination file lists and keeps loading/unavailable/missing-list states explicit. [15]
+- laneCountText replaces raw field prefixes with changed-files-without-an-invariant or unknown-attribution labels, preserves pending/unmeasured wording and partial list lengths, and returns undefined for unowned names. [16]
+- Server hunk spans retain single-line/range/zero-line-gap naming. [17]
+- Side text splits on newline and removes one final empty split item. [18]

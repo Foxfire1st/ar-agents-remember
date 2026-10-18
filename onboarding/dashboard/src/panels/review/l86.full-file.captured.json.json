@@ -2,30 +2,13 @@
   "path": "dashboard/src/panels/review/l86.full-file.captured.json",
   "realizes": [],
   "references": {
-    "1": {
-      "note": "Full-file expansion at the bound trees\n\nAnchor: `expansion`",
+    "3": {
+      "note": "The current retained JSON input supplies the literal identities, response states and populations summarized above; these are fixture facts, not live project knowledge or fresh execution evidence.",
       "targets": [
         {
           "anchor": {
-            "blob": "63d1a3ecd1c0203fa623ad16c41668db95c06293",
-            "content": "sha256:0c2c7dbd2ed1b89e8167eeffff50abc7add2eb8e27e24305c85be918084c9015",
-            "locator": {
-              "end": 1,
-              "kind": "line_range",
-              "start": 1
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "2": {
-      "note": "Read through the source-content operation\n\nAnchor: `operation`",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "63d1a3ecd1c0203fa623ad16c41668db95c06293",
-            "content": "sha256:0c2c7dbd2ed1b89e8167eeffff50abc7add2eb8e27e24305c85be918084c9015",
+            "blob": "bdf2eee62d3dd39d2af57829738c79c41f8c863e",
+            "content": "sha256:e4125a57ae87456fb3d6c419b99fa1fa01bdd0736fd6c7df65b04e5626d3d108",
             "locator": {
               "end": 1,
               "kind": "line_range",

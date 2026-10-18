@@ -116,15 +116,28 @@
       ]
     },
     "20": {
-      "note": "The two resolution cases: the candidate comes from task context rather than a browser-chosen path, and an absent dataset refuses by name.",
+      "note": "Task-context resolution refuses path-shaped or unresolved candidates; the separate absent-candidate composition case refuses with candidate_dataset_absent.\n\nAnchor: inclusive source ranges",
       "targets": [
         {
           "anchor": {
-            "blob": "18b00324c21fe7cacbf912ef639a6ed62d30ed09",
+            "blob": "5326dde5297deef1bfee2f628ae5f7843ca2e89d",
             "content": "sha256:56299469c3e2434944f5157681e18984be911b07bc2e0a9f54fe35a9082b58da",
             "locator": {
-              "kind": "symbol",
-              "name": "test_the_candidate_is_resolved_from_task_context_and_never_from_a_browser_chosen_path"
+              "end": 77,
+              "kind": "line_range",
+              "start": 64
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "5326dde5297deef1bfee2f628ae5f7843ca2e89d",
+            "content": "sha256:913453cdff33297adbb9c8a3ef7cec36df055815981be1bddbc821af1134f615",
+            "locator": {
+              "end": 99,
+              "kind": "line_range",
+              "start": 80
             }
           },
           "kind": "test"
@@ -164,15 +177,28 @@
       ]
     },
     "23": {
-      "note": "The two transport cases: exactly the two reviewable selector kinds are admitted and every other spelling refused, and the route serves the typed result and refuses by name with no adapter.",
+      "note": "The selector test admits the two reviewable kinds and refuses invalid spellings; the route test serves typed results and names an absent adapter.\n\nAnchor: inclusive source ranges",
       "targets": [
         {
           "anchor": {
-            "blob": "18b00324c21fe7cacbf912ef639a6ed62d30ed09",
+            "blob": "5326dde5297deef1bfee2f628ae5f7843ca2e89d",
             "content": "sha256:d86784400b4e517a756a4981dd0f2dc9c26fceca88faf2b966d6387c599bb099",
             "locator": {
-              "kind": "symbol",
-              "name": "test_the_transport_admits_exactly_the_two_reviewable_selector_kinds"
+              "end": 249,
+              "kind": "line_range",
+              "start": 231
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "5326dde5297deef1bfee2f628ae5f7843ca2e89d",
+            "content": "sha256:fd1d43d8487c049be030869272d61fdda97cd80e010cdd967f758db426fa1740",
+            "locator": {
+              "end": 309,
+              "kind": "line_range",
+              "start": 252
             }
           },
           "kind": "test"
@@ -189,22 +215,6 @@
             "locator": {
               "kind": "symbol",
               "name": "test_the_previous_binding_identity_reaches_the_port_and_is_compared_against_the_read"
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "25": {
-      "note": "**The loader case: an unresolvable candidate yields no fabricated assessment, and its entry list refuses with the review's own code rather than answering empty.**",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "18b00324c21fe7cacbf912ef639a6ed62d30ed09",
-            "content": "sha256:d14cd6b445dcc0e65d14d451151dadb3b00ee7d4015fac101ac4cff58f2ecb4d",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_the_published_assessment_loader_returns_nothing_for_an_unresolvable_candidate"
             }
           },
           "kind": "test"

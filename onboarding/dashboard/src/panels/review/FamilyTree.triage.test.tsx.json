@@ -172,11 +172,11 @@
       ]
     },
     "7": {
-      "note": "Synthetic outline exercising every badge branch",
+      "note": "Representative synthetic outline supplying unchanged, unknown, joined, left, changed and added shapes; not exhaustive badge-branch proof.",
       "targets": [
         {
           "anchor": {
-            "blob": "3c7639681b045e86348666e96ba33def7c7d6be2",
+            "blob": "ed557a3c4dfd4c82e283b2c3e00175900ae9180c",
             "content": "sha256:fcad79eae8ada07260043dc704e2b7f13b7c4306fcfd006925ee17506644a208",
             "locator": {
               "kind": "symbol",

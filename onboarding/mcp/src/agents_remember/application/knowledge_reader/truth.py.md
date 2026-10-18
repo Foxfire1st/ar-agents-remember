@@ -33,16 +33,14 @@ opened at a locator.
   incoming links (`link_document` over `incoming_links`), the kind's own part, and the timeline over the
   history rows about it and the entries that feed it (an invariant's own; a family's members'). Invariant membership-subject rows join that timeline as well as the dedicated membership array.
 
-- Invariant truth and timeline preserve membership-row provenance. [10]
-- Membership judgments are rendered with their complete owning history context. [11]
 - **Outgoing links, or why not (F11).** `_links_of` validates the record through its kind's model in
   `RECORD_MODELS` and renders each link with `record_link_target` (and its `alternative` for a decision).
   A record that does not validate, or a kind no model reads, returns the reason; the view then carries
   `outgoingState: unavailable` rather than claiming no outgoing link.
 - **States.** `_invariant` and `_family` call `paths.states_at` once each; `_currentness_header` names the code
   tree and, when states could not be computed, the reason.
-- **Facets.** Every field but the frame (`schema`, `id`, `links`) is returned as recorded; the dashboard renders
-  them all.
+- **Facets.** Every field but the frame (`schema`, `id`, `links`) is returned as recorded;
+  this is the backend projection, while display is owned by the reader's `TruthView`.
 - **Census.** `census_view` reads the tree's census files (`files.census_files`) through L20's
   `read_censuses` and `census_reports`. An unknown census ID is `not-found`, checked by membership (not by
   mapping a `KeyError`, F11); a read failure is `unavailable`; census file problems are listed.
@@ -52,6 +50,17 @@ opened at a locator.
   L08's `CodeTrees.resolve` against the recorded blob. A well-formed locator that does not resolve is
   `unresolved` with the reason, not an error; a resolved one gives its line span. The answer names the code
   tree and the file's language (`language_for`, the one line worker B added).
+
+### Paged history without eager reacquisition
+
+`record_view` forwards the continuation to `record_timeline` and supplies
+`_record_history` as a callback rather than eagerly querying those timeline rows.
+A manifest hit avoids that callback; a miss reads the record's rows and, for an
+invariant, its membership-subject rows. The invariant's dedicated membership array
+still queries membership history independently in `_invariant`, before the timeline
+call. This adds paging and defers the timeline callback; it does not claim that a
+whole truth-view request performs no history queries or adds another index-completeness
+policy.
 
 ### Conventions
 
@@ -75,8 +84,9 @@ opened at a locator.
   measures/history and `wave-9` as `not-found`; it does not stimulate an unreadable census or
   an unresolved locator. [9]
   A separate existing case, `test_bad_requests_are_400_and_large_or_binary_code_is_a_bounded_notice`,
-  sends a well-formed line-range locator with `start: "x"` and asserts `locator.state == "unresolved"`.
-  It does not assert the locator detail or an unreadable-census branch. [12]
+  sends a JSON object with string kind `line_range` but non-integer `start: "x"` and asserts
+  `locator.state == "unresolved"`. That is admission of the outer JSON shape, not a fully valid
+  line-range operand; the case asserts neither locator detail nor an unreadable census. [12]
 - A decision is shown whole in the invariant's linked records and in its own view (the rule carried from L13).
 - Nothing here writes.
 
@@ -96,16 +106,19 @@ No configured live documentation source was available for this pass.
 
 ### Repo-Internal References
 
+- One record's truth view carries its links, kind part and timeline, now forwarding a continuation and lazy history callback. [2]
+- Invariant and family parts expose their own currentness, entries and locations; the invariant's dedicated membership array queries history independently of the timeline cache. [5]
+- Invariant truth retains its dedicated membership projection, while the timeline callback includes membership-subject rows alongside record history. [10]
+- Membership projections carry owner, owner kind, closed flag, path, row ID, subject, disposition and document. [11]
+- Family/decision/incident/facet assertions, unavailable outgoing links after removing RECORD_MODELS, and normal census measures/history with an unknown-ID control; not an unreadable-census or unresolved-locator control. [9]
+- The separate bad-request/code-size case supplies string kind=line_range and non-integer start="x", asserting unresolved locator state rather than locator detail or an unreadable census. [12]
+
 - The module's own statement of the truth views per kind and the census view. [1]
-- One record's truth view with its links, kind part and timeline. [2]
 - The kind's own part, and the entries that feed its timeline. [3]
 - Outgoing links, or the reason they could not be read (F11). [4]
-- The invariant and family parts with their states. [5]
 - Every record by kind. [6]
 - MIK-R20's census report; an unknown census by membership. [7]
 - A code file at a locator; a malformed locator is a bad request (F3). [8]
-- Family/decision/incident/facet truth assertions, unavailable outgoing links after removing RECORD_MODELS, and normal census measures/history with an unknown-ID not-found control; not an unreadable-census or unresolved-locator control. [9]
-- Separate unresolved-locator control: the bad-request/code-size case sends a well-formed line-range locator with start="x" and asserts locator.state==unresolved; no locator-detail or unreadable-census assertion. \[12] [12]
 
 ### Cross-Repo References
 

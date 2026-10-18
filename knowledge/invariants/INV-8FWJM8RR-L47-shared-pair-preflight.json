@@ -13,9 +13,9 @@
     "legacyId": "0342c3e2-c42d-4c0b-b2f1-b97c401cc278",
     "task": "260921-ICR"
   },
-  "revision": 2,
+  "revision": 3,
   "schema": "ar-invariant/v1",
-  "statement": "The subject catalogue and the changed-intent summary refuse a resolved pair by one rule in one order: closed-leaf record absence, an absent half, an unreadable half, then an unreadable candidate receipt.",
+  "statement": "The subject catalogue and the changed-intent summary refuse a resolved pair by one rule in one order: an unavailable knowledge side, closed-leaf record absence, an absent half, an unreadable half, then an unreadable candidate receipt.",
   "status": "proposed",
   "supersedes": []
 }

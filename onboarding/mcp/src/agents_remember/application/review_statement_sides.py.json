@@ -3,12 +3,12 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "**The module's own statement of its scope: three projections of a comparison's items, and a selection that reads nothing and stores nothing.**",
+      "note": "Statement/condition/field projections consume supplied comparison items; the separately added side_origin helper does open the selected snapshot index.",
       "targets": [
         {
           "anchor": {
-            "blob": "321fc3b9e4dae852de22da94711a422fd4dcbcee",
-            "content": "sha256:3961a4b6c72c5b4f477246be4d13d7fb03c0863553354df84c2b61b548e189b2",
+            "blob": "a2cdf1b16e61a977a5f7246ee6647b6114f1413d",
+            "content": "sha256:f40d81c2dccf97ea3b61ff65a14163990ee531c4d2666832f726393b8e6d293e",
             "locator": {
               "kind": "symbol",
               "name": "side_content"
@@ -18,7 +18,7 @@
         },
         {
           "anchor": {
-            "blob": "321fc3b9e4dae852de22da94711a422fd4dcbcee",
+            "blob": "a2cdf1b16e61a977a5f7246ee6647b6114f1413d",
             "content": "sha256:63c876c85da7d7d52abf2d333852a02da92549c9693da36cc76a1eb8a21eaa48",
             "locator": {
               "kind": "symbol",
@@ -29,11 +29,22 @@
         },
         {
           "anchor": {
-            "blob": "321fc3b9e4dae852de22da94711a422fd4dcbcee",
+            "blob": "a2cdf1b16e61a977a5f7246ee6647b6114f1413d",
             "content": "sha256:3f19cfeb02bbec3766ec744b6426efe09af811dd27f20ef1a1014d89dd5a1006",
             "locator": {
               "kind": "symbol",
               "name": "side_conditions"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a2cdf1b16e61a977a5f7246ee6647b6114f1413d",
+            "content": "sha256:e90d813f96ce7831d67e675fa4b1270c49bce97f06a093fca23073fbdb2d5935",
+            "locator": {
+              "kind": "symbol",
+              "name": "side_origin"
             }
           },
           "kind": "code"
@@ -75,7 +86,7 @@
       ]
     },
     "12": {
-      "note": "The payload `read_side` returns, with the `statement` and `essential_conditions` fields each projection reads.",
+      "note": "ReadItem supplies the selected statement or family joint guarantee and essential conditions.",
       "targets": [
         {
           "anchor": {
@@ -92,29 +103,15 @@
       ]
     },
     "13": {
-      "note": "**The adapter's delegation: the import block and the one call site set inside `_knowledge_pane`, where the four side values and the field roster are assembled.**\n\nAnchor: `side_content`; `side_conditions`; `field_changes`",
+      "note": "The current knowledge pane assembles selected side content/conditions, raw before/after origins and comparison field changes through these helpers.",
       "targets": [
         {
           "anchor": {
-            "blob": "e82e48a3fe51cf1b33e2db3907db00759c429781",
-            "content": "sha256:9337a3581568d42aa4282acac4402465004c414e60fa2afbe608703069755e16",
+            "blob": "ac739bfed6942a8a7b701200421aa16e48d35463",
+            "content": "sha256:f6090577325430e6989102201e2a0f58a4d27ab97a11b4560e13cabaebb5a1b5",
             "locator": {
-              "end": 874,
-              "kind": "line_range",
-              "start": 851
-            },
-            "path": "mcp/src/agents_remember/application/knowledge_review.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "656c6acccc15cb4da02e3931dd492b4f0e2eef71",
-            "content": "sha256:f5d24e10c00f510d8db7ea2e70fd0f46b8125fa4b120cb0f2f27460e7cc14194",
-            "locator": {
-              "end": 1001,
-              "kind": "line_range",
-              "start": 998
+              "kind": "symbol",
+              "name": "_knowledge_pane"
             },
             "path": "mcp/src/agents_remember/application/knowledge_review.py"
           },
@@ -123,12 +120,12 @@
       ]
     },
     "14": {
-      "note": "**The production composition case: the structured field's two sides are both present, differ, and round-trip back to the stored authorship envelope.**",
+      "note": "The current stored structured-value test asserts key-order equality only; its former fixture-driven two-sided round-trip is explicitly dead, not current proof.",
       "targets": [
         {
           "anchor": {
-            "blob": "0e63bbe0a355c2157ece83f1a76b83ae5c16a6e2",
-            "content": "sha256:ee1098a65dfd5c1400da329ddfc55569773a7a1a1f5a6c28b4119ff196270c00",
+            "blob": "512bf1dcd15d3e70a90a9c7373fd4e554842a30d",
+            "content": "sha256:056271f4deb8b666d2f45b67c4eafddeeffb39380e30e41e997ff4244a1f8a04",
             "locator": {
               "kind": "symbol",
               "name": "test_a_structured_field_value_is_rendered_as_its_own_text_and_never_as_an_absence"
@@ -140,11 +137,11 @@
       ]
     },
     "15": {
-      "note": "The case that a one-sided record reports its change through coverage and keeps the roster empty.",
+      "note": "The stored one-sided composition case asserts no field roster and retains the supplied side conditions; it is not a fresh execution.",
       "targets": [
         {
           "anchor": {
-            "blob": "dc6a0fb1abcb7408ed5e6b137794f6871206f7f7",
+            "blob": "512bf1dcd15d3e70a90a9c7373fd4e554842a30d",
             "content": "sha256:11e22fd36edb688cef31a499ce8eb266af6546cef1ac286b96abef04d93b709a",
             "locator": {
               "kind": "symbol",
@@ -157,12 +154,12 @@
       ]
     },
     "16": {
-      "note": "The case that a row keeps the side that recorded a value and names the side that did not.",
+      "note": "The stored field-row case distinguishes absent acceptance from recorded values and checks the actual field roster; it is not a fresh execution.",
       "targets": [
         {
           "anchor": {
-            "blob": "0e63bbe0a355c2157ece83f1a76b83ae5c16a6e2",
-            "content": "sha256:b87075404e39a14342660043a0e36da8e5e184daf13e2ff48c8f048a00cb3a19",
+            "blob": "512bf1dcd15d3e70a90a9c7373fd4e554842a30d",
+            "content": "sha256:175621daedeb7d823db4cbacc5ba5ddc72e5dda27328ca966756a83af8253f04",
             "locator": {
               "kind": "symbol",
               "name": "test_a_field_row_keeps_the_side_that_recorded_a_value_and_names_the_side_that_did_not"
@@ -178,7 +175,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "70c46c265a4b64aadc447f8b84d72673f1342b78",
+            "blob": "3ec8b719eedb51c18c3d1a2825a6e5d398f6de5d",
             "content": "sha256:a667fc3ff593802fe44012abfe3ffac077cc366db14fe4ddade1cf72080370b8",
             "locator": {
               "kind": "symbol",
@@ -190,13 +187,41 @@
         }
       ]
     },
-    "2": {
-      "note": "The published surface: the seven names the adapter and the case module import.",
+    "18": {
+      "note": "Raw side origin comes from the selected record in its supplied snapshot database, validates the stored Origin and is not reconstructed from projected authorship.",
       "targets": [
         {
           "anchor": {
-            "blob": "321fc3b9e4dae852de22da94711a422fd4dcbcee",
-            "content": "sha256:a08b3c392a2254489dbed6f42c950a90fa0872210685ebfa35def91653dd2d6c",
+            "blob": "a2cdf1b16e61a977a5f7246ee6647b6114f1413d",
+            "content": "sha256:e90d813f96ce7831d67e675fa4b1270c49bce97f06a093fca23073fbdb2d5935",
+            "locator": {
+              "kind": "symbol",
+              "name": "side_origin"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ac739bfed6942a8a7b701200421aa16e48d35463",
+            "content": "sha256:f6090577325430e6989102201e2a0f58a4d27ab97a11b4560e13cabaebb5a1b5",
+            "locator": {
+              "kind": "symbol",
+              "name": "_knowledge_pane"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_review.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The public export list includes side_origin beside the retained projection helpers.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a2cdf1b16e61a977a5f7246ee6647b6114f1413d",
+            "content": "sha256:41f030261af1da92554494f7956bd0ed8f072faaf90b218b0cb5be15fe0888dc",
             "locator": {
               "kind": "symbol",
               "name": "__all__"
@@ -211,7 +236,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "321fc3b9e4dae852de22da94711a422fd4dcbcee",
+            "blob": "a2cdf1b16e61a977a5f7246ee6647b6114f1413d",
             "content": "sha256:e7d9c01374ec55e37ec25b09e76f30bc5ab3d0246db555e5007035ed7e94ab1b",
             "locator": {
               "kind": "symbol",
@@ -222,7 +247,7 @@
         },
         {
           "anchor": {
-            "blob": "321fc3b9e4dae852de22da94711a422fd4dcbcee",
+            "blob": "a2cdf1b16e61a977a5f7246ee6647b6114f1413d",
             "content": "sha256:66a8bd6cc2d648216ace0c0e498a81f2cf2338ce60e271adfca99e2f7460e724",
             "locator": {
               "kind": "symbol",
@@ -233,7 +258,7 @@
         },
         {
           "anchor": {
-            "blob": "321fc3b9e4dae852de22da94711a422fd4dcbcee",
+            "blob": "a2cdf1b16e61a977a5f7246ee6647b6114f1413d",
             "content": "sha256:3ef8e6102a9211ef4a3e1672974cdc6d4d482dcdd9c1554b77d7c1f51414399f",
             "locator": {
               "kind": "symbol",
@@ -244,7 +269,7 @@
         },
         {
           "anchor": {
-            "blob": "321fc3b9e4dae852de22da94711a422fd4dcbcee",
+            "blob": "a2cdf1b16e61a977a5f7246ee6647b6114f1413d",
             "content": "sha256:ca5e40a13ef3f5dc67e0e73be19c58df5f8e36bc3948c61d5c51d15e632dcaae",
             "locator": {
               "kind": "symbol",
@@ -256,12 +281,12 @@
       ]
     },
     "4": {
-      "note": "**The three outcomes and no fourth: `absent` / `unresolved` / `present`+text, each with the detail that says which fact it is.**",
+      "note": "Statement operands distinguish absent/unresolved/present; a family revision uses joint_guarantee while other selected records use statement.",
       "targets": [
         {
           "anchor": {
-            "blob": "321fc3b9e4dae852de22da94711a422fd4dcbcee",
-            "content": "sha256:3961a4b6c72c5b4f477246be4d13d7fb03c0863553354df84c2b61b548e189b2",
+            "blob": "a2cdf1b16e61a977a5f7246ee6647b6114f1413d",
+            "content": "sha256:f40d81c2dccf97ea3b61ff65a14163990ee531c4d2666832f726393b8e6d293e",
             "locator": {
               "kind": "symbol",
               "name": "side_content"
@@ -271,7 +296,7 @@
         },
         {
           "anchor": {
-            "blob": "321fc3b9e4dae852de22da94711a422fd4dcbcee",
+            "blob": "a2cdf1b16e61a977a5f7246ee6647b6114f1413d",
             "content": "sha256:b9182ee878ed39b1fd4a95c52ba6f67e7e29c93050f62b302c9153abdfc13dd0",
             "locator": {
               "kind": "symbol",
@@ -287,7 +312,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "321fc3b9e4dae852de22da94711a422fd4dcbcee",
+            "blob": "a2cdf1b16e61a977a5f7246ee6647b6114f1413d",
             "content": "sha256:3f19cfeb02bbec3766ec744b6426efe09af811dd27f20ef1a1014d89dd5a1006",
             "locator": {
               "kind": "symbol",
@@ -303,7 +328,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "321fc3b9e4dae852de22da94711a422fd4dcbcee",
+            "blob": "a2cdf1b16e61a977a5f7246ee6647b6114f1413d",
             "content": "sha256:63c876c85da7d7d52abf2d333852a02da92549c9693da36cc76a1eb8a21eaa48",
             "locator": {
               "kind": "symbol",
@@ -319,7 +344,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "321fc3b9e4dae852de22da94711a422fd4dcbcee",
+            "blob": "a2cdf1b16e61a977a5f7246ee6647b6114f1413d",
             "content": "sha256:6119907c61bad0863b3c1c4e7978f606575f1c85694222883b6857d0b5cff36a",
             "locator": {
               "kind": "symbol",
@@ -331,12 +356,12 @@
       ]
     },
     "8": {
-      "note": "The side-state vocabulary and the point the two states are distinct at: `ReviewSideContent` carries `state`, optional `text`, `language` and `detail`, and `ReviewSideState` is the closed four-member literal.",
+      "note": "Current ReviewSideState has present/absent/unresolved, and its model requires text exactly when present; binary is no longer a declared fourth state.\n\nAnchor: `ReviewSideContent._require_text_exactly_when_present`",
       "targets": [
         {
           "anchor": {
-            "blob": "f9105a09d9fdee4eeed9ab2b715723940337949e",
-            "content": "sha256:40f2decad7475f7620ea348841a54121b5ce6dcdfcf405df1fbe23f5afbc1168",
+            "blob": "3a9fbebf751c8e0ce26280a3c2bd35bfe3302c8f",
+            "content": "sha256:a82d28d081d353a75804c5ef6df9a510cc6b95873aa677713ac4a696414e1380",
             "locator": {
               "kind": "symbol",
               "name": "ReviewSideState"
@@ -347,24 +372,11 @@
         },
         {
           "anchor": {
-            "blob": "f9105a09d9fdee4eeed9ab2b715723940337949e",
-            "content": "sha256:428eed53ee5c5de6afe6f6707241af38aa575b8323c254cad2d647d5ebf4ba26",
+            "blob": "3a9fbebf751c8e0ce26280a3c2bd35bfe3302c8f",
+            "content": "sha256:74fafc2a7136cec7cf5432260917e7b20555e2c78c81e563b23ab9751c212819",
             "locator": {
               "kind": "symbol",
               "name": "ReviewSideContent"
-            },
-            "path": "mcp/src/agents_remember/models/knowledge/review.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "0cc1ed4aa2ead143a66f5ee6b69cf490138fd7ae",
-            "content": "sha256:01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
-            "locator": {
-              "end": 204,
-              "kind": "line_range",
-              "start": 204
             },
             "path": "mcp/src/agents_remember/models/knowledge/review.py"
           },
@@ -377,7 +389,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f9105a09d9fdee4eeed9ab2b715723940337949e",
+            "blob": "3a9fbebf751c8e0ce26280a3c2bd35bfe3302c8f",
             "content": "sha256:00a15a918aabb193f8ca16983f8b9b62fe497700df2763586687f3a29fae4cc3",
             "locator": {
               "kind": "symbol",

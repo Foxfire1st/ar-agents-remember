@@ -6,25 +6,74 @@
 
 ## Purpose
 
-Task context returns the measured source inventory and named source/knowledge availability without selecting a knowledge record or constructing a comparison. Its entry recheck precedes receipt and attribution reads. The attribution and pane builders remain separately owned and make no selection-channel or review-matrix request. A valid empty meaning field names no addressed record; it is not none for a particular invariant.
+Compose the task-only review from its already resolved candidate, supplied source inventory and observed paths. No knowledge subject or operand pair is selected, and no judgment about an unnamed record is invented. Knowledge-side limitations remain visible beside the independently supplied source inventory.
 
 ## Code Commentary
 
-### No selected knowledge operand
+### Current entry and pane shape
+
+`task_context_review` now accepts resolved/request/inventory/observed, not the removed ReviewRecordInputs bundle. It calls `require_current_candidate_identity` at entry, before receipt/attribution reads; a moved candidate returns the existing refused result. This is not an additional identity check after all remaining reads.
+
+The receipt question precedes `pair_attribution` and is asked again afterward when no prior refusal was returned. Knowledge unreadability/receipt failures feed the pane reason and declared limitations rather than automatically withdrawing the supplied source review. This is the named branch policy, not an assertion that arbitrary called code cannot raise.
+
+The payload carries comparison=None, two unresolved knowledge sides with task_context selection detail, the supplied source pane, and a judgment pane explicitly unavailable because no subject was selected (or carrying the existing knowledge-unavailability reason). It does not compose the former signal/assessment/applicability collections or evidence bundle. Those deleted arguments, fields and helpers are not aliases of the current judgment pane.
+
+Family context is explicitly no_subject_selected, not a measured no-family zero. Meaning effects contain no addressed records. Staleness is not_compared and submission is built with stale=False; this does not measure unrelated source liveness or waive a transaction gate. The optional external-Git boundary is still called separately and remains descriptive.
+
+### Reason and attribution owners
+
+`task_context_detail` follows its actual branch priority: knowledge-unavailability detail, reopened/closed-leaf intent detail, supplied unreadable-half detail/action, then the missing-half question or the ordinary no-selection sentence. An absent half, unreadable scope and no selected operand are not interchangeable facts. `_task_context_pane` repeats that reason on unresolved Before/After sides, not empty known statements.
+
+`pair_attribution` binds each actual side independently, then delegates partitioning to review_attribution with the selected-subject value supplied by its caller. `_bound_pair_side` retains knowledge/tree unavailability and labels a partial index through index_incomplete_detail while preserving a readable side's bound context. No comparison or new negative knowledge conclusion is manufactured from a missing side.
+
+On namespace refusal, the After side carries the refusal while the Before side may bind from the identity disclosed by its own readable bytes. `_pair_side` and `_side_from_own_bytes` use the existing identity/open-side readers and their named storage/I/O/value/APSW error catches. These dataset-named adapters are existing boundaries, not permission to recreate a canonical database or substitute current-store contents.
+
+The Source inventory was supplied by the caller; this module adds attribution and limitations rather than measuring a different source pair. It does not own Reviewer assessment collection, semantic acceptance, current-build approval or publication authority.
+
+## Evidence
+
+No domain documentation source is configured. The complete419-line current source and actual BASE diff were read. The current account replaces operative old record-bundle/channel references; the complete predecessor remains historical below.
+
+- The entry recheck precedes receipt/attribution reads and the actual payload has no selected comparison or old record bundle. [18]
+- No-subject family/meaning/currentness states, descriptive Git movement and limitations are explicit. [19]
+- Unreadability limitations and unresolved task-context panes retain their actual reason. [20]
+- The actual reason priority keeps unavailable, recorded, unreadable, absent and unselected facts distinct. [21]
+- Pair attribution binds independent sides before delegating the observed-path partition. [22]
+- Partial/unavailable native tree sides retain their own labeled attribution context. [23]
+- Namespace failure leaves the After side unavailable while independently binding Before where readable. [24]
+- Existing identity/open-side adapters carry their named failure states rather than manufacturing knowledge. [25]
+
+## Historical predecessor account
+
+The complete predecessor follows as provenance. Its old assessment/evidence/applicability and selection-channel accounts, including its nested earlier history, are superseded; inert prose references below are not current anchors.
+
+### mcp/src/agents_remember/application/review_task_context.py
+
+#### Governing Overview
+
+[application route overview](overview.md)
+
+#### Purpose
+
+Task context returns the measured source inventory and named source/knowledge availability without selecting a knowledge record or constructing a comparison. Its entry recheck precedes receipt and attribution reads. The attribution and pane builders remain separately owned and make no selection-channel or review-matrix request. A valid empty meaning field names no addressed record; it is not none for a particular invariant.
+
+#### Code Commentary
+
+##### No selected knowledge operand
 
 The no-selected-subject composition carries a present empty ReviewMeaningEffects field. Empty means no addressed record in this answer, not a measured no-step judgment about an invariant. A current response without the required field is invalid in the browser, including the source-only branch. This does not select a subject or resurrect the retired matrix-owned authored_effects channel; recorded history effects are a separately owned response projection.
 
-- Task context returns the measured source inventory and named source/knowledge availability without selecting a knowledge record or constructing a comparison. Its entry recheck precedes receipt and attribution reads. The attribution and pane builders remain separately owned and make no selection-channel or review-matrix request. A valid empty meaning field names no addressed record; it is not none for a particular invariant. The no-selected-subject composition carries a present empty ReviewMeaningEffects field. Empty means no addressed record in this answer, not a measured no-step judgment about an invariant. A current response without the required field is invalid in the browser, including the source-only branch. This does not select a subject or resurrect the retired matrix-owned authored_effects channel; recorded history effects are a separately owned response projection. [17]
+- Task context returns the measured source inventory and named source/knowledge availability without selecting a knowledge record or constructing a comparison. Its entry recheck precedes receipt and attribution reads. The attribution and pane builders remain separately owned and make no selection-channel or review-matrix request. A valid empty meaning field names no addressed record; it is not none for a particular invariant. The no-selected-subject composition carries a present empty ReviewMeaningEffects field. Empty means no addressed record in this answer, not a measured no-step judgment about an invariant. A current response without the required field is invalid in the browser, including the source-only branch. This does not select a subject or resurrect the retired matrix-owned authored_effects channel; recorded history effects are a separately owned response projection. (historical reference 17)
 
 <details>
 <summary>Historical prior account (not the current contract)</summary>
 
 
-## Governing Overview
+#### Governing Overview
 
 [application route overview](overview.md)
 
-## Purpose
+#### Purpose
 
 The **task-context review**: the source entry that needs no selected subject. A review of a *task*
 asks a different question from a review of a subject — the subject review asks "what changed about
@@ -82,15 +131,15 @@ no invariant — or whose datasets do not exist yet — lost its source review e
 the non-conforming example the packet names. Making the task context answerable is what turns the
 review from "a review of a selected subject" into "a review of the task, refined by a subject".
 
-## Code Commentary
+#### Code Commentary
 
-### Recorded reviewer judgments
+##### Recorded reviewer judgments
 
 The no-selected-subject composition carries a present empty ReviewMeaningEffects field. Empty means no addressed record in this answer, not a measured no-step judgment about an invariant. A current response without the required field is invalid in the browser, including the source-only branch. This does not select a subject or resurrect the retired matrix-owned authored_effects channel; recorded history effects are a separately owned response projection.
 
-- The no-selected-subject composition carries a present empty ReviewMeaningEffects field. [16]
+- The no-selected-subject composition carries a present empty ReviewMeaningEffects field. (historical reference 16)
 
-### Logic
+##### Logic
 
 **`task_context_review` re-derives the captured candidate immediately before it builds the payload,
 then composes three values and one statement.** The recheck is `require_current_candidate_identity`,
@@ -145,7 +194,7 @@ three still point at the Source pane, because the inventory **does not depend on
 availability** — absent or damaged knowledge is a fact this review states, not a reason it cannot be
 opened. The last state is deliberately not a degraded first: it is what a review of the task alone is.
 
-### Conventions
+##### Conventions
 
 `__all__` publishes two names, `task_context_review` and `pair_attribution`, because the pair
 measurement is the route's own and another composition must not re-derive it; `unreadable_half_limitations` is public and called by that composition (the merge that
@@ -159,7 +208,7 @@ extra read cost this route pays for its own attribution, with no latency claim m
 It reaches the resolution, the record renderer and the source inventory through their public functions
 only, and it writes nothing.
 
-### Invariants And Boundaries
+##### Invariants And Boundaries
 
 - **No subject is selected, and no comparison is faked.** `comparison` is `None`, `staleness.state` is
   `not_compared`, and the knowledge pane's `selection_state` is `task_context` with a reason — three
@@ -191,20 +240,20 @@ only, and it writes nothing.
 - **Rank.** The composition lives at the application tier beside the adapter that calls it, because
   `serving` may not import these operations and the HTTP shim does transport only.
 
-### Todos
+##### Todos
 
 None recorded.
 
-## Evidence
+#### Evidence
 
-### Docs References
+##### Docs References
 
 No domain documentation source is configured for this repository (`system/sources.md` carries no
 `Domain Documentation` entries). The statements below are grounded in repository source only.
 
 No configured domain documentation could be checked.
 
-### Repo-Internal References
+##### Repo-Internal References
 
 Every claim on this card is checkable in the shipped candidate: this module's own docstring and three
 functions, the models that hold the three spellings of "nothing was compared", the two modules it
@@ -215,23 +264,23 @@ real route. Three details a reader should carry: the composition is reached only
 measured here from the pair's own halves (`pair_attribution`); and
 an absent dataset half changes the *reason* it states, never its ability to answer.
 
-- The module's own statement of what a task-context review asks, the three things it does not do, and why it is a different composition rather than a degraded one. [1]
-- The module's two published names: the composition and its pair measurement. [2]
-- **The pair preflight this composition consults and never raises for: a half that is present and cannot be read is a named state, the receipt question asked twice, and the declaration each earns is this response's own.** [3]
-- **The composition: the candidate re-derived immediately before the payload, the receipt asked before and after the pair read, the carried reference, `comparison=None`, the three panes, the `not_compared` staleness statement and the five declared limitations.** [4]
-- **The unavailable matrix channel that makes "this review did not ask" a stated fact rather than an empty collection, and the removal reason it carries.** [5]
-- **The pair's own attribution: each half opened read-only when it is there, a side that cannot be bound carried as unavailable, and only the side that cannot be bound marked so.** [6]
-- **Pane 1 for a review that compared nothing: two `unresolved` sides rather than two empty ones, the caller's records rendered as the subject path renders them, and the two selection-state fields.** [7]
-- **The reason the payload states, in its three ordered states — an unreadable half, an absent half, and a pair that was simply not selected over — and the sentence that says the inventory does not depend on knowledge availability, with the next action to act on it.** [8]
-- **The validators that hold the three spellings of "nothing was compared" in agreement, so the composition cannot publish a payload that disagrees with itself.** [9]
-- **The branch that reaches this composition: the observation made once, the inventory rendered from it, then the selector branch.** [10]
-- The boundary that produces a selector-less request at all: the transport admitting "both parameters omitted" as the task context. [11]
-- The browser entry that offers the task-context target for every live leaf. [12]
-- **The case that measures this composition through the real route: neither dataset half present, the payload's three states, the inventory equal to an independent Git observation, and the real HTTP route answering 200 with no selector parameters.** [13]
-- **The case that measures the unavailable channel itself: the same fixture read through the task-context entry reports the matrix-owned collection `unavailable` with the removal as its reason while the candidate-owned collections stay supplied.** [14]
-- The dashboard case that measures the same entry from the browser side: the server offers no subject and the target is still `review: {}`. [15]
+- The module's own statement of what a task-context review asks, the three things it does not do, and why it is a different composition rather than a degraded one. (historical reference 1)
+- The module's two published names: the composition and its pair measurement. (historical reference 2)
+- **The pair preflight this composition consults and never raises for: a half that is present and cannot be read is a named state, the receipt question asked twice, and the declaration each earns is this response's own.** (historical reference 3)
+- **The composition: the candidate re-derived immediately before the payload, the receipt asked before and after the pair read, the carried reference, `comparison=None`, the three panes, the `not_compared` staleness statement and the five declared limitations.** (historical reference 4)
+- **The unavailable matrix channel that makes "this review did not ask" a stated fact rather than an empty collection, and the removal reason it carries.** (historical reference 5)
+- **The pair's own attribution: each half opened read-only when it is there, a side that cannot be bound carried as unavailable, and only the side that cannot be bound marked so.** (historical reference 6)
+- **Pane 1 for a review that compared nothing: two `unresolved` sides rather than two empty ones, the caller's records rendered as the subject path renders them, and the two selection-state fields.** (historical reference 7)
+- **The reason the payload states, in its three ordered states — an unreadable half, an absent half, and a pair that was simply not selected over — and the sentence that says the inventory does not depend on knowledge availability, with the next action to act on it.** (historical reference 8)
+- **The validators that hold the three spellings of "nothing was compared" in agreement, so the composition cannot publish a payload that disagrees with itself.** (historical reference 9)
+- **The branch that reaches this composition: the observation made once, the inventory rendered from it, then the selector branch.** (historical reference 10)
+- The boundary that produces a selector-less request at all: the transport admitting "both parameters omitted" as the task context. (historical reference 11)
+- The browser entry that offers the task-context target for every live leaf. (historical reference 12)
+- **The case that measures this composition through the real route: neither dataset half present, the payload's three states, the inventory equal to an independent Git observation, and the real HTTP route answering 200 with no selector parameters.** (historical reference 13)
+- **The case that measures the unavailable channel itself: the same fixture read through the task-context entry reports the matrix-owned collection `unavailable` with the removal as its reason while the candidate-owned collections stay supplied.** (historical reference 14)
+- The dashboard case that measures the same entry from the browser side: the server offers no subject and the target is still `review: {}`. (historical reference 15)
 
-### Cross-Repo References
+##### Cross-Repo References
 
 No cross-repository behavior is implemented in this file. It composes values from one candidate's
 resolution, inventory and supplied records and carries no identity that ranges beyond the repository
@@ -239,7 +288,7 @@ namespace the request names.
 
 No meaningful cross-repo references found.
 
-## 260921-ICR-L10 The Task-Context Composition Calls The Extracted Branch
+#### 260921-ICR-L10 The Task-Context Composition Calls The Extracted Branch
 
 `260921-ICR-L10` (`ICR-R10@v1`) leaves this composition's behavior unchanged and moves one
 construction out of it: the selection channels' "no matrix was read" branch is now
@@ -248,7 +297,7 @@ of that statement rather than two. A paged request that names no subject is stil
 context with neither a page nor a page refusal, because that review compares no operand and reads no
 matrix at all — there is no bounded collection to page.
 
-## 260921-ICR-L26 A Review That Selected No Subject Labels Every Record As The Candidate's
+#### 260921-ICR-L26 A Review That Selected No Subject Labels Every Record As The Candidate's
 
 `260921-ICR-L26` (`ICR-R26@v1`) gives the task-context composition the same attribution vocabulary,
 with the one label that is true when nothing was compared: `task_context_applicability(records)` labels
@@ -267,7 +316,7 @@ assessment displays through the projection exactly as the subject composition do
 the same `ReviewApplicabilityProjection` port — and it carries `context` and `applicability` onto the
 pane, which is empty for a task context because no selection reaches any other identity.
 
-## 260921-ICR-L12 A Reopened Review States Its Record's Own Intent Absence
+#### 260921-ICR-L12 A Reopened Review States Its Record's Own Intent Absence
 
 `260921-ICR-L12` (`ICR-R12@v1`) gives the task-context composition the vocabulary a **reopened**
 review needs, in two places:
@@ -287,7 +336,7 @@ review needs, in two places:
 The composition still measures nothing about knowledge itself: the two extra calls are pure reads of a
 value the resolution already carries, and the live path through this module is byte-identical.
 
-## 260921-ICR-L31 A Review That Selected No Subject States Its Family Absence In The One Vocabulary
+#### 260921-ICR-L31 A Review That Selected No Subject States Its Family Absence In The One Vocabulary
 
 **This entry now answers the family question with the one state that claims nothing
 (`ICR-R31@v1`).** The payload's ``family_context`` field is required, so a task-context review — which

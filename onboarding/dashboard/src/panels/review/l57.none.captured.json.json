@@ -1,0 +1,24 @@
+{
+  "path": "dashboard/src/panels/review/l57.none.captured.json",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The retained source supplies the facts and declared boundaries described above.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c71c36e06353befee32977af0b4a74ae0c58a859",
+            "content": "sha256:fcf34721bbc361ca3967a038dc294262b8dddd9aa93cdf3bb1b40ffc7bca749f",
+            "locator": {
+              "end": 1,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

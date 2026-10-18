@@ -1,0 +1,41 @@
+{
+  "path": "mcp/src/agents_remember/application/knowledge_reader/timeline_memo.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "48ca2ee8b29c86c1427433501a71e9da84c6dbcf",
+        "content": "sha256:1f7b0cc58dd55fecb1a15b2994997b8edc0f357e7a0faa1df3bf865913ad50db",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-VGT8H1",
+      "invariant": "INV-DFA51A",
+      "origin": {
+        "handoffEntry": "MIK-R67@v2 by-design one-spilled-history",
+        "leaf": "260928-MIK-L57"
+      },
+      "rationale": "Owns exact-key retained manifests within the unchanged resident ceiling and at most one spilled history.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The cache owns LRU, exact-object discard, clear and separate resident/disk accounting.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "48ca2ee8b29c86c1427433501a71e9da84c6dbcf",
+            "content": "sha256:42df3a0f4cbe0d33cf08fcec57f5154c0169992ad2da7638d6ce776d684e6240",
+            "locator": {
+              "kind": "symbol",
+              "name": "TimelineMemo"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

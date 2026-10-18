@@ -25,6 +25,9 @@ code takes its place in the aside while it is open.
 
 - The outline derives its rows from the document DOM, so a view that draws no headings draws no
   outline rows; nothing is hard-coded.
+- The list follows the rendered pane rather than the reader's address: a mutation observer
+  re-enumerates when the pane's headings change, so a whole-prose replacement loaded in place adds
+  its chapters beside the summary's, and a ready pane that renders no chapter commits an empty list.
 - Rows are buttons with `aria-current="location"` on the current chapter.
 
 ### Invariants And Boundaries

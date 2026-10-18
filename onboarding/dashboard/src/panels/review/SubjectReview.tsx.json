@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "a5275eb0e1935676698eadc6ddd1e957136f6dc1",
-        "content": "sha256:0309f930b6ffe3a07e62d8480481a5e1d831ce6cdba84b7c5db75d10fd54c577",
+        "blob": "d8af41bfe0908f05374380a0703fb25af4cd3acb",
+        "content": "sha256:c9cfb750e31f2c7edf37fa3bb22e64283c52d55971873c518b7a25496e19b4e6",
         "locator": {
           "kind": "symbol",
           "name": "SelectedStatement"
@@ -17,23 +17,6 @@
       },
       "rationale": "Draws the statement comparison only from knowledge.revision_selection when its record kind and id match the selected subject, and otherwise states that no comparison was supplied. Ambiguous or unresolved selections show the per-side states with no diff, so no before/after pair is inferred.",
       "role": "presentation"
-    },
-    {
-      "anchor": {
-        "blob": "a5275eb0e1935676698eadc6ddd1e957136f6dc1",
-        "content": "sha256:7c4a80628d8877b092a0fd6824d0cc886072800a962243f51928f7458c88ab54",
-        "locator": {
-          "kind": "symbol",
-          "name": "SubjectEvidence"
-        }
-      },
-      "id": "RLZ-K029HAWE",
-      "invariant": "INV-ZY0YMXMQ",
-      "origin": {
-        "leaf": "260921-ICR-L46"
-      },
-      "rationale": "Shows the selected subject's evidence only when the payload's revision selection matches that subject. It lists execution observations separately from authored assessments, which carry their currentness and applicability, and an unread assessment channel is shown as unavailable rather than as 'not assessed'.",
-      "role": "presentation"
     }
   ],
   "references": {
@@ -42,7 +25,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3752a210e35717d0b1b067a89cd0dec33e988ea4",
+            "blob": "d8af41bfe0908f05374380a0703fb25af4cd3acb",
             "content": "sha256:93ba36887ee80833163a648b56e614539a4a6bc2fcafac5f57baba4ac72716a7",
             "locator": {
               "kind": "symbol",
@@ -53,116 +36,90 @@
         }
       ]
     },
-    "10": {
-      "note": "`AssessmentAbsence` binds the central account to the supplied subject read.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "3752a210e35717d0b1b067a89cd0dec33e988ea4",
-            "content": "sha256:ac0e24738e687d0bac853cec0c06b1662d6b1506cc0cd967d8ed1f8539b7d5e6",
-            "locator": {
-              "kind": "symbol",
-              "name": "AssessmentAbsence"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
     "11": {
-      "note": "Changed authored fields beside the statement",
+      "note": "Changed non-statement field passages are implemented by FieldBody and its list owner after removal of local ChangedFields.",
       "targets": [
         {
           "anchor": {
-            "blob": "a5275eb0e1935676698eadc6ddd1e957136f6dc1",
-            "content": "sha256:3b718bbf60c1e303ac1b3f329e148074c4947b8abaf0271bdeed22cca573f98d",
+            "blob": "8035228691bc89dfc59d344fc409816473ff6df6",
+            "content": "sha256:b4b7d4507f895004b17b9f83bb77e9fca4548674ddcb9da2a76d3e0412bce011",
             "locator": {
               "kind": "symbol",
-              "name": "ChangedFields"
-            }
+              "name": "FieldBody"
+            },
+            "path": "dashboard/src/panels/review/IntentWordDiff.tsx"
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "a5275eb0e1935676698eadc6ddd1e957136f6dc1",
-            "content": "sha256:47a48388465279239185356014b211aeb56359ab6a5b44a5174aa187f9fa212d",
+            "blob": "8035228691bc89dfc59d344fc409816473ff6df6",
+            "content": "sha256:4592b5842baace35916e0c0215dc1aae908da8d7e736c96b55730128e40b4554",
             "locator": {
-              "end": 185,
-              "kind": "line_range",
-              "start": 167
-            }
+              "kind": "symbol",
+              "name": "ListFieldBody"
+            },
+            "path": "dashboard/src/panels/review/IntentWordDiff.tsx"
           },
           "kind": "code"
         }
       ]
     },
     "12": {
-      "note": "Selected statement with revision resolution and sides",
+      "note": "SelectedStatement checks its supplied revision selection before deriving side wording and displaying the statement.",
       "targets": [
         {
           "anchor": {
-            "blob": "a5275eb0e1935676698eadc6ddd1e957136f6dc1",
-            "content": "sha256:0309f930b6ffe3a07e62d8480481a5e1d831ce6cdba84b7c5db75d10fd54c577",
+            "blob": "d8af41bfe0908f05374380a0703fb25af4cd3acb",
+            "content": "sha256:c9cfb750e31f2c7edf37fa3bb22e64283c52d55971873c518b7a25496e19b4e6",
             "locator": {
               "kind": "symbol",
               "name": "SelectedStatement"
             }
           },
           "kind": "code"
-        },
+        }
+      ]
+    },
+    "15": {
+      "note": "Origin renders only supplied task, optional leaf/wave/handoff entry, handoff path and evidence strings; no legacyId rendering or origin authentication is implied.",
+      "targets": [
         {
           "anchor": {
-            "blob": "a5275eb0e1935676698eadc6ddd1e957136f6dc1",
-            "content": "sha256:ebd494f7f614f3207f760fb2d24efd88d432fec481b36dbf413392fa4376b657",
+            "blob": "d8af41bfe0908f05374380a0703fb25af4cd3acb",
+            "content": "sha256:98684e677e93e1686ba96d73c7b38be191a0d0bd807838cf1261d18d81fe8a9a",
             "locator": {
-              "end": 271,
-              "kind": "line_range",
-              "start": 253
+              "kind": "symbol",
+              "name": "Origin"
             }
           },
           "kind": "code"
         }
       ]
     },
-    "13": {
-      "note": "Direct applicability treatment of the selected subject",
+    "16": {
+      "note": "The module re-exports the separate SubjectJudgment owner, which requires a matching selected subject and renders current judgment/proofs openly instead of the removed evidence/assessment branches.\n\nAnchor: exact source span",
       "targets": [
         {
           "anchor": {
-            "blob": "a5275eb0e1935676698eadc6ddd1e957136f6dc1",
-            "content": "sha256:b965358110e73518e2f920714484e1c7312f300c9841ee3785c81436bdaca3de",
+            "blob": "5998106166bd7ead48ac09f5173c06c3cacb5f39",
+            "content": "sha256:9a537c4f259d8e6387f67a8426e2f23197407fa6e00aeea42e92753f646c84bf",
             "locator": {
               "kind": "symbol",
-              "name": "Applicability"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "14": {
-      "note": "Evidence channel for the selected subject",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "a5275eb0e1935676698eadc6ddd1e957136f6dc1",
-            "content": "sha256:7c4a80628d8877b092a0fd6824d0cc886072800a962243f51928f7458c88ab54",
-            "locator": {
-              "kind": "symbol",
-              "name": "SubjectEvidence"
-            }
+              "name": "SubjectJudgment"
+            },
+            "path": "dashboard/src/panels/review/SubjectJudgment.tsx"
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "a5275eb0e1935676698eadc6ddd1e957136f6dc1",
-            "content": "sha256:1ef52114b87889ff87f54a9401f179143cf112738d3f6ba1d08ab8d168a34be3",
+            "blob": "d8af41bfe0908f05374380a0703fb25af4cd3acb",
+            "content": "sha256:b966f4c72eec0efddfc60d9a1b32c20913df0179cd0e63c5c728d7615b9daf93",
             "locator": {
-              "end": 420,
+              "end": 228,
               "kind": "line_range",
-              "start": 402
+              "start": 228
             }
           },
           "kind": "code"
@@ -170,16 +127,15 @@
       ]
     },
     "2": {
-      "note": "The selected statement: the two revisions' authored wording compared by the 13:40 rule (text-first on a tree comparison), labelled with compact revision metadata, and word-diffed by `IntentStatementBody` on a tree comparison.\n\nAnchor: \"export function SelectedStatement({\"; \"const wordDiff = useTreeComparison();\"",
+      "note": "The selected subject now always uses textFirstComparison and IntentStatementBody for admitted compared/added/removed selections; there is no dataset alternative path.",
       "targets": [
         {
           "anchor": {
-            "blob": "3752a210e35717d0b1b067a89cd0dec33e988ea4",
-            "content": "sha256:9635725047309d8545115e099e722d59e8889d6751caa802181b917a1bf43821",
+            "blob": "d8af41bfe0908f05374380a0703fb25af4cd3acb",
+            "content": "sha256:c9cfb750e31f2c7edf37fa3bb22e64283c52d55971873c518b7a25496e19b4e6",
             "locator": {
-              "end": 334,
-              "kind": "line_range",
-              "start": 255
+              "kind": "symbol",
+              "name": "SelectedStatement"
             }
           },
           "kind": "code"
@@ -191,7 +147,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3752a210e35717d0b1b067a89cd0dec33e988ea4",
+            "blob": "d8af41bfe0908f05374380a0703fb25af4cd3acb",
             "content": "sha256:1a0ff3610b504718f3a7383568ab13b477e45789b1d1b9be66c96a79efd6e299",
             "locator": {
               "kind": "symbol",
@@ -202,8 +158,8 @@
         },
         {
           "anchor": {
-            "blob": "3752a210e35717d0b1b067a89cd0dec33e988ea4",
-            "content": "sha256:890a70ebd74a50031ee37e0394e60826f070db5123fab5e27a02664a6cfc2b78",
+            "blob": "d8af41bfe0908f05374380a0703fb25af4cd3acb",
+            "content": "sha256:1c82e41b30ca5aa7079aa4e16d9b620c2cf46b566b99dd9ca7accbaf7ef455d5",
             "locator": {
               "kind": "symbol",
               "name": "statementLabel"
@@ -213,7 +169,7 @@
         },
         {
           "anchor": {
-            "blob": "3752a210e35717d0b1b067a89cd0dec33e988ea4",
+            "blob": "d8af41bfe0908f05374380a0703fb25af4cd3acb",
             "content": "sha256:480d3247349146214494831e0ac268d1bab05dd036d3ab940e421efca6dbb3ea",
             "locator": {
               "kind": "symbol",
@@ -225,11 +181,11 @@
       ]
     },
     "4": {
-      "note": "Each side's authored wording from that side's own member row, else the pane and the field rows filtered to the selected revisions (F1, Q4), with the projected exclusions marked.\n\nAnchor: \"selected.includes(change.item_id)\"",
+      "note": "Each side's authored wording from that side's own member row, else the pane and the field rows filtered to the selected revisions (F1, Q4), with the projected exclusions marked.",
       "targets": [
         {
           "anchor": {
-            "blob": "3752a210e35717d0b1b067a89cd0dec33e988ea4",
+            "blob": "d8af41bfe0908f05374380a0703fb25af4cd3acb",
             "content": "sha256:d3c490352e9734ae3f080556180deffac25a61d7b32beea705546c4cb827ca07",
             "locator": {
               "kind": "symbol",
@@ -240,7 +196,7 @@
         },
         {
           "anchor": {
-            "blob": "3752a210e35717d0b1b067a89cd0dec33e988ea4",
+            "blob": "d8af41bfe0908f05374380a0703fb25af4cd3acb",
             "content": "sha256:c8d63ae4f7302a3fd00e6665121abf1cd4bf0c8df2a49afa62c6da16664f1d9a",
             "locator": {
               "kind": "symbol",
@@ -256,7 +212,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3752a210e35717d0b1b067a89cd0dec33e988ea4",
+            "blob": "d8af41bfe0908f05374380a0703fb25af4cd3acb",
             "content": "sha256:87163ed01259467c71e1ad747dc94c27c1de50b485dbcca7747291f791d63e07",
             "locator": {
               "kind": "symbol",
@@ -268,54 +224,15 @@
       ]
     },
     "6": {
-      "note": "Changed fields named; prose once only with both sides present (F5); one-sided statements as labelled prose (the dataset path).",
+      "note": "Changed authored fields, unchanged statement prose and one-sided labelled statements live in the delegated intent renderer, not removed local bodies.",
       "targets": [
         {
           "anchor": {
-            "blob": "3752a210e35717d0b1b067a89cd0dec33e988ea4",
-            "content": "sha256:3b718bbf60c1e303ac1b3f329e148074c4947b8abaf0271bdeed22cca573f98d",
+            "blob": "8035228691bc89dfc59d344fc409816473ff6df6",
+            "content": "sha256:2e8d7346b2b02511605a3ba9709a7f09869fe310241fe3de7ecbdb6b70260058",
             "locator": {
               "kind": "symbol",
-              "name": "ChangedFields"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "3752a210e35717d0b1b067a89cd0dec33e988ea4",
-            "content": "sha256:cc46312e35c341cf69249f197c5030aa1dce8928010081b98258cb9838de6834",
-            "locator": {
-              "kind": "symbol",
-              "name": "StatementBody"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "3752a210e35717d0b1b067a89cd0dec33e988ea4",
-            "content": "sha256:1d06cd4e998b594b02d624fbd802e301e446b27e41db57da037946b7ec56206f",
-            "locator": {
-              "kind": "symbol",
-              "name": "OneSidedStatement"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "7": {
-      "note": "The tree-comparison statement body and its cases.\n\nAnchor: \"export function IntentStatementBody({\"; \"diffs one revision whose texts differ when %s\"",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "614ec14e1439e60bff77b58274dd261140375aa0",
-            "content": "sha256:a1c4d4b1d13cf041d2bf6cb1083c3efab8dfdfd07faf15dec96917b374dc6e55",
-            "locator": {
-              "end": 613,
-              "kind": "line_range",
-              "start": 557
+              "name": "IntentStatementBody"
             },
             "path": "dashboard/src/panels/review/IntentWordDiff.tsx"
           },
@@ -323,12 +240,65 @@
         },
         {
           "anchor": {
-            "blob": "3d5b09cb94bee944c0558b6a08e7c61804808367",
-            "content": "sha256:09a08bb20ea5ed83132d582ead120eac7acb0453248dfa080c4aa516282c8d3a",
+            "blob": "8035228691bc89dfc59d344fc409816473ff6df6",
+            "content": "sha256:b4b7d4507f895004b17b9f83bb77e9fca4548674ddcb9da2a76d3e0412bce011",
             "locator": {
-              "end": 264,
+              "kind": "symbol",
+              "name": "FieldBody"
+            },
+            "path": "dashboard/src/panels/review/IntentWordDiff.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8035228691bc89dfc59d344fc409816473ff6df6",
+            "content": "sha256:c4301e022188d792abbac0430bfd75ec5eb84ea095629a27ebe33d7ba51866ac",
+            "locator": {
+              "kind": "symbol",
+              "name": "StatementText"
+            },
+            "path": "dashboard/src/panels/review/IntentWordDiff.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8035228691bc89dfc59d344fc409816473ff6df6",
+            "content": "sha256:dbed028f02956b852d2d74ff50f821297df6edc7855c75c969e2a5580784ec67",
+            "locator": {
+              "kind": "symbol",
+              "name": "OneSidedStatement"
+            },
+            "path": "dashboard/src/panels/review/IntentWordDiff.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The current intent body and stored selected-field isolation case are complementary source witnesses, not fresh execution.\n\nAnchor: `reads only the selected revisions' field rows`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8035228691bc89dfc59d344fc409816473ff6df6",
+            "content": "sha256:2e8d7346b2b02511605a3ba9709a7f09869fe310241fe3de7ecbdb6b70260058",
+            "locator": {
+              "kind": "symbol",
+              "name": "IntentStatementBody"
+            },
+            "path": "dashboard/src/panels/review/IntentWordDiff.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "70e7ef18587c0635f9968ddc3fdf159b04f5f6fb",
+            "content": "sha256:158c10c48f9315cf191a4d007a7405de8136e7cb7d7f00be42a3c548bff8a542",
+            "locator": {
+              "end": 267,
               "kind": "line_range",
-              "start": 233
+              "start": 238
             },
             "path": "dashboard/src/panels/review/IntentWordDiff.test.tsx"
           },
@@ -337,36 +307,18 @@
       ]
     },
     "8": {
-      "note": "The rule 3 cases.\n\nAnchor: \"describe('wording unchanged'\"",
+      "note": "The stored wording component cases describe field-sensitive text labels and one-sided rendering, not a current dataset mode or test grade.\n\nAnchor: whole file",
       "targets": [
         {
           "anchor": {
             "blob": "cb1c42c74a23b9615f66c6e0f0032de15ad8e008",
-            "content": "sha256:33a57db326406da899662680ce05b5550cb0ca1f4d4c7e4a901e204248fa7cb4",
+            "content": "sha256:4be26b19188c376c5de20093bb2e4430bd0e6aebf87b29ed605ba58239751cc5",
             "locator": {
-              "end": 135,
-              "kind": "line_range",
-              "start": 53
+              "kind": "file"
             },
             "path": "dashboard/src/panels/review/statementWording.test.tsx"
           },
           "kind": "test"
-        }
-      ]
-    },
-    "9": {
-      "note": "`SubjectEvidence` binds the central account to the supplied subject read.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "3752a210e35717d0b1b067a89cd0dec33e988ea4",
-            "content": "sha256:ff1de57ce20cbfe06b0326d8f51cda6ad9953b2c84c73ea6e0ef53f23c035217",
-            "locator": {
-              "kind": "symbol",
-              "name": "SubjectEvidence"
-            }
-          },
-          "kind": "code"
         }
       ]
     }

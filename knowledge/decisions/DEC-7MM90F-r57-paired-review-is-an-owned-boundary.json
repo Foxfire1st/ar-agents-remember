@@ -1,0 +1,53 @@
+{
+  "admission": {
+    "criteria": [
+      "constrains_future_work"
+    ],
+    "justification": "A future review adapter must not fabricate a missing knowledge half or turn unavailable/unselected knowledge into a favorable comparison."
+  },
+  "alternatives": [
+    {
+      "option": "Compare the selected knowledge subject through the resolved code/memory pair, retaining distinct source-only task context.",
+      "reason": "Appendix151 deliberately keeps paired review and MIK-R50 provides leaf memory. compose_review measures source first, but selected knowledge goes through closed-leaf/pair preflight and the real comparison.",
+      "status": "chosen"
+    },
+    {
+      "option": "Invent an unpaired knowledge judgment or an empty missing memory side so a selected subject can appear compared.",
+      "reason": "It would fabricate a knowledge operand/availability observation and erase the legitimate difference from task-context source review.",
+      "reconsider_when": "An approved requirement defines a truthful unpaired knowledge-review operation, its provenance and its unavailable-side semantics.",
+      "status": "rejected"
+    }
+  ],
+  "consequences": [
+    "A future review adapter must not fabricate a missing knowledge half or turn unavailable/unselected knowledge into a favorable comparison.",
+    "No claim that a task-context source review disappears, that legacy-unavailable means an empty converted tree, or that independent requests share one permanent snapshot."
+  ],
+  "context": "Approved MIK-R57@v2 appendix83/151 and rule6 require this by-design choice to be recorded, not deferred as a gap. Source obligation: MIK-R57@v2 by-design paired-review. This is the requirement-prescribed boundary, not a claim that an undocumented alternative was seriously weighed.",
+  "decider": "Approved MIK-R57@v2 under D18/D47/D48; Curator records the specified boundary under constrains_future_work.",
+  "id": "DEC-7MM90F",
+  "links": [
+    {
+      "relation": "constrains",
+      "target": {
+        "blob": "ac739bfed6942a8a7b701200421aa16e48d35463",
+        "content": "sha256:9aab83a43c586477131ed5c1c7de0b2e799bfc4416af17893f8422a95d94541a",
+        "locator": {
+          "kind": "file"
+        },
+        "path": "mcp/src/agents_remember/application/knowledge_review.py"
+      }
+    }
+  ],
+  "origin": {
+    "handoff": {
+      "path": "freeze11-r57-eight-prescribed-by-design-boundaries-01.json"
+    },
+    "handoffEntry": "CUR-L57-R57-choice-paired-review",
+    "leaf": "260928-MIK-L57",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-decision/v1",
+  "status": "active",
+  "supersedes": []
+}

@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "112a9855157f940bc999dde2c6fba752f6430f5e",
-        "content": "sha256:a69af279a9d52dd259d5c48e9012f2d184ec2c08052ba66c5cec283f7f74cdb0",
+        "blob": "adee3e1164686ae8794d9205dd8877034eb0426e",
+        "content": "sha256:3fc15af756352ef6c5047877b1ab3920f527596c0c54515482d54daac14140e0",
         "locator": {
           "kind": "symbol",
           "name": "_answer"
@@ -21,7 +21,7 @@
     },
     {
       "anchor": {
-        "blob": "112a9855157f940bc999dde2c6fba752f6430f5e",
+        "blob": "adee3e1164686ae8794d9205dd8877034eb0426e",
         "content": "sha256:917218f6cd072fa651459c79b1450851c5b41125b1954120ebbc188af0f1daa1",
         "locator": {
           "kind": "symbol",
@@ -82,6 +82,88 @@
               "kind": "symbol",
               "name": "_family_step"
             }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The module delegates owner-row retrieval and raw-identity resolution to review_history. owner_rows uses the index's exact-owner query, refuses incomplete indexes and retains only admitted owner attempt paths. raw_subject checks the after identity map, optional baseline map and admitted raw identity; baseline supplies no history rows. These helper bodies preserve the removed local behavior.\n\nAnchor: inclusive source ranges",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "adee3e1164686ae8794d9205dd8877034eb0426e",
+            "content": "sha256:3ffa15f8b4d781165f8526dda4df6bc1118b44d51aad786458186761795e4405",
+            "locator": {
+              "end": 55,
+              "kind": "line_range",
+              "start": 55
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "fccd0935574f17332e5452e6abbcf8f0c87d8cc3",
+            "content": "sha256:5052e06f16a5cd4788e12e72af156bbe576a879873663428966ade49f60b8ac7",
+            "locator": {
+              "end": 38,
+              "kind": "line_range",
+              "start": 10
+            },
+            "path": "mcp/src/agents_remember/application/review_history.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "fccd0935574f17332e5452e6abbcf8f0c87d8cc3",
+            "content": "sha256:278f25c0a7076c4e62ddba8ceaa1c51078fe8b6912d4bc2c501156f2867e15ae",
+            "locator": {
+              "end": 58,
+              "kind": "line_range",
+              "start": 41
+            },
+            "path": "mcp/src/agents_remember/application/review_history.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "fccd0935574f17332e5452e6abbcf8f0c87d8cc3",
+            "content": "sha256:51e3ee2717d3a067836eedd0dada0393f857b572f5fb052fed52baa254f8602e",
+            "locator": {
+              "end": 67,
+              "kind": "line_range",
+              "start": 61
+            },
+            "path": "mcp/src/agents_remember/application/review_history.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "86f24d733e3cbbc5a513f6cfb86d2c0849c8dd3e",
+            "content": "sha256:1dc1ee781774b33c39205f0cc309a6cf1e702204c1c17be18a63236c2179b7f4",
+            "locator": {
+              "end": 263,
+              "kind": "line_range",
+              "start": 262
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge_index/query.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7ee163457bbfa37383052b9ad92fda170e8fc57c",
+            "content": "sha256:a6fcf22f2f60f6d0f9cf2b21b8be819e0ca04fc0352f7a6c946b0dd91853597f",
+            "locator": {
+              "end": 154,
+              "kind": "line_range",
+              "start": 145
+            },
+            "path": "mcp/src/agents_remember/models/knowledge_files/documents.py"
           },
           "kind": "code"
         }

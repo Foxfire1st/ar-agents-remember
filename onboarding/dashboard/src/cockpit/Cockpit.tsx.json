@@ -3,12 +3,12 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "7c23fc026184269dcb443c859e6aed12dcc0b0ac",
+        "blob": "9dffc6e41bb9701b7a33ff1b82335a087c154484",
         "content": "sha256:500525aaa1c27e09b36993a4b253f9914e9624131e35ced3f05cd8a96c06cf2f",
         "locator": {
-          "end": 765,
+          "end": 518,
           "kind": "line_range",
-          "start": 710
+          "start": 463
         }
       },
       "id": "RLZ-1Q53AD",
@@ -22,12 +22,12 @@
     },
     {
       "anchor": {
-        "blob": "7c23fc026184269dcb443c859e6aed12dcc0b0ac",
+        "blob": "9dffc6e41bb9701b7a33ff1b82335a087c154484",
         "content": "sha256:500525aaa1c27e09b36993a4b253f9914e9624131e35ced3f05cd8a96c06cf2f",
         "locator": {
-          "end": 765,
+          "end": 518,
           "kind": "line_range",
-          "start": 710
+          "start": 463
         }
       },
       "id": "RLZ-405M48",
@@ -41,7 +41,7 @@
     },
     {
       "anchor": {
-        "blob": "7c23fc026184269dcb443c859e6aed12dcc0b0ac",
+        "blob": "9dffc6e41bb9701b7a33ff1b82335a087c154484",
         "content": "sha256:500525aaa1c27e09b36993a4b253f9914e9624131e35ced3f05cd8a96c06cf2f",
         "locator": {
           "kind": "symbol",
@@ -59,7 +59,7 @@
     },
     {
       "anchor": {
-        "blob": "7c23fc026184269dcb443c859e6aed12dcc0b0ac",
+        "blob": "9dffc6e41bb9701b7a33ff1b82335a087c154484",
         "content": "sha256:29d3d4539fa8862f31ceefba386db2c2bb6805610e1898aeb18a22f4b2ab535f",
         "locator": {
           "kind": "symbol",
@@ -77,7 +77,7 @@
     },
     {
       "anchor": {
-        "blob": "7c23fc026184269dcb443c859e6aed12dcc0b0ac",
+        "blob": "9dffc6e41bb9701b7a33ff1b82335a087c154484",
         "content": "sha256:f2c7b42d4bd6b9463718d09bf3b4e0aa3ee5fbe5621703a3b03f35a74f031323",
         "locator": {
           "kind": "symbol",
@@ -95,7 +95,7 @@
     },
     {
       "anchor": {
-        "blob": "7c23fc026184269dcb443c859e6aed12dcc0b0ac",
+        "blob": "9dffc6e41bb9701b7a33ff1b82335a087c154484",
         "content": "sha256:4d69d5707af5dc8db9b35ba6946016a988176734a494c6a82ffa851172be7d90",
         "locator": {
           "kind": "symbol",
@@ -113,7 +113,7 @@
     },
     {
       "anchor": {
-        "blob": "7c23fc026184269dcb443c859e6aed12dcc0b0ac",
+        "blob": "9dffc6e41bb9701b7a33ff1b82335a087c154484",
         "content": "sha256:ab381fa39ef1b0eafc49c03f625ed3e711249682ff8ff69844f17ca13021aa90",
         "locator": {
           "kind": "symbol",
@@ -131,12 +131,12 @@
     },
     {
       "anchor": {
-        "blob": "7c23fc026184269dcb443c859e6aed12dcc0b0ac",
+        "blob": "9dffc6e41bb9701b7a33ff1b82335a087c154484",
         "content": "sha256:ffaaad5daaeed93b8e273cc7db34c010926e5c65a1c4c6b0f7363ce1299f2f50",
         "locator": {
-          "end": 408,
+          "end": 161,
           "kind": "line_range",
-          "start": 404
+          "start": 157
         }
       },
       "id": "RLZ-FZBMHD",
@@ -150,12 +150,12 @@
     },
     {
       "anchor": {
-        "blob": "7c23fc026184269dcb443c859e6aed12dcc0b0ac",
+        "blob": "9dffc6e41bb9701b7a33ff1b82335a087c154484",
         "content": "sha256:8159a9f1af02644e3f7b7d0d71e053f914a2d8f225331e632e26ef0ce230396c",
         "locator": {
-          "end": 942,
+          "end": 696,
           "kind": "line_range",
-          "start": 928
+          "start": 682
         }
       },
       "id": "RLZ-GKR34V",
@@ -164,12 +164,12 @@
         "handoffEntry": "L168-CUR-M2-21-N12",
         "leaf": "260928-MIK-L168"
       },
-      "rationale": "TopBar subscribes directly to served taskCounts and enumerates its seven supplied fields instead of calculating task totals from lifecycle metrics; independent queue/generatedAt remain separate.",
+      "rationale": "TopBar subscribes directly to the served taskCounts and enumerates its six supplied fields instead of calculating task totals from lifecycle metrics; it suppresses works and paused while host activity is unknown, and independent queue/generatedAt remain separate.",
       "role": "presentation"
     },
     {
       "anchor": {
-        "blob": "7c23fc026184269dcb443c859e6aed12dcc0b0ac",
+        "blob": "9dffc6e41bb9701b7a33ff1b82335a087c154484",
         "content": "sha256:f2c7b42d4bd6b9463718d09bf3b4e0aa3ee5fbe5621703a3b03f35a74f031323",
         "locator": {
           "kind": "symbol",
@@ -187,12 +187,12 @@
     },
     {
       "anchor": {
-        "blob": "7c23fc026184269dcb443c859e6aed12dcc0b0ac",
+        "blob": "9dffc6e41bb9701b7a33ff1b82335a087c154484",
         "content": "sha256:40c2c67ff64a4d59bb8db430c39479f1d6bd0cb50090804414990136514daf45",
         "locator": {
-          "end": 634,
+          "end": 387,
           "kind": "line_range",
-          "start": 603
+          "start": 356
         }
       },
       "id": "RLZ-PPNW5M",
@@ -206,12 +206,12 @@
     },
     {
       "anchor": {
-        "blob": "7c23fc026184269dcb443c859e6aed12dcc0b0ac",
+        "blob": "9dffc6e41bb9701b7a33ff1b82335a087c154484",
         "content": "sha256:f913c27a9192b5b9bd42ffe35c97ac624638ef212709341fc2bd14bedef097f6",
         "locator": {
-          "end": 685,
+          "end": 438,
           "kind": "line_range",
-          "start": 670
+          "start": 423
         }
       },
       "id": "RLZ-VF6VZ5",
@@ -220,17 +220,17 @@
         "handoffEntry": "MIK-R122@v1 rule 6",
         "leaf": "260928-MIK-L122"
       },
-      "rationale": "The railView-controlled keepalive wrapper hides the chat exactly when the river shows; the outer fullBleed rail stays visible regardless, so reachability is the wrapper doing.",
+      "rationale": "The inner keepalive wrapper uses display:none and aria-hidden when railView is not chat. Its DocumentChat active flag requires railView to be chat and fullBleed to be false. This anchor covers the inner hiding construct and that active predicate; it does not establish unconditional visibility of the outer fullBleed rail.",
       "role": "primary-authority"
     },
     {
       "anchor": {
-        "blob": "7c23fc026184269dcb443c859e6aed12dcc0b0ac",
+        "blob": "9dffc6e41bb9701b7a33ff1b82335a087c154484",
         "content": "sha256:64cc963d7185772de2377f6df8b25f628adb638073399e4636cafdaf23f475c9",
         "locator": {
-          "end": 956,
+          "end": 710,
           "kind": "line_range",
-          "start": 951
+          "start": 705
         }
       },
       "id": "RLZ-XT3RN1",
@@ -239,12 +239,12 @@
         "handoffEntry": "L168-CUR-M2-21-N13",
         "leaf": "260928-MIK-L168"
       },
-      "rationale": "Header bucket wording uses shared statusLabel for the seven native stage/activity keys. The local filter hides only a zero unknown bucket; this link does not add that one-site visibility predicate to the invariant.",
+      "rationale": "Header bucket wording uses the shared statusLabel for the six native stage/activity keys. There is no unknown bucket to hide, and this link adds no visibility predicate to the invariant.",
       "role": "presentation"
     },
     {
       "anchor": {
-        "blob": "7c23fc026184269dcb443c859e6aed12dcc0b0ac",
+        "blob": "9dffc6e41bb9701b7a33ff1b82335a087c154484",
         "content": "sha256:914583cacaaa8eaf18a2191473e655b54bdcd5382fcf83accfaaf27a836cfd2d",
         "locator": {
           "kind": "symbol",
@@ -267,10 +267,11 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f2a0c19687a17a6ccf7f4639369c323139256b91",
-            "content": "sha256:403ce849f016995d80f9a15045834c90e5044963798787138719f11ab461e9b6",
+            "blob": "9dffc6e41bb9701b7a33ff1b82335a087c154484",
+            "content": "sha256:29d3d4539fa8862f31ceefba386db2c2bb6805610e1898aeb18a22f4b2ab535f",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "VIEWS"
             }
           },
           "kind": "code"
@@ -278,14 +279,26 @@
       ]
     },
     "33": {
-      "note": "The shell opens on Chats and renders the retained layers.",
+      "note": "The shell defaults to Chats; a valid review hash selects Operations and a valid knowledge-reader hash selects Knowledge. Persistent product layers remain mounted independently of takeover selection.\n\nAnchor: `CockpitShell` `useCockpitShellState`",
       "targets": [
         {
           "anchor": {
-            "blob": "f2a0c19687a17a6ccf7f4639369c323139256b91",
-            "content": "sha256:403ce849f016995d80f9a15045834c90e5044963798787138719f11ab461e9b6",
+            "blob": "9dffc6e41bb9701b7a33ff1b82335a087c154484",
+            "content": "sha256:914583cacaaa8eaf18a2191473e655b54bdcd5382fcf83accfaaf27a836cfd2d",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "CockpitShell"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9dffc6e41bb9701b7a33ff1b82335a087c154484",
+            "content": "sha256:e50724c1a1f5636830f4077e385677a323da62eafcfd01aaf41535596248780d",
+            "locator": {
+              "kind": "symbol",
+              "name": "useCockpitShellState"
             }
           },
           "kind": "code"
@@ -297,10 +310,11 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f2a0c19687a17a6ccf7f4639369c323139256b91",
-            "content": "sha256:403ce849f016995d80f9a15045834c90e5044963798787138719f11ab461e9b6",
+            "blob": "9dffc6e41bb9701b7a33ff1b82335a087c154484",
+            "content": "sha256:500525aaa1c27e09b36993a4b253f9914e9624131e35ced3f05cd8a96c06cf2f",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "MainLayers"
             }
           },
           "kind": "code"
@@ -312,10 +326,11 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f2a0c19687a17a6ccf7f4639369c323139256b91",
-            "content": "sha256:403ce849f016995d80f9a15045834c90e5044963798787138719f11ab461e9b6",
+            "blob": "9dffc6e41bb9701b7a33ff1b82335a087c154484",
+            "content": "sha256:e50724c1a1f5636830f4077e385677a323da62eafcfd01aaf41535596248780d",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "useCockpitShellState"
             }
           },
           "kind": "code"
@@ -327,10 +342,11 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f2a0c19687a17a6ccf7f4639369c323139256b91",
-            "content": "sha256:403ce849f016995d80f9a15045834c90e5044963798787138719f11ab461e9b6",
+            "blob": "9dffc6e41bb9701b7a33ff1b82335a087c154484",
+            "content": "sha256:500525aaa1c27e09b36993a4b253f9914e9624131e35ced3f05cd8a96c06cf2f",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "MainLayers"
             }
           },
           "kind": "code"
@@ -342,10 +358,11 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f2a0c19687a17a6ccf7f4639369c323139256b91",
-            "content": "sha256:403ce849f016995d80f9a15045834c90e5044963798787138719f11ab461e9b6",
+            "blob": "9dffc6e41bb9701b7a33ff1b82335a087c154484",
+            "content": "sha256:306832e2054f2394fcd3196d50acce4eda3ce48b61027b6db3c6995d8bb91a1b",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "ViewLayer"
             }
           },
           "kind": "code"
@@ -353,12 +370,12 @@
       ]
     },
     "38": {
-      "note": "The mode-bar primitive that renders the product entries.\n\nAnchor: `ModeBar`",
+      "note": "The mode-bar primitive that renders the product entries.",
       "targets": [
         {
           "anchor": {
-            "blob": "a925093c75fc1c8ca373c37b48dbd315028e2d33",
-            "content": "sha256:dad9c6baca72127fe4b12f31eca7bb7c057e146ba03cee8ae6e156a0363c523f",
+            "blob": "bcc511bf68fd8d89365ba2b47d20c43a86469f44",
+            "content": "sha256:921ce3936f37598a6d974e6bad08740bc13b0b7e6b102bad4d72570b039b65a3",
             "locator": {
               "kind": "file"
             },
@@ -369,7 +386,7 @@
       ]
     },
     "39": {
-      "note": "The Knowledge reader the retained layer mounts.\n\nAnchor: `KnowledgeReader`",
+      "note": "The Knowledge reader the retained layer mounts.",
       "targets": [
         {
           "anchor": {
@@ -389,10 +406,11 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f2a0c19687a17a6ccf7f4639369c323139256b91",
-            "content": "sha256:403ce849f016995d80f9a15045834c90e5044963798787138719f11ab461e9b6",
+            "blob": "9dffc6e41bb9701b7a33ff1b82335a087c154484",
+            "content": "sha256:914583cacaaa8eaf18a2191473e655b54bdcd5382fcf83accfaaf27a836cfd2d",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "CockpitShell"
             }
           },
           "kind": "code"
@@ -400,14 +418,27 @@
       ]
     },
     "65": {
-      "note": "The body grid bleed variant switches between three railed columns and a single full-width column.",
+      "note": "The imported bodyGrid declares railed versus full-bleed columns; RailedBody applies saved widths only on a wide railed view and uses one column when the live narrow-layout hook matches.\n\nAnchor: `bodyGrid` `RailedBody`",
       "targets": [
         {
           "anchor": {
-            "blob": "f2a0c19687a17a6ccf7f4639369c323139256b91",
-            "content": "sha256:403ce849f016995d80f9a15045834c90e5044963798787138719f11ab461e9b6",
+            "blob": "bd38e5290e2843a3c4222a6e381b949b47d32e28",
+            "content": "sha256:9ae39934e802581d4d4d10a61c55ac5f752ad913b4119f0c8cedde7298f75c7d",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "bodyGrid"
+            },
+            "path": "dashboard/src/cockpit/layout.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9dffc6e41bb9701b7a33ff1b82335a087c154484",
+            "content": "sha256:f8bd185be1707e5e1fc67dab55f01a9a03153e41ee3b33d54658d3ce68684cf8",
+            "locator": {
+              "kind": "symbol",
+              "name": "RailedBody"
             }
           },
           "kind": "code"
@@ -419,10 +450,11 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f2a0c19687a17a6ccf7f4639369c323139256b91",
-            "content": "sha256:403ce849f016995d80f9a15045834c90e5044963798787138719f11ab461e9b6",
+            "blob": "9dffc6e41bb9701b7a33ff1b82335a087c154484",
+            "content": "sha256:e50724c1a1f5636830f4077e385677a323da62eafcfd01aaf41535596248780d",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "useCockpitShellState"
             }
           },
           "kind": "code"
@@ -434,10 +466,11 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f2a0c19687a17a6ccf7f4639369c323139256b91",
-            "content": "sha256:403ce849f016995d80f9a15045834c90e5044963798787138719f11ab461e9b6",
+            "blob": "9dffc6e41bb9701b7a33ff1b82335a087c154484",
+            "content": "sha256:e50724c1a1f5636830f4077e385677a323da62eafcfd01aaf41535596248780d",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "useCockpitShellState"
             }
           },
           "kind": "code"
@@ -445,14 +478,27 @@
       ]
     },
     "68": {
-      "note": "The `chatsLayer` keep-alive class used by the Chats layer.",
+      "note": "The `chatsLayer` keep-alive class used by the Chats layer.\n\nAnchor: `chatsLayer` `MainLayers`",
       "targets": [
         {
           "anchor": {
-            "blob": "f2a0c19687a17a6ccf7f4639369c323139256b91",
-            "content": "sha256:403ce849f016995d80f9a15045834c90e5044963798787138719f11ab461e9b6",
+            "blob": "bd38e5290e2843a3c4222a6e381b949b47d32e28",
+            "content": "sha256:a718b57c94ebdab2db2252696e298395cb07ff64be08c414db4f154b56441399",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "chatsLayer"
+            },
+            "path": "dashboard/src/cockpit/layout.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9dffc6e41bb9701b7a33ff1b82335a087c154484",
+            "content": "sha256:500525aaa1c27e09b36993a4b253f9914e9624131e35ced3f05cd8a96c06cf2f",
+            "locator": {
+              "kind": "symbol",
+              "name": "MainLayers"
             }
           },
           "kind": "code"
@@ -464,10 +510,11 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f2a0c19687a17a6ccf7f4639369c323139256b91",
-            "content": "sha256:403ce849f016995d80f9a15045834c90e5044963798787138719f11ab461e9b6",
+            "blob": "9dffc6e41bb9701b7a33ff1b82335a087c154484",
+            "content": "sha256:1d7c9e5c076b3198664d85b740ca896c119d57f87cb3528d1d4041a70f47bb63",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "EffectsToggle"
             }
           },
           "kind": "code"
@@ -475,16 +522,16 @@
       ]
     },
     "70": {
-      "note": "The boot-time effects flag it persists to.\n\nAnchor: `calm-cockpit`",
+      "note": "The boot-time effects flag it persists to.",
       "targets": [
         {
           "anchor": {
-            "blob": "7b235ae6d40f2ffc6897ad451c87b3bae5b873e9",
-            "content": "sha256:32163839fde1d2afa46e8c39fc3bcaf196e94fc02aa0a5d47098d392e3159c50",
+            "blob": "bfa67cd00c85c1ea3eda8dec05ee8089f3eae10e",
+            "content": "sha256:9a6d833b0b979936952da4450b45712143440c2c84a21423befd33c5cbdc8e03",
             "locator": {
-              "end": 16,
+              "end": 14,
               "kind": "line_range",
-              "start": 12
+              "start": 9
             },
             "path": "dashboard/src/main.tsx"
           },
@@ -506,19 +553,6 @@
             "path": "dashboard/src/panels/engine-room/useShouldAnimate.ts"
           },
           "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "5045a0dfe298de1b76c82e4326d5f177dbd5bc70",
-            "content": "sha256:7eedf1a31aea446e506e11b8b30a0d1213e90b714b9501707e7c848d56d21ca6",
-            "locator": {
-              "end": 20,
-              "kind": "line_range",
-              "start": 12
-            },
-            "path": "dashboard/src/panels/engine-room/useShouldAnimate.ts"
-          },
-          "kind": "code"
         }
       ]
     },
@@ -527,23 +561,11 @@
       "targets": [
         {
           "anchor": {
-            "blob": "01fba3cb6e8f87f6cb5855729b1ff805ef49457e",
-            "content": "sha256:4a41317e0bd61197a0cacd9282a3f82478b4151f0b339810a3adb96b072ad0af",
+            "blob": "9dffc6e41bb9701b7a33ff1b82335a087c154484",
+            "content": "sha256:ab381fa39ef1b0eafc49c03f625ed3e711249682ff8ff69844f17ca13021aa90",
             "locator": {
               "kind": "symbol",
               "name": "Cockpit"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "01fba3cb6e8f87f6cb5855729b1ff805ef49457e",
-            "content": "sha256:eacdd0229be6c6b7e9e74d0d0b9f59b2f454bb2d567ec44e1113db5bd9b34f17",
-            "locator": {
-              "end": 363,
-              "kind": "line_range",
-              "start": 350
             }
           },
           "kind": "code"
@@ -555,8 +577,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f2a0c19687a17a6ccf7f4639369c323139256b91",
-            "content": "sha256:403ce849f016995d80f9a15045834c90e5044963798787138719f11ab461e9b6",
+            "blob": "9dffc6e41bb9701b7a33ff1b82335a087c154484",
+            "content": "sha256:c2dba0bd0ca0b873554bec03c99fc61d0280375361a74438758acc9dd33a6eba",
             "locator": {
               "kind": "file"
             }
@@ -570,7 +592,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8491fd4fd23fcb220157d46e63d31917682590df",
+            "blob": "8ec5f222a6d97528f9484c56a1ff060446b461ff",
             "content": "sha256:eda6257fecd133947c26ef85ac6ee28147c69d3f84870f1fc64117e4b907ba15",
             "locator": {
               "kind": "symbol",
@@ -588,10 +610,10 @@
         {
           "anchor": {
             "blob": "27ab725f01e310493256da673c0f870a77b85bbf",
-            "content": "sha256:56d879b8f546a2afd9edcc95544586acccf0d5aa279185fb83b6c05b3055d47e",
+            "content": "sha256:f3fd8d9b953873913ef26a4806484859a2b8340b498813d5633ffe3916a5f796",
             "locator": {
               "kind": "symbol",
-              "name": "engineProcesses"
+              "name": "Analytics"
             },
             "path": "dashboard/src/types/projection.ts"
           },
@@ -604,10 +626,11 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f2a0c19687a17a6ccf7f4639369c323139256b91",
-            "content": "sha256:403ce849f016995d80f9a15045834c90e5044963798787138719f11ab461e9b6",
+            "blob": "9dffc6e41bb9701b7a33ff1b82335a087c154484",
+            "content": "sha256:500525aaa1c27e09b36993a4b253f9914e9624131e35ced3f05cd8a96c06cf2f",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "MainLayers"
             }
           },
           "kind": "code"
@@ -615,14 +638,15 @@
       ]
     },
     "89": {
-      "note": "The reviewed UI contract owner `RoleChatsPane`.",
+      "note": "MainLayers directly mounts RoleChatsPane with the shared task array and active visibility/takeover predicate; its native host transport remains a separate owner.",
       "targets": [
         {
           "anchor": {
-            "blob": "f2a0c19687a17a6ccf7f4639369c323139256b91",
-            "content": "sha256:403ce849f016995d80f9a15045834c90e5044963798787138719f11ab461e9b6",
+            "blob": "9dffc6e41bb9701b7a33ff1b82335a087c154484",
+            "content": "sha256:500525aaa1c27e09b36993a4b253f9914e9624131e35ced3f05cd8a96c06cf2f",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "MainLayers"
             }
           },
           "kind": "code"
@@ -634,10 +658,11 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f2a0c19687a17a6ccf7f4639369c323139256b91",
-            "content": "sha256:403ce849f016995d80f9a15045834c90e5044963798787138719f11ab461e9b6",
+            "blob": "9dffc6e41bb9701b7a33ff1b82335a087c154484",
+            "content": "sha256:306832e2054f2394fcd3196d50acce4eda3ce48b61027b6db3c6995d8bb91a1b",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "ViewLayer"
             }
           },
           "kind": "code"
@@ -645,12 +670,12 @@
       ]
     },
     "91": {
-      "note": "The sole Chats destination mounts RoleChatsPane directly, has no Chats-mode selector or SessionsView child, and keeps the pane identity while hiding/showing the existing layer.",
+      "note": "Stored cockpit regression source covering retained product views; it is source evidence, not a fresh test, browser or performance result.",
       "targets": [
         {
           "anchor": {
-            "blob": "310ecdeb85c617d0ac5a90969e89d37249179541",
-            "content": "sha256:1e115ab472bf80aa6417eb9ade629c8ac90165be320582224271f38ea826e93e",
+            "blob": "179bdf56092d03a6ed7c1f6b76a0c3f0df227faf",
+            "content": "sha256:42cbb7ec6424d4e486c006f8cfde71b46aa1b5aae6d0663b601c83a9d3079f8a",
             "locator": {
               "kind": "file"
             },
@@ -665,7 +690,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7c23fc026184269dcb443c859e6aed12dcc0b0ac",
+            "blob": "9dffc6e41bb9701b7a33ff1b82335a087c154484",
             "content": "sha256:f2c7b42d4bd6b9463718d09bf3b4e0aa3ee5fbe5621703a3b03f35a74f031323",
             "locator": {
               "kind": "symbol",
@@ -677,16 +702,15 @@
       ]
     },
     "93": {
-      "note": "The hidden chat side stays mounted but out of reach behind display:none and aria-hidden.\n\nAnchor: Hidden chat wrapper",
+      "note": "The hidden chat side stays mounted but out of reach behind display:none and aria-hidden.",
       "targets": [
         {
           "anchor": {
-            "blob": "7c23fc026184269dcb443c859e6aed12dcc0b0ac",
-            "content": "sha256:11f4665b48fb6a4ca1da3188309cd19a568e18b4a7a32959dd0c287750e17585",
+            "blob": "9dffc6e41bb9701b7a33ff1b82335a087c154484",
+            "content": "sha256:f2c7b42d4bd6b9463718d09bf3b4e0aa3ee5fbe5621703a3b03f35a74f031323",
             "locator": {
-              "end": 679,
-              "kind": "line_range",
-              "start": 670
+              "kind": "symbol",
+              "name": "RightRail"
             }
           },
           "kind": "code"
@@ -698,42 +722,27 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7c23fc026184269dcb443c859e6aed12dcc0b0ac",
-            "content": "sha256:faa494dd02243b7580d138cc3911a8f2a610c2bfc4ad55b3d56f32c0a019cefc",
+            "blob": "9dffc6e41bb9701b7a33ff1b82335a087c154484",
+            "content": "sha256:4d69d5707af5dc8db9b35ba6946016a988176734a494c6a82ffa851172be7d90",
             "locator": {
-              "end": 955,
-              "kind": "line_range",
-              "start": 926
+              "kind": "symbol",
+              "name": "TopBar"
             }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "901cf61d779e58bf30849e0eea78a9123b9792fd",
-            "content": "sha256:e70bd580be7d810fd3737b71d0e75824dbcb9349ac8520fa1998c93ec7cd78b5",
-            "locator": {
-              "end": 91,
-              "kind": "line_range",
-              "start": 67
-            },
-            "path": "dashboard/src/panels/detail-panel/pageParts.tsx"
           },
           "kind": "code"
         }
       ]
     },
     "95": {
-      "note": "Native task selection and memoization are separate from the Engine Room stable-empty fallback.\n\nAnchor: Native selectors",
+      "note": "Native task selection and memoization are separate from the Engine Room stable-empty fallback.",
       "targets": [
         {
           "anchor": {
-            "blob": "7c23fc026184269dcb443c859e6aed12dcc0b0ac",
-            "content": "sha256:ffaaad5daaeed93b8e273cc7db34c010926e5c65a1c4c6b0f7363ce1299f2f50",
+            "blob": "9dffc6e41bb9701b7a33ff1b82335a087c154484",
+            "content": "sha256:e50724c1a1f5636830f4077e385677a323da62eafcfd01aaf41535596248780d",
             "locator": {
-              "end": 408,
-              "kind": "line_range",
-              "start": 404
+              "kind": "symbol",
+              "name": "useCockpitShellState"
             }
           },
           "kind": "code"
@@ -741,11 +750,11 @@
       ]
     },
     "96": {
-      "note": "The shell starts the screen wake lock once on mount; the wake-lock helper follows document visibility and releases its held sentinel on stop.",
+      "note": "The shell starts the screen wake lock once on mount; the wake-lock helper follows document visibility and releases its held sentinel on stop.\n\nAnchor: `CockpitShell` `startScreenWakeLock`",
       "targets": [
         {
           "anchor": {
-            "blob": "7c23fc026184269dcb443c859e6aed12dcc0b0ac",
+            "blob": "9dffc6e41bb9701b7a33ff1b82335a087c154484",
             "content": "sha256:914583cacaaa8eaf18a2191473e655b54bdcd5382fcf83accfaaf27a836cfd2d",
             "locator": {
               "kind": "symbol",
@@ -763,6 +772,109 @@
               "name": "startScreenWakeLock"
             },
             "path": "dashboard/src/data/screenWakeLock.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "97": {
+      "note": "Review URL state is delegated to reviewHash: valid repo/master/leaf links choose the review takeover, history=recorded selects its durable view, and same-address hash navigation preserves the mounted reviewer subject. Hashes do not carry subject selection or choose source files.\n\nAnchor: `useCockpitShellState` `parseReviewHash` `useReviewHash`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9dffc6e41bb9701b7a33ff1b82335a087c154484",
+            "content": "sha256:e50724c1a1f5636830f4077e385677a323da62eafcfd01aaf41535596248780d",
+            "locator": {
+              "kind": "symbol",
+              "name": "useCockpitShellState"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "41eb57199da4ee9956cf8c32e5bd87324772daec",
+            "content": "sha256:13c7ade713d8f4284ac157756841a0dea09d47d93d418749215d2fd4ef97a480",
+            "locator": {
+              "kind": "symbol",
+              "name": "parseReviewHash"
+            },
+            "path": "dashboard/src/cockpit/reviewHash.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "41eb57199da4ee9956cf8c32e5bd87324772daec",
+            "content": "sha256:78ce4bd646d453c3a4c1a8e3e1939aae6cd8e01e5f6cadac100736e6221f12f0",
+            "locator": {
+              "kind": "symbol",
+              "name": "useReviewHash"
+            },
+            "path": "dashboard/src/cockpit/reviewHash.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "98": {
+      "note": "At at-most40rem the extracted shell layout admits vertical overflow and single-column railed content, while the change/review takeover becomes fixed to the viewport. Both the layout declaration and its actual shell/takeover call sites own this responsive boundary.\n\nAnchor: `shell` `takeoverBody` `useNarrowCockpit` `RailedBody` `ChangeSetTakeover`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bd38e5290e2843a3c4222a6e381b949b47d32e28",
+            "content": "sha256:a2ebce6047039f8694e3ff8d9c840c2ce1a89dfef4384b83555ad3c8b830dc97",
+            "locator": {
+              "kind": "symbol",
+              "name": "shell"
+            },
+            "path": "dashboard/src/cockpit/layout.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "bd38e5290e2843a3c4222a6e381b949b47d32e28",
+            "content": "sha256:473d12aa52e55e5988d86b0a406eff38adf7a8918e0356012f66c81d4b5942b5",
+            "locator": {
+              "kind": "symbol",
+              "name": "takeoverBody"
+            },
+            "path": "dashboard/src/cockpit/layout.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "bd38e5290e2843a3c4222a6e381b949b47d32e28",
+            "content": "sha256:0c7a1807a5bf82abf778ac65823886185e7f7304787eb7a5ffe351a58c4f64b6",
+            "locator": {
+              "kind": "symbol",
+              "name": "useNarrowCockpit"
+            },
+            "path": "dashboard/src/cockpit/layout.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9dffc6e41bb9701b7a33ff1b82335a087c154484",
+            "content": "sha256:f8bd185be1707e5e1fc67dab55f01a9a03153e41ee3b33d54658d3ce68684cf8",
+            "locator": {
+              "kind": "symbol",
+              "name": "RailedBody"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9dffc6e41bb9701b7a33ff1b82335a087c154484",
+            "content": "sha256:f25b2b3c3741760705bda321539bf5b1f56bb7804f74be4a246497ac98eb7a86",
+            "locator": {
+              "kind": "symbol",
+              "name": "ChangeSetTakeover"
+            }
           },
           "kind": "code"
         }

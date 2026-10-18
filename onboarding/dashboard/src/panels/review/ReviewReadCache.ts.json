@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "28f6044cf9b2ac4f04bd050f54dc1a360b9f7505",
+        "blob": "07826420000445ac2a933cfea990adcb4ec951b6",
         "content": "sha256:3698bfaf7a0f06e787c9dca3ee519a8df0814bac97a28142d55c2bb348bc9d4f",
         "locator": {
           "kind": "symbol",
@@ -21,7 +21,7 @@
     },
     {
       "anchor": {
-        "blob": "28f6044cf9b2ac4f04bd050f54dc1a360b9f7505",
+        "blob": "07826420000445ac2a933cfea990adcb4ec951b6",
         "content": "sha256:388989d8785694a37b2aa397d12d7928455f755b6dd88ff7ab9b5c0ae143183b",
         "locator": {
           "kind": "symbol",
@@ -39,8 +39,8 @@
     },
     {
       "anchor": {
-        "blob": "28f6044cf9b2ac4f04bd050f54dc1a360b9f7505",
-        "content": "sha256:6ec2f353b3919af83d0df587c843cceff7ab8cf5c4b33272c60be6f4f497ad9b",
+        "blob": "07826420000445ac2a933cfea990adcb4ec951b6",
+        "content": "sha256:e6945a75e38c4aa7e4f26d676519426a95ac1dc59309331beb4b618ff1eb0e7f",
         "locator": {
           "kind": "symbol",
           "name": "ReviewReadCache"
@@ -61,7 +61,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "28f6044cf9b2ac4f04bd050f54dc1a360b9f7505",
+            "blob": "07826420000445ac2a933cfea990adcb4ec951b6",
             "content": "sha256:96bd0a7a17bf5fbb8a3152261527288e88d45170316551fed5e4b44db4fa5781",
             "locator": {
               "end": 23,
@@ -74,11 +74,11 @@
       ]
     },
     "15": {
-      "note": "The two bounds.",
+      "note": "The two bounds.\n\nAnchor: `REVIEW_CACHE_LIMIT`, `SOURCE_CACHE_LIMIT`",
       "targets": [
         {
           "anchor": {
-            "blob": "28f6044cf9b2ac4f04bd050f54dc1a360b9f7505",
+            "blob": "07826420000445ac2a933cfea990adcb4ec951b6",
             "content": "sha256:e23c9fffb91786b70f478e9fa62606c2e97fe76f143d98031b2c8ca00575fb09",
             "locator": {
               "kind": "symbol",
@@ -89,7 +89,7 @@
         },
         {
           "anchor": {
-            "blob": "28f6044cf9b2ac4f04bd050f54dc1a360b9f7505",
+            "blob": "07826420000445ac2a933cfea990adcb4ec951b6",
             "content": "sha256:9548dc5972046f4df005ba1f846ab4b1be6a1786414de629f130307b51d85022",
             "locator": {
               "kind": "symbol",
@@ -105,7 +105,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "28f6044cf9b2ac4f04bd050f54dc1a360b9f7505",
+            "blob": "07826420000445ac2a933cfea990adcb4ec951b6",
             "content": "sha256:a53eec38fc524a718bad750a78a7a8d714567413349021b550b695ab51d4ceae",
             "locator": {
               "kind": "symbol",
@@ -121,7 +121,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "28f6044cf9b2ac4f04bd050f54dc1a360b9f7505",
+            "blob": "07826420000445ac2a933cfea990adcb4ec951b6",
             "content": "sha256:388989d8785694a37b2aa397d12d7928455f755b6dd88ff7ab9b5c0ae143183b",
             "locator": {
               "kind": "symbol",
@@ -137,7 +137,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "28f6044cf9b2ac4f04bd050f54dc1a360b9f7505",
+            "blob": "07826420000445ac2a933cfea990adcb4ec951b6",
             "content": "sha256:3698bfaf7a0f06e787c9dca3ee519a8df0814bac97a28142d55c2bb348bc9d4f",
             "locator": {
               "kind": "symbol",
@@ -153,7 +153,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "28f6044cf9b2ac4f04bd050f54dc1a360b9f7505",
+            "blob": "07826420000445ac2a933cfea990adcb4ec951b6",
             "content": "sha256:258cc647bf202adc5dc0da0e4a7e69cf2a8e39f965230237d5a5f9e4feacec2b",
             "locator": {
               "kind": "symbol",
@@ -165,12 +165,12 @@
       ]
     },
     "20": {
-      "note": "The cache: observe, keep, keep unshown, forget, and sources kept only as content with an expansion.",
+      "note": "The cache separates generation changes clearing both stores from input-epoch invalidation clearing whole reviews only.",
       "targets": [
         {
           "anchor": {
-            "blob": "28f6044cf9b2ac4f04bd050f54dc1a360b9f7505",
-            "content": "sha256:6ec2f353b3919af83d0df587c843cceff7ab8cf5c4b33272c60be6f4f497ad9b",
+            "blob": "07826420000445ac2a933cfea990adcb4ec951b6",
+            "content": "sha256:e6945a75e38c4aa7e4f26d676519426a95ac1dc59309331beb4b618ff1eb0e7f",
             "locator": {
               "kind": "symbol",
               "name": "ReviewReadCache"
@@ -185,7 +185,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "28f6044cf9b2ac4f04bd050f54dc1a360b9f7505",
+            "blob": "07826420000445ac2a933cfea990adcb4ec951b6",
             "content": "sha256:874ec9bcb067a10e432e2cd1ff53305de4c70fefebbe03e4f3a9f5244d2d2f29",
             "locator": {
               "kind": "symbol",
@@ -201,7 +201,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "035768698be6a583041c67e462c149c44d5ba459",
+            "blob": "74f29568a6476be3bfdd727c3d8db942bc0cc105",
             "content": "sha256:625cb7a072f6849b771085ee0fe24bf3753284790e53ec61d2cb104e07c6d30c",
             "locator": {
               "kind": "symbol",
@@ -218,8 +218,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c39f52a3070e7ea5ae990de1c13944060f41f81e",
-            "content": "sha256:d6f53a08c3f009d6ec1fab9421c91864471014e12a0b71c5b30904463fafd8d0",
+            "blob": "ea4a25a184fd55e7859a3d6c4589e75d6646e280",
+            "content": "sha256:3a73327b6d72c7336b512184b1cb846ce91a611c53914f9317d86b624e5d429e",
             "locator": {
               "kind": "symbol",
               "name": "startRead"
@@ -235,12 +235,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c39f52a3070e7ea5ae990de1c13944060f41f81e",
+            "blob": "ea4a25a184fd55e7859a3d6c4589e75d6646e280",
             "content": "sha256:66c6fb4afc210ebef8199ba3c541db6eef69f04b5104818b9eb879a966b7ebb8",
             "locator": {
-              "end": 451,
+              "end": 474,
               "kind": "line_range",
-              "start": 435
+              "start": 458
             },
             "path": "dashboard/src/panels/review/ReviewReadCycle.ts"
           },
@@ -253,12 +253,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f7e576bc05a33889caaab2fe6c0396c6d8805922",
+            "blob": "bb94e003292e3a408d3607472dacd850e1f8da65",
             "content": "sha256:3b851b48f28251be0fccb422a491486d50dceed2348a047b151e513d79ffdac9",
             "locator": {
-              "end": 744,
+              "end": 677,
               "kind": "line_range",
-              "start": 743
+              "start": 676
             },
             "path": "dashboard/src/panels/review/ReviewSurface.tsx"
           },
@@ -266,12 +266,12 @@
         },
         {
           "anchor": {
-            "blob": "f7e576bc05a33889caaab2fe6c0396c6d8805922",
+            "blob": "bb94e003292e3a408d3607472dacd850e1f8da65",
             "content": "sha256:cb4084938560d0dbf70f470f707d28a0fcd6cfad905f2c25ebf8ee9bd3b29872",
             "locator": {
-              "end": 870,
+              "end": 805,
               "kind": "line_range",
-              "start": 870
+              "start": 805
             },
             "path": "dashboard/src/panels/review/ReviewSurface.tsx"
           },
@@ -284,7 +284,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e5e3edfefa314b759bf8bd08815f5f4fd84f7899",
+            "blob": "1007f8c974a9b47e37d20a691a0f716894c94d79",
             "content": "sha256:67561911e791ad675588a1b92724f44d6823a545a126458297a30dae3d909e5d",
             "locator": {
               "kind": "symbol",
@@ -311,6 +311,48 @@
             "path": "dashboard/src/panels/review/ReviewReadCache.test.ts"
           },
           "kind": "test"
+        }
+      ]
+    },
+    "28": {
+      "note": "Memory changes advance the review epoch before refresh; older read callbacks cannot repopulate whole-review answers.\n\nAnchor: `ReviewReadCache.invalidateReviews`, `startRead`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ea4a25a184fd55e7859a3d6c4589e75d6646e280",
+            "content": "sha256:3a73327b6d72c7336b512184b1cb846ce91a611c53914f9317d86b624e5d429e",
+            "locator": {
+              "kind": "symbol",
+              "name": "startRead"
+            },
+            "path": "dashboard/src/panels/review/ReviewReadCycle.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "07826420000445ac2a933cfea990adcb4ec951b6",
+            "content": "sha256:6e2f58932a98981d07bed2c3695a83b0cece5b98526e90c0c2f99fa7fbfbdd38",
+            "locator": {
+              "end": 153,
+              "kind": "line_range",
+              "start": 150
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ea4a25a184fd55e7859a3d6c4589e75d6646e280",
+            "content": "sha256:237aad0702ec874bbc7fa6a5bc37abbc5da571140e63f42038c4e86555efa015",
+            "locator": {
+              "end": 391,
+              "kind": "line_range",
+              "start": 374
+            },
+            "path": "dashboard/src/panels/review/ReviewReadCycle.ts"
+          },
+          "kind": "code"
         }
       ]
     }

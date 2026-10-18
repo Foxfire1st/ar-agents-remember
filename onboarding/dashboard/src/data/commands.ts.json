@@ -1,0 +1,58 @@
+{
+  "path": "dashboard/src/data/commands.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Command records contain identity and label only, including the two review traversal names.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5f83aa2d54d2801feff04f7cb373bc7ed10af33c",
+            "content": "sha256:dbdbdfff59806799ad4264017e6c613e3d569cd1f3e781d375499a34b3a329f8",
+            "locator": {
+              "kind": "symbol",
+              "name": "COMMANDS"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Reviewer help joins effective bindings to command labels.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "75b7859c598d9c7f295f08986fffc0f346eedc64",
+            "content": "sha256:7b3d5ddc895ccfa9ed026b572b06b195be67eab2fc13cdd0a180453e10880f14",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewKeys"
+            },
+            "path": "dashboard/src/panels/review/ReviewKeys.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Source test rejects a chord whose commandId is not registered; not an executed result.\n\nAnchor: inclusive source span",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "62e9326c5d2b6b96c01583dd46f3157b1969317e",
+            "content": "sha256:86cc4bdb8d6dc666f1f7abdf9888f1df703550048bd2f4346f63db7ab0ca5b97",
+            "locator": {
+              "end": 10,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "dashboard/src/data/commands.test.ts"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

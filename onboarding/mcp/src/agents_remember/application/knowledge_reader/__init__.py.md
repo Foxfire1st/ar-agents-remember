@@ -21,8 +21,8 @@ composition root's `knowledge_reader` port (`cli/dashboard.py`) and the GET rout
 
 ### Logic
 
-- **The views.** `READER_VIEWS` names nine: `selections`, `tree`, `path`, `subtree`, `record`, `records`,
-  `census`, `without-proof` and `code`. Any other name answers `invalid-request` before anything is read.
+- **The views.** `READER_VIEWS` names ten: `selections`, `tree`, `path`, `prose`, `subtree`, `record`,
+  `records`, `census`, `without-proof` and `code`. Any other name answers `invalid-request` before anything is read.
 - **Selections first.** `selections` needs no opened tree (`selection.selection_options`), so it is answered
   before `open_selection`. Every other view opens the selection; a `ReaderUnavailable` (`not-converted`,
   `unavailable`, `invalid-request`) is returned as its own typed answer with the requested commit spelling.
@@ -50,9 +50,11 @@ composition root's `knowledge_reader` port (`cli/dashboard.py`) and the GET rout
 - **Candidate invariant (not ingested): the reader never writes a repository.** It reads the derived index
   (MIK-R23) and Git objects only; building a commit's index writes only the coordination runtime's cache
   (ruling 2026-09-30T09:42:58 Q2). Realized by the GET-only route, the reads in `selection.py`, `files.py`
-  and `timeline.py`, and no write call anywhere in the package. Proved by
-  `test_the_route_serves_every_view_and_the_reader_writes_nothing` (refs, status and object counts of both
-  repositories unchanged after every view) and
+  and `timeline.py`. Oversized timeline retention may write anonymous process-private temporary backing; it writes no code/memory repository, coordination tree or persisted store. Partly proved by
+  `test_the_route_serves_every_view_and_the_reader_writes_nothing`, which invokes and checks the path,
+  subtree, record, records, census, tree and code views and compares both repositories' refs, status and
+  object counts; it does not invoke the prose, selections or without-proof views, whose no-write behaviour
+  this case does not cover. Also proved by
   `test_the_published_tree_reads_uncommitted_state_writes_nothing_and_offers_a_pin` (a dirty published tree),
   and by the worker's and reviewer's real-data snapshots on the converted scratch.
 - **Candidate invariant (not ingested): every reader answer names the code tree it measured and its
@@ -68,6 +70,10 @@ composition root's `knowledge_reader` port (`cli/dashboard.py`) and the GET rout
 
 No additional work is asserted by this card.
 
+### Explicit prose and timeline continuation
+
+`prose` dispatches to `path_prose` for a normalized code path. Record dispatch forwards `query.continuation` through `_record` to `record_view`; not-found and missing-ID refusals remain distinct. The normal path summary stays bounded while whole prose is an explicit read.
+
 ## Evidence
 
 ### Docs References
@@ -80,14 +86,18 @@ No configured live documentation source was available for this pass.
 
 ### Repo-Internal References
 
+- Dispatch adds whole prose and forwards record continuations. [9]
+- The record ID is required and the continuation reaches the truth-view owner. [10]
+
+
 - The module's own statement of the views, read-only reads and named failures. [1]
-- The nine views. [2]
+- The ten views, including explicitly requested whole onboarding prose. [2]
 - One question: selections first, the selection opened, the typed failures and the envelope. [3]
 - Dispatch by view; a record the tree does not hold is `not-found`. [4]
 - The `invalid-request` answer. [5]
 - The measured selection block a subtree page returns in place of the default (R3-1). [6]
 - The composition root's port that calls this function. [7]
-- The route case: every view served, nothing written. [8]
+- The route case: seven of the ten views served, nothing written. [8]
 
 ### Cross-Repo References
 

@@ -1,0 +1,24 @@
+{
+  "path": "dashboard/src/data/commands.test.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Enumerates every exported chord table and asserts every commandId belongs to COMMANDS; this is registry coverage, not assertion that every shortcut executes.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "62e9326c5d2b6b96c01583dd46f3157b1969317e",
+            "content": "sha256:86cc4bdb8d6dc666f1f7abdf9888f1df703550048bd2f4346f63db7ab0ca5b97",
+            "locator": {
+              "end": 10,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -6,15 +6,16 @@
 
 ## Purpose
 
-**The central reading path's code and test expressions for a tree comparison (MIK-R31): one focused card per
-(path, range), its authored rationale directly above the excerpt, a changed range as its real diff and an
-unchanged range once, labelled unchanged.** It replaces the whole-file accordion (`ReviewExpressions.tsx`) for tree
-comparisons only; a dataset (unconverted) review never mounts it. Full-file inspection and the complete
-changed-file inventory stay one step away from every card (rule 5). The grouping, order and counts are
-`focusedCards.ts`'s. **Since MIK-R34** every excerpt that draws changed lines, and every full file, carries the
-per-hunk intent markers of the hunks it draws.
+**The central reading path's code and test expressions for a measured tree comparison (MIK-R31): one focused
+card per kind and pair of side regions, its authored rationale or proof facet above the excerpt, a changed range
+as its supplied diff and an unchanged range once, labelled unchanged.** `focusedCards.ts` supplies grouping,
+order and counts. Full-file inspection stays inside the selected card with its intent markers; the inventory
+button delegates to the change-set navigation context. The current caller has no dataset `ReviewExpressions`
+fallback: without a measured comparison it shows that explicit boundary instead of resurrecting the removed
+whole-file renderer. `ExpressionControls.tsx` now owns the shared layout/full-file controls.
 
-The central reading path's code and test expressions for a tree comparison: one focused card per path and range, the authored rationale above the excerpt, a changed range as its diff and an unchanged range once, labelled. Full-file inspection stays inside the card with its intent markers, and the complete changed-file inventory stays one link away in the change-set viewer.
+Historically the cards coexisted with the unconverted dataset accordion and reused controls exported from that
+renderer. Those were the earlier routing/import boundaries, not current source paths or retained executions.
 ## Code Commentary
 
 ### Logic
@@ -33,8 +34,10 @@ The central reading path's code and test expressions for a tree comparison: one 
   followed from:** each card's full file is the pane `card:<key>`, and
   `ReadyCards` starts from, and follows, `returnedCard` of the marker scope's `returning` pane, not the first card of
   the path.
-- **The bounded roster (review F2).** `ScopeLine` says "These cards cover the loaded n of m members", points to the
-  roster walk's next-page control, and says the other members' locations are not counted.
+- **Bounded or missing content (review F2).** `ScopeLine` prints loaded/total and the supplied missing reasons.
+  Only when loaded is below total does it direct the reader to the roster next-page control and exclude the
+  unreturned locations. At equal counts with missing content it explicitly says the cards do not cover that
+  named content; a loaded row count is not complete source coverage.
 - **A card (`FocusedCard`).** Header: "Code expression" or "Test proof" with the roles (a proof shows `facet`), the
   side path and the change badge (`Changed range`, `Unchanged`, `Not comparable`). Then the voices (rule 1: the
   rationale directly above the excerpt), then the side lines (`Before · L…`, `After · L…`, or one "Before and after
@@ -44,8 +47,9 @@ The central reading path's code and test expressions for a tree comparison: one 
   belongs to `ReadyCards` once for the selection, not to any card's actions.
 - **A voice (`Voice`).** The heading names the invariant, the role (or "proof facet"), MIK-R11's planning mark
   when the workspace passed one (`touched invariant · planned`), and "added" or "retired in this leaf". The body is
-  the authored rationale (or facet); a missing one is "No authored rationale is recorded for <ID>." (rule 2), never
-  generated text. A revised rationale shows its before text under "Revised in this leaf".
+  the authored rationale (or proof facet); a missing value is explicitly named as "No authored rationale" or
+  "No authored facet" for that entry, never replaced by generated semantics. A revised rationale/facet shows its
+  before text under "Revised in this leaf".
 - **Excerpts.** `UnchangedExcerpt`: one `FilePane` of the after excerpt, numbered from the range's first line.
   `ChangedExcerpt`: a `DiffPane` of the two excerpts with `collapse={false}` and each side's own first line; a side
   with no file is the empty operand of an added or deleted file. `SeparateSides`: a card whose sides are not both
@@ -62,25 +66,26 @@ The central reading path's code and test expressions for a tree comparison: one 
   `card-excerpt:<key>`.
 - **Side states (Failure and Recovery).** `sideStateText`: `no file on this side`, `unresolved: <reason>`,
   `unavailable: <reason>`; `sideLine` adds "entry not recorded on this side".
-- **Full file.** `FullFile` reads through the landed `SourceContent` at the review's own code trees, with the
-  inventory entry when the path is listed, else a synthetic unchanged entry ("an unchanged file a recorded entry
-  names"), which the server admits for a realization's or, since ruling Q1, a proof's path. It passes its pane name
-  (`markers={{ pane }}`) so the full file's marks, and a return to them, belong to this card.
+- **Full file.** `FullFile` requires both supplied code-tree IDs, then delegates to `SourceContent` with the
+  listed inventory entry or a synthetic `status: unknown`, `content: unknown` row whose detail says "an unchanged
+  file a recorded entry names". That text does not itself establish unchanged content or backend admission. It
+  passes `markers={{ pane }}` so the full-file marker return retains this card's identity.
 
 ### Conventions
 
-- `ExpressionControls` is reused from `ReviewExpressions.tsx` (now exported), so the diff layout and full-file
-  toggles are the same controls and keep their state across layout switches.
+- `ExpressionControls` is imported from its surviving dedicated module, `ExpressionControls.tsx`; the parent
+  owns the layout/full-file props. No current control import depends on the removed dataset renderer.
 - `data-testid` values name every part (`review-expression-card`, `review-card-voice`, `review-card-rationale`,
   `review-card-rationale-missing`, `review-card-excerpt` with `data-excerpt` `diff`/`unchanged`/`separate`,
   `review-card-currentness`, `review-card-full-file`, `review-card-inventory`, `review-cards-scope`).
 
 ### Invariants And Boundaries
 
-- **Candidate invariant (not ingested): focused cards group expressions by (path, range) with the rationale
-  directly above the excerpt, and a missing rationale is shown as a gap** (with `focusedCards.ts`).
-- **Candidate invariant (not ingested): a bounded roster never reads as the whole family; the cards state the
-  loaded n of m** (`ScopeLine`, with `cardScope`).
+- **Design boundary:** focused cards group expression regions, place the supplied rationale/facet above the
+  excerpt and show an absent authored value as a gap (with `focusedCards.ts`); this prose is not a new formal
+  invariant or acceptance record.
+- **Recorded `INV-VPX81HXV`:** bounded linked-source scope is not full-family coverage. `ScopeLine` renders
+  `cardScope`'s counts and reasons without relabelling missing content as a continuation requirement.
 - The renderer writes no explanation of its own; every sentence about an entry is the entry's authored text or a
   fixed state label.
 - Identifier/blob/content provenance stays in a grouped disclosure; not-current reasons remain open in the reading path. `CardCurrentness` keeps the mark text exactly `<entry> <state> on the <side> side`. A supplied reason is a sibling `review-card-currentness-reason` span with the same entry and side, outside every disclosure; it never extends the mark text or changes the owner-supplied state.
@@ -90,11 +95,13 @@ The central reading path's code and test expressions for a tree comparison: one 
 
 ### Todos
 
-No additional work is asserted by this card.
+The current scope text supersedes the former equal-count continuation wording; the dataset accordion import
+and fallback are retired. Cited tests are checked-in assertions over captured or synthetic inputs, not a new
+execution, whole-file correctness grade or independent MEMORY acceptance.
 
 ## Evidence
 
-- Exact entry/state/side text and a separate supplied-reason sibling outside disclosures. [21]
+The evidence table below anchors the exact entry/state/side text and its separate supplied-reason sibling outside disclosures.
 
 
 ### Docs References
@@ -108,36 +115,29 @@ No configured live documentation source was available for this pass.
 ### Repo-Internal References
 
 - The props the centre passes: the read, the seed, the planning marks, layout and open path, and the scope. [1]
-
 - Loading, unavailable and not-a-tree-comparison states. [2]
-
 - The counts, the scope line and one full file keyed by the card (F1). [3]
-
 - A return to a marker followed from a card's full file reopens that card (MIK-L34). [4]
 - Side lines, one line for an unchanged same region, and the side-state texts. [5]
 - One card: header, voices, side lines, excerpt, marks, actions. [6]
-
 - A voice: the authored rationale or facet, or the named gap. [7]
-
 - Unchanged once, changed as a diff, sides that are not both regions shown apart; each marks the owner hunks whose changed lines it draws, on the sides it draws (MIK-L34). [8]
-
 - The excerpt marking: only the drawn sides compared, a mismatch said, an unchanged file's card never active. [9]
 - One grouped identifiers disclosure carries the selected entries and their supplied side blobs and digests. [10]
-
-- Cards open their own full file with marker identity and link all changed files to the comparison viewer; no explorer OpenedFile is rendered. [11]
-
-- The one caller, which mounts cards only for a tree comparison. [12]
-
-- The card-state cases. [13]
-- The F1 case. [14]
-- The marker cases on real cards: the exact card reopened, and the excerpt marks with an unreadable memory side, other content and an unchanged file. [15]
+- The card-owned full-file and inventory paths; the source contains no explorer OpenedFile renderer. [11]
+- The center caller passes measured-comparison cards or an explicit comparison-required boundary; no dataset accordion fallback. [12]
+- Checked-in card fixtures assert changed versus unchanged excerpts and a named missing-rationale gap; not a fresh execution. [13]
+- The F1 mounted fixture stubs an HTTP-shaped Response and counts source-content requests; not a backend or Git read measurement. [14]
+- Mounted card fixtures assert the exact returned card, drawn-side mark retention, other-content suppression and no unchanged-file request; not a fresh execution. [15]
+- The read-state wrapper delegates ready entries to the card assembly owner. [16]
+- ReadyCards owns grouping, counts, selected-card full-file state and returning-card restoration. [17]
+- One focused card with roles, voices and excerpts [18]
+- Link from a card to the full changed-file inventory [19]
+- In-card full file with markers through the shared pane [20]
+- Exact entry/state/side text and a separate supplied-reason sibling outside disclosures. [21]
+- ScopeLine names actual missing reasons and distinguishes unfinished membership from missing content at equal counts. [22]
+- The shared controls are imported from their surviving dedicated module, not ReviewExpressions. [23]
 
 ### Cross-Repo References
 
-No cross-repo boundary is crossed by this file.
-- Card collection assembly with grouping, order and counts [16]
-- Grouped ready cards with returning-card state [17]
-- One focused card with roles, voices and excerpts [18]
-
-- Link from a card to the full changed-file inventory [19]
-- In-card full file with markers through the shared pane [20]
+No cross-repository boundary is asserted by this module.

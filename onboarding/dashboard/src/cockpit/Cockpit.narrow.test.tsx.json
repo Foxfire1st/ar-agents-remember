@@ -1,0 +1,24 @@
+{
+  "path": "dashboard/src/cockpit/Cockpit.narrow.test.tsx",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Mounted CockpitShell with synthetic matchMedia asserts one-column ASIDE/MAIN/ASIDE, hidden gutters, narrow CSS classes and restoration/preservation of stored 430/250 rail widths above 40rem. CSS class/inline-style assertions are not real 390px overflow measurements.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c1c5d7aea51b5efe72dea5df3ae49b1639434a85",
+            "content": "sha256:e96b453029644d71e9ec1cc97f32c0cfc422860bb7a63e1aab251202f2b791ee",
+            "locator": {
+              "end": 38,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

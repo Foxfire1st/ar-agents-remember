@@ -1,0 +1,88 @@
+{
+  "path": "dashboard/src/cockpit/reviewHash.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Parser admits complete review task addresses and the one recorded flag.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "41eb57199da4ee9956cf8c32e5bd87324772daec",
+            "content": "sha256:13c7ade713d8f4284ac157756841a0dea09d47d93d418749215d2fd4ef97a480",
+            "locator": {
+              "kind": "symbol",
+              "name": "parseReviewHash"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Serializer carries no subject or change-set page selection.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "41eb57199da4ee9956cf8c32e5bd87324772daec",
+            "content": "sha256:fb4f20807c783fb67db047d1b8e3f25c62ee12f0ca45b2a5b0a26ce470f4276b",
+            "locator": {
+              "kind": "symbol",
+              "name": "reviewHash"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Hash navigation preserves identical mounted review identity, switches addressed views, and cleans up.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "41eb57199da4ee9956cf8c32e5bd87324772daec",
+            "content": "sha256:78ce4bd646d453c3a4c1a8e3e1939aae6cd8e01e5f6cadac100736e6221f12f0",
+            "locator": {
+              "kind": "symbol",
+              "name": "useReviewHash"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Setter uses pushState and explicit React target updates.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "41eb57199da4ee9956cf8c32e5bd87324772daec",
+            "content": "sha256:78ce4bd646d453c3a4c1a8e3e1939aae6cd8e01e5f6cadac100736e6221f12f0",
+            "locator": {
+              "kind": "symbol",
+              "name": "useReviewHash"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Cockpit initializes Operations for a review hash and consumes hash-backed takeover state.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "80f2861ffd1ec3af036f58f9a79957bd54adec46",
+            "content": "sha256:dde91a47159624794d5a2a867279a5d6efea73532dc0b871524fbc0b53736fce",
+            "locator": {
+              "kind": "symbol",
+              "name": "useCockpitShellState"
+            },
+            "path": "dashboard/src/cockpit/Cockpit.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

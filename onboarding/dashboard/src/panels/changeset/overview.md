@@ -30,7 +30,7 @@ The header labels a working leaf as `working · <leaf> · uncommitted`, a commit
 
 ### File lists, attribution and read states
 
-`ChangeSetViewer` owns component state for the list, its initial read error, the active file and the two file-diff responses. The first column contains changed code and onboarding lists. Rows show path, Git status and insertion/deletion counts; the active row uses a 20% amber wash and hover uses 12%. Code files with a sidecar offer a partner action. An onboarding file can offer its code partner when stripping `onboarding/` and `.md` produces a file route; overview, entities and index routes are excluded from this mapping.
+`ChangeSetViewer` owns component state for the list, its initial read error, the active file and the two file-diff responses. The first column contains changed code and onboarding lists. Rows show path, Git status and insertion/deletion counts; the active row uses a 20% amber wash and hover uses 12%. Code files with a sidecar offer a partner action. An onboarding path must start with `onboarding/` and end with `.md` to enter partner mapping. After stripping those delimiters, names ending in `/overview`, `/entities` or `.index` are excluded. The root `onboarding/overview.md` becomes bare `overview`, passes this predicate and can expose a code-partner affordance; the predicate does not establish that the target exists or that its read succeeds.
 
 The selected file occupies the second column through `ChangeSetPane`. A successfully read partner adds the third column. The workspace uses resizable panels. With a list response but no selected diff, zero files across both lists produce the named empty pane; otherwise it asks the reader to select a changed file. That prompt uses the siege-tank boomerang clip at opacity 0.18 when the shared backdrop's effects gate permits it.
 
@@ -64,7 +64,7 @@ The presence of `ChangeSetTarget.review` selects the review variant; `{}` is the
 
 `IntentReviewEntry` opens the repository/master/leaf task context with `review: {}` for a live leaf or `review: { historical: true }` otherwise. It uses its own comparison-summary read, rather than a `ChangeSetButton` or change-set line counters, and does not read the subject catalogue. The reviewer reads the catalogue through `useReviewNavigation` and `useReviewCatalogue`, whose request uses `intentReviewEntries`. The target carries identities rather than a filesystem path.
 
-The cockpit's takeover dispatch maps `historical` to the review surface's `history: 'recorded'` and forwards optional selectors. `ReviewSurface` carries that history into its navigation, read cycle and target key. Cockpit review targets initially mount this surface in place of `ChangeSetViewer`. The reviewer's All/Unexplained/Unknown changes destinations then mount `ChangeSetViewer` with a recorded comparison and held lane context, issuing comparison list and per-file diff requests. The reviewer remains mounted underneath, and Back removes the overlay and restores opener focus without a new review read. The viewer itself does not inspect the review field. The earlier live-admitted-candidate and no-subject/no-button admission wording remains distinct from this unconditional task-context entry. Opening a context is not reviewed-subject or acceptance authority; source inspection here does not certify the earlier gate wording as coherently realized.
+Cockpit dispatch maps the target history flag and optional subject to ReviewSurface. Reviewer destinations then mount the existing ChangeSetViewer on a recorded comparison with held lane/inventory and only a matching worklist; same-generation late delivery may enrich that captured context, but a different generation never silently retargets it. The reviewer stays mounted underneath. Closing removes the overlay and schedules opener focus return, without itself issuing a new review request; independent live input is not prohibited by that statement.
 
 ## Invariants And Boundaries
 
@@ -84,6 +84,10 @@ The preserved route metadata below is descriptive metadata, outside the operativ
 | Field                  | Value                                            |
 | ---------------------- | ------------------------------------------------ |
 | sourceRoute            | `dashboard/src/panels/changeset/`                |
+
+## Comparison filters and delivered witnesses
+
+ReviewFilters and reviewChangeSet own explicit All/unexplained/unknown filtering over the held answer, including unavailable and zero states; they do not classify hunks again. The single row-badge map can combine delivered lane, inventory and worklist witnesses without guessing a governing row from a reason. Main-file request sequencing does not imply the same cancellation/sequence guarantee for partner or lazy requests. Working polling concerns the list and active main diff, schedules after their settlement, and does not refresh the partner column. Source/static regression inspection is not a browser/server execution grade.
 
 ## Evidence
 - The optional marks and the marked pane. [1]
@@ -137,3 +141,7 @@ The preserved route metadata below is descriptive metadata, outside the operativ
 - Target-addressed list loads share the current request/cache owner, and an available cached answer can be restored at selection. [45]
 - Working refresh does not require hasData, excludes comparisons and handles list/diff fulfillment and failure independently before scheduling its next timer. [46]
 - A list problem and selected-file problem have distinct display owners rather than silently leaving a stale successful pane. [47]
+
+- The existing viewer composes delegated filters and one badge map from held facts; same-generation comparison context can accept late matching worklist/lane data without reopening another comparison. [48]
+
+- The partner predicate excludes slash-suffixed overview/entities and .index bases, but root onboarding/overview.md strips to bare overview and can produce an affordance. Target existence/read success is not established; this predicate already exists at both actual BASE operands. [49]

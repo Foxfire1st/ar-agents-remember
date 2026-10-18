@@ -1,0 +1,71 @@
+{
+  "path": "dashboard/src/panels/review/full-file-marks/useFullFileMarks.tsx",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Reach every classified hunk in served full-file text: `sourceMarks` owns the described branch.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0418e0050cb591ccc3c2ea50fdc4db062bfd1b91",
+            "content": "sha256:b840eace24728f25e39e0ae0ab02a13370fbbb8d6dc1506c1b7e66b6a2597f08",
+            "locator": {
+              "kind": "symbol",
+              "name": "sourceMarks"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Reach every classified hunk in served full-file text: `MarksList` owns the described branch.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0418e0050cb591ccc3c2ea50fdc4db062bfd1b91",
+            "content": "sha256:7806c55d11b3bed7af34038036149009e62d01791401ce85be8f79376cf6beb7",
+            "locator": {
+              "kind": "symbol",
+              "name": "MarksList"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Reach every classified hunk in served full-file text: `revealingPane` owns the described branch.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0418e0050cb591ccc3c2ea50fdc4db062bfd1b91",
+            "content": "sha256:dbc39236ede2866e736bbfb8636c0222867f3f1a6223eb158b0b3a48b3236002",
+            "locator": {
+              "kind": "symbol",
+              "name": "revealingPane"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Reach every classified hunk in served full-file text: `useFullFileMarks` owns the described branch.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0418e0050cb591ccc3c2ea50fdc4db062bfd1b91",
+            "content": "sha256:e0cdf207f98d69c54605b1b960d00f66e8273d255b688a409a8ed007615e7b9b",
+            "locator": {
+              "kind": "symbol",
+              "name": "useFullFileMarks"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

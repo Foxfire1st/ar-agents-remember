@@ -20,14 +20,14 @@
       ]
     },
     "2": {
-      "note": "What each hunk names: occurrences, targets, proofs, unknown membership and its reason, the unread side, file marks.\n\nAnchor: \"names every intersecting invariant of a replace hunk, with each family occurrence\"; \"carries the reason an unknown membership is not established to its target\"; \"gives a confirmed-unregistered file, or one no side of which is readable, one file mark\"",
+      "note": "Nine naming declarations cover occurrences, targets, proofs, unknown membership, supplied string reasons and absence of reasons for confirmed states, a cloned-capture verbatim-reason probe, unread-side attribution and file marks.\n\nAnchor: inclusive source ranges",
       "targets": [
         {
           "anchor": {
-            "blob": "7c3d4f183bafc876057b43b513fd8e98da0a85f2",
-            "content": "sha256:25e77508916781c0ad238f8d95dacde73684dd57606cf440946dd71cb37058a6",
+            "blob": "0ebec6dd6e9a7e332249d2a3418ffbed6ac44c43",
+            "content": "sha256:426adc2b3d46a2fdeeee3d2f21aafe5d532987312474fda236481465e2b2300d",
             "locator": {
-              "end": 165,
+              "end": 174,
               "kind": "line_range",
               "start": 34
             }
@@ -37,16 +37,16 @@
       ]
     },
     "3": {
-      "note": "Where each mark sits, including a window's neighbours and an inline mid-file deletion.\n\nAnchor: \"places an inline deletion on the after line below its removed lines, or the last one\"; \"marks every hunk a window draws, a neighbour shown as context too\"",
+      "note": "Four placement declarations cover split and inline placement, mid-file deletion, neighboring hunks in windows and one-sided panes.\n\nAnchor: inclusive source ranges",
       "targets": [
         {
           "anchor": {
-            "blob": "7c3d4f183bafc876057b43b513fd8e98da0a85f2",
+            "blob": "0ebec6dd6e9a7e332249d2a3418ffbed6ac44c43",
             "content": "sha256:99f089e02ea1f86e0d2a132bcc5fefa536c15e1d6fedfa940927fcce745bf1eb",
             "locator": {
-              "end": 227,
+              "end": 236,
               "kind": "line_range",
-              "start": 167
+              "start": 176
             }
           },
           "kind": "test"

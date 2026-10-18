@@ -28,6 +28,6 @@
   "revision": 1,
   "schema": "ar-invariant/v1",
   "statement": "The named dataset context, applicability counts, historical detail and pre-label assertions retire under the amended rule19 while pane3 direct treatment and sibling isolation remain.",
-  "status": "proposed",
+  "status": "retired",
   "supersedes": []
 }

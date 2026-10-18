@@ -2,18 +2,21 @@
   "path": "dashboard/src/panels/review/l43r2.f04.family.captured.json",
   "realizes": [],
   "references": {
-    "1": {
-      "note": "The captured body preserves its response state and comparison-bound facts.",
+    "2": {
+      "note": "The current mounted F04 source names its distinct capture provenance, declares the two-leaf/writer history and closed-flag simulation, and imports l57.f04-native inputs rather than this removed set.",
       "targets": [
         {
           "anchor": {
-            "blob": "ed4d8f942654682c8e89754f3b3d93d87d70e1cc",
-            "content": "sha256:071808d4d1c5db374fb76043f22d88c1860255d3a02d2358f60e0dfdaf3d9219",
+            "blob": "4e57207cacc8ceb964151b85e236c55b9b831cc1",
+            "content": "sha256:029e94ee1c03d15f469f8a7c41055f546695ecae5723157f05ac8dcee7445a6d",
             "locator": {
-              "kind": "file"
-            }
+              "end": 18,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "dashboard/src/panels/review/ReviewSurface.f04.test.tsx"
           },
-          "kind": "code"
+          "kind": "test"
         }
       ]
     }

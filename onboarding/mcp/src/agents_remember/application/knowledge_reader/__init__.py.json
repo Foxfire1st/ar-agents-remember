@@ -19,13 +19,29 @@
         }
       ]
     },
-    "2": {
-      "note": "The nine views.",
+    "10": {
+      "note": "The record ID is required and the continuation reaches the truth-view owner.",
       "targets": [
         {
           "anchor": {
-            "blob": "ecf10889cc0c7393315d79e8ceaae8dbf63899c0",
-            "content": "sha256:ce954bb3fb2718f6b665c8eaca99a127986d1537b7c4c73d51c11240a04eb497",
+            "blob": "57eae152b75c3cf71ceefce6627a0696f14fdb51",
+            "content": "sha256:fdebb2e84cf8b426e7929f1f46bffff7ade77db07ac3116c137fca1d9fb3a3d8",
+            "locator": {
+              "kind": "symbol",
+              "name": "_record"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The ten views, including explicitly requested whole onboarding prose.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "57eae152b75c3cf71ceefce6627a0696f14fdb51",
+            "content": "sha256:beaf5949697ba0585899b72051ec99c92545b25a95cc0ee5554cbb78f6f4507e",
             "locator": {
               "kind": "symbol",
               "name": "READER_VIEWS"
@@ -40,7 +56,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ecf10889cc0c7393315d79e8ceaae8dbf63899c0",
+            "blob": "57eae152b75c3cf71ceefce6627a0696f14fdb51",
             "content": "sha256:5994963e88a2b6ee153ed4662f3c4d9ea6ff3a85775501bf515ba7689ab5c74d",
             "locator": {
               "kind": "symbol",
@@ -83,7 +99,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ecf10889cc0c7393315d79e8ceaae8dbf63899c0",
+            "blob": "57eae152b75c3cf71ceefce6627a0696f14fdb51",
             "content": "sha256:804ae1b4e0b21360163af553a3ed9828e08b375686a9b3ca0cfee24187a6190d",
             "locator": {
               "kind": "symbol",
@@ -99,12 +115,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ce0ac969ac0e3d28191611edeeb233f372185feb",
+            "blob": "ddf86aa9d634cedd85802b77ccad90d371225171",
             "content": "sha256:752b020c6ab4eab97b9f15f96e4491fa133fb7ae5a701815aebc80f1bd706c6d",
             "locator": {
-              "end": 109,
+              "end": 112,
               "kind": "line_range",
-              "start": 109
+              "start": 112
             },
             "path": "mcp/src/agents_remember/application/knowledge_reader/subtree.py"
           },
@@ -117,7 +133,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9a206d3d815288a7126484f8f1ed32c00a634033",
+            "blob": "74a2c8422da853d4c0d2ea2aa2fd1e259f9e204b",
             "content": "sha256:1c6c11d8a7208b00eced9d78059bf83be0a5c212a20261dffe372635a52b0788",
             "locator": {
               "kind": "symbol",
@@ -130,11 +146,11 @@
       ]
     },
     "8": {
-      "note": "The route case: every view served, nothing written.",
+      "note": "The route case: seven of the ten views served, nothing written.",
       "targets": [
         {
           "anchor": {
-            "blob": "4ec4c95baf015b3298eca6db77c2a032c0632a63",
+            "blob": "19db6df367f5fbe794e1baed60f7491c416043eb",
             "content": "sha256:113eedcddca789aecec61858881ddfcf7f25b94b2cebf5495bd52b5a8c16b9c1",
             "locator": {
               "kind": "symbol",
@@ -143,6 +159,22 @@
             "path": "mcp/tests/test_knowledge_reader.py"
           },
           "kind": "test"
+        }
+      ]
+    },
+    "9": {
+      "note": "Dispatch adds whole prose and forwards record continuations.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "57eae152b75c3cf71ceefce6627a0696f14fdb51",
+            "content": "sha256:aab44dd1b7f8dc945ca043ff4fd05f6acf8c977f9372efcfd0ec1478bd3576cc",
+            "locator": {
+              "kind": "symbol",
+              "name": "_answer"
+            }
+          },
+          "kind": "code"
         }
       ]
     }

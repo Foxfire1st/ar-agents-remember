@@ -6,9 +6,9 @@
 
 ## Purpose
 
-The walked tree of the intent reviewer: the list of families the family tree shows across selections (requirement MIK-R39).
+The intent reviewer’s retained walk of already-read family contexts across selections (requirement MIK-R39). This retained state enriches the compact navigation outline; it is not itself a list of every row currently rendered.
 
-The server composes a family context per selected subject: one family for a family subject, every containing family for an invariant subject. This module folds the family context of every answer the workspace shows into one list. A selection of a row the tree shows therefore adds families and member rows and removes none, and `k` can step back to every change the reader passed. The module also decides when the list starts afresh.
+The server supplies each selected subject’s family context. This module folds the contexts of displayed answers into one comparison-bound list, preserving previously delivered context for explicit kept selections and owning when that list starts afresh. Retention is not a guarantee that every stored member is currently visible or a keyboard stop: the navigation view/query and traversal have separate owners. No blanket `k`-can-return-to-every-passed-member promise is made here.
 
 It makes no request and stores nothing outside the mounted reviewer. Its only input is answers that were already read.
 
@@ -52,7 +52,7 @@ It makes no request and stores nothing outside the mounted reviewer. Its only in
 
 - `mergeFamilies` keys the list by family identifier. A family the answer carries is merged with the stored one (`mergeEntry`), and its `readFor` and `answer` become this answer's. A family the answer does not carry is left as it is. The result is sorted ascending by family identifier, which is the server's order of families within one context, so the order in which answers arrive plays no part.
 - `mergeEntry` merges the two sides with `mergeSide` and the change facts with `mergeChangeKinds` of `changeTriage.ts`. The other fields are the newer entry's. When the newer entry is `partial` and both merged sides are complete (`sideComplete`), the merged entry's state is `recorded`.
-- `mergeSide` merges two reads of one side when both are `recorded` and name the same family revision; otherwise it takes the newer side. Every member either read returned stays: members are keyed by `member_id` and merged with `mergeMember` of `familyWalkMerge.ts`, and when that function declines a pair the newer member is taken. The page position is taken from the side that walked further (`progress`: the members the server counted as returned), and from the newer side when both walked equally far. The continuation control of a family therefore holds the furthest cursor.
+- `mergeSide` merges two reads of one side when both are `recorded` and name the same family revision; otherwise it takes the newer side. Every member either read returned stays: members are keyed by `member_id` and merged with `mergeMember` of `familyWalkMerge.ts`, and when that function declines a pair the newer member is taken. The page position is taken from the side that walked further (`progress`: `page.counts.primary_items_returned`, the primary walk items the server counted as returned, and `members.length` only when the page carries no such count), and from the newer side when both walked equally far. The continuation control of a family therefore holds the furthest cursor.
 
 ### Names and constants
 
@@ -89,3 +89,5 @@ It makes no request and stores nothing outside the mounted reviewer. Its only in
 - The member merge the walk reuses. [15]
 - The workspace is the hook's one caller. [16]
 - The unit cases over served bodies: idempotence, order, the kept answer, names, an outside selection, another comparison, and a family read twice. [17]
+
+- The module folds already-read comparison-bound context and issues no request; retained families are data, not a guarantee that every stored member is currently rendered or traversable. [18]

@@ -8,7 +8,7 @@
 
 The canonical evidence-lane catalog: which test modules belong to which lane, so a leaf's checks can name the population they ran. Membership declares the selected population, never that an invocation ran or passed.
 
-The source-owned regeneration removes eight memberships whose files L113 deleted: five from `unit-regression` and three from `integration`. The seven lane identities remain unchanged. Retained L81 accounting, warmup, projection, watcher and budget suites keep their declared lanes; no removed local hosted test is selected as current evidence, and no lane deletion waives full-final coverage.
+The source-owned regeneration removes eight memberships whose files L113 deleted: five from `unit-regression` and three from `integration`. The current candidate also registers `test_reader_timeline_spill.py`, `test_review_memory_watch.py`, `test_review_record_presence.py` and `test_route_review_clean_sync_door.py` in `unit-regression`, and replaces the removed `test_review_verification_observation_model.py` with `test_reviewer_text_shape.py` there. The seven lane identities remain unchanged. Retained L81 accounting, warmup, projection, watcher and budget suites keep their declared lanes; no removed local hosted test is selected as current evidence, and no lane deletion waives full-final coverage.
 
 ## Native reapply regression registration
 
@@ -135,15 +135,24 @@ Source declarations, mirrors and fixture assertions are not executed acceptance.
 - The three R53 modules remain declared in unit-regression; they already exist in this leaf’s base and are not L59 additions. Membership proves no invocation or PASS. [848]
 
 
-- Native reapply remains declared in unit-regression; membership is selection only and the list remains canonically ordered. [847]
+- Native reapply remains declared in unit-regression; membership is selection only and the list remains canonically ordered. [857]
+
 - Extracted capsule surface suite in unit-regression Anchor: `test_capsule_serving_surface.py` [835]
+
 - Opt-out refusal suites in unit-regression Anchor: `test_memory_opt_out_refused_routes.py` [836]
+
 - Lane lists retain one path per module, with the worktree-environment guard registered in unit-regression. [837]
-- Earlier unnamed-module registration caption is not an L162 addition. The current lane catalog declares test populations; no invocation or pass is implied. [839]
-- The current lane catalog retains host-module and other declared populations; lists select evidence and do not establish execution. [840]
+
+- Earlier unnamed-module registration caption is not an L162 addition. The current lane catalog declares test populations; no invocation or pass is implied. [858]
+
+- The current lane catalog retains host-module and other declared populations; lists select evidence and do not establish execution. [859]
+
 - The worktree-environment regression module belongs to unit-regression. [841]
+
 - The guard suite is selected in unit-regression; its cases refuse real-path writes on made-up accounts. Anchor: 323-334 [842]
+
 - The role-agent and role-message modules are explicitly selected in unit-regression; membership does not establish execution. [846]
+
 - The recorded-meaning test module is selected once in unit-regression; registration asserts no invocation or acceptance. [845]
 
 

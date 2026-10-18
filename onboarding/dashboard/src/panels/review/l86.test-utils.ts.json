@@ -1,6 +1,24 @@
 {
   "path": "dashboard/src/panels/review/l86.test-utils.ts",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "cebc6e7e10d2ea9cb6ae76cac611e8185dd85493",
+        "content": "sha256:6d1e7fb1b2dceb4f12557d09d3cbb2ed26e12b484aea678d5d20b5c39ca527f6",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-7SA9RR",
+      "invariant": "INV-BM96VC",
+      "origin": {
+        "handoffEntry": "MIK-R57@v2 by-design real-captures",
+        "leaf": "260928-MIK-L57"
+      },
+      "rationale": "Loads the retained raw public fixtures for mounted controls without manufacturing smaller substituted answers.",
+      "role": "support"
+    }
+  ],
   "references": {
     "1": {
       "note": "Frozen-answer loader for every captured reply",

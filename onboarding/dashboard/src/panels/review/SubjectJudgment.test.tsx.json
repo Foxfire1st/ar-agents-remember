@@ -1,0 +1,24 @@
+{
+  "path": "dashboard/src/panels/review/SubjectJudgment.test.tsx",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Explicit synthetic component judgment rows/proofs preserve visible reasons/facets, attempts/coverage, history-unavailable proof display, missing-required-field failure, legacy family missing effect, and statement-side origin. Not native producer acceptance.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "defeee17b536fc273194c09f1d47d6d7b1bd4f00",
+            "content": "sha256:81c186fa2bdcda2f5f5b6a6941af27eedac4544b8bc6fb1b1cde45b828612d51",
+            "locator": {
+              "end": 86,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -87,7 +87,7 @@ Source account retained from the parked claim (anchor currency not renewed here)
 
 Source account retained from the parked claim (anchor currency not renewed here): `mcp/src/agents_remember/serving/review.py:661-709`.
 
-- **The 404 for a candidate that does not resolve, is not live, or has no dataset half.**  Anchor: "def api_review_intent("
+- Retained transport mapping includes the legacy candidate_dataset_absent code as404; this does not establish a live dataset candidate path.
 
 Source account retained from the parked claim (anchor currency not renewed here): `mcp/src/agents_remember/serving/review.py:607-624`.
 
@@ -122,6 +122,25 @@ This is not a dashboard-wide stop switch. Projection/watch/healing and other own
 `register_changeset_routes` creates one bounded ChangesetCache, shared with the intent-summary route through its typed inputs/read port. Native Git remains the selector/diff owner. Reuse observes repository/configuration/reference/object and, when needed, working-tree generations plus dependencies discovered before consumption. Pending results enter retention only after matching fresh post-read observations; incomplete/changing dependencies and failed native reads do not become reusable successes. Object-absence proofs also invalidate on additions. This is not TTL-based permission to serve stale inputs or a new comparison generation. Successful change-set/summary responses derive weak ETags from their returned bytes and honor If-None-Match; an unwired summary keeps its named 503.
 
 Full task bodies have a separate app-scoped LRU of at most 1,024 entries/16 MiB, distinct from the background task-payload parse cache and native change-set/summary reuse. Captured filesystem inputs revalidate before body reuse; serialized TaskSummary bytes define its content revision. Unreadable/changing generations are served uncached and cannot justify a 304. State GET/SSE retain their separate projection-instance dump memo and servingBuild tail. None of these caches changes task stage, host activity, recorded operands, permission or acceptance.
+
+## Open Review Memory Invalidations
+
+The existing state SSE route accepts optional reviewRepo/reviewMaster/reviewLeaf. No selector keeps
+ordinary stream behavior; any supplied selector forms the complete identity tuple for canonical
+single-segment/root admission through the injected port. Collaborators and app runtime carry that
+port. Request strings do not select arbitrary memory roots or alter the projector state schema.
+
+The connection owns native nonrecursive directory handles, excluding symlink directories and named
+generated/temporary subtrees. Startup and relevant directory events reconcile registrations; this is
+not idle timer filesystem polling. A separate ready future precedes the size-one coalescing change
+queue, and nonce/counter revisions are invalidations, not Git trees or acceptance observations.
+Handled admission/watch errors publish review.memory.error with recovery; ordinary event delivery
+retains its own stream path. Closing the connection drains queued async reads and joins the native
+worker rather than abandoning its handles. No measured total shutdown bound is claimed.
+
+A missing comparison number is not a dataset-mode discriminator: enabled live leaf-wide tree reads
+can start without one, while focused card-entry reads require one. The transport retains some legacy
+refusal spellings for status mapping; that does not reinstate removed candidate producers.
 
 ## Evidence
 
@@ -176,8 +195,6 @@ Full task bodies have a separate app-scoped LRU of at most 1,024 entries/16 MiB,
 - **The 400 a selector kind outside the admitted set gets, inside the comparison handler.**  Anchor: "def api_review_intent(" [50]
 
 
-- **The 404 for a candidate that does not resolve, is not live, or has no dataset half.**  Anchor: "def api_review_intent(" [51]
-
 
 - **The 200/refusal split the entry handler makes: `entries` serves `200`, anything else goes through `_status_for`.**  Anchor: "def api_review_intent_entries(" [52]
 
@@ -225,7 +242,7 @@ Full task bodies have a separate app-scoped LRU of at most 1,024 entries/16 MiB,
 - It supplies that owner's shutdown to the app. [93]
 - The tree port passes the process owner to the application. [94]
 - A live read reuses the record of the same trees, and pins before it writes a new record. [95]
-- A payload without a tree comparison number is a dataset review, for which no tree read is made. [96]
+
 - A busy default executor cannot delay a tree read. [97]
 - A disconnect, the deadline, shutdown and a queued request each end with the children reaped. [98]
 - Current imported source owns this scoped route boundary.   [86] [87] [88]
@@ -268,3 +285,9 @@ Full task bodies have a separate app-scoped LRU of at most 1,024 entries/16 MiB,
 - Pending cache results are retained only when fresh post-read input observations match their captured generation. [134]
 - Full TaskSummary preparation has separate bounded retention and generation checks, not a second task-status producer. [135]
 - Task-body 304 requires a still-current captured generation and matching content revision. [136]
+
+- The transport still maps the literal legacy candidate_dataset_absent refusal code to404; a status mapping does not establish a currently produced dataset candidate path. [51]
+- An enabled live leaf-wide tree read may start without a comparison number; focused card-entry reads require one. Absence of a number does not imply a dataset review. [96]
+- The injected canonical memory-root port is carried from collaborators into the shared serving runtime, not resolved from arbitrary client roots. [138]
+- The existing state stream opts into review-memory invalidations only through supplied review identity; no-selector streams retain their ordinary event path. [139]
+- The connection-owned watcher filters generated/temporary paths, separates ready from coalesced changes, emits invalidation revisions rather than tree identities and drains its worker/merge ownership on closure. [140]

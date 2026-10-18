@@ -2,30 +2,13 @@
   "path": "dashboard/src/panels/review/l86.member.captured.json",
   "realizes": [],
   "references": {
-    "1": {
-      "note": "Selected member's full review body\n\nAnchor: `payload`",
+    "3": {
+      "note": "The current retained JSON input supplies the literal identities, response states and populations summarized above; these are fixture facts, not live project knowledge or fresh execution evidence.",
       "targets": [
         {
           "anchor": {
-            "blob": "31e4c76f97c1d3a4f4a115d18b1bd26ddad0b511",
-            "content": "sha256:297c19a6b007ddab7379fa9a807efb3fabb569d293c8047bb526675282e0a544",
-            "locator": {
-              "end": 1,
-              "kind": "line_range",
-              "start": 1
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "2": {
-      "note": "Both snapshots' recorded statements\n\nAnchor: `before_statement`",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "31e4c76f97c1d3a4f4a115d18b1bd26ddad0b511",
-            "content": "sha256:297c19a6b007ddab7379fa9a807efb3fabb569d293c8047bb526675282e0a544",
+            "blob": "0a504cb2801d8f1aaa8b83c1b5856e08985d2b62",
+            "content": "sha256:ed269086bb1f4ce0c2b4766c8c7edddfcae55102c30e9c2cf2243616035a0858",
             "locator": {
               "end": 1,
               "kind": "line_range",

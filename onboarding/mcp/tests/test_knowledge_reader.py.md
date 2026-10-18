@@ -61,8 +61,7 @@ No additional work is asserted by this card.
     the sidecars naming them (F1, F5), the bounded timeline cache (built once per tree; a failed source is not
     remembered, F7 and F17), the family, the decision (derived supersession), the incident and facet with
     typed links both ways (and unreadable links named, F11), and the census;
-  - selections: hexadecimal names only, a branch name refused, a commit list that cannot be read named (F6,
-    F11, N1 `paired-code-commit`); the published tree reads uncommitted state, writes nothing and offers a pin
+  - selections: the published tree reads uncommitted state, writes nothing and offers a pin
     only when clean (N2, N1 `checkout-head`, the tree key in the cache key); a live leaf and its code note;
     a partial index and a missing code tree named where they apply;
   - the route: every view served over HTTP, 503 unwired, nothing written in either repository; bad requests
@@ -83,8 +82,7 @@ No additional work is asserted by this card.
 
 ### Invariants And Boundaries
 
-- The file is 1,182 lines, under the 1,200-line cap (the architect noted its size at R3). A later case should go
-  to a new module.
+- The architect noted the module's size at R3. A later case should go to a new module.
 
 ### Todos
 
@@ -114,7 +112,6 @@ No configured live documentation source was available for this pass.
 - The test file, the explorer and the without-proof list. [35]
 - The invariant view, moves and re-anchors, and the timeline cache. [36]
 - The family, decision, incident and facet, and census views. [37]
-- The selections: commits, published, a leaf, and a partial index with no code tree. [38]
 - The route, and bad requests and bounded code notices. [39]
 - The lane row. [40]
 - A history row's incoming link carries the record the row is about. [41]
@@ -122,3 +119,5 @@ No configured live documentation source was available for this pass.
 ### Cross-Repo References
 
 No cross-repo boundary is crossed by this file.
+
+- Published selection reads uncommitted memory without writes and pins only clean state; live-leaf selection names excluded uncommitted code; partial-index and missing-code-tree notices remain covered. The hexadecimal-name selection test is absent. [38]

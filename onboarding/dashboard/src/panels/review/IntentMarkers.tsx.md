@@ -49,12 +49,12 @@ edits, comments on or assesses a change (the adopted Exclusions).
 - **Never silence (`MarkReadNote`).** A changed file shows why it has no marks: `unlisted` ("the change inventory is
   partial and does not list this path, so its classification is not read"; review R1 F5), `loading`, `unavailable`
   with the owner's code and detail, or `other-content` ("the classification describes other content of this path
-  than the text drawn here"). A card excerpt stays quiet only while its read is under way.
+  than the text drawn here"). Card excerpts request excerpt presentation and show `intent marks loading…` while pending. The full-file default remains `reading this file's intent marks…`; unavailable and drawn-content mismatch states remain explicit.
 - **Card excerpts (`useExcerptMarking`; ruling Q4, review R1 F1).** Active only for a card whose two blobs differ (an
   unchanged file's card asks nothing; review R2). `excerptWindow` gives the lines each drawn side's resolved range
   covers; `drawnSidesMatch` compares **only the sides the excerpt draws** with the classification's blobs, so an
   unreadable memory side, which serves no blob, never removes the drawn side's marks, and a drawn side of other
-  content says so. The pane is `card-excerpt:<key>`.
+  content says so. The pane is `card-excerpt:<key>`. `useExcerptMarking` passes the `excerpt` flag to `MarkReadNote`. An unchanged-range excerpt of a changed file is distinct from a genuinely unchanged file, which requests no classification.
 - **Helpers and the return.** `sideMarks` gives a one-sided pane its side's marks. `MarkerReturn` renders
   `← Back to <file name>` (with `data-return-path`, `-pane`, `-hunk`, the full path as title) while a followed marker
   has not been returned to; its click is the scope's `back`.
@@ -85,7 +85,14 @@ edits, comments on or assesses a change (the adopted Exclusions).
 
 No additional work is asserted by this card.
 
+### By-design rationale — Collapsed runs expand whole
+
+The full hunk context and neighbouring marks must remain visible; expanding only the clicked line would hide adjacent attribution. This is the chosen boundary, not a Todo or missing feature.
+
 ## Evidence
+
+- Collapsed runs expand whole: The full hunk context and neighbouring marks must remain visible; expanding only the clicked line would hide adjacent attribution. [14]
+
 
 ### Docs References
 
@@ -95,6 +102,10 @@ No configured live documentation source was available for this pass.
 
 ### Repo-Internal References
 
+- Why a changed file has no drawn marks: unlisted, visible pending, unavailable or other content; excerpt pending text is intent marks loading…, while full-file default wording is unchanged. [9]
+- Excerpt windows use only resolved drawn sides; drawnSidesMatch compares their blobs, and useExcerptMarking reads only changed files and requests excerpt pending presentation. [8]
+
+
 - The module's own statement: marks from the one classification, in the diff's own gutter; no editing, commenting or assessment. [1]
 - A pane's input, named so a return lands in the pane a marker was followed from. [2]
 - Placing every owner hunk a pane draws, the reveal and list reopened on a return, and hunks past a bounded text named. [3]
@@ -102,8 +113,8 @@ No configured live documentation source was available for this pass.
 - The list: intents and tests apart, occurrences that follow their target, unknown lines, and the intersection-only sentence. [5]
 - The file-level mark and the past-text note. [6]
 - The source-content view: marks only on the drawn blobs the classification names. [7]
-- Card excerpts: only the drawn sides compared (review R1 F1); an unchanged file's card never active. [8]
-- Why a changed file shows no marks: unlisted, loading, unavailable or other content; never silence (review R1 F5). [9]
+
+
 - One side's marks, and `Back to <file>`. [10]
 
 - Surviving cards render excerpt markers and their full-file SourceContent markers; removed lane/explorer callers are not integration evidence. [13]

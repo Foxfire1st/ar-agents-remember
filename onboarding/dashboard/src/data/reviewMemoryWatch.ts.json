@@ -1,0 +1,143 @@
+{
+  "path": "dashboard/src/data/reviewMemoryWatch.ts",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "a6a7b8ec91405392b2bff6759bb5d4dc1b6d7c46",
+        "content": "sha256:fe19327e1cd3788bbb9080dd2672974d706f4fa69eacfea16f9a4f0572e32044",
+        "locator": {
+          "kind": "symbol",
+          "name": "useReviewMemoryWatch"
+        }
+      },
+      "id": "RLZ-75BC0K",
+      "invariant": "INV-EZ8QKFX6",
+      "origin": {
+        "handoffEntry": "CUR-L57-memory-watch-INV-EZ8QKFX6",
+        "leaf": "260928-MIK-L57"
+      },
+      "rationale": "For a mounted active live comparison only, register the exact target on the existing state-stream owner; a matching baseline/reconnect/change invalidation calls cycle.memoryChanged and the shared entry revalidate callback. This hook owns no second connection and does not directly read or manufacture a count.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "a6a7b8ec91405392b2bff6759bb5d4dc1b6d7c46",
+        "content": "sha256:fe19327e1cd3788bbb9080dd2672974d706f4fa69eacfea16f9a4f0572e32044",
+        "locator": {
+          "kind": "symbol",
+          "name": "useReviewMemoryWatch"
+        }
+      },
+      "id": "RLZ-K4W086",
+      "invariant": "INV-74578B97",
+      "origin": {
+        "handoffEntry": "CUR-L57-memory-watch-INV-74578B97",
+        "leaf": "260928-MIK-L57"
+      },
+      "rationale": "For a mounted active live comparison only, register the exact target on the existing state-stream owner; a matching baseline/reconnect/change invalidation calls cycle.memoryChanged and the shared entry revalidate callback. This hook owns no second connection and does not directly read or manufacture a count.",
+      "role": "propagation-persistence"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "First effective registration owns the scope and scope changes reset the baseline.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a6a7b8ec91405392b2bff6759bb5d4dc1b6d7c46",
+            "content": "sha256:b7e4d8f3bffb83c23c83b1a678572cd5349d84796034b187c9a8287d01d716e2",
+            "locator": {
+              "kind": "symbol",
+              "name": "reviewMemoryScope"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "First/reconnect baseline reconciles once; unchanged matching revisions then stay quiet.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a6a7b8ec91405392b2bff6759bb5d4dc1b6d7c46",
+            "content": "sha256:6c0edb982debcfbf61447406ab93c2e41d2c7b4eb5f6f1ebed38d69f61b6f5de",
+            "locator": {
+              "kind": "symbol",
+              "name": "publishReviewMemory"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Errors are matched to the effective scope and forwarded as named failures.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a6a7b8ec91405392b2bff6759bb5d4dc1b6d7c46",
+            "content": "sha256:1d11c144cafa8f7a39f87af2cd7d1e94fab807e31b73c8e2c9bee4d2e684929c",
+            "locator": {
+              "kind": "symbol",
+              "name": "publishReviewMemoryError"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Only live non-recorded reviews register; matching changes retain selection then refresh cycle/entry.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a6a7b8ec91405392b2bff6759bb5d4dc1b6d7c46",
+            "content": "sha256:fe19327e1cd3788bbb9080dd2672974d706f4fa69eacfea16f9a4f0572e32044",
+            "locator": {
+              "kind": "symbol",
+              "name": "useReviewMemoryWatch"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Existing state transport carries scope query and both memory event types.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "832a3b6755f8ae5bab9c16223b544d9aa0c8f761",
+            "content": "sha256:2f23951616c27989b3f12f307fdfbe0261488f13f80daa810c6c7082a00ed794",
+            "locator": {
+              "kind": "symbol",
+              "name": "connectState"
+            },
+            "path": "dashboard/src/data/stream.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Actual ReviewSurface supplies the cycle and navigation.engage callback.\n\nAnchor: inclusive source span",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bb94e003292e3a408d3607472dacd850e1f8da65",
+            "content": "sha256:98fcc6d0202bc8f7feace48fede3bee258f896587558eb3bb20226c24a07dfbd",
+            "locator": {
+              "end": 710,
+              "kind": "line_range",
+              "start": 684
+            },
+            "path": "dashboard/src/panels/review/ReviewSurface.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

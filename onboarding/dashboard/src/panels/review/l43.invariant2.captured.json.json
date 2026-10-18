@@ -2,15 +2,17 @@
   "path": "dashboard/src/panels/review/l43.invariant2.captured.json",
   "realizes": [],
   "references": {
-    "1": {
-      "note": "The captured body preserves its response state and comparison-bound facts.",
+    "2": {
+      "note": "The current retained JSON input supplies the literal identities, response states and populations summarized above; these are fixture facts, not live project knowledge or fresh execution evidence.",
       "targets": [
         {
           "anchor": {
-            "blob": "1a19b8d8968fddc7694f384ea4a65012e301e663",
-            "content": "sha256:e5d516f532b6cbec31b0fba1ef7d90460f0051f755a8b2d04953ee2a03bcc427",
+            "blob": "a67cb974f5603f12b629020ec54738f83e7780da",
+            "content": "sha256:866c09eeeed8a12f38aef226a19eb73ce6042af0e0f7a645ccd6792f74fd11f3",
             "locator": {
-              "kind": "file"
+              "end": 1,
+              "kind": "line_range",
+              "start": 1
             }
           },
           "kind": "code"

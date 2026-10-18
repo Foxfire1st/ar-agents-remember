@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "c39f52a3070e7ea5ae990de1c13944060f41f81e",
+        "blob": "ea4a25a184fd55e7859a3d6c4589e75d6646e280",
         "content": "sha256:18b276a27056f4aea66913f01dc6dd1ef13375c67e7d2125f9028d730554159e",
         "locator": {
           "kind": "symbol",
@@ -20,8 +20,8 @@
     },
     {
       "anchor": {
-        "blob": "c39f52a3070e7ea5ae990de1c13944060f41f81e",
-        "content": "sha256:d6f53a08c3f009d6ec1fab9421c91864471014e12a0b71c5b30904463fafd8d0",
+        "blob": "ea4a25a184fd55e7859a3d6c4589e75d6646e280",
+        "content": "sha256:3a73327b6d72c7336b512184b1cb846ce91a611c53914f9317d86b624e5d429e",
         "locator": {
           "kind": "symbol",
           "name": "startRead"
@@ -37,8 +37,8 @@
     },
     {
       "anchor": {
-        "blob": "c39f52a3070e7ea5ae990de1c13944060f41f81e",
-        "content": "sha256:d6f53a08c3f009d6ec1fab9421c91864471014e12a0b71c5b30904463fafd8d0",
+        "blob": "ea4a25a184fd55e7859a3d6c4589e75d6646e280",
+        "content": "sha256:3a73327b6d72c7336b512184b1cb846ce91a611c53914f9317d86b624e5d429e",
         "locator": {
           "kind": "symbol",
           "name": "startRead"
@@ -54,8 +54,8 @@
     },
     {
       "anchor": {
-        "blob": "c39f52a3070e7ea5ae990de1c13944060f41f81e",
-        "content": "sha256:d6f53a08c3f009d6ec1fab9421c91864471014e12a0b71c5b30904463fafd8d0",
+        "blob": "ea4a25a184fd55e7859a3d6c4589e75d6646e280",
+        "content": "sha256:3a73327b6d72c7336b512184b1cb846ce91a611c53914f9317d86b624e5d429e",
         "locator": {
           "kind": "symbol",
           "name": "startRead"
@@ -71,7 +71,7 @@
     },
     {
       "anchor": {
-        "blob": "c39f52a3070e7ea5ae990de1c13944060f41f81e",
+        "blob": "ea4a25a184fd55e7859a3d6c4589e75d6646e280",
         "content": "sha256:bccb0ae9804fbada06083515cde5defddd94fcbf6f5429b21a6e1307cbffc1aa",
         "locator": {
           "kind": "symbol",
@@ -88,12 +88,12 @@
     },
     {
       "anchor": {
-        "blob": "c39f52a3070e7ea5ae990de1c13944060f41f81e",
-        "content": "sha256:d13154c48e362b2880ba2d42570204a59feca465a9b3ae1a70e2abdbf284255b",
+        "blob": "ea4a25a184fd55e7859a3d6c4589e75d6646e280",
+        "content": "sha256:6dcd365ecd517da63aacb051f6c148322e254cc17eadf7d2f791b78f91a899d3",
         "locator": {
-          "end": 483,
+          "end": 507,
           "kind": "line_range",
-          "start": 370
+          "start": 393
         }
       },
       "id": "RLZ-HG7CRC9D",
@@ -101,13 +101,13 @@
       "origin": {
         "leaf": "260921-ICR-L46"
       },
-      "rationale": "Starts no review read while hold is set, which the reviewer passes while the navigation is still settling on a subject, and otherwise starts one read per question key, selection or explicit refresh. Opening the reviewer therefore asks the review once, for the subject the catalogue chose, instead of first reading a default and then re-reading.",
+      "rationale": "Suppresses the initial read while navigation holds the question and then starts the selected keyed question without a duplicate default read; explicit refresh and memory-input invalidation retain their own nonce/epoch boundaries.",
       "role": "enforcement"
     },
     {
       "anchor": {
-        "blob": "c39f52a3070e7ea5ae990de1c13944060f41f81e",
-        "content": "sha256:d6f53a08c3f009d6ec1fab9421c91864471014e12a0b71c5b30904463fafd8d0",
+        "blob": "ea4a25a184fd55e7859a3d6c4589e75d6646e280",
+        "content": "sha256:3a73327b6d72c7336b512184b1cb846ce91a611c53914f9317d86b624e5d429e",
         "locator": {
           "kind": "symbol",
           "name": "startRead"
@@ -124,11 +124,11 @@
   ],
   "references": {
     "1": {
-      "note": "The optional hold on the question.\n\nAnchor: `hold?: boolean`",
+      "note": "The optional hold on the question.",
       "targets": [
         {
           "anchor": {
-            "blob": "c39f52a3070e7ea5ae990de1c13944060f41f81e",
+            "blob": "ea4a25a184fd55e7859a3d6c4589e75d6646e280",
             "content": "sha256:e89ae01a65ec45bf57e4196e03e0bcaa764c320f1b5d9ad39c897284e9814644",
             "locator": {
               "kind": "symbol",
@@ -140,11 +140,11 @@
       ]
     },
     "10": {
-      "note": "**Admission writes the keyed read, the retained generation and the frame together.**\n\nAnchor: `setFrame`",
+      "note": "**Admission writes the keyed read, the retained generation and the frame together.**",
       "targets": [
         {
           "anchor": {
-            "blob": "c39f52a3070e7ea5ae990de1c13944060f41f81e",
+            "blob": "ea4a25a184fd55e7859a3d6c4589e75d6646e280",
             "content": "sha256:71d5dd2985bb524df4df02d98618b3409e4823fc712c5bb9d42f5b771d169ca5",
             "locator": {
               "kind": "symbol",
@@ -156,11 +156,11 @@
       ]
     },
     "11": {
-      "note": "**The read for the question on screen, derived per render.**",
+      "note": "**The read for the question on screen, derived per render.**\n\nAnchor: `readOnScreen` `KeyedRead`",
       "targets": [
         {
           "anchor": {
-            "blob": "c39f52a3070e7ea5ae990de1c13944060f41f81e",
+            "blob": "ea4a25a184fd55e7859a3d6c4589e75d6646e280",
             "content": "sha256:bccb0ae9804fbada06083515cde5defddd94fcbf6f5429b21a6e1307cbffc1aa",
             "locator": {
               "kind": "symbol",
@@ -171,7 +171,7 @@
         },
         {
           "anchor": {
-            "blob": "c39f52a3070e7ea5ae990de1c13944060f41f81e",
+            "blob": "ea4a25a184fd55e7859a3d6c4589e75d6646e280",
             "content": "sha256:31861b7a4eaa330e2c86cd286cfbe6e1671eb2b7ef9f86872ccadc33c1bcb0e4",
             "locator": {
               "kind": "symbol",
@@ -187,7 +187,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c39f52a3070e7ea5ae990de1c13944060f41f81e",
+            "blob": "ea4a25a184fd55e7859a3d6c4589e75d6646e280",
             "content": "sha256:18b276a27056f4aea66913f01dc6dd1ef13375c67e7d2125f9028d730554159e",
             "locator": {
               "kind": "symbol",
@@ -203,7 +203,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c39f52a3070e7ea5ae990de1c13944060f41f81e",
+            "blob": "ea4a25a184fd55e7859a3d6c4589e75d6646e280",
             "content": "sha256:5d7ffbdfea5f63649a2a3be5a5c9ca771d6b4d4b5fdaf3e6e2e70959c26c6c1b",
             "locator": {
               "kind": "symbol",
@@ -215,12 +215,12 @@
       ]
     },
     "14": {
-      "note": "**The hook's contract: the read, the retained generation and its key, the identity described for the question on screen now, and the reader's own refresh.**\n\nAnchor: `frame`",
+      "note": "The hook returns read, retained payload, carried identity, refresh, memoryChanged, memoryWatchFailed and task-context frame.",
       "targets": [
         {
           "anchor": {
-            "blob": "c39f52a3070e7ea5ae990de1c13944060f41f81e",
-            "content": "sha256:96fd7dc4c35fbfbaeb1bfe26b7e4ec208e866c50a9631e1ccd40592c566fefce",
+            "blob": "ea4a25a184fd55e7859a3d6c4589e75d6646e280",
+            "content": "sha256:173f3f11b7e56a0c9dfc68ac7675e091f91a63685912374dd2b76dc09a657dc4",
             "locator": {
               "kind": "symbol",
               "name": "ReviewReadCycle"
@@ -231,26 +231,15 @@
       ]
     },
     "15": {
-      "note": "**The hook itself: the four pieces of state, the memoised request fields, the sequence counter, the two refs and the single effect that starts a read.**\n\nAnchor: `carriedRef`",
+      "note": "The complete hook owns keyed answer/retention/frame/carried state, refresh nonce, memoised request, request sequence and current-value refs, with one read-starting effect.",
       "targets": [
         {
           "anchor": {
-            "blob": "c39f52a3070e7ea5ae990de1c13944060f41f81e",
-            "content": "sha256:d13154c48e362b2880ba2d42570204a59feca465a9b3ae1a70e2abdbf284255b",
+            "blob": "ea4a25a184fd55e7859a3d6c4589e75d6646e280",
+            "content": "sha256:6dcd365ecd517da63aacb051f6c148322e254cc17eadf7d2f791b78f91a899d3",
             "locator": {
               "kind": "symbol",
               "name": "useReviewReadCycle"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "c39f52a3070e7ea5ae990de1c13944060f41f81e",
-            "content": "sha256:f7d77a8738a90a099aa00291fb8580b2fbfacf644ee0f2fb404c3231ce201412",
-            "locator": {
-              "kind": "symbol",
-              "name": "reads"
             }
           },
           "kind": "code"
@@ -258,11 +247,11 @@
       ]
     },
     "16": {
-      "note": "**`refresh` files the identity with the question it was displayed for and the read number that will replace it, and asks the effect to run again — a refresh with nothing displayed carries nothing.**\n\nAnchor: `refresh`; `forgetReview`",
+      "note": "**`refresh` files the identity with the question it was displayed for and the read number that will replace it, and asks the effect to run again — a refresh with nothing displayed carries nothing.**",
       "targets": [
         {
           "anchor": {
-            "blob": "c39f52a3070e7ea5ae990de1c13944060f41f81e",
+            "blob": "ea4a25a184fd55e7859a3d6c4589e75d6646e280",
             "content": "sha256:24f36ad622d96c2c6ca9cbf907520f4a4c2ece7099445a02edf3061df53069b4",
             "locator": {
               "kind": "symbol",
@@ -273,12 +262,12 @@
         },
         {
           "anchor": {
-            "blob": "c39f52a3070e7ea5ae990de1c13944060f41f81e",
+            "blob": "ea4a25a184fd55e7859a3d6c4589e75d6646e280",
             "content": "sha256:66c6fb4afc210ebef8199ba3c541db6eef69f04b5104818b9eb879a966b7ebb8",
             "locator": {
-              "end": 451,
+              "end": 474,
               "kind": "line_range",
-              "start": 435
+              "start": 458
             }
           },
           "kind": "code"
@@ -290,7 +279,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c39f52a3070e7ea5ae990de1c13944060f41f81e",
+            "blob": "ea4a25a184fd55e7859a3d6c4589e75d6646e280",
             "content": "sha256:1bdb19058238b03d48aa42c095fd24c4ffeb55c5763179eb5f64fb80a62f32f5",
             "locator": {
               "kind": "symbol",
@@ -302,11 +291,11 @@
       ]
     },
     "18": {
-      "note": "**The read state and its mapper: the four phases this module sets, and the client's typed answer projected into them.**",
+      "note": "**The read state and its mapper: the four phases this module sets, and the client's typed answer projected into them.**\n\nAnchor: `ReviewRead` `readFrom`",
       "targets": [
         {
           "anchor": {
-            "blob": "52421fd8c85c1d68fe261ca9e829757796226adf",
+            "blob": "4dda0f8e45d38b01cd7700d66b0a93e90ef87991",
             "content": "sha256:e39082ca176553e73744f3790cc07267e555fa0c9c8f780a9881093040e382bd",
             "locator": {
               "kind": "symbol",
@@ -318,8 +307,8 @@
         },
         {
           "anchor": {
-            "blob": "52421fd8c85c1d68fe261ca9e829757796226adf",
-            "content": "sha256:dfea31cf2ab6562f7f4e605cd7421dfd6caa2bf26a36bbf29e3cda0a2d1d5eae",
+            "blob": "4dda0f8e45d38b01cd7700d66b0a93e90ef87991",
+            "content": "sha256:2ca3bcdc9b7367a37f177783c435d11e39330f2388630f6b10c3389437ae7bd7",
             "locator": {
               "kind": "symbol",
               "name": "readFrom"
@@ -331,12 +320,12 @@
       ]
     },
     "19": {
-      "note": "**The client's ninth argument and the one query string it is assembled into, with the empty/undefined spellings collapsed once.**",
+      "note": "**The client's ninth argument and the one query string it is assembled into, with the empty/undefined spellings collapsed once.**\n\nAnchor: `intentReview` `reviewQuery`",
       "targets": [
         {
           "anchor": {
-            "blob": "923faffc20359156074cf02aed9860c41b8b29dd",
-            "content": "sha256:a152f07db96bb7862f632571fd4595a32ef8103c304bc492ba591d2efacc3ba0",
+            "blob": "6aef8710047677b74fa337e6c4e2b6df948df099",
+            "content": "sha256:1b0ba6ded67ab3766300e0dea9ad82553875fd843dd265dabad3cab47290aa26",
             "locator": {
               "kind": "symbol",
               "name": "intentReview"
@@ -347,8 +336,8 @@
         },
         {
           "anchor": {
-            "blob": "923faffc20359156074cf02aed9860c41b8b29dd",
-            "content": "sha256:092b8217e46439bdcb40a46cbd8fd8d783f119bfd3e1472d5c5ae6df006be335",
+            "blob": "6aef8710047677b74fa337e6c4e2b6df948df099",
+            "content": "sha256:36e6736991e854439510e2e1c286440def86579c19d52f011f4d449ce4abea6a",
             "locator": {
               "kind": "symbol",
               "name": "reviewQuery"
@@ -364,7 +353,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c39f52a3070e7ea5ae990de1c13944060f41f81e",
+            "blob": "ea4a25a184fd55e7859a3d6c4589e75d6646e280",
             "content": "sha256:7c4ce85d32131a492d6870ac3949862a3b096e7db9fe511e050bba929ec3de33",
             "locator": {
               "kind": "symbol",
@@ -380,8 +369,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "923faffc20359156074cf02aed9860c41b8b29dd",
-            "content": "sha256:d3f7b60e6b5906da804748942245f93dfd60ff10ebec1515a406525f67c0a870",
+            "blob": "6aef8710047677b74fa337e6c4e2b6df948df099",
+            "content": "sha256:0adf0c6b9ce45337f7b8cc4b47174d832305456798432c65c79477ac8d092e09",
             "locator": {
               "kind": "symbol",
               "name": "PREVIOUS_BINDING_QUERY"
@@ -393,12 +382,12 @@
       ]
     },
     "21": {
-      "note": "The surface calls the shared read cycle, checks its retained target key, and supplies the resulting generation to refresh.",
+      "note": "The surface calls the shared read cycle, checks its retained target key, and supplies the resulting generation to refresh.\n\nAnchor: `useSurface` `ReviewSurface`",
       "targets": [
         {
           "anchor": {
-            "blob": "f7e576bc05a33889caaab2fe6c0396c6d8805922",
-            "content": "sha256:ed42abbe8b4b69f82670123053f5462afd7d5f4004110fe9e68e5e351b9f61e6",
+            "blob": "bb94e003292e3a408d3607472dacd850e1f8da65",
+            "content": "sha256:f0203df5014bb49872c33405cfcec900dbf91c93c1501fce9ee3d899ae9e042d",
             "locator": {
               "kind": "symbol",
               "name": "useSurface"
@@ -409,8 +398,8 @@
         },
         {
           "anchor": {
-            "blob": "f7e576bc05a33889caaab2fe6c0396c6d8805922",
-            "content": "sha256:218ee1a1f3fdf06979bf7cc3815ca96c127497b4116dc8f5145cc72917612792",
+            "blob": "bb94e003292e3a408d3607472dacd850e1f8da65",
+            "content": "sha256:ceb3fbb910fe4c87d1148f93e07b23d24ff2a190a43ce694e9ecc1629f7121d5",
             "locator": {
               "kind": "symbol",
               "name": "ReviewSurface"
@@ -439,16 +428,16 @@
       ]
     },
     "23": {
-      "note": "**The cases that measure the identity's single-read rule through the real surface: a different subject carries nothing, a recorded read carries nothing, and a same-flush subject change plus refresh carries nothing.**\n\nAnchor: \"carries the identity into a read that replaces it, and into no other question (L17-F1)\"; \"never carries a live identity into a recorded read, nor a recorded one into a live read (L17-F1)\"; \"renders no generation claim when the subject change and the refresh land in one flush (L17-R2-F1)\"",
+      "note": "Stored stubbed surface cases assert same-flush subject/refresh isolation and that the displayed identity is carried only by its replacement, never by another subject or live/recorded question. These assertions have not been executed by this curation.",
       "targets": [
         {
           "anchor": {
-            "blob": "cec5caaad77cc5f8706ecb6859b2ff53ab119ffd",
+            "blob": "b75c43b7d10a9525efafb600788e6299f99a2fb9",
             "content": "sha256:383c275babe074fa82b4335ebc3c61d6c63d1aa2f5fe71087d4d9d771aa33fc0",
             "locator": {
-              "end": 903,
+              "end": 892,
               "kind": "line_range",
-              "start": 712
+              "start": 701
             },
             "path": "dashboard/src/panels/review/ReviewSurface.outcomes.test.tsx"
           },
@@ -457,16 +446,16 @@
       ]
     },
     "24": {
-      "note": "**The case that measures the sequence guard: a slow earlier subject's answer cannot replace the subject selected now.**\n\nAnchor: \"never renders a slow earlier subject's answer over the subject selected now\"",
+      "note": "The stored slow-subject surface case releases the superseded response after the newer subject and asserts that comparison and subject remain newer; this is source evidence, not a fresh test run.",
       "targets": [
         {
           "anchor": {
-            "blob": "cec5caaad77cc5f8706ecb6859b2ff53ab119ffd",
+            "blob": "b75c43b7d10a9525efafb600788e6299f99a2fb9",
             "content": "sha256:347204fdcf53772e8fed98710d63d20a4d7bf5a3b737bc2e26feb6452c687a8a",
             "locator": {
-              "end": 710,
+              "end": 699,
               "kind": "line_range",
-              "start": 659
+              "start": 648
             },
             "path": "dashboard/src/panels/review/ReviewSurface.outcomes.test.tsx"
           },
@@ -479,7 +468,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c39f52a3070e7ea5ae990de1c13944060f41f81e",
+            "blob": "ea4a25a184fd55e7859a3d6c4589e75d6646e280",
             "content": "sha256:904fba4680b2632a1c07d36675ccd1ac88cd8287fbce8c3c8257cb60508ae176",
             "locator": {
               "kind": "symbol",
@@ -491,7 +480,7 @@
       ]
     },
     "26": {
-      "note": "Sparse updates preserve exact content and claim identity within independent walks (moved unchanged to `familyWalkMerge.ts` by L48).",
+      "note": "Sparse updates preserve exact content and claim identity within independent walks (moved unchanged to `familyWalkMerge.ts` by L48).\n\nAnchor: `mergeMember` `mergeFamilySide`",
       "targets": [
         {
           "anchor": {
@@ -520,7 +509,7 @@
       ]
     },
     "27": {
-      "note": "Only the bound comparison and exact family-side-revision walk are composed.",
+      "note": "Only the bound comparison and exact family-side-revision walk are composed.\n\nAnchor: `sameFamilyWalk` `admittedFamilyContinuation` `mergeFamilyContinuation`",
       "targets": [
         {
           "anchor": {
@@ -560,13 +549,40 @@
         }
       ]
     },
-    "3": {
-      "note": "No read starts while held.\n\nAnchor: \"if (hold) return undefined\"",
+    "28": {
+      "note": "memoryChanged advances the request sequence, invalidates only cached whole reviews through the cache owner, then invokes the normal refresh. memoryWatchFailed advances the sequence and writes a keyed failed outcome without replacing retained payload/frame; this module owns neither stream connection nor retry timer.\n\nAnchor: `memoryWatchActions` `startRead`",
       "targets": [
         {
           "anchor": {
-            "blob": "c39f52a3070e7ea5ae990de1c13944060f41f81e",
-            "content": "sha256:d13154c48e362b2880ba2d42570204a59feca465a9b3ae1a70e2abdbf284255b",
+            "blob": "ea4a25a184fd55e7859a3d6c4589e75d6646e280",
+            "content": "sha256:237aad0702ec874bbc7fa6a5bc37abbc5da571140e63f42038c4e86555efa015",
+            "locator": {
+              "kind": "symbol",
+              "name": "memoryWatchActions"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ea4a25a184fd55e7859a3d6c4589e75d6646e280",
+            "content": "sha256:3a73327b6d72c7336b512184b1cb846ce91a611c53914f9317d86b624e5d429e",
+            "locator": {
+              "kind": "symbol",
+              "name": "startRead"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "No read starts while held.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ea4a25a184fd55e7859a3d6c4589e75d6646e280",
+            "content": "sha256:6dcd365ecd517da63aacb051f6c148322e254cc17eadf7d2f791b78f91a899d3",
             "locator": {
               "kind": "symbol",
               "name": "useReviewReadCycle"
@@ -577,11 +593,11 @@
       ]
     },
     "4": {
-      "note": "The module states keyed question identity, newest-only display, exact family continuation, bounded whole-subject reuse and the whole-task unshown opening exception.",
+      "note": "The source header records keyed questions, newest-only display, single-read refresh identity, coherent family continuation and compatible whole-task unshown reuse; current memory-notification behavior is implemented separately below the header.",
       "targets": [
         {
           "anchor": {
-            "blob": "c39f52a3070e7ea5ae990de1c13944060f41f81e",
+            "blob": "ea4a25a184fd55e7859a3d6c4589e75d6646e280",
             "content": "sha256:891fcfccdef113f42d0ef06dd7e3aea46bec74c3c4141c5bafdf1c2761256790",
             "locator": {
               "end": 57,
@@ -594,11 +610,11 @@
       ]
     },
     "5": {
-      "note": "The module's imports: the review wire types and the client, and the read state with its mapper.\n\nAnchor: `intentReview`; `readFrom`",
+      "note": "The module's imports: the review wire types and the client, and the read state with its mapper.",
       "targets": [
         {
           "anchor": {
-            "blob": "c39f52a3070e7ea5ae990de1c13944060f41f81e",
+            "blob": "ea4a25a184fd55e7859a3d6c4589e75d6646e280",
             "content": "sha256:a17759f2630e0a4682067b497ca7f560f828f13b9a6a0ec2c89af849bcf6e44e",
             "locator": {
               "end": 70,
@@ -611,11 +627,11 @@
       ]
     },
     "6": {
-      "note": "**The page request, exported from here rather than declared in the surface, with the collection, the cursor and the size axis the target key consumes.**",
+      "note": "ReviewPageRequest carries the shared current wire collection union, cursor and optional size; offered first-page collections are a separate client policy.",
       "targets": [
         {
           "anchor": {
-            "blob": "c39f52a3070e7ea5ae990de1c13944060f41f81e",
+            "blob": "ea4a25a184fd55e7859a3d6c4589e75d6646e280",
             "content": "sha256:ae45d4342fb28895e56a67f55d56ba63220f49dfd0cdd55329d50860d4d21323",
             "locator": {
               "kind": "symbol",
@@ -631,7 +647,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c39f52a3070e7ea5ae990de1c13944060f41f81e",
+            "blob": "ea4a25a184fd55e7859a3d6c4589e75d6646e280",
             "content": "sha256:17dc67a5ffdc81d86867e2e2a5b0086011e538d0c5b05c9ca465efbd66076325",
             "locator": {
               "kind": "symbol",
@@ -643,11 +659,11 @@
       ]
     },
     "8": {
-      "note": "**The one read: the nine-argument client call, the previous identity passed as the ninth, and the answer handed to the caller's callback rather than written to state.**\n\nAnchor: `intentReview`; `reviewProblemFromCause`",
+      "note": "**The one read: the nine-argument client call, the previous identity passed as the ninth, and the answer handed to the caller's callback rather than written to state.**",
       "targets": [
         {
           "anchor": {
-            "blob": "c39f52a3070e7ea5ae990de1c13944060f41f81e",
+            "blob": "ea4a25a184fd55e7859a3d6c4589e75d6646e280",
             "content": "sha256:669fa8d6691b47b17a678e762209b9860924a6c1c4719a48a2b77f3b913cc0e5",
             "locator": {
               "kind": "symbol",
@@ -659,12 +675,12 @@
       ]
     },
     "9": {
-      "note": "The single read owner preserves newest-only display and refresh/continuation identity; an admitted superseded unpaged non-refresh whole-task answer alone may be kept unshown under a compatible generation.",
+      "note": "startRead consumes a sequence and cache input epoch, admits only current answers, validates continuation before display, and rejects old input epochs before even the compatible unshown whole-task exception.",
       "targets": [
         {
           "anchor": {
-            "blob": "c39f52a3070e7ea5ae990de1c13944060f41f81e",
-            "content": "sha256:d6f53a08c3f009d6ec1fab9421c91864471014e12a0b71c5b30904463fafd8d0",
+            "blob": "ea4a25a184fd55e7859a3d6c4589e75d6646e280",
+            "content": "sha256:3a73327b6d72c7336b512184b1cb846ce91a611c53914f9317d86b624e5d429e",
             "locator": {
               "kind": "symbol",
               "name": "startRead"

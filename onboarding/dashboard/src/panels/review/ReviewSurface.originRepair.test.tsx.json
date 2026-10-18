@@ -1,0 +1,24 @@
+{
+  "path": "dashboard/src/panels/review/ReviewSurface.originRepair.test.tsx",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Native fixture origins are shown on both family/invariant sides without disclosure at 390/1280 synthetic widths; separate explicitly synthetic distinct origins preserve side-local task/leaf-wave/handoff. Width stubs are not real viewport acceptance.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fad916c6909a64d4d912f7ebb5dc67a5285bd9d6",
+            "content": "sha256:a2ff53ef01b6efd6de23cf0e8cc093afbf22a41e7434c808d95c387eeedadc48",
+            "locator": {
+              "end": 74,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

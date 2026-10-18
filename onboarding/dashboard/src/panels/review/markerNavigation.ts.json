@@ -40,6 +40,23 @@
     {
       "anchor": {
         "blob": "2c55e47896fbccfc402e8646015896baec1e0606",
+        "content": "sha256:cbef0f774205691fa6f16d737959e5d61ec40f9baa33fa61513257ccd6e7a00e",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-6AVQGP",
+      "invariant": "INV-FREFAX",
+      "origin": {
+        "handoffEntry": "MIK-R67@v2 by-design 1",
+        "leaf": "260928-MIK-L57"
+      },
+      "rationale": "Keeps marker origin/return in review navigation rather than creating browser-history subject selections that reset the walk.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "2c55e47896fbccfc402e8646015896baec1e0606",
         "content": "sha256:5adb0563f1b308eae62564e17c9af2d1dd5c34bd0a2d6a34ad45ae90c259c166",
         "locator": {
           "kind": "symbol",
@@ -91,7 +108,7 @@
       ]
     },
     "12": {
-      "note": "Restores the captured subject and chosen context, clears the selection focus request for marker return, then restores worklist, open path, diff layout and full-file mode.",
+      "note": "Restores the captured subject and chosen context, clears the selection focus request for marker return only when a navigation exists, then restores worklist, open path, diff layout and full-file mode.\n\nAnchor: `focusSelection`",
       "targets": [
         {
           "anchor": {
@@ -175,12 +192,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "79b9df933874721d54216189dfe94463118877aa",
+            "blob": "9013d5e76d160ec2c25d2edc99c11f391ffecb83",
             "content": "sha256:12c29394bf9144fcad060c75b0da85c518e704f7309ae20586709d3020563dd0",
             "locator": {
-              "end": 278,
+              "end": 195,
               "kind": "line_range",
-              "start": 278
+              "start": 195
             },
             "path": "dashboard/src/panels/review/ReviewWorkspace.tsx"
           },
@@ -229,7 +246,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1d2ce3087885774bc27b08dba49bdac96fcaa15a",
+            "blob": "9583164e407b2b0ceb6df90ee3694633f7ca74a1",
             "content": "sha256:68997ff7d2cf0414b3c209e1f50fa32b2716ce3a54d5f5064231efaa6ff66f27",
             "locator": {
               "kind": "symbol",

@@ -112,26 +112,28 @@
       ]
     },
     "13": {
-      "note": "The two changes a content read must not present as an edit: a mode-only change and a type change.",
+      "note": "Mode-only content keeps identical bytes and object identity; a type change opens the before regular file and after symlink by their respective kinds.\n\nAnchor: inclusive source ranges",
       "targets": [
         {
           "anchor": {
-            "blob": "6492d7c9aef520bfe3699194cab7a1fea4a5dd65",
+            "blob": "85b3126d0fc1e57837f2d2646e1a92b35fbba6f9",
             "content": "sha256:51f29eee5a6727eb2cbbf436fe38fe83d253d211fa1e992494d120b9f00285b6",
             "locator": {
-              "kind": "symbol",
-              "name": "test_a_mode_only_change_shows_identical_bytes_and_names_the_mode"
+              "end": 453,
+              "kind": "line_range",
+              "start": 438
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "6492d7c9aef520bfe3699194cab7a1fea4a5dd65",
+            "blob": "85b3126d0fc1e57837f2d2646e1a92b35fbba6f9",
             "content": "sha256:992e9221e25f5a6a983a5fe6ef51edd28612f196f82cfb75b6ec3c4b882e3d2d",
             "locator": {
-              "kind": "symbol",
-              "name": "test_a_type_change_opens_each_side_by_its_own_kind"
+              "end": 469,
+              "kind": "line_range",
+              "start": 456
             }
           },
           "kind": "test"
@@ -519,37 +521,40 @@
       ]
     },
     "3": {
-      "note": "The independent Git observation: undecoded bytes, `None` on an error, and an isolated environment.",
+      "note": "The subprocess helper returns bytes or None; its wrappers respectively require and decode UTF-8 text, or decode an ASCII object identity with None preserved.\n\nAnchor: inclusive source ranges",
       "targets": [
         {
           "anchor": {
-            "blob": "6492d7c9aef520bfe3699194cab7a1fea4a5dd65",
+            "blob": "85b3126d0fc1e57837f2d2646e1a92b35fbba6f9",
             "content": "sha256:2fc7f70e914e3551c8f96105d1a9d08926c3846a7e66be5be1b33fa46e1dc6fd",
             "locator": {
-              "kind": "symbol",
-              "name": "_blob_text"
+              "end": 93,
+              "kind": "line_range",
+              "start": 88
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "6492d7c9aef520bfe3699194cab7a1fea4a5dd65",
+            "blob": "85b3126d0fc1e57837f2d2646e1a92b35fbba6f9",
             "content": "sha256:3bfad47d576beec95e60cfbc9fe10965caa5cd6573a742ea258f4a5c64fcda96",
             "locator": {
-              "kind": "symbol",
-              "name": "_object_id"
+              "end": 100,
+              "kind": "line_range",
+              "start": 96
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "6492d7c9aef520bfe3699194cab7a1fea4a5dd65",
+            "blob": "85b3126d0fc1e57837f2d2646e1a92b35fbba6f9",
             "content": "sha256:8bc9598524db1ba96595657e02f1587d0b34c6f03bbe4c98a040d4b9bdb34eed",
             "locator": {
-              "kind": "symbol",
-              "name": "_subprocess_git"
+              "end": 115,
+              "kind": "line_range",
+              "start": 103
             }
           },
           "kind": "test"

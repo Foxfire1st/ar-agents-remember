@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "0a45fdcc36dc7c92163b39f88afc0683eaa646ef",
+        "blob": "aa5aeef9b5ccd6ce48001162347974b95ed036f7",
         "content": "sha256:fbfbec7051648113ae5a516c8e0b132a99a2687235da3e1f33be3c5f97d67737",
         "locator": {
           "kind": "symbol",
@@ -21,7 +21,7 @@
     },
     {
       "anchor": {
-        "blob": "0a45fdcc36dc7c92163b39f88afc0683eaa646ef",
+        "blob": "aa5aeef9b5ccd6ce48001162347974b95ed036f7",
         "content": "sha256:1dc05bec81f5b5135fb5c1d177617b03f528128d6435d8b47e044bed814085d0",
         "locator": {
           "kind": "symbol",
@@ -39,7 +39,7 @@
     },
     {
       "anchor": {
-        "blob": "0a45fdcc36dc7c92163b39f88afc0683eaa646ef",
+        "blob": "aa5aeef9b5ccd6ce48001162347974b95ed036f7",
         "content": "sha256:69aaf9352ebff4f3170c773e50445c5a96396add7ec3991e617450fb9bc74fc1",
         "locator": {
           "kind": "symbol",
@@ -57,8 +57,8 @@
     },
     {
       "anchor": {
-        "blob": "0a45fdcc36dc7c92163b39f88afc0683eaa646ef",
-        "content": "sha256:e001aa59de381c711dce31f247fe34c05e41890fa9a5ad7b5082881d97099278",
+        "blob": "aa5aeef9b5ccd6ce48001162347974b95ed036f7",
+        "content": "sha256:01b37327e1680cb15cd26b1530a572ffaffb6b9d28909bb14f1d2d6eec8fb165",
         "locator": {
           "kind": "symbol",
           "name": "PathView"
@@ -72,18 +72,37 @@
       },
       "rationale": "PathView owns the rendering or source-selection boundary that implements this obligation: A path document presents breadcrumbs, its own title, facts, uninterrupted prose, invariants, families, other records and references, without empty sections.",
       "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "aa5aeef9b5ccd6ce48001162347974b95ed036f7",
+        "content": "sha256:6d115d3ce4e9a7297c0150a7216030745956138137e49250c5dd2b01ea15fe2d",
+        "locator": {
+          "kind": "symbol",
+          "name": "usePathProse"
+        }
+      },
+      "id": "RLZ-DBDFBB",
+      "invariant": "INV-XDJ29E",
+      "origin": {
+        "handoffEntry": "CUR-L57-reader-side-load-coherence",
+        "leaf": "260928-MIK-L57"
+      },
+      "rationale": "Admits present whole prose only when both supplied selection fields equal the original path answer; mismatches/failures keep prior prose and report failure.",
+      "role": "enforcement"
     }
   ],
   "references": {
     "11": {
-      "note": "The path view's title, facts, prose and fixed section order.\n\nAnchor: `PathView`",
+      "note": "The currently held prose supplies the path title/body and retains facts then grouped sections.",
       "targets": [
         {
           "anchor": {
-            "blob": "0a45fdcc36dc7c92163b39f88afc0683eaa646ef",
-            "content": "sha256:da288ddd97d0dde83f693eadd73bcfbb682a6100fba2ebbcd50aac7a48150f74",
+            "blob": "aa5aeef9b5ccd6ce48001162347974b95ed036f7",
+            "content": "sha256:01b37327e1680cb15cd26b1530a572ffaffb6b9d28909bb14f1d2d6eec8fb165",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "PathView"
             }
           },
           "kind": "code"
@@ -91,14 +110,15 @@
       ]
     },
     "12": {
-      "note": "The sections and their order after the text.\n\nAnchor: `DocumentSections`",
+      "note": "Only nonempty document groups render, in invariant/family/record/reference order.",
       "targets": [
         {
           "anchor": {
-            "blob": "0a45fdcc36dc7c92163b39f88afc0683eaa646ef",
-            "content": "sha256:da288ddd97d0dde83f693eadd73bcfbb682a6100fba2ebbcd50aac7a48150f74",
+            "blob": "aa5aeef9b5ccd6ce48001162347974b95ed036f7",
+            "content": "sha256:fbfbec7051648113ae5a516c8e0b132a99a2687235da3e1f33be3c5f97d67737",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "DocumentSections"
             }
           },
           "kind": "code"
@@ -106,14 +126,15 @@
       ]
     },
     "13": {
-      "note": "The facts line where a zero is plain text and a count jumps to its section.\n\nAnchor: `DocumentFacts`",
+      "note": "Facts distinguish unavailable references from zero and link nonzero counts to their sections.",
       "targets": [
         {
           "anchor": {
-            "blob": "0a45fdcc36dc7c92163b39f88afc0683eaa646ef",
-            "content": "sha256:da288ddd97d0dde83f693eadd73bcfbb682a6100fba2ebbcd50aac7a48150f74",
+            "blob": "aa5aeef9b5ccd6ce48001162347974b95ed036f7",
+            "content": "sha256:94ca93127424f77dfc7307bd686d46c0437b44d36a3e497f309f01b50a0c62c5",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "DocumentFacts"
             }
           },
           "kind": "code"
@@ -121,14 +142,15 @@
       ]
     },
     "14": {
-      "note": "The compact without-proof list.\n\nAnchor: `WithoutProofView`",
+      "note": "Without-proof rows show delivered shown/total counts, explicitly informational rather than a gate.",
       "targets": [
         {
           "anchor": {
-            "blob": "0a45fdcc36dc7c92163b39f88afc0683eaa646ef",
-            "content": "sha256:da288ddd97d0dde83f693eadd73bcfbb682a6100fba2ebbcd50aac7a48150f74",
+            "blob": "aa5aeef9b5ccd6ce48001162347974b95ed036f7",
+            "content": "sha256:1dc05bec81f5b5135fb5c1d177617b03f528128d6435d8b47e044bed814085d0",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "WithoutProofView"
             }
           },
           "kind": "code"
@@ -136,14 +158,15 @@
       ]
     },
     "15": {
-      "note": "The census view with measures, counts and route histories.\n\nAnchor: `CensusView`",
+      "note": "Census report problems, measures, counts and route histories are rendered from the supplied report.",
       "targets": [
         {
           "anchor": {
-            "blob": "0a45fdcc36dc7c92163b39f88afc0683eaa646ef",
-            "content": "sha256:da288ddd97d0dde83f693eadd73bcfbb682a6100fba2ebbcd50aac7a48150f74",
+            "blob": "aa5aeef9b5ccd6ce48001162347974b95ed036f7",
+            "content": "sha256:ae94baad6f36909ccec1640209bf023fe98f1ea4cf66f8353039c438bb39d4ff",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "CensusView"
             }
           },
           "kind": "code"
@@ -151,14 +174,16 @@
       ]
     },
     "16": {
-      "note": "The paged subtree that reads one page at a time.\n\nAnchor: `useSubtreePages`",
+      "note": "The subtree’s separate in-flight gate accumulates returned pages and preserves a named next-page failure.\n\nAnchor: current subtree loader and view",
       "targets": [
         {
           "anchor": {
-            "blob": "0a45fdcc36dc7c92163b39f88afc0683eaa646ef",
-            "content": "sha256:da288ddd97d0dde83f693eadd73bcfbb682a6100fba2ebbcd50aac7a48150f74",
+            "blob": "aa5aeef9b5ccd6ce48001162347974b95ed036f7",
+            "content": "sha256:8be86fba2533f0454916f1d984944d14493b936e939179b2353cbc30faa673c8",
             "locator": {
-              "kind": "file"
+              "end": 559,
+              "kind": "line_range",
+              "start": 479
             }
           },
           "kind": "code"
@@ -166,16 +191,50 @@
       ]
     },
     "17": {
-      "note": "The probe that reads a document's prose and references.\n\nAnchor: `ProseWithReferences`",
+      "note": "The prose/reference rendering owner handles citation navigation and suppresses a repeated prose sentence in reference notes; it is not the prose network reader.\n\nAnchor: current renderer and reference note",
       "targets": [
         {
           "anchor": {
             "blob": "f10d3af559ce1dcc1fea8e6f543f672a0f92bba3",
-            "content": "sha256:7e6e6c0909af224760f9ef06df8a877a6fa57889269df463445ec039c6271490",
+            "content": "sha256:edb01d78da39d45a7edcbb8dc4ffd2b5fc098608055c11481599962fc3838eb7",
             "locator": {
-              "kind": "file"
+              "end": 522,
+              "kind": "line_range",
+              "start": 375
             },
             "path": "dashboard/src/panels/knowledge-reader/readerParts.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "18": {
+      "note": "Whole-text loading checks the original treeKey/memoryRevision and keeps old text on a failed or mismatched completion.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "aa5aeef9b5ccd6ce48001162347974b95ed036f7",
+            "content": "sha256:6d115d3ce4e9a7297c0150a7216030745956138137e49250c5dd2b01ea15fe2d",
+            "locator": {
+              "kind": "symbol",
+              "name": "usePathProse"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "19": {
+      "note": "Truncation, byte size, in-flight loading and named failure/reload controls are explicit.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "aa5aeef9b5ccd6ce48001162347974b95ed036f7",
+            "content": "sha256:c1ca1fe4d4515f77e97d250394c2ced80bfd1038fe80a9e4b10ef3e94b4c0ed2",
+            "locator": {
+              "kind": "symbol",
+              "name": "PathReadNotes"
+            }
           },
           "kind": "code"
         }

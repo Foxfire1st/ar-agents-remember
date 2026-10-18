@@ -1,0 +1,53 @@
+{
+  "admission": {
+    "criteria": [
+      "constrains_future_work"
+    ],
+    "justification": "A future test cleanup must not silently replace real public-answer coverage with lighter synthetic answers while retaining its provenance claim."
+  },
+  "alternatives": [
+    {
+      "option": "Keep the captured real public answers as the retained controls data regardless of preferred fixture weight.",
+      "reason": "Appendix151 explicitly accepts actual response weight. l86.test-utils loads the complete captured JSON rather than selecting/trimming its fields and checks the invariant-selector request against the member capture.",
+      "status": "chosen"
+    },
+    {
+      "option": "Trim or manufacture smaller substitute answers merely to meet a preferred fixture weight while calling them the retained real captures.",
+      "reason": "That would change the exercised answer and falsely carry the original public-response provenance onto synthetic data.",
+      "reconsider_when": "An approved requirement changes the retained control strategy and separately identifies synthetic coverage versus newly authenticated actual response captures.",
+      "status": "rejected"
+    }
+  ],
+  "consequences": [
+    "A future test cleanup must not silently replace real public-answer coverage with lighter synthetic answers while retaining its provenance claim.",
+    "The helper does not authenticate every historical capture hash, prove a native producer run, or prohibit explicitly declared synthetic unit tests elsewhere."
+  ],
+  "context": "Approved MIK-R57@v2 appendix83/151 and rule6 require this by-design choice to be recorded, not deferred as a gap. Source obligation: MIK-R57@v2 by-design real-captures. This is the requirement-prescribed boundary, not a claim that an undocumented alternative was seriously weighed.",
+  "decider": "Approved MIK-R57@v2 under D18/D47/D48; Curator records the specified boundary under constrains_future_work.",
+  "id": "DEC-23KBSV",
+  "links": [
+    {
+      "relation": "constrains",
+      "target": {
+        "blob": "cebc6e7e10d2ea9cb6ae76cac611e8185dd85493",
+        "content": "sha256:6d1e7fb1b2dceb4f12557d09d3cbb2ed26e12b484aea678d5d20b5c39ca527f6",
+        "locator": {
+          "kind": "file"
+        },
+        "path": "dashboard/src/panels/review/l86.test-utils.ts"
+      }
+    }
+  ],
+  "origin": {
+    "handoff": {
+      "path": "freeze11-r57-eight-prescribed-by-design-boundaries-01.json"
+    },
+    "handoffEntry": "CUR-L57-R57-choice-real-captures",
+    "leaf": "260928-MIK-L57",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-decision/v1",
+  "status": "active",
+  "supersedes": []
+}

@@ -29,13 +29,7 @@ displayed region keep two marks (ICR-R34 rule 1).
 - **The target an occurrence opens (`MarkTarget`).** The invariant (display id and key), and, when a family records
   it, the family key with the member revision key; its membership `state`; and for `membership_unknown` a `reason`.
   A family is reached only through a member occurrence, never on its own (ICR-R34 rule 2).
-- **Why a membership is unknown (`unknownReason`; ruling 2026-09-30T16:19:34 Q3, review R1 N1).** Built only from the
-  owner's facts: a named family is unknown for a before-side occurrence whose after side could not be read whole ("not
-  every family record of the after knowledge could be read, so whether FAM-… still lists INV-… there is not
-  established"); a family-less one because not every family record of its own side was read; an unread side adds its
-  detail. The comment names L32's `_membership` and `_occurrences` in `application/review_unexplained_lane.py` as the
-  rule's owner: the response carries no per-occurrence reason, so this sentence restates that rule and must change
-  with it.
+- **Why a membership is unknown (`addOccurrence`).** A new occurrence target directly receives `family.reason`; the client no longer reconstructs membership wording from file-side availability. An existing occurrence key only gains a side and retains its first target. The response DTO now carries an optional occurrence reason. On the server, `_occurrences` supplies a reason from the occurrence's own side for family-less unknown membership; `_occurrence` uses the other side for a named unknown membership. `_membership_reason` bounds the explanation. Historically this client reconstructed the sentence under ruling Q3 and review R1 N1; `unknownReason` and that reconstruction are removed.
 - **Unknown lines on a linked hunk (`unreadChangedSides`; ruling Q2).** The owner links a hunk through its readable
   side and names the unread side's availability on the file, not on the hunk; a linked hunk that changes lines on an
   unread side lists them as attribution unknown. This is the one fact derived on the client, and it is the owner's
@@ -64,9 +58,15 @@ displayed region keep two marks (ICR-R34 rule 1).
   the client never intersects recorded ranges itself.** Realized by `fileMarks`, `hunkMark`, `markEntries` and
   `addOccurrence`, which only group and label the owner's hunks, links and occurrences, and by `markAnchor`, which
   places on the owner's side lines and intersects only with the lines a pane draws; the one client-derived fact
-  (ruling Q2) applies the owner's side availability. Proved by `hunkMarkers.test.ts` over six real captured scenarios
+  (ruling Q2) applies the owner's side availability. Current `hunkMarkers.test.ts` contains assertions for grouping, membership labels, supplied reasons, separate proof counts, unread-side lines and placement over the named scenario fixtures, including a mutation that replaces the server reason and expects that exact value at the target. These assertions were inspected statically, not executed here.
+
+  Historical prior execution/capture account, not a new result:
+
+  ```text
+  Proved by `hunkMarkers.test.ts` over six real captured scenarios
   of L32's lane fixture world (`hunkMarkers.classifier.captured.json`) and the mutations M1–M7 and N1 of the worker's
   sets, all caught; the reviewer confirmed there is no second classifier (review R1, rule 5).
+  ```
 - **Part of the candidate invariant "unknown membership is always distinguishable from confirmed no-family"**
   (recorded on `MarkerTargetState.tsx.md`): a target carries its `state` and `reason`, and `occurrenceLabel` never
   reads an unknown membership as `No recorded family`.
@@ -74,8 +74,7 @@ displayed region keep two marks (ICR-R34 rule 1).
 
 ### Todos
 
-- The unknown-membership reason restates L32's server rule (review R1 N1). If MIK-R32's response later carries a
-  per-occurrence reason, this function should read it instead.
+- The former unknown-membership-reason TODO is resolved: `addOccurrence` now carries the response's `family.reason` directly.
 
 ## Evidence
 
@@ -93,7 +92,6 @@ No configured live documentation source was available for this pass.
 - One file-level mark for a confirmed-unregistered or wholly unreadable file; otherwise one mark per owner hunk. [4]
 - A hunk's realizations and proofs apart, and its unknown lines, including a linked hunk's unread side (ruling Q2). [5]
 - One entry per kind and invariant; occurrences merged across sides; each with its target. [6]
-- The unknown-membership reason from the owner's facts, naming L32's rule as its owner (ruling Q3, review N1). [7]
 - The gutter label, the compact phone label (review R1 F2) and the occurrence label. [8]
 - Placement on the owner's side lines within the drawn window; an inline deletion below its removed lines. [9]
 - The owner's response these functions read. [10]
@@ -102,3 +100,5 @@ No configured live documentation source was available for this pass.
 ### Cross-Repo References
 
 No cross-repo boundary is crossed by this file.
+
+- addOccurrence keys by membership state, family key and invariant revision key. An existing occurrence only merges its side; a new target copies family.reason without reconstructing or filtering it. ReviewLaneFamilyOccurrence declares optional reason. The server generates unknown-membership reasons from the own side for family-less occurrences and the other side for named occurrences, using bounded _membership_reason. Current tests assert fixture-reason propagation and an exact substituted reason; they were not executed. [7]

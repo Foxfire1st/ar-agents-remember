@@ -1,0 +1,97 @@
+{
+  "admission": {
+    "criteria": [
+      "constrains_future_work"
+    ],
+    "justification": "A future timeline optimization must not cap legal histories, retain event bytes/offsets on the oversized heap, leak backing, or reintroduce repeated complete-history builds under the unchanged8MiB resident rail."
+  },
+  "alternatives": [
+    {
+      "option": "Keep at most one oversized immutable timeline manifest on anonymous process-private disk backing while retaining the8MiB resident ceiling.",
+      "reason": "The Architect explicitly found that raising the bound only moves the cliff and approved one input-sized anonymous backing to retain complete same-key walks.",
+      "status": "chosen"
+    },
+    {
+      "option": "Raise the resident memo ceiling or rebuild every continuation solely because one legal history exceeds it.",
+      "reason": "The Architect explicitly found that raising the bound only moves the cliff and approved one input-sized anonymous backing to retain complete same-key walks.",
+      "reconsider_when": "An approved resource decision changes resident/backing limits with complete event/digest/page preservation and safe owner lifetime/reclamation.",
+      "status": "rejected"
+    }
+  ],
+  "consequences": [
+    "A future timeline optimization must not cap legal histories, retain event bytes/offsets on the oversized heap, leak backing, or reintroduce repeated complete-history builds under the unchanged8MiB resident rail.",
+    "Disk cost is the bytes and offsets of one history with no per-history cap; no persisted repository/coordination store or background worker, and no newly measured budget/test grade."
+  ],
+  "context": "Approved MIK-R67@v2 rule18 and its eight named reasons prescribe these unchanged choices; the separate one-spilled-history choice is expressly approved in L57-F07-ONE-SPILLED-HISTORY-ON-PRIVATE-TEMP-DISK-IS-APPROVED.json. Source obligation: MIK-R67@v2 by-design one-spilled-history. This records a governing boundary, not an invented design meeting.",
+  "decider": "Approved MIK-R67@v2/D47/D48 for its stated unchanged choices; Architect97e0320d ruling2026-10-16T13:14:22+02:00 for the one-spilled-history resource choice.",
+  "id": "DEC-K1PD7Z",
+  "links": [
+    {
+      "relation": "constrains",
+      "target": {
+        "blob": "a1597cede0048e4ad7c99e5b4b0df21cd58fb54d",
+        "content": "sha256:8897d718532ab9e1d52c04a5b1ee13c448ac018837f7dfd460952b45943de9ff",
+        "locator": {
+          "kind": "file"
+        },
+        "path": "mcp/src/agents_remember/application/knowledge_reader/timeline_manifest.py"
+      }
+    },
+    {
+      "relation": "constrains",
+      "target": {
+        "blob": "48ca2ee8b29c86c1427433501a71e9da84c6dbcf",
+        "content": "sha256:1f7b0cc58dd55fecb1a15b2994997b8edc0f357e7a0faa1df3bf865913ad50db",
+        "locator": {
+          "kind": "file"
+        },
+        "path": "mcp/src/agents_remember/application/knowledge_reader/timeline_memo.py"
+      }
+    },
+    {
+      "relation": "constrains",
+      "target": {
+        "blob": "b287692e0f06a65983cda979f35e4e9d9a684d99",
+        "content": "sha256:c7875973efff23dd6331dc4a074156645be328f2706ba45745014b0abcdf3fb9",
+        "locator": {
+          "kind": "file"
+        },
+        "path": "mcp/src/agents_remember/application/knowledge_reader/timeline_spill.py"
+      }
+    },
+    {
+      "relation": "constrains",
+      "target": {
+        "blob": "429d9030986b5580fecabfb7a347284e223fcd4a",
+        "content": "sha256:9b8ac1bffc5b90b2014f09207e4e9cffcb5e4b6f2698098509ac6eb1b62eb626",
+        "locator": {
+          "kind": "file"
+        },
+        "path": "mcp/src/agents_remember/application/knowledge_reader/truth.py"
+      }
+    },
+    {
+      "relation": "constrains",
+      "target": {
+        "blob": "c2e025c9f3fbc35c3dc1f3d977282dfed67d3313",
+        "content": "sha256:844356b1aaad06b7d67ff42d61f0ec9689761f1fb180faae1875b01cbe8828b9",
+        "locator": {
+          "kind": "file"
+        },
+        "path": "mcp/tests/test_reader_timeline_spill.py"
+      }
+    }
+  ],
+  "origin": {
+    "handoff": {
+      "path": "freeze11-r67-prescribed-boundaries-and-spill-resource-choice-01.json"
+    },
+    "handoffEntry": "CUR-L57-R67-choice-one-spilled-history",
+    "leaf": "260928-MIK-L57",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-decision/v1",
+  "status": "active",
+  "supersedes": []
+}

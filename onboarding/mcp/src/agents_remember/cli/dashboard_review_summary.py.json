@@ -3,15 +3,16 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "Initial selection, explicit absence and current worktree observations.",
+      "note": "Initial selection, contract, worklist-path and applicable repository/worktree observations preserve explicit absence.\n\nAnchor: current initial observations",
       "targets": [
         {
           "anchor": {
-            "blob": "3be454348a62f26caf4d772df165989ec0392e36",
-            "content": "sha256:92ffbbe661d1ba3b9b236910c0875113ff6de09ccd814113e044fdc7ff3d578f",
+            "blob": "610614405a83c88d6d840940778315178a2fbe82",
+            "content": "sha256:9cd185143921de87ba141c6496460cf54f790e48beb5e31481d41d07f87f076d",
             "locator": {
-              "kind": "symbol",
-              "name": "_initial"
+              "end": 55,
+              "kind": "line_range",
+              "start": 27
             }
           },
           "kind": "code"
@@ -19,11 +20,11 @@
       ]
     },
     "2": {
-      "note": "Resolved repository/record/database inputs.",
+      "note": "Resolved repository/record/database inputs use content observations for derived-index bytes.",
       "targets": [
         {
           "anchor": {
-            "blob": "3be454348a62f26caf4d772df165989ec0392e36",
+            "blob": "610614405a83c88d6d840940778315178a2fbe82",
             "content": "sha256:ca7d0154dae0eb55d9fe4af01af48b548cb76f8b81164a55ea6d9af5383a7b9c",
             "locator": {
               "kind": "symbol",
@@ -35,11 +36,11 @@
       ]
     },
     "3": {
-      "note": "Config-bound native port and capture observation.",
+      "note": "Config-bound native reading and capture observation remain request-scoped dependency wiring.",
       "targets": [
         {
           "anchor": {
-            "blob": "3be454348a62f26caf4d772df165989ec0392e36",
+            "blob": "610614405a83c88d6d840940778315178a2fbe82",
             "content": "sha256:c615b87841ef41e56fb00b242ca7100eefa43de2ea3e4dae3a8336c396bc5224",
             "locator": {
               "kind": "symbol",

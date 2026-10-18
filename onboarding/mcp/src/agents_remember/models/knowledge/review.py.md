@@ -6,6 +6,66 @@
 
 ## Purpose
 
+Tree-review response vocabulary: task-addressed candidate identity; knowledge, source and required
+judgment/proof panes; family context and recorded meaning effects; pagination, staleness and refusal.
+It declares no storage record or publication authority. Source/refusal/movement values have their
+actual dedicated owners and surviving re-exports, not copied compatibility channels.
+
+## Code Commentary
+
+ReviewSideContent permits text exactly for present and forbids text for absent/unresolved. The
+removed binary side-state literal does not remove binary file-content classification in the source
+owner. A request can name a subject or task context; a continuation must name its collection, while
+a named collection without continuation is its first page. Candidate identity contains task
+addresses, not a caller-provided filesystem path.
+
+ComparisonIdentity keeps supplied knowledge selector and both snapshot digests together when
+knowledge was compared, and none when it was not. Optional code-tree fields remain supplied values;
+these checks do not authenticate a root or cryptographic measurement. The default surface-version
+string adds no version validator.
+
+The knowledge pane carries statement sides, optional raw per-side Origin, conditions, revision
+groups, mechanical fields and selection state. A carried revision selection implies subject_selected,
+not conversely. Origin is not reconstructed from a statement or caller filename. Retired reviewer
+assessment, signal, applicability and evidence collections are absent; the independently used
+coherence assessment model is not thereby deleted.
+
+The extracted source owner separates whole-pair inventory from selected locations and supplied
+attribution. State is measured/unavailable with a separate partial flag, not a third enum. List-length
+and absence checks do not authenticate measurements or uniqueness. Absent counts need reasons;
+roles/identities remain supplied facts, not filename guesses.
+
+KnowledgeReviewPayload requires knowledge, source, judgment, family context and meaning_effects.
+A current answer lacking judgment is invalid, not a default old evidence pane. Rows/proofs and
+recorded meaning steps keep their own source/state semantics, not a net effect or guarantee grade.
+Family context, sync and external Git movement retain their actual owners and absence dimensions.
+
+Payload guards couple stale with disabled_stale, comparison absence with not_compared, and compared
+knowledge with subject_selected. They forbid simultaneous page and page_refusal, not independently
+prove every request got a complete page. Page guards check declared sums, continuation/remainder,
+reset and continued-from states. Catalogue result rejects entries/totals beside refusal and totals
+smaller than the page; it does not itself authenticate a whole unique population. Result state and
+payload/refusal presence must agree.
+
+## Invariants And Boundaries
+
+Read-only structural vocabulary is not a generated semantic decision or submission control.
+none_is_approval is a boolean default, not a Literal-True guard. The frozen extra-forbid base does
+not configure strict coercion rejection despite older prose. Removed channel/test promises remain
+historical only. Surviving missing-side, currentness, source-file and revision-selection properties
+retain current witnesses rather than being dropped with retired neighbors.
+
+<details>
+<summary>Historical prior account — retained, not the current contract</summary>
+
+# mcp/src/agents_remember/models/knowledge/review.py
+
+## Governing Overview
+
+[models route overview](../overview.md)
+
+## Purpose
+
 The model module owns the read-only review wire answer and its self-consistency checks, not record storage, comparison resolution or authored verdicts. KnowledgeReviewPayload requires ReviewMeaningEffects and retains existing panes, source inventory, currentness and pagination ownership. ReviewKnowledgePane carries signals and selected record content, not the retired ReviewAuthoredEffect channel. Refusal names are imported/re-exported from review_refusal.py; additional request/outline vocabulary has its own current owners. The optional entry-list outline is distinct from required meaning fields inside current answers; old outline-only byte-parity wording does not exempt the new payload field.
 
 ## Code Commentary
@@ -14,7 +74,7 @@ The model module owns the read-only review wire answer and its self-consistency 
 
 KnowledgeReviewPayload requires meaning_effects in the current server response; the separate review_meaning_effects model owns its recorded-step vocabulary. The field carries owner-recorded facts and has no conclusion/net-effect slot. Catalogue outline rows retain their own typed meaning projection. Existing panes, refusal/currentness and pagination ownership remain unchanged; a no-subject composition supplies a valid empty record collection.
 
-- The model module owns the read-only review wire answer and its self-consistency checks, not record storage, comparison resolution or authored verdicts. KnowledgeReviewPayload requires ReviewMeaningEffects and retains existing panes, source inventory, currentness and pagination ownership. ReviewKnowledgePane carries signals and selected record content, not the retired ReviewAuthoredEffect channel. Refusal names are imported/re-exported from review_refusal.py; additional request/outline vocabulary has its own current owners. The optional entry-list outline is distinct from required meaning fields inside current answers; old outline-only byte-parity wording does not exempt the new payload field. KnowledgeReviewPayload requires meaning_effects in the current server response; the separate review_meaning_effects model owns its recorded-step vocabulary. The field carries owner-recorded facts and has no conclusion/net-effect slot. Catalogue outline rows retain their own typed meaning projection. Existing panes, refusal/currentness and pagination ownership remain unchanged; a no-subject composition supplies a valid empty record collection. [90]
+- The model module owns the read-only review wire answer and its self-consistency checks, not record storage, comparison resolution or authored verdicts. KnowledgeReviewPayload requires ReviewMeaningEffects and retains existing panes, source inventory, currentness and pagination ownership. ReviewKnowledgePane carries signals and selected record content, not the retired ReviewAuthoredEffect channel. Refusal names are imported/re-exported from review_refusal.py; additional request/outline vocabulary has its own current owners. The optional entry-list outline is distinct from required meaning fields inside current answers; old outline-only byte-parity wording does not exempt the new payload field. KnowledgeReviewPayload requires meaning_effects in the current server response; the separate review_meaning_effects model owns its recorded-step vocabulary. The field carries owner-recorded facts and has no conclusion/net-effect slot. Catalogue outline rows retain their own typed meaning projection. Existing panes, refusal/currentness and pagination ownership remain unchanged; a no-subject composition supplies a valid empty record collection. (historical reference 90)
 
 <details>
 <summary>Historical prior account (not the current contract)</summary>
@@ -54,7 +114,7 @@ bullets:
 
 KnowledgeReviewPayload requires meaning_effects in the current server response; the separate review_meaning_effects model owns its recorded-step vocabulary. The field carries owner-recorded facts and has no conclusion/net-effect slot. Catalogue outline rows retain their own typed meaning projection. Existing panes, refusal/currentness and pagination ownership remain unchanged; a no-subject composition supplies a valid empty record collection.
 
-- KnowledgeReviewPayload requires meaning_effects in the current server response; the separate review_meaning_effects model owns its recorded-step vocabulary. [89]
+- KnowledgeReviewPayload requires meaning_effects in the current server response; the separate review_meaning_effects model owns its recorded-step vocabulary. (historical reference 89)
 
 ### Constants and closed vocabularies
 
@@ -373,26 +433,26 @@ the existing curator authority's and is deliberately not modelled here.
 The addition is one optional field, `outline: ReviewOutline | None`, defaulting to none so older producers and refused reads validate unchanged; the `_require_one_outcome` validator (entries vs refusal exclusivity) is untouched. The outline model itself lives in `models/knowledge/review_outline.py` and is imported here. No other shape changes; the packet's byte-parity exception covers this field only.
 ## Evidence
 
-- The module docstring: no record kind, and the five prohibitions of the display. [35]
-- The closed set of refusal codes, with the two codes of the leaf-wide tree view. [36]
-- The three proposed dispositions. [37]
-- The two paged collections. [38]
-- A side carries text exactly when present. [39]
-- The request and its cursor rule. [40]
-- The comparison identity and its all-or-nothing knowledge half. [41]
-- The typed refusal. [42]
-- One page and its four consistency rules. [43]
-- An assessment travels with its author and examined inputs. [44]
-- A count is a value or a reason. [45]
-- The knowledge pane and its three rules. [46]
-- The inventory and its count rules. [47]
-- The source pane. [48]
-- The evidence pane's states match its collections. [49]
-- The payload and its three rules. [50]
-- The review result is a payload or a refusal. [51]
-- The entry list and its totals. [52]
-- The leaf-wide view answers reviewer_busy with its own action text. [53]
-- The leaf-wide view answers inputs_changing after a second moved input. [54]
+- The module docstring: no record kind, and the five prohibitions of the display. (historical reference 35)
+- The closed set of refusal codes, with the two codes of the leaf-wide tree view. (historical reference 36)
+- The three proposed dispositions. (historical reference 37)
+- The two paged collections. (historical reference 38)
+- A side carries text exactly when present. (historical reference 39)
+- The request and its cursor rule. (historical reference 40)
+- The comparison identity and its all-or-nothing knowledge half. (historical reference 41)
+- The typed refusal. (historical reference 42)
+- One page and its four consistency rules. (historical reference 43)
+- An assessment travels with its author and examined inputs. (historical reference 44)
+- A count is a value or a reason. (historical reference 45)
+- The knowledge pane and its three rules. (historical reference 46)
+- The inventory and its count rules. (historical reference 47)
+- The source pane. (historical reference 48)
+- The evidence pane's states match its collections. (historical reference 49)
+- The payload and its three rules. (historical reference 50)
+- The review result is a payload or a refusal. (historical reference 51)
+- The entry list and its totals. (historical reference 52)
+- The leaf-wide view answers reviewer_busy with its own action text. (historical reference 53)
+- The leaf-wide view answers inputs_changing after a second moved input. (historical reference 54)
 
 ### Docs References
 
@@ -407,40 +467,40 @@ Every claim on this card is checkable in the shipped candidate: the module's own
 bullets, each model and its validator, the shared bounds it imports, and the cases that check the
 prohibitions over the whole payload schema rather than over one model.
 
-- The module's own statement of what it owns and the five prohibitions the display's shape enforces. [55]
-- The published vocabulary: the constants, the dispositions tuple, the refusal-code union and the models, with the channel vocabulary re-exported from its own module. [56]
-- **The recorded surface version, the three pane names, `RRD:366`'s three proposed dispositions verbatim, the closed refusal-code union (seven members since 260921-ICR-L3, which added `source_content_unresolved` to the six 260915-KS-L45 left), the two-member subject-kind union, the three-member subject-presence union (`before_only`/`after_only`/`both`, ICR-R09) and the four-member side-state union — re-read at the merged candidate.** [57]
-- **The movement vocabulary this module re-exports in its own `__all__` (`ICR-R08@v1`): the movement, its sides and states, the authored lineage, the gaps with their codes and the labelled rename inference — declared next door beside the other payload vocabularies.** [58]
-- The shared shape that makes an unresolved reference a displayed fact rather than a dropped or anonymous one. [59]
-- **The missing-side rule as a constructor check: text exactly when `present`, in both directions.** [60]
-- The one request shape: a task context plus one of the read operation's own declared seeds, with no display version, instant or "latest" flag representable. [61]
-- The candidate reference, which carries task identities and never a filesystem path, and the comparison identity carried verbatim rather than recomputed. [62]
-- The two per-side and per-item mechanical facts: the retained-revision count kept per side, and the field transition that states no meaning. [63]
-- The authored record displayed as the author wrote it, with no field for a computed effect, and the detection fact with no severity, verdict or author. [64]
-- **The validator that refuses an anonymous verdict or an assessment that examined nothing.** [65]
-- The evidence claim reference with its own authored limitations, and the observation that has no field for a sufficiency verdict. [66]
-- **The six persistent counts declared once, with the confirmed negative and the undetermined beside each other.** [67]
-- **The selected location whose missing role stays unclassified rather than guessed from a path, and which since `ICR-R08@v1` carries the preserved identity, its own recorded side, the transition, the counterpart address (only when the other side records exactly one) and the whole movement.** [68]
-- **Pane 1's own self-agreement rule: the pane's single assessment must be one of the assessments it displays, and the authored and mechanical collections keep separate element types. Pane 1's recorded selection: the optional `revision_selection` with its one-direction validator.** [69]
-- **The explicit revision selection the pane carries: the compared head pair, the one-sided head, or the ambiguous/unresolved non-pair — declared next door, carried here, refused beside anything but a compared subject.** [70]
-- **The inventory's own model, with the count checked against the list and the rule that an unrepresentable path makes the inventory measured and partial.** [71]
-- **Pane 2: the selected locations, the traversed recorded relationships (the associations with no source address at all), the expansion, the carried partition and the three changed-path lists read from it.** [72]
-- **Pane 3's two independent absence states, tied to the collections they describe, plus the availability list carried rather than inferred.** [73]
-- The stale state that retains its previous input as a labelled value, and the rule that a current comparison has none to label. [74]
-- The submission state with no favourable member, and the boundary that none of the published dispositions is approval. [75]
-- **The whole payload and its stale/submission coupling, which refuses either direction of disagreement.** [76]
-- The refusal that is a state and never a degraded success, and the result that carries exactly one outcome. [77]
-- **The catalogue's entry: a recorded identity, its own label and the presence the two snapshots give it, with no field for a path, a file, a display version, a ranking or a comparison count — the deleted `selected_item_count` was the wire carrier of the per-subject compare-to-earn-a-row mechanism.** [78]
-- **The entry read's typed outcome, whose validators refuse a refused read that offers any entry, non-zero totals beside a refusal, and a total smaller than the page beside it — so a caller can never be handed a subject beside the statement that nothing admitted one, nor a whole catalogue that reads as a first row.** [79]
-- **The two subject kinds declared once here, so the transport's admission tuple, the entry list and the panes cannot disagree about which identities are reviewable.** [80]
-- **The availability list the pane carries: one entry per record class the composition read, whole and underived.** [81]
-- **The re-export that keeps every existing importer resolving while the vocabulary lives in its own module.** [82]
-- The shared bounds and the `KnowledgeModel` base every model here uses rather than restating its own. [83]
-- **The case that walks the whole payload schema for a field a generated conclusion could occupy.** [84]
-- **The case that asserts this module declares no record kind, no table and no status of its own.** [85]
-- The case that an unassessed subject is displayed unassessed and never defaulted to compatible, and the case that a missing side is its own state. [86]
-- The case that a passing observation is displayed as an observation and never as invariant-satisfied, and the case that a signal carries facts and scope limitations with no severity. [87]
-- **The two rules that were extracted out of this module and the movement that arrived beside them (`ICR-R22@v1`): `ReviewStaleness`, `ReviewSubmission` and the new `ReviewSyncMovement` are declared in the staleness module, and this module re-exports all three so its importers and tests keep resolving.** [88]
+- The module's own statement of what it owns and the five prohibitions the display's shape enforces. (historical reference 55)
+- The published vocabulary: the constants, the dispositions tuple, the refusal-code union and the models, with the channel vocabulary re-exported from its own module. (historical reference 56)
+- **The recorded surface version, the three pane names, `RRD:366`'s three proposed dispositions verbatim, the closed refusal-code union (seven members since 260921-ICR-L3, which added `source_content_unresolved` to the six 260915-KS-L45 left), the two-member subject-kind union, the three-member subject-presence union (`before_only`/`after_only`/`both`, ICR-R09) and the four-member side-state union — re-read at the merged candidate.** (historical reference 57)
+- **The movement vocabulary this module re-exports in its own `__all__` (`ICR-R08@v1`): the movement, its sides and states, the authored lineage, the gaps with their codes and the labelled rename inference — declared next door beside the other payload vocabularies.** (historical reference 58)
+- The shared shape that makes an unresolved reference a displayed fact rather than a dropped or anonymous one. (historical reference 59)
+- **The missing-side rule as a constructor check: text exactly when `present`, in both directions.** (historical reference 60)
+- The one request shape: a task context plus one of the read operation's own declared seeds, with no display version, instant or "latest" flag representable. (historical reference 61)
+- The candidate reference, which carries task identities and never a filesystem path, and the comparison identity carried verbatim rather than recomputed. (historical reference 62)
+- The two per-side and per-item mechanical facts: the retained-revision count kept per side, and the field transition that states no meaning. (historical reference 63)
+- The authored record displayed as the author wrote it, with no field for a computed effect, and the detection fact with no severity, verdict or author. (historical reference 64)
+- **The validator that refuses an anonymous verdict or an assessment that examined nothing.** (historical reference 65)
+- The evidence claim reference with its own authored limitations, and the observation that has no field for a sufficiency verdict. (historical reference 66)
+- **The six persistent counts declared once, with the confirmed negative and the undetermined beside each other.** (historical reference 67)
+- **The selected location whose missing role stays unclassified rather than guessed from a path, and which since `ICR-R08@v1` carries the preserved identity, its own recorded side, the transition, the counterpart address (only when the other side records exactly one) and the whole movement.** (historical reference 68)
+- **Pane 1's own self-agreement rule: the pane's single assessment must be one of the assessments it displays, and the authored and mechanical collections keep separate element types. Pane 1's recorded selection: the optional `revision_selection` with its one-direction validator.** (historical reference 69)
+- **The explicit revision selection the pane carries: the compared head pair, the one-sided head, or the ambiguous/unresolved non-pair — declared next door, carried here, refused beside anything but a compared subject.** (historical reference 70)
+- **The inventory's own model, with the count checked against the list and the rule that an unrepresentable path makes the inventory measured and partial.** (historical reference 71)
+- **Pane 2: the selected locations, the traversed recorded relationships (the associations with no source address at all), the expansion, the carried partition and the three changed-path lists read from it.** (historical reference 72)
+- **Pane 3's two independent absence states, tied to the collections they describe, plus the availability list carried rather than inferred.** (historical reference 73)
+- The stale state that retains its previous input as a labelled value, and the rule that a current comparison has none to label. (historical reference 74)
+- The submission state with no favourable member, and the boundary that none of the published dispositions is approval. (historical reference 75)
+- **The whole payload and its stale/submission coupling, which refuses either direction of disagreement.** (historical reference 76)
+- The refusal that is a state and never a degraded success, and the result that carries exactly one outcome. (historical reference 77)
+- **The catalogue's entry: a recorded identity, its own label and the presence the two snapshots give it, with no field for a path, a file, a display version, a ranking or a comparison count — the deleted `selected_item_count` was the wire carrier of the per-subject compare-to-earn-a-row mechanism.** (historical reference 78)
+- **The entry read's typed outcome, whose validators refuse a refused read that offers any entry, non-zero totals beside a refusal, and a total smaller than the page beside it — so a caller can never be handed a subject beside the statement that nothing admitted one, nor a whole catalogue that reads as a first row.** (historical reference 79)
+- **The two subject kinds declared once here, so the transport's admission tuple, the entry list and the panes cannot disagree about which identities are reviewable.** (historical reference 80)
+- **The availability list the pane carries: one entry per record class the composition read, whole and underived.** (historical reference 81)
+- **The re-export that keeps every existing importer resolving while the vocabulary lives in its own module.** (historical reference 82)
+- The shared bounds and the `KnowledgeModel` base every model here uses rather than restating its own. (historical reference 83)
+- **The case that walks the whole payload schema for a field a generated conclusion could occupy.** (historical reference 84)
+- **The case that asserts this module declares no record kind, no table and no status of its own.** (historical reference 85)
+- The case that an unassessed subject is displayed unassessed and never defaulted to compatible, and the case that a missing side is its own state. (historical reference 86)
+- The case that a passing observation is displayed as an observation and never as invariant-satisfied, and the case that a signal carries facts and scope limitations with no severity. (historical reference 87)
+- **The two rules that were extracted out of this module and the movement that arrived beside them (`ICR-R22@v1`): `ReviewStaleness`, `ReviewSubmission` and the new `ReviewSyncMovement` are declared in the staleness module, and this module re-exports all three so its importers and tests keep resolving.** (historical reference 88)
 
 ### Cross-Repo References
 
@@ -533,3 +593,60 @@ admits the spelling in its own vocabulary so a malformed value is a typed 400 ra
 `ValidationError`; this model's `pattern` is the second half of the same rule, not a duplicate of it.
 
 </details>
+
+</details>
+
+## Evidence
+
+No Domain Documentation entries are configured. Current models/owners and stored assertions were
+inspected, not executed. Injected overload, child scripts and schema/source checks are not fresh
+producer, runtime, CODE or whole-MEMORY acceptance.
+
+- Current tree-review values keep statements, source facts, history judgments and proofs separately owned. [35]
+- The actual review_refusal owner declares the re-exported refusal union; a literal declaration is not a produced execution result. [36]
+- The three proposed dispositions. [37]
+- The three paged collections. [38]
+- A side carries text exactly when present. [39]
+- The request and its cursor rule. [40]
+- The comparison identity and its all-or-nothing knowledge half. [41]
+- The typed refusal. [42]
+- One page and its four consistency rules. [43]
+- A count is a value or a reason. [45]
+- Knowledge pane carries statements, raw per-side origin, conditions and selection facts; its revision-selection implication is one-way. [46]
+- The inventory and its count rules. [47]
+- The source pane. [48]
+- Payload requires knowledge/source/judgment, family context and meaning effects with structural page, identity/staleness and submission checks. [50]
+- The review result is a payload or a refusal. [51]
+- The entry list and its totals. [52]
+- The stored overload adapter test injects WorklistOverloaded and checks reviewer_busy/retry/no memo; it is not a natural-overload execution witness. [53]
+- The stored changing-input test controls child scripts and checks bounded recomputation and inputs_changing; it is not executed here. [54]
+- Current payload guards structural agreement and required panes, not the removed assessment/evidence collections. [55]
+- Current exports retain judgment and source/relationship/refusal types, not retired record-channel classes. [56]
+- Current declarations keep default version, three pane names, proposed dispositions, subject kind/presence and the three non-binary side states separate from the refusal union. [57]
+- Relationship values are re-exported; their movement owner carries recorded sides, pairing and gaps. [58]
+- The shared shape that makes an unresolved reference a displayed fact rather than a dropped or anonymous one. [59]
+- **The missing-side rule as a constructor check: text exactly when `present`, in both directions.** [60]
+- The one request shape: a task context plus one of the read operation's own declared seeds, with no display version, instant or "latest" flag representable. [61]
+- Candidate is task-addressed, not a caller filesystem path; comparison identity carries supplied snapshot/selector/code facts. [62]
+- Revision-group counts and mechanical field changes retain separate shapes; neither is a generated meaning effect. [63]
+- Six source-count names remain declared; absent values require reasons and present values forbid not-applicable reasons. [67]
+- Source locations preserve supplied role/rationale, identity, side, counterpart and movement; the DTO does not infer roles or establish live currentness. [68]
+- Optional revision selection and its one-way guard survive; the old assessment collections and agreement guard do not. [69]
+- A carried revision_selection requires subject_selected, not conversely; raw origin stays separate from the selected statement. [70]
+- Inventory guards list-length and unavailable/partial/unrepresentable combinations; this is not authentication of measured facts. [71]
+- Extracted source pane keeps whole-pair inventory beside supplied selected locations, relationship union, counts, expansion and attribution. [72]
+- Stale requires a labelled previous comparison; not_compared and not-measured are not current. [74]
+- Submission has unavailable/disabled_stale metadata and a none_is_approval boolean default, not a Literal-True guard or publication control. [75]
+- **The whole payload and its stale/submission coupling, which refuses either direction of disagreement.** [76]
+- Typed refusal carries input/recovery fields; review result couples its state with the permitted payload/refusal outcome. [77]
+- Catalogue entry carries kind/identity/label/presence, not a per-subject comparison count or filesystem selector. [78]
+- Entry result rejects refusal entries/totals and totals below its page; it does not independently authenticate a complete unique catalogue. [79]
+- Declared reviewable subject kinds are invariant and family; broader seed resolution has its own owner. [80]
+- Shared model base is frozen/extra-forbid; strict coercion rejection is not configured there, and shared bounds keep their own definitions. [83]
+- Stored schema-walk case checks the named forbidden property set, not semantic truth of every text field; no fresh execution. [84]
+- Stored export/source case checks no kind/schema/table exports and no SQL create/insert text; no fresh execution. [85]
+- Surviving missing-side case rejects absent text and a present side without text; the removed unassessed-review case is not an invented replacement. [86]
+- Staleness, submission and complete-tree sync movement retain their dedicated model owner and re-exports; static fields are not new measured movement. [88]
+- Required meaning_effects carries its separately owned recorded-step model, not an inferred net effect. [89]
+- This module owns structural tree-review responses, not storage, root resolution, measurement authentication or authored semantic verdicts. [90]
+- Judgment is required on the current payload; the pane separates rows/none/unavailable history state from its independent proof tuple, rather than defaulting a missing old evidence channel. [91]

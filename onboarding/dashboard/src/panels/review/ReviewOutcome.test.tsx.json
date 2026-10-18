@@ -1,0 +1,24 @@
+{
+  "path": "dashboard/src/panels/review/ReviewOutcome.test.tsx",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Current-shape synthetic outcome cases distinguish measured-empty judgment/proofs/source from missing/unavailable/failed reads, mandatory judgment absence as failure, and coherent retained empty versus retained-generation states. Not captured API production evidence.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "15bb9eb6175bde08a0180c8c3fed59140a4f3299",
+            "content": "sha256:3aa7470b0fefc0beb237190308669856889eea16bd3e41c5afcbef42efc6080c",
+            "locator": {
+              "end": 166,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

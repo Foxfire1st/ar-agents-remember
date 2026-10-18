@@ -3,7 +3,7 @@
   "proves": [
     {
       "anchor": {
-        "blob": "16857f2dc76aee57f3d36e398de620019282feaa",
+        "blob": "2408f06ee5d1079e4fa0e852718dadfb4f2b4580",
         "content": "sha256:ea269e8db3327392747ef193461b4298bcea39a4795fe4845132c3688657f7ea",
         "locator": {
           "kind": "symbol",
@@ -20,7 +20,7 @@
     },
     {
       "anchor": {
-        "blob": "16857f2dc76aee57f3d36e398de620019282feaa",
+        "blob": "2408f06ee5d1079e4fa0e852718dadfb4f2b4580",
         "content": "sha256:11a4d36f79e91beeeb71664962b2017e8c85204267fc882725ab3ac7a500a8ac",
         "locator": {
           "kind": "symbol",
@@ -39,8 +39,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "16857f2dc76aee57f3d36e398de620019282feaa",
-        "content": "sha256:0b6d5c8760afd5be3651851fa0f5dec48146deffe270d98bf1b39eefb1622d70",
+        "blob": "2408f06ee5d1079e4fa0e852718dadfb4f2b4580",
+        "content": "sha256:d74d51c2702920e4dc3e4f6086b0054b2710c3ded64d2fb7addc14191b7cfde8",
         "locator": {
           "kind": "file"
         }
@@ -57,16 +57,28 @@
   ],
   "references": {
     "10": {
-      "note": "Mounted shell, subject-labelled pending area, zero-request return, and the families of the invariant's review kept and tagged after the first family is selected again.",
+      "note": "B is independently read before cached A is restored; the later invariant-to-A return makes no review/content read and leaves B tagged kept.\n\nAnchor: inclusive source ranges",
       "targets": [
         {
           "anchor": {
-            "blob": "4527c1a55df306503a92176f7027d7c5a4eb30e0",
-            "content": "sha256:dfb502377b7759c53e1bfe92eb54ecc30b17345319b3d9c0b7d5d9b23a9536c6",
+            "blob": "2408f06ee5d1079e4fa0e852718dadfb4f2b4580",
+            "content": "sha256:9dbb0a19dcaf1712eb90aac5b3f4314bda84da8a6e6872500e4e19d3285e1535",
             "locator": {
-              "end": 442,
+              "end": 287,
               "kind": "line_range",
-              "start": 335
+              "start": 282
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "2408f06ee5d1079e4fa0e852718dadfb4f2b4580",
+            "content": "sha256:cab96ffb7c77da3420912a023bc08aa25c04f8035d6d72092462b5a880528a0c",
+            "locator": {
+              "end": 371,
+              "kind": "line_range",
+              "start": 348
             }
           },
           "kind": "test"
@@ -108,16 +120,16 @@
       ]
     },
     "13": {
-      "note": "The released task-context answer is kept and reused.",
+      "note": "The delivered late task-context reply does not displace the selected family. This case does not assert later task-answer reuse.\n\nAnchor: inclusive source ranges",
       "targets": [
         {
           "anchor": {
-            "blob": "9e4ad8cc9c5e89f1b87520a00398292de27e1df8",
-            "content": "sha256:a73bcfbbec685800871a45258fac07cc79b35293900c90a761f64e831befacea",
+            "blob": "2408f06ee5d1079e4fa0e852718dadfb4f2b4580",
+            "content": "sha256:68694904eded4789df4699e7dab56e52a7086857051b1aa0869011abd84974eb",
             "locator": {
-              "end": 578,
+              "end": 500,
               "kind": "line_range",
-              "start": 548
+              "start": 475
             }
           },
           "kind": "test"
@@ -210,19 +222,19 @@
       ]
     },
     "19": {
-      "note": "The real-data world the key case is served from.",
+      "note": "The forced-key case serves independent captured member and family selector answers; walk utilities supply keyboard and selection helpers.\n\nAnchor: inclusive source ranges",
       "targets": [
         {
           "anchor": {
-            "blob": "4ffc8aa0d49f9dac940aa42ae2d990d199f0c7ff",
-            "content": "sha256:487b8bef45e18975dcef63d04e3a65e26ec7f3e975f50ad067073f1aa09a916d",
+            "blob": "2408f06ee5d1079e4fa0e852718dadfb4f2b4580",
+            "content": "sha256:fa9fc7af3455e2b7c628cc24d50a62b3d330be99b415343be1bc81d065eab34a",
             "locator": {
-              "kind": "symbol",
-              "name": "serveWorld"
-            },
-            "path": "dashboard/src/panels/review/walk.test-utils.tsx"
+              "end": 715,
+              "kind": "line_range",
+              "start": 655
+            }
           },
-          "kind": "code"
+          "kind": "test"
         }
       ]
     },
@@ -299,27 +311,15 @@
       ]
     },
     "23": {
-      "note": "Newer-generation world for superseding answers",
+      "note": "Generation inputs begin with current family content and synthetic outline facts, then perturb comparison or code generation and outline content independently of sharedNavigationWorld.",
       "targets": [
         {
           "anchor": {
-            "blob": "16857f2dc76aee57f3d36e398de620019282feaa",
-            "content": "sha256:cb50d106b30f134fa5f77a9fea007f6db5129ae0d47f1f8adf6df924a1863e39",
+            "blob": "2408f06ee5d1079e4fa0e852718dadfb4f2b4580",
+            "content": "sha256:ba4260dadbd0e502383dce97fdee0c6776d2c4b9a0eff20d7e2e0523a8878b74",
             "locator": {
               "kind": "symbol",
               "name": "generationWorld"
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "16857f2dc76aee57f3d36e398de620019282feaa",
-            "content": "sha256:40b17928ed7e7726156e4315bd745f6c59b5888aa3d2abe09e6d9481fbc81b6f",
-            "locator": {
-              "end": 891,
-              "kind": "line_range",
-              "start": 873
             }
           },
           "kind": "test"

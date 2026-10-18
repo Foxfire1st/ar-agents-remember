@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "e131e4295c677d11b892549406df6c26ea52c2dd",
-        "content": "sha256:b3b3d0304191ed5d8827108783c73c2b12de3dfd88ba02b272f7c884d1f27996",
+        "blob": "4d3de3149beba772c4408439aa637fb03436836d",
+        "content": "sha256:a06a94de49bd0b25fcebb01ce3f699bd961fb27e910060f4de1ab6cc8bb0271f",
         "locator": {
           "kind": "symbol",
           "name": "ReviewIntentSummaryResult"
@@ -15,7 +15,7 @@
       "origin": {
         "leaf": "260921-ICR-L46"
       },
-      "rationale": "Its validator makes an unavailable summary carry a refusal and no counts, a counted or partial summary carry counts and no refusal, and 'partial' hold exactly when counts.unresolved is above zero, so an unread comparison cannot be serialized as +0 −0.",
+      "rationale": "The result validator enforces declared authored-intent outcome consistency: unavailable carries its refusal and no counts; counted/partial carry counts and no refusal; partial is equivalent to positive unresolved. Independent attribution/stored-open fields do not become authored-intent totals. This constrains the declared state and values, not actual I/O or authenticity of the comparison.",
       "role": "enforcement"
     }
   ],
@@ -25,7 +25,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e131e4295c677d11b892549406df6c26ea52c2dd",
+            "blob": "4d3de3149beba772c4408439aa637fb03436836d",
             "content": "sha256:4f617e8dd4e73ec34cb5e671b7a110855824bdb8960d69d752d5cf162c8ae936",
             "locator": {
               "kind": "symbol",
@@ -41,7 +41,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e131e4295c677d11b892549406df6c26ea52c2dd",
+            "blob": "4d3de3149beba772c4408439aa637fb03436836d",
             "content": "sha256:d242582924b4b6eb1aefe7aad76bb5740e3680a7853f5db2842f6c8a1b79a728",
             "locator": {
               "kind": "symbol",
@@ -57,7 +57,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e131e4295c677d11b892549406df6c26ea52c2dd",
+            "blob": "4d3de3149beba772c4408439aa637fb03436836d",
             "content": "sha256:02d21894567b1c4caf78a3e0b8df8185ce981a3b817fd86c3a6a6432307d4381",
             "locator": {
               "kind": "symbol",
@@ -68,7 +68,7 @@
         },
         {
           "anchor": {
-            "blob": "e131e4295c677d11b892549406df6c26ea52c2dd",
+            "blob": "4d3de3149beba772c4408439aa637fb03436836d",
             "content": "sha256:04a5b2118e674b4df9faa483b0a18e889aafedd701fd4d393e6d088aca066097",
             "locator": {
               "kind": "symbol",
@@ -80,26 +80,28 @@
       ]
     },
     "4": {
-      "note": "Exactly one outcome per state; unavailable carries no counts.",
+      "note": "The result declares the optional non-negative stored-open field while the outcome validator constrains counts/refusal and partial/unresolved, not that auxiliary count.\n\nAnchor: Result fields and outcome validator",
       "targets": [
         {
           "anchor": {
-            "blob": "e131e4295c677d11b892549406df6c26ea52c2dd",
-            "content": "sha256:b3b3d0304191ed5d8827108783c73c2b12de3dfd88ba02b272f7c884d1f27996",
+            "blob": "4d3de3149beba772c4408439aa637fb03436836d",
+            "content": "sha256:a06a94de49bd0b25fcebb01ce3f699bd961fb27e910060f4de1ab6cc8bb0271f",
             "locator": {
-              "kind": "symbol",
-              "name": "ReviewIntentSummaryResult"
+              "end": 124,
+              "kind": "line_range",
+              "start": 93
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "e131e4295c677d11b892549406df6c26ea52c2dd",
+            "blob": "4d3de3149beba772c4408439aa637fb03436836d",
             "content": "sha256:6bfe55c6504fe2f9e1c759b7b88ce93fbe6a2584ee19fe44ab29800bd25eb5ba",
             "locator": {
-              "kind": "symbol",
-              "name": "_require_one_outcome"
+              "end": 124,
+              "kind": "line_range",
+              "start": 111
             }
           },
           "kind": "code"
@@ -111,7 +113,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e131e4295c677d11b892549406df6c26ea52c2dd",
+            "blob": "4d3de3149beba772c4408439aa637fb03436836d",
             "content": "sha256:73ebdd7bf312fcd5875993c4d7b85ce4fe2985f3aa1ab15a9c0a54f423cf997e",
             "locator": {
               "end": 31,
@@ -123,7 +125,7 @@
         },
         {
           "anchor": {
-            "blob": "e131e4295c677d11b892549406df6c26ea52c2dd",
+            "blob": "4d3de3149beba772c4408439aa637fb03436836d",
             "content": "sha256:f39d9d13319067e12a97d986d441116c44418403eb48126753172392663eb53b",
             "locator": {
               "end": 108,
@@ -136,15 +138,16 @@
       ]
     },
     "6": {
-      "note": "The dashboard's mirror of this shape.",
+      "note": "The dashboard mirrors the component counts and optional stored-open result, then preserves a supplied value as unexplainedOpen without adding it to authored-intent counts.\n\nAnchor: Wire interfaces and adapter",
       "targets": [
         {
           "anchor": {
-            "blob": "cdc2029bbb7da71feb49f14ec9d60611087b8410",
-            "content": "sha256:34c1b82d034aad49467300081f0fbb5b04b15c43117c58adbb451073e437a310",
+            "blob": "aa37dc151156c900a476667b0cbba310a971e51a",
+            "content": "sha256:f5f89709b8a21456508cc0f10038bbd247352ac865e9fb90132f179a332a4fe1",
             "locator": {
-              "kind": "symbol",
-              "name": "ReviewIntentSummaryResult"
+              "end": 60,
+              "kind": "line_range",
+              "start": 40
             },
             "path": "dashboard/src/data/reviewIntentSummary.ts"
           },
@@ -152,13 +155,50 @@
         },
         {
           "anchor": {
-            "blob": "cdc2029bbb7da71feb49f14ec9d60611087b8410",
-            "content": "sha256:b40ecffaa5128d54b1dfa64768b2c48fd623dca66e034c5d4b447be9e40e3302",
+            "blob": "aa37dc151156c900a476667b0cbba310a971e51a",
+            "content": "sha256:8429ef3583d0e275f2382e2d1189484c292e3334a3812ac3e34849d49002de6b",
             "locator": {
-              "kind": "symbol",
-              "name": "ReviewIntentCounts"
+              "end": 98,
+              "kind": "line_range",
+              "start": 84
             },
             "path": "dashboard/src/data/reviewIntentSummary.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The tree-comparison summary attaches attribution and the separately computed stored-open count.\n\nAnchor: Summary producer",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1646dd67bdaa0506980278d9cc535a331eceeb8e",
+            "content": "sha256:f82d06cab8886091225a4f74bfc0e6c3e110a70750d5d7fde8d9bac5c4822434",
+            "locator": {
+              "end": 156,
+              "kind": "line_range",
+              "start": 142
+            },
+            "path": "mcp/src/agents_remember/application/review_intent_summary.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "Matching complete stored work and decidable gate verdicts are required for an open count; absent or unusable work is not zero.\n\nAnchor: Stored worklist admission and gate delegation",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ec25892b22ca4d5b42b437c1fd3f4b2c924ac14f",
+            "content": "sha256:850472801bf3135456ef465cdd1b982b1c01cba69ade382e4a3074b05247aa78",
+            "locator": {
+              "end": 96,
+              "kind": "line_range",
+              "start": 20
+            },
+            "path": "mcp/src/agents_remember/application/review_worklist_answers.py"
           },
           "kind": "code"
         }

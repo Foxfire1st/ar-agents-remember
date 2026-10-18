@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "a6e6176a796c53b8cfd06b6449808ca7b8711db8",
+        "blob": "9013d5e76d160ec2c25d2edc99c11f391ffecb83",
         "content": "sha256:918b7c2f755cd924efa75cee919219828ae4812c1da381c37740206532eabd46",
         "locator": {
           "kind": "symbol",
@@ -16,13 +16,13 @@
         "handoffEntry": "MIK-R39@v1-keeping-issues-no-request",
         "leaf": "260928-MIK-L39"
       },
-      "rationale": "Holds the two selections that start in the tree, and each is made only when the reader uses a control: a row goes through the one subject selection, which the read cache answers when it holds the subject, and a kept family's continuation control selects that family. Nothing else reads for a kept family.",
+      "rationale": "Holds the two selections that start in the tree, and each is made only when the reader uses a control: a row goes through the one subject selection, which the read cache answers when it holds the subject, and a kept family's continuation request selects that family with its cursor. That handler branch is not a rendered sidebar continuation control: the compact sidebar draws none, and the main-page continuation control selects the family first. Nothing else reads for a kept family.",
       "role": "enforcement"
     },
     {
       "anchor": {
-        "blob": "a6e6176a796c53b8cfd06b6449808ca7b8711db8",
-        "content": "sha256:9957e768ffcd25ab6302be399b3d3a49a10ba0f445378c77b050f620e9494810",
+        "blob": "9013d5e76d160ec2c25d2edc99c11f391ffecb83",
+        "content": "sha256:2079af31ec39adf62165a9a860d1fdd6c112b36e3008104cc0825dd92227127c",
         "locator": {
           "kind": "symbol",
           "name": "WorkspaceBody"
@@ -39,8 +39,8 @@
     },
     {
       "anchor": {
-        "blob": "a6e6176a796c53b8cfd06b6449808ca7b8711db8",
-        "content": "sha256:47f6e284ea7d500a4c7e102027567095f79b12171b61aaaa3196af72184dc0ab",
+        "blob": "9013d5e76d160ec2c25d2edc99c11f391ffecb83",
+        "content": "sha256:434cc9f781d38a581f02a33e2f1e038a30819d588dec8248ec44d7e75460ec57",
         "locator": {
           "kind": "symbol",
           "name": "useSelectionFocus"
@@ -57,24 +57,7 @@
     },
     {
       "anchor": {
-        "blob": "a6e6176a796c53b8cfd06b6449808ca7b8711db8",
-        "content": "sha256:4b13d2e18f6609a7f20a83ee3be070cb2c7a5520b7a88a148139ff9aa180ae22",
-        "locator": {
-          "kind": "symbol",
-          "name": "useWorkspaceState"
-        }
-      },
-      "id": "RLZ-6T67PT58",
-      "invariant": "INV-Z385RTQS",
-      "origin": {
-        "leaf": "260921-ICR-L46"
-      },
-      "rationale": "Holds diff layout, full-file disclosure and the open expression path as workspace-level state, with full-file off so changed regions show by default; it remembers the element that opened an expression, and closePath(null) returns focus to that opener.",
-      "role": "primary-authority"
-    },
-    {
-      "anchor": {
-        "blob": "a6e6176a796c53b8cfd06b6449808ca7b8711db8",
+        "blob": "9013d5e76d160ec2c25d2edc99c11f391ffecb83",
         "content": "sha256:11e6a1b06f012e3f47bd88064c575cae47c37196cb4535baaa572a22985c815a",
         "locator": {
           "kind": "symbol",
@@ -92,7 +75,7 @@
     },
     {
       "anchor": {
-        "blob": "a6e6176a796c53b8cfd06b6449808ca7b8711db8",
+        "blob": "9013d5e76d160ec2c25d2edc99c11f391ffecb83",
         "content": "sha256:3639917827efca703ecf0f261bc970ac18767f8538553b6eb403ff7ef72b4bab",
         "locator": {
           "kind": "symbol",
@@ -109,7 +92,7 @@
     },
     {
       "anchor": {
-        "blob": "a6e6176a796c53b8cfd06b6449808ca7b8711db8",
+        "blob": "9013d5e76d160ec2c25d2edc99c11f391ffecb83",
         "content": "sha256:ed9bf2e2de784ca73f5faf27e048893cfdf47a7553484fc86c795a13f611cbbb",
         "locator": {
           "kind": "symbol",
@@ -127,8 +110,8 @@
     },
     {
       "anchor": {
-        "blob": "a6e6176a796c53b8cfd06b6449808ca7b8711db8",
-        "content": "sha256:ed95ad71bafdd525d8a4ced87181e83257b987e77b4e5fcba8e62d612addda24",
+        "blob": "9013d5e76d160ec2c25d2edc99c11f391ffecb83",
+        "content": "sha256:6fa06a8d3a51a5fa120b205e072280e2e8fb64127826802b8ce7710b71d7483f",
         "locator": {
           "kind": "symbol",
           "name": "WorkspaceRail"
@@ -145,7 +128,7 @@
     },
     {
       "anchor": {
-        "blob": "a6e6176a796c53b8cfd06b6449808ca7b8711db8",
+        "blob": "9013d5e76d160ec2c25d2edc99c11f391ffecb83",
         "content": "sha256:918b7c2f755cd924efa75cee919219828ae4812c1da381c37740206532eabd46",
         "locator": {
           "kind": "symbol",
@@ -163,7 +146,7 @@
     },
     {
       "anchor": {
-        "blob": "a6e6176a796c53b8cfd06b6449808ca7b8711db8",
+        "blob": "9013d5e76d160ec2c25d2edc99c11f391ffecb83",
         "content": "sha256:04014334adf090e9bcee82ba6b884aa7c75f31af187639833fc8b68b78cb4561",
         "locator": {
           "kind": "symbol",
@@ -176,13 +159,13 @@
         "handoffEntry": "MIK-R39@v1-focus-request-answered-by-its-selection",
         "leaf": "260928-MIK-L39"
       },
-      "rationale": "Any other request first tests the reader-moved guard (`selectionFocusAvailable`). A `scrollOnly` request (a refresh) only brings the selected node into view, with `block: 'nearest'`, and moves no focus. Any other request calls `focusSelectedRead`, which on the stacked layout reveals the reading area for an in-tree selection and otherwise only moves focus.",
+      "rationale": "Any other request first tests the reader-moved guard (`selectionFocusAvailable`). A `scrollOnly` request (a refresh) only brings the selected node into view, with `block: 'nearest'`, and moves no focus. Any other request calls `focusSelectedRead`, which for a kept-tree selection focuses the selected row with `preventScroll` and reveals that row inside its own panel at either width; the former stacked-layout center reveal is not part of the current handler.",
       "role": "enforcement"
     },
     {
       "anchor": {
-        "blob": "a6e6176a796c53b8cfd06b6449808ca7b8711db8",
-        "content": "sha256:9957e768ffcd25ab6302be399b3d3a49a10ba0f445378c77b050f620e9494810",
+        "blob": "9013d5e76d160ec2c25d2edc99c11f391ffecb83",
+        "content": "sha256:2079af31ec39adf62165a9a860d1fdd6c112b36e3008104cc0825dd92227127c",
         "locator": {
           "kind": "symbol",
           "name": "WorkspaceBody"
@@ -199,8 +182,8 @@
     },
     {
       "anchor": {
-        "blob": "a6e6176a796c53b8cfd06b6449808ca7b8711db8",
-        "content": "sha256:ed95ad71bafdd525d8a4ced87181e83257b987e77b4e5fcba8e62d612addda24",
+        "blob": "9013d5e76d160ec2c25d2edc99c11f391ffecb83",
+        "content": "sha256:6fa06a8d3a51a5fa120b205e072280e2e8fb64127826802b8ce7710b71d7483f",
         "locator": {
           "kind": "symbol",
           "name": "WorkspaceRail"
@@ -217,7 +200,7 @@
     },
     {
       "anchor": {
-        "blob": "a6e6176a796c53b8cfd06b6449808ca7b8711db8",
+        "blob": "9013d5e76d160ec2c25d2edc99c11f391ffecb83",
         "content": "sha256:25ce9c889d011fad26c0161fa99cd8fb23d02bf4a6e4083cb936a3d8ce0abf93",
         "locator": {
           "kind": "symbol",
@@ -235,25 +218,7 @@
     },
     {
       "anchor": {
-        "blob": "a6e6176a796c53b8cfd06b6449808ca7b8711db8",
-        "content": "sha256:4b13d2e18f6609a7f20a83ee3be070cb2c7a5520b7a88a148139ff9aa180ae22",
-        "locator": {
-          "kind": "symbol",
-          "name": "useWorkspaceState"
-        }
-      },
-      "id": "RLZ-MGGXSY",
-      "invariant": "INV-9ZKYWQ",
-      "origin": {
-        "handoffEntry": "MIK-R39@v1-other-selections-start-afresh",
-        "leaf": "260928-MIK-L39"
-      },
-      "rationale": "Holds the tree intent: a number that goes up with every selection and the flag whether that selection keeps the tree. `beginSelection` is the only writer, and the initial intent does not keep.",
-      "role": "primary-authority"
-    },
-    {
-      "anchor": {
-        "blob": "a6e6176a796c53b8cfd06b6449808ca7b8711db8",
+        "blob": "9013d5e76d160ec2c25d2edc99c11f391ffecb83",
         "content": "sha256:ad6c20826f8fa877769ff5756e931b961dcd4f880d6f2859060f89e6136a79b5",
         "locator": {
           "kind": "symbol",
@@ -270,7 +235,7 @@
     },
     {
       "anchor": {
-        "blob": "a6e6176a796c53b8cfd06b6449808ca7b8711db8",
+        "blob": "9013d5e76d160ec2c25d2edc99c11f391ffecb83",
         "content": "sha256:04014334adf090e9bcee82ba6b884aa7c75f31af187639833fc8b68b78cb4561",
         "locator": {
           "kind": "symbol",
@@ -288,7 +253,7 @@
     },
     {
       "anchor": {
-        "blob": "a6e6176a796c53b8cfd06b6449808ca7b8711db8",
+        "blob": "9013d5e76d160ec2c25d2edc99c11f391ffecb83",
         "content": "sha256:2e7bc59bf7f03bc941005c38febaea956e1b2e48bd617f4ed98cb9bb14a6f4ae",
         "locator": {
           "kind": "symbol",
@@ -306,8 +271,8 @@
     },
     {
       "anchor": {
-        "blob": "a6e6176a796c53b8cfd06b6449808ca7b8711db8",
-        "content": "sha256:47f6e284ea7d500a4c7e102027567095f79b12171b61aaaa3196af72184dc0ab",
+        "blob": "9013d5e76d160ec2c25d2edc99c11f391ffecb83",
+        "content": "sha256:434cc9f781d38a581f02a33e2f1e038a30819d588dec8248ec44d7e75460ec57",
         "locator": {
           "kind": "symbol",
           "name": "useSelectionFocus"
@@ -324,7 +289,7 @@
     },
     {
       "anchor": {
-        "blob": "a6e6176a796c53b8cfd06b6449808ca7b8711db8",
+        "blob": "9013d5e76d160ec2c25d2edc99c11f391ffecb83",
         "content": "sha256:cd861cda8197debd9272e3d68fa8504cb38ccc841a0edb616dd428f8f6601ba4",
         "locator": {
           "kind": "symbol",
@@ -341,7 +306,7 @@
     },
     {
       "anchor": {
-        "blob": "a6e6176a796c53b8cfd06b6449808ca7b8711db8",
+        "blob": "9013d5e76d160ec2c25d2edc99c11f391ffecb83",
         "content": "sha256:ad6c20826f8fa877769ff5756e931b961dcd4f880d6f2859060f89e6136a79b5",
         "locator": {
           "kind": "symbol",
@@ -354,31 +319,13 @@
         "handoffEntry": "MIK-R39@v1-in-tree-selection-adds-rows",
         "leaf": "260928-MIK-L39"
       },
-      "rationale": "Looks the clicked family up among the families the tree shows, a kept family's included, and hands the navigation the row's subject with `keepTree: true`: the family for a family row, the member's canonical invariant for a member row. It is the one handler of a tree row, of a member opened from the reading area and, through the traversal's click, of `j`, `k` and the two visible controls.",
+      "rationale": "Looks the clicked family up among the families the tree shows, a kept family's included, and hands the navigation the row's subject with `keepTree: true`: the family for a family row, the member's canonical invariant for a member row. It is one handler of a tree row and of a member opened from the reading area; the compact tree's own `onSubjectSelect` callback is handled directly by the workspace through `navigation.onSelect` and `state.setChosen` and does not call this function.",
       "role": "primary-authority"
     },
     {
       "anchor": {
-        "blob": "a6e6176a796c53b8cfd06b6449808ca7b8711db8",
-        "content": "sha256:e9466b68045a0ce3d2efad0bc23099c7e0b5927ee2d50c66c04bb5327b2aa059",
-        "locator": {
-          "kind": "symbol",
-          "name": "FocusRequest"
-        }
-      },
-      "id": "RLZ-TJFJ3C",
-      "invariant": "INV-T1ZHP5",
-      "origin": {
-        "handoffEntry": "MIK-R39@v1-focus-request-answered-by-its-selection",
-        "leaf": "260928-MIK-L39"
-      },
-      "rationale": "The request a selection or a refresh leaves: the element that had focus, the number of the tree intent current when it was made (`after`), whether it only scrolls (`scrollOnly`), and whether an answer has arrived since (`answered`). The effect decides on these fields alone.",
-      "role": "support"
-    },
-    {
-      "anchor": {
-        "blob": "a6e6176a796c53b8cfd06b6449808ca7b8711db8",
-        "content": "sha256:0da12ce095e8e184b2663b1b5152eaf9f895c179272a182bd720a2185e0786c6",
+        "blob": "9013d5e76d160ec2c25d2edc99c11f391ffecb83",
+        "content": "sha256:6d796a5b3e0a1136ae988a5687db54b178eb8e02e817cfd2373bc59790c62962",
         "locator": {
           "kind": "symbol",
           "name": "FamilyRailContext"
@@ -395,8 +342,8 @@
     },
     {
       "anchor": {
-        "blob": "a6e6176a796c53b8cfd06b6449808ca7b8711db8",
-        "content": "sha256:8b74b0da1fc1ea7bda7d77e5cb42a3d4307f406bd78d07d402f5a413d576417a",
+        "blob": "9013d5e76d160ec2c25d2edc99c11f391ffecb83",
+        "content": "sha256:e4c761b88a484c4ab942f9d932dcdfe3e2d70c9696ab4904d5f340406f8e45c4",
         "locator": {
           "kind": "symbol",
           "name": "WorkspaceCenter"
@@ -412,7 +359,7 @@
     },
     {
       "anchor": {
-        "blob": "a6e6176a796c53b8cfd06b6449808ca7b8711db8",
+        "blob": "9013d5e76d160ec2c25d2edc99c11f391ffecb83",
         "content": "sha256:04014334adf090e9bcee82ba6b884aa7c75f31af187639833fc8b68b78cb4561",
         "locator": {
           "kind": "symbol",
@@ -424,13 +371,13 @@
       "origin": {
         "leaf": "260921-ICR-L48"
       },
-      "rationale": "Lands a completed selection’s focus only if the reader has not moved it. The target-state notice is found anywhere in the workspace (currently rendered in the main content), else the selected tree node, else the center. A stacked in-tree read reveals the center without moving focus off its row; failed/refused reads reveal status without consuming the pending focus request.",
+      "rationale": "Lands a completed selection's focus only if the reader has not moved it. The target-state notice is found anywhere in the workspace (currently rendered in the main content), else the selected tree node, else the center. A kept-tree read reveals its own row in the panel without moving focus off that row, at either width; failed/refused reads reveal status without consuming the pending focus request.",
       "role": "primary-authority"
     },
     {
       "anchor": {
-        "blob": "a6e6176a796c53b8cfd06b6449808ca7b8711db8",
-        "content": "sha256:f525f822aaf102470ace725ec6a72775520bb00026482dcd332d1510c5d1b151",
+        "blob": "9013d5e76d160ec2c25d2edc99c11f391ffecb83",
+        "content": "sha256:bfecd9d90d38a444c1ae0c145344d0b2bbe40cfc515a01916c3cc3e8cca81b8b",
         "locator": {
           "kind": "symbol",
           "name": "focusSelectedRead"
@@ -442,12 +389,12 @@
         "handoffEntry": "OR-R033-D1",
         "leaf": "260928-MIK-L39"
       },
-      "rationale": "This function decides between the stacked in-tree reveal and the original focus call, from the tree intent and the 60rem media query.",
+      "rationale": "For keepTree, focuses the selected row with preventScroll and calls the panel-local revealTreeRow at either width; outside selection retains native focus. The caller retains the moved-focus guard.",
       "role": "primary-authority"
     },
     {
       "anchor": {
-        "blob": "a6e6176a796c53b8cfd06b6449808ca7b8711db8",
+        "blob": "9013d5e76d160ec2c25d2edc99c11f391ffecb83",
         "content": "sha256:918b7c2f755cd924efa75cee919219828ae4812c1da381c37740206532eabd46",
         "locator": {
           "kind": "symbol",
@@ -466,44 +413,61 @@
   ],
   "references": {
     "18": {
-      "note": "The workspace state: the choice, search, layout, full-file disclosure, opened path with its opener, the lane, the focus request and the numbered tree intent.\n\nAnchor: `useWorkspaceState`",
+      "note": "The workspace state: the choice, search, layout, full-file disclosure, opened path with its opener, the lane, the focus request and the numbered tree intent.\n\nAnchor: `WorkspaceState` `useWorkspaceState`",
       "targets": [
         {
           "anchor": {
-            "blob": "a6e6176a796c53b8cfd06b6449808ca7b8711db8",
-            "content": "sha256:85e8f85fdd213d5e874adb7b5dc3587aef3ccac7d42c8c39bf0594c4ddd675bc",
+            "blob": "e00057f352f49ba21fb0c809e433cdc31c113c91",
+            "content": "sha256:3612848799a3c876620a484e888082b918029fecadbdfda2914949914413a625",
             "locator": {
-              "kind": "file"
-            }
+              "kind": "symbol",
+              "name": "WorkspaceState"
+            },
+            "path": "dashboard/src/panels/review/workspaceState.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e00057f352f49ba21fb0c809e433cdc31c113c91",
+            "content": "sha256:d46469c6cf6233fc47417636e4ea1b93f6fa805add2584a21e5fdfb3ce3be4db",
+            "locator": {
+              "kind": "symbol",
+              "name": "useWorkspaceState"
+            },
+            "path": "dashboard/src/panels/review/workspaceState.ts"
           },
           "kind": "code"
         }
       ]
     },
     "19": {
-      "note": "The focus request a selection leaves: the element that had focus, the tree intent it was made after, and the scroll-only and answered flags.\n\nAnchor: `FocusRequest`",
+      "note": "The focus request a selection leaves: the element that had focus, the tree intent it was made after, and the scroll-only and answered flags.",
       "targets": [
         {
           "anchor": {
-            "blob": "a6e6176a796c53b8cfd06b6449808ca7b8711db8",
-            "content": "sha256:85e8f85fdd213d5e874adb7b5dc3587aef3ccac7d42c8c39bf0594c4ddd675bc",
+            "blob": "e00057f352f49ba21fb0c809e433cdc31c113c91",
+            "content": "sha256:080398a9f01fb5bbc3d478b039e47e7c8db049671beca6a570398c4f9f4b6b62",
             "locator": {
-              "kind": "file"
-            }
+              "kind": "symbol",
+              "name": "FocusRequest"
+            },
+            "path": "dashboard/src/panels/review/workspaceState.ts"
           },
           "kind": "code"
         }
       ]
     },
     "20": {
-      "note": "The wrapper provides the intent markers' scope around the body.\n\nAnchor: `ReviewWorkspace`",
+      "note": "The wrapper provides the intent markers' scope around the body.",
       "targets": [
         {
           "anchor": {
-            "blob": "a6e6176a796c53b8cfd06b6449808ca7b8711db8",
-            "content": "sha256:85e8f85fdd213d5e874adb7b5dc3587aef3ccac7d42c8c39bf0594c4ddd675bc",
+            "blob": "9013d5e76d160ec2c25d2edc99c11f391ffecb83",
+            "content": "sha256:edb1ba46decafcf9f36de76522f915f3cc9b19150e179cfd1ee7f09997d50a8b",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "ReviewWorkspace"
             }
           },
           "kind": "code"
@@ -511,14 +475,15 @@
       ]
     },
     "21": {
-      "note": "The body: scope header, jump button, way back, rail and center in one grid, with the layout and marker-return attributes on the root.\n\nAnchor: `WorkspaceBody`",
+      "note": "The body: scope header, jump button, way back, rail and center in one grid, with the layout and marker-return attributes on the root.",
       "targets": [
         {
           "anchor": {
-            "blob": "a6e6176a796c53b8cfd06b6449808ca7b8711db8",
-            "content": "sha256:85e8f85fdd213d5e874adb7b5dc3587aef3ccac7d42c8c39bf0594c4ddd675bc",
+            "blob": "9013d5e76d160ec2c25d2edc99c11f391ffecb83",
+            "content": "sha256:2079af31ec39adf62165a9a860d1fdd6c112b36e3008104cc0825dd92227127c",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "WorkspaceBody"
             }
           },
           "kind": "code"
@@ -526,14 +491,26 @@
       ]
     },
     "22": {
-      "note": "The unanswered subject's status and its two renderings.\n\nAnchor: `ReadingStatusCenter`",
+      "note": "The unanswered subject's status and its two renderings.\n\nAnchor: `ReadingStatus` `ReadingStatusCenter`",
       "targets": [
         {
           "anchor": {
-            "blob": "a6e6176a796c53b8cfd06b6449808ca7b8711db8",
-            "content": "sha256:85e8f85fdd213d5e874adb7b5dc3587aef3ccac7d42c8c39bf0594c4ddd675bc",
+            "blob": "9013d5e76d160ec2c25d2edc99c11f391ffecb83",
+            "content": "sha256:9f6987421f42aa3fe53cb5a6116ba6d0b6df97c8f79f0973b705e0d8d28691c8",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "ReadingStatus"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9013d5e76d160ec2c25d2edc99c11f391ffecb83",
+            "content": "sha256:3639917827efca703ecf0f261bc970ac18767f8538553b6eb403ff7ef72b4bab",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReadingStatusCenter"
             }
           },
           "kind": "code"
@@ -541,29 +518,54 @@
       ]
     },
     "23": {
-      "note": "The reading-area column is one node whose content alone is swapped. WorkspaceBody reads the leaf-wide tree view only for a tree comparison and supplies it to WorkspaceCenter. Anchor: `WorkspaceCenter`; `WorkspaceBody`",
+      "note": "The reading-area column swaps only its content. The surface owns the single comparison-bound leafTrees read; WorkspaceBody receives it and forwards that same answer to center and rail.\n\nAnchor: `WorkspaceCenter` `WorkspaceBody` `ReviewPanes`",
       "targets": [
         {
           "anchor": {
-            "blob": "a6e6176a796c53b8cfd06b6449808ca7b8711db8",
-            "content": "sha256:85e8f85fdd213d5e874adb7b5dc3587aef3ccac7d42c8c39bf0594c4ddd675bc",
+            "blob": "9013d5e76d160ec2c25d2edc99c11f391ffecb83",
+            "content": "sha256:e4c761b88a484c4ab942f9d932dcdfe3e2d70c9696ab4904d5f340406f8e45c4",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "WorkspaceCenter"
             }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9013d5e76d160ec2c25d2edc99c11f391ffecb83",
+            "content": "sha256:2079af31ec39adf62165a9a860d1fdd6c112b36e3008104cc0825dd92227127c",
+            "locator": {
+              "kind": "symbol",
+              "name": "WorkspaceBody"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "bb94e003292e3a408d3607472dacd850e1f8da65",
+            "content": "sha256:1ed5da5ede7f48725e74c2a3ea1173d75721a93a9528babd41cbe4811d09581c",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewPanes"
+            },
+            "path": "dashboard/src/panels/review/ReviewSurface.tsx"
           },
           "kind": "code"
         }
       ]
     },
     "24": {
-      "note": "The walk, the two selection marks, the row selection and the roster continuation of a kept family.\n\nAnchor: `useWalkedSelection`",
+      "note": "The walk, the two selection marks, the row selection and the roster continuation of a kept family.",
       "targets": [
         {
           "anchor": {
-            "blob": "a6e6176a796c53b8cfd06b6449808ca7b8711db8",
-            "content": "sha256:85e8f85fdd213d5e874adb7b5dc3587aef3ccac7d42c8c39bf0594c4ddd675bc",
+            "blob": "9013d5e76d160ec2c25d2edc99c11f391ffecb83",
+            "content": "sha256:918b7c2f755cd924efa75cee919219828ae4812c1da381c37740206532eabd46",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "useWalkedSelection"
             }
           },
           "kind": "code"
@@ -571,14 +573,15 @@
       ]
     },
     "25": {
-      "note": "A mark may sit only on a family that is shown to it; otherwise the answer's own first context is marked.\n\nAnchor: `selectedContext`",
+      "note": "A mark may sit only on a family that is shown to it; otherwise the answer's own first context is marked.",
       "targets": [
         {
           "anchor": {
-            "blob": "a6e6176a796c53b8cfd06b6449808ca7b8711db8",
-            "content": "sha256:85e8f85fdd213d5e874adb7b5dc3587aef3ccac7d42c8c39bf0594c4ddd675bc",
+            "blob": "9013d5e76d160ec2c25d2edc99c11f391ffecb83",
+            "content": "sha256:11e6a1b06f012e3f47bd88064c575cae47c37196cb4535baaa572a22985c815a",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "selectedContext"
             }
           },
           "kind": "code"
@@ -586,14 +589,15 @@
       ]
     },
     "26": {
-      "note": "A row of the walked tree, a kept family's included, is selected through the navigation with `keepTree`.\n\nAnchor: `chooseSubject`",
+      "note": "A row of the walked tree, a kept family's included, is selected through the navigation with `keepTree`.",
       "targets": [
         {
           "anchor": {
-            "blob": "a6e6176a796c53b8cfd06b6449808ca7b8711db8",
-            "content": "sha256:85e8f85fdd213d5e874adb7b5dc3587aef3ccac7d42c8c39bf0594c4ddd675bc",
+            "blob": "9013d5e76d160ec2c25d2edc99c11f391ffecb83",
+            "content": "sha256:ad6c20826f8fa877769ff5756e931b961dcd4f880d6f2859060f89e6136a79b5",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "chooseSubject"
             }
           },
           "kind": "code"
@@ -601,14 +605,15 @@
       ]
     },
     "27": {
-      "note": "What the tree draws: the walked entries, the kept families with the subject each was last read for, the notice and the selected subject's state.\n\nAnchor: `walkedTreeOf`",
+      "note": "What the tree draws: the walked entries, the kept families with the subject each was last read for, the notice and the selected subject's state.",
       "targets": [
         {
           "anchor": {
-            "blob": "a6e6176a796c53b8cfd06b6449808ca7b8711db8",
-            "content": "sha256:85e8f85fdd213d5e874adb7b5dc3587aef3ccac7d42c8c39bf0594c4ddd675bc",
+            "blob": "9013d5e76d160ec2c25d2edc99c11f391ffecb83",
+            "content": "sha256:25ce9c889d011fad26c0161fa99cd8fb23d02bf4a6e4083cb936a3d8ce0abf93",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "walkedTreeOf"
             }
           },
           "kind": "code"
@@ -616,14 +621,15 @@
       ]
     },
     "28": {
-      "note": "The label of the subject a kept family was last read for.\n\nAnchor: `readForLabel`",
+      "note": "The label of the subject a kept family was last read for.",
       "targets": [
         {
           "anchor": {
-            "blob": "a6e6176a796c53b8cfd06b6449808ca7b8711db8",
-            "content": "sha256:85e8f85fdd213d5e874adb7b5dc3587aef3ccac7d42c8c39bf0594c4ddd675bc",
+            "blob": "9013d5e76d160ec2c25d2edc99c11f391ffecb83",
+            "content": "sha256:1ba0d3dbf032aef4f1c2c274b757279ce4e2c6cb3c5d9d5665ab900a2449891c",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "readForLabel"
             }
           },
           "kind": "code"
@@ -635,10 +641,11 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a6e6176a796c53b8cfd06b6449808ca7b8711db8",
-            "content": "sha256:85e8f85fdd213d5e874adb7b5dc3587aef3ccac7d42c8c39bf0594c4ddd675bc",
+            "blob": "9013d5e76d160ec2c25d2edc99c11f391ffecb83",
+            "content": "sha256:6fa06a8d3a51a5fa120b205e072280e2e8fb64127826802b8ce7710b71d7483f",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "WorkspaceRail"
             }
           },
           "kind": "code"
@@ -646,14 +653,15 @@
       ]
     },
     "30": {
-      "note": "The tree is drawn when the subject's context is composed or the walk holds a family; an unknown-membership target has its own state.\n\nAnchor: `FamilyRailContext`",
+      "note": "FamilyRailContext always mounts compact FamilyTree with catalogue/outline admission, walked context, supplied leafTrees and expected comparison; unknown marker membership is stated separately in the reading area.",
       "targets": [
         {
           "anchor": {
-            "blob": "a6e6176a796c53b8cfd06b6449808ca7b8711db8",
-            "content": "sha256:85e8f85fdd213d5e874adb7b5dc3587aef3ccac7d42c8c39bf0594c4ddd675bc",
+            "blob": "9013d5e76d160ec2c25d2edc99c11f391ffecb83",
+            "content": "sha256:6d796a5b3e0a1136ae988a5687db54b178eb8e02e817cfd2373bc59790c62962",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "FamilyRailContext"
             }
           },
           "kind": "code"
@@ -661,14 +669,15 @@
       ]
     },
     "31": {
-      "note": "Only a render made after the request answers it; a pending subject and an unanswered scroll-only request keep it.\n\nAnchor: `useSelectionFocus`",
+      "note": "Only a render made after the request answers it; a pending subject and an unanswered scroll-only request keep it.",
       "targets": [
         {
           "anchor": {
-            "blob": "a6e6176a796c53b8cfd06b6449808ca7b8711db8",
-            "content": "sha256:85e8f85fdd213d5e874adb7b5dc3587aef3ccac7d42c8c39bf0594c4ddd675bc",
+            "blob": "9013d5e76d160ec2c25d2edc99c11f391ffecb83",
+            "content": "sha256:434cc9f781d38a581f02a33e2f1e038a30819d588dec8248ec44d7e75460ec57",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "useSelectionFocus"
             }
           },
           "kind": "code"
@@ -676,14 +685,15 @@
       ]
     },
     "32": {
-      "note": "A scroll-only request brings the node into view; any other moves focus only if the reader has not moved it.\n\nAnchor: `landFocus`",
+      "note": "A scroll-only request brings the node into view; any other moves focus only if the reader has not moved it.",
       "targets": [
         {
           "anchor": {
-            "blob": "a6e6176a796c53b8cfd06b6449808ca7b8711db8",
-            "content": "sha256:85e8f85fdd213d5e874adb7b5dc3587aef3ccac7d42c8c39bf0594c4ddd675bc",
+            "blob": "9013d5e76d160ec2c25d2edc99c11f391ffecb83",
+            "content": "sha256:04014334adf090e9bcee82ba6b884aa7c75f31af187639833fc8b68b78cb4561",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "landFocus"
             }
           },
           "kind": "code"
@@ -691,14 +701,15 @@
       ]
     },
     "33": {
-      "note": "What a selection focuses: a followed marker's unknown-membership state, else the tree's current node.\n\nAnchor: `selectionNode`",
+      "note": "What a selection focuses: a followed marker's unknown-membership state, else the tree's current node.",
       "targets": [
         {
           "anchor": {
-            "blob": "a6e6176a796c53b8cfd06b6449808ca7b8711db8",
-            "content": "sha256:85e8f85fdd213d5e874adb7b5dc3587aef3ccac7d42c8c39bf0594c4ddd675bc",
+            "blob": "9013d5e76d160ec2c25d2edc99c11f391ffecb83",
+            "content": "sha256:37ae6a0769e0069cf4a58d9a119a3cc69c29eda347e970ca0dcde345c749be05",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "selectionNode"
             }
           },
           "kind": "code"
@@ -706,14 +717,15 @@
       ]
     },
     "37": {
-      "note": "The workspace carries the state of the way back.\n\nAnchor: `useMarkerReturnState`",
+      "note": "The workspace carries the state of the way back.",
       "targets": [
         {
           "anchor": {
-            "blob": "a6e6176a796c53b8cfd06b6449808ca7b8711db8",
-            "content": "sha256:85e8f85fdd213d5e874adb7b5dc3587aef3ccac7d42c8c39bf0594c4ddd675bc",
+            "blob": "9013d5e76d160ec2c25d2edc99c11f391ffecb83",
+            "content": "sha256:e931fd76596f0c934dc17c3f939bd28c40006b620eae882b026e23cb86f8f584",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "useMarkerReturnState"
             }
           },
           "kind": "code"
@@ -721,14 +733,15 @@
       ]
     },
     "38": {
-      "note": "The way back's sticky box in the stacked layout.\n\nAnchor: `markerReturn`",
+      "note": "The way back's sticky box in the stacked layout.",
       "targets": [
         {
           "anchor": {
-            "blob": "a6e6176a796c53b8cfd06b6449808ca7b8711db8",
-            "content": "sha256:85e8f85fdd213d5e874adb7b5dc3587aef3ccac7d42c8c39bf0594c4ddd675bc",
+            "blob": "9013d5e76d160ec2c25d2edc99c11f391ffecb83",
+            "content": "sha256:9ee9387ae7c221fd10ea944a69d0c85ea02d981a653982afc129b84ea7f0ff8e",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "markerReturn"
             }
           },
           "kind": "code"
@@ -736,14 +749,15 @@
       ]
     },
     "39": {
-      "note": "The sentences of the uncomposed context states.\n\nAnchor: `emptyFamilyDescription`",
+      "note": "The sentences of the uncomposed context states.",
       "targets": [
         {
           "anchor": {
-            "blob": "a6e6176a796c53b8cfd06b6449808ca7b8711db8",
-            "content": "sha256:85e8f85fdd213d5e874adb7b5dc3587aef3ccac7d42c8c39bf0594c4ddd675bc",
+            "blob": "9013d5e76d160ec2c25d2edc99c11f391ffecb83",
+            "content": "sha256:1d94bdfd9b7c6dee9a7d83aba78de9cca3a3cdf2a14775acda16a1b8d6c169d9",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "emptyFamilyDescription"
             }
           },
           "kind": "code"
@@ -755,7 +769,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "035768698be6a583041c67e462c149c44d5ba459",
+            "blob": "74f29568a6476be3bfdd727c3d8db942bc0cc105",
             "content": "sha256:66cab3c39e18f883c05fef12e192c20502ff925d17f267f085ce629679446e8a",
             "locator": {
               "kind": "symbol",
@@ -772,8 +786,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "cd0288dd34f9b6a7edf2a34ce42a87390dd6336c",
-            "content": "sha256:f6701f377661e687c1f1db5c6ddf5823df848151e48dfff6bf421e59bd16fff6",
+            "blob": "2c55e47896fbccfc402e8646015896baec1e0606",
+            "content": "sha256:5adb0563f1b308eae62564e17c9af2d1dd5c34bd0a2d6a34ad45ae90c259c166",
             "locator": {
               "kind": "symbol",
               "name": "workspaceMarkerMoves"
@@ -789,7 +803,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "13351816b627d4c17c8e47547ab42767044476f2",
+            "blob": "4283eb12ab754b846590815abd4567d69b342c97",
             "content": "sha256:fe23b30006ef4be89563c0548e217ba643853d12811316d0ccc9e6a6203aa65f",
             "locator": {
               "kind": "symbol",
@@ -802,16 +816,16 @@
       ]
     },
     "43": {
-      "note": "The triage bar sticks below the way back at the workspace's offset.",
+      "note": "The shared triageBar style declares sticky positioning at the workspace offset, with a zero fallback.",
       "targets": [
         {
           "anchor": {
-            "blob": "342a8e6bec7faff90ae4e959a5b0e95904f5aeb2",
-            "content": "sha256:9810830429335b6ca1fb6eac8ee0e7aaaa33b19d505dfc911d6b813dbc9f6807",
+            "blob": "f04ef15a794eef331f4c5784c4d1650727ba4144",
+            "content": "sha256:91ee7ace84534088ccedade39bdae7a79d8112e04fdb022bb65136279eaeb54b",
             "locator": {
-              "end": 78,
+              "end": 92,
               "kind": "line_range",
-              "start": 75
+              "start": 78
             },
             "path": "dashboard/src/panels/review/ChangeBadges.tsx"
           },
@@ -820,14 +834,15 @@
       ]
     },
     "44": {
-      "note": "A failed or refused in-tree selection on the stacked layout scrolls its status into view; it moves no focus and leaves the focus request for a retry.\n\nAnchor: `revealUnavailableRead`",
+      "note": "A failed or refused in-tree selection on the stacked layout scrolls its status into view; it moves no focus and leaves the focus request for a retry.",
       "targets": [
         {
           "anchor": {
-            "blob": "a6e6176a796c53b8cfd06b6449808ca7b8711db8",
-            "content": "sha256:85e8f85fdd213d5e874adb7b5dc3587aef3ccac7d42c8c39bf0594c4ddd675bc",
+            "blob": "9013d5e76d160ec2c25d2edc99c11f391ffecb83",
+            "content": "sha256:ed9bf2e2de784ca73f5faf27e048893cfdf47a7553484fc86c795a13f611cbbb",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "revealUnavailableRead"
             }
           },
           "kind": "code"
@@ -835,14 +850,37 @@
       ]
     },
     "45": {
-      "note": "The moved-focus test guards non-scrollOnly answered selections and unavailable reveals, so those paths neither take focus nor scroll after the reader moves on. A scrollOnly refresh remains a separate branch.",
+      "note": "The moved-focus availability predicate gates non-scrollOnly focus landing and unavailable reveals. A scrollOnly refresh has its own explicit branch.\n\nAnchor: `selectionFocusAvailable` `landFocus` `revealUnavailableRead`",
       "targets": [
         {
           "anchor": {
-            "blob": "a6e6176a796c53b8cfd06b6449808ca7b8711db8",
-            "content": "sha256:85e8f85fdd213d5e874adb7b5dc3587aef3ccac7d42c8c39bf0594c4ddd675bc",
+            "blob": "9013d5e76d160ec2c25d2edc99c11f391ffecb83",
+            "content": "sha256:2e7bc59bf7f03bc941005c38febaea956e1b2e48bd617f4ed98cb9bb14a6f4ae",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "selectionFocusAvailable"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9013d5e76d160ec2c25d2edc99c11f391ffecb83",
+            "content": "sha256:04014334adf090e9bcee82ba6b884aa7c75f31af187639833fc8b68b78cb4561",
+            "locator": {
+              "kind": "symbol",
+              "name": "landFocus"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9013d5e76d160ec2c25d2edc99c11f391ffecb83",
+            "content": "sha256:ed9bf2e2de784ca73f5faf27e048893cfdf47a7553484fc86c795a13f611cbbb",
+            "locator": {
+              "kind": "symbol",
+              "name": "revealUnavailableRead"
             }
           },
           "kind": "code"
@@ -850,14 +888,26 @@
       ]
     },
     "46": {
-      "note": "The in-tree and stacked test that gates every reveal.\n\nAnchor: `stackedTreeRead`",
+      "note": "The stacked/in-tree predicate gates unavailable-status reveal only, not every pending or answered kept-tree reveal.\n\nAnchor: `stackedTreeRead` `revealUnavailableRead`",
       "targets": [
         {
           "anchor": {
-            "blob": "a6e6176a796c53b8cfd06b6449808ca7b8711db8",
-            "content": "sha256:85e8f85fdd213d5e874adb7b5dc3587aef3ccac7d42c8c39bf0594c4ddd675bc",
+            "blob": "9013d5e76d160ec2c25d2edc99c11f391ffecb83",
+            "content": "sha256:1b0f9e592ea20291f6aa1c3082cd841d43ab09f56b9d153e37fbc13c12118814",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "stackedTreeRead"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9013d5e76d160ec2c25d2edc99c11f391ffecb83",
+            "content": "sha256:ed9bf2e2de784ca73f5faf27e048893cfdf47a7553484fc86c795a13f611cbbb",
+            "locator": {
+              "kind": "symbol",
+              "name": "revealUnavailableRead"
             }
           },
           "kind": "code"
@@ -865,44 +915,60 @@
       ]
     },
     "47": {
-      "note": "The answered in-tree selection on the stacked layout focuses the selected row without scrolling to it and reveals the reading area; every other selection keeps its original focus call.\n\nAnchor: `focusSelectedRead`",
+      "note": "An answered kept-tree selection at any width focuses with preventScroll and delegates bounded local-panel reveal. Other selections retain native focus behavior.\n\nAnchor: `focusSelectedRead` `revealTreeRow`",
       "targets": [
         {
           "anchor": {
-            "blob": "a6e6176a796c53b8cfd06b6449808ca7b8711db8",
-            "content": "sha256:85e8f85fdd213d5e874adb7b5dc3587aef3ccac7d42c8c39bf0594c4ddd675bc",
+            "blob": "9013d5e76d160ec2c25d2edc99c11f391ffecb83",
+            "content": "sha256:bfecd9d90d38a444c1ae0c145344d0b2bbe40cfc515a01916c3cc3e8cca81b8b",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "focusSelectedRead"
             }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "06c68c5736d977ee55d747de48a6a9e726f98d3a",
+            "content": "sha256:5f23b5f5fd122c3432fbe553a3d2800a19b251c70a0adf99bfe63be71cb51aba",
+            "locator": {
+              "kind": "symbol",
+              "name": "revealTreeRow"
+            },
+            "path": "dashboard/src/panels/review/treeScroll.ts"
           },
           "kind": "code"
         }
       ]
     },
     "48": {
-      "note": "Display state owned above the pane switch\n\nAnchor: `useWorkspaceState`",
+      "note": "Display state owned above the pane switch",
       "targets": [
         {
           "anchor": {
-            "blob": "a6e6176a796c53b8cfd06b6449808ca7b8711db8",
-            "content": "sha256:85e8f85fdd213d5e874adb7b5dc3587aef3ccac7d42c8c39bf0594c4ddd675bc",
+            "blob": "e00057f352f49ba21fb0c809e433cdc31c113c91",
+            "content": "sha256:d46469c6cf6233fc47417636e4ea1b93f6fa805add2584a21e5fdfb3ce3be4db",
             "locator": {
-              "kind": "file"
-            }
+              "kind": "symbol",
+              "name": "useWorkspaceState"
+            },
+            "path": "dashboard/src/panels/review/workspaceState.ts"
           },
           "kind": "code"
         }
       ]
     },
     "50": {
-      "note": "Rail, center and jump control composition\n\nAnchor: `WorkspaceBody`",
+      "note": "Rail, center and jump control composition",
       "targets": [
         {
           "anchor": {
-            "blob": "a6e6176a796c53b8cfd06b6449808ca7b8711db8",
-            "content": "sha256:85e8f85fdd213d5e874adb7b5dc3587aef3ccac7d42c8c39bf0594c4ddd675bc",
+            "blob": "9013d5e76d160ec2c25d2edc99c11f391ffecb83",
+            "content": "sha256:2079af31ec39adf62165a9a860d1fdd6c112b36e3008104cc0825dd92227127c",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "WorkspaceBody"
             }
           },
           "kind": "code"
@@ -910,14 +976,27 @@
       ]
     },
     "52": {
-      "note": "Lane counts feeding the navigation summary\n\nAnchor: `laneCounts`",
+      "note": "Lane counts feeding the navigation summary\n\nAnchor: `laneCounts` `WorkspaceRail`",
       "targets": [
         {
           "anchor": {
-            "blob": "a6e6176a796c53b8cfd06b6449808ca7b8711db8",
-            "content": "sha256:85e8f85fdd213d5e874adb7b5dc3587aef3ccac7d42c8c39bf0594c4ddd675bc",
+            "blob": "b5e4040a72d349d97a84add749bff36f6a104c5f",
+            "content": "sha256:1aa52fc3e95bbf014c51d282ed28e20dde633ac6806996415917aab80e7dca8f",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "laneCounts"
+            },
+            "path": "dashboard/src/panels/review/ReviewDestinations.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9013d5e76d160ec2c25d2edc99c11f391ffecb83",
+            "content": "sha256:6fa06a8d3a51a5fa120b205e072280e2e8fb64127826802b8ce7710b71d7483f",
+            "locator": {
+              "kind": "symbol",
+              "name": "WorkspaceRail"
             }
           },
           "kind": "code"
@@ -925,14 +1004,27 @@
       ]
     },
     "53": {
-      "note": "Change-set and worklist destinations, no file list\n\nAnchor: `ReviewDestinations`",
+      "note": "Change-set and worklist destinations, no file list\n\nAnchor: `ReviewDestinations` `WorkspaceRail`",
       "targets": [
         {
           "anchor": {
-            "blob": "a6e6176a796c53b8cfd06b6449808ca7b8711db8",
-            "content": "sha256:85e8f85fdd213d5e874adb7b5dc3587aef3ccac7d42c8c39bf0594c4ddd675bc",
+            "blob": "b5e4040a72d349d97a84add749bff36f6a104c5f",
+            "content": "sha256:7e81d26de66108ee74142153bfce952b39b42d75974310043c87ac3af12cab33",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "ReviewDestinations"
+            },
+            "path": "dashboard/src/panels/review/ReviewDestinations.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9013d5e76d160ec2c25d2edc99c11f391ffecb83",
+            "content": "sha256:6fa06a8d3a51a5fa120b205e072280e2e8fb64127826802b8ce7710b71d7483f",
+            "locator": {
+              "kind": "symbol",
+              "name": "WorkspaceRail"
             }
           },
           "kind": "code"
@@ -940,15 +1032,88 @@
       ]
     },
     "55": {
-      "note": "Focus landing on the selection's answer\n\nAnchor: `useSelectionFocus`",
+      "note": "The layout effect respects render/request ordering and catalogue loading, retains pending requests, reveals compatible pending kept-tree selection locally, and lands answered focus only through the appropriate branch.\n\nAnchor: `useSelectionFocus` `focusSelectedRead` `revealPendingRead`",
       "targets": [
         {
           "anchor": {
-            "blob": "a6e6176a796c53b8cfd06b6449808ca7b8711db8",
-            "content": "sha256:85e8f85fdd213d5e874adb7b5dc3587aef3ccac7d42c8c39bf0594c4ddd675bc",
+            "blob": "9013d5e76d160ec2c25d2edc99c11f391ffecb83",
+            "content": "sha256:434cc9f781d38a581f02a33e2f1e038a30819d588dec8248ec44d7e75460ec57",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "useSelectionFocus"
             }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9013d5e76d160ec2c25d2edc99c11f391ffecb83",
+            "content": "sha256:bfecd9d90d38a444c1ae0c145344d0b2bbe40cfc515a01916c3cc3e8cca81b8b",
+            "locator": {
+              "kind": "symbol",
+              "name": "focusSelectedRead"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9013d5e76d160ec2c25d2edc99c11f391ffecb83",
+            "content": "sha256:38564d73f230f06d1a3838afb207ee2ffefdf65aecbece0c29f8021e535527a7",
+            "locator": {
+              "kind": "symbol",
+              "name": "revealPendingRead"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "56": {
+      "note": "WorkspaceRail and FamilyRailContext forward the same surface-supplied leafTrees and expected comparison into code summary, destinations and compact tree. Narrow rails become bounded local scrollports; no second leaf-wide fetch or semantic classification is introduced.\n\nAnchor: `WorkspaceRail` `FamilyRailContext` `rail` `codeChangesSummary`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9013d5e76d160ec2c25d2edc99c11f391ffecb83",
+            "content": "sha256:6fa06a8d3a51a5fa120b205e072280e2e8fb64127826802b8ce7710b71d7483f",
+            "locator": {
+              "kind": "symbol",
+              "name": "WorkspaceRail"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9013d5e76d160ec2c25d2edc99c11f391ffecb83",
+            "content": "sha256:6d796a5b3e0a1136ae988a5687db54b178eb8e02e817cfd2373bc59790c62962",
+            "locator": {
+              "kind": "symbol",
+              "name": "FamilyRailContext"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9013d5e76d160ec2c25d2edc99c11f391ffecb83",
+            "content": "sha256:741780d9b82ea7d09af10a23e302afdf7299ece43415fad7d8a5ac5340b7c7ae",
+            "locator": {
+              "kind": "symbol",
+              "name": "rail"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "cf6d30a7d118ee16b5c90266535475a08063a88c",
+            "content": "sha256:b5f06f1ce63799ed900620a6aa0f065e0308397204d5a36be662d19929e93ddf",
+            "locator": {
+              "kind": "symbol",
+              "name": "codeChangesSummary"
+            },
+            "path": "dashboard/src/panels/review/codeFacts.ts"
           },
           "kind": "code"
         }

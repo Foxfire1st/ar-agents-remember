@@ -1,0 +1,87 @@
+{
+  "path": "dashboard/src/panels/review/worklistState.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Display server gate verdicts, never derive them: `itemAnswer` owns the described branch.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "56195a2e284d1294417633b7b30442ecab0e76d7",
+            "content": "sha256:a2520a80520c2ef7d9288044de1c5b9b8f71a235720936a4f5f3a404b51d58d2",
+            "locator": {
+              "kind": "symbol",
+              "name": "itemAnswer"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Display server gate verdicts, never derive them: `itemAnswerText` owns the described branch.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "56195a2e284d1294417633b7b30442ecab0e76d7",
+            "content": "sha256:9033e7862fa1a6a74f12399aed6a1b5edb4e6025d8ccc0305de887ba4f388fdf",
+            "locator": {
+              "kind": "symbol",
+              "name": "itemAnswerText"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Display server gate verdicts, never derive them: `openCount` owns the described branch.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "56195a2e284d1294417633b7b30442ecab0e76d7",
+            "content": "sha256:ca5c4bc18acdc0d7f814a9a9aa033a5641068b652c894592efc4037a4039afbd",
+            "locator": {
+              "kind": "symbol",
+              "name": "openCount"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Display server gate verdicts, never derive them: `worklistAnswer` owns the described branch.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "56195a2e284d1294417633b7b30442ecab0e76d7",
+            "content": "sha256:b6cae12b37082705efe22c3d1d54e49f22b82b6d811336befab66b2799d8c8fc",
+            "locator": {
+              "kind": "symbol",
+              "name": "worklistAnswer"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Display server gate verdicts, never derive them: `fileAnswers` owns the described branch.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "56195a2e284d1294417633b7b30442ecab0e76d7",
+            "content": "sha256:be12d858bad307903af6998eabad3d2a6489ae9dfb7428f3a845ba5bc5d5e1c5",
+            "locator": {
+              "kind": "symbol",
+              "name": "fileAnswers"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

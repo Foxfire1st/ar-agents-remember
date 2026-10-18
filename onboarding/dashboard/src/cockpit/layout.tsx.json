@@ -1,0 +1,88 @@
+{
+  "path": "dashboard/src/cockpit/layout.tsx",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Narrow shell scroll/width/row/rail rules are explicit media overrides.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bd38e5290e2843a3c4222a6e381b949b47d32e28",
+            "content": "sha256:a2ebce6047039f8694e3ff8d9c840c2ce1a89dfef4384b83555ad3c8b830dc97",
+            "locator": {
+              "kind": "symbol",
+              "name": "shell"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Grid base keeps desktop variants; the caller selects responsive columns.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bd38e5290e2843a3c4222a6e381b949b47d32e28",
+            "content": "sha256:9ae39934e802581d4d4d10a61c55ac5f752ad913b4119f0c8cedde7298f75c7d",
+            "locator": {
+              "kind": "symbol",
+              "name": "bodyGrid"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Resizing is bounded, directional and keyboard reachable only above the narrow breakpoint.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bd38e5290e2843a3c4222a6e381b949b47d32e28",
+            "content": "sha256:57b6e0955bdd931e0912dea3ddb4860de9ce6d3865ae0015fc20c6803f24052d",
+            "locator": {
+              "kind": "symbol",
+              "name": "RailResizeHandle"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Narrow takeover is fixed; matchMedia state has listener cleanup.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bd38e5290e2843a3c4222a6e381b949b47d32e28",
+            "content": "sha256:0c7a1807a5bf82abf778ac65823886185e7f7304787eb7a5ffe351a58c4f64b6",
+            "locator": {
+              "kind": "symbol",
+              "name": "useNarrowCockpit"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Cockpit actually chooses the narrow one-column grid.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "80f2861ffd1ec3af036f58f9a79957bd54adec46",
+            "content": "sha256:70e8d83aa83ab966759e61e6a62573af256331175301b31e5099a03df567c5e7",
+            "locator": {
+              "kind": "symbol",
+              "name": "RailedBody"
+            },
+            "path": "dashboard/src/cockpit/Cockpit.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

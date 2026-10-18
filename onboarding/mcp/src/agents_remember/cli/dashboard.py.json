@@ -3,12 +3,12 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "715a8aa55d1508d8e94554a2e3a04dd7b0edcf23",
+        "blob": "74a2c8422da853d4c0d2ea2aa2fd1e259f9e204b",
         "content": "sha256:e29ba003cb25f1db27fe31175afb1aa5dc9c2f4e58c4cd274653c99d4f80c0fb",
         "locator": {
-          "end": 319,
+          "end": 357,
           "kind": "line_range",
-          "start": 277
+          "start": 315
         }
       },
       "id": "RLZ-4SKB8D",
@@ -22,12 +22,12 @@
     },
     {
       "anchor": {
-        "blob": "715a8aa55d1508d8e94554a2e3a04dd7b0edcf23",
-        "content": "sha256:6c9f09fc5312c707cc8ad0d370712d63d3c22d2d05ffc0a087b7e38e9433d13f",
+        "blob": "74a2c8422da853d4c0d2ea2aa2fd1e259f9e204b",
+        "content": "sha256:40dbc50ed2b814992263ad3acc41712bc18d316952ae238ca04326ea8f29192e",
         "locator": {
-          "end": 159,
+          "end": 197,
           "kind": "line_range",
-          "start": 73
+          "start": 110
         }
       },
       "id": "RLZ-9D25GS",
@@ -41,12 +41,12 @@
     },
     {
       "anchor": {
-        "blob": "715a8aa55d1508d8e94554a2e3a04dd7b0edcf23",
-        "content": "sha256:6c9f09fc5312c707cc8ad0d370712d63d3c22d2d05ffc0a087b7e38e9433d13f",
+        "blob": "74a2c8422da853d4c0d2ea2aa2fd1e259f9e204b",
+        "content": "sha256:67e64fa909f84b55cf54abe335131bb22c0b9725ee4bfd3898a56ffbca435c50",
         "locator": {
-          "end": 159,
+          "end": 152,
           "kind": "line_range",
-          "start": 73
+          "start": 152
         }
       },
       "id": "RLZ-HM528R",
@@ -55,12 +55,12 @@
         "handoffEntry": "L40-one-resolution",
         "leaf": "260928-MIK-L40"
       },
-      "rationale": "The production reviewer port calls the shared complete-review owner, so the request-count contract holds at the actual dashboard operation.",
+      "rationale": "The actual production review_port delegates the request to read_complete_knowledge_review; that current call, rather than its retained historical record-bundle docstring, wires the once-resolved composition owner into the dashboard operation.",
       "role": "support"
     },
     {
       "anchor": {
-        "blob": "715a8aa55d1508d8e94554a2e3a04dd7b0edcf23",
+        "blob": "74a2c8422da853d4c0d2ea2aa2fd1e259f9e204b",
         "content": "sha256:b4ad4c71a918e5f0be486f601582fb810d349496c065d01bf110b49328c0d563",
         "locator": {
           "kind": "symbol",
@@ -78,12 +78,30 @@
     },
     {
       "anchor": {
-        "blob": "715a8aa55d1508d8e94554a2e3a04dd7b0edcf23",
+        "blob": "74a2c8422da853d4c0d2ea2aa2fd1e259f9e204b",
+        "content": "sha256:970f000f9538738a71d9798bbe4e298ae76b3ba189cdb226bda54ceac12cb5c3",
+        "locator": {
+          "kind": "symbol",
+          "name": "_review_memory_root"
+        }
+      },
+      "id": "RLZ-QDTN0M",
+      "invariant": "INV-74578B97",
+      "origin": {
+        "handoffEntry": "CUR-L57-live-review-memory-root-admission",
+        "leaf": "260928-MIK-L57"
+      },
+      "rationale": "The production config-bound root resolver confines the live state-stream memory watch to the addressed authority and external leaf enclosure, rejecting unsafe selectors, noncanonical/invalid memory roots and provider-runtime. It supplies no Git/index read or semantic result. This is the root-admission carrier of the existing mounted-live scoped invalidation path, not a standalone authorization guarantee or a changed summary obligation.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "74a2c8422da853d4c0d2ea2aa2fd1e259f9e204b",
         "content": "sha256:95dbc1949c157a4444028c5488aebb0d40acbad37773f3bf3022ea859552c58d",
         "locator": {
-          "end": 196,
+          "end": 234,
           "kind": "line_range",
-          "start": 162
+          "start": 200
         }
       },
       "id": "RLZ-V8EXDR",
@@ -102,8 +120,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e8cc72095ab2776b399324509f546821f1e0b683",
-            "content": "sha256:f52fafd5838afa3ab615762f3c9e2e4af18e0c0e0dfe454aa13dfdcc4f34ef49",
+            "blob": "74a2c8422da853d4c0d2ea2aa2fd1e259f9e204b",
+            "content": "sha256:40dbc50ed2b814992263ad3acc41712bc18d316952ae238ca04326ea8f29192e",
             "locator": {
               "kind": "symbol",
               "name": "serving_collaborators"
@@ -118,7 +136,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "715a8aa55d1508d8e94554a2e3a04dd7b0edcf23",
+            "blob": "74a2c8422da853d4c0d2ea2aa2fd1e259f9e204b",
             "content": "sha256:95dbc1949c157a4444028c5488aebb0d40acbad37773f3bf3022ea859552c58d",
             "locator": {
               "kind": "symbol",
@@ -134,7 +152,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "715a8aa55d1508d8e94554a2e3a04dd7b0edcf23",
+            "blob": "74a2c8422da853d4c0d2ea2aa2fd1e259f9e204b",
             "content": "sha256:e29ba003cb25f1db27fe31175afb1aa5dc9c2f4e58c4cd274653c99d4f80c0fb",
             "locator": {
               "kind": "symbol",
@@ -150,7 +168,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "715a8aa55d1508d8e94554a2e3a04dd7b0edcf23",
+            "blob": "74a2c8422da853d4c0d2ea2aa2fd1e259f9e204b",
             "content": "sha256:2e5a3f6a67c7eedf93890c6d22d619be978f54bef2bf8e73188ba49749236aab",
             "locator": {
               "kind": "symbol",
@@ -166,7 +184,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "715a8aa55d1508d8e94554a2e3a04dd7b0edcf23",
+            "blob": "74a2c8422da853d4c0d2ea2aa2fd1e259f9e204b",
             "content": "sha256:e29ba003cb25f1db27fe31175afb1aa5dc9c2f4e58c4cd274653c99d4f80c0fb",
             "locator": {
               "kind": "symbol",
@@ -182,7 +200,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "715a8aa55d1508d8e94554a2e3a04dd7b0edcf23",
+            "blob": "74a2c8422da853d4c0d2ea2aa2fd1e259f9e204b",
             "content": "sha256:bf5e9378e91c92e7e4d85f4d54b360dca3c9d3fb19b7f4cf655f5d8fb9b84424",
             "locator": {
               "kind": "symbol",
@@ -198,7 +216,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "715a8aa55d1508d8e94554a2e3a04dd7b0edcf23",
+            "blob": "74a2c8422da853d4c0d2ea2aa2fd1e259f9e204b",
             "content": "sha256:f31095c7cabe1708f5e51a6406950dea50fd8f1d223da054b022c3e17b7c2ff9",
             "locator": {
               "kind": "symbol",
@@ -214,7 +232,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "715a8aa55d1508d8e94554a2e3a04dd7b0edcf23",
+            "blob": "74a2c8422da853d4c0d2ea2aa2fd1e259f9e204b",
             "content": "sha256:b4ad4c71a918e5f0be486f601582fb810d349496c065d01bf110b49328c0d563",
             "locator": {
               "kind": "symbol",
@@ -230,8 +248,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a555e9a9abeaf5f9e28273ddd2ac14cec79ec9f9",
-            "content": "sha256:b3b789d36947b0fd8cc6568a63d8f8f228689ad6b21244a9b7c3fc67ed0fb9fc",
+            "blob": "21a424c0ceba2885a766a768450e734806b787e5",
+            "content": "sha256:cf7a8e052d8a7ce96083575fa903cc5dd55b2275731d08c61ebc66b71b38a88a",
             "locator": {
               "kind": "symbol",
               "name": "ReviewerWorklistProcesses"
@@ -243,12 +261,12 @@
       ]
     },
     "31": {
-      "note": "The dashboard's tree port resolves once and computes the leaf-wide view once per comparison.",
+      "note": "The stored leaf-wide latency case exercises this composition and asserts source capture/worklist reuse; this is not fresh execution or a latency grade.",
       "targets": [
         {
           "anchor": {
-            "blob": "76baad82f320b6bc913b549d7778f0dcec74b570",
-            "content": "sha256:196f95ccb6ea59ed068e37704ba566888dabc1f4e932077ab56cd1c71bfcfae5",
+            "blob": "05410847e15edb174cfb7c55ea920722adaa6102",
+            "content": "sha256:83df0f6567c80bec4aff6e2b836dfa550603a7a14e18245d59948e2e5536d07f",
             "locator": {
               "kind": "symbol",
               "name": "test_the_leaf_wide_view_captures_nothing_itself_and_is_computed_once_per_comparison"
@@ -260,16 +278,26 @@
       ]
     },
     "32": {
-      "note": "The bounded graceful shutdown and the registrar collaborators.",
+      "note": "The CLI requests a three-second Uvicorn graceful window and injects current registrar collaborators; the timeout alone is not a measured whole-process shutdown bound.",
       "targets": [
         {
           "anchor": {
-            "blob": "e8cc72095ab2776b399324509f546821f1e0b683",
-            "content": "sha256:fb1211123d1b137b7b54f71a9e045b4d5b1df56849d75d37aa26b68b6e1b0728",
+            "blob": "74a2c8422da853d4c0d2ea2aa2fd1e259f9e204b",
+            "content": "sha256:be1238a225befb0f2e487265bf5b17fd12beb3e6fd82fd4f96594299e2f65853",
             "locator": {
-              "end": 78,
-              "kind": "line_range",
-              "start": 74
+              "kind": "symbol",
+              "name": "DASHBOARD_GRACEFUL_SHUTDOWN_SECONDS"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "74a2c8422da853d4c0d2ea2aa2fd1e259f9e204b",
+            "content": "sha256:40dbc50ed2b814992263ad3acc41712bc18d316952ae238ca04326ea8f29192e",
+            "locator": {
+              "kind": "symbol",
+              "name": "serving_collaborators"
             }
           },
           "kind": "code"
@@ -281,8 +309,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e8cc72095ab2776b399324509f546821f1e0b683",
-            "content": "sha256:f52fafd5838afa3ab615762f3c9e2e4af18e0c0e0dfe454aa13dfdcc4f34ef49",
+            "blob": "74a2c8422da853d4c0d2ea2aa2fd1e259f9e204b",
+            "content": "sha256:40dbc50ed2b814992263ad3acc41712bc18d316952ae238ca04326ea8f29192e",
             "locator": {
               "kind": "symbol",
               "name": "serving_collaborators"
@@ -297,7 +325,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "715a8aa55d1508d8e94554a2e3a04dd7b0edcf23",
+            "blob": "74a2c8422da853d4c0d2ea2aa2fd1e259f9e204b",
             "content": "sha256:95dbc1949c157a4444028c5488aebb0d40acbad37773f3bf3022ea859552c58d",
             "locator": {
               "kind": "symbol",
@@ -313,7 +341,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "715a8aa55d1508d8e94554a2e3a04dd7b0edcf23",
+            "blob": "74a2c8422da853d4c0d2ea2aa2fd1e259f9e204b",
             "content": "sha256:b4ad4c71a918e5f0be486f601582fb810d349496c065d01bf110b49328c0d563",
             "locator": {
               "kind": "symbol",
@@ -329,7 +357,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "715a8aa55d1508d8e94554a2e3a04dd7b0edcf23",
+            "blob": "74a2c8422da853d4c0d2ea2aa2fd1e259f9e204b",
             "content": "sha256:677c79661aac50d23a9337fcc0f2ebe8f1ab1dc5184f4236d5c524d916e374cb",
             "locator": {
               "kind": "symbol",
@@ -341,7 +369,7 @@
       ]
     },
     "37": {
-      "note": "The host observation the status line comes from.",
+      "note": "Host status is observed by the host-supervision owner; CLI status prints its answer without invoking host ensure.",
       "targets": [
         {
           "anchor": {
@@ -357,14 +385,12 @@
         },
         {
           "anchor": {
-            "blob": "5515191836e65faa8ef6b536868ba15ce9782fb1",
-            "content": "sha256:ee3c5f30de18948e4b7b7d90202a132916a189ca3f302951c00665e09eea10db",
+            "blob": "74a2c8422da853d4c0d2ea2aa2fd1e259f9e204b",
+            "content": "sha256:b4ad4c71a918e5f0be486f601582fb810d349496c065d01bf110b49328c0d563",
             "locator": {
-              "end": 78,
-              "kind": "line_range",
-              "start": 65
-            },
-            "path": "mcp/src/agents_remember/serving/paseo/paseo_start.py"
+              "kind": "symbol",
+              "name": "_run_daemon_command"
+            }
           },
           "kind": "code"
         }
@@ -375,8 +401,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e8cc72095ab2776b399324509f546821f1e0b683",
-            "content": "sha256:f52fafd5838afa3ab615762f3c9e2e4af18e0c0e0dfe454aa13dfdcc4f34ef49",
+            "blob": "74a2c8422da853d4c0d2ea2aa2fd1e259f9e204b",
+            "content": "sha256:40dbc50ed2b814992263ad3acc41712bc18d316952ae238ca04326ea8f29192e",
             "locator": {
               "kind": "symbol",
               "name": "serving_collaborators"
@@ -391,8 +417,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e8cc72095ab2776b399324509f546821f1e0b683",
-            "content": "sha256:f52fafd5838afa3ab615762f3c9e2e4af18e0c0e0dfe454aa13dfdcc4f34ef49",
+            "blob": "74a2c8422da853d4c0d2ea2aa2fd1e259f9e204b",
+            "content": "sha256:40dbc50ed2b814992263ad3acc41712bc18d316952ae238ca04326ea8f29192e",
             "locator": {
               "kind": "symbol",
               "name": "serving_collaborators"
@@ -407,8 +433,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e8cc72095ab2776b399324509f546821f1e0b683",
-            "content": "sha256:f52fafd5838afa3ab615762f3c9e2e4af18e0c0e0dfe454aa13dfdcc4f34ef49",
+            "blob": "74a2c8422da853d4c0d2ea2aa2fd1e259f9e204b",
+            "content": "sha256:40dbc50ed2b814992263ad3acc41712bc18d316952ae238ca04326ea8f29192e",
             "locator": {
               "kind": "symbol",
               "name": "serving_collaborators"
@@ -419,16 +445,27 @@
       ]
     },
     "41": {
-      "note": "The entry point the port calls.  Anchor: `read_knowledge_reader`",
+      "note": "The reader entry point delegates to the knowledge-reader owner and this CLI supplies its config-bound caller.",
       "targets": [
         {
           "anchor": {
-            "blob": "1d44f615bfc4501ef26607c59032d9f62b6744a3",
-            "content": "sha256:30c1f188f142ed7a824680b207172c5519bc614a48fda7cf167edb8ddf79956c",
+            "blob": "57eae152b75c3cf71ceefce6627a0696f14fdb51",
+            "content": "sha256:5994963e88a2b6ee153ed4662f3c4d9ea6ff3a85775501bf515ba7689ab5c74d",
             "locator": {
-              "end": 91,
-              "kind": "line_range",
-              "start": 91
+              "kind": "symbol",
+              "name": "read_knowledge_reader"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_reader/__init__.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "74a2c8422da853d4c0d2ea2aa2fd1e259f9e204b",
+            "content": "sha256:1c6c11d8a7208b00eced9d78059bf83be0a5c212a20261dffe372635a52b0788",
+            "locator": {
+              "kind": "symbol",
+              "name": "knowledge_reader_port"
             }
           },
           "kind": "code"
@@ -436,11 +473,11 @@
       ]
     },
     "42": {
-      "note": "The deferred import and the fifth port bound on the collaborator record.",
+      "note": "The tree port forwards its query with the app-local worklist process owner; fifth-port is a historical ordinal, not a current census.",
       "targets": [
         {
           "anchor": {
-            "blob": "715a8aa55d1508d8e94554a2e3a04dd7b0edcf23",
+            "blob": "74a2c8422da853d4c0d2ea2aa2fd1e259f9e204b",
             "content": "sha256:71c4afa2f545f86c4ecffec8ef4f8db48a37b82d2d190cf7a6fd0691442a1102",
             "locator": {
               "kind": "symbol",
@@ -452,11 +489,11 @@
       ]
     },
     "43": {
-      "note": "The module-level summary-adapter import and the config-bound fourth port on the collaborator record.",
+      "note": "The module imports the summary adapter and binds its returned port to this configuration.\n\nAnchor: exact source span; exact source span",
       "targets": [
         {
           "anchor": {
-            "blob": "715a8aa55d1508d8e94554a2e3a04dd7b0edcf23",
+            "blob": "74a2c8422da853d4c0d2ea2aa2fd1e259f9e204b",
             "content": "sha256:257a26081b7d93db626c344025ac20003de247f27604d14429f386904d5c741f",
             "locator": {
               "end": 24,
@@ -468,12 +505,12 @@
         },
         {
           "anchor": {
-            "blob": "715a8aa55d1508d8e94554a2e3a04dd7b0edcf23",
-            "content": "sha256:1acde5cccb59b7082a70ed08a0fc5b4173b21bf953f70dc929872dae88aecb57",
+            "blob": "74a2c8422da853d4c0d2ea2aa2fd1e259f9e204b",
+            "content": "sha256:61aa5ab4b4bb64108b9550ae6350ac8a927dcd9d24e6f41ac37d304472c7d206",
             "locator": {
-              "end": 159,
+              "end": 197,
               "kind": "line_range",
-              "start": 149
+              "start": 186
             }
           },
           "kind": "code"
@@ -485,8 +522,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8d7ec3ff357a1951efd9c7a6ed766bc698e3f190",
-            "content": "sha256:2ae26c28028a5a7fedeef86b333d9fa57bfe007bb98f84a60fb981e656c5b7d2",
+            "blob": "6e7bd5a18da5ea781594e67999b9b01f305937d4",
+            "content": "sha256:9e558da01a53d54790fceb28322c6df46062d4f9cf64f8714e2a3b0a017d7184",
             "locator": {
               "kind": "symbol",
               "name": "build_parser"
@@ -498,16 +535,27 @@
       ]
     },
     "45": {
-      "note": "The trusted-settings discovery the optional `--config` falls back to.  Anchor: `discover_config`",
+      "note": "Explicit settings precede trusted discovery; discovery and load failures return the CLI settings-error path.",
       "targets": [
         {
           "anchor": {
-            "blob": "715a8aa55d1508d8e94554a2e3a04dd7b0edcf23",
-            "content": "sha256:9b00876c181406e03707b179339d5e114523ae858fff7142c96ed3cc62996f10",
+            "blob": "0bf414f8809c90c8bea4445498abf2f163f24b8c",
+            "content": "sha256:c0dbcc2f32c57dc0154601a11588e990bc81a2856a98a9dd494c9d038015f3f6",
             "locator": {
-              "end": 25,
-              "kind": "line_range",
-              "start": 25
+              "kind": "symbol",
+              "name": "discover_config"
+            },
+            "path": "mcp/src/agents_remember/cli/discovery.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "74a2c8422da853d4c0d2ea2aa2fd1e259f9e204b",
+            "content": "sha256:bb2e4c46b729c36ff6cc7d5f32aa3d89be5ae177fa899ea6463cc3153f9e47c9",
+            "locator": {
+              "kind": "symbol",
+              "name": "_resolve_settings"
             }
           },
           "kind": "code"
@@ -515,16 +563,27 @@
       ]
     },
     "46": {
-      "note": "The daemon supervisor behind `--daemon`/`--status`/`--stop` (heartbeat plumbed on spawn/restart only).  Anchor: `ensure`",
+      "note": "The daemon-control branch delegates supervision to the daemon owner with requested endpoint and cadence, separately from foreground/reload serving.",
       "targets": [
         {
           "anchor": {
-            "blob": "715a8aa55d1508d8e94554a2e3a04dd7b0edcf23",
-            "content": "sha256:e2b9d361ede16e366b76e8479d1caac82f9ebb25f5fcb1ca2e719726847637ee",
+            "blob": "35e6afc7c42b1c5de6952ed36194e894b447642b",
+            "content": "sha256:38480b90ecd20ca8f70c128442315d1bb865fe2ed1dbc81b93796478e8ac7dda",
             "locator": {
-              "end": 254,
-              "kind": "line_range",
-              "start": 254
+              "kind": "symbol",
+              "name": "ensure"
+            },
+            "path": "mcp/src/agents_remember/serving/daemon.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "74a2c8422da853d4c0d2ea2aa2fd1e259f9e204b",
+            "content": "sha256:b4ad4c71a918e5f0be486f601582fb810d349496c065d01bf110b49328c0d563",
+            "locator": {
+              "kind": "symbol",
+              "name": "_run_daemon_command"
             }
           },
           "kind": "code"
@@ -532,28 +591,40 @@
       ]
     },
     "47": {
-      "note": "The serving layer defines the idle heartbeat default and implements change-or-heartbeat scheduling in `ChangePacer`.  Anchor: `DEFAULT_HEARTBEAT_SECONDS`",
+      "note": "The watcher owner defines the default heartbeat and ChangePacer; the CLI imports and passes cadence rather than implementing a watcher.",
       "targets": [
         {
           "anchor": {
-            "blob": "715a8aa55d1508d8e94554a2e3a04dd7b0edcf23",
-            "content": "sha256:72f0d5a45cfd55d609bb2415661dc6f7afb64f9ee8970dc837f5eadca9baaf04",
+            "blob": "a1ee0ff2565114d0863fefb21fad733a2b220929",
+            "content": "sha256:bc2f6f83c051f8766ffb2d0437e5768175a145895fe0044755f0faf249d6beb1",
             "locator": {
-              "end": 39,
-              "kind": "line_range",
-              "start": 39
-            }
+              "kind": "symbol",
+              "name": "DEFAULT_HEARTBEAT_SECONDS"
+            },
+            "path": "mcp/src/agents_remember/serving/change_watcher.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a1ee0ff2565114d0863fefb21fad733a2b220929",
+            "content": "sha256:748fdbd403a958cbed67a13f8168d899005028d5832af0ea0dba71896fb80734",
+            "locator": {
+              "kind": "symbol",
+              "name": "ChangePacer"
+            },
+            "path": "mcp/src/agents_remember/serving/change_watcher.py"
           },
           "kind": "code"
         }
       ]
     },
     "48": {
-      "note": "This CLI defines `--interval`/`--heartbeat` and threads their cadence through reload parent/worker, live-app, and daemon paths; sim deliberately carries interval only. (The `add_arguments` named here is this module's, not the identically named function in the CLI module `cli/knowledge_ingest.py`.)",
+      "note": "The parser declares interval/heartbeat, which reload parent/worker, live-app and daemon calls carry; sim constructs interval-only cadence.",
       "targets": [
         {
           "anchor": {
-            "blob": "715a8aa55d1508d8e94554a2e3a04dd7b0edcf23",
+            "blob": "74a2c8422da853d4c0d2ea2aa2fd1e259f9e204b",
             "content": "sha256:2e5a3f6a67c7eedf93890c6d22d619be978f54bef2bf8e73188ba49749236aab",
             "locator": {
               "kind": "symbol",
@@ -561,20 +632,75 @@
             }
           },
           "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "74a2c8422da853d4c0d2ea2aa2fd1e259f9e204b",
+            "content": "sha256:bf5e9378e91c92e7e4d85f4d54b360dca3c9d3fb19b7f4cf655f5d8fb9b84424",
+            "locator": {
+              "kind": "symbol",
+              "name": "_run_reload_server"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "74a2c8422da853d4c0d2ea2aa2fd1e259f9e204b",
+            "content": "sha256:95dbc1949c157a4444028c5488aebb0d40acbad37773f3bf3022ea859552c58d",
+            "locator": {
+              "kind": "symbol",
+              "name": "_dev_app"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "74a2c8422da853d4c0d2ea2aa2fd1e259f9e204b",
+            "content": "sha256:f31095c7cabe1708f5e51a6406950dea50fd8f1d223da054b022c3e17b7c2ff9",
+            "locator": {
+              "kind": "symbol",
+              "name": "_build_app"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "74a2c8422da853d4c0d2ea2aa2fd1e259f9e204b",
+            "content": "sha256:b4ad4c71a918e5f0be486f601582fb810d349496c065d01bf110b49328c0d563",
+            "locator": {
+              "kind": "symbol",
+              "name": "_run_daemon_command"
+            }
+          },
+          "kind": "code"
         }
       ]
     },
     "50": {
-      "note": "The app factory it serves (and the `now`/`before_tick` seams it passes).  Anchor: `create_app`",
+      "note": "The serving factory accepts ProjectionReplay; the CLI sim path supplies now/before_tick through that value, not obsolete direct factory keywords.",
       "targets": [
         {
           "anchor": {
-            "blob": "715a8aa55d1508d8e94554a2e3a04dd7b0edcf23",
-            "content": "sha256:29aa3556d5a0b0b227960be77483a0ec73af805c5a29c0bee59340476b875816",
+            "blob": "c3f5986fb32e9954b3677b1adf142e0b1fbc029a",
+            "content": "sha256:1793a84794f4c012e75c0b36d57325ebbf5bac08601d6c9ba647db19f41313f1",
             "locator": {
-              "end": 38,
-              "kind": "line_range",
-              "start": 38
+              "kind": "symbol",
+              "name": "create_app"
+            },
+            "path": "mcp/src/agents_remember/serving/app.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "74a2c8422da853d4c0d2ea2aa2fd1e259f9e204b",
+            "content": "sha256:f31095c7cabe1708f5e51a6406950dea50fd8f1d223da054b022c3e17b7c2ff9",
+            "locator": {
+              "kind": "symbol",
+              "name": "_build_app"
             }
           },
           "kind": "code"
@@ -582,16 +708,50 @@
       ]
     },
     "51": {
-      "note": "The sim builder / clock / feeder / speed parser it wires.  Anchor: `build_sim`",
+      "note": "The sim builder/speed parser construct temporary replay state; the CLI keeps SimSetup alive until foreground server cleanup.",
       "targets": [
         {
           "anchor": {
-            "blob": "715a8aa55d1508d8e94554a2e3a04dd7b0edcf23",
-            "content": "sha256:1cab8a15fbbd4d7a438fcee1d95e7603d65b53022fadae22da52a4095d0b76e7",
+            "blob": "34537c0f8a4a53668e4be0706eceb1ef6865afc7",
+            "content": "sha256:edbcd91403e6862f63abe2fc188008af20a93bbbfbd100ebe5b65ff9ff764cdf",
             "locator": {
-              "end": 46,
-              "kind": "line_range",
-              "start": 46
+              "kind": "symbol",
+              "name": "build_sim"
+            },
+            "path": "mcp/src/agents_remember/serving/sim.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "34537c0f8a4a53668e4be0706eceb1ef6865afc7",
+            "content": "sha256:38f14febabbc119d5c9a9a0525188b03eacba51923b32e0b72dee44ed3be0715",
+            "locator": {
+              "kind": "symbol",
+              "name": "parse_sim_speed"
+            },
+            "path": "mcp/src/agents_remember/serving/sim.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "74a2c8422da853d4c0d2ea2aa2fd1e259f9e204b",
+            "content": "sha256:f31095c7cabe1708f5e51a6406950dea50fd8f1d223da054b022c3e17b7c2ff9",
+            "locator": {
+              "kind": "symbol",
+              "name": "_build_app"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "74a2c8422da853d4c0d2ea2aa2fd1e259f9e204b",
+            "content": "sha256:e29ba003cb25f1db27fe31175afb1aa5dc9c2f4e58c4cd274653c99d4f80c0fb",
+            "locator": {
+              "kind": "symbol",
+              "name": "run"
             }
           },
           "kind": "code"
@@ -599,16 +759,39 @@
       ]
     },
     "52": {
-      "note": "The `--config` → `McpRuntimeConfig` contract it mirrors.  Anchor: `McpRuntimeConfig`",
+      "note": "McpRuntimeConfig/load_config is the shared runtime-settings contract used by this CLI settings adapter.",
       "targets": [
         {
           "anchor": {
-            "blob": "715a8aa55d1508d8e94554a2e3a04dd7b0edcf23",
-            "content": "sha256:71344a75d14b6528c97969cfbdb7087785360bcd3f7fe420db7a7584dd64fa78",
+            "blob": "63a74c463004e2f0999c1a9339f16dcae19ecfac",
+            "content": "sha256:b4a74e518293797a534a6ebd2aecd23d66063d8b4242283f8c607640102544e5",
             "locator": {
-              "end": 32,
-              "kind": "line_range",
-              "start": 32
+              "kind": "symbol",
+              "name": "McpRuntimeConfig"
+            },
+            "path": "mcp/src/agents_remember/kernel/primitives/runtime_config.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "63a74c463004e2f0999c1a9339f16dcae19ecfac",
+            "content": "sha256:57afd11ee4cb0155d38f7174417397460259c8c9897017ca76417f0749efaa0c",
+            "locator": {
+              "kind": "symbol",
+              "name": "load_config"
+            },
+            "path": "mcp/src/agents_remember/kernel/primitives/runtime_config.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "74a2c8422da853d4c0d2ea2aa2fd1e259f9e204b",
+            "content": "sha256:bb2e4c46b729c36ff6cc7d5f32aa3d89be5ae177fa899ea6463cc3153f9e47c9",
+            "locator": {
+              "kind": "symbol",
+              "name": "_resolve_settings"
             }
           },
           "kind": "code"
@@ -616,34 +799,58 @@
       ]
     },
     "53": {
-      "note": "The durable-store contract whose process role `run` declares — what the role decides, and what the unconditional per-log lock decides instead.  Anchor: `declare_process_role`",
+      "note": "Role declaration selects advisory writer/compaction ownership, not unconditional per-log locking; the durable-store owner defines both boundaries.",
       "targets": [
         {
           "anchor": {
-            "blob": "715a8aa55d1508d8e94554a2e3a04dd7b0edcf23",
-            "content": "sha256:6ad5dfa48861c0714084d797ac1e234bd8e6e9faeb7ab0dddcd13e70f31201c9",
+            "blob": "59a148a711df3a07d0424f5448d9871b6aac6930",
+            "content": "sha256:9b3d07bdf17d9bd2985743dbc9bb23b4f57bac652620508b9a4eeea9207a3474",
             "locator": {
-              "end": 29,
-              "kind": "line_range",
-              "start": 29
-            }
+              "kind": "symbol",
+              "name": "declare_process_role"
+            },
+            "path": "mcp/src/agents_remember/controlplane/durable_store.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "59a148a711df3a07d0424f5448d9871b6aac6930",
+            "content": "sha256:a7932cb1c5dcd2ae38fe2b12299731934e069b3fb5dfdc61e7c2cf485feb4463",
+            "locator": {
+              "kind": "symbol",
+              "name": "StoreOwnership"
+            },
+            "path": "mcp/src/agents_remember/controlplane/durable_store.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "59a148a711df3a07d0424f5448d9871b6aac6930",
+            "content": "sha256:bb0200e7287ff326ec9ac1f6b898ca50ec723ceaca00dfb684e20d754ce7c231",
+            "locator": {
+              "kind": "symbol",
+              "name": "exclusive_access"
+            },
+            "path": "mcp/src/agents_remember/controlplane/durable_store.py"
           },
           "kind": "code"
         }
       ]
     },
     "54": {
-      "note": "The MCP server's mirror of the same declaration, in `main` rather than `create_server`.  Anchor: `main`",
+      "note": "The MCP process declares its role in its actual main entry point, not an in-process app factory.",
       "targets": [
         {
           "anchor": {
-            "blob": "715a8aa55d1508d8e94554a2e3a04dd7b0edcf23",
-            "content": "sha256:ffcd56369a73da9f9a1ed39925aa9d177007f4eb3b2354f1fec0d34dcae16bec",
+            "blob": "3ce87362f44ca376e33cad8872407ae5fb0d4be9",
+            "content": "sha256:66ae0bf6c579630f2aa12e314647b9610a2f52bddc550fe9b6c7f3338e099a36",
             "locator": {
-              "end": 51,
-              "kind": "line_range",
-              "start": 51
-            }
+              "kind": "symbol",
+              "name": "main"
+            },
+            "path": "mcp/src/agents_remember/mcp/server.py"
           },
           "kind": "code"
         }
@@ -654,8 +861,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e8cc72095ab2776b399324509f546821f1e0b683",
-            "content": "sha256:f52fafd5838afa3ab615762f3c9e2e4af18e0c0e0dfe454aa13dfdcc4f34ef49",
+            "blob": "74a2c8422da853d4c0d2ea2aa2fd1e259f9e204b",
+            "content": "sha256:40dbc50ed2b814992263ad3acc41712bc18d316952ae238ca04326ea8f29192e",
             "locator": {
               "kind": "symbol",
               "name": "serving_collaborators"
@@ -670,7 +877,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "715a8aa55d1508d8e94554a2e3a04dd7b0edcf23",
+            "blob": "74a2c8422da853d4c0d2ea2aa2fd1e259f9e204b",
             "content": "sha256:95dbc1949c157a4444028c5488aebb0d40acbad37773f3bf3022ea859552c58d",
             "locator": {
               "kind": "symbol",
@@ -686,7 +893,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "715a8aa55d1508d8e94554a2e3a04dd7b0edcf23",
+            "blob": "74a2c8422da853d4c0d2ea2aa2fd1e259f9e204b",
             "content": "sha256:e29ba003cb25f1db27fe31175afb1aa5dc9c2f4e58c4cd274653c99d4f80c0fb",
             "locator": {
               "kind": "symbol",
@@ -697,28 +904,12 @@
         }
       ]
     },
-    "58": {
-      "note": "The composition root and the config-bound compiler it binds.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "e8cc72095ab2776b399324509f546821f1e0b683",
-            "content": "sha256:f52fafd5838afa3ab615762f3c9e2e4af18e0c0e0dfe454aa13dfdcc4f34ef49",
-            "locator": {
-              "kind": "symbol",
-              "name": "serving_collaborators"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
     "59": {
-      "note": "Every `create_app` call in this module resolves its collaborators through that root.",
+      "note": "Every create_app call in this CLI obtains collaborators from its config-bound composition root in the reload factory or live/sim builder.",
       "targets": [
         {
           "anchor": {
-            "blob": "715a8aa55d1508d8e94554a2e3a04dd7b0edcf23",
+            "blob": "74a2c8422da853d4c0d2ea2aa2fd1e259f9e204b",
             "content": "sha256:95dbc1949c157a4444028c5488aebb0d40acbad37773f3bf3022ea859552c58d",
             "locator": {
               "kind": "symbol",
@@ -726,32 +917,26 @@
             }
           },
           "kind": "code"
-        }
-      ]
-    },
-    "60": {
-      "note": "The port the bound callable satisfies, and the record it is placed on.",
-      "targets": [
+        },
         {
           "anchor": {
-            "blob": "07dbb4559839c3bb99d5e22b19ab0aeffde8d577",
-            "content": "sha256:0dd05ce9bf0e3c1a372e6edfe3be719e30d2a8be653af23d219824f78b171783",
+            "blob": "74a2c8422da853d4c0d2ea2aa2fd1e259f9e204b",
+            "content": "sha256:f31095c7cabe1708f5e51a6406950dea50fd8f1d223da054b022c3e17b7c2ff9",
             "locator": {
               "kind": "symbol",
-              "name": "LaunchCapsuleResolver"
-            },
-            "path": "mcp/src/agents_remember/serving/launch_capsule.py"
+              "name": "_build_app"
+            }
           },
           "kind": "code"
         }
       ]
     },
     "61": {
-      "note": "**The third reviewer port this root binds: the deferred import and the closure that closes over the config, so every app resolves one listed entry's content through this composition root.**",
+      "note": "The source-content closure forwards the supplied request with this config; third-port is a historical ordinal, not a current census.",
       "targets": [
         {
           "anchor": {
-            "blob": "715a8aa55d1508d8e94554a2e3a04dd7b0edcf23",
+            "blob": "74a2c8422da853d4c0d2ea2aa2fd1e259f9e204b",
             "content": "sha256:64f996fc0ef576998b70475499dfe493ca03ceafeb0f1e7e4a979aa8b21b075c",
             "locator": {
               "kind": "symbol",
@@ -763,7 +948,7 @@
       ]
     },
     "62": {
-      "note": "The discovery config tests — convention-wins at 43, nearest-directory at 53, malformed-skipped at 63, miss-error at 80; the discovery behavior lives in the test module, not in this CLI's `add_arguments`.",
+      "note": "Stored discovery cases cover convention precedence, nearest directory, malformed entries and missing config; they are not a fresh test run.",
       "targets": [
         {
           "anchor": {
@@ -776,6 +961,62 @@
             "path": "mcp/tests/test_cli_discovery.py"
           },
           "kind": "test"
+        }
+      ]
+    },
+    "63": {
+      "note": "The live memory-root resolver rejects unsafe selectors and roots, admits the addressed external leaf contract under this authority and is bound into the app without Git capture or index reads.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "74a2c8422da853d4c0d2ea2aa2fd1e259f9e204b",
+            "content": "sha256:970f000f9538738a71d9798bbe4e298ae76b3ba189cdb226bda54ceac12cb5c3",
+            "locator": {
+              "kind": "symbol",
+              "name": "_review_memory_root"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "74a2c8422da853d4c0d2ea2aa2fd1e259f9e204b",
+            "content": "sha256:40dbc50ed2b814992263ad3acc41712bc18d316952ae238ca04326ea8f29192e",
+            "locator": {
+              "kind": "symbol",
+              "name": "serving_collaborators"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "01ac0a95eb1334d83c3add208b295b8dd0dfdd6d",
+            "content": "sha256:9c381ea6e004519d7c6ba165045aa12a4d8916eb2f36d7beda07e89a149490ac",
+            "locator": {
+              "kind": "symbol",
+              "name": "recorded_leaf_contract"
+            },
+            "path": "mcp/src/agents_remember/application/review_candidate_resolution.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "64": {
+      "note": "The shared collaborator record exposes the injected memory-root and retained read/route ports; this CLI binds no capsule-compiler port.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "32a410bfe308b5f05ecfd3a7fca6dcae803271e5",
+            "content": "sha256:6a43dcaf4b4a7528c6db085beeac0fde8d8f9560d5693859d2399b87ef22d8d2",
+            "locator": {
+              "kind": "symbol",
+              "name": "ServingCollaborators"
+            },
+            "path": "mcp/src/agents_remember/serving/_app_common.py"
+          },
+          "kind": "code"
         }
       ]
     }

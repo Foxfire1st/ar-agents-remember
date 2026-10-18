@@ -2,16 +2,34 @@
   "path": "mcp/tests/test_review_assessment_history.py",
   "realizes": [],
   "references": {
-    "6": {
-      "note": "`_curator_channel` supplies the current fixture or assertion described above.",
+    "10": {
+      "note": "The current judgment reader returns unavailable for the owner problem before it selects rows or reports none.\n\nAnchor: current judgment boundary",
       "targets": [
         {
           "anchor": {
-            "blob": "cdc0b27f30f87da8796853c129138c349a5e4b79",
-            "content": "sha256:00e11660befdb7b48c68961dd7bc13ec93acdd2b9ae37ce05082e93e3b7c2009",
+            "blob": "7915489e9b1bfd326b7927fa39dbc7d55826e3c4",
+            "content": "sha256:72f0f88d124fbccd486141f3857bc80d7c0d99c366dce65bcbe2846705dc589e",
+            "locator": {
+              "end": 70,
+              "kind": "line_range",
+              "start": 53
+            },
+            "path": "mcp/src/agents_remember/application/review_judgment.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The current helper creates malformed real owner histories, checks every native failure path and requires an unavailable judgment pane without rows; it replaces the old channel stub.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a2ba0b5446f919f8c0af13c5a1707de2a281a781",
+            "content": "sha256:123fb0e93b6eac399ac1591cb42fe3cf8267052e97224696c1a2fe089c62e1a6",
             "locator": {
               "kind": "symbol",
-              "name": "_curator_channel"
+              "name": "_unreadable_histories"
             }
           },
           "kind": "test"
@@ -19,12 +37,12 @@
       ]
     },
     "7": {
-      "note": "`test_a_leaf_binding_many_missing_curator_artifacts_reads_as_unavailable` supplies the current fixture or assertion described above.",
+      "note": "The current test checks over-bound many-file prose and exact ten-file native wording, explicitly migrating the old regression property rather than preserving a retired spelling.",
       "targets": [
         {
           "anchor": {
-            "blob": "cdc0b27f30f87da8796853c129138c349a5e4b79",
-            "content": "sha256:9442c37c494ef6de03712fb5169d0ac2d7e3d773fccaa41fc2321316d284ac52",
+            "blob": "a2ba0b5446f919f8c0af13c5a1707de2a281a781",
+            "content": "sha256:5c01978b5cd60eef0771b37f3fb0c4d1e0bab23803de7d845af1e753ba2bf777",
             "locator": {
               "kind": "symbol",
               "name": "test_a_leaf_binding_many_missing_curator_artifacts_reads_as_unavailable"
@@ -35,29 +53,49 @@
       ]
     },
     "8": {
-      "note": "An over-length unreadable-owner detail is summarised; one that fits keeps its landed wording exactly; every artifact is listed either way.",
+      "note": "Complete diagnostics stay in the native answer while the test's pane detail is bounded; both populations use the actual staying reader, not the old artifact channel.\n\nAnchor: current helper and assertions",
       "targets": [
         {
           "anchor": {
-            "blob": "cdc0b27f30f87da8796853c129138c349a5e4b79",
-            "content": "sha256:9442c37c494ef6de03712fb5169d0ac2d7e3d773fccaa41fc2321316d284ac52",
+            "blob": "a2ba0b5446f919f8c0af13c5a1707de2a281a781",
+            "content": "sha256:123fb0e93b6eac399ac1591cb42fe3cf8267052e97224696c1a2fe089c62e1a6",
             "locator": {
-              "kind": "symbol",
-              "name": "test_a_leaf_binding_many_missing_curator_artifacts_reads_as_unavailable"
+              "end": 46,
+              "kind": "line_range",
+              "start": 28
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "cdc0b27f30f87da8796853c129138c349a5e4b79",
-            "content": "sha256:711674ff6bcc39db55b38bb2c65948c4c452b581f557e3b20a45b2133bd61aa3",
+            "blob": "a2ba0b5446f919f8c0af13c5a1707de2a281a781",
+            "content": "sha256:5c01978b5cd60eef0771b37f3fb0c4d1e0bab23803de7d845af1e753ba2bf777",
             "locator": {
-              "kind": "symbol",
-              "name": "_curator_channel"
+              "end": 72,
+              "kind": "line_range",
+              "start": 49
             }
           },
           "kind": "test"
+        }
+      ]
+    },
+    "9": {
+      "note": "The shared owner read exposes incomplete history as a problem and formats the current first-three/count detail.\n\nAnchor: current native owner",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fccd0935574f17332e5452e6abbcf8f0c87d8cc3",
+            "content": "sha256:1cb8f84d898f9e561510426298527c3e421bc7ff687994bfe6d223277d47ab28",
+            "locator": {
+              "end": 67,
+              "kind": "line_range",
+              "start": 41
+            },
+            "path": "mcp/src/agents_remember/application/review_history.py"
+          },
+          "kind": "code"
         }
       ]
     }

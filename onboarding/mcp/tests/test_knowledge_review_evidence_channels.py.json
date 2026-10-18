@@ -1,190 +1,37 @@
 {
   "path": "mcp/tests/test_knowledge_review_evidence_channels.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "ea4ef5d83ffe9733de18c20f0e1a405aaf633a41",
+        "content": "sha256:d9122ab0fd70e1b4954ac2e3f17bc174e0d4be0b7a026ec96268c9ebbc607b54",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_unresolved_count_must_match_the_entries_not_only_the_total"
+        }
+      },
+      "facet": "Rejects a declared zero beside one unresolved/current entry and a declared one beside a no-concern/current entry, both within assessmentCount=1; requires the unresolved-count error, isolating this equality guard rather than a later status disagreement. Stored assertion inspected, not executed here.",
+      "id": "PRF-HVWVSF",
+      "invariant": "INV-XYE5A3",
+      "origin": {
+        "handoffEntry": "CUR-L57-assessment-unresolved-population",
+        "leaf": "260928-MIK-L57"
+      }
+    }
+  ],
   "realizes": [],
   "references": {
-    "18": {
-      "note": "`test_the_composition_measures_the_bindings_it_reads` owns the current boundary described above.",
+    "30": {
+      "note": "Current tree-history and proof assertions replace the old assessment/channel journeys. They exercise present/absent/unresolved operands, compared/added/removed/unresolved revision states, source currentness, history attempts/membership rows, and family proofs beyond a roster page. An unread history keeps its own proof state; a synthetic movement-copy input is not a native two-move producer.",
       "targets": [
         {
           "anchor": {
-            "blob": "6869acb809e665d1e753cce0c3398b2070a791a1",
-            "content": "sha256:482f8d25a12f72a76edb7a4c782e44b21b858dc9590ec5561109f601c700ebd4",
+            "blob": "ea4ef5d83ffe9733de18c20f0e1a405aaf633a41",
+            "content": "sha256:4192208cc310a63847fdebaa7d63c7b4059cc4f2ed3f11c743d2aa51e6c36a35",
             "locator": {
-              "kind": "symbol",
-              "name": "test_the_composition_measures_the_bindings_it_reads"
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "19": {
-      "note": "`test_a_retained_curator_generation_survives_a_damaged_live_authority` owns the current boundary described above.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "6869acb809e665d1e753cce0c3398b2070a791a1",
-            "content": "sha256:57068f31debe139239f0f7398d452e38cad30169379ebc0c7f0a3269efa11baf",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_a_retained_curator_generation_survives_a_damaged_live_authority"
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "20": {
-      "note": "`test_the_channel_model_refuses_a_count_no_owner_measured` owns the current boundary described above.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "6869acb809e665d1e753cce0c3398b2070a791a1",
-            "content": "sha256:267376b4c9601cef7b2c35994ca2d936d6117818a81af8e300dd797990d990a6",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_the_channel_model_refuses_a_count_no_owner_measured"
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "21": {
-      "note": "`test_an_unresolvable_candidate_reports_every_collection_unavailable` owns the current boundary described above.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "6869acb809e665d1e753cce0c3398b2070a791a1",
-            "content": "sha256:33410400f680aac5cbd3606c413d7acfd2b319ae47ed217d4282d9e96e523e4e",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_an_unresolvable_candidate_reports_every_collection_unavailable"
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "22": {
-      "note": "**The retained live-enclosure fixture exposes records() (the direct record bundle), payload() (through the knowledge_review port), and candidate dataset/tree bindings. Direct owner/model/schema cases do not all use these reads.**",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "6869acb809e665d1e753cce0c3398b2070a791a1",
-            "content": "sha256:91f91b34a2240eace03810bedeba5859c5a53e497f7925721b567915132ce6ab",
-            "locator": {
-              "kind": "file"
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "23": {
-      "note": "**The production knowledge_review port used by review_through_port/recorded.payload cases, through the same serving_collaborators factory as the dashboard; other retained cases exercise owners/models directly.**",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "6869acb809e665d1e753cce0c3398b2070a791a1",
-            "content": "sha256:91f91b34a2240eace03810bedeba5859c5a53e497f7925721b567915132ce6ab",
-            "locator": {
-              "kind": "file"
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "24": {
-      "note": "The publication helper the assessment channel is produced through, and the channel index the cases state states with.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "6869acb809e665d1e753cce0c3398b2070a791a1",
-            "content": "sha256:e145181187c13871f17436e1edfce763e48ff25e1064a3d3aa674c4b5b8538bb",
-            "locator": {
-              "kind": "symbol",
-              "name": "_publish_assessment"
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "25": {
-      "note": "**The case that measures the two states the defect collapsed, side by side on one fixture.**",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "6869acb809e665d1e753cce0c3398b2070a791a1",
-            "content": "sha256:cc5279a0f0c6f49373dd26621e00b4342f8ea1a80505d72b3bbacba22e6bba5e",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_an_unpublished_authority_is_a_measured_absence_and_a_corrupt_one_is_unavailable"
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "26": {
-      "note": "The retained matrix case asserts the retired authored-effects collection is unavailable with no count and the MIK-R74 removal reason; it does not measure an empty matrix.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "6869acb809e665d1e753cce0c3398b2070a791a1",
-            "content": "sha256:91f91b34a2240eace03810bedeba5859c5a53e497f7925721b567915132ce6ab",
-            "locator": {
-              "kind": "file"
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "27": {
-      "note": "**The case that proves the composition measures the bindings it reads rather than inferring from a mapping's presence, and that a partial measurement promotes nothing to current.**",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "6869acb809e665d1e753cce0c3398b2070a791a1",
-            "content": "sha256:482f8d25a12f72a76edb7a4c782e44b21b858dc9590ec5561109f601c700ebd4",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_the_composition_measures_the_bindings_it_reads"
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "28": {
-      "note": "**The case that an unresolvable candidate reports every collection unavailable rather than empty.**",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "6869acb809e665d1e753cce0c3398b2070a791a1",
-            "content": "sha256:33410400f680aac5cbd3606c413d7acfd2b319ae47ed217d4282d9e96e523e4e",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_an_unresolvable_candidate_reports_every_collection_unavailable"
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "29": {
-      "note": "**The case that measures the vocabulary's own refusals, and the wire case that the channels travel in the served schema.**",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "6869acb809e665d1e753cce0c3398b2070a791a1",
-            "content": "sha256:267376b4c9601cef7b2c35994ca2d936d6117818a81af8e300dd797990d990a6",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_the_channel_model_refuses_a_count_no_owner_measured"
+              "end": 411,
+              "kind": "line_range",
+              "start": 1
             }
           },
           "kind": "test"

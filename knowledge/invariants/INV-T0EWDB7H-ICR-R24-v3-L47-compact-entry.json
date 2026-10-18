@@ -3,11 +3,13 @@
   "applicability": "The Intent review control in a leaf task document's change-set bar in the dashboard DetailPanel, for live and closed leaves.",
   "conditions": [
     "The bar is rendered for a leaf task document with an onOpen handler wired.",
-    "A live leaf's control opens the live candidate comparison; a closed leaf's opens its recorded comparison and is labelled (recorded)."
+    "A live leaf's control opens the live candidate comparison; a closed leaf's opens its recorded comparison and is labelled (recorded).",
+    "Intent counts, file attribution and open-work counts are separate summary facts; absent open-work data is omitted and is not inferred as zero."
   ],
   "exclusions": [
     "The reviewer surface's own subject navigation and refresh control.",
-    "The committed and working change-set buttons, which keep their line totals."
+    "The committed and working change-set buttons, which keep their line totals.",
+    "An all-answered display is the supplied summary fact, not independent memory, code, or lifecycle acceptance."
   ],
   "id": "INV-T0EWDB7H",
   "origin": {
@@ -15,9 +17,9 @@
     "legacyId": "76ada9a7-7cdc-4050-bf45-7b2a0a72937f",
     "task": "260921-ICR"
   },
-  "revision": 3,
+  "revision": 4,
   "schema": "ar-invariant/v1",
-  "statement": "A leaf's task entry offers exactly one Intent review control, `⇄ Intent review +N −N` (`(recorded)` for a closed leaf), whose +N −N come from the comparison's changed-intent summary; for a tree comparison the same control also states that summary's attribution of the changed files (`· N unexplained`, with `· N unknown` when some are unknown, or `attribution partial` or `attribution unknown`, and nothing when both counts are zero). The entry has no subject picker, no refresh control and no backend paragraph, and always opens the task-context review.",
+  "statement": "A leaf task entry has one Intent review control with changed-intent +N −N counts and a recorded label for a closed leaf. Its separate attribution text says files without an invariant, unknown attribution, partial or unavailable as supplied; zero file counts add no attribution suffix. When the summary supplies an open-work count, the same control separately states N open or all answered. It has no subject picker or refresh control and opens the task-context target.",
   "status": "proposed",
   "supersedes": []
 }

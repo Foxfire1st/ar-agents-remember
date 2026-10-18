@@ -1,0 +1,24 @@
+{
+  "path": "dashboard/src/panels/review/SubjectJudgment.captured.test.tsx",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Seven immutable native capture playbacks assert exact judgment attempts/rows, history/proof IDs confined to identifier disclosures, every visible reason/facet/detail, none/no-impact distinctions and missing-path/content-mismatch stale versus unreadable-history unavailable/current-proof. Source-epoch/faulted scratch inputs are disclosed; not fresh capture or test execution.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b011605dd41f15eb1bf45aa7646f633b57e05ec8",
+            "content": "sha256:d1b2519dbaaa454037db58ce9dd3950761e7eb8e69142c1c577692d72c73915f",
+            "locator": {
+              "end": 198,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

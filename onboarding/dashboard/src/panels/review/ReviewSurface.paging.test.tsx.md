@@ -38,24 +38,21 @@ the mounted refusal unreachable for every real response.
 (`comparison_page_reset`) from "that cursor is not this collection's" (`comparison_page_unreadable`),
 so a foreign cursor is never called a moved comparison.
 
-**The two collections' totals are worded apart.** `total_basis` is the page's own field — `selection`
+**The two total bases are worded apart on knowledge pages.** `total_basis` is the page's own field — `selection`
 for the comparison, `walk` for the view — and the case asserts both spellings, because one rendered
 sentence carrying two meanings is how `total` came to mean two different numbers.
 
 ### Conventions
 
 - `fetch` and the comparison-focused catalogue hook are isolated; the review client, decode and component are the shipped ones.
-- Page bodies are the measured shape of the real route's answer in this leaf's evidence run, and the two
-  cursors are the server's own opaque strings — the client neither constructs nor parses one.
+- Page bodies are typed synthetic `ReviewPayload` fixtures carrying judgment. The two cursor literals are treated as opaque strings; the client neither constructs nor parses them. The shortened `KNOWLEDGE_CURSOR` literal does not establish verbatim native-cursor provenance.
 - Each case is named for the behavior it protects, and the header states the defects it fails against.
 
 ### Invariants And Boundaries
 
 - **No next action without a published cursor.** A body with a remainder and no cursor renders no
   `review-next-page` control, whatever it reported.
-- The captured body is typed `unknown` on purpose: the route sends three fields this client's review
-  mirror does not declare (`evidence.channels`, `knowledge.revision_selection`, `source.attribution`),
-  so annotating it would need either a cast or a lossy projection of the bytes under test.
+- `payloadWith(page)` returns `ReviewPayload` and supplies a `judgment` object. These synthetic payloads exercise the mounted paging behavior.
 - Not covered here: browser keyboard/focus traversal and the finished cockpit interaction
   (`ICR-R24@v1` owns those), and the assembled A16 acceptance (`ICR-R25@v1`).
 
@@ -63,7 +60,7 @@ sentence carrying two meanings is how `total` came to mean two different numbers
 
 None recorded.
 
-Cursor fixtures name knowledge and records pages with published cursors, served through a typed fetch signature with body, payload and refusal records. Cases assert bounds lines, control labels, second-page requests carrying the selector, reset wording from refusal codes, and both collections staying reachable with the whole review intact.
+Cursor fixtures supply opaque strings through a typed fetch signature. `RECORDS_CURSOR` is reused as the next knowledge cursor. Cases assert bounds lines, control labels, knowledge continuation, reset wording from refusal codes, and the retired records collection earning no request or refusal. The closing case carries the selector on an unpaged whole-review request.
 ## Evidence
 
 ### Docs References
@@ -104,7 +101,6 @@ No configured domain documentation could be checked.
 - The bounds sentence distinguishes walk from selection totals on the surviving knowledge collection. [10]
 
 
-- The whole review stays reachable and the selector travels through a paged request. [11]
 
 
 - **The one normaliser of the two spellings of "no page", and the bounds sentence built from the page's own basis.** [12]
@@ -129,12 +125,14 @@ this repository's, and `fetch` is the only boundary crossed.
 
 No meaningful cross-repo references found.
 
-- Records-page cursor fixture for advances [17]
 
-- Cursor-carrying payload builder for paged answers [18]
 
 - Typed fetch signature for paged requests [19]
 
-- Subject mount helper for paged journeys [20]
 
 - The stubbed published-shape case distinguishes foreign-cursor reset wording from a moved comparison; it does not test an automatic repair journey. [21]
+
+- Despite its historical test title, the closing case supplies a null page, asserts whole-review bounds and absent paging controls, and requires selector parameters with no pageOf parameter. [11]
+- RECORDS_CURSOR is an opaque fixture literal reused as the continuation of the second knowledge page; it does not demonstrate a records-page journey. [17]
+- payloadWith returns a typed synthetic ReviewPayload, including judgment and a nullable page. [18]
+- mountSubject supplies repository, master, leaf and invariant selector props without an initial page selection; cases use it for both paging and whole-review checks. [20]

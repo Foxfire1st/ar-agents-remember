@@ -10,7 +10,7 @@ Recorded tree comparisons survive cleanup, restart and later landings; historica
 
 The module carries the intake defect as its subject: a cleaned leaf's Intent Review answered
 `candidate_not_live` because the history route required `contract.code_worktree.exists()`. Eight cases
-measure the eight properties that replace it, one each:
+exercise the historical-read boundaries below; these are source assertions, not a fresh run:
 
 - a leaf frozen while it was live, its worktree group removed exactly as cleanup removes it, serves
   **byte for byte the same** recorded comparison — the served bytes are compared, not a summary of them;
@@ -28,6 +28,10 @@ measure the eight properties that replace it, one each:
   case supplies no record-owned deletion statement;
 - a closed leaf that recorded **neither** a comparison nor a landed commit is still refused by name,
   which is the one state in which `candidate_not_live` is the honest answer.
+
+The first test additionally reads selector-free task context before cleanup and through both default
+and recorded closed reads. It retains the exact inventory and tree limitation, task_context knowledge
+and no comparison; that is distinct from its subject-selected byte-equality check.
 
 ## Code Commentary
 
@@ -47,10 +51,13 @@ Pre-feature source ranges remain readable with legacy-unavailable knowledge. His
 
 **The restart leg is a child interpreter, not a second client.** `_served_in_a_new_process` writes a
 descriptor of the four configuration roots, the route and the params, then runs `_CHILD_SERVE` in a
-child `sys.executable` with only `mcp/src` on `PYTHONPATH`; the child builds the app from the
+child `sys.executable` whose `PYTHONPATH` prepends `mcp/src` to a copy of the inherited value
+(inherited search-path entries stay visible to the child, so this is a fresh interpreter and not
+source-only import-path isolation); the child builds the app from the
 coordination root alone, calls the production port and writes its status and bytes out for the parent to
-compare. Nothing is shared with the parent beyond the coordination root, which is what makes "a fresh
-process reconstructs the same comparison" a measurement rather than a claim about the same object graph.
+compare. Nothing but the inherited process environment is shared with the parent beyond the coordination
+root, which is what makes "a fresh process reconstructs the same comparison" a measurement rather than a
+claim about the same object graph.
 
 **The later-task leg lands real history and then measures contamination rather than assuming it.**
 The case then compares the served bytes with the frozen read and asserts the later task's
@@ -65,9 +72,9 @@ round corrected.
 
 `pytestmark = pytest.mark.evidence_unit` places the module in the ordinary unit lane, and
 `mcp/tests/test-evidence-lanes.toml` registers it there (a bare TOML key, so it is named as a quoted
-anchor rather than as an identifier). `mcp/tests/evidence-lifecycle.toml` currently lists six
-`consumer_scope = "exact"` consumer rows for this module: anchor-fixture models, diff-scope support,
-the Node fixture lockfile, row-codec support, row-writer support and read-scope support.
+anchor rather than as an identifier). `mcp/tests/evidence-lifecycle.toml` currently lists seven
+`consumer_scope = "exact"` consumer records for this module: the user-settings guard, anchor-fixture
+models, diff-scope support, the Node fixture lockfile, row-codec support, row-writer support and read-scope support.
 These are registered dependencies, not evidence of new runtime acceptance. Helper names are private and single-purpose, the child source is one module-level constant so
 the child and the parent cannot drift,
 
@@ -132,7 +139,7 @@ Every claim on this card is checkable in the shipped candidate: the module's own
 the R01 enclosure fixture it extends, the R11 owners it drives for freezing and reclaiming, and the two
 registration files that admit it to a lane and derive its consumer rows. Three details a reader should
 carry: the module is **evidence_unit** and its lane row is what the collection gate reads before the
-module may run at all; the six current consumer rows are `exact`-scoped, so any additional fixture dependency
+module may run at all; the seven current consumer rows are `exact`-scoped, so any additional fixture dependency
 must be registered rather than inferred; and the later-task and reclaimed-object legs mutate real Git
 state inside the case's own fixture repository, never the source checkout.
 
@@ -173,3 +180,6 @@ No meaningful cross-repo references found.
 - **The one state in which the intake defect's code is still the honest answer.** [32]
 - The exact-scope consumer row for this module in the shared diff-scope case support.  Anchor: `test_historical_committed_leaf_review` [33]
 - **The later-task leg: a real commit on the repository, and the leaf's protected source branch really moved to it.** [34]
+
+- The first source case preserves selector-free task-context inventory and tree provenance across cleanup without inventing a comparison, while retaining separate subject-byte equality assertions. [36]
+- The lane selects this module once and seven exact-scope lifecycle artifact records name it; these are registrations, not executed evidence. [37]

@@ -1,0 +1,109 @@
+{
+  "path": "dashboard/src/panels/review/ReviewSurface.memoryWatch.test.tsx",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Three paired mounts use fixture-backed native task identity, and stubbed fetch replies are real Response instances.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0ec50884b4b7c3ac6d4932009b8d30e67652ce70",
+            "content": "sha256:0d51c68149b224d84f0cf87bd5c47ea2611134d827fa97546a22e7dacdc12e62",
+            "locator": {
+              "end": 30,
+              "kind": "line_range",
+              "start": 18
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Initial readiness reconciles the selected answer and entry after one pre-arm synthetic edit, while duplicate and unrelated events are silent.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0ec50884b4b7c3ac6d4932009b8d30e67652ce70",
+            "content": "sha256:1450327a1059be31efaa6a907432db0a8000df4af43e0643fcce4c36348e6417",
+            "locator": {
+              "end": 78,
+              "kind": "line_range",
+              "start": 32
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "A matching edit refreshes the actual selected subject and entry without restoring an old subject answer; catalogue renewal follows changed comparison identity.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0ec50884b4b7c3ac6d4932009b8d30e67652ce70",
+            "content": "sha256:087b35b06fb514aa4e232b47aae3c6139f62040283eaaaec802a24eb0916403f",
+            "locator": {
+              "end": 119,
+              "kind": "line_range",
+              "start": 80
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "Initial responses arriving after the reconciled generation cannot replace its answer or count.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0ec50884b4b7c3ac6d4932009b8d30e67652ce70",
+            "content": "sha256:f74bb3264a50bb9c193ea14ae5b20f1b1505aece78609747a7a202bf7885e5ee",
+            "locator": {
+              "end": 155,
+              "kind": "line_range",
+              "start": 121
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "Deferred fetch responses and explicit synthetic capture perturbations control the late/failure cases.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0ec50884b4b7c3ac6d4932009b8d30e67652ce70",
+            "content": "sha256:07f03b18af6ca9e4a13d8f5af2cb099c235503edcd48117231f5e44d4eb3d404",
+            "locator": {
+              "end": 183,
+              "kind": "line_range",
+              "start": 157
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "Newest response wins; failed edits retain the labelled coherent generation and a later edit recovers it.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0ec50884b4b7c3ac6d4932009b8d30e67652ce70",
+            "content": "sha256:e2433239067a985425d6f0759093ce85df0bea2316657ea4a949c2726f66d3ce",
+            "locator": {
+              "end": 222,
+              "kind": "line_range",
+              "start": 185
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

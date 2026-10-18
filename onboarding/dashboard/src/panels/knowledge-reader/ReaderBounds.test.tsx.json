@@ -1,0 +1,60 @@
+{
+  "path": "dashboard/src/panels/knowledge-reader/ReaderBounds.test.tsx",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "72676dec254239a7466a9e79eb4e0af16323ebce",
+        "content": "sha256:d80015cd438c9e77c91ca8f512c65311998c29720f75119ce75c4377102bd5e7",
+        "locator": {
+          "kind": "symbol",
+          "name": "clears the previous page chapters when the next ready pane renders none"
+        }
+      },
+      "facet": "A ready pane that renders no chapter clears the previous page's list instead of keeping it.",
+      "id": "PRF-B7C1QW",
+      "invariant": "INV-KXT50F",
+      "origin": {
+        "handoffEntry": "L57-M1-F117-reader-outline-enrichment",
+        "leaf": "260928-MIK-L57"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "72676dec254239a7466a9e79eb4e0af16323ebce",
+        "content": "sha256:b3bf3a45a89af92cf93ac20356fcb41cb87b9cfeb05eeb460f23f101b27691a7",
+        "locator": {
+          "kind": "symbol",
+          "name": "lists the chapters the whole text renders beside the chapters the summary showed"
+        }
+      },
+      "facet": "Loading the whole text in place adds its chapters to the outline beside the summary's, with no navigation or remount.",
+      "id": "PRF-THHV6J",
+      "invariant": "INV-KXT50F",
+      "origin": {
+        "handoffEntry": "L57-M1-F117-reader-outline-enrichment",
+        "leaf": "260928-MIK-L57"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "New synthetic mounted reader controls cover commit/branch validation, prior-selection retention, bounded prose/whole-text single-read and deeper-family explanation, snapshot mismatch refusing mixed prose/references or timeline/record, 50-event continuation controls, attempt/path and legacy effect text, and late side-load suppression. These are controlled component assertions, not a server timing result.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bb5a38f6d255ec74610c824b80e0e24e6aab3564",
+            "content": "sha256:d7059aea166500ceec46c507c45d35e414efbb73c79db13da7882c87bb38bed9",
+            "locator": {
+              "end": 356,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

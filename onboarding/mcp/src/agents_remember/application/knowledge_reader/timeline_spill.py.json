@@ -1,0 +1,73 @@
+{
+  "path": "mcp/src/agents_remember/application/knowledge_reader/timeline_spill.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "b287692e0f06a65983cda979f35e4e9d9a684d99",
+        "content": "sha256:c7875973efff23dd6331dc4a074156645be328f2706ba45745014b0abcdf3fb9",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-PDBWYN",
+      "invariant": "INV-DFA51A",
+      "origin": {
+        "handoffEntry": "MIK-R67@v2 by-design one-spilled-history",
+        "leaf": "260928-MIK-L57"
+      },
+      "rationale": "Owns complete anonymous event and offset backing, range reads and actual backing lifetime.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Construction checks anonymity, keeps offsets on disk, bounds retained metadata and validates each requested read.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b287692e0f06a65983cda979f35e4e9d9a684d99",
+            "content": "sha256:900ea0e361d08633bb3f12f800c1913160720607049732f7209804cbf09e8c1d",
+            "locator": {
+              "kind": "symbol",
+              "name": "SpilledEvents"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Final-owner cleanup closes both backing handles even if one close fails.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b287692e0f06a65983cda979f35e4e9d9a684d99",
+            "content": "sha256:f7bd796aadfdaf1c7ecbbbe38c4576eaf50fa3834c4004e35753e898e647d49b",
+            "locator": {
+              "kind": "symbol",
+              "name": "_close_files"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Short temporary-backing writes raise a read-path failure rather than silently truncate history.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b287692e0f06a65983cda979f35e4e9d9a684d99",
+            "content": "sha256:b7b4426f1f6c9c36a0f8ce81ca63cfc5e8a3eb54ef1ee23af4515ee14b384220",
+            "locator": {
+              "kind": "symbol",
+              "name": "_write"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

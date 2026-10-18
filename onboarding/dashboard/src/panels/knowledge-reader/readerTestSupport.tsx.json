@@ -1,0 +1,24 @@
+{
+  "path": "dashboard/src/panels/knowledge-reader/readerTestSupport.tsx",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Extracted shared reader capture harness exports requests/overrides/heldTree/open/holdTree; beforeEach route stubs support next-page overrides and controlled late tree answers. Scratch-authored decisions/history in inherited served captures are not normal project facts.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "89ecee0ad39b34100049231be3587068ba9b6037",
+            "content": "sha256:cd307132d03338a4b9eb7b34ab5647dc7fdb58a79b885c69687de5c88d70ddfa",
+            "locator": {
+              "end": 134,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

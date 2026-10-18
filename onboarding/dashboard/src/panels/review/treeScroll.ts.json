@@ -1,0 +1,55 @@
+{
+  "path": "dashboard/src/panels/review/treeScroll.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Reveal a row within its tree panel only: `revealTreeRow` owns the described branch.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "06c68c5736d977ee55d747de48a6a9e726f98d3a",
+            "content": "sha256:5f23b5f5fd122c3432fbe553a3d2800a19b251c70a0adf99bfe63be71cb51aba",
+            "locator": {
+              "kind": "symbol",
+              "name": "revealTreeRow"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Reveal a row within its tree panel only: `visiblePanelBounds` owns the described branch.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "06c68c5736d977ee55d747de48a6a9e726f98d3a",
+            "content": "sha256:f89bfb5be3573d597a86ff833297a19d5d71f04801ca909a8045e705d8ef7e99",
+            "locator": {
+              "kind": "symbol",
+              "name": "visiblePanelBounds"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Reveal a row within its tree panel only: `belowControls` owns the described branch.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "06c68c5736d977ee55d747de48a6a9e726f98d3a",
+            "content": "sha256:13b44ba6452322328c78f9d509e11a12fa09fd1e50b2d7196cdd9017ba4d5395",
+            "locator": {
+              "kind": "symbol",
+              "name": "belowControls"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

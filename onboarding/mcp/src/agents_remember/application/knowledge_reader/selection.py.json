@@ -24,7 +24,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d38d90cc90bac4fda935fdb9610a3a5f2dc4fad3",
+            "blob": "e207fa5edbdea5f3ace3bfa83c606223dc7b501c",
             "content": "sha256:1e9dd0dc5d2b84520e5992567e05648f4da81d7e24188e338f82caf38d7b733c",
             "locator": {
               "kind": "symbol",
@@ -35,7 +35,7 @@
         },
         {
           "anchor": {
-            "blob": "d38d90cc90bac4fda935fdb9610a3a5f2dc4fad3",
+            "blob": "e207fa5edbdea5f3ace3bfa83c606223dc7b501c",
             "content": "sha256:d1a273ded85c0e030b82ef961bae0a41a21e63529c7ff10657b06d02ff623783",
             "locator": {
               "kind": "symbol",
@@ -51,7 +51,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d38d90cc90bac4fda935fdb9610a3a5f2dc4fad3",
+            "blob": "e207fa5edbdea5f3ace3bfa83c606223dc7b501c",
             "content": "sha256:38dc983a036003c06557e3e26f04604b36910fc00e243cf7e5cac719466984b2",
             "locator": {
               "kind": "symbol",
@@ -62,7 +62,7 @@
         },
         {
           "anchor": {
-            "blob": "d38d90cc90bac4fda935fdb9610a3a5f2dc4fad3",
+            "blob": "e207fa5edbdea5f3ace3bfa83c606223dc7b501c",
             "content": "sha256:32f6e0ef2dc783c1506bc31d23026038c5eeed26a188023547ebdd656cc1bd6e",
             "locator": {
               "kind": "symbol",
@@ -73,7 +73,7 @@
         },
         {
           "anchor": {
-            "blob": "d38d90cc90bac4fda935fdb9610a3a5f2dc4fad3",
+            "blob": "e207fa5edbdea5f3ace3bfa83c606223dc7b501c",
             "content": "sha256:5a725f4ad7afc381b0d98e6f2c3fe3250f32c536eb96e297f2a4a65f3d6e075e",
             "locator": {
               "kind": "symbol",
@@ -89,7 +89,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d38d90cc90bac4fda935fdb9610a3a5f2dc4fad3",
+            "blob": "e207fa5edbdea5f3ace3bfa83c606223dc7b501c",
             "content": "sha256:4d059f5750871a47e640929b557cdb683008e44b1c14ad0482d33649c19e2c34",
             "locator": {
               "kind": "symbol",
@@ -100,80 +100,32 @@
         }
       ]
     },
-    "13": {
-      "note": "The selection cases: hexadecimal only, published with a pin, a leaf, and a partial index with no code tree.",
+    "14": {
+      "note": "NUL is rejected explicitly; other non-special spellings are resolved as commit names.",
       "targets": [
         {
           "anchor": {
-            "blob": "4ec4c95baf015b3298eca6db77c2a032c0632a63",
-            "content": "sha256:20dea8da31a88de46854922338de60c279f59f310d30dc87822cf32b26e99e18",
+            "blob": "e207fa5edbdea5f3ace3bfa83c606223dc7b501c",
+            "content": "sha256:5dd2a79eefcab569ac87ef91515d9144addb0f6bdb1447d6a481d69b9b67cfa7",
             "locator": {
               "kind": "symbol",
-              "name": "test_any_commit_is_selectable_by_its_hexadecimal_name_only"
-            },
-            "path": "mcp/tests/test_knowledge_reader.py"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "4ec4c95baf015b3298eca6db77c2a032c0632a63",
-            "content": "sha256:3a33f23e636a1dc6724100475094f0c70c0b3f67543a6666600260c53cd3726a",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_the_published_tree_reads_uncommitted_state_writes_nothing_and_offers_a_pin"
-            },
-            "path": "mcp/tests/test_knowledge_reader.py"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "4ec4c95baf015b3298eca6db77c2a032c0632a63",
-            "content": "sha256:d64bbdc08aca662eaea96d5e531025d449cbf9b84099f74f1caff203b52605c6",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_a_live_leafs_candidate_is_selectable_and_names_what_its_code_tree_leaves_out"
-            },
-            "path": "mcp/tests/test_knowledge_reader.py"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "4ec4c95baf015b3298eca6db77c2a032c0632a63",
-            "content": "sha256:7ba76dccb0277ce2e031287870cfc6441590966069bee5e4aee72542a979ea82",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_a_partial_index_and_an_unavailable_code_tree_are_named_where_they_apply"
-            },
-            "path": "mcp/tests/test_knowledge_reader.py"
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "2": {
-      "note": "Hexadecimal names only, and the 40 recent commits.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "d38d90cc90bac4fda935fdb9610a3a5f2dc4fad3",
-            "content": "sha256:5e1d7762eb8695d2a7d76ee5f576fe49381d1d29f9684ced323b26377cd100d7",
-            "locator": {
-              "kind": "symbol",
-              "name": "_HEX"
+              "name": "open_selection"
             }
           },
           "kind": "code"
-        },
+        }
+      ]
+    },
+    "15": {
+      "note": "Git resolves a concrete commit; an unresolved name is invalid-request with guidance.",
+      "targets": [
         {
           "anchor": {
-            "blob": "d38d90cc90bac4fda935fdb9610a3a5f2dc4fad3",
-            "content": "sha256:e36f2cfa4c88b9af9dba3b178762c9298e41eca820c62ddd5f20ea76cd793990",
+            "blob": "e207fa5edbdea5f3ace3bfa83c606223dc7b501c",
+            "content": "sha256:431838369a8a94d1955a8a24cd449eff0c48445019fc1bfc4694d8503dc10b5e",
             "locator": {
               "kind": "symbol",
-              "name": "_RECENT_COMMITS"
+              "name": "_commit_selection"
             }
           },
           "kind": "code"
@@ -185,7 +137,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d38d90cc90bac4fda935fdb9610a3a5f2dc4fad3",
+            "blob": "e207fa5edbdea5f3ace3bfa83c606223dc7b501c",
             "content": "sha256:846660c8ebe97a602822b7f8807d6bcc720d817d374f9eab18eb19a275e1b455",
             "locator": {
               "kind": "symbol",
@@ -201,7 +153,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d38d90cc90bac4fda935fdb9610a3a5f2dc4fad3",
+            "blob": "e207fa5edbdea5f3ace3bfa83c606223dc7b501c",
             "content": "sha256:c6f215306b1063a0252c42c01916d683dbb02bb3be80df8aaf119608a076b7fd",
             "locator": {
               "kind": "symbol",
@@ -217,7 +169,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d38d90cc90bac4fda935fdb9610a3a5f2dc4fad3",
+            "blob": "e207fa5edbdea5f3ace3bfa83c606223dc7b501c",
             "content": "sha256:96beca5a5b2f69ceb2a8bfdd21cb1544e1baccfa41273d132b6a25bac5f2b427",
             "locator": {
               "kind": "symbol",
@@ -229,15 +181,26 @@
       ]
     },
     "6": {
-      "note": "The three spellings, and a branch name refused.",
+      "note": "Published and leaf spellings dispatch explicitly; other names, including branches, resolve as concrete Git commits. NUL and unresolved names return invalid-request guidance.",
       "targets": [
         {
           "anchor": {
-            "blob": "d38d90cc90bac4fda935fdb9610a3a5f2dc4fad3",
-            "content": "sha256:34ce97237a8bc0d6599d3902d5dde2828c6aaa58deb366b1ebe9c6918784a10b",
+            "blob": "e207fa5edbdea5f3ace3bfa83c606223dc7b501c",
+            "content": "sha256:5dd2a79eefcab569ac87ef91515d9144addb0f6bdb1447d6a481d69b9b67cfa7",
             "locator": {
               "kind": "symbol",
               "name": "open_selection"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e207fa5edbdea5f3ace3bfa83c606223dc7b501c",
+            "content": "sha256:431838369a8a94d1955a8a24cd449eff0c48445019fc1bfc4694d8503dc10b5e",
+            "locator": {
+              "kind": "symbol",
+              "name": "_commit_selection"
             }
           },
           "kind": "code"
@@ -249,7 +212,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d38d90cc90bac4fda935fdb9610a3a5f2dc4fad3",
+            "blob": "e207fa5edbdea5f3ace3bfa83c606223dc7b501c",
             "content": "sha256:c8da76436be11c9d212fa3362a21889594bc44b1923844fdc8c9401b039ea97c",
             "locator": {
               "kind": "symbol",
@@ -265,7 +228,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d38d90cc90bac4fda935fdb9610a3a5f2dc4fad3",
+            "blob": "e207fa5edbdea5f3ace3bfa83c606223dc7b501c",
             "content": "sha256:d53aad4c464fd2e88132eea746c8206139808ae3e4557b2b407770eef29e559e",
             "locator": {
               "kind": "symbol",

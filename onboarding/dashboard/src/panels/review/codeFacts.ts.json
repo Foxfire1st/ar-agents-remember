@@ -1,0 +1,103 @@
+{
+  "path": "dashboard/src/panels/review/codeFacts.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Matching leaf-wide code facts without prefetch: `matchingTreeRead` owns the described branch.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cf6d30a7d118ee16b5c90266535475a08063a88c",
+            "content": "sha256:f0723ce21bfe8503275bd8a18e130fda8b8cad35648e882cd8b3b971ae540711",
+            "locator": {
+              "kind": "symbol",
+              "name": "matchingTreeRead"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Matching leaf-wide code facts without prefetch: `codeFacts` owns the described branch.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cf6d30a7d118ee16b5c90266535475a08063a88c",
+            "content": "sha256:a360060b4b0d237bc9e1b05b597a131ae2dd5f59b90561bb71ac2ec6a75ccd45",
+            "locator": {
+              "kind": "symbol",
+              "name": "codeFacts"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Matching leaf-wide code facts without prefetch: `codeChangesCount` owns the described branch.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cf6d30a7d118ee16b5c90266535475a08063a88c",
+            "content": "sha256:ec0b0e6df571e1df7449e21997766d268b89c8d457ab903e2f23d5829343196d",
+            "locator": {
+              "kind": "symbol",
+              "name": "codeChangesCount"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Matching leaf-wide code facts without prefetch: `codeChangesSummary` owns the described branch.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cf6d30a7d118ee16b5c90266535475a08063a88c",
+            "content": "sha256:b5f06f1ce63799ed900620a6aa0f065e0308397204d5a36be662d19929e93ddf",
+            "locator": {
+              "kind": "symbol",
+              "name": "codeChangesSummary"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Matching leaf-wide code facts without prefetch: `CodeFactsScrollAnchor` owns the described branch.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cf6d30a7d118ee16b5c90266535475a08063a88c",
+            "content": "sha256:f274dab8902eaa4694b6b48b4d9b898bf87c5c7d05da3e4d294e3f65627d2355",
+            "locator": {
+              "kind": "symbol",
+              "name": "CodeFactsScrollAnchor"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Matching leaf-wide code facts without prefetch: `useCodeFactsNotice` owns the described branch.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cf6d30a7d118ee16b5c90266535475a08063a88c",
+            "content": "sha256:ee22685ecc7773d71acd210ca0ce8c61232afe4c0b66753942329ae29061fdcf",
+            "locator": {
+              "kind": "symbol",
+              "name": "useCodeFactsNotice"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -14,8 +14,8 @@ facts every answer's `selection` block reports. It also lists what the commit se
 Three spellings are accepted:
 - `published` (the default): MIK-R23 rule 6's published memory-tree selection, the scope's own memory root in
   its current captured state, through `select_knowledge_dataset`;
-- a memory **commit**, by its full or abbreviated hexadecimal name only (a branch name is refused as
-  `invalid-request`, review F6), read through Git objects with `KnowledgeIndexCache.for_git_tree`;
+- a memory **commit** (full or abbreviated) or **branch**, resolved by Git to a commit and read through
+  Git objects with `KnowledgeIndexCache.for_git_tree`;
 - `leaf:<scope>`: the memory worktree of an active leaf enclosure whose worktree group is `<scope>`, in its
   captured state.
 
@@ -46,7 +46,7 @@ Three spellings are accepted:
 - **The selector's choices.** `selection_options` returns the published tree (and whether it is converted),
   the last 40 memory commits of `HEAD` each marked converted or not (one `cat-file --batch-check` probe), and
   the live leaves. A commit list that cannot be read is `commitsState: unavailable` with the reason, never
-  an empty list (review F11). Older commits are reachable by address (F10, accepted as a note).
+  an empty list (review F11). The recent list is a convenience, not an admissible-selection limit; explicit commit and branch names resolve independently of it.
 - **`READ_FAILURES`** names what can go wrong reading a tree (APSW, OS, subprocess, authority, memory-tree,
   index mismatch, Git preparation, Unicode and `ReaderReadError`). `ValueError` and `LookupError` were
   removed so programming errors surface (F11).
@@ -77,6 +77,10 @@ Three spellings are accepted:
   "for now"; a code-tree selector, or a leaf's uncommitted code, would change it for the reader and the
   published-intent block together.
 
+### Name resolution and refusal
+
+`open_selection` rejects NUL before subprocess serialization and otherwise leaves non-special names to Git. `_commit_selection` resolves `<name>^{commit}`; a name with no commit is `invalid-request` with the accepted forms. Published and leaf selections keep their existing special meanings, code-tree provenance and read-only capture rules. A branch becomes a concrete commit selection rather than a mutable branch-backed index.
+
 ## Evidence
 
 ### Docs References
@@ -89,19 +93,25 @@ No configured live documentation source was available for this pass.
 
 ### Repo-Internal References
 
+- NUL is rejected explicitly; other non-special spellings are resolved as commit names. [14]
+- Git resolves a concrete commit; an unresolved name is invalid-request with guidance. [15]
+
+
 - The module's own statement of the three spellings and the code-tree rule. [1]
-- Hexadecimal names only, and the 40 recent commits. [2]
+- **Historical reference account; not current evidence:** The recent-commit convenience list remains forty; accepted names include memory commits and branches. (historical reference 2)
 - The named read failures (F11). [3]
 - A refusal, typed and named. [4]
 - The opened selection and the block every answer carries: code tree, source, note and pin. [5]
-- The three spellings, and a branch name refused. [6]
+
+- Published and leaf spellings dispatch explicitly; other names, including branches, resolve as concrete Git commits. NUL and unresolved names return invalid-request guidance. [6]
+
 - A leaf only when an active enclosure has the scope. [7]
 - Published and leaf: not-converted first, the captured tree, `HEAD`, the pin when clean. [8]
 - A commit: the layout marker, the Git-tree index, the paired code tree. [9]
 - `HEAD` of the checkout, with the leaf note; the `Code-Commit` pairing, or the reason there is none. [10]
 - The selector's choices, and a commit list that cannot be read named. [11]
 - Active leaves exclude foreign task-document nonmembers with a named warning before the existing repository and liveness filters. [12]
-- The selection cases: hexadecimal only, published with a pin, a leaf, and a partial index with no code tree. [13]
+- **Historical reference account; not current evidence:** Historical selection controls are retained as prior evidence only; current commit/branch admission is proved by open_selection and _commit_selection, not by a retired hexadecimal-only test name. (historical reference 13)
 
 ### Cross-Repo References
 

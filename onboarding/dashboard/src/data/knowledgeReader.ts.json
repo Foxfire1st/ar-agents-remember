@@ -33,14 +33,16 @@
       ]
     },
     "17": {
-      "note": "A typed answer returned whatever its status; only transport failures throw.\n\nAnchor: `readerGet`",
+      "note": "readerGet returns a parsed body with string state regardless of HTTP status. Fetch failures propagate; malformed JSON becomes null, and a body without string state causes ReaderTransportError.\n\nAnchor: inclusive source ranges",
       "targets": [
         {
           "anchor": {
-            "blob": "8491fd4fd23fcb220157d46e63d31917682590df",
-            "content": "sha256:a68a57075aa0fc9dd4df992c3dc42cf2f980cb71f77d295acba58ba7f09e9853",
+            "blob": "8ec5f222a6d97528f9484c56a1ff060446b461ff",
+            "content": "sha256:401af838b2b066012b5e87e515034b4ab0dbfc47e5e7cd4c083f380638672d2f",
             "locator": {
-              "kind": "file"
+              "end": 456,
+              "kind": "line_range",
+              "start": 439
             }
           },
           "kind": "code"
@@ -73,6 +75,64 @@
               "kind": "file"
             },
             "path": "dashboard/src/panels/knowledge-reader/KnowledgeTree.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "20": {
+      "note": "FileRead adds optional boolean truncated and numeric fullSize; PathViewAnswer adds optional numeric deeperEntries. These declarations specify DTO shape without enforcing runtime population, size units or rendering.\n\nAnchor: inclusive source ranges",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8ec5f222a6d97528f9484c56a1ff060446b461ff",
+            "content": "sha256:69c3c357a386aa5ee764cb35398ab2db5dbc7fb7b02d4f43912b5be1df227faa",
+            "locator": {
+              "end": 101,
+              "kind": "line_range",
+              "start": 94
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8ec5f222a6d97528f9484c56a1ff060446b461ff",
+            "content": "sha256:990f50a5e5e0bf3a2fe9d078a948f708a81e80f35d7e815108cda0af374e2cff",
+            "locator": {
+              "end": 198,
+              "kind": "line_range",
+              "start": 183
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "21": {
+      "note": "TimelineEvent adds optional nullable numeric attempt. Timeline retains required sources and events while adding optional string state, code and detail, optional nullable continuation, and optional page containing numeric start, rowsOnPage and total.\n\nAnchor: inclusive source ranges",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8ec5f222a6d97528f9484c56a1ff060446b461ff",
+            "content": "sha256:b6bb828019c00d1ea4864486d203acc067a5e9d750667d10bd18bb3d9a081a5f",
+            "locator": {
+              "end": 274,
+              "kind": "line_range",
+              "start": 254
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8ec5f222a6d97528f9484c56a1ff060446b461ff",
+            "content": "sha256:8625317510b255eee0bc72770f7a47d0d4601b422d28ff934f3050be7e2797e3",
+            "locator": {
+              "end": 284,
+              "kind": "line_range",
+              "start": 276
+            }
           },
           "kind": "code"
         }

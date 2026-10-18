@@ -37,14 +37,14 @@
       ]
     },
     "3": {
-      "note": "Tree order: changes first with every sibling kept, pure authored order, families by weight, a dataset review untouched.\n\nAnchor: \"lists changes first by weight then authored position, keeping every sibling\"; \"leaves a dataset review (no change facts) in its landed order\"",
+      "note": "Four tree-order declarations cover sibling-preserving change order, authored order, family weights and partial-family ordering. The dataset-review/no-change-facts case is absent from the candidate.\n\nAnchor: inclusive source ranges",
       "targets": [
         {
           "anchor": {
-            "blob": "002cca1f3e142b9788cc8047f3020ea95c1b82f8",
-            "content": "sha256:7726554abe14973becf4ce0f3baa3443247b1a23edab07e2e25096adc73dbbaf",
+            "blob": "7468a2348451c01f4997b87c9bcb6ca158a24a84",
+            "content": "sha256:8f8f1cbc36a1d89b3debf5b5bd391f3b7d025a8ec8f65eccc9e9a4cc1550dd53",
             "locator": {
-              "end": 209,
+              "end": 201,
               "kind": "line_range",
               "start": 120
             }
@@ -54,16 +54,16 @@
       ]
     },
     "4": {
-      "note": "The roster walk keeps every returned member's facts.\n\nAnchor: \"keeps the facts of every member the walk has returned\"",
+      "note": "The two roster-walk cases retain returned member facts and union deliveries with newer family facts.\n\nAnchor: inclusive source ranges",
       "targets": [
         {
           "anchor": {
-            "blob": "002cca1f3e142b9788cc8047f3020ea95c1b82f8",
+            "blob": "7468a2348451c01f4997b87c9bcb6ca158a24a84",
             "content": "sha256:dc91a9e18dfdf03e0650519db4aae359998e34b255aad789364008970e0304d3",
             "locator": {
-              "end": 246,
+              "end": 238,
               "kind": "line_range",
-              "start": 211
+              "start": 203
             }
           },
           "kind": "test"

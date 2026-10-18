@@ -3,15 +3,16 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "Each record and membership list is read once per read",
+      "note": "RecordChanges caches records by side and record ID, problem lists by side and kind, and membership sets by side and family. Found records return live/retired state before parse-problem handling. For absent records, only same-kind problem basenames beginning with record_id plus '-' or '.' yield unknown; the bounded diagnostic includes at most three matching paths.\n\nAnchor: inclusive source ranges",
       "targets": [
         {
           "anchor": {
-            "blob": "01e7092a2503a3e8c512aff009445560570c1b57",
-            "content": "sha256:09d4844530989c9fcd0b09d6c9e519b6296d1b868d6d60302a38b3b6f13bab3e",
+            "blob": "c7861a16c59057dcfbcdc25f304f32e54d65c1fa",
+            "content": "sha256:6094592bf9fcafe2473a491055be49a06d8ad6e64e3e4e846cd2fc97c0e73e69",
             "locator": {
-              "kind": "symbol",
-              "name": "RecordChanges"
+              "end": 190,
+              "kind": "line_range",
+              "start": 93
             }
           },
           "kind": "code"
@@ -51,16 +52,16 @@
       ]
     },
     "4": {
-      "note": "Roster change comes from listing on each side\n\nAnchor: `membership`",
+      "note": "membership reads each side's family through record, returns unknown when that read is unknown, caches the live family's members or an empty set, and establishes joined/left only when the invariant's listing differs between sides.\n\nAnchor: inclusive source ranges",
       "targets": [
         {
           "anchor": {
-            "blob": "01e7092a2503a3e8c512aff009445560570c1b57",
-            "content": "sha256:dda8958adb5998248e4f9f30502680b32cb314c9f03c095ea862346071185a9d",
+            "blob": "c7861a16c59057dcfbcdc25f304f32e54d65c1fa",
+            "content": "sha256:a678699e3ef581b2cd93033153b3c306e9ce7d0a5282814aab5e0d96cb079c7c",
             "locator": {
-              "end": 176,
+              "end": 190,
               "kind": "line_range",
-              "start": 168
+              "start": 171
             }
           },
           "kind": "code"

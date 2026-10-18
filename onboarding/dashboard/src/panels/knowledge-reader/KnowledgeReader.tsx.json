@@ -90,6 +90,23 @@
       },
       "rationale": "useCitationNavigation owns the rendering or source-selection boundary that implements this obligation: Wide citations open in the existing code pane without moving prose; multiple targets are listed first and narrow code navigation retains Back.",
       "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "994adf251ec2014e1a65503fb22e08f41948bf96",
+        "content": "sha256:478a5f127654df76a9f2ef34d7dc7163712a4c296fa5591e268e14f5589f05dd",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-Z1NG7V",
+      "invariant": "INV-MQ34SM",
+      "origin": {
+        "handoffEntry": "MIK-R67@v2 by-design 7",
+        "leaf": "260928-MIK-L57"
+      },
+      "rationale": "Routes code views with the selected memory tree/anchor context rather than sending recorded source to the working-checkout File Viewer.",
+      "role": "presentation"
     }
   ],
   "references": {

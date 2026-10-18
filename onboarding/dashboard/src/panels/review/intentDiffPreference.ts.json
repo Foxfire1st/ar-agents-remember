@@ -1,6 +1,24 @@
 {
   "path": "dashboard/src/panels/review/intentDiffPreference.ts",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "e8e7bf594e455235be6cf3b21bc673afc6102f57",
+        "content": "sha256:19e39f6d416ae805667ac81ef386b0f5652bff5536ee1ca80c336e7aeb1dbe8d",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-C3SG73",
+      "invariant": "INV-BWNE7P",
+      "origin": {
+        "handoffEntry": "MIK-R67@v2 by-design 6",
+        "leaf": "260928-MIK-L57"
+      },
+      "rationale": "Separates the saved general layout preference from the temporary per-passage inline override.",
+      "role": "presentation"
+    }
+  ],
   "references": {
     "1": {
       "note": "The module's statement: browser-local, the house idiom, no server store, inline when storage is unavailable.\n\nAnchor: \"It is not review state and no server\"; \"the passage defaults to inline\"",

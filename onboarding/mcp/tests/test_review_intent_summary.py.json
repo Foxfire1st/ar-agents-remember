@@ -4,15 +4,15 @@
   "realizes": [],
   "references": {
     "10": {
-      "note": "`test_a_record_only_successor_counts_once_on_each_side` supplies the current fixture or assertion described above.",
+      "note": "A revised statement shared by two families counts once on each side without a membership-only change.",
       "targets": [
         {
           "anchor": {
-            "blob": "a03ccb63b526f573166dc8f5f25d4746cfeaf963",
-            "content": "sha256:e08c68412231e30cc5bcb24aff2c8b57841cc9dd0b9b57f78ca1582ab9098aaa",
+            "blob": "06e555b2752e05ce0ef1cb089929a6f429dbbab1",
+            "content": "sha256:41a6e1237836e737f34e9b8cff80b808a9d450cf40ef5f46509eb3e492983f01",
             "locator": {
               "kind": "symbol",
-              "name": "test_a_record_only_successor_counts_once_on_each_side"
+              "name": "test_a_revised_statement_two_families_share_counts_once_on_each_side"
             }
           },
           "kind": "test"
@@ -20,15 +20,15 @@
       ]
     },
     "11": {
-      "note": "`test_an_identity_without_one_head_makes_the_summary_partial` supplies the current fixture or assertion described above.",
+      "note": "Record-only status/version changes count as revisions; a same-guarantee member change remains membership-only. The removed partial-summary helper is not assertion evidence for this property.",
       "targets": [
         {
           "anchor": {
-            "blob": "a03ccb63b526f573166dc8f5f25d4746cfeaf963",
-            "content": "sha256:41faebf17042ef1336824db794c290d8b15ca5fe1e6d84800e4628b97d29456c",
+            "blob": "06e555b2752e05ce0ef1cb089929a6f429dbbab1",
+            "content": "sha256:bbd4996c7d1ffce0ef05423ac1a7b493dc7ed0268680b1fbcd25ff578ec8fb2a",
             "locator": {
               "kind": "symbol",
-              "name": "test_an_identity_without_one_head_makes_the_summary_partial"
+              "name": "test_a_record_only_successor_counts_once_on_each_side"
             }
           },
           "kind": "test"
@@ -210,6 +210,59 @@
               "start": 277
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "24": {
+      "note": "The four added test definitions check matching stored-worklist unexplained-kind counts and auxiliary-file fallbacks, damaged-side code-fact refusal, counted-change witness attribution, and parametrized answered/open/undecided verdicts. The parameter table supplies two cases rather than two additional declarations.\n\nAnchor: inclusive source ranges",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "06e555b2752e05ce0ef1cb089929a6f429dbbab1",
+            "content": "sha256:164e3986fd4e28ca792df9040cdaefd77c4cfc677cdb20a7ee2cbf5630b496cd",
+            "locator": {
+              "end": 717,
+              "kind": "line_range",
+              "start": 648
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "06e555b2752e05ce0ef1cb089929a6f429dbbab1",
+            "content": "sha256:bb687427daa9c360d3c6667df278b60a182488ad90a3901aa27464ca8bae4940",
+            "locator": {
+              "end": 729,
+              "kind": "line_range",
+              "start": 720
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "06e555b2752e05ce0ef1cb089929a6f429dbbab1",
+            "content": "sha256:9e6c8616b65e73c512b18316a3e964ed0db196f130db93e4823a3734ee228ed4",
+            "locator": {
+              "end": 813,
+              "kind": "line_range",
+              "start": 732
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "06e555b2752e05ce0ef1cb089929a6f429dbbab1",
+            "content": "sha256:e9d8c176ab7acf9677d39865b8c384add2c46543ca45f0b250fad571d9c45c58",
+            "locator": {
+              "end": 864,
+              "kind": "line_range",
+              "start": 816
+            }
           },
           "kind": "test"
         }

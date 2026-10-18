@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "e6b16a65aa566287b7b4d80ff076618e8b8fe62d",
+        "blob": "337a487d553a03970df1b00646d6a937a1722cab",
         "content": "sha256:85b8263208b07e14323521e0c515ac30f084f928ba695ca0bf6bec177d3191a1",
         "locator": {
           "kind": "symbol",
@@ -21,12 +21,12 @@
     },
     {
       "anchor": {
-        "blob": "e6b16a65aa566287b7b4d80ff076618e8b8fe62d",
+        "blob": "337a487d553a03970df1b00646d6a937a1722cab",
         "content": "sha256:16b85f6b7762d53af25e09dfe23c3d7f9aee9751be5d499b04d66d6fa6be4347",
         "locator": {
-          "end": 301,
+          "end": 303,
           "kind": "line_range",
-          "start": 295
+          "start": 297
         }
       },
       "id": "RLZ-9BFE8W",
@@ -40,12 +40,12 @@
     },
     {
       "anchor": {
-        "blob": "e6b16a65aa566287b7b4d80ff076618e8b8fe62d",
+        "blob": "337a487d553a03970df1b00646d6a937a1722cab",
         "content": "sha256:37f31fe407debc1cf6420192a1b037b2909675f8f0686e5b65e91ce6738b0960",
         "locator": {
-          "end": 284,
+          "end": 286,
           "kind": "line_range",
-          "start": 284
+          "start": 286
         }
       },
       "id": "RLZ-VM1XH4",
@@ -1152,6 +1152,64 @@
               "start": 70
             },
             "path": "mcp/src/agents_remember/application/knowledge_worklist/route_context.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "83": {
+      "note": "The orchestrator shares its actual classifier, exact pairing and candidate knowledge side with the active request-scoped classification owner before computing scope/linkage.\n\nAnchor: `_Run.document`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2cd431100b2a049cb57eba23f2933df888c5aaf7",
+            "content": "sha256:689ff7c9655835f9e6843a0d4cb55802078011bb524c17e4201c80fb27516364",
+            "locator": {
+              "kind": "symbol",
+              "name": "share_classifier"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_worklist/classification_context.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "337a487d553a03970df1b00646d6a937a1722cab",
+            "content": "sha256:d0c81dcdb563c622eebb2aae021998438bf4235761e5e555a8de52df6ca1ba79",
+            "locator": {
+              "end": 320,
+              "kind": "line_range",
+              "start": 244
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "84": {
+      "note": "The classification context clears classifier, candidate, pairing and path references on exit, including failures; no active context makes share_classifier inert.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2cd431100b2a049cb57eba23f2933df888c5aaf7",
+            "content": "sha256:4c2bea9c1ace39283ddfec0c3201560b281e229bc6f87017657ece68149a3634",
+            "locator": {
+              "kind": "symbol",
+              "name": "classification_run"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_worklist/classification_context.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2cd431100b2a049cb57eba23f2933df888c5aaf7",
+            "content": "sha256:689ff7c9655835f9e6843a0d4cb55802078011bb524c17e4201c80fb27516364",
+            "locator": {
+              "kind": "symbol",
+              "name": "share_classifier"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_worklist/classification_context.py"
           },
           "kind": "code"
         }

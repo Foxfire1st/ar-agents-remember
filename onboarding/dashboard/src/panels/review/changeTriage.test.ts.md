@@ -7,7 +7,7 @@
 ## Purpose
 
 **The pure triage rules over the store-authored comparison's served bodies** (`triage.family`, `triage.familyPage`,
-`triage.familyContinued`, `triage.shared`; the world `mcp/tests/test_review_change_kinds.py` asserts the facts of). 12
+`triage.familyContinued`, `triage.shared`; the world `mcp/tests/test_review_change_kinds.py` asserts the facts of). 11
 cases check that the tree orders, counts and merges the delivered facts and never decides one.
 
 ## Code Commentary
@@ -18,9 +18,9 @@ cases check that the tree orders, counts and merges the delivered facts and neve
   named; a complete-looking family whose total is unknown scoped as "(total unknown)" and weighing at least `unknown`
   (SYNTHETIC: no total; review R1 F2); a family weighed by its own revised guarantee (SYNTHETIC: every member
   unchanged; mutation R-C3); the total said to be unknown rather than invented.
-- **Tree order (5):** changes first by weight then authored position, every sibling kept; pure authored order is the
+- **Tree order (4):** changes first by weight then authored position, every sibling kept; pure authored order is the
   family record's `members` list; families by their highest member or guarantee weight, then context order; a partial
-  family above a complete unchanged one (SYNTHETIC facts); a dataset review (no facts) in its landed order.
+  family above a complete unchanged one (SYNTHETIC facts).
 - **Roster walk (2):** `mergeFamilyContinuation` keeps the facts of every member the walk returned (strengthened with a
   SYNTHETIC gap after the walk-merge mutation first survived); two deliveries unioned with the newer family facts.
 
@@ -48,9 +48,10 @@ No configured live documentation source was available for this pass.
 
 - The suite's statement and its bodies. [1]
 - Family triage: counts, partial and scoped breakdowns, the guarantee's weight. [2]
-- Tree order: changes first with every sibling kept, pure authored order, families by weight, a dataset review untouched. [3]
-- The roster walk keeps every returned member's facts. [4]
 
 ### Cross-Repo References
 
 No cross-repo boundary is crossed by this file.
+
+- Four tree-order declarations cover sibling-preserving change order, authored order, family weights and partial-family ordering. The dataset-review/no-change-facts case is absent from the candidate. [3]
+- The two roster-walk cases retain returned member facts and union deliveries with newer family facts. [4]

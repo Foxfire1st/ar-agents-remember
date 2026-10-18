@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "925e08b5934b2a010386a90042979862fdc83e68",
+        "blob": "eedfb233fe4b10b4fff9859dc898b4e7f5210460",
         "content": "sha256:c9eb0d4a01f9a8fb6d480d81cfff589f1ac1aa2f03cc1dcbc478d85e7c203d70",
         "locator": {
           "kind": "symbol",
@@ -21,8 +21,8 @@
     },
     {
       "anchor": {
-        "blob": "925e08b5934b2a010386a90042979862fdc83e68",
-        "content": "sha256:e1b0479daed03aa463ba1b2cf87f7f185c1558cffc9de30e70db94afee3890e9",
+        "blob": "eedfb233fe4b10b4fff9859dc898b4e7f5210460",
+        "content": "sha256:6037b94949b8bff55e7342d1365aa1cfb96513d41e136d1653cbab8064d2ca65",
         "locator": {
           "kind": "symbol",
           "name": "ReviewTechnicalDetails"
@@ -33,7 +33,7 @@
       "origin": {
         "leaf": "260921-ICR-L48"
       },
-      "rationale": "Keeps the technical-details disclosure mounted but renders the knowledge, source, evidence and submission records only for the payload that answers the subject on screen.",
+      "rationale": "Keeps technical details mounted but renders comparison, selected knowledge revisions, source expansion, judgment identifiers and submission dispositions only for the current subject payload; pending/unavailable subjects show no previous-subject records.",
       "role": "presentation"
     }
   ],
@@ -91,15 +91,16 @@
       ]
     },
     "12": {
-      "note": "The open record facts filter authored fields and display detection signals and combined unresolved references.",
+      "note": "RecordFacts filters authoredFields out of knowledge.field_changes, renders other transitions through fieldValue, and combines only knowledge.unresolved and source.unresolved. It conditionally displays these references as reason content. Detection signals and legacy evidence/link unresolved collections are no longer read.\n\nAnchor: inclusive source ranges",
       "targets": [
         {
           "anchor": {
-            "blob": "925e08b5934b2a010386a90042979862fdc83e68",
-            "content": "sha256:31c006619c66898f7583658c2f1b6f3653814008f4f5e644aea7d729451af8da",
+            "blob": "eedfb233fe4b10b4fff9859dc898b4e7f5210460",
+            "content": "sha256:3796b25874f83f669b5d0842d529fa188c2280aa43493e818e673f79bd0510d7",
             "locator": {
-              "kind": "symbol",
-              "name": "RecordFacts"
+              "end": 56,
+              "kind": "line_range",
+              "start": 32
             }
           },
           "kind": "code"
@@ -107,15 +108,16 @@
       ]
     },
     "13": {
-      "note": "Main-page facts render lane/landed counts, staleness, submission reason and optional All changes callback.",
+      "note": "ReviewMainFacts renders RecordFacts and maps source.remaining through laneCountText using laneAttributionFacts(laneRead), or an explicit unknown state without a read. A nullish helper result retains payload value/reason wording. The paragraph is always marked as lane attribution. Non-current staleness keeps its existing test IDs; the submission block now says Read-only review with reason and next action. The optional All changes button invokes the supplied callback.\n\nAnchor: inclusive source ranges",
       "targets": [
         {
           "anchor": {
-            "blob": "925e08b5934b2a010386a90042979862fdc83e68",
-            "content": "sha256:862842592f5d9d34e76e9258a4e1237e2d4af789453a683c1e9c48d1cf610b47",
+            "blob": "eedfb233fe4b10b4fff9859dc898b4e7f5210460",
+            "content": "sha256:8b9b8599730a5dd94caaebd0d7b60551bad13034dd2de7ec6f342984f18a5fd8",
             "locator": {
-              "kind": "symbol",
-              "name": "ReviewMainFacts"
+              "end": 103,
+              "kind": "line_range",
+              "start": 57
             }
           },
           "kind": "code"
@@ -123,15 +125,28 @@
       ]
     },
     "14": {
-      "note": "Compact provenance identities remain in the technical disclosure, with pending state and paging outside it.",
+      "note": "ReviewTechnicalDetails keeps pending/unavailable text and supplied paging outside the always-mounted provenance disclosure. A present payload gates comparison/policy, retained revision groups, expansion reference/command, JudgmentIdentifiers and accepted dispositions with the publication-approval disclaimer. Its optional laneRead type member remains unused. JudgmentIdentifiers prints each judgment row's row_id/history_path and each proof's id, labels empty lists none returned, and explicitly labels an absent judgment pane as not supplied; it does not render judgment outcomes or legacy evidence/observation/assessment IDs.\n\nAnchor: inclusive source ranges",
       "targets": [
         {
           "anchor": {
-            "blob": "925e08b5934b2a010386a90042979862fdc83e68",
-            "content": "sha256:e1b0479daed03aa463ba1b2cf87f7f185c1558cffc9de30e70db94afee3890e9",
+            "blob": "eedfb233fe4b10b4fff9859dc898b4e7f5210460",
+            "content": "sha256:6037b94949b8bff55e7342d1365aa1cfb96513d41e136d1653cbab8064d2ca65",
             "locator": {
-              "kind": "symbol",
-              "name": "ReviewTechnicalDetails"
+              "end": 174,
+              "kind": "line_range",
+              "start": 117
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "eedfb233fe4b10b4fff9859dc898b4e7f5210460",
+            "content": "sha256:e498fd5981458be19f1e05a61579ef3e699d5a96df1b4e8a0afd323452bfa265",
+            "locator": {
+              "end": 115,
+              "kind": "line_range",
+              "start": 105
             }
           },
           "kind": "code"

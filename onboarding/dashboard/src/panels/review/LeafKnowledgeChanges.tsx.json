@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "32356a41b7d7fa401b64b90c8acadf53e35bcebb",
-        "content": "sha256:ce31c936c3b3c57d22b4a522e6d3379f06dd85d802bf16b677ae4681564b0df6",
+        "blob": "08853db6854ab477ec058722dfab0bf4a553bd04",
+        "content": "sha256:84bcb3943fac2b85657aa63f9896691af44ddfbe44c8136506f788694e71ff0c",
         "locator": {
           "kind": "symbol",
           "name": "ItemLine"
@@ -16,12 +16,12 @@
         "handoffEntry": "L43-C-recorded-effect-consumer-closures",
         "leaf": "260928-MIK-L43"
       },
-      "rationale": "The existing item line prints the delivered governing row effect after its disposition rather than fetching or synthesizing historical steps.",
+      "rationale": "The item line displays the supplied gate verdict, then appends a recorded effect only when the gate witness ID matches a delivered history row. It does not derive answered state from row presence or print the row disposition as the deciding state, and fetches no earlier attempts.",
       "role": "presentation"
     },
     {
       "anchor": {
-        "blob": "32356a41b7d7fa401b64b90c8acadf53e35bcebb",
+        "blob": "08853db6854ab477ec058722dfab0bf4a553bd04",
         "content": "sha256:0f7cc9ff6ccc6bb302ee5f060c61e6cd8bb4b05eca5fc67ac52269f941b5fe57",
         "locator": {
           "kind": "symbol",
@@ -39,8 +39,8 @@
     },
     {
       "anchor": {
-        "blob": "32356a41b7d7fa401b64b90c8acadf53e35bcebb",
-        "content": "sha256:4f5da64fc090439fd29f3356214a220f97ffc377e6c7496e0af78c42fa24ef30",
+        "blob": "08853db6854ab477ec058722dfab0bf4a553bd04",
+        "content": "sha256:7339bf8ab16af1b74dd867dc4fd44aa03533fb0a612047f7c2c44638aece94b3",
         "locator": {
           "kind": "symbol",
           "name": "LeafWorklistView"
@@ -57,7 +57,7 @@
     },
     {
       "anchor": {
-        "blob": "32356a41b7d7fa401b64b90c8acadf53e35bcebb",
+        "blob": "08853db6854ab477ec058722dfab0bf4a553bd04",
         "content": "sha256:6530a087d633c779ef1f914dc3c71602a9703a1e17bcb5ff479566155f3e60a1",
         "locator": {
           "kind": "symbol",
@@ -75,7 +75,7 @@
     },
     {
       "anchor": {
-        "blob": "32356a41b7d7fa401b64b90c8acadf53e35bcebb",
+        "blob": "08853db6854ab477ec058722dfab0bf4a553bd04",
         "content": "sha256:d5ca192c0df4fe807649d9d3a6c3789826ff211e88c3c26d6918acf1dfc6a958",
         "locator": {
           "kind": "symbol",
@@ -88,12 +88,12 @@
         "handoffEntry": "L43-C-recorded-effect-propagation",
         "leaf": "260928-MIK-L43"
       },
-      "rationale": "The governing row prints its delivered recorded effect or the historical omission label without fetching earlier attempts.",
+      "rationale": "Formats the supplied witness row own effect, or the historical effect-not-recorded label on a changed row missing one. ItemLine chooses that row by the gate-provided witness; this helper does not choose the governing row or infer an effect from disposition or reason.",
       "role": "presentation"
     },
     {
       "anchor": {
-        "blob": "32356a41b7d7fa401b64b90c8acadf53e35bcebb",
+        "blob": "08853db6854ab477ec058722dfab0bf4a553bd04",
         "content": "sha256:f5a77e73e62df9cb8bc6a88da904d8c7f6fbe28e5f3dc4be7d1ed0e047ef355e",
         "locator": {
           "kind": "symbol",
@@ -112,12 +112,12 @@
   ],
   "references": {
     "11": {
-      "note": "The module renders own-view worklist and subject items without patches; history remains recorded fact, not a UI disposition.\n\nAnchor: file",
+      "note": "The module renders own-view worklist and subject items without patches; history remains recorded fact, not a UI disposition.\n\nAnchor: whole file",
       "targets": [
         {
           "anchor": {
-            "blob": "7e8b489aa40c0446047743da29ba664e93a28402",
-            "content": "sha256:92bb5ea041a215a768f9010c32b33548808d767d2c0fca7efa67f75e5594a15e",
+            "blob": "08853db6854ab477ec058722dfab0bf4a553bd04",
+            "content": "sha256:a457c15f0fd46a72dcd8c6e05cd1a1e0afcb97fd1ae9ea96d2b4e3c93e967af3",
             "locator": {
               "kind": "file"
             }
@@ -127,14 +127,15 @@
       ]
     },
     "12": {
-      "note": "LeafWorklistView composes open status, degraded sides, worklist groups, currentness and gate linkage.\n\nAnchor: `LeafWorklistView`",
+      "note": "The own worklist view composes status, groups, currentness/linkage and marks a mismatched comparison worklist unbound before display.",
       "targets": [
         {
           "anchor": {
-            "blob": "7e8b489aa40c0446047743da29ba664e93a28402",
-            "content": "sha256:92bb5ea041a215a768f9010c32b33548808d767d2c0fca7efa67f75e5594a15e",
+            "blob": "08853db6854ab477ec058722dfab0bf4a553bd04",
+            "content": "sha256:7339bf8ab16af1b74dd867dc4fd44aa03533fb0a612047f7c2c44638aece94b3",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "LeafWorklistView"
             }
           },
           "kind": "code"
@@ -142,14 +143,15 @@
       ]
     },
     "13": {
-      "note": "ReadNotice exposes loading, not-converted and unavailable/recovery states as status content.\n\nAnchor: `ReadNotice`",
+      "note": "The read notice exposes pending, not-converted and unavailable/recovery states as open status.",
       "targets": [
         {
           "anchor": {
-            "blob": "7e8b489aa40c0446047743da29ba664e93a28402",
-            "content": "sha256:92bb5ea041a215a768f9010c32b33548808d767d2c0fca7efa67f75e5594a15e",
+            "blob": "08853db6854ab477ec058722dfab0bf4a553bd04",
+            "content": "sha256:52f261f24bbe391831c04a2059738411a5308c563b33ec33b024dfe7ed09e0f5",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "ReadNotice"
             }
           },
           "kind": "code"
@@ -157,29 +159,54 @@
       ]
     },
     "14": {
-      "note": "Status distinguishes absent source, complete bound item counts and partial/unbound reported items.\n\nAnchor: `worklistStatus`",
+      "note": "Status distinguishes absent, partial/unbound and complete work, and obtains open/all-answered text only from the gate-state display owner.",
       "targets": [
         {
           "anchor": {
-            "blob": "7e8b489aa40c0446047743da29ba664e93a28402",
-            "content": "sha256:92bb5ea041a215a768f9010c32b33548808d767d2c0fca7efa67f75e5594a15e",
+            "blob": "08853db6854ab477ec058722dfab0bf4a553bd04",
+            "content": "sha256:0f0ab210dcd73399957a39a740c974ab53a8d8c2a500e3a62e7a85077a929e29",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "worklistStatus"
             }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "08853db6854ab477ec058722dfab0bf4a553bd04",
+            "content": "sha256:f5a77e73e62df9cb8bc6a88da904d8c7f6fbe28e5f3dc4be7d1ed0e047ef355e",
+            "locator": {
+              "kind": "symbol",
+              "name": "completeWorklist"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "56195a2e284d1294417633b7b30442ecab0e76d7",
+            "content": "sha256:b6cae12b37082705efe22c3d1d54e49f22b82b6d811336befab66b2799d8c8fc",
+            "locator": {
+              "kind": "symbol",
+              "name": "worklistAnswer"
+            },
+            "path": "dashboard/src/panels/review/worklistState.ts"
           },
           "kind": "code"
         }
       ]
     },
     "16": {
-      "note": "Open currentness names non-current invariants not already represented in worklist items and their entry reasons.\n\nAnchor: `Currentness`",
+      "note": "Currentness exposes noncurrent records/entries not already named by worklist items.",
       "targets": [
         {
           "anchor": {
-            "blob": "7e8b489aa40c0446047743da29ba664e93a28402",
-            "content": "sha256:92bb5ea041a215a768f9010c32b33548808d767d2c0fca7efa67f75e5594a15e",
+            "blob": "08853db6854ab477ec058722dfab0bf4a553bd04",
+            "content": "sha256:7bd63e7063502a680285207fcf218319d9b807cf6bf9080111a25886be745924",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "Currentness"
             }
           },
           "kind": "code"
@@ -187,14 +214,15 @@
       ]
     },
     "17": {
-      "note": "Open unexplained groups preserve coverage state and link their paths to the comparison viewer.\n\nAnchor: `WorklistGroupsView`",
+      "note": "Open file groups preserve coverage, supplied answer state and their existing comparison-viewer callbacks.",
       "targets": [
         {
           "anchor": {
-            "blob": "7e8b489aa40c0446047743da29ba664e93a28402",
-            "content": "sha256:92bb5ea041a215a768f9010c32b33548808d767d2c0fca7efa67f75e5594a15e",
+            "blob": "08853db6854ab477ec058722dfab0bf4a553bd04",
+            "content": "sha256:4b0230171ee1ce269a6df5238b2ceab7fd629f49b47ebf68b2104e1d6d95e109",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "WorklistGroupsView"
             }
           },
           "kind": "code"
@@ -202,14 +230,26 @@
       ]
     },
     "18": {
-      "note": "Worklist groups and linkage remain recorded facts, with complete and incomplete measurement distinguished.\n\nAnchor: `WorklistGroupsView`; `GateLinkage`",
+      "note": "Linkage totals and incomplete work retain separate explicit states rather than inferred complete zero.",
       "targets": [
         {
           "anchor": {
-            "blob": "7e8b489aa40c0446047743da29ba664e93a28402",
-            "content": "sha256:92bb5ea041a215a768f9010c32b33548808d767d2c0fca7efa67f75e5594a15e",
+            "blob": "08853db6854ab477ec058722dfab0bf4a553bd04",
+            "content": "sha256:6530a087d633c779ef1f914dc3c71602a9703a1e17bcb5ff479566155f3e60a1",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "GateLinkage"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "08853db6854ab477ec058722dfab0bf4a553bd04",
+            "content": "sha256:5056053ab67b114b6eecd4203073b58a9b49843b921bcb80710fe498786f2909",
+            "locator": {
+              "kind": "symbol",
+              "name": "WorklistProblems"
             }
           },
           "kind": "code"
@@ -217,12 +257,12 @@
       ]
     },
     "22": {
-      "note": "One-line rendering of a worklist entry with facts and state",
+      "note": "Item lines display supplied gate verdicts; only an exact delivered witness-row match contributes its recorded effect.",
       "targets": [
         {
           "anchor": {
-            "blob": "7e8b489aa40c0446047743da29ba664e93a28402",
-            "content": "sha256:353fe3417b419084ae9f48f5b8726cb9482c329770509b50f36f23e2bd065d7f",
+            "blob": "08853db6854ab477ec058722dfab0bf4a553bd04",
+            "content": "sha256:84bcb3943fac2b85657aa63f9896691af44ddfbe44c8136506f788694e71ff0c",
             "locator": {
               "kind": "symbol",
               "name": "ItemLine"
@@ -232,13 +272,25 @@
         },
         {
           "anchor": {
-            "blob": "7e8b489aa40c0446047743da29ba664e93a28402",
-            "content": "sha256:725bfa4dd34d32b6b23898e90b40d22f7ceaaa1f5138242ca385d0bf6dc52c02",
+            "blob": "56195a2e284d1294417633b7b30442ecab0e76d7",
+            "content": "sha256:a2520a80520c2ef7d9288044de1c5b9b8f71a235720936a4f5f3a404b51d58d2",
             "locator": {
-              "end": 110,
-              "kind": "line_range",
-              "start": 94
-            }
+              "kind": "symbol",
+              "name": "itemAnswer"
+            },
+            "path": "dashboard/src/panels/review/worklistState.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "56195a2e284d1294417633b7b30442ecab0e76d7",
+            "content": "sha256:9033e7862fa1a6a74f12399aed6a1b5edb4e6025d8ccc0305de887ba4f388fdf",
+            "locator": {
+              "kind": "symbol",
+              "name": "itemAnswerText"
+            },
+            "path": "dashboard/src/panels/review/worklistState.ts"
           },
           "kind": "code"
         }
@@ -249,7 +301,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "32356a41b7d7fa401b64b90c8acadf53e35bcebb",
+            "blob": "08853db6854ab477ec058722dfab0bf4a553bd04",
             "content": "sha256:f5a77e73e62df9cb8bc6a88da904d8c7f6fbe28e5f3dc4be7d1ed0e047ef355e",
             "locator": {
               "kind": "symbol",
@@ -261,27 +313,15 @@
       ]
     },
     "24": {
-      "note": "Items about the selected record under a subject review",
+      "note": "Record worklist items filter by canonical subject identity and retain incomplete/empty distinctions.",
       "targets": [
         {
           "anchor": {
-            "blob": "32356a41b7d7fa401b64b90c8acadf53e35bcebb",
+            "blob": "08853db6854ab477ec058722dfab0bf4a553bd04",
             "content": "sha256:f2cea9f8906c8a1e3bead7947ab68ff9e226caacb38143b1aad019ec36330067",
             "locator": {
               "kind": "symbol",
               "name": "RecordWorklistItems"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "32356a41b7d7fa401b64b90c8acadf53e35bcebb",
-            "content": "sha256:b14f65c5cac21efd5c74ff9d97a7f9f6490d630c2c3918bf472c1f85b536dc6c",
-            "locator": {
-              "end": 319,
-              "kind": "line_range",
-              "start": 301
             }
           },
           "kind": "code"
@@ -293,7 +333,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "32356a41b7d7fa401b64b90c8acadf53e35bcebb",
+            "blob": "08853db6854ab477ec058722dfab0bf4a553bd04",
             "content": "sha256:0f7cc9ff6ccc6bb302ee5f060c61e6cd8bb4b05eca5fc67ac52269f941b5fe57",
             "locator": {
               "kind": "symbol",
@@ -305,27 +345,15 @@
       ]
     },
     "26": {
-      "note": "Grouped open worklist with status, currentness and linkage",
+      "note": "Open groups show current source facts and separately supplied gate answers without inferring a verdict from row presence.",
       "targets": [
         {
           "anchor": {
-            "blob": "32356a41b7d7fa401b64b90c8acadf53e35bcebb",
-            "content": "sha256:614debd5277b05b143801f0df215693fef7d12e663368c535f299c4588655765",
+            "blob": "08853db6854ab477ec058722dfab0bf4a553bd04",
+            "content": "sha256:4b0230171ee1ce269a6df5238b2ceab7fd629f49b47ebf68b2104e1d6d95e109",
             "locator": {
               "kind": "symbol",
               "name": "WorklistGroupsView"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "32356a41b7d7fa401b64b90c8acadf53e35bcebb",
-            "content": "sha256:14ad380db137a1e86893167502fdc75866dceaf954cf97d378a712a0356f3ecf",
-            "locator": {
-              "end": 354,
-              "kind": "line_range",
-              "start": 336
             }
           },
           "kind": "code"
@@ -333,11 +361,11 @@
       ]
     },
     "27": {
-      "note": "One-line gate linkage of changed hunks to recorded knowledge",
+      "note": "Gate linkage states complete versus partial measured totals, not semantic acceptance.",
       "targets": [
         {
           "anchor": {
-            "blob": "32356a41b7d7fa401b64b90c8acadf53e35bcebb",
+            "blob": "08853db6854ab477ec058722dfab0bf4a553bd04",
             "content": "sha256:6530a087d633c779ef1f914dc3c71602a9703a1e17bcb5ff479566155f3e60a1",
             "locator": {
               "kind": "symbol",
@@ -345,43 +373,19 @@
             }
           },
           "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "32356a41b7d7fa401b64b90c8acadf53e35bcebb",
-            "content": "sha256:d0129fdd6aa878908c87ea94167fbd8675a42ff6f6a03b66da191b3db34ee738",
-            "locator": {
-              "end": 445,
-              "kind": "line_range",
-              "start": 427
-            }
-          },
-          "kind": "code"
         }
       ]
     },
     "28": {
-      "note": "The worklist as its own view in the main page",
+      "note": "The main worklist view handles comparison mismatch as unbound and keeps source-change viewing separate.",
       "targets": [
         {
           "anchor": {
-            "blob": "32356a41b7d7fa401b64b90c8acadf53e35bcebb",
-            "content": "sha256:4f5da64fc090439fd29f3356214a220f97ffc377e6c7496e0af78c42fa24ef30",
+            "blob": "08853db6854ab477ec058722dfab0bf4a553bd04",
+            "content": "sha256:7339bf8ab16af1b74dd867dc4fd44aa03533fb0a612047f7c2c44638aece94b3",
             "locator": {
               "kind": "symbol",
               "name": "LeafWorklistView"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "32356a41b7d7fa401b64b90c8acadf53e35bcebb",
-            "content": "sha256:a835b7aa06e37b49cd2e84345d3358a64a9c2045748aaa269fdf0ffe46bee980",
-            "locator": {
-              "end": 466,
-              "kind": "line_range",
-              "start": 448
             }
           },
           "kind": "code"
@@ -389,12 +393,12 @@
       ]
     },
     "29": {
-      "note": "ItemLine prints the governing history row’s recorded effect after its disposition, reading the existing row document already delivered by the leaf-wide view.",
+      "note": "Only the gate-named witness row effect is appended to item answer text; row presence/disposition alone no longer decides the item state.",
       "targets": [
         {
           "anchor": {
-            "blob": "32356a41b7d7fa401b64b90c8acadf53e35bcebb",
-            "content": "sha256:ce31c936c3b3c57d22b4a522e6d3379f06dd85d802bf16b677ae4681564b0df6",
+            "blob": "08853db6854ab477ec058722dfab0bf4a553bd04",
+            "content": "sha256:84bcb3943fac2b85657aa63f9896691af44ddfbe44c8136506f788694e71ff0c",
             "locator": {
               "kind": "symbol",
               "name": "ItemLine"
@@ -404,13 +408,77 @@
         },
         {
           "anchor": {
-            "blob": "32356a41b7d7fa401b64b90c8acadf53e35bcebb",
-            "content": "sha256:27d35c45363cd40d6924653cadc67ede3c8dbe37526286d76538eddbe4482d59",
+            "blob": "08853db6854ab477ec058722dfab0bf4a553bd04",
+            "content": "sha256:d5ca192c0df4fe807649d9d3a6c3789826ff211e88c3c26d6918acf1dfc6a958",
             "locator": {
-              "end": 127,
-              "kind": "line_range",
-              "start": 79
+              "kind": "symbol",
+              "name": "rowEffect"
             }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "30": {
+      "note": "The shared display owner reads item_states only on a bound worklist and computes file/whole open counts only for complete, nonabsent work with no missing or undecided item verdict.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "56195a2e284d1294417633b7b30442ecab0e76d7",
+            "content": "sha256:a2520a80520c2ef7d9288044de1c5b9b8f71a235720936a4f5f3a404b51d58d2",
+            "locator": {
+              "kind": "symbol",
+              "name": "itemAnswer"
+            },
+            "path": "dashboard/src/panels/review/worklistState.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "56195a2e284d1294417633b7b30442ecab0e76d7",
+            "content": "sha256:9033e7862fa1a6a74f12399aed6a1b5edb4e6025d8ccc0305de887ba4f388fdf",
+            "locator": {
+              "kind": "symbol",
+              "name": "itemAnswerText"
+            },
+            "path": "dashboard/src/panels/review/worklistState.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "56195a2e284d1294417633b7b30442ecab0e76d7",
+            "content": "sha256:ca5c4bc18acdc0d7f814a9a9aa033a5641068b652c894592efc4037a4039afbd",
+            "locator": {
+              "kind": "symbol",
+              "name": "openCount"
+            },
+            "path": "dashboard/src/panels/review/worklistState.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "56195a2e284d1294417633b7b30442ecab0e76d7",
+            "content": "sha256:e8b555ef141b95afa0121c1d01ffb6e339004ee04006724a79ba0f07377045ab",
+            "locator": {
+              "kind": "symbol",
+              "name": "fileAnswer"
+            },
+            "path": "dashboard/src/panels/review/worklistState.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "56195a2e284d1294417633b7b30442ecab0e76d7",
+            "content": "sha256:b6cae12b37082705efe22c3d1d54e49f22b82b6d811336befab66b2799d8c8fc",
+            "locator": {
+              "kind": "symbol",
+              "name": "worklistAnswer"
+            },
+            "path": "dashboard/src/panels/review/worklistState.ts"
           },
           "kind": "code"
         }

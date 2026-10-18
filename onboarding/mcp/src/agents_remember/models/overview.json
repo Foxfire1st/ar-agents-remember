@@ -1463,12 +1463,12 @@
       ]
     },
     "19": {
-      "note": "**The new value module: the five-state union and the model with its own statement.**",
+      "note": "The current revision-selection value declares the four-state union compared/unresolved/added/removed and validates the respective pair-presence combinations; the earlier five-state account is historical.",
       "targets": [
         {
           "anchor": {
-            "blob": "6ef72398371f5f2860e6facde63443ade5055a34",
-            "content": "sha256:f22674f988da12cbe069f1d19733a1edc660f02981481c3a8ce2e23c5c94e87a",
+            "blob": "ce9297d93e2e12ddbd46a3b00289f9e9edcfb18c",
+            "content": "sha256:177b73af5f8bfb2a23efc8a5b450eee79012bc166644d63714091597afe876f8",
             "locator": {
               "kind": "symbol",
               "name": "RevisionSelectionState"
@@ -1479,8 +1479,8 @@
         },
         {
           "anchor": {
-            "blob": "6ef72398371f5f2860e6facde63443ade5055a34",
-            "content": "sha256:20d0caaa29ddeed4149843915c3866b9867af707b27905938a430d226d3c9b4d",
+            "blob": "ce9297d93e2e12ddbd46a3b00289f9e9edcfb18c",
+            "content": "sha256:1e1aa0171d4e2e47153eed53e61550742c4bff40b8062c7321e3722fc4c06614",
             "locator": {
               "kind": "symbol",
               "name": "ReviewRevisionSelection"
@@ -4342,6 +4342,91 @@
         }
       ]
     },
+    "320": {
+      "note": "The response requires judgment and retains knowledge/source identity without the removed supporting-record fields.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3a9fbebf751c8e0ce26280a3c2bd35bfe3302c8f",
+            "content": "sha256:0e006f842e6954082a9d752be51896858f6970f40ff39161b5d4046e191a8da0",
+            "locator": {
+              "kind": "symbol",
+              "name": "KnowledgeReviewPayload"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/review.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "321": {
+      "note": "Selected-subject history and membership rows are rendered in attempt order, with proof entries supplied separately and explicit none/unavailable states.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7915489e9b1bfd326b7927fa39dbc7d55826e3c4",
+            "content": "sha256:3d2ba7c9bb099ac54f2a31d2f629488067e277170ffdc26590526c969bd0ecfa",
+            "locator": {
+              "kind": "symbol",
+              "name": "review_judgment"
+            },
+            "path": "mcp/src/agents_remember/application/review_judgment.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "322": {
+      "note": "The regression asserts required judgment and absence of removed wire channels; this is source/assertion evidence, not a fresh test run.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ea4ef5d83ffe9733de18c20f0e1a405aaf633a41",
+            "content": "sha256:4039a372cb2e3f0ee9783826300476aa2b107fc7bc261b165462bb18de1cd7f8",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_wire_requires_judgment_and_has_no_retired_channels"
+            },
+            "path": "mcp/tests/test_knowledge_review_evidence_channels.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "323": {
+      "note": "Lifecycle assessment status partitions remain independently modeled; their existence does not restore the removed tree-review assessment display.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4fd1f27d3283052427f6944c13312ee2c3991752",
+            "content": "sha256:c973a0216267b57a66a30a0157ca64beb3b3c6b2e5c95f05740faf92c4332215",
+            "locator": {
+              "kind": "symbol",
+              "name": "SubjectAssessmentState"
+            },
+            "path": "mcp/src/agents_remember/models/lifecycles/review_assessment.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "324": {
+      "note": "Judgment rows exist exactly in rows state; proof facets/currentness are not run results.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "026fac6c48fdbd8d9b2e11fd869d715015c09ac7",
+            "content": "sha256:bb9abd73bae0fb7ef13b0aa8c0a0aff51795cb6c34e5be0d474229b5d92eb8f3",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewJudgmentPane"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/review_judgment.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
     "33": {
       "note": "The read response's page state and fields, re-read when MIK-R05 added `routeChain`.",
       "targets": [
@@ -4529,47 +4614,6 @@
               "name": "planned_item_open"
             },
             "path": "mcp/src/agents_remember/models/knowledge_files/planned.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "4": {
-      "note": "**The availability vocabulary, its five states and the validator that refuses a favourable default.**",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "794ec671b12610ad3e698d052473a9231bcd0574",
-            "content": "sha256:dafe017fda5c133ffcdc982c070c12de7eedc57930f07153e09db3295c2b788e",
-            "locator": {
-              "kind": "symbol",
-              "name": "ReviewRecordChannel"
-            },
-            "path": "mcp/src/agents_remember/models/knowledge/review_records.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "794ec671b12610ad3e698d052473a9231bcd0574",
-            "content": "sha256:00685c1ca1d8ea3fec1d2faae41ce43abc4ce1afbe7113967c104a33b4e48fe1",
-            "locator": {
-              "kind": "symbol",
-              "name": "ReviewRecordChannelState"
-            },
-            "path": "mcp/src/agents_remember/models/knowledge/review_records.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "794ec671b12610ad3e698d052473a9231bcd0574",
-            "content": "sha256:59a6ea927db104ff6cad27992d68134f0ae84529e2bf3f34d57c36affc4f6c8d",
-            "locator": {
-              "kind": "symbol",
-              "name": "ReviewRecordClassName"
-            },
-            "path": "mcp/src/agents_remember/models/knowledge/review_records.py"
           },
           "kind": "code"
         }
@@ -5148,48 +5192,6 @@
               "name": "LaneGateLinkage"
             },
             "path": "mcp/src/agents_remember/models/knowledge/review_lane.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "6": {
-      "note": "**The owner that resolves every channel, so the vocabulary has a producer and not only a shape.**",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "1791cff61676d47e0cd91e2991c9d1865db9c525",
-            "content": "sha256:739ccdcfda9e3d327794e7ec3076c85a7286115ba109a774a94a57c1303b00fa",
-            "locator": {
-              "kind": "symbol",
-              "name": "_COLLECTION_OWNERS"
-            },
-            "path": "mcp/src/agents_remember/application/review_evidence_records.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "07c5dd5a94d8b14a8d703da903c1d9cc166288a0",
-            "content": "sha256:af180c3535f9f4200d19acd15505c1fdf56bce9c72608d8a1fbf329a5451fae8",
-            "locator": {
-              "kind": "symbol",
-              "name": "_channel"
-            },
-            "path": "mcp/src/agents_remember/application/review_evidence_records.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "16e7c29f57b7814c6ee69615335aac14aa466a1e",
-            "content": "sha256:49fa3cf0ac3027b47390ff3a8dd6006b3745bfb24894142e0dbbba33a01c5f5d",
-            "locator": {
-              "end": 59,
-              "kind": "line_range",
-              "start": 59
-            },
-            "path": "mcp/src/agents_remember/application/review_evidence_records.py"
           },
           "kind": "code"
         }

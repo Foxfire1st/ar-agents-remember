@@ -116,16 +116,16 @@
       ]
     },
     "20": {
-      "note": "Anchor: Serving invokes the retained tree-child shutdown hook.",
+      "note": "Serving lifespan teardown invokes a supplied review_trees_shutdown hook through the startup-owned worker helper before canceling and draining background tasks.\n\nAnchor: inclusive source ranges",
       "targets": [
         {
           "anchor": {
-            "blob": "709320161c9744d9aa93d005a483faf721515e33",
-            "content": "sha256:d2930ed90cdde9d3410a7124d7f71a87752a8886850c36c59502065c71e6ca3e",
+            "blob": "a454ea6183379b1a887f489de261b2f5f8bd11ff",
+            "content": "sha256:932636da72413c7f73075e154a3110038c67686844a2e7780378ba0b94975207",
             "locator": {
-              "end": 191,
+              "end": 355,
               "kind": "line_range",
-              "start": 147
+              "start": 342
             },
             "path": "mcp/src/agents_remember/serving/_app_lifespan.py"
           },
@@ -247,6 +247,87 @@
               "kind": "line_range",
               "start": 162
             }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "31": {
+      "note": "ServingCollaborators and _ServingRuntime newly declare optional review_memory_root defaulting to None. ReviewMemoryRootPort is only a callable type alias. The projection stream route explicitly passes the runtime field to multiplex_review_memory. That helper skips root resolution for absent review identity, validates supplied selectors, resolves the port and reports missing adapter/root errors. The native worker enforces its own root-shape checks. These bodies do not prove the composition root's full leaf-admission policy.\n\nAnchor: inclusive source ranges",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "32a410bfe308b5f05ecfd3a7fca6dcae803271e5",
+            "content": "sha256:53efba79150ecf4558c1097ce70c27b115b9241158cbd9d0ae523197825caf8b",
+            "locator": {
+              "end": 214,
+              "kind": "line_range",
+              "start": 213
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "32a410bfe308b5f05ecfd3a7fca6dcae803271e5",
+            "content": "sha256:a11219c81209cbd64c641668f079906965f3b6c65b3d61d8867673d08a82ed38",
+            "locator": {
+              "end": 250,
+              "kind": "line_range",
+              "start": 249
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0c7b9ca2d4d5e35569c252b5d2decddec3a4bc33",
+            "content": "sha256:f92b92d77be9ed55e5392f8fe0651cff5d7e2dc1ec033cf0b70cdba03a989a9d",
+            "locator": {
+              "end": 21,
+              "kind": "line_range",
+              "start": 21
+            },
+            "path": "mcp/src/agents_remember/serving/review_memory_watch.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a0509af9d207b37ed234ce926f06d5bb4f1e7755",
+            "content": "sha256:53d161805b48cf2c11f407fd6938dc7ca26857e2622c818df5f2475147f9a188",
+            "locator": {
+              "end": 174,
+              "kind": "line_range",
+              "start": 161
+            },
+            "path": "mcp/src/agents_remember/serving/_app_routes.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0c7b9ca2d4d5e35569c252b5d2decddec3a4bc33",
+            "content": "sha256:837a64d6bb17f73ad233d08db0f72a1a9bf8b2b8efbb8d26ba161882bedb9f47",
+            "locator": {
+              "end": 230,
+              "kind": "line_range",
+              "start": 199
+            },
+            "path": "mcp/src/agents_remember/serving/review_memory_watch.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0c7b9ca2d4d5e35569c252b5d2decddec3a4bc33",
+            "content": "sha256:d9f2db673379acc58d534a3b18520ae6ad39b7de629a3dce884dcad4acf4abf6",
+            "locator": {
+              "end": 84,
+              "kind": "line_range",
+              "start": 53
+            },
+            "path": "mcp/src/agents_remember/serving/review_memory_watch.py"
           },
           "kind": "code"
         }

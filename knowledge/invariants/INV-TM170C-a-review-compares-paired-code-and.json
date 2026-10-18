@@ -1,0 +1,32 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake"
+    ],
+    "justification": "A future review adapter must not fabricate a missing knowledge half or turn unavailable/unselected knowledge into a favorable comparison."
+  },
+  "applicability": "The four-tree reviewer paired-review boundary chosen in MIK-R57@v2 appendix83/151 and rule6.",
+  "conditions": [
+    "A selected knowledge subject is compared only through resolved paired code/memory endpoints; source-only task context remains a distinct answer with no compared knowledge operand."
+  ],
+  "exclusions": [
+    "No claim that a task-context source review disappears, that legacy-unavailable means an empty converted tree, or that independent requests share one permanent snapshot."
+  ],
+  "id": "INV-TM170C",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "/home/firefox/projects/ar-coordination/tasks/agents-remember/260928_maintained-invariant-knowledge/notes/reports/worker/48060148-87d0-4e1e-ad2e-6f1fa353092d/role-launch/freeze05-builder-curator-handoff.md#producer-46"
+      ],
+      "path": "freeze11-r57-eight-prescribed-by-design-boundaries-01.json"
+    },
+    "handoffEntry": "MIK-R57@v2 by-design paired-review",
+    "leaf": "260928-MIK-L57",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "A review compares paired code and memory trees rather than inventing an unpaired knowledge judgment.",
+  "status": "proposed",
+  "supersedes": []
+}

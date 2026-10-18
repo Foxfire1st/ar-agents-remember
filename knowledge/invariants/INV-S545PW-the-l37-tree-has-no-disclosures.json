@@ -8,7 +8,8 @@
   "applicability": "Disclosure counts on the L37 review.",
   "conditions": [
     "No sidebar/page disclosures; at most 20 per main-page view (family, invariant, worklist with one full file open, after refresh); none holds rule-19 never-content; count independent of leaf size.",
-    "Appendix B groups with per-view maxima; report gives per-view/per-class numbers."
+    "Appendix B groups with per-view maxima; report gives per-view/per-class numbers.",
+    "Identifiers are drawn in one closed disclosure per group (a subject's judgment rows, its proofs), never per row, proof, file, card or member, so the count does not grow with the subject's rows or proofs."
   ],
   "exclusions": [
     "Per-file/per-item/per-card/per-member disclosures."
@@ -25,7 +26,7 @@
     "leaf": "260928-MIK-L86",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-invariant/v1",
   "statement": "The L37 tree has no disclosures and each captured main view stays under twenty, including an open full file.",
   "status": "proposed",

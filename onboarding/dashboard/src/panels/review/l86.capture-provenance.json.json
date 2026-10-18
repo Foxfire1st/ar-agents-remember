@@ -2,68 +2,17 @@
   "path": "dashboard/src/panels/review/l86.capture-provenance.json",
   "realizes": [],
   "references": {
-    "1": {
-      "note": "Producer command over shared clones\n\nAnchor: `command`",
+    "5": {
+      "note": "The current receipt preserves its explicit section names and declared capture custody; reading the metadata does not independently execute or validate any recorded run.",
       "targets": [
         {
           "anchor": {
-            "blob": "3aac54085059eb70617b791e500698be2e9cb529",
-            "content": "sha256:d4d06f3b24e9f0b28fa2f88e5b2000e91a894c1652c0e888b629164c1c1879d8",
+            "blob": "3c5edc8c5befaeafaa4d31acd31b61fa4d0a9730",
+            "content": "sha256:a0b165854e509ec74eb3237575d2b60632478712aeaafdd99e4c7ee46bd5a961",
             "locator": {
-              "end": 3,
+              "end": 202,
               "kind": "line_range",
               "start": 1
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "2": {
-      "note": "Scratch world with remapped comparison 5\n\nAnchor: `fixture`",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "3aac54085059eb70617b791e500698be2e9cb529",
-            "content": "sha256:02d1b3887e1788a749342c9db2d406b17339f2a82ec5b3220728ae395b2d55db",
-            "locator": {
-              "end": 7,
-              "kind": "line_range",
-              "start": 4
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "3": {
-      "note": "Selected changed family row\n\nAnchor: `selected_family`",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "3aac54085059eb70617b791e500698be2e9cb529",
-            "content": "sha256:a4b050359c84c9200b8e1693fc141b068f885de14ea5783dd40f7373db377094",
-            "locator": {
-              "end": 72,
-              "kind": "line_range",
-              "start": 68
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "4": {
-      "note": "Per-fixture route URLs with hashes and sizes\n\nAnchor: `responses`",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "3aac54085059eb70617b791e500698be2e9cb529",
-            "content": "sha256:e5f8e90dd423437081ebb2ccfc33bf04975da89590b68db62228d7b37f7b1a14",
-            "locator": {
-              "end": 124,
-              "kind": "line_range",
-              "start": 117
             }
           },
           "kind": "code"

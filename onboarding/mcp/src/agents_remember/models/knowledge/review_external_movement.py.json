@@ -7,7 +7,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7c3e3e7f80431fb4e5d19acf4d0892d98a9e0259",
+            "blob": "94c9a6b7b79b416099b0abfbe3817500775957cc",
             "content": "sha256:272bf50ae0cb5bbd249fe3b8ef1d8b6c9f9f7a09f4d41fe15af6c30602921b19",
             "locator": {
               "kind": "symbol",
@@ -23,24 +23,24 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7c3e3e7f80431fb4e5d19acf4d0892d98a9e0259",
+            "blob": "94c9a6b7b79b416099b0abfbe3817500775957cc",
             "content": "sha256:7112bdfe6ec6e049407e8802fc63e4457516927654f16016b075fbc61cf8e6bc",
             "locator": {
-              "end": 130,
+              "end": 128,
               "kind": "line_range",
-              "start": 123
+              "start": 121
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "7c3e3e7f80431fb4e5d19acf4d0892d98a9e0259",
+            "blob": "94c9a6b7b79b416099b0abfbe3817500775957cc",
             "content": "sha256:3ddbde3d9bdef3de9f349908ec2f1062ab75a723d2360fc3541456bb9eb59d35",
             "locator": {
-              "end": 183,
+              "end": 181,
               "kind": "line_range",
-              "start": 133
+              "start": 131
             }
           },
           "kind": "code"
@@ -48,15 +48,29 @@
       ]
     },
     "11": {
-      "note": "**The matrix these labels come from, and the recovery each row names.**",
+      "note": "The support matrix retains recovery/documentation rows for cherry-pick and revert alongside observed shapes; its broader row type is not the four-member wire transition union.\n\nAnchor: Matrix row type and complete recovery table",
       "targets": [
         {
           "anchor": {
-            "blob": "43308beac4e5f22c7ccb088cb8f22015b2117974",
-            "content": "sha256:85312f9e8779d274e34d7f1ba9c08639079d754b4921d7a1dd099a562312e697",
+            "blob": "29ed714893983a0e886cebec6a8da231dc255ff8",
+            "content": "sha256:c7a31d7d0587330e627c7630bd3894720b0229a54edd38d9bade724840409a8b",
             "locator": {
-              "kind": "symbol",
-              "name": "GIT_TRANSITION_SUPPORT"
+              "end": 109,
+              "kind": "line_range",
+              "start": 94
+            },
+            "path": "mcp/src/agents_remember/application/review_external_git_movement.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "29ed714893983a0e886cebec6a8da231dc255ff8",
+            "content": "sha256:b517a05bca1bc1d32b5222d737a94039ae5ae247be0f734701ebd59080b8bc38",
+            "locator": {
+              "end": 203,
+              "kind": "line_range",
+              "start": 115
             },
             "path": "mcp/src/agents_remember/application/review_external_git_movement.py"
           },
@@ -65,12 +79,12 @@
       ]
     },
     "12": {
-      "note": "**The producer that publishes this value from what the repository shows.**",
+      "note": "The optional live-review entry point delegates to contract measurement and returns no boundary report for absent enclosure, closed leaf or non-live trees.",
       "targets": [
         {
           "anchor": {
-            "blob": "43308beac4e5f22c7ccb088cb8f22015b2117974",
-            "content": "sha256:ac10d2ef059faf48c7ca8add41eb3c75a7bb99dda49961ae448d5ccab2f4bfee",
+            "blob": "29ed714893983a0e886cebec6a8da231dc255ff8",
+            "content": "sha256:8b8d065dfdc9ae5b35c45ab235479a6adaf8b021a4a6d717992ce35e2e70bb99",
             "locator": {
               "kind": "symbol",
               "name": "external_git_movement"
@@ -86,7 +100,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "091ddadd2d4f4e30e71f798c050ea011606bc638",
+            "blob": "29ed714893983a0e886cebec6a8da231dc255ff8",
             "content": "sha256:74120cde5631dfc9547be309a8bc107ffff02f5d431e39260e1bfd58e6657ccc",
             "locator": {
               "kind": "symbol",
@@ -99,15 +113,16 @@
       ]
     },
     "14": {
-      "note": "**The payload field this value travels on, and the re-export that keeps its import site.**",
+      "note": "The payload carries the optional movement value, imports and publicly exports its type, whose own constructor lives in the focused model.\n\nAnchor: Payload field and public type ownership",
       "targets": [
         {
           "anchor": {
-            "blob": "f9105a09d9fdee4eeed9ab2b715723940337949e",
+            "blob": "3a9fbebf751c8e0ce26280a3c2bd35bfe3302c8f",
             "content": "sha256:4b81dce1ffe23b560df4d6b969cbceee7210a18302fc57a2096645f66819e782",
             "locator": {
-              "kind": "symbol",
-              "name": "external_git_movement"
+              "end": 578,
+              "kind": "line_range",
+              "start": 578
             },
             "path": "mcp/src/agents_remember/models/knowledge/review.py"
           },
@@ -115,11 +130,38 @@
         },
         {
           "anchor": {
-            "blob": "e4be1bf3bf9b2ecdacf433ad84e2a6113f96873a",
-            "content": "sha256:344eb3143c693eee314cb20205e3d9f558eaefd7e0cf79cfd57ba03c071ffc43",
+            "blob": "3a9fbebf751c8e0ce26280a3c2bd35bfe3302c8f",
+            "content": "sha256:c41dcf6558e94fd909f944fa24107a9674f3a1025377cb485df85152e5f1c605",
             "locator": {
-              "kind": "symbol",
-              "name": "ExternalGitMovement"
+              "end": 21,
+              "kind": "line_range",
+              "start": 21
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/review.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3a9fbebf751c8e0ce26280a3c2bd35bfe3302c8f",
+            "content": "sha256:1da4715cc524823e0d5a161c96f379727d4cc35e17e708025eafff04590b510c",
+            "locator": {
+              "end": 99,
+              "kind": "line_range",
+              "start": 56
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/review.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "94c9a6b7b79b416099b0abfbe3817500775957cc",
+            "content": "sha256:272bf50ae0cb5bbd249fe3b8ef1d8b6c9f9f7a09f4d41fe15af6c30602921b19",
+            "locator": {
+              "end": 181,
+              "kind": "line_range",
+              "start": 68
             }
           },
           "kind": "code"
@@ -127,32 +169,32 @@
       ]
     },
     "15": {
-      "note": "The payload module's own `__all__` entry for the value.",
+      "note": "The payload module explicitly publishes ExternalGitMovement in its own export declaration.",
       "targets": [
         {
           "anchor": {
-            "blob": "e4be1bf3bf9b2ecdacf433ad84e2a6113f96873a",
-            "content": "sha256:344eb3143c693eee314cb20205e3d9f558eaefd7e0cf79cfd57ba03c071ffc43",
+            "blob": "3a9fbebf751c8e0ce26280a3c2bd35bfe3302c8f",
+            "content": "sha256:1da4715cc524823e0d5a161c96f379727d4cc35e17e708025eafff04590b510c",
             "locator": {
               "kind": "symbol",
-              "name": "ExternalGitMovement"
-            }
+              "name": "__all__"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/review.py"
           },
           "kind": "code"
         }
       ]
     },
     "16": {
-      "note": "**The read path that carries the value from the measurement owner to the payload.**\n\nAnchor: `external_git_movement`",
+      "note": "Subject-review composition calls the measurement owner and carries its optional result onto the payload.",
       "targets": [
         {
           "anchor": {
-            "blob": "75a68c3874ea545bd49e863046a120e320587404",
-            "content": "sha256:e3471e65b0ce0e4ce628d9197af00f1677f97c464839ede36eef006736e5a0ac",
+            "blob": "ac739bfed6942a8a7b701200421aa16e48d35463",
+            "content": "sha256:47fb36bd3b80dcd4fa28db9cad57e12495004dbe4f20c91814d5c7d8d56bf80c",
             "locator": {
-              "end": 642,
-              "kind": "line_range",
-              "start": 400
+              "kind": "symbol",
+              "name": "compose_review"
             },
             "path": "mcp/src/agents_remember/application/knowledge_review.py"
           },
@@ -161,16 +203,15 @@
       ]
     },
     "17": {
-      "note": "The second review boundary that publishes the same value on the task-context path.\n\nAnchor: `external_git_movement`",
+      "note": "Task-context composition calls the same measurement owner and carries its optional result, not a separately inferred movement.",
       "targets": [
         {
           "anchor": {
-            "blob": "2e07decd2e1af9974e5873e074771ae1745d4634",
-            "content": "sha256:a1e9951a80e3c0599f4087957acc15fdd6975af780628bdc7b4f330a9c65845d",
+            "blob": "3116530c1e9636c4f762f40648118c9afafb628f",
+            "content": "sha256:48edad60b732f6133cf448177947d10d53d3162ca244a6c606355fa84679ec76",
             "locator": {
-              "end": 191,
-              "kind": "line_range",
-              "start": 93
+              "kind": "symbol",
+              "name": "task_context_review"
             },
             "path": "mcp/src/agents_remember/application/review_task_context.py"
           },
@@ -225,16 +266,16 @@
       ]
     },
     "2": {
-      "note": "The shared bounds, the base model and the state vocabulary this value reuses.\n\nAnchor: `ReviewSyncMovementState`; `KnowledgeModel`",
+      "note": "The shared bounds, the base model and the state vocabulary this value reuses.\n\nAnchor: Shared imports",
       "targets": [
         {
           "anchor": {
-            "blob": "e4be1bf3bf9b2ecdacf433ad84e2a6113f96873a",
-            "content": "sha256:288fe7846fe9ca8b2f6eee7a89a3efb34527ef154573bb2ad2322f99da875394",
+            "blob": "94c9a6b7b79b416099b0abfbe3817500775957cc",
+            "content": "sha256:4831150a472c7ea6563f838cdc4ba7bba0b4458a8edcd7ca83295b0d68b8b522",
             "locator": {
-              "end": 58,
+              "end": 27,
               "kind": "line_range",
-              "start": 45
+              "start": 19
             }
           },
           "kind": "code"
@@ -242,12 +283,12 @@
       ]
     },
     "20": {
-      "note": "**The transition vocabulary, whose first member `unchanged` is the measured absence of a transition rather than an event.**",
+      "note": "The four declared transition shapes include unchanged as the non-event spelling; cherry-pick/revert are removed.",
       "targets": [
         {
           "anchor": {
-            "blob": "7c3e3e7f80431fb4e5d19acf4d0892d98a9e0259",
-            "content": "sha256:658ffdf72709b07c7b03af8fb4a8e4c5d5b644fa81ef680bbc4a9a79d52f0a31",
+            "blob": "94c9a6b7b79b416099b0abfbe3817500775957cc",
+            "content": "sha256:4946af29b807d5f372341733c6f5b6e6c07c0274e9d319cc70cf3744fd9c44a6",
             "locator": {
               "kind": "symbol",
               "name": "ExternalGitTransition"
@@ -258,11 +299,11 @@
       ]
     },
     "21": {
-      "note": "**Whether this system reconciles a transition at all, earned by the one recovery it performs.**",
+      "note": "The exported reconciliation vocabulary is supported/unsupported; choosing a value does not execute recovery.",
       "targets": [
         {
           "anchor": {
-            "blob": "7c3e3e7f80431fb4e5d19acf4d0892d98a9e0259",
+            "blob": "94c9a6b7b79b416099b0abfbe3817500775957cc",
             "content": "sha256:82b5ea0842c95b5906a0cc6c3d890f950b1456a8859eb39c7398ff40153da081",
             "locator": {
               "kind": "symbol",
@@ -278,7 +319,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7c3e3e7f80431fb4e5d19acf4d0892d98a9e0259",
+            "blob": "94c9a6b7b79b416099b0abfbe3817500775957cc",
             "content": "sha256:b649e261489dd2dded20a3a02faf824bf1c4186787e106ddb4e7472f6ef1bda2",
             "locator": {
               "kind": "symbol",
@@ -294,7 +335,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7c3e3e7f80431fb4e5d19acf4d0892d98a9e0259",
+            "blob": "94c9a6b7b79b416099b0abfbe3817500775957cc",
             "content": "sha256:d8bbb27524d6b0bc8d9fafc226626a9eb07ad5727401226ad4c879d748ae94b4",
             "locator": {
               "kind": "symbol",
@@ -310,7 +351,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7c3e3e7f80431fb4e5d19acf4d0892d98a9e0259",
+            "blob": "94c9a6b7b79b416099b0abfbe3817500775957cc",
             "content": "sha256:272bf50ae0cb5bbd249fe3b8ef1d8b6c9f9f7a09f4d41fe15af6c30602921b19",
             "locator": {
               "kind": "symbol",
@@ -322,11 +363,11 @@
       ]
     },
     "25": {
-      "note": "**The `after` validator that refuses every false shape — state against replaced identities, absence against reason, and `generation_readable` against `unavailable`.**",
+      "note": "Constructor guards couple stale and moved identities, absence and reasons, constrain unavailable readability in one direction, and keep unchanged exclusive.",
       "targets": [
         {
           "anchor": {
-            "blob": "7c3e3e7f80431fb4e5d19acf4d0892d98a9e0259",
+            "blob": "94c9a6b7b79b416099b0abfbe3817500775957cc",
             "content": "sha256:6687d73734d00cc7aabf371f3330f0bede14a7c69c2d963fb5f9d778fb79a440",
             "locator": {
               "kind": "symbol",
@@ -342,12 +383,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7c3e3e7f80431fb4e5d19acf4d0892d98a9e0259",
+            "blob": "94c9a6b7b79b416099b0abfbe3817500775957cc",
             "content": "sha256:a95fe7dfbcc9f91b986fbf7ff4674e73557fa465c9b385d281e49bf0bf44dae3",
             "locator": {
-              "end": 100,
+              "end": 98,
               "kind": "line_range",
-              "start": 90
+              "start": 88
             }
           },
           "kind": "code"
@@ -359,7 +400,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7c3e3e7f80431fb4e5d19acf4d0892d98a9e0259",
+            "blob": "94c9a6b7b79b416099b0abfbe3817500775957cc",
             "content": "sha256:a545b77d5334b9d977ede385b4777abfb18ec72c1344a5d67377ed15997ad398",
             "locator": {
               "kind": "symbol",
@@ -371,12 +412,12 @@
       ]
     },
     "4": {
-      "note": "Transitions describe measured shapes, with unchanged reserved for an untouched complete observation.",
+      "note": "The transition declaration now admits unchanged, ordinary-append, rebase and branch-switch, not cherry-pick/revert.",
       "targets": [
         {
           "anchor": {
-            "blob": "7c3e3e7f80431fb4e5d19acf4d0892d98a9e0259",
-            "content": "sha256:658ffdf72709b07c7b03af8fb4a8e4c5d5b644fa81ef680bbc4a9a79d52f0a31",
+            "blob": "94c9a6b7b79b416099b0abfbe3817500775957cc",
+            "content": "sha256:4946af29b807d5f372341733c6f5b6e6c07c0274e9d319cc70cf3744fd9c44a6",
             "locator": {
               "kind": "symbol",
               "name": "ExternalGitTransition"
@@ -391,7 +432,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7c3e3e7f80431fb4e5d19acf4d0892d98a9e0259",
+            "blob": "94c9a6b7b79b416099b0abfbe3817500775957cc",
             "content": "sha256:82b5ea0842c95b5906a0cc6c3d890f950b1456a8859eb39c7398ff40153da081",
             "locator": {
               "kind": "symbol",
@@ -407,7 +448,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7c3e3e7f80431fb4e5d19acf4d0892d98a9e0259",
+            "blob": "94c9a6b7b79b416099b0abfbe3817500775957cc",
             "content": "sha256:b649e261489dd2dded20a3a02faf824bf1c4186787e106ddb4e7472f6ef1bda2",
             "locator": {
               "kind": "symbol",
@@ -423,7 +464,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7c3e3e7f80431fb4e5d19acf4d0892d98a9e0259",
+            "blob": "94c9a6b7b79b416099b0abfbe3817500775957cc",
             "content": "sha256:d8bbb27524d6b0bc8d9fafc226626a9eb07ad5727401226ad4c879d748ae94b4",
             "locator": {
               "kind": "symbol",
@@ -439,7 +480,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7c3e3e7f80431fb4e5d19acf4d0892d98a9e0259",
+            "blob": "94c9a6b7b79b416099b0abfbe3817500775957cc",
             "content": "sha256:272bf50ae0cb5bbd249fe3b8ef1d8b6c9f9f7a09f4d41fe15af6c30602921b19",
             "locator": {
               "kind": "symbol",
@@ -451,26 +492,16 @@
       ]
     },
     "9": {
-      "note": "The field set, with `observed_*` present only for the channels that were read.",
+      "note": "The field set declares optional pattern-validated observed branch identities and a nullable bounded reason; those declarations do not perform I/O or establish observed-channel completeness.\n\nAnchor: Declared movement fields",
       "targets": [
         {
           "anchor": {
-            "blob": "7c3e3e7f80431fb4e5d19acf4d0892d98a9e0259",
-            "content": "sha256:a0ea97f19b1ed2e66d8b6a9b77ba235d05909ff1a2d51877a11556547b11fd91",
+            "blob": "94c9a6b7b79b416099b0abfbe3817500775957cc",
+            "content": "sha256:228159eba67906be2301083128bc19a5f1eeadaecc90c6c5423cd1003d330362",
             "locator": {
-              "kind": "symbol",
-              "name": "observed_code_work_branch_head"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "7c3e3e7f80431fb4e5d19acf4d0892d98a9e0259",
-            "content": "sha256:d99b1f6f4297dcf57bd89d32fe0fb07d556a37f01a8dec64eaec4f419ea82007",
-            "locator": {
-              "kind": "symbol",
-              "name": "reason"
+              "end": 118,
+              "kind": "line_range",
+              "start": 94
             }
           },
           "kind": "code"

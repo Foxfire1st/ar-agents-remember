@@ -1,0 +1,24 @@
+{
+  "path": "dashboard/src/panels/changeset/reviewChangeSet.test.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Synthetic lane/worklist verifies no-invariant attribution independently of answered/1-open work, withholding answer marks for incomplete, absent or other-tree worklists. It does not compute classification.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "08ac9629f8fb175a93cc6283cddc372189246d01",
+            "content": "sha256:f5409fd00c6b90bff7ad4ab66acfe9bfb2b4c2a0a61e6d2a804ebaf7f209a36a",
+            "locator": {
+              "end": 46,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

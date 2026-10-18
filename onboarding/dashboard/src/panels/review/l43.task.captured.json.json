@@ -2,15 +2,17 @@
   "path": "dashboard/src/panels/review/l43.task.captured.json",
   "realizes": [],
   "references": {
-    "1": {
-      "note": "The captured body preserves its response state and comparison-bound facts.",
+    "2": {
+      "note": "The current retained JSON input supplies the literal identities, response states and populations summarized above; these are fixture facts, not live project knowledge or fresh execution evidence.",
       "targets": [
         {
           "anchor": {
-            "blob": "27311b07e3415c93396bc1528fbdc54d42e7ccf3",
-            "content": "sha256:e0f58eafb8052cbabb31b3df956c1da7baab253ead406ff4ddb1cd0ba407de52",
+            "blob": "d824f7d15dda498148ac9644b7887e2fe79c7e0e",
+            "content": "sha256:d738eec2f174733e2db2fa0d63bc51bbb29125c38fc2d80e120c650b2b84b210",
             "locator": {
-              "kind": "file"
+              "end": 1,
+              "kind": "line_range",
+              "start": 1
             }
           },
           "kind": "code"

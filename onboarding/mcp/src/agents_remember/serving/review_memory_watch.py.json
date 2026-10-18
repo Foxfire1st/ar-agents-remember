@@ -1,0 +1,153 @@
+{
+  "path": "mcp/src/agents_remember/serving/review_memory_watch.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Only an explicitly selected, admitted review connection receives a watch; failures retain the ordinary stream.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0c7b9ca2d4d5e35569c252b5d2decddec3a4bc33",
+            "content": "sha256:837a64d6bb17f73ad233d08db0f72a1a9bf8b2b8efbb8d26ba161882bedb9f47",
+            "locator": {
+              "kind": "symbol",
+              "name": "multiplex_review_memory"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Cancellation waits for root-admission completion.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0c7b9ca2d4d5e35569c252b5d2decddec3a4bc33",
+            "content": "sha256:4fb7a6d38f9c9c2f31d3c121ed8132e1b33db7e4aa1c2f893ee044d9b0581d70",
+            "locator": {
+              "kind": "symbol",
+              "name": "_resolve_root"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Generated/cache/editor spellings are excluded from native watch input.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0c7b9ca2d4d5e35569c252b5d2decddec3a4bc33",
+            "content": "sha256:d8ea71cf421408fd13a245353ba4306fc3b8eb987c03dba3e305979765380f7f",
+            "locator": {
+              "kind": "symbol",
+              "name": "_admitted"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Directory enumeration does not follow symlink directories.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0c7b9ca2d4d5e35569c252b5d2decddec3a4bc33",
+            "content": "sha256:3d19db367b1149b4cd80340e854f8714107d81590053110f44efe3ee9f28e351",
+            "locator": {
+              "kind": "symbol",
+              "name": "_directories"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Nonrecursive native handles are installed and event-reconciled with replacement-before-retirement ordering.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0c7b9ca2d4d5e35569c252b5d2decddec3a4bc33",
+            "content": "sha256:d9f2db673379acc58d534a3b18520ae6ad39b7de629a3dce884dcad4acf4abf6",
+            "locator": {
+              "kind": "symbol",
+              "name": "_native_worker"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The native wait uses a zero timeout and no filesystem polling loop.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0c7b9ca2d4d5e35569c252b5d2decddec3a4bc33",
+            "content": "sha256:0594a51bfb700b3743ca9c3034047bebd109cfef7ea9668adb2bf32636dc707b",
+            "locator": {
+              "kind": "symbol",
+              "name": "_native_changes"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "Readiness is separate from coalesced updates; revisions are connection-local and close joins the worker.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0c7b9ca2d4d5e35569c252b5d2decddec3a4bc33",
+            "content": "sha256:c5e0c9278dd3b314684bc0023270436c0818bfc3524f44d19c3df52b91bcfd61",
+            "locator": {
+              "kind": "symbol",
+              "name": "_memory_events"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The source regression queues a genuine native edit during registration and asserts distinct baseline/update events.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5a6589b8799d54e15d7fd0e0c8df3b818bdce528",
+            "content": "sha256:cae448067041841627413c6e473395097692755453ef31185af116c6191f155a",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_change_during_registration_is_not_swallowed_by_baseline"
+            },
+            "path": "mcp/tests/test_review_memory_watch.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "9": {
+      "note": "The source HTTP-disconnect regression requires worker exit before serving shutdown.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5a6589b8799d54e15d7fd0e0c8df3b818bdce528",
+            "content": "sha256:18ad055ac80e481a4935e35b34c73e51efcb3a2491627c5ed481148ab3b08565",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_real_http_disconnect_retires_native_watch_before_server_shutdown"
+            },
+            "path": "mcp/tests/test_review_memory_watch.py"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

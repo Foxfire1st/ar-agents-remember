@@ -35,7 +35,7 @@
   `entries_at_path` and a directory's with `entries_in_directory` (the files directly in it only), and adds
   `_directory_summary`: each immediate child holding knowledge with its live entry count, and
   `subtree: {entries, view: "subtree"}`. The full recursive list is the `subtree` view (`subtree.py`), paged
-  through the shared continuation. At the root the remaining size is the root onboarding prose itself.
+  through the shared continuation. Path-summary prose is clipped to at most 64 KiB of UTF-8, without an incomplete trailing codepoint; `truncated` and `fullSize` report the cut and complete encoded size. `path_prose` explicitly reads the whole text at the same selection.
 - **Live only.** `_live_entries` drops entries whose invariant is retired or missing, and `_entry_counts`
   counts through `live_entry_paths_under`, so the explorer, the summary and the subtree agree.
 - **Families.** `_families` takes each invariant's families (live only), then the families routed over the
@@ -72,6 +72,10 @@
 
 No additional work is asserted by this card.
 
+### Bounded prose and deeper-folder accounting
+
+`_summary_prose` bounds only the returned text, not the source read or transient encoding allocation. Its size is UTF-8 bytes, not characters. `_directory_summary.deeperEntries` counts deeper live-entry occurrences, one per entry the index query returns without DISTINCT, so two live entries in one file contribute two even though they name one path; the client can then explain that deeper families are listed in their own folders. Direct-folder entry selection and the paged recursive subtree remain unchanged.
+
 ## Evidence
 
 ### Docs References
@@ -83,6 +87,11 @@ code and memory repositories, so they are named here and not cited as rows.
 No configured live documentation source was available for this pass.
 
 ### Repo-Internal References
+
+- The summary returns the UTF-8 prefix, a truncation flag and full byte size. [19]
+- Whole onboarding prose is loaded only through the explicitly selected view. [20]
+- Deeper live-entry paths are counted separately from the own-level view. [21]
+
 
 - The explorer level delegates to the one tree-coverage owner. [13]
 - The one pathname inventory, presence marks and coverage owner. [14]

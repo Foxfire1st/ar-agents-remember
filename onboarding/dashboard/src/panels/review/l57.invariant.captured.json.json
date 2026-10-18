@@ -1,0 +1,24 @@
+{
+  "path": "dashboard/src/panels/review/l57.invariant.captured.json",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The retained source supplies the facts and declared boundaries described above.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "71b5a3105ef2018e122a0f8a5178c8242fc10f3c",
+            "content": "sha256:d9ab4558bb99695b37f50350aa70cc668718ea909260232008c2f001d5324f5c",
+            "locator": {
+              "end": 1,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

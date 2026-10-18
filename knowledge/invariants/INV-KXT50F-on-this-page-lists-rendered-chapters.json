@@ -9,7 +9,8 @@
   "applicability": "The 'On this page' aside on a wide screen.",
   "conditions": [
     "It lists the text's chapters and the record sections with their counts and marks the current chapter.",
-    "Cited code takes its place while it is open."
+    "Cited code takes its place while it is open.",
+    "The list follows the rendered pane, including chapters a whole-prose replacement adds in place; a ready pane that renders no chapter lists none."
   ],
   "exclusions": [
     "Citation display, which rule 9 owns."
@@ -26,7 +27,7 @@
     "leaf": "260928-MIK-L79",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-invariant/v1",
   "statement": "On this page lists rendered chapters and record sections, marks the current chapter and yields its pane to cited code.",
   "status": "proposed",

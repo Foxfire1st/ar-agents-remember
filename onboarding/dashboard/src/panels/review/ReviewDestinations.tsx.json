@@ -1,0 +1,39 @@
+{
+  "path": "dashboard/src/panels/review/ReviewDestinations.tsx",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Comparison-bound navigation destinations: `laneCounts` owns the described branch.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b5e4040a72d349d97a84add749bff36f6a104c5f",
+            "content": "sha256:1aa52fc3e95bbf014c51d282ed28e20dde633ac6806996415917aab80e7dca8f",
+            "locator": {
+              "kind": "symbol",
+              "name": "laneCounts"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Comparison-bound navigation destinations: `ReviewDestinations` owns the described branch.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b5e4040a72d349d97a84add749bff36f6a104c5f",
+            "content": "sha256:7e81d26de66108ee74142153bfce952b39b42d75974310043c87ac3af12cab33",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewDestinations"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

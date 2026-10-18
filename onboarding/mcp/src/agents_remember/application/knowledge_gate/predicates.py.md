@@ -46,9 +46,17 @@ and target key in K_C: while the removed target's link remains, the remedy is to
 link through the writer. Once K_C no longer holds that target, the predicate returns no open reason.
 
 
+### Verdict and witness projection
+
+`item_verdict` calls `item_open_reason` and carries its actual row ID, or `counted change` when the predicate answers without history. `_witness_row` follows covered-hunk row subjects, uncovered onboarding-trace subjects and family-route subjects. An incidental row is not credited when the same predicate also answers with `history=None`. A reason gives `open`; a `GitReadFailed` gives `undecided`, distinct from the mandatory gate run’s incomplete handling. The reviewer consumes these values and neither waives nor satisfies an item.
+
 ## Evidence
 
 ### Repo-Internal References
+
+- Display verdicts reuse the registered gate predicate, including the history-free witness check. [7]
+- The row lookup follows the kind’s actual history subject. [8]
+
 
 - Row-own closed provenance and source/count currency. [1]
 - Covered versus uncovered unexplained admission. [2]

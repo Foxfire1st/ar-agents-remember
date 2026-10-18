@@ -1,0 +1,24 @@
+{
+  "path": "mcp/tests/test_review_record_presence.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Unit synthetic EmptyIndex isolates narrow own-ID parse-failure rule: unrelated INV-OTHER0 failure does not hide target, matching INV-TARGET filename makes unknown with its own path. Production integration counterpart elsewhere is not inferred.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "66fab3820f88d269bbb9fa85f92b69af14449d0b",
+            "content": "sha256:70014b5062d1044e8131422d225f3ec16494a179b9db95ca141187471affc1ee",
+            "locator": {
+              "end": 40,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

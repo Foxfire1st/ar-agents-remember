@@ -261,29 +261,15 @@
       ]
     },
     "20": {
-      "note": "The dispatch, and the `intent-review` view marker it selects.\n\nAnchor: Actual target dispatch and conditional review takeover",
+      "note": "The actual takeover dispatch selects intent-review versus changeset from target.review and forwards optional subject/history.",
       "targets": [
         {
           "anchor": {
-            "blob": "7c23fc026184269dcb443c859e6aed12dcc0b0ac",
-            "content": "sha256:2d691199e9ba8d902f25e36d5dc9f6d6d329d9b9326007511214b4eac5da4649",
+            "blob": "9dffc6e41bb9701b7a33ff1b82335a087c154484",
+            "content": "sha256:f25b2b3c3741760705bda321539bf5b1f56bb7804f74be4a246497ac98eb7a86",
             "locator": {
-              "end": 493,
-              "kind": "line_range",
-              "start": 487
-            },
-            "path": "dashboard/src/cockpit/Cockpit.tsx"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "7c23fc026184269dcb443c859e6aed12dcc0b0ac",
-            "content": "sha256:9a2ee3d98562d34bdeedadf0d79c173a0e3ab362932731718f5b08fb55e2d50c",
-            "locator": {
-              "end": 561,
-              "kind": "line_range",
-              "start": 526
+              "kind": "symbol",
+              "name": "ChangeSetTakeover"
             },
             "path": "dashboard/src/cockpit/Cockpit.tsx"
           },
@@ -381,12 +367,12 @@
         },
         {
           "anchor": {
-            "blob": "c1c7c67ada2e84e90b5ac05efb33bdb19e6951a4",
+            "blob": "6aef8710047677b74fa337e6c4e2b6df948df099",
             "content": "sha256:81e9e12c0c00606d352fdec65d8459fe7a8f3fffe284126ac6f40d3945762837",
             "locator": {
-              "end": 791,
+              "end": 707,
               "kind": "line_range",
-              "start": 785
+              "start": 701
             },
             "path": "dashboard/src/data/review.ts"
           },
@@ -572,7 +558,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "52421fd8c85c1d68fe261ca9e829757796226adf",
+            "blob": "4dda0f8e45d38b01cd7700d66b0a93e90ef87991",
             "content": "sha256:74471e933b7f1282d2b582656b01f556829f0c7f7cc23c680357692ebd1152da",
             "locator": {
               "kind": "symbol",
@@ -789,16 +775,15 @@
       ]
     },
     "44": {
-      "note": "Four product destinations; injected Engine Room is conditional; current Chats is retained RoleChatsPane\n\nAnchor: VIEWS; MainViewLayers; CockpitShell",
+      "note": "The four-entry product bar and retained product layers remain distinct from injected views; review URL state can override ordinary opening view.\n\nAnchor: `VIEWS` `MainLayers` `useCockpitShellState`",
       "targets": [
         {
           "anchor": {
-            "blob": "01fba3cb6e8f87f6cb5855729b1ff805ef49457e",
-            "content": "sha256:91c6a64109544a683017f301adcac6dcb2f765430675cea0294e067a6ee05db3",
+            "blob": "9dffc6e41bb9701b7a33ff1b82335a087c154484",
+            "content": "sha256:29d3d4539fa8862f31ceefba386db2c2bb6805610e1898aeb18a22f4b2ab535f",
             "locator": {
-              "end": 74,
-              "kind": "line_range",
-              "start": 59
+              "kind": "symbol",
+              "name": "VIEWS"
             },
             "path": "dashboard/src/cockpit/Cockpit.tsx"
           },
@@ -806,12 +791,11 @@
         },
         {
           "anchor": {
-            "blob": "01fba3cb6e8f87f6cb5855729b1ff805ef49457e",
-            "content": "sha256:c2284faeffbc421fc22f6e3773d3a766897b368765e3150a0c5cccb22cba19ee",
+            "blob": "9dffc6e41bb9701b7a33ff1b82335a087c154484",
+            "content": "sha256:500525aaa1c27e09b36993a4b253f9914e9624131e35ced3f05cd8a96c06cf2f",
             "locator": {
-              "end": 779,
-              "kind": "line_range",
-              "start": 746
+              "kind": "symbol",
+              "name": "MainLayers"
             },
             "path": "dashboard/src/cockpit/Cockpit.tsx"
           },
@@ -819,12 +803,11 @@
         },
         {
           "anchor": {
-            "blob": "f2a0c19687a17a6ccf7f4639369c323139256b91",
-            "content": "sha256:f7f0862beddb91572ee481ff3f191ac74ec8f09317ffe6873391eee8c998e076",
+            "blob": "9dffc6e41bb9701b7a33ff1b82335a087c154484",
+            "content": "sha256:e50724c1a1f5636830f4077e385677a323da62eafcfd01aaf41535596248780d",
             "locator": {
-              "end": 935,
-              "kind": "line_range",
-              "start": 882
+              "kind": "symbol",
+              "name": "useCockpitShellState"
             },
             "path": "dashboard/src/cockpit/Cockpit.tsx"
           },
@@ -833,18 +816,29 @@
       ]
     },
     "45": {
-      "note": "Review uses the common takeover and forwards optional selector/recorded history\n\nAnchor: ChangeSetTakeover",
+      "note": "The common takeover forwards optional selector and live/recorded review history; its URL owner carries task/history, not subject selection.\n\nAnchor: `ChangeSetTakeover` `useReviewHash`",
       "targets": [
         {
           "anchor": {
-            "blob": "01fba3cb6e8f87f6cb5855729b1ff805ef49457e",
-            "content": "sha256:f9921ea7ac508f2c5e4a02f67cfd6b4f8d9bb9ec7920701a77636a210a5364f9",
+            "blob": "9dffc6e41bb9701b7a33ff1b82335a087c154484",
+            "content": "sha256:f25b2b3c3741760705bda321539bf5b1f56bb7804f74be4a246497ac98eb7a86",
             "locator": {
-              "end": 571,
-              "kind": "line_range",
-              "start": 535
+              "kind": "symbol",
+              "name": "ChangeSetTakeover"
             },
             "path": "dashboard/src/cockpit/Cockpit.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "41eb57199da4ee9956cf8c32e5bd87324772daec",
+            "content": "sha256:78ce4bd646d453c3a4c1a8e3e1939aae6cd8e01e5f6cadac100736e6221f12f0",
+            "locator": {
+              "kind": "symbol",
+              "name": "useReviewHash"
+            },
+            "path": "dashboard/src/cockpit/reviewHash.ts"
           },
           "kind": "code"
         }
@@ -972,16 +966,15 @@
       ]
     },
     "51": {
-      "note": "Question keys and exact sequence-bound refresh prevent superseded answers writing displayed state\n\nAnchor: targetKeyOf; startRead",
+      "note": "Question/read identity and memory-input epoch prevent superseded responses from display or inappropriate unshown reuse; live-watch notification is separately wired by the surface.\n\nAnchor: `startRead` `memoryWatchActions` `useSurface`",
       "targets": [
         {
           "anchor": {
-            "blob": "c39f52a3070e7ea5ae990de1c13944060f41f81e",
-            "content": "sha256:17dc67a5ffdc81d86867e2e2a5b0086011e538d0c5b05c9ca465efbd66076325",
+            "blob": "ea4a25a184fd55e7859a3d6c4589e75d6646e280",
+            "content": "sha256:3a73327b6d72c7336b512184b1cb846ce91a611c53914f9317d86b624e5d429e",
             "locator": {
-              "end": 106,
-              "kind": "line_range",
-              "start": 88
+              "kind": "symbol",
+              "name": "startRead"
             },
             "path": "dashboard/src/panels/review/ReviewReadCycle.ts"
           },
@@ -989,14 +982,25 @@
         },
         {
           "anchor": {
-            "blob": "c39f52a3070e7ea5ae990de1c13944060f41f81e",
-            "content": "sha256:91d5ee40eade26b77b153477df953b9d603edc8798a61cf5b487939eb35e14ec",
+            "blob": "ea4a25a184fd55e7859a3d6c4589e75d6646e280",
+            "content": "sha256:237aad0702ec874bbc7fa6a5bc37abbc5da571140e63f42038c4e86555efa015",
             "locator": {
-              "end": 234,
-              "kind": "line_range",
-              "start": 169
+              "kind": "symbol",
+              "name": "memoryWatchActions"
             },
             "path": "dashboard/src/panels/review/ReviewReadCycle.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "bb94e003292e3a408d3607472dacd850e1f8da65",
+            "content": "sha256:f0203df5014bb49872c33405cfcec900dbf91c93c1501fce9ee3d899ae9e042d",
+            "locator": {
+              "kind": "symbol",
+              "name": "useSurface"
+            },
+            "path": "dashboard/src/panels/review/ReviewSurface.tsx"
           },
           "kind": "code"
         }
@@ -1246,12 +1250,12 @@
         },
         {
           "anchor": {
-            "blob": "f7e576bc05a33889caaab2fe6c0396c6d8805922",
+            "blob": "bb94e003292e3a408d3607472dacd850e1f8da65",
             "content": "sha256:26c91e84efbfa06d542f24876ca3ef92df5089a733eed1ce5b216728c669a9d6",
             "locator": {
-              "end": 604,
+              "end": 593,
               "kind": "line_range",
-              "start": 580
+              "start": 569
             },
             "path": "dashboard/src/panels/review/ReviewSurface.tsx"
           },
@@ -1259,12 +1263,12 @@
         },
         {
           "anchor": {
-            "blob": "19834e770c2eb7af4e574ccb2385b6ce01dff0f9",
+            "blob": "f0ec90b4f33dfc875cc31a2eae53f6ecb168695c",
             "content": "sha256:d933bfee3f76b98c89e13b2d5a3d82cf52b4c75c5565fa62755742ef8b7d035e",
             "locator": {
-              "end": 635,
+              "end": 636,
               "kind": "line_range",
-              "start": 603
+              "start": 604
             },
             "path": "dashboard/src/panels/review/ExpressionCards.tsx"
           },
@@ -1311,7 +1315,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "19834e770c2eb7af4e574ccb2385b6ce01dff0f9",
+            "blob": "f0ec90b4f33dfc875cc31a2eae53f6ecb168695c",
             "content": "sha256:a53187d9b0475a8b77ae182519e2e396841a4b8982704f0584348a9f80082cc1",
             "locator": {
               "kind": "symbol",
@@ -1545,6 +1549,47 @@
               "start": 263
             },
             "path": "mcp/src/agents_remember/observer/task_entries.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "74": {
+      "note": "Responsive shell style and the actual narrow railed/takeover consumers are separate from reviewer-local scroll ownership.\n\nAnchor: `shell` `RailedBody` `ChangeSetTakeover`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bd38e5290e2843a3c4222a6e381b949b47d32e28",
+            "content": "sha256:a2ebce6047039f8694e3ff8d9c840c2ce1a89dfef4384b83555ad3c8b830dc97",
+            "locator": {
+              "kind": "symbol",
+              "name": "shell"
+            },
+            "path": "dashboard/src/cockpit/layout.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9dffc6e41bb9701b7a33ff1b82335a087c154484",
+            "content": "sha256:f8bd185be1707e5e1fc67dab55f01a9a03153e41ee3b33d54658d3ce68684cf8",
+            "locator": {
+              "kind": "symbol",
+              "name": "RailedBody"
+            },
+            "path": "dashboard/src/cockpit/Cockpit.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9dffc6e41bb9701b7a33ff1b82335a087c154484",
+            "content": "sha256:f25b2b3c3741760705bda321539bf5b1f56bb7804f74be4a246497ac98eb7a86",
+            "locator": {
+              "kind": "symbol",
+              "name": "ChangeSetTakeover"
+            },
+            "path": "dashboard/src/cockpit/Cockpit.tsx"
           },
           "kind": "code"
         }

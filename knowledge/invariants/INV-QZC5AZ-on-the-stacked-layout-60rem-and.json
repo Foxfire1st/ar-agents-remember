@@ -4,18 +4,18 @@
       "spans_locations",
       "prevents_costly_mistake"
     ],
-    "justification": "On the stacked layout the reading area sits below a tall family tree: this leaf's Worker's narrow probe of 2026-10-06 measured the selected subject's answer beginning 11,849 pixels below an 844-pixel viewport (notes/reports/role-launch/260928-MIK-L39-worker-f1a6fcad-303f-4dc4-9a24-12bc5b1a6a7e-evidence/post-sync-2026-10-06/narrow-geometry.json, cited by OR-R033). The reveal is realized in the workspace's focus path and pinned by mounted cases over the real captured bodies."
+    "justification": "The workspace focus path and mounted narrow/wide selection cases carry the panel-local focus boundary in distinct source files. Keeping page scrolling separate from tree-row reveal prevents a selected row from moving the containing review page unexpectedly. Earlier OR-R033 geometry and origin evidence remain historical, not a fresh result."
   },
-  "applicability": "The mounted intent reviewer's reading area after a selection of a row the family tree shows, on the stacked layout (60rem and narrower), while the read is answered.",
+  "applicability": "Answered in-tree selections of the mounted intent reviewer while their focus request remains eligible.",
   "conditions": [
-    "The in-tree selection caller requests retention: a compact family/member outline row, previous/next controls, j/k or a member opened from the main-page roster. No kept-family continuation control is rendered in the sidebar.",
-    "The eligible latest completed selection focuses its chosen row without scrolling it and reveals the reading-area start on the stacked layout.",
-    "Wider layouts and other callers retain their own reveal behavior; the explicit Jump control remains for unaffected callers."
+    "The caller requests keepTree for a compact family/member row, traversal control or main-page member selection.",
+    "The answered-selection focus path uses preventScroll and revealTreeRow; that helper adjusts only the nearest tree panel after measuring its visible bounds and overlaid controls.",
+    "The moved-focus guard runs before landing the selection. Failed/refused reads retain the distinct stacked status-reveal path of INV-BMFR2T."
   ],
   "exclusions": [
-    "A read that ends failed or refused; its status reveal is the subject of INV-BMFR2T.",
-    "A reader who moved focus while the read was on its way: no later answer scrolls or takes focus.",
-    "A refresh's scroll request and a lane or file destination's reveal, which keep their own rules."
+    "No retained promise to scroll the reading-area start on an answered stacked selection; that earlier guarantee is superseded by panel-local row reveal.",
+    "No new browser geometry or runtime acceptance is inferred from the mounted source assertions.",
+    "Refresh scroll-only requests and lane/file destinations keep their separate owners."
   ],
   "id": "INV-QZC5AZ",
   "origin": {
@@ -29,9 +29,9 @@
     "leaf": "260928-MIK-L39",
     "task": "260928-MIK"
   },
-  "revision": 2,
+  "revision": 3,
   "schema": "ar-invariant/v1",
-  "statement": "On the stacked layout (60rem and narrower) the answer of an in-tree selection scrolls the start of the reading area into view and puts focus on the selected row without scrolling to it; every other selection and every wider layout scrolls as before.",
+  "statement": "An eligible answered in-tree selection focuses its selected row without native scrolling and reveals that row through the tree panel’s local scroll owner at either layout width. Outside selections retain their native-focus path.",
   "status": "proposed",
   "supersedes": []
 }

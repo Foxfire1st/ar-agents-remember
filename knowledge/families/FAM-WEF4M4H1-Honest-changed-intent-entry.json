@@ -19,12 +19,13 @@
     "legacyId": "7e79ca05-6857-443c-ab8c-f8095e7a799e",
     "task": "260921-ICR"
   },
-  "revision": 3,
+  "revision": 4,
   "routes": [
     "dashboard/src/data",
     "dashboard/src/panels/detail-panel",
     "dashboard/src/panels/review",
     "mcp/src/agents_remember/application",
+    "mcp/src/agents_remember/cli",
     "mcp/src/agents_remember/models/knowledge",
     "mcp/src/agents_remember/serving"
   ],

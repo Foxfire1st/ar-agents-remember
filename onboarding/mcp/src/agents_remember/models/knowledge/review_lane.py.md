@@ -31,7 +31,10 @@ The application owner is `application/review_unexplained_lane.py` over `applicat
   side's lines sit after `start`, as Git prints it). `ReviewLaneHunk` carries both spans, its class, `links` and
   `unknown`. `ReviewLaneLink` names the side, entry ID, kind, a proof's `facet`, the invariant with
   `invariant_key`, its revision on that side with `invariant_revision_key`, the range and the family occurrences
-  (`ReviewLaneFamilyOccurrence`: family, `family_key`, family revision, membership state). `ReviewLaneUnknown`
+  (`ReviewLaneFamilyOccurrence`: family, `family_key`, family revision, membership state and now
+  `reason`). Its new validator requires a reason exactly for `membership_unknown`; the supplied
+  string has length bounds but no whitespace-stripping/nonblank check. Known membership states
+  must carry no reason. `ReviewLaneUnknown`
   names the side, reason, detail and every withheld entry.
 - **File facts.** `ReviewLaneEntryRange` is one entry at the path on one side with its range or its reason.
   `ReviewLaneSide` is one side's path, blob, knowledge state, detail and entries. `ReviewLaneNonText` is a
@@ -60,8 +63,11 @@ The application owner is `application/review_unexplained_lane.py` over `applicat
 
 ### Invariants And Boundaries
 
-- **An unmeasured change set can never read as zero** (MIK-R32 rules 9 and 11): `partial` and `unavailable` carry no
-  totals, enforced by `_totals_problem`.
+- **Summary and lane partials differ.** A `ReviewLaneSummary` has totals only in `counted`;
+  `partial`/`unavailable` summaries have none. A `ReviewUnexplainedLane` instead carries its measured
+  totals in both `measured` and `partial`, and none in `unavailable`. Both use `_totals_problem`
+  with different admission predicates. The path-count check establishes list cardinality, not
+  uniqueness or independent truth of each reported path.
 - **The three buckets sum to the changed-file total**, and hunk totals never change a file total.
 - Nothing here is an assessment, an approval or a suggested explanation.
 
@@ -84,14 +90,14 @@ No configured live documentation source was available for this pass.
 - The three shapes, the buckets and the hunk classes, in the module's own words. [1]
 - The lane's literals. [2]
 - One entry's range or reason. [3]
-- Family occurrences and links with their keys. [4]
+- Family occurrences add a bounded reason exactly for unknown membership; links retain invariant/revision keys, ranges, facets and family occurrences. [4]
 - A hunk's facts follow its class. [5]
 - One side, the non-text fact, and the counts per class. [6]
 - The per-file response and one listed file. [7]
 - A destination lists exactly its totals; one path and its bucket. [8]
-- The lane reconciles, with every measured path listed once. [9]
+- The lane admits measured/partial totals and unavailable absence, checking bucket sums and the number of paths, not uniqueness of path identities. [9]
 - The entry's count, never a zero when unmeasured. [10]
-- Where the summary and the lane travel. [11]
+- The optional attribution summary travels on the intent result; lane destinations and per-file classification travel on the tree result. [11]
 
 ### Cross-Repo References
 

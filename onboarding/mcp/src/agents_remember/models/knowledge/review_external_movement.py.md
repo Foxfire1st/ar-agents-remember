@@ -9,13 +9,18 @@ The source-bound v2 report of raw Git ancestry on the complete retained review t
 ## Code Commentary
 ### Logic
 
-ExternalGitMovement carries the complete ReviewTreeComparisonRecord, its canonical digest and movement_version v2. A non-unavailable report must carry its source comparison, and a carried digest must identify that complete record. Missing comparison evidence carries no invented generation UUID or zero digest.
+ExternalGitMovement declares the complete ReviewTreeComparisonRecord, its canonical digest and movement_version v2. The local validator requires a comparison for a non-unavailable report and requires the digest to match whenever a comparison is present. It does not add a converse rule forbidding every digest when comparison is absent in an unavailable value. The current shape has no generation-UUID field; source authenticity and actual observation remain producer responsibilities.
 
 binding_state is current, stale, not-measured or unavailable. The per-channel transition_evidence distinguishes current ancestry, an ordinary advance retaining the recorded ancestor, replacement and unavailable observation. Commit identities can be checked for ancestry; an uncommitted candidate tree supplies no observed work-branch head, so that channel remains not-measured.
 
-transitions names observed shapes. unchanged appears alone, in current, with no moved identities; naming an ordinary append on an untouched channel would invent an event. With no measured shape and incomplete observation, transitions is empty rather than a favorable unchanged claim.
+ExternalGitTransition admits unchanged, ordinary-append, rebase and branch-switch; cherry-pick and revert are no longer constructible transition literals. These names describe ancestry shapes, not proof of which Git command ran. The validator permits unchanged only alone, in current, without moved identities. An empty transition tuple is representable; the value alone does not establish a complete observation or an unaffected repository.
 
-observed_* values locate branch heads actually read and never replace recorded identity. A named moved input requires stale, and stale requires moved identities. not-measured and unavailable require a reason; a measured state carries none. unavailable cannot report generation_readable true. These are constructor rules, not wording conventions.
+This narrows the report's wire union, not the recovery matrix. `GitTransitionSupport`
+separately admits cherry-pick/revert for documentation and recovery, and
+`GIT_TRANSITION_SUPPORT` still contains those broader rows; they are not newly produced
+wire transition values.
+
+The optional observed_* fields are pattern-validated branch-object identities, not model-side evidence that I/O occurred or that every channel was supplied. The actual constructor rules are narrower: moved identities and stale agree in both directions; not-measured/unavailable require a nonblank reason and measured states carry none; unavailable cannot report generation_readable true; and unchanged is exclusive as described above. The reverse implication from generation_readable=false is not added by this validator.
 
 The application's support matrix owns supported and unsupported recovery routes. unsupported is repeated on the displayed value, while successor_action names a successor live review with exact code/memory tree comparison. Empty unsupported means no transitions named in this report, never that all transitions are supported.
 
@@ -25,9 +30,9 @@ The application's support matrix owns supported and unsupported recovery routes.
 
 ### Invariants And Boundaries
 
-- Source comparison and digest travel together and cannot be replaced by an unrelated record's identity.
+- A non-unavailable value requires its comparison; whenever a comparison is present its digest must match. This is constructor consistency, not an independent authenticity check.
 - A movement is measured replacement; absence of evidence is neither an unaffected repository nor an inferred switch.
-- Authored judgments remain readable at their original inputs; this report does not reinterpret them for replacement inputs.
+- This report supplies no authority to reinterpret an authored judgment at replacement inputs; historical judgments keep their original source attribution.
 - The value writes nothing, executes no Git operation and grants no approval or reconciliation.
 - Raw ancestry observations and managed-sync exact tree-pair measurements are separate owner-produced facts.
 
@@ -55,10 +60,12 @@ absence of a transition, published exactly when every declared identity still st
 
 - The v2 raw movement report is bound to complete retained tree-comparison evidence. [1]
 
+
 - The shared bounds, the base model and the state vocabulary this value reuses. [2]
+
 - The published surface: the value, the transition union, the channel union, the evidence union and the reconciliation union. [3]
 
-- Transitions describe measured shapes, with unchanged reserved for an untouched complete observation. [4]
+- The transition declaration now admits unchanged, ordinary-append, rebase and branch-switch, not cherry-pick/revert. [4]
 
 
 - The reconciliation vocabulary distinguishes supported and unsupported recovery. [5]
@@ -72,17 +79,29 @@ absence of a transition, published exactly when every declared identity still st
 
 - The measured report carries states, exact source and observed branch facts. [8]
 
-- The field set, with `observed_*` present only for the channels that were read. [9]
+- The field set declares optional pattern-validated observed branch identities and a nullable bounded reason; those declarations do not perform I/O or establish observed-channel completeness. [9]
 
 - The validators enforce complete-source identity and state/observation consistency. [10]
 
-- **The matrix these labels come from, and the recovery each row names.** [11]
-- **The producer that publishes this value from what the repository shows.** [12]
+
+- The support matrix retains recovery/documentation rows for cherry-pick and revert alongside observed shapes; its broader row type is not the four-member wire transition union. [11]
+
+
+- The optional live-review entry point delegates to contract measurement and returns no boundary report for absent enclosure, closed leaf or non-live trees. [12]
+
 - The closeout/integration statement, which repeats the unsupported verdicts whether or not a value was produced. [13]
-- **The payload field this value travels on, and the re-export that keeps its import site.** [14]
-- The payload module's own `__all__` entry for the value. [15]
-- **The read path that carries the value from the measurement owner to the payload.** [16]
-- The second review boundary that publishes the same value on the task-context path. [17]
+
+- The payload carries the optional movement value, imports and publicly exports its type, whose own constructor lives in the focused model. [14]
+
+
+- The payload module explicitly publishes ExternalGitMovement in its own export declaration. [15]
+
+
+- Subject-review composition calls the measurement owner and carries its optional result onto the payload. [16]
+
+
+- Task-context composition calls the same measurement owner and carries its optional result, not a separately inferred movement. [17]
+
 
 - The current forgery sweep checks state consistency and complete source-comparison binding. [18]
 
@@ -90,18 +109,18 @@ absence of a transition, published exactly when every declared identity still st
 - Untouched ancestry, advance, rewrite and uncommitted-tree nonmeasurement are distinct observed facts. [19]
 
 
-### Cross-Repo References
+- The four declared transition shapes include unchanged as the non-event spelling; cherry-pick/revert are removed. [20]
+- The exported reconciliation vocabulary is supported/unsupported; choosing a value does not execute recovery. [21]
+- Constructor guards couple stale and moved identities, absence and reasons, constrain unavailable readability in one direction, and keep unchanged exclusive. [25]
 
-No cross-repository behavior is implemented in this module. It declares value shapes only: it reads no
-store, resolves no path, runs no Git command and touches no repository, and every identity its fields
-carry — a generation id, a binding digest, a Git object id — is a value another owner in this same
-repository resolved. No cross-repo reference row is recorded here because no cited range proves a
-repository or external-system boundary.
-
-- **The transition vocabulary, whose first member `unchanged` is the measured absence of a transition rather than an event.** [20]
-- **Whether this system reconciles a transition at all, earned by the one recovery it performs.** [21]
 - **The three declared channels, each named by the thing that moved rather than by the command that moved it.** [22]
 - **What one channel's ancestry check found, with `advanced` as a measurement of its own.** [23]
 - **The movement value: its four-state binding, the transition and evidence tuples, the moved identities and the reason rule.** [24]
-- **The `after` validator that refuses every false shape — state against replaced identities, absence against reason, and `generation_readable` against `unavailable`.** [25]
 - The reused state vocabulary: `binding_state` carries the measured-currentness words, and `stale` is the only state a replaced identity earns. [26]
+
+### Cross-Repo References
+
+No cross-repository behavior is implemented in this value model. It reads no store,
+resolves no path and runs no Git command. Its comparison, binding digest and Git-object
+identities are values supplied by other owners in this repository; they do not establish
+an external-system boundary. Same-repository evidence remains in the section above.

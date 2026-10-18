@@ -28,13 +28,13 @@
     {
       "relation": "constrains",
       "target": {
-        "blob": "f0080ac8512cae6107e8cf65f880a151ca6d19c5",
-        "content": "sha256:8a3e09b08d614e4917acaee1113f4fcb16811776b199633a77947c36e8933738",
+        "blob": "e3257adf8556457185fbb3d0d042b52ed3095104",
+        "content": "sha256:6da9abe1ddff791c712d5e0953a3efdc2e288a3934390649278332218834d61e",
         "locator": {
           "kind": "symbol",
-          "name": "review_records_for_resolution"
+          "name": "ExternalTarget"
         },
-        "path": "mcp/src/agents_remember/application/review_evidence_records.py"
+        "path": "mcp/src/agents_remember/models/knowledge_files/shapes.py"
       }
     }
   ],
@@ -46,7 +46,7 @@
     "leaf": "260928-MIK-L74",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-decision/v1",
   "status": "active",
   "supersedes": []

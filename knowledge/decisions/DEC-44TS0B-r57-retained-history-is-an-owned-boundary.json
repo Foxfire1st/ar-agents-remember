@@ -1,0 +1,53 @@
+{
+  "admission": {
+    "criteria": [
+      "constrains_future_work"
+    ],
+    "justification": "A future reviewer change must not introduce a second judgment store/retention job that can diverge from authoritative leaf histories."
+  },
+  "alternatives": [
+    {
+      "option": "Use retained Git history files as judgment authority without a second assessment-retention channel.",
+      "reason": "The approved appendix83 explicitly locates the retained judgments in Git; review_history.owner_rows reads owner attempt histories from the selected after index. The removed assessment pipeline supplies no second current authority.",
+      "status": "chosen"
+    },
+    {
+      "option": "Add a separate assessment retention channel to preserve the same judgments.",
+      "reason": "That would duplicate the retained text/Git authority and revive a channel deliberately removed by the packet.",
+      "reconsider_when": "A new approved requirement establishes an independently owned assessment subject/source and its retention contract.",
+      "status": "rejected"
+    }
+  ],
+  "consequences": [
+    "A future reviewer change must not introduce a second judgment store/retention job that can diverge from authoritative leaf histories.",
+    "No independent assessment-retention service, repository garbage-collection guarantee, archival lifetime measurement or fresh execution."
+  ],
+  "context": "Approved MIK-R57@v2 appendix83/151 and rule6 require this by-design choice to be recorded, not deferred as a gap. Source obligation: MIK-R57@v2 by-design retained-history. This is the requirement-prescribed boundary, not a claim that an undocumented alternative was seriously weighed.",
+  "decider": "Approved MIK-R57@v2 under D18/D47/D48; Curator records the specified boundary under constrains_future_work.",
+  "id": "DEC-44TS0B",
+  "links": [
+    {
+      "relation": "constrains",
+      "target": {
+        "blob": "fccd0935574f17332e5452e6abbcf8f0c87d8cc3",
+        "content": "sha256:02a33f719699a09baa064830643423a9807284f1fc6494dabf583000cbfc0879",
+        "locator": {
+          "kind": "file"
+        },
+        "path": "mcp/src/agents_remember/application/review_history.py"
+      }
+    }
+  ],
+  "origin": {
+    "handoff": {
+      "path": "freeze11-r57-eight-prescribed-by-design-boundaries-01.json"
+    },
+    "handoffEntry": "CUR-L57-R57-choice-retained-history",
+    "leaf": "260928-MIK-L57",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-decision/v1",
+  "status": "active",
+  "supersedes": []
+}
