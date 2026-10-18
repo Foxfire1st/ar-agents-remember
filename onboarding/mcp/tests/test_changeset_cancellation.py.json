@@ -3,8 +3,8 @@
   "proves": [
     {
       "anchor": {
-        "blob": "8173d221a70b84eabe6ed5ffff958f523592fa1f",
-        "content": "sha256:11493209ded31686cda7d4efea0243405fc5681f5b9fdf273277183091e6e318",
+        "blob": "3cae47d98ccb65a8f65558a6780e4a8d563e71f6",
+        "content": "sha256:74b6ad8b6aae713f065eeec5086e96eeace32f4fd5b4103290cb7609a73b7c62",
         "locator": {
           "kind": "symbol",
           "name": "test_an_abandoned_successful_read_is_never_cached"
@@ -20,8 +20,8 @@
     },
     {
       "anchor": {
-        "blob": "8173d221a70b84eabe6ed5ffff958f523592fa1f",
-        "content": "sha256:c7aebf76238fb6e6f363aebc88a65cd73a1f216c10d9371db364f275a8ae564e",
+        "blob": "3cae47d98ccb65a8f65558a6780e4a8d563e71f6",
+        "content": "sha256:fa33653793ae6413a761e4438639d07edf5babbc1538e88fc39bd0d092fc2a05",
         "locator": {
           "kind": "symbol",
           "name": "test_a_running_abandoned_job_keeps_its_slot_until_its_worker_ends"
@@ -37,8 +37,8 @@
     },
     {
       "anchor": {
-        "blob": "8173d221a70b84eabe6ed5ffff958f523592fa1f",
-        "content": "sha256:1ab58c2ed3ffee06465d3213e9c1c516c0450d3db77d4a9a89946e69c11063ed",
+        "blob": "3cae47d98ccb65a8f65558a6780e4a8d563e71f6",
+        "content": "sha256:44a190bd7be36556cdb813ec38209fb5b637a08d717afcd404cc8e46b6bac8eb",
         "locator": {
           "kind": "symbol",
           "name": "test_abandoned_jobs_release_their_copied_request_contexts"
@@ -54,8 +54,8 @@
     },
     {
       "anchor": {
-        "blob": "8173d221a70b84eabe6ed5ffff958f523592fa1f",
-        "content": "sha256:e9f49b9e4eed6f6df36775e1c4b2bb6bfaf7497d02f40dfc67249aad86ed7677",
+        "blob": "3cae47d98ccb65a8f65558a6780e4a8d563e71f6",
+        "content": "sha256:ab2aafb0ebb8512a2154decc2a2df3519ecd7aa8e5c14e5008e7fc42a923b2d3",
         "locator": {
           "kind": "symbol",
           "name": "test_a_disconnected_read_ends_its_git_process"
@@ -71,8 +71,8 @@
     },
     {
       "anchor": {
-        "blob": "8173d221a70b84eabe6ed5ffff958f523592fa1f",
-        "content": "sha256:53e8140b190cb7a5f486bbfc77c9b5d9f8e90bd626df12f05d60994897cc77b5",
+        "blob": "3cae47d98ccb65a8f65558a6780e4a8d563e71f6",
+        "content": "sha256:1259488355c94fac67ad452ea1648ead195d8016cd8a21b150cd9fbb0551f101",
         "locator": {
           "kind": "symbol",
           "name": "test_over_capacity_answers_an_explicit_refusal"
@@ -88,8 +88,8 @@
     },
     {
       "anchor": {
-        "blob": "8173d221a70b84eabe6ed5ffff958f523592fa1f",
-        "content": "sha256:5d43c7d519c7930ad5e3ac015c2658e01539f2542dbca7a93e3fda3c0f524844",
+        "blob": "3cae47d98ccb65a8f65558a6780e4a8d563e71f6",
+        "content": "sha256:f617095351b71a0eb4ee5fa422f8cb5aac40902404f1e0b83fafe4477ef64ad2",
         "locator": {
           "kind": "symbol",
           "name": "test_the_family_bounds_admits_and_reclaims_at_over_capacity"
@@ -105,7 +105,7 @@
     },
     {
       "anchor": {
-        "blob": "8173d221a70b84eabe6ed5ffff958f523592fa1f",
+        "blob": "3cae47d98ccb65a8f65558a6780e4a8d563e71f6",
         "content": "sha256:3cff37496d377c6f248d11e6c742357dc877383c59f6082b8ea8d7c1be6a61da",
         "locator": {
           "kind": "symbol",
@@ -122,8 +122,8 @@
     },
     {
       "anchor": {
-        "blob": "8173d221a70b84eabe6ed5ffff958f523592fa1f",
-        "content": "sha256:f6e043308c841b03977173d7ce337fbef278b6c40f8bd740f97757eec2450767",
+        "blob": "3cae47d98ccb65a8f65558a6780e4a8d563e71f6",
+        "content": "sha256:3fcda4bbfd5ce659659dfb1febf1f1f6413a98aa8a8d947d9a59d96b2da01f0f",
         "locator": {
           "kind": "symbol",
           "name": "test_a_queued_abandoned_read_never_produces"

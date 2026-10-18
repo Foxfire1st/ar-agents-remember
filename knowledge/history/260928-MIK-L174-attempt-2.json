@@ -1,0 +1,384 @@
+{
+  "attempt": 2,
+  "closed": true,
+  "leaf": "260928-MIK-L174",
+  "rows": [
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "3cae47d98ccb65a8f65558a6780e4a8d563e71f6",
+            "content": "sha256:fa33653793ae6413a761e4438639d07edf5babbc1538e88fc39bd0d092fc2a05",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_running_abandoned_job_keeps_its_slot_until_its_worker_ends"
+            },
+            "path": "mcp/tests/test_changeset_cancellation.py"
+          },
+          "before": {
+            "blob": "8173d221a70b84eabe6ed5ffff958f523592fa1f",
+            "content": "sha256:c7aebf76238fb6e6f363aebc88a65cd73a1f216c10d9371db364f275a8ae564e",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_running_abandoned_job_keeps_its_slot_until_its_worker_ends"
+            },
+            "path": "mcp/tests/test_changeset_cancellation.py"
+          },
+          "id": "PRF-5RQE4X"
+        },
+        {
+          "after": {
+            "blob": "3cae47d98ccb65a8f65558a6780e4a8d563e71f6",
+            "content": "sha256:44a190bd7be36556cdb813ec38209fb5b637a08d717afcd404cc8e46b6bac8eb",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_abandoned_jobs_release_their_copied_request_contexts"
+            },
+            "path": "mcp/tests/test_changeset_cancellation.py"
+          },
+          "before": {
+            "blob": "8173d221a70b84eabe6ed5ffff958f523592fa1f",
+            "content": "sha256:1ab58c2ed3ffee06465d3213e9c1c516c0450d3db77d4a9a89946e69c11063ed",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_abandoned_jobs_release_their_copied_request_contexts"
+            },
+            "path": "mcp/tests/test_changeset_cancellation.py"
+          },
+          "id": "PRF-9CMS0B"
+        },
+        {
+          "after": {
+            "blob": "3cae47d98ccb65a8f65558a6780e4a8d563e71f6",
+            "content": "sha256:1259488355c94fac67ad452ea1648ead195d8016cd8a21b150cd9fbb0551f101",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_over_capacity_answers_an_explicit_refusal"
+            },
+            "path": "mcp/tests/test_changeset_cancellation.py"
+          },
+          "before": {
+            "blob": "8173d221a70b84eabe6ed5ffff958f523592fa1f",
+            "content": "sha256:53e8140b190cb7a5f486bbfc77c9b5d9f8e90bd626df12f05d60994897cc77b5",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_over_capacity_answers_an_explicit_refusal"
+            },
+            "path": "mcp/tests/test_changeset_cancellation.py"
+          },
+          "id": "PRF-DRWQR9"
+        },
+        {
+          "after": {
+            "blob": "3cae47d98ccb65a8f65558a6780e4a8d563e71f6",
+            "content": "sha256:f617095351b71a0eb4ee5fa422f8cb5aac40902404f1e0b83fafe4477ef64ad2",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_family_bounds_admits_and_reclaims_at_over_capacity"
+            },
+            "path": "mcp/tests/test_changeset_cancellation.py"
+          },
+          "before": {
+            "blob": "8173d221a70b84eabe6ed5ffff958f523592fa1f",
+            "content": "sha256:5d43c7d519c7930ad5e3ac015c2658e01539f2542dbca7a93e3fda3c0f524844",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_family_bounds_admits_and_reclaims_at_over_capacity"
+            },
+            "path": "mcp/tests/test_changeset_cancellation.py"
+          },
+          "id": "PRF-P0QGWW"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-4FK9CN",
+      "items": [
+        "sha256:8ed2dbe3c6a04a0bf1349ef00cdf27081327d7c3db745a74408c058f268adc2f"
+      ],
+      "reason": "The S6 load-independence repair changed the admission and reclamation proofs' wait mechanics only: the cap, the explicit 503, the queued abandoned read releasing its slot, the running abandoned job holding its slot, and the copied-context release are still asserted, now by observed queue and worker conditions with one shared hang guard rather than by elapsed time. The invariant's statement and scope are unchanged, so the record keeps revision 1; its four proofs are re-anchored at C.",
+      "revision": 1,
+      "subject": "INV-NPEQB1"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-6DPPNV",
+      "items": [
+        "sha256:ab1c4543fadf809dfcb113ef30a53a120ce18f580414a63cb17fbb1a4affeb29"
+      ],
+      "reason": "The added test-support import of HANG_GUARD_SECONDS exists only to bound a hang in the repaired archive-lock case's condition wait; it carries no product behaviour and no invariant.",
+      "subject": "hunk:sha256:ab1c4543fadf809dfcb113ef30a53a120ce18f580414a63cb17fbb1a4affeb29"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-71XKYH",
+      "items": [
+        "sha256:3744c3da06de6b7e76fbf89af31456e416496999983594f8ddceb08965865400"
+      ],
+      "reason": "The rest of the repaired case asserts that the archive is not done while the publication lock is held and returns the reclaimed state after release, with the shared hang guard bounding only a hang. The assertions' intent is the same as before and no invariant is stated here.",
+      "subject": "hunk:sha256:3744c3da06de6b7e76fbf89af31456e416496999983594f8ddceb08965865400"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "3cae47d98ccb65a8f65558a6780e4a8d563e71f6",
+            "content": "sha256:74b6ad8b6aae713f065eeec5086e96eeace32f4fd5b4103290cb7609a73b7c62",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_an_abandoned_successful_read_is_never_cached"
+            },
+            "path": "mcp/tests/test_changeset_cancellation.py"
+          },
+          "before": {
+            "blob": "8173d221a70b84eabe6ed5ffff958f523592fa1f",
+            "content": "sha256:11493209ded31686cda7d4efea0243405fc5681f5b9fdf273277183091e6e318",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_an_abandoned_successful_read_is_never_cached"
+            },
+            "path": "mcp/tests/test_changeset_cancellation.py"
+          },
+          "id": "PRF-2J1MWA"
+        },
+        {
+          "after": {
+            "blob": "3cae47d98ccb65a8f65558a6780e4a8d563e71f6",
+            "content": "sha256:ab2aafb0ebb8512a2154decc2a2df3519ecd7aa8e5c14e5008e7fc42a923b2d3",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_disconnected_read_ends_its_git_process"
+            },
+            "path": "mcp/tests/test_changeset_cancellation.py"
+          },
+          "before": {
+            "blob": "8173d221a70b84eabe6ed5ffff958f523592fa1f",
+            "content": "sha256:e9f49b9e4eed6f6df36775e1c4b2bb6bfaf7497d02f40dfc67249aad86ed7677",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_disconnected_read_ends_its_git_process"
+            },
+            "path": "mcp/tests/test_changeset_cancellation.py"
+          },
+          "id": "PRF-B3Q8Y7"
+        },
+        {
+          "after": {
+            "blob": "3cae47d98ccb65a8f65558a6780e4a8d563e71f6",
+            "content": "sha256:3cff37496d377c6f248d11e6c742357dc877383c59f6082b8ea8d7c1be6a61da",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_read_abandoned_during_finish_admits_nothing"
+            },
+            "path": "mcp/tests/test_changeset_cancellation.py"
+          },
+          "before": {
+            "blob": "8173d221a70b84eabe6ed5ffff958f523592fa1f",
+            "content": "sha256:3cff37496d377c6f248d11e6c742357dc877383c59f6082b8ea8d7c1be6a61da",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_read_abandoned_during_finish_admits_nothing"
+            },
+            "path": "mcp/tests/test_changeset_cancellation.py"
+          },
+          "id": "PRF-QSSZXD"
+        },
+        {
+          "after": {
+            "blob": "3cae47d98ccb65a8f65558a6780e4a8d563e71f6",
+            "content": "sha256:3fcda4bbfd5ce659659dfb1febf1f1f6413a98aa8a8d947d9a59d96b2da01f0f",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_queued_abandoned_read_never_produces"
+            },
+            "path": "mcp/tests/test_changeset_cancellation.py"
+          },
+          "before": {
+            "blob": "8173d221a70b84eabe6ed5ffff958f523592fa1f",
+            "content": "sha256:f6e043308c841b03977173d7ce337fbef278b6c40f8bd740f97757eec2450767",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_queued_abandoned_read_never_produces"
+            },
+            "path": "mcp/tests/test_changeset_cancellation.py"
+          },
+          "id": "PRF-SWCJFS"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-C3DS6K",
+      "items": [
+        "sha256:f58d9299a30ac726f7165537a87be7de22b90fd37c95d1b335250ba19b4173dc"
+      ],
+      "reason": "The S6 load-independence repair rewrote only the waits inside the cancellation cases' proofs: each case still asserts the same disconnect, queued-abandon, running-abandon and mid-finish outcomes, now reached through an observed Git-child entry, an observed worker/queue condition and one shared hang guard instead of elapsed-time windows. The invariant's statement, applicability, conditions and exclusions are unchanged, so the record keeps revision 1; its four proofs are re-anchored at C.",
+      "revision": 1,
+      "subject": "INV-BRGWKX"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-DQ0DQR",
+      "items": [
+        "sha256:744500ec47e5783107a17f253da821a797fcd849239fb6222830499ef71b176e"
+      ],
+      "reason": "The import swap drops the elapsed-time module and brings the thread pool the repaired case submits its archive to; a test-mechanics change with no invariant.",
+      "subject": "hunk:sha256:744500ec47e5783107a17f253da821a797fcd849239fb6222830499ef71b176e"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-GM40Q0",
+      "items": [
+        "sha256:34348b0d2e6d2e57f322d5205c42c08195a5957d18168b430d4f5d657b61d7ff"
+      ],
+      "reason": "The archive-lock case's signature and prologue: the monkeypatched lock wrapper observes entry at the same shared task lock and the archive runs in a pool, so the case waits on the observed lock instead of relying on thread progress after a fixed sleep. Test mechanics only; the archive/publication exclusion claim is unchanged and no invariant is stated here.",
+      "subject": "hunk:sha256:34348b0d2e6d2e57f322d5205c42c08195a5957d18168b430d4f5d657b61d7ff"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-HT01K6",
+      "items": [
+        "sha256:0ccaa0491c4da19c6b064ba4b527ed364c6c3e2acf51931d355a0c090c0d68f6",
+        "sha256:18fe8c1e6335d03c84dc88b4bfe0150a1853efc2b5f0adc3972de3cbbe0b58fa",
+        "sha256:19268b082329a2023375e1a6e99d1e923ba37038868400c99b2009a9d30f24fe",
+        "sha256:230ba65f61d4e402b52477d95f075d2e3ddb2172a94b78fc3b9c75713df86332",
+        "sha256:31049eb5723c179522a0313bc5d4fd767941df7f3ede76f0801e0e54ccd7f07a",
+        "sha256:47b7fe220ad74daf250b052faa985c22e97a4e475a82f4c7e440fda5fd33c4f0",
+        "sha256:4862b9ec6bff8f4b2f549b6800bacc5fbc496cec3df655d2cb2619ebf1c8d507",
+        "sha256:5154c81404581cd8cc0074e731b90587ebbb14e4048731da5b4e861d55122fd4",
+        "sha256:587d9ec4421b892e0796aa70b875be43d18ce03798834cd34073627ea26ead47",
+        "sha256:5dcb8188f42d0d5e1d7363f657c8ccadbb65248227c39379e597fcba3a9b7e85",
+        "sha256:797c6abf00fda86c0bebe2cb1f966e82cc5ff7c020d70b5af98552685f94d90f",
+        "sha256:7e5463ddb90b4d6ded43c08a5bf70bd029fd156c2e314f0f936d946bf7a1b724",
+        "sha256:996cc91d1cf7da0ae44445ac75aa29d7c69ace5a5fa6c677258f1d1446b6acc3",
+        "sha256:9b1d4030752e0f71c2e2f2bd5288026c6e6021e5be9f8b853ae2213fe41309ce",
+        "sha256:9b66b89166cebba7b5863ea9fbd25e9499a0b6d79c8f5632e7512e5598edddc8",
+        "sha256:a0757e2eeb336799d7446ccdb0ed16a9f2bc3b13058aaa2c3c0642a363d45a41",
+        "sha256:a314c774ef4a02bb5bb27b333351c1cad0dc5ee2615cf2097c7dca22cb05a7fa",
+        "sha256:a8d40c8acc076015e2f1fbd57bfa0d069d4daa813974ea1b244741e4437a63f6",
+        "sha256:ca1cf5dfda27b8caf2cbfcaff247d4ba1d88c0b1d95752514bf74ceb335ee575",
+        "sha256:d146b0ee742fcb41e1f849fe52c9def3baa211bbc8806cf63efb0a8d32de13ea",
+        "sha256:d7580130ff8eeed3dfc8b17ddac2da6cd83bd54aa9a55d5c70a1c2c7dc1c1a48",
+        "sha256:d9a5481fb178ac58ddb61cee3842316c6233a27ef4f7a2907a2fa09d640449dc",
+        "sha256:e8f609b32eb5ee141c00da850aea8f2c13fef08fdf3edaa3f67b14ac300972cf",
+        "sha256:f8db53cf44698d0c65e4da85b8ad0bce726fb928c3a0320e88ce0f4181f9e0b2",
+        "sha256:fb33dfa87f8853889374e6c4256b89f000d180e909cb8ea66872952467643767",
+        "sha256:fea73e2f0d3756039316ad341e26861906cfaa15d8df32327c88059869cfa729",
+        "sha256:feae94c6605edb1c619b41b63b84baa77f9e0ec329751ad2e44f204d0b5112c4"
+      ],
+      "reason": "Reviewed for the test-only S6 repair: the card's Tested Boundary, that a slow read does not delay another, that a disconnected read answers 499 with its Git child gone, the capacity refusal, the reclamation and the copied-context release, still holds. The cases now wait on observed child entry, queue state and worker exit, which the card does not describe as timing, so no card statement became untrue and no text was changed.",
+      "sources": [
+        {
+          "blob": "3cae47d98ccb65a8f65558a6780e4a8d563e71f6",
+          "path": "mcp/tests/test_changeset_cancellation.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_changeset_cancellation.py"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-NZAHR2",
+      "items": [
+        "sha256:b88a0a158075c9136706753168205fe6de0f716a7a9eea17eb5fa291340fc1ac"
+      ],
+      "reason": "Reviewed against the passed A11 candidate mechanism: the card describes revision binding and ancestry, evidence surviving the scratch, lineage and byte ceilings, drafts, corrupt bytes, refused publication, reclamation receipts and restart at the largest store, and its only archive statement is that an archived frame is explained by the task receipt. It names no sleep, lock, elapsed time or timing bound for the archive/publication case, so replacing the 0.3-second sleep with an observed lock entry, the shared hang guard, the assertion that the archive is not done while the lock is held and the reclaimed result left no card statement untrue. No text was changed and the card keeps its current description.",
+      "sources": [
+        {
+          "blob": "d17ae5a44a69b0a55beac77cac8491a3ec9c157d",
+          "path": "mcp/tests/test_review_frame_store.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_review_frame_store.py"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-PJBMA2",
+      "items": [
+        "sha256:40af7049f11c8bc8f7101bf394744ba0dc1d745db632aa8dac71e09ded371ee1",
+        "sha256:479b3186902779ac9bb6c17c8e06a12fea04f20ed6a9c1f04496296654726e54",
+        "sha256:4ed68599f1d4a3e9d4a1a33f7ed9ffe1644208091cf07b2786cda37d127f4ff3",
+        "sha256:8978f25f2405149f6b7ec22fe523e19a813520c7af85e24e75f0d38df7c229db",
+        "sha256:c48cf6485248a98b8b11e5f58e4a1c738452dd61ff374c907315437b7e39f324",
+        "sha256:dffd5cf0c682e83a880e74f554276d0995d201de81bc63e6d5f575cf3d258f7c",
+        "sha256:ea30532fddcf8ccb06744fcb190697bc2d763ff4a82ca415e357f23d6dcfd446"
+      ],
+      "reason": "Reviewed for the test-only S6 repair: the card's Current Behavior claims, including that one read does not wait on another, are still asserted by the repaired case. Only the case's wait mechanics changed (an observed gate and the shared hang guard instead of an elapsed-time window), which the card does not state, so no card statement became untrue and no text was changed.",
+      "sources": [
+        {
+          "blob": "9b90e039ac7b04b6ea75036e5c171b3f53590a62",
+          "path": "mcp/tests/test_changeset_cache.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_changeset_cache.py"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-7TMGB0",
+          "revision": 2
+        },
+        {
+          "id": "INV-BRGWKX",
+          "revision": 1
+        },
+        {
+          "id": "INV-C1RTSG",
+          "revision": 2
+        },
+        {
+          "id": "INV-GDWJKR",
+          "revision": 1
+        },
+        {
+          "id": "INV-M46Y3E",
+          "revision": 1
+        },
+        {
+          "id": "INV-NPEQB1",
+          "revision": 1
+        },
+        {
+          "id": "INV-QK8XNM",
+          "revision": 2
+        },
+        {
+          "id": "INV-WNHAWD",
+          "revision": 2
+        },
+        {
+          "id": "INV-ZNXX7H",
+          "revision": 2
+        }
+      ],
+      "id": "ROW-QM6X39",
+      "items": [
+        "sha256:df01e8e1ec7f108c7a9e5fe2b22d6337a5b344a713d47320c9ec1c0c62b7fed7"
+      ],
+      "reason": "The repair changes none of the nine members' statements, scope or routes. The two changed files carry the family's proofs, not its realizations, so the joint guarantee is as written and no route was added or removed. All nine members were examined at their current revisions.",
+      "revision": 2,
+      "subject": "FAM-EASWS6"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-ZE9SVG",
+      "items": [
+        "sha256:bd82a58b87733db552dfdf2ece849b3d06e6db36dbca79c1a9c27b59e2fc2a17"
+      ],
+      "reason": "Reviewed for the A11 archive-lock wait repair: the overview's account of the route, including its attribution of the review-evidence and frame contracts to test_review_frame_store.py, stays true. It names no wait, lock, elapsed time or timing bound for that module, and the policy it states for shared waits, hang guards and condition-specific failures rather than performance ceilings, is the policy this repair follows. No overview text needed a change; the row is restated so its sources bind every changed file of this candidate.",
+      "sources": [
+        {
+          "blob": "9b90e039ac7b04b6ea75036e5c171b3f53590a62",
+          "path": "mcp/tests/test_changeset_cache.py"
+        },
+        {
+          "blob": "3cae47d98ccb65a8f65558a6780e4a8d563e71f6",
+          "path": "mcp/tests/test_changeset_cancellation.py"
+        },
+        {
+          "blob": "d17ae5a44a69b0a55beac77cac8491a3ec9c157d",
+          "path": "mcp/tests/test_review_frame_store.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/overview"
+    }
+  ],
+  "schema": "ar-history/v1"
+}
