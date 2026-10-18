@@ -31,7 +31,12 @@ observes the same `run-not-found` result as an absent or evicted run.
 sentinel; an explicit subset retains its normalized checks, even if it enumerates all checks.
 A full leaf check composes missing-onboarding, prepared route-index results, drift rows, and
 commit-owned versus curator-owned findings into the one
-enclosure-local checklist. Sync and async paths therefore share one execution implementation.
+enclosure-local checklist. On an external leaf the same checklist extends its repair findings with
+`entity_evidence_findings_for_candidate`: one actionable finding per (entity row, evidence path) the
+leaf's code candidate does not hold, naming the catalog file, the row, the path and the clearing
+action, so a row with two absent paths yields two findings; a candidate Git cannot read is its own
+single incomplete finding, never silence.
+Sync and async paths therefore share one execution implementation.
 Public delivery additionally uses `application.memory_quality.answer`: status/counts, the complete
 blocking total and first actionable work orders, plus retained report locations. The whole result
 keeps complete computed finding populations for logging and internal/CLI consumption; delivery

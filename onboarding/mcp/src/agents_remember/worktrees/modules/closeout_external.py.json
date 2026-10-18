@@ -3,7 +3,25 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "9cfb3331ff9fa3f591e098da8dbf93635dd481b9",
+        "blob": "eecdaff3bad79ebac4230c53a03b1b6e2e47c1cf",
+        "content": "sha256:eec23d0a589b6e08051d8a5982c568e5dc3410d87da42d6acb66aa6e6716f015",
+        "locator": {
+          "kind": "symbol",
+          "name": "candidate_memory_refresh_refusal"
+        }
+      },
+      "id": "RLZ-0YH9FE",
+      "invariant": "INV-PRT9AA",
+      "origin": {
+        "handoffEntry": "L176-7-record",
+        "leaf": "260928-MIK-L176"
+      },
+      "rationale": "It puts the route-index leg beside the entity leg in the one verdict both the preview and the preflight read, which is what removes the code-only publication.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "eecdaff3bad79ebac4230c53a03b1b6e2e47c1cf",
         "content": "sha256:11ae5d0f9f1b6bd93cd7a7c2b039af7d2f2705640ac5f630475ea73439540a7d",
         "locator": {
           "kind": "symbol",
@@ -21,7 +39,7 @@
     },
     {
       "anchor": {
-        "blob": "9cfb3331ff9fa3f591e098da8dbf93635dd481b9",
+        "blob": "eecdaff3bad79ebac4230c53a03b1b6e2e47c1cf",
         "content": "sha256:d74fc2b14e7948998b1aaaea59cb7cb4c2d67731eee72bafdab33e7f9381ff29",
         "locator": {
           "kind": "symbol",
@@ -39,7 +57,7 @@
     },
     {
       "anchor": {
-        "blob": "9cfb3331ff9fa3f591e098da8dbf93635dd481b9",
+        "blob": "eecdaff3bad79ebac4230c53a03b1b6e2e47c1cf",
         "content": "sha256:11ae5d0f9f1b6bd93cd7a7c2b039af7d2f2705640ac5f630475ea73439540a7d",
         "locator": {
           "kind": "symbol",
@@ -57,7 +75,7 @@
     },
     {
       "anchor": {
-        "blob": "9cfb3331ff9fa3f591e098da8dbf93635dd481b9",
+        "blob": "eecdaff3bad79ebac4230c53a03b1b6e2e47c1cf",
         "content": "sha256:fa255cd6387c747835427a38e516275a8ec6e507086fbbbf5e19bf83ebc72987",
         "locator": {
           "kind": "symbol",
@@ -75,7 +93,7 @@
     },
     {
       "anchor": {
-        "blob": "9cfb3331ff9fa3f591e098da8dbf93635dd481b9",
+        "blob": "eecdaff3bad79ebac4230c53a03b1b6e2e47c1cf",
         "content": "sha256:d74fc2b14e7948998b1aaaea59cb7cb4c2d67731eee72bafdab33e7f9381ff29",
         "locator": {
           "kind": "symbol",
@@ -93,7 +111,7 @@
     },
     {
       "anchor": {
-        "blob": "9cfb3331ff9fa3f591e098da8dbf93635dd481b9",
+        "blob": "eecdaff3bad79ebac4230c53a03b1b6e2e47c1cf",
         "content": "sha256:d74fc2b14e7948998b1aaaea59cb7cb4c2d67731eee72bafdab33e7f9381ff29",
         "locator": {
           "kind": "symbol",
@@ -111,7 +129,7 @@
     },
     {
       "anchor": {
-        "blob": "9cfb3331ff9fa3f591e098da8dbf93635dd481b9",
+        "blob": "eecdaff3bad79ebac4230c53a03b1b6e2e47c1cf",
         "content": "sha256:2e6b71f194f95ae3a119d49987ce890f73f507d3bc12bc37744e49d9eef068f6",
         "locator": {
           "kind": "symbol",
@@ -129,7 +147,7 @@
     },
     {
       "anchor": {
-        "blob": "9cfb3331ff9fa3f591e098da8dbf93635dd481b9",
+        "blob": "eecdaff3bad79ebac4230c53a03b1b6e2e47c1cf",
         "content": "sha256:d74fc2b14e7948998b1aaaea59cb7cb4c2d67731eee72bafdab33e7f9381ff29",
         "locator": {
           "kind": "symbol",
@@ -147,7 +165,7 @@
     },
     {
       "anchor": {
-        "blob": "9cfb3331ff9fa3f591e098da8dbf93635dd481b9",
+        "blob": "eecdaff3bad79ebac4230c53a03b1b6e2e47c1cf",
         "content": "sha256:d74fc2b14e7948998b1aaaea59cb7cb4c2d67731eee72bafdab33e7f9381ff29",
         "locator": {
           "kind": "symbol",
@@ -165,7 +183,7 @@
     },
     {
       "anchor": {
-        "blob": "9cfb3331ff9fa3f591e098da8dbf93635dd481b9",
+        "blob": "eecdaff3bad79ebac4230c53a03b1b6e2e47c1cf",
         "content": "sha256:8b005244c058f89a5173a0a1d8c6a01fcba28076d5dd37dc456d66ade779e9e5",
         "locator": {
           "kind": "symbol",
@@ -183,7 +201,25 @@
     },
     {
       "anchor": {
-        "blob": "9cfb3331ff9fa3f591e098da8dbf93635dd481b9",
+        "blob": "eecdaff3bad79ebac4230c53a03b1b6e2e47c1cf",
+        "content": "sha256:5294aa5786f684669c8cd1b735ec12b7a227be127bf85ee98de9ba85c2adfce2",
+        "locator": {
+          "kind": "symbol",
+          "name": "candidate_gate_verdict"
+        }
+      },
+      "id": "RLZ-GHCQ9T",
+      "invariant": "INV-HWAWFT",
+      "origin": {
+        "handoffEntry": "L176-INV-HWAWFT",
+        "leaf": "260928-MIK-L176"
+      },
+      "rationale": "It is the one candidate verdict the preview and the apply's preflight both read, and this change makes it ask the memory refresh's refusals as well as the invariant gate, which is what puts the refusal before the approval claim and the code commit.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "eecdaff3bad79ebac4230c53a03b1b6e2e47c1cf",
         "content": "sha256:d74fc2b14e7948998b1aaaea59cb7cb4c2d67731eee72bafdab33e7f9381ff29",
         "locator": {
           "kind": "symbol",
@@ -201,7 +237,7 @@
     },
     {
       "anchor": {
-        "blob": "9cfb3331ff9fa3f591e098da8dbf93635dd481b9",
+        "blob": "eecdaff3bad79ebac4230c53a03b1b6e2e47c1cf",
         "content": "sha256:de0378335937c87f8c461adc352207ef562d860dc1e63f6cbafa60e6f76dcaf4",
         "locator": {
           "kind": "symbol",
@@ -219,7 +255,7 @@
     },
     {
       "anchor": {
-        "blob": "9cfb3331ff9fa3f591e098da8dbf93635dd481b9",
+        "blob": "eecdaff3bad79ebac4230c53a03b1b6e2e47c1cf",
         "content": "sha256:d74fc2b14e7948998b1aaaea59cb7cb4c2d67731eee72bafdab33e7f9381ff29",
         "locator": {
           "kind": "symbol",
@@ -237,7 +273,7 @@
     },
     {
       "anchor": {
-        "blob": "9cfb3331ff9fa3f591e098da8dbf93635dd481b9",
+        "blob": "eecdaff3bad79ebac4230c53a03b1b6e2e47c1cf",
         "content": "sha256:d74fc2b14e7948998b1aaaea59cb7cb4c2d67731eee72bafdab33e7f9381ff29",
         "locator": {
           "kind": "symbol",
@@ -255,7 +291,25 @@
     },
     {
       "anchor": {
-        "blob": "9cfb3331ff9fa3f591e098da8dbf93635dd481b9",
+        "blob": "eecdaff3bad79ebac4230c53a03b1b6e2e47c1cf",
+        "content": "sha256:11ae5d0f9f1b6bd93cd7a7c2b039af7d2f2705640ac5f630475ea73439540a7d",
+        "locator": {
+          "kind": "symbol",
+          "name": "external_closeout_commits"
+        }
+      },
+      "id": "RLZ-PKGD7T",
+      "invariant": "INV-8RRWT2",
+      "origin": {
+        "handoffEntry": "L176-5-record",
+        "leaf": "260928-MIK-L176"
+      },
+      "rationale": "The code-then-memory order it publishes is untouched by this leaf; the new refusal only runs before that publication, never instead of it.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "eecdaff3bad79ebac4230c53a03b1b6e2e47c1cf",
         "content": "sha256:d74fc2b14e7948998b1aaaea59cb7cb4c2d67731eee72bafdab33e7f9381ff29",
         "locator": {
           "kind": "symbol",
@@ -273,8 +327,8 @@
     },
     {
       "anchor": {
-        "blob": "9cfb3331ff9fa3f591e098da8dbf93635dd481b9",
-        "content": "sha256:ce55dd2516d0d591615ce8e01cf27a2faddb5fd4999021481af5f1a6dd4b0936",
+        "blob": "eecdaff3bad79ebac4230c53a03b1b6e2e47c1cf",
+        "content": "sha256:5294aa5786f684669c8cd1b735ec12b7a227be127bf85ee98de9ba85c2adfce2",
         "locator": {
           "kind": "symbol",
           "name": "candidate_gate_verdict"
@@ -291,7 +345,7 @@
     },
     {
       "anchor": {
-        "blob": "9cfb3331ff9fa3f591e098da8dbf93635dd481b9",
+        "blob": "eecdaff3bad79ebac4230c53a03b1b6e2e47c1cf",
         "content": "sha256:d74fc2b14e7948998b1aaaea59cb7cb4c2d67731eee72bafdab33e7f9381ff29",
         "locator": {
           "kind": "symbol",
@@ -309,7 +363,7 @@
     },
     {
       "anchor": {
-        "blob": "9cfb3331ff9fa3f591e098da8dbf93635dd481b9",
+        "blob": "eecdaff3bad79ebac4230c53a03b1b6e2e47c1cf",
         "content": "sha256:6733de358d09058db7ab9672204df11f721366208bfd9ed54924fe325d71e265",
         "locator": {
           "kind": "symbol",
@@ -327,7 +381,7 @@
     },
     {
       "anchor": {
-        "blob": "9cfb3331ff9fa3f591e098da8dbf93635dd481b9",
+        "blob": "eecdaff3bad79ebac4230c53a03b1b6e2e47c1cf",
         "content": "sha256:de0378335937c87f8c461adc352207ef562d860dc1e63f6cbafa60e6f76dcaf4",
         "locator": {
           "kind": "symbol",
@@ -345,7 +399,43 @@
     },
     {
       "anchor": {
-        "blob": "9cfb3331ff9fa3f591e098da8dbf93635dd481b9",
+        "blob": "eecdaff3bad79ebac4230c53a03b1b6e2e47c1cf",
+        "content": "sha256:114c7734fd039866458154c2993f9471f0cde61c7e1beff80d8e65761105932b",
+        "locator": {
+          "kind": "symbol",
+          "name": "closeout_changed_paths"
+        }
+      },
+      "id": "RLZ-Y8WVW1",
+      "invariant": "INV-HWAWFT",
+      "origin": {
+        "handoffEntry": "L176-INV-HWAWFT",
+        "leaf": "260928-MIK-L176"
+      },
+      "rationale": "It is the worklist the verdict must judge; the reader moved beside the verdict so the two cannot drift apart.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "eecdaff3bad79ebac4230c53a03b1b6e2e47c1cf",
+        "content": "sha256:eec23d0a589b6e08051d8a5982c568e5dc3410d87da42d6acb66aa6e6716f015",
+        "locator": {
+          "kind": "symbol",
+          "name": "candidate_memory_refresh_refusal"
+        }
+      },
+      "id": "RLZ-YWJVBC",
+      "invariant": "INV-HWAWFT",
+      "origin": {
+        "handoffEntry": "L176-INV-HWAWFT",
+        "leaf": "260928-MIK-L176"
+      },
+      "rationale": "It composes the memory refresh's refusals the two trees decide: the entity check reads the candidate by tree id, while the route-index planner takes the resolved context roots and the source snapshot it reads, so the composed answer follows those trees' contents rather than anything the closeout writes later.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "eecdaff3bad79ebac4230c53a03b1b6e2e47c1cf",
         "content": "sha256:d74fc2b14e7948998b1aaaea59cb7cb4c2d67731eee72bafdab33e7f9381ff29",
         "locator": {
           "kind": "symbol",
@@ -363,7 +453,7 @@
     },
     {
       "anchor": {
-        "blob": "9cfb3331ff9fa3f591e098da8dbf93635dd481b9",
+        "blob": "eecdaff3bad79ebac4230c53a03b1b6e2e47c1cf",
         "content": "sha256:182a12a341a97c4b5960eff651b8e356bdecaad0f4fa29123c64b60c55d961ef",
         "locator": {
           "kind": "symbol",
@@ -386,12 +476,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9cfb3331ff9fa3f591e098da8dbf93635dd481b9",
+            "blob": "eecdaff3bad79ebac4230c53a03b1b6e2e47c1cf",
             "content": "sha256:11ae5d0f9f1b6bd93cd7a7c2b039af7d2f2705640ac5f630475ea73439540a7d",
             "locator": {
-              "end": 118,
+              "end": 125,
               "kind": "line_range",
-              "start": 66
+              "start": 73
             }
           },
           "kind": "code"
@@ -403,12 +493,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9cfb3331ff9fa3f591e098da8dbf93635dd481b9",
+            "blob": "eecdaff3bad79ebac4230c53a03b1b6e2e47c1cf",
             "content": "sha256:d74fc2b14e7948998b1aaaea59cb7cb4c2d67731eee72bafdab33e7f9381ff29",
             "locator": {
-              "end": 511,
+              "end": 587,
               "kind": "line_range",
-              "start": 408
+              "start": 484
             }
           },
           "kind": "code"
@@ -420,7 +510,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9cfb3331ff9fa3f591e098da8dbf93635dd481b9",
+            "blob": "eecdaff3bad79ebac4230c53a03b1b6e2e47c1cf",
             "content": "sha256:d6b2cc5edcc679b09f7bea7166af1fe1f654aeacc7d82c0ac11fc86295067b56",
             "locator": {
               "kind": "symbol",
@@ -436,7 +526,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9cfb3331ff9fa3f591e098da8dbf93635dd481b9",
+            "blob": "eecdaff3bad79ebac4230c53a03b1b6e2e47c1cf",
             "content": "sha256:de0378335937c87f8c461adc352207ef562d860dc1e63f6cbafa60e6f76dcaf4",
             "locator": {
               "kind": "symbol",
@@ -452,7 +542,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9cfb3331ff9fa3f591e098da8dbf93635dd481b9",
+            "blob": "eecdaff3bad79ebac4230c53a03b1b6e2e47c1cf",
             "content": "sha256:6733de358d09058db7ab9672204df11f721366208bfd9ed54924fe325d71e265",
             "locator": {
               "kind": "symbol",
@@ -468,7 +558,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9cfb3331ff9fa3f591e098da8dbf93635dd481b9",
+            "blob": "eecdaff3bad79ebac4230c53a03b1b6e2e47c1cf",
             "content": "sha256:182a12a341a97c4b5960eff651b8e356bdecaad0f4fa29123c64b60c55d961ef",
             "locator": {
               "kind": "symbol",
@@ -484,12 +574,11 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9cfb3331ff9fa3f591e098da8dbf93635dd481b9",
-            "content": "sha256:ce55dd2516d0d591615ce8e01cf27a2faddb5fd4999021481af5f1a6dd4b0936",
+            "blob": "eecdaff3bad79ebac4230c53a03b1b6e2e47c1cf",
+            "content": "sha256:5294aa5786f684669c8cd1b735ec12b7a227be127bf85ee98de9ba85c2adfce2",
             "locator": {
-              "end": 261,
-              "kind": "line_range",
-              "start": 226
+              "kind": "symbol",
+              "name": "candidate_gate_verdict"
             }
           },
           "kind": "code"
@@ -501,12 +590,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9cfb3331ff9fa3f591e098da8dbf93635dd481b9",
+            "blob": "eecdaff3bad79ebac4230c53a03b1b6e2e47c1cf",
             "content": "sha256:11ae5d0f9f1b6bd93cd7a7c2b039af7d2f2705640ac5f630475ea73439540a7d",
             "locator": {
-              "end": 118,
+              "end": 125,
               "kind": "line_range",
-              "start": 66
+              "start": 73
             }
           },
           "kind": "code"
@@ -518,7 +607,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9cfb3331ff9fa3f591e098da8dbf93635dd481b9",
+            "blob": "eecdaff3bad79ebac4230c53a03b1b6e2e47c1cf",
             "content": "sha256:cca6c023e9edb39ea6c2f2c46f00c83c67ed8c2c81bc0f273185f18259a6064b",
             "locator": {
               "kind": "symbol",
@@ -534,7 +623,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9cfb3331ff9fa3f591e098da8dbf93635dd481b9",
+            "blob": "eecdaff3bad79ebac4230c53a03b1b6e2e47c1cf",
             "content": "sha256:d6b2cc5edcc679b09f7bea7166af1fe1f654aeacc7d82c0ac11fc86295067b56",
             "locator": {
               "kind": "symbol",
@@ -550,12 +639,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9cfb3331ff9fa3f591e098da8dbf93635dd481b9",
+            "blob": "eecdaff3bad79ebac4230c53a03b1b6e2e47c1cf",
             "content": "sha256:11ae5d0f9f1b6bd93cd7a7c2b039af7d2f2705640ac5f630475ea73439540a7d",
             "locator": {
-              "end": 118,
+              "end": 125,
               "kind": "line_range",
-              "start": 66
+              "start": 73
             }
           },
           "kind": "code"
@@ -567,12 +656,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9cfb3331ff9fa3f591e098da8dbf93635dd481b9",
+            "blob": "eecdaff3bad79ebac4230c53a03b1b6e2e47c1cf",
             "content": "sha256:d74fc2b14e7948998b1aaaea59cb7cb4c2d67731eee72bafdab33e7f9381ff29",
             "locator": {
-              "end": 511,
+              "end": 587,
               "kind": "line_range",
-              "start": 408
+              "start": 484
             }
           },
           "kind": "code"
@@ -584,12 +673,11 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9cfb3331ff9fa3f591e098da8dbf93635dd481b9",
-            "content": "sha256:5f80c34d3a26a96ee3b3933d9e652f6b0f9ae7cf541a25f9892af3dfc1d4b73d",
+            "blob": "eecdaff3bad79ebac4230c53a03b1b6e2e47c1cf",
+            "content": "sha256:10ce5b547e465ec1531e4b6cd70f0cd3cfa872e71008466f7b03f79cd2bde23d",
             "locator": {
-              "end": 570,
-              "kind": "line_range",
-              "start": 554
+              "kind": "symbol",
+              "name": "_refresh_external_memory"
             }
           },
           "kind": "code"
@@ -601,7 +689,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9cfb3331ff9fa3f591e098da8dbf93635dd481b9",
+            "blob": "eecdaff3bad79ebac4230c53a03b1b6e2e47c1cf",
             "content": "sha256:aacbed3245544671ec9cdbebb43e65a9a21ee5fe355233a9cd58e98b7552b899",
             "locator": {
               "kind": "symbol",
@@ -617,12 +705,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9cfb3331ff9fa3f591e098da8dbf93635dd481b9",
+            "blob": "eecdaff3bad79ebac4230c53a03b1b6e2e47c1cf",
             "content": "sha256:11ae5d0f9f1b6bd93cd7a7c2b039af7d2f2705640ac5f630475ea73439540a7d",
             "locator": {
-              "end": 118,
+              "end": 125,
               "kind": "line_range",
-              "start": 66
+              "start": 73
             }
           },
           "kind": "code"
@@ -634,7 +722,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9cfb3331ff9fa3f591e098da8dbf93635dd481b9",
+            "blob": "eecdaff3bad79ebac4230c53a03b1b6e2e47c1cf",
             "content": "sha256:6733de358d09058db7ab9672204df11f721366208bfd9ed54924fe325d71e265",
             "locator": {
               "kind": "symbol",
@@ -650,7 +738,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9cfb3331ff9fa3f591e098da8dbf93635dd481b9",
+            "blob": "eecdaff3bad79ebac4230c53a03b1b6e2e47c1cf",
             "content": "sha256:8b005244c058f89a5173a0a1d8c6a01fcba28076d5dd37dc456d66ade779e9e5",
             "locator": {
               "kind": "symbol",
@@ -666,12 +754,11 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9cfb3331ff9fa3f591e098da8dbf93635dd481b9",
-            "content": "sha256:ce55dd2516d0d591615ce8e01cf27a2faddb5fd4999021481af5f1a6dd4b0936",
+            "blob": "eecdaff3bad79ebac4230c53a03b1b6e2e47c1cf",
+            "content": "sha256:5294aa5786f684669c8cd1b735ec12b7a227be127bf85ee98de9ba85c2adfce2",
             "locator": {
-              "end": 261,
-              "kind": "line_range",
-              "start": 226
+              "kind": "symbol",
+              "name": "candidate_gate_verdict"
             }
           },
           "kind": "code"
@@ -683,7 +770,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9cfb3331ff9fa3f591e098da8dbf93635dd481b9",
+            "blob": "eecdaff3bad79ebac4230c53a03b1b6e2e47c1cf",
             "content": "sha256:2e6b71f194f95ae3a119d49987ce890f73f507d3bc12bc37744e49d9eef068f6",
             "locator": {
               "kind": "symbol",
@@ -699,7 +786,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9cfb3331ff9fa3f591e098da8dbf93635dd481b9",
+            "blob": "eecdaff3bad79ebac4230c53a03b1b6e2e47c1cf",
             "content": "sha256:182a12a341a97c4b5960eff651b8e356bdecaad0f4fa29123c64b60c55d961ef",
             "locator": {
               "kind": "symbol",
@@ -715,7 +802,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9cfb3331ff9fa3f591e098da8dbf93635dd481b9",
+            "blob": "eecdaff3bad79ebac4230c53a03b1b6e2e47c1cf",
             "content": "sha256:de0378335937c87f8c461adc352207ef562d860dc1e63f6cbafa60e6f76dcaf4",
             "locator": {
               "kind": "symbol",
@@ -731,7 +818,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9cfb3331ff9fa3f591e098da8dbf93635dd481b9",
+            "blob": "eecdaff3bad79ebac4230c53a03b1b6e2e47c1cf",
             "content": "sha256:d6b2cc5edcc679b09f7bea7166af1fe1f654aeacc7d82c0ac11fc86295067b56",
             "locator": {
               "kind": "symbol",
@@ -764,7 +851,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "896036cda96da332680be444bab8b463b0170846",
+            "blob": "fab9c050d0fb6bc1c2f06b575252bcc0a3a6fe93",
             "content": "sha256:8031e67c7934ff8119bdbf79371644a07e0bc3347e70be2523b4ccf952bbc24b",
             "locator": {
               "kind": "symbol",
@@ -781,7 +868,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "896036cda96da332680be444bab8b463b0170846",
+            "blob": "fab9c050d0fb6bc1c2f06b575252bcc0a3a6fe93",
             "content": "sha256:134f8d0daa116b1c0896411dacc6e423ee88b9738675913d670b364cf0aeadfe",
             "locator": {
               "kind": "symbol",
@@ -798,12 +885,77 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9cfb3331ff9fa3f591e098da8dbf93635dd481b9",
-            "content": "sha256:5f80c34d3a26a96ee3b3933d9e652f6b0f9ae7cf541a25f9892af3dfc1d4b73d",
+            "blob": "eecdaff3bad79ebac4230c53a03b1b6e2e47c1cf",
+            "content": "sha256:10ce5b547e465ec1531e4b6cd70f0cd3cfa872e71008466f7b03f79cd2bde23d",
             "locator": {
-              "end": 570,
-              "kind": "line_range",
-              "start": 554
+              "kind": "symbol",
+              "name": "_refresh_external_memory"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "49": {
+      "note": "The one verdict the preview and the apply's preflight read also asks the memory refresh's own refusals over the code candidate tree and the memory worktree.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "eecdaff3bad79ebac4230c53a03b1b6e2e47c1cf",
+            "content": "sha256:eec23d0a589b6e08051d8a5982c568e5dc3410d87da42d6acb66aa6e6716f015",
+            "locator": {
+              "kind": "symbol",
+              "name": "candidate_memory_refresh_refusal"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "50": {
+      "note": "Every catalog row is evidence-checked against the candidate tree, planned or not; absent evidence is the unconditional check, while an unsupported algorithm and a missing value are diagnosed from the plan's rows.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "19659a8152534b0927a9d2298a478ff3b25bff56",
+            "content": "sha256:0ba8a940af2b66a26839e4a480e36683435f58ddfe6710f1fe4e75dc45830551",
+            "locator": {
+              "kind": "symbol",
+              "name": "entity_fingerprint_plan_problems"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/onboarding.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "51": {
+      "note": "The route-index refresh's deterministic input refusals are asked through the refresh's own planner.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "19659a8152534b0927a9d2298a478ff3b25bff56",
+            "content": "sha256:a07a4a5d51ddf06b80eb0517d52d7b1806ab802b9d0de471afa421c3e3423698",
+            "locator": {
+              "kind": "symbol",
+              "name": "route_index_refresh_problems"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/onboarding.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "52": {
+      "note": "The closeout worklist reader the verdict and the refresh both judge.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "eecdaff3bad79ebac4230c53a03b1b6e2e47c1cf",
+            "content": "sha256:114c7734fd039866458154c2993f9471f0cde61c7e1beff80d8e65761105932b",
+            "locator": {
+              "kind": "symbol",
+              "name": "closeout_changed_paths"
             }
           },
           "kind": "code"

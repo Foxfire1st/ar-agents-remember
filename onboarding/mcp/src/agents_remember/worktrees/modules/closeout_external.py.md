@@ -72,6 +72,9 @@ and `test_the_closeout_s_exact_tree_re_anchor_checks_the_file_it_has_just_closed
 - **`candidate_gate_verdict(contract, code_tree)`** asks the gate about the accepted code candidate tree and the
   memory worktree's current tree and writes nothing. It answers `None` (pass), the refusal text, or
   `GATE_NOT_APPLICABLE` when the invariant gate does not govern; legacy external memory instead receives its format refusal, including the series format verdict before publication authority.
+  When the gate passes, the same verdict asks the memory refresh's own refusals through
+  `candidate_memory_refresh_refusal` (see the L176 section below), so one refusal can stop the candidate before the
+  approval claim and before either side is committed.
   `refuse_ungated_candidate` raises that refusal for the apply's preflight; the preview reads the same verdict.
 - **`require_gated_recovery(contract, code_commit, memory_commit)`** judges the tree of a memory commit that a
   resumed closeout recovered, before `external_closeout_commits` resumes with it. A commit the gate passed passes
@@ -101,7 +104,48 @@ Accepted messages and the `VerifiedChange` travel explicitly into their consumer
 ### Todos
 
 None recorded.
+## 260928-MIK-L176 The Candidate Verdict Asks The Memory Refresh's Refusals (MIK-R178)
+
+`candidate_memory_refresh_refusal(contract, code_tree)` returns every memory-refresh refusal the
+code candidate tree and the memory worktree's tree alone decide, or `None` when the refresh can run
+from this candidate. It composes two legs:
+
+- **the entity leg.** `entity_fingerprint_plan_problems` asks **every** row of the catalog, planned
+  or not, for evidence paths the candidate tree does not hold. The other two diagnostics follow the
+  plan: an unsupported algorithm is read from the plan's unsupported rows, and a missing fingerprint
+  value from a row the plan requires. One line per row carries every fault that applies to it, with
+  its remedy, so a second fault of the same row is never disclosed only after the first is cleared.
+- **the route-index leg.** `route_index_refresh_problems` runs the refresh's own planner as a dry
+  run and turns a refusal into one named line: the step, the offending cache or the inputs, the
+  code root, the memory root, and the error type and text.
+
+The two legs do not share an input mechanism. The entity leg reads the candidate by its tree id
+(`<tree>:<path>`), never `HEAD`, so nothing the closeout writes later changes that answer. The
+route-index leg receives the context the closeout resolves — the code root, the onboarding root and
+the source snapshot its planner reads — not a tree-id argument; in this leaf's frozen pair those
+bytes are the candidate's, but the planner's inputs are context roots, not the immutable tree id.
+The composed refusal opens with the tree it judged and carries one `- ` line per problem; an
+unexpected Git failure while asking is raised with the step, the catalog and the tree rather than as
+a bare Git message.
+
+`closeout_changed_paths` moved here from `closeout.py` and is re-exported there: the verdict must
+judge the same worklist the refresh will judge, and one module owning both keeps them from drifting
+apart. The refresh at the memory commit asks the same refusal through
+`entity_fingerprint_plan_refusal` before it writes, so the pre-commit verdict and the memory-commit
+enforcement cannot disagree.
+
 ## Evidence
+
+- Every catalog row is evidence-checked against the candidate tree, planned or not; absent evidence is the unconditional check, while an unsupported algorithm and a missing value are diagnosed from the plan's rows. [50]
+
+- `candidate_gate_verdict` supplies the exact current transaction boundary above. [29]
+- External refresh updates only entity fingerprints and generated indexes; card/overview refreshed lists are empty. [35]
+- The one verdict the preview and the apply's preflight read. [40]
+- Card and route-overview refreshed lists are empty; actual derived work is entity fingerprints and generated indexes. [48]
+
+- The one verdict the preview and the apply's preflight read also asks the memory refresh's own refusals over the code candidate tree and the memory worktree. [49]
+- The route-index refresh's deterministic input refusals are asked through the refresh's own planner. [51]
+- The closeout worklist reader the verdict and the refresh both judge. [52]
 
 ### Repo-Internal References
 
@@ -155,15 +199,12 @@ The current entry point is `external_closeout_commits`. Closed admission, immuta
 - The public closeout refuses an open item and commits once it is answered. [46]
 - A file rewritten while the gate runs is never committed unjudged. [47]
 
-- External refresh updates only entity fingerprints and generated indexes; card/overview refreshed lists are empty. [35]
 
-- Card and route-overview refreshed lists are empty; actual derived work is entity fingerprints and generated indexes. [48]
 
 - `external_closeout_commits` supplies the exact current transaction boundary above. [23]
 
 - `_commit_memory_content` supplies the exact current transaction boundary above. [24]
 
-- `candidate_gate_verdict` supplies the exact current transaction boundary above. [29]
 
 - The converted leaf's history file is closed before the memory commit. [30]
 
@@ -172,5 +213,3 @@ The current entry point is `external_closeout_commits`. Closed admission, immuta
 - Closeout reuses clean memory or publishes the judged tree with root memory.md excluded; unpublished refusal restores only unchanged owned preparations. [34]
 
 - The lock is asked before any stamping or commit of unconverted memory. [37]
-
-- The one verdict the preview and the apply's preflight read. [40]

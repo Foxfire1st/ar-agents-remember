@@ -3,7 +3,26 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "77f4c105452024a11b381921b945b76a3df028d5",
+        "blob": "a4cb0ce3f5f3f488c8ad8313b8063d4a8218871e",
+        "content": "sha256:263166a43d1af4b6d2862fdfc80fb77f53be0f3cde21b556ab375782bc0fa690",
+        "locator": {
+          "end": 775,
+          "kind": "line_range",
+          "start": 770
+        }
+      },
+      "id": "RLZ-3QNCGQ",
+      "invariant": "INV-0QW95B",
+      "origin": {
+        "handoffEntry": "L176-4-record",
+        "leaf": "260928-MIK-L176"
+      },
+      "rationale": "The external-leaf block of the curator checklist extends its repair findings with the entity evidence, which is how the finding reaches curatorActionableCount rather than a report section.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "a4cb0ce3f5f3f488c8ad8313b8063d4a8218871e",
         "content": "sha256:0789ad0c076cac4317aaa113bc2a9a1c21905a091a1b70ad508a46ee19a570e3",
         "locator": {
           "kind": "symbol",
@@ -21,7 +40,7 @@
     },
     {
       "anchor": {
-        "blob": "77f4c105452024a11b381921b945b76a3df028d5",
+        "blob": "a4cb0ce3f5f3f488c8ad8313b8063d4a8218871e",
         "content": "sha256:5c9b45625663660f99651d8387a558ef0278c93f7c8334755e066b490ff8366d",
         "locator": {
           "kind": "symbol",
@@ -39,8 +58,8 @@
     },
     {
       "anchor": {
-        "blob": "77f4c105452024a11b381921b945b76a3df028d5",
-        "content": "sha256:593f4ad5285df1aea3055ea3f09711dc4b694f1106383720c7bff7fa2022ebdf",
+        "blob": "a4cb0ce3f5f3f488c8ad8313b8063d4a8218871e",
+        "content": "sha256:9e419dfdd31128ccf5ceac3e59beb60b4635163009e3fb334f5fa77592dc182c",
         "locator": {
           "kind": "symbol",
           "name": "_attach_curator_checklist"
@@ -57,7 +76,7 @@
     },
     {
       "anchor": {
-        "blob": "77f4c105452024a11b381921b945b76a3df028d5",
+        "blob": "a4cb0ce3f5f3f488c8ad8313b8063d4a8218871e",
         "content": "sha256:6463ae48eea95244cea5e8b82e5a35b01859fb3bd5d564f7493aa05b81af995b",
         "locator": {
           "kind": "symbol",
@@ -75,7 +94,7 @@
     },
     {
       "anchor": {
-        "blob": "77f4c105452024a11b381921b945b76a3df028d5",
+        "blob": "a4cb0ce3f5f3f488c8ad8313b8063d4a8218871e",
         "content": "sha256:a9ce0154bceaa1f9de90686202afce80831ad1f1264b3a7a1e092b63474d9793",
         "locator": {
           "kind": "symbol",
@@ -93,7 +112,7 @@
     },
     {
       "anchor": {
-        "blob": "77f4c105452024a11b381921b945b76a3df028d5",
+        "blob": "a4cb0ce3f5f3f488c8ad8313b8063d4a8218871e",
         "content": "sha256:1e4695090e86243d29edfa20d74d1f551cd102d5e79638d560e9fe6a6c6fbf17",
         "locator": {
           "kind": "symbol",
@@ -111,7 +130,7 @@
     },
     {
       "anchor": {
-        "blob": "77f4c105452024a11b381921b945b76a3df028d5",
+        "blob": "a4cb0ce3f5f3f488c8ad8313b8063d4a8218871e",
         "content": "sha256:306f6286876759fdd98fa31ee60140a06b129e5d528ab0d843fc5dcea6300b09",
         "locator": {
           "kind": "symbol",
@@ -129,7 +148,7 @@
     },
     {
       "anchor": {
-        "blob": "77f4c105452024a11b381921b945b76a3df028d5",
+        "blob": "a4cb0ce3f5f3f488c8ad8313b8063d4a8218871e",
         "content": "sha256:6cbf3603f2dbf42832db738f03ef8b11d1f0ae98198b3a761afc4c3c02811ed9",
         "locator": {
           "kind": "symbol",

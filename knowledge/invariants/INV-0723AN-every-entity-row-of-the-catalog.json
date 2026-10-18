@@ -1,0 +1,33 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test",
+      "prevents_costly_mistake"
+    ],
+    "justification": "A row the refresh never selected was never asked about the candidate tree, so a leaf published a row citing a deleted file; the deleted-only case proves the whole catalog is asked."
+  },
+  "applicability": "Every entity row of a converted leaf's catalog, whether or not the refresh would recompute it.",
+  "conditions": [
+    "The code candidate tree's path set is read once and each row's evidence paths are checked against it."
+  ],
+  "exclusions": [
+    "An unreadable candidate tree, which raises naming the step, the tree and the repository."
+  ],
+  "id": "INV-0723AN",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "role-reports/worker/a17f4d83-52c9-4b06-9e14-7d38b05ac621/role-launch/evidence/L176-A2-pass-after-12-tests.txt: the deleted-only case asserts the row is outside the plan's required and unsupported lists, is refused by the preview and the apply with both HEADs unchanged, and lands once re-pointed at a retained file with the independently computed value"
+      ],
+      "path": "curator-list.json"
+    },
+    "handoffEntry": "L176-6-record",
+    "leaf": "260928-MIK-L176",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Every entity row of the catalog is evidence-checked against the code candidate tree whether or not the refresh would recompute it, so a leaf that deletes the only file a row cites is refused before the code commit.",
+  "status": "proposed",
+  "supersedes": []
+}

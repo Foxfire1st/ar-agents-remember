@@ -104,7 +104,9 @@ The worklist is no longer dirty-tree-only (issue #83). `closeout_changed_paths`
 unions the working tree with `committed_changed_paths(code_worktree,
 code_base_commit, code_commit)` — the unverified committed range, excluding
 synced-in parallel work and previous closeouts in the same worktree — and both
-preview and apply consume that worklist. The onboarding plan receives the
+preview and apply consume that worklist. The reader now lives in
+`closeout_external`, beside the candidate verdict that must judge the same
+worklist, and this module imports it; the computation itself is unchanged. The onboarding plan receives the
 working tier through `working_paths`, so missing sidecars block only for
 working-tree paths while committed-range paths without onboarding surface as
 the non-blocking `unonboarded` list. The body-gate pair that consumed

@@ -1,0 +1,36 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "guarded_by_test"
+    ],
+    "justification": "The preservation promise spans the closeout entry point in closeout_external.py and the narrow edited-row test in onboarding.py, and the add-only case proves the closeout still lands."
+  },
+  "applicability": "A closeout of an add-only leaf, and every entity row the leaf's catalog already holds with an unchanged evidence set.",
+  "conditions": [
+    "The row's evidence list is identical to the same row at the leaf's memory base.",
+    "No changed code path touches the row's evidence.",
+    "The preview answers would-closeout and the apply lands."
+  ],
+  "exclusions": [
+    "A row whose evidence list differs from the memory base, or which the base does not hold: the refresh recomputes it.",
+    "A leaf that deletes or renames an evidence path."
+  ],
+  "id": "INV-8RRWT2",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "the same focused test module, test_an_add_only_leaf_closes_out_as_today_and_keeps_an_unchanged_rows_value: the preview answers would-closeout, the closeout lands, the touched row equals the independently computed digest and the untouched row still carries its recorded value; this case passes on 05aaec05 too, which is what makes it a preservation claim"
+      ],
+      "path": "curator-list.json"
+    },
+    "handoffEntry": "L176-5-record",
+    "leaf": "260928-MIK-L176",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "An add-only leaf closes out as today, and an existing row whose evidence set is unchanged from the leaf's memory base and touches no changed code path keeps its recorded value; a row whose evidence list the leaf edits, or which it authors, is recomputed even when no changed path touches it.",
+  "status": "proposed",
+  "supersedes": []
+}

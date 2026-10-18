@@ -1,0 +1,35 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test",
+      "prevents_costly_mistake"
+    ],
+    "justification": "A re-pointed row that kept its stale value published a wrong fingerprint; both parameters of the recompute case compare the committed value with an independently computed digest."
+  },
+  "applicability": "The entity-fingerprint refresh of a converted leaf's closeout.",
+  "conditions": [
+    "A row is recomputed when its evidence touches a changed path, when its evidence list differs from the same row at the leaf's memory base, or when the base holds no such row.",
+    "The value is git-blob-set-v1 over the evidence set at the code commit's tree."
+  ],
+  "exclusions": [
+    "Rows of a catalog the leaf's memory base already holds unchanged in evidence and untouched by a changed path.",
+    "A curator, who never computes or writes a fingerprint."
+  ],
+  "id": "INV-B1AEEG",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "the same focused test module, both parameters of test_a_repointed_row_is_recomputed_and_the_closeout_lands; the unchanged-files-only parameter fails on 05aaec05 with the stale sha256:000... value and passes here, and the value is compared with an independent Git computation"
+      ],
+      "path": "curator-list.json"
+    },
+    "handoffEntry": "L176-3-record",
+    "leaf": "260928-MIK-L176",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "A row whose evidence list the leaf edits is recomputed at closeout, and the value is the git-blob-set-v1 digest over the new set at the code commit's tree.",
+  "status": "proposed",
+  "supersedes": []
+}

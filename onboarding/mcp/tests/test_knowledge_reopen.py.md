@@ -65,7 +65,9 @@ The same-size, same-second Git rewrite scenario imports the single `rewrite_in_t
 - `_Continued` is that world with a contract that can record the leaf's completed closeout that was not
   integrated (`closed_out`). `_closeout` runs `external_closeout_commits` with only the journal hooks stubbed;
   `_public_closeout` and `_public_preview` run `closeout_result` whole, with only what the fixture has none of
-  stubbed (the enclosure admission, the operation journal, a remote's branch authority).
+  stubbed (the enclosure admission, the operation journal, a remote's branch authority). Since the candidate
+  verdict's memory-refresh check resolves its own context through `closeout_external`, `_public_preview` stubs
+  that module's `contract_context` at the same seam.
 
 ### Invariants And Boundaries
 - The first file's bytes are asserted unchanged after every later step: the freeze is byte-level.

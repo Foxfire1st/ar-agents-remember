@@ -1,0 +1,35 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "guarded_by_test",
+      "prevents_costly_mistake"
+    ],
+    "justification": "A curator could not see the broken row until the closeout refused it after the code commit; the finding is read in onboarding.py and wired into the checklist in memory_quality/controller.py."
+  },
+  "applicability": "The memory-quality check on a leaf's memory worktree that an external leaf's closeout requires.",
+  "conditions": [
+    "The row is read from the leaf's catalog and the path from the leaf's own code candidate."
+  ],
+  "exclusions": [
+    "A path the candidate holds, which raises no finding.",
+    "The closeout's own gate, which this finding does not replace."
+  ],
+  "id": "INV-0QW95B",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "the same focused test module, test_the_memory_quality_check_names_an_entity_row_citing_a_path_the_candidate_lacks: with the row re-pointed to an existing path the run reports no entity-evidence finding, with it naming pkg/c.py the deleted path the run reports it and curatorActionableCount rises by exactly one"
+      ],
+      "path": "curator-list.json"
+    },
+    "handoffEntry": "L176-4-record",
+    "leaf": "260928-MIK-L176",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "The curator's memory-quality check reports an entity row that names a path the code candidate lacks, naming the file, the row and the path, and counts it as actionable.",
+  "status": "proposed",
+  "supersedes": []
+}
