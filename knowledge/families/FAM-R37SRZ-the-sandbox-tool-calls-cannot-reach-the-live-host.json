@@ -1,0 +1,33 @@
+{
+  "admission": {
+    "criteria": [
+      "joint_guarantee"
+    ],
+    "justification": "The members together promise that an agent's shell cannot reach the developer's live host through the helper: the environment member removes the selectors, the comparison member refuses another host, and the admitted member bounds the only state with none; no member promises that alone."
+  },
+  "guarantee": "No request the sandbox tool-call helper runs addresses a Paseo runtime other than the sandbox's own, and its one admitted no-host state reaches no home or address at all.",
+  "id": "FAM-R37SRZ",
+  "members": [
+    "INV-EZ0ZRG",
+    "INV-RPMFGP",
+    "INV-7W2HF6"
+  ],
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "mcp/tests/test_pnt_sandbox.py::test_a_resolved_host_outside_the_sandbox_is_refused_before_any_call, ::test_a_sandbox_whose_settings_select_another_host_is_refused, ::test_a_request_port_that_is_not_a_sandbox_port_is_refused; the two real refusals in the freeze report §Rule 6"
+      ],
+      "path": "l179-handoff.json"
+    },
+    "handoffEntry": "MIK-R181@v2 §2",
+    "leaf": "260928-MIK-L179",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "routes": [
+    "scripts/pnt_sandbox"
+  ],
+  "schema": "ar-family/v1",
+  "status": "proposed",
+  "title": "The sandbox tool-call helper's host admission"
+}

@@ -1,0 +1,75 @@
+{
+  "admission": {
+    "criteria": [
+      "real_alternatives"
+    ],
+    "justification": "Reordering the build and a blanket refusal were both weighed and rejected for stated reasons, so the admitted state is a choice rather than an unexamined default."
+  },
+  "alternatives": [
+    {
+      "option": "Admit only the fresh build's unconfigured phase: the report names the state and no call reaches any Paseo home or address.",
+      "reason": "The build resolves no host under the sandbox's own environment, so the server it starts can name none; the state is honest and reaches no host.",
+      "status": "chosen"
+    },
+    {
+      "option": "Write the sandbox's host settings before the corpus step so the comparison always sees a host.",
+      "reason": "It changes what runtime_install does in the corpus, which the requirement's preservation rule excludes.",
+      "reconsider_when": "The builder's corpus step stops depending on the pre-settings bootstrap, or the build writes host settings before the corpus by another route.",
+      "status": "rejected"
+    },
+    {
+      "option": "Refuse every request that resolves no host.",
+      "reason": "A fresh build could not run its corpus, so no sandbox could be built.",
+      "reconsider_when": "The build establishes its host before any helper-driven corpus call.",
+      "status": "rejected"
+    }
+  ],
+  "consequences": [
+    "The helper admits exactly one state without a host, names it in the report, and refuses any answer that names a home or an address outside the sandbox in every phase."
+  ],
+  "context": "A fresh build's asset bootstrap runs before the sandbox writes its paseoRuntime settings, so during the corpus no Paseo runtime is configured at all. A literal host-equals-sandbox rule refuses that request and breaks every build.",
+  "decider": "Architect ruling L179-R181-2-ADMITS-ONLY-THE-UNCONFIGURED-BUILD-PHASE on the Reviewer's question; the requirement became MIK-R181@v2.",
+  "id": "DEC-GEDTTG",
+  "links": [
+    {
+      "relation": "constrains",
+      "target": {
+        "id": "MIK-R181",
+        "packet": "requirements/MIK-R181-v2-the-sandboxs-tool-calls-cannot-reach-the-live-host.md",
+        "task": {
+          "path": "260928_maintained-invariant-knowledge",
+          "repository": "agents-remember"
+        },
+        "version": "v2"
+      }
+    },
+    {
+      "alternative": 1,
+      "relation": "reconsider_on",
+      "target": {
+        "blob": "dab8268245fc0d275831f939ec9ee819bd3be505",
+        "content": "sha256:d5dbd25beaf8163ab94b4c9d1371ecf72c330e7b999f056b61bcbc7818777fc5",
+        "locator": {
+          "kind": "symbol",
+          "name": "build_unlocked"
+        },
+        "path": "scripts/pnt_sandbox/builder.py"
+      }
+    }
+  ],
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "mcp/tests/test_pnt_sandbox.py::test_a_sandbox_that_records_no_host_yet_is_admitted_only_without_one and ::test_a_host_outside_the_sandbox_refuses_in_the_unconfigured_phase; the real unconfigured run in the freeze report §Proof — the unconfigured state (evidence/real-unconfigured-report.json, role_start refused with no-paseo-runtime-configured)"
+      ],
+      "path": "l179-handoff.json"
+    },
+    "handoffEntry": "MIK-R181@v2 §2 one admitted case",
+    "leaf": "260928-MIK-L179",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-decision/v1",
+  "status": "active",
+  "supersedes": []
+}

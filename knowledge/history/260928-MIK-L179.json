@@ -1,0 +1,501 @@
+{
+  "closed": true,
+  "leaf": "260928-MIK-L179",
+  "rows": [
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "e4e1d8a038d1c6b077c70f3a93ed08c50ffb0ca6",
+            "content": "sha256:4223a1d05066e5e66da422793edd4f06725783a1e61775e1dce292866fc25d0a",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_foreign_package_admission_prevents_public_install_calls"
+            },
+            "path": "mcp/tests/test_pnt_sandbox.py"
+          },
+          "before": {
+            "blob": "aebc614febc40ee2626937fa362e4bc9fa5e58b7",
+            "content": "sha256:bf8a21caf8e5effe5de7d127f91031dc83d0ab298782b129508ce281f22f2bf5",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_foreign_package_admission_prevents_public_install_calls"
+            },
+            "path": "mcp/tests/test_pnt_sandbox.py"
+          },
+          "id": "PRF-MNSZ23"
+        },
+        {
+          "after": {
+            "blob": "e2ceb23b98e7d1149f8eaace70c805193b869e6e",
+            "content": "sha256:e9e6b36639e8dd3aed5addab39cbbe7629f75da1de59f9cb2271488b472e0bc5",
+            "locator": {
+              "kind": "symbol",
+              "name": "_call_all"
+            },
+            "path": "scripts/pnt_sandbox/build_tool_calls.py"
+          },
+          "before": {
+            "blob": "3476324a99bd28dd30bb21f1789de338d66c5aff",
+            "content": "sha256:4ab8022a97382c5161a29323f72d23d2889667d3bffeec6a591aded3e1e69b69",
+            "locator": {
+              "kind": "symbol",
+              "name": "_call_all"
+            },
+            "path": "scripts/pnt_sandbox/build_tool_calls.py"
+          },
+          "id": "RLZ-M0X9TA"
+        },
+        {
+          "after": {
+            "blob": "e2ceb23b98e7d1149f8eaace70c805193b869e6e",
+            "content": "sha256:1d66010694b00e31b684aa49e987c44654cc87bbee3352c165064105143f57be",
+            "locator": {
+              "kind": "symbol",
+              "name": "_admission_error"
+            },
+            "path": "scripts/pnt_sandbox/build_tool_calls.py"
+          },
+          "before": {
+            "blob": "3476324a99bd28dd30bb21f1789de338d66c5aff",
+            "content": "sha256:9f95fd35f24ec058b63858eb5f12bafe6fec2bb7507f4f6e7d66a2c2253005e0",
+            "locator": {
+              "kind": "symbol",
+              "name": "_admission_error"
+            },
+            "path": "scripts/pnt_sandbox/build_tool_calls.py"
+          },
+          "id": "RLZ-QE1E2R"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-29CR9Z",
+      "items": [
+        "sha256:8305aad76c3ac30160c6741476c762b80fe486c84760d44d149bdd997743a9ad"
+      ],
+      "reason": "The helper's admission now establishes the host before _call_all runs and the foreign-package case shares the new request shape; the route, foreign-package and child-environment obligations are unchanged, and the three touched entries are re-anchored.",
+      "revision": 1,
+      "subject": "INV-VCAREW"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-2WAMRM",
+      "items": [
+        "sha256:6d85e29e592519ba8019cc5f21e39f6b398997cc2dedab8da60ba74d774c1695",
+        "sha256:cd6a29ad16da6147104d26a5d6074fe6a5fb7bb889b44dfdf4d55452e02fdf37"
+      ],
+      "reason": "The card adds the tool-server section: request fields, environment separation, host refusal, the no-host build phase and the start prerequisite, with the boundary that the prose is not OS containment.",
+      "sources": [
+        {
+          "blob": "d61b4e8161349ce95d3fa90e80eb883ea7465785",
+          "path": "scripts/pnt_sandbox/README.md"
+        }
+      ],
+      "subject": "onboarding:scripts/pnt_sandbox/README.md"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-4QTR23",
+      "items": [
+        "sha256:33c13375c177a513c1130a809302332fc29043486c44ad15d6a3199210f4fd48"
+      ],
+      "reason": "The collections.abc import adds the Iterator and Mapping types the new signatures use; it carries no obligation.",
+      "subject": "hunk:sha256:33c13375c177a513c1130a809302332fc29043486c44ad15d6a3199210f4fd48"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-712QZB",
+      "items": [
+        "sha256:a90f4b988f8c5bb397df3cb320fa13eed144b337ef289709d489c5ebdd420e1f"
+      ],
+      "reason": "The card records the corpus request's new sandbox and hostPort fields and the unchanged bootstrap-before-host-settings order.",
+      "sources": [
+        {
+          "blob": "dab8268245fc0d275831f939ec9ee819bd3be505",
+          "path": "scripts/pnt_sandbox/builder.py"
+        }
+      ],
+      "subject": "onboarding:scripts/pnt_sandbox/builder.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-752DMT",
+      "items": [
+        "sha256:8a900e384d3adda27aad69e25836ca5b752950e961fe0c83861a3f2894f50309"
+      ],
+      "reason": "The card records the runtime-install request's sandbox and hostPort fields beside the unchanged install path and receipt retirement.",
+      "sources": [
+        {
+          "blob": "8d1eeedc51777c644695387d9c6e34d3f1c46a76",
+          "path": "scripts/pnt_sandbox/operations.py"
+        }
+      ],
+      "subject": "onboarding:scripts/pnt_sandbox/operations.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-7JPQJN",
+      "items": [
+        "sha256:80936b759f8de1a254bb4d1a95bf56c1200f917313c3a5dcd99fa5f2be66b424"
+      ],
+      "reason": "The docstring now states the environment and host boundary; the obligations themselves are recorded over _admitted and its helpers.",
+      "subject": "hunk:sha256:80936b759f8de1a254bb4d1a95bf56c1200f917313c3a5dcd99fa5f2be66b424"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-8K1C7Z",
+      "items": [
+        "sha256:b0d73419278500716a7092de21acd43d8535d1009ccf5530c47f4fc5bb610f84"
+      ],
+      "reason": "The card records the single LIVE_PORTS definition shared by the command line and the helper and keeps the reserved defaults unchanged.",
+      "sources": [
+        {
+          "blob": "215078c2ddf18de2e1973869f463857727c29aad",
+          "path": "scripts/pnt_sandbox/layout.py"
+        }
+      ],
+      "subject": "onboarding:scripts/pnt_sandbox/layout.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-9PCSP8",
+      "items": [
+        "sha256:0494e7c4d940bb53abc30a156c3114222040bc1e3162d0032db24d8ab1e64e2a",
+        "sha256:800957707642866616056b8c12b7be7578904c74c7f6992dc42021ce7bc336eb",
+        "sha256:c376ce4cb8fcff41c3382b96cd7ef73f54e7964f8d920aae5724f273bcbd6d92"
+      ],
+      "reason": "The card adds the eight helper-admission cases and the mocked-transport limit, and its older evidence lines are re-anchored to the moved tests; the provider refusal is stated as happening after the server_info read.",
+      "sources": [
+        {
+          "blob": "e4e1d8a038d1c6b077c70f3a93ed08c50ffb0ca6",
+          "path": "mcp/tests/test_pnt_sandbox.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_pnt_sandbox.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-AS9A3C",
+      "items": [
+        "sha256:2f863596df914945e3975ef9b54453d86d6d8467da46baf7890604fc15db6f82"
+      ],
+      "reason": "The Refused exception and the tooling import helper are plumbing for the admissions recorded over _sandbox, _admitted and their helpers; they carry no separate promise.",
+      "subject": "hunk:sha256:2f863596df914945e3975ef9b54453d86d6d8467da46baf7890604fc15db6f82"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-BEBDPX",
+      "items": [
+        "sha256:0e3f3d19253165316708d5acb4dc4a9bee7b1fe79257bf92c7e6466cf59ee6a7"
+      ],
+      "reason": "The fallback report in main now uses the common builder; the stdout contract and exit code are unchanged.",
+      "subject": "hunk:sha256:0e3f3d19253165316708d5acb4dc4a9bee7b1fe79257bf92c7e6466cf59ee6a7"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-DASKHJ",
+      "items": [
+        "sha256:15aa0a7bdcf19228f3e531d6cdaf041db7ac9f65152a18ff22e194931e6830f6"
+      ],
+      "reason": "The contextlib and importlib imports only enable the environment-restoration context manager and the tooling import; they carry no obligation.",
+      "subject": "hunk:sha256:15aa0a7bdcf19228f3e531d6cdaf041db7ac9f65152a18ff22e194931e6830f6"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-DER1NW",
+      "items": [
+        "sha256:4ee4eacdd0a1087b848ea4d10a5892db942111ea0d2b8c6daa2ea8ba2566d7c4",
+        "sha256:ab8c7e34afb6716c2c76b5c2a02a3e1b8855bf201cd04833bd9d9eb0912d340d"
+      ],
+      "reason": "The card records the two-address-read allowance for build_tool_calls.py as census support, not a second host path.",
+      "sources": [
+        {
+          "blob": "309de0828276c5592db21788393ffa85501547c5",
+          "path": "mcp/tests/test_paseo_single_path.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_paseo_single_path.py"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "8d1eeedc51777c644695387d9c6e34d3f1c46a76",
+            "content": "sha256:e73390b2840d235942f59f5ed3fc9efa91378b41fc3e7da567bf07c452b0f968",
+            "locator": {
+              "end": 263,
+              "kind": "line_range",
+              "start": 204
+            },
+            "path": "scripts/pnt_sandbox/operations.py"
+          },
+          "before": {
+            "blob": "cebce5d8bde7f517ca1274ce11b50e35b9a9e59e",
+            "content": "sha256:9485da31500b0fd651d55b73e2bbc0376f167d760668db2a3b0fa4a258aff5b5",
+            "locator": {
+              "end": 263,
+              "kind": "line_range",
+              "start": 204
+            },
+            "path": "scripts/pnt_sandbox/operations.py"
+          },
+          "id": "RLZ-AWECY6"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-F4KAVP",
+      "items": [
+        "sha256:5601ba30a001cbf475292c8b7c59ef9811b77c4dfb8e274e7cd523139cae7f3a"
+      ],
+      "reason": "The runtime-install request gained the sandbox and hostPort fields inside the same method; receipt retirement and failure recording are unchanged, and the realization is re-anchored.",
+      "revision": 1,
+      "subject": "INV-MF5V3J"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-GT028E",
+      "items": [
+        "sha256:200e5feac5934879dcf442964c3b5df5dabbb42fe609580875130b2aac2cfc17"
+      ],
+      "reason": "This hunk returns the admission's refusal through the common report builder; the refusal itself is recorded over _admitted, and the report shape has its own clause.",
+      "subject": "hunk:sha256:200e5feac5934879dcf442964c3b5df5dabbb42fe609580875130b2aac2cfc17"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "8d1eeedc51777c644695387d9c6e34d3f1c46a76",
+            "content": "sha256:73868437b5f1dcb48b67627068dab27c7c0f7b33650c15b5e5f34aed01e922bd",
+            "locator": {
+              "end": 441,
+              "kind": "line_range",
+              "start": 72
+            },
+            "path": "scripts/pnt_sandbox/operations.py"
+          },
+          "before": {
+            "blob": "cebce5d8bde7f517ca1274ce11b50e35b9a9e59e",
+            "content": "sha256:adec97cd444226069a7ec1ba3addcbae39abc95d943087dcff993bcce4a71411",
+            "locator": {
+              "end": 441,
+              "kind": "line_range",
+              "start": 72
+            },
+            "path": "scripts/pnt_sandbox/operations.py"
+          },
+          "id": "RLZ-9F0JC0"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-H09S9J",
+      "items": [
+        "sha256:a1e3ef31ac416a623c6e24d6e3abd58c85f6ad0c5fa9c83aee532ef47ca1f93e"
+      ],
+      "reason": "The helper builds its tool server's environment with sandbox_environment and reads it back through foreign_variables; the obligation that sandbox processes receive the sandbox's environment is unchanged, and the Operations-seam realization is re-anchored.",
+      "revision": 2,
+      "subject": "INV-B6R816"
+    },
+    {
+      "considered": [
+        "FAM-R37SRZ"
+      ],
+      "disposition": "no_family",
+      "id": "ROW-H8NJNZ",
+      "items": [
+        "sha256:69d324e3c5cfa9199a50be3dcf7e76cdeecc076d011e33df27f0b212eda03248"
+      ],
+      "reason": "The README clause is an operator-facing statement of the helper's boundary; it documents the family's guarantee rather than adding a promise to it.",
+      "revision": 1,
+      "subject": "membership:INV-JAC809"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-JDKBVX",
+      "items": [
+        "sha256:375ca64233ed3d2a3170d267c4f0e7113b74c04b07a92ab1106a40468c8d4a9f"
+      ],
+      "reason": "Importing the shared LIVE_PORTS constant into the command line changes no obligation; the refusal it feeds is recorded at _port.",
+      "subject": "hunk:sha256:375ca64233ed3d2a3170d267c4f0e7113b74c04b07a92ab1106a40468c8d4a9f"
+    },
+    {
+      "considered": [
+        "FAM-R37SRZ"
+      ],
+      "disposition": "no_family",
+      "id": "ROW-NK3KXE",
+      "items": [
+        "sha256:3b3f0f345d8dfbe33acb7402ee63cd20ac2cd37f29b43874528ee4df555d621f"
+      ],
+      "reason": "The report-shape and request-field clause constrains the helper's consumers; it is not part of the promise that no request reaches another host.",
+      "revision": 1,
+      "subject": "membership:INV-YN12TG"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-PFXVR4",
+      "items": [
+        "sha256:209a18fccf0c78cbfa120e536f57d9e469ea2f353da8dd4262120728d9663f6b"
+      ],
+      "reason": "The card now accounts for the sandbox-built server environment, the layout-based host comparison with the one admitted no-host build phase, the request-port refusal and the provider field server_info sends; its citations name _sandbox, _require_sandbox_environment, _resolved_host, _admitted, _run and _admission_error.",
+      "sources": [
+        {
+          "blob": "e2ceb23b98e7d1149f8eaace70c805193b869e6e",
+          "path": "scripts/pnt_sandbox/build_tool_calls.py"
+        }
+      ],
+      "subject": "onboarding:scripts/pnt_sandbox/build_tool_calls.py"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "e2ceb23b98e7d1149f8eaace70c805193b869e6e",
+            "content": "sha256:1d66010694b00e31b684aa49e987c44654cc87bbee3352c165064105143f57be",
+            "locator": {
+              "kind": "symbol",
+              "name": "_admission_error"
+            },
+            "path": "scripts/pnt_sandbox/build_tool_calls.py"
+          },
+          "before": {
+            "blob": "3476324a99bd28dd30bb21f1789de338d66c5aff",
+            "content": "sha256:9f95fd35f24ec058b63858eb5f12bafe6fec2bb7507f4f6e7d66a2c2253005e0",
+            "locator": {
+              "kind": "symbol",
+              "name": "_admission_error"
+            },
+            "path": "scripts/pnt_sandbox/build_tool_calls.py"
+          },
+          "id": "RLZ-B8EBRC"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-PHM0QT",
+      "items": [
+        "sha256:d106318d11327b30d4a70ba0d1e0dc687f174f48c24c5b6f44713329ee8b8138"
+      ],
+      "reason": "The provider check now reads the field server_info sends; the obligation that no corpus call goes through a server reporting other roots, repositories or providers is unchanged, and the realization at _admission_error is re-anchored.",
+      "revision": 1,
+      "subject": "INV-5NDKYQ"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-SCQQKA",
+      "items": [
+        "sha256:fb836208dbae1dc5e4d291deaccb0cac176e91bbd8fd7a4ff50d22cded512312"
+      ],
+      "reason": "The module docstring now names the sandbox the request belongs to; prose only.",
+      "subject": "hunk:sha256:fb836208dbae1dc5e4d291deaccb0cac176e91bbd8fd7a4ff50d22cded512312"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-VFBD13",
+      "items": [
+        "sha256:11883853cdb30779b487f6d81c883c03073351f3bff606c36d6793e9949eb5d3"
+      ],
+      "reason": "Passing the admitted host into the report assembly changes no obligation; the report shape is recorded by its own clause.",
+      "subject": "hunk:sha256:11883853cdb30779b487f6d81c883c03073351f3bff606c36d6793e9949eb5d3"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-W1DTGF",
+      "items": [
+        "sha256:59e673122e298f5793f5f1fc1659b138668b87218d74f4be2d7e57b95f5848a0"
+      ],
+      "reason": "The card records _port reading LIVE_PORTS and the unchanged range, refusal text and command output.",
+      "sources": [
+        {
+          "blob": "00db969fae087cb513430ec22b1da9f4ee290c44",
+          "path": "scripts/pnt_sandbox/cli.py"
+        }
+      ],
+      "subject": "onboarding:scripts/pnt_sandbox/cli.py"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-WS2QRV",
+      "items": [
+        "sha256:be0f90703fed0b334d2a1836c818f908e106e23d9ea106860800bf372fb9711c"
+      ],
+      "reason": "The test route's purpose, composition and responsibility map are unchanged: the new helper-admission cases fit the existing distinct-operation test boundary and are described by the module card, so no route-level statement becomes untrue.",
+      "sources": [
+        {
+          "blob": "309de0828276c5592db21788393ffa85501547c5",
+          "path": "mcp/tests/test_paseo_single_path.py"
+        },
+        {
+          "blob": "e4e1d8a038d1c6b077c70f3a93ed08c50ffb0ca6",
+          "path": "mcp/tests/test_pnt_sandbox.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/overview"
+    },
+    {
+      "considered": [
+        "FAM-R37SRZ"
+      ],
+      "disposition": "no_family",
+      "id": "ROW-X28PCS",
+      "items": [
+        "sha256:61efa6c56f140af3cebe060f5accccb21dee97a68268d73d82654cd7572473bd"
+      ],
+      "reason": "The provider-field clause is a separate admission check; it shares the helper with the host family but adds nothing to that family's joint guarantee that every request addresses only the sandbox's runtime.",
+      "revision": 1,
+      "subject": "membership:INV-1937B4"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-X4R0GS",
+      "items": [
+        "sha256:57b519871dd3ed9c8e0d6a5ace3a12f011ff7d07803ecf3c9173121638ca28d9"
+      ],
+      "reason": "This hunk passes the environment built for the sandbox to the server parameters in _run instead of the caller's os.environ; the obligation it serves is recorded over _server_environment (INV-EZ0ZRG).",
+      "subject": "hunk:sha256:57b519871dd3ed9c8e0d6a5ace3a12f011ff7d07803ecf3c9173121638ca28d9"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-Z67TG4",
+      "items": [
+        "sha256:5895b23786369504cc8697cafcb039a3b2c3286cfab0ccd9428adaec08fd3ef5"
+      ],
+      "reason": "The root overview's purpose, construction, invariants and boundaries are unchanged: the helper's host admission is sandbox-tooling detail carried by the scripts/pnt_sandbox cards, not a new root-level route or doctrine.",
+      "sources": [
+        {
+          "blob": "d61b4e8161349ce95d3fa90e80eb883ea7465785",
+          "path": "scripts/pnt_sandbox/README.md"
+        },
+        {
+          "blob": "e2ceb23b98e7d1149f8eaace70c805193b869e6e",
+          "path": "scripts/pnt_sandbox/build_tool_calls.py"
+        },
+        {
+          "blob": "dab8268245fc0d275831f939ec9ee819bd3be505",
+          "path": "scripts/pnt_sandbox/builder.py"
+        },
+        {
+          "blob": "00db969fae087cb513430ec22b1da9f4ee290c44",
+          "path": "scripts/pnt_sandbox/cli.py"
+        },
+        {
+          "blob": "215078c2ddf18de2e1973869f463857727c29aad",
+          "path": "scripts/pnt_sandbox/layout.py"
+        },
+        {
+          "blob": "8d1eeedc51777c644695387d9c6e34d3f1c46a76",
+          "path": "scripts/pnt_sandbox/operations.py"
+        }
+      ],
+      "subject": "onboarding:overview"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-ZW3558",
+      "items": [
+        "sha256:ddda32761860f471b5d40dec6db0d578a9325a1e3e1c54e4f5a256b0fc3d32a5"
+      ],
+      "reason": "The module docstring's report line gains the host key; the report shape is recorded by its own clause.",
+      "subject": "hunk:sha256:ddda32761860f471b5d40dec6db0d578a9325a1e3e1c54e4f5a256b0fc3d32a5"
+    }
+  ],
+  "schema": "ar-history/v1"
+}

@@ -3,7 +3,25 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "5c1bf04fd06159d4437ba142716f02091bfaf844",
+        "blob": "dab8268245fc0d275831f939ec9ee819bd3be505",
+        "content": "sha256:e47b49a6d6f9ca4782a1f01ad59b5ef6a09577a7bf118c729b0081d2adfa9c75",
+        "locator": {
+          "kind": "symbol",
+          "name": "_seed_corpus"
+        }
+      },
+      "id": "RLZ-1HQC52",
+      "invariant": "INV-7W2HF6",
+      "origin": {
+        "handoffEntry": "MIK-R181@v2 §2 one admitted case",
+        "leaf": "260928-MIK-L179"
+      },
+      "rationale": "This is the step that runs before the sandbox writes its host block, which is the reason the unconfigured state exists at all; the admission's one exception is shaped to it.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "dab8268245fc0d275831f939ec9ee819bd3be505",
         "content": "sha256:9b509d05c260fd748de1caa2ce83fbef8fb8d4d9d21011846d739e89d74f798b",
         "locator": {
           "kind": "symbol",
@@ -21,7 +39,7 @@
     },
     {
       "anchor": {
-        "blob": "5c1bf04fd06159d4437ba142716f02091bfaf844",
+        "blob": "dab8268245fc0d275831f939ec9ee819bd3be505",
         "content": "sha256:d5dbd25beaf8163ab94b4c9d1371ecf72c330e7b999f056b61bcbc7818777fc5",
         "locator": {
           "kind": "symbol",
@@ -39,7 +57,7 @@
     },
     {
       "anchor": {
-        "blob": "5c1bf04fd06159d4437ba142716f02091bfaf844",
+        "blob": "dab8268245fc0d275831f939ec9ee819bd3be505",
         "content": "sha256:b724580976d5e1330a0045f33dd398bc7d94eefadda5a8374f2609e10cc5de67",
         "locator": {
           "kind": "symbol",
@@ -57,7 +75,7 @@
     },
     {
       "anchor": {
-        "blob": "5c1bf04fd06159d4437ba142716f02091bfaf844",
+        "blob": "dab8268245fc0d275831f939ec9ee819bd3be505",
         "content": "sha256:700e09b37d07b78f6a2a7afae9e25492221d783897d9235da8b6cff3d0d72013",
         "locator": {
           "kind": "symbol",
@@ -75,7 +93,7 @@
     },
     {
       "anchor": {
-        "blob": "5c1bf04fd06159d4437ba142716f02091bfaf844",
+        "blob": "dab8268245fc0d275831f939ec9ee819bd3be505",
         "content": "sha256:f9c167aabc96fb810cc3f669b8baf2cde2ce1f323a93ba3ae3070b093d85fe4c",
         "locator": {
           "kind": "symbol",
@@ -93,7 +111,7 @@
     },
     {
       "anchor": {
-        "blob": "5c1bf04fd06159d4437ba142716f02091bfaf844",
+        "blob": "dab8268245fc0d275831f939ec9ee819bd3be505",
         "content": "sha256:d5dbd25beaf8163ab94b4c9d1371ecf72c330e7b999f056b61bcbc7818777fc5",
         "locator": {
           "kind": "symbol",
@@ -108,6 +126,24 @@
       },
       "rationale": "The public sandbox builder seeds the owned isolated user-config path, including the landed host-reader dependency.",
       "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "dab8268245fc0d275831f939ec9ee819bd3be505",
+        "content": "sha256:da754ca670ddb279d76f64071f3a3a617caead23a74c9b15fcdfa3c6b7fcbd3f",
+        "locator": {
+          "kind": "symbol",
+          "name": "_corpus_request"
+        }
+      },
+      "id": "RLZ-E6A1Y9",
+      "invariant": "INV-YN12TG",
+      "origin": {
+        "handoffEntry": "MIK-R181@v2 §5",
+        "leaf": "260928-MIK-L179"
+      },
+      "rationale": "The corpus request is produced from the sandbox's own layout, so it names its sandbox and port and passes the new admission without a hand-written value.",
+      "role": "propagation-persistence"
     }
   ],
   "references": {
@@ -116,8 +152,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2fdc35f1b4b21e1d1a03f305c07ce0166b482862",
-            "content": "sha256:d1419530d530ff0e9d0898a88952a17492a69b2f3f276e2aef91aba59c3f223d",
+            "blob": "dab8268245fc0d275831f939ec9ee819bd3be505",
+            "content": "sha256:ba62ff95c9221c3a871536b3263d30a27a931206a1ff2feec82c0489ea945392",
             "locator": {
               "kind": "file"
             }
@@ -131,11 +167,27 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5c1bf04fd06159d4437ba142716f02091bfaf844",
+            "blob": "dab8268245fc0d275831f939ec9ee819bd3be505",
             "content": "sha256:b724580976d5e1330a0045f33dd398bc7d94eefadda5a8374f2609e10cc5de67",
             "locator": {
               "kind": "symbol",
               "name": "is_built"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The corpus request carries the sandbox and its Paseo port from the layout, and the bootstrap order is unchanged.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dab8268245fc0d275831f939ec9ee819bd3be505",
+            "content": "sha256:da754ca670ddb279d76f64071f3a3a617caead23a74c9b15fcdfa3c6b7fcbd3f",
+            "locator": {
+              "kind": "symbol",
+              "name": "_corpus_request"
             }
           },
           "kind": "code"

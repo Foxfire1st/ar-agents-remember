@@ -3,8 +3,98 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "3476324a99bd28dd30bb21f1789de338d66c5aff",
-        "content": "sha256:9f95fd35f24ec058b63858eb5f12bafe6fec2bb7507f4f6e7d66a2c2253005e0",
+        "blob": "e2ceb23b98e7d1149f8eaace70c805193b869e6e",
+        "content": "sha256:772c545a557366568c8ae970b0db4acf6d986d16e6b631bc37efe1fd79bc244a",
+        "locator": {
+          "kind": "symbol",
+          "name": "_host_port"
+        }
+      },
+      "id": "RLZ-038D2P",
+      "invariant": "INV-RPMFGP",
+      "origin": {
+        "handoffEntry": "MIK-R181@v2 §2",
+        "leaf": "260928-MIK-L179"
+      },
+      "rationale": "The listen address can only be the sandbox's if its port is a sandbox port, so this refuses a request that names a live port or a non-port before the comparison runs.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "e2ceb23b98e7d1149f8eaace70c805193b869e6e",
+        "content": "sha256:1d66010694b00e31b684aa49e987c44654cc87bbee3352c165064105143f57be",
+        "locator": {
+          "kind": "symbol",
+          "name": "_admission_error"
+        }
+      },
+      "id": "RLZ-3629DB",
+      "invariant": "INV-1937B4",
+      "origin": {
+        "handoffEntry": "MIK-R181@v2 §3",
+        "leaf": "260928-MIK-L179"
+      },
+      "rationale": "The check that was silently passing now reads unusedProviderKeys, so a server with providers configured is refused instead of admitted through a field that is no longer sent.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "e2ceb23b98e7d1149f8eaace70c805193b869e6e",
+        "content": "sha256:df593a17636c31088c4f4862b8621b23a7f32c3a390164749b7334b63600235d",
+        "locator": {
+          "kind": "symbol",
+          "name": "_admitted"
+        }
+      },
+      "id": "RLZ-6F435Z",
+      "invariant": "INV-7W2HF6",
+      "origin": {
+        "handoffEntry": "MIK-R181@v2 §2 one admitted case",
+        "leaf": "260928-MIK-L179"
+      },
+      "rationale": "The unconfigured state is admitted exactly here and nowhere else: only when the build resolves no host and the sandbox records none, and the returned host carries the named state rather than an empty object.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "e2ceb23b98e7d1149f8eaace70c805193b869e6e",
+        "content": "sha256:f8a22356265a12f52f90327bcd03159a85caabbf01d3ea955787c059854d00ec",
+        "locator": {
+          "kind": "symbol",
+          "name": "_server_environment"
+        }
+      },
+      "id": "RLZ-83MXKZ",
+      "invariant": "INV-EZ0ZRG",
+      "origin": {
+        "handoffEntry": "MIK-R181@v2 §1",
+        "leaf": "260928-MIK-L179"
+      },
+      "rationale": "This is the one place the helper composes the environment the tool server is started with; it calls the tooling's own sandbox_environment on the sandbox the request names, so the server gets the sandbox's selecting environment — its XDG roots and no runtime selector — while PATH, HOME and harness logins stay, as the tooling's rule says.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "e2ceb23b98e7d1149f8eaace70c805193b869e6e",
+        "content": "sha256:53b3e27902f28b7c23e27ec8f4cb18637e2847b15b7d6ebd56fc1a7dcf55bfcb",
+        "locator": {
+          "kind": "symbol",
+          "name": "_sandbox_host"
+        }
+      },
+      "id": "RLZ-9N738T",
+      "invariant": "INV-RPMFGP",
+      "origin": {
+        "handoffEntry": "MIK-R181@v2 §2",
+        "leaf": "260928-MIK-L179"
+      },
+      "rationale": "The sandbox's own recorded block is read so a settings file that disagrees with the sandbox layout is refused rather than believed; it is a cross-check, not the comparison's target.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "e2ceb23b98e7d1149f8eaace70c805193b869e6e",
+        "content": "sha256:1d66010694b00e31b684aa49e987c44654cc87bbee3352c165064105143f57be",
         "locator": {
           "kind": "symbol",
           "name": "_admission_error"
@@ -21,8 +111,44 @@
     },
     {
       "anchor": {
-        "blob": "3476324a99bd28dd30bb21f1789de338d66c5aff",
-        "content": "sha256:4ab8022a97382c5161a29323f72d23d2889667d3bffeec6a591aded3e1e69b69",
+        "blob": "e2ceb23b98e7d1149f8eaace70c805193b869e6e",
+        "content": "sha256:df593a17636c31088c4f4862b8621b23a7f32c3a390164749b7334b63600235d",
+        "locator": {
+          "kind": "symbol",
+          "name": "_admitted"
+        }
+      },
+      "id": "RLZ-ER89VP",
+      "invariant": "INV-RPMFGP",
+      "origin": {
+        "handoffEntry": "MIK-R181@v2 §2",
+        "leaf": "260928-MIK-L179"
+      },
+      "rationale": "This is the admission: it fixes the expected pair from the layout, reads the sandbox's own record as a cross-check, resolves the build's host under the server environment, and refuses on any difference before the server is created.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "e2ceb23b98e7d1149f8eaace70c805193b869e6e",
+        "content": "sha256:bc58878c1ea31c85f732840c4f6700888d989787f72af00e858ba334e62449b0",
+        "locator": {
+          "kind": "symbol",
+          "name": "_answer"
+        }
+      },
+      "id": "RLZ-H393VV",
+      "invariant": "INV-YN12TG",
+      "origin": {
+        "handoffEntry": "MIK-R181@v2 §5",
+        "leaf": "260928-MIK-L179"
+      },
+      "rationale": "Every report the helper prints is built here, so the four keys and the additive host are one construction rather than a convention spread over the return sites.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "e2ceb23b98e7d1149f8eaace70c805193b869e6e",
+        "content": "sha256:e9e6b36639e8dd3aed5addab39cbbe7629f75da1de59f9cb2271488b472e0bc5",
         "locator": {
           "kind": "symbol",
           "name": "_call_all"
@@ -39,8 +165,26 @@
     },
     {
       "anchor": {
-        "blob": "3476324a99bd28dd30bb21f1789de338d66c5aff",
-        "content": "sha256:9f95fd35f24ec058b63858eb5f12bafe6fec2bb7507f4f6e7d66a2c2253005e0",
+        "blob": "e2ceb23b98e7d1149f8eaace70c805193b869e6e",
+        "content": "sha256:9629f168a35509ddb380a1ac5a3252551996cdc9a853c81cdbe03bcf707048ea",
+        "locator": {
+          "kind": "symbol",
+          "name": "_sandbox"
+        }
+      },
+      "id": "RLZ-MZ298B",
+      "invariant": "INV-EZ0ZRG",
+      "origin": {
+        "handoffEntry": "MIK-R181@v2 §1",
+        "leaf": "260928-MIK-L179"
+      },
+      "rationale": "Every request passes this guard before a layout, an environment or a server exists: a missing or relative sandbox is refused here, which is what makes 'nothing is started' true for that case.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "e2ceb23b98e7d1149f8eaace70c805193b869e6e",
+        "content": "sha256:1d66010694b00e31b684aa49e987c44654cc87bbee3352c165064105143f57be",
         "locator": {
           "kind": "symbol",
           "name": "_admission_error"
@@ -54,6 +198,42 @@
       },
       "rationale": "Admission check for product package identity: it refuses a foreign package before the public install route is called.",
       "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "e2ceb23b98e7d1149f8eaace70c805193b869e6e",
+        "content": "sha256:95a2bba2b28673b2be4901559cea9e368b23eb0454f456c1d687fe24749f62ee",
+        "locator": {
+          "kind": "symbol",
+          "name": "_require_sandbox_environment"
+        }
+      },
+      "id": "RLZ-RDG9CY",
+      "invariant": "INV-7W2HF6",
+      "origin": {
+        "handoffEntry": "MIK-R181@v2 §2 one admitted case",
+        "leaf": "260928-MIK-L179"
+      },
+      "rationale": "This reads the environment the server will get back through the tooling's own judgment, so a surviving selector — the only route to a default home or the developer's settings — refuses before the server exists.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "e2ceb23b98e7d1149f8eaace70c805193b869e6e",
+        "content": "sha256:a74c34fb5fece8b46467b3206d10ff2759aa86a3e9d9af82d0e3c77da3f8bd91",
+        "locator": {
+          "kind": "symbol",
+          "name": "_resolved_host"
+        }
+      },
+      "id": "RLZ-V0RZZK",
+      "invariant": "INV-RPMFGP",
+      "origin": {
+        "handoffEntry": "MIK-R181@v2 §2",
+        "leaf": "260928-MIK-L179"
+      },
+      "rationale": "The host the server would reach is resolved by the build's own loader under the server's environment, so the check answers what the build would do rather than what a separate implementation guesses.",
+      "role": "support"
     }
   ],
   "references": {
@@ -62,13 +242,126 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c7f685e2839e5f34024bc5afa15818b35c4553d8",
-            "content": "sha256:3c42ff1afaa753e7aca32da79de3bfefe488a4d2518d7f2952a23966a484d60f",
+            "blob": "e2ceb23b98e7d1149f8eaace70c805193b869e6e",
+            "content": "sha256:3b61a18eaf2c7340ea94791c76b68aa8fa43aefaf86f177c7ddf3d4aac020e10",
             "locator": {
               "kind": "file"
             }
           },
           "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The request's sandbox is required, absolute, and its port must be a sandbox port other than the live ports.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e2ceb23b98e7d1149f8eaace70c805193b869e6e",
+            "content": "sha256:9629f168a35509ddb380a1ac5a3252551996cdc9a853c81cdbe03bcf707048ea",
+            "locator": {
+              "kind": "symbol",
+              "name": "_sandbox"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The tool server's environment is the sandbox's, and a surviving selector refuses before the server starts.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e2ceb23b98e7d1149f8eaace70c805193b869e6e",
+            "content": "sha256:95a2bba2b28673b2be4901559cea9e368b23eb0454f456c1d687fe24749f62ee",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_sandbox_environment"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The build's own settings resolution is read under the server's environment, so the comparison is not made with the caller's environment.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e2ceb23b98e7d1149f8eaace70c805193b869e6e",
+            "content": "sha256:a74c34fb5fece8b46467b3206d10ff2759aa86a3e9d9af82d0e3c77da3f8bd91",
+            "locator": {
+              "kind": "symbol",
+              "name": "_resolved_host"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The sandbox's layout pair is the admitted host; a recorded settings host that differs, or a resolved host that differs, refuses before any call.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e2ceb23b98e7d1149f8eaace70c805193b869e6e",
+            "content": "sha256:df593a17636c31088c4f4862b8621b23a7f32c3a390164749b7334b63600235d",
+            "locator": {
+              "kind": "symbol",
+              "name": "_admitted"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "A request refused by the admission answers with no host and no call; a refusal from the `server_info` checks is returned after that read, with the admitted host in the report.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e2ceb23b98e7d1149f8eaace70c805193b869e6e",
+            "content": "sha256:9a67a5121c97744a0ef74e77bdd7b87d2147c657e03a1752bcd38f847c485365",
+            "locator": {
+              "kind": "symbol",
+              "name": "_run"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The provider check reads the field `server_info` sends for configured providers.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e2ceb23b98e7d1149f8eaace70c805193b869e6e",
+            "content": "sha256:1d66010694b00e31b684aa49e987c44654cc87bbee3352c165064105143f57be",
+            "locator": {
+              "kind": "symbol",
+              "name": "_admission_error"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The unconfigured state is admitted and named by condition, not by build freshness, and a foreign resolved host refuses.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e4e1d8a038d1c6b077c70f3a93ed08c50ffb0ca6",
+            "content": "sha256:920fab14c0ada4d3665736cae5feb7a56d7dd4532a25e427c57c37f037b4b2a6",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_sandbox_that_records_no_host_yet_is_admitted_only_without_one"
+            },
+            "path": "mcp/tests/test_pnt_sandbox.py"
+          },
+          "kind": "test"
         }
       ]
     }

@@ -8,9 +8,9 @@
 
 The CLI dispatches five development commands to one canonical SandboxLayout and Operations object. Exit 0 reports success, 1 reports step/check failure and 2 reports refusal. A start refusal means no process was started; build preparation can already have changed the sandbox or ignored checkout outputs before a late refusal.
 
-## Evidence
+`_port` now reads the layout's `LIVE_PORTS` instead of repeating the two port literals. The accepted range, the refusal text and every command's output are unchanged; only the definition of the live ports moved to one place.
 
-- The scoped current source carries the module/document behavior described above. [1]
+## Evidence
 
 ## 260928-MIK-L96 Explicit ports with preserved defaults
 
@@ -18,3 +18,6 @@ The public parser now takes the host and dashboard ports for build, check, start
 
 - The parser with the explicit port arguments. [2]
 - The controller passing the chosen pair. [3]
+
+- The scoped current source carries the module/document behavior described above. [1]
+- The parser refuses an out-of-range port and the shared live ports, with the same message as before. [4]

@@ -1,0 +1,32 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations"
+    ],
+    "justification": "The report is built in the helper and the corpus and host-install requests are written in two other files; one changed shape would otherwise break the other two."
+  },
+  "applicability": "Every report the helper prints and the tooling's own corpus and host-install requests.",
+  "conditions": [
+    "The helper answers a request it received."
+  ],
+  "exclusions": [
+    "A failed call keeps its own error text; the report shape is not a success signal."
+  ],
+  "id": "INV-YN12TG",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "the sandbox build and start runs in the freeze report §Rule 6 (evidence/sandbox-build.txt, sandbox-start-tail.txt) and the focused suites on the final bytes"
+      ],
+      "path": "l179-handoff.json"
+    },
+    "handoffEntry": "MIK-R181@v2 §5",
+    "leaf": "260928-MIK-L179",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "The helper's report keeps ok, packageRoot, results and error with their meanings and adds host, and the tooling's own requests carry the sandbox and its port so the sandbox's corpus and host install are admitted and behave as before.",
+  "status": "accepted",
+  "supersedes": []
+}

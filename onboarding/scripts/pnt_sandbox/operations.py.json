@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "cebce5d8bde7f517ca1274ce11b50e35b9a9e59e",
+        "blob": "8d1eeedc51777c644695387d9c6e34d3f1c46a76",
         "content": "sha256:ebfc822a554c149abe5852fee01d68f04212a0e011c245452f17ae0688d1c75c",
         "locator": {
           "kind": "symbol",
@@ -21,12 +21,12 @@
     },
     {
       "anchor": {
-        "blob": "cebce5d8bde7f517ca1274ce11b50e35b9a9e59e",
+        "blob": "8d1eeedc51777c644695387d9c6e34d3f1c46a76",
         "content": "sha256:9455f23c617c68aea5bf0de4459004f48e5bc9ac72b0f9f4d6d2e9fe15654dc3",
         "locator": {
-          "end": 321,
+          "end": 323,
           "kind": "line_range",
-          "start": 305
+          "start": 307
         }
       },
       "id": "RLZ-99CM4D",
@@ -40,8 +40,8 @@
     },
     {
       "anchor": {
-        "blob": "cebce5d8bde7f517ca1274ce11b50e35b9a9e59e",
-        "content": "sha256:adec97cd444226069a7ec1ba3addcbae39abc95d943087dcff993bcce4a71411",
+        "blob": "8d1eeedc51777c644695387d9c6e34d3f1c46a76",
+        "content": "sha256:73868437b5f1dcb48b67627068dab27c7c0f7b33650c15b5e5f34aed01e922bd",
         "locator": {
           "end": 441,
           "kind": "line_range",
@@ -59,8 +59,8 @@
     },
     {
       "anchor": {
-        "blob": "cebce5d8bde7f517ca1274ce11b50e35b9a9e59e",
-        "content": "sha256:9485da31500b0fd651d55b73e2bbc0376f167d760668db2a3b0fa4a258aff5b5",
+        "blob": "8d1eeedc51777c644695387d9c6e34d3f1c46a76",
+        "content": "sha256:e73390b2840d235942f59f5ed3fc9efa91378b41fc3e7da567bf07c452b0f968",
         "locator": {
           "end": 263,
           "kind": "line_range",
@@ -78,12 +78,30 @@
     },
     {
       "anchor": {
-        "blob": "cebce5d8bde7f517ca1274ce11b50e35b9a9e59e",
+        "blob": "8d1eeedc51777c644695387d9c6e34d3f1c46a76",
+        "content": "sha256:615f9e8acf38cfaf7a602bd2794c3e7d6e58f089723b8632db324b563dd35693",
+        "locator": {
+          "kind": "symbol",
+          "name": "Operations.runtime_install"
+        }
+      },
+      "id": "RLZ-TQX7CJ",
+      "invariant": "INV-YN12TG",
+      "origin": {
+        "handoffEntry": "MIK-R181@v2 §5",
+        "leaf": "260928-MIK-L179"
+      },
+      "rationale": "The host install's request is written in the same shape from the same layout, which is what keeps the sandbox's own install admitted after the refusal was added.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "8d1eeedc51777c644695387d9c6e34d3f1c46a76",
         "content": "sha256:b146b6a0195a5a81dc7df59ea1124ce6acd998d21dbf799b852331262bc58789",
         "locator": {
-          "end": 295,
+          "end": 297,
           "kind": "line_range",
-          "start": 281
+          "start": 283
         }
       },
       "id": "RLZ-W99KFF",
@@ -97,7 +115,7 @@
     },
     {
       "anchor": {
-        "blob": "cebce5d8bde7f517ca1274ce11b50e35b9a9e59e",
+        "blob": "8d1eeedc51777c644695387d9c6e34d3f1c46a76",
         "content": "sha256:ebfc822a554c149abe5852fee01d68f04212a0e011c245452f17ae0688d1c75c",
         "locator": {
           "kind": "symbol",
@@ -120,8 +138,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b7d2015b0414223064462d46def39c075090f96c",
-            "content": "sha256:d597c649d688d7eddcfac156210681f29467bdb5425eb9af1dfb747ccfd090d6",
+            "blob": "8d1eeedc51777c644695387d9c6e34d3f1c46a76",
+            "content": "sha256:0ba1b0b19e24168b4e4bdd525951a647a627a2489b894116a207acc431a7114d",
             "locator": {
               "kind": "file"
             }
@@ -131,27 +149,16 @@
       ]
     },
     "2": {
-      "note": "The public install receipt owner.",
+      "note": "The public install receipt owner.\n\nAnchor: `Operations.runtime_install`",
       "targets": [
         {
           "anchor": {
-            "blob": "7f1a2758d96e3ab64746d28850368f2739af1e7f",
-            "content": "sha256:5dcdaa21b73d05beb883a3063dddf03ef0e31fad094e3141d68276b5f4b7b25c",
+            "blob": "8d1eeedc51777c644695387d9c6e34d3f1c46a76",
+            "content": "sha256:e73390b2840d235942f59f5ed3fc9efa91378b41fc3e7da567bf07c452b0f968",
             "locator": {
-              "kind": "symbol",
-              "name": "Operations"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "7f1a2758d96e3ab64746d28850368f2739af1e7f",
-            "content": "sha256:63da0903319f627975b9a6e9395812f33bd24d698815899b7db4f71edbf47493",
-            "locator": {
-              "end": 220,
+              "end": 263,
               "kind": "line_range",
-              "start": 1
+              "start": 204
             }
           },
           "kind": "code"
@@ -163,12 +170,29 @@
       "targets": [
         {
           "anchor": {
-            "blob": "cebce5d8bde7f517ca1274ce11b50e35b9a9e59e",
+            "blob": "8d1eeedc51777c644695387d9c6e34d3f1c46a76",
             "content": "sha256:e5133e1427a059326756bbd86a2f52bf244bc2204f39c7ce750407e6ac524dce",
             "locator": {
-              "end": 279,
+              "end": 281,
               "kind": "line_range",
-              "start": 265
+              "start": 267
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The runtime-install request names the sandbox and its Paseo port beside its settings file and roots.\n\nAnchor: `Operations.runtime_install`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8d1eeedc51777c644695387d9c6e34d3f1c46a76",
+            "content": "sha256:e73390b2840d235942f59f5ed3fc9efa91378b41fc3e7da567bf07c452b0f968",
+            "locator": {
+              "end": 263,
+              "kind": "line_range",
+              "start": 204
             }
           },
           "kind": "code"

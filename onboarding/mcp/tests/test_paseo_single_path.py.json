@@ -7,8 +7,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "bd6d02518ebc385488a281b4255dce3c3ca29e94",
-            "content": "sha256:1406999cbce2cd1b73f6501d1270a707227f39721c095177880106a2a8037649",
+            "blob": "309de0828276c5592db21788393ffa85501547c5",
+            "content": "sha256:d1e307cbeff9e26cc2159815e2fe6baab61781c24ce957d4b31e14339543ac25",
             "locator": {
               "kind": "file"
             }
@@ -22,23 +22,11 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6811954d8311d64996ccbe08c516aa5f54c1ad39",
+            "blob": "309de0828276c5592db21788393ffa85501547c5",
             "content": "sha256:067821f7c94845550343930854cc41ede98df645f88d2c797ab563f6092ba527",
             "locator": {
               "kind": "symbol",
               "name": "SinglePathTests"
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "e5aca5c8058fe23ab1f7faac9ec4d9d1f496e165",
-            "content": "sha256:54f63c93a8fe839c796248b7348621371cdb4d46eafbec8f56e71b15ab025ef1",
-            "locator": {
-              "end": 260,
-              "kind": "line_range",
-              "start": 1
             }
           },
           "kind": "test"
@@ -50,10 +38,27 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6811954d8311d64996ccbe08c516aa5f54c1ad39",
-            "content": "sha256:f09c3a13278ccc345e29dab01e87b22a71c67c053203f2666ffa33d31d710d25",
+            "blob": "309de0828276c5592db21788393ffa85501547c5",
+            "content": "sha256:d1e307cbeff9e26cc2159815e2fe6baab61781c24ce957d4b31e14339543ac25",
             "locator": {
               "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "The helper's allowance is two address reads: the recorded settings block and the build's resolution under the server environment.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "309de0828276c5592db21788393ffa85501547c5",
+            "content": "sha256:26931619c04160523042e51b9809bd779df6a1a7ec2b02601d97757ddc0a91d4",
+            "locator": {
+              "end": 264,
+              "kind": "line_range",
+              "start": 260
             }
           },
           "kind": "test"

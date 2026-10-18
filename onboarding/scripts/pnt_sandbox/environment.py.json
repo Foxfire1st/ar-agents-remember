@@ -40,6 +40,24 @@
     {
       "anchor": {
         "blob": "d9f9d494627a2c592cc00ae2904abeada071d008",
+        "content": "sha256:b0cd3a73b7d187f86b8c3fdcf79d2bf77d0537f030d03da6852191aad9ff70a3",
+        "locator": {
+          "kind": "symbol",
+          "name": "sandbox_environment"
+        }
+      },
+      "id": "RLZ-DR8BSE",
+      "invariant": "INV-EZ0ZRG",
+      "origin": {
+        "handoffEntry": "MIK-R181@v2 §1",
+        "leaf": "260928-MIK-L179"
+      },
+      "rationale": "The scrub and the sandbox's own variables are defined once, here; the helper reuses this definition instead of carrying a second copy of the rules.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "d9f9d494627a2c592cc00ae2904abeada071d008",
         "content": "sha256:ecfcc17da895ca62aa533d02ddfae6c6e5beb4f5cc987abf5b5c48dc9a6d6dff",
         "locator": {
           "kind": "symbol",
@@ -72,6 +90,24 @@
       },
       "rationale": "Removes selectors before installing the sandbox-owned values.",
       "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "d9f9d494627a2c592cc00ae2904abeada071d008",
+        "content": "sha256:b555a5b3d3c0492055c71526bda3a12e99c584753746c666661262f337d38540",
+        "locator": {
+          "kind": "symbol",
+          "name": "foreign_variables"
+        }
+      },
+      "id": "RLZ-NBWRM9",
+      "invariant": "INV-7W2HF6",
+      "origin": {
+        "handoffEntry": "MIK-R181@v2 §2 one admitted case",
+        "leaf": "260928-MIK-L179"
+      },
+      "rationale": "The tooling already owns the definition of an environment that is not the sandbox's; the helper reuses it rather than inventing a second test for the same property.",
+      "role": "support"
     },
     {
       "anchor": {

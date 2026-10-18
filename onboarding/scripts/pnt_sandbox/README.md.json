@@ -1,14 +1,34 @@
 {
   "path": "scripts/pnt_sandbox/README.md",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "d61b4e8161349ce95d3fa90e80eb883ea7465785",
+        "content": "sha256:c8105f64114ab88553302ff9a836331d80009398936f95673fbedfc91c4b8039",
+        "locator": {
+          "end": 224,
+          "kind": "line_range",
+          "start": 194
+        }
+      },
+      "id": "RLZ-G8F33S",
+      "invariant": "INV-JAC809",
+      "origin": {
+        "handoffEntry": "MIK-R181@v2 §4",
+        "leaf": "260928-MIK-L179"
+      },
+      "rationale": "This section is the operator's route into the helper: it names the request fields, the environment boundary, the refusal and the start requirement in one place, which is what the clause asks a reader to find.",
+      "role": "presentation"
+    }
+  ],
   "references": {
     "1": {
       "note": "The scoped current source carries the module/document behavior described above.",
       "targets": [
         {
           "anchor": {
-            "blob": "ce615d34786eb7ccd27fb83b3cc7c4a6951ea007",
-            "content": "sha256:eb571e0c8c49d96d799939116d86e3ec103eba82d952f5843035bc4d90564247",
+            "blob": "d61b4e8161349ce95d3fa90e80eb883ea7465785",
+            "content": "sha256:d7517b3068989847caa59c1c72c6c62872a520b18dc7f20fc388fdf0e98028ec",
             "locator": {
               "kind": "file"
             }
@@ -22,10 +42,27 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d3dd577a0b28ac3a41ee5027957919009decb0c7",
-            "content": "sha256:6dffd726cad6a89f0ac644104cc2d8214de2913f61a2005801489f207937a2cb",
+            "blob": "d61b4e8161349ce95d3fa90e80eb883ea7465785",
+            "content": "sha256:d7517b3068989847caa59c1c72c6c62872a520b18dc7f20fc388fdf0e98028ec",
             "locator": {
               "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The tool-server section names the request fields, environment separation, host refusal, the no-host build phase and the start prerequisite.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d61b4e8161349ce95d3fa90e80eb883ea7465785",
+            "content": "sha256:3b1e7af75ebb1c26c929f8c6131a824db5639fa789fccfeaf04e9b1f8dde5f6e",
+            "locator": {
+              "end": 219,
+              "kind": "line_range",
+              "start": 194
             }
           },
           "kind": "code"

@@ -46,6 +46,24 @@
           "name": "server_info_payload"
         }
       },
+      "id": "RLZ-4S2HXJ",
+      "invariant": "INV-1937B4",
+      "origin": {
+        "handoffEntry": "MIK-R181@v2 §3",
+        "leaf": "260928-MIK-L179"
+      },
+      "rationale": "This is the sender that defines the field's meaning; the admission must match it rather than a retired name, and this is where a reader checks the two agree.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "ebf38faf5a0d88f98fc21785e9787373e2907e8d",
+        "content": "sha256:9fc24247621fd784a0b85580c07bdce8f56a1a21b99ea8d169a6fe987421944f",
+        "locator": {
+          "kind": "symbol",
+          "name": "server_info_payload"
+        }
+      },
       "id": "RLZ-968TBV",
       "invariant": "INV-R4QNJW",
       "origin": {
