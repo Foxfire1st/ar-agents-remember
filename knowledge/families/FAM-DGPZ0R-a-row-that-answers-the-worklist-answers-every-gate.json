@@ -1,0 +1,33 @@
+{
+  "admission": {
+    "criteria": [
+      "joint_guarantee"
+    ],
+    "justification": "The writer's row binding and the gates' item construction promise together what neither promises alone: the row that answers the worklist answers every gate, and a gate that cannot build the worklist's item refuses instead of judging another one."
+  },
+  "guarantee": "For one leaf candidate the worklist item, the card row that binds its sources, and every gate that judges that row are the same item: an answer given to the worklist holds at the memory-quality run and at the closeout validator, and a gate that cannot build that item refuses by name instead of judging a different one.",
+  "id": "FAM-DGPZ0R",
+  "members": [
+    "INV-7V4K9G",
+    "INV-0APWSR",
+    "INV-HGJNDG",
+    "INV-2FA2B5",
+    "INV-HYZSDK"
+  ],
+  "origin": {
+    "handoff": {
+      "path": "ingest-L175-pass2.json"
+    },
+    "handoffEntry": "row-answers-worklist-answers-gates",
+    "leaf": "260928-MIK-L175",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "routes": [
+    "mcp/src/agents_remember/application",
+    "mcp/src/agents_remember/worktrees/modules"
+  ],
+  "schema": "ar-family/v1",
+  "status": "proposed",
+  "title": "A row that answers the worklist answers every gate"
+}

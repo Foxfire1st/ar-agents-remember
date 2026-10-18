@@ -14,7 +14,7 @@
     "A route overview no worklist item covers is refused with the original no-worklist-item problem instead of falling back to a path."
   ],
   "exclusions": [
-    "The onboarding-trace gate, the worklist's grouping and the item contract are unchanged, and RowRequest still holds no sources field: a hand-off that supplies one is refused.",
+    "The worklist's grouping and the item contract are unchanged, and RowRequest still holds no sources field: a hand-off that supplies one is refused.",
     "No other row kind -- invariant, family, dependency, unexplained-change, planned, reconsideration, membership or record -- takes its sources this way.",
     "A card's row proves that the item is answered, not that the whole Python suite, an installed host or a fresh Curator execution passed."
   ],
@@ -30,7 +30,7 @@
     "leaf": "260928-MIK-L173",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-invariant/v1",
   "statement": "When the item of a file card covers a group of identical copies of its source, the knowledge writer's row for that card binds every source of the item, so that the row can answer the item.",
   "status": "proposed",

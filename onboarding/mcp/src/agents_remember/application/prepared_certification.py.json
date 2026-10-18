@@ -1,6 +1,79 @@
 {
   "path": "mcp/src/agents_remember/application/prepared_certification.py",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "3595200cda48184f4f34a7033f283b136e9c5f50",
+        "content": "sha256:c17e56042fe033515076cf96c73885c8415f05892a8c6aeb62ea6f187b3f095b",
+        "locator": {
+          "kind": "symbol",
+          "name": "_identical_changes"
+        }
+      },
+      "id": "RLZ-1WDQM7",
+      "invariant": "INV-2FA2B5",
+      "origin": {
+        "handoffEntry": "R177-C3",
+        "leaf": "260928-MIK-L175"
+      },
+      "rationale": "The closeout consumer refuses with the malformed entry named and the recompute command.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "3595200cda48184f4f34a7033f283b136e9c5f50",
+        "content": "sha256:78672864bd34dbf8ab6768966fee775e47ef931e00e62100fa597c085ab15c86",
+        "locator": {
+          "kind": "symbol",
+          "name": "_pairing_mismatch"
+        }
+      },
+      "id": "RLZ-7DNV2V",
+      "invariant": "INV-HYZSDK",
+      "origin": {
+        "handoffEntry": "R177-C4",
+        "leaf": "260928-MIK-L175"
+      },
+      "rationale": "States why the run's code base, code candidate tree or memory base is not this candidate's.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "3595200cda48184f4f34a7033f283b136e9c5f50",
+        "content": "sha256:276cd18b5373772fcab07a14a3a9c15e622bd3340496d40dda8ffccfed2fb73b",
+        "locator": {
+          "kind": "symbol",
+          "name": "_card_mismatch"
+        }
+      },
+      "id": "RLZ-P5S19Y",
+      "invariant": "INV-HYZSDK",
+      "origin": {
+        "handoffEntry": "R177-C4",
+        "leaf": "260928-MIK-L175"
+      },
+      "rationale": "States why a group's membership is contradicted by a card now: a member that gained a card after the run would be its own group in a fresh run.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "3595200cda48184f4f34a7033f283b136e9c5f50",
+        "content": "sha256:c17e56042fe033515076cf96c73885c8415f05892a8c6aeb62ea6f187b3f095b",
+        "locator": {
+          "kind": "symbol",
+          "name": "_identical_changes"
+        }
+      },
+      "id": "RLZ-TH9ZM5",
+      "invariant": "INV-HYZSDK",
+      "origin": {
+        "handoffEntry": "R177-C4",
+        "leaf": "260928-MIK-L175"
+      },
+      "rationale": "Reads the persisted run, parses it strictly, and requires the pairing and card checks before returning any group.",
+      "role": "primary-authority"
+    }
+  ],
   "references": {
     "1": {
       "note": "The closeout validator's dispatch between the two gates.\n\nAnchor: `validate_onboarding_traces_for_context`",
@@ -23,7 +96,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c53333a189e401b041e0fc4e3501ee1efa2c3001",
+            "blob": "3595200cda48184f4f34a7033f283b136e9c5f50",
             "content": "sha256:5276c0f298b0f6ed8f9b9c18477fa31d3c35989f3e960ff582f3b65b239b0b95",
             "locator": {
               "kind": "symbol",
@@ -39,7 +112,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c53333a189e401b041e0fc4e3501ee1efa2c3001",
+            "blob": "3595200cda48184f4f34a7033f283b136e9c5f50",
             "content": "sha256:e9db601ba700015ef42a2bdb174a892414d3e837641152586d84237fe0b10e1b",
             "locator": {
               "kind": "symbol",
@@ -55,7 +128,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c53333a189e401b041e0fc4e3501ee1efa2c3001",
+            "blob": "3595200cda48184f4f34a7033f283b136e9c5f50",
             "content": "sha256:444173f862af3429a6e23c2b5ccb23231c9a1be6af7c1c03b08d7778bcad5d9c",
             "locator": {
               "kind": "symbol",
@@ -71,7 +144,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9951f90b943b0432c74df2ab36b18c593838c2bc",
+            "blob": "9bcbd54a757cebcf7650ebcd8b81830e04b70272",
             "content": "sha256:e2f343ff9a4e6af1114910f1ea83d70c0a16ee1c83b605b21883a6f8893eb1c7",
             "locator": {
               "kind": "symbol",
@@ -83,7 +156,7 @@
         },
         {
           "anchor": {
-            "blob": "9951f90b943b0432c74df2ab36b18c593838c2bc",
+            "blob": "9bcbd54a757cebcf7650ebcd8b81830e04b70272",
             "content": "sha256:d75ede9d110165edf875b7cda7433ba33247624ebead81e20bef10681fe190af",
             "locator": {
               "kind": "symbol",
@@ -167,7 +240,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c53333a189e401b041e0fc4e3501ee1efa2c3001",
+            "blob": "3595200cda48184f4f34a7033f283b136e9c5f50",
             "content": "sha256:c26f3c420e1c7862298f7a73df260e91ff8c6a90462e54d1efa1d431a063d881",
             "locator": {
               "kind": "symbol",
@@ -183,12 +256,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c53333a189e401b041e0fc4e3501ee1efa2c3001",
+            "blob": "3595200cda48184f4f34a7033f283b136e9c5f50",
             "content": "sha256:75c89e76c75aee4f73c8927f602154c9e888a0e54d0e55dc1f7396ef3553ac51",
             "locator": {
-              "end": 394,
+              "end": 522,
               "kind": "line_range",
-              "start": 391
+              "start": 519
             }
           },
           "kind": "code"
@@ -207,12 +280,12 @@
         },
         {
           "anchor": {
-            "blob": "67047cdc76636d31e271034da84f81412b46da1c",
+            "blob": "a6ae7d18931f91de5fcc3383a5a141ac40859c74",
             "content": "sha256:cf0ed1cf1c309bef6586bde8f6d78f76be3a103ca2c31c9e409ebfd6370613c0",
             "locator": {
-              "end": 207,
+              "end": 210,
               "kind": "line_range",
-              "start": 206
+              "start": 209
             },
             "path": "mcp/src/agents_remember/worktrees/cutover_lock.py"
           },
@@ -242,12 +315,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c53333a189e401b041e0fc4e3501ee1efa2c3001",
+            "blob": "3595200cda48184f4f34a7033f283b136e9c5f50",
             "content": "sha256:8514085360cd3ea482a9ceee23179d59c07e6a6e48f82566346562747ef14a00",
             "locator": {
-              "end": 360,
+              "end": 488,
               "kind": "line_range",
-              "start": 358
+              "start": 486
             }
           },
           "kind": "code"
@@ -276,7 +349,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c53333a189e401b041e0fc4e3501ee1efa2c3001",
+            "blob": "3595200cda48184f4f34a7033f283b136e9c5f50",
             "content": "sha256:e95c7406b3fd4a71e46394f433e182e91fe6c83efb58d4927af93b8e84563a4f",
             "locator": {
               "kind": "symbol",
@@ -308,7 +381,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c53333a189e401b041e0fc4e3501ee1efa2c3001",
+            "blob": "3595200cda48184f4f34a7033f283b136e9c5f50",
             "content": "sha256:9cad0a9cd7f01db1864645a57db9a843d0d5346266724ac27d1c0a55fc3fe789",
             "locator": {
               "kind": "symbol",
@@ -324,7 +397,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c53333a189e401b041e0fc4e3501ee1efa2c3001",
+            "blob": "3595200cda48184f4f34a7033f283b136e9c5f50",
             "content": "sha256:50d9592a826ca01c1206a6d534175e852d251e30cbaca124922ffe51e95230fd",
             "locator": {
               "kind": "symbol",
@@ -340,7 +413,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c53333a189e401b041e0fc4e3501ee1efa2c3001",
+            "blob": "3595200cda48184f4f34a7033f283b136e9c5f50",
             "content": "sha256:343fa186beb1293439190a68bd7d168e59cd4ca76487da15ce6afc858965b63e",
             "locator": {
               "kind": "symbol",

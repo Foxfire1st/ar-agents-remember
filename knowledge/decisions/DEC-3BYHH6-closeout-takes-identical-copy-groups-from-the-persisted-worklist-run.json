@@ -1,0 +1,50 @@
+{
+  "admission": {
+    "criteria": [
+      "real_alternatives",
+      "constrains_future_work"
+    ],
+    "justification": "The recompute-inside-certification option was weighed and rejected for a concrete custody reason, and the choice binds every later closeout path that needs identical-copy groups."
+  },
+  "alternatives": [
+    {
+      "option": "Read the leaf's persisted worklist run beside the series contract, admit it only when it describes the certified candidate, and refuse by name with the recompute command when it does not.",
+      "reason": "It never judges a second tree inside certification and it cannot silently regroup: a stale or malformed run fails closed with one named refusal.",
+      "status": "chosen"
+    },
+    {
+      "option": "Recompute the worklist inside closeout certification.",
+      "reason": "Recomputing would judge a second tree inside the certification transaction and can write the converted-base cache there, which the certification plane does not own.",
+      "reconsider_when": "A certification path can compute the worklist over the exact certified trees without writing any cache or judging another tree.",
+      "status": "rejected"
+    }
+  ],
+  "consequences": [
+    "A leaf whose enclosure holds no complete run for the candidate cannot be certified; the remedy is the documented recompute.",
+    "Closeout readiness now depends on the run having been persisted for that exact candidate."
+  ],
+  "context": "The closeout validator must group its onboarding-trace items exactly as the worklist does, and it runs inside the certification transaction on a proved physical code view.",
+  "decider": "the Worker's A02 design, accepted by the Reviewer's R2 code PASS (L175-F01 repair)",
+  "id": "DEC-3BYHH6",
+  "links": [
+    {
+      "relation": "constrains",
+      "target": "INV-HYZSDK"
+    }
+  ],
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "A legitimate complete run of an earlier candidate is refused by name (\"its code candidate tree is 'fb59baa4…', this candidate's is '1004c29c…'\") and a bound current run still closes the same row in all three consumers; a card added to a grouped member after the run is refused naming the group and the member."
+      ],
+      "path": "ingest-L175.json"
+    },
+    "handoffEntry": "R177-C4",
+    "leaf": "260928-MIK-L175",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-decision/v1",
+  "status": "active",
+  "supersedes": []
+}

@@ -1,13 +1,122 @@
 {
   "path": "mcp/src/agents_remember/worktrees/modules/onboarding.py",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "5b856c0c9cf903a1e17c83a7076d61d5590b1cc2",
+        "content": "sha256:d9c4a9681dbcb6bfd24515000e4c6c1c01e7bf4be914e6bc90a6caf80eab6cc4",
+        "locator": {
+          "kind": "symbol",
+          "name": "identical_changes_from_run"
+        }
+      },
+      "id": "RLZ-268NR6",
+      "invariant": "INV-2FA2B5",
+      "origin": {
+        "handoffEntry": "R177-C3",
+        "leaf": "260928-MIK-L175"
+      },
+      "rationale": "The one strict reader: non-mapping map, non-string or empty key, non-list entry, non-string or empty member, empty member list, and a group that omits its own representative are each refused by name; nothing is dropped or coerced.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "5b856c0c9cf903a1e17c83a7076d61d5590b1cc2",
+        "content": "sha256:537b38f3884456932f7aae28f4b53e20bd0ecb8c42f9665105854221363a6ac5",
+        "locator": {
+          "kind": "symbol",
+          "name": "onboarding_trace_gate_for_context"
+        }
+      },
+      "id": "RLZ-3PYGZD",
+      "invariant": "INV-HGJNDG",
+      "origin": {
+        "handoffEntry": "R177-C2",
+        "leaf": "260928-MIK-L175"
+      },
+      "rationale": "With an empty group map the item's sources stay the one changed path, as before this leaf.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "5b856c0c9cf903a1e17c83a7076d61d5590b1cc2",
+        "content": "sha256:537b38f3884456932f7aae28f4b53e20bd0ecb8c42f9665105854221363a6ac5",
+        "locator": {
+          "kind": "symbol",
+          "name": "onboarding_trace_gate_for_context"
+        }
+      },
+      "id": "RLZ-43Y181",
+      "invariant": "INV-0APWSR",
+      "origin": {
+        "handoffEntry": "R177-C1",
+        "leaf": "260928-MIK-L175"
+      },
+      "rationale": "The memory-quality entry; it passes source_groups=inputs.identical_changes into onboarding_trace_result.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "5b856c0c9cf903a1e17c83a7076d61d5590b1cc2",
+        "content": "sha256:c68c63219a08e6fcf35dbf5e2dba945403fd20d5a89cd17f33f81dc6bd288357",
+        "locator": {
+          "kind": "symbol",
+          "name": "validate_onboarding_traces_for_context"
+        }
+      },
+      "id": "RLZ-87YPXM",
+      "invariant": "INV-0APWSR",
+      "origin": {
+        "handoffEntry": "R177-C1",
+        "leaf": "260928-MIK-L175"
+      },
+      "rationale": "The closeout validator; the same call and the same groups, then the refusal over every open item.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "5b856c0c9cf903a1e17c83a7076d61d5590b1cc2",
+        "content": "sha256:f433c3c68677873c10e71d1164bd9fe87b5f8e54f93857c1c3288179bcecd59f",
+        "locator": {
+          "kind": "symbol",
+          "name": "OnboardingTraceInputs"
+        }
+      },
+      "id": "RLZ-MCS30R",
+      "invariant": "INV-0APWSR",
+      "origin": {
+        "handoffEntry": "R177-C1",
+        "leaf": "260928-MIK-L175"
+      },
+      "rationale": "The one input value object both entries read: candidate blobs, the run's identicalChanges (no default) and the working paths.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "5b856c0c9cf903a1e17c83a7076d61d5590b1cc2",
+        "content": "sha256:c68c63219a08e6fcf35dbf5e2dba945403fd20d5a89cd17f33f81dc6bd288357",
+        "locator": {
+          "kind": "symbol",
+          "name": "validate_onboarding_traces_for_context"
+        }
+      },
+      "id": "RLZ-XV2CN7",
+      "invariant": "INV-HGJNDG",
+      "origin": {
+        "handoffEntry": "R177-C2",
+        "leaf": "260928-MIK-L175"
+      },
+      "rationale": "Same construction and the same one-source item for the closeout validator.",
+      "role": "primary-authority"
+    }
+  ],
   "references": {
     "1": {
       "note": "A tree holding the layout marker is converted.",
       "targets": [
         {
           "anchor": {
-            "blob": "3d1ec99567502c102e54707aba3a3d8e169af0d5",
+            "blob": "5b856c0c9cf903a1e17c83a7076d61d5590b1cc2",
             "content": "sha256:1763e7e061c56e369c104bd182cf861a2335a113caa641248d911903f343fe0c",
             "locator": {
               "kind": "symbol",
@@ -23,7 +132,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3d1ec99567502c102e54707aba3a3d8e169af0d5",
+            "blob": "5b856c0c9cf903a1e17c83a7076d61d5590b1cc2",
             "content": "sha256:8011c3748a618fb96168b0fa1eb61645da86cbc3345d0097d591b0ff2e52b1b6",
             "locator": {
               "kind": "symbol",
@@ -97,12 +206,12 @@
         },
         {
           "anchor": {
-            "blob": "67047cdc76636d31e271034da84f81412b46da1c",
+            "blob": "a6ae7d18931f91de5fcc3383a5a141ac40859c74",
             "content": "sha256:cf0ed1cf1c309bef6586bde8f6d78f76be3a103ca2c31c9e409ebfd6370613c0",
             "locator": {
-              "end": 207,
+              "end": 210,
               "kind": "line_range",
-              "start": 206
+              "start": 209
             },
             "path": "mcp/src/agents_remember/worktrees/cutover_lock.py"
           },
@@ -110,12 +219,12 @@
         },
         {
           "anchor": {
-            "blob": "7e7956dad608e7dc7f74c15908f97d0103f12ebe",
+            "blob": "e883bd37ccb740eeb9d913a85c9fe6d886b0fcaf",
             "content": "sha256:20152df7ce4245153a0799242867d9f63e8d19e1406ec6edbc7b7c13a4b8025b",
             "locator": {
-              "end": 375,
+              "end": 382,
               "kind": "line_range",
-              "start": 373
+              "start": 380
             },
             "path": "mcp/src/agents_remember/application/knowledge_gate/predicates.py"
           },
@@ -128,7 +237,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3d1ec99567502c102e54707aba3a3d8e169af0d5",
+            "blob": "5b856c0c9cf903a1e17c83a7076d61d5590b1cc2",
             "content": "sha256:0c1f25a1d1d827c0d1016fe1a94fe79d53fac0f6727fc5e9083af3abbe258d3f",
             "locator": {
               "kind": "symbol",
@@ -144,7 +253,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3d1ec99567502c102e54707aba3a3d8e169af0d5",
+            "blob": "5b856c0c9cf903a1e17c83a7076d61d5590b1cc2",
             "content": "sha256:06fc863fe4decebb91d1de5aa02faf3a57bd90ba97b65f559fbb9a97289b78ce",
             "locator": {
               "kind": "symbol",
@@ -192,7 +301,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3d1ec99567502c102e54707aba3a3d8e169af0d5",
+            "blob": "5b856c0c9cf903a1e17c83a7076d61d5590b1cc2",
             "content": "sha256:153e06b90c444ab11b1392d55921a00acc233df75e6a9d16b5a820ffe315a2b8",
             "locator": {
               "kind": "symbol",
@@ -242,7 +351,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3d1ec99567502c102e54707aba3a3d8e169af0d5",
+            "blob": "5b856c0c9cf903a1e17c83a7076d61d5590b1cc2",
             "content": "sha256:f22efa767680140067a9174dd34dbaf1250dd95e48365e4317c849316a18b06e",
             "locator": {
               "kind": "symbol",

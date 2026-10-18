@@ -201,14 +201,28 @@ branch. MIK-R46 ordinary unconverted operations refuse with the conversion step.
   carries no `lastVerifiedCommit*` metadata (MIK-R30 rule 5).
 - **`_require_onboarded_sources`** is today's missing/unsupported sidecar refusal, factored out of
   `validate_onboarding_refresh_plan_for_context` with the same message, so both gates share it.
-- **`onboarding_trace_gate_for_context(context, changed_paths, sides, *, working_paths=None, code_blobs=...)`** is the
+- **`onboarding_trace_gate_for_context(context, changed_paths, sides, inputs)`** is the
   curator's memory-quality entry point: it never raises, and returns the `OnboardingTraceResult` and its
-  repair findings (one per missing trace, one per unreadable input). Required keyword-only
-  `code_blobs: Mapping[str, str | None]` names each changed path's candidate blob (or deletion),
-  and is forwarded to `onboarding_trace_result`; the shared missing-onboarding refusal is prepended as a `memory-refresh-attestation-failed` finding when it applies.
-- **`validate_onboarding_traces_for_context(..., code_blobs=...)`** is the closeout validator's entry
-  point with the same required candidate-blob mapping: it runs the shared missing-onboarding refusal,
-  forwards `code_blobs`, then raises `RuntimeError(result.refusal())` naming every missing trace.
+  repair findings (one per missing trace, one per unreadable input). `inputs` is one
+  `OnboardingTraceInputs` value object carrying the candidate `code_blobs` (each changed path's blob,
+  or `None` for a deletion), the leaf worklist run's `identicalChanges` and the `working_paths`; both
+  the blobs and the groups are forwarded to `onboarding_trace_result`, and the shared
+  missing-onboarding refusal is prepended as a `memory-refresh-attestation-failed` finding when it
+  applies.
+- **`validate_onboarding_traces_for_context(..., inputs)`** is the closeout validator's entry
+  point with the same inputs object: it runs the shared missing-onboarding refusal, forwards the
+  candidate blobs and the run's groups, then raises `RuntimeError(result.refusal())` naming every
+  missing trace.
+- **`identical_changes_from_run(document)`** is the one strict reader of a run's `identicalChanges`
+  (MIK-R177). A non-mapping map, a non-string or empty key, a non-list entry, a member that is not a
+  non-empty string, an empty member list and a group that omits its own representative each raise
+  `IdenticalChangesUnreadable` naming the entry; nothing is dropped or coerced, so a malformed group
+  can never shorten into a one-source item. A genuine empty mapping stays empty and each group keeps
+  the run's order.
+- **Why the groups are a required input (MIK-R177).** The gate builds its items with the same
+  identical-copy groups `worklist_onboarding` uses, so an item a card row answers in the worklist is
+  the item the gate raises. `identical_changes` carries no default, so no caller can judge ungrouped
+  items by omission; a caller that cannot read a complete run's groups refuses by name instead.
 - **Who dispatches.** `controller._onboarding_refresh_gate` and `prepared_certification._realize_prepared_memory`
   call these only when `leaf_onboarding_trace_sides` returns sides; otherwise they call today's
   the retained legacy validators. Dispatch syntax is not permission to bypass the unconditional
@@ -224,8 +238,8 @@ branch. MIK-R46 ordinary unconverted operations refuse with the conversion step.
 - A tree holding the layout marker is converted. [1]
 - No route-overview stamps on a converted tree. [2]
 - Today's missing-onboarding refusal, shared by both gates. [3]
-- The converted memory-quality entry point requires and forwards candidate code_blobs; it returns trace repair findings. [4]
-- The converted closeout entry point requires and forwards candidate code_blobs, then refuses missing traces. [5]
+- The converted memory-quality entry point requires and forwards candidate blobs and the run's identical-copy groups; it returns trace repair findings. [4]
+- The converted closeout entry point requires the same inputs, then refuses missing traces. [5]
 - No card stamps on a converted tree. [6]
 - Both entry points evaluate source-current rows; updated also needs a counted Markdown/reference edit. [7]
 - Historical fallback dispatch is retained internally; an ordinary unconverted leaf now refuses before either gate. [8]

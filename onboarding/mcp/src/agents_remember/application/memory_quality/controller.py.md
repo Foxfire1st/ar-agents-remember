@@ -202,13 +202,19 @@ worklist applies (both memory sides unconverted, which is every production leaf 
 
 ## 260928-MIK-L30 The Onboarding Gate Dispatch (MIK-R30 Rule 6)
 
-The leaf block of `_attach_curator_checklist` now calls `_onboarding_refresh_gate(scope, changed_paths,
-working_paths, (accepted_no_impact, accepted_route_no_impact), response)`, which returns the repair and
-report-only findings of the leaf's onboarding gate:
+The leaf block of `_attach_curator_checklist` calls `_onboarding_refresh_gate(scope, inputs,
+response)` with one `_OnboardingGateInputs` value object (the census's and the gate's changed paths,
+the working paths, the accepted no-impact identities, and the run's own worklist document). It
+returns the repair and report-only findings of the leaf's onboarding gate:
 
 - **Converted tree** (`leaf_onboarding_trace_sides(contract, memory_tree=<memory root>)` returns sides):
   `worktree_code_blobs(contract.code_worktree, traced_paths)` first captures the code candidate's blobs,
-  including absent paths, and forwards them as `code_blobs` to `onboarding_trace_gate_for_context`.
+  including absent paths. The gate also reads the run's identical-copy groups with
+  `_worklist_identical_changes` and hands the blobs and the groups together through one
+  `OnboardingTraceInputs` (MIK-R177). A run that is absent, not `complete`, or whose
+  `identicalChanges` is malformed becomes one `onboarding-trace-incomplete` finding whose path is the
+  worklist file and whose message names the reason and the recompute; the gate then judges no
+  ungrouped items.
   Any capture/read exception returns one named `CHECK_NAME` / `INCOMPLETE_CODE` repair finding and an
   empty report-only list; it is not a clean empty result and no successful trace brief is published.
   Each missing or stale current-row trace counts toward `curatorActionableCount`; unreadable inputs
@@ -224,7 +230,7 @@ report-only findings of the leaf's onboarding gate:
 
 The checklist's leaf block hands the gate the changed paths and the accepted identities.
 
-Anchor: "gate_findings, gate_report_only = _onboarding_refresh_gate(" [8] |  | mcp/src/agents_remember/application/memory_quality/controller.py:747-753 |
+Anchor: "gate_findings, gate_report_only = _onboarding_refresh_gate(" [8] |  | `_attach_curator_checklist` |
 
 ## 260928-MIK-L10 A Needed Onboarding Row Is Not Reported Unnecessary (MIK-R10 Rule 5)
 

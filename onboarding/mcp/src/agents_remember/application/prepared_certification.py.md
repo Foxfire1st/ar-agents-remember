@@ -64,15 +64,23 @@ surface.
 `_realize_prepared_memory` asks `leaf_onboarding_trace_sides(current.contract, memory_tree=memory)`
 when reached after its prepared-history and cutover guards. With converted sides, it captures
 `worktree_code_blobs(physical_code, change.changed_paths)` from the proved physical code view and
-passes `code_blobs` into `validate_onboarding_traces_for_context` alongside `working_paths`.
-Capture failure raises a named `RuntimeError("the code candidate's blobs cannot be read: …")`,
-not `CertificationContractError`. The trace validator names missing traces and unreadable inputs.
+passes one `OnboardingTraceInputs` into `validate_onboarding_traces_for_context`: the captured blobs,
+the `working_paths`, and the persisted worklist run's identical-copy groups, read by
+`_identical_changes` (MIK-R177). The groups are admitted only when that run describes this candidate
+— its recorded code base commit, code candidate tree and memory base commit — and no group lists a
+member that has since gained an onboarding card (`_pairing_mismatch`, `_card_mismatch`). A run older
+than the certified candidate therefore fails closed: the trace stays open and the refusal names the
+run's value, the candidate's value and the `agents-remember knowledge-worklist --contract …`
+recompute. The remedy is that recompute, never a silent regroup; the validator judges no ungrouped
+items and no other candidate's groups. Capture failure keeps its own named
+`RuntimeError("the code candidate's blobs cannot be read: …")`, not
+`CertificationContractError`. The trace validator names missing traces and unreadable inputs.
 The retained `None` branch calls the two legacy plan validators; its existence grants no ordinary
 unconverted prepared-closeout permission. This file was accepted as necessary MIK-R30 closeout
 wiring (ruling 2026-09-29T18:49:50 (6)); the new blob forwarding grants no prepared-closeout authority.
 
-- The guarded closeout dispatch: capture candidate blobs from the proved physical view and forward them to the converted trace validator. [1]
-- The trace refusal names missing traces; blob capture has its own named RuntimeError boundary. [2]
+- The guarded closeout dispatch: capture candidate blobs from the proved physical view and forward them, with the candidate-bound run's groups, to the converted trace validator. [1]
+- The trace refusal names missing traces and a stale or unreadable run; blob capture has its own named RuntimeError boundary. [2]
 
 ### The prepared path fails closed on converted memory (MIK-R09, L09 gap 3)
 

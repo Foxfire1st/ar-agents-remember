@@ -1,0 +1,34 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test",
+      "prevents_costly_mistake"
+    ],
+    "justification": "A dropped or coerced group entry silently shortens an item to one source, which is exactly how a row that answers the worklist stops answering the gate; the six-shape case and the valid empty-map control hold both sides."
+  },
+  "applicability": "Every identicalChanges mapping a gate entry reads from a leaf worklist run.",
+  "conditions": [
+    "The entry reads a run it was handed, complete or not: a malformed map is refused by name by both consumers."
+  ],
+  "exclusions": [
+    "A genuine empty mapping is valid and means no identical copies.",
+    "The worklist's own grouping and the writer's row sources are unchanged."
+  ],
+  "id": "INV-2FA2B5",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "Six malformed shapes through both consumers and the valid empty-map control pass; freeze-a02/probe-candidate.log: the memory-quality reader answers (None, \"identicalChanges['skills/…'] is not a list of source paths: 'not-a-source-list'\") and the closeout refuses naming the same entry, where probe-a01.log shows A01 answering ({}, '') and {}."
+      ],
+      "path": "ingest-L175.json"
+    },
+    "handoffEntry": "R177-C3",
+    "leaf": "260928-MIK-L175",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "A worklist run's identicalChanges that is not a mapping of representative source paths to lists of source paths is refused by name by both gate entries, never shortened into ungrouped items; a genuine empty mapping stays valid.",
+  "status": "proposed",
+  "supersedes": []
+}

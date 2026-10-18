@@ -1,0 +1,32 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test"
+    ],
+    "justification": "Two cases hold the preservation side: a one-source card is the same item in all three consumers, and a run with no groups stays a valid empty map rather than a refusal."
+  },
+  "applicability": "A changed source path that is not in any identical-copy group of the leaf's worklist run.",
+  "conditions": [
+    "The run's identicalChanges is a genuine empty mapping or names other sources only."
+  ],
+  "exclusions": [
+    "No grouped source's item identity changes; this clause preserves the one-source item only."
+  ],
+  "id": "INV-HGJNDG",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "Both cases: an empty identicalChanges map yields one-source items whose id is the worklist's, and the writer's row answers all three consumers."
+      ],
+      "path": "ingest-L175.json"
+    },
+    "handoffEntry": "R177-C2",
+    "leaf": "260928-MIK-L175",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "A changed source without identical copies keeps the same single-source onboarding_trace item in the worklist, the memory-quality entry and the closeout validator.",
+  "status": "proposed",
+  "supersedes": []
+}

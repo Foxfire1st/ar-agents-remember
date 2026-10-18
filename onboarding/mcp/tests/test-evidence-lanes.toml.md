@@ -165,3 +165,7 @@ Source declarations, mirrors and fixture assertions are not executed acceptance.
 - The conversion-cost module is declared in unit-regression; selection is not execution. [854]
 
 - Seven new modules are added to unit-regression: capsule replay integrity, memory review lane, role capsule audiences, manifest edges, role step up, step-up choice validation and step-up recovery. Existing lane identities, other memberships and case-budget policy are not changed. [855]
+
+## The MIK-R177 gate-group module
+
+`mcp/tests/test_mik_r177_gate_groups_identical_copies.py` is registered once in `unit-regression`, in the list's canonical order. The membership adds no lane, population ceiling or case-budget change and certifies no invocation; selection is catalog membership only.
