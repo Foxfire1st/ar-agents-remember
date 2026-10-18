@@ -50,11 +50,11 @@ TaskStatusWord uses one shared visible clock to advance published host-event age
 
 ### Historical boundary to preserve
 
-
+MIK-R175 rules 1-2: neither the row line nor the figure box carries a `title`, because either is an ancestor of the step dots and the browser showed the nearest one over them. The row's hover text moved onto its own cells — id, title, repository, status word and the count figure — so the rest of the row keeps it, and the figure renders only when it has a value.
 
 ## Evidence
 
-
+- The row's native title is gone from every ancestor of a step mark, while its own cells keep the hover text. [40]
 
 - columnPresentation supplies 0.72rem group headings and 0.8rem ordinary row text. [34]
 

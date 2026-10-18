@@ -75,7 +75,11 @@ The conversion-cost scan/split regression module is selected once in unit-regres
 
 The new clean-sync door module is added to the unit-regression file population. This is evidence-lane selection metadata, not proof that a named invocation selected or executed the file. Marker filtering and lifecycle consumer membership keep their separate owners.
 
+`test_review_evidence_packet.py`, `test_review_evidence_residuals.py` and `test_review_frame_store.py` are selected in `unit-regression`. Membership selects the population; it certifies no invocation, timing or pass.
+
 ## Evidence
+
+- The three review-evidence and frame suites are registered once in unit-regression. [860]
 
 - The unit-regression roster adds the clean-sync door module. [856]
 

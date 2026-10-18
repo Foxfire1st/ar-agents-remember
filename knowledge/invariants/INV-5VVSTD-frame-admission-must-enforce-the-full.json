@@ -1,0 +1,32 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test"
+    ],
+    "justification": "An unbounded metadata read would exhaust memory on a corrupt store and let modified descriptors authorize over-cap asset reads."
+  },
+  "applicability": "Frame store publication, reopening, cleanup and archive under their declared byte and population ceilings.",
+  "conditions": [
+    "The store reads or admits metadata and assets for one frame lineage or task area."
+  ],
+  "exclusions": [
+    "Reads outside the frame store, such as comparison snapshots."
+  ],
+  "id": "INV-5VVSTD",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "A5-verdict.md; A5-fixed-list-verification.md; A5-checks-complete/; prior A4 full-criterion account retained"
+      ],
+      "path": "l102-curator-list.json"
+    },
+    "handoffEntry": "L102-F10",
+    "leaf": "260928-MIK-L102",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Frame admission must enforce the full lineage-including-drafts and task artifact byte ceilings atomically using actual store usage, including metadata.",
+  "status": "proposed",
+  "supersedes": []
+}

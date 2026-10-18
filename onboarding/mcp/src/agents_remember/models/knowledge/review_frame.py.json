@@ -1,0 +1,126 @@
+{
+  "path": "mcp/src/agents_remember/models/knowledge/review_frame.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "aaea9c96e247acc59f52ab5f889e7ca4bc8b0fd3",
+        "content": "sha256:379e086d1c6ed6bfb0071fcce8307641ad4b285b806f9b0cada4c39a1a0acaa8",
+        "locator": {
+          "kind": "symbol",
+          "name": "FrameDraft"
+        }
+      },
+      "id": "RLZ-9Z8ZHJ",
+      "invariant": "INV-03QFAC",
+      "origin": {
+        "handoffEntry": "L102-F12",
+        "leaf": "260928-MIK-L102"
+      },
+      "rationale": "EXPLICIT twelfth-ID adjudication: the missing working-folder input is now required working_directory on begin_draft, not an inferred durable FrameScope path. FrameScope remains the durable task target; FrameDraft persists the separate authoring folder and exact asset reservations. _working_directory rejects task-owned/symlinked folders; unready assets are written only to the explicit working folder while _draft_path holds bounded attempt metadata. _draft_assets imports only the recorded named assets under the task lock after exact size/digest checks. Independent omission of working_directory raises TypeError before any frame creation; explicit admission produces zero durable HTML assets, publication imports the page, and removing the working folder leaves ready output byte-identical. Leased/failed/cancelled/abandoned states, explicit recovery and previously repaired active-publication exclusion remain passing. No loss or silent F12 omission is accepted.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "aaea9c96e247acc59f52ab5f889e7ca4bc8b0fd3",
+        "content": "sha256:013dde219368859eb2016fc3737fbfc47ade11c29593115aa424d0089949b321",
+        "locator": {
+          "kind": "symbol",
+          "name": "FrameBinding"
+        }
+      },
+      "id": "RLZ-J1Q827",
+      "invariant": "INV-S75HA1",
+      "origin": {
+        "handoffEntry": "L102-F01",
+        "leaf": "260928-MIK-L102"
+      },
+      "rationale": "Both FrameBinding constructors and side_identity now retain code_base.ref as well as every other repository/tree/commit/ref and conversion input. All eight independently replayed commit/ref mutations are stale, and foreign retry refuses; focused tests cover task/leaf/number/repositories/conversion and both constructors. No competing comparison namespace is introduced.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "aaea9c96e247acc59f52ab5f889e7ca4bc8b0fd3",
+        "content": "sha256:84e892da9ad1741dacf7c094233c9b047800ed17379757009b077711053e33f3",
+        "locator": {
+          "kind": "symbol",
+          "name": "FrameManifest"
+        }
+      },
+      "id": "RLZ-NV52ZX",
+      "invariant": "INV-ZPHKZB",
+      "origin": {
+        "handoffEntry": "L102-F09",
+        "leaf": "260928-MIK-L102"
+      },
+      "rationale": "Prior closure preserved; no reopening/new lens. Retained prior closure on preserved bytes/properties; no new adjudication lens. The manifest now requires and stores the complete structured EvidencePacket including claims and receipts; publication derives the binding from that packet and enforces manifest_bytes. The focused test removes drafts, then reopens the stored packet and obtains the stale revision/asset list/evidence digest/ancestry through explicit regeneration. The original no-retrievable-evidence defect is closed: the digest now resolves through that retained revision manifest, and old claims remain old-bound rather than promoted. This is not a claim that F07 authority resolution or F13 snapshot interleaving passes.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "A revision binds the comparison's every side and the conversion tree, and its artifact digest covers asset bytes only.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "aaea9c96e247acc59f52ab5f889e7ca4bc8b0fd3",
+            "content": "sha256:013dde219368859eb2016fc3737fbfc47ade11c29593115aa424d0089949b321",
+            "locator": {
+              "kind": "symbol",
+              "name": "FrameBinding"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "A manifest refuses an inconsistent asset digest, an unlisted entrypoint and a parent that is not older.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "aaea9c96e247acc59f52ab5f889e7ca4bc8b0fd3",
+            "content": "sha256:84e892da9ad1741dacf7c094233c9b047800ed17379757009b077711053e33f3",
+            "locator": {
+              "kind": "symbol",
+              "name": "FrameManifest"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "A draft is a leased attempt, separate from the ready pointer.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "aaea9c96e247acc59f52ab5f889e7ca4bc8b0fd3",
+            "content": "sha256:379e086d1c6ed6bfb0071fcce8307641ad4b285b806f9b0cada4c39a1a0acaa8",
+            "locator": {
+              "kind": "symbol",
+              "name": "FrameDraft"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "A reclamation record is written as intent before removal and as outcome after it.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "aaea9c96e247acc59f52ab5f889e7ca4bc8b0fd3",
+            "content": "sha256:971b9e89db7535d4f4ab1b65170369b566948973157de0a7f43f3d7340ded1f9",
+            "locator": {
+              "kind": "symbol",
+              "name": "FrameReclamation"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

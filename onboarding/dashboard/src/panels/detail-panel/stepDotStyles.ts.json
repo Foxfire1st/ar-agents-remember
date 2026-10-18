@@ -16,6 +16,22 @@
           "kind": "code"
         }
       ]
+    },
+    "2": {
+      "note": "The tooltip's box breaks no word, and the parts that must stay whole say so themselves.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d2fafd66ba8ba1996fdc480ad019b278cdedaee3",
+            "content": "sha256:a00c5e26f3482823e35a5d96d82cba35497466186eb88b84429b4bd2069486ad",
+            "locator": {
+              "kind": "symbol",
+              "name": "stepTipStyles"
+            }
+          },
+          "kind": "code"
+        }
+      ]
     }
   },
   "schema": "ar-onboarding-file/v1"

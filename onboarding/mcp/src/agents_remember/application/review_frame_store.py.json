@@ -1,0 +1,516 @@
+{
+  "path": "mcp/src/agents_remember/application/review_frame_store.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "677fed33450ee2c3e80367293bccc30399344ad3",
+        "content": "sha256:6264e6bf189d55ed05e4ef509602c7b7ede450993c0c78ed31828c54954d8030",
+        "locator": {
+          "kind": "symbol",
+          "name": "FrameScope"
+        }
+      },
+      "id": "RLZ-00DVT2",
+      "invariant": "INV-03QFAC",
+      "origin": {
+        "handoffEntry": "L102-F12",
+        "leaf": "260928-MIK-L102"
+      },
+      "rationale": "EXPLICIT twelfth-ID adjudication: the missing working-folder input is now required working_directory on begin_draft, not an inferred durable FrameScope path. FrameScope remains the durable task target; FrameDraft persists the separate authoring folder and exact asset reservations. _working_directory rejects task-owned/symlinked folders; unready assets are written only to the explicit working folder while _draft_path holds bounded attempt metadata. _draft_assets imports only the recorded named assets under the task lock after exact size/digest checks. Independent omission of working_directory raises TypeError before any frame creation; explicit admission produces zero durable HTML assets, publication imports the page, and removing the working folder leaves ready output byte-identical. Leased/failed/cancelled/abandoned states, explicit recovery and previously repaired active-publication exclusion remain passing. No loss or silent F12 omission is accepted.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "677fed33450ee2c3e80367293bccc30399344ad3",
+        "content": "sha256:6264e6bf189d55ed05e4ef509602c7b7ede450993c0c78ed31828c54954d8030",
+        "locator": {
+          "kind": "symbol",
+          "name": "FrameScope"
+        }
+      },
+      "id": "RLZ-05E8JP",
+      "invariant": "INV-6VNAR5",
+      "origin": {
+        "handoffEntry": "L102-F11",
+        "leaf": "260928-MIK-L102"
+      },
+      "rationale": "Canonical task/frame scope and exact intermediate revision/manifest/asset/draft/pointer/receipt/lock destinations are guarded before IO. The same foreign-manifest spy now records zero reads and a physical-containment refusal. Normal read/write/usage/cleanup/archive and dry-run controls pass, with source guards across siblings and shared product exclusion. No stronger protection against an attacker replacing both admitted files is claimed.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "677fed33450ee2c3e80367293bccc30399344ad3",
+        "content": "sha256:2b863c02c8e2d96ed5825c75ff70dddad5f592a1340af8039cbfcb68cca0a8ef",
+        "locator": {
+          "kind": "symbol",
+          "name": "regeneration_request"
+        }
+      },
+      "id": "RLZ-3PGX5D",
+      "invariant": "INV-ZPHKZB",
+      "origin": {
+        "handoffEntry": "L102-F09",
+        "leaf": "260928-MIK-L102"
+      },
+      "rationale": "Prior closure preserved; no reopening/new lens. Retained prior closure on preserved bytes/properties; no new adjudication lens. The manifest now requires and stores the complete structured EvidencePacket including claims and receipts; publication derives the binding from that packet and enforces manifest_bytes. The focused test removes drafts, then reopens the stored packet and obtains the stale revision/asset list/evidence digest/ancestry through explicit regeneration. The original no-retrievable-evidence defect is closed: the digest now resolves through that retained revision manifest, and old claims remain old-bound rather than promoted. This is not a claim that F07 authority resolution or F13 snapshot interleaving passes.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "677fed33450ee2c3e80367293bccc30399344ad3",
+        "content": "sha256:6b4d2ed86d875dae006a4c8e6c843b64c5acd6d7c3575c52f98753a2687df02f",
+        "locator": {
+          "kind": "symbol",
+          "name": "_check_capacity"
+        }
+      },
+      "id": "RLZ-5SH14N",
+      "invariant": "INV-5VVSTD",
+      "origin": {
+        "handoffEntry": "L102-F10",
+        "leaf": "260928-MIK-L102"
+      },
+      "rationale": "Every stored metadata read now goes through a finite sentinel read; manifests and pointer/draft/reclamation/archive metadata use MAX_MANIFEST_BYTES, digest uses64, assets use admitted byte_size. Descriptor population/aggregate bound is validated before opening asset payloads. The old2097189-byte corrupt manifest now reads exactly1048577 bytes under1048576 cap then refuses. Four corrupt-store controls cover manifest/digest/asset/pointer; over-cap descriptor control proves zero asset opens. A4 capacity/reservation/lock and at-cap preservation logic is unchanged.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "677fed33450ee2c3e80367293bccc30399344ad3",
+        "content": "sha256:074d3ce90068921619f0255cb89a897d86c8e315801eac841f06a13a6e8765de",
+        "locator": {
+          "kind": "symbol",
+          "name": "_manifest_bytes"
+        }
+      },
+      "id": "RLZ-5V8AB6",
+      "invariant": "INV-6VNAR5",
+      "origin": {
+        "handoffEntry": "L102-F11",
+        "leaf": "260928-MIK-L102"
+      },
+      "rationale": "Canonical task/frame scope and exact intermediate revision/manifest/asset/draft/pointer/receipt/lock destinations are guarded before IO. The same foreign-manifest spy now records zero reads and a physical-containment refusal. Normal read/write/usage/cleanup/archive and dry-run controls pass, with source guards across siblings and shared product exclusion. No stronger protection against an attacker replacing both admitted files is claimed.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "677fed33450ee2c3e80367293bccc30399344ad3",
+        "content": "sha256:459f24fd0942d86106754b499d64596a2f0b411de485692d4ee95e8418de812a",
+        "locator": {
+          "kind": "symbol",
+          "name": "_record_reclamation"
+        }
+      },
+      "id": "RLZ-6000XB",
+      "invariant": "INV-8FY445",
+      "origin": {
+        "handoffEntry": "L102-F15",
+        "leaf": "260928-MIK-L102"
+      },
+      "rationale": "Actual archive enumeration now occurs after acquisition of shared publication exclusion. The independent staging schedule publishes revision 2 before archive proceeds, and the resulting real receipt names revisions [1,2] and ready_revision=2. Prior intent/outcome, merged failures/identities, prune-before-final-receipt and task-receipt reopening consumers are retained; quota/abandoned-draft/partial-archive/retry/reopen controls pass without launches or confinement loss.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "677fed33450ee2c3e80367293bccc30399344ad3",
+        "content": "sha256:13e739ce115b5baaf97ec67fcc70eb6bbdd46207b0e1532b1a52a4b5a3f42cf1",
+        "locator": {
+          "kind": "symbol",
+          "name": "_snapshot"
+        }
+      },
+      "id": "RLZ-62A0BZ",
+      "invariant": "INV-6VNAR5",
+      "origin": {
+        "handoffEntry": "L102-F11",
+        "leaf": "260928-MIK-L102"
+      },
+      "rationale": "Canonical task/frame scope and exact intermediate revision/manifest/asset/draft/pointer/receipt/lock destinations are guarded before IO. The same foreign-manifest spy now records zero reads and a physical-containment refusal. Normal read/write/usage/cleanup/archive and dry-run controls pass, with source guards across siblings and shared product exclusion. No stronger protection against an attacker replacing both admitted files is claimed.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "677fed33450ee2c3e80367293bccc30399344ad3",
+        "content": "sha256:2de48b977d06bb3fee0c1f379a392b062074334fc74231ca0d7f163c60a6469e",
+        "locator": {
+          "kind": "symbol",
+          "name": "_task_reclamation"
+        }
+      },
+      "id": "RLZ-710790",
+      "invariant": "INV-8FY445",
+      "origin": {
+        "handoffEntry": "L102-F15",
+        "leaf": "260928-MIK-L102"
+      },
+      "rationale": "Actual archive enumeration now occurs after acquisition of shared publication exclusion. The independent staging schedule publishes revision 2 before archive proceeds, and the resulting real receipt names revisions [1,2] and ready_revision=2. Prior intent/outcome, merged failures/identities, prune-before-final-receipt and task-receipt reopening consumers are retained; quota/abandoned-draft/partial-archive/retry/reopen controls pass without launches or confinement loss.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "677fed33450ee2c3e80367293bccc30399344ad3",
+        "content": "sha256:e43ae0b869a4e75641d4fc54eb15305496d5c917b8803d5b9bebd5c7a7fe556d",
+        "locator": {
+          "kind": "symbol",
+          "name": "_archive_receipt"
+        }
+      },
+      "id": "RLZ-8JAKBC",
+      "invariant": "INV-8FY445",
+      "origin": {
+        "handoffEntry": "L102-F15",
+        "leaf": "260928-MIK-L102"
+      },
+      "rationale": "Actual archive enumeration now occurs after acquisition of shared publication exclusion. The independent staging schedule publishes revision 2 before archive proceeds, and the resulting real receipt names revisions [1,2] and ready_revision=2. Prior intent/outcome, merged failures/identities, prune-before-final-receipt and task-receipt reopening consumers are retained; quota/abandoned-draft/partial-archive/retry/reopen controls pass without launches or confinement loss.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "677fed33450ee2c3e80367293bccc30399344ad3",
+        "content": "sha256:074d3ce90068921619f0255cb89a897d86c8e315801eac841f06a13a6e8765de",
+        "locator": {
+          "kind": "symbol",
+          "name": "_manifest_bytes"
+        }
+      },
+      "id": "RLZ-AKM01Z",
+      "invariant": "INV-5VVSTD",
+      "origin": {
+        "handoffEntry": "L102-F10",
+        "leaf": "260928-MIK-L102"
+      },
+      "rationale": "Every stored metadata read now goes through a finite sentinel read; manifests and pointer/draft/reclamation/archive metadata use MAX_MANIFEST_BYTES, digest uses64, assets use admitted byte_size. Descriptor population/aggregate bound is validated before opening asset payloads. The old2097189-byte corrupt manifest now reads exactly1048577 bytes under1048576 cap then refuses. Four corrupt-store controls cover manifest/digest/asset/pointer; over-cap descriptor control proves zero asset opens. A4 capacity/reservation/lock and at-cap preservation logic is unchanged.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "677fed33450ee2c3e80367293bccc30399344ad3",
+        "content": "sha256:13e739ce115b5baaf97ec67fcc70eb6bbdd46207b0e1532b1a52a4b5a3f42cf1",
+        "locator": {
+          "kind": "symbol",
+          "name": "_snapshot"
+        }
+      },
+      "id": "RLZ-F92HXG",
+      "invariant": "INV-T4EVM5",
+      "origin": {
+        "handoffEntry": "L102-F13",
+        "leaf": "260928-MIK-L102"
+      },
+      "rationale": "Every immutable revision now stores manifest.sha256 and all historical/current reads validate the exact manifest bytes before using the same snapshot and size/digest-checked assets. The independent historical-focus corruption refuses while current ready output survives; current pointer corruption, asset corruption and single-snapshot regeneration tests pass. Staleness/regeneration share the selected snapshot and start nothing automatically. The adjacent digest is corruption detection, not a signature against replacing both files; F10 separately retains the read-volume defect.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "677fed33450ee2c3e80367293bccc30399344ad3",
+        "content": "sha256:dd365d8397396148a22b1d01fd1d6bf510807dff57bf0e4bb5a8b6c84d68277d",
+        "locator": {
+          "kind": "symbol",
+          "name": "begin_draft"
+        }
+      },
+      "id": "RLZ-K83MYJ",
+      "invariant": "INV-03QFAC",
+      "origin": {
+        "handoffEntry": "L102-F12",
+        "leaf": "260928-MIK-L102"
+      },
+      "rationale": "EXPLICIT twelfth-ID adjudication: the missing working-folder input is now required working_directory on begin_draft, not an inferred durable FrameScope path. FrameScope remains the durable task target; FrameDraft persists the separate authoring folder and exact asset reservations. _working_directory rejects task-owned/symlinked folders; unready assets are written only to the explicit working folder while _draft_path holds bounded attempt metadata. _draft_assets imports only the recorded named assets under the task lock after exact size/digest checks. Independent omission of working_directory raises TypeError before any frame creation; explicit admission produces zero durable HTML assets, publication imports the page, and removing the working folder leaves ready output byte-identical. Leased/failed/cancelled/abandoned states, explicit recovery and previously repaired active-publication exclusion remain passing. No loss or silent F12 omission is accepted.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "677fed33450ee2c3e80367293bccc30399344ad3",
+        "content": "sha256:9de983394db97835f7d35ae10628bd180b306d7d34a5f534b0c583683e448bd6",
+        "locator": {
+          "kind": "symbol",
+          "name": "_manifest"
+        }
+      },
+      "id": "RLZ-KS5YZ9",
+      "invariant": "INV-ZPHKZB",
+      "origin": {
+        "handoffEntry": "L102-F09",
+        "leaf": "260928-MIK-L102"
+      },
+      "rationale": "Prior closure preserved; no reopening/new lens. Retained prior closure on preserved bytes/properties; no new adjudication lens. The manifest now requires and stores the complete structured EvidencePacket including claims and receipts; publication derives the binding from that packet and enforces manifest_bytes. The focused test removes drafts, then reopens the stored packet and obtains the stale revision/asset list/evidence digest/ancestry through explicit regeneration. The original no-retrievable-evidence defect is closed: the digest now resolves through that retained revision manifest, and old claims remain old-bound rather than promoted. This is not a claim that F07 authority resolution or F13 snapshot interleaving passes.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "677fed33450ee2c3e80367293bccc30399344ad3",
+        "content": "sha256:54c65133461eae4535b3d3a53ce9fa375446824569169c752df75eca4bd59b35",
+        "locator": {
+          "kind": "symbol",
+          "name": "publish_revision"
+        }
+      },
+      "id": "RLZ-NKC5RV",
+      "invariant": "INV-ZAW3HJ",
+      "origin": {
+        "handoffEntry": "MIK-R103@v1",
+        "leaf": "260928-MIK-L102"
+      },
+      "rationale": "Composed CODE acceptance: original full packet/earlier closures retained from A4, and final F05/F10/F16 residuals closed on exact A5. No memory verdict or installed/UI claim.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "677fed33450ee2c3e80367293bccc30399344ad3",
+        "content": "sha256:2b863c02c8e2d96ed5825c75ff70dddad5f592a1340af8039cbfcb68cca0a8ef",
+        "locator": {
+          "kind": "symbol",
+          "name": "regeneration_request"
+        }
+      },
+      "id": "RLZ-P4A479",
+      "invariant": "INV-T4EVM5",
+      "origin": {
+        "handoffEntry": "L102-F13",
+        "leaf": "260928-MIK-L102"
+      },
+      "rationale": "Every immutable revision now stores manifest.sha256 and all historical/current reads validate the exact manifest bytes before using the same snapshot and size/digest-checked assets. The independent historical-focus corruption refuses while current ready output survives; current pointer corruption, asset corruption and single-snapshot regeneration tests pass. Staleness/regeneration share the selected snapshot and start nothing automatically. The adjacent digest is corruption detection, not a signature against replacing both files; F10 separately retains the read-volume defect.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "677fed33450ee2c3e80367293bccc30399344ad3",
+        "content": "sha256:074d3ce90068921619f0255cb89a897d86c8e315801eac841f06a13a6e8765de",
+        "locator": {
+          "kind": "symbol",
+          "name": "_manifest_bytes"
+        }
+      },
+      "id": "RLZ-QF2MB3",
+      "invariant": "INV-T4EVM5",
+      "origin": {
+        "handoffEntry": "L102-F13",
+        "leaf": "260928-MIK-L102"
+      },
+      "rationale": "Every immutable revision now stores manifest.sha256 and all historical/current reads validate the exact manifest bytes before using the same snapshot and size/digest-checked assets. The independent historical-focus corruption refuses while current ready output survives; current pointer corruption, asset corruption and single-snapshot regeneration tests pass. Staleness/regeneration share the selected snapshot and start nothing automatically. The adjacent digest is corruption detection, not a signature against replacing both files; F10 separately retains the read-volume defect.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "677fed33450ee2c3e80367293bccc30399344ad3",
+        "content": "sha256:927418e42ca55878093d3c5324b429bb82bfa0b8b15dfccc1cf3d09f5682c27c",
+        "locator": {
+          "kind": "symbol",
+          "name": "_working_directory"
+        }
+      },
+      "id": "RLZ-QW1RP2",
+      "invariant": "INV-03QFAC",
+      "origin": {
+        "handoffEntry": "L102-F12",
+        "leaf": "260928-MIK-L102"
+      },
+      "rationale": "EXPLICIT twelfth-ID adjudication: the missing working-folder input is now required working_directory on begin_draft, not an inferred durable FrameScope path. FrameScope remains the durable task target; FrameDraft persists the separate authoring folder and exact asset reservations. _working_directory rejects task-owned/symlinked folders; unready assets are written only to the explicit working folder while _draft_path holds bounded attempt metadata. _draft_assets imports only the recorded named assets under the task lock after exact size/digest checks. Independent omission of working_directory raises TypeError before any frame creation; explicit admission produces zero durable HTML assets, publication imports the page, and removing the working folder leaves ready output byte-identical. Leased/failed/cancelled/abandoned states, explicit recovery and previously repaired active-publication exclusion remain passing. No loss or silent F12 omission is accepted.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "677fed33450ee2c3e80367293bccc30399344ad3",
+        "content": "sha256:8eb433eface3fa9d9bb8fb1da967ca6e518f0ee19df550de885219bc0f09005c",
+        "locator": {
+          "kind": "symbol",
+          "name": "reclaim_task_frames"
+        }
+      },
+      "id": "RLZ-RE8EP1",
+      "invariant": "INV-8FY445",
+      "origin": {
+        "handoffEntry": "L102-F15",
+        "leaf": "260928-MIK-L102"
+      },
+      "rationale": "Actual archive enumeration now occurs after acquisition of shared publication exclusion. The independent staging schedule publishes revision 2 before archive proceeds, and the resulting real receipt names revisions [1,2] and ready_revision=2. Prior intent/outcome, merged failures/identities, prune-before-final-receipt and task-receipt reopening consumers are retained; quota/abandoned-draft/partial-archive/retry/reopen controls pass without launches or confinement loss.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "677fed33450ee2c3e80367293bccc30399344ad3",
+        "content": "sha256:13e739ce115b5baaf97ec67fcc70eb6bbdd46207b0e1532b1a52a4b5a3f42cf1",
+        "locator": {
+          "kind": "symbol",
+          "name": "_snapshot"
+        }
+      },
+      "id": "RLZ-V478TP",
+      "invariant": "INV-5VVSTD",
+      "origin": {
+        "handoffEntry": "L102-F10",
+        "leaf": "260928-MIK-L102"
+      },
+      "rationale": "Every stored metadata read now goes through a finite sentinel read; manifests and pointer/draft/reclamation/archive metadata use MAX_MANIFEST_BYTES, digest uses64, assets use admitted byte_size. Descriptor population/aggregate bound is validated before opening asset payloads. The old2097189-byte corrupt manifest now reads exactly1048577 bytes under1048576 cap then refuses. Four corrupt-store controls cover manifest/digest/asset/pointer; over-cap descriptor control proves zero asset opens. A4 capacity/reservation/lock and at-cap preservation logic is unchanged.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "677fed33450ee2c3e80367293bccc30399344ad3",
+        "content": "sha256:4ab024397e0a9adca149f2ff90652df0bd6606089123d5ee3856bc9c5cccad30",
+        "locator": {
+          "kind": "symbol",
+          "name": "_draft_path"
+        }
+      },
+      "id": "RLZ-X5MPBS",
+      "invariant": "INV-03QFAC",
+      "origin": {
+        "handoffEntry": "L102-F12",
+        "leaf": "260928-MIK-L102"
+      },
+      "rationale": "EXPLICIT twelfth-ID adjudication: the missing working-folder input is now required working_directory on begin_draft, not an inferred durable FrameScope path. FrameScope remains the durable task target; FrameDraft persists the separate authoring folder and exact asset reservations. _working_directory rejects task-owned/symlinked folders; unready assets are written only to the explicit working folder while _draft_path holds bounded attempt metadata. _draft_assets imports only the recorded named assets under the task lock after exact size/digest checks. Independent omission of working_directory raises TypeError before any frame creation; explicit admission produces zero durable HTML assets, publication imports the page, and removing the working folder leaves ready output byte-identical. Leased/failed/cancelled/abandoned states, explicit recovery and previously repaired active-publication exclusion remain passing. No loss or silent F12 omission is accepted.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "677fed33450ee2c3e80367293bccc30399344ad3",
+        "content": "sha256:1ad34e076697c5c209142b4ddb4674471f183befc27e7419bed1e6d147383c9e",
+        "locator": {
+          "kind": "symbol",
+          "name": "_publish_locked"
+        }
+      },
+      "id": "RLZ-X7YYP5",
+      "invariant": "INV-K2YX74",
+      "origin": {
+        "handoffEntry": "L102-F14",
+        "leaf": "260928-MIK-L102"
+      },
+      "rationale": "Prior closure preserved; no reopening/new lens. Retained prior closure on preserved bytes/properties; no new adjudication lens. Manifest/ancestry and size/quota planning now precede _write_revision, pointer replacement and reclamation. The independent invalid-ancestry probe at the two-revision ceiling preserves every previous file byte-for-byte; the focused manifest-refusal preservation test also passes. Quota accounting defects remain F10, not a reason to deny this validate-before-reclaim repair.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "677fed33450ee2c3e80367293bccc30399344ad3",
+        "content": "sha256:61a54625e66cdd93a38ebced3b48147fafc93f6861151a069f4d320789061798",
+        "locator": {
+          "kind": "symbol",
+          "name": "_draft_assets"
+        }
+      },
+      "id": "RLZ-XVEQP4",
+      "invariant": "INV-03QFAC",
+      "origin": {
+        "handoffEntry": "L102-F12",
+        "leaf": "260928-MIK-L102"
+      },
+      "rationale": "EXPLICIT twelfth-ID adjudication: the missing working-folder input is now required working_directory on begin_draft, not an inferred durable FrameScope path. FrameScope remains the durable task target; FrameDraft persists the separate authoring folder and exact asset reservations. _working_directory rejects task-owned/symlinked folders; unready assets are written only to the explicit working folder while _draft_path holds bounded attempt metadata. _draft_assets imports only the recorded named assets under the task lock after exact size/digest checks. Independent omission of working_directory raises TypeError before any frame creation; explicit admission produces zero durable HTML assets, publication imports the page, and removing the working folder leaves ready output byte-identical. Leased/failed/cancelled/abandoned states, explicit recovery and previously repaired active-publication exclusion remain passing. No loss or silent F12 omission is accepted.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Every store act is verified against the admitted task and frame before it touches the filesystem.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "677fed33450ee2c3e80367293bccc30399344ad3",
+            "content": "sha256:6264e6bf189d55ed05e4ef509602c7b7ede450993c0c78ed31828c54954d8030",
+            "locator": {
+              "kind": "symbol",
+              "name": "FrameScope"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "A draft is leased in its caller's working folder and imported only under the task lock after digest checks.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "677fed33450ee2c3e80367293bccc30399344ad3",
+            "content": "sha256:dd365d8397396148a22b1d01fd1d6bf510807dff57bf0e4bb5a8b6c84d68277d",
+            "locator": {
+              "kind": "symbol",
+              "name": "begin_draft"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "A publication validates everything before it writes, then moves the ready pointer last.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "677fed33450ee2c3e80367293bccc30399344ad3",
+            "content": "sha256:54c65133461eae4535b3d3a53ce9fa375446824569169c752df75eca4bd59b35",
+            "locator": {
+              "kind": "symbol",
+              "name": "publish_revision"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "A stored metadata read is bounded by the admitted byte sentinel.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "677fed33450ee2c3e80367293bccc30399344ad3",
+            "content": "sha256:074d3ce90068921619f0255cb89a897d86c8e315801eac841f06a13a6e8765de",
+            "locator": {
+              "kind": "symbol",
+              "name": "_manifest_bytes"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Reopening, serving and regeneration read one verified snapshot of manifest and assets.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "677fed33450ee2c3e80367293bccc30399344ad3",
+            "content": "sha256:13e739ce115b5baaf97ec67fcc70eb6bbdd46207b0e1532b1a52a4b5a3f42cf1",
+            "locator": {
+              "kind": "symbol",
+              "name": "_snapshot"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Staleness names the comparison sides that moved and starts no regeneration.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "677fed33450ee2c3e80367293bccc30399344ad3",
+            "content": "sha256:24cf80675059061cce923abc828df867da2abbe775d49503a8fb066f21ca8f8e",
+            "locator": {
+              "kind": "symbol",
+              "name": "frame_staleness"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "Reclamation records intent before removal and the outcome after it, under the task lock.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "677fed33450ee2c3e80367293bccc30399344ad3",
+            "content": "sha256:8eb433eface3fa9d9bb8fb1da967ca6e518f0ee19df550de885219bc0f09005c",
+            "locator": {
+              "kind": "symbol",
+              "name": "reclaim_task_frames"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

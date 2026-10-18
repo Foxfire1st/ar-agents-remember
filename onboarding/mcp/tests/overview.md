@@ -367,7 +367,12 @@ The clean-sync door module tests real Git path/blob/mode comparison and the orig
 
 L174 adds `test_changeset_cancellation.py` (scheduler admission, queued withdrawal, disconnect child reaping, copied-context reclamation and one kill owner) and extends `test_changeset_cache.py` (id-keyed no-observation, uncached working view, unknown-status refusal, bounded request memo) and `test_intent_summary_cache.py` (freshness children filtered, refusal settlement). The new module is declared in the unit-regression lane and on the existing lifecycle consumer rows. These are source/selection declarations and the recorded verdict's cases, not a fresh whole-suite run.
 
+The review-evidence and frame contracts are measured by `test_review_evidence_packet.py`, `test_review_evidence_residuals.py` and `test_review_frame_store.py`; the sidebar's step-tooltip contract by the dashboard's `stepTitles.test.tsx`. Registration in the evidence lanes selects the population and certifies no invocation.
+
 ## Evidence
+
+- The evidence-packet suites measure the packet, read, claim and prepared-address contracts. [1787]
+- The frame-store suite measures binding, publication, reopening, reclamation and restart. [1788]
 
 - The door regression exercises exact clean-sync provenance and byte path discrimination. [1786]
 - Delivered role wording keeps sync, precedent and repair-entry obligations visible. [1785]

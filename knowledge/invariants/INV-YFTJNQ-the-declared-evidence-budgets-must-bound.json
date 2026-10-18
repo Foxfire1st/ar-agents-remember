@@ -1,0 +1,32 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test"
+    ],
+    "justification": "An unbounded read would spend the store's bytes and pages before the declared limit applied."
+  },
+  "applicability": "Evidence packet and investigation reads whose declared byte, path, record, depth or page budgets bound the work.",
+  "conditions": [
+    "The read or packet declares finite limits and the caller stays inside them."
+  ],
+  "exclusions": [
+    "Repository-wide scans or checks outside the admitted bound."
+  ],
+  "id": "INV-YFTJNQ",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "A4-checks/probes.json: resumed-work-budget; focused F04/F16 source counters; source _Relations/_stream_names"
+      ],
+      "path": "l102-curator-list.json"
+    },
+    "handoffEntry": "L102-F04",
+    "leaf": "260928-MIK-L102",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "The declared evidence budgets must bound actual source/relationship work and packet populations, not only a text prefix after an unlimited read.",
+  "status": "proposed",
+  "supersedes": []
+}

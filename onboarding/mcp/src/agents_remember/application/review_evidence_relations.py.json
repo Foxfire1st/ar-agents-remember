@@ -1,0 +1,110 @@
+{
+  "path": "mcp/src/agents_remember/application/review_evidence_relations.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "f394fe143b685b2634d3c4f7f227a617d744606e",
+        "content": "sha256:f4a1b7e303b0a2f7174f7e8278f8eb370c590c9d8375ebea143987c2f3723ff8",
+        "locator": {
+          "kind": "symbol",
+          "name": "_Relations"
+        }
+      },
+      "id": "RLZ-4SHF4H",
+      "invariant": "INV-FXEPWM",
+      "origin": {
+        "handoffEntry": "L102-F05",
+        "leaf": "260928-MIK-L102"
+      },
+      "rationale": "The filename only locates a candidate document. _resolve now requires its native identifier to equal the requested ID before crediting revision/origin. The exact old positive still resolves INV-AAAAAA revision1; substituting native INV-BBBBBB revision77 now gives unreadable with target revision/origin null, never false absence or borrowed revision. A4 typed owners, sidecars/history and same-depth continuation are preserved.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "f394fe143b685b2634d3c4f7f227a617d744606e",
+        "content": "sha256:f4a1b7e303b0a2f7174f7e8278f8eb370c590c9d8375ebea143987c2f3723ff8",
+        "locator": {
+          "kind": "symbol",
+          "name": "_Relations"
+        }
+      },
+      "id": "RLZ-7C179R",
+      "invariant": "INV-YFTJNQ",
+      "origin": {
+        "handoffEntry": "L102-F04",
+        "leaf": "260928-MIK-L102"
+      },
+      "rationale": "Ordinary, resumed and symlink reads are streamed with measured consumption; an offset beyond MAX_SCAN_BYTES now refuses before any blob read (independent actualRead=0). Resumed prefix work is deducted from the finite scan budget. Packet path/collection caps, relationship path/byte/depth/page caps, bounded ls-tree streaming and a per-walk indexed lookup remain enforced; two-size and boundary tests pass. This credits bounded legitimate investigation, not unlimited-store-reader behavior owned by F10.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "f394fe143b685b2634d3c4f7f227a617d744606e",
+        "content": "sha256:32f534b54c5e3103deb3d576b27c24e4b2d0ac59b5a9727c1a3e0f3c53daf106",
+        "locator": {
+          "kind": "symbol",
+          "name": "_parse_memory_file"
+        }
+      },
+      "id": "RLZ-FM05YZ",
+      "invariant": "INV-FXEPWM",
+      "origin": {
+        "handoffEntry": "L102-F05",
+        "leaf": "260928-MIK-L102"
+      },
+      "rationale": "The filename only locates a candidate document. _resolve now requires its native identifier to equal the requested ID before crediting revision/origin. The exact old positive still resolves INV-AAAAAA revision1; substituting native INV-BBBBBB revision77 now gives unreadable with target revision/origin null, never false absence or borrowed revision. A4 typed owners, sidecars/history and same-depth continuation are preserved.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "A relationship edge is reported from the owner that records it, with its own semantics.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f394fe143b685b2634d3c4f7f227a617d744606e",
+            "content": "sha256:0084de45d1161f9315030a62b3a47b747345aac24279f9833115558fcc427f6e",
+            "locator": {
+              "kind": "symbol",
+              "name": "read_bound_relationships"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "A resolved target must carry the requested native identifier; a filename alone is only a locator.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f394fe143b685b2634d3c4f7f227a617d744606e",
+            "content": "sha256:f4a1b7e303b0a2f7174f7e8278f8eb370c590c9d8375ebea143987c2f3723ff8",
+            "locator": {
+              "kind": "symbol",
+              "name": "_Relations"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "A memory file this build does not read is invalid rather than absent.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f394fe143b685b2634d3c4f7f227a617d744606e",
+            "content": "sha256:32f534b54c5e3103deb3d576b27c24e4b2d0ac59b5a9727c1a3e0f3c53daf106",
+            "locator": {
+              "kind": "symbol",
+              "name": "_parse_memory_file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

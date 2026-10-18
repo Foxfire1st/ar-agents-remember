@@ -1,0 +1,32 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test"
+    ],
+    "justification": "A comparison with equal tree hashes from another repository or conversion would otherwise be explained as this one, and a stale frame would keep serving foreign evidence."
+  },
+  "applicability": "Equality and staleness between an evidence packet or frame revision and an existing review comparison.",
+  "conditions": [
+    "The comparison owner's record supplies repository, task, leaf, number, both code sides and both memory sides, and any conversion inputs."
+  ],
+  "exclusions": [
+    "Records that are not comparison-bound review records."
+  ],
+  "id": "INV-S75HA1",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "A4-checks/probes.json: identity-and-retry; python-focused.log: F01"
+      ],
+      "path": "l102-curator-list.json"
+    },
+    "handoffEntry": "L102-F01",
+    "leaf": "260928-MIK-L102",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Packet and frame equality/staleness must preserve the existing comparison's full repository/task/leaf/operand/conversion identity, rather than equating foreign contexts with equal tree hashes.",
+  "status": "proposed",
+  "supersedes": []
+}

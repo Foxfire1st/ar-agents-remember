@@ -1,0 +1,87 @@
+{
+  "path": "mcp/src/agents_remember/models/knowledge/review_evidence.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The packet is bound to one existing comparison's full identity, with the stored and compared memory-base trees named separately.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4d26af6c4d78a59b0cc3444b648a3d864ec2fc9d",
+            "content": "sha256:99714e191ab95634b0eb77620dcc5172882cf2a794d8a16cd0fbf5285d9f463e",
+            "locator": {
+              "kind": "symbol",
+              "name": "EvidenceComparisonBinding"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "A collection states its producer, population and read state: `present` carries a positive count, `measured-empty` exactly zero, and no other state a positive count.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4d26af6c4d78a59b0cc3444b648a3d864ec2fc9d",
+            "content": "sha256:7fe308936e1644da940b4d5d24330a3066d5b211e441093063e343035025fe0b",
+            "locator": {
+              "kind": "symbol",
+              "name": "_state_and_count_agree"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Claim classifications differ in what they require of a basis, and a claim map refuses a duplicate local identity.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4d26af6c4d78a59b0cc3444b648a3d864ec2fc9d",
+            "content": "sha256:46116208bd077f6aacf2611dcd79331ce8df2566b367bbf65ea634c4b3dcaee1",
+            "locator": {
+              "kind": "symbol",
+              "name": "EvidenceClaim"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Coverage counts carry their denominator, and an unassessed remainder cannot be counted as passed.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4d26af6c4d78a59b0cc3444b648a3d864ec2fc9d",
+            "content": "sha256:4f105158c5b0e71136868df7d48e846b532ab89967458f4978e3bb6afe62d0e3",
+            "locator": {
+              "kind": "symbol",
+              "name": "CoverageCount"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The packet reports what it still owes a reader instead of filling it with a default.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4d26af6c4d78a59b0cc3444b648a3d864ec2fc9d",
+            "content": "sha256:bffab810212aff85067e9fef6d71888e8cc2b6ea92b7800168b668db8047e3ff",
+            "locator": {
+              "kind": "symbol",
+              "name": "packet_errors"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

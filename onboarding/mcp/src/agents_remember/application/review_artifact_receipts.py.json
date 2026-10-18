@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "60455ec5f2544afad8a1cc9f43e1b38bce7e613f",
+        "blob": "1bbd29671c9645e75997b17b6e736154af3cf8ed",
         "content": "sha256:7867c89c3d071b0a99eef8068bad3cd91d1670333f0238470d413f99c0eab6ab",
         "locator": {
           "kind": "symbol",
@@ -21,7 +21,7 @@
     },
     {
       "anchor": {
-        "blob": "60455ec5f2544afad8a1cc9f43e1b38bce7e613f",
+        "blob": "1bbd29671c9645e75997b17b6e736154af3cf8ed",
         "content": "sha256:7867c89c3d071b0a99eef8068bad3cd91d1670333f0238470d413f99c0eab6ab",
         "locator": {
           "kind": "symbol",
@@ -93,6 +93,22 @@
             "content": "sha256:b172fc179762a6681abf37b35940c150eaef9852587f9242ecab2df2ca49b651",
             "locator": {
               "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The reclaimed frame revisions are a shared artifact class for every receipt consumer.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1bbd29671c9645e75997b17b6e736154af3cf8ed",
+            "content": "sha256:29bac4d436ae4748dd44f328b7ff13216e5ec4514404aad449fd20436bcfc20a",
+            "locator": {
+              "kind": "symbol",
+              "name": "_ARTIFACT_KEYS"
             }
           },
           "kind": "code"

@@ -1,0 +1,32 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test"
+    ],
+    "justification": "A retained page that cannot be reopened without a model, or that silently adopts a new comparison, defeats the durability the developer asked for."
+  },
+  "applicability": "A generated explanation retained as a durable frame.",
+  "conditions": [
+    "The frame is published as a revision bound to the existing comparison."
+  ],
+  "exclusions": [
+    "Generation or regeneration orchestration, presenter sessions and installed UI."
+  ],
+  "id": "INV-ZAW3HJ",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "A5-verdict.md; A5-fixed-list-verification.md; A5-checks-complete/; prior A4 full-criterion account retained"
+      ],
+      "path": "l102-curator-list.json"
+    },
+    "handoffEntry": "MIK-R103@v1",
+    "leaf": "260928-MIK-L102",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "A ready frame reopens from durable source and assets without a model call. A frame revision binds the existing exact review comparison. It never changes its binding after publication. Code or memory movement makes the retained frame stale for the selected comparison. It offers regeneration and starts nothing. Explicit regeneration reuses the stale frame's own source and assets. A new revision names the new comparison. Assets, drafts and revisions have finite bounds and a named reclamation owner.",
+  "status": "proposed",
+  "supersedes": []
+}

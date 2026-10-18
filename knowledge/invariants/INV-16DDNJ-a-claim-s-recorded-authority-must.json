@@ -1,0 +1,32 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test"
+    ],
+    "justification": "A caller-written present label would make an unread or nonexistent range look like recorded authority."
+  },
+  "applicability": "Resolution of an explanatory claim's bases.",
+  "conditions": [
+    "The claim carries a typed basis with a side, path and range or record identity."
+  ],
+  "exclusions": [
+    "A claim about a subject no admitted packet carries."
+  ],
+  "id": "INV-16DDNJ",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "A4-checks/probes.json: nonexistent-range-authority; focused F07/ranged positive control"
+      ],
+      "path": "l102-curator-list.json"
+    },
+    "handoffEntry": "L102-F07",
+    "leaf": "260928-MIK-L102",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "A claim's recorded authority must rest on a resolving exact basis with its actual type, binding, revision and applicability, not merely caller-written present text.",
+  "status": "proposed",
+  "supersedes": []
+}

@@ -60,7 +60,11 @@ support module), so the catalog is unchanged; it runs in the `unit-regression` l
 
 No additional work is asserted by this card.
 
+The pinned planned-key set now includes `frameRevisions`, the archive class MIK-R103 rule 8 adds; the case fails on the previous set and passes on this one.
+
 ## Evidence
+
+- The receipt's planned-key set carries the new frame-revision class. [10]
 
 ### Docs References
 

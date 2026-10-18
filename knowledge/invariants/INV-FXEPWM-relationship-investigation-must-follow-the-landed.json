@@ -1,0 +1,32 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test"
+    ],
+    "justification": "A filename match would credit a foreign record's revision and origin to the requested identity, which is false evidence."
+  },
+  "applicability": "Relationship investigation at a bound memory side.",
+  "conditions": [
+    "The inspected file is one of the landed record, sidecar or history owners."
+  ],
+  "exclusions": [
+    "A relationship the inspected file does not itself record."
+  ],
+  "id": "INV-FXEPWM",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "A5-verdict.md; A5-fixed-list-verification.md; A5-checks-complete/; prior A4 full-criterion account retained"
+      ],
+      "path": "l102-curator-list.json"
+    },
+    "handoffEntry": "L102-F05",
+    "leaf": "260928-MIK-L102",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Relationship investigation must follow the landed memory owners' actual membership, link, sidecar and history semantics and preserve uncertainty rather than inventing a complete record graph.",
+  "status": "proposed",
+  "supersedes": []
+}

@@ -190,7 +190,13 @@ These retired source accounts preserve earlier intent only. Their former citatio
 
 - Historical pre-L57 reference account only; the named supporting-record acquisition/availability/applicability owner is removed, not a current wire guarantee: **Retained historical source account — superseded by the current route account:** Retired collections report unavailable; assessment currentness is measured. (historical reference 465; retired in L57)
 
+The review-evidence and frame seam is composed here. `review_evidence_packet` assembles one comparison's packet from the owner's record and invents no side; `review_evidence_adapter` prepares that packet from the landed comparison payload and keeps the payload's measured index states; `review_evidence_read`, `review_evidence_relations` and `review_evidence_claims` read exact trees and claim bases within declared bounds; `review_supplemental_evidence` binds task-external bytes; `review_frame_store` publishes, reopens, judges and reclaims task-owned frame revisions; `review_frame_read` bounds stored metadata reads. None of them starts a model, launches a role, or writes knowledge, task, gate or comparison authority.
+
 ## Evidence
+
+- Packet assembly copies the comparison owner's sides and refuses another comparison's identity. [496]
+- The frame store validates before it mutates and writes the ready pointer last. [497]
+
 - The one projection of a realization claim into its source reference. [1]
 - The roster's member composition calling it once per claim. [2]
 - Per-target resolution and the ordered admission checks. [6]

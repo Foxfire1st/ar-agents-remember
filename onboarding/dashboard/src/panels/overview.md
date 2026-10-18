@@ -184,7 +184,12 @@ taskReader renders one Direct execution switch only on a document-backed subTask
 
 the detail panel's change-set bar now aborts its own counter read on a task switch and renders no failure for it. The task-reuse and task-switch cases pin the other side: the left page's change set, summary and body end with the selection, while a revisited task is answered from the body the first visit retained with no second request. The mounted chat case pins the operation-level promise that the newly selected task's chat is dispatched and bound while four abandoned page producers remain slow.
 
+MIK-R174 and MIK-R175 changed two visible Operations contracts. The started band now orders the paused rows the host timed newest first, ahead of the paused rows it did not time, which keep the server's order; a missing time is never read as zero or as now. And a step dot shows only its own tooltip: the row line and the figure box carry no native title, the row's hover text lives on its own cells, and the tooltip keeps its id and status word whole while only the title wraps. Both are presentation facts — served order, task state and row admission are unchanged.
+
 ## Evidence
+
+- The started band orders host-timed rows newest first and leaves untimed rows in the server's order. [197]
+- The row's native title is gone from every ancestor of a step mark while its own cells keep the hover text. [198]
 
 - The list combines selection-episode releases with parent-only unmodified arrows and observes hidden selectedId changes. [194]
 - The shared master-page disagreement renderer draws served rows and offers jumps only to records in the task map. [195]

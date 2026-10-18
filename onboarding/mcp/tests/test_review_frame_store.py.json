@@ -1,0 +1,279 @@
+{
+  "path": "mcp/tests/test_review_frame_store.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "6101242266807cf543d12c9f6fe01b12ad3bf8f0",
+        "content": "sha256:93d14c94b988481cdb6cc7c4f34f336198736de08911b0726769e0105be572a6",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_f12_a_live_draft_is_kept_and_an_abandoned_one_is_reclaimed"
+        }
+      },
+      "facet": "a live draft is kept and an abandoned one reclaimed",
+      "id": "PRF-3SAFEK",
+      "invariant": "INV-03QFAC",
+      "origin": {
+        "handoffEntry": "L102-F12",
+        "leaf": "260928-MIK-L102"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "6101242266807cf543d12c9f6fe01b12ad3bf8f0",
+        "content": "sha256:9f127c5fe26c3524b59e7ce541a55a81b47304f622ad89d6772e8b353381efdd",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_f14_a_refused_publication_preserves_the_ready_revision"
+        }
+      },
+      "facet": "a refused publication preserves the ready revision byte for byte",
+      "id": "PRF-5J3ZBN",
+      "invariant": "INV-K2YX74",
+      "origin": {
+        "handoffEntry": "L102-F14",
+        "leaf": "260928-MIK-L102"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "6101242266807cf543d12c9f6fe01b12ad3bf8f0",
+        "content": "sha256:4a64a78a905c0a7b5e081264f11193a34c5778aba3e90ac403e80e273bfb5b04",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_f10_the_task_ceiling_counts_every_lineage_and_a_draft"
+        }
+      },
+      "facet": "the task ceiling counts every lineage and a draft",
+      "id": "PRF-9AY8HZ",
+      "invariant": "INV-5VVSTD",
+      "origin": {
+        "handoffEntry": "L102-F10",
+        "leaf": "260928-MIK-L102"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "6101242266807cf543d12c9f6fe01b12ad3bf8f0",
+        "content": "sha256:adbbdd3a823c04c4389524e81a5d29b51bcbd7cb3e887d6d01e08b235e656171",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_f13_corrupt_bytes_are_refused_rather_than_served"
+        }
+      },
+      "facet": "corrupt bytes are refused rather than served",
+      "id": "PRF-A6DD2C",
+      "invariant": "INV-T4EVM5",
+      "origin": {
+        "handoffEntry": "L102-F13",
+        "leaf": "260928-MIK-L102"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "6101242266807cf543d12c9f6fe01b12ad3bf8f0",
+        "content": "sha256:f4a6eeb2d85ddbe3f0b4e29f1b4574bfde44ee3a75407385eb5f1bda6ddd8c6f",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_f10_a_lineage_ceiling_counts_revisions_drafts_and_metadata"
+        }
+      },
+      "facet": "a lineage byte ceiling refuses before a revision is written, and usage accounts revision and metadata bytes",
+      "id": "PRF-BRRP5X",
+      "invariant": "INV-5VVSTD",
+      "origin": {
+        "handoffEntry": "L102-F10",
+        "leaf": "260928-MIK-L102"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "6101242266807cf543d12c9f6fe01b12ad3bf8f0",
+        "content": "sha256:07aba459907b4c87c3564eebe78a699f9684a64b97eb9c814ab002731fcb18e2",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_f09_the_evidence_survives_the_scratch_and_regeneration_names_it"
+        }
+      },
+      "facet": "removing the scratch and regenerating still yields the stored evidence digest and ancestry",
+      "id": "PRF-D3ACSH",
+      "invariant": "INV-ZPHKZB",
+      "origin": {
+        "handoffEntry": "L102-F09",
+        "leaf": "260928-MIK-L102"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "6101242266807cf543d12c9f6fe01b12ad3bf8f0",
+        "content": "sha256:dc848eca248fc6045eadbf0465917908645ddaca1c58dfc108f50f2a5ba15e50",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_f12_a_published_draft_never_publishes_a_second_revision"
+        }
+      },
+      "facet": "a published draft never publishes a second revision",
+      "id": "PRF-F71FWC",
+      "invariant": "INV-03QFAC",
+      "origin": {
+        "handoffEntry": "L102-F12",
+        "leaf": "260928-MIK-L102"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "6101242266807cf543d12c9f6fe01b12ad3bf8f0",
+        "content": "sha256:07aba459907b4c87c3564eebe78a699f9684a64b97eb9c814ab002731fcb18e2",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_f09_the_evidence_survives_the_scratch_and_regeneration_names_it"
+        }
+      },
+      "facet": "the frame's evidence survives the authoring scratch and is named by regeneration",
+      "id": "PRF-HZZXAR",
+      "invariant": "INV-ZAW3HJ",
+      "origin": {
+        "handoffEntry": "MIK-R103@v1",
+        "leaf": "260928-MIK-L102"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "6101242266807cf543d12c9f6fe01b12ad3bf8f0",
+        "content": "sha256:9e6cdf31e8707546cca19228503b8b6162fdef2ae20bf970e61ff54ab322f416",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_f15_a_reclaimed_revision_is_named_when_reopened"
+        }
+      },
+      "facet": "a reclaimed revision is named when reopened",
+      "id": "PRF-KAM5XV",
+      "invariant": "INV-8FY445",
+      "origin": {
+        "handoffEntry": "L102-F15",
+        "leaf": "260928-MIK-L102"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "6101242266807cf543d12c9f6fe01b12ad3bf8f0",
+        "content": "sha256:1fea1c9514c7632eaf16c1f29211ebeeb1b8b752121c65d26f039314d5d63478",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_f15_an_archive_records_a_partial_failure_and_keeps_what_it_removed"
+        }
+      },
+      "facet": "an archive records a partial failure and keeps what it removed",
+      "id": "PRF-PD5KD0",
+      "invariant": "INV-8FY445",
+      "origin": {
+        "handoffEntry": "L102-F15",
+        "leaf": "260928-MIK-L102"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "6101242266807cf543d12c9f6fe01b12ad3bf8f0",
+        "content": "sha256:485346f2e572d80d0fd644b41debad2d40f94ee99cf41253ede5fb0d5bf510e2",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_f11_a_symlinked_frame_is_held_by_every_store_act"
+        }
+      },
+      "facet": "a symlinked frame is held by every store act",
+      "id": "PRF-QTXJ05",
+      "invariant": "INV-6VNAR5",
+      "origin": {
+        "handoffEntry": "L102-F11",
+        "leaf": "260928-MIK-L102"
+      }
+    }
+  ],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "6101242266807cf543d12c9f6fe01b12ad3bf8f0",
+        "content": "sha256:e2d830f289bd915c8727348f88caa55dd158c59234a0f5cde82b2412b0f43758",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_f16_r4_default_byte_maximum_costs_restart_and_reclamation"
+        }
+      },
+      "id": "RLZ-CMAZ4K",
+      "invariant": "INV-VASQQX",
+      "origin": {
+        "handoffEntry": "L102-F16",
+        "leaf": "260928-MIK-L102"
+      },
+      "rationale": "The previously missing owner evidence is now supplied: real bound Git tree with malformed omitted record creates partial SQLite index; valid records/proofs remain usable; emitted packet carries measured partial state and absence-unknown limitation. Deleting the exact-tree cache and changing checkout contents rebuilds identical historical wire/packet. Lost history and explicitly injected cache-build failure preserve owner reason without inventing complete/empty data; independent code-side reading still works. prepare_evidence consumes real opened ReviewTrees measured states, not caller-invented complete flags. Prior maximum/two-size/restart/cancellation/race evidence remains credited; no early installed/UI requirement added.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "A revision bound to a foreign comparison is stale.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6101242266807cf543d12c9f6fe01b12ad3bf8f0",
+            "content": "sha256:534be29d51518ea8793cff15009df910b88ee87791842fb99d76f3889be123fe",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_f01_a_revision_bound_to_a_foreign_comparison_is_stale"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The evidence survives the authoring scratch and regeneration names it.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6101242266807cf543d12c9f6fe01b12ad3bf8f0",
+            "content": "sha256:07aba459907b4c87c3564eebe78a699f9684a64b97eb9c814ab002731fcb18e2",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_f09_the_evidence_survives_the_scratch_and_regeneration_names_it"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "A reclaimed revision is named when the frame is reopened.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6101242266807cf543d12c9f6fe01b12ad3bf8f0",
+            "content": "sha256:9e6cdf31e8707546cca19228503b8b6162fdef2ae20bf970e61ff54ab322f416",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_f15_a_reclaimed_revision_is_named_when_reopened"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "The largest admitted store, filled to the default ceiling, reopens after a subprocess restart.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6101242266807cf543d12c9f6fe01b12ad3bf8f0",
+            "content": "sha256:b130a1014c9fced122bbda91a11bc96300c356dc435c043ff3e2945d1837d222",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_f16_r2_the_largest_store_is_measured_at_its_default_ceiling"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

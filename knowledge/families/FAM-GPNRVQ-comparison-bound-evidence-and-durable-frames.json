@@ -1,0 +1,47 @@
+{
+  "admission": {
+    "criteria": [
+      "joint_guarantee"
+    ],
+    "justification": "The evidence owners and the frame owners together promise that what a reader sees is the same comparison's evidence, before and after the page is saved; neither half alone keeps a reopened page honest about the trees it describes."
+  },
+  "guarantee": "An explanation's evidence and its saved frame are bound to one existing review comparison, and every packet, read, receipt, claim, revision, reopen and reclamation keeps that binding's own trees, bytes and stated states — never a caller's root, today's checkout, or a fabricated empty.",
+  "id": "FAM-GPNRVQ",
+  "members": [
+    "INV-S75HA1",
+    "INV-GAVZC0",
+    "INV-GGF749",
+    "INV-YFTJNQ",
+    "INV-FXEPWM",
+    "INV-D3JV0V",
+    "INV-16DDNJ",
+    "INV-R298WE",
+    "INV-ZPHKZB",
+    "INV-5VVSTD",
+    "INV-6VNAR5",
+    "INV-03QFAC",
+    "INV-T4EVM5",
+    "INV-K2YX74",
+    "INV-8FY445",
+    "INV-VASQQX",
+    "INV-TE5W2D",
+    "INV-ZAW3HJ"
+  ],
+  "origin": {
+    "handoff": {
+      "path": "l102-curator-list.json"
+    },
+    "handoffEntry": "comparison-bound-evidence-and-frames",
+    "leaf": "260928-MIK-L102",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "routes": [
+    "mcp/src/agents_remember/application",
+    "mcp/src/agents_remember/models/knowledge",
+    "mcp/tests"
+  ],
+  "schema": "ar-family/v1",
+  "status": "proposed",
+  "title": "Comparison-bound evidence and its durable frames"
+}

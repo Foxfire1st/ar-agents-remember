@@ -1,0 +1,278 @@
+{
+  "path": "mcp/tests/test_review_evidence_packet.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "c8dfdee310b6d1b875de8ae7b78fc00bbec18452",
+        "content": "sha256:95e9098826ef6811e171341e5fd2fd8c0bcd0e62eb5c7d49704a8e07a04ae24b",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_f04_a_symlink_is_bounded_like_any_other_bytes"
+        }
+      },
+      "facet": "a symlink is bounded like any other bytes",
+      "id": "PRF-109Q95",
+      "invariant": "INV-YFTJNQ",
+      "origin": {
+        "handoffEntry": "L102-F04",
+        "leaf": "260928-MIK-L102"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "c8dfdee310b6d1b875de8ae7b78fc00bbec18452",
+        "content": "sha256:a023a70787b065cb8b82dc4a7343509bb6176e8a6ca2e90c9b2c19590fe06262",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_f07_a_recorded_fact_needs_a_mechanical_basis"
+        }
+      },
+      "facet": "a recorded fact refuses a basis that is not mechanical",
+      "id": "PRF-3Z404G",
+      "invariant": "INV-16DDNJ",
+      "origin": {
+        "handoffEntry": "L102-F07",
+        "leaf": "260928-MIK-L102"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "c8dfdee310b6d1b875de8ae7b78fc00bbec18452",
+        "content": "sha256:bd6f8960eb889fa7b06a78e7f0f5e0444a17cd4f7ac0b60f77e28616319ab39d",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_f03_an_existing_empty_file_is_measured_empty_not_absent"
+        }
+      },
+      "facet": "an existing empty file is measured-empty rather than absent",
+      "id": "PRF-AAK0N9",
+      "invariant": "INV-GGF749",
+      "origin": {
+        "handoffEntry": "L102-F03",
+        "leaf": "260928-MIK-L102"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "c8dfdee310b6d1b875de8ae7b78fc00bbec18452",
+        "content": "sha256:55f499e9d9b05ada0ea42871d1fbfea9c9803dd4c776effd811ddaa11fd68ca8",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_f05_a_family_owns_its_members_and_a_decision_owns_its_links"
+        }
+      },
+      "facet": "family members and decision links are followed from their owners",
+      "id": "PRF-B0YF24",
+      "invariant": "INV-FXEPWM",
+      "origin": {
+        "handoffEntry": "L102-F05",
+        "leaf": "260928-MIK-L102"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "c8dfdee310b6d1b875de8ae7b78fc00bbec18452",
+        "content": "sha256:83500232a68350a2f0b9f7cc5743680e49d7f96db19841b38996897044f4cd0d",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_f04_the_read_bounds_bound_bytes_examined_at_two_sizes"
+        }
+      },
+      "facet": "two input sizes measure the bytes examined",
+      "id": "PRF-CA6D7H",
+      "invariant": "INV-YFTJNQ",
+      "origin": {
+        "handoffEntry": "L102-F04",
+        "leaf": "260928-MIK-L102"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "c8dfdee310b6d1b875de8ae7b78fc00bbec18452",
+        "content": "sha256:a9c64933e72e6af04cc3cdbd729c1e5271a7cda0a7be58b68674a3890a8ac171",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_f08_the_landed_payload_prepares_a_packet_with_addresses_a_consumer_opens"
+        }
+      },
+      "facet": "the prepared packet carries the comparison's collections and addresses",
+      "id": "PRF-EE6F3B",
+      "invariant": "INV-TE5W2D",
+      "origin": {
+        "handoffEntry": "MIK-R102@v1",
+        "leaf": "260928-MIK-L102"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "c8dfdee310b6d1b875de8ae7b78fc00bbec18452",
+        "content": "sha256:36f5a99ffd17b3f11df2822c2e4f1b107b2beae5592dab581ef0040f9bb1a027",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_f06_a_supplemental_receipt_binds_the_bytes_it_admits"
+        }
+      },
+      "facet": "a receipt binds the admitted bytes",
+      "id": "PRF-FPW7XT",
+      "invariant": "INV-D3JV0V",
+      "origin": {
+        "handoffEntry": "L102-F06",
+        "leaf": "260928-MIK-L102"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "c8dfdee310b6d1b875de8ae7b78fc00bbec18452",
+        "content": "sha256:a9c64933e72e6af04cc3cdbd729c1e5271a7cda0a7be58b68674a3890a8ac171",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_f08_the_landed_payload_prepares_a_packet_with_addresses_a_consumer_opens"
+        }
+      },
+      "facet": "the landed payload prepares a packet whose addresses a consumer opens",
+      "id": "PRF-K3RGJM",
+      "invariant": "INV-R298WE",
+      "origin": {
+        "handoffEntry": "L102-F08",
+        "leaf": "260928-MIK-L102"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "c8dfdee310b6d1b875de8ae7b78fc00bbec18452",
+        "content": "sha256:07eee41b551ab46f585f1cbe8eb675ca7e8c6cbbdb985d5bcb261e0695f7efc6",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_f06_a_changed_source_answers_a_successor_and_never_reuses_the_old_identity"
+        }
+      },
+      "facet": "a changed source answers a successor and never reuses the old identity",
+      "id": "PRF-MHYQ5J",
+      "invariant": "INV-D3JV0V",
+      "origin": {
+        "handoffEntry": "L102-F06",
+        "leaf": "260928-MIK-L102"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "c8dfdee310b6d1b875de8ae7b78fc00bbec18452",
+        "content": "sha256:4610cb923c76571de47e42d2ba3136e132547d30e67c96305f8925cb7a9a94fe",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_f01_a_foreign_repository_with_equal_trees_is_never_this_comparison"
+        }
+      },
+      "facet": "a foreign repository with equal trees is refused as this comparison",
+      "id": "PRF-MRMJ6Z",
+      "invariant": "INV-S75HA1",
+      "origin": {
+        "handoffEntry": "L102-F01",
+        "leaf": "260928-MIK-L102"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "c8dfdee310b6d1b875de8ae7b78fc00bbec18452",
+        "content": "sha256:9a3bc605b109dd518bf419f7c9a16bd11f7500a3139ce700a9a12a1026d7019c",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_f01_a_different_conversion_is_a_different_comparison"
+        }
+      },
+      "facet": "a different conversion is a different comparison",
+      "id": "PRF-RV829E",
+      "invariant": "INV-S75HA1",
+      "origin": {
+        "handoffEntry": "L102-F01",
+        "leaf": "260928-MIK-L102"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "c8dfdee310b6d1b875de8ae7b78fc00bbec18452",
+        "content": "sha256:f53fbb36fb2e7d70b120c548622a6a1aa2901f9dcbecb99aa34b28a6ff55c2d9",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_f02_reads_the_effective_converted_tree_and_names_the_stored_one"
+        }
+      },
+      "facet": "a read uses the converted tree and reports the stored tree beside it",
+      "id": "PRF-STKSV2",
+      "invariant": "INV-GAVZC0",
+      "origin": {
+        "handoffEntry": "L102-F02",
+        "leaf": "260928-MIK-L102"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "c8dfdee310b6d1b875de8ae7b78fc00bbec18452",
+        "content": "sha256:3212c25a09a1e29834393f7d2aaa7a83f9e9e3fbd9ca8fb70f155770d97903fa",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_f07_a_present_label_on_an_absent_basis_is_unresolved"
+        }
+      },
+      "facet": "a present label on an absent basis stays unresolved",
+      "id": "PRF-TR7683",
+      "invariant": "INV-16DDNJ",
+      "origin": {
+        "handoffEntry": "L102-F07",
+        "leaf": "260928-MIK-L102"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The packet contract cases read through the landed owners rather than fabricated side states.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c8dfdee310b6d1b875de8ae7b78fc00bbec18452",
+            "content": "sha256:c338eb41000aff3fdb2d6ff0b438be9f96a70fe26b839715bec89b5164a438e7",
+            "locator": {
+              "kind": "symbol",
+              "name": "world"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "A foreign repository with equal trees is never this comparison.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c8dfdee310b6d1b875de8ae7b78fc00bbec18452",
+            "content": "sha256:4610cb923c76571de47e42d2ba3136e132547d30e67c96305f8925cb7a9a94fe",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_f01_a_foreign_repository_with_equal_trees_is_never_this_comparison"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "A literal continuation crosses a separator and a long line without certifying absence.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c8dfdee310b6d1b875de8ae7b78fc00bbec18452",
+            "content": "sha256:4c37c6a1d4cae61903cc3c15a440cbec876e6d3a585591e043bfeb5dd3560f07",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_f03_r4_a_literal_continuation_crosses_a_separator_and_a_long_line"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

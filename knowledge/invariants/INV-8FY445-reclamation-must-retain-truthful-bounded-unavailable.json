@@ -1,0 +1,32 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test"
+    ],
+    "justification": "An archive that removed frames without a receipt would make a later reopen indistinguishable from corruption."
+  },
+  "applicability": "Reclamation of superseded revisions, abandoned drafts and an archived task's frames.",
+  "conditions": [
+    "The reclamation owner removes bytes inside the admitted frame area."
+  ],
+  "exclusions": [
+    "Automatic deletion of the current ready revision while its comparison is unchanged."
+  ],
+  "id": "INV-8FY445",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "A4-checks/probes.json: active-publication-archive-control; focused F15 including archive census after lock"
+      ],
+      "path": "l102-curator-list.json"
+    },
+    "handoffEntry": "L102-F15",
+    "leaf": "260928-MIK-L102",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Reclamation must retain truthful bounded unavailable receipts for every removed revision and archive result, and future reopening must consume those receipts to distinguish deletion, failure and corruption.",
+  "status": "proposed",
+  "supersedes": []
+}

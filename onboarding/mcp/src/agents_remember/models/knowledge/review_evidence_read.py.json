@@ -1,0 +1,55 @@
+{
+  "path": "mcp/src/agents_remember/models/knowledge/review_evidence_read.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "A read receipt states the side and tree read, the examined window, the returned range and every limit that shaped it.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5fd4b5f4e9cdffa246dddfedfe49f47adce00e8b",
+            "content": "sha256:14b24bc7090f7bf75a5e9ef8b84cdc0d63b6b76383f828e15d93dc3f90046123",
+            "locator": {
+              "kind": "symbol",
+              "name": "EvidenceReadReceipt"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "A relationship read reports the edge its own owner records, with depth and cut.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5fd4b5f4e9cdffa246dddfedfe49f47adce00e8b",
+            "content": "sha256:a9b6254b451ce0cde4a2235629f776d7d16a68541973cc4df3979be9e20a4a05",
+            "locator": {
+              "kind": "symbol",
+              "name": "EvidenceRelationshipRead"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "A claim resolution is mechanical: each basis must resolve against the packet that cites it.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5fd4b5f4e9cdffa246dddfedfe49f47adce00e8b",
+            "content": "sha256:d0de6e9da332096d4e295aa1f9502498c10c6a77c5f550ad2fe500dd1379e3ce",
+            "locator": {
+              "kind": "symbol",
+              "name": "ClaimResolution"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

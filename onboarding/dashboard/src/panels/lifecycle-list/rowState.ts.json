@@ -3,12 +3,12 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "6e8be56cd905b97635845cad055ebd18423e0214",
+        "blob": "e056e6b3c7dce2893c53dc856efab571863169a2",
         "content": "sha256:c3fd8a7c8d84e764e3cfa4bd5bec4492ed7110680cbb54bf0bbf9246ecfd9ee2",
         "locator": {
-          "end": 23,
+          "end": 45,
           "kind": "line_range",
-          "start": 20
+          "start": 42
         }
       },
       "id": "RLZ-86SP7E",
@@ -22,12 +22,12 @@
     },
     {
       "anchor": {
-        "blob": "6e8be56cd905b97635845cad055ebd18423e0214",
+        "blob": "e056e6b3c7dce2893c53dc856efab571863169a2",
         "content": "sha256:138750683e397e1e702b20af58432227a0213665386e2b2699d9fc529e8f7d92",
         "locator": {
-          "end": 47,
+          "end": 69,
           "kind": "line_range",
-          "start": 25
+          "start": 47
         }
       },
       "id": "RLZ-A2WBWC",
@@ -38,6 +38,24 @@
       },
       "rationale": "Formats exactly the actual row hover: title, missing-authored-document notice, state/stage, repository, current step, progress with abandoned/discarded counts and host event when present. It does not render entry.scope, the full document reference path, a literal kind field, or retired lifecycle/worktree status.",
       "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "e056e6b3c7dce2893c53dc856efab571863169a2",
+        "content": "sha256:1c747c07ebc5e837acdc43734ef2463946c45d7eea5d1225abebf7e0c2129a57",
+        "locator": {
+          "kind": "symbol",
+          "name": "rowOrder"
+        }
+      },
+      "id": "RLZ-Q1JK8K",
+      "invariant": "INV-NAV9HB",
+      "origin": {
+        "handoffEntry": "MIK-R174@v1",
+        "leaf": "260928-MIK-L102"
+      },
+      "rationale": "This construct carries the packet obligation; adjudication is accepted on L102-A1, with route evidence and any failures preserved in the Reviewer verdict.",
+      "role": "enforcement"
     }
   ],
   "references": {
@@ -46,11 +64,43 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6e8be56cd905b97635845cad055ebd18423e0214",
+            "blob": "e056e6b3c7dce2893c53dc856efab571863169a2",
             "content": "sha256:138750683e397e1e702b20af58432227a0213665386e2b2699d9fc529e8f7d92",
             "locator": {
               "kind": "symbol",
               "name": "rowHover"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "A missing host time orders nothing and is never turned into zero or now.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e056e6b3c7dce2893c53dc856efab571863169a2",
+            "content": "sha256:8ff04c09e3c52fb4f89c14c6b1130d027d2b72d1d8e603a6abc07203cde3543d",
+            "locator": {
+              "kind": "symbol",
+              "name": "hostTime"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The started band orders timed rows newest first, untimed rows in the server's order.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e056e6b3c7dce2893c53dc856efab571863169a2",
+            "content": "sha256:1c747c07ebc5e837acdc43734ef2463946c45d7eea5d1225abebf7e0c2129a57",
+            "locator": {
+              "kind": "symbol",
+              "name": "rowOrder"
             }
           },
           "kind": "code"

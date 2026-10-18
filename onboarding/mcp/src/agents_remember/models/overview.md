@@ -160,9 +160,12 @@ These retired source accounts preserve earlier intent only. Their former citatio
 
 - Historical pre-L57 reference account only; the named supporting-record acquisition/availability/applicability owner is removed, not a current wire guarantee: **The owner that resolves every channel, so the vocabulary has a producer and not only a shape.** (historical reference 6; retired in L57)
 
+`knowledge/review_evidence.py`, `knowledge/review_evidence_read.py` and `knowledge/review_frame.py` declare the packet, read-receipt and frame shapes the application owners return: comparison binding and collections, finite limits and measurements, supplemental receipts, claims and coverage, frame manifest and atomic pointer, drafts, reclamation receipts, and the opening, staleness and regeneration answers. Model validation establishes the declared shape and the consistency checks it implements; it observes no execution, truth or acceptance.
+
 ## Evidence
 
-
+- The packet shapes bind one comparison and refuse an inconsistent collection or coverage count. [325]
+- A frame manifest refuses an inconsistent asset digest, an unlisted entrypoint and a non-older parent. [326]
 
 - **The refusal record the new code travels in, and the result that carries it as one of exactly two outcomes.** [2]
 - The surface version that stays `/1`, with the reasoning recorded beside the constant. [3] [252]

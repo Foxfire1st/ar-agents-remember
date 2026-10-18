@@ -1,0 +1,32 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test"
+    ],
+    "justification": "Without retained evidence a regenerated revision would lose the claims its predecessor made and promote old claims to current."
+  },
+  "applicability": "A durable frame revision's stored evidence for reopening and regeneration.",
+  "conditions": [
+    "The revision was published with its manifest and evidence packet."
+  ],
+  "exclusions": [
+    "A draft that was never published."
+  ],
+  "id": "INV-ZPHKZB",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "Recorded A3/prior closure; unchanged-source custody and A4 focused preservation controls"
+      ],
+      "path": "l102-curator-list.json"
+    },
+    "handoffEntry": "L102-F09",
+    "leaf": "260928-MIK-L102",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "A durable frame revision must retain the admitted R102 evidence manifest, claim map and exact retained-asset regeneration inputs, not only an optional digest with no retrievable target.",
+  "status": "proposed",
+  "supersedes": []
+}

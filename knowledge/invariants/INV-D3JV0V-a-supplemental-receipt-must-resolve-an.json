@@ -1,0 +1,32 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test"
+    ],
+    "justification": "Reusing an earlier receipt after the source changed would present new bytes under an identity measured for other bytes."
+  },
+  "applicability": "Evidence admitted from a task document or report outside the four comparison trees.",
+  "conditions": [
+    "The source resolves inside the owning task's admitted roots."
+  ],
+  "exclusions": [
+    "Repository code or memory files, which are read at the comparison's own sides."
+  ],
+  "id": "INV-D3JV0V",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "Recorded A3/prior closure; unchanged-source custody and A4 focused preservation controls"
+      ],
+      "path": "l102-curator-list.json"
+    },
+    "handoffEntry": "L102-F06",
+    "leaf": "260928-MIK-L102",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "A supplemental receipt must resolve an admitted canonical source to the bytes actually examined and must not carry a different document under the earlier source identity.",
+  "status": "proposed",
+  "supersedes": []
+}

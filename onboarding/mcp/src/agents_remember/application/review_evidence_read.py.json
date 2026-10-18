@@ -1,0 +1,196 @@
+{
+  "path": "mcp/src/agents_remember/application/review_evidence_read.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "5b2bd5bccc245c3d32d3ca95b1dbc29817a16b4e",
+        "content": "sha256:0f5db40a4b64e22dc751e17023febdf7de071e3d73c8ea9039157e5fd6652ace",
+        "locator": {
+          "kind": "symbol",
+          "name": "side_operand"
+        }
+      },
+      "id": "RLZ-5NZ9R3",
+      "invariant": "INV-GAVZC0",
+      "origin": {
+        "handoffEntry": "L102-F02",
+        "leaf": "260928-MIK-L102"
+      },
+      "rationale": "Prior closure preserved; no reopening/new lens. Retained prior closure on preserved bytes/properties; no new adjudication lens. Effective converted-base selection is shared by source, relationships and claim reads. The independent claim control returns converted text, the effective tree and the separately retained stored tree. The focused effective-base source/relationship case passes; no HEAD fallback is used.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "5b2bd5bccc245c3d32d3ca95b1dbc29817a16b4e",
+        "content": "sha256:a4a0e03f5c5ded854a8e2d12993269e6cdd1e1a17a12a501c0facf4bdc52ed3a",
+        "locator": {
+          "kind": "symbol",
+          "name": "_take_window"
+        }
+      },
+      "id": "RLZ-8JPM5R",
+      "invariant": "INV-GGF749",
+      "origin": {
+        "handoffEntry": "L102-F03",
+        "leaf": "260928-MIK-L102"
+      },
+      "rationale": "Empty, missing-range, decoded-prefix, UTF-8 and page/byte-cap controls remain honest. Literal continuation now consumes the separator and keeps the current long-line coordinate; independent full reconstruction returns one then exactly 100 x characters with strictly advancing offsets. Oversized/no-progress scan or incomplete-character bounds explicitly refuse rather than certifying absence.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "5b2bd5bccc245c3d32d3ca95b1dbc29817a16b4e",
+        "content": "sha256:859fc7c4fad17024a8cc1601378c42dd1c3f240e5e151fa51666b0393162a415",
+        "locator": {
+          "kind": "symbol",
+          "name": "_scan_cut"
+        }
+      },
+      "id": "RLZ-MBMCZY",
+      "invariant": "INV-GGF749",
+      "origin": {
+        "handoffEntry": "L102-F03",
+        "leaf": "260928-MIK-L102"
+      },
+      "rationale": "Empty, missing-range, decoded-prefix, UTF-8 and page/byte-cap controls remain honest. Literal continuation now consumes the separator and keeps the current long-line coordinate; independent full reconstruction returns one then exactly 100 x characters with strictly advancing offsets. Oversized/no-progress scan or incomplete-character bounds explicitly refuse rather than certifying absence.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "5b2bd5bccc245c3d32d3ca95b1dbc29817a16b4e",
+        "content": "sha256:b4a257cf7c2d32ac444a34e426f629d3e9f62edd041f95151550756ad84bdc0d",
+        "locator": {
+          "kind": "symbol",
+          "name": "_receipt_from_window"
+        }
+      },
+      "id": "RLZ-R67ZS6",
+      "invariant": "INV-GGF749",
+      "origin": {
+        "handoffEntry": "L102-F03",
+        "leaf": "260928-MIK-L102"
+      },
+      "rationale": "Empty, missing-range, decoded-prefix, UTF-8 and page/byte-cap controls remain honest. Literal continuation now consumes the separator and keeps the current long-line coordinate; independent full reconstruction returns one then exactly 100 x characters with strictly advancing offsets. Oversized/no-progress scan or incomplete-character bounds explicitly refuse rather than certifying absence.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "5b2bd5bccc245c3d32d3ca95b1dbc29817a16b4e",
+        "content": "sha256:8d9f052a4763ce42a55f9244e7e9cff939f2dee5f24650e7136879718a851f9f",
+        "locator": {
+          "kind": "symbol",
+          "name": "read_bound_source"
+        }
+      },
+      "id": "RLZ-T34YVV",
+      "invariant": "INV-YFTJNQ",
+      "origin": {
+        "handoffEntry": "L102-F04",
+        "leaf": "260928-MIK-L102"
+      },
+      "rationale": "Ordinary, resumed and symlink reads are streamed with measured consumption; an offset beyond MAX_SCAN_BYTES now refuses before any blob read (independent actualRead=0). Resumed prefix work is deducted from the finite scan budget. Packet path/collection caps, relationship path/byte/depth/page caps, bounded ls-tree streaming and a per-walk indexed lookup remain enforced; two-size and boundary tests pass. This credits bounded legitimate investigation, not unlimited-store-reader behavior owned by F10.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "5b2bd5bccc245c3d32d3ca95b1dbc29817a16b4e",
+        "content": "sha256:f454dc3321e4c55302d20f41e6c6c042c2fe8847daaac91b88152a6e20f7f258",
+        "locator": {
+          "kind": "symbol",
+          "name": "_blob_read"
+        }
+      },
+      "id": "RLZ-W8ZSM3",
+      "invariant": "INV-YFTJNQ",
+      "origin": {
+        "handoffEntry": "L102-F04",
+        "leaf": "260928-MIK-L102"
+      },
+      "rationale": "Ordinary, resumed and symlink reads are streamed with measured consumption; an offset beyond MAX_SCAN_BYTES now refuses before any blob read (independent actualRead=0). Resumed prefix work is deducted from the finite scan budget. Packet path/collection caps, relationship path/byte/depth/page caps, bounded ls-tree streaming and a per-walk indexed lookup remain enforced; two-size and boundary tests pass. This credits bounded legitimate investigation, not unlimited-store-reader behavior owned by F10.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "A read resolves its side through the comparison and names the effective and stored memory-base trees apart.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5b2bd5bccc245c3d32d3ca95b1dbc29817a16b4e",
+            "content": "sha256:0f5db40a4b64e22dc751e17023febdf7de071e3d73c8ea9039157e5fd6652ace",
+            "locator": {
+              "kind": "symbol",
+              "name": "side_operand"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "A path spelling that could name another operand is refused rather than repaired.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5b2bd5bccc245c3d32d3ca95b1dbc29817a16b4e",
+            "content": "sha256:97b5cd2d05348afa3406e7ca84820a9e1ec50fd283410f1cb464fe54511f86a4",
+            "locator": {
+              "kind": "symbol",
+              "name": "_path_problem"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "One bounded read returns a window, an honest remainder and a progressing continuation.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5b2bd5bccc245c3d32d3ca95b1dbc29817a16b4e",
+            "content": "sha256:8d9f052a4763ce42a55f9244e7e9cff939f2dee5f24650e7136879718a851f9f",
+            "locator": {
+              "kind": "symbol",
+              "name": "read_bound_source"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "A line cut by the window is returned as the decoded prefix text it examined, with the next byte offset, never as absence.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5b2bd5bccc245c3d32d3ca95b1dbc29817a16b4e",
+            "content": "sha256:a4a0e03f5c5ded854a8e2d12993269e6cdd1e1a17a12a501c0facf4bdc52ed3a",
+            "locator": {
+              "kind": "symbol",
+              "name": "_take_window"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "A scan that could not reach the requested line says so instead of certifying an empty range.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5b2bd5bccc245c3d32d3ca95b1dbc29817a16b4e",
+            "content": "sha256:859fc7c4fad17024a8cc1601378c42dd1c3f240e5e151fa51666b0393162a415",
+            "locator": {
+              "kind": "symbol",
+              "name": "_scan_cut"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

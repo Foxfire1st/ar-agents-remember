@@ -3,7 +3,7 @@
   "proves": [
     {
       "anchor": {
-        "blob": "ba9872fae85cfd8b36d51d97bfdcc9a35155da34",
+        "blob": "949bce364ba34ad511722513cdeb6698679ab7f4",
         "content": "sha256:8676356b172ff4839c83ffa4054bad01da4aa3c4a73fc0f4be280ef7e5bcb950",
         "locator": {
           "kind": "symbol",
@@ -20,7 +20,7 @@
     },
     {
       "anchor": {
-        "blob": "ba9872fae85cfd8b36d51d97bfdcc9a35155da34",
+        "blob": "949bce364ba34ad511722513cdeb6698679ab7f4",
         "content": "sha256:b08f6639cb3e9589967c2f34fc31481c442513b471a034bf69362e2f22b3e2c8",
         "locator": {
           "kind": "symbol",
@@ -58,7 +58,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ba9872fae85cfd8b36d51d97bfdcc9a35155da34",
+            "blob": "949bce364ba34ad511722513cdeb6698679ab7f4",
             "content": "sha256:57502b089519acebc044dafed2b93779e00d8db992e81ed48db1424dbeab7d32",
             "locator": {
               "end": 170,
@@ -70,12 +70,40 @@
         },
         {
           "anchor": {
-            "blob": "ba9872fae85cfd8b36d51d97bfdcc9a35155da34",
+            "blob": "949bce364ba34ad511722513cdeb6698679ab7f4",
             "content": "sha256:8676356b172ff4839c83ffa4054bad01da4aa3c4a73fc0f4be280ef7e5bcb950",
             "locator": {
               "end": 208,
               "kind": "line_range",
               "start": 187
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "The suite reads the row's hover from the title cell, which is where the retained text lives.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "949bce364ba34ad511722513cdeb6698679ab7f4",
+            "content": "sha256:36439458e8a8d30bc18b2591c40a325a7c9d47875c4a4dd19e0403d1ec7c69f4",
+            "locator": {
+              "kind": "symbol",
+              "name": "title"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "949bce364ba34ad511722513cdeb6698679ab7f4",
+            "content": "sha256:e24590be205b64abacf4b6a5d8b8fba9cd273b54182361f2a9f111a8611bd940",
+            "locator": {
+              "end": 285,
+              "kind": "line_range",
+              "start": 285
             }
           },
           "kind": "test"

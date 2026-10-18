@@ -3,11 +3,11 @@
     "criteria": [
       "spans_locations"
     ],
-    "justification": "The tree builder, explicit disclosure actions and selection-episode owner must jointly preserve automatic chosen-document reach until a deliberate release, keep selected identity unchanged, and retain cycle/seen uniqueness."
+    "justification": "The tree builder, explicit disclosure actions and selection-episode owner must jointly preserve automatic chosen-document reach until a deliberate release, keep selected identity unchanged, and retain cycle/seen uniqueness; the started band's host-time order is the R174 governor of the ordering half and leaves the fold, reveal and cycle guarantees untouched."
   },
   "applicability": "Non-flat Operations hierarchy ordering, terminal folds and automatic chosen-document reveal with explicit per-selection-episode overrides.",
   "conditions": [
-    "Need ordering uses each entry’s own works/started/planned/terminal band and preserves supplied sibling order for ties; it does not reconstruct subtree urgency or chronology.",
+    "Need ordering uses each entry’s own works/started/planned/terminal band. Inside the started band, rows the host timed order newest first by their host event time, and rows it did not time keep the supplied tree order; a missing or unparsable host time orders nothing and is never invented as zero or now. Every other band keeps the supplied sibling order for ties. It does not reconstruct subtree urgency or chronology across bands.",
     "The chosen document initially holds its ancestors and containing completed/aborted fold open. A deliberate parent-caret or fold-toggle click can close them without changing that chosen document.",
     "An existing plain left/right arrow on a focused parent row can release its hold only when it requests a different open state. Completed-fold rows gain no horizontal-arrow handler; modified chords remain browser-owned.",
     "A different selection, including A-to-B-to-A, A-to-none-to-A and hidden-list transitions, expires releases and starts fresh automatic holds. Remembered collapsed/open preferences remain distinct from these transient releases."
@@ -28,9 +28,9 @@
     "leaf": "260928-MIK-L144",
     "task": "260928-MIK"
   },
-  "revision": 3,
+  "revision": 4,
   "schema": "ar-invariant/v1",
-  "statement": "Under an admitted parent, Operations orders rows by each entry’s own need band and stable supplied tree order. Terminal rows sit behind an in-place fold that is not the chosen task. Selection automatically reveals ancestors and a containing fold until an explicit disclosure click or an existing plain parent arrow that changes state releases that hold; release ends with the current selection episode, including while the list is hidden. Cycle/seen guards still list an entry once.",
+  "statement": "Under an admitted parent, Operations orders rows by each entry’s own need band and, inside the started band, by the host’s own event time newest first where the host recorded one, keeping stable supplied tree order for the rows it did not time and for every other band. Terminal rows sit behind an in-place fold that is not the chosen task. Selection automatically reveals ancestors and a containing fold until an explicit disclosure click or an existing plain parent arrow that changes state releases that hold; release ends with the current selection episode, including while the list is hidden. Cycle/seen guards still list an entry once.",
   "status": "accepted",
   "supersedes": []
 }

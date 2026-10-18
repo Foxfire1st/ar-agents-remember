@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "a229e8c61b82f5545f7d8e6c3200e0e0f8fec939",
+        "blob": "4d92a4ba9cc1175b7c216200e6e0aa123b26b049",
         "content": "sha256:fc032a24c376fe32a800a8666f2fb82a49601fee4941d09b1859155380a65074",
         "locator": {
           "kind": "symbol",
@@ -21,7 +21,7 @@
     },
     {
       "anchor": {
-        "blob": "a229e8c61b82f5545f7d8e6c3200e0e0f8fec939",
+        "blob": "4d92a4ba9cc1175b7c216200e6e0aa123b26b049",
         "content": "sha256:fc032a24c376fe32a800a8666f2fb82a49601fee4941d09b1859155380a65074",
         "locator": {
           "kind": "symbol",
@@ -59,7 +59,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a229e8c61b82f5545f7d8e6c3200e0e0f8fec939",
+            "blob": "4d92a4ba9cc1175b7c216200e6e0aa123b26b049",
             "content": "sha256:fa4183f5b29506c78abef9259953e8e42280d289b330333019b073e2d911bbfa",
             "locator": {
               "kind": "symbol",
@@ -70,7 +70,7 @@
         },
         {
           "anchor": {
-            "blob": "a229e8c61b82f5545f7d8e6c3200e0e0f8fec939",
+            "blob": "4d92a4ba9cc1175b7c216200e6e0aa123b26b049",
             "content": "sha256:eb92b6c363d9fd8af3627e0f5ad119b59437f8fb7364fb445c56ef8788a8d525",
             "locator": {
               "kind": "symbol",
@@ -86,7 +86,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a229e8c61b82f5545f7d8e6c3200e0e0f8fec939",
+            "blob": "4d92a4ba9cc1175b7c216200e6e0aa123b26b049",
             "content": "sha256:c3360d3cd407e96f28fc561fb57139ee9431f89ab0d5b605e375340b45632183",
             "locator": {
               "kind": "symbol",
@@ -97,7 +97,7 @@
         },
         {
           "anchor": {
-            "blob": "a229e8c61b82f5545f7d8e6c3200e0e0f8fec939",
+            "blob": "4d92a4ba9cc1175b7c216200e6e0aa123b26b049",
             "content": "sha256:5c98946d84b57374d9cc629a5b79acd6db9dadf255b2fa80dcec3006cd35f0d7",
             "locator": {
               "kind": "symbol",
@@ -113,7 +113,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a229e8c61b82f5545f7d8e6c3200e0e0f8fec939",
+            "blob": "4d92a4ba9cc1175b7c216200e6e0aa123b26b049",
             "content": "sha256:9660d6a588f6d73c29e9523ab9dd903a17c679f3a43edad38c60960f23e46709",
             "locator": {
               "kind": "symbol",
@@ -146,7 +146,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3b7acc24cc4b886c15eeffb6c911cc4ab2629068",
+            "blob": "3752a3ab168c0328d813795f07294a49dbda4106",
             "content": "sha256:3d1354f049755323c27c0138905c788eb69753b831a5e70f1f4a4a727b24d460",
             "locator": {
               "kind": "symbol",
@@ -158,7 +158,7 @@
         },
         {
           "anchor": {
-            "blob": "3b7acc24cc4b886c15eeffb6c911cc4ab2629068",
+            "blob": "3752a3ab168c0328d813795f07294a49dbda4106",
             "content": "sha256:f3de9985dc8eefa2c59de0ddf3c5843fcf261f8db2458bc4a6d6e693e49332e4",
             "locator": {
               "kind": "symbol",
@@ -269,6 +269,22 @@
         }
       ]
     },
+    "20": {
+      "note": "The archive reclaims the task's published frames through the store's own owner and records what it removed or held.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4d92a4ba9cc1175b7c216200e6e0aa123b26b049",
+            "content": "sha256:9403245ae5ada67e11f06f30ac2011385c0c33099bf2769420133a1deffc6377",
+            "locator": {
+              "kind": "symbol",
+              "name": "_delete_frames"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
     "3": {
       "note": "The report, and holding a generation's pin and snapshots with the reason.",
       "targets": [
@@ -290,7 +306,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a229e8c61b82f5545f7d8e6c3200e0e0f8fec939",
+            "blob": "4d92a4ba9cc1175b7c216200e6e0aa123b26b049",
             "content": "sha256:5813a24b3fbc8e54016b61fcb910793faf5a1ddb44978272d44ae198a8f29c19",
             "locator": {
               "kind": "symbol",
@@ -338,7 +354,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a229e8c61b82f5545f7d8e6c3200e0e0f8fec939",
+            "blob": "4d92a4ba9cc1175b7c216200e6e0aa123b26b049",
             "content": "sha256:ae51143fee96962cbcb3a892ba1150757478318b616aa7e4370aa9d5fee623e5",
             "locator": {
               "kind": "symbol",
@@ -349,7 +365,7 @@
         },
         {
           "anchor": {
-            "blob": "a229e8c61b82f5545f7d8e6c3200e0e0f8fec939",
+            "blob": "4d92a4ba9cc1175b7c216200e6e0aa123b26b049",
             "content": "sha256:bdb70365235fb65adad56f55afdbeaedb428e01f1d91999347edde51013c57f2",
             "locator": {
               "kind": "symbol",
@@ -365,7 +381,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a229e8c61b82f5545f7d8e6c3200e0e0f8fec939",
+            "blob": "4d92a4ba9cc1175b7c216200e6e0aa123b26b049",
             "content": "sha256:35caace53a1105b4f9ec653a26de6c40d3198ceac8ab0eba59af90ea18eab0fd",
             "locator": {
               "kind": "symbol",
@@ -376,7 +392,7 @@
         },
         {
           "anchor": {
-            "blob": "a229e8c61b82f5545f7d8e6c3200e0e0f8fec939",
+            "blob": "4d92a4ba9cc1175b7c216200e6e0aa123b26b049",
             "content": "sha256:158df8e5a73aa3606ee1a32225a2a95c30d4299ce7b52fbc47a5b5b7e6394b52",
             "locator": {
               "kind": "symbol",
@@ -392,7 +408,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a229e8c61b82f5545f7d8e6c3200e0e0f8fec939",
+            "blob": "4d92a4ba9cc1175b7c216200e6e0aa123b26b049",
             "content": "sha256:3e0adf52880e9527e5cd4a6626a096d4b3e8f8ada57549dfd2f4be225c96fbea",
             "locator": {
               "kind": "symbol",
@@ -403,7 +419,7 @@
         },
         {
           "anchor": {
-            "blob": "a229e8c61b82f5545f7d8e6c3200e0e0f8fec939",
+            "blob": "4d92a4ba9cc1175b7c216200e6e0aa123b26b049",
             "content": "sha256:571d113a6ecdb17f1e480dbb8096427f0fb504f36d11a83944f714bde3590978",
             "locator": {
               "kind": "symbol",

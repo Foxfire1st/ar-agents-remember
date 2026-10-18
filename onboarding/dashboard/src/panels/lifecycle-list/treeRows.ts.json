@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "90c9a05c19c4e703bef2f88c75b0d4b0c4303dcc",
-        "content": "sha256:5a6ec3438064bec875e9a600bcb46f43cceb5d316091c0564647ae8c43609f56",
+        "blob": "6e4cb0f1271f303406e738d0cd3a47b6415c56ef",
+        "content": "sha256:54df5253ce0a9d25d7b3158212ff5122a99af08b0047f880ba37def9ece009d0",
         "locator": {
           "kind": "symbol",
           "name": "treeItems"
@@ -21,7 +21,7 @@
     },
     {
       "anchor": {
-        "blob": "90c9a05c19c4e703bef2f88c75b0d4b0c4303dcc",
+        "blob": "6e4cb0f1271f303406e738d0cd3a47b6415c56ef",
         "content": "sha256:70a094545102e07970acf088c6a8fb59a26f41e65317fd92c80b787c49b808eb",
         "locator": {
           "kind": "symbol",
@@ -50,6 +50,22 @@
               "end": 119,
               "kind": "line_range",
               "start": 37
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Sibling placement uses the band-then-host-time order rather than the band alone.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6e4cb0f1271f303406e738d0cd3a47b6415c56ef",
+            "content": "sha256:54df5253ce0a9d25d7b3158212ff5122a99af08b0047f880ba37def9ece009d0",
+            "locator": {
+              "kind": "symbol",
+              "name": "treeItems"
             }
           },
           "kind": "code"

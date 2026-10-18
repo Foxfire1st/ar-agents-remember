@@ -18,8 +18,11 @@ Owns archive-hook receipts. The canonical latest receipt is `review-artifact-cle
 
 The first attempt writes an initial receipt even when it deletes nothing. A later attempt writes none only if it has no deletion, release or failure, no unfinished receipt, and every reported absence was already recorded; it returns the unchanged receipt and attempt number. `already_absent` includes artifacts deleted earlier, planned by an interrupted attempt and now absent, or previously failed and now absent. Previously recorded absence alone does not require another receipt.
 
+`frameRevisions` joins the shared `_ARTIFACT_KEYS`, so planned receipts, already-absent replay, remainder counts, deleted names and preview accounting treat reclaimed frame revisions exactly like the older deletion classes.
+
 ## Evidence
 
+- The reclaimed frame revisions are a shared artifact class for every receipt consumer. [8]
 
 - The ledger records intended deletion before it happens and records the outcome afterward. [4]
 

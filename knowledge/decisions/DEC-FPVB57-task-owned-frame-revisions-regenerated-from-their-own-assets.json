@@ -1,0 +1,72 @@
+{
+  "admission": {
+    "criteria": [
+      "real_alternatives"
+    ],
+    "justification": "Browser storage and model regeneration were real alternatives whose costs decided the durable task-owned revision."
+  },
+  "alternatives": [
+    {
+      "option": "Publish a revision as task-owned durable bytes and regenerate only from that revision's own assets and evidence",
+      "reason": "The page survives process end, browser reload and scratch reclamation, and a new revision names the new comparison while the old one keeps its binding.",
+      "status": "chosen"
+    },
+    {
+      "option": "Keep the generated page in browser or session storage",
+      "reason": "It dies with the browser and cannot be reopened by the next reader.",
+      "reconsider_when": "The product stores review pages in a durable user-owned store that outlives sessions.",
+      "status": "rejected"
+    },
+    {
+      "option": "Regenerate from scratch on every open",
+      "reason": "It needs a model call and cannot reproduce the exact bytes or the old claims.",
+      "reconsider_when": "Generation becomes free and byte-exact enough that no retained assets or evidence are needed.",
+      "status": "rejected"
+    }
+  ],
+  "consequences": [
+    "The store owns drafts, publication, integrity, ceilings and reclamation under the task.",
+    "Reopening starts nothing and rewrites no assets, and staleness is reported with both identities.",
+    "Regeneration is an explicit user action that starts from the stale revision's own assets and evidence."
+  ],
+  "context": "A generated explanation has to reopen after the process that generated it is gone, and a later regeneration must not silently change which comparison the page describes (developer D98/D99; MIK-R103).",
+  "decider": "Developer directions D98/D99, registered in MIK-R103@v1",
+  "id": "DEC-FPVB57",
+  "links": [
+    {
+      "relation": "explains",
+      "target": "INV-ZAW3HJ"
+    },
+    {
+      "relation": "constrains",
+      "target": "route:mcp/src/agents_remember/application"
+    },
+    {
+      "relation": "motivated_change_to",
+      "target": {
+        "id": "MIK-R103",
+        "packet": "requirements/MIK-R103-v1-durable-frame-revisions.md",
+        "task": {
+          "path": "260928_maintained-invariant-knowledge",
+          "repository": "agents-remember"
+        },
+        "version": "v1"
+      }
+    }
+  ],
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "A5-verdict.md; A5-fixed-list-verification.md; A5-checks-complete/; prior A4 full-criterion account retained"
+      ],
+      "path": "l102-curator-list.json"
+    },
+    "handoffEntry": "MIK-R103@v1",
+    "leaf": "260928-MIK-L102",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-decision/v1",
+  "status": "active",
+  "supersedes": []
+}

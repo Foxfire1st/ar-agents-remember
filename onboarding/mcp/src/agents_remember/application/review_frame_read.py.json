@@ -1,0 +1,76 @@
+{
+  "path": "mcp/src/agents_remember/application/review_frame_read.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "03e74e0fa30bcdfad2b5fc0e0b6942d7aebd455c",
+        "content": "sha256:a64d37b0a45ae7cafa4d16720d8d6930afc33acbdfd94742b8cb236d2bfadebf",
+        "locator": {
+          "kind": "symbol",
+          "name": "validate_asset_read_bounds"
+        }
+      },
+      "id": "RLZ-0V59XY",
+      "invariant": "INV-5VVSTD",
+      "origin": {
+        "handoffEntry": "L102-F10",
+        "leaf": "260928-MIK-L102"
+      },
+      "rationale": "Every stored metadata read now goes through a finite sentinel read; manifests and pointer/draft/reclamation/archive metadata use MAX_MANIFEST_BYTES, digest uses64, assets use admitted byte_size. Descriptor population/aggregate bound is validated before opening asset payloads. The old2097189-byte corrupt manifest now reads exactly1048577 bytes under1048576 cap then refuses. Four corrupt-store controls cover manifest/digest/asset/pointer; over-cap descriptor control proves zero asset opens. A4 capacity/reservation/lock and at-cap preservation logic is unchanged.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "03e74e0fa30bcdfad2b5fc0e0b6942d7aebd455c",
+        "content": "sha256:4781c32578deada535366c9de9a499f06d9e718f3641f0ca5b6fc017232b86c2",
+        "locator": {
+          "kind": "symbol",
+          "name": "read_frame_bytes"
+        }
+      },
+      "id": "RLZ-Z22XWZ",
+      "invariant": "INV-5VVSTD",
+      "origin": {
+        "handoffEntry": "L102-F10",
+        "leaf": "260928-MIK-L102"
+      },
+      "rationale": "Every stored metadata read now goes through a finite sentinel read; manifests and pointer/draft/reclamation/archive metadata use MAX_MANIFEST_BYTES, digest uses64, assets use admitted byte_size. Descriptor population/aggregate bound is validated before opening asset payloads. The old2097189-byte corrupt manifest now reads exactly1048577 bytes under1048576 cap then refuses. Four corrupt-store controls cover manifest/digest/asset/pointer; over-cap descriptor control proves zero asset opens. A4 capacity/reservation/lock and at-cap preservation logic is unchanged.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Stored metadata and assets are read through a finite sentinel bound, not whole-then-check.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "03e74e0fa30bcdfad2b5fc0e0b6942d7aebd455c",
+            "content": "sha256:4781c32578deada535366c9de9a499f06d9e718f3641f0ca5b6fc017232b86c2",
+            "locator": {
+              "kind": "symbol",
+              "name": "read_frame_bytes"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "A modified manifest cannot authorize more assets than the admitted revision holds.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "03e74e0fa30bcdfad2b5fc0e0b6942d7aebd455c",
+            "content": "sha256:a64d37b0a45ae7cafa4d16720d8d6930afc33acbdfd94742b8cb236d2bfadebf",
+            "locator": {
+              "kind": "symbol",
+              "name": "validate_asset_read_bounds"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

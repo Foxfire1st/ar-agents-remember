@@ -1,0 +1,32 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test"
+    ],
+    "justification": "A durable page written during authoring would outlive a failed attempt, or an abandoned draft would hold the store forever."
+  },
+  "applicability": "Frame authoring attempts and their reclamation.",
+  "conditions": [
+    "The attempt holds a lease and was admitted with an explicit working directory."
+  ],
+  "exclusions": [
+    "A published ready revision, which is retained until superseded."
+  ],
+  "id": "INV-03QFAC",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "A4-checks/finish-controls.json: explicit-authoring-folder-and-verified-durable-import; probes.json: active-publication-archive-control; focused F12 and cancellation"
+      ],
+      "path": "l102-curator-list.json"
+    },
+    "handoffEntry": "L102-F12",
+    "leaf": "260928-MIK-L102",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "The frame lifecycle must distinguish and preserve active drafts, reclaim only abandoned drafts and retain bounded authoring failure/cancellation outcomes without replacing valid ready output.",
+  "status": "proposed",
+  "supersedes": []
+}

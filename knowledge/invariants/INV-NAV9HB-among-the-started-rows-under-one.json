@@ -1,0 +1,32 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test"
+    ],
+    "justification": "Reading a missing time as zero or as now would move a just-paused master among rows whose time is unknown, the visible defect."
+  },
+  "applicability": "Started rows under one parent in the operations sidebar.",
+  "conditions": [
+    "The host supplies each row's activity and, when it has one, its event time."
+  ],
+  "exclusions": [
+    "The server's order of children and the status words or their figures."
+  ],
+  "id": "INV-NAV9HB",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "A4-verdict.md; A4-requirement-adjudications.json; unchanged sidebar acceptance"
+      ],
+      "path": "l102-curator-list.json"
+    },
+    "handoffEntry": "MIK-R174@v1",
+    "leaf": "260928-MIK-L102",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Among the started rows under one parent in the operations sidebar, a paused row with a host time stands above every paused row without one. Rows with a time are ordered by that time, newest first.",
+  "status": "proposed",
+  "supersedes": []
+}

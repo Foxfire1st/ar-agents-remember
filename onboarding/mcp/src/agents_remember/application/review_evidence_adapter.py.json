@@ -1,0 +1,146 @@
+{
+  "path": "mcp/src/agents_remember/application/review_evidence_adapter.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "58434690ef3d16c8b5fd40a879a963054b3f07d5",
+        "content": "sha256:bf66ab763aa8e9f04d985e684245d05b21a6ae7a21235189226b45e43e5572d8",
+        "locator": {
+          "kind": "symbol",
+          "name": "_carried"
+        }
+      },
+      "id": "RLZ-0GZNS6",
+      "invariant": "INV-R298WE",
+      "origin": {
+        "handoffEntry": "L102-F08",
+        "leaf": "260928-MIK-L102"
+      },
+      "rationale": "The real bound-tree schema adapter prepares consumable historical row/proof addresses without role/UI launch. _carried now checks owner path, side, revision, row/attempt/proof/record together; the independent invariant-path substitution is unresolved while the valid row consumer and foreign-comparison refusal pass. Bounds and collection missing/omission states are retained. This is not evidence that the separate partial-index/cache scenario required by F16 was supplied.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "58434690ef3d16c8b5fd40a879a963054b3f07d5",
+        "content": "sha256:41e881993bb56636c68662d4743221d977cdac8455092e0231c0a6f19d70dd86",
+        "locator": {
+          "kind": "symbol",
+          "name": "_memory_state"
+        }
+      },
+      "id": "RLZ-28WP56",
+      "invariant": "INV-VASQQX",
+      "origin": {
+        "handoffEntry": "L102-F16",
+        "leaf": "260928-MIK-L102"
+      },
+      "rationale": "The previously missing owner evidence is now supplied: real bound Git tree with malformed omitted record creates partial SQLite index; valid records/proofs remain usable; emitted packet carries measured partial state and absence-unknown limitation. Deleting the exact-tree cache and changing checkout contents rebuilds identical historical wire/packet. Lost history and explicitly injected cache-build failure preserve owner reason without inventing complete/empty data; independent code-side reading still works. prepare_evidence consumes real opened ReviewTrees measured states, not caller-invented complete flags. Prior maximum/two-size/restart/cancellation/race evidence remains credited; no early installed/UI requirement added.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "58434690ef3d16c8b5fd40a879a963054b3f07d5",
+        "content": "sha256:daea31fcac8acc0909791bd8751f0975a961d1a81ab5af34635dd80006e5a6d5",
+        "locator": {
+          "kind": "symbol",
+          "name": "prepare_evidence"
+        }
+      },
+      "id": "RLZ-5YE1CA",
+      "invariant": "INV-VASQQX",
+      "origin": {
+        "handoffEntry": "L102-F16",
+        "leaf": "260928-MIK-L102"
+      },
+      "rationale": "The previously missing owner evidence is now supplied: real bound Git tree with malformed omitted record creates partial SQLite index; valid records/proofs remain usable; emitted packet carries measured partial state and absence-unknown limitation. Deleting the exact-tree cache and changing checkout contents rebuilds identical historical wire/packet. Lost history and explicitly injected cache-build failure preserve owner reason without inventing complete/empty data; independent code-side reading still works. prepare_evidence consumes real opened ReviewTrees measured states, not caller-invented complete flags. Prior maximum/two-size/restart/cancellation/race evidence remains credited; no early installed/UI requirement added.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "58434690ef3d16c8b5fd40a879a963054b3f07d5",
+        "content": "sha256:cf9a3fd84c2dbf93d37f3e7786f8bbfe85a60de16e053f8b922617d712543f69",
+        "locator": {
+          "kind": "symbol",
+          "name": "consume_address"
+        }
+      },
+      "id": "RLZ-942QMZ",
+      "invariant": "INV-R298WE",
+      "origin": {
+        "handoffEntry": "L102-F08",
+        "leaf": "260928-MIK-L102"
+      },
+      "rationale": "The real bound-tree schema adapter prepares consumable historical row/proof addresses without role/UI launch. _carried now checks owner path, side, revision, row/attempt/proof/record together; the independent invariant-path substitution is unresolved while the valid row consumer and foreign-comparison refusal pass. Bounds and collection missing/omission states are retained. This is not evidence that the separate partial-index/cache scenario required by F16 was supplied.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "58434690ef3d16c8b5fd40a879a963054b3f07d5",
+        "content": "sha256:daea31fcac8acc0909791bd8751f0975a961d1a81ab5af34635dd80006e5a6d5",
+        "locator": {
+          "kind": "symbol",
+          "name": "prepare_evidence"
+        }
+      },
+      "id": "RLZ-D5F7E9",
+      "invariant": "INV-R298WE",
+      "origin": {
+        "handoffEntry": "L102-F08",
+        "leaf": "260928-MIK-L102"
+      },
+      "rationale": "The real bound-tree schema adapter prepares consumable historical row/proof addresses without role/UI launch. _carried now checks owner path, side, revision, row/attempt/proof/record together; the independent invariant-path substitution is unresolved while the valid row consumer and foreign-comparison refusal pass. Bounds and collection missing/omission states are retained. This is not evidence that the separate partial-index/cache scenario required by F16 was supplied.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Preparation preserves the comparison owner's measured index and side states.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "58434690ef3d16c8b5fd40a879a963054b3f07d5",
+            "content": "sha256:daea31fcac8acc0909791bd8751f0975a961d1a81ab5af34635dd80006e5a6d5",
+            "locator": {
+              "kind": "symbol",
+              "name": "prepare_evidence"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "An address resolves only inside the comparison and owner path that prepared it.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "58434690ef3d16c8b5fd40a879a963054b3f07d5",
+            "content": "sha256:cf9a3fd84c2dbf93d37f3e7786f8bbfe85a60de16e053f8b922617d712543f69",
+            "locator": {
+              "kind": "symbol",
+              "name": "consume_address"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "A carried item is matched on its whole identity, not on a single field.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "58434690ef3d16c8b5fd40a879a963054b3f07d5",
+            "content": "sha256:bf66ab763aa8e9f04d985e684245d05b21a6ae7a21235189226b45e43e5572d8",
+            "locator": {
+              "kind": "symbol",
+              "name": "_carried"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

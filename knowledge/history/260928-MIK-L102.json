@@ -1,0 +1,1152 @@
+{
+  "closed": true,
+  "leaf": "260928-MIK-L102",
+  "rows": [
+    {
+      "disposition": "updated",
+      "id": "ROW-0GEWB4",
+      "items": [
+        "sha256:02fb148944f1cd8ce70c3e7e885c96e23977c5064beebcbc97f8ad7c2eae4fbc"
+      ],
+      "reason": "The overview body gained the route's new current contract for this leaf's change.",
+      "sources": [
+        {
+          "blob": "4d92a4ba9cc1175b7c216200e6e0aa123b26b049",
+          "path": "mcp/src/agents_remember/application/review_artifact_cleanup.py"
+        },
+        {
+          "blob": "1bbd29671c9645e75997b17b6e736154af3cf8ed",
+          "path": "mcp/src/agents_remember/application/review_artifact_receipts.py"
+        },
+        {
+          "blob": "58434690ef3d16c8b5fd40a879a963054b3f07d5",
+          "path": "mcp/src/agents_remember/application/review_evidence_adapter.py"
+        },
+        {
+          "blob": "198cb180d4f2172455f355cfcf1c5c8abed00446",
+          "path": "mcp/src/agents_remember/application/review_evidence_claims.py"
+        },
+        {
+          "blob": "59dd363550251e1afa7e89d97abad3676a901f44",
+          "path": "mcp/src/agents_remember/application/review_evidence_packet.py"
+        },
+        {
+          "blob": "5b2bd5bccc245c3d32d3ca95b1dbc29817a16b4e",
+          "path": "mcp/src/agents_remember/application/review_evidence_read.py"
+        },
+        {
+          "blob": "f394fe143b685b2634d3c4f7f227a617d744606e",
+          "path": "mcp/src/agents_remember/application/review_evidence_relations.py"
+        },
+        {
+          "blob": "03e74e0fa30bcdfad2b5fc0e0b6942d7aebd455c",
+          "path": "mcp/src/agents_remember/application/review_frame_read.py"
+        },
+        {
+          "blob": "677fed33450ee2c3e80367293bccc30399344ad3",
+          "path": "mcp/src/agents_remember/application/review_frame_store.py"
+        },
+        {
+          "blob": "d0f30abf23b1282047980e6a498b3ff7c648ecdc",
+          "path": "mcp/src/agents_remember/application/review_supplemental_evidence.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/application/overview"
+    },
+    {
+      "considered": [
+        "FAM-06ZJJ0",
+        "FAM-57TZPE"
+      ],
+      "disposition": "no_family",
+      "id": "ROW-0QMEQ6",
+      "items": [
+        "sha256:f0044c4862f31687053703dd364761919e78f12de4cb34bfd6a83b93e90fd30d"
+      ],
+      "reason": "Neither examined family's joint guarantee covers row ordering or a tooltip's own display; the new obligation stays a local invariant rather than a family member.",
+      "revision": 1,
+      "subject": "membership:INV-NAV9HB"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-1KCNBF",
+      "items": [
+        "sha256:021af2daba75eff4144bc200afce7e094227d39b04fe78c19b6c8e36b19563d8",
+        "sha256:394cb9c4021f09e8a4ed27ab28bfe7bbc123eda9f0c9073ff6a58d23d1c2e843",
+        "sha256:4c10f7e1b91c9598d8362fe80f6c742d90b7219a5702a41e7cea95c994bdf025",
+        "sha256:6567aa5bded47a7f3577994bd2599dc0eb56de16f40f17fe4b2c3b7b3408a7b0",
+        "sha256:6842d3fc862f2ddd7bba185c5e2eb31d1eb36b425fe9b18e21b77aa0afa68335"
+      ],
+      "reason": "The card was brought up to date: the tooltip box stops breaking words and exports the parts that stay whole.",
+      "sources": [
+        {
+          "blob": "d2fafd66ba8ba1996fdc480ad019b278cdedaee3",
+          "path": "dashboard/src/panels/detail-panel/stepDotStyles.ts"
+        }
+      ],
+      "subject": "onboarding:dashboard/src/panels/detail-panel/stepDotStyles.ts"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-25WBZC",
+      "items": [
+        "sha256:7255046ea928559ad18dd252641d1200c6ae2a85ce23e1bd74259cdbf64d7eac"
+      ],
+      "reason": "The hunk registers the frame-store test module as a consumer of the review-read artifacts in the evidence-lifecycle catalogue; the catalogue entry is derived registration, not a new obligation.",
+      "subject": "hunk:sha256:7255046ea928559ad18dd252641d1200c6ae2a85ce23e1bd74259cdbf64d7eac"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-2KM9ZM",
+      "items": [
+        "sha256:3d4a97b806a782227a5b9abbc8a2c0384d11850b5c595562c2e544dbcb94ae13",
+        "sha256:60d6bb423b63ec12bdcaf83a5869755c6f81bd5db88ad4bb0b55618181249363",
+        "sha256:c2a3aa95066aeb6e4253e92ac3991d431ccdd7ecaaf6b6d28f5f06443779181f"
+      ],
+      "reason": "The card was brought up to date: the hover assertions read the title cell that now carries the text.",
+      "sources": [
+        {
+          "blob": "949bce364ba34ad511722513cdeb6698679ab7f4",
+          "path": "dashboard/src/panels/lifecycle-list/hierarchy.test.tsx"
+        }
+      ],
+      "subject": "onboarding:dashboard/src/panels/lifecycle-list/hierarchy.test.tsx"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-35YJPZ",
+      "items": [
+        "sha256:3cb6c7ee0de3ab521a0bddb173d7024979e6cd95be783b97384823bc8b8a0d72"
+      ],
+      "reason": "The card was brought up to date: new card for relationship reads.",
+      "sources": [
+        {
+          "blob": "f394fe143b685b2634d3c4f7f227a617d744606e",
+          "path": "mcp/src/agents_remember/application/review_evidence_relations.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/application/review_evidence_relations.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-3Y5YBT",
+      "items": [
+        "sha256:380f5c6e557a3355a1ff6e4c36b1513b37727fe70cac678396c655288e52c823"
+      ],
+      "reason": "The hunk adds the review-evidence packet and residuals suites to the evidence lane; lane membership is selection, not an invariant.",
+      "subject": "hunk:sha256:380f5c6e557a3355a1ff6e4c36b1513b37727fe70cac678396c655288e52c823"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-4T5VHR",
+      "items": [
+        "sha256:9142552bc2ae378a2d9b0221904fe42bc9399bb1c16efd33f40a06a55a1311ef"
+      ],
+      "reason": "The card was brought up to date: new card for the prepared-evidence seam.",
+      "sources": [
+        {
+          "blob": "58434690ef3d16c8b5fd40a879a963054b3f07d5",
+          "path": "mcp/src/agents_remember/application/review_evidence_adapter.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/application/review_evidence_adapter.py"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-MGGEBY",
+          "revision": 1
+        },
+        {
+          "id": "INV-VDWN33",
+          "revision": 1
+        },
+        {
+          "id": "INV-WQ8YGE",
+          "revision": 2
+        },
+        {
+          "id": "INV-X0KED3",
+          "revision": 2
+        },
+        {
+          "id": "INV-XZYGEB",
+          "revision": 2
+        },
+        {
+          "id": "INV-YK0D2W",
+          "revision": 1
+        },
+        {
+          "id": "INV-Z0BXKJ",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-4WRHK4",
+      "items": [
+        "sha256:8a111f5fe6dd7b170872b1204326086076e90f2b8956d7679b245148a34480ca"
+      ],
+      "reason": "Every member was examined against this leaf's change: the reached members only had anchors moved inside changed files, and their shared guarantee still holds.",
+      "revision": 2,
+      "subject": "FAM-14NZRC"
+    },
+    {
+      "because": [
+        {
+          "id": "MIK-R103",
+          "packet": "MIK-R103-v1-durable-frame-revisions",
+          "task": {
+            "path": "260928_maintained-invariant-knowledge",
+            "repository": "agents-remember"
+          },
+          "version": "v1"
+        }
+      ],
+      "covers": [
+        {
+          "after": {
+            "blob": "3752a3ab168c0328d813795f07294a49dbda4106",
+            "content": "sha256:4e5d9a4af3aa583e267580822939120931bc93c8854770cedbd8a41ec8e49956",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_an_interrupted_cache_deletion_replays_as_attributed_already_absent"
+            },
+            "path": "mcp/tests/test_review_artifact_cleanup.py"
+          },
+          "before": {
+            "blob": "3b7acc24cc4b886c15eeffb6c911cc4ab2629068",
+            "content": "sha256:bf5db9b476343c6579e14e54b74e7c27550d5a954f89cb040a389b6318e1fcd1",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_an_interrupted_cache_deletion_replays_as_attributed_already_absent"
+            },
+            "path": "mcp/tests/test_review_artifact_cleanup.py"
+          },
+          "id": "PRF-D4NVD4"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-4X1P5X",
+      "items": [
+        "sha256:9a968b33b6201f4ec4d5615918d6ed157fd1fd7929eeed60fe6ef52a651731b4"
+      ],
+      "reason": "Its realization or proof anchors moved inside a file this leaf changed; every other realization, proof and the record itself are unchanged.",
+      "revision": 1,
+      "subject": "INV-YQPQ1M"
+    },
+    {
+      "because": [
+        {
+          "id": "MIK-R175",
+          "packet": "MIK-R175-v2-a-step-dot-shows-only-its-own-tooltip-and-its-words-stay-whole",
+          "task": {
+            "path": "260928_maintained-invariant-knowledge",
+            "repository": "agents-remember"
+          },
+          "version": "v2"
+        }
+      ],
+      "covers": [
+        {
+          "after": {
+            "blob": "a774a5e57ae8f781cdd06597ba61c3fdeba9edd8",
+            "content": "sha256:5c0132651cad3521c3c4b86dfd358510ee80ef214342b11453c164a1d18ff9bc",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/detail-panel/StepDot.tsx"
+          },
+          "before": {
+            "blob": "5d6b1775664c1768f5d4dec5275c1fd867c641cd",
+            "content": "sha256:2b0f5cc3d648d305b402a6f610577d15b993507d2729db1d67d95affcaebf215",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/detail-panel/StepDot.tsx"
+          },
+          "id": "RLZ-KXCBQY"
+        },
+        {
+          "after": {
+            "blob": "03f3276749c0abc72c7d3061ae1c9c4e6c858696",
+            "content": "sha256:5f5723f17048daba148a12a8204e0601d4bbb09a8e32f6b5678f76b6f0013ab4",
+            "locator": {
+              "end": 488,
+              "kind": "line_range",
+              "start": 471
+            },
+            "path": "dashboard/src/panels/lifecycle-list/LifecycleList.tsx"
+          },
+          "before": {
+            "blob": "6e5e8b5903fcf5108cc0ec06035fdc04c06c8256",
+            "content": "sha256:983658d30481cce4cb5994b573218070fca4fa0f1da1165b9da082abbc504407",
+            "locator": {
+              "end": 488,
+              "kind": "line_range",
+              "start": 471
+            },
+            "path": "dashboard/src/panels/lifecycle-list/LifecycleList.tsx"
+          },
+          "id": "RLZ-RKKZ22"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-55N4CW",
+      "items": [
+        "sha256:dab5f16bc555606b28d2e6203ebe63884eabbac630f27f83f7098ec11517bbb1"
+      ],
+      "reason": "Its realization or proof anchors moved inside a file this leaf changed; every other realization, proof and the record itself are unchanged.",
+      "revision": 1,
+      "subject": "INV-SQ7NQA"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-57PNB8",
+      "items": [
+        "sha256:472af4f771bef35b43a89912ea23289954bab183fd6fe8202cc210f37955af92"
+      ],
+      "reason": "The card was brought up to date: new card for supplemental byte receipts.",
+      "sources": [
+        {
+          "blob": "d0f30abf23b1282047980e6a498b3ff7c648ecdc",
+          "path": "mcp/src/agents_remember/application/review_supplemental_evidence.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/application/review_supplemental_evidence.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-5NZD4Q",
+      "items": [
+        "sha256:23cd1b5d5d0a15c9ea6884f5c14cecab64137cec91ea5d90cfed34fb2e8873e1"
+      ],
+      "reason": "The card was brought up to date: new card for the step-tooltip contract cases.",
+      "sources": [
+        {
+          "blob": "b68b1ad727052f3291e9e41d9d9a2d0c18cd6c38",
+          "path": "dashboard/src/panels/lifecycle-list/stepTitles.test.tsx"
+        }
+      ],
+      "subject": "onboarding:dashboard/src/panels/lifecycle-list/stepTitles.test.tsx"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-6V2KCJ",
+      "items": [
+        "sha256:725f2eb059b74449bb5bb149b9a286cb69682cd2e8976f0149e465d52626edc0"
+      ],
+      "reason": "The card was brought up to date: the archive now reclaims the task's frames through the store's owner.",
+      "sources": [
+        {
+          "blob": "4d92a4ba9cc1175b7c216200e6e0aa123b26b049",
+          "path": "mcp/src/agents_remember/application/review_artifact_cleanup.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/application/review_artifact_cleanup.py"
+    },
+    {
+      "because": [
+        {
+          "id": "MIK-R174",
+          "packet": "MIK-R174-v1-a-paused-row-with-a-time-stands-above-rows-without-one",
+          "task": {
+            "path": "260928_maintained-invariant-knowledge",
+            "repository": "agents-remember"
+          },
+          "version": "v1"
+        },
+        {
+          "id": "MIK-R175",
+          "packet": "MIK-R175-v2-a-step-dot-shows-only-its-own-tooltip-and-its-words-stay-whole",
+          "task": {
+            "path": "260928_maintained-invariant-knowledge",
+            "repository": "agents-remember"
+          },
+          "version": "v2"
+        }
+      ],
+      "covers": [
+        {
+          "after": {
+            "blob": "03f3276749c0abc72c7d3061ae1c9c4e6c858696",
+            "content": "sha256:5f5723f17048daba148a12a8204e0601d4bbb09a8e32f6b5678f76b6f0013ab4",
+            "locator": {
+              "end": 488,
+              "kind": "line_range",
+              "start": 471
+            },
+            "path": "dashboard/src/panels/lifecycle-list/LifecycleList.tsx"
+          },
+          "before": {
+            "blob": "6e5e8b5903fcf5108cc0ec06035fdc04c06c8256",
+            "content": "sha256:983658d30481cce4cb5994b573218070fca4fa0f1da1165b9da082abbc504407",
+            "locator": {
+              "end": 488,
+              "kind": "line_range",
+              "start": 471
+            },
+            "path": "dashboard/src/panels/lifecycle-list/LifecycleList.tsx"
+          },
+          "id": "RLZ-CSAQ91"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-7T6KB1",
+      "items": [
+        "sha256:94ebc2aa519955f406ffe1fbd31a47391e0cc58a3c86de8c230bae2e2c5835d9"
+      ],
+      "reason": "Its realization or proof anchors moved inside a file this leaf changed; every other realization, proof and the record itself are unchanged.",
+      "revision": 2,
+      "subject": "INV-DMAS27"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-7ZQ83K",
+      "items": [
+        "sha256:582dee73079812fe3ce27f79c0d585152f0dea98587f02c852ebe194b099e321"
+      ],
+      "reason": "The card was brought up to date: the tooltip's id and status word now keep their full width while only the title wraps.",
+      "sources": [
+        {
+          "blob": "a774a5e57ae8f781cdd06597ba61c3fdeba9edd8",
+          "path": "dashboard/src/panels/detail-panel/StepDot.tsx"
+        }
+      ],
+      "subject": "onboarding:dashboard/src/panels/detail-panel/StepDot.tsx"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-8F4Z1N",
+      "items": [
+        "sha256:2aebed0a201188ffe92afcc27bc8bf8ad12209592fdef074ca566e0e89251093"
+      ],
+      "reason": "The card was brought up to date: new card for packet assembly.",
+      "sources": [
+        {
+          "blob": "59dd363550251e1afa7e89d97abad3676a901f44",
+          "path": "mcp/src/agents_remember/application/review_evidence_packet.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/application/review_evidence_packet.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-9N1C4G",
+      "items": [
+        "sha256:8e46b8920913a7ea3cedcc64753a6f2a7a9a138f7860d9ebcb29460bd4818a5c"
+      ],
+      "reason": "The card was brought up to date: the three review-evidence and frame suites are registered in unit-regression.",
+      "sources": [
+        {
+          "blob": "0065fe3a7b4c1d9f0ed5ff5b7bd4cea2b64ebf47",
+          "path": "mcp/tests/test-evidence-lanes.toml"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test-evidence-lanes.toml"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-DMAS27",
+          "revision": 2
+        },
+        {
+          "id": "INV-SQ7NQA",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-AVX4TS",
+      "items": [
+        "sha256:39fbc83fdde2c566e7aabc2b7ff65b5ae947a7e926e207232ecf196ef23627f9"
+      ],
+      "reason": "Every member was examined against this leaf's change: the reached members only had anchors moved inside changed files, and their shared guarantee still holds.",
+      "revision": 2,
+      "subject": "FAM-06ZJJ0"
+    },
+    {
+      "because": [
+        {
+          "id": "MIK-R174",
+          "packet": "MIK-R174-v1-a-paused-row-with-a-time-stands-above-rows-without-one",
+          "task": {
+            "path": "260928_maintained-invariant-knowledge",
+            "repository": "agents-remember"
+          },
+          "version": "v1"
+        }
+      ],
+      "covers": [
+        {
+          "after": {
+            "blob": "03f3276749c0abc72c7d3061ae1c9c4e6c858696",
+            "content": "sha256:bb6e582afc821aa5f91bdc05d0140754d7a8843cb39d3134d98be6a42a661f88",
+            "locator": {
+              "kind": "symbol",
+              "name": "RowFigure"
+            },
+            "path": "dashboard/src/panels/lifecycle-list/LifecycleList.tsx"
+          },
+          "before": {
+            "blob": "6e5e8b5903fcf5108cc0ec06035fdc04c06c8256",
+            "content": "sha256:667a8f454687242a95d5f434309424e4b5ed60ff0b57e77b831bda47a105f613",
+            "locator": {
+              "kind": "symbol",
+              "name": "RowFigure"
+            },
+            "path": "dashboard/src/panels/lifecycle-list/LifecycleList.tsx"
+          },
+          "id": "RLZ-WSQMQG"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-B34K1F",
+      "items": [
+        "sha256:40038f1b860ad2beb12a7f497b8a05f28ae7ebebe38b7b6151f821b8648cc91c"
+      ],
+      "reason": "Its realization or proof anchors moved inside a file this leaf changed; every other realization, proof and the record itself are unchanged.",
+      "revision": 1,
+      "subject": "INV-YK0D2W"
+    },
+    {
+      "because": [
+        {
+          "id": "MIK-R174",
+          "packet": "MIK-R174-v1-a-paused-row-with-a-time-stands-above-rows-without-one",
+          "task": {
+            "path": "260928_maintained-invariant-knowledge",
+            "repository": "agents-remember"
+          },
+          "version": "v1"
+        }
+      ],
+      "covers": [
+        {
+          "after": {
+            "blob": "03f3276749c0abc72c7d3061ae1c9c4e6c858696",
+            "content": "sha256:891a738cd6629f81ceede271daf490842d1305c3731ece3ec793400a4d449b64",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/lifecycle-list/LifecycleList.tsx"
+          },
+          "before": {
+            "blob": "6e5e8b5903fcf5108cc0ec06035fdc04c06c8256",
+            "content": "sha256:4da2f3673c7cb49f91e03e8cc7d1fb5e2feaf8d368c897d9712c8fa6c6b375f9",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/lifecycle-list/LifecycleList.tsx"
+          },
+          "id": "RLZ-HFGBT2"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-CB4N44",
+      "items": [
+        "sha256:03806f57cefc56c94e63d8863db078ac507a8484db71eaa8e25433976a65dceb"
+      ],
+      "reason": "Its realization or proof anchors moved inside a file this leaf changed; every other realization, proof and the record itself are unchanged.",
+      "revision": 2,
+      "subject": "INV-XZYGEB"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-FB8PNF",
+      "items": [
+        "sha256:90b4e6b01548223cfe6f35b5d3c11545d48f0222dae67f88fee8ddc595fcb54b"
+      ],
+      "reason": "The card was brought up to date: new card for bounded exact-tree reads.",
+      "sources": [
+        {
+          "blob": "5b2bd5bccc245c3d32d3ca95b1dbc29817a16b4e",
+          "path": "mcp/src/agents_remember/application/review_evidence_read.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/application/review_evidence_read.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-FCJQMN",
+      "items": [
+        "sha256:b302831a142fd3c94555dcc05f4f8b10c299fb9d15ae0f879bd399075a86f6ca"
+      ],
+      "reason": "The card was brought up to date: new card for claim resolution.",
+      "sources": [
+        {
+          "blob": "198cb180d4f2172455f355cfcf1c5c8abed00446",
+          "path": "mcp/src/agents_remember/application/review_evidence_claims.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/application/review_evidence_claims.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-FYXJ3G",
+      "items": [
+        "sha256:24525506b5077231b959f58befd9a6c8e8199a2ce57c7e11076b7388e7149bb1"
+      ],
+      "reason": "The card was brought up to date: the derived catalogue registers the two review-evidence suites.",
+      "sources": [
+        {
+          "blob": "d4cd97b3ca50cb7c9e81fcb58ccd453561075f1f",
+          "path": "mcp/tests/evidence-lifecycle.toml"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/evidence-lifecycle.toml"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-G3M052",
+      "items": [
+        "sha256:4626cbcc50da56fd70459d27822fa849693efaaaa117813a478de8e13b2fe0ee"
+      ],
+      "reason": "The hunk implements the `_delete_frames` archive hook that carries the store’s frame reclamation result, including every target it could not delete, into the archive report; the guarantee stays on the frame store.",
+      "subject": "hunk:sha256:4626cbcc50da56fd70459d27822fa849693efaaaa117813a478de8e13b2fe0ee"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-HDS15H",
+      "items": [
+        "sha256:6406bd9c35d7bccf45299e5e09bd214a276914f944c89ef190ae0fc8abb597b7"
+      ],
+      "reason": "The card was brought up to date: sibling placement uses the row order.",
+      "sources": [
+        {
+          "blob": "6e4cb0f1271f303406e738d0cd3a47b6415c56ef",
+          "path": "dashboard/src/panels/lifecycle-list/treeRows.ts"
+        }
+      ],
+      "subject": "onboarding:dashboard/src/panels/lifecycle-list/treeRows.ts"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-HM74CG",
+      "items": [
+        "sha256:6926f09d4d4374e1898cb86e48118fa852be47d7df95aff35a880edd8a1e9c1d"
+      ],
+      "reason": "The card was brought up to date: rowOrder and hostTime order the started band by host time.",
+      "sources": [
+        {
+          "blob": "e056e6b3c7dce2893c53dc856efab571863169a2",
+          "path": "dashboard/src/panels/lifecycle-list/rowState.ts"
+        }
+      ],
+      "subject": "onboarding:dashboard/src/panels/lifecycle-list/rowState.ts"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-KD9WXB",
+      "items": [
+        "sha256:474194605b819370916caeca6361bb73277315d58741e36d123a8e510fa30592"
+      ],
+      "reason": "The hunk selects the review-evidence modules in their lane; lane membership is selection, not an invariant.",
+      "subject": "hunk:sha256:474194605b819370916caeca6361bb73277315d58741e36d123a8e510fa30592"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-MSXFVR",
+      "items": [
+        "sha256:c485d62a1b729f2ecb53c395a630d42edb5f90cf2ecf6f60bcb7361ab25afc34"
+      ],
+      "reason": "The card was brought up to date: the row line and figure box give up their native title, and the hover moved onto the row's cells.",
+      "sources": [
+        {
+          "blob": "03f3276749c0abc72c7d3061ae1c9c4e6c858696",
+          "path": "dashboard/src/panels/lifecycle-list/LifecycleList.tsx"
+        }
+      ],
+      "subject": "onboarding:dashboard/src/panels/lifecycle-list/LifecycleList.tsx"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-7GVWYD",
+          "revision": 3
+        },
+        {
+          "id": "INV-G71Q09",
+          "revision": 1
+        },
+        {
+          "id": "INV-JD110F",
+          "revision": 1
+        },
+        {
+          "id": "INV-K9B8G8",
+          "revision": 1
+        },
+        {
+          "id": "INV-ME6CA1",
+          "revision": 4
+        },
+        {
+          "id": "INV-PH90HV",
+          "revision": 3
+        },
+        {
+          "id": "INV-TA1XAA",
+          "revision": 1
+        },
+        {
+          "id": "INV-ZPRPXZ",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-NHS7PT",
+      "items": [
+        "sha256:3e04fab68db5b50bc7c0347f58fe1257a51dafa1dc1b30ff3530e3c418663bd2"
+      ],
+      "reason": "Every member was examined against this leaf’s change: INV-ME6CA1’s ordering statement and need-order condition were qualified for MIK-R174’s newest-first host-time order inside the started band, and the family’s shared guarantee still holds; every other reached member only had anchors moved inside changed files.",
+      "revision": 4,
+      "subject": "FAM-57TZPE"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-NQQB5M",
+      "items": [
+        "sha256:7871ab6bab985f9bf635e767e9c8ce210864d5655236f6181b2ef128155cd8b4",
+        "sha256:a59e48a1c1a124d7906d5cf23a8dc44191eb024ada24f7d921e8c35d6b47d51b"
+      ],
+      "reason": "The card was brought up to date: new card for the read receipt shapes.",
+      "sources": [
+        {
+          "blob": "5fd4b5f4e9cdffa246dddfedfe49f47adce00e8b",
+          "path": "mcp/src/agents_remember/models/knowledge/review_evidence_read.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/models/knowledge/review_evidence_read.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-PFRP21",
+      "items": [
+        "sha256:b88a0a158075c9136706753168205fe6de0f716a7a9eea17eb5fa291340fc1ac"
+      ],
+      "reason": "The card was brought up to date: new card for the frame store contract cases.",
+      "sources": [
+        {
+          "blob": "6101242266807cf543d12c9f6fe01b12ad3bf8f0",
+          "path": "mcp/tests/test_review_frame_store.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_review_frame_store.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-PVZCFF",
+      "items": [
+        "sha256:63d3f0bc729e21358bafa4b966a6b612f1e0d42fdcbc0dbb38d431fd66a8ec83"
+      ],
+      "reason": "The card was brought up to date: new card for bounded frame metadata reads.",
+      "sources": [
+        {
+          "blob": "03e74e0fa30bcdfad2b5fc0e0b6942d7aebd455c",
+          "path": "mcp/src/agents_remember/application/review_frame_read.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/application/review_frame_read.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-QBYQZ6",
+      "items": [
+        "sha256:07dff5f8c04178a620ae8efda664e13f0a45938b0357747160f967e588c95100"
+      ],
+      "reason": "The overview body gained the route's new current contract for this leaf's change.",
+      "sources": [
+        {
+          "blob": "4d26af6c4d78a59b0cc3444b648a3d864ec2fc9d",
+          "path": "mcp/src/agents_remember/models/knowledge/review_evidence.py"
+        },
+        {
+          "blob": "5fd4b5f4e9cdffa246dddfedfe49f47adce00e8b",
+          "path": "mcp/src/agents_remember/models/knowledge/review_evidence_read.py"
+        },
+        {
+          "blob": "aaea9c96e247acc59f52ab5f889e7ca4bc8b0fd3",
+          "path": "mcp/src/agents_remember/models/knowledge/review_frame.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/models/overview"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-QR1509",
+      "items": [
+        "sha256:86f1b94b0084becdf6c97dcf7a352ac51de2cf5428e1910cb15ccf9f3b83b516"
+      ],
+      "reason": "The card was brought up to date: the receipt ledger carries the new frameRevisions class.",
+      "sources": [
+        {
+          "blob": "1bbd29671c9645e75997b17b6e736154af3cf8ed",
+          "path": "mcp/src/agents_remember/application/review_artifact_receipts.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/application/review_artifact_receipts.py"
+    },
+    {
+      "because": [
+        {
+          "id": "MIK-R174",
+          "packet": "MIK-R174-v1-a-paused-row-with-a-time-stands-above-rows-without-one",
+          "task": {
+            "path": "260928_maintained-invariant-knowledge",
+            "repository": "agents-remember"
+          },
+          "version": "v1"
+        },
+        {
+          "id": "MIK-R175",
+          "packet": "MIK-R175-v2-a-step-dot-shows-only-its-own-tooltip-and-its-words-stay-whole",
+          "task": {
+            "path": "260928_maintained-invariant-knowledge",
+            "repository": "agents-remember"
+          },
+          "version": "v2"
+        }
+      ],
+      "covers": [
+        {
+          "after": {
+            "blob": "6e4cb0f1271f303406e738d0cd3a47b6415c56ef",
+            "content": "sha256:54df5253ce0a9d25d7b3158212ff5122a99af08b0047f880ba37def9ece009d0",
+            "locator": {
+              "kind": "symbol",
+              "name": "treeItems"
+            },
+            "path": "dashboard/src/panels/lifecycle-list/treeRows.ts"
+          },
+          "before": {
+            "blob": "90c9a05c19c4e703bef2f88c75b0d4b0c4303dcc",
+            "content": "sha256:5a6ec3438064bec875e9a600bcb46f43cceb5d316091c0564647ae8c43609f56",
+            "locator": {
+              "kind": "symbol",
+              "name": "treeItems"
+            },
+            "path": "dashboard/src/panels/lifecycle-list/treeRows.ts"
+          },
+          "id": "RLZ-79CD08"
+        }
+      ],
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-QYSGZY",
+      "items": [
+        "sha256:9d9108ae6c1d3e017fa07e6efe4027a736d554bbb4b78356a8799f90b3be088b"
+      ],
+      "reason": "The invariant’s own meaning was qualified for this leaf: its statement and need-order condition now order the started band by the host’s own event time newest first where the host recorded one, keep supplied tree order for untimed rows and every other band, and say a missing host time orders nothing; MIK-R174 governs that ordering half.",
+      "revision": 4,
+      "subject": "INV-ME6CA1"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-RNF0EB",
+      "items": [
+        "sha256:b128bf7f321c8f95f3d1e5cb2522ca0e99530d6fb5901f488058ed552a215cd3"
+      ],
+      "reason": "The card was brought up to date: new card for the frame shapes.",
+      "sources": [
+        {
+          "blob": "aaea9c96e247acc59f52ab5f889e7ca4bc8b0fd3",
+          "path": "mcp/src/agents_remember/models/knowledge/review_frame.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/models/knowledge/review_frame.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-S3RQBG",
+      "items": [
+        "sha256:2f4fdaf506d4006830c35fe27b03fe358c4fab13b4724df61aa808361a82b19b",
+        "sha256:3b23492c4a5055a7053e0e589911a396704ec16cba7dd4df60e65333ffc890cf"
+      ],
+      "reason": "The card was brought up to date: a new case orders the started band by host time.",
+      "sources": [
+        {
+          "blob": "9ea96bf52a1e61dad452d67dc72089c1d1cb0e0b",
+          "path": "dashboard/src/panels/lifecycle-list/treeRows.test.ts"
+        }
+      ],
+      "subject": "onboarding:dashboard/src/panels/lifecycle-list/treeRows.test.ts"
+    },
+    {
+      "because": [
+        {
+          "id": "MIK-R103",
+          "packet": "MIK-R103-v1-durable-frame-revisions",
+          "task": {
+            "path": "260928_maintained-invariant-knowledge",
+            "repository": "agents-remember"
+          },
+          "version": "v1"
+        }
+      ],
+      "covers": [
+        {
+          "after": {
+            "blob": "3752a3ab168c0328d813795f07294a49dbda4106",
+            "content": "sha256:4e5d9a4af3aa583e267580822939120931bc93c8854770cedbd8a41ec8e49956",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_an_interrupted_cache_deletion_replays_as_attributed_already_absent"
+            },
+            "path": "mcp/tests/test_review_artifact_cleanup.py"
+          },
+          "before": {
+            "blob": "3b7acc24cc4b886c15eeffb6c911cc4ab2629068",
+            "content": "sha256:bf5db9b476343c6579e14e54b74e7c27550d5a954f89cb040a389b6318e1fcd1",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_an_interrupted_cache_deletion_replays_as_attributed_already_absent"
+            },
+            "path": "mcp/tests/test_review_artifact_cleanup.py"
+          },
+          "id": "PRF-SYST2B"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-S8Y21C",
+      "items": [
+        "sha256:bd54efdc551b2521454027c8032dfe8a23ea3524b05f8fb1183244a491e1ad15"
+      ],
+      "reason": "Its realization or proof anchors moved inside a file this leaf changed; every other realization, proof and the record itself are unchanged.",
+      "revision": 1,
+      "subject": "INV-25AJSA"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-SJ7F8B",
+      "items": [
+        "sha256:f66e2faf0b39fea1c6bbb53c8124284ef2645763c78886e0cce948ac8a4eb8d8"
+      ],
+      "reason": "The hunk adds the same two modules to the derived consumer rows; it carries no obligation of its own.",
+      "subject": "hunk:sha256:f66e2faf0b39fea1c6bbb53c8124284ef2645763c78886e0cce948ac8a4eb8d8"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-TN3FWE",
+      "items": [
+        "sha256:7672db2825aa568f616bd5f8e1121397e13b97271d448850db62be3a52fa51f7"
+      ],
+      "reason": "The hunk adds the frame-revision list field to the archive report; the field carries no obligation of its own.",
+      "subject": "hunk:sha256:7672db2825aa568f616bd5f8e1121397e13b97271d448850db62be3a52fa51f7"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-TSW077",
+      "items": [
+        "sha256:c539aa2eb698167e6d3c7b1cdaba40d0a9232e346884c93ec4bcb2a842bf5856"
+      ],
+      "reason": "The hunk calls the store’s frame reclamation during the archive sweep; the guarantee it serves is recorded on the frame store.",
+      "subject": "hunk:sha256:c539aa2eb698167e6d3c7b1cdaba40d0a9232e346884c93ec4bcb2a842bf5856"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-V5QW6T",
+      "items": [
+        "sha256:02ebf2cb34268647989f1e75e5545eb8df16da05fac03dbc42834320d0fa0e94"
+      ],
+      "reason": "The hunk adds frameRevisions to the shared artifact keys; the receipt guarantees are the ledger's existing record and this is a mechanical class registration.",
+      "subject": "hunk:sha256:02ebf2cb34268647989f1e75e5545eb8df16da05fac03dbc42834320d0fa0e94"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-VE90Y3",
+      "items": [
+        "sha256:3bd9e16fbba940c829218b7248abbfcb111689b6914b1048a192191a466b1002",
+        "sha256:afc65505568e08c96a07e0075e504ed87a442eaff8c8d2eb2fe8c287c5dc12d5"
+      ],
+      "reason": "The card was brought up to date: new card for the evidence packet shapes.",
+      "sources": [
+        {
+          "blob": "4d26af6c4d78a59b0cc3444b648a3d864ec2fc9d",
+          "path": "mcp/src/agents_remember/models/knowledge/review_evidence.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/models/knowledge/review_evidence.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-WJZNRC",
+      "items": [
+        "sha256:af296818c243f76c2c7e12e1fed6dcf7d95218313253942d40723bc5918b93d0"
+      ],
+      "reason": "The card was brought up to date: the pinned planned-key set carries the frameRevisions class.",
+      "sources": [
+        {
+          "blob": "3752a3ab168c0328d813795f07294a49dbda4106",
+          "path": "mcp/tests/test_review_artifact_cleanup.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_review_artifact_cleanup.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-WYH0YH",
+      "items": [
+        "sha256:d843890c6c57afe2c32a3e793343a5273766981cc1be02425eb934de12b12a60"
+      ],
+      "reason": "The overview body gained the route's new current contract for this leaf's change.",
+      "sources": [
+        {
+          "blob": "d4cd97b3ca50cb7c9e81fcb58ccd453561075f1f",
+          "path": "mcp/tests/evidence-lifecycle.toml"
+        },
+        {
+          "blob": "0065fe3a7b4c1d9f0ed5ff5b7bd4cea2b64ebf47",
+          "path": "mcp/tests/test-evidence-lanes.toml"
+        },
+        {
+          "blob": "3752a3ab168c0328d813795f07294a49dbda4106",
+          "path": "mcp/tests/test_review_artifact_cleanup.py"
+        },
+        {
+          "blob": "c8dfdee310b6d1b875de8ae7b78fc00bbec18452",
+          "path": "mcp/tests/test_review_evidence_packet.py"
+        },
+        {
+          "blob": "4127f8e11d77d7cc33b9874c7e13ed61af7f94dd",
+          "path": "mcp/tests/test_review_evidence_residuals.py"
+        },
+        {
+          "blob": "6101242266807cf543d12c9f6fe01b12ad3bf8f0",
+          "path": "mcp/tests/test_review_frame_store.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/overview"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-X0FZ95",
+      "items": [
+        "sha256:cd468319a6bdf6f6aab3d76829b2b5095a87907e85f941ab5698e930707579ab"
+      ],
+      "reason": "The overview body gained the route's new current contract for this leaf's change.",
+      "sources": [
+        {
+          "blob": "a774a5e57ae8f781cdd06597ba61c3fdeba9edd8",
+          "path": "dashboard/src/panels/detail-panel/StepDot.tsx"
+        },
+        {
+          "blob": "d2fafd66ba8ba1996fdc480ad019b278cdedaee3",
+          "path": "dashboard/src/panels/detail-panel/stepDotStyles.ts"
+        },
+        {
+          "blob": "03f3276749c0abc72c7d3061ae1c9c4e6c858696",
+          "path": "dashboard/src/panels/lifecycle-list/LifecycleList.tsx"
+        },
+        {
+          "blob": "949bce364ba34ad511722513cdeb6698679ab7f4",
+          "path": "dashboard/src/panels/lifecycle-list/hierarchy.test.tsx"
+        },
+        {
+          "blob": "e056e6b3c7dce2893c53dc856efab571863169a2",
+          "path": "dashboard/src/panels/lifecycle-list/rowState.ts"
+        },
+        {
+          "blob": "b68b1ad727052f3291e9e41d9d9a2d0c18cd6c38",
+          "path": "dashboard/src/panels/lifecycle-list/stepTitles.test.tsx"
+        },
+        {
+          "blob": "9ea96bf52a1e61dad452d67dc72089c1d1cb0e0b",
+          "path": "dashboard/src/panels/lifecycle-list/treeRows.test.ts"
+        },
+        {
+          "blob": "6e4cb0f1271f303406e738d0cd3a47b6415c56ef",
+          "path": "dashboard/src/panels/lifecycle-list/treeRows.ts"
+        }
+      ],
+      "subject": "onboarding:dashboard/src/panels/overview"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-X3DSBT",
+      "items": [
+        "sha256:8cd87581337b6d2300c858a2d1c2968e30cc0b6af25f394ac35d8153056364d4"
+      ],
+      "reason": "The card was brought up to date: new card for the packet contract cases.",
+      "sources": [
+        {
+          "blob": "c8dfdee310b6d1b875de8ae7b78fc00bbec18452",
+          "path": "mcp/tests/test_review_evidence_packet.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_review_evidence_packet.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-X3PJTC",
+      "items": [
+        "sha256:e3759b65739ec9d10e1e34ed379d03d83baa2f90ce259b9f24625852bcdbb22f"
+      ],
+      "reason": "The card was brought up to date: new card for the residual contract cases.",
+      "sources": [
+        {
+          "blob": "4127f8e11d77d7cc33b9874c7e13ed61af7f94dd",
+          "path": "mcp/tests/test_review_evidence_residuals.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_review_evidence_residuals.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-XD7R3K",
+      "items": [
+        "sha256:0bb2adba12d713381bae07c7279872a2b46a1ad20b9b88bd797897839f2e7acd"
+      ],
+      "reason": "The hunk imports the frame store’s reclamation owner; the reclamation guarantee is recorded on the frame store, and this archive hook only propagates its result.",
+      "subject": "hunk:sha256:0bb2adba12d713381bae07c7279872a2b46a1ad20b9b88bd797897839f2e7acd"
+    },
+    {
+      "considered": [
+        "FAM-06ZJJ0",
+        "FAM-57TZPE"
+      ],
+      "disposition": "no_family",
+      "id": "ROW-Y9KVNY",
+      "items": [
+        "sha256:f25d667087d7752d527e986f044bedd588ebb615a72652f78a1e2b20c1374a41"
+      ],
+      "reason": "Neither examined family's joint guarantee covers row ordering or a tooltip's own display; the new obligation stays a local invariant rather than a family member.",
+      "revision": 1,
+      "subject": "membership:INV-JW28W1"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-YBRGVZ",
+      "items": [
+        "sha256:e32ed3dde7b229acf039cd876b67033d43afa7a96bfda5df2d1b372a7f0dac30"
+      ],
+      "reason": "The hunk adds the frame-revision class to the archive report; the reclamation guarantee is the frame store's, and this is its record field.",
+      "subject": "hunk:sha256:e32ed3dde7b229acf039cd876b67033d43afa7a96bfda5df2d1b372a7f0dac30"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-YBTK54",
+      "items": [
+        "sha256:ad190dada9357a2441fc164107068d43faed8b9af3fac69c1ae869cd8679b6b5"
+      ],
+      "reason": "The card was brought up to date: new card for the task-confined frame store.",
+      "sources": [
+        {
+          "blob": "677fed33450ee2c3e80367293bccc30399344ad3",
+          "path": "mcp/src/agents_remember/application/review_frame_store.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/application/review_frame_store.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-YWS2D7",
+      "items": [
+        "sha256:0b82d2e4175728db66ffc94e482092b6548dfbb1de5f7d1761beffafe55ed89a"
+      ],
+      "reason": "The hunk only replaces the band comparator with the row order; the ordering obligation itself is recorded on rowState.rowOrder, and no second invariant is carried here.",
+      "subject": "hunk:sha256:0b82d2e4175728db66ffc94e482092b6548dfbb1de5f7d1761beffafe55ed89a"
+    }
+  ],
+  "schema": "ar-history/v1"
+}

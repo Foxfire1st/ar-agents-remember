@@ -1,0 +1,32 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test"
+    ],
+    "justification": "An inherited native title covers the step's own tooltip, and a shrinking status word splits the word 'done' letter by letter."
+  },
+  "applicability": "The operations sidebar's step dots and their tooltip.",
+  "conditions": [
+    "A step mark is rendered with a tooltip on pointer rest."
+  ],
+  "exclusions": [
+    "The tooltip's content and the rest of the row's hover text."
+  ],
+  "id": "INV-JW28W1",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "A4-verdict.md; A4-requirement-adjudications.json; unchanged sidebar acceptance"
+      ],
+      "path": "l102-curator-list.json"
+    },
+    "handoffEntry": "MIK-R175@v2",
+    "leaf": "260928-MIK-L102",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Over a step dot in the operations sidebar, the step's own tooltip is the only tooltip that shows. No native browser tooltip shows over it. In that tooltip, a step's id and status word are never broken across lines.",
+  "status": "proposed",
+  "supersedes": []
+}

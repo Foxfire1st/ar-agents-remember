@@ -3,7 +3,7 @@
   "proves": [
     {
       "anchor": {
-        "blob": "784161d6d6f458d16ee11d0e84c087129edc3732",
+        "blob": "9ea96bf52a1e61dad452d67dc72089c1d1cb0e0b",
         "content": "sha256:7433eebaedcc85bfd1bfa4ca3e2abe229496b1e66300a2052a84776a6b882cac",
         "locator": {
           "kind": "symbol",
@@ -16,6 +16,23 @@
       "origin": {
         "handoffEntry": "L168-C-A016-source-account-INV-ME6CA1",
         "leaf": "260928-MIK-L168"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "9ea96bf52a1e61dad452d67dc72089c1d1cb0e0b",
+        "content": "sha256:395a86e6f913c9d381ab72d10c7ef65f9a478beff6d2810a14a9941c41a17c07",
+        "locator": {
+          "kind": "symbol",
+          "name": "orders the started band by host time, newest first, and leaves untimed rows after them"
+        }
+      },
+      "facet": "the started band orders timed rows newest first and leaves untimed rows in the server's order",
+      "id": "PRF-TBP4XW",
+      "invariant": "INV-NAV9HB",
+      "origin": {
+        "handoffEntry": "MIK-R174@v1",
+        "leaf": "260928-MIK-L102"
       }
     }
   ],
@@ -41,12 +58,29 @@
       "targets": [
         {
           "anchor": {
-            "blob": "784161d6d6f458d16ee11d0e84c087129edc3732",
+            "blob": "9ea96bf52a1e61dad452d67dc72089c1d1cb0e0b",
             "content": "sha256:f4ade7a5fcf038bc6123c62e53f32f491c6869657be420965b2d81a5eb5ef2c0",
             "locator": {
               "end": 58,
               "kind": "line_range",
               "start": 13
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "The started band puts host-timed paused rows newest first and leaves untimed rows in the server's order.\n\nAnchor: `orders the started band by host time`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9ea96bf52a1e61dad452d67dc72089c1d1cb0e0b",
+            "content": "sha256:395a86e6f913c9d381ab72d10c7ef65f9a478beff6d2810a14a9941c41a17c07",
+            "locator": {
+              "end": 114,
+              "kind": "line_range",
+              "start": 93
             }
           },
           "kind": "test"

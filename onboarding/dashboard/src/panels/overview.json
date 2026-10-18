@@ -337,7 +337,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "cb170808c1e7ad3aa75e0bfd0860f2206b2291c8",
+            "blob": "5cf51539b6df8e9517869d32694e6d48754342e6",
             "content": "sha256:14e80730ab07d7d43dc99018799af181b630e96b07f7bc9ba74c1111b4c462a1",
             "locator": {
               "kind": "symbol",
@@ -1904,12 +1904,12 @@
         },
         {
           "anchor": {
-            "blob": "cb170808c1e7ad3aa75e0bfd0860f2206b2291c8",
+            "blob": "5cf51539b6df8e9517869d32694e6d48754342e6",
             "content": "sha256:27eca251139a989327cfb8d6404c0eeca8e1e11087ce592e55827e3def5db13e",
             "locator": {
-              "end": 124,
+              "end": 135,
               "kind": "line_range",
-              "start": 109
+              "start": 120
             },
             "path": "dashboard/src/panels/detail-panel/changeSetBar.tsx"
           },
@@ -2078,12 +2078,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6e5e8b5903fcf5108cc0ec06035fdc04c06c8256",
+            "blob": "03f3276749c0abc72c7d3061ae1c9c4e6c858696",
             "content": "sha256:008405cd80acbe73ee37a16c867a2678d9dba5263997961af4df2ca3a6c94e40",
             "locator": {
-              "end": 140,
+              "end": 139,
               "kind": "line_range",
-              "start": 90
+              "start": 89
             },
             "path": "dashboard/src/panels/lifecycle-list/LifecycleList.tsx"
           },
@@ -2091,12 +2091,12 @@
         },
         {
           "anchor": {
-            "blob": "6e5e8b5903fcf5108cc0ec06035fdc04c06c8256",
+            "blob": "03f3276749c0abc72c7d3061ae1c9c4e6c858696",
             "content": "sha256:7e2587c5e54f3d912c72949970d049517445cbed2c87453589dfbff7050150f7",
             "locator": {
-              "end": 201,
+              "end": 200,
               "kind": "line_range",
-              "start": 179
+              "start": 178
             },
             "path": "dashboard/src/panels/lifecycle-list/LifecycleList.tsx"
           },
@@ -2104,12 +2104,12 @@
         },
         {
           "anchor": {
-            "blob": "6e5e8b5903fcf5108cc0ec06035fdc04c06c8256",
+            "blob": "03f3276749c0abc72c7d3061ae1c9c4e6c858696",
             "content": "sha256:174c1ef05448d6ea07371b6c64acd9b92827c1110af971743ad21a86605352c0",
             "locator": {
-              "end": 213,
+              "end": 212,
               "kind": "line_range",
-              "start": 207
+              "start": 206
             },
             "path": "dashboard/src/panels/lifecycle-list/LifecycleList.tsx"
           },
@@ -2182,6 +2182,40 @@
               "name": "useReviewMemoryWatch"
             },
             "path": "dashboard/src/data/reviewMemoryWatch.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "197": {
+      "note": "The started band orders host-timed rows newest first and leaves untimed rows in the server's order.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e056e6b3c7dce2893c53dc856efab571863169a2",
+            "content": "sha256:1c747c07ebc5e837acdc43734ef2463946c45d7eea5d1225abebf7e0c2129a57",
+            "locator": {
+              "kind": "symbol",
+              "name": "rowOrder"
+            },
+            "path": "dashboard/src/panels/lifecycle-list/rowState.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "198": {
+      "note": "The row's native title is gone from every ancestor of a step mark while its own cells keep the hover text.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "03f3276749c0abc72c7d3061ae1c9c4e6c858696",
+            "content": "sha256:c32d0df4169da4f9b000cf618a7d7e665f7bf828f9273bacbaff6ed07c9feaf7",
+            "locator": {
+              "kind": "symbol",
+              "name": "TaskRowLine"
+            },
+            "path": "dashboard/src/panels/lifecycle-list/LifecycleList.tsx"
           },
           "kind": "code"
         }
@@ -2711,7 +2745,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "cb170808c1e7ad3aa75e0bfd0860f2206b2291c8",
+            "blob": "5cf51539b6df8e9517869d32694e6d48754342e6",
             "content": "sha256:78a2511b6bd78a873823e850522c8de72b55eb97adc68077bed4883b68d1ea72",
             "locator": {
               "end": 4,
@@ -2789,12 +2823,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "cb170808c1e7ad3aa75e0bfd0860f2206b2291c8",
+            "blob": "5cf51539b6df8e9517869d32694e6d48754342e6",
             "content": "sha256:0a87fba4ecb4544157cf70cbcc24d00ad21e1dbf75db9704e93ef8d81673ddcc",
             "locator": {
-              "end": 315,
+              "end": 326,
               "kind": "line_range",
-              "start": 275
+              "start": 286
             },
             "path": "dashboard/src/panels/detail-panel/changeSetBar.tsx"
           },
@@ -2849,12 +2883,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "cb170808c1e7ad3aa75e0bfd0860f2206b2291c8",
+            "blob": "5cf51539b6df8e9517869d32694e6d48754342e6",
             "content": "sha256:b36d13058eb8d6367c672f9857f4b4d248d9152e4085fd36681eb1724395bcf0",
             "locator": {
-              "end": 125,
+              "end": 136,
               "kind": "line_range",
-              "start": 112
+              "start": 123
             },
             "path": "dashboard/src/panels/detail-panel/changeSetBar.tsx"
           },

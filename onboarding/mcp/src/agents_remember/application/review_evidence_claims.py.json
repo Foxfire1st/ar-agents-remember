@@ -1,0 +1,110 @@
+{
+  "path": "mcp/src/agents_remember/application/review_evidence_claims.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "198cb180d4f2172455f355cfcf1c5c8abed00446",
+        "content": "sha256:bfb8d69fd44581a2d2453bcf8dbb3151f0225ebb4c4cc6d823650beb2443eaaf",
+        "locator": {
+          "kind": "symbol",
+          "name": "_item_matches"
+        }
+      },
+      "id": "RLZ-WS37RP",
+      "invariant": "INV-16DDNJ",
+      "origin": {
+        "handoffEntry": "L102-F07",
+        "leaf": "260928-MIK-L102"
+      },
+      "rationale": "Preparation now carries the inspected returned_range; resolution requires every claimed interval to fit it. The independent nonexistent 999-999 basis now resolves false, matching the real absent bound read; line-1 positive and typed authored-judgment/proof/mechanical/inference, absent-item and comparison/applicability controls pass. Existing exact typed owner/attempt/revision and non-invented execution checks are retained.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "198cb180d4f2172455f355cfcf1c5c8abed00446",
+        "content": "sha256:50855a7c4305fec17a5ee01deadc1c85d25eec9b1f6751ac2364e08f1dd4c8a9",
+        "locator": {
+          "kind": "symbol",
+          "name": "_range_matches"
+        }
+      },
+      "id": "RLZ-ZDW1T0",
+      "invariant": "INV-16DDNJ",
+      "origin": {
+        "handoffEntry": "L102-F07",
+        "leaf": "260928-MIK-L102"
+      },
+      "rationale": "Preparation now carries the inspected returned_range; resolution requires every claimed interval to fit it. The independent nonexistent 999-999 basis now resolves false, matching the real absent bound read; line-1 positive and typed authored-judgment/proof/mechanical/inference, absent-item and comparison/applicability controls pass. Existing exact typed owner/attempt/revision and non-invented execution checks are retained.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "198cb180d4f2172455f355cfcf1c5c8abed00446",
+        "content": "sha256:402227e3d6ccbc54b1b343817979d558462cc9c7a7e50c66af6f4ce995a6d396",
+        "locator": {
+          "kind": "symbol",
+          "name": "_basis_problem"
+        }
+      },
+      "id": "RLZ-ZYJGBX",
+      "invariant": "INV-16DDNJ",
+      "origin": {
+        "handoffEntry": "L102-F07",
+        "leaf": "260928-MIK-L102"
+      },
+      "rationale": "Preparation now carries the inspected returned_range; resolution requires every claimed interval to fit it. The independent nonexistent 999-999 basis now resolves false, matching the real absent bound read; line-1 positive and typed authored-judgment/proof/mechanical/inference, absent-item and comparison/applicability controls pass. Existing exact typed owner/attempt/revision and non-invented execution checks are retained.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "A claim's address is read through the same bounded read as other investigation.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "198cb180d4f2172455f355cfcf1c5c8abed00446",
+            "content": "sha256:856742000e852b537fd07735bd0cc5eab43cdf1a40be587284c0c5615488bd19",
+            "locator": {
+              "kind": "symbol",
+              "name": "read_claim_basis"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "A basis resolves only when the packet holds a present item of that identity, revision and owner.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "198cb180d4f2172455f355cfcf1c5c8abed00446",
+            "content": "sha256:bfb8d69fd44581a2d2453bcf8dbb3151f0225ebb4c4cc6d823650beb2443eaaf",
+            "locator": {
+              "kind": "symbol",
+              "name": "_item_matches"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "A claimed interval must fit the range the read actually inspected.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "198cb180d4f2172455f355cfcf1c5c8abed00446",
+            "content": "sha256:50855a7c4305fec17a5ee01deadc1c85d25eec9b1f6751ac2364e08f1dd4c8a9",
+            "locator": {
+              "kind": "symbol",
+              "name": "_range_matches"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

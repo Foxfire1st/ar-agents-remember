@@ -110,7 +110,11 @@ reuses the existing receipt and reports previously deleted artifacts as already 
 - **L37 (rulings 22:22:37 Q4 and 23:15:34 F7):** the cutover notes state that archival deletes all legacy dataset
   copies, including curator scratch copies (65 in the ICR task: 44 through the owner, 21 by content).
 
+MIK-R103 rule 8: `_delete_frames` hands the archived task's frame store to `reclaim_task_frames` — the store's own reclamation owner — in dry or real mode, carries every reclaimed revision into the archive record's new `frameRevisions` class, and turns a held target into a `failures` entry. A frame is a page the task owns, so it ends with the task's other attachments.
+
 ## Evidence
+
+- The archive reclaims the task's published frames through the store's own owner and records what it removed or held. [20]
 
 ### Docs References
 

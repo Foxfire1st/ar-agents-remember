@@ -24,7 +24,11 @@ None recorded.
 
 The disclosure cases also check that a click can close a held parent without choosing another document, that selection transitions discard prior release state, and that plain parent arrows release a hold while modified chords remain untouched. Completed-fold clicks remain a separate control; this suite adds no fold-arrow handler.
 
+The hover assertions now read the title cell's `title` instead of the row line's, because MIK-R175 removes the row line's title to stop the browser showing it over the step dots; no other assertion or case changed.
+
 ## Evidence
+
+- The suite reads the row's hover from the title cell, which is where the retained text lives. [3]
 
 - Chosen-document holding yields to explicit disclosure for the current selection episode, while plain arrows stay confined to parent rows. [2]
 
