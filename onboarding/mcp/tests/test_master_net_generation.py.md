@@ -53,6 +53,16 @@ cohort, not a fresh collection result or current source-line census:
   `changed_files_with_counts` raising) is refused with `kind == "unresolvable"`, never
   reported as an empty net. cit:([`test_a_diff_failure_after_validation_is_refused_never_reported_as_zero`], mcp/tests/test_master_net_generation.py:483-499)
 
+Two further cases hold the master net's endpoint-keyed reuse (L174 S7).
+`test_a_master_net_is_served_again_from_its_endpoint_commits` reads the real
+`/api/changeset/master` route twice on one registered app and requires the second read to
+add no net diff and no sidecar decision while both bodies match.
+cit:([`test_a_master_net_is_served_again_from_its_endpoint_commits`], mcp/tests/test_master_net_generation.py:741-788)
+`test_a_master_nets_sidecar_flags_follow_the_onboarding_index` requires a created or
+rewritten onboarding route index to move the `hasSidecar` flag on the next read, so the
+flags are observed rather than frozen.
+cit:([`test_a_master_nets_sidecar_flags_follow_the_onboarding_index`], mcp/tests/test_master_net_generation.py:791-842)
+
 Additional address-preservation cases exercise quoted names, leading spaces and literal backslashes
 through inventory, closeout worklists, rename destinations and the changeset route. Their literal
 addresses must survive routing unchanged; this source account is not a new execution receipt.

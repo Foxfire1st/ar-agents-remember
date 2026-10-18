@@ -1,5 +1,41 @@
 {
   "path": "mcp/tests/test_master_net_generation.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "3aa6597ae8c47d8bba7aff36c724913e3a9c6644",
+        "content": "sha256:af78af1868dcac26bb9065a409bc7621337daa0405be962d6dadf2a9b9c0da90",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_master_net_is_served_again_from_its_endpoint_commits"
+        }
+      },
+      "facet": "A second read of the same master net adds no net diff and no sidecar decision, and both bodies are byte-identical.",
+      "id": "PRF-4C8VH4",
+      "invariant": "INV-ZNXX7H",
+      "origin": {
+        "handoffEntry": "L174-A12-master-net-attribution",
+        "leaf": "260928-MIK-L174"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "3aa6597ae8c47d8bba7aff36c724913e3a9c6644",
+        "content": "sha256:c1d5f13edb4b7801f534b198ccea6fe396361264cc17ce14d330daf23f4da5b7",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_master_nets_sidecar_flags_follow_the_onboarding_index"
+        }
+      },
+      "facet": "A rewritten onboarding route index moves the net's hasSidecar flag on the next read, so the flags are observed inputs rather than a frozen value.",
+      "id": "PRF-S3X30D",
+      "invariant": "INV-ZNXX7H",
+      "origin": {
+        "handoffEntry": "L174-A12-master-net-attribution",
+        "leaf": "260928-MIK-L174"
+      }
+    }
+  ],
   "realizes": [],
   "references": {
     "1": {
@@ -7,7 +43,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a6631c944c60280f631bfe1d9e802391f5f55d23",
+            "blob": "3aa6597ae8c47d8bba7aff36c724913e3a9c6644",
             "content": "sha256:0753257dc2b79f881f380b8681aa5ded3b4e356b794086776ece0c5b7a215bb4",
             "locator": {
               "kind": "symbol",
@@ -23,7 +59,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a6631c944c60280f631bfe1d9e802391f5f55d23",
+            "blob": "3aa6597ae8c47d8bba7aff36c724913e3a9c6644",
             "content": "sha256:6610fde6b6f5f5e66b29c98373ed90dd5658de16b3ed546c0752b0812678c478",
             "locator": {
               "kind": "symbol",
@@ -34,7 +70,7 @@
         },
         {
           "anchor": {
-            "blob": "a6631c944c60280f631bfe1d9e802391f5f55d23",
+            "blob": "3aa6597ae8c47d8bba7aff36c724913e3a9c6644",
             "content": "sha256:da4755e888c8a60ec4f80217ad367562e7a2231c8a260f515d8aa953e8473c15",
             "locator": {
               "kind": "symbol",
@@ -45,12 +81,12 @@
         },
         {
           "anchor": {
-            "blob": "a6631c944c60280f631bfe1d9e802391f5f55d23",
+            "blob": "3aa6597ae8c47d8bba7aff36c724913e3a9c6644",
             "content": "sha256:f11d5e51f1ab9605ce8b8663ef3914c1f96782ec8089fecf63e91488e25e5a72",
             "locator": {
-              "end": 242,
+              "end": 245,
               "kind": "line_range",
-              "start": 238
+              "start": 241
             }
           },
           "kind": "test"
@@ -62,7 +98,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a6631c944c60280f631bfe1d9e802391f5f55d23",
+            "blob": "3aa6597ae8c47d8bba7aff36c724913e3a9c6644",
             "content": "sha256:2de796bf3226f012ae5d15a82940e8c11b88c163c9e563dfd6aca2252a8cb15e",
             "locator": {
               "kind": "symbol",
@@ -73,7 +109,7 @@
         },
         {
           "anchor": {
-            "blob": "a6631c944c60280f631bfe1d9e802391f5f55d23",
+            "blob": "3aa6597ae8c47d8bba7aff36c724913e3a9c6644",
             "content": "sha256:9ace9375d2a6e6c42c4bae2fd355a2648977fce3a93d80eb3818f7fc775a7705",
             "locator": {
               "kind": "symbol",
@@ -89,12 +125,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "dd5b9a11804f0ddc25ae6cc727bbad6bd40f9720",
+            "blob": "039bcca510615d80086666843e34d1ded3ee3335",
             "content": "sha256:5411749dbd3b184fb122907bb2b8bcf744cb6f96b7f6b3bb3af87b6b3157ba5b",
             "locator": {
-              "end": 191,
+              "end": 182,
               "kind": "line_range",
-              "start": 191
+              "start": 182
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },
@@ -107,7 +143,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b4325fdc725f89500cac3761c200a846f44e1904",
+            "blob": "6c4737de45af72f420304b097f27413a794c58d4",
             "content": "sha256:7a575351d35d49184626d8535b1e76e3c313d05810ad25cf7446591727a247a6",
             "locator": {
               "kind": "symbol",

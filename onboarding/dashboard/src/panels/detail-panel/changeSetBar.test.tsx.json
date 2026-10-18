@@ -1,5 +1,24 @@
 {
   "path": "dashboard/src/panels/detail-panel/changeSetBar.test.tsx",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "4819bdda012cab487d632ae9f351502c11e5e9a5",
+        "content": "sha256:09faebd052447eb518b0a7bbaccf6a843306822f4faffe3baaa7ca231e2c86d7",
+        "locator": {
+          "kind": "symbol",
+          "name": "never prints a zero for a series the server named no generation for (S8)"
+        }
+      },
+      "facet": "A degraded master answer (generation null, currentness unmeasured, zero counters) renders the unmeasured state with no numeric total and a disclosure that no base and no selected result resolved.",
+      "id": "PRF-SX2M2T",
+      "invariant": "INV-JH8ZHH",
+      "origin": {
+        "handoffEntry": "S8",
+        "leaf": "260928-MIK-L174"
+      }
+    }
+  ],
   "realizes": [],
   "references": {
     "1": {
@@ -7,7 +26,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5115943885961706a54647ef48511e414ed90666",
+            "blob": "4819bdda012cab487d632ae9f351502c11e5e9a5",
             "content": "sha256:6c93174cf1289a05a66b6674d14e64d2ce9684a121c824eb1279c451d082e987",
             "locator": {
               "end": 139,
@@ -19,7 +38,7 @@
         },
         {
           "anchor": {
-            "blob": "5115943885961706a54647ef48511e414ed90666",
+            "blob": "4819bdda012cab487d632ae9f351502c11e5e9a5",
             "content": "sha256:3b1b07821ea930a93820d03fbdfeb02ad50363ab8204f6df1cf4bf3798e12a7f",
             "locator": {
               "end": 367,
@@ -31,7 +50,7 @@
         },
         {
           "anchor": {
-            "blob": "5115943885961706a54647ef48511e414ed90666",
+            "blob": "4819bdda012cab487d632ae9f351502c11e5e9a5",
             "content": "sha256:2e9cc8ff936192a98c7a33b611b1de7b9357f79c2d06b6a8fa3e9fe80be910a0",
             "locator": {
               "end": 459,

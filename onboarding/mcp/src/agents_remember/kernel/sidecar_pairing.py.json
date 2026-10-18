@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "28c6d442c3bee361d688bddebe7aea088c48189c",
-        "content": "sha256:2e71355d5cb062db0fffb72aff9583aa01e984c62e6d24a6976dc1ec4f22db1b",
+        "blob": "2705131141c595386bfe5506c4ccabd7a5792892",
+        "content": "sha256:9822d02e8099f8ef819816ebe06b903025c7b5f4e98a7753a2285c7a31ecc7c2",
         "locator": {
           "kind": "symbol",
           "name": "route_sidecar_status"
@@ -15,7 +15,7 @@
       "origin": {
         "leaf": "260921-ICR-L30"
       },
-      "rationale": "The fallback probe is the construct that makes a missing derived index a supported state; the index itself is the disposable artifact.",
+      "rationale": "The same symbol still carries the obligation: the nearest-first governing-index decision with the mirror fallback. Its bytes moved because the observer reports every candidate index, absent ones included, and the fallback mirror before they are read.",
       "role": "support"
     }
   ],
@@ -85,7 +85,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c8f46c37a779c2f92a9c7791dec0accee6d61e4d",
+            "blob": "24d682ff648aa771ce9836a527913f55f0c94e5f",
             "content": "sha256:bb8647138184081f0e1c66fc85176064e7780295e754f1666cf951c21e27cf4d",
             "locator": {
               "kind": "symbol",
@@ -97,7 +97,7 @@
         },
         {
           "anchor": {
-            "blob": "c8f46c37a779c2f92a9c7791dec0accee6d61e4d",
+            "blob": "24d682ff648aa771ce9836a527913f55f0c94e5f",
             "content": "sha256:fc18b95fdad64a368326de9721c6c4794425208cdbfcb4d12a30183f236002da",
             "locator": {
               "kind": "symbol",
@@ -109,7 +109,7 @@
         },
         {
           "anchor": {
-            "blob": "c8f46c37a779c2f92a9c7791dec0accee6d61e4d",
+            "blob": "24d682ff648aa771ce9836a527913f55f0c94e5f",
             "content": "sha256:05e50f3c047ea2a3b7b0ba706d4f94aed2f05e78fd16c91f2216c13a1777c097",
             "locator": {
               "kind": "symbol",
@@ -121,7 +121,7 @@
         },
         {
           "anchor": {
-            "blob": "c8f46c37a779c2f92a9c7791dec0accee6d61e4d",
+            "blob": "24d682ff648aa771ce9836a527913f55f0c94e5f",
             "content": "sha256:f217a477b7b234913baac6ed913afb5dd795a7d8d245c360fd5292be574035e4",
             "locator": {
               "kind": "symbol",
@@ -151,12 +151,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "28c6d442c3bee361d688bddebe7aea088c48189c",
+            "blob": "2705131141c595386bfe5506c4ccabd7a5792892",
             "content": "sha256:26920a5b2ac4d00049b771c2b9814e3fca5b7225f8eca8392644fc612e52b7b8",
             "locator": {
-              "end": 147,
+              "end": 170,
               "kind": "line_range",
-              "start": 147
+              "start": 170
             }
           },
           "kind": "code"
@@ -198,7 +198,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "08fa67e7d17028c0392d8c20bf1c9499b0681f8f",
+            "blob": "d93f7d335880722fb27e012f63564c3a8928218e",
             "content": "sha256:034c7e359c605efda03d85d4b7bd1aded24ca7f3d65e4e37234ebb131288dffa",
             "locator": {
               "kind": "symbol",
@@ -215,7 +215,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "68e62a4e78041f271e927977fa67c79ca74c18b7",
+            "blob": "806f87dacbd41bb3a7c9c2fa4c012db6332d673b",
             "content": "sha256:6b60d43c9ef5c7c9675d1b65bbc5b3b96af08cd1f6b69c9126f03b1a2022d010",
             "locator": {
               "kind": "symbol",

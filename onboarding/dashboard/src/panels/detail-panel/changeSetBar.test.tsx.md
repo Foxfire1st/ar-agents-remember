@@ -48,6 +48,12 @@ read renders no attribution at all — an absent answer is not rendered as a zer
 base production bytes the case fails (the base asked with `includeLeaves=false` and rendered no
 attribution), which is what makes it evidence for the change rather than a restatement of it.
 
+**One case was added for the unmeasured series (S8).** `never prints a zero for a series the server
+named no generation for (S8)` stubs a master answer with `generation: null`, `currentness:
+unmeasured` and zero counters, and requires the state word `unmeasured`, no `+0 −0` total, and a
+disclosure that the series has no measured range and that no base and no selected result resolved.
+cit:(["never prints a zero for a series the server named no generation for (S8)"], dashboard/src/panels/detail-panel/changeSetBar.test.tsx:658-695)
+
 ### Conventions
 
 One behavior boundary per suite, per the test-split rule.
@@ -72,7 +78,6 @@ No relevant domain documentation was found.
 ### Repo-Internal References
 
 - The change-set bar suite retains the exact generation-bound master series entry and compact Intent review controls: a closed leaf opens its recorded comparison (even when knowledge is unavailable) and explicitly has no review-subject picker; a live leaf opens review: {} for task-context review and leaves subject selection to the reviewer. The series click carries the published code/memory endpoints and digest. These cases do not exercise complete-catalogue traversal or provide a complete-catalogue picker. Complete-catalogue traversal remains reviewer-owned, not a picker exercised by these cases. [1]
-
 
 ### Cross-Repo References
 

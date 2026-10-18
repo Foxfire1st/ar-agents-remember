@@ -35,7 +35,11 @@ nearest-first via `_governing_indexes` / `_load_route_index`, asking
 `route_index.sidecar_status` per index; the first index whose scope covers the path
 decides (`present` / `absent`). When no governing `overview.index.json` exists, it
 falls back to a direct `mirror_onboarding_path` file probe so a repo with sidecars
-but no built index still resolves. `sidecar_body(onboarding_root, rel)` reads the
+but no built index still resolves. Its optional `observe` callback receives every path
+whose identity decides that status — each candidate route index, an absent one
+included — and, on the fallback, the mirror sidecar, **before** it is read, so a
+caller that reuses the answer observes exactly the inputs it was derived from instead
+of re-deciding them on the next read. `sidecar_body(onboarding_root, rel)` reads the
 mirror sidecar and projects it through `meaningful_body`, returning `None` when the
 file is absent or non-decodable.
 

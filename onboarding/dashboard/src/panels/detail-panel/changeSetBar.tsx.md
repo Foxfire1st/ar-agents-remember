@@ -42,6 +42,9 @@ failure, `data-review-code`:
 - `unrecorded` — the route answered that the mode's endpoints are not recorded yet (a committed view of
   a live leaf); the total is withheld (`changesetTotal` returns `null`) because a zero of nothing is not
   a measurement;
+- `unmeasured` — a master answer that names no generation while its `currentness` reads `unmeasured`:
+  the series resolved no base and no selected result, so its zero counters are the absence of a net
+  range, not a measured empty one; the total is withheld and the state word is `unmeasured`;
 - `known-empty` — `empty`, a measured zero;
 - an answer with changed files — no state; the counters are the answer;
 - a refusal, an unreadable answer or no answer — `briefProblem`'s word under the shared
@@ -49,8 +52,10 @@ failure, `data-review-code`:
 
 `ChangeSetStateDetails` puts the explanation beside the button in `EntryStateDetails` (a `<details>`
 disclosure, closed by default, outside the button): for a failure, `problemSentence` (code, the owner's
-reason, offending input, next action); for an unrecorded range, the route's own sentence. The rejection
-handler files `reviewProblemFromCause(cause)` so a refusal is never swallowed.
+reason, offending input, next action); for an unrecorded range, the route's own sentence; for an
+unmeasured series, that the series has no measured range, with what did not resolve. The bar names
+that state; it reads again only on its own next read, so a page that already holds a degraded answer
+keeps it until then. The rejection handler files `reviewProblemFromCause(cause)` so a refusal is never swallowed.
 
 **`LeafEntries` composes a leaf's own entries.** The `working` button only while live, then
 `IntentReviewEntry` with the leaf's `repo`/`master`/`leaf`, `live` and `facts`. The Intent review is
@@ -152,7 +157,7 @@ and the historical entry names the record the server resolves from canonical tas
 
 ## Current Behavior
 
-`ChangeSetButton` now owns an `AbortController` for its counter read: it calls `loadChangeSet(target, controller.signal)` and aborts on cleanup (`:93-121`); an `AbortError` is not turned into a `reviewProblemFromCause` failure, so a task switch leaves no error word for that owner. A live same-key owner keeps the shared fetch and its retained result; the entry is removed and the fetch aborted only at the last leave. The loading/unrecorded/known-empty/refusal states and the withheld `+0 −0` total are unchanged. This supersedes the bar's earlier failure enumeration as the whole account: an aborted read is a fourth, silent outcome. The Intent review entry remains ungated.
+`ChangeSetButton` now owns an `AbortController` for its counter read: it calls `loadChangeSet(target, controller.signal)` and aborts on cleanup (`:93-121`); an `AbortError` is not turned into a `reviewProblemFromCause` failure, so a task switch leaves no error word for that owner. A live same-key owner keeps the shared fetch and its retained result; the entry is removed and the fetch aborted only at the last leave. The loading, unrecorded, known-empty and refusal states and the withheld `+0 −0` total are unchanged by that repair; S8 added the `unmeasured` state for a master answer that names no generation, which withholds the total on the same rule. This supersedes the bar's earlier failure enumeration as the whole account: an aborted read is a fourth, silent outcome. The Intent review entry remains ungated.
 
 ## 260921-ICR-L17 The Entry Read Is Invalidated By The Workspace, Not Repeated On A Timer (superseded by 260921-ICR-L47)
 
