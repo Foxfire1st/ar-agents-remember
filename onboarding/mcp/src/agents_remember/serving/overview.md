@@ -142,6 +142,11 @@ A missing comparison number is not a dataset-mode discriminator: enabled live le
 can start without one, while focused card-entry reads require one. The transport retains some legacy
 refusal spellings for status mapping; that does not reinstate removed candidate producers.
 
+
+## Current Behavior
+
+the change-set routes now run on a dedicated `_BoundedReads` scheduler: eight workers plus eight pending jobs, an explicit 503 over the cap, a queued job withdrawn on disconnect and a running job releasing its slot only at its physical end; the route returns 499 and the runner's one `_wait_process` kills the Git child and its group. Freshness is Git's own: id-keyed commit pairs are served with no observation, working views run `git status --porcelain=v2 -z` and have no cache where a plain read costs no more, and the object store is a `count-objects -v` census; the object/worktree walks are removed. The cache's result/repository/per-read maps are capacity-bounded, an abandoned read admits nothing, and the id-keyed accepted gap is named in the cache module. The intent-summary route keeps its 200/503/304 idiom and shares the same cache.
+
 ## Evidence
 
 

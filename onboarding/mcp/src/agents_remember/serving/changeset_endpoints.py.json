@@ -1,6 +1,25 @@
 {
   "path": "mcp/src/agents_remember/serving/changeset_endpoints.py",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "48e667c9305d3cf101beae36d282b6f77fd8ca28",
+        "content": "sha256:b7a164140ee93dc815b88289ebc9427873fbda7c77a9bb4087fb5a0fa999b6c5",
+        "locator": {
+          "kind": "symbol",
+          "name": "recorded_committed_range"
+        }
+      },
+      "id": "RLZ-AV44SX",
+      "invariant": "INV-7TMGB0",
+      "origin": {
+        "handoffEntry": "L174-7T-ENDPOINTS",
+        "leaf": "260928-MIK-L174"
+      },
+      "rationale": "The pair presence check is itself a keyed read: a successful check is kept with no per-hit observation and a refusal is never kept.",
+      "role": "propagation-persistence"
+    }
+  ],
   "references": {
     "1": {
       "note": "**The module's own statement of what a committed range is, why `HEAD` may not stand in for it, and why the three absences are separated.**\n\nAnchor: `HEAD`; `working`",

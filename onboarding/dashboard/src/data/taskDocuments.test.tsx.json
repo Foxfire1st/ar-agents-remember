@@ -3,7 +3,24 @@
   "proves": [
     {
       "anchor": {
-        "blob": "b006c831d90995af88efe4c092cf41de90372ecb",
+        "blob": "c83285e17de7fb1ba7a99305ff79d478d0007cbb",
+        "content": "sha256:c942172852108f848181709481c97ae801679b3966e882963d83bf057926559a",
+        "locator": {
+          "kind": "symbol",
+          "name": "deduplicates concurrent reads and reuses the parsed body after navigation"
+        }
+      },
+      "facet": "Two exact-revision loads get distinct owner waits over one body fetch; navigation reuses the parsed body without a second request.",
+      "id": "PRF-15WC6B",
+      "invariant": "INV-WNHAWD",
+      "origin": {
+        "handoffEntry": "L174-WN-PROOF",
+        "leaf": "260928-MIK-L174"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "c83285e17de7fb1ba7a99305ff79d478d0007cbb",
         "content": "sha256:203f27e7b72fb43eab41260b960e3adb641a562a3263d237c92045471b83dd2d",
         "locator": {
           "kind": "symbol",
@@ -20,7 +37,7 @@
     },
     {
       "anchor": {
-        "blob": "b006c831d90995af88efe4c092cf41de90372ecb",
+        "blob": "c83285e17de7fb1ba7a99305ff79d478d0007cbb",
         "content": "sha256:1da9ad976f9db4460461f293fa59fa851817725bd09d11603ad89db9e4d8c59a",
         "locator": {
           "kind": "symbol",
@@ -29,23 +46,6 @@
       },
       "facet": "The body returned under a different actual revision is retained only under that returned revision, not the request revision.",
       "id": "PRF-EY4JFD",
-      "invariant": "INV-WNHAWD",
-      "origin": {
-        "handoffEntry": "L168-W-R168-03",
-        "leaf": "260928-MIK-L168"
-      }
-    },
-    {
-      "anchor": {
-        "blob": "b006c831d90995af88efe4c092cf41de90372ecb",
-        "content": "sha256:b01b0c46176099cbf0836ad245e1c9c86422bc3b4698c08f231b570149462244",
-        "locator": {
-          "kind": "symbol",
-          "name": "task bodies belong to the store and exact document revision > deduplicates concurrent reads and reuses the parsed body after navigation"
-        }
-      },
-      "facet": "Concurrent exact-revision loads share one promise and navigation reuses the same parsed body with one mocked fetch.",
-      "id": "PRF-MGYP5F",
       "invariant": "INV-WNHAWD",
       "origin": {
         "handoffEntry": "L168-W-R168-03",

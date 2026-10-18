@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "1fb98f3ca4f6017420325669a1b89d7c8473c3d4",
-        "content": "sha256:350e85544f6786958df483e5d970fc7155d7bf46bdc4b8940c54ed14dd0edf4f",
+        "blob": "d023d83adaf5c952b460485f75bb778c9bfa20ad",
+        "content": "sha256:33df90592127b06a825813e14f29156510da59665366badce8c53e7693f95ffc",
         "locator": {
           "kind": "file"
         }
@@ -15,7 +15,7 @@
         "handoffEntry": "L168-W-R168-02",
         "leaf": "260928-MIK-L168"
       },
-      "rationale": "Generation observations detect working head/index/files and immutable recorded commit pairs without an unchanged Git read.",
+      "rationale": "Git-native freshness: a working status digest, Git's own count-objects census and presence probes; the object and worktree walks are gone.",
       "role": "support"
     }
   ],

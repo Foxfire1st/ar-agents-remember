@@ -1,0 +1,67 @@
+{
+  "admission": {
+    "criteria": [
+      "real_alternatives"
+    ],
+    "justification": "The leaf weighed per-hit observation and a partial pack proof against serving from the key; both were rejected for the rule-5 cost and the withdrawn finding."
+  },
+  "alternatives": [
+    {
+      "option": "Serve an id-keyed hit from its key with no observation; object loss and attribute/configuration changes are an accepted gap until eviction or restart.",
+      "reason": "The answer is the true diff of those ids; per-hit observation contradicts rule 5.",
+      "status": "chosen"
+    },
+    {
+      "option": "Observe the object store and working-tree attributes on every id-keyed hit.",
+      "reason": "It makes the hit cost what it saves and is the withdrawn R1-05 demand.",
+      "reconsider_when": "Object loss or attribute-only changes make a stale id-keyed answer materially wrong in practice.",
+      "status": "rejected"
+    },
+    {
+      "option": "Observe only a pack index or a partial object proof on each hit.",
+      "reason": "Still a per-hit observation the rule forbids; the pair is fixed by its ids.",
+      "reconsider_when": "A future requirement admits a bounded observation for id-keyed hits.",
+      "status": "rejected"
+    }
+  ],
+  "consequences": [
+    "The cache docstring, the reads and the tests name the gap; an eviction or restart is the only renewal besides a new key."
+  ],
+  "context": "Rule 5 gives a commit-pair hit no observation. The Reviewer's L174-R1-05 demanded per-hit observation of an id-keyed read and the architect withdrew it; the accepted gap must be named rather than silently taken.",
+  "decider": "The architect's f0607391 ruling, strengthened by b84bf836; implemented by L174-A9.",
+  "id": "DEC-24WQHK",
+  "links": [
+    {
+      "relation": "constrains",
+      "target": "route:mcp/src/agents_remember/serving"
+    },
+    {
+      "relation": "explains",
+      "target": "INV-7TMGB0"
+    },
+    {
+      "relation": "motivated_change_to",
+      "target": {
+        "id": "MIK-R176",
+        "packet": "requirements/MIK-R176-v2-a-task-switch-never-waits-for-the-task-left-behind.md",
+        "task": {
+          "path": "260928_maintained-invariant-knowledge",
+          "repository": "agents-remember"
+        },
+        "version": "v2"
+      }
+    }
+  ],
+  "origin": {
+    "handoff": {
+      "path": "notes/reports/curator/03a91764-2ced-5673-861b-6d0d34d331bf/curator-handoff-L174-A9.json"
+    },
+    "handoffEntry": "decgap",
+    "leaf": "260928-MIK-L174",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-decision/v1",
+  "status": "active",
+  "supersedes": []
+}

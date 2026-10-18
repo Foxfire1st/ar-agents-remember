@@ -3,9 +3,9 @@
     "criteria": [
       "joint_guarantee"
     ],
-    "justification": "Exact native generations, response-preserving fallback, revision/ETag-qualified browser reuse, independent document rendering and bounded retention jointly prevent stale content, repeated unchanged work and history growth. A cache hit, fast page or bounded map alone establishes none of the whole guarantee. Timing samples and code-review outcomes remain separately owned evidence."
+    "justification": "Exact native generations, response-preserving fallback, revision/ETag-qualified browser reuse, independent document rendering and bounded retention jointly prevent stale content, repeated unchanged work and history growth. A cache hit, fast page or bounded map establishes none of the whole guarantee. Timing samples and code-review outcomes remain separately owned evidence."
   },
-  "guarantee": "Native change-set computation remains authoritative while reusable results are retained only under complete stable input generations. Qualified body revisions and conditional ETags let bounded dashboard-owned content survive navigation without reparsing or retransmitting unchanged bodies; unchanged working viewer content retains its editor. Every introduced content/pending owner has named retention or cancellation limits. Missing, changing or unreadable generation evidence falls back to native reads without retention, current refusals stay visible, and counter latency/failure never gates the document. Cold reads, actual mutations, eviction, oversized content and changed editor content are outside unchanged-reuse promises.",
+  "guarantee": "Native change-set computation remains authoritative while reusable results are retained only under complete stable input generations. Qualified body revisions and conditional ETags let bounded dashboard-owned content survive navigation without reparsing or retransmitting unchanged bodies; unchanged working viewer content retains its editor. Every introduced content/pending owner has named retention or cancellation limits. Missing, changing or unreadable generation evidence falls back to native reads without retention, with one admitted exception: a refusal may be retained on the named unknown-status stamp, never a successful result. An exact-id-keyed change-set result is served from its key with no observation; that accepted gap is named and is not a claim about unreadable generations. Current refusals stay visible, and counter latency/failure never gates the document. Cold reads, actual mutations, eviction, oversized content and changed editor content are outside unchanged-reuse promises.",
   "id": "FAM-EASWS6",
   "members": [
     "INV-7TMGB0",
@@ -13,7 +13,10 @@
     "INV-C1RTSG",
     "INV-QK8XNM",
     "INV-GDWJKR",
-    "INV-ZNXX7H"
+    "INV-ZNXX7H",
+    "INV-M46Y3E",
+    "INV-BRGWKX",
+    "INV-NPEQB1"
   ],
   "origin": {
     "handoff": {
@@ -26,7 +29,7 @@
     "leaf": "260928-MIK-L168",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "routes": [
     "dashboard/src/data",
     "dashboard/src/panels",

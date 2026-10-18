@@ -27,6 +27,11 @@ No visible-document choice, path authorization or task-state inference occurs he
 
 No additional file-local work is asserted.
 
+
+## Current Behavior
+
+the pending map is now `{controller, promise, waiters}` (`:15-20`). `load(reference, revision, base, signal)` (`:51-100`) returns `withAbort(joined.promise, signal)` and a `leave` that stops the fetch and deletes the entry when the last waiter leaves (`:102-108`); a pre-aborted signal rejects at once; the completed body is still stored under the returned `bodyRevision`. The 64-entry/16-MiB body and preparation caches and the 64-pending bound are unchanged. This supersedes 'Duplicate keys share a promise; capacity aborts oldest pending' only by adding the owner wait and the last-waiter stop.
+
 ## Evidence
 
 ### Docs References

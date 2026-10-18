@@ -16,6 +16,11 @@ Results, repository layouts/manifests and object observations each default to 1,
 
 Successful HTTP bodies receive content-derived weak ETags; matching conditional requests return 304 without the body. Initial discovery, invalidation and native computation may run Git. Input observation still does filesystem work; “unchanged” is not a zero-work claim.
 
+
+## Current Behavior
+
+the module now documents its id-keyed accepted gap in its own docstring (object loss and working-tree attribute/configuration changes are not observed per hit; a hit is the true diff of its ids until eviction or restart). `ChangesetCache` retains only results and repository layouts (no manifest table); `_working_generation` uses `working_generation` (Git status) and returns an `UNKNOWN_STATUS` stamp when Git cannot describe the view. `Retention(keep=..., unknown=...)` lets a refusal settle on an unknown stamp but never a success (`:92-107`, `:132-170`). `_Read.objects` is an OrderedDict bounded by `capacity` (`:115-130`, R1-07); `_Read.finish` checks the `abandoned` event before, during and after admission and withdraws values it already admitted when the read is abandoned (`:132-170`, R1-02). The lock covers only the maps; `_layout`/`_object_revision` run outside it. This supersedes the earlier '1,024 results, repository manifests and object observations' sentence and the unqualified 'errors and changing/unreadable inputs never become reusable results': a refusal may be kept on an unknown stamp, and there is no manifest table.
+
 ## Evidence
 
 - New results are admitted only when all captured inputs remain readable and equal after the request. [1]

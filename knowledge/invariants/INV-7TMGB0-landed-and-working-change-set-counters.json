@@ -9,13 +9,14 @@
   },
   "applicability": "Retained landed/working change-set lists, counters and file contents within the app-owned native read context.",
   "conditions": [
-    "Keys carry the exact read address/endpoints and an observed native input generation; successful pending values enter retention only after consumed inputs still agree.",
-    "Working generations include native head/index/configuration/ignore/attribute and worktree identities; recorded ranges retain native object readability/content proof rather than expiring just because unrelated objects or source commits arrive.",
-    "Missing, unreadable, racing or evicted observations do not authorize reuse; a later restored missing object must revoke the earlier absence proof."
+    "A commit-pair change set is keyed by its two object ids and served again with no observation on a hit; object loss and working-tree attribute/configuration changes are the named accepted gap until eviction or restart.",
+    "A working view has no cache where a plain Git read costs no more than its freshness check; its list is computed by Git on every read, and the exact counter tuple may be reused.",
+    "A working status Git cannot compute is unknown, not unchanged: only a refusal may be kept on it, never a successful result.",
+    "Missing, unreadable, racing or evicted observations do not authorize reuse; a restored missing object revokes an earlier absence proof."
   ],
   "exclusions": [
     "No independent Git diff/parser or second task-stage authority.",
-    "No guarantee that cold/mutated/refused reads perform zero Git; the zero-Git property concerns unchanged admitted generations."
+    "No zero-Git guarantee for a working view or for a cold/mutated/refused read."
   ],
   "id": "INV-7TMGB0",
   "origin": {
@@ -32,9 +33,9 @@
     "leaf": "260928-MIK-L168",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-invariant/v1",
-  "statement": "Landed and working change-set counters, files and file diffs are cached only for the exact native content generation that produced them.",
+  "statement": "Landed change-set counters, files and file diffs are served from their exact native keys, while a working view is computed natively on every read and only its measured counters are reused.",
   "status": "proposed",
   "supersedes": []
 }

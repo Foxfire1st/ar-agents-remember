@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "aa37dc151156c900a476667b0cbba310a971e51a",
-        "content": "sha256:7fd1973e6b1bbfdf4ad26218a832228390085e9f41480f41352b07b2bb335c84",
+        "blob": "5f323cafc543fc6177a811ebe5514517f71cb035",
+        "content": "sha256:961196f88ab60f8db3410c75d9603dfb10c9ebf352d899d8895c81e5330cb057",
         "locator": {
           "kind": "file"
         }
@@ -15,12 +15,12 @@
         "handoffEntry": "L168-W-R168-03",
         "leaf": "260928-MIK-L168"
       },
-      "rationale": "The bounded summary cache survives page navigation and validates its exact generation.",
+      "rationale": "A leaf's summary read now ends on a selection change while in flight; a completed summary is still retained for its leaf.",
       "role": "propagation-persistence"
     },
     {
       "anchor": {
-        "blob": "aa37dc151156c900a476667b0cbba310a971e51a",
+        "blob": "5f323cafc543fc6177a811ebe5514517f71cb035",
         "content": "sha256:f5cda33a04f44fa1cf3806eb26dd2aea42ba7dc422de549adfa34e80a86b72c9",
         "locator": {
           "kind": "symbol",
@@ -37,8 +37,8 @@
     },
     {
       "anchor": {
-        "blob": "aa37dc151156c900a476667b0cbba310a971e51a",
-        "content": "sha256:08e5aa23021b6bc47bd93b00794cae5bcc77cb996fbb2a48347dea65c3c4391e",
+        "blob": "5f323cafc543fc6177a811ebe5514517f71cb035",
+        "content": "sha256:5e6c027382da765e8f98e280560f870951e615875d86950443b3173c400cbb9b",
         "locator": {
           "kind": "symbol",
           "name": "useIntentReviewSummary"
@@ -49,13 +49,13 @@
       "origin": {
         "leaf": "260921-ICR-L46"
       },
-      "rationale": "Keys display by repo/master/leaf/facts, passes facts to the store conditional resource, and drops mounted/sequence-superseded completions; peek never displays old-facts bytes.",
+      "rationale": "The summary effect now ends its request with an owner controller; the mounted/sequence guard still drops a superseded completion.",
       "role": "enforcement"
     },
     {
       "anchor": {
-        "blob": "aa37dc151156c900a476667b0cbba310a971e51a",
-        "content": "sha256:08e5aa23021b6bc47bd93b00794cae5bcc77cb996fbb2a48347dea65c3c4391e",
+        "blob": "5f323cafc543fc6177a811ebe5514517f71cb035",
+        "content": "sha256:9c5dc394f4d396f1c671cafc417e22c266bbd3d4c558fbbbbf568eaade165b72",
         "locator": {
           "end": 140,
           "kind": "line_range",

@@ -51,7 +51,24 @@
         "handoffEntry": "L168-W-R168-06",
         "leaf": "260928-MIK-L168"
       },
-      "rationale": "The viewer preserves its mounted editor while revalidating retained content.",
+      "rationale": "The viewer owns the parsed list and CodeMirror identity across the 2500 ms working poll; a working view is recomputed natively but re-rendered only when its content changes.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "6993a184aeaa068823584aaf01432b6cb2a43a80",
+        "content": "sha256:470c7de8ed7712675ccc1ee21753f5f01bda5dac02be179571b97c71e0e39997",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-R2KEEE",
+      "invariant": "INV-QK8XNM",
+      "origin": {
+        "handoffEntry": "L174-QK-VIEWER",
+        "leaf": "260928-MIK-L174"
+      },
+      "rationale": "The viewer owns the parsed list and CodeMirror identity across the 2500 ms working poll; a working view is recomputed natively but re-rendered only when its content changes.",
       "role": "presentation"
     },
     {

@@ -3,12 +3,12 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "d64c2458cf4416a842ef1eff840bbf025ac0a5a9",
-        "content": "sha256:ec6b17d4b6a918923f7e5eaa7a6e4b544d11cc3c183d3fd6e64649c2f3c53e11",
+        "blob": "bf1cda5edde56c5b7be27ecd4232e531a9fe9da0",
+        "content": "sha256:1e463d05bde6ab36f3d4fab161e3fd30bd9cb57a721208e4ffb1ff928948ebb7",
         "locator": {
-          "end": 47,
+          "end": 73,
           "kind": "line_range",
-          "start": 29
+          "start": 41
         }
       },
       "id": "RLZ-52JCCC",
@@ -22,12 +22,48 @@
     },
     {
       "anchor": {
-        "blob": "d64c2458cf4416a842ef1eff840bbf025ac0a5a9",
-        "content": "sha256:44d37fc3dc6ab84b9f00155301bafd0fff71fc92794f6ac1dcae8d92d4525c9d",
+        "blob": "bf1cda5edde56c5b7be27ecd4232e531a9fe9da0",
+        "content": "sha256:1e463d05bde6ab36f3d4fab161e3fd30bd9cb57a721208e4ffb1ff928948ebb7",
         "locator": {
-          "end": 76,
+          "kind": "symbol",
+          "name": "ConditionalReads.load"
+        }
+      },
+      "id": "RLZ-800XVT",
+      "invariant": "INV-GDWJKR",
+      "origin": {
+        "handoffEntry": "L174-GD-CONDITIONAL",
+        "leaf": "260928-MIK-L174"
+      },
+      "rationale": "The same-facts pending entry is bounded by the resource capacity and is removed when its last live owner leaves; a leaving owner cannot retain or abort another owner's result.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "bf1cda5edde56c5b7be27ecd4232e531a9fe9da0",
+        "content": "sha256:1e463d05bde6ab36f3d4fab161e3fd30bd9cb57a721208e4ffb1ff928948ebb7",
+        "locator": {
+          "kind": "symbol",
+          "name": "ConditionalReads.load"
+        }
+      },
+      "id": "RLZ-BSC2Y0",
+      "invariant": "INV-M46Y3E",
+      "origin": {
+        "handoffEntry": "L174-R1-01",
+        "leaf": "260928-MIK-L174"
+      },
+      "rationale": "The store's pending entry is keyed by URL and facts, counts live waiters, and removes the entry before aborting it when its last waiter leaves; an owner's abort ends only that owner's wait.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "bf1cda5edde56c5b7be27ecd4232e531a9fe9da0",
+        "content": "sha256:b3df157420b1e735c5cac196f2bd1eb55b577fa1bb53dadabff38266fbf2f3fd",
+        "locator": {
+          "end": 117,
           "kind": "line_range",
-          "start": 61
+          "start": 83
         }
       },
       "id": "RLZ-ZC9DFF",
@@ -41,12 +77,12 @@
     },
     {
       "anchor": {
-        "blob": "d64c2458cf4416a842ef1eff840bbf025ac0a5a9",
+        "blob": "bf1cda5edde56c5b7be27ecd4232e531a9fe9da0",
         "content": "sha256:d1995211f0466e3747dfab76e15c7560a779a734a936b937f77fcdcdea410c4d",
         "locator": {
-          "end": 27,
+          "end": 39,
           "kind": "line_range",
-          "start": 24
+          "start": 36
         }
       },
       "id": "RLZ-ZTFRGJ",

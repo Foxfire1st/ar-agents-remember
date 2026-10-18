@@ -53,6 +53,11 @@ components unmounted until body hydration reaches a terminal state.
 
 - Body and preparation history are store-owned and bounded separately at 64 entries / 16 MiB; pending body reads are bounded too. One active oversized body is hook-local, not retained history.
 
+
+## Current Behavior
+
+the body effect now owns an `AbortController` per addressed revision, passes its signal to `resources.load(...)` and aborts it on cleanup (`:179-202`). An `AbortError` is ignored, so a task switch cannot set `failed`; any other rejection still marks the key failed. This supersedes 'An effect cleanup ignores late results after the visible document changes': cleanup now ends the request, and the retained body on a return is the store's completed entry, not a late answer.
+
 ## Evidence
 
 ### Docs References

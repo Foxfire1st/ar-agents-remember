@@ -10,12 +10,12 @@
           "name": "keeps the parsed list and real editor on unchanged polls, then renders edits and current refusals"
         }
       },
-      "facet": "The source-defined working-viewer case manually advances the 2500ms callback, preserves parsed-list and real .cm-mergeView identity on 304, then observes changed-content replacement, current refusal and recovery.",
-      "id": "PRF-3P1P5F",
+      "facet": "The case advances the 2500 ms callback, preserves the parsed list and the real .cm-mergeView identity on an unchanged poll, then replaces on an edited poll and shows a current refusal.",
+      "id": "PRF-H6YTZG",
       "invariant": "INV-QK8XNM",
       "origin": {
-        "handoffEntry": "L168-W-R168-06",
-        "leaf": "260928-MIK-L168"
+        "handoffEntry": "L174-QK-VIEWER",
+        "leaf": "260928-MIK-L174"
       }
     }
   ],

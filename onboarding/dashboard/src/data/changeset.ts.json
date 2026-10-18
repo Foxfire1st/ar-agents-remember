@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "8d239fc2e55f0351e0ed72114b79b8048a172148",
-        "content": "sha256:fa3fc788d1165708fb5127da189d35ee5b2cd661ec6571501f27315f7256e80e",
+        "blob": "ad784b1c6e63764e2f4437c99f28a2b9bd553703",
+        "content": "sha256:3991a7839bfcafd1a3534c2bdaebb09629138b26ca05dc63a7ee0778f9280d22",
         "locator": {
           "kind": "file"
         }
@@ -15,7 +15,7 @@
         "handoffEntry": "L168-W-R168-03",
         "leaf": "260928-MIK-L168"
       },
-      "rationale": "The shared request/cache owner retains per-address counter and file results.",
+      "rationale": "The change-set client takes an owner signal; a completed or retained list is still returned for its own task.",
       "role": "propagation-persistence"
     }
   ],

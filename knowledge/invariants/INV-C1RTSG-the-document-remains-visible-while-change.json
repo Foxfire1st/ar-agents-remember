@@ -9,7 +9,8 @@
   "applicability": "Task-document presentation independently of committed/working/master change-set counter completion.",
   "conditions": [
     "The available summary/document remains rendered while the downstream counter request is pending or fails.",
-    "Counter controls retain their own loading, unrecorded, measured-empty and refusal states without gating the document reader."
+    "Counter controls retain their own loading, unrecorded, measured-empty and refusal states without gating the document reader.",
+    "An abandoned counter read is not a failure: a task switch ends the bar's own counter request and the document remains visible without an error for it."
   ],
   "exclusions": [
     "This is not a guarantee that missing or failed document-body reads become available, nor an acceptance of failed change-set reads."
@@ -26,7 +27,7 @@
     "leaf": "260928-MIK-L168",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-invariant/v1",
   "statement": "The document remains visible while change-set requests are pending or fail.",
   "status": "proposed",

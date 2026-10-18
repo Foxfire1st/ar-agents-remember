@@ -179,6 +179,11 @@ These inherited tables are retained verbatim for navigation and custody. Their s
 
 taskReader renders one Direct execution switch only on a document-backed subTask's own page when its native entry stage is planned, bare giver words on other granted task states, and nothing on grantless states. Master/sprint index rows carry neither a grant control nor a grant mark. The grant hook posts only through the existing adapter and preserves real state on refusal; client affordance/status is not the backend start-evidence gate.
 
+
+## Current Behavior
+
+the detail panel's change-set bar now aborts its own counter read on a task switch and renders no failure for it. The task-reuse and task-switch cases pin the other side: the left page's change set, summary and body end with the selection, while a revisited task is answered from the body the first visit retained with no second request. The mounted chat case pins the operation-level promise that the newly selected task's chat is dispatched and bound while four abandoned page producers remain slow.
+
 ## Evidence
 
 - The list combines selection-episode releases with parent-only unmodified arrows and observes hidden selectedId changes. [194]

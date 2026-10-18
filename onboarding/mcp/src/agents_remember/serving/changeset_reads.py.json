@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "5c5bad11e569807e1f8ac3f6b751e29506700331",
-        "content": "sha256:06ce5567518bb5993819a7819480576ef5d30912e00f0833290d9626d0687545",
+        "blob": "92ae1bfa857dbaf808ea47e97592015fb49a034e",
+        "content": "sha256:810f4e3750a0365227a2cb677133ef85646d2923fca5c5e03a2a61e4ecddf3f0",
         "locator": {
           "kind": "file"
         }
@@ -15,8 +15,26 @@
         "handoffEntry": "L168-W-R168-PRESERVATION",
         "leaf": "260928-MIK-L168"
       },
-      "rationale": "All endpoint variants use the existing native computation under an exact observation capture.",
+      "rationale": "The read wiring serves an id pair with no observation and computes a working view natively; no working generation is bound.",
       "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "92ae1bfa857dbaf808ea47e97592015fb49a034e",
+        "content": "sha256:466d3853142e9f8f7eba582f33a15200367fc6e2f56ca624340d62ab1df1d47d",
+        "locator": {
+          "kind": "symbol",
+          "name": "changed_files_with_counts"
+        }
+      },
+      "id": "RLZ-E0PH8P",
+      "invariant": "INV-7TMGB0",
+      "origin": {
+        "handoffEntry": "L174-7T-READS",
+        "leaf": "260928-MIK-L174"
+      },
+      "rationale": "The read wiring chooses the exact keyed inputs: an id pair is served with no observation, a working view is native with no cache, and a ref-keyed range keeps CommitPresence/RepositoryRead inputs.",
+      "role": "enforcement"
     }
   ],
   "references": {

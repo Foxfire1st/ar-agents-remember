@@ -1,0 +1,144 @@
+{
+  "path": "mcp/tests/test_changeset_cancellation.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "8173d221a70b84eabe6ed5ffff958f523592fa1f",
+        "content": "sha256:11493209ded31686cda7d4efea0243405fc5681f5b9fdf273277183091e6e318",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_an_abandoned_successful_read_is_never_cached"
+        }
+      },
+      "facet": "A completed value from an abandoned read is not retained.",
+      "id": "PRF-2J1MWA",
+      "invariant": "INV-BRGWKX",
+      "origin": {
+        "handoffEntry": "L174-R1-02",
+        "leaf": "260928-MIK-L174"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "8173d221a70b84eabe6ed5ffff958f523592fa1f",
+        "content": "sha256:c7aebf76238fb6e6f363aebc88a65cd73a1f216c10d9371db364f275a8ae564e",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_running_abandoned_job_keeps_its_slot_until_its_worker_ends"
+        }
+      },
+      "facet": "A running abandoned job holds its admission slot until its worker ends.",
+      "id": "PRF-5RQE4X",
+      "invariant": "INV-NPEQB1",
+      "origin": {
+        "handoffEntry": "L174-R1-03",
+        "leaf": "260928-MIK-L174"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "8173d221a70b84eabe6ed5ffff958f523592fa1f",
+        "content": "sha256:1ab58c2ed3ffee06465d3213e9c1c516c0450d3db77d4a9a89946e69c11063ed",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_abandoned_jobs_release_their_copied_request_contexts"
+        }
+      },
+      "facet": "Both populations release the copied request contexts before the occupied worker is released.",
+      "id": "PRF-9CMS0B",
+      "invariant": "INV-NPEQB1",
+      "origin": {
+        "handoffEntry": "L174-R1-03",
+        "leaf": "260928-MIK-L174"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "8173d221a70b84eabe6ed5ffff958f523592fa1f",
+        "content": "sha256:e9f49b9e4eed6f6df36775e1c4b2bb6bfaf7497d02f40dfc67249aad86ed7677",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_disconnected_read_ends_its_git_process"
+        }
+      },
+      "facet": "A disconnected read returns and its recorded Git child pid is gone.",
+      "id": "PRF-B3Q8Y7",
+      "invariant": "INV-BRGWKX",
+      "origin": {
+        "handoffEntry": "L174-R1-02",
+        "leaf": "260928-MIK-L174"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "8173d221a70b84eabe6ed5ffff958f523592fa1f",
+        "content": "sha256:53e8140b190cb7a5f486bbfc77c9b5d9f8e90bd626df12f05d60994897cc77b5",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_over_capacity_answers_an_explicit_refusal"
+        }
+      },
+      "facet": "A request over the cap receives an explicit 503.",
+      "id": "PRF-DRWQR9",
+      "invariant": "INV-NPEQB1",
+      "origin": {
+        "handoffEntry": "L174-R1-03",
+        "leaf": "260928-MIK-L174"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "8173d221a70b84eabe6ed5ffff958f523592fa1f",
+        "content": "sha256:5d43c7d519c7930ad5e3ac015c2658e01539f2542dbca7a93e3fda3c0f524844",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_the_family_bounds_admits_and_reclaims_at_over_capacity"
+        }
+      },
+      "facet": "Both populations prove the cap, the explicit 503, the empty abandoned queue and current/other-family service.",
+      "id": "PRF-P0QGWW",
+      "invariant": "INV-NPEQB1",
+      "origin": {
+        "handoffEntry": "L174-R1-03",
+        "leaf": "260928-MIK-L174"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "8173d221a70b84eabe6ed5ffff958f523592fa1f",
+        "content": "sha256:3cff37496d377c6f248d11e6c742357dc877383c59f6082b8ea8d7c1be6a61da",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_read_abandoned_during_finish_admits_nothing"
+        }
+      },
+      "facet": "An event set during finish withdraws the values already admitted.",
+      "id": "PRF-QSSZXD",
+      "invariant": "INV-BRGWKX",
+      "origin": {
+        "handoffEntry": "L174-R1-02",
+        "leaf": "260928-MIK-L174"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "8173d221a70b84eabe6ed5ffff958f523592fa1f",
+        "content": "sha256:f6e043308c841b03977173d7ce337fbef278b6c40f8bd740f97757eec2450767",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_queued_abandoned_read_never_produces"
+        }
+      },
+      "facet": "A queued abandoned read never runs its producer.",
+      "id": "PRF-SWCJFS",
+      "invariant": "INV-BRGWKX",
+      "origin": {
+        "handoffEntry": "L174-R1-02",
+        "leaf": "260928-MIK-L174"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {},
+  "schema": "ar-onboarding-file/v1"
+}

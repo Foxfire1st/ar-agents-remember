@@ -12,7 +12,9 @@
     "Full bodies use qualified reference plus the returned bodyRevision; late or crossing responses do not occupy an unrelated requested/new revision.",
     "Pure body preparation is revision-keyed with live callbacks/current task facts outside the retained preparation.",
     "Conditional result stores preserve parsed identity on a matching 304 without decoding a body; task bodies already retained under an unchanged revision need no duplicate body fetch.",
-    "Current refusals/failures are not hidden by an old retained success, and invalidation tokens control when retained counters/summary data can be shown."
+    "Current refusals/failures are not hidden by an old retained success, and invalidation tokens control when retained counters/summary data can be shown.",
+    "An in-flight body, counter or summary read ends when its task is left; a completed value remains retained for its own task.",
+    "The body store owns pending waiter accounting and completed-body retention; a reader's signal ends only that reader's wait."
   ],
   "exclusions": [
     "No unbounded retention after LRU eviction, no oversized-content retention guarantee, and no immortal cache lifetime across store reset.",
@@ -35,7 +37,7 @@
     "leaf": "260928-MIK-L168",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-invariant/v1",
   "statement": "Per-task bodies, counters and intent summaries survive navigation and unchanged revalidation returns no body.",
   "status": "proposed",

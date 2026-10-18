@@ -83,6 +83,11 @@ completed task whose worktree is gone — and 400 `bad-path`) and stops there. S
 FastAPI dashboard server owns repo/scope resolution and path safety.
 
 `TaskChangeset` carries optional `comparison` and `trees` (`codeBase`, `codeTip`, `memoryBase`, `memoryTip`), so a comparison answer uses the task shape with its identity attached. `FileDiff.kind` remains the existing `code` | `memory` discriminator. `comparisonFileDiff` calls the file-diff endpoint with `comparison` as its selector (the server refuses a `mode` combination). The removed `comparisonChangeset` helper is not a current export. Existing scope, leaf and master readers retain their request shapes.
+
+## Current Behavior
+
+the change-set client now carries an owner signal. `getChangeSetJson(url, signal)` passes it to the store's conditional resource (`cache.load(url, decodeChangeSetJson, url, signal)`) and rethrows an `AbortError` unchanged instead of wrapping it as a network failure; `loadChangeSet(target, signal)` exposes the same signal. A read its page abandoned therefore leaves no error on that owner. A live same-key owner keeps the shared fetch and its retained result; the pending entry is removed and the fetch aborted only when the last waiter leaves. This supersedes the sentence that the client only throws `ReviewTransportError`: an aborted read is not a transport failure.
+
 ## Evidence
 
 ### Docs References

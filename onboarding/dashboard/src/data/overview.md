@@ -53,6 +53,11 @@ These inherited tables are retained verbatim for navigation and custody. Their s
 
 directExecutionGrant.ts posts Give/Revoke to the developer endpoint and preserves typed refusal. The adapter shapes transport only; product grant and ordinary-start authority remain server-owned.
 
+
+## Current Behavior
+
+the store's three `ConditionalReads` resources now own reference-counted pending fetches: a same-facts joiner receives its own wait over one fetch, a leaving owner cannot abort a live joiner, and the last waiter removes the entry before aborting. `TaskDocumentResources` uses the same waiter rule and `abortableRead.ts` supplies `abortedRead`/`isAbortedRead`/`withAbort`. The task entry's change-set bar, summary and body abort their own reads on a selection change, and an aborted read is not rendered as a failure. The capacity/byte limits and the 256/64/128 resource capacities are unchanged. Earlier sentences that describe a different-facts read as simply aborting the older controller are historical; the waiter count is now part of the contract.
+
 ## Evidence
 - The store owns task-document resources and separate bounded conditional-read caches for change-set lists, files and intent summaries. [108]
 

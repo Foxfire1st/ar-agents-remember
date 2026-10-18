@@ -1,0 +1,2397 @@
+{
+  "closed": true,
+  "leaf": "260928-MIK-L174",
+  "rows": [
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-00SV5A",
+      "items": [
+        "sha256:2dd4ff0288e4321624b569cfe0e80abc6b00b0290f83f6c30b561220b7d34e06"
+      ],
+      "reason": "Part of the one cancellation-aware wait path (L174-R1-02 and the runner's one kill owner); no separate invariant.",
+      "subject": "hunk:sha256:2dd4ff0288e4321624b569cfe0e80abc6b00b0290f83f6c30b561220b7d34e06"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-0AZFAB",
+      "items": [
+        "sha256:3f5156b13987560508a6e72219dd49c0d8c6ce017b93ca4fe410af2f733a70a1"
+      ],
+      "reason": "Test evidence/case change: the hunk supports the named invariant's proves entries; it asserts no separate product invariant.",
+      "subject": "hunk:sha256:3f5156b13987560508a6e72219dd49c0d8c6ce017b93ca4fe410af2f733a70a1"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-0F87CW",
+      "items": [
+        "sha256:e55b6a3b467a6fd85bd736d20aa77e3d117a1d47f2efff1dcfc275e9d39ae5fd"
+      ],
+      "reason": "Test evidence/case change: the hunk supports the named invariant's proves entries; it asserts no separate product invariant.",
+      "subject": "hunk:sha256:e55b6a3b467a6fd85bd736d20aa77e3d117a1d47f2efff1dcfc275e9d39ae5fd"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-1580T0",
+      "items": [
+        "sha256:d2f0d7f230c0846b6c8ec4200122e33785e04ab4cdcfe7a767b1f25448ea5336"
+      ],
+      "reason": "Part of the cache's L174-R1-02/R1-04/R1-07 realization or a doc/import change; the named entries cover the invariant-bearing behavior.",
+      "subject": "hunk:sha256:d2f0d7f230c0846b6c8ec4200122e33785e04ab4cdcfe7a767b1f25448ea5336"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-1SC5KH",
+      "items": [
+        "sha256:5de6a23a9de9506fb37161358cb51fa55d93c82f5206b640e8e026b00834a05b"
+      ],
+      "reason": "Route wiring for the scheduler's admission and cancellation bounds (L174-R1-02/R1-03); no separate invariant.",
+      "subject": "hunk:sha256:5de6a23a9de9506fb37161358cb51fa55d93c82f5206b640e8e026b00834a05b"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-1SN8QN",
+      "items": [
+        "sha256:5e9d237515ffbcc8121d00d85e16f27e0fbea2141da79812d860a870ec29d213"
+      ],
+      "reason": "Test evidence/case change: the hunk supports the named invariant's proves entries; it asserts no separate product invariant.",
+      "subject": "hunk:sha256:5e9d237515ffbcc8121d00d85e16f27e0fbea2141da79812d860a870ec29d213"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-2RAFGW",
+      "items": [
+        "sha256:d7c17093214b6362ae72b5fe95693cab40f8ec39c2677d56984df1d9e31657d4"
+      ],
+      "reason": "The L174 current-intent delta adds the rule-5/owner-cancellation account this card's readers need; the historical text remains above it.",
+      "sources": [
+        {
+          "blob": "0664e76469b7fd63cd8e3da581d1b99a59d8d550",
+          "path": "dashboard/src/data/conditionalReads.test.ts"
+        }
+      ],
+      "subject": "onboarding:dashboard/src/data/conditionalReads.test.ts"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-2XXPS1",
+      "items": [
+        "sha256:35939cc7462f79be3a3c6d1855a0f32071e9e8e570238d6f92aa1f77ea173aeb"
+      ],
+      "reason": "Test evidence/case change: the hunk supports the named invariant's proves entries; it asserts no separate product invariant.",
+      "subject": "hunk:sha256:35939cc7462f79be3a3c6d1855a0f32071e9e8e570238d6f92aa1f77ea173aeb"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-115RDW8H",
+          "revision": 2
+        },
+        {
+          "id": "INV-74578B97",
+          "revision": 3
+        },
+        {
+          "id": "INV-8BYGSPZF",
+          "revision": 3
+        },
+        {
+          "id": "INV-8FWJM8RR",
+          "revision": 3
+        },
+        {
+          "id": "INV-EZ8QKFX6",
+          "revision": 3
+        },
+        {
+          "id": "INV-R93S8Y30",
+          "revision": 3
+        },
+        {
+          "id": "INV-SVZY1FHR",
+          "revision": 2
+        },
+        {
+          "id": "INV-T0EWDB7H",
+          "revision": 4
+        },
+        {
+          "id": "INV-TH4KXFTX",
+          "revision": 2
+        },
+        {
+          "id": "INV-WCEGX72X",
+          "revision": 2
+        }
+      ],
+      "id": "ROW-33GS5Y",
+      "items": [
+        "sha256:f23c82b3c132dfc0f84a850806bec2c5433da972f99458fdd1b41ffb30ac15fb"
+      ],
+      "reason": "The change only renews the conditional-read and intent-summary realizations of INV-74578B97 and INV-115RDW8H, re-anchoring two moved ranges; no member's guarantee or applicability changes. All ten members were examined.",
+      "revision": 4,
+      "subject": "FAM-WEF4M4H1"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "5cf51539b6df8e9517869d32694e6d48754342e6",
+            "content": "sha256:899b464fd62e8002bed4f1b81ce361fc612cf6a82dcd813d0aff0e7949f78456",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/detail-panel/changeSetBar.tsx"
+          },
+          "before": {
+            "blob": "cb170808c1e7ad3aa75e0bfd0860f2206b2291c8",
+            "content": "sha256:582603b7dda5305dac858f07ff7dfc943b8ca50eb72d0b07a2f9cf36f157b09d",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/detail-panel/changeSetBar.tsx"
+          },
+          "id": "RLZ-ZBAHA3"
+        }
+      ],
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-3QH46C",
+      "items": [
+        "sha256:c97bd6a09907225ec7fd1e75b5e71af1d2aa1faed0ace53bddb3d3731246f86e"
+      ],
+      "reason": "The L174 task switch ends the bar's counter request and renders no failure for it. That is a new guarantee for an aborted read, so the row is clarify, not no_impact; the invariant's statement is otherwise unchanged.",
+      "revision": 2,
+      "subject": "INV-C1RTSG"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-3RBPG4",
+      "items": [
+        "sha256:10babee07895c1d6f969e983f19e3907c67b3addbb7c2e2fc01ea7aca7bb8de4"
+      ],
+      "reason": "Part of the INV-7TMGB0 cached pair-validation realization; no separate invariant.",
+      "subject": "hunk:sha256:10babee07895c1d6f969e983f19e3907c67b3addbb7c2e2fc01ea7aca7bb8de4"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-4YBSYP",
+      "items": [
+        "sha256:f8509ee96b09aecaf4f2bbc2bfca92d2aedd21303d65b0a6f1cc257a0b7c2f0c"
+      ],
+      "reason": "Part of the cache's L174-R1-02/R1-04/R1-07 realization or a doc/import change; the named entries cover the invariant-bearing behavior.",
+      "subject": "hunk:sha256:f8509ee96b09aecaf4f2bbc2bfca92d2aedd21303d65b0a6f1cc257a0b7c2f0c"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-4ZZF6X",
+      "items": [
+        "sha256:daef3d37eafee4a8d3fa1505f89273df228bdaa0d02000c9a03d4bfa04515762"
+      ],
+      "reason": "The L174 current-intent delta adds the rule-5/owner-cancellation account this card's readers need; the historical text remains above it.",
+      "sources": [
+        {
+          "blob": "5f323cafc543fc6177a811ebe5514517f71cb035",
+          "path": "dashboard/src/data/reviewIntentSummary.ts"
+        }
+      ],
+      "subject": "onboarding:dashboard/src/data/reviewIntentSummary.ts"
+    },
+    {
+      "because": [
+        {
+          "id": "MIK-R176",
+          "packet": "requirements/MIK-R176-v2-a-task-switch-never-waits-for-the-task-left-behind.md",
+          "task": {
+            "path": "260928_maintained-invariant-knowledge",
+            "repository": "agents-remember"
+          },
+          "version": "v2"
+        }
+      ],
+      "covers": [
+        {
+          "after": {
+            "blob": "5f323cafc543fc6177a811ebe5514517f71cb035",
+            "content": "sha256:9c5dc394f4d396f1c671cafc417e22c266bbd3d4c558fbbbbf568eaade165b72",
+            "locator": {
+              "end": 140,
+              "kind": "line_range",
+              "start": 104
+            },
+            "path": "dashboard/src/data/reviewIntentSummary.ts"
+          },
+          "before": {
+            "blob": "aa37dc151156c900a476667b0cbba310a971e51a",
+            "content": "sha256:08e5aa23021b6bc47bd93b00794cae5bcc77cb996fbb2a48347dea65c3c4391e",
+            "locator": {
+              "end": 140,
+              "kind": "line_range",
+              "start": 104
+            },
+            "path": "dashboard/src/data/reviewIntentSummary.ts"
+          },
+          "id": "RLZ-YNCHSBQT"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-5161TF",
+      "items": [
+        "sha256:c956ccbb5a5226bd995c31dd1ccae3f9bbcb63e291e30dc813f66b701855fa83"
+      ],
+      "reason": "The summary hook's read range moved with the owner AbortController; the invariant's meaning and its one-summary/one-change-set guarantee are unchanged. Re-anchor its realization to the current range.",
+      "revision": 2,
+      "subject": "INV-115RDW8H"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-51GP9C",
+      "items": [
+        "sha256:1a978b53ab2a753306d10aeb2def5a8c46748c07ff61215913eae6c2888c0988"
+      ],
+      "reason": "Part of the cache's L174-R1-02/R1-04/R1-07 realization or a doc/import change; the named entries cover the invariant-bearing behavior.",
+      "subject": "hunk:sha256:1a978b53ab2a753306d10aeb2def5a8c46748c07ff61215913eae6c2888c0988"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-5A1R0M",
+      "items": [
+        "sha256:c48dd3117a255b1f7670352097377e0f326c707e4faf6f66256b90846362f6fc"
+      ],
+      "reason": "Test evidence/case change: the hunk supports the named invariant's proves entries; it asserts no separate product invariant.",
+      "subject": "hunk:sha256:c48dd3117a255b1f7670352097377e0f326c707e4faf6f66256b90846362f6fc"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-5DNKJT",
+      "items": [
+        "sha256:99321e5bb3591d4d6651bcef040952d0f010d3c15523ddc158be918c13c16d0f"
+      ],
+      "reason": "The L174 current-intent delta adds the rule-5/owner-cancellation account this card's readers need; the historical text remains above it.",
+      "sources": [
+        {
+          "blob": "d023d83adaf5c952b460485f75bb778c9bfa20ad",
+          "path": "mcp/src/agents_remember/serving/changeset_generation.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/serving/changeset_generation.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-5PXEES",
+      "items": [
+        "sha256:17f0d6c55652eae2a9d82e3f509f6f3e3404e70652d82f48ad313b9b9f5527f7"
+      ],
+      "reason": "The L174 current-intent delta adds the rule-5/owner-cancellation account this card's readers need; the historical text remains above it.",
+      "sources": [
+        {
+          "blob": "aa118718995cd5e32186a5a5c7237cce3f9f54d3",
+          "path": "mcp/src/agents_remember/kernel/git_command.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/kernel/git_command.py"
+    },
+    {
+      "because": [
+        {
+          "id": "MIK-R176",
+          "packet": "requirements/MIK-R176-v2-a-task-switch-never-waits-for-the-task-left-behind.md",
+          "task": {
+            "path": "260928_maintained-invariant-knowledge",
+            "repository": "agents-remember"
+          },
+          "version": "v2"
+        }
+      ],
+      "covers": [
+        {
+          "after": "absent",
+          "before": {
+            "blob": "4da9c75c2bbdb93366e2dad5e8304a728283d6d2",
+            "content": "sha256:71687f6b613f24326693171fbcda6d786010db938801cb6ca4700fab6bd4b773",
+            "locator": {
+              "kind": "symbol",
+              "name": "keeps the parsed list and real editor on unchanged polls, then renders edits and current refusals"
+            },
+            "path": "dashboard/src/panels/changeset/ChangeSetViewer.cache.test.tsx"
+          },
+          "id": "PRF-3P1P5F"
+        },
+        {
+          "after": "absent",
+          "before": {
+            "blob": "68ace12aad0a8e57a12575a620a5640da7ef6e6e",
+            "content": "sha256:7849af570e3373124571e54edf0f1654df1cda9cb099956b64a8b354d879b85c",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_working_bytes_and_unchanged_poll_then_restored_mtime_edit"
+            },
+            "path": "mcp/tests/test_changeset_cache.py"
+          },
+          "id": "PRF-6M4ANV"
+        },
+        {
+          "after": {
+            "blob": "4da9c75c2bbdb93366e2dad5e8304a728283d6d2",
+            "content": "sha256:71687f6b613f24326693171fbcda6d786010db938801cb6ca4700fab6bd4b773",
+            "locator": {
+              "kind": "symbol",
+              "name": "keeps the parsed list and real editor on unchanged polls, then renders edits and current refusals"
+            },
+            "path": "dashboard/src/panels/changeset/ChangeSetViewer.cache.test.tsx"
+          },
+          "before": "absent",
+          "id": "PRF-H6YTZG"
+        },
+        {
+          "after": "absent",
+          "before": {
+            "blob": "fd2e21cf15548f5d312e19dede561f645cac01df",
+            "content": "sha256:169f1464d130b73cfd7185885fee84764bf147cdc4a92feef92c86339e338f14",
+            "locator": {
+              "kind": "symbol",
+              "name": "ChangesetCache"
+            },
+            "path": "mcp/src/agents_remember/serving/changeset_cache.py"
+          },
+          "id": "RLZ-4XGKMJ"
+        },
+        {
+          "after": {
+            "blob": "6993a184aeaa068823584aaf01432b6cb2a43a80",
+            "content": "sha256:470c7de8ed7712675ccc1ee21753f5f01bda5dac02be179571b97c71e0e39997",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/changeset/ChangeSetViewer.tsx"
+          },
+          "before": {
+            "blob": "6993a184aeaa068823584aaf01432b6cb2a43a80",
+            "content": "sha256:470c7de8ed7712675ccc1ee21753f5f01bda5dac02be179571b97c71e0e39997",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/changeset/ChangeSetViewer.tsx"
+          },
+          "id": "RLZ-BP0YTK"
+        },
+        {
+          "after": {
+            "blob": "6993a184aeaa068823584aaf01432b6cb2a43a80",
+            "content": "sha256:470c7de8ed7712675ccc1ee21753f5f01bda5dac02be179571b97c71e0e39997",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/changeset/ChangeSetViewer.tsx"
+          },
+          "before": "absent",
+          "id": "RLZ-R2KEEE"
+        }
+      ],
+      "disposition": "changed",
+      "effect": "weaken",
+      "id": "ROW-68E05Y",
+      "items": [
+        "sha256:51915f3d6639ae57d8a1f926d70196498f3a699e5f71be3700b5111995d6d2e5"
+      ],
+      "reason": "Rule 5 withdraws the no-Git-computation guarantee for the working viewer: an unchanged 2500 ms poll now recomputes the native change set and only re-renders when the content changes. The viewer retains its parsed list and CodeMirror identity; the cache no longer serves a working viewer result. Evidence (L174-QK-VIEWER): verdict-r4-a9.md; ChangeSetViewer.cache.test.tsx",
+      "revision": 2,
+      "subject": "INV-QK8XNM"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-69388C",
+      "items": [
+        "sha256:8d6c910f4fc0b6e590370fc99fb96f6555cb81f1eabbd5f85efc2c8c79ce9667"
+      ],
+      "reason": "Part of the unknown-status retention condition of INV-7TMGB0; no separate invariant.",
+      "subject": "hunk:sha256:8d6c910f4fc0b6e590370fc99fb96f6555cb81f1eabbd5f85efc2c8c79ce9667"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-6G8YTK",
+      "items": [
+        "sha256:829a45b424d9bbb5a131c8eb36109d673c5a379cf5ffed1563971cebee6a723d"
+      ],
+      "reason": "Test evidence/case change: the hunk supports the named invariant's proves entries; it asserts no separate product invariant.",
+      "subject": "hunk:sha256:829a45b424d9bbb5a131c8eb36109d673c5a379cf5ffed1563971cebee6a723d"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "examined": [
+        {
+          "id": "INV-7TMGB0",
+          "revision": 2
+        },
+        {
+          "id": "INV-BRGWKX",
+          "revision": 1
+        },
+        {
+          "id": "INV-C1RTSG",
+          "revision": 2
+        },
+        {
+          "id": "INV-GDWJKR",
+          "revision": 1
+        },
+        {
+          "id": "INV-M46Y3E",
+          "revision": 1
+        },
+        {
+          "id": "INV-NPEQB1",
+          "revision": 1
+        },
+        {
+          "id": "INV-QK8XNM",
+          "revision": 2
+        },
+        {
+          "id": "INV-WNHAWD",
+          "revision": 2
+        },
+        {
+          "id": "INV-ZNXX7H",
+          "revision": 2
+        }
+      ],
+      "id": "ROW-6J38KW",
+      "items": [
+        "sha256:d3be634b4178006d9df9196c3e1d39ac6207a55013ca847584707d944fedfea6"
+      ],
+      "reason": "The joint guarantee is reconciled with the admitted unknown-status refusal exception and the exact-id no-observation policy: a refusal may be retained on the unknown-status stamp, a successful result may not; an exact-id-keyed change-set result is served from its key with no observation. All nine members examined (L174-M1-02).",
+      "revision": 2,
+      "subject": "FAM-EASWS6"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-6MMWXR",
+      "items": [
+        "sha256:5e61ce1b186d088793ba6d4e61000141eacbe96830453ba500571d5054f2b51e"
+      ],
+      "reason": "L174 adds this card for a new realizing or proving file; the path had no current onboarding contract.",
+      "sources": [
+        {
+          "blob": "0ef108498d3212184af9d534cd74a9930beb36b2",
+          "path": "dashboard/src/data/readOwnership.test.ts"
+        }
+      ],
+      "subject": "onboarding:dashboard/src/data/readOwnership.test.ts"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-6PPNGP",
+      "items": [
+        "sha256:245bcc22c45a3e61f41e9e4dbfcea1795634783f4b78c0f17a36e2859b57f3be"
+      ],
+      "reason": "Part of the L174-R1-01/INV-WNHAWD/INV-C1RTSG abort and owner-wait wiring; the named entries cover the invariant-bearing behavior.",
+      "subject": "hunk:sha256:245bcc22c45a3e61f41e9e4dbfcea1795634783f4b78c0f17a36e2859b57f3be"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-6TP98D",
+      "items": [
+        "sha256:ca7e02cb1596ff37d3e8e8a43b713fa1b191dfc9c6579245db5019f3cbb525cc"
+      ],
+      "reason": "Part of the L174-R1-01/INV-WNHAWD/INV-C1RTSG abort and owner-wait wiring; the named entries cover the invariant-bearing behavior.",
+      "subject": "hunk:sha256:ca7e02cb1596ff37d3e8e8a43b713fa1b191dfc9c6579245db5019f3cbb525cc"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-712AJA",
+      "items": [
+        "sha256:29ee4c599c150c9589c24dc4fa7b46fb7743e96fc2ed93b08326187ce17db7f4"
+      ],
+      "reason": "Part of the one cancellation-aware wait path (L174-R1-02 and the runner's one kill owner); no separate invariant.",
+      "subject": "hunk:sha256:29ee4c599c150c9589c24dc4fa7b46fb7743e96fc2ed93b08326187ce17db7f4"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-7KMPCM",
+      "items": [
+        "sha256:ddbbc18ca8540a89f072c0c088720114d6e40c9369a7df790bba23953f3dab7b"
+      ],
+      "reason": "Part of the cache's L174-R1-02/R1-04/R1-07 realization or a doc/import change; the named entries cover the invariant-bearing behavior.",
+      "subject": "hunk:sha256:ddbbc18ca8540a89f072c0c088720114d6e40c9369a7df790bba23953f3dab7b"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-7KSKDQ",
+      "items": [
+        "sha256:149cada6f57964f87c89b831c612109d3a11759eb32c6c46e3cdc20bcead04b8"
+      ],
+      "reason": "Test evidence/case change: the hunk supports the named invariant's proves entries; it asserts no separate product invariant.",
+      "subject": "hunk:sha256:149cada6f57964f87c89b831c612109d3a11759eb32c6c46e3cdc20bcead04b8"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-7R3443",
+      "items": [
+        "sha256:9a0d799d30d44df3f53ae6accbdd9675f3f0317ff221f2256c19270a15e3366c"
+      ],
+      "reason": "The L174 current-intent delta adds the rule-5/owner-cancellation account this card's readers need; the historical text remains above it.",
+      "sources": [
+        {
+          "blob": "5cf51539b6df8e9517869d32694e6d48754342e6",
+          "path": "dashboard/src/panels/detail-panel/changeSetBar.tsx"
+        }
+      ],
+      "subject": "onboarding:dashboard/src/panels/detail-panel/changeSetBar.tsx"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-7SZBZS",
+      "items": [
+        "sha256:bf006ab96cb8bca0061d848b5743dbb8a6ff67f0851036a4e2c34a45ba20b265"
+      ],
+      "reason": "Test evidence/case change: the hunk supports the named invariant's proves entries; it asserts no separate product invariant.",
+      "subject": "hunk:sha256:bf006ab96cb8bca0061d848b5743dbb8a6ff67f0851036a4e2c34a45ba20b265"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-7TED38",
+      "items": [
+        "sha256:6a8c3bcd9ad878c3f819d7cabc1ae39ead9ebde0aa477a3a76a506299c3d5799"
+      ],
+      "reason": "Route wiring for the scheduler's admission and cancellation bounds (L174-R1-02/R1-03); no separate invariant.",
+      "subject": "hunk:sha256:6a8c3bcd9ad878c3f819d7cabc1ae39ead9ebde0aa477a3a76a506299c3d5799"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-8144M5",
+      "items": [
+        "sha256:8443f9926d1ef89f96cd47ba445acb579bc2331c6c996bddd88ea603661ccbef"
+      ],
+      "reason": "The L174 current-intent delta adds the rule-5/owner-cancellation account this card's readers need; the historical text remains above it.",
+      "sources": [
+        {
+          "blob": "91a45a737a391b17be5e44f0de88da7af08dc61c",
+          "path": "dashboard/src/data/taskDocuments.ts"
+        }
+      ],
+      "subject": "onboarding:dashboard/src/data/taskDocuments.ts"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-8EKT4M",
+      "items": [
+        "sha256:f359d900455c72fc2e950475c649542c18e34935253d8c64d05303f6d9abf8ba"
+      ],
+      "reason": "Test evidence/case change: the hunk supports the named invariant's proves entries; it asserts no separate product invariant.",
+      "subject": "hunk:sha256:f359d900455c72fc2e950475c649542c18e34935253d8c64d05303f6d9abf8ba"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-8N47VR",
+      "items": [
+        "sha256:307ad05f4875d4b46011204d4df65d3309b0840a7e327cedbc17600966e8bbf9"
+      ],
+      "reason": "Test evidence/case change: the hunk supports the named invariant's proves entries; it asserts no separate product invariant.",
+      "subject": "hunk:sha256:307ad05f4875d4b46011204d4df65d3309b0840a7e327cedbc17600966e8bbf9"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-92VQCX",
+      "items": [
+        "sha256:656d3ea0f7d69949b60ac24e0ed8c23d75d39ec53a1f8794908036e3aca195dd"
+      ],
+      "reason": "Test evidence/case change: the hunk supports the named invariant's proves entries; it asserts no separate product invariant.",
+      "subject": "hunk:sha256:656d3ea0f7d69949b60ac24e0ed8c23d75d39ec53a1f8794908036e3aca195dd"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-9Z6CZT",
+      "items": [
+        "sha256:b754a13ce8e2ae5df513cb68e6e0aee1ecdcdc384d9f5392fc68db7857da6d64"
+      ],
+      "reason": "Test evidence/case change: the hunk supports the named invariant's proves entries; it asserts no separate product invariant.",
+      "subject": "hunk:sha256:b754a13ce8e2ae5df513cb68e6e0aee1ecdcdc384d9f5392fc68db7857da6d64"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-A2P12P",
+      "items": [
+        "sha256:7bf76b9959ba7061a7a3bbba896a429ba5425b2642e6dd2f937d1a6be312e4d5"
+      ],
+      "reason": "The L174 current-intent delta adds the rule-5/owner-cancellation account this card's readers need; the historical text remains above it.",
+      "sources": [
+        {
+          "blob": "bf1cda5edde56c5b7be27ecd4232e531a9fe9da0",
+          "path": "dashboard/src/data/conditionalReads.ts"
+        }
+      ],
+      "subject": "onboarding:dashboard/src/data/conditionalReads.ts"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-AH8518",
+      "items": [
+        "sha256:87516212e6f9018225d2210f993e91f32578663f05f3926afb6688942f9f7089"
+      ],
+      "reason": "Part of the cache's L174-R1-02/R1-04/R1-07 realization or a doc/import change; the named entries cover the invariant-bearing behavior.",
+      "subject": "hunk:sha256:87516212e6f9018225d2210f993e91f32578663f05f3926afb6688942f9f7089"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-AHP54S",
+      "items": [
+        "sha256:8b8978c1d0143b2fac327714b73aba0ce909a84faf1821113c6c95fc1802c842"
+      ],
+      "reason": "Route wiring for the scheduler's admission and cancellation bounds (L174-R1-02/R1-03); no separate invariant.",
+      "subject": "hunk:sha256:8b8978c1d0143b2fac327714b73aba0ce909a84faf1821113c6c95fc1802c842"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-AS7FAC",
+      "items": [
+        "sha256:086c5fdbc13234f7715197a006a5b4cd8ceab96b080b1f61f211250e7bb04bc0"
+      ],
+      "reason": "The L174 current-intent delta adds the rule-5/owner-cancellation account this card's readers need; the historical text remains above it.",
+      "sources": [
+        {
+          "blob": "ad784b1c6e63764e2f4437c99f28a2b9bd553703",
+          "path": "dashboard/src/data/changeset.ts"
+        }
+      ],
+      "subject": "onboarding:dashboard/src/data/changeset.ts"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-B0YPE7",
+      "items": [
+        "sha256:bc17e3c6aee264abccf789a33bdd99fda8d9af691883fc3e8cbf0abbb5d3e98c"
+      ],
+      "reason": "Part of the one cancellation-aware wait path (L174-R1-02 and the runner's one kill owner); no separate invariant.",
+      "subject": "hunk:sha256:bc17e3c6aee264abccf789a33bdd99fda8d9af691883fc3e8cbf0abbb5d3e98c"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-B23DJ1",
+      "items": [
+        "sha256:ee819a4a59bd0ea6b304c510bdb6b4e7db90832895a8eafe6c290fd89d8de895"
+      ],
+      "reason": "Route wiring for the scheduler's admission and cancellation bounds (L174-R1-02/R1-03); no separate invariant.",
+      "subject": "hunk:sha256:ee819a4a59bd0ea6b304c510bdb6b4e7db90832895a8eafe6c290fd89d8de895"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-B5GMWF",
+      "items": [
+        "sha256:6ca2e7b920aa3b3068bb50a219f1201d4ecc6108dd43b9e4825dd2fa2a73195f"
+      ],
+      "reason": "The L174 current-intent delta adds the rule-5/owner-cancellation account this card's readers need; the historical text remains above it.",
+      "sources": [
+        {
+          "blob": "92ae1bfa857dbaf808ea47e97592015fb49a034e",
+          "path": "mcp/src/agents_remember/serving/changeset_reads.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/serving/changeset_reads.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-B6V955",
+      "items": [
+        "sha256:9159f36e79477f9a3281e27a512dc229fe90668ca22ec564c46601a0550438a9"
+      ],
+      "reason": "Part of the L174-R1-02/R1-03 scheduler construction and the INV-GDWJKR realization; no separate hunk-level invariant.",
+      "subject": "hunk:sha256:9159f36e79477f9a3281e27a512dc229fe90668ca22ec564c46601a0550438a9"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-B9EKX4",
+      "items": [
+        "sha256:ffc38d7a163de99684b14133f553facb422abbe2d0d8e0cae1ed29c3797f9413"
+      ],
+      "reason": "Test evidence/case change: the hunk supports the named invariant's proves entries; it asserts no separate product invariant.",
+      "subject": "hunk:sha256:ffc38d7a163de99684b14133f553facb422abbe2d0d8e0cae1ed29c3797f9413"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-B9KH4A",
+      "items": [
+        "sha256:d8a143981e5a7a3a2aab0b2e5fdb928e21f7e95f1c6b7035418d7e6853ff8caa"
+      ],
+      "reason": "Test evidence/case change: the hunk supports the named invariant's proves entries; it asserts no separate product invariant.",
+      "subject": "hunk:sha256:d8a143981e5a7a3a2aab0b2e5fdb928e21f7e95f1c6b7035418d7e6853ff8caa"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-BSNZ83",
+      "items": [
+        "sha256:10babee07895c1d6f969e983f19e3907c67b3addbb7c2e2fc01ea7aca7bb8de4",
+        "sha256:3238396ffe5b6678f380e7c72d17cd68f447b12c260a60b31866a42394ec8189",
+        "sha256:477089bb74ad5fe1a9b271c85fb840d16662ff4a0ddb96a990377ce374e2e0a7"
+      ],
+      "reason": "The L174 current-intent delta adds the rule-5/owner-cancellation account this card's readers need; the historical text remains above it.",
+      "sources": [
+        {
+          "blob": "48e667c9305d3cf101beae36d282b6f77fd8ca28",
+          "path": "mcp/src/agents_remember/serving/changeset_endpoints.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/serving/changeset_endpoints.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-C2G3WW",
+      "items": [
+        "sha256:24525506b5077231b959f58befd9a6c8e8199a2ce57c7e11076b7388e7149bb1"
+      ],
+      "reason": "The L174 current-intent delta adds the rule-5/owner-cancellation account this card's readers need; the historical text remains above it.",
+      "sources": [
+        {
+          "blob": "a17ce8a67499d5aa3d9023a4458e62bce3657d8c",
+          "path": "mcp/tests/evidence-lifecycle.toml"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/evidence-lifecycle.toml"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-CCCX5M",
+      "items": [
+        "sha256:3be01d46ff99678505fcb152bce6d2c3a024ac4bdba7b2b5c2b74237b107ec9c"
+      ],
+      "reason": "L174 adds this card for a new realizing or proving file; the path had no current onboarding contract.",
+      "sources": [
+        {
+          "blob": "e4bce7bfcbcf6968435ae889941865d6e31a0ba5",
+          "path": "dashboard/src/panels/detail-panel/taskReuseAfterSwitch.test.tsx"
+        }
+      ],
+      "subject": "onboarding:dashboard/src/panels/detail-panel/taskReuseAfterSwitch.test.tsx"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "d3af6d9ff23114e69b51be4ca03ea1124de5bad3",
+            "content": "sha256:a0823ffbd48068b8c6fd2a94d4c5f503d68dff38a97f8017e81f91a76ac23287",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_landed_list_file_and_master_reuse_native_bytes_without_git"
+            },
+            "path": "mcp/tests/test_changeset_cache.py"
+          },
+          "before": {
+            "blob": "68ace12aad0a8e57a12575a620a5640da7ef6e6e",
+            "content": "sha256:96a07b931e18d22f18d95fd2fd4ec02eec0405151b177caa9c206ad9a93f8160",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_landed_list_file_and_master_reuse_native_bytes_without_git"
+            },
+            "path": "mcp/tests/test_changeset_cache.py"
+          },
+          "id": "PRF-9DZ6CH"
+        },
+        {
+          "after": {
+            "blob": "d3af6d9ff23114e69b51be4ca03ea1124de5bad3",
+            "content": "sha256:1f84e9636a2f47fdb701938025b3f24b289aa2b23c40349daec33a23870c0b41",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_unreadable_key_and_racing_input_are_computed_uncached"
+            },
+            "path": "mcp/tests/test_changeset_cache.py"
+          },
+          "before": {
+            "blob": "68ace12aad0a8e57a12575a620a5640da7ef6e6e",
+            "content": "sha256:1f84e9636a2f47fdb701938025b3f24b289aa2b23c40349daec33a23870c0b41",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_unreadable_key_and_racing_input_are_computed_uncached"
+            },
+            "path": "mcp/tests/test_changeset_cache.py"
+          },
+          "id": "PRF-FYWAH7"
+        },
+        {
+          "after": "absent",
+          "before": {
+            "blob": "68ace12aad0a8e57a12575a620a5640da7ef6e6e",
+            "content": "sha256:d59fdbd7347b705f9719d91dc87f143c3357d356283e572d50c32a28267c33fd",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_actual_unreadable_worktree_observation_uses_the_uncached_native_read"
+            },
+            "path": "mcp/tests/test_changeset_cache.py"
+          },
+          "id": "PRF-JKZC2S"
+        },
+        {
+          "after": {
+            "blob": "9361e1cdbce3684c70b9b2927c33e4a95ef03c91",
+            "content": "sha256:09ca8abb3bb0cc2c8c8e735571a03c7afdeb83412e1f8011cf77456df0c68ea5",
+            "locator": {
+              "kind": "symbol",
+              "name": "cached_read"
+            },
+            "path": "mcp/src/agents_remember/serving/changeset_cache.py"
+          },
+          "before": {
+            "blob": "fd2e21cf15548f5d312e19dede561f645cac01df",
+            "content": "sha256:c33609e42cf46025ca9c8376a8bbc40e8c5dd70d94b2a117c4085574e2268b0b",
+            "locator": {
+              "kind": "symbol",
+              "name": "cached_read"
+            },
+            "path": "mcp/src/agents_remember/serving/changeset_cache.py"
+          },
+          "id": "RLZ-340WGH"
+        },
+        {
+          "after": {
+            "blob": "92ae1bfa857dbaf808ea47e97592015fb49a034e",
+            "content": "sha256:810f4e3750a0365227a2cb677133ef85646d2923fca5c5e03a2a61e4ecddf3f0",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/serving/changeset_reads.py"
+          },
+          "before": {
+            "blob": "5c5bad11e569807e1f8ac3f6b751e29506700331",
+            "content": "sha256:06ce5567518bb5993819a7819480576ef5d30912e00f0833290d9626d0687545",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/serving/changeset_reads.py"
+          },
+          "id": "RLZ-3D6G48"
+        }
+      ],
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-CHQS87",
+      "items": [
+        "sha256:75465f3f745bd7d09115776bef4434f31d17c8206033daf7d84f9f90a7cca11a"
+      ],
+      "reason": "The generic cached_read contract is stated at RLZ-340WGH: stable-generation retention plus the admitted unknown-status refusal exception, with no working-view mode rejection; the uncached change-set working view is the caller bypass at RLZ-E0PH8P in changeset_reads.py (L174-M1-03). The same-bytes claim stays id-keyed.",
+      "revision": 2,
+      "subject": "INV-ZNXX7H"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "c83285e17de7fb1ba7a99305ff79d478d0007cbb",
+            "content": "sha256:c942172852108f848181709481c97ae801679b3966e882963d83bf057926559a",
+            "locator": {
+              "kind": "symbol",
+              "name": "deduplicates concurrent reads and reuses the parsed body after navigation"
+            },
+            "path": "dashboard/src/data/taskDocuments.test.tsx"
+          },
+          "before": "absent",
+          "id": "PRF-15WC6B"
+        },
+        {
+          "after": "absent",
+          "before": {
+            "blob": "b006c831d90995af88efe4c092cf41de90372ecb",
+            "content": "sha256:b01b0c46176099cbf0836ad245e1c9c86422bc3b4698c08f231b570149462244",
+            "locator": {
+              "kind": "symbol",
+              "name": "task bodies belong to the store and exact document revision > deduplicates concurrent reads and reuses the parsed body after navigation"
+            },
+            "path": "dashboard/src/data/taskDocuments.test.tsx"
+          },
+          "id": "PRF-MGYP5F"
+        },
+        {
+          "after": {
+            "blob": "5f323cafc543fc6177a811ebe5514517f71cb035",
+            "content": "sha256:961196f88ab60f8db3410c75d9603dfb10c9ebf352d899d8895c81e5330cb057",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/data/reviewIntentSummary.ts"
+          },
+          "before": {
+            "blob": "aa37dc151156c900a476667b0cbba310a971e51a",
+            "content": "sha256:7fd1973e6b1bbfdf4ad26218a832228390085e9f41480f41352b07b2bb335c84",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/data/reviewIntentSummary.ts"
+          },
+          "id": "RLZ-2GQXAF"
+        },
+        {
+          "after": {
+            "blob": "32d5a242931e0559a4a804ea9fae880f88f25d94",
+            "content": "sha256:170ebf5d1f22ba019d9bf4f65ca0e9e901936296940ee831e8c494823bcf4369",
+            "locator": {
+              "end": 202,
+              "kind": "line_range",
+              "start": 179
+            },
+            "path": "dashboard/src/data/useTaskDocumentBody.ts"
+          },
+          "before": {
+            "blob": "000b39968c5ff7d771056230e212a2e10ff219fe",
+            "content": "sha256:708048c047d937c21f6b84435c3ab5fcb660dd6651ee8c09e942e85d5f28f1f7",
+            "locator": {
+              "end": 162,
+              "kind": "line_range",
+              "start": 154
+            },
+            "path": "dashboard/src/data/useTaskDocumentBody.ts"
+          },
+          "id": "RLZ-5X2J6F"
+        },
+        {
+          "after": {
+            "blob": "32d5a242931e0559a4a804ea9fae880f88f25d94",
+            "content": "sha256:d91070d217afcc5da3fe47df7ca4b1a044a7cb0eebb4a52d6ca6561941f85a62",
+            "locator": {
+              "end": 206,
+              "kind": "line_range",
+              "start": 164
+            },
+            "path": "dashboard/src/data/useTaskDocumentBody.ts"
+          },
+          "before": {
+            "blob": "000b39968c5ff7d771056230e212a2e10ff219fe",
+            "content": "sha256:7e658f34b65c14c107d371271c0a8a95406548f6d3910f3055f6c350c637ad4e",
+            "locator": {
+              "end": 206,
+              "kind": "line_range",
+              "start": 164
+            },
+            "path": "dashboard/src/data/useTaskDocumentBody.ts"
+          },
+          "id": "RLZ-E66Q6G"
+        },
+        {
+          "after": {
+            "blob": "ad784b1c6e63764e2f4437c99f28a2b9bd553703",
+            "content": "sha256:3991a7839bfcafd1a3534c2bdaebb09629138b26ca05dc63a7ee0778f9280d22",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/data/changeset.ts"
+          },
+          "before": {
+            "blob": "8d239fc2e55f0351e0ed72114b79b8048a172148",
+            "content": "sha256:fa3fc788d1165708fb5127da189d35ee5b2cd661ec6571501f27315f7256e80e",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/data/changeset.ts"
+          },
+          "id": "RLZ-VVSZSQ"
+        },
+        {
+          "after": {
+            "blob": "91a45a737a391b17be5e44f0de88da7af08dc61c",
+            "content": "sha256:f84ed2a76a7268fc2a12bae414f235f2421836427dcf7a3023e9bf77a845dd57",
+            "locator": {
+              "kind": "symbol",
+              "name": "TaskDocumentResources"
+            },
+            "path": "dashboard/src/data/taskDocuments.ts"
+          },
+          "before": {
+            "blob": "cb56539089a61b868c10348e34bfac4506eac81b",
+            "content": "sha256:228218234627a8957755a790bae4f98cd01ce9934483c26e077d94884103acb0",
+            "locator": {
+              "kind": "symbol",
+              "name": "TaskDocumentResources"
+            },
+            "path": "dashboard/src/data/taskDocuments.ts"
+          },
+          "id": "RLZ-XTZBXS"
+        }
+      ],
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-DDVEFH",
+      "items": [
+        "sha256:9cc3d6dd9ce908c459ab81006aa971892a1d8b6f1cb3cfdb7874fc667b077231"
+      ],
+      "reason": "The hook's own request ends with its task, while the body store owns pending waiter accounting and completed retention (L174-M1-01). The RLZ-5X2J6F anchor is renewed to the body effect and its rationale no longer claims the store's pending work; the retained completed body is unchanged. Evidence (L174-WN-PROOF): verdict-r4-a9.md; taskDocuments.test.tsx",
+      "revision": 2,
+      "subject": "INV-WNHAWD"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-DVZDZG",
+      "items": [
+        "sha256:8475a0d8aadd8cc278c1a237120509087052affcdf9805fefa1cb8dbb413efd2"
+      ],
+      "reason": "Test evidence/case change: the hunk supports the named invariant's proves entries; it asserts no separate product invariant.",
+      "subject": "hunk:sha256:8475a0d8aadd8cc278c1a237120509087052affcdf9805fefa1cb8dbb413efd2"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-E0H9S8",
+      "items": [
+        "sha256:3c71526b5e86d8bca44cb0e6180cfd76280be894174c5e7242caaf762da99d88"
+      ],
+      "reason": "Test evidence/case change: the hunk supports the named invariant's proves entries; it asserts no separate product invariant.",
+      "subject": "hunk:sha256:3c71526b5e86d8bca44cb0e6180cfd76280be894174c5e7242caaf762da99d88"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-EBT0KD",
+      "items": [
+        "sha256:7a2bb73129f1bff09bdda6082588a7da718700075bde1786108702f79f9c8303"
+      ],
+      "reason": "Test evidence/case change: the hunk supports the named invariant's proves entries; it asserts no separate product invariant.",
+      "subject": "hunk:sha256:7a2bb73129f1bff09bdda6082588a7da718700075bde1786108702f79f9c8303"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-ECJ2DQ",
+      "items": [
+        "sha256:25be35e1d846071f09d12aa7d644c219b1029a7ce95d4a6354a71fd4f0c5e6e6"
+      ],
+      "reason": "Test evidence/case change: the hunk supports the named invariant's proves entries; it asserts no separate product invariant.",
+      "subject": "hunk:sha256:25be35e1d846071f09d12aa7d644c219b1029a7ce95d4a6354a71fd4f0c5e6e6"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-ECYAWC",
+      "items": [
+        "sha256:ffa878db6dab28f344628603fc6763bc48fbb4ae0fc94d715524a98b8c5bab53"
+      ],
+      "reason": "Part of the cache's L174-R1-02/R1-04/R1-07 realization or a doc/import change; the named entries cover the invariant-bearing behavior.",
+      "subject": "hunk:sha256:ffa878db6dab28f344628603fc6763bc48fbb4ae0fc94d715524a98b8c5bab53"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-EMJGYE",
+      "items": [
+        "sha256:358d26ee44ff07cb49136e21be4d48283e563fc85a02465030646362ae0e268f"
+      ],
+      "reason": "Part of the one cancellation-aware wait path (L174-R1-02 and the runner's one kill owner); no separate invariant.",
+      "subject": "hunk:sha256:358d26ee44ff07cb49136e21be4d48283e563fc85a02465030646362ae0e268f"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-ERW2W3",
+      "items": [
+        "sha256:3be01d46ff99678505fcb152bce6d2c3a024ac4bdba7b2b5c2b74237b107ec9c"
+      ],
+      "reason": "Test evidence/case change: the hunk supports the named invariant's proves entries; it asserts no separate product invariant.",
+      "subject": "hunk:sha256:3be01d46ff99678505fcb152bce6d2c3a024ac4bdba7b2b5c2b74237b107ec9c"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-EVSS7B",
+      "items": [
+        "sha256:611517c31632cdc2b4a092b6914b6e1ef539a2d87f5997ab681da93abcfd36f4"
+      ],
+      "reason": "Route wiring for the scheduler's admission and cancellation bounds (L174-R1-02/R1-03); no separate invariant.",
+      "subject": "hunk:sha256:611517c31632cdc2b4a092b6914b6e1ef539a2d87f5997ab681da93abcfd36f4"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-FFS1CX",
+      "items": [
+        "sha256:f8a3f345ae84c59fc8b714c15e3bd32f45e6d84af86aa35d39d7aeea7125e2ea"
+      ],
+      "reason": "L174 adds this card for a new realizing or proving file; the path had no current onboarding contract.",
+      "sources": [
+        {
+          "blob": "8173d221a70b84eabe6ed5ffff958f523592fa1f",
+          "path": "mcp/tests/test_changeset_cancellation.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_changeset_cancellation.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-FMKZSA",
+      "items": [
+        "sha256:375590566f024339c39bf56ce5ab99a06ced27281b0e1a0ee92b68b675c40c9e"
+      ],
+      "reason": "Part of the one cancellation-aware wait path (L174-R1-02 and the runner's one kill owner); no separate invariant.",
+      "subject": "hunk:sha256:375590566f024339c39bf56ce5ab99a06ced27281b0e1a0ee92b68b675c40c9e"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-FS5WHX",
+      "items": [
+        "sha256:9159f36e79477f9a3281e27a512dc229fe90668ca22ec564c46601a0550438a9"
+      ],
+      "reason": "L174 adds this card for a new realizing or proving file; the path had no current onboarding contract.",
+      "sources": [
+        {
+          "blob": "55a429ffe0a41bb74f32d56c35de1f6a3dbed293",
+          "path": "mcp/src/agents_remember/serving/changeset_scheduler.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/serving/changeset_scheduler.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-G7PE0H",
+      "items": [
+        "sha256:e2d44cd273d6f5ee420f226baf77314cd385ae1f8775aa0e0aa37c8f62e33b3e"
+      ],
+      "reason": "L174 adds this card for a new realizing or proving file; the path had no current onboarding contract.",
+      "sources": [
+        {
+          "blob": "8e246f5c37e122c2dde378cb5aeed52dcabbfeae",
+          "path": "dashboard/src/data/abortableRead.ts"
+        }
+      ],
+      "subject": "onboarding:dashboard/src/data/abortableRead.ts"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-GNE08K",
+      "items": [
+        "sha256:a4558fd9e4c3ecc05f40d6dbd624f167eb886a30df9520abbcdb49d2d4ec7124"
+      ],
+      "reason": "Part of the cache's L174-R1-02/R1-04/R1-07 realization or a doc/import change; the named entries cover the invariant-bearing behavior.",
+      "subject": "hunk:sha256:a4558fd9e4c3ecc05f40d6dbd624f167eb886a30df9520abbcdb49d2d4ec7124"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-GVA8EV",
+      "items": [
+        "sha256:a336e8f8ac38f9002e5afbe85820d9e4993600091d70901e7f99c263599e5141"
+      ],
+      "reason": "Test evidence/case change: the hunk supports the named invariant's proves entries; it asserts no separate product invariant.",
+      "subject": "hunk:sha256:a336e8f8ac38f9002e5afbe85820d9e4993600091d70901e7f99c263599e5141"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-GW0YRV",
+      "items": [
+        "sha256:5d64ba4fb58c72384069737d6171ab1c4aad4d7d09ac5697f0abc35d58e23f0f"
+      ],
+      "reason": "Part of the cache's L174-R1-02/R1-04/R1-07 realization or a doc/import change; the named entries cover the invariant-bearing behavior.",
+      "subject": "hunk:sha256:5d64ba4fb58c72384069737d6171ab1c4aad4d7d09ac5697f0abc35d58e23f0f"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-H585JD",
+      "items": [
+        "sha256:3238396ffe5b6678f380e7c72d17cd68f447b12c260a60b31866a42394ec8189"
+      ],
+      "reason": "Part of the INV-7TMGB0 cached pair-validation realization; no separate invariant.",
+      "subject": "hunk:sha256:3238396ffe5b6678f380e7c72d17cd68f447b12c260a60b31866a42394ec8189"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-H86F28",
+      "items": [
+        "sha256:f8a3f345ae84c59fc8b714c15e3bd32f45e6d84af86aa35d39d7aeea7125e2ea"
+      ],
+      "reason": "Test evidence for L174-R1-02/R1-03 and the family bounds; the proves entries record its facets, so the hunk asserts no separate product invariant.",
+      "subject": "hunk:sha256:f8a3f345ae84c59fc8b714c15e3bd32f45e6d84af86aa35d39d7aeea7125e2ea"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "bf1cda5edde56c5b7be27ecd4232e531a9fe9da0",
+            "content": "sha256:1e463d05bde6ab36f3d4fab161e3fd30bd9cb57a721208e4ffb1ff928948ebb7",
+            "locator": {
+              "end": 73,
+              "kind": "line_range",
+              "start": 41
+            },
+            "path": "dashboard/src/data/conditionalReads.ts"
+          },
+          "before": {
+            "blob": "d64c2458cf4416a842ef1eff840bbf025ac0a5a9",
+            "content": "sha256:ec6b17d4b6a918923f7e5eaa7a6e4b544d11cc3c183d3fd6e64649c2f3c53e11",
+            "locator": {
+              "end": 47,
+              "kind": "line_range",
+              "start": 29
+            },
+            "path": "dashboard/src/data/conditionalReads.ts"
+          },
+          "id": "RLZ-52JCCC"
+        },
+        {
+          "after": {
+            "blob": "5f323cafc543fc6177a811ebe5514517f71cb035",
+            "content": "sha256:5e6c027382da765e8f98e280560f870951e615875d86950443b3173c400cbb9b",
+            "locator": {
+              "kind": "symbol",
+              "name": "useIntentReviewSummary"
+            },
+            "path": "dashboard/src/data/reviewIntentSummary.ts"
+          },
+          "before": {
+            "blob": "aa37dc151156c900a476667b0cbba310a971e51a",
+            "content": "sha256:08e5aa23021b6bc47bd93b00794cae5bcc77cb996fbb2a48347dea65c3c4391e",
+            "locator": {
+              "kind": "symbol",
+              "name": "useIntentReviewSummary"
+            },
+            "path": "dashboard/src/data/reviewIntentSummary.ts"
+          },
+          "id": "RLZ-QQ3BEVWE"
+        },
+        {
+          "after": {
+            "blob": "bf1cda5edde56c5b7be27ecd4232e531a9fe9da0",
+            "content": "sha256:b3df157420b1e735c5cac196f2bd1eb55b577fa1bb53dadabff38266fbf2f3fd",
+            "locator": {
+              "end": 117,
+              "kind": "line_range",
+              "start": 83
+            },
+            "path": "dashboard/src/data/conditionalReads.ts"
+          },
+          "before": {
+            "blob": "d64c2458cf4416a842ef1eff840bbf025ac0a5a9",
+            "content": "sha256:44d37fc3dc6ab84b9f00155301bafd0fff71fc92794f6ac1dcae8d92d4525c9d",
+            "locator": {
+              "end": 76,
+              "kind": "line_range",
+              "start": 61
+            },
+            "path": "dashboard/src/data/conditionalReads.ts"
+          },
+          "id": "RLZ-ZC9DFF"
+        },
+        {
+          "after": {
+            "blob": "bf1cda5edde56c5b7be27ecd4232e531a9fe9da0",
+            "content": "sha256:d1995211f0466e3747dfab76e15c7560a779a734a936b937f77fcdcdea410c4d",
+            "locator": {
+              "end": 39,
+              "kind": "line_range",
+              "start": 36
+            },
+            "path": "dashboard/src/data/conditionalReads.ts"
+          },
+          "before": {
+            "blob": "d64c2458cf4416a842ef1eff840bbf025ac0a5a9",
+            "content": "sha256:d1995211f0466e3747dfab76e15c7560a779a734a936b937f77fcdcdea410c4d",
+            "locator": {
+              "end": 27,
+              "kind": "line_range",
+              "start": 24
+            },
+            "path": "dashboard/src/data/conditionalReads.ts"
+          },
+          "id": "RLZ-ZTFRGJ"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-H8WJ5B",
+      "items": [
+        "sha256:ce8652b316d5cb79295dfd0098f23a8d6141291128cb876cabfa007f081f8832"
+      ],
+      "reason": "The conditional-read realization anchors are renewed to the complete current constructs: peek (36-39), load including the facts comparison (41-73), and read with its 304/200/abort guards (83-117); the facts/generation incantation is unchanged.",
+      "revision": 3,
+      "subject": "INV-74578B97"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-HTNT64",
+      "items": [
+        "sha256:dd985ced40f343d58d6f272b084a5235af6bd8f918fbae19e5b2bef7ecc3dcea"
+      ],
+      "reason": "Part of the cache's L174-R1-02/R1-04/R1-07 realization or a doc/import change; the named entries cover the invariant-bearing behavior.",
+      "subject": "hunk:sha256:dd985ced40f343d58d6f272b084a5235af6bd8f918fbae19e5b2bef7ecc3dcea"
+    },
+    {
+      "because": [
+        {
+          "id": "MIK-R176",
+          "packet": "requirements/MIK-R176-v2-a-task-switch-never-waits-for-the-task-left-behind.md",
+          "task": {
+            "path": "260928_maintained-invariant-knowledge",
+            "repository": "agents-remember"
+          },
+          "version": "v2"
+        }
+      ],
+      "covers": [
+        {
+          "after": "absent",
+          "before": {
+            "blob": "68ace12aad0a8e57a12575a620a5640da7ef6e6e",
+            "content": "sha256:7849af570e3373124571e54edf0f1654df1cda9cb099956b64a8b354d879b85c",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_working_bytes_and_unchanged_poll_then_restored_mtime_edit"
+            },
+            "path": "mcp/tests/test_changeset_cache.py"
+          },
+          "id": "PRF-531TNF"
+        },
+        {
+          "after": {
+            "blob": "d3af6d9ff23114e69b51be4ca03ea1124de5bad3",
+            "content": "sha256:9080b128b77ad7f119255942b413602825731eff58731947f1168d6f48f112a0",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_working_view_has_no_cache_and_no_freshness_check"
+            },
+            "path": "mcp/tests/test_changeset_cache.py"
+          },
+          "before": "absent",
+          "id": "PRF-D121D0"
+        },
+        {
+          "after": {
+            "blob": "d3af6d9ff23114e69b51be4ca03ea1124de5bad3",
+            "content": "sha256:ad3fb13cf791df7da962a6a53e271a8925fc00ef9a90e8c26ba01456499792ce",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_working_content_edit_with_the_same_status_letter_is_seen"
+            },
+            "path": "mcp/tests/test_changeset_cache.py"
+          },
+          "before": "absent",
+          "id": "PRF-GEQF6H"
+        },
+        {
+          "after": {
+            "blob": "d3af6d9ff23114e69b51be4ca03ea1124de5bad3",
+            "content": "sha256:a0823ffbd48068b8c6fd2a94d4c5f503d68dff38a97f8017e81f91a76ac23287",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_landed_list_file_and_master_reuse_native_bytes_without_git"
+            },
+            "path": "mcp/tests/test_changeset_cache.py"
+          },
+          "before": {
+            "blob": "68ace12aad0a8e57a12575a620a5640da7ef6e6e",
+            "content": "sha256:96a07b931e18d22f18d95fd2fd4ec02eec0405151b177caa9c206ad9a93f8160",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_landed_list_file_and_master_reuse_native_bytes_without_git"
+            },
+            "path": "mcp/tests/test_changeset_cache.py"
+          },
+          "id": "PRF-QXF71E"
+        },
+        {
+          "after": {
+            "blob": "48e667c9305d3cf101beae36d282b6f77fd8ca28",
+            "content": "sha256:b7a164140ee93dc815b88289ebc9427873fbda7c77a9bb4087fb5a0fa999b6c5",
+            "locator": {
+              "kind": "symbol",
+              "name": "recorded_committed_range"
+            },
+            "path": "mcp/src/agents_remember/serving/changeset_endpoints.py"
+          },
+          "before": "absent",
+          "id": "RLZ-AV44SX"
+        },
+        {
+          "after": {
+            "blob": "92ae1bfa857dbaf808ea47e97592015fb49a034e",
+            "content": "sha256:466d3853142e9f8f7eba582f33a15200367fc6e2f56ca624340d62ab1df1d47d",
+            "locator": {
+              "kind": "symbol",
+              "name": "changed_files_with_counts"
+            },
+            "path": "mcp/src/agents_remember/serving/changeset_reads.py"
+          },
+          "before": "absent",
+          "id": "RLZ-E0PH8P"
+        },
+        {
+          "after": {
+            "blob": "9361e1cdbce3684c70b9b2927c33e4a95ef03c91",
+            "content": "sha256:f38be14a4fc595b2e6e5973a13207dba305d5126074dfec0e5215fc831a43bf8",
+            "locator": {
+              "kind": "symbol",
+              "name": "ChangesetCache"
+            },
+            "path": "mcp/src/agents_remember/serving/changeset_cache.py"
+          },
+          "before": {
+            "blob": "fd2e21cf15548f5d312e19dede561f645cac01df",
+            "content": "sha256:169f1464d130b73cfd7185885fee84764bf147cdc4a92feef92c86339e338f14",
+            "locator": {
+              "kind": "symbol",
+              "name": "ChangesetCache"
+            },
+            "path": "mcp/src/agents_remember/serving/changeset_cache.py"
+          },
+          "id": "RLZ-SZGGGM"
+        },
+        {
+          "after": {
+            "blob": "d023d83adaf5c952b460485f75bb778c9bfa20ad",
+            "content": "sha256:33df90592127b06a825813e14f29156510da59665366badce8c53e7693f95ffc",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/serving/changeset_generation.py"
+          },
+          "before": {
+            "blob": "1fb98f3ca4f6017420325669a1b89d7c8473c3d4",
+            "content": "sha256:350e85544f6786958df483e5d970fc7155d7bf46bdc4b8940c54ed14dd0edf4f",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/serving/changeset_generation.py"
+          },
+          "id": "RLZ-Z68Z1X"
+        }
+      ],
+      "disposition": "changed",
+      "effect": "replace",
+      "id": "ROW-HW37WJ",
+      "items": [
+        "sha256:6483a56e2ede852f3ce7936fb53853ea2fbf876419087e971e180221100fd30b"
+      ],
+      "reason": "Rule 5 replaces the generation-cached working view with Git-native freshness: a commit pair is served from its ids with no observation (the accepted gap is named until eviction/restart), a working view is computed natively on every read with no cache where a plain read costs no more, and an unknown status may retain only a refusal. The record statement, conditions and exclusions are replaced; the realization and proof anchors are renewed. Evidence (L174-7T-READS): verdict-r4-a9.md; changeset_reads.py Evidence (L174-7T-ENDPOINTS): verdict-r4-a9.md; changeset_endpoints.py",
+      "revision": 2,
+      "subject": "INV-7TMGB0"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-HWJ93W",
+      "items": [
+        "sha256:8dba5e59b6aabedc122cd9ae11439f61327b979d95dc292df369f6152cd7f938"
+      ],
+      "reason": "The L174 current-intent delta adds the rule-5/owner-cancellation account this card's readers need; the historical text remains above it.",
+      "sources": [
+        {
+          "blob": "32d5a242931e0559a4a804ea9fae880f88f25d94",
+          "path": "dashboard/src/data/useTaskDocumentBody.ts"
+        }
+      ],
+      "subject": "onboarding:dashboard/src/data/useTaskDocumentBody.ts"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-J5E9NM",
+      "items": [
+        "sha256:d36403d58ffe63e14f8d54f11b307792b65d8ae64ea28bf20ad40f64fab7c453"
+      ],
+      "reason": "Test evidence/case change: the hunk supports the named invariant's proves entries; it asserts no separate product invariant.",
+      "subject": "hunk:sha256:d36403d58ffe63e14f8d54f11b307792b65d8ae64ea28bf20ad40f64fab7c453"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-JBMTCA",
+      "items": [
+        "sha256:21162243c19049806f110cce8da74f7f65d02aa161b84fdbb53b8946a54f87ae"
+      ],
+      "reason": "Route wiring for the scheduler's admission and cancellation bounds (L174-R1-02/R1-03); no separate invariant.",
+      "subject": "hunk:sha256:21162243c19049806f110cce8da74f7f65d02aa161b84fdbb53b8946a54f87ae"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-JC90C6",
+      "items": [
+        "sha256:4f9637a1e09be625bd23d6a7590fb715219779395218519304209a06c4980290"
+      ],
+      "reason": "Route wiring for the scheduler's admission and cancellation bounds (L174-R1-02/R1-03); no separate invariant.",
+      "subject": "hunk:sha256:4f9637a1e09be625bd23d6a7590fb715219779395218519304209a06c4980290"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-K8C93Z",
+      "items": [
+        "sha256:2f157004189cbab5c687b5e251ba9a4aec0a9bb81832adc1963c3bfc2f98825a"
+      ],
+      "reason": "Part of the cache's L174-R1-02/R1-04/R1-07 realization or a doc/import change; the named entries cover the invariant-bearing behavior.",
+      "subject": "hunk:sha256:2f157004189cbab5c687b5e251ba9a4aec0a9bb81832adc1963c3bfc2f98825a"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-KQ9DMN",
+      "items": [
+        "sha256:cf19ec4cc719e675bf8fb1ff8757c53d2c39a6b00a57d19692f69e7bdbd76281"
+      ],
+      "reason": "Part of the L174-R1-01/INV-WNHAWD/INV-C1RTSG abort and owner-wait wiring; the named entries cover the invariant-bearing behavior.",
+      "subject": "hunk:sha256:cf19ec4cc719e675bf8fb1ff8757c53d2c39a6b00a57d19692f69e7bdbd76281"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-KQB9V9",
+      "items": [
+        "sha256:0e21e18fe87224ccec030de2a6a0e4ad8712ff8e14717d52ae27850130c0d66c"
+      ],
+      "reason": "Part of the cache's L174-R1-02/R1-04/R1-07 realization or a doc/import change; the named entries cover the invariant-bearing behavior.",
+      "subject": "hunk:sha256:0e21e18fe87224ccec030de2a6a0e4ad8712ff8e14717d52ae27850130c0d66c"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-KQE45Z",
+      "items": [
+        "sha256:a336e8f8ac38f9002e5afbe85820d9e4993600091d70901e7f99c263599e5141"
+      ],
+      "reason": "L174 adds this card for a new realizing or proving file; the path had no current onboarding contract.",
+      "sources": [
+        {
+          "blob": "09cddc1031db8f659bbe9a553cb17e1f60622845",
+          "path": "dashboard/src/panels/detail-panel/taskSwitchAbort.test.tsx"
+        }
+      ],
+      "subject": "onboarding:dashboard/src/panels/detail-panel/taskSwitchAbort.test.tsx"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-KY2SF1",
+      "items": [
+        "sha256:3810290c3fe5c6efa199d0b854e82a6dc71311f77fa73e2be2acca8cdd1c37d1",
+        "sha256:8d6c910f4fc0b6e590370fc99fb96f6555cb81f1eabbd5f85efc2c8c79ce9667",
+        "sha256:e716ec346189054c24bcbcde7990dd576e7e8e9f1c37442089d970d43e913a40"
+      ],
+      "reason": "The L174 current-intent delta adds the rule-5/owner-cancellation account this card's readers need; the historical text remains above it.",
+      "sources": [
+        {
+          "blob": "28615b42ee1260de85a1fb1a662167a8ffcdea9c",
+          "path": "mcp/src/agents_remember/serving/intent_summary_cache.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/serving/intent_summary_cache.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-KZM3ZH",
+      "items": [
+        "sha256:1038c38ec785019f430dcdbe96d9d5a26e247b11095ecf61c3f2a77b4b499043"
+      ],
+      "reason": "Test evidence/case change: the hunk supports the named invariant's proves entries; it asserts no separate product invariant.",
+      "subject": "hunk:sha256:1038c38ec785019f430dcdbe96d9d5a26e247b11095ecf61c3f2a77b4b499043"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-M2380F",
+      "items": [
+        "sha256:1038c38ec785019f430dcdbe96d9d5a26e247b11095ecf61c3f2a77b4b499043",
+        "sha256:146749cef1e015cb65bf297fa98b431a7b2cd5c4bffcfaf06ad69204d2861bf8",
+        "sha256:149cada6f57964f87c89b831c612109d3a11759eb32c6c46e3cdc20bcead04b8",
+        "sha256:1854d1f7e06bef487d386f443e3c715b64533a0566df8404b176529f2a1bdc91",
+        "sha256:224938ca9240dd73162d78f1a56807cc9dcb51463241db3331c2ec93860be0c8",
+        "sha256:25be35e1d846071f09d12aa7d644c219b1029a7ce95d4a6354a71fd4f0c5e6e6",
+        "sha256:307ad05f4875d4b46011204d4df65d3309b0840a7e327cedbc17600966e8bbf9",
+        "sha256:389ecde1e93457d7914526b2a09101362e28c47d890fd749ec7f53a6b0e6aec2",
+        "sha256:3bdcb440bb36a0fb3f5e048d47b5b04ce2ad5117cb687b258d3d03e3db584450",
+        "sha256:3c71526b5e86d8bca44cb0e6180cfd76280be894174c5e7242caaf762da99d88",
+        "sha256:5af969152154e3574338ac198b1398a5674083b923b3d5db2b10f49288290764",
+        "sha256:656d3ea0f7d69949b60ac24e0ed8c23d75d39ec53a1f8794908036e3aca195dd",
+        "sha256:7a2bb73129f1bff09bdda6082588a7da718700075bde1786108702f79f9c8303",
+        "sha256:8475a0d8aadd8cc278c1a237120509087052affcdf9805fefa1cb8dbb413efd2",
+        "sha256:8978f25f2405149f6b7ec22fe523e19a813520c7af85e24e75f0d38df7c229db",
+        "sha256:aebc9ffd4fdc8609cdddb9a8c5d70a3bf95221e49e770598b298cb119d2c4bcd",
+        "sha256:b754a13ce8e2ae5df513cb68e6e0aee1ecdcdc384d9f5392fc68db7857da6d64",
+        "sha256:bf006ab96cb8bca0061d848b5743dbb8a6ff67f0851036a4e2c34a45ba20b265",
+        "sha256:c48dd3117a255b1f7670352097377e0f326c707e4faf6f66256b90846362f6fc",
+        "sha256:d36403d58ffe63e14f8d54f11b307792b65d8ae64ea28bf20ad40f64fab7c453",
+        "sha256:d8a143981e5a7a3a2aab0b2e5fdb928e21f7e95f1c6b7035418d7e6853ff8caa",
+        "sha256:de87098ae460180b2f0733bd76faa6663a25e6a2356803f99c7a44e1420b7543",
+        "sha256:dfb553f5914d38e7d74d526022d96e6aeffdce0fe677d7f8bb1fee3ec47852f0",
+        "sha256:e55b6a3b467a6fd85bd736d20aa77e3d117a1d47f2efff1dcfc275e9d39ae5fd",
+        "sha256:eabf17e9c7f32a8e8ecd61b2bea11c32ecba8518c6c552d1bcba82b93e74d712",
+        "sha256:ffc38d7a163de99684b14133f553facb422abbe2d0d8e0cae1ed29c3797f9413"
+      ],
+      "reason": "The L174 current-intent delta adds the rule-5/owner-cancellation account this card's readers need; the historical text remains above it.",
+      "sources": [
+        {
+          "blob": "d3af6d9ff23114e69b51be4ca03ea1124de5bad3",
+          "path": "mcp/tests/test_changeset_cache.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_changeset_cache.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-MC9717",
+      "items": [
+        "sha256:a4f8233dd9df38045ebd66f222b54e13e456b9b927ecc010b2362406219140e2"
+      ],
+      "reason": "Route wiring for the scheduler's admission and cancellation bounds (L174-R1-02/R1-03); no separate invariant.",
+      "subject": "hunk:sha256:a4f8233dd9df38045ebd66f222b54e13e456b9b927ecc010b2362406219140e2"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-MK9V04",
+      "items": [
+        "sha256:5e61ce1b186d088793ba6d4e61000141eacbe96830453ba500571d5054f2b51e"
+      ],
+      "reason": "Test evidence/case change: the hunk supports the named invariant's proves entries; it asserts no separate product invariant.",
+      "subject": "hunk:sha256:5e61ce1b186d088793ba6d4e61000141eacbe96830453ba500571d5054f2b51e"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-MQ67YT",
+      "items": [
+        "sha256:1424dd15eb8e42e855e53e535bfeb3bc3882a553bf4a79f81895f876f951fd85",
+        "sha256:21162243c19049806f110cce8da74f7f65d02aa161b84fdbb53b8946a54f87ae",
+        "sha256:4f9637a1e09be625bd23d6a7590fb715219779395218519304209a06c4980290",
+        "sha256:5de6a23a9de9506fb37161358cb51fa55d93c82f5206b640e8e026b00834a05b",
+        "sha256:611517c31632cdc2b4a092b6914b6e1ef539a2d87f5997ab681da93abcfd36f4",
+        "sha256:62c965a619f2ae818cce861e1c96fc06b6b9e500c6b79c8b4c116688cc279f26",
+        "sha256:6a8c3bcd9ad878c3f819d7cabc1ae39ead9ebde0aa477a3a76a506299c3d5799",
+        "sha256:6e526eaeb82a7654573cd33924138cfac7237225091e3bc2e42defcc7fa0d5d6",
+        "sha256:8b8978c1d0143b2fac327714b73aba0ce909a84faf1821113c6c95fc1802c842",
+        "sha256:a4f8233dd9df38045ebd66f222b54e13e456b9b927ecc010b2362406219140e2",
+        "sha256:ac0dc2dbe5cfb182ad5eb3990f8acb8fb60b6d2278dc91501c6a503aae05169e",
+        "sha256:cd5ab8c8adbf731574393db1386996d486def6a467b1492b43eae3e95818eb15",
+        "sha256:ee819a4a59bd0ea6b304c510bdb6b4e7db90832895a8eafe6c290fd89d8de895"
+      ],
+      "reason": "The L174 current-intent delta adds the rule-5/owner-cancellation account this card's readers need; the historical text remains above it.",
+      "sources": [
+        {
+          "blob": "97c66a7abb19373cde84940afe976ea2969f990a",
+          "path": "mcp/src/agents_remember/serving/changeset.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/serving/changeset.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-MTFJY0",
+      "items": [
+        "sha256:1005ae5e4b504a2f5ad67b7154a81ed72230c487fca1e414863f5aa5c3295c0a"
+      ],
+      "reason": "The L174 current-intent delta adds the rule-5/owner-cancellation account this card's readers need; the historical text remains above it.",
+      "sources": [
+        {
+          "blob": "aa118718995cd5e32186a5a5c7237cce3f9f54d3",
+          "path": "mcp/src/agents_remember/kernel/git_command.py"
+        }
+      ],
+      "subject": "onboarding:mcp/overview"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-MVEWVZ",
+      "items": [
+        "sha256:e2d44cd273d6f5ee420f226baf77314cd385ae1f8775aa0e0aa37c8f62e33b3e"
+      ],
+      "reason": "The helper supplies the owner-wait vocabulary used by L174-R1-01 in the two stores; it asserts no separate invariant of its own.",
+      "subject": "hunk:sha256:e2d44cd273d6f5ee420f226baf77314cd385ae1f8775aa0e0aa37c8f62e33b3e"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-MY7AXM",
+      "items": [
+        "sha256:f6a7a01c6016ce319e111859c91df1c1f2a819c564bc37a5df68266c26052dc5"
+      ],
+      "reason": "Part of the cache's L174-R1-02/R1-04/R1-07 realization or a doc/import change; the named entries cover the invariant-bearing behavior.",
+      "subject": "hunk:sha256:f6a7a01c6016ce319e111859c91df1c1f2a819c564bc37a5df68266c26052dc5"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-N6N22K",
+      "items": [
+        "sha256:e9e052a6d8b2c9a7bf0402ac5276f2a50a957497dd16fd38335f569a0351a3b5"
+      ],
+      "reason": "Part of the cache's L174-R1-02/R1-04/R1-07 realization or a doc/import change; the named entries cover the invariant-bearing behavior.",
+      "subject": "hunk:sha256:e9e052a6d8b2c9a7bf0402ac5276f2a50a957497dd16fd38335f569a0351a3b5"
+    },
+    {
+      "because": [
+        {
+          "id": "MIK-R176",
+          "packet": "requirements/MIK-R176-v2-a-task-switch-never-waits-for-the-task-left-behind.md",
+          "task": {
+            "path": "260928_maintained-invariant-knowledge",
+            "repository": "agents-remember"
+          },
+          "version": "v2"
+        }
+      ],
+      "covers": [
+        {
+          "after": "absent",
+          "before": {
+            "blob": "a9b54b688602506f5ce6ad230ba00c36bd9dc05a",
+            "content": "sha256:c549023ccb46f385375aa00bc90fb03c5297150664065222dc398fcb0e45df60",
+            "locator": {
+              "kind": "symbol",
+              "name": "bounded conditional page results > deduplicates in flight, bounds pending reads and rejects late aborted retention"
+            },
+            "path": "dashboard/src/data/conditionalReads.test.ts"
+          },
+          "id": "PRF-4HYJN8"
+        },
+        {
+          "after": {
+            "blob": "c83285e17de7fb1ba7a99305ff79d478d0007cbb",
+            "content": "sha256:203f27e7b72fb43eab41260b960e3adb641a562a3263d237c92045471b83dd2d",
+            "locator": {
+              "kind": "symbol",
+              "name": "retained resource bounds > bounds retained bodies and pure preparation across a long navigation history"
+            },
+            "path": "dashboard/src/data/taskDocuments.test.tsx"
+          },
+          "before": {
+            "blob": "b006c831d90995af88efe4c092cf41de90372ecb",
+            "content": "sha256:203f27e7b72fb43eab41260b960e3adb641a562a3263d237c92045471b83dd2d",
+            "locator": {
+              "kind": "symbol",
+              "name": "retained resource bounds > bounds retained bodies and pure preparation across a long navigation history"
+            },
+            "path": "dashboard/src/data/taskDocuments.test.tsx"
+          },
+          "id": "PRF-B3E3M3"
+        },
+        {
+          "after": {
+            "blob": "879e93ed880ef6cdd66abe055b9556748844605a",
+            "content": "sha256:d79229bd826dbb01d9a472fee2cc8701a79baf5ad8e348457819c7a0c9e7a5ea",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_body_lru_has_count_and_byte_bounds"
+            },
+            "path": "mcp/tests/test_task_document_body_cache.py"
+          },
+          "before": {
+            "blob": "879e93ed880ef6cdd66abe055b9556748844605a",
+            "content": "sha256:d79229bd826dbb01d9a472fee2cc8701a79baf5ad8e348457819c7a0c9e7a5ea",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_body_lru_has_count_and_byte_bounds"
+            },
+            "path": "mcp/tests/test_task_document_body_cache.py"
+          },
+          "id": "PRF-P8RVGJ"
+        },
+        {
+          "after": {
+            "blob": "0ef108498d3212184af9d534cd74a9930beb36b2",
+            "content": "sha256:a50f0bcfaa382d9300fb37e15719c221f91e81c5fa98136d353a971ca7994022",
+            "locator": {
+              "kind": "symbol",
+              "name": "ends the request with its last waiter and never rejoins an aborted one"
+            },
+            "path": "dashboard/src/data/readOwnership.test.ts"
+          },
+          "before": "absent",
+          "id": "PRF-RFWFGB"
+        },
+        {
+          "after": {
+            "blob": "d3af6d9ff23114e69b51be4ca03ea1124de5bad3",
+            "content": "sha256:e09c686343d78b5bc69126cf054f038abdbd3eb2790a3444b8027cce3f920e59",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_one_long_read_also_bounds_its_pending_values_and_input_observations"
+            },
+            "path": "mcp/tests/test_changeset_cache.py"
+          },
+          "before": {
+            "blob": "68ace12aad0a8e57a12575a620a5640da7ef6e6e",
+            "content": "sha256:e09c686343d78b5bc69126cf054f038abdbd3eb2790a3444b8027cce3f920e59",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_one_long_read_also_bounds_its_pending_values_and_input_observations"
+            },
+            "path": "mcp/tests/test_changeset_cache.py"
+          },
+          "id": "PRF-STKKBV"
+        },
+        {
+          "after": {
+            "blob": "55a429ffe0a41bb74f32d56c35de1f6a3dbed293",
+            "content": "sha256:efcf3ff7e48e2b87d117e44bf5d7c7ed6f3cb59886a33640093056b896ef64bc",
+            "locator": {
+              "kind": "symbol",
+              "name": "_BoundedReads"
+            },
+            "path": "mcp/src/agents_remember/serving/changeset_scheduler.py"
+          },
+          "before": "absent",
+          "id": "RLZ-3EA1M2"
+        },
+        {
+          "after": {
+            "blob": "bf1cda5edde56c5b7be27ecd4232e531a9fe9da0",
+            "content": "sha256:1e463d05bde6ab36f3d4fab161e3fd30bd9cb57a721208e4ffb1ff928948ebb7",
+            "locator": {
+              "kind": "symbol",
+              "name": "ConditionalReads.load"
+            },
+            "path": "dashboard/src/data/conditionalReads.ts"
+          },
+          "before": "absent",
+          "id": "RLZ-800XVT"
+        },
+        {
+          "after": {
+            "blob": "91a45a737a391b17be5e44f0de88da7af08dc61c",
+            "content": "sha256:f84ed2a76a7268fc2a12bae414f235f2421836427dcf7a3023e9bf77a845dd57",
+            "locator": {
+              "kind": "symbol",
+              "name": "TaskDocumentResources"
+            },
+            "path": "dashboard/src/data/taskDocuments.ts"
+          },
+          "before": {
+            "blob": "cb56539089a61b868c10348e34bfac4506eac81b",
+            "content": "sha256:228218234627a8957755a790bae4f98cd01ce9934483c26e077d94884103acb0",
+            "locator": {
+              "kind": "symbol",
+              "name": "TaskDocumentResources"
+            },
+            "path": "dashboard/src/data/taskDocuments.ts"
+          },
+          "id": "RLZ-EZ1D8Q"
+        },
+        {
+          "after": {
+            "blob": "9361e1cdbce3684c70b9b2927c33e4a95ef03c91",
+            "content": "sha256:f38be14a4fc595b2e6e5973a13207dba305d5126074dfec0e5215fc831a43bf8",
+            "locator": {
+              "kind": "symbol",
+              "name": "ChangesetCache"
+            },
+            "path": "mcp/src/agents_remember/serving/changeset_cache.py"
+          },
+          "before": {
+            "blob": "fd2e21cf15548f5d312e19dede561f645cac01df",
+            "content": "sha256:169f1464d130b73cfd7185885fee84764bf147cdc4a92feef92c86339e338f14",
+            "locator": {
+              "kind": "symbol",
+              "name": "ChangesetCache"
+            },
+            "path": "mcp/src/agents_remember/serving/changeset_cache.py"
+          },
+          "id": "RLZ-T4017A"
+        }
+      ],
+      "disposition": "extended",
+      "id": "ROW-NFH9NZ",
+      "items": [
+        "sha256:0bf51a44aeaa5b168dc54656dcb89da1b301ab18a4e29d23bc8587d237a38951"
+      ],
+      "reason": "The family bound still holds and now covers two new owners: the change-set route family's 8+8 scheduler and the dashboard stores' waiter-counted pending entries. Existing body/cache bounds are unchanged; only their pending-set membership and proofs are renewed. Evidence (L174-GD-SCHEDULER): verdict-r4-a9.md; changeset_scheduler.py Evidence (L174-GD-CONDITIONAL): verdict-r4-a9.md; conditionalReads.ts; conditionalReads.test.ts",
+      "revision": 1,
+      "subject": "INV-GDWJKR"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-NSNS8F",
+      "items": [
+        "sha256:90cc7653aede3e55e7d320574856154b01811e19d39ce2988cb761ea4a353a15"
+      ],
+      "reason": "The L174 current-intent delta adds the rule-5/owner-cancellation account this card's readers need; the historical text remains above it.",
+      "sources": [
+        {
+          "blob": "e859b47c607085f106f12cf2002a989df301b1dd",
+          "path": "dashboard/src/cockpit/document-chat/newChatWhilePageReadPending.test.tsx"
+        }
+      ],
+      "subject": "onboarding:dashboard/src/overview"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-P5XS4W",
+      "items": [
+        "sha256:829a45b424d9bbb5a131c8eb36109d673c5a379cf5ffed1563971cebee6a723d"
+      ],
+      "reason": "L174 adds this card for a new realizing or proving file; the path had no current onboarding contract.",
+      "sources": [
+        {
+          "blob": "e859b47c607085f106f12cf2002a989df301b1dd",
+          "path": "dashboard/src/cockpit/document-chat/newChatWhilePageReadPending.test.tsx"
+        }
+      ],
+      "subject": "onboarding:dashboard/src/cockpit/document-chat/newChatWhilePageReadPending.test.tsx"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-PDZ143",
+      "items": [
+        "sha256:d5bad6e1490de1642482093aeb9e739dab09aff9953a6df448a4c222e7cefacf"
+      ],
+      "reason": "Test evidence/case change: the hunk supports the named invariant's proves entries; it asserts no separate product invariant.",
+      "subject": "hunk:sha256:d5bad6e1490de1642482093aeb9e739dab09aff9953a6df448a4c222e7cefacf"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-PGNGVT",
+      "items": [
+        "sha256:da3f1203a4faca1177186572aba569483a4a39a09310176b8a22f5b0fb0a461a"
+      ],
+      "reason": "Part of the one cancellation-aware wait path (L174-R1-02 and the runner's one kill owner); no separate invariant.",
+      "subject": "hunk:sha256:da3f1203a4faca1177186572aba569483a4a39a09310176b8a22f5b0fb0a461a"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-PM022P",
+      "items": [
+        "sha256:e4acb03715e195ccca64e655f60718a0b70848a61b19a7037f376f708a684264"
+      ],
+      "reason": "Part of the one cancellation-aware wait path (L174-R1-02 and the runner's one kill owner); no separate invariant.",
+      "subject": "hunk:sha256:e4acb03715e195ccca64e655f60718a0b70848a61b19a7037f376f708a684264"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-Q4EMA6",
+      "items": [
+        "sha256:b518c1a292d49d75e03c42c3106bcb1162e9e006de7016654578dd6d92f93aa9"
+      ],
+      "reason": "Part of the cache's L174-R1-02/R1-04/R1-07 realization or a doc/import change; the named entries cover the invariant-bearing behavior.",
+      "subject": "hunk:sha256:b518c1a292d49d75e03c42c3106bcb1162e9e006de7016654578dd6d92f93aa9"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-QB16RB",
+      "items": [
+        "sha256:cb8a73ace543180ce866649e101f6b2170ec1abae774e35a1631fffbbda9889b"
+      ],
+      "reason": "The L174 current-intent delta adds the rule-5/owner-cancellation account this card's readers need; the historical text remains above it.",
+      "sources": [
+        {
+          "blob": "a17ce8a67499d5aa3d9023a4458e62bce3657d8c",
+          "path": "mcp/tests/evidence-lifecycle.toml"
+        },
+        {
+          "blob": "17d1ff5f16e586e463551d7a48f1244decf3b81e",
+          "path": "mcp/tests/test-evidence-lanes.toml"
+        },
+        {
+          "blob": "d3af6d9ff23114e69b51be4ca03ea1124de5bad3",
+          "path": "mcp/tests/test_changeset_cache.py"
+        },
+        {
+          "blob": "8173d221a70b84eabe6ed5ffff958f523592fa1f",
+          "path": "mcp/tests/test_changeset_cancellation.py"
+        },
+        {
+          "blob": "31403dae069200cf58c80fa84c053f54579e49fd",
+          "path": "mcp/tests/test_intent_summary_cache.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/overview"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-QCBD95",
+      "items": [
+        "sha256:62c965a619f2ae818cce861e1c96fc06b6b9e500c6b79c8b4c116688cc279f26"
+      ],
+      "reason": "Route wiring for the scheduler's admission and cancellation bounds (L174-R1-02/R1-03); no separate invariant.",
+      "subject": "hunk:sha256:62c965a619f2ae818cce861e1c96fc06b6b9e500c6b79c8b4c116688cc279f26"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-QN35MC",
+      "items": [
+        "sha256:eabf17e9c7f32a8e8ecd61b2bea11c32ecba8518c6c552d1bcba82b93e74d712"
+      ],
+      "reason": "Test evidence/case change: the hunk supports the named invariant's proves entries; it asserts no separate product invariant.",
+      "subject": "hunk:sha256:eabf17e9c7f32a8e8ecd61b2bea11c32ecba8518c6c552d1bcba82b93e74d712"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-RE5RA8",
+      "items": [
+        "sha256:7996a58f84ca7a7ea3910f810ec32b7de0ea9bf1a62c6be0f35b92482d4c39da"
+      ],
+      "reason": "Part of the cache's L174-R1-02/R1-04/R1-07 realization or a doc/import change; the named entries cover the invariant-bearing behavior.",
+      "subject": "hunk:sha256:7996a58f84ca7a7ea3910f810ec32b7de0ea9bf1a62c6be0f35b92482d4c39da"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-RMQGZB",
+      "items": [
+        "sha256:0b96b698f0a073722780094cf03cac1b4bdaa2aeb62de4f8e82e45372556e513"
+      ],
+      "reason": "Part of the cache's L174-R1-02/R1-04/R1-07 realization or a doc/import change; the named entries cover the invariant-bearing behavior.",
+      "subject": "hunk:sha256:0b96b698f0a073722780094cf03cac1b4bdaa2aeb62de4f8e82e45372556e513"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-RRE9GC",
+      "items": [
+        "sha256:cd5ab8c8adbf731574393db1386996d486def6a467b1492b43eae3e95818eb15"
+      ],
+      "reason": "Route wiring for the scheduler's admission and cancellation bounds (L174-R1-02/R1-03); no separate invariant.",
+      "subject": "hunk:sha256:cd5ab8c8adbf731574393db1386996d486def6a467b1492b43eae3e95818eb15"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-RWGBJ0",
+      "items": [
+        "sha256:0b5e2f3072287288d73ed78da00d61e91c09ae29abd5e77e7ab3954b3230a4d2",
+        "sha256:35939cc7462f79be3a3c6d1855a0f32071e9e8e570238d6f92aa1f77ea173aeb",
+        "sha256:3f5156b13987560508a6e72219dd49c0d8c6ce017b93ca4fe410af2f733a70a1",
+        "sha256:43522010ee7fb774aed44fbbb9b4d83a3d02472a281cfe3f1e406c040c4114c0",
+        "sha256:5e9d237515ffbcc8121d00d85e16f27e0fbea2141da79812d860a870ec29d213",
+        "sha256:bd68f15ee0eb4836e8b39965f815a3a7c98ae53159d217ec77ee3cd7a30e0a7e",
+        "sha256:c2b162c2d6c9ad3ab9f48c4faa1c2aadc23e75ce33c766a5f1d7e8b627718bf9",
+        "sha256:d15987343415ab14d75ceb133981a1c764e4036ba90d5381150b6b5cc7a27878",
+        "sha256:d5bad6e1490de1642482093aeb9e739dab09aff9953a6df448a4c222e7cefacf",
+        "sha256:f359d900455c72fc2e950475c649542c18e34935253d8c64d05303f6d9abf8ba"
+      ],
+      "reason": "The L174 current-intent delta adds the rule-5/owner-cancellation account this card's readers need; the historical text remains above it.",
+      "sources": [
+        {
+          "blob": "31403dae069200cf58c80fa84c053f54579e49fd",
+          "path": "mcp/tests/test_intent_summary_cache.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_intent_summary_cache.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-RX5J2W",
+      "items": [
+        "sha256:dfb553f5914d38e7d74d526022d96e6aeffdce0fe677d7f8bb1fee3ec47852f0"
+      ],
+      "reason": "Test evidence/case change: the hunk supports the named invariant's proves entries; it asserts no separate product invariant.",
+      "subject": "hunk:sha256:dfb553f5914d38e7d74d526022d96e6aeffdce0fe677d7f8bb1fee3ec47852f0"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-S5ZGFA",
+      "items": [
+        "sha256:c7eee9a74ca2dc7cbcaf637a8186b1a49281c10acc8ed39c59c1ec426f5ccd7f"
+      ],
+      "reason": "The L174 current-intent delta adds the rule-5/owner-cancellation account this card's readers need; the historical text remains above it.",
+      "sources": [
+        {
+          "blob": "8e246f5c37e122c2dde378cb5aeed52dcabbfeae",
+          "path": "dashboard/src/data/abortableRead.ts"
+        },
+        {
+          "blob": "ad784b1c6e63764e2f4437c99f28a2b9bd553703",
+          "path": "dashboard/src/data/changeset.ts"
+        },
+        {
+          "blob": "0664e76469b7fd63cd8e3da581d1b99a59d8d550",
+          "path": "dashboard/src/data/conditionalReads.test.ts"
+        },
+        {
+          "blob": "bf1cda5edde56c5b7be27ecd4232e531a9fe9da0",
+          "path": "dashboard/src/data/conditionalReads.ts"
+        },
+        {
+          "blob": "0ef108498d3212184af9d534cd74a9930beb36b2",
+          "path": "dashboard/src/data/readOwnership.test.ts"
+        },
+        {
+          "blob": "5f323cafc543fc6177a811ebe5514517f71cb035",
+          "path": "dashboard/src/data/reviewIntentSummary.ts"
+        },
+        {
+          "blob": "c83285e17de7fb1ba7a99305ff79d478d0007cbb",
+          "path": "dashboard/src/data/taskDocuments.test.tsx"
+        },
+        {
+          "blob": "91a45a737a391b17be5e44f0de88da7af08dc61c",
+          "path": "dashboard/src/data/taskDocuments.ts"
+        },
+        {
+          "blob": "32d5a242931e0559a4a804ea9fae880f88f25d94",
+          "path": "dashboard/src/data/useTaskDocumentBody.ts"
+        }
+      ],
+      "subject": "onboarding:dashboard/src/data/overview"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-SJCJ06",
+      "items": [
+        "sha256:de87098ae460180b2f0733bd76faa6663a25e6a2356803f99c7a44e1420b7543"
+      ],
+      "reason": "Test evidence/case change: the hunk supports the named invariant's proves entries; it asserts no separate product invariant.",
+      "subject": "hunk:sha256:de87098ae460180b2f0733bd76faa6663a25e6a2356803f99c7a44e1420b7543"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-SSPDPW",
+      "items": [
+        "sha256:5d10aeb21c85ff23e71fca5e9a91810f6ddde6eeb80bd96d0940432a751ad3c5"
+      ],
+      "reason": "The L174 current-intent delta adds the rule-5/owner-cancellation account this card's readers need; the historical text remains above it.",
+      "sources": [
+        {
+          "blob": "c83285e17de7fb1ba7a99305ff79d478d0007cbb",
+          "path": "dashboard/src/data/taskDocuments.test.tsx"
+        }
+      ],
+      "subject": "onboarding:dashboard/src/data/taskDocuments.test.tsx"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-T3RRYH",
+      "items": [
+        "sha256:6e526eaeb82a7654573cd33924138cfac7237225091e3bc2e42defcc7fa0d5d6"
+      ],
+      "reason": "Route wiring for the scheduler's admission and cancellation bounds (L174-R1-02/R1-03); no separate invariant.",
+      "subject": "hunk:sha256:6e526eaeb82a7654573cd33924138cfac7237225091e3bc2e42defcc7fa0d5d6"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-TWXKMJ",
+      "items": [
+        "sha256:146749cef1e015cb65bf297fa98b431a7b2cd5c4bffcfaf06ad69204d2861bf8"
+      ],
+      "reason": "Test evidence/case change: the hunk supports the named invariant's proves entries; it asserts no separate product invariant.",
+      "subject": "hunk:sha256:146749cef1e015cb65bf297fa98b431a7b2cd5c4bffcfaf06ad69204d2861bf8"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-TX54BK",
+      "items": [
+        "sha256:51985857415234f92f18e2f479e4772105b10cb2dd58e98d5a2d757f8d8beb2e"
+      ],
+      "reason": "Part of the L174-R1-01/INV-WNHAWD/INV-C1RTSG abort and owner-wait wiring; the named entries cover the invariant-bearing behavior.",
+      "subject": "hunk:sha256:51985857415234f92f18e2f479e4772105b10cb2dd58e98d5a2d757f8d8beb2e"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-V48TK7",
+      "items": [
+        "sha256:83fd95ac31f40ff0751ec43f8ed165ddd26bd11291a8c7ffb198ec564113e1af"
+      ],
+      "reason": "Part of the cache's L174-R1-02/R1-04/R1-07 realization or a doc/import change; the named entries cover the invariant-bearing behavior.",
+      "subject": "hunk:sha256:83fd95ac31f40ff0751ec43f8ed165ddd26bd11291a8c7ffb198ec564113e1af"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-VBCBV7",
+      "items": [
+        "sha256:1c43abfe5001a9077217b27657972f3dcb5b104caf57d8917ff5cb5b63987a12"
+      ],
+      "reason": "Part of the L174-R1-01/INV-WNHAWD/INV-C1RTSG abort and owner-wait wiring; the named entries cover the invariant-bearing behavior.",
+      "subject": "hunk:sha256:1c43abfe5001a9077217b27657972f3dcb5b104caf57d8917ff5cb5b63987a12"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-VHYDVX",
+      "items": [
+        "sha256:bd2e14ada6ae5d7e1c9bb4e284aa872792ccc40749b50ab2cd59201594a65975"
+      ],
+      "reason": "The L174 current-intent delta adds the rule-5/owner-cancellation account this card's readers need; the historical text remains above it.",
+      "sources": [
+        {
+          "blob": "97c66a7abb19373cde84940afe976ea2969f990a",
+          "path": "mcp/src/agents_remember/serving/changeset.py"
+        },
+        {
+          "blob": "9361e1cdbce3684c70b9b2927c33e4a95ef03c91",
+          "path": "mcp/src/agents_remember/serving/changeset_cache.py"
+        },
+        {
+          "blob": "48e667c9305d3cf101beae36d282b6f77fd8ca28",
+          "path": "mcp/src/agents_remember/serving/changeset_endpoints.py"
+        },
+        {
+          "blob": "d023d83adaf5c952b460485f75bb778c9bfa20ad",
+          "path": "mcp/src/agents_remember/serving/changeset_generation.py"
+        },
+        {
+          "blob": "92ae1bfa857dbaf808ea47e97592015fb49a034e",
+          "path": "mcp/src/agents_remember/serving/changeset_reads.py"
+        },
+        {
+          "blob": "55a429ffe0a41bb74f32d56c35de1f6a3dbed293",
+          "path": "mcp/src/agents_remember/serving/changeset_scheduler.py"
+        },
+        {
+          "blob": "28615b42ee1260de85a1fb1a662167a8ffcdea9c",
+          "path": "mcp/src/agents_remember/serving/intent_summary_cache.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/serving/overview"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-VPVA8C",
+      "items": [
+        "sha256:2370aab3dad3ac66fe3fc23b7a2a221484271fb19c8905c285434031b73c5b7b"
+      ],
+      "reason": "Part of the cache's L174-R1-02/R1-04/R1-07 realization or a doc/import change; the named entries cover the invariant-bearing behavior.",
+      "subject": "hunk:sha256:2370aab3dad3ac66fe3fc23b7a2a221484271fb19c8905c285434031b73c5b7b"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-VR3C5D",
+      "items": [
+        "sha256:c2b162c2d6c9ad3ab9f48c4faa1c2aadc23e75ce33c766a5f1d7e8b627718bf9"
+      ],
+      "reason": "Test evidence/case change: the hunk supports the named invariant's proves entries; it asserts no separate product invariant.",
+      "subject": "hunk:sha256:c2b162c2d6c9ad3ab9f48c4faa1c2aadc23e75ce33c766a5f1d7e8b627718bf9"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-VR9VAD",
+      "items": [
+        "sha256:207a678b404cc7a645dcce9573dbfff5428f7bb62bca6c700d1c763f12f9fa21"
+      ],
+      "reason": "Test evidence/case change: the hunk supports the named invariant's proves entries; it asserts no separate product invariant.",
+      "subject": "hunk:sha256:207a678b404cc7a645dcce9573dbfff5428f7bb62bca6c700d1c763f12f9fa21"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-VZEZJP",
+      "items": [
+        "sha256:ccea016d4ef5954fb7c9c73388622450f4568bc6f95d000b37927586bdb09a0e"
+      ],
+      "reason": "The L174 current-intent delta adds the rule-5/owner-cancellation account this card's readers need; the historical text remains above it.",
+      "sources": [
+        {
+          "blob": "9361e1cdbce3684c70b9b2927c33e4a95ef03c91",
+          "path": "mcp/src/agents_remember/serving/changeset_cache.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/serving/changeset_cache.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-WF3CQ2",
+      "items": [
+        "sha256:3bdcb440bb36a0fb3f5e048d47b5b04ce2ad5117cb687b258d3d03e3db584450"
+      ],
+      "reason": "Test evidence/case change: the hunk supports the named invariant's proves entries; it asserts no separate product invariant.",
+      "subject": "hunk:sha256:3bdcb440bb36a0fb3f5e048d47b5b04ce2ad5117cb687b258d3d03e3db584450"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-WXNF9Z",
+      "items": [
+        "sha256:373ff9b6401a0cbc299c92813c7c7d8802144b0e5ab80679750e8d29b2d8983e"
+      ],
+      "reason": "Part of the L174-R1-01/INV-WNHAWD/INV-C1RTSG abort and owner-wait wiring; the named entries cover the invariant-bearing behavior.",
+      "subject": "hunk:sha256:373ff9b6401a0cbc299c92813c7c7d8802144b0e5ab80679750e8d29b2d8983e"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-X3YJJA",
+      "items": [
+        "sha256:aebc9ffd4fdc8609cdddb9a8c5d70a3bf95221e49e770598b298cb119d2c4bcd"
+      ],
+      "reason": "Test evidence/case change: the hunk supports the named invariant's proves entries; it asserts no separate product invariant.",
+      "subject": "hunk:sha256:aebc9ffd4fdc8609cdddb9a8c5d70a3bf95221e49e770598b298cb119d2c4bcd"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-X4S6W7",
+      "items": [
+        "sha256:389ecde1e93457d7914526b2a09101362e28c47d890fd749ec7f53a6b0e6aec2"
+      ],
+      "reason": "Test evidence/case change: the hunk supports the named invariant's proves entries; it asserts no separate product invariant.",
+      "subject": "hunk:sha256:389ecde1e93457d7914526b2a09101362e28c47d890fd749ec7f53a6b0e6aec2"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-XFRQHM",
+      "items": [
+        "sha256:bd68f15ee0eb4836e8b39965f815a3a7c98ae53159d217ec77ee3cd7a30e0a7e"
+      ],
+      "reason": "Test evidence/case change: the hunk supports the named invariant's proves entries; it asserts no separate product invariant.",
+      "subject": "hunk:sha256:bd68f15ee0eb4836e8b39965f815a3a7c98ae53159d217ec77ee3cd7a30e0a7e"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-XRK1MB",
+      "items": [
+        "sha256:04c18516b2df45535f59095738c25a678edf69a625d406befa15b28a01232915"
+      ],
+      "reason": "Test evidence/case change: the hunk supports the named invariant's proves entries; it asserts no separate product invariant.",
+      "subject": "hunk:sha256:04c18516b2df45535f59095738c25a678edf69a625d406befa15b28a01232915"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-Y0HZ1B",
+      "items": [
+        "sha256:1854d1f7e06bef487d386f443e3c715b64533a0566df8404b176529f2a1bdc91"
+      ],
+      "reason": "Test evidence/case change: the hunk supports the named invariant's proves entries; it asserts no separate product invariant.",
+      "subject": "hunk:sha256:1854d1f7e06bef487d386f443e3c715b64533a0566df8404b176529f2a1bdc91"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-Y2S70S",
+      "items": [
+        "sha256:224938ca9240dd73162d78f1a56807cc9dcb51463241db3331c2ec93860be0c8"
+      ],
+      "reason": "Test evidence/case change: the hunk supports the named invariant's proves entries; it asserts no separate product invariant.",
+      "subject": "hunk:sha256:224938ca9240dd73162d78f1a56807cc9dcb51463241db3331c2ec93860be0c8"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-Y5DTN0",
+      "items": [
+        "sha256:57dad323d3a2923243eba26937529437c1720ce1753829d1ecf21775e02a5c84"
+      ],
+      "reason": "The L174 current-intent delta adds the rule-5/owner-cancellation account this card's readers need; the historical text remains above it.",
+      "sources": [
+        {
+          "blob": "5cf51539b6df8e9517869d32694e6d48754342e6",
+          "path": "dashboard/src/panels/detail-panel/changeSetBar.tsx"
+        },
+        {
+          "blob": "e4bce7bfcbcf6968435ae889941865d6e31a0ba5",
+          "path": "dashboard/src/panels/detail-panel/taskReuseAfterSwitch.test.tsx"
+        },
+        {
+          "blob": "09cddc1031db8f659bbe9a553cb17e1f60622845",
+          "path": "dashboard/src/panels/detail-panel/taskSwitchAbort.test.tsx"
+        }
+      ],
+      "subject": "onboarding:dashboard/src/panels/overview"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-Y6HD0A",
+      "items": [
+        "sha256:8e46b8920913a7ea3cedcc64753a6f2a7a9a138f7860d9ebcb29460bd4818a5c"
+      ],
+      "reason": "The L174 current-intent delta adds the rule-5/owner-cancellation account this card's readers need; the historical text remains above it.",
+      "sources": [
+        {
+          "blob": "17d1ff5f16e586e463551d7a48f1244decf3b81e",
+          "path": "mcp/tests/test-evidence-lanes.toml"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test-evidence-lanes.toml"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-YNG9VE",
+      "items": [
+        "sha256:d15987343415ab14d75ceb133981a1c764e4036ba90d5381150b6b5cc7a27878"
+      ],
+      "reason": "Test evidence/case change: the hunk supports the named invariant's proves entries; it asserts no separate product invariant.",
+      "subject": "hunk:sha256:d15987343415ab14d75ceb133981a1c764e4036ba90d5381150b6b5cc7a27878"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-Z6ATE4",
+      "items": [
+        "sha256:e716ec346189054c24bcbcde7990dd576e7e8e9f1c37442089d970d43e913a40"
+      ],
+      "reason": "Part of the unknown-status retention condition of INV-7TMGB0; no separate invariant.",
+      "subject": "hunk:sha256:e716ec346189054c24bcbcde7990dd576e7e8e9f1c37442089d970d43e913a40"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-Z9Y9F9",
+      "items": [
+        "sha256:ac0dc2dbe5cfb182ad5eb3990f8acb8fb60b6d2278dc91501c6a503aae05169e"
+      ],
+      "reason": "Route wiring for the scheduler's admission and cancellation bounds (L174-R1-02/R1-03); no separate invariant.",
+      "subject": "hunk:sha256:ac0dc2dbe5cfb182ad5eb3990f8acb8fb60b6d2278dc91501c6a503aae05169e"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-ZMZR3X",
+      "items": [
+        "sha256:43522010ee7fb774aed44fbbb9b4d83a3d02472a281cfe3f1e406c040c4114c0"
+      ],
+      "reason": "Test evidence/case change: the hunk supports the named invariant's proves entries; it asserts no separate product invariant.",
+      "subject": "hunk:sha256:43522010ee7fb774aed44fbbb9b4d83a3d02472a281cfe3f1e406c040c4114c0"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-ZV1D0H",
+      "items": [
+        "sha256:5af969152154e3574338ac198b1398a5674083b923b3d5db2b10f49288290764"
+      ],
+      "reason": "Test evidence/case change: the hunk supports the named invariant's proves entries; it asserts no separate product invariant.",
+      "subject": "hunk:sha256:5af969152154e3574338ac198b1398a5674083b923b3d5db2b10f49288290764"
+    }
+  ],
+  "schema": "ar-history/v1"
+}

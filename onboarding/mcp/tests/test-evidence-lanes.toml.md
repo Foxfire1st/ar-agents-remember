@@ -166,6 +166,11 @@ Source declarations, mirrors and fixture assertions are not executed acceptance.
 
 - Seven new modules are added to unit-regression: capsule replay integrity, memory review lane, role capsule audiences, manifest edges, role step up, step-up choice validation and step-up recovery. Existing lane identities, other memberships and case-budget policy are not changed. [855]
 
+
+## Current Behavior
+
+`test_changeset_cancellation.py` is selected once in `unit-regression`, in canonical order beside `test_changeset_cache.py`. The seven lane identities and every other membership set are unchanged; this is selection, not an invocation or a pass.
+
 ## The MIK-R177 gate-group module
 
 `mcp/tests/test_mik_r177_gate_groups_identical_copies.py` is registered once in `unit-regression`, in the list's canonical order. The membership adds no lane, population ceiling or case-budget change and certifies no invocation; selection is catalog membership only.

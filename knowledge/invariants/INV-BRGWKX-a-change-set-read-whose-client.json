@@ -1,0 +1,35 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "guarded_by_test"
+    ],
+    "justification": "The scheduler carries the disconnect wait and the cache carries the admission check, and the cancellation cases prove child reaping, no admission and mid-finish withdrawal."
+  },
+  "applicability": "Change-set HTTP reads served by the family's bounded scheduler.",
+  "conditions": [
+    "A queued abandoned job is withdrawn before it runs; a running job keeps its admission slot until its worker physically ends.",
+    "The read's cancellation event reaches the Git runner, which kills the child and its process group through its one kill owner.",
+    "The cache checks the event before, during and after finish and withdraws any value it already admitted on an abandoned read."
+  ],
+  "exclusions": [
+    "A completed response, a non-change-set route, and a client-side abort without a server read."
+  ],
+  "id": "INV-BRGWKX",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "verdict-r4-a9.md; mcp/tests/test_changeset_cancellation.py::test_a_disconnected_read_ends_its_git_process"
+      ],
+      "path": "notes/reports/curator/03a91764-2ced-5673-861b-6d0d34d331bf/curator-handoff-L174-A9.json"
+    },
+    "handoffEntry": "L174-R1-02",
+    "leaf": "260928-MIK-L174",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "A change-set read whose client disconnected stops its queued or running work and admits no abandoned result.",
+  "status": "proposed",
+  "supersedes": []
+}

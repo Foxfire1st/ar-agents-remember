@@ -264,6 +264,11 @@ Source account retained from the parked claim (anchor currency not renewed here)
 
 Source account retained from the parked claim (anchor currency not renewed here): `dashboard/src/panels/review/ReviewSurface.tsx:328-392`; `dashboard/src/dev/scenarios.ts:43-119`.
 
+
+## Current Behavior
+
+the task entry's page reads now end with the task they belong to. The change-set bar, the changed-intent summary and the full task body each own an `AbortController` and abort on selection change/unmount; `abortableRead.ts` distinguishes an aborted read from a failure, and the stores keep a same-key live joiner alive. The mounted chat case `document-chat/newChatWhilePageReadPending.test.tsx` holds four abandoned page producers and still dispatches and binds the selected leaf's chat before any of them completes. No lifecycle or task-state authority moves into the browser.
+
 ## Evidence
 
 - Master validation in placement applies only to documented subTasks; other listed kinds retain list placement under existing identity/cycle guards, not a kind-rejection or own-master-validation rule. [73]

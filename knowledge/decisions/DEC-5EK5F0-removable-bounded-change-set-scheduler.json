@@ -1,0 +1,67 @@
+{
+  "admission": {
+    "criteria": [
+      "real_alternatives"
+    ],
+    "justification": "The leaf weighed the existing executor, an admission-only release and an unbounded queue against the removable bounded scheduler; the first two cannot reclaim queued work."
+  },
+  "alternatives": [
+    {
+      "option": "A family-owned scheduler with a fixed worker count, a removable deque of pending work and one admission budget for running plus pending jobs.",
+      "reason": "It bounds physical work and lets an abandoned queued job be withdrawn before it runs.",
+      "status": "chosen"
+    },
+    {
+      "option": "Keep ThreadPoolExecutor and release admission when a request disconnects.",
+      "reason": "Its canceled work items remain queued, so abandoned requests still grow the queue.",
+      "reconsider_when": "The executor gains a reliable remove/cancel primitive.",
+      "status": "rejected"
+    },
+    {
+      "option": "Leave the queue unbounded and rely on worker threads only.",
+      "reason": "The round-4 finding measured retained work items at the cap; threads alone do not bound admitted work.",
+      "reconsider_when": "A measured workload shows the pending bound never binds.",
+      "status": "rejected"
+    }
+  ],
+  "consequences": [
+    "The change-set route family owns 8 workers and 8 pending slots, answers 503 over the cap, returns 499 on disconnect, and reclaims abandoned queued work."
+  ],
+  "context": "ThreadPoolExecutor cannot remove its canceled work items; releasing admission while leaving abandoned requests queued let the queue grow. Round 4 required a hard admission bound with reclamation.",
+  "decider": "The architect's round-4 scope and the L174-A9 repair.",
+  "id": "DEC-5EK5F0",
+  "links": [
+    {
+      "relation": "constrains",
+      "target": "route:mcp/src/agents_remember/serving"
+    },
+    {
+      "relation": "explains",
+      "target": "INV-NPEQB1"
+    },
+    {
+      "relation": "motivated_change_to",
+      "target": {
+        "id": "MIK-R176",
+        "packet": "requirements/MIK-R176-v2-a-task-switch-never-waits-for-the-task-left-behind.md",
+        "task": {
+          "path": "260928_maintained-invariant-knowledge",
+          "repository": "agents-remember"
+        },
+        "version": "v2"
+      }
+    }
+  ],
+  "origin": {
+    "handoff": {
+      "path": "notes/reports/curator/03a91764-2ced-5673-861b-6d0d34d331bf/curator-handoff-L174-A9.json"
+    },
+    "handoffEntry": "decsched",
+    "leaf": "260928-MIK-L174",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-decision/v1",
+  "status": "active",
+  "supersedes": []
+}

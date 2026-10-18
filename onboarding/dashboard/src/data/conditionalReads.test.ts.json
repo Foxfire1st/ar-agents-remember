@@ -3,24 +3,7 @@
   "proves": [
     {
       "anchor": {
-        "blob": "a9b54b688602506f5ce6ad230ba00c36bd9dc05a",
-        "content": "sha256:c549023ccb46f385375aa00bc90fb03c5297150664065222dc398fcb0e45df60",
-        "locator": {
-          "kind": "symbol",
-          "name": "bounded conditional page results > deduplicates in flight, bounds pending reads and rejects late aborted retention"
-        }
-      },
-      "facet": "A capacity-two resource deduplicates one current promise, cancels the older request at the bound and refuses its late completion from retention.",
-      "id": "PRF-4HYJN8",
-      "invariant": "INV-GDWJKR",
-      "origin": {
-        "handoffEntry": "L168-W-R168-07",
-        "leaf": "260928-MIK-L168"
-      }
-    },
-    {
-      "anchor": {
-        "blob": "a9b54b688602506f5ce6ad230ba00c36bd9dc05a",
+        "blob": "0664e76469b7fd63cd8e3da581d1b99a59d8d550",
         "content": "sha256:8cb12317447405a2c93532439f2f0b4196763a696d7c5db4e2a71b737837f59b",
         "locator": {
           "kind": "symbol",
@@ -37,7 +20,7 @@
     },
     {
       "anchor": {
-        "blob": "a9b54b688602506f5ce6ad230ba00c36bd9dc05a",
+        "blob": "0664e76469b7fd63cd8e3da581d1b99a59d8d550",
         "content": "sha256:8cb12317447405a2c93532439f2f0b4196763a696d7c5db4e2a71b737837f59b",
         "locator": {
           "kind": "symbol",

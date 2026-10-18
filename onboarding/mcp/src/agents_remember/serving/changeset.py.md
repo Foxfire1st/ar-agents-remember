@@ -295,6 +295,11 @@ This entry supersedes the earlier `### Logic` master paragraphs and the `### 260
 master-route paragraph where they conflict (deleted privates, source-branch fallback, no-refusal-table);
 verification metadata stays pinned to the pre-commit source history until closeout.
 
+
+## Current Behavior
+
+`register_changeset_routes` now creates one `_BoundedReads(threads=8, pending=8)` for the app, finalizes it with the app, and registers the three routes as `async`; each awaits `_read_off_the_loop` (`:731-745`, `:767-825`). The scheduler's cap is the family's admission bound: over it the route answers 503 with `Retry-After: 1`; a client disconnect abandons the work (499), withdrawing a queued job or leaving a running one to release its slot when it ends. `cache.response(..., abandoned=event)` runs inside the copied request context, so the cache's admission checks see the same event. The read no longer runs on the server's shared default executor. This supersedes the 'Current read lifetime' sentence that described only the cache wrapper; the one app-owned cache remains the conditional store, and the scheduler adds the lifetime bound.
+
 ## 260921-ICR-L25 Current Delta — An Unrecorded Committed Endpoint Is Answered, Not Refused
 
 **The code half of a `committed` view no longer refuses when its landed commit is not recorded yet,

@@ -3,12 +3,12 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "000b39968c5ff7d771056230e212a2e10ff219fe",
-        "content": "sha256:708048c047d937c21f6b84435c3ab5fcb660dd6651ee8c09e942e85d5f28f1f7",
+        "blob": "32d5a242931e0559a4a804ea9fae880f88f25d94",
+        "content": "sha256:170ebf5d1f22ba019d9bf4f65ca0e9e901936296940ee831e8c494823bcf4369",
         "locator": {
-          "end": 162,
+          "end": 202,
           "kind": "line_range",
-          "start": 154
+          "start": 179
         }
       },
       "id": "RLZ-5X2J6F",
@@ -17,13 +17,13 @@
         "handoffEntry": "L168-CUR-M2-21-N16",
         "leaf": "260928-MIK-L168"
       },
-      "rationale": "availableBody uses bounded resources first and allows the active reader settled body only for the identical requested key; the active oversized-body exception cannot retain unrelated navigation history.",
+      "rationale": "The hook's body effect ends its own request on cleanup; a completed body remains the store's retained value. The store's pending waiter accounting is RLZ-P5YGCN/RLZ-XTZBXS in taskDocuments.ts.",
       "role": "enforcement"
     },
     {
       "anchor": {
-        "blob": "000b39968c5ff7d771056230e212a2e10ff219fe",
-        "content": "sha256:7e658f34b65c14c107d371271c0a8a95406548f6d3910f3055f6c350c637ad4e",
+        "blob": "32d5a242931e0559a4a804ea9fae880f88f25d94",
+        "content": "sha256:d91070d217afcc5da3fe47df7ca4b1a044a7cb0eebb4a52d6ca6561941f85a62",
         "locator": {
           "end": 206,
           "kind": "line_range",
@@ -36,17 +36,17 @@
         "handoffEntry": "L168-CUR-M1-21-A013-07",
         "leaf": "260928-MIK-L168"
       },
-      "rationale": "useTaskDocumentBody captures the requested qualified body key/revision, ignores callbacks after effect cleanup, and marks a crossing-revision answer failed without retaining it in the initiating local slot.",
+      "rationale": "The body effect aborts its own request on cleanup; a completed body is still retained under the returned revision.",
       "role": "enforcement"
     },
     {
       "anchor": {
-        "blob": "000b39968c5ff7d771056230e212a2e10ff219fe",
+        "blob": "32d5a242931e0559a4a804ea9fae880f88f25d94",
         "content": "sha256:a33de359713a3247adbc79c964c0c42d8819027bf099f6dea6eec058c00b92df",
         "locator": {
-          "end": 229,
+          "end": 235,
           "kind": "line_range",
-          "start": 208
+          "start": 214
         }
       },
       "id": "RLZ-ZG9MJ3",
@@ -60,12 +60,12 @@
     },
     {
       "anchor": {
-        "blob": "000b39968c5ff7d771056230e212a2e10ff219fe",
+        "blob": "32d5a242931e0559a4a804ea9fae880f88f25d94",
         "content": "sha256:3b346c9d88940e4d80dfc7ea4d38d332d234f7ee9abb6a7ddbedb69d7b8cf38b",
         "locator": {
-          "end": 152,
+          "end": 153,
           "kind": "line_range",
-          "start": 13
+          "start": 14
         }
       },
       "id": "RLZ-ZJ4AM6",

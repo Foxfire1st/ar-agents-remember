@@ -149,6 +149,11 @@ its change:
 The change-set target carries no filesystem path in any branch: the browser still chooses no candidate,
 and the historical entry names the record the server resolves from canonical task context.
 
+
+## Current Behavior
+
+`ChangeSetButton` now owns an `AbortController` for its counter read: it calls `loadChangeSet(target, controller.signal)` and aborts on cleanup (`:93-121`); an `AbortError` is not turned into a `reviewProblemFromCause` failure, so a task switch leaves no error word for that owner. A live same-key owner keeps the shared fetch and its retained result; the entry is removed and the fetch aborted only at the last leave. The loading/unrecorded/known-empty/refusal states and the withheld `+0 −0` total are unchanged. This supersedes the bar's earlier failure enumeration as the whole account: an aborted read is a fourth, silent outcome. The Intent review entry remains ungated.
+
 ## 260921-ICR-L17 The Entry Read Is Invalidated By The Workspace, Not Repeated On A Timer (superseded by 260921-ICR-L47)
 
 `260921-ICR-L17` (`ICR-R17@v1`) made the entry's **catalogue** read re-ask when the serialized global

@@ -94,6 +94,11 @@ A NUL-delimited Git pathname is an exact byte identity. Ordinary run_git still u
 
 The extraction of _git_run shares the former run_git setup; it does not make the general text runner byte-preserving or add a second Git environment policy.
 
+
+## Current Behavior
+
+the shared runner now accepts one cancellation event through `_GIT_CANCELLATION`/`cancellable_git_commands` (`:512-529`). `_run_git` takes the `_wait_process` path when a cancellation is set (`:372-412`); `_wait_process` polls every 0.05 s, and `_kill_process_group` is the single child/process-group kill owner for both the timeout and an abandoned read (`:418-471`). Without an event the runner behaves as before. This supersedes 'Timeout raises TimeoutExpired; prepared commit process groups stop children' only by widening the one wait path: an abandoned read now ends the same way a timeout does, and there is no second kill site.
+
 ## Evidence
 
 - The byte runner bypasses text decoding and universal-newline conversion. [54]

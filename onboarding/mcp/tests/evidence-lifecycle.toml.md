@@ -874,6 +874,11 @@ The existing `paseo_launch_test_support.py` shared-support row now describes the
 
 - The L88 consumer-only account is historical. The current comparison adds review_curator_fixture_support.py and reviewer_leaf_view_support.py; eight existing artifact rows change consumers, with existing non-consumer metadata and contract rows preserved. [297]
 
+
+## Current Behavior
+
+the new `test_changeset_cancellation.py` is declared on the two exact artifact consumer rows the change touches (the same rows that already declare `test_changeset_cache.py`). No artifact or contract identity, owner, lifetime or replacement contract changes; this is consumer reachability, not an execution claim.
+
 ## MIK-R177 derived consumers
 
 The source-owned regeneration adds `mcp/tests/test_mik_r177_gate_groups_identical_copies.py` to the three derived consumer lists that the writer worklist support already declares. No artifact, contract, replacement node, category, scope, guard or limit changes; consumer membership is dependency accounting, not proof of an invocation or an acceptance.

@@ -58,6 +58,11 @@ the review surface classify the same codes the same way.
 `realization_only` and `membership_only` are carried but not displayed (worker observation O7); showing
 them is a presentation choice owned by the later presentation leaves, not current intent.
 
+
+## Current Behavior
+
+`useIntentReviewSummary` creates an `AbortController` per effect, passes its signal to the store's summary load (`:126-131`), ignores an `AbortError` instead of mapping it to `unavailable`, and aborts on cleanup (`:136-140`). The mounted/sequence guard still drops a superseded completion. This supersedes 'Mounted/sequence checks drop superseded completions' as the whole account: a task switch now ends the request, not only its late answer. The display key and facts identity are unchanged.
+
 ## Evidence
 
 ### Docs References

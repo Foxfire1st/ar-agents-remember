@@ -362,6 +362,11 @@ Both the principal account and repeated operative captions use the same current 
 
 The clean-sync door module tests real Git path/blob/mode comparison and the original review-digest provenance, including distinct CR/LF pathname identities. Rendered instruction wording and audience tests guard clean-sync no-round behavior, immediate repair, per-finding evidence and Manager precedent handling. Its unit/affected-closure catalog registration is selection metadata, not an executed certificate or an Owner closure plan.
 
+
+## Current Behavior
+
+L174 adds `test_changeset_cancellation.py` (scheduler admission, queued withdrawal, disconnect child reaping, copied-context reclamation and one kill owner) and extends `test_changeset_cache.py` (id-keyed no-observation, uncached working view, unknown-status refusal, bounded request memo) and `test_intent_summary_cache.py` (freshness children filtered, refusal settlement). The new module is declared in the unit-regression lane and on the existing lifecycle consumer rows. These are source/selection declarations and the recorded verdict's cases, not a fresh whole-suite run.
+
 ## Evidence
 
 - The door regression exercises exact clean-sync provenance and byte path discrimination. [1786]

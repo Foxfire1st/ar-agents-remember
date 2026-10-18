@@ -231,6 +231,11 @@ These retired source accounts preserve earlier intent only. Their former citatio
 
 Route-review construction now stamps the leaf code base. The closeout door can preserve that review after a clean sync only with ancestry, disjoint exact pathname bytes and an unchanged reviewed blob/mode delta. The raw Git adapter keeps pathname bytes separate from the general text runner. Packaged instruction copies remain derived carriers, not a second authority. This does not grant atomic-child route-review recording or replace independent CODE/MEMORY lanes.
 
+
+## Current Behavior
+
+change-set reads now run on the route family's own bounded admission: `changeset_scheduler.py` starts eight workers and admits eight more pending jobs; a request past the cap answers 503 with `Retry-After: 1`, a disconnect answers 499 after setting the read's cancellation event, a queued abandoned job is withdrawn before it runs, and a running job releases its slot only when its worker ends. The runner's single `_wait_process` kills the Git child and its process group on the timeout or the event. Freshness is Git's own: a commit pair is keyed by ids with no observation on a hit, a working view runs `git status --porcelain=v2 -z` (and has no cache where a plain read costs no more), and the object store is Git's `count-objects -v` census; the `.git/objects` and worktree directory walks are gone. The id-keyed no-observation choice names its accepted gap: object loss and attribute changes are not observed per hit until eviction or restart. The cache's per-read maps are capacity-bounded and an abandoned read admits nothing.
+
 ## Evidence
 
 - Raw Git output prevents newline normalization from collapsing pathname identities. [340]

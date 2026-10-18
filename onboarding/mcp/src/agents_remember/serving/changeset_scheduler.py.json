@@ -1,0 +1,79 @@
+{
+  "path": "mcp/src/agents_remember/serving/changeset_scheduler.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "55a429ffe0a41bb74f32d56c35de1f6a3dbed293",
+        "content": "sha256:efcf3ff7e48e2b87d117e44bf5d7c7ed6f3cb59886a33640093056b896ef64bc",
+        "locator": {
+          "kind": "symbol",
+          "name": "_BoundedReads"
+        }
+      },
+      "id": "RLZ-3EA1M2",
+      "invariant": "INV-GDWJKR",
+      "origin": {
+        "handoffEntry": "L174-GD-SCHEDULER",
+        "leaf": "260928-MIK-L174"
+      },
+      "rationale": "The scheduler's 8 running + 8 pending cap is the named bound for this server pending-read set, and an abandoned queued job is withdrawn.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "55a429ffe0a41bb74f32d56c35de1f6a3dbed293",
+        "content": "sha256:afb15f7cf7ccf77823947e7ca62097e4f1bbf2f99ef8f19e427978b8fe610246",
+        "locator": {
+          "kind": "symbol",
+          "name": "_read_off_the_loop"
+        }
+      },
+      "id": "RLZ-869TYF",
+      "invariant": "INV-BRGWKX",
+      "origin": {
+        "handoffEntry": "L174-R1-02",
+        "leaf": "260928-MIK-L174"
+      },
+      "rationale": "The route's async wait admits one work item, polls the client, and calls abandon on disconnect; abandon withdraws a queued job or leaves a running one to release its slot at its physical end.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "55a429ffe0a41bb74f32d56c35de1f6a3dbed293",
+        "content": "sha256:efcf3ff7e48e2b87d117e44bf5d7c7ed6f3cb59886a33640093056b896ef64bc",
+        "locator": {
+          "kind": "symbol",
+          "name": "_BoundedReads"
+        }
+      },
+      "id": "RLZ-EBTZPD",
+      "invariant": "INV-NPEQB1",
+      "origin": {
+        "handoffEntry": "L174-R1-03",
+        "leaf": "260928-MIK-L174"
+      },
+      "rationale": "One admission budget covers running plus queued physical work; an abandoned queued item is removable and releases its slot at once.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "55a429ffe0a41bb74f32d56c35de1f6a3dbed293",
+        "content": "sha256:ed3b7c1d673250901b2b2533c20e8fb9021374a19ade16a27da7e3ffe5d4def2",
+        "locator": {
+          "kind": "symbol",
+          "name": "_Work.run"
+        }
+      },
+      "id": "RLZ-VPPKCB",
+      "invariant": "INV-NPEQB1",
+      "origin": {
+        "handoffEntry": "L174-R1-03",
+        "leaf": "260928-MIK-L174"
+      },
+      "rationale": "A running job releases its admission slot in finally, after its producer ends, including after its client leaves.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {},
+  "schema": "ar-onboarding-file/v1"
+}

@@ -3,42 +3,8 @@
   "proves": [
     {
       "anchor": {
-        "blob": "68ace12aad0a8e57a12575a620a5640da7ef6e6e",
-        "content": "sha256:7849af570e3373124571e54edf0f1654df1cda9cb099956b64a8b354d879b85c",
-        "locator": {
-          "kind": "symbol",
-          "name": "test_working_bytes_and_unchanged_poll_then_restored_mtime_edit"
-        }
-      },
-      "facet": "The source-defined working case matches native list/file payloads, reuses unchanged bytes without Git children, and sees an edit even after mtime restoration while preserving the real index bytes/identity.",
-      "id": "PRF-531TNF",
-      "invariant": "INV-7TMGB0",
-      "origin": {
-        "handoffEntry": "L168-W-R168-02",
-        "leaf": "260928-MIK-L168"
-      }
-    },
-    {
-      "anchor": {
-        "blob": "68ace12aad0a8e57a12575a620a5640da7ef6e6e",
-        "content": "sha256:7849af570e3373124571e54edf0f1654df1cda9cb099956b64a8b354d879b85c",
-        "locator": {
-          "kind": "symbol",
-          "name": "test_working_bytes_and_unchanged_poll_then_restored_mtime_edit"
-        }
-      },
-      "facet": "The native fixture assertions cover unchanged working list/file reuse with no Git children and invalidate on a real rewritten input.",
-      "id": "PRF-6M4ANV",
-      "invariant": "INV-QK8XNM",
-      "origin": {
-        "handoffEntry": "L168-W-R168-06",
-        "leaf": "260928-MIK-L168"
-      }
-    },
-    {
-      "anchor": {
-        "blob": "68ace12aad0a8e57a12575a620a5640da7ef6e6e",
-        "content": "sha256:96a07b931e18d22f18d95fd2fd4ec02eec0405151b177caa9c206ad9a93f8160",
+        "blob": "d3af6d9ff23114e69b51be4ca03ea1124de5bad3",
+        "content": "sha256:a0823ffbd48068b8c6fd2a94d4c5f503d68dff38a97f8017e81f91a76ac23287",
         "locator": {
           "kind": "symbol",
           "name": "test_landed_list_file_and_master_reuse_native_bytes_without_git"
@@ -54,7 +20,24 @@
     },
     {
       "anchor": {
-        "blob": "68ace12aad0a8e57a12575a620a5640da7ef6e6e",
+        "blob": "d3af6d9ff23114e69b51be4ca03ea1124de5bad3",
+        "content": "sha256:9080b128b77ad7f119255942b413602825731eff58731947f1168d6f48f112a0",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_working_view_has_no_cache_and_no_freshness_check"
+        }
+      },
+      "facet": "A working view is computed natively on every read; no freshness-only reuse is attempted.",
+      "id": "PRF-D121D0",
+      "invariant": "INV-7TMGB0",
+      "origin": {
+        "handoffEntry": "L174-7T-READS",
+        "leaf": "260928-MIK-L174"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "d3af6d9ff23114e69b51be4ca03ea1124de5bad3",
         "content": "sha256:1f84e9636a2f47fdb701938025b3f24b289aa2b23c40349daec33a23870c0b41",
         "locator": {
           "kind": "symbol",
@@ -71,25 +54,25 @@
     },
     {
       "anchor": {
-        "blob": "68ace12aad0a8e57a12575a620a5640da7ef6e6e",
-        "content": "sha256:d59fdbd7347b705f9719d91dc87f143c3357d356283e572d50c32a28267c33fd",
+        "blob": "d3af6d9ff23114e69b51be4ca03ea1124de5bad3",
+        "content": "sha256:ad3fb13cf791df7da962a6a53e271a8925fc00ef9a90e8c26ba01456499792ce",
         "locator": {
           "kind": "symbol",
-          "name": "test_actual_unreadable_worktree_observation_uses_the_uncached_native_read"
+          "name": "test_working_content_edit_with_the_same_status_letter_is_seen"
         }
       },
-      "facet": "A permission failure in worktree observation still produces the same native HTTP bytes and invokes Git anew on each request.",
-      "id": "PRF-JKZC2S",
-      "invariant": "INV-ZNXX7H",
+      "facet": "A same-letter content edit changes the working result.",
+      "id": "PRF-GEQF6H",
+      "invariant": "INV-7TMGB0",
       "origin": {
-        "handoffEntry": "L168-W-R168-PRESERVATION",
-        "leaf": "260928-MIK-L168"
+        "handoffEntry": "L174-7T-READS",
+        "leaf": "260928-MIK-L174"
       }
     },
     {
       "anchor": {
-        "blob": "68ace12aad0a8e57a12575a620a5640da7ef6e6e",
-        "content": "sha256:96a07b931e18d22f18d95fd2fd4ec02eec0405151b177caa9c206ad9a93f8160",
+        "blob": "d3af6d9ff23114e69b51be4ca03ea1124de5bad3",
+        "content": "sha256:a0823ffbd48068b8c6fd2a94d4c5f503d68dff38a97f8017e81f91a76ac23287",
         "locator": {
           "kind": "symbol",
           "name": "test_landed_list_file_and_master_reuse_native_bytes_without_git"
@@ -105,7 +88,7 @@
     },
     {
       "anchor": {
-        "blob": "68ace12aad0a8e57a12575a620a5640da7ef6e6e",
+        "blob": "d3af6d9ff23114e69b51be4ca03ea1124de5bad3",
         "content": "sha256:e09c686343d78b5bc69126cf054f038abdbd3eb2790a3444b8027cce3f920e59",
         "locator": {
           "kind": "symbol",

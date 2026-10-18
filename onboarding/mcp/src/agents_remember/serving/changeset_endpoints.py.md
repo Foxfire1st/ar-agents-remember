@@ -95,6 +95,11 @@ FastAPI owner and cannot become a second route surface.
   belongs to the caller (`_leaf_range`), which is how the code half keeps its refusal while the memory
   half may degrade.
 
+
+## Current Behavior
+
+`recorded_committed_range` now wraps its presence probe in `cached_read(("recorded-commits", repository, base, head), (), ..., Retention(keep=lambda value: value is None))` (`:117-125`). The pair check therefore runs once per exact pair, a successful presence proof is kept with no per-hit observation, and a refusal is never kept, so an object restored later is seen on the next read. This supersedes 'It runs cat-file -e for each recorded commit' as a per-call description: the pair check is a cached, keyed observation; the three absence kinds and the refusal shapes are unchanged.
+
 ## Evidence
 
 ### Docs References

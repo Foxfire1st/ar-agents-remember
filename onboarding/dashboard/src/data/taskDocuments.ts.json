@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "cb56539089a61b868c10348e34bfac4506eac81b",
-        "content": "sha256:228218234627a8957755a790bae4f98cd01ce9934483c26e077d94884103acb0",
+        "blob": "91a45a737a391b17be5e44f0de88da7af08dc61c",
+        "content": "sha256:f84ed2a76a7268fc2a12bae414f235f2421836427dcf7a3023e9bf77a845dd57",
         "locator": {
           "kind": "symbol",
           "name": "TaskDocumentResources"
@@ -16,13 +16,31 @@
         "handoffEntry": "L168-W-R168-07",
         "leaf": "260928-MIK-L168"
       },
-      "rationale": "Bodies/preparation use64entries/16MiB and in-flight bodies are capped64.",
+      "rationale": "The body store's pending set is bounded by its capacity and its waiters: the last waiter stops and forgets the fetch; completed bodies stay in the 64/16 MiB history.",
       "role": "enforcement"
     },
     {
       "anchor": {
-        "blob": "cb56539089a61b868c10348e34bfac4506eac81b",
-        "content": "sha256:228218234627a8957755a790bae4f98cd01ce9934483c26e077d94884103acb0",
+        "blob": "91a45a737a391b17be5e44f0de88da7af08dc61c",
+        "content": "sha256:726947bc1372ae3dede8142c02fdc08ce36876f12045a7500ed20ebf9ccf77a6",
+        "locator": {
+          "kind": "symbol",
+          "name": "TaskDocumentResources.load"
+        }
+      },
+      "id": "RLZ-P5YGCN",
+      "invariant": "INV-M46Y3E",
+      "origin": {
+        "handoffEntry": "L174-R1-01",
+        "leaf": "260928-MIK-L174"
+      },
+      "rationale": "The body store uses the same waiter count: a same-revision joiner gets its own wait over one body fetch, and the last waiter stops and forgets the fetch.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "91a45a737a391b17be5e44f0de88da7af08dc61c",
+        "content": "sha256:f84ed2a76a7268fc2a12bae414f235f2421836427dcf7a3023e9bf77a845dd57",
         "locator": {
           "kind": "symbol",
           "name": "TaskDocumentResources"
@@ -34,7 +52,7 @@
         "handoffEntry": "L168-W-R168-03",
         "leaf": "260928-MIK-L168"
       },
-      "rationale": "The dashboard-owned body/preparation resources outlive a reader mount.",
+      "rationale": "The body store keeps exact-revision bodies across navigation and gives each owner its own wait over one fetch.",
       "role": "propagation-persistence"
     }
   ],
