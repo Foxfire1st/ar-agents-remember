@@ -3,8 +3,26 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "e65398e2db3f42831009347a88bda655ae04901c",
-        "content": "sha256:20b2795930041037f1d804ab7c6bfe0117212b3ac15d5a4268e060e8be4d6bab",
+        "blob": "f5325f7f2d4261ca771af6d3b5ea6ffe7aa33a96",
+        "content": "sha256:32bc74b80edd95d50932572792ffcff965811133b5ae9e8292c8b84eb3f7819d",
+        "locator": {
+          "kind": "symbol",
+          "name": "capture_tree_into"
+        }
+      },
+      "id": "RLZ-16H323",
+      "invariant": "INV-09H4VC",
+      "origin": {
+        "handoffEntry": "R73-R7",
+        "leaf": "260928-MIK-L73"
+      },
+      "rationale": "The capture itself is the index's own isolated mechanism, reused rather than reimplemented for the reader.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "f5325f7f2d4261ca771af6d3b5ea6ffe7aa33a96",
+        "content": "sha256:1be104f151ba2e36a25c7964d8f0f289639e01b01c3d840dd472ddd4467bdc4f",
         "locator": {
           "kind": "symbol",
           "name": "_capture"

@@ -1,0 +1,65 @@
+{
+  "admission": {
+    "criteria": [
+      "real_alternatives"
+    ],
+    "justification": "Holding a capture for a walk was a real alternative with a lifecycle cost; the rejection names the storage that would outlive its owner."
+  },
+  "alternatives": [
+    {
+      "option": "Capture again on every page and refuse a continuation whose tree changed",
+      "reason": "No capture outlives its page, so a walk can never serve the rest of an anchor set from a tree the caller is no longer looking at.",
+      "status": "chosen"
+    },
+    {
+      "option": "Hold one capture for the whole walk",
+      "reason": "It would keep scratch storage alive between two turns of an agent, across an unbounded interval and with no owner to close it.",
+      "reconsider_when": "a capture can be held cheaply across pages, or re-capturing a large worktree measurably dominates the cost of a walk.",
+      "status": "rejected"
+    }
+  ],
+  "consequences": [
+    "`code_state` travels in the token, and an unchanged worktree yields the same tree id so the walk continues; a changed one is refused with the code-tree refusal."
+  ],
+  "context": "A working-tree read captures the checkout into scratch storage. A walk spans several pages, so the packet had to decide whether a capture outlives the page that made it or is taken again.",
+  "decider": "the developer, under D47, as MIK-R73@v1 rule 7 and inventory entry 151 state it",
+  "id": "DEC-6NRNGN",
+  "links": [
+    {
+      "relation": "explains",
+      "target": {
+        "id": "MIK-R73",
+        "packet": "requirements/MIK-R73-v1-agent-tool-surface-and-read-corrections.md",
+        "task": {
+          "path": "260928_maintained-invariant-knowledge",
+          "repository": "agents-remember"
+        },
+        "version": "v1"
+      }
+    },
+    {
+      "relation": "constrains",
+      "target": {
+        "blob": "e0e16888c5a50b682656243fe3fc8bfa44ae76c9",
+        "content": "sha256:cc9360bc2e8ee841ddd920f49139c44b5dee5f4623199c81ab3e041f76f208de",
+        "locator": {
+          "kind": "symbol",
+          "name": "hold_observed_code_tree"
+        },
+        "path": "mcp/src/agents_remember/application/worktree_code_state.py"
+      }
+    }
+  ],
+  "origin": {
+    "handoff": {
+      "path": "handoff-draft-2.json"
+    },
+    "handoffEntry": "recapture-per-page",
+    "leaf": "260928-MIK-L73",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-decision/v1",
+  "status": "active",
+  "supersedes": []
+}

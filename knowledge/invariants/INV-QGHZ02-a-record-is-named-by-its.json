@@ -1,0 +1,33 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake"
+    ],
+    "justification": "An undefined count lets a reader treat 'unresolved anchor' as 'unresolved record' and a UUID as an identity that can be looked up elsewhere; the definitions and text IDs guard exactly that misreading, which the requirement records as a defect."
+  },
+  "applicability": "Every answer that names a record, and every surface that prints the two currentness counts.",
+  "conditions": [
+    "The answer comes from a converted memory tree whose index projects UUIDs."
+  ],
+  "exclusions": [
+    "The UUID parameters themselves keep working; a text ID is added beside them, not in place of them.",
+    "A count that a surface does not compute is not restated there."
+  ],
+  "id": "INV-QGHZ02",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "MIK-R73@v1 rules 3 and 8; the field descriptions in models/knowledge/read.py, the tool description, skill c-04 and its generated copies, and the reviewer's label"
+      ],
+      "path": "handoff-draft-4.json"
+    },
+    "handoffEntry": "R73-R3-R8",
+    "leaf": "260928-MIK-L73",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "A record is named by its text ID and the two counts are defined once: unresolved_anchor_total counts the selected items whose anchor was not read from its recorded blob, and a currentness block covers every invariant the answer names, including one it only names as a relationship.",
+  "status": "proposed",
+  "supersedes": []
+}

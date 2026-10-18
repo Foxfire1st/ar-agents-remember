@@ -3,8 +3,26 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "3639d1b611da3713eb7f4619e381959ff1727679",
-        "content": "sha256:1ec5dfa3f9ea1ccc6fcd09c04eec66e644a47a42fcb3e5b58ad2019ec3c7b7e6",
+        "blob": "fc2d0bbf62dc43a310ff186f46bbddba278c1744",
+        "content": "sha256:9fe59b2e797af349562f7656c68733eb46b9e12c905e7b7a5c27191061fd71e5",
+        "locator": {
+          "kind": "symbol",
+          "name": "_bound_record_lists"
+        }
+      },
+      "id": "RLZ-26QRE5",
+      "invariant": "INV-QGHZ02",
+      "origin": {
+        "handoffEntry": "R73-R3-R8",
+        "leaf": "260928-MIK-L73"
+      },
+      "rationale": "The answer's record lists are assembled here, which is where every row that names a projected UUID also carries its text ID.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "fc2d0bbf62dc43a310ff186f46bbddba278c1744",
+        "content": "sha256:ddb05887e5081d80b421cf278570e732bae9de72d74d80461d14a47497e0f500",
         "locator": {
           "end": 1029,
           "kind": "line_range",
@@ -22,7 +40,7 @@
     },
     {
       "anchor": {
-        "blob": "3639d1b611da3713eb7f4619e381959ff1727679",
+        "blob": "fc2d0bbf62dc43a310ff186f46bbddba278c1744",
         "content": "sha256:a5193dd08a586ecc23bf0348d601ffe9b5f75ef8843877f744357bfe72293abd",
         "locator": {
           "kind": "symbol",
@@ -40,7 +58,7 @@
     },
     {
       "anchor": {
-        "blob": "3639d1b611da3713eb7f4619e381959ff1727679",
+        "blob": "fc2d0bbf62dc43a310ff186f46bbddba278c1744",
         "content": "sha256:de2f9005dc326c6b78321b383e9b4d133e268ce4b96c9ba6bf6a19c8ae935326",
         "locator": {
           "kind": "symbol",
@@ -58,7 +76,43 @@
     },
     {
       "anchor": {
-        "blob": "3639d1b611da3713eb7f4619e381959ff1727679",
+        "blob": "fc2d0bbf62dc43a310ff186f46bbddba278c1744",
+        "content": "sha256:66b9a79e1d45574a0d99c56d30c26210c35c8ebaec46eefef7f9d0c65049c885",
+        "locator": {
+          "kind": "symbol",
+          "name": "knowledge_write_payload"
+        }
+      },
+      "id": "RLZ-R6FHE3",
+      "invariant": "INV-AG8G8C",
+      "origin": {
+        "handoffEntry": "R73-R1",
+        "leaf": "260928-MIK-L73"
+      },
+      "rationale": "The mounted tool is the surface the packet names; it passes one submission into that route and returns the report, including a refusal.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "fc2d0bbf62dc43a310ff186f46bbddba278c1744",
+        "content": "sha256:372a58558d29147275cd9cc697433f16b3c3035e480408bb18d4ccf3d402a3d8",
+        "locator": {
+          "kind": "symbol",
+          "name": "_compact_route_row"
+        }
+      },
+      "id": "RLZ-SZMBCY",
+      "invariant": "INV-XYD593",
+      "origin": {
+        "handoffEntry": "R73-R4",
+        "leaf": "260928-MIK-L73"
+      },
+      "rationale": "The integrity check's answer is bounded, so the row is compacted here while the report keeps every location; that is the only difference the caller sees.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "fc2d0bbf62dc43a310ff186f46bbddba278c1744",
         "content": "sha256:d34fba8bbc173ea950cd3f34447c67133178ea1efce2dee3aac08a864bf4c167",
         "locator": {
           "kind": "symbol",
@@ -76,7 +130,25 @@
     },
     {
       "anchor": {
-        "blob": "3639d1b611da3713eb7f4619e381959ff1727679",
+        "blob": "fc2d0bbf62dc43a310ff186f46bbddba278c1744",
+        "content": "sha256:118507a2fb64803ef4abf923a0bb9255b4c3db57d4f7dc8970cd44b6b5467ad7",
+        "locator": {
+          "kind": "symbol",
+          "name": "_record_view"
+        }
+      },
+      "id": "RLZ-VVDQ78",
+      "invariant": "INV-AJBF9F",
+      "origin": {
+        "handoffEntry": "F01",
+        "leaf": "260928-MIK-L73"
+      },
+      "rationale": "The mounted record view is the surface the packet names; carrying the server's coordination root into the shared selection is what makes the mounted answer and the dashboard answer the same computation.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "fc2d0bbf62dc43a310ff186f46bbddba278c1744",
         "content": "sha256:a5193dd08a586ecc23bf0348d601ffe9b5f75ef8843877f744357bfe72293abd",
         "locator": {
           "kind": "symbol",

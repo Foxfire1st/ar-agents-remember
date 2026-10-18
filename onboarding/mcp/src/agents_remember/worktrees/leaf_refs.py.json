@@ -1,6 +1,25 @@
 {
   "path": "mcp/src/agents_remember/worktrees/leaf_refs.py",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "b555b5f62a631803d7a2e8a66f6f1fc85a305913",
+        "content": "sha256:3a3c75ae97c8950870327f4ba1aae70147ee935967a1358f9aa7de1fd1f7e101",
+        "locator": {
+          "kind": "symbol",
+          "name": "_active_task_roots"
+        }
+      },
+      "id": "RLZ-CFNVFW",
+      "invariant": "INV-P2NJA4",
+      "origin": {
+        "handoffEntry": "R83-DISCOVERY",
+        "leaf": "260928-MIK-L73"
+      },
+      "rationale": "Leaf resolution reads task roots here; a copy under notes/ must not become a leaf root.",
+      "role": "propagation-persistence"
+    }
+  ],
   "references": {
     "1": {
       "note": "Resolution returns canonical document identity or a typed not-found/ambiguous error.",

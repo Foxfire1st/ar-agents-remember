@@ -1,43 +1,6 @@
 {
   "path": "mcp/src/agents_remember/cli/knowledge_write_route.py",
-  "realizes": [
-    {
-      "anchor": {
-        "blob": "034702acb1217ed379f0fc5ec0d2ba979494d1a4",
-        "content": "sha256:3022e49248d0278059a1859a3b985482685a69840a7aecf0997c598a1627ed3d",
-        "locator": {
-          "kind": "symbol",
-          "name": "LeafQuestions._open"
-        }
-      },
-      "id": "RLZ-BS7E38",
-      "invariant": "INV-F2EQDR",
-      "origin": {
-        "handoffEntry": "MIK-R54@v1 rule 6",
-        "leaf": "260928-MIK-L54"
-      },
-      "rationale": "This lazy CLI boundary loads the MCP authority settings, refuses a coordination-root mismatch with the leaf contract, and constructs the task-owned question port only after the roots agree.",
-      "role": "enforcement"
-    },
-    {
-      "anchor": {
-        "blob": "034702acb1217ed379f0fc5ec0d2ba979494d1a4",
-        "content": "sha256:f2d33b0a8d65e2b5cb81516998f3280a3eb04dfa627971261b56bd36633d0f8f",
-        "locator": {
-          "kind": "symbol",
-          "name": "unconverted_write_refusal"
-        }
-      },
-      "id": "RLZ-TWXJK6",
-      "invariant": "INV-JT28KJ",
-      "origin": {
-        "handoffEntry": "L37-cutover-lock",
-        "leaf": "260928-MIK-L37"
-      },
-      "rationale": "Is knowledge-ingest's route to the unconverted-line refusal for a leaf's memory worktree, and through it to the lock.",
-      "role": "enforcement"
-    }
-  ],
+  "realizes": [],
   "references": {
     "17": {
       "note": "`run_leaf_write` owns the current boundary described above.",

@@ -3,8 +3,26 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "fb6624fd88b109b0c342c8e6cdec3d91daa3fe68",
-        "content": "sha256:a59dc76e2252180bac54d810a0a0005a5db0436cc7bee4983796d965e3778b4b",
+        "blob": "8a75a033367fd982c56bdaad17eb8acef03a1887",
+        "content": "sha256:96bc17dac4ecd6b124c259786c6d1c54306fff30e52a9ecf9744ff3cb4debd9d",
+        "locator": {
+          "kind": "symbol",
+          "name": "CheckoutBindingPayload"
+        }
+      },
+      "id": "RLZ-CRRZCX",
+      "invariant": "INV-0AWC7Q",
+      "origin": {
+        "handoffEntry": "F10",
+        "leaf": "260928-MIK-L73"
+      },
+      "rationale": "The dashboard's served state carries the same binding, so the person looking at the cockpit sees the root the server is bound to, not a second opinion.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "8a75a033367fd982c56bdaad17eb8acef03a1887",
+        "content": "sha256:d5b14e0dd89daf242a1a210997442450ae72426379f0b1e3114e4493a3eb4826",
         "locator": {
           "kind": "symbol",
           "name": "served_state_tail"

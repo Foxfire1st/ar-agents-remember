@@ -1,0 +1,54 @@
+{
+  "admission": {
+    "criteria": [
+      "real_alternatives"
+    ],
+    "justification": "A tool per step and no tool per step are both coherent surfaces; the choice decides what the roster promises about work that is really a stage of another operation."
+  },
+  "alternatives": [
+    {
+      "option": "No separate tools: conversion runs inside the crossing sync or once per repository; every read builds the index it needs on demand; the writer renders canonical files; memory_quality_check computes the worklist and knowledge_integrity_check returns it",
+      "reason": "Each behaviour is a step inside an owner that already has to perform it. A tool for the step would duplicate the owner, and a caller could come to treat the step as optional when the owner cannot run without it.",
+      "status": "chosen"
+    },
+    {
+      "option": "Give each behaviour its own mounted tool",
+      "reason": "Four more names would present internal steps as callable work, and each would need its own admission, guard and report while doing what its owner already does.",
+      "reconsider_when": "a caller needs to run one of these steps on a tree that no owning operation reaches, for example a repair path that must re-render files without a write.",
+      "status": "rejected"
+    }
+  ],
+  "consequences": [
+    "The mounted knowledge family holds four operations and no fifth for a step.",
+    "The absence is a decision, not an omission: conversion, the index, formatting and the worklist are reached through their owners."
+  ],
+  "context": "The mounted knowledge surface shrank to four operations - read, diff, integrity and write. Four behaviours that once had their own entry points remain in the product: conversion, index building, canonical formatting and the quality worklist. The packet had to say whether each becomes a tool again.",
+  "decider": "the developer, as the MIK-R73@v1 appendix row 64 states it",
+  "id": "DEC-NAXVPF",
+  "links": [
+    {
+      "relation": "explains",
+      "target": {
+        "id": "MIK-R73",
+        "packet": "requirements/MIK-R73-v1-agent-tool-surface-and-read-corrections.md",
+        "task": {
+          "path": "260928_maintained-invariant-knowledge",
+          "repository": "agents-remember"
+        },
+        "version": "v1"
+      }
+    }
+  ],
+  "origin": {
+    "handoff": {
+      "path": "handoff-repair-4.json"
+    },
+    "handoffEntry": "no-tools-for-steps",
+    "leaf": "260928-MIK-L73",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-decision/v1",
+  "status": "active",
+  "supersedes": []
+}

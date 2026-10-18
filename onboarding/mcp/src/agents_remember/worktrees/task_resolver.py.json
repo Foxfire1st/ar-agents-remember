@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "1052a563780ee71a5917ad475556a86011ea53b6",
+        "blob": "0a6426966075d0545fc7e6ffea623bf8eebc99c4",
         "content": "sha256:7517f2a6261f0327121a03a42772f6e7b882622d22681f379f9fd21bd5e489ff",
         "locator": {
           "kind": "symbol",
@@ -21,7 +21,7 @@
     },
     {
       "anchor": {
-        "blob": "1052a563780ee71a5917ad475556a86011ea53b6",
+        "blob": "0a6426966075d0545fc7e6ffea623bf8eebc99c4",
         "content": "sha256:7d724964b494ab897ee122054392a6164bf5da21692be99a161da38e85572c96",
         "locator": {
           "kind": "symbol",
@@ -36,6 +36,24 @@
       },
       "rationale": "Words the skip: sprint-commands-master with the sprint named, master-archived-only-by-retire naming task_doc.retire_master, or today's root-series-still-active for a task that is not a master.",
       "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "0a6426966075d0545fc7e6ffea623bf8eebc99c4",
+        "content": "sha256:ea4add3934644ce814d9fd46bad3e4480407475df9ad5d57cf68884e34e5d2fb",
+        "locator": {
+          "kind": "symbol",
+          "name": "iter_active_series_contracts"
+        }
+      },
+      "id": "RLZ-QTRRQ6",
+      "invariant": "INV-P2NJA4",
+      "origin": {
+        "handoffEntry": "R83-DISCOVERY",
+        "leaf": "260928-MIK-L73"
+      },
+      "rationale": "Starting a leaf asks this for live contracts, so it is where a stray copy would otherwise become a live series contract.",
+      "role": "propagation-persistence"
     }
   ],
   "references": {

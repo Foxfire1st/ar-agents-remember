@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "5ccf827ff1920019049ff8a2173825758a2676b0",
+        "blob": "ebf38faf5a0d88f98fc21785e9787373e2907e8d",
         "content": "sha256:981ec6c92d9899db9e7eed5a5dff4ec5a672661eb01cbeeb2a5b72e310bcaecf",
         "locator": {
           "kind": "symbol",
@@ -21,7 +21,7 @@
     },
     {
       "anchor": {
-        "blob": "5ccf827ff1920019049ff8a2173825758a2676b0",
+        "blob": "ebf38faf5a0d88f98fc21785e9787373e2907e8d",
         "content": "sha256:2b93be477e2c4ed21a42845ad2db6ef92e4c37079b88cabc156b233d44f33949",
         "locator": {
           "kind": "symbol",
@@ -39,8 +39,8 @@
     },
     {
       "anchor": {
-        "blob": "5ccf827ff1920019049ff8a2173825758a2676b0",
-        "content": "sha256:340a1de55a91dcbd2b177a9da8fadb99da301e2402868e104eda1ff82aafb858",
+        "blob": "ebf38faf5a0d88f98fc21785e9787373e2907e8d",
+        "content": "sha256:9fc24247621fd784a0b85580c07bdce8f56a1a21b99ea8d169a6fe987421944f",
         "locator": {
           "kind": "symbol",
           "name": "server_info_payload"
@@ -53,6 +53,24 @@
         "leaf": "260928-MIK-L113"
       },
       "rationale": "Puts the notice into the answer of `server_info` under `openUserSettings`, the report of an installation's state that a start reads.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "ebf38faf5a0d88f98fc21785e9787373e2907e8d",
+        "content": "sha256:9fc24247621fd784a0b85580c07bdce8f56a1a21b99ea8d169a6fe987421944f",
+        "locator": {
+          "kind": "symbol",
+          "name": "server_info_payload"
+        }
+      },
+      "id": "RLZ-DY94QK",
+      "invariant": "INV-0AWC7Q",
+      "origin": {
+        "handoffEntry": "F10",
+        "leaf": "260928-MIK-L73"
+      },
+      "rationale": "server_info is the field a mounted caller reads before acting; placing the binding in it is how an agent can see the root its tools really use.",
       "role": "presentation"
     }
   ],

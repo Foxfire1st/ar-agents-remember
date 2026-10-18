@@ -1,6 +1,25 @@
 {
   "path": "mcp/src/agents_remember/tasks/document_refs.py",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "8e7a9eac75417f2c2bf003612d5c62cfc540661a",
+        "content": "sha256:76321fe013755208406f51b2919f00181be275ec94d76eb82bcd62488d3e9a84",
+        "locator": {
+          "kind": "symbol",
+          "name": "TaskDocumentTopology"
+        }
+      },
+      "id": "RLZ-AD8Q4P",
+      "invariant": "INV-P2NJA4",
+      "origin": {
+        "handoffEntry": "R83-DISCOVERY",
+        "leaf": "260928-MIK-L73"
+      },
+      "rationale": "The master-document census is the lookup whose recursive walk admitted historical copies as live masters; taking its documents from the walker is what closes that.",
+      "role": "propagation-persistence"
+    }
+  ],
   "references": {
     "1": {
       "note": "Task document topology is centralized in one typed resolver.",

@@ -1,6 +1,24 @@
 {
   "path": "skills/c-04-retrieval-strategy-router/SKILL.md",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "e42c18ff23d89634795cf0146dd3266324d63fcb",
+        "content": "sha256:bc331266e065572e6d5969a7d08685a2bbd744955d1c36af311cd0756f963132",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-HFFGHH",
+      "invariant": "INV-QGHZ02",
+      "origin": {
+        "handoffEntry": "R73-R3-R8",
+        "leaf": "260928-MIK-L73"
+      },
+      "rationale": "The retrieval skill is what an agent reads before a read; the definitions paragraph there is how the two counts stop being undefined in practice.",
+      "role": "presentation"
+    }
+  ],
   "references": {
     "1": {
       "note": "Authored identity and retrieval-contract-first purpose\n\nAnchor: \"# c-04-retrieval-strategy-router Retrieval Strategy Router\"",

@@ -21,19 +21,19 @@ and families an answer returns, computes their state with `invariant_currentness
   (a text ID containing `/`), claim, anchor and member UUIDs are ignored. The counts therefore cover every
   invariant the answer carries, whether it names the invariant (for example as a relationship) or returns
   it in full, plus every member of a family it carries (review N5, 19:13:41).
-- **Which tree `knowledge_read` asks at (ruling 2, 18:42:37).** `requested_code_tree(code_tree_id,
-  repository_root, default_repository)` counts only a named `codeTreeId`. A `repositoryRoot` alone, or
-  nothing, requests nothing, so the block is `unverifiable`; `HEAD` is never substituted. A tree named
-  without a repository is read from the mount's workspace object store.
-  **Since MIK-R02 no production path calls `requested_code_tree` or `read_currentness`:** the
-  converted-tree `knowledge_read` applies the same rule in `knowledge_paging/tree_read.py` (`_at_code_tree`:
-  only the named `codeTreeId`, or the continuation's tree on a resumed page) and computes the block through
-  `evaluate_answer`. Both functions stay exported, and L03's tests still exercise them.
+- **Which tree `knowledge_read` asks at (ruling 2, 18:42:37).** Only a named `codeTreeId` counts; a
+  `repositoryRoot` alone, or nothing, requests nothing, so the block is `unverifiable`, and `HEAD` is never
+  substituted. Since MIK-R02 the converted-tree `knowledge_read` applies that rule in
+  `knowledge_paging/tree_read.py` (`_at_code_tree`: only the named `codeTreeId`, or the continuation's tree
+  on a resumed page) and computes the block through `evaluate_answer`. **`requested_code_tree` and
+  `read_currentness` were removed as dead exports (MIK-R73 rule 9):** no production path had called them
+  since MIK-R02, so the rule now has one implementation instead of a second, unused one.
 - **The published-intent block's tree (ruling 1, 18:42:37)** is chosen by its caller, `published_intent.py`:
   the tree that route already resolved for the source it returns. This module takes whatever `CodeTree`
   it is given.
-- `read_currentness(index_path, tree_key, code_tree, answer)` opens the index for that tree key, collects the
-  records, and returns `invariant_currentness(...).to_document()`.
+- `evaluate_answer(index_path, tree_key, code_tree, answer)` opens the index for that tree key, collects the
+  records and returns the `Currentness` the surfaces cut their block from; `failure_document` renders the
+  degraded block when the evaluation itself fails.
 - **It never raises (ruling N2, 19:13:41).** An index, SQLite, file-system, `ValueError` or
   `SubprocessError` failure (`CURRENTNESS_FAILURES`, public since MIK-R02; `IndexMismatchError`, `MemoryTreeError`,
   `KnowledgeStorageError` and `CodeReadError` are all `ValueError`s) returns a block with the `codeTree`,
@@ -45,9 +45,9 @@ and families an answer returns, computes their state with `invariant_currentness
   out to run once per page: `named_uuids(answer)` (every projected UUID), `record_of(index, value)` (the
   `(kind, ID)` one UUID names, or `None`), `evaluate_answer(index_path, tree_key, code_tree, answer)` (every
   named record by UUID plus their `Currentness`; it raises the failures instead of degrading) and
-  `failure_document(code_tree, error)` (the degraded block). `returned_records` and `read_currentness` are
-  rebuilt on these helpers and behave as before: L03's `test_knowledge_currentness.py` passes unchanged,
-  and the index is still opened through this module's `KnowledgeIndex`, so its failure injection holds.
+  `failure_document(code_tree, error)` (the degraded block). `returned_records` is built on these helpers and
+  behaves as before: L03's `test_knowledge_currentness.py` passes unchanged, and the index is still opened
+  through this module's `KnowledgeIndex`, so its failure injection holds.
   The caller is `application/knowledge_paging/currentness.py` (`WalkCurrentness`).
 
 ### Conventions

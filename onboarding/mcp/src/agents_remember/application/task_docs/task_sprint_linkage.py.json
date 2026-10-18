@@ -3,7 +3,25 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "656c29bb22ddbe2a3c789f7404a9e708473c3178",
+        "blob": "a0b5ad238d8c829320217d9994826ecc6c88a546",
+        "content": "sha256:46d27c48d9db485a5e7223f8108af0df48d2f3e41fd3342b90dacc12124c69b2",
+        "locator": {
+          "kind": "symbol",
+          "name": "_stray_task_file_facts"
+        }
+      },
+      "id": "RLZ-0FXT53",
+      "invariant": "INV-P2NJA4",
+      "origin": {
+        "handoffEntry": "R83-DISCOVERY",
+        "leaf": "260928-MIK-L73"
+      },
+      "rationale": "This is the only code that reads the copies: the linkage report names each stray and each folder the scan could not read, which is how a person learns the tree holds one.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "a0b5ad238d8c829320217d9994826ecc6c88a546",
         "content": "sha256:cf2561610b0a9af1ebd594476fdbeced7893162885ca3139fb0679c2de945e08",
         "locator": {
           "kind": "symbol",

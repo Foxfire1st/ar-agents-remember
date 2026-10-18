@@ -1,0 +1,297 @@
+{
+  "path": "mcp/tests/test_agent_tool_surface_corrections.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "5f3d74167332e94232bea36a96e6df69469114ba",
+        "content": "sha256:dd872b8d3f910ca473565828f0b00b148078eaadeebcebe1e3cdfa42636b870b",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_the_mounted_writer_refuses_before_it_writes"
+        }
+      },
+      "facet": "The mounted writer refuses a document it cannot use before any file is written.",
+      "id": "PRF-8BE634",
+      "invariant": "INV-AG8G8C",
+      "origin": {
+        "handoffEntry": "R73-R1",
+        "leaf": "260928-MIK-L73"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "5f3d74167332e94232bea36a96e6df69469114ba",
+        "content": "sha256:914d9f85e2453003b24039e7c9ffc2ab53ad05f1a70bead9d92a8a91a2e83c0d",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_card_omitted_by_a_stale_route_index_is_served_registered"
+        }
+      },
+      "facet": "A card the route index omits is still served as found, and the answer names the stale index and route_index_refresh.",
+      "id": "PRF-96XJXM",
+      "invariant": "INV-4N6Y14",
+      "origin": {
+        "handoffEntry": "F08",
+        "leaf": "260928-MIK-L73"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "5f3d74167332e94232bea36a96e6df69469114ba",
+        "content": "sha256:eae72b2df0b09120e75f18c95dead12293a933f6b780885e5ee7686e1e51c797",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_page_states_its_index_state_and_never_calls_a_partial_walk_complete"
+        }
+      },
+      "facet": "A page over a partial index reports enumerationComplete false and indexState partial.",
+      "id": "PRF-EM635D",
+      "invariant": "INV-QQGSAN",
+      "origin": {
+        "handoffEntry": "R73-NO-FALSE-COMPLETE",
+        "leaf": "260928-MIK-L73"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "5f3d74167332e94232bea36a96e6df69469114ba",
+        "content": "sha256:a32259f04181bfca3af3f421766816842456b3c1ec89b0ca1af55fef2c90d980",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_task_folders_are_the_direct_children_except_the_archive"
+        }
+      },
+      "facet": "The walker yields the direct children of a repository's tasks root and never the archive segment.",
+      "id": "PRF-ENH6R8",
+      "invariant": "INV-P2NJA4",
+      "origin": {
+        "handoffEntry": "R83-DISCOVERY",
+        "leaf": "260928-MIK-L73"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "5f3d74167332e94232bea36a96e6df69469114ba",
+        "content": "sha256:0100fe63dc0b95f57c438f939bdaf55a26c7508baf497b1389e72a683172236c",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_registered_record_requirement_targets_preserve_owner_answers_and_latest_version"
+        }
+      },
+      "facet": "A requirement link carries the owner's resolved or unresolved answer with its exact refusal code, the archival flag, and the latest approved version even when a draft exists.",
+      "id": "PRF-HA411S",
+      "invariant": "INV-AJBF9F",
+      "origin": {
+        "handoffEntry": "F01",
+        "leaf": "260928-MIK-L73"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "5f3d74167332e94232bea36a96e6df69469114ba",
+        "content": "sha256:de9b5bb96b5bd2e71bc8624efe5ddc1dee53c8a91d19c76161f2439025de7b10",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_the_stray_scan_lists_copies_outside_canonical_places"
+        }
+      },
+      "facet": "The stray-file scanner enumerates exactly the copies outside the canonical task-document places: a notes/ copy and its deeper siblings appear in its path list, and a canonical copy does not.",
+      "id": "PRF-HSYB3N",
+      "invariant": "INV-P2NJA4",
+      "origin": {
+        "handoffEntry": "P2NJA4-FIX",
+        "leaf": "260928-MIK-L73"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "5f3d74167332e94232bea36a96e6df69469114ba",
+        "content": "sha256:3f65e608a9f2b4f72b4fb45eba7a5153e1417d732c9538ef88fb4dc9d5f5ae6d",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_contract_at_a_canonical_place_naming_another_path_is_refused"
+        }
+      },
+      "facet": "A canonical contract naming another path is refused with the found and recorded paths and both remedies.",
+      "id": "PRF-JMHENS",
+      "invariant": "INV-JWCHAQ",
+      "origin": {
+        "handoffEntry": "F11",
+        "leaf": "260928-MIK-L73"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "5f3d74167332e94232bea36a96e6df69469114ba",
+        "content": "sha256:fb7a97f8158cc8d92620466466b7f1245051a1c2cd7e9c2fdf07b12f1e9ed536",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_registered_record_targets_observe_full_anchors_and_selected_routes"
+        }
+      },
+      "facet": "An unchanged symbol anchor reads current, an edited or deleted one stale with observed and recorded blobs named, a captured route current and a removed one stale, an unreadable tree unverifiable, and the dashboard route returns the same rows as the mounted view.",
+      "id": "PRF-M6CKCB",
+      "invariant": "INV-AJBF9F",
+      "origin": {
+        "handoffEntry": "F01",
+        "leaf": "260928-MIK-L73"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "5f3d74167332e94232bea36a96e6df69469114ba",
+        "content": "sha256:70c8e3cc1ed8221348a58e61ad10d02266d6cee72c12932d9f4d1baabd9300bd",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_clean_checkout_reads_its_commit_and_captures_nothing"
+        }
+      },
+      "facet": "A clean checkout answers at its commit tree and captures nothing.",
+      "id": "PRF-NERDC4",
+      "invariant": "INV-09H4VC",
+      "origin": {
+        "handoffEntry": "R73-R7",
+        "leaf": "260928-MIK-L73"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "5f3d74167332e94232bea36a96e6df69469114ba",
+        "content": "sha256:be40ef9194cbb4bc3bc524e41220bddcc6d474b6237bbaf76f70175ff478f5cf",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_an_unscoped_read_is_identified_as_the_official_line"
+        }
+      },
+      "facet": "Without a task context the read answers the official line and says so.",
+      "id": "PRF-NG91F0",
+      "invariant": "INV-YHCVE3",
+      "origin": {
+        "handoffEntry": "F09",
+        "leaf": "260928-MIK-L73"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "5f3d74167332e94232bea36a96e6df69469114ba",
+        "content": "sha256:b2592a9fb7ddfd72854e0e2c42facaa49c3a8dec57dfa9611129a529b7d6fc31",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_leaf_read_names_its_own_source_and_memory_roots"
+        }
+      },
+      "facet": "The answer states the leaf's code and memory roots.",
+      "id": "PRF-NM3WVR",
+      "invariant": "INV-YHCVE3",
+      "origin": {
+        "handoffEntry": "F09",
+        "leaf": "260928-MIK-L73"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "5f3d74167332e94232bea36a96e6df69469114ba",
+        "content": "sha256:62765f95a87b871a5c06ad13a45e2cd2f73e0f7b2be4bda01193c7bc94759161",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_knowledge_index_answers_legacy_format_for_an_unconverted_tree"
+        }
+      },
+      "facet": "A tree without the layout marker is answered legacy-format and never complete.",
+      "id": "PRF-Q4EK66",
+      "invariant": "INV-QQGSAN",
+      "origin": {
+        "handoffEntry": "R73-NO-FALSE-COMPLETE",
+        "leaf": "260928-MIK-L73"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "5f3d74167332e94232bea36a96e6df69469114ba",
+        "content": "sha256:d5325a8ea05b68a91d1fdabff951a63f1940018b3b6f0ec270b8beff9ca466c6",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_only_canonical_positions_are_a_task_document_or_a_contract"
+        }
+      },
+      "facet": "Only the three stated places are a task document or a contract, at exactly those depths.",
+      "id": "PRF-SWZ12M",
+      "invariant": "INV-P2NJA4",
+      "origin": {
+        "handoffEntry": "R83-DISCOVERY",
+        "leaf": "260928-MIK-L73"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "5f3d74167332e94232bea36a96e6df69469114ba",
+        "content": "sha256:3ae94c6be82edcf3034fd3af1ed7606f9e60b8d9cece4e26f1943d86a73fc48c",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_registered_leaf_read_observes_both_edited_worktrees"
+        }
+      },
+      "facet": "The leaf read returns the leaf's edited source and the leaf's edited card, not the official line's.",
+      "id": "PRF-V7VVCK",
+      "invariant": "INV-YHCVE3",
+      "origin": {
+        "handoffEntry": "F09",
+        "leaf": "260928-MIK-L73"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "5f3d74167332e94232bea36a96e6df69469114ba",
+        "content": "sha256:2ed4b4889799c7968b33c6a2582f3ab84db9f39f7e9aaf9eb08c544eacdf21e9",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_the_writer_and_the_reads_have_their_answer_rows"
+        }
+      },
+      "facet": "The shared answer-row bound lookup returns a positive bound for knowledge_write and for knowledge_read, so neither is served a zero-row bound; an unlisted name takes the lookup's positive fallback.",
+      "id": "PRF-WKBQGP",
+      "invariant": "INV-AG8G8C",
+      "origin": {
+        "handoffEntry": "AG8G8C-FIX",
+        "leaf": "260928-MIK-L73"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "5f3d74167332e94232bea36a96e6df69469114ba",
+        "content": "sha256:fc06c5cda733d1a4769f029924492b4feaf5bc356168785905339c91d6a89b1c",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_the_working_tree_selector_captures_and_keeps_the_store_readable"
+        }
+      },
+      "facet": "The working-tree selector captures the checkout and keeps its scratch store readable for the read.",
+      "id": "PRF-WQ38ND",
+      "invariant": "INV-09H4VC",
+      "origin": {
+        "handoffEntry": "R73-R7",
+        "leaf": "260928-MIK-L73"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "5f3d74167332e94232bea36a96e6df69469114ba",
+        "content": "sha256:f789aa6d560d57e1b0cb47d1f71355dc1bf77d5be0874be0e35ee2adef1ae30a",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_leaf_whose_memory_worktree_is_gone_is_refused_by_name"
+        }
+      },
+      "facet": "A contract whose memory worktree is gone is refused by name.",
+      "id": "PRF-ZT66RP",
+      "invariant": "INV-YHCVE3",
+      "origin": {
+        "handoffEntry": "F09",
+        "leaf": "260928-MIK-L73"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {},
+  "schema": "ar-onboarding-file/v1"
+}

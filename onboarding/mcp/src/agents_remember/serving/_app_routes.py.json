@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "a0509af9d207b37ed234ce926f06d5bb4f1e7755",
-        "content": "sha256:aadd342e2f3f79e9982698d25fb884bfca6519e662b4e3ecca58af70f7297bb5",
+        "blob": "9f285ef54e20d66ae397598f94a7df8786bfcfaf",
+        "content": "sha256:bf7363e5f898a7c6d6997ef3c399fe48cb22fa9fb98e4d73a4c5402e0377934e",
         "locator": {
           "kind": "symbol",
           "name": "api_stream"
@@ -17,6 +17,24 @@
         "leaf": "260928-MIK-L57"
       },
       "rationale": "The state-stream route binds optional addressed review identity to the actual native-watch multiplexer and runtime root-admission callback while retaining the ordinary projection stream on the same connection. The helper supplies scoped invalidation/error notices; the existing client watch owns matching and shared-entry generation. This route does not compute summary counts or imply that argument normalization authenticates a task.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "9f285ef54e20d66ae397598f94a7df8786bfcfaf",
+        "content": "sha256:e4178b7ceb63f539ffb08005bbae6c31f5006b9fd78da33f285d940265e08517",
+        "locator": {
+          "kind": "symbol",
+          "name": "_checkout_binding"
+        }
+      },
+      "id": "RLZ-X817FF",
+      "invariant": "INV-0AWC7Q",
+      "origin": {
+        "handoffEntry": "F10",
+        "leaf": "260928-MIK-L73"
+      },
+      "rationale": "The route is the join between the served configuration and the dashboard document; without it the field would exist in the type and never reach the projection.",
       "role": "propagation-persistence"
     }
   ],
@@ -54,12 +72,12 @@
         },
         {
           "anchor": {
-            "blob": "a0509af9d207b37ed234ce926f06d5bb4f1e7755",
+            "blob": "9f285ef54e20d66ae397598f94a7df8786bfcfaf",
             "content": "sha256:91704bae042925876115f062334973d1798e585aab58e5c7d5345f61005f8162",
             "locator": {
-              "end": 199,
+              "end": 209,
               "kind": "line_range",
-              "start": 179
+              "start": 189
             }
           },
           "kind": "code"

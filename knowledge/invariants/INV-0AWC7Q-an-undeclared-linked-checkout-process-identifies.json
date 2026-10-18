@@ -1,0 +1,34 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "guarded_by_test"
+    ],
+    "justification": "The obligation spans the configuration value, the decision that computes it, the server_info payload, the served-state document and the dashboard route, and one isolated test asserts the CLI line and both fields; without the change a process reads an empty world with no stated cause, which reviewers have already filed false findings about."
+  },
+  "applicability": "Any process that runs the runtime from a linked worktree without declaring an execution mode, and the two answers that report where it is bound.",
+  "conditions": [
+    "The code was loaded from a worktree while the configured coordination root is not the one the process would use."
+  ],
+  "exclusions": [
+    "A declared test mode, or the installed command: no disposable binding is reported.",
+    "A root that is not a linked checkout: no binding at all."
+  ],
+  "id": "INV-0AWC7Q",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "CheckoutCoordinationIsolationTests.test_checkout_guard_is_named_by_cli_registered_server_and_dashboard; evidence/focused-reviewer-tests.log; three Worker F10 negative controls"
+      ],
+      "path": "handoff-draft-2.json"
+    },
+    "handoffEntry": "F10",
+    "leaf": "260928-MIK-L73",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "An undeclared linked-checkout process identifies its disposable coordination binding and remedy in one CLI stderr line and in both server_info and dashboard state fields.",
+  "status": "proposed",
+  "supersedes": []
+}

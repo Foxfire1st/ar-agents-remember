@@ -1,0 +1,54 @@
+{
+  "admission": {
+    "criteria": [
+      "real_alternatives"
+    ],
+    "justification": "Two designs were weighed - a tolerant index that names what it refused, and a strict one - and the choice decides whether a reader can use an index of a tree the validator rejects."
+  },
+  "alternatives": [
+    {
+      "option": "Keep the first file in path order as the indexed record, record the later duplicate's parse refusal as a problem against its path, and mark the index partial",
+      "reason": "The build visits files in path order and treats a file that fails to parse as a problem rather than an error, so the first file for an id is the record the index serves and every later copy is named. The answer states partial, which is the same fact the validator would refuse and a reader can act on.",
+      "status": "chosen"
+    },
+    {
+      "option": "Refuse the whole index when any id repeats",
+      "reason": "A single duplicate would leave the reader with no index at all, when the ordinary case is a tree that is merely out of order and whose other records are fine.",
+      "reconsider_when": "a repository appears whose duplicates are systematic rather than accidental, so that a partial index would mislead more than it serves.",
+      "status": "rejected"
+    }
+  ],
+  "consequences": [
+    "An index over a tree with duplicate ids answers complete only when it holds no problems; a duplicate forces partial.",
+    "The duplicate's path is named in the problem set, not silently dropped from the file list."
+  ],
+  "context": "The validator refuses two records with one id, but the index exists to answer for the tree a reader actually has, and one bad file must not blind the reader to the rest. The packet had to say what a duplicate means to the index.",
+  "decider": "the developer, as the MIK-R73@v1 appendix row 58 states it",
+  "id": "DEC-WN1GND",
+  "links": [
+    {
+      "relation": "explains",
+      "target": {
+        "id": "MIK-R73",
+        "packet": "requirements/MIK-R73-v1-agent-tool-surface-and-read-corrections.md",
+        "task": {
+          "path": "260928_maintained-invariant-knowledge",
+          "repository": "agents-remember"
+        },
+        "version": "v1"
+      }
+    }
+  ],
+  "origin": {
+    "handoff": {
+      "path": "handoff-repair-4.json"
+    },
+    "handoffEntry": "index-partial-duplicate",
+    "leaf": "260928-MIK-L73",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-decision/v1",
+  "status": "active",
+  "supersedes": []
+}

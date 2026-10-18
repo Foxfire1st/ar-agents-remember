@@ -7,7 +7,7 @@
 
 The serving package composes the local dashboard, projection/event streams and retained file, note, task, requirement, change-set, Knowledge and review readers over configured application ports. Native Paseo integration remains a separate retained subtree; the removed hosted terminal catalogue, harness adapter/control, conversation, notifier and supervisor plane is not this package's current responsibility.
 
-Role launch instructions are generic capsule-or-refused values; compilation and admission remain application-owned. The current source literal PUBLIC_TOOLS has40 names after dispatch_agent removal. Declaration, installation content, native receipt identity and observed host execution are separate facts; this overview creates no new CODE grade.
+Role launch instructions are generic capsule-or-refused values; compilation and admission remain application-owned. The current source literal PUBLIC_TOOLS has41 names: the 40 after dispatch_agent removal plus the mounted knowledge_write. Declaration, installation content, native receipt identity and observed host execution are separate facts; this overview creates no new CODE grade.
 
 ## Hot Path Summary
 

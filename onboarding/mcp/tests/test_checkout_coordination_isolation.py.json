@@ -1,5 +1,24 @@
 {
   "path": "mcp/tests/test_checkout_coordination_isolation.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "c81891c02a234c89c82dd8f289c1b325c809d646",
+        "content": "sha256:79ded38ca2e41774be178ef5ef8a3a76f2c9591d432b7a6f196d33bc5400f63a",
+        "locator": {
+          "kind": "symbol",
+          "name": "CheckoutCoordinationIsolationTests.test_checkout_guard_is_named_by_cli_registered_server_and_dashboard"
+        }
+      },
+      "facet": "The CLI line names the loaded worktree, the disposable root, the configured root and the remedy, and server_info and the dashboard state carry the same fact.",
+      "id": "PRF-VZ5J2A",
+      "invariant": "INV-0AWC7Q",
+      "origin": {
+        "handoffEntry": "F10",
+        "leaf": "260928-MIK-L73"
+      }
+    }
+  ],
   "realizes": [],
   "references": {
     "1": {

@@ -1,0 +1,34 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "guarded_by_test"
+    ],
+    "justification": "The obligation is realized in five production modules - the assessment itself, the selection that carries the requirement owner's coordination root, the outgoing caller, the line-range diff's object store and the mounted record view - and two registered cases, one parametrised across three locator kinds and one across both owner arrangements, fail without it."
+  },
+  "applicability": "Every link of a record read through the mounted knowledge_read view record, or through the dashboard's record route, at the code tree that read captured.",
+  "conditions": [
+    "The link names an anchor, a route, a requirement or a record."
+  ],
+  "exclusions": [
+    "A read with no code tree: every anchor and route is unverifiable with that reason.",
+    "A target kind no reader assesses: still unverifiable, named as such."
+  ],
+  "id": "INV-AJBF9F",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "r5-evidence/focused-final.log and r5-evidence/focused-reviewer-tests.log (6 passed in 21.36s); the two registered cases named here assert anchor, route and requirement-owner states and the mounted/dashboard equality"
+      ],
+      "path": "handoff-draft-2.json"
+    },
+    "handoffEntry": "F01",
+    "leaf": "260928-MIK-L73",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Record-view links assess full anchors and route targets at the captured code tree and carry the requirement owner outcome, exact refusal, archival flag and latest approved version; the mounted and dashboard record routes agree.",
+  "status": "proposed",
+  "supersedes": []
+}

@@ -29,10 +29,12 @@ Three spellings are accepted:
 - **The code tree (ruling 2026-09-30T09:42:58 Q1/N1).** For a commit, `_paired_code_tree` reads the commit's
   own `Code-Commit` pairing (`own_paired_code_commit`) and resolves its tree in the code repository; with no
   trailer, or a paired commit the code store does not hold, there is no code tree and the note says why, so
-  every state reads `unverifiable`. For `published` and a leaf, `_checkout_code_tree` takes `HEAD^{tree}` of
-  the scope's code checkout: the tree L03's published-intent block measures at, so the two surfaces never
-  disagree. A leaf's note says that its uncommitted code is not included; capturing it would write objects
-  and refs, and the reader must not write.
+  every state reads `unverifiable`. For `published` and a leaf, the selection observes the scope's code
+  checkout through `application/worktree_code_state.py` (MIK-R73 rule 7): a clean checkout gives
+  `HEAD^{tree}`, and a checkout that differs from `HEAD` is captured into a scratch index and object store
+  whose store the selection holds until it closes. Nothing is written into the repository, and the block
+  states `codeState` `commit` or `working-tree` beside the tree it observed, so a leaf's uncommitted code is
+  measured rather than excluded.
 - **`codeSource`** is `paired-code-commit`, `checkout-head` or `none`, and `to_document` reports it beside
   `codeTree` and `codeNote`. Every answer carries this block.
 - **The pinned link (N2).** A working-tree selection whose captured tree equals its `HEAD` tree carries

@@ -1,6 +1,25 @@
 {
   "path": "mcp/src/agents_remember/models/knowledge/continuation.py",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "c9ee896d7f0fda0c9ef3bf516a3aafd8278d6076",
+        "content": "sha256:3ec9ad79579f46890c2c9804e63cb3d7244bd0a5accaa781a16fa7fa8c7a5880",
+        "locator": {
+          "kind": "symbol",
+          "name": "KnowledgeContinuation"
+        }
+      },
+      "id": "RLZ-78SGTM",
+      "invariant": "INV-09H4VC",
+      "origin": {
+        "handoffEntry": "R73-R7",
+        "leaf": "260928-MIK-L73"
+      },
+      "rationale": "The token states the walk's code state, so a later page knows what it is resuming over rather than assuming a commit.",
+      "role": "support"
+    }
+  ],
   "references": {
     "1": {
       "note": "The module statement: every binding the token carries.\n\nAnchor: \"The one continuation every bounded read of a memory tree mints\"",

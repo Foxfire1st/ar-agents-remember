@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "f37070c96f3a4fed9384eaf18b66037e1403baaa",
+        "blob": "6255576ebc9394ffd9e9e8a1dd0ca50a787028ab",
         "content": "sha256:4732d4fa652707b60b16f11a7755cc6ecca5624812435b69cc7c0e20409408f3",
         "locator": {
           "kind": "symbol",
@@ -18,6 +18,24 @@
       },
       "rationale": "The worklist's blob diff pins --no-ext-diff, --no-color and the two prefix options among its fixed options, so its hunks are a function of the two blobs.",
       "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "6255576ebc9394ffd9e9e8a1dd0ca50a787028ab",
+        "content": "sha256:1dd5cd437f7039596d4ac6898e638976865eba00154855e8dd9e666665e39b24",
+        "locator": {
+          "kind": "symbol",
+          "name": "CodeTrees"
+        }
+      },
+      "id": "RLZ-PNV0Y8",
+      "invariant": "INV-AJBF9F",
+      "origin": {
+        "handoffEntry": "F01",
+        "leaf": "260928-MIK-L73"
+      },
+      "rationale": "A changed working-tree blob is visible to the assessor only if the same object store serves the line-range diff; this is the plumbing that keeps an edited line stale instead of unreadable.",
+      "role": "support"
     }
   ],
   "references": {

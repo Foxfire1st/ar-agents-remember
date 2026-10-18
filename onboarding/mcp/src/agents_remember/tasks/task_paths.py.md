@@ -34,11 +34,13 @@ is membership of `ARCHIVE_DIR` among the path's parts, so it holds at any depth.
 `is_enclosure_contract` requires the exact filename, at least three parts, and an
 `enclosures` grandparent.
 
-`iter_leaf_enclosure_contracts` returns enclosure-position candidates in sorted order. Its
-`os.walk` traversal prunes notes and archive directories before descending, rather than walking
-evidence copies and filtering them afterwards. Children of an `enclosures` directory are retained,
-including a leaf directory literally named `notes`. `is_below_notes` excludes a notes segment above
-the trailing `enclosures/<leaf>/series-contract.md`; archived paths remain excluded.
+`iter_leaf_enclosure_contracts` returns enclosure-position candidates in sorted order, and since MIK-R83
+rules 1 and 2 it takes them from the canonical places only: `iter_task_folders` yields a repository's live
+task folders (the direct children of `tasks/<repository>/`, the archive segment excluded) and
+`_enclosure_contracts` reads `enclosures/<leaf>/series-contract.md` in each of them. One walk therefore
+answers "which folders are tasks", and no lookup walks the tree itself, so a copy under `notes/`,
+`requirements/` or a deeper folder is never met; `canonical_contract_place` states the depth rule for a
+contract and `scan_stray_task_files` is the one scan that reads such copies, and only to report them.
 
 The iterator does not parse or certify a yielded contract. Consumers use
 `is_foreign_enclosure_contract` to reject a task artifact outside the repository tasks folder

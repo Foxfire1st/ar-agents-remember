@@ -1,6 +1,43 @@
 {
   "path": "mcp/src/agents_remember/application/knowledge_paging/pager.py",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "a3659136033c017cf54220a70cf6fee1566065ef",
+        "content": "sha256:04ca359fde767e301b48e20c510c00fd09eb5dc6f231f8e557e1c47ec8c323ec",
+        "locator": {
+          "kind": "symbol",
+          "name": "page_block"
+        }
+      },
+      "id": "RLZ-BHDFEA",
+      "invariant": "INV-QQGSAN",
+      "origin": {
+        "handoffEntry": "R73-NO-FALSE-COMPLETE",
+        "leaf": "260928-MIK-L73"
+      },
+      "rationale": "This is where a page's completeness is decided; taking the index state as an input is what stops a partial index from being presented as a finished enumeration.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "a3659136033c017cf54220a70cf6fee1566065ef",
+        "content": "sha256:04ca359fde767e301b48e20c510c00fd09eb5dc6f231f8e557e1c47ec8c323ec",
+        "locator": {
+          "kind": "symbol",
+          "name": "page_block"
+        }
+      },
+      "id": "RLZ-XY34DY",
+      "invariant": "INV-09H4VC",
+      "origin": {
+        "handoffEntry": "R73-R7",
+        "leaf": "260928-MIK-L73"
+      },
+      "rationale": "Every page states the observed tree and its state, which is the sentence the packet requires a caller to read.",
+      "role": "presentation"
+    }
+  ],
   "references": {
     "1": {
       "note": "The module statement: indivisible rows, the header reference, the exact walk.\n\nAnchor: \"Cutting one ordered selection into pages\"",

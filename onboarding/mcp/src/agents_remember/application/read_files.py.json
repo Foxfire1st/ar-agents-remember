@@ -1,6 +1,25 @@
 {
   "path": "mcp/src/agents_remember/application/read_files.py",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "461c1f33ee8ae817e057db5330c79ab107e04c73",
+        "content": "sha256:bc948946b65eae936b5e13257352ecfda5358bc3d8c0ee1796796e9f0c2f098b",
+        "locator": {
+          "kind": "symbol",
+          "name": "_governing_card"
+        }
+      },
+      "id": "RLZ-EVAEGT",
+      "invariant": "INV-4N6Y14",
+      "origin": {
+        "handoffEntry": "F08",
+        "leaf": "260928-MIK-L73"
+      },
+      "rationale": "This function is the only place that decides whether a card is missing: probing the card's own path once is what separates 'no card exists' from 'the route index has not listed it'.",
+      "role": "primary-authority"
+    }
+  ],
   "references": {
     "1": {
       "note": "The thin payload wrapper that returns this application entry point's dict through the token choke point.",

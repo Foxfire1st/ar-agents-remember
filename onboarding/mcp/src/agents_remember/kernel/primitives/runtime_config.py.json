@@ -3,8 +3,26 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "63a74c463004e2f0999c1a9339f16dcae19ecfac",
-        "content": "sha256:b4a74e518293797a534a6ebd2aecd23d66063d8b4242283f8c607640102544e5",
+        "blob": "d93f7d335880722fb27e012f63564c3a8928218e",
+        "content": "sha256:2f263671c7d5b0d1a221c8a8f1d420249a377d4a8c0d78646d8f709579c0ebd1",
+        "locator": {
+          "kind": "symbol",
+          "name": "CheckoutBinding"
+        }
+      },
+      "id": "RLZ-7ECPA7",
+      "invariant": "INV-0AWC7Q",
+      "origin": {
+        "handoffEntry": "F10",
+        "leaf": "260928-MIK-L73"
+      },
+      "rationale": "The binding is a value here, so the fact a process is bound to a disposable coordination root is computed once and read by every surface that must state it.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "d93f7d335880722fb27e012f63564c3a8928218e",
+        "content": "sha256:d47ee77077683eb532abc2fbba97862dfbfcab0de94274aab7d33cb65b2a8e33",
         "locator": {
           "kind": "symbol",
           "name": "McpRuntimeConfig"
@@ -21,8 +39,26 @@
     },
     {
       "anchor": {
-        "blob": "63a74c463004e2f0999c1a9339f16dcae19ecfac",
-        "content": "sha256:3cc02e1df8b5ebeffd683b61f140a7ccace07f67e40a5eb9a5fdb3c462631b69",
+        "blob": "d93f7d335880722fb27e012f63564c3a8928218e",
+        "content": "sha256:1d9119bc64ab4dc5fd43c1b90c70440eaa0c51e7bba433af8ed35d886b413eb8",
+        "locator": {
+          "kind": "symbol",
+          "name": "_config_for_execution"
+        }
+      },
+      "id": "RLZ-WT4B4E",
+      "invariant": "INV-0AWC7Q",
+      "origin": {
+        "handoffEntry": "F10",
+        "leaf": "260928-MIK-L73"
+      },
+      "rationale": "This is where the binding is decided for a process: the loaded worktree, the disposable root and the configured root it did not use are all known here, so no caller has to guess.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "d93f7d335880722fb27e012f63564c3a8928218e",
+        "content": "sha256:6786e6983843aa1d9597109700cd14a6197ccca2b5e63fdf4bc375b0dd215278",
         "locator": {
           "kind": "file"
         }

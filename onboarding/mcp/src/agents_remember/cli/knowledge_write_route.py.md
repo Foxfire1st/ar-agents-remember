@@ -18,7 +18,7 @@ Before calling `write_knowledge`, `run_leaf_write` reads the persisted leaf work
 
 - `leaf_owner`: the leaf is the contract's `leaf_id` (else task name); the task is `task.json` `id`, else the
   leaf ID's prefix before `-L<n>`.
-- **`LeafQuestions` (MIK-R14).** A `dataclass` over the parsed arguments and the contract that implements the
+- **`LeafQuestions` (MIK-R14), now in `application/knowledge_write_route.py`.** A `dataclass` over the parsed arguments and the contract that implements the
   writer's `OpenQuestions` port lazily: the MCP authority settings are read only when a `raise` needs them (`check`
   or `append`), from `--config` (`require_config_path`) or else by `discover_config(Path.cwd())`. A settings error
   (`AgentsRememberError`, `ConfigDiscoveryError`, `OSError`, `ValueError`) yields `UnavailableOpenQuestions` with

@@ -1,0 +1,25 @@
+{
+  "path": "mcp/src/agents_remember/application/knowledge_routes_report.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "c0e6c270f37f8db079a3d634c5613fc7e0d79d98",
+        "content": "sha256:835cbf22ac59119b91b288dbd45096fc779d0c26ee9e87d0314c007975082fdf",
+        "locator": {
+          "kind": "symbol",
+          "name": "routes_report"
+        }
+      },
+      "id": "RLZ-SRC7BF",
+      "invariant": "INV-XYD593",
+      "origin": {
+        "handoffEntry": "R73-R4",
+        "leaf": "260928-MIK-L73"
+      },
+      "rationale": "This function reads the memory tree and the code side and returns the rows; both surfaces cut their answer from it, so the route set cannot differ between them.",
+      "role": "primary-authority"
+    }
+  ],
+  "references": {},
+  "schema": "ar-onboarding-file/v1"
+}

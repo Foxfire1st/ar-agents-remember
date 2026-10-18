@@ -1,0 +1,54 @@
+{
+  "admission": {
+    "criteria": [
+      "real_alternatives"
+    ],
+    "justification": "Two readings of one flag were weighed, and the choice decides what a caller may conclude from a page that ends a seed."
+  },
+  "alternatives": [
+    {
+      "option": "State enumeration completeness for the seed the page finished, and name the next seed in the continuation",
+      "reason": "A page can know that it reached the end of its own seed; it cannot know the total without enumerating everything, which the page bound forbids. The continuation carries the rest of the walk, so nothing is lost.",
+      "status": "chosen"
+    },
+    {
+      "option": "State one completion flag for the whole walk",
+      "reason": "It would have to be false on every page until the last, and then a caller reading a finished seed could not tell whether that seed is done.",
+      "reconsider_when": "a caller needs a single walk-level completion fact, for example a bounded answer that must say how much of the tree it covered.",
+      "status": "rejected"
+    }
+  ],
+  "consequences": [
+    "`enumerationComplete` describes a seed, and `continuation` names the next one; the two are read together.",
+    "Skill c-04 states the same reading, and a caller that ignores the continuation under-reports coverage rather than being misled about it."
+  ],
+  "context": "A paged walk crosses several seeds. A page can finish the seed it was walking while other seeds remain, and the page has to say both facts without claiming knowledge of the whole walk.",
+  "decider": "the developer, as the MIK-R73@v1 appendix row 59 states it",
+  "id": "DEC-F7JBZV",
+  "links": [
+    {
+      "relation": "explains",
+      "target": {
+        "id": "MIK-R73",
+        "packet": "requirements/MIK-R73-v1-agent-tool-surface-and-read-corrections.md",
+        "task": {
+          "path": "260928_maintained-invariant-knowledge",
+          "repository": "agents-remember"
+        },
+        "version": "v1"
+      }
+    }
+  ],
+  "origin": {
+    "handoff": {
+      "path": "handoff-repair-4.json"
+    },
+    "handoffEntry": "seed-local-completion",
+    "leaf": "260928-MIK-L73",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-decision/v1",
+  "status": "active",
+  "supersedes": []
+}

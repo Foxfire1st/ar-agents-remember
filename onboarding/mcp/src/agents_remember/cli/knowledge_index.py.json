@@ -1,6 +1,25 @@
 {
   "path": "mcp/src/agents_remember/cli/knowledge_index.py",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "6f8a1b5f2e12e8aabdd86ebd9ce6cd08658bed0d",
+        "content": "sha256:84b2d04fbd8aa7173a1d0ba23d4cf985e1bea2fb5b4a52e366129b99665ce893",
+        "locator": {
+          "kind": "symbol",
+          "name": "run"
+        }
+      },
+      "id": "RLZ-6DB5TV",
+      "invariant": "INV-QQGSAN",
+      "origin": {
+        "handoffEntry": "R73-NO-FALSE-COMPLETE",
+        "leaf": "260928-MIK-L73"
+      },
+      "rationale": "The index command is where 'complete' was answered for an unconverted tree; it now names the legacy format and exits 2 instead.",
+      "role": "enforcement"
+    }
+  ],
   "references": {
     "1": {
       "note": "The command line and the exit statuses.\n\nAnchor: \"Exit status: 0 for a complete index\"",

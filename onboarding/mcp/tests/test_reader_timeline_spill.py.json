@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "c2e025c9f3fbc35c3dc1f3d977282dfed67d3313",
-        "content": "sha256:844356b1aaad06b7d67ff42d61f0ec9689761f1fb180faae1875b01cbe8828b9",
+        "blob": "e3b89db6dbf5d9bd047dc4278a7e682259c8c1ff",
+        "content": "sha256:bef91bc8fa68585e54d7376361190b3987008fae3d95bfaaa80ae07f8c9b7a89",
         "locator": {
           "kind": "file"
         }
@@ -21,16 +21,16 @@
   ],
   "references": {
     "1": {
-      "note": "New timeline-spill tests count one materialization/hash/freeze per legal walk, preserve event ordering/documents/attempt/path, use anonymous unlinked files beyond RAM budget and verify actual fd cleanup on eviction/clear/revision replacement/process exit. Failure creation/read/unreadable-source retry, continuation binding and resident/spill shared budget are separate explicit cases. These declarations are not tests run here.",
+      "note": "New timeline-spill tests count one materialization/hash/freeze per legal walk, preserve event ordering/documents/attempt/path, use anonymous unlinked files beyond RAM budget and verify actual fd cleanup on eviction/clear/revision replacement/process exit. Failure creation/read/unreadable-source retry, continuation binding and resident/spill shared budget are separate explicit cases. The truth-view manifest-miss case holds the sections it does not defend: it stubs the summary as the record's id and title, and stubs `truth._outgoing` with the current signature — a selection alongside the record — returning an empty link list and no link error, beside empty kind parts and no decisions, so the case can only fail on the caller/history-acquisition path it defends. These declarations are not tests run here.\n\nAnchor: `_selection`",
       "targets": [
         {
           "anchor": {
-            "blob": "c2e025c9f3fbc35c3dc1f3d977282dfed67d3313",
-            "content": "sha256:844356b1aaad06b7d67ff42d61f0ec9689761f1fb180faae1875b01cbe8828b9",
+            "blob": "e3b89db6dbf5d9bd047dc4278a7e682259c8c1ff",
+            "content": "sha256:273735bfd682479d071b7b2355427a8a9cc555dcbb83423000cbe90128d5a700",
             "locator": {
-              "end": 417,
+              "end": 399,
               "kind": "line_range",
-              "start": 1
+              "start": 396
             }
           },
           "kind": "test"

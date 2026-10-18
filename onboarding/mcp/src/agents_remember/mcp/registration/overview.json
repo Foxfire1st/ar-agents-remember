@@ -52,7 +52,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6fdaf3bc5c0ebf2ced1c450d5973ed55b2515f3c",
+            "blob": "af953e99eac7b81b2df5e99c648d3a83eab4bca1",
             "content": "sha256:3cf29d3ca7682b6651c5944ff70aa77ec90c7f2e16d6df26e1244a14174dd8c4",
             "locator": {
               "end": 38,
@@ -116,7 +116,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "41db3716b23381031652f8b7cd0c880963faafc8",
+            "blob": "e1f9b6325a3733536d6e347b6bffe343424f36bf",
             "content": "sha256:8f6996c17d11971112ef6181192b87e25f773050c0e11867cc3fff5ea8bc4ffe",
             "locator": {
               "end": 37,
@@ -134,7 +134,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "41db3716b23381031652f8b7cd0c880963faafc8",
+            "blob": "e1f9b6325a3733536d6e347b6bffe343424f36bf",
             "content": "sha256:873e75070d7809267b0b9c5d940872fdb8495c4adacf8bed518cbb80677f0337",
             "locator": {
               "end": 22,
@@ -147,7 +147,7 @@
         },
         {
           "anchor": {
-            "blob": "41db3716b23381031652f8b7cd0c880963faafc8",
+            "blob": "e1f9b6325a3733536d6e347b6bffe343424f36bf",
             "content": "sha256:1e2783a702d8cd01c815d9d71841044bcad47ad69b29fdb5388421fcbc429f95",
             "locator": {
               "end": 27,
@@ -255,7 +255,7 @@
         },
         {
           "anchor": {
-            "blob": "1c0839216b9822496a884e9dcbcfcdfa24a51470",
+            "blob": "78ca45227012774cc8289a2bb5d74f013ba26294",
             "content": "sha256:a55c430bedc3dd4913776fc41edded360d4d1d3f448823531929e3661a94e740",
             "locator": {
               "kind": "symbol",
@@ -391,7 +391,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ee53a26799c1344843076340785bf5730d0ad6ac",
+            "blob": "50de00537e969d999d04bacb1a5966be2901d141",
             "content": "sha256:a980c2077b0c28519f4e3e4093bb15156e2efa62297ae89987cd9ca40d62fe31",
             "locator": {
               "kind": "symbol",
@@ -404,7 +404,7 @@
       ]
     },
     "29": {
-      "note": "Current composed PUBLIC_TOOLS declares40 names; the41-name predecessor membership is historical. This is source declaration only, not runtime advertisement or execution.\n\nAnchor: PUBLIC_TOOLS",
+      "note": "Current composed PUBLIC_TOOLS declares41 names (40 plus the mounted knowledge_write); the41-name predecessor membership is historical. This is source declaration only, not runtime advertisement or execution.\n\nAnchor: PUBLIC_TOOLS",
       "targets": [
         {
           "anchor": {
@@ -576,7 +576,7 @@
         },
         {
           "anchor": {
-            "blob": "43107e8bb7c9c53fcef14d1304202fc633e22297",
+            "blob": "56347c4b09f5f0338f5f534cc4a623e36d623ebb",
             "content": "sha256:28565e891ca67b1483c64db677e32e2112b4454130c76fc29db51bf18a1951b2",
             "locator": {
               "kind": "symbol",
@@ -766,7 +766,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1c0839216b9822496a884e9dcbcfcdfa24a51470",
+            "blob": "78ca45227012774cc8289a2bb5d74f013ba26294",
             "content": "sha256:a55c430bedc3dd4913776fc41edded360d4d1d3f448823531929e3661a94e740",
             "locator": {
               "kind": "symbol",

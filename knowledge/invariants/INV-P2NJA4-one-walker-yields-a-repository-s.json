@@ -1,0 +1,37 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "guarded_by_test"
+    ],
+    "justification": "The obligation spans the walker, the depth test, the master census, leaf resolution, the contract reader and the linkage report, and three registered cases - the walker's membership, the canonical positions, and the stray scan - fail without it; a copy obeyed as authority starts or lands the wrong task, and the requirement records review evidence refused for exactly that."
+  },
+  "applicability": "Every lookup that turns a task folder into a task document or a contract inside a repository's task tree, and the linkage report that lists what those lookups do not obey.",
+  "conditions": [
+    "The folder is a direct child of tasks/<repository>/ and is not the archive segment."
+  ],
+  "exclusions": [
+    "A file under notes/, requirements/, a dot-directory or a deeper folder is never a task document or a contract; only the stray scan reads it, and only to report it.",
+    "The archive segment is invisible to every lookup.",
+    "A canonical place that cannot be read is refused by name, never skipped."
+  ],
+  "id": "INV-P2NJA4",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "MIK-R83@v1 rules 1, 2 and 4, accepted at R4 and retained at R5; the three registered cases named here and test_a_contract_outside_the_canonical_places_is_not_checked",
+        "test source 145-155: the exact four-path list from iter_stray_task_files",
+        "the invariant's authored statement, restored after a proof-shaped entry replaced it; the proofs carry narrowed facets"
+      ],
+      "path": "handoff-draft-3.json"
+    },
+    "handoffEntry": "R83-DISCOVERY",
+    "leaf": "260928-MIK-L73",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "One walker yields a repository's live task folders and every lookup enumerates only their canonical places, so a copy of a task document or a contract under notes/, requirements/ or any deeper folder is never obeyed and is reported as a stray by the linkage report.",
+  "status": "proposed",
+  "supersedes": []
+}

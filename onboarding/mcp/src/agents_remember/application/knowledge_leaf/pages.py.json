@@ -1,6 +1,25 @@
 {
   "path": "mcp/src/agents_remember/application/knowledge_leaf/pages.py",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "25d868aca47bdabb0b5cae2ac0067ad887023dac",
+        "content": "sha256:248cb0c97fbc1374b6d5d6f0a6c9f5d4858b6459e3a042546f3a0d1f0fe49ec2",
+        "locator": {
+          "kind": "symbol",
+          "name": "collapsed"
+        }
+      },
+      "id": "RLZ-Y3AV7V",
+      "invariant": "INV-QQGSAN",
+      "origin": {
+        "handoffEntry": "R73-NO-FALSE-COMPLETE",
+        "leaf": "260928-MIK-L73"
+      },
+      "rationale": "A collapsed block is the other place an answer used to state a total without a remainder; the counts it now returns name the remaining rows.",
+      "role": "propagation-persistence"
+    }
+  ],
   "references": {
     "1": {
       "note": "The module statement: one prepared leaf for both surfaces, and the header reference as a literal first row.\n\nAnchor: \"Pages of the family-complete leaf read\"",

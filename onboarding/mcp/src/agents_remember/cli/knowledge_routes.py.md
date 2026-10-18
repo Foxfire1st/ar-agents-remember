@@ -14,7 +14,7 @@
 
 - `add_arguments` declares `memory_root`, the required `--code`, `--code-commit`, the repeatable `--family` and `--json`.
 - `run` parses the memory tree with `knowledge_tree_from_directory` and `parse_tree`. The code files a suggestion reads are the tracked and untracked, not ignored, files of `--code` (`_working_tree_files`, `git ls-files --cached --others --exclude-standard`), or with `--code-commit` the file set of `code_tree_from_git`. An unreadable input prints "cannot read the inputs" and returns 2.
-- `_family_documents` builds, per family (filtered by `--family` when given), the family ID, path, status, routes, `_state_document` (`unrealizedFamily`, `routeUnassigned`, `routeless`, `uncovered`, `emptied`) and the suggestion's `to_document`.
+- The rows are built by `application/knowledge_routes_report.py` (MIK-R73 rule 4): `routes_report` reads the memory tree and the code side and `family_route_documents` builds, per family (filtered by `--family` when given), the family ID, path, status, routes, the state document (`unrealizedFamily`, `routeUnassigned`, `routeless`, `uncovered`, `uncoveredTotal`, `emptied`) and the suggestion's `to_document`. This command is one of the two surfaces that cut their answer from that function, so `knowledge_integrity_check` and the command cannot report different route sets.
 - With `--json` it prints the documents; otherwise `_render` prints each family's states, uncovered paths, emptied routes, the suggestion, and root-level realization files ("realizations at the repository root (route .)"). A requested family that does not exist prints `unknown family: <ID>`; no families prints "no family records".
 
 ### Conventions

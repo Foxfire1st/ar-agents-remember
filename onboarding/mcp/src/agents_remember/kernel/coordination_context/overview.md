@@ -33,8 +33,10 @@ root-selection route, parses settings, and calls `build_coordination_context` to
   parsed. Otherwise the fenced blocks of the selected Markdown settings file are parsed; a missing
   Markdown file gives defaults.
 - Contract lookup tries an explicit contract path, then a task selector, then a worktree selector when
-  the previous lookup supplied no candidate. An absent or unloadable candidate produces no loaded
-  contract, while retaining its candidate path in the result.
+  the previous lookup supplied no candidate. An absent candidate, or a load failure other than the canonical-place check,
+  produces no loaded contract while retaining its candidate path in the result; a candidate path that is not the
+  contract's own canonical place propagates a named refusal that states the found and recorded paths rather than
+  falling through to the next selector.
 - `build_coordination_context` takes the task root, worktree group, memory mode, code and memory
   worktrees, and ledger path from a loaded contract. Without one, it derives the task root and worktree
   group from the selector when present, otherwise uses the repository task root and no worktree group;

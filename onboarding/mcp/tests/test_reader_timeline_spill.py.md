@@ -10,7 +10,7 @@ Document the assertion and fixture obligations declared by this test source.
 
 ## Code Commentary
 
-New timeline-spill tests count one materialization/hash/freeze per legal walk, preserve event ordering/documents/attempt/path, use anonymous unlinked files beyond RAM budget and verify actual fd cleanup on eviction/clear/revision replacement/process exit. Failure creation/read/unreadable-source retry, continuation binding and resident/spill shared budget are separate explicit cases. These declarations are not tests run here.
+New timeline-spill tests count one materialization/hash/freeze per legal walk, preserve event ordering/documents/attempt/path, use anonymous unlinked files beyond RAM budget and verify actual fd cleanup on eviction/clear/revision replacement/process exit. Failure creation/read/unreadable-source retry, continuation binding and resident/spill shared budget are separate explicit cases. The truth-view manifest-miss case holds the sections it does not defend: it stubs the summary as the record's id and title, and stubs `truth._outgoing` with the current signature — a selection alongside the record — returning an empty link list and no link error, beside empty kind parts and no decisions, so the case can only fail on the caller/history-acquisition path it defends. These declarations are not tests run here.
 
 ### Declared Assertions
 
@@ -32,4 +32,4 @@ The source declares these checks. This card does not attest that pytest/Vitest, 
 
 ## Evidence
 
-- New timeline-spill tests count one materialization/hash/freeze per legal walk, preserve event ordering/documents/attempt/path, use anonymous unlinked files beyond RAM budget and verify actual fd cleanup on eviction/clear/revision replacement/process exit. Failure creation/read/unreadable-source retry, continuation binding and resident/spill shared budget are separate explicit cases. These declarations are not tests run here. [1]
+- New timeline-spill tests count one materialization/hash/freeze per legal walk, preserve event ordering/documents/attempt/path, use anonymous unlinked files beyond RAM budget and verify actual fd cleanup on eviction/clear/revision replacement/process exit. Failure creation/read/unreadable-source retry, continuation binding and resident/spill shared budget are separate explicit cases. The truth-view manifest-miss case holds the sections it does not defend: it stubs the summary as the record's id and title, and stubs `truth._outgoing` with the current signature — a selection alongside the record — returning an empty link list and no link error, beside empty kind parts and no decisions, so the case can only fail on the caller/history-acquisition path it defends. These declarations are not tests run here. [1]

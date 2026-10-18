@@ -3,8 +3,26 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "1c0839216b9822496a884e9dcbcfcdfa24a51470",
-        "content": "sha256:695493b64b8ccd2379dfacb2aa749228e208493cbda9d405f00646a488b27f67",
+        "blob": "78ca45227012774cc8289a2bb5d74f013ba26294",
+        "content": "sha256:d6361b5d04f934bfbd3a3cead716e946e4f9ba426b8b6afe4fbec786a048f908",
+        "locator": {
+          "kind": "symbol",
+          "name": "knowledge_write"
+        }
+      },
+      "id": "RLZ-8M3H7V",
+      "invariant": "INV-AG8G8C",
+      "origin": {
+        "handoffEntry": "R73-R1",
+        "leaf": "260928-MIK-L73"
+      },
+      "rationale": "This registration is what puts the writer on the agent's tool list, with its description stating that a refusal lists every problem.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "78ca45227012774cc8289a2bb5d74f013ba26294",
+        "content": "sha256:6940317dcf65978f081aea3eaa77d0c44ee8dee0c297217398cdb6b0f3926173",
         "locator": {
           "kind": "symbol",
           "name": "register_knowledge_tools"

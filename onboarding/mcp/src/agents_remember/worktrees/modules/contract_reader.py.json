@@ -1,6 +1,25 @@
 {
   "path": "mcp/src/agents_remember/worktrees/modules/contract_reader.py",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "f559e076f63f3df3a567dca2ddc05058fe41eeaa",
+        "content": "sha256:e730e188f66c4bf5b67450b441d0a01cdf796d5e1faba687b5d843df4930e976",
+        "locator": {
+          "kind": "symbol",
+          "name": "WorktreeContractReader"
+        }
+      },
+      "id": "RLZ-DN46Z4",
+      "invariant": "INV-P2NJA4",
+      "origin": {
+        "handoffEntry": "R83-DISCOVERY",
+        "leaf": "260928-MIK-L73"
+      },
+      "rationale": "The contract reader is the last place a file is opened as a contract; it now enumerates canonical contracts only and lets a place refusal through instead of swallowing it.",
+      "role": "propagation-persistence"
+    }
+  ],
   "references": {
     "1": {
       "note": "The kernel resolver declares the port this adapter implements.\n\nAnchor: \"class ContractReaderPort\"",

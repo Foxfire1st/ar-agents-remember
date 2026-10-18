@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "4284e722e205298b85722fab51f0e57ccb5f3122",
+        "blob": "9dfc1293d27d539ce40fd6f6e61b4e4093dc2d01",
         "content": "sha256:a5dc08bd317587a0ce6088e2234366da59c57de5ef248675425c721652fefc86",
         "locator": {
           "kind": "symbol",
@@ -21,8 +21,26 @@
     },
     {
       "anchor": {
-        "blob": "4284e722e205298b85722fab51f0e57ccb5f3122",
-        "content": "sha256:7c87fa50d7924c8a0e3fe80ed98f4927829fe53143947386dfefa93440738312",
+        "blob": "9dfc1293d27d539ce40fd6f6e61b4e4093dc2d01",
+        "content": "sha256:a5dc08bd317587a0ce6088e2234366da59c57de5ef248675425c721652fefc86",
+        "locator": {
+          "kind": "symbol",
+          "name": "task_scoped_mcp_config_for_reader"
+        }
+      },
+      "id": "RLZ-J4PG55",
+      "invariant": "INV-YHCVE3",
+      "origin": {
+        "handoffEntry": "F09",
+        "leaf": "260928-MIK-L73"
+      },
+      "rationale": "This is the admission boundary a reader call passes: it refuses a stated contract whose worktrees are gone and answers the official line when no task context was given, so a read cannot silently fall back.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "9dfc1293d27d539ce40fd6f6e61b4e4093dc2d01",
+        "content": "sha256:b80f9f3d8fe83b34866640bdbc4a54bf311a5d8cbe191016cacd7342436adc59",
         "locator": {
           "kind": "file"
         }
@@ -38,7 +56,25 @@
     },
     {
       "anchor": {
-        "blob": "4284e722e205298b85722fab51f0e57ccb5f3122",
+        "blob": "9dfc1293d27d539ce40fd6f6e61b4e4093dc2d01",
+        "content": "sha256:1460ca90869fc035851ad5804bb2a2b724ca61a3bca8622559f17bc45f988ca1",
+        "locator": {
+          "kind": "symbol",
+          "name": "_config_from_admitted_task"
+        }
+      },
+      "id": "RLZ-PRJR2N",
+      "invariant": "INV-YHCVE3",
+      "origin": {
+        "handoffEntry": "F09",
+        "leaf": "260928-MIK-L73"
+      },
+      "rationale": "The leaf's reader configuration is derived here from the admitted task context, which is what points the read at the leaf's own code and memory worktrees instead of the official line.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "9dfc1293d27d539ce40fd6f6e61b4e4093dc2d01",
         "content": "sha256:0a854a9697a0201e89c3d1e9fd7b73fde65bc8acdc1aa31cca7cd242f3b30263",
         "locator": {
           "kind": "symbol",

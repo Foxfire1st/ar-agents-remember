@@ -1,6 +1,25 @@
 {
   "path": "mcp/src/agents_remember/application/knowledge_reader/records.py",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "186b665d605f7702f9f91f53299c6efdd391c9e5",
+        "content": "sha256:7de63f1590d57b461a77e2556d2bdc689af8d97409bb07e6d84b21c6b61714e7",
+        "locator": {
+          "kind": "symbol",
+          "name": "_target_state"
+        }
+      },
+      "id": "RLZ-TH5GZQ",
+      "invariant": "INV-AJBF9F",
+      "origin": {
+        "handoffEntry": "F01",
+        "leaf": "260928-MIK-L73"
+      },
+      "rationale": "This is the one function that decides what a link's target is at a read: it keeps the recorded anchor detail, asks MIK-R03's observation at the captured tree, and asks the requirement owner, so no surface can answer a link state by itself.",
+      "role": "primary-authority"
+    }
+  ],
   "references": {
     "1": {
       "note": "The module's own statement that a decision is shown whole wherever it appears.\n\nAnchor: \"**A decision** is always shown whole wherever it appears\"",
