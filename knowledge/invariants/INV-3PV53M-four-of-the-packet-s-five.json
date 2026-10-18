@@ -1,0 +1,35 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test",
+      "spans_locations"
+    ],
+    "justification": "The proof clause is a measurement of the leaf's own evidence, and the sandbox run is its host half."
+  },
+  "applicability": "The behavioural proof the clause names for this leaf.",
+  "conditions": [
+    "Each named case fails on 7fe223b0 and passes after the change.",
+    "One sandbox run built with the repository's sandbox tooling shows rule 1 on the host with two agents."
+  ],
+  "exclusions": [
+    "A case that already passes on the base is reported as such, not claimed as a repair.",
+    "The host publication lags a turn by about a second; the run's ordering is carried by the delivery following the hold with no send."
+  ],
+  "id": "INV-3PV53M",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "Fail-before on 7fe223b0 / pass-after on the candidate: the two rule-2 bridge cases and the rule-2 message case (evidence/fail-before-rule2-7fe223b0.txt 10 failed / 39 passed -> evidence/pass-after-rule2-candidate.txt 42 passed, 134 subtests), plus host-unreachable held and delivered once, unknown outcome not delivered twice, held-batch delivery answers ok (evidence/fail-before-7fe223b0.txt 7 failed / 2 passed -> evidence/pass-after-candidate.txt 4 passed and 18 passed), the turn-end class which cannot import on the base and passes on the candidate (18 passed), and the steer-refusal case, which passes on the base as well. The host run was performed on this candidate but produced no held message (the bridge saw no active turn where the host publication said in-turn), so the end-to-end half of this clause is OPEN: evidence/sandbox-rule1-transcript.txt, evidence/sandbox-host-activity-at-stop.json; report limitation 1; L171-F05 repair: evidence/sandbox-rule1-strict-transcript.txt (held 3449057e…, the host's no-turn stamp, the store emptied three seconds later with no further send, on this candidate's bytes) - the ordering it does and does not show is stated in the report"
+      ],
+      "path": "handoff-L171-curation.json"
+    },
+    "handoffEntry": "MIK-R171@v2 rule 7",
+    "leaf": "260928-MIK-L171",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Four of the packet's five named behavioural cases fail on the enclosure base and pass on the candidate, the fifth (a provider that refuses a steer) passes on both, and one host run was performed for the turn-end case.",
+  "status": "retired",
+  "supersedes": []
+}

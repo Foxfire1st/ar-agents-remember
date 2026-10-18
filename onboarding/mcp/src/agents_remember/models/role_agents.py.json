@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "105a8bb1e9f5f0acd686f6aaa584300aad0313db",
+        "blob": "72eb3bf450d12e38de9fdbb8d59d1285bc4192ec",
         "content": "sha256:274997cf278cde1e5c28fc2d05cd73b78a3219085dc7bb579eb8dcb4ac08c09c",
         "locator": {
           "kind": "symbol",
@@ -21,7 +21,7 @@
     },
     {
       "anchor": {
-        "blob": "105a8bb1e9f5f0acd686f6aaa584300aad0313db",
+        "blob": "72eb3bf450d12e38de9fdbb8d59d1285bc4192ec",
         "content": "sha256:7fb555bc9408240767b57fe97ee031289336323a495483d6cd8c6c2a90e92862",
         "locator": {
           "kind": "symbol",
@@ -39,8 +39,8 @@
     },
     {
       "anchor": {
-        "blob": "105a8bb1e9f5f0acd686f6aaa584300aad0313db",
-        "content": "sha256:92235b745ebbe236e99c4f26631380d9cba61ec3e64213e2c3dd8f93a9272538",
+        "blob": "72eb3bf450d12e38de9fdbb8d59d1285bc4192ec",
+        "content": "sha256:47560c27a0b34781cde6ba234f500155afcf4dae466a0bc502641cbbf8222cdc",
         "locator": {
           "kind": "symbol",
           "name": "RoleMessageResponse"
@@ -52,12 +52,30 @@
         "handoffEntry": "L117-R08",
         "leaf": "260928-MIK-L117"
       },
-      "rationale": "RoleMessageResponse declares its listed file/hash, refusal and held-answer fields as the strict response surface. The composed held producer conditionally emits turnId, absent from this DTO; this declaration is therefore not evidence that every producer-owned field is declared. The normative strict-contract duty remains.",
+      "rationale": "The composed held producer keeps the turn id inside SentMessage for waiting and never exposes it in the public result; this DTO declares its listed message/held fields and the reported replacement value, and publishes no turnId on either delivery path.",
       "role": "enforcement"
     },
     {
       "anchor": {
-        "blob": "105a8bb1e9f5f0acd686f6aaa584300aad0313db",
+        "blob": "72eb3bf450d12e38de9fdbb8d59d1285bc4192ec",
+        "content": "sha256:47560c27a0b34781cde6ba234f500155afcf4dae466a0bc502641cbbf8222cdc",
+        "locator": {
+          "kind": "symbol",
+          "name": "RoleMessageResponse"
+        }
+      },
+      "id": "RLZ-QV74SA",
+      "invariant": "INV-18M0W3",
+      "origin": {
+        "handoffEntry": "L171-F07 / L171-A4",
+        "leaf": "260928-MIK-L171"
+      },
+      "rationale": "The strict public response must admit the replacement value that the delivery paths report, so validation does not turn delivery into an error.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "72eb3bf450d12e38de9fdbb8d59d1285bc4192ec",
         "content": "sha256:93646618e32c968257ef1f5ffe4afbd82e81bbd477a1c10daaad783096376da8",
         "locator": {
           "kind": "symbol",
@@ -75,7 +93,7 @@
     },
     {
       "anchor": {
-        "blob": "105a8bb1e9f5f0acd686f6aaa584300aad0313db",
+        "blob": "72eb3bf450d12e38de9fdbb8d59d1285bc4192ec",
         "content": "sha256:d9d6a2973a94509b76cf42d4ee79b64677d590f9f7de0709c5198c96a8f70e41",
         "locator": {
           "end": 80,
@@ -115,7 +133,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "105a8bb1e9f5f0acd686f6aaa584300aad0313db",
+            "blob": "72eb3bf450d12e38de9fdbb8d59d1285bc4192ec",
             "content": "sha256:ac5df17dfb3be9081abd6566cfde2ee6db2c42a7ba8f1355bd80cf5f0d03aaac",
             "locator": {
               "end": 46,
@@ -132,7 +150,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "105a8bb1e9f5f0acd686f6aaa584300aad0313db",
+            "blob": "72eb3bf450d12e38de9fdbb8d59d1285bc4192ec",
             "content": "sha256:bdfdf369f3a0bd0c0d3eb546f24a878c5abe5dc8a354ad0fc01beb68a937b0e0",
             "locator": {
               "end": 184,
@@ -176,14 +194,15 @@
       ]
     },
     "4": {
-      "note": "Current response DTO declares its listed message/held fields but not the held producer’s conditional turnId; source declarations are not universal completeness evidence.\n\nAnchor: RoleMessageResponse",
+      "note": "Current response DTO declares its listed message/held fields, admits the reported replacement value, and carries no `turnId` on either delivery path; source declarations are not universal completeness evidence.",
       "targets": [
         {
           "anchor": {
-            "blob": "1faddc4691192efaf711b133ca81b671566da51e",
-            "content": "sha256:fa1bdb6a83d8a95dcc7c99d96c6eff1ac8cf0d7d279a70333c5ba89518d9d87c",
+            "blob": "72eb3bf450d12e38de9fdbb8d59d1285bc4192ec",
+            "content": "sha256:47560c27a0b34781cde6ba234f500155afcf4dae466a0bc502641cbbf8222cdc",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "RoleMessageResponse"
             }
           },
           "kind": "code"

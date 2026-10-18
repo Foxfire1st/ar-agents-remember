@@ -3,7 +3,25 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "fd33ebc2ed88d1d738738abfda0fe11b3c0a2611",
+        "blob": "e22f88a6b43be1a03bfc13f0c2efaa5d2000fdd8",
+        "content": "sha256:2748e96573b8db7ab3f139d703fb24b5924a666ca84f1cb08997a49270255978",
+        "locator": {
+          "kind": "symbol",
+          "name": "_name_replacement"
+        }
+      },
+      "id": "RLZ-173APY",
+      "invariant": "INV-5EY4EN",
+      "origin": {
+        "handoffEntry": "MIK-R171@v2 rule 2",
+        "leaf": "260928-MIK-L171"
+      },
+      "rationale": "It names a replaced running turn plainly in the answer, which is the gap v2 rule 2 requires to be stated rather than hidden.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "b20f555dd03b92dcc6704a9fb8c94ceb1e389cd1",
         "content": "sha256:d76d5b2e8837a52a2a5983f15e9d924fffb772f728a7fde5152e6db885f8af24",
         "locator": {
           "kind": "symbol",
@@ -21,7 +39,25 @@
     },
     {
       "anchor": {
-        "blob": "fd33ebc2ed88d1d738738abfda0fe11b3c0a2611",
+        "blob": "b20f555dd03b92dcc6704a9fb8c94ceb1e389cd1",
+        "content": "sha256:2472cefe0f77a03045a4b389e5f8e1102c885b522d539b95d6a9ff74107686da",
+        "locator": {
+          "kind": "symbol",
+          "name": "_filed_message_id"
+        }
+      },
+      "id": "RLZ-5EWHGA",
+      "invariant": "INV-AMJAZT",
+      "origin": {
+        "handoffEntry": "MIK-R171@v1 rule 3",
+        "leaf": "260928-MIK-L171"
+      },
+      "rationale": "It recovers the id the message was filed under, which is the identity the resend must reuse.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "b20f555dd03b92dcc6704a9fb8c94ceb1e389cd1",
         "content": "sha256:68dd03c55d195ea34ce52b0977c306487e68c20d24155ca2a4d45d506c606f82",
         "locator": {
           "kind": "symbol",
@@ -39,12 +75,12 @@
     },
     {
       "anchor": {
-        "blob": "fd33ebc2ed88d1d738738abfda0fe11b3c0a2611",
+        "blob": "b20f555dd03b92dcc6704a9fb8c94ceb1e389cd1",
         "content": "sha256:3a5df8c434444736195b1e627b66c2cf60746e20ee0bb88a91149598a4b8af03",
         "locator": {
-          "end": 378,
+          "end": 382,
           "kind": "line_range",
-          "start": 325
+          "start": 329
         }
       },
       "id": "RLZ-7HPMFG",
@@ -58,8 +94,8 @@
     },
     {
       "anchor": {
-        "blob": "fd33ebc2ed88d1d738738abfda0fe11b3c0a2611",
-        "content": "sha256:be483005f08cd68788ef4e585defc960e7a279129a0122fa2689400717fb478f",
+        "blob": "b20f555dd03b92dcc6704a9fb8c94ceb1e389cd1",
+        "content": "sha256:1993b985f3ef382c403e5dd3252aad3b7ca007a2082f21589f0c515078d9b7e7",
         "locator": {
           "end": 1680,
           "kind": "line_range",
@@ -77,7 +113,7 @@
     },
     {
       "anchor": {
-        "blob": "fd33ebc2ed88d1d738738abfda0fe11b3c0a2611",
+        "blob": "b20f555dd03b92dcc6704a9fb8c94ceb1e389cd1",
         "content": "sha256:b0bf53728de4411d8749e98977b4e10f4c738ce7008aaa357f16a50f9d6b6b5d",
         "locator": {
           "kind": "symbol",
@@ -95,7 +131,7 @@
     },
     {
       "anchor": {
-        "blob": "fd33ebc2ed88d1d738738abfda0fe11b3c0a2611",
+        "blob": "b20f555dd03b92dcc6704a9fb8c94ceb1e389cd1",
         "content": "sha256:30415cc3de8770663243189a3306756bc53585d7818bdad9f3c9701f4a705a19",
         "locator": {
           "kind": "symbol",
@@ -113,12 +149,12 @@
     },
     {
       "anchor": {
-        "blob": "fd33ebc2ed88d1d738738abfda0fe11b3c0a2611",
+        "blob": "b20f555dd03b92dcc6704a9fb8c94ceb1e389cd1",
         "content": "sha256:57a1c0380a3c3cc7a0b65560620497386a266066a0af952fccc21086998c72b4",
         "locator": {
-          "end": 1757,
+          "end": 1818,
           "kind": "line_range",
-          "start": 1719
+          "start": 1780
         }
       },
       "id": "RLZ-BVTKAZ",
@@ -132,7 +168,7 @@
     },
     {
       "anchor": {
-        "blob": "fd33ebc2ed88d1d738738abfda0fe11b3c0a2611",
+        "blob": "b20f555dd03b92dcc6704a9fb8c94ceb1e389cd1",
         "content": "sha256:abd8d2ff3ba2ae76819edcfe569cc5228b1732f97797006da1b82761dfc2ee1e",
         "locator": {
           "kind": "symbol",
@@ -150,7 +186,7 @@
     },
     {
       "anchor": {
-        "blob": "fd33ebc2ed88d1d738738abfda0fe11b3c0a2611",
+        "blob": "b20f555dd03b92dcc6704a9fb8c94ceb1e389cd1",
         "content": "sha256:504575e3456b64d092dc7207367c47f23f711d6ceebedffe2b0bad7a1419c513",
         "locator": {
           "kind": "symbol",
@@ -168,7 +204,7 @@
     },
     {
       "anchor": {
-        "blob": "fd33ebc2ed88d1d738738abfda0fe11b3c0a2611",
+        "blob": "b20f555dd03b92dcc6704a9fb8c94ceb1e389cd1",
         "content": "sha256:ce7afe7a2c98da194eacfd8b0c70bcd1cc86e033855db28325a12cfa834e484e",
         "locator": {
           "kind": "symbol",
@@ -186,7 +222,7 @@
     },
     {
       "anchor": {
-        "blob": "fd33ebc2ed88d1d738738abfda0fe11b3c0a2611",
+        "blob": "b20f555dd03b92dcc6704a9fb8c94ceb1e389cd1",
         "content": "sha256:13d18faab6f1cfc943a5beb402c7b520278d3de7892245035abe9426ef87c470",
         "locator": {
           "kind": "symbol",
@@ -204,12 +240,12 @@
     },
     {
       "anchor": {
-        "blob": "fd33ebc2ed88d1d738738abfda0fe11b3c0a2611",
-        "content": "sha256:544351a5f4e03a5fdefccc5a2861c3a514970f282dc97e76b3c8154cc254a4f1",
+        "blob": "b20f555dd03b92dcc6704a9fb8c94ceb1e389cd1",
+        "content": "sha256:43b38cfbb18654b80f69545f5e159964443a6fe44a01b890bb401ab72c0e79bd",
         "locator": {
-          "end": 117,
+          "end": 150,
           "kind": "line_range",
-          "start": 117
+          "start": 148
         }
       },
       "id": "RLZ-HJ854G",
@@ -223,12 +259,12 @@
     },
     {
       "anchor": {
-        "blob": "fd33ebc2ed88d1d738738abfda0fe11b3c0a2611",
+        "blob": "b20f555dd03b92dcc6704a9fb8c94ceb1e389cd1",
         "content": "sha256:7091f164e8a80474cd1ff08c45fd12d0c6c95e2907037dfed4406e193a891d75",
         "locator": {
-          "end": 861,
+          "end": 865,
           "kind": "line_range",
-          "start": 847
+          "start": 851
         }
       },
       "id": "RLZ-J6YQNS",
@@ -242,12 +278,12 @@
     },
     {
       "anchor": {
-        "blob": "fd33ebc2ed88d1d738738abfda0fe11b3c0a2611",
+        "blob": "b20f555dd03b92dcc6704a9fb8c94ceb1e389cd1",
         "content": "sha256:4da243e498ffe93f8bf0e4cd2466b5da0d94d6a5d1f9f6bd243f977e812ac7ed",
         "locator": {
-          "end": 1799,
+          "end": 1860,
           "kind": "line_range",
-          "start": 1760
+          "start": 1821
         }
       },
       "id": "RLZ-KRHPKS",
@@ -261,7 +297,25 @@
     },
     {
       "anchor": {
-        "blob": "fd33ebc2ed88d1d738738abfda0fe11b3c0a2611",
+        "blob": "b20f555dd03b92dcc6704a9fb8c94ceb1e389cd1",
+        "content": "sha256:91d9cec2acbfa277b45783d1d14a70e94b7a485a7fd63ebd9d3b06b949980af6",
+        "locator": {
+          "kind": "symbol",
+          "name": "_deliver_or_hold"
+        }
+      },
+      "id": "RLZ-NJJDFT",
+      "invariant": "INV-AMJAZT",
+      "origin": {
+        "handoffEntry": "MIK-R171@v1 rule 3",
+        "leaf": "260928-MIK-L171"
+      },
+      "rationale": "It decides between delivering and holding; here a host-unreachable, timed-out or unknown-outcome send becomes a held message with its reason and the id of the attempt instead of a refusal that loses the file.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "b20f555dd03b92dcc6704a9fb8c94ceb1e389cd1",
         "content": "sha256:ebc1a4ad94a8accb33e831864452ec335ea91e81251b9bee90dff501552948a5",
         "locator": {
           "kind": "symbol",
@@ -279,12 +333,30 @@
     },
     {
       "anchor": {
-        "blob": "fd33ebc2ed88d1d738738abfda0fe11b3c0a2611",
+        "blob": "b20f555dd03b92dcc6704a9fb8c94ceb1e389cd1",
+        "content": "sha256:6c1f3b2d543a5d0110c11582e9e7b7e46c1154b7e4a536e453517d7cbf80c0a9",
+        "locator": {
+          "kind": "symbol",
+          "name": "_held_then_delivered"
+        }
+      },
+      "id": "RLZ-QR5NNP",
+      "invariant": "INV-4XSRF7",
+      "origin": {
+        "handoffEntry": "MIK-R171@v1 rule 4",
+        "leaf": "260928-MIK-L171"
+      },
+      "rationale": "It builds that answer; here it keeps the receiving turn's id internal instead of emitting it as a response field the model forbids.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "b20f555dd03b92dcc6704a9fb8c94ceb1e389cd1",
         "content": "sha256:13d18faab6f1cfc943a5beb402c7b520278d3de7892245035abe9426ef87c470",
         "locator": {
-          "end": 160,
+          "end": 164,
           "kind": "line_range",
-          "start": 156
+          "start": 160
         }
       },
       "id": "RLZ-RHVKF4",
@@ -298,7 +370,25 @@
     },
     {
       "anchor": {
-        "blob": "fd33ebc2ed88d1d738738abfda0fe11b3c0a2611",
+        "blob": "b20f555dd03b92dcc6704a9fb8c94ceb1e389cd1",
+        "content": "sha256:7b5071f64bf3e66e005d048fe1f9a292f5917e5545f7fb689247190c6356d33b",
+        "locator": {
+          "kind": "symbol",
+          "name": "sender_line"
+        }
+      },
+      "id": "RLZ-S0SZP3",
+      "invariant": "INV-VH983B",
+      "origin": {
+        "handoffEntry": "L117-R04",
+        "leaf": "260928-MIK-L117"
+      },
+      "rationale": "The sender line names the wake-up's origin so the recipient never confuses a wake-up with content.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "b20f555dd03b92dcc6704a9fb8c94ceb1e389cd1",
         "content": "sha256:53f31d090bda3f68a2e83d16b4b0dde4dbc06a5569b939eba6c5e967482dbcb9",
         "locator": {
           "kind": "symbol",
@@ -316,8 +406,8 @@
     },
     {
       "anchor": {
-        "blob": "fd33ebc2ed88d1d738738abfda0fe11b3c0a2611",
-        "content": "sha256:be483005f08cd68788ef4e585defc960e7a279129a0122fa2689400717fb478f",
+        "blob": "b20f555dd03b92dcc6704a9fb8c94ceb1e389cd1",
+        "content": "sha256:35d445b9fbcf93f458571be8f1390bc1608b893aa8f8d362f1414820e2be1fb6",
         "locator": {
           "kind": "symbol",
           "name": "_deliver"
@@ -334,7 +424,7 @@
     },
     {
       "anchor": {
-        "blob": "fd33ebc2ed88d1d738738abfda0fe11b3c0a2611",
+        "blob": "b20f555dd03b92dcc6704a9fb8c94ceb1e389cd1",
         "content": "sha256:7781bfcbcbdf5f6706a7e352e24f8ab303f89836ba57b562ec6410dc1480f2bc",
         "locator": {
           "kind": "symbol",
@@ -352,7 +442,7 @@
     },
     {
       "anchor": {
-        "blob": "fd33ebc2ed88d1d738738abfda0fe11b3c0a2611",
+        "blob": "b20f555dd03b92dcc6704a9fb8c94ceb1e389cd1",
         "content": "sha256:d76d5b2e8837a52a2a5983f15e9d924fffb772f728a7fde5152e6db885f8af24",
         "locator": {
           "kind": "symbol",
@@ -370,7 +460,7 @@
     },
     {
       "anchor": {
-        "blob": "fd33ebc2ed88d1d738738abfda0fe11b3c0a2611",
+        "blob": "b20f555dd03b92dcc6704a9fb8c94ceb1e389cd1",
         "content": "sha256:263fc31278fc9bea43e7e85be88f6e272b56f0b509dcbebb5ed747fc7c1df019",
         "locator": {
           "kind": "symbol",
@@ -388,7 +478,25 @@
     },
     {
       "anchor": {
-        "blob": "fd33ebc2ed88d1d738738abfda0fe11b3c0a2611",
+        "blob": "b20f555dd03b92dcc6704a9fb8c94ceb1e389cd1",
+        "content": "sha256:6c1f3b2d543a5d0110c11582e9e7b7e46c1154b7e4a536e453517d7cbf80c0a9",
+        "locator": {
+          "kind": "symbol",
+          "name": "_held_then_delivered"
+        }
+      },
+      "id": "RLZ-WETPS8",
+      "invariant": "INV-18M0W3",
+      "origin": {
+        "handoffEntry": "L171-F07 / L171-A4",
+        "leaf": "260928-MIK-L171"
+      },
+      "rationale": "The held-drain answer must propagate the transport disposition through the same replacement warning helper as direct delivery.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "b20f555dd03b92dcc6704a9fb8c94ceb1e389cd1",
         "content": "sha256:c48df9a1f1aaafe92bbecd9163de74c180b08fd1081068db975efb22b063708d",
         "locator": {
           "kind": "symbol",
@@ -406,7 +514,7 @@
     },
     {
       "anchor": {
-        "blob": "fd33ebc2ed88d1d738738abfda0fe11b3c0a2611",
+        "blob": "b20f555dd03b92dcc6704a9fb8c94ceb1e389cd1",
         "content": "sha256:7d1e77434f1ece959cd8f20db179a9a3f78d0a06c010410e11bbf2635a3c8323",
         "locator": {
           "kind": "symbol",
@@ -424,7 +532,7 @@
     },
     {
       "anchor": {
-        "blob": "fd33ebc2ed88d1d738738abfda0fe11b3c0a2611",
+        "blob": "b20f555dd03b92dcc6704a9fb8c94ceb1e389cd1",
         "content": "sha256:df975f80addf619cf119a02cba4faf1530fea468e99ab8f61bf23e117625bf51",
         "locator": {
           "kind": "symbol",
@@ -442,12 +550,12 @@
     },
     {
       "anchor": {
-        "blob": "fd33ebc2ed88d1d738738abfda0fe11b3c0a2611",
+        "blob": "b20f555dd03b92dcc6704a9fb8c94ceb1e389cd1",
         "content": "sha256:c48df9a1f1aaafe92bbecd9163de74c180b08fd1081068db975efb22b063708d",
         "locator": {
-          "end": 331,
+          "end": 335,
           "kind": "line_range",
-          "start": 300
+          "start": 304
         }
       },
       "id": "RLZ-ZQGPJB",
@@ -466,7 +574,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "fd33ebc2ed88d1d738738abfda0fe11b3c0a2611",
+            "blob": "b20f555dd03b92dcc6704a9fb8c94ceb1e389cd1",
             "content": "sha256:c48df9a1f1aaafe92bbecd9163de74c180b08fd1081068db975efb22b063708d",
             "locator": {
               "kind": "symbol",
@@ -549,12 +657,12 @@
         },
         {
           "anchor": {
-            "blob": "fd33ebc2ed88d1d738738abfda0fe11b3c0a2611",
+            "blob": "b20f555dd03b92dcc6704a9fb8c94ceb1e389cd1",
             "content": "sha256:6662b0ca591afd36d2f367235b45ee3f89346cde5a7aa661164e2e7b8e91b369",
             "locator": {
-              "end": 1027,
+              "end": 1073,
               "kind": "line_range",
-              "start": 1008
+              "start": 1054
             }
           },
           "kind": "code"
@@ -598,12 +706,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "fd33ebc2ed88d1d738738abfda0fe11b3c0a2611",
+            "blob": "b20f555dd03b92dcc6704a9fb8c94ceb1e389cd1",
             "content": "sha256:0f61c20b77b2ed91e57728b3e05fffbfc7178e1295f1a3a3534d16b83a9346a0",
             "locator": {
-              "end": 555,
+              "end": 559,
               "kind": "line_range",
-              "start": 488
+              "start": 492
             }
           },
           "kind": "code"
@@ -615,12 +723,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "fd33ebc2ed88d1d738738abfda0fe11b3c0a2611",
+            "blob": "b20f555dd03b92dcc6704a9fb8c94ceb1e389cd1",
             "content": "sha256:482394491c5ccfc71c75ec8a1d8cf243273b23a4cb06930b267e4f0a43d713b0",
             "locator": {
-              "end": 671,
+              "end": 675,
               "kind": "line_range",
-              "start": 670
+              "start": 674
             }
           },
           "kind": "code"
@@ -726,12 +834,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "718b9f62cad77072dc65b10c4b22d6aa748972e8",
+            "blob": "e20e0ea7366337d5be1e8d423b62f1399c1672a9",
             "content": "sha256:90ee952af6da75b5bfc0523b99e4ed197091700e5d4760ee89206e698297e87f",
             "locator": {
-              "end": 273,
+              "end": 280,
               "kind": "line_range",
-              "start": 251
+              "start": 258
             },
             "path": "mcp/tests/test_paseo_role_tools.py"
           },
@@ -762,12 +870,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "857f207816298c36a510306f9890d228877ad6f5",
+            "blob": "635bb67942bc1db4b14dbf7ed76b1cc62d9dc24b",
             "content": "sha256:80a3281585d1be4c73b123a58af65b844ed7c70176c54b2d15b4da26359046ef",
             "locator": {
-              "end": 455,
+              "end": 464,
               "kind": "line_range",
-              "start": 408
+              "start": 417
             },
             "path": "mcp/tests/test_paseo_role_messages.py"
           },
@@ -798,12 +906,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "857f207816298c36a510306f9890d228877ad6f5",
+            "blob": "635bb67942bc1db4b14dbf7ed76b1cc62d9dc24b",
             "content": "sha256:cc436df495e1fb520007242b039758f2930cf4c00b1253b9f55899e983710df7",
             "locator": {
-              "end": 360,
+              "end": 369,
               "kind": "line_range",
-              "start": 330
+              "start": 339
             },
             "path": "mcp/tests/test_paseo_role_messages.py"
           },
@@ -816,7 +924,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "fd33ebc2ed88d1d738738abfda0fe11b3c0a2611",
+            "blob": "b20f555dd03b92dcc6704a9fb8c94ceb1e389cd1",
             "content": "sha256:6360d6906f33f67364a091fa810512750413c1193bdccd08992ec081f5f091b8",
             "locator": {
               "kind": "symbol",

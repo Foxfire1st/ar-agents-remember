@@ -3,7 +3,25 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "a454ea6183379b1a887f489de261b2f5f8bd11ff",
+        "blob": "4a53276d7da469e7c756e76be23652dbf745dd56",
+        "content": "sha256:c2045bd29bca43de03ba91de90d8de7595cef06ff009d0e897897288da8cee8b",
+        "locator": {
+          "kind": "symbol",
+          "name": "_held_delivery_loop"
+        }
+      },
+      "id": "RLZ-2B19GK",
+      "invariant": "INV-4DQMNE",
+      "origin": {
+        "handoffEntry": "MIK-R171@v1 rule 1",
+        "leaf": "260928-MIK-L171"
+      },
+      "rationale": "It runs the turn-end tick on the serving loop under the owner's ledger accounting, so the delivery happens with no message arriving and no unmeasured unit charged.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "4a53276d7da469e7c756e76be23652dbf745dd56",
         "content": "sha256:2078006d528ed120367cdbaff430b3c8a884c697282d74206e04d1568c35b858",
         "locator": {
           "kind": "symbol",
@@ -21,12 +39,12 @@
     },
     {
       "anchor": {
-        "blob": "a454ea6183379b1a887f489de261b2f5f8bd11ff",
+        "blob": "4a53276d7da469e7c756e76be23652dbf745dd56",
         "content": "sha256:9ef462c0aeffef117a3c267a2028dfc1064d298dface6036341aa50be1d7a3ee",
         "locator": {
-          "end": 357,
+          "end": 397,
           "kind": "line_range",
-          "start": 297
+          "start": 337
         }
       },
       "id": "RLZ-9KM829",
@@ -40,7 +58,25 @@
     },
     {
       "anchor": {
-        "blob": "a454ea6183379b1a887f489de261b2f5f8bd11ff",
+        "blob": "4a53276d7da469e7c756e76be23652dbf745dd56",
+        "content": "sha256:84cb5e1d7a5aee199e8707279330a025e0f8a4e6fd1fb41c31edead474e297eb",
+        "locator": {
+          "kind": "symbol",
+          "name": "_held_delivery_tick"
+        }
+      },
+      "id": "RLZ-MQ79S4",
+      "invariant": "INV-4DQMNE",
+      "origin": {
+        "handoffEntry": "MIK-R171@v1 rule 1",
+        "leaf": "260928-MIK-L171"
+      },
+      "rationale": "One tick performs the turn-end drains and, on its own longer interval, the sweep fallback, so each pass stays bounded.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "4a53276d7da469e7c756e76be23652dbf745dd56",
         "content": "sha256:ad2bae9b4636ad639cb42c916442297460ce550fb8cae6845509efd7c5ff0e2e",
         "locator": {
           "kind": "symbol",

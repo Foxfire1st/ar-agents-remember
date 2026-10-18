@@ -1,0 +1,34 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test",
+      "spans_locations"
+    ],
+    "justification": "One promise about the answer of a delivery spans the held-drain owner and the strict response model, and the case witnesses both."
+  },
+  "applicability": "Every delivery answer, direct or from a held batch, whose transport result reports the running turn was replaced.",
+  "conditions": [
+    "The replacement disposition and its plain warning travel through the same helper on both answer paths.",
+    "The public response schema admits the replacement value, so validation does not turn a delivery into an error."
+  ],
+  "exclusions": [
+    "No new send behaviour is promised here; the clause is about the answer that reports what the transport did."
+  ],
+  "id": "INV-18M0W3",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "/home/firefox/projects/ar-coordination/tasks/agents-remember/260928_maintained-invariant-knowledge/notes/reports/worker/96ca3328-8b60-43e0-96d2-eda7c82856ea/role-launch/260928-MIK-L171-worker-96ca3328-8b60-43e0-96d2-eda7c82856ea.md; evidence/before/f07-probes.txt (exit 1) -> evidence/after/f07-probes.txt (exit 0), identical probe SHA-256 74fb5d83a8c5720455d51e730c9e90d943f1a0950c12dfe941b318d048563435; RoleMessageTests.test_a_held_batch_preserves_the_reported_replacement_and_warning (1 passed); core-three.txt (87 passed, 140 subtests)"
+      ],
+      "path": "handoff-L171-curation.json"
+    },
+    "handoffEntry": "L171-F07 / L171-A4",
+    "leaf": "260928-MIK-L171",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "A held-batch delivery reported as replaced preserves that disposition and a plain warning in the caller's accepted, schema-valid response.",
+  "status": "proposed",
+  "supersedes": []
+}

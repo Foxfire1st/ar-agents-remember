@@ -3,7 +3,25 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "64247b1567681e2b8e60bb36434fadd33ed6a347",
+        "blob": "ca1ce27c37152b46f279a699a403f81d03935901",
+        "content": "sha256:a6b07b45c63823bf9788ef74b4aecc45883351cfa7eb3ddf4fb9d39e650f5d15",
+        "locator": {
+          "kind": "symbol",
+          "name": "agent_in_turn"
+        }
+      },
+      "id": "RLZ-3GKHMT",
+      "invariant": "INV-5EY4EN",
+      "origin": {
+        "handoffEntry": "MIK-R171@v2 rule 2",
+        "leaf": "260928-MIK-L171"
+      },
+      "rationale": "It reads the host's own activity publication, the second read of the recipient's state that the send and the drain both use.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "ca1ce27c37152b46f279a699a403f81d03935901",
         "content": "sha256:541866508eb5aaab01e63f9a9a359c845064db140dd95972551fa7381a98e3ef",
         "locator": {
           "kind": "symbol",
@@ -18,6 +36,24 @@
       },
       "rationale": "This input consumes notifications and boot reconciliation rather than periodically reading host state.",
       "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "ca1ce27c37152b46f279a699a403f81d03935901",
+        "content": "sha256:299037cf7bb507e3ebf1749152fb8961d6fc22706d35035b939f1ba2674bdd4f",
+        "locator": {
+          "kind": "symbol",
+          "name": "turn_ended_agents"
+        }
+      },
+      "id": "RLZ-M56SSK",
+      "invariant": "INV-4DQMNE",
+      "origin": {
+        "handoffEntry": "MIK-R171@v1 rule 1",
+        "leaf": "260928-MIK-L171"
+      },
+      "rationale": "It reads the host's own activity publication and answers which agents have just ended a turn - the observation this rule rests on rather than the sending call's reply.",
+      "role": "support"
     }
   ],
   "references": {

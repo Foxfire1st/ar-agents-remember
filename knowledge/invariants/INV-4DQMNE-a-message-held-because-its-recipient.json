@@ -1,0 +1,37 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test",
+      "spans_locations",
+      "family_guarantee"
+    ],
+    "justification": "The tick, the activity-record reader, the held-receipt queue and the bounded sweep together replace a queue that waited for the next message; the turn-end cases witness the exact behaviour."
+  },
+  "applicability": "Every native role message the product holds because its recipient could not take it.",
+  "conditions": [
+    "The serving loop runs the held-delivery tick; delivery follows the host's own activity record where it shows the recipient's turn end.",
+    "The sweep stays the fallback and visits receipts that hold messages before the other receipts.",
+    "The recipient is idle without an open permission at the moment of delivery."
+  ],
+  "exclusions": [
+    "No later message is needed or sent to trigger the delivery.",
+    "The parent wake line of the host plugin is MIK-R172's, not this clause's."
+  ],
+  "id": "INV-4DQMNE",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "mcp/tests/test_held_queue.py::TurnEndDeliveryTests::test_a_turn_end_delivers_what_waits_without_another_message and ::test_a_turn_end_holds_the_message_while_a_permission_still_waits (class run: 18 passed); report role-reports/worker/8500ba4e-39b3-5373-8e2d-cfe91a38af4c/role-launch/260928-MIK-L171-worker-8500ba4e-39b3-5373-8e2d-cfe91a38af4c.md; L171-F03 repair: test_a_queued_receipt_past_the_first_slice_is_reached_within_bounded_ticks at queue sizes 33 and 65"
+      ],
+      "path": "handoff-L171-curation.json"
+    },
+    "handoffEntry": "MIK-R171@v1 rule 1",
+    "leaf": "260928-MIK-L171",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "A message held because its recipient could not take it is delivered when that recipient's turn ends, by the product's own tick with no further message sent, in bounded units that never build a per-tick census.",
+  "status": "proposed",
+  "supersedes": []
+}

@@ -3,7 +3,7 @@
   "proves": [
     {
       "anchor": {
-        "blob": "69ed8af35d0b9bfbe4ce42d96c344fe83a60a494",
+        "blob": "4683461b2130843a33bcc5bbe506d0b08e08bfc4",
         "content": "sha256:7124f0401a2b6669e727e4fcb27198685d46de896cf65e60526b5d9d6f9d24c9",
         "locator": {
           "end": 147,
@@ -21,8 +21,8 @@
     },
     {
       "anchor": {
-        "blob": "69ed8af35d0b9bfbe4ce42d96c344fe83a60a494",
-        "content": "sha256:a8a4b16f79bbcdecd306f8681732018ffc395b23b187741dde0e482742776cf7",
+        "blob": "4683461b2130843a33bcc5bbe506d0b08e08bfc4",
+        "content": "sha256:14bb2020a042321f0f0fe839da9760a69bed337b147354cf4343b593768d7d80",
         "locator": {
           "kind": "symbol",
           "name": "InvestigatorTests.test_old_start_binding_address_report_and_replay_preserve_recorded_paths"
@@ -38,8 +38,8 @@
     },
     {
       "anchor": {
-        "blob": "69ed8af35d0b9bfbe4ce42d96c344fe83a60a494",
-        "content": "sha256:c209c96391c58d7bf0dd7a77db0a2facf067b43429683348fa3763ed4cae322e",
+        "blob": "4683461b2130843a33bcc5bbe506d0b08e08bfc4",
+        "content": "sha256:58e6006b9b740f31007416ab38a27bd5a050c95cbb2219a6a460178cc5bd3e62",
         "locator": {
           "kind": "symbol",
           "name": "InvestigatorTests.test_message_new_turn_obeys_capacity_before_delivery_and_resume"
@@ -55,24 +55,24 @@
     },
     {
       "anchor": {
-        "blob": "69ed8af35d0b9bfbe4ce42d96c344fe83a60a494",
-        "content": "sha256:c209c96391c58d7bf0dd7a77db0a2facf067b43429683348fa3763ed4cae322e",
+        "blob": "4683461b2130843a33bcc5bbe506d0b08e08bfc4",
+        "content": "sha256:58e6006b9b740f31007416ab38a27bd5a050c95cbb2219a6a460178cc5bd3e62",
         "locator": {
           "kind": "symbol",
           "name": "InvestigatorTests.test_message_new_turn_obeys_capacity_before_delivery_and_resume"
         }
       },
-      "facet": "Four sprint/master and idle/closed cases refuse at eight before send or resume and admit after release while steering and replay preserve existing slots.",
-      "id": "PRF-92G0HP",
+      "facet": "Four sprint/master and idle/closed cases refuse at eight before send or resume and admit after release; a recipient already in a turn is held, and an exact replay keeps its slot.",
+      "id": "PRF-AY6JRN",
       "invariant": "INV-0EASG7",
       "origin": {
-        "handoffEntry": "L98-CODE1-F01 / Worker repair L98-A02",
-        "leaf": "260928-MIK-L98"
+        "handoffEntry": "L171-F05-PRF-REPLACEMENT",
+        "leaf": "260928-MIK-L171"
       }
     },
     {
       "anchor": {
-        "blob": "69ed8af35d0b9bfbe4ce42d96c344fe83a60a494",
+        "blob": "4683461b2130843a33bcc5bbe506d0b08e08bfc4",
         "content": "sha256:7aa15b4bf7f4660739228c01bfe25b4d448297e8db40d2b0062c000fd6db4c8e",
         "locator": {
           "kind": "symbol",
@@ -89,7 +89,7 @@
     },
     {
       "anchor": {
-        "blob": "69ed8af35d0b9bfbe4ce42d96c344fe83a60a494",
+        "blob": "4683461b2130843a33bcc5bbe506d0b08e08bfc4",
         "content": "sha256:4ae78471983abc6a70df613aa0a69ef04812e053524f4b8fa5bc97951eecfc69",
         "locator": {
           "kind": "symbol",

@@ -1,0 +1,36 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test",
+      "spans_locations"
+    ],
+    "justification": "The send decision, the provider knowledge and the answer that names a replacement span the bridge and the tool, and the steer-or-hold cases witness both paths."
+  },
+  "applicability": "Every send of a role message to a recipient the tool's last read reports as being in a turn.",
+  "conditions": [
+    "The tool reads the recipient's state immediately before the send; the host's own activity publication counts as a second view.",
+    "A provider the product itself knows takes a steer receives the message by steer into the running turn.",
+    "Every other provider's message is held under rule 1 instead of sent."
+  ],
+  "exclusions": [
+    "A provider known to steer may still replace the turn at that moment, and a recipient may start a turn between the read and the send; the answer must say plainly that the turn was replaced, and this clause does not promise otherwise.",
+    "The host plugin's parent wake line is out of scope (MIK-R172)."
+  ],
+  "id": "INV-5EY4EN",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "mcp/tests/test_paseo_role_bridge.py::AgentSendScriptTests::test_a_running_turn_is_steered_or_held_by_the_provider_and_never_cut_off (a known-steering provider is sent with activeTurnBehavior steer; a provider without steering is refused busy and its turn is left alone; the host record counts as the read) and mcp/tests/test_paseo_role_messages.py::RoleMessageTests::test_a_running_turn_is_steered_or_held_by_its_provider_and_never_cut_off, plus ::test_the_hosts_own_activity_record_holds_a_message_the_snapshot_calls_idle for the second read; on f4ab655c the steer half fails because every running turn was held"
+      ],
+      "path": "handoff-L171-curation.json"
+    },
+    "handoffEntry": "MIK-R171@v2 rule 2",
+    "leaf": "260928-MIK-L171",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "A message to a recipient in a turn is steered into that turn only when the recipient's provider is one the product knows takes a steer; every other such message is held under rule 1, and where a steer was taken and the host replaced the turn anyway the answer says plainly that the running turn was replaced.",
+  "status": "proposed",
+  "supersedes": []
+}

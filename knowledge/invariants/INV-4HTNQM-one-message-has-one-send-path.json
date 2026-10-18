@@ -1,0 +1,32 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake"
+    ],
+    "justification": "Two uncalled delivery implementations beside the one the tool calls can diverge and lose or repeat a message; removing the duplicate leaves one send path, and the whole test tree still collects."
+  },
+  "applicability": "The role-message delivery module and the tests that reached only its uncalled copy.",
+  "conditions": [
+    "The shared file, attachment, store, link, successor and long-reply helpers stay."
+  ],
+  "exclusions": [
+    "The uncalled duplicate delivery path and its own tests are removed; the whole test tree still collects."
+  ],
+  "id": "INV-4HTNQM",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "python -m pytest -m \"\" --collect-only -q mcp/tests -> 6191 tests collected, exit 0; ruff check over mcp/src and mcp/tests clean on the smaller module (1064 -> 636 lines); report role-reports/worker/8500ba4e-39b3-5373-8e2d-cfe91a38af4c/role-launch/260928-MIK-L171-worker-8500ba4e-39b3-5373-8e2d-cfe91a38af4c.md"
+      ],
+      "path": "handoff-L171-curation.json"
+    },
+    "handoffEntry": "MIK-R171@v1 rule 6",
+    "leaf": "260928-MIK-L171",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "One message has one send path: the module that files a message no longer carries a second, uncalled delivery implementation beside the one the tool calls.",
+  "status": "proposed",
+  "supersedes": []
+}

@@ -1,0 +1,33 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test"
+    ],
+    "justification": "The log line and the recounted total are one promise about a failing pass; both cases witness it."
+  },
+  "applicability": "Every sweep or drain pass over a held store.",
+  "conditions": [
+    "A failed pass names the recipient and the reason in one log line.",
+    "The receipt's count of held messages is recounted from the store it holds."
+  ],
+  "exclusions": [
+    "A pass that pauses for an unreadable store is reported under this clause, not swallowed."
+  ],
+  "id": "INV-SB6HQS",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "mcp/tests/test_held_queue.py::TurnEndDeliveryTests::test_a_failed_drain_writes_one_line_with_the_recipient_and_the_reason and ::test_a_receipt_count_equals_the_messages_its_store_holds; reading stated in report limitation 2; report role-reports/worker/8500ba4e-39b3-5373-8e2d-cfe91a38af4c/role-launch/260928-MIK-L171-worker-8500ba4e-39b3-5373-8e2d-cfe91a38af4c.md; L171-F04 repair: test_a_ready_drain_that_pauses_writes_one_line_with_the_recipient_and_reason"
+      ],
+      "path": "handoff-L171-curation.json"
+    },
+    "handoffEntry": "MIK-R171@v1 rule 5",
+    "leaf": "260928-MIK-L171",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "A drain that fails writes one line naming the recipient and the reason, and a receipt's waiting count is recounted from its own store rather than published stale while the store cannot be read.",
+  "status": "proposed",
+  "supersedes": []
+}

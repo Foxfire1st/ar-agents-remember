@@ -18,6 +18,14 @@ Stage compact terminal metadata before removing waiting text, then flush it into
 
 The serving loop calls `sweep_held_messages`. Resumable per-root walks yield at most thirty-two candidate paths and read at most thirty-two receipts per tick; drains have the same cap. Each visited directory’s names are materialized and sorted once per pass before yielding paths: that directory-listing cost is not a constant-time or elapsed-time bound. The accepted owner ruling permits this stable per-directory order, while forbidding a materialized set of all receipt paths. Root discovery is a separate glob over execution roots. History and message-binding subtrees are not descended into. `_receipt_needs_drain` checks the store even when a receipt counter is absent or zero. Product shutdown may pause delivery; durable text resumes with serving, without a sender/model turn.
 
+## Turn-end delivery and the held-receipt queue
+
+The serving tick delivers what waits for a recipient the host's own activity record reports as having just ended a turn: `deliver_ended_turns` drains only the receipts a holder named in the queue, sends nothing to the recipient, and stops at thirty-two receipts. `note_held_receipt` names a receipt in the queue on every hold; the queue is a working surface of at most 512 entries and 24 hours, and losing it costs one later sweep visit, never a message.
+
+`sweep_held_messages` drains the queued receipts before it walks any path, in a slice that starts where the previous tick stopped, so a receipt beyond the first thirty-two is reached within a bounded number of ticks while the receipts ahead of it stay held. The walk remains the fallback for receipts no holder named, under the same per-tick read and drain budget.
+
+Before a resend, a message attempted under a host id goes alone and under that id: the drain asks the recipient's timeline through the bridge's `agent-has-message` command and, when the copy is already there, records the delivery with no send. A drain that pauses — the host unreachable, the resume unconfirmed, the store unclaimed or unreadable — writes one warning line naming the recipient and the reason and recounts the receipt's waiting count from the store it holds.
+
 ## Current Contract — Scoped Launch And Settings Changes
 
 _open_held_seat now invokes the receipt owner’s _restore_launch_handover with the saved launch call before adding waiting messages to the frozen opening prompt. The common path validates frozen detail identity/revision as well as restoring/verifying the primary handover and any takeover material.

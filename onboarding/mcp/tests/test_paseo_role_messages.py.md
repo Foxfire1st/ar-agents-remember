@@ -22,6 +22,10 @@ Controlled-runtime cases now require one timestamp/sender/recipient message file
 
 Recipients come from this line's receipts and exact role/task selection; multiple candidates and missing binding refuse, including two live occupants of the same leaf seat. Pending permissions instead hold messages without answering the prompt. Unfinished starts and unwritable active turns use the same held store; a fresh message remains behind waiting work even after the host becomes writable. Closed sessions pass Revive scope checks before send. Wait tracks the consuming turn, and timeout leaves the message delivered rather than causing duplicate send or turn cancellation. An R71 case proves delivery proceeds despite collection errors with per-agent isolation and the failure returned separately.
 
+## Hold, single-copy, answered-batch and steer-or-hold cases
+
+`RoleMessageTests` holds the cases this change adds. `test_a_running_turn_is_steered_or_held_by_its_provider_and_never_cut_off` steers a running turn only for a provider marked as taking one and holds the message as `recipient-in-turn` for the other, whose turn keeps running. `test_the_hosts_own_activity_record_holds_a_message_the_snapshot_calls_idle` holds a message the agent snapshot calls idle when the host's publication says `in-turn`, steers for a provider known to take one, and delivers the held message when that record says the turn ended. `test_an_unknown_send_outcome_is_not_delivered_twice` and `test_a_copy_the_recipient_already_holds_is_not_sent_again` keep one copy: the second sends nothing when the recipient's timeline already carries the attempted id, without a host that deduplicates. `test_a_delivery_that_takes_held_messages_answers_ok` answers `accepted` with no `turnId`, and `RoleMessageResponse` validates it. `test_a_held_batch_preserves_the_reported_replacement_and_warning` keeps `taken` `replaced` with the plain replacement warning through the same answer model. These are the controlled fixture's assertions, not live host execution.
+
 ## Evidence
 
 

@@ -8,11 +8,11 @@ This source account supplies no fresh test execution or MEMORY acceptance. Earli
 
 ## Current paired source contract — scoped assertions and incoming catalogs
 
-The controlled fixture patches both facade-local and retained delivery-module bridge/resolve/topology names, plus held-store and retirement bridge callers. Occupied-seat refusal names its holder; registered-tool assertions expect role_start, role_start_set and role_message and test unbound set refusal. Existing caller/scope/start-lock/override boundaries remain; source assertions and registration are not fresh execution acceptance.
+The controlled fixture patches facade-local bridge/resolve/topology names, plus the held-store and retirement bridge callers; the removed delivery-module names are no longer patched. Occupied-seat refusal names its holder; registered-tool assertions expect role_start, role_start_set and role_message and test unbound set refusal. Existing caller/scope/start-lock/override boundaries remain; source assertions and registration are not fresh execution acceptance.
 
 This section supersedes contrary earlier prose only for these changed seams; retained evidence and useful unaffected accounts are not deleted or promoted to new proof.
 
-- The controlled fixture patches both facade-local and retained delivery-module bridge/resolve/topology names, plus held-store and retirement bridge callers. Occupied-seat refusal names its holder; registered-tool assertions expect role_start, role_start_set and role_message and test unbound set refusal. Existing caller/scope/start-lock/override boundaries remain; source assertions and registration are not fresh execution acceptance. [3]
+- The controlled fixture patches facade-local bridge/resolve/topology names, plus the held-store and retirement bridge callers; the removed delivery-module names are no longer patched. Occupied-seat refusal names its holder; registered-tool assertions expect role_start, role_start_set and role_message and test unbound set refusal. Existing caller/scope/start-lock/override boundaries remain; source assertions and registration are not fresh execution acceptance. [3]
 
 
 ## Governing Overview
@@ -26,6 +26,10 @@ Role start enforces the caller's child-role matrix and own sprint/master scope, 
 Concurrent role starts observe the second caller's failed nonblocking acquisition of the actual held dispatch lock before asserting it remains pending. Lock-expiration cases assert the refusal and retry behavior, while shared hang guards bound fixture release/join; elapsed speed is not an assertion.
 
 The launch observer now reads role-agent facts during the native agent-create call: worker role, exact leaf key and nonempty report filename must already exist. This strengthens registration-before-first-turn ordering while retaining the held dispatch-lock assertions; the host itself remains a fixture.
+
+## Hold and delivery answers in the controlled fixture
+
+The controlled runtime distinguishes a recipient in a turn by the agent's status or by `turnReportedByHost` in the payload. A message to such a recipient whose `steers` is not `True` is refused `busy` and left untaken, and a taken message records its id in the recipient's timeline without deduplicating. On that shape the suite asserts what the facade answers: a held message reports `held` with `heldReason` `recipient-in-turn` and sends nothing, and a delivery that carries held work answers `accepted` through `RoleMessageResponse`. The fixture is a stand-in; these are not live provider events.
 
 ## Evidence
 

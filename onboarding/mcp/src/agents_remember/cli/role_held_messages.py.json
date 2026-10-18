@@ -3,12 +3,48 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "40dc59696c90511ab0a56b5166cdc99ea059475a",
-        "content": "sha256:452b3a9483c50da17d54e90ef8d7b8ad9a500e045072ed8bed3fc3e7fd50186d",
+        "blob": "4a6fe8b36abe6236b7ff925a4a4da4019fef0949",
+        "content": "sha256:d689048c233bd9c614b78c52c0324727b53756342c2aef8d4af2b5dd444eae03",
         "locator": {
-          "end": 1175,
+          "kind": "symbol",
+          "name": "_sweep_receipt"
+        }
+      },
+      "id": "RLZ-205RZ4",
+      "invariant": "INV-SB6HQS",
+      "origin": {
+        "handoffEntry": "MIK-R171@v1 rule 5",
+        "leaf": "260928-MIK-L171"
+      },
+      "rationale": "It performs one receipt's drain and turns a failed one into a returned state plus a log line with the recipient and the reason, instead of returning silently.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "4a6fe8b36abe6236b7ff925a4a4da4019fef0949",
+        "content": "sha256:b32993d54b51d3cdbe19363a305d9c116177bee4877055ddc0c37a6a4a187c62",
+        "locator": {
+          "kind": "symbol",
+          "name": "_send_part"
+        }
+      },
+      "id": "RLZ-29SEFE",
+      "invariant": "INV-AMJAZT",
+      "origin": {
+        "handoffEntry": "MIK-R171@v1 rule 3",
+        "leaf": "260928-MIK-L171"
+      },
+      "rationale": "It sends a part under the attempt's id when there is one, which is what makes the host deduplicate the resend.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "4a6fe8b36abe6236b7ff925a4a4da4019fef0949",
+        "content": "sha256:eb280fb438737f80f512e6673551d06abef185c4477bc26bada04d554f76014e",
+        "locator": {
+          "end": 1529,
           "kind": "line_range",
-          "start": 1160
+          "start": 1514
         }
       },
       "id": "RLZ-3FQBKH",
@@ -22,8 +58,62 @@
     },
     {
       "anchor": {
-        "blob": "40dc59696c90511ab0a56b5166cdc99ea059475a",
-        "content": "sha256:0b9f1c118723f43006c4966af5cfe7188ea8bd46af5125ef0933237c49bd92f4",
+        "blob": "4a6fe8b36abe6236b7ff925a4a4da4019fef0949",
+        "content": "sha256:1840845c59103e95fef82567c8c05000db7538c46bf821194f21667cfebdc0b7",
+        "locator": {
+          "kind": "symbol",
+          "name": "_send_once"
+        }
+      },
+      "id": "RLZ-3G97RJ",
+      "invariant": "INV-AMJAZT",
+      "origin": {
+        "handoffEntry": "MIK-R171@v1 rule 3",
+        "leaf": "260928-MIK-L171"
+      },
+      "rationale": "It refuses only on the host's own admission answer and reports an unreachable or unknown outcome as such, so the caller learns the message is held and not lost.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "4a6fe8b36abe6236b7ff925a4a4da4019fef0949",
+        "content": "sha256:2482a6e6c9b5ce501cf3c630c38297da3393113825151f7afa60d013f882c304",
+        "locator": {
+          "kind": "symbol",
+          "name": "hold_message"
+        }
+      },
+      "id": "RLZ-3Y5NN9",
+      "invariant": "INV-AMJAZT",
+      "origin": {
+        "handoffEntry": "MIK-R171@v1 rule 3",
+        "leaf": "260928-MIK-L171"
+      },
+      "rationale": "It stores the attempt's id on the held row and is idempotent for a repeated attempt id, so a retry of the same hold does not create a second message.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "4a6fe8b36abe6236b7ff925a4a4da4019fef0949",
+        "content": "sha256:51761483a7f38bf7376ee4cfe10391143e23fa588af2ec9f88af84ff449d0ed2",
+        "locator": {
+          "kind": "symbol",
+          "name": "_recount_waiting"
+        }
+      },
+      "id": "RLZ-4BH1VC",
+      "invariant": "INV-SB6HQS",
+      "origin": {
+        "handoffEntry": "MIK-R171@v1 rule 5",
+        "leaf": "260928-MIK-L171"
+      },
+      "rationale": "It recounts the waiting total from the store under its lock and keeps, with a log line, the last count when the store cannot be read, so the published count never becomes a false zero.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "4a6fe8b36abe6236b7ff925a4a4da4019fef0949",
+        "content": "sha256:f0ab63ad221fad88615e7e1e89220f57324a014f7fb591f16e2254735f703c8b",
         "locator": {
           "kind": "symbol",
           "name": "_deliver_waiting"
@@ -40,12 +130,30 @@
     },
     {
       "anchor": {
-        "blob": "40dc59696c90511ab0a56b5166cdc99ea059475a",
+        "blob": "4a6fe8b36abe6236b7ff925a4a4da4019fef0949",
+        "content": "sha256:a6e03ae162ead1a55e19cd540059d13548454e11de187ad32117171984471bad",
+        "locator": {
+          "kind": "symbol",
+          "name": "deliver_ended_turns"
+        }
+      },
+      "id": "RLZ-617P3B",
+      "invariant": "INV-4DQMNE",
+      "origin": {
+        "handoffEntry": "MIK-R171@v1 rule 1",
+        "leaf": "260928-MIK-L171"
+      },
+      "rationale": "It drains exactly the queued receipts whose agent the host reports as having just ended a turn, which is the turn end this rule names; it sends nothing to the recipient and builds no census.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "4a6fe8b36abe6236b7ff925a4a4da4019fef0949",
         "content": "sha256:1e1457bce15f5f3c12e6e4c173d24ae6251f1b7031469a07b672298a27afbe08",
         "locator": {
-          "end": 669,
+          "end": 807,
           "kind": "line_range",
-          "start": 660
+          "start": 798
         }
       },
       "id": "RLZ-A0MBR2",
@@ -59,12 +167,12 @@
     },
     {
       "anchor": {
-        "blob": "40dc59696c90511ab0a56b5166cdc99ea059475a",
+        "blob": "4a6fe8b36abe6236b7ff925a4a4da4019fef0949",
         "content": "sha256:68d7ec3cfbf19c2da8316497a477f66c751f5bbb391bdd439f973416ceb91fe5",
         "locator": {
-          "end": 535,
+          "end": 673,
           "kind": "line_range",
-          "start": 493
+          "start": 631
         }
       },
       "id": "RLZ-D3TNNK",
@@ -78,12 +186,12 @@
     },
     {
       "anchor": {
-        "blob": "40dc59696c90511ab0a56b5166cdc99ea059475a",
-        "content": "sha256:58e95aa15b2f4047f24638684731ab41ac1e1d128711d6cf0a9640640a2e0079",
+        "blob": "4a6fe8b36abe6236b7ff925a4a4da4019fef0949",
+        "content": "sha256:eb320b19dc2840e1a33a2d43f39f86e455155f3fda7c36d95d3c42c48c5fc111",
         "locator": {
-          "end": 968,
+          "end": 1139,
           "kind": "line_range",
-          "start": 851
+          "start": 1111
         }
       },
       "id": "RLZ-EJV806",
@@ -97,12 +205,48 @@
     },
     {
       "anchor": {
-        "blob": "40dc59696c90511ab0a56b5166cdc99ea059475a",
-        "content": "sha256:85985ba205ce4a95a16a9c0fd9b1a8c1129a15ab47e52dff88da037f36cc224f",
+        "blob": "4a6fe8b36abe6236b7ff925a4a4da4019fef0949",
+        "content": "sha256:8eec25d18387148541c8897194b740b6cbbd476cb64885562105774a07c4b91d",
         "locator": {
-          "end": 1157,
+          "kind": "symbol",
+          "name": "_next_piece"
+        }
+      },
+      "id": "RLZ-F2G09P",
+      "invariant": "INV-AMJAZT",
+      "origin": {
+        "handoffEntry": "MIK-R171@v1 rule 3",
+        "leaf": "260928-MIK-L171"
+      },
+      "rationale": "It keeps a message whose send outcome is unknown alone in its own part, so it can never be merged into a combined batch under a different id.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "4a6fe8b36abe6236b7ff925a4a4da4019fef0949",
+        "content": "sha256:27ffe03bf9c089d4876d4cad2d8668ce8cacc517d2d5ba08186da7c9caf31ae0",
+        "locator": {
+          "kind": "symbol",
+          "name": "note_held_receipt"
+        }
+      },
+      "id": "RLZ-GCHN6K",
+      "invariant": "INV-4DQMNE",
+      "origin": {
+        "handoffEntry": "MIK-R171@v1 rule 1",
+        "leaf": "260928-MIK-L171"
+      },
+      "rationale": "It records the receipt on every hold, which is what gives the turn-end path a bounded set to drain without walking the store.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "4a6fe8b36abe6236b7ff925a4a4da4019fef0949",
+        "content": "sha256:cb91f3750f43ab30ba438bf51309fbc88be8b2f4a226faf22715731159bc07f4",
+        "locator": {
+          "end": 1451,
           "kind": "line_range",
-          "start": 1123
+          "start": 1401
         }
       },
       "id": "RLZ-HDQJ4X",
@@ -116,12 +260,12 @@
     },
     {
       "anchor": {
-        "blob": "40dc59696c90511ab0a56b5166cdc99ea059475a",
+        "blob": "4a6fe8b36abe6236b7ff925a4a4da4019fef0949",
         "content": "sha256:607dca2f65168b719bc02c5f82af0b340dd43034cecd691752e6799305c65e44",
         "locator": {
-          "end": 1041,
+          "end": 1333,
           "kind": "line_range",
-          "start": 1015
+          "start": 1307
         }
       },
       "id": "RLZ-JNDNS0",
@@ -135,12 +279,12 @@
     },
     {
       "anchor": {
-        "blob": "40dc59696c90511ab0a56b5166cdc99ea059475a",
-        "content": "sha256:ed5f000a1900257819ee196b306192d26a0f4f5e451691ea10b07432ed6712f7",
+        "blob": "4a6fe8b36abe6236b7ff925a4a4da4019fef0949",
+        "content": "sha256:e0af81109d09a11c33d4d49b08811d1401bd9eeb25a69002b1bb557878cfc67b",
         "locator": {
-          "end": 1078,
+          "end": 1353,
           "kind": "line_range",
-          "start": 1044
+          "start": 1319
         }
       },
       "id": "RLZ-JRXFCD",
@@ -154,12 +298,12 @@
     },
     {
       "anchor": {
-        "blob": "40dc59696c90511ab0a56b5166cdc99ea059475a",
-        "content": "sha256:ed9ce56bda9d4dec77e6c06781d92e1aa03532d0061ce23e7fa857ab856a19b0",
+        "blob": "4a6fe8b36abe6236b7ff925a4a4da4019fef0949",
+        "content": "sha256:f40bf3b8f8c87ac8444db0cb664ee5458a68150120125b5c9f475e31fa874e03",
         "locator": {
-          "end": 829,
+          "end": 315,
           "kind": "line_range",
-          "start": 812
+          "start": 307
         }
       },
       "id": "RLZ-KV9BPM",
@@ -173,12 +317,48 @@
     },
     {
       "anchor": {
-        "blob": "40dc59696c90511ab0a56b5166cdc99ea059475a",
-        "content": "sha256:27d4c728d4e5b3b53b7b0c95fbbf5e06cb86be74f9165dd70c8b490862f74d3c",
+        "blob": "4a6fe8b36abe6236b7ff925a4a4da4019fef0949",
+        "content": "sha256:cb91f3750f43ab30ba438bf51309fbc88be8b2f4a226faf22715731159bc07f4",
         "locator": {
-          "end": 803,
+          "kind": "symbol",
+          "name": "sweep_held_messages"
+        }
+      },
+      "id": "RLZ-R78RC8",
+      "invariant": "INV-4DQMNE",
+      "origin": {
+        "handoffEntry": "MIK-R171@v1 rule 1",
+        "leaf": "260928-MIK-L171"
+      },
+      "rationale": "It drains the receipts that hold messages before the rotating walk, so a held message is retried on every sweep instead of after the whole store has been visited.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "4a6fe8b36abe6236b7ff925a4a4da4019fef0949",
+        "content": "sha256:b00d07d04aecedc7880a7aca5a95badc403766093996e091785e9a6b8831c535",
+        "locator": {
+          "kind": "symbol",
+          "name": "_still_held"
+        }
+      },
+      "id": "RLZ-SC9R3R",
+      "invariant": "INV-SB6HQS",
+      "origin": {
+        "handoffEntry": "MIK-R171@v1 rule 5",
+        "leaf": "260928-MIK-L171"
+      },
+      "rationale": "It records why the remainder still waits, which is the reason the log line and the answer carry.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "4a6fe8b36abe6236b7ff925a4a4da4019fef0949",
+        "content": "sha256:77ad6d5c3491628e1461b97995707bd7917951f16a6b1280adf22bfc4c443e5c",
+        "locator": {
+          "end": 933,
           "kind": "line_range",
-          "start": 749
+          "start": 880
         }
       },
       "id": "RLZ-XRBVHQ",

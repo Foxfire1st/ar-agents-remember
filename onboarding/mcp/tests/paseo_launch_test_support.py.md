@@ -14,6 +14,10 @@ The module additionally owns `FakeRuntime`, its catalog/server constants and rec
 
 `FakeRuntime._agent_create` records `modeId` and a copied supplied `featureValues` map independently of the optional `service_tier` entry. It emits `serviceTier` only when that key exists, so a permission-feature-only request does not require a speed choice. This makes fake-host observation possible without claiming native application or permission behavior.
 
+## Test-support boundary
+
+The module holds no tests and makes no product claim. `FakeRuntime._agent_has_message` answers `present` from the fake agent's recorded `timeline`, standing in for the bridge's `agent-has-message` read so the reconciliation before a resend can be exercised; it records nothing on the runtime and is not a host observation.
+
 ## Evidence
 
 - The scoped current source carries the module/document behavior described above. [1]

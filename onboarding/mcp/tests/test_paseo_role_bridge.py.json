@@ -1,5 +1,24 @@
 {
   "path": "mcp/tests/test_paseo_role_bridge.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "06c3070bde6a41b5947871dd5dd0becffc76f2a6",
+        "content": "sha256:c6ba7bebfe1f8d163e3c1c32b58ca964e41249d5f0c27720ce46d525c0214092",
+        "locator": {
+          "kind": "symbol",
+          "name": "AgentSendScriptTests.test_a_running_turn_is_steered_or_held_by_the_provider_and_never_cut_off"
+        }
+      },
+      "facet": "A known-steering provider is sent by steer; a provider without steering is refused busy and its turn is left alone.",
+      "id": "PRF-S9G0ZZ",
+      "invariant": "INV-5EY4EN",
+      "origin": {
+        "handoffEntry": "MIK-R171@v2 rule 2",
+        "leaf": "260928-MIK-L171"
+      }
+    }
+  ],
   "realizes": [],
   "references": {
     "1": {

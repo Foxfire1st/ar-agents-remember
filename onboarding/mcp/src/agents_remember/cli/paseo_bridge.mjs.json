@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "3033ec12e4c3c52a47055c386828f8e57f36ef9b",
+        "blob": "3229dfc038ca83b4aaf9202a78c610e19471c3c0",
         "content": "sha256:89e5ade058c87206179011306caa16ff235cf7ffc5bb792b3936354217a35492",
         "locator": {
           "kind": "symbol",
@@ -21,8 +21,26 @@
     },
     {
       "anchor": {
-        "blob": "3033ec12e4c3c52a47055c386828f8e57f36ef9b",
-        "content": "sha256:e0af3874ea4771803b0f3dfe69e9bec4ec90d0925d11652a15ca62b118b229cc",
+        "blob": "3229dfc038ca83b4aaf9202a78c610e19471c3c0",
+        "content": "sha256:b1ecf852329029c7701a87f9c9754ca85174c339f7dc95e689f8bbbe31a2547b",
+        "locator": {
+          "kind": "symbol",
+          "name": "sendToAgent"
+        }
+      },
+      "id": "RLZ-32592A",
+      "invariant": "INV-5EY4EN",
+      "origin": {
+        "handoffEntry": "MIK-R171@v2 rule 2",
+        "leaf": "260928-MIK-L171"
+      },
+      "rationale": "It reads the recipient just before the send, treats the host's own activity record as a second read of the same state, refuses busy for a running turn of a provider that does not steer, and steers only where the product knows a steer is taken.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "3229dfc038ca83b4aaf9202a78c610e19471c3c0",
+        "content": "sha256:a851beb609bd79ad68a6abc762ffed5ee4c38b83c17820b7f83df2a229d8ff08",
         "locator": {
           "kind": "file"
         }
@@ -38,7 +56,25 @@
     },
     {
       "anchor": {
-        "blob": "3033ec12e4c3c52a47055c386828f8e57f36ef9b",
+        "blob": "3229dfc038ca83b4aaf9202a78c610e19471c3c0",
+        "content": "sha256:eb965c50d97b4d583cefe1ad5bd54453088164b6884bd14d6eedd34e169811a9",
+        "locator": {
+          "kind": "symbol",
+          "name": "agentHasMessage"
+        }
+      },
+      "id": "RLZ-FZWSPY",
+      "invariant": "INV-AMJAZT",
+      "origin": {
+        "handoffEntry": "MIK-R171@v1 rule 3",
+        "leaf": "260928-MIK-L171"
+      },
+      "rationale": "It reads the recipient's timeline and answers whether a user message carrying the client message id is already there, which is the record the resend is reconciled against rather than the host's willingness to deduplicate.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "3229dfc038ca83b4aaf9202a78c610e19471c3c0",
         "content": "sha256:89e5ade058c87206179011306caa16ff235cf7ffc5bb792b3936354217a35492",
         "locator": {
           "kind": "symbol",
@@ -56,7 +92,25 @@
     },
     {
       "anchor": {
-        "blob": "3033ec12e4c3c52a47055c386828f8e57f36ef9b",
+        "blob": "3229dfc038ca83b4aaf9202a78c610e19471c3c0",
+        "content": "sha256:6c07cdcacec59018a2d37926c78d7c5116144e7adfd092686dc81af532beb3fb",
+        "locator": {
+          "kind": "symbol",
+          "name": "providerSteers"
+        }
+      },
+      "id": "RLZ-S9852F",
+      "invariant": "INV-5EY4EN",
+      "origin": {
+        "handoffEntry": "MIK-R171@v2 rule 2",
+        "leaf": "260928-MIK-L171"
+      },
+      "rationale": "It is the product's own knowledge of which providers take a steer - a provider the runtime drives through its ACP driver does not - and it is the whole of the test the rule asks for.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "3229dfc038ca83b4aaf9202a78c610e19471c3c0",
         "content": "sha256:1eb47e79656d46d170216bb1f9900e74a177c1225bbc89c59edaf3309a15c509",
         "locator": {
           "kind": "symbol",
@@ -74,7 +128,7 @@
     },
     {
       "anchor": {
-        "blob": "3033ec12e4c3c52a47055c386828f8e57f36ef9b",
+        "blob": "3229dfc038ca83b4aaf9202a78c610e19471c3c0",
         "content": "sha256:7a10d57d523966bba3cebe6f4f6b5dd321cc23e068c9c8daf909957b772839ae",
         "locator": {
           "kind": "symbol",
@@ -92,7 +146,7 @@
     },
     {
       "anchor": {
-        "blob": "3033ec12e4c3c52a47055c386828f8e57f36ef9b",
+        "blob": "3229dfc038ca83b4aaf9202a78c610e19471c3c0",
         "content": "sha256:773f6528c0313df70b181925f552765ca75485f7368e6d53d10dbc13e95a2c7c",
         "locator": {
           "kind": "symbol",

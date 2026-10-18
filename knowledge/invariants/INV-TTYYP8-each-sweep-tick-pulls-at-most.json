@@ -5,16 +5,15 @@
     ],
     "justification": "The recorded behavioral fixture assertions guard this obligation; the proof facets distinguish their limited fixture behavior from real-host or full-final acceptance."
   },
-  "applicability": "The native candidate-receipt walks and yielded-path/read/drain budget of one delivery sweep.",
+  "applicability": "Every serving sweep tick over a recipient's held store, and the turn-end drain that runs beside it.",
   "conditions": [
-    "A sweep yields at most thirty-two candidate paths and reads at most thirty-two receipts.",
-    "Each directory listing may materialize and sort that directory once per pass for stable rotation, as the owner disposition permits.",
-    "The sweep skips history and message-binding subtrees before descending."
+    "The tick runs under the serving loop's ledger accounting; the queue holds the receipts that carry waiting messages.",
+    "The sweep's own per-tick read and drain budgets stay at thirty-two.",
+    "The turn-end drain is driven by the host's activity record for the agents whose turn just ended and is not part of that thirty-two-read sweep budget."
   ],
   "exclusions": [
-    "A constant bound on all names in one directory or on execution-root discovery.",
-    "An elapsed-time ceiling; this implementation states path/read/drain ceilings.",
-    "Zero rglob yields as a proof that every enumeration API yielded zero names."
+    "The queue is not a census of all receipt paths; a directory listing is materialised once per pass.",
+    "History and message-binding subtrees are never descended into."
   ],
   "id": "INV-TTYYP8",
   "origin": {
@@ -28,9 +27,9 @@
     "leaf": "260928-MIK-L100",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-invariant/v1",
-  "statement": "Each sweep tick pulls at most 32 candidate paths from resumable per-root walks and reads at most 32 receipts; no recursive glob runs in the tick, history and bindings are never descended into, and walks restart each pass so every receipt is visited.",
+  "statement": "Each sweep tick drains the receipts whose turn just ended, then the queued held receipts through a rotating slice, and only then walks at most thirty-two candidate receipt paths and reads at most thirty-two receipts; no recursive glob runs in the tick, history and bindings are never descended into, and the rotation reaches every queued receipt within a bounded number of ticks.",
   "status": "proposed",
   "supersedes": []
 }

@@ -5,14 +5,14 @@
     ],
     "justification": "The recorded behavioral fixture assertions guard this obligation; the proof facets distinguish their limited fixture behavior from real-host or full-final acceptance."
   },
-  "applicability": "Recovery of an in-flight native held-message batch or FIFO part.",
+  "applicability": "Every resend of a held row that carries an attempted message id.",
   "conditions": [
-    "The original durable claim fixes batch membership while later admissions wait behind it.",
-    "The host deduplicates a repeated member-derived message ID when exactly-once delivery is required."
+    "The row keeps the id it was attempted under, and the store's claim is stale and resumable.",
+    "The timeline read is bounded: the bridge refetches the last 200 entries."
   ],
   "exclusions": [
-    "A new independent message, which has its own identity.",
-    "Exactly-once behavior by a host that does not deduplicate."
+    "An unreadable timeline is treated as not holding the copy; the send proceeds under the same id and the host's own id record governs.",
+    "Recovery tolerates, and does not require, a host that deduplicates by itself."
   ],
   "id": "INV-PJA167",
   "origin": {
@@ -26,9 +26,9 @@
     "leaf": "260928-MIK-L100",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-invariant/v1",
-  "statement": "A stale-claim resume reuses the stored claim and resends surviving members under their original member-derived send ids, so a deduplicating host settles the resend; recovery is at-least-once by contract.",
+  "statement": "A stale-claim resume reuses the stored claim and resends surviving members under their original member-derived send ids. Before a resend the product reads the recipient's timeline for the attempt's id within the bounded tail it reads; when the copy is there the delivery is recorded with no send, and when the timeline cannot be read the send still goes out under the same id, so a host that records ids keeps it at most once.",
   "status": "proposed",
   "supersedes": []
 }

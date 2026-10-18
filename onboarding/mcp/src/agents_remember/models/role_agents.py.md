@@ -10,7 +10,7 @@ Defines typed role-tool calls, results and finite refusal vocabulary.
 
 ## Code Commentary
 
-`RoleMessageCall` declares wake text separately from file-only `body` and attachment paths. `RoleMessageResponse` declares `messageFile`, `messageFileSha256`, `messageLength`, `messageLimit`, `successorAgentId` and its listed held/refusal metadata. Declaring every producer-owned field remains the normative strict-contract duty, not a verified universal fact: facade `_held_then_delivered` conditionally returns `turnId`, which this DTO does not declare. The declaration alone also does not prove early unfinished-start holding filed a body or a held wait cut/filed its reply. Those composed-path gaps remain Owner/Worker-owned; declared file fields do not certify task acceptance.
+`RoleMessageCall` declares wake text separately from file-only `body` and attachment paths. `RoleMessageResponse` declares `messageFile`, `messageFileSha256`, `messageLength`, `messageLimit`, `successorAgentId` and its listed held/refusal metadata. Declaring every producer-owned field remains the normative strict-contract duty, not a verified universal fact: the held-drain path now propagates the transport disposition through the same helper as a direct delivery, publishes no `turnId`, and this DTO admits the reported replacement value. The declaration alone also does not prove early unfinished-start holding filed a body or a held wait cut/filed its reply. Those composed-path gaps remain Owner/Worker-owned; declared file fields do not certify task acceptance.
 
 RoleStartCall extends canonical selection with required UUID and optional override; result distinguishes launch status and saved execution status. `RoleStartCall` adds `feature_values` for speed choices beside agent/model/effort. `RoleStartResponse` carries launch `choices`, a `warning` and `taskDocumentFiles`; `RoleMessageResponse` carries `reportCollection` for the sender's collected execution reports. RoleMessageCall permits agent ID or exact role references and bounded wait; response distinguishes refusal, delivered/resumed/steered/wait facts and final reply. Public detail/nextAction retain native failure causes without claiming semantic acceptance.
 
@@ -20,7 +20,7 @@ RoleStartCall extends canonical selection with required UUID and optional overri
 
 ## Current Contract
 
-RoleStartCall carries optional step_up reason beside the existing selection, UUID, overrides and replacement intent; it does not validate a reason sentence itself. RoleStartResponse declares optional stepUp metadata on the strict rich response. The requested reason and the reported application result are distinct. Mode and permission features are still user-owned, the ordinary no-step-up route is unchanged, and this DTO neither counts review failures nor certifies applied host choices. Existing message-field incompleteness and held-path caveats remain as recorded.
+RoleStartCall carries optional step_up reason beside the existing selection, UUID, overrides and replacement intent; it does not validate a reason sentence itself. RoleStartResponse declares optional stepUp metadata on the strict rich response. The requested reason and the reported application result are distinct. Mode and permission features are still user-owned, the ordinary no-step-up route is unchanged, and this DTO neither counts review failures nor certifies applied host choices. The composed-branch caveats about filed bodies and cut replies remain as recorded; the earlier message-field incompleteness about the held answer no longer applies.
 
 
 This account is bound to the candidate source, not a claim of a running serving build or a fresh execution/acceptance verdict. Existing historical accounts remain historical.
@@ -36,7 +36,9 @@ This account is bound to the candidate source, not a claim of a running serving 
 - Frozen implementation of RoleStartCall supporting the stated file behavior. [1]
 - Current RoleMessageCall declares body/attachment inputs and waiting-message withdrawal; declarations do not prove every composed branch files payloads. [2]
 - Frozen implementation of RoleStartResponse supporting the stated file behavior. [3]
-- Current response DTO declares its listed message/held fields but not the held producer’s conditional turnId; source declarations are not universal completeness evidence. [4]
+
+- Current response DTO declares its listed message/held fields, admits the reported replacement value, and carries no `turnId` on either delivery path; source declarations are not universal completeness evidence. [4]
+
 
 ## MIK-R95 Preparation Answer Model
 

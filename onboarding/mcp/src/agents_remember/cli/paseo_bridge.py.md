@@ -21,6 +21,10 @@ and the supplied timeout minus a 100 ms margin, so a caller with a shorter remai
 the JavaScript side too. The archive service uses this to keep its per-target call inside the
 closing archive budget.
 
+## Send outcome codes and the timeline read
+
+`SEND_OUTCOME_UNKNOWN` (`paseo_send_outcome_unknown`) is the code `agent-send` reports when the connection is lost while the message was being sent: the host may have taken it. The role-message tool holds the message with that reason rather than reporting a delivery or a plain refusal. `agent-has-message` is the read behind the reconciliation before a resend: it answers whether the recipient's timeline already carries a client message id, and a timeline the runtime cannot read is the named failure `paseo_timeline_unreadable`.
+
 ## Evidence
 
 - Frozen implementation of bridge_call supporting the stated file behavior. [1]

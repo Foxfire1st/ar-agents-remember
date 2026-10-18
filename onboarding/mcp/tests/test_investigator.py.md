@@ -12,7 +12,7 @@ Tests the admitted Investigator selections, request identity and capacity bounda
 
 The tests exercise Projects, sprint and sprint/master selections under the three coordinating callers; invalid caller containment and leaf starts leave no launch. Separate cases prove task-owned two-request replay and ambiguity, complete-set eighth/ninth admission and slot release, newest-fifty display versus full open-set identity, exact request/report reads, primary coordinator preservation and the earlier spelling’s recorded addresses.
 
-The completed-recipient message case covers sprint/master crossed with idle/closed native sessions. At eight it refuses before send or resume; after slot release it admits and persists eight, while already-open steering and exact replay keep their slot. These executable assertions do not establish task, memory or Git acceptance.
+The completed-recipient message case covers sprint/master crossed with idle/closed native sessions. At eight it refuses before send or resume; after slot release it admits and persists eight, while an exact replay keeps its slot and a message to a recipient already in a turn is held rather than steered when its provider is not one the product knows takes a steer. These executable assertions do not establish task, memory or Git acceptance.
 
 ## Evidence
 

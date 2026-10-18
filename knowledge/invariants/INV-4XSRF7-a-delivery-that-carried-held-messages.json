@@ -1,0 +1,32 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test"
+    ],
+    "justification": "The answer of a call that delivers held messages is one testable promise, and the case witnesses it through the response model."
+  },
+  "applicability": "Every delivery answer, including a call that delivers held messages together with its own.",
+  "conditions": [
+    "The answer carries the delivery status of the message the call sent."
+  ],
+  "exclusions": [
+    "No validation error follows a delivery."
+  ],
+  "id": "INV-4XSRF7",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "mcp/tests/test_paseo_role_messages.py::RoleMessageTests::test_a_delivery_that_takes_held_messages_answers_ok ('turnId' unexpectedly found on the base, RoleMessageResponse.model_validate accepts it on the candidate); report role-reports/worker/8500ba4e-39b3-5373-8e2d-cfe91a38af4c/role-launch/260928-MIK-L171-worker-8500ba4e-39b3-5373-8e2d-cfe91a38af4c.md"
+      ],
+      "path": "handoff-L171-curation.json"
+    },
+    "handoffEntry": "MIK-R171@v1 rule 4",
+    "leaf": "260928-MIK-L171",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "A delivery that carried held messages with it answers as a delivery the response model accepts, carrying no turn id, while the turn id stays available to a waiting caller.",
+  "status": "proposed",
+  "supersedes": []
+}

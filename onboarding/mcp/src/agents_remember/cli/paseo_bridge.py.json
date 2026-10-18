@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "c317b932a6967f953c35276901a817463e135f02",
+        "blob": "6f168562d7b6d92fa147b4800d9eec570f5d5fb4",
         "content": "sha256:25d2b37a711376827813cbb4f0876fb56601e2f5b736c7aa89fb2f0a87b253eb",
         "locator": {
           "kind": "symbol",
@@ -21,7 +21,7 @@
     },
     {
       "anchor": {
-        "blob": "c317b932a6967f953c35276901a817463e135f02",
+        "blob": "6f168562d7b6d92fa147b4800d9eec570f5d5fb4",
         "content": "sha256:d5220185ab90d8d914ef5886270ca75dfad669f4cd11fb752658d62eefa21eae",
         "locator": {
           "kind": "symbol",
@@ -39,7 +39,7 @@
     },
     {
       "anchor": {
-        "blob": "c317b932a6967f953c35276901a817463e135f02",
+        "blob": "6f168562d7b6d92fa147b4800d9eec570f5d5fb4",
         "content": "sha256:f7c6b543d346bbdc187529572259d9fb1aac7eb93ec0ebf3811f5f48c8035747",
         "locator": {
           "kind": "symbol",
@@ -54,6 +54,24 @@
       },
       "rationale": "Refuses a home without server-id before Node starts.",
       "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "6f168562d7b6d92fa147b4800d9eec570f5d5fb4",
+        "content": "sha256:aa8dcb6e29feaabccd175832b43ed675e440773c572691ce515556b404a48581",
+        "locator": {
+          "kind": "symbol",
+          "name": "SEND_OUTCOME_UNKNOWN"
+        }
+      },
+      "id": "RLZ-YZDT1F",
+      "invariant": "INV-AMJAZT",
+      "origin": {
+        "handoffEntry": "MIK-R171@v1 rule 3",
+        "leaf": "260928-MIK-L171"
+      },
+      "rationale": "It is the one declaration of the bridge's unknown-outcome code, so the hold decision and the transport agree on what an unanswered send looks like.",
+      "role": "support"
     }
   ],
   "references": {

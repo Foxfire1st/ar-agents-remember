@@ -7,15 +7,14 @@
     ],
     "justification": "Future changes to host intake, task projection or task-status consumers must preserve this bounded authority: duplicate task truth, unsupported paused observations, reconstructed membership or conflicting status/age presentation produce incorrect task operations. The named current source assertions guard the specified facets; this is no fresh Curator execution grade."
   },
-  "applicability": "Bound role-agent activity from the installed host publisher to the dashboard host input.",
+  "applicability": "Every place that decides whether an agent is in a turn.",
   "conditions": [
-    "Only recorded AR role agents contribute; lifecycle events update one replaceable publication.",
-    "A new dashboard input and a newly observed host boot each require complete bridge reconciliation; failed reconciliation stays unknown and retries only on a new publication generation.",
-    "Idle heartbeat, periodic full-heal and degraded wakes retain admitted host input instead of polling activity."
+    "Activity intake itself stays event-driven and reconciled once per boot.",
+    "The held-delivery tick reads the publication every three seconds for held delivery only."
   ],
   "exclusions": [
-    "No global once-ever host read across dashboard restarts.",
-    "Supervisor lease liveness is not task activity; this records source-defined guards, not a fresh Curator host witness."
+    "No idle status polling and no second status store exist for activity.",
+    "The tick's read is not an activity intake and publishes no status of its own."
   ],
   "id": "INV-X0KED3",
   "origin": {
@@ -34,9 +33,9 @@
     "leaf": "260928-MIK-L168",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-invariant/v1",
-  "statement": "Bound role-agent activity is published from host transitions and reconciled once per boot, without idle status polling.",
+  "statement": "Bound role-agent activity is published from host transitions and reconciled once per boot; the activity publication is not polled for status, while the held-delivery tick reads it on its own short interval to see turn ends and to hold a message for a recipient reported in a turn.",
   "status": "proposed",
   "supersedes": []
 }
