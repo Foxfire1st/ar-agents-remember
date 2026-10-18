@@ -89,7 +89,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "69f443587646541eb1434c6090c484772f0ac10a",
+            "blob": "05420e58f22ada25400406ce21f18491119d64da",
             "content": "sha256:28187cd63e1c4f01e1b28b9932d829ac691d9bb591c50b4f84900278f04ed417",
             "locator": {
               "kind": "symbol",
@@ -98,15 +98,6 @@
             "path": "dashboard/src/data/files.ts"
           },
           "kind": "code"
-        }
-      ]
-    },
-    "6": {
-      "note": "The route overview that governs this component.\n\nAnchor: `# dashboard/src/panels/file-viewer/ — File Viewer Overview`",
-      "targets": [
-        {
-          "kind": "unresolved",
-          "text": "onboarding/dashboard/src/panels/file-viewer/overview.md:1-137"
         }
       ]
     }

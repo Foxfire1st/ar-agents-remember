@@ -377,7 +377,6 @@ change-set reads now run on the route family's own bounded admission: `changeset
 - **Retained historical source account — superseded by the current route account:** The storage home and the one-way import direction, declared as charter wording only. [170]
 - **Retained historical source account — superseded by the current route account:** The storage package's own boundary statement. [171]
 - **Retained historical source account — superseded by the current route account:** The one canonical encoder, its policy and its duplicate-key-refusing decoder. [172]
-- **Retained historical source account — superseded by the current route account:** The route overview this section introduces. [174]
 - **Retained historical source account — superseded by the current route account:** Exact tree endpoint composition, not candidate directories [183]
 - **Retained historical source account — superseded by the current route account:** The one route this leaf adds. [188]
 - **Retained historical source account — superseded by the current route account:** The GET-only registration. [189]
@@ -504,7 +503,6 @@ change-set reads now run on the route family's own bounded admission: `changeset
 - The storage package's own boundary statement. [171]
 - The one canonical encoder, its policy and its duplicate-key-refusing decoder. [172]
 
-- The route overview this section introduces; this is a verified local memory document, not a code-source anchor. [174]
 
 - Exact tree endpoint composition, not candidate directories [183]
 - The one route this leaf adds. [188]

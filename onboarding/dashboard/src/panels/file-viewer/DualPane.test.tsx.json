@@ -47,15 +47,6 @@
           "kind": "code"
         }
       ]
-    },
-    "3": {
-      "note": "The route overview that governs this test.\n\nAnchor: `## Route Model`",
-      "targets": [
-        {
-          "kind": "unresolved",
-          "text": "onboarding/dashboard/src/panels/file-viewer/overview.md:47-79"
-        }
-      ]
     }
   },
   "schema": "ar-onboarding-file/v1"

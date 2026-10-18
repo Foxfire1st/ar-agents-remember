@@ -1684,8 +1684,17 @@
       "note": "Historical candidate-change commands and their union were retired with the canonical database write boundary (MIK-R26); candidate.py now owns read-context identities, not that widened write operation.",
       "targets": [
         {
-          "kind": "unresolved",
-          "text": "mcp/src/agents_remember/models/knowledge/candidate.py:628-635"
+          "anchor": {
+            "blob": "9b2bf18774207aaeb442ff737297b3233369a1f3",
+            "content": "sha256:c77d6a9d056810a9127e0c0760821ee7d677eac44caddbc16403a17c123c3672",
+            "locator": {
+              "end": 11,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/candidate.py"
+          },
+          "kind": "code"
         }
       ]
     },

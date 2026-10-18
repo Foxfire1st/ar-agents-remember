@@ -62,4 +62,3 @@ reused by L4 by swapping the code side for a diff view.
 - The effects-gated boomerang backdrop the `empty` state fills the pane with. [3]
 - The page that supplies `code` + the derived `SidecarView`. [4]
 - The `FileContent` type / onboarding pairing it renders. [5]
-- The route overview that governs this component. [6]

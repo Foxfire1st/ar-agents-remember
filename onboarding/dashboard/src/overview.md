@@ -286,8 +286,6 @@ the task entry's page reads now end with the task they belong to. The change-set
 - The header count itself. **Withdrawn in part:** this row cited a tooltip that stated *what* the count counts ("task entries this list carries"), and the L33 revert removed that tooltip with the landed-leaf change, so the h2 is again a bare `Tasks · {count}`. A reader must not read the number as "task entries" on the strength of this card. [4]
 - Both master readers now ask for the per-leaf breakdown. [5]
 - Shell navigation, persistent layers and shared drivers. [6]
-- State and authority architecture. [7]
-- Panel composition. [8]
 - Fixture-honesty sweep, its five rules, its scanned roots, and the unmarked-module blind spot. The third anchor is the guard header's own question, quoted as it is written; this row previously carried a paraphrase that occurs in no file. [11]
 - Historical lifecycle topology grammar: the former unclassified-state fallback is not the current TaskEntry status algorithm; the constellation palette is a separate retained concern. [13]
 - JSON-module widening and the override type that survives `exactOptionalPropertyTypes` being off. [14]

@@ -2,15 +2,6 @@
   "path": "mcp/src/agents_remember/application/__init__.py",
   "realizes": [],
   "references": {
-    "1": {
-      "note": "The overview hot path summarizes guarded commit-message and forwarding boundaries.\n\nAnchor: \"## Hot Path Summary\"",
-      "targets": [
-        {
-          "kind": "unresolved",
-          "text": "onboarding/mcp/src/agents_remember/application/overview.md:1250-1252"
-        }
-      ]
-    },
     "2": {
       "note": "Public payload builders import application entry points directly from their owning modules.",
       "targets": [

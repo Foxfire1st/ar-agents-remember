@@ -156,12 +156,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "27ab725f01e310493256da673c0f870a77b85bbf",
+            "blob": "7a44ce3e7f81fc508a38e34c8f0c304f739bf168",
             "content": "sha256:46894d777463298a1a95031da8c618c203b9bf1480eda1c328419e41a1166d1d",
             "locator": {
-              "end": 274,
+              "end": 281,
               "kind": "line_range",
-              "start": 245
+              "start": 252
             },
             "path": "dashboard/src/types/projection.ts"
           },
@@ -265,7 +265,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9dffc6e41bb9701b7a33ff1b82335a087c154484",
+            "blob": "7b84a649c5063db2bcee67dbb98c03b8620ac814",
             "content": "sha256:f25b2b3c3741760705bda321539bf5b1f56bb7804f74be4a246497ac98eb7a86",
             "locator": {
               "kind": "symbol",
@@ -309,7 +309,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "cb170808c1e7ad3aa75e0bfd0860f2206b2291c8",
+            "blob": "5cf51539b6df8e9517869d32694e6d48754342e6",
             "content": "sha256:78a2511b6bd78a873823e850522c8de72b55eb97adc68077bed4883b68d1ea72",
             "locator": {
               "end": 4,
@@ -779,7 +779,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9dffc6e41bb9701b7a33ff1b82335a087c154484",
+            "blob": "7b84a649c5063db2bcee67dbb98c03b8620ac814",
             "content": "sha256:29d3d4539fa8862f31ceefba386db2c2bb6805610e1898aeb18a22f4b2ab535f",
             "locator": {
               "kind": "symbol",
@@ -791,7 +791,7 @@
         },
         {
           "anchor": {
-            "blob": "9dffc6e41bb9701b7a33ff1b82335a087c154484",
+            "blob": "7b84a649c5063db2bcee67dbb98c03b8620ac814",
             "content": "sha256:500525aaa1c27e09b36993a4b253f9914e9624131e35ced3f05cd8a96c06cf2f",
             "locator": {
               "kind": "symbol",
@@ -820,7 +820,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9dffc6e41bb9701b7a33ff1b82335a087c154484",
+            "blob": "7b84a649c5063db2bcee67dbb98c03b8620ac814",
             "content": "sha256:f25b2b3c3741760705bda321539bf5b1f56bb7804f74be4a246497ac98eb7a86",
             "locator": {
               "kind": "symbol",
@@ -1086,12 +1086,12 @@
         },
         {
           "anchor": {
-            "blob": "27a538af0bc1ef798d4b4413fbd4b8b0acf7436a",
+            "blob": "585869ba5261bc9389f65705da9120a72547e8dd",
             "content": "sha256:ddf496f5974ca1e88639b14b88f629c7c2d2e8ca40bb642f3713d6cb0e2ac01a",
             "locator": {
-              "end": 509,
+              "end": 510,
               "kind": "line_range",
-              "start": 494
+              "start": 495
             },
             "path": "mcp/test_support/agents_remember_test_support/code_quality/projection_types.py"
           },
@@ -1437,7 +1437,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d64c2458cf4416a842ef1eff840bbf025ac0a5a9",
+            "blob": "bf1cda5edde56c5b7be27ecd4232e531a9fe9da0",
             "content": "sha256:b3df157420b1e735c5cac196f2bd1eb55b577fa1bb53dadabff38266fbf2f3fd",
             "locator": {
               "kind": "symbol",
@@ -1449,21 +1449,12 @@
         }
       ]
     },
-    "7": {
-      "note": "State and authority architecture.\n\nAnchor: `# dashboard/src/data/ — Cockpit State And Authority Overview`",
-      "targets": [
-        {
-          "kind": "unresolved",
-          "text": "onboarding/dashboard/src/data/overview.md:1-936"
-        }
-      ]
-    },
     "70": {
       "note": "Task fixtures copy sampled identity/content fields while explicitly choosing planned stage and empty collections/count defaults.",
       "targets": [
         {
           "anchor": {
-            "blob": "a863e49a83213f748fa2993ef0953d7e0f2362a4",
+            "blob": "54c1c5241bec67b462464d3ce7226c5eac99e0ed",
             "content": "sha256:f6b5bf5a981ee7a6120113585214555db8fbb1e14381b488209bca7a7fddd52a",
             "locator": {
               "kind": "symbol",
@@ -1571,7 +1562,7 @@
         },
         {
           "anchor": {
-            "blob": "9dffc6e41bb9701b7a33ff1b82335a087c154484",
+            "blob": "7b84a649c5063db2bcee67dbb98c03b8620ac814",
             "content": "sha256:f8bd185be1707e5e1fc67dab55f01a9a03153e41ee3b33d54658d3ce68684cf8",
             "locator": {
               "kind": "symbol",
@@ -1583,7 +1574,7 @@
         },
         {
           "anchor": {
-            "blob": "9dffc6e41bb9701b7a33ff1b82335a087c154484",
+            "blob": "7b84a649c5063db2bcee67dbb98c03b8620ac814",
             "content": "sha256:f25b2b3c3741760705bda321539bf5b1f56bb7804f74be4a246497ac98eb7a86",
             "locator": {
               "kind": "symbol",
@@ -1592,15 +1583,6 @@
             "path": "dashboard/src/cockpit/Cockpit.tsx"
           },
           "kind": "code"
-        }
-      ]
-    },
-    "8": {
-      "note": "Panel composition.\n\nAnchor: `# dashboard/src/panels/ — Cockpit Panels Overview`",
-      "targets": [
-        {
-          "kind": "unresolved",
-          "text": "onboarding/dashboard/src/panels/overview.md:1-3622"
         }
       ]
     }

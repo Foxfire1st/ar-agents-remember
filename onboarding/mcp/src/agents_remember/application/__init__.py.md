@@ -26,5 +26,4 @@ recreate that MCP surface.
 
 ### Repo-Internal References
 
-- The overview hot path summarizes guarded commit-message and forwarding boundaries. [1]
 - Public payload builders import application entry points directly from their owning modules. [2]
