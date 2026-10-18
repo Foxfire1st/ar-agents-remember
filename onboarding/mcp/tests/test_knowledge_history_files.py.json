@@ -3,7 +3,7 @@
   "proves": [
     {
       "anchor": {
-        "blob": "4e1a059812ba81cc67af0aabbc60973cb929c341",
+        "blob": "f3ea385c073b1b0ac82157d901dc5a333c2b7d76",
         "content": "sha256:5a0149cbb7bdcf94daadfa94c66a0c65642b4f014ef56734465489b0c4f91517",
         "locator": {
           "kind": "symbol",
@@ -20,7 +20,24 @@
     },
     {
       "anchor": {
-        "blob": "4e1a059812ba81cc67af0aabbc60973cb929c341",
+        "blob": "f3ea385c073b1b0ac82157d901dc5a333c2b7d76",
+        "content": "sha256:19c5e23af672d98b91c1e8cd880b0f848935486ca73c419a8339de1cf7fcfb0d",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_short_items_are_judged_only_in_the_files_the_reanchor_check_reads"
+        }
+      },
+      "facet": "Five file/base/route shapes show the item population equals the re-anchor scope: an open file judged (also with an open base), the leaf's own closed file judged at its publication, a closed file at a master route not judged, and a file closed by an earlier frozen closeout not judged.",
+      "id": "PRF-HAX9JQ",
+      "invariant": "INV-HR2JKQ",
+      "origin": {
+        "handoffEntry": "MIK-R180@v1",
+        "leaf": "260928-MIK-L178"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "f3ea385c073b1b0ac82157d901dc5a333c2b7d76",
         "content": "sha256:0c2644af9e53ff91013f9faa163c6ca0567eba4fff8afeffff280751d66255d9",
         "locator": {
           "kind": "symbol",
@@ -43,7 +60,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4e1a059812ba81cc67af0aabbc60973cb929c341",
+            "blob": "f3ea385c073b1b0ac82157d901dc5a333c2b7d76",
             "content": "sha256:f5519846d66872753a0207719bd947dc068feccb064a8338b98ed6a9aafd75ad",
             "locator": {
               "kind": "symbol",
@@ -59,12 +76,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c0d03d6f8c3e85258c715229658aa79b26afff5e",
+            "blob": "039bcca510615d80086666843e34d1ded3ee3335",
             "content": "sha256:2625134fcfb83406e5b418d78ad93206a4edd00e8b5bd448da21ece7e92e0138",
             "locator": {
-              "end": 118,
+              "end": 124,
               "kind": "line_range",
-              "start": 118
+              "start": 124
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },
@@ -77,7 +94,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4e1a059812ba81cc67af0aabbc60973cb929c341",
+            "blob": "f3ea385c073b1b0ac82157d901dc5a333c2b7d76",
             "content": "sha256:0c2644af9e53ff91013f9faa163c6ca0567eba4fff8afeffff280751d66255d9",
             "locator": {
               "kind": "symbol",
@@ -93,24 +110,24 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4e1a059812ba81cc67af0aabbc60973cb929c341",
+            "blob": "f3ea385c073b1b0ac82157d901dc5a333c2b7d76",
             "content": "sha256:b96117176092298c1e55b92efa507f7ac23a7f57e0bbe3c154ac846594151515",
             "locator": {
-              "end": 284,
+              "end": 297,
               "kind": "line_range",
-              "start": 275
+              "start": 288
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "4e1a059812ba81cc67af0aabbc60973cb929c341",
+            "blob": "f3ea385c073b1b0ac82157d901dc5a333c2b7d76",
             "content": "sha256:475050a2497b6fc1197f5a08a5e351cb9ef240d510ccab1b8700eed403f7c30e",
             "locator": {
-              "end": 292,
+              "end": 305,
               "kind": "line_range",
-              "start": 289
+              "start": 302
             }
           },
           "kind": "test"
@@ -118,40 +135,47 @@
       ]
     },
     "13": {
-      "note": "Writer and validator token tests distinguish new full-hash admission from unchanged closed comparison-base legacy bytes.",
+      "note": "Writer and validator token tests distinguish new full-hash admission.",
       "targets": [
         {
           "anchor": {
-            "blob": "4e1a059812ba81cc67af0aabbc60973cb929c341",
-            "content": "sha256:2cda7d760c8ae1af047c8455ae77fb5f70d2ea4e1244bdac0ebf94516e5401c1",
+            "blob": "f3ea385c073b1b0ac82157d901dc5a333c2b7d76",
+            "content": "sha256:5a0149cbb7bdcf94daadfa94c66a0c65642b4f014ef56734465489b0c4f91517",
             "locator": {
-              "end": 204,
-              "kind": "line_range",
-              "start": 172
+              "kind": "symbol",
+              "name": "test_writer_history_items_refuse_non_sha256_worklist_ids"
             }
           },
           "kind": "test"
-        },
+        }
+      ]
+    },
+    "14": {
+      "note": "Stored closed comparison-base legacy items parse, validate and round-trip unchanged. [22]",
+      "targets": [
         {
           "anchor": {
-            "blob": "4e1a059812ba81cc67af0aabbc60973cb929c341",
-            "content": "sha256:0d089f7acaebaa96821e9612bb1f6b3028831c65a7660791065a1d09a61aa00f",
+            "blob": "f3ea385c073b1b0ac82157d901dc5a333c2b7d76",
+            "content": "sha256:6248169899fd855ea15af9f6f86e9b83bb6633f9ec380c75a229e7f70611ae3a",
             "locator": {
-              "end": 219,
-              "kind": "line_range",
-              "start": 208
+              "kind": "symbol",
+              "name": "test_closed_in_comparison_base_legacy_items_parse_and_validate_unchanged"
             }
           },
           "kind": "test"
-        },
+        }
+      ]
+    },
+    "15": {
+      "note": "Item tokens are judged only in the files the re-anchor check reads: five file/base/route shapes. [23]",
+      "targets": [
         {
           "anchor": {
-            "blob": "4e1a059812ba81cc67af0aabbc60973cb929c341",
-            "content": "sha256:8e96606dcc932b976547d129645e6eca2412ac68bcea88e1c1b9c6666b09eddc",
+            "blob": "f3ea385c073b1b0ac82157d901dc5a333c2b7d76",
+            "content": "sha256:19c5e23af672d98b91c1e8cd880b0f848935486ca73c419a8339de1cf7fcfb0d",
             "locator": {
-              "end": 246,
-              "kind": "line_range",
-              "start": 226
+              "kind": "symbol",
+              "name": "test_short_items_are_judged_only_in_the_files_the_reanchor_check_reads"
             }
           },
           "kind": "test"
@@ -179,36 +203,36 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4e1a059812ba81cc67af0aabbc60973cb929c341",
+            "blob": "f3ea385c073b1b0ac82157d901dc5a333c2b7d76",
             "content": "sha256:c864971d4f609cc259949d436c717d00a04ae679e2174ddd86d874fba5007cec",
             "locator": {
-              "end": 317,
+              "end": 330,
               "kind": "line_range",
-              "start": 270
+              "start": 283
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "4e1a059812ba81cc67af0aabbc60973cb929c341",
+            "blob": "f3ea385c073b1b0ac82157d901dc5a333c2b7d76",
             "content": "sha256:b96117176092298c1e55b92efa507f7ac23a7f57e0bbe3c154ac846594151515",
             "locator": {
-              "end": 284,
+              "end": 297,
               "kind": "line_range",
-              "start": 275
+              "start": 288
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "4e1a059812ba81cc67af0aabbc60973cb929c341",
+            "blob": "f3ea385c073b1b0ac82157d901dc5a333c2b7d76",
             "content": "sha256:475050a2497b6fc1197f5a08a5e351cb9ef240d510ccab1b8700eed403f7c30e",
             "locator": {
-              "end": 292,
+              "end": 305,
               "kind": "line_range",
-              "start": 289
+              "start": 302
             }
           },
           "kind": "test"
@@ -220,7 +244,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4e1a059812ba81cc67af0aabbc60973cb929c341",
+            "blob": "f3ea385c073b1b0ac82157d901dc5a333c2b7d76",
             "content": "sha256:a5253795907644a91a27781cdadecd95ef26ea6bdf7e82b3f4030d9af2563674",
             "locator": {
               "kind": "symbol",
@@ -252,7 +276,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4e1a059812ba81cc67af0aabbc60973cb929c341",
+            "blob": "f3ea385c073b1b0ac82157d901dc5a333c2b7d76",
             "content": "sha256:9af3bb5491effb15fefc11368cb5123763b72fdd07df71e2e392b42506d2d7ab",
             "locator": {
               "kind": "symbol",
@@ -268,7 +292,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4e1a059812ba81cc67af0aabbc60973cb929c341",
+            "blob": "f3ea385c073b1b0ac82157d901dc5a333c2b7d76",
             "content": "sha256:0c2644af9e53ff91013f9faa163c6ca0567eba4fff8afeffff280751d66255d9",
             "locator": {
               "kind": "symbol",
@@ -284,7 +308,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4e1a059812ba81cc67af0aabbc60973cb929c341",
+            "blob": "f3ea385c073b1b0ac82157d901dc5a333c2b7d76",
             "content": "sha256:cc07275c03ffc4de7ac31092738e9c078adbe1e07f614d48baafd7615173367e",
             "locator": {
               "kind": "symbol",
@@ -300,7 +324,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4e1a059812ba81cc67af0aabbc60973cb929c341",
+            "blob": "f3ea385c073b1b0ac82157d901dc5a333c2b7d76",
             "content": "sha256:ccadf67bf45823113abfc3b08498d7233dc827a2239af4a335fb18b7d962ba7b",
             "locator": {
               "kind": "symbol",

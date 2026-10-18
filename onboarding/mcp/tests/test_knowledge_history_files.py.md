@@ -38,6 +38,15 @@ files merge without conflict. Other writer tests belong to MIK-R12 and the broad
 - `test_closed_in_base_implies_byte_identical_in_candidate`: `closed_copy`, `is_closed_history`
   (including the schema check), and `frozen_history_violation` for edits, reformatting, deletion
   and a merge parent; `empty_history(..., closed=True)`.
+- `test_short_items_are_judged_only_in_the_files_the_reanchor_check_reads` (renamed from
+  `test_validator_refuses_short_items_without_closed_comparison_base`; five parametrised
+  `(closed, base_state, publication, judged)` cases): an open file is judged, also when a comparison
+  base holds it open; the leaf's own closed file is judged at its publication; a closed file at a
+  master checkpoint, a master-level landing or a sync is **not** judged (MIK-R180; MIK-R52 rule 5
+  covers it there); and a file closed by an earlier frozen closeout of the same leaf is not judged.
+  The former `(closed, "open")` case is not among the five: it asserted a refusal for a closed
+  candidate file whose base holds it open at a route with no publication operand, where that file is
+  no longer selected; at a leaf publication the same shape is selected and judged.
 - `test_two_parallel_leaves_merge_their_history_files_without_conflict`: in a real git repository,
   two leaf branches each add their closed history file; both merge cleanly and each merged file is
   byte-identical and parses.
@@ -60,7 +69,7 @@ Documents are built from small dict helpers (`_anchor`, `_cover`, `_invariant_ro
 
 None recorded.
 
-Newly authored history item tokens must be full `sha256:` plus64hex digits, accepting either hex case; malformed values refuse without changing memory. Stored closed comparison-base history with old short labels parses, validates and round-trips byte-exact. An absent/open comparison base or a separately frozen publication tree does not grant that closed-in-comparison-base exception. The duplicate-item shape control now uses valid full hashes so it still tests duplication rather than malformed tokens.
+Newly authored history item tokens must be full `sha256:` plus64hex digits, accepting either hex case; malformed values refuse without changing memory. Stored closed comparison-base history with old short labels parses, validates and round-trips byte-exact. The item check shares the re-anchor check's population (MIK-R180). At a route that is not a leaf publication — a master's checkpoint, a master-level landing or a sync — a closed file is outside that population whether or not a comparison base holds it closed; at a leaf publication the leaf's own file stays inside it even when the comparison base is absent or holds the file open, and only a file closed in a comparison base or in a frozen commit of the same leaf is historical. A separately frozen publication tree is therefore outside both checks rather than granted the old closed-base reading exception. The duplicate-item shape control now uses valid full hashes so it still tests duplication rather than malformed tokens.
 
 ## Evidence
 
@@ -100,4 +109,6 @@ No cross-repo boundary is crossed by this file.
 - The registry set includes eight kinds, with MIK-R53 membership/record; decision dispatch and unclaimed hunk/legacy invariant subjects are explicit. [3]
 - Current source delta inspected statically: Repair six-kind registry and unclaimed-decision prose/caption against exact current assertions; retain set semantics, model/revision/freeze facets and historical execution limits. [12]
 
-- Writer and validator token tests distinguish new full-hash admission from unchanged closed comparison-base legacy bytes. [13]
+- Writer and validator token tests distinguish new full-hash admission. [13]
+- Stored closed comparison-base legacy items parse, validate and round-trip unchanged. \[22] [14]
+- Item tokens are judged only in the files the re-anchor check reads: five file/base/route shapes. \[23] [15]

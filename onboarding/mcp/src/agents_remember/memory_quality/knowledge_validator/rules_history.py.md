@@ -33,6 +33,11 @@ that entry's anchor in the candidate (`reanchor_mismatches` over `sidecar_entry_
   - A file closed in a base is frozen (MIK-R22 rule 7 keeps it byte-identical) and historical: its rows describe the
     tree it closed on, and it is not re-anchor-checked again (a later leaf may re-anchor an entry an earlier row
     covered). This scoping to leaf-publication routes is the architect's F1 ruling.
+  - The item check of `check_history_rows` reads that same population: its item loop iterates
+    `checked_history_files(context)` instead of filtering `context.parsed.histories` on a comparison base
+    (MIK-R180). So one function names the scope of both history checks, and an item a leaf's own publication
+    judged there is not judged again at a master's checkpoint, a master-level landing or a sync. The
+    unknown-subject loop that follows still reads every parsed history file, open or closed.
 - **Rows the merge moved (the sync part of ruling 16:07:55).** `_mismatches` yields `(path, row, mismatched entries,
   moved)` for every disagreeing invariant row. With more than one base (a merge), `_BaseRows.agreed` asks each parent,
   lazily, whether it holds the **identical row** at the same path and whether that row agreed with **that parent's**
@@ -74,6 +79,11 @@ that entry's anchor in the candidate (`reanchor_mismatches` over `sidecar_entry_
   `test_a_sibling_s_file_closed_in_the_base_is_not_re_anchor_checked_at_a_leaf_route` (N01),
   `test_the_closeout_s_exact_tree_re_anchor_checks_the_file_it_has_just_closed` (N08) and the direct-landing twin (N09),
   and the renamed `test_the_gate_runs_the_validator_and_its_history_row_rule`.
+- **History item tokens are judged in exactly the files the re-anchor check reads, and a leaf's own newly
+  published rows stay strict.** Realized by the item loop of `check_history_rows` over `checked_history_files`;
+  proved by `test_short_items_are_judged_only_in_the_files_the_reanchor_check_reads`, whose five file/base/route
+  shapes show an open file always judged, the leaf's own closed file judged at its publication, and a closed file
+  at a master route or closed by an earlier frozen closeout not judged.
 - **Every subject a history row names resolves in the tree, at every route.** Candidate invariant (not ingested).
   Realized by the first loop of `check_history_rows`; proved by
   `test_a_hand_committed_closed_history_file_with_a_ghost_subject_is_refused_at_master_landing` (the reviewer's R2
@@ -99,7 +109,19 @@ file are exempt inside a judged file.
 
 - Only route-published new or edited rows are judged. [18]
 
-History item-token validation has a narrower historical exemption than reanchor checking: only a history path closed in an actual comparison base bypasses `invalid_history_items`. A hand-closed candidate or separately frozen publication tree does not suffice. Invalid new tokens name the file, row, subject, exact token and the Writer/worklist-ID remedy; no closed comparison-base bytes are rewritten.
+History item-token validation reads the same population as re-anchor checking, named once by
+`checked_history_files` (MIK-R180): every open history file is judged, and at a leaf publication the
+leaf's own file is judged whatever its `closed` flag says, when no comparison base and no frozen
+commit holds it closed. A history path closed in a comparison base, or closed by an earlier
+non-integrated closeout of the same leaf, is historical and is not item-judged. At a master
+checkpoint, a master-level landing or a sync, a closed history file of one of the master's leaves is
+covered by MIK-R52 rule 5 — closed, owned by a leaf the master accounts for, and byte-identical to
+that owner's recorded publication — instead of being re-judged here. So a closed history file
+committed outside the AR routes, that no comparison base holds, reaches such a route without an item
+finding; its rows' subjects are still judged. Invalid new tokens name the file, row, subject, exact
+token and the Writer/worklist-ID remedy; no closed comparison-base bytes are rewritten. The Writer's
+own whole-file check (`application/knowledge_writer/history_check.py`) is unchanged: it refuses
+invalid items for any file its base does not hold closed, and skips a file its base holds closed.
 
 ## Evidence
 
@@ -116,7 +138,7 @@ No configured live documentation source was available for this pass.
 ### Repo-Internal References
 
 
-- The module docstring: the two checks, which files, frozen attempts, the governing changed row, rows the merge moved. [1]
+- The module docstring: the two checks, which files, frozen attempts, the governing changed row, rows the merge moved, and the one scope the item check now shares. [1]
 
 
 - The files the re-anchor check reads. [2]
@@ -156,9 +178,9 @@ No meaningful cross-repo references found: the rule reads the validation context
 
 No cross-repo boundary is crossed by this file.
 
-- Leaf publication refuses all merged-row mismatches; the `merge_reports` finding defers only at a non-publication sync merge and names the next refusing publication/landing. [19]
-- Moved-row findings are bounded `merge_reports` at non-publication sync merges; their messages explain deferral and the next refusing publication/landing. [6]
-- The history-row registrations: `R09-history-rows` uses `writer_reports`, while `R09-history-rows-merged` uses `merge_reports`, not plain report-only. [7]
+- Moved-row findings are bounded `merge_reports` at non-publication sync merges; the finding's message explains the deferral and names the next refusing publication or landing. [6]
+- The history-row registrations: `R09-history-rows` carries `writer_reports=True` while `R09-history-rows-merged` carries `merge_reports=True`, not plain report-only. [7]
+- Leaf publication refuses every merged-row mismatch, while the `merge_reports` finding defers only at a non-publication sync merge and names the next refusing publication or landing. [19]
 - Current source delta inspected statically: Extend subject resolution and bounded merge reporting; keep R52 leaf refusal, frozen-attempt scope, independent retention and gate-owned currentness. [20]
 
-- Strict newly authored history item IDs preserve only the actual closed-comparison-base legacy exception. [21]
+- Item tokens are judged only in the files the re-anchor check reads; a closed file outside that population is not item-judged here. [21]

@@ -28,7 +28,8 @@
     "INV-WV1YQE",
     "INV-XN0FG8",
     "INV-YZ45D7",
-    "INV-ZGFZXT"
+    "INV-ZGFZXT",
+    "INV-HR2JKQ"
   ],
   "origin": {
     "handoff": {
@@ -38,7 +39,7 @@
     "leaf": "260928-MIK-L37",
     "task": "260928-MIK"
   },
-  "revision": 6,
+  "revision": 7,
   "routes": [
     "mcp/src/agents_remember/application",
     "mcp/src/agents_remember/kernel",
