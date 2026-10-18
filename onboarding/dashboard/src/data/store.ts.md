@@ -104,7 +104,9 @@ No configured Domain Documentation source exists for this file.
 - The stable-equality + arrival-anchor module the merge is built on (volatile set mirror). [1]
 - `servingBuild` [2]
 - Observer event type for the Event River tail. [3]
+
 - Store state initializes every projected collection, including `closeoutQueues`, and the canonical reset restores them together while incrementing `gen` once. [4]
+
 - `pushEvent` keeps a bounded `EVENT_WINDOW` sliding window (oldest dropped); `reset` clears event/suppression state. [5]
 - `EventRiver` virtualizes this window, so the store bound is memory-only, not a display cap. [6]
 - `ScenarioPlayer` invokes the one store reset when a development scenario changes. [9]

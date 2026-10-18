@@ -28,44 +28,18 @@ attribution history cannot be read. An unborn converted repository can remain `r
 under the existing drift rules; an existing unconverted directory receives `legacy-format` first. This adapter preserves the owner's state and details; cache-file availability does
 not become a new admission requirement.
 
-`CarryoverCommitMessages` contains only the memory-content subject. The apply adapter forwards
-that subject to `CarryoverApplyOptions`; the carryover owner attributes the memory commit and may
-refresh the consumer ledger cache. No ledger subject or third commit intent crosses this boundary.
+`CarryoverApplyOptions` contains the approval intent and explicit review selections, not a memory commit subject. The apply adapter forwards those fields to the converted worktree import and sets `ok` from whether its state is `refused`. Carryover creates no commit and refreshes no ledger; baseline adoption remains the separate attributed-commit producer.
 
-The module defines four parameter objects for separate application contracts:
-`MemoryBranches` carries optional source/work branch overrides for baseline adoption;
-`CarryoverSelection` carries repository, memory/code refs, base and replacement choice;
-`CarryoverCommitMessages` carries the memory-content commit subject for apply; and
-`CitationOperationScope` carries per-call citation selection and caller exclusions.
-`intent_note` remains a separate apply approval argument.
+The module defines three parameter objects for separate application contracts: `MemoryBranches` carries optional source/work branch overrides for baseline adoption; `CarryoverSelection` carries the repository, exact target contract, memory/code refs, base and replacement choice; `CitationOperationScope` carries only `document` or `documents`. `intent_note` remains a separate apply approval argument.
 
-`CitationOperationScope.documents` admits a finite fix list beside the singleton `document`.
-Both selectors together, an empty list and a list over `MAX_CURATOR_SOURCE_CANDIDATES` refuse
-before resolving trees; that shared constant is the only list bound. Each selected member has
-singleton authoring/refresher semantics, and a refused member does not prevent the other named
-cards from being processed. Converted selections need no snapshot. Unconverted check/fix
-refuse instead of acquiring or repairing legacy citations; a generation lease cannot admit
-them. Check and source-index build reject `documents`; the retained internal migration
-helper does too, but no public MCP/CLI migration route remains.
+`CitationOperationScope.documents` admits a finite fix list beside singleton `document`. Both selectors together, an empty list and a list over `MAX_CURATOR_SOURCE_CANDIDATES` refuse before resolving trees; that shared constant is the only list bound. Only fix passes `allow_documents=True`; check rejects a multi-card selector. Each fix member has singleton authoring/refresher semantics, and a refused member does not prevent other named cards from being processed. No snapshot or caller-exclusion operand remains. Unconverted check/fix refuse instead of acquiring or repairing legacy citations.
 
+Converted fixing forwards each selected document to card authoring and reference repair, excluding authoring-refused sidecars from mechanical refresh. This internal exclusion set protects refused cards; it is not a caller-glob interface. The removed `_citation_trees`, citation source-index build and internal citation migration helpers supply no fallback.
 
-**One construction point serves the legacy `Trees` branches.** `_citation_trees` builds the
-citation `Trees` for source-index build and the retained internal migration helper,
-not for the now-refused unconverted check/fix. It validates the caller's
-excludes through `validate_caller_excludes` and hands them to `Trees`, where they narrow that
-invocation's population alongside the memory layer's `system/settings.json` register. The value is
-call-local, and a meaningless pattern is refused by name.
-
-This is not a converted-path filtering guarantee. Converted check/fix returns before constructing
-`Trees`: caller-exclusion syntax is validated, but `operation_scope.excludes` is not forwarded to
-converted reference checking, card authoring or mechanical refresh. Converted fixing forwards each
-selected document to both stages and excludes authoring-refused sidecars from mechanical refresh;
-that internal exclusion set is distinct from caller globs. Source-index build still uses
-`Trees`; the internal migration implementation is retained pending MIK-R65, not registered
-as `citation_migrate` or reachable through `memory-citations --migrate`.
+Citation selection is application-owned. The CLI and registered fixer construct the same document-only scope; converted reference authoring and mechanical refresh remain distinct stages. Neither public surface exposes legacy snapshot, caller-exclude, source-index-build or migration operands.
 
 Memory-quality resolution, checklist composition, sync/start/poll control, and public run outcomes
-were extracted to `application/memory_scope.py` and `application/memory_quality_controller.py`.
+were extracted to `application/memory_scope.py` and `application/memory_quality/controller.py`.
 This module no longer implements or wraps that failure family. Its remaining operations retain
 their existing configured-authority and typed parameter-object boundaries.
 
@@ -84,8 +58,7 @@ memory root (the onboarding root's parent) holds `knowledge/layout.json`. If it 
 references (`memory/conversion/card_authoring.author_card_references`), then re-records the anchors whose
 bytes moved mechanically (`reference_state.fix_references`). With one `document` named, both steps touch
 that card and its sidecar only, and the result is `ok` only when no card was refused. On converted memory a
-`document` needs no `expected_snapshot`: `CitationOperationScope.validate(document_alone=True)` admits it,
-and retained source-index/internal migration operations still validate strictly. An unconverted
+`document` needs no `expected_snapshot`: `CitationOperationScope.validate(allow_documents=True)` admits the fixer selection; check uses the default single-document validation. Source-index and internal migration operations are removed. An unconverted
 tree receives `ok=false`, `code: "legacy-format"` and the shared conversion guidance from
 `legacy_format_refusal` for both check and fix, including fix dry runs. There is no legacy
 citation-table check/fix fallback. Route-index apply also refuses unconverted memory;
@@ -95,7 +68,8 @@ elsewhere. The existing contractless pre-baseline admission still requires a con
 ### Conventions
 
 Application entry points translate validated tool arguments into service calls and JSON-compatible payloads.
-Path confinement and repository authorization use the shared `_guards` helpers rather than local
+Path confinement and repository authorization use the shared `kernel/authority` helpers
+(`require_repo`, `require_within_coordination`) rather than local
 filesystem checks.
 
 ### Invariants And Boundaries
@@ -123,12 +97,27 @@ Both converted fixer admissions use the same authoring and mechanical-refresh co
 
 ## MIK-R46 R8: refusal envelope at the application boundary
 
-`memory_carryover_apply_tool` catches only a `RuntimeError` recognized by `is_legacy_format_refusal`; other runtime errors are re-raised. `_carryover_legacy_refusal` returns `ok=false`, `state=refused`, code `legacy-format`, one short refusal `message`, full rule text in logged `detail`, and conversion/retry guidance in `nextAction`/`nextStep`. The lower-level converted-target/writer refusal remains raising; this is not a new permission to copy converted memory or a catch-all error envelope. Successful carryover forwarding and attribution are otherwise unchanged.
+The shared `_carryover_legacy_refusal` accepts an operation name (default `memory_carryover_apply`) and uses generic unconverted-memory guidance for either source or target. The MCP plan adapter supplies `memory_carryover_plan`; the lower application plan retains its raised format refusal. This changes envelope labeling, not layout admission, guards or commit authority.
+
+`memory_carryover_apply_tool` catches only a `RuntimeError` recognized by `is_legacy_format_refusal`; other runtime errors are re-raised. `_carryover_legacy_refusal` returns `ok=false`, `state=refused`, code `legacy-format`, one short refusal `message`, full rule text in logged `detail`, and conversion/retry guidance in `nextAction`/`nextStep`. Matching converted source/target versions now enable carryover through the exact recovery-leaf authority route. Format mismatches and unrelated authority errors are not this recognized legacy refusal and still raise; the adapter reports `ok=false` for a returned `state=refused`. This is not a catch-all error envelope or a new commit producer.
 
 The unconverted `citation_fix_tool` whole result now explicitly carries `nextAction=citation_fix`, matching its delivered projection. It still refuses before citation authoring/refresh; the converted card-writer and pre-baseline admissions retain their boundaries.
 
 
 ## Evidence
+
+Inherited numbered findings [3], [12], [9], [13], [36], [20], [21], [26], [27] retain their separate historical custody; no currentness is inferred from those inherited targets. The source-bound account below distinguishes surviving owners from the legacy implementation removed by this task. Removed projection, source-index and prepared-continuation captions are not retained as executable behavior.
+
+- Carryover options forward approval intent and explicit review selection without a commit subject. [37]
+
+- The carryover adapter forwards converted worktree import, derives ok from refused state and translates only the recognized legacy RuntimeError. [38]
+
+- Converted fixing authors selected cards then refreshes references, excluding authoring-refused sidecars. [39]
+
+- The document-only scope refuses conflicting, empty or oversized selections; only fix admits a multi-card list. [40]
+
+- The converted fixer and route-index apply retain ordinary leaf and measured pre-baseline admissions. [41]
+
 
 ### Docs References
 
@@ -160,24 +149,18 @@ L4 routes this file's existing application, configuration, task, model, registra
 ## 260821-DAGQC-L2 Quality Ownership Extraction
 
 The quality-specific authority, complete execution identity, bounded registry orchestration, and
-checklist publication moved to `memory_scope.py` and `memory_quality_controller.py`. This leaves
+checklist publication moved to `memory_scope.py` and `memory_quality/controller.py`. This leaves
 `memory_tools.py` focused on the other memory operations and prevents each transport/application
 caller from reimplementing the controller's failure vocabulary.
 
 ## KS-R23@v1 The Citation Responses Name Their Ruler
 
-Both citation entry points now return the measurement's ruler beside their counts (item 26, D-33):
-`citation_fix_tool` (`:212-247`) and `citation_migrate_tool` (`:250-284`) spread
-`measuring_build_stamp()` — imported from `agents_remember.application.runtime.startup` at `:15` — into
-their returned mapping (`:246`, `:283`), so each response says which build's rewrite rules produced the
-counts it reports, rather than leaving a reader to assume they came from the candidate's own code.
+The surviving citation-fix entry point returns the measurement's ruler beside its counts:
+`citation_fix_tool` attaches `measuring_build_stamp()` to its response, so the repair counts identify the serving ruler rather than being attributed to the candidate code. The old internal citation-migration entry point is removed.
 
 That the repair engine belongs to the *measuring* machinery is the reason it is stamped at all: a count
 produced by a fixed serving build while the candidate carries different code cannot show a fix to that
-machinery. The field is declared on `CitationFixResponse`/`CitationMigrateResponse` rather than left to
-the flexible envelope (see the `models/memory.py` card). Nothing else about these two operations moved —
-the leaf-memory-writer scope guard, the one `_citation_trees` construction point and the refusal paths are
-untouched.
+machinery. The citation-fix response retains the measuring-build identity. The ordinary leaf writer guard and measured pre-baseline admission remain; `_citation_trees` and the internal migration route do not.
 
 ## 260918-TSIP-L6 Branch Authority Unavailable, Answered In The Envelope
 
@@ -202,8 +185,7 @@ is the case that holds that boundary, and the docstring states it.
 This L37 exception is historical and superseded by MIK-R46@v2. `citation_fix_tool`
 refuses unconverted memory in every mode; `route_index_refresh_tool` refuses apply
 while preserving its read-only preview. The MCP `citation_migrate` tool and CLI
-`memory-citations --migrate` option are unregistered; the internal migration function
-is retained for later removal under MIK-R65, not a supported workaround. The prior
+`memory-citations --migrate` option are unregistered; the internal migration function is now removed, not a supported workaround. The prior
 DEC-VMMJDN exception does not authorize any of these writes on unconverted memory.
 
 ### Current Source-Inspection References
@@ -229,7 +211,6 @@ DEC-VMMJDN exception does not authorize any of these writes on unconverted memor
 - The shared converted fixer authors references, then refreshes mechanical moves, excluding every authoring-refused sidecar; one named document scopes both stages. [19]
 - The shared construction point applies caller excludes to legacy Trees branches, not converted check/fix. [20]
 - The scope object the caller's excludes ride with, validated at construction. [21]
-- The refusal rule for a caller exclude that cannot mean anything. [22]
 - **The memory initializer now reports the knowledge foundation beside the memory root it scaffolds (`ICR-R29@v1`).** [23]
 - **The admission whose location this block reports, so the location a curator is told to populate is the one the bootstrap publishes to.** [24]
 - The read that decides the block's state, and the unavailable form its states come from. [25]
@@ -243,5 +224,5 @@ DEC-VMMJDN exception does not authorize any of these writes on unconverted memor
 - Route-index apply uses the same pre-baseline admission; scoped operations still use the resolver-owned roots and storage. [33]
 - Finite fix selection is validated before reads with the shared bound. [34]
 
-- Only a recognized legacy RuntimeError becomes the typed short-message/full-detail conversion refusal; unrelated runtime errors still raise. [35]
+- The operation-specific shared legacy refusal preserves short-message/full-detail conversion guidance; only recognized caller RuntimeErrors are translated. [35]
 - The public apply catches only the recognized legacy refusal; success and converted-target refusal remain distinct. [36]

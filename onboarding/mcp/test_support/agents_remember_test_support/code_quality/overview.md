@@ -80,8 +80,6 @@ No lifecycle/status metadata in this overview grants execution or acceptance aut
 
 - Development commands, diagnostic metrics and isolation; the current policy document states 5,000/1,000 budgets. [1]
 - Certifying publication and accepting consumers. [2]
-- Final memory adapter requires the selected four-code-terminal prefix and compares published producer bytes. [5]
-- Finalization consumes original selected fifth-certificate inputs. Continuation imports and memory observation retain the existing range co-target. [6]
 - Exact contract scope, the full check and curator worklist publication, including the informational without-proof list. [10]
 - Interactive catalog names missing authority without eligibility. [11]
 - Exact profile scope and suite execution. [13]

@@ -7,8 +7,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "462c4e27789ba9889fec000e0f7d3d1598777eef",
-            "content": "sha256:1e3c65d378d210b59514a0ca0f9d5e715b8e2f6448d413772958bda417153509",
+            "blob": "64d36bbd8b2f66b79eab4166dd578cab277c875a",
+            "content": "sha256:1476ee2893530daf908528dab4adb135711349f5f7eb05111c45680e89b2b2d4",
             "locator": {
               "kind": "symbol",
               "name": "VOCABULARIES"
@@ -23,12 +23,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e04bc90c0459913ff00bb72c86e355b1b0d28a8e",
+            "blob": "537ecae9a7efe4d556fc8840d6a87111a4cf8be1",
             "content": "sha256:86ab2c05032a1fe9b632c7f44b708814a74929b9f727332fe4a8e846ba55b471",
             "locator": {
-              "end": 638,
+              "end": 637,
               "kind": "line_range",
-              "start": 615
+              "start": 614
             }
           },
           "kind": "test"
@@ -36,12 +36,12 @@
       ]
     },
     "12": {
-      "note": "The generated mirror's metric and analytics declarations.\n\nAnchor: `number`",
+      "note": "The generated mirror's metric and analytics declarations.",
       "targets": [
         {
           "anchor": {
-            "blob": "cc1a4d8fa8ad9c2ae7d91dff5dc6eba9d3330015",
-            "content": "sha256:162c26c0cad036357bad30e157f8f2604877fbdae3e2b73ed0f5d7f6e6658d23",
+            "blob": "9374d32f8fe2786461d81cc5bf483ed603f982ff",
+            "content": "sha256:f270561fa42cf5fe631104784425526d73522d7be331c673b220622a9e7cd5a7",
             "locator": {
               "kind": "symbol",
               "name": "Analytics"
@@ -52,8 +52,8 @@
         },
         {
           "anchor": {
-            "blob": "5e4cacc3f5f41b68b1399a4064fb89ccec6b2a7e",
-            "content": "sha256:6b3522b1e1d7d47339d79f2635e766c4be81d53a534547cec343cab534dbc7cd",
+            "blob": "38e0e78f58e9873a97f4e8ebe6212c2a6ee98d94",
+            "content": "sha256:d5e32a2d59fd75950163926f820ab20137baf7f9381086c1c40a4a892b4d05aa",
             "locator": {
               "kind": "symbol",
               "name": "Metrics"
@@ -86,7 +86,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "cb0ab4cb5e3a37ea0377727c5e29c1744b0d162b",
+            "blob": "759479025b5e816a163b468faada469459390e0c",
             "content": "sha256:959b8f03573616a2d384631232c632f1f4009fcef82870a0c7d2d2222cf14eec",
             "locator": {
               "kind": "symbol",
@@ -134,7 +134,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "df5cdb15895a682c2a835aa5221de4677a3a19cd",
+            "blob": "1c93a3cfc20a23e78c37a94c82f1c267d32a474a",
             "content": "sha256:122b8af302e57af32e5f7d3ee8fb735bb940e322c05d47e887bdcde86cccef00",
             "locator": {
               "end": 18,
@@ -152,12 +152,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e04bc90c0459913ff00bb72c86e355b1b0d28a8e",
+            "blob": "537ecae9a7efe4d556fc8840d6a87111a4cf8be1",
             "content": "sha256:54a014da3bbf53d59a35b820c533f8f8437a073cfd63d015a8a6b5ca3a835b6e",
             "locator": {
-              "end": 286,
+              "end": 285,
               "kind": "line_range",
-              "start": 269
+              "start": 268
             }
           },
           "kind": "test"
@@ -186,7 +186,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e38500a66db86825287340b04f5b87e554e7a9f2",
+            "blob": "64d36bbd8b2f66b79eab4166dd578cab277c875a",
             "content": "sha256:04796d65286293f716f8e713fb17a4f4c3767ec81cd3ba161ffa77de1210c0aa",
             "locator": {
               "end": 60,
@@ -203,7 +203,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e04bc90c0459913ff00bb72c86e355b1b0d28a8e",
+            "blob": "537ecae9a7efe4d556fc8840d6a87111a4cf8be1",
             "content": "sha256:b11c19a7afaf928444a3387cf589035b202a9705875f862b421afb105b61137e",
             "locator": {
               "kind": "symbol",
@@ -230,7 +230,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e04bc90c0459913ff00bb72c86e355b1b0d28a8e",
+            "blob": "537ecae9a7efe4d556fc8840d6a87111a4cf8be1",
             "content": "sha256:77239ba352a111c3c40f271e0f00cfbe46702e2215d52a4e2a61f8d1963fc990",
             "locator": {
               "kind": "symbol",
@@ -253,11 +253,11 @@
       ]
     },
     "7": {
-      "note": "AbsorbingPaths derives every string-index-signature boundary and INDEX_SIGNATURE_SITES is an exhaustive, closed Record of that derived path set, with reasons for opaque nodes in the current native-entry shape. The current literal registry has 13 keys; this is an observed census, not a fixed schema-count contract. The source test requires at least one sampled value and a nonempty reason at every registered site.",
+      "note": "AbsorbingPaths derives every string-index-signature boundary and INDEX_SIGNATURE_SITES is an exhaustive, closed Record of that derived path set, with reasons for opaque nodes in the current native-entry shape. The current literal registry has 12 keys; this is an observed census, not a fixed schema-count contract. The source test requires at least one sampled value and a nonempty reason at every registered site. Verification-age histogram and retired gate/ask sites remain absent; drift counts remain.",
       "targets": [
         {
           "anchor": {
-            "blob": "e04bc90c0459913ff00bb72c86e355b1b0d28a8e",
+            "blob": "537ecae9a7efe4d556fc8840d6a87111a4cf8be1",
             "content": "sha256:4bce69eaa9645ba5566f4a0e67cba692db90a38e54177e3135ef2a6038858381",
             "locator": {
               "kind": "symbol",
@@ -279,12 +279,12 @@
         },
         {
           "anchor": {
-            "blob": "e04bc90c0459913ff00bb72c86e355b1b0d28a8e",
+            "blob": "537ecae9a7efe4d556fc8840d6a87111a4cf8be1",
             "content": "sha256:02d4fb8493e000904244cba921ee08000e6fbcf9580c57dee8f961d386344ee2",
             "locator": {
-              "end": 555,
+              "end": 554,
               "kind": "line_range",
-              "start": 545
+              "start": 544
             }
           },
           "kind": "test"
@@ -296,8 +296,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "462c4e27789ba9889fec000e0f7d3d1598777eef",
-            "content": "sha256:1e3c65d378d210b59514a0ca0f9d5e715b8e2f6448d413772958bda417153509",
+            "blob": "64d36bbd8b2f66b79eab4166dd578cab277c875a",
+            "content": "sha256:1476ee2893530daf908528dab4adb135711349f5f7eb05111c45680e89b2b2d4",
             "locator": {
               "kind": "symbol",
               "name": "VOCABULARIES"
@@ -312,7 +312,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e04bc90c0459913ff00bb72c86e355b1b0d28a8e",
+            "blob": "537ecae9a7efe4d556fc8840d6a87111a4cf8be1",
             "content": "sha256:990940ed55ea9b857b23d30d0b037a09ab1d6d81bc3410767572ce1ed42685b6",
             "locator": {
               "kind": "symbol",

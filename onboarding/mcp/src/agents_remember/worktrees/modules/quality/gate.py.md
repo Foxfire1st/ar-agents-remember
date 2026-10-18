@@ -12,7 +12,7 @@ Owns repository-profile admission and the lifecycle-facing quality gate boundary
 
 ### Logic
 
-`QualityGateTarget` binds checkout, enclosure, repository id and configured profile reference; `QualityGatePlan` carries targeted/full mode, an optional memory cap and optional exact selected certification. A code commit requires one admitted profile. Missing profile authority refuses instead of providing the former wrapper-unavailable opt-out.
+`QualityGateTarget` binds checkout, enclosure, repository id and configured profile reference; `QualityGatePlan` carries targeted/full mode, an optional memory cap and optional exact selected certification. An explicitly requested code-certification run requires one admitted profile. Missing profile authority refuses that requested run rather than providing the former wrapper-unavailable opt-out. Ordinary closeout does not invoke this runner and does not require a profile or certification result.
 
 `run_strict_code_quality_gate` captures the staged tree, freezes certification admission before `run_clean_quality`, writes the completed test report, rejects failed or uncertified output, then rechecks both the evidence tree and current staged tree. The index is supplied by the caller: this module neither stages nor undoes staging. The recorded task diff base determines the measured change set.
 
@@ -34,7 +34,7 @@ Only the pinned Dagger path supplies acceptance evidence. A symbolic command in 
 
 ### Todos
 
-No red/interrupted-record integration remains pending at this seam. Gate-5 memory execution remains owned by the separate lifecycle continuation; this code runner does not manufacture it.
+Published terminal catalogs, including supplied red and interrupted results, are recorded before execution refusal. This requested code-certification runner does not execute Gate 5; the exclusive prepared-closeout memory/finalization continuation was retired rather than left pending.
 
 ## Evidence
 
@@ -46,15 +46,21 @@ External domain documentation is not configured.
 
 ### Repo-Internal References
 
-- Required profile authority governs execution and preview. [1]
-- Admission precedes Dagger and the exact staged tree is rechecked. [2]
-- Recovery reads the selected frozen run and original terminal publications, checks exact current candidate identity, and requires certifying evidence. [3]
-- Successful certification renders the exact evidence and manifest into the typed quality result. [4]
-- Host diagnostic entry refuses certification execution through this owner. [5]
-- Persist complete actual terminal catalogs, including red and interrupted gates. [6]
 
 ### Cross-Repo References
 
 No separate cross-repository protocol is established by this file. The configured cross-repository allowance is empty; no external source is relied upon here.
 
 No cross-repository evidence is required for these file-local claims.
+
+- Required profile authority governs execution and preview. [1]
+
+- Admission precedes Dagger and the exact staged tree is rechecked. [2]
+
+- Recovery reads the selected frozen run and original terminal publications, checks exact current candidate identity, and requires certifying evidence. [3]
+
+- Successful certification renders the exact evidence and manifest into the typed quality result. [4]
+
+- Host diagnostic entry refuses certification execution through this owner. [5]
+
+- Persist complete actual terminal catalogs, including red and interrupted gates. [6]

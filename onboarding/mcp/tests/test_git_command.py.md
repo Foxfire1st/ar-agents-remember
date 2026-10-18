@@ -8,8 +8,7 @@
 
 Tests of the shared Git runners in `kernel/git_command.py`: that an exported repository selector cannot
 redirect a command, that a timeout bounds a stalled command, that the shared blob-read block reads a blob
-from a repository once, that concurrent candidate captures are isolated, and that the private preparation
-of a commit keeps exact state and refuses forged or stale authority.
+from a repository once, that concurrent candidate captures are isolated, and that sealed private-output inspection refuses forged or stale authority. Real fixture setup, not the removed production dispatcher, creates its committed output.
 
 ## Code Commentary
 
@@ -27,13 +26,9 @@ of a commit keeps exact state and refuses forged or stale authority.
 - `RunnerContractTests`: an explicit timeout still bounds a stalled command.
 - `CandidateTreeConcurrencyTests`: concurrent `worktree_candidate_tree` observers are isolated from each
   other.
-- `PrivateGitPreparationTests`: an exact private commit keeps the logical head and index and runs the
-  normal hook policy; raw commit bytes keep CRLF and an opaque signature header; a cancelled owner and a
-  forged capability start no commit; hidden index flags and changed physical bytes refuse; a stale logical
-  tip and rebound private metadata refuse before any mutation; a failed hook returns its own failure and
-  is not retried.
+- `PrivateGitPreparationTests` inspects real-Git fixture outputs under sealed authority. Raw commit bytes preserve CRLF and an opaque signature header; cancelled/forged authority, hidden index flags, changed physical bytes, stale logical tips and rebound metadata refuse. It no longer exercises a production private-commit executor.
 
-Tree publication now runs pre-commit before ref movement and records Commit-Check-Pass. Ref-transaction refusal remains native Git evidence after that check. Message comparison strips only the required pass trailer before comparison with porcelain; it does not assert raw equality of a stamped message to an unstamped argument. Both private preparation policy spellings now exercise ordinary commit hooks; the old strict-code spelling supplies compatibility vocabulary, not a skip.
+Tree publication now runs pre-commit before ref movement and records Commit-Check-Pass. Ref-transaction refusal remains native Git evidence after that check. Message comparison strips only the required pass trailer before comparison with porcelain; it does not assert raw equality of a stamped message to an unstamped argument. The removed private-commit executor supplies no live hook policy; retained spelling is data, never a skip on surviving routes.
 
 The shared `_init` and `_commit` fixtures live in `agents_remember_test_support.testing.git_command` and are imported directly. `ReplaceFreshnessTests` lives in `test_git_object_memo.py`; its replacement-sensitive freshness controls moved unchanged. The runner and publication tests remain in this module.
 
@@ -47,6 +42,8 @@ The shared `_init` and `_commit` fixtures live in `agents_remember_test_support.
 - The private preparation cases. [15]
 - The block under test. [16]
 
-- Tree publication now runs pre-commit before ref movement and records Commit-Check-Pass. Ref-transaction refusal remains native Git evidence after that check. Message comparison strips only the required pass trailer before comparison with porcelain; it does not assert raw equality of a stamped message to an unstamped argument. Both private preparation policy spellings now exercise ordinary commit hooks; the old strict-code spelling supplies compatibility vocabulary, not a skip. [17]
+
+- Tree publication now runs pre-commit before ref movement and records Commit-Check-Pass. Ref-transaction refusal remains native Git evidence after that check. Message comparison strips only the required pass trailer before comparison with porcelain; it does not assert raw equality of a stamped message to an unstamped argument. The removed private-commit executor supplies no live hook policy; retained spelling is data, never a skip on surviving routes. [17]
+
 
 - Shared real-Git fixtures and replacement-freshness cases have direct owners, with no duplicated helper or re-export. [18]

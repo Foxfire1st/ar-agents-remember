@@ -10,13 +10,11 @@
 
 ## Purpose
 
-The two agreement classes the memory layer's own checks cannot see, kept green by cases rather than
-by a report. **`T52`** is a construct that moved *inside* its cited range: `range_resolution` asks
-whether an anchor **occurs** in a cited range, and a construct's name occurs at every call site, so a
-range the definition has left stays green for as long as anything inside it still spells the name.
-**`T45`/`T56`** is a case budget written in prose: no checker reads a prose numeral against the file
-that declares it, so a route overview can advertise a budget the repository stopped declaring and
-every check stays green.
+Retained agreement checks protect GFM pipe escapes, budget declaration/prose agreement, the source-derived superseded-pair worklist, qualified history-heading census and the module’s bounded AST/environment behavior. The legacy T52 range-resolution and T58 wrapped-citation populations are historical, not executable pins in the candidate.
+
+The historical agreement work retains its budget/worklist and heading-census obligations. Exact pair-specific T52/T58 and inherited-debt figures below record past measurements only: their constants do not make removed classes executable. The surviving live budget/heading checks still require AR_ONBOARDING_ROOT and must not be advertised as measured when skipped.
+
+Historical L7/L12 origin account (not current executable T52/T58 populations):
 
 The following origin account describes the historical `260918-TSIP-L7` agreement leaf, extended by
 `260918-TSIP-L12` when the master-end review falsified its own acceptance pins. It pins four
@@ -32,16 +30,8 @@ qualified `## Update History…` headings. The older-budget cases inspect a fixe
 
 ### Logic
 
-Seven classes, 35 cases, `unittest.TestCase` throughout, no `pytest` marks.
+Five unittest classes contain 26 statically observed test-method definitions, not a collected/executed case total: EscapedPipeAnchorTests, BudgetAgreementTests, SupersededPairDerivationTests, QualifiedHistoryHeadingTests and RepoStateTests.
 
-- **`T52`, the mechanism** (`DefinitionOutsideCitedRangeTests`, `:367-483`). The world is the measured
-  shape reduced to its smallest form: a construct defined at `mcp/sample.py:20-21`, a **call** to it
-  inside `:5-12`, and a claim citing `:5-12` for the construct's name. The membership test is
-  satisfied by the call, so the claim reads current while pointing at the wrong lines
-  (`test_the_moved_range_is_reported_and_stays_a_report`, `:394-407`). Three negatives bound it: a
-  corrected range clears it (`:409-418`), an ambiguous anchor is not reported (`:420-431`), and a
-  non-`SYMBOL` anchor has no definition to be outside of (`:433-474`) — the last pinning the **fact**
-  the redundancy rests on rather than the redundant guard.
 - **`T57`, the escape** (`EscapedPipeAnchorTests`, `:486-579`). A literal pipe in a GFM table cell must
   be written `\|`, so `` `useEffect(cb, [a \| b])` `` reached the anchor grammar carrying a character
   the source does not have and was silently counted as an *unchecked span* — reading as checked and
@@ -49,11 +39,7 @@ Seven classes, 35 cases, `unittest.TestCase` throughout, no `pytest` marks.
   **quote** anchor, and the documented bound: `unescaped` is one literal `\|` → `|` replacement, so
   with two backslashes the second is the one consumed and the source's `a | b` stays unmatched, which
   is GFM's own reading.
-- **`T58`, the population the fixer can only count** (`WrappedCitationPopulationTests`, `:582-695`). A
-  wrapped `cit:` is parsed by the checker (it joins the paragraph) and counted by the fixer in
-  `claimsNotOnOneLine`, and the fixer can rewrite none of them. The detector is proven by planting the
-  shape in a temporary document (`:617-625`) so the zero it reports over the repository is a measured
-  zero rather than an instrument that never fires.
+
 - **The budget screen** (`BudgetAgreementTests`, `:698-936`). The declared pair is read from
   `pyproject.toml` at run time. The current declaration assertion pins 6000/1000, and the stub mirror must follow it; the repaired sentence must state that pair and the declaration's line range as computed by `declared_lines` (currently `pyproject.toml:299-300`). This corrects the changed budget assertion only; the retained pair-specific census and historical pin accounts below are not new measurements or current-candidate acceptance. The
   declarations on `conftest.py` must register both names and state no value; the two stale-figure
@@ -76,7 +62,7 @@ Seven classes, 35 cases, `unittest.TestCase` throughout, no `pytest` marks.
 
 ### Conventions
 
-Every root is derived from `__file__` — `MCP_SRC`, `MCP_TESTS`, `REPOSITORY_ROOT` (`:43-58`) — and
+Every root is derived from `__file__` — `MCP_SRC`, `MCP_TESTS`, `REPOSITORY_ROOT` (`:50-50`) — and
 **never from the working directory**, which is the rule register row `T102`(d) states: a
 repository-root-relative path literal makes a suite's result a fact about the directory it ran in.
 The live-population cases are **hermetic by construction**: with no `AR_ONBOARDING_ROOT` they **skip**
@@ -86,9 +72,8 @@ rather than reach for a checkout that may not exist on the machine running them
 
 The lane row is `unit-regression` (`mcp/tests/test-evidence-lanes.toml:121-121`), so the module is in
 the **default selection** and the unit population a full run collects — it is not an integration-only
-or manually-invoked lane. **Five** live cases additionally require `AR_ONBOARDING_ROOT` to name a
-memory tree (`:661`, `:777`, `:883`, `:904`, `:1045`); without it they skip, and the mechanism cases
-still enforce the behaviour they count. **A green lane run is therefore never evidence that the pins
+or manually-invoked lane. The surviving live budget/worklist/heading cases additionally require `AR_ONBOARDING_ROOT` to name a
+memory tree ; without it they skip, and the retained mechanism cases still enforce their own budget/heading derivations. **A green lane run is therefore never evidence that the pins
 hold** — that sentence is in the module's own header, and it is the answer to `T122`'s trap.
 
 ### Invariants And Boundaries
@@ -108,7 +93,7 @@ hold** — that sentence is in the module's own header, and it is the answer to 
   and it moved three times while this leaf lived, changing the tree under the pins each time. **A red
   pin on a moved or merged tree is not a regression until it is re-derived on that tree** (`T122`,
   law 7 — a pin is a claim about a moment).
-- **The pins are exact and pair-specific, and that is falsifiable.** `T52_DEFINITION_OUTSIDE_RANGE`
+- Historical T52/T58 account only, not current executable coverage: **The pins are exact and pair-specific, and that is falsifiable.** `T52_DEFINITION_OUTSIDE_RANGE`
   **130** is a REPORT, never a gate: every row rides `reportOnlyFindings`, so it is counted, rendered
   and reviewed without entering `findingCount`. `T52_ENFORCED_POPULATION` **97** is the opposite
   kind of number and the module says so in words: it is **inherited debt**, 96
@@ -138,29 +123,29 @@ hold** — that sentence is in the module's own header, and it is the answer to 
   intact and the last of its kind in the tree, so `T125`'s ruling — *normalise only when the heading
   is accidental* — does not apply to it. The census case therefore reds when the population moves in
   **either** direction.
-- **The tree is a worklist with two bounds, both measured.** `history_section_flags` (`:190-225`) uses
+- **The tree is a worklist with two bounds, both measured.** `history_section_flags` (`:185-220`) uses
   the exact-title rule `update_history_sections` accepts, where the producer uses a prefix match; and
   it ends a section only at a level-2 heading where the product ends it at level ≤ 2. Measured on
   planted documents (`notes/reports/tsip-instruments/l12-sv3-bound.py`): against the **product** the
   worklist can *under*-count (a level-1 heading inside a history section), and against the **producer**
   it can *over*-count (a qualified heading) — the second direction is deliberate, because it is the
   one a mangled heading cannot blind. Neither bound is reached on the pinned pair.
-- **The `T58` comment's second site is off by three lines.** The header names
+- Historical T52/T58 account only, not current executable coverage: **The `T58` comment's second site is off by three lines.** The header names
   `models/worktree.py.md` line 99; the wrapped construct begins at **`:102`** (line 99 is the previous
   claim's anchor, line 100 its one-line citation). `service.py.md` `:30` and `:43` are exact. Nothing
   asserts the comment, so nothing fails — recorded so a reader following it lands on the construct.
-- **The two zero-populations are `T58`'s and the repository's, and they are different files.**
+- Historical T52/T58 account only, not current executable coverage: **The two zero-populations are `T58`'s and the repository's, and they are different files.**
   `test_the_repository_carries_none` (`:631-643`) walks the **code** repository's markdown and asserts
   `0`; the three wrapped constructs live in the **memory** tree and are counted by
   `test_the_live_memory_tree_matches_the_pins` (`:645-695`), which enumerates documents with the same
   detector rather than reading the fixer's own counter — a case that reads its subject's counter cannot
   falsify it.
 - **The AST guard's name is wider than its set.** `test_this_module_shells_out_to_nothing`
-  (`:1087-1120`) flags the attributes `run`/`system`/`popen`/`check_output`/`Popen`, the bare names
+  (`:805-838`) flags the attributes `run`/`system`/`popen`/`check_output`/`Popen`, the bare names
   `system`/`popen` and any `subprocess` import; `os.posix_spawn`, `os.exec*` and `os.spawn*` are
   outside it, which the successor verification demonstrated by mutation. No such call exists; the
   honest statement of the property is the narrower one, and this bound is register row `T114`.
-- **Scope boundary.** The module proves the *mechanism* on trees it builds and *pins* the live
+- Historical T52/T58 account only, not current executable coverage: **Scope boundary.** The module proves the *mechanism* on trees it builds and *pins* the live
   populations; it does not repair them. The `T52` rows, the 97 enforced rows and the stale budget
   figures are worklists for the route curators. Derived populations are checked against enumeration; the older-budget dictionary checks only its recorded sites and does not discover additional unlisted sites.
 
@@ -197,19 +182,15 @@ make no acceptance claim.
 - The product citation-mutation guard refuses the official memory repository. [1]
 
 - The world: a code tree and the memory tree that documents it, both under one temporary root, with the citation cache slot its census was built in removed. [2]
+The product refusal is definition-addressed rather than the old module-header location; no fresh mutation execution is claimed.
 - The live tree, named by the run and skipped when no run names one. [3]
-- The `T52` REPORT-ONLY population pin, re-derived on the pair this leaf lands: **130** rows over 95 documents. It is a report and not a gate, and the rows that moved it are named at the constant. [4]
-- The ENFORCED population on the same tree: **97**, which is the merged sibling line's inherited debt rather than this master's, so the check reports `ok: false` and the module says so. A change in either direction is a finding. [5]
-- The `T58` pins, derived by enumeration rather than from the fixer's counter, re-measured on the merged tree. [6]
-- The `T52` shape: green membership, definition outside the range, one report-only finding. [7]
-- The negative that makes the check a check: a corrected range clears it. [8]
 - The escape resolved where cell text becomes anchor text, which is where the `T57` blind spot was. [9]
 
 - Both cells and the quote path preserve escaped/plain anchor agreement; the row case now derives text from live cell spans. [10]
 
-- The wrapped-`cit:` detector, proven by a planted shape so the corpus zero is measured. [11]
-- The code repository's own markdown, enumerated: zero wrapped constructs is the pin. [12]
-- The live case: `T52` 130, enforced 97, `T58` 3 constructs in 2 documents, on the pair. [13]
+- Historical retired-class account only: the wrapped-`cit:` detector, proven by a planted shape so the corpus zero is measured. [11]
+- Historical retired-class account only: the code repository's own markdown, enumerated: zero wrapped constructs is the pin. [12]
+- Historical pair measurement only, not a live current pin: `T52` 130, enforced 97, `T58` 3 constructs in 2 documents, on the pair. [13]
 - Every stale site the sweep found, with the pair it states and the ceiling it was written against. [14]
 - The subset a repair moves, counted separately from the worklist the next curation inherits. [15]
 
@@ -230,9 +211,6 @@ make no acceptance claim.
 - The two figure classes counted separately: a live claim is not a dated record, and the worklist is larger than the set a repair moves. [27]
 - The module's own mutation boundary, read from its own AST (`T114`'s bound). [28]
 - The lane row that keeps this module in the default selection. [29]
-- The product counter this module's live case reads, and the code string it emits. [30]
-- The entry point `memory_quality_check` dispatches through, so the case drives the product and not a copy. [31]
-- The payload key the live pin reads. [32]
 
 ### Cross-Repo References
 
@@ -242,16 +220,16 @@ No repository or external-system boundary is proved by this module.
 
 ## 260918-TSIP-L7 The Agreement Leaf's Own Acceptance Module
 
-This card is created by the leaf's **curator**, not by the worker who wrote the module: a worker
+Recorded historical source/run account, not current executable coverage: This card is created by the leaf's **curator**, not by the worker who wrote the module: a worker
 editing the memory tree is the role boundary this master registered as `T105`, and the worker was
 sanctioned only for the one budget sentence in `onboarding/mcp/overview.md` it disclosed. The module
 is **new in that leaf** — 793 lines, 26 cases, sha256 `125d9cc414154e1c…` — and before this card it
 had **no file-level onboarding and no mention anywhere in the memory tree**, while every other test
 module in the route carries a card.
 
-Two register questions this card answers rather than assumes.
+Recorded historical source/run account, not current executable coverage: Two register questions this card answers rather than assumes.
 
-**Does a lane someone actually runs reach it?** Yes, and by two independent routes. The lane row is
+Recorded historical source/run account, not current executable coverage: **Does a lane someone actually runs reach it?** Yes, and by two independent routes. The lane row is
 `mcp/tests/test-evidence-lanes.toml:121-121` in **`unit-regression`**, which is the lane the default
 selection collects: the leaf's targeted run of eight modules is **85 passed / 3 skipped / 31 subtests**
 and the module's own live run on the leaf pair is **26 passed** (155 s) with `AR_ONBOARDING_ROOT`
@@ -281,8 +259,8 @@ rather than only with its value.
 compared with its own literal, so no tree could move it, while the master's own producer for that
 population read **101 lines / 64 outside `## Update History` / 18 documents** on the very tree the
 module pinned. The constant is gone; `SUPERSEDED_PAIR` — the pair named at `:185` — is asserted
-nowhere as a literal, and `history_section_flags` (`:190-225`) with `superseded_pair_sites`
-(`:228-248`) carry the producer's rule in-tree instead. `NON_HISTORY_SUPERSEDED_SITES` is pinned
+nowhere as a literal, and `history_section_flags` (`:185-220`) with `superseded_pair_sites`
+(`:223-243`) carry the producer's rule in-tree instead. `NON_HISTORY_SUPERSEDED_SITES` is pinned
 against the count that function returns. The replacement is proven able to fail in **both**
 directions — 55 → 56 and 55 → 54 each red the case while the old form stayed green through both
 (`notes/reports/tsip-instruments/l12-f2-mutation-control.sh`).
@@ -310,7 +288,7 @@ generated bullets. A third heading arrived with the merge — `mcp/tests/overvie
 pinned as a **named population** rather than repaired, because it is the corpus's deliberate dated
 form rather than wrap damage.
 
-**What the pins read, and on which tree.** All four were re-derived on the pair this leaf lands, not
+Recorded historical source/run account, not current executable coverage: **What the pins read, and on which tree.** All four were re-derived on the pair this leaf lands, not
 carried from the pair it was cut from `4d0fc20a`/`47570cd8`: on that earlier pair they read 47 / 123 /
 0 / 3-2, and the merge moved three of them. `AR_ONBOARDING_ROOT=<the leaf tree>/onboarding` then runs
 **35 passed**; with the variable unset the same module reads **30 passed, 5 skipped**, which is the

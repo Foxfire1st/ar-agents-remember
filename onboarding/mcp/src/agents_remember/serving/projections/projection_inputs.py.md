@@ -17,6 +17,7 @@ Complete path samples refresh canonical task sources and document-consumer closu
 ### Logic
 
 Refresh domains are tasks/workspace/drift/providers/start-progress/tool-reports/HOST_ACTIVITY. Ordinary full healing excludes HOST_ACTIVITY; only startup or explicit invalidation reads it. Display age advancement is separate from acquisition.
+`ProjectionInputState.read` refreshes invalidated domains and recomputes admission sets from their owning changes, returning the retained aggregate. `ProjectionReaders.repo_surfaces` returns exactly `(route_coverage, ledgers)` and the read unpacks those two collections; `ProjectionInputs` has no `sidecar_staleness`. Domain collections are replaced as a whole so removals reclaim retained rows on their relevant refresh. [6]
 
 The state also reuses one contract snapshot cache and the task-document payload cache rather than
 re-enumerating and parsing unrelated workspace surfaces every second.
@@ -52,8 +53,8 @@ retention and invalidation explicit rather than heuristic.
 
 - Heartbeat advances ages and existing non-host provider/workspace owners, never host census.
 - Repository surfaces are requested only on full passes or after their 120-second TTL
-  (`_REPO_SURFACES_TTL_SECONDS`); all other passes retain sidecar-staleness, route-coverage and
-  ledger slots without calling the surface reader. A missing snapshot is stale immediately.
+  (`_REPO_SURFACES_TTL_SECONDS`); all other passes retain the route-coverage and ledger
+  slots without calling the surface reader. A missing snapshot is stale immediately.
   The injected production reader has its own 120-second cache, so a full input pass does not
   imply a fresh physical walk when that cache is still valid.
 - `RefreshPass`, `ActiveGroups` and `ProjectionReaders` are frozen: pass updates use replacement,
@@ -69,13 +70,16 @@ None known.
 
 ## Evidence
 
+- Repository reader and retained input aggregate omit sidecar staleness and carry route coverage plus ledgers. [6]
+
+
 ### Docs References
 
 No Domain Documentation source is configured.
 
 ### Repo-Internal References
 
-- Full input passes or an expired/missing 120-second retained-surface snapshot reach the repo-surface reader; other passes retain its three collections unread. [3]
+- Full input passes or an expired/missing 120-second retained-surface snapshot reach the repo-surface reader; other passes retain its two collections unread. [3]
 - The production repo-surface reader can itself reuse its 120-second cache. [4]
 - The three parameter objects are frozen; the task-change frame is replaced, and provider/engine admission sets travel with their change flags. [5]
 

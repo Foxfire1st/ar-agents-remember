@@ -66,7 +66,7 @@ verified-index committing remain deliberately separate APIs.
 - All Git execution uses the guarded kernel runner and exact caller-selected repository.
 - Cache-only dirt cannot trigger a memory-content commit when the caller supplies its exclusion.
 - Real ref, ancestry, repository, and content checks are retained.
-- Exact-tree publication does not pull in later working-tree changes. Its hook behavior is separate from prepared closeout policy.
+- Exact-tree publication does not pull in later working-tree changes. Its explicit repository pre-commit admission remains; the removed prepared-only publisher supplies no live hook policy.
 - Exclusion never grants permission to move a protected ref or bypass workflow authority.
 
 ### Todos

@@ -3,7 +3,25 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "78f277b5ed8c400a748841e464ebb4f9e3457ab9",
+        "blob": "44c8c41eb6769043e70484ac1dace110edafb7fd",
+        "content": "sha256:5aad99e6ca9de0e4f39431d106120972c20f02e56705d2290d7b43ecc939b5cc",
+        "locator": {
+          "kind": "symbol",
+          "name": "compact_carryover_payload"
+        }
+      },
+      "id": "RLZ-0TCV23",
+      "invariant": "INV-REPB8B",
+      "origin": {
+        "handoffEntry": "L56-CUR-final-facet-INV-REPB8B",
+        "leaf": "260928-MIK-L56"
+      },
+      "rationale": "Projects the full planning result separately, keeping publication guidance in next.summary and leaving complete candidates for whole-result logging; existing plan payload remains the actual logger.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "44c8c41eb6769043e70484ac1dace110edafb7fd",
         "content": "sha256:984daf3ad48bb0b4d0b90bdc40cbe4579e67d48a13b240133ae460a8283a7a32",
         "locator": {
           "kind": "symbol",
@@ -21,8 +39,8 @@
     },
     {
       "anchor": {
-        "blob": "78f277b5ed8c400a748841e464ebb4f9e3457ab9",
-        "content": "sha256:c80779f7fe5d090b8f34c42292a7983b2eab492bd4576850c935dc6ad93977eb",
+        "blob": "44c8c41eb6769043e70484ac1dace110edafb7fd",
+        "content": "sha256:9dc6a89d422b00d45be3cd0a157b69bc5b34f27e3aa9d9dd2bf221a0ffc26674",
         "locator": {
           "end": 250,
           "kind": "line_range",
@@ -40,7 +58,7 @@
     },
     {
       "anchor": {
-        "blob": "78f277b5ed8c400a748841e464ebb4f9e3457ab9",
+        "blob": "44c8c41eb6769043e70484ac1dace110edafb7fd",
         "content": "sha256:be1298f91607ed5f18940f2ac88c6ccee032edc696091d21f4a0541a05e4ee52",
         "locator": {
           "kind": "symbol",
@@ -58,8 +76,8 @@
     },
     {
       "anchor": {
-        "blob": "78f277b5ed8c400a748841e464ebb4f9e3457ab9",
-        "content": "sha256:d4d8ce5521b5faaf8a62fd9bf5d1f16bcbd5efa38e76d465158f818005c4728b",
+        "blob": "44c8c41eb6769043e70484ac1dace110edafb7fd",
+        "content": "sha256:c750e428a274347ebd829786135cd10b36c599405e3fe4d4bca3af8de0fd9cbb",
         "locator": {
           "end": 460,
           "kind": "line_range",
@@ -77,7 +95,25 @@
     },
     {
       "anchor": {
-        "blob": "78f277b5ed8c400a748841e464ebb4f9e3457ab9",
+        "blob": "44c8c41eb6769043e70484ac1dace110edafb7fd",
+        "content": "sha256:b5aa8e105ca24725088652db0db42138c1159cbfa475a87c606ff80833feace9",
+        "locator": {
+          "kind": "symbol",
+          "name": "memory_carryover_plan_payload"
+        }
+      },
+      "id": "RLZ-TY118W",
+      "invariant": "INV-REPB8B",
+      "origin": {
+        "handoffEntry": "L56-CUR-CARRYOVER-PLAN-FULL-RESULT",
+        "leaf": "260928-MIK-L56"
+      },
+      "rationale": "Keeps complete candidate facts for whole-result logging and derives the compact answer separately without filing a per-call report.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "44c8c41eb6769043e70484ac1dace110edafb7fd",
         "content": "sha256:d3f622fc4d9f4c5ecba385b0dbf495db20bdefab71304abd6bbdb5033341f253",
         "locator": {
           "kind": "symbol",
@@ -116,7 +152,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "78f277b5ed8c400a748841e464ebb4f9e3457ab9",
+            "blob": "183175ecfcf669bf424883e05272a8381b817224",
             "content": "sha256:d4d8ce5521b5faaf8a62fd9bf5d1f16bcbd5efa38e76d465158f818005c4728b",
             "locator": {
               "kind": "symbol",
@@ -143,12 +179,94 @@
         }
       ]
     },
+    "12": {
+      "note": "Converted citation fixes return bounded status/count work orders; legacy-format refusals carry conversion code/detail rather than a repair list.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "183175ecfcf669bf424883e05272a8381b817224",
+            "content": "sha256:6b4b26958f056bd9d75b59221385af66c0e00a549062651ca9c58d920c856ad0",
+            "locator": {
+              "kind": "symbol",
+              "name": "_citation_fix_answer"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "183175ecfcf669bf424883e05272a8381b817224",
+            "content": "sha256:984daf3ad48bb0b4d0b90bdc40cbe4579e67d48a13b240133ae460a8283a7a32",
+            "locator": {
+              "kind": "symbol",
+              "name": "_carry_legacy_refusal"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "The source test asserts singleton reference scope, full status counts and a capped actionable first slice without authoring/rewritten-detail delivery.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4d1d7a64b2c3ce5b16748b5fa73df09ee5501b51",
+            "content": "sha256:e614d2725b13a0030c62f9bd39a58f4b917cbad3a5d7c6b43970c9ef14aa15c4",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_one_documents_fix_reports_its_own_stale_references_and_the_status_counts"
+            },
+            "path": "mcp/tests/test_knowledge_conversion_toolchain.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "14": {
+      "note": "Carryover adapters retain full review detail and merge genuine delivered decision fields into the validated/logged whole; only apply files a per-call report. Compact answers retain recovery guidance, decisions/carriedPaths and apply reportPath without raw candidates/conversion/publication.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "183175ecfcf669bf424883e05272a8381b817224",
+            "content": "sha256:3b7fa9b63fdfe99c9d163a729e30870f76860b2d5cba70c0f500ae15fe8c9ffb",
+            "locator": {
+              "kind": "symbol",
+              "name": "memory_carryover_apply_payload"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "183175ecfcf669bf424883e05272a8381b817224",
+            "content": "sha256:5aad99e6ca9de0e4f39431d106120972c20f02e56705d2290d7b43ecc939b5cc",
+            "locator": {
+              "kind": "symbol",
+              "name": "compact_carryover_payload"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "183175ecfcf669bf424883e05272a8381b817224",
+            "content": "sha256:508ccc1386ebd49fb09d1ec80186c34f3a3aad5fe0e31144d56771f14e81465f",
+            "locator": {
+              "kind": "symbol",
+              "name": "memory_carryover_plan_payload"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
     "2": {
       "note": "Each named list capped, with its full count.",
       "targets": [
         {
           "anchor": {
-            "blob": "78f277b5ed8c400a748841e464ebb4f9e3457ab9",
+            "blob": "183175ecfcf669bf424883e05272a8381b817224",
             "content": "sha256:7c44d946957d2476123e216465be3f31715a16cb1db44b9338824fa83ce2b312",
             "locator": {
               "kind": "symbol",
@@ -181,7 +299,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "78f277b5ed8c400a748841e464ebb4f9e3457ab9",
+            "blob": "183175ecfcf669bf424883e05272a8381b817224",
             "content": "sha256:d3f622fc4d9f4c5ecba385b0dbf495db20bdefab71304abd6bbdb5033341f253",
             "locator": {
               "kind": "symbol",
@@ -233,12 +351,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "78f277b5ed8c400a748841e464ebb4f9e3457ab9",
+            "blob": "183175ecfcf669bf424883e05272a8381b817224",
             "content": "sha256:3ad14df6f0cb0c228b49fdd388fc0034b0993668f75311d52fefb5ce45a86309",
             "locator": {
-              "end": 117,
+              "end": 115,
               "kind": "line_range",
-              "start": 117
+              "start": 115
             }
           },
           "kind": "code"
@@ -250,12 +368,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "78f277b5ed8c400a748841e464ebb4f9e3457ab9",
+            "blob": "183175ecfcf669bf424883e05272a8381b817224",
             "content": "sha256:91efc6cb9c35e004c197d83521a8f0a8893232470d8d0fae53a490b0ba2f34ec",
             "locator": {
-              "end": 294,
+              "end": 282,
               "kind": "line_range",
-              "start": 294
+              "start": 282
             }
           },
           "kind": "code"

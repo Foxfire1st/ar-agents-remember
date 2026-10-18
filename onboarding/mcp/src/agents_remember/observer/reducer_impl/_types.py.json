@@ -3,7 +3,7 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "Frozen structural and analytical bundles retain their separate owners without removed gate/pickup/expectation inputs.\n\nAnchor: `WorkspaceStructure`, `AnalyticalInputs`",
+      "note": "Frozen structural and analytical bundles retain their separate owners without removed gate/pickup/expectation or verification-age inputs.",
       "targets": [
         {
           "anchor": {
@@ -20,6 +20,22 @@
           "anchor": {
             "blob": "22ebc14a52491cc205438d17efdcb79faabc6eb5",
             "content": "sha256:6b20ff96da5f116ec65927fc35989c4ee53d8eaba1eddb36173715edd04995f8",
+            "locator": {
+              "kind": "symbol",
+              "name": "AnalyticalInputs"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Frozen structural and analytical bundles retain their separate owners without removed gate/pickup/expectation or verification-age inputs.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cae3fcca43ab0359a7184ffcd967c196ae190993",
+            "content": "sha256:676be47282d507442cd8092694e106f8e7846c413263785d7c7839e555520ad2",
             "locator": {
               "kind": "symbol",
               "name": "AnalyticalInputs"

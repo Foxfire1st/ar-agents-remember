@@ -20,7 +20,7 @@ that kind, not the reporting treatment of other stale references.
 
 ## Code Commentary
 
-The current canonical document also owns the long explanations relocated from citation_fix, context_packet, curator_coherence, memory_baseline_adopt, memory_carryover_plan, memory_quality_check, retire_child, role_start_set and route_index_refresh. The short registration strings retain the operation/admission cues and point here; callable signatures, handlers, guards and the installer-owned documentation-copy route remain unchanged.
+The canonical and packaged document carry long explanations for `citation_fix`, `context_packet`, `curator_coherence`, baseline adoption, carryover planning, memory quality, child retirement, role-set start and route-index refresh. Short registration descriptions point here, but callable signatures remain defined by registration, not this document. The citation explanation now replaces source-index snapshot options with unconditional old-format refusal and conversion, while preserving finite card selection, measured admissions, sidecar authoring and full logged detail. The installer-owned documentation-copy route is unchanged.
 
 
 `server_info` takes no arguments and reports startup-loaded build/configuration, roots, allowed repositories, unused provider and removed-part settings keys, plus optional role binding. `openUserSettings` reports live open file/folder modes with the exact user close/edit commands; the call changes no settings byte or mode and does not enumerate tools. Configuration load failure remains a startup refusal.
@@ -55,4 +55,4 @@ This card claims only the package-local source contract; no external runtime or
 cross-repository acceptance evidence is inferred.
 
 
-- The shipped document retains the relocated long explanations while short registrations preserve callable signatures and guards. [2]
+- The shipped document retains long explanations and replaces citation source-snapshot options with old-format refusal; registration remains the callable-signature owner. [2]

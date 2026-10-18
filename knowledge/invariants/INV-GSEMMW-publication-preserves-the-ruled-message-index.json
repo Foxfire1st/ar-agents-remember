@@ -10,7 +10,7 @@
     "Configured caller-message cleanup and index flags remain faithful; a product hook policy cannot bypass pre-commit. Required Commit-Check-Pass metadata is separate from the cleaned caller body."
   ],
   "exclusions": [
-    "Prepared routes are separate ordinary git commit routes without a no-verify bypass; commit-tree itself omits other native commit hooks but explicit repository pre-commit precedes publication."
+    "Commit-tree itself omits other native commit hooks, but explicit repository pre-commit precedes publication; removed prepared-only routes supply no live hook policy or no-verify bypass."
   ],
   "id": "INV-GSEMMW",
   "origin": {
@@ -24,7 +24,7 @@
     "leaf": "260928-MIK-L26",
     "task": "260928-MIK"
   },
-  "revision": 2,
+  "revision": 3,
   "schema": "ar-invariant/v1",
   "statement": "Publication preserves the ruled message, index flags and hook behavior and names real ref/lock failures.",
   "status": "proposed",

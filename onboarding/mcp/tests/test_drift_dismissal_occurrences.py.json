@@ -3,7 +3,7 @@
   "proves": [
     {
       "anchor": {
-        "blob": "76f09e623a85d583ee25fa05949870915f30d8e1",
+        "blob": "051b5f115dd95adec8b4d1cc6c617922853ab1f8",
         "content": "sha256:2402aa264b4152b80dff028d35d1aaff7288af2abddbddd6570280d002216f2b",
         "locator": {
           "kind": "symbol",
@@ -20,7 +20,7 @@
     },
     {
       "anchor": {
-        "blob": "76f09e623a85d583ee25fa05949870915f30d8e1",
+        "blob": "051b5f115dd95adec8b4d1cc6c617922853ab1f8",
         "content": "sha256:6530d1d2fab2cafc6619f3658b250e9e5a55dc1debf3a103c563fb4371e4f64d",
         "locator": {
           "kind": "symbol",
@@ -37,14 +37,14 @@
     },
     {
       "anchor": {
-        "blob": "76f09e623a85d583ee25fa05949870915f30d8e1",
-        "content": "sha256:136a88c6b7f88b54815acbacbc52877646e486e0953972e374c4c210f474787b",
+        "blob": "051b5f115dd95adec8b4d1cc6c617922853ab1f8",
+        "content": "sha256:c91ce958bec42eb11da29cc18afa90686362f015cac9762b9a7f164267e497f7",
         "locator": {
           "kind": "symbol",
           "name": "test_legacy_snapshot_fingerprint_uses_all_actionable_rows_and_no_clock"
         }
       },
-      "facet": "The legacy drift-writer case passes two actionable DriftRows, reverses their order without changing identity, changes a finding note at the same counts to obtain a different fingerprint, and ignores an added up-to-date row. It does not exercise a truncated sample window.",
+      "facet": "Builds a real converted repository — git, a source file, `knowledge/layout.json` and a sidecar-plus-card pair whose two references are stale — then runs `run_drift_summary(..., detail_limit=1)`, asserting basis `converted-references` and counts `{current: 0, stale: 2, violation: 0}`. Reversing the reference map's order leaves `actionableFingerprint` unchanged; changing the second finding, which the one-row detail sample does not carry, keeps `counts` and `rows` identical while the fingerprint changes; adding an up-to-date reference gives `{current: 1, stale: 2, violation: 0}` at the original fingerprint. The case is the all-actionable-rows and no-clock guarantee across the sample boundary, on converted production rather than a retired writer.",
       "id": "PRF-MAKR8R",
       "invariant": "INV-TT5CTW",
       "origin": {
@@ -54,7 +54,7 @@
     },
     {
       "anchor": {
-        "blob": "76f09e623a85d583ee25fa05949870915f30d8e1",
+        "blob": "051b5f115dd95adec8b4d1cc6c617922853ab1f8",
         "content": "sha256:b4a9f70b2f0dc8caac5152dd7e8c72f5c9a6a7c3d1997b7e664aa9bd127f5b07",
         "locator": {
           "kind": "symbol",
@@ -71,7 +71,7 @@
     },
     {
       "anchor": {
-        "blob": "76f09e623a85d583ee25fa05949870915f30d8e1",
+        "blob": "051b5f115dd95adec8b4d1cc6c617922853ab1f8",
         "content": "sha256:93af76b84b44e2526606dd44602d0d2eb2d7294f2e35bcbad34abffd428d94d8",
         "locator": {
           "kind": "symbol",
@@ -88,7 +88,7 @@
     },
     {
       "anchor": {
-        "blob": "76f09e623a85d583ee25fa05949870915f30d8e1",
+        "blob": "051b5f115dd95adec8b4d1cc6c617922853ab1f8",
         "content": "sha256:7f4f76ec1a942b71b3a6d16952f1ab5f96a1f263ed2cd659c33ae45972e82753",
         "locator": {
           "kind": "symbol",
@@ -127,7 +127,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "76f09e623a85d583ee25fa05949870915f30d8e1",
+            "blob": "051b5f115dd95adec8b4d1cc6c617922853ab1f8",
             "content": "sha256:c16d27ced3fd06f1a411c6049fbf278bd18df5422dbf35720b10fd202807bab2",
             "locator": {
               "kind": "symbol",
@@ -143,7 +143,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "76f09e623a85d583ee25fa05949870915f30d8e1",
+            "blob": "051b5f115dd95adec8b4d1cc6c617922853ab1f8",
             "content": "sha256:7f4f76ec1a942b71b3a6d16952f1ab5f96a1f263ed2cd659c33ae45972e82753",
             "locator": {
               "kind": "symbol",
@@ -159,7 +159,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "76f09e623a85d583ee25fa05949870915f30d8e1",
+            "blob": "051b5f115dd95adec8b4d1cc6c617922853ab1f8",
             "content": "sha256:b4a9f70b2f0dc8caac5152dd7e8c72f5c9a6a7c3d1997b7e664aa9bd127f5b07",
             "locator": {
               "kind": "symbol",
@@ -175,7 +175,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "76f09e623a85d583ee25fa05949870915f30d8e1",
+            "blob": "051b5f115dd95adec8b4d1cc6c617922853ab1f8",
             "content": "sha256:6530d1d2fab2cafc6619f3658b250e9e5a55dc1debf3a103c563fb4371e4f64d",
             "locator": {
               "kind": "symbol",
@@ -191,7 +191,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "76f09e623a85d583ee25fa05949870915f30d8e1",
+            "blob": "051b5f115dd95adec8b4d1cc6c617922853ab1f8",
             "content": "sha256:93af76b84b44e2526606dd44602d0d2eb2d7294f2e35bcbad34abffd428d94d8",
             "locator": {
               "kind": "symbol",
@@ -207,7 +207,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "76f09e623a85d583ee25fa05949870915f30d8e1",
+            "blob": "051b5f115dd95adec8b4d1cc6c617922853ab1f8",
             "content": "sha256:2402aa264b4152b80dff028d35d1aaff7288af2abddbddd6570280d002216f2b",
             "locator": {
               "kind": "symbol",
@@ -223,7 +223,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "76f09e623a85d583ee25fa05949870915f30d8e1",
+            "blob": "051b5f115dd95adec8b4d1cc6c617922853ab1f8",
             "content": "sha256:44eaef062aa34d5d2267c255ee3c7e4a9b5056686bc13205194b3d47bbc62f25",
             "locator": {
               "kind": "symbol",

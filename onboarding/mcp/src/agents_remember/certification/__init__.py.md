@@ -29,7 +29,7 @@ Keep algorithms, models and storage behavior in their owning modules. The facade
 
 ### Todos
 
-Production integration of typed lifecycle admission/finalization, closeout telemetry and final-memory executors remains incomplete in the inspected cumulative source. Those missing callers require implementation, not an onboarding stamp.
+The facade exports retained lifecycle admission/finalization, telemetry, final-Codex and replay contracts. `compile_certification_recovery_record` is intentionally removed, not a pending production-wiring task. Importing retained APIs proves neither execution nor completion.
 
 ## Evidence
 
@@ -44,12 +44,16 @@ External domain documentation is not configured.
 The cited source establishes the current contracts and boundaries described above. Source verification is documentation evidence, not acceptance of the implementation.
 
 - Core certificates and non-certifying diagnostics [1]
-- Final-Codex and typed lifecycle interfaces [2]
-- Accumulated measured-replay surface [3]
-- Telemetry imports and explicit public exports [4]
+
 
 ### Cross-Repo References
 
 No separate cross-repository protocol is established by this file. The configured cross-repository allowance is empty; no external source is relied upon here.
 
 No cross-repository evidence is required for these file-local claims.
+
+- Final-Codex and typed lifecycle interfaces [2]
+
+- Accumulated measured-replay surface [3]
+
+- Telemetry imports and explicit public exports [4]

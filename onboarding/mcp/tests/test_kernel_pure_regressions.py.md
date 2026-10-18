@@ -6,15 +6,15 @@
 
 ## Purpose
 
-Retains seven small deterministic product regressions after Candidate A and its host runner were
-removed.
+Retains five small deterministic product regressions after Candidate A and its host runner were
+removed. The two exclusively retired route-normalization cases are absent; provider-ID and
+gate/decision-role assertions remain unchanged.
 
 ## Code Commentary
 
-The tests cover provider-ID normalization, known and unknown gate/decision-role coercion, and route
-normalization. They are ordinary pytest unit-regression evidence in the explicit lane manifest.
-`route_measurement.py` also uses their exact node IDs as its representative pure cohort, but that
-measurement ownership does not turn this module into a separate diagnostic runner.
+The retained tests cover provider-ID normalization and known/unknown gate and decision-role
+coercion. They are ordinary pytest unit regressions in the explicit lane manifest; neither this
+source inventory nor the removed route-normalization cases establish a fresh measurement run.
 
 ## Invariants And Boundaries
 
@@ -22,7 +22,8 @@ measurement ownership does not turn this module into a separate diagnostic runne
 - They execute only through pytest inside the pinned Dagger evidence environment.
 - No host wrapper, sealed cohort manifest, static closure analyzer, or compatibility entrypoint is
   retained.
-- The representative measurement must use these exact nodes or change its explicit cohort contract.
+- Retiring the two route-normalization cases does not retire provider-ID or gate/role guards;
+  this card does not renew any separate measurement cohort or execution result.
 
 ## Evidence
 
@@ -33,7 +34,9 @@ The Candidate A retirement and replacement measurement are described in
 
 ### Repo-Internal References
 
-- Seven exact tests preserve the former cohort's unique product assertions. [1]
+
+- Five retained provider-ID and gate/decision-role guards remain; the two retired route-normalization cases are not replaced by whole-file assertions. [1]
+
 - The explicit unit lane owns the module. [2]
 
 ### Cross-Repo References

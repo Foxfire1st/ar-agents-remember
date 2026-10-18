@@ -1,19 +1,14 @@
 {
   "admission": {
     "criteria": [
-      "guarded_by_test",
-      "prevents_costly_mistake"
+      "guarded_by_test"
     ],
-    "justification": "Certifying against another candidate's groups answers a conforming row with the wrong item, the failure the Reviewer sealed as L175-F01; the two named refusals and the bound-run positive case hold both directions."
+    "justification": "Historical: the clause was created on the three closeout-group tests, all of which this leaf deletes."
   },
-  "applicability": "The closeout validator's read of a leaf's persisted worklist run on converted memory.",
-  "conditions": [
-    "The run is present, readable and complete, and records the code base commit, code candidate tree and memory base commit of the candidate being certified.",
-    "Group membership still agrees with the onboarding cards on disk."
-  ],
+  "applicability": "No longer applicable: the closeout validator this clause described is removed by 260928-MIK-L56.",
+  "conditions": [],
   "exclusions": [
-    "A run is not recomputed inside certification: the validator binds to the recorded run rather than judging a second tree.",
-    "The memory-quality entry needs no staleness class, because it reads the run of its own request."
+    "Nothing here asserts what the closeout does today; that rule, and its lack of a proof, are recorded elsewhere."
   ],
   "id": "INV-HYZSDK",
   "origin": {
@@ -27,9 +22,9 @@
     "leaf": "260928-MIK-L175",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-invariant/v1",
-  "statement": "The closeout validator uses a persisted worklist run's identical-copy groups only when that run describes the candidate being certified — its recorded code base commit, code candidate tree and memory base commit are the leaf's, and no group lists a member that has since gained an onboarding card — and otherwise refuses by name with the recompute command.",
-  "status": "proposed",
+  "statement": "The closeout validator uses a persisted worklist run's identical-copy groups only when that run describes the candidate being certified. This sentence is retired at 260928-MIK-L56: the validator it describes is deleted.",
+  "status": "retired",
   "supersedes": []
 }

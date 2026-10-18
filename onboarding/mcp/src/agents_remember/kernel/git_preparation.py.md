@@ -12,7 +12,7 @@ Typed preparation proof; GitPreparationCommandError retains the completed result
 
 ### Logic
 
-The private binding keeps the logical repository/ref and expected old commit separate from the preparation parent, admitted tree, and journal-named private root. Its live authorization callback governs create, materialize, and commit commands through the sole Git runner. Private creation remains strict: every admitted file, mode, and byte must match, and extra or missing content refuses.
+The private binding keeps logical repository/ref and expected-old commit separate from preparation parent, admitted tree and journal-named private root. Its sealed capability revalidates that binding and invokes the live authorization callback around retained-output observation. Physical proof remains strict over exact admitted files, modes and bytes; these types no longer expose a create/materialize/commit command executor.
 
 `ExistingGitPreparationBinding` also names the actual immutable HEAD/tree. In the memory domain it additionally supplies `memory_content_tree`; the runner proves that this certificate subject equals the raw tree with only root `memory.md` removed. Code bindings leave `allow_memory_cache` false and do not carry a memory-content assertion. The optional field's type accommodates code bindings; a memory binding without that field is refused by the runner.
 
@@ -56,3 +56,6 @@ These source owners establish the behavior and boundaries above. Citation ranges
 These helpers can operate on explicitly addressed external-memory Git repositories, but their implementation and authority contracts live in this package. No separate sibling-repository implementation is required to explain this file.
 
 No distinct cross-repository evidence source is configured for this file.
+
+
+- Sealed observation authorization and strict no-follow physical proof survive without preparation command execution. \[7] [7]

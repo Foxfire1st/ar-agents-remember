@@ -3,16 +3,17 @@
     "criteria": [
       "guarded_by_test"
     ],
-    "justification": "The construction lives in the two entry points and the inputs object of the worktrees module, which the controller and the closeout adapter must call; the new module's grouped, singleton and malformed cases prove that one row answers the worklist item and both gates raise it."
+    "justification": "The grouped, singleton and malformed-group tests guard the memory-quality gate and its strict reader. Closeout separately reads the existing ready memory-quality attestation and checks its exact code/memory candidate dependencies through require_memory_quality_attestation_dependencies."
   },
-  "applicability": "Every onboarding_trace item the memory-quality run and the closeout validator build for a leaf on a converted memory worktree.",
+  "applicability": "Every onboarding_trace item the memory-quality run builds for a leaf on converted memory, and every closeout that requires the resulting exact-candidate memory-quality attestation.",
   "conditions": [
     "The entry is given a complete worklist run's identicalChanges mapping, whose entries map a representative source path to the source paths of its identical copies.",
     "The worklist run was built for the candidate the entry judges."
   ],
   "exclusions": [
     "The worklist's own item construction and the item-id contract are unchanged.",
-    "An entry that cannot read a complete run's groups refuses by name instead of judging ungrouped items."
+    "An entry that cannot read a complete run's groups refuses by name instead of judging ungrouped items.",
+    "The closeout-local onboarding validator and its prepared_certification.py caller are removed by 260928-MIK-L56; closeout reads the existing memory-quality attestation and checks exact code/memory candidate dependencies instead of parsing traces again."
   ],
   "id": "INV-0APWSR",
   "origin": {
@@ -27,9 +28,9 @@
     "leaf": "260928-MIK-L175",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-invariant/v1",
-  "statement": "The memory-quality onboarding gate and the closeout onboarding validator build their onboarding_trace items from the leaf worklist run's own identicalChanges groups, so an item a row answers in the worklist is the item both entries raise.",
+  "statement": "The memory-quality onboarding gate builds its onboarding_trace items from the leaf worklist run's own identicalChanges groups, so an item a row answers in the worklist is the item the gate raises, and at closeout those items are judged by the memory-quality attestation the closeout requires, through onboarding_trace_gate_for_context, not by a validator of the closeout's own since 260928-MIK-L56 removed validate_onboarding_traces_for_context.",
   "status": "proposed",
   "supersedes": []
 }

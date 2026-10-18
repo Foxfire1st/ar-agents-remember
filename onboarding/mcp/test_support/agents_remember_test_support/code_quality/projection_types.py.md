@@ -16,6 +16,49 @@ Nullable serialized properties become optional after null variants are removed. 
 
 The served-only definition set must still equal `DEFINITION_RENAMES` exactly. A new served payload requires an explicit declaration and regeneration; unknown or shape-inapplicable schema keywords fail closed with the model/property path. Named PEP 695 local enum references and inline enum shapes each render one vocabulary; missing/external/non-enum references refuse. Generated-file drift is named by the check rather than silently accepted. These are static generator semantics, not an execution result.
 
+No current `METRICS_FACTORY` emits a verification-age histogram; the former lifecycle-derived metrics factory is removed rather than restored.
+
+<details>
+<summary>Local predecessor generator inventory; superseded names and ranges are historical</summary>
+
+`METRICS_FACTORY` returns `lifecycleCount` and the spread `lifecycleStateCounts(lifecycles)`; it no longer emits an empty `stalenessHistogram`.
+
+### Logic
+
+Module-level surface (ranges re-derived against the current candidate):
+
+- `ProjectionTypeGenerationError` (class, lines 82-83) — A Python schema shape cannot be represented by this generator.
+- `workspace_projection_schema` (function, lines 86-88) — The canonical projection schema, copied so callers may safely mutate fixtures.
+- `served_projection_schema` (function, lines 91-93) — The declared HTTP/SSE snapshot schema, including its serve-time tail.
+- `schema_json` (function, lines 96-99) — Stable bytes for the committed JSON Schema artifact.
+- `_object` (102-105) · `_objects` (108-111) · `_strings` (114-117) · `_definitions` (120-121) · `_properties` (124-125) · `_definition_ref_name` (128-132) · `_ref_name` (135-137) · `_nullable_variants` (140-142) · `_is_null` (145-146) · `_is_nullable` (149-151) · `_json_literal` (154-162) · `_enum_values` (165-167)
+- `_property_enum` (170-188) · `_named_vocabulary_definitions` (191-200) — the two canonical CPython 3.14 named-literal shapes and the one-definition-per-vocabulary pass.
+- `_schema_allowed_keywords` (203-235) · `_refinement_schema` (238-257) · `_refinement_comment` (260-271) — the keyword allowlist per schema shape and the deterministic refinement rendering.
+- `_schema_children` (274-305) · `_validate_schema_node` (308-326) · `_validate_schema` (329-340) — the fail-closed walk over every node.
+- `_array_type` (343-348) · `_object_type` (351-360) · `_schema_type` (363-394) · `_without_null` (397-409) · `_property_line` (412-424) · `_model_interface` (427-443)
+- `_state_count_field` · `_vocabulary` · `_tuple_constant` · `_vocabulary_block` — the closed TypeScript vocabularies. The derived state-partition helpers (`_state_partition`, `_metric_bucket_fields`) were removed with the verification-age metrics they served.
+- `render_typescript` (567-598) — Render the public projection module from emitted Pydantic schemas, folding the served projection's own definitions into the same output.
+- `typescript_text` (601-605) · `generated_files` (608-609) · `stale_generated_files` (612-618) · `sync_generated_files` (621-625) — the drift-checked publication path used by `scripts/sync-projection-types.py --check`.
+
+Two module-level declaration sets are contract, not configuration: `DEFINITION_RENAMES` (35-39) and `NAMED_VOCABULARIES` (40-47) name what the generated TypeScript calls each folded definition, and `NULL_PRESERVING_MODELS` (48-50) names the models whose nullable properties stay REQUIRED `T | null` because they are serialized without `exclude_none`. `SCHEMA_ANNOTATION_KEYWORDS` (51), `SCHEMA_REFINEMENT_KEYWORDS` (52-54) and `SCHEMA_KEYWORDS` (61-76) are the whole keyword vocabulary the renderer understands.
+
+### Conventions
+
+Module-level definitions follow the package conventions; names prefixed with `_` are private to this module. Line ranges in this card are derived from the current source rather than carried forward.
+
+### Invariants And Boundaries
+
+- The card mirrors `mcp/test_support/agents_remember_test_support/code_quality/projection_types.py` one-to-one.
+- **The served schema's extra `$defs` are asserted exhaustively**: `render_typescript` requires the served schema's folded definitions to equal `DEFINITION_RENAMES` exactly, so extending `ServedWorkspaceProjection` with a new payload model forces a declaration here AND a regeneration of `dashboard/src/types/projection.ts`. Drift is a hard gate, not a warning.
+- A schema keyword the renderer does not understand fails closed with the exact model/property path; the allowlist is never widened to make a document render.
+- A refinement TypeScript cannot enforce structurally is emitted beside its property as deterministic `JSON Schema refinements` documentation, so the generated contract never silently drops schema truth.
+
+### Todos
+
+None.
+
+</details>
+
 ## Evidence
 
 - The fail-closed generation error raised for an unrepresentable schema shape. [1]

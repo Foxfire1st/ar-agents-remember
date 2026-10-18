@@ -57,7 +57,7 @@
         },
         {
           "anchor": {
-            "blob": "efee7fe64f98139d46ac0ff8997b4d38d2e6af7b",
+            "blob": "74952d968257b03b14368884a05d6c3ee73c74f8",
             "content": "sha256:f3289bb535ddc8dac5e1c007bfbee06aeb8a0fda33591b76a15080ad8550e442",
             "locator": {
               "kind": "symbol",
@@ -69,7 +69,7 @@
         },
         {
           "anchor": {
-            "blob": "efee7fe64f98139d46ac0ff8997b4d38d2e6af7b",
+            "blob": "74952d968257b03b14368884a05d6c3ee73c74f8",
             "content": "sha256:65403786714de8e84db7f5bd72a23427d9c3ccd54edda2f4efe9981559d9b9a5",
             "locator": {
               "kind": "symbol",
@@ -82,16 +82,15 @@
       ]
     },
     "3": {
-      "note": "Producer 1 — baseline adoption consumes the constant on the call that stages.\n\nAnchor: `MEMORY_CONTENT_EXCLUDES`",
+      "note": "Baseline adoption passes the shared exclusions on the private-index staging call.",
       "targets": [
         {
           "anchor": {
-            "blob": "2224d77730508917cec7472ef2059c00bf3196e4",
-            "content": "sha256:ebbea35c40e2351388761dde3f0d1ce7b6d215023740de36066b88556e0d0816",
+            "blob": "1d402a49aa56821231b8ef481e0d186176f2c535",
+            "content": "sha256:90564862944969df9ce94f1879758f8292bfd1d26c38277e85cea02eeff7c139",
             "locator": {
-              "end": 239,
-              "kind": "line_range",
-              "start": 239
+              "kind": "symbol",
+              "name": "_stage_for_commit"
             },
             "path": "mcp/src/agents_remember/memory/baseline.py"
           },
@@ -100,16 +99,15 @@
       ]
     },
     "4": {
-      "note": "Producer 2 — memory carryover consumes the same constant in its apply path.\n\nAnchor: `MEMORY_CONTENT_EXCLUDES`",
+      "note": "Carryover applies worktree content without staging, committing or consuming this exclusion tuple.",
       "targets": [
         {
           "anchor": {
-            "blob": "1f4797dc78a4b4079de6cca8a4ea066f27bbe722",
-            "content": "sha256:ebbea35c40e2351388761dde3f0d1ce7b6d215023740de36066b88556e0d0816",
+            "blob": "0f2012e3d1b6cfcf742adc9b3bf25460b4073950",
+            "content": "sha256:995e469cb000e69d917212ec9c2ff7a67b96b37a66646ee8aa825c9a2188a674",
             "locator": {
-              "end": 786,
-              "kind": "line_range",
-              "start": 786
+              "kind": "symbol",
+              "name": "_apply_carryover_for_request"
             },
             "path": "mcp/src/agents_remember/memory/carryover.py"
           },
@@ -118,16 +116,15 @@
       ]
     },
     "5": {
-      "note": "Producer 3 — external closeout consumes it on the dirty check, the stage and the commit.\n\nAnchor: `MEMORY_CONTENT_EXCLUDES`",
+      "note": "External closeout applies the shared exclusions to its dirty check and exact memory-tree capture.\n\nAnchor: `_exact_memory_tree`, `_commit_memory_content`",
       "targets": [
         {
           "anchor": {
-            "blob": "19c72639c979ce52f9f07935337ddf20b3666852",
-            "content": "sha256:e5efca28baf5a630dbb95574db53ba1d4418ff026755d26ba5a0642efc19263a",
+            "blob": "9cfb3331ff9fa3f591e098da8dbf93635dd481b9",
+            "content": "sha256:8b005244c058f89a5173a0a1d8c6a01fcba28076d5dd37dc456d66ade779e9e5",
             "locator": {
-              "end": 159,
-              "kind": "line_range",
-              "start": 159
+              "kind": "symbol",
+              "name": "_exact_memory_tree"
             },
             "path": "mcp/src/agents_remember/worktrees/modules/closeout_external.py"
           },
@@ -135,25 +132,11 @@
         },
         {
           "anchor": {
-            "blob": "19c72639c979ce52f9f07935337ddf20b3666852",
-            "content": "sha256:a458251d5c39cc628c4d2693579eaf95fa54618b0f769e534486f0cb74422562",
+            "blob": "9cfb3331ff9fa3f591e098da8dbf93635dd481b9",
+            "content": "sha256:d74fc2b14e7948998b1aaaea59cb7cb4c2d67731eee72bafdab33e7f9381ff29",
             "locator": {
-              "end": 178,
-              "kind": "line_range",
-              "start": 178
-            },
-            "path": "mcp/src/agents_remember/worktrees/modules/closeout_external.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "f691898dcd00ca9d02cd290832852fa2be5c2c42",
-            "content": "sha256:ebbea35c40e2351388761dde3f0d1ce7b6d215023740de36066b88556e0d0816",
-            "locator": {
-              "end": 312,
-              "kind": "line_range",
-              "start": 312
+              "kind": "symbol",
+              "name": "_commit_memory_content"
             },
             "path": "mcp/src/agents_remember/worktrees/modules/closeout_external.py"
           },
@@ -166,7 +149,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "12eb97789e3b5b076082ea8c463b176ac39fed14",
+            "blob": "9cfb3331ff9fa3f591e098da8dbf93635dd481b9",
             "content": "sha256:8b005244c058f89a5173a0a1d8c6a01fcba28076d5dd37dc456d66ade779e9e5",
             "locator": {
               "kind": "symbol",
@@ -178,7 +161,7 @@
         },
         {
           "anchor": {
-            "blob": "cd3e69795965969ac1ee9e0423d8334caa4b390b",
+            "blob": "ae56f6c72b4720e9cd1ae2abdd42551a79d4c1d4",
             "content": "sha256:02b7b8473248163ebad747818ab63a8a92f103861c010144b196e2dd0163295f",
             "locator": {
               "kind": "symbol",
@@ -191,30 +174,29 @@
       ]
     },
     "7": {
-      "note": "Producer 4 — direct landing consumes it on its memory commit.\n\nAnchor: `MEMORY_CONTENT_EXCLUDES`",
+      "note": "Direct landing applies the shared exclusions when capturing its exact memory-content tree.",
       "targets": [
         {
           "anchor": {
-            "blob": "71f832a845ba7f4e7e47de4c6929d9ffa42c2495",
-            "content": "sha256:ebbea35c40e2351388761dde3f0d1ce7b6d215023740de36066b88556e0d0816",
+            "blob": "ae56f6c72b4720e9cd1ae2abdd42551a79d4c1d4",
+            "content": "sha256:02b7b8473248163ebad747818ab63a8a92f103861c010144b196e2dd0163295f",
             "locator": {
-              "end": 236,
-              "kind": "line_range",
-              "start": 236
+              "kind": "symbol",
+              "name": "_memory_content_tree"
             },
-            "path": "mcp/src/agents_remember/worktrees/integration/direct_landing/direct_landing_execution.py"
+            "path": "mcp/src/agents_remember/worktrees/direct_landing.py"
           },
           "kind": "code"
         }
       ]
     },
     "8": {
-      "note": "The two cases that fail if the exclusion becomes inert again.",
+      "note": "Baseline adoption and commit_if_dirty regression cases exclude bootstrap scaffolding while leaving it on disk; they do not execute carryover or a full closeout.\n\nAnchor: `test_the_first_baseline_never_commits_bootstrap_scaffolding`, `test_no_memory_content_commit_stages_bootstrap_scaffolding`",
       "targets": [
         {
           "anchor": {
-            "blob": "64c39dcd72c274822ad3c2f57ac160f39b0f438c",
-            "content": "sha256:a177857033c2160f6da833552bf85e43325f6befc2f6e2e419070bb9f3af96ce",
+            "blob": "9861c72ac24c02e19b7fd2360ac95be1a6d9e5c3",
+            "content": "sha256:50ac75f5f6b00a2b6b635be939bd7274439079f41bd54ad26039eb7049bfd939",
             "locator": {
               "kind": "symbol",
               "name": "test_the_first_baseline_never_commits_bootstrap_scaffolding"

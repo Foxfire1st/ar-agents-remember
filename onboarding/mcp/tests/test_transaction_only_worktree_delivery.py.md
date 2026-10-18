@@ -18,7 +18,7 @@ Protect public transaction-only closeout/integration and recovery with two accep
 
 ### Logic
 
-The module has twelve test definitions, not twelve measured cases. Normal public transaction
+The current source has 17 test definitions; this is neither collected case count nor evidence of execution. Normal public transaction
 scenarios forbid named quality, selected-certification and curator-certification entry points
 while retaining converted-memory judgment. Converted closeout fixtures use paired bases and
 open `leaf-1` history with a `no_impact` row for `onboarding:feature.py`;

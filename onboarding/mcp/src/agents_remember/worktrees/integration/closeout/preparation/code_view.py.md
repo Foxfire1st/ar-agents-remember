@@ -12,7 +12,7 @@ Physical code execution views for selected preparation, bound to the canonical l
 
 ### Logic
 
-Observation requires an already selected original output, reloads typed stored objects, rechecks raw commit and physical Git facts, and binds the canonical logical pair to the actual read root. `prepare_code_view` performs preparation first; `observe_prepared_code_view` only reopens the existing view. Neither fabricates historical memory attribution for an in-flight pair.
+Observation requires an already selected original code output, reloads typed stored objects, rechecks raw commit and physical Git facts, and binds the caller-supplied logical pair to the physical read root. Only `observe_selected_prepared_code_view` remains; fresh preparation and running-handoff observation APIs were removed. It creates no output or historical memory attribution.
 
 `observe_selected_prepared_code_view` can reprove a journal-selected output after the running worker has returned. It validates the selected record and uses the same kernel observers instead of claiming a live worker lease. Existing code is checked with a strict `ExistingGitPreparationBinding`; created code uses the named private capability and a callback that reopens the original record and policy. Both paths remain code-domain checks, even if a file happens to be called memory.md.
 
@@ -42,14 +42,18 @@ No external domain source is configured.
 
 These source owners establish the behavior and boundaries above. Citation ranges were read from the current uncommitted candidate.
 
-- The running-owner observation reloads the selected output and builds a bound physical view. [1]
+
 - The selected-record path reuses strict existing-code or sealed private-code proof without inventing a worker lease. [2]
 - Selected record and intent currentness are rechecked around observation. [3]
 - The execution view binds the exact output bytes, raw commit/tree, and logical pair. [4]
-- Preparation precedes a fresh observation when the caller requests a prepared view. [5]
+
 
 ### Cross-Repo References
 
 These helpers can operate on explicitly addressed external-memory Git repositories, but their implementation and authority contracts live in this package. No separate sibling-repository implementation is required to explain this file.
 
 No distinct cross-repository evidence source is configured for this file.
+
+- Selected-record read-only observation reloads the exact original output and constructs a physically proved logical-pair-bound code view. [1]
+
+- Only exact selected-output reproof remains; the fresh prepare/running-handoff APIs were removed. [5]

@@ -24,8 +24,7 @@ payload with non-None evidence keys spelling `edgeClass`, `candidateDigest`, and
 
 ### Conventions
 
-Every refusal in the package raises one of these typed errors instead of returning an
-unstructured failure, so callers can discriminate proof failures from environment errors.
+The retained error classes provide typed refusal vocabulary for consumers such as the subresult store. They distinguish authority/proof refusal from unstructured environment failure; removed planner/executor call sites are not current consumers.
 
 ### Invariants And Boundaries
 
@@ -52,10 +51,12 @@ stale input, unknown consumer, missing result, or changed certificate.
 
 ### Repo-Internal References
 
-- The R07 planner raises typed closure refusals. [1]
-- The R07 executor raises typed closure refusals. [2]
-- The R07 subresult store raises typed closure refusals. [3]
+
+
+- The retained subresult store raises typed closure refusals; removed planner/executor sites are not current consumers. [3]
+
 - The base error carries the canonical agents-remember failure status machinery. [4]
+
 
 ### Cross-Repo References
 

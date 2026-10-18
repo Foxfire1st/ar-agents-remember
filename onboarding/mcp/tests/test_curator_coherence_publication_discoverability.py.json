@@ -7,7 +7,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9901ab65ec40f3a558b0efe13f76012e31131e28",
+            "blob": "a2954294417e6bb9b24a36f5d824b64093280317",
             "content": "sha256:0068fec1cc46f27e742bf5240be76ef22a58ea56c0684bb82f1643be155f3511",
             "locator": {
               "end": 14,
@@ -24,7 +24,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9901ab65ec40f3a558b0efe13f76012e31131e28",
+            "blob": "a2954294417e6bb9b24a36f5d824b64093280317",
             "content": "sha256:7d67736ab681640b043a8e6c7f6e218b141d1863dc55d1995f7e6c4ab2791853",
             "locator": {
               "kind": "symbol",
@@ -35,7 +35,7 @@
         },
         {
           "anchor": {
-            "blob": "9901ab65ec40f3a558b0efe13f76012e31131e28",
+            "blob": "a2954294417e6bb9b24a36f5d824b64093280317",
             "content": "sha256:02f4c337fad1a1106fcfcf691fd5c643968601e98468721340bdd5afc857d415",
             "locator": {
               "kind": "symbol",
@@ -51,8 +51,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9901ab65ec40f3a558b0efe13f76012e31131e28",
-            "content": "sha256:b6595c00a097f0bc4a68c12f5fa9cce072eea4d26a1935db9367c0c7574c3bb1",
+            "blob": "a2954294417e6bb9b24a36f5d824b64093280317",
+            "content": "sha256:de66fb3aad504d237e9154200b01cf7150a1e147dfbe19e0791d90336e6600d2",
             "locator": {
               "kind": "symbol",
               "name": "test_publish_with_every_publication_member_validates"
@@ -67,8 +67,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9901ab65ec40f3a558b0efe13f76012e31131e28",
-            "content": "sha256:3e1c789146cc606887cae4406d773129917460bab3dbe064d25fbb68b2fe61ef",
+            "blob": "a2954294417e6bb9b24a36f5d824b64093280317",
+            "content": "sha256:fadb953838f1434cf2023bbd2b3cb88a265fd5f63fed7e2ae36593bc641d5ca4",
             "locator": {
               "kind": "symbol",
               "name": "test_prepare_states_the_complete_publication_input_set"
@@ -83,7 +83,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9901ab65ec40f3a558b0efe13f76012e31131e28",
+            "blob": "a2954294417e6bb9b24a36f5d824b64093280317",
             "content": "sha256:e965cb56d633e22037c41a625eac1e05f2fa035a1bde2e43a1c86a5fb47f960a",
             "locator": {
               "kind": "symbol",
@@ -99,7 +99,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9901ab65ec40f3a558b0efe13f76012e31131e28",
+            "blob": "a2954294417e6bb9b24a36f5d824b64093280317",
             "content": "sha256:a134bf1bc317b296e726f92b3bf52456ce8f3f9aee347817affc72fcdad98c4d",
             "locator": {
               "kind": "symbol",
@@ -110,7 +110,7 @@
         },
         {
           "anchor": {
-            "blob": "9901ab65ec40f3a558b0efe13f76012e31131e28",
+            "blob": "a2954294417e6bb9b24a36f5d824b64093280317",
             "content": "sha256:14ea410173dfa53b6a1340dedf99171f92985f6be48e9c36292c40371fdb5a99",
             "locator": {
               "kind": "symbol",
@@ -121,7 +121,7 @@
         },
         {
           "anchor": {
-            "blob": "9901ab65ec40f3a558b0efe13f76012e31131e28",
+            "blob": "a2954294417e6bb9b24a36f5d824b64093280317",
             "content": "sha256:53a4277ec61094a10193a07af475040e01c53e10fbc100087a42205422968a98",
             "locator": {
               "kind": "symbol",
@@ -132,35 +132,17 @@
         }
       ]
     },
-    "15": {
-      "note": "The module this one was split out of, which keeps the Gate-5 orchestration and the shared scaffold.\n\nAnchor: \"Split from ``test_final_full_memory_coherence_certification.py``\"",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "556139b7088cc654255b2ddd244709f44047ffd6",
-            "content": "sha256:120d9f6d522ef339fbebe24d528634c555d4ab266ab624b48fc614ef0ab77e89",
-            "locator": {
-              "end": 19,
-              "kind": "line_range",
-              "start": 1
-            },
-            "path": "mcp/tests/test_final_full_memory_coherence_certification.py"
-          },
-          "kind": "test"
-        }
-      ]
-    },
     "16": {
       "note": "The lane row this module was appended to.\n\nAnchor: \"mcp/tests/test_curator_coherence_publication_discoverability.py\"",
       "targets": [
         {
           "anchor": {
-            "blob": "512be564b35aaf6f9d3b9709113b613309efe221",
+            "blob": "73edfd50a6762caceba54e287a867f9b73b816e8",
             "content": "sha256:0060146bbb3b5c2baa12506a71304262d78a482eab41c6ba94c0e2a6d3c2b0b5",
             "locator": {
-              "end": 60,
+              "end": 69,
               "kind": "line_range",
-              "start": 60
+              "start": 69
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },
@@ -173,7 +155,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6417eae61914675261b64fc0873dea8c2e563fa3",
+            "blob": "7e534abbc8eddc596c09dd188591a8e33755c064",
             "content": "sha256:bb049a3555b26c9f959e9e5d3289d2e9c71f4641c68da2fb93ffe66838fd75a4",
             "locator": {
               "kind": "symbol",
@@ -190,7 +172,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6417eae61914675261b64fc0873dea8c2e563fa3",
+            "blob": "7e534abbc8eddc596c09dd188591a8e33755c064",
             "content": "sha256:bf16185fc4471584a353e4b3a235a287cb2d0263bc2baa66a1ca58efc8d703fb",
             "locator": {
               "kind": "symbol",
@@ -207,7 +189,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6417eae61914675261b64fc0873dea8c2e563fa3",
+            "blob": "7e534abbc8eddc596c09dd188591a8e33755c064",
             "content": "sha256:1b0f109e9d0b9776c0155281ec86ef05d3ef91fdc74e82f1fb5e6f3552103747",
             "locator": {
               "kind": "symbol",
@@ -219,8 +201,8 @@
         },
         {
           "anchor": {
-            "blob": "6417eae61914675261b64fc0873dea8c2e563fa3",
-            "content": "sha256:429e832cb0e41a92a217f7a0009dc3ef4f874f13fbe872d7e2478b1669b545c9",
+            "blob": "7e534abbc8eddc596c09dd188591a8e33755c064",
+            "content": "sha256:6056a8e954ae75eb1c188747da2865b05c86acc1d71b16e70b5c3d533fa37f84",
             "locator": {
               "kind": "symbol",
               "name": "publication_input_statement"
@@ -236,8 +218,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6417eae61914675261b64fc0873dea8c2e563fa3",
-            "content": "sha256:81d06cb55a30457b2990e0ddac9c13dadfc7f977ee133cc1a53a3994254fdda6",
+            "blob": "7e534abbc8eddc596c09dd188591a8e33755c064",
+            "content": "sha256:d88ff6cfa7d8e4c8df6b7a72e9b6c9ba1856f3e0e86a26998308eb295bc08447",
             "locator": {
               "kind": "symbol",
               "name": "CuratorCoherenceRequest"
@@ -249,11 +231,11 @@
       ]
     },
     "6": {
-      "note": "The two content members that are publication inputs but not among the nine.",
+      "note": "Judgments, judgments_file and review_assessments are the three content exclusions in the positive model-order control, separate from the nine publication members.",
       "targets": [
         {
           "anchor": {
-            "blob": "6417eae61914675261b64fc0873dea8c2e563fa3",
+            "blob": "7e534abbc8eddc596c09dd188591a8e33755c064",
             "content": "sha256:af60a6ce1dfc50cb92c1c204539dd5d79bc99578a2c899fa6352eb04cb86b226",
             "locator": {
               "kind": "symbol",
@@ -265,7 +247,7 @@
         },
         {
           "anchor": {
-            "blob": "6417eae61914675261b64fc0873dea8c2e563fa3",
+            "blob": "7e534abbc8eddc596c09dd188591a8e33755c064",
             "content": "sha256:59c16b6df5d83c57a79468a633418e0f52e03cc621e363c0da0aff81d98e38bc",
             "locator": {
               "kind": "symbol",
@@ -274,6 +256,29 @@
             "path": "mcp/src/agents_remember/models/lifecycles/curator_coherence.py"
           },
           "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7e534abbc8eddc596c09dd188591a8e33755c064",
+            "content": "sha256:d9bbdfa1a9dbe9941032210cc94cce66697dfd44384f2dea496c3ba14e4a0bec",
+            "locator": {
+              "kind": "symbol",
+              "name": "JUDGMENTS_FILE_MEMBER"
+            },
+            "path": "mcp/src/agents_remember/models/lifecycles/curator_coherence.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a2954294417e6bb9b24a36f5d824b64093280317",
+            "content": "sha256:de66fb3aad504d237e9154200b01cf7150a1e147dfbe19e0791d90336e6600d2",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_publish_with_every_publication_member_validates"
+            }
+          },
+          "kind": "test"
         }
       ]
     },
@@ -282,7 +287,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "217e5c86649db8bdbc5bf71011f0c8aa5f83f928",
+            "blob": "8e48e38066874b65d5c7dec91535af65a658fbe4",
             "content": "sha256:a55a599b1c92a8e4c1ec967be5a2291299e44c18285855b7c3cc6bf5b984a9b9",
             "locator": {
               "kind": "symbol",
@@ -294,8 +299,8 @@
         },
         {
           "anchor": {
-            "blob": "217e5c86649db8bdbc5bf71011f0c8aa5f83f928",
-            "content": "sha256:813407828185fd943b0eb1b8b8fc2a0d1afe5fb4118024bb3a59b8b8284ef599",
+            "blob": "8e48e38066874b65d5c7dec91535af65a658fbe4",
+            "content": "sha256:23536224bcc5dc1d36955a44793da1c70344126e5a7f714f428ad67d6f3f2690",
             "locator": {
               "kind": "symbol",
               "name": "_prepare"
@@ -311,7 +316,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9901ab65ec40f3a558b0efe13f76012e31131e28",
+            "blob": "a2954294417e6bb9b24a36f5d824b64093280317",
             "content": "sha256:b43a248bbb718086c38dc7c36625f5588234ff41a02ac92633ecf2d28c813603",
             "locator": {
               "kind": "symbol",
@@ -322,7 +327,7 @@
         },
         {
           "anchor": {
-            "blob": "9901ab65ec40f3a558b0efe13f76012e31131e28",
+            "blob": "a2954294417e6bb9b24a36f5d824b64093280317",
             "content": "sha256:77355d25922d3b9e68b6ad5c28e5c9a081b627e79345b07a19c2a28641364940",
             "locator": {
               "kind": "symbol",
@@ -333,7 +338,7 @@
         },
         {
           "anchor": {
-            "blob": "9901ab65ec40f3a558b0efe13f76012e31131e28",
+            "blob": "a2954294417e6bb9b24a36f5d824b64093280317",
             "content": "sha256:82927a0f505799190f80180f7aa3d37c3ead0581140a2228f12ee8b51af325e9",
             "locator": {
               "kind": "symbol",
@@ -344,7 +349,7 @@
         },
         {
           "anchor": {
-            "blob": "9901ab65ec40f3a558b0efe13f76012e31131e28",
+            "blob": "a2954294417e6bb9b24a36f5d824b64093280317",
             "content": "sha256:febcdc7f377c1631789d19049890707d7e55b81662a49ede6e2b2eeb35cb6942",
             "locator": {
               "kind": "symbol",
@@ -355,7 +360,7 @@
         },
         {
           "anchor": {
-            "blob": "9901ab65ec40f3a558b0efe13f76012e31131e28",
+            "blob": "a2954294417e6bb9b24a36f5d824b64093280317",
             "content": "sha256:bbed34f999f18d2c383ff749542f2efcfac70f15d56ed144cf1b6fe29ff8955c",
             "locator": {
               "kind": "symbol",
@@ -371,8 +376,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9901ab65ec40f3a558b0efe13f76012e31131e28",
-            "content": "sha256:b220b298359baccadb7e4490b38923d04da38f05f15fc4c5bb0eb15e513a5f6c",
+            "blob": "a2954294417e6bb9b24a36f5d824b64093280317",
+            "content": "sha256:390087938587281992965c6d14609c17436d2ad9a5775b15c09dd753c5c78b5c",
             "locator": {
               "kind": "symbol",
               "name": "_prepared_payload"

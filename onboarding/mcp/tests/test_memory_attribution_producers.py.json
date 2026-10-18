@@ -1,28 +1,183 @@
 {
   "path": "mcp/tests/test_memory_attribution_producers.py",
-  "realizes": [],
+  "proves": [
+    {
+      "anchor": {
+        "blob": "659c4e4b7b46e70bfdd7a52d67c89425345d4f8c",
+        "content": "sha256:0a9c21c8498a90fd55fc8f210c6b537b40249e620c9e997c906246239005553c",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_the_named_history_rewriter_replays_the_original_tree"
+        }
+      },
+      "facet": "The rewriter replacement preserves the original tree and identity despite modified worktree/index; HEAD and staged state remain unchanged.",
+      "id": "PRF-9TN05K",
+      "invariant": "INV-WPWXNQ",
+      "origin": {
+        "handoffEntry": "MIK-R56@v1 PartA §3",
+        "leaf": "260928-MIK-L56"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "659c4e4b7b46e70bfdd7a52d67c89425345d4f8c",
+        "content": "sha256:2abe513d477019efd8a356303828728a7e523da304483fdd2c24df5e75a8e6b5",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_census_rejects_indirect_additional_renderer_callers"
+        }
+      },
+      "facet": "An assignment alias, alias of literal getattr and direct literal getattr cannot hide an added renderer caller from the census.",
+      "id": "PRF-D6W227",
+      "invariant": "INV-WPWXNQ",
+      "origin": {
+        "handoffEntry": "MIK-R56@v1 PartA §3",
+        "leaf": "260928-MIK-L56"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "659c4e4b7b46e70bfdd7a52d67c89425345d4f8c",
+        "content": "sha256:2d54a909f329b7644cb4e9d713567c0c0efd8d0c4fd2b369998949e685d01a51",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_the_attribution_key_is_named_and_rendered_in_exactly_one_module"
+        }
+      },
+      "facet": "The attribution key and interpolation belong only to the one kernel module; another quoted trailer writer is rejected.",
+      "id": "PRF-FET8BA",
+      "invariant": "INV-WPWXNQ",
+      "origin": {
+        "handoffEntry": "MIK-R56@v1 PartA §3",
+        "leaf": "260928-MIK-L56"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "659c4e4b7b46e70bfdd7a52d67c89425345d4f8c",
+        "content": "sha256:41abd9b7675b6a614e19ffa3d765ecdb9acb65c973876ff336042dc1069d18af",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_every_census_producer_reaches_the_shared_renderer"
+        }
+      },
+      "facet": "The live source census admits only the exact producer/helper/rewriter paths; injecting a copied producer or retired name raises AssertionError.",
+      "id": "PRF-SYKXWW",
+      "invariant": "INV-WPWXNQ",
+      "origin": {
+        "handoffEntry": "MIK-R56@v1 PartA §3",
+        "leaf": "260928-MIK-L56"
+      }
+    }
+  ],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "659c4e4b7b46e70bfdd7a52d67c89425345d4f8c",
+        "content": "sha256:351669163bb90f4b39d78caf3477eac80cf10188e54c8fa1b21e52ee16c7e542",
+        "locator": {
+          "kind": "symbol",
+          "name": "_assert_source_census"
+        }
+      },
+      "id": "RLZ-1Q0WC5",
+      "invariant": "INV-WPWXNQ",
+      "origin": {
+        "handoffEntry": "MIK-R56@v1 PartA §3",
+        "leaf": "260928-MIK-L56"
+      },
+      "rationale": "Verifies the exact ordinary producer set and separately guarded history rewriter construction.",
+      "role": "support"
+    }
+  ],
   "references": {
     "1": {
-      "note": "The one-definition guard and explicit five-producer census.\n\nAnchor: `_PRODUCERS`, `test_every_census_producer_reaches_the_shared_renderer`",
+      "note": "One-definition attribution guard and exact three-content-route AST census retain copied/returned-name negatives and add assignment-alias and literal-getattr caller negatives; the original-tree backfill witness is separate.",
       "targets": [
         {
           "anchor": {
-            "blob": "547cf8a18b48bcc101d9dc2a4a5613aa6a9ed62f",
-            "content": "sha256:6f9fe2bef8dca1db0776bd5cecc7e80119f2df99f799ad26820d27b2314898b6",
+            "blob": "659c4e4b7b46e70bfdd7a52d67c89425345d4f8c",
+            "content": "sha256:2d54a909f329b7644cb4e9d713567c0c0efd8d0c4fd2b369998949e685d01a51",
             "locator": {
               "kind": "symbol",
-              "name": "_PRODUCERS"
+              "name": "test_the_attribution_key_is_named_and_rendered_in_exactly_one_module"
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "547cf8a18b48bcc101d9dc2a4a5613aa6a9ed62f",
-            "content": "sha256:eebbd1e7d3bc3c69dd94ce1fae90d8fca19dbf187d18734f35d16dc1dcb4c116",
+            "blob": "659c4e4b7b46e70bfdd7a52d67c89425345d4f8c",
+            "content": "sha256:30db434606922e7fee4af176338af1c7b1d20af824747c0ce3f5d097e85e043a",
+            "locator": {
+              "kind": "symbol",
+              "name": "_renderer_binding"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "659c4e4b7b46e70bfdd7a52d67c89425345d4f8c",
+            "content": "sha256:e60635670a7d1e690a90e805857f26bace94b7765e1cea2836aae5e28e4aaf1d",
+            "locator": {
+              "kind": "symbol",
+              "name": "_assignment_renderer_aliases"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "659c4e4b7b46e70bfdd7a52d67c89425345d4f8c",
+            "content": "sha256:2ae0ce3ec314be485b09a9113cfb7a9cf62c274fb6d23ea1a7dadc10ba9b1d8d",
+            "locator": {
+              "kind": "symbol",
+              "name": "_renderer_calls"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "659c4e4b7b46e70bfdd7a52d67c89425345d4f8c",
+            "content": "sha256:351669163bb90f4b39d78caf3477eac80cf10188e54c8fa1b21e52ee16c7e542",
+            "locator": {
+              "kind": "symbol",
+              "name": "_assert_source_census"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "659c4e4b7b46e70bfdd7a52d67c89425345d4f8c",
+            "content": "sha256:41abd9b7675b6a614e19ffa3d765ecdb9acb65c973876ff336042dc1069d18af",
             "locator": {
               "kind": "symbol",
               "name": "test_every_census_producer_reaches_the_shared_renderer"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "659c4e4b7b46e70bfdd7a52d67c89425345d4f8c",
+            "content": "sha256:2abe513d477019efd8a356303828728a7e523da304483fdd2c24df5e75a8e6b5",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_census_rejects_indirect_additional_renderer_callers"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "659c4e4b7b46e70bfdd7a52d67c89425345d4f8c",
+            "content": "sha256:0a9c21c8498a90fd55fc8f210c6b537b40249e620c9e997c906246239005553c",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_named_history_rewriter_replays_the_original_tree"
             }
           },
           "kind": "test"
@@ -34,7 +189,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "547cf8a18b48bcc101d9dc2a4a5613aa6a9ed62f",
+            "blob": "659c4e4b7b46e70bfdd7a52d67c89425345d4f8c",
             "content": "sha256:086b19f745277f6fcd7bd201e6975f2a66d8b7715da14724707f9f9a32404156",
             "locator": {
               "kind": "symbol",
@@ -50,8 +205,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "547cf8a18b48bcc101d9dc2a4a5613aa6a9ed62f",
-            "content": "sha256:247b9bf839c62ed0b67345a16f6de9ea6a4d4d8a2c0fc64240a3beb94b9a5886",
+            "blob": "659c4e4b7b46e70bfdd7a52d67c89425345d4f8c",
+            "content": "sha256:548c6edaf741e1e024a0136e091ac908823d30deeca2992d8343074dfb216744",
             "locator": {
               "kind": "symbol",
               "name": "test_carryover_apply_refuses_unconverted_memory_with_the_conversion_step"
@@ -66,7 +221,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "547cf8a18b48bcc101d9dc2a4a5613aa6a9ed62f",
+            "blob": "659c4e4b7b46e70bfdd7a52d67c89425345d4f8c",
             "content": "sha256:fbd73e5adafa1d1f599eb51a01e2b2875ca9517566f13574ff16c965522faeb3",
             "locator": {
               "kind": "symbol",
@@ -78,11 +233,11 @@
       ]
     },
     "5": {
-      "note": "The kernel owns the key and the single writer.\n\nAnchor: `CODE_COMMIT_TRAILER_KEY`, `render_memory_content_message`",
+      "note": "The kernel declares the attribution key and appends its shared renderer trailer; its docstring names only surviving content routes and the separate original-tree historical rewriter.",
       "targets": [
         {
           "anchor": {
-            "blob": "ae1966638f820f5da97451ffeb4f48b62e757831",
+            "blob": "2ec6a4844bc78d46a50f54f10b97d1ea2d328aba",
             "content": "sha256:cac1e23697a3434a11cee71fcbb951fe998c7a5be61e3dad9742c6dfb4fff134",
             "locator": {
               "kind": "symbol",
@@ -94,8 +249,8 @@
         },
         {
           "anchor": {
-            "blob": "ae1966638f820f5da97451ffeb4f48b62e757831",
-            "content": "sha256:7dfaeda4b482976051b933ca036ea3320e85eee5a37e226b97f384cf38d89ed8",
+            "blob": "2ec6a4844bc78d46a50f54f10b97d1ea2d328aba",
+            "content": "sha256:7c4f0f023112a22c90683ee6079549387b10f2fdb766388ec8ee9b4850cc4483",
             "locator": {
               "kind": "symbol",
               "name": "render_memory_content_message"
@@ -136,15 +291,15 @@
       ]
     },
     "7": {
-      "note": "Carryover never writes converted memory and takes the cutover lock.",
+      "note": "Converted-sibling cutover returns legacy-format with branch/crossing guidance and preserves the observed target HEAD/status pair.",
       "targets": [
         {
           "anchor": {
-            "blob": "547cf8a18b48bcc101d9dc2a4a5613aa6a9ed62f",
-            "content": "sha256:d83aa9f60b40954bc7cc06b8d9b51197fd9ff62bab50d5059e47952eeb8959c5",
+            "blob": "659c4e4b7b46e70bfdd7a52d67c89425345d4f8c",
+            "content": "sha256:8c5527e003b1a77c5be25235d454618b27e196d5943c77828201089b20fc462a",
             "locator": {
               "kind": "symbol",
-              "name": "test_carryover_never_writes_converted_memory_and_takes_the_cutover_lock"
+              "name": "test_carryover_takes_the_unconverted_memory_cutover_lock"
             }
           },
           "kind": "test"
@@ -156,8 +311,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "547cf8a18b48bcc101d9dc2a4a5613aa6a9ed62f",
-            "content": "sha256:247b9bf839c62ed0b67345a16f6de9ea6a4d4d8a2c0fc64240a3beb94b9a5886",
+            "blob": "659c4e4b7b46e70bfdd7a52d67c89425345d4f8c",
+            "content": "sha256:548c6edaf741e1e024a0136e091ac908823d30deeca2992d8343074dfb216744",
             "locator": {
               "kind": "symbol",
               "name": "test_carryover_apply_refuses_unconverted_memory_with_the_conversion_step"

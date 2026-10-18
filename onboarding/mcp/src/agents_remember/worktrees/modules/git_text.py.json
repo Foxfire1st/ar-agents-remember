@@ -1,0 +1,39 @@
+{
+  "path": "mcp/src/agents_remember/worktrees/modules/git_text.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Small lossless text primitives shared by Git publication and message cleanup.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "deaa1f6368798c9ebd5f833612904ee7b7cadfc6",
+            "content": "sha256:1162f7cb58bc57825349497bdd5fe49d3e0115ebc67c0d61fd426292956fecc2",
+            "locator": {
+              "kind": "symbol",
+              "name": "_transport_safe_git_diagnostic"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "NUL-framed records discard empty separators without whitespace normalization.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "deaa1f6368798c9ebd5f833612904ee7b7cadfc6",
+            "content": "sha256:3c4a4ed949c852ad0f0f256f43022b344036da532fed5c001d533fb8b366946f",
+            "locator": {
+              "kind": "symbol",
+              "name": "_nul_records"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

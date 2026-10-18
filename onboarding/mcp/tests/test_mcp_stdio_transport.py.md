@@ -5,6 +5,11 @@
 The current source facts below replace the former operative inventory. The separately labelled superseded claims describe only the pre-repair card. Original paragraphs, dated closures, evidence and citation identities remain intact in the explicitly historical section; they grant no current call, restored route or fresh execution acceptance.
 
 - Current baseline test calls server_info.
+- The carryover stdio case now uses the actual converted `_converted_world` configuration and `asdict(selection)`, retaining real pipes, CALL_TIMEOUT, successful would-carryover and the exact auto-carry count assertion. The old fixture helper below is historical, not the current carrier.
+
+## Evidence
+
+- The real converted fixture feeds the stdio plan and preserves its success, state and count assertions. [2]
 
 ### Superseded inventory
 

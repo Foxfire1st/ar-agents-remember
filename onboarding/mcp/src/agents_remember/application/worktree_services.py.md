@@ -34,8 +34,9 @@ Since MIK-R25 the bundle also binds `review_artifact_cleanup=ReviewArtifactClean
 Since MIK-R09 the bundle also binds `knowledge_gate=KnowledgeGate()` (`application/knowledge_gate/adapter.py`), which implements `worktrees.services.KnowledgeGatePort`: the closeout validator, direct landing, record landing and master and checkpoint landing reach the mandatory invariant gate through it without the worktree layer importing the application layer. It is the only place the port is bound; a converted route in a process built without it refuses (`GATE_UNBOUND`, rule 5), and an unconverted route never asks it.
 
 - **L37 (review R3-1).** `MemoryQualityAdapter` passes `knowledge_base=context_check_base(code_repository_root,
-  context)` into the drift context, so the closeout's memory-quality phases validate a converted working tree
-  against `HEAD`'s conversion when `HEAD` is unconverted, through the shared converted-base cache.
+  context)` into the drift context, giving a quality-service consumer the converted comparison base
+  when `HEAD` is unconverted. No production closeout caller of the retained phase helpers was found by the production AST/reference census with CLI and declared entry-point inspection;
+  adapter composition does not establish a closeout quality-phase run.
 
 ### Conventions
 
@@ -57,7 +58,7 @@ The rail-definition adapter is implemented; the complete R07/R08 production exec
 
 ### CCR private preparation boundary
 
-The default application bundle installs `PreparedCloseoutContinuation` and `PreparedMemoryCertificationAdapter` explicitly. This supplies production memory/finalization composition through the existing service ports; binding the adapters neither bypasses certification nor establishes a successful execution.
+The default bundle no longer installs prepared closeout continuation or prepared-memory certification adapters. It still composes provider lifecycle, memory quality, citation guarding, certification rail definitions, knowledge validation with `GitBaseConverter`, structural crossing, worklist recomputation, the knowledge gate, review-artifact cleanup and the optional leaf-agent archive port. Composition is not a certification result.
 
 
 - The current `build_default_worktree_services` boundary implements the preparation contract above. [1]
@@ -72,6 +73,11 @@ supply `LeafAgentArchive(config)`; a bundle built without it reports `not-bound`
 `archive_terminal_agents` rather than inventing a fallback.
 
 ## Evidence
+
+Inherited numbered findings [1] retain their exact wording and full targets as historical custody where their candidate9 owner is retired or their account conflicts with the current route. They are not evidence that an absent legacy owner still executes. No guarantee is retired by this proposal; parent disposition remains required. The source-bound current account below is separate.
+
+- Default worktree services retain converted validation, crossing and gate ports without prepared continuation/certification adapters. [14]
+
 
 ### Docs References
 
@@ -108,7 +114,7 @@ The cited source establishes the current contracts and boundaries described abov
 
 - The canonical binding owner installs the explicit service bundle. [9]
 
-- The closeout's quality phases get the converted-base port. [10]
+- MemoryQualityAdapter supplies the converted comparison-base port to quality-service consumers; its composition is not evidence that closeout runs the retained quality-phase helpers. [10]
 
 ### Cross-Repo References
 

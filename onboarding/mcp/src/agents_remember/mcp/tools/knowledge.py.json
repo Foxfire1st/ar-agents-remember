@@ -22,11 +22,10 @@
     {
       "anchor": {
         "blob": "fc2d0bbf62dc43a310ff186f46bbddba278c1744",
-        "content": "sha256:ddb05887e5081d80b421cf278570e732bae9de72d74d80461d14a47497e0f500",
+        "content": "sha256:07a919e5a76955bf567e050bd06271b5225b878a140b55d8693636ea7ee29e1b",
         "locator": {
-          "end": 1029,
-          "kind": "line_range",
-          "start": 987
+          "kind": "symbol",
+          "name": "_integrity_answer"
         }
       },
       "id": "RLZ-C0EV68",

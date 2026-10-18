@@ -10,7 +10,7 @@ Pin occurrence-scoped actionable-drift dismissal and conservative native source-
 
 ## Code Commentary
 
-Legacy and converted drift fingerprints cover complete actionable findings rather than sample, count or clock alone. Clicks capture the published fingerprint; old acknowledgement rows adopt a first fingerprint once without resurfacing. Failed/partial source censuses mutate no dismissal bytes while valid changed findings may still publish. Healthy findings and proved-deleted branches end only their occurrences; a missing snapshot alone does not prove branch disappearance. ASGI click/restart tests preserve acknowledgements until changed findings. Historical stale-session JSON is deliberately invalid cleanup input, not a current attention kind. Large native-ref/dismissal fixtures assert bounded retained rows, not a new execution or scalability certification.
+Converted drift fingerprints cover complete actionable findings rather than sample, count or clock alone. Clicks capture the published fingerprint; old acknowledgement rows adopt a first fingerprint once without resurfacing. Failed/partial source censuses mutate no dismissal bytes while valid changed findings may still publish. Healthy findings and proved-deleted branches end only their occurrences; a missing snapshot alone does not prove branch disappearance. ASGI click/restart tests preserve acknowledgements until changed findings. Historical stale-session JSON is deliberately invalid cleanup input, not a current attention kind. Large native-ref/dismissal fixtures assert bounded retained rows, not a new execution or scalability certification.
 
 ## Evidence
 

@@ -1,18 +1,17 @@
 {
   "admission": {
     "criteria": [
-      "guarded_by_test",
-      "prevents_costly_mistake"
+      "guarded_by_test"
     ],
-    "justification": "A dropped or coerced group entry silently shortens an item to one source, which is exactly how a row that answers the worklist stops answering the gate; the six-shape case and the valid empty-map control hold both sides."
+    "justification": "The malformed-group cases prove the refusal, and the empty-map case proves the mapping is not refused for being empty."
   },
-  "applicability": "Every identicalChanges mapping a gate entry reads from a leaf worklist run.",
+  "applicability": "Every worklist run's identicalChanges mapping read for a leaf on a converted memory worktree.",
   "conditions": [
-    "The entry reads a run it was handed, complete or not: a malformed map is refused by name by both consumers."
+    "The run is the one the entry judges; its groups are read by the single strict reader."
   ],
   "exclusions": [
-    "A genuine empty mapping is valid and means no identical copies.",
-    "The worklist's own grouping and the writer's row sources are unchanged."
+    "A genuine empty mapping is valid and yields one-source items.",
+    "The closeout contributes the attestation requirement, not a parser of its own, after 260928-MIK-L56 removed the validator."
   ],
   "id": "INV-2FA2B5",
   "origin": {
@@ -26,9 +25,9 @@
     "leaf": "260928-MIK-L175",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-invariant/v1",
-  "statement": "A worklist run's identicalChanges that is not a mapping of representative source paths to lists of source paths is refused by name by both gate entries, never shortened into ungrouped items; a genuine empty mapping stays valid.",
+  "statement": "A worklist run's identicalChanges that is not a mapping of representative source paths to lists of source paths is refused by name by the memory-quality gate, and by the closeout through the memory-quality attestation it requires, never shortened into ungrouped items; a genuine empty mapping stays a valid empty map.",
   "status": "proposed",
   "supersedes": []
 }

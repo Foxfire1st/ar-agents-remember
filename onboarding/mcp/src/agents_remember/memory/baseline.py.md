@@ -67,11 +67,7 @@ created, and it refuses — with the recorded-value name in the message — when
 
 The code source-branch commit is resolved once. The fixed adoption subject is passed through
 `render_memory_content_message`, so the resulting memory commit carries that exact `Code-Commit`
-trailer. Content staging excludes the shared memory-content policy rather than one inline name:
-`commit_if_dirty(..., exclude_paths=MEMORY_CONTENT_EXCLUDES)` carries `("memory.md", "bootstrap")` on
-the call that actually stages. That last half is load-bearing and is why the constant is imported
-rather than spelled here: `commit_if_dirty` re-stages the whole worktree, so an exclusion applied to a
-bare `git add` *before* it is inert and `bootstrap/` scaffolding lands in the baseline commit anyway.
+trailer. Content staging applies the shared `MEMORY_CONTENT_EXCLUDES` in `_stage_for_commit` on the private index and force-removes excluded entries from that staged tree. The exclusion rides the actual staging call: filtering an earlier unrelated `git add` is not enough. `commit_if_dirty` is no longer this file’s adoption path; `_adopt_validated_converted_tree` publishes exactly the privately staged, validated tree.
 The returned bootstrap contains `memoryContentCommit` and best-effort `ledgerCache`, with no
 ledger-only commit.
 
@@ -122,8 +118,7 @@ cache computation, while the shared Git module owns content staging.
 - Repeating adoption on converted memory with readable attributed history returns
   `already-adopted` without another commit. An unconverted root is refused first,
   even when attributed history exists.
-- **Memory-root-level `bootstrap/` is excluded from the baseline commit, not deleted from the worktree; `onboarding/bootstrap/` audit artifacts are retained unless removed before adoption.** The exclusion
-  must ride the staging call; a bare `git add` before `commit_if_dirty` is inert.
+- **Memory-root-level `bootstrap/` is excluded from the baseline commit, not deleted from the worktree; `onboarding/bootstrap/` audit artifacts are retained unless removed before adoption.** The exclusion must ride `_stage_for_commit` on the private staging index and remain absent from the validated immutable tree.
 - **The worktree's own index is never written before validation passes.** Prepare, stage and tree
   commands of the owned interval address the private copy; only the `.gitignore` file guard is kept,
   and only while its bytes are provably ours.
@@ -135,6 +130,13 @@ cache computation, while the shared Git module owns content staging.
 No new file-local follow-up is established by this documentation pass.
 
 ## Evidence
+
+Inherited numbered findings [9] retain their exact wording and full targets as historical custody where their candidate9 owner is retired or their account conflicts with the current route. They are not evidence that an absent legacy owner still executes. No guarantee is retired by this proposal; parent disposition remains required. The source-bound current account below is separate.
+
+
+- Private baseline staging applies the shared content exclusions and removes excluded entries before exact-tree validation/publication. \[21] [21]
+
+
 
 ### Docs References
 

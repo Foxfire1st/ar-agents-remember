@@ -10,7 +10,8 @@
   "members": [
     "INV-VH0QZ1",
     "INV-1V9ARB",
-    "INV-701KQ9"
+    "INV-701KQ9",
+    "INV-REPB8B"
   ],
   "origin": {
     "handoff": {
@@ -20,7 +21,7 @@
     "leaf": "260928-MIK-L110",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "routes": [
     "mcp/src/agents_remember/application",
     "mcp/src/agents_remember/cli",

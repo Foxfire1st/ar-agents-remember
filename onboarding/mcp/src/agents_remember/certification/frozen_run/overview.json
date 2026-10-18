@@ -60,47 +60,60 @@
       ]
     },
     "3": {
-      "note": "Production admission prepares and observes a candidate before compiling lifecycle recovery.",
+      "note": "Requested certification freezes the admitted repository profile, plans, registry and original provenance before gate execution; selected recovery reopens the exact retained frozen run without profile or journal rediscovery. Ordinary closeout is not this certification route.",
       "targets": [
         {
           "anchor": {
-            "blob": "89043a5e28ba717250523696bba193d211591458",
-            "content": "sha256:c17a03574fbe306a7ad0d15274068b70e5329d7b95e0ca404326d21add4d374a",
+            "blob": "c62c700c4a20f4dd0b17d1dd95a68c03136291af",
+            "content": "sha256:57b0c55c056e57a5a3b837cb4124732b561e6a5083a6ac698c80893dab6550fa",
             "locator": {
-              "kind": "symbol",
-              "name": "prepare_closeout_certification"
+              "end": 235,
+              "kind": "line_range",
+              "start": 192
             },
-            "path": "mcp/src/agents_remember/worktrees/integration/closeout/certification/admission.py"
+            "path": "mcp/src/agents_remember/worktrees/modules/quality/certification_records.py"
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "89043a5e28ba717250523696bba193d211591458",
-            "content": "sha256:9ed9efd9cefba14a231f8a50f694ca0e4fe25c9426eb7f138d2480c5f20812b3",
+            "blob": "b2f9f1624c63b2e7e58d9486c5d024f84fd7903e",
+            "content": "sha256:78142d0f1406b0d964d53a6bb55e9e74ce9d25082247c78e9b2f52758635a45a",
             "locator": {
-              "end": 145,
+              "end": 364,
               "kind": "line_range",
-              "start": 78
+              "start": 248
             },
-            "path": "mcp/src/agents_remember/worktrees/integration/closeout/certification/admission.py"
+            "path": "mcp/src/agents_remember/worktrees/modules/quality/gate.py"
           },
           "kind": "code"
         }
       ]
     },
     "4": {
-      "note": "Current candidate observation retains generated declarations, derivation snapshots and the admitted memory-tree binding.",
+      "note": "Retained authority models carry generated declarations, an optional admittedMemoryTree, input snapshots and provenance; model validation does not prove a current runtime observer or gate execution.",
       "targets": [
         {
           "anchor": {
-            "blob": "2d230cb750354844167da03003c3aeddd690ba3c",
-            "content": "sha256:2bdea6fbf0870fe0b1e0c1bacdb6478ea0e7d42a19ad43964b363ac8cedafbab",
+            "blob": "6ab4ab71571ac64abf87c30e3b7d035c6a32c632",
+            "content": "sha256:7ae5e00b717c41c98aa87865282ab6d660d85c06c09832e6dbf36438d98051d9",
             "locator": {
               "kind": "symbol",
-              "name": "observe_certification_candidate"
+              "name": "CandidateAuthorityEnvelope"
             },
-            "path": "mcp/src/agents_remember/worktrees/integration/closeout/certification/observation.py"
+            "path": "mcp/src/agents_remember/certification/frozen_run/authorities.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6ab4ab71571ac64abf87c30e3b7d035c6a32c632",
+            "content": "sha256:559e1df169602b1656ad1181fd600f04819e03855aae3795a5b5b9a468e06556",
+            "locator": {
+              "kind": "symbol",
+              "name": "CandidateAuthorityRecords"
+            },
+            "path": "mcp/src/agents_remember/certification/frozen_run/authorities.py"
           },
           "kind": "code"
         }

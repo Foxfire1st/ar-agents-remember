@@ -8,7 +8,7 @@
 
 - Say-once refusal checks message, detail and nextAction before real conversion and successful first adoption; direct naming separately asserts existence and omission of one known statement after fixture conversion, not executed general no-text proof. [15]
 
-- The prepared-closeout source case checks its quality-phase converted comparison base. [16]
+
 
 ## Purpose
 
@@ -30,14 +30,14 @@
   - a changed body is left stale for the curator.
 - `test_memory_quality_reads_the_converted_format`: the fixture asserts `ok=false` with one
   `R22.6-carried-stale` finding at the deleted-path sidecar. `knowledge.converted` remains present,
-  legacy-format checks are `not-applicable-converted`, and the retired drift check is absent.
+  retired history-order, range-resolution and claim-reopen keys are absent, every remaining check lacks `not-applicable-converted`, and the retired drift check is absent.
   These are current static assertions, not a fresh execution result.
 - `test_an_unconverted_leaf_is_refused_with_the_conversion_step_on_any_line`: refusal before the official line converts names `agents-remember knowledge-convert`; afterwards it also names the crossing sync and `worktree_sync`. A converted worktree is not locked.
 - `test_memory_init_creates_new_memory_in_the_text_format_only`: a new root gets the marker with exactly
   `LAYOUT_MARKER_TEXT` (`created`); a root holding a legacy card is `unconverted-existing-memory` and gets
   no marker.
 - **L37: the census, card authoring and converted-candidate checks.** The retained case inventory
-  is listed below; the current module has 19 top-level test definitions, including its two integration-marked first-conversion cases; this is not an executed case total:
+  is listed below; the current module has 18 top-level test definitions, including its two integration-marked first-conversion cases; this is not an executed case total:
   - `test_the_census_compares_a_converting_leaf_with_its_converted_base`: a converted card's source comes from
     the converted format, the conversion itself is no task edit, and a sidecar counts only beyond its anchors'
     mechanical fields (MIK-R30 rule 3);
@@ -64,8 +64,7 @@
     when a second table starts inside one and either holds citations; nothing is written; a card whose
     tables hold no citations is left alone; a body row of single dashes is a placeholder.
 
-  - `test_the_prepared_closeout_hands_its_quality_phase_the_converted_base` checks the
-    prepared-closeout quality-phase converted comparison base.
+
 
   The existing `memory_init` case also asserts the L24 nit: the failed-Git early return carries `layoutMarker`.
   `test_memory_quality_reads_the_converted_format` also asserts the final catalog's drift item on a converted
@@ -119,21 +118,44 @@ No cross-repo boundary is crossed by this file.
 
 ### Current Source-Inspection References
 
-- Historical former both-format/inline-knowledge read account only; the current direct reader names converted records and asserts the limited omission described above. [1]
+
+- Direct read_ar_files names converted records, reports source existence and omits the fixture Alpha adds one. statement; no general no-text or registered-handler execution is claimed. [1]
+
+
 - The reference check and fixer. [2]
+
+
 - The rule 9 refusal. [4]
+
+
 - `memory_init` in the text format. [5]
+
 - Its lane row. [6]
+
 - The census compares a converting leaf with its converted base. [7]
+
 - Citation rows author a converted card's sidecar with resolved anchors. [8]
+
 - One converted card is fixed by its document alone; unconverted fixing refuses with the conversion step. [9]
+
+
 - The fixer checks every card first and refuses by name. [11]
+
+
 - A leftover evidence line is refused, and only the named card loses references. [12]
+
+
 - Two tables with no blank line between them are refused by name. [14]
 
 
+
+
 - Converted quality asserts ok=false for one deleted-path carried-stale refusal; catalog drift is fail/1. [3]
+
+
 - The converted HEAD base distinguishes carried deleted/moved-path refusals from new anchors; no-base migration debt also refuses and closeout quality agrees. [10]
+
 - `test_one_documents_fix_reports_its_own_stale_references_and_the_status_counts` asserts selected-document stale scope and, with a prepared producer result, delivered counts, the first 10 stale entries and exclusion of authoring/rewritten-sidecar material; it has no log-readback or custody assertion. [13]
 - Current source delta inspected statically: Repair converted quality/catalog outcome, carried/new classifications and 10-entry delivery; preserve L46 and content-only advisory cases. [17]
+
 - Separate implementation custody path: producer whole/result projection, finalized whole-result detail input, redaction, destination and size/budget/write controls; not a log-readback assertion in the conversion test. \[18] [18]

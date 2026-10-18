@@ -14,7 +14,7 @@ Rule 3 keeps three surfaces reading legacy contracts without refusal: status sho
 
 Admission refuses a published legacy contract with status, reason, the raw cell where the read degraded, and the abandon-first way out projected to a dry-run abandon call, never asking a developer decision. A leaf start under a disabled series names the series escape rather than an edge correction.
 
-Rule 4 refuses without the configured-authority check across the lifecycle layer: closeout preview and apply, sync, integrate, checkpoint landing, record landing, pause, cleanup, finalize, reopen and reopen-series, and the operation-control entry, plus direct-landing preview and apply raising the same status with the same detail. The five knowledge-gate sites answer the refusal instead of nothing-to-judge, and the behind-entry gate realizations refuse by name. Tool-level closeout, reopen, cleanup, and finalize cases close the module on published legacy contracts.
+Rule 4 refuses without the configured-authority check across the lifecycle layer: closeout preview and apply, sync, integrate, checkpoint landing, record landing, pause, cleanup, finalize, reopen and reopen-series, and the operation-control entry, plus direct-landing preview and apply raising the same status with the same detail. The four retained knowledge-gate sites (landing_gate_refusal, leaf_cutover_refusal, leaf_gate_refusal and direct_gate_verdict) answer the refusal instead of nothing-to-judge, and the behind-entry gate realizations refuse by name. Tool-level closeout, reopen, cleanup, and finalize cases close the module on published legacy contracts.
 
 ## Granted fixture, disabled-memory refusal
 
@@ -23,25 +23,40 @@ Direct tool/apply probes seed their canonical leaf grant rather than enable a se
 ## Evidence
 
 
-- Rules 3-4 scope and the companion-module split [1]
+
+- Retained disabled-memory tests separate readable surfaces, admission refusal and knowledge-gate refusal. [1]
 
 
-- Rule 3 readable surfaces: status, degraded read, attach [2]
 
 
-- Admission refusal with abandon-first projection [3]
+- Rule 3 retains status and attach answers, including legacy series and unknown-cell contracts. [2]
 
 
-- Abandon way out and abandon's own mode-independent refusals [4]
 
 
-- Disabled series names the series escape [5]
+- Admission refusal retains the abandon-first way out and names the raw unknown cell. [3]
 
 
-- Lifecycle-layer refusals without authority, incl. preview-equals-apply [6]
 
 
-- Knowledge-gate and behind-entry-gate refusals by name [7]
+- Abandon retains dry/real escape and its own legacy-contract refusals. [4]
 
 
-- Tool-level closeout, reopen, cleanup, finalize refusals [8]
+
+
+- A disabled series names the new-master escape. [5]
+
+
+
+
+- Named lifecycle routes refuse disabled-memory authority; the direct-landing case compares preview with apply. [6]
+
+
+
+
+- Knowledge gates and behind-entry sites name disabled-contract refusal rather than nothing-to-judge. [7]
+
+
+
+
+- Closeout and public reopen/cleanup/finalize guards retain named disabled-contract refusals. [8]

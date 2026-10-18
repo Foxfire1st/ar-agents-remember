@@ -192,12 +192,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "771d1ca849e63161968eb0f54325d6f5a4fcd0e2",
+            "blob": "58da7fa42d298082dc58aa54d76c04312d8559fd",
             "content": "sha256:28b595c83a96c7b18d9bc02829adf4efa4312501045f8ca644461be681b58613",
             "locator": {
-              "end": 412,
+              "end": 411,
               "kind": "line_range",
-              "start": 394
+              "start": 393
             },
             "path": "dashboard/src/data/store.ts"
           },

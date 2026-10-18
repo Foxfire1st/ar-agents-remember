@@ -1,0 +1,22 @@
+{
+  "path": "docs/guides/carryover-from-branch.md",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The source describes the current instructions summarized above.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d33ede4a96fc626b69d2523b1315d4e92881451b",
+            "content": "sha256:dd0184db95cf250e4de521164f0e91d25663b510392a527b828f5fb7e976fd4d",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -10,7 +10,7 @@ Guards multi-document citation fix parity, selection limits and CLI/registration
 
 ## Code Commentary
 
-Cases compare final bytes between a finite document list and one call per card on converted memory through `citation_fix_tool` with fixture scope resolution, and on unconverted memory through the lower-level fixer with `expected_snapshot`; ordinary public legacy-memory writes are not admitted by those lower-level assertions. The old public missing-snapshot case is removed because public legacy-format refusal precedes snapshot checks, while converted document lists need no snapshot; the lower-level legacy dry-run case leaves Markdown bytes unchanged, and its selection-isolation case leaves the unselected card untouched. Shape refusals happen before tree reads; maximum size derives from MAX_CURATOR_SOURCE_CANDIDATES. The lower-level legacy mixed-selection case checks a rewritten sibling despite a missing member; the converted missing-card case checks the returned refusal/count, not successful sibling bytes. Repeated CLI --document preserves the same selection. These are executable assertion contracts, not a new claim that this Curator ran them.
+Cases compare final bytes between a finite list and one call per card on converted memory through `citation_fix_tool` with fixture scope resolution. Shape and size refusals precede source reads; the bound derives from MAX_CURATOR_SOURCE_CANDIDATES. The converted missing-card case checks refusal/count, not successful sibling bytes. Returned authoring refusals preserve malformed sidecar bytes and are excluded from the subsequent refresh, while valid selected siblings refresh. Repeated CLI `--document` preserves selection; registration exposes `documents`. These are assertion contracts, not fresh execution evidence.
 
 ## Evidence
 
@@ -19,7 +19,11 @@ No Domain Documentation sources are configured; the evidence below is repository
 
 ### Current Source-Inspection References
 
+
 - List-shape and bound assertions precede source reads. [1]
-- Lower-level legacy list/single parity, dry-run Markdown-byte preservation and selection isolation are asserted; this is not public legacy admission. [2]
-- Converted list/single byte parity and a single missing-card refusal/count are asserted; successful sibling bytes are not checked by the mixed-selection case. [3]
+
+
+- Converted list/single parity and missing-card refusal/count remain; returned refusals preserve malformed bytes and are excluded from refresh. [3]
+
+
 - Repeated CLI selection and whole-result output from a mocked tool payload are checked. [4]

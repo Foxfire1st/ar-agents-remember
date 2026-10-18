@@ -178,6 +178,35 @@
         }
       ]
     },
+    "19": {
+      "note": "Registration exposes converted worktree-only carryover and finite citation selectors without retired commit-message, caller-exclude or expected-snapshot arguments.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "05b93967efc8acd8b05212ede207f1c21fd7773a",
+            "content": "sha256:7f6968df707f997841214e0584cc1d384d1aa87e5188b83ee713ec6fda34723b",
+            "locator": {
+              "end": 200,
+              "kind": "line_range",
+              "start": 145
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "05b93967efc8acd8b05212ede207f1c21fd7773a",
+            "content": "sha256:431871dbe50a80e970f6cc05678e73831050e086faf1d97952980be1351cc427",
+            "locator": {
+              "end": 78,
+              "kind": "line_range",
+              "start": 58
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
     "2": {
       "note": "The payload builders for the carryover plan and report-filing apply pair.",
       "targets": [
@@ -217,7 +246,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9eef4f32926a879ed8247e97f14685ba3a469031",
+            "blob": "8cc37ec945797a2390b14f47bdce27f8fe5816d5",
             "content": "sha256:33ec530cd7ea134f868737123e2ef344fae4d4c7609e21308019028ba0037442",
             "locator": {
               "kind": "symbol",
@@ -247,7 +276,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9eef4f32926a879ed8247e97f14685ba3a469031",
+            "blob": "8cc37ec945797a2390b14f47bdce27f8fe5816d5",
             "content": "sha256:9d8d695f42fefc4b5e4d8e2094742e6eb75f0700834a0beee3387672628132f3",
             "locator": {
               "kind": "symbol",
@@ -272,12 +301,12 @@
         },
         {
           "anchor": {
-            "blob": "9eef4f32926a879ed8247e97f14685ba3a469031",
+            "blob": "8cc37ec945797a2390b14f47bdce27f8fe5816d5",
             "content": "sha256:7eaec590e90cef9afda608cb18f4d74465b0695311c5b03d70bb5de17e1d7cf7",
             "locator": {
-              "end": 915,
+              "end": 784,
               "kind": "line_range",
-              "start": 896
+              "start": 765
             },
             "path": "mcp/src/agents_remember/application/memory_tools.py"
           },

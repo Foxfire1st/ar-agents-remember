@@ -49,6 +49,7 @@ and provider watcher reads are external control-plane I/O, and a failed provider
 must not stop the dashboard from projecting the rest of the workspace.
 
 `project_and_write` receives ProjectionTickState(input_state, provider_refresher, landing_state), with a cold default. It resolves observer_root, optionally refreshes provider state, and reads input state through ProjectionReaders(repo_surfaces, landing_state) plus RefreshPass. WorkspaceStructure and AnalyticalInputs pass canonical task_sources/host_activity, worktrees/providers, analytics, engine facts, closeout and source-reconciled acknowledgements to the sole reducer join. No lifecycle/series/pickup/expectation/gate fold or post-reducer dismissal prune remains.
+The retained repo reader gathers route coverage and ledger using each scope's memory root and code root; no verification-age reader is restored. The three long-lived collaborators remain one frozen tick object, with a cold-read default when no retained state is supplied. Provider refresh and landing observations retain their separate owners.
 
 Warning measures summary previews only; full bodies stay on demand. Semantic changes replace each projection file individually; pair-atomic publication/all-slot rollback are not promised. Projector owns tuple-before-notify.
 
@@ -62,8 +63,7 @@ feeds `read_providers` and `read_setup_progress_nodes`, so contract-inactive pro
 produce provider nodes or provider-down attention. `active_enclosure_worktree_groups(...)`
 feeds `read_engine_process_facts`, avoiding git/status probes for historical enclosure contracts
 while preserving non-terminal close/integration work in the Engine Room. The same task also wraps
-the per-repo analytical read behind `_gather_repo_surfaces_cached`, with a short TTL so sidecar
-staleness, route coverage, and ledgers do not re-walk every memory tree on every projection tick.
+the per-repo analytical read behind `_gather_repo_surfaces_cached`, with a short TTL so route coverage and ledgers do not re-walk every memory tree on every projection tick.
 
 **Task 33:** `project_and_write` also passes `active_worktree_groups=inputs.active_worktree_groups`
 inside `WorkspaceStructure`, so the served `WorkspaceProjection.activeWorktreeGroups` reuses the exact
@@ -99,6 +99,7 @@ The recurring projection path uses projected status plus the latest landing snap
 - **Acknowledgement cleanup:** native per-kind complete source observations, not reduced lifecycle/task status, decide recovery/removal/fingerprint change. Partial failure is not health.
 - **Host intake:** startup or HOST_ACTIVITY invalidation only; periodic heartbeat/full healing does not read the host.
 - **Repo surfaces:** retain their cache/TTL rather than being reread on every event.
+- **Slow retained surfaces:** `_gather_repo_surfaces_cached` keeps route coverage/ledger under the 120-second TTL. Declared invalidation, admission changes and pending task-refresh retry still control other acquisitions; closeout queues are retained input, not a restored gate/pickup domain.
 - **Engine status probes are active-enclosure scoped:** `read_engine_process_facts` receives only
   non-terminal enclosure groups, preventing historical contracts from causing a long git/status tail.
 - **Contracts refresh only when task inputs require it, and shared snapshots are read-only:**
@@ -107,6 +108,22 @@ The recurring projection path uses projected status plus the latest landing snap
   module contract cache. Consumers must not mutate shared `WorktreeContract` values.
 
 ## Evidence
+
+
+- Projection assembly forwards only retained input fields and closeout queues. [13]
+
+
+- The configured-root repository cache retains route coverage and ledger under its TTL. [14]
+
+
+- Input read refreshes admitted domains and separately reads closeout queues on every input pass. [15]
+
+
+
+
+- The repository cache stores route coverage and ledger; the projection edge forwards no sidecar age input and retains closeout queues. [16]
+
+
 
 ### Repo-Internal References
 
@@ -121,7 +138,7 @@ The recurring projection path uses projected status plus the latest landing snap
 | The atomic-write design requirement and serving placement are specified in §2.5 and §5. | `### 2.5 The observer and its projections`; `## 5. Placement and Packaging` | docs/design/observable-lifecycle.md:241-251; docs/design/observable-lifecycle.md:323-338 |
 | The tick calls the TTL-gated provider refresher before `ProjectionInputState.read`, whose delegated `_refresh_providers` performs provider reads. | "tick.provider_refresher.maybe_refresh("; "inputs = state.read("; `_refresh_providers` | mcp/src/agents_remember/serving/projections/projection_inputs.py:319-338; mcp/src/agents_remember/serving/projections/projection_store.py:226-226; mcp/src/agents_remember/serving/projections/projection_store.py:228-228 |
 | `ProjectionInputState.read` owns the delegated domain refreshes and returns the complete input bundle. | "def read("; "return ProjectionInputs" | mcp/src/agents_remember/serving/projections/projection_inputs.py:214-264 |
-| The repo-surface cache memoizes sidecar staleness, route coverage, and ledger reads for a short TTL keyed by configured repo paths. | "_repo_surface_cache: dict[tuple[tuple[str"; "def _repo_surface_cache_key(config: McpRuntimeConfig) -> tuple[tuple[str"; "repo_surfaces=_gather_repo_surfaces_cached" | mcp/src/agents_remember/serving/projections/projection_store.py:87-87; mcp/src/agents_remember/serving/projections/projection_store.py:232-232; mcp/src/agents_remember/serving/projections/projection_store.py:349-349 |
+| The repo-surface cache memoizes route coverage and ledger reads under the 120-second TTL keyed by configured repo paths; sidecar verification-age input is absent. | "_repo_surface_cache: dict[tuple[tuple[str"; "def _repo_surface_cache_key(config: McpRuntimeConfig) -> tuple[tuple[str"; "repo_surfaces=_gather_repo_surfaces_cached" | mcp/src/agents_remember/serving/projections/projection_store.py:87-87; mcp/src/agents_remember/serving/projections/projection_store.py:232-232; mcp/src/agents_remember/serving/projections/projection_store.py:349-349 |
 | Admission policy is centralized in the worktree provider admission helper. | `admitted_worktree_groups` | mcp/src/agents_remember/observer/worktree_provider_admission.py:24-45 |
 
 

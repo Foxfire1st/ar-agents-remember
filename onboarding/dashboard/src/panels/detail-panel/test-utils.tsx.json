@@ -3,23 +3,12 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "The shared fixture builders.",
+      "note": "The retained shared fixture builders include seedProjection, seedPromotedLeaf and stubCounters; the removed gallery seed helper is not a current owner.",
       "targets": [
         {
           "anchor": {
-            "blob": "914288253ff65ecc63e3356c0dd4eeec0ff6afb1",
-            "content": "sha256:f574f97f02412800d9d57880d6478eb1d34116305712722ba7cd871dc1519c20",
-            "locator": {
-              "kind": "symbol",
-              "name": "seed"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "cc54d477f29632154125cbb3bcf40f7bac7adf9f",
-            "content": "sha256:33041dcd4a87175af00a265ea5ec1c72952ad15a3491e1db9673bda381047c69",
+            "blob": "73867f2ec1adccaa2d3c1bf66e8276fa77d8207d",
+            "content": "sha256:2ff148248e6cc47bb326c5c3f2dce006d6c5ae3c322af4e885c3db5f9b3f2e0d",
             "locator": {
               "kind": "symbol",
               "name": "seedProjection"
@@ -29,8 +18,8 @@
         },
         {
           "anchor": {
-            "blob": "cc54d477f29632154125cbb3bcf40f7bac7adf9f",
-            "content": "sha256:b80d86aad2a6acff5ec2bf8e99ddc745af677bd2b597d6e464d4e9e96bead78a",
+            "blob": "73867f2ec1adccaa2d3c1bf66e8276fa77d8207d",
+            "content": "sha256:94084aa8e3c6b5494c25c2a0c6661587bf9dae2bcca46b3813d6e86c22a9f78f",
             "locator": {
               "kind": "symbol",
               "name": "seedPromotedLeaf"
@@ -40,23 +29,11 @@
         },
         {
           "anchor": {
-            "blob": "cc54d477f29632154125cbb3bcf40f7bac7adf9f",
-            "content": "sha256:37db435a7b8702aaf12a07c4f3d23be3874fb60901ba6a630b4f0bab8925b572",
+            "blob": "73867f2ec1adccaa2d3c1bf66e8276fa77d8207d",
+            "content": "sha256:46fec41e97022e6e5c6b1d32fe8c3bb5ae96c5d1f24f988e535741577cb8b423",
             "locator": {
               "kind": "symbol",
               "name": "stubCounters"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "cc54d477f29632154125cbb3bcf40f7bac7adf9f",
-            "content": "sha256:2edb1d2b8c2d8ffc7a33eadc0696477e902ec024bdb4cac2296299e39eee72a6",
-            "locator": {
-              "end": 302,
-              "kind": "line_range",
-              "start": 273
             }
           },
           "kind": "code"
@@ -68,12 +45,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "914288253ff65ecc63e3356c0dd4eeec0ff6afb1",
+            "blob": "73867f2ec1adccaa2d3c1bf66e8276fa77d8207d",
             "content": "sha256:9c449f7efc17eecc1778d5a46b838e043afc3f2bf545d4ff559e1fc97e130e7e",
             "locator": {
-              "end": 620,
+              "end": 594,
               "kind": "line_range",
-              "start": 454
+              "start": 428
             }
           },
           "kind": "code"

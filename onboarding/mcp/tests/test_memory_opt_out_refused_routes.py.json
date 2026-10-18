@@ -3,7 +3,7 @@
   "proves": [
     {
       "anchor": {
-        "blob": "7636fca16b5ef52f0475f47115335d21b3094cc0",
+        "blob": "4449dec123dfc5349be48d948319f6a437f8f256",
         "content": "sha256:7fd67179e3e04aac48c980da9cec80db4504b6df9d29d7af1b7cf16ab7a8cc9a",
         "locator": {
           "kind": "symbol",
@@ -22,14 +22,37 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "Rules 3-4 scope and the companion-module split",
+      "note": "Retained disabled-memory tests separate readable surfaces, admission refusal and knowledge-gate refusal.",
       "targets": [
         {
           "anchor": {
-            "blob": "89cda38de3084e4cbbe2521a9c668510f6314878",
-            "content": "sha256:9e665306e703209fa0765ef44cf37b8d96281cf3ae6ec7da63512f0ba5cca33d",
+            "blob": "4449dec123dfc5349be48d948319f6a437f8f256",
+            "content": "sha256:baeabac18381093741e03d3adb7908dd834494553136bc329a45717ad6c34731",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "test_status_answers_on_a_legacy_leaf_contract"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "4449dec123dfc5349be48d948319f6a437f8f256",
+            "content": "sha256:ee27a81caa5fe83ee015d46f3c33732d926eb06b769d2064b371a97be66456a4",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_admission_refuses_a_legacy_contract_with_the_way_out"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "4449dec123dfc5349be48d948319f6a437f8f256",
+            "content": "sha256:d156b39625a5d9929fd2e63cf6eaa0b010ff9402c1e74769d9b845212e57ee48",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_knowledge_gates_refuse_instead_of_nothing_to_judge"
             }
           },
           "kind": "test"
@@ -37,14 +60,48 @@
       ]
     },
     "2": {
-      "note": "Rule 3 readable surfaces: status, degraded read, attach",
+      "note": "Rule 3 retains status and attach answers, including legacy series and unknown-cell contracts.",
       "targets": [
         {
           "anchor": {
-            "blob": "89cda38de3084e4cbbe2521a9c668510f6314878",
-            "content": "sha256:9e665306e703209fa0765ef44cf37b8d96281cf3ae6ec7da63512f0ba5cca33d",
+            "blob": "4449dec123dfc5349be48d948319f6a437f8f256",
+            "content": "sha256:baeabac18381093741e03d3adb7908dd834494553136bc329a45717ad6c34731",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "test_status_answers_on_a_legacy_leaf_contract"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "4449dec123dfc5349be48d948319f6a437f8f256",
+            "content": "sha256:c8d1cd4fa2a1ebc5ab2add9ad3e1370e0180edb1b56981e0e42bb961e2b64977",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_status_answers_on_a_legacy_series_contract"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "4449dec123dfc5349be48d948319f6a437f8f256",
+            "content": "sha256:618c7f9ae8aa1df7d20f98bacea72a3ad062b9f7fba40093803c7f820c471240",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_status_answers_on_a_contract_read_as_disabled_from_an_unknown_cell"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "4449dec123dfc5349be48d948319f6a437f8f256",
+            "content": "sha256:91897f13dbdd1cd6e2e200f653dc2d5b582b13332b38c4afb9a85971e3970812",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_attach_answers_on_a_legacy_contract"
             }
           },
           "kind": "test"
@@ -52,14 +109,26 @@
       ]
     },
     "3": {
-      "note": "Admission refusal with abandon-first projection",
+      "note": "Admission refusal retains the abandon-first way out and names the raw unknown cell.",
       "targets": [
         {
           "anchor": {
-            "blob": "89cda38de3084e4cbbe2521a9c668510f6314878",
-            "content": "sha256:9e665306e703209fa0765ef44cf37b8d96281cf3ae6ec7da63512f0ba5cca33d",
+            "blob": "4449dec123dfc5349be48d948319f6a437f8f256",
+            "content": "sha256:ee27a81caa5fe83ee015d46f3c33732d926eb06b769d2064b371a97be66456a4",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "test_admission_refuses_a_legacy_contract_with_the_way_out"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "4449dec123dfc5349be48d948319f6a437f8f256",
+            "content": "sha256:3481e363a7684246ef5165b19abb09f6f3d8d5ace1ba7715aa8e470f77d12311",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_admission_names_the_raw_cell_read_from_an_unknown_cell"
             }
           },
           "kind": "test"
@@ -67,14 +136,26 @@
       ]
     },
     "4": {
-      "note": "Abandon way out and abandon's own mode-independent refusals",
+      "note": "Abandon retains dry/real escape and its own legacy-contract refusals.",
       "targets": [
         {
           "anchor": {
-            "blob": "89cda38de3084e4cbbe2521a9c668510f6314878",
-            "content": "sha256:9e665306e703209fa0765ef44cf37b8d96281cf3ae6ec7da63512f0ba5cca33d",
+            "blob": "4449dec123dfc5349be48d948319f6a437f8f256",
+            "content": "sha256:15448cec57973fa5ce70158bb7575f1c54a5b13d10f679f8a3c6b3b7abb1a1e9",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "test_abandon_admits_dry_and_real_then_restarts_external"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "4449dec123dfc5349be48d948319f6a437f8f256",
+            "content": "sha256:067ea705746eae44cf12d226df340c1eff07970b8ec6da7d4190f78f367eb298",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_abandon_keeps_its_own_refusals_on_a_legacy_contract"
             }
           },
           "kind": "test"
@@ -82,14 +163,15 @@
       ]
     },
     "5": {
-      "note": "Disabled series names the series escape",
+      "note": "A disabled series names the new-master escape.",
       "targets": [
         {
           "anchor": {
-            "blob": "89cda38de3084e4cbbe2521a9c668510f6314878",
-            "content": "sha256:9e665306e703209fa0765ef44cf37b8d96281cf3ae6ec7da63512f0ba5cca33d",
+            "blob": "4449dec123dfc5349be48d948319f6a437f8f256",
+            "content": "sha256:e8a3a29d40ba586e507905dcf7e1a49f9f321be5ddb3c841c7ac27d463fb7861",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "test_leaf_start_under_a_disabled_series_names_the_new_master_escape"
             }
           },
           "kind": "test"
@@ -97,14 +179,147 @@
       ]
     },
     "6": {
-      "note": "Lifecycle-layer refusals without authority, incl. preview-equals-apply",
+      "note": "Named lifecycle routes refuse disabled-memory authority; the direct-landing case compares preview with apply.",
       "targets": [
         {
           "anchor": {
-            "blob": "89cda38de3084e4cbbe2521a9c668510f6314878",
-            "content": "sha256:9e665306e703209fa0765ef44cf37b8d96281cf3ae6ec7da63512f0ba5cca33d",
+            "blob": "4449dec123dfc5349be48d948319f6a437f8f256",
+            "content": "sha256:399562de7abce35a5924d7db85ff60aa03809f349efd596525cd186ef2852561",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "test_closeout_preview_refuses_without_authority"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "4449dec123dfc5349be48d948319f6a437f8f256",
+            "content": "sha256:bceffed5876504bbdae18cb06143eb291d737fabc23d1367a10f01314049c01d",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_closeout_apply_refuses_without_authority"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "4449dec123dfc5349be48d948319f6a437f8f256",
+            "content": "sha256:11b01db7662a63b86de47d42a74fc516ce2509af7e0d7d0d93ab309cebdee15a",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_sync_refuses_without_authority"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "4449dec123dfc5349be48d948319f6a437f8f256",
+            "content": "sha256:b22bfca38f5b5857eddae22d052480329243088cdaca69a09c80ad2c70955d13",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_integrate_refuses_without_authority"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "4449dec123dfc5349be48d948319f6a437f8f256",
+            "content": "sha256:b26e77d565516eeaaaba19467fccfdc0114bb00cfef82a29810bef65e04a90c2",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_checkpoint_landing_refuses_without_authority"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "4449dec123dfc5349be48d948319f6a437f8f256",
+            "content": "sha256:b8fa1c6942aaf111dfb402e949114aadc84bd697e530c9cc3516ea7fdeb2a6e4",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_record_landing_refuses_without_authority"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "4449dec123dfc5349be48d948319f6a437f8f256",
+            "content": "sha256:34049b7b2914fe94aa05b0631ded62ecefb5a2a62955a5b78a5d79cd024acb68",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_pause_refuses_without_authority"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "4449dec123dfc5349be48d948319f6a437f8f256",
+            "content": "sha256:c468b7c6c962582bc30abd47d279101fa91a7516423cc6d92335efb293ca5945",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_cleanup_refuses_without_authority"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "4449dec123dfc5349be48d948319f6a437f8f256",
+            "content": "sha256:bc7c06a788bf21695821b1cad4cfd171edf4c5db3f93e060d0180c678b2cfa7e",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_finalize_refuses_without_authority"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "4449dec123dfc5349be48d948319f6a437f8f256",
+            "content": "sha256:09984e74f8155054e14eb4d1109349676289a9305aeee961140beb6b584ed148",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_reopen_refuses_a_legacy_contract"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "4449dec123dfc5349be48d948319f6a437f8f256",
+            "content": "sha256:fc24ced4fd83087fc35791b1f5191a8cca974d3498109707c78f191ed76efee7",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_reopen_series_refuses_a_legacy_contract"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "4449dec123dfc5349be48d948319f6a437f8f256",
+            "content": "sha256:0f3eea2d342ffa805c95a7830689c2f59ec6f3ba94fad670a23ca0893e04cd93",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_operation_control_refuses_without_authority"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "4449dec123dfc5349be48d948319f6a437f8f256",
+            "content": "sha256:00ac33e3e714ced0ad2ad89bf79ac50765ae3d2a3e501588aac9085ef8b7310f",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_direct_landing_preview_equals_its_apply"
             }
           },
           "kind": "test"
@@ -112,14 +327,26 @@
       ]
     },
     "7": {
-      "note": "Knowledge-gate and behind-entry-gate refusals by name",
+      "note": "Knowledge gates and behind-entry sites name disabled-contract refusal rather than nothing-to-judge.",
       "targets": [
         {
           "anchor": {
-            "blob": "89cda38de3084e4cbbe2521a9c668510f6314878",
-            "content": "sha256:9e665306e703209fa0765ef44cf37b8d96281cf3ae6ec7da63512f0ba5cca33d",
+            "blob": "4449dec123dfc5349be48d948319f6a437f8f256",
+            "content": "sha256:d156b39625a5d9929fd2e63cf6eaa0b010ff9402c1e74769d9b845212e57ee48",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "test_knowledge_gates_refuse_instead_of_nothing_to_judge"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "4449dec123dfc5349be48d948319f6a437f8f256",
+            "content": "sha256:7fd67179e3e04aac48c980da9cec80db4504b6df9d29d7af1b7cf16ab7a8cc9a",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_behind_entry_gate_sites_refuse_a_disabled_contract"
             }
           },
           "kind": "test"
@@ -127,14 +354,59 @@
       ]
     },
     "8": {
-      "note": "Tool-level closeout, reopen, cleanup, finalize refusals",
+      "note": "Closeout and public reopen/cleanup/finalize guards retain named disabled-contract refusals.",
       "targets": [
         {
           "anchor": {
-            "blob": "89cda38de3084e4cbbe2521a9c668510f6314878",
-            "content": "sha256:9e665306e703209fa0765ef44cf37b8d96281cf3ae6ec7da63512f0ba5cca33d",
+            "blob": "4449dec123dfc5349be48d948319f6a437f8f256",
+            "content": "sha256:399562de7abce35a5924d7db85ff60aa03809f349efd596525cd186ef2852561",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "test_closeout_preview_refuses_without_authority"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "4449dec123dfc5349be48d948319f6a437f8f256",
+            "content": "sha256:bceffed5876504bbdae18cb06143eb291d737fabc23d1367a10f01314049c01d",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_closeout_apply_refuses_without_authority"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "4449dec123dfc5349be48d948319f6a437f8f256",
+            "content": "sha256:01cbd3834dc86ec50f8b9db9c929aeaa97c47815c6726b99d61bdcfd4a946385",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_reopen_tool_refuses_a_legacy_contract"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "4449dec123dfc5349be48d948319f6a437f8f256",
+            "content": "sha256:b31a0d7247a1a03b2b53fda467276e709eebf30022c9b5d57941afcacd780dbb",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_cleanup_tool_refuses_a_legacy_contract"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "4449dec123dfc5349be48d948319f6a437f8f256",
+            "content": "sha256:a4794a3e3f6238fd28aa8d885ef310f30d180741ebbfcdb77723c83ad61bdaf5",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_finalize_tool_refuses_a_legacy_contract"
             }
           },
           "kind": "test"

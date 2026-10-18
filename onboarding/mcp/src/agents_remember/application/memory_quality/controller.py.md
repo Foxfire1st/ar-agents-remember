@@ -202,19 +202,17 @@ worklist applies (both memory sides unconverted, which is every production leaf 
 
 ## 260928-MIK-L30 The Onboarding Gate Dispatch (MIK-R30 Rule 6)
 
-The leaf block of `_attach_curator_checklist` calls `_onboarding_refresh_gate(scope, inputs,
-response)` with one `_OnboardingGateInputs` value object (the census's and the gate's changed paths,
-the working paths, the accepted no-impact identities, and the run's own worklist document). It
-returns the repair and report-only findings of the leaf's onboarding gate:
+The leaf block of `_attach_curator_checklist` calls `_onboarding_refresh_gate(scope, inputs, response)`
+with one `_OnboardingGateInputs` value carrying the gate's traced paths, the working paths and the run's
+own worklist document; it returns the repair and report-only findings of the leaf's onboarding gate:
 
 - **Converted tree** (`leaf_onboarding_trace_sides(contract, memory_tree=<memory root>)` returns sides):
   `worktree_code_blobs(contract.code_worktree, traced_paths)` first captures the code candidate's blobs,
-  including absent paths. The gate also reads the run's identical-copy groups with
-  `_worklist_identical_changes` and hands the blobs and the groups together through one
-  `OnboardingTraceInputs` (MIK-R177). A run that is absent, not `complete`, or whose
-  `identicalChanges` is malformed becomes one `onboarding-trace-incomplete` finding whose path is the
-  worklist file and whose message names the reason and the recompute; the gate then judges no
-  ungrouped items.
+  including absent paths. `_worklist_identical_changes` reads the run's identical-copy groups, and the gate
+  hands the blobs and the groups together through one `OnboardingTraceInputs` (MIK-R177). A run that is
+  absent, not `complete`, or whose `identicalChanges` is malformed becomes one `INCOMPLETE_CODE` finding
+  whose path is the worklist file and whose message names the recompute; the gate then judges no ungrouped
+  items. [32]
   Any capture/read exception returns one named `CHECK_NAME` / `INCOMPLETE_CODE` repair finding and an
   empty report-only list; it is not a clean empty result and no successful trace brief is published.
   Each missing or stale current-row trace counts toward `curatorActionableCount`; unreadable inputs
@@ -222,15 +220,18 @@ returns the repair and report-only findings of the leaf's onboarding gate:
   publishes `onboardingTrace` (`brief()`: owner, item/open counts, first open subjects, unnecessary-row
   and problem counts). Curator-coherence no-impact identities are not consulted here; they cannot
   substitute for source-bound onboarding judgments.
-- **Historical unconverted fallback** (`None`): `_onboarding_refresh_gate` retains the
-  `validate_memory_refresh_attestations` branch and its single `memory-refresh-attestation-failed`
-  finding. It is not present permission to check legacy memory: the current MIK-R46 refusal occurs
-  in `_execute_memory_quality` before scanning or checklist dispatch, whether or not converted
-  memory exists elsewhere. The former pre-MIK-R37 production behaviour is historical.
+- **Missing converted sides** (`None`): the helper returns one `CHECK_NAME` /
+  `INCOMPLETE_CODE` repair finding naming unavailable converted memory sides, with
+  no report-only success or legacy stamp/body-attestation fallback. Unconverted
+  public input still refuses in `_execute_memory_quality` before any scan or gate.
+  This is a statically inspected defensive branch; no dedicated execution of that
+  branch is claimed. [30]
 
-The checklist's leaf block hands the gate the changed paths and the accepted identities.
+- Missing converted sides produce a named incomplete repair, with no legacy fallback. \[30] [30]
 
-Anchor: "gate_findings, gate_report_only = _onboarding_refresh_gate(" [8] |  | `_attach_curator_checklist` |
+The checklist's leaf block passes scope, worklist-selected changed paths, current working paths and response to the source-bound gate; accepted coherence identities are not operands or substitutes for onboarding judgments.
+
+The call and its complete operand list are evidenced below; no predecessor source coordinates or accepted-identity operand are retained.
 
 ## 260928-MIK-L10 A Needed Onboarding Row Is Not Reported Unnecessary (MIK-R10 Rule 5)
 
@@ -310,6 +311,21 @@ Existing numbered reference notes retain their earlier source/fixture scope, inc
 
 ## Evidence
 
+### Retained refusal after prepared certification retirement
+
+The separate prepared-certification adapter is removed by MIK-R56/MIK-R65; its
+private-view execution, catalog publication and prepared-history refusal are not
+alternative entry points of this controller. The surviving ordinary controller
+revalidates the admitted scope, asks `_unconverted_refusal` before scanning, and
+returns a typed unconverted refusal rather than repairing or certifying legacy
+memory. Converted runs still owe their own knowledge, onboarding and coherence
+judgments. The same central cutover owner words legacy recovery; conversion or a
+marker never grants a validation PASS.
+
+- Ordinary quality revalidates scope and refuses unconverted input before the scan; removed prepared certification is not a surviving quality entry point. [29]
+
+- Ordinary quality revalidates scope and refuses unconverted input before the scan; removed prepared certification is not a surviving quality entry point. \[29] [29]
+
 
 ### Docs References
 
@@ -367,7 +383,7 @@ executor compares it with the attested final catalog.
 
 ## CCR-L42 current candidate
 
-Prepared candidate quality execution now uses the scope's quality code root and quality context, and withholds the unstamped fallback when a prepared code view is present; checklist missing-onboarding and route-index projections use the same quality input. This keeps quality evidence tied to the frozen candidate while preserving the controller's typed sync/start/poll and final-catalog boundaries.
+Admitted candidate quality execution uses the scope's quality code root/context; checklist onboarding and route-index projections consume that same quality input. The removed prepared-code view/unstamped-history arguments and legacy attestation fallback are not current paths. Missing converted sides answer incomplete while typed sync/start/poll and non-certifying final-catalog boundaries remain.
 
 ## KS-R15@v1 Knowledge-Review Summary Read
 
@@ -433,7 +449,7 @@ measured at all.
 - Only a contract-scoped run gets a worklist, through the one recompute entry point. [5]
 - The checklist receives the worklist (since MIK-R09 the one the gate recomputed) and its path. [6]
 - The controller-level run persists, reports and renders the worklist; since MIK-R09 it captures real candidate trees, and its four open items count (`curatorActionableCount` 4, `knowledgeGate.openItemCount` 4). [7]
-- The checklist's leaf block hands the gate the changed paths and the accepted identities. [8]
+- The checklist calls `_onboarding_refresh_gate(scope, _OnboardingGateInputs(traced_paths, working_paths, worklist), response)`; the traced paths come from `_gate_changed_paths(prepared.worklist, changed_paths)`. Accepted coherence identities are not an operand. [8]
 - The report-only findings pass through the filter. [11]
 - The filter and the adjusted count. [12]
 - The raw count is 2 and the response count 1; only the stray row remains. [13]

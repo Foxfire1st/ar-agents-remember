@@ -2,79 +2,53 @@
   "path": "mcp/src/agents_remember/certification/lifecycle_recovery.py",
   "realizes": [],
   "references": {
-    "1": {
-      "note": "The recovery record journals the exact R21 reuse decision.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "e402f2390fa8b9ba415a86552cab7a8c54ba9e86",
-            "content": "sha256:d75de9bdbb8ed91dafe2fd9e9231adfdd594ab96051f0f120c3c8c6715799ffb",
-            "locator": {
-              "kind": "symbol",
-              "name": "compile_certification_recovery_record"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "e402f2390fa8b9ba415a86552cab7a8c54ba9e86",
-            "content": "sha256:fb2376c6c0212ca2284b3dce4afbf2394ae732df9179c2bdf5d2ef243251ae6a",
-            "locator": {
-              "end": 81,
-              "kind": "line_range",
-              "start": 53
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
     "2": {
       "note": "Finalization revalidates the exact admitted candidate and journal, then binds the unfinished leg.",
       "targets": [
         {
           "anchor": {
-            "blob": "e402f2390fa8b9ba415a86552cab7a8c54ba9e86",
+            "blob": "2d97cd9da17a7376baf4adb0d188ee15d8cffb59",
             "content": "sha256:2726096dad4a4af117f75a696bfb8a20f9d7dece05ab7a7613022d96be8144b7",
             "locator": {
-              "kind": "symbol",
-              "name": "compile_lifecycle_finalization"
+              "end": 74,
+              "kind": "line_range",
+              "start": 47
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "e402f2390fa8b9ba415a86552cab7a8c54ba9e86",
+            "blob": "2d97cd9da17a7376baf4adb0d188ee15d8cffb59",
             "content": "sha256:4d7fc4a8fc806a70877715b05503cc5b63520047e74e8da9436510683e6a0c19",
             "locator": {
-              "kind": "symbol",
-              "name": "_require_finalization_alignment"
+              "end": 191,
+              "kind": "line_range",
+              "start": 133
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "e402f2390fa8b9ba415a86552cab7a8c54ba9e86",
+            "blob": "2d97cd9da17a7376baf4adb0d188ee15d8cffb59",
             "content": "sha256:56296b0e6a4004f89dfc22d9221b993742e097d321d669a13e51bbea1d4b5011",
             "locator": {
-              "end": 109,
+              "end": 71,
               "kind": "line_range",
-              "start": 84
+              "start": 46
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "e402f2390fa8b9ba415a86552cab7a8c54ba9e86",
+            "blob": "2d97cd9da17a7376baf4adb0d188ee15d8cffb59",
             "content": "sha256:48d590ac5c57876988cd8d568c915754f59548b5f98f190e639384fb849fd499",
             "locator": {
-              "end": 220,
+              "end": 182,
               "kind": "line_range",
-              "start": 162
+              "start": 124
             }
           },
           "kind": "code"
@@ -86,46 +60,48 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e402f2390fa8b9ba415a86552cab7a8c54ba9e86",
+            "blob": "2d97cd9da17a7376baf4adb0d188ee15d8cffb59",
             "content": "sha256:ab99e7a4ecf14852c33e9d96e03344d5cfb153b84ffa876364e06a8643c6e119",
             "locator": {
-              "kind": "symbol",
-              "name": "validate_lifecycle_finalization_currentness"
+              "end": 101,
+              "kind": "line_range",
+              "start": 77
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "e402f2390fa8b9ba415a86552cab7a8c54ba9e86",
+            "blob": "2d97cd9da17a7376baf4adb0d188ee15d8cffb59",
             "content": "sha256:863e3fa80f46131f63aa4eaea210d82e6e7935a580dbfd7dba86e3721a508292",
             "locator": {
-              "kind": "symbol",
-              "name": "authorize_finalization_leg"
+              "end": 130,
+              "kind": "line_range",
+              "start": 104
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "e402f2390fa8b9ba415a86552cab7a8c54ba9e86",
+            "blob": "2d97cd9da17a7376baf4adb0d188ee15d8cffb59",
             "content": "sha256:4c70c261f77131171557dca09a004abe7c822cbe5cc72809fda96f85f69908bf",
             "locator": {
-              "end": 133,
+              "end": 95,
               "kind": "line_range",
-              "start": 112
+              "start": 74
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "e402f2390fa8b9ba415a86552cab7a8c54ba9e86",
+            "blob": "2d97cd9da17a7376baf4adb0d188ee15d8cffb59",
             "content": "sha256:8c304929db8a3c684f578434601bfd728dddecd7c11c19cb3321aefdbc101cdb",
             "locator": {
-              "end": 159,
+              "end": 121,
               "kind": "line_range",
-              "start": 136
+              "start": 98
             }
           },
           "kind": "code"

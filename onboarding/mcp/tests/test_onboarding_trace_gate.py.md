@@ -6,10 +6,10 @@
 
 ## Purpose
 
-**The MIK-R30@v1 gate cases, amended by MIK-R53, on converted-format fixtures (16 unparameterized top-level test definitions, measured statically; not a new collection or execution).** The `leaf` fixture is a real code
+**The MIK-R30@v1 gate cases, amended by MIK-R53, on converted-format fixtures (15 unparameterized top-level test definitions, measured statically; not a new collection or execution).** The `leaf` fixture is a real code
 repository and a real converted memory repository (`main` is the official line, its commit carries the
-`Code-Commit` trailer naming the leaf's base) plus a leaf series contract: the inputs the curator's
-memory-quality run and the closeout validator hand the gate. The file runs in the unit lane
+`Code-Commit` trailer naming the leaf's base) plus a leaf series contract. The executable cases
+call the trace gate and memory-quality controller; they do not exercise a closeout trace validator. The file runs in the unit lane
 (`test-evidence-lanes.toml`).
 
 ## Code Commentary
@@ -31,7 +31,7 @@ memory-quality run and the closeout validator hand the gate. The file runs in th
   reason update from `Moved by the crossing sync.` to `Re-reviewed.`, and reopening after another source edit.
   `_gate` captures candidate blobs and writer calls for overview rows receive recomputed worklists.
 - **Fail closed.** `test_mixed_formats_are_an_incomplete_side_never_a_vacuous_pass` (both mixed cases: the
-  reason, the closeout refusal and the persisted `incomplete` worklist);
+  reason, the trace gate result's refusal and the persisted `incomplete` worklist);
   `test_an_unreadable_sidecar_never_satisfies_a_trace` (a K_C sidecar corrupted beside a row and a Markdown
   edit: open, `countedChange` false, and `onboarding_item_open` open in both cases);
   `test_an_unreadable_base_sidecar_is_an_incomplete_input_and_a_repair_counts`;
@@ -39,7 +39,6 @@ memory-quality run and the closeout validator hand the gate. The file runs in th
 - **The converting leaf.** `test_the_conversion_itself_counts_for_nothing_at_the_converting_leaf` builds a
   legacy K_B (`_legacy_card`), converts it, and shows that only a change beyond the conversion counts. It also
   writes a `knowledge-worklist-base/v1` cache file and shows it is ignored and rewritten as v2.
-- **Retired checks.** `test_converted_trees_get_no_verification_stamps_and_no_history_sort`.
 - **Enforcement.** `test_the_memory_quality_run_counts_each_missing_trace_toward_the_actionable_count`
   drives the controller (`_run_controller`). Since MIK-R09 (leaf 260928-MIK-L09) `_run_controller` captures the real
   candidate trees (the gate judges exact trees), and the case asserts `curatorActionableCount` 3 and
@@ -86,22 +85,35 @@ No configured live documentation source was available for this pass.
 
 ### Repo-Internal References
 
-- The fixture's description: real repositories plus a leaf series contract. [1]
+- The fixture builds real code and converted memory repositories plus a leaf contract; the executable cases call the trace gate and controller, not a closeout trace entry. [1]
+
 - The leaf fixture. [2]
-- A missing trace is named and refused. [5]
+
+
+- A missing trace produces named open findings, result.ok=false and refusal() naming both file and route. [5]
+
 - The writer's carry is not a trace. [6]
-- Mixed formats refuse. [9]
+
+- Mixed-format sides return not-ok gate results with named refusal and persist incomplete worklists, never vacuous success. [9]
+
 - An unreadable K_C sidecar keeps its item open. [10]
 - An unreadable K_B sidecar is an input problem; a repair counts. [11]
+
 - Unreadable history and unestablished sides are findings. [12]
+
+
 - The conversion counts for nothing; a v1 cache file is rewritten. [13]
-- No stamps and no history sort on converted trees. [14]
+
+
 - Each open item counts once toward `curatorActionableCount`: since MIK-R09 the two traces and the uncovered file's `unexplained_hunk` (3). [15]
+
 - The items are in the persisted worklist. [16]
 - An unconverted leaf is refused before either gate runs, with the conversion step. [17]
 - The unit-lane registration. [18]
 
+
 - The memory-quality run gives the converted check its comparison base. [19]
+
 
 ### Cross-Repo References
 

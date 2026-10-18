@@ -60,7 +60,7 @@ None.
 
 ## Display-only grant projection
 
-`TaskSummary`/`TaskDocNode` may carry strict directGrant evidence (`grantedBy`/`grantedAt`). None means no displayed readable grant. This schema does not read/write the grant store or authorize direct execution; the authored TaskDocument is unchanged.
+`TaskSummary`/`TaskDocNode` may carry strict directGrant evidence (`grantedBy`/`grantedAt`). None means no displayed readable grant. The node schema does not write the grant store or authorize direct execution: the value is read from the one grant record at projection time and never stored twice. The authored TaskDocument is unchanged.
 
 ## Evidence
 
@@ -138,6 +138,6 @@ by that number.
 
 
 
-- Task summaries and full reader nodes carry optional strict directGrant display evidence, not authorization. [6]
+- TaskSummary and its TaskDocNode extension carry optional directGrant display evidence. TaskDocNode.subTasks holds TaskSubTaskRefNode drill-in references, which do not carry that grant. These are read models, not authorization. [6]
 
 - TaskState carries stage, activity and eventAt, without a served task-event age; the browser derives display age. [7]

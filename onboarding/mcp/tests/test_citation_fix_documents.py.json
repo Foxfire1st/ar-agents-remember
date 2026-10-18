@@ -3,8 +3,8 @@
   "proves": [
     {
       "anchor": {
-        "blob": "df48b06f9e965b53d85e5d26a93f3c5a450fb857",
-        "content": "sha256:6674fc42a338ecfd1fdeb59d55c236cff2e3f7cf289fb4666b8a0912aaece1c6",
+        "blob": "81ade7920bab1da35029ac9f85f4f77cb5c01807",
+        "content": "sha256:48004fee03cf503c30c0f8369eee4941342fe62e41c619dccb006b7c3018b6de",
         "locator": {
           "kind": "symbol",
           "name": "DocumentListRefusalTests.test_a_full_list_is_taken_and_one_more_is_refused_with_bound_and_count"
@@ -20,7 +20,7 @@
     },
     {
       "anchor": {
-        "blob": "df48b06f9e965b53d85e5d26a93f3c5a450fb857",
+        "blob": "81ade7920bab1da35029ac9f85f4f77cb5c01807",
         "content": "sha256:77664dd8cd77d8379753146c3328cd529e54d75681de8b3749202662d42403a7",
         "locator": {
           "kind": "symbol",
@@ -43,8 +43,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "df48b06f9e965b53d85e5d26a93f3c5a450fb857",
-            "content": "sha256:da4edc39d92c764fe019e648604753d2c51e043c7708404a1a9cfb852fc3d126",
+            "blob": "81ade7920bab1da35029ac9f85f4f77cb5c01807",
+            "content": "sha256:c7d01c9f9e0603666df1821d27edad2960f06ff0cc7ad7fca6d2a92d4d1f4637",
             "locator": {
               "kind": "symbol",
               "name": "DocumentListRefusalTests"
@@ -54,28 +54,12 @@
         }
       ]
     },
-    "2": {
-      "note": "Lower-level legacy list/single parity, dry-run Markdown-byte preservation and selection isolation are asserted; this is not public legacy admission.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "df48b06f9e965b53d85e5d26a93f3c5a450fb857",
-            "content": "sha256:efb7a072ac7ca3182ebb8098b7b7b7695fe166863cd360f6f3c5043a0d9e8085",
-            "locator": {
-              "kind": "symbol",
-              "name": "UnconvertedListFixTests"
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
     "3": {
-      "note": "Converted list/single byte parity and a single missing-card refusal/count are asserted; successful sibling bytes are not checked by the mixed-selection case.",
+      "note": "Converted list/single parity and missing-card refusal/count remain; returned refusals preserve malformed bytes and are excluded from refresh.",
       "targets": [
         {
           "anchor": {
-            "blob": "df48b06f9e965b53d85e5d26a93f3c5a450fb857",
+            "blob": "81ade7920bab1da35029ac9f85f4f77cb5c01807",
             "content": "sha256:6e909b43f0aa18d87223944cec3304ef046d838ccaa4a0ca40c47acfb2ff85d6",
             "locator": {
               "kind": "symbol",
@@ -91,8 +75,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "df48b06f9e965b53d85e5d26a93f3c5a450fb857",
-            "content": "sha256:5ddea8874aef71d769160952c915c5d2e060e6c3c3c39af8d20d61642def8913",
+            "blob": "81ade7920bab1da35029ac9f85f4f77cb5c01807",
+            "content": "sha256:19e55a4143b734bf069f07abad9447bbbe4bb8cadefac7f25c8ac0fdf96f4550",
             "locator": {
               "kind": "symbol",
               "name": "CitationFixCommandTests"

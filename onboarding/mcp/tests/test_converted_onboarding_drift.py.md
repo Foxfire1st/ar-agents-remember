@@ -37,9 +37,7 @@ The complete-finding regression changes a reference slot beyond the retained one
 ## Evidence
 
 - Full actionable findings, not the limited sample, own fingerprint identity; incomplete input yields null. [16]
-
-
-- Converted trees take the converted branch and skip legacy discovery. [1]
+- Converted trees return a checked, nonempty drift summary whose report state agrees; no forbidden legacy-discovery callback is installed by this case. The converted-branch title is not a new mocked legacy-callback assertion. [1]
 - The converted result names every measured field. [2]
 - Empty, missing and unbuildable-base trees report truthfully, never as checked-zero. [3]
 - Report and snapshot come from the same measured result. [6]
@@ -47,7 +45,9 @@ The complete-finding regression changes a reference slot beyond the retained one
 - Accepting drift never clears a validator violation. [8]
 - The first baseline commits exactly the validated tree. [9]
 - A successful would-adopt dry-run preview and a separate blocked-invalid live refusal each preserve the HEAD/unborn, write-tree-stdout, porcelain-status and non-.git path/byte fingerprint. [10]
+
 - The context-packet leaf route binds the leaf base. [12]
+
 - Injected RuntimeError("boom") is asserted for dry_run=True and False with equal HEAD/unborn, write-tree-stdout, porcelain-status and non-.git path/byte fingerprints and ls-files --stage output; the intent-to-add empty-blob entry, unstaged symlink target and staged file text remain as asserted. [13]
 
 - `test_carried_anchor_is_refused_as_carried_stale_never_as_new` asserts deleted-path carried anchors refuse R22.6-carried-stale, never new-anchor R22.6-anchor-path; it does not cover all content staleness. [4]

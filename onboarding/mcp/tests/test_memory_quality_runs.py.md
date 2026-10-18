@@ -12,10 +12,10 @@ Bounded memory-quality run state and pair-currentness refusal.
 
 ### Logic
 
-Registry cases retain completed/failed outcomes, unknown-run absence, launch rollback and repository-scoped polling privacy. A controller case changes the code/memory pair while deriving evidence and requires scope-refused with no curator publication.
+Registry cases retain completed/failed outcomes, unknown-run absence, launch rollback and repository-scoped polling privacy. A controller case changes the code/memory pair while deriving evidence and requires scope-refused with no curator publication. The deleted-history target case now asserts only `_current_working_code_paths` excludes an absent source; it no longer drives retired refresh-attestation/body-gate APIs. Prepared code-view privacy, physical/logical pairing and census binding remain in the mixed suite; they are not retired prepared-memory certification.
 
 `260915-KS-L23` added two classes at the end of the module, stated in the section below:
-`MeasuringBuildStampTests` (`:626-696`) and `CloseoutOwnedProvenanceRoutingTests` (`:699-731`).
+`MeasuringBuildStampTests` (`:496-578`) and `CloseoutOwnedProvenanceRoutingTests` (`:581-613`).
 
 ### Conventions
 
@@ -77,14 +77,14 @@ Fixture repositories and protocol doubles do not establish a live external integ
 
 Two classes were added to the end of the module; this card previously described neither.
 
-`MeasuringBuildStampTests` (`:626-696`) carries item 26 (D-33) with three cases:
+`MeasuringBuildStampTests` (`:496-578`) carries item 26 (D-33) with three cases:
 
-- `test_every_memory_quality_entry_point_stamps_the_serving_build` (`:636-659`) — drives all three public
+- `test_every_memory_quality_entry_point_stamps_the_serving_build` (`:506-529`) — drives all three public
   entry points with their bodies patched out and asserts each returns the **process's resolved** commit
   and source digest. Red if a wrapper is dropped, if a mode returns its body's payload unwrapped, or if
   the stamp stops being the resolved identity: an unstamped envelope is exactly the state D-33 recorded,
   where a count cannot be attributed to a ruler.
-- `test_the_stamp_is_declared_on_the_responses_that_carry_it` (`:661-674`) — the field is in
+- `test_the_stamp_is_declared_on_the_responses_that_carry_it` (`:531-544`) — the field is in
   `MemoryQualityCheckResponse.model_fields`, and the stamp validates as the shared `ServingBuildPayload`.
   Red if the declaration is removed, because `FlexibleToolResponse` sets `extra="allow"`, so an
   undeclared key would validate while staying invisible in the tool's own schema.
@@ -92,8 +92,8 @@ Two classes were added to the end of the module; this card previously described 
   with doubled scope/repair inputs and asserts status counts without servingBuild. The controller's
   measuring stamp remains in its whole result; status delivery does not re-advertise that material.
 
-`CloseoutOwnedProvenanceRoutingTests` (`:699-731`) carries item 17 half (b). Its single case,
-`test_the_checklists_commit_owned_set_collects_the_checks_own_bucket` (`:719-731`), drives the real
+`CloseoutOwnedProvenanceRoutingTests` (`:581-613`) carries item 17 half (b). Its single case,
+`test_the_checklists_commit_owned_set_collects_the_checks_own_bucket` (`:601-613`), drives the real
 `controller._checklist_finding_sets` with a check result that declares a `closeoutOwnedFindings` row and
 asserts the row lands in the closeout-owned half — and that an absent or non-mapping `checks` payload
 yields empty sets rather than raising. Red if the collection stops reading the bucket: those rows would

@@ -91,12 +91,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "87ddf3e7bc98c88968d898c9015557ca7e7145f3",
+            "blob": "b57a7faeabd73c5872db8d333a7970835083e727",
             "content": "sha256:54c7acf08be5dcf752fc9b38bbca0c509c4d6b9513c83961a60d3f785c6b0a2f",
             "locator": {
-              "end": 53,
+              "end": 52,
               "kind": "line_range",
-              "start": 42
+              "start": 41
             },
             "path": "mcp/src/agents_remember/serving/projections/contract_snapshot.py"
           },
@@ -112,6 +112,35 @@
               "start": 63
             },
             "path": "mcp/src/agents_remember/serving/projections/contract_snapshot.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "14": {
+      "note": "The reader hub omits read_sidecar_staleness while persisted drift/setup/route/tool/ledger analytical readers remain.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c5d642956f6161dbd852c298d437f3e5cfa90dd8",
+            "content": "sha256:e7a50f387bc7ab5979451e0ca756b1d941b8b0fa70d2b512054ce1a3316c39af",
+            "locator": {
+              "kind": "symbol",
+              "name": "read_drift_snapshots"
+            },
+            "path": "mcp/src/agents_remember/serving/projections/snapshots_impl/_analytics.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c332979d2a91d27137d6b7a6708231d237c8e119",
+            "content": "sha256:e6951f16cd47f6b2c24a140db1b72692deb89d66321adb775818d28cd269cada",
+            "locator": {
+              "end": 210,
+              "kind": "line_range",
+              "start": 1
+            }
           },
           "kind": "code"
         }

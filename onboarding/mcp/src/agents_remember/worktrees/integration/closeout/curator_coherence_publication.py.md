@@ -110,6 +110,8 @@ The following declarations carry the changed boundary.
 - Full generation integrity is proved before canonical authority replacement. [8]
 
 
+- The prepare test checks the complete publication member list and caller-supplied identities; a second test adds a declaration member and checks that both messages follow it. [12]
+
 ### Cross-Repo References
 
 No meaningful cross-repository reference applies.
@@ -139,7 +141,7 @@ two leaves of this master recorded a wrong impossibility claim against the tool
 (`notes/DISCLOSURES.md` D-11).
 
 Two properties of the text matter and both are asserted by cases in
-`mcp/tests/test_final_full_memory_coherence_certification.py`:
+`mcp/tests/test_curator_coherence_publication_discoverability.py` (the current surviving assertions):
 
 - **It is derived, not copied.** The statement reads the request model's `PUBLICATION_MEMBERS` at call
   time; a member appended to that declaration appears in the response with no second edit here.

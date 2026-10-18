@@ -1,0 +1,22 @@
+{
+  "path": "docs/tool-details.md",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The source describes the current instructions summarized above.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ef052a554e59b0a8a26ef43d1e740035dc75b0d8",
+            "content": "sha256:9b1c44c03db9f6b35f2611b840a510ffe0cb6f35273167c8aa0cbe75718e6d4a",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

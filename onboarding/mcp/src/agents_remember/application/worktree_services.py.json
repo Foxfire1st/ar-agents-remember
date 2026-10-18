@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "05a0dc3d78298af697a9b16a0692971abddd837b",
-        "content": "sha256:44ca04b177598b8dcc61dc26c1e21afa6e6bd6700b4909dd3f6aeb29c02fd1e3",
+        "blob": "9cfe5fc779f3234e5cf2d83eee7be9897b4668cb",
+        "content": "sha256:f1ac9e4c9ca53c18f1cb7439db85510df5446e1e4a2a18e12523d8e4fb0cd1a8",
         "locator": {
           "kind": "symbol",
           "name": "build_default_worktree_services"
@@ -37,12 +37,12 @@
       ]
     },
     "10": {
-      "note": "The closeout's quality phases get the converted-base port.",
+      "note": "MemoryQualityAdapter supplies the converted comparison-base port to quality-service consumers; its composition is not evidence that closeout runs the retained quality-phase helpers.",
       "targets": [
         {
           "anchor": {
-            "blob": "9ae9c1fd9981228aafde4ea8749d2dd3819612de",
-            "content": "sha256:cddef9d5a16727c08ebd3bda8209a8ae576d5505242444195a419791b84f2c8c",
+            "blob": "9cfe5fc779f3234e5cf2d83eee7be9897b4668cb",
+            "content": "sha256:0a7eee32f0f1a706911349da4f5180c79db8d44363cfca0663e98ef2594e3858",
             "locator": {
               "kind": "symbol",
               "name": "MemoryQualityAdapter"
@@ -90,12 +90,28 @@
       "targets": [
         {
           "anchor": {
-            "blob": "05a0dc3d78298af697a9b16a0692971abddd837b",
+            "blob": "9cfe5fc779f3234e5cf2d83eee7be9897b4668cb",
             "content": "sha256:df4c5faac7fc15acf748d9f813b6d3d3d7740b7fbc0c0d005555b38eb8bdf432",
             "locator": {
-              "end": 189,
+              "end": 183,
               "kind": "line_range",
-              "start": 173
+              "start": 167
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "14": {
+      "note": "Default worktree services retain converted validation, crossing and gate ports without prepared continuation/certification adapters.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9cfe5fc779f3234e5cf2d83eee7be9897b4668cb",
+            "content": "sha256:f1ac9e4c9ca53c18f1cb7439db85510df5446e1e4a2a18e12523d8e4fb0cd1a8",
+            "locator": {
+              "kind": "symbol",
+              "name": "build_default_worktree_services"
             }
           },
           "kind": "code"
@@ -107,7 +123,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "05a0dc3d78298af697a9b16a0692971abddd837b",
+            "blob": "9cfe5fc779f3234e5cf2d83eee7be9897b4668cb",
             "content": "sha256:15d5ed5baa81d8c3dd4289cb6706e4cf30394ad8d8d8c7063c4f4c024c41bcc3",
             "locator": {
               "kind": "symbol",
@@ -123,7 +139,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "05a0dc3d78298af697a9b16a0692971abddd837b",
+            "blob": "9cfe5fc779f3234e5cf2d83eee7be9897b4668cb",
             "content": "sha256:edd0f3f43a88fe9d9559a8861bff3eadfb36c57f02840246dc9487001a8ad7d7",
             "locator": {
               "kind": "symbol",
@@ -150,7 +166,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "05a0dc3d78298af697a9b16a0692971abddd837b",
+            "blob": "9cfe5fc779f3234e5cf2d83eee7be9897b4668cb",
             "content": "sha256:e8631085ca39581f014971b5b39c6506cc83d58972b7c6f27c96b84c8e52e979",
             "locator": {
               "kind": "symbol",
@@ -227,7 +243,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e47d5cc7e437fd7a83dd6cf764c684665b385061",
+            "blob": "1ed6df983ba83a5dca67863f17dade9ab2d875aa",
             "content": "sha256:39e23e747ef0775107905f1e7c4a2eda107132742553cb591864ab349d2271b1",
             "locator": {
               "kind": "symbol",

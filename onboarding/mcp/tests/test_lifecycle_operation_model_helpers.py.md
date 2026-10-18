@@ -21,7 +21,10 @@ Mutation history and the irreversible boundary require exact commit proof; recov
 
 ### Conventions
 
-This card describes the current uncommitted LCA-L9 proof-test candidate. Historical entries below record earlier test populations; they do not require restoring removed cases. Source inspection is memory preparation and does not claim a test run or acceptance.
+This card describes the current retained mutation/worker and preparation-state model assertions.
+Only the real-Git rebound-prepared-output identity/date case retires with its unreachable writer.
+The successor-prefix and immediate-predecessor retention-model guards remain, alongside exact
+mutation/recovery/worker proof. Source inspection is memory preparation, not a run or acceptance.
 
 ### Invariants And Boundaries
 
@@ -47,6 +50,8 @@ The retained source anchors below support the fixture roles and assertion bounda
 - Mutation history and irreversible boundary require exact proof. [2]
 - Recovery commits cannot contradict commit proof. [3]
 - Worker binding and termination evidence are one authority. [4]
+
+- Prepared retention still binds successor intent/output and predecessor fingerprint, allows a later memory-content leg and refuses a non-immediate predecessor. [5]
 
 ### Cross-Repo References
 

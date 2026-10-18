@@ -1,0 +1,94 @@
+{
+  "path": "mcp/src/agents_remember/memory/carryover_evidence.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Evidence ordering: A path absent at official code is not-landed. Exact-landed-commit requires every relevant source-path commit to be ancestral to official code; one landed commit is insufficient. Otherwise compare stable path patch IDs, then final content. A changed path with no equivalence is same-path-changed, not automatic proof.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "90328d84453505e30c3215ac1ef7ab28003f6f29",
+            "content": "sha256:17e925329daf320c632c7d5d619aa5a9c46a33cf9cdde55b4392171f360b8229",
+            "locator": {
+              "kind": "symbol",
+              "name": "evidence_for_path"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "90328d84453505e30c3215ac1ef7ab28003f6f29",
+            "content": "sha256:1b968d11e19899bd758be3e4b036c6d457b729b52415503aaac6e11ba18fd7d5",
+            "locator": {
+              "kind": "symbol",
+              "name": "path_commits"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "90328d84453505e30c3215ac1ef7ab28003f6f29",
+            "content": "sha256:e776df70cb8ea443e545fe5981944af1612a110f99fbac66710ab40ba4efb7a4",
+            "locator": {
+              "kind": "symbol",
+              "name": "patch_id"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Read-only boundary: Git uses the shared guarded runner with input_text for patch-id. Failed required commands raise. Changed-path selection uses ACMRT; object-ID lookup handles the root route as ref^{tree}. The memory merge base resolves the source memory HEAD within the target object database and returns None when unavailable. No memory bytes, stamps, commits, refs or ledger are written by this module.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "90328d84453505e30c3215ac1ef7ab28003f6f29",
+            "content": "sha256:9d32690603a91e719b6c5761f34782c4107a3168a42346a6c7f4e6e5a43d3c7b",
+            "locator": {
+              "kind": "symbol",
+              "name": "require_git"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "90328d84453505e30c3215ac1ef7ab28003f6f29",
+            "content": "sha256:dd77c2f2f4d9a913f2cbbab606f3ef0056868abf2c05ea71a62b0e1675aa36de",
+            "locator": {
+              "kind": "symbol",
+              "name": "changed_paths"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "90328d84453505e30c3215ac1ef7ab28003f6f29",
+            "content": "sha256:d56dbc0ee1178babb1ecf909817a465e61588ad0306f46492bf84fb4ae6128b9",
+            "locator": {
+              "kind": "symbol",
+              "name": "object_id_at_ref"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "90328d84453505e30c3215ac1ef7ab28003f6f29",
+            "content": "sha256:73b259cb787e2bae6dbc5a7efd3643f22b0b53a049a89b057443033daa27db76",
+            "locator": {
+              "kind": "symbol",
+              "name": "memory_merge_base"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

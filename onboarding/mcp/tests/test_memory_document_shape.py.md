@@ -6,13 +6,13 @@
 
 ## Purpose
 
-Memory table parsing and history timestamp repair boundaries.
+Memory table parsing and preservation of legitimate code-example content.
 
 ## Code Commentary
 
 ### Logic
 
-Windows citation cells keep their three columns and fenced diffs are valid content. Missing-cell findings report the actual/header cell counts, location and repair guidance; they do not return the original row text. Mixed timezone frames are caught and refused for sorting; newly added naive timestamps fail within the closing diff, while a renamed old document is not treated as newly authored.
+Windows citation cells keep their three columns and fenced diffs remain valid content. The missing-cell case asserts `table_row_cell_count_mismatch`, `1 cells` and the `Nothing is lost` preservation message; it does not assert that the result returns the complete original row. The retained precision cases do not restore removed timezone sorting or closing-diff timestamp rules.
 
 ### Conventions
 
@@ -20,7 +20,7 @@ This card describes the retained source at IAS `d3610903`. Historical entries be
 
 ### Invariants And Boundaries
 
-History repair may not guess an offset or reorder incomparable timestamps. Existing examples and source evidence must survive a style check.
+Existing legitimate examples survive a style scan; malformed table rows retain their original-text message rather than silently losing content.
 
 ### Todos
 
@@ -45,10 +45,6 @@ The retained source anchors below support the fixture roles and assertion bounda
 
 - A diff quoted in a fenced block is the document working. [2]
 - A missing cell is reported. [3]
-- The live mixed frame pair is caught instead of passing silently. [4]
-- The fixer refuses to sort a section that mixes frames. [5]
-- A naive bullet this closeout adds fails. [6]
-- A renamed document is not treated as newly written. [7]
 
 ### Cross-Repo References
 

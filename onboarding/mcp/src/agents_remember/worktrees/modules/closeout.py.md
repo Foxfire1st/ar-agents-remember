@@ -107,19 +107,18 @@ synced-in parallel work and previous closeouts in the same worktree — and both
 preview and apply consume that worklist. The onboarding plan receives the
 working tier through `working_paths`, so missing sidecars block only for
 working-tree paths while committed-range paths without onboarding surface as
-the non-blocking `unonboarded` list. Both body gates receive
-`contract_memory_verified_commit(contract)` (`memory_content_commit` → `memory_base_commit`) so sidecar work already
-committed in the memory worktree still classifies honestly. When everything is
-pre-committed and the tree is clean, `commit_if_dirty` returns the existing
-HEAD and metadata stamps to that tip without creating an empty commit.
+the non-blocking `unonboarded` list. The body-gate pair that consumed
+`contract_memory_verified_commit(contract)` and the `commit_if_dirty`
+metadata stamping are removed with the legacy refresh composer: converted
+memory is judged by the onboarding-trace gate, and a fully pre-committed clean
+tree keeps its existing HEAD because nothing writes a stamp to it.
 
 Payload lists that scale with transported history are bounded (issue #83):
 `_bounded_paths` exposes count + sample capped at `PATH_SAMPLE_LIMIT`, applied
 to `changed_code_paths`, `changed_code_paths_committed`, the
 `onboarding_metadata_refresh` view (`required`/`unonboarded`; the blocking
-`missing`/`unsupported` lists stay full), `sidecar_body_gate`,
-`sidecars_attested_no_impact`, `refreshed_onboarding`, and
-`unonboarded_changed_paths` in the apply payload.
+`missing`/`unsupported` lists stay full), `refreshed_onboarding`, and the
+`required`/`unonboarded` lists of the apply payload's onboarding plan.
 
 **Historical issue-83 payload account, not the current returned fields:** The preview payload exposed the body gates' classifications
 (`sidecar_body_gate` from `classify_sidecar_updates` and
@@ -142,8 +141,9 @@ normalized `EffectiveCloseoutInput`; raw message fields no longer exist on this 
 that same value through the commit phase, code recovery, external-memory refresh, memory commit,
 and resume consumers. It constructs one `VerifiedChange` from the accepted code
 commit and passes it to `closeout_external.external_closeout_commits`. That sole external-phase owner
-threads the same change through onboarding, route-overview, entity-fingerprint, route-index, and
-raw metadata refresh before using the accepted memory-content message and its code-attribution trailer for the memory commit. The subsequent cache refresh needs no commit message. No private consumer re-reads an optional transport field or invents shadow intent.
+threads the same change through the entity-fingerprint and route-index refresh
+that survive — the onboarding and route-overview metadata refresh and the raw
+metadata stamping are gone — before using the accepted memory-content message and its code-attribution trailer for the memory commit. The subsequent cache refresh needs no commit message. No private consumer re-reads an optional transport field or invents shadow intent.
 
 Server-side gate enforcement (slice 6b, generalized by 260703-L4): when the contract carries a
 `lifecycle_id`, closeout reads the lifecycle's gate log via
@@ -336,9 +336,12 @@ The following current source boundaries establish the ledger-retirement behavior
 
 - `_recover_closeout_finalization` asks the recovery gate and re-proves existing output commits before exact contract publication. [4]
 
-- Closeout refresh helpers provide sidecar metadata, route overview metadata, route index, and entity fingerprint updates before the memory commit. (`refresh_onboarding_metadata`; `refresh_route_overview_metadata_for_context`; `refresh_route_indexes_for_context`; `refresh_entity_fingerprints_for_context`) [5]
+
+- Closeout retains entity-fingerprint and derived route-index refresh before exact converted-memory publication, not legacy metadata stamps. [5]
+
+
 - Defines the `WorktreeArgs` dataclass that types every closeout entry point and helper. [6]
-- The pure closeout-gate policy this module enforces (slice 6b). (`GateGuard`; `evaluate_gate`; `evaluate_closeout_gate`) [7]
+- The pure closeout-gate policy this module enforces (slice 6b). (`evaluate_gate`; `evaluate_closeout_gate`; the `GateGuard` value and `CONSUMED_APPROVAL_GATE_KINDS` it reads live in the controlplane store, `controlplane/store.py`, not here.) [7]
 - The gate policy threaded through `WorktreeArgs`. [8]
 - `GateStore.claim_approval` — the compare-and-swap this module now spends an approval through: fold, policy verdict and the `applied` append inside one held `exclusive_access`. It is the only way to spend one; `_mark_closeout_gate_applied` was deleted. (`claim_approval`) [9]
 - `CONSUMED_APPROVAL_GATE_KINDS` — why the `applied` snapshot this module writes is no longer reclaimed at any age, which is the other half of the replay fix. [10]

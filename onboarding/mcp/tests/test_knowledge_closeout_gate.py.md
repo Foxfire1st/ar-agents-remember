@@ -7,7 +7,7 @@
 ## Purpose
 
 **MIK-R09@v2's evidence: the currentness rules, the packet's examples, the per-kind dispatch, and the gate at each
-route (18 top-level test definitions and 1,353 physical source lines by static inspection, not fresh pytest collection).** The fixture is a converted leaf on real Git repositories: two invariants of
+route (17 top-level test definitions and 1,334 physical source lines by static inspection, not fresh pytest collection).** The fixture is a converted leaf on real Git repositories: two invariants of
 one family (`INV-AAAAAA` with entries on `land` and `keep` in `pkg/a.py`, `INV-BBBBBB` with `sibling` in `pkg/b.py`),
 the official `main` line in both repositories and the leaf's own `leaf` branches, so the parent line's memory tip and
 the leaf's own memory commits are different commits. Registered in the `unit-regression` lane
@@ -56,11 +56,9 @@ separate support module was an unregistered evidence artifact on the worker's fi
   12. `test_a_master_or_checkpoint_landing_waits_until_no_entry_at_a_changed_path_is_stale`.
   13. `test_an_insertion_only_hunk_is_linked_only_by_a_candidate_range`: K_C drops `RLZ-A00001` and a line is inserted
       inside `land`; the hunk (0 old lines) is unlinked and raises `unexplained_hunk` (the L10 N3 carry).
-  14. `test_an_unconverted_leaf_is_refused_at_every_route_before_anything_moves`: leaf, landing and record guards return the central `legacy-format` refusal without bound gate services; `_close_gated_leaf` raises before capture, with memory objects and status unchanged. `leaf_worklist` remains `None`; the prepared-path converted-only helper still returns `None` here, so its separate legacy lock is not proved by this assertion.
-  15. `test_the_prepared_closeout_path_fails_closed_on_converted_memory`: both entry points refuse with
-      `prepared-closeout-knowledge-history-unclosable` (gap 3).
-  16. `test_the_gate_memo_reuses_a_verdict_only_for_the_identical_inputs` (gap 4).
-  17. `test_a_kept_pass_is_recomputed_once_an_endpoint_s_approval_state_changes`, parametrised "v1 approved" and
+  14. `test_an_unconverted_leaf_is_refused_at_every_route_before_anything_moves`: leaf, landing and record guards return the central `legacy-format` refusal without bound gate services; `_close_gated_leaf` raises before capture, with memory objects and status unchanged. `leaf_worklist` remains `None`.
+  15. `test_the_gate_memo_reuses_a_verdict_only_for_the_identical_inputs` (gap 4).
+  16. `test_a_kept_pass_is_recomputed_once_an_endpoint_s_approval_state_changes`, parametrised "v1 approved" and
       "manifest missing" (ruling 15:09:25).
 - **L37.** The closeout's memory commit now runs the gate too, so
   `test_the_closeout_memory_commit_closes_the_history_file_and_validates_its_exact_tree` commits its code edit first
@@ -70,7 +68,7 @@ separate support module was an unregistered evidence artifact on the worker's fi
 ### Conventions
 
 - Real Git repositories under `tmp_path`, with a pinned environment (`git` helper); no network.
-- Static source population: 18 top-level test definitions and 1,353 physical lines. Earlier 17-definition/18-case/1,206-line figures are historical; no pytest collection, execution or limit enforcement was performed here.
+- Static source population: 17 top-level test definitions and 1,334 physical lines. Earlier 17-definition/18-case/1,206-line figures are historical; no pytest collection, execution or limit enforcement was performed here.
 
 ### Invariants And Boundaries
 
@@ -94,19 +92,33 @@ No configured live documentation source was available for this pass.
 ### Repo-Internal References
 
 - The module docstring: a converted leaf on real repositories. [1]
+
 - The fixture world. [2]
+
+
 - The validator's history-row rule at the gate. [5]
+
+
 
 - The closeout validator and the closeout memory commit. [6]
 
+
+
 - Direct, record, master and checkpoint landing. [7]
-- The insertion-only symmetry, the unconverted leaf, the prepared path. [8]
+
+
+- Insertion-only hunks link only by candidate ranges; ordinary unconverted leaf/landing/record and direct-closeout guards refuse before movement. [8]
+
+
 
 - The memo and the approval state. [9]
 
+
 - The lane row. [10]
 
+
 - The memo key names the parent tip and the leaf's memory HEAD. [12]
+
 
 ### Cross-Repo References
 

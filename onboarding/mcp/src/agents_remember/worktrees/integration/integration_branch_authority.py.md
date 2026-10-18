@@ -80,15 +80,9 @@ The deleted predicate refused a new or reopened atomic child leaf whenever the p
 Once `checkpointed` joined the integration vocabulary, that same reading sealed every master that took
 a checkpoint landing, so a master could never admit another leaf after its first landing. The
 developer ruled the seal out entirely — a master is meant to be paused and resumed, never locked by
-its own landing — so the module was deleted rather than narrowed. Two docstrings here lost the word
-"open" with it: `require_parent_series` now reads "Return an atomic leaf's parent series, or None for
-organizational direct-super work", and `atomic_leaf_parent` (code lines 333-345) reads "Resolve the
-exact atomic owner before deferring leaf-wide acceptance".
+its own landing — so the module was deleted rather than narrowed. `require_parent_series` retains exact atomic parent resolution and organizational direct-super absence. The later prepared-closeout profile cut also removed `atomic_leaf_parent`; that deletion does not restore a lifecycle-cell seal.
 
-Both in-module callers follow the rename and nothing else changes: `atomic_leaf_parent` at line 342
-and `_leaf_target` at line 829. Leaf admission still requires the parent's contract-keyed activation
-to have reconciled and become `active`; that authority lives in the activation plane, not in a
-lifecycle-cell seal.
+`_leaf_target` still uses `require_parent_series` for exact parent authority. The removed `atomic_leaf_parent` deferral helper no longer has a call site. Leaf admission still requires the parent's reconciled active contract-keyed activation, not a lifecycle-cell seal.
 
 `mcp/tests/test_lifecycle_playthrough_end_to_end.py` is the regression proof: it plays the lifecycle
 in order on one real temporary Git world and asserts that a leaf commanded after a checkpoint landing
@@ -118,7 +112,7 @@ still starts.
 - New-surface validation recognizes only the exact canonical atomic series contract and branch. [3]
 - Sync admits either an ordinary leaf workbench or exact task-owned series authority. [4]
 - The exact parent guard reloads existing artifacts, admits the owner-validated planned parent only in explicit dry run at a genuinely absent canonical path, and preserves organizational and durable default authority. [5]
-- The atomic-owner resolver that follows the rename at its call site, and the leaf target that follows it at integration. [6]
+
 - The end-to-end playthrough that proves a leaf commanded after a checkpoint landing still starts. [7]
 - The terminal-task guard refuses abandon once the integration cell records a landed line, in either landing state. [8]
 
@@ -152,3 +146,5 @@ Topology collision and deleted-owner repair logic moved into dedicated owners; t
 
 This change preserves the file's existing authority boundary. No threshold exception, silent
 fallback, or compatibility reader was added.
+
+- Exact parent-series resolution and the leaf target survive; atomic_leaf_parent deferral was removed. [6]

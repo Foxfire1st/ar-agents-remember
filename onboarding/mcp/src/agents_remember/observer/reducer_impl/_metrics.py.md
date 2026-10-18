@@ -6,16 +6,13 @@
 
 ## Purpose
 
-Pure analytical assembly, verification-age staleness histogram and stalest-sidecar ranking over already-read inputs. Task stage/activity counts belong to task-entry production, not lifecycle buckets here.
+Pure analytical assembly over already-read retained inputs. Verification-age histogram and stalest-sidecar ranking functions are removed. Native task stage/activity counts belong to task-entry production; the old lifecycle `_metrics` function is not present here. This module computes no token aggregate.
 
 ## Code Commentary
 
-- `staleness_histogram`
-- `_staleness_bucket`
 - `build_analytics`
-- `_stalest`
 
-Analytics retains drift, sidecar staleness, setup, route, tool-report, ledger, attention and Engine Room surfaces. It emits no lifecycle buckets, taskDocuments, series, pickup or expectation collections and owns no task-stage or action authority.
+Analytics retains supplied drift, setup, route coverage, tool reports and ledgers, with caller-derived attention and Engine Room process surfaces. It emits no verification-age sidecar list, lifecycle buckets, taskDocuments, series, pickup or expectation collection and owns no task-stage/action authority. The former lifecycle metrics and tool.completed liveness account belongs to the predecessor, not this current assembly function.
 
 ## Invariants And Boundaries
 
@@ -23,10 +20,9 @@ Analytics retains drift, sidecar staleness, setup, route, tool-report, ledger, a
 
 ## Evidence
 
-- Pure staleness/ranking and analytics assembly consume already-read surviving inputs. [1]
+- Historical predecessor only: lifecycle metrics derived vocabulary-owned counts without age histograms; that `_metrics` target is no longer in this module. [1]
+- Analytics assembles retained feeds and caller-derived overrides without sidecar ranking. [2]
 
 
 
 ### Repo-Internal References
-
-The module's own top-level surface is listed in Code Commentary; no cross-file citation rows are needed for this split module.

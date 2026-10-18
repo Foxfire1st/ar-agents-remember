@@ -16,7 +16,8 @@ DependencyOwnershipGraph builds repository dependency facts, observed imports/li
 
 Changed tests own themselves; deleted tests leave the population. Repository-owned non-Python
 inputs declare exact consumers only when the independently observed set matches. The reduced
-suite's declarations enumerate retained consumers rather than old suite counts. An explicitly
+suite's declarations enumerate retained consumers rather than old suite counts; the retired
+`test_operation_certification_selection.py` is absent from both repository-input consumer sets. An explicitly
 declared empty set is distinct from an absent declaration: only observed-empty equality emits
 `verified-repository-input-no-consumers`. Unknown inputs still retain unresolved ownership;
 empty declarations cannot hide an actual consumer.

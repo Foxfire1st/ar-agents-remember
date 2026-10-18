@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "d795ee1065bd2308f6dae2dd0426c63187aa46ee",
-        "content": "sha256:152349a6e30aa1ae3792d91ea2922f113a3a4a05d3c6e52f74d3f323b003e76e",
+        "blob": "c0c550accd9ceca3d505217ba6fdb339b18af926",
+        "content": "sha256:77094e80be1a77d6342c5c94f2ad9299deed3e1353948eedb5af0551f7481e86",
         "locator": {
           "kind": "symbol",
           "name": "run"
@@ -83,23 +83,6 @@
         }
       ]
     },
-    "4": {
-      "note": "The refusal rule for a pattern that cannot mean anything.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "618796cf108683657661e36f015a1120b05c6e9d",
-            "content": "sha256:368608e2d09339a4916de6c9897892fdc337a785450c36f6e29e4f484d7892f1",
-            "locator": {
-              "kind": "symbol",
-              "name": "validate_caller_excludes"
-            },
-            "path": "mcp/src/agents_remember/memory_quality/style/citations/exclusion_register.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
     "5": {
       "note": "The --document help states the converted form: --document alone.",
       "targets": [
@@ -111,6 +94,39 @@
               "kind": "symbol",
               "name": "add_arguments"
             }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The CLI declares report/fix and optional contract with repeatable document selection.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c0c550accd9ceca3d505217ba6fdb339b18af926",
+            "content": "sha256:66745857733b9b6bee8d1b88745fdc8ddb8ed99abeb770034f3222162d0e7805",
+            "locator": {
+              "kind": "symbol",
+              "name": "add_arguments"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "Citation scope carries only singleton or finite document-list selection.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8cc37ec945797a2390b14f47bdce27f8fe5816d5",
+            "content": "sha256:b9330db4676ef731cd95886e9ad74664f430ed48bd0b1054011157379721166f",
+            "locator": {
+              "kind": "symbol",
+              "name": "CitationOperationScope"
+            },
+            "path": "mcp/src/agents_remember/application/memory_tools.py"
           },
           "kind": "code"
         }

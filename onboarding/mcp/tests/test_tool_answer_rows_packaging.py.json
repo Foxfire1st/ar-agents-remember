@@ -3,28 +3,28 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "A constructed forty-path population survives compaction with and without a supplied report path; the retained real carryover case derives plan only.\n\nAnchor: current source extent",
+      "note": "A constructed forty-path population survives compaction with and without a supplied report path; the retained real carryover case derives plan only.",
       "targets": [
         {
           "anchor": {
-            "blob": "f2c6911e64d18ee582e042bf9384d6077cdcd145",
+            "blob": "dbe036563e60c80246f0cf4f88feaafce572b1ed",
             "content": "sha256:ee3656b577ac3b41f1bfc9af88c88d654b4a5568766fa73131696d0ac9dd58bb",
             "locator": {
-              "end": 436,
+              "end": 353,
               "kind": "line_range",
-              "start": 420
+              "start": 337
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "f2c6911e64d18ee582e042bf9384d6077cdcd145",
-            "content": "sha256:f30e5edc7a435b55f8aa77aa89c7b764ea7adc559ae891002c4c9be430d8cb6d",
+            "blob": "dbe036563e60c80246f0cf4f88feaafce572b1ed",
+            "content": "sha256:59cd6b62d402c8d0a88da76d79f66c0977bdf91669cf82335d1fac075af29560",
             "locator": {
-              "end": 418,
+              "end": 353,
               "kind": "line_range",
-              "start": 388
+              "start": 317
             }
           },
           "kind": "test"
@@ -32,16 +32,15 @@
       ]
     },
     "2": {
-      "note": "Refresh and stale-preview results derive the route row.\n\nAnchor: current source extent",
+      "note": "Refresh and stale-preview results derive the route row.",
       "targets": [
         {
           "anchor": {
-            "blob": "f2c6911e64d18ee582e042bf9384d6077cdcd145",
+            "blob": "dbe036563e60c80246f0cf4f88feaafce572b1ed",
             "content": "sha256:162da5204e2b02dabbc9644da169776902466e0ccf2f775570cf33794fdb6fbf",
             "locator": {
-              "end": 226,
-              "kind": "line_range",
-              "start": 178
+              "kind": "symbol",
+              "name": "RouteProductionTests"
             }
           },
           "kind": "test"
@@ -49,16 +48,15 @@
       ]
     },
     "3": {
-      "note": "Actual validator results derive integrity answer cases.\n\nAnchor: current source extent",
+      "note": "Actual validator results derive integrity answer cases.",
       "targets": [
         {
           "anchor": {
-            "blob": "5afb4f3f2ac22a5619a7c83302cf7b3897e3df9e",
+            "blob": "dbe036563e60c80246f0cf4f88feaafce572b1ed",
             "content": "sha256:8c868e437eb58b49841cc87267bf18ad94210a156d5eb22f7f0342dec7c7158a",
             "locator": {
-              "end": 478,
-              "kind": "line_range",
-              "start": 438
+              "kind": "symbol",
+              "name": "IntegrityProductionTests"
             }
           },
           "kind": "test"
@@ -66,16 +64,15 @@
       ]
     },
     "4": {
-      "note": "Actual coherence actions derive bounded cases.\n\nAnchor: current source extent",
+      "note": "Real coherence responses use a uniquely owned fixture whose actual encoded root has a 160-byte minimum; XDG and finally cleanup remain, with unchanged emitted responses, 850 bound and density floor.",
       "targets": [
         {
           "anchor": {
-            "blob": "f2c6911e64d18ee582e042bf9384d6077cdcd145",
-            "content": "sha256:8bc2e7b85fa80587808541e57663dcbcb1b9bf49e524a87bcd049897106a6144",
+            "blob": "dbe036563e60c80246f0cf4f88feaafce572b1ed",
+            "content": "sha256:11ed838af0dfc9e8ba01b06a7861dea7cbaf84fb95f5cfa7270070284daf4ee6",
             "locator": {
-              "end": 552,
-              "kind": "line_range",
-              "start": 485
+              "kind": "symbol",
+              "name": "test_coherence_paths_derive_the_row_cases"
             }
           },
           "kind": "test"
@@ -83,16 +80,15 @@
       ]
     },
     "5": {
-      "note": "Fixture width is authored and the owned root is cleaned at context exit.\n\nAnchor: current source extent",
+      "note": "Fixture width is authored and the owned root is cleaned at context exit.",
       "targets": [
         {
           "anchor": {
-            "blob": "f2c6911e64d18ee582e042bf9384d6077cdcd145",
-            "content": "sha256:515d8fb88513db21608d2d3156b355793c73bcb9b57c8f85ec05e347b7a08d17",
+            "blob": "dbe036563e60c80246f0cf4f88feaafce572b1ed",
+            "content": "sha256:03fa776ab3c630ab4ea244c0770d6b57e56d82cbec8beeaf9ce9af5007146ab6",
             "locator": {
-              "end": 100,
-              "kind": "line_range",
-              "start": 94
+              "kind": "symbol",
+              "name": "_fixed_width_case_root"
             }
           },
           "kind": "test"
@@ -100,16 +96,15 @@
       ]
     },
     "6": {
-      "note": "Embedded XDG roots share that fixture and restore through patch.dict.\n\nAnchor: current source extent",
+      "note": "Embedded XDG roots share that fixture and restore through patch.dict.",
       "targets": [
         {
           "anchor": {
-            "blob": "f2c6911e64d18ee582e042bf9384d6077cdcd145",
+            "blob": "dbe036563e60c80246f0cf4f88feaafce572b1ed",
             "content": "sha256:bb3972e97bdaafef025ac35956cc99aa9ae002488e9f022563945af413a3648c",
             "locator": {
-              "end": 114,
-              "kind": "line_range",
-              "start": 103
+              "kind": "symbol",
+              "name": "_case_xdg"
             }
           },
           "kind": "test"
@@ -121,12 +116,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f2c6911e64d18ee582e042bf9384d6077cdcd145",
+            "blob": "dbe036563e60c80246f0cf4f88feaafce572b1ed",
             "content": "sha256:ac72a16b665675f225524aa477bbb79a5a41543e4ad14a9a01f32906e1bbdc4a",
             "locator": {
-              "end": 72,
+              "end": 67,
               "kind": "line_range",
-              "start": 72
+              "start": 67
             }
           },
           "kind": "test"
@@ -151,12 +146,12 @@
         },
         {
           "anchor": {
-            "blob": "f2c6911e64d18ee582e042bf9384d6077cdcd145",
+            "blob": "5afb4f3f2ac22a5619a7c83302cf7b3897e3df9e",
             "content": "sha256:8bc2e7b85fa80587808541e57663dcbcb1b9bf49e524a87bcd049897106a6144",
             "locator": {
-              "end": 552,
+              "end": 550,
               "kind": "line_range",
-              "start": 485
+              "start": 483
             }
           },
           "kind": "test"

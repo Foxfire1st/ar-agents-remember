@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "359083eb794b3a5462b9e53d4dde2b27ec8ec7a9",
-        "content": "sha256:c79774887a356bc99797adba5bf7b35aba4b4520204f4e55594ff13d3c106dac",
+        "blob": "067465c785daba374dbccfbc6ddf3efb62611ed4",
+        "content": "sha256:b14f475c8895f5a8e8151c6d973529c14c76d661c59af8d03d9f3b389e70a1d0",
         "locator": {
           "kind": "file"
         }
@@ -118,16 +118,29 @@
       ]
     },
     "6": {
-      "note": "Task nodes and series-child rows carry optional strict directGrant evidence defined by the extracted DTO owner; it is display, not authorization.",
+      "note": "TaskSummary and its TaskDocNode extension carry optional directGrant display evidence. TaskDocNode.subTasks holds TaskSubTaskRefNode drill-in references, which do not carry that grant. These are read models, not authorization.",
       "targets": [
         {
           "anchor": {
-            "blob": "b77591cc3b1feea945b7cdfbdd5a7bb910565636",
-            "content": "sha256:45ec49b559bfcd1d1dd670795868b08a69c930c528c9dcc3a989a1b5ecb79daf",
+            "blob": "4edaf532df1504b4615adce69ce3442646938c12",
+            "content": "sha256:bade654c06cba6272f637eba5c83d7f7f746e7724575d9699804297a70093770",
             "locator": {
-              "end": 438,
+              "end": 165,
               "kind": "line_range",
-              "start": 402
+              "start": 148
+            },
+            "path": "mcp/src/agents_remember/observer/projection_task_documents.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4edaf532df1504b4615adce69ce3442646938c12",
+            "content": "sha256:8281c5b75aa57eac8047b55c99d4c476ba857aeeb65d629813c2c68aff46c56e",
+            "locator": {
+              "end": 413,
+              "kind": "line_range",
+              "start": 385
             },
             "path": "mcp/src/agents_remember/observer/projection_task_documents.py"
           },
@@ -140,12 +153,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "359083eb794b3a5462b9e53d4dde2b27ec8ec7a9",
+            "blob": "067465c785daba374dbccfbc6ddf3efb62611ed4",
             "content": "sha256:e345bcf52910f1d43fcff54700f85ea691a6b896120f54a78d4be96269c1b309",
             "locator": {
-              "end": 547,
+              "end": 529,
               "kind": "line_range",
-              "start": 540
+              "start": 522
             }
           },
           "kind": "code"
@@ -170,12 +183,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "359083eb794b3a5462b9e53d4dde2b27ec8ec7a9",
+            "blob": "067465c785daba374dbccfbc6ddf3efb62611ed4",
             "content": "sha256:2764a95cb17241c31d76be029b1693d4c7b55233a550d07f9241889f4c326a55",
             "locator": {
-              "end": 599,
+              "end": 581,
               "kind": "line_range",
-              "start": 562
+              "start": 544
             }
           },
           "kind": "code"

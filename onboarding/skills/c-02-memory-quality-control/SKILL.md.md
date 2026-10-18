@@ -16,14 +16,21 @@ The newly built converted contract requires source-bound onboarding rows: update
 
 Validator reports have named route reasons. Sync-merge deferral and carried migration debt do not permanently exempt publication: new debt refuses immediately, complete migration makes carried debt refusing, and the five writer-reported rules refuse at commit/landing. The carried gone-path anchor is the refusing exception to generally reported content drift. The source's broader stale-reference sentence must be read with that explicit gone-path qualification.
 
+Old-format memory is refused pending MIK-R46 conversion. `citation_fix` is the targeted repair for mechanically moved converted anchors after findings; it does not restore legacy drift/stamp classifications or an Update History fixer.
+
 Raw readiness precedes coherence. Preparation returns the complete candidate-set digest and file locations; the Curator reads that set before agent-owned judgments and publishes/validates exactly those identities. Neither clean structure nor coherence replaces semantic review or an independent non-author second reader before closeout.
 
 ## Evidence
 
 ### Repo-Internal References
 
+
 - Converted onboarding uses current source-bound rows; the gone-path exception is separated from general content drift. [1]
+
+
 - Complete curation and every named validator reporting/refusal boundary are part of the handoff. [2]
+
+
 - Coherence uses the complete prepared identity set, its digest and actual candidate files. [3]
 
 ## Inherited Source-Epoch Commentary

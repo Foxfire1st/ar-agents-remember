@@ -6,12 +6,7 @@
 
 ## Purpose
 
-Closed typed contracts for the final full memory-coherence certification (CCR-R08 Gate 5).
-Every model is frozen with `extra="forbid"`, so the catalog plan, the executed attestation,
-and the certification result are immutable and self-validating: digests must match content,
-statuses must match their findings, and only a green certification can be finalization
-eligible. The application and memory-quality certification surfaces share these models through
-the lower-level `certification.final_certification_models` module and the package `__init__`.
+Closed, frozen item contracts used by the memory-domain catalog: `FinalItemStatus`, `FinalCatalogItemIdentity` and `FinalCatalogItemResult`. The base forbids extra fields and mutation. Item identity is not execution evidence, and an item result does not establish an exhaustive final-catalog attestation or finalization eligibility.
 
 ## Code Commentary
 
@@ -19,41 +14,22 @@ the lower-level `certification.final_certification_models` module and the packag
 
 Module-level surface:
 
-- Status vocabulary: `FinalItemStatus` (line 26, pass/fail/blocked/not-applicable) and
-  `FinalCertificationState` (line 27, green/red/blocked).
-- `FinalCertificationModel` (class, lines 30-34) - closed immutable base
-  (`extra="forbid", frozen=True`).
-- `FinalCatalogItemIdentity` (class, lines 36-45) - one closed catalog member
-  (`itemId` pattern, `version` semver, tuple `key`).
-- `FinalCatalogItemResult` (class, lines 47-65) - one typed result with content-addressed
-  `subresultDigest`; the after-validator `_require_status_shape` (58-65) forces blocked
-  items to carry `blockedBy` and forbids findings on pass/not-applicable items.
-- `FinalFullCatalogPlan` (class, lines 68-100) - schema
-  `memory-final-full-catalog-plan/v1`; `_require_canonical_plan` (86-100) forces unique
-  canonical catalog/subrecord tuples and a self-consistent `planDigest`.
-- `FinalFullCatalogAttestation` (class, lines 103-140) - schema
-  `memory-final-full-catalog-attestation/v1`; `_require_complete_population` (120-140)
-  forces the attested population to exhaust exactly the planned one and status counts/ok to
-  derive from the results.
-- `FinalCertificationResult` (class, lines 143-190) - schema
-  `memory-final-full-coherence-certification/v1`; `_require_memory_binding` (168-178)
-  binds plan and attestation memory trees/plan digests and requires a Git-tree memory input;
-  `_require_green_state` (180-190) requires a fully passing catalog, assembled Gate-5
-  inputs, a current coherence record, and the reused green Gate 1-4 prefix for any green result.
-- `_require_unique_canonical` (lines 193-196) - shared uniqueness-and-order guard.
+- `FinalItemStatus` is pass/fail/blocked/not-applicable.
+- `FinalCertificationModel` is the frozen, extra-forbid base.
+- `FinalCatalogItemIdentity` validates item ID and semver version and exposes their tuple key.
+- `FinalCatalogItemResult` bounds finding count, digest spelling, blockers and optional reference; blocked status requires nonempty blockers, while pass and not-applicable forbid findings.
+
+The plan, full attestation, final certification-state/result and shared canonical-order guard were removed rather than moved into another item model.
 
 ### Conventions
 
-Patterns for digests (`^[0-9a-f]{64}T@), trees (40-64 hex), ids and semver versions are
-module constants (lines 16-24); validators raise `ValueError` so callers translate them
-into typed refusals at their boundary.
+Digest spelling is `^[0-9a-f]{64}$`; item IDs and semver versions have their own module patterns. The retained status-shape validator raises `ValueError` for invalid blocked/pass/not-applicable combinations.
 
 ### Invariants And Boundaries
 
 - Models are closed and frozen: no extra fields and no mutation after construction.
-- Attestation exhaustiveness is structural: the observed catalog must equal the planned
-  population exactly.
-- Only a green certification is finalization-eligible; red/blocked never are.
+- Item identities do not prove execution.
+- The surviving item models do not enforce whole-catalog exhaustiveness or green-only finalization eligibility.
 
 ### Todos
 
@@ -63,10 +39,9 @@ None.
 
 ### Repo-Internal References
 
-- The status and state vocabularies. [1]
+
 - One closed final-catalog member with a canonical key. [2]
 - One typed Gate-5 result with content-addressed subresult and status shape guard. [3]
-- The deterministic complete plan with self-digest. [4]
-- The executed attestation that must exhaust its planned population. [5]
-- The typed green/red/blocked certification over the exact pair. [6]
-- Shared uniqueness-and-canonical-order guard. [7]
+
+
+- The item status vocabulary is pass/fail/blocked/not-applicable; the whole-certification state model was removed. [1]

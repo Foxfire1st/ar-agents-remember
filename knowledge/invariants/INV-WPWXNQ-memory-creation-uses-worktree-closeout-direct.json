@@ -1,0 +1,36 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test"
+    ],
+    "justification": "A future memory route must not silently introduce an attribution producer or disguise backfill as content creation; named census rejection tests and the original-tree rewriter assertion directly guard this durable boundary."
+  },
+  "applicability": "The production memory-content attribution producer census and its single renderer.",
+  "conditions": [
+    "Ordinary content producers are worktree closeout, direct landing and baseline adoption; the model renderer and kernel/memory_backfill.py are separately enumerated exact paths.",
+    "The history rewriter constructs its replacement from the original commit tree, not worktree or index contents.",
+    "Statically recognized direct, imported-alias, assignment-alias and literal-getattr calls are checked against the exact path set."
+  ],
+  "exclusions": [
+    "Carryover only prepares the recovery memory worktree and is not a content-commit producer.",
+    "No directory/pattern exemption and no additional content producer.",
+    "The AST census is not a promise to detect arbitrary dynamically constructed reflection or external code."
+  ],
+  "id": "INV-WPWXNQ",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "notes/reports/worker/07e36231-0b63-422c-b9dc-59ca0e3d6b24/role-launch/L56-generation3-code-freeze.md"
+      ],
+      "path": "generation3-new-source-proved-invariants.json"
+    },
+    "handoffEntry": "MIK-R56@v1 PartA §3",
+    "leaf": "260928-MIK-L56",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Memory creation uses worktree closeout, direct landing and baseline adoption through the one attribution renderer; the historical rewriter is separately pinned.",
+  "status": "proposed",
+  "supersedes": []
+}

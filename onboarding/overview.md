@@ -130,7 +130,7 @@ Inherited review comparison uses four exact Git trees: code base/candidate and p
 
 Closeout uses the declared task transaction, with sanctioned branch-direct landing as an explicit exception rather than an ambient checkout fallback. It preserves exact source/destination identity, refuses unresolved conflicts or moved refs and records recoverable completed legs. Index preparation resets and restages so retries cannot retain now-ignored previously staged files. Refused staged checks may leave the task worktree staged; that is not permission to commit an unjudged candidate. Protected branches, integration, cleanup and push retain their own authority gates.
 
-External worktree start requires an existing memory repository and task-derived memory source branch and branches from that authority, not uncommitted source-checkout memory. Baseline adoption checks drift and requires acceptance where actionable drift remains. Branch carryover is a dedicated external recovery leaf for file sidecars, route overviews, entity catalogs and memory-only documents; its retained refusal of converted-memory apply is not a permission to bypass conversion-aware publication. `task_reopen` resets state without creating a worktree. Pause releases one master's activation and publishes nothing; checkpoint landing is separately requested unfinished-master publication.
+External worktree start requires an existing memory repository and task-derived memory source branch and branches from that authority, not uncommitted source-checkout memory. Baseline adoption checks drift and requires acceptance where actionable drift remains. Branch carryover prepares a dedicated external recovery leaf with equal-version converted source/target roots: paired cards and memory-only documents, current official-code anchor observations and missing transitive records travel without source history or overwrite of edited targets. Apply reanchors, indexes and validates the recovery worktree and restores owned bytes on refusal; it makes no commit. The recovery leaf's Curator writes its own judgments, and ordinary gated closeout owns publication. This is not the retired converted-apply refusal or permission to bypass exact-tree validation. `task_reopen` resets state without creating a worktree. Pause releases one master's activation and publishes nothing; checkpoint landing is separately requested unfinished-master publication.
 
 `ff-only` moved-source integration returns `blocked-non-ff`; replay returns `integration-resolution-planning-required` instead of inventing a replay commit. Remote pull-request landing is recorded separately and does not pretend to move local refs. Finalization proves the immediate parent/child landing edge, performs or recognizes completed cleanup, updates the task and immediate parent row and does not complete the parent. Parent selection follows the declared parent or exact listing master; missing leaf/master/row authority refuses rather than finalizing a standalone leaf.
 
@@ -162,7 +162,7 @@ L30's named 2026-09-29 rulings retain their limits: only counted change/history 
 
 L96 records the host-lifecycle move into `serving/paseo/` and the original shared renderer ownership. Current install source/documentation qualifies it with per-use settings and restart deferral, so the old prose is not a fresh statement that installation writes shared authority or that dashboard start/stop was accepted. The strict-layer contract likewise retains declared future construction and a named serving-size sequencing deviation; it is not evidence that every package migration or structural check has completed.
 
-The retained five-gate memory-certification architecture is distinct from transaction-only closeout. Its final adapter demands the exact ordered green Gate 1–4 prefix and exact admitted code candidate before Gate 5 reuse; interactive catalogs name missing authority without eligibility. Source presence neither demonstrates that those gates ran nor makes them an automatic prerequisite of the current closeout transaction. Historical measurements, closure claims and diagnostic scores remain dated evidence only.
+The certification core retains exact ordered green predecessor checks and current Gate-5 memory-input identity for issuance/reuse, and exact five-certificate authority for explicit finalization. The final-memory adapter and gate-prefix wrapper were removed; core consistency is not a current prepared-closeout producer or automatic closeout prerequisite. Ordinary closeout has its separate invariant-gated exact-tree transaction. Historical measurements and diagnostic scores supply no fresh certificate.
 
 ### Precise authoring and role-stage detail
 
@@ -214,7 +214,10 @@ Generated instruction carriers follow their canonical role/operation owners. Cle
 - Retained reference account (no fresh execution or acceptance inferred): Certifying publication and accepting consumers. [45]
 - Retained reference account (no fresh execution or acceptance inferred): Exact contract scope, the full check and the curator worklist publication. [46]
 - Retained reference account (no fresh execution or acceptance inferred): The interactive catalog names missing authority without eligibility. [47]
-- Retained reference account (no fresh execution or acceptance inferred): The final memory adapter requires the selected four-code-terminal prefix. [48]
+
+
+- Core Gate-5 certificate issuance requires the exact ordered green Gate 1–4 prefix for the admitted candidate and exact memory inputs; no removed adapter is thereby bound and ordinary closeout does not acquire this certificate automatically. [48]
+
 - Retained reference account (no fresh execution or acceptance inferred): Git attribution is the source of the consumer ledger. [50]
 - Retained reference account (no fresh execution or acceptance inferred): Closeout writes or reuses one memory-content output; on converted memory it first closes the leaf's history file and validates and gates the exact tree. [51]
 - Retained reference account (no fresh execution or acceptance inferred): Integration proves exact memory source ancestry independently of cache rows. [52]
@@ -325,7 +328,10 @@ Generated instruction carriers follow their canonical role/operation owners. Cle
 - Retained reference account (no fresh execution or acceptance inferred): The memory-repo tools example provides the `Code Quality` section. [284]
 - Retained reference account (no fresh execution or acceptance inferred): Exact contract scope, full check and curator worklist publication. [285]
 - Retained reference account (no fresh execution or acceptance inferred): Interactive catalog names missing authority without eligibility. [286]
-- Retained reference account (no fresh execution or acceptance inferred): Final memory adapter requires the selected four-code-terminal prefix. [287]
+
+
+- Core Gate-5 certificate issuance requires the exact ordered green Gate 1–4 prefix for the admitted candidate and exact memory inputs; no removed adapter is thereby bound and ordinary closeout does not acquire this certificate automatically. [287]
+
 - Retained reference account (no fresh execution or acceptance inferred): Closeout writes or reuses one actual memory-content output (since MIK-R09, on converted memory, after closing the leaf's history file and validating and gating the exact tree). [288]
 - Retained reference account (no fresh execution or acceptance inferred): Closed admission and one public projector. [289]
 - Retained reference account (no fresh execution or acceptance inferred): Task-addressed lifecycle controls. [291]
@@ -359,7 +365,10 @@ Historical L111 predecessor account, not the composed R113 roster: - Historical 
 - Context freshness is opt-in, and this packet disables provider discovery. [322]
 - Report retention is write-time, five files/seven days; this writer alone does not establish whole-read-path enforcement. [324]
 - Candidate environment bootstrap is frozen, explicit replacement restores on failure, and successful replacement removes the backup. [325]
-- Final memory certification requires an exact ordered four-gate prefix and exact admitted candidate. [326]
+
+
+- Core Gate-5 certificate issuance requires the exact ordered green Gate 1–4 prefix for the admitted candidate and exact memory inputs; no removed adapter is thereby bound and ordinary closeout does not acquire this certificate automatically. [326]
+
 - Source charters distinguish strict dependency order from future package construction and the named sequencing deviation. [327]
 
 - Landing rows are report-only: no refusing findings/actionable count; unreadable memory-base input is named. Retrieval guidance names harness-native substrates, while its inherited paired-read published-intent wording is historical and superseded by the current L109 names-only contract; bounded continuations belong to knowledge_read, not read_ar_files. [311]
@@ -415,3 +424,6 @@ Historical L111 predecessor account, not the composed R113 roster: - Historical 
 - Role-stage selection, precise authoring, narrow own-step completion and independent recorded memory lane; source declarations, no execution acceptance. [350]
 
 - Role-stage selection, precise authoring, narrow own-step completion and independent recorded memory lane; source declarations, no execution acceptance. [351]
+
+
+- Converted carryover prepares equal-format paired content and missing records in a recovery worktree without importing history or committing; ordinary leaf judgments and gated closeout own publication. [354]

@@ -6,60 +6,32 @@
 
 ## Purpose
 
-Owns the immutable evidence vocabulary of CCR-R06@v2's content-addressed memory dependency scope:
-the exact Git tree delta and task observation inputs, the scope candidate identity, the
-owner-produced dependency snapshot, and the deterministic selected-closure manifest. Every value is
-a frozen, strict pydantic model whose canonical JSON spelling is the digest input
-cit:([`MANIFEST_SCHEMA`, `SNAPSHOT_SCHEMA`, `canonical_digest`], mcp/src/agents_remember/memory_quality/incremental_scope/models.py:27-28; mcp/src/agents_remember/memory_quality/incremental_scope/models.py:31-35).
+Owns strict frozen Git path/delta, task-pair, candidate identity, scope-edge and checker-policy values with one canonical JSON digest spelling. Task observations and memory candidate-pair roots come from their canonical domain owners. The former dependency snapshot, source-index observation, scope node and selected-closure manifest classes are absent.
 
 ## Code Commentary
 
 ### Logic
 
-`GitPathChange` validates that old/new path and blob shape match the change status and requires
-canonical repository-relative POSIX paths without empty, dot, or traversal segments
-cit:([`GitPathChange`], mcp/src/agents_remember/memory_quality/incremental_scope/models.py:43-80). `GitTreeDelta`
-pins one code or memory delta to exact Git tree identities and a deterministically sorted, unique
-change tuple cit:([`GitTreeDelta`], mcp/src/agents_remember/memory_quality/incremental_scope/models.py:82-111).
-`CanonicalTaskObservation` records the task source digest and namespace plus the canonical R01
-(semantic-topology/v2) and R02 (task intent) projections; `TaskObservationPair` content-addressed
-base/candidate form distinguishes a leaf's door baseline from its live task observation
-cit:(["class CanonicalTaskObservation"], mcp/src/agents_remember/models/task_document.py:44-69).
-`ScopeCandidateIdentity` demands one code and one memory delta whose roots equal the canonical
-memory candidate pair roots and refuses changed roots on an unchanged tree
-cit:([`ScopeCandidateIdentity`], mcp/src/agents_remember/memory_quality/incremental_scope/models.py:121-148).
-`ScopeNode` restricts node ids to canonical `code:`/`memory:` paths or the two typed task nodes,
-while `ScopeEdge` carries the owner-declared edge class, content digest, extractor/validator
-versions, and sorted unique reasons cit:([`ScopeNode`, `ScopeEdge`], mcp/src/agents_remember/memory_quality/incremental_scope/models.py:151-182; mcp/src/agents_remember/memory_quality/incremental_scope/models.py:185-202).
-`SourceIndexObservation` binds a leased citation source-index generation to exact roots
-and candidate digest; `DependencySnapshot` freezes nodes, edges, per-class evidence, and a
-self-verifying snapshot digest; `ScopeManifest` is the deterministic selected closure with
-`incrementalReady` flag cit:([`SourceIndexObservation` .. `ScopeManifest`], mcp/src/agents_remember/memory_quality/incremental_scope/models.py:214-233; mcp/src/agents_remember/memory_quality/incremental_scope/models.py:258-271).
+`GitPathChange` validates canonical relative paths and status-specific old/new paths/blobs: modified retains one path, renamed changes it. `GitTreeDelta` requires a normalized absolute root and sorted unique exact Git changes. `TaskObservationPair` retains optional base/candidate CanonicalTaskObservation values from the task-domain owner, with exact source/topology/intent identities. `ScopeCandidateIdentity` requires one code and one memory delta matching canonical pair roots and forbids changes on unchanged trees; canonical_value/digest use the strict complete payload. `ScopeEdge` retains exact content/owner/extractor/validator identities and nonblank sorted unique reasons; the removed ScopeNode namespace validator is not part of it. `CheckerScopePolicy` retains checker, mode, optional extractor/edges and nonempty reason; registry validation owns mode-specific shape. SourceIndexObservation, DependencySnapshot and ScopeManifest are absent.
 
 ### Conventions
 
 - Every model is extra-forbidden and frozen; unknown JSON fields are never silently dropped.
-- `canonical_digest` uses JSON dumps with sorted keys and compact separators so one canonical
-  spelling yields one SHA-256 for all digest consumers.
-- Edges and nodes carry reasons sorted and de-duplicated; digests are computed by the compiler
-  over the same canonical payload shape used by validation.
+- `canonical_digest` uses sorted keys, compact separators and ensure_ascii=True for one SHA-256 spelling.
+- ScopeEdge reasons are sorted and deduplicated; no removed node/compiler contract is implied.
 
 ## Invariants And Boundaries
 
-- Changed roots are never inferred from names or mtimes — only from exact Git tree diffs and
-  changed canonical task observations.
-- A Snapshot/Manifest is bound to exactly one candidate digest; binding refusals happen in the
-  compiler/owners, not here.
-- The manifest is an evidence artifact: it records semantic-topology and task-intent digests but
-  never reconstructs or overrides their canonical owners.
-- Node ids outside code/memory namespaces or the two typed task identities are invalid, preventing
-  fabricated dependency endpoints.
+- Git changes retain exact tree/path/blob evidence rather than mtime inference.
+- `ScopeCandidateIdentity` requires one code and one memory delta matching canonical pair roots and forbids changes on unchanged trees.
+- These values do not produce snapshots, closure manifests or dependency compilation.
 
 ### Current source-selection contract
 
 CanonicalTaskObservation is imported from models/task_document.py, the task-domain owner of its closed immutable shape, normalized absolute task root and exact source/topology/intent identities. This module composes those observations into TaskObservationPair and ScopeCandidateIdentity; it no longer declares or publicly re-exports a duplicate task-observation class.
 
 - `TaskObservationPair` carries the current contract described above. [1]
+
 
 ## Evidence
 
@@ -76,6 +48,9 @@ prerequisites (`TaskIntentState`, `TaskDocumentRef`, `MemoryCandidatePairIdentit
 values are produced/validated by the sibling scope modules.
 
 - Task intent and document ref types come from the R02 task-intent owner. [2]
+
 - Pair identity roots are the canonical code/memory pair authority. [3]
-- The candidate builder emits `ScopeCandidateIdentity`; owner adapters emit `DependencySnapshot`; the compiler closes the closure into `ScopeManifest`. [4]
+
+- observe_scope_candidate emits the surviving exact candidate identity; removed snapshot owners and manifest compiler do not survive. [4]
+
 - Git change status and path shape are validated by the current typed model. [5]

@@ -57,6 +57,8 @@ Stubbed layout permits render assertions, not browser geometry/live delivery. Fu
 - The hydration, virtualization, and jsdom-layout-stub regressions pin no premature empty state and that the full window is retained + virtualized (header count `Event river · 66`, newest row mounts). [4]
 
 - `ev` delegates to the shared `observerEvent` builder and drops the `as ObserverEvent` cast. [5]
+
+
 - `observerEvent` — the shared envelope builder supplying `schema`/`trust`, typed against the mirror. [6]
 
 

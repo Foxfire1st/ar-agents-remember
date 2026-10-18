@@ -32,7 +32,7 @@ The public projector binds its identity to operation kind, contract path, genera
 
 The store advances `recordRevision` once for an accepted mutation and advances `meaningfulRevision` only when canonical meaningful state changes. A newly created record starts at record revision 1. The bounded, read-only wait observes the meaningful cursor: timeout returns an unchanged snapshot, while successor generations, mismatched generations, invalid cursors, replacement, and unreadable journals have typed outcomes.
 
-The refresh validator composes sidecar and governing-route body checks. Its standing parity intent is that curator preparation and closeout apply both surfaces to the same candidate. The current memory-quality caller uses that composition for the legacy refresh branch and uses the onboarding-trace gate for converted memory. An independent closeout call to this composition was not found in current source; the earlier claim that both callers invoke it is not established.
+No refresh validator composes sidecar and governing-route body checks in this route any more: that composer was removed. The parity intent survives as a requirement on the surviving judges — curator preparation and closeout must apply the same rule to the same candidate — and on converted memory that rule is the onboarding-trace gate. The earlier claim that both callers invoked the removed composer has no current referent.
 
 Public lifecycle recover admits the current canonical-leaf-bound doorless direct generation on its retained record, runs its real recovery executor and settles the kept closing receipt as landed when that call completes. Missing taskIntent alone does not strip this direct control; generations missing both compatible intent and admitted leaf input retain the legacy reuse barrier. A completed direct owner may retire, never supersede, under the shared record predicate and unchanged integrated/live-claim/worker-exit restrictions. Exact replay retains the generation; only a changed request may replace retired terminal evidence. Earlier door-carrying direct records remain readable but offer no controls.
 
@@ -48,9 +48,9 @@ For a direct landing that closes a history file, admission keeps a per-generatio
 
 Completed disposition requires exact completed, unintegrated ownership, no active integration publication claim, and released worker authority. A completed direct owner may retire, never supersede; ordinary closeout retains its separately admitted retirement/supersession route. Public journal-read failures use a shared decision owner for projection and control-error translation.
 
-The journal and projector do not themselves execute certification or finalization. Current production service composition does bind the prepared closeout continuation: selected closeout execution runs code gates when needed, then memory certification or finalization through that continuation. The former statement that the production transaction lacks this wiring is stale.
+The journal and projector do not themselves execute certification or finalization. Current production service composition binds no prepared closeout continuation: that class, its producer and its service ports were removed by this leaf, and the ordinary transaction is the synchronous closeout route that runs the invariant gate and publishes the memory commit.
 
-The standing integration intent is to preserve explicit approval, candidate identity, source movement refusal, and ref safety, with full-suite execution requiring an explicit developer request. The old blanket assertion that strict quality, memory quality, selected certification, curator coherence, and independent review all sit outside normal execution is not established by this route; selected certification and memory/finalization continuation are present in current production composition.
+The standing integration intent is to preserve explicit approval, candidate identity, source movement refusal, and ref safety, with full-suite execution requiring an explicit developer request. The old blanket assertion that strict quality, memory quality, selected certification, curator coherence, and independent review all sit outside normal execution is not established by this route; selected certification remains a requested repository-profile route, while the prepared closeout continuation is not present in current production composition.
 
 ## Authority Discrepancies
 
@@ -84,8 +84,10 @@ The following coverage statuses are retained metadata, outside the operative pro
 
 - Historical pre-change completed-disposition diagnosis: the former direct-owner tuple had unequal lengths. Current disposition delegates to lifecycle_operation_identity.completed_direct_owner and retains integration/publication-claim/worker-exit restrictions.  Anchor: lifecycle_completed_disposition.py [13]
 
-- Sidecar/route refresh composition remains implemented; the current memory-quality caller distinguishes converted trace gating from legacy refresh validation. [14]
-- Default production services bind prepared memory certification and the closeout continuation used by selected execution. [15]
+- The sidecar/route body-gate composition was removed; converted memory is judged by the onboarding-trace gate, and the external-memory refresh keeps only entity-fingerprint and route-index refresh. [14]
+
+- Default production services bind the ordinary memory-quality, citation, certification-memory, knowledge validation/crossing/gate and archive adapters; they do not install the removed prepared-closeout continuation or selected certificate producer. [15]
+
 
 - The exact-generation observer returns bounded change/timeout outcomes. [4]
 

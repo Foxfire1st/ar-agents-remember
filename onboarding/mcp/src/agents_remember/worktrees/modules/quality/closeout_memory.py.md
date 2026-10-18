@@ -6,50 +6,37 @@
 
 ## Purpose
 
-Owns the external-memory quality phase adapter used by worktree closeout. The module was extracted
-from `closeout.py` so the coordinator remains below the repository's 1,200-line structural rail;
-the extraction preserves the same fail-closed checks and the same before/after phase result.
+Retains helpers for running a declared memory-quality check group and combining two quality
+results. No production caller was found by the production AST/reference census with CLI and declared entry-point inspection. The source's closeout
+docstrings and failure text describe their former use; they do not establish current closeout
+execution. Current closeout consumes the exact memory-quality attestation separately.
 
 ## Code Commentary
 
 ### Logic
 
 `run_memory_quality_phase` asks the injected `MemoryQualityPort` for a drift context rooted at the
-active code checkout, runs exactly the supplied check group against the resolved onboarding root,
-and raises a bounded, actionable failure when `ok` is false. An optional
-`unstamped_code_commit` lets the pre-refresh citation phase compare a dirty leaf against its real
-base without fabricating closeout provenance. The formatter includes at most the first five
-findings in the exception while the full quality result remains owned by the quality service.
+active code checkout, runs exactly the supplied check group, and raises when `ok` is false. The
+optional `unstamped_code_commit` passes through as comparison context. Failure text includes at
+most five finding summaries; a successful call returns the full quality-service result.
 
-`combine_memory_quality` joins the pre-refresh and post-refresh results into the one closeout gate
-reported to callers. It merges check maps and findings, sums ordinary and report-only counts,
-bounds the combined report-only sample to 50 rows, and records the service-declared check groups in
-`closeoutPhases`. The pre-refresh result may be empty for memory modes or check configurations that
-do not require that phase; the post-refresh result is required.
-
-### Conventions
-
-The injected service declares phase membership; the adapter only passes those check groups and
-combines returned evidence. Its caller runs the code-quality gate before memory preflight.
+`combine_memory_quality` merges the supplied check maps and findings, sums ordinary and
+report-only counts, bounds the report-only sample to 50 rows, and records service-declared check
+groups under `closeoutPhases`. The first result can be empty; the second must provide the indexed
+fields. This is result composition when directly called, not a live closeout gate.
 
 ### Invariants And Boundaries
 
-- This module owns memory-quality execution and result composition, not commit, ledger, approval,
-  source-lineage, or metadata-refresh ordering. Those irreversible boundaries remain in
-  the closeout coordinator and external-memory commit owner.
-- A failed quality result raises; it is never converted into a warning or fallback path.
-- Check membership comes from `MemoryQualityPort.check_groups()`. Do not duplicate the configured
-  citation/style split here.
-- The pre-refresh unstamped commit is comparison context only. Real verification hashes remain
-  closeout-owned after the code commit exists.
-- Bounded exception evidence must not replace or truncate the full service result returned after a
-  successful closeout.
+- The helpers own neither commits nor approval, lineage, metadata refresh or transaction ordering.
+- A failed quality result raises; it is never converted into a warning.
+- Group names come from `MemoryQualityPort.check_groups()`.
+- These functions do not implement identical-copy grouping or trace judging. The curator's trace
+  gate owns that work; closeout checks its attestation rather than invoking this phase runner.
 
 ### Todos
 
-The coordinator helper's docstring still says memory preflight precedes the expensive code gate;
-the executable `_closeout_quality_preflight` caller enforces the opposite order. Source correction
-belongs to implementation work; this card follows the caller's actual order.
+The retained module docstrings and refusal wording still name the former closeout pipeline.
+There is no executable `_closeout_quality_preflight` caller in the final source tree.
 
 ## Evidence
 
@@ -63,7 +50,7 @@ No relevant external documentation is configured.
 
 - One phase builds the service-owned drift context, runs the exact check group, and refuses on a non-clean result with bounded evidence. [1]
 - The combined result preserves both phase check maps, findings, counts, bounded report-only evidence, and declared phase membership. [2]
-- The module owns both memory-quality phases as standalone callers: `run_memory_quality_phase` runs one declared check group and refuses with bounded evidence, and the closeout transaction no longer invokes a code gate or a memory preflight. [3]
+- The retained runner executes a supplied check group when directly called. No production call of either helper was found by the production AST/reference census with CLI and declared entry-point inspection; the current closeout owner imports neither helper. [3]
 - The external-memory commit owner runs the refresh and the memory/ledger commits; it no longer combines a memory-quality gate result. [4]
 - The memory-quality port declares drift context, check groups and quality execution. [5]
 - The injected service bundle keeps memory quality and certification continuation as distinct ports. [6]

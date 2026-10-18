@@ -13,6 +13,7 @@ Typed test-only native entry/keyed-map/explicit-count fixtures for LifecycleList
 ### Logic
 
 task, taskMap, seed and hierarchy build native entries and served membership/count facts. rowOf finds the actual option. installListCleanup is explicit per-suite setup; it clears rendered DOM, the dashboard store, localStorage and stubbed globals, not production state.
+The retired session store is not a cleanup target. `rowOf` resolves the actual option; `beforeEach` installs the CSS.escape test stand-in and `afterEach` restores stubbed globals. The former lifecycle/series builders and rowHover helper are not current exports.
 
 ### Conventions
 
@@ -37,7 +38,9 @@ No relevant domain documentation was found.
 
 ### Repo-Internal References
 
-- The shared fixture builders and cleanup. [1]
+
+- The shared typed fixture builders and explicitly installed cleanup retain DOM/global/dashboard/localStorage ownership, without the removed sessions store. [1]
+
 
 ### Cross-Repo References
 

@@ -191,7 +191,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "270f5e2139bc6d77e9b3830019d960948454ba06",
+            "blob": "1d402a49aa56821231b8ef481e0d186176f2c535",
             "content": "sha256:bc89365e4597d139bd67aa8bc5de94e80ae2b709f1713129da4483d7e4fa1545",
             "locator": {
               "kind": "symbol",
@@ -440,6 +440,47 @@
         }
       ]
     },
+    "23": {
+      "note": "Ordinary memory publication and recovered-commit gate own the retained output proof; no exclusive prepared-certificate continuation publishes memory. [23]",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9cfb3331ff9fa3f591e098da8dbf93635dd481b9",
+            "content": "sha256:11ae5d0f9f1b6bd93cd7a7c2b039af7d2f2705640ac5f630475ea73439540a7d",
+            "locator": {
+              "kind": "symbol",
+              "name": "external_closeout_commits"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/closeout_external.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9cfb3331ff9fa3f591e098da8dbf93635dd481b9",
+            "content": "sha256:5f80c34d3a26a96ee3b3933d9e652f6b0f9ae7cf541a25f9892af3dfc1d4b73d",
+            "locator": {
+              "kind": "symbol",
+              "name": "_refresh_external_memory"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/closeout_external.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9cfb3331ff9fa3f591e098da8dbf93635dd481b9",
+            "content": "sha256:d74fc2b14e7948998b1aaaea59cb7cb4c2d67731eee72bafdab33e7f9381ff29",
+            "locator": {
+              "kind": "symbol",
+              "name": "_commit_memory_content"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/closeout_external.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
     "3": {
       "note": "The source reader does not import cached rows.",
       "targets": [
@@ -616,12 +657,12 @@
         },
         {
           "anchor": {
-            "blob": "270f5e2139bc6d77e9b3830019d960948454ba06",
+            "blob": "1d402a49aa56821231b8ef481e0d186176f2c535",
             "content": "sha256:ebd8def7005648fdd3cd109b8a1423b9bd7d99e3c5b0e7dc3dc1fa8bcc0efaba",
             "locator": {
-              "end": 602,
+              "end": 575,
               "kind": "line_range",
-              "start": 595
+              "start": 568
             },
             "path": "mcp/src/agents_remember/memory/baseline.py"
           },
@@ -634,7 +675,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "270f5e2139bc6d77e9b3830019d960948454ba06",
+            "blob": "1d402a49aa56821231b8ef481e0d186176f2c535",
             "content": "sha256:bf362a4869836a58bd9398725054613b098abc324776ebd66726107f6b454efe",
             "locator": {
               "kind": "symbol",
@@ -646,7 +687,7 @@
         },
         {
           "anchor": {
-            "blob": "270f5e2139bc6d77e9b3830019d960948454ba06",
+            "blob": "1d402a49aa56821231b8ef481e0d186176f2c535",
             "content": "sha256:f4919bee988d4473dce9ce42789930a3b179417eb1c07e1d5ba1f0c40270d283",
             "locator": {
               "kind": "symbol",
@@ -658,12 +699,12 @@
         },
         {
           "anchor": {
-            "blob": "2224d77730508917cec7472ef2059c00bf3196e4",
+            "blob": "1d402a49aa56821231b8ef481e0d186176f2c535",
             "content": "sha256:54db39c277083dab87a1a463a2d00dd6c303001aa204b4851452de4e461745cf",
             "locator": {
-              "end": 277,
+              "end": 610,
               "kind": "line_range",
-              "start": 274
+              "start": 607
             },
             "path": "mcp/src/agents_remember/memory/baseline.py"
           },

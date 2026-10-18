@@ -25,6 +25,7 @@ TaskSummary construction supplies required seats and other neutral defaults expl
 ### Logic
 
 seedTaskEntries and taskTree seed native entry maps with explicit parent/children/counts. seedSeries/ordering/promoted fixture scenarios use that same grammar, not lifecycle or SeriesNode builders. stubCounters remains a deterministic ancillary HTTP stub.
+`seedProjection`, `seedPromotedLeaf` and `seedSeriesOrdering` retain their projection/scenario roles; the former gallery `seed(name)` helper remains removed.
 
 
 **`stubCounters` takes one optional argument, and it is what lets a test choose which answer the Intent review control reads.** Since `260921-ICR-L47` it is `stubCounters(reviewSummary?: unknown)` and answers `/api/review/intent/summary` (previously `reviewEntry` answering `/api/review/intent/entries`, which the entry no longer reads) with whatever the caller passes — counts, partial counts, or an unavailable refusal — and keeps its previous behaviour when the argument is omitted (the route falls through to the counters body, which is what a caller that does not exercise the entry wants). The three answers are deliberately *different* answers that the bar must treat the same way, which is why the argument is untyped at the call site: the stub's job is to reproduce the wire, not to constrain it.
@@ -58,7 +59,9 @@ No relevant domain documentation was found.
 
 ### Repo-Internal References
 
-- The shared fixture builders. [1]
+
+- The retained shared fixture builders include seedProjection, seedPromotedLeaf and stubCounters; the removed gallery seed helper is not a current owner. [1]
+
 
 ### Cross-Repo References
 

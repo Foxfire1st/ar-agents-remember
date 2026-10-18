@@ -7,7 +7,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f8c3bf0f7388179f0d5bc71b49c22089f7557793",
+            "blob": "58febc5c623004ee40e9db732dc529e040f71589",
             "content": "sha256:c52189592c367935d50eaa3ec6c898f27fcc2f6c8869b86a2019c3e89ae22a88",
             "locator": {
               "kind": "symbol",
@@ -23,8 +23,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ac132ba02c16f5f0000f16185b12cfe345dfe99b",
-            "content": "sha256:d201622fbc0b6e8297c7d01b455708781d29ef06c07413abc29c5500c4fa1043",
+            "blob": "4d1d7a64b2c3ce5b16748b5fa73df09ee5501b51",
+            "content": "sha256:728e3842f4dea28966c4066d9bf896164a4669263085f49d0f3317fbd943f429",
             "locator": {
               "kind": "symbol",
               "name": "test_memory_quality_reads_the_converted_format"
@@ -35,44 +35,12 @@
         }
       ]
     },
-    "2": {
-      "note": "Compiles the exact plan bound to one candidate pair with a self-digest.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "f8c3bf0f7388179f0d5bc71b49c22089f7557793",
-            "content": "sha256:db5240aa6ac5bce7ba12320ce6be3607257a41f754204f47e229ae42f74affd2",
-            "locator": {
-              "kind": "symbol",
-              "name": "compile_final_catalog_plan"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "3": {
-      "note": "Maps an executed run into the exhaustive typed attestation.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "f8c3bf0f7388179f0d5bc71b49c22089f7557793",
-            "content": "sha256:9fc04d359c4937d51c2749aa58c64c734a3e60fb23838216a6e3b4e758303a69",
-            "locator": {
-              "kind": "symbol",
-              "name": "final_catalog_attestation"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
     "4": {
       "note": "Publishes the non-certifying readiness projection for the repair loop.",
       "targets": [
         {
           "anchor": {
-            "blob": "f8c3bf0f7388179f0d5bc71b49c22089f7557793",
+            "blob": "58febc5c623004ee40e9db732dc529e040f71589",
             "content": "sha256:31e357a1dd646a4879fe63763c35759d8c94bbc311706dc052537ef8bc938c93",
             "locator": {
               "kind": "symbol",
@@ -84,22 +52,11 @@
       ]
     },
     "5": {
-      "note": "Closes the executed/observed authority shapes of one run.",
+      "note": "ReadinessProjectionInput closes the repair-loop executed/count/authority inputs; no ExecutedFinalCatalog survives.",
       "targets": [
         {
           "anchor": {
-            "blob": "f8c3bf0f7388179f0d5bc71b49c22089f7557793",
-            "content": "sha256:b39ca977f8cc0154d47148bca3bfb5790c15e9525cd8f3ecd5e28e2cbf05bed2",
-            "locator": {
-              "kind": "symbol",
-              "name": "ExecutedFinalCatalog"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "f8c3bf0f7388179f0d5bc71b49c22089f7557793",
+            "blob": "58febc5c623004ee40e9db732dc529e040f71589",
             "content": "sha256:42523b59adb6ef4e7a4bb0fa475d31ef3bef1e840dc4d1737d44151c6154e0c0",
             "locator": {
               "kind": "symbol",
@@ -115,7 +72,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f8c3bf0f7388179f0d5bc71b49c22089f7557793",
+            "blob": "58febc5c623004ee40e9db732dc529e040f71589",
             "content": "sha256:6e712a0094b00699abd68d409f20252edce316a7c1e6596700094f72bc48ce8a",
             "locator": {
               "kind": "symbol",
@@ -126,7 +83,7 @@
         },
         {
           "anchor": {
-            "blob": "f8c3bf0f7388179f0d5bc71b49c22089f7557793",
+            "blob": "58febc5c623004ee40e9db732dc529e040f71589",
             "content": "sha256:0670889dbb65af12a7d4882062299f507b20227dbf670baf54ab8e5890741e81",
             "locator": {
               "kind": "symbol",
@@ -137,7 +94,7 @@
         },
         {
           "anchor": {
-            "blob": "f8c3bf0f7388179f0d5bc71b49c22089f7557793",
+            "blob": "58febc5c623004ee40e9db732dc529e040f71589",
             "content": "sha256:4f639e545aab6d256481864533232951b3d16546573b9a808e563f605e5124a8",
             "locator": {
               "kind": "symbol",
@@ -148,61 +105,12 @@
         }
       ]
     },
-    "7": {
-      "note": "Code/memory binding, pending full-only coverage, and executed-population guards.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "f8c3bf0f7388179f0d5bc71b49c22089f7557793",
-            "content": "sha256:02b621924cc35a83ecc632c36fde0310f15509dd8234f3d7b08e44f7c5e29822",
-            "locator": {
-              "kind": "symbol",
-              "name": "_require_affected_closure_bound"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "f8c3bf0f7388179f0d5bc71b49c22089f7557793",
-            "content": "sha256:302273ef5349d8ae7d6d70b38f0a8fc149f5e5b25a4e40f6d0f21ceecb1a93af",
-            "locator": {
-              "kind": "symbol",
-              "name": "_require_pending_full_only_population"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "f8c3bf0f7388179f0d5bc71b49c22089f7557793",
-            "content": "sha256:4bc15fd636dbab5aebca14b9ea59a2779070ca4f02ec30d2a76511fa56b1ca8a",
-            "locator": {
-              "kind": "symbol",
-              "name": "_require_executed_population"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
     "8": {
-      "note": "The typed refusal and unknown-item refusal helpers.",
+      "note": "Unknown catalog items raise typed gate-five-catalog-item-unknown with memory_quality_check recovery.",
       "targets": [
         {
           "anchor": {
-            "blob": "f8c3bf0f7388179f0d5bc71b49c22089f7557793",
-            "content": "sha256:3f607b87b984368cb8384d5a713f81eb3730f93373f072e1ef5ec27e73d6f8e5",
-            "locator": {
-              "kind": "symbol",
-              "name": "_refuse"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "f8c3bf0f7388179f0d5bc71b49c22089f7557793",
+            "blob": "58febc5c623004ee40e9db732dc529e040f71589",
             "content": "sha256:9374ca166d71dc4bf775c3f7216f693939546826396de5f9d64dc1a5b452848d",
             "locator": {
               "kind": "symbol",
@@ -218,7 +126,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f8c3bf0f7388179f0d5bc71b49c22089f7557793",
+            "blob": "58febc5c623004ee40e9db732dc529e040f71589",
             "content": "sha256:b549df9727a2948e7d8df4befaf94086d4246e45e34e903b9ed925fb10539383",
             "locator": {
               "kind": "symbol",

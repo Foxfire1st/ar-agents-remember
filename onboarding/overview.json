@@ -421,7 +421,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a7027ec9480d688e503a34adce80ba6194a5582d",
+            "blob": "b6b3583faa1c4f99e451e008340a2a6fea724ccf",
             "content": "sha256:55d62711708c12afbc553c96932bee256fa7714690df803c6b5d8e81136b3736",
             "locator": {
               "end": 8,
@@ -743,12 +743,12 @@
         },
         {
           "anchor": {
-            "blob": "1f4797dc78a4b4079de6cca8a4ea066f27bbe722",
+            "blob": "0f2012e3d1b6cfcf742adc9b3bf25460b4073950",
             "content": "sha256:407e3ebc0c802bdc5f3f7f35af9376551f0f0b350e768ddc0c1e3c878413c3cd",
             "locator": {
-              "end": 59,
+              "end": 69,
               "kind": "line_range",
-              "start": 56
+              "start": 66
             },
             "path": "mcp/src/agents_remember/memory/carryover.py"
           },
@@ -1590,7 +1590,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8f6b96ed31a33286bcba19bf09f15947e6fa94ac",
+            "blob": "af4eb5d20b66813d4dd85e8e211e2edae285874e",
             "content": "sha256:d81b89961aa9f6111073416b7d9db6242c5d1caddb566ef889f16800de227eb4",
             "locator": {
               "kind": "symbol",
@@ -1603,17 +1603,29 @@
       ]
     },
     "287": {
-      "note": "Final memory adapter requires the selected four-code-terminal prefix.",
+      "note": "Core Gate-5 certificate issuance requires the exact ordered green Gate 1–4 prefix for the admitted candidate and exact memory inputs; no removed adapter is thereby bound and ordinary closeout does not acquire this certificate automatically.\n\nAnchor: `compile_gate_certificate`, `_require_current_predecessors`",
       "targets": [
         {
           "anchor": {
-            "blob": "c53333a189e401b041e0fc4e3501ee1efa2c3001",
-            "content": "sha256:444173f862af3429a6e23c2b5ccb23231c9a1be6af7c1c03b08d7778bcad5d9c",
+            "blob": "c11019f54828e85f82676c738e6eb2bef78d6d21",
+            "content": "sha256:712b54990ca1539b93cff58fe67e12aea3e7c81eff0079439068eae35ffcd10e",
             "locator": {
               "kind": "symbol",
-              "name": "PreparedMemoryCertificationAdapter"
+              "name": "compile_gate_certificate"
             },
-            "path": "mcp/src/agents_remember/application/prepared_certification.py"
+            "path": "mcp/src/agents_remember/certification/certificate_authority.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c11019f54828e85f82676c738e6eb2bef78d6d21",
+            "content": "sha256:eea560170c532c4491b61505102e8f74d0b810250dcb0891b1e063fd2bf990d8",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_current_predecessors"
+            },
+            "path": "mcp/src/agents_remember/certification/certificate_authority.py"
           },
           "kind": "code"
         }
@@ -2572,18 +2584,29 @@
       ]
     },
     "326": {
-      "note": "Final memory certification requires an exact ordered four-gate prefix and exact admitted candidate.\n\nAnchor: Gate-five prefix admission",
+      "note": "Core Gate-5 certificate issuance requires the exact ordered green Gate 1–4 prefix for the admitted candidate and exact memory inputs; no removed adapter is thereby bound and ordinary closeout does not acquire this certificate automatically.\n\nAnchor: `compile_gate_certificate`, `_require_current_predecessors`",
       "targets": [
         {
           "anchor": {
-            "blob": "e482167e7e01d8ee0350bd21e7c29a43782df2fe",
-            "content": "sha256:1b31592f9d0344813944807f97dc4a197cd18807ab18376fbe8dde40f52f843a",
+            "blob": "c11019f54828e85f82676c738e6eb2bef78d6d21",
+            "content": "sha256:712b54990ca1539b93cff58fe67e12aea3e7c81eff0079439068eae35ffcd10e",
             "locator": {
-              "end": 85,
-              "kind": "line_range",
-              "start": 42
+              "kind": "symbol",
+              "name": "compile_gate_certificate"
             },
-            "path": "mcp/src/agents_remember/memory_quality/final_certification/gate_prefix.py"
+            "path": "mcp/src/agents_remember/certification/certificate_authority.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c11019f54828e85f82676c738e6eb2bef78d6d21",
+            "content": "sha256:eea560170c532c4491b61505102e8f74d0b810250dcb0891b1e063fd2bf990d8",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_current_predecessors"
+            },
+            "path": "mcp/src/agents_remember/certification/certificate_authority.py"
           },
           "kind": "code"
         }
@@ -3207,6 +3230,44 @@
         }
       ]
     },
+    "354": {
+      "note": "Converted carryover prepares equal-format paired content and missing records in a recovery worktree without importing history or committing; ordinary leaf judgments and gated closeout own publication.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0f2012e3d1b6cfcf742adc9b3bf25460b4073950",
+            "content": "sha256:747038ba884874ecd061048d8ad0b0e56b0a848bf7026b05a24e652f1632a675",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/memory/carryover.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9686c82c42aa92ccb30902e632de9bc6f3dfc207",
+            "content": "sha256:19cfdc182aaa3507362169f9d2b1166cbe09295f05bb1e7ede20664e0e966194",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/memory/carryover_apply.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5eaeacce0e041eee509dbe76a090ad0f1ce18c83",
+            "content": "sha256:63d10d85beb30c291c55e0c3c0f1d966415ac5d00cbcc08dc24d68316b2bbbc4",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test_converted_carryover.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
     "36": {
       "note": "Runtime asset sync treats the root runtime folders as canonical and has a check form.",
       "targets": [
@@ -3406,7 +3467,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8f6b96ed31a33286bcba19bf09f15947e6fa94ac",
+            "blob": "af4eb5d20b66813d4dd85e8e211e2edae285874e",
             "content": "sha256:d81b89961aa9f6111073416b7d9db6242c5d1caddb566ef889f16800de227eb4",
             "locator": {
               "kind": "symbol",
@@ -3419,17 +3480,29 @@
       ]
     },
     "48": {
-      "note": "The final memory adapter requires the selected four-code-terminal prefix.",
+      "note": "Core Gate-5 certificate issuance requires the exact ordered green Gate 1–4 prefix for the admitted candidate and exact memory inputs; no removed adapter is thereby bound and ordinary closeout does not acquire this certificate automatically.\n\nAnchor: `compile_gate_certificate`, `_require_current_predecessors`",
       "targets": [
         {
           "anchor": {
-            "blob": "c53333a189e401b041e0fc4e3501ee1efa2c3001",
-            "content": "sha256:444173f862af3429a6e23c2b5ccb23231c9a1be6af7c1c03b08d7778bcad5d9c",
+            "blob": "c11019f54828e85f82676c738e6eb2bef78d6d21",
+            "content": "sha256:712b54990ca1539b93cff58fe67e12aea3e7c81eff0079439068eae35ffcd10e",
             "locator": {
               "kind": "symbol",
-              "name": "PreparedMemoryCertificationAdapter"
+              "name": "compile_gate_certificate"
             },
-            "path": "mcp/src/agents_remember/application/prepared_certification.py"
+            "path": "mcp/src/agents_remember/certification/certificate_authority.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c11019f54828e85f82676c738e6eb2bef78d6d21",
+            "content": "sha256:eea560170c532c4491b61505102e8f74d0b810250dcb0891b1e063fd2bf990d8",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_current_predecessors"
+            },
+            "path": "mcp/src/agents_remember/certification/certificate_authority.py"
           },
           "kind": "code"
         }
@@ -3889,7 +3962,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "91a01a2974b9040584ef83b4c6202d0ab8d5305f",
+            "blob": "bcce4fbd8f27efaa7c7396ed54282b2a9cfb8a78",
             "content": "sha256:9870afeebbc17ba8d42b43355df0733ba20f2e1b8edeab0ed21eb1f7855e449f",
             "locator": {
               "end": 15,
@@ -3902,7 +3975,7 @@
         },
         {
           "anchor": {
-            "blob": "91a01a2974b9040584ef83b4c6202d0ab8d5305f",
+            "blob": "bcce4fbd8f27efaa7c7396ed54282b2a9cfb8a78",
             "content": "sha256:3b514cfb3c68949d1e6d0573e52c68270da03fccbab4b2cbd35a86d33c170f22",
             "locator": {
               "end": 108,

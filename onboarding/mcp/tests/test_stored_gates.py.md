@@ -12,7 +12,7 @@ Protects the retained stored-gate data and landing refusal semantics after publi
 
 ### Logic
 
-Pure GateRecord snapshots and append/last-wins folding remain testable data operations. Existing open/applied logs refuse closeout, direct landing, finalization and integration with their existing statuses/codes plus the explicit removed-stores way out. Parameterized refusal assertions forbid removed tool names, fresh gate channels and unregistered nextTool values; queue repair names only retained selection tools.
+Pure GateRecord snapshots and append/last-wins folding remain testable data operations. Existing open/applied logs refuse retained closeout, direct landing and integration with their existing statuses/reasons plus the explicit removed-stores way out. The removed prepared-finalization helper/case is replaced by surviving closeout gate-read/gate-claim coverage, not restored as a finalization channel. Parameterized refusal assertions forbid removed tool names, fresh gate channels and unregistered nextTool values; queue repair names only retained selection tools.
 
 ### Invariants And Boundaries
 
@@ -25,6 +25,8 @@ At two absent-subject sizes, claim_approval permits a gateless claim without cre
 ## Evidence
 
 - Absent approval has no store footprint; an existing approval is spent exactly once. [3]
+- Stored gate read and claim refusal stays on the retained closeout route. [5]
+- The retained closeout refusal assertion preserves the exact gate-enforcement reason and removed-stores way out. [4]
 
 
 No Domain Documentation source is configured for this repository-specific boundary.

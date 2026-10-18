@@ -1,0 +1,24 @@
+{
+  "path": "docs/reference/repository-certification-profile.md",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Requested certification is explicitly selected repository-profile work through Dagger and commits nothing. The profile and loader are still authority for that requested Gates 1–4 work; a selection named `closeout` is not an automatic closeout invocation. Ordinary closeout runs no gate but the invariant gate, retains exact candidate/approval/lineage checks and code-then-memory Git publication, and does not run certification, code-quality checks, test suites or independent review. A missing profile or certification result does not block that transaction. This does not remove canonical Curator/Reviewer duties or confer independent semantic acceptance on diagnostics.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bd6f12ad5a720f5d726d19e662ce82fe02004beb",
+            "content": "sha256:aab9469628e244251afe4b7357929c5697d05c774ec14ee3b27cf68f7ae20a67",
+            "locator": {
+              "end": 251,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

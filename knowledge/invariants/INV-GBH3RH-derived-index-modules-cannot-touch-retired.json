@@ -10,7 +10,7 @@
     "The index modules may open their own cache only."
   ],
   "exclusions": [
-    "The citation package, which reads its own source index."
+    "The citation package's retained static other-store source-rule exemption (_OTHER_STORES); this does not confer a runtime connection or file-operation exemption."
   ],
   "id": "INV-GBH3RH",
   "origin": {
@@ -24,9 +24,9 @@
     "leaf": "260928-MIK-L26",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-invariant/v1",
-  "statement": "Derived-index modules cannot touch retired dataset names, helper callers are pinned and only the citation package is exempt from other-store source rules.",
+  "statement": "Derived-index modules cannot touch retired dataset names, helper callers are pinned and only the citation package is exempt from static other-store source rules.",
   "status": "proposed",
   "supersedes": []
 }

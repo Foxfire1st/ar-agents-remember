@@ -11,6 +11,9 @@ The current account is the converted-text and native role route after MIK-R74 an
 
 ## Hot Path Summary
 
+Requested certification is explicitly selected repository-profile work through Dagger and commits nothing. The profile and loader are still authority for that requested Gates 1–4 work; a selection named `closeout` is not an automatic closeout invocation. Ordinary closeout runs no gate but the invariant gate, retains exact candidate/approval/lineage checks and code-then-memory Git publication, and does not run certification, code-quality checks, test suites or independent review. A missing profile or certification result does not block that transaction. This does not remove canonical Curator/Reviewer duties or confer independent semantic acceptance on diagnostics.
+
+
 MIK-R109: `read_files.py` names governing cards and overviews without carrying their bodies; `read_file_cards.py` computes record counts and the actionable card headings. `knowledge_names.py` projects rows/proofs/family endpoints to text ID, kind, state and declaring file/line or card heading, with selection-bound commit/dirtiness and explicit title fallback. Paging sizes the emitted names and keeps continuation/whole-row semantics. `knowledge_reports.py` admits and publishes the whole comparison report; an unwritable report refuses. The mounted orientation answer is slim version 3; the full context builder and kernel resolver still hold the full internal facts. `coordination_tools.py` retains topology narrowing, not a public resolver tool.
 
 Native runtime observation has no process-owned session lifecycle. `tool_response.py` retains explicit recovery guidance, derives missing landing guidance from the response contract, and preserves closeout/integration approval stops from the exact call argument. Completed calls go to the workspace River; task stage/activity belongs to the server TaskEntry producer, not tool events or start/attach attribution.
@@ -29,7 +32,7 @@ The separate `knowledge_read` route selects text trees through derived indexes. 
 
 The file writer reads a handoff, authors records/entries/history, mechanically carries surviving anchors and validates the whole output before writing. Onboarding rows receive candidate source sets and counted flags, and a known paired memory base governs comparison rather than a persisted flag. Membership/no-family and decision/facet record rows use canonical subject aliases, stable rerun identities and candidate revisions; foreign-owner evidence survives reason-only rewrites without duplication. New row kinds do not authorize unsupported producers. Registry-declared writer reports allow across-run repair and name the later refusing route. The existing overview-order/numbered-citation validation and task-owned reconsideration questions remain. File writing is explicit and is not Git acceptance.
 
-Contract-scoped memory quality measures the admitted pair, publishes its full checklist and evaluates converted worklist/gate policy. Trace dispatch captures actual candidate code blobs and forwards them to the pure gate; capture failure is a named repair finding, not an empty pass. Prepared certification uses the proved physical code view and its own named capture-failure boundary. The controller owns complete finding/readiness populations; bounded answer projection and delivery logging confer no semantic or Git acceptance. Repository diagnostics remain official-memory diagnostics, not leaf acceptance. Build identity names the serving ruler separately from the candidate measured.
+Contract-scoped memory quality measures the admitted pair, publishes its full checklist and evaluates converted worklist/gate policy. Trace dispatch captures actual candidate code blobs and forwards them to the pure gate; capture failure is a named repair finding, not an empty pass. The controller owns complete finding/readiness populations; bounded answer projection and delivery logging confer no semantic or Git acceptance. Repository diagnostics remain official-memory diagnostics, not leaf acceptance. Build identity names the serving ruler separately from the candidate measured.
 
 > **Retained historical source account — superseded by the current route account:**
 > Contract-scoped memory quality measures the admitted leaf code/memory pair, produces its checklist and evaluates converted worklist/gate policy. Its controller retains execution/readiness and complete finding populations; `memory_quality/answer.py` owns the bounded status projection. Response completion validates and logs the full result separately from an optional delivered projection, then applies the answer guard and reports the delivered count to the observer. Citation scope admits a finite nonempty list only for fixing, preserving singleton behavior and the original leaf writer guard. These transport changes confer no semantic or Git acceptance. Repository diagnostics retain official-memory scope and do not invent a leaf comparison base. Build identity names the serving ruler independently of the candidate pair it measures. Worktree application adapters carry typed approval, control and code/memory output values to transaction owners; they do not synthesize a third committed output.
@@ -52,7 +55,7 @@ MCP registrations and payload builders own protocol signatures and response vali
 
 Parameter objects remain domain concepts beside their entry points. `CloseoutApproval` stays separate from commit messages so preview cannot masquerade as approved apply. Carryover approval intent stays separate from the selected content. Memory quality's strict sync/start/poll request is deliberately a public discriminated contract; mixed-mode fields are not silently accepted. Route-index composition forwards resolver-owned repository/storage/path-rule authority to the deterministic builder rather than inferring permission from a directory.
 
-`worktree_services` binds memory quality, citation guarding, certification continuations, knowledge validation with `GitBaseConverter`, crossing, worklist recomputation, the knowledge gate, review artifact cleanup and the optional leaf-agent archive port. Binding composes these owners; it does not give this module their authority. Internal provider lifecycle composition remains present, while runtime installation now attempts to stop leftover watchers and reports enabled legacy provider keys as unused. A failed stop is reported while installation continues without watcher recovery.
+`worktree_services` binds memory quality, citation guarding, certification rail definitions, knowledge validation with `GitBaseConverter`, crossing, worklist recomputation, the knowledge gate, review artifact cleanup and the optional leaf-agent archive port. Binding composes these owners; it does not give this module their authority. Internal provider lifecycle composition remains present, while runtime installation now attempts to stop leftover watchers and reports enabled legacy provider keys as unused. A failed stop is reported while installation continues without watcher recovery.
 
 `tool_answer_log.py` obtains actor/role/task from the native agent binding and resolves a canonical single leaf-enclosure binding for report/log placement only while the contract and group survive. Terminating tools retain coordination-root logging; caller records carry no lifecycleId. `knowledge_reports.py` uses this resolved destination rather than an ambient lifecycle. Logs and the workspace River remain diagnostic records, not task stage or host activity authority.
 
@@ -140,7 +143,7 @@ The knowledge-gate adapters carry explicit leaf identity and persistence policy.
 
 ### Independent landing base and bounded answer
 
-`memory_quality/converted_base.py` supplies a separate admitted leaf-base request/port for landing observations. The quality controller, `MemoryQualityAdapter.drift_context` and the proved-view final checker pass that port beside the existing validator base; they do not replace HEAD/conversion-based validator classification, candidate revalidation or certification guards. The converted drift-slot result retains cut-card and added-file observations against the contract base, including committed leaf progress. `memory_quality/answer.py` carries complete counts and bounded slim first rows without expanding normal delivery or treating report-only observations as blocking work. This extends composition and presentation only, not prepared-closeout eligibility, Git publication or semantic acceptance.
+`memory_quality/converted_base.py` supplies a separate admitted leaf-base request/port for landing observations. The quality controller and `MemoryQualityAdapter.drift_context` pass that port beside the existing validator base; they do not replace HEAD/conversion-based validator classification, candidate revalidation or certification guards. The converted drift-slot result retains cut-card and added-file observations against the contract base, including committed leaf progress. `memory_quality/answer.py` carries complete counts and bounded slim first rows without expanding normal delivery or treating report-only observations as blocking work. This extends composition and presentation only, not prepared-closeout eligibility, Git publication or semantic acceptance.
 
 ## Invariants And Boundaries
 
@@ -190,12 +193,16 @@ These retired source accounts preserve earlier intent only. Their former citatio
 
 - Historical pre-L57 reference account only; the named supporting-record acquisition/availability/applicability owner is removed, not a current wire guarantee: **Retained historical source account — superseded by the current route account:** Retired collections report unavailable; assessment currentness is measured. (historical reference 465; retired in L57)
 
-The review-evidence and frame seam is composed here. `review_evidence_packet` assembles one comparison's packet from the owner's record and invents no side; `review_evidence_adapter` prepares that packet from the landed comparison payload and keeps the payload's measured index states; `review_evidence_read`, `review_evidence_relations` and `review_evidence_claims` read exact trees and claim bases within declared bounds; `review_supplemental_evidence` binds task-external bytes; `review_frame_store` publishes, reopens, judges and reclaims task-owned frame revisions; `review_frame_read` bounds stored metadata reads. None of them starts a model, launches a role, or writes knowledge, task, gate or comparison authority.
-
 ## Evidence
 
-- Packet assembly copies the comparison owner's sides and refuses another comparison's identity. [496]
-- The frame store validates before it mutates and writes the ready pointer last. [497]
+- Requested certification is explicitly selected repository-profile work through Dagger and commits nothing. The profile and loader are still authority for that requested Gates 1–4 work; a selection named `closeout` is not an automatic closeout invocation. Ordinary closeout runs no gate but the invariant gate, retains exact candidate/approval/lineage checks and code-then-memory Git publication, and does not run certification, code-quality checks, test suites or independent review. A missing profile or certification result does not block that transaction. This does not remove canonical Curator/Reviewer duties or confer independent semantic acceptance on diagnostics. [496]
+
+
+Inherited numbered findings [288] retain their separate historical custody; no currentness is inferred from those inherited targets. The source-bound account below distinguishes surviving owners from the legacy implementation removed by this task. Removed projection, source-index and prepared-continuation captions are not retained as executable behavior.
+
+- The curator run uses the converted history-file trace gate. A missing answering row leaves an open item with MISSING_CODE; unreadable converted comparison sides or required inputs produce INCOMPLETE_CODE. [497]
+
+- The quality controller and worktree adapter bind an independent admitted landing base with bounded landing observations; scoped-reader roots separately derive from canonical leaf/enclosure admission. [498]
 
 - The one projection of a realization claim into its source reference. [1]
 - The roster's member composition calling it once per claim. [2]
@@ -310,9 +317,6 @@ The review-evidence and frame seam is composed here. `review_evidence_packet` as
 - The storage operation this seam delegates to. [133]
 - Retained historical reference account — the mechanism described below is retired/superseded; references and targets are preserved for custody. Current boundary: Current knowledge store retains reads/index operations; canonical create_revision is retired. Historical account: The storage operation this seam delegates to. [133]
 - The capsule surface this package consumes and does not re-implement. [137] [428]
-
-- The closeout certification's own source index, or a named refusal with the operator move. [146]
-- The candidate route that index is acquired over, so the gate sees the register the route records. [147]
 - The resolution shape whose missing dataset-identity field makes the read the only source of that value. [151]
 - The seam's three original entry points (MIK-R02 later added `select_knowledge_scope` beside them). [175]
 - **The read-only handle, the request-level cursor check before the file is opened, and the ordered sequence.** [176]
@@ -401,7 +405,6 @@ The review-evidence and frame seam is composed here. `review_evidence_packet` as
 - The retained internal published-intent tree/block construction; it is not a published_intent field on the current registered read_ar_files naming response. [285]
 - The sides, refusing mixed formats. [287]
 - The curator run's dispatch between the history-file gate and today's gate. [288]
-- The closeout validator's dispatch. [289]
 - The cache path shared by the worklist and the gate. [290]
 - The paging package map and the seam for MIK-R01 and MIK-R05. [291]
 - The one declared threshold. [292]
@@ -520,7 +523,6 @@ The review-evidence and frame seam is composed here. `review_evidence_packet` as
 
 - **Retained historical source account — superseded by the current route account:** The port it satisfies. [261]
 - **Retained historical source account — superseded by the current route account:** The findings over one recomputed worklist. [364]
-- **Retained historical source account — superseded by the current route account:** Scoped reader roots derive from the canonical leaf and current enclosure admission. [455]
 - **Retained historical source account — superseded by the current route account:** Investigator refuses a leaf and validates the canonical hierarchy. [456]
 - **Retained historical source account — superseded by the current route account:** Exclusion records do not establish bridge-host suppression. [457]
 - **Retained historical source account — superseded by the current route account:** Write admission now records repository-bootstrap only; the database enclosure adapter retired. [458]
@@ -549,7 +551,10 @@ The review-evidence and frame seam is composed here. `review_evidence_packet` as
 
 - The reviewer projection reads the reviewed owner’s history from the resolved after index, ordered by attempt-file numbers, and supplies identical record-specific labels to outline and subject responses. [454]
 
-- independent leaf-base composition and bounded answer [455]
+
+
+- Canonical task/contract admission derives scoped reader roots; the admitted leaf base is resolved independently for landing observations and is passed by controller and drift adapter; the answer carries bounded cut/add rows without changing validator classification. [455]
+
 
 - The onboarding kind's five facts including sourceBlobs. [286]
 - Current typed onboarding and distinct membership/record predicates. [482]

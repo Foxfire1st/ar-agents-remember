@@ -1,0 +1,71 @@
+{
+  "path": "mcp/tests/test_memory_quality_is_independent_of_the_closeout_plane.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The forbidden set contains closeout, integration-lifecycle and operation-model import prefixes.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c2dda082dfaf5ae75e4ee14b33de2e6164732161",
+            "content": "sha256:2c286b61eb617c059c681c128e113940e33d97272581afc17457f4309928cbb5",
+            "locator": {
+              "kind": "symbol",
+              "name": "FORBIDDEN_PREFIXES"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The scanner records absolute ImportFrom.module and Import names from each Python AST.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c2dda082dfaf5ae75e4ee14b33de2e6164732161",
+            "content": "sha256:39ec8ba654bc15b679a5f20d720879c66453c8ccf4b42618651255f7a97faf9f",
+            "locator": {
+              "kind": "symbol",
+              "name": "_imported_modules"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Every scanned memory_quality Python file must have no imports starting with the forbidden prefixes; offenders are named.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c2dda082dfaf5ae75e4ee14b33de2e6164732161",
+            "content": "sha256:9fe0765a7c7d9caf531d52e778cd12279b4bd6b6802d551d513860613143ea22",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_memory_quality_imports_no_closeout_plane_module"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "The imported quality API and module are non-None; this is not physical closeout removal or dynamic dependency proof.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c2dda082dfaf5ae75e4ee14b33de2e6164732161",
+            "content": "sha256:e4e0a33931c993b6473864bb813fbef0ce43447597323cc84956d7f0da0a91d2",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_memory_quality_public_api_imports_with_no_closeout_in_existence"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

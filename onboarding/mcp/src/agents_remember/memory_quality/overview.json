@@ -6,7 +6,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5f33ff79cde087bea8dd9d8ebc62a85698440f9a",
+            "blob": "0f02f7c4c7584cea4e5e966eff0bd4906b882b5d",
             "content": "sha256:b9c3b6fbb6f4b5ae523ee6888de143b18da1674d8d42ec868401b25daea26060",
             "locator": {
               "kind": "symbol",
@@ -25,151 +25,6 @@
               "name": "_execute_memory_quality"
             },
             "path": "mcp/src/agents_remember/application/memory_quality/controller.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "10": {
-      "note": "A relocation proves continuity through the established provenance path before a tree-wide match is admitted.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "c6ab4fdf5954cab850fa458d4348552adc4e31c6",
-            "content": "sha256:ce1f0e66eda454cf7c72d981bb81b17c5377c5d519adf7f1508f6633c93a7660",
-            "locator": {
-              "kind": "symbol",
-              "name": "Continuity"
-            },
-            "path": "mcp/src/agents_remember/memory_quality/style/citations/repair.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "c6ab4fdf5954cab850fa458d4348552adc4e31c6",
-            "content": "sha256:bff3856a53316f9d05d945e0bba38bf1e4d6de887846f8027ad2f01d03259970",
-            "locator": {
-              "kind": "symbol",
-              "name": "continuity_for"
-            },
-            "path": "mcp/src/agents_remember/memory_quality/style/citations/repair.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "c6ab4fdf5954cab850fa458d4348552adc4e31c6",
-            "content": "sha256:2bcdb7582830a5de3478f7686286e2d4669271c8b424ada82b79782b67e37b40",
-            "locator": {
-              "kind": "symbol",
-              "name": "_retarget"
-            },
-            "path": "mcp/src/agents_remember/memory_quality/style/citations/repair.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "11": {
-      "note": "The walk resolves one document's continuity and feeds it to the planner.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "941d66fefe8b89ac48af25f6d58d4c27fea45502",
-            "content": "sha256:711c0aa61626676446bacbf2e9ad740caba552a95fe0dde52c1363fdc5a20609",
-            "locator": {
-              "kind": "symbol",
-              "name": "Walk"
-            },
-            "path": "mcp/src/agents_remember/memory_quality/style/citations/fixer.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "6009b173e9e1bcb6f4b4f9ccc85c36a3347a1623",
-            "content": "sha256:16316e66d7965cd5838af2e1481d65cd6fd76ca3261b106b19b77460ad4e7732",
-            "locator": {
-              "kind": "symbol",
-              "name": "fix_onboarding_root"
-            },
-            "path": "mcp/src/agents_remember/memory_quality/style/citations/fixer.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "12": {
-      "note": "The migration pass consults the same continuity authority before a cross-file relocation, although its continuity branches are unreachable from that entry point by construction.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "fd8e54f2825d6d189b3f7e5cc115ad873569d657",
-            "content": "sha256:c8966c3ed638766025997b008bcca0a2d5f8882fc64c5b909cb1ec3a7848df13",
-            "locator": {
-              "kind": "symbol",
-              "name": "Pass"
-            },
-            "path": "mcp/src/agents_remember/memory_quality/style/citations/migration.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "fd8e54f2825d6d189b3f7e5cc115ad873569d657",
-            "content": "sha256:6bc77bb5c29f8b7249574dea22f5d957013e44ad462a9b60cf2d4471bc7cab0d",
-            "locator": {
-              "kind": "symbol",
-              "name": "place"
-            },
-            "path": "mcp/src/agents_remember/memory_quality/style/citations/migration.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "13": {
-      "note": "A mechanically projected range is ENFORCED at `error` severity with the support question instead of asserting currency; the ordinary evidence-change item stays `warning`.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "e22b8a189443e1872b2ff5e2769a5f8e30e59b6b",
-            "content": "sha256:1bd141964bdc68c82fe508c3399641d2ed7397de86c4272a94f34f2aba1fc504",
-            "locator": {
-              "kind": "symbol",
-              "name": "_projected_review_message"
-            },
-            "path": "mcp/src/agents_remember/memory_quality/style/citations/claim_reopen.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "e22b8a189443e1872b2ff5e2769a5f8e30e59b6b",
-            "content": "sha256:d70f66729aec761fc71f4c77acb3416c2d6751544d44eed6cea5051a2833446f",
-            "locator": {
-              "kind": "symbol",
-              "name": "surfaced_finding"
-            },
-            "path": "mcp/src/agents_remember/memory_quality/style/citations/claim_reopen.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "14": {
-      "note": "Accepted batches check complete document bytes and held source/cell bindings before atomic publication.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "d2f4d2fd535e837eb9efc0da8622f100aa372f85",
-            "content": "sha256:cc49329bd1aeaf9ff0c541e0fe159358ff0927d7dbbae84ed4cbe97cf07ac420",
-            "locator": {
-              "kind": "symbol",
-              "name": "DocumentTransaction"
-            },
-            "path": "mcp/src/agents_remember/memory_quality/style/citations/documents/transaction.py"
           },
           "kind": "code"
         }
@@ -211,12 +66,12 @@
         },
         {
           "anchor": {
-            "blob": "5f33ff79cde087bea8dd9d8ebc62a85698440f9a",
+            "blob": "0f02f7c4c7584cea4e5e966eff0bd4906b882b5d",
             "content": "sha256:edd4e53b3a92f67842ae50ef0a4484cd315a1cc3f4460053f86c5e4feb06281b",
             "locator": {
-              "end": 1043,
+              "end": 1007,
               "kind": "line_range",
-              "start": 1007
+              "start": 971
             },
             "path": "mcp/src/agents_remember/application/memory_quality/controller.py"
           },
@@ -225,52 +80,44 @@
       ]
     },
     "17": {
-      "note": "Full certification requires explicit evidence and predecessor authority supplied by its caller.\n\nAnchor: \"def certify_final_full_memory_coherence(\"",
+      "note": "Core certificate issuance consumes an exact admitted result manifest and earlier-gate prefix and refuses non-green or diagnostic promotion; the interactive complete-catalog projection remains finalization-ineligible.",
       "targets": [
         {
           "anchor": {
-            "blob": "f94e1bceb2c31903583149ccf83b97a561f3f154",
-            "content": "sha256:f07663c61d2e6d22be0e118143df219d33da50311386c9fbda69056221eb37cb",
+            "blob": "c11019f54828e85f82676c738e6eb2bef78d6d21",
+            "content": "sha256:712b54990ca1539b93cff58fe67e12aea3e7c81eff0079439068eae35ffcd10e",
             "locator": {
-              "end": 134,
+              "end": 126,
               "kind": "line_range",
               "start": 44
             },
-            "path": "mcp/src/agents_remember/memory_quality/final_certification/certify.py"
+            "path": "mcp/src/agents_remember/certification/certificate_authority.py"
           },
           "kind": "code"
-        }
-      ]
-    },
-    "18": {
-      "note": "The one construction point folding settings, ignore file and call into one register.",
-      "targets": [
+        },
         {
           "anchor": {
-            "blob": "618796cf108683657661e36f015a1120b05c6e9d",
-            "content": "sha256:20020838d373136e42692e21a260a7b1302f2f01be3ae99309895229824a70a9",
+            "blob": "c11019f54828e85f82676c738e6eb2bef78d6d21",
+            "content": "sha256:58c4e6db0c34c8e3481fd41098e3c3229438bbd35f62b4885bc3386fa99da0c5",
             "locator": {
-              "kind": "symbol",
-              "name": "resolve_exclusion_register"
+              "end": 344,
+              "kind": "line_range",
+              "start": 258
             },
-            "path": "mcp/src/agents_remember/memory_quality/style/citations/exclusion_register.py"
+            "path": "mcp/src/agents_remember/certification/certificate_authority.py"
           },
           "kind": "code"
-        }
-      ]
-    },
-    "19": {
-      "note": "The two settings keys, and the refusal-by-name discipline for a malformed value.",
-      "targets": [
+        },
         {
           "anchor": {
-            "blob": "0d1a224918ffa12f83fc1447d8771ae97e48a59e",
-            "content": "sha256:2ebdad3b6cc58262447a3368cb98cd2df97bc581968d816f95e7dbd6841ae647",
+            "blob": "58febc5c623004ee40e9db732dc529e040f71589",
+            "content": "sha256:31e357a1dd646a4879fe63763c35759d8c94bbc311706dc052537ef8bc938c93",
             "locator": {
-              "kind": "symbol",
-              "name": "read_citation_index_settings"
+              "end": 192,
+              "kind": "line_range",
+              "start": 100
             },
-            "path": "mcp/src/agents_remember/memory_quality/style/citations/citation_index_settings.py"
+            "path": "mcp/src/agents_remember/memory_quality/final_certification/catalog.py"
           },
           "kind": "code"
         }
@@ -305,163 +152,6 @@
         }
       ]
     },
-    "20": {
-      "note": "The bounded non-Git matcher and its pinned divergence from Git.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "618796cf108683657661e36f015a1120b05c6e9d",
-            "content": "sha256:e1178873ba78e845bb1889327ce7a0b3c34e5d81b2de0ad991b3dc2dc00302da",
-            "locator": {
-              "kind": "symbol",
-              "name": "FallbackIgnoreMatcher"
-            },
-            "path": "mcp/src/agents_remember/memory_quality/style/citations/exclusion_register.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "21": {
-      "note": "A caller exclude that cannot mean anything is refused by name.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "618796cf108683657661e36f015a1120b05c6e9d",
-            "content": "sha256:368608e2d09339a4916de6c9897892fdc337a785450c36f6e29e4f484d7892f1",
-            "locator": {
-              "kind": "symbol",
-              "name": "validate_caller_excludes"
-            },
-            "path": "mcp/src/agents_remember/memory_quality/style/citations/exclusion_register.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "22": {
-      "note": "The ruled numbers, the skip vocabulary and the status vocabulary.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "496ae7522f0f6e5b3a56dd41fdc0f35aabd62dfd",
-            "content": "sha256:6d221d8f2e6efeb197ebf30d35b106ccaed906b9647049cc0b0753b5fe8c41b0",
-            "locator": {
-              "kind": "symbol",
-              "name": "MAX_SOURCE_BYTES"
-            },
-            "path": "mcp/src/agents_remember/memory_quality/style/citations/source_index_state.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "496ae7522f0f6e5b3a56dd41fdc0f35aabd62dfd",
-            "content": "sha256:8db6e294f7527bb8fee91cd9d660c341c87a9d342ffb93439f385561f810d627",
-            "locator": {
-              "kind": "symbol",
-              "name": "MAX_SOURCE_FILE_BYTES"
-            },
-            "path": "mcp/src/agents_remember/memory_quality/style/citations/source_index_state.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "496ae7522f0f6e5b3a56dd41fdc0f35aabd62dfd",
-            "content": "sha256:f184694585ecf810989c0bec7cdfc2569e6e69f93e632edbf3a237f5c4ee4192",
-            "locator": {
-              "kind": "symbol",
-              "name": "MAX_SOURCE_HARD_STOP_BYTES"
-            },
-            "path": "mcp/src/agents_remember/memory_quality/style/citations/source_index_state.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "496ae7522f0f6e5b3a56dd41fdc0f35aabd62dfd",
-            "content": "sha256:4da2d3370bad042167f95d61c7e85d4489e2adbef914a64a54b03e7fee0d6c71",
-            "locator": {
-              "kind": "symbol",
-              "name": "SKIP_REASONS"
-            },
-            "path": "mcp/src/agents_remember/memory_quality/style/citations/source_index_state.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "496ae7522f0f6e5b3a56dd41fdc0f35aabd62dfd",
-            "content": "sha256:1607ddb5ec303904a5a169d7381d62f181479655e96ade69fce0d408bda16221",
-            "locator": {
-              "kind": "symbol",
-              "name": "STATUS_CAPPED"
-            },
-            "path": "mcp/src/agents_remember/memory_quality/style/citations/source_index_state.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "496ae7522f0f6e5b3a56dd41fdc0f35aabd62dfd",
-            "content": "sha256:b897787e4972782960ef55f17b3e3b7ec9181a231e070fbfb7166d3490817754",
-            "locator": {
-              "kind": "symbol",
-              "name": "STATUS_WITHIN_CAPS"
-            },
-            "path": "mcp/src/agents_remember/memory_quality/style/citations/source_index_state.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "23": {
-      "note": "The register's three sources and recorded authority values.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "496ae7522f0f6e5b3a56dd41fdc0f35aabd62dfd",
-            "content": "sha256:d55a1035c4d051767bf9c81e0f3304f12f51f01ca6b721bd1526016d555dc477",
-            "locator": {
-              "kind": "symbol",
-              "name": "EXCLUSION_SOURCES"
-            },
-            "path": "mcp/src/agents_remember/memory_quality/style/citations/source_index_state.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "496ae7522f0f6e5b3a56dd41fdc0f35aabd62dfd",
-            "content": "sha256:a42cc2e4f889ec1fc32a20f232f8fdc75446ac0655780e78099451bceef1d6de",
-            "locator": {
-              "kind": "symbol",
-              "name": "GITIGNORE_AUTHORITIES"
-            },
-            "path": "mcp/src/agents_remember/memory_quality/style/citations/source_index_state.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "24": {
-      "note": "The closeout gate refuses by name rather than letting a bare error out.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "c53333a189e401b041e0fc4e3501ee1efa2c3001",
-            "content": "sha256:e95c7406b3fd4a71e46394f433e182e91fe6c83efb58d4927af93b8e84563a4f",
-            "locator": {
-              "kind": "symbol",
-              "name": "_admitted_source_index"
-            },
-            "path": "mcp/src/agents_remember/application/prepared_certification.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
     "25": {
       "note": "The caller-exclude surface on the registered tool and the CLI.",
       "targets": [
@@ -474,86 +164,6 @@
               "name": "citation_fix"
             },
             "path": "mcp/src/agents_remember/mcp/registration/memory.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "26": {
-      "note": "One root gives one authority on both acquisition routes.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "67d6f1543ad5c7743e2aa5674854c5a2ebf4789a",
-            "content": "sha256:a6bbc2348ea5925b4e56baf98b005b891b4ddf8601b64356b1f526032e8abc5f",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_one_root_gives_one_gitignore_authority_on_both_acquisition_routes"
-            },
-            "path": "mcp/tests/test_citation_index_resilience.py"
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "27": {
-      "note": "The index opens either the explicit candidate selection or the ordinary filesystem policy.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "9951f90b943b0432c74df2ab36b18c593838c2bc",
-            "content": "sha256:e2f343ff9a4e6af1114910f1ea83d70c0a16ee1c83b605b21883a6f8893eb1c7",
-            "locator": {
-              "kind": "symbol",
-              "name": "open_repository_index"
-            },
-            "path": "mcp/src/agents_remember/memory_quality/style/citations/source_index.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "28": {
-      "note": "R06 checks candidate selection and exact indexed membership.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "8549000c4b5f19f39a816f19e727da51a1c51c28",
-            "content": "sha256:1458ec22df65864e842308d7722e32a5a79e966d70c0a21bdaf23f8abe69ad95",
-            "locator": {
-              "kind": "symbol",
-              "name": "observe_source_index"
-            },
-            "path": "mcp/src/agents_remember/memory_quality/incremental_scope/owners.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "8549000c4b5f19f39a816f19e727da51a1c51c28",
-            "content": "sha256:0514e72229cd5fdf72b3a1b08e5d73127df83c41fb942060cab833e4c83c2ab1",
-            "locator": {
-              "kind": "symbol",
-              "name": "_require_index_matches_candidate"
-            },
-            "path": "mcp/src/agents_remember/memory_quality/incremental_scope/owners.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "29": {
-      "note": "R07 validates and forwards the unit candidate tree to its selected-document checker.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "200b7755a7cd7b498c952ee1c2cf0d83caa6a7a5",
-            "content": "sha256:5d181caa6a0ff64942e755c5d5291840ba3246355c56abf5ef9d312019b5b384",
-            "locator": {
-              "kind": "symbol",
-              "name": "RangeResolutionAffectedExecutor"
-            },
-            "path": "mcp/src/agents_remember/memory_quality/incremental_scope/affected_execution.py"
           },
           "kind": "code"
         }
@@ -777,7 +387,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "173c634c2a673a71154a2bb8704a9b0b9929d40b",
+            "blob": "2ad9297aa031e0aaa3931e246d19a8a360a25bd6",
             "content": "sha256:a913d9dc81d27cff5f47e651ed413e4af66e6f47f2043133b9864bf62282a5da",
             "locator": {
               "kind": "symbol",
@@ -908,7 +518,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4757f36e9a477d0e286dfcc9ea3e7446977a1821",
+            "blob": "edef16dfd17ed00dbb39e69b7c00287e2d85c97c",
             "content": "sha256:b2ced6307919efd33b944f30f6c6418bab915d3d05ad6b8ac6cb29f047a21ca0",
             "locator": {
               "kind": "symbol",
@@ -1046,23 +656,6 @@
               "start": 13
             },
             "path": "mcp/src/agents_remember/models/memory.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "50": {
-      "note": "The fixer's converted-tree early return.\n\nAnchor: \"not-applicable-converted\"",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "381d6b2bcb51b43282869d8033507d8dfff065fd",
-            "content": "sha256:f5401e81b4c5fbc5fc4373ce6441692f9de8c8d0741587731fc6abf864b49834",
-            "locator": {
-              "kind": "symbol",
-              "name": "fix_onboarding_root"
-            },
-            "path": "mcp/src/agents_remember/memory_quality/style/update_history/history_order_fix.py"
           },
           "kind": "code"
         }
@@ -1536,7 +1129,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e23e84340750f75fccf1717916773f7cb7ec5119",
+            "blob": "30934f67876dc31aa7d36ec277f0841537570fb2",
             "content": "sha256:215ec4b99c44aff97b9eb3535f1dba09e2ceb0332d9ba4ba17cd371e9eacc32e",
             "locator": {
               "kind": "symbol",
@@ -1604,7 +1197,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f8c3bf0f7388179f0d5bc71b49c22089f7557793",
+            "blob": "58febc5c623004ee40e9db732dc529e040f71589",
             "content": "sha256:b549df9727a2948e7d8df4befaf94086d4246e45e34e903b9ed925fb10539383",
             "locator": {
               "kind": "symbol",
@@ -1711,12 +1304,12 @@
         },
         {
           "anchor": {
-            "blob": "e23e84340750f75fccf1717916773f7cb7ec5119",
+            "blob": "30934f67876dc31aa7d36ec277f0841537570fb2",
             "content": "sha256:442534c644775bbb678b96945cd22af6f8879e3344bfd3bf015f57e31b601c8d",
             "locator": {
-              "end": 189,
+              "end": 154,
               "kind": "line_range",
-              "start": 111
+              "start": 76
             },
             "path": "mcp/src/agents_remember/memory_quality/converted_check.py"
           },
@@ -1766,7 +1359,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e23e84340750f75fccf1717916773f7cb7ec5119",
+            "blob": "30934f67876dc31aa7d36ec277f0841537570fb2",
             "content": "sha256:215ec4b99c44aff97b9eb3535f1dba09e2ceb0332d9ba4ba17cd371e9eacc32e",
             "locator": {
               "kind": "symbol",
@@ -2010,7 +1603,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5f33ff79cde087bea8dd9d8ebc62a85698440f9a",
+            "blob": "0f02f7c4c7584cea4e5e966eff0bd4906b882b5d",
             "content": "sha256:d81b89961aa9f6111073416b7d9db6242c5d1caddb566ef889f16800de227eb4",
             "locator": {
               "kind": "symbol",
@@ -2022,98 +1615,45 @@
         }
       ]
     },
-    "9": {
-      "note": "Projection admission precedes staging; declined claims retain their original bytes.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "941d66fefe8b89ac48af25f6d58d4c27fea45502",
-            "content": "sha256:502a9eb1d6a45360d4edbdfc1bb93ef896cb3bc2e2ad41125ebcf7c600f87dfe",
-            "locator": {
-              "kind": "symbol",
-              "name": "_decide"
-            },
-            "path": "mcp/src/agents_remember/memory_quality/style/citations/fixer.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "90": {
-      "note": "Prepared application composition actually invokes affected planning/execution and final certification.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "f7b59934d4c1a98bbc511a7df67311083ace2c01",
-            "content": "sha256:82dde22a138ec2bf677931bfe98d0a29c51412b9195fe6d57dfb01e10b064c34",
-            "locator": {
-              "kind": "symbol",
-              "name": "_run"
-            },
-            "path": "mcp/src/agents_remember/application/prepared_certification.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "91": {
-      "note": "Prepared closeout invokes the registered producer and refuses its absence.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "00a76f029161875d21abd5aee84c11eee304d358",
-            "content": "sha256:1ce39f60ebf282faee22761ef8208da8b508817fbbd430598db323fd70720981",
-            "locator": {
-              "kind": "symbol",
-              "name": "certify_prepared_memory"
-            },
-            "path": "mcp/src/agents_remember/worktrees/integration/closeout/preparation/memory_execution.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
     "92": {
-      "note": "Certification consumes explicit executed-check evidence and only green permits finalization.\n\nAnchor: `FinalCertificationEvidence`, `certify_final_full_memory_coherence`",
+      "note": "An explicit certificate requires a green certifying result bound to its admitted plan; core finalization authority requires exact green Gates 1–5 and current memory inputs. Readiness alone supplies no certificate.",
       "targets": [
         {
           "anchor": {
-            "blob": "f94e1bceb2c31903583149ccf83b97a561f3f154",
-            "content": "sha256:4c355f1fbddca6b55a0f71cf978ed6f3348840524fdd5f9a0fc2de43ea907d9d",
+            "blob": "c11019f54828e85f82676c738e6eb2bef78d6d21",
+            "content": "sha256:712b54990ca1539b93cff58fe67e12aea3e7c81eff0079439068eae35ffcd10e",
             "locator": {
-              "kind": "symbol",
-              "name": "FinalCertificationEvidence"
+              "end": 126,
+              "kind": "line_range",
+              "start": 44
             },
-            "path": "mcp/src/agents_remember/memory_quality/final_certification/certify.py"
+            "path": "mcp/src/agents_remember/certification/certificate_authority.py"
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "f94e1bceb2c31903583149ccf83b97a561f3f154",
-            "content": "sha256:90f68a6d51a8945ea4d75f0eede91b8a9473654755ee15fbb13d6f3a1c270ee1",
+            "blob": "c11019f54828e85f82676c738e6eb2bef78d6d21",
+            "content": "sha256:95cf561d60a115699955bab706d8f34131e75736a5a8448164a59698c0caa069",
             "locator": {
-              "kind": "symbol",
-              "name": "certify_final_full_memory_coherence"
+              "end": 222,
+              "kind": "line_range",
+              "start": 129
             },
-            "path": "mcp/src/agents_remember/memory_quality/final_certification/certify.py"
+            "path": "mcp/src/agents_remember/certification/certificate_authority.py"
           },
           "kind": "code"
-        }
-      ]
-    },
-    "93": {
-      "note": "Document preview and publication revalidate original bytes and held lease; publication then atomically replaces bytes.",
-      "targets": [
+        },
         {
           "anchor": {
-            "blob": "d2f4d2fd535e837eb9efc0da8622f100aa372f85",
-            "content": "sha256:cc49329bd1aeaf9ff0c541e0fe159358ff0927d7dbbae84ed4cbe97cf07ac420",
+            "blob": "58febc5c623004ee40e9db732dc529e040f71589",
+            "content": "sha256:31e357a1dd646a4879fe63763c35759d8c94bbc311706dc052537ef8bc938c93",
             "locator": {
-              "kind": "symbol",
-              "name": "DocumentTransaction"
+              "end": 192,
+              "kind": "line_range",
+              "start": 100
             },
-            "path": "mcp/src/agents_remember/memory_quality/style/citations/documents/transaction.py"
+            "path": "mcp/src/agents_remember/memory_quality/final_certification/catalog.py"
           },
           "kind": "code"
         }

@@ -1,0 +1,37 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test"
+    ],
+    "justification": "A later recovery change must not drop a sidecar or broaden auto-carry evidence. Pair-level comparisons and public document-kind assertions guard this unit; memory_only_evidence shows the unchanged-base prerequisite statically (no separate new runtime claim for every branch)."
+  },
+  "applicability": "The selected converted carryover document unit and evidence-tier selection.",
+  "conditions": [
+    "A file card, route overview, memory-only document and entity catalog travel as Markdown plus their JSON sidecar.",
+    "A memory-only document auto-carries only with nonempty all-current anchors and an unchanged target pair since a resolved memory merge base.",
+    "Existing code tiers exact-landed-commit, patch-id-match and final-content-match keep their meaning."
+  ],
+  "exclusions": [
+    "Official anchor observation/re-recording is the separate PartB §8 guarantee; record dependency closure is PartB §9; write/restore mechanics are PartB §10.",
+    "Anchorless documents, changed target-since-base or no merge base require review; there is no assumed currentness.",
+    "Record Markdown companions are governed by the existing optional record schema, not the mandatory document pair."
+  ],
+  "id": "INV-FPG5GW",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "notes/reports/worker/07e36231-0b63-422c-b9dc-59ca0e3d6b24/role-launch/L56-generation3-code-freeze.md",
+        "Frozen generation3 source inspection; no new execution or acceptance."
+      ],
+      "path": "generation3-new-source-proved-invariants.json"
+    },
+    "handoffEntry": "MIK-R56@v1 PartB §7",
+    "leaf": "260928-MIK-L56",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "A carried file card, overview, memory-only document or entity catalog is its Markdown plus JSON sidecar, with unchanged code evidence tiers.",
+  "status": "proposed",
+  "supersedes": []
+}

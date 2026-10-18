@@ -17,8 +17,6 @@ The probes distinguish a definite repository absence from an unreadable or ambig
 
 The integration gate moved to `modules/integration_gate.py`. The synthetic master gate probe holds chain proof passing because it has no canonical task/enclosure population; it is gate/cutover evidence, not a chain-proof witness. The converted leaf case allows a validator refusal but asserts it is never an unconverted-memory lock.
 
-- `test_the_prepared_closeout_refuses_by_the_lock_at_both_entry_points`: `execute_selected_closeout` and
-  `_realize_prepared_memory` both raise with the code `unconverted-memory-locked`.
 - `test_a_converted_worktree_locks_too_and_an_unanswered_probe_refuses`: an uncommitted marker in a registered worktree is named in the already-required unconverted refusal; it does not decide admission. A timeout and a non-zero probe retain their named "never read as unlocked" errors, the second with Git's own message.
 - `test_only_a_definite_non_repository_reads_as_holding_no_converted_memory` (review R1 F4): a plain directory is
   unlocked; a pruned linked worktree, a `dubious ownership` exit and a `PermissionError` refuse by name.
@@ -80,10 +78,14 @@ No configured live documentation source was available for this pass.
 - Only a definite non-repository is unlocked. [15]
 - A bare repository Git cannot open refuses by name. [16]
 
+
 - The converting candidate is gated, never locked. [17]
 
+
 - No read selects the database of a converted tree. [18]
+
 - The lock under test. [19]
+
 - One unconverted commit under both branches. [20]
 
 ### Cross-Repo References

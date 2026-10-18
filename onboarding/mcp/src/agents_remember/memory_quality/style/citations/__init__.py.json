@@ -3,15 +3,19 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "The governing route overview documents the package route scope.\n\nAnchor: \"Hot Path Summary\"",
+      "note": "The package docstring names shared citation parsing, symbol bindings and terminal cache fencing.",
       "targets": [
         {
-          "kind": "unresolved",
-          "text": "onboarding/mcp/src/agents_remember/memory_quality/overview.md:24-24"
-        },
-        {
-          "kind": "unresolved",
-          "text": "onboarding/mcp/src/agents_remember/memory_quality/overview.md:59-65"
+          "anchor": {
+            "blob": "79b6d04809a85d1316046171c4b24ec631fcd947",
+            "content": "sha256:3aad4d8fc689bc27566a5b3764ed23dcd040455848c3c583b8eba036cad98aef",
+            "locator": {
+              "end": 1,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
         }
       ]
     }

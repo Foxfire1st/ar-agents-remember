@@ -21,7 +21,7 @@ full refusal rather than using the ordinary success projection. A bounded answer
 The source's suggestion to run memory-citations for full lists is legacy CLI wording, not
 permission to evade a checkout execution guard: this leaf's admitted fixer is the scoped
 agents-remember-task citation_fix tool, preview before apply. Full logs can be read as evidence.
-`memory_carryover_plan` is a read: its adapter compacts the result with `report_path=None`,
+`memory_carryover_plan` translates only a recognized legacy-format RuntimeError into the operation-specific typed refusal; unrelated runtime errors propagate. Both carryover adapters merge the genuine compact decision fields into the complete result supplied for validation and whole-result logging, while preserving raw candidate/conversion/publication detail. The plan still compacts with `report_path=None`,
 files no per-call report and exposes no `reportPath`. Its path population is not shortened by a
 second per-tool cap; the common delivery choke owns list bounds. Omitted candidate detail is not
 promised in a nonexistent report.
@@ -37,12 +37,21 @@ The citation-fix adapter forwards optional `contract_path` unchanged to the appl
 That owner admits the ordinary leaf route or measured pre-baseline route. The application
 result and full-detail log retain scalar `admission`; the ordinary citation status whitelist
 does not currently project it, and completion does not merge omitted fields back into the answer. The exact configured-contract-authority catch stays narrow. For a legacy-format refusal,
-`_carry_legacy_refusal` additionally carries the central `code` and conversion `detail`
-into the public answer: a whole-result log alone does not tell the caller how to recover.
+`_carry_legacy_refusal` additionally carries the central `code` and conversion `detail` into the public answer: a whole-result log alone does not tell the caller how to recover. Ordinary failed converted fixes project stale, unreadable and authoring-refused entries only; the removed migration and old-format repair-list projections do not supply another repair route.
 
 - The retained citation-fix payload forwards the optional contract and translates only configured-contract authority mismatch. [9]
 
 ## Current evidence
+
+Inherited numbered findings [1], [3] retain their exact wording and full targets as historical custody where their candidate9 owner is retired or their account conflicts with the current route. They are not evidence that an absent legacy owner still executes. No guarantee is retired by this proposal; parent disposition remains required. The source-bound current account below is separate.
+
+- Converted citation fixes return bounded status/count work orders; legacy-format refusals carry conversion code/detail rather than a repair list. [12]
+
+- The source test asserts singleton reference scope, full status counts and a capped actionable first slice without authoring/rewritten-detail delivery. [13]
+
+
+- Carryover adapters retain full review detail and merge genuine delivered decision fields into the validated/logged whole; only apply files a per-call report. Compact answers retain recovery guidance, decisions/carriedPaths and apply reportPath without raw candidates/conversion/publication. [14]
+
 
 - Route refresh delivers counts and stale targets rather than successful index material. [10]
 
@@ -67,7 +76,7 @@ L23 adds the MCP payload adapter for guarded, contract-scoped `citation_fix`, pr
 
 ### Logic
 
-Holds `drift_check_payload`, the three typed memory-quality payload builders,
+Holds the three typed memory-quality payload builders,
 `route_index_refresh_payload`, `memory_init_payload`,
 `memory_baseline_status_payload`, `memory_baseline_adopt_payload`,
 `memory_carryover_plan_payload`, and `memory_carryover_apply_payload`. Each returns through
@@ -87,8 +96,9 @@ deliberate nested discriminated request contract published by `mcp/registration/
 The carryover apply builder files the full application entry point result under
 `temp/tool-reports/memory_carryover_apply/` via
 `write_tool_report`, then returns `compact_carryover_payload(full, reportPath)`:
-per-decision `source_path` lists in `decisions` (each list capped at
-`MAX_INLINE_CARRYOVER_PATHS` = 25 with a `... (+N more in report)` marker),
+per-decision `source_path` lists in `decisions`, kept whole rather than capped by a per-tool
+limit — no `MAX_INLINE_CARRYOVER_PATHS` survives beside the delivery boundary, which caps what
+the caller receives while the report keeps the full records —
 `carriedPaths` for apply, and `reportPath` inline. A carryover plan is a read and files no
 per-call report (rule 6): the answer is the plan with `... (+N more, no report filed)` markers
 and no `reportPath` key. The `candidates` array — and
@@ -147,15 +157,15 @@ The following two-caller description is retained history. The current MCP adapte
 the retained citation-fix adapter's narrow configured-contract-authority refusal; it is not a
 current second-caller contract.
 
-`citation_fix_payload` and `citation_migrate_payload` call their application entry point inside a `try`
+`citation_fix_payload` calls its application entry point inside a `try`
 that catches exactly `ConfiguredContractAuthorityError`. The catch returns `_citation_authority_refusal`:
 `ok: false`, `status: configured-contract-authority-invalid`, the `repoId` and `contractPath` it was called
 with, a `detail` naming the failing side and name, and `nextAction: developer-decision` — the remedy every
 sibling answer to the same condition carries. Every other error, an `AuthorityError` among them,
-propagates unchanged: the two entry points answer only the one condition the product knows how to
+propagates unchanged: the entry point answers only the one condition the product knows how to
 name, and any other failure still raises and loses the envelope. `ENVELOPE_LOSING_RAISERS` stays
-empty because the sweep's probe meets only that condition. The refusal is built once, so the two
-tools cannot answer the same condition differently; `citation_fix`'s answer still passes through
+empty because the sweep's probe meets only that condition. The refusal is built once, so the
+adapter cannot answer the same condition two ways; `citation_fix`'s answer still passes through
 `bounded_citation_fix`.
 
 - The retained citation-fix adapter's configured-contract-authority refusal names the status and next action; the former MCP migration caller is retired. [4]

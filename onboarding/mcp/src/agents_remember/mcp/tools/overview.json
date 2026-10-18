@@ -600,11 +600,23 @@
       "targets": [
         {
           "anchor": {
-            "blob": "64ed07104830ebbd27790981e850b19d32fb3f08",
-            "content": "sha256:fbabee3e8414d55363ba542adaf2f26747e94ff6b238ae1aa8ea34d7714aabf2",
+            "blob": "183175ecfcf669bf424883e05272a8381b817224",
+            "content": "sha256:6b4b26958f056bd9d75b59221385af66c0e00a549062651ca9c58d920c856ad0",
             "locator": {
               "kind": "symbol",
-              "name": "bounded_citation_fix"
+              "name": "_citation_fix_answer"
+            },
+            "path": "mcp/src/agents_remember/mcp/tools/memory.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "183175ecfcf669bf424883e05272a8381b817224",
+            "content": "sha256:be1298f91607ed5f18940f2ac88c6ccee032edc696091d21f4a0541a05e4ee52",
+            "locator": {
+              "kind": "symbol",
+              "name": "citation_fix_payload"
             },
             "path": "mcp/src/agents_remember/mcp/tools/memory.py"
           },
@@ -1032,7 +1044,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "78f277b5ed8c400a748841e464ebb4f9e3457ab9",
+            "blob": "183175ecfcf669bf424883e05272a8381b817224",
             "content": "sha256:be1298f91607ed5f18940f2ac88c6ccee032edc696091d21f4a0541a05e4ee52",
             "locator": {
               "kind": "symbol",
@@ -1056,7 +1068,7 @@
         },
         {
           "anchor": {
-            "blob": "78f277b5ed8c400a748841e464ebb4f9e3457ab9",
+            "blob": "183175ecfcf669bf424883e05272a8381b817224",
             "content": "sha256:7c44d946957d2476123e216465be3f31715a16cb1db44b9338824fa83ce2b312",
             "locator": {
               "kind": "symbol",

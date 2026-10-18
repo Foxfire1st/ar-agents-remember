@@ -20,11 +20,11 @@ Read `models.py` for `FrozenCertificationRun` and `freeze_certification_run`; re
 
 `freeze_certification_run` retains the admitted lane and repository profile using the lane admission's original creation provenance. The resulting run recompiles admission from its retained registry, plans, profile and provenance, compares that admission exactly, and checks the digest of the complete record.
 
-The worktree observation owner gathers current authorities and retains their semantic envelope plus top-level derivation snapshots. The generated-input declarations snapshot belongs inside that envelope and participates in its semantic digest. The envelope also carries an optional admitted memory-tree binding; current observations populate it from the closeout door when present.
+The retained `CandidateAuthorityEnvelope` contains semantic projections, generated-input declarations and an optional `admittedMemoryTree`; `CandidateAuthorityRecords` separately retains derivation snapshots and original provenance and validates the semantic digest. These model fields and retained bytes do not establish a current runtime observer or prove that a current closeout door populates them. The former `observe_certification_candidate` runtime observer was removed.
 
-For a new closeout admission, the production owner strictly prepares the staged candidate, prepares the frozen run and observes candidate authorities before compiling lifecycle admission and recovery. An already queued or running generation instead validates its selected currentness. Lifecycle selection loads the retained objects, and gate execution consumes the selected run and recovery inputs through its own owner.
+Requested certification still freezes the complete admitted profile, plans and original provenance before executing a gate. Recovery reopens the supplied immutable frozen run and verifies its stored reference without rediscovering a profile or summary journal. The removed automatic closeout admission helper no longer stages or observes a candidate for this purpose; ordinary closeout publishes its accepted tree through the invariant-gated transaction instead.
 
-Memory refresh validation belongs to the memory-quality owners. `worktrees/modules/onboarding.py::validate_memory_refresh_attestations` composes the sidecar and governing route overview body/history checks and reports failures from either surface. The memory-quality controller calls it for an unconverted external-memory leaf; a converted memory tree uses the onboarding trace gate instead. This validation wiring does not alter the frozen-run contracts. No external Domain Documentation source is configured; the inspected owners describe repository-local contract inputs, not an external protocol.
+The memory-quality controller revalidates the admitted candidate, refuses unconverted input, runs converted validation and the onboarding trace gate, and retains its checklist/readiness owners. It does not call the removed legacy sidecar/Update History refresh composition for an unconverted leaf. These application checks do not alter the immutable frozen-run contracts or certify any execution. No external Domain Documentation source is configured.
 
 ### File-Level Onboarding Map
 
@@ -48,7 +48,8 @@ The following retained coverage metadata describes the onboarding map, not lifec
 
 - A frozen run revalidates exact original admission and complete-record identity. [1]
 - Candidate records separate semantic projections from exact derivation bytes and provenance. [2]
-- Production admission prepares and observes a candidate before compiling lifecycle recovery. [3]
 
-- Current candidate observation retains generated declarations, derivation snapshots and the admitted memory-tree binding. [4]
-- Memory refresh composition checks sidecars and route overviews; converted trees use the trace gate instead. [5]
+- Requested certification freezes the admitted repository profile, plans, registry and original provenance before gate execution; selected recovery reopens the exact retained frozen run without profile or journal rediscovery. Ordinary closeout is not this certification route. [3]
+
+- Retained authority models carry generated declarations, an optional admittedMemoryTree, input snapshots and provenance; model validation does not prove a current runtime observer or gate execution. [4]
+- Historical pre-R65 refresh composition checked sidecars and route overviews; that legacy composition is removed. The surviving converted controller uses its trace gate. [5]

@@ -1,0 +1,275 @@
+{
+  "path": "mcp/tests/test_carryover_apply_transaction.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "f6146fdd19326cbcd207bfbaec9625729f871dc8",
+        "content": "sha256:d1bab4bd8492b157d1eef80446b127e52090d2662aba2f8a8fabb766d4d8b880",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_public_record_member_cut_resumes_exact_bytes_without_overwrite"
+        }
+      },
+      "facet": "Equal partial JSON/prose members resume without re-writing them or touching HEAD/index; a JSON-only optional-prose source remains valid.",
+      "id": "PRF-0V84XN",
+      "invariant": "INV-5XX92M",
+      "origin": {
+        "handoffEntry": "MIK-R56@v1 PartB §9",
+        "leaf": "260928-MIK-L56"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "f6146fdd19326cbcd207bfbaec9625729f871dc8",
+        "content": "sha256:8567baf503c934a69d48eb3b373bdade5887a956d7984ca6db79951d998c10d6",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_repeat_skips_equal_payloads_but_validates_unrelated_tree_and_restores_retry"
+        }
+      },
+      "facet": "First apply leaves HEAD/index unchanged, equal repeat writes nothing, and an unrelated invalid record still makes repeat validate/refuse and restore its pre-call state.",
+      "id": "PRF-9JZGAN",
+      "invariant": "INV-MZ13SJ",
+      "origin": {
+        "handoffEntry": "MIK-R56@v1 PartB §10",
+        "leaf": "260928-MIK-L56"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "f6146fdd19326cbcd207bfbaec9625729f871dc8",
+        "content": "sha256:464f58b97e3575eb286031fda55c5af5da3f89f1132f8cf58d42ea4b2dc5cdce",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_public_record_partial_retry_validates_whole_tree_and_restores_with_diagnostics"
+        }
+      },
+      "facet": "An equal partial record plus unrelated invalid document reaches whole-tree validation, reports its refusal, restores indexes and names only preexisting carried differences.",
+      "id": "PRF-F981QG",
+      "invariant": "INV-MZ13SJ",
+      "origin": {
+        "handoffEntry": "MIK-R56@v1 PartB §10",
+        "leaf": "260928-MIK-L56"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "f6146fdd19326cbcd207bfbaec9625729f871dc8",
+        "content": "sha256:d5a5985e3799e3aff380e99088961f41ccfe13302313d3171ff701caec740bb2",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_target_edited_member_refuses_entire_candidate_without_writing"
+        }
+      },
+      "facet": "Edited Markdown, edited JSON and deleted members return target-edited before index refresh with captured state unchanged.",
+      "id": "PRF-VDGAK1",
+      "invariant": "INV-MZ13SJ",
+      "origin": {
+        "handoffEntry": "MIK-R56@v1 PartB §10",
+        "leaf": "260928-MIK-L56"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "f6146fdd19326cbcd207bfbaec9625729f871dc8",
+        "content": "sha256:ec5d011c573e71deb2a874773fd14a0117e59ae1f26d4abec8a488aa4ccb794a",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_validator_refusal_restores_modes_edits_indexes_and_created_directories"
+        }
+      },
+      "facet": "A real validator refusal restores full captured files, modes, directories, HEAD and index, including existing staged edits and derived caches.",
+      "id": "PRF-W1WV44",
+      "invariant": "INV-MZ13SJ",
+      "origin": {
+        "handoffEntry": "MIK-R56@v1 PartB §10",
+        "leaf": "260928-MIK-L56"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Direct validator refusal restores observed bytes/modes, prior edits, raw index, HEAD and newly created-directory population; route refresh is reported before rollback.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f6146fdd19326cbcd207bfbaec9625729f871dc8",
+            "content": "sha256:ec5d011c573e71deb2a874773fd14a0117e59ae1f26d4abec8a488aa4ccb794a",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_validator_refusal_restores_modes_edits_indexes_and_created_directories"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Document/sidecar/deleted-target edits refuse the entire direct candidate before route refresh and preserve the observed state.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f6146fdd19326cbcd207bfbaec9625729f871dc8",
+            "content": "sha256:d5a5985e3799e3aff380e99088961f41ccfe13302313d3171ff701caec740bb2",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_target_edited_member_refuses_entire_candidate_without_writing"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Equal direct payloads skip writes and commits/index changes, yet retry still validates an invalid unrelated record and restores the observed tree; no worklist file is persisted.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f6146fdd19326cbcd207bfbaec9625729f871dc8",
+            "content": "sha256:8567baf503c934a69d48eb3b373bdade5887a956d7984ca6db79951d998c10d6",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_repeat_skips_equal_payloads_but_validates_unrelated_tree_and_restores_retry"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "The plan reuses exact warm cache bytes/mtime; a real scratch build followed by injected refusal cleans scratch storage and reports index-incomplete.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f6146fdd19326cbcd207bfbaec9625729f871dc8",
+            "content": "sha256:a2e641432f39fe04b8405cc2a1d22edf9266b26b3f98e9c3987dde65f2439a48",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_plan_reuses_exact_cache_and_removes_scratch_after_builder_refusal"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "Five public record cuts complete only missing canonical members, preserve staged equal bytes/modes and HEAD/index, omit optional absent prose and repeat as nothing-to-carryover.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f6146fdd19326cbcd207bfbaec9625729f871dc8",
+            "content": "sha256:97a7281915a2efde964aa908dedd594f72defa20bedb8a829d874a91ee287b92",
+            "locator": {
+              "kind": "symbol",
+              "name": "_record_retry"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "f6146fdd19326cbcd207bfbaec9625729f871dc8",
+            "content": "sha256:d1bab4bd8492b157d1eef80446b127e52090d2662aba2f8a8fabb766d4d8b880",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_public_record_member_cut_resumes_exact_bytes_without_overwrite"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "Differing JSON, Markdown or wrong-ID existing members remain conflicts; even explicitly included review-required apply refuses with no writes and identical observed state.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f6146fdd19326cbcd207bfbaec9625729f871dc8",
+            "content": "sha256:047967f254f0c7891b834b355f0b2e4cac3834405b489ddf26e6589599a2f2a0",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_public_record_missing_companion_never_overwrites_differing_member"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "JSON/Markdown partial record retry reaches whole-tree validation; unrelated [999] refusal restores state, reports rolled-back refresh and only preexisting carried members in diagnostics.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f6146fdd19326cbcd207bfbaec9625729f871dc8",
+            "content": "sha256:464f58b97e3575eb286031fda55c5af5da3f89f1132f8cf58d42ea4b2dc5cdce",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_public_record_partial_retry_validates_whole_tree_and_restores_with_diagnostics"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "Record dependency admission accepts same-path equal subsets or exact prose-only cuts; payload preparation includes complete needed units so equal members are checked but not rewritten.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d9f5e2d6634d53fcaf955378087b5cd05544a698",
+            "content": "sha256:937cb72199c4cb83ee4ee5faa7c854ed7117741485fa3c5e887f7f1104fad8a6",
+            "locator": {
+              "kind": "symbol",
+              "name": "_dependency"
+            },
+            "path": "mcp/src/agents_remember/memory/carryover_records.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d9f5e2d6634d53fcaf955378087b5cd05544a698",
+            "content": "sha256:af19474f3ad0fe83bad7ad135514c80e9941a74289699f586485d8b5a97ad078",
+            "locator": {
+              "kind": "symbol",
+              "name": "record_payloads"
+            },
+            "path": "mcp/src/agents_remember/memory/carryover_records.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The transaction skips equal writes, refreshes indexes and validates the whole memory tree before success; refusal restores the saved write extent and reports surviving differences against HEAD.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9686c82c42aa92ccb30902e632de9bc6f3dfc207",
+            "content": "sha256:50b2b06976b30da45bfcbba7554be1d4e868458fb2ea3584e87633fb1c3885d0",
+            "locator": {
+              "kind": "symbol",
+              "name": "apply_converted"
+            },
+            "path": "mcp/src/agents_remember/memory/carryover_apply.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9686c82c42aa92ccb30902e632de9bc6f3dfc207",
+            "content": "sha256:92410b0306078a832114a39a44a5d978a8daab55bdb1e7c3bc38095fb9d1dd27",
+            "locator": {
+              "kind": "symbol",
+              "name": "_refused"
+            },
+            "path": "mcp/src/agents_remember/memory/carryover_apply.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

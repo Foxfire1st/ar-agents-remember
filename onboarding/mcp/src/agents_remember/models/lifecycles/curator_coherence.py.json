@@ -17,6 +17,42 @@
       },
       "rationale": "Carries the recorded judgment's evidenceSha256 and an optional evidenceArtifact. Its serializer omits the artifact key when none was stamped, so legacy records keep their original encoding, and its validator refuses custody whose SHA differs from the originally recorded evidence hash.",
       "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "7e534abbc8eddc596c09dd188591a8e33755c064",
+        "content": "sha256:7ce98fb56df5741a16879c79e78e98804146f128bd7c153a2bc170456a65157a",
+        "locator": {
+          "kind": "symbol",
+          "name": "require_memory_quality_attestation_dependencies"
+        }
+      },
+      "id": "RLZ-4BW0XT",
+      "invariant": "INV-HGJNDG",
+      "origin": {
+        "handoffEntry": "L56-INV-HGJNDG-rev2",
+        "leaf": "260928-MIK-L56"
+      },
+      "rationale": "The closeout publishes only on a memory-quality attestation whose declared dependencies equal the current code and memory candidate trees, so the judgment that reaches the memory commit is one the gate made against the candidate being closed.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "7e534abbc8eddc596c09dd188591a8e33755c064",
+        "content": "sha256:7ce98fb56df5741a16879c79e78e98804146f128bd7c153a2bc170456a65157a",
+        "locator": {
+          "kind": "symbol",
+          "name": "require_memory_quality_attestation_dependencies"
+        }
+      },
+      "id": "RLZ-DF2QHS",
+      "invariant": "INV-0APWSR",
+      "origin": {
+        "handoffEntry": "L56-INV-0APWSR-rev2",
+        "leaf": "260928-MIK-L56"
+      },
+      "rationale": "The closeout publishes only on a memory-quality attestation whose declared dependencies equal the current code and memory candidate trees, so the judgment that reaches the memory commit is one the gate made against the candidate being closed.",
+      "role": "enforcement"
     }
   ],
   "references": {

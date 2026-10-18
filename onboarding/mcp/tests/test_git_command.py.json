@@ -3,7 +3,7 @@
   "proves": [
     {
       "anchor": {
-        "blob": "4546f9eb43d9023ee75b5955fa8ef8494cffa43d",
+        "blob": "6f763ee56447f6d927aa8481928efd6446607cad",
         "content": "sha256:3a6229ba7b175b8691e2b00a9ac2c461f0bf314317ebce471dcc175552f2cc03",
         "locator": {
           "kind": "symbol",
@@ -20,8 +20,8 @@
     },
     {
       "anchor": {
-        "blob": "4546f9eb43d9023ee75b5955fa8ef8494cffa43d",
-        "content": "sha256:31e3608139d02359c84ce44d63bba969cfdd8156e0daafd13b4d46a0bd4fd442",
+        "blob": "6f763ee56447f6d927aa8481928efd6446607cad",
+        "content": "sha256:745995f60f4fffc4b6c9b3b6a3f8c3d4ec6149cd8a0addff6d9dcf4fc0e4a292",
         "locator": {
           "kind": "symbol",
           "name": "PublishTreeCommitGuardTests.test_the_message_is_what_git_commit_m_stores_and_a_refusal_where_it_aborts"
@@ -37,7 +37,7 @@
     },
     {
       "anchor": {
-        "blob": "4546f9eb43d9023ee75b5955fa8ef8494cffa43d",
+        "blob": "6f763ee56447f6d927aa8481928efd6446607cad",
         "content": "sha256:4a48a27af0bdba4a500091b9863d89a1faf0c712320a8b09083597f8cffc73ec",
         "locator": {
           "kind": "symbol",
@@ -54,7 +54,7 @@
     },
     {
       "anchor": {
-        "blob": "4546f9eb43d9023ee75b5955fa8ef8494cffa43d",
+        "blob": "6f763ee56447f6d927aa8481928efd6446607cad",
         "content": "sha256:69dc7199f5dffa790503cd032a4e556feac4af2c790f51a015a8ac30616645a1",
         "locator": {
           "kind": "symbol",
@@ -71,7 +71,7 @@
     },
     {
       "anchor": {
-        "blob": "4546f9eb43d9023ee75b5955fa8ef8494cffa43d",
+        "blob": "6f763ee56447f6d927aa8481928efd6446607cad",
         "content": "sha256:ba45f8ede8e79d36317604c3ba963101d5bd833d5a666a4dab6125ae28974187",
         "locator": {
           "kind": "symbol",
@@ -94,7 +94,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4546f9eb43d9023ee75b5955fa8ef8494cffa43d",
+            "blob": "6f763ee56447f6d927aa8481928efd6446607cad",
             "content": "sha256:676304c234827e6348dc0cdf7d0cc0f3f0fd90ce375297f50376db3ef0de816c",
             "locator": {
               "end": 13,
@@ -111,7 +111,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4546f9eb43d9023ee75b5955fa8ef8494cffa43d",
+            "blob": "6f763ee56447f6d927aa8481928efd6446607cad",
             "content": "sha256:ee05a19a8109a1f15593c5de761babfa378111af3ccc2aca00a2753000926686",
             "locator": {
               "kind": "symbol",
@@ -127,7 +127,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4546f9eb43d9023ee75b5955fa8ef8494cffa43d",
+            "blob": "6f763ee56447f6d927aa8481928efd6446607cad",
             "content": "sha256:f24594dae9f4ec026808a93251153b7b42cca2bfa242601eb1e504d54caf3b2c",
             "locator": {
               "kind": "symbol",
@@ -143,7 +143,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4546f9eb43d9023ee75b5955fa8ef8494cffa43d",
+            "blob": "6f763ee56447f6d927aa8481928efd6446607cad",
             "content": "sha256:4c55f99f34d1f80e631348a13b53057fdb0e6990db1612c51dd593f7b395cc40",
             "locator": {
               "kind": "symbol",
@@ -159,7 +159,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4546f9eb43d9023ee75b5955fa8ef8494cffa43d",
+            "blob": "6f763ee56447f6d927aa8481928efd6446607cad",
             "content": "sha256:3f91938e8a966ce5b1a2c36f1822b3abacb8ddbe05363d7d6869edf7fb1a23fe",
             "locator": {
               "kind": "symbol",
@@ -204,15 +204,14 @@
       ]
     },
     "17": {
-      "note": "Tree publication now runs pre-commit before ref movement and records Commit-Check-Pass. Ref-transaction refusal remains native Git evidence after that check. Message comparison strips only the required pass trailer before comparison with porcelain; it does not assert raw equality of a stamped message to an unstamped argument. Both private preparation policy spellings now exercise ordinary commit hooks; the old strict-code spelling supplies compatibility vocabulary, not a skip.",
+      "note": "Tree publication now runs pre-commit before ref movement and records Commit-Check-Pass. Ref-transaction refusal remains native Git evidence after that check. Message comparison strips only the required pass trailer before comparison with porcelain; it does not assert raw equality of a stamped message to an unstamped argument. The removed private-commit executor supplies no live hook policy; retained spelling is data, never a skip on surviving routes.",
       "targets": [
         {
           "anchor": {
-            "blob": "4546f9eb43d9023ee75b5955fa8ef8494cffa43d",
-            "content": "sha256:c41312f751c9c1847a3ff5cbf8c9f5f82d57a79fe0962e92e0e30105d8544b42",
+            "blob": "6f763ee56447f6d927aa8481928efd6446607cad",
+            "content": "sha256:1a5b9efbaff102dabc3da4b3e915c66bb67f2a79e2222ea8f07e97da70ce3976",
             "locator": {
-              "kind": "symbol",
-              "name": "PublishTreeCommitGuardTests"
+              "kind": "file"
             }
           },
           "kind": "test"

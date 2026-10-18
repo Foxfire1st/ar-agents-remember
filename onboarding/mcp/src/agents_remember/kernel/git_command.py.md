@@ -9,7 +9,7 @@
 Shared Git runners and preparation owners; this is not the sole process-starting module, since landing_commit_check also starts Git/hook processes directly. The module also
 holds the exact-bytes readers of Git objects, the batched blob reader with its optional shared-read block, the
 option tuples for diffs whose output is parsed, the index copy for disposable captures, the three-way file
-merge, and the two guarded mutation families: private preparation and closeout ref publication.
+merge, and sealed existing/private-output observations. The removed preparation-command dispatcher and closeout-ref publication dispatcher are not current execution owners.
 
 ## Code Commentary
 
@@ -34,7 +34,7 @@ The object memo exists only for one request and keys the repository, effective w
   environment; a selector name in it raises `ValueError`.
 - Four timeout classes are declared: `GIT_LOCAL_TIMEOUT_SECONDS = 300` (the default),
   `GIT_REMOTE_TIMEOUT_SECONDS = 120`, `GIT_METADATA_TIMEOUT_SECONDS = 30` and
-  `GIT_BULK_REMOTE_TIMEOUT_SECONDS = 1800`. Timeout raises TimeoutExpired; prepared commit process groups stop children, and readback errors retain actual output.
+  `GIT_BULK_REMOTE_TIMEOUT_SECONDS = 1800`. Timeout raises TimeoutExpired; the explicitly owned process-group runner bounds descendants under its caller, while the landing-hook owner separately owns its hook process group. Readback errors retain actual output.
 - `run_git_with_index` sets `GIT_INDEX_FILE` to one explicit index after the scrub.
   `run_git_with_isolated_index_and_objects` also sets a disposable object directory with the repository's
   object store as a read-only alternate (`IsolatedGitState`). Both accept input text.
@@ -77,14 +77,8 @@ runner itself adds none of them: a caller that does not pass them gets Git's con
   `HEAD`, tree, index, index flags and physical files) before and after it reads the commit's raw bytes. For
   a memory binding the root `memory.md` is left out of the index and physical comparison, and the tree
   without it must equal the supplied content tree.
-- `admit_private_git_preparation` returns a capability for one detached private worktree after the caller's
-  `authorize` callback. `preparation_command` describes the one command of each step (`worktree add
-  --detach --no-checkout`, `read-tree --reset -u`, `commit`), and `run_git_preparation` runs a step only
-  from its required state (`absent`, `created`, `materialized`) and reads the state back afterwards.
-- `admit_git_closeout_publication`, `closeout_publication_command` and `publish_git_closeout_ref` publish a
-  prepared commit with one `update-ref <ref> <new> <expected old>`. A ref that already names the prepared
-  commit, or an output that equals the old commit, returns evidence without a command. A new memory
-  publication whose tree holds `memory.md` is refused.
+- `admit_private_git_preparation` retains the caller-authorized capability used by strict private-output inspection. It does not restore the removed create/materialize/commit dispatcher or authorize ref publication. Existing/private output evidence remains read-only and physically bound.
+- `ref_compare_and_swap_args(ref, new_commit, expected_old_commit, reason=...)` builds the expected-old `update-ref` arguments, adding `-m <reason>` only when a reflog reason is supplied. It returns argv; it starts no Git process and publishes no ref. The publication caller executes those arguments, so Git refuses a move whose old value changed. [56]
 
 Exact-object eligibility predicates and their regex constants live in the sibling `git_object_memo_keys.py`. This runner imports the two predicate consumers directly; request scope, memo keys, successful-result retention and Git execution remain here.
 
@@ -97,7 +91,8 @@ The extraction of _git_run shares the former run_git setup; it does not make the
 
 ## Current Behavior
 
-the shared runner now accepts one cancellation event through `_GIT_CANCELLATION`/`cancellable_git_commands` (`:512-529`). `_run_git` takes the `_wait_process` path when a cancellation is set (`:372-412`); `_wait_process` polls every 0.05 s, and `_kill_process_group` is the single child/process-group kill owner for both the timeout and an abandoned read (`:418-471`). Without an event the runner behaves as before. This supersedes 'Timeout raises TimeoutExpired; prepared commit process groups stop children' only by widening the one wait path: an abandoned read now ends the same way a timeout does, and there is no second kill site.
+The shared runner accepts a cancellation event through `_GIT_CANCELLATION` and `cancellable_git_commands` (lines 517–529). `_run_git` uses `_wait_process` when a cancellation event is present or a new session is requested (lines 356–412). The wait polls at intervals of at most 0.05 seconds when cancellation is enabled; `_kill_process_group` is the runner's one process-group kill owner for a timeout or abandoned read (lines 415–468). Without an event, the ordinary timeout behavior remains. [57] [58]
+
 
 ## Evidence
 
@@ -123,10 +118,10 @@ the shared runner now accepts one cancellation event through `_GIT_CANCELLATION`
 - One cat-file batch; a header that is not the requested blob raises. [45]
 - The three-way merge prints its result and returns the conflict count. [46]
 - The existing-output proof runs before and after the raw commit read. [47]
-- The command of each private preparation step. [48]
-- A preparation step runs only from its required state. [49]
-- The closeout publication is one compare-and-swap of the ref. [50]
 - A repeated blob read inside the block starts no Git process and never crosses repositories. [51]
 - The parsed diffs of the reviewer and the worklist carry the options. [52]
 
 - The runner keeps memo ownership and imports exact-object eligibility from its direct sibling. [53]
+- The CAS helper builds expected-old update-ref arguments with an optional reflog reason; it does not execute them. [56]
+- The cancellation context supplies one event to the shared runner. [57]
+- The shared wait bounds cancellation polling and owns timeout and abandoned-read termination. [58]

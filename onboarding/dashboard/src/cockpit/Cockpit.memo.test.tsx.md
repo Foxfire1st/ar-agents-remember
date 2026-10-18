@@ -51,7 +51,9 @@ No configured live documentation source was available for this pass.
 
 
 
+
 - The River-hidden sidebar case keeps the same document-chat node across the EventRiver toggle. [16]
+
 
 
 ### Cross-Repo References

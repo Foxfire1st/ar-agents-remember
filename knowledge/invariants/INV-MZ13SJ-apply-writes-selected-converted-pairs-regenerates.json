@@ -1,0 +1,39 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test"
+    ],
+    "justification": "A future recovery must not commit unjudged memory, overwrite curator edits, or keep partial refusal writes. Byte/mode/index/topology restoration, edited-candidate and repeat whole-tree tests directly guard this worktree-only transaction distinct from closeout publication."
+  },
+  "applicability": "The admitted converted carryover apply transaction in the recovery leaf memory worktree.",
+  "conditions": [
+    "Selection and exact external-memory leaf authority are admitted before apply; code worktree remains clean at selected official tip.",
+    "Prepared document/sidecar and missing/resumable record payloads are written only to knowledge/onboarding; route indexes regenerate before exact-tree validator judgment against the paired leaf memory base and official code.",
+    "Validator refusals and exceptions restore the pre-apply owned write extent, including preexisting bytes, modes, indexes and created directory topology; target edits/deletions are not overwritten.",
+    "Already-equal payloads skip writes but repeat still validates the whole tree and recomputes the worklist without persisting it."
+  ],
+  "exclusions": [
+    "No standalone memory commit, Git staging/index write, official-checkout write, source-history import or ledger publication.",
+    "Public apply may skip a target-edited candidate while other admitted candidates proceed; the transaction engine refuses any conflict in its admitted payload batch.",
+    "Restoration is scoped to its owned knowledge/onboarding extent under normal admitted ownership; no concurrent external-writer preservation guarantee is invented.",
+    "Normal closeout publication/gating remains INV-HWAWFT and INV-49E649; apply does not claim those gates already passed."
+  ],
+  "id": "INV-MZ13SJ",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "notes/reports/worker/07e36231-0b63-422c-b9dc-59ca0e3d6b24/role-launch/L56-generation3-code-freeze.md",
+        "Frozen generation3 source inspection; no new execution or acceptance."
+      ],
+      "path": "generation3-new-source-proved-invariants.json"
+    },
+    "handoffEntry": "MIK-R56@v1 PartB §10",
+    "leaf": "260928-MIK-L56",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Apply writes selected converted pairs, regenerates indexes, validates the exact tree, restores on refusal, and never commits or overwrites target edits.",
+  "status": "proposed",
+  "supersedes": []
+}

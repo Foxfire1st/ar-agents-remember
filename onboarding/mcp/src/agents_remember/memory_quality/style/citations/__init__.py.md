@@ -6,7 +6,7 @@
 
 ## Purpose
 
-Citation resolution for memory documents: ranges in bounds, anchors where claimed.
+Package marker for shared citation parsing, symbol bindings and terminal cache fencing; runtime behavior is owned by surviving sibling modules, not a legacy range-resolution checker.
 
 ## Code Commentary
 
@@ -33,4 +33,4 @@ None.
 
 The package is a marker; the nearest route overview documents the route scope.
 
-- The governing route overview documents the package route scope. [1]
+- The package docstring names shared citation parsing, symbol bindings and terminal cache fencing. [1]

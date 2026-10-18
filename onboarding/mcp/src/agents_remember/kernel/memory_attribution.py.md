@@ -17,9 +17,12 @@ attribution is part of the memory commit object; this module does not create com
 ### Logic
 
 `render_memory_content_message` appends a separate final attribution block after the supplied
-body. Keeping the writer beside the key prevents producer-local spellings from drifting away from
-the reader. Carryover may receive a multi-paragraph public body; baseline uses its own adoption
-subject, and closeout-shaped producers delegate through the effective input model.
+body; the caller body remains verbatim. Worktree closeout (including recovery when memory is
+still owed) and direct landing use `EffectiveCloseoutInput.memory_content_message`; baseline
+adoption calls the shared renderer directly. Carryover writes the recovery worktree but commits
+nothing; normal recovery-leaf closeout publishes its judged tree. The exact-path historical
+rewriter `kernel/memory_backfill.py` reuses the original commit tree and is not a fourth
+memory-content route. The prepared closeout producer is retired.
 
 `attributed_commits` reads Git's trailer values for every commit reachable from the requested tip,
 optionally excluding another history. It uses the full ancestry rather than only first parents,
@@ -85,3 +88,5 @@ The code/memory or fixture-repository boundaries above are established by packag
 No additional configured external or sibling-repository evidence is claimed.
 
 No additional configured cross-repository evidence.
+
+- The three content routes use the one attribution renderer; converted carryover commits nothing and the exact historical rewriter preserves the original tree. [9]

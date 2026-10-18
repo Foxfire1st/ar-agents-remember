@@ -12,11 +12,11 @@ This source is the inline-storage companion template for the c-05 file-level con
 
 ### Logic
 
-The sample block retains `format`, `sourceDigest`, `verifiedAt`, `scope` and `governingOverview`, a governing-overview link before purpose, and the same logic, conventions, invariants/boundaries, todos and three reference buckets as the external template. Its documentation placeholder distinguishes no relevant documentation after live-source checks from merely absent local material and includes retrieval blockers.
+The sample block retains `format`, `sourceDigest`, `verifiedAt`, `scope` and `governingOverview`, a governing-overview link before purpose, and the same logic, conventions, invariants/boundaries, todos and reference semantics as the converted-card content model. The removed legacy external template is not a current dependency. Its documentation placeholder distinguishes no relevant documentation after live-source checks from merely absent local material and includes retrieval blockers.
 
 ### Conventions
 
-Host-language comment delimiters remain abstract. The adapter description changes storage, comment syntax, placement, verification metadata and digesting, not the semantic content model. Stable `@ar-onboarding` and `@ar-onboarding-end` markers and metadata keys, outer-delimiter-only adaptation, and placement as high as leading syntax/tooling permit are explicit source guidelines. Provider-neutral live-source wording stays aligned with the file-level template.
+Host-language comment delimiters remain abstract. The adapter description changes storage, comment syntax, placement, verification metadata and digesting, not the semantic content model. Stable `@ar-onboarding` and `@ar-onboarding-end` markers and metadata keys, outer-delimiter-only adaptation, and placement as high as leading syntax/tooling permit are explicit source guidelines. Its live-source documentation placeholder belongs to the surviving inline template, whose semantic model is the converted-card workflow.
 
 ### Invariants And Boundaries
 

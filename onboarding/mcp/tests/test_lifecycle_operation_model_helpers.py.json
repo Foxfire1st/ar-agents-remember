@@ -7,7 +7,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c56243064f39b9d8aa786f0f9109884eb6b56da5",
+            "blob": "4777dfea79446108364f92701fd1db8e0a736230",
             "content": "sha256:2408ddaac33d755923437a0c7c847aa1aaedbf2209c8d50c9c03ea51db891944",
             "locator": {
               "kind": "symbol",
@@ -23,7 +23,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c56243064f39b9d8aa786f0f9109884eb6b56da5",
+            "blob": "4777dfea79446108364f92701fd1db8e0a736230",
             "content": "sha256:faafde3de69f9a1db550fc8f93baab46d1d9dd1051648f4605809034e61f0598",
             "locator": {
               "kind": "symbol",
@@ -39,7 +39,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c56243064f39b9d8aa786f0f9109884eb6b56da5",
+            "blob": "4777dfea79446108364f92701fd1db8e0a736230",
             "content": "sha256:2408ddaac33d755923437a0c7c847aa1aaedbf2209c8d50c9c03ea51db891944",
             "locator": {
               "kind": "symbol",
@@ -55,11 +55,38 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c56243064f39b9d8aa786f0f9109884eb6b56da5",
+            "blob": "4777dfea79446108364f92701fd1db8e0a736230",
             "content": "sha256:8a3d37912882bbb53bd5ccc6451acc26b61fad628e82b3efb8a19a591179a997",
             "locator": {
               "kind": "symbol",
               "name": "test_worker_binding_and_termination_evidence_are_one_authority"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "Prepared retention still binds successor intent/output and predecessor fingerprint, allows a later memory-content leg and refuses a non-immediate predecessor.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4777dfea79446108364f92701fd1db8e0a736230",
+            "content": "sha256:53d752e787c95d414e375005a0f9cc0e4e4834dde73aaf4fcd1dbc28fe270397",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_prepared_code_retention_binds_successor_prefix_and_predecessor"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "4777dfea79446108364f92701fd1db8e0a736230",
+            "content": "sha256:de24dd11533bc61d442f9fdd0b8ad92bc76660e1bb1dae67c45ec8a19d2c9a7f",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_prepared_code_retention_rejects_non_immediate_predecessor"
             }
           },
           "kind": "test"

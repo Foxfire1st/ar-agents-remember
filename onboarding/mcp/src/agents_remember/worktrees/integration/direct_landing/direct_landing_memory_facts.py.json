@@ -1,0 +1,23 @@
+{
+  "path": "mcp/src/agents_remember/worktrees/integration/direct_landing/direct_landing_memory_facts.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Read-only external-memory branch evidence for direct landing.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f2a883fe259e496c3363769ba8f07ddd8c063012",
+            "content": "sha256:8606d59203a786941e4f4aedd2865ffa4e9573210c0bea235a4ed4fb237a4bd0",
+            "locator": {
+              "kind": "symbol",
+              "name": "_memory_facts"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

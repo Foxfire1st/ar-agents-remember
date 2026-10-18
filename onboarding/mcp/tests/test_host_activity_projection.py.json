@@ -3,8 +3,8 @@
   "proves": [
     {
       "anchor": {
-        "blob": "f0de2c3d3ee0f63ebbdc18be70d0ad02b5d6a858",
-        "content": "sha256:aa691a2ffe46be638aee5faa6072731811a8a9728109981a671e8efbb044836c",
+        "blob": "4bc611105b86702f73ca9f2e6cfecb26c86c0025",
+        "content": "sha256:65c89a131bc3ab48c97ebad70c2c646732619fee55d08afa1415401f15574030",
         "locator": {
           "kind": "symbol",
           "name": "test_periodic_full_and_degraded_wakes_retain_host_without_reads"
@@ -20,7 +20,7 @@
     },
     {
       "anchor": {
-        "blob": "f0de2c3d3ee0f63ebbdc18be70d0ad02b5d6a858",
+        "blob": "4bc611105b86702f73ca9f2e6cfecb26c86c0025",
         "content": "sha256:70ee01f2462af39bfe2a744fbb2ff9e788a2798240cbcb4f15506246edda3b41",
         "locator": {
           "kind": "symbol",
@@ -37,8 +37,8 @@
     },
     {
       "anchor": {
-        "blob": "f0de2c3d3ee0f63ebbdc18be70d0ad02b5d6a858",
-        "content": "sha256:e0995e249ab658fa143f64b48325869ccbb6ca58b83c7b2d8033550080707ac6",
+        "blob": "4bc611105b86702f73ca9f2e6cfecb26c86c0025",
+        "content": "sha256:4025f00e938f36fcd1345aea4f2de931ec00bda6dfc95c2660355a1073af8f89",
         "locator": {
           "kind": "symbol",
           "name": "test_idle_heartbeats_do_not_read_activity_or_launch_another_snapshot"

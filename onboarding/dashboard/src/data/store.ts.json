@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "68121e9668db87a9d23260c691ac8c1ba4513e6d",
-        "content": "sha256:18bee63a4c544130e5096fcc1f7d244bd4569845af15167d9de30ca66b86f205",
+        "blob": "e696c956756f8e506411a473a7778e5a2afc9bfb",
+        "content": "sha256:60b3f1b28184c94de288d7174aa85094e38138d9f3511d2112145a4972d822ab",
         "locator": {
           "kind": "file"
         }
@@ -20,7 +20,7 @@
     },
     {
       "anchor": {
-        "blob": "68121e9668db87a9d23260c691ac8c1ba4513e6d",
+        "blob": "e696c956756f8e506411a473a7778e5a2afc9bfb",
         "content": "sha256:3e95f2199d191216a63e27bcda9874e9c33ec94beb0b0da84399870306b2d4f9",
         "locator": {
           "kind": "symbol",
@@ -78,7 +78,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "435f095a70d30fca070deb1186104929ac557935",
+            "blob": "d27e20e29f49e1c8d21e0c3226f15dc93c290a14",
             "content": "sha256:b15319d1168a05c9de103355d5a33dd2a9447e9bb6404ffe235a8c1c9e6191fb",
             "locator": {
               "kind": "symbol",
@@ -109,11 +109,11 @@
       ]
     },
     "4": {
-      "note": "Store state initializes every projected collection, including `closeoutQueues`, and the canonical reset restores them together while incrementing `gen` once.\n\nAnchor: \"export const dashboardStore\"",
+      "note": "Store state initializes every projected collection, including `closeoutQueues`, and the canonical reset restores them together while incrementing `gen` once.",
       "targets": [
         {
           "anchor": {
-            "blob": "68121e9668db87a9d23260c691ac8c1ba4513e6d",
+            "blob": "e696c956756f8e506411a473a7778e5a2afc9bfb",
             "content": "sha256:cced200f36c56e8c93fbe17acab52d082f0cf155115644acc4f21d0020efd118",
             "locator": {
               "kind": "symbol",
@@ -124,12 +124,12 @@
         },
         {
           "anchor": {
-            "blob": "68121e9668db87a9d23260c691ac8c1ba4513e6d",
+            "blob": "e696c956756f8e506411a473a7778e5a2afc9bfb",
             "content": "sha256:53dd32decd9ed22d1b726bfcccda7d714314cb94874c8fd47c3b9e76c730fd16",
             "locator": {
-              "end": 320,
+              "end": 319,
               "kind": "line_range",
-              "start": 320
+              "start": 319
             }
           },
           "kind": "code"
@@ -141,12 +141,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "68121e9668db87a9d23260c691ac8c1ba4513e6d",
+            "blob": "e696c956756f8e506411a473a7778e5a2afc9bfb",
             "content": "sha256:3df43af66aa8b16bb3c6c2a3005ae4d5a4cfaaf7bdf810fa802eabe4e46d605f",
             "locator": {
-              "end": 377,
+              "end": 376,
               "kind": "line_range",
-              "start": 377
+              "start": 376
             }
           },
           "kind": "code"

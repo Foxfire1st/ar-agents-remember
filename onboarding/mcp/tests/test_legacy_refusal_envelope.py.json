@@ -3,7 +3,7 @@
   "proves": [
     {
       "anchor": {
-        "blob": "20cfdca4e1dc9af3bb1ff939513d621d67208274",
+        "blob": "5dc320f0c9272c653cb821f8815f6573bf364109",
         "content": "sha256:cacd885f58199b59762153c0fe38914f5aad470047bf14fba0688aa58f73293a",
         "locator": {
           "kind": "symbol",
@@ -20,7 +20,7 @@
     },
     {
       "anchor": {
-        "blob": "20cfdca4e1dc9af3bb1ff939513d621d67208274",
+        "blob": "5dc320f0c9272c653cb821f8815f6573bf364109",
         "content": "sha256:00cb3af03050cfcd398e9a0a8ac476280155ed2a03ada56f8105c47919b9e637",
         "locator": {
           "kind": "symbol",
@@ -43,7 +43,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "20cfdca4e1dc9af3bb1ff939513d621d67208274",
+            "blob": "5dc320f0c9272c653cb821f8815f6573bf364109",
             "content": "sha256:babcc4387a9e42048dd41b31ec86a796f75a8134896cab1c2783eed5945443a1",
             "locator": {
               "kind": "symbol",
@@ -55,12 +55,12 @@
       ]
     },
     "2": {
-      "note": "Converted candidate not legacy; public rejection equals direct validator refusal on identical request; observed state unchanged.",
+      "note": "**Retained historical source account — superseded by the current contract:** Converted candidate not legacy; public rejection equals direct validator refusal on identical request; observed state unchanged.",
       "targets": [
         {
           "anchor": {
-            "blob": "5526a5f3346861e5fc00623b77a4b61c1acbafbc",
-            "content": "sha256:5ea7e20875e3f029d285fc6030f7f2dee179cbb899f29c176d9b369f5ba01b26",
+            "blob": "5dc320f0c9272c653cb821f8815f6573bf364109",
+            "content": "sha256:cd89aec6d2729762dba9a7f68702abdf4dbb6c0b769149e4eb1e84fefa83df0b",
             "locator": {
               "kind": "symbol",
               "name": "test_record_landing_converted_candidate_on_legacy_line_reaches_its_validator"
@@ -75,7 +75,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "20cfdca4e1dc9af3bb1ff939513d621d67208274",
+            "blob": "5dc320f0c9272c653cb821f8815f6573bf364109",
             "content": "sha256:a66608f80484ed79cc192a9126fa9ad78f0b7197084868c470bc23cbc370e1ad",
             "locator": {
               "kind": "symbol",
@@ -91,7 +91,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "20cfdca4e1dc9af3bb1ff939513d621d67208274",
+            "blob": "5dc320f0c9272c653cb821f8815f6573bf364109",
             "content": "sha256:9da1f57920ad850d2b1e37c8670149adb3fb4f4b40359eaa991fed4371cb643a",
             "locator": {
               "kind": "symbol",
@@ -107,7 +107,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "20cfdca4e1dc9af3bb1ff939513d621d67208274",
+            "blob": "5dc320f0c9272c653cb821f8815f6573bf364109",
             "content": "sha256:41c32b29dbddfbdcf8cc0a0472bbad1594d00a58373490b3cd3c51420f9bab8c",
             "locator": {
               "kind": "symbol",
@@ -123,10 +123,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "20cfdca4e1dc9af3bb1ff939513d621d67208274",
-            "content": "sha256:efc54b7c308db8aa7541dc7249f96916f56b998c1114d9c29606f7d5d65e8b9d",
+            "blob": "5dc320f0c9272c653cb821f8815f6573bf364109",
+            "content": "sha256:17075fb59a65fa76dd2b4fcc913f95cbdaed97ec58adb844ac3aa9f4a07edc07",
             "locator": {
-              "kind": "file"
+              "end": 1023,
+              "kind": "line_range",
+              "start": 1
             }
           },
           "kind": "test"

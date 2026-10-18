@@ -1,0 +1,317 @@
+{
+  "path": "mcp/tests/test_carryover_document_units.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "3fac14bf69fd5e2b71bbef1898d84e51fa0592c5",
+        "content": "sha256:03e4e70ca09bc4dad070678216bd6acb860173456f684f793802d79b0e6d73c8",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_all_document_kinds_compare_paired_bytes"
+        }
+      },
+      "facet": "All four document kinds compare both members; a changed JSON byte or missing sidecar breaks pair identity/loading.",
+      "id": "PRF-6X1FP0",
+      "invariant": "INV-FPG5GW",
+      "origin": {
+        "handoffEntry": "MIK-R56@v1 PartB §7",
+        "leaf": "260928-MIK-L56"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "3fac14bf69fd5e2b71bbef1898d84e51fa0592c5",
+        "content": "sha256:9fcdd047e9d3774d0dc791758a2b2850593b0c34e6f1af838f994df7a4ca4a14",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_nonobject_layout_roots_refuse_conversion_before_further_reads"
+        }
+      },
+      "facet": "Nonobject JSON roots on either side give the conversion refusal rather than escaping as AttributeError.",
+      "id": "PRF-BQH6H1",
+      "invariant": "INV-9MH0V9",
+      "origin": {
+        "handoffEntry": "MIK-R56@v1 PartB §6",
+        "leaf": "260928-MIK-L56"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "3fac14bf69fd5e2b71bbef1898d84e51fa0592c5",
+        "content": "sha256:4f8b669df324ae1a3b772dd23970b9129f3eb9a5cd8d47a57f6e172da1592b13",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_stale_unreadable_and_anchorless_need_review"
+        }
+      },
+      "facet": "Changed content names four stale anchors and refuses unreviewed preparation; explicit review keeps bytes, invalid official trees yield readFailed/unverifiable, and anchorless input is not all-current.",
+      "id": "PRF-DC322S",
+      "invariant": "INV-1CS8DN",
+      "origin": {
+        "handoffEntry": "MIK-R56@v1 PartB §8",
+        "leaf": "260928-MIK-L56"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "3fac14bf69fd5e2b71bbef1898d84e51fa0592c5",
+        "content": "sha256:7fabe137718da73e294f62cad0beb433905057fe804bdec96bb4c13e1037819f",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_moved_anchors_all_reanchor_without_writing"
+        }
+      },
+      "facet": "All four realization/proof/reference anchors move to the official line and remain current, while original sidecar/document bytes stay unchanged during preparation.",
+      "id": "PRF-JFAPEN",
+      "invariant": "INV-1CS8DN",
+      "origin": {
+        "handoffEntry": "MIK-R56@v1 PartB §8",
+        "leaf": "260928-MIK-L56"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "3fac14bf69fd5e2b71bbef1898d84e51fa0592c5",
+        "content": "sha256:8a32ff89770b8b761466448ff639ad1ee1b92fd991efe689c2db94ed2aeb2f67",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_record_identity_and_markdown_conflicts"
+        }
+      },
+      "facet": "A differing Markdown companion gives record-differs; renamed but identical records are not duplicated; conflicts refuse payload creation.",
+      "id": "PRF-XAPKVA",
+      "invariant": "INV-5XX92M",
+      "origin": {
+        "handoffEntry": "MIK-R56@v1 PartB §9",
+        "leaf": "260928-MIK-L56"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "3fac14bf69fd5e2b71bbef1898d84e51fa0592c5",
+        "content": "sha256:4ac534ddd29f4849510f0d4882f2eb781b53ec506b1176360286d03936ecef40",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_fifo_layout_refuses_without_waiting_for_a_writer"
+        }
+      },
+      "facet": "A FIFO layout marker on either side refuses as nonregular within the bounded child timeout; no writer is required.",
+      "id": "PRF-XHDWT3",
+      "invariant": "INV-9MH0V9",
+      "origin": {
+        "handoffEntry": "MIK-R56@v1 PartB §6",
+        "leaf": "260928-MIK-L56"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "3fac14bf69fd5e2b71bbef1898d84e51fa0592c5",
+        "content": "sha256:81a13c2c4ed4d79c89688ee2cc4be181be4e0b8ede248d6092a90c27a2dd39ad",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_transitive_records_and_read_only_history"
+        }
+      },
+      "facet": "The four transitive fixture records are dependencies, source history is reading_aid_only, payloads omit history, and changed existing bytes raise never-overwrite.",
+      "id": "PRF-ZD13SM",
+      "invariant": "INV-5XX92M",
+      "origin": {
+        "handoffEntry": "MIK-R56@v1 PartB §9",
+        "leaf": "260928-MIK-L56"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "All document kinds compare paired bytes; differing/missing sidecars prevent accepting Markdown alone.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3fac14bf69fd5e2b71bbef1898d84e51fa0592c5",
+            "content": "sha256:03e4e70ca09bc4dad070678216bd6acb860173456f684f793802d79b0e6d73c8",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_all_document_kinds_compare_paired_bytes"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "10": {
+      "note": "A renamed identical record pair is present by identity; differing Markdown conflicts and prevents payload emission.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3fac14bf69fd5e2b71bbef1898d84e51fa0592c5",
+            "content": "sha256:8a32ff89770b8b761466448ff639ad1ee1b92fd991efe689c2db94ed2aeb2f67",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_record_identity_and_markdown_conflicts"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "11": {
+      "note": "Missing source records, changed/unreadable records and incomplete indexes remain explicit conflicts.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3fac14bf69fd5e2b71bbef1898d84e51fa0592c5",
+            "content": "sha256:de34f4fee5ed77e40b905f4e50be8bddf0cb59a1466668dddb9b24c539e31f09",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_missing_partial_and_changed_records_need_review"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Four realization/proof/reference anchors reanchor from the official tree without writing source bytes.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3fac14bf69fd5e2b71bbef1898d84e51fa0592c5",
+            "content": "sha256:7fabe137718da73e294f62cad0beb433905057fe804bdec96bb4c13e1037819f",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_moved_anchors_all_reanchor_without_writing"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Stale, unreadable or anchorless observations require review; explicit reviewed payload preserves stale sidecar bytes rather than fabricating fresh anchors.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3fac14bf69fd5e2b71bbef1898d84e51fa0592c5",
+            "content": "sha256:4f8b669df324ae1a3b772dd23970b9129f3eb9a5cd8d47a57f6e172da1592b13",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_stale_unreadable_and_anchorless_need_review"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "Conversion mismatch/missing layout refuses with conversion/crossing guidance; traversal, noncanonical paths and symlink escapes refuse.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3fac14bf69fd5e2b71bbef1898d84e51fa0592c5",
+            "content": "sha256:ad570ee82976ff403fb8f10fdcb65079b269265b110d67a8bfa8402ce7caea17",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_layout_and_paths_refuse_crossing_and_symlink_escape"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "For each source/target side, null, list, string, integer and boolean layout roots raise the named conversion/crossing refusal.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3fac14bf69fd5e2b71bbef1898d84e51fa0592c5",
+            "content": "sha256:9fcdd047e9d3774d0dc791758a2b2850593b0c34e6f1af838f994df7a4ca4a14",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_nonobject_layout_roots_refuse_conversion_before_further_reads"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "For each layout side, the FIFO subprocess has no writer and must return regular-file refusal within the repository HANG_GUARD_SECONDS bound.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3fac14bf69fd5e2b71bbef1898d84e51fa0592c5",
+            "content": "sha256:4ac534ddd29f4849510f0d4882f2eb781b53ec506b1176360286d03936ecef40",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_fifo_layout_refuses_without_waiting_for_a_writer"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "Document Markdown/sidecar and invariant JSON/Markdown FIFOs refuse through direct safe_memory_path admission.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3fac14bf69fd5e2b71bbef1898d84e51fa0592c5",
+            "content": "sha256:3793d98d7c9acd1d15787109483cf1ecf8190f354bf17d89e99f520c72740ded",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_selected_fifo_member_is_refused_by_path_admission"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "Path admission rejects present nonregular members via lstat before reading; schema text parsing and matching conversion versions wrap layout errors with conversion/crossing guidance.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1b75a555341ba3c926124abb7a74b388b1c9d2a9",
+            "content": "sha256:f9bb94f86a30d379108e1ba99b22691e86b7267e46e1824ed02833c83fd34dfa",
+            "locator": {
+              "kind": "symbol",
+              "name": "safe_memory_path"
+            },
+            "path": "mcp/src/agents_remember/memory/carryover_documents.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1b75a555341ba3c926124abb7a74b388b1c9d2a9",
+            "content": "sha256:6e2272ccd94b422ec6a5544703caaab2245f0099816081ea62dcd6ad82d3117b",
+            "locator": {
+              "kind": "symbol",
+              "name": "require_matching_layout"
+            },
+            "path": "mcp/src/agents_remember/memory/carryover_documents.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "Transitive family/decision/invariant records travel; history is reading-only, equal payloads skip and differing destinations are never overwritten.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3fac14bf69fd5e2b71bbef1898d84e51fa0592c5",
+            "content": "sha256:81a13c2c4ed4d79c89688ee2cc4be181be4e0b8ede248d6092a90c27a2dd39ad",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_transitive_records_and_read_only_history"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

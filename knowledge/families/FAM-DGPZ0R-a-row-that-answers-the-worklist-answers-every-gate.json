@@ -22,10 +22,11 @@
     "leaf": "260928-MIK-L175",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "routes": [
     "mcp/src/agents_remember/application",
-    "mcp/src/agents_remember/worktrees/modules"
+    "mcp/src/agents_remember/worktrees/modules",
+    "mcp/src/agents_remember/models/lifecycles"
   ],
   "schema": "ar-family/v1",
   "status": "proposed",

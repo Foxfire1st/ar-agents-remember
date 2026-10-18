@@ -3,28 +3,27 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "The facade re-exports the R07 affected-closure planner, models, executor, and store.\n\nAnchor: `execute_affected_closure`; `compile_affected_closure_plan`; `ContentAddressedSubresultStore`",
+      "note": "The facade retains per-unit result/store contracts, candidate/task/Git observers, typed errors and the checker registry.",
       "targets": [
         {
           "anchor": {
-            "blob": "2eb8f360b861e15f47f0a15ec43b67608eb00f6c",
-            "content": "sha256:3791f5e9bf31339715d565947ac0a2038cb0b59e548575285ebeb856e8806e17",
+            "blob": "276a7b99a83516a136c6a2f041ff1893c5918844",
+            "content": "sha256:d7e7a36b9f532e397b938583683adfb7db50974f48af0522d4df65c3a3651867",
             "locator": {
-              "end": 11,
-              "kind": "line_range",
-              "start": 3
+              "kind": "symbol",
+              "name": "__all__"
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "2eb8f360b861e15f47f0a15ec43b67608eb00f6c",
+            "blob": "276a7b99a83516a136c6a2f041ff1893c5918844",
             "content": "sha256:e43801ded266b84c37d0650d85a42f2f8678420186b971cb6260d24ff5542108",
             "locator": {
-              "end": 27,
+              "end": 13,
               "kind": "line_range",
-              "start": 27
+              "start": 13
             }
           },
           "kind": "code"
@@ -53,8 +52,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2eb8f360b861e15f47f0a15ec43b67608eb00f6c",
-            "content": "sha256:eb074df00b3f687fe2b2d64b1a67dd219e286de09bd2a8111ff06430b01a3e41",
+            "blob": "276a7b99a83516a136c6a2f041ff1893c5918844",
+            "content": "sha256:d7e7a36b9f532e397b938583683adfb7db50974f48af0522d4df65c3a3651867",
             "locator": {
               "kind": "symbol",
               "name": "__all__"

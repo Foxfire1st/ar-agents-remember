@@ -477,7 +477,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "440928374d4ca08582c2dc790cb791d2e588d27d",
+            "blob": "77f4c105452024a11b381921b945b76a3df028d5",
             "content": "sha256:b9c3b6fbb6f4b5ae523ee6888de143b18da1674d8d42ec868401b25daea26060",
             "locator": {
               "kind": "symbol",
@@ -489,7 +489,7 @@
         },
         {
           "anchor": {
-            "blob": "440928374d4ca08582c2dc790cb791d2e588d27d",
+            "blob": "77f4c105452024a11b381921b945b76a3df028d5",
             "content": "sha256:d66282011e6104457e201a03a8626244577dc026812a91ef41972743328fa8d1",
             "locator": {
               "kind": "symbol",
@@ -501,7 +501,7 @@
         },
         {
           "anchor": {
-            "blob": "440928374d4ca08582c2dc790cb791d2e588d27d",
+            "blob": "77f4c105452024a11b381921b945b76a3df028d5",
             "content": "sha256:daf3217ecae8b4eaad292db942e50c17acee95b05ae749a557801f04457bc3a2",
             "locator": {
               "kind": "symbol",
@@ -598,7 +598,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c55af2c8c0b8cd2eaef3ef961fc49505b96b823a",
+            "blob": "d617ae8333cdb55f3cf9bdac4802153afe86655d",
             "content": "sha256:4f888b408f3ea32f96c6d9a7aff94534d8f465c7a1a8fc402108a5a5492e3cfb",
             "locator": {
               "end": 11,
@@ -857,40 +857,6 @@
               "kind": "file"
             },
             "path": "mcp/src/agents_remember/application/review_candidate_resolution.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "146": {
-      "note": "The closeout certification's own source index, or a named refusal with the operator move.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "3595200cda48184f4f34a7033f283b136e9c5f50",
-            "content": "sha256:e95c7406b3fd4a71e46394f433e182e91fe6c83efb58d4927af93b8e84563a4f",
-            "locator": {
-              "kind": "symbol",
-              "name": "_admitted_source_index"
-            },
-            "path": "mcp/src/agents_remember/application/prepared_certification.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "147": {
-      "note": "The candidate route that index is acquired over, so the gate sees the register the route records.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "f7b59934d4c1a98bbc511a7df67311083ace2c01",
-            "content": "sha256:82dde22a138ec2bf677931bfe98d0a29c51412b9195fe6d57dfb01e10b064c34",
-            "locator": {
-              "kind": "symbol",
-              "name": "_run"
-            },
-            "path": "mcp/src/agents_remember/application/prepared_certification.py"
           },
           "kind": "code"
         }
@@ -3111,7 +3077,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e47d5cc7e437fd7a83dd6cf764c684665b385061",
+            "blob": "1ed6df983ba83a5dca67863f17dade9ab2d875aa",
             "content": "sha256:6b948cc0a0a6cfabb5116fc3fabbb632de3c30b476b462856555207593d221e0",
             "locator": {
               "kind": "symbol",
@@ -3821,22 +3787,6 @@
               "name": "_onboarding_refresh_gate"
             },
             "path": "mcp/src/agents_remember/application/memory_quality/controller.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "289": {
-      "note": "The closeout validator's dispatch.\n\nAnchor: `_realize_prepared_memory`",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "f7b59934d4c1a98bbc511a7df67311083ace2c01",
-            "content": "sha256:7494f3c8cf972e800e6d9961701941d4095eb322b4ccabb88de8209daa99e4c2",
-            "locator": {
-              "kind": "file"
-            },
-            "path": "mcp/src/agents_remember/application/prepared_certification.py"
           },
           "kind": "code"
         }
@@ -4907,7 +4857,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "440928374d4ca08582c2dc790cb791d2e588d27d",
+            "blob": "77f4c105452024a11b381921b945b76a3df028d5",
             "content": "sha256:e3eed057ca2ce1987b93c26ff3a0d4086762ea0473199bc965a64601abdf36a8",
             "locator": {
               "kind": "symbol",
@@ -5845,7 +5795,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "440928374d4ca08582c2dc790cb791d2e588d27d",
+            "blob": "77f4c105452024a11b381921b945b76a3df028d5",
             "content": "sha256:58c69b529ff72df2527aa7718489f45d33129774eb5e9b546e4a2384b09acda8",
             "locator": {
               "kind": "symbol",
@@ -5857,7 +5807,7 @@
         },
         {
           "anchor": {
-            "blob": "440928374d4ca08582c2dc790cb791d2e588d27d",
+            "blob": "77f4c105452024a11b381921b945b76a3df028d5",
             "content": "sha256:f46bff14ccf15ad96dfaf4add6284831b1be86fc914733e91c17558c139f1fdb",
             "locator": {
               "kind": "symbol",
@@ -6114,7 +6064,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "440928374d4ca08582c2dc790cb791d2e588d27d",
+            "blob": "77f4c105452024a11b381921b945b76a3df028d5",
             "content": "sha256:1e4695090e86243d29edfa20d74d1f551cd102d5e79638d560e9fe6a6c6fbf17",
             "locator": {
               "kind": "symbol",
@@ -6491,12 +6441,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "aa118718995cd5e32186a5a5c7237cce3f9f54d3",
+            "blob": "ed5063a474d8c7c75e1760d7e83804764118de57",
             "content": "sha256:027365c573f2f3cba7df33db92946c3dbb8192948b786e09b2eb659de02648ac",
             "locator": {
-              "end": 111,
+              "end": 101,
               "kind": "line_range",
-              "start": 110
+              "start": 100
             },
             "path": "mcp/src/agents_remember/kernel/git_command.py"
           },
@@ -7154,12 +7104,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "05a0dc3d78298af697a9b16a0692971abddd837b",
+            "blob": "9cfe5fc779f3234e5cf2d83eee7be9897b4668cb",
             "content": "sha256:bd0a21f471dcf269aa7525600e6430e8f0266129db755bc376c1192a886c47cc",
             "locator": {
-              "end": 232,
+              "end": 224,
               "kind": "line_range",
-              "start": 232
+              "start": 224
             },
             "path": "mcp/src/agents_remember/application/worktree_services.py"
           },
@@ -7172,12 +7122,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "05a0dc3d78298af697a9b16a0692971abddd837b",
+            "blob": "9cfe5fc779f3234e5cf2d83eee7be9897b4668cb",
             "content": "sha256:bd0a21f471dcf269aa7525600e6430e8f0266129db755bc376c1192a886c47cc",
             "locator": {
-              "end": 232,
+              "end": 224,
               "kind": "line_range",
-              "start": 232
+              "start": 224
             },
             "path": "mcp/src/agents_remember/application/worktree_services.py"
           },
@@ -7547,16 +7497,27 @@
       ]
     },
     "455": {
-      "note": "independent leaf-base composition and bounded answer\n\nScoped reader roots derive from the canonical leaf and current enclosure admission.",
+      "note": "Canonical task/contract admission derives scoped reader roots; the admitted leaf base is resolved independently for landing observations and is passed by controller and drift adapter; the answer carries bounded cut/add rows without changing validator classification.\n\nAnchor: `task_scoped_mcp_config_for_reader`, `leaf_base_request`, `leaf_base_port`, `_bounded_quality_response`",
       "targets": [
         {
           "anchor": {
-            "blob": "861c389d81f395584673bd0dfc2616de8ed2f6ef",
-            "content": "sha256:3f86065e0d1234c880d6186cfb3b8683bc9c8b315d0b8ccae65a38e4667ff5b8",
+            "blob": "4284e722e205298b85722fab51f0e57ccb5f3122",
+            "content": "sha256:a5dc08bd317587a0ce6088e2234366da59c57de5ef248675425c721652fefc86",
             "locator": {
-              "end": 252,
-              "kind": "line_range",
-              "start": 118
+              "kind": "symbol",
+              "name": "task_scoped_mcp_config_for_reader"
+            },
+            "path": "mcp/src/agents_remember/application/task_scoped_mcp.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "861c389d81f395584673bd0dfc2616de8ed2f6ef",
+            "content": "sha256:929d06cd2b572431d92a31360ef8f56bbbe7bf86d209a8e653fc51dcf96f387b",
+            "locator": {
+              "kind": "symbol",
+              "name": "leaf_base_request"
             },
             "path": "mcp/src/agents_remember/application/memory_quality/converted_base.py"
           },
@@ -7564,77 +7525,25 @@
         },
         {
           "anchor": {
-            "blob": "adf33020c862905f50d7358b34941854b5176535",
-            "content": "sha256:dcb1b2d40a3ac159fcba79b20c8a458730067afa2f7415707639274222e01be4",
+            "blob": "861c389d81f395584673bd0dfc2616de8ed2f6ef",
+            "content": "sha256:7c70a3a8ca954a2318c9081cdc45e724afae94492bc3f1de31034dc202c93251",
             "locator": {
-              "end": 529,
-              "kind": "line_range",
-              "start": 458
+              "kind": "symbol",
+              "name": "leaf_base_port"
+            },
+            "path": "mcp/src/agents_remember/application/memory_quality/converted_base.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "77f4c105452024a11b381921b945b76a3df028d5",
+            "content": "sha256:ad94b61145628f97b362b95667d27fadf055c3a23b9246e7949920b6ea06065e",
+            "locator": {
+              "kind": "symbol",
+              "name": "_bounded_quality_response"
             },
             "path": "mcp/src/agents_remember/application/memory_quality/controller.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "05a0dc3d78298af697a9b16a0692971abddd837b",
-            "content": "sha256:df4c5faac7fc15acf748d9f813b6d3d3d7740b7fbc0c0d005555b38eb8bdf432",
-            "locator": {
-              "end": 189,
-              "kind": "line_range",
-              "start": 173
-            },
-            "path": "mcp/src/agents_remember/application/worktree_services.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "3595200cda48184f4f34a7033f283b136e9c5f50",
-            "content": "sha256:c26f3c420e1c7862298f7a73df260e91ff8c6a90462e54d1efa1d431a063d881",
-            "locator": {
-              "end": 733,
-              "kind": "line_range",
-              "start": 611
-            },
-            "path": "mcp/src/agents_remember/application/prepared_certification.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "0be87d00a47ea321e70ece47c29392d112e29571",
-            "content": "sha256:8231a631e68b412e798b03b24e7915a6b33ebada2442887e77644d07b14f53bd",
-            "locator": {
-              "end": 239,
-              "kind": "line_range",
-              "start": 202
-            },
-            "path": "mcp/src/agents_remember/application/memory_quality/answer.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "a16d61fab1c533b0b101b675bdd8a7b79fc491cd",
-            "content": "sha256:4afff32af965daf0ba1a7707e09c7d3546a9d73383479cd47dd0833f280279fd",
-            "locator": {
-              "kind": "symbol",
-              "name": "_admit_task_scope"
-            },
-            "path": "mcp/src/agents_remember/application/task_scoped_mcp.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "a16d61fab1c533b0b101b675bdd8a7b79fc491cd",
-            "content": "sha256:ffdd5cba81058e609463807d63dafe9cac09c732e71cc47c6d35aa0ad0d24595",
-            "locator": {
-              "kind": "symbol",
-              "name": "_canonical_leaf_contract"
-            },
-            "path": "mcp/src/agents_remember/application/task_scoped_mcp.py"
           },
           "kind": "code"
         }
@@ -8145,12 +8054,12 @@
         },
         {
           "anchor": {
-            "blob": "440928374d4ca08582c2dc790cb791d2e588d27d",
+            "blob": "77f4c105452024a11b381921b945b76a3df028d5",
             "content": "sha256:ad94b61145628f97b362b95667d27fadf055c3a23b9246e7949920b6ea06065e",
             "locator": {
-              "end": 662,
+              "end": 654,
               "kind": "line_range",
-              "start": 648
+              "start": 640
             },
             "path": "mcp/src/agents_remember/application/memory_quality/controller.py"
           },
@@ -8534,34 +8443,85 @@
       ]
     },
     "496": {
-      "note": "Packet assembly copies the comparison owner's sides and refuses another comparison's identity.",
+      "note": "Requested certification is selected repository-profile work that commits nothing; the ordinary closeout door keeps its own candidate, approval and lineage evidence and publishes code then memory without running certification.",
       "targets": [
         {
           "anchor": {
-            "blob": "59dd363550251e1afa7e89d97abad3676a901f44",
-            "content": "sha256:8d6fcc9be3c5658afe32615b24de01212f1aa5147b722169319fb6fb4011d6c6",
+            "blob": "4c8cc69c44f4910bb5cbf4400f19f879a1b4dc36",
+            "content": "sha256:3e3ec811ce610091fbe826fc8faae95810b5437cd8219febce3c7ab5c282ad22",
             "locator": {
-              "kind": "symbol",
-              "name": "build_evidence_packet"
+              "kind": "file"
             },
-            "path": "mcp/src/agents_remember/application/review_evidence_packet.py"
+            "path": "mcp/src/agents_remember/worktrees/integration/closeout/certification/selection.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d0940b70289d43e211b8e08dbeafc3769dc23b64",
+            "content": "sha256:c55c423e7a9cf34c97801164521924a73efd7517757c74d439fe9680cf928267",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/closeout/door_evidence.py"
           },
           "kind": "code"
         }
       ]
     },
     "497": {
-      "note": "The frame store validates before it mutates and writes the ready pointer last.",
+      "note": "The curator run uses the converted history-file trace gate. A missing answering row leaves an open item with MISSING_CODE; unreadable converted comparison sides or required inputs produce INCOMPLETE_CODE.",
       "targets": [
         {
           "anchor": {
-            "blob": "677fed33450ee2c3e80367293bccc30399344ad3",
-            "content": "sha256:54c65133461eae4535b3d3a53ce9fa375446824569169c752df75eca4bd59b35",
+            "blob": "0921ffa900bd3bbaa170662ce74d5914de793998",
+            "content": "sha256:54c1df2037e415cb52de70ee18f5dee6775c5397e16a28779c0412aca192aa5c",
             "locator": {
-              "kind": "symbol",
-              "name": "publish_revision"
+              "end": 372,
+              "kind": "line_range",
+              "start": 343
             },
-            "path": "mcp/src/agents_remember/application/review_frame_store.py"
+            "path": "mcp/src/agents_remember/worktrees/modules/onboarding_trace.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0921ffa900bd3bbaa170662ce74d5914de793998",
+            "content": "sha256:3cabfa4bb146b264b1ce2d15fa9da99adfa64a7fdd08273d6974effacbad60be",
+            "locator": {
+              "end": 565,
+              "kind": "line_range",
+              "start": 554
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/onboarding_trace.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "498": {
+      "note": "The quality controller binds an admitted landing base with bounded landing observations, while scoped-reader roots derive separately from canonical leaf and enclosure admission.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "77f4c105452024a11b381921b945b76a3df028d5",
+            "content": "sha256:2e89cf1bf2e105ed4817e9c5ec64b94dd78a2ce1f95888008675a809b6bb4c40",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/application/memory_quality/controller.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7e2b0e1dad3f95e1d6d6d33bde4ac8878fb77983",
+            "content": "sha256:a9b5bf86d991de4050804e2263855e4126d2f150446b64fc6feaebe635b5253e",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/application/memory_scope.py"
           },
           "kind": "code"
         }

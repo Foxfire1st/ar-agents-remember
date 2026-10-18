@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "12eb97789e3b5b076082ea8c463b176ac39fed14",
-        "content": "sha256:83359b4306c44b3d04e27cbb1c63bc883464a7a728bac450c985bf94d044f798",
+        "blob": "9cfb3331ff9fa3f591e098da8dbf93635dd481b9",
+        "content": "sha256:11ae5d0f9f1b6bd93cd7a7c2b039af7d2f2705640ac5f630475ea73439540a7d",
         "locator": {
           "kind": "symbol",
           "name": "external_closeout_commits"
@@ -21,8 +21,8 @@
     },
     {
       "anchor": {
-        "blob": "12eb97789e3b5b076082ea8c463b176ac39fed14",
-        "content": "sha256:9ef98f7c45ae2442c3282c3838e1d1f91ee1797ba67685a67894576e1b8bbe75",
+        "blob": "9cfb3331ff9fa3f591e098da8dbf93635dd481b9",
+        "content": "sha256:d74fc2b14e7948998b1aaaea59cb7cb4c2d67731eee72bafdab33e7f9381ff29",
         "locator": {
           "kind": "symbol",
           "name": "_commit_memory_content"
@@ -39,8 +39,8 @@
     },
     {
       "anchor": {
-        "blob": "12eb97789e3b5b076082ea8c463b176ac39fed14",
-        "content": "sha256:83359b4306c44b3d04e27cbb1c63bc883464a7a728bac450c985bf94d044f798",
+        "blob": "9cfb3331ff9fa3f591e098da8dbf93635dd481b9",
+        "content": "sha256:11ae5d0f9f1b6bd93cd7a7c2b039af7d2f2705640ac5f630475ea73439540a7d",
         "locator": {
           "kind": "symbol",
           "name": "external_closeout_commits"
@@ -57,7 +57,7 @@
     },
     {
       "anchor": {
-        "blob": "12eb97789e3b5b076082ea8c463b176ac39fed14",
+        "blob": "9cfb3331ff9fa3f591e098da8dbf93635dd481b9",
         "content": "sha256:fa255cd6387c747835427a38e516275a8ec6e507086fbbbf5e19bf83ebc72987",
         "locator": {
           "kind": "symbol",
@@ -75,8 +75,8 @@
     },
     {
       "anchor": {
-        "blob": "12eb97789e3b5b076082ea8c463b176ac39fed14",
-        "content": "sha256:9ef98f7c45ae2442c3282c3838e1d1f91ee1797ba67685a67894576e1b8bbe75",
+        "blob": "9cfb3331ff9fa3f591e098da8dbf93635dd481b9",
+        "content": "sha256:d74fc2b14e7948998b1aaaea59cb7cb4c2d67731eee72bafdab33e7f9381ff29",
         "locator": {
           "kind": "symbol",
           "name": "_commit_memory_content"
@@ -93,8 +93,8 @@
     },
     {
       "anchor": {
-        "blob": "12eb97789e3b5b076082ea8c463b176ac39fed14",
-        "content": "sha256:9ef98f7c45ae2442c3282c3838e1d1f91ee1797ba67685a67894576e1b8bbe75",
+        "blob": "9cfb3331ff9fa3f591e098da8dbf93635dd481b9",
+        "content": "sha256:d74fc2b14e7948998b1aaaea59cb7cb4c2d67731eee72bafdab33e7f9381ff29",
         "locator": {
           "kind": "symbol",
           "name": "_commit_memory_content"
@@ -111,7 +111,7 @@
     },
     {
       "anchor": {
-        "blob": "12eb97789e3b5b076082ea8c463b176ac39fed14",
+        "blob": "9cfb3331ff9fa3f591e098da8dbf93635dd481b9",
         "content": "sha256:2e6b71f194f95ae3a119d49987ce890f73f507d3bc12bc37744e49d9eef068f6",
         "locator": {
           "kind": "symbol",
@@ -129,8 +129,8 @@
     },
     {
       "anchor": {
-        "blob": "12eb97789e3b5b076082ea8c463b176ac39fed14",
-        "content": "sha256:9ef98f7c45ae2442c3282c3838e1d1f91ee1797ba67685a67894576e1b8bbe75",
+        "blob": "9cfb3331ff9fa3f591e098da8dbf93635dd481b9",
+        "content": "sha256:d74fc2b14e7948998b1aaaea59cb7cb4c2d67731eee72bafdab33e7f9381ff29",
         "locator": {
           "kind": "symbol",
           "name": "_commit_memory_content"
@@ -147,8 +147,8 @@
     },
     {
       "anchor": {
-        "blob": "12eb97789e3b5b076082ea8c463b176ac39fed14",
-        "content": "sha256:9ef98f7c45ae2442c3282c3838e1d1f91ee1797ba67685a67894576e1b8bbe75",
+        "blob": "9cfb3331ff9fa3f591e098da8dbf93635dd481b9",
+        "content": "sha256:d74fc2b14e7948998b1aaaea59cb7cb4c2d67731eee72bafdab33e7f9381ff29",
         "locator": {
           "kind": "symbol",
           "name": "_commit_memory_content"
@@ -165,7 +165,7 @@
     },
     {
       "anchor": {
-        "blob": "12eb97789e3b5b076082ea8c463b176ac39fed14",
+        "blob": "9cfb3331ff9fa3f591e098da8dbf93635dd481b9",
         "content": "sha256:8b005244c058f89a5173a0a1d8c6a01fcba28076d5dd37dc456d66ade779e9e5",
         "locator": {
           "kind": "symbol",
@@ -183,8 +183,8 @@
     },
     {
       "anchor": {
-        "blob": "12eb97789e3b5b076082ea8c463b176ac39fed14",
-        "content": "sha256:9ef98f7c45ae2442c3282c3838e1d1f91ee1797ba67685a67894576e1b8bbe75",
+        "blob": "9cfb3331ff9fa3f591e098da8dbf93635dd481b9",
+        "content": "sha256:d74fc2b14e7948998b1aaaea59cb7cb4c2d67731eee72bafdab33e7f9381ff29",
         "locator": {
           "kind": "symbol",
           "name": "_commit_memory_content"
@@ -201,7 +201,7 @@
     },
     {
       "anchor": {
-        "blob": "12eb97789e3b5b076082ea8c463b176ac39fed14",
+        "blob": "9cfb3331ff9fa3f591e098da8dbf93635dd481b9",
         "content": "sha256:de0378335937c87f8c461adc352207ef562d860dc1e63f6cbafa60e6f76dcaf4",
         "locator": {
           "kind": "symbol",
@@ -219,8 +219,8 @@
     },
     {
       "anchor": {
-        "blob": "12eb97789e3b5b076082ea8c463b176ac39fed14",
-        "content": "sha256:9ef98f7c45ae2442c3282c3838e1d1f91ee1797ba67685a67894576e1b8bbe75",
+        "blob": "9cfb3331ff9fa3f591e098da8dbf93635dd481b9",
+        "content": "sha256:d74fc2b14e7948998b1aaaea59cb7cb4c2d67731eee72bafdab33e7f9381ff29",
         "locator": {
           "kind": "symbol",
           "name": "_commit_memory_content"
@@ -237,8 +237,8 @@
     },
     {
       "anchor": {
-        "blob": "12eb97789e3b5b076082ea8c463b176ac39fed14",
-        "content": "sha256:9ef98f7c45ae2442c3282c3838e1d1f91ee1797ba67685a67894576e1b8bbe75",
+        "blob": "9cfb3331ff9fa3f591e098da8dbf93635dd481b9",
+        "content": "sha256:d74fc2b14e7948998b1aaaea59cb7cb4c2d67731eee72bafdab33e7f9381ff29",
         "locator": {
           "kind": "symbol",
           "name": "_commit_memory_content"
@@ -255,8 +255,8 @@
     },
     {
       "anchor": {
-        "blob": "12eb97789e3b5b076082ea8c463b176ac39fed14",
-        "content": "sha256:9ef98f7c45ae2442c3282c3838e1d1f91ee1797ba67685a67894576e1b8bbe75",
+        "blob": "9cfb3331ff9fa3f591e098da8dbf93635dd481b9",
+        "content": "sha256:d74fc2b14e7948998b1aaaea59cb7cb4c2d67731eee72bafdab33e7f9381ff29",
         "locator": {
           "kind": "symbol",
           "name": "_commit_memory_content"
@@ -273,7 +273,7 @@
     },
     {
       "anchor": {
-        "blob": "12eb97789e3b5b076082ea8c463b176ac39fed14",
+        "blob": "9cfb3331ff9fa3f591e098da8dbf93635dd481b9",
         "content": "sha256:ce55dd2516d0d591615ce8e01cf27a2faddb5fd4999021481af5f1a6dd4b0936",
         "locator": {
           "kind": "symbol",
@@ -291,8 +291,8 @@
     },
     {
       "anchor": {
-        "blob": "12eb97789e3b5b076082ea8c463b176ac39fed14",
-        "content": "sha256:9ef98f7c45ae2442c3282c3838e1d1f91ee1797ba67685a67894576e1b8bbe75",
+        "blob": "9cfb3331ff9fa3f591e098da8dbf93635dd481b9",
+        "content": "sha256:d74fc2b14e7948998b1aaaea59cb7cb4c2d67731eee72bafdab33e7f9381ff29",
         "locator": {
           "kind": "symbol",
           "name": "_commit_memory_content"
@@ -309,7 +309,7 @@
     },
     {
       "anchor": {
-        "blob": "12eb97789e3b5b076082ea8c463b176ac39fed14",
+        "blob": "9cfb3331ff9fa3f591e098da8dbf93635dd481b9",
         "content": "sha256:6733de358d09058db7ab9672204df11f721366208bfd9ed54924fe325d71e265",
         "locator": {
           "kind": "symbol",
@@ -327,7 +327,7 @@
     },
     {
       "anchor": {
-        "blob": "12eb97789e3b5b076082ea8c463b176ac39fed14",
+        "blob": "9cfb3331ff9fa3f591e098da8dbf93635dd481b9",
         "content": "sha256:de0378335937c87f8c461adc352207ef562d860dc1e63f6cbafa60e6f76dcaf4",
         "locator": {
           "kind": "symbol",
@@ -345,8 +345,8 @@
     },
     {
       "anchor": {
-        "blob": "12eb97789e3b5b076082ea8c463b176ac39fed14",
-        "content": "sha256:9ef98f7c45ae2442c3282c3838e1d1f91ee1797ba67685a67894576e1b8bbe75",
+        "blob": "9cfb3331ff9fa3f591e098da8dbf93635dd481b9",
+        "content": "sha256:d74fc2b14e7948998b1aaaea59cb7cb4c2d67731eee72bafdab33e7f9381ff29",
         "locator": {
           "kind": "symbol",
           "name": "_commit_memory_content"
@@ -363,7 +363,7 @@
     },
     {
       "anchor": {
-        "blob": "12eb97789e3b5b076082ea8c463b176ac39fed14",
+        "blob": "9cfb3331ff9fa3f591e098da8dbf93635dd481b9",
         "content": "sha256:182a12a341a97c4b5960eff651b8e356bdecaad0f4fa29123c64b60c55d961ef",
         "locator": {
           "kind": "symbol",
@@ -386,11 +386,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d5a38f9a120a12411506b1466c0551cff1ec2aa4",
-            "content": "sha256:83359b4306c44b3d04e27cbb1c63bc883464a7a728bac450c985bf94d044f798",
+            "blob": "9cfb3331ff9fa3f591e098da8dbf93635dd481b9",
+            "content": "sha256:11ae5d0f9f1b6bd93cd7a7c2b039af7d2f2705640ac5f630475ea73439540a7d",
             "locator": {
-              "kind": "symbol",
-              "name": "external_closeout_commits"
+              "end": 118,
+              "kind": "line_range",
+              "start": 66
             }
           },
           "kind": "code"
@@ -402,11 +403,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d5a38f9a120a12411506b1466c0551cff1ec2aa4",
-            "content": "sha256:9ef98f7c45ae2442c3282c3838e1d1f91ee1797ba67685a67894576e1b8bbe75",
+            "blob": "9cfb3331ff9fa3f591e098da8dbf93635dd481b9",
+            "content": "sha256:d74fc2b14e7948998b1aaaea59cb7cb4c2d67731eee72bafdab33e7f9381ff29",
             "locator": {
-              "kind": "symbol",
-              "name": "_commit_memory_content"
+              "end": 511,
+              "kind": "line_range",
+              "start": 408
             }
           },
           "kind": "code"
@@ -418,7 +420,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d5a38f9a120a12411506b1466c0551cff1ec2aa4",
+            "blob": "9cfb3331ff9fa3f591e098da8dbf93635dd481b9",
             "content": "sha256:d6b2cc5edcc679b09f7bea7166af1fe1f654aeacc7d82c0ac11fc86295067b56",
             "locator": {
               "kind": "symbol",
@@ -434,7 +436,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d5a38f9a120a12411506b1466c0551cff1ec2aa4",
+            "blob": "9cfb3331ff9fa3f591e098da8dbf93635dd481b9",
             "content": "sha256:de0378335937c87f8c461adc352207ef562d860dc1e63f6cbafa60e6f76dcaf4",
             "locator": {
               "kind": "symbol",
@@ -450,7 +452,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d5a38f9a120a12411506b1466c0551cff1ec2aa4",
+            "blob": "9cfb3331ff9fa3f591e098da8dbf93635dd481b9",
             "content": "sha256:6733de358d09058db7ab9672204df11f721366208bfd9ed54924fe325d71e265",
             "locator": {
               "kind": "symbol",
@@ -466,7 +468,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d5a38f9a120a12411506b1466c0551cff1ec2aa4",
+            "blob": "9cfb3331ff9fa3f591e098da8dbf93635dd481b9",
             "content": "sha256:182a12a341a97c4b5960eff651b8e356bdecaad0f4fa29123c64b60c55d961ef",
             "locator": {
               "kind": "symbol",
@@ -482,11 +484,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d5a38f9a120a12411506b1466c0551cff1ec2aa4",
-            "content": "sha256:03d448a1a189c5dc86ddc1581159132595ef51a869616415d5da9690872f42ed",
+            "blob": "9cfb3331ff9fa3f591e098da8dbf93635dd481b9",
+            "content": "sha256:ce55dd2516d0d591615ce8e01cf27a2faddb5fd4999021481af5f1a6dd4b0936",
             "locator": {
-              "kind": "symbol",
-              "name": "candidate_gate_verdict"
+              "end": 261,
+              "kind": "line_range",
+              "start": 226
             }
           },
           "kind": "code"
@@ -498,11 +501,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d5a38f9a120a12411506b1466c0551cff1ec2aa4",
-            "content": "sha256:83359b4306c44b3d04e27cbb1c63bc883464a7a728bac450c985bf94d044f798",
+            "blob": "9cfb3331ff9fa3f591e098da8dbf93635dd481b9",
+            "content": "sha256:11ae5d0f9f1b6bd93cd7a7c2b039af7d2f2705640ac5f630475ea73439540a7d",
             "locator": {
-              "kind": "symbol",
-              "name": "external_closeout_commits"
+              "end": 118,
+              "kind": "line_range",
+              "start": 66
             }
           },
           "kind": "code"
@@ -514,7 +518,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d5a38f9a120a12411506b1466c0551cff1ec2aa4",
+            "blob": "9cfb3331ff9fa3f591e098da8dbf93635dd481b9",
             "content": "sha256:cca6c023e9edb39ea6c2f2c46f00c83c67ed8c2c81bc0f273185f18259a6064b",
             "locator": {
               "kind": "symbol",
@@ -530,7 +534,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d5a38f9a120a12411506b1466c0551cff1ec2aa4",
+            "blob": "9cfb3331ff9fa3f591e098da8dbf93635dd481b9",
             "content": "sha256:d6b2cc5edcc679b09f7bea7166af1fe1f654aeacc7d82c0ac11fc86295067b56",
             "locator": {
               "kind": "symbol",
@@ -546,11 +550,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d5a38f9a120a12411506b1466c0551cff1ec2aa4",
-            "content": "sha256:83359b4306c44b3d04e27cbb1c63bc883464a7a728bac450c985bf94d044f798",
+            "blob": "9cfb3331ff9fa3f591e098da8dbf93635dd481b9",
+            "content": "sha256:11ae5d0f9f1b6bd93cd7a7c2b039af7d2f2705640ac5f630475ea73439540a7d",
             "locator": {
-              "kind": "symbol",
-              "name": "external_closeout_commits"
+              "end": 118,
+              "kind": "line_range",
+              "start": 66
             }
           },
           "kind": "code"
@@ -562,11 +567,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d5a38f9a120a12411506b1466c0551cff1ec2aa4",
-            "content": "sha256:9ef98f7c45ae2442c3282c3838e1d1f91ee1797ba67685a67894576e1b8bbe75",
+            "blob": "9cfb3331ff9fa3f591e098da8dbf93635dd481b9",
+            "content": "sha256:d74fc2b14e7948998b1aaaea59cb7cb4c2d67731eee72bafdab33e7f9381ff29",
             "locator": {
-              "kind": "symbol",
-              "name": "_commit_memory_content"
+              "end": 511,
+              "kind": "line_range",
+              "start": 408
             }
           },
           "kind": "code"
@@ -574,15 +580,16 @@
       ]
     },
     "35": {
-      "note": "`_refresh_external_memory` refreshes onboarding, overview, entity, and generated index data before content publication.",
+      "note": "External refresh updates only entity fingerprints and generated indexes; card/overview refreshed lists are empty.",
       "targets": [
         {
           "anchor": {
-            "blob": "d5a38f9a120a12411506b1466c0551cff1ec2aa4",
-            "content": "sha256:0b819e606d55516db053afe7c44c1ae304eed817f524ba0d3a79e49e82a63319",
+            "blob": "9cfb3331ff9fa3f591e098da8dbf93635dd481b9",
+            "content": "sha256:5f80c34d3a26a96ee3b3933d9e652f6b0f9ae7cf541a25f9892af3dfc1d4b73d",
             "locator": {
-              "kind": "symbol",
-              "name": "_refresh_external_memory"
+              "end": 570,
+              "kind": "line_range",
+              "start": 554
             }
           },
           "kind": "code"
@@ -594,7 +601,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d5a38f9a120a12411506b1466c0551cff1ec2aa4",
+            "blob": "9cfb3331ff9fa3f591e098da8dbf93635dd481b9",
             "content": "sha256:aacbed3245544671ec9cdbebb43e65a9a21ee5fe355233a9cd58e98b7552b899",
             "locator": {
               "kind": "symbol",
@@ -610,11 +617,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d5a38f9a120a12411506b1466c0551cff1ec2aa4",
-            "content": "sha256:83359b4306c44b3d04e27cbb1c63bc883464a7a728bac450c985bf94d044f798",
+            "blob": "9cfb3331ff9fa3f591e098da8dbf93635dd481b9",
+            "content": "sha256:11ae5d0f9f1b6bd93cd7a7c2b039af7d2f2705640ac5f630475ea73439540a7d",
             "locator": {
-              "kind": "symbol",
-              "name": "external_closeout_commits"
+              "end": 118,
+              "kind": "line_range",
+              "start": 66
             }
           },
           "kind": "code"
@@ -626,7 +634,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d5a38f9a120a12411506b1466c0551cff1ec2aa4",
+            "blob": "9cfb3331ff9fa3f591e098da8dbf93635dd481b9",
             "content": "sha256:6733de358d09058db7ab9672204df11f721366208bfd9ed54924fe325d71e265",
             "locator": {
               "kind": "symbol",
@@ -642,7 +650,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d5a38f9a120a12411506b1466c0551cff1ec2aa4",
+            "blob": "9cfb3331ff9fa3f591e098da8dbf93635dd481b9",
             "content": "sha256:8b005244c058f89a5173a0a1d8c6a01fcba28076d5dd37dc456d66ade779e9e5",
             "locator": {
               "kind": "symbol",
@@ -658,11 +666,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d5a38f9a120a12411506b1466c0551cff1ec2aa4",
-            "content": "sha256:03d448a1a189c5dc86ddc1581159132595ef51a869616415d5da9690872f42ed",
+            "blob": "9cfb3331ff9fa3f591e098da8dbf93635dd481b9",
+            "content": "sha256:ce55dd2516d0d591615ce8e01cf27a2faddb5fd4999021481af5f1a6dd4b0936",
             "locator": {
-              "kind": "symbol",
-              "name": "candidate_gate_verdict"
+              "end": 261,
+              "kind": "line_range",
+              "start": 226
             }
           },
           "kind": "code"
@@ -674,7 +683,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d5a38f9a120a12411506b1466c0551cff1ec2aa4",
+            "blob": "9cfb3331ff9fa3f591e098da8dbf93635dd481b9",
             "content": "sha256:2e6b71f194f95ae3a119d49987ce890f73f507d3bc12bc37744e49d9eef068f6",
             "locator": {
               "kind": "symbol",
@@ -690,7 +699,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d5a38f9a120a12411506b1466c0551cff1ec2aa4",
+            "blob": "9cfb3331ff9fa3f591e098da8dbf93635dd481b9",
             "content": "sha256:182a12a341a97c4b5960eff651b8e356bdecaad0f4fa29123c64b60c55d961ef",
             "locator": {
               "kind": "symbol",
@@ -706,7 +715,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d5a38f9a120a12411506b1466c0551cff1ec2aa4",
+            "blob": "9cfb3331ff9fa3f591e098da8dbf93635dd481b9",
             "content": "sha256:de0378335937c87f8c461adc352207ef562d860dc1e63f6cbafa60e6f76dcaf4",
             "locator": {
               "kind": "symbol",
@@ -722,7 +731,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d5a38f9a120a12411506b1466c0551cff1ec2aa4",
+            "blob": "9cfb3331ff9fa3f591e098da8dbf93635dd481b9",
             "content": "sha256:d6b2cc5edcc679b09f7bea7166af1fe1f654aeacc7d82c0ac11fc86295067b56",
             "locator": {
               "kind": "symbol",
@@ -755,7 +764,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "43c3ce60b302f5e61445491c0fe97a0fd7d84a69",
+            "blob": "896036cda96da332680be444bab8b463b0170846",
             "content": "sha256:8031e67c7934ff8119bdbf79371644a07e0bc3347e70be2523b4ccf952bbc24b",
             "locator": {
               "kind": "symbol",
@@ -772,7 +781,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "43c3ce60b302f5e61445491c0fe97a0fd7d84a69",
+            "blob": "896036cda96da332680be444bab8b463b0170846",
             "content": "sha256:134f8d0daa116b1c0896411dacc6e423ee88b9738675913d670b364cf0aeadfe",
             "locator": {
               "kind": "symbol",
@@ -781,6 +790,23 @@
             "path": "mcp/tests/test_knowledge_reopen.py"
           },
           "kind": "test"
+        }
+      ]
+    },
+    "48": {
+      "note": "Card and route-overview refreshed lists are empty; actual derived work is entity fingerprints and generated indexes.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9cfb3331ff9fa3f591e098da8dbf93635dd481b9",
+            "content": "sha256:5f80c34d3a26a96ee3b3933d9e652f6b0f9ae7cf541a25f9892af3dfc1d4b73d",
+            "locator": {
+              "end": 570,
+              "kind": "line_range",
+              "start": 554
+            }
+          },
+          "kind": "code"
         }
       ]
     }

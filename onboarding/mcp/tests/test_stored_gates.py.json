@@ -83,6 +83,38 @@
           "kind": "test"
         }
       ]
+    },
+    "4": {
+      "note": "The retained closeout refusal assertion preserves the exact gate-enforcement reason and removed-stores way out.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2289b4b0c235c765cbc6f09c6d1d13284a01fd17",
+            "content": "sha256:8cd559879d28ef51f47323cfe8c44f46a4390502a1427eed3e29e59cf7b91c53",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_closeout_refused_by_a_stored_gate_keeps_its_reason"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "Stored gate read and claim refusal stays on the retained closeout route.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2289b4b0c235c765cbc6f09c6d1d13284a01fd17",
+            "content": "sha256:19680dbf9a0ae6ca140df60ca87416f39295a4e69f5c47e8c98ec3d17778227d",
+            "locator": {
+              "kind": "symbol",
+              "name": "_closeout_gate_refusal"
+            }
+          },
+          "kind": "test"
+        }
+      ]
     }
   },
   "schema": "ar-onboarding-file/v1"

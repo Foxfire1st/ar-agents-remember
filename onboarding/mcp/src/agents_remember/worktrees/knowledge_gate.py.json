@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "41c3ec60cc11d54bdfd052f94f0ea7ac6aac95a3",
+        "blob": "a34667e628dd1e5f7e0c8ad103c5d35edde4b115",
         "content": "sha256:da4f9e5c7445b0656438a4b3a6fb7b8cd76d6c5baaf8de813ce0e6cc355f9ebe",
         "locator": {
           "kind": "symbol",
@@ -21,7 +21,7 @@
     },
     {
       "anchor": {
-        "blob": "41c3ec60cc11d54bdfd052f94f0ea7ac6aac95a3",
+        "blob": "a34667e628dd1e5f7e0c8ad103c5d35edde4b115",
         "content": "sha256:67d47854920238903c844bd4769263945e3ecae17cf2d940b09799639597a8b1",
         "locator": {
           "kind": "symbol",
@@ -39,7 +39,7 @@
     },
     {
       "anchor": {
-        "blob": "41c3ec60cc11d54bdfd052f94f0ea7ac6aac95a3",
+        "blob": "a34667e628dd1e5f7e0c8ad103c5d35edde4b115",
         "content": "sha256:54b4f95134fee9ba49567b3c59a20dbc524e5b99411883ad7a0dfab929a9e8a1",
         "locator": {
           "kind": "symbol",
@@ -57,7 +57,7 @@
     },
     {
       "anchor": {
-        "blob": "41c3ec60cc11d54bdfd052f94f0ea7ac6aac95a3",
+        "blob": "a34667e628dd1e5f7e0c8ad103c5d35edde4b115",
         "content": "sha256:432ff046e10433c7569e56f86456caa342921364f14b881c5fa017a21fd151a0",
         "locator": {
           "kind": "symbol",
@@ -75,7 +75,7 @@
     },
     {
       "anchor": {
-        "blob": "41c3ec60cc11d54bdfd052f94f0ea7ac6aac95a3",
+        "blob": "a34667e628dd1e5f7e0c8ad103c5d35edde4b115",
         "content": "sha256:7e62f02406a1bca57e4306035af6d5886206e02c2f674f2f64628597fec7b90e",
         "locator": {
           "kind": "symbol",
@@ -93,43 +93,7 @@
     },
     {
       "anchor": {
-        "blob": "41c3ec60cc11d54bdfd052f94f0ea7ac6aac95a3",
-        "content": "sha256:af8b2c9e843bfc7c5eabd24e8644f08d5fb63f5ae14434c16fb50f90c8489845",
-        "locator": {
-          "kind": "symbol",
-          "name": "prepared_closeout_refusal"
-        }
-      },
-      "id": "RLZ-PTPE1P",
-      "invariant": "INV-95NQR7",
-      "origin": {
-        "handoffEntry": "L50-CUR-EXP-F02",
-        "leaf": "260928-MIK-L50"
-      },
-      "rationale": "A certified closeout carrying the removed mode is refused by name instead of passing as unclosable.",
-      "role": "unclassified"
-    },
-    {
-      "anchor": {
-        "blob": "41c3ec60cc11d54bdfd052f94f0ea7ac6aac95a3",
-        "content": "sha256:bf9ad0ae5b340ad7844846ce7287ddf9286eaa8eb85b52fd028133538d3eaa61",
-        "locator": {
-          "kind": "symbol",
-          "name": "prepared_closeout_lock"
-        }
-      },
-      "id": "RLZ-RC557C",
-      "invariant": "INV-JT28KJ",
-      "origin": {
-        "handoffEntry": "L37-cutover-lock",
-        "leaf": "260928-MIK-L37"
-      },
-      "rationale": "Carries the lock to both entries of the certified (prepared) closeout for unconverted memory; converted memory is decided by that closeout's own refusal.",
-      "role": "enforcement"
-    },
-    {
-      "anchor": {
-        "blob": "41c3ec60cc11d54bdfd052f94f0ea7ac6aac95a3",
+        "blob": "a34667e628dd1e5f7e0c8ad103c5d35edde4b115",
         "content": "sha256:9055645ff3ba79a95ca391f43fa641ca8854b33ff9d2eebacc5fb23fb7d03327",
         "locator": {
           "kind": "symbol",
@@ -152,27 +116,11 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b70b13d88cfb4875c2e73574dfaaa2d12d4303e6",
+            "blob": "a34667e628dd1e5f7e0c8ad103c5d35edde4b115",
             "content": "sha256:54b4f95134fee9ba49567b3c59a20dbc524e5b99411883ad7a0dfab929a9e8a1",
             "locator": {
               "kind": "symbol",
               "name": "leaf_cutover_refusal"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "20": {
-      "note": "Disabled contract refused before the prepared verdict",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "b70b13d88cfb4875c2e73574dfaaa2d12d4303e6",
-            "content": "sha256:af8b2c9e843bfc7c5eabd24e8644f08d5fb63f5ae14434c16fb50f90c8489845",
-            "locator": {
-              "kind": "symbol",
-              "name": "prepared_closeout_refusal"
             }
           },
           "kind": "code"
@@ -184,7 +132,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b70b13d88cfb4875c2e73574dfaaa2d12d4303e6",
+            "blob": "a34667e628dd1e5f7e0c8ad103c5d35edde4b115",
             "content": "sha256:432ff046e10433c7569e56f86456caa342921364f14b881c5fa017a21fd151a0",
             "locator": {
               "kind": "symbol",
@@ -200,7 +148,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b70b13d88cfb4875c2e73574dfaaa2d12d4303e6",
+            "blob": "a34667e628dd1e5f7e0c8ad103c5d35edde4b115",
             "content": "sha256:da4f9e5c7445b0656438a4b3a6fb7b8cd76d6c5baaf8de813ce0e6cc355f9ebe",
             "locator": {
               "kind": "symbol",
@@ -216,7 +164,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b70b13d88cfb4875c2e73574dfaaa2d12d4303e6",
+            "blob": "a34667e628dd1e5f7e0c8ad103c5d35edde4b115",
             "content": "sha256:24721572f575894b915f5f8db78f5871a6688aae3dcadad1969af45942dc481b",
             "locator": {
               "kind": "symbol",

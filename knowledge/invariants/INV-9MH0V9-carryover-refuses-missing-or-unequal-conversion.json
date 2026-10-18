@@ -1,0 +1,37 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test"
+    ],
+    "justification": "The public plan cannot conceal a format refusal behind a code-tip error or block opening a FIFO marker. Format-first and differing-version tests guard this distinct converted-pair admission beyond existing legacy refusal."
+  },
+  "applicability": "Format admission for converted-memory carryover plan and apply.",
+  "conditions": [
+    "Source and target memory roots must each hold a regular valid converted layout marker with the same conversion-format version.",
+    "The public plan checks formats before code-tip, cleanliness and candidate reads; apply checks them before its authority/candidate reads, after checking the required nonblank intent_note.",
+    "A missing/non-directory root is a named root error, not fabricated legacy memory."
+  ],
+  "exclusions": [
+    "This extends converted-pair/version admission, not the already stored universal legacy refusal INV-JT28KJ.",
+    "Marker presence alone is not validator acceptance.",
+    "Configuration/request construction and intent-note checking are not subsequent candidate reads."
+  ],
+  "id": "INV-9MH0V9",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "notes/reports/worker/07e36231-0b63-422c-b9dc-59ca0e3d6b24/role-launch/L56-generation3-code-freeze.md",
+        "Frozen generation3 source inspection; no new execution or acceptance."
+      ],
+      "path": "generation3-new-source-proved-invariants.json"
+    },
+    "handoffEntry": "MIK-R56@v1 PartB §6",
+    "leaf": "260928-MIK-L56",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Carryover refuses missing or unequal conversion-format markers before subsequent candidate reads.",
+  "status": "proposed",
+  "supersedes": []
+}

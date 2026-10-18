@@ -376,27 +376,29 @@
       ]
     },
     "7": {
-      "note": "Shared legacy refresh validation composes both surfaces; the curator caller supplies separate no-impact identities and selects traces when available.\n\nAnchor: `validate_memory_refresh_attestations`, `_onboarding_refresh_gate`",
+      "note": "The curator checklist supplies scope, its worklist-backed `_OnboardingGateInputs` and response to the onboarding refresh gate; that gate dispatches converted history-file traces. It accepts no separate no-impact identities.",
       "targets": [
         {
           "anchor": {
-            "blob": "3d1ec99567502c102e54707aba3a3d8e169af0d5",
-            "content": "sha256:34b68b21fbe2ebfb14563f10424ab75e5206ec6befd64444856573161247cbaa",
+            "blob": "77f4c105452024a11b381921b945b76a3df028d5",
+            "content": "sha256:9b6b7ee6b87713f63d4da3ef60a5236fd59612fa7f09a3942367eeee6b039bf8",
             "locator": {
-              "kind": "symbol",
-              "name": "validate_memory_refresh_attestations"
+              "end": 767,
+              "kind": "line_range",
+              "start": 759
             },
-            "path": "mcp/src/agents_remember/worktrees/modules/onboarding.py"
+            "path": "mcp/src/agents_remember/application/memory_quality/controller.py"
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "f5c17fb7f80b774e5cb4ba1a1d1dd4340013f711",
-            "content": "sha256:69a50a47232dddef1e59ab63aec78d762e988240c68e7067dc60f910aeb6870e",
+            "blob": "77f4c105452024a11b381921b945b76a3df028d5",
+            "content": "sha256:84986dea920d27ff5e8cfc296e977cea5b92685c057771a8a7999d7e90ce4053",
             "locator": {
-              "kind": "symbol",
-              "name": "_onboarding_refresh_gate"
+              "end": 1010,
+              "kind": "line_range",
+              "start": 947
             },
             "path": "mcp/src/agents_remember/application/memory_quality/controller.py"
           },
@@ -405,16 +407,16 @@
       ]
     },
     "8": {
-      "note": "Current knowledge-gate routing includes converted-memory refusal and an unconverted-memory cutover lock.",
+      "note": "Converted leaf closeout evaluates its exact candidate through the mandatory invariant gate and refuses an unbound gate; unconverted memory uses the central cutover refusal. No removed prepared-certification adapter is an alternate route.",
       "targets": [
         {
           "anchor": {
-            "blob": "2e61c5b715ff2ad0a5d8cd26a98da4aaa866b6b2",
-            "content": "sha256:8ae8026cfa870399e3e093ea40b265a326277e6465071707435f7d0705f5fde1",
+            "blob": "a34667e628dd1e5f7e0c8ad103c5d35edde4b115",
+            "content": "sha256:a930db3f4dc85af046f9406ddbf73dc6403c686d0fe99ceadede5c82c73c30fa",
             "locator": {
-              "end": 274,
+              "end": 241,
               "kind": "line_range",
-              "start": 194
+              "start": 191
             },
             "path": "mcp/src/agents_remember/worktrees/knowledge_gate.py"
           },
@@ -422,14 +424,27 @@
         },
         {
           "anchor": {
-            "blob": "c53333a189e401b041e0fc4e3501ee1efa2c3001",
-            "content": "sha256:2edcbebf3c119000d9068ada61b8d2d6ea0626ba57ca3367106804f3e77d2c9d",
+            "blob": "a6ae7d18931f91de5fcc3383a5a141ac40859c74",
+            "content": "sha256:03252c4f026fc4ca9eb71979cf74e05f79d49b371b09d2cf4a671102f0eb916b",
             "locator": {
-              "end": 363,
+              "end": 231,
               "kind": "line_range",
-              "start": 354
+              "start": 205
             },
-            "path": "mcp/src/agents_remember/application/prepared_certification.py"
+            "path": "mcp/src/agents_remember/worktrees/cutover_lock.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9cfb3331ff9fa3f591e098da8dbf93635dd481b9",
+            "content": "sha256:e17d8bbdf80632372cd9d73bac4a8ea5ac67a635ff735e1245eadec8701661d1",
+            "locator": {
+              "end": 276,
+              "kind": "line_range",
+              "start": 226
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/closeout_external.py"
           },
           "kind": "code"
         }

@@ -60,10 +60,7 @@ L15 adds the servingBuild stamp assertions (renders commit + boot time when pres
 Native direct/master/child/worktree-bound entries hydrate once per unchanged body revision through task deltas. Late task-A answers cannot contaminate task B. Fetch stubs model mounted composition, not production fallback or a real server.
 
 A local `seed(stateName)` applies a `GALLERY` fixture projection to the real Zustand store
-(`dashboardStore.getState().applySnapshot(...)`) — the same hydration the dev bench uses. The lazy
-`../panels/Terminal` is mocked to a jsdom-safe stub so toggling the rail to chat never pulls xterm (a
-canvas probe) into jsdom. `afterEach` runs RTL `cleanup`, resets the `sessions` store, and resets the
-dashboard store.
+(`dashboardStore.getState().applySnapshot(...)`) — the same hydration the dev bench uses. The removed Terminal mock and sessions-store cleanup are not current fixture seams. `afterEach` runs RTL `cleanup`, restores stubbed globals, and resets the dashboard store.
 
 - "keeps the rails for Operations and Memory" — switching to Memory stays railed (`data-fullbleed="false"`).
 - "directly shows one persistent Role chats pane without an old-chat selector" — finds the
@@ -76,6 +73,8 @@ dashboard store.
 - Gallery severity counts and server order remain; qualified native task selection no longer comes from an attention-origin lifecycle opener. The sidebar selection case clicks first, second, then first native task, waits for each task id in the reader, and asserts its option is focused with `aria-selected="true"`; the `scrollIntoView` spy is called three times. This preserves the reveal/focus/selection contract under native sidebar selection rather than the retired attention-layer opener. Render assertions are not browser/backend persistence proof.
 
 Typed taskEntry/taskSummary/projection/taskTree replace local taskDoc, parallel SeriesNode and metricsFor lifecycle rollups: identity/status stay on the entry, reader prose in summary.
+
+The listed `totalTokens`/`stalenessHistogram` cells describe the superseded literals, not the current metrics contract. Current `Metrics` carries only `ignoredHostAgents`, and task counts live in `taskCounts` (planned, started, aborted, completed, works, paused, unknown); neither `lifecycleCount` nor `metricsFor` exists.
 
 ### Invariants And Boundaries
 
@@ -109,11 +108,15 @@ No relevant domain documentation was found for this file.
 
 
 
+
 - The suite mounts the shell and switches views through the mode bar. [13]
 
 
 
+
+
 - The layout matrix sources the retained pages only through their injected views. [14]
+
 
 
 
@@ -126,14 +129,19 @@ No relevant domain documentation was found for this file.
 
 
 
+
 - `CockpitShell` under test, and the `fullBleed` derivation the rails-hide cases exercise. [28]
+
 
 
 - `GALLERY` fixtures + the `applySnapshot` hydration pattern. [29]
 
+
 - The shared jsdom stubs the render relies on. [30]
 
+
 - The current Chats case proves existence of a `role-chats-pane` node, no Sessions route or old-chat selector, and same-node hide/reveal persistence. [32]
+
 
 
 - The production source census establishes the sole current `<RoleChatsPane>` JSX mount. [33]
@@ -143,6 +151,7 @@ No relevant domain documentation was found for this file.
 
 
 - Rail cases distinguish task activity from severity and retain accessible names plus scoped axe checks. [35]
+
 
 
 - The `role="img"` + `aria-label` wrapper (`severityMark`, `data-testid="attn-severity"`) the accessibility-tree assertion targets. [36]
@@ -156,11 +165,17 @@ No relevant domain documentation was found for this file.
 
 
 
+
+
 - The toggle cases assert the same document-chat node across the River/Chat switch. [40]
 
 
 
+
+
 - Both rail asides stay mounted under full-bleed views. [41]
+
+
 
 
 

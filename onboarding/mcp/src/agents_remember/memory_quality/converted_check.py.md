@@ -21,11 +21,10 @@ The converted check optionally joins landing observations to `reportOnlyFindings
 - Landing facts join only the report-only population; their leaf base is independent from the validator base. [9]
 
 
+
 ### Logic
 
-- `LEGACY_FORMAT_CHECKS`: `style.update_history.history_order`, `style.citations.range_resolution` and
-  `style.citations.claim_reopen`. On a converted tree each returns `not_applicable_on_converted(check)`:
-  `ok`, status `not-applicable-converted`, 0 findings.
+
 - `converted_knowledge_check(memory_root, code_root, *, base=None)` validates the working tree
   (`validate_tree`) against the code working tree (`CodeDirectory`). Its K_B comes from `_comparison_bases`:
   without a `base` port, the repository's converted `HEAD` when it has one (`_committed_base`); with one
@@ -44,13 +43,12 @@ The converted check optionally joins landing observations to `reportOnlyFindings
 
 ### Conventions
 
-- The check names in `LEGACY_FORMAT_CHECKS` are the checks' own `CHECK_NAME` values.
+- `CONVERTED_KNOWLEDGE_CHECK` names the surviving validator/reference result; retired format check names are not registered.
 
 ### Invariants And Boundaries
 
 - A stale reference is never a finding here; it is refreshed through the onboarding gate (MIK-R30).
-- On the real converted copy the run is `ok` with 0 findings (576 report-only). The installed runtime does
-  not carry this dispatch before MIK-R37.
+- `ok` is exactly `not findings`; report-only reference and landing observations do not change it. Historical run counts are not a measurement of this candidate.
 
 ### Todos
 
@@ -71,16 +69,21 @@ No configured live documentation source was available for this pass.
 
 ### Repo-Internal References
 
-The not-applicable result and the converted check.
+The converted validator/reference result and its dispatch boundary.
 
-- The legacy-format checks and their not-applicable result. [1]
+
 - K_B is the converted HEAD, when there is one. [2]
+
 - The runner's dispatch to this module. [4]
+
 - Memory quality reads the converted format. [5]
+
 
 - The validator's bases, and why a converted base could not be built. [6]
 
+
 - An unbuildable base withholds base-dependent refusals; measurable states keep reporting. [8]
+
 
 ### Cross-Repo References
 
@@ -89,4 +92,5 @@ No meaningful cross-repo references found: the file reads and writes only the me
 No cross-repo boundary is crossed by this file.
 
 - The validator's refusals are findings; its reports and stale references are report-only. [3]
+
 - The check takes the base port and reports an unbuildable base as a finding. [7]

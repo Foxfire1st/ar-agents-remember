@@ -6,13 +6,12 @@
 
 ## Purpose
 
-Analytical file-surface readers: drift, sidecars, setup, routes, tools, ledger. The observers' slice-3b readers plus the shared ledger-window enrichment used by the engine-process facts and the official ledger surface. Every reader reuses the producing subsystem's own parser rather than re-parsing.
+Analytical file-surface readers for drift snapshots, start/setup progress, routes, tool reports and ledger. Shared ledger-window enrichment serves engine-process facts and the official ledger surface. Existing producer parsers and tolerant reader boundaries remain; the verification-date sidecar reader and its discovery/metadata imports are removed.
 
 ## Code Commentary
 
 - `read_start_progress_entries`
 - `read_drift_snapshots`
-- `read_sidecar_staleness`
 - `read_setup_summaries`
 - `read_setup_progress_nodes`
 - `read_route_coverage`
@@ -33,4 +32,5 @@ Attention-producing readers also collect per-kind `AttentionObservation` proof. 
 
 ### Repo-Internal References
 
-The module's own top-level surface is listed in Code Commentary; no cross-file citation rows are needed for this split module.
+
+- Persisted drift, setup/route/tool/ledger readers and ledger enrichment remain without an onboarding verification-age reader. \[1] [1]

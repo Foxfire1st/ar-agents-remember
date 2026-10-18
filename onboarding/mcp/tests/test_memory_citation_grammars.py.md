@@ -14,9 +14,7 @@ Language-aware declaration resolution for citation repair.
 
 `TestCaseDefinitionTests` adds plain test/spec title extraction across the supported JavaScript-family extensions. Nested describe titles bind qualified names and unique bare case names; a non-test filename does not acquire those case definitions. Plain-string escapes decode, UTF-16 pairs agree with scalar titles, lone units remain represented, and duplicate occurrences remain ambiguous even on one line. Comment extras do not replace the semantic first argument: computed/nonstring first arguments do not borrow a later string. Unsupported skip/todo/each/computed forms refuse with a reason and `line_range` alternative. These added source cases do not claim a parser run or support for the refused forms.
 
-With the TypeScript grammar a moved declaration resolves uniquely instead of matching mentions; without it the same move declines as ambiguous. Python extents include decorators, classes and members. TypeScript, TSX and JavaScript constructs bind their own names, quoted URLs retain slashes and pooled interface members repair to one defining file.
-
-The grammar fixtures now prove continuity rather than assuming it. `TypeScriptPureMoveTests.moved()` writes the cited `dashboard/src/rail.tsx` holding the `RailRow` declaration and commits it with `Tree.stamp()`, then writes the moved file, deletes the cited one with `remove_source`, and stamps the card at the commit that held the declaration. `TypeScriptInterfacePoolRepairTests.test_three_interface_members_in_another_file_repair_as_one_claim` does the same for `dashboard/src/panels/gone.ts` holding the `PanelProps` interface. The legitimate kind-preserving relocations therefore still repair because the same extent kind is provable at the recorded stamp; the grammar expectations themselves were not relaxed.
+Current tests derive named declaration spans from grammars.bindings. Python decorator/class/member and TypeScript/TSX/JavaScript binding cases remain. Removed pure-move repair, URL quote matching and pooled-interface repair fixtures are historical, not current runtime-repair guarantees.
 
 ### Conventions
 
@@ -24,7 +22,7 @@ This card describes the retained source at IAS `d3610903`. Historical entries be
 
 ### Invariants And Boundaries
 
-A parser-supported declaration is stronger evidence than textual similarity. Missing grammar support cannot silently justify a confident move. A unique tree-wide name match is likewise not sufficient by itself: the relocation fixtures must show the same extent kind at the card's recorded stamp.
+A parser-supported declaration is stronger evidence than textual similarity. Missing grammar support cannot silently justify a confident move. The retired recorded-stamp relocation fixtures do not provide a current repair route.
 
 ### Todos
 
@@ -45,16 +43,11 @@ No configured domain evidence applies to the file-local claims above.
 
 The retained source anchors below support the fixture roles and assertion boundaries described above. They identify current behavior, not a request to restore historical test counts or percentage targets.
 
-- Cited declaration is written, committed and stamped, then moved and removed. [1]
-- With the grammar the move is repaired onto the declaration. [2]
-- Without the grammar the same move is declined. [3]
 - A decorated definition is stamped from its first decorator. [4]
 - A class and its methods and attributes all bind. [5]
 - Each declaration form binds its name over its own lines. [6]
 - A tsx component is read by the tsx dialect. [7]
 - A javascript module is read by the javascript grammar. [8]
-- A url does not lose its double slash during quote matching. [9]
-- Three interface members in another file repair as one claim. [10]
 
 ### Cross-Repo References
 

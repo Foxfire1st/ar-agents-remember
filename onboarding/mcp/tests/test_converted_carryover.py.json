@@ -1,0 +1,472 @@
+{
+  "path": "mcp/tests/test_converted_carryover.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "5eaeacce0e041eee509dbe76a090ad0f1ce18c83",
+        "content": "sha256:9be715e150c2ff560919cc40e78bde1cf2817d61ca9ffa2fe6a39f3a89252a2e",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_recovery_leaf_owns_rows_and_one_memory_closeout"
+        }
+      },
+      "facet": "The recovery leaf first refuses open items without moving memory HEAD, then authors its own source-bound rows and ordinary gated closeout makes the one attributed memory commit; no source history answers or standalone carryover publication.",
+      "id": "PRF-09A3Y1",
+      "invariant": "INV-HWAWFT",
+      "origin": {
+        "handoffEntry": "L56-CUR-final-facet-INV-HWAWFT",
+        "leaf": "260928-MIK-L56"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "5eaeacce0e041eee509dbe76a090ad0f1ce18c83",
+        "content": "sha256:2450dc5e83c70af1649757e74e4be1370e3704b9c78b21777755a800119be35b",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_public_plan_and_apply_keep_each_document_kind_with_its_sidecar"
+        }
+      },
+      "facet": "Route overview, memory-only document and entity catalog retain their named selection kind and both exact source members; memory-only current anchors yield its named evidence.",
+      "id": "PRF-1BNWED",
+      "invariant": "INV-FPG5GW",
+      "origin": {
+        "handoffEntry": "MIK-R56@v1 PartB §7",
+        "leaf": "260928-MIK-L56"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "5eaeacce0e041eee509dbe76a090ad0f1ce18c83",
+        "content": "sha256:c84513471cb9677c5dc0d3ed12f8ca02ba31cc78b7b0afb8ea4b776fa0f27a1b",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_public_plan_validates_formats_before_code_or_candidates"
+        }
+      },
+      "facet": "For either nonobject marker, guarded code/cleanliness/candidate readers must not be called; conversion guidance is the refusal.",
+      "id": "PRF-4RZ9HV",
+      "invariant": "INV-9MH0V9",
+      "origin": {
+        "handoffEntry": "MIK-R56@v1 PartB §6",
+        "leaf": "260928-MIK-L56"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "5eaeacce0e041eee509dbe76a090ad0f1ce18c83",
+        "content": "sha256:1b77c7102d619e92795861dac4712a6cc902d38e355639c21713f63669ebb10a",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_public_converted_apply_carries_pair_without_commit_and_repeats"
+        }
+      },
+      "facet": "A public file-card carry writes both Markdown and sidecar and changes no HEAD/index.",
+      "id": "PRF-6PH4K4",
+      "invariant": "INV-FPG5GW",
+      "origin": {
+        "handoffEntry": "MIK-R56@v1 PartB §7",
+        "leaf": "260928-MIK-L56"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "5eaeacce0e041eee509dbe76a090ad0f1ce18c83",
+        "content": "sha256:e617848b973e20a7e5d26742f898f20ade93647b3481e0e1026c4eca925c4651",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_plan_refuses_mismatched_conversion_before_code_reads"
+        }
+      },
+      "facet": "Different conversion versions refuse before head_commit, naming knowledge-convert and crossing sync.",
+      "id": "PRF-8EDVKZ",
+      "invariant": "INV-9MH0V9",
+      "origin": {
+        "handoffEntry": "MIK-R56@v1 PartB §6",
+        "leaf": "260928-MIK-L56"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "5eaeacce0e041eee509dbe76a090ad0f1ce18c83",
+        "content": "sha256:915dd0e72e7bf735b607d9f5a5e16e0cab3477916bfa0aa4ebe5060438e1d596",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_public_plan_logs_complete_review_facts_and_delivers_recovery_guidance"
+        }
+      },
+      "facet": "Whole-result logged candidates, conversion and publication equal the full plan; pair/anchor/dependency/history facts survive, compact answer keeps own-row/closeout guidance and a shared log pointer, no per-call reportPath is introduced, memory bytes stay unchanged.",
+      "id": "PRF-BPMQ2T",
+      "invariant": "INV-REPB8B",
+      "origin": {
+        "handoffEntry": "L56-CUR-CARRYOVER-PLAN-FULL-RESULT",
+        "leaf": "260928-MIK-L56"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "5eaeacce0e041eee509dbe76a090ad0f1ce18c83",
+        "content": "sha256:5a81452729820dc4e42cd4b65318360624bce2683d3d49347d81c5ee0e0f8f6e",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_plan_refuses_unconverted_side_before_code_or_candidate_reads"
+        }
+      },
+      "facet": "Deleting either marker refuses before the forbidden code reader, with source/target bytes unchanged.",
+      "id": "PRF-GXW8RH",
+      "invariant": "INV-9MH0V9",
+      "origin": {
+        "handoffEntry": "MIK-R56@v1 PartB §6",
+        "leaf": "260928-MIK-L56"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "5eaeacce0e041eee509dbe76a090ad0f1ce18c83",
+        "content": "sha256:1b77c7102d619e92795861dac4712a6cc902d38e355639c21713f63669ebb10a",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_public_converted_apply_carries_pair_without_commit_and_repeats"
+        }
+      },
+      "facet": "Public apply yields carried-into-worktree then nothing-to-carryover, returning the worklist without a new commit.",
+      "id": "PRF-S2SEFN",
+      "invariant": "INV-MZ13SJ",
+      "origin": {
+        "handoffEntry": "MIK-R56@v1 PartB §10",
+        "leaf": "260928-MIK-L56"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "5eaeacce0e041eee509dbe76a090ad0f1ce18c83",
+        "content": "sha256:0e93af30a83abd1373cf3578acd8e3752a769c9477946fb755516279a6bcfcf2",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_public_records_travel_but_differing_records_and_history_do_not"
+        }
+      },
+      "facet": "Public apply carries absent JSON/Markdown, refuses a target statement difference without changing bytes, and never copies source branch history or commits.",
+      "id": "PRF-YSXY1Q",
+      "invariant": "INV-5XX92M",
+      "origin": {
+        "handoffEntry": "MIK-R56@v1 PartB §9",
+        "leaf": "260928-MIK-L56"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Conversion/publication remain in the full report, not as raw compact fields; recovery guidance is separately exposed by the current compactor.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5eaeacce0e041eee509dbe76a090ad0f1ce18c83",
+            "content": "sha256:234cdb4d7e217c9a1a55e129caa1ef75c5f30da258cdb703de0b93a4f75f8d52",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_plan_conversion_metadata_stays_in_full_report_not_public_answer"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "183175ecfcf669bf424883e05272a8381b817224",
+            "content": "sha256:5aad99e6ca9de0e4f39431d106120972c20f02e56705d2290d7b43ecc939b5cc",
+            "locator": {
+              "kind": "symbol",
+              "name": "compact_carryover_payload"
+            },
+            "path": "mcp/src/agents_remember/mcp/tools/memory.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "Partial document retry validates unrelated [999] onboarding, refuses with validator diagnostics after refresh, names the existing member and restores bytes, HEAD and raw index without writes.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5eaeacce0e041eee509dbe76a090ad0f1ce18c83",
+            "content": "sha256:9bc20fdd336ee4576d79fbe03999e57e5f7ab5d0422feca2fc0ad697e5848a05",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_document_partial_retry_validates_whole_tree_and_names_existing_member"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "11": {
+      "note": "The open recovery item blocks closeout; the leaf writer supplies its own row without a commit, then ordinary closeout creates exactly one Code-Commit-attributed memory commit with closed history.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5eaeacce0e041eee509dbe76a090ad0f1ce18c83",
+            "content": "sha256:9be715e150c2ff560919cc40e78bde1cf2817d61ca9ffa2fe6a39f3a89252a2e",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_recovery_leaf_owns_rows_and_one_memory_closeout"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "12": {
+      "note": "Opt-in real plan compares source/target/code refs, statuses and staged inventories; it makes no apply/closeout success claim.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5eaeacce0e041eee509dbe76a090ad0f1ce18c83",
+            "content": "sha256:3fbca1099775f138a861a8587dfaad7b3f9f7d39fc3fae8467090ada9bb9b8d9",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_real_l47_plan_on_shared_clones_as_declared_pytest_process"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "13": {
+      "note": "Opt-in real public apply requires R27.2-new-record refusal for INV-EX6T0F, empty writes and restored bytes/HEAD/real custody; it does not assert successful real-data carryover.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5eaeacce0e041eee509dbe76a090ad0f1ce18c83",
+            "content": "sha256:5bb7a52b87dc0d26eba7db5f8092c4e10c6c1993b3a1a741d49013056a310247",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_real_l47_public_apply_in_managed_scratch_recovery_leaf"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "14": {
+      "note": "Both adapters log the genuine delivered decision fields beside full candidate/conversion/publication facts.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5eaeacce0e041eee509dbe76a090ad0f1ce18c83",
+            "content": "sha256:2ca557b0a9533963e99cfb7e9fd3cbbca4ef46730800f36064495efcd080e384",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_carryover_adapter_logs_each_delivered_decision_field"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "15": {
+      "note": "The public plan adapter returns its typed legacy refusal for either unconverted side, preserving memory bytes.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5eaeacce0e041eee509dbe76a090ad0f1ce18c83",
+            "content": "sha256:38aa7743e03b7f8f61ba2e3d7b74a9d0ad496f96b9574b8f67800f0356b55132",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_plan_adapter_returns_a_typed_legacy_refusal_without_writing_memory"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Public plan logs full candidate/conversion/publication review facts and delivers curator/own-row/closeout guidance plus log, without candidates, raw publication or reportPath; observed memory bytes stay equal.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5eaeacce0e041eee509dbe76a090ad0f1ce18c83",
+            "content": "sha256:915dd0e72e7bf735b607d9f5a5e16e0cab3477916bfa0aa4ebe5060438e1d596",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_public_plan_logs_complete_review_facts_and_delivers_recovery_guidance"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "0cfbebeafca8ea43202f997978115ef475dabb63",
+            "content": "sha256:f7e076869df50d7f64cc9da5069ac9f98f8a155e101af30bc996e3cdad94a743",
+            "locator": {
+              "kind": "symbol",
+              "name": "memory_carryover_plan_payload"
+            },
+            "path": "mcp/src/agents_remember/mcp/tools/memory.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Public plan rejects a null layout on either side before instrumented head/cleanliness/change-path/record-context calls despite an invalid official code ref.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5eaeacce0e041eee509dbe76a090ad0f1ce18c83",
+            "content": "sha256:c84513471cb9677c5dc0d3ed12f8ca02ba31cc78b7b0afb8ea4b776fa0f27a1b",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_public_plan_validates_formats_before_code_or_candidates"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "8cc37ec945797a2390b14f47bdce27f8fe5816d5",
+            "content": "sha256:c7784311ae347dfa345d80e854bb875d9f8fc138ef0cc315a4e0e53976866813",
+            "locator": {
+              "kind": "symbol",
+              "name": "memory_carryover_plan_tool"
+            },
+            "path": "mcp/src/agents_remember/application/memory_tools.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Native planning rejects an unconverted side before code/candidate reads and preserves both observed byte trees.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5eaeacce0e041eee509dbe76a090ad0f1ce18c83",
+            "content": "sha256:5a81452729820dc4e42cd4b65318360624bce2683d3d49347d81c5ee0e0f8f6e",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_plan_refuses_unconverted_side_before_code_or_candidate_reads"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "Mismatched conversion, unreadable/malformed markers and missing memory retain named format refusal; missing memory is not mislabeled legacy.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5eaeacce0e041eee509dbe76a090ad0f1ce18c83",
+            "content": "sha256:e617848b973e20a7e5d26742f898f20ade93647b3481e0e1026c4eca925c4651",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_plan_refuses_mismatched_conversion_before_code_reads"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "5eaeacce0e041eee509dbe76a090ad0f1ce18c83",
+            "content": "sha256:9e5e5a621fd6f0a465cd2ae27129c507e5bad93fdbff59cff1bfd7dcc00e9778",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_plan_names_unreadable_format_and_does_not_read_candidates"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "5eaeacce0e041eee509dbe76a090ad0f1ce18c83",
+            "content": "sha256:7cd993781a5e40381f58f34e066113cc91affdb83bcfe7dad111423589fe48bd",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_missing_memory_is_not_reported_as_legacy"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "Public file-card apply carries Markdown/sidecar with no memory commit or raw-index change, returns a worklist and repeats as nothing-to-carryover.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5eaeacce0e041eee509dbe76a090ad0f1ce18c83",
+            "content": "sha256:1b77c7102d619e92795861dac4712a6cc902d38e355639c21713f63669ebb10a",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_public_converted_apply_carries_pair_without_commit_and_repeats"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "Route-overview, memory-only and entity-catalog pairs stay intact under plan/apply with unchanged HEAD.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5eaeacce0e041eee509dbe76a090ad0f1ce18c83",
+            "content": "sha256:2450dc5e83c70af1649757e74e4be1370e3704b9c78b21777755a800119be35b",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_public_plan_and_apply_keep_each_document_kind_with_its_sidecar"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "Needed record pairs travel; differing records refuse without byte writes, source history is reading-only/not copied and HEAD stays unchanged.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5eaeacce0e041eee509dbe76a090ad0f1ce18c83",
+            "content": "sha256:0e93af30a83abd1373cf3578acd8e3752a769c9477946fb755516279a6bcfcf2",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_public_records_travel_but_differing_records_and_history_do_not"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "9": {
+      "note": "For either Markdown/JSON member cut, equal bytes resume the missing companion without rewriting the existing bytes/mtime; differing cuts stay review-required and do not write; HEAD stays unchanged.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5eaeacce0e041eee509dbe76a090ad0f1ce18c83",
+            "content": "sha256:b555c9067ac4fc6a44286f58a4bbc71facf107b862a8eb5d004ee8509968e929",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_public_document_member_cut_resumes_only_equal_bytes"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "0f2012e3d1b6cfcf742adc9b3bf25460b4073950",
+            "content": "sha256:aba8e04bf9b0348ff6b82aac9130bad80dff7860a865b91cfe042c3bd3a29289",
+            "locator": {
+              "kind": "symbol",
+              "name": "_candidate"
+            },
+            "path": "mcp/src/agents_remember/memory/carryover.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

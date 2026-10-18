@@ -7,7 +7,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0ac7a77fb18fd24c2ce5add7bacf826eb7e8180d",
+            "blob": "2bd8e1cdcdc14b58afcf1c7328321a5f380b15ed",
             "content": "sha256:18b7566875547f8e4f1d10b63008c0ffb2753cb1f99b11d0542ce1bcc04811a2",
             "locator": {
               "kind": "symbol",
@@ -23,7 +23,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0ac7a77fb18fd24c2ce5add7bacf826eb7e8180d",
+            "blob": "2bd8e1cdcdc14b58afcf1c7328321a5f380b15ed",
             "content": "sha256:e2c4a6475a0b446befb724ba1b3f8083d5894cb2a2e5e0c48000d448c5251258",
             "locator": {
               "kind": "symbol",
@@ -39,7 +39,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0ac7a77fb18fd24c2ce5add7bacf826eb7e8180d",
+            "blob": "2bd8e1cdcdc14b58afcf1c7328321a5f380b15ed",
             "content": "sha256:2b7b497a7dc05fe91d79249e80aeb191368df006b6fcf1a291d97e8320042857",
             "locator": {
               "kind": "symbol",
@@ -55,7 +55,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0ac7a77fb18fd24c2ce5add7bacf826eb7e8180d",
+            "blob": "2bd8e1cdcdc14b58afcf1c7328321a5f380b15ed",
             "content": "sha256:9fd15f6def78062e499499ea66ae6c46687f5e5847d98dbbbf0b50bbe4923604",
             "locator": {
               "kind": "symbol",
@@ -71,7 +71,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0ac7a77fb18fd24c2ce5add7bacf826eb7e8180d",
+            "blob": "2bd8e1cdcdc14b58afcf1c7328321a5f380b15ed",
             "content": "sha256:c35436a1d5f47c2646f93cbcddd71397913c640d77d1aca621aca21ef1e039ad",
             "locator": {
               "kind": "symbol",
@@ -99,15 +99,15 @@
       ]
     },
     "7": {
-      "note": "PreparedLegProductionTests: qualified source contract.",
+      "note": "Remaining-route fixtures protect exact-tree ordinary/direct publication refusal and pass facts.",
       "targets": [
         {
           "anchor": {
-            "blob": "0ac7a77fb18fd24c2ce5add7bacf826eb7e8180d",
-            "content": "sha256:e286cfe7cd08c42652b24cb131a74d98e03ffb9da15061ff0b940515b5be6bf6",
+            "blob": "2bd8e1cdcdc14b58afcf1c7328321a5f380b15ed",
+            "content": "sha256:72251e51c448ba28f478a6c3a7a628047a3bc752b69037eafd5ad4324f5227bc",
             "locator": {
               "kind": "symbol",
-              "name": "PreparedLegProductionTests"
+              "name": "RemainingRouteProductionTests"
             }
           },
           "kind": "test"
@@ -119,7 +119,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0ac7a77fb18fd24c2ce5add7bacf826eb7e8180d",
+            "blob": "2bd8e1cdcdc14b58afcf1c7328321a5f380b15ed",
             "content": "sha256:0ed069f69ff14664cb4e4528f7230b28a440a60a2aa31f8037553c77c88fa94b",
             "locator": {
               "kind": "symbol",

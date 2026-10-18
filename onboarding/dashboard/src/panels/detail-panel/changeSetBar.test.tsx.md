@@ -71,7 +71,8 @@ No relevant domain documentation was found.
 
 ### Repo-Internal References
 
-- The change-set bar suite retains the exact generation-bound master series entry and compact Intent review controls: a closed leaf opens its recorded comparison (even when knowledge is unavailable) and explicitly has no review-subject picker; a live leaf opens review: {} for task-context review and leaves subject selection to the reviewer. The series click carries the published code/memory endpoints and digest. These cases do not exercise complete-catalogue traversal or provide a complete-catalogue picker. [1]
+- The change-set bar suite retains the exact generation-bound master series entry and compact Intent review controls: a closed leaf opens its recorded comparison (even when knowledge is unavailable) and explicitly has no review-subject picker; a live leaf opens review: {} for task-context review and leaves subject selection to the reviewer. The series click carries the published code/memory endpoints and digest. These cases do not exercise complete-catalogue traversal or provide a complete-catalogue picker. Complete-catalogue traversal remains reviewer-owned, not a picker exercised by these cases. [1]
+
 
 ### Cross-Repo References
 

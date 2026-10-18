@@ -12,7 +12,6 @@
     "The knowledge validator is bound in the adopting process; where it is not, adoption refuses."
   ],
   "exclusions": [
-    "Unconverted adoptions, which keep the direct stage-and-commit path.",
     "Files outside the owned interval: only the prepared ignore line is ever given back, never caller or external content."
   ],
   "id": "INV-DZB7MC",
@@ -27,7 +26,7 @@
     "leaf": "260928-MIK-L44",
     "task": "260928-MIK"
   },
-  "revision": 2,
+  "revision": 3,
   "schema": "ar-invariant/v1",
   "statement": "An exception during staged-tree validation in a dry run discards the private staging index and leaves the worktree’s real index unchanged; the named error propagates after restoring only provably owned prepared ignore-file state.",
   "status": "proposed",

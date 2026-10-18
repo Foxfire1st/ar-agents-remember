@@ -63,7 +63,7 @@
       ]
     },
     "3": {
-      "note": "Full input passes or an expired/missing 120-second retained-surface snapshot reach the repo-surface reader; other passes retain its three collections unread.",
+      "note": "Full input passes or an expired/missing 120-second retained-surface snapshot reach the repo-surface reader; other passes retain its two collections unread.",
       "targets": [
         {
           "anchor": {
@@ -163,6 +163,44 @@
               "end": 419,
               "kind": "line_range",
               "start": 380
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Repository reader and retained input aggregate omit sidecar staleness and carry route coverage plus ledgers.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6df2a6bdbd12ddafa2399eb3f43c87f41499a72d",
+            "content": "sha256:5d6afa1edd0685b517f4bcb1577bc8a3709921b62e7e6cb0b6cc5c12f17b744b",
+            "locator": {
+              "kind": "symbol",
+              "name": "RepoSurfaceReader"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6df2a6bdbd12ddafa2399eb3f43c87f41499a72d",
+            "content": "sha256:64531789cbd6f9df5352c252bd0d92353df57a58265ccebe9b3071b9e29a6e0a",
+            "locator": {
+              "kind": "symbol",
+              "name": "ProjectionInputs"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6df2a6bdbd12ddafa2399eb3f43c87f41499a72d",
+            "content": "sha256:d91344ace808fd0e01038c722a7745880773253abdb803923d71964c265c7822",
+            "locator": {
+              "kind": "symbol",
+              "name": "read"
             }
           },
           "kind": "code"

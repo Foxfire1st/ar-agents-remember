@@ -62,7 +62,7 @@ A malformed or mismatched activation snapshot becomes a typed source problem wit
 
 The ordinary commit helper publishes an accepted tree through the shared tree-publication primitive, which runs no Git commit hook. Integration publication separately checks source refs, ancestry, checkout state, and landing authority, then moves the prepared code and memory refs by compare-and-swap without creating a merge commit.
 
-`closeout_staged_quality.py` separates staged preparation from fresh gate execution. Preparation checks that the checkout is a linked, conflict-free worktree, stages the candidate, and settles any configured pre-commit hook. The certification admission helper consumes the returned tree and hook outcome. None of these helpers assigns certification or mutation authority to scheduling projection state.
+`closeout_staged_quality.py` retains explicitly invoked staged preparation and quality execution. Preparation refuses a non-linked or conflicted worktree before staging, checks an optional candidate before/after staging and after a configured pre-commit hook, and returns the actual tree/hook result. Requested certification freezes its profile/admission through `quality/certification_records.py`; the old closeout certification admission consumer is removed. None of these helpers grants scheduling projection state mutation or certification authority.
 
 ## Invariants And Boundaries
 
@@ -77,7 +77,7 @@ The ordinary commit helper publishes an accepted tree through the shared tree-pu
 
 The standing intent recorded here is that strict code and memory quality checks, selected certification, curator coherence, independent review, and full suites are explicit developer actions rather than automatic queue steps. The scheduling projection does not execute or accept those checks; it reads their canonical evidence.
 
-That intent must not be read as a promise that ordinary closeout has no automatic enforcement. For converted leaf memory, the current closeout route automatically checks the mandatory invariant gate before claiming approval, validates and gates the exact memory output before publication, and applies those checks to recovered memory output as well. These checks belong to the closeout transaction, not projection state. The staged-quality and certification-admission helpers also remain present; their existence alone does not establish that normal queue actions invoke them.
+That intent must not be read as a promise that ordinary closeout has no automatic enforcement. For converted leaf memory, the current closeout route automatically checks the mandatory invariant gate before claiming approval, validates and gates the exact memory output before publication, and applies those checks to recovered memory output as well. These checks belong to the closeout transaction, not projection state. The staged-quality helper and requested-certification record preparer remain; the old closeout certification-admission helper is removed. Remaining helper presence alone does not establish that normal queue actions invoke certification.
 
 ### Lifecycle metadata boundary
 
@@ -90,4 +90,5 @@ Historical labels such as final, landed, and resolved describe earlier curation 
 - Canonical publication precedes projection refresh; exact-current publication and first-ready admission do not give projection rows lifecycle authority. [3]
 - Graph resolution uses the task terminal predicate; activation and capacity classifications retain their own deciding owners. [4]
 - Curator evidence comes from the structured currentness validator and is consumed as door candidate provenance. [5]
-- Preview, recovery, staged preparation, ordinary memory enforcement, and integration publication are separate from scheduling authority. [6]
+
+- Preview, exact Git-output recovery, cache handling, explicitly selected staged quality, ordinary invariant-gated memory publication and protected-ref integration have separate owners; disposable scheduling projection grants none of their publication or certification authority. [6]

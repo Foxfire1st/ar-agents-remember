@@ -7,7 +7,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "30cb14732f6d4d548c1ee9550ab342b849d1eb10",
+            "blob": "b130c9f33b2078e3adf38d6e87cde8c376ba65b9",
             "content": "sha256:4c0fb7c43778f84379248a5e9c2dcccaf4baf74975385a21d6539f52be823e57",
             "locator": {
               "kind": "symbol",
@@ -20,12 +20,12 @@
       ]
     },
     "2": {
-      "note": "The drift/ledger/stalest analytics nodes.",
+      "note": "The panel reads only driftSnapshots and ledgers from Analytics; the retired stalest-sidecar list is not rendered.",
       "targets": [
         {
           "anchor": {
-            "blob": "17f2d4a842a364ac445a776090637c466711b266",
-            "content": "sha256:a7b8d62e0e29d006112cc35e305ec422f860555869e63ccd668ba43e8f995b9e",
+            "blob": "1c93a3cfc20a23e78c37a94c82f1c267d32a474a",
+            "content": "sha256:d1955ad39e540d3e858b0a0f29b84727dcfe59052e79701346b07919d3bf6dc6",
             "locator": {
               "kind": "symbol",
               "name": "Analytics"
@@ -35,8 +35,16 @@
           "kind": "code"
         },
         {
-          "kind": "unresolved",
-          "text": "mcp/src/agents_remember/observer/projection.py:1097-1153"
+          "anchor": {
+            "blob": "c95a109ddbcfdc43cc3f0268d17ef24c38aef450",
+            "content": "sha256:562c751d3b78c732fa787bcac6054ed83b96f807c0c40a6ce90fb5f74c50285e",
+            "locator": {
+              "end": 124,
+              "kind": "line_range",
+              "start": 57
+            }
+          },
+          "kind": "code"
         }
       ]
     },
@@ -45,11 +53,64 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9569d88720f6e78045675d93303f7a4752fb92e1",
+            "blob": "c95a109ddbcfdc43cc3f0268d17ef24c38aef450",
             "content": "sha256:ddbaea66f9f0b5cd92a32ca27a92d4447343bf55ec9bd55b91ca55abae6cb0f5",
             "locator": {
               "kind": "symbol",
               "name": "SEG_BG"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The Memory mirror renders the retained `driftSnapshots` classification-count bars and the ledger-currency list only. Its two-collection empty check shows “No memory analytics yet.” only when both are empty. Segment ordering and forward-compatible color lookup survive, including converted `stale`/`violation`; displayed drift ages stay server/arrival-anchored and advance locally. No panel call recreates the retired stamp-age leaderboard or confers mutation authority.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b130c9f33b2078e3adf38d6e87cde8c376ba65b9",
+            "content": "sha256:4c0fb7c43778f84379248a5e9c2dcccaf4baf74975385a21d6539f52be823e57",
+            "locator": {
+              "kind": "symbol",
+              "name": "driftSegments"
+            },
+            "path": "dashboard/src/data/selectors.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "66d20f4008239bf7a9afcd90dfd2fd6ad191d7f4",
+            "content": "sha256:6d89d54b8313784d65db2577fb4579e3dc39c353e49ad702f009f5428c7d7217",
+            "locator": {
+              "kind": "symbol",
+              "name": "servedAgeSeconds"
+            },
+            "path": "dashboard/src/data/servedAges.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c95a109ddbcfdc43cc3f0268d17ef24c38aef450",
+            "content": "sha256:562c751d3b78c732fa787bcac6054ed83b96f807c0c40a6ce90fb5f74c50285e",
+            "locator": {
+              "end": 124,
+              "kind": "line_range",
+              "start": 57
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c95a109ddbcfdc43cc3f0268d17ef24c38aef450",
+            "content": "sha256:da4b2bf1325164ce07dd58738931dd92163a58879b0c406fd98b86e0139140df",
+            "locator": {
+              "end": 55,
+              "kind": "line_range",
+              "start": 41
             }
           },
           "kind": "code"

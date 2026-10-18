@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "9eef4f32926a879ed8247e97f14685ba3a469031",
+        "blob": "8cc37ec945797a2390b14f47bdce27f8fe5816d5",
         "content": "sha256:129a1b47f142a1adf1eba27fb36b455eaa37075548562f131998e10cb12d93d5",
         "locator": {
           "kind": "symbol",
@@ -21,7 +21,25 @@
     },
     {
       "anchor": {
-        "blob": "9eef4f32926a879ed8247e97f14685ba3a469031",
+        "blob": "8cc37ec945797a2390b14f47bdce27f8fe5816d5",
+        "content": "sha256:dedad5329b7d2d542e7d04a186c6869a311fc5167b1e47add81c4277e8bf5156",
+        "locator": {
+          "kind": "symbol",
+          "name": "memory_carryover_apply_tool"
+        }
+      },
+      "id": "RLZ-AFT8BA",
+      "invariant": "INV-MZ13SJ",
+      "origin": {
+        "handoffEntry": "L56-CUR-final-facet-INV-MZ13SJ",
+        "leaf": "260928-MIK-L56"
+      },
+      "rationale": "Calls the admitted no-commit transaction and reports an actual refused state with ok false rather than presenting restoration/no-write as success. This is a supporting envelope, not a new admission, rollback or publication authority.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "8cc37ec945797a2390b14f47bdce27f8fe5816d5",
         "content": "sha256:e07c88ae05c8a689fa70c027d0e146b9b069b245e945fc5195b544ad73dbe235",
         "locator": {
           "kind": "symbol",
@@ -39,8 +57,26 @@
     },
     {
       "anchor": {
-        "blob": "9eef4f32926a879ed8247e97f14685ba3a469031",
-        "content": "sha256:5f821e64096023ecdaed1c77401a5d02d1fbbcd3fc3d5b41e2d14c6b4a0e9017",
+        "blob": "8cc37ec945797a2390b14f47bdce27f8fe5816d5",
+        "content": "sha256:9de9f4e5133226cbb72cb3625c3dda0fb110f0642c9b8eeed1a06438b8a81007",
+        "locator": {
+          "kind": "symbol",
+          "name": "_citation_fix_status"
+        }
+      },
+      "id": "RLZ-GH6AH9",
+      "invariant": "INV-1V9ARB",
+      "origin": {
+        "handoffEntry": "L56-CUR-final-facet-INV-1V9ARB",
+        "leaf": "260928-MIK-L56"
+      },
+      "rationale": "Preserves citation-fix complete selected-population rewritten/stale/unreadable/refused counts after removing the unreachable legacy branch; carryover is not added to this invariant scope.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "8cc37ec945797a2390b14f47bdce27f8fe5816d5",
+        "content": "sha256:b138d8d6c8cc66ad7f51dad3972cb2d9fc8732425e5b8d4983ba5e762944a940",
         "locator": {
           "kind": "symbol",
           "name": "citation_fix_tool"
@@ -57,8 +93,8 @@
     },
     {
       "anchor": {
-        "blob": "9eef4f32926a879ed8247e97f14685ba3a469031",
-        "content": "sha256:5f821e64096023ecdaed1c77401a5d02d1fbbcd3fc3d5b41e2d14c6b4a0e9017",
+        "blob": "8cc37ec945797a2390b14f47bdce27f8fe5816d5",
+        "content": "sha256:b138d8d6c8cc66ad7f51dad3972cb2d9fc8732425e5b8d4983ba5e762944a940",
         "locator": {
           "kind": "symbol",
           "name": "citation_fix_tool"
@@ -75,7 +111,25 @@
     },
     {
       "anchor": {
-        "blob": "9eef4f32926a879ed8247e97f14685ba3a469031",
+        "blob": "8cc37ec945797a2390b14f47bdce27f8fe5816d5",
+        "content": "sha256:c7784311ae347dfa345d80e854bb875d9f8fc138ef0cc315a4e0e53976866813",
+        "locator": {
+          "kind": "symbol",
+          "name": "memory_carryover_plan_tool"
+        }
+      },
+      "id": "RLZ-SZR0SN",
+      "invariant": "INV-9MH0V9",
+      "origin": {
+        "handoffEntry": "L56-CUR-final-facet-INV-9MH0V9",
+        "leaf": "260928-MIK-L56"
+      },
+      "rationale": "Calls matching converted-format admission before planning, code authority or candidate reads.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "8cc37ec945797a2390b14f47bdce27f8fe5816d5",
         "content": "sha256:20715addb462bc44fb693c9aedfe978d20f77305d2676685c56bbe2d1c386530",
         "locator": {
           "kind": "symbol",
@@ -93,8 +147,8 @@
     },
     {
       "anchor": {
-        "blob": "9eef4f32926a879ed8247e97f14685ba3a469031",
-        "content": "sha256:b0a40b5c6b8ac07cffa80174d81e2d954545f3602139c8a1aebb27c82e5dc4e9",
+        "blob": "8cc37ec945797a2390b14f47bdce27f8fe5816d5",
+        "content": "sha256:b9330db4676ef731cd95886e9ad74664f430ed48bd0b1054011157379721166f",
         "locator": {
           "kind": "symbol",
           "name": "CitationOperationScope"
@@ -116,7 +170,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9eef4f32926a879ed8247e97f14685ba3a469031",
+            "blob": "8cc37ec945797a2390b14f47bdce27f8fe5816d5",
             "content": "sha256:c4a9538003f50940143bb235c8446534f9c76b0b3a1c28b61f8cace48655ef48",
             "locator": {
               "kind": "symbol",
@@ -132,7 +186,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9eef4f32926a879ed8247e97f14685ba3a469031",
+            "blob": "8cc37ec945797a2390b14f47bdce27f8fe5816d5",
             "content": "sha256:c4a9538003f50940143bb235c8446534f9c76b0b3a1c28b61f8cace48655ef48",
             "locator": {
               "kind": "symbol",
@@ -148,7 +202,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "00dc29b96c884b0f82fd5a67b0de544d71f3917e",
+            "blob": "1041f2f6e24eba20d1af2237ed1db8ca0dd39ce8",
             "content": "sha256:a0bf2c3889850dab1979e16c2e436db1829b62d71562a6cf60052a3cfee09baf",
             "locator": {
               "kind": "symbol",
@@ -293,7 +347,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9eef4f32926a879ed8247e97f14685ba3a469031",
+            "blob": "8cc37ec945797a2390b14f47bdce27f8fe5816d5",
             "content": "sha256:e07c88ae05c8a689fa70c027d0e146b9b069b245e945fc5195b544ad73dbe235",
             "locator": {
               "kind": "symbol",
@@ -309,7 +363,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "00dc29b96c884b0f82fd5a67b0de544d71f3917e",
+            "blob": "1041f2f6e24eba20d1af2237ed1db8ca0dd39ce8",
             "content": "sha256:f4919bee988d4473dce9ce42789930a3b179417eb1c07e1d5ba1f0c40270d283",
             "locator": {
               "kind": "symbol",
@@ -353,29 +407,12 @@
         }
       ]
     },
-    "22": {
-      "note": "The refusal rule for a caller exclude that cannot mean anything.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "618796cf108683657661e36f015a1120b05c6e9d",
-            "content": "sha256:368608e2d09339a4916de6c9897892fdc337a785450c36f6e29e4f484d7892f1",
-            "locator": {
-              "kind": "symbol",
-              "name": "validate_caller_excludes"
-            },
-            "path": "mcp/src/agents_remember/memory_quality/style/citations/exclusion_register.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
     "23": {
       "note": "**The memory initializer now reports the knowledge foundation beside the memory root it scaffolds (`ICR-R29@v1`).**",
       "targets": [
         {
           "anchor": {
-            "blob": "9eef4f32926a879ed8247e97f14685ba3a469031",
+            "blob": "8cc37ec945797a2390b14f47bdce27f8fe5816d5",
             "content": "sha256:7b520fc9b22cbf25310bc93079df0b862908d53ceb2833165f870ee544025537",
             "locator": {
               "kind": "symbol",
@@ -487,7 +524,7 @@
         },
         {
           "anchor": {
-            "blob": "9eef4f32926a879ed8247e97f14685ba3a469031",
+            "blob": "8cc37ec945797a2390b14f47bdce27f8fe5816d5",
             "content": "sha256:20715addb462bc44fb693c9aedfe978d20f77305d2676685c56bbe2d1c386530",
             "locator": {
               "kind": "symbol",
@@ -503,7 +540,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9eef4f32926a879ed8247e97f14685ba3a469031",
+            "blob": "8cc37ec945797a2390b14f47bdce27f8fe5816d5",
             "content": "sha256:752848b4867967cdcbbc2e0bbbead222c7bf0b552f0d9e8fe80885e9c83e785d",
             "locator": {
               "kind": "symbol",
@@ -519,7 +556,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9eef4f32926a879ed8247e97f14685ba3a469031",
+            "blob": "8cc37ec945797a2390b14f47bdce27f8fe5816d5",
             "content": "sha256:a7b0a1176435d908d3ae89aa58f11a71872c9f42db473b2e31b7a6f04ed254a9",
             "locator": {
               "kind": "symbol",
@@ -551,7 +588,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9eef4f32926a879ed8247e97f14685ba3a469031",
+            "blob": "8cc37ec945797a2390b14f47bdce27f8fe5816d5",
             "content": "sha256:f763db344a416efd66bbb0d3414cfd2cfcf00cfec743dabcb71778a18ef92f63",
             "locator": {
               "kind": "symbol",
@@ -567,7 +604,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9eef4f32926a879ed8247e97f14685ba3a469031",
+            "blob": "8cc37ec945797a2390b14f47bdce27f8fe5816d5",
             "content": "sha256:129a1b47f142a1adf1eba27fb36b455eaa37075548562f131998e10cb12d93d5",
             "locator": {
               "kind": "symbol",
@@ -599,7 +636,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9eef4f32926a879ed8247e97f14685ba3a469031",
+            "blob": "8cc37ec945797a2390b14f47bdce27f8fe5816d5",
             "content": "sha256:20715addb462bc44fb693c9aedfe978d20f77305d2676685c56bbe2d1c386530",
             "locator": {
               "kind": "symbol",
@@ -615,8 +652,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9eef4f32926a879ed8247e97f14685ba3a469031",
-            "content": "sha256:b0a40b5c6b8ac07cffa80174d81e2d954545f3602139c8a1aebb27c82e5dc4e9",
+            "blob": "8cc37ec945797a2390b14f47bdce27f8fe5816d5",
+            "content": "sha256:b9330db4676ef731cd95886e9ad74664f430ed48bd0b1054011157379721166f",
             "locator": {
               "kind": "symbol",
               "name": "CitationOperationScope"
@@ -627,12 +664,12 @@
       ]
     },
     "35": {
-      "note": "Only a recognized legacy RuntimeError becomes the typed short-message/full-detail conversion refusal; unrelated runtime errors still raise.",
+      "note": "The operation-specific shared legacy refusal preserves short-message/full-detail conversion guidance; only recognized caller RuntimeErrors are translated.",
       "targets": [
         {
           "anchor": {
-            "blob": "9eef4f32926a879ed8247e97f14685ba3a469031",
-            "content": "sha256:438da248e5847f354d564f8d02805294a30d26dcfbfb01abc434edbdf668e088",
+            "blob": "8cc37ec945797a2390b14f47bdce27f8fe5816d5",
+            "content": "sha256:0ad4605217085ded778cd1fafd60116a0873ead51fdde2374479e3ee480c2c64",
             "locator": {
               "kind": "symbol",
               "name": "_carryover_legacy_refusal"
@@ -652,6 +689,66 @@
             "locator": {
               "kind": "symbol",
               "name": "memory_carryover_apply_tool"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "37": {
+      "note": "Carryover options forward approval intent and explicit review selection without a commit subject.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8cc37ec945797a2390b14f47bdce27f8fe5816d5",
+            "content": "sha256:dedad5329b7d2d542e7d04a186c6869a311fc5167b1e47add81c4277e8bf5156",
+            "locator": {
+              "kind": "symbol",
+              "name": "memory_carryover_apply_tool"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0f2012e3d1b6cfcf742adc9b3bf25460b4073950",
+            "content": "sha256:995e469cb000e69d917212ec9c2ff7a67b96b37a66646ee8aa825c9a2188a674",
+            "locator": {
+              "kind": "symbol",
+              "name": "_apply_carryover_for_request"
+            },
+            "path": "mcp/src/agents_remember/memory/carryover.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "38": {
+      "note": "The carryover adapter forwards converted worktree import, derives ok from refused state and translates only the recognized legacy RuntimeError.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8cc37ec945797a2390b14f47bdce27f8fe5816d5",
+            "content": "sha256:dedad5329b7d2d542e7d04a186c6869a311fc5167b1e47add81c4277e8bf5156",
+            "locator": {
+              "kind": "symbol",
+              "name": "memory_carryover_apply_tool"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "39": {
+      "note": "Converted fixing authors selected cards then refreshes references, excluding authoring-refused sidecars.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8cc37ec945797a2390b14f47bdce27f8fe5816d5",
+            "content": "sha256:e07c88ae05c8a689fa70c027d0e146b9b069b245e945fc5195b544ad73dbe235",
+            "locator": {
+              "kind": "symbol",
+              "name": "_converted_citation_fix"
             }
           },
           "kind": "code"
@@ -687,12 +784,55 @@
         }
       ]
     },
+    "40": {
+      "note": "The document-only scope refuses conflicting, empty or oversized selections; only fix admits a multi-card list.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8cc37ec945797a2390b14f47bdce27f8fe5816d5",
+            "content": "sha256:b9330db4676ef731cd95886e9ad74664f430ed48bd0b1054011157379721166f",
+            "locator": {
+              "kind": "symbol",
+              "name": "CitationOperationScope"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "41": {
+      "note": "The converted fixer and route-index apply retain ordinary leaf and measured pre-baseline admissions.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8cc37ec945797a2390b14f47bdce27f8fe5816d5",
+            "content": "sha256:b138d8d6c8cc66ad7f51dad3972cb2d9fc8732425e5b8d4983ba5e762944a940",
+            "locator": {
+              "kind": "symbol",
+              "name": "citation_fix_tool"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8cc37ec945797a2390b14f47bdce27f8fe5816d5",
+            "content": "sha256:20715addb462bc44fb693c9aedfe978d20f77305d2676685c56bbe2d1c386530",
+            "locator": {
+              "kind": "symbol",
+              "name": "route_index_refresh_tool"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
     "5": {
       "note": "Typed quality execution and public run translation are owned by the controller.\n\nAnchor: `run_memory_quality_request`, `_resolve_execution`",
       "targets": [
         {
           "anchor": {
-            "blob": "5e263354c7f9588ebdc59c15524e7c064e76d4d1",
+            "blob": "0f02f7c4c7584cea4e5e966eff0bd4906b882b5d",
             "content": "sha256:b9c3b6fbb6f4b5ae523ee6888de143b18da1674d8d42ec868401b25daea26060",
             "locator": {
               "kind": "symbol",
@@ -704,7 +844,7 @@
         },
         {
           "anchor": {
-            "blob": "5e263354c7f9588ebdc59c15524e7c064e76d4d1",
+            "blob": "0f02f7c4c7584cea4e5e966eff0bd4906b882b5d",
             "content": "sha256:44671be30cf39c48813ad1a0aabde13337fac138ae37390c2bbf93dc915da8d4",
             "locator": {
               "kind": "symbol",
@@ -721,7 +861,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9eef4f32926a879ed8247e97f14685ba3a469031",
+            "blob": "8cc37ec945797a2390b14f47bdce27f8fe5816d5",
             "content": "sha256:20715addb462bc44fb693c9aedfe978d20f77305d2676685c56bbe2d1c386530",
             "locator": {
               "kind": "symbol",

@@ -122,6 +122,24 @@
         }
       ]
     },
+    "12": {
+      "note": "The prepare test checks the complete publication member list and caller-supplied identities; a second test adds a declaration member and checks that both messages follow it.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a2954294417e6bb9b24a36f5d824b64093280317",
+            "content": "sha256:2bc3efb4a1677042c81f688d43f9ac75459977634218fbaa16462cc8ae37ef89",
+            "locator": {
+              "end": 246,
+              "kind": "line_range",
+              "start": 210
+            },
+            "path": "mcp/tests/test_curator_coherence_publication_discoverability.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
     "2": {
       "note": "**The prepare response composes its summary from the request model's publication declaration, so it states every publication input.**",
       "targets": [

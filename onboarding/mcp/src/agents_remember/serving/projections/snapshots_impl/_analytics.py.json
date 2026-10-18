@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "5cfbd19decdabe5ffc9f3a30e626b7a87d258577",
-        "content": "sha256:ae72dddce3257482fbd3888ac2711c0ac46c9634a19c5f0e03a26be7584db263",
+        "blob": "f8ad48a347daa49891021703a6fc3241f89b3787",
+        "content": "sha256:255bab037e4d8b8bea9149d6594c274e60e2dd3b151a9d55c0e0f6b9b205c013",
         "locator": {
           "kind": "file"
         }
@@ -19,6 +19,22 @@
       "role": "propagation-persistence"
     }
   ],
-  "references": {},
+  "references": {
+    "1": {
+      "note": "Persisted drift, setup/route/tool/ledger readers and ledger enrichment remain without an onboarding verification-age reader. [1]",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f8ad48a347daa49891021703a6fc3241f89b3787",
+            "content": "sha256:255bab037e4d8b8bea9149d6594c274e60e2dd3b151a9d55c0e0f6b9b205c013",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
   "schema": "ar-onboarding-file/v1"
 }

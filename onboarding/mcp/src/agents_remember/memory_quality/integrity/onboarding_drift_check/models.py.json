@@ -3,11 +3,11 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "The producer of every `DriftStatus` member; its three summary builders are typed `-> DriftSummaryPacket`.",
+      "note": "not_checked, run_drift_summary and _run_converted_summary produce shared typed summary packets.",
       "targets": [
         {
           "anchor": {
-            "blob": "b2516e18ff95d4d77de4285a6b610fada5d5f4c5",
+            "blob": "8b518f87cc2e461510ec19693ec31e895b3b9ae8",
             "content": "sha256:8f0c78909c98191b6046d39ddedf7d4eaa25fd71f9dd3a5bf6615fc4ee0eb9e4",
             "locator": {
               "kind": "symbol",
@@ -19,11 +19,11 @@
         },
         {
           "anchor": {
-            "blob": "b2516e18ff95d4d77de4285a6b610fada5d5f4c5",
-            "content": "sha256:d40dea78696f8a990093cafdaa16ab6f1592cac82fe8762035e47ad0236fa3be",
+            "blob": "8b518f87cc2e461510ec19693ec31e895b3b9ae8",
+            "content": "sha256:3e9a916ba90afd210ad99829837375542936074de9cf0f334b1611456150a733",
             "locator": {
               "kind": "symbol",
-              "name": "summarize_rows"
+              "name": "run_drift_summary"
             },
             "path": "mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/summary.py"
           },
@@ -31,12 +31,24 @@
         },
         {
           "anchor": {
-            "blob": "b2516e18ff95d4d77de4285a6b610fada5d5f4c5",
+            "blob": "8b518f87cc2e461510ec19693ec31e895b3b9ae8",
+            "content": "sha256:da4bc7efb0ad4cf8c7d6d7a6013669d4841d237ce37efec5ef2b9371ec55b19f",
+            "locator": {
+              "kind": "symbol",
+              "name": "_run_converted_summary"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/summary.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8b518f87cc2e461510ec19693ec31e895b3b9ae8",
             "content": "sha256:26c1c4f6dfc976407a946dd1c877931ac154aceee412dc06fb07f1f50f8df632",
             "locator": {
-              "end": 34,
+              "end": 39,
               "kind": "line_range",
-              "start": 33
+              "start": 38
             },
             "path": "mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/summary.py"
           },
@@ -66,7 +78,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9ef6a8b057a4d5f2ec9156eab7d47da4c38d37c3",
+            "blob": "93cde78e1cfbadf26596b1da769dfad9109abdd6",
             "content": "sha256:5defc592c4ead496c0d96b2b8a314b6a884ae178e845fb42f98657c6140395ee",
             "locator": {
               "kind": "symbol",
@@ -78,7 +90,7 @@
         },
         {
           "anchor": {
-            "blob": "9ef6a8b057a4d5f2ec9156eab7d47da4c38d37c3",
+            "blob": "93cde78e1cfbadf26596b1da769dfad9109abdd6",
             "content": "sha256:17ddd1488f5007b833cbf58560083764457499bcab9586b9c65dd8c458b54f48",
             "locator": {
               "end": 45,
@@ -91,29 +103,12 @@
         }
       ]
     },
-    "4": {
-      "note": "The quality runner that consumes the packet and reads its status-conditional keys with `.get`.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "1674ddafd122460d559e7f5b2a55090d8a447805",
-            "content": "sha256:f9aaf71a8011891b9997f5c2a1d6b3551d4d51cad441c6a0d3b3c894c14d9862",
-            "locator": {
-              "kind": "symbol",
-              "name": "run_drift_quality_check"
-            },
-            "path": "mcp/src/agents_remember/memory_quality/check.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
     "5": {
       "note": "The packet carries the converted measurement fields alongside the legacy ones.",
       "targets": [
         {
           "anchor": {
-            "blob": "c55af2c8c0b8cd2eaef3ef961fc49505b96b823a",
+            "blob": "d617ae8333cdb55f3cf9bdac4802153afe86655d",
             "content": "sha256:2c37f03052e83372cccb360bdefa6ee9f68c2a6e4a72b6a96404fa76d0c78b52",
             "locator": {
               "kind": "symbol",

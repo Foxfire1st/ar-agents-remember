@@ -6,85 +6,34 @@
 
 ## Purpose
 
-`models.py` holds the shared data records, the drift-summary wire vocabulary, and
-the constants for onboarding drift detection. It is the foundational module of the
-`onboarding_drift_check` package and carries no behavior, so every classifier and
-reporter — and, since 260731-EFA-L4, both wire models — can depend on it without
-import cycles.
+`models.py` holds `DriftSummaryPacket`, `EntityFingerprint`, `InlineBlock`, recognized sidecar types, inline markers/delimiters and the root placeholder. It imports `DriftStatus` from the canonical `models/drift.py` owner and performs no I/O or classification.
 
 ## Code Commentary
 
 ### Logic
 
-Defines the `DriftRow` result record returned by every classifier, cit:([`DriftRow`], mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/models.py:58-69), the
-`EntityFingerprint` row model, cit:([`EntityFingerprint`], mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/models.py:72-77), and the `InlineBlock` parse result,
-cit:([`InlineBlock`], mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/models.py:80-83). Also defines the module constants: `CLASSIFICATIONS`,
-`ACTIONABLE_CLASSIFICATIONS`, the inline markers, `GIT_BLOB_SET_ALGORITHM`,
-`SIDECAR_DOC_TYPES`, cit:([`COMMON_BLOCK_DELIMITERS`], mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/models.py:47-55), and the
-`repo_root_placeholder()` helper: cit:([`repo_root_placeholder`], mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/models.py:86-87).
+`DriftSummaryPacket` requires `status` and marks count/sample/report/error/rows and converted measurement fields `NotRequired`. `summary.not_checked`, `run_drift_summary` and `_run_converted_summary` produce the packets; checked measurement, error and notChecked have different available keys. `reportPath` appears only when filing is requested. Consumers must not invent absent optional counts.
 
-### The drift summary vocabulary (260731-EFA-L4)
-
-The module now also declares, once, what a drift summary *is*:
-
-```python
-DriftStatus = Literal["notChecked", "checked", "error"]   # L14
-
-class DriftSummaryPacket(TypedDict):                      # L17-L25
-    status: DriftStatus
-    count: NotRequired[int]
-    actionableCount: NotRequired[int]
-    reportPath: NotRequired[str]
-    actionableSample: NotRequired[list[dict[str, Any]]]
-    rows: NotRequired[list[dict[str, Any]]]
-    error: NotRequired[str]
-```
-
-`summary.py` produces every member of `DriftStatus`, and **both** wire models now
-read the alias from here rather than each keeping a copy:
-`models/drift.py::DriftSummary.status` (the context-packet model) and
-`models/memory.py::DriftCheckResponse.status` (the tool response). `error` is the
-member the packet model was missing — `run_drift_summary` returns
-`{"status": "error", "error": ...}` whenever the onboarding root does not exist,
-which is precisely when the diagnostic is wanted, so `DriftSummary` used to crash
-on the very call meant to explain the problem. `DriftSummary` gained both the
-status member and a matching `error: str | None = None` field;
-`DriftCheckResponse` had carried both all along and simply stopped keeping a third
-identical copy of the enum.
-
-The `NotRequired` keys are the status-conditional half of the shape: only a
-`checked` status carries `count`/`actionableCount`/`reportPath`/`actionableSample` and may carry
-the internal opt-in complete `rows`,
-and only an `error` status carries `error`. That is why `memory_quality/check.py`
-reads them with `.get` — the guard there establishes the status, but the TypedDict
-cannot carry that narrowing across the branch.
+`DriftStatus` is declared in `models/drift.py` and reused by the packet and tool/context models. `EntityFingerprint` retains entity/algorithm/fingerprint/evidence paths; `InlineBlock` retains raw text and metadata. Legacy verdict rows/classification sets and blob-set hashing constants are absent.
 
 ### Invariants And Boundaries
 
-- Behavior-free: dataclasses, a TypedDict, type aliases and constants only; no
-  I/O, git, or policy.
-- Imported by `git_ops`, `discovery`, `report`, `entities`, `inline`, and
-  `sidecar`; it must not import from them (keeps the package acyclic). The two
-  wire models under `models/` import `DriftStatus` from here, which is the same
-  direction — nothing here imports `models/`.
-- **`DriftStatus` is the one declaration.** A new summary status is added here and
-  both wire models pick it up; never re-type the members beside a `status` field.
-  A member that exists on the producer but not on a consuming model is a
-  `ValidationError` on the diagnostic path, which is how `error` was lost.
-- **Status-conditional keys stay `NotRequired`.** The packet's optional keys are
-  what let one type describe all three statuses; consumers narrow on `status` and
-  read with `.get`.
-- Complete `rows` are internal opt-in report material. Ordinary context/tool callers keep the
-  bounded actionable sample and do not widen their transport payload.
+- Behavior-free: data records, TypedDict and constants only; no I/O, Git or policy.
+- `DriftStatus` is imported from `models/drift.py`; do not add another enum here or create a reverse dependency cycle.
+- Status-conditional keys stay `NotRequired`; consumers narrow on status and read optional keys defensively.
+- Complete rows remain internal opt-in material, not an expanded ordinary transport sample.
 
 ## Evidence
 
 ### Repo-Internal References
 
-- The producer of every `DriftStatus` member; its three summary builders are typed `-> DriftSummaryPacket`. [1]
+- not_checked, run_drift_summary and _run_converted_summary produce shared typed summary packets. [1]
+
 - The context-packet wire model that reads `DriftStatus` and gained the matching `error` field. [2]
+
 - The tool response model that dropped its third copy of the enum for the same alias. [3]
-- The quality runner that consumes the packet and reads its status-conditional keys with `.get`. [4]
+
+
 
 The converted measurement adds its own optional keys to `DriftSummaryPacket`: `basis`, `memoryRoot`,
 `codeRoot`, `sidecarCount`, `states`, `violationCount`, `violationSample`, `reportOnlyCount` and

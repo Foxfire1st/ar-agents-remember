@@ -89,12 +89,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9eef4f32926a879ed8247e97f14685ba3a469031",
+            "blob": "8cc37ec945797a2390b14f47bdce27f8fe5816d5",
             "content": "sha256:e07c88ae05c8a689fa70c027d0e146b9b069b245e945fc5195b544ad73dbe235",
             "locator": {
-              "end": 631,
+              "end": 534,
               "kind": "line_range",
-              "start": 563
+              "start": 466
             },
             "path": "mcp/src/agents_remember/application/memory_tools.py"
           },
@@ -102,12 +102,12 @@
         },
         {
           "anchor": {
-            "blob": "9eef4f32926a879ed8247e97f14685ba3a469031",
+            "blob": "8cc37ec945797a2390b14f47bdce27f8fe5816d5",
             "content": "sha256:5341d23a5b03cdaf667bbe234478e3c94a2691baa313b75ef28be5ff47e59ab9",
             "locator": {
-              "end": 677,
+              "end": 580,
               "kind": "line_range",
-              "start": 662
+              "start": 565
             },
             "path": "mcp/src/agents_remember/application/memory_tools.py"
           },
@@ -120,63 +120,14 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9eef4f32926a879ed8247e97f14685ba3a469031",
+            "blob": "8cc37ec945797a2390b14f47bdce27f8fe5816d5",
             "content": "sha256:f3a2d7cb0f2350a087df56ee847ea235331e3f4bf708dd240131a2cc4c3d6e63",
             "locator": {
-              "end": 749,
+              "end": 618,
               "kind": "line_range",
-              "start": 714
+              "start": 583
             },
             "path": "mcp/src/agents_remember/application/memory_tools.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "15": {
-      "note": "Declined projections return before staging; only accepted or published batches are accounted.\n\nAnchor: _decide / _projection / _publish",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "941d66fefe8b89ac48af25f6d58d4c27fea45502",
-            "content": "sha256:777b4e3ead8ad4965979b277eee103459252d5987cc2177402a72e91b29f3fc1",
-            "locator": {
-              "end": 499,
-              "kind": "line_range",
-              "start": 411
-            },
-            "path": "mcp/src/agents_remember/memory_quality/style/citations/fixer.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "16": {
-      "note": "Citation publication rechecks exact document bytes and frozen snapshot, with an explicit post-check writer limit.\n\nAnchor: DocumentTransaction.unchanged / publish",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "d2f4d2fd535e837eb9efc0da8622f100aa372f85",
-            "content": "sha256:d31ba6020c8f66030dfaeb5c2d43693a8886f960811e3d400372f232018d2543",
-            "locator": {
-              "end": 5,
-              "kind": "line_range",
-              "start": 1
-            },
-            "path": "mcp/src/agents_remember/memory_quality/style/citations/documents/transaction.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "d2f4d2fd535e837eb9efc0da8622f100aa372f85",
-            "content": "sha256:2121f610b809470a9ee0dde63f8efbc5c6e6331e176cf102153fe0dd3e5be217",
-            "locator": {
-              "end": 87,
-              "kind": "line_range",
-              "start": 54
-            },
-            "path": "mcp/src/agents_remember/memory_quality/style/citations/documents/transaction.py"
           },
           "kind": "code"
         }
@@ -350,12 +301,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f6650bb7d450287cab6ad239d276c815ea69ba0a",
+            "blob": "b2f9f1624c63b2e7e58d9486c5d024f84fd7903e",
             "content": "sha256:c13fc237ec5ddfa4febde6dbaaa3272c645fb83c2821f05e978ddb99305191c6",
             "locator": {
-              "end": 192,
+              "end": 190,
               "kind": "line_range",
-              "start": 132
+              "start": 130
             },
             "path": "mcp/src/agents_remember/worktrees/modules/quality/gate.py"
           },
@@ -392,6 +343,73 @@
               "kind": "file"
             },
             "path": "mcp/src/agents_remember/models/tools/public_roster.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "26": {
+      "note": "Requested certification is explicitly selected repository-profile work through Dagger and commits nothing. The profile and loader are still authority for that requested Gates 1–4 work; a selection named `closeout` is not an automatic closeout invocation. Ordinary closeout runs no gate but the invariant gate, retains exact candidate/approval/lineage checks and code-then-memory Git publication, and does not run certification, code-quality checks, test suites or independent review. A missing profile or certification result does not block that transaction. This does not remove canonical Curator/Reviewer duties or confer independent semantic acceptance on diagnostics.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0bd46a6055621f90d076e2e705686262fbc00fd3",
+            "content": "sha256:586750be188df447b4edb84a4cadd2919c6b8d639cdbe8fe6f58a01be0b76045",
+            "locator": {
+              "kind": "symbol",
+              "name": "_publish_closeout_candidate"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/closeout.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0bd46a6055621f90d076e2e705686262fbc00fd3",
+            "content": "sha256:4af59765f940af1a42be4a8141c0700127633ca8a23a8bbd6453e39df90b4b91",
+            "locator": {
+              "kind": "symbol",
+              "name": "_closeout_commit_phase"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/closeout.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9cfb3331ff9fa3f591e098da8dbf93635dd481b9",
+            "content": "sha256:d74fc2b14e7948998b1aaaea59cb7cb4c2d67731eee72bafdab33e7f9381ff29",
+            "locator": {
+              "kind": "symbol",
+              "name": "_commit_memory_content"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/closeout_external.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "cb387e06b709a3883efb52c666e10e12dc7f0e0d",
+            "content": "sha256:0554ac02600d7d6977d55444c59f1b02169a2af7d4a1f38bccbc77312bcf8416",
+            "locator": {
+              "end": 15,
+              "kind": "line_range",
+              "start": 3
+            },
+            "path": "docs/reference/repository-certification-profile.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d9ec580a1e6651cc06aac93418814c4a96bbf84d",
+            "content": "sha256:c18516aed2d5fd457d50e0f2b16a1bcf31d079458182806cb73b25853a50c2df",
+            "locator": {
+              "end": 119,
+              "kind": "line_range",
+              "start": 96
+            },
+            "path": "docs/reference/worktrees-c09.md"
           },
           "kind": "code"
         }

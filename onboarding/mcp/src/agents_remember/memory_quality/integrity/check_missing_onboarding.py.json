@@ -3,25 +3,36 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "Drift helpers provide sidecar path construction and inline block parsing.\n\nAnchor: \"def classify_source\"",
+      "note": "Inline extraction is imported directly from inline.py; mirrored onboarding path construction is kernel-owned.",
       "targets": [
         {
           "anchor": {
-            "blob": "38e6399c1c35ec03341b7da785998df27ee08170",
-            "content": "sha256:f0cd97924c5ddf8cfb7c9fbc5191e86f4bbe7890486b78e7825e656c90cd6bc4",
+            "blob": "0002cbc46799571b7fdb4c6f19e7549ee83e6024",
+            "content": "sha256:e540107f06ceee0f7b8620a1275d1358bb30f47ed42af7ec3332571df383bee5",
             "locator": {
-              "end": 163,
-              "kind": "line_range",
-              "start": 163
+              "kind": "symbol",
+              "name": "extract_inline_onboarding_block"
             },
-            "path": "mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/drift.py"
+            "path": "mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/inline.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7abd6ad79f05d4928c2eb63e7beea399853a5e59",
+            "content": "sha256:8f09e6eb513ec1e3b96652de09519b0d96ef811cbc36202bf17ca56fc631bb35",
+            "locator": {
+              "kind": "symbol",
+              "name": "mirror_onboarding_path"
+            },
+            "path": "mcp/src/agents_remember/kernel/coordination_context/paths.py"
           },
           "kind": "code"
         }
       ]
     },
     "2": {
-      "note": "Resolver helpers provide storage/path-rule decisions.\n\nAnchor: \"def resolve_coordination_context\"",
+      "note": "Resolver helpers provide storage/path-rule decisions.",
       "targets": [
         {
           "anchor": {
@@ -43,7 +54,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "173c634c2a673a71154a2bb8704a9b0b9929d40b",
+            "blob": "2ad9297aa031e0aaa3931e246d19a8a360a25bd6",
             "content": "sha256:a913d9dc81d27cff5f47e651ed413e4af66e6f47f2043133b9864bf62282a5da",
             "locator": {
               "kind": "symbol",
@@ -55,7 +66,7 @@
       ]
     },
     "4": {
-      "note": "The kernel filesystem helper handles long-path sidecar and source probes.\n\nAnchor: \"def absolute_path\"",
+      "note": "The kernel filesystem helper handles long-path sidecar and source probes.",
       "targets": [
         {
           "anchor": {
@@ -77,7 +88,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "cd35c66bb9c9d8af0f23fd2579f5e610cf4ee8da",
+            "blob": "a45917c8d5fcfe2e6ebc3d0d483a03273f42c2ca",
             "content": "sha256:60788cf6b3cf57e313ccacab456fb49fd9601a1930fa8f8de28c01088b22a2af",
             "locator": {
               "kind": "symbol",
@@ -89,12 +100,12 @@
         },
         {
           "anchor": {
-            "blob": "cd35c66bb9c9d8af0f23fd2579f5e610cf4ee8da",
+            "blob": "a45917c8d5fcfe2e6ebc3d0d483a03273f42c2ca",
             "content": "sha256:25f3731d7eb981c6583df927b9c4a1742b18ec9e96ed7271aff4ce079be6026e",
             "locator": {
-              "end": 230,
+              "end": 212,
               "kind": "line_range",
-              "start": 166
+              "start": 148
             },
             "path": "mcp/src/agents_remember/kernel/git_command.py"
           },

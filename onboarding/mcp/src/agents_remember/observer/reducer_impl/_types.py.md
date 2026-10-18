@@ -6,7 +6,7 @@
 
 ## Purpose
 
-Input bundles shared by the reducer's assembly and its split builders. ``WorkspaceStructure`` is the slice-3a pre-image (enclosures + providers + admitted worktree groups); ``AnalyticalInputs`` is the slice-3b pre-image the analytical surfaces are built from. Both are the design's own two slices, so they live together and are re-exported by :mod:`agents_remember.observer.reducer`.
+Input bundles shared by the reducer's assembly and its split builders. ``WorkspaceStructure`` is the slice-3a pre-image (enclosures + providers + admitted worktree groups); ``AnalyticalInputs`` is the slice-3b pre-image the analytical surfaces are built from. Both remain the design’s own two slices and are re-exported by `agents_remember.observer.reducer`. Both dataclasses are frozen; `WorkspaceStructure` requires enclosures/providers and defaults active groups, while `AnalyticalInputs` supplies default-empty feeds. `AnalyticalInputs` includes `closeout_queues`; verification-age `sidecar_staleness` and `stalest_limit` are removed.
 
 ## Code Commentary
 
@@ -21,10 +21,12 @@ The frozen bundles retain enclosures/providers/admitted groups separately from a
 
 ## Evidence
 
-- Frozen structural and analytical bundles retain their separate owners without removed gate/pickup/expectation inputs. [1]
+- Frozen structural and analytical bundles retain their separate owners without removed gate/pickup/expectation or verification-age inputs. [1]
+- Frozen structural and analytical bundles retain their separate owners without removed gate/pickup/expectation or verification-age inputs. [2]
+
+
+
 
 
 
 ### Repo-Internal References
-
-The module's own top-level surface is listed in Code Commentary; no cross-file citation rows are needed for this split module.

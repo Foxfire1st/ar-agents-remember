@@ -3,15 +3,59 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "Seven exact tests preserve the former cohort's unique product assertions.\n\nAnchor: gate/role coercion tests; route-normalization tests",
+      "note": "Five retained provider-ID and gate/decision-role guards remain; the two retired route-normalization cases are not replaced by whole-file assertions.",
       "targets": [
         {
           "anchor": {
-            "blob": "2c59bd04cef02b69b3eff7b62fadbb30cbaff40d",
+            "blob": "36b5a27b4443cd7016aa56e8942fe67cb1928447",
             "content": "sha256:29b908da53eca7e2ac2d842ea5e59209afdb10ef86a893b94693552df35aa84d",
             "locator": {
               "kind": "symbol",
               "name": "test_stable_provider_id_never_returns_empty"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "36b5a27b4443cd7016aa56e8942fe67cb1928447",
+            "content": "sha256:34ee8c3ea43e0eecd045b4b682c4a2ad65bdeb2e794efe6d7068ae71f5fe5745",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_known_gate_kind_passes_through"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "36b5a27b4443cd7016aa56e8942fe67cb1928447",
+            "content": "sha256:af8379c506e5b29bbf16d5c38d4f0b728cbfed9a938f1c334002a1f72160c919",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_unknown_gate_kind_is_refused"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "36b5a27b4443cd7016aa56e8942fe67cb1928447",
+            "content": "sha256:8715bd56e23c7e6321f919c490d007378860db0d7cdac396b800538ed12ddaf9",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_known_decision_role_passes_through"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "36b5a27b4443cd7016aa56e8942fe67cb1928447",
+            "content": "sha256:b5f1a47c85e91dca479e78ec08dc359c623e4bed16366d98a662d4e51acdc0d0",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_unknown_decision_role_is_refused_by_name"
             }
           },
           "kind": "test"
@@ -23,12 +67,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "512be564b35aaf6f9d3b9709113b613309efe221",
+            "blob": "73edfd50a6762caceba54e287a867f9b73b816e8",
             "content": "sha256:cad8724903fb4b53cc5f31ed61dd6ff3592baeecfde98c48e196704bd5a14898",
             "locator": {
-              "end": 103,
+              "end": 115,
               "kind": "line_range",
-              "start": 103
+              "start": 115
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },

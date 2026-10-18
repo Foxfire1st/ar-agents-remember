@@ -2,30 +2,25 @@
   "path": "skills/c-11-memory-carryover-from-branch/SKILL.md",
   "realizes": [],
   "references": {
-    "1": {
-      "note": "The skill describes source-branch-to-official reconciliation, MCP command shape, candidate kinds, evidence tiers, output states and recovery-leaf boundaries; its apply guidance remains subject to the converted-format refusal.\n\nAnchor: `# c-11-memory-carryover-from-branch Memory Carryover From Branch`",
+    "10": {
+      "note": "Configured exact-leaf authority precedes worktree-only apply.\n\nAnchor: `_require_carryover_authority`, `_apply_carryover_for_request`",
       "targets": [
         {
           "anchor": {
-            "blob": "224540623ac85fd7c013c5b27978136e64d49536",
-            "content": "sha256:57d8f37c121f49c391d64464b164c1cb29cbcb38a042dab5618413d7e978abce",
+            "blob": "0f2012e3d1b6cfcf742adc9b3bf25460b4073950",
+            "content": "sha256:047d65803de69b070b49ef1793c2c009a5250a1480b912c88941b3d97f539b4b",
             "locator": {
-              "end": 77,
-              "kind": "line_range",
-              "start": 6
-            }
+              "kind": "symbol",
+              "name": "_require_carryover_authority"
+            },
+            "path": "mcp/src/agents_remember/memory/carryover.py"
           },
           "kind": "code"
-        }
-      ]
-    },
-    "2": {
-      "note": "The package defines build_plan_for_request and the configured leaf-bound _apply_carryover_for_request owner; the latter checks authority and format before legacy copy/metadata/commit processing.",
-      "targets": [
+        },
         {
           "anchor": {
-            "blob": "1f4797dc78a4b4079de6cca8a4ea066f27bbe722",
-            "content": "sha256:dfa99ee31e7f92c07f24ca8f4f893677f6139263e11b2ee9582de4b17888aeaa",
+            "blob": "0f2012e3d1b6cfcf742adc9b3bf25460b4073950",
+            "content": "sha256:995e469cb000e69d917212ec9c2ff7a67b96b37a66646ee8aa825c9a2188a674",
             "locator": {
               "kind": "symbol",
               "name": "_apply_carryover_for_request"
@@ -36,87 +31,49 @@
         }
       ]
     },
-    "3": {
-      "note": "Planning resolves selected refs and reports per-candidate decisions and counts rather than performing Git integration.",
+    "11": {
+      "note": "Exact-result validation and owned restoration remain with the converted apply owner.",
       "targets": [
         {
           "anchor": {
-            "blob": "1f4797dc78a4b4079de6cca8a4ea066f27bbe722",
-            "content": "sha256:dbb171b64e93bd92eb353a3e12447ec1d3ec2e1cc93aa3478561f64fed68b934",
+            "blob": "9686c82c42aa92ccb30902e632de9bc6f3dfc207",
+            "content": "sha256:19cfdc182aaa3507362169f9d2b1166cbe09295f05bb1e7ede20664e0e966194",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/memory/carryover_apply.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "Current skill separates converted selection/apply from curator judgments and ordinary publication.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b95d5b8926df7df4d5d7c8948473557143893afc",
+            "content": "sha256:ba11b82fb62c3d005d0e96cd3ed59b750f399870923dabe6871bec7f4ce7465a",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "Planning selects paired units and official-code evidence without publishing.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0f2012e3d1b6cfcf742adc9b3bf25460b4073950",
+            "content": "sha256:68acefba2d87996c8406ad10991412bec9b768d6e57c36a509db586c64789579",
             "locator": {
               "kind": "symbol",
               "name": "build_plan_for_request"
             },
             "path": "mcp/src/agents_remember/memory/carryover.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "4": {
-      "note": "Apply is confined to the configured exact external open ordinary leaf with clean code base and HEAD at the selected official tip.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "1f4797dc78a4b4079de6cca8a4ea066f27bbe722",
-            "content": "sha256:047d65803de69b070b49ef1793c2c009a5250a1480b912c88941b3d97f539b4b",
-            "locator": {
-              "kind": "symbol",
-              "name": "_require_carryover_authority"
-            },
-            "path": "mcp/src/agents_remember/memory/carryover.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "5": {
-      "note": "Converted targets refuse apply before legacy copying; unconverted targets are checked by the central cutover lock.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "1f4797dc78a4b4079de6cca8a4ea066f27bbe722",
-            "content": "sha256:a4f3e4affe886c339b5e8fead2992be5d9e7cef38af39a3443b83feaa34ca22f",
-            "locator": {
-              "kind": "symbol",
-              "name": "_require_legacy_format_target"
-            },
-            "path": "mcp/src/agents_remember/memory/carryover.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "6": {
-      "note": "Converted-card doctrine forbids memory_carryover_apply because it writes legacy format.\n\nAnchor: `## Never on converted memory`",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "e071ead508fb6ee46a9f883dc3a5bf12260ebd28",
-            "content": "sha256:c9a1af82d877a8223f23b4b97336284a5d93454493fa1ed768042b208e68651b",
-            "locator": {
-              "end": 183,
-              "kind": "line_range",
-              "start": 175
-            },
-            "path": "skills/c-05-create-or-update-onboarding-files/workflows/converted-card-workflow.md"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "7": {
-      "note": "Current output guidance derives the ignored target cache, avoids synthetic mapping-only commits and forbids force-moving main or integration refs.\n\nAnchor: `## Output States`",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "224540623ac85fd7c013c5b27978136e64d49536",
-            "content": "sha256:3f428e4907a4ce46ccb76b07ce25b55287847750c936297fdc0cb26771e5066b",
-            "locator": {
-              "end": 67,
-              "kind": "line_range",
-              "start": 53
-            }
           },
           "kind": "code"
         }

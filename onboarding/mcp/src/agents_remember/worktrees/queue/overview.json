@@ -310,12 +310,12 @@
         },
         {
           "anchor": {
-            "blob": "10081759c2352c391ba3ab5713f24de7f02d16c6",
+            "blob": "a61bb8710773ccee56c8016d87b57de1d750388c",
             "content": "sha256:7e096998b9aa6648eb1863bb59a9729779e15d19c63b1f8fb70db7ee4e18686f",
             "locator": {
-              "end": 340,
+              "end": 346,
               "kind": "line_range",
-              "start": 223
+              "start": 229
             },
             "path": "mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence.py"
           },
@@ -323,12 +323,12 @@
         },
         {
           "anchor": {
-            "blob": "10081759c2352c391ba3ab5713f24de7f02d16c6",
+            "blob": "a61bb8710773ccee56c8016d87b57de1d750388c",
             "content": "sha256:07570f44cdca5c621a00386f4add3a1f40941941e40d47002b103931e5d17420",
             "locator": {
-              "end": 472,
+              "end": 504,
               "kind": "line_range",
-              "start": 471
+              "start": 503
             },
             "path": "mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence.py"
           },
@@ -350,7 +350,7 @@
       ]
     },
     "6": {
-      "note": "Preview, recovery, staged preparation, ordinary memory enforcement, and integration publication are separate from scheduling authority.\n\nAnchor: mcp/src/agents_remember/worktrees/queue/closeout_preview.py; mcp/src/agents_remember/worktrees/queue/closeout_recovery.py; mcp/src/agents_remember/worktrees/queue/closeout_staged_quality.py; mcp/src/agents_remember/worktrees/modules/closeout_external.py; mcp/src/agents_remember/worktrees/integration/integration_ref_transaction.py",
+      "note": "Preview, exact Git-output recovery, cache handling, explicitly selected staged quality, ordinary invariant-gated memory publication and protected-ref integration have separate owners; disposable scheduling projection grants none of their publication or certification authority.",
       "targets": [
         {
           "anchor": {
@@ -381,11 +381,11 @@
         {
           "anchor": {
             "blob": "7a62e25249db9a1da4bcc623e29b4af7faaf91e9",
-            "content": "sha256:9207c439a5603b484c76e7dd7c2a10d381f826644535819994992a07d6358fed",
+            "content": "sha256:96ae9335ae286992d4ea73970d01135bd2b0adb2a33343b86ab34c5bd3129125",
             "locator": {
-              "end": 117,
+              "end": 133,
               "kind": "line_range",
-              "start": 88
+              "start": 87
             },
             "path": "mcp/src/agents_remember/kernel/memory_cache.py"
           },
@@ -406,23 +406,10 @@
         },
         {
           "anchor": {
-            "blob": "89043a5e28ba717250523696bba193d211591458",
-            "content": "sha256:5b36dfb004acac4196b5eab8e54f5dd28600c6b64ee8a1fc7346a04e2533ca97",
+            "blob": "9cfb3331ff9fa3f591e098da8dbf93635dd481b9",
+            "content": "sha256:ed5c156b596e3fc22f63b820167b53a26bcdc91d1480a687c5ac8bee6e61bb08",
             "locator": {
-              "end": 165,
-              "kind": "line_range",
-              "start": 86
-            },
-            "path": "mcp/src/agents_remember/worktrees/integration/closeout/certification/admission.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "1a31dae5cb0e746d7093a7225a558928989e3519",
-            "content": "sha256:81cd498eab849772b6ccd45b9a9d267566460fe250742b4a9f0c953aef0f3726",
-            "locator": {
-              "end": 112,
+              "end": 114,
               "kind": "line_range",
               "start": 66
             },
@@ -432,12 +419,12 @@
         },
         {
           "anchor": {
-            "blob": "1a31dae5cb0e746d7093a7225a558928989e3519",
-            "content": "sha256:71a8d70ca8ff3bf329ea1c02990e7b5767f559de99c6f906ff5211b8c8396693",
+            "blob": "9cfb3331ff9fa3f591e098da8dbf93635dd481b9",
+            "content": "sha256:79fec98037c3509a80d22b24330369c983220e3f50ff48aac5289491f5fc9257",
             "locator": {
-              "end": 252,
+              "end": 543,
               "kind": "line_range",
-              "start": 137
+              "start": 408
             },
             "path": "mcp/src/agents_remember/worktrees/modules/closeout_external.py"
           },
@@ -445,25 +432,12 @@
         },
         {
           "anchor": {
-            "blob": "1a31dae5cb0e746d7093a7225a558928989e3519",
-            "content": "sha256:7fd77a77c93504e12a8e7eca418cc7156786585ce856fc82d896167dfbe1536d",
+            "blob": "d49c1f82a6632b5bbfe78e59b21d3fbae9c990cb",
+            "content": "sha256:d598410e66af9aedd23c536212dd6b693addd6ad9fed2b1677e4647611259681",
             "locator": {
-              "end": 365,
+              "end": 979,
               "kind": "line_range",
-              "start": 309
-            },
-            "path": "mcp/src/agents_remember/worktrees/modules/closeout_external.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "f10f508c9cbeadef7f1983c4e81f8ecfe9410256",
-            "content": "sha256:8298de4a73fd40a6a556a5c21594ec758c1a0141d1948fd63917b5e807bdedc7",
-            "locator": {
-              "end": 857,
-              "kind": "line_range",
-              "start": 821
+              "start": 900
             },
             "path": "mcp/src/agents_remember/worktrees/modules/git.py"
           },
@@ -471,14 +445,27 @@
         },
         {
           "anchor": {
-            "blob": "1eae755ed66c1ea3e4359823c50bc121bebca0e0",
-            "content": "sha256:4a547f732f77d6872276c118fdacad72ef348c78127bcb9822fe8aadaa78cab7",
+            "blob": "13a3397260777a0db5b7bf2d2854037b42f8f18b",
+            "content": "sha256:41bc720564f4888e101505eeec74aed3bbe6ccde9c5526f8e1868d034bdbad0c",
             "locator": {
-              "end": 225,
+              "end": 237,
               "kind": "line_range",
-              "start": 103
+              "start": 104
             },
             "path": "mcp/src/agents_remember/worktrees/integration/integration_ref_transaction.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c62c700c4a20f4dd0b17d1dd95a68c03136291af",
+            "content": "sha256:57b0c55c056e57a5a3b837cb4124732b561e6a5083a6ac698c80893dab6550fa",
+            "locator": {
+              "end": 235,
+              "kind": "line_range",
+              "start": 192
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/quality/certification_records.py"
           },
           "kind": "code"
         }

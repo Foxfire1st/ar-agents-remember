@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "5b856c0c9cf903a1e17c83a7076d61d5590b1cc2",
+        "blob": "ce95cb1c27085184f05986a47b3ea85eb580933d",
         "content": "sha256:d9c4a9681dbcb6bfd24515000e4c6c1c01e7bf4be914e6bc90a6caf80eab6cc4",
         "locator": {
           "kind": "symbol",
@@ -21,7 +21,7 @@
     },
     {
       "anchor": {
-        "blob": "5b856c0c9cf903a1e17c83a7076d61d5590b1cc2",
+        "blob": "ce95cb1c27085184f05986a47b3ea85eb580933d",
         "content": "sha256:537b38f3884456932f7aae28f4b53e20bd0ecb8c42f9665105854221363a6ac5",
         "locator": {
           "kind": "symbol",
@@ -39,7 +39,7 @@
     },
     {
       "anchor": {
-        "blob": "5b856c0c9cf903a1e17c83a7076d61d5590b1cc2",
+        "blob": "ce95cb1c27085184f05986a47b3ea85eb580933d",
         "content": "sha256:537b38f3884456932f7aae28f4b53e20bd0ecb8c42f9665105854221363a6ac5",
         "locator": {
           "kind": "symbol",
@@ -57,25 +57,7 @@
     },
     {
       "anchor": {
-        "blob": "5b856c0c9cf903a1e17c83a7076d61d5590b1cc2",
-        "content": "sha256:c68c63219a08e6fcf35dbf5e2dba945403fd20d5a89cd17f33f81dc6bd288357",
-        "locator": {
-          "kind": "symbol",
-          "name": "validate_onboarding_traces_for_context"
-        }
-      },
-      "id": "RLZ-87YPXM",
-      "invariant": "INV-0APWSR",
-      "origin": {
-        "handoffEntry": "R177-C1",
-        "leaf": "260928-MIK-L175"
-      },
-      "rationale": "The closeout validator; the same call and the same groups, then the refusal over every open item.",
-      "role": "primary-authority"
-    },
-    {
-      "anchor": {
-        "blob": "5b856c0c9cf903a1e17c83a7076d61d5590b1cc2",
+        "blob": "ce95cb1c27085184f05986a47b3ea85eb580933d",
         "content": "sha256:f433c3c68677873c10e71d1164bd9fe87b5f8e54f93857c1c3288179bcecd59f",
         "locator": {
           "kind": "symbol",
@@ -88,73 +70,55 @@
         "handoffEntry": "R177-C1",
         "leaf": "260928-MIK-L175"
       },
-      "rationale": "The one input value object both entries read: candidate blobs, the run's identicalChanges (no default) and the working paths.",
+      "rationale": "The input value supplied to the single surviving onboarding trace gate carries candidate code blobs, the run's identicalChanges and working paths. The controller constructs it for that gate; closeout reads the existing memory-quality attestation and verifies exact candidate dependencies instead of parsing traces through a second entry.",
       "role": "enforcement"
     },
     {
       "anchor": {
-        "blob": "5b856c0c9cf903a1e17c83a7076d61d5590b1cc2",
-        "content": "sha256:c68c63219a08e6fcf35dbf5e2dba945403fd20d5a89cd17f33f81dc6bd288357",
+        "blob": "ce95cb1c27085184f05986a47b3ea85eb580933d",
+        "content": "sha256:d9c4a9681dbcb6bfd24515000e4c6c1c01e7bf4be914e6bc90a6caf80eab6cc4",
         "locator": {
           "kind": "symbol",
-          "name": "validate_onboarding_traces_for_context"
+          "name": "identical_changes_from_run"
         }
       },
-      "id": "RLZ-XV2CN7",
-      "invariant": "INV-HGJNDG",
+      "id": "RLZ-SJMZXM",
+      "invariant": "INV-2FA2B5",
       "origin": {
-        "handoffEntry": "R177-C2",
-        "leaf": "260928-MIK-L175"
+        "handoffEntry": "L56-INV-2FA2B5-rev2",
+        "leaf": "260928-MIK-L56"
       },
-      "rationale": "Same construction and the same one-source item for the closeout validator.",
-      "role": "primary-authority"
+      "rationale": "The strict reader is where the refusal happens: every malformed shape raises the named error instead of yielding a shorter item list, so the one surviving gate cannot judge by accident.",
+      "role": "enforcement"
     }
   ],
   "references": {
     "1": {
-      "note": "A tree holding the layout marker is converted.",
+      "note": "Converted-tree classification remains layout-marker based at the retained knowledge-gate owner; the local converted_onboarding wrapper was removed.",
       "targets": [
         {
           "anchor": {
-            "blob": "5b856c0c9cf903a1e17c83a7076d61d5590b1cc2",
-            "content": "sha256:1763e7e061c56e369c104bd182cf861a2335a113caa641248d911903f343fe0c",
+            "blob": "a34667e628dd1e5f7e0c8ad103c5d35edde4b115",
+            "content": "sha256:24721572f575894b915f5f8db78f5871a6688aae3dcadad1969af45942dc481b",
             "locator": {
-              "kind": "symbol",
-              "name": "converted_onboarding"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "10": {
-      "note": "`_changed_memory_paths` combines dirty and committed-since-verified paths from that baseline.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "5b856c0c9cf903a1e17c83a7076d61d5590b1cc2",
-            "content": "sha256:8011c3748a618fb96168b0fa1eb61645da86cbc3345d0097d591b0ff2e52b1b6",
-            "locator": {
-              "kind": "symbol",
-              "name": "_changed_memory_paths"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "11": {
-      "note": "Drift checking verifies the same sidecar and entity fingerprint metadata maintained here. (`classify_entity_fingerprint`; `classify_sidecar_onboarding_units`)",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "9adc256a128d606ec110e5ff8c622ec9420d3899",
-            "content": "sha256:5c4f820d19f18aae50a089b0bf9477496df130a1c55231d57689d3d9fadb43c8",
-            "locator": {
-              "kind": "symbol",
-              "name": "classify_entity_fingerprint"
+              "end": 123,
+              "kind": "line_range",
+              "start": 117
             },
-            "path": "mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/entities.py"
+            "path": "mcp/src/agents_remember/worktrees/knowledge_gate.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a34667e628dd1e5f7e0c8ad103c5d35edde4b115",
+            "content": "sha256:951d2181c4099c667ab96430207c3c06381717c64557b7497b36e6c4e6c96c84",
+            "locator": {
+              "end": 188,
+              "kind": "line_range",
+              "start": 174
+            },
+            "path": "mcp/src/agents_remember/worktrees/knowledge_gate.py"
           },
           "kind": "code"
         }
@@ -178,70 +142,69 @@
       ]
     },
     "13": {
-      "note": "Current source delta inspected statically: Document required blobs and current-row doctrine; retain useful legacy-helper/history prose, not ordinary unconverted permission.",
+      "note": "The surviving curator trace entry requires candidate code blobs and current eligible answers; missing converted sides are incomplete.",
       "targets": [
         {
           "anchor": {
-            "blob": "3d1ec99567502c102e54707aba3a3d8e169af0d5",
-            "content": "sha256:c99ef7fe7c8b22331150668246d78e257f98209035e8a92020c7eefee33024c4",
+            "blob": "ce95cb1c27085184f05986a47b3ea85eb580933d",
+            "content": "sha256:537b38f3884456932f7aae28f4b53e20bd0ecb8c42f9665105854221363a6ac5",
             "locator": {
-              "end": 985,
-              "kind": "line_range",
-              "start": 983
+              "kind": "symbol",
+              "name": "onboarding_trace_gate_for_context"
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "3d1ec99567502c102e54707aba3a3d8e169af0d5",
-            "content": "sha256:b63b1ded8d5d46a05d0f4c9f2e9ea68a5c1f3f1aea4bf84724db229837a2dbfc",
-            "locator": {
-              "end": 1014,
-              "kind": "line_range",
-              "start": 1008
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "a6ae7d18931f91de5fcc3383a5a141ac40859c74",
-            "content": "sha256:cf0ed1cf1c309bef6586bde8f6d78f76be3a103ca2c31c9e409ebfd6370613c0",
-            "locator": {
-              "end": 210,
-              "kind": "line_range",
-              "start": 209
-            },
-            "path": "mcp/src/agents_remember/worktrees/cutover_lock.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "e883bd37ccb740eeb9d913a85c9fe6d886b0fcaf",
+            "blob": "6944ef8516d87c818c0b0176d3c2ce959c2f9fca",
             "content": "sha256:20152df7ce4245153a0799242867d9f63e8d19e1406ec6edbc7b7c13a4b8025b",
             "locator": {
-              "end": 382,
+              "end": 423,
               "kind": "line_range",
-              "start": 380
+              "start": 421
             },
             "path": "mcp/src/agents_remember/application/knowledge_gate/predicates.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4c7e45a4112f26b6977cdbb4c826bd75817f44c1",
+            "content": "sha256:349c41dad2b6b9ff3a88169d701dd67cce2c41d742cb515776d176bbe1fda1b6",
+            "locator": {
+              "end": 315,
+              "kind": "line_range",
+              "start": 287
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0f02f7c4c7584cea4e5e966eff0bd4906b882b5d",
+            "content": "sha256:6ead679e951a61ef0472da274f0489435e380fc0471bdd01093ed97b71e515fd",
+            "locator": {
+              "end": 944,
+              "kind": "line_range",
+              "start": 893
+            },
+            "path": "mcp/src/agents_remember/application/memory_quality/controller.py"
           },
           "kind": "code"
         }
       ]
     },
-    "2": {
-      "note": "No route-overview stamps on a converted tree.\n\nAnchor: \"a converted overview carries no verification metadata\"",
+    "14": {
+      "note": "The gate reads a run's identical-copy groups through one strict reader: a malformed group or one that omits its representative raises rather than shortening into a single-source item.",
       "targets": [
         {
           "anchor": {
-            "blob": "5b856c0c9cf903a1e17c83a7076d61d5590b1cc2",
-            "content": "sha256:0c1f25a1d1d827c0d1016fe1a94fe79d53fac0f6727fc5e9083af3abbe258d3f",
+            "blob": "ce95cb1c27085184f05986a47b3ea85eb580933d",
+            "content": "sha256:d9c4a9681dbcb6bfd24515000e4c6c1c01e7bf4be914e6bc90a6caf80eab6cc4",
             "locator": {
               "kind": "symbol",
-              "name": "refresh_route_overview_metadata_for_context"
+              "name": "identical_changes_from_run"
             }
           },
           "kind": "code"
@@ -249,11 +212,11 @@
       ]
     },
     "3": {
-      "note": "Today's missing-onboarding refusal, shared by both gates.",
+      "note": "The helper raises for missing/unsupported cards; the trace wrapper catches that RuntimeError and prepends the finding while retaining trace findings.",
       "targets": [
         {
           "anchor": {
-            "blob": "5b856c0c9cf903a1e17c83a7076d61d5590b1cc2",
+            "blob": "ce95cb1c27085184f05986a47b3ea85eb580933d",
             "content": "sha256:06fc863fe4decebb91d1de5aa02faf3a57bd90ba97b65f559fbb9a97289b78ce",
             "locator": {
               "kind": "symbol",
@@ -261,16 +224,11 @@
             }
           },
           "kind": "code"
-        }
-      ]
-    },
-    "4": {
-      "note": "The memory-quality entry point, which never raises.",
-      "targets": [
+        },
         {
           "anchor": {
-            "blob": "92153a583a3f119a02cba25ddf722a99e3b54c8f",
-            "content": "sha256:9e3b7e95c6f5fd60bad9d7fc3c95f7df0d107863837cbc90fee565eea6cda89c",
+            "blob": "4c7e45a4112f26b6977cdbb4c826bd75817f44c1",
+            "content": "sha256:349c41dad2b6b9ff3a88169d701dd67cce2c41d742cb515776d176bbe1fda1b6",
             "locator": {
               "kind": "symbol",
               "name": "onboarding_trace_gate_for_context"
@@ -280,32 +238,16 @@
         }
       ]
     },
-    "5": {
-      "note": "The closeout entry point, which refuses naming every missing trace.",
+    "4": {
+      "note": "The converted memory-quality entry point requires and forwards candidate code_blobs; it returns trace repair findings.",
       "targets": [
         {
           "anchor": {
-            "blob": "92153a583a3f119a02cba25ddf722a99e3b54c8f",
-            "content": "sha256:d76657a0214df95b0e4830f0d2948f17a02797fd2054fc3bc92ebc250ed56c5a",
+            "blob": "ce95cb1c27085184f05986a47b3ea85eb580933d",
+            "content": "sha256:537b38f3884456932f7aae28f4b53e20bd0ecb8c42f9665105854221363a6ac5",
             "locator": {
               "kind": "symbol",
-              "name": "validate_onboarding_traces_for_context"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "6": {
-      "note": "No card stamps on a converted tree.\n\nAnchor: \"a converted card carries no verification metadata\"",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "5b856c0c9cf903a1e17c83a7076d61d5590b1cc2",
-            "content": "sha256:153e06b90c444ab11b1392d55921a00acc233df75e6a9d16b5a820ffe315a2b8",
-            "locator": {
-              "kind": "symbol",
-              "name": "refresh_onboarding_metadata_for_context"
+              "name": "onboarding_trace_gate_for_context"
             }
           },
           "kind": "code"
@@ -313,50 +255,18 @@
       ]
     },
     "7": {
-      "note": "The rule both entry points evaluate.",
+      "note": "Source-current rows govern converted onboarding; updated needs a counted Markdown/reference edit and current candidate blob binding.",
       "targets": [
         {
           "anchor": {
-            "blob": "08aade274f0a3e2f5a72d0966cfeb37650178b95",
-            "content": "sha256:799ef332857d7fdc13a4df82773bec0a55a23233078d0ad2031c4d6baf1e2a73",
+            "blob": "f7d38c229865151d2aeba56c56b61c5a8acac3a2",
+            "content": "sha256:b4c8d723ef8ad95f0aa79c2a7015d01615fda7af11274f29f2b794be41fe85c0",
             "locator": {
-              "kind": "symbol",
-              "name": "onboarding_trace_result"
+              "end": 648,
+              "kind": "line_range",
+              "start": 539
             },
             "path": "mcp/src/agents_remember/worktrees/modules/onboarding_trace.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "8": {
-      "note": "An unconverted leaf keeps today's gate.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "467daeec96b849b586a8065cb3b35d3958a59b89",
-            "content": "sha256:0cce71675d7758c166a2cfc4005af77605035a636843f0c285c4178a8e8b2f94",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_an_unconverted_leaf_keeps_todays_gate_unchanged"
-            },
-            "path": "mcp/tests/test_onboarding_trace_gate.py"
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "9": {
-      "note": "`contract_memory_verified_commit` chooses accepted memory content or the task base as the review baseline.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "5b856c0c9cf903a1e17c83a7076d61d5590b1cc2",
-            "content": "sha256:f22efa767680140067a9174dd34dbaf1250dd95e48365e4317c849316a18b06e",
-            "locator": {
-              "kind": "symbol",
-              "name": "contract_memory_verified_commit"
-            }
           },
           "kind": "code"
         }

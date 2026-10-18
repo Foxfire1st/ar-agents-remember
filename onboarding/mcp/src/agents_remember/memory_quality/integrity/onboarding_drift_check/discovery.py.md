@@ -6,29 +6,23 @@
 
 ## Purpose
 
-`discovery.py` finds onboarding artifacts and parses their pipe-table metadata.
-It is a parsing/discovery helper with no git or side effects, shared by the
-classifiers.
+`discovery.py` retains text-only metadata parsing and path normalization for old-card readers/conversion. It performs no discovery walk, Git operation, mutation or drift grading.
 
 ## Code Commentary
 
 ### Logic
 
-`parse_table_metadata` reads the leading metadata table;
-`is_supported_sidecar_onboarding` gates by `doc_type`; `discover_onboarding_files`
-rglobs supported sidecars; `mirror_onboarding_path` maps a source path to its
-mirrored sidecar; `normalize_overview_route` canonicalizes overview routes; `rel`
-relativizes a path against the onboarding root.
+`parse_table_metadata_text` reads pipe rows from supplied text, skips header/separator keys and unwraps paired backticks from values. `normalize_overview_route` maps empty/root-placeholder forms to `.` and otherwise uses kernel scalar/path normalization. `rel` preserves string inputs and returns a root-relative POSIX path when possible, otherwise the absolute POSIX spelling.
 
 ### Invariants And Boundaries
 
-- Pure discovery/parsing: no git calls, no mutation, no policy decisions.
-- Foundational for `report`, `entities`, and `sidecar`; depends only on `models`
-  and the kernel resolver helpers.
+- Pure parsing and path conversion: no Git calls, filesystem discovery, mutation or policy verdict.
+- Kernel scalar/path normalization remains the dependency; mirroring is owned by the kernel path helper.
 
 ## Evidence
 
 ### Repo-Internal References
 
-- Sidecar and entity discovery classify metadata, normalize paths, and parse entity evidence through these helpers. [1]
+- Retained metadata-text/path and entity readers parse old-card or structural inputs without the removed sidecar classifier. [1]
+
 - Path normalization is provided by the kernel resolver. [2]

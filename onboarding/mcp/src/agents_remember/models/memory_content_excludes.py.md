@@ -6,11 +6,12 @@
 
 ## Purpose
 
-The one declaration of **what a memory-content commit never contains**. Four seams create
-memory-content commits — baseline adoption, memory carryover, external closeout and direct
-landing — and every one of them used to spell its own inline exclusion tuple. This module is the
-lowest layer all four can read, so a fifth exclusion is added once instead of being missed in
-three places.
+The shared declaration of **what a memory-content commit never contains**. Its live consumers
+are baseline adoption, direct landing and external closeout. Baseline adoption applies the tuple
+while staging; direct landing and external closeout apply it while capturing the exact memory
+content tree, and external closeout also uses it for the dirty check. Carryover restores worktree
+content and creates no memory-content commit; it no longer consumes this constant. The source
+module's four-seam docstring describes the earlier design, not the current callers.
 
 The two members are real policy, not implementation detail:
 
@@ -25,7 +26,7 @@ The two members are real policy, not implementation detail:
 
 Three module constants and nothing else. `LEDGER_CACHE_RELATIVE_PATH` is `"memory.md"` and
 `BOOTSTRAP_SCAFFOLDING_RELATIVE_PATH` is `"bootstrap"`; `MEMORY_CONTENT_EXCLUDES` is the
-two-tuple every producing seam passes as `exclude_paths=`.
+two-tuple the live consumers pass as `exclude_paths=`.
 
 **They are worktree-relative path *names*, not Git pathspecs.** That distinction is the whole
 reason this docstring exists and is the defect it was written from: the staging helpers take
@@ -36,14 +37,15 @@ names and build the pathspec themselves. `stage_worktree_content` runs
 
 The exclusion is only real because it rides the call that actually stages. `commit_if_dirty`
 re-stages the whole worktree, so an exclusion applied to a bare `git add` *before* it is inert
-and the file lands in the commit anyway — that was this leaf's baseline defect, and
+and the file lands in the commit anyway. Baseline adoption therefore passes the tuple on its
+actual private-index staging call. The historical baseline regression
 `test_memory_branch_authority.py::test_the_first_baseline_never_commits_bootstrap_scaffolding`
 fails if the old spelling returns.
 
 ### Conventions
 
-- Adding an exclusion is a one-line change here plus no seam edit: the four producers already
-  read this constant. That is the property the module exists to create.
+- Baseline adoption, direct landing and external closeout read the shared constant. An added
+  exclusion therefore reaches those consumers without three independent tuple edits.
 - The declared name is the worktree-relative name. Never store a `:(...)` pathspec, and never
   store a glob.
 - Exclusion means **excluded from the commit**, not deleted from the worktree: the developer's
@@ -51,8 +53,8 @@ fails if the old spelling returns.
 
 ### Invariants And Boundaries
 
-- A memory-content commit contains no `memory.md` and no `bootstrap/` path, on all four
-  producing seams — first baseline, carryover, external closeout and direct landing.
+- Baseline adoption, direct landing and external closeout exclude `memory.md` and `bootstrap/`
+  from their memory-content trees. Carryover does not create a memory-content commit.
 - The constant is the only sanctioned source of those names. A literal `("memory.md",)` at a
   content-staging seam is the drift this module removes.
 - Non-content staging seams (candidate-tree digests, cleanliness gates) keep their own narrower
@@ -76,14 +78,15 @@ No relevant documentation found after checking live sources.
 
 - The declared policy: the ledger cache, the bootstrap scaffolding, and their one tuple. [1]
 - The staging helpers turn names into exclusion pathspecs and remove derived entries from the index. [2]
-- Producer 1 — baseline adoption consumes the constant on the call that stages. [3]
-- Producer 2 — memory carryover consumes the same constant in its apply path. [4]
-- Producer 3 — external closeout consumes it on the dirty check, the stage and the commit. [5]
+- Baseline adoption passes the shared exclusions on the private-index staging call. [3]
+- Carryover applies worktree content without staging, committing or consuming this exclusion tuple. [4]
+- External closeout applies the shared exclusions to its dirty check and exact memory-tree capture. [5]
 
 - Since MIK-R09 the mandatory gate's exact-tree captures use it too (the closeout's `_exact_memory_tree`, direct landing's `_memory_content_tree`), so the tree the gate judges leaves out what the memory commit leaves out. [6]
 
-- Producer 4 — direct landing consumes it on its memory commit. [7]
-- The two cases that fail if the exclusion becomes inert again. [8]
+- Direct landing applies the shared exclusions when capturing its exact memory-content tree. [7]
+
+- Baseline adoption and commit_if_dirty regression cases exclude bootstrap scaffolding while leaving it on disk; they do not execute carryover or a full closeout. [8]
 
 ### Cross-Repo References
 

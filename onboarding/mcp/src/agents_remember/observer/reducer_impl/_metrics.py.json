@@ -3,23 +3,28 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "Pure metrics and analytics assembly retain surviving inputs, not removed pickup/expectation projections.\n\nAnchor: `_metrics`, `build_analytics`",
+      "note": "Lifecycle metrics derive vocabulary-owned counts without age histograms.",
       "targets": [
         {
           "anchor": {
-            "blob": "a1ac5ff62fa39b65bb851d844e0fad99657c0326",
-            "content": "sha256:b8a4ab88879885f101a4b55f4d3a6059bf5a513b952b47ee34e7f3b1555133ef",
+            "blob": "7d89d4d821ca54b186ca63995a049603a5fd7b0b",
+            "content": "sha256:971aac8fab740fef0829ff52b5068a0f8a13ba5611810f706362a35146ea8022",
             "locator": {
               "kind": "symbol",
               "name": "_metrics"
             }
           },
           "kind": "code"
-        },
+        }
+      ]
+    },
+    "2": {
+      "note": "Analytics assembles retained feeds and caller-derived overrides without sidecar ranking.",
+      "targets": [
         {
           "anchor": {
-            "blob": "a1ac5ff62fa39b65bb851d844e0fad99657c0326",
-            "content": "sha256:c2cc418d9788d3affa56d3975a02f3762f7e7412d508e59bad5b96582508e070",
+            "blob": "7d89d4d821ca54b186ca63995a049603a5fd7b0b",
+            "content": "sha256:e66a8dac149446195dafb51bb8a62a09af54429c6323e7fe38da186fd2264667",
             "locator": {
               "kind": "symbol",
               "name": "build_analytics"

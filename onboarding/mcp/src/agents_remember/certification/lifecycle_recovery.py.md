@@ -6,30 +6,13 @@
 
 ## Purpose
 
-Owns the CCR-R05 certificate-reuse journal and the exact durable finalization-leg recovery: an
-unchanged interruption resumes and journals the R21 certificate reuse decision without searching
-for another candidate, and finalization revalidates the same candidate and binds the exact
-unfinished durable leg before any publication write.
+Owns exact finalization-boundary compilation, currentness reread, unfinished-leg authorization and certificate-authority revalidation. These retained contracts bind the admitted candidate and current journal; the removed recovery-record compiler no longer journals certificate-input-change reuse here.
 
 ## Code Commentary
 
 ### Logic
 
-`compile_certification_recovery_record` (`lifecycle_recovery.py:53-81`) orders the submitted
-certificate input changes by content digest and journals the exact R21 reuse decision produced by
-`plan_certificate_reuse` over the admitted chain. `compile_lifecycle_finalization`
-(`lifecycle_recovery.py:84-109`) first proves the boundary is current — operation status
-`ready`/`finalizing`, door `claimed`, approval `current` — and that the observed code tree,
-memory tree, topology/intent/commit-intent digests, and journal authority equal the admitted
-candidate and journal (`_require_finalization_alignment`, `lifecycle_recovery.py:162-220`),
-then compiles the R21 finalization authority and binds `nextLeg` to the journal edge.
-`validate_lifecycle_finalization_currentness` (`lifecycle_recovery.py:112-133`) refuses any
-movement; `authorize_finalization_leg` (`lifecycle_recovery.py:136-159`) authorizes only the
-exact journaled `next_leg` after that currentness reread.
-`revalidate_certificate_authority` (`lifecycle_recovery.py:223-254`) exposes the R21 certificate
-reread without changing finalization or gate state. All refusals are typed
-`CertificationContractError` findings with `gateStarts: 0` (`_refuse`,
-`lifecycle_recovery.py:257-275`).
+`compile_lifecycle_finalization` checks ready/finalizing operation state, claimed door and current approval, then compares code/memory trees, topology/task intent, commit intent and journal authority before binding `nextLeg`. `validate_lifecycle_finalization_currentness` refuses movement; `authorize_finalization_leg` authorizes only that exact unfinished leg after the reread. `revalidate_certificate_authority` accepts retained certificate identities and rereads R21 authority without changing gate or finalization state. Typed refusals carry `gateStarts: 0`.
 
 ### Conventions
 
@@ -38,8 +21,9 @@ replacement candidate or a fallback path by inference.
 
 ### Invariants And Boundaries
 
-- Certificate reuse is decided by R21 against the exact admitted chain and changed inputs; no
-  newest-result or path search exists.
+- Finalization consumes the supplied exact admitted chain and retained certificate identities; no newest-result or path search substitutes for them.
+- Partial publication resumes only the exact unfinished durable leg with zero certification starts.
+- Candidate, certificate, operation, door, approval, commit-intent and journal authority must remain current before publication.
 - Partial publication resumes the exact durable leg with zero certification starts.
 - The operation, door, and approval state must remain current immediately before publication.
 
@@ -63,9 +47,6 @@ movement precedes a write.
 
 ### Repo-Internal References
 
-- The recovery record journals the exact R21 reuse decision. [1]
-- Finalization revalidates the exact admitted candidate and journal, then binds the unfinished leg. [2]
-- Currentness reread and exact-leg authorization gate every publication write. [3]
 
 ### Cross-Repo References
 
@@ -76,3 +57,7 @@ No cross-repository implementation boundary is owned here.
 ## CCR-L42 current candidate
 
 Finalization and certificate-authority revalidation now accept the retained `GateCertificateIdentity` sequence and pass it through the finalization authority reread. Certificate reuse remains exact and zero-start; this adds retained certificate identity to the existing boundary.
+
+- Finalization revalidates the exact admitted candidate and journal, then binds the unfinished leg. [2]
+
+- Currentness reread and exact-leg authorization gate every publication write. [3]

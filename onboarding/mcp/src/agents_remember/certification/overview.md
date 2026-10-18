@@ -5,11 +5,13 @@
 
 ## Purpose
 
-This area supplies the repository-neutral contracts for five ordered closeout gates: pre-test code quality; the ordinary test suite; post-test code quality consuming declared suite artifacts; clean-room integration and end-to-end testing; and memory-domain onboarding, citation, and coherence quality. It owns canonical registry and profile vocabulary, bounded admission, deterministic plans, content identities, typed terminal results, certificates, and lifecycle boundary records. These contracts describe what an executor or lifecycle owner must supply; compiling them does not prove execution or acceptance.
+This area supplies the repository-neutral contracts for five ordered certification gates: pre-test code quality; the ordinary test suite; post-test code quality consuming declared suite artifacts; clean-room integration and end-to-end testing; and memory-domain onboarding, citation, and coherence quality. It owns canonical registry and profile vocabulary, bounded admission, deterministic plans, content identities, typed terminal results, certificates, and lifecycle boundary records. These contracts describe what an executor or lifecycle owner must supply; compiling them does not prove execution or acceptance.
 
 Gate meaning is fixed. Concrete Gate 1–4 inventories, adapters, commands, runtime inputs, publication policies, ownership, and applicability belong to repository-profile data. The concrete Agents Remember profile remains outside this package at `mcp/certification-profile-v1.json`. Gate 5 remains memory-domain authority: this package consumes its rail declarations and exact inputs rather than owning memory checker execution.
 
 `layers.toml` declares certification at rank 3, after root errors, feature-free kernel primitives, and served wire models, and before control-plane, worktree, and application consumers. This is an allowed-dependency and responsibility contract, not a report that the current graph passed a checker. Concrete profiles, executors, lifecycle terminalization, and memory gates remain with their owners. The adjacent control-plane package owns durable interaction records and their policy. The architecture declares strict downward imports with no baseline or exceptions; its historical checker claims are not fresh verification here.
+
+Source route: `mcp/src/agents_remember/certification`.
 
 ## Hot Path Summary
 
@@ -21,7 +23,7 @@ The production quality owner freezes a complete `FrozenCertificationRun` before 
 
 Publication verifies every nested result evidence and artifact binding against the accepted immutable report generation. Selected certificates and terminal results retain their original object references and physical publication; selected certificate generations are protected until journal replacement or cleanup. Selected code readback requires the complete Gate 1–4 prefix, original stored objects, publication authority, nested evidence verification, and certificate-chain validation. The strict success path additionally requires certifying lifecycle evidence and an unchanged staged candidate. A missing publication or an exception before publication is not a complete terminal catalog.
 
-`lifecycle_admission.py` and `lifecycle_recovery.py` supply contracts consumed by `worktrees/integration/closeout/certification/admission.py`, `selection.py`, and `recovery.py`. The closeout owner observes real candidate authorities, compiles admission and recovery, and derives input changes from retained owner objects. The application composition supplies prepared memory certification and the finalization continuation. Library functions and default bindings establish construction seams, not proof that a particular operation completed.
+`lifecycle_admission.py` and `lifecycle_recovery.py` retain repository-neutral lifecycle and exact-finalization contracts. The selected prepared-closeout admission, execution and recovery adapters and default memory/finalization continuation were removed. The surviving closeout certification helpers reopen original typed terminal evidence and construct terminal selections; they no longer own complete-graph recovery or journal CAS.
 
 ## Construction And Ownership
 
@@ -57,17 +59,17 @@ Terminal result compilation requires every planned rail exactly once and validat
 
 Green certificate issuance requires aligned admitted authority, exact current predecessors or explicitly retained predecessor authority, certifying profile and altitude, and complete green results. Gate 5 requires exact memory semantic inputs; Gates 1–4 forbid those inputs. Physical evidence verification and publication retention belong to the quality/lifecycle owners that consume these contracts.
 
-Lifecycle admission retains exact candidate and authority observations with zero gate starts. Recovery binds admitted certificate identities, classified input changes, and reuse decisions. Finalization requires a currentness reread of candidate, certificate authority, operation/door/approval authority, commit intent, and journal state, and authorizes only the exact unfinished durable leg with zero certification starts. It does not own Git publication or lifecycle terminalization.
+Lifecycle admission retains exact candidate and authority observations with zero gate starts. Certificate reuse contracts still bind admitted identities and classified inputs, but `compile_certification_recovery_record` is no longer an exported lifecycle compiler. Finalization authority and certificate revalidation remain. Finalization requires a currentness reread of candidate, certificate authority, operation/door/approval authority, commit intent, and journal state, and authorizes only the exact unfinished durable leg with zero certification starts. It does not own Git publication or lifecycle terminalization.
 
 Inherited preparation intent limits commit outputs to code and memory content; the computed ledger contributes no additional preparation output or acceptance identity. Present `FinalizationLeg` and `_FINALIZATION_LEGS` name code commit, external-memory commit, and contract finalization. However, `FinalizationJournalState.legs` still requires exactly four entries while its order validator requires the three-entry tuple. Preserve this source inconsistency alongside the intended removal of the ledger leg; do not describe the finalization journal as an established usable three-leg contract.
 
 Environment validation preserves the original Gate-1 producer artifact, exact manifest publication bound, later consuming-gate reconstruction-proof publication with a 4096-byte bound, and selected-producer requirements. The extracted `_validate_environment_artifacts` and `_compile_adapter_inputs` helpers do not themselves introduce a new profile authority or acceptance route.
 
-Onboarding validation remains outside certification ownership. `worktrees/modules/onboarding.py::validate_memory_refresh_attestations` composes the sidecar and governing route body/history validators and aggregates their errors. Current curator control uses that helper on its legacy refresh path, while converted memory uses onboarding history traces. Prepared closeout likewise selects history-trace validation when available; its alternative branch calls the sidecar and route validators separately. Preserve the CCR-L42 intent that both applicable refresh surfaces be validated without claiming both current callers unconditionally invoke the shared helper.
+Curator preparation uses source-bound converted onboarding traces: every affected card and nearest governing route needs a current eligible answer; an updated answer also needs a counted Markdown/reference edit. Candidate blobs bind those answers. Missing converted comparison sides produce an incomplete finding, not an Update History or verification-stamp fallback. Legacy card reading, conversion and crossing remain separate supported boundaries.
 
 ## Historical And Verification Limits
 
-This proposal read all 16,503 characters of the supplied card and records the earlier source adjudication at `8d2e754789e30f0d3be10fdd33f83cf6fe367141`; this source-only requalification uses `23cb164fa24dcbc4a98a56fa1324e1fb42c1bf41` plus the observed working tree. It establishes source predicates and ownership, not test results, executed gates, delivery, integration, acceptance, or performance. No tests or product entry points were executed.
+Earlier card reviews named `8d2e754789e30f0d3be10fdd33f83cf6fe367141` and `23cb164fa24dcbc4a98a56fa1324e1fb42c1bf41`; those are historical source accounts, not this candidate or acceptance authority. This source-only proposal reopens full source blobs at `6aaa913c1c4af20a0141021a876e337e46ffb570` and the current card pair. It establishes source predicates and ownership, not test results, executed gates, delivery, integration, acceptance or performance. No tests or product entry points were executed.
 
 The inherited named histories remain provenance for intent: CCR-L16 / CCR-R16@v3 durable telemetry; CCR-L13 / CCR-R13@v2 optional diagnostic E2E, associated with `4ba18bb23ba90e201bb37341d61c0efc64161fcf`; CCR-L17 / CCR-R17 measured replay, associated with `e84c004c37a4bad082e1a7f1bdc4bd062282a185`; and CCR-L14 / CCR-R14@v3 final real-Codex certification, associated with `54ff803a05209e06f732f2de1f90e2a71a069e08`. Those historical revisions and original execution witnesses were not examined in this present-checkout-only review. Their milestone or delivery claims are not renewed acceptance.
 
@@ -75,7 +77,7 @@ The inherited L30 evidence-retention discussion identifies an earlier limitation
 
 The inherited R05 warning remains: typed finalization and leg-authorization functions, default application bindings, and visible admission/recovery callers do not independently prove a completed operation. The three-versus-four journal shape discrepancy is an additional present source limit, not a repaired invariant or runtime verdict.
 
-The Integrated IAS Recovery Contract records helper extraction while retaining exact producer, reconstruction, ordering, and duplicate-refusal responsibilities. CCR-L42 records refresh validation parity intent, but present converted-memory and prepared-closeout branches differ from the inherited shared-helper composition claim. Neither historical label constitutes current successful validation evidence.
+The Integrated IAS Recovery Contract retains exact producer, reconstruction, ordering and duplicate-refusal responsibilities. The former legacy body/history refresh-parity helper and prepared adapter were removed; converted source-bound traces remain the curator preparation boundary. Historical labels are not successful validation evidence.
 
 Namespace-isolation intent remains explicit for diagnostic and final-Codex stores. This review established the configured-forbidden-root predicate, not the completeness of every production policy or whole-call-path protection. No absence claim is inferred from a single local function.
 
@@ -85,9 +87,6 @@ The inherited statement that no external Domain Documentation source or cross-re
 
 These inherited tables are retained verbatim for navigation and custody. Their status/coverage cells are not a new lifecycle, test, or acceptance verdict.
 
-| Field | Value |
-| --- | --- |
-| sourceRoute | `mcp/src/agents_remember/certification` |
 
 | Source File | Onboarding | Status |
 | --- | --- | --- |
@@ -112,28 +111,52 @@ These inherited tables are retained verbatim for navigation and custody. Their s
 | `readiness_models.py` | [readiness_models.py.md](readiness_models.py.md) | covered |
 | `readiness_transitions.py` | [readiness_transitions.py.md](readiness_transitions.py.md) | covered |
 
+## Evidence Context
+
 ## Evidence
+
 - Retained reference account (no fresh execution or acceptance inferred): `certification` is a present rank-3 package between `models` and `controlplane`; its charter excludes concrete profiles, executors, lifecycle terminalization, and memory gates. [1]
+
 - Retained reference account (no fresh execution or acceptance inferred): The adjacent control-plane charter remains the lowest stateful interaction service, so the lower generic contract does not absorb its record or policy ownership. [2]
+
 - Retained reference account (no fresh execution or acceptance inferred): The strict checker derives direction from the declared order and refuses undeclared packages rather than using a baseline or fallback. [3]
+
 - Retained reference account (no fresh execution or acceptance inferred): Preparation selection is limited to code and memory-content outputs. [4]
+
 - Retained reference account (no fresh execution or acceptance inferred): The bridge compiles one aligned R11/R22/R21 lane and preserves admitted rail contracts. [5]
+
 - Retained reference account (no fresh execution or acceptance inferred): The production seam resolves the exact profile, binds memory rails and persists admission. [6]
-- Retained reference account (no fresh execution or acceptance inferred): The ordinary quality gate runs the admitted candidate through its certification executor. [7]
-- Retained reference account (no fresh execution or acceptance inferred): The quality gate freezes certification records before execution. [8]
+
 - Retained reference account (no fresh execution or acceptance inferred): Persist complete actual terminal catalogs, including red and interrupted gates. [9]
-- Retained reference account (no fresh execution or acceptance inferred): Typed R05 finalization and leg authorization exist as library functions; existence is not caller proof. [10]
 
 - Certification is a rank-3 generic contract below its lifecycle consumers; architecture is a declared direction, not an execution report. [11]
+
 - Explicit not-applicable repository gates contribute bounded applicability authority; applicable rail contracts are preserved. [12]
+
 - R11/R22 admission compares repository, candidate, selection, and applicable rail contracts, with separate not-applicable alignment. [13]
+
 - Original authority and provenance are retained and digest-verified together. [14]
-- Memory rails are obtained through a required port; default application composition derives them from the memory catalog. [15]
-- A published terminal generation is processed before nonzero run refusal; supplied catalogs remain distinct from missing publication. [16]
+
 - Complete supplied red/interrupted results retain publication; only eligible green results issue certificates. [17]
+
 - Every nested evidence/artifact binding is checked against the accepted publication; selected certificate generations are protected. [18]
+
 - Finalization declares three ordered legs but the journal field requires four entries. [19]
+
 - Store overlap refusal uses caller-supplied forbidden roots, whose policy defaults are empty. [20]
-- Curator legacy refresh uses the shared helper; converted memory uses traces, and prepared closeout's alternative branch calls the component validators. [21]
+
 - Applicable Gate 3 requires exact Gate-2 artifacts; diagnostic altitude cannot issue a green certificate. [22]
+
 - Replay denominator includes original and tail generations, excluding dated supplements. [23]
+
+- Retained reference account (no fresh execution or acceptance inferred): The ordinary quality gate runs the admitted candidate through its certification executor. [7]
+
+- Retained reference account (no fresh execution or acceptance inferred): The quality gate freezes certification records before execution. [8]
+
+- Retained reference account (no fresh execution or acceptance inferred): Typed R05 finalization and leg authorization exist as library functions; existence is not caller proof. [10]
+
+- Memory rails remain a required catalog-derived port; default composition retains knowledge services without prepared-memory or continuation bindings. [15]
+
+- A published terminal generation is processed before nonzero run refusal; supplied catalogs remain distinct from missing publication. [16]
+
+- Curator preparation uses source-bound converted onboarding traces; missing converted sides are incomplete, with no legacy body/history fallback. [21]

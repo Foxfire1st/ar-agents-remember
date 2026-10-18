@@ -10,74 +10,55 @@ identify or claim a future commit for these working changes.
 
 ## Purpose
 
-Plans evidence-backed onboarding carryover after code lands. The retained legacy
-apply engine is no longer an admitted write route: `_require_legacy_format_target`
-refuses converted targets with `CONVERTED_TARGET` and unconverted targets through
-the unconditional cutover lock with `legacy-format` conversion guidance. Planning
-is a read and remains unchanged; adapted apply on converted memory belongs to
-MIK-R56. The former apply mechanics below describe retained internal code, not a
-supported way to commit legacy memory.
+Plans evidence-backed converted onboarding carryover after code lands, then imports approved content into the exact open configured external-memory recovery leaf without committing. Both memory roots must hold matching conversion versions. The unit is Markdown plus its JSON sidecar; missing transitive records may travel, while source history is only a reading aid. The recovery curator authors its own source-bound rows and normal closeout publishes the judged tree.
 
 ## Code Commentary
 
 ### Logic
 
-`CarryoverRequest` owns the plan inputs; `CarryoverApplyOptions` contains the intent, explicit
-review selections, and memory message. `CarryoverRefs` keeps the base/source/official comparison
-frame constant for a plan, and `MemoryOnlyDoc` carries one memory-only candidate's source and target
-paths. The former `TargetLedger` handle and ledger message option are retired.
+`CarryoverRequest` owns the exact contract and comparison inputs. `CarryoverApplyOptions` contains only approval intent and explicit review selections. `_PlanFrame` binds official code, temporary/cached record indexes and memory merge-base files for one plan; old stamp, `CarryoverRefs`, `MemoryOnlyDoc` and memory-message objects are removed.
 
-Planning classifies file sidecars, route overviews, memory-only docs, and entity catalogs. Automatic
-carry requires proven evidence; exact-landed evidence requires every relevant source-branch commit
-to be an ancestor of the official ref. Review-required candidates must be explicitly selected.
+Planning classifies file sidecars, route overviews, memory-only documents and entity catalogs. Changed-source automatic selection starts with every relevant source-path commit ancestral to official code, then stable per-path patch identity, then final-content equality. Pair differences, noncurrent anchors and record conflicts can require review; only explicit review keys select those candidates. Memory-only automatic selection additionally requires at least one anchor, every anchor current at official code and both target bytes unchanged since the memory merge base. An exact interrupted subset can resume when each existing member equals the fresh official-reanchored payload; a missing companion alone is not a divergent overwrite. Entity catalogs and route overviews remain whole-unit review when differing.
 
-Apply verifies configured repository identity and the exact open external-memory leaf. Its code
-base and code HEAD must equal the selected official tip, with a clean code checkout. Target memory
-must be clean for actual content; `memory.md` is excluded from that check. Explicit target storage
-and path-rule authority is resolved before writes and reused for route-index refresh. Source-memory
-settings do not grant target write authority.
+Apply verifies configured repository identity and the exact open external-memory leaf. Its code base and code HEAD must equal the selected official tip, with a clean code checkout. Explicit target storage/path-rule authority is resolved before writes and reused for route-index refresh; source-memory settings grant no target write authority. Target memory need not be globally clean: already-equal payload bytes are retry-safe even when staged or dirty, while divergent locally edited targets are preserved and skipped before the submitted batch is built. The engine rechecks the submitted batch and refuses it wholly on any new conflict.
 
-Copied sidecars receive the official verification metadata. Entity catalog fingerprints are
-recomputed against the official code ref and reported; derived route indexes are regenerated on the
-target when its code checkout permits that operation. No carried content or no actual content delta
-returns `nothing-to-carryover`, refreshes the cache best effort, and creates no commit.
+Apply rereads source units and reobserves every realization, proof and code/test reference at official code. Only current moved anchors with unchanged content are mechanically rebound. Explicitly reviewed noncurrent anchors may remain for curator/worklist/validator judgment; they are never stamped current. Missing record dependencies are replanned against fresh indexes and differing existing records are never overwritten. Source history does not enter payloads.
 
-For changed content, cache preparation runs before the shared Git helper commits with
-`exclude_paths=("memory.md",)`. The kernel renderer appends attribution to the caller's memory
-message without rewriting its body, including when its last paragraph resembles trailer lines.
-The result reports `memory_content_commit` and `ledger_cache`. The old `ledger-mapped-head` path,
-ledger-only commit, and duplicate local commit helper no longer exist.
+The worktree-only engine confines payloads to paired onboarding documents and missing record units, regenerates route indexes and validates the exact resulting converted tree against the paired leaf memory base and official code. An unconverted comparison base is converted through the existing converter. Refusal or error restores pre-call knowledge/onboarding bytes, modes, caches and directory topology, including existing edits, rather than resetting to HEAD. Worklist recomputation uses `persist=False`. Success reports `carried-into-worktree` or `nothing-to-carryover`, written/payload paths, route refresh, violations, worklist and intent; it does not stage Git, update refs, commit, carry history or refresh a ledger cache.
 
 ### Conventions
 
-The CLI and MCP remain adapters around typed requests and planning/application services. Git
-commands use the shared guarded runner and its `GitRunnerOptions` input-text path for patch IDs.
-Content committing and identity setup use the shared Git module. Indexes are regenerated rather
-than copied, and default read settings cannot substitute for explicit target write authority.
+The CLI and MCP adapt typed requests and planning/application services. Git observations use the shared guarded runner and its input-text patch-ID path. Indexes are regenerated rather than copied; default read settings cannot substitute for explicit target write authority. Carryover does not use a content-commit renderer or Git publication helper. The module CLI exposes `plan` only and calls the read-only planner directly. Public MCP plan first checks matching formats and exact recovery-leaf authority through `memory_carryover_plan_tool`; neither path creates a carryover commit.
 
 ### Invariants And Boundaries
 
-- Only the exact configured recovery-leaf memory checkout may receive carried content.
-- Repository identity, open-leaf state, official code tip, and explicit target settings remain checked.
-- A missing or malformed cache does not change candidate evidence or admission.
-- Nothing-to-carryover cannot invent attribution for a new code state or create a cache-only commit.
-- The real memory commit carries the official tip's attribution; cache rows are derived afterward.
-- **Carryover apply refuses both storage-format targets in this candidate.**
-  `_apply_carryover_for_request` calls `_require_legacy_format_target` after
-  authority checks and before checkout, plan or writes. A target holding
-  `knowledge/layout.json` retains the `CONVERTED_TARGET` refusal naming
-  `knowledge-ingest`; an unconverted target now receives the shared
-  `legacy-format` conversion message whether or not the configured repository
-  contains converted memory elsewhere. Convert through the named first-conversion
-  procedure or crossing sync, but do not promise conversion alone enables this
-  legacy apply engine: converted carryover adaptation is MIK-R56.
-  `memory_carryover_plan` is a read and remains unchanged.
+- Only the exact configured open recovery-leaf memory checkout may receive carried content.
+- Repository identity, official code tip and explicit target settings remain checked.
+- A missing or malformed cache cannot supply candidate evidence or write authority; partial record indexes are conflicts.
+- Source and target must have matching converted formats; unconverted input keeps central conversion guidance.
+- Paired units and record dependencies are rechecked at apply; differing existing records and target edits are not overwritten.
+- Carryover creates no attribution, commit, ref/index update, source-history copy or ledger refresh. The recovery curator and ordinary closeout own judgment and publication.
 
 ### Todos
 
 No new file-local follow-up is established by this documentation pass.
 
 ## Evidence
+
+Inherited numbered findings [2], [6], [7], [4], [5] retain their exact wording and full targets as historical custody where their candidate9 owner is retired or their account conflicts with the current route. They are not evidence that an absent legacy owner still executes. No guarantee is retired by this proposal; parent disposition remains required. The source-bound current account below is separate.
+
+
+- Converted carryover selects paired cards against official code and imports them into the exact recovery worktree without a commit or carried history. \[8] [8]
+
+
+
+- Carryover performs worktree validation/restore without staging, committing or refreshing a ledger. \[9] [9]
+
+
+
+- Converted carryover requires equal converted formats; unconverted input retains central conversion refusal. \[10] [10]
+
+
 
 ### Docs References
 

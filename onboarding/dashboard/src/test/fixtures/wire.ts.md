@@ -7,6 +7,7 @@
 ## Purpose
 
 The shared typed fixture builders for native TaskEntry identity/status/membership/counts and separate TaskSummary content, plus retained operational projection and event shapes. SERVED and EMPTY_ANALYTICS remain generated-mirror checked, not generated sample values.
+This remains the shared typed construction/clone boundary, not a universal guarantee that every fixture field is copied from a served sample; copied, derived and explicitly neutral defaults retain distinct provenance.
 
 R6 in one sentence: a test whose fixture is authored by the consumer cannot detect producer drift. This
 leaf proved it twice — a test asserted `refusedPolarity === "amber"` against a fixture that set the
@@ -120,14 +121,18 @@ does not.
 - The sample covers declared structural paths except explicit residue. [9]
 - Every sampled registered vocabulary value must be legal. [10]
 
-- `EMPTY_ANALYTICS` — every key present and empty, which is a shape the reducer produces. [15]
+- EMPTY_ANALYTICS carries every current analytics key as an empty list, without the retired stalestSidecars key. [15]
 - `reparsed` using `structuredClone`, with the note that `asServedProjection(JSON.parse(…))` is a vacuous check. [17]
 - `asServedProjection` — the sanctioned narrowing this module's `SERVED` constant is read through. [18]
 - The fixture bases draw their enclosure sample from the same oracle. [20]
+
 - The wire oracle carries the hand-maintained sampled analytics payload. [21]
+The former task-document builder sampled analytics in the predecessor. Current native entries and summaries are separate; no analytics task-document catalogue or lifecycle-derived metrics builder is restored.
 - The attention-item builder takes its sample from analytics. [24]
 - The engine-process builder takes its sample from analytics. [25]
+
 - The provider builder takes its sample from the top-level providers array. [26]
+
 - The served snapshot supplies the code provider and memory provider in its top-level provider array.
 - The override constraint every builder takes, and the three limits it documents. [28]
 - The guard that catches the residue `Overrides` cannot — the smuggled field with no assertion to ban, and the `any` rule whose comment names `fixtures/wire.ts::reparsed` as the site that was making exactly that mistake. [29]

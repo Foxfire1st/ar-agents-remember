@@ -65,7 +65,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5f33ff79cde087bea8dd9d8ebc62a85698440f9a",
+            "blob": "af4eb5d20b66813d4dd85e8e211e2edae285874e",
             "content": "sha256:d81b89961aa9f6111073416b7d9db6242c5d1caddb566ef889f16800de227eb4",
             "locator": {
               "kind": "symbol",
@@ -100,12 +100,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d7dc9165fb505bba7813d3c69626f48ce2423b77",
+            "blob": "9130f34e3b4dbaafefb06c91789699ff50d6cd97",
             "content": "sha256:69af34017e036f71806aa871181ed78f092a1bb81047ab87db60c4b902bd3cbc",
             "locator": {
-              "end": 214,
+              "end": 203,
               "kind": "line_range",
-              "start": 92
+              "start": 81
             },
             "path": "mcp/test_support/agents_remember_test_support/code_quality/profile_rails.py"
           },
@@ -185,12 +185,12 @@
         },
         {
           "anchor": {
-            "blob": "cc2915b899b8d552f5f5d52fc2bd1fce670cfcf1",
+            "blob": "9737446629540a0653787d7c3b2feb01719e3392",
             "content": "sha256:9d09ab9899aa01dae2331e6de03728a08c81eb1ec8b7ff5b67f7e6d188480c27",
             "locator": {
-              "end": 592,
+              "end": 551,
               "kind": "line_range",
-              "start": 582
+              "start": 541
             },
             "path": "mcp/test_support/agents_remember_test_support/code_quality/dependency_ownership.py"
           },
@@ -216,12 +216,12 @@
         },
         {
           "anchor": {
-            "blob": "377b835dfe3e3720bcc09d6ef4daaf2c94aa924d",
+            "blob": "27a538af0bc1ef798d4b4413fbd4b8b0acf7436a",
             "content": "sha256:75269e93d2a941817ba14ab6e312139bef7451dc129b16e5e45f512721454678",
             "locator": {
-              "end": 342,
+              "end": 326,
               "kind": "line_range",
-              "start": 310
+              "start": 294
             },
             "path": "mcp/test_support/agents_remember_test_support/code_quality/projection_types.py"
           },
@@ -283,12 +283,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "cc2915b899b8d552f5f5d52fc2bd1fce670cfcf1",
+            "blob": "9737446629540a0653787d7c3b2feb01719e3392",
             "content": "sha256:d719d643c5363958e702bca7d9467773c0de1214568e25077ac36d9eef8c85ab",
             "locator": {
-              "end": 433,
+              "end": 392,
               "kind": "line_range",
-              "start": 387
+              "start": 346
             },
             "path": "mcp/test_support/agents_remember_test_support/code_quality/dependency_ownership.py"
           },
@@ -296,12 +296,12 @@
         },
         {
           "anchor": {
-            "blob": "cc2915b899b8d552f5f5d52fc2bd1fce670cfcf1",
+            "blob": "9737446629540a0653787d7c3b2feb01719e3392",
             "content": "sha256:42bcba63b917a3d69eb12515418928dc9f2283bd4a80265e2a52d07e168ba939",
             "locator": {
-              "end": 535,
+              "end": 494,
               "kind": "line_range",
-              "start": 509
+              "start": 468
             },
             "path": "mcp/test_support/agents_remember_test_support/code_quality/dependency_ownership.py"
           },
@@ -529,12 +529,12 @@
         },
         {
           "anchor": {
-            "blob": "9f218812583b779dcd6173f4ea7714de1ad26bba",
+            "blob": "054bc760a56269017694aec488ab9a2db71a5dec",
             "content": "sha256:ca0ba3c61f2c30f9e2eb61c29c37ab7e76c0384cf2c48824a19964705030991b",
             "locator": {
-              "end": 522,
+              "end": 498,
               "kind": "line_range",
-              "start": 509
+              "start": 485
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },
@@ -653,7 +653,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6fdaf3bc5c0ebf2ced1c450d5973ed55b2515f3c",
+            "blob": "af953e99eac7b81b2df5e99c648d3a83eab4bca1",
             "content": "sha256:4eaf913583adc97708111cd7ade739a0f30d50b79cfac37e3f8a9d1e36cc0d52",
             "locator": {
               "end": 279,
@@ -695,53 +695,6 @@
               "name": "render_typescript"
             },
             "path": "mcp/test_support/agents_remember_test_support/code_quality/projection_types.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "5": {
-      "note": "Final memory adapter requires the selected four-code-terminal prefix and compares published producer bytes.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "c53333a189e401b041e0fc4e3501ee1efa2c3001",
-            "content": "sha256:444173f862af3429a6e23c2b5ccb23231c9a1be6af7c1c03b08d7778bcad5d9c",
-            "locator": {
-              "kind": "symbol",
-              "name": "PreparedMemoryCertificationAdapter"
-            },
-            "path": "mcp/src/agents_remember/application/prepared_certification.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "6": {
-      "note": "Finalization consumes original selected fifth-certificate inputs. Continuation imports and memory observation retain the existing range co-target.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "4fc36e65dd21de71100edb1587afb5484b9e9771",
-            "content": "sha256:40757eadc95735685c47d292e216082eb307fa75f2edc755bd5fbcbc7aa4c6f5",
-            "locator": {
-              "kind": "symbol",
-              "name": "PreparedCloseoutContinuation"
-            },
-            "path": "mcp/src/agents_remember/worktrees/integration/closeout/preparation/continuation.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "4fc36e65dd21de71100edb1587afb5484b9e9771",
-            "content": "sha256:7f852fb3ea501dc4f2781678203b690c58b69b9116543b7d065af9b8d9694cbf",
-            "locator": {
-              "end": 45,
-              "kind": "line_range",
-              "start": 18
-            },
-            "path": "mcp/src/agents_remember/worktrees/integration/closeout/preparation/continuation.py"
           },
           "kind": "code"
         }

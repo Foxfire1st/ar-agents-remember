@@ -29,9 +29,9 @@
     "leaf": "260928-MIK-L37",
     "task": "260928-MIK"
   },
-  "revision": 4,
+  "revision": 5,
   "schema": "ar-invariant/v1",
-  "statement": "The tree a converted leaf's closeout commits to memory is the tree its gate judged: every write the closeout itself makes to memory content -- the metadata refresh, the history closing and the ledger cache's ignore rule -- is on disk before the tree is read; a working tree or index that changed while the gate ran is refused before the memory commit's Git mutation; and the commit is staged from the judged tree object and proved against it, so a file written after that check stays an uncommitted change and is never committed unjudged.",
+  "statement": "The tree a converted leaf's closeout commits to memory is the tree its gate judged: every write the closeout itself makes to memory content, including the history closing and the ledger cache's ignore rule, is on disk before the tree is read; a working tree or index that changed while the gate ran is refused before the memory commit's Git mutation; and the commit is staged from the judged tree object and proved against it, so a file written after that check stays an uncommitted change and is never committed unjudged.",
   "status": "proposed",
   "supersedes": []
 }

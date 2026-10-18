@@ -13,15 +13,7 @@ for eligible source files that do not yet have their required onboarding pair.
 
 ### Logic
 
-The script derives one isolated add-all candidate tree and diffs it against
-`HEAD`, then resolves each added, copied, or renamed target through the same
-storage/path-rule helpers used by drift detection. This makes the preflight
-match the tree closeout would commit: a staged add that was later deleted does
-not remain a false onboarding obligation, while untracked files still enter the
-candidate. For CLI runs it derives the canonical repository name from Git's
-common directory, so a linked worktree can be named after the task without
-changing external-memory resolution. It intentionally does not scan the whole
-historical repository.
+The script derives one isolated add-all candidate tree and diffs it against `HEAD`, then resolves each added, copied or renamed target through the kernel storage/path-rule helpers. A staged addition later deleted is not an obligation; untracked additions remain candidates. CLI repository identity comes from Git common directory, not a task-named linked-worktree basename. Historical whole-repository files are not scanned.
 
 `missing_onboarding_for_source` is now a three-way router (260731-EFA-L2): `disabled` returns
 `None`, sidecar storage delegates to `_missing_sidecar_onboarding(onboarding_root, source_file,
@@ -70,9 +62,7 @@ non-UTF-8 filename in the `-z` listing decodes instead of raising.
 
 ### Conventions
 
-The module is a pre-code-commit closeout helper. Agents run it while new files
-are still visible in the worktree, create any reported sidecars, then commit
-code and refresh the new sidecars to the real code commit hash.
+The module measures current eligible worktree additions before code commit. Create any reported onboarding through the converted authoring route; this checker neither assigns legacy verification stamps nor refreshes them.
 
 ### Invariants And Boundaries
 
@@ -99,8 +89,12 @@ code and refresh the new sidecars to the real code commit hash.
 
 ### Repo-Internal References
 
-- Drift helpers provide sidecar path construction and inline block parsing. [1]
+- Inline extraction is imported directly from inline.py; mirrored onboarding path construction is kernel-owned. [1]
+
 - Resolver helpers provide storage/path-rule decisions. [2]
+
 - The checker owns source/onboarding absence classification; deleted case inventories are not current coverage evidence. [3]
+
 - The kernel filesystem helper handles long-path sidecar and source probes. [4]
+
 - `run_git` — the single runner `require_git` wraps — owns the selector scrubbing, the DEVNULL stdin and the timeout classes. [5]

@@ -14,11 +14,15 @@ The drift-summary caller explicitly selects `write_report=False`: it returns a c
 
 ## Evidence
 
+
 - Install dry run files no per-call report. [3]
+
 - Carryover authority refusal files no per-call report. [4]
 - The surviving install and carryover compactors omit or retain the pointer according to the supplied report path. [5]
 - Non-reporting drift-summary mode files no Markdown report or observer log and returns no report pointer. [6]
 - The explicit default-output report producer still writes the report and observer snapshot. [7]
+
 - Base payload omits drift_report without a supplied report and keeps it with one. [8]
+
 
 - The retained internal drift authority refusal creates no temporary report directory. [9]

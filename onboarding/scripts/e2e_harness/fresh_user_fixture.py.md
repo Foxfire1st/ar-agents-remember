@@ -11,7 +11,7 @@ repositories, from nothing, each carrying the shape the requirement packet names
 
 | Fixture | Shape |
 | --- | --- |
-| `spear-not-main` | the spear branch is `dev`, and the tree carries a source file **over the per-file cap** plus a vendored/generated tree the exclusion register excludes. This is the fixture that would have made the pre-ruling citation index refuse outright. |
+| `spear-not-main` | the spear branch is `dev`, and the tree carries a locally sized **large source file** (the historical over-cap fixture) plus a vendored/generated tree the exclusion register excludes. This is the fixture that would have made the pre-ruling citation index refuse outright. |
 | `plain-main` | an ordinary `main`-spear repository for the default path. |
 
 **These are not the developer's repositories.** The module's own `WHAT IS DELIBERATELY ABSENT`
@@ -35,9 +35,7 @@ start creates and the leaf cuts) and `memory_settings` (`system/settings.json`).
 default) nor the spear (the branch the memory repo is founded on), because the integration-branch
 authority refuses a sprint that claims either.
 
-`OVERSIZED_BYTES` is `4 * 1024 * 1024 + 1` — the shipped per-file cap **plus one** — so the
-over-cap fixture crosses the real bound rather than a number restated in the harness. `_sparse`
-truncates the file to that length without writing the bytes.
+`OVERSIZED_BYTES` is the local literal `4 * 1024 * 1024 + 1`, retained to construct a large historical acceptance fixture. It is not imported or derived from a live shipped citation-index cap. `_sparse` truncates the file to that exact length without writing the bytes.
 
 Two writers persist the state later steps read:
 
@@ -53,8 +51,7 @@ it is surfaced rather than swallowed.
 
 ### Conventions
 
-- Every value that must track a shipped bound is derived from that bound (`OVERSIZED_BYTES`), not
-  restated as a literal.
+- `OVERSIZED_BYTES` is the fixture’s retained local large-file size, not a current shipped bound. Its exact generated size is asserted separately from branch, exclusion-tree and run-root custody facts.
 - The fixture is `frozen`; a case that wants a variant builds another fixture rather than mutating
   one.
 - This module is a **governed evidence artifact**: `scripts/e2e_harness/**` is a permanent
@@ -65,9 +62,7 @@ it is surfaced rather than swallowed.
 ### Invariants And Boundaries
 
 - The fixture owns everything under its own run root and reads nothing outside it.
-- The over-cap fixture must genuinely cross `MAX_SOURCE_FILE_BYTES`; the plain fixture must stay
-  inside every cap. Both are asserted in `mcp/tests/test_fresh_user_harness.py`, so an edit here
-  cannot quietly stop producing the shape the scenario needs.
+- The historical large-file fixture must keep its exact `OVERSIZED_BYTES` size, vendored tree and distinct spear/sprint/default branches. The plain fixture has no vendor tree and uses the main spear. Candidate harness assertions retain these facts and run-root custody; they no longer compare either fixture with shipped per-file/aggregate citation-index caps.
 - The fixtures are disposable: the run root is a temporary directory unless the caller names one.
 
 ### Todos
@@ -81,13 +76,16 @@ None.
 - The one construction point for a disposable fixture repository, memory root and authority settings. [1]
 - The frozen fixture value and the two branches the harness needs. [2]
 - The sprint branch is neither `main` nor the spear, because the authority refuses both. [3]
-- The oversized source is the shipped per-file cap plus one byte. [4]
+
+- OVERSIZED_BYTES is a local 4 * 1024 * 1024 + 1 literal for the historical large-file fixture, not a derived current shipped citation-index cap. [4]
+
 - The truncating writer that materialises it without copying bytes. [5]
 - A fixture Git failure is surfaced with its real stderr rather than swallowed. [6]
 - The exclusion review's rules are persisted under the key every register reader honours. [7]
 - The `c-03` bootstrap content whose absence is `invariant-1`. [8]
-- The per-file cap the fixture must cross. [9]
-- The cases that pin the fixture's shape. [10]
+
+- The retained fixture cases assert exact local large-file size, vendored-tree and branch topology, plain-fixture shape and run-root custody, not current shipped cap comparisons. [10]
+
 
 ### Cross-Repo References
 

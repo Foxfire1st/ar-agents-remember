@@ -40,6 +40,20 @@ absence. `_git` turns command failure, timeout and OS errors into `CutoverProbeE
 
 ## Evidence
 
+### Surviving cutover explanation
+
+Removing the prepared-certification adapter removes that adapter's separate
+history/certification path, not this central legacy-input refusal. Ordinary
+callers still establish the unconverted input; `cutover_lock_refusal` refuses
+an actual legacy repository, and `legacy_format_refusal` supplies the named
+format boundary and conversion/crossing guidance. A failed probe is never an
+unlock. Converted location only explains recovery, and does not certify the
+converted candidate or replace its ordinary gate/coherence checks.
+
+- The central legacy refusal and conversion guidance survive retirement of the separate prepared-certification adapter. [13]
+
+- The central legacy refusal and conversion guidance survive retirement of the separate prepared-certification adapter. \[13] [13]
+
 ### Docs References
 
 No Domain Documentation source is configured. The task authority is MIK-R46@v2 under D39(b)/D47,

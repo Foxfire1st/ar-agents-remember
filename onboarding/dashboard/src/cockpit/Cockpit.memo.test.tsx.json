@@ -55,10 +55,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "003bfee6a385196adcd3faadc74041593cfc9dbc",
-            "content": "sha256:e0a866ff7bcfa4c0f9f97b2a4d958760f62fd469428eca002069febf533724cd",
+            "blob": "1600c5b265732b34d92584f0f087217d4ae5c502",
+            "content": "sha256:6e9ae38a2bd33d28ce0a055212b652d7a09a4f63fd8c0c4e016a9d9d3efedc23",
             "locator": {
-              "kind": "file"
+              "end": 313,
+              "kind": "line_range",
+              "start": 1
             }
           },
           "kind": "test"

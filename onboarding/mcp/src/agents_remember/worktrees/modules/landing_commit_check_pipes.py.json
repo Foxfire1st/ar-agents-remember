@@ -1,0 +1,23 @@
+{
+  "path": "mcp/src/agents_remember/worktrees/modules/landing_commit_check_pipes.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Best-effort discovery of other processes retaining a private hook output pipe.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b58b26f4e35262772816cb88f55998d05023f266",
+            "content": "sha256:2080388d3816902003c1955e243ae32ad24ef9518f261139bd8580cfa4559d5d",
+            "locator": {
+              "kind": "symbol",
+              "name": "_pipe_write_end_holders"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

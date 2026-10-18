@@ -9,7 +9,7 @@ The current source facts below replace the former operative inventory. The separ
   finite `documents` selection beside singleton `document`; scope validation owns exclusive,
   empty and shared-bound refusals. Quality, citation and route descriptions advertise status and
   corpus locations, not a new authority to change their scopes or checks.
-- Typed MQC sync/start/poll, baseline/carryover and citation exclude boundaries survive.
+- Typed MQC sync/start/poll and baseline boundaries survive. Carryover keeps flat selection inputs: plan advertises equal-version converted pairs/records, official-code anchor observation and curator-authored history with no commit/report; apply requires `intent_note`, reanchors/indexes/validates the recovery worktree, restores bytes on refusal, skips edited targets and imports no history or commit. `memory_commit_message` and `CarryoverCommitMessages` are removed. `citation_fix` retains finite `documents`/singleton `document`, optional `contract_path` and `dry_run`; `expected_snapshot` and caller `exclude` are absent from its signature and scope construction.
 - `citation_fix` exposes optional `contract_path`; the short description names the ordinary leaf call and points to shipped tool-details for the full ordinary/pre-baseline admissions. The application guard still permits the configured converted root before its attributed baseline with no linked worktree. Route-index apply uses the same measured exception; other unscoped index calls remain read-only previews. Transport declarations do not bypass the application guard.
 
 - The public fixer signature makes `contract_path` optional; its short description gives leaf-call cues and points to `docs/tool-details.md`, but does not state the ordinary/pre-baseline admissions. [17]
@@ -39,20 +39,20 @@ already pass keywords. Registered tools are unchanged.
 
 ## Purpose
 
-`register_memory_tools(server, config)` declares the eight memory-root tools: `drift_check`,
-`memory_quality_check`, `route_index_refresh`, `memory_init`, `memory_baseline_status`,
+`register_memory_tools(server, config)` declares the eight memory-root tools: `memory_quality_check`,
+`citation_fix`, `route_index_refresh`, `memory_init`, `memory_baseline_status`,
 `memory_baseline_adopt`, `memory_carryover_plan`, `memory_carryover_apply`.
 
 ## Code Commentary
 
 ### Logic
 
-`memory_carryover_apply` publishes one `memory_commit_message`, packs it into
-`CarryoverCommitMessages`, and leaves approval intent separate. Its description names attributed
+`memory_carryover_apply` takes only approval intent and explicit review selections; the retired
+`memory_commit_message` and `CarryoverCommitMessages` are absent from its signature. Its description names attributed
 memory content and a ledger cache refresh; there is no ledger commit argument or ledger branch
 publication for callers to provide.
 
-The two read-only checks are named for what they measure: `drift_check` measures the reference anchors
+The reference-anchor check and its repair are named for what they measure: `citation_fix` reports the anchors
 of onboarding cards and the validity of the tree — on converted memory how many anchors are current
 and how many are stale against the code, plus the knowledge validator's refusing findings. Whether an
 invariant is still current is answered by `knowledge_read` and `knowledge_integrity_check`, not here; a
@@ -74,9 +74,8 @@ Three declarations pack:
 - `memory_baseline_adopt` — `source_branch` + `work_branch` become `MemoryBranches`.
 - `memory_carryover_plan` / `memory_carryover_apply` — the five refs the plan compares
   (`repo_id`, `source_memory`, `official_code_ref`, `source_code_ref`, `old_base`) plus
-  `replace_existing` become one `CarryoverSelection`, and apply's memory-content commit message becomes
-  `CarryoverCommitMessages`. The `intent_note` stays a separate argument: it is the approval, not
-  part of the selection.
+  `replace_existing` become one `CarryoverSelection`. The `intent_note` stays a separate argument: it is the approval, not
+  part of the selection, and apply takes no commit-message object.
 
 The mutating/approval-gated ones say so in their docstrings — `memory_baseline_adopt` commits attributed memory and refreshes the
 ledger cache and is gated on clean drift unless `accept_drift=true`;
@@ -97,13 +96,13 @@ Flat baseline/carryover arguments are packed into their application parameter ob
 
 - Carryover and baseline signatures stay flat and build their parameter objects in the body;
   memory quality deliberately publishes the one nested discriminated request object.
-- `drift_check` identifies update work; contract-scoped `memory_quality_check` must be repaired and
+- `memory_quality_check` identifies the repair work; contract-scoped `memory_quality_check` must be repaired and
   rerun by the curator before handoff, then repeated by closeout after real-commit metadata refresh.
 - Registration documents the checklist as the only write of a full scoped quality call: code and
   memory remain unchanged, and dirty-source/full-quality `ok` is not the curator's zeroable gate.
 - Memory-quality request modes are mutually exclusive and extra-forbid; no legacy `wait`/`run_id`
   overload or silent branch inference remains.
-- Quality execution lives in `application/memory_quality_controller.py`; other memory tools remain
+- Quality execution lives in `application/memory_quality/controller.py`; other memory tools remain
   in `application/memory_tools.py`. Registration chooses only the validated request variant.
 
 ### Todos
@@ -145,7 +144,14 @@ No external implementation source applies.
 
 ## 260915-CAPS-L14 The Citation Surface Gains A Caller Exclude
 
-The registered `citation_fix` tool gained one optional parameter:
+**Retired, not current.** The caller `exclude` parameter described below is gone: `citation_fix`'s
+signature carries no `excludes`, `CitationOperationScope` no longer packs caller globs, and the
+`_citation_trees` construction point it fed was removed with the legacy citation router. What
+remains is the register every call still honours — the memory layer's
+`settings.json → onboarding.pathRules.exclude` and the code repository's `.gitignore`. The paragraphs
+below are the historical account of the retired parameter, kept as intent.
+
+Retired account: the registered `citation_fix` tool gained one optional parameter:
 
 ```
 exclude: list[str] | None = None
@@ -201,3 +207,5 @@ acceptance pair.
 - The adoption description states that accept_drift clears stale anchors only and the first baseline is validated. [16]
 
 </details>
+
+- Registration exposes converted worktree-only carryover and finite citation selectors without retired commit-message, caller-exclude or expected-snapshot arguments. [19]

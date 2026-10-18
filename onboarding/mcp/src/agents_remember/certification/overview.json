@@ -33,16 +33,68 @@
       ]
     },
     "10": {
-      "note": "Typed R05 finalization and leg authorization exist as library functions; existence is not caller proof.\n\nAnchor: \"def compile_certification_recovery_record(\"; \"def compile_lifecycle_finalization(\"; \"def validate_lifecycle_finalization_currentness(\"; \"def authorize_finalization_leg(\"",
+      "note": "Retained reference account (no fresh execution or acceptance inferred): Typed R05 finalization and leg authorization exist as library functions; existence is not caller proof.",
       "targets": [
         {
           "anchor": {
-            "blob": "e402f2390fa8b9ba415a86552cab7a8c54ba9e86",
-            "content": "sha256:f770e5ca8ad089002511df4a9f0b4226d2608d923984522a3ea2f87d663521a0",
+            "blob": "2d97cd9da17a7376baf4adb0d188ee15d8cffb59",
+            "content": "sha256:2726096dad4a4af117f75a696bfb8a20f9d7dece05ab7a7613022d96be8144b7",
             "locator": {
-              "end": 160,
+              "end": 74,
               "kind": "line_range",
-              "start": 53
+              "start": 47
+            },
+            "path": "mcp/src/agents_remember/certification/lifecycle_recovery.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2d97cd9da17a7376baf4adb0d188ee15d8cffb59",
+            "content": "sha256:ab99e7a4ecf14852c33e9d96e03344d5cfb153b84ffa876364e06a8643c6e119",
+            "locator": {
+              "end": 101,
+              "kind": "line_range",
+              "start": 77
+            },
+            "path": "mcp/src/agents_remember/certification/lifecycle_recovery.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2d97cd9da17a7376baf4adb0d188ee15d8cffb59",
+            "content": "sha256:863e3fa80f46131f63aa4eaea210d82e6e7935a580dbfd7dba86e3721a508292",
+            "locator": {
+              "end": 130,
+              "kind": "line_range",
+              "start": 104
+            },
+            "path": "mcp/src/agents_remember/certification/lifecycle_recovery.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2d97cd9da17a7376baf4adb0d188ee15d8cffb59",
+            "content": "sha256:cadeccfeb38a3b45039baaa3e1952cbbc0fea5ec3467903638bcd4ff22e3c509",
+            "locator": {
+              "end": 117,
+              "kind": "line_range",
+              "start": 113
+            },
+            "path": "mcp/src/agents_remember/certification/lifecycle_recovery.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2d97cd9da17a7376baf4adb0d188ee15d8cffb59",
+            "content": "sha256:622251c205a94ad2dde686e79b9debad36b03ecf303fe0d721990083f75b39f7",
+            "locator": {
+              "end": 118,
+              "kind": "line_range",
+              "start": 118
             },
             "path": "mcp/src/agents_remember/certification/lifecycle_recovery.py"
           },
@@ -147,7 +199,7 @@
       ]
     },
     "15": {
-      "note": "Memory rails are obtained through a required port; default application composition derives them from the memory catalog.\n\nAnchor: Memory composition seam",
+      "note": "Memory rails remain a required catalog-derived port; default composition retains knowledge services without prepared-memory or continuation bindings.",
       "targets": [
         {
           "anchor": {
@@ -177,12 +229,12 @@
         },
         {
           "anchor": {
-            "blob": "9ae9c1fd9981228aafde4ea8749d2dd3819612de",
+            "blob": "9cfe5fc779f3234e5cf2d83eee7be9897b4668cb",
             "content": "sha256:edd0f3f43a88fe9d9559a8861bff3eadfb36c57f02840246dc9487001a8ad7d7",
             "locator": {
-              "end": 154,
+              "end": 152,
               "kind": "line_range",
-              "start": 150
+              "start": 148
             },
             "path": "mcp/src/agents_remember/application/worktree_services.py"
           },
@@ -190,10 +242,10 @@
         },
         {
           "anchor": {
-            "blob": "9ae9c1fd9981228aafde4ea8749d2dd3819612de",
-            "content": "sha256:d2c3fa716ac4dd5fe51a39257c316b871f21314f9e198f8178b9efcb18915a5c",
+            "blob": "9cfe5fc779f3234e5cf2d83eee7be9897b4668cb",
+            "content": "sha256:f1ac9e4c9ca53c18f1cb7439db85510df5446e1e4a2a18e12523d8e4fb0cd1a8",
             "locator": {
-              "end": 225,
+              "end": 230,
               "kind": "line_range",
               "start": 216
             },
@@ -217,16 +269,16 @@
       ]
     },
     "16": {
-      "note": "A published terminal generation is processed before nonzero run refusal; supplied catalogs remain distinct from missing publication.\n\nAnchor: Strict gate result ordering",
+      "note": "A published terminal generation is processed before nonzero run refusal; supplied catalogs remain distinct from missing publication.",
       "targets": [
         {
           "anchor": {
-            "blob": "f6650bb7d450287cab6ad239d276c815ea69ba0a",
+            "blob": "b2f9f1624c63b2e7e58d9486c5d024f84fd7903e",
             "content": "sha256:493fe0902f44a26b753fa39f9396255078fce9110847930da533e74c7ed9e0b0",
             "locator": {
-              "end": 365,
+              "end": 363,
               "kind": "line_range",
-              "start": 272
+              "start": 270
             },
             "path": "mcp/src/agents_remember/worktrees/modules/quality/gate.py"
           },
@@ -416,15 +468,16 @@
       ]
     },
     "21": {
-      "note": "Curator legacy refresh uses the shared helper; converted memory uses traces, and prepared closeout's alternative branch calls the component validators.\n\nAnchor: `_onboarding_refresh_gate`, `_realize_prepared_memory`",
+      "note": "Curator preparation uses source-bound converted onboarding traces; missing converted sides are incomplete, with no legacy body/history fallback.",
       "targets": [
         {
           "anchor": {
-            "blob": "f5c17fb7f80b774e5cb4ba1a1d1dd4340013f711",
-            "content": "sha256:69a50a47232dddef1e59ab63aec78d762e988240c68e7067dc60f910aeb6870e",
+            "blob": "0f02f7c4c7584cea4e5e966eff0bd4906b882b5d",
+            "content": "sha256:6ead679e951a61ef0472da274f0489435e380fc0471bdd01093ed97b71e515fd",
             "locator": {
-              "kind": "symbol",
-              "name": "_onboarding_refresh_gate"
+              "end": 944,
+              "kind": "line_range",
+              "start": 893
             },
             "path": "mcp/src/agents_remember/application/memory_quality/controller.py"
           },
@@ -432,13 +485,14 @@
         },
         {
           "anchor": {
-            "blob": "f7b59934d4c1a98bbc511a7df67311083ace2c01",
-            "content": "sha256:8646e3d7d231f49079042a0cd5d471f621c5ad47a11cf202b5529390b219c815",
+            "blob": "4c7e45a4112f26b6977cdbb4c826bd75817f44c1",
+            "content": "sha256:349c41dad2b6b9ff3a88169d701dd67cce2c41d742cb515776d176bbe1fda1b6",
             "locator": {
-              "kind": "symbol",
-              "name": "_realize_prepared_memory"
+              "end": 315,
+              "kind": "line_range",
+              "start": 287
             },
-            "path": "mcp/src/agents_remember/application/prepared_certification.py"
+            "path": "mcp/src/agents_remember/worktrees/modules/onboarding.py"
           },
           "kind": "code"
         }
@@ -600,16 +654,16 @@
       ]
     },
     "7": {
-      "note": "The ordinary quality gate runs the admitted candidate through its certification executor.\n\nAnchor: \"def run_strict_code_quality_gate\"",
+      "note": "Retained reference account (no fresh execution or acceptance inferred): The ordinary quality gate runs the admitted candidate through its certification executor.",
       "targets": [
         {
           "anchor": {
-            "blob": "f6650bb7d450287cab6ad239d276c815ea69ba0a",
+            "blob": "b2f9f1624c63b2e7e58d9486c5d024f84fd7903e",
             "content": "sha256:ae8bad3301bb799b5e21dfce4791e72aab81744957e079921db5887e9d34463f",
             "locator": {
-              "end": 361,
+              "end": 359,
               "kind": "line_range",
-              "start": 268
+              "start": 266
             },
             "path": "mcp/src/agents_remember/worktrees/modules/quality/gate.py"
           },
@@ -618,16 +672,16 @@
       ]
     },
     "8": {
-      "note": "The quality gate freezes certification records before execution.\n\nAnchor: \"def _freeze_certification_records\"",
+      "note": "Retained reference account (no fresh execution or acceptance inferred): The quality gate freezes certification records before execution.",
       "targets": [
         {
           "anchor": {
-            "blob": "f6650bb7d450287cab6ad239d276c815ea69ba0a",
+            "blob": "b2f9f1624c63b2e7e58d9486c5d024f84fd7903e",
             "content": "sha256:69cc801ae9ae8c43f553a1bdce7b7cb9735d411145de126503e25825deb46166",
             "locator": {
-              "end": 476,
+              "end": 474,
               "kind": "line_range",
-              "start": 462
+              "start": 460
             },
             "path": "mcp/src/agents_remember/worktrees/modules/quality/gate.py"
           },

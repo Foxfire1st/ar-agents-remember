@@ -1,0 +1,228 @@
+{
+  "path": "mcp/src/agents_remember/memory/carryover_documents.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "1b75a555341ba3c926124abb7a74b388b1c9d2a9",
+        "content": "sha256:cae9f7e40d37eac90bf0acf79bc64a9ea540bb2115c5efa373f5da21aedf0f22",
+        "locator": {
+          "kind": "symbol",
+          "name": "memory_only_evidence"
+        }
+      },
+      "id": "RLZ-0BXVW9",
+      "invariant": "INV-FPG5GW",
+      "origin": {
+        "handoffEntry": "MIK-R56@v1 PartB §7",
+        "leaf": "260928-MIK-L56"
+      },
+      "rationale": "Requires current anchors and unchanged target-at-base for automatic memory-only selection.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "1b75a555341ba3c926124abb7a74b388b1c9d2a9",
+        "content": "sha256:42c95a084160351066eecc155bd26856ac26e41c4d89bf90896078f9ff2e72c6",
+        "locator": {
+          "kind": "symbol",
+          "name": "require_converted_formats"
+        }
+      },
+      "id": "RLZ-1WSVMH",
+      "invariant": "INV-9MH0V9",
+      "origin": {
+        "handoffEntry": "MIK-R56@v1 PartB §6",
+        "leaf": "260928-MIK-L56"
+      },
+      "rationale": "Checks both markers and their version equality before planning the converted pair.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "1b75a555341ba3c926124abb7a74b388b1c9d2a9",
+        "content": "sha256:d22dcc387f33201d5e922b68d5aff16fbbf26ac8b1aaa64050806c560fd4bf5e",
+        "locator": {
+          "kind": "symbol",
+          "name": "observe_document_anchors"
+        }
+      },
+      "id": "RLZ-ARXZT0",
+      "invariant": "INV-1CS8DN",
+      "origin": {
+        "handoffEntry": "MIK-R56@v1 PartB §8",
+        "leaf": "260928-MIK-L56"
+      },
+      "rationale": "Uses official code observations and names each noncurrent entry/reference.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "1b75a555341ba3c926124abb7a74b388b1c9d2a9",
+        "content": "sha256:edd32fc52f53c1544ae84a466d40a1623abf6f2c86944b8a23602ec69f553a33",
+        "locator": {
+          "kind": "symbol",
+          "name": "compare_document_pair"
+        }
+      },
+      "id": "RLZ-MER4GN",
+      "invariant": "INV-FPG5GW",
+      "origin": {
+        "handoffEntry": "MIK-R56@v1 PartB §7",
+        "leaf": "260928-MIK-L56"
+      },
+      "rationale": "Compares paired payloads and reports missing or differing sidecar/Markdown bytes.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "1b75a555341ba3c926124abb7a74b388b1c9d2a9",
+        "content": "sha256:947ed049fabefba841a60ddaa77500dc6ff384e5ba6d2036770f93c8723f8534",
+        "locator": {
+          "kind": "symbol",
+          "name": "fresh_document_payloads"
+        }
+      },
+      "id": "RLZ-QF09C8",
+      "invariant": "INV-1CS8DN",
+      "origin": {
+        "handoffEntry": "MIK-R56@v1 PartB §8",
+        "leaf": "260928-MIK-L56"
+      },
+      "rationale": "Records moved current content against the official code object during apply.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Format and path admission: Both roots must hold parsed layout markers with equal conversion versions. Unconverted inputs receive the central conversion refusal. Relative paths are validated; the memory root and every component of an admitted member path must not be symlinks, and an existing member must be a regular file. Sidecars must parse and match the mirrored card/route path.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1b75a555341ba3c926124abb7a74b388b1c9d2a9",
+            "content": "sha256:42c95a084160351066eecc155bd26856ac26e41c4d89bf90896078f9ff2e72c6",
+            "locator": {
+              "kind": "symbol",
+              "name": "require_converted_formats"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1b75a555341ba3c926124abb7a74b388b1c9d2a9",
+            "content": "sha256:6e2272ccd94b422ec6a5544703caaab2245f0099816081ea62dcd6ad82d3117b",
+            "locator": {
+              "kind": "symbol",
+              "name": "require_matching_layout"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1b75a555341ba3c926124abb7a74b388b1c9d2a9",
+            "content": "sha256:f9bb94f86a30d379108e1ba99b22691e86b7267e46e1824ed02833c83fd34dfa",
+            "locator": {
+              "kind": "symbol",
+              "name": "safe_memory_path"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1b75a555341ba3c926124abb7a74b388b1c9d2a9",
+            "content": "sha256:0187eca2ab24c84148a04beb8c83dd0f1b7b34823ac144c5cf19af4dd4d95809",
+            "locator": {
+              "kind": "symbol",
+              "name": "load_document_unit"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Pair and anchor completeness: A document is Markdown plus JSON; pair comparison names missing/differing bytes rather than silently selecting half a unit. Every realizes/proves anchor and every code/test reference anchor is observed at the opened official code tree. Zero anchors is not positive currentness evidence.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1b75a555341ba3c926124abb7a74b388b1c9d2a9",
+            "content": "sha256:edd32fc52f53c1544ae84a466d40a1623abf6f2c86944b8a23602ec69f553a33",
+            "locator": {
+              "kind": "symbol",
+              "name": "compare_document_pair"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1b75a555341ba3c926124abb7a74b388b1c9d2a9",
+            "content": "sha256:d22dcc387f33201d5e922b68d5aff16fbbf26ac8b1aaa64050806c560fd4bf5e",
+            "locator": {
+              "kind": "symbol",
+              "name": "observe_document_anchors"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1b75a555341ba3c926124abb7a74b388b1c9d2a9",
+            "content": "sha256:b87e8a5a394a3ec199679228b457018b361098218e3ae1695b735b98a3810ffd",
+            "locator": {
+              "kind": "symbol",
+              "name": "_anchor_slots"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Mechanical refresh and review: Apply rereads/reobserves units. Only current moved anchors whose content hash is unchanged are mapped through the writer API. Noncurrent anchors refuse unless explicitly reviewed, then remain unchanged for curator/validator judgment. Unmoved source bytes remain exact; moved sidecars use the canonical serializer. This helper writes no files/history.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1b75a555341ba3c926124abb7a74b388b1c9d2a9",
+            "content": "sha256:947ed049fabefba841a60ddaa77500dc6ff384e5ba6d2036770f93c8723f8534",
+            "locator": {
+              "kind": "symbol",
+              "name": "fresh_document_payloads"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Memory-only selection: Automatic memory-only evidence requires at least one anchor, every anchor current and both target bytes unchanged since the resolved memory merge base; absent base or moved target requires review. Stable document selection distinguishes route coverage of landed paths, entity catalog and memory-only units.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1b75a555341ba3c926124abb7a74b388b1c9d2a9",
+            "content": "sha256:cae9f7e40d37eac90bf0acf79bc64a9ea540bb2115c5efa373f5da21aedf0f22",
+            "locator": {
+              "kind": "symbol",
+              "name": "memory_only_evidence"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1b75a555341ba3c926124abb7a74b388b1c9d2a9",
+            "content": "sha256:7d7447a83b294990a42f45eaf86eb1196b937a66a0e84ab1d1baacbbaf5dc69f",
+            "locator": {
+              "kind": "symbol",
+              "name": "document_selection"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

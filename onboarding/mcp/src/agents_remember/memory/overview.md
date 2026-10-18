@@ -7,7 +7,7 @@
 
 This area connects memory-repository lifecycle operations with knowledge read from a selected memory text tree. Knowledge files are authority; their SQLite index is a disposable representation for forward and reverse lookups and the retained logical readers. Deleting an index loses no authored knowledge. This area does not own task approval, task status or Git attribution policy.
 
-The route includes baseline adoption, bounded legacy carryover, conversion and structural boundary crossing, text census inventory/publication, index capture/build/cache/query, and retained knowledge schemas, codecs, reads, anchor observations and comparison accounting. Application-layer knowledge writing owns ordinary record, entry and history authoring. Retired canonical database mutation, batch, copied-candidate, publication, portable import/export and changeset-merge accounts must not be read as current write routes.
+The route includes baseline adoption, converted recovery-leaf carryover, conversion and structural boundary crossing, text census inventory/publication, index capture/build/cache/query, and retained knowledge schemas, codecs, reads, anchor observations and comparison accounting. Application-layer knowledge writing owns ordinary record, entry and history authoring. Retired canonical database mutation, batch, copied-candidate, publication, portable import/export and changeset-merge accounts must not be read as current write routes.
 
 ## Hot Path Summary
 
@@ -31,7 +31,7 @@ Converted first adoption validates the selected immutable tree with no compariso
 
 Publication constructs a commit from the validated tree, uses a conditional branch update, and verifies the resulting commit tree. The implementation reads the parent HEAD inside `_publish_validated_tree`, after validation, and subsequently reads the branch name; it does not carry a ref/HEAD observation captured at validation into this helper. Thus exact tree publication is supported, while the inherited stronger claim that the branch must still point where validation saw it is not established by this local implementation. Publication and subsequent real-index preparation also lie outside `_prepare_stage_validate`'s restoration handler; the broad claim of rollback for every possible adoption exception exceeds that interval's source evidence.
 
-`carryover.py` retains the legacy recovery planning account, but apply refuses both a converted target (directing file-based knowledge ingestion) and an unconverted target unconditionally with the central conversion message. The read plan stays separate; no never-converted write exception remains. This refusal check is not acquisition of a lock for the duration of carryover, and carryover authority remains separately checked.
+`carryover.py` plans paired documents/sidecars at matching conversion versions, proves landed code per path, observes every code/test/entry anchor at official code and resolves outgoing record dependencies. Apply rechecks the exact configured open recovery leaf and source units, skips divergent target edits, imports approved pairs and missing records, regenerates indexes and validates the resulting worktree. Current moved content alone is rebound. Source history remains a reading aid; no staging, ref mutation, carryover commit or ledger refresh occurs. The recovery curator writes its own rows and normal closeout publishes. Unconverted input retains central conversion guidance.
 
 An existing legacy root first answers `legacy-format` with conversion guidance; it cannot be adopted until it converts. An unattributed root converts in place before adoption; an official legacy line converts as one new leaf's first memory change and lands through normal converted validation. The command, read-only legacy database reader and conversion-format version 1 remain permanent because other clones and machines can retain unseen unconverted lines.
 
@@ -99,7 +99,7 @@ Logical identity is independent of database storage location and physical serial
 
 Source measurement and attribution share one population and one absence predicate. Partial or unavailable observations retain their limits, and unmeasured counts are not fabricated as zeros. Snapshot/cursor mismatch cannot return a page assembled from mixed revisions. Exact recorded blob identity does not by itself establish a usable line-range locator.
 
-Converted adoption requires validation and refuses legacy-format cards independently of accepting drift. Legacy carryover does not write converted targets. Structural crossing resolves mechanical differences under declared rules while preserving authored conflicts for the curator. Prevalidation preparation, conditional ref publication, per-file atomic publication and multi-file rollback are different guarantees and must be described at their actual scope.
+Converted adoption requires validation and refuses legacy-format cards independently of accepting drift. Converted carryover writes only the admitted recovery worktree, validates/rolls back its own extent and makes no commit or source-history copy. Structural crossing resolves mechanical differences under declared rules while preserving authored conflicts for the curator. Prevalidation preparation, conditional ref publication, per-file atomic publication and multi-file rollback are different guarantees and must be described at their actual scope.
 
 Current tree review requires the judgment pane rather than projecting supporting-record channel bags, curator-assessment displays or applicability summaries. The pane carries this leaf’s selected-subject history rows in attempt order and proof entries with authored facets and after-code currentness; these are not executed proof results or inferred semantic conclusions. Measured no judgment and unreadable history remain distinct. Task context has no selected knowledge subject and reports unavailable judgment rather than an empty successful collection. No cross-repository authority contract is established by this overview merely because lifecycle helpers address external memory or readers refer to code objects.
 
@@ -132,6 +132,13 @@ These retired source accounts preserve earlier intent only. Their former citatio
 - Historical pre-L57 reference account only; the named supporting-record acquisition/availability/applicability owner is removed, not a current wire guarantee: Retired supporting-record channels remain unavailable without fabricated counts or proof/worklist substitutions. (historical reference 166; retired in L57)
 
 ## Evidence
+
+Inherited numbered findings [116], [149] retain their exact wording and full targets as historical custody where their candidate9 owner is retired or their account conflicts with the current route. They are not evidence that an absent legacy owner still executes. No guarantee is retired by this proposal; parent disposition remains required. The source-bound current account below is separate.
+
+
+- Converted carryover requires matching layouts and exact recovery-leaf authority, writes paired worktree units and leaves curator rows/publication to ordinary closeout. [174]
+
+
 - Retained reference account (no fresh execution or acceptance inferred): A missing object against a Git failure. [2]
 - Retained reference account (no fresh execution or acceptance inferred): Entries at or under a directory, and of the files directly in it. [5]
 - Retained reference account (no fresh execution or acceptance inferred): Live entry paths, links to a path, and every record of a kind. [6]

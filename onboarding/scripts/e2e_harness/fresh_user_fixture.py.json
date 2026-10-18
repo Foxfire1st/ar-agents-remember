@@ -19,12 +19,12 @@
       ]
     },
     "10": {
-      "note": "The cases that pin the fixture's shape.",
+      "note": "The retained fixture cases assert exact local large-file size, vendored-tree and branch topology, plain-fixture shape and run-root custody, not current shipped cap comparisons.",
       "targets": [
         {
           "anchor": {
-            "blob": "e1748a1360ed129edd05f2fa35a7729ea268303e",
-            "content": "sha256:7f5a486cffcc57bdfef4c883922c6ad397b97d8d162d660596a7cca531bfea69",
+            "blob": "39908cacff69050094a07c31513a9fd08e6e768d",
+            "content": "sha256:5b171cd9b3d429d8ddbc768fdf5e59bfaa1d8e3958ff5a981a998f968c986ed2",
             "locator": {
               "kind": "symbol",
               "name": "test_the_over_cap_fixture_really_crosses_the_cap"
@@ -35,8 +35,8 @@
         },
         {
           "anchor": {
-            "blob": "e1748a1360ed129edd05f2fa35a7729ea268303e",
-            "content": "sha256:b8e6e6018ffd1c30289d78de9dbaa69b81a96408a62951629ad01ae2164be25a",
+            "blob": "39908cacff69050094a07c31513a9fd08e6e768d",
+            "content": "sha256:a6895ccdbf4a698b6160ff1f54ba89ca00e2e77e22f75efad61ff3601d864f90",
             "locator": {
               "kind": "symbol",
               "name": "test_the_plain_fixture_stays_inside_every_cap"
@@ -47,7 +47,7 @@
         },
         {
           "anchor": {
-            "blob": "e1748a1360ed129edd05f2fa35a7729ea268303e",
+            "blob": "39908cacff69050094a07c31513a9fd08e6e768d",
             "content": "sha256:5460b292f9a65abbdad07620944308e167dff75f844da8a0d372aead0ca07c5e",
             "locator": {
               "kind": "symbol",
@@ -114,7 +114,7 @@
       ]
     },
     "4": {
-      "note": "The oversized source is the shipped per-file cap plus one byte.",
+      "note": "OVERSIZED_BYTES is a local 4 * 1024 * 1024 + 1 literal for the historical large-file fixture, not a derived current shipped citation-index cap.",
       "targets": [
         {
           "anchor": {
@@ -188,23 +188,6 @@
               "kind": "symbol",
               "name": "write_thin_bootstrap"
             }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "9": {
-      "note": "The per-file cap the fixture must cross.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "496ae7522f0f6e5b3a56dd41fdc0f35aabd62dfd",
-            "content": "sha256:8db6e294f7527bb8fee91cd9d660c341c87a9d342ffb93439f385561f810d627",
-            "locator": {
-              "kind": "symbol",
-              "name": "MAX_SOURCE_FILE_BYTES"
-            },
-            "path": "mcp/src/agents_remember/memory_quality/style/citations/source_index_state.py"
           },
           "kind": "code"
         }

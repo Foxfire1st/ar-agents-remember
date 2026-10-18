@@ -12,6 +12,8 @@ Canonical authoring workflow for converted file cards and route overviews: Markd
 
 Converted Markdown has no legacy metadata or Update History. The Curator writes citation-table inputs, then the document-scoped fixer resolves them against the code candidate and converts them to numbered prose over sidecar references. Existing-key reauthoring replaces the old cited line; orphan removal leaves surviving keys unchanged. Preview/apply results are examined for refusal, unreadable inputs and unresolved targets rather than just ok=true.
 
+Converted carryover selects paired content and missing records, validates and commits nothing; the recovery Curator authors own rows and ordinary closeout owns publication. It is not the former forbidden legacy copy/metadata/commit apply.
+
 Body maintenance comes before anchors. Mechanical blob/content/line refreshes do not count as authored card changes. Moved behavior carries its entries through writer-owned covers before creating current prose and retiring the old sidecar. Deleted-source cleanup first checks whether behavior moved; surviving callers' references are retargeted to actual replacements or removed.
 
 The newly built normal gate accepts current source-bound updated/no_impact statements; updated needs a counted card/reference change, and realization/proof-only changes do not count. A governing route has its own subject. L53's own changed cards are exempt from updated rows under amended rule 1 and answered by their measured counted changes; that rollout qualification is not the general post-landing workflow. Sidecar JSON, source pins and reference numbers are never manually fabricated.

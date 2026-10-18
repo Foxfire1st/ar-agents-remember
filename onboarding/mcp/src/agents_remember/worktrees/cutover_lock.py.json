@@ -78,7 +78,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c70467d5b527bd705e1148bfcfaae6ca785f525e",
+            "blob": "dbadc5eac8be8186b2473fd1362b4525c155deb4",
             "content": "sha256:88d6191f23445b6998e138f83454d2651ca9f6d6f696a46675fd5ff4fa286291",
             "locator": {
               "kind": "symbol",
@@ -112,7 +112,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c70467d5b527bd705e1148bfcfaae6ca785f525e",
+            "blob": "dbadc5eac8be8186b2473fd1362b4525c155deb4",
             "content": "sha256:09bc52594a04902e96d6482a082ca175014285361638bf4a4c5fd7fdd1557248",
             "locator": {
               "kind": "symbol",
@@ -121,6 +121,35 @@
             "path": "mcp/tests/test_knowledge_cutover.py"
           },
           "kind": "test"
+        }
+      ]
+    },
+    "13": {
+      "note": "The central legacy refusal and conversion guidance survive retirement of the separate prepared-certification adapter. [13]",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a6ae7d18931f91de5fcc3383a5a141ac40859c74",
+            "content": "sha256:03252c4f026fc4ca9eb71979cf74e05f79d49b371b09d2cf4a671102f0eb916b",
+            "locator": {
+              "end": 231,
+              "kind": "line_range",
+              "start": 205
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a6ae7d18931f91de5fcc3383a5a141ac40859c74",
+            "content": "sha256:655a7c430b4a66c31eea14f17c88bd30295d4bcb4eb874c8ad415b70f6b22c5b",
+            "locator": {
+              "end": 308,
+              "kind": "line_range",
+              "start": 263
+            }
+          },
+          "kind": "code"
         }
       ]
     },
@@ -241,7 +270,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "41c3ec60cc11d54bdfd052f94f0ea7ac6aac95a3",
+            "blob": "a34667e628dd1e5f7e0c8ad103c5d35edde4b115",
             "content": "sha256:54b4f95134fee9ba49567b3c59a20dbc524e5b99411883ad7a0dfab929a9e8a1",
             "locator": {
               "kind": "symbol",

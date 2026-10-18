@@ -6,36 +6,15 @@
 
 ## Purpose
 
-Owns the immutable, content-addressed contracts of the CCR-R07 affected closure: one
-`AffectedClosurePlan` for the proven incremental subset, `AffectedUnitPlan`/result records for
-each checker/document unit, explicit member populations, the unit-level reuse plan, the aggregate
-`AffectedClosureResult`, and the pending final-full visibility — all self-verifying and
-fail-closed so incremental proof can never masquerade as final certification.
+Owns strict frozen per-unit identity and terminal result contracts: `ClosureDependencyIdentity`, `AffectedUnitPlan`, `AffectedUnitResult`, and `UnitStatus`. Canonical dependencies, selected-document identity and evidence/result self-digests permit dependency-exact per-unit records; they do not assemble an affected closure or authorize finalization.
 
 ## Code Commentary
 
 ### Logic
 
-`CheckerExecutionPolicy` (`affected_models.py:26-32`) and `ClosureDependencyIdentity`
-(`affected_models.py:35-41`) fix one R07 execution/identity contract; `AffectedUnitPlan`
-(`affected_models.py:44-90`) validates one canonical relative `.md` document, requires unique
-canonical dependencies that exclude the checked node, and self-verifies `unitDigest`.
-`AffectedMemberPlan` (`affected_models.py:93-106`) distinguishes check-target members from
-dependency inputs; `PendingFinalFullCheck` (`affected_models.py:109-114`) keeps R06 full-only
-checkers visible. `AffectedClosurePlan` (`affected_models.py:117-246`) requires members to
-equal the exact R06 selected population, units to equal every incremental document-by-checker
-pair, the exact green Gate 1-4 certificate prefix, canonical subrecord coherence, and
-`acceptanceEligible=False`/`fullFinalRequired=True`, and self-verifies `planDigest`.
-Its incremental document population excludes nodes marked `historical Git tree member`, so
-deleted or renamed predecessor cards remain visible as dependency inputs without becoming
-current execution units (`_incremental_documents`, `affected_models.py:221-228`).
-`AffectedUnitResult` (`affected_models.py:249-278`) binds status to finding count and the
-blocked state to zero checked files; `AffectedMemberResult` (`affected_models.py:281-300`)
-derives disposition/status from its units; `SubresultReusePlan` (`affected_models.py:303-329`)
-requires reused and executed populations to partition the plan. `AffectedClosureResult`
-(`affected_models.py:332-405`) aggregates exactly the planned units, sets
-`incrementalMemoryReady` iff every unit passes, computes `terminalStatus` by blocked > fail >
-pass, and keeps `closeoutReady=False`. `dependency_identity` and `full_only_disposition` (`affected_models.py:416-426`) are the compilers' helper factories.
+`ClosureDependencyIdentity` requires a nonempty node ID, content digest, authority namespace and validator version. `AffectedUnitPlan` requires one canonical relative `.md` path, nonempty checker/version/owner identities, bounded dependency and edge tuples, exact code/source-index/registry identities and a self-verifying `unitDigest`.
+
+Dependencies and dependency edges must be unique and sorted; dependencies exclude the checked node. `AffectedUnitResult` binds pass to zero findings and fail to nonzero findings; blocked results have zero checked files and other results exactly one. Evidence and result digests must equal their canonical payloads. Aggregate plans/results, member populations, reuse partitions and pending-full factories are absent.
 
 ### Conventions
 
@@ -44,11 +23,9 @@ by validation, so a model that does not self-verify refuses construction.
 
 ### Invariants And Boundaries
 
-- The closure result and its plan pin the exact same unit population; reused and executed digests
-  partition the plan.
-- `acceptanceEligible` and `closeoutReady` are hard `False`; `fullFinalRequired` is hard
-  `True` — incremental closure can never stand in for R08 final full certification.
-- Pending full-only checkers are never hidden or converted to green rails.
+- Canonical `.md` identity, dependency/edge populations and unit/evidence/result digests are self-verified.
+- Per-unit status agrees with finding count and selected-document count.
+- These models do not supply aggregate readiness or finalization flags.
 
 ### Todos
 
@@ -66,18 +43,22 @@ CCR-R07@v3 (requirements/CCR-R07-v3-incremental-affected-closure-validation.md,
 validation not to waive the final full Gate-5 pass and forbids safe-full fallback or
 caller-declared completeness.
 
+This module now retains per-unit identity and result models rather than an aggregate closure API. Its reduced exports do not themselves retire the requirement above.
+
 
 ### Repo-Internal References
 
-- The plan binds one unit per incremental document/checker and the exact Gate 1-4 prefix. [1]
-- Results and reuse are terminal, partitioned, and aggregate blocked > fail > pass. [2]
-- The planner compiles these models; the executor consumes them. [3]
-- The declared affected-closure plan is the production shape authority; deleted tests do not establish a current validation run. [4]
+- AffectedUnitPlan verifies canonical relative .md identity, exact canonical dependency/edge sets and self-digest. [1]
 
-| Historical Git-tree members remain dependency inputs and are excluded from current unit population. | `_incremental_documents` | mcp/src/agents_remember/memory_quality/incremental_scope/affected_models.py:221-228 |
+- AffectedUnitResult verifies terminal status, finding/selected-file counts, evidence digest and result digest without aggregate readiness. [2]
+
+
+
+
+
 
 ### Cross-Repo References
 
 No cross-repository implementation boundary is owned here.
 
-- Gate certificate identities come from the R21 certificate owners inside the same repository. [5]
+- GateCertificateIdentity remains owned by the certification certificate models; the surviving per-unit models no longer import it for an aggregate closure. [5]

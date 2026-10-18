@@ -7,33 +7,34 @@
 ## Purpose
 
 Guard that every place judging onboarding traces builds its items with the worklist's
-identical-copy groups, so one row binding a whole group answers the worklist, the memory-quality
-run and the closeout validator alike -- and that a source without copies keeps the item it had.
+identical-copy groups, so one row binding a whole group answers the worklist and the memory-quality
+gate alike -- and that a source without copies keeps the item it had. The closeout validator this
+file also covered was retired with the certified closeout, and its cases were removed here.
 
 ## Code Commentary
 
-### One group, three consumers
+### One group, two consumers
 
 The module builds a real repository pair in which a canonical file and its generated copies are
 deleted together and one carded owner remains. One card row authored by the product's writer binds
-every source of the group. The cases then ask the same question three times: the leaf's own worklist
-item, the memory-quality gate's item and the closeout validator's item must be the same item, and the
-row must answer it, before the grouped change closes. The pre-change behaviour is kept as a control:
+every source of the group. The cases then ask the same question twice: the leaf's own worklist
+item and the memory-quality gate's item must be the same item, and the row must answer that item,
+before the grouped change closes. The pre-change behaviour is kept as a control:
 without groups the card item is the singleton, its id differs from the worklist's, and the row
 matches but does not answer it.
 
 ### The refusal side
 
-A gate entry that cannot read a complete run's `identicalChanges` -- no run, a run that is not
-complete, or a map with a malformed entry -- reports one named finding or refusal and judges no
-ungrouped items. The closeout side additionally refuses a run that does not describe the candidate
-being certified, and a group whose member has since gained a card, because either would answer the
-row with another candidate's item. The remedy named in every one of those refusals is the documented
-worklist recompute, never a silent regroup.
+The memory-quality gate refuses an absent or incomplete worklist run with a named finding.
+The outer controller gate returns the recomputation instruction when its group reader cannot read
+the run. The gate test exercises this branch and asserts the named refusal and that no ungrouped
+items are judged; it does not assert the instruction's wording. Separately, reader-only tests reject
+six malformed group shapes and accept a complete run with an empty group map. These tests invoke
+no second gate or closeout transaction.
 
 ### Bounds
 
-The cases are source-level regressions over the gate entries, the closeout adapter and the worklist.
+The cases are source-level regressions over the memory-quality gate, its group reader and the worklist.
 The Worker's focused runs under its freeze are its own receipts; this card is not evidence that any
 of them ran, and no case here speaks about the whole suite or an installed host.
 
@@ -41,12 +42,14 @@ of them ran, and no case here speaks about the whole suite or an installed host.
 
 The test symbols below carry the module's grouping and refusal proof at the recorded candidate.
 
-- One row binding every copy closes the worklist item, and both gate entries raise that same item. [1]
-- With no groups the item is the singleton and the row does not answer it. [2]
-- The memory-quality entry refuses by name when the run names no readable groups. [3]
-- The closeout takes the persisted run's groups and refuses without them. [4]
-- A run recorded for another candidate is refused by name. [5]
-- A group a card now contradicts is refused by name. [6]
-- Six malformed group shapes are refused by name through both entries. [7]
-- A run with no groups stays a valid empty map for both entries. [8]
-- A single-source card is the same item in the worklist and both gate entries. [9]
+- One row binding every copy closes the worklist item and the memory-quality gate sees that same answered item. [1]
+
+- Without groups the card item is a different singleton and the matched row does not answer it; the trace gate reports MISSING_CODE. [2]
+
+- The memory-quality gate refuses absent or incomplete worklist runs by name instead of judging ungrouped items. [3]
+
+- Six malformed group shapes are refused by the controller group reader; this case invokes no closeout or second gate. [4]
+
+- A complete run with an empty group map yields an empty map and no problem from the controller group reader. [5]
+
+- A single-source card is the same answered item in the worklist and the memory-quality gate. [6]

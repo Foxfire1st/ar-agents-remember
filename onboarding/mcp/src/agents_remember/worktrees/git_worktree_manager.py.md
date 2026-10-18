@@ -34,9 +34,7 @@ facade for terminal lifecycle finalization so cleanup plus task-document
 completion stay on the same public worktree surface. The facade also re-exports the issue #83 committed-range
 closeout surface — `closeout_changed_paths` (from `modules/closeout.py`),
 `committed_changed_paths` and `commit_text_or_none` (from `modules/git.py`),
-and `contract_memory_verified_commit` (from `modules/onboarding.py`) — so tests
-and callers reach the worklist and body-gate baseline helpers through the
-stable facade path. 260712-PTS-L1 adds the leaf-id heal to the same surface: the
+— so tests and callers reach committed-range worklists through the stable facade path. The retired `contract_memory_verified_commit`, metadata-row/stamping and legacy refresh-validator APIs are no longer facade exports. 260712-PTS-L1 adds the leaf-id heal to the same surface: the
 facade re-exports `heal_contract_leaf_ids` (from `worktrees/worktree_contract.py`)
 and `command_heal_leaf_ids` (from `modules/cli.py`) in `__all__`, so the explicit
 one-shot legacy-id migration is reachable through the stable facade path like
@@ -54,8 +52,7 @@ through an internal `WorktreeProviderSetupConfig` created by the MCP application
 so callers no longer pass provider coordination roots, settings paths, or
 runtime roots into the worktree start surface.
 
-Closeout context reparsing, changed-path discovery, onboarding metadata/entity
-refresh, integration replay, cleanup, and lifecycle finalization now live in the extracted modules
+Closeout context reparsing, changed-path discovery, source-onboarding plans, entity fingerprint and generated route-index refresh, integration replay, cleanup, and lifecycle finalization now live in the extracted modules
 documented by the `modules/overview.md` route overview.
 
 ### Invariants And Boundaries
@@ -92,15 +89,23 @@ documented by the `modules/overview.md` route overview.
 
 ### Repo-Internal References
 
-- MCP worktree start writes temporary lifecycle settings and passes them to this module. [1]
+
 - Provider setup performs isolated provider seed and runtime preparation. [2]
 - Worktree status packets project lifecycle payloads into context packets. [3]
-- Worktree contract serialization lives in the package worktree contract module. [4]
-- The facade declares its public worktree lifecycle result exports, including the pull-request landing recorder, the checkpoint landing route and the stop-only pause. [5]
-- The pause's result function is imported from its own module and listed in the facade's public export surface, so the stop route is reachable through the stable facade path. [6]
-- Terminal lifecycle finalization is implemented in the extracted module. [7]
+
+
 - Long-path-safe filesystem wrappers live in the kernel filesystem helper. [8]
 
 ## 260815-DAG-L4 Integration-Authority Impact
 
 L4 makes task-derived integration refs mechanically non-ordinary: repository defaults, sprint supers, and active atomic-series refs are censused across code and external memory. Mutation is admitted only through exact lifecycle authority, named-ref compare-and-swap, queue/repository serialization, or a terminal capability; stale topology, aliases, ambient checkouts, and torn recovery fail closed.
+
+- MCP worktree start writes temporary lifecycle settings and passes them to this module. [1]
+
+- Worktree contract serialization lives in the package worktree contract module. [4]
+
+- The pause's result function is imported from its own module and listed in the facade's public export surface, so the stop route is reachable through the stable facade path. [6]
+
+- The facade declares its public worktree lifecycle result exports, including the pull-request landing recorder, the checkpoint landing route and the stop-only pause. [5]
+
+- Terminal lifecycle finalization is implemented in the extracted module. [7]

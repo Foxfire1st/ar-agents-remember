@@ -5,7 +5,7 @@
     ],
     "justification": "At least one proof names this invariant's exact behavior at the candidate."
   },
-  "applicability": "Ordinary and direct exact-tree publication, both prepared repository legs, and integration pre-ref admission.",
+  "applicability": "Ordinary and direct exact-tree publication and integration pre-ref admission.",
   "conditions": [
     "The repository pre-commit hook is resolved for the worktree and judged tree; absence is recorded as hook=none, not a skipped configured check.",
     "Failed, unrunnable, timed-out or tracked/index-mutating hooks refuse publication before ref movement.",
@@ -14,7 +14,7 @@
   ],
   "exclusions": [
     "Commit-tree does not itself invoke commit-msg, prepare-commit-msg or post-commit; the explicit repository pre-commit check precedes it.",
-    "Prepared code and memory use ordinary git commit hooks; a legacy strict-code-no-verify journal spelling is not a bypass.",
+    "Removed prepared-only journal spellings supply no live publication authority and permit no bypass on surviving ordinary/direct routes.",
     "Reference-transaction hooks retain their separate native ref-movement role."
   ],
   "id": "INV-2Q8RPR",
@@ -29,9 +29,9 @@
     "leaf": "260928-MIK-L26",
     "task": "260928-MIK"
   },
-  "revision": 3,
+  "revision": 4,
   "schema": "ar-invariant/v1",
-  "statement": "Product landing publication requires the repository pre-commit check on the exact judged tree before a new commit is published or its ref moves. Ordinary/direct commit-tree routes run the explicit check; prepared code and memory retain ordinary hooks without bypass. Integration requires a matching tree-bound Commit-Check-Pass fact or reruns the repository check on that candidate tree.",
+  "statement": "Product landing publication requires the repository pre-commit check on the exact judged tree before a new commit is published or its ref moves. Ordinary/direct commit-tree routes run the explicit check without bypass. Integration requires a matching tree-bound Commit-Check-Pass fact or reruns the repository check on that candidate tree.",
   "status": "proposed",
   "supersedes": []
 }

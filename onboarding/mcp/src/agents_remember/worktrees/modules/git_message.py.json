@@ -1,0 +1,42 @@
+{
+  "path": "mcp/src/agents_remember/worktrees/modules/git_message.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "2d849e301083a5d5d3b24d1042534f4c0a78dab2",
+        "content": "sha256:788f7387fb34f8d84bd0b1772e1f0490c89644795c199dfffa337bd6d84ce4f3",
+        "locator": {
+          "kind": "symbol",
+          "name": "_cleaned_message"
+        }
+      },
+      "id": "RLZ-R331TA",
+      "invariant": "INV-G0Y4VR",
+      "origin": {
+        "handoffEntry": "R3 notes 11b and 11c",
+        "leaf": "260928-MIK-L26"
+      },
+      "rationale": "This owner resolves the configured cleanup and comment rules before publication.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Git-compatible publication-message validation and cleanup before publication.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2d849e301083a5d5d3b24d1042534f4c0a78dab2",
+            "content": "sha256:788f7387fb34f8d84bd0b1772e1f0490c89644795c199dfffa337bd6d84ce4f3",
+            "locator": {
+              "kind": "symbol",
+              "name": "_cleaned_message"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

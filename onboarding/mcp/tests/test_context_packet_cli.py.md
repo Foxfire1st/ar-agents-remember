@@ -16,11 +16,7 @@ call must exit successfully and deliver a versioned packet. The explicit drift c
 the real summary helper, checks that `--drift-detail-limit 3` reaches its behavior-layer
 keyword argument, and verifies the delivered actionable sample respects that limit.
 
-A separate pure `summarize_rows` control supplies more actionable rows than the selected
-sample budget and checks counts remain complete while the sample is capped. These are
-separate claims: parsed argument forwarding, delivered CLI composition, and pure truncation.
-The helper creates only fixture repositories/settings; its Git work is not an acceptance
-or landing operation on the user's repository.
+The remaining assertions distinguish CLI argument forwarding from delivered composition; there is no separate pure complete-count/truncation control in this module. Helpers create fixture repositories and settings only, not an acceptance or landing operation on the user repository.
 
 ## Boundaries
 
@@ -30,7 +26,9 @@ success follows from the sample-limit checks.
 
 ## Evidence
 
+
 - The complete file owns the behavior and limits described above; documentation/tests are not fresh execution evidence. [1]
+
 
 ## External and cross-repository evidence
 

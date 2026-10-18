@@ -3,7 +3,7 @@
   "proves": [
     {
       "anchor": {
-        "blob": "c6812adcc6ab02a7d3f4171a191ff52abb61c1c9",
+        "blob": "e159e3fdc8444fdd57cce28d9f770103e7ac3cb6",
         "content": "sha256:5ad4d144fa287d52e3a44949b08eb51c86f6194fef6e3672ba5969fccf2f9c47",
         "locator": {
           "kind": "symbol",
@@ -20,8 +20,8 @@
     },
     {
       "anchor": {
-        "blob": "c6812adcc6ab02a7d3f4171a191ff52abb61c1c9",
-        "content": "sha256:9cd7042800489013f9be4956aafa55119033beb23078722d1dc3a0e7b1d0d567",
+        "blob": "e159e3fdc8444fdd57cce28d9f770103e7ac3cb6",
+        "content": "sha256:718a8c1bd9e678cb384ffcd30f84f852e9ad3ed5c590e0b62cc8e649fea417d8",
         "locator": {
           "kind": "symbol",
           "name": "test_the_memory_quality_controller_persists_the_worklist_and_renders_it_in_the_checklist"
@@ -39,7 +39,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "c6812adcc6ab02a7d3f4171a191ff52abb61c1c9",
+        "blob": "e159e3fdc8444fdd57cce28d9f770103e7ac3cb6",
         "content": "sha256:de92200ab1ef77d40740f40d55d8c4176fd03703c8dff3ea08a3b75281b90689",
         "locator": {
           "kind": "symbol",

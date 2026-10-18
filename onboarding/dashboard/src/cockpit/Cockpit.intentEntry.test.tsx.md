@@ -48,8 +48,7 @@ No additional work is asserted by this card.
 
 ### Conventions
 
-Terminal rendering is mocked; the store is reset and `fetch` unstubbed after each case. Requests are counted
-by URL path and `leaf` parameter.
+The store is reset, mounted DOM cleaned and stubbed globals restored after each case. The removed Terminal mock is not a current fixture seam. Requests are counted by URL path and `leaf` parameter.
 
 ### Invariants And Boundaries
 
@@ -79,11 +78,15 @@ No relevant domain documentation was found.
 ### Repo-Internal References
 
 - The re-validation boundary the cases exercise. [10]
+
 - The shell the cases mount on an injected view. [11]
+
 - The mode-bar entry used to leave and return to Operations. [12]
 
 - The ruled triggers and the request-counting method. [22]
+
 - Two live leaves seeded into the real store. [23]
+
 - The route stub with the knowledge switch and the read counters. [24]
 - The first-ingest sequence every case starts from. [25]
 - (a) re-show, once per showing, no catalogue read. [26]

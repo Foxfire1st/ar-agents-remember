@@ -7,7 +7,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "cd35c66bb9c9d8af0f23fd2579f5e610cf4ee8da",
+            "blob": "a45917c8d5fcfe2e6ebc3d0d483a03273f42c2ca",
             "content": "sha256:60788cf6b3cf57e313ccacab456fb49fd9601a1930fa8f8de28c01088b22a2af",
             "locator": {
               "kind": "symbol",
@@ -29,6 +29,23 @@
             "path": "mcp/src/agents_remember/kernel/git_command.py"
           },
           "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The real converted fixture feeds the stdio plan and preserves its success, state and count assertions.\n\nAnchor: `StdioTransportTests.test_memory_carryover_plan_returns_over_stdio`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a7d265030c66bd9f274a452635e3fec5c3bc7d9d",
+            "content": "sha256:358fca457024b7a7f351f2e42d7f9011e507def3963d06ffb7fe628416bf8464",
+            "locator": {
+              "end": 166,
+              "kind": "line_range",
+              "start": 144
+            }
+          },
+          "kind": "test"
         }
       ]
     }

@@ -2,46 +2,8 @@
   "path": "mcp/src/agents_remember/memory_quality/incremental_scope/errors.py",
   "realizes": [],
   "references": {
-    "1": {
-      "note": "The R07 planner raises typed closure refusals.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "953baa6443c3fb9600d9ed4122ebacf4f5246fc7",
-            "content": "sha256:892658eb39e78b707ed694ce49dec4ad57cd1aa606d26ce7dc23e3ff89b91337",
-            "locator": {
-              "kind": "symbol",
-              "name": "_refuse"
-            },
-            "path": "mcp/src/agents_remember/memory_quality/incremental_scope/affected_planning.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "2": {
-      "note": "The R07 executor raises typed closure refusals.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "200b7755a7cd7b498c952ee1c2cf0d83caa6a7a5",
-            "content": "sha256:892658eb39e78b707ed694ce49dec4ad57cd1aa606d26ce7dc23e3ff89b91337",
-            "locator": {
-              "kind": "symbol",
-              "name": "_refuse"
-            },
-            "path": "mcp/src/agents_remember/memory_quality/incremental_scope/affected_execution.py"
-          },
-          "kind": "code"
-        },
-        {
-          "kind": "unresolved",
-          "text": "mcp/src/agents_remember/memory_quality/incremental_scope/affected_execution.py:505-515"
-        }
-      ]
-    },
     "3": {
-      "note": "The R07 subresult store raises typed closure refusals.",
+      "note": "The retained subresult store raises typed closure refusals; removed planner/executor sites are not current consumers.",
       "targets": [
         {
           "anchor": {

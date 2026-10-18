@@ -1,0 +1,36 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test"
+    ],
+    "justification": "A later payload compaction must not remove the facts an operator needs for the prescribed pre-apply review. The public tool-call-context test compares the complete logged candidate data and checks the compact own-row/closeout guidance."
+  },
+  "applicability": "The public memory_carryover_plan payload at the shared delivery boundary.",
+  "conditions": [
+    "The application supplies the full current plan to _tool_payload and supplies compact_carryover_payload only as its answer projection.",
+    "The compact next.summary carries the same publication instruction while full candidates/conversion/publication remain available to the whole-result logger."
+  ],
+  "exclusions": [
+    "No per-call plan report, independent response cap or new output surface.",
+    "No promise of successful logging under an unwritable or over-budget logger.",
+    "This does not broaden the applicability of stored INV-1V9ARB to plan by silently changing it; general read/report filing is already constrained by DEC-SQVH0Q."
+  ],
+  "id": "INV-REPB8B",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "mcp/tests/test_converted_carryover.py::test_public_plan_logs_complete_review_facts_and_delivers_recovery_guidance",
+        "Frozen generation3 source inspection; no new execution or acceptance."
+      ],
+      "path": "generation3-new-source-proved-invariants.json"
+    },
+    "handoffEntry": "L56-CUR-CARRYOVER-PLAN-FULL-RESULT",
+    "leaf": "260928-MIK-L56",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Carryover-plan delivery keeps candidate pair, evidence, anchor, dependency and reading-aid history facts in the complete result for whole-result logging, while the compact answer names the recovery curator own-row/closeout action; a read-only plan files no per-call report.",
+  "status": "proposed",
+  "supersedes": []
+}

@@ -3,14 +3,15 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "The shared fixture builders and cleanup.",
+      "note": "The shared typed fixture builders and explicitly installed cleanup retain DOM/global/dashboard/localStorage ownership, without the removed sessions store.",
       "targets": [
         {
           "anchor": {
-            "blob": "203140fa7dca531911f6f455371ad326a8112b92",
-            "content": "sha256:03903f5e30026e08c207df684ae9662402c53ad94eb58359e54b9ab8b5c98737",
+            "blob": "226d904b6506cf065ef6ec9832e670ff236732de",
+            "content": "sha256:1b822664f2c78cd00cf6877ff36327bf050d36c68e9bbdd3cfbc9715cd4cbeab",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "installLifecycleListCleanup"
             }
           },
           "kind": "code"

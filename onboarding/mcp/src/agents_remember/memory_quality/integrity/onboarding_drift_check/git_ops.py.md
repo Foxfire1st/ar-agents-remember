@@ -6,27 +6,13 @@
 
 ## Purpose
 
-`git_ops.py` is the git interaction boundary for drift detection. It derives the source-change
-notes and deterministic evidence fingerprints the classifiers rely on, over the one shared git
-runner.
+`git_ops.py` retains only branch-name lookup through the shared kernel Git runner. It neither computes fingerprints, inventories source, classifies memory nor produces staged/unstaged change notes.
 
 ## Code Commentary
 
 ### Logic
 
-Since 260731-EFA-L3 this module owns no runner. Its local `run_git` — a bare `subprocess.run` with
-`safe.directory` and `stdin=DEVNULL`, but no environment guard, no timeout and no explicit encoding
-— was deleted, and every helper here now calls `run_git` imported from
-`agents_remember.kernel.git_command`, e.g. `run_git(repo_root, ["ls-files", "-z"])` in
-`list_repo_sources`. No call site passes `timeout=`, so they all take the runner's default
-`GIT_LOCAL_TIMEOUT_SECONDS` (300s).
-`git_stdout`/`git_blob_hash` read single values; `compute_git_blob_set_fingerprint`
-sorts evidence paths, resolves each `HEAD:<path>` blob, and sha256s the
-`path\\0blob` list. Both fingerprint helpers take keyword-only `ref` (default
-`HEAD`) so callers like the carryover entity-catalog validation can compute
-against an explicit ref such as the official branch. `local_change_note`, `local_route_change_note`, and
-`entity_local_change_notes` report staged/unstaged state; `list_repo_sources`
-and `current_branch_name` expose repo facts.
+`current_branch_name` runs `rev-parse --abbrev-ref HEAD` through `kernel.git_command.run_git`. Nonzero return or empty stripped stdout yields `unknown-branch`; no local runner, explicit timeout override or stdin input is supplied.
 
 ### Conventions
 
@@ -36,17 +22,13 @@ Git subprocesses still cannot consume MCP stdio transport input, but the guarant
 
 ### Invariants And Boundaries
 
-- External git boundary only: it provides facts, it does not classify or decide policy.
-- No second runner: every git subprocess here is `kernel.git_command.run_git`. The
-  `env=git_environment()` scrubbing that keeps `git ls-files` / `git diff --quiet` off an ambient
-  `GIT_DIR` — and therefore keeps `list_repo_sources` and `local_change_note` reporting on the
-  repository the caller passed — belongs to that function, not to this module.
-- The `git-blob-set-v1` fingerprint is a deterministic Git blob-set hash over curated evidence paths.
+- Branch observation only: no classification or policy.
+- The kernel runner owns repository-selector scrubbing, DEVNULL stdin and its timeout/encoding defaults; this module must not grow a second runner.
 
 ## Evidence
 
 ### Repo-Internal References
 
-- `entities.py` recomputes entity fingerprints and change notes through these helpers. [1]
-- `sidecar.py`'s external classifier calls the imported `local_change_note` helper; its own `cat-file` and `diff --quiet` calls go straight to the kernel runner. [2]
-- `run_git` lives here now: selector scrubbing, DEVNULL stdin, and the local/remote/metadata timeout classes. [3]
+
+
+- The sole current_branch_name helper uses the kernel Git runner and yields unknown-branch for failed or empty branch lookup. [3]

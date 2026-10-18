@@ -7,46 +7,48 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f6650bb7d450287cab6ad239d276c815ea69ba0a",
+            "blob": "b2f9f1624c63b2e7e58d9486c5d024f84fd7903e",
             "content": "sha256:343b3a5dfccfbe3e2f62dc5f964cc25c6adc3766b76c039b59b5fefa77c06845",
             "locator": {
-              "kind": "symbol",
-              "name": "requires_strict_code_quality"
+              "end": 144,
+              "kind": "line_range",
+              "start": 130
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "f6650bb7d450287cab6ad239d276c815ea69ba0a",
+            "blob": "b2f9f1624c63b2e7e58d9486c5d024f84fd7903e",
             "content": "sha256:c1c4c725f8875825ffbf289e9a27e3dd98489f514d9f0b851ae7b4e90be5f62b",
             "locator": {
-              "kind": "symbol",
-              "name": "code_quality_gate_preview"
+              "end": 190,
+              "kind": "line_range",
+              "start": 147
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "f6650bb7d450287cab6ad239d276c815ea69ba0a",
+            "blob": "b2f9f1624c63b2e7e58d9486c5d024f84fd7903e",
             "content": "sha256:e9ca03946d2923d4ce55995942e3b11e30b47495807d3ae942507146148a0e57",
             "locator": {
-              "end": 139,
+              "end": 137,
               "kind": "line_range",
-              "start": 125
+              "start": 123
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "f6650bb7d450287cab6ad239d276c815ea69ba0a",
+            "blob": "b2f9f1624c63b2e7e58d9486c5d024f84fd7903e",
             "content": "sha256:350f536fbffa070e1938018a7e420d7b4e39fd9d4b8a62817da541d7ba5f1114",
             "locator": {
-              "end": 185,
+              "end": 183,
               "kind": "line_range",
-              "start": 142
+              "start": 140
             }
           },
           "kind": "code"
@@ -58,23 +60,24 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f6650bb7d450287cab6ad239d276c815ea69ba0a",
+            "blob": "b2f9f1624c63b2e7e58d9486c5d024f84fd7903e",
             "content": "sha256:0b8e81dabc38bf52508d0b69e49181896d735d9c135cd227f69eed1d20e394a2",
             "locator": {
-              "kind": "symbol",
-              "name": "run_strict_code_quality_gate"
+              "end": 364,
+              "kind": "line_range",
+              "start": 270
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "f6650bb7d450287cab6ad239d276c815ea69ba0a",
+            "blob": "b2f9f1624c63b2e7e58d9486c5d024f84fd7903e",
             "content": "sha256:ec47c057b29b773e37b111630980ebbc724ecf79a307ff782e9cda7b2737c82e",
             "locator": {
-              "end": 324,
+              "end": 322,
               "kind": "line_range",
-              "start": 243
+              "start": 241
             }
           },
           "kind": "code"
@@ -82,16 +85,16 @@
       ]
     },
     "3": {
-      "note": "Recovery reads the selected frozen run and original terminal publications, checks exact current candidate identity, and requires certifying evidence.\n\nAnchor: \"def render_selected_code_certification\"",
+      "note": "Recovery reads the selected frozen run and original terminal publications, checks exact current candidate identity, and requires certifying evidence.",
       "targets": [
         {
           "anchor": {
-            "blob": "f6650bb7d450287cab6ad239d276c815ea69ba0a",
+            "blob": "b2f9f1624c63b2e7e58d9486c5d024f84fd7903e",
             "content": "sha256:fc7019a6ffe44757b66782b7380868dd2e8a2a3f3159084b672650392c0d1365",
             "locator": {
-              "end": 395,
+              "end": 393,
               "kind": "line_range",
-              "start": 364
+              "start": 362
             }
           },
           "kind": "code"
@@ -99,16 +102,16 @@
       ]
     },
     "4": {
-      "note": "Successful certification renders the exact evidence and manifest into the typed quality result.\n\nAnchor: \"def _strict_quality_success_payload\"",
+      "note": "Successful certification renders the exact evidence and manifest into the typed quality result.",
       "targets": [
         {
           "anchor": {
-            "blob": "f6650bb7d450287cab6ad239d276c815ea69ba0a",
+            "blob": "b2f9f1624c63b2e7e58d9486c5d024f84fd7903e",
             "content": "sha256:5581d84289751fc5b19d748c23ea9dfd2d452ba33050eb1fdfa407e9beb06fad",
             "locator": {
-              "end": 446,
+              "end": 444,
               "kind": "line_range",
-              "start": 405
+              "start": 403
             }
           },
           "kind": "code"
@@ -116,16 +119,16 @@
       ]
     },
     "5": {
-      "note": "Host diagnostic entry refuses certification execution through this owner.\n\nAnchor: \"def run_local_quality_diagnostic\"",
+      "note": "Host diagnostic entry refuses certification execution through this owner.",
       "targets": [
         {
           "anchor": {
-            "blob": "f6650bb7d450287cab6ad239d276c815ea69ba0a",
+            "blob": "b2f9f1624c63b2e7e58d9486c5d024f84fd7903e",
             "content": "sha256:5e730a5b427814bece8267aa3794103ed3852f336931a83a6724aca09392c5ea",
             "locator": {
-              "end": 459,
+              "end": 457,
               "kind": "line_range",
-              "start": 449
+              "start": 447
             }
           },
           "kind": "code"
@@ -133,18 +136,108 @@
       ]
     },
     "6": {
-      "note": "Persist complete actual terminal catalogs, including red and interrupted gates.\n\nAnchor: \"def record_published_generation\"",
+      "note": "Persist complete actual terminal catalogs, including red and interrupted gates.",
       "targets": [
         {
           "anchor": {
-            "blob": "7d58780bb28c6c15635e8c65a06fb2c60a7a8843",
-            "content": "sha256:dd8ed88163a01c38d96f9b8d4dac39c101120d373c262b6262ecf842e075f4fe",
+            "blob": "c62c700c4a20f4dd0b17d1dd95a68c03136291af",
+            "content": "sha256:94f0987bbe6efa9b43d1f18a0b1fec373bd256112f150017425836648fee3548",
             "locator": {
-              "end": 276,
+              "end": 235,
               "kind": "line_range",
-              "start": 232
+              "start": 226
             },
             "path": "mcp/src/agents_remember/worktrees/modules/quality/certification_records.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c62c700c4a20f4dd0b17d1dd95a68c03136291af",
+            "content": "sha256:990592e1ec6c50636330178ec3237f2be3370ebd00e8e5b06dad761447626305",
+            "locator": {
+              "end": 288,
+              "kind": "line_range",
+              "start": 238
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/quality/certification_records.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c62c700c4a20f4dd0b17d1dd95a68c03136291af",
+            "content": "sha256:74ed2b62a4e92c733b923a4ed29994f6e9000b95605b75b8c61d86f75dff16da",
+            "locator": {
+              "end": 256,
+              "kind": "line_range",
+              "start": 256
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/quality/certification_records.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c62c700c4a20f4dd0b17d1dd95a68c03136291af",
+            "content": "sha256:6ded3acf5c2b6042f3da72d93165cbc282c1c4be3f0774ae8d6c8324e78c0945",
+            "locator": {
+              "end": 257,
+              "kind": "line_range",
+              "start": 257
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/quality/certification_records.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c62c700c4a20f4dd0b17d1dd95a68c03136291af",
+            "content": "sha256:c37b88d4a9f386f04fb08a47401b234fe64214cfad654c1f27e406ef2f91f85b",
+            "locator": {
+              "end": 259,
+              "kind": "line_range",
+              "start": 259
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/quality/certification_records.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c62c700c4a20f4dd0b17d1dd95a68c03136291af",
+            "content": "sha256:9d72fbc34441ba553e51545fcebe06db2356988255a99a90d7270f078f4796e1",
+            "locator": {
+              "end": 285,
+              "kind": "line_range",
+              "start": 285
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/quality/certification_records.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b2f9f1624c63b2e7e58d9486c5d024f84fd7903e",
+            "content": "sha256:0b8e81dabc38bf52508d0b69e49181896d735d9c135cd227f69eed1d20e394a2",
+            "locator": {
+              "end": 364,
+              "kind": "line_range",
+              "start": 270
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "77ca963453d2f023457ee4aba37dd515f5c942fc",
+            "content": "sha256:1c97c2670df88ce21c3d04e438d02e2b91162efdd1c50f6efa741e36e9cef2be",
+            "locator": {
+              "end": 76,
+              "kind": "line_range",
+              "start": 47
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/quality/certification_run.py"
           },
           "kind": "code"
         }

@@ -107,7 +107,9 @@ No configured live documentation source was available for this pass.
 
 - The tool case counts two onboarding items. [25]
 - The cache case patches the conversion where it now lives. [26]
+
 - The leaf fixture: real repositories plus the task root and enclosure. [27]
+
 - The leaf's contract and task document. [28]
 - Pairing by trailer and persistence. [29]
 - The task document's maintenance scope. [30]
@@ -116,11 +118,15 @@ No configured live documentation source was available for this pass.
 - Other owners' rows and closed files are untouched. [33]
 - A writer-authored proof raises its invariant. [34]
 - The bound sync port. [35]
+
 - The controller-level run; since MIK-R09 its four open items count (4). [36]
+
 - Never raises; never fails a completed sync. [37]
 - The `continue` replay. [38]
 - The converted-base cache. [39]
+
 - The census-derived consumer row. [40]
+
 
 ### Cross-Repo References
 

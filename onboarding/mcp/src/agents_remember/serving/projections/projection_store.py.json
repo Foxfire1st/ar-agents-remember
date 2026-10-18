@@ -37,12 +37,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3cedc4c3230d6645fcd5c5ede281b3defc11fdd5",
+            "blob": "eeb57f59fb40c34ceb692ffd5abc7d685c07edbf",
             "content": "sha256:8e6754d4af49b0510d27b637b4bbd93d599ba4f4e241b712d16f693b77c6f1ba",
             "locator": {
-              "end": 655,
+              "end": 649,
               "kind": "line_range",
-              "start": 641
+              "start": 635
             },
             "path": "mcp/src/agents_remember/serving/projections/projection_inputs.py"
           },
@@ -179,12 +179,111 @@
         },
         {
           "anchor": {
-            "blob": "3cedc4c3230d6645fcd5c5ede281b3defc11fdd5",
+            "blob": "eeb57f59fb40c34ceb692ffd5abc7d685c07edbf",
             "content": "sha256:170c1f988defbefbda6c1c56efed6e58400f2ef0d1b210733961a385ea926637",
             "locator": {
-              "end": 624,
+              "end": 618,
               "kind": "line_range",
-              "start": 619
+              "start": 613
+            },
+            "path": "mcp/src/agents_remember/serving/projections/projection_inputs.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "Projection assembly forwards only retained input fields and closeout queues.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "759479025b5e816a163b468faada469459390e0c",
+            "content": "sha256:5667b0127cb7a1fb2fddc1a3c953237f7b6abdedfd957ed57f1175fd081e1e7b",
+            "locator": {
+              "kind": "symbol",
+              "name": "project_and_write"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "14": {
+      "note": "The configured-root repository cache retains route coverage and ledger under its TTL.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "759479025b5e816a163b468faada469459390e0c",
+            "content": "sha256:954807971041fb1a3214d979f69b958d29612fc8d1400979c0672b3190893772",
+            "locator": {
+              "kind": "symbol",
+              "name": "_gather_repo_surfaces_cached"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "15": {
+      "note": "Input read refreshes admitted domains and separately reads closeout queues on every input pass.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "eeb57f59fb40c34ceb692ffd5abc7d685c07edbf",
+            "content": "sha256:7d8adfdb6418d0e64ef6c45a1c0fa71e0041a5e39dbd50db4efeb581d800baf0",
+            "locator": {
+              "kind": "symbol",
+              "name": "read"
+            },
+            "path": "mcp/src/agents_remember/serving/projections/projection_inputs.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "16": {
+      "note": "The repository cache stores route coverage and ledger; the projection edge forwards no sidecar age input and retains closeout queues.\n\nAnchor: `_gather_repo_surfaces`, `_gather_repo_surfaces_cached`, `project_and_write`, `ProjectionInputs`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "759479025b5e816a163b468faada469459390e0c",
+            "content": "sha256:01bfd1bc7e1a03e7d34c3f0aa1be1c39c8ea8b6bea239152adf690019ccdb2fe",
+            "locator": {
+              "kind": "symbol",
+              "name": "_gather_repo_surfaces"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "759479025b5e816a163b468faada469459390e0c",
+            "content": "sha256:954807971041fb1a3214d979f69b958d29612fc8d1400979c0672b3190893772",
+            "locator": {
+              "kind": "symbol",
+              "name": "_gather_repo_surfaces_cached"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "759479025b5e816a163b468faada469459390e0c",
+            "content": "sha256:5667b0127cb7a1fb2fddc1a3c953237f7b6abdedfd957ed57f1175fd081e1e7b",
+            "locator": {
+              "kind": "symbol",
+              "name": "project_and_write"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "eeb57f59fb40c34ceb692ffd5abc7d685c07edbf",
+            "content": "sha256:5fe093d9b87538026df40592569b72a1df8166ecb9efecfbcb28bbdcf9a2b516",
+            "locator": {
+              "kind": "symbol",
+              "name": "ProjectionInputs"
             },
             "path": "mcp/src/agents_remember/serving/projections/projection_inputs.py"
           },
@@ -209,7 +308,7 @@
         },
         {
           "anchor": {
-            "blob": "312d18df89e42e3238e6dd7370c4bc8d26f58571",
+            "blob": "6f7a987ae8b3b173c58404caca54ae1f7cca8ac3",
             "content": "sha256:f0f8192b9ed0fee863d41e875cbceca1c0f0fdd252563e9923f569a534828bf7",
             "locator": {
               "kind": "symbol",
@@ -221,7 +320,7 @@
         },
         {
           "anchor": {
-            "blob": "312d18df89e42e3238e6dd7370c4bc8d26f58571",
+            "blob": "6f7a987ae8b3b173c58404caca54ae1f7cca8ac3",
             "content": "sha256:64fed34410118cda4079e04a7c567bcc19c54615151225aa28d550fdbdca6443",
             "locator": {
               "kind": "symbol",
@@ -233,7 +332,7 @@
         },
         {
           "anchor": {
-            "blob": "312d18df89e42e3238e6dd7370c4bc8d26f58571",
+            "blob": "6f7a987ae8b3b173c58404caca54ae1f7cca8ac3",
             "content": "sha256:5f03b88c09c86fd492ed0a904a8e60fc5a7d2dac8ae216f5bc9c9d65aafd3bab",
             "locator": {
               "kind": "symbol",
@@ -291,7 +390,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3cedc4c3230d6645fcd5c5ede281b3defc11fdd5",
+            "blob": "eeb57f59fb40c34ceb692ffd5abc7d685c07edbf",
             "content": "sha256:cbd8b127ee4fc7b32edb046d54507981d9836fb51f9d424c2992df0a9bf543cf",
             "locator": {
               "kind": "symbol",

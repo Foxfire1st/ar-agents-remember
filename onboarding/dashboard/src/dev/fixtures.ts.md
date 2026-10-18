@@ -11,7 +11,7 @@ Hand-authored WorkspaceProjection gallery. The bench hydrates scenarios into the
 Since 260731-EFA-L4 the split of responsibility is explicit in the file's own header: **the scenarios
 are this file's business; the nodes are not.** Every node builder delegates to
 `src/test/fixtures/wire.ts`, and `EMPTY_ANALYTICS` is imported from there rather than declared here.
-What the gallery keeps is its own *defaults* — native entries provide the gallery’s task examples — passed explicitly to the shared builders. What it no longer keeps is a second
+What the gallery keeps is its own *defaults* — fixed gallery identity and header values — passed explicitly to the shared builders; it supplies no task examples, and the shared default projects an empty task list. What it no longer keeps is a second
 copy of the required-field list, which is the part that drifts.
 
 ## Code Commentary
@@ -21,16 +21,15 @@ copy of the required-field list, which is the part that drifts.
 `project` delegates to the shared builder with gallery version/generatedAt defaults. Native task/count bases replace simulated session lifecycles and metricsFor rollups; EMPTY_ANALYTICS retains operational lists, not document/series catalogues. Provider, enclosure and event factories delegate with gallery defaults before caller overrides.
 
 A fixture that type-checks through these builders is a shape **the mirror** (`types/projection.ts`)
-can produce. `wire.ts` bases are assembled from `src/fixtures/snapshot.json`, which is **hand-maintained
-— there is no generator anywhere under `mcp/`, `scripts/` or `dashboard/`**. `wire.ts`'s own header
+can produce. `wire.ts` bases are assembled from `src/fixtures/snapshot.json`, which is **hand-maintained, not a generated snapshot**. `wire.ts`'s own header
 carries the full chain and where it stops: fixture ⊆ mirror is held by `tsc` and `contract.test.ts`;
-mirror ⊆ server is held by hand.
+producer-to-mirror conformance is held separately by schema generation and its stale-output check. The snapshot remains manual.
 
 **Slice 5i** extracts the engine-room wrap into an exported
 `engineRoomProjection(scenario)` — `project({ providers: scenario.workspace, analytics: { ...EMPTY_ANALYTICS,
 engineProcesses: scenario.processes, ledgers: [OFFICIAL_LEDGER] } })` — the single mapping now shared by
 **both** the `GALLERY` Engine Room entries (which call it instead of the old inline `project(...)`) and the
-slice-5i scenario-player frames (`dev/scenarios.ts`). Typed node factories retain explicit gallery defaults. `enclosure()` supplies enclosure identity and worktree/landing defaults, and `evt()` supplies an event timestamp before caller overrides. `providerRole(id)` stamps `role` as `memory` when the id contains `memory`/`grepai`, else `code`. `EMPTY_ANALYTICS`, imported from `test/fixtures/wire.ts`, supplies empty operational collections: drift, stale-sidecar, setup, route-coverage, tool-report, ledger, attention and engine-process lists. Native tasks/counts are projection-root fields; no `lifecycle()` helper or analytics task-document/series catalogue remains. `GALLERY` (typed `GalleryEntry[]`)
+slice-5i scenario-player frames (`dev/scenarios.ts`). Typed node factories retain explicit gallery defaults. `enclosure()` supplies enclosure identity and worktree/landing defaults, and `evt()` supplies an event timestamp before caller overrides. `providerRole(id)` stamps `role` as `memory` when the id contains `memory`/`grepai`, else `code`. `EMPTY_ANALYTICS`, imported from `test/fixtures/wire.ts`, supplies empty operational collections: drift, setup, route-coverage, tool-report, ledger, attention and engine-process lists. Native tasks/counts are projection-root fields; no `lifecycle()` helper or analytics task-document/series catalogue remains. `GALLERY` (typed `GalleryEntry[]`)
 retains its invented scenario choices and then spreads
 `...ENGINE_ROOM_SCENARIOS.filter((s) => !s.name.startsWith("engine-boot-")).map(...)` — each mapped to a
 projection whose `providers` = the scenario's `workspace` and whose `analytics.engineProcesses` = the
@@ -61,7 +60,7 @@ Since 260731-EFA-L4:
   `test/fixtures/wire.ts`; a required field the mirror adds must fail to compile here rather than be
   filled in a second place.
 - Shared task/count bases and explicit overrides are fixture construction, not evidence of live counting.
-- Gallery *defaults* are legitimate and stay: they are presentation choices (native task examples and fixed `generatedAt`), passed explicitly as overrides, not a parallel definition of the shape.
+- Gallery *defaults* are legitimate and stay: they are presentation choices (fixed `generatedAt` and identity values), passed explicitly as overrides, not a parallel definition of the shape; tasks come from the shared default, which is an empty list.
 - `snapshot.json` behind those builders is hand-maintained and has no generator; a green build here
   claims the **mirror** could produce the shape, not that the server sent it.
 

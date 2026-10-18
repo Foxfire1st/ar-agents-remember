@@ -1,157 +1,18 @@
 {
   "path": "mcp/src/agents_remember/worktrees/integration/closeout/preparation/private_execution.py",
-  "realizes": [
-    {
-      "anchor": {
-        "blob": "5f3c4048eb7bbe423bee92f829412cdc20271e1a",
-        "content": "sha256:c7aa41e3dacd3d58e3f12b499e65f947447073b014dec5e81a8fca952f962821",
-        "locator": {
-          "kind": "symbol",
-          "name": "_commit_prepared_leg"
-        }
-      },
-      "id": "RLZ-EA9N3M",
-      "invariant": "INV-2Q8RPR",
-      "origin": {
-        "handoffEntry": "L61-R152-prepared-legs",
-        "leaf": "260928-MIK-L61"
-      },
-      "rationale": "Both prepared legs invoke ordinary git commit with repository-hook admission, refuse unrunnable hooks and retain mutation/output recovery boundaries.",
-      "role": "enforcement"
-    }
-  ],
+  "realizes": [],
   "references": {
-    "1": {
-      "note": "The selected leg must still match the retained intent.",
+    "8": {
+      "note": "The retained mapper copies an admitted intent into a binding without executing commands.",
       "targets": [
         {
           "anchor": {
-            "blob": "5f3c4048eb7bbe423bee92f829412cdc20271e1a",
-            "content": "sha256:0c2998762a6b6a6785b082622e89b1ec5c3e5d9fcca4f16eab46da046ada4ea5",
-            "locator": {
-              "kind": "symbol",
-              "name": "_selected_leg"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "2": {
-      "note": "The private binding retains the exact selected parent, admitted tree, message, and owner.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "5f3c4048eb7bbe423bee92f829412cdc20271e1a",
+            "blob": "a18e3b1ccafb0fa6e1edb24560cc2cc76376229f",
             "content": "sha256:0c12e9f239a3660dfb7329044e66e1f1c03a068a8927fbfba164a2b4be2237e3",
             "locator": {
               "kind": "symbol",
               "name": "private_git_binding"
             }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "3": {
-      "note": "The capability reopens selection and actual private policy around commands.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "5f3c4048eb7bbe423bee92f829412cdc20271e1a",
-            "content": "sha256:cc588e5aa95fda0875d4cdb8ebe2cee011c54a5225a033439bb5f25e2cfcf409",
-            "locator": {
-              "kind": "symbol",
-              "name": "_capability"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "4": {
-      "note": "Original commands are selected and their observed terminals retained once.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "a59d02db1c5ca6d3db2a8c3faa5394fa6e06251a",
-            "content": "sha256:88b4746e1ddd7478c898ff9f7031c8be5a9bde33fa39f53cf4aa1fef15bc51d9",
-            "locator": {
-              "kind": "symbol",
-              "name": "_run_once"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "5f3c4048eb7bbe423bee92f829412cdc20271e1a",
-            "content": "sha256:97bd219bdd1bdb6cef844560d95408e21c67a992c238ba3977fb23486c81171e",
-            "locator": {
-              "kind": "symbol",
-              "name": "_terminal_record"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "5": {
-      "note": "Output observation proves the named committed object and current policy.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "5f3c4048eb7bbe423bee92f829412cdc20271e1a",
-            "content": "sha256:e554a9c7c18ba895054939bc9e94ea3015a60b346bb863d47aaf5ab2cbf1f78f",
-            "locator": {
-              "kind": "symbol",
-              "name": "observe_private_output"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "6": {
-      "note": "Only an unstarted suffix runs; uncertain prior commands are retained for named-output recovery.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "5f3c4048eb7bbe423bee92f829412cdc20271e1a",
-            "content": "sha256:0b9f80b06f294866fe06688682d02338156de599f6a6a4ac52b6e58c6f04ad51",
-            "locator": {
-              "kind": "symbol",
-              "name": "prepare_private_output"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "7": {
-      "note": "The selected intent supports only code and memory-content output legs.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "77972b64c78fef09a6efe258c3e4b5c5b4485328",
-            "content": "sha256:0051d8016387db160b7800ed421e521a66da481f31d1c7a701f1909510b950a1",
-            "locator": {
-              "kind": "symbol",
-              "name": "PreparationLeg"
-            },
-            "path": "mcp/src/agents_remember/models/lifecycles/preparation.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "77972b64c78fef09a6efe258c3e4b5c5b4485328",
-            "content": "sha256:a6cf5562d10452b2f9419bef1d6962297a8e7be44aa6083789db7a2895c6cc8a",
-            "locator": {
-              "kind": "symbol",
-              "name": "require_prepared_output_matches_intent"
-            },
-            "path": "mcp/src/agents_remember/models/lifecycles/preparation.py"
           },
           "kind": "code"
         }

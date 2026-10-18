@@ -1,0 +1,33 @@
+{
+  "admission": {
+    "criteria": [
+      "joint_guarantee"
+    ],
+    "justification": "Equal formats alone do not bind paired content, current anchors alone do not carry missing records or prevent differing-record overwrite, and correct payload selection alone does not preserve edits/restore refusals or prohibit a standalone commit. All five independently source/test-proved obligations are necessary to the single recovery handoff; the existing gated-publication family begins at closeout, not this noncommitting preparation."
+  },
+  "guarantee": "Converted carryover admits equal-format source/target roots and treats each selected document as its paired Markdown and sidecar, with anchors judged at the official code and missing transitive records carried without overwriting differing target records or importing source history. Its worktree-only apply preserves edited targets, validates the exact resulting tree, restores its owned write extent on refusal and makes no commit. These prerequisites together leave recovery content for the leaf curator own judgments and ordinary gated closeout; none permits a marker, reviewed stale anchor or successful copy to stand in for that later gate.",
+  "id": "FAM-VZ9C23",
+  "members": [
+    "INV-9MH0V9",
+    "INV-FPG5GW",
+    "INV-1CS8DN",
+    "INV-5XX92M",
+    "INV-MZ13SJ"
+  ],
+  "origin": {
+    "handoff": {
+      "path": "generation3-recovery-family-and-reference-traces-with-slug.json"
+    },
+    "handoffEntry": "L56-CONVERTED-RECOVERY-JOINT",
+    "leaf": "260928-MIK-L56",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "routes": [
+    "mcp/src/agents_remember/memory",
+    "mcp/src/agents_remember/application"
+  ],
+  "schema": "ar-family/v1",
+  "status": "proposed",
+  "title": "Converted recovery without unjudged publication"
+}

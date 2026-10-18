@@ -87,7 +87,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "359083eb794b3a5462b9e53d4dde2b27ec8ec7a9",
+            "blob": "067465c785daba374dbccfbc6ddf3efb62611ed4",
             "content": "sha256:e345bcf52910f1d43fcff54700f85ea691a6b896120f54a78d4be96269c1b309",
             "locator": {
               "kind": "symbol",
@@ -312,6 +312,59 @@
               "start": 263
             },
             "path": "mcp/src/agents_remember/observer/task_entries.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "52": {
+      "note": "Repository analytical caching returns route coverage and ledger only; workspace metrics and analytics no longer carry verification-age sidecar rollups.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "759479025b5e816a163b468faada469459390e0c",
+            "content": "sha256:01bfd1bc7e1a03e7d34c3f0aa1be1c39c8ea8b6bea239152adf690019ccdb2fe",
+            "locator": {
+              "kind": "symbol",
+              "name": "_gather_repo_surfaces"
+            },
+            "path": "mcp/src/agents_remember/serving/projections/projection_store.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "759479025b5e816a163b468faada469459390e0c",
+            "content": "sha256:954807971041fb1a3214d979f69b958d29612fc8d1400979c0672b3190893772",
+            "locator": {
+              "kind": "symbol",
+              "name": "_gather_repo_surfaces_cached"
+            },
+            "path": "mcp/src/agents_remember/serving/projections/projection_store.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a57241d40018faab0653508e3bee2b113308af12",
+            "content": "sha256:971aac8fab740fef0829ff52b5068a0f8a13ba5611810f706362a35146ea8022",
+            "locator": {
+              "kind": "symbol",
+              "name": "_metrics"
+            },
+            "path": "mcp/src/agents_remember/observer/reducer_impl/_metrics.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a57241d40018faab0653508e3bee2b113308af12",
+            "content": "sha256:06e642ef9e699c3302d7cfcd7227332256f2ad862f684c07f7534497b59d364a",
+            "locator": {
+              "kind": "symbol",
+              "name": "build_analytics"
+            },
+            "path": "mcp/src/agents_remember/observer/reducer_impl/_metrics.py"
           },
           "kind": "code"
         }

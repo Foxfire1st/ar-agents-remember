@@ -20,7 +20,9 @@ The writer checks that boundary before virtual authoring for a leaf. `worklist_p
 
 A non-raise `still_rejected`, `planned:` or `hunk:` request must answer an existing worklist subject. An unmatched request names the subject and the recompute-or-correct remedy. Handles authored by the same document are resolved through the authoring operation's handle map.
 
-For a record whose origin names this leaf, the writer rejects a fresh judgment when neither the worklist nor the leaf's parseable pre-authoring history contains its subject. A subject already held in that own history can be named again to renew an existing judgment, even when the worklist contains no item for it. The helper reads captured input bytes, not history rows added by the current authoring operation. Foreign-owner and unreadable history grant no admission. `raise` rows remain exempt from these subject checks; their question/publication authority belongs to the other writer and task-document owners.
+A genuinely new row about a record whose origin names this leaf is refused when no worklist subject names it. A subject already held in this leaf's trusted pre-authoring history may instead renew its existing row without that worklist subject. `_prior_own_subjects` reads immutable `MemoryState.files`, not the candidate rows already authored into mutable documents; checking the latter would let a new row authorize itself. `raise` rows retain their existing exemption, while their question/publication authority stays with the other owners.
+
+Only exact owner/attempt paths accepted by `owner_history_attempt` are parsed through `parse_history_document`; the parsed history must be a leaf history with the same owner ID. Malformed or undecodable histories grant no exception and remain subject to normal validation. The prior-subject set is collected once outside the row loop. This is neither foreign-history permission nor permission to rewrite the worklist, waive the whole-history after-anchor check, or use candidate source as a live leaf producer. Missing/unreadable worklists still refuse before this eligibility test.
 
 ### Governing-row check
 
@@ -43,9 +45,10 @@ No Domain Documentation entries are configured in `system/sources.md`. These are
 
 - Missing or malformed consumed worklist shapes receive a named compute/recompute refusal. [1]
 - Item scalar types, actual integer base revisions and consumed collection shapes are checked without claiming full-schema validation. [2]
-- Subject admission resolves handles, keeps raise exemptions and rejects a fresh own-leaf row unless its subject is in the worklist or prior own history. [3]
+- Own-origin records need a worklist subject for a genuinely new judgment; trusted pre-operation same-owner history permits existing-row renewal without authorizing candidate-created or foreign rows. [3]
 
 - Renewal eligibility comes from parseable pre-authoring own-leaf history bytes; current-operation rows, foreign history and unreadable documents grant none. [10]
+
 - Only newly authored history rows are passed through the same-run governing-row check. [4]
 - Every matching stale/touched/family item is examined until a genuine shared-predicate violation is found. [5]
 - The writer performs leaf shape admission and collects worklist problems after virtual authoring, before publication. [6]

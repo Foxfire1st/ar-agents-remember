@@ -79,12 +79,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9892eefbb4ae19a50aaa17c1ffa7689fd483575b",
+            "blob": "ae56f6c72b4720e9cd1ae2abdd42551a79d4c1d4",
             "content": "sha256:454f09c97996f36eba226f3606a87364288fa0758d8130cd5bc5a7d1bcfe25ef",
             "locator": {
-              "end": 1347,
+              "end": 1350,
               "kind": "line_range",
-              "start": 1311
+              "start": 1314
             },
             "path": "mcp/src/agents_remember/worktrees/direct_landing.py"
           },
@@ -92,12 +92,12 @@
         },
         {
           "anchor": {
-            "blob": "41c3ec60cc11d54bdfd052f94f0ea7ac6aac95a3",
+            "blob": "a34667e628dd1e5f7e0c8ad103c5d35edde4b115",
             "content": "sha256:fe94fc0f9ee9750398bae54828f9478f789aebe190df4eae0c48f2dce43708d2",
             "locator": {
-              "end": 632,
+              "end": 587,
               "kind": "line_range",
-              "start": 543
+              "start": 498
             },
             "path": "mcp/src/agents_remember/worktrees/knowledge_gate.py"
           },
@@ -105,12 +105,12 @@
         },
         {
           "anchor": {
-            "blob": "41c3ec60cc11d54bdfd052f94f0ea7ac6aac95a3",
+            "blob": "a34667e628dd1e5f7e0c8ad103c5d35edde4b115",
             "content": "sha256:30fc4080e2bf89e4ab19c0c947e909b9e8bb39f4805c91253539a1f9d64a364b",
             "locator": {
-              "end": 721,
+              "end": 676,
               "kind": "line_range",
-              "start": 711
+              "start": 666
             },
             "path": "mcp/src/agents_remember/worktrees/knowledge_gate.py"
           },
@@ -190,7 +190,7 @@
       ]
     },
     "14": {
-      "note": "Sidecar/route refresh composition remains implemented; the current memory-quality caller distinguishes converted trace gating from legacy refresh validation.\n\nAnchor: modules/onboarding.py; application/memory_quality/controller.py",
+      "note": "The sidecar/route body-gate composition was removed; converted memory is judged by the onboarding-trace gate, and the external-memory refresh keeps only entity-fingerprint and route-index refresh.\n\nAnchor: modules/onboarding.py; application/memory_quality/controller.py",
       "targets": [
         {
           "anchor": {
@@ -221,44 +221,17 @@
       ]
     },
     "15": {
-      "note": "Default production services bind prepared memory certification and the closeout continuation used by selected execution.\n\nAnchor: application/worktree_services.py; preparation/continuation.py; certification/execution.py",
+      "note": "Default production services bind the ordinary memory-quality, citation, certification-memory, knowledge validation/crossing/gate and archive adapters; they do not install the removed prepared-closeout continuation or selected certificate producer.",
       "targets": [
         {
           "anchor": {
-            "blob": "05a0dc3d78298af697a9b16a0692971abddd837b",
-            "content": "sha256:a2091c7ec637c04787b2334f6004344ea94fc44c9acd122c93c5126eaa810e70",
+            "blob": "9cfe5fc779f3234e5cf2d83eee7be9897b4668cb",
+            "content": "sha256:f1ac9e4c9ca53c18f1cb7439db85510df5446e1e4a2a18e12523d8e4fb0cd1a8",
             "locator": {
-              "end": 236,
-              "kind": "line_range",
-              "start": 222
+              "kind": "symbol",
+              "name": "build_default_worktree_services"
             },
             "path": "mcp/src/agents_remember/application/worktree_services.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "4fc36e65dd21de71100edb1587afb5484b9e9771",
-            "content": "sha256:40757eadc95735685c47d292e216082eb307fa75f2edc755bd5fbcbc7aa4c6f5",
-            "locator": {
-              "end": 68,
-              "kind": "line_range",
-              "start": 20
-            },
-            "path": "mcp/src/agents_remember/worktrees/integration/closeout/preparation/continuation.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "d0d31c386573baeb8f5f093dc57275fbd256e20e",
-            "content": "sha256:f97b2354f135afd68b5e814223b86720f916b53801824cd92e3191a68c7cb769",
-            "locator": {
-              "end": 396,
-              "kind": "line_range",
-              "start": 350
-            },
-            "path": "mcp/src/agents_remember/worktrees/integration/closeout/certification/execution.py"
           },
           "kind": "code"
         }

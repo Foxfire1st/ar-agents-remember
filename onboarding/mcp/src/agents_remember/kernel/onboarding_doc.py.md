@@ -6,45 +6,22 @@
 
 ## Purpose
 
-Kernel-level onboarding-document helpers: markdown metadata-table parsing,
-route normalization, and the section-aware body/history change classification
-that closeout gates and carryover planning share.
+Kernel-level Markdown table and fence-aware meaningful-body/history parsing for old-card readers, conversion and crossing. Route normalization, changed-route membership and doc-type route discovery were removed from this module; the retained readers do not grant ordinary operational acceptance from Update History or verification metadata.
 
 ## Code Commentary
 
 ### Logic
 
-The metadata helpers (`onboarding_metadata_row`, `markdown_table_cells`,
-`table_metadata`, `normalize_route`, `route_contains_changed_path`,
-`ROUTE_OVERVIEW_DOC_TYPES`) moved here verbatim from
-`worktrees/modules/onboarding.py`, which keeps re-exporting them as a facade.
-`discover_route_overviews(onboarding_root)` returns (normalized route,
-onboarding-root-relative path) pairs for doc_type-verified route overviews —
-the shared discovery used by carryover overview candidates.
+`markdown_table_cells` splits table cells and `table_metadata` reads metadata rows for retained readers. `fence_delimiter`, `unfenced_lines` and `_section_lines` share fence-aware history boundaries. `ROUTE_OVERVIEW_DOC_TYPES` and the no-impact pattern remain constants, not a route-discovery or operational attestation API. `normalize_route`, `route_contains_changed_path` and `discover_route_overviews` are absent. The worktree onboarding owner imports only `markdown_table_cells`; metadata-row rewriting and its facade exports were removed.
 
-The change-classification helpers define what counts as an honest onboarding
-update. `meaningful_body(text)` is the document minus the three verification
-metadata rows (`lastUpdated`, `lastVerifiedCommitHash`,
-`lastVerifiedCommitDate`) and the entire `## Update History` section;
-`meaningful_body_changed(old, new)` compares those normalized bodies and treats
-`old=None` (new document) as changed. `update_history_section(text)` returns the
-stripped non-empty history lines, `new_history_lines(old, new)` returns history
-lines present only in the new text, and `has_no_impact_marker(lines)` matches
-the in-band attestation convention: an Update History entry containing
-`No content impact:` (file sidecars) or `No route impact:` (route overviews),
-case-insensitive, colon required.
+`meaningful_body` removes the three verification metadata rows and the entire real Update History section, with fence-aware heading detection. `update_history_section` returns stripped nonempty history lines; `new_history_lines` returns newly appearing lines. `meaningful_body_changed`, active-claim filtering and `has_no_impact_marker` were removed with the legacy operational classifiers.
 
 ### Invariants And Boundaries
 
-- Metadata stamps and history appendices never count as content updates; only
-  text outside the metadata rows and Update History section is "body".
-- The no-impact marker is the explicit reviewed-no-impact attestation; gate
-  errors teach it, and closeout payloads surface every attested document so
-  marker use stays visible at the commit-approval gate.
-- Any `## ` heading ends the Update History section; a marker outside the
-  history section never attests anything.
-- This module is kernel-level: it must not import worktree, application entry point, or
-  provider modules.
+- Parsing excludes verification stamps and Update History from meaningful body.
+- Real H2 headings delimit history; fenced lookalikes do not.
+- These are reader/converter utilities, not an ordinary publication fallback or in-band no-impact authority.
+- Kernel must not import worktree, application or provider owners.
 
 ## Evidence
 
@@ -54,11 +31,13 @@ No external Domain Documentation source is configured for this memory repo.
 
 ### Repo-Internal References
 
-- The kernel module defines metadata-row rewriting plus Update History extraction and delta helpers. [1]
-- The closeout onboarding module imports the body/history classifiers and metadata-row helper from this kernel module. [2]
-- Route-overview and sidecar classification gates consume the meaningful-body, new-history, and no-impact-marker helpers. [3]
-- On an unconverted memory tree the route-overview and sidecar metadata refresh paths consume `onboarding_metadata_row`; on a converted tree both return before it (MIK-R30 rule 5). [4]
-- The public worktree-manager facade imports and re-exports `onboarding_metadata_row`. [5]
+
 - Meaningful-body normalization strips verification fields and history. [6]
 - History extraction is section-aware. [7]
-- A recognized no-impact marker requires its explicit colon form. [8]
+
+
+- History extraction and history-line delta parsing survive; metadata-row rewriting was removed. [1]
+
+- The onboarding owner imports retained Markdown table parsing, not the removed body/history classifiers. [2]
+
+- The public worktree facade still imports and exports source-onboarding plans and entity/index refresh helpers; metadata-row rewriting was removed. [5]

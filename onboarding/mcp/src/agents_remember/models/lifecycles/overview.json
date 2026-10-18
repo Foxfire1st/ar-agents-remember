@@ -6,7 +6,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "359083eb794b3a5462b9e53d4dde2b27ec8ec7a9",
+            "blob": "067465c785daba374dbccfbc6ddf3efb62611ed4",
             "content": "sha256:e345bcf52910f1d43fcff54700f85ea691a6b896120f54a78d4be96269c1b309",
             "locator": {
               "kind": "symbol",
@@ -303,6 +303,19 @@
       "targets": [
         {
           "anchor": {
+            "blob": "f0a20f3f2923693dfd1ba1d7a1edaba1cf49e5f8",
+            "content": "sha256:fbfa2df47bcf6a46ff495a6abe11dd1827b98ab79e82215da0dc35538d4d574f",
+            "locator": {
+              "end": 560,
+              "kind": "line_range",
+              "start": 460
+            },
+            "path": "mcp/src/agents_remember/models/lifecycles/review_assessment.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
             "blob": "4fd1f27d3283052427f6944c13312ee2c3991752",
             "content": "sha256:c973a0216267b57a66a30a0157ca64beb3b3c6b2e5c95f05740faf92c4332215",
             "locator": {
@@ -363,6 +376,18 @@
       "targets": [
         {
           "anchor": {
+            "blob": "4a8bad95a8ce2bb91f9b627103d767d6537085b9",
+            "content": "sha256:cb67fa9fd82141384f080fb614f4bc6bf53123093893769620d484c1b0d26387",
+            "locator": {
+              "kind": "symbol",
+              "name": "LifecycleFinalizeTaskResponse"
+            },
+            "path": "mcp/src/agents_remember/models/lifecycles/finalize.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
             "blob": "0acadadf7d340bd8e01e8ca3cd1491d045ccb136",
             "content": "sha256:dd0efba7750af6e0ddd82d4a931c5efe4d5792a32f350a66d1f892e7e0ee1608",
             "locator": {
@@ -419,8 +444,21 @@
       ]
     },
     "21": {
-      "note": "The snapshot and memory-preparation consumers distinguish filtered content from actual Git trees.",
+      "note": "The memory mutation snapshot preserves actual Git head and headTree while computing cache-excluded contentHeadTree, indexTree, candidateTree and status; removed prepared-memory reuse/output consumers are not current callers.",
       "targets": [
+        {
+          "anchor": {
+            "blob": "39ae800760aa4ef057b9404047188f3b8d9f650b",
+            "content": "sha256:83e00338e71cec79886be543d982131d3ac1124c39ca30dfbac8b14e58e14738",
+            "locator": {
+              "end": 373,
+              "kind": "line_range",
+              "start": 302
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/mutation_evidence.py"
+          },
+          "kind": "code"
+        },
         {
           "anchor": {
             "blob": "39ae800760aa4ef057b9404047188f3b8d9f650b",
@@ -433,38 +471,36 @@
             "path": "mcp/src/agents_remember/worktrees/integration/mutation_evidence.py"
           },
           "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "97cd60f42499bfabcd82b0e2a42808e6a68cc4ef",
-            "content": "sha256:5056ba9d50adc6c4f75780a847167ec24c1585a99a800c85ece40cccbd7d6899",
-            "locator": {
-              "end": 60,
-              "kind": "line_range",
-              "start": 20
-            },
-            "path": "mcp/src/agents_remember/worktrees/integration/closeout/preparation/memory_reuse.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "0cc2bb91dea1e4ae50eef66e4ef5d71d83a9310c",
-            "content": "sha256:8b7d02094a03fcf486be16f9fa460ebfd9f51ac3c045df0cd7eee3b4345eb28a",
-            "locator": {
-              "end": 241,
-              "kind": "line_range",
-              "start": 206
-            },
-            "path": "mcp/src/agents_remember/worktrees/integration/closeout/preparation/memory_output.py"
-          },
-          "kind": "code"
         }
       ]
     },
     "22": {
       "note": "ComparisonAssessmentAvailability is a retained manifest descriptor, not a current reviewer channel: answered counts and recovery requirements are structurally checked, not independently measured or semantically endorsed.",
       "targets": [
+        {
+          "anchor": {
+            "blob": "39ae800760aa4ef057b9404047188f3b8d9f650b",
+            "content": "sha256:6a6bedb9b679f5b7f43d20e2e9b02c80d21dbd03f53131f1d9dbb062deef0e89",
+            "locator": {
+              "kind": "symbol",
+              "name": "ephemeral_git_mutation_snapshot"
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/mutation_evidence.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "337cecab7fcfa32371b4cbd4f0a2ee55762042bc",
+            "content": "sha256:bbcd4e1d1f99efd4533caa111346953dde2eddef61b100d5ffa15df67eadeb6a",
+            "locator": {
+              "kind": "symbol",
+              "name": "ExistingGitPreparationBinding"
+            },
+            "path": "mcp/src/agents_remember/kernel/git_preparation.py"
+          },
+          "kind": "code"
+        },
         {
           "anchor": {
             "blob": "68801f87ac1b7cdcb236bc14286d61bcf0a7be1b",
@@ -474,6 +510,18 @@
               "name": "ComparisonAssessmentAvailability"
             },
             "path": "mcp/src/agents_remember/models/lifecycles/comparison_records.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "337cecab7fcfa32371b4cbd4f0a2ee55762042bc",
+            "content": "sha256:bbcd4e1d1f99efd4533caa111346953dde2eddef61b100d5ffa15df67eadeb6a",
+            "locator": {
+              "kind": "symbol",
+              "name": "ExistingGitPreparationBinding"
+            },
+            "path": "mcp/src/agents_remember/kernel/git_preparation.py"
           },
           "kind": "code"
         }

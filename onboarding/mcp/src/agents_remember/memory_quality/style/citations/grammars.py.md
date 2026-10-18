@@ -34,7 +34,7 @@ The following complete predecessor retains useful explanations, old observations
 > Module-level surface:
 >
 > - `Binding` (class) — One name a construct binds: its extent, and the line the declaration itself begins on. The two differ for a decorated Python definition, whose extent is widened through `decorated_definition` to cover the decorator while the declaration begins on the `def`/`class` line below it.
-> - `CallLiteral` (class, lines 123-131) — One direct quoted argument, its syntax identity, and its call's line extent.
+> - `Binding` (class, lines 124-133) — One name a construct binds: its extent and the line its declaration itself begins on, which differ for a decorated definition because the extent grows outward through the decorator while the declaration starts at the def or class line.
 > - `grammar_of` (function, lines 134-136) — The grammar that reads ``path``, or ``None`` when nothing does.
 > - `parsed` (function, lines 139-141) — Whether a definition in ``path`` is distinguishable from a mention of it.
 > - `typescript_anchor_identifier` (function, lines 144-185) — The direct identifier rooted by a complete TS call or generic type spelling.
@@ -69,7 +69,7 @@ The following complete predecessor retains useful explanations, old observations
 >
 > This module defines the top-level symbols cited below; each row points at the exact source range holding the anchor.
 >
-> - Defines the class `CallLiteral` (lines 123-131) — One direct quoted argument, its syntax identity, and its call's line extent.. [1]
+> - Defines the class `Binding` (lines 124-133) — One name a construct binds and the line its declaration begins on; the extent and the declaration differ for a decorated definition. [1]
 > - Defines the function `grammar_of` (lines 134-136) — The grammar that reads ``path``, or ``None`` when nothing does.. [2]
 > - Defines the function `parsed` (lines 139-141) — Whether a definition in ``path`` is distinguishable from a mention of it.. [3]
 > - Defines the function `typescript_anchor_identifier` (lines 144-185) — The direct identifier rooted by a complete TS call or generic type spelling.. [4]

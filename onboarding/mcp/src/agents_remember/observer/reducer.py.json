@@ -19,6 +19,58 @@
           "kind": "code"
         }
       ]
+    },
+    "18": {
+      "note": "The facade composes metrics and the narrowed analytical bundle, including closeout queue input, without verification-age rollups. Current counts are task-entry-owned; lifecycle-only counting describes the predecessor, not the current native task fold.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a57241d40018faab0653508e3bee2b113308af12",
+            "content": "sha256:971aac8fab740fef0829ff52b5068a0f8a13ba5611810f706362a35146ea8022",
+            "locator": {
+              "kind": "symbol",
+              "name": "_metrics"
+            },
+            "path": "mcp/src/agents_remember/observer/reducer_impl/_metrics.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a57241d40018faab0653508e3bee2b113308af12",
+            "content": "sha256:06e642ef9e699c3302d7cfcd7227332256f2ad862f684c07f7534497b59d364a",
+            "locator": {
+              "kind": "symbol",
+              "name": "build_analytics"
+            },
+            "path": "mcp/src/agents_remember/observer/reducer_impl/_metrics.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a8f22bb60059d2d711a13f582ae6aa5a76f82b1b",
+            "content": "sha256:0a645573f3b00702d56103b9a7d9dc65e893c604b8355f219f6417b96f86e446",
+            "locator": {
+              "kind": "symbol",
+              "name": "AnalyticalInputs"
+            },
+            "path": "mcp/src/agents_remember/observer/reducer_impl/_types.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8df68bbe026c7aa7cf76a02d438686311f33fe24",
+            "content": "sha256:345a7190e7af38edf2028f0b8da0e484a41277f058c00043026be41c7bf310c9",
+            "locator": {
+              "kind": "symbol",
+              "name": "project_workspace"
+            }
+          },
+          "kind": "code"
+        }
+      ]
     }
   },
   "schema": "ar-onboarding-file/v1"

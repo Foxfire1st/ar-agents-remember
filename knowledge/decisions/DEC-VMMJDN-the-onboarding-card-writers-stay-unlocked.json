@@ -8,21 +8,22 @@
   },
   "alternatives": [
     {
-      "option": "Leave the three card writers unlocked, as the documented exception to the rule's wording.",
-      "reason": "They write onboarding cards and route indexes only, never knowledge records and never the database; they commit nothing themselves, and the closeout that would commit their edits is locked, so on an unconverted line their edits cannot land.",
+      "option": "Historical D31 alternative: Leave the three card writers unlocked, as the documented exception to the rule's wording.",
+      "reason": "Predecessor D31 rationale, not current unconverted-input permission: They write onboarding cards and route indexes only, never knowledge records and never the database; they commit nothing themselves, and the closeout that would commit their edits is locked, so on an unconverted line their edits cannot land.",
       "status": "chosen"
     },
     {
-      "option": "Lock the three tools like every other write, as the rule's wording says.",
-      "reason": "Their writes cannot be committed while the closeout is locked, so the ruling records them as the exception instead.",
+      "option": "Historical D31 alternative: Lock the three tools like every other write, as the rule's wording says.",
+      "reason": "Predecessor D31 rationale, not current unconverted-input permission: Their writes cannot be committed while the closeout is locked, so the ruling records them as the exception instead.",
       "reconsider_when": "One of the three tools starts to commit, or to write knowledge records or the database.",
       "status": "rejected"
     }
   ],
   "consequences": [
-    "On an unconverted line of a locked repository the three tools still run, and their edits stay uncommitted until the line crosses through the crossing sync."
+    "The D31 three-tool statement is predecessor policy, not an assertion that citation_migrate still exists or that an ordinary unconverted input may now be written.",
+    "The surviving converted card/index writers retain their own admission and ordinary closeout retains commit/publication authority."
   ],
-  "context": "MIK-R24 rule 9 says that writes on an unconverted line refuse once its repository holds converted memory. Three tools write onboarding cards and route indexes into a leaf's working tree and were found unlocked in review: citation_fix, citation_migrate and route_index_refresh.",
+  "context": "Historical D31/F8 exception for the then-three cards-only tools. MIK-R24 rule 9 says that writes on an unconverted line refuse once its repository holds converted memory. Three tools write onboarding cards and route indexes into a leaf's working tree and were found unlocked in review: citation_fix, citation_migrate and route_index_refresh. Current-source qualification on passed L56 CODE8a3d6b82 over base7fe223: citation_migrate is removed and is not an executable exception. Surviving citation_fix and route_index_refresh remain worktree-only card/index writers with existing converted-root/leaf authority; unconverted ordinary inputs retain the central conversion refusal. This record grants no commit or knowledge-record write.",
   "decider": "architect under developer direction D31 (260928-MIK-L37 leaf document, decision 2026-10-01T05:05:16, F8)",
   "id": "DEC-VMMJDN",
   "links": [
@@ -33,8 +34,8 @@
     {
       "relation": "explains",
       "target": {
-        "blob": "4a21aa165bef8c474739108eb18c85115a3b3354",
-        "content": "sha256:88ee98a2e116d21f76242e567dbf3a401eb1c177fc5d7de2018d276de82dd046",
+        "blob": "8cc37ec945797a2390b14f47bdce27f8fe5816d5",
+        "content": "sha256:b138d8d6c8cc66ad7f51dad3972cb2d9fc8732425e5b8d4983ba5e762944a940",
         "locator": {
           "kind": "symbol",
           "name": "citation_fix_tool"
@@ -45,20 +46,8 @@
     {
       "relation": "explains",
       "target": {
-        "blob": "4a21aa165bef8c474739108eb18c85115a3b3354",
-        "content": "sha256:d12084a98d779f4b69ab321b1a361cf4cd4c6d183775a0396da895b04935ae88",
-        "locator": {
-          "kind": "symbol",
-          "name": "citation_migrate_tool"
-        },
-        "path": "mcp/src/agents_remember/application/memory_tools.py"
-      }
-    },
-    {
-      "relation": "explains",
-      "target": {
-        "blob": "4a21aa165bef8c474739108eb18c85115a3b3354",
-        "content": "sha256:1138e99f975a47026d39bb5f4035af8e5380595ca5c8847db9e8076809209f2a",
+        "blob": "8cc37ec945797a2390b14f47bdce27f8fe5816d5",
+        "content": "sha256:20715addb462bc44fb693c9aedfe978d20f77305d2676685c56bbe2d1c386530",
         "locator": {
           "kind": "symbol",
           "name": "route_index_refresh_tool"
@@ -70,8 +59,8 @@
       "alternative": 1,
       "relation": "reconsider_on",
       "target": {
-        "blob": "536d026ee5c551dea3daf51ed3731520f4b16401",
-        "content": "sha256:83e70239fb2fe29685ed990efe29b609d050cf2a0b0b59e99215e570c384646f",
+        "blob": "8cc37ec945797a2390b14f47bdce27f8fe5816d5",
+        "content": "sha256:b138d8d6c8cc66ad7f51dad3972cb2d9fc8732425e5b8d4983ba5e762944a940",
         "locator": {
           "kind": "symbol",
           "name": "citation_fix_tool"
@@ -83,21 +72,8 @@
       "alternative": 1,
       "relation": "reconsider_on",
       "target": {
-        "blob": "536d026ee5c551dea3daf51ed3731520f4b16401",
-        "content": "sha256:a50d2c3e7bb227cf80120eb7e2169138ffa607f5301aaad6b7a227d9aa93a372",
-        "locator": {
-          "kind": "symbol",
-          "name": "citation_migrate_tool"
-        },
-        "path": "mcp/src/agents_remember/application/memory_tools.py"
-      }
-    },
-    {
-      "alternative": 1,
-      "relation": "reconsider_on",
-      "target": {
-        "blob": "197ac9c813cefe56583faa7429ebada46d168acd",
-        "content": "sha256:93bef3cbe4b811f19a4cfc92299509d1385cc9a8bb7253481cbff896be99d6d9",
+        "blob": "8cc37ec945797a2390b14f47bdce27f8fe5816d5",
+        "content": "sha256:20715addb462bc44fb693c9aedfe978d20f77305d2676685c56bbe2d1c386530",
         "locator": {
           "kind": "symbol",
           "name": "route_index_refresh_tool"
@@ -117,7 +93,7 @@
     "leaf": "260928-MIK-L37",
     "task": "260928-MIK"
   },
-  "revision": 3,
+  "revision": 4,
   "schema": "ar-decision/v1",
   "status": "active",
   "supersedes": []

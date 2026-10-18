@@ -42,24 +42,11 @@
       "targets": [
         {
           "anchor": {
-            "blob": "65809f6f38b77f999a84c8301057ae9615842df0",
-            "content": "sha256:a82a0882fb602faf321939bffff95b3bddceffcc52d86e117304a71983226595",
+            "blob": "07647ac2bcbf6d8b9eb51aac0b1f1f031e3ef8a8",
+            "content": "sha256:a92eb4045a39968fbc72ac369963f8dcb6636c870da9512cd4f60357431dabd9",
             "locator": {
               "kind": "symbol",
               "name": "observerEvent"
-            },
-            "path": "dashboard/src/test/fixtures/wire.ts"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "65809f6f38b77f999a84c8301057ae9615842df0",
-            "content": "sha256:bcaff4518c1620c2f58027856315cd55675da50d3809e78286cd7bac510fcd4a",
-            "locator": {
-              "end": 383,
-              "kind": "line_range",
-              "start": 371
             },
             "path": "dashboard/src/test/fixtures/wire.ts"
           },
@@ -72,24 +59,11 @@
       "targets": [
         {
           "anchor": {
-            "blob": "65809f6f38b77f999a84c8301057ae9615842df0",
-            "content": "sha256:a82a0882fb602faf321939bffff95b3bddceffcc52d86e117304a71983226595",
+            "blob": "07647ac2bcbf6d8b9eb51aac0b1f1f031e3ef8a8",
+            "content": "sha256:a92eb4045a39968fbc72ac369963f8dcb6636c870da9512cd4f60357431dabd9",
             "locator": {
               "kind": "symbol",
               "name": "observerEvent"
-            },
-            "path": "dashboard/src/test/fixtures/wire.ts"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "65809f6f38b77f999a84c8301057ae9615842df0",
-            "content": "sha256:bcaff4518c1620c2f58027856315cd55675da50d3809e78286cd7bac510fcd4a",
-            "locator": {
-              "end": 383,
-              "kind": "line_range",
-              "start": 371
             },
             "path": "dashboard/src/test/fixtures/wire.ts"
           },

@@ -6,7 +6,7 @@
 
 ## Purpose
 
-Parse the table citation form ``| Finding | Anchor | Source |``.
+Parse the anchor/source cells of the `Finding | Anchor | Source` form shared by conversion and converted card authoring.
 
 ## Code Commentary
 
@@ -14,15 +14,15 @@ Parse the table citation form ``| Finding | Anchor | Source |``.
 
 Module-level surface:
 
-- `CitationTable` (class, lines 24-36) — One table this check claims, whether or not it is in the current format.
-- `parse_row` (function, lines 39-48)
-- `scan_tables` (function, lines 51-53) — Parse every GFM table once for reuse by citation checks.
-- `table_lines` (function, lines 56-64) — Every zero-based line index a table occupies -- what :mod:`prose` must not read.
-- `citation_tables` (function, lines 67-101) — Every evidence table in one document, current format or not.
+
+- `parse_row` (function, lines 28-37)
+
+
+
 
 ### Conventions
 
-Module-level definitions follow the package conventions; names prefixed with `_` are private to this module.
+`unescaped` resolves only GFM escaped pipes (`\|`) to literal pipes before model parsing; all other backslashes remain content. `parse_row` records anchors, sources, malformed source segments and unchecked code spans in a Claim shared by conversion/authoring. It performs no citation-table discovery walk.
 
 ### Invariants And Boundaries
 
@@ -38,8 +38,5 @@ None.
 
 This module defines the top-level symbols cited below; each row points at the exact source range holding the anchor.
 
-- Defines the class `CitationTable` (lines 24-36) — One table this check claims, whether or not it is in the current format.. [1]
-- Defines the function `parse_row` (lines 39-48). [2]
-- Defines the function `scan_tables` (lines 51-53) — Parse every GFM table once for reuse by citation checks.. [3]
-- Defines the function `table_lines` (lines 56-64) — Every zero-based line index a table occupies -- what :mod:`prose` must not read.. [4]
-- Defines the function `citation_tables` (lines 67-101) — Every evidence table in one document, current format or not.. [5]
+
+- parse_row unescapes GFM pipes and parses anchor/source cells for conversion and converted card authoring. [2]

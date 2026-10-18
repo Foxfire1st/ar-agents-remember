@@ -16,20 +16,7 @@ packet's "checker-registry version" and "policy registry" delivery
 
 ### Logic
 
-`EDGE_OWNER_CONTRACTS` maps the five `EdgeClass` values to their canonical authority namespace and
-extractor/validator versions: sidecar pairing, route index, citation model (v8 source index),
-entity catalog, and route-index inputs
-cit:([`EDGE_OWNER_CONTRACTS`, `EdgeOwnerContract`], mcp/src/agents_remember/memory_quality/incremental_scope/registry.py:19-25; mcp/src/agents_remember/memory_quality/incremental_scope/registry.py:28-54).
-`_POLICIES` declares every current checker's one policy: drift summary, claim reopen, diff markers,
-entity alignment, history order, and table shape are `full-only` (no complete selected runner or
-whole-onboarding-only), while citation range resolution is `incremental` with all edge classes and
-an executable extractor version cit:([`_POLICIES`], mcp/src/agents_remember/memory_quality/incremental_scope/registry.py:58-105).
-`checker_scope_registry()` returns the deterministic sorted population and refuses source drift: the
-declared checker set must equal `AVAILABLE_CHECKS`, incremental policies must carry an
-extractor version and edge classes, and `full-only` policies must carry neither
-cit:([`checker_scope_registry`], mcp/src/agents_remember/memory_quality/incremental_scope/registry.py:108-129).
-`checker_registry_version()` fingerprints the whole policy population into one canonical digest
-cit:([`checker_registry_version`], mcp/src/agents_remember/memory_quality/incremental_scope/registry.py:132-136).
+`_POLICIES` declares four current policies: the drift slot, diff markers, entity alignment and table shape, all `full-only`. No selected citation resolver or scope compiler survives. `checker_scope_registry` returns the sorted population, requires exact equality with `AVAILABLE_CHECKS`, and rejects incremental policies without versions/edges or full-only policies carrying them. `checker_registry_version` fingerprints the canonical complete policy population.
 
 ### Conventions
 
@@ -56,10 +43,6 @@ The policy enumeration has no external authority.
 
 ### Repo-Internal References
 
-The registry consumes the existing memory-quality checker names (`AVAILABLE_CHECKS`) and the
-incremental citation resolver's `claim_reopen`/`range_resolution` plus document-shape and
-history-order checkers.
+The registry consumes the surviving memory-quality checker population: drift slot, diff markers, entity inventory alignment and table shape.
 
 - The checker population is derived from the memory-quality package check catalog. [1]
-- The one incremental checker is citation range resolution, whose selected-document mode makes it the only executably incremental policy. [2]
-- The manifest binds `checkerRegistryVersion` into every compiled scope. [3]

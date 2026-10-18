@@ -78,7 +78,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "173c634c2a673a71154a2bb8704a9b0b9929d40b",
+            "blob": "2ad9297aa031e0aaa3931e246d19a8a360a25bd6",
             "content": "sha256:2dbd718d12347fabace79eb8eee6ff5caa1f2bf84e36994502f844f7372488bb",
             "locator": {
               "kind": "symbol",
@@ -90,7 +90,7 @@
         },
         {
           "anchor": {
-            "blob": "173c634c2a673a71154a2bb8704a9b0b9929d40b",
+            "blob": "2ad9297aa031e0aaa3931e246d19a8a360a25bd6",
             "content": "sha256:2fbabfec67706e61304225aafc65d2223b77fa79810db4037824e924376948b9",
             "locator": {
               "end": 108,
@@ -104,30 +104,18 @@
       ]
     },
     "4": {
-      "note": "Drift checks classify source onboarding storage through the public facade.",
+      "note": "Storage decisions still serve source-coverage planning; converted knowledge currentness uses the converted checker rather than legacy verification metadata drift.",
       "targets": [
         {
           "anchor": {
-            "blob": "38e6399c1c35ec03341b7da785998df27ee08170",
-            "content": "sha256:dceab35abc455742eca8847361dede7b17f33d98f47abcbf602ea5dee3fbb2cd",
+            "blob": "30934f67876dc31aa7d36ec277f0841537570fb2",
+            "content": "sha256:442534c644775bbb678b96945cd22af6f8879e3344bfd3bf015f57e31b601c8d",
             "locator": {
-              "kind": "symbol",
-              "name": "classify_source"
-            },
-            "path": "mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/drift.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "38e6399c1c35ec03341b7da785998df27ee08170",
-            "content": "sha256:b0f7e06340266228ba1fa94f546dc2f92873486bc69b179bfdc0c3cce2ac5360",
-            "locator": {
-              "end": 195,
+              "end": 154,
               "kind": "line_range",
-              "start": 161
+              "start": 76
             },
-            "path": "mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/drift.py"
+            "path": "mcp/src/agents_remember/memory_quality/converted_check.py"
           },
           "kind": "code"
         }

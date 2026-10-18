@@ -348,31 +348,44 @@
       ]
     },
     "18": {
-      "note": "Profile loading and certification execution remain downstream consumers of the configured profile reference.\n\nAnchor: `mcp/src/agents_remember/worktrees/integration/closeout/certification/admission.py`; `mcp/src/agents_remember/worktrees/integration/closeout/certification/execution.py`",
+      "note": "The kernel validates the optional certification-profile path; requested certification loads that profile, freezes exact admission and executes the selected quality plan through its own owner, independently of ordinary closeout.",
       "targets": [
         {
           "anchor": {
-            "blob": "89043a5e28ba717250523696bba193d211591458",
-            "content": "sha256:91b3b34360b258575f58166d4dc41d06b5a1d9626679c09c30bfb9735402b2bb",
+            "blob": "a0b43326f338ea9f8e4967ed81f41dcaa19ba8fc",
+            "content": "sha256:374dd6906e27adc8c4a7f1c5ff0dd73fffa1f7faa558a02bae2df7bc751ce8e2",
             "locator": {
-              "end": 113,
+              "end": 441,
               "kind": "line_range",
-              "start": 85
+              "start": 417
             },
-            "path": "mcp/src/agents_remember/worktrees/integration/closeout/certification/admission.py"
+            "path": "mcp/src/agents_remember/kernel/primitives/runtime_config.py"
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "d0d31c386573baeb8f5f093dc57275fbd256e20e",
-            "content": "sha256:1c40c9f959d801b9d8ea7b03bbb9d935ec32e1279d7d58defffbe1d0825f6eec",
+            "blob": "c62c700c4a20f4dd0b17d1dd95a68c03136291af",
+            "content": "sha256:57b0c55c056e57a5a3b837cb4124732b561e6a5083a6ac698c80893dab6550fa",
             "locator": {
-              "end": 299,
+              "end": 235,
               "kind": "line_range",
-              "start": 255
+              "start": 192
             },
-            "path": "mcp/src/agents_remember/worktrees/integration/closeout/certification/execution.py"
+            "path": "mcp/src/agents_remember/worktrees/modules/quality/certification_records.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b2f9f1624c63b2e7e58d9486c5d024f84fd7903e",
+            "content": "sha256:78142d0f1406b0d964d53a6bb55e9e74ce9d25082247c78e9b2f52758635a45a",
+            "locator": {
+              "end": 364,
+              "kind": "line_range",
+              "start": 248
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/quality/gate.py"
           },
           "kind": "code"
         }

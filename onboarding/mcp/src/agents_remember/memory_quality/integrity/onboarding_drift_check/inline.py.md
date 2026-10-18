@@ -6,31 +6,23 @@
 
 ## Purpose
 
-`inline.py` extracts inline onboarding blocks embedded in source files and
-classifies them by source digest. Inline onboarding reuses the same content model
-as sidecars but is verified through an embedded `sourceDigest`.
+`inline.py` extracts old inline onboarding blocks from supplied source text for retained conversion and missing-block reads. It does not enumerate sources, compute source digests or classify drift.
 
 ## Code Commentary
 
 ### Logic
 
-`line_bounds` and `expand_inline_bounds` grow the block to include the surrounding
-comment delimiter; `extract_inline_onboarding_block` parses metadata between the
-`@ar-onboarding` / `@ar-onboarding-end` markers; `compute_inline_source_digest`
-hashes the source with the block removed; `classify_inline_source` compares the
-recorded `sourceDigest` to the computed digest; `discover_inline_onboarding_sources`
-finds inline-eligible sources via storage resolution.
+`line_bounds` locates the enclosing line. `expand_inline_bounds` includes an immediately preceding recognized comment opener and matching following closer, plus the final newline when present. `extract_inline_onboarding_block` returns `None` for absent/reversed markers; otherwise it retains the exact expanded raw text and parses colon-separated metadata while skipping blank, marker and comment-delimiter lines through kernel scalar cleaning.
 
 ### Invariants And Boundaries
 
-- The digest is computed over the source **with the block removed**, so editing
-  the block contents does not register as drift.
-- Non-UTF-8 sources are reported as unsupported rather than parsed.
-- Reports drift only.
+- Parsing operates on text and performs no source-digest/currentness verdict.
+- Non-UTF-8 source handling belongs to filesystem callers such as missing-onboarding; this module does not read or decode files.
+- Inline raw block bytes, marker order and delimiter expansion remain the extraction contract.
 
 ## Evidence
 
 ### Repo-Internal References
 
-- Inline source enumeration reads repo files through `git_ops.list_repo_sources`. [1]
+
 - Inline block parsing is owned here; CLI behavior is separate and no deleted-suite pass is asserted. [2]

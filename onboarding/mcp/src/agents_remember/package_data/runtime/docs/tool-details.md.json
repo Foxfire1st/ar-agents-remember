@@ -20,14 +20,16 @@
       ]
     },
     "2": {
-      "note": "The shipped document retains the relocated long explanations while short registrations preserve callable signatures and guards.",
+      "note": "The shipped document retains long explanations and replaces citation source-snapshot options with old-format refusal; registration remains the callable-signature owner.",
       "targets": [
         {
           "anchor": {
-            "blob": "1fde4d3f71e970da8998e06312e8a3de73196950",
-            "content": "sha256:9c41664d82fc346a3cbf4bc4722c6e0ec1630848e8e1461fb5f3a3fb7892cf02",
+            "blob": "ef052a554e59b0a8a26ef43d1e740035dc75b0d8",
+            "content": "sha256:9b1c44c03db9f6b35f2611b840a510ffe0cb6f35273167c8aa0cbe75718e6d4a",
             "locator": {
-              "kind": "file"
+              "end": 273,
+              "kind": "line_range",
+              "start": 1
             }
           },
           "kind": "code"

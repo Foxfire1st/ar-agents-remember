@@ -3,29 +3,37 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "Sidecar and entity discovery classify metadata, normalize paths, and parse entity evidence through these helpers.\n\nAnchor: \"def classify_sidecar_onboarding_units(\"; \"def parse_table_metadata(\"; \"def normalize_rel_path(\"; \"def parse_entity_fingerprint_rows(\"; \"def classify_entity_catalog(\"",
+      "note": "Retained metadata-text/path and entity readers parse old-card or structural inputs without the removed sidecar classifier.",
       "targets": [
         {
           "anchor": {
-            "blob": "24c3931f72183810cec08c4833bc012565e56f4b",
-            "content": "sha256:b9375140191642a34b97ffdbb5da779d3b7e7a3f5847f7f3b40628f5c4b29b87",
+            "blob": "98dd7018897efd09b8c16955071bb1875fb146d9",
+            "content": "sha256:1ade7214d1ecdadcdf60c2a1e5db5b27dc11f1446454f20d548e810e0f19adb2",
             "locator": {
-              "end": 342,
-              "kind": "line_range",
-              "start": 289
-            },
-            "path": "mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/sidecar.py"
+              "kind": "symbol",
+              "name": "parse_table_metadata_text"
+            }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "47fbe0fe7452568f5bb7f766308430b516d8f247",
-            "content": "sha256:72d3372b9478278a90e3d5d770c66f287439033859778cc16c4c4fb353492873",
+            "blob": "98dd7018897efd09b8c16955071bb1875fb146d9",
+            "content": "sha256:ad107faacea5214ae1160ecbdd0ad7a2d13a678d6767832c6e54a9763376cabe",
             "locator": {
-              "end": 32,
-              "kind": "line_range",
-              "start": 17
+              "kind": "symbol",
+              "name": "normalize_overview_route"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "98dd7018897efd09b8c16955071bb1875fb146d9",
+            "content": "sha256:7a9c34c9d98d9287ba75e16a2e4b3030569517b34f49d5d0e4eb2b3f198ee018",
+            "locator": {
+              "kind": "symbol",
+              "name": "rel"
             }
           },
           "kind": "code"
@@ -45,40 +53,14 @@
         },
         {
           "anchor": {
-            "blob": "9adc256a128d606ec110e5ff8c622ec9420d3899",
+            "blob": "789eb8c15a6d0709af6e7d1de4e61a85369bf59f",
             "content": "sha256:7e22fccbef5156b8ff51c338a1ccec2f8dbe5bf566bd8ea7ac420fcaf3ca92c1",
             "locator": {
-              "end": 113,
+              "end": 85,
               "kind": "line_range",
-              "start": 84
+              "start": 56
             },
             "path": "mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/entities.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "9adc256a128d606ec110e5ff8c622ec9420d3899",
-            "content": "sha256:c8bd7460c7169ce5b618cf0becf20290ecc5a0029ec36fe8df50106ef5b0bcc2",
-            "locator": {
-              "end": 501,
-              "kind": "line_range",
-              "start": 428
-            },
-            "path": "mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/entities.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "7abd6ad79f05d4928c2eb63e7beea399853a5e59",
-            "content": "sha256:7895fc4f3df334ba7ba0f2f7bc717650dd6bc0d3c81de5563c1170fdc4aa90ea",
-            "locator": {
-              "end": 45,
-              "kind": "line_range",
-              "start": 45
-            },
-            "path": "mcp/src/agents_remember/kernel/coordination_context/paths.py"
           },
           "kind": "code"
         }

@@ -46,7 +46,11 @@ Derived open-map/closed-union Record registries now walk native entry stage/acti
 
 Nonvacuous runtime checks retain sample paths/vocabularies. Native task assertions require qualified identity and forbid duplicate identity/status/children/progress in summary. Lifecycle bucket suites/master-series pins are removed; only the edge.refusedPolarity inverted pin remains.
 
-### Historical 260831-LOCR-L17 — the observer-health vocabulary entries
+The retired `projection.metrics.stalenessHistogram` is no longer an absorbing site; `projection.analytics.driftSnapshots[].counts` remains registered. The observed current registry has 12 keys, not a permanent quota. The local predecessor kept LifecycleProjection while retiring the gate model; L168 now replaces that lifecycle shape with native task entries, so that predecessor declaration is not a current contract.
+
+### Historical 260831-LOCR-L17 — the retired observer-health vocabulary entries
+
+The following account belongs to that historical source candidate. The current mirror, sample and VOCABULARIES registry have no terminal-observer-health field or five-path population.
 
 Historical LOCR-L17 added terminalObserverHealth vocabulary paths to that epoch’s sample guard. The enduring rule is nonvacuous path reach plus earned allowances, not a historical residue quota; native entries now leave only servingBuild unsampled.
 
@@ -57,6 +61,7 @@ Structural guards are type-level; sample vocabulary assertions are runtime. The 
 ### Invariants And Boundaries
 
 Keep asServedProjection, derived Record registries, earned servingBuild-only residue and nonzero sample reach. Do not restore removed heartbeat allowances.
+A vacuous check remains a failure: absorbing-node reach and each vocabulary loop require nonzero samples before membership/reason checks. Registry keys stay typed as derived Records rather than untyped lists.
 
 ### Todos
 
@@ -80,15 +85,21 @@ Two external behaviours are load-bearing: pydantic's `exclude_none` serializatio
 rule that an unused `@ts-expect-error` is itself an error. Both rows anchor on the in-repo fact that
 makes the behaviour load-bearing HERE.
 
+
 - Reconciled the phase registry with retired ledger publication phases; sample membership and coverage checks remain. [1]
+
 - Persisted projection state is written by `write_projection` with omitted `None` values. [2]
 - The contract test's inverted TypeScript pins are registered as an explicit fixture-guard allowance. [3]
 
 - The header: three fixture-coverage seams, the double cast that disabled checking, and the boundary now closed by schema codegen. [4]
+
 - `ServedOnlyPaths` + `mirrorMustDeclare` — the `mirror ⊇ served` direction, naming the path. [5]
+
 - `MirrorOnlyPaths` + `KnownUnsampled` + `fixtureMustSample` + `allowlistMustStayEarned` — the oracle guarded, including why an empty array is worse than a missing field. [6]
-- AbsorbingPaths derives every string-index-signature boundary and INDEX_SIGNATURE_SITES is an exhaustive, closed Record of that derived path set, with reasons for opaque nodes in the current native-entry shape. The current literal registry has 13 keys; this is an observed census, not a fixed schema-count contract. The source test requires at least one sampled value and a nonempty reason at every registered site. [7]
+- AbsorbingPaths derives every string-index-signature boundary and INDEX_SIGNATURE_SITES is an exhaustive, closed Record of that derived path set, with reasons for opaque nodes in the current native-entry shape. The current literal registry has 12 keys; this is an observed census, not a fixed schema-count contract. The source test requires at least one sampled value and a nonempty reason at every registered site. Verification-age histogram and retired gate/ask sites remain absent; drift counts remain. [7]
 - `ClosedUnionPaths` + `VOCABULARIES` — every registered path bound to its value set, replacing hand-written checks. [8]
+
+
 - Sample vocabulary assertion: every registered path is reached and every carried value is declared by its vocabulary. [9]
 
 - The retained inverted field pin is the single EngineProcessEdge.refusedPolarity case: an @ts-expect-error access must remain invalid while the example edge keeps state stale. The suite does not retain the former createdAt/linkedLifecycleId master/series pins; this is source-defined typecheck evidence, not a fresh typecheck or test run. [11]

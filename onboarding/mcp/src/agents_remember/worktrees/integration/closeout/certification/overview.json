@@ -1,46 +1,17 @@
 {
   "path": "mcp/src/agents_remember/worktrees/integration/closeout/certification",
   "references": {
-    "1": {
-      "note": "Admission freezes actual preparation and current owner input; initial selection binds the exact originals.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "89043a5e28ba717250523696bba193d211591458",
-            "content": "sha256:c17a03574fbe306a7ad0d15274068b70e5329d7b95e0ca404326d21add4d374a",
-            "locator": {
-              "kind": "symbol",
-              "name": "prepare_closeout_certification"
-            },
-            "path": "mcp/src/agents_remember/worktrees/integration/closeout/certification/admission.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "89043a5e28ba717250523696bba193d211591458",
-            "content": "sha256:3587895d3f6cdefd0169fc0165515535347244a8bc4f2efc23e1cd2f5b4ad7c2",
-            "locator": {
-              "kind": "symbol",
-              "name": "initial_certification_state"
-            },
-            "path": "mcp/src/agents_remember/worktrees/integration/closeout/certification/admission.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
     "10": {
-      "note": "Task, Git, mutation and generated-input observations supply distinct actual authority records.",
+      "note": "The surviving observation utility recursively projects typed finding evidence and raises structured refusal.",
       "targets": [
         {
           "anchor": {
-            "blob": "2d230cb750354844167da03003c3aeddd690ba3c",
-            "content": "sha256:b83ff74ab65d59bafddf59f126972e0245d227e0463aebe8e9dddbc14d1aebec",
+            "blob": "c5b0f59bdf034f5e9ba4daf7aa19126196534506",
+            "content": "sha256:c4d91de04b3476bff7e646fc9baaec5384e877a00b93d2b7bab7b36af3e83e15",
             "locator": {
-              "end": 299,
+              "end": 35,
               "kind": "line_range",
-              "start": 98
+              "start": 24
             },
             "path": "mcp/src/agents_remember/worktrees/integration/closeout/certification/observation.py"
           },
@@ -49,16 +20,16 @@
       ]
     },
     "11": {
-      "note": "Selected readback binds originals, predecessor history, recovery decisions and terminal publication evidence; terminal replacement preserves history.",
+      "note": "Original terminal readback recompiles results, verifies publication/evidence and requires a green result for a selected certificate.",
       "targets": [
         {
           "anchor": {
-            "blob": "f360ce09c8a830fd302df8ba6dcd6ab62fd786ac",
-            "content": "sha256:7a30032efe7e06ef3a350eabff3f24b27661673c349baa7fd453d3368422566f",
+            "blob": "4c8cc69c44f4910bb5cbf4400f19f879a1b4dc36",
+            "content": "sha256:2476185869975c2d278ff2a50ca770fe8b30c82309333f51da343a8ba17d2054",
             "locator": {
-              "end": 223,
+              "end": 90,
               "kind": "line_range",
-              "start": 135
+              "start": 48
             },
             "path": "mcp/src/agents_remember/worktrees/integration/closeout/certification/selection.py"
           },
@@ -66,12 +37,12 @@
         },
         {
           "anchor": {
-            "blob": "f360ce09c8a830fd302df8ba6dcd6ab62fd786ac",
-            "content": "sha256:8a9f075cbb1e51b5b7474cc2ed99f6dc151808d55b65d596ae0671c6cb564c12",
+            "blob": "4c8cc69c44f4910bb5cbf4400f19f879a1b4dc36",
+            "content": "sha256:d1d50b1bff69a9a53113f0914be248770c3a229e58cda2137ac14f8ce0a45c21",
             "locator": {
-              "end": 517,
+              "end": 54,
               "kind": "line_range",
-              "start": 226
+              "start": 54
             },
             "path": "mcp/src/agents_remember/worktrees/integration/closeout/certification/selection.py"
           },
@@ -79,64 +50,67 @@
         },
         {
           "anchor": {
-            "blob": "f360ce09c8a830fd302df8ba6dcd6ab62fd786ac",
-            "content": "sha256:a54419d4f6ecd563a1459124714f4d437ed0cc2c9a65eed36eafb1cb82235f78",
+            "blob": "4c8cc69c44f4910bb5cbf4400f19f879a1b4dc36",
+            "content": "sha256:45f4c2c2a3176bf36c180ce96395d169045ce8db5992e5025c2b423b0651fcab",
             "locator": {
-              "end": 634,
+              "end": 59,
               "kind": "line_range",
-              "start": 561
+              "start": 55
             },
             "path": "mcp/src/agents_remember/worktrees/integration/closeout/certification/selection.py"
           },
           "kind": "code"
-        }
-      ]
-    },
-    "12": {
-      "note": "Current worker authority, canonical memory observation, suffix execution and publication protection are checked at their execution boundaries.",
-      "targets": [
+        },
         {
           "anchor": {
-            "blob": "d0d31c386573baeb8f5f093dc57275fbd256e20e",
-            "content": "sha256:ec8cfa0d5367eb717c9e34bf69472f51f22499b6299b9c3b331898348e9b64d6",
+            "blob": "4c8cc69c44f4910bb5cbf4400f19f879a1b4dc36",
+            "content": "sha256:b33fdfc0c6155cf94a7eb12c1bdc224efbcbdaebe05880b6ec5d83746e48e5c6",
             "locator": {
-              "end": 347,
+              "end": 68,
               "kind": "line_range",
-              "start": 74
+              "start": 68
             },
-            "path": "mcp/src/agents_remember/worktrees/integration/closeout/certification/execution.py"
+            "path": "mcp/src/agents_remember/worktrees/integration/closeout/certification/selection.py"
           },
           "kind": "code"
-        }
-      ]
-    },
-    "13": {
-      "note": "Retained output validates both original prestates and the physical commit before authority normalization.",
-      "targets": [
+        },
         {
           "anchor": {
-            "blob": "eda28256623e66702f7034156debad3f05ac710b",
-            "content": "sha256:2ee93761f8ba84ff6a6352f08579771cae69a839545cddbfc47f40417ab3969d",
+            "blob": "4c8cc69c44f4910bb5cbf4400f19f879a1b4dc36",
+            "content": "sha256:b244255b64bac99f5730445d44ccc7ddabf108b9a6c67838690ccb764e19b6d4",
             "locator": {
-              "end": 136,
+              "end": 108,
               "kind": "line_range",
-              "start": 80
+              "start": 93
             },
-            "path": "mcp/src/agents_remember/worktrees/integration/closeout/certification/retained_output.py"
+            "path": "mcp/src/agents_remember/worktrees/integration/closeout/certification/selection.py"
           },
           "kind": "code"
         }
       ]
     },
     "14": {
-      "note": "Converted-memory refusal and the subsequent unconverted-memory lock are distinct checks; unreadable probes are not permission to proceed.",
+      "note": "Ordinary converted-memory gates and legacy cutover refusal survive outside the retired prepared-closeout path.",
       "targets": [
         {
           "anchor": {
-            "blob": "2e61c5b715ff2ad0a5d8cd26a98da4aaa866b6b2",
-            "content": "sha256:15815da89f3c61cb606c47d7e57f501d1f293270e3646e79393da604ff70e0df",
+            "blob": "a34667e628dd1e5f7e0c8ad103c5d35edde4b115",
+            "content": "sha256:e26e2adcf5bcfcae3e6a4c3f882385d93256493430e76083f1b31612a64f838e",
             "locator": {
-              "end": 247,
+              "end": 158,
+              "kind": "line_range",
+              "start": 153
+            },
+            "path": "mcp/src/agents_remember/worktrees/knowledge_gate.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a34667e628dd1e5f7e0c8ad103c5d35edde4b115",
+            "content": "sha256:4dddb8f19bd2034570decd73901d98c8140c21dcaba58c1525c9fdb42b9957fc",
+            "locator": {
+              "end": 156,
               "kind": "line_range",
               "start": 156
             },
@@ -146,140 +120,160 @@
         },
         {
           "anchor": {
-            "blob": "34b7a01a614d6f22e1f7c233039dae49cb34ce72",
-            "content": "sha256:9920ab0d79282308f39414cf00b0f11d568cb64c2d1bd549bed0fca76d6003b4",
+            "blob": "a34667e628dd1e5f7e0c8ad103c5d35edde4b115",
+            "content": "sha256:93f695e3055fb73f009b82f6b40800419c3bb06874c945224aaf536ebf7d8067",
             "locator": {
-              "end": 185,
+              "end": 157,
               "kind": "line_range",
-              "start": 135
+              "start": 157
+            },
+            "path": "mcp/src/agents_remember/worktrees/knowledge_gate.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a34667e628dd1e5f7e0c8ad103c5d35edde4b115",
+            "content": "sha256:54b4f95134fee9ba49567b3c59a20dbc524e5b99411883ad7a0dfab929a9e8a1",
+            "locator": {
+              "end": 171,
+              "kind": "line_range",
+              "start": 161
+            },
+            "path": "mcp/src/agents_remember/worktrees/knowledge_gate.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a34667e628dd1e5f7e0c8ad103c5d35edde4b115",
+            "content": "sha256:951d2181c4099c667ab96430207c3c06381717c64557b7497b36e6c4e6c96c84",
+            "locator": {
+              "end": 188,
+              "kind": "line_range",
+              "start": 174
+            },
+            "path": "mcp/src/agents_remember/worktrees/knowledge_gate.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a34667e628dd1e5f7e0c8ad103c5d35edde4b115",
+            "content": "sha256:c09ee642b0b32331a0cc82d3a26f11866afad9f70e2c6ee72de68029dc18e14a",
+            "locator": {
+              "end": 181,
+              "kind": "line_range",
+              "start": 181
+            },
+            "path": "mcp/src/agents_remember/worktrees/knowledge_gate.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a34667e628dd1e5f7e0c8ad103c5d35edde4b115",
+            "content": "sha256:f61a2d03c44bf697d4696192a154f9f995e022af33c0ac8ae03a48eac497dcd0",
+            "locator": {
+              "end": 202,
+              "kind": "line_range",
+              "start": 191
+            },
+            "path": "mcp/src/agents_remember/worktrees/knowledge_gate.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a34667e628dd1e5f7e0c8ad103c5d35edde4b115",
+            "content": "sha256:298a918e4b5f0d11ff9012deded9f07dbd2c1f951549f5831c76c91f1ad7bbbb",
+            "locator": {
+              "end": 199,
+              "kind": "line_range",
+              "start": 199
+            },
+            "path": "mcp/src/agents_remember/worktrees/knowledge_gate.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a6ae7d18931f91de5fcc3383a5a141ac40859c74",
+            "content": "sha256:d18b97551fc9ee9481aeddd0ffeb4e95f6a6914c99773eeae81f2b574f669443",
+            "locator": {
+              "end": 178,
+              "kind": "line_range",
+              "start": 169
             },
             "path": "mcp/src/agents_remember/worktrees/cutover_lock.py"
           },
           "kind": "code"
-        }
-      ]
-    },
-    "15": {
-      "note": "Prepared-memory realization repeats both knowledge checks before metadata work and requires curator refresh if that work moves memory.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "f7b59934d4c1a98bbc511a7df67311083ace2c01",
-            "content": "sha256:8646e3d7d231f49079042a0cd5d471f621c5ad47a11cf202b5529390b219c815",
-            "locator": {
-              "kind": "symbol",
-              "name": "_realize_prepared_memory"
-            },
-            "path": "mcp/src/agents_remember/application/prepared_certification.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "16": {
-      "note": "The installed continuation observes the production memory owner and requires the selected original fifth certificate for finalization.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "4fc36e65dd21de71100edb1587afb5484b9e9771",
-            "content": "sha256:40757eadc95735685c47d292e216082eb307fa75f2edc755bd5fbcbc7aa4c6f5",
-            "locator": {
-              "kind": "symbol",
-              "name": "PreparedCloseoutContinuation"
-            },
-            "path": "mcp/src/agents_remember/worktrees/integration/closeout/preparation/continuation.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "17": {
-      "note": "Existing test sources assert converted-memory refusal and the lock at both entries; no execution result is claimed.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "ef30eb81ae161a4fdf18ff7796d7f45fad409652",
-            "content": "sha256:f6f6c6e830ac91ff0207bf50e10d33944b426322af67ebab1fc8e0d9ca658372",
-            "locator": {
-              "end": 1048,
-              "kind": "line_range",
-              "start": 1035
-            },
-            "path": "mcp/tests/test_knowledge_closeout_gate.py"
-          },
-          "kind": "test"
         },
         {
           "anchor": {
-            "blob": "8f92bbe9948b98fa7072f2ae69b1fb50bc6f098f",
-            "content": "sha256:e0a49d516fe97d76e5e7688870b7387a61d82b8a84f526be4e9b3bcc75fac567",
+            "blob": "a6ae7d18931f91de5fcc3383a5a141ac40859c74",
+            "content": "sha256:031abfc9123516ba7c8877ea5c701eef3ea5ecc7abc73b827eff3f76cdee95eb",
             "locator": {
-              "end": 253,
+              "end": 191,
               "kind": "line_range",
-              "start": 243
+              "start": 181
             },
-            "path": "mcp/tests/test_knowledge_cutover.py"
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "2": {
-      "note": "Currentness rechecks the profile, owner semantics and route review.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "89043a5e28ba717250523696bba193d211591458",
-            "content": "sha256:21bb54c9d29b6a19df9620fabc27f40f7b4af2a7c6fdf6acbbef54748bf0a847",
-            "locator": {
-              "kind": "symbol",
-              "name": "validate_selected_currentness"
-            },
-            "path": "mcp/src/agents_remember/worktrees/integration/closeout/certification/admission.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "3": {
-      "note": "Recovery derives actual input changes and requires complete prior-red correction.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "bb3a76e9bd747f3b1fd8c8532b8e09af18981f38",
-            "content": "sha256:18ce8e7f93cecc7db5da991ac4472efb36d0b1f0ecb8408df75bbb97cefb40e1",
-            "locator": {
-              "kind": "symbol",
-              "name": "derive_certificate_input_changes"
-            },
-            "path": "mcp/src/agents_remember/worktrees/integration/closeout/certification/recovery.py"
+            "path": "mcp/src/agents_remember/worktrees/cutover_lock.py"
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "bb3a76e9bd747f3b1fd8c8532b8e09af18981f38",
-            "content": "sha256:9c62eae87147694591f7ab429a97f79fbabfd0fa441b08c89a903dfee23d5ea5",
+            "blob": "a6ae7d18931f91de5fcc3383a5a141ac40859c74",
+            "content": "sha256:af1d0a747365e3772c8f77729547bd3cb547184e938ae5114e22a223be3a45c1",
             "locator": {
-              "kind": "symbol",
-              "name": "build_prior_red_context"
+              "end": 190,
+              "kind": "line_range",
+              "start": 190
             },
-            "path": "mcp/src/agents_remember/worktrees/integration/closeout/certification/recovery.py"
+            "path": "mcp/src/agents_remember/worktrees/cutover_lock.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a6ae7d18931f91de5fcc3383a5a141ac40859c74",
+            "content": "sha256:03252c4f026fc4ca9eb71979cf74e05f79d49b371b09d2cf4a671102f0eb916b",
+            "locator": {
+              "end": 231,
+              "kind": "line_range",
+              "start": 205
+            },
+            "path": "mcp/src/agents_remember/worktrees/cutover_lock.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a34667e628dd1e5f7e0c8ad103c5d35edde4b115",
+            "content": "sha256:432ff046e10433c7569e56f86456caa342921364f14b881c5fa017a21fd151a0",
+            "locator": {
+              "end": 241,
+              "kind": "line_range",
+              "start": 205
+            },
+            "path": "mcp/src/agents_remember/worktrees/knowledge_gate.py"
           },
           "kind": "code"
         }
       ]
     },
     "4": {
-      "note": "Journal selection reopens the complete original graph before its live-owner compare-and-swap.",
+      "note": "Exact original terminal readback verifies retained publication/evidence and constructs terminal selections, without complete-graph journal CAS.",
       "targets": [
         {
           "anchor": {
-            "blob": "f360ce09c8a830fd302df8ba6dcd6ab62fd786ac",
-            "content": "sha256:b6bc617ff4a35d179179efc42681e2139ce39bc662fdb411ab7175de13d4d44c",
+            "blob": "4c8cc69c44f4910bb5cbf4400f19f879a1b4dc36",
+            "content": "sha256:2476185869975c2d278ff2a50ca770fe8b30c82309333f51da343a8ba17d2054",
             "locator": {
-              "kind": "symbol",
-              "name": "require_selected_certification"
+              "end": 90,
+              "kind": "line_range",
+              "start": 48
             },
             "path": "mcp/src/agents_remember/worktrees/integration/closeout/certification/selection.py"
           },
@@ -287,11 +281,12 @@
         },
         {
           "anchor": {
-            "blob": "f360ce09c8a830fd302df8ba6dcd6ab62fd786ac",
-            "content": "sha256:f110aefaddaa2a5a92ddde02e47bfa7d1214857b88c894795e4c8d497120e9c3",
+            "blob": "4c8cc69c44f4910bb5cbf4400f19f879a1b4dc36",
+            "content": "sha256:b244255b64bac99f5730445d44ccc7ddabf108b9a6c67838690ccb764e19b6d4",
             "locator": {
-              "kind": "symbol",
-              "name": "select_certification_state"
+              "end": 108,
+              "kind": "line_range",
+              "start": 93
             },
             "path": "mcp/src/agents_remember/worktrees/integration/closeout/certification/selection.py"
           },
@@ -299,88 +294,19 @@
         }
       ]
     },
-    "5": {
-      "note": "Execution checks the knowledge refusal and lock before publication recovery, then admits only the selected suffix and current memory/finalization boundary.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "d0d31c386573baeb8f5f093dc57275fbd256e20e",
-            "content": "sha256:f97b2354f135afd68b5e814223b86720f916b53801824cd92e3191a68c7cb769",
-            "locator": {
-              "end": 396,
-              "kind": "line_range",
-              "start": 350
-            },
-            "path": "mcp/src/agents_remember/worktrees/integration/closeout/certification/execution.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "6": {
-      "note": "Retained output permits only the selected physically proven code commit.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "eda28256623e66702f7034156debad3f05ac710b",
-            "content": "sha256:4d84783c24c892a55f61a7227a152338588f3d6dddde9dc256e004a43c703f69",
-            "locator": {
-              "kind": "symbol",
-              "name": "require_retained_output_currentness"
-            },
-            "path": "mcp/src/agents_remember/worktrees/integration/closeout/certification/retained_output.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
     "7": {
-      "note": "The ordinary service construction installs the prepared closeout continuation.",
+      "note": "Default application composition retains rails and knowledge adapters but no prepared-closeout continuation or producer.",
       "targets": [
         {
           "anchor": {
-            "blob": "9ae9c1fd9981228aafde4ea8749d2dd3819612de",
-            "content": "sha256:44ca04b177598b8dcc61dc26c1e21afa6e6bd6700b4909dd3f6aeb29c02fd1e3",
+            "blob": "9cfe5fc779f3234e5cf2d83eee7be9897b4668cb",
+            "content": "sha256:f1ac9e4c9ca53c18f1cb7439db85510df5446e1e4a2a18e12523d8e4fb0cd1a8",
             "locator": {
-              "kind": "symbol",
-              "name": "build_default_worktree_services"
+              "end": 230,
+              "kind": "line_range",
+              "start": 216
             },
             "path": "mcp/src/agents_remember/application/worktree_services.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "8": {
-      "note": "The unclosable-history refusal precedes publication recovery.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "d0d31c386573baeb8f5f093dc57275fbd256e20e",
-            "content": "sha256:96c9dc437d9ef05dab1c909e8d0911d7cbeee1113b0bea58f8ffdbee98599e7e",
-            "locator": {
-              "end": 363,
-              "kind": "line_range",
-              "start": 361
-            },
-            "path": "mcp/src/agents_remember/worktrees/integration/closeout/certification/execution.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "9": {
-      "note": "The prepared execution entry applies the cutover lock after the unclosable-history refusal.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "d0d31c386573baeb8f5f093dc57275fbd256e20e",
-            "content": "sha256:f97b2354f135afd68b5e814223b86720f916b53801824cd92e3191a68c7cb769",
-            "locator": {
-              "kind": "symbol",
-              "name": "execute_selected_closeout"
-            },
-            "path": "mcp/src/agents_remember/worktrees/integration/closeout/certification/execution.py"
           },
           "kind": "code"
         }

@@ -142,7 +142,7 @@
       ]
     },
     "3": {
-      "note": "Subject admission resolves handles, keeps raise exemptions and rejects a fresh own-leaf row unless its subject is in the worklist or prior own history.",
+      "note": "Own-origin records need a worklist subject for a genuinely new judgment; trusted pre-operation same-owner history permits existing-row renewal without authorizing candidate-created or foreign rows.\n\nAnchor: `_subject_problems`, `_prior_own_subjects`",
       "targets": [
         {
           "anchor": {
@@ -151,6 +151,17 @@
             "locator": {
               "kind": "symbol",
               "name": "_subject_problems"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "bc2b865ceab0e645f6665f038d5f4dc34413e95a",
+            "content": "sha256:fcdc15294058db7a1b5a94bb1707b39d91e6aca239750906067538ecd0a94903",
+            "locator": {
+              "kind": "symbol",
+              "name": "_prior_own_subjects"
             }
           },
           "kind": "code"
