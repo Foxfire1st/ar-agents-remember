@@ -101,3 +101,10 @@ Both sides may share the existing index-cache owner, but cache construction rema
 - A live review is four trees with its uncommitted candidates pinned and reused. [42]
 - Committed candidates need no ref, and a failed pin refuses naming repository and ref. [43]
 - A converted base tree that Git holds is not written again. [44]
+
+## 260928-MIK-L177 The Comparison's Memory Capture Carries Its Census
+
+`live_review_trees` hands the memory capture a `captured` observer and notes the census the capture
+produced, so `recheck_memory_candidate` proves movement from that census rather than a walk. The four
+tree identities, the pins and the record are unchanged; only the proof that the memory worktree did
+not move while the comparison was composed became cheaper, not weaker.

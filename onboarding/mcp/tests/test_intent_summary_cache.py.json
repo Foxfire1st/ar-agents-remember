@@ -1,5 +1,41 @@
 {
   "path": "mcp/tests/test_intent_summary_cache.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "0ec3c000f583557123360ae1567dc504935c010d",
+        "content": "sha256:25b5205ee1d0b5d5a82376ae1810ecd1264b84bbfdd8776974bdebf5665d74bb",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_kept_summary_answer_expires_and_is_then_produced_again"
+        }
+      },
+      "facet": "The summary answer expires at the declared age and is then produced natively.",
+      "id": "PRF-G3DNHZ",
+      "invariant": "INV-WC3BS4",
+      "origin": {
+        "handoffEntry": "L177-INV-SUMMARY-WINDOW",
+        "leaf": "260928-MIK-L177"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "0ec3c000f583557123360ae1567dc504935c010d",
+        "content": "sha256:6a1f42e0b5b4522eb73f17d3eee36d2476c82444690e7d47fcf08077cf79d4d6",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_bounded_admission_table_cannot_resurrect_an_over_age_answer"
+        }
+      },
+      "facet": "An over-age answer is recomputed even after its admission record was evicted.",
+      "id": "PRF-JM59VR",
+      "invariant": "INV-WC3BS4",
+      "origin": {
+        "handoffEntry": "L177-INV-SUMMARY-WINDOW",
+        "leaf": "260928-MIK-L177"
+      }
+    }
+  ],
   "realizes": [],
   "references": {
     "1": {

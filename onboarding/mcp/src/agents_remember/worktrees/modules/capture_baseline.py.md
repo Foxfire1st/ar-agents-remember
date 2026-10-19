@@ -27,3 +27,25 @@ Local implementation and executable evidence do not replace requirement authorit
 
 
 - Capture dependency observation is request-local and restored on every scope exit. [2]
+
+## 260928-MIK-L177 The Proof Reads The Capture's Own Census, Never The Worktree
+
+This section supersedes the "equal physical snapshots" account above, which described a before/after
+entry walk. The proof no longer walks a worktree, so it never enters `node_modules` or `.venv`.
+
+`note_capture_baseline` now keeps the capture's **own** census — the private index's every entry, with
+Git's recorded mode, size, mtime and ctime — instead of a directory walk, and
+`capture_baseline_unchanged` re-checks three things: the worktree's own index file still carries the
+stamp the capture bracketed, every captured path still carries the stat the capture recorded, and
+Git's native status still supplies the same HEAD and the same eligible untracked names. The status is
+the one read that could descend into ignored paths, so it is asked for exactly that answer and the
+ignored paths are never enumerated.
+
+A doubt is anything the census cannot answer: a staged, renamed, unmerged or trust-flagged input, a
+partial or unreadable index, an unreadable status, an added or removed eligible path, or a changed
+HEAD the caller bound. Any doubt re-derives; the proof never trusts. `memo_capture_baselines` keeps
+its request-local scope and its `on_capture` observer, which receives the **repository root** the
+capture was taken in (not the index): `changeset_cache.observe_repository_capture` uses that path as a
+repository root and drops the request's object-store census for the layout a capture has just written,
+so the next object read re-censuses instead of trusting one taken before the capture. The private
+index is a scratch file inside the capture's temporary directory and is never handed to the observer.

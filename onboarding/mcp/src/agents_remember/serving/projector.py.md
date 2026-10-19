@@ -188,3 +188,10 @@ worktree cleanup while preserving cancellation as the public outcome.
 
 - Landing interest reads the actual state-stream subscriber set without adding mutation or publication authority. [5]
 - The composed runtime preserves interest until the final real subscriber leaves. [6]
+
+## 260928-MIK-L177 The Projector Publishes The Dump Its Tick Already Computed
+
+`Projector` builds one `ProjectionTickState` and passes it to `project_and_write`, then records the
+tick's own `stable` form as `_tick_stable` for the publication step, which uses it instead of
+recomputing `stable_projection_state(current)`. One dump per tick replaces two. The tick's inputs,
+its write decision and the projection's content are unchanged.

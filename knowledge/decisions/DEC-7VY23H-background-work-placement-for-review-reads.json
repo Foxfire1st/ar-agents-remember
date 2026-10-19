@@ -1,0 +1,54 @@
+{
+  "admission": {
+    "criteria": [
+      "real_alternatives",
+      "constrains_future_work"
+    ],
+    "justification": "Two real placements were weighed and rejected for named reasons, and the choice binds how any later serving work is scheduled."
+  },
+  "alternatives": [
+    {
+      "option": "Keep background work in-process, on its own bounded pool, and stop walking worktrees in the recurring fingerprint",
+      "reason": "It removes the queueing between a read and background work and the recurring walk without a second process to supervise or a change to the projection's contract.",
+      "status": "chosen"
+    },
+    {
+      "option": "Move the projection into its own process",
+      "reason": "It would also remove shared-heap churn, but it adds a supervised process, its lifetime and its failure modes to a serving path this leaf cannot measure installed.",
+      "reconsider_when": "An installed profile still shows a read starved by background work after this pool and the walk removal.",
+      "status": "rejected"
+    },
+    {
+      "option": "Stop dumping the projection on a heartbeat at all",
+      "reason": "It changes the age-resolution contract readers rely on, which is outside this requirement's preservation boundary.",
+      "reconsider_when": "The projection's age semantics are re-opened by an approved requirement.",
+      "status": "rejected"
+    }
+  ],
+  "consequences": [
+    "Background units run on a process-wide four-thread pool.",
+    "The projection's live fingerprint reads native generations instead of walking worktrees.",
+    "The installed before/after measurement remains the Architect's."
+  ],
+  "context": "A review read shared the event loop's default executor with the serving projection, so a long projection unit could hold the thread the read needed, and the projection paid a whole-worktree walk on every heartbeat.",
+  "decider": "The developer's D337 task and MIK-R179 rule 2; the leaf chose among the options the requirement names.",
+  "id": "DEC-7VY23H",
+  "links": [
+    {
+      "relation": "constrains",
+      "target": "route:mcp/src/agents_remember/serving"
+    }
+  ],
+  "origin": {
+    "handoff": {
+      "path": "l177-handoff.json"
+    },
+    "handoffEntry": "L177-BACKGROUND-PLACEMENT",
+    "leaf": "260928-MIK-L177",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-decision/v1",
+  "status": "active",
+  "supersedes": []
+}

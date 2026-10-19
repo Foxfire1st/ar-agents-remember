@@ -3,8 +3,8 @@
   "proves": [
     {
       "anchor": {
-        "blob": "66b3a35b970d7805894fad1a146cd0957b4e6aab",
-        "content": "sha256:973e51f7f7d019b094b209d75a004de69df9aa123b6ef9a192666e8b59255a4d",
+        "blob": "5b6aebcc1cf7f6d7db96c96d85ce14a901d65688",
+        "content": "sha256:da90beecb6e8227cdf3e0580e0e8d6bce4b1510f4ecfcc582ffce813df66b68d",
         "locator": {
           "kind": "symbol",
           "name": "test_memory_head_only_movement_rechecks_and_refuses_equal_physical_files"

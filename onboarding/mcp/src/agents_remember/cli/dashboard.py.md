@@ -305,3 +305,12 @@ current complete-review, tree and reader semantics; these quotations do not over
 - Stored discovery cases cover convention precedence, nearest directory, malformed entries and missing config; they are not a fresh test run. [62]
 - The live memory-root resolver rejects unsafe selectors and roots, admits the addressed external leaf contract under this authority and is bound into the app without Git capture or index reads. [63]
 - The shared collaborator record exposes the injected memory-root and retained read/route ports; this CLI binds no capsule-compiler port. [64]
+
+## 260928-MIK-L177 Recorded Reads Are Kept By Their Exact Inputs
+
+The reviewer's task-context `intent`, its `entries` and its tree view now pass through
+`RecordedReviewAnswers` — the composition root wires `dashboard_review_reads.RecordedReviewAnswers`
+over `serving.review_answer_reuse.RecordedAnswerReuse` — so a recorded comparison's answers are served
+again unchanged while the record, its directories, the worklist and the objects it names all hold, and
+a live comparison is computed on every read. The read bodies themselves are unchanged: the kept
+answer is produced by the same call the route used before.

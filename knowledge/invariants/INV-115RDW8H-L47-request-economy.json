@@ -1,13 +1,20 @@
 {
-  "admission": "legacy-unassessed",
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "guarded_by_test"
+    ],
+    "justification": "The one-read promise is carried by the navigation hook and measured by the mounted cases that count main reads, so the statement binds two places that must agree."
+  },
   "applicability": "Dashboard reads made when a leaf task is selected and when its reviewer is opened from the task entry.",
   "conditions": [
     "The reviewer is opened with no subject from the task entry.",
-    "The subject catalogue answers within SUBJECT_HOLD_MS (750 ms); a slower or stalled catalogue releases into one task-context review read at the bound (ruling on L47-R1-F1)."
+    "The subject catalogue answers inside SUBJECT_HOLD_MS (750 ms) and has a subject, so that subject is chosen and one main review read is issued; a catalogue that answers inside the bound but is genuinely empty selects no subject, so the open stays a task-context read — still one main read.",
+    "A catalogue that answers after the bound fills the navigation and selects nothing; the reader's later choice is one further read."
   ],
   "exclusions": [
-    "Reads made by the reviewer's own refresh or by the developer choosing another subject.",
-    "A catalogue answering after the bound, whose late subject jump belongs to L48."
+    "Reads made by the reviewer's own refresh.",
+    "A subject the developer chooses, which is a read of its own."
   ],
   "id": "INV-115RDW8H",
   "origin": {
@@ -15,9 +22,9 @@
     "legacyId": "ccbc70d7-4fc4-4af4-aba9-669b694d0c8c",
     "task": "260921-ICR"
   },
-  "revision": 2,
+  "revision": 3,
   "schema": "ar-invariant/v1",
-  "statement": "Selecting a leaf makes one summary read, no catalogue read and one committed change-set read; opening the reviewer reads the catalogue once, keyed on the comparison rather than the global analytics document, and asks the review only for the subject the catalogue chose.",
+  "statement": "Selecting a leaf makes one summary read, no catalogue read and one committed change-set read; opening the reviewer reads the catalogue once, keyed on the comparison rather than the global analytics document, asks the review only for the subject the catalogue chose, and issues one main intent read per open — a catalogue that answers after the bounded hold fills the navigation and selects no subject on its own.",
   "status": "proposed",
   "supersedes": []
 }

@@ -1,6 +1,25 @@
 {
   "path": "mcp/src/agents_remember/serving/intent_summary_cache.py",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "74192819229079d194a84478be3c684f21eb11d1",
+        "content": "sha256:d991f74fb9f9bc2c121b65ffde8bde1f4c6f9dbd6b40d34e5f42114b697b4d9e",
+        "locator": {
+          "kind": "symbol",
+          "name": "IntentSummaryCache"
+        }
+      },
+      "id": "RLZ-T8RYYH",
+      "invariant": "INV-WC3BS4",
+      "origin": {
+        "handoffEntry": "L177-INV-SUMMARY-WINDOW",
+        "leaf": "260928-MIK-L177"
+      },
+      "rationale": "The cache owns the window, puts it in the key and mints a new one as time passes, so no admission record can reproduce an old key.",
+      "role": "primary-authority"
+    }
+  ],
   "references": {
     "1": {
       "note": "Configurable dependency-observing port.",

@@ -3,7 +3,7 @@
   "proves": [
     {
       "anchor": {
-        "blob": "1ca94f7130bd66555d23ee5ac22800014b7b2d4b",
+        "blob": "88478d9345e5c625b2a554f452ad8e02a7311424",
         "content": "sha256:24b6c537a0808c1e9c6dee9df55a700bfe20ad853e2858d2562f2d93f3ff90a0",
         "locator": {
           "kind": "symbol",
@@ -20,12 +20,12 @@
     },
     {
       "anchor": {
-        "blob": "1ca94f7130bd66555d23ee5ac22800014b7b2d4b",
+        "blob": "88478d9345e5c625b2a554f452ad8e02a7311424",
         "content": "sha256:e0bbed6e0845709b252777cc98512c9652d12b720aead19045db6bedcfe8d75c",
         "locator": {
-          "end": 387,
+          "end": 419,
           "kind": "line_range",
-          "start": 366
+          "start": 398
         }
       },
       "facet": "Prime and failed live tick reach the same completion hook while replay has no pacer.",
@@ -38,7 +38,7 @@
     },
     {
       "anchor": {
-        "blob": "1ca94f7130bd66555d23ee5ac22800014b7b2d4b",
+        "blob": "88478d9345e5c625b2a554f452ad8e02a7311424",
         "content": "sha256:28a82ff1eff26f71cfd22b5482d05a04c03c61263de5aa8d3193d7e4a292f860",
         "locator": {
           "kind": "symbol",
@@ -55,7 +55,7 @@
     },
     {
       "anchor": {
-        "blob": "1ca94f7130bd66555d23ee5ac22800014b7b2d4b",
+        "blob": "88478d9345e5c625b2a554f452ad8e02a7311424",
         "content": "sha256:7472ee20485dcba1696e01169a6ef04b2b39505637566f462066bc680fabac4f",
         "locator": {
           "kind": "symbol",
@@ -72,12 +72,12 @@
     },
     {
       "anchor": {
-        "blob": "1ca94f7130bd66555d23ee5ac22800014b7b2d4b",
+        "blob": "88478d9345e5c625b2a554f452ad8e02a7311424",
         "content": "sha256:8ed7714230f1e4b8bbb715fb25071581bbf732c620d7cc0149009a5c7a93556d",
         "locator": {
-          "end": 364,
+          "end": 396,
           "kind": "line_range",
-          "start": 325
+          "start": 357
         }
       },
       "facet": "Five-second work retains work/rest notifications; short/medium/long durations yield one/two/three-second rests, with degraded and heartbeat deadlines.",

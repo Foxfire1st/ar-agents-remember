@@ -1,0 +1,34 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations"
+    ],
+    "justification": "The claim is about two files' contents and is settled by the catalog itself: the union was verified by the Worker's native composition check and independently by the CODE7 merge-delta pass, and recorded in A11-catalog-native-union-verification.json. No single test asserts the union, so no test guard is claimed here."
+  },
+  "applicability": "The two composed evidence catalogs of the merged L180 line: mcp/tests/evidence-lifecycle.toml and mcp/tests/test-evidence-lanes.toml.",
+  "conditions": [
+    "The claim covers the union of the L177 and L180 registrations at the frozen candidate.",
+    "A later edit that drops either side's registration violates it."
+  ],
+  "exclusions": [
+    "Whether a registered module actually runs: registration is catalog membership, not execution.",
+    "The code freeze or any test outcome; this states catalog composition only."
+  ],
+  "id": "INV-H1BCMX",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "A11-catalog-native-union-verification.json; A11-composition-evidence.json; A11-checks.json; a11-canonical-write.txt; a11-focused.txt; a11-lifecycle.txt"
+      ],
+      "path": "a11-handoff-producer.json"
+    },
+    "handoffEntry": "L177-A11-approved-merge-delta",
+    "leaf": "260928-MIK-L177",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "The composed evidence catalogs retain the complete registrations from both L177 and landed L180, with exact consumer and lane unions and no duplicate identity or removed consumer.",
+  "status": "proposed",
+  "supersedes": []
+}

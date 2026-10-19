@@ -3,8 +3,26 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "a955cc499935e7a7f74d9dc2c41622e55df65c98",
-        "content": "sha256:4f7f5821a91ff126170485cc55eb81dfbead67fc107bae7dba9c0521632c4abc",
+        "blob": "8f53c952d51eb1b83c2d97993768dbc0809cc6ea",
+        "content": "sha256:1d4d8325a09f8511f57fa8d6fe22336b9bb776cc56107c4d20396e4e16a152c4",
+        "locator": {
+          "kind": "symbol",
+          "name": "_index_entries"
+        }
+      },
+      "id": "RLZ-7EGW9B",
+      "invariant": "INV-N3M9G4",
+      "origin": {
+        "handoffEntry": "L177-INV-N3M9G4",
+        "leaf": "260928-MIK-L177"
+      },
+      "rationale": "The census is read here, from the private index the capture wrote; a shape this reader cannot understand answers nothing so the caller re-derives.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "8f53c952d51eb1b83c2d97993768dbc0809cc6ea",
+        "content": "sha256:8699b57a3d2f03599cb0115133681e0e30af288ae093b1ac52d64d5f24cd62f6",
         "locator": {
           "kind": "symbol",
           "name": "_tree_from_index_copy"
@@ -21,8 +39,8 @@
     },
     {
       "anchor": {
-        "blob": "a955cc499935e7a7f74d9dc2c41622e55df65c98",
-        "content": "sha256:4f7f5821a91ff126170485cc55eb81dfbead67fc107bae7dba9c0521632c4abc",
+        "blob": "8f53c952d51eb1b83c2d97993768dbc0809cc6ea",
+        "content": "sha256:8699b57a3d2f03599cb0115133681e0e30af288ae093b1ac52d64d5f24cd62f6",
         "locator": {
           "kind": "symbol",
           "name": "_tree_from_index_copy"

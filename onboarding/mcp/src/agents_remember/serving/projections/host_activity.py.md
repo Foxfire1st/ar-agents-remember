@@ -17,3 +17,11 @@ Two readers take the publication as it is, without the projection's boot reconci
 ## Evidence
 
 - Intake the plugin’s event-driven host publication only at startup or host invalidation, reconciling boot identity before exposing known activity. [1]
+
+## 260928-MIK-L177 The Held-Delivery Tick Parses Only New Publication Bytes
+
+The held-delivery tick — the projection loop's `MAX_PROJECTION_REST_SECONDS = 3.0` rest in
+`change_watcher.py` — used to read and parse the host's publication file on every pass.
+`_no_turn_endings` now stats the file first and parses it only when its inode, size, mtime or ctime
+moved, keeping the last parsed `(agent, stamp)` pairs for at most four publication files. A missing,
+unreadable or incomplete publication answers nothing and keeps nothing for it.

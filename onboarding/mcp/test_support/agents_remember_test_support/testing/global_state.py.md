@@ -62,3 +62,11 @@ whose contract deliberately sets process state.
 - The closed product-process register now includes agents_remember.kernel.primitives.runtime_config._LEGACY_GATE_DELEGATION_WARNED with the default reset treatment and existing _clear resetter between test modules. It is not a per-test-restored lock. The shared guard and treatment rules remain unchanged; registration is not execution of the reset control. [9]
 
 - The closed register also gives the existing closeout digest-file stats, lifecycle location cache and lifecycle operation-record cache ordinary `_clear` resets at module boundaries. It adds no scanner exemption or production reset; restored rows retain their per-test treatment. [10]
+
+## 260928-MIK-L177 A9 — The Background Pool Is Process State Too
+
+`PROCESS_MUTABLE_STATES` gains a `serving.background_accounting` row for `_BackgroundPool.executor`
+with its own resetter, `_reset_background_pool`: it takes `_BACKGROUND_POOL_LOCK`, drains the executor
+and clears the slot, so the next test module builds a fresh pool. A further row forgets
+`serving.projections.host_activity._ENDINGS`. Both are entries in the declaration this module already
+keeps — process state a test module must not inherit — not a claim about production behaviour.

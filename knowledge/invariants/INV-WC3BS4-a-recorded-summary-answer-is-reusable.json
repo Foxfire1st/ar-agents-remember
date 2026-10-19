@@ -1,0 +1,33 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test"
+    ],
+    "justification": "The eviction case fails when the window leaves the key, and the expiry case measures the declared age through the summary route."
+  },
+  "applicability": "Reuse of a recorded intent summary answer.",
+  "conditions": [
+    "The window is the clock divided by the declared maximum age.",
+    "A read whose window differs from the stored answer's is computed again."
+  ],
+  "exclusions": [
+    "The summary's dependency observation and retention conditions, which the adapter still owns."
+  ],
+  "id": "INV-WC3BS4",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "L177-A8-fix-verification-verdict.md: 06 fixed, including past admission eviction; the bounded-admission regression case is in the module."
+      ],
+      "path": "l177-handoff.json"
+    },
+    "handoffEntry": "L177-INV-SUMMARY-WINDOW",
+    "leaf": "260928-MIK-L177",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "A recorded summary answer is reusable only inside the clock window its cache key names, so an answer older than the declared maximum age is recomputed rather than served, whatever the admission table holds.",
+  "status": "proposed",
+  "supersedes": []
+}

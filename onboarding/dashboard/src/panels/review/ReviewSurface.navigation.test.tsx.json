@@ -3,7 +3,7 @@
   "proves": [
     {
       "anchor": {
-        "blob": "2408f06ee5d1079e4fa0e852718dadfb4f2b4580",
+        "blob": "af790a779d5ba61b711780eacd345f968d32bbbc",
         "content": "sha256:ea269e8db3327392747ef193461b4298bcea39a4795fe4845132c3688657f7ea",
         "locator": {
           "kind": "symbol",
@@ -20,7 +20,41 @@
     },
     {
       "anchor": {
-        "blob": "2408f06ee5d1079e4fa0e852718dadfb4f2b4580",
+        "blob": "af790a779d5ba61b711780eacd345f968d32bbbc",
+        "content": "sha256:f72df1b919361b3cbc047860edd831b6b7fe80166052339c058cb12f50fc9a43",
+        "locator": {
+          "kind": "symbol",
+          "name": "opens one main read when the catalogue answers after the bounded wait (L177-R1-07)"
+        }
+      },
+      "facet": "A catalogue answering after the bounded wait fills the navigation without issuing a second main read.",
+      "id": "PRF-8XGKV4",
+      "invariant": "INV-115RDW8H",
+      "origin": {
+        "handoffEntry": "L177-INV-115RDW8H",
+        "leaf": "260928-MIK-L177"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "af790a779d5ba61b711780eacd345f968d32bbbc",
+        "content": "sha256:24dcaeb989eae7126d3981e286a9056925d356e880e191b0d2fa999c3402a07c",
+        "locator": {
+          "kind": "symbol",
+          "name": "does not move a reader who is working when the catalogue answers after the bounded wait"
+        }
+      },
+      "facet": "A reader already working in the task-context view is not moved when the catalogue answers after the bounded wait.",
+      "id": "PRF-EM61A7",
+      "invariant": "INV-EPB2CXBE",
+      "origin": {
+        "handoffEntry": "L177-INV-EPB2CXBE",
+        "leaf": "260928-MIK-L177"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "af790a779d5ba61b711780eacd345f968d32bbbc",
         "content": "sha256:11a4d36f79e91beeeb71664962b2017e8c85204267fc882725ab3ac7a500a8ac",
         "locator": {
           "kind": "symbol",
@@ -34,13 +68,30 @@
         "handoffEntry": "MIK-R39@v1-focus-request-answered-by-its-selection",
         "leaf": "260928-MIK-L39"
       }
+    },
+    {
+      "anchor": {
+        "blob": "af790a779d5ba61b711780eacd345f968d32bbbc",
+        "content": "sha256:f72df1b919361b3cbc047860edd831b6b7fe80166052339c058cb12f50fc9a43",
+        "locator": {
+          "kind": "symbol",
+          "name": "opens one main read when the catalogue answers after the bounded wait (L177-R1-07)"
+        }
+      },
+      "facet": "After the bound the unengaged reader is given no subject by the late catalogue, so the open stays at one main read.",
+      "id": "PRF-TB6EZD",
+      "invariant": "INV-RMTHRQ0K",
+      "origin": {
+        "handoffEntry": "L177-INV-RMTHRQ0K",
+        "leaf": "260928-MIK-L177"
+      }
     }
   ],
   "realizes": [
     {
       "anchor": {
-        "blob": "2408f06ee5d1079e4fa0e852718dadfb4f2b4580",
-        "content": "sha256:d74d51c2702920e4dc3e4f6086b0054b2710c3ded64d2fb7addc14191b7cfde8",
+        "blob": "af790a779d5ba61b711780eacd345f968d32bbbc",
+        "content": "sha256:c1e14b21363cbd4e9e207b3ced7673dfb179f00ef70a062a4282c9d395f3072c",
         "locator": {
           "kind": "file"
         }

@@ -3,7 +3,25 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "9583164e407b2b0ceb6df90ee3694633f7ca74a1",
+        "blob": "4d59650168c6a43c0457a9f469e87e45b813292a",
+        "content": "sha256:b2c98599ff5b7eb7c1c8069c78ea87616a75343d25c937debef7cd444224f23c",
+        "locator": {
+          "kind": "symbol",
+          "name": "useReviewNavigation"
+        }
+      },
+      "id": "RLZ-228GGE",
+      "invariant": "INV-RMTHRQ0K",
+      "origin": {
+        "handoffEntry": "L177-INV-RMTHRQ0K",
+        "leaf": "260928-MIK-L177"
+      },
+      "rationale": "The holder of the engagement state and the subject rule: it is where the expired key stops an unengaged reader's late selection.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "4d59650168c6a43c0457a9f469e87e45b813292a",
         "content": "sha256:68997ff7d2cf0414b3c209e1f50fa32b2716ce3a54d5f5064231efaa6ff66f27",
         "locator": {
           "kind": "symbol",
@@ -21,8 +39,26 @@
     },
     {
       "anchor": {
-        "blob": "9583164e407b2b0ceb6df90ee3694633f7ca74a1",
-        "content": "sha256:0f41a9e2d507fe7766185518e6c08c76cefe82a73862688b1c5f7a3aa99fa958",
+        "blob": "4d59650168c6a43c0457a9f469e87e45b813292a",
+        "content": "sha256:26cf22d37531dad22a1d29776e25369192889e02820270e33cc11aac1de5a895",
+        "locator": {
+          "kind": "symbol",
+          "name": "SUBJECT_HOLD_MS"
+        }
+      },
+      "id": "RLZ-3Y0WSP",
+      "invariant": "INV-EPB2CXBE",
+      "origin": {
+        "handoffEntry": "L177-INV-EPB2CXBE",
+        "leaf": "260928-MIK-L177"
+      },
+      "rationale": "The bound itself: the wait after which the open stops waiting for a subject and reads the task context.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "4d59650168c6a43c0457a9f469e87e45b813292a",
+        "content": "sha256:960625c0e9d36907aebaa0fd1deda490ee696f1327e9e2a8d479e8660617b567",
         "locator": {
           "end": 209,
           "kind": "line_range",
@@ -39,7 +75,7 @@
     },
     {
       "anchor": {
-        "blob": "9583164e407b2b0ceb6df90ee3694633f7ca74a1",
+        "blob": "4d59650168c6a43c0457a9f469e87e45b813292a",
         "content": "sha256:f17d723da8071b6659af84c887f6bf7501b40710766d9f7a35caaa81ccdd1031",
         "locator": {
           "end": 121,
@@ -58,7 +94,7 @@
     },
     {
       "anchor": {
-        "blob": "9583164e407b2b0ceb6df90ee3694633f7ca74a1",
+        "blob": "4d59650168c6a43c0457a9f469e87e45b813292a",
         "content": "sha256:a0b2fafe30cb36e103b0264be04de090dd9f5418df933ce58bc88398ae5a9e53",
         "locator": {
           "kind": "symbol",
@@ -76,7 +112,7 @@
     },
     {
       "anchor": {
-        "blob": "9583164e407b2b0ceb6df90ee3694633f7ca74a1",
+        "blob": "4d59650168c6a43c0457a9f469e87e45b813292a",
         "content": "sha256:9ab07617d668d06418fea3d3b6c2381aaf882d9e8e0904d135fe0ea1fa723623",
         "locator": {
           "kind": "symbol",
@@ -93,7 +129,25 @@
     },
     {
       "anchor": {
-        "blob": "9583164e407b2b0ceb6df90ee3694633f7ca74a1",
+        "blob": "4d59650168c6a43c0457a9f469e87e45b813292a",
+        "content": "sha256:b2c98599ff5b7eb7c1c8069c78ea87616a75343d25c937debef7cd444224f23c",
+        "locator": {
+          "kind": "symbol",
+          "name": "useReviewNavigation"
+        }
+      },
+      "id": "RLZ-S720CR",
+      "invariant": "INV-115RDW8H",
+      "origin": {
+        "handoffEntry": "L177-INV-115RDW8H",
+        "leaf": "260928-MIK-L177"
+      },
+      "rationale": "This hook composes the subject an open reads: it selects the catalogue's subject inside the hold, and past the hold it leaves the subject undecided so no second main read is issued.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "4d59650168c6a43c0457a9f469e87e45b813292a",
         "content": "sha256:26cf22d37531dad22a1d29776e25369192889e02820270e33cc11aac1de5a895",
         "locator": {
           "kind": "symbol",
@@ -110,8 +164,8 @@
     },
     {
       "anchor": {
-        "blob": "9583164e407b2b0ceb6df90ee3694633f7ca74a1",
-        "content": "sha256:0f41a9e2d507fe7766185518e6c08c76cefe82a73862688b1c5f7a3aa99fa958",
+        "blob": "4d59650168c6a43c0457a9f469e87e45b813292a",
+        "content": "sha256:b2c98599ff5b7eb7c1c8069c78ea87616a75343d25c937debef7cd444224f23c",
         "locator": {
           "kind": "symbol",
           "name": "useReviewNavigation"
@@ -127,8 +181,8 @@
     },
     {
       "anchor": {
-        "blob": "9583164e407b2b0ceb6df90ee3694633f7ca74a1",
-        "content": "sha256:0f41a9e2d507fe7766185518e6c08c76cefe82a73862688b1c5f7a3aa99fa958",
+        "blob": "4d59650168c6a43c0457a9f469e87e45b813292a",
+        "content": "sha256:b2c98599ff5b7eb7c1c8069c78ea87616a75343d25c937debef7cd444224f23c",
         "locator": {
           "kind": "symbol",
           "name": "useReviewNavigation"
@@ -144,8 +198,8 @@
     },
     {
       "anchor": {
-        "blob": "9583164e407b2b0ceb6df90ee3694633f7ca74a1",
-        "content": "sha256:0f41a9e2d507fe7766185518e6c08c76cefe82a73862688b1c5f7a3aa99fa958",
+        "blob": "4d59650168c6a43c0457a9f469e87e45b813292a",
+        "content": "sha256:b2c98599ff5b7eb7c1c8069c78ea87616a75343d25c937debef7cd444224f23c",
         "locator": {
           "kind": "symbol",
           "name": "useReviewNavigation"

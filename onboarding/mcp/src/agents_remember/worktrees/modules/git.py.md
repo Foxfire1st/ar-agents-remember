@@ -129,3 +129,12 @@ No additional configured cross-repository evidence.
 - Capture orchestration delegates private-copy materialization and exclusion pathspecs to their actual owner. [25]
 
 - The serving count reader retains deletion/rename/binary path facts outside this mutation module. [26]
+
+## 260928-MIK-L177 The Capture Hands Its Private Index To Its Caller
+
+`worktree_candidate_tree`, `_tree_from_head` and `capture_index._tree_from_index_copy` accept a
+`captured` callback and invoke it with the private index the tree was written from, before the
+temporary directory holding that index goes away. The index is the capture's own census — `HEAD`'s
+entries plus every eligible addition, and no ignored path — so a caller proving that a worktree did
+not move reads it instead of walking the worktree. The callback observes; it changes no capture path
+and writes no index.

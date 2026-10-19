@@ -1,0 +1,91 @@
+{
+  "path": "mcp/tests/test_review_answer_reuse.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "65a853a6f92fda4f26d2d18fa268c94f90671fcf",
+        "content": "sha256:f676efd0fce110dd583509783e998c7838c8d3d212487161933f3350a2677f34",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_kept_answer_is_byte_identical_to_a_fresh_computation"
+        }
+      },
+      "facet": "An answer a store returns equals a fresh computation of the same inputs, byte for byte.",
+      "id": "PRF-MWVS30",
+      "invariant": "INV-YTPBCF",
+      "origin": {
+        "handoffEntry": "L177-INV-RECORDED-ANSWER-REUSE",
+        "leaf": "260928-MIK-L177"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "65a853a6f92fda4f26d2d18fa268c94f90671fcf",
+        "content": "sha256:f6cc6f86357901b9a04f5de8e4eac6f746fe2cc1e81bc9210dcbc07549582b9a",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_an_answer_is_not_served_after_the_age_bound"
+        }
+      },
+      "facet": "The store stops serving an answer once its declared age bound passes.",
+      "id": "PRF-SREPZ6",
+      "invariant": "INV-YTPBCF",
+      "origin": {
+        "handoffEntry": "L177-INV-RECORDED-ANSWER-REUSE",
+        "leaf": "260928-MIK-L177"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "An answer a fresh store returns is byte-identical to a fresh computation of the same inputs.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "65a853a6f92fda4f26d2d18fa268c94f90671fcf",
+            "content": "sha256:f676efd0fce110dd583509783e998c7838c8d3d212487161933f3350a2677f34",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_kept_answer_is_byte_identical_to_a_fresh_computation"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "A changed input is never served from the kept answer.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "65a853a6f92fda4f26d2d18fa268c94f90671fcf",
+            "content": "sha256:a21a677bc7bebefbeb0da91c627accb1789447a22b6ecdf2582e96cb07ae136a",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_changed_input_invalidates_the_kept_answer"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "An answer is not served after the declared age bound.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "65a853a6f92fda4f26d2d18fa268c94f90671fcf",
+            "content": "sha256:f6cc6f86357901b9a04f5de8e4eac6f746fe2cc1e81bc9210dcbc07549582b9a",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_an_answer_is_not_served_after_the_age_bound"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

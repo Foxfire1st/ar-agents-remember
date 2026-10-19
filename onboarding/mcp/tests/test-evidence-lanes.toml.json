@@ -3,12 +3,12 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "6f47afc5150b01d7ad26a62dfd400cc5f7e417d2",
+        "blob": "458364fbeda46070a5456cfd6e6631d885356254",
         "content": "sha256:b5dcbe353b74fecbe99d922961ca12bc08068532affba89c85e27c810c573ded",
         "locator": {
-          "end": 350,
+          "end": 351,
           "kind": "line_range",
-          "start": 350
+          "start": 351
         }
       },
       "id": "RLZ-9QPBZK",
@@ -22,12 +22,29 @@
     },
     {
       "anchor": {
-        "blob": "6f47afc5150b01d7ad26a62dfd400cc5f7e417d2",
+        "blob": "458364fbeda46070a5456cfd6e6631d885356254",
+        "content": "sha256:24661654f5e1feffaaa68174a2695098e7c5fdb30920f90d1d805802a3fe77f0",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-MC12B0",
+      "invariant": "INV-H1BCMX",
+      "origin": {
+        "handoffEntry": "L177-A11-approved-merge-delta",
+        "leaf": "260928-MIK-L177"
+      },
+      "rationale": "The lane populations keep reuse and EOF in unit-regression and capture in integration without dropping either leaf's registration.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "458364fbeda46070a5456cfd6e6631d885356254",
         "content": "sha256:b34cd52a387bf092bd2484b6a8602413c0028077ff493f0aff91311cbb09d3f1",
         "locator": {
-          "end": 445,
+          "end": 447,
           "kind": "line_range",
-          "start": 445
+          "start": 447
         }
       },
       "id": "RLZ-NJFH31",
@@ -41,12 +58,12 @@
     },
     {
       "anchor": {
-        "blob": "6f47afc5150b01d7ad26a62dfd400cc5f7e417d2",
+        "blob": "458364fbeda46070a5456cfd6e6631d885356254",
         "content": "sha256:d78be9a4046b8ffdab5120a0a748737d28d92bec8743be7d5acec6847feb659b",
         "locator": {
-          "end": 315,
+          "end": 316,
           "kind": "line_range",
-          "start": 315
+          "start": 316
         }
       },
       "id": "RLZ-ZTDYFT",

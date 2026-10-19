@@ -52,3 +52,10 @@ restoration assertions.
 - Private tmux failure preserves all existing later teardown. [4]
 
 - Reset-row doubles assert owner delegation for sweep and tool-writer cleanup. [5]
+
+## 260928-MIK-L177 A9 — Reset Controls Cover The Background Pool
+
+The isolation suite now exercises the background-pool resetter: `_owned_background_pool` installs a
+mock executor and a real lock on the module, and the assertion requires exactly one draining call on
+that executor and a cleared `_BackgroundPool.executor`. The delegated-writer and sweep-cursor controls
+share one branch, so each is still asserted against its own callable.

@@ -74,3 +74,14 @@ This owner acts only inside the contract-resolved code worktree.
 
 
 - The helper first copies/normalizes the real index, clears trust flags, adds all and writes the tree; on _IndexCopyUnusable it instead seeds an empty private index from HEAD. Both scratch indices are cleaned on exit. [6]
+
+## 260928-MIK-L177 The Proof Keeps The Capture's Own Census
+
+`capture_future_code_candidate` now keeps the census of the private index it wrote the tree from:
+`observe(index)` records `capture_entries(index)`, and the proof it records carries those entries
+(`note_capture_baseline(..., entries=captured, before=before)`), so the isolated add-all candidate is
+certified against the exact index it came from rather than a later snapshot. HEAD is still read before
+and after the capture inside this function and compared, and `require_current_future_code_candidate`
+still recomputes the identity and requires it to equal the accepted one. The accepted head is bound
+where the candidate identity is required
+(`review_candidate_resolution.require_current_candidate_identity`), not in this module.

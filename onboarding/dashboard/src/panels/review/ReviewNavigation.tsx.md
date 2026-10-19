@@ -83,3 +83,12 @@ Neither label is a curation decision or permission to treat an unavailable count
 - The rail combines existing summary text with optional caller-supplied codeSummary, then open reason/tree/destination slots; it makes no new measurement. [25]
 - navigationSummary derives outline counts only after catalogue admission and retains unavailable reason rather than synthesizing an empty count. [26]
 - The summary combines changed-family/invariant counts with attributionSummary; an unavailable lane count says the change set could not be measured. [27]
+
+## 260928-MIK-L177 A Late Catalogue Selects Nothing On Its Own
+
+Past the bounded wait the open's main read is the task-context read. A catalogue that answers after
+the bound therefore fills the navigation and selects no subject: `expired` records the key whose hold
+lapsed, and the composed subject is `undefined` for that key, so no second main read is issued without
+a gesture. The reader's own choice still reads, and a catalogue that answers within the bound selects
+one subject and reads once when it actually has a subject; a catalogue that inside the bound is
+genuinely empty selects none, and the open stays the task-context read — still one main read.

@@ -22,3 +22,12 @@ the summary's `cached_read` now passes `Retention(keep=..., unknown=lambda resul
 - Configurable dependency-observing port. [1]
 - Native production, additional dependencies and retention condition. [2]
 - Conditional response owner and retained-key diagnostic. [3]
+
+## 260928-MIK-L177 The Age Window Is In The Key, Not In An Admission Record
+
+The finite age bound is now `int(self._clock() // self._max_age_seconds)` and nothing else: `_window`
+mints it and `_response` puts it in the cache key. The key therefore moves by itself when the window
+rolls over, and no admission record can mint an old key again — the earlier form decided the epoch by
+reading `self._kept`, so a record evicted by the admission table made the next read answer with the
+epoch the *old* answer was still stored under. `_kept` remains as a bounded record of the last windows
+per question, for inspection only. `max_age_seconds <= 0` falls back to the default.

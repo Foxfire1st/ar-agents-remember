@@ -3,12 +3,30 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "f87e4882334717b4528aa4384f167e1d68686821",
-        "content": "sha256:dc5bfb65b065b21dd38d78ffdccfc8ddef3522621e313f4b15f85c756665498e",
+        "blob": "517c52d2bf14b9587f91d75a20f13b98c9662b02",
+        "content": "sha256:aed36cdf3c2d6d52236858202dd3a99a1da836eba3014dbe9eec7a76e1014b6e",
         "locator": {
-          "end": 58,
+          "kind": "symbol",
+          "name": "capture_baseline_unchanged"
+        }
+      },
+      "id": "RLZ-11X3BB",
+      "invariant": "INV-N3M9G4",
+      "origin": {
+        "handoffEntry": "L177-INV-N3M9G4",
+        "leaf": "260928-MIK-L177"
+      },
+      "rationale": "This is the proof itself: it compares the remembered census and index stamp against the native status, and answers that the worktree still captures to the recorded tree only when every one of them agrees.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "517c52d2bf14b9587f91d75a20f13b98c9662b02",
+        "content": "sha256:d62a59ae127ecd8fc7a616c49dc7036921f3a0cbde31dbbdb9d49259d12cc005",
+        "locator": {
+          "end": 70,
           "kind": "line_range",
-          "start": 39
+          "start": 49
         }
       },
       "id": "RLZ-3JP7V8",
@@ -22,8 +40,8 @@
     },
     {
       "anchor": {
-        "blob": "f87e4882334717b4528aa4384f167e1d68686821",
-        "content": "sha256:9b4711bab06a351b18433aa09d2e997bc474952583ee117b160dab8626e7dc6c",
+        "blob": "517c52d2bf14b9587f91d75a20f13b98c9662b02",
+        "content": "sha256:aed36cdf3c2d6d52236858202dd3a99a1da836eba3014dbe9eec7a76e1014b6e",
         "locator": {
           "kind": "symbol",
           "name": "capture_baseline_unchanged"
@@ -35,17 +53,17 @@
         "handoffEntry": "L81-R1-F17",
         "leaf": "260928-MIK-L81"
       },
-      "rationale": "The existing request-scoped capture baseline includes the memory HEAD observed around capture and checks it natively before reuse; HEAD-only movement with identical files/index refuses a stale review, while subject reads stay within the eighty-child subject-read budget that the current tests use. The forty-child figure is not established by the cited evidence.",
+      "rationale": "The existing request-scoped capture baseline includes the memory HEAD observed around capture and checks it natively before reuse; HEAD-only movement with identical files/index refuses a stale review. It makes no claim about a subject-read count: no such budget is carried by the capture proof or by the cases that guard it.",
       "role": "enforcement"
     },
     {
       "anchor": {
-        "blob": "f87e4882334717b4528aa4384f167e1d68686821",
-        "content": "sha256:8dfc8d85beaedf8809130c94f03ed4d3b1e2023e66474b2cac04cc0be082e393",
+        "blob": "517c52d2bf14b9587f91d75a20f13b98c9662b02",
+        "content": "sha256:bd1de2909ea6074721132303c9d1329c8585adc973338143c088a0f79a043c46",
         "locator": {
-          "end": 84,
+          "end": 148,
           "kind": "line_range",
-          "start": 71
+          "start": 111
         }
       },
       "id": "RLZ-HMXXXB",
@@ -56,6 +74,24 @@
       },
       "rationale": "note_capture_baseline notifies the current observer only after before/after native snapshots compare equal and the baseline is retained. This is an observation seam, not authority to reuse a changed or unproved capture.",
       "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "517c52d2bf14b9587f91d75a20f13b98c9662b02",
+        "content": "sha256:4a4aa4ff79482426d0c023334dcb766f34f2214e8f4e03729e7b0472186720b7",
+        "locator": {
+          "kind": "symbol",
+          "name": "_still_captures"
+        }
+      },
+      "id": "RLZ-WFHVZ4",
+      "invariant": "INV-N3M9G4",
+      "origin": {
+        "handoffEntry": "L177-INV-N3M9G4",
+        "leaf": "260928-MIK-L177"
+      },
+      "rationale": "The one native observation the proof allows: Git's status supplies HEAD and the eligible untracked names without enumerating an ignored directory.",
+      "role": "enforcement"
     }
   ],
   "references": {

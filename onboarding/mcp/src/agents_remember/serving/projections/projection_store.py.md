@@ -162,3 +162,11 @@ the state object. `state.read(...)` is called with a `ProjectionReaders(repo_sur
 - On task-structure or drift invalidation, ProjectionInputState._refresh_drift passes its retained contracts and an actionable-drift observation to pruning before reading analytical snapshots. Pruning deletes valid branch-orphaned snapshots only with complete native branch/contract/snapshot proof; failure of that proof retains snapshots. A deleted checkout/worktree alone does not prove its branch is gone, and a valid changed occurrence remains visible even when a sibling read is incomplete. [10]
 
 - The shared contract snapshot is retained across unaffected ticks, built for full task refresh and updated for directed task refresh.  Anchor: "_contract_snapshot_cache = ContractSnapshotCache()"; "def build(self"; "contract_cache=_contract_snapshot_cache"; "self._contract_cache.build(" [11]
+
+## 260928-MIK-L177 One Stable Dump Per Tick
+
+A tick already computed the projection's stable form to decide whether to write. That value is now
+carried on `ProjectionTickState.stable` and published afterwards, so the write decision and the
+publication compare the same dump instead of computing it twice. The field is live only for the tick
+that set it and is not part of the state a tick starts from; a tick that did not compute one leaves it
+`None`, and publication then computes the form as before.

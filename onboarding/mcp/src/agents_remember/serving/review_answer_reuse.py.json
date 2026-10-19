@@ -1,0 +1,90 @@
+{
+  "path": "mcp/src/agents_remember/serving/review_answer_reuse.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "710a83fae3a7e55dfb9b97899015b5ea6c9593e3",
+        "content": "sha256:ab387bfde2d6606d70b4df517a83b938ee4d8139b9671cf5afacd4b33f7968c9",
+        "locator": {
+          "kind": "symbol",
+          "name": "RecordedAnswerReuse"
+        }
+      },
+      "id": "RLZ-V4HXV2",
+      "invariant": "INV-YTPBCF",
+      "origin": {
+        "handoffEntry": "L177-INV-RECORDED-ANSWER-REUSE",
+        "leaf": "260928-MIK-L177"
+      },
+      "rationale": "The bounded store that serves an answer only while every observed input still carries its stamp, and never after its size or age bound.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "A kept answer is returned only while every observed input carries the stamp it had at production.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "710a83fae3a7e55dfb9b97899015b5ea6c9593e3",
+            "content": "sha256:e19d72dfe2a5741636a7b76c78d6902bde67846440d68e25cba77cfd7188bb97",
+            "locator": {
+              "kind": "symbol",
+              "name": "answer"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "An answer is kept only when the observations before and after its computation agree, so a value composed while its inputs moved is dropped.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "710a83fae3a7e55dfb9b97899015b5ea6c9593e3",
+            "content": "sha256:e19d72dfe2a5741636a7b76c78d6902bde67846440d68e25cba77cfd7188bb97",
+            "locator": {
+              "kind": "symbol",
+              "name": "answer"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The age bound drops every answer past it.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "710a83fae3a7e55dfb9b97899015b5ea6c9593e3",
+            "content": "sha256:e1a955bd7f72d597f41b1ace49f3fb13c7c95bedb5ccae95a696a2ede49afe2b",
+            "locator": {
+              "kind": "symbol",
+              "name": "_expire"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The size bound evicts the least recently used answer.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "710a83fae3a7e55dfb9b97899015b5ea6c9593e3",
+            "content": "sha256:98f0791be324596a1e687017b65f8c801610f88fa3bd7cbca8eb121467df2175",
+            "locator": {
+              "kind": "symbol",
+              "name": "_keep"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

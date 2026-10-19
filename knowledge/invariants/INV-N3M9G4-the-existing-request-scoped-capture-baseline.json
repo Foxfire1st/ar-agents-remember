@@ -1,16 +1,19 @@
 {
   "admission": {
     "criteria": [
-      "prevents_costly_mistake"
+      "spans_locations",
+      "guarded_by_test"
     ],
-    "justification": "One reviewer request reusing its own private-index capture baseline. Losing this boundary would fabricate currentness, attribute another owner's work, hide an external change, or repeat an unsafe host/landing action rather than exposing the actual observation."
+    "justification": "The proof, the native status observation and the census reader sit in two modules and must agree, and the new capture-baseline cases fail on the walked proof they replaced."
   },
   "applicability": "One reviewer request reusing its own private-index capture baseline.",
   "conditions": [
-    "Repository HEAD, index evidence and the same worktree snapshot are rechecked.",
-    "An unreadable or changed operand forces re-derivation or the owner refusal."
+    "The worktree's own index file still carries the stamp the capture bracketed.",
+    "Every captured path still carries the stat the capture recorded.",
+    "Git's native status still reports the same HEAD and the same eligible untracked names."
   ],
   "exclusions": [
+    "A staged, renamed, unmerged or trust-flagged input, which is a doubt and re-derives.",
     "A baseline is not reusable across requests or as a kept composed review."
   ],
   "id": "INV-N3M9G4",
@@ -25,9 +28,9 @@
     "leaf": "260928-MIK-L81",
     "task": "260928-MIK"
   },
-  "revision": 2,
+  "revision": 3,
   "schema": "ar-invariant/v1",
-  "statement": "The existing request-scoped capture baseline includes the memory HEAD observed around capture and checks it natively before reuse; HEAD-only movement with identical files/index refuses a stale review, while subject reads stay within the eighty-child subject-read budget the current tests use.",
+  "statement": "The request-scoped capture proof re-reads only what a capture can read: the capture's own private-index census, the worktree's own index stamp and the native status that supplies HEAD and the eligible untracked names, so an eligible addition or removal, a staged or trust-flagged input, or a moved index is a doubt that re-derives the tree while a change inside an ignored directory or a HEAD the caller did not bind is not.",
   "status": "proposed",
   "supersedes": []
 }

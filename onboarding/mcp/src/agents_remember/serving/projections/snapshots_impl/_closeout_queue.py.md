@@ -44,3 +44,18 @@ This section supersedes the earlier authoritative-queue and active-blocker descr
 - Top-level reader covers every orchestrating sprint. [1]
 - Effective state is joined against the exact current source. [2]
 - Waiting-generation members project classification, priority, order, and reasons. [3]
+
+## 260928-MIK-L177 The Live Fingerprint Never Walks A Worktree
+
+The old fingerprint walked every worktree with `_snapshot_entries` under a 5,000-entry cap, which is
+the recurring cost the projection paid on every heartbeat. It is gone. `_worktree_live_parts` now
+takes the capture owner's own index scanner and the native working generation:
+`_index_copy_has_trust_flags` must answer `False` (an `assume-unchanged` or `skip-worktree` entry can
+hide an eligible edit, and an index shape the scanner cannot read is a doubt), the index file's
+identity is read before and after the generation, and a moved identity forces recomputation.
+`working_generation` supplies the dirty-file statistics, so an unobserved edit is still seen.
+
+The watcher deliberately does not cover the worktrees tree, so those inputs are re-observed natively
+on every heartbeat rather than aged. The watched **tasks** tree keeps its incremental samples and gains
+`TASKS_FULL_REFRESH_SECONDS = 300.0`: a heartbeat takes a full refresh of it at least every five
+minutes, and a path-named sample or a full pass takes it at once.

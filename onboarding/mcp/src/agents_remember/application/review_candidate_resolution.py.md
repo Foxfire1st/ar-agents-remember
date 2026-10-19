@@ -227,3 +227,11 @@ memory trees (never a copy); a pin failure or an unreadable side is a `ReviewRef
 - The live pair: four trees for converted memory; otherwise source identities and explicit legacy-unavailable knowledge sides, never a dataset fallback. [41]
 
 - A derived index answers its own namespace; any other file answers none. [42]
+
+## 260928-MIK-L177 The Memory Capture Records Its Own Census
+
+A live review's memory side now captures through `worktree_candidate_tree(..., captured=observe)` and
+notes the whole census it received, so `capture_baseline_unchanged` can re-check the memory worktree
+from that census instead of walking it. The observation is taken once, at capture, and is nothing the
+request reads twice. The code side's recheck passes the resolved `observedCodeHead` into the same
+proof, so one native status supplies HEAD and the eligible untracked names.
