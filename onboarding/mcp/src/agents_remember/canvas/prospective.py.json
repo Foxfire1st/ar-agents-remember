@@ -1,0 +1,58 @@
+{
+  "path": "mcp/src/agents_remember/canvas/prospective.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "84fc5213f67cdf09816ba50e14d09728d1f3bf31",
+        "content": "sha256:d13ad7c0afad7655dc1def72056f04e4eae6db7764fa56b73540f597d48092f9",
+        "locator": {
+          "kind": "symbol",
+          "name": "BrowserProspectiveLoad"
+        }
+      },
+      "id": "RLZ-J5AMT2",
+      "invariant": "INV-40VGBY",
+      "origin": {
+        "handoffEntry": "MIK-R104-r14-readiness-and-load",
+        "leaf": "260928-MIK-L104"
+      },
+      "rationale": "The load is the second, stronger gate; it stages the exact bytes and loads them once in the selected browser.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The prospective revision is loaded once in the selected browser through the package-owned runner.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "84fc5213f67cdf09816ba50e14d09728d1f3bf31",
+            "content": "sha256:d13ad7c0afad7655dc1def72056f04e4eae6db7764fa56b73540f597d48092f9",
+            "locator": {
+              "kind": "symbol",
+              "name": "BrowserProspectiveLoad"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "A success that contradicts its own observations is downgraded.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "84fc5213f67cdf09816ba50e14d09728d1f3bf31",
+            "content": "sha256:3d45c4c3caea3d87db12b71cad430088f32f09edfbb04d006bd9f5bbefba724a",
+            "locator": {
+              "kind": "symbol",
+              "name": "_consistent"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

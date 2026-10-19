@@ -1,0 +1,110 @@
+{
+  "path": "mcp/src/agents_remember/canvas/evidence.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "4422d62baf17f38d797d6d80f2e3ecec80afc61d",
+        "content": "sha256:2a99302d31978c878fe56afc4aa01c9d754ae09c0d422d9840854474d6f3300e",
+        "locator": {
+          "kind": "symbol",
+          "name": "_receipt_destination"
+        }
+      },
+      "id": "RLZ-03SS5Q",
+      "invariant": "INV-RKY270",
+      "origin": {
+        "handoffEntry": "MIK-R104-r5-evidence-resolution",
+        "leaf": "260928-MIK-L104"
+      },
+      "rationale": "A retained receipt answers with its own read state, so an unread capture never opens.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "4422d62baf17f38d797d6d80f2e3ecec80afc61d",
+        "content": "sha256:dd83d4dee3a1670a0631d29ee42171545e6c3108b7d7b188b5dc73fe22cc936d",
+        "locator": {
+          "kind": "symbol",
+          "name": "resolve_evidence_reference"
+        }
+      },
+      "id": "RLZ-4B3SNM",
+      "invariant": "INV-RKY270",
+      "origin": {
+        "handoffEntry": "L104-r1-rky270-proofs",
+        "leaf": "260928-MIK-L104"
+      },
+      "rationale": "The resolver is where a requested reference is matched against the admitted packet and answered with a destination or a limitation.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "4422d62baf17f38d797d6d80f2e3ecec80afc61d",
+        "content": "sha256:dd83d4dee3a1670a0631d29ee42171545e6c3108b7d7b188b5dc73fe22cc936d",
+        "locator": {
+          "kind": "symbol",
+          "name": "resolve_evidence_reference"
+        }
+      },
+      "id": "RLZ-TFYTJK",
+      "invariant": "INV-RKY270",
+      "origin": {
+        "handoffEntry": "MIK-R104-r5-evidence-resolution",
+        "leaf": "260928-MIK-L104"
+      },
+      "rationale": "The resolver admits one requested reference against the packet and the session binding, in both comparison identities.",
+      "role": "primary-authority"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The host resolves a requested reference only against the revision's own admitted packet.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4422d62baf17f38d797d6d80f2e3ecec80afc61d",
+            "content": "sha256:dd83d4dee3a1670a0631d29ee42171545e6c3108b7d7b188b5dc73fe22cc936d",
+            "locator": {
+              "kind": "symbol",
+              "name": "resolve_evidence_reference"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The packet and the binding must name the same comparison in both identities.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4422d62baf17f38d797d6d80f2e3ecec80afc61d",
+            "content": "sha256:59bb320158235e06a229883b8d8fce0370165a9bd50c79799c35f22fbaab78a0",
+            "locator": {
+              "kind": "symbol",
+              "name": "_same_comparison"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "A retained receipt answers with its own read state; an unread capture never opens.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4422d62baf17f38d797d6d80f2e3ecec80afc61d",
+            "content": "sha256:2a99302d31978c878fe56afc4aa01c9d754ae09c0d422d9840854474d6f3300e",
+            "locator": {
+              "kind": "symbol",
+              "name": "_receipt_destination"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

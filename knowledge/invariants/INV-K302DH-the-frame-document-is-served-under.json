@@ -1,0 +1,33 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "guarded_by_test"
+    ],
+    "justification": "The obligation is realized in the policy and both serving routes; the two host cases assert the headers on every response and the session's own-revision scope."
+  },
+  "applicability": "Every frame document and admitted asset the canvas host serves.",
+  "conditions": [
+    "The session names one admitted revision."
+  ],
+  "exclusions": [
+    "The panel's trusted API answers, which are not frame documents."
+  ],
+  "id": "INV-K302DH",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "mcp/tests/test_canvas_host.py::test_every_response_carries_its_policy_headers; mcp/tests/test_canvas_serving.py::test_a_session_serves_its_own_document_and_assets_only"
+      ],
+      "path": "curation-list.json"
+    },
+    "handoffEntry": "MIK-R104-r2-frame-sandbox",
+    "leaf": "260928-MIK-L104",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "The frame document is served under a sandbox that never carries allow-same-origin, every document and asset response carries the policy headers, and a live session serves only its own admitted revision's document and assets.",
+  "status": "proposed",
+  "supersedes": []
+}

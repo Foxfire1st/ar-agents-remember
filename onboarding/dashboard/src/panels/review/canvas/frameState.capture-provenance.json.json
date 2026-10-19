@@ -1,0 +1,22 @@
+{
+  "path": "dashboard/src/panels/review/canvas/frameState.capture-provenance.json",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The recorded answer the provenance record of the three captured answers (what was requested and when).\n\nAnchor: None",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "10c852ff070e6c370d9b2cedf7022e1381a00b12",
+            "content": "sha256:353d596abe5b5f2dc483f9f1bcb5c2c01c15a3682babc0a26ccdb464998bbeb3",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

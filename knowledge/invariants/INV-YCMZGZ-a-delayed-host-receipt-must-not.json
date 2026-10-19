@@ -1,0 +1,34 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test",
+      "prevents_costly_mistake"
+    ],
+    "justification": "The delayed-runner test releases a receipt after cancellation; the rule prevents a late host reply from restarting an attempt the developer stopped."
+  },
+  "applicability": "Late host receipts applied to durable presenter attempts.",
+  "conditions": [
+    "The fresh locked record is settled: its state is outside started and running."
+  ],
+  "exclusions": [
+    "A receipt for a started attempt, which may transition to running.",
+    "The separate publication-result transition, which is not a host receipt."
+  ],
+  "id": "INV-YCMZGZ",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "mcp/tests/test_canvas_presenter.py::test_a_delayed_receipt_does_not_revive_a_cancelled_attempt"
+      ],
+      "path": "m18-m19-repair.json"
+    },
+    "handoffEntry": "L104-M19-settled-receipt",
+    "leaf": "260928-MIK-L104",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "A delayed host receipt must not change a settled presenter attempt back to a live state.",
+  "status": "proposed",
+  "supersedes": []
+}

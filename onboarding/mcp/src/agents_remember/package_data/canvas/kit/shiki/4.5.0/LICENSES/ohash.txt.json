@@ -1,0 +1,22 @@
+{
+  "path": "mcp/src/agents_remember/package_data/canvas/kit/shiki/4.5.0/LICENSES/ohash.txt",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The licence text shipped with the `shiki` entry.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e739abce461d8b2899aaec6529a4af24a417e0fc",
+            "content": "sha256:46231df5a7733c3f52f11b71f3df61813007745b62b09031acfb45fb42d75082",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

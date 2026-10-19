@@ -1,0 +1,37 @@
+{
+  "path": "dashboard/src/panels/review/canvas/canvasApi.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "A server refusal is carried as its own typed error with the server's reason.\n\nAnchor: None",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "90e64bc938d95ec86d0b0ae251bfea095aefac28",
+            "content": "sha256:b3f90c2bb1cb723a48729dfcbaccc8a84b38232feb4bf82dd49c036890a84d29",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The frame, attempt, activity and conversation shapes the panel reads.\n\nAnchor: None",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "90e64bc938d95ec86d0b0ae251bfea095aefac28",
+            "content": "sha256:b3f90c2bb1cb723a48729dfcbaccc8a84b38232feb4bf82dd49c036890a84d29",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

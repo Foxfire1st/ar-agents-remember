@@ -193,3 +193,5 @@ later reader does not have to reconstruct it from a report.
 - The Ruff `target-version`, an explicitly reasoned non-runtime syntax-rewrite policy independent of the supported minor declared here, lives in the repository-root project file. [16]
 
 - Package metadata directly bounds the interpreter line and declares its Python classifier. [17]
+
+- The package data includes `canvas/*.md` and `canvas/*.mjs` beside the generated package-data copy, because `canvas/presenter_inputs.py` resolves the capability text module-relatively in an installed build; the capsule-text test fails on drift between the two copies. \[18] [18]

@@ -23,3 +23,5 @@ The task-confined frame store: leases an authoring draft in its working folder, 
 - Reopening, serving and regeneration read one verified snapshot of manifest and assets. [5]
 - Staleness names the comparison sides that moved and starts no regeneration. [6]
 - Reclamation records intent before removal and the outcome after it, under the task lock. [7]
+
+- `_media_type` names the same plain-text type for an extensionless `LICENSE`, which is what lets a frame serve a pinned kit licence at all. \[8] [8]

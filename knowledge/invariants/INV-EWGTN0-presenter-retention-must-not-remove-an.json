@@ -1,0 +1,34 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test",
+      "prevents_costly_mistake"
+    ],
+    "justification": "The direct store retention test keeps a live record while pruning settled records; the rule prevents losing the identity required to reconcile an in-flight session."
+  },
+  "applicability": "Presenter attempt retention performed by the durable attempt store.",
+  "conditions": [
+    "Retention examines a record in started or running state."
+  ],
+  "exclusions": [
+    "Settled attempts beyond the retained window, which may be reclaimed.",
+    "Explicit removal outside retention."
+  ],
+  "id": "INV-EWGTN0",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "mcp/tests/test_canvas_presenter_store.py::test_the_store_prunes_to_its_ceiling_and_keeps_a_live_record"
+      ],
+      "path": "m18-m19-repair.json"
+    },
+    "handoffEntry": "L104-M19-live-retention",
+    "leaf": "260928-MIK-L104",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Presenter retention must not remove an attempt whose current state is started or running.",
+  "status": "proposed",
+  "supersedes": []
+}

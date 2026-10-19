@@ -1,0 +1,128 @@
+{
+  "path": "mcp/src/agents_remember/canvas/presenter_store.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "a1a893e92d814250513eba9d38ae2605948949c9",
+        "content": "sha256:65341612927c8856ace0a5321ecb292bf1ef2da4938d2b7bf923a7fe18e74dc4",
+        "locator": {
+          "kind": "symbol",
+          "name": "_remember_request_locked"
+        }
+      },
+      "id": "RLZ-71ZYAW",
+      "invariant": "INV-M6Q82M",
+      "origin": {
+        "handoffEntry": "L104-M19-reclaimed-request",
+        "leaf": "260928-MIK-L104"
+      },
+      "rationale": "Persists the request-to-attempt identity separately from retained attempt records, subject to the bounded ledger.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "a1a893e92d814250513eba9d38ae2605948949c9",
+        "content": "sha256:17ee2d743efccdf20ac9251104d4d62ebad308f554ec9d74683acd71b5c9e7a7",
+        "locator": {
+          "kind": "symbol",
+          "name": "_prune_locked"
+        }
+      },
+      "id": "RLZ-FWV5GX",
+      "invariant": "INV-EWGTN0",
+      "origin": {
+        "handoffEntry": "L104-M19-live-retention",
+        "leaf": "260928-MIK-L104"
+      },
+      "rationale": "Skips every live attempt in the retention tail and removes only settled attempts there.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "a1a893e92d814250513eba9d38ae2605948949c9",
+        "content": "sha256:a7f8c9b73cf9fa9cf887201b8da4b9efe820c2be6af741a7f0e1bc1e182f9442",
+        "locator": {
+          "kind": "symbol",
+          "name": "receipt_changes"
+        }
+      },
+      "id": "RLZ-GRBNZQ",
+      "invariant": "INV-YCMZGZ",
+      "origin": {
+        "handoffEntry": "L104-M19-settled-receipt",
+        "leaf": "260928-MIK-L104"
+      },
+      "rationale": "Adds host identity and detail while leaving the state of a settled attempt unchanged; only a started attempt becomes running.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "a1a893e92d814250513eba9d38ae2605948949c9",
+        "content": "sha256:e23e36cebd73e76f9412180c628c5ce8920a64dd49522891f17504cd0f029161",
+        "locator": {
+          "kind": "symbol",
+          "name": "mutate"
+        }
+      },
+      "id": "RLZ-TF5XG8",
+      "invariant": "INV-YCMZGZ",
+      "origin": {
+        "handoffEntry": "L104-M19-settled-receipt",
+        "leaf": "260928-MIK-L104"
+      },
+      "rationale": "Reads the current attempt and applies the receipt under the store lock, so an earlier cancellation is observed.",
+      "role": "propagation-persistence"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "An attempt record is sized before it is read.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a1a893e92d814250513eba9d38ae2605948949c9",
+            "content": "sha256:a4a13dff99a820fda801aae821c2ab2cfc8f16c8b8977bc8861eedc09ce8ecb0",
+            "locator": {
+              "kind": "symbol",
+              "name": "read_bounded"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "One locked transaction covers a whole record mutation.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a1a893e92d814250513eba9d38ae2605948949c9",
+            "content": "sha256:97512ea9986e4dd9d2979fa61b584c7aac4cff281e9e5c9790a2b986c42ebbf9",
+            "locator": {
+              "kind": "symbol",
+              "name": "AttemptStore"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "A receipt that arrives after a cancellation does not revive the attempt.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a1a893e92d814250513eba9d38ae2605948949c9",
+            "content": "sha256:a7f8c9b73cf9fa9cf887201b8da4b9efe820c2be6af741a7f0e1bc1e182f9442",
+            "locator": {
+              "kind": "symbol",
+              "name": "receipt_changes"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

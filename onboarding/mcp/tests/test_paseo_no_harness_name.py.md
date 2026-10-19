@@ -7,6 +7,8 @@ The current source facts below replace the former operative inventory. The separ
 - Current RULE6_MODULES explicitly permits application/agent_binding.py and requires a positive name hit there.
 - RULE21 admits exactly cli/paseo_catalog.py and cli/paseo_launch.py for the existing least-permissive provider modes and the Claude-only `server_info` identity preapproval when the provider accepts MCP definitions. The retained `assignmentReadGrant` receipt key reports that identity-only preapproval (or that it was not applied), not assignment-content access or a restored `assignment_read` grant. Each file must have exactly its declared harness-name set; silence and an unrelated provider word both fail. Real-file mutant probes prevent this admission widening into a module-wide exception.
 
+- The two additional presenter owners are exactly `canvas/presenter_native.py` and `cli/paseo_bridge.mjs`. Each admits only `Claude` and `claude` for its qualified confinement seam. Positive witnesses and real-file mutants require those words and reject both another provider word and silence; the original RULE21 owner sets remain separate.
+
 ### Superseded inventory
 
 - Pre-repair card claim: Card states the scanned implementation bans harness-specific names. This is superseded archival wording, not a current prescription.

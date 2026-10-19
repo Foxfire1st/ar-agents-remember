@@ -99,3 +99,5 @@ Executor identity belongs to the repository certification profile, not to these 
 ## CCR-L42 current candidate
 
 The review budget uses the settings number `orchestration.loops.defaults.maxRounds`. `MAX_REVIEW_ROUNDS` is removed; `DEFAULT_LOOP_MAX_ROUNDS` is the fallback used by `LoopDefaults` and the reference seed when no number is named. Any positive whole number is accepted by the parser. The settings/transition owners, not role prose, determine the number in force.
+
+- `CAPABILITY_IDS` names the non-seat capabilities that carry a launch block (`review-presenter`): their choices live under `orchestration.roles.<capability>` with the same per-field provenance and refusal rules as a seat, while the capsule, dispatch and level tables stay seat-only. \[11] [11]

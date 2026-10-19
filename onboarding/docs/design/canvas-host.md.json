@@ -1,0 +1,67 @@
+{
+  "path": "docs/design/canvas-host.md",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The design states the two surfaces and the origin/policy arrangement.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a9ef17715cfab37a759bf26e5c18b7299c5de3d2",
+            "content": "sha256:36ed2cd6343c9e35522eca52f367af823fb6ca94d27f6f676abe40deaf1ac9f0",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Scripts are gated on the browser proof, and an uncovered page is served with no script.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a9ef17715cfab37a759bf26e5c18b7299c5de3d2",
+            "content": "sha256:36ed2cd6343c9e35522eca52f367af823fb6ca94d27f6f676abe40deaf1ac9f0",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The presenter, protocol and session bounds are stated once in one design document.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a9ef17715cfab37a759bf26e5c18b7299c5de3d2",
+            "content": "sha256:36ed2cd6343c9e35522eca52f367af823fb6ca94d27f6f676abe40deaf1ac9f0",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The remaining limits are named instead of being implied away.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a9ef17715cfab37a759bf26e5c18b7299c5de3d2",
+            "content": "sha256:36ed2cd6343c9e35522eca52f367af823fb6ca94d27f6f676abe40deaf1ac9f0",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

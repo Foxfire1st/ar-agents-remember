@@ -1,0 +1,33 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "guarded_by_test"
+    ],
+    "justification": "The binding and the revocation are separate realizations; the serving case proves revocation ends a channel without an effect."
+  },
+  "applicability": "Every frame channel the host opens for a page.",
+  "conditions": [
+    "The document's own bootstrap ran before generated script."
+  ],
+  "exclusions": [
+    "A window that never loaded the admitted document."
+  ],
+  "id": "INV-ESF2CT",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "mcp/tests/test_canvas_serving.py::test_revocation_ends_the_channel_without_an_effect"
+      ],
+      "path": "curation-list.json"
+    },
+    "handoffEntry": "MIK-R104-r3-document-bound-channel",
+    "leaf": "260928-MIK-L104",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "The channel binds to the admitted document rather than to a navigated window, and a document that leaves announces its departure so the host can end the channel with a named reason.",
+  "status": "proposed",
+  "supersedes": []
+}

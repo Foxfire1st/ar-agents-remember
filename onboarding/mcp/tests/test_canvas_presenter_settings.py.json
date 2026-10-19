@@ -1,0 +1,39 @@
+{
+  "path": "mcp/tests/test_canvas_presenter_settings.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The case `test_a_repository_row_may_not_set_permission_authority` protects this behaviour.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "14decdf6d09923b62b812e7a7c5a11dbbbb95257",
+            "content": "sha256:3705268494974ba6faf0d5c8cd61c43f213282e486029d3255fb1ef090570690",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_repository_row_may_not_set_permission_authority"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The case `test_an_unknown_orchestration_key_fails_loud_naming_the_file` protects this behaviour.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "14decdf6d09923b62b812e7a7c5a11dbbbb95257",
+            "content": "sha256:edca1bba99176389deb2f53a87315bdd9da899399af9cf102708a1f406d9b4d0",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_an_unknown_orchestration_key_fails_loud_naming_the_file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

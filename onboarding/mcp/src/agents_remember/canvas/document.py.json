@@ -1,0 +1,57 @@
+{
+  "path": "mcp/src/agents_remember/canvas/document.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "9176cadb4b92d322e3e9356fea92ef7bb5e5ede3",
+        "content": "sha256:4c374e200eb5282a37fa8e04dfe24775b210b27c1401fd53162060e5c8addded",
+        "locator": {
+          "kind": "symbol",
+          "name": "bound_document"
+        }
+      },
+      "id": "RLZ-5ZMCN3",
+      "invariant": "INV-ESF2CT",
+      "origin": {
+        "handoffEntry": "MIK-R104-r3-document-bound-channel",
+        "leaf": "260928-MIK-L104"
+      },
+      "rationale": "The bootstrap injected into the document delivers the binding as a synthetic local `message` event on the document's own window at `DOMContentLoaded`, after the document's listeners exist; the `MessageChannel` is the liveness path — `port2` to the parent, `port1` echoing what it receives — and the panel treats a missing echo or a second entry as a channel it will not use.",
+      "role": "primary-authority"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The binding is delivered to the admitted document after its listeners exist.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9176cadb4b92d322e3e9356fea92ef7bb5e5ede3",
+            "content": "sha256:4c374e200eb5282a37fa8e04dfe24775b210b27c1401fd53162060e5c8addded",
+            "locator": {
+              "kind": "symbol",
+              "name": "bound_document"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Leaving the document announces revocation even during parsing.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9176cadb4b92d322e3e9356fea92ef7bb5e5ede3",
+            "content": "sha256:2c754cd4a4d8df7167ed55b07a4a92a137b3596c3cd8284afcd8e51b51478f26",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

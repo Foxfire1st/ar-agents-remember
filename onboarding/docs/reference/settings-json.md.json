@@ -3,12 +3,12 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "80ab1147327fd0f19c47329487efe7f60ecb234d",
+        "blob": "6f379d0f10cccd365a7cc76a93bcf9df0b47c52b",
         "content": "sha256:012d7f3d967f181785205f452f928dff02fd7fe94ebb2a02a58b7aecf0995ad2",
         "locator": {
-          "end": 720,
+          "end": 727,
           "kind": "line_range",
-          "start": 705
+          "start": 712
         }
       },
       "id": "RLZ-DYXENX",
@@ -22,8 +22,8 @@
     },
     {
       "anchor": {
-        "blob": "80ab1147327fd0f19c47329487efe7f60ecb234d",
-        "content": "sha256:87d05fd7a93170bab3e82d82c7e34a0824f68458ea300006be355ee2f0414efb",
+        "blob": "6f379d0f10cccd365a7cc76a93bcf9df0b47c52b",
+        "content": "sha256:610f715d3d20f0ff92f913254d1dfa3387a0b59016b261425c748a3105ec1b85",
         "locator": {
           "kind": "file"
         }
@@ -39,7 +39,7 @@
     },
     {
       "anchor": {
-        "blob": "80ab1147327fd0f19c47329487efe7f60ecb234d",
+        "blob": "6f379d0f10cccd365a7cc76a93bcf9df0b47c52b",
         "content": "sha256:c0c988e3a5aa7cfc196905181be4425b87e970b3cc912c7532f2829f9572c522",
         "locator": {
           "end": 54,
@@ -58,8 +58,8 @@
     },
     {
       "anchor": {
-        "blob": "80ab1147327fd0f19c47329487efe7f60ecb234d",
-        "content": "sha256:87d05fd7a93170bab3e82d82c7e34a0824f68458ea300006be355ee2f0414efb",
+        "blob": "6f379d0f10cccd365a7cc76a93bcf9df0b47c52b",
+        "content": "sha256:610f715d3d20f0ff92f913254d1dfa3387a0b59016b261425c748a3105ec1b85",
         "locator": {
           "kind": "file"
         }
@@ -116,6 +116,21 @@
               "end": 884,
               "kind": "line_range",
               "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The same `orchestration.roles` family admits the non-seat capability id `review-presenter`: every rule above validates its row, but it is never dispatchable as a seat, it reads only `harness`, `model`, `effort` and `mode`, and a row naming `notes`, `stepUp`, `featureValues` or `serviceTier` refuses that capability's launch by name instead of dropping a choice it would not follow. [7]",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "00f3eebaf9e2ad97f31d5d2e1f88dcfdd5cf8b16",
+            "content": "sha256:1c881403cabe2b6a4984cf93da0677841677a85bf347d7e015fa44bab4c6ab92",
+            "locator": {
+              "kind": "file"
             }
           },
           "kind": "code"

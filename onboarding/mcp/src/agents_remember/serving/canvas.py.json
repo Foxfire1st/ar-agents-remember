@@ -1,0 +1,126 @@
+{
+  "path": "mcp/src/agents_remember/serving/canvas.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "07aabb56414a17aa6b0ab2a858526689f888f09c",
+        "content": "sha256:dfe892c51e32af2da61a6e202038d77d7d2fabe1b2ac989dd4e1793cc8643f6b",
+        "locator": {
+          "kind": "symbol",
+          "name": "session_message"
+        }
+      },
+      "id": "RLZ-463XP3",
+      "invariant": "INV-N7SK8E",
+      "origin": {
+        "handoffEntry": "L104-r1-n7sk8e-proofs",
+        "leaf": "260928-MIK-L104"
+      },
+      "rationale": "The route is what charges the session's token before the parser runs, which is where the debit order is actually set.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "07aabb56414a17aa6b0ab2a858526689f888f09c",
+        "content": "sha256:17aea5ff747614e2a6b2588edb0ef41af9832efd5a1c67fd56c3b968be501dbc",
+        "locator": {
+          "kind": "symbol",
+          "name": "page_asset"
+        }
+      },
+      "id": "RLZ-J1ENSJ",
+      "invariant": "INV-K302DH",
+      "origin": {
+        "handoffEntry": "MIK-R104-r2-frame-sandbox",
+        "leaf": "260928-MIK-L104"
+      },
+      "rationale": "The asset route is the other half: it serves one asset of that same revision and nothing else.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "07aabb56414a17aa6b0ab2a858526689f888f09c",
+        "content": "sha256:830ef8e16f743aaea58b5a2b47cc56d870a7d3aa0c3aede4ac9e6449bd0647ce",
+        "locator": {
+          "kind": "symbol",
+          "name": "page"
+        }
+      },
+      "id": "RLZ-KF8FZP",
+      "invariant": "INV-K302DH",
+      "origin": {
+        "handoffEntry": "MIK-R104-r2-frame-sandbox",
+        "leaf": "260928-MIK-L104"
+      },
+      "rationale": "The frame route is where a document is actually served, and it serves only the session's own revision.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The frame route serves one live session's own document and admitted assets.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "07aabb56414a17aa6b0ab2a858526689f888f09c",
+            "content": "sha256:830ef8e16f743aaea58b5a2b47cc56d870a7d3aa0c3aede4ac9e6449bd0647ce",
+            "locator": {
+              "kind": "symbol",
+              "name": "page"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "An explicit start is the only path that begins authoring.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "07aabb56414a17aa6b0ab2a858526689f888f09c",
+            "content": "sha256:2817ed6cab5ad55d339b0a1c3b8e0fdfbafa04cb3c0b169653b685bef2e35f4d",
+            "locator": {
+              "kind": "symbol",
+              "name": "generate"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "A frame message is bound, bounded and refused by name before it is applied.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "07aabb56414a17aa6b0ab2a858526689f888f09c",
+            "content": "sha256:dfe892c51e32af2da61a6e202038d77d7d2fabe1b2ac989dd4e1793cc8643f6b",
+            "locator": {
+              "kind": "symbol",
+              "name": "session_message"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Both surfaces are registered before the static mount.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "07aabb56414a17aa6b0ab2a858526689f888f09c",
+            "content": "sha256:30f8f272fdf0ce27858a05d0be46054059a214892560dfc1c930b1c017bcff7b",
+            "locator": {
+              "kind": "symbol",
+              "name": "register_canvas_routes"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

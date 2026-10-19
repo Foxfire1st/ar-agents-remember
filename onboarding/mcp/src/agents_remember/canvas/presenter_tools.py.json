@@ -1,0 +1,58 @@
+{
+  "path": "mcp/src/agents_remember/canvas/presenter_tools.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "c30a7c68f06aa680ab28536de91516062b857ca4",
+        "content": "sha256:a572b070017dcc846d59e9479a3b8399ad9c8fd94540e2a7b1ef9dc92114063a",
+        "locator": {
+          "kind": "symbol",
+          "name": "create_server"
+        }
+      },
+      "id": "RLZ-1P18V3",
+      "invariant": "INV-GWMA1V",
+      "origin": {
+        "handoffEntry": "MIK-R105-r1-explicit-confined-publication",
+        "leaf": "260928-MIK-L104"
+      },
+      "rationale": "The confined authoring server is built for one prepared folder; that is where the write boundary is real.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The confined authoring server is built for one prepared folder.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c30a7c68f06aa680ab28536de91516062b857ca4",
+            "content": "sha256:a572b070017dcc846d59e9479a3b8399ad9c8fd94540e2a7b1ef9dc92114063a",
+            "locator": {
+              "kind": "symbol",
+              "name": "create_server"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The documentation surface is a bounded, separate read.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c30a7c68f06aa680ab28536de91516062b857ca4",
+            "content": "sha256:d2e1c418712a6d57732dc9205bf3c283b0124e6987c34db723ec0551d3521dc9",
+            "locator": {
+              "kind": "symbol",
+              "name": "DOCUMENTATION_HOSTS"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

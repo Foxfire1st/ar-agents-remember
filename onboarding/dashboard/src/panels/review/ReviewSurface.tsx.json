@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "bb94e003292e3a408d3607472dacd850e1f8da65",
+        "blob": "24598572b515687b4e415de48aa409de53d81d1f",
         "content": "sha256:1ed5da5ede7f48725e74c2a3ea1173d75721a93a9528babd41cbe4811d09581c",
         "locator": {
           "kind": "symbol",
@@ -20,8 +20,8 @@
     },
     {
       "anchor": {
-        "blob": "bb94e003292e3a408d3607472dacd850e1f8da65",
-        "content": "sha256:ceb3fbb910fe4c87d1148f93e07b23d24ff2a190a43ce694e9ecc1629f7121d5",
+        "blob": "24598572b515687b4e415de48aa409de53d81d1f",
+        "content": "sha256:be62b38034d547f4172044d6e3b3ccad1b52ce705ff283df701c8c9a7cc10ec9",
         "locator": {
           "kind": "symbol",
           "name": "ReviewSurface"
@@ -38,7 +38,7 @@
     },
     {
       "anchor": {
-        "blob": "bb94e003292e3a408d3607472dacd850e1f8da65",
+        "blob": "24598572b515687b4e415de48aa409de53d81d1f",
         "content": "sha256:476ed0ab6ce7610c55491e0e93898501945429e429ce6336f035ddefc2298730",
         "locator": {
           "kind": "symbol",
@@ -56,7 +56,7 @@
     },
     {
       "anchor": {
-        "blob": "bb94e003292e3a408d3607472dacd850e1f8da65",
+        "blob": "24598572b515687b4e415de48aa409de53d81d1f",
         "content": "sha256:7eb4320d096d15812d412b43403c5195111312be5b6b9b32f4c59fb339568f6c",
         "locator": {
           "kind": "symbol",
@@ -74,7 +74,7 @@
     },
     {
       "anchor": {
-        "blob": "bb94e003292e3a408d3607472dacd850e1f8da65",
+        "blob": "24598572b515687b4e415de48aa409de53d81d1f",
         "content": "sha256:476ed0ab6ce7610c55491e0e93898501945429e429ce6336f035ddefc2298730",
         "locator": {
           "kind": "symbol",
@@ -92,7 +92,7 @@
     },
     {
       "anchor": {
-        "blob": "bb94e003292e3a408d3607472dacd850e1f8da65",
+        "blob": "24598572b515687b4e415de48aa409de53d81d1f",
         "content": "sha256:476ed0ab6ce7610c55491e0e93898501945429e429ce6336f035ddefc2298730",
         "locator": {
           "kind": "symbol",
@@ -109,7 +109,7 @@
     },
     {
       "anchor": {
-        "blob": "bb94e003292e3a408d3607472dacd850e1f8da65",
+        "blob": "24598572b515687b4e415de48aa409de53d81d1f",
         "content": "sha256:81973936fcd0ce8ad6257098b6fd7b8f33b8c63302e7ea464a98092415ff86f1",
         "locator": {
           "kind": "symbol",
@@ -127,7 +127,7 @@
     },
     {
       "anchor": {
-        "blob": "bb94e003292e3a408d3607472dacd850e1f8da65",
+        "blob": "24598572b515687b4e415de48aa409de53d81d1f",
         "content": "sha256:2bea560c5f336151a88c4c7f72860d44ec8070841375b4f546fdeee71624801b",
         "locator": {
           "kind": "symbol",
@@ -145,7 +145,7 @@
     },
     {
       "anchor": {
-        "blob": "bb94e003292e3a408d3607472dacd850e1f8da65",
+        "blob": "24598572b515687b4e415de48aa409de53d81d1f",
         "content": "sha256:2bea560c5f336151a88c4c7f72860d44ec8070841375b4f546fdeee71624801b",
         "locator": {
           "kind": "symbol",
@@ -163,7 +163,7 @@
     },
     {
       "anchor": {
-        "blob": "bb94e003292e3a408d3607472dacd850e1f8da65",
+        "blob": "24598572b515687b4e415de48aa409de53d81d1f",
         "content": "sha256:81973936fcd0ce8ad6257098b6fd7b8f33b8c63302e7ea464a98092415ff86f1",
         "locator": {
           "kind": "symbol",
@@ -181,7 +181,7 @@
     },
     {
       "anchor": {
-        "blob": "bb94e003292e3a408d3607472dacd850e1f8da65",
+        "blob": "24598572b515687b4e415de48aa409de53d81d1f",
         "content": "sha256:476ed0ab6ce7610c55491e0e93898501945429e429ce6336f035ddefc2298730",
         "locator": {
           "kind": "symbol",
@@ -199,7 +199,7 @@
     },
     {
       "anchor": {
-        "blob": "bb94e003292e3a408d3607472dacd850e1f8da65",
+        "blob": "24598572b515687b4e415de48aa409de53d81d1f",
         "content": "sha256:476ed0ab6ce7610c55491e0e93898501945429e429ce6336f035ddefc2298730",
         "locator": {
           "kind": "symbol",
@@ -217,7 +217,7 @@
     },
     {
       "anchor": {
-        "blob": "bb94e003292e3a408d3607472dacd850e1f8da65",
+        "blob": "24598572b515687b4e415de48aa409de53d81d1f",
         "content": "sha256:f0203df5014bb49872c33405cfcec900dbf91c93c1501fce9ee3d899ae9e042d",
         "locator": {
           "kind": "symbol",
@@ -235,7 +235,7 @@
     },
     {
       "anchor": {
-        "blob": "bb94e003292e3a408d3607472dacd850e1f8da65",
+        "blob": "24598572b515687b4e415de48aa409de53d81d1f",
         "content": "sha256:81973936fcd0ce8ad6257098b6fd7b8f33b8c63302e7ea464a98092415ff86f1",
         "locator": {
           "kind": "symbol",
@@ -253,7 +253,7 @@
     },
     {
       "anchor": {
-        "blob": "bb94e003292e3a408d3607472dacd850e1f8da65",
+        "blob": "24598572b515687b4e415de48aa409de53d81d1f",
         "content": "sha256:a4bfba333df278c94115c450a4e5f448cd733666f83696b2e21e3f11659b69dd",
         "locator": {
           "kind": "symbol",
@@ -275,7 +275,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "bb94e003292e3a408d3607472dacd850e1f8da65",
+            "blob": "24598572b515687b4e415de48aa409de53d81d1f",
             "content": "sha256:f0203df5014bb49872c33405cfcec900dbf91c93c1501fce9ee3d899ae9e042d",
             "locator": {
               "kind": "symbol",
@@ -291,7 +291,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "bb94e003292e3a408d3607472dacd850e1f8da65",
+            "blob": "24598572b515687b4e415de48aa409de53d81d1f",
             "content": "sha256:476ed0ab6ce7610c55491e0e93898501945429e429ce6336f035ddefc2298730",
             "locator": {
               "kind": "symbol",
@@ -307,7 +307,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "bb94e003292e3a408d3607472dacd850e1f8da65",
+            "blob": "24598572b515687b4e415de48aa409de53d81d1f",
             "content": "sha256:2bea560c5f336151a88c4c7f72860d44ec8070841375b4f546fdeee71624801b",
             "locator": {
               "kind": "symbol",
@@ -323,7 +323,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "bb94e003292e3a408d3607472dacd850e1f8da65",
+            "blob": "24598572b515687b4e415de48aa409de53d81d1f",
             "content": "sha256:a4bfba333df278c94115c450a4e5f448cd733666f83696b2e21e3f11659b69dd",
             "locator": {
               "kind": "symbol",
@@ -339,7 +339,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "bb94e003292e3a408d3607472dacd850e1f8da65",
+            "blob": "24598572b515687b4e415de48aa409de53d81d1f",
             "content": "sha256:1ed5da5ede7f48725e74c2a3ea1173d75721a93a9528babd41cbe4811d09581c",
             "locator": {
               "kind": "symbol",
@@ -355,11 +355,10 @@
       "targets": [
         {
           "anchor": {
-            "blob": "bb94e003292e3a408d3607472dacd850e1f8da65",
-            "content": "sha256:ceb3fbb910fe4c87d1148f93e07b23d24ff2a190a43ce694e9ecc1629f7121d5",
+            "blob": "24598572b515687b4e415de48aa409de53d81d1f",
+            "content": "sha256:ef8fad04b7a4f5410bd839faaddbb9682e99e86608c6f09a27e52545453ae6bd",
             "locator": {
-              "kind": "symbol",
-              "name": "ReviewSurface"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -388,7 +387,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "bb94e003292e3a408d3607472dacd850e1f8da65",
+            "blob": "24598572b515687b4e415de48aa409de53d81d1f",
             "content": "sha256:7ba95a490e980028e422bf3066e029dd0428cc10865cf72070ea790564bf465c",
             "locator": {
               "kind": "symbol",
@@ -404,7 +403,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "bb94e003292e3a408d3607472dacd850e1f8da65",
+            "blob": "24598572b515687b4e415de48aa409de53d81d1f",
             "content": "sha256:f2c30d47debec55b8b4d1fd43a24e7fe8efb6a6a1000ed13501721bdcfdb4f90",
             "locator": {
               "kind": "symbol",
@@ -420,7 +419,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "bb94e003292e3a408d3607472dacd850e1f8da65",
+            "blob": "24598572b515687b4e415de48aa409de53d81d1f",
             "content": "sha256:76c5dd85b8b9ae6c8c17d994c119e81752adaea4863959d8f62aa2516211d09d",
             "locator": {
               "kind": "symbol",
@@ -436,7 +435,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "bb94e003292e3a408d3607472dacd850e1f8da65",
+            "blob": "24598572b515687b4e415de48aa409de53d81d1f",
             "content": "sha256:91d401c4eb4926d520b2fea9ed917d256bbd09cfe588e9bcb66b5905895ead57",
             "locator": {
               "kind": "symbol",
@@ -452,7 +451,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "bb94e003292e3a408d3607472dacd850e1f8da65",
+            "blob": "24598572b515687b4e415de48aa409de53d81d1f",
             "content": "sha256:2a9d5b3550cb70ec5aba6fd5a8a019706a1d4a96e59cdb4c424ba627e44d877b",
             "locator": {
               "kind": "symbol",
@@ -468,7 +467,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "bb94e003292e3a408d3607472dacd850e1f8da65",
+            "blob": "24598572b515687b4e415de48aa409de53d81d1f",
             "content": "sha256:2ac3593c79bf492bd67cbcf9f54f6d06f295da3959010408194f1709f081012c",
             "locator": {
               "kind": "symbol",
@@ -501,7 +500,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9583164e407b2b0ceb6df90ee3694633f7ca74a1",
+            "blob": "4d59650168c6a43c0457a9f469e87e45b813292a",
             "content": "sha256:68997ff7d2cf0414b3c209e1f50fa32b2716ce3a54d5f5064231efaa6ff66f27",
             "locator": {
               "kind": "symbol",
@@ -562,7 +561,7 @@
         },
         {
           "anchor": {
-            "blob": "bb94e003292e3a408d3607472dacd850e1f8da65",
+            "blob": "24598572b515687b4e415de48aa409de53d81d1f",
             "content": "sha256:a4bfba333df278c94115c450a4e5f448cd733666f83696b2e21e3f11659b69dd",
             "locator": {
               "kind": "symbol",
@@ -573,7 +572,7 @@
         },
         {
           "anchor": {
-            "blob": "bb94e003292e3a408d3607472dacd850e1f8da65",
+            "blob": "24598572b515687b4e415de48aa409de53d81d1f",
             "content": "sha256:f0203df5014bb49872c33405cfcec900dbf91c93c1501fce9ee3d899ae9e042d",
             "locator": {
               "kind": "symbol",
@@ -589,7 +588,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "bb94e003292e3a408d3607472dacd850e1f8da65",
+            "blob": "24598572b515687b4e415de48aa409de53d81d1f",
             "content": "sha256:2ac3593c79bf492bd67cbcf9f54f6d06f295da3959010408194f1709f081012c",
             "locator": {
               "kind": "symbol",
@@ -605,7 +604,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "bb94e003292e3a408d3607472dacd850e1f8da65",
+            "blob": "24598572b515687b4e415de48aa409de53d81d1f",
             "content": "sha256:3c5cd7a6164ab032af1f4e555b632f830d0787a1eba0a38caac7023eac9f7cd5",
             "locator": {
               "kind": "symbol",
@@ -621,7 +620,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "bb94e003292e3a408d3607472dacd850e1f8da65",
+            "blob": "24598572b515687b4e415de48aa409de53d81d1f",
             "content": "sha256:1ed5da5ede7f48725e74c2a3ea1173d75721a93a9528babd41cbe4811d09581c",
             "locator": {
               "kind": "symbol",
@@ -637,23 +636,10 @@
       "targets": [
         {
           "anchor": {
-            "blob": "bb94e003292e3a408d3607472dacd850e1f8da65",
-            "content": "sha256:7eb4320d096d15812d412b43403c5195111312be5b6b9b32f4c59fb339568f6c",
+            "blob": "24598572b515687b4e415de48aa409de53d81d1f",
+            "content": "sha256:ef8fad04b7a4f5410bd839faaddbb9682e99e86608c6f09a27e52545453ae6bd",
             "locator": {
-              "kind": "symbol",
-              "name": "useHeldPageLane"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "bb94e003292e3a408d3607472dacd850e1f8da65",
-            "content": "sha256:188157bd13e11d9f11f3b3be2ff8df658198fd8300473a865999cb6e99c4482e",
-            "locator": {
-              "end": 472,
-              "kind": "line_range",
-              "start": 445
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -665,7 +651,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "bb94e003292e3a408d3607472dacd850e1f8da65",
+            "blob": "24598572b515687b4e415de48aa409de53d81d1f",
             "content": "sha256:81973936fcd0ce8ad6257098b6fd7b8f33b8c63302e7ea464a98092415ff86f1",
             "locator": {
               "kind": "symbol",
@@ -681,7 +667,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "bb94e003292e3a408d3607472dacd850e1f8da65",
+            "blob": "24598572b515687b4e415de48aa409de53d81d1f",
             "content": "sha256:476ed0ab6ce7610c55491e0e93898501945429e429ce6336f035ddefc2298730",
             "locator": {
               "kind": "symbol",
@@ -697,7 +683,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "bb94e003292e3a408d3607472dacd850e1f8da65",
+            "blob": "24598572b515687b4e415de48aa409de53d81d1f",
             "content": "sha256:f0203df5014bb49872c33405cfcec900dbf91c93c1501fce9ee3d899ae9e042d",
             "locator": {
               "kind": "symbol",
@@ -713,7 +699,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "bb94e003292e3a408d3607472dacd850e1f8da65",
+            "blob": "24598572b515687b4e415de48aa409de53d81d1f",
             "content": "sha256:f0203df5014bb49872c33405cfcec900dbf91c93c1501fce9ee3d899ae9e042d",
             "locator": {
               "kind": "symbol",
@@ -731,6 +717,21 @@
               "name": "useReviewMemoryWatch"
             },
             "path": "dashboard/src/data/reviewMemoryWatch.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "58": {
+      "note": "The review surface mounts `CanvasPanel` for the comparison on screen: `pageComparison` builds that comparison from the payload's own lineage number and history, and `evidenceSelection` opens a destination the saved page asked for only when its comparison reference and number still match the shown payload, keeping the tree the reader walked and selecting no substitute record. [58]\n\nAnchor: `evidenceSelection`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "24598572b515687b4e415de48aa409de53d81d1f",
+            "content": "sha256:ef8fad04b7a4f5410bd839faaddbb9682e99e86608c6f09a27e52545453ae6bd",
+            "locator": {
+              "kind": "file"
+            }
           },
           "kind": "code"
         }

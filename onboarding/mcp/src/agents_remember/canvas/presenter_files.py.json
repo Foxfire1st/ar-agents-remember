@@ -1,0 +1,58 @@
+{
+  "path": "mcp/src/agents_remember/canvas/presenter_files.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "d64a86e1fa6827dfb4c534092977940f582f59a8",
+        "content": "sha256:13aaed8b871531356a12c2046231dc37b19ef66f6f898a05401bdedf0432ebdc",
+        "locator": {
+          "kind": "symbol",
+          "name": "directory_fd"
+        }
+      },
+      "id": "RLZ-F75SYS",
+      "invariant": "INV-FQC46N",
+      "origin": {
+        "handoffEntry": "MIK-R105-r2-confined-paths",
+        "leaf": "260928-MIK-L104"
+      },
+      "rationale": "Descriptor anchoring is what keeps a renamed directory from redirecting a read after admission.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "A directory is opened once and every child is opened relative to a held descriptor.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d64a86e1fa6827dfb4c534092977940f582f59a8",
+            "content": "sha256:13aaed8b871531356a12c2046231dc37b19ef66f6f898a05401bdedf0432ebdc",
+            "locator": {
+              "kind": "symbol",
+              "name": "directory_fd"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Enumeration yields children while their parent descriptor remains held.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d64a86e1fa6827dfb4c534092977940f582f59a8",
+            "content": "sha256:ca7f0f5e0832c4a1124f06fd320db6e39766cd5076b267c6e75fd48eef7b8e69",
+            "locator": {
+              "kind": "symbol",
+              "name": "scan_files"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

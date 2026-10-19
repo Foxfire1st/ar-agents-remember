@@ -1,0 +1,109 @@
+{
+  "path": "mcp/tests/test_canvas_kit.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "e32e639236d1c2f829c00d1c4bfa1bbc356d16ea",
+        "content": "sha256:a6b9b89ecf818e3a685d29dc7f7e62a534473d53426bf9d99f3c541ba66ddbee",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_every_shipped_byte_is_accounted_for_by_size_and_digest"
+        }
+      },
+      "facet": "Every shipped kit byte is accounted for by size and digest.",
+      "id": "PRF-4SKBB2",
+      "invariant": "INV-R38XGA",
+      "origin": {
+        "handoffEntry": "MIK-R104-r13-kit-verification-points",
+        "leaf": "260928-MIK-L104"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "e32e639236d1c2f829c00d1c4bfa1bbc356d16ea",
+        "content": "sha256:a6b9b89ecf818e3a685d29dc7f7e62a534473d53426bf9d99f3c541ba66ddbee",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_every_shipped_byte_is_accounted_for_by_size_and_digest"
+        }
+      },
+      "facet": "Every shipped kit byte is accounted for by size and digest.",
+      "id": "PRF-5VZ3V4",
+      "invariant": "INV-R38XGA",
+      "origin": {
+        "handoffEntry": "MIK-R104-r13-kit-toolbox",
+        "leaf": "260928-MIK-L104"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "e32e639236d1c2f829c00d1c4bfa1bbc356d16ea",
+        "content": "sha256:a6b9b89ecf818e3a685d29dc7f7e62a534473d53426bf9d99f3c541ba66ddbee",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_every_shipped_byte_is_accounted_for_by_size_and_digest"
+        }
+      },
+      "facet": "Every shipped kit byte is accounted for by size and digest.",
+      "id": "PRF-EV9CGA",
+      "invariant": "INV-R38XGA",
+      "origin": {
+        "handoffEntry": "MIK-R104-r13-kit-toolbox-a9",
+        "leaf": "260928-MIK-L104"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "e32e639236d1c2f829c00d1c4bfa1bbc356d16ea",
+        "content": "sha256:a6b9b89ecf818e3a685d29dc7f7e62a534473d53426bf9d99f3c541ba66ddbee",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_every_shipped_byte_is_accounted_for_by_size_and_digest"
+        }
+      },
+      "facet": "Every shipped kit byte is accounted for by size and digest.",
+      "id": "PRF-J4TBSE",
+      "invariant": "INV-R38XGA",
+      "origin": {
+        "handoffEntry": "MIK-R104-r13-kit-manifest",
+        "leaf": "260928-MIK-L104"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The case `test_the_manifest_ships_the_named_minimum_kit_and_nothing_more` protects this behaviour.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e32e639236d1c2f829c00d1c4bfa1bbc356d16ea",
+            "content": "sha256:06c56d3b5eec4db3af9166db9d6bc1165e03ac6962330db77c990ab54af934f2",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_manifest_ships_the_named_minimum_kit_and_nothing_more"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The case `test_every_shipped_byte_is_accounted_for_by_size_and_digest` protects this behaviour.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e32e639236d1c2f829c00d1c4bfa1bbc356d16ea",
+            "content": "sha256:a6b9b89ecf818e3a685d29dc7f7e62a534473d53426bf9d99f3c541ba66ddbee",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_every_shipped_byte_is_accounted_for_by_size_and_digest"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -18,6 +18,8 @@ The bridge module carries native host integration loaded beside the runtime. A p
 
 `workspace-open` dispatches to `paseo_workspaces.mjs`, which owns task workspace keys, archive-successor traversal and placement. The bridge imports its unchanged text-validation and typed-failure helpers from `paseo_bridge_primitives.mjs`; provider/model resolution, agent creation, live-agent listing and reply transport retain their own owners. Extraction does not move actors or change launch permission policy.
 
+The header documents `presenter-transcript` as a read of up to 200 timeline entries and `presenter-cancel` as cancellation of the named presenter. These commands remain separate from AR role execution; this header change adds no command implementation.
+
 ## Evidence
 
 
@@ -26,5 +28,9 @@ The bridge module carries native host integration loaded beside the runtime. A p
 - The command table delegates workspace-open to the imported workspace owner while retaining the bridge command surface. [4]
 
 - The native bridge returns the assembled whole final reply without a character cut; the separate delivery policy owns truncation and filing. [1]
+
 - `agents-live` reads unarchived agent IDs through `daemon.fetchAgents`, at most ten pages of 200 entries. It reports `complete` only when the runtime explicitly says `hasMore: false`; a bound or missing next cursor ends the read without establishing absence. It neither resumes agents nor reads their timelines. Whole-reply transport remains separately owned by `closingText`. [2]
+
 - A still-loading provider row retains discovered mode/default-mode/fetched-at fields, defaulting only absent values. [3]
+
+- The bridge carries the review-presenter confinement and its two commands: a launch whose `ar.capability` is `review-presenter` is refused with `presenter_confinement_unavailable` unless the provider is Claude and the only applied tool server is `review-presenter`, and it then passes `tools: ''` with `strict-mcp-config` so the capability's own read/write tools are the entire authority on every resume; `presenter-transcript` and `presenter-cancel` are the bridge's own operations for reading an attempt's conversation and cancelling it. \[5] [5]

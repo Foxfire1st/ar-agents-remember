@@ -1,0 +1,22 @@
+{
+  "path": "mcp/src/agents_remember/package_data/canvas/kit/shiki/4.5.0/LICENSES/regex-recursion.txt",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The licence text shipped with the `shiki` entry.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "42eabea29129060cd33fcddc33cd890c5ac57900",
+            "content": "sha256:3d19c2b6246b3072547af2bd05e6b4c09bd3d15955590f1f1e1d20382c919a49",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

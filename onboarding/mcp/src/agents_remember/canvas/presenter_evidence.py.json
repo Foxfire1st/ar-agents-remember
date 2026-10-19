@@ -1,0 +1,23 @@
+{
+  "path": "mcp/src/agents_remember/canvas/presenter_evidence.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The presenter reads only through the admitted packet's exact-tree reader.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d3a64bc0dd7910d50a5abf74a86d34223544a9e9",
+            "content": "sha256:9fcc520703377316e5718d680fae4c9d66f9fdd95c4685ece483fb8423912664",
+            "locator": {
+              "kind": "symbol",
+              "name": "source"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

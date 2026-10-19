@@ -1,0 +1,58 @@
+{
+  "admission": {
+    "criteria": [
+      "real_alternatives",
+      "constrains_future_work"
+    ],
+    "justification": "Two readings were seriously considered and the authority chose the second; the ruling constrains later work, which must not re-dress the kit as a containment boundary."
+  },
+  "alternatives": [
+    {
+      "option": "Keep the pinned kit as a security boundary, with its verification points recorded as guarantees.",
+      "reason": "Withdrawn by the Architect's amendment 27cb1c00: the kit is the presenter's toolbox, not a boundary.",
+      "reconsider_when": "If an authority withdraws amendment 27cb1c00 and rules the published kit a containment boundary again.",
+      "status": "rejected"
+    },
+    {
+      "option": "Record the pinned kit as the presenter's toolbox, keeping the manifest check as data integrity.",
+      "reason": "This is the authority's ruling and matches what the code at 98923b28 does.",
+      "status": "chosen"
+    }
+  ],
+  "consequences": [
+    "Later memory must not describe the kit as a containment boundary or its manifest check as a guarantee against the page.",
+    "The publication refusal of an unknown or altered kit path remains recorded as what the code does, pending any removal by the Manager or Architect."
+  ],
+  "context": "An earlier reading treated the pinned kit as a boundary and the publication refusal as one of its guarantees. The Architect's amendment 27cb1c00 withdraws L104-B25 and rules the kit to be the presenter's toolbox: it is data a page may use, verified against the manifest so the toolbox is honest, and it confines nothing. The code at 98923b28 still refuses an unknown or altered kit path at publication; that refusal is recorded as what the code does, not as a boundary the page is held inside.",
+  "decider": "architect 97e0320d (amendment 27cb1c00)",
+  "id": "DEC-6J7MCM",
+  "links": [
+    {
+      "relation": "explains",
+      "target": {
+        "blob": "2b341838f58cf55ee4d66c3fde9c14bfea4125de",
+        "content": "sha256:c48352eb209e0648b6341f5068b7ed1c033b2fcc9fb595552231c0ba78e916af",
+        "locator": {
+          "kind": "symbol",
+          "name": "_validate_kit_assets"
+        },
+        "path": "mcp/src/agents_remember/canvas/presenter_assets.py"
+      }
+    }
+  ],
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "role-reports/worker/e5b1c9d4-7a26-4f83-b0c1-9d47e2a8f350/role-launch/L104-A8-authority-amendment-27cb1c00.json"
+      ],
+      "path": "b25-toolbox.json"
+    },
+    "handoffEntry": "L104-B25-toolbox",
+    "leaf": "260928-MIK-L104",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-decision/v1",
+  "status": "active",
+  "supersedes": []
+}

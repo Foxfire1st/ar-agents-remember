@@ -1,0 +1,74 @@
+{
+  "path": "mcp/src/agents_remember/canvas/presenter_native.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "c7350eca2348b7149470ba253b37706ced920b5d",
+        "content": "sha256:6a910a1837a8277d55ebd9299e9abe931c7efa5cad92988aed5b7ce4f45e7a49",
+        "locator": {
+          "kind": "symbol",
+          "name": "NativePresenterHarness"
+        }
+      },
+      "id": "RLZ-33JRW1",
+      "invariant": "INV-GWMA1V",
+      "origin": {
+        "handoffEntry": "L104-r1-gwma1v-confine",
+        "leaf": "260928-MIK-L104"
+      },
+      "rationale": "`NativePresenterHarness` is the shipped default runner and its `start` launches the confined tool server; that launch is what confines an attempt's writes, which `qualified_launch` alone does not do.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The launch has only a dedicated confined tool server.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c7350eca2348b7149470ba253b37706ced920b5d",
+            "content": "sha256:cce975533d7c1d6cbbe5dbf0001a3fba6ebeb402def0b3ad7e2dc948f4ce2d36",
+            "locator": {
+              "kind": "symbol",
+              "name": "qualified_launch"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "An uncertain start is reconciled by repeating the immutable create, not by relaunching.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c7350eca2348b7149470ba253b37706ced920b5d",
+            "content": "sha256:15fc9feb453d4f5119d56c127ea5789e70861ceda1d0afcbfef8a65a13ddf687",
+            "locator": {
+              "kind": "symbol",
+              "name": "reconcile"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The author's tool authority is the named tool set only.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c7350eca2348b7149470ba253b37706ced920b5d",
+            "content": "sha256:b84cb11881205e3dfecd6547abea24f46697e5996fef4e3102f78b9a3b343e00",
+            "locator": {
+              "kind": "symbol",
+              "name": "TOOL_NAMES"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

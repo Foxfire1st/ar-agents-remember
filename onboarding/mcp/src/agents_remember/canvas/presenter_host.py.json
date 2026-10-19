@@ -1,0 +1,55 @@
+{
+  "path": "mcp/src/agents_remember/canvas/presenter_host.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "One attempt's prepared folder is the only place the harness may write.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "160053d125eda1668b62aefd3cac008c0af4422e",
+            "content": "sha256:4baeff4d6d3e71f7bf3257df89a5e636359387a2ea43fb5085edeb6c3e87ec25",
+            "locator": {
+              "kind": "symbol",
+              "name": "HostWorkspace"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "A host receipt is recorded, not invented.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "160053d125eda1668b62aefd3cac008c0af4422e",
+            "content": "sha256:760120d9bff909d851f340edc47b141d4d4fcc59f6faa60b1412f8cc1f9d10b5",
+            "locator": {
+              "kind": "symbol",
+              "name": "HostReceipt"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Authoring documentation is never review evidence.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "160053d125eda1668b62aefd3cac008c0af4422e",
+            "content": "sha256:a1ddd67ed749aff195d78d3d90571400e2004dee7c07723ed7122e7e41ec3bb4",
+            "locator": {
+              "kind": "symbol",
+              "name": "DocumentationTools"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

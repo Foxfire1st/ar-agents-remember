@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "dde4a9aebceeabecba20e971cbf210ca2e00e951",
+        "blob": "3ed0b06b535ec1eee654b38555686c2a173d8a10",
         "content": "sha256:dbea58a669fa481ce7b9e492b6dae659ebdcd12f2ac32e441d3c99cbdb8035cd",
         "locator": {
           "kind": "symbol",
@@ -21,8 +21,8 @@
     },
     {
       "anchor": {
-        "blob": "dde4a9aebceeabecba20e971cbf210ca2e00e951",
-        "content": "sha256:03e517efdfd1697883375f4c88f75e30513825fce55d763322aa6cfab35c0cab",
+        "blob": "3ed0b06b535ec1eee654b38555686c2a173d8a10",
+        "content": "sha256:531982e596b540a1d73da6a12c8f9da12f0321e6b934eab0d453741a4b13e767",
         "locator": {
           "kind": "file"
         }
@@ -38,7 +38,7 @@
     },
     {
       "anchor": {
-        "blob": "dde4a9aebceeabecba20e971cbf210ca2e00e951",
+        "blob": "3ed0b06b535ec1eee654b38555686c2a173d8a10",
         "content": "sha256:83dc3d5d9258c885b9054f7ede52253c2c01c2ef1894983e70bfcdbf5e12fda4",
         "locator": {
           "kind": "symbol",
@@ -56,7 +56,7 @@
     },
     {
       "anchor": {
-        "blob": "dde4a9aebceeabecba20e971cbf210ca2e00e951",
+        "blob": "3ed0b06b535ec1eee654b38555686c2a173d8a10",
         "content": "sha256:edf08077df33dca884d1cf6a6eac91966d4d92395739fc691acfbf1e5ae1cf16",
         "locator": {
           "kind": "symbol",
@@ -107,6 +107,21 @@
         }
       ]
     },
+    "11": {
+      "note": "`CAPABILITY_IDS` names the non-seat capabilities that carry a launch block (`review-presenter`): their choices live under `orchestration.roles.<capability>` with the same per-field provenance and refusal rules as a seat, while the capsule, dispatch and level tables stay seat-only. [11]\n\nAnchor: `CAPABILITY_IDS`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3ed0b06b535ec1eee654b38555686c2a173d8a10",
+            "content": "sha256:531982e596b540a1d73da6a12c8f9da12f0321e6b934eab0d453741a4b13e767",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
     "2": {
       "note": "Frozen implementation of AgenticSettings supporting the stated file behavior.",
       "targets": [
@@ -128,7 +143,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "dde4a9aebceeabecba20e971cbf210ca2e00e951",
+            "blob": "3ed0b06b535ec1eee654b38555686c2a173d8a10",
             "content": "sha256:1c87ebacfdfb82c5ac6e22f299d3aa27e220bbfe3b98ea7e7cd773626f6c07ab",
             "locator": {
               "kind": "symbol",
@@ -144,7 +159,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "dde4a9aebceeabecba20e971cbf210ca2e00e951",
+            "blob": "3ed0b06b535ec1eee654b38555686c2a173d8a10",
             "content": "sha256:dbea58a669fa481ce7b9e492b6dae659ebdcd12f2ac32e441d3c99cbdb8035cd",
             "locator": {
               "kind": "symbol",
@@ -160,7 +175,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "dde4a9aebceeabecba20e971cbf210ca2e00e951",
+            "blob": "3ed0b06b535ec1eee654b38555686c2a173d8a10",
             "content": "sha256:32e75a75a9917cfc0627d9b0156461db5ba2a59a23ddd6316e0ad4b09af90320",
             "locator": {
               "kind": "symbol",
@@ -176,7 +191,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "dde4a9aebceeabecba20e971cbf210ca2e00e951",
+            "blob": "3ed0b06b535ec1eee654b38555686c2a173d8a10",
             "content": "sha256:a4c377a67913d36f82ebd5b5c2625c977d0591870d79af7815a7735151c9fc4d",
             "locator": {
               "kind": "symbol",
@@ -209,7 +224,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9dbb6bbbe22bedfb9a73df0815fd4a48fd2af7f8",
+            "blob": "87f02f4e0cd8794a4b65bb733206c164a7809c1a",
             "content": "sha256:334a42eb2560a9bc948417c6465a22b915f7282c2fb77ac65ffd8818fd6e0cd3",
             "locator": {
               "kind": "symbol",

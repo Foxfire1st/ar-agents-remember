@@ -1,0 +1,58 @@
+{
+  "path": "mcp/src/agents_remember/canvas/readiness.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "974e15cbec1e41734012d6ce3a11b9edb0dca65f",
+        "content": "sha256:37742ed31535a5edc81a7b683180caec795cdc2f532f9f2e6de1ebebafbbebe9",
+        "locator": {
+          "kind": "symbol",
+          "name": "check_page"
+        }
+      },
+      "id": "RLZ-MBE2GJ",
+      "invariant": "INV-40VGBY",
+      "origin": {
+        "handoffEntry": "MIK-R104-r14-readiness-and-load",
+        "leaf": "260928-MIK-L104"
+      },
+      "rationale": "The static check follows the page's own references and refuses what the revision does not carry.",
+      "role": "primary-authority"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The static check refuses a page that names something its revision does not carry.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "974e15cbec1e41734012d6ce3a11b9edb0dca65f",
+            "content": "sha256:37742ed31535a5edc81a7b683180caec795cdc2f532f9f2e6de1ebebafbbebe9",
+            "locator": {
+              "kind": "symbol",
+              "name": "check_page"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "A report is ready only when no check failed.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "974e15cbec1e41734012d6ce3a11b9edb0dca65f",
+            "content": "sha256:24929849582bc54de43daca04007e41c3807bcea5a7984f08f10bc2145503135",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReadinessReport"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,54 @@
+{
+  "path": "mcp/tests/canvas_host_test_support.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The support builds its published revisions through the real publication path.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a6661664ed924f1931d4127db2f81c3250352c50",
+            "content": "sha256:b9a66f6fe65f9bedfd628def4ff9ca14f0a09bbf3d3dba4451c2c4c75821c415",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Consumer proof fixtures use fabricated frontend bytes with real source bindings; they are not browser observations.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a6661664ed924f1931d4127db2f81c3250352c50",
+            "content": "sha256:4af7d6246652bc5027a61c484b073269f111832a96e80441f6dceb8aa85de4b2",
+            "locator": {
+              "kind": "symbol",
+              "name": "proof_frontend"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "The consumer record is rebound to its fixture using the actual binding and digest functions.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a6661664ed924f1931d4127db2f81c3250352c50",
+            "content": "sha256:b8c812219786b837ec5b84f94e2cf0e2e73ed3a0557c4951086b3713bc95232d",
+            "locator": {
+              "kind": "symbol",
+              "name": "proof_bundle"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

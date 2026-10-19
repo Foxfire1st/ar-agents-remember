@@ -33,3 +33,5 @@ No external Domain Documentation source or fresh executed acceptance is inferred
 
 
 - The new roles table/paragraphs document one user-layer, nonnested stepUp alternative, default positive afterTries=3 only for Worker/Curator, code versus memory recorded-round tries, record-only nontries and exact-key refusals. The next start validates catalog choices before normal idle-seat retirement; active turn/prompt refuses. Explicit step_up reason/UI Step up use the same alternative without adding permission authority. Cross-harness/model omissions use identified host defaults, durable decisions retain task choice, and reviewer limits/findings do not reset. Removing the alternative changes the next start, not the running actor. [6]
+
+- The same `orchestration.roles` family admits the non-seat capability id `review-presenter`: every rule above validates its row, but it is never dispatchable as a seat, it reads the launch choices a capability can act on, and a row naming `stepUp` refuses that capability's launch by name — a capability has no seat replacement ladder — while `notes`, `featureValues` and `serviceTier` are applied through the native launch. \[7] [7]

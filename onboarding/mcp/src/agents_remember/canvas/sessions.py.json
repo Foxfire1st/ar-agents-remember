@@ -1,0 +1,58 @@
+{
+  "path": "mcp/src/agents_remember/canvas/sessions.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "cf3487f3615147bd03a0cb9fbc6e2d687f11a6ff",
+        "content": "sha256:beb3e797793e1e64ac27445fecd496bdc7be35e566a4fba285c45b4a375e3d4f",
+        "locator": {
+          "kind": "symbol",
+          "name": "revoke"
+        }
+      },
+      "id": "RLZ-40Z0EH",
+      "invariant": "INV-ESF2CT",
+      "origin": {
+        "handoffEntry": "MIK-R104-r3-document-bound-channel",
+        "leaf": "260928-MIK-L104"
+      },
+      "rationale": "Revocation is the host's side of departure: it ends the channel and keeps the reason rather than the content.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "One session is created per frame and bound to frame, revision and comparison.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cf3487f3615147bd03a0cb9fbc6e2d687f11a6ff",
+            "content": "sha256:c3c334b012a3c58162270e2adb1e19009081c2ab18ae1c2e77861dbb1c46a2e0",
+            "locator": {
+              "kind": "symbol",
+              "name": "SessionRegistry"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Revocation names its reason and keeps no content.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cf3487f3615147bd03a0cb9fbc6e2d687f11a6ff",
+            "content": "sha256:beb3e797793e1e64ac27445fecd496bdc7be35e566a4fba285c45b4a375e3d4f",
+            "locator": {
+              "kind": "symbol",
+              "name": "revoke"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

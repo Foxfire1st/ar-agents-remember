@@ -1,0 +1,76 @@
+{
+  "path": "mcp/src/agents_remember/canvas/protocol.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "4e843505300eca82d83e98f7f01d37d43c7af271",
+        "content": "sha256:0ce612b1982ae978bcfe81011a96916ddcbf5b72f61e123afebc87998c51357b",
+        "locator": {
+          "kind": "symbol",
+          "name": "RequestLedger"
+        }
+      },
+      "id": "RLZ-8S1JZ1",
+      "invariant": "INV-N7SK8E",
+      "origin": {
+        "handoffEntry": "MIK-R104-r4-narrow-protocol",
+        "leaf": "260928-MIK-L104"
+      },
+      "rationale": "The ledger charges before parsing, which is what bounds hostile burst work.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "4e843505300eca82d83e98f7f01d37d43c7af271",
+        "content": "sha256:99c2debffd191b934cdb508e136796f9ff6367dda6d9db448d087287fce75502",
+        "locator": {
+          "kind": "symbol",
+          "name": "parse_frame_message"
+        }
+      },
+      "id": "RLZ-YM3CWJ",
+      "invariant": "INV-N7SK8E",
+      "origin": {
+        "handoffEntry": "MIK-R104-r4-narrow-protocol",
+        "leaf": "260928-MIK-L104"
+      },
+      "rationale": "One parser decides version, session, comparison, revision and size and refuses what a parser can see; replay, the rate ceiling and exhaustion are refused later by `RequestLedger.admit`, which records the identity `charge` already debited, so the parser is not where a replay is decided.",
+      "role": "primary-authority"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "One protocol version validates an envelope against the session's binding before any effect.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4e843505300eca82d83e98f7f01d37d43c7af271",
+            "content": "sha256:99c2debffd191b934cdb508e136796f9ff6367dda6d9db448d087287fce75502",
+            "locator": {
+              "kind": "symbol",
+              "name": "parse_frame_message"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "A request is debited from the session's rate before the caller parses it.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4e843505300eca82d83e98f7f01d37d43c7af271",
+            "content": "sha256:0ce612b1982ae978bcfe81011a96916ddcbf5b72f61e123afebc87998c51357b",
+            "locator": {
+              "kind": "symbol",
+              "name": "RequestLedger"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

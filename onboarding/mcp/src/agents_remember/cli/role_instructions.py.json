@@ -3,7 +3,43 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "cfbfd5569a6b126defa08f9caecbfeb7b0069b48",
+        "blob": "8bce101920d5e32ffb04dd652600f772a0554a5e",
+        "content": "sha256:d77a224065797d0c7b8d98a22453f851334ecd92fa986881d234fafa9f7cbd7c",
+        "locator": {
+          "kind": "symbol",
+          "name": "capability_copy_drift"
+        }
+      },
+      "id": "RLZ-33XGN3",
+      "invariant": "INV-SE4ECQ",
+      "origin": {
+        "handoffEntry": "L104-r3-capability-text",
+        "leaf": "260928-MIK-L104"
+      },
+      "rationale": "The drift check is what makes the installed copy a projection of the canonical source rather than a second authority.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "8bce101920d5e32ffb04dd652600f772a0554a5e",
+        "content": "sha256:927d8fca61d0b5a7909172b8c4a112153f6feb1f99db54156854b8b522970097",
+        "locator": {
+          "kind": "symbol",
+          "name": "load_capability_resource"
+        }
+      },
+      "id": "RLZ-82MX8Y",
+      "invariant": "INV-SE4ECQ",
+      "origin": {
+        "handoffEntry": "L104-r3-capability-text",
+        "leaf": "260928-MIK-L104"
+      },
+      "rationale": "The read is where the budget and wording are enforced, so a capability cannot be started with text that was not shipped.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "8bce101920d5e32ffb04dd652600f772a0554a5e",
         "content": "sha256:ef6233c30c7bbbb0cb0364d315ac24e3f50e33e55a05ea06615f3a3db596f359",
         "locator": {
           "kind": "symbol",
@@ -21,7 +57,7 @@
     },
     {
       "anchor": {
-        "blob": "cfbfd5569a6b126defa08f9caecbfeb7b0069b48",
+        "blob": "8bce101920d5e32ffb04dd652600f772a0554a5e",
         "content": "sha256:d1798e85dd6aaccc156de67602bac96d25f21f9de216d918c31de1ef944678a9",
         "locator": {
           "kind": "symbol",
@@ -44,7 +80,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "cfbfd5569a6b126defa08f9caecbfeb7b0069b48",
+            "blob": "8bce101920d5e32ffb04dd652600f772a0554a5e",
             "content": "sha256:ef6233c30c7bbbb0cb0364d315ac24e3f50e33e55a05ea06615f3a3db596f359",
             "locator": {
               "kind": "symbol",
@@ -60,7 +96,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "cfbfd5569a6b126defa08f9caecbfeb7b0069b48",
+            "blob": "8bce101920d5e32ffb04dd652600f772a0554a5e",
             "content": "sha256:d1798e85dd6aaccc156de67602bac96d25f21f9de216d918c31de1ef944678a9",
             "locator": {
               "kind": "symbol",
@@ -76,11 +112,26 @@
       "targets": [
         {
           "anchor": {
-            "blob": "cfbfd5569a6b126defa08f9caecbfeb7b0069b48",
+            "blob": "8bce101920d5e32ffb04dd652600f772a0554a5e",
             "content": "sha256:875e07a41c6e03de0d86129862fee5457b27dfb30c0a2c56918150d9f6d2de18",
             "locator": {
               "kind": "symbol",
               "name": "instruction_metadata"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The capability layer reads a non-seat capability's instructions from the installed resource under `CAPABILITY_RESOURCES` and `ar-capability-resource/v1`: `load_capability_resource` enforces the shipped word budget and wording at the read, `compose_capability_capsule` composes a baseline, an addition or a replacement, and `write_generated_capability_copy` with `capability_copy_drift` keep the installed copy a generated projection of the canonical source so a hand-edited copy is refused. [4]\n\nAnchor: `load_capability_resource`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8bce101920d5e32ffb04dd652600f772a0554a5e",
+            "content": "sha256:4d8761a408301b584006b5cff6ab5ae76a55fe5cc49c1f03249314d388d58345",
+            "locator": {
+              "kind": "file"
             }
           },
           "kind": "code"

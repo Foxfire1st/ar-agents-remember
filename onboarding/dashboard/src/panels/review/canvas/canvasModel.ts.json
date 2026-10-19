@@ -1,0 +1,37 @@
+{
+  "path": "dashboard/src/panels/review/canvas/canvasModel.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The phase is derived from the recorded state and the live attempt.\n\nAnchor: None",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3054e83e80a8ad57d3178390c77e506129dcbe42",
+            "content": "sha256:767c68f678aa4a84bef679b34c5e531d68157369cf783e01314259ec1322ef22",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "A saved page keeps its own comparison number and entrypoint.\n\nAnchor: None",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3054e83e80a8ad57d3178390c77e506129dcbe42",
+            "content": "sha256:767c68f678aa4a84bef679b34c5e531d68157369cf783e01314259ec1322ef22",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

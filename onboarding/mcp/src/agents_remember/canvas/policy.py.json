@@ -1,0 +1,146 @@
+{
+  "path": "mcp/src/agents_remember/canvas/policy.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "d0f7530ed99157030a45086691f10b4f65923ded",
+        "content": "sha256:7adfdfa6b900f3f5860ce3a22cc86ad17e24fe13147e35fe8428c55eacbd7a42",
+        "locator": {
+          "kind": "symbol",
+          "name": "document_headers"
+        }
+      },
+      "id": "RLZ-4KXBEZ",
+      "invariant": "INV-K302DH",
+      "origin": {
+        "handoffEntry": "MIK-R104-r2-frame-sandbox",
+        "leaf": "260928-MIK-L104"
+      },
+      "rationale": "The headers are the served form of the policy; a response without them is outside the policy.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "d0f7530ed99157030a45086691f10b4f65923ded",
+        "content": "sha256:c9fb90fdf4f691be27b6947615d8f777616d56df09769e175298c8cef4d0ded2",
+        "locator": {
+          "end": 384,
+          "kind": "line_range",
+          "start": 380
+        }
+      },
+      "id": "RLZ-DKCCKT",
+      "invariant": "INV-6V0ET6",
+      "origin": {
+        "handoffEntry": "MIK-R104-r1-script-gate",
+        "leaf": "260928-MIK-L104"
+      },
+      "rationale": "The digest is what a record can be bound to; without it a record attests to whatever policy happens to be served next.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "d0f7530ed99157030a45086691f10b4f65923ded",
+        "content": "sha256:b537d2abacf2557225dce366a976ffe8dadb8a76933e803195090c9e71815e68",
+        "locator": {
+          "kind": "symbol",
+          "name": "scripts_enabled"
+        }
+      },
+      "id": "RLZ-FY35EV",
+      "invariant": "INV-6V0ET6",
+      "origin": {
+        "handoffEntry": "MIK-R104-r1-script-gate",
+        "leaf": "260928-MIK-L104"
+      },
+      "rationale": "This is the one decision that turns generated script on: it compares the shipped record to the policy being served and answers false when any clause is unmet.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "d0f7530ed99157030a45086691f10b4f65923ded",
+        "content": "sha256:4806da4c8c9e7eb40453aedfeacb5589efebad43e8ad94a81415faf067df2ef6",
+        "locator": {
+          "kind": "symbol",
+          "name": "frame_sandbox"
+        }
+      },
+      "id": "RLZ-T63AYR",
+      "invariant": "INV-K302DH",
+      "origin": {
+        "handoffEntry": "MIK-R104-r2-frame-sandbox",
+        "leaf": "260928-MIK-L104"
+      },
+      "rationale": "The sandbox token set is computed once here so no route can serve a frame with a weaker set.",
+      "role": "primary-authority"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The served policy is hashed into the value a proof record must name.\n\nAnchor: `policy_digest`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d0f7530ed99157030a45086691f10b4f65923ded",
+            "content": "sha256:c9fb90fdf4f691be27b6947615d8f777616d56df09769e175298c8cef4d0ded2",
+            "locator": {
+              "end": 384,
+              "kind": "line_range",
+              "start": 380
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "A frame document is sandboxed without `allow-same-origin`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d0f7530ed99157030a45086691f10b4f65923ded",
+            "content": "sha256:4806da4c8c9e7eb40453aedfeacb5589efebad43e8ad94a81415faf067df2ef6",
+            "locator": {
+              "kind": "symbol",
+              "name": "frame_sandbox"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Generated scripts are enabled only when the shipped proof covers the policy now served.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d0f7530ed99157030a45086691f10b4f65923ded",
+            "content": "sha256:b537d2abacf2557225dce366a976ffe8dadb8a76933e803195090c9e71815e68",
+            "locator": {
+              "kind": "symbol",
+              "name": "scripts_enabled"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Every clause the record does not meet is named.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d0f7530ed99157030a45086691f10b4f65923ded",
+            "content": "sha256:adb8fe739c248a0d135b540b1af0f784129855cf51d4cb5c51c21f78f118f04f",
+            "locator": {
+              "kind": "symbol",
+              "name": "proof_gaps"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

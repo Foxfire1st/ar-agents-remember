@@ -1,0 +1,37 @@
+{
+  "path": "dashboard/src/panels/review/canvas/canvasHooks.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Reading a frame state starts nothing.\n\nAnchor: None",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "467387a2b90dca924acece2053b1792063adaa56",
+            "content": "sha256:da6d78aebf7a2cadff9633f3a16db518b38066b670fd0849ffe6f83761b707e0",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "A live channel is keyed to its exact comparison.\n\nAnchor: None",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "467387a2b90dca924acece2053b1792063adaa56",
+            "content": "sha256:da6d78aebf7a2cadff9633f3a16db518b38066b670fd0849ffe6f83761b707e0",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "3229dfc038ca83b4aaf9202a78c610e19471c3c0",
-        "content": "sha256:89e5ade058c87206179011306caa16ff235cf7ffc5bb792b3936354217a35492",
+        "blob": "9d3aaac0b29e3a14f25634f49bc75bdd33f723dd",
+        "content": "sha256:f000eeed719b211926be2db6d6de5193294a4f7c0d60fd64b24324f31258659a",
         "locator": {
           "kind": "symbol",
           "name": "agentCreation"
@@ -21,7 +21,7 @@
     },
     {
       "anchor": {
-        "blob": "3229dfc038ca83b4aaf9202a78c610e19471c3c0",
+        "blob": "9d3aaac0b29e3a14f25634f49bc75bdd33f723dd",
         "content": "sha256:b1ecf852329029c7701a87f9c9754ca85174c339f7dc95e689f8bbbe31a2547b",
         "locator": {
           "kind": "symbol",
@@ -39,8 +39,8 @@
     },
     {
       "anchor": {
-        "blob": "3229dfc038ca83b4aaf9202a78c610e19471c3c0",
-        "content": "sha256:a851beb609bd79ad68a6abc762ffed5ee4c38b83c17820b7f83df2a229d8ff08",
+        "blob": "9d3aaac0b29e3a14f25634f49bc75bdd33f723dd",
+        "content": "sha256:7cc333bd70aa4a1960ffbfc76827b654d6ddbfd52abc5233745df5e9692bd1ae",
         "locator": {
           "kind": "file"
         }
@@ -56,7 +56,7 @@
     },
     {
       "anchor": {
-        "blob": "3229dfc038ca83b4aaf9202a78c610e19471c3c0",
+        "blob": "9d3aaac0b29e3a14f25634f49bc75bdd33f723dd",
         "content": "sha256:eb965c50d97b4d583cefe1ad5bd54453088164b6884bd14d6eedd34e169811a9",
         "locator": {
           "kind": "symbol",
@@ -74,8 +74,8 @@
     },
     {
       "anchor": {
-        "blob": "3229dfc038ca83b4aaf9202a78c610e19471c3c0",
-        "content": "sha256:89e5ade058c87206179011306caa16ff235cf7ffc5bb792b3936354217a35492",
+        "blob": "9d3aaac0b29e3a14f25634f49bc75bdd33f723dd",
+        "content": "sha256:f000eeed719b211926be2db6d6de5193294a4f7c0d60fd64b24324f31258659a",
         "locator": {
           "kind": "symbol",
           "name": "agentCreation"
@@ -92,7 +92,7 @@
     },
     {
       "anchor": {
-        "blob": "3229dfc038ca83b4aaf9202a78c610e19471c3c0",
+        "blob": "9d3aaac0b29e3a14f25634f49bc75bdd33f723dd",
         "content": "sha256:6c07cdcacec59018a2d37926c78d7c5116144e7adfd092686dc81af532beb3fb",
         "locator": {
           "kind": "symbol",
@@ -110,7 +110,7 @@
     },
     {
       "anchor": {
-        "blob": "3229dfc038ca83b4aaf9202a78c610e19471c3c0",
+        "blob": "9d3aaac0b29e3a14f25634f49bc75bdd33f723dd",
         "content": "sha256:1eb47e79656d46d170216bb1f9900e74a177c1225bbc89c59edaf3309a15c509",
         "locator": {
           "kind": "symbol",
@@ -128,7 +128,7 @@
     },
     {
       "anchor": {
-        "blob": "3229dfc038ca83b4aaf9202a78c610e19471c3c0",
+        "blob": "9d3aaac0b29e3a14f25634f49bc75bdd33f723dd",
         "content": "sha256:7a10d57d523966bba3cebe6f4f6b5dd321cc23e068c9c8daf909957b772839ae",
         "locator": {
           "kind": "symbol",
@@ -146,7 +146,7 @@
     },
     {
       "anchor": {
-        "blob": "3229dfc038ca83b4aaf9202a78c610e19471c3c0",
+        "blob": "9d3aaac0b29e3a14f25634f49bc75bdd33f723dd",
         "content": "sha256:773f6528c0313df70b181925f552765ca75485f7368e6d53d10dbc13e95a2c7c",
         "locator": {
           "kind": "symbol",
@@ -165,12 +165,12 @@
   ],
   "references": {
     "1": {
-      "note": "The native bridge returns the assembled whole final reply without a character cut; the separate delivery policy owns truncation and filing.\n\nAnchor: `closingText`",
+      "note": "The native bridge returns the assembled whole final reply without a character cut; the separate delivery policy owns truncation and filing.",
       "targets": [
         {
           "anchor": {
-            "blob": "e10eb6dbca7f3a9b99ba214fe3a124f3f1009e8b",
-            "content": "sha256:cb888b64b2901d8e45599177afa1a9280f8f80869ca3f1b4c6f88822c1905d69",
+            "blob": "9d3aaac0b29e3a14f25634f49bc75bdd33f723dd",
+            "content": "sha256:7cc333bd70aa4a1960ffbfc76827b654d6ddbfd52abc5233745df5e9692bd1ae",
             "locator": {
               "kind": "file"
             }
@@ -184,8 +184,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e10eb6dbca7f3a9b99ba214fe3a124f3f1009e8b",
-            "content": "sha256:cb888b64b2901d8e45599177afa1a9280f8f80869ca3f1b4c6f88822c1905d69",
+            "blob": "9d3aaac0b29e3a14f25634f49bc75bdd33f723dd",
+            "content": "sha256:7cc333bd70aa4a1960ffbfc76827b654d6ddbfd52abc5233745df5e9692bd1ae",
             "locator": {
               "kind": "file"
             }
@@ -195,12 +195,12 @@
       ]
     },
     "3": {
-      "note": "A still-loading provider row retains discovered mode/default-mode/fetched-at fields, defaulting only absent values.\n\nAnchor: `stillLoading`",
+      "note": "A still-loading provider row retains discovered mode/default-mode/fetched-at fields, defaulting only absent values.",
       "targets": [
         {
           "anchor": {
-            "blob": "e10eb6dbca7f3a9b99ba214fe3a124f3f1009e8b",
-            "content": "sha256:cb888b64b2901d8e45599177afa1a9280f8f80869ca3f1b4c6f88822c1905d69",
+            "blob": "9d3aaac0b29e3a14f25634f49bc75bdd33f723dd",
+            "content": "sha256:7cc333bd70aa4a1960ffbfc76827b654d6ddbfd52abc5233745df5e9692bd1ae",
             "locator": {
               "kind": "file"
             }
@@ -214,11 +214,25 @@
       "targets": [
         {
           "anchor": {
-            "blob": "54c725f21a05ef4878b1da265ef35e27d02be6a4",
-            "content": "sha256:d0ced06b9aef60ab870f041a2f09ff7d9b3838cb5dfe941b2059809f6c6b269e",
+            "blob": "9d3aaac0b29e3a14f25634f49bc75bdd33f723dd",
+            "content": "sha256:7cc333bd70aa4a1960ffbfc76827b654d6ddbfd52abc5233745df5e9692bd1ae",
             "locator": {
-              "kind": "symbol",
-              "name": "COMMANDS"
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The bridge carries the review-presenter confinement and its two commands: a launch whose `ar.capability` is `review-presenter` is refused with `presenter_confinement_unavailable` unless the provider is Claude and the only applied tool server is `review-presenter`, and it then passes `tools: ''` with `strict-mcp-config` so the capability's own read/write tools are the entire authority on every resume; `presenter-transcript` and `presenter-cancel` are the bridge's own operations for reading an attempt's conversation and cancelling it. \\[5]",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9d3aaac0b29e3a14f25634f49bc75bdd33f723dd",
+            "content": "sha256:7cc333bd70aa4a1960ffbfc76827b654d6ddbfd52abc5233745df5e9692bd1ae",
+            "locator": {
+              "kind": "file"
             }
           },
           "kind": "code"

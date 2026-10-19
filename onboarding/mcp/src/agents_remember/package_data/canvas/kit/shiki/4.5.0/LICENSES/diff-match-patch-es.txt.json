@@ -1,0 +1,22 @@
+{
+  "path": "mcp/src/agents_remember/package_data/canvas/kit/shiki/4.5.0/LICENSES/diff-match-patch-es.txt",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The licence text shipped with the `shiki` entry.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "922c269e2fb260df61224e395437ef3c73e3d67a",
+            "content": "sha256:c5922472726ff1692b24c9a65e8faf36f6e61afdbee2d9df3f2cf5bc82c429d3",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

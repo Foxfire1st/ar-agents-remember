@@ -1,0 +1,108 @@
+{
+  "path": "mcp/src/agents_remember/serving/write_guard.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "11960a98eead6a9c175e735a90d526443314a73a",
+        "content": "sha256:65bfec270f239bff2aa3c9e27eb2b6bf6eab743ef1babc145d132176d38d0129",
+        "locator": {
+          "kind": "symbol",
+          "name": "RefuseCrossOriginWrites"
+        }
+      },
+      "id": "RLZ-9EKAT5",
+      "invariant": "INV-HDXPMA",
+      "origin": {
+        "handoffEntry": "MIK-R104-r15-request-guards",
+        "leaf": "260928-MIK-L104"
+      },
+      "rationale": "The origin guard is the only thing standing between a local unauthenticated dashboard and a foreign page's write.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "11960a98eead6a9c175e735a90d526443314a73a",
+        "content": "sha256:baa7496e08b8674445e4fc3626d179f9dbe5de8ee434d91430bae0d54c206750",
+        "locator": {
+          "kind": "symbol",
+          "name": "RefuseForeignHosts"
+        }
+      },
+      "id": "RLZ-CFN06R",
+      "invariant": "INV-HDXPMA",
+      "origin": {
+        "handoffEntry": "MIK-R104-r15-request-guards",
+        "leaf": "260928-MIK-L104"
+      },
+      "rationale": "The host guard is what defeats DNS rebinding, and it applies to reads as well.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "A state-changing browser request from another page is refused before any route.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "11960a98eead6a9c175e735a90d526443314a73a",
+            "content": "sha256:65bfec270f239bff2aa3c9e27eb2b6bf6eab743ef1babc145d132176d38d0129",
+            "locator": {
+              "kind": "symbol",
+              "name": "RefuseCrossOriginWrites"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Every request answers only the dashboard's own host and port.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "11960a98eead6a9c175e735a90d526443314a73a",
+            "content": "sha256:baa7496e08b8674445e4fc3626d179f9dbe5de8ee434d91430bae0d54c206750",
+            "locator": {
+              "kind": "symbol",
+              "name": "RefuseForeignHosts"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The origin fallback is consulted only when no Fetch Metadata header was sent.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "11960a98eead6a9c175e735a90d526443314a73a",
+            "content": "sha256:29b8c3fea7088a58e9560478ad68effb6cf0b23b82beb5f9a6e263609defa93d",
+            "locator": {
+              "kind": "symbol",
+              "name": "_origin_refusal"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "An omitted bound port uses the scheme default, while foreign hosts and mismatching explicit ports still refuse.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "11960a98eead6a9c175e735a90d526443314a73a",
+            "content": "sha256:cae27435a536fd410de74f3a20d6180c97e73f6fd12dc1975de1047991ba1eb2",
+            "locator": {
+              "kind": "symbol",
+              "name": "host_refusal"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

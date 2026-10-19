@@ -1,0 +1,191 @@
+{
+  "path": "mcp/tests/test_canvas_serving.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "9ef62e26d9e227f941aa3c245ca16a36d08f2610",
+        "content": "sha256:255242d29677e855d77a028b995324c0d3361cb085706db948f4bd90c15099a1",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_the_write_guard_reads_fetch_metadata_before_the_origin_fallback"
+        }
+      },
+      "facet": "The write guard reads Fetch Metadata before the origin fallback.",
+      "id": "PRF-048635",
+      "invariant": "INV-HDXPMA",
+      "origin": {
+        "handoffEntry": "MIK-R104-r15-request-guards",
+        "leaf": "260928-MIK-L104"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "9ef62e26d9e227f941aa3c245ca16a36d08f2610",
+        "content": "sha256:aee1c6c37b5542d912cee53abe99b2617b1c8d0d9da705754a89753745c2d66a",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_the_panel_reads_a_saved_page_and_starts_nothing"
+        }
+      },
+      "facet": "The trusted read path starts nothing while the frame protocol stays bound.",
+      "id": "PRF-AT5FG5",
+      "invariant": "INV-N7SK8E",
+      "origin": {
+        "handoffEntry": "MIK-R104-r4-narrow-protocol",
+        "leaf": "260928-MIK-L104"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "9ef62e26d9e227f941aa3c245ca16a36d08f2610",
+        "content": "sha256:ddacc1550b8dd9558ed9a5053d8eb3edc72ed3c39b87bbd2fae0e5511d27a921",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_the_protocol_route_is_bound_bounded_and_replay_safe"
+        }
+      },
+      "facet": "The protocol route is bound, bounded and replay-safe end to end.",
+      "id": "PRF-C6WNAC",
+      "invariant": "INV-N7SK8E",
+      "origin": {
+        "handoffEntry": "L104-r1-n7sk8e-proofs",
+        "leaf": "260928-MIK-L104"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "9ef62e26d9e227f941aa3c245ca16a36d08f2610",
+        "content": "sha256:b203030d4d928875ed2fa28dca48da3193b5d0f0c02f400b3f1b563eeafc7767",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_session_serves_its_own_document_and_assets_only"
+        }
+      },
+      "facet": "A session serves its own document and assets only.",
+      "id": "PRF-C9GKBD",
+      "invariant": "INV-K302DH",
+      "origin": {
+        "handoffEntry": "MIK-R104-r2-frame-sandbox",
+        "leaf": "260928-MIK-L104"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "9ef62e26d9e227f941aa3c245ca16a36d08f2610",
+        "content": "sha256:995360dce53f4b19d799042da3dcfc0056593095962b6fe328e3118f28cfdbcf",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_foreign_or_opaque_origin_cannot_write"
+        }
+      },
+      "facet": "A foreign or opaque origin cannot write.",
+      "id": "PRF-FNBSFX",
+      "invariant": "INV-HDXPMA",
+      "origin": {
+        "handoffEntry": "MIK-R104-r15-request-guards",
+        "leaf": "260928-MIK-L104"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "9ef62e26d9e227f941aa3c245ca16a36d08f2610",
+        "content": "sha256:ba618b61f5ec76fc2efca64df668abf54487f239d25802a1ec9eb1f63741d3ae",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_revocation_ends_the_channel_without_an_effect"
+        }
+      },
+      "facet": "Revocation ends the channel without an effect.",
+      "id": "PRF-KJMFQK",
+      "invariant": "INV-ESF2CT",
+      "origin": {
+        "handoffEntry": "MIK-R104-r3-document-bound-channel",
+        "leaf": "260928-MIK-L104"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The case `test_the_panel_reads_a_saved_page_and_starts_nothing` protects this behaviour.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9ef62e26d9e227f941aa3c245ca16a36d08f2610",
+            "content": "sha256:aee1c6c37b5542d912cee53abe99b2617b1c8d0d9da705754a89753745c2d66a",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_panel_reads_a_saved_page_and_starts_nothing"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The case `test_a_session_serves_its_own_document_and_assets_only` protects this behaviour.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9ef62e26d9e227f941aa3c245ca16a36d08f2610",
+            "content": "sha256:b203030d4d928875ed2fa28dca48da3193b5d0f0c02f400b3f1b563eeafc7767",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_session_serves_its_own_document_and_assets_only"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "The case `test_revocation_ends_the_channel_without_an_effect` protects this behaviour.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9ef62e26d9e227f941aa3c245ca16a36d08f2610",
+            "content": "sha256:ba618b61f5ec76fc2efca64df668abf54487f239d25802a1ec9eb1f63741d3ae",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_revocation_ends_the_channel_without_an_effect"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "The shipped record is inert without the built frontend and must prove the available built frontend.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9ef62e26d9e227f941aa3c245ca16a36d08f2610",
+            "content": "sha256:725ce206dfaf86dddd68d7deb0b1bdc6aa678e291ed85a466e71a8c8688763fe",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_shipped_record_matches_the_available_frontend"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "Omitted ASGI ports are normalized without admitting a foreign host or mismatching port.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9ef62e26d9e227f941aa3c245ca16a36d08f2610",
+            "content": "sha256:14547c9bf2daa89f3c7760d687ec734adf647fbf903552f8549a93372f813c14",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_an_asgi_default_port_is_still_checked"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

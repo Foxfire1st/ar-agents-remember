@@ -1,0 +1,36 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "guarded_by_test",
+      "prevents_costly_mistake"
+    ],
+    "justification": "The gate spans the policy, the record checker and the shipped record, is proven by two host cases, and the mistake it prevents — serving generated script off an unproven policy — is the exact failure the requirement exists for."
+  },
+  "applicability": "Every generated page served by the canvas host on a live session.",
+  "conditions": [
+    "The shipped proof record is readable and names the policy digest now served.",
+    "The record's enforcement bindings name the enforcement modules' own current bytes."
+  ],
+  "exclusions": [
+    "A page examined by the static readiness check, which executes nothing.",
+    "A record produced for a different policy digest."
+  ],
+  "id": "INV-6V0ET6",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "mcp/tests/test_canvas_host.py::test_an_unproven_policy_serves_no_script_at_all and ::test_a_proof_is_bound_to_the_exact_policy_digest"
+      ],
+      "path": "curation-list.json"
+    },
+    "handoffEntry": "MIK-R104-r1-script-gate",
+    "leaf": "260928-MIK-L104",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "A generated page executes script only under a served isolation policy the shipped proof record covers: the policy digest, the enforcement source bindings and every required browser check with its observed value must hold, and a policy any of them does not cover is served with no script at all.",
+  "status": "proposed",
+  "supersedes": []
+}

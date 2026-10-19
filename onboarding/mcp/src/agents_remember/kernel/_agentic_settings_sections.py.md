@@ -102,3 +102,5 @@ The one earlier role key and canonical Investigator key are compared within each
 ## Refreshed current evidence
 
 - Frozen implementation of _parse_roles supporting the stated file behavior. [2]
+
+- `_resolve_role_keys` admits `CAPABILITY_IDS` keys beside the role keys, which is how a capability's launch block passes the unknown-key refusal without becoming a dispatchable seat. \[9] [9]

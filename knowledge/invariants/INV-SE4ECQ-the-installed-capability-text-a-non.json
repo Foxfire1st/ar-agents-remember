@@ -1,0 +1,32 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test"
+    ],
+    "justification": "Realized in one module, so the contract is proven rather than spread: the capsule-text cases hold that the installed copy is the generated one and that the launch record names which composition was used."
+  },
+  "applicability": "Every non-seat capability the product starts with shipped instructions.",
+  "conditions": [
+    "The canonical source text ships in the package data."
+  ],
+  "exclusions": [
+    "Seat role texts, which are compiled from the role capsule."
+  ],
+  "id": "INV-SE4ECQ",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "mcp/tests/test_canvas_capsule_text.py::test_the_installed_copy_is_the_generated_copy_of_the_canonical_source; mcp/tests/test_canvas_capsule_text.py::test_the_launch_record_names_the_baseline_the_addition_or_the_replacement"
+      ],
+      "path": "r3-rows.json"
+    },
+    "handoffEntry": "L104-r3-capability-text",
+    "leaf": "260928-MIK-L104",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "The installed capability text a non-seat capability is started with is a generated projection of the canonical source: `load_capability_resource` reads it under `ar-capability-resource/v1`, enforces the shipped word budget and wording at the read, `compose_capability_capsule` composes a baseline, an addition or a replacement, and `capability_copy_drift` with `write_generated_capability_copy` keep the installed copy a generated copy so a hand-edited one is refused.",
+  "status": "proposed",
+  "supersedes": []
+}

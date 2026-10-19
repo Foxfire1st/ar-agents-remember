@@ -1,0 +1,22 @@
+{
+  "path": "mcp/src/agents_remember/package_data/canvas/kit/open-generative-ui/0.1.0-8391a94/LICENSE",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The licence text shipped with the `open-generative-ui` entry.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b3bf13ded443fa46a3fbbf69c42d2150c21f4cda",
+            "content": "sha256:15a0e5343aea872c0573ad72feb6044b336f162d724cc1673c608e6b37ea071b",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

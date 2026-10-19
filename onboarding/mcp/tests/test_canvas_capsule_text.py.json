@@ -1,0 +1,75 @@
+{
+  "path": "mcp/tests/test_canvas_capsule_text.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "dcf439e74c3c71500398fa9bd699f3ac625308c9",
+        "content": "sha256:9f2539cf6a5e9a57881e3b4f901afb3782f8dc512febb9511ae235bfc99196c4",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_the_launch_record_names_the_baseline_the_addition_or_the_replacement"
+        }
+      },
+      "facet": "The launch record names the baseline, an addition or a replacement.",
+      "id": "PRF-07M14V",
+      "invariant": "INV-SE4ECQ",
+      "origin": {
+        "handoffEntry": "L104-r3-capability-text",
+        "leaf": "260928-MIK-L104"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "dcf439e74c3c71500398fa9bd699f3ac625308c9",
+        "content": "sha256:67b8308e8db7f7b5425d6e05773c40430b244b4cffec5656f7721717dc0ca2ef",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_the_installed_copy_is_the_generated_copy_of_the_canonical_source"
+        }
+      },
+      "facet": "The installed copy is the generated copy of the canonical source.",
+      "id": "PRF-CBKWY0",
+      "invariant": "INV-SE4ECQ",
+      "origin": {
+        "handoffEntry": "L104-r3-capability-text",
+        "leaf": "260928-MIK-L104"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The case `test_the_installed_copy_is_the_generated_copy_of_the_canonical_source` protects this behaviour.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dcf439e74c3c71500398fa9bd699f3ac625308c9",
+            "content": "sha256:67b8308e8db7f7b5425d6e05773c40430b244b4cffec5656f7721717dc0ca2ef",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_installed_copy_is_the_generated_copy_of_the_canonical_source"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The case `test_the_launch_record_names_the_baseline_the_addition_or_the_replacement` protects this behaviour.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dcf439e74c3c71500398fa9bd699f3ac625308c9",
+            "content": "sha256:9f2539cf6a5e9a57881e3b4f901afb3782f8dc512febb9511ae235bfc99196c4",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_launch_record_names_the_baseline_the_addition_or_the_replacement"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

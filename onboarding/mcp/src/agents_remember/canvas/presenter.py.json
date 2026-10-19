@@ -1,0 +1,110 @@
+{
+  "path": "mcp/src/agents_remember/canvas/presenter.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "a51dc44c033b40965f0541aa9d90c2c8b96736f4",
+        "content": "sha256:e9bd5b14dc7760b083ce06c23dbdaa9ee9be067e1d6a9d0feebcf032bc46db8e",
+        "locator": {
+          "kind": "symbol",
+          "name": "_require_prospective_load"
+        }
+      },
+      "id": "RLZ-6HCN7M",
+      "invariant": "INV-GWMA1V",
+      "origin": {
+        "handoffEntry": "MIK-R105-r1-explicit-confined-publication",
+        "leaf": "260928-MIK-L104"
+      },
+      "rationale": "This is the model-free load that must succeed before any ready pointer moves.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "a51dc44c033b40965f0541aa9d90c2c8b96736f4",
+        "content": "sha256:7f711dbb15e406e6af56ba739ee130782b328a01b40be6d0b8b43cacd04e0883",
+        "locator": {
+          "kind": "symbol",
+          "name": "_admit_start"
+        }
+      },
+      "id": "RLZ-FD9K29",
+      "invariant": "INV-M6Q82M",
+      "origin": {
+        "handoffEntry": "L104-M19-reclaimed-request",
+        "leaf": "260928-MIK-L104"
+      },
+      "rationale": "Checks the retained ledger after the record lookup and refuses a reclaimed request before admitting or starting a new attempt.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "a51dc44c033b40965f0541aa9d90c2c8b96736f4",
+        "content": "sha256:809f9a7bfd0c1225671d90ccddbd5a93ef87b81ffb6e8f61f1ef447227423427",
+        "locator": {
+          "kind": "symbol",
+          "name": "Presenter"
+        }
+      },
+      "id": "RLZ-RVJTK7",
+      "invariant": "INV-GWMA1V",
+      "origin": {
+        "handoffEntry": "MIK-R105-r1-explicit-confined-publication",
+        "leaf": "260928-MIK-L104"
+      },
+      "rationale": "The capability's admission, attempt lifecycle and publication live here; nothing else starts one.",
+      "role": "primary-authority"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "An explicit activation starts one durable authoring attempt.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a51dc44c033b40965f0541aa9d90c2c8b96736f4",
+            "content": "sha256:809f9a7bfd0c1225671d90ccddbd5a93ef87b81ffb6e8f61f1ef447227423427",
+            "locator": {
+              "kind": "symbol",
+              "name": "Presenter"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Publication loads the prospective revision once without a model before any ready pointer moves.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a51dc44c033b40965f0541aa9d90c2c8b96736f4",
+            "content": "sha256:e9bd5b14dc7760b083ce06c23dbdaa9ee9be067e1d6a9d0feebcf032bc46db8e",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_prospective_load"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "A runner that cannot confine its writes refuses by name.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a51dc44c033b40965f0541aa9d90c2c8b96736f4",
+            "content": "sha256:6cc7f87dcd47da37468e28991c8c08b9c01fd06f76da8789b75bab8213479178",
+            "locator": {
+              "kind": "symbol",
+              "name": "UnconfiguredPresenterRunner"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

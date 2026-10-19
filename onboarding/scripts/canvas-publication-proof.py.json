@@ -1,0 +1,22 @@
+{
+  "path": "scripts/canvas-publication-proof.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "This script is a proof/inspection harness, not product runtime code.\n\nAnchor: None",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e3c71484a04bcd13b9134be9ac3eb8f04a563122",
+            "content": "sha256:63acfb6bb8173ee609dafd4448a37ebbbc90e2897cbe37e1cd8e64aef8fb9dca",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

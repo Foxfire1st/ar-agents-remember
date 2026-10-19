@@ -1,0 +1,22 @@
+{
+  "path": "mcp/src/agents_remember/package_data/canvas/review-presenter.md",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The installed capability text states the assignment and bounds.\n\nAnchor: None",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2d3186c66dbfcaa70cf7bcc19fad9952f1f14634",
+            "content": "sha256:b085aa4b14feb85f625b7dc46b01523c207b8e50e867622bb678cf12033c567a",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

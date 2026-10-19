@@ -359,3 +359,5 @@ No configured domain documentation; the source owners below support this account
 ### Cross-Repo References
 
 No separate cross-repository implementation claim.
+
+- The review surface mounts `CanvasPanel` for the comparison on screen: `pageComparison` builds that comparison from the payload's own lineage number and history, and `evidenceSelection` opens a destination the saved page asked for only when its comparison reference and number still match the shown payload, keeping the tree the reader walked and selecting no substitute record. \[58] [58]

@@ -1,0 +1,37 @@
+{
+  "path": "mcp/src/agents_remember/package_data/canvas/kit/manifest.json",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The manifest names each pinned library with version, licence and files.\n\nAnchor: None",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9d217a80cb64f25685e38564cd70599ff51b003f",
+            "content": "sha256:c57c53ea92762403cd0f69db0db8c35e2aceae2d7a4e80359e6c11f5d50ac012",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Every shipped file carries its size and digest.\n\nAnchor: None",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9d217a80cb64f25685e38564cd70599ff51b003f",
+            "content": "sha256:c57c53ea92762403cd0f69db0db8c35e2aceae2d7a4e80359e6c11f5d50ac012",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -7,7 +7,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5801a3451a06ef3ec426db8cf0c48e06147bb8c4",
+            "blob": "1c8709e75ca22ed12ab5182e676a05d389075a96",
             "content": "sha256:8625fb836b979634f02013f27444bae4be2d8f919640db82fd48f72a5588b0f3",
             "locator": {
               "kind": "symbol",
@@ -18,7 +18,7 @@
         },
         {
           "anchor": {
-            "blob": "5801a3451a06ef3ec426db8cf0c48e06147bb8c4",
+            "blob": "1c8709e75ca22ed12ab5182e676a05d389075a96",
             "content": "sha256:67ef59667662f3d53dbc35e78d74c5edbd24fcccc140176be697ebc9c9c9586b",
             "locator": {
               "kind": "symbol",
@@ -29,7 +29,7 @@
         },
         {
           "anchor": {
-            "blob": "5801a3451a06ef3ec426db8cf0c48e06147bb8c4",
+            "blob": "1c8709e75ca22ed12ab5182e676a05d389075a96",
             "content": "sha256:9a604f8ee478c8286e362f5e67c367511038768ed2af48b155599f47e91e93fa",
             "locator": {
               "kind": "symbol",
@@ -67,7 +67,7 @@
         },
         {
           "anchor": {
-            "blob": "5801a3451a06ef3ec426db8cf0c48e06147bb8c4",
+            "blob": "1c8709e75ca22ed12ab5182e676a05d389075a96",
             "content": "sha256:938a7ee0fafc28cb146d0acc1fb7fb46383b87b1f68ba3708f3341c547450d0a",
             "locator": {
               "kind": "symbol",
@@ -131,7 +131,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5801a3451a06ef3ec426db8cf0c48e06147bb8c4",
+            "blob": "1c8709e75ca22ed12ab5182e676a05d389075a96",
             "content": "sha256:8625fb836b979634f02013f27444bae4be2d8f919640db82fd48f72a5588b0f3",
             "locator": {
               "kind": "symbol",
@@ -164,6 +164,21 @@
               "end": 200,
               "kind": "line_range",
               "start": 158
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "`_lock_handle` opens the caller's held physical target when `io_path` names the same resource through a directory descriptor, while the mutex, capability cache and nesting keep the canonical lock identity — so two descriptor numbers cannot split one lock. [7]\n\nAnchor: `_lock_handle`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1c8709e75ca22ed12ab5182e676a05d389075a96",
+            "content": "sha256:e6215a71b64bbbaf314085e12c561af5ab131b13a04ff6e28d38b951f6922140",
+            "locator": {
+              "kind": "file"
             }
           },
           "kind": "code"

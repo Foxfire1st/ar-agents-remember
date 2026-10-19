@@ -1,0 +1,67 @@
+{
+  "path": "docs/design/canvas-kit.md",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The kit's entries and their licences are stated once as the inventory the manifest verifies.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ad8d49175bb8a412342afc62521d0d9fd9fb7de6",
+            "content": "sha256:08e49d129f4f19b81d6fef2451ad35b9dcb2d63e8a19166271ce817025bb4e3f",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "A page loads a kit file from its own admitted revision, its bytes verified by the manifest when carried and again at publication.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ad8d49175bb8a412342afc62521d0d9fd9fb7de6",
+            "content": "sha256:08e49d129f4f19b81d6fef2451ad35b9dcb2d63e8a19166271ce817025bb4e3f",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "What is deliberately not shipped is named rather than implied.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ad8d49175bb8a412342afc62521d0d9fd9fb7de6",
+            "content": "sha256:08e49d129f4f19b81d6fef2451ad35b9dcb2d63e8a19166271ce817025bb4e3f",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The remaining limits are stated, so the kit is not read as a container.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ad8d49175bb8a412342afc62521d0d9fd9fb7de6",
+            "content": "sha256:08e49d129f4f19b81d6fef2451ad35b9dcb2d63e8a19166271ce817025bb4e3f",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

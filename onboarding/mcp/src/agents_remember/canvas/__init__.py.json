@@ -1,0 +1,22 @@
+{
+  "path": "mcp/src/agents_remember/canvas/__init__.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The package names its four decisions and the module that owns each.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ccc1a0d6430ca5fb7fb3a6010e3afd3cc794835e",
+            "content": "sha256:a68136bdea71614bcb37d7586cc059c34abed7be7f1b6e68f7478a6d37f7b280",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

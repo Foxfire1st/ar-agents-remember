@@ -1,0 +1,34 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test"
+    ],
+    "justification": "The toolbox rule is implemented in canvas/kit.py. Its kit-byte comparison refuses an unknown or altered file when the kit is carried into an attempt, and the manifest tests account for every shipped file by size and digest. These retained tests guard that manifest-at-carry rule; no publication-time kit refusal or second realization file is claimed."
+  },
+  "applicability": "Every kit file a generated page names as part of its offline toolbox.",
+  "conditions": [
+    "The file ships and the manifest names it with its size and digest."
+  ],
+  "exclusions": [
+    "Any refusal of a kit path after carry: a presenter may publish its own bytes at kit/ paths (amendment 81a2274c).",
+    "Any claim that the kit confines the page: the page sandbox is the boundary."
+  ],
+  "id": "INV-R38XGA",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "mcp/tests/test_canvas_kit.py::test_every_shipped_byte_is_accounted_for_by_size_and_digest; mcp/tests/test_canvas_kit_assets.py::test_an_unshipped_or_tampered_kit_file_is_refused_by_name",
+        "mcp/tests/test_canvas_kit.py::test_every_shipped_byte_is_accounted_for_by_size_and_digest; mcp/tests/test_canvas_kit_assets.py::test_an_unshipped_or_tampered_kit_file_is_refused_by_name; mcp/tests/test_canvas_presenter.py::test_publication_refuses_foreign_kit_bytes_and_preserves_ready"
+      ],
+      "path": "curation-list.json"
+    },
+    "handoffEntry": "MIK-R104-r13-kit-manifest",
+    "leaf": "260928-MIK-L104",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "The pinned kit is the presenter's offline toolbox, not a boundary: a page names a kit file by its contract path inside its own revision, the bytes are compared with the shipped manifest when `kit_assets` carries them into an attempt, and nothing refuses a kit path afterwards — a presenter may write its own bytes at `kit/` paths and they publish. Serving a published revision adds no check either, because the frame route serves the revision's own admitted assets. The page sandbox is the boundary.",
+  "status": "proposed",
+  "supersedes": []
+}

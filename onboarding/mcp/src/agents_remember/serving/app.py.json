@@ -3,12 +3,30 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "c3f5986fb32e9954b3677b1adf142e0b1fbc029a",
+        "blob": "62c4f00bace084e4ee7854360ace6d5d1e9578bc",
+        "content": "sha256:9edc8e42d2293e3be5f6882893cebe31382040d0dcc6129a4c53c343965b347a",
+        "locator": {
+          "kind": "symbol",
+          "name": "create_app"
+        }
+      },
+      "id": "RLZ-5YRHHQ",
+      "invariant": "INV-HDXPMA",
+      "origin": {
+        "handoffEntry": "MIK-R104-r15-request-guards",
+        "leaf": "260928-MIK-L104"
+      },
+      "rationale": "Both guards are installed here before the static mount, so no later route escapes them.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "62c4f00bace084e4ee7854360ace6d5d1e9578bc",
         "content": "sha256:f734f25e437b55ff245602cc32c56e9cc4c4d21b9b2ddd24da8ab4fbe347f813",
         "locator": {
-          "end": 134,
+          "end": 136,
           "kind": "line_range",
-          "start": 84
+          "start": 86
         }
       },
       "id": "RLZ-K8504A",
@@ -27,12 +45,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c3f5986fb32e9954b3677b1adf142e0b1fbc029a",
+            "blob": "62c4f00bace084e4ee7854360ace6d5d1e9578bc",
             "content": "sha256:f734f25e437b55ff245602cc32c56e9cc4c4d21b9b2ddd24da8ab4fbe347f813",
             "locator": {
-              "end": 134,
+              "end": 136,
               "kind": "line_range",
-              "start": 84
+              "start": 86
             }
           },
           "kind": "code"
@@ -44,12 +62,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c3f5986fb32e9954b3677b1adf142e0b1fbc029a",
+            "blob": "62c4f00bace084e4ee7854360ace6d5d1e9578bc",
             "content": "sha256:880ac9e02e7fe58eae1b70c0995da1230f237dd256635046f1269cbe1fac701b",
             "locator": {
-              "end": 129,
+              "end": 131,
               "kind": "line_range",
-              "start": 119
+              "start": 121
             }
           },
           "kind": "code"
@@ -57,16 +75,14 @@
       ]
     },
     "33": {
-      "note": "Lifespan/gzip, shared changeset cache, built-in and optional routes precede the static mount.\n\nAnchor: app composition",
+      "note": "Lifespan/gzip, shared changeset cache, built-in and optional routes precede the static mount.",
       "targets": [
         {
           "anchor": {
-            "blob": "c3f5986fb32e9954b3677b1adf142e0b1fbc029a",
-            "content": "sha256:1793a84794f4c012e75c0b36d57325ebbf5bac08601d6c9ba647db19f41313f1",
+            "blob": "62c4f00bace084e4ee7854360ace6d5d1e9578bc",
+            "content": "sha256:d8c2248a835644469cb45a7d8bda3f33bd1d29e822ef1bee2a0ba4b745c588dc",
             "locator": {
-              "end": 187,
-              "kind": "line_range",
-              "start": 137
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -86,6 +102,21 @@
               "start": 146
             },
             "path": "mcp/src/agents_remember/serving/_app_routes.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "35": {
+      "note": "`create_app` registers the canvas host and the presenter surface through `register_canvas_routes` after the API routes and before the static mount, then installs `RefuseCrossOriginWrites` and `RefuseForeignHosts`, so both surfaces sit behind the origin and host guards. [35]\n\nAnchor: `create_app`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "62c4f00bace084e4ee7854360ace6d5d1e9578bc",
+            "content": "sha256:d8c2248a835644469cb45a7d8bda3f33bd1d29e822ef1bee2a0ba4b745c588dc",
+            "locator": {
+              "kind": "file"
+            }
           },
           "kind": "code"
         }

@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "aaea9c96e247acc59f52ab5f889e7ca4bc8b0fd3",
+        "blob": "ff629f268e2d63fe0398619d77f6058c25303b63",
         "content": "sha256:379e086d1c6ed6bfb0071fcce8307641ad4b285b806f9b0cada4c39a1a0acaa8",
         "locator": {
           "kind": "symbol",
@@ -21,7 +21,7 @@
     },
     {
       "anchor": {
-        "blob": "aaea9c96e247acc59f52ab5f889e7ca4bc8b0fd3",
+        "blob": "ff629f268e2d63fe0398619d77f6058c25303b63",
         "content": "sha256:013dde219368859eb2016fc3737fbfc47ade11c29593115aa424d0089949b321",
         "locator": {
           "kind": "symbol",
@@ -39,7 +39,7 @@
     },
     {
       "anchor": {
-        "blob": "aaea9c96e247acc59f52ab5f889e7ca4bc8b0fd3",
+        "blob": "ff629f268e2d63fe0398619d77f6058c25303b63",
         "content": "sha256:84e892da9ad1741dacf7c094233c9b047800ed17379757009b077711053e33f3",
         "locator": {
           "kind": "symbol",
@@ -62,7 +62,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "aaea9c96e247acc59f52ab5f889e7ca4bc8b0fd3",
+            "blob": "ff629f268e2d63fe0398619d77f6058c25303b63",
             "content": "sha256:013dde219368859eb2016fc3737fbfc47ade11c29593115aa424d0089949b321",
             "locator": {
               "kind": "symbol",
@@ -78,7 +78,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "aaea9c96e247acc59f52ab5f889e7ca4bc8b0fd3",
+            "blob": "ff629f268e2d63fe0398619d77f6058c25303b63",
             "content": "sha256:84e892da9ad1741dacf7c094233c9b047800ed17379757009b077711053e33f3",
             "locator": {
               "kind": "symbol",
@@ -94,7 +94,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "aaea9c96e247acc59f52ab5f889e7ca4bc8b0fd3",
+            "blob": "ff629f268e2d63fe0398619d77f6058c25303b63",
             "content": "sha256:379e086d1c6ed6bfb0071fcce8307641ad4b285b806f9b0cada4c39a1a0acaa8",
             "locator": {
               "kind": "symbol",
@@ -110,11 +110,26 @@
       "targets": [
         {
           "anchor": {
-            "blob": "aaea9c96e247acc59f52ab5f889e7ca4bc8b0fd3",
+            "blob": "ff629f268e2d63fe0398619d77f6058c25303b63",
             "content": "sha256:971b9e89db7535d4f4ab1b65170369b566948973157de0a7f43f3d7340ded1f9",
             "locator": {
               "kind": "symbol",
               "name": "FrameReclamation"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "`_suffix` maps a kit licence's extensionless `LICENSE` basename to `.txt`, so a pinned licence is served under the plain-text type its manifest entry declares. [5]\n\nAnchor: `_suffix`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ff629f268e2d63fe0398619d77f6058c25303b63",
+            "content": "sha256:b5817cae05f6dd1f5e5121f6fb10e392c9e5d9827659d09d9afd2c201e75b27f",
+            "locator": {
+              "kind": "file"
             }
           },
           "kind": "code"

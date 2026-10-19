@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "f960ca45e4fea2dcef8e92a29382eff04914397a",
+        "blob": "3f30237a53623bb13be7bf1d5d8dc8413ba64f6c",
         "content": "sha256:80c99862448ab92d6ee65fde88d7667d360c1d35eedfa1e7fe46ebea3024294a",
         "locator": {
           "end": 16,
@@ -75,12 +75,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1c2dfb4f0f87317da6302be2ab2a2cb173460c1d",
+            "blob": "a44e94849cddcfdaa693be8e4c9deeaa42953b0f",
             "content": "sha256:517c8a6bf9dd9c30609d30101aa553af6e8a792f28a9d1c0a22c4f46ad748b69",
             "locator": {
-              "end": 901,
+              "end": 921,
               "kind": "line_range",
-              "start": 901
+              "start": 921
             },
             "path": "mcp/src/agents_remember/install/runtime.py"
           },
@@ -220,7 +220,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "14138f5e07311df459db334ccecc0ab4ddb8388e",
+            "blob": "95431a313a1cfebcf2d81d41eba27781f3fdcf05",
             "content": "sha256:0a8c6e6c23100def0cb8ce7c9eb79f601a514201255389c857ec009112541e7e",
             "locator": {
               "end": 27,
@@ -269,7 +269,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "11afdcbd034529ba6e12f7c6ab8fb204ee9a77d6",
+            "blob": "af953e99eac7b81b2df5e99c648d3a83eab4bca1",
             "content": "sha256:66849923cf1e429dc9be66b5ca9be29d75ada44505e180a10a193079e3826c7a",
             "locator": {
               "end": 4,
@@ -287,7 +287,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f960ca45e4fea2dcef8e92a29382eff04914397a",
+            "blob": "3f30237a53623bb13be7bf1d5d8dc8413ba64f6c",
             "content": "sha256:67390565a8665a2378ea8acf015a4c3ac444ae57f5394d6f15e32a44bf786726",
             "locator": {
               "end": 19,
@@ -299,12 +299,27 @@
         }
       ]
     },
+    "18": {
+      "note": "The package data includes `canvas/*.md` and `canvas/*.mjs` beside the generated package-data copy, because `canvas/presenter_inputs.py` resolves the capability text module-relatively in an installed build; the capsule-text test fails on drift between the two copies. [18]",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3f30237a53623bb13be7bf1d5d8dc8413ba64f6c",
+            "content": "sha256:52ce6efc9a14ec0cfd364028d6cdc76ed7e49d3a6abe01acd18a095350334b9d",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
     "2": {
       "note": "Root pytest configuration selects four workers by default.\n\nAnchor: \"-n=4\"",
       "targets": [
         {
           "anchor": {
-            "blob": "11afdcbd034529ba6e12f7c6ab8fb204ee9a77d6",
+            "blob": "af953e99eac7b81b2df5e99c648d3a83eab4bca1",
             "content": "sha256:3ba6c4ba535ae9033fbe06949ca6eca5c5c4f4375e101f3172ee3fcaf52092c4",
             "locator": {
               "end": 164,
@@ -317,7 +332,7 @@
         },
         {
           "anchor": {
-            "blob": "11afdcbd034529ba6e12f7c6ab8fb204ee9a77d6",
+            "blob": "af953e99eac7b81b2df5e99c648d3a83eab4bca1",
             "content": "sha256:70525e47cbd9f3178774a1352cbbf683c00a3ee8c8398143faa2d145d5881347",
             "locator": {
               "end": 186,
@@ -347,7 +362,7 @@
         },
         {
           "anchor": {
-            "blob": "f960ca45e4fea2dcef8e92a29382eff04914397a",
+            "blob": "3f30237a53623bb13be7bf1d5d8dc8413ba64f6c",
             "content": "sha256:9c5ba653b34073b7260267abaceaece0ed46baa9e23deed1dff116c6916189c2",
             "locator": {
               "end": 30,

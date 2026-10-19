@@ -178,3 +178,5 @@ Source declarations, mirrors and fixture assertions are not executed acceptance.
 ## The MIK-R177 gate-group module
 
 `mcp/tests/test_mik_r177_gate_groups_identical_copies.py` is registered once in `unit-regression`, in the list's canonical order. The membership adds no lane, population ceiling or case-budget change and certifies no invocation; selection is catalog membership only.
+
+- The lane adds the thirteen canvas case files as one affected-cadence member set, so the generated page's host and presenter are protected by named cases in the declared lane rather than by an unlaned module. \[861] [861]

@@ -20,3 +20,5 @@ The durable frame's shapes: one presentation lineage, its immutable revisions an
 - A manifest refuses an inconsistent asset digest, an unlisted entrypoint and a parent that is not older. [2]
 - A draft is a leased attempt, separate from the ready pointer. [3]
 - A reclamation record is written as intent before removal and as outcome after it. [4]
+
+- `_suffix` maps a kit licence's extensionless `LICENSE` basename to `.txt`, so a pinned licence is served under the plain-text type its manifest entry declares. \[5] [5]

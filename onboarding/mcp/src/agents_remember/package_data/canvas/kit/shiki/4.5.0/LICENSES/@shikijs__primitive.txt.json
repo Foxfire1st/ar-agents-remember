@@ -1,0 +1,22 @@
+{
+  "path": "mcp/src/agents_remember/package_data/canvas/kit/shiki/4.5.0/LICENSES/@shikijs__primitive.txt",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The licence text shipped with the `shiki` entry.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6a627184d44ec1995fc649fc5ca7d79ce2612e5a",
+            "content": "sha256:7a9d8d01038aeacf9e5bcdabbddf2a7815200dce9fc1118468cc553e00ae3eee",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,37 @@
+{
+  "path": "dashboard/src/panels/review/canvas/CanvasPanel.test.tsx",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "A saved-first read starts nothing.\n\nAnchor: None",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "af2dab5cd88624ce27ffb882b6df010b5e80ca13",
+            "content": "sha256:e1fa00069937aa4e2ce7392442a9862e699da5c51d7d2248cd531884ad8f4776",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The explicit start is issued once.\n\nAnchor: None",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "af2dab5cd88624ce27ffb882b6df010b5e80ca13",
+            "content": "sha256:e1fa00069937aa4e2ce7392442a9862e699da5c51d7d2248cd531884ad8f4776",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

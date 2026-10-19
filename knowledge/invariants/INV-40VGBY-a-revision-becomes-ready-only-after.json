@@ -1,0 +1,33 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "guarded_by_test"
+    ],
+    "justification": "The static check and the real load are deliberately separate realizations, and the cases prove neither stands in for the other."
+  },
+  "applicability": "Every revision offered as ready for a page.",
+  "conditions": [
+    "The candidate bytes are staged before publication."
+  ],
+  "exclusions": [
+    "A revision that is never offered as ready."
+  ],
+  "id": "INV-40VGBY",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "mcp/tests/test_canvas_readiness.py::test_a_page_that_requests_the_network_is_not_ready; mcp/tests/test_canvas_prospective.py::test_the_static_check_never_stands_in_for_a_load"
+      ],
+      "path": "curation-list.json"
+    },
+    "handoffEntry": "MIK-R104-r14-readiness-and-load",
+    "leaf": "260928-MIK-L104",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "A revision becomes ready only after a static readiness check over its exact bytes and one real model-free load, and a failed or unavailable load refuses publication and keeps the last ready revision.",
+  "status": "proposed",
+  "supersedes": []
+}

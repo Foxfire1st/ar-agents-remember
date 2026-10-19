@@ -1,0 +1,22 @@
+{
+  "path": "mcp/src/agents_remember/package_data/canvas/kit/shiki/4.5.0/magic-move.css",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The licence text shipped with the `shiki` entry.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "47c7cad70a67c04a0dd7604af992dcb1833d221e",
+            "content": "sha256:ccd01d7cffacbde8fbd77de4e4412dfb1e2589de121e676ef12ff368308e2a16",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

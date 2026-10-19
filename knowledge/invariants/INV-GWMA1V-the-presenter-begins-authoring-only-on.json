@@ -1,0 +1,37 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "guarded_by_test",
+      "prevents_costly_mistake"
+    ],
+    "justification": "Four places realize one path — admission, load, confined server, native launch — and the mistake it prevents is authoring on a read, publishing on an unloaded revision, or writing outside the attempt folder."
+  },
+  "applicability": "Every review-presenter attempt hosted by the dashboard.",
+  "conditions": [
+    "A caller asked for one comparison explicitly.",
+    "A confined runner or harness is configured."
+  ],
+  "exclusions": [
+    "A page that is only being viewed, which starts nothing.",
+    "An attempt with no confined harness, which must refuse by name."
+  ],
+  "id": "INV-GWMA1V",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "mcp/tests/test_canvas_presenter.py::test_a_start_requires_explicit_activation_and_this_pages_comparison; mcp/tests/test_canvas_prospective.py::test_a_failed_load_refuses_publication_and_keeps_the_last_ready_revision",
+        "mcp/src/agents_remember/canvas/presenter_native.py"
+      ],
+      "path": "curation-list.json"
+    },
+    "handoffEntry": "MIK-R105-r1-explicit-confined-publication",
+    "leaf": "260928-MIK-L104",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "The presenter begins authoring only on an explicit activation for one exact comparison, writes only inside that attempt's prepared folder through a runner that refuses when it cannot confine, and publishes only through the frame store after one model-free load of the prospective revision.",
+  "status": "proposed",
+  "supersedes": []
+}

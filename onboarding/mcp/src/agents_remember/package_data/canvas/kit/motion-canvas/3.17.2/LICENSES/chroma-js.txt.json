@@ -1,0 +1,22 @@
+{
+  "path": "mcp/src/agents_remember/package_data/canvas/kit/motion-canvas/3.17.2/LICENSES/chroma-js.txt",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The licence text shipped with the `motion-canvas` entry.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cb2499d49c6190b1c7a31cc529d97ba2ad528533",
+            "content": "sha256:c266032eef15ef0c01e7b0cca314b2944399d357f18d591e6ca72699d667cd23",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -67,3 +67,5 @@ No cross-repository evidence is required for these claims.
 
 - The resource lock path. [5]
 - The bounded exclusive lock. [6]
+
+- `_lock_handle` opens the caller's held physical target when `io_path` names the same resource through a directory descriptor, while the mutex, capability cache and nesting keep the canonical lock identity — so two descriptor numbers cannot split one lock. \[7] [7]

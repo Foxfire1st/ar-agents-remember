@@ -1,0 +1,75 @@
+{
+  "path": "mcp/tests/test_canvas_presenter_store.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "eec2e01249a2170a810d30652d2db535ce828acf",
+        "content": "sha256:55c64565277b15bbd9e731b0b98d7201529258b8edf14ca557fb5c22f3a246a3",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_retention_reclaims_to_its_ceiling_and_keeps_request_reconciliation"
+        }
+      },
+      "facet": "After record reclamation, retrying its retained request identity raises attempt-record-reclaimed without adding records or runner calls.",
+      "id": "PRF-DZFGWH",
+      "invariant": "INV-M6Q82M",
+      "origin": {
+        "handoffEntry": "L104-M19-reclaimed-request",
+        "leaf": "260928-MIK-L104"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "eec2e01249a2170a810d30652d2db535ce828acf",
+        "content": "sha256:45e2b4a04c56d8ed5bb54a5cfed09822889bf8d6187efe4c9a18f0aeedb6d057",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_the_store_prunes_to_its_ceiling_and_keeps_a_live_record"
+        }
+      },
+      "facet": "After writing more than the retained ceiling, settled records are pruned and the live record remains.",
+      "id": "PRF-HWTRM2",
+      "invariant": "INV-EWGTN0",
+      "origin": {
+        "handoffEntry": "L104-M19-live-retention",
+        "leaf": "260928-MIK-L104"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The case `test_attempt_listing_is_chronological_and_lookups_ignore_the_shown_window` protects this behaviour.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "eec2e01249a2170a810d30652d2db535ce828acf",
+            "content": "sha256:9b1202d3514c34c47045de1b2ff46f259f7bed1c4898ebcd471cde5e87f52917",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_attempt_listing_is_chronological_and_lookups_ignore_the_shown_window"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The case `test_concurrent_chat_activity_and_cancellation_lose_no_state` protects this behaviour.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "eec2e01249a2170a810d30652d2db535ce828acf",
+            "content": "sha256:4eaee684acb1be600819c1162599bfd1a1a774bcf5cb7342ebc6b8d7e781a0ca",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_concurrent_chat_activity_and_cancellation_lose_no_state"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

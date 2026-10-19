@@ -1,0 +1,23 @@
+{
+  "path": "mcp/src/agents_remember/canvas/presenter_assets.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Assets are collected through held directories within the publication quota.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f3615d54f680fb65750834bd767ccc70ecac0a1d",
+            "content": "sha256:41bfb91754bf82bbf0dbe98abe86fb7e0fb1875faf15dbe64d03ec0d28302008",
+            "locator": {
+              "kind": "symbol",
+              "name": "collect_assets"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

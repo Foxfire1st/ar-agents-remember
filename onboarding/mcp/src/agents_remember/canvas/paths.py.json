@@ -1,0 +1,92 @@
+{
+  "path": "mcp/src/agents_remember/canvas/paths.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "9ca8d2182f453b9ef35c7143ed8f308f222ece30",
+        "content": "sha256:fdd0b5a1f1204e56553117823d19503ebd9c24e65f9d4b2115e646167a2053d9",
+        "locator": {
+          "kind": "symbol",
+          "name": "guard_path"
+        }
+      },
+      "id": "RLZ-AS925S",
+      "invariant": "INV-FQC46N",
+      "origin": {
+        "handoffEntry": "MIK-R105-r2-confined-paths",
+        "leaf": "260928-MIK-L104"
+      },
+      "rationale": "The root check is separate from the segment check because a symlinked component passes a lexical test.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "9ca8d2182f453b9ef35c7143ed8f308f222ece30",
+        "content": "sha256:38085772019073de9c2ad1a33e0a0060287dba720cc0109abb62b94e2bf83326",
+        "locator": {
+          "kind": "symbol",
+          "name": "path_segment"
+        }
+      },
+      "id": "RLZ-KZW8VQ",
+      "invariant": "INV-FQC46N",
+      "origin": {
+        "handoffEntry": "MIK-R105-r2-confined-paths",
+        "leaf": "260928-MIK-L104"
+      },
+      "rationale": "Every composed path starts here, so a traversal attempt is refused before it is joined.",
+      "role": "primary-authority"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "A path segment that could leave its directory is refused.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9ca8d2182f453b9ef35c7143ed8f308f222ece30",
+            "content": "sha256:38085772019073de9c2ad1a33e0a0060287dba720cc0109abb62b94e2bf83326",
+            "locator": {
+              "kind": "symbol",
+              "name": "path_segment"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "A symlinked component below the root or a target resolving outside it is refused.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9ca8d2182f453b9ef35c7143ed8f308f222ece30",
+            "content": "sha256:fdd0b5a1f1204e56553117823d19503ebd9c24e65f9d4b2115e646167a2053d9",
+            "locator": {
+              "kind": "symbol",
+              "name": "guard_path"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The design text in force is the repository's own text or the shipped default.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9ca8d2182f453b9ef35c7143ed8f308f222ece30",
+            "content": "sha256:38cff86b54aad089db12f331efb8ddeb38ce4d6eeb6d991c5c774f33ef19c1e0",
+            "locator": {
+              "kind": "symbol",
+              "name": "design_text_source"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}
