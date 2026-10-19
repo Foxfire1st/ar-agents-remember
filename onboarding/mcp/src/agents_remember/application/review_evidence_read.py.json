@@ -3,7 +3,25 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "5b2bd5bccc245c3d32d3ca95b1dbc29817a16b4e",
+        "blob": "67741bcb8061f606717744aa3c9a2012804d0df8",
+        "content": "sha256:37108f4d6080d64d6d564527fe98d9645cb31fa00d69e297c4c87f364c2e9bc4",
+        "locator": {
+          "kind": "symbol",
+          "name": "_window_receipt"
+        }
+      },
+      "id": "RLZ-0N11K4",
+      "invariant": "INV-18QNN3",
+      "origin": {
+        "handoffEntry": "MIK-R182@v1-carriers",
+        "leaf": "260928-MIK-L180"
+      },
+      "rationale": "This assembly is where the measured facts become the receipt's state and count: it hands _remainder the bytes the window examined and the object's end, and forwards the object's last line so the detail can name it.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "67741bcb8061f606717744aa3c9a2012804d0df8",
         "content": "sha256:0f5db40a4b64e22dc751e17023febdf7de071e3d73c8ea9039157e5fd6652ace",
         "locator": {
           "kind": "symbol",
@@ -21,7 +39,7 @@
     },
     {
       "anchor": {
-        "blob": "5b2bd5bccc245c3d32d3ca95b1dbc29817a16b4e",
+        "blob": "67741bcb8061f606717744aa3c9a2012804d0df8",
         "content": "sha256:a4a0e03f5c5ded854a8e2d12993269e6cdd1e1a17a12a501c0facf4bdc52ed3a",
         "locator": {
           "kind": "symbol",
@@ -39,8 +57,80 @@
     },
     {
       "anchor": {
-        "blob": "5b2bd5bccc245c3d32d3ca95b1dbc29817a16b4e",
-        "content": "sha256:859fc7c4fad17024a8cc1601378c42dd1c3f240e5e151fa51666b0393162a415",
+        "blob": "67741bcb8061f606717744aa3c9a2012804d0df8",
+        "content": "sha256:c8394f79f664d8329af48d2e79b5b2cf9a542158ccf766684e680445022ca870",
+        "locator": {
+          "kind": "symbol",
+          "name": "_object_end_absence"
+        }
+      },
+      "id": "RLZ-BXSPBN",
+      "invariant": "INV-18QNN3",
+      "origin": {
+        "handoffEntry": "MIK-R182@v1",
+        "leaf": "260928-MIK-L180"
+      },
+      "rationale": "This boundary turns an end-of-object start into the measured range absence about the requested line, which is the state rule 3 requires and the one an empty present line used to hide.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "67741bcb8061f606717744aa3c9a2012804d0df8",
+        "content": "sha256:a789d34d0a8988aa5e8d8d5cbe2eb86914eb6ac66c98ec5a45bd713f2dfc3dac",
+        "locator": {
+          "kind": "symbol",
+          "name": "_located_start"
+        }
+      },
+      "id": "RLZ-E82WY4",
+      "invariant": "INV-18QNN3",
+      "origin": {
+        "handoffEntry": "MIK-R182@v1",
+        "leaf": "260928-MIK-L180"
+      },
+      "rationale": "This step answers a caller that starts at or past the object's end before any window is read, and hands back the receipt that ends the read instead of an empty line.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "67741bcb8061f606717744aa3c9a2012804d0df8",
+        "content": "sha256:975b3068655a3f7563524f66657f6c44eafbcf7b96f5cde0a29a9d5e98fcdeb7",
+        "locator": {
+          "kind": "symbol",
+          "name": "_measured_object_end"
+        }
+      },
+      "id": "RLZ-JVSB83",
+      "invariant": "INV-18QNN3",
+      "origin": {
+        "handoffEntry": "MIK-R182@v1",
+        "leaf": "260928-MIK-L180"
+      },
+      "rationale": "This branch states the two outcomes of a window that reached the object's end: an exact page-held remainder, or a complete read whose requested range runs past the last line.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "67741bcb8061f606717744aa3c9a2012804d0df8",
+        "content": "sha256:e70b6b74c08e8c386c8454948ef802c350b0f90e0e62b1c0da2aa771184dc168",
+        "locator": {
+          "kind": "symbol",
+          "name": "_scan_to_line"
+        }
+      },
+      "id": "RLZ-M65D26",
+      "invariant": "INV-18QNN3",
+      "origin": {
+        "handoffEntry": "MIK-R182@v1",
+        "leaf": "260928-MIK-L180"
+      },
+      "rationale": "This scan now reports a requested line whose preceding newline is the object's last byte as past the end, so the boundary line between existing and nonexistent lines is decided here rather than inferred later.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "67741bcb8061f606717744aa3c9a2012804d0df8",
+        "content": "sha256:ec8bc809f3036d50b0d7487d0e21a7fab93dbf293462ae0cd3e1b830ebee6359",
         "locator": {
           "kind": "symbol",
           "name": "_scan_cut"
@@ -57,8 +147,26 @@
     },
     {
       "anchor": {
-        "blob": "5b2bd5bccc245c3d32d3ca95b1dbc29817a16b4e",
-        "content": "sha256:b4a257cf7c2d32ac444a34e426f629d3e9f62edd041f95151550756ad84bdc0d",
+        "blob": "67741bcb8061f606717744aa3c9a2012804d0df8",
+        "content": "sha256:846c740f96d278113c10c2835c5c402c154fc32d9c2f73d111eb6f2877295770",
+        "locator": {
+          "kind": "symbol",
+          "name": "_remainder"
+        }
+      },
+      "id": "RLZ-PXC7M1",
+      "invariant": "INV-18QNN3",
+      "origin": {
+        "handoffEntry": "MIK-R182@v1",
+        "leaf": "260928-MIK-L180"
+      },
+      "rationale": "This decision separates a request returned whole, a remainder the window measured, and a suffix the read never examined, so a requested end line is no longer counted as existing source.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "67741bcb8061f606717744aa3c9a2012804d0df8",
+        "content": "sha256:78013048a984e224f65117eff6ba160ea4dc669c3b8fc69656151ec08e60e6ac",
         "locator": {
           "kind": "symbol",
           "name": "_receipt_from_window"
@@ -75,7 +183,7 @@
     },
     {
       "anchor": {
-        "blob": "5b2bd5bccc245c3d32d3ca95b1dbc29817a16b4e",
+        "blob": "67741bcb8061f606717744aa3c9a2012804d0df8",
         "content": "sha256:8d9f052a4763ce42a55f9244e7e9cff939f2dee5f24650e7136879718a851f9f",
         "locator": {
           "kind": "symbol",
@@ -93,8 +201,8 @@
     },
     {
       "anchor": {
-        "blob": "5b2bd5bccc245c3d32d3ca95b1dbc29817a16b4e",
-        "content": "sha256:f454dc3321e4c55302d20f41e6c6c042c2fe8847daaac91b88152a6e20f7f258",
+        "blob": "67741bcb8061f606717744aa3c9a2012804d0df8",
+        "content": "sha256:8d8686bb6ca0781ccdf6d3e75c4a16609e3eb0bdd3d171b21b0ebc2b2f197faa",
         "locator": {
           "kind": "symbol",
           "name": "_blob_read"
@@ -108,6 +216,24 @@
       },
       "rationale": "Ordinary, resumed and symlink reads are streamed with measured consumption; an offset beyond MAX_SCAN_BYTES now refuses before any blob read (independent actualRead=0). Resumed prefix work is deducted from the finite scan budget. Packet path/collection caps, relationship path/byte/depth/page caps, bounded ls-tree streaming and a per-walk indexed lookup remain enforced; two-size and boundary tests pass. This credits bounded legitimate investigation, not unlimited-store-reader behavior owned by F10.",
       "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "67741bcb8061f606717744aa3c9a2012804d0df8",
+        "content": "sha256:22666cc64caa42b15ac4632f80c444976155bd5c2525584251f896cd9943edde",
+        "locator": {
+          "kind": "symbol",
+          "name": "_window_detail"
+        }
+      },
+      "id": "RLZ-XDYC0B",
+      "invariant": "INV-18QNN3",
+      "origin": {
+        "handoffEntry": "MIK-R182@v1-carriers",
+        "leaf": "260928-MIK-L180"
+      },
+      "rationale": "This formatter states the object's last line and that the requested range runs past it, which is the detail rule 1 requires when a complete read's request extended beyond the object.",
+      "role": "enforcement"
     }
   ],
   "references": {
@@ -116,7 +242,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5b2bd5bccc245c3d32d3ca95b1dbc29817a16b4e",
+            "blob": "67741bcb8061f606717744aa3c9a2012804d0df8",
             "content": "sha256:0f5db40a4b64e22dc751e17023febdf7de071e3d73c8ea9039157e5fd6652ace",
             "locator": {
               "kind": "symbol",
@@ -132,7 +258,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5b2bd5bccc245c3d32d3ca95b1dbc29817a16b4e",
+            "blob": "67741bcb8061f606717744aa3c9a2012804d0df8",
             "content": "sha256:97b5cd2d05348afa3406e7ca84820a9e1ec50fd283410f1cb464fe54511f86a4",
             "locator": {
               "kind": "symbol",
@@ -148,7 +274,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5b2bd5bccc245c3d32d3ca95b1dbc29817a16b4e",
+            "blob": "67741bcb8061f606717744aa3c9a2012804d0df8",
             "content": "sha256:8d9f052a4763ce42a55f9244e7e9cff939f2dee5f24650e7136879718a851f9f",
             "locator": {
               "kind": "symbol",
@@ -164,7 +290,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5b2bd5bccc245c3d32d3ca95b1dbc29817a16b4e",
+            "blob": "67741bcb8061f606717744aa3c9a2012804d0df8",
             "content": "sha256:a4a0e03f5c5ded854a8e2d12993269e6cdd1e1a17a12a501c0facf4bdc52ed3a",
             "locator": {
               "kind": "symbol",
@@ -185,6 +311,71 @@
             "locator": {
               "kind": "symbol",
               "name": "_scan_cut"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "A requested range that runs past the object's end ends at its last line and is complete, with no continuation and no limit.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "67741bcb8061f606717744aa3c9a2012804d0df8",
+            "content": "sha256:846c740f96d278113c10c2835c5c402c154fc32d9c2f73d111eb6f2877295770",
+            "locator": {
+              "kind": "symbol",
+              "name": "_remainder"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "67741bcb8061f606717744aa3c9a2012804d0df8",
+            "content": "sha256:975b3068655a3f7563524f66657f6c44eafbcf7b96f5cde0a29a9d5e98fcdeb7",
+            "locator": {
+              "kind": "symbol",
+              "name": "_measured_object_end"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "A read started at or past the object's end is a measured range absence, never an empty line and never a continuation that reads no byte.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "67741bcb8061f606717744aa3c9a2012804d0df8",
+            "content": "sha256:a789d34d0a8988aa5e8d8d5cbe2eb86914eb6ac66c98ec5a45bd713f2dfc3dac",
+            "locator": {
+              "kind": "symbol",
+              "name": "_located_start"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "67741bcb8061f606717744aa3c9a2012804d0df8",
+            "content": "sha256:c8394f79f664d8329af48d2e79b5b2cf9a542158ccf766684e680445022ca870",
+            "locator": {
+              "kind": "symbol",
+              "name": "_object_end_absence"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "67741bcb8061f606717744aa3c9a2012804d0df8",
+            "content": "sha256:e70b6b74c08e8c386c8454948ef802c350b0f90e0e62b1c0da2aa771184dc168",
+            "locator": {
+              "kind": "symbol",
+              "name": "_scan_to_line"
             }
           },
           "kind": "code"

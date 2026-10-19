@@ -25,7 +25,8 @@
     "INV-8FY445",
     "INV-VASQQX",
     "INV-TE5W2D",
-    "INV-ZAW3HJ"
+    "INV-ZAW3HJ",
+    "INV-18QNN3"
   ],
   "origin": {
     "handoff": {
@@ -35,7 +36,7 @@
     "leaf": "260928-MIK-L102",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "routes": [
     "mcp/src/agents_remember/application",
     "mcp/src/agents_remember/models/knowledge",

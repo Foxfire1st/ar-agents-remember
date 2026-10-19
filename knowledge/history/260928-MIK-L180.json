@@ -1,0 +1,359 @@
+{
+  "closed": true,
+  "leaf": "260928-MIK-L180",
+  "rows": [
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-0CPBS3",
+      "items": [
+        "sha256:13f8949aa0f4d867bc0e1571dff8fb3694d5214d23a2bc736c22b2db413dc733"
+      ],
+      "reason": "The added module-docstring bullet narrates the new rule for a reader of the file; it carries no behavior of its own. The obligation is INV-18QNN3's, stated at the functions that decide the state and the count.",
+      "subject": "hunk:sha256:13f8949aa0f4d867bc0e1571dff8fb3694d5214d23a2bc736c22b2db413dc733"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-3A289Q",
+      "items": [
+        "sha256:044edcc3cc7a560d75fe3e0dae8c0e79d7dcbf8bb9e078e25540850fdf652206"
+      ],
+      "reason": "This overview describes how the test populations are shaped, selected and governed; it names no closing inventory of modules. One added module and two catalog lines change no statement it makes.",
+      "sources": [
+        {
+          "blob": "117fc94c6dd19a011922fbe25371a5a3fe271f2c",
+          "path": "mcp/tests/evidence-lifecycle.toml"
+        },
+        {
+          "blob": "6f47afc5150b01d7ad26a62dfd400cc5f7e417d2",
+          "path": "mcp/tests/test-evidence-lanes.toml"
+        },
+        {
+          "blob": "1e26ae87bf8252d6f29f35eae651c1f6b2e42098",
+          "path": "mcp/tests/test_review_evidence_eof.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/overview"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-559NP8",
+      "items": [
+        "sha256:90b4e6b01548223cfe6f35b5d3c11545d48f0222dae67f88fee8ddc595fcb54b"
+      ],
+      "reason": "The card now states the end-of-object accounting: a requested range that runs past the object's end ends at its last line and is present, a remainder is counted only where the read measured it, a read started at the object's end is a measured range absence, and no continuation leads at or past the end. Its former sentence said the receipt always states a remainder, which the change made untrue, and its purpose and evidence now name the object's end.",
+      "sources": [
+        {
+          "blob": "67741bcb8061f606717744aa3c9a2012804d0df8",
+          "path": "mcp/src/agents_remember/application/review_evidence_read.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/application/review_evidence_read.py"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-5AQMTJ",
+      "items": [
+        "sha256:24525506b5077231b959f58befd9a6c8e8199a2ce57c7e11076b7388e7149bb1"
+      ],
+      "reason": "The change registers the new test module in two existing consumer lists of the evidence registry, as a source-derived consumer of already-declared artifacts. No contract, artifact, lifetime or replacement row is added or changed, so the card's account of the file stands and the registry's own writer re-derives the lists.",
+      "sources": [
+        {
+          "blob": "117fc94c6dd19a011922fbe25371a5a3fe271f2c",
+          "path": "mcp/tests/evidence-lifecycle.toml"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/evidence-lifecycle.toml"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-9DCAZ1",
+      "items": [
+        "sha256:ed3bc99b7173e7a77c9d1abcdf69c493cd2cf585cf08bafbeb867850fbd44eab"
+      ],
+      "reason": "The added line registers the new test module in the existing unit-regression lane. Selection only: no lane identity or policy changes.",
+      "subject": "hunk:sha256:ed3bc99b7173e7a77c9d1abcdf69c493cd2cf585cf08bafbeb867850fbd44eab"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-D6D2TB",
+      "items": [
+        "sha256:8e37b1e401ee7f16ff1b376fe45190a478e8d32c186962817cdd1683ebc51e83"
+      ],
+      "reason": "A new card records the five MIK-R182 cases in their own under-limit module: the past-end read present at its last line, the page that reaches the end, the unmeasured remainder as unknown, and the two measured-absence starts, each proved against the shipped reader through the packet module's own world fixture.",
+      "sources": [
+        {
+          "blob": "1e26ae87bf8252d6f29f35eae651c1f6b2e42098",
+          "path": "mcp/tests/test_review_evidence_eof.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_review_evidence_eof.py"
+    },
+    {
+      "disposition": "changed",
+      "effect": "strengthen",
+      "examined": [
+        {
+          "id": "INV-03QFAC",
+          "revision": 1
+        },
+        {
+          "id": "INV-16DDNJ",
+          "revision": 1
+        },
+        {
+          "id": "INV-18QNN3",
+          "revision": 1
+        },
+        {
+          "id": "INV-5VVSTD",
+          "revision": 1
+        },
+        {
+          "id": "INV-6VNAR5",
+          "revision": 1
+        },
+        {
+          "id": "INV-8FY445",
+          "revision": 1
+        },
+        {
+          "id": "INV-D3JV0V",
+          "revision": 1
+        },
+        {
+          "id": "INV-FXEPWM",
+          "revision": 1
+        },
+        {
+          "id": "INV-GAVZC0",
+          "revision": 1
+        },
+        {
+          "id": "INV-GGF749",
+          "revision": 1
+        },
+        {
+          "id": "INV-K2YX74",
+          "revision": 1
+        },
+        {
+          "id": "INV-R298WE",
+          "revision": 1
+        },
+        {
+          "id": "INV-S75HA1",
+          "revision": 1
+        },
+        {
+          "id": "INV-T4EVM5",
+          "revision": 1
+        },
+        {
+          "id": "INV-TE5W2D",
+          "revision": 1
+        },
+        {
+          "id": "INV-VASQQX",
+          "revision": 1
+        },
+        {
+          "id": "INV-YFTJNQ",
+          "revision": 1
+        },
+        {
+          "id": "INV-ZAW3HJ",
+          "revision": 1
+        },
+        {
+          "id": "INV-ZPHKZB",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-FEKH8M",
+      "items": [
+        "sha256:9b5053ce6b97a018d0687ff77e0d21a7bcdacd0efc65717ca2f04603f24c606e"
+      ],
+      "reason": "The family gains one member, INV-18QNN3, which keeps a read's stated state to the lines it measured and so supports the guarantee that a receipt keeps the comparison's own bytes and stated states. Its guarantee text, its three routes and its other eighteen members were examined at their stored revisions and are unchanged; the joint guarantee is not restated, because the new member supports it rather than extending it.",
+      "revision": 2,
+      "subject": "FAM-GPNRVQ"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-GVMXN6",
+      "items": [
+        "sha256:8e46b8920913a7ea3cedcc64753a6f2a7a9a138f7860d9ebcb29460bd4818a5c"
+      ],
+      "reason": "The change adds the new module to the existing unit-regression lane. The lane identities, the selection policy and every other membership are unchanged, so the card's account of the file stands.",
+      "sources": [
+        {
+          "blob": "6f47afc5150b01d7ad26a62dfd400cc5f7e417d2",
+          "path": "mcp/tests/test-evidence-lanes.toml"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test-evidence-lanes.toml"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "67741bcb8061f606717744aa3c9a2012804d0df8",
+            "content": "sha256:a4a0e03f5c5ded854a8e2d12993269e6cdd1e1a17a12a501c0facf4bdc52ed3a",
+            "locator": {
+              "kind": "symbol",
+              "name": "_take_window"
+            },
+            "path": "mcp/src/agents_remember/application/review_evidence_read.py"
+          },
+          "before": {
+            "blob": "5b2bd5bccc245c3d32d3ca95b1dbc29817a16b4e",
+            "content": "sha256:a4a0e03f5c5ded854a8e2d12993269e6cdd1e1a17a12a501c0facf4bdc52ed3a",
+            "locator": {
+              "kind": "symbol",
+              "name": "_take_window"
+            },
+            "path": "mcp/src/agents_remember/application/review_evidence_read.py"
+          },
+          "id": "RLZ-8JPM5R"
+        },
+        {
+          "after": {
+            "blob": "67741bcb8061f606717744aa3c9a2012804d0df8",
+            "content": "sha256:ec8bc809f3036d50b0d7487d0e21a7fab93dbf293462ae0cd3e1b830ebee6359",
+            "locator": {
+              "kind": "symbol",
+              "name": "_scan_cut"
+            },
+            "path": "mcp/src/agents_remember/application/review_evidence_read.py"
+          },
+          "before": {
+            "blob": "5b2bd5bccc245c3d32d3ca95b1dbc29817a16b4e",
+            "content": "sha256:859fc7c4fad17024a8cc1601378c42dd1c3f240e5e151fa51666b0393162a415",
+            "locator": {
+              "kind": "symbol",
+              "name": "_scan_cut"
+            },
+            "path": "mcp/src/agents_remember/application/review_evidence_read.py"
+          },
+          "id": "RLZ-MBMCZY"
+        },
+        {
+          "after": {
+            "blob": "67741bcb8061f606717744aa3c9a2012804d0df8",
+            "content": "sha256:78013048a984e224f65117eff6ba160ea4dc669c3b8fc69656151ec08e60e6ac",
+            "locator": {
+              "kind": "symbol",
+              "name": "_receipt_from_window"
+            },
+            "path": "mcp/src/agents_remember/application/review_evidence_read.py"
+          },
+          "before": {
+            "blob": "5b2bd5bccc245c3d32d3ca95b1dbc29817a16b4e",
+            "content": "sha256:b4a257cf7c2d32ac444a34e426f629d3e9f62edd041f95151550756ad84bdc0d",
+            "locator": {
+              "kind": "symbol",
+              "name": "_receipt_from_window"
+            },
+            "path": "mcp/src/agents_remember/application/review_evidence_read.py"
+          },
+          "id": "RLZ-R67ZS6"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-H7B9H8",
+      "items": [
+        "sha256:bc89769151af4314f24ce210e3a66707842c5c98ec2a15535307947bed1110d8"
+      ],
+      "reason": "This leaf re-anchors the invariant's three realizations on the changed reader and adds none to it. Its promise — an existing empty file or an unread range beyond a decoded prefix must not become measured absence, and a continuation must reach the remaining requested source — is unchanged and still holds: the empty file, the beyond-prefix range, the long-line cut and the page and byte caps keep their receipts. The end-of-object accounting this leaf adds is stated as its own invariant, MIK-R182's, because it forbids the opposite error (reporting a remainder, a truncation or a continuation that no line supports) and is proved by its own five cases.",
+      "revision": 1,
+      "subject": "INV-GGF749"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-P8SYR1",
+      "items": [
+        "sha256:e6ebbb5b152b2bfd92fa5271121bcedf6f8f1972bbe33056778c55c706b2a6ad"
+      ],
+      "reason": "The two added lines list the new test module in existing consumer lists of the evidence registry. Registration only: no contract, artifact, lifetime or replacement row is defined here.",
+      "subject": "hunk:sha256:e6ebbb5b152b2bfd92fa5271121bcedf6f8f1972bbe33056778c55c706b2a6ad"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-QSAFT9",
+      "items": [
+        "sha256:e2ed4792d8cd4559c62e87e93fa18b9bc5cf57ed34af05d1ad24e3f3e9c899a1"
+      ],
+      "reason": "This route overview describes the application layer's composition and ownership seams. The reader's end-of-object accounting is a contract inside one card of the route, and the overview states nothing about receipt completeness or remaining counts that the change makes untrue.",
+      "sources": [
+        {
+          "blob": "67741bcb8061f606717744aa3c9a2012804d0df8",
+          "path": "mcp/src/agents_remember/application/review_evidence_read.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/application/overview"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "67741bcb8061f606717744aa3c9a2012804d0df8",
+            "content": "sha256:8d9f052a4763ce42a55f9244e7e9cff939f2dee5f24650e7136879718a851f9f",
+            "locator": {
+              "kind": "symbol",
+              "name": "read_bound_source"
+            },
+            "path": "mcp/src/agents_remember/application/review_evidence_read.py"
+          },
+          "before": {
+            "blob": "5b2bd5bccc245c3d32d3ca95b1dbc29817a16b4e",
+            "content": "sha256:8d9f052a4763ce42a55f9244e7e9cff939f2dee5f24650e7136879718a851f9f",
+            "locator": {
+              "kind": "symbol",
+              "name": "read_bound_source"
+            },
+            "path": "mcp/src/agents_remember/application/review_evidence_read.py"
+          },
+          "id": "RLZ-T34YVV"
+        },
+        {
+          "after": {
+            "blob": "67741bcb8061f606717744aa3c9a2012804d0df8",
+            "content": "sha256:8d8686bb6ca0781ccdf6d3e75c4a16609e3eb0bdd3d171b21b0ebc2b2f197faa",
+            "locator": {
+              "kind": "symbol",
+              "name": "_blob_read"
+            },
+            "path": "mcp/src/agents_remember/application/review_evidence_read.py"
+          },
+          "before": {
+            "blob": "5b2bd5bccc245c3d32d3ca95b1dbc29817a16b4e",
+            "content": "sha256:f454dc3321e4c55302d20f41e6c6c042c2fe8847daaac91b88152a6e20f7f258",
+            "locator": {
+              "kind": "symbol",
+              "name": "_blob_read"
+            },
+            "path": "mcp/src/agents_remember/application/review_evidence_read.py"
+          },
+          "id": "RLZ-W8ZSM3"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-RZQBNX",
+      "items": [
+        "sha256:c79a27b57ea52d57d112aa172934815e4a77363fa0b694848f72d521e1655708"
+      ],
+      "reason": "This leaf re-anchors the invariant's two realizations on the reader it changed and adds none to it. Its promise — ordinary, resumed and symlink reads bounded by measured consumption, and an offset beyond the scan budget refused before any blob read — is unchanged: the streaming, the four budgets and the refusal order are the base's, and the new end-of-object step runs before the scan and reads no byte of its own.",
+      "revision": 1,
+      "subject": "INV-YFTJNQ"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-SMPRKM",
+      "items": [
+        "sha256:c3e8a5eeabd9b3211bfdb9257f80ae22e9547d76ac8cf2df211bfad5e20dc726"
+      ],
+      "reason": "The two removed lines are the old unmeasured remainder branch that returned the distance to a requested end line as a known count. The replacement is INV-18QNN3's measured count at _remainder, and a deletion admits no obligation of its own.",
+      "subject": "hunk:sha256:c3e8a5eeabd9b3211bfdb9257f80ae22e9547d76ac8cf2df211bfad5e20dc726"
+    }
+  ],
+  "schema": "ar-history/v1"
+}
