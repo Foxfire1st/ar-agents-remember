@@ -1,0 +1,28 @@
+{
+  "anchor": {
+    "blob": "8a9a70a8d78188803743060a92166f0028b70d86",
+    "content": "sha256:054eddc68eefaf3cec2aaa2fa7154a47ba4cef2774a257089297e5713f93da9a",
+    "locator": {
+      "kind": "file"
+    },
+    "path": "mcp/src/agents_remember/cli/paseo_catalog.py"
+  },
+  "id": "WKN-31EKY0",
+  "kind": "debt",
+  "origin": {
+    "handoff": {
+      "path": "rule9-ingest-list.json"
+    },
+    "handoffEntry": "mark-69",
+    "leaf": "260928-MIK-L118",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-weakness/v1",
+  "seen": {
+    "role": "worker",
+    "task": "260928-MIK-L118"
+  },
+  "state": "open",
+  "statement": "The invariant promises a generic explicit least-offered working mode and refusal of unknown offerings. MIK-R71@v1 rule21 instead names Claude `default`, Codex `auto`, no mode for Pi, and no stated mode when the named mode is absent or the kind is unlisted; the retained resolver follows that narrower provider-specific policy."
+}

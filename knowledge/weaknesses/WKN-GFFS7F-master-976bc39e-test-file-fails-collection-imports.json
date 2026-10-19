@@ -1,0 +1,28 @@
+{
+  "anchor": {
+    "blob": "6e7bd5a18da5ea781594e67999b9b01f305937d4",
+    "content": "sha256:57963a8c05a50b4d7b23ed1e71af1f6df4675bb345acf2864f756afcd68470ec",
+    "locator": {
+      "kind": "file"
+    },
+    "path": "mcp/src/agents_remember/cli/__main__.py"
+  },
+  "id": "WKN-GFFS7F",
+  "kind": "debt",
+  "origin": {
+    "handoff": {
+      "path": "rule9-ingest-list.json"
+    },
+    "handoffEntry": "mark-22",
+    "leaf": "260928-MIK-L118",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-weakness/v1",
+  "seen": {
+    "role": "worker",
+    "task": "260928-MIK-L118"
+  },
+  "state": "open",
+  "statement": "On master 976bc39e the test file fails at collection (it imports `application.provider_tools`, which L112 removed); L109 and L52 Workers both measured it on clean master. `cli/__main__.py` and `registration/core.py` carry ruff PLR0915 and F401. Untouched by L52/L109; treat on another date (L109 may touch read_boundary — its Reviewer judges)."
+}

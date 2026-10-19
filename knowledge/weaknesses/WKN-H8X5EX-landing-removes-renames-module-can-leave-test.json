@@ -1,0 +1,28 @@
+{
+  "anchor": {
+    "blob": "0af01ea2d279b6c3a5f5d41480143de61e8cae1f",
+    "content": "sha256:f661e7ac41b45de78b5dc762bc3cc66b469c28c545b6bb6bf5ffca10d41facb3",
+    "locator": {
+      "kind": "file"
+    },
+    "path": "skills/l-01-agent-lifecycles/roles/worker.md"
+  },
+  "id": "WKN-H8X5EX",
+  "kind": "debt",
+  "origin": {
+    "handoff": {
+      "path": "rule9-ingest-list.json"
+    },
+    "handoffEntry": "mark-24",
+    "leaf": "260928-MIK-L118",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-weakness/v1",
+  "seen": {
+    "role": "worker",
+    "task": "260928-MIK-L118"
+  },
+  "state": "open",
+  "statement": "A landing that removes or renames a module can leave test files that no longer load, and focused tests do not show it (L112 left two, 23 tests dark for hours; repaired by L138). In this master the Manager's rules page holds the check (a collection of the whole test tree). A place for it in the product, in the Worker's role text or in the landing route, is not built;"
+}

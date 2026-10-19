@@ -1,0 +1,28 @@
+{
+  "anchor": {
+    "blob": "aed0880f6d90d1882d8d98d46fb4b084b6869862",
+    "content": "sha256:8e77dde6f74dfa1855ef7cefd02ce4588f17f33a9f331519610f4f495f62481e",
+    "locator": {
+      "kind": "file"
+    },
+    "path": "mcp/tests/test_tool_answer_guard.py"
+  },
+  "id": "WKN-6QCP3S",
+  "kind": "debt",
+  "origin": {
+    "handoff": {
+      "path": "rule9-ingest-list.json"
+    },
+    "handoffEntry": "mark-71",
+    "leaf": "260928-MIK-L118",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-weakness/v1",
+  "seen": {
+    "role": "worker",
+    "task": "260928-MIK-L118"
+  },
+  "state": "open",
+  "statement": "Intermittent exact-edge guard failure: Worker reproduced 2/20 on landed c861abfe and 0/20 on A014 in the measured batches (earlier candidate batch 1/3). Worker attributes the narrow token margin to random temporary-folder and time-stamped log names. Baseline reproduction established for this case only. Outside the five-item D305–D309 reopen; recorded and left, no repair or new task."
+}

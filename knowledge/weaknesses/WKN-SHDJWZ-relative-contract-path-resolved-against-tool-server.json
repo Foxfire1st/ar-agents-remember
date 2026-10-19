@@ -1,0 +1,28 @@
+{
+  "anchor": {
+    "blob": "95544419b0b670b95be5e07d8fae1cdffc3d4c88",
+    "content": "sha256:b35f03d39123c5b1e8e3cb45254d61be0c1f518bfeda393f6f0dca88ec79ff7f",
+    "locator": {
+      "kind": "file"
+    },
+    "path": "mcp/src/agents_remember/worktrees/modules/memory_candidate_pair.py"
+  },
+  "id": "WKN-SHDJWZ",
+  "kind": "debt",
+  "origin": {
+    "handoff": {
+      "path": "rule9-ingest-list.json"
+    },
+    "handoffEntry": "mark-2",
+    "leaf": "260928-MIK-L118",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-weakness/v1",
+  "seen": {
+    "role": "worker",
+    "task": "260928-MIK-L118"
+  },
+  "state": "open",
+  "statement": "A relative `contract_path` is resolved against the tool server's working directory, not refused as relative. The refusal then names a path nobody asked for and says `nextAction developer-decision`, although the remedy is the absolute address. On L119 this sent a Curator and the Manager up the chain for one argument."
+}

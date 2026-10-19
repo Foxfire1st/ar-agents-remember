@@ -1,0 +1,28 @@
+{
+  "anchor": {
+    "blob": "54c1c5241bec67b462464d3ce7226c5eac99e0ed",
+    "content": "sha256:9635818c6789b402bd36e28979046a5acb46393b05c98b4b52686b4a6263705b",
+    "locator": {
+      "kind": "file"
+    },
+    "path": "dashboard/src/test/fixtures/wire.ts"
+  },
+  "id": "WKN-QRSAA7",
+  "kind": "debt",
+  "origin": {
+    "handoff": {
+      "path": "rule9-ingest-list.json"
+    },
+    "handoffEntry": "mark-52",
+    "leaf": "260928-MIK-L118",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-weakness/v1",
+  "seen": {
+    "role": "worker",
+    "task": "260928-MIK-L118"
+  },
+  "state": "open",
+  "statement": "test/fixtures/wire.ts says base values come only from the served row, but the tip's bases already hold 25 default values (and L127 adds four: form, type, headerNotes, statusNoteTruncated); nothing tests the sentence. Found by L127 Worker (notes/reports/worker/7b2c4e19-5d63-4a8f-b1e0-127000000a01/fixture-base-defaults-F7.md). L127 does not repair it; the Curator writes the exact sentence;"
+}

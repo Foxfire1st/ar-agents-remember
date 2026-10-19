@@ -1,0 +1,28 @@
+{
+  "anchor": {
+    "blob": "ba641b6fef944eaea108f4faeb4fb392a6d572b4",
+    "content": "sha256:b89287afa4e4d2bb9848a4cde24844a7594fe517636c88b7296ddf9d40ed3d53",
+    "locator": {
+      "kind": "file"
+    },
+    "path": "mcp/tests/test_tool_entry_point_sweep.py"
+  },
+  "id": "WKN-X2VN03",
+  "kind": "debt",
+  "origin": {
+    "handoff": {
+      "path": "rule9-ingest-list.json"
+    },
+    "handoffEntry": "mark-39",
+    "leaf": "260928-MIK-L118",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-weakness/v1",
+  "seen": {
+    "role": "worker",
+    "task": "260928-MIK-L118"
+  },
+  "state": "open",
+  "statement": "test_tool_entry_point_sweep.py (11 tools refused agentic-settings-location-upgrade-required: fixture writes coord/system/settings.json), test_tool_answer_table.py L112FinalRowProductionTests (2), test_tool_descriptions.py (10 subfailures, L110/L111-owned), test_knowledge_conversion_toolchain.py (2) + test_knowledge_index_surfaces.py (1), ruff PLR0911 tool_entry_point_world.py:308. Not L109's;"
+}

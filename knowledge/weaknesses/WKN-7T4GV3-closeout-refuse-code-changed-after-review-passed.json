@@ -1,0 +1,28 @@
+{
+  "anchor": {
+    "blob": "d3bf44cfa204206d6ef0e8ca4a4a03525ed1917b",
+    "content": "sha256:8763fe86944688bb0122940bc8525c110cf7cc209bd93bf71599e983fb4966f3",
+    "locator": {
+      "kind": "file"
+    },
+    "path": "mcp/src/agents_remember/worktrees/route_review_scope.py"
+  },
+  "id": "WKN-7T4GV3",
+  "kind": "debt",
+  "origin": {
+    "handoff": {
+      "path": "rule9-ingest-list.json"
+    },
+    "handoffEntry": "mark-1",
+    "leaf": "260928-MIK-L118",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-weakness/v1",
+  "seen": {
+    "role": "worker",
+    "task": "260928-MIK-L118"
+  },
+  "state": "open",
+  "statement": "Closeout does not refuse code that changed after its review passed. For a leaf of an atomic master the route review is deferred, and closeout checks only the invariant gate over the exact trees. Whether closeout should bind the tree that was reviewed is not decided."
+}

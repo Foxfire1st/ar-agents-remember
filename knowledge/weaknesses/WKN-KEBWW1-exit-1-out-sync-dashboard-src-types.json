@@ -1,0 +1,28 @@
+{
+  "anchor": {
+    "blob": "a162007f758fbc010d0f2f435fe9e0a2e17ef4e2",
+    "content": "sha256:8156aa934733043c0aefd46cd6c52d6bafd8a4eb52a7b62af103207cacbf746e",
+    "locator": {
+      "kind": "file"
+    },
+    "path": "dashboard/src/types/projection.schema.json"
+  },
+  "id": "WKN-KEBWW1",
+  "kind": "debt",
+  "origin": {
+    "handoff": {
+      "path": "rule9-ingest-list.json"
+    },
+    "handoffEntry": "mark-28",
+    "leaf": "260928-MIK-L118",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-weakness/v1",
+  "seen": {
+    "role": "worker",
+    "task": "260928-MIK-L118"
+  },
+  "state": "open",
+  "statement": "Exit 1: 'out of sync: dashboard/src/types/projection.schema.json' (seen by the L127 Reviewer, no finding). Whether L127's own change moved the projection is unknown; the Worker is asked to regenerate it inside L127 if so. If not its change, it is a separate drift to treat on another date."
+}

@@ -1,0 +1,28 @@
+{
+  "anchor": {
+    "blob": "7b84a649c5063db2bcee67dbb98c03b8620ac814",
+    "content": "sha256:aa1f6871865beafe7d749da7ea962b0309eda06287d6694aafd6d406f40edaa9",
+    "locator": {
+      "kind": "file"
+    },
+    "path": "dashboard/src/cockpit/Cockpit.tsx"
+  },
+  "id": "WKN-ZM1XKS",
+  "kind": "debt",
+  "origin": {
+    "handoff": {
+      "path": "rule9-ingest-list.json"
+    },
+    "handoffEntry": "mark-9",
+    "leaf": "260928-MIK-L118",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-weakness/v1",
+  "seen": {
+    "role": "worker",
+    "task": "260928-MIK-L118"
+  },
+  "state": "open",
+  "statement": "As the Worker of L112 reports it, no entry and no address of the dashboard leads to the engine view; it is reached only as an injected first view, in tests and specimens. The mounted dashboard shows 19 buttons and none for it. Whether the view is meant to be reachable, or is code without a user and goes (D126: no dead code), is not decided and not verified by the architect."
+}

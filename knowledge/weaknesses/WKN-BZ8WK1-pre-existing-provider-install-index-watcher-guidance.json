@@ -1,0 +1,28 @@
+{
+  "anchor": {
+    "blob": "51232152049671e86bb8d535cd0ce21f1c3325e5",
+    "content": "sha256:285638619d7d6724a3f07685866b12572bb075d617d7d5735a198a9cf6ecf024",
+    "locator": {
+      "kind": "file"
+    },
+    "path": "mcp/README.md"
+  },
+  "id": "WKN-BZ8WK1",
+  "kind": "debt",
+  "origin": {
+    "handoff": {
+      "path": "rule9-ingest-list.json"
+    },
+    "handoffEntry": "mark-L112-CUR-C01",
+    "leaf": "260928-MIK-L118",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-weakness/v1",
+  "seen": {
+    "role": "worker",
+    "task": "260928-MIK-L118"
+  },
+  "state": "open",
+  "statement": "Pre-existing provider-install/index/watcher guidance, `context_packet(include_providers=true)` and a provider/search tool-surface claim remain; outside the sealed L112 findings and its README delta, which only removes `skills_install` mentions, so the Manager's D167 disposition is mark and leave, no edit."
+}

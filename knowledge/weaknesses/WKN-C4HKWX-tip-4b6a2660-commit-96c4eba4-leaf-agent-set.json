@@ -1,0 +1,28 @@
+{
+  "anchor": {
+    "blob": "8eb41bc3857bbaa5b8fc9d6f7a658b61516acc0a",
+    "content": "sha256:e3c460a4a4754ee01a5d8930850b060acdc0ef4af4cabf5023372af98f740522",
+    "locator": {
+      "kind": "file"
+    },
+    "path": "mcp/tests/test_role_document_chats.py"
+  },
+  "id": "WKN-C4HKWX",
+  "kind": "debt",
+  "origin": {
+    "handoff": {
+      "path": "rule9-ingest-list.json"
+    },
+    "handoffEntry": "mark-51",
+    "leaf": "260928-MIK-L118",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-weakness/v1",
+  "seen": {
+    "role": "worker",
+    "task": "260928-MIK-L118"
+  },
+  "state": "open",
+  "statement": "Tip 4b6a2660: commit 96c4eba4 (leaf-agent-set task) gave the launch request two fields; test_role_document_chats.py::test_read_filters_archived... fails on the tip alone. L140 adapted two test lines because its own new case hit the same failure (no product code). Also unformatted on the tip: role_launch_receipts.py, role_launch_routes.py, test_paseo_launch.py (ruff format), kin of marks 44/45."
+}

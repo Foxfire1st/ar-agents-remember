@@ -1,0 +1,28 @@
+{
+  "anchor": {
+    "blob": "1f49aa7f780ee01887653bdf6222e49bd4427dd3",
+    "content": "sha256:fe0be55b31df8f9f73b8b774e716b1d8a2583d45227ab5aa5b9392590eca0bd8",
+    "locator": {
+      "kind": "file"
+    },
+    "path": "mcp/src/agents_remember/worktrees/task_document_copies.py"
+  },
+  "id": "WKN-FWQNYV",
+  "kind": "debt",
+  "origin": {
+    "handoff": {
+      "path": "rule9-ingest-list.json"
+    },
+    "handoffEntry": "mark-15",
+    "leaf": "260928-MIK-L118",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-weakness/v1",
+  "seen": {
+    "role": "worker",
+    "task": "260928-MIK-L118"
+  },
+  "state": "open",
+  "statement": "To know which enclosure is a task's own, the refresh has to load every contract in the shared `enclosures/` folder of the master; a contract that cannot be read does not say whose it is. A record of a task's enclosures made at creation would answer it without a read. Signs for coming back: a write of a task document fails or warns for an unreadable contract"
+}

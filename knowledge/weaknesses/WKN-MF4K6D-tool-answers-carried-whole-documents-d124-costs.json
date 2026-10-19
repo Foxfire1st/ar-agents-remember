@@ -1,0 +1,28 @@
+{
+  "anchor": {
+    "blob": "e0e46bc6a90dd3b9da4bab12c43f61d1e4e71a70",
+    "content": "sha256:611cce8419f2f98ceb4edd0b31ea0dc5fe740280eed2d76a3dce05c98fa22b14",
+    "locator": {
+      "kind": "file"
+    },
+    "path": "mcp/src/agents_remember/application/tool_response.py"
+  },
+  "id": "WKN-MF4K6D",
+  "kind": "context",
+  "origin": {
+    "handoff": {
+      "path": "rule9-ingest-list.json"
+    },
+    "handoffEntry": "problem-whole-documents",
+    "leaf": "260928-MIK-L118",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-weakness/v1",
+  "seen": {
+    "role": "worker",
+    "task": "260928-MIK-L118"
+  },
+  "state": "open",
+  "statement": "Tool answers carried whole documents (D124), which costs a reading agent the whole document for one answer."
+}
