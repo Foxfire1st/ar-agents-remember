@@ -12,7 +12,7 @@ The canonical server entry exposes the provisioned embed list, composes host-act
 
 contribute reads the list once at load, logs the entry count and registers ar.embed-list with that value. Provisioning/reload owns refresh, while malformed present data fails visibly.
 
-A host-activity publisher is created from PASEO_HOME, registers its own event handlers, and supplies the explicit ar.host-activity-snapshot RPC: a full reconciliation returns the publisher boot identity. Initialization and unload-publication failures are logged; an unavailable publisher makes the RPC fail visibly. Unload marks publication incomplete. registerParentWakeEvents separately owns its tracker and steer sends, preserving turn/permission gates without conflating wake behavior with task-state publication. Embed data remains load-time data; neither owner starts a poll.
+A host-activity publisher is created from PASEO_HOME, registers its own event handlers, and supplies the explicit ar.host-activity-snapshot RPC: a full reconciliation returns the publisher boot identity. Initialization and unload-publication failures are logged; an unavailable publisher makes the RPC fail visibly. Unload marks publication incomplete. registerParentWakeEvents separately owns its tracker, host-state reads, log sink and steer sends, and returns the cleanup that stops every pending seat wait when the plugin unloads, preserving turn/permission gates without conflating wake behavior with task-state publication. Embed data remains load-time data; neither owner starts a poll.
 
 ## Invariants And Boundaries
 

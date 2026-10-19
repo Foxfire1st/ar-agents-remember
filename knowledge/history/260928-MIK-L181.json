@@ -1,0 +1,987 @@
+{
+  "closed": true,
+  "leaf": "260928-MIK-L181",
+  "rows": [
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-1HTEQN",
+      "items": [
+        "sha256:4e37f182889b56ffc2dc6dfd367c06532dfd32a607befb012e32dc479202ec05"
+      ],
+      "reason": "The hunk adds the turn-log import to the adapter; the sink itself is realized at `createTurnEndLog` and `registerParentWakeEvents`.",
+      "subject": "hunk:sha256:4e37f182889b56ffc2dc6dfd367c06532dfd32a607befb012e32dc479202ec05"
+    },
+    {
+      "disposition": "realized_elsewhere",
+      "id": "ROW-39C5NA",
+      "items": [
+        "sha256:33af5beacbd3124bd1a10f7398eab3ac37bcf678edf5fefdb4c17751456c1681"
+      ],
+      "reason": "The restore is delivered by the same record revision and the same changed row: rule 1 recognition is re-anchored on the shared recogniser and the corrected return realization, so the invariant's statement that a delivered return suppresses the line now holds wherever the row shows the recipient.",
+      "ref": {
+        "invariant": "INV-1ZKP4R"
+      },
+      "subject": "planned:invariant:INV-1ZKP4R#restore"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-3XHP27",
+      "items": [
+        "sha256:95237e8c29aaa6f492691ec748a8790ff0383d5e8af1ba1e3e2804f2564284cd"
+      ],
+      "reason": "The hunk only adds two imports to the adapter — `TURN_ENDED_STEERING_PROVIDERS` and `cleanupSeatWaits` — that the registration below uses; it declares nothing about when a wake is owed.",
+      "subject": "hunk:sha256:95237e8c29aaa6f492691ec748a8790ff0383d5e8af1ba1e3e2804f2564284cd"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-57VQKM",
+      "items": [
+        "sha256:ca14dfc289abbc47c0eda0cd1354cb5095da35307a6d22e1203cb668c06fcf9d"
+      ],
+      "reason": "The route overview now describes the leaf send-back, the plugin's turn-end files and the new load-bearing files.",
+      "sources": [
+        {
+          "blob": "9b7519a48a8e8c3c60dc0db7b75e4fcfcec41fd2",
+          "path": "mcp/src/agents_remember/package_data/paseo_plugin/index.server.ts"
+        },
+        {
+          "blob": "f2dc5ede92768980ef0135a4a78cfe500b4ac8da",
+          "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/fixtures/evidence-rows.json"
+        },
+        {
+          "blob": "3df8cefb8ef1f43a1958e244c6e207b474ff7025",
+          "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.test.ts"
+        },
+        {
+          "blob": "a321106354dc094c22f6c89a9ff0d685ee8db381",
+          "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.ts"
+        },
+        {
+          "blob": "31a8b700c3fd0f2078aa2b41e6248c5a7d15d74c",
+          "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_events.test.ts"
+        },
+        {
+          "blob": "1edfbbd1d56bdc07855999b8bb32d3edfce59189",
+          "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_events.ts"
+        },
+        {
+          "blob": "7f396ecfcbcf54f51a623301c1fe0b65c648f1ed",
+          "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_log.ts"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/package_data/paseo_plugin/overview"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-BBGQDH",
+      "items": [
+        "sha256:5b8499e42632014a2f451fdd3688e40f01fcc4eb6adbcac489dfaf760a12b037"
+      ],
+      "reason": "New card for the plugin's own turn-end log, its one retained archive and its separate failure file.",
+      "sources": [
+        {
+          "blob": "7f396ecfcbcf54f51a623301c1fe0b65c648f1ed",
+          "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_log.ts"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/package_data/paseo_plugin/server/turn_log.ts"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-CM43EF",
+      "items": [
+        "sha256:3a477f3dadbcf3565cd005872ea8ec73256799fca94c9a4eddb6ea5d4f7af08f"
+      ],
+      "reason": "The card now covers the host-state read, the parent-label child rule, the log sink and the cleanup the registration returns.",
+      "sources": [
+        {
+          "blob": "1edfbbd1d56bdc07855999b8bb32d3edfce59189",
+          "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_events.ts"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/package_data/paseo_plugin/server/turn_events.ts"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-DD4SAW",
+      "items": [
+        "sha256:3426551a59be6d8acc8ee4daa31f8aea27d130263830a7e31c75731e3b8bc05c"
+      ],
+      "reason": "The hunk only adds the type `HostAgentState` to the adapter's import list, the shape its host-state reader returns; it declares nothing about how the state is read.",
+      "subject": "hunk:sha256:3426551a59be6d8acc8ee4daa31f8aea27d130263830a7e31c75731e3b8bc05c"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-EP665B",
+      "items": [
+        "sha256:db25cfeebc364488b765840f8f04718b8a6e0de5a3af03459cd831e575092e78"
+      ],
+      "reason": "The hunk only imports the log row type from `turn_log.ts` for the tracker's append field; it declares nothing about when a row is written.",
+      "subject": "hunk:sha256:db25cfeebc364488b765840f8f04718b8a6e0de5a3af03459cd831e575092e78"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-MC0NPD",
+      "items": [
+        "sha256:56b4c528e661ebd9941fdb0102634fc3d19f38fe41f688b6af11c77061592c28"
+      ],
+      "reason": "The hunk is the doc comment above the recipient-holder reader; the holder rule it explains is realized at `candidateRecipients` and `answerRecipient`.",
+      "subject": "hunk:sha256:56b4c528e661ebd9941fdb0102634fc3d19f38fe41f688b6af11c77061592c28"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-QCYXNX",
+      "items": [
+        "sha256:23fb5b1281ba3076ec18bcda79742992294cff080d5abf2df531d49262a014b4"
+      ],
+      "reason": "New card for the adapter test that drives the contributed handler against incomplete and complete host listings.",
+      "sources": [
+        {
+          "blob": "31a8b700c3fd0f2078aa2b41e6248c5a7d15d74c",
+          "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_events.test.ts"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/package_data/paseo_plugin/server/turn_events.test.ts"
+    },
+    {
+      "because": [
+        {
+          "id": "MIK-R183",
+          "packet": "requirements/MIK-R183-v5-a-seat-that-stops-without-handing-over-is-sent-back-to-its-work.md",
+          "task": {
+            "path": "260928_maintained-invariant-knowledge",
+            "repository": "agents-remember"
+          },
+          "version": "v5"
+        }
+      ],
+      "covers": [
+        {
+          "after": {
+            "blob": "3df8cefb8ef1f43a1958e244c6e207b474ff7025",
+            "content": "sha256:c32eac5534c057e557a0f4edf0dc39d4c6d2f92fba3b46ad677e0e8dc34f5358",
+            "locator": {
+              "kind": "symbol",
+              "name": "a Hermes row that shows no recipient is a hand-off but keeps the parent's line"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.test.ts"
+          },
+          "before": "absent",
+          "id": "PRF-1A2PEY"
+        },
+        {
+          "after": {
+            "blob": "31a8b700c3fd0f2078aa2b41e6248c5a7d15d74c",
+            "content": "sha256:0616580dd4de730d95ae3ead83839053dc3a45da1706feab36a9c2c75bf378ae",
+            "locator": {
+              "kind": "symbol",
+              "name": "F06: incomplete pagination never admits a seat wake; a complete listing does"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_events.test.ts"
+          },
+          "before": "absent",
+          "id": "PRF-6MFPDJ"
+        },
+        {
+          "after": {
+            "blob": "3df8cefb8ef1f43a1958e244c6e207b474ff7025",
+            "content": "sha256:e30a950ed9f66cd4d454d62a4f74eb2a7c433589a0d3d9665a4043be1570e700",
+            "locator": {
+              "kind": "symbol",
+              "name": "a seat archived or waiting on a permission when the wait ends gets nothing, and a row is written"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.test.ts"
+          },
+          "before": "absent",
+          "id": "PRF-7AZVA0"
+        },
+        {
+          "after": {
+            "blob": "3df8cefb8ef1f43a1958e244c6e207b474ff7025",
+            "content": "sha256:aa94192f3c8ed38177ec0a8176c14b76dcc63d34031261058f12274aa8daaf29",
+            "locator": {
+              "kind": "symbol",
+              "name": "every row shape of rule 1 is a hand-off, the L104 row's escaped answer included"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.test.ts"
+          },
+          "before": "absent",
+          "id": "PRF-7KDFB2"
+        },
+        {
+          "after": {
+            "blob": "3df8cefb8ef1f43a1958e244c6e207b474ff7025",
+            "content": "sha256:36124d2aa25ea8afd89e09cb6a48e4e71c5f84bcbaeed95c1dc3a09bc2ca19c8",
+            "locator": {
+              "kind": "symbol",
+              "name": "the third end's marked line comes only at the end of its wait, and a turn start inside that wait cancels it"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.test.ts"
+          },
+          "before": "absent",
+          "id": "PRF-9WHSVB"
+        },
+        {
+          "after": {
+            "blob": "3df8cefb8ef1f43a1958e244c6e207b474ff7025",
+            "content": "sha256:4b39e636211ec348b87125f552cf1efb2efd60522fe8b90e1d5f03a8153ac046",
+            "locator": {
+              "kind": "symbol",
+              "name": "a child found by its paseo.parent-agent-id label holds the seat, also when its turn began before the plugin loaded"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.test.ts"
+          },
+          "before": "absent",
+          "id": "PRF-CWKV66"
+        },
+        {
+          "after": {
+            "blob": "3df8cefb8ef1f43a1958e244c6e207b474ff7025",
+            "content": "sha256:7662dfb40ec88220c875919e61b3093378778df26db513c6747319bb9c128170",
+            "locator": {
+              "kind": "symbol",
+              "name": "a leaf seat starts no role, so a role_start row is no hand-off (rule 2, v5)"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.test.ts"
+          },
+          "before": "absent",
+          "id": "PRF-DT4XZG"
+        },
+        {
+          "after": {
+            "blob": "3df8cefb8ef1f43a1958e244c6e207b474ff7025",
+            "content": "sha256:73e6d62ab3483c120504b294ccbc55d93452f69d1498d717a34377086b22e64c",
+            "locator": {
+              "kind": "symbol",
+              "name": "a silent end sends one line with the facts and the agent's last line"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.test.ts"
+          },
+          "before": {
+            "blob": "02028fc1ac562ad5c7f21f4fe9ca6b9c1a254de1",
+            "content": "sha256:b4efde863e683bc72a89dc2a759dcfb6e5b73614251e266dc0095e10df6082c4",
+            "locator": {
+              "kind": "symbol",
+              "name": "a silent end sends one line with the facts and the agent's last line"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.test.ts"
+          },
+          "id": "PRF-GQ2EVM"
+        },
+        {
+          "after": {
+            "blob": "3df8cefb8ef1f43a1958e244c6e207b474ff7025",
+            "content": "sha256:9a28b609546eb6a4f1fbb19204749e5b2ed5ff91c92df864b8604f14faa742be",
+            "locator": {
+              "kind": "symbol",
+              "name": "the third and the fourth silent end each give the parent the marked line and the seat nothing"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.test.ts"
+          },
+          "before": "absent",
+          "id": "PRF-HFMEC6"
+        },
+        {
+          "after": {
+            "blob": "3df8cefb8ef1f43a1958e244c6e207b474ff7025",
+            "content": "sha256:7ed48b55cdeb12dba6e278cdac1fe094a6e9eaa933507e7d5e54a9c98b6dba5b",
+            "locator": {
+              "kind": "symbol",
+              "name": "an agent whose recorded parent is archived wakes the current Manager of its master"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.test.ts"
+          },
+          "before": {
+            "blob": "02028fc1ac562ad5c7f21f4fe9ca6b9c1a254de1",
+            "content": "sha256:7ed48b55cdeb12dba6e278cdac1fe094a6e9eaa933507e7d5e54a9c98b6dba5b",
+            "locator": {
+              "kind": "symbol",
+              "name": "an agent whose recorded parent is archived wakes the current Manager of its master"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.test.ts"
+          },
+          "id": "PRF-M65N8C"
+        },
+        {
+          "after": {
+            "blob": "3df8cefb8ef1f43a1958e244c6e207b474ff7025",
+            "content": "sha256:76ce9a73110b214716ddd00ec9a633570a932b405a50dfbaf87a2f1a2f2092e6",
+            "locator": {
+              "kind": "symbol",
+              "name": "a held line reaches the successor when the archive has no alternate yet (L172-R1-F02)"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.test.ts"
+          },
+          "before": {
+            "blob": "02028fc1ac562ad5c7f21f4fe9ca6b9c1a254de1",
+            "content": "sha256:76ce9a73110b214716ddd00ec9a633570a932b405a50dfbaf87a2f1a2f2092e6",
+            "locator": {
+              "kind": "symbol",
+              "name": "a held line reaches the successor when the archive has no alternate yet (L172-R1-F02)"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.test.ts"
+          },
+          "id": "PRF-QSEPFH"
+        },
+        {
+          "after": {
+            "blob": "3df8cefb8ef1f43a1958e244c6e207b474ff7025",
+            "content": "sha256:41bf125751f1bc5879bfc14ea82acdcea49d5ea72d717220f64d452a40e0592a",
+            "locator": {
+              "kind": "symbol",
+              "name": "L181-C1-F07: the exact captured rows drive the required cases"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.test.ts"
+          },
+          "before": "absent",
+          "id": "PRF-SM302G"
+        },
+        {
+          "after": {
+            "blob": "3df8cefb8ef1f43a1958e244c6e207b474ff7025",
+            "content": "sha256:70ed98f0d16d6cf24ee9ab276eec993b652746390c441cdb986766469252905d",
+            "locator": {
+              "kind": "symbol",
+              "name": "a Hermes row and a Codex row of a role_message to the parent suppress MIK-R172's line"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.test.ts"
+          },
+          "before": "absent",
+          "id": "PRF-SV6WCY"
+        },
+        {
+          "after": {
+            "blob": "3df8cefb8ef1f43a1958e244c6e207b474ff7025",
+            "content": "sha256:7a9500b08383a8d4fc6a85ffbcadf52be4c6d9179b393370381ddb62d3a91cf7",
+            "locator": {
+              "kind": "symbol",
+              "name": "a completed leaf turn with no hand-off sends the seat the message after the wait, and its parent no line"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.test.ts"
+          },
+          "before": "absent",
+          "id": "PRF-TN0488"
+        },
+        {
+          "after": {
+            "blob": "3df8cefb8ef1f43a1958e244c6e207b474ff7025",
+            "content": "sha256:765b81961c2b8d6a1fe3889d6d961c80871438f799c883ea040994809c4faaba",
+            "locator": {
+              "kind": "symbol",
+              "name": "an empty ended turn says no text, never an earlier turn's text (L172-R1-F01)"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.test.ts"
+          },
+          "before": {
+            "blob": "02028fc1ac562ad5c7f21f4fe9ca6b9c1a254de1",
+            "content": "sha256:c104ed9463d2031b92566c6dbf5eaf9bef515f8f1ffccf3abd28e85b8a8f5c0c",
+            "locator": {
+              "kind": "symbol",
+              "name": "an empty ended turn says no text, never an earlier turn's text (L172-R1-F01)"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.test.ts"
+          },
+          "id": "PRF-VEZBDV"
+        },
+        {
+          "after": {
+            "blob": "3df8cefb8ef1f43a1958e244c6e207b474ff7025",
+            "content": "sha256:db0b636696bd5b3d1e9635092ffb6ca5628d987fd3d59dc05bae30b33e43842a",
+            "locator": {
+              "kind": "symbol",
+              "name": "a return in an earlier turn does not silence this turn's line (L172-R1-F01)"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.test.ts"
+          },
+          "before": {
+            "blob": "02028fc1ac562ad5c7f21f4fe9ca6b9c1a254de1",
+            "content": "sha256:1b0b7a0284fd0f028677b03f245b9fb9dbbbbb42c51f054cfa23b03b9373c642",
+            "locator": {
+              "kind": "symbol",
+              "name": "a return in an earlier turn does not silence this turn's line (L172-R1-F01)"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.test.ts"
+          },
+          "id": "PRF-ZXQ4R7"
+        },
+        {
+          "after": {
+            "blob": "1edfbbd1d56bdc07855999b8bb32d3edfce59189",
+            "content": "sha256:0c52c951e3456426838b275bda41d71b489fd39594c60f82d8d57d538c6d0aa1",
+            "locator": {
+              "kind": "symbol",
+              "name": "readHostState"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_events.ts"
+          },
+          "before": "absent",
+          "id": "RLZ-09MB1T"
+        },
+        {
+          "after": {
+            "blob": "a321106354dc094c22f6c89a9ff0d685ee8db381",
+            "content": "sha256:b133fd1f3ca3c405654fbc250fcfd856236e4e862eb1d6b12bea30a095bca592",
+            "locator": {
+              "kind": "symbol",
+              "name": "deliverSeatWake"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.ts"
+          },
+          "before": "absent",
+          "id": "RLZ-0DRPF9"
+        },
+        {
+          "after": {
+            "blob": "a321106354dc094c22f6c89a9ff0d685ee8db381",
+            "content": "sha256:ef50419252e4831af82c29406368bcb1f2139f5ce1acb70fd72073436e519c2c",
+            "locator": {
+              "kind": "symbol",
+              "name": "recogniseArTool"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.ts"
+          },
+          "before": "absent",
+          "id": "RLZ-0T6GGZ"
+        },
+        {
+          "after": {
+            "blob": "1edfbbd1d56bdc07855999b8bb32d3edfce59189",
+            "content": "sha256:5301219f556446849046276f1002e92ced196a848d6e2c8854ae2618a2efb78c",
+            "locator": {
+              "kind": "symbol",
+              "name": "registerParentWakeEvents"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_events.ts"
+          },
+          "before": {
+            "blob": "5ccc7bf4679fed087954ded749224fb69c462518",
+            "content": "sha256:63242da817153793e5a05f3743450bfb5205ecd7e03da5ad1a457071e88d0593",
+            "locator": {
+              "kind": "symbol",
+              "name": "registerParentWakeEvents"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_events.ts"
+          },
+          "id": "RLZ-1HAN2T"
+        },
+        {
+          "after": {
+            "blob": "a321106354dc094c22f6c89a9ff0d685ee8db381",
+            "content": "sha256:49bc00fe8506fa8e2b8e51c68baefddaa325cdda81e902c832994992b32be7ca",
+            "locator": {
+              "kind": "symbol",
+              "name": "composeSeatWakeMessage"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.ts"
+          },
+          "before": "absent",
+          "id": "RLZ-1K6N1F"
+        },
+        {
+          "after": {
+            "blob": "a321106354dc094c22f6c89a9ff0d685ee8db381",
+            "content": "sha256:9a1bb7da1103f7030589252351e30f967dd8a04a2fd2ef6314825d20693681cc",
+            "locator": {
+              "kind": "symbol",
+              "name": "noteTurnStarted"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.ts"
+          },
+          "before": "absent",
+          "id": "RLZ-1V0Y9T"
+        },
+        {
+          "after": {
+            "blob": "a321106354dc094c22f6c89a9ff0d685ee8db381",
+            "content": "sha256:ca72ad2f29c29cd58140c79465097bfac1f0965238665f1a939de5a2995c67ae",
+            "locator": {
+              "kind": "symbol",
+              "name": "TURN_ENDED_SILENT_LIMIT"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.ts"
+          },
+          "before": "absent",
+          "id": "RLZ-564E0R"
+        },
+        {
+          "after": {
+            "blob": "1edfbbd1d56bdc07855999b8bb32d3edfce59189",
+            "content": "sha256:3a81f54404a2eb7a0d1f1c86bdd394d1be61542af325e73076ffeaba09f38421",
+            "locator": {
+              "kind": "symbol",
+              "name": "PARENT_AGENT_ID_LABEL"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_events.ts"
+          },
+          "before": "absent",
+          "id": "RLZ-5CTT1H"
+        },
+        {
+          "after": {
+            "blob": "a321106354dc094c22f6c89a9ff0d685ee8db381",
+            "content": "sha256:b9b235f19d4d4d73249b9a94adc99c25866c028ce2725bc55f69820bf2a1efbd",
+            "locator": {
+              "kind": "symbol",
+              "name": "composeTurnEndedLine"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.ts"
+          },
+          "before": {
+            "blob": "2227e467e79051787c31b1ecf346b8e2fd8bfa62",
+            "content": "sha256:b9b235f19d4d4d73249b9a94adc99c25866c028ce2725bc55f69820bf2a1efbd",
+            "locator": {
+              "kind": "symbol",
+              "name": "composeTurnEndedLine"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.ts"
+          },
+          "id": "RLZ-712BJ3"
+        },
+        {
+          "after": {
+            "blob": "a321106354dc094c22f6c89a9ff0d685ee8db381",
+            "content": "sha256:58f546f339dc5366fcf27a6dfd19fd66a111ef0a3d056061767c21e12bf9f10c",
+            "locator": {
+              "kind": "symbol",
+              "name": "TurnEndedTracker"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.ts"
+          },
+          "before": "absent",
+          "id": "RLZ-78JFRR"
+        },
+        {
+          "after": {
+            "blob": "a321106354dc094c22f6c89a9ff0d685ee8db381",
+            "content": "sha256:2ad498cf0bed73347fa52f7b42f85316e47eb5b274ae89abd9754367b7ab3216",
+            "locator": {
+              "kind": "symbol",
+              "name": "answerRecipient"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.ts"
+          },
+          "before": "absent",
+          "id": "RLZ-83YK6G"
+        },
+        {
+          "after": {
+            "blob": "a321106354dc094c22f6c89a9ff0d685ee8db381",
+            "content": "sha256:e4ed96af13cff1b1091394a881610a3b3b2d8764e5f0061b90e497f2fdb494a5",
+            "locator": {
+              "kind": "symbol",
+              "name": "TURN_ENDED_SEAT_ROLES"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.ts"
+          },
+          "before": "absent",
+          "id": "RLZ-9T3E30"
+        },
+        {
+          "after": {
+            "blob": "a321106354dc094c22f6c89a9ff0d685ee8db381",
+            "content": "sha256:d5906e119cc0a7d13d9d1662b32903e84056c1082a261ede50a10889c35b5ff7",
+            "locator": {
+              "kind": "symbol",
+              "name": "notSilentReason"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.ts"
+          },
+          "before": "absent",
+          "id": "RLZ-9X24HB"
+        },
+        {
+          "after": {
+            "blob": "a321106354dc094c22f6c89a9ff0d685ee8db381",
+            "content": "sha256:fbdfa05e5231ce715904bf3d45e7934222a7f027d9161b431256f3482ec35de4",
+            "locator": {
+              "kind": "symbol",
+              "name": "TurnEndedOutcome"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.ts"
+          },
+          "before": "absent",
+          "id": "RLZ-C1JYFW"
+        },
+        {
+          "after": {
+            "blob": "a321106354dc094c22f6c89a9ff0d685ee8db381",
+            "content": "sha256:b5a2ce8c2c411cf479bc50b7c57812cfc2e15e1cf4dbc90e342efeac1f6c819d",
+            "locator": {
+              "kind": "symbol",
+              "name": "turnHasReturnToParent"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.ts"
+          },
+          "before": {
+            "blob": "2227e467e79051787c31b1ecf346b8e2fd8bfa62",
+            "content": "sha256:5f704ccd5e767e325484a8e8fa360844afeb1586605eb2d37433bcca2b0b23eb",
+            "locator": {
+              "kind": "symbol",
+              "name": "turnHasReturnToParent"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.ts"
+          },
+          "id": "RLZ-C1KP4R"
+        },
+        {
+          "after": {
+            "blob": "a321106354dc094c22f6c89a9ff0d685ee8db381",
+            "content": "sha256:15afe7a97faf90393a520c120490f4a53f6dcd14f13334307fd12b49d84567b3",
+            "locator": {
+              "kind": "symbol",
+              "name": "candidateRecipients"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.ts"
+          },
+          "before": "absent",
+          "id": "RLZ-D21Q7D"
+        },
+        {
+          "after": {
+            "blob": "a321106354dc094c22f6c89a9ff0d685ee8db381",
+            "content": "sha256:c49d3a3a91c952545c2b662f18d18fe90ebfcd0865d0ddd0f9163888703b2059",
+            "locator": {
+              "kind": "symbol",
+              "name": "noteTurnEnded"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.ts"
+          },
+          "before": {
+            "blob": "2227e467e79051787c31b1ecf346b8e2fd8bfa62",
+            "content": "sha256:56bab8b10e056df08d661be864473c28c7cda3b8b533c3c33b2ccc259001de52",
+            "locator": {
+              "kind": "symbol",
+              "name": "noteTurnEnded"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.ts"
+          },
+          "id": "RLZ-EC5NRM"
+        },
+        {
+          "after": {
+            "blob": "a321106354dc094c22f6c89a9ff0d685ee8db381",
+            "content": "sha256:444ae4448e6292f9cc8b21c04b01736ed03be5712507ea3533b314a2a131bfc6",
+            "locator": {
+              "kind": "symbol",
+              "name": "turnSlice"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.ts"
+          },
+          "before": "absent",
+          "id": "RLZ-EKDSGQ"
+        },
+        {
+          "after": {
+            "blob": "a321106354dc094c22f6c89a9ff0d685ee8db381",
+            "content": "sha256:c50c309d8c9ee558fb06496b5e0a08b7bee19d3247a4afeddbb7698d1bd81055",
+            "locator": {
+              "kind": "symbol",
+              "name": "rememberParent"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.ts"
+          },
+          "before": "absent",
+          "id": "RLZ-FDDHF5"
+        },
+        {
+          "after": {
+            "blob": "a321106354dc094c22f6c89a9ff0d685ee8db381",
+            "content": "sha256:d35493a494343594c49a07c0d19e75ae00187e8a58c92b12f8e29166c4228cdc",
+            "locator": {
+              "kind": "symbol",
+              "name": "markThirdSilentEnd"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.ts"
+          },
+          "before": "absent",
+          "id": "RLZ-FDGFTT"
+        },
+        {
+          "after": {
+            "blob": "a321106354dc094c22f6c89a9ff0d685ee8db381",
+            "content": "sha256:fca61ba21b81ca756dbd087fc52f340d76a30a0d428df97b6d995f5d1ea6dc51",
+            "locator": {
+              "kind": "symbol",
+              "name": "createTurnEndedTracker"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.ts"
+          },
+          "before": {
+            "blob": "2227e467e79051787c31b1ecf346b8e2fd8bfa62",
+            "content": "sha256:2cdba7021787671ef106e8b22f49742d45ef5eebed4a70d8d25ac207c2ff0393",
+            "locator": {
+              "kind": "symbol",
+              "name": "createTurnEndedTracker"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.ts"
+          },
+          "id": "RLZ-H3YF9Z"
+        },
+        {
+          "after": {
+            "blob": "a321106354dc094c22f6c89a9ff0d685ee8db381",
+            "content": "sha256:7a00ea9f51cf1a5f17c1aa65051c65b0137f80fa7a06ad947b78c36bde26f5c5",
+            "locator": {
+              "kind": "symbol",
+              "name": "cleanupSeatWaits"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.ts"
+          },
+          "before": "absent",
+          "id": "RLZ-HTHGJ3"
+        },
+        {
+          "after": {
+            "blob": "a321106354dc094c22f6c89a9ff0d685ee8db381",
+            "content": "sha256:ff687f1496efef565939cb4c7861dab7c03641ae48a3d251a0f791f53fc05b33",
+            "locator": {
+              "kind": "symbol",
+              "name": "turnRows"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.ts"
+          },
+          "before": {
+            "blob": "2227e467e79051787c31b1ecf346b8e2fd8bfa62",
+            "content": "sha256:ff687f1496efef565939cb4c7861dab7c03641ae48a3d251a0f791f53fc05b33",
+            "locator": {
+              "kind": "symbol",
+              "name": "turnRows"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.ts"
+          },
+          "id": "RLZ-KGDGST"
+        },
+        {
+          "after": {
+            "blob": "7f396ecfcbcf54f51a623301c1fe0b65c648f1ed",
+            "content": "sha256:4c2febb4ae9a7135a8e0c1992581ca0f9bb4f678ca08f21e9a526cdda411d31c",
+            "locator": {
+              "kind": "symbol",
+              "name": "createTurnEndLog"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_log.ts"
+          },
+          "before": "absent",
+          "id": "RLZ-M930WX"
+        },
+        {
+          "after": {
+            "blob": "a321106354dc094c22f6c89a9ff0d685ee8db381",
+            "content": "sha256:588bbad49de7d6b3f762363c53260414dd75fd3fbb9c7c829fa47bee469446ce",
+            "locator": {
+              "kind": "symbol",
+              "name": "PendingSeatWake"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.ts"
+          },
+          "before": "absent",
+          "id": "RLZ-NPV0EE"
+        },
+        {
+          "after": {
+            "blob": "a321106354dc094c22f6c89a9ff0d685ee8db381",
+            "content": "sha256:2e167e031b56dc01a7cd519cccbdb5eccf96203aeda8190197a955e1fafeefc0",
+            "locator": {
+              "kind": "symbol",
+              "name": "scheduleSeatWake"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.ts"
+          },
+          "before": "absent",
+          "id": "RLZ-PK93PB"
+        },
+        {
+          "after": {
+            "blob": "a321106354dc094c22f6c89a9ff0d685ee8db381",
+            "content": "sha256:319a57dab885172b456aca6473505501ca0e060bd8ab38a163497b57b098e7fd",
+            "locator": {
+              "kind": "symbol",
+              "name": "bumpSeatEpoch"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.ts"
+          },
+          "before": "absent",
+          "id": "RLZ-QTACEM"
+        },
+        {
+          "after": {
+            "blob": "a321106354dc094c22f6c89a9ff0d685ee8db381",
+            "content": "sha256:92433a95cd48a87929e83e125e14f5cd203e3263316b604d95ee1dbb39abd4bd",
+            "locator": {
+              "kind": "symbol",
+              "name": "answerText"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.ts"
+          },
+          "before": "absent",
+          "id": "RLZ-TAM2KN"
+        },
+        {
+          "after": {
+            "blob": "a321106354dc094c22f6c89a9ff0d685ee8db381",
+            "content": "sha256:4686fa11fbbb3efea3b583ff0555f044fd8de4599e153269da6102d24eeb6315",
+            "locator": {
+              "kind": "symbol",
+              "name": "turnHasHandoff"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.ts"
+          },
+          "before": "absent",
+          "id": "RLZ-V2BPZZ"
+        },
+        {
+          "after": {
+            "blob": "a321106354dc094c22f6c89a9ff0d685ee8db381",
+            "content": "sha256:c49d3a3a91c952545c2b662f18d18fe90ebfcd0865d0ddd0f9163888703b2059",
+            "locator": {
+              "kind": "symbol",
+              "name": "noteTurnEnded"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.ts"
+          },
+          "before": {
+            "blob": "2227e467e79051787c31b1ecf346b8e2fd8bfa62",
+            "content": "sha256:56bab8b10e056df08d661be864473c28c7cda3b8b533c3c33b2ccc259001de52",
+            "locator": {
+              "kind": "symbol",
+              "name": "noteTurnEnded"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.ts"
+          },
+          "id": "RLZ-ZA95M4"
+        },
+        {
+          "after": {
+            "blob": "a321106354dc094c22f6c89a9ff0d685ee8db381",
+            "content": "sha256:c49d3a3a91c952545c2b662f18d18fe90ebfcd0865d0ddd0f9163888703b2059",
+            "locator": {
+              "kind": "symbol",
+              "name": "noteTurnEnded"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.ts"
+          },
+          "before": "absent",
+          "id": "RLZ-ZT2RRK"
+        }
+      ],
+      "disposition": "changed",
+      "effect": "weaken",
+      "id": "ROW-TBCYD5",
+      "items": [
+        "sha256:aea5020d22b1718f40cfa693efbeb0dbaf91fa0d72358cead87aeab02975ffe0"
+      ],
+      "reason": "A leaf seat's completed silent end now wakes the seat itself for the first two ends of a run and gives its parent the counted line only from the third, so the guarantee that a silent end wakes the waiting agent narrows for Workers, Reviewers and Curators; the same revision corrects the return's realization so the recogniser reads every row shape that shows the recipient. The Reviewer's separate producer list was read against the same freeze: its nine clause entries — eight behavioural clauses and the code-proof clause MIK-R183-v5-R9-CODE, which states that the proof uses exact captures, consequential effects and source-bound before/after controls — restate the obligations this record already carries, its F06/F07 dispositions match the conditions and proofs below, and its lineage decision, postlanding measurement and ruled-intent entry add no record change. Two proof facets of this invariant are not in this change: PRF-QSEPFH and PRF-M65N8C are owned by leaf 260928-MIK-L172, their test bodies were measured unchanged across this leaf, and the writer offers no facet revision — so they are named here as owned elsewhere and blocked by the writer, not silently absent. Evidence (MIK-R183@v5/INV-1ZKP4R): Worker A6 producer list (eight v5 clause entries, their statements carried there) sha256 58f2d2da8f5153f629dc5551076066791089a444496eefad1c75184ec9a506df; Reviewer A6 producer list (fourteen entries: nine clause entries — the eight behavioural clauses plus MIK-R183-v5-R9-CODE, the code-proof clause — F06/F07 fixed, the lineage decision, the postlanding measurement and the ruled-intent entry) sha256 d990aa8468c04e2edb462cde806ff6c4ba49cf8c3093acb7bc4ef9310089c7f7; A6 report c98914512d3b39e1025102a1726a185ccacc123c847214d2ea8c9cbe662ae0f7; reviewer CODE PASS verdict, tree faf66c3edc234bd23b7a16780218611586556fc9, effects 46/46; successor base-move freeze A6-base-move-48a754e7.md sha256 5af1f5f6c0ccc57df7e18aa21711fc00eb78b7e36d02230f15ae742e814a9621, tree 5472cbf6eda1b323571dc69b9081f9b6a2b6a2a5 on code base 48a754e7 and memory base 83acf829 under the Manager/Architect pure-sync ruling; then the L104 base move to code 47f69f11afb982e318006209036aed22f1792976 and memory 804d7d813a1e1afac1043163825235e08d060f53 (contract sync 12:30:54Z), where the candidate trees are dffdb8e4a3fac69d18aeb442217163ba2dec7382 for code and d460bfcd07ede8313e513d9c2af7065f18b61a05 for memory. The 153408-byte change is byte-identical throughout. This memory candidate is re-derived on the current pair and replaces the earlier candidates whose bases moved; it does not replace a candidate that was wrong.",
+      "revision": 3,
+      "subject": "INV-1ZKP4R"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-V3EB1Y",
+      "items": [
+        "sha256:23006e41dcaeeadba1688dfa7209698a7ebfec2f9f0a1cd3d3af569d4b6822df",
+        "sha256:83102d32f2ff3f10c479191fd8ce7d17142bdd122d4b47bd6d41d02c1e73c3fb"
+      ],
+      "reason": "New card for the five captured rows and their source digests that the row-shape tests consume.",
+      "sources": [
+        {
+          "blob": "f2dc5ede92768980ef0135a4a78cfe500b4ac8da",
+          "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/fixtures/evidence-rows.json"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/package_data/paseo_plugin/server/fixtures/evidence-rows.json"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-VDCWFF",
+      "items": [
+        "sha256:72eccc4558f18f2cd9f72b18f39605e15912b3ec9f09557fb5e2357b0546196f"
+      ],
+      "reason": "The hunk is the adapter's module doc comment restating the leaf rule; the behaviour it describes is realized at `registerParentWakeEvents` and `readHostState`.",
+      "subject": "hunk:sha256:72eccc4558f18f2cd9f72b18f39605e15912b3ec9f09557fb5e2357b0546196f"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-VFP274",
+      "items": [
+        "sha256:ed36ab088c3553956766c79e531dfff5c03dc20ace8e7ec77d4d0bb9c9462ba3"
+      ],
+      "reason": "The hunk is the module's own doc comment, restating the leaf rule the code below realizes; it declares no behaviour of its own and the obligations it describes are realized by the entries at `recogniseArTool`, `turnHasHandoff`, `notSilentReason`, `noteTurnEnded` and `createTurnEndLog`.",
+      "subject": "hunk:sha256:ed36ab088c3553956766c79e531dfff5c03dc20ace8e7ec77d4d0bb9c9462ba3"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-VXHTA1",
+      "items": [
+        "sha256:8a932426720376d20b748dceb3fc0c53a10a00505a1b32254128dba0b4cf056a"
+      ],
+      "reason": "The hunk extends the end-decision documentation with the leaf rule; it states no behaviour beyond what `noteTurnEnded`, `composeSeatWakeMessage` and `markThirdSilentEnd` realize.",
+      "subject": "hunk:sha256:8a932426720376d20b748dceb3fc0c53a10a00505a1b32254128dba0b4cf056a"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-WD2F2T",
+      "items": [
+        "sha256:2ee8bba3e28bba81d9449a623770785e9a83bf62d9de4f52ff0f520cafb1e2b6",
+        "sha256:7e8f522a00b1d7120ef076d5a2690c701ec8cb2d2d6506bc0d2021c179656c67",
+        "sha256:c984548eefe9772342814eba7e8146aa9db2debde04a9aa431c390159d7ed9e5",
+        "sha256:fdb7e5ef9af23ef6a692321374425119042d677189744b075437837b6c703ad9"
+      ],
+      "reason": "The card now records that the parent-wake registration returns a cleanup which stops pending seat waits on unload.",
+      "sources": [
+        {
+          "blob": "9b7519a48a8e8c3c60dc0db7b75e4fcfcec41fd2",
+          "path": "mcp/src/agents_remember/package_data/paseo_plugin/index.server.ts"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/package_data/paseo_plugin/index.server.ts"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-WZ7VCY",
+      "items": [
+        "sha256:5e0a1e264780df5691088f5773ee34e12c83a4020548e2d36fe35fbd644f1f33"
+      ],
+      "reason": "The hunk rewrites the module's first summary line to name this leaf's rule; it is comment text and declares no behaviour.",
+      "subject": "hunk:sha256:5e0a1e264780df5691088f5773ee34e12c83a4020548e2d36fe35fbd644f1f33"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-Y3S3TQ",
+      "items": [
+        "sha256:3808f93abf51ad7f17e84c812e18c11f3005e932a9252cca3d461177b196a8c8",
+        "sha256:84c1f39ee83f8dfc7e58cc5ad0b367bf5c419a57bf304556b17509ad3a4965fa",
+        "sha256:914e156771b0fe7934e3aacd94a2705c2a04fb435def43d7955c4050d5a1a10b",
+        "sha256:9a354372c70299894788882b574b4b321c34ac3b0a4798edd4d1db3dd2f76061",
+        "sha256:bb33743e93333d390910945765dfeab647beab567d9a816a26a144317b5b2398",
+        "sha256:d3d636dc9de72dc82c4eed27104798ecca4a0c89dab132a045f8d8edfa758975",
+        "sha256:efd59bc3db678361d5a50fd615423403c67ebe039a6475ac3dcef10bd0e04d6e",
+        "sha256:f83c3b4b3af9cd337233e9bd1299ed25f0b72fcbfc35a11b4c5fa4e9b893c844",
+        "sha256:ff2e4e9c39e1f07b34d71fc214470d9e5263b737e36a0249d8b0a6014124a290"
+      ],
+      "reason": "The card now describes the leaf send-back cases, the five captured rows the row-shape tests consume, and the new adapter test's limits.",
+      "sources": [
+        {
+          "blob": "3df8cefb8ef1f43a1958e244c6e207b474ff7025",
+          "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.test.ts"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.test.ts"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-ZX24PV",
+      "items": [
+        "sha256:87d97284f7f7c452458fdb4d5bceb0dc428259767a5c4f702427c4dd82a6d63d"
+      ],
+      "reason": "The card is rewritten for the two obligations the module now carries: the leaf seat's send-back with its wait, count, message and log, and the return recognition in every row shape.",
+      "sources": [
+        {
+          "blob": "a321106354dc094c22f6c89a9ff0d685ee8db381",
+          "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.ts"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.ts"
+    }
+  ],
+  "schema": "ar-history/v1"
+}

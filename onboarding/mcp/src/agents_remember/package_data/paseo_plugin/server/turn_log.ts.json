@@ -1,0 +1,41 @@
+{
+  "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_log.ts",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "7f396ecfcbcf54f51a623301c1fe0b65c648f1ed",
+        "content": "sha256:4c2febb4ae9a7135a8e0c1992581ca0f9bb4f678ca08f21e9a526cdda411d31c",
+        "locator": {
+          "kind": "symbol",
+          "name": "createTurnEndLog"
+        }
+      },
+      "id": "RLZ-M930WX",
+      "invariant": "INV-1ZKP4R",
+      "origin": {
+        "handoffEntry": "MIK-R183@v5/INV-1ZKP4R",
+        "leaf": "260928-MIK-L181"
+      },
+      "rationale": "Writes the plugin's own turn-end rows, turns the file over at its limit to one retained archive, and names a failed write once in its own error file without touching host-activity.json.",
+      "role": "propagation-persistence"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The plugin writes its own bounded, rotating log and separate failure file from PASEO_HOME, never host-activity.json.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7f396ecfcbcf54f51a623301c1fe0b65c648f1ed",
+            "content": "sha256:ee714205e7ea9ce3bcf8caa80e906c4ccb75a86ca9d0aa981ff48f277bd515a3",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

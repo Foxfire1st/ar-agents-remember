@@ -4,22 +4,30 @@
       "spans_locations",
       "guarded_by_test"
     ],
-    "justification": "The obligation is split between the pure decision that composes and scopes the line and the host handler that feeds it the event and its turn id, and the host-free suite proves the carried last line, its 300-character shortening, the no-text and unreadable results, the two Manager-replacement orders and that an earlier turn's return or text cannot answer for this one."
+    "justification": "The obligation is split between the pure decision that recognises a call, tests the hand-off, scopes the turn's rows and chooses between the seat's message and the parent's marked line, and the host handler that reads the host's agent state and writes the plugin's own log; the host-free suite proves the recognised row shapes, the silence and send gates, the count and its reset, and the log rows."
   },
-  "applicability": "Every `agent.turn_ended` event the AR Paseo plugin handles for a role agent the product's agent list holds, where the ended turn resolves a recipient.",
+  "applicability": "Every `agent.turn_ended` event the AR Paseo plugin handles for a role agent the product's agent list holds.",
   "conditions": [
-    "The host supplies the ended turn's id and the agent's timeline; rows tagged with that id are the turn's rows, and without tags the turn begins at the last `user_message`.",
-    "The line carries the last non-empty line of that turn's own agent text, shortened to 300 characters; a turn with no such text says `no text` and an unreadable timeline says `unreadable`, and the line still goes out.",
+    "The plugin recognises a call in every row shape it may arrive in: the bare name, `<server>.<tool>`, and each Hermes title with or without a preview; a row whose ACP kind is not an AR kind is never an AR call.",
+    "The answer is read from Codex's `output` or from Hermes's text in either wrapper after one unescape, and a cut answer is read as far as it shows.",
+    "The recipient is read from Codex's `input` or from a Hermes answer that names it; a row that shows no recipient is a hand-off where it is one but never a return to the parent.",
+    "A turn hands off on a `role_message` whose finished answer is not `refused`, `ok: false` or `recipient-busy`, or on a `task_doc` write that is not `ok: false`; a leaf seat starts no role, so `role_start` is not its hand-off.",
+    "The turn's rows are those after the seat's previous end as this build saw it — its remembered row count and last row identity — falling back to the last `user_message` on the first end seen or when a replaced timeline no longer holds that row.",
+    "An end is silent only when the turn completed, holds no hand-off, and the seat is not archived, owes no permission and has no child agent in a turn, and the end is not a reply to a waiting sender in a turn; a child is an agent whose `paseo.parent-agent-id` label names the seat, and only an exhausted host listing supplies these facts.",
+    "Every silent end waits 60 seconds before it acts, the counted parent line included; a turn of the seat that starts inside the wait cancels the send and the end is not counted, and at the end of the wait a seat that is in a turn, archived or owing a permission is left alone, with the skip written and the end not counted.",
+    "The first two silent ends in a row send the seat a message with the plugin's own fixed first line, naming its role and task, quoting the ended turn's last line, saying the turn ended with no hand-off, and asking it to go on with its stage or to send what blocks it to its parent; a turn whose rows hold a `delegate_task` call adds that a helper's result does not come back as a message.",
+    "From the third silent end in a row the seat receives nothing and its parent receives the line marked with the count; the count is per seat agent id and returns to zero on a hand-off or on a turn begun by a message the plugin did not send.",
+    "Only Worker, Reviewer and Curator seats are sent back; the Manager, the Orchestrator, the Architect and every other role keep MIK-R172's line.",
+    "The line carries the ended turn's last non-empty line of the agent's own text, shortened to 300 characters; a turn with no such text says `no text` and an unreadable timeline says `unreadable`, and the line still goes out.",
     "The recorded parent receives the line while its record exists and it is not archived; otherwise the current Manager of the agent's master does, and a line already held is re-resolved at send time.",
-    "Only an accepted `role_message` call to that recipient within the turn suppresses the line; a refused, failed, canceled or still-running call does not.",
-    "A permission-waiting subject, a subject with a running direct child, and a recipient the product cannot show to keep its turn under a steer defer the line; a recipient whose provider the product names as steering takes it at once. The gate is asked again at every actual send, so a batch that has just started a turn in the recipient leaves the rest of the batch owed.",
-    "Each owed line is delivered exactly once and in the order the turns ended: the sequence is taken when the event arrives, flushes do not overlap, and requeues are re-sorted, so delivery order holds across a requeue and a Manager rebind. An agent outside the product's agent list is named in the host log once instead of being skipped silently.",
-    "The tracker's historical stores keep bounded recent windows and hold no owed line: the held queue is bounded by who is waiting, the provider history is capped and reclaimed when its agent is archived, and reclamation never drops an owed line. An evicted or absent provider reads as unknown, and unknown holds."
+    "Every message, marked line, cancelled wait, skipped send and left-alone end is appended to the plugin's own `turn-ends.jsonl`, turned over at 2 MiB to one retained archive, with a failed write named once in `turn-ends.error.json`; `host-activity.json` is unchanged.",
+    "The plugin's cleanup clears pending and in-flight waits and the per-seat runs, so a reload begins afresh."
   ],
   "exclusions": [
-    "The tool, the bridge and the held-message store are outside this obligation; it covers the plugin's turn-end decision and its host handler.",
-    "No duty falls on the product to keep a Manager present: with no manager record the line stays owed and undelivered.",
-    "The record claims no live-host delivery and no semantic acceptance; the suite is a host-free composition."
+    "The host and its SDK, Hermes and its ACP adapter, `delegate_task` and `/goal` are outside this obligation.",
+    "The product's held-message store, `host-activity.json`'s schema and every Python part of the product are not read for this rule.",
+    "The role and operation texts of the lifecycle skill carry no part of it; the message carries its own sentences.",
+    "No live-host delivery, plugin load or semantic acceptance is claimed; the suite is a host-free composition, and the log is the plugin's own record of decisions, not a census of host deliveries."
   ],
   "id": "INV-1ZKP4R",
   "origin": {
@@ -33,9 +41,9 @@
     "leaf": "260928-MIK-L117",
     "task": "260928-MIK"
   },
-  "revision": 2,
+  "revision": 3,
   "schema": "ar-invariant/v1",
-  "statement": "A silent role-agent turn end wakes the agent that waits — its recorded parent, or the current Manager of its master when that parent is archived or missing — with one line naming the role, agent, task, the ended turn's own last line of text and the newest report; only a delivered return in that turn suppresses it, a turn with no text says so, and a recipient that is in a turn is told when that turn ends rather than steered into it, unless the product knows that provider keeps its turn under a steer.",
+  "statement": "A silent role-agent turn end — a completed turn that hands off to no one, that nothing holds and that is not a reply to a waiting sender — wakes the agent that waits, its recorded parent or the current Manager of its master when that parent is archived or missing, with one line naming the role, agent, task, the ended turn's own last line of text and the newest report, except that a Worker, Reviewer or Curator is sent back to its work at the first two silent ends in a row and only from the third gives its parent that line, marked with the count; a delivered return to the parent in that turn suppresses the line wherever the row shows the recipient, a turn with no text says so, and a recipient that is in a turn is told when that turn ends rather than steered into it, unless the product knows that provider keeps its turn under a steer.",
   "status": "proposed",
   "supersedes": []
 }

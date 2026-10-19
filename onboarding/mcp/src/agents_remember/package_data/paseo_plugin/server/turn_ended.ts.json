@@ -3,7 +3,79 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "2227e467e79051787c31b1ecf346b8e2fd8bfa62",
+        "blob": "a321106354dc094c22f6c89a9ff0d685ee8db381",
+        "content": "sha256:b133fd1f3ca3c405654fbc250fcfd856236e4e862eb1d6b12bea30a095bca592",
+        "locator": {
+          "kind": "symbol",
+          "name": "deliverSeatWake"
+        }
+      },
+      "id": "RLZ-0DRPF9",
+      "invariant": "INV-1ZKP4R",
+      "origin": {
+        "handoffEntry": "MIK-R183@v5/INV-1ZKP4R",
+        "leaf": "260928-MIK-L181"
+      },
+      "rationale": "Delivers after the wait: re-reads the host state, sends only to a seat out of a turn, unarchived and owing no permission, and writes the skipped or sent row.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "a321106354dc094c22f6c89a9ff0d685ee8db381",
+        "content": "sha256:ef50419252e4831af82c29406368bcb1f2139f5ce1acb70fd72073436e519c2c",
+        "locator": {
+          "kind": "symbol",
+          "name": "recogniseArTool"
+        }
+      },
+      "id": "RLZ-0T6GGZ",
+      "invariant": "INV-1ZKP4R",
+      "origin": {
+        "handoffEntry": "MIK-R183@v5/INV-1ZKP4R",
+        "leaf": "260928-MIK-L181"
+      },
+      "rationale": "Separates tool identity from previews: reads the bare name, dotted name and each Hermes title with or without a preview, and refuses non-AR ACP kinds, so hand-off and return detection share one decision.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "a321106354dc094c22f6c89a9ff0d685ee8db381",
+        "content": "sha256:49bc00fe8506fa8e2b8e51c68baefddaa325cdda81e902c832994992b32be7ca",
+        "locator": {
+          "kind": "symbol",
+          "name": "composeSeatWakeMessage"
+        }
+      },
+      "id": "RLZ-1K6N1F",
+      "invariant": "INV-1ZKP4R",
+      "origin": {
+        "handoffEntry": "MIK-R183@v5/INV-1ZKP4R",
+        "leaf": "260928-MIK-L181"
+      },
+      "rationale": "Composes the seat's own message: the plugin's fixed first line, role and task, the quoted last line, the no-hand-off sentence, the go-on-or-report ask and the helper sentence.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "a321106354dc094c22f6c89a9ff0d685ee8db381",
+        "content": "sha256:9a1bb7da1103f7030589252351e30f967dd8a04a2fd2ef6314825d20693681cc",
+        "locator": {
+          "kind": "symbol",
+          "name": "noteTurnStarted"
+        }
+      },
+      "id": "RLZ-1V0Y9T",
+      "invariant": "INV-1ZKP4R",
+      "origin": {
+        "handoffEntry": "MIK-R183@v5/INV-1ZKP4R",
+        "leaf": "260928-MIK-L181"
+      },
+      "rationale": "On a turn start, advances the seat's generation and cancels the pending wait with its row, so a send-back begun before the turn can neither fire nor restore a count.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "a321106354dc094c22f6c89a9ff0d685ee8db381",
         "content": "sha256:b6b127b1042ef423bac37449efcf8848eb557d88c0248fa7441e1e52637ec9b5",
         "locator": {
           "kind": "symbol",
@@ -21,7 +93,25 @@
     },
     {
       "anchor": {
-        "blob": "2227e467e79051787c31b1ecf346b8e2fd8bfa62",
+        "blob": "a321106354dc094c22f6c89a9ff0d685ee8db381",
+        "content": "sha256:ca72ad2f29c29cd58140c79465097bfac1f0965238665f1a939de5a2995c67ae",
+        "locator": {
+          "kind": "symbol",
+          "name": "TURN_ENDED_SILENT_LIMIT"
+        }
+      },
+      "id": "RLZ-564E0R",
+      "invariant": "INV-1ZKP4R",
+      "origin": {
+        "handoffEntry": "MIK-R183@v5/INV-1ZKP4R",
+        "leaf": "260928-MIK-L181"
+      },
+      "rationale": "Bounds the remembered silent-end runs, the per-seat epochs and the timeline marks, so an evicted entry can restart a run or lose a mark but can never send into a running turn; the plugin's own first line is recognized statelessly and no own-message store exists.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "a321106354dc094c22f6c89a9ff0d685ee8db381",
         "content": "sha256:b9b235f19d4d4d73249b9a94adc99c25866c028ce2725bc55f69820bf2a1efbd",
         "locator": {
           "kind": "symbol",
@@ -34,12 +124,66 @@
         "handoffEntry": "L172-TURN-END-WAKE",
         "leaf": "260928-MIK-L172"
       },
-      "rationale": "Composes the wake line and applies its 1000-character limit; the last-line phrase and the 300-character shortening of the text are chosen here.",
+      "rationale": "Composes the wake line from the supplied text and applies the whole-line 1000-character bound; the 300-character cut of the carried last line is made by lastTextOf before the text reaches this composer.",
       "role": "primary-authority"
     },
     {
       "anchor": {
-        "blob": "2227e467e79051787c31b1ecf346b8e2fd8bfa62",
+        "blob": "a321106354dc094c22f6c89a9ff0d685ee8db381",
+        "content": "sha256:58f546f339dc5366fcf27a6dfd19fd66a111ef0a3d056061767c21e12bf9f10c",
+        "locator": {
+          "kind": "symbol",
+          "name": "TurnEndedTracker"
+        }
+      },
+      "id": "RLZ-78JFRR",
+      "invariant": "INV-1ZKP4R",
+      "origin": {
+        "handoffEntry": "MIK-R183@v5/INV-1ZKP4R",
+        "leaf": "260928-MIK-L181"
+      },
+      "rationale": "Holds the per-seat silent-end runs, the pending waits, the epoch and seat epochs and the timeline marks the send-back, its cancellation and its cleanup read and bound.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "a321106354dc094c22f6c89a9ff0d685ee8db381",
+        "content": "sha256:2ad498cf0bed73347fa52f7b42f85316e47eb5b274ae89abd9754367b7ab3216",
+        "locator": {
+          "kind": "symbol",
+          "name": "answerRecipient"
+        }
+      },
+      "id": "RLZ-83YK6G",
+      "invariant": "INV-1ZKP4R",
+      "origin": {
+        "handoffEntry": "MIK-R183@v5/INV-1ZKP4R",
+        "leaf": "260928-MIK-L181"
+      },
+      "rationale": "Reads a recipient that a Hermes answer names, from the answer text alone, and names none where the answer shows none; a recipient held in Codex's input is collected by `candidateRecipients` and consumed by `turnHasReturnToParent`, so neither helper alone owns both halves.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "a321106354dc094c22f6c89a9ff0d685ee8db381",
+        "content": "sha256:e4ed96af13cff1b1091394a881610a3b3b2d8764e5f0061b90e497f2fdb494a5",
+        "locator": {
+          "kind": "symbol",
+          "name": "TURN_ENDED_SEAT_ROLES"
+        }
+      },
+      "id": "RLZ-9T3E30",
+      "invariant": "INV-1ZKP4R",
+      "origin": {
+        "handoffEntry": "MIK-R183@v5/INV-1ZKP4R",
+        "leaf": "260928-MIK-L181"
+      },
+      "rationale": "Limits the changed policy to the three leaf seat roles; every other role keeps MIK-R172's line.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "a321106354dc094c22f6c89a9ff0d685ee8db381",
         "content": "sha256:9fb79052ae73cc3187d731165e770120c6a57df5194ac5c67648dbcbd8fab176",
         "locator": {
           "kind": "symbol",
@@ -57,8 +201,44 @@
     },
     {
       "anchor": {
-        "blob": "2227e467e79051787c31b1ecf346b8e2fd8bfa62",
-        "content": "sha256:5f704ccd5e767e325484a8e8fa360844afeb1586605eb2d37433bcca2b0b23eb",
+        "blob": "a321106354dc094c22f6c89a9ff0d685ee8db381",
+        "content": "sha256:d5906e119cc0a7d13d9d1662b32903e84056c1082a261ede50a10889c35b5ff7",
+        "locator": {
+          "kind": "symbol",
+          "name": "notSilentReason"
+        }
+      },
+      "id": "RLZ-9X24HB",
+      "invariant": "INV-1ZKP4R",
+      "origin": {
+        "handoffEntry": "MIK-R183@v5/INV-1ZKP4R",
+        "leaf": "260928-MIK-L181"
+      },
+      "rationale": "Decides whether a completed end is silent from the turn's own suffix and the host facts: hand-off, archive, permission, child in a turn, and reply to a waiting sender.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "a321106354dc094c22f6c89a9ff0d685ee8db381",
+        "content": "sha256:fbdfa05e5231ce715904bf3d45e7934222a7f027d9161b431256f3482ec35de4",
+        "locator": {
+          "kind": "symbol",
+          "name": "TurnEndedOutcome"
+        }
+      },
+      "id": "RLZ-C1JYFW",
+      "invariant": "INV-1ZKP4R",
+      "origin": {
+        "handoffEntry": "MIK-R183@v5/INV-1ZKP4R",
+        "leaf": "260928-MIK-L181"
+      },
+      "rationale": "Reports what an end owed — sent, held, waiting on the seat's wait, or nothing — so the adapter and the tests read the decision's own result.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "a321106354dc094c22f6c89a9ff0d685ee8db381",
+        "content": "sha256:b5a2ce8c2c411cf479bc50b7c57812cfc2e15e1cf4dbc90e342efeac1f6c819d",
         "locator": {
           "kind": "symbol",
           "name": "turnHasReturnToParent"
@@ -70,12 +250,12 @@
         "handoffEntry": "L172-TURN-END-WAKE",
         "leaf": "260928-MIK-L172"
       },
-      "rationale": "Decides whether the turn holds a delivered `role_message` return to its recipient, and ignores a failed, canceled, running or refused call.",
+      "rationale": "Reads a turn's return to its parent through the shared recogniser: identity from every admitted row shape, the answer from Codex's output or Hermes's text, and the recipient only where the row shows one, so a row with no recipient is a hand-off but never a return.",
       "role": "enforcement"
     },
     {
       "anchor": {
-        "blob": "2227e467e79051787c31b1ecf346b8e2fd8bfa62",
+        "blob": "a321106354dc094c22f6c89a9ff0d685ee8db381",
         "content": "sha256:2563114c90d0bac3a177989383c568e47dbbe21ca267c9b1e14ad14056d80793",
         "locator": {
           "kind": "symbol",
@@ -93,7 +273,25 @@
     },
     {
       "anchor": {
-        "blob": "2227e467e79051787c31b1ecf346b8e2fd8bfa62",
+        "blob": "a321106354dc094c22f6c89a9ff0d685ee8db381",
+        "content": "sha256:15afe7a97faf90393a520c120490f4a53f6dcd14f13334307fd12b49d84567b3",
+        "locator": {
+          "kind": "symbol",
+          "name": "candidateRecipients"
+        }
+      },
+      "id": "RLZ-D21Q7D",
+      "invariant": "INV-1ZKP4R",
+      "origin": {
+        "handoffEntry": "MIK-R183@v5/INV-1ZKP4R",
+        "leaf": "260928-MIK-L181"
+      },
+      "rationale": "Names the structured holders a role_message row may carry its recipient in, so an answer's own field is read instead of the message's prose.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "a321106354dc094c22f6c89a9ff0d685ee8db381",
         "content": "sha256:4fb34b9b3863421de2cbf0fa071758261db2cabd6590e40937285df2b8b4bbe5",
         "locator": {
           "kind": "symbol",
@@ -111,7 +309,7 @@
     },
     {
       "anchor": {
-        "blob": "2227e467e79051787c31b1ecf346b8e2fd8bfa62",
+        "blob": "a321106354dc094c22f6c89a9ff0d685ee8db381",
         "content": "sha256:db613d606f6686bca62c109a34995ca6d35ebe37ef2e86dff44d8623fb611df2",
         "locator": {
           "kind": "symbol",
@@ -129,8 +327,8 @@
     },
     {
       "anchor": {
-        "blob": "2227e467e79051787c31b1ecf346b8e2fd8bfa62",
-        "content": "sha256:56bab8b10e056df08d661be864473c28c7cda3b8b533c3c33b2ccc259001de52",
+        "blob": "a321106354dc094c22f6c89a9ff0d685ee8db381",
+        "content": "sha256:c49d3a3a91c952545c2b662f18d18fe90ebfcd0865d0ddd0f9163888703b2059",
         "locator": {
           "kind": "symbol",
           "name": "noteTurnEnded"
@@ -142,12 +340,30 @@
         "handoffEntry": "L172-TURN-END-WAKE",
         "leaf": "260928-MIK-L172"
       },
-      "rationale": "Runs the decision: flush, permission gate, recipient resolution, suppression test, then the hold and its delivery outcome.",
+      "rationale": "Runs the decision: recognition and the hand-off test, the silence test, the per-seat count, then the seat's message, the parent's line or a left-alone row, offering each current-generation rule row to the plugin's log; an obsolete intake outcome and a generation-boundary send emit none.",
       "role": "enforcement"
     },
     {
       "anchor": {
-        "blob": "2227e467e79051787c31b1ecf346b8e2fd8bfa62",
+        "blob": "a321106354dc094c22f6c89a9ff0d685ee8db381",
+        "content": "sha256:444ae4448e6292f9cc8b21c04b01736ed03be5712507ea3533b314a2a131bfc6",
+        "locator": {
+          "kind": "symbol",
+          "name": "turnSlice"
+        }
+      },
+      "id": "RLZ-EKDSGQ",
+      "invariant": "INV-1ZKP4R",
+      "origin": {
+        "handoffEntry": "MIK-R183@v5/INV-1ZKP4R",
+        "leaf": "260928-MIK-L181"
+      },
+      "rationale": "Scopes the ended turn to the suffix after the seat's previous end by the remembered row count and last row identity, taking the empty suffix when nothing was appended and falling back on a replaced timeline.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "a321106354dc094c22f6c89a9ff0d685ee8db381",
         "content": "sha256:8a3aaab7ecab50d39c4b31b8b1a8557b6a9d683ec012d9342f76158bb6fa7ab2",
         "locator": {
           "kind": "symbol",
@@ -165,8 +381,44 @@
     },
     {
       "anchor": {
-        "blob": "2227e467e79051787c31b1ecf346b8e2fd8bfa62",
-        "content": "sha256:2cdba7021787671ef106e8b22f49742d45ef5eebed4a70d8d25ac207c2ff0393",
+        "blob": "a321106354dc094c22f6c89a9ff0d685ee8db381",
+        "content": "sha256:c50c309d8c9ee558fb06496b5e0a08b7bee19d3247a4afeddbb7698d1bd81055",
+        "locator": {
+          "kind": "symbol",
+          "name": "rememberParent"
+        }
+      },
+      "id": "RLZ-FDDHF5",
+      "invariant": "INV-1ZKP4R",
+      "origin": {
+        "handoffEntry": "MIK-R183@v5/INV-1ZKP4R",
+        "leaf": "260928-MIK-L181"
+      },
+      "rationale": "Keeps the host's parent-agent-id link for a child inside its bound, so a child's turn can hold its seat.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "a321106354dc094c22f6c89a9ff0d685ee8db381",
+        "content": "sha256:d35493a494343594c49a07c0d19e75ae00187e8a58c92b12f8e29166c4228cdc",
+        "locator": {
+          "kind": "symbol",
+          "name": "markThirdSilentEnd"
+        }
+      },
+      "id": "RLZ-FDGFTT",
+      "invariant": "INV-1ZKP4R",
+      "origin": {
+        "handoffEntry": "MIK-R183@v5/INV-1ZKP4R",
+        "leaf": "260928-MIK-L181"
+      },
+      "rationale": "Marks the parent's line with the silent-end count from the third end in a row, so the parent reads how many turns passed without a hand-off.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "a321106354dc094c22f6c89a9ff0d685ee8db381",
+        "content": "sha256:fca61ba21b81ca756dbd087fc52f340d76a30a0d428df97b6d995f5d1ea6dc51",
         "locator": {
           "kind": "symbol",
           "name": "createTurnEndedTracker"
@@ -178,12 +430,12 @@
         "handoffEntry": "L172-TURN-END-WAKE",
         "leaf": "260928-MIK-L172"
       },
-      "rationale": "Takes the steering set, the turn-end sequence counter and the in-flight flush slot the hold and the order rest on.",
+      "rationale": "Takes the steering set, the sequence counter, the in-flight slot and the per-seat stores — timeline marks, silent-end runs, pending and in-flight seat waits — that the send-back and its cleanup rest on.",
       "role": "enforcement"
     },
     {
       "anchor": {
-        "blob": "2227e467e79051787c31b1ecf346b8e2fd8bfa62",
+        "blob": "a321106354dc094c22f6c89a9ff0d685ee8db381",
         "content": "sha256:e849bf3b385184f6fd49c3108d60621e40ea6fe181d43bf9d93e80b2778db5f4",
         "locator": {
           "kind": "symbol",
@@ -201,7 +453,25 @@
     },
     {
       "anchor": {
-        "blob": "2227e467e79051787c31b1ecf346b8e2fd8bfa62",
+        "blob": "a321106354dc094c22f6c89a9ff0d685ee8db381",
+        "content": "sha256:7a00ea9f51cf1a5f17c1aa65051c65b0137f80fa7a06ad947b78c36bde26f5c5",
+        "locator": {
+          "kind": "symbol",
+          "name": "cleanupSeatWaits"
+        }
+      },
+      "id": "RLZ-HTHGJ3",
+      "invariant": "INV-1ZKP4R",
+      "origin": {
+        "handoffEntry": "MIK-R183@v5/INV-1ZKP4R",
+        "leaf": "260928-MIK-L181"
+      },
+      "rationale": "Bumps the process generation and clears pending waits, in-flight deliveries, silent-end runs and timeline marks, so a stopped plugin fires nothing and a reload begins afresh.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "a321106354dc094c22f6c89a9ff0d685ee8db381",
         "content": "sha256:de3480e09ce7d2f3c90d97895001cfcebd49d40600ada729447660bd0101b4ec",
         "locator": {
           "kind": "symbol",
@@ -219,7 +489,7 @@
     },
     {
       "anchor": {
-        "blob": "2227e467e79051787c31b1ecf346b8e2fd8bfa62",
+        "blob": "a321106354dc094c22f6c89a9ff0d685ee8db381",
         "content": "sha256:ff687f1496efef565939cb4c7861dab7c03641ae48a3d251a0f791f53fc05b33",
         "locator": {
           "kind": "symbol",
@@ -232,12 +502,30 @@
         "handoffEntry": "L172-TURN-END-WAKE",
         "leaf": "260928-MIK-L172"
       },
-      "rationale": "Scopes both reads to the ended turn, by the event's turn id or from the last user message, so an earlier turn's return or text cannot answer for this one.",
+      "rationale": "Selects the ended turn's rows by the event's turn id where the rows carry one, else from the last user_message; turnSlice reads the remembered mark first — an intact mark scopes to the suffix after it, an empty suffix included, and only a replaced timeline falls back here.",
       "role": "enforcement"
     },
     {
       "anchor": {
-        "blob": "2227e467e79051787c31b1ecf346b8e2fd8bfa62",
+        "blob": "a321106354dc094c22f6c89a9ff0d685ee8db381",
+        "content": "sha256:588bbad49de7d6b3f762363c53260414dd75fd3fbb9c7c829fa47bee469446ce",
+        "locator": {
+          "kind": "symbol",
+          "name": "PendingSeatWake"
+        }
+      },
+      "id": "RLZ-NPV0EE",
+      "invariant": "INV-1ZKP4R",
+      "origin": {
+        "handoffEntry": "MIK-R183@v5/INV-1ZKP4R",
+        "leaf": "260928-MIK-L181"
+      },
+      "rationale": "Records one seat's wait: its kind, count, message, epoch pair and the delivery it runs only when the host state allows it.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "a321106354dc094c22f6c89a9ff0d685ee8db381",
         "content": "sha256:12d27939ebe98d478357e1d46d240ded00b6e4cbf25dd17095519bc0a6e344d9",
         "locator": {
           "kind": "symbol",
@@ -255,7 +543,43 @@
     },
     {
       "anchor": {
-        "blob": "2227e467e79051787c31b1ecf346b8e2fd8bfa62",
+        "blob": "a321106354dc094c22f6c89a9ff0d685ee8db381",
+        "content": "sha256:2e167e031b56dc01a7cd519cccbdb5eccf96203aeda8190197a955e1fafeefc0",
+        "locator": {
+          "kind": "symbol",
+          "name": "scheduleSeatWake"
+        }
+      },
+      "id": "RLZ-PK93PB",
+      "invariant": "INV-1ZKP4R",
+      "origin": {
+        "handoffEntry": "MIK-R183@v5/INV-1ZKP4R",
+        "leaf": "260928-MIK-L181"
+      },
+      "rationale": "Creates the bounded 60-second wait, records its kind and count, and ties it to the seat's epoch so a turn start or a cleanup makes the pending work obsolete.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "a321106354dc094c22f6c89a9ff0d685ee8db381",
+        "content": "sha256:319a57dab885172b456aca6473505501ca0e060bd8ab38a163497b57b098e7fd",
+        "locator": {
+          "kind": "symbol",
+          "name": "bumpSeatEpoch"
+        }
+      },
+      "id": "RLZ-QTACEM",
+      "invariant": "INV-1ZKP4R",
+      "origin": {
+        "handoffEntry": "MIK-R183@v5/INV-1ZKP4R",
+        "leaf": "260928-MIK-L181"
+      },
+      "rationale": "Advances one seat's generation on a turn start, so a wait or delivery begun before it can neither send nor restore a count after it.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "a321106354dc094c22f6c89a9ff0d685ee8db381",
         "content": "sha256:650f3573b5b41e241967e99cbf467d147556d65473f455dea0c52aacee1c413b",
         "locator": {
           "kind": "symbol",
@@ -273,7 +597,7 @@
     },
     {
       "anchor": {
-        "blob": "2227e467e79051787c31b1ecf346b8e2fd8bfa62",
+        "blob": "a321106354dc094c22f6c89a9ff0d685ee8db381",
         "content": "sha256:9fb79052ae73cc3187d731165e770120c6a57df5194ac5c67648dbcbd8fab176",
         "locator": {
           "kind": "symbol",
@@ -291,7 +615,43 @@
     },
     {
       "anchor": {
-        "blob": "2227e467e79051787c31b1ecf346b8e2fd8bfa62",
+        "blob": "a321106354dc094c22f6c89a9ff0d685ee8db381",
+        "content": "sha256:92433a95cd48a87929e83e125e14f5cd203e3263316b604d95ee1dbb39abd4bd",
+        "locator": {
+          "kind": "symbol",
+          "name": "answerText"
+        }
+      },
+      "id": "RLZ-TAM2KN",
+      "invariant": "INV-1ZKP4R",
+      "origin": {
+        "handoffEntry": "MIK-R183@v5/INV-1ZKP4R",
+        "leaf": "260928-MIK-L181"
+      },
+      "rationale": "Reads the answer from Codex's output or Hermes's text in either wrapper after one unescape, and as far as it shows on a cut answer.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "a321106354dc094c22f6c89a9ff0d685ee8db381",
+        "content": "sha256:4686fa11fbbb3efea3b583ff0555f044fd8de4599e153269da6102d24eeb6315",
+        "locator": {
+          "kind": "symbol",
+          "name": "turnHasHandoff"
+        }
+      },
+      "id": "RLZ-V2BPZZ",
+      "invariant": "INV-1ZKP4R",
+      "origin": {
+        "handoffEntry": "MIK-R183@v5/INV-1ZKP4R",
+        "leaf": "260928-MIK-L181"
+      },
+      "rationale": "Admits the two leaf hand-off tools — a non-refused role_message and a successful task_doc write — and refuses role_start, which a leaf seat cannot call.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "a321106354dc094c22f6c89a9ff0d685ee8db381",
         "content": "sha256:f657b26103b4299ea7c702e3c25feef8aeffc35894366f58395c5583729677a5",
         "locator": {
           "kind": "symbol",
@@ -309,8 +669,8 @@
     },
     {
       "anchor": {
-        "blob": "2227e467e79051787c31b1ecf346b8e2fd8bfa62",
-        "content": "sha256:56bab8b10e056df08d661be864473c28c7cda3b8b533c3c33b2ccc259001de52",
+        "blob": "a321106354dc094c22f6c89a9ff0d685ee8db381",
+        "content": "sha256:c49d3a3a91c952545c2b662f18d18fe90ebfcd0865d0ddd0f9163888703b2059",
         "locator": {
           "kind": "symbol",
           "name": "noteTurnEnded"
@@ -322,7 +682,25 @@
         "handoffEntry": "L117-R11",
         "leaf": "260928-MIK-L117"
       },
-      "rationale": "The turn-end decision owns the four-fact line and every silence, hold and drop case the sealed criteria require.",
+      "rationale": "Owns the turn-end decision and every silence, hold, drop and send-back case the sealed criteria require, including the counted parent line from the third silent end.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "a321106354dc094c22f6c89a9ff0d685ee8db381",
+        "content": "sha256:c49d3a3a91c952545c2b662f18d18fe90ebfcd0865d0ddd0f9163888703b2059",
+        "locator": {
+          "kind": "symbol",
+          "name": "noteTurnEnded"
+        }
+      },
+      "id": "RLZ-ZT2RRK",
+      "invariant": "INV-1ZKP4R",
+      "origin": {
+        "handoffEntry": "MIK-R183@v5/INV-1ZKP4R",
+        "leaf": "260928-MIK-L181"
+      },
+      "rationale": "Chooses by ordinal between the seat's message and the parent's marked line and enforces each branch's delivery boundary: the seat's count is remembered only after its send succeeds with its generation still current, while the parent branch records the marked decision and its held debt by ordinal without inspecting whether the host sent it, and each current-generation rule row is offered to the log.",
       "role": "enforcement"
     }
   ],

@@ -3,8 +3,26 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "5ccc7bf4679fed087954ded749224fb69c462518",
-        "content": "sha256:63242da817153793e5a05f3743450bfb5205ecd7e03da5ad1a457071e88d0593",
+        "blob": "1edfbbd1d56bdc07855999b8bb32d3edfce59189",
+        "content": "sha256:0c52c951e3456426838b275bda41d71b489fd39594c60f82d8d57d538c6d0aa1",
+        "locator": {
+          "kind": "symbol",
+          "name": "readHostState"
+        }
+      },
+      "id": "RLZ-09MB1T",
+      "invariant": "INV-1ZKP4R",
+      "origin": {
+        "handoffEntry": "MIK-R183@v5/INV-1ZKP4R",
+        "leaf": "260928-MIK-L181"
+      },
+      "rationale": "Walks the host agent list page by page and marks completion only when no page reports more, so only an exhausted listing supplies the seat and child facts the silence test reads.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "1edfbbd1d56bdc07855999b8bb32d3edfce59189",
+        "content": "sha256:5301219f556446849046276f1002e92ced196a848d6e2c8854ae2618a2efb78c",
         "locator": {
           "kind": "symbol",
           "name": "registerParentWakeEvents"
@@ -16,8 +34,26 @@
         "handoffEntry": "L172-TURN-END-WAKE",
         "leaf": "260928-MIK-L172"
       },
-      "rationale": "Feeds the host event, its timeline and its turn id to the decision, and prints the once-only entry for an agent the product's list does not hold.",
+      "rationale": "Feeds the host event, timeline and turn id to the decision, reads the host's agent state and parent label for the silence and send gates, sinks every decision row to the plugin's log, and returns the cleanup that ends pending waits.",
       "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "1edfbbd1d56bdc07855999b8bb32d3edfce59189",
+        "content": "sha256:3a81f54404a2eb7a0d1f1c86bdd394d1be61542af325e73076ffeaba09f38421",
+        "locator": {
+          "kind": "symbol",
+          "name": "PARENT_AGENT_ID_LABEL"
+        }
+      },
+      "id": "RLZ-5CTT1H",
+      "invariant": "INV-1ZKP4R",
+      "origin": {
+        "handoffEntry": "MIK-R183@v5/INV-1ZKP4R",
+        "leaf": "260928-MIK-L181"
+      },
+      "rationale": "Spells the host label that names a child's parent, so the seat's children are found by the link the host publishes rather than by a plugin-owned registry.",
+      "role": "enforcement"
     }
   ],
   "references": {

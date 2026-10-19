@@ -1,0 +1,41 @@
+{
+  "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_events.test.ts",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "31a8b700c3fd0f2078aa2b41e6248c5a7d15d74c",
+        "content": "sha256:0616580dd4de730d95ae3ead83839053dc3a45da1706feab36a9c2c75bf378ae",
+        "locator": {
+          "kind": "symbol",
+          "name": "F06: incomplete pagination never admits a seat wake; a complete listing does"
+        }
+      },
+      "facet": "Only an exhausted host listing admits a seat wake; a missing or repeated cursor and the page cap leave the seat alone and preserve the parent's line.",
+      "id": "PRF-6MFPDJ",
+      "invariant": "INV-1ZKP4R",
+      "origin": {
+        "handoffEntry": "MIK-R183@v5/INV-1ZKP4R",
+        "leaf": "260928-MIK-L181"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The contributed adapter admits a seat wake only from an exhausted host listing; incomplete walks leave the seat alone.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "31a8b700c3fd0f2078aa2b41e6248c5a7d15d74c",
+            "content": "sha256:1cc5098258ea599da8f609dede2ca5c5c5fd84fb018934fa113ef7414ad5600e",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

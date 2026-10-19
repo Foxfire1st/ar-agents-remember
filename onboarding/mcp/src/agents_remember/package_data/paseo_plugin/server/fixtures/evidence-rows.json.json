@@ -1,0 +1,22 @@
+{
+  "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/fixtures/evidence-rows.json",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Five host captures, verbatim, with each source file's digest, consumed by the row-shape tests.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f2dc5ede92768980ef0135a4a78cfe500b4ac8da",
+            "content": "sha256:dbcf8ec72d086fa1a89c167658da3d8f3902347a9f5a4a23df2ad81762ed4257",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}
