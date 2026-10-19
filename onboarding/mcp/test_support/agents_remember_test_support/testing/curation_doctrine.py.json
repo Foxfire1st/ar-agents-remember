@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "75e19d2f61349598c34a72a40a658ad25fe60adb",
-        "content": "sha256:61d118edebbd6c51973dee05211b23e32ad85649f909d676022be0fb8a813846",
+        "blob": "5aef03c98d1fde7eff2fa3041e1dea5c111b1b6f",
+        "content": "sha256:1913e4a6ccfbe9ac7920b4e702e7489846ef1a79643486d5cebd14a4bcd75316",
         "locator": {
           "kind": "symbol",
           "name": "RETIRED_CURATION_STATEMENTS"
@@ -21,8 +21,8 @@
     },
     {
       "anchor": {
-        "blob": "75e19d2f61349598c34a72a40a658ad25fe60adb",
-        "content": "sha256:61d118edebbd6c51973dee05211b23e32ad85649f909d676022be0fb8a813846",
+        "blob": "5aef03c98d1fde7eff2fa3041e1dea5c111b1b6f",
+        "content": "sha256:1913e4a6ccfbe9ac7920b4e702e7489846ef1a79643486d5cebd14a4bcd75316",
         "locator": {
           "kind": "symbol",
           "name": "RETIRED_CURATION_STATEMENTS"
@@ -39,8 +39,8 @@
     },
     {
       "anchor": {
-        "blob": "75e19d2f61349598c34a72a40a658ad25fe60adb",
-        "content": "sha256:61d118edebbd6c51973dee05211b23e32ad85649f909d676022be0fb8a813846",
+        "blob": "5aef03c98d1fde7eff2fa3041e1dea5c111b1b6f",
+        "content": "sha256:1913e4a6ccfbe9ac7920b4e702e7489846ef1a79643486d5cebd14a4bcd75316",
         "locator": {
           "kind": "symbol",
           "name": "RETIRED_CURATION_STATEMENTS"
@@ -57,12 +57,12 @@
     },
     {
       "anchor": {
-        "blob": "75e19d2f61349598c34a72a40a658ad25fe60adb",
+        "blob": "5aef03c98d1fde7eff2fa3041e1dea5c111b1b6f",
         "content": "sha256:8f981c11f1290686733d9086a5107bdf08e1dfc3328aa7937b4143a226db6598",
         "locator": {
-          "end": 573,
+          "end": 579,
           "kind": "line_range",
-          "start": 557
+          "start": 563
         }
       },
       "id": "RLZ-MNMZ2H",

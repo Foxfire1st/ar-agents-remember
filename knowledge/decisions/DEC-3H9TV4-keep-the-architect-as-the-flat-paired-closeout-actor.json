@@ -25,7 +25,7 @@
     }
   ],
   "consequences": [
-    "The Architect keeps one execution step and one only; every check and investigation still goes to a role agent.",
+    "The Architect's one execution step is still the flat paired closeout; his own checks, measurements, runs and reads never stand in for a leaf's build, review, curation or gate (MIK-R184@v1, developer words D348 and D349).",
     "The closeout operation stays unchanged and both files name the same actor.",
     "The sentence is a kept clause and is not registered as retired wording."
   ],
@@ -58,7 +58,7 @@
     "leaf": "260928-MIK-L72",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-decision/v1",
   "status": "active",
   "supersedes": []

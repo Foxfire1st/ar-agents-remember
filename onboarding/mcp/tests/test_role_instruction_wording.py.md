@@ -63,6 +63,10 @@ The added wording case checks rendered Worker, Manager and Reviewer capsules and
 
 The wording suite now pins the rule-1 change. The new case `test_the_capsules_send_a_return_and_never_point_at_the_agent_chat` requires the Worker, Reviewer, Curator and Manager stage capsules to carry the sending clause, every orientation capsule of those four roles to carry the reply rule, and the acceptance home to carry the artifact clause, and it fails if any capsule of those roles still couples the agent's chat with an answer or a report. The router, orientation and hand-over sentences and the stage-end facets are re-pinned to the shipped text. These remain source and compilation assertions.
 
+## 260928-MIK-L182 — the Architect may check things himself
+
+The pinned `roles/architect.md` paragraph in `test_current_coordination_and_curator_rules` now carries the Architect's freedom to check, measure, run tests and builds, read product, host and harness sources and try things on a copy, its non-substitution and custody limits, and the kept landing-step sentence with its "a check before a landing is not a step of it" extension. The retired register holds the replaced prohibition as its own row with reason `MIK-R184@v1`. These are wording assertions over the delivered text, not a runtime permission, a host check or an execution result.
+
 ## Evidence
 
 - The wording case pins the conditional sync and visible direct-repair clauses at their delivered audiences. [9]

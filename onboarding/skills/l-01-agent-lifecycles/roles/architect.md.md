@@ -123,7 +123,7 @@ free a runtime selection.
 
 ## Current Investigator contract impact
 
-The Architect keeps the developer conversation and runs no suite, build or failure investigation in its own chat. Delegated checks go through the actual Manager or Orchestrator; developer-chosen direct coordination assigns a leaf check to Worker/Reviewer and a non-leaf concern to Investigator. Investigator starts remain within admitted Projects, sprint or master containment, and still-forbidden starts route to the actual parent or a parentless blocker. One Manager remains the default for one master.
+The Architect keeps the developer conversation and may check, measure, run tests and builds, read the code and sources of the product, the host and the harnesses, and try things out in a sandbox himself, on a copy; that work informs his rulings, his requirements and the developer but never stands in for a leaf's build, review, curation or gate, and he changes no leaf's code or memory. A check before a landing is not a landing step. A check or investigation he does not do himself goes under delegation to the actual Manager or Orchestrator; developer-chosen direct coordination assigns a leaf check to Worker/Reviewer and a non-leaf concern to Investigator. Investigator starts remain within admitted Projects, sprint or master containment, and still-forbidden starts route to the actual parent or a parentless blocker. One Manager remains the default for one master.
 
 - This source owns the stated current Investigator scope or canonical vocabulary. [1]
 

@@ -4,16 +4,18 @@
       "spans_locations",
       "guarded_by_test"
     ],
-    "justification": "The role text and the closeout operation name the same single actor for the flat paired transaction, and the dedicated wording test proves the kept sentence is present and is not registered as retired wording."
+    "justification": "Two files carry the rule (the Architect role text and the closeout operation), and two wording cases prove it: one pins the freedom, its custody limit and the kept landing-step sentence at the role text, the other proves the kept closeout sentence is present and not registered as retired wording."
   },
   "applicability": "Every Architect run, task-bound or taskless.",
   "conditions": [
-    "Under delegation the coordinating agent owns the checks and investigations; under developer-chosen direct coordination the Architect assigns them to a leaf's Worker or Reviewer.",
-    "The paired-closeout exception applies only when the developer chose direct coordination and neither a Manager nor an Orchestrator exists, and the existing delegated c-09/c-12 authority permits it."
+    "The Architect works on a copy: nothing of his runs in a candidate's worktree.",
+    "Reading code and sources for a check is not loading another task's documents or another role's instructions, and the read-only rules of roles/architect.md line 42 and of operations/orientation.md stay as they are.",
+    "A check or investigation he does not do himself goes, under delegation, to the coordinating Manager or Orchestrator; under developer-chosen direct coordination a leaf's check goes to its Worker or Reviewer and a check of no leaf to an Investigator.",
+    "The paired-closeout exception applies only when the developer chose direct coordination, neither a Manager nor an Orchestrator exists, and the existing delegated c-09/c-12 authority permits it."
   ],
   "exclusions": [
     "The paired-closeout exception does not apply to a coordinated run, where the Manager or Orchestrator owns closeout.",
-    "Any other execution step, which the Architect never performs in its own chat."
+    "No other step of a landing, and no substitution of his own check for a leaf's build, review, curation or gate."
   ],
   "id": "INV-P2WRNQ",
   "origin": {
@@ -29,9 +31,9 @@
     "leaf": "260928-MIK-L72",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-invariant/v1",
-  "statement": "An Architect runs no test suite, build, failure investigation or landing step in its own chat; its single exception is the developer-chosen direct-coordination case with neither Manager nor Orchestrator, where it calls the existing c-09/c-12 paired closeout itself under already-delegated authority and after independent review and required curation evidence, and starts no Manager for that step alone.",
+  "statement": "The Architect may check, measure, run tests and builds, read product, host and harness sources and try things in a sandbox on a copy, but this never substitutes for a leaf's build, review, curation or gate, permits no leaf code or memory edit or self-grading, changes no read-only limit, and adds no landing step beyond the retained paired-closeout exception.",
   "status": "proposed",
   "supersedes": []
 }

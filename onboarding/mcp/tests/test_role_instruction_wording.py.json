@@ -3,8 +3,8 @@
   "proves": [
     {
       "anchor": {
-        "blob": "e8af992c881afbbc0f6fdbe7bd9130c43b7b66b2",
-        "content": "sha256:387c80e74659af1317de6f1cd8c82f4b2c4c1bb0cb59c37ae633463cceb04222",
+        "blob": "e47d9cf5d6a195675f519998e9f72e779f585c36",
+        "content": "sha256:bded51c6252aef1e28b26c9df757f4208f54d73f670c5aca2f7d9e1361971140",
         "locator": {
           "end": 303,
           "kind": "line_range",
@@ -21,7 +21,7 @@
     },
     {
       "anchor": {
-        "blob": "e8af992c881afbbc0f6fdbe7bd9130c43b7b66b2",
+        "blob": "e47d9cf5d6a195675f519998e9f72e779f585c36",
         "content": "sha256:2784247703adc1e43cba86b6ac1f4f9a4319aaf49d06b318f6c2465ae04c16ba",
         "locator": {
           "kind": "symbol",
@@ -38,8 +38,8 @@
     },
     {
       "anchor": {
-        "blob": "e8af992c881afbbc0f6fdbe7bd9130c43b7b66b2",
-        "content": "sha256:387c80e74659af1317de6f1cd8c82f4b2c4c1bb0cb59c37ae633463cceb04222",
+        "blob": "e47d9cf5d6a195675f519998e9f72e779f585c36",
+        "content": "sha256:bded51c6252aef1e28b26c9df757f4208f54d73f670c5aca2f7d9e1361971140",
         "locator": {
           "kind": "symbol",
           "name": "InstructionFileWordingTests.test_current_coordination_and_curator_rules"
@@ -55,8 +55,8 @@
     },
     {
       "anchor": {
-        "blob": "e8af992c881afbbc0f6fdbe7bd9130c43b7b66b2",
-        "content": "sha256:387c80e74659af1317de6f1cd8c82f4b2c4c1bb0cb59c37ae633463cceb04222",
+        "blob": "e47d9cf5d6a195675f519998e9f72e779f585c36",
+        "content": "sha256:bded51c6252aef1e28b26c9df757f4208f54d73f670c5aca2f7d9e1361971140",
         "locator": {
           "kind": "symbol",
           "name": "InstructionFileWordingTests.test_current_coordination_and_curator_rules"
@@ -72,7 +72,7 @@
     },
     {
       "anchor": {
-        "blob": "e8af992c881afbbc0f6fdbe7bd9130c43b7b66b2",
+        "blob": "e47d9cf5d6a195675f519998e9f72e779f585c36",
         "content": "sha256:bfd543f8f89f301f5c3eab6e35f8bba6a78a2237bbedc36f5b3ecdf48a3d3901",
         "locator": {
           "kind": "symbol",
@@ -89,7 +89,7 @@
     },
     {
       "anchor": {
-        "blob": "e8af992c881afbbc0f6fdbe7bd9130c43b7b66b2",
+        "blob": "e47d9cf5d6a195675f519998e9f72e779f585c36",
         "content": "sha256:4b198cf4afbc62422b01831badf05d3c18e915c9bfc1ce1755d3a36e58759c8c",
         "locator": {
           "kind": "symbol",
@@ -106,8 +106,8 @@
     },
     {
       "anchor": {
-        "blob": "e8af992c881afbbc0f6fdbe7bd9130c43b7b66b2",
-        "content": "sha256:387c80e74659af1317de6f1cd8c82f4b2c4c1bb0cb59c37ae633463cceb04222",
+        "blob": "e47d9cf5d6a195675f519998e9f72e779f585c36",
+        "content": "sha256:bded51c6252aef1e28b26c9df757f4208f54d73f670c5aca2f7d9e1361971140",
         "locator": {
           "kind": "symbol",
           "name": "InstructionFileWordingTests.test_current_coordination_and_curator_rules"
@@ -123,7 +123,24 @@
     },
     {
       "anchor": {
-        "blob": "e8af992c881afbbc0f6fdbe7bd9130c43b7b66b2",
+        "blob": "e47d9cf5d6a195675f519998e9f72e779f585c36",
+        "content": "sha256:bded51c6252aef1e28b26c9df757f4208f54d73f670c5aca2f7d9e1361971140",
+        "locator": {
+          "kind": "symbol",
+          "name": "InstructionFileWordingTests.test_current_coordination_and_curator_rules"
+        }
+      },
+      "facet": "The pinned clause list requires the Architect Boundaries paragraph with the freedom, its custody limit and the kept landing-step sentence, and the same clause reports a sub-failure when the old prohibition is restored (evidence/wording-fail-before.txt).",
+      "id": "PRF-5448EZ",
+      "invariant": "INV-P2WRNQ",
+      "origin": {
+        "handoffEntry": "MIK-R184@v1/A1/CODE-R1",
+        "leaf": "260928-MIK-L182"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "e47d9cf5d6a195675f519998e9f72e779f585c36",
         "content": "sha256:df47bdff9257a7bace097a48ace79209330369a264e36f8762bf727046b289a3",
         "locator": {
           "kind": "symbol",
@@ -140,7 +157,7 @@
     },
     {
       "anchor": {
-        "blob": "e8af992c881afbbc0f6fdbe7bd9130c43b7b66b2",
+        "blob": "e47d9cf5d6a195675f519998e9f72e779f585c36",
         "content": "sha256:e944e2475231c300197a31170bd096ac3b947ddef3d0cf0e9148f9e2a89bfc2a",
         "locator": {
           "kind": "symbol",
@@ -157,7 +174,7 @@
     },
     {
       "anchor": {
-        "blob": "e8af992c881afbbc0f6fdbe7bd9130c43b7b66b2",
+        "blob": "e47d9cf5d6a195675f519998e9f72e779f585c36",
         "content": "sha256:6226c934dd387226043c02ed9f9b1ac2978d7bd1cbd79876bfaf4c9d5eabf3f4",
         "locator": {
           "kind": "symbol",
@@ -174,7 +191,7 @@
     },
     {
       "anchor": {
-        "blob": "e8af992c881afbbc0f6fdbe7bd9130c43b7b66b2",
+        "blob": "e47d9cf5d6a195675f519998e9f72e779f585c36",
         "content": "sha256:1b654b5e1a131a4ca5470c7ef22680187aac0df72de5c59246e2af26abba6b33",
         "locator": {
           "kind": "symbol",
@@ -191,7 +208,7 @@
     },
     {
       "anchor": {
-        "blob": "e8af992c881afbbc0f6fdbe7bd9130c43b7b66b2",
+        "blob": "e47d9cf5d6a195675f519998e9f72e779f585c36",
         "content": "sha256:3a4fcfcf386028407291d5f0c448789a2d80ca16bbde2e6fdb930a126ad61926",
         "locator": {
           "kind": "symbol",
@@ -208,7 +225,7 @@
     },
     {
       "anchor": {
-        "blob": "e8af992c881afbbc0f6fdbe7bd9130c43b7b66b2",
+        "blob": "e47d9cf5d6a195675f519998e9f72e779f585c36",
         "content": "sha256:19766f5e8996140d49cc72fc26f07f745850e5f39bc5eb292b8001ac4d6cc98c",
         "locator": {
           "kind": "symbol",
@@ -225,8 +242,8 @@
     },
     {
       "anchor": {
-        "blob": "e8af992c881afbbc0f6fdbe7bd9130c43b7b66b2",
-        "content": "sha256:387c80e74659af1317de6f1cd8c82f4b2c4c1bb0cb59c37ae633463cceb04222",
+        "blob": "e47d9cf5d6a195675f519998e9f72e779f585c36",
+        "content": "sha256:bded51c6252aef1e28b26c9df757f4208f54d73f670c5aca2f7d9e1361971140",
         "locator": {
           "kind": "symbol",
           "name": "InstructionFileWordingTests.test_current_coordination_and_curator_rules"
@@ -242,7 +259,7 @@
     },
     {
       "anchor": {
-        "blob": "e8af992c881afbbc0f6fdbe7bd9130c43b7b66b2",
+        "blob": "e47d9cf5d6a195675f519998e9f72e779f585c36",
         "content": "sha256:6226c934dd387226043c02ed9f9b1ac2978d7bd1cbd79876bfaf4c9d5eabf3f4",
         "locator": {
           "kind": "symbol",
@@ -259,8 +276,8 @@
     },
     {
       "anchor": {
-        "blob": "e8af992c881afbbc0f6fdbe7bd9130c43b7b66b2",
-        "content": "sha256:387c80e74659af1317de6f1cd8c82f4b2c4c1bb0cb59c37ae633463cceb04222",
+        "blob": "e47d9cf5d6a195675f519998e9f72e779f585c36",
+        "content": "sha256:bded51c6252aef1e28b26c9df757f4208f54d73f670c5aca2f7d9e1361971140",
         "locator": {
           "end": 303,
           "kind": "line_range",
@@ -277,7 +294,7 @@
     },
     {
       "anchor": {
-        "blob": "e8af992c881afbbc0f6fdbe7bd9130c43b7b66b2",
+        "blob": "e47d9cf5d6a195675f519998e9f72e779f585c36",
         "content": "sha256:28aac27c230d76a939bdc2c1e3dee09453f6a7cb32fee0323483570048cf9c17",
         "locator": {
           "kind": "symbol",
@@ -294,7 +311,7 @@
     },
     {
       "anchor": {
-        "blob": "e8af992c881afbbc0f6fdbe7bd9130c43b7b66b2",
+        "blob": "e47d9cf5d6a195675f519998e9f72e779f585c36",
         "content": "sha256:df47bdff9257a7bace097a48ace79209330369a264e36f8762bf727046b289a3",
         "locator": {
           "kind": "symbol",
@@ -311,7 +328,7 @@
     },
     {
       "anchor": {
-        "blob": "e8af992c881afbbc0f6fdbe7bd9130c43b7b66b2",
+        "blob": "e47d9cf5d6a195675f519998e9f72e779f585c36",
         "content": "sha256:df47bdff9257a7bace097a48ace79209330369a264e36f8762bf727046b289a3",
         "locator": {
           "kind": "symbol",
@@ -328,7 +345,7 @@
     },
     {
       "anchor": {
-        "blob": "e8af992c881afbbc0f6fdbe7bd9130c43b7b66b2",
+        "blob": "e47d9cf5d6a195675f519998e9f72e779f585c36",
         "content": "sha256:df47bdff9257a7bace097a48ace79209330369a264e36f8762bf727046b289a3",
         "locator": {
           "kind": "symbol",
@@ -345,8 +362,8 @@
     },
     {
       "anchor": {
-        "blob": "e8af992c881afbbc0f6fdbe7bd9130c43b7b66b2",
-        "content": "sha256:387c80e74659af1317de6f1cd8c82f4b2c4c1bb0cb59c37ae633463cceb04222",
+        "blob": "e47d9cf5d6a195675f519998e9f72e779f585c36",
+        "content": "sha256:bded51c6252aef1e28b26c9df757f4208f54d73f670c5aca2f7d9e1361971140",
         "locator": {
           "kind": "symbol",
           "name": "InstructionFileWordingTests.test_current_coordination_and_curator_rules"
@@ -362,7 +379,7 @@
     },
     {
       "anchor": {
-        "blob": "e8af992c881afbbc0f6fdbe7bd9130c43b7b66b2",
+        "blob": "e47d9cf5d6a195675f519998e9f72e779f585c36",
         "content": "sha256:df47bdff9257a7bace097a48ace79209330369a264e36f8762bf727046b289a3",
         "locator": {
           "kind": "symbol",
@@ -379,7 +396,7 @@
     },
     {
       "anchor": {
-        "blob": "e8af992c881afbbc0f6fdbe7bd9130c43b7b66b2",
+        "blob": "e47d9cf5d6a195675f519998e9f72e779f585c36",
         "content": "sha256:df47bdff9257a7bace097a48ace79209330369a264e36f8762bf727046b289a3",
         "locator": {
           "kind": "symbol",
