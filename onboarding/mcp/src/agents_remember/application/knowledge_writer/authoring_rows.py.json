@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "9d1e05a86de34369058f714dc77fe0db89f2a74e",
+        "blob": "979669ccbd307af1ad584ba86815c1d1100f9896",
         "content": "sha256:6f944a3e348583a6689ba670e262926babba617d5e56556a5b769363b45d3c51",
         "locator": {
           "kind": "symbol",
@@ -21,7 +21,7 @@
     },
     {
       "anchor": {
-        "blob": "9d1e05a86de34369058f714dc77fe0db89f2a74e",
+        "blob": "979669ccbd307af1ad584ba86815c1d1100f9896",
         "content": "sha256:c409e0ca8078ec19064718f5c4cc4796e7f23656632e4d51f55cb5cf955c5972",
         "locator": {
           "kind": "symbol",
@@ -39,7 +39,7 @@
     },
     {
       "anchor": {
-        "blob": "9d1e05a86de34369058f714dc77fe0db89f2a74e",
+        "blob": "979669ccbd307af1ad584ba86815c1d1100f9896",
         "content": "sha256:c409e0ca8078ec19064718f5c4cc4796e7f23656632e4d51f55cb5cf955c5972",
         "locator": {
           "kind": "symbol",
@@ -57,7 +57,25 @@
     },
     {
       "anchor": {
-        "blob": "9d1e05a86de34369058f714dc77fe0db89f2a74e",
+        "blob": "979669ccbd307af1ad584ba86815c1d1100f9896",
+        "content": "sha256:270de0b58f2581259be3857348d89891d64fcfa74e1c32e195c1aa2e1b2c6dfc",
+        "locator": {
+          "kind": "symbol",
+          "name": "HistoryRowAuthoring"
+        }
+      },
+      "id": "RLZ-999BVN",
+      "invariant": "INV-VWRJR7",
+      "origin": {
+        "handoffEntry": "L118-W3",
+        "leaf": "260928-MIK-L118"
+      },
+      "rationale": "The rows about the two kinds are produced here, so a weakness or a dependent answers its worklist item by its own recorded identity and revision.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "979669ccbd307af1ad584ba86815c1d1100f9896",
         "content": "sha256:b6c92054332c8d5d30e94e97982628fa6cd4e837a2cf9f42c25a321c9d5048eb",
         "locator": {
           "kind": "symbol",
@@ -75,7 +93,7 @@
     },
     {
       "anchor": {
-        "blob": "9d1e05a86de34369058f714dc77fe0db89f2a74e",
+        "blob": "979669ccbd307af1ad584ba86815c1d1100f9896",
         "content": "sha256:0d79e9f1705a5493f7a2d4aed535782b7be3918242e1309b5e5210e868764fa7",
         "locator": {
           "kind": "symbol",
@@ -93,7 +111,7 @@
     },
     {
       "anchor": {
-        "blob": "9d1e05a86de34369058f714dc77fe0db89f2a74e",
+        "blob": "979669ccbd307af1ad584ba86815c1d1100f9896",
         "content": "sha256:c040fc08e0fc86dd459b46659f8ab3d739a57cfb2d5581666541cf9b9bbbb7ca",
         "locator": {
           "kind": "symbol",
@@ -111,7 +129,7 @@
     },
     {
       "anchor": {
-        "blob": "9d1e05a86de34369058f714dc77fe0db89f2a74e",
+        "blob": "979669ccbd307af1ad584ba86815c1d1100f9896",
         "content": "sha256:c409e0ca8078ec19064718f5c4cc4796e7f23656632e4d51f55cb5cf955c5972",
         "locator": {
           "kind": "symbol",

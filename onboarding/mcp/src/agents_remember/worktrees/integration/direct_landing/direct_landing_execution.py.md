@@ -19,7 +19,7 @@ Executes and recovers the memory-content output of an accepted direct-landing ge
 `execute_direct_landing` checks mechanical convergence, reconciles durable Git evidence, builds the
 operation-bound Git arguments, and calls `_direct_memory_commit`. After the real memory output is
 known, it refreshes the consumer cache best effort and finishes the journal with `codeCommit`,
-`memoryContentCommit`, and `ledgerCache`. `memory.memoryHead` is the actual memory-content/ref output.
+`memoryContentCommit`, and `ledgerCache`. `memory.memoryHead` is the actual memory-content/ref output. `_direct_landing_result` also carries `staleDocuments` when there are any (MIK-R124 rule 4): the count of documents this publication made stale and the read that lists them, computed through `landing_document_answer` from the operation's code commit and the landed memory commit, because this route's raw result is what its answer projects from.
 
 `_direct_memory_commit` reuses a proven or recovered commit, archives an unchanged interrupted
 attempt before retry, and validates a prepared mutation against its accepted parent/ref/tree.

@@ -36,6 +36,17 @@ hand-off rather than a summary of one: items name where each thing lives — pat
 inside it, from one resolution act — and keep the worker's own wording, because a re-worded statement
 destroys the evidence the curator compares against the code.
 
+**Two record kinds the worker names in that list, beside the requirements.** A weakness of the code it
+meets outside this task's scope — a waste of an agent's context, compute, storage or time, a fault, or
+a debt — is one entry: the file and symbol where it occurs, its kind (`context`, `compute`, `storage`,
+`time`, `fault` or `debt`), one sentence in the worker's words and any measurement it took. A document
+that describes code the worker writes or changes is another: the document, and each place it stands
+on. Both are the record kinds `../templates/curator-handoff-list.md` owns, and the curator records them.
+A weakness inside this task's scope is repaired, or it is a finding of the review — never recorded in
+its place. A fault that makes this task's own result wrong, loses data or opens the installation goes
+to the Manager at once. A recorded weakness is no finding and blocks nothing, the worker is never asked
+to look for weaknesses, and a task that changes code owes the documents nothing beyond naming them.
+
 Worker intake reads the rendered requirement and leaf document named in the handover and verifies the exact ID/version,
 approved state, and durable corpus-ruling citation before implementation. A missing, unapproved,
 or mismatched packet is a refusal, not permission to infer the requirement from leaf prose.

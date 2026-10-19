@@ -18,9 +18,10 @@ MIK-R07) the history row kind.
 
 ### Logic
 
-- `RECORD_PREFIXES` maps the ten record kinds (`invariant`→`INV`, `family`→`FAM`, `decision`→`DEC`,
+- `RECORD_PREFIXES` maps the twelve record kinds (`invariant`→`INV`, `family`→`FAM`, `decision`→`DEC`,
   `incident`→`INC`, `assumption`→`ASM`, `limitation`→`LIM`, `failure_mode`→`FLM`, `scenario`→`SCN`,
-  `diagnostic`→`DGN`, `term`→`TRM`); `ENTRY_PREFIXES` maps `realization`→`RLZ` and `proof`→`PRF`;
+  `diagnostic`→`DGN`, `term`→`TRM`, `weakness`→`WKN`, `dependent`→`DPD`); `ENTRY_PREFIXES` maps
+  `realization`→`RLZ` and `proof`→`PRF`;
   `ROW_PREFIXES` maps the one row kind `history_row`→`ROW` (MIK-R07 rule 1; the `ROW-` spelling was
   chosen by the L07 worker, the packet names no prefix).
 - `id_pattern(*prefixes)` builds the anchored regex: prefix, `-`, six Crockford characters, optionally

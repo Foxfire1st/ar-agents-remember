@@ -42,8 +42,10 @@ through `models/knowledge_files/anchor_content.py`.
   holds … (unknown subject)".
 - **`CodeSnapshot.at_commit(repository, commit)` (L37).** The tree C of a committed code state: the crossing
   owner's route resolves anchors at the series' code work branch, not at a working tree. A commit with no tree
-  raises `AnchorResolutionError`. `capture` (the working tree) and `at_commit` both read the tree through
-  `of_tree(root, tree)`.
+  raises `AnchorResolutionError`. `at_commit` reads the tree through `of_tree(root, tree, commit=commit)` and keeps
+  that commit on the snapshot; `capture` reads the working tree through the same constructor and carries no commit,
+  because a tree with uncommitted changes is named by none. That recorded commit is the code state a dependent's
+  confirmation names for the values its links were read at (MIK-R124 rule 1).
 
 ### Conventions
 

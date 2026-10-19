@@ -1,0 +1,43 @@
+{
+  "path": "mcp/src/agents_remember/application/knowledge_reader/marks.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "61718db7dbdd11ac0f6126a630ca9cdfc341346d",
+        "content": "sha256:b1cbba990e0eebefe98ce4b88e63885acf451345b30a99ec44a4d30b9668ee5e",
+        "locator": {
+          "kind": "symbol",
+          "name": "weakness_list"
+        }
+      },
+      "id": "RLZ-59SFXK",
+      "invariant": "INV-HB6783",
+      "origin": {
+        "handoffEntry": "L118-W2",
+        "leaf": "260928-MIK-L118"
+      },
+      "rationale": "A weakness row is read as written and its anchor observed at the selected tree, with the state and the reason named and the record left untouched.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "61718db7dbdd11ac0f6126a630ca9cdfc341346d",
+        "content": "sha256:24e91bdf19e5470a597656fba760fe0a49151b31f5ca50eb3b978687cf2a63c9",
+        "locator": {
+          "kind": "symbol",
+          "name": "dependent_movement"
+        }
+      },
+      "id": "RLZ-QQHF89",
+      "invariant": "INV-HB6783",
+      "origin": {
+        "handoffEntry": "L118-W2",
+        "leaf": "260928-MIK-L118"
+      },
+      "rationale": "The derivation lives here: an anchor link has moved when its recorded content no longer stands, a file link when the blob differs, a record link when the stored revision differs, and a dependent is stale when any one link moved.",
+      "role": "primary-authority"
+    }
+  ],
+  "references": {},
+  "schema": "ar-onboarding-file/v1"
+}

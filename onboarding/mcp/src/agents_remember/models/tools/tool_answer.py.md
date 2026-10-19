@@ -31,6 +31,7 @@ The current source facts below replace the former operative inventory. The separ
 - R113 removes dispatch_agent from L112_FINAL_BOUNDS; its sole final row here is runtime_install=600. No retained bound/comment advertises the retired dispatch tool.
 - RUNTIME_INSTALL_ANSWER_FIELDS retains removedPartStores in the delivered installation answer, alongside report/recovery fields; the removed-store report obligation is not dropped during shaping.
 - FRAMEWORK_ANSWER_KEYS no longer includes agentNotifierBanner or supervisorBanner. The four stripped envelope keys and the ordinary short-form framework remain; removed session banners are not preservation exceptions.
+- A landing answer's `staleDocuments` notice survives an over-bound answer's short form: `short_form` keeps the notice's `count` and `state` and adds `read: {view: "dependent", staleOnly: true}`, so the caller still learns the debt and where to read it. The notice's document lists are not kept; everything else about the answer is shaped as before.
 
 ### Current naming-reader bounds
 

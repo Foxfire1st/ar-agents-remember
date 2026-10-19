@@ -10,7 +10,7 @@ Reconcile leaf and master integration admission before any ref moves. Leaf route
 
 ## Code Commentary
 
-The final series route requires the full canonical non-abandoned leaf population; a checkpoint proves only landed leaves. Converted memory is gated, unconverted memory keeps the cutover lock, and removed modes refuse explicitly. A refusal projects knowledge-gate-refused without persisting the contract or recomputed worklist. This module owns admission, not publication, review acceptance or Git recovery.
+The final series route requires the full canonical non-abandoned leaf population; a checkpoint proves only landed leaves. Its landing request carries `master_end` — false only for `worktree_checkpoint_landing` — and the contract's original base pair as `document_base`, so only the landing that finishes the master refuses documents its own tasks left stale (MIK-R124 rule 8), while a checkpoint lands, leaves the master open and only reports them. Converted memory is gated, unconverted memory keeps the cutover lock, and removed modes refuse explicitly. A refusal projects knowledge-gate-refused without persisting the contract or recomputed worklist. This module owns admission, not publication, review acceptance or Git recovery.
 
 ## Evidence
 

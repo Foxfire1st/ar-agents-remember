@@ -22,6 +22,9 @@ admission and origin blocks. They check shape only — presence, closed vocabula
 - `Text` (non-blank prose), `Label` (non-blank, no surrounding whitespace) and `RepositoryPath` (plain
   repository-relative POSIX path, no `.`/`..`/empty segments, no drive letter, then the shipped
   `require_plain_git_path`) refuse rather than clean.
+- `OneSentence` (MIK-R118 rule 1) is the type of a weakness' statement: non-blank, at most 400
+  characters. A longer statement is refused with its field rather than split or trimmed, so the
+  author decides where the sentence ends.
 - **Anchor** `{path?, locator, blob, content}`: locator is a discriminated union of
   `SymbolLocator{name}`, `LineRangeLocator{start,end}` (end ≥ start) and `WholeFileLocator`; `blob` is a
   Git object id; `content` is `sha256:<64 hex>` of the resolved range. Whether `path` must be present
@@ -33,7 +36,8 @@ admission and origin blocks. They check shape only — presence, closed vocabula
   citation text, written only by the conversion). `anchors_of` lists every anchor of a table.
 - **Link** `{target, relation, alternative?}`: target is a record ID, `route:<path>`, an anchor that
   names its path, or a requirement reference; `alternative` is required for `reconsider_on` and
-  refused for every other relation. Which relations a kind may use is `records.RELATIONS_BY_KIND`.
+  refused for every other relation. Which relations a kind may use is `records.RELATIONS_BY_KIND`;
+  since MIK-R118 the vocabulary also carries `burdens`, which only a weakness may use.
 - **Admission** per kind (`InvariantAdmission`, `FamilyAdmission`, `DecisionAdmission`) is
   `{criteria[≥1, unique], justification}`; `LEGACY_UNASSESSED` is the alternative string.
   **Origin** `{task, leaf? | wave?, handoff?, handoffEntry?, legacyId?}` refuses leaf and wave

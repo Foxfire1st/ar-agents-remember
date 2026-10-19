@@ -1,6 +1,25 @@
 {
   "path": "mcp/src/agents_remember/models/knowledge_files/ids.py",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "f77e500937c184fa16c5e41208b41d7ca84d5bd4",
+        "content": "sha256:a0cc47b29df7642f270c1b4592821af8e19d9d44569a7fd6f7faa03c3a301783",
+        "locator": {
+          "kind": "symbol",
+          "name": "RECORD_PREFIXES"
+        }
+      },
+      "id": "RLZ-1PMQ72",
+      "invariant": "INV-ZEV1G9",
+      "origin": {
+        "handoffEntry": "L118-W1",
+        "leaf": "260928-MIK-L118"
+      },
+      "rationale": "The WKN and DPD prefixes are registered beside the other kind prefixes, so an ID says which kind minted it.",
+      "role": "support"
+    }
+  ],
   "references": {
     "1": {
       "note": "The kind tables, declared once.",

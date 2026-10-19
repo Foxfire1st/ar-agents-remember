@@ -22,7 +22,7 @@ The following retained registration summary is historical: its reconsideration w
 with the current candidate/code-aware dispatch and link-target predicate described below, not as an
 assertion that the old row-only reconsideration adapter remains in use.
 
-Registration covers the membership and touched-record kinds as well as the prior invariant, family, route, onboarding, unexplained, planned and reconsideration kinds. Family-route conditions remain addressed by subject, and planned/reconsideration kinds retain their registered rules. [3]
+Registration covers the membership and touched-record kinds as well as the prior invariant, family, route, onboarding, unexplained, planned and reconsideration kinds. Family-route conditions remain addressed by subject, and planned/reconsideration kinds retain their registered rules. It also covers the two mark kinds, `weakness_anchor` (MIK-R118 rule 7) and `changed_document` (MIK-R124 rule 5). [3]
 
 The earlier amended R53 rollout exception was task-scoped, not a general relaxation of these
 candidate-code predicates. Its former deferred-work statement is not a current implementation
@@ -45,6 +45,34 @@ does not make a row-map lookup alone sufficient.
 and target key in K_C: while the removed target's link remains, the remedy is to remove or restate that
 link through the writer. Once K_C no longer holds that target, the predicate returns no open reason.
 
+
+### The weakness and changed-document predicates (MIK-R118, MIK-R124)
+
+`weakness_anchor` answers the item raised when a task changed the file a weakness is anchored in. Its subject is the
+weakness's ID, and the leaf answers it with a `record` history row about that weakness at the revision K_C holds. A
+`changed` row answers — the record file differs in K_C, because the anchor moved with the code or the weakness was
+closed — and a `no_impact` row answers too, saying the weakness still stands where it stood. The kind is advisory:
+the gate reports an unanswered weakness and refuses nothing for it.
+
+`changed_document` answers the item raised when a task changed a document that has a dependent record. Its subject is
+the dependent's ID, and only the confirmed record answers it:
+
+- the leaf's history file must hold a `record` row about the dependent, and the row's revision must be the revision
+  K_C holds;
+- the row must be `changed`. A `no_impact` row does not answer: only the record written in this task is the
+  confirmation the item asks for;
+- the record K_C holds must be a dependent naming the document the item names, so a row about some other record
+  proves nothing about this document;
+- `confirmed.task` must be this task's, and must differ from the task the item was raised against. A record still
+  confirmed by the previous confirmer is that confirmer's judgment, and a third task's confirmation is not this
+  task's answer;
+- every `stands_on` link must still hold the value the confirmation recorded at C: a whole-file link's blob, an
+  anchor link's locator resolving to the recorded bytes, or a record link at its revision in the candidate. A link
+  that has moved means the confirmation describes the previous code, and the item stays open with the remedy to write
+  the dependent again in this task.
+
+A document the leaf deleted has no record in K_C. That removal is answered by a `retired` row about the removed
+record; any other disposition leaves the item open, naming the disposition and the removal.
 
 ### Verdict and witness projection
 

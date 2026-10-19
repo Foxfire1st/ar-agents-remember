@@ -1,0 +1,33 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations"
+    ],
+    "justification": "The derivation, the weakness rows and the two card lines sit in different modules and must agree, and a disagreement between them would tell a reader that a document is current when its code has moved."
+  },
+  "applicability": "Every read of the knowledge tree that observes a weakness anchor or derives a dependent's state, including a mounted read, a card's read and a landing's computation.",
+  "conditions": [
+    "A code tree is resolved for the read; without one the row says it is unverifiable and names why."
+  ],
+  "exclusions": [
+    "Writing any state back: no read and no landing stores stale or current in a record.",
+    "A record whose file is outside the code repository."
+  ],
+  "id": "INV-HB6783",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "R4-verdict.md F07/F08/F09/F14/F15 closures; the 20 and 200-dependent measurements in R4-rule-grades.md"
+      ],
+      "path": "batch5-invariants.json"
+    },
+    "handoffEntry": "L118-W2",
+    "leaf": "260928-MIK-L118",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "A weakness's anchor is observed at the read's own code tree and marked stale or unverifiable without refusing anything, and a document's staleness is derived at each read from its links and never stored.",
+  "status": "proposed",
+  "supersedes": []
+}

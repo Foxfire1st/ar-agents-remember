@@ -27,7 +27,9 @@ public names of its submodules; it contains no logic of its own.
   kind is registered by `compute`'s import, before this module imports it) and, since MIK-R10, `unexplained`
   (the `unexplained_hunk` and `unexplained_file` kinds, the coverage lookup and the items for every unlinked
   change) and, since MIK-R14, `reconsideration` (the `reconsideration_candidate` kind, registered by `compute`'s
-  import: a decision whose `reconsider_on` target changed). `base_cache` (the
+  import: a decision whose `reconsider_on` target changed) and, since MIK-R118 and MIK-R124, `marks` (the
+  `weakness_anchor` and `changed_document` kinds with the items they raise; `compute` imports the module, so
+  both kinds are registered whenever the worklist is, and this module re-exports their names). `base_cache` (the
   converted-base cache, review R1 F6) is imported by `leaf` and `onboarding_trace` and is not re-exported.
 - `membership` registers `UNASSIGNED_INVARIANT_KIND` for live new/newly unlisted invariants; `touched_records` registers `TOUCHED_RECORD_KIND` for changed base decision/facet records. Both kinds are exported and enter through compute, not recursive family traversal. The four-kind L30 snapshot below is historical.
 
@@ -39,7 +41,8 @@ public names of its submodules; it contains no logic of its own.
   `register_item_kind`, `satisfying_row`), and the registered kinds' names and predicates
   (`ONBOARDING_TRACE_KIND`, `PLANNED_UNTOUCHED_KIND`, `FAMILY_ROUTE_CONDITION_KIND`,
   `family_route_item_open`, MIK-R10's `UNEXPLAINED_HUNK_KIND`, `UNEXPLAINED_FILE_KIND` and
-  `answering_trace_subjects`, and MIK-R14's `RECONSIDERATION_KIND`).
+  `answering_trace_subjects`, MIK-R14's `RECONSIDERATION_KIND`, and, since MIK-R118 and MIK-R124,
+  `WEAKNESS_ITEM_KIND` and `DOCUMENT_ITEM_KIND` for the `weakness_anchor` and `changed_document` kinds).
 
 ### Conventions
 

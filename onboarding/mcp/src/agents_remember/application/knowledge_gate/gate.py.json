@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "ea0d8c54155a5b5f0bc6a7cef7dd021b8138b53a",
+        "blob": "c7ee6796c238d63d1e061ee0c8c1c84b4b214cec",
         "content": "sha256:1557b61d8f9f64ea72f61cb3d47d899a22625aadf36044fd5f6bf1a4cfa9d0d4",
         "locator": {
           "kind": "symbol",
@@ -21,7 +21,25 @@
     },
     {
       "anchor": {
-        "blob": "ea0d8c54155a5b5f0bc6a7cef7dd021b8138b53a",
+        "blob": "c7ee6796c238d63d1e061ee0c8c1c84b4b214cec",
+        "content": "sha256:067ab8a8ca9e3383a2c81592c90d0bb97dc556787c82f1288f1c8ebb39c2eda9",
+        "locator": {
+          "kind": "symbol",
+          "name": "evaluate_leaf_gate"
+        }
+      },
+      "id": "RLZ-EGANR0",
+      "invariant": "INV-ZHTFZ9",
+      "origin": {
+        "handoffEntry": "L118-W4",
+        "leaf": "260928-MIK-L118"
+      },
+      "rationale": "The leaf gate runs the advisory split here: an open or newly recorded weakness refuses nothing, while an unconfirmed changed document is held like any other open item.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "c7ee6796c238d63d1e061ee0c8c1c84b4b214cec",
         "content": "sha256:067ab8a8ca9e3383a2c81592c90d0bb97dc556787c82f1288f1c8ebb39c2eda9",
         "locator": {
           "kind": "symbol",

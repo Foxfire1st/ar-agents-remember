@@ -26,6 +26,14 @@ that entry's anchor in the candidate (`reanchor_mismatches` over `sidecar_entry_
     records and are not checked here. A retired record still resolves (MIK-R22 rule 3: records are
     never deleted), so a closed file committed outside AR routes cannot carry a ghost subject past
     master or checkpoint landing. This subject check does not judge revision currentness.
+  - **One intended absence (MIK-R124 rule 5).** `_answers_a_document_removal` exempts the retired row
+    of a dependent whose document was deleted from the code: the row is a `record` row, it retires,
+    and its subject's prefix is the dependent prefix (`RECORD_PREFIXES["dependent"]`). A deleted
+    document takes its dependent record with it, so that row's subject has no record left in the
+    tree, and the row is skipped instead of refused. The shape is deliberately the narrowest the tree
+    can show: a retired decision, weakness or facet row, and a membership or invariant row, still name
+    a record the tree must hold, so their absence is refused. A retired row is not a general licence
+    to name a record that is not there.
   - `checked_history_files(context)` picks the files the re-anchor check reads: every **open** file; and, when
     `context.leaf_publication` is set (closeout, direct landing, a leaf's recorded landing), every file closed in K_C
     but **not closed in any comparison base or frozen commit** (`context.closed_before`). The leaf's own file stays editable until its closeout commit writes
@@ -84,15 +92,18 @@ that entry's anchor in the candidate (`reanchor_mismatches` over `sidecar_entry_
   proved by `test_short_items_are_judged_only_in_the_files_the_reanchor_check_reads`, whose five file/base/route
   shapes show an open file always judged, the leaf's own closed file judged at its publication, and a closed file
   at a master route or closed by an earlier frozen closeout not judged.
-- **Every subject a history row names resolves in the tree, at every route.** Candidate invariant (not ingested).
+- **Every subject a history row names resolves in the tree, at every route — but the retired row of a
+  dependent whose document was deleted.** Candidate invariant (not ingested).
   Realized by the first loop of `check_history_rows`; proved by
   `test_a_hand_committed_closed_history_file_with_a_ghost_subject_is_refused_at_master_landing` (the reviewer's R2
   probe, N21). The L22 validator fixtures now keep the retired record `INV-RET1R3` in the tree (`status: retired`),
-  per MIK-R22 rule 3, so their assertions are unchanged.
+  per MIK-R22 rule 3, so their assertions are unchanged. The single exception is the one
+  `_answers_a_document_removal` names: a retired `record` row about a dependent ID, which the deletion of the
+  document left without a subject (MIK-R124 rule 5). Every other retired row about an absent subject still refuses.
 - **A sync merge refuses a row only when the leaf's own side had it wrong.** Proved by
   `test_a_sync_merge_refuses_a_history_row_only_when_the_leaf_s_own_side_had_it_wrong` in
   `test_knowledge_validator_routes.py` ("consistent" syncs; "already wrong" is refused by `R09-history-rows`).
-- Record deletion is independently refused by `rules_admission.check_record_kept` (`R27.4-record-kept`) for every ID a comparison base holds; retirement changes status and retains the file. Subject resolution here is not a substitute for that comparison.
+- Record deletion is independently refused by `rules_admission.check_record_kept` (`R27.4-record-kept`) for every ID a comparison base holds; retirement changes status and retains the file. The one exemption is the one this file's own subject check carries — a missing dependent ID whose document the task deleted, answered by the leaf's retired `record` row about it — and every other kind's absence still refuses there too. Subject resolution here is not a substitute for that comparison.
 
 ### Todos
 

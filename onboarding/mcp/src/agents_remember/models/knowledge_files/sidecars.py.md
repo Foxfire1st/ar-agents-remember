@@ -31,7 +31,9 @@ converted. It also records the definitions of *onboarding route* and *governing 
   `routingTerms`, `hotPath`, `fallback`) are refused by `extra="forbid"`: they stay in the generated
   `overview.index.json` cache.
 - `RoutePath` (public since MIK-R04, leaf 260928-MIK-L04) is the annotated route-directory type: `min_length` 1, the path length limit, and `AfterValidator(_require_route_path)`, so it accepts a repository-relative path or `.` exactly as `RouteSidecar.path` does. `FamilyRecord.routes` uses it; `RouteSidecar` itself is unchanged.
-- `LayoutMarker` holds `conversion` only.
+- `LayoutMarker` holds `conversion` and, since MIK-R124, an optional `dependent_links`: the
+  target → dependent-record paths map the writer derives so a landing need not search record bodies.
+  The field is absent when the tree records no dependents.
 
 ### Conventions
 

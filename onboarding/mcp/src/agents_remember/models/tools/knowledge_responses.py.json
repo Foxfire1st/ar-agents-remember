@@ -87,7 +87,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d28c1c31547ed5820af67ea2fb3476dcb3959dda",
+            "blob": "0b97b80d44d3d0a2bd5e469d8c0c966b71f28fa7",
             "content": "sha256:4889da96e4a539fa55d10bd7a94ae233269cd690271782d68de54eab67c5f048",
             "locator": {
               "kind": "symbol",
@@ -119,7 +119,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d28c1c31547ed5820af67ea2fb3476dcb3959dda",
+            "blob": "0b97b80d44d3d0a2bd5e469d8c0c966b71f28fa7",
             "content": "sha256:56378eecacf2289549c32aa3be01be39ff48699acd6d564caa98ce7f3a1f9f15",
             "locator": {
               "kind": "symbol",
@@ -263,7 +263,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6a6e9fbb6bc291a7c343c2c7435d5a6e44e62362",
+            "blob": "4abe7242c8b69c0495b21f524532bbed0065f558",
             "content": "sha256:c32490874f6193b8328f62d3d13d12b81bb0c8a5e13fbb31a2f56a6b49c71530",
             "locator": {
               "kind": "symbol",
@@ -292,16 +292,14 @@
       ]
     },
     "35": {
-      "note": "The envelope every one of the three derives from — a strict response plus the single required `operation` string each model then pins to a literal — and the shared header it inherits rather than redeclares.\n\nAnchor: lines 102-106",
+      "note": "The envelope every one of the four derives from — a strict response plus the single required `operation` string each model then pins to a literal — and the shared header it inherits rather than redeclares.\n\nAnchor: `ToolResponse`",
       "targets": [
         {
           "anchor": {
-            "blob": "6e1c2663fa140e39d14ec835f6a5a6db3ced7de2",
-            "content": "sha256:e76fb9dcdec65ca764d37795cdf99666e924156e661a37b18317c5b955012282",
+            "blob": "929a3e608b76db907cfb41bd92cb7d2453b386c5",
+            "content": "sha256:9a0d5793850004aa14c40ba9565c3926c5407d032778d4b68f3eb416b7c40e0b",
             "locator": {
-              "end": 106,
-              "kind": "line_range",
-              "start": 102
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/models/base.py"
           },
@@ -310,16 +308,14 @@
       ]
     },
     "36": {
-      "note": "Where the three classes are imported and mapped to their tool names in the registry.\n\nAnchor: lines 249-251",
+      "note": "Where the four classes are imported and mapped to their tool names in the registry.\n\nAnchor: `KnowledgeWriteResponse`",
       "targets": [
         {
           "anchor": {
-            "blob": "8c2e4699aae0165b9cf73eb87c8893483de2c903",
-            "content": "sha256:c422dc8c23ea96e84036ce5510418d23580b411e5073ea35f1e83b5c88205c62",
+            "blob": "f22561c4fc8fe67d3b83091f44dd37e323124fbd",
+            "content": "sha256:7892d45dfdde8e6454442e939f32c6565e4f67d3f10bbd1fae777f18afb59998",
             "locator": {
-              "end": 184,
-              "kind": "line_range",
-              "start": 182
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/models/tools/tool_registry.py"
           },
@@ -328,16 +324,14 @@
       ]
     },
     "37": {
-      "note": "The three advertised knowledge tool names in the public roster.\n\nAnchor: lines 95-97",
+      "note": "The four advertised knowledge tool names in the public roster. The module's own `__all__` re-exports three of them, and `KnowledgeWriteResponse` is defined and registered without being listed there.\n\nAnchor: `PUBLIC_TOOLS`",
       "targets": [
         {
           "anchor": {
-            "blob": "1fbe0c965d0be4e831a65565045eeeb97bb5cbf2",
-            "content": "sha256:309a611cc8d773f899de1875fc66442a2a03026bc0714ff7849f3f2eb367af6a",
+            "blob": "322a01b7560d7402dc0daa221e3f5d430a0ae448",
+            "content": "sha256:b86d6afd30bac3e1e8d2ecc1ee4724a5ea439e35a044ed9e3830fd43e40dc5c7",
             "locator": {
-              "end": 67,
-              "kind": "line_range",
-              "start": 65
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/models/tools/public_roster.py"
           },
@@ -400,7 +394,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d28c1c31547ed5820af67ea2fb3476dcb3959dda",
+            "blob": "0b97b80d44d3d0a2bd5e469d8c0c966b71f28fa7",
             "content": "sha256:b03a0dc7c64a4da94332b901394040442cc1e759c8a1508021916450f92e4a9c",
             "locator": {
               "end": 33,
@@ -417,7 +411,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d28c1c31547ed5820af67ea2fb3476dcb3959dda",
+            "blob": "0b97b80d44d3d0a2bd5e469d8c0c966b71f28fa7",
             "content": "sha256:9fee503dba31f601e1e1cbfff0294a73785e2560900da5dc4147bc5486d5d9c7",
             "locator": {
               "end": 43,
@@ -434,7 +428,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d28c1c31547ed5820af67ea2fb3476dcb3959dda",
+            "blob": "0b97b80d44d3d0a2bd5e469d8c0c966b71f28fa7",
             "content": "sha256:c589de1ee20de654ac3253797544a684657522c5d8bd9b5806ece7a43597da60",
             "locator": {
               "end": 28,
@@ -451,7 +445,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d28c1c31547ed5820af67ea2fb3476dcb3959dda",
+            "blob": "0b97b80d44d3d0a2bd5e469d8c0c966b71f28fa7",
             "content": "sha256:a34bd31ebc5bb301452e68cbf31f389ccde5fd78b373c0b8768a96e4d52b14c7",
             "locator": {
               "end": 20,
@@ -548,7 +542,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d28c1c31547ed5820af67ea2fb3476dcb3959dda",
+            "blob": "0b97b80d44d3d0a2bd5e469d8c0c966b71f28fa7",
             "content": "sha256:7a2f75a44c9d5d7656be66496e43cddf4a25bfd79e14a04f473849e592463bf7",
             "locator": {
               "kind": "symbol",
@@ -580,7 +574,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d28c1c31547ed5820af67ea2fb3476dcb3959dda",
+            "blob": "0b97b80d44d3d0a2bd5e469d8c0c966b71f28fa7",
             "content": "sha256:18a5ecb48926b0e6097d1f1fcec4be8c743c236f66212d0d43eede17154d126d",
             "locator": {
               "kind": "symbol",

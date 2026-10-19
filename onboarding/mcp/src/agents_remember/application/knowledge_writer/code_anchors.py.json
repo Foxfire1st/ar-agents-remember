@@ -1,6 +1,25 @@
 {
   "path": "mcp/src/agents_remember/application/knowledge_writer/code_anchors.py",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "a03a0b82dff9f9649863950b2c61e647576b0674",
+        "content": "sha256:6470b981c92f94b696f29418f6f77189fa5aeb44ca43c902f91ccadd0f00a103",
+        "locator": {
+          "kind": "symbol",
+          "name": "CodeSnapshot"
+        }
+      },
+      "id": "RLZ-GMH0JZ",
+      "invariant": "INV-VWRJR7",
+      "origin": {
+        "handoffEntry": "L118-W3",
+        "leaf": "260928-MIK-L118"
+      },
+      "rationale": "The snapshot a write resolves against is the one place the writer takes a blob or a symbol range from, so an anchor is recorded at the tree the write ran on.",
+      "role": "support"
+    }
+  ],
   "references": {
     "1": {
       "note": "A locator that does not resolve at C.",

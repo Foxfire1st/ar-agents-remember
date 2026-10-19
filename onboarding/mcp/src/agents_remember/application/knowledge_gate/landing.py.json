@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "3213945d3a0e037c65ef4e711acaeabcf2b60d99",
+        "blob": "95eb2af092cad6e8624da3e1b504ce58c42d553c",
         "content": "sha256:f469fd1a4d2de7b0de084ccd3515375140bb98f2af0df91f64bff2de1e4395c0",
         "locator": {
           "kind": "symbol",
@@ -18,6 +18,24 @@
       },
       "rationale": "The single owner-resolution function rule 5 judgments use.",
       "role": "unclassified"
+    },
+    {
+      "anchor": {
+        "blob": "95eb2af092cad6e8624da3e1b504ce58c42d553c",
+        "content": "sha256:207e28b19ba6a7c8dff5d94f9345c3d04b0a0f0c0065d977e404c201c28e0eab",
+        "locator": {
+          "kind": "symbol",
+          "name": "document_staleness"
+        }
+      },
+      "id": "RLZ-MD0K7K",
+      "invariant": "INV-ZHTFZ9",
+      "origin": {
+        "handoffEntry": "L118-W4",
+        "leaf": "260928-MIK-L118"
+      },
+      "rationale": "The landing computation lives here: an ordinary landing and a checkpoint read only the dependents a change can move, while a series master's end reads every document; it answers document-level counts and names the inherited ones separately, answers an uncomputable state as state and detail without a count and an unverifiable one as state, detail, the count and the documents, and leaves per-link movement detail — the moving commit, or that it is unknown — to the dependent reader that names each moved link.",
+      "role": "primary-authority"
     }
   ],
   "references": {

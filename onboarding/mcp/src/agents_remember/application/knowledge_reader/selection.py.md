@@ -29,14 +29,22 @@ Three spellings are accepted:
 - **The code tree (ruling 2026-09-30T09:42:58 Q1/N1).** For a commit, `_paired_code_tree` reads the commit's
   own `Code-Commit` pairing (`own_paired_code_commit`) and resolves its tree in the code repository; with no
   trailer, or a paired commit the code store does not hold, there is no code tree and the note says why, so
-  every state reads `unverifiable`. For `published` and a leaf, the selection observes the scope's code
+  every state reads `unverifiable`. The tree lookup verifies that the paired commit is in the code store; the
+  selection then holds the paired **commit** itself as the code tree's ID rather than its tree hash, because a
+  commit and a tree are both readable IDs to the code-tree readers, and the commit is what lets a later mark
+  name the change that produced the states. For a commit selection, `codeTree.treeId` therefore names that
+  commit. For `published` and a leaf, the selection observes the scope's code
   checkout through `application/worktree_code_state.py` (MIK-R73 rule 7): a clean checkout gives
   `HEAD^{tree}`, and a checkout that differs from `HEAD` is captured into a scratch index and object store
-  whose store the selection holds until it closes. Nothing is written into the repository, and the block
-  states `codeState` `commit` or `working-tree` beside the tree it observed, so a leaf's uncommitted code is
-  measured rather than excluded.
-- **`codeSource`** is `paired-code-commit`, `checkout-head` or `none`, and `to_document` reports it beside
-  `codeTree` and `codeNote`. Every answer carries this block.
+  whose store the selection holds until it closes. Nothing is written into the repository. The observation's own state —
+  `commit` or `working-tree` — is held on the selection as its internal `code_state` and is never serialized;
+  what an answer carries is the `codeSource` value that follows from it, beside the tree it observed, so a
+  leaf's uncommitted code is measured rather than excluded.
+- **`codeSource`** is `paired-code-commit`, `checkout-head`, `checkout-working-tree` or `none`, and
+  `to_document` reports it beside `codeTree` and `codeNote`. Every answer carries this block. The selection's
+  own `code_state` — `commit` or `working-tree` — is internal and is not serialized: the dirtiness it records
+  reaches the answer as `checkout-working-tree` with the captured tree and `codeNote`, and a dirty selection
+  offers no `pinnedCommit`.
 - **The pinned link (N2).** A working-tree selection whose captured tree equals its `HEAD` tree carries
   `pinnedCommit` = that `HEAD`; the dashboard offers it as "pin this view to memory …", so a shared view is
   reproducible. A dirty tree offers none. A commit selection is its own pin.

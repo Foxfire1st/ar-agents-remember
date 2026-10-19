@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "c1ca237cbef48e6790002772f6026d98fe214427",
+        "blob": "70bb5757b6f36200ece074f47b219868173729ae",
         "content": "sha256:5728abf91a9df3d1cc0f688b68e90be44054fbb5b4830163405930449083da4a",
         "locator": {
           "end": 41,
@@ -22,12 +22,12 @@
     },
     {
       "anchor": {
-        "blob": "c1ca237cbef48e6790002772f6026d98fe214427",
+        "blob": "70bb5757b6f36200ece074f47b219868173729ae",
         "content": "sha256:bd1d755a46d1af72e7027ad39b71d342bd5c445a49ef05d7d1241d08ac652f1c",
         "locator": {
-          "end": 96,
+          "end": 97,
           "kind": "line_range",
-          "start": 94
+          "start": 95
         }
       },
       "id": "RLZ-7B663Y",
@@ -41,8 +41,8 @@
     },
     {
       "anchor": {
-        "blob": "c1ca237cbef48e6790002772f6026d98fe214427",
-        "content": "sha256:f985dcd92c6b6786747ba632199658bf0c5051f361fe9982d6e1dc9df3b989c0",
+        "blob": "70bb5757b6f36200ece074f47b219868173729ae",
+        "content": "sha256:edc0f1b1d327bd5bc0981f6d93803d470a7c249c9ea1c189edc51b9ccda90915",
         "locator": {
           "kind": "file"
         }
@@ -58,12 +58,12 @@
     },
     {
       "anchor": {
-        "blob": "c1ca237cbef48e6790002772f6026d98fe214427",
+        "blob": "70bb5757b6f36200ece074f47b219868173729ae",
         "content": "sha256:dce6de74aa6e4b74150b9ae10a0c3d4050977d115b024366046974cab6815853",
         "locator": {
-          "end": 96,
+          "end": 97,
           "kind": "line_range",
-          "start": 90
+          "start": 91
         }
       },
       "id": "RLZ-D0XTAP",
@@ -77,12 +77,12 @@
     },
     {
       "anchor": {
-        "blob": "c1ca237cbef48e6790002772f6026d98fe214427",
+        "blob": "70bb5757b6f36200ece074f47b219868173729ae",
         "content": "sha256:1bc0a41af7223cbc91ea2f78270614076e6727ab0f503209ac75b70b830453f1",
         "locator": {
-          "end": 111,
+          "end": 112,
           "kind": "line_range",
-          "start": 111
+          "start": 112
         }
       },
       "id": "RLZ-DT71R6",
@@ -96,7 +96,7 @@
     },
     {
       "anchor": {
-        "blob": "c1ca237cbef48e6790002772f6026d98fe214427",
+        "blob": "70bb5757b6f36200ece074f47b219868173729ae",
         "content": "sha256:16982b1069215292a905dc7d1ebaccddab307de10f359aff1b57c1af343a81ca",
         "locator": {
           "end": 67,
@@ -115,12 +115,12 @@
     },
     {
       "anchor": {
-        "blob": "c1ca237cbef48e6790002772f6026d98fe214427",
+        "blob": "70bb5757b6f36200ece074f47b219868173729ae",
         "content": "sha256:1bc0a41af7223cbc91ea2f78270614076e6727ab0f503209ac75b70b830453f1",
         "locator": {
-          "end": 111,
+          "end": 112,
           "kind": "line_range",
-          "start": 111
+          "start": 112
         }
       },
       "id": "RLZ-JFZ5WP",
@@ -134,7 +134,7 @@
     },
     {
       "anchor": {
-        "blob": "c1ca237cbef48e6790002772f6026d98fe214427",
+        "blob": "70bb5757b6f36200ece074f47b219868173729ae",
         "content": "sha256:5728abf91a9df3d1cc0f688b68e90be44054fbb5b4830163405930449083da4a",
         "locator": {
           "end": 41,
@@ -153,12 +153,12 @@
     },
     {
       "anchor": {
-        "blob": "c1ca237cbef48e6790002772f6026d98fe214427",
+        "blob": "70bb5757b6f36200ece074f47b219868173729ae",
         "content": "sha256:e41fafc8b37c5fbba5c971104e2036dcedb4e59cfeec8b6dc49db480c0a4190e",
         "locator": {
-          "end": 157,
+          "end": 158,
           "kind": "line_range",
-          "start": 155
+          "start": 156
         }
       },
       "id": "RLZ-Q70RTA",
@@ -172,12 +172,12 @@
     },
     {
       "anchor": {
-        "blob": "c1ca237cbef48e6790002772f6026d98fe214427",
+        "blob": "70bb5757b6f36200ece074f47b219868173729ae",
         "content": "sha256:2a988c4a8bcb6558f609f41cb4c72d6a5b6d9c42fa7e5468cc66c4e48bd24606",
         "locator": {
-          "end": 138,
+          "end": 139,
           "kind": "line_range",
-          "start": 126
+          "start": 127
         }
       },
       "id": "RLZ-SHXSR1",
@@ -191,12 +191,12 @@
     },
     {
       "anchor": {
-        "blob": "c1ca237cbef48e6790002772f6026d98fe214427",
+        "blob": "70bb5757b6f36200ece074f47b219868173729ae",
         "content": "sha256:aa81672e23992d4fd756542776e03d5436baa4531f4332b8ecd35de051835f92",
         "locator": {
-          "end": 124,
+          "end": 125,
           "kind": "line_range",
-          "start": 116
+          "start": 117
         }
       },
       "id": "RLZ-V1AKR1",
@@ -375,7 +375,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c1ca237cbef48e6790002772f6026d98fe214427",
+            "blob": "70bb5757b6f36200ece074f47b219868173729ae",
             "content": "sha256:88406221712eeded31a9816ef129f48f6a693432619933c9688aa0a3eaa8f978",
             "locator": {
               "end": 47,
@@ -409,12 +409,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c1ca237cbef48e6790002772f6026d98fe214427",
+            "blob": "70bb5757b6f36200ece074f47b219868173729ae",
             "content": "sha256:3c29a3dc294be51af202a1de3402beafee3fa7f1ee1eb72534a3013fa3b055a0",
             "locator": {
-              "end": 124,
+              "end": 125,
               "kind": "line_range",
-              "start": 88
+              "start": 89
             }
           },
           "kind": "code"
@@ -532,12 +532,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "bcdffc827a6aabd156e73f322a46e69d89a8e969",
+            "blob": "a5e74f1a57f73c4f392379af6fbbb06b2e82f1e7",
             "content": "sha256:8b87edb5bb5884dd19bfc3e192bf3a935723e2eb9a3b179dd54ada325ee7126a",
             "locator": {
-              "end": 40,
+              "end": 44,
               "kind": "line_range",
-              "start": 29
+              "start": 33
             },
             "path": "skills/l-01-agent-lifecycles/reference/curator-writer-details.md"
           },
@@ -635,7 +635,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8bae0255a0cdb444f02d53324e1e00debc2631e1",
+            "blob": "26d0863739ecfde71b4476e27fc37676e28a6f0b",
             "content": "sha256:e5634b2fde999a70250356a80b5b8e8bfebac4a25e60d6f7c75c56d985354f01",
             "locator": {
               "kind": "symbol",

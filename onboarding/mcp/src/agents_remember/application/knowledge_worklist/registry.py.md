@@ -8,10 +8,11 @@
 
 **The worklist item-kind registry and the stable item ID (MIK-R08 rules 1 to 3).** Every kind of worklist
 item is registered here with four declarations: its subject key, its facts, its satisfying-row rule and its
-owner packet. MIK-R08 registers the three kinds it raises (`touched_invariant`, `stale_invariant`,
-`reached_family`); the later registrants (MIK-R06 `family_route_condition`, MIK-R10 `unexplained_hunk` /
-`unexplained_file`, MIK-R11 `planned_untouched`, MIK-R14 `reconsideration_candidate`, MIK-R30
-`onboarding_trace`) call `register_item_kind` when they land.
+owner packet, and, since MIK-R118, whether it is advisory — reported only, refusing nothing. MIK-R08 registers
+the three kinds it raises (`touched_invariant`, `stale_invariant`, `reached_family`); the later registrants
+(MIK-R06 `family_route_condition`, MIK-R10 `unexplained_hunk` / `unexplained_file`, MIK-R11
+`planned_untouched`, MIK-R14 `reconsideration_candidate`, MIK-R30 `onboarding_trace`, MIK-R118
+`weakness_anchor` and MIK-R124 `changed_document`) call `register_item_kind` when they land.
 
 ## Code Commentary
 
@@ -20,9 +21,12 @@ owner packet. MIK-R08 registers the three kinds it raises (`touched_invariant`, 
 - `ItemKind` is the frozen declaration: `name`, `subject` (what the subject names), `subject_pattern`
   (`^INV-` or `^FAM-`, checked by `accepts_subject`), `facts` (the field names the item's `facts` carries),
   `satisfying_row` (the rule as text), `row_lookup` (the rule as a callable, excluded from equality and
-  repr) and `owner`.
+  repr), `owner` and, since MIK-R118, `advisory` (default `False`; it is part of equality, so two kinds that
+  differ only in it are not the same declaration).
 - `register_item_kind` adds a kind to `ITEM_KINDS` and **refuses a second registration of the same name**
-  with `ValueError`; it never overwrites. `registered_kind` looks one up by name, naming a missing kind.
+  with `ValueError`; it never overwrites. A lookup reads `ITEM_KINDS` directly — the module exports no
+  `registered_kind` function — and `satisfying_row(kind, subject, history)` resolves the registered kind's
+  lookup, so a kind nothing registered is a `KeyError` at that read, not a named refusal.
 - `subject_row(row_kind)` builds the common satisfying-row lookup: the first row of the leaf's history file
   whose subject is the item's subject and whose row kind (`row_kind_for_subject`) is `row_kind`.
   `satisfying_row(kind, subject, history)` applies the registered kind's lookup.
@@ -43,11 +47,17 @@ owner packet. MIK-R08 registers the three kinds it raises (`touched_invariant`, 
 
 ### Invariants And Boundaries
 
-- **Item IDs are stable.** They never include whole-file blobs, tree IDs or run IDs: range content
-  identities for entries, and each member's `{ id, revision }` per side for a family. A mechanical blob
-  change elsewhere in a file keeps the ID.
+- **Item IDs are stable where the constructor binds ranges.** `item_id` hashes whatever identities its
+  caller passes: the range-bound constructors pass range content for entries and each member's
+  `{ id, revision }` per side for a family, so a mechanical blob change elsewhere in a file keeps those IDs.
+  That is the constructors' property, not a guarantee of the whole registry — `unexplained_file` binds the
+  candidate blob into both subject and identities, so its ID does move with the file's content.
 - **The lookup is not a judgement.** Whether the found row is current is MIK-R09 rule 2's; nothing here
   judges a row.
+- **An advisory kind is reported and refuses nothing** (MIK-R118 rule 4). `advisory` is a declaration on the
+  kind, not a fact on an item: while it is `False` — every kind registered before the marks — an open item is
+  work the leaf may be held to; when it is `True` an open item is shown in the worklist, at the gate and on
+  every route, and no review, gate or closeout is refused by it. `weakness_anchor` is the first advisory kind.
 - **A registration is never replaced**, so a later packet cannot silently redefine a kind.
 
 ### Todos

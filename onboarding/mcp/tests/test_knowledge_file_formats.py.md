@@ -23,7 +23,7 @@ checks the layout paths. Registered in the `unit-regression` lane.
   `test_doc14_verbatim_illustrative_shapes_are_refused` keeps Doc14's verbatim `supersedes: null` and
   `{code:{symbol}}` and proves they are refused, so the adaptation is deliberate.
 - Kinds: `test_every_record_kind_parses_round_trips_and_refuses_a_foreign_prefix` is parametrized
-  over all ten kinds (foreign prefix, undeclared field, every out-of-vocabulary relation refused);
+  over all twelve kinds (foreign prefix, undeclared field, every out-of-vocabulary relation refused);
   `test_facet_records_carry_todays_payload_fields_plus_links` compares facet fields with
   `models/knowledge/facet.py`.
 - Refusals: `test_records_refuse_second_owners_and_malformed_record_fields`,

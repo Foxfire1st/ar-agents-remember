@@ -33,6 +33,10 @@ nothing reaches disk until `MemoryState.write` is called with the validated resu
 - `record_by_origin` and `entries_by_origin` find what this owner wrote from a hand-off entry, which is how
   a rerun reuses IDs.
 - `put_record` keeps a record's file name unless a new slug renames it, carrying the paired `.md` along.
+- `remove_record(record_id)` removes a record the tree still holds: its file and its Markdown twin are marked
+  removed and dropped from the parsed documents, and the record leaves `records`. Its ID stays in
+  `removed_ids`, which is what lets the history check and a `record` history row accept a subject this same
+  write removed. The caller decides which kinds may leave; nothing else in the tree is touched.
 - `file_sidecar` creates an empty sidecar for a source file that has none.
 - `write` delegates publication to `file_publication.publish_files`: snapshot original affected bytes, write
   changed files through temporary siblings and `replace`, then unlink removed files. On `OSError`, rollback

@@ -14,7 +14,7 @@ cosmetic, because the cell is what `worktree_cleanup` requires before it retires
 the series abandon guard reads before it lets a master's integration branch go. A PR-merged master
 therefore looked exactly like a master whose work had never left it.
 
-Successful PR recording adds emptyLanding=true for a pair equal to recorded bases; it publishes no Git commits.
+Successful PR recording adds emptyLanding=true for a pair equal to recorded bases; it publishes no Git commits. The recorded result also carries `staleDocuments` (MIK-R124 rule 4): the count of documents the landing made stale and the read that lists them — absent when the landing named no document, while a series master's end that names only inherited debt keeps `count: 0` beside `alreadyStale` — computed from the recorded landed memory commit with `master_end` set when the contract is a series, so a recorded master landing examines every document and an ordinary recording only those its change can move.
 
 ## Code Commentary
 

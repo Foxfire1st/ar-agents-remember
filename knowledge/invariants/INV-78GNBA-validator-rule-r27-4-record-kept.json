@@ -6,12 +6,14 @@
     ],
     "justification": "Deleting a record would erase governed intent and leave later planning without its retained retirement history."
   },
-  "applicability": "Every converted knowledge validator comparison against one or more memory bases.",
+  "applicability": "Every converted knowledge validator comparison against one or more memory bases, at every route that runs it.",
   "conditions": [
-    "The comparison base holds the record ID."
+    "The comparison base holds the record ID.",
+    "A missing dependent ID is exempt only when the leaf's history holds a retired `record` row whose subject is that dependent."
   ],
   "exclusions": [
-    "Retirement preserves the record file."
+    "Retirement, which changes status, keeps the file and is not a deletion.",
+    "A weakness, which is closed by state, task and commit rather than deleted."
   ],
   "id": "INV-78GNBA",
   "origin": {
@@ -25,9 +27,9 @@
     "leaf": "260928-MIK-L52",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-invariant/v1",
-  "statement": "Validator rule R27.4-record-kept: every record ID a comparison base holds exists in the candidate; records leave use by status retired only.",
+  "statement": "Validator rule R27.4-record-kept: every record ID a comparison base holds exists in the candidate, except a dependent record whose document this task deleted, whose removal the leaf's retired `record` row about it answers; every other kind leaves use by status retired only.",
   "status": "proposed",
   "supersedes": []
 }

@@ -28,7 +28,8 @@ no items.
    those families' members is classified once. What this last step finds raises items and reaches no
    further family.
 4. **Items.** `touched_invariant`, `stale_invariant`, `reached_family` and family route conditions
-   are joined by MIK-R53 `unassigned_invariant` membership items and `touched_record` decision/facet items.
+   are joined by MIK-R53 `unassigned_invariant` membership items, `touched_record` decision/facet items,
+   and, since MIK-R118 and MIK-R124, the `weakness_anchor` and `changed_document` mark items.
 5. **Planned effects.** `reconcile_planned_effects` marks the combined items `planned` or `unplanned`
    and raises `planned_untouched` for a declaration no row delivers; only declared invariant/family
    subjects can be `planned`.
@@ -142,6 +143,15 @@ the incomplete entries.
   compares existing decision/facet JSON and Markdown: new records and deletions raise no item here;
   the leaf's own open `raise` row exempts only its status-only reconsideration mark. Both additions
   receive `planned.mark`, then join the same sort and digest; they do not widen one-pass family scope.
+- **MIK-R118 and MIK-R124 marks.** `mark_items(K_B, changed_paths, candidate_files=C, renamed)` returns both
+  kinds from the run's own changed paths: one `weakness_anchor` per **open** base weakness whose anchored file
+  this task changed, and one `changed_document` per base dependent whose document changed — named at the path
+  it now stands at when the document was renamed, and omitted when C no longer holds it. A weakness or
+  dependent this task itself records raises nothing, because the items are read from K_B. Both kinds receive
+  `planned.mark` and join the one sort and digest. `weakness_anchor` is registered advisory: it shows what the
+  change asks and refuses nothing (MIK-R118 rule 4). `changed_document` is answered by the confirmed `record`
+  row about the dependent at its confirmed revision (MIK-R124 rule 5). Neither kind widens family reach or
+  changes another kind's items.
 - **Document.** `state`, `incomplete`, `pairing`, `scope` (the flag, changed and unrepresentable path
   counts, classified count, class counts, reached families), `entries`, `changes`, `plannedEffects` (MIK-R11: `{declared: false}`, or
   `declared: true` with one entry per declaration, matched or not), `unexplained` (MIK-R10: `itemsByKind`,

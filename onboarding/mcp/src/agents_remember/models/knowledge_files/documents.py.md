@@ -18,7 +18,8 @@ dispatches the four census schemas (`ar-census-*/v1`, from `census.py`).
 ### Logic
 
 - `RECORD_DIRECTORIES` maps kinds to `knowledge/` directories (`invariants`, `families`, `decisions`,
-  `incidents`, `assumptions`, `limitations`, `failure-modes`, `scenarios`, `diagnostics`, `terms`).
+  `incidents`, `assumptions`, `limitations`, `failure-modes`, `scenarios`, `diagnostics`, `terms`,
+  `weaknesses`, `dependents`).
 - `SCHEMA_MODELS` is every record schema plus the two sidecar schemas, the layout marker and, since
   MIK-R07, `ar-history/v1` → `history.HistoryFile`; `KnowledgeDocument` gains `HistoryFile` too.
   Since MIK-R20, `**CENSUS_MODELS` adds `ar-census-baseline/v1`, `ar-census-inventory/v1`,
@@ -33,6 +34,13 @@ dispatches the four census schemas (`ar-census-*/v1`, from `census.py`).
   `split_record_filename` inverts it and refuses anything else (including a sequential `INV-0143`).
 - `history_path(owner)`, `census_directory(id)`, `file_sidecar_path(source)` (→
   `onboarding/<source>.json`) and `route_sidecar_path(route)` (`.` → `onboarding/overview.json`).
+- `dependent_document_paths(files)` returns the code paths named as `document` by the records under
+  `knowledge/dependents/`, over a mapping of already-read files. It classifies by the record, never
+  by a Markdown suffix, and refuses an unreadable or other-kind file in that folder with a named
+  error, so a broken record cannot silently remove a document's onboarding duty.
+- `dependent_link_index(records)` builds the target → dependent-record paths lookup the layout
+  marker carries (a record target is keyed `record:<ID>`, a file or anchor target `file:<path>`);
+  it is mechanical lookup metadata, and the record remains the owner of its links.
 - **Attempt-qualified history paths (L37 reopen ruling).** `history_path(owner_id, attempt=None)` returns the
   plain `knowledge/history/<owner-id>.json` for no attempt or attempt 1, and `<owner-id>-attempt-<n>.json` for
   n >= 2. `owner_history_attempt(path, owner_id)` inverts it: 1 for the plain file, n for an attempt file, and

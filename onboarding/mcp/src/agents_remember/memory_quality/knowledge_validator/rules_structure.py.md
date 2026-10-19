@@ -12,7 +12,12 @@
 
 ### Logic
 
-- `R22.1-shape` (`check_shape`): the candidate keeps `knowledge/layout.json`, plus every `shape` problem.
+- `R22.1-shape` (`check_shape`): the candidate keeps `knowledge/layout.json`, plus every `shape` problem. The marker's
+  `dependent_links` lookup must equal the index `dependent_link_index` derives from the candidate's
+  `DependentRecord`s at their own paths; a difference is a refusing finding on `knowledge/layout.json` whose
+  `dependent_links` field names the remedy — write the dependents through `knowledge_write`, which rebuilds the
+  mechanical lookup, before landing. A marker that does not parse adds nothing here: the shape parser already
+  reports it.
 - `R22.1-canonical`: every `canonical` problem, whose message names the formatter command.
 - `R22.2-identity` (`check_identity`): `identity` problems; record IDs and realization/proof entry IDs share one uniqueness space, and a duplicate names every file that holds it. With more than one base (a merge) the message starts `merge conflict:`. A record's Markdown must sit beside its JSON record.
 - `R22.4-single-owner`: an undeclared record field is a relationship recorded on the wrong side (Doc14 §2), such as an invariant that lists its realizations.
@@ -30,6 +35,7 @@
 ### Invariants And Boundaries
 
 - Rule 4 is enforced at shape level: the models' `extra="forbid"` makes a second owner unrepresentable, and this rule attributes it.
+- The dependent link lookup is mechanical and derived: `knowledge/layout.json` carries what the candidate's dependent records compute, and only a writer write rebuilds it. A hand-edited or stale lookup is a finding on the marker, not a silent permission.
 - History row IDs are outside ID uniqueness, because two frozen files that collided could never be repaired.
 - A closed history file is byte-identical in the candidate; deletion counts as a change.
 

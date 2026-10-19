@@ -1,0 +1,33 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations"
+    ],
+    "justification": "The rule binds three modules at once: the authoring methods build the record, the row producer says which row answers it, and the snapshot decides which bytes the anchor names, so a change in one without the others would record a value the code does not hold."
+  },
+  "applicability": "Every write of a weakness or a dependent through the leaf's admitted knowledge route.",
+  "conditions": [
+    "The write runs against a resolved code tree; the writer reads each link's value there and records the commit it read at."
+  ],
+  "exclusions": [
+    "A document that stands on no code, which gets no record.",
+    "A second record for one document, which the writer refuses."
+  ],
+  "id": "INV-VWRJR7",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "R4-verdict.md F01/F02/F04/F06/F07/F20 closures; the writer cases in mcp/tests/test_mik_r118_r124_marks.py"
+      ],
+      "path": "batch5-invariants.json"
+    },
+    "handoffEntry": "L118-W3",
+    "leaf": "260928-MIK-L118",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "The writer authors both kinds as it authors every record, and each write of a dependent is a confirmation whose link values it reads at the task's tip, so no value is typed in and a confirmation that cannot resolve its anchor is refused with the link.",
+  "status": "proposed",
+  "supersedes": []
+}

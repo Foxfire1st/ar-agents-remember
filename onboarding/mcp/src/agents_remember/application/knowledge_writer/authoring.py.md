@@ -10,7 +10,24 @@ Authoring remains an in-memory editor rather than the disk publisher. It allocat
 
 This source-bound correction covers the described L54 seams only. Unrelated inherited prose and references below are preserved, not recertified; no installed behavior, test execution, permission, landing or MEMORY acceptance is inferred.
 
+### Weakness and dependent records (MIK-R118, MIK-R124)
+
+`_write_record` authors a weakness and a dependent beside the older kinds. Neither carries a `status`: the writer adds its default status only to the kinds that store one, so a weakness keeps its own `state` and a dependent stores neither.
+
+A weakness records the place its cause occurs. The curator authors `anchor: {path, locator}`; the writer resolves it at C and stores the resolved `blob` and `content`. A weakness that names no file is refused. An anchor C cannot resolve keeps the anchor the record already stored: a weakness is closed where it was recorded, the stored values are never rewritten to make a resolution succeed, and a new or moved anchor that does not resolve is refused.
+
+Every write of a dependent is a confirmation. The writer checks that `document` is a tracked file at C and that no other dependent record names it, and that `stands_on` holds at least one link. Each link's recorded value is read at the task's tip: an anchor's `blob` and `content` from C, a whole file's `blob` from C, and a record link's stored revision from the candidate. `confirmed` is completed with this task's `task`, `role` and one-sentence `statement`, plus the code state the values were read from: `commit`, `codeTree` and `uncommitted`. No attribution is taken from the record being updated, so a second task never refreshes a document under the previous task's name, and a confirmation without its judgment is refused.
+
+The named commit is the snapshot's own commit when the snapshot was taken at a committed state. A worktree capture names the root's `HEAD` and reports `uncommitted` when C is not that commit's tree; it invents no hash for code that no commit names.
+
+Dependents are written after every other record, so a link to a record this same hand-off authors reads the revision this write stored rather than the order the records were listed in.
+
+A record request with `remove: true` removes the stored record file and its Markdown twin. Only a dependent leaves the tree this way, when the document it names was deleted; a weakness is closed and every older kind is retired, so a removal of another kind is a named problem. The removal is reported with the revision the record stood at.
+
 ## Current evidence
+
+- A weakness records its anchored place at C, and a closure keeps the anchor it was recorded at.
+- Every dependent write is a confirmation of the task's tip, refused without this task's attribution and judgment.
 
 - Handle assignment and refresh restoration precede ordered entry processing, records and rows. \[54] [54]
 - Origin/evidence and decision alternatives delegate to their explicit owners. \[55] [55]
@@ -50,7 +67,9 @@ The following complete predecessor retains useful explanations, old observations
 >   row's `reason`); without such a row the run is refused (ruling R2-1). Evidence is never only reported.
 > - **Records of any kind** (`_write_record`): `fields` are merged over the stored record; `handoff:` handles
 >   are resolved; a link whose target is `{path, locator}` gets its anchor resolved at C (`_link`). A new
->   record's `status` defaults to `proposed` (`active` for a decision).
+>   record's `status` defaults to `proposed` (`active` for a decision) — only for the kinds that store a
+>   status: a weakness carries `state` and a dependent neither, so no status is added to them (see the
+>   current account above).
 > - **Entries** (`_upsert_entry`): a realization per target and a proof per curator `proofs[]` item go into
 >   the source file's sidecar (`realizes` / `proves`), matched on invariant, owner, hand-off entry and
 >   locator; entry origin is `{leaf, handoffEntry}`. `_remove_unnamed_entries` removes, and reports

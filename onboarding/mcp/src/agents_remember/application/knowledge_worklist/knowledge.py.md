@@ -27,8 +27,13 @@ over the exact bytes of each record file.
   `entries_by_path`, `families_of` (each invariant's families by the families' `members`), and `linked_from`
   (each record ID that another record's `links` name, used only as context).
 - `record_file(record_id)` returns the record's location and exact bytes, so "its record file differs" means
-  the bytes or the location differ. `revision` and `history(owner_id)` read a record's revision and an
-  owner's history file. `anchor_document(anchor, path)` is an entry's anchor with its source path filled in.
+  the bytes or the location differ. `history(owner_id)` reads an owner's history file. `anchor_document(anchor,
+  path)` is an entry's anchor with its source path filled in.
+- `revision(record_id)` answers the stored `revision` of **any** record kind, through the derived index's
+  parsed record and its document, not only for invariants and families. It answers `None` only for an
+  unknown ID or a record whose `revision` is not an integer. Reading a dependent's revision is what MIK-R124
+  rule 5 needs: a `None` there would skip a comparison, so a changed row could stand in for a real
+  confirmation.
 
 ### Conventions
 

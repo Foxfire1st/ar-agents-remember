@@ -6,9 +6,10 @@
 
 ## Purpose
 
-**The ten global record kinds, one JSON file per truth under `knowledge/<kind-dir>/` (MIK-R21 rule
-4).** Each record declares `schema: ar-<kind>/v1`, its stable `id`, its `origin`, and — for every kind
-— a `revision` (≥1, increments only when meaning changes) and a `status`. The module also fixes
+**The twelve global record kinds, one JSON file per truth under `knowledge/<kind-dir>/` (MIK-R21 rule
+4).** Each record declares `schema: ar-<kind>/v1`, its stable `id`, its `origin` and a `revision` (≥1,
+increments only when meaning changes). The kinds before MIK-R118 also carry a `status`; a weakness
+carries a `state` (`open` | `closed`) instead, and a dependent carries neither. The module also fixes
 **relationship ownership** (Doc14 §2): a relationship is written once, on its owner's side, and the
 models refuse the fields that would give it a second owner.
 
@@ -27,28 +28,53 @@ models refuse the fields that would give it a second owner.
   never stored.
 - `_FacetRecord` (incident and the six other facets) adds `revision` and `status`
   (`proposed`|`accepted`|`retired`) — added in repair round 1 so MIK-R24 rule 8 (conflict revision)
-  and MIK-R22 rule 3 (retire, never delete) apply to every kind. Facets carry no `admission`.
+  and MIK-R22 rule 3 (retire, never delete) apply to every facet kind. Facets carry no `admission`.
 - IncidentRecord requires recovery and corrective_actions unless applicability is unresolved. The other six facet record classes declare their text-file meanings directly. The canonical-database facet payload models and the old cross-model field-set comparison were retired by MIK-R26; these records remain the text format's own declarations.
-- `RECORD_MODELS` maps kind → model; `schema_name(kind)` spells `ar-<kind>/v1` with `-` for `_`.
+- `WeaknessRecord` (`ar-weakness/v1`, MIK-R118) records a weakness of the code where it occurs:
+  `kind` (one of `context`, `compute`, `storage`, `time`, `fault`, `debt`), a one-sentence
+  `statement`, an `anchor` that must name its file, `seen` (`{task, role}`), `state` (`open` |
+  `closed`), an optional `measurement` (`{number, unit, how, commit, date}`), an optional `closed`
+  (`{task, commit, reason?}`) and `links`, whose only permitted relation is `burdens`. It refuses
+  an anchor with no path, a `closed` block that disagrees with `state` (in either direction), a
+  statement longer than 400 characters, an unknown kind and any extra field.
+  It has no priority or proposal field: a weakness that belongs to no file is not recorded here.
+- `DependentRecord` (`ar-dependent/v1`, MIK-R124) records one document of the code repository and
+  every place it stands on: `document`, at least one `stands_on` link — an anchor naming its file, a
+  file with its `blob`, or a record ID with its `revision`, each with an optional `heading` — and
+  `confirmed` (`{task, role, commit, codeTree?, uncommitted?, statement?}`). It refuses two links
+  that repeat the same kind and value — a `heading` does not tell them apart — an empty
+  `stands_on`, an anchor link with no path, and extra fields. It stores neither the document's text
+  nor whether the document is stale; that is derived.
+- `RECORD_MODELS` maps kind → model; `schema_name(kind)` spells `ar-<kind>/v1` with `-` for `_`;
+  `record_status(record)` gives the lifecycle word — `state` for a weakness, `status` for the older
+  kinds, and the empty string for a dependent, whose currency is never stored.
 
 ### Conventions
 
 - The relation vocabulary is closed per kind: decision {explains, constrains, motivated_change_to,
   reconsider_on}; incident {violated, exposed_gap_in, occurred_at, led_to}; failure_mode {threatens,
   occurs_at}; assumption {conditions, underlies}; limitation {bounds}; scenario {exercises};
-  diagnostic {diagnoses}; term {defines_term_in}; invariant and family have none.
+  diagnostic {diagnoses}; term {defines_term_in}; weakness {burdens}; dependent none; invariant and
+  family have none.
 
 ### Invariants And Boundaries
 
 - **One owner per relationship.** An invariant never lists where it is realized or proved, nor its
-  family or decisions; those live in sidecars, family `members` and decision `links`.
+  family or decisions; those live in sidecars, family `members` and decision `links`. A dependent
+  record owns its `stands_on` links.
 - Only invariant, family and decision records carry `admission` (a criterion set or
   `legacy-unassessed`). What a criterion means, and decision content rules (alternatives, when
   `reconsider_when` is required), belong to MIK-R27 and MIK-R13: MIK-R13's content rules are the pure functions
   of `models/knowledge_files/decisions.py` (at least two alternatives and exactly one chosen, `reconsider_when` on
   every rejected or deferred alternative, `reconsider_on` indexes, the derived `superseded`), which the validator
   refuses on through `rules_decisions.py` (leaf 260928-MIK-L13).
-- A record is never deleted; it leaves use through `status: retired` (or supersession for decisions).
+- A record is never deleted; it leaves use through `status: retired` (or supersession for decisions),
+  and a weakness through `state: closed` with the task and commit that removed its cause. A dependent
+  has no lifecycle word of its own: whether its document is stale is derived, never stored. The one
+  record a tree may be rid of is a dependent whose document the task deleted: the writer's
+  `_remove_record` takes it out of the tree, `check_record_kept` exempts exactly that missing dependent
+  ID when the leaf's retired `record` row answers it, and every other kind keeps the retention rule
+  whole — a weakness is closed, never deleted.
 
 ### Todos
 

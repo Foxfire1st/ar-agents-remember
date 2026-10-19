@@ -22,6 +22,8 @@ The current source distinguishes the procedure from a role seat: an actual Curat
 
 - Foundation procedure carriers are distinct from the leaf-bound Curator seat; historical taskless-seat availability is not restored. [1]
 
+The procedure's last step is about what a run meets while reading: whatever part of the code it reads, a weakness it meets in that file is recorded in the same step, as a `WKN-` record of kind `context`, `compute`, `storage`, `time`, `fault` or `debt`, on the file and the symbol where it occurs, with one sentence and any measurement the reader took. The author is the curator and the route the writer, as for every other record; nothing writes a weakness by hand. A wave's census, coverage plan and independent check count records and obligations, not weaknesses: a weakness is not a finding, its absence from a file is not an omission, and a run that meets none records none.
+
 
 ## Inherited Source-Epoch Commentary
 

@@ -10,8 +10,13 @@
 (MIK-R09@v2).** `evaluate_leaf_gate` recomputes the leaf's worklist over the Git trees the route already captured
 (C and K_C), decides every item through its kind's predicate, runs the validator (MIK-R22) against the parent line's
 memory tip, and returns a `GateResult`: every open item, every unreadable input and every refusing violation is one
-`GateFinding`. The curator publication counts them toward `curatorActionableCount`; the closeout validator and
-every commit route refuse while any exists. None is report-only, and there is no waiver (rule 5).
+`GateFinding`. The curator publication counts the refusing findings toward `curatorActionableCount`; the closeout validator and
+every commit route refuse while any exists. An open item of an advisory kind — a weakness (MIK-R118 rule 4) — is
+a report-only finding: the gate shows it and no route refuses for it. That is the advisory split among the *decided
+worklist kinds*, not the whole report-only set: `judge` also files as reports every validator violation the validator
+itself marks `report_only` (its merge-report and migration-debt policies, kept by `validation_findings`), so a tree
+with no written weakness at all can still report such items. No route refuses for any of them, and there is no waiver
+(rule 5).
 
 ## Code Commentary
 
@@ -24,9 +29,9 @@ every commit route refuse while any exists. None is report-only, and there is no
   cannot be read). `to_repair_finding` renders one as the checklist's repair row under check `knowledge-gate`
   (`GATE_CHECK`), with `itemId` for an open item.
 - **`GateResult`** carries the owner, the recomputed worklist, where it was persisted, the findings and the
-  report-only validator findings. `ok` is "no finding"; `brief()` is the tool response's `knowledgeGate` (state, owner,
+  report-only findings — the advisory open items and the validator's report-only findings. `ok` is "no finding"; `brief()` is the tool response's `knowledgeGate` (state, owner,
   worklist state/digest/path, and the finding, open-item, incomplete, violation and report-only counts); `refusal()`
-  joins every finding (40 shown) under "the mandatory invariant gate (MIK-R09) refuses: N finding(s) … (no waiver
+  joins every refusing finding (40 shown) under "the mandatory invariant gate (MIK-R09) refuses: N finding(s) … (no waiver
   exists)". `memoisable` is false for any result whose worklist is not `complete` or that carries an `incomplete` or
   unreadable-validator finding.
 - **`GateTrees`** is the exact candidate: the code tree C and memory tree K_C in their repositories' object stores,
@@ -52,12 +57,15 @@ every commit route refuse while any exists. None is report-only, and there is no
 - **`_evaluate`** recomputes, optionally persists the worklist (`_persist`; a write failure never changes the verdict) and
   calls `judge` with `validation_bases=(parent tip,)` and the contract's cache.
 - **`judge(document, path, trees, owner)`**: an incomplete run is one finding per named input; a complete one goes
-  through `_item_findings`; the validator's refusing findings are appended.
+  through `_item_findings`, which returns the refusing item findings beside the advisory ones; the validator's
+  refusing findings are appended, and the advisory findings join the report-only list. An item's kind decides which
+  list it lands in: the registry marks a kind advisory, and nothing else in a decided item can make it report-only.
   - `_candidate` reads K_C (`git_tree_snapshot`, `KnowledgeSide`) and opens C once for every predicate, or returns the
     finding that names what cannot be read (`K_C`, `git`, `C`).
   - `_decided` decides the invariant kinds first, then gives the family rule the set of open invariants, then decides
     everything else, each through `item_open_reason`. A `GitReadFailed` raised inside a predicate makes the result one
-    `incomplete [git]` finding (never memoised).
+    `incomplete [git]` finding (never memoised). A reason for an advisory kind's item — a weakness that still needs
+    its answer — becomes a report-only finding and refuses nothing.
   - A leaf with no leaf ID gets one open-item finding: it has no history file whose rows could answer its items.
 - **`validation_findings(trees)`** reads K_C and each base (`_base` replaces an unconverted base of a converted
   candidate by its conversion, MIK-R24 rule 7), and, when `validation_applies`, runs `validate_tree(…,
@@ -89,7 +97,8 @@ every commit route refuse while any exists. None is report-only, and there is no
 ### Invariants And Boundaries
 
 - **No memory reaches a leaf-publication route without the recomputed worklist fully answered and the validator
-  passing; no waiver, override or report-only mode exists.** Candidate invariant (not ingested). Realized here by
+  passing; no waiver, override or report-only mode exists.** An item of an advisory kind is outside this rule: a
+  weakness is reported and refuses nothing (MIK-R118 rule 4), and no other item is. Candidate invariant (not ingested). Realized here by
   `judge` (open items, incomplete inputs and violations are all findings) and at the routes by the refusals that
   consume `GateResult.refusal()`; proved by the gate and route tests (below) and the real converted scratch
   (`gate-1-refused`: 5 findings; `gate-2-answered`: pass; `gate-3-edited-again`: 2; `gate-4-restored`: pass).

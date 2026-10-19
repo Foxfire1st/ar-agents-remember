@@ -14,6 +14,8 @@ This module registers `touched_record` and detects exact JSON or Markdown change
 
 The detector filters base record IDs by the supported decision/facet prefixes, locates the JSON and optional Markdown on both sides, and compares their bytes. A new record raises no item because iteration starts from the base. A missing candidate record is left to structural validation, not silently treated as a retirement judgment.
 
+The weakness prefix is removed from the detector's subject prefixes: a changed weakness record raises no `touched_record` item. What can raise instead is the advisory `weakness_anchor` item MIK-R118 defines, and only under its own predicates: it is assembled from the code change paths, so it needs an open weakness at the base whose anchor lies at a changed code path — a new weakness, a record-only change, a closed weakness or a change outside the anchor raises nothing. A weakness still takes a `record` history row when a leaf names one, so the item's subject pattern stays the full record-row pattern. The two statuses an item carries are read through `record_status`, the one lifecycle word for records that carry one.
+
 The only status-mark exemption is a JSON-only change to `under_reconsideration` backed by the current leaf's own `raise` row in an open history file. Changed prose, another JSON field, a foreign raise or a closed attempt prevents that exemption. The per-owner merged history aggregate is deliberately not used to establish this permission.
 
 ### Invariants And Boundaries

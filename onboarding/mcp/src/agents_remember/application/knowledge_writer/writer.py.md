@@ -10,7 +10,7 @@
 and 7).** It reads the hand-off document (`handoff.read_handoff`), loads the memory tree
 (`MemoryState.load`), captures the code candidate tree C (`CodeSnapshot.capture`), applies the document
 (`Authoring.run`), carries every `carried` entry forward at C (`carry_entries`, MIK-R08), checks every row of the owner's history file (`owner_history_problems`), renders each
-touched document canonically after model validation (`_render`), then runs the MIK-R22 validator
+touched document canonically after model validation (`_render`), rebuilds the layout marker's dependent lookup, then runs the MIK-R22 validator
 (`validate_tree`) over the **whole resulting tree**, with the state's base: the memory worktree's `HEAD`, or
 its conversion when `HEAD` is unconverted and the candidate is converted (L37, MIK-R24 rule 7). Only then does it write, and only in a committing run.
 
@@ -56,6 +56,12 @@ its conversion when `HEAD` is unconverted and the candidate is converted (L37, M
   it, `MemoryState.write` writes and the state is `written`.
 - `_render` validates a history document with `parse_history_document` and every other document with
   `parse_document`, then renders `canonical_text`; a model refusal is a `Problem` per pydantic error.
+- **The dependent lookup (MIK-R124).** After rendering, the writer rebuilds the layout marker's
+  `dependent_links`: an index from each target a dependent stands on — `file:<path>` for a file or anchor link,
+  `record:<id>` for a record link — to the dependent record files that name it. It covers the stored dependents
+  this write did not remove and is written into the marker at `LAYOUT_MARKER_PATH`; the field is absent when
+  there are none. The landing reads this index to find the dependents a change can move, instead of opening
+  every dependent record body.
 - **The base and what makes a tree unwritable (L37).** `_load(request)` loads the state with
   `BaseCode(request.code_root, request.code_base, <coordination root>/runtime/knowledge-worklist-bases)`, so the
   writer, the worklist, the onboarding gate and the validator read one converted base, cached once. It returns a

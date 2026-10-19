@@ -1,6 +1,25 @@
 {
   "path": "mcp/src/agents_remember/models/knowledge_files/documents.py",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "a6515857de6dc513423fab0fd7e0e0c2e8cf3caa",
+        "content": "sha256:564f0a9d625ef44820754c5eeac44d914a8e422d75459daf1e97acc12c03f5dc",
+        "locator": {
+          "kind": "symbol",
+          "name": "RECORD_DIRECTORIES"
+        }
+      },
+      "id": "RLZ-020VWY",
+      "invariant": "INV-ZEV1G9",
+      "origin": {
+        "handoffEntry": "L118-W1",
+        "leaf": "260928-MIK-L118"
+      },
+      "rationale": "The two kinds take their own folders under the knowledge tree here, so a record of either kind is found by the same walk that finds every other kind.",
+      "role": "propagation-persistence"
+    }
+  ],
   "references": {
     "1": {
       "note": "The layout table.\n\nAnchor: \"knowledge/<kind-dir>/<ID>-<slug>.json\"",

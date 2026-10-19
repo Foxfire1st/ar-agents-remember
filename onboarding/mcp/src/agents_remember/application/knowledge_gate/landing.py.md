@@ -9,7 +9,9 @@
 **The gate at the landing routes (MIK-R09 rules 3 and 4).** `landing_refusal(LandingGateRequest)` is the port's
 landing answer: for a leaf's recorded landing, the leaf's history file must be `closed` in the landed memory commit
 (rule 3); for a master or checkpoint landing, every entry of the master's memory tree at a path the master's **net**
-code diff changed must be `current` at the master's code commit (rule 4). The validator half of each landing runs in
+code diff changed must be `current` at the master's code commit (rule 4). A landing that names a code base also
+derives whether the documents its dependent records describe became stale; that count is part of the landing answer,
+and only a master's end refuses for it (MIK-R124). The validator half of each landing runs in
 the worktree layer through `memory_commit_refusal`, the one route entry point every memory commit route uses
 (MIK-R22 rule 8); this module adds only what the validator does not check.
 
@@ -59,6 +61,47 @@ the worktree layer through `memory_commit_refusal`, the one route entry point ev
 ### Todos
 
 - None.
+
+## Dependent staleness at a landing (MIK-R124)
+
+`document_staleness(request, *, full=False)` derives, at the landing, which documents its dependent records describe
+are stale. It returns a `DocumentStaleness`: the documents this landing made stale, those already stale at its base,
+the documents it examined, how many dependent record bodies it read, and any state it could not establish.
+
+A document is stale when a link of its dependent record no longer holds the value the confirmation recorded: a file
+or anchor link's recorded bytes differ from C, an anchor's locator no longer resolves, or a record link's revision
+differs from the candidate's. Nothing about staleness is stored. The memory tree holds the links and the
+confirmation they were taken at; the landing reads them against the code and derives the state each time.
+
+Only the dependents a change can move are read: those with a link at a path the code range changed or at a record
+whose file differs between the memory base and the tip. The changed paths are listed without rename detection, so a
+rename names both the path that left and the path that arrived, and an anchor link counts at its file. The master's
+end (`full`) reads every dependent of the tip instead, so debt a net-zero or intermediate change would hide is still
+named. Git output is read as bytes and decoded with surrogate escapes, so a path whose bytes are not UTF-8 is
+compared as the tree holds it.
+
+The lookup is the layout marker's `dependent_links` index, which the writer builds. When that index does not name
+exactly the dependent record files of the commit, the read is uncomputable rather than guessed, and a marker that
+cannot be read or a record whose linked revision cannot be fetched is reported the same way.
+
+The base is compared by the same rule. A document stale at the tip that was current at the base, or that had no
+record there, is one this landing made stale; one already stale at the base is named separately and refuses nothing.
+
+`DocumentStaleness.answer()` is the field the landing answer carries. It gives the count, the documents and the
+`knowledge_read` view that returns them (`view=dependent`, `staleOnly=true`, memory root of the landing's tree), and
+names any already-stale documents. An ordinary landing and a checkpoint leave the field out when the landing named no
+document at all — neither one it made stale nor one already stale at its base. A master's end keeps the field while it
+has inherited debt to name, answering `count: 0` beside `alreadyStale` rather than omitting it; with neither newly nor
+inherited stale documents it omits the field as an ordinary landing does. A state that could not be established is
+never answered as a current document: an uncomputable read returns its state and reason in place of the count, and an
+unverifiable one returns its state, the reasons, the count and the documents — a failure answer therefore stands where
+a zero count would otherwise be left out.
+
+Only a master's end refuses. It adds `knowledge-dependents-stale-at-master-end` with the count, the documents, the
+read and the remedy — a task of this master that changes the document or confirms it — or
+`knowledge-worklist-incomplete` when the count cannot be computed, or `knowledge-unverifiable-at-landing` when a
+document's state cannot be observed. A checkpoint and an ordinary landing disclose the same facts in their answer
+and refuse nothing: the landing happens, and its answer says how many documents it made stale (rule 4; rule 8).
 
 ## Evidence
 

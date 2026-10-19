@@ -12,7 +12,7 @@ and decision record states which admission criterion it meets, with a one-senten
 existing/exported live records also refuse commit/landing publication: only sync/standalone conversion
 reports under `merge_reports`, with writer-only reporting for repair. This is not a permanent
 admission-maintenance exemption.
-Importing the module registers the three admission rules and the refusing record-kept comparison rule; `validator.py` imports it next to the other rule modules,
+Importing the module registers the three admission rules and the refusing record-kept comparison rule; since MIK-R124 that rule permits one departure — a dependent removed with its deleted document, answered by a `retired` row about it. `validator.py` imports it next to the other rule modules,
 so every place the validator runs (the writer, `validate_tree`, `require_valid_commit`, the managed
 sync, `knowledge-validate`) runs them.
 
@@ -21,7 +21,7 @@ sync, `knowledge-validate`) runs them.
 | `R27.2-new-record` | refusing | refuses a new record that fails admission, naming the record and the criterion |
 | `R27.2-existing-record` | `merge_reports`, writer-reported | unsupported existing criteria refuse commit/landing; report at sync/standalone conversion and in the writer for repair |
 | `R27.4-legacy-unassessed` | `migration_debt` | aggregate carried live debt while migration is incomplete; new debt and migration-complete carried debt refuse per record outside standalone conversion |
-| `R27.4-record-kept` | refusing | every ID held by a comparison base remains in the candidate; leave use with `status: retired`, never deletion |
+| `R27.4-record-kept` | refusing | every ID held by a comparison base remains in the candidate; leave use with `status: retired`, never deletion. One exception (MIK-R124 rule 5): a `DPD-…` whose document was deleted may be absent when a history row retires it |
 
 ## Code Commentary
 
@@ -42,6 +42,7 @@ sync, `knowledge-validate`) runs them.
   `derived_record_id("decision", legacyId)` equals the decision's ID. A new decision marked `legacy-unassessed`
   is therefore refused by `R27.2-new-record` like any other new record.
 - **Retired records are exempt** from both admission rules (`_retired`; decisions cannot be retired).
+- **One record may leave the tree: a dependent whose document was deleted** (MIK-R124 rule 5). `check_record_kept` still refuses every comparison-base ID the candidate lacks, but a missing `DPD-…` is passed when the tree's histories hold a `record` row about that ID whose disposition is `retired` (`_retired_row_answers`): the document is gone, the record has no subject left, and its removal is not silent. Every other missing ID refuses as before.
 - **Refused on a new record** (`check_new_record_admission`):
   - `legacy-unassessed`, which only the export writes (field `admission`);
   - a justification that `_only_references` finds to be only references (field
@@ -147,7 +148,7 @@ sync, `knowledge-validate`) runs them.
 
 ## Evidence
 
-- Records present in a comparison base are retained; retirement never deletes the file. [21]
+- Records present in a comparison base are retained and retirement never deletes the file, with one exception: a dependent whose document the task deleted may leave the tree, and `check_record_kept` lets that missing dependent ID go when the leaf's retired `record` row about it answers. [21]
 
 
 ### Docs References

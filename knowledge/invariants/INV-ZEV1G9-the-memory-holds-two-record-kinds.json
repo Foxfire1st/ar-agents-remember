@@ -1,0 +1,33 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations"
+    ],
+    "justification": "The two kinds are realized in the schema module, the folder registry and the ID registry at once, and each is consumed by a reader, a writer and a validator that must agree on the same names."
+  },
+  "applicability": "Every memory tree that holds a weakness or a dependent record, including a tree that holds neither, which reads and validates as before.",
+  "conditions": [
+    "The record is written through the curator writer, which resolves its anchor and its link values at the task's tip."
+  ],
+  "exclusions": [
+    "A limitation, which bounds what an invariant claims and stays a limitation.",
+    "A weakness that belongs to no file of the repository, which is not recorded in this kind."
+  ],
+  "id": "INV-ZEV1G9",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "R4-verdict.md per-ID closures F01/F02/F16; mcp/tests/test_mik_r118_r124_marks.py writer cases"
+      ],
+      "path": "batch5-invariants.json"
+    },
+    "handoffEntry": "L118-W1",
+    "leaf": "260928-MIK-L118",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "The memory holds two record kinds beside the ten kinds it already has: a weakness, which names the code place whose waste, fault or debt it records, and a dependent, which names one document and every place that document stands on.",
+  "status": "proposed",
+  "supersedes": []
+}

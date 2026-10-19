@@ -10,13 +10,13 @@
 
 ## Purpose
 
-Payload builders for three mounted knowledge operations over converted trees.
+Payload builders for four mounted knowledge operations over converted trees: read, diff, integrity check and write.
 
 ## Code Commentary
 
 ### Logic
 
-Read selects the converted tree’s derived index, computes a rich page internally, then projects its rows, proofs and family references to text ID, kind, computed state and file/heading or line locations. Selection-time commit/dirtiness and a shared revalidated resolver bind sizing and projection to one epoch; a moved checkout refuses `snapshot_unavailable`. No record text is delivered. Source-resolution pairs remain complete or absent. [1]
+Read selects the converted tree’s derived index, computes a rich page internally, then projects its rows, proofs and family references to text ID, kind, computed state and file/heading or line locations. Selection-time commit/dirtiness and a shared revalidated resolver bind sizing and projection to one epoch; a moved checkout refuses `snapshot_unavailable`. No record body is delivered by a naming projection: its rows carry names and derived state. The requested marks views are the exception the requirements name — a `weakness` row carries that weakness's own statement and, where the record holds one, its measurement — and neither view carries a document body. Source-resolution pairs remain complete or absent. [1]
 
 Diff compares knowledge/onboarding Git files, privately captures the memory working tree when afterRevision is absent, and writes the whole selected comparison as a report before projecting the answer. `_reported_body` returns both compared trees, counts by kind, decision-ordered record names up to `TOOL_ANSWER_LIST_MAX`, their total `decisionRecordCount`, and the report location. The report holds patches and source/record groups; the mounted answer carries no comparison body, `diff`, `complete` or `leftOut`, and infers no semantic effect label. A report write failure refuses `report-unwritable`, retaining the actual cleanup/residual facts. [2]
 
@@ -34,7 +34,7 @@ database files refuse before an open; change/project and selected-run fields are
 
 ### Logic
 
-`knowledge_read_payload` refuses a view outside `source_context`, `invariant` and `family` through `_refused_read(view, repositoryId, "unknown_view", ...)` rather than picking a default view (`review_matrix` and `curation_queue` left with the retired envelope tables, so they earn the unknown-view refusal); a read the seam refused is returned as its typed refusal rather than as an empty page.
+`knowledge_read_payload` refuses a view outside its admitted six — `source_context`, `invariant`, `family`, `record`, `weakness`, `dependent` — through `_refused_read(view, repositoryId, "unknown_view", ...)` rather than picking a default view (`review_matrix` and `curation_queue` left with the retired envelope tables, so they earn the unknown-view refusal); a read the seam refused is returned as its typed refusal rather than as an empty page.
 
 **The read context's source-resolution pair is completed rather than half-supplied, and the mount hands
 over a default repository rather than half a pair.** `_source_resolution(request, workspace_root)`
@@ -53,7 +53,7 @@ view instead of a raw `KnowledgeReadContext` validation error.
 
 - **No builder decides anything.** No classification is computed, no effect label inferred, no draft authored, no rationale judged, no ambiguity resolved by choosing, no missing assessment filled and no compatibility verdict produced anywhere in the module.
 
-- **No semantic classification is added by naming.** `_read_result` retains the rich body, its selected tree and shared resolver internally; `_projected_body` mechanically projects that body for the mounted answer. It does not return record prose or invent assessments.
+- **No semantic classification is added by naming.** `_read_result` retains the rich body, its selected tree and shared resolver internally; `_projected_body` mechanically projects that body for the mounted answer, and it invents no assessment. It is also the route the marks views take, so it does not withhold record text as a rule: on an ordinary naming view it returns names and derived state and no record body, and on a requested `weakness` or `dependent` view it carries the top-level rows MIK-R118 and MIK-R124 authorize, including a weakness's own statement and, where the record holds one, its measurement.
 
 - **A continuation is carried opaquely.** The builder never resolves or guesses a snapshot binding.
 
@@ -65,6 +65,17 @@ view instead of a raw `KnowledgeReadContext` validation error.
   guess — for a root that is not a repository, an absent Git, a timeout or an answer that is not a tree
   id, so a minimal read reaches the context as "no source resolution was requested" instead of as a
   raised validation error out of the mounted tool.
+
+## MIK-R118 Rule 6 And MIK-R124 Rule 7 — The Two Marks Views
+
+The read admits two views beside `record`, and no tool is added. `_one_view` sends `record` to `_record_view` and `weakness` or `dependent` to `_marks_view`, which selects the same converted tree and refuses `snapshot_unavailable` where the selection names no converted memory tree.
+
+`weakness` lists the tree's open weaknesses — `weaknessKind` picks one kind, `sourcePath` a folder, `includeClosed` adds closed records — and a row holds the id, the file, the kind, the statement and the state, with the measurement and the closing where the record holds them and the anchor's state at the read's code tree. `dependent` lists the documents — `sourcePath` a folder of documents, `staleOnly` the stale ones, `standsOn` those with a link at a named code file — and a row holds the id, the document, the derived state, the last confirmation and the revision, with `movedLinks` naming each link that moved where it is stale. Neither view writes: a weakness anchor is observed, a dependent's state is derived, and no byte of a record changes.
+
+The answer is a page. `limit` is the caller's, capped at `TOOL_ANSWER_LIST_MAX`; `counts` carries `rowsReturned`, `total`, `rowsRemaining` and `offset`; and while rows remain a `readOn` block names the same view, its narrowing filters and the `rows:<n>` cursor the next page starts at. A continuation is read as `rows:<n>` and nothing more: `_marks_offset` accepts that shape, starts at `0` when none
+is given, and refuses `bad_continuation` naming the shape it reads for anything else. It checks no issuer, view, tree
+or filter, so a caller-made `rows:0` — or any other syntactically valid offset — is followed as given; the walk is
+never restarted in its place.
 
 ## 260928-MIK-L28 Proofs Beside The Invariant And Family Views (MIK-R28 Rule 4)
 
@@ -208,7 +219,7 @@ No configured domain documentation could be checked.
 - - The flat read request's optional source-path seed, beside the unnamed-by-default ordering MIK-R02 introduced. [76]
 - - The one refusal envelope the read operation returns for an unknown view and for a view the seam refused. [77]
 - - The one refusal envelope the read operation returns for an unknown view and for a view the seam refused. [78]
-- The internal read admits exactly three views and carries its selected tree and shared resolver beside the rich page, binding sizing/projection to one revalidated epoch. [79]
+- The internal read admits six views — `source_context`, `invariant`, `family`, `record`, `weakness` and `dependent`, the last two being the marks views MIK-R118 rule 6 and MIK-R124 rule 7 read through — and carries its selected tree and shared resolver beside the rich page, binding sizing/projection to one revalidated epoch. [79]
 - - The source-resolution pair completed rather than half-supplied: the caller's own root with its current tree (refused by name when it has none, since MIK-R01), the mount's workspace default used only when a tree can be resolved from it, and neither half when Git cannot answer for it. [80]
 - - **Every way resolving and opening a selection can fail, refused the same way on every handler: a named root with no code tree is `selected_input_unavailable` naming the root (MIK-R01), a tree, Git or cache failure is `snapshot_unavailable` naming the tree, anything else the dataset refusal it was before.** [81]
 

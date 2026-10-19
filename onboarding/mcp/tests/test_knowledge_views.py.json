@@ -3,14 +3,15 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "The file realizes its current contract at the corrected candidate.",
+      "note": "The file realizes its current contract at the corrected candidate: six admitted views, four mounted names, and read, diff and integrity executing through the registered handlers.",
       "targets": [
         {
           "anchor": {
-            "blob": "3d8f4596f8880015541db774395d55b51902b442",
-            "content": "sha256:1e88b9cfc231980fcb851503dc8011abef9a1687bf8fca2f6a1dfe19414cb732",
+            "blob": "d44a7a8f5e3b8664d88d8934ca6ad3b593eb0fda",
+            "content": "sha256:baf0f64c54eb4d81cf3d407b0c2b708f443f3425bd331f2e61995e8bf4e7bff3",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "test_the_registered_handlers_read_a_memory_tree_and_take_no_database_path"
             }
           },
           "kind": "test"

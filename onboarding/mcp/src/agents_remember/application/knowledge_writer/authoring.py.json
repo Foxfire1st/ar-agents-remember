@@ -1,6 +1,25 @@
 {
   "path": "mcp/src/agents_remember/application/knowledge_writer/authoring.py",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "41b02f411570ff669ba735f2cb3a1e1af53d1a4c",
+        "content": "sha256:68ee900f8c0c7b302a039a834b04bdd957d9df79ea186f5d8ab6a2da1c08e897",
+        "locator": {
+          "kind": "symbol",
+          "name": "Authoring"
+        }
+      },
+      "id": "RLZ-87J2WX",
+      "invariant": "INV-VWRJR7",
+      "origin": {
+        "handoffEntry": "L118-W3",
+        "leaf": "260928-MIK-L118"
+      },
+      "rationale": "The weakness and dependent writes live here: the record is built from the producer's fields, the anchor and every link value are resolved against the admitted code snapshot, and the confirmation records the task, role and commit of the write.",
+      "role": "primary-authority"
+    }
+  ],
   "references": {
     "1": {
       "note": "Both forms become proofs once faceted; an absent test and a bare test file are reported.",

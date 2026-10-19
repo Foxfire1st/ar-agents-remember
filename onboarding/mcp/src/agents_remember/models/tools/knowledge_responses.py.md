@@ -10,12 +10,14 @@
 
 ## Purpose
 
-Strict ToolResponse contracts for the three mounted knowledge operations: knowledge_read, knowledge_diff and knowledge_integrity_check. These shapes declare the wire envelope; they neither author knowledge nor reinterpret a view's payload.
+Strict ToolResponse contracts for the four mounted knowledge operations: knowledge_read, knowledge_diff, knowledge_integrity_check and knowledge_write. These shapes declare the wire envelope; they neither author knowledge nor reinterpret a view's payload.
 ## Code Commentary
 
 ### Logic
 
-KnowledgeReadResponse retains view/page/snapshot/completeness and opaque continuation, but its delivered rows are text ID, kind, computed state and memory-file/heading or line locations. `memoryCommit` and `memoryDirty` bind location provenance; worktree reads join relative files to the absolute memoryTree.memoryRoot, while no-worktree reads use absolute files with commit. The application still computes rich family-complete selection, proofs and currentness internally; projected names and compact derived status cross the mounted boundary, not record statements or proof facets. `report` is an admitted optional field, not evidence that a retired queue/worklist view is callable.
+KnowledgeReadResponse retains view/page/snapshot/completeness and opaque continuation, but its delivered rows are text ID, kind, computed state and memory-file/heading or line locations. `memoryCommit` and `memoryDirty` bind location provenance; worktree reads join relative files to the absolute memoryTree.memoryRoot, while no-worktree reads use absolute files with commit. The application still computes rich family-complete selection, proofs and currentness internally; projected names and compact derived status cross the mounted boundary for the ordinary naming projections, not record bodies or proof facets; the requirement-authorized marks rows carry the weakness's own statement and optional measurement, and no record body. `report` is an admitted optional field, not evidence that a retired queue/worklist view is callable. Since MIK-R118 and MIK-R124 the `weakness` and `dependent` views answer through three more optional fields: `rows` (that kind's rows), `counts` (their counts) and `readOn` (how to read the rest when rows remain). They carry rows of the named kind, not a second payload contract.
+
+KnowledgeWriteResponse declares `reportPath` and `reportError` as a pair: where the whole write report was written, and why it was not when it could not be (MIK-R108 rule 3). A run whose report could not be written keeps its own outcome and says that nothing about the report is claimed.
 
 KnowledgeDiffResponse holds before/after revisions and both compared trees, counts by kind, at most the list-bound `decisionRecords` and their total `decisionRecordCount`, plus a caller-readable whole-comparison report. Its strict declared fields contain no `threshold`, `complete`, `diff` or `leftOut`: neither patches nor a patch-overflow/omission body form is this response. The report retains the rich comparison for file/dashboard readers; no semantic effect label is inferred. This schema account does not itself claim an executed bound measurement.
 
@@ -24,7 +26,7 @@ KnowledgeIntegrityCheckResponse carries the text-tree validator report against n
 ### Invariants And Boundaries
 
 - Each model is a strict ToolResponse with its own closed operation/state vocabulary and typed refusal fields; modeled refusals remain distinct from transport failure.
-- The mounted read is a mechanical naming projection of the existing view selection, not a second semantic classification; record text stays in the files.
+- The mounted read is a mechanical naming projection of the existing view selection, not a second semantic classification; record bodies stay in the files; only the requested marks rows carry a weakness's statement and measurement, which is what MIK-R118 names.
 - Wire schema validation enforces declared fields; these models define no additional cross-field outcome validator.
 - knowledge_diff names text-tree changes beside its whole comparison report, not carried patches/omissions or semantic effect judgments.
 - knowledge_integrity_check reports validator findings and applies no repair or publication.
@@ -136,9 +138,11 @@ No configured domain documentation could be checked.
 
 ### Repo-Internal References
 
-- The envelope every one of the three derives from — a strict response plus the single required `operation` string each model then pins to a literal — and the shared header it inherits rather than redeclares. [35]
-- Where the three classes are imported and mapped to their tool names in the registry. [36]
-- The three advertised knowledge tool names in the public roster. [37]
+- The envelope every one of the four derives from — a strict response plus the single required `operation` string each model then pins to a literal — and the shared header it inherits rather than redeclares. [35]
+
+- Where the four classes are imported and mapped to their tool names in the registry. [36]
+
+- The four advertised knowledge tool names in the public roster. The module's own `__all__` re-exports three of them, and `KnowledgeWriteResponse` is defined and registered without being listed there. [37]
 
 
 - The integrity handler reports text-tree validation. [9]
@@ -188,7 +192,9 @@ No configured domain documentation could be checked.
 - The current read response carries its named view/page and optional reader-owned tree, proof, currentness, family and route blocks. [1]
 
 
-The three models are two declarations in one: the operation column and the base envelope. The envelope
+The four models are two declarations in one: the operation column and the base envelope. The module's `__all__`
+re-exports three of them; `KnowledgeWriteResponse` is defined here and registered in the tool registry without
+being listed in that export list. The envelope
 (`ToolResponse` → `ResponseModel` → `StrictResponseModel`) is defined in `models/base.py`, the
 classes are registered against their tool names in `models/tools/tool_registry.py`, the registry's public
 projection is pinned to `PUBLIC_TOOLS` in `mcp/public_surface.py`, and the handler payload builders
@@ -196,7 +202,7 @@ whose dicts these models validate live in `mcp/tools/knowledge.py`. Every row be
 in the working candidate.
 
 
-- The module exports the three mounted knowledge response models. [16]
+- The module's `__all__` re-exports three of the four mounted knowledge response models; `KnowledgeWriteResponse` is defined here and registered without being listed there. [16]
 
 
 - The current read response carries its named view/page and optional reader-owned tree, proof, currentness, family and route blocks. [17]

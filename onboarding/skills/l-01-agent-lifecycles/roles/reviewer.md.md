@@ -80,6 +80,12 @@ emits**, because the curator consumes one contract: it names where the thing liv
 the reviewer looked — the path and the construct inside it come from one resolution act — and carries
 the reviewer's own statement and evidence verbatim rather than re-telling them.
 
+**Neither a weakness record nor a document's staleness is a finding.** A weakness the task met outside
+its own scope, and a document that stands on code the task changed, are recorded knowledge: they refuse
+no review, gate or closeout, and neither their presence nor their absence changes a verdict. What is a
+finding is a weakness inside the task's scope that was left unrepaired, and a document the task changed
+whose dependent record carries no confirmation.
+
 If the manifestation candidate moves before adjudication, the stale attempt is rejected and a
 successor is reviewed. A successor reuses the sealed reports rather than re-censusing routes.
 

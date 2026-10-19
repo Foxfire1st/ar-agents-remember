@@ -56,6 +56,18 @@ Lifting is guidance only; nothing enforces it mechanically.
   `--publish-to` are refused there, and the history rows answer the leaf's worklist items. The rationale step that
   INV-0FBA8M52 anchors here is unchanged.
 
+- **The two record kinds (MIK-R118, MIK-R124).** A producer's entry of kind `weakness` becomes a `WKN-` record
+  through the writer, or the report says why not: the writer refuses one without a file, with an unknown kind, or
+  with a statement beyond its one-sentence bound, and the refusal names the field. An entry of kind `dependent`
+  becomes a `DPD-` record: the document, and for each place it stands on the value the writer reads at the task's
+  tip — a code anchor, a whole file's blob, or an invariant's or a family's revision — with the confirmation's task,
+  role and commit. Every write of a dependent is a confirmation, and a confirmation without its own one-sentence
+  statement is refused; no value is typed in. A document the task deleted has its dependent removed with it, and
+  the writer rebuilds the layout marker's dependent lookup, so a stale lookup is repaired by a writer write and
+  never by hand. The Curator answers the worklist's row for a weakness — it stands and its anchor moves with the
+  code, or it is closed — and the row for a changed document, which only the confirmed record answers. Neither
+  record refuses a task.
+
 ### Current onboarding judgment and second-reader duties
 
 The new converted onboarding contract takes current source-bound updated/no_impact rows: updated requires authored Markdown/reference change, not realizes/proves-only or mechanical anchor edits; source movement reopens the answer. The earlier L37 summary describes only the unchanged-card case. This L53 rollout's own changed cards instead use amended rule 1's measured counted-change exception; no updated row, changed-card no_impact or later backfill is authorized.

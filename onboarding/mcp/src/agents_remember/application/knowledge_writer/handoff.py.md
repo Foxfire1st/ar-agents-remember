@@ -29,9 +29,12 @@ checks the document's own shape and collects every problem, so one refusal names
   refuses a ruling that no `records[]` item names in `entry` ("attach it to a record, or keep it
   task-local") and refuses `proofs` on it (architect ruling F2): nothing of an entry is ever dropped
   silently.
-- **Records** are `{key, kind, entry?, id?, slug?, fields}`; `kind` is one of the ten record kinds of
+- **Records** are `{key, kind, entry?, id?, slug?, fields, remove?}`; `kind` is one of the twelve record kinds of
   `RECORD_PREFIXES`; the writer owns `id`, `schema`, `origin` and `revision` (`WRITER_OWNED_FIELDS`) and
-  refuses them in `fields`; a new record needs a `slug`.
+  refuses them in `fields`; a new record needs a `slug`. `remove` is an optional boolean: it says the stored
+  record leaves the tree, and the reader carries it to `RecordRequest.remove` without deciding whether that
+  kind may go. Only a dependent record whose document the task deleted is removed here; a weakness is closed
+  and every older kind is retired (MIK-R124 rule 5).
 - **History rows** are `{subject, disposition, reason, items?, covers?, effect?, because?, examined?, considered?, ref?}`.
   `id`, `revision` and source snapshots (`sources`) are writer-owned; unknown keys (a misspelled `cover`), a non-list `because` and a
   non-object `ref` are refused. `ref` (MIK-R11) is carried to `RowRequest.ref` for a planned row; what it

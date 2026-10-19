@@ -20,7 +20,11 @@ or evidence required to make a landing successful. The retired `ledgerCommit` fi
 `DirectLandingResponse` extends `ToolResponse` with `operation: Literal["direct_landing"]`,
 `state`, a bounded `summary`, and optional `status`/`detail` (so a fail-closed refusal still
 reports its typed reason), plus the commit evidence fields `contractPath`, `codeCommit`,
-`memoryContentCommit`, `dryRun`, and a `memory` facts dict, plus optional `ledgerCache` diagnostics.
+`memoryContentCommit`, `dryRun`, and a `memory` facts dict, plus optional `ledgerCache` diagnostics
+and an optional `staleDocuments` facts dict: the count of documents the landing made stale, the
+documents it lists and the read that lists them, or the state it could not compute. That field is
+absent when the landing made nothing stale, and on a landing with no external memory tree to
+examine.
 
 ### Conventions
 

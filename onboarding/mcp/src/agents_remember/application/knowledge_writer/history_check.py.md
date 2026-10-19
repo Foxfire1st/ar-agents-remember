@@ -14,7 +14,9 @@ architect ruling F1).** After all edits, `owner_history_problems` checks every r
 
 ### Logic
 
-- `unknown_subjects`: the subject names a record of the candidate.
+- `unknown_subjects`: the subject names a record of the candidate, or a record this same write removed. A
+  removal is answered by a row about the record, so that row's subject is consistent with a tree the record
+  has already left.
 - On the writable history target, when the base does not hold that file closed,
   `invalid_history_items` also checks every row's `items` for `sha256:<64 hex>` spelling. Each
   malformed token gets a row-specific problem carrying the applicable re-authoring remedy.

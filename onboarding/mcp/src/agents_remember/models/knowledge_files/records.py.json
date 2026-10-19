@@ -1,6 +1,43 @@
 {
   "path": "mcp/src/agents_remember/models/knowledge_files/records.py",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "66f8f78abd64e53edd4c0ca7b61e6ede5b7bc299",
+        "content": "sha256:4689cb500cf9dbeb916fa3ed8dad218b9b306f164725a0d66320da9320a0e2a3",
+        "locator": {
+          "kind": "symbol",
+          "name": "WeaknessRecord"
+        }
+      },
+      "id": "RLZ-RP1GHX",
+      "invariant": "INV-ZEV1G9",
+      "origin": {
+        "handoffEntry": "L118-W1",
+        "leaf": "260928-MIK-L118"
+      },
+      "rationale": "The weakness schema is defined here: the closed kind literal, the one-sentence statement, the anchor that must name a file, the seer, the open-or-closed state and the closure that a closed record must carry.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "66f8f78abd64e53edd4c0ca7b61e6ede5b7bc299",
+        "content": "sha256:7dd8741ced510f2612b5bd82d4383f62d49dcc63766118d845fbb74e5dd8e4ee",
+        "locator": {
+          "kind": "symbol",
+          "name": "DependentRecord"
+        }
+      },
+      "id": "RLZ-WP85HN",
+      "invariant": "INV-ZEV1G9",
+      "origin": {
+        "handoffEntry": "L118-W1",
+        "leaf": "260928-MIK-L118"
+      },
+      "rationale": "The dependent schema is defined here: one tracked document, at least one link of the three kinds, no repeated link, and the confirmation that names the task, role and commit it was taken at.",
+      "role": "enforcement"
+    }
+  ],
   "references": {
     "1": {
       "note": "The per-kind relation vocabulary.",

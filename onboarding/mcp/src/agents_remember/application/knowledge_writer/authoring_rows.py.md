@@ -18,6 +18,8 @@ It validates and writes eight judgment row kinds -- invariant, family, onboardin
 
 `_record_row` handles decisions and facets, resolving supported `handoff:` aliases before dispatch and stored-row lookup. It keeps rerun identity and stores the produced record revision. `changed` requires an authored effect; `retired` requires `retire`; `no_impact` carries no effect. Optional `because` is resolved; covers, examined, considered and ref refuse. `_foreign_carry` and `_reason_with_evidence` keep every previously appended foreign-owner evidence segment, including a bare trailing marker, without duplication on later updates or reason-only rewrites. Same-owner reasons remain authored; this preservation is not a cross-owner replacement grant.
 
+A record row's subject kinds are one list, `RECORD_ROW_KINDS`: decisions, incidents, assumptions, limitations, failure modes, scenarios, diagnostics and terms, plus a weakness and a dependent. A literal ID and a `handoff:` alias resolve against that same list, so an alias reaches every kind its literal ID would. A row may also be about a record this same write removed: the record is absent from the state by the time rows are admitted, so the row takes the kind from the removal and records the revision the record stood at when it was removed. A subject that names neither a stored record nor a removal is the ordinary refusal.
+
 ## The Family Row Constructor (MIK-R48)
 
 `HistoryRowAuthoring._family_row` is the single constructor

@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "0921ffa900bd3bbaa170662ce74d5914de793998",
-        "content": "sha256:ce40cdb84e422e6ec6c6092b2af488a602aaacd6693964de6f7f446bbb5331d5",
+        "blob": "f6091818f7a3fdfaef7337e48da6b832bbe01f71",
+        "content": "sha256:b1117e446ea8341b70f9b249e6aca37a7d07749fd711bed19b7a630d17305bf4",
         "locator": {
           "kind": "symbol",
           "name": "onboarding_trace_result"

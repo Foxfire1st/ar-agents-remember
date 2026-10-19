@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "06964bc2760b01d95702515c2e573072c426b42e",
+        "blob": "8069d1448df63d36f9a908d910ee3efe63135512",
         "content": "sha256:76336a59c7d319c2759ef0906e5d2b0583511d1b3cfac93a8f5f54147fb68d48",
         "locator": {
           "kind": "symbol",
@@ -21,8 +21,8 @@
     },
     {
       "anchor": {
-        "blob": "06964bc2760b01d95702515c2e573072c426b42e",
-        "content": "sha256:0f0344999699a65a079729555bd446bfc6658ca70797e4e4b17a4f90aa42bcc8",
+        "blob": "8069d1448df63d36f9a908d910ee3efe63135512",
+        "content": "sha256:40763ff436b8caf03041360d21b6fc3492f3a5876a0c17b1f1a7a75d482627ea",
         "locator": {
           "kind": "symbol",
           "name": "write_knowledge"
@@ -39,7 +39,7 @@
     },
     {
       "anchor": {
-        "blob": "06964bc2760b01d95702515c2e573072c426b42e",
+        "blob": "8069d1448df63d36f9a908d910ee3efe63135512",
         "content": "sha256:4dad4e5cccc7b45a4e0d04e4823fdf5a3a51f07fbfc42fe69168f0a5431d6d03",
         "locator": {
           "kind": "symbol",

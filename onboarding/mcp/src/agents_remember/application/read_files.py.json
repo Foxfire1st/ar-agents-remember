@@ -3,7 +3,25 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "461c1f33ee8ae817e057db5330c79ab107e04c73",
+        "blob": "235bbb664d2f527abfdfa47f8cbbcb96c8714650",
+        "content": "sha256:7e56c6535b587a4cf7ecd40e927c3be28c4e6028f673f090d6e7ab81bbac4bc1",
+        "locator": {
+          "kind": "symbol",
+          "name": "_add_mark_lines"
+        }
+      },
+      "id": "RLZ-1CVR72",
+      "invariant": "INV-HB6783",
+      "origin": {
+        "handoffEntry": "L118-W2",
+        "leaf": "260928-MIK-L118"
+      },
+      "rationale": "The card's read names one short line with the number of open weaknesses on the file and the number of documents that stand on it, and no line where there are none.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "235bbb664d2f527abfdfa47f8cbbcb96c8714650",
         "content": "sha256:bc948946b65eae936b5e13257352ecfda5358bc3d8c0ee1796796e9f0c2f098b",
         "locator": {
           "kind": "symbol",
